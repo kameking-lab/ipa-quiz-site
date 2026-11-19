@@ -1,0 +1,242 @@
+[
+  {
+    "id": "denken1-2025-second-denryoku-q1",
+    "exam": "denken1",
+    "year": 2025,
+    "season": "second",
+    "session": "denryoku",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "電力・管理",
+    "topicTags": [
+      "再熱サイクル汽力発電"
+    ],
+    "difficulty": 5,
+    "question": "問1 再熱サイクル汽力発電",
+    "answer": "〔問１の標準解答〕\n\n  (1) 高圧タービンで膨張した蒸気は水滴を含む湿り蒸気になり，蒸気タービンの\n\n  羽根を腐食・浸食させることがあるため，蒸気をボイラに戻して加熱し，湿り\n\n  度を低下させる。また，蒸気を加熱することで，低圧タービンの熱効率を向上\n\n  させる。\n\n  (2) ボイラから与えられる単位質量当たりの熱量は，給水ポンプからボイラに送\n\n  り込まれた給水を過熱蒸気にして高圧タービンに送るために加えられた単位\n  質量当たりの熱量 h3  h2 と，高圧タービンで仕事をした蒸気を再熱して低圧\n  タービンに送るために加えられた単位質量当たりの熱量 h5  h4 の和であるた\n\n  め，\n         h3  h2    h5  h4  ··········································· ①\n  (3) この熱サイクル全体から出される単位質量当たりの熱量の総量は，高圧ター\n\n  ビン及び低圧タービンで出される単位質量当たりの熱量の和から給水ポンプ\n\n  で使われる単位質量当たりの熱量を引いたものであるため,\n         h3  h4    h5  h6    h2  h1 ··································· ②\n\n   熱サイクル全体としての熱効率 は，②を①で除したものであるため，\n\n      ②\n      ①\n             h3  h4    h 5 h6    h2  h1\n                 h3  h2    h5  h4\n            3 300  2 700   2 900  2 000   150  140\n                   3 300  150   2 900  2 700\n             0.444 78 →0.445 ・・・(　答)\n\n                                                      - 1 -",
+    "modelAnswer": "〔問１の標準解答〕\n\n  (1) 高圧タービンで膨張した蒸気は水滴を含む湿り蒸気になり，蒸気タービンの\n\n  羽根を腐食・浸食させることがあるため，蒸気をボイラに戻して加熱し，湿り\n\n  度を低下させる。また，蒸気を加熱することで，低圧タービンの熱効率を向上\n\n  させる。\n\n  (2) ボイラから与えられる単位質量当たりの熱量は，給水ポンプからボイラに送\n\n  り込まれた給水を過熱蒸気にして高圧タービンに送るために加えられた単位\n  質量当たりの熱量 h3  h2 と，高圧タービンで仕事をした蒸気を再熱して低圧\n  タービンに送るために加えられた単位質量当たりの熱量 h5  h4 の和であるた\n\n  め，\n         h3  h2    h5  h4  ··········································· ①\n  (3) この熱サイクル全体から出される単位質量当たりの熱量の総量は，高圧ター\n\n  ビン及び低圧タービンで出される単位質量当たりの熱量の和から給水ポンプ\n\n  で使われる単位質量当たりの熱量を引いたものであるため,\n         h3  h4    h5  h6    h2  h1 ··································· ②\n\n   熱サイクル全体としての熱効率 は，②を①で除したものであるため，\n\n      ②\n      ①\n             h3  h4    h 5 h6    h2  h1\n                 h3  h2    h5  h4\n            3 300  2 700   2 900  2 000   150  140\n                   3 300  150   2 900  2 700\n             0.444 78 →0.445 ・・・(　答)\n\n                                                      - 1 -",
+    "explanation": "ボイラと再熱器で与える熱量を温度ではなく比エンタルピー差で表し、タービン仕事と熱効率を求めます。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken1/2025-second-power-management/q-p03.webp"
+    ],
+    "imageAltTexts": [
+      "問1 公式問題PDF 3ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/denken1/2025-second-power-management/a-q01-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "問1 公式標準解答 1ページ"
+    ],
+    "questionNotice": "問1～6のうち4問を選択。",
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_first_q01.pdf#page=3",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_first_a01_ks.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/first/qa/"
+    ],
+    "sourceAttribution": "出典：電気技術者試験センター「2025年度 第一種電気主任技術者二次試験 電力・管理」問1。",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denken1-2025-second-denryoku-q2",
+    "exam": "denken1",
+    "year": 2025,
+    "season": "second",
+    "session": "denryoku",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "電力・管理",
+    "topicTags": [
+      "屋外変電設備の塩害対策"
+    ],
+    "difficulty": 5,
+    "question": "問2 屋外変電設備の塩害対策",
+    "answer": "〔問２の標準解答〕\n\n  (1) 母線がいしは，がいし増結等によって設計汚損量まで絶縁強化で対策し，機\n\n  器用がいし(がい管含む)は，漏れ距離の長い長尺もしくは深ひだがい管など耐\n\n  塩性能の高いものを適用する絶縁強化で対策する。\n\n  (2)\n\n  ・活線洗浄による対策：機器用がいしやがい管が，必要な絶縁強化ができない\n\n   場合，かつ設備停止が困難な場合でも充電状態のまま注水洗浄を行える。活\n\n   線洗浄で注意すべきことは，洗浄中がいし耐電圧が一時的に低下することで\n\n   ある。\n\n  ・シリコーンコンパウンド塗布による対策：がいし類表面の水分をはじく優れ\n\n   た撥水性やがいし類に付着した塩分を包み込むアメーバ作用により塩分付\n\n    着を防ぐ。寿命が0.5～2 年と短く，多頻度で設備停止を伴う洗浄再塗布が必\n\n   要となる。\n\n\n\n\n\n                                                      - 2 -",
+    "modelAnswer": "〔問２の標準解答〕\n\n  (1) 母線がいしは，がいし増結等によって設計汚損量まで絶縁強化で対策し，機\n\n  器用がいし(がい管含む)は，漏れ距離の長い長尺もしくは深ひだがい管など耐\n\n  塩性能の高いものを適用する絶縁強化で対策する。\n\n  (2)\n\n  ・活線洗浄による対策：機器用がいしやがい管が，必要な絶縁強化ができない\n\n   場合，かつ設備停止が困難な場合でも充電状態のまま注水洗浄を行える。活\n\n   線洗浄で注意すべきことは，洗浄中がいし耐電圧が一時的に低下することで\n\n   ある。\n\n  ・シリコーンコンパウンド塗布による対策：がいし類表面の水分をはじく優れ\n\n   た撥水性やがいし類に付着した塩分を包み込むアメーバ作用により塩分付\n\n    着を防ぐ。寿命が0.5～2 年と短く，多頻度で設備停止を伴う洗浄再塗布が必\n\n   要となる。\n\n\n\n\n\n                                                      - 2 -",
+    "explanation": "がいしやブッシングの絶縁設計、補機による対策、定期的な保守を分けて考えます。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken1/2025-second-power-management/q-p04.webp"
+    ],
+    "imageAltTexts": [
+      "問2 公式問題PDF 4ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/denken1/2025-second-power-management/a-q02-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "問2 公式標準解答 2ページ"
+    ],
+    "questionNotice": "問1～6のうち4問を選択。",
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_first_q01.pdf#page=4",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_first_a01_ks.pdf#page=2",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/first/qa/"
+    ],
+    "sourceAttribution": "出典：電気技術者試験センター「2025年度 第一種電気主任技術者二次試験 電力・管理」問2。",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denken1-2025-second-denryoku-q3",
+    "exam": "denken1",
+    "year": 2025,
+    "season": "second",
+    "session": "denryoku",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "電力・管理",
+    "topicTags": [
+      "電力系統の過渡安定度"
+    ],
+    "difficulty": 5,
+    "question": "問3 電力系統の過渡安定度",
+    "answer": "〔問３の標準解答〕\n\n  (1) 事故時の発電機群の電圧位相差の動揺をシミュレーションし，脱調の可能性\n\n  があれば未然防止に必要な電源制限の最適制御量を演算し，その結果を発電機\n\n  へ指令して実行する。系統条件を事前に予測して演算する事前演算形と，事故\n\n  現象をリアルタイムで計測しながらシミュレーションを行う事後演算形があ\n\n  る。\n\n  (2)\n\n  インピーダンスローカス方式：\n\n   二つの系統を連系する送電線の距離リレーが自端での線路電流と電圧の計\n\n  測情報から測距インピーダンスを求め，その軌道が電気的中心付近に来た際に\n\n  脱調の発生を検出し，両系統を分離する方式。\n\n  電圧位相比較方式：\n\n   二つの系統を連系する送電線両端の電圧を送電線保護装置である電流差動\n\n  リレーの伝送信号と一緒に伝送して電圧位相の検出を行い，両電圧の位相差が\n\n   を超えた場合に脱調が発生したと判定して両系統を分離する方式。\n\n\n\n\n\n                                                      - 3 -",
+    "modelAnswer": "〔問３の標準解答〕\n\n  (1) 事故時の発電機群の電圧位相差の動揺をシミュレーションし，脱調の可能性\n\n  があれば未然防止に必要な電源制限の最適制御量を演算し，その結果を発電機\n\n  へ指令して実行する。系統条件を事前に予測して演算する事前演算形と，事故\n\n  現象をリアルタイムで計測しながらシミュレーションを行う事後演算形があ\n\n  る。\n\n  (2)\n\n  インピーダンスローカス方式：\n\n   二つの系統を連系する送電線の距離リレーが自端での線路電流と電圧の計\n\n  測情報から測距インピーダンスを求め，その軌道が電気的中心付近に来た際に\n\n  脱調の発生を検出し，両系統を分離する方式。\n\n  電圧位相比較方式：\n\n   二つの系統を連系する送電線両端の電圧を送電線保護装置である電流差動\n\n  リレーの伝送信号と一緒に伝送して電圧位相の検出を行い，両電圧の位相差が\n\n   を超えた場合に脱調が発生したと判定して両系統を分離する方式。\n\n\n\n\n\n                                                      - 3 -",
+    "explanation": "事故中の加速と事故除去後の減速を整理し、発電機が同期を維持できるかを考えます。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken1/2025-second-power-management/q-p05.webp"
+    ],
+    "imageAltTexts": [
+      "問3 公式問題PDF 5ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/denken1/2025-second-power-management/a-q03-p03.webp"
+    ],
+    "answerImageAltTexts": [
+      "問3 公式標準解答 3ページ"
+    ],
+    "questionNotice": "問1～6のうち4問を選択。",
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_first_q01.pdf#page=5",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_first_a01_ks.pdf#page=3",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/first/qa/"
+    ],
+    "sourceAttribution": "出典：電気技術者試験センター「2025年度 第一種電気主任技術者二次試験 電力・管理」問3。",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denken1-2025-second-denryoku-q4",
+    "exam": "denken1",
+    "year": 2025,
+    "season": "second",
+    "session": "denryoku",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "電力・管理",
+    "topicTags": [
+      "送電鉄塔への雷直撃とサージ"
+    ],
+    "difficulty": 5,
+    "question": "問4 送電鉄塔への雷直撃とサージ",
+    "answer": "〔問４の標準解答〕\n\n  (1) 逆フラッシオーバ 又は 鉄塔逆フラッシオーバ\n  (2) 以下の雷害対策から二つ解答する。\n\n  ・アークホーンの設置\n\n  ・送電用避雷装置の設置\n\n  ・塔脚接地抵抗の低減（埋設地線や連接接地を設ける）\n\n  (3) 頂部A 点における電圧の関係より\n\n           e0   e0    eg   et ·············································· ①             ・・・(答)\n\n   頂部Ａ点におけるキルヒホッフ第一法則(電流則)より\n\n              i0   i0   2 ig   it ·············································· ②\n             ・・・(答)\n\n  (4) 雷道，架空地線，鉄塔それぞれにおけるオームの法則より\n                e0          e0          eg         et              i0          , 　i0           , 　 ig          , 　it      ··························· ③          Z0      Z0      Zg      Zt\n\n   ①式と③式を②式へ代入して e0 ,   eg を消去すると\n\n            e0   et   e0   2 et    et                           ········································· ④\n       Z0   Z0   Zg  Zt\n\n                                   2 Zg Zt\n    ④式を整理して， et                           e0 ····················· ⑤\n                        Zg Zt  2 Z0 Zt  Z0 Zg  ・・・(答)\n  (5) ⑤式に，与えられた数値を代入して\n\n                     2  500 100\n           et                                 3 000  909.09   909 kV ・・・(答)            500 100  2  400 100  400  500\n\n\n\n\n\n                                                      - 4 -",
+    "modelAnswer": "〔問４の標準解答〕\n\n  (1) 逆フラッシオーバ 又は 鉄塔逆フラッシオーバ\n  (2) 以下の雷害対策から二つ解答する。\n\n  ・アークホーンの設置\n\n  ・送電用避雷装置の設置\n\n  ・塔脚接地抵抗の低減（埋設地線や連接接地を設ける）\n\n  (3) 頂部A 点における電圧の関係より\n\n           e0   e0    eg   et ·············································· ①             ・・・(答)\n\n   頂部Ａ点におけるキルヒホッフ第一法則(電流則)より\n\n              i0   i0   2 ig   it ·············································· ②\n             ・・・(答)\n\n  (4) 雷道，架空地線，鉄塔それぞれにおけるオームの法則より\n                e0          e0          eg         et              i0          , 　i0           , 　 ig          , 　it      ··························· ③          Z0      Z0      Zg      Zt\n\n   ①式と③式を②式へ代入して e0 ,   eg を消去すると\n\n            e0   et   e0   2 et    et                           ········································· ④\n       Z0   Z0   Zg  Zt\n\n                                   2 Zg Zt\n    ④式を整理して， et                           e0 ····················· ⑤\n                        Zg Zt  2 Z0 Zt  Z0 Zg  ・・・(答)\n  (5) ⑤式に，与えられた数値を代入して\n\n                     2  500 100\n           et                                 3 000  909.09   909 kV ・・・(答)            500 100  2  400 100  400  500\n\n\n\n\n\n                                                      - 4 -",
+    "explanation": "雷電流の進む経路と鉄塔・架空地線のサージインピーダンスを区別して、頂部での電圧を求めます。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken1/2025-second-power-management/q-p06.webp"
+    ],
+    "imageAltTexts": [
+      "問4 公式問題PDF 6ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/denken1/2025-second-power-management/a-q04-p04.webp"
+    ],
+    "answerImageAltTexts": [
+      "問4 公式標準解答 4ページ"
+    ],
+    "questionNotice": "問1～6のうち4問を選択。",
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_first_q01.pdf#page=6",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_first_a01_ks.pdf#page=4",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/first/qa/"
+    ],
+    "sourceAttribution": "出典：電気技術者試験センター「2025年度 第一種電気主任技術者二次試験 電力・管理」問4。",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denken1-2025-second-denryoku-q5",
+    "exam": "denken1",
+    "year": 2025,
+    "season": "second",
+    "session": "denryoku",
+    "qNumber": 5,
+    "type": "descriptive",
+    "category": "電力・管理",
+    "topicTags": [
+      "高圧受電設備の点検"
+    ],
+    "difficulty": 5,
+    "question": "問5 高圧受電設備の点検",
+    "answer": "〔問５の標準解答〕\n\n  (1) 以下に示すような題意の内容を三つ挙げる。\n\n  ・キュービクルの据え付け時\n\n  ・開閉器，変圧器等受変電設備の現場組み立て施工時\n\n  ・高圧ケーブルの布設(敷設・通線・配線)時\n\n  ・高圧ケーブルの端末処理時\n\n  ・接地工事の接地極の施設(埋設・打設)時\n\n  ・予備発電装置の基礎工事完成時\n\n  ・予備発電装置の据え付け時\n\n  ・低圧配線の隠ぺい箇所が確認できる時\n\n  (2) 以下に示すような題意の内容を三つ挙げる。\n\n  ・接地抵抗測定\n\n    接地抵抗計(アーステスタ)を使用し，接地工事の種類毎に電技解釈に規定\n\n   された抵抗値以下であることを確認する。\n\n  ・絶縁抵抗測定\n\n    絶縁抵抗計(メガー)を使用し，電技省令に規定された絶縁抵抗値以上であ\n\n   ることを確認する。\n\n  ・保護継電器動作試験\n\n    保護継電器試験器等を使用し，動作電流特性及び動作時間特性並びに遮断\n\n   器との連動動作試験結果が適正であることを確認する。\n\n  ・非常用予備発電装置試験\n\n    商用電源停電時に自動的に起動し，発電電圧，周波数が正常であり，運転\n\n   時の振動，騒音が正常範囲であることを確認する。\n\n  ・蓄電池試験\n\n    セルの電圧，電解液の比重，温度，内部抵抗値を測定し，測定値が正常範\n\n   囲にあることを確認する。\n\n\n\n\n\n                                                      - 5 -",
+    "modelAnswer": "〔問５の標準解答〕\n\n  (1) 以下に示すような題意の内容を三つ挙げる。\n\n  ・キュービクルの据え付け時\n\n  ・開閉器，変圧器等受変電設備の現場組み立て施工時\n\n  ・高圧ケーブルの布設(敷設・通線・配線)時\n\n  ・高圧ケーブルの端末処理時\n\n  ・接地工事の接地極の施設(埋設・打設)時\n\n  ・予備発電装置の基礎工事完成時\n\n  ・予備発電装置の据え付け時\n\n  ・低圧配線の隠ぺい箇所が確認できる時\n\n  (2) 以下に示すような題意の内容を三つ挙げる。\n\n  ・接地抵抗測定\n\n    接地抵抗計(アーステスタ)を使用し，接地工事の種類毎に電技解釈に規定\n\n   された抵抗値以下であることを確認する。\n\n  ・絶縁抵抗測定\n\n    絶縁抵抗計(メガー)を使用し，電技省令に規定された絶縁抵抗値以上であ\n\n   ることを確認する。\n\n  ・保護継電器動作試験\n\n    保護継電器試験器等を使用し，動作電流特性及び動作時間特性並びに遮断\n\n   器との連動動作試験結果が適正であることを確認する。\n\n  ・非常用予備発電装置試験\n\n    商用電源停電時に自動的に起動し，発電電圧，周波数が正常であり，運転\n\n   時の振動，騒音が正常範囲であることを確認する。\n\n  ・蓄電池試験\n\n    セルの電圧，電解液の比重，温度，内部抵抗値を測定し，測定値が正常範\n\n   囲にあることを確認する。\n\n\n\n\n\n                                                      - 5 -",
+    "explanation": "保安管理で確認する設備を整理し、停電の有無や点検の目的を原問の条件に合わせます。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken1/2025-second-power-management/q-p07.webp"
+    ],
+    "imageAltTexts": [
+      "問5 公式問題PDF 7ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/denken1/2025-second-power-management/a-q05-p05.webp"
+    ],
+    "answerImageAltTexts": [
+      "問5 公式標準解答 5ページ"
+    ],
+    "questionNotice": "問1～6のうち4問を選択。",
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_first_q01.pdf#page=7",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_first_a01_ks.pdf#page=5",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/first/qa/"
+    ],
+    "sourceAttribution": "出典：電気技術者試験センター「2025年度 第一種電気主任技術者二次試験 電力・管理」問5。",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denken1-2025-second-denryoku-q6",
+    "exam": "denken1",
+    "year": 2025,
+    "season": "second",
+    "session": "denryoku",
+    "qNumber": 6,
+    "type": "descriptive",
+    "category": "電力・管理",
+    "topicTags": [
+      "電力系統の給電指令"
+    ],
+    "difficulty": 5,
+    "question": "問6 電力系統の給電指令",
+    "answer": "〔問６の標準解答〕\n\n  (1) 以下に示すような題意の内容を3 項目挙げる。\n\n  ・電力需給及び系統周波数の調整\n\n  ・系統電圧の調整\n\n  ・主要電力系統潮流の調整及び一般送配電事業者間連系線潮流の監視・制御\n\n  ・送電系統を変更する場合の指示とそれに関連する機器操作の指示\n\n  ・電力設備保守点検作業の調整と作業停電の指示\n\n  ・系統事故発生時における応急対策や復旧操作の指示\n\n  (2)\n    (a) 発電機B は出力一定でベースロード運転を行っているので，出力は系統周\n\n   波数の変化を受けない。\n\n    発電機A が160 MW，50 Hz で運転中である。需要が40 MW 増えたときの\n\n   系統周波数をF [Hz]とおくと，次式が成り立つ。\n\n                      50       F =50  0.04×      (160  200)=49.6 Hz ・・・(答)                      200\n\n    (b) 速度調定率4％の発電機A が出力160MW で，速度調定率5％の発電機B\n    が出力100MW で並列運転を行い，系統周波数が50Hz であった。系統需要が\n    45MW 増加したときの系統周波数をF[Hz]，発電機A の出力をPA[MW]，\n\n   発電機B の出力をPB[MW]とすると，以下の式が成り立つ。\n\n                       50\n        F =50  0.04×    (160  PA )                       200\n                       50\n        F =50  0.05×    (100  PB )                       200\n\n        PA  PB =160+100+45\n\n   これを解くと， PA = 185 MW， PB = 120 MW，F = 49.75 Hz となる。\n    発電機A の出力 = 185 MW・・・(答)\n    発電機B の出力 = 120 MW・・・(答)\n    系統周波数 = 49.75 Hz・・・(答)\n\n\n                                                      - 6 -",
+    "modelAnswer": "〔問６の標準解答〕\n\n  (1) 以下に示すような題意の内容を3 項目挙げる。\n\n  ・電力需給及び系統周波数の調整\n\n  ・系統電圧の調整\n\n  ・主要電力系統潮流の調整及び一般送配電事業者間連系線潮流の監視・制御\n\n  ・送電系統を変更する場合の指示とそれに関連する機器操作の指示\n\n  ・電力設備保守点検作業の調整と作業停電の指示\n\n  ・系統事故発生時における応急対策や復旧操作の指示\n\n  (2)\n    (a) 発電機B は出力一定でベースロード運転を行っているので，出力は系統周\n\n   波数の変化を受けない。\n\n    発電機A が160 MW，50 Hz で運転中である。需要が40 MW 増えたときの\n\n   系統周波数をF [Hz]とおくと，次式が成り立つ。\n\n                      50       F =50  0.04×      (160  200)=49.6 Hz ・・・(答)                      200\n\n    (b) 速度調定率4％の発電機A が出力160MW で，速度調定率5％の発電機B\n    が出力100MW で並列運転を行い，系統周波数が50Hz であった。系統需要が\n    45MW 増加したときの系統周波数をF[Hz]，発電機A の出力をPA[MW]，\n\n   発電機B の出力をPB[MW]とすると，以下の式が成り立つ。\n\n                       50\n        F =50  0.04×    (160  PA )                       200\n                       50\n        F =50  0.05×    (100  PB )                       200\n\n        PA  PB =160+100+45\n\n   これを解くと， PA = 185 MW， PB = 120 MW，F = 49.75 Hz となる。\n    発電機A の出力 = 185 MW・・・(答)\n    発電機B の出力 = 120 MW・・・(答)\n    系統周波数 = 49.75 Hz・・・(答)\n\n\n                                                      - 6 -",
+    "explanation": "需給の調整、系統の運用状態の維持、異常時の対応を分けて、指令業務の内容を整理します。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken1/2025-second-power-management/q-p08.webp"
+    ],
+    "imageAltTexts": [
+      "問6 公式問題PDF 8ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/denken1/2025-second-power-management/a-q06-p06.webp"
+    ],
+    "answerImageAltTexts": [
+      "問6 公式標準解答 6ページ"
+    ],
+    "questionNotice": "問1～6のうち4問を選択。",
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_first_q01.pdf#page=8",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_first_a01_ks.pdf#page=6",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/first/qa/"
+    ],
+    "sourceAttribution": "出典：電気技術者試験センター「2025年度 第一種電気主任技術者二次試験 電力・管理」問6。",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  }
+]

@@ -1,0 +1,90 @@
+{
+  "lane": "yd-4",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "rows": [
+    {
+      "jobId": "PLAN5-332",
+      "index": 331,
+      "exam": "denki1",
+      "year": 2021,
+      "season": "annual",
+      "session": "gakka",
+      "status": "completed",
+      "questionCount": 92,
+      "practiceCount": 92,
+      "choiceExplanationCount": 374,
+      "imageCount": 15,
+      "questionSource": {
+        "url": "https://www.fcip-shiken.jp/pdf/r03_1dg_mondai.pdf",
+        "sha256": "33b4467c41303619ab8f585838006567e45498bdc04127f334675b19debb0de6",
+        "pages": 44
+      },
+      "answerSource": {
+        "url": "https://www.fcip-shiken.jp/pdf/r03_1dg_mondai.pdf#page=44",
+        "sha256": "33b4467c41303619ab8f585838006567e45498bdc04127f334675b19debb0de6",
+        "page": 44,
+        "verifiedCells": 92
+      },
+      "examDate": "2021-06-13",
+      "requiredAnswers": {
+        "am": 31,
+        "pm": 29,
+        "total": 60
+      },
+      "sections": [
+        {
+          "session": "am",
+          "start": 1,
+          "end": 15,
+          "required": 10
+        },
+        {
+          "session": "am",
+          "start": 16,
+          "end": 47,
+          "required": 14
+        },
+        {
+          "session": "am",
+          "start": 48,
+          "end": 55,
+          "required": 5
+        },
+        {
+          "session": "am",
+          "start": 56,
+          "end": 57,
+          "required": 2
+        },
+        {
+          "session": "pm",
+          "start": 58,
+          "end": 63,
+          "required": 6,
+          "kind": "応用能力問題"
+        },
+        {
+          "session": "pm",
+          "start": 64,
+          "end": 70,
+          "required": 7
+        },
+        {
+          "session": "pm",
+          "start": 71,
+          "end": 79,
+          "required": 6
+        },
+        {
+          "session": "pm",
+          "start": 80,
+          "end": 92,
+          "required": 10
+        }
+      ],
+      "questionData": "data/questions/denki1/2021-annual.json",
+      "questionIdPattern": "denki1-2021-annual-gakka-q{1..92}",
+      "planCountCorrection": "公式冊子と正答表の全92問を確認（計画の14件は抽出できた番号の数）。"
+    }
+  ]
+}

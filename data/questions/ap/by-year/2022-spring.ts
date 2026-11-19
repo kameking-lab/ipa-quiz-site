@@ -23,10 +23,17 @@ export const AP_QUESTIONS_2022_SPRING: Question[] = [
       "エ": "{(1.0)2×25-(1.0)2×2-4}+(1.1)2×2-3"
     },
     "answer": "ア",
-    "explanation": "正解はアです。浮動小数点数の情報落ちを防ぐためには、絶対値の小さい数同士を先に計算することが基本原則です。アは括弧内で絶対値の小さい数同士の加算を行っており、情報落ちが発生しにくい計算順序であるため、ウとエに比べて適切です。",
+    "explanation": "小さい二項は0.1875と0.0625です。アでは先に足して0.25とするので、32を加えた32.25は指数5で仮数の小数第7ビットまでに収まります。小さい二項の差0.125や、32と0.1875の和は指数5の刻み0.25に収まらず、エの最初の引算も指数4の刻み0.125に収まりません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "小さい二項の和は0.25で、2⁵を加えると32.25です。指数を5にそろえたとき、0.25は仮数の末尾の第7ビットに収まります。",
+      "イ": "小さい二項を先に引いても、結果は0.125です。32と加えるときに必要な仮数の第8ビットは、この形式では保持できません。",
+      "ウ": "32に最初に加える数は0.1875です。32付近で表せる刻みは0.25なので、この加算だけで正確な値を保持できず、後の加算では取り戻せません。",
+      "エ": "最初に求める31.9375は、32の直下での仮数の刻み0.125に収まりません。最後の加算前に、低位の情報が失われます。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2022h-am-q2",
@@ -47,10 +54,17 @@ export const AP_QUESTIONS_2022_SPRING: Question[] = [
       "エ": "S - (A∩B)"
     },
     "answer": "ア",
-    "explanation": "正解はアです。一般的な集合論において、AnBはAとBの積集合を意味し、A-BはAからBを除いた差集合を意味します。両者は通常等しくありませんが、本問でアが正解とされている場合、AnBがA-Bと等しいものとして問われている、あるいは何らかの特別な解釈が意図されている可能性があります。",
+    "explanation": "原本で問うのはAの補集合とBの補集合の積集合です。Aの補集合からBに属する要素を取り除けば、AにもBにも属さない要素だけが残ります。これが原本のアです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "原本のアはAの補集合からBを除く式です。Aに属さない要素の中からBに属する要素を引くと、AにもBにも属さない要素だけが残ります。",
+      "イ": "原本のイはAに属さないかBに属さない要素を集めています。AとBの積集合と重ならないので、それを引いてもAだけに属する要素が残ります。",
+      "ウ": "S－AとS－Bの和集合では、A又はBの少なくとも一方に属さない要素を集めます。両方に属さない要素だけを求めるには積集合を取ります。",
+      "エ": "SからA∩Bを引くと、Aだけに属する要素やBだけに属する要素も残ります。本問ではAとBのどちらにも属さない要素だけを残します。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2022h-am-q3",
@@ -1130,7 +1144,14 @@ export const AP_QUESTIONS_2022_SPRING: Question[] = [
     "explanation": "正解はイです。（出典: IPA 応用情報技術者試験 2022年度春期 午前 問47）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "A＝0では最初のA＞0が偽で、A＝1、B＝1ではB＝0が偽です。どちらも最初の判定でNoへ進み、Yesを一度も通りません。",
+      "イ": "A＝1、B＝0では最初の判定が真になってC＝1を保ち、次の判定も真です。A＝1、B＝1では両判定が偽で、二例で全分岐を通ります。",
+      "ウ": "分岐は全て通りますが、A＝0、B＝0を除いても、残る二例で両方の判定のYesとNoを既に網羅しています。三例は最少ではありません。",
+      "エ": "A＝1、B＝0が二つの判定のYesを通ります。A＝0の二例はいずれも両判定のNoを通るので、そのうち一例だけで足ります。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2022h-am-q48",
@@ -1226,7 +1247,14 @@ export const AP_QUESTIONS_2022_SPRING: Question[] = [
     "explanation": "正解はエです。（出典: IPA 応用情報技術者試験 2022年度春期 午前 問51）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "110万円は実際に使った60万円に、計画価値50万円を予算100万円から引いた額を足した値です。ここでは計画でなく実際の出来高40万円から残作業を求めます。",
+      "イ": "120万円は、実コスト60万円を計画価値50万円と比較した場合の見積りです。コスト効率の分子は計画価値PVではなく出来高EVです。",
+      "ウ": "135万円だと、実コスト60万円を除いた残作業の費用は75万円です。しかし残りの出来高60万円分を今の効率で得るには90万円掛かります。",
+      "エ": "コスト効率はEV÷AC＝40÷60です。残り60万円分の出来高をこの効率で得るには90万円必要で、実コスト60万円と合わせ150万円です。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2022h-am-q52",
@@ -1274,7 +1302,14 @@ export const AP_QUESTIONS_2022_SPRING: Question[] = [
     "explanation": "正解はウです。（出典: IPA 応用情報技術者試験 2022年度春期 午前 問53）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "80日で終わるには、製造に続くテストやその後の教育を完了できません。要件定義から教育までの依存する作業だけで100日必要です。",
+      "イ": "利用者教育はテストとマニュアルの両方を待ちます。テストの完了は最短でも90日目で、教育に10日掛かるので95日では終わりません。",
+      "ウ": "製造とテストの計40日は、マニュアル作成20日と設計後に並行します。長い方に要件定義30日、設計20日、教育10日を加え、100日です。",
+      "エ": "120日は全作業を直列に処理した日数です。設計後は利用者マニュアル作成を製造・テストと並行できるので、最短期間は100日です。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2022h-am-q54",
@@ -1754,7 +1789,14 @@ export const AP_QUESTIONS_2022_SPRING: Question[] = [
     "explanation": "正解はアです。（出典: IPA 応用情報技術者試験 2022年度春期 午前 問73）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "b→a→c→dなら1＋1＋2＝4時間です。dに接する移動は最低2時間で、残り二つの移動は各1時間以上なので、4時間未満にはできません。",
+      "イ": "a→b→c→dなら5時間ですが、bを先にしてb→a→c→dとすれば、最初の移動が2時間から1時間に減り、合計4時間になります。",
+      "ウ": "例えばb→c→a→dは6時間です。bの直後にaを行う経路なら、c→aの3時間を避けて1＋1＋2の4時間にできます。",
+      "エ": "d→a→b→cなら7時間ですが、dを最後に置くことも可能です。b→a→c→dならdへの移動時間は2時間で、全体は4時間です。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2022h-am-q74",

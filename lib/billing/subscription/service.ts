@@ -2,7 +2,9 @@ import "server-only";
 import { createHash, randomUUID } from "node:crypto";
 import { BillingError, jstDay } from "../domain";
 import { refundState } from "../finance";
-import { terminal, type Account, type AppStorePurchase, type AppStorePurchaseHold, type AppStorePurchaseState, type AppStoreRecovery, type MonthlyConfig, type MonthlyProvider, type MonthlyStore, type Invoice, type Observation, type Signup } from "./domain";
+import { examDateBeforeEnd, examEndCanBeBooked } from "../exam-end";
+import { safeQuizReturn } from "../quiz-return";
+import { invoiceCashDue, stripeMinimumYenCharge, terminal, type Account, type AppStorePurchase, type AppStorePurchaseHold, type AppStorePurchaseState, type AppStoreRecovery, type Contract, type EndingChange, type MonthlyConfig, type MonthlyProvider, type MonthlyStore, type Invoice, type Observation, type Signup, type SubscriptionManagement, type Target } from "./domain";
 
 export function monthlyTerms(c: MonthlyConfig) {
   return createHash("sha256").update(JSON.stringify({ version: c.termsVersion, price: c.priceYen, priceId: c.priceId,
@@ -16,6 +18,7 @@ const purchasePreparationMs = 2 * 60000;
 const appStoreHoldMs = 30 * 60000;
 const appStoreApprovalMs = 24 * 3600000;
 const legacyAppStoreHoldMs = 25 * 3600000;
+const renewalRecoveryCooldownMs = 60_000;
 const within = (start: number, end: number, now: number) => start <= now && now < end;
 const memberIds = (members: Account[]) => members.map(a => a.userId);
 function assertSameMembers(ids: string[], members: Account[]) {
@@ -50,6 +53,7 @@ function matchesRecovery(r: AppStorePurchase, recovery: AppStoreRecovery) {
   return "expiresAt" in recovery && !r.attemptId && recovery.expiresAt === r.expiresAt;
 }
 const hasPendingSignup = (a: Account) => Object.values(a.signups).some(s => s.state === "pending");
+const firstContract = (a: Account) => !Object.keys(a.contracts).length && !Object.values(a.signups).some(s => s.state === "attached");
 function closeSignup(a: Account, orderId: string, sessionId: string | null) {
   const signup = a.signups[orderId];
   if (signup?.state !== "pending") return;
@@ -64,7 +68,7 @@ function disputeHold(a: Account, subscriptionId?: string) {
 }
 export function fullyRefunded(a: Account, invoice: Invoice) {
   return invoice.paid && invoice.amount > 0 && invoice.payments.length > 0
-    && invoice.payments.reduce((sum, p) => sum + p.amount, 0) === invoice.amount
+    && invoice.payments.reduce((sum, p) => sum + p.amount, 0) === invoiceCashDue(invoice)
     && invoice.payments.every(p => {
       const facts = a.payments[p.paymentId];
       return p.amount > 0 && facts && facts.amount > 0
@@ -85,27 +89,45 @@ function held(a: Account, invoice: Invoice) {
       || Object.values(facts.disputes).some(d => d !== "won");
   });
 }
+function examAccessEnd(a: Account, sub: Contract) {
+  const signup = a.signups[sub.signupId];
+  if (sub.memberEnding) return sub.memberEnding.kind === "exam" && !sub.cancelAtPeriodEnd ? sub.memberEnding.at : Infinity;
+  // Respect the selected cutoff while Stripe is still applying it. Once
+  // applied, the provider can also confirm that the customer withdrew it.
+  return sub.examCancelAt ?? (!signup?.examEndApplied ? signup?.examEndAt : undefined) ?? Infinity;
+}
+function paidAccessEnd(a: Account, sub: Contract, invoice: Invoice) {
+  // Lifting a legacy cutoff can restore the original renewal date after that
+  // month's shortened invoice was paid. Honor the restored term without a top-up.
+  const paidThrough = sub.memberEnding && invoice.examFinalCycle && invoice.periodStart === sub.periodStart
+    ? Math.max(invoice.periodEnd, sub.periodEnd) : invoice.periodEnd;
+  return Math.min(paidThrough, examAccessEnd(a, sub), sub.memberEnding?.kind === "cancel" ? sub.memberEnding.at : Infinity);
+}
 /** A trial grants access only inside the provider's trial period, never longer than the signup offered. */
 function trialAccess(a: Account, now: number) {
   return Object.values(a.contracts).filter(sub => {
     const offered = a.signups[sub.signupId]?.trialDays ?? 0;
     return sub.status === "trialing" && offered > 0 && !sub.trialRevoked && !sub.renewalBlocked && !disputeHold(a, sub.id)
-      && sub.periodEnd - sub.periodStart <= offered * 86400 + 3600 && within(sub.periodStart, sub.periodEnd, now);
-  }).map(sub => ({ subscriptionId: sub.id, periodEnd: sub.periodEnd }))[0] ?? null;
+      && sub.periodEnd - sub.periodStart <= offered * 86400 + 3600 && within(sub.periodStart, Math.min(sub.periodEnd, examAccessEnd(a, sub)), now);
+  }).map(sub => ({ subscriptionId: sub.id, periodEnd: Math.min(sub.periodEnd, examAccessEnd(a, sub)) }))[0] ?? null;
 }
 export function access(a: Account, now: number): { subscriptionId: string; periodEnd: number } | null {
   assertPolicyReady(a);
   return Object.values(a.invoices).filter(i => {
     const sub = a.contracts[i.subscriptionId];
     return sub && ["active", "past_due"].includes(sub.status) && i.paid && !held(a, i) && !fullyRefunded(a, i) && !disputeHold(a, sub.id)
-      && within(i.periodStart, i.periodEnd, now);
-  }).sort((a, b) => b.periodEnd - a.periodEnd)[0] ?? trialAccess(a, now);
+      && within(i.periodStart, paidAccessEnd(a, sub, i), now);
+  }).sort((a, b) => b.periodEnd - a.periodEnd).map(i => ({
+    subscriptionId: i.subscriptionId, periodEnd: paidAccessEnd(a, a.contracts[i.subscriptionId], i),
+  }))[0] ?? trialAccess(a, now);
 }
 /** No legacy-account grace. Existing Auth and history records are neither deleted nor rewritten. */
 export class MonthlyService {
-  constructor(private store: MonthlyStore, readonly config: MonthlyConfig, private clock = () => new Date(), private afterReceive?: (userId: string) => Promise<void>) {}
+  constructor(private store: MonthlyStore, readonly config: MonthlyConfig, private clock = () => new Date(),
+    private afterReceive?: (userId: string) => Promise<void>, private reviewExamCharge?: (orderId: string, invoiceId: string) => Promise<boolean>,
+    private reviewPurchase?: (orderId: string, reason: "exam_writeoff" | "customer_balance") => Promise<boolean>) {}
   private tx<T>(id: string, fn: (a: Account) => Promise<T>, readOnly = false) { return this.store.transaction(id, this.config.mode, this.config.sourceInstance, fn, readOnly); }
-  private purchaseTx<T>(id: string, fn: (a: Account, members: Account[]) => T) {
+  private purchaseTx<T>(id: string, fn: (a: Account, members: Account[], verifiedMembers?: ReadonlySet<string>) => T) {
     return this.store.purchaseTransaction(id, this.config.mode, this.config.sourceInstance, fn);
   }
 
@@ -123,13 +145,16 @@ export class MonthlyService {
   }
 
   async checkout(userId: string, terms: string, provider: MonthlyProvider, email?: string, onCreated?: (orderId: string) => Promise<void>,
-    checkAppStore?: (memberId: string) => Promise<void>) {
+    checkAppStore?: (memberId: string) => Promise<void>, examEndAt?: number, exam?: string, returnTo?: string | null) {
     if (!this.config.enabled) throw new BillingError("billing_unavailable", 503);
     if (terms !== monthlyTerms(this.config)) throw new BillingError("terms_changed");
+    if (examEndAt !== undefined && !examEndCanBeBooked(examEndAt, this.clock()))
+      throw new BillingError("invalid_exam_date", 400);
+    await this.recoverElapsedExamEnds(userId, provider, true);
 
     const waitUntil = Date.now() + 2000;
     for (;;) {
-      const plan = await this.purchaseTx(userId, (a, members) => {
+      const plan = await this.purchaseTx(userId, (a, members, verifiedMembers) => {
         const now = this.clock().getTime();
         this.assertPurchaseAvailable(a, members, false, now);
         const ids = memberIds(members);
@@ -138,15 +163,19 @@ export class MonthlyService {
         const signup = Object.values(signupOwner.signups).find(s => s.state === "pending");
         if (signup) {
           if (Date.parse(signup.preparingUntil ?? "") > now) return { kind: "preparing" as const, own: signupOwner === a };
-          return { kind: "existing" as const, signup, ownerId: signupOwner.userId, customerId: signupOwner.customer?.id ?? null, ids };
+          const mayReplace = verifiedMembers?.has(userId) && verifiedMembers.has(signupOwner.userId);
+          return { kind: "existing" as const, signup, ownerId: signupOwner.userId, customerId: signupOwner.customer?.id ?? null, ids, mayReplace };
         }
+        if (Object.values(a.signups).some(order => order.examWriteOffJobs?.length)) throw new BillingError("exam_writeoff_pending", 503);
 
-        const firstContract = !Object.keys(a.contracts).length && !Object.values(a.signups).some(s => s.state === "attached");
         const createdAt = new Date(now).toISOString();
+        const back = safeQuizReturn(returnTo);
         const fresh: Signup = { id: randomUUID(), createdAt, terms, amount: this.config.priceYen, priceId: this.config.priceId,
           state: "pending", sessionId: null, url: null, subscriptionId: null,
           preparingUntil: new Date(now + purchasePreparationMs).toISOString(),
-          ...(firstContract && this.config.trialDays > 0 ? { trialDays: this.config.trialDays } : {}) };
+          ...(examEndAt !== undefined ? { examEndAt, ...(exam ? { exam } : {}) } : {}),
+          ...(back ? { returnTo: back } : {}),
+          ...(firstContract(a) && this.config.trialDays > 0 ? { trialDays: this.config.trialDays } : {}) };
         a.signups[fresh.id] = fresh;
         if (!a.customer || !a.customer.id && now - Date.parse(a.customer.createdAt) >= staleSignupMs)
           a.customer = { attemptId: randomUUID(), createdAt, id: null };
@@ -160,32 +189,52 @@ export class MonthlyService {
       }
       if (plan.kind === "existing") {
         const { signup, customerId, ownerId } = plan;
-        if (ownerId !== userId && signup.sessionId) {
-          const session = customerId && await provider.checkoutSession(customerId, signup);
-          if (!session) problem("checkout_conflict");
-          if (session.status !== "expired") throw new BillingError("web_checkout_pending");
-          await this.closeSignup(ownerId, signup.id, session.id);
+        if (ownerId !== userId) {
+          if (!plan.mayReplace) {
+            const session = customerId && await provider.checkoutSession(customerId, signup);
+            if (session && session.status !== "expired") throw new BillingError("web_checkout_pending");
+            await this.closeSignup(ownerId, signup.id, session ? session.id : null);
+            continue;
+          }
+          await checkMembers(plan.ids, checkAppStore);
+          try {
+            const sessionId = await this.expireSignup(signup, customerId, provider);
+            await this.closeSignup(ownerId, signup.id, sessionId);
+          } catch (error) {
+            if (error instanceof BillingError && error.code === "subscription_exists") {
+              if (signup.examEndAt) await this.reconcileExamEnd(ownerId, signup.id, provider);
+              throw new BillingError("web_checkout_other_account");
+            }
+            throw error;
+          }
           continue;
         }
-        const reusable = signup.url && signup.sessionId && signup.terms === terms
+        const reusable = signup.url && signup.sessionId && signup.terms === terms && signup.examEndAt === examEndAt && signup.exam === exam
           && this.clock().getTime() - Date.parse(signup.createdAt) < staleSignupMs;
         if (reusable) {
           await checkMembers(plan.ids, checkAppStore);
           const session = customerId && await provider.checkoutSession(customerId, signup);
           if (!session) problem("checkout_conflict");
-          if (session.status === "complete") throw new BillingError("subscription_exists");
+          if (session.status === "complete") return this.resumeCheckout(userId, signup.id, provider, session);
           if (session.status === "open") return this.purchaseTx(userId, (a, members) => {
             const current = a.signups[signup.id];
             this.assertPurchaseAvailable(a, members, false, this.clock().getTime());
             if (members.some(member => member !== a && hasPendingSignup(member))) throw new BillingError("web_checkout_pending");
             if (current?.state !== "pending" || current.sessionId !== session.id || !current.url) throw new BillingError("checkout_conflict");
             assertSameMembers(plan.ids, members);
+            const back = safeQuizReturn(returnTo);
+            if (back) current.returnTo = back;
             return { orderId: current.id, url: current.url };
           });
           await this.closeSignup(ownerId, signup.id, session.id);
         } else {
-          const sessionId = await this.expireSignup(signup, customerId, provider);
-          await this.closeSignup(ownerId, signup.id, sessionId);
+          try {
+            const sessionId = await this.expireSignup(signup, customerId, provider);
+            await this.closeSignup(ownerId, signup.id, sessionId);
+          } catch (error) {
+            if (error instanceof BillingError && error.code === "subscription_exists") return this.resumeCheckout(userId, signup.id, provider);
+            throw error;
+          }
         }
         continue;
       }
@@ -203,13 +252,18 @@ export class MonthlyService {
       } catch (error) {
         // No URL was returned to a buyer. A failed customer/session request
         // must not leave an order blocking either purchase channel.
-        await this.tx(userId, async a => {
+        const previousOrder = await this.tx(userId, async a => {
           const signup = a.signups[plan.signup.id];
           if (signup?.state === "pending" && !signup.sessionId) {
             signup.state = "failed";
             delete signup.preparingUntil;
           }
+          return Object.values(a.signups).filter(s => s.state === "attached")
+            .sort((left, right) => right.createdAt.localeCompare(left.createdAt))[0]?.id;
         });
+        if (error instanceof BillingError && ["exam_writeoff_pending", "customer_balance_due"].includes(error.code)) {
+          await this.reviewPurchase?.(previousOrder ?? plan.signup.id, error.code === "exam_writeoff_pending" ? "exam_writeoff" : "customer_balance").catch(() => {});
+        }
         throw error;
       }
 
@@ -272,6 +326,7 @@ export class MonthlyService {
 
   async reserveAppStorePurchase(userId: string, provider: MonthlyProvider, checkAppStore: (memberId: string) => Promise<void>,
     checkDuplicate: () => Promise<void>, { attemptId, confirmStoreKit }: { attemptId?: string; confirmStoreKit?: true }, requestedAt: number) {
+    await this.recoverElapsedExamEnds(userId, provider, true);
     const plan = await this.purchaseTx(userId, (a, members) => {
       const now = this.clock().getTime();
       const abandoned = abandonedAttempts(a, now);
@@ -367,26 +422,23 @@ export class MonthlyService {
   async retryAppStoreApproval(userId: string, reservationId: string, checkAppStore: (id: string) => Promise<AppStorePurchaseState>) {
     const plan = await this.purchaseTx(userId, (_, members) => {
       const now = this.clock().getTime();
-      const owner = members.find(member => {
+      const requestedApproval = members.some(member => {
         const hold = activeReservation(member, now);
         return hold?.id === reservationId && hold.phase === "approval";
       });
-      return owner ? { ownerId: owner.userId, ids: memberIds(members) } : { pending: groupPurchaseHold(members, now) };
+      return requestedApproval ? { ids: memberIds(members) } : { pending: groupPurchaseHold(members, now) };
     });
     if (!plan.ids) return { state: plan.pending ? "processing" as const : null };
 
-    // The StoreKit sync may run under any of these logins. Include the original
-    // owner and keep the reservation if any lookup reports a purchase or fails.
+    // A missing receipt cannot distinguish a pending request from a denial.
+    // Check all logins, but let the original deadline release the hold.
     const states = await Promise.all(plan.ids.map(checkAppStore));
-    if (states.includes("active")) return { state: "active" as const };
-    if (states.includes("processing")) return { state: "processing" as const };
     return this.purchaseTx(userId, (_, members) => {
       assertSameMembers(plan.ids, members);
+      if (states.includes("active")) return { state: "active" as const };
       const now = this.clock().getTime();
-      const owner = members.find(member => member.userId === plan.ownerId)!;
-      const hold = activeReservation(owner, now);
-      if (hold?.id === reservationId && hold.phase === "approval") delete owner.appStorePurchase;
-      return { state: groupPurchaseHold(members, now) ? "processing" as const : null };
+      const pending = states.includes("processing") || groupPurchaseHold(members, now);
+      return { state: pending ? "processing" as const : null };
     });
   }
 
@@ -435,6 +487,24 @@ export class MonthlyService {
     if (!customerId) throw new BillingError("subscription_missing", 404);
     return { url: await provider.portal(customerId, this.config.portalConfigurationId) };
   }
+  async changeEnding(userId: string, orderId: string, change: EndingChange, provider: MonthlyProvider) {
+    const writeEnding = provider.changeEnding?.bind(provider);
+    if (!writeEnding) problem("billing_unavailable");
+    await this.tx(userId, async a => {
+      assertPolicyReady(a);
+      const signup = a.signups[orderId];
+      const sub = signup?.subscriptionId ? a.contracts[signup.subscriptionId] : undefined;
+      const customerId = a.customer?.id;
+      if (!sub || !customerId || sub.customerId !== customerId) throw new BillingError("subscription_missing", 404);
+      if (sub.renewalBlocked && change.kind !== "cancel") throw new BillingError("subscription_ending_conflict");
+      await writeEnding(sub.id, customerId, signup, change, this.clock().getTime() / 1000);
+      // Make a webhook/cron observation started before this provider write re-fetch.
+      delete signup.examEndCheckAt;
+      const observation = await provider.observe({ customerId, subscriptionIds: [sub.id], invoiceIds: [] });
+      await this.applyObservation(a, observation, customerId);
+    });
+    return { management: (await this.status(userId, orderId)).management };
+  }
   async receive(event: { id: string }, digest: string, provider: MonthlyProvider) {
     const target = await provider.resolve(event);
     if (!target) return "ignored";
@@ -443,12 +513,156 @@ export class MonthlyService {
     // Lookup failures still propagate; we never create an account from a refund.
     if (!userId && target.unallocatedRefund) return "ignored";
     if (!userId) problem("subscription_customer_missing");
-    const revision = (a: Account) => JSON.stringify([a.events, a.contracts, a.renewalStopJobs, a.trialEndJobs]);
+    const result = await this.observeCustomer(userId, provider, target, { id: event.id, digest });
+    await this.finishObservation(userId, provider);
+    return result;
+  }
+
+  private async finishObservation(userId: string, provider: MonthlyProvider) {
+    // Stop overdue contracts before a queued duplicate-card job can bill them.
+    await this.flushExamEnds(userId, provider, true);
+    await this.flushRenewalStops(userId, provider);
+    await this.flushTrialEnds(userId, provider);
+    await this.flushExamEnds(userId, provider, false);
+    await this.flushExamWriteOffs(userId, provider);
+    await this.flushExamChargeReviews(userId);
+    await this.afterReceive?.(userId);
+  }
+
+  async recordAppStoreOverlaps(userId: string, appStoreUsers: string[]) {
+    return this.purchaseTx(userId, (_, members, verified) => {
+      const now = this.clock();
+      const orders: { userId: string; orderId: string }[] = [];
+      for (const member of members) {
+        const appStoreUserId = members.find(other => appStoreUsers.includes(other.userId)
+          && (other === member || verified?.has(member.userId) && verified.has(other.userId)))?.userId;
+        if (!appStoreUserId) continue;
+        const paid = access(member, now.getTime() / 1000);
+        if (!paid) continue;
+        const signup = member.signups[member.contracts[paid.subscriptionId].signupId];
+        signup.appStoreOverlap ??= { appStoreUserId, detectedAt: now.toISOString(), renewal: "pending" };
+        if (signup.appStoreOverlap.renewal === "pending") orders.push({ userId: member.userId, orderId: signup.id });
+      }
+      return orders;
+    });
+  }
+
+  async reconcileAppStoreOverlap(userId: string, orderId: string, provider: MonthlyProvider) {
+    await this.tx(userId, a => this.stopAppStoreOverlap(a, a.signups[orderId], provider));
+  }
+
+  private async stopAppStoreOverlap(a: Account, signup: Signup | undefined, provider: MonthlyProvider) {
+    if (!signup) return;
+    const overlap = signup.appStoreOverlap;
+    if (overlap?.renewal !== "pending") return;
+    const sub = signup.subscriptionId ? a.contracts[signup.subscriptionId] : undefined;
+    if (!sub || !provider.stopAppStoreOverlapRenewal) problem("duplicate_purchase_reconcile_unavailable");
+    // Keep the current period and serialize the provider write with other
+    // changes to this contract. A failed write leaves the saved job pending.
+    const cutoff = await provider.stopAppStoreOverlapRenewal(sub.id, sub.customerId, signup);
+    if (cutoff !== null) {
+      sub.cancelAtPeriodEnd = true;
+      sub.memberEnding = { kind: "cancel", at: cutoff };
+      delete sub.examCancelAt;
+      if (signup.examEndAt) signup.examEndApplied = true;
+    }
+    overlap.renewal = cutoff === null ? "already_ending" : "stopped";
+  }
+
+  // An authenticated buyer can resume the same order even after closing the
+  // Stripe tab. Looking up an open session here never expires or replaces it.
+  async recoverPendingCheckout(userId: string, provider: MonthlyProvider, { attachedOnly = false } = {}) {
+    const findOrder = async (a: Account) => {
+      const now = this.clock().getTime();
+      if ((attachedOnly && (a.renewalRecoveryAt ?? 0) > now) || access(a, now / 1000)) return null;
+      const eligible = Object.values(a.signups).filter(s => {
+        const sub = s.subscriptionId ? a.contracts[s.subscriptionId] : undefined;
+        return (sub ? examAccessEnd(a, sub) : s.examEndAt ?? Infinity) > now / 1000;
+      });
+      const signup = (attachedOnly ? undefined : eligible.find(s => s.state === "pending" && !(Date.parse(s.preparingUntil ?? "") > now)))
+        ?? eligible.find(s => {
+          const contract = s.subscriptionId ? a.contracts[s.subscriptionId] : undefined;
+          return s.state === "attached" && contract && !terminal(contract.status);
+        });
+      return signup && a.customer?.id ? { signup, customerId: a.customer.id } : null;
+    };
+    let order = await this.tx(userId, findOrder, true);
+    if (order && attachedOnly) {
+      // Recheck under the account lock before contacting Stripe. A page reload
+      // or a concurrent request can only use the same member's cooldown.
+      order = await this.tx(userId, async a => {
+        const current = await findOrder(a);
+        if (current) a.renewalRecoveryAt = this.clock().getTime() + renewalRecoveryCooldownMs;
+        return current;
+      });
+    }
+    if (!order) return null;
+    if (order.signup.state === "attached") {
+      try {
+        const status = await this.confirmCheckout(userId, order.signup.id, provider);
+        if (status.purchase?.status === "paid") return this.checkoutReturn(order.signup.id);
+      } catch (error) {
+        if (!(error instanceof BillingError) || error.code !== "purchase_check_unavailable") throw error;
+      }
+      return null;
+    }
+    const session = await provider.checkoutSession(order.customerId, order.signup);
+    return session?.status === "complete" ? this.resumeCheckout(userId, order.signup.id, provider, session) : null;
+  }
+
+  private async resumeCheckout(userId: string, orderId: string, provider: MonthlyProvider,
+    verifiedSession?: NonNullable<Awaited<ReturnType<MonthlyProvider["checkoutSession"]>>>) {
+    try {
+      await this.confirmCheckout(userId, orderId, provider, verifiedSession);
+    } catch (error) {
+      // Keep the existing order available for confirmation during a provider delay.
+      if (!(error instanceof BillingError) || error.code !== "purchase_check_unavailable") throw error;
+    }
+    return this.checkoutReturn(orderId);
+  }
+
+  private checkoutReturn(orderId: string) {
+    return { orderId, url: `/billing/success?order=${encodeURIComponent(orderId)}`, recovered: true as const };
+  }
+
+  async confirmCheckout(userId: string, orderId: string, provider: MonthlyProvider,
+    verifiedSession?: NonNullable<Awaited<ReturnType<MonthlyProvider["checkoutSession"]>>>) {
+    const saved = await this.status(userId, orderId);
+    if (saved.purchase?.status !== "pending" && !(saved.purchase?.status === "paid" && saved.purchase.examEndPending)) return saved;
+    const order = await this.tx(userId, async a => {
+      const signup = a.signups[orderId];
+      const sub = signup?.subscriptionId ? a.contracts[signup.subscriptionId] : undefined;
+      return signup && a.customer?.id ? { signup, customerId: a.customer.id, cutoff: sub ? examAccessEnd(a, sub) : signup.examEndAt ?? Infinity } : null;
+    }, true);
+    if (!order) return saved;
+    const { signup, customerId, cutoff } = order;
+    try {
+      const session = verifiedSession ?? await provider.checkoutSession(customerId, signup);
+      if (!session || session.status === "open") return this.status(userId, orderId);
+      if (session.status === "complete" && !session.subscriptionId) return this.status(userId, orderId);
+      // Close an overdue order before an existing trial-end job could charge it.
+      if (cutoff <= this.clock().getTime() / 1000) {
+        await this.reconcileExamEnd(userId, orderId, provider);
+      } else {
+        await this.observeCustomer(userId, provider, { customerId, sessionId: session.id, subscriptionIds: [], invoiceIds: [] });
+        await this.finishObservation(userId, provider);
+      }
+    } catch {
+      // A provider failure must not hide access just saved by a concurrent notification.
+      const status = await this.status(userId, orderId);
+      if (status.purchase?.status === "pending") throw new BillingError("purchase_check_unavailable", 503);
+      return status;
+    }
+    return this.status(userId, orderId);
+  }
+
+  private async observeCustomer(userId: string, provider: MonthlyProvider, target: Target, event?: { id: string; digest: string }) {
+    const revision = (a: Account) => JSON.stringify([a.events, a.signups, a.contracts, a.invoices, a.payments, a.renewalStopJobs, a.trialEndJobs]);
     const alreadyProcessed = (a: Account) => {
       if (a.customer?.id !== target.customerId) problem("customer_conflict");
       assertPolicyReady(a);
-      if (!a.events[event.id]) return false;
-      if (a.events[event.id] !== digest) throw new BillingError("event_conflict", 400);
+      if (!event || !a.events[event.id]) return false;
+      if (a.events[event.id] !== event.digest) throw new BillingError("event_conflict", 400);
       return true;
     };
     let result: "duplicate" | "processed" | undefined;
@@ -461,22 +675,19 @@ export class MonthlyService {
         // Re-fetch after a concurrent commit so an old Stripe response cannot
         // overwrite a newer contract snapshot.
         if (revision(a) !== before) return undefined;
-        return this.applyObservation(a, observation, target.customerId, event.id, digest);
+        return this.applyObservation(a, observation, target.customerId, event);
       });
     }
     if (!result) problem("subscription_observation_conflict");
-    // Dispute revocation is durable BEFORE the provider write. Refunds create no stop intent.
-    await this.flushRenewalStops(userId, provider);
-    await this.flushTrialEnds(userId, provider);
-    await this.afterReceive?.(userId);
     return result;
   }
-  private async applyObservation(a: Account, observation: Observation, customerId: string, eventId: string, digest: string) {
+  private async applyObservation(a: Account, observation: Observation, customerId: string, event?: { id: string; digest: string }) {
     for (const current of observation.contracts) {
       const signup = a.signups[current.signupId];
       if (!signup || current.sourceInstance !== a.sourceInstance || current.customerId !== customerId
         || current.terms !== signup.terms || current.amount !== signup.amount || current.priceId !== signup.priceId
-        || signup.subscriptionId && signup.subscriptionId !== current.id) problem("subscription_owner_mismatch");
+        || signup.subscriptionId && signup.subscriptionId !== current.id
+        || current.examCancelAt !== undefined && current.examCancelAt !== signup.examEndAt) problem("subscription_owner_mismatch");
       const old = a.contracts[current.id];
       if (old && (old.customerId !== current.customerId || old.signupId !== current.signupId)) problem("subscription_identity_conflict");
       // Cancellation is terminal. A late observation never resurrects an old contract.
@@ -487,10 +698,13 @@ export class MonthlyService {
       // One free trial per card: a card that already started a trial on another account is charged now.
       if (current.status === "trialing" && trialCard && !old?.trialRevoked) {
         if (await this.store.trialCardOwner(trialCard, this.config.mode, a.userId)) {
-          a.contracts[current.id].trialRevoked = true; (a.trialEndJobs ??= {})[current.id] ??= eventId;
+          a.contracts[current.id].trialRevoked = true; (a.trialEndJobs ??= {})[current.id] ??= event?.id ?? `reconcile-${current.id}`;
         } else (a.trialCards ??= {})[trialCard] ??= current.id;
       }
       signup.subscriptionId = current.id; signup.state = "attached";
+      if (!current.memberEnding && signup.examEndAt && terminal(current.status) && (current.examCancelAt || !signup.examEndApplied)) signup.examEndEnforced = true;
+      if (current.memberEnding || current.examCancelAt !== undefined || signup.examEndAt && terminal(current.status)) signup.examEndApplied = true;
+      if (terminal(current.status) && a.trialEndJobs) delete a.trialEndJobs[current.id];
     }
     const session = observation.session;
     if (session) {
@@ -523,17 +737,48 @@ export class MonthlyService {
     }
     for (const invoice of observation.invoices) {
       const sub = a.contracts[invoice.subscriptionId];
-      if (!sub || invoice.customerId !== customerId || invoice.priceId !== sub.priceId || invoice.amount !== sub.amount
+      const partialExamCycle = sub && invoice.examFinalCycle && invoice.periodEnd === a.signups[sub.signupId]?.examEndAt
+        && invoice.amount > 0 && invoice.amount < sub.amount;
+      if (!sub || invoice.customerId !== customerId || invoice.priceId !== sub.priceId || invoice.amount !== sub.amount && !partialExamCycle
         || invoice.periodStart >= invoice.periodEnd) problem("invoice_owner_mismatch");
       const old = a.invoices[invoice.id];
+      const signup = a.signups[sub.signupId];
       if (old && (old.subscriptionId !== invoice.subscriptionId || old.amount !== invoice.amount
         || old.periodStart !== invoice.periodStart || old.periodEnd !== invoice.periodEnd)) problem("invoice_identity_conflict");
       const canonical = (value: Invoice) => JSON.stringify([...value.payments].sort((a, b) => a.id.localeCompare(b.id)).map(p => [p.id, p.paymentId, p.amount]));
-      if (old?.paid && invoice.paid && canonical(old) !== canonical(invoice)) problem("invoice_allocation_changed");
-      if (invoice.paid && (invoice.payments.reduce((sum, p) => sum + p.amount, 0) !== invoice.amount
+      const sameDebit = (left: Invoice["carryover"], right: Invoice["carryover"]) =>
+        left?.amount === right?.amount && left?.transactionId === right?.transactionId;
+      if (old?.paid && invoice.paid && (canonical(old) !== canonical(invoice) || old.customerCredit !== invoice.customerCredit
+        || !sameDebit(old.deferredDebit, invoice.deferredDebit) || !sameDebit(old.carryover, invoice.carryover)
+        || !!(old.examWriteOff || old.deferredBalance) !== !!invoice.examWriteOff))
+        problem("invoice_allocation_changed");
+      if (invoice.examWriteOff) {
+        if (!partialExamCycle || !invoice.paid || invoice.payments.length || invoice.amount >= stripeMinimumYenCharge)
+          problem("unsupported_invoice_balance");
+      }
+      if (partialExamCycle && invoice.amount < stripeMinimumYenCharge &&
+        (invoice.examWriteOff && !old?.examWriteOff || !invoice.paid && !invoice.examWaived && !old?.paid && terminal(sub.status))) {
+        const jobs = signup.examWriteOffJobs ??= [];
+        if (!jobs.includes(invoice.id)) jobs.push(invoice.id);
+      }
+      if (invoice.deferredDebit && (!invoice.paid || !invoice.customerCredit || invoice.carryover || invoice.examWriteOff
+        || invoice.deferredDebit.amount < 1 || invoice.deferredDebit.amount >= stripeMinimumYenCharge || invoiceCashDue(invoice) !== 0))
+        problem("unsupported_invoice_balance");
+      if (invoice.paid && !invoice.examWriteOff && (invoice.payments.reduce((sum, p) => sum + p.amount, 0) !== invoiceCashDue(invoice)
         || invoice.payments.some(p => !a.payments[p.paymentId]))) problem("invoice_payment_missing");
       // A later failure event cannot erase a previously verified paid invoice.
       a.invoices[invoice.id] = old?.paid && !invoice.paid ? old : invoice;
+    }
+    const debits = new Map(Object.values(a.invoices).filter(i => i.deferredDebit).map(i => [i.deferredDebit!.transactionId, i]));
+    const collectedDebits = new Set<string>();
+    for (const invoice of Object.values(a.invoices)) {
+      if (!invoice.carryover || !invoice.paid) continue;
+      const { transactionId, amount } = invoice.carryover;
+      const origin = debits.get(transactionId);
+      const legacy = !origin && Object.values(a.invoices).some(i => i.deferredBalance === transactionId);
+      if (collectedDebits.has(transactionId) || !legacy && (!origin || origin.subscriptionId !== invoice.subscriptionId
+        || origin.periodEnd > invoice.periodStart || origin.deferredDebit?.amount !== amount)) problem("unsupported_invoice_balance");
+      collectedDebits.add(transactionId);
     }
     const allocations = new Set<string>(), totals = new Map<string, number>();
     for (const i of Object.values(a.invoices).filter(i => i.paid)) for (const allocation of i.payments) {
@@ -544,13 +789,21 @@ export class MonthlyService {
     for (const [paymentId, sum] of totals) if (!a.payments[paymentId] || sum > a.payments[paymentId].amount) problem("payment_allocation_overflow");
     for (const sub of Object.values(a.contracts)) {
       const invoices = Object.values(a.invoices).filter(i => i.subscriptionId === sub.id);
+      const signup = a.signups[sub.signupId];
+      const cutoff = sub.memberEnding ? examAccessEnd(a, sub) : signup?.examEndEnforced ? signup.examEndAt ?? Infinity : examAccessEnd(a, sub);
+      if (signup && cutoff !== Infinity) {
+        for (const invoice of invoices) {
+          if (invoice.paid && invoice.payments.length && invoice.periodStart >= cutoff && !fullyRefunded(a, invoice))
+            (signup.examChargeReviews ??= {})[invoice.id] ??= "pending";
+        }
+      }
       const disputed = invoices.some(i => i.payments.some(p => Object.values(a.payments[p.paymentId]?.disputes ?? {}).some(d => d !== "won")));
       if (disputed) { sub.renewalBlocked = true; sub.renewalBlockReason = "dispute"; }
       if (sub.renewalBlocked && !terminal(sub.status) && !sub.cancelAtPeriodEnd) {
-        a.renewalStopJobs[sub.id] ??= { token: eventId, reason: "dispute" };
+        a.renewalStopJobs[sub.id] ??= { token: event?.id ?? `reconcile-${sub.id}`, reason: "dispute" };
       } else if (terminal(sub.status) || sub.cancelAtPeriodEnd) delete a.renewalStopJobs[sub.id];
     }
-    a.events[eventId] = digest;
+    if (event) a.events[event.id] = event.digest;
     return "processed" as const;
   }
 
@@ -560,6 +813,178 @@ export class MonthlyService {
       await provider.endTrial(subId, token);
       await this.tx(userId, async a => { if (a.trialEndJobs?.[subId] === token) delete a.trialEndJobs[subId]; });
     }
+  }
+  private async flushExamEnds(userId: string, provider: MonthlyProvider, overdue: boolean) {
+    const pending = await this.tx(userId, async a => Object.values(a.contracts).flatMap(sub => {
+      const signup = a.signups[sub.signupId];
+      if (!signup || terminal(sub.status)) return [];
+      if (sub.memberEnding) return overdue && sub.memberEnding.kind === "exam" && examAccessEnd(a, sub) <= this.clock().getTime() / 1000 ? [signup.id] : [];
+      return signup.examEndAt && !signup.examEndApplied
+        && overdue === (signup.examEndAt <= this.clock().getTime() / 1000)
+        && (overdue || !sub.renewalBlocked && !sub.cancelAtPeriodEnd) ? [signup.id] : [];
+    }), true);
+    for (const signupId of pending) await this.reconcileExamEnd(userId, signupId, provider);
+  }
+
+  private async flushExamChargeReviews(userId: string, onlyOrder?: string) {
+    if (!this.reviewExamCharge) return;
+    const notify = this.reviewExamCharge;
+    const orders = await this.tx(userId, async a => Object.values(a.signups).filter(s => !onlyOrder || onlyOrder === s.id)
+      .flatMap(s => Object.entries(s.examChargeReviews ?? {}).filter(([, state]) => state === "pending")
+        .map(([id]) => ({ order: s.id, id, refunded: !!a.invoices[id] && fullyRefunded(a, a.invoices[id]) }))), true);
+    for (const { order, id, refunded } of orders) {
+      if (refunded || await notify(order, id)) {
+        await this.tx(userId, async a => { a.signups[order].examChargeReviews![id] = "notified"; });
+      }
+    }
+  }
+
+  private async flushExamWriteOffs(userId: string, provider: MonthlyProvider, onlyOrder?: string) {
+    if (!provider.clearSmallExamBalance) return;
+    const jobs = await this.tx(userId, async a => Object.values(a.signups).filter(s => !onlyOrder || onlyOrder === s.id)
+      .flatMap(s => (s.examWriteOffJobs ?? []).map(id => ({ order: s.id, invoice: a.invoices[id] }))), true);
+    for (const { order, invoice } of jobs) {
+      try {
+        await provider.clearSmallExamBalance(invoice.customerId, invoice);
+        await this.tx(userId, async a => {
+          const signup = a.signups[order];
+          signup.examWriteOffJobs = signup.examWriteOffJobs?.filter(id => id !== invoice.id);
+        });
+      } catch {
+        console.warn("billing_exam_writeoff_pending", { orderId: order, invoiceId: invoice?.id });
+        await this.reviewPurchase?.(order, "exam_writeoff").catch(() => {});
+      }
+    }
+  }
+
+  async runExamEndCheck(userId: string, orderId: string, provider: MonthlyProvider) {
+    const now = Math.floor(this.clock().getTime() / 1000);
+    const claimed = await this.tx(userId, async a => {
+      const s = a.signups[orderId];
+      await this.stopAppStoreOverlap(a, s, provider);
+      if (!s || (s.examEndCheckAt ?? 0) > now) return false;
+      s.examEndCheckAt = now + 600;
+      return true;
+    });
+    if (!claimed) return;
+    const result = await this.reconcileExamEnd(userId, orderId, provider);
+    await this.flushExamChargeReviews(userId, orderId);
+    await this.tx(userId, async a => {
+      const s = a.signups[orderId];
+      if (s?.examEndCheckAt === now + 600) {
+        const sub = s.subscriptionId ? a.contracts[s.subscriptionId] : undefined;
+        const examEnd = sub?.memberEnding?.kind === "exam" ? sub.memberEnding.at : s.examEndAt;
+        s.examEndCheckAt = Math.min(now + 2700, examEnd && examEnd > now ? examEnd : Infinity);
+      }
+    });
+    if (result === "conflict") problem("exam_end_conflict");
+  }
+
+  async reconcileExamEnd(userId: string, signupId: string, provider: MonthlyProvider) {
+    const { signup, customerId, contract } = await this.tx(userId, async a => {
+      assertPolicyReady(a);
+      const signup = a.signups[signupId];
+      return { signup, customerId: a.customer?.id, contract: signup?.subscriptionId ? a.contracts[signup.subscriptionId] : undefined };
+    }, true);
+    if (!signup || !customerId) return;
+    const now = this.clock().getTime() / 1000;
+    if (contract?.memberEnding) {
+      if (contract.memberEnding.kind === "exam" && contract.memberEnding.at <= now && !terminal(contract.status)) {
+        const end = provider.endMemberExam?.bind(provider);
+        if (!end) problem("exam_end_unavailable");
+        await this.tx(userId, async () => end(contract.id, customerId, signup, this.clock().getTime() / 1000), true);
+        await this.observeCustomer(userId, provider, { customerId, subscriptionIds: [contract.id], invoiceIds: [] });
+      }
+      await this.flushExamWriteOffs(userId, provider, signupId);
+      await this.flushExamChargeReviews(userId, signupId);
+      return;
+    }
+    if (!signup.examEndAt) return;
+    if (contract && terminal(contract.status)) {
+      if (signup.examEndAt <= now && (signup.examEndEnforced || contract.examCancelAt)) {
+        try {
+          await this.observeCustomer(userId, provider, { customerId, subscriptionIds: [contract.id], invoiceIds: [] });
+          await this.tx(userId, async a => { a.signups[signupId].examFinalChecked = true; });
+        } catch (error) {
+          await this.reviewPurchase?.(signupId, "exam_writeoff").catch(() => {});
+          throw error;
+        }
+      }
+      await this.flushExamWriteOffs(userId, provider, signupId);
+      return;
+    }
+    if (signup.examEndApplied && (signup.examEndAt > now || !contract?.examCancelAt)) return;
+    const session = signup.subscriptionId ? null : await provider.checkoutSession(customerId, signup);
+    const subscriptionId = signup.subscriptionId ?? (session?.status === "complete" ? session.subscriptionId : undefined);
+    if (!subscriptionId) {
+      const expired = Math.min(signup.examEndAt, Date.parse(signup.createdAt) / 1000 + staleSignupMs / 1000) <= now;
+      if (session?.status === "open" && expired) {
+        await provider.expireCheckout(session.id);
+        await this.closeSignup(userId, signupId, session.id);
+        return;
+      }
+      if (session?.status === "expired" || !session && expired && !signup.sessionId) await this.closeSignup(userId, signupId, session?.id ?? null);
+      if (!session && expired && signup.sessionId) problem("checkout_conflict");
+      return;
+    }
+    if (!provider.scheduleExamEnd) problem("exam_end_unavailable");
+    const target = { customerId, subscriptionIds: [subscriptionId], invoiceIds: [], ...(session ? { sessionId: session.id } : {}) };
+    // Before a future cancellation, enforce trial/dispute rules using verified payment facts.
+    if (!contract && signup.examEndAt > now) {
+      await this.observeCustomer(userId, provider, target);
+      await this.flushRenewalStops(userId, provider);
+      await this.flushTrialEnds(userId, provider);
+    }
+    const stillScheduled = signup.examEndApplied && await this.observeCustomer(userId, provider, target).then(() =>
+      this.tx(userId, async a => {
+        const current = a.contracts[subscriptionId];
+        return current && !terminal(current.status) && current.examCancelAt === signup.examEndAt;
+      }, true));
+    if (!signup.examEndApplied || stillScheduled) {
+      const schedule = provider.scheduleExamEnd.bind(provider);
+      const result = await this.tx(userId, async () => schedule(subscriptionId, customerId, signup, now), true);
+      if (result === "conflict") {
+        console.warn("billing_exam_end_conflict", { orderId: signupId });
+        return "conflict" as const;
+      }
+      if (result === "ended" && signup.examEndAt <= now) await this.tx(userId, async a => {
+        a.signups[signupId].examEndEnforced = true;
+      });
+    }
+    if (!signup.examEndApplied || stillScheduled) await this.observeCustomer(userId, provider, target);
+    await this.flushExamWriteOffs(userId, provider, signupId);
+    await this.flushExamChargeReviews(userId, signupId);
+  }
+
+  async recoverElapsedExamEnds(userId: string, provider: MonthlyProvider, includeVerifiedMembers = false) {
+    const now = this.clock().getTime() / 1000;
+    const elapsedOrders = (a: Account) => {
+      const endAt = (s: Signup) => {
+        const sub = s.subscriptionId ? a.contracts[s.subscriptionId] : undefined;
+        if (!sub?.memberEnding) return s.examEndAt ?? Infinity;
+        return sub.memberEnding.kind === "exam" ? sub.memberEnding.at : Infinity;
+      };
+      const orders = Object.values(a.signups).filter(s => endAt(s) <= now)
+        .sort((left, right) => endAt(right) - endAt(left));
+      let checkedLatest = false;
+      return orders.filter(signup => {
+        if (signup.state === "pending") return !!signup.sessionId;
+        const sub = signup.subscriptionId ? a.contracts[signup.subscriptionId] : undefined;
+        if (!sub) return false;
+        if (sub.memberEnding) return sub.memberEnding.kind === "exam" && !sub.cancelAtPeriodEnd && !terminal(sub.status);
+        if (!terminal(sub.status)) return !signup.examEndApplied || !!sub.examCancelAt;
+        if (!signup.examEndEnforced && !sub.examCancelAt) return false;
+        const check = includeVerifiedMembers && !checkedLatest || !signup.examFinalChecked || !!signup.examWriteOffJobs?.length;
+        checkedLatest = true;
+        return check;
+      }).map(signup => ({ userId: a.userId, orderId: signup.id }));
+    };
+    const orders = includeVerifiedMembers
+      ? await this.purchaseTx(userId, (owner, members, verified) => members
+        .filter(member => member === owner || verified?.has(userId) && verified.has(member.userId))
+        .flatMap(elapsedOrders))
+      : await this.tx(userId, async a => elapsedOrders(a), true);
+    for (const order of orders) await this.reconcileExamEnd(order.userId, order.orderId, provider);
   }
   async flushRenewalStops(userId: string, provider: MonthlyProvider) {
     const jobs = await this.tx(userId, async a => { assertPolicyReady(a); return structuredClone(a.renewalStopJobs); }, true);
@@ -579,16 +1004,32 @@ export class MonthlyService {
       if (orderId && !a.signups[orderId]) throw new BillingError("purchase_not_found", 404);
       const paid = access(a, this.clock().getTime() / 1000);
       const signup = orderId ? a.signups[orderId] : null;
-      const sub = signup?.subscriptionId ? a.contracts[signup.subscriptionId] : Object.values(a.contracts).find(c => !terminal(c.status));
+      const sub = signup?.subscriptionId ? a.contracts[signup.subscriptionId] : orderId ? undefined
+        : (paid ? a.contracts[paid.subscriptionId] : undefined) ?? Object.values(a.contracts).find(c => !terminal(c.status));
+      const activeSignup = sub && a.signups[sub.signupId];
+      const cutoff = sub ? examAccessEnd(a, sub) : Infinity;
+      const examDate = cutoff === Infinity ? null : examDateBeforeEnd(cutoff);
+      const periodEnd = sub ? new Date(sub.periodEnd * 1000).toISOString() : null;
+      const management: SubscriptionManagement | null = sub && activeSignup && periodEnd
+        && ["active", "trialing", "past_due"].includes(sub.status) && Math.min(sub.periodEnd, cutoff) > this.clock().getTime() / 1000
+        ? { orderId: activeSignup.id, periodEnd, examDate, cancelAtPeriodEnd: sub.cancelAtPeriodEnd && !examDate } : null;
       const current = sub ? Object.values(a.invoices).filter(i => i.subscriptionId === sub.id && within(i.periodStart, i.periodEnd, this.clock().getTime() / 1000)) : [];
       const refunded = current.some(i => fullyRefunded(a, i));
       const suspended = !!sub && (disputeHold(a, sub.id) || current.some(i => held(a, i)));
       const purchaseStatus = signup?.state === "expired" || signup?.state === "failed" ? "expired" : sub && paid?.subscriptionId === sub.id ? "paid"
         : refunded ? "refunded" : suspended ? "suspended" : sub && terminal(sub.status) ? "expired" : "pending";
       return { billingModel: "subscription" as const, entitled: !!paid, transition: false, expiresAt: paid ? new Date(paid.periodEnd * 1000).toISOString() : null,
+        trialDays: firstContract(a) ? this.config.trialDays : 0,
+        examPlan: paid?.subscriptionId === sub?.id && activeSignup?.exam && examDate
+          ? { exam: activeSignup.exam, examDate, selectedAt: activeSignup.createdAt } : null,
+        management,
         subscription: sub ? { status: sub.status, cancelAtPeriodEnd: sub.cancelAtPeriodEnd, renewalBlocked: sub.renewalBlocked,
-          periodEnd: new Date(sub.periodEnd * 1000).toISOString() } : null, canManage: !!a.customer?.id,
+          periodEnd: new Date(sub.periodEnd * 1000).toISOString(),
+          ...(sub.memberEnding?.kind === "exam" && examDate || sub.examCancelAt ? { examCancelAt: new Date(cutoff * 1000).toISOString() } : {}) } : null,
+        canManage: !!a.customer?.id,
         purchase: signup ? { id: signup.id, status: purchaseStatus,
+          ...(signup.returnTo && Date.parse(signup.createdAt) + 48 * 3600000 > this.clock().getTime() ? { returnTo: safeQuizReturn(signup.returnTo) } : {}),
+          ...(signup.examEndAt && !signup.examEndApplied ? { examEndPending: true as const } : {}),
           expiresAt: paid && sub && paid.subscriptionId === sub.id ? new Date(paid.periodEnd * 1000).toISOString() : null, amount: signup.amount } : null };
     }, true);
   }

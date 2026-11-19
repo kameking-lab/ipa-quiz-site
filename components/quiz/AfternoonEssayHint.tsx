@@ -17,7 +17,7 @@ export function AfternoonEssayHint({ exam }: { exam: ExamCode }) {
 
   return (
     <aside
-      aria-label={`${examLabel(exam)} の午後II論述 AI 採点`}
+      aria-label={`${examLabel(exam)} の論文対策`}
       className="mt-4 flex items-start gap-3 rounded-2xl border border-sky-300/70 bg-sky-50/60 p-4 dark:border-sky-800/60 dark:bg-sky-950/30 sm:p-5"
     >
       <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-sky-100 text-sky-700 dark:bg-sky-900/60 dark:text-sky-300">
@@ -28,14 +28,13 @@ export function AfternoonEssayHint({ exam }: { exam: ExamCode }) {
           {examLabel(exam)} の午後II論述を練習する
         </p>
         <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-          書いた論述を「適合度・論理性・具体性・業種事例」の 4
-          軸でフィードバック。※AI 採点は参考評価です。
+          練習問題と設問別の解答骨子を確認できます。
         </p>
         <Link
           href="/essay"
           className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-sky-700 hover:underline dark:text-sky-400"
         >
-          午後論述 AI 添削を試す
+          論述の練習問題を見る
           <ArrowRight className="h-3.5 w-3.5" />
         </Link>
       </div>

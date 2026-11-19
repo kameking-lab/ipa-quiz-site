@@ -83,9 +83,16 @@ async function fetchSubscriber(appUserId: string, apiKey: string, transport: typ
 export async function appStorePurchaseStatus(userId: string, requireVerification = false): Promise<AppStorePurchaseState> {
   if (!requireVerification && !mobileConfig().enabled) return null;
   const c = requireMobileReady();
-  const { appUserId } = await ensureRevenueCatAccount(userId);
-  const body = await fetchSubscriber(appUserId, c.apiKey, fetch);
-  return body === null ? null : appStorePurchaseState(body, c, Date.now());
+  for (let attempt = 0; attempt < 4; attempt++) {
+    const account = await ensureRevenueCatAccount(userId);
+    const body = await fetchSubscriber(account.appUserId, c.apiKey, fetch), now = Date.now();
+    const state = body === null ? null : appStorePurchaseState(body, c, now);
+    if (state !== "active") return state;
+    // Expose newly approved access before returning an active purchase, even
+    // if Apple's notification has yet to reach RevenueCat's webhook.
+    if (await saveRevenueCatSnapshot(account, body, c, now)) return state;
+  }
+  throw new BillingError("mobile_verification_unavailable", 503);
 }
 export async function appStorePurchaseCheck(userId: string, activeCode = "app_store_subscription_exists") {
   const state = await appStorePurchaseStatus(userId);
@@ -99,6 +106,21 @@ export async function ensureRevenueCatAccount(userId: string) {
   if (rows[0]?.appUserId !== appUserId) throw new BillingError("mobile_identity_conflict", 503);
   return rows[0];
 }
+async function saveRevenueCatSnapshot(before: AccountRow, body: unknown, c: StoreConfig, now: number) {
+  const productionExpiresAt = body ? verifiedExpiration(body, { ...c, environment: "PRODUCTION" }, now) : null;
+  const sandboxExpiresAt = body ? verifiedExpiration(body, { ...c, environment: "SANDBOX" }, now) : null;
+  const expiresAt = body ? verifiedExpiration(body, c, now) : null;
+  const checkedAt = new Date(Math.max(now, (before.checkedAt?.getTime() ?? 0) + 1));
+  // Fence concurrent refreshes, including two that finish in the same ms.
+  const [saved] = await prisma.$queryRawUnsafe<AccountRow[]>(`UPDATE "MobileRevenueCatAccount"
+    SET "expiresAt"=$2, "checkedAt"=$3, "productionExpiresAt"=$4, "sandboxExpiresAt"=$5
+    WHERE "appUserId"=$1 AND "userId"=$7 AND "checkedAt" IS NOT DISTINCT FROM $6::timestamptz
+    RETURNING "userId","appUserId","expiresAt","checkedAt"`, before.appUserId, expiresAt ? new Date(expiresAt) : null, checkedAt,
+  productionExpiresAt ? new Date(productionExpiresAt) : null, sandboxExpiresAt ? new Date(sandboxExpiresAt) : null, before.checkedAt, before.userId);
+  if (saved) await auditDuplicatePurchases(saved.userId);
+  return saved;
+}
+
 /** Retry if another request saved a snapshot while RevenueCat was responding. */
 export async function refreshRevenueCat(appUserId: string, transport: typeof fetch = fetch) {
   const c = requireMobileReady();
@@ -106,21 +128,8 @@ export async function refreshRevenueCat(appUserId: string, transport: typeof fet
     const [before] = await prisma.$queryRawUnsafe<AccountRow[]>('SELECT * FROM "MobileRevenueCatAccount" WHERE "appUserId"=$1', appUserId);
     if (!before) return null;
     const body = await fetchSubscriber(appUserId, c.apiKey, transport), now = Date.now();
-    const productionExpiresAt = body ? verifiedExpiration(body,{...c,environment:"PRODUCTION"},now) : null;
-    const sandboxExpiresAt = body ? verifiedExpiration(body,{...c,environment:"SANDBOX"},now) : null;
-    const expiresAt = body ? verifiedExpiration(body,c,now) : null;
-    const checkedAt = new Date(Math.max(now, (before.checkedAt?.getTime() ?? 0) + 1));
-    // Both store environments are verified separately. The timestamp also
-    // fences concurrent refreshes, including two that finish in the same ms.
-    const [saved] = await prisma.$queryRawUnsafe<AccountRow[]>(`UPDATE "MobileRevenueCatAccount"
-      SET "expiresAt"=$2, "checkedAt"=$3, "productionExpiresAt"=$4, "sandboxExpiresAt"=$5
-      WHERE "appUserId"=$1 AND "userId"=$7 AND "checkedAt" IS NOT DISTINCT FROM $6::timestamptz
-      RETURNING "userId","appUserId","expiresAt","checkedAt"`, appUserId, expiresAt ? new Date(expiresAt) : null, checkedAt,
-    productionExpiresAt ? new Date(productionExpiresAt) : null, sandboxExpiresAt ? new Date(sandboxExpiresAt) : null, before.checkedAt, before.userId);
-    if (saved) {
-      await auditDuplicatePurchases(saved.userId);
-      return saved;
-    }
+    const saved = await saveRevenueCatSnapshot(before, body, c, now);
+    if (saved) return saved;
   }
   throw new BillingError("mobile_verification_unavailable", 503);
 }

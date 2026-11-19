@@ -24,6 +24,13 @@ export const SA_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "UMLにおける可視性修飾子は、クラスのメンバ（属性や操作）が外部からどのようにアクセスできるかを示すものです。公開可視性（public）は、そのメンバがクラスの外部から自由にアクセス可能であることを意味します。問題文では、クラスPの操作のうち、公開可視性を持つものを問われており、正解が「操作A」であることから、UMLの表記規則において「操作A」がpublicとして定義されていると推測されます。\n\nアは、全ての操作が公開可視性を持つとは限らないため不適切です。クラス設計においては、カプセル化の原則に基づき、内部実装の詳細を隠蔽するためにprivateやprotectedといった可視性修飾子が使われるのが一般的です。エも同様に、操作Cが必ずしもpublicであるとは言えません。ウは、操作Bがpublicである可能性もありますが、提示された情報からは「操作A」のみがpublicであると判断できるため、より限定的な「操作A」が正解となります。",
+    "choiceExplanations": {
+      "ア": "三つの操作にそれぞれ異なる可視性記号が付いています。全てが公開であれば、各操作の先頭に＋が付きます。",
+      "イ": "UMLの操作欄で＋は公開（public）を表します。図で＋が付いているのは操作Aで、外から参照できます。",
+      "ウ": "操作Bの－は非公開（private）を表します。クラス外に一般公開する可視性を指定する記号は＋です。",
+      "エ": "操作Cの＃は保護（protected）を表します。派生クラスなどから利用できる可視性であり、一般公開の＋とは違います。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +55,7 @@ export const SA_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "最終的な論理データモデルは、どの作成アプローチ（トップダウン、ボトムアップ）を用いたとしても、データの一貫性と整合性を保つために正規化されている必要があります。また、業務遂行に必要な全ての属性（データ項目）を漏れなく備えていることが、実用的なデータモデルの条件です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +80,7 @@ export const SA_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "BPMNは、ビジネスプロセスを統一的なグラフィカルな記号とルールで表現できる標準表記法です。これにより、業務プロセスの現状やあるべき姿を関係者間で共通理解しやすくなり、コミュニケーションの円滑化に貢献します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +105,7 @@ export const SA_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "コミュニケーション図（旧コラボレーション図）は、オブジェクト指向設計で、特定の機能を実現するために複数のオブジェクトがどのような順序でメッセージを交換し、作業を分担するかを動的に表現するUML図です。これにより、機能要求に対するオブジェクト間の相互作用と役割分担を明確に記述できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +130,7 @@ export const SA_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "モジュール結合度を最も弱くする方法は、モジュール間で必要なデータ項目だけを引数として受け渡す「データ結合」です。これにより、各モジュールは他のモジュールの内部構造に依存せず、独立性が高まります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +155,7 @@ export const SA_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "DFD（Data Flow Diagram）は、システムや業務におけるデータの流れ、データの変換処理、データの保管場所、外部とのデータのやり取りをグラフィカルに表現する分析・設計技法です。したがって、その着目点はデータの流れにあります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +180,7 @@ export const SA_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "データ中心アプローチは、システム開発においてデータを最も重要な資源と捉え、企業全体のデータ資源を統合・一元管理することを目指します。これにより、データだけでなく、そのデータを更新・利用するプロセスの重複も排除し、全体最適化を図ります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +205,7 @@ export const SA_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "限界値分析では、処理の境界となる値とその近傍値をテストします。1ページ30件の帳票の場合、0件（最小値）、1件（最小値のすぐ上）、30件（最大値）、31件（最大値のすぐ上、ページ境界を超える値）のレコード件数をテストすることで、改ページ処理やヘッダ出力が正しく行われるかを確認できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +230,7 @@ export const SA_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "並列処理プログラミングは、一つのプログラムの処理内容を複数の部分に分割し、それを複数の処理装置（CPUコアなど）で同時に実行することで、単一の処理装置では困難な高速な処理を実現する技術です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +255,7 @@ export const SA_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ペアプログラミングは、アジャイル開発手法の一つで、2人のプログラマが1台のコンピュータを使い、一人がコーディングし、もう一人がレビューや設計サポートを行いながら、一つのプログラムを共同で開発します。これにより、品質向上、知識共有、バグの早期発見などの効果が得られます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +280,7 @@ export const SA_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "スパイラルモデルは、要件定義からテストまでの一連の工程を小さなサイクルで繰り返し、段階的にシステムを構築していく開発手法です。この反復的なアプローチにより、リスクの高い部分から開発を進め、未確定な要求を徐々に明確化できるため、要求が流動的なシステム開発に特に有効です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -287,7 +304,14 @@ export const SA_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
       "エ": "投資をしない"
     },
     "answer": "イ",
-    "explanation": "現在価値法は、将来のキャッシュフローを現在の価値に換算し、投資の収益性を評価する手法です。計算式は、各期間のキャッシュフローを(1+割引率)^期間乗で割り引いた現在価値の合計から初期投資額を差し引いた正味現在価値（NPV）を求めます。このNPVが最も大きいシナリオが、最も投資効果が大きいと判断されます。\n\n選択肢アは、計算の結果、正味現在価値がシナリオBよりも小さいため、最も投資効果が大きいとは言えません。選択肢ウは、シナリオBと比較して正味現在価値が低いため、より損失が大きいか、あるいは効果が小さいと判断されます。選択肢エは、投資をしない場合の初期投資額はゼロであり、将来のキャッシュフローも発生しないため、単純な比較では投資効果の判断が難しく、投資を行ってリターンを得る可能性を考慮すると、比較対象として優先度は低くなります。シナリオBは、計算の結果、他の投資シナリオと比較して最も高い正味現在価値を示し、投資効果が最大となります。",
+    "explanation": "n年目の回収額を1.05のn乗で割り、3年分を合計して初期投資220万円を引きます。正味現在価値はAが約－5.68万円、Bが約1.40万円、Cが約－2.14万円、投資なしが0万円です。割引率が正なら早く回収される金額の比重が高くなり、Bが最大です。",
+    "choiceExplanations": {
+      "ア": "Aは3年目の回収額が大きいため、割引の影響も大きくなります。回収額の現在価値から220万円を引くと約－5.68万円です。",
+      "イ": "初年度に120万円を回収し、割引される期間が短い分の割合が大きくなります。正味現在価値は約1.40万円で最大です。",
+      "ウ": "毎年80万円の回収額を年ごとに5％で割り引くと、合計は約217.86万円です。投資額を引くと約－2.14万円です。",
+      "エ": "投資しないと支出も回収もなく、正味現在価値は0万円です。Bは正味で約1.40万円を得られるので、Bが上回ります。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +336,7 @@ export const SA_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "BABOK (Business Analysis Body of Knowledge) は、ビジネスアナリシスに関する知識体系であり、「ビジネスアナリシスの計画とモニタリング」「引き出し」「要求アナリシス」「基礎コンピテンシ」など7つの知識エリアで構成されています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +361,7 @@ export const SA_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "非機能要件は、システムが「何をするか」（機能）ではなく、「どのようにするか」に関する要件です。システムの操作性（使いやすさ、ユーザビリティ）は、システムの品質特性の一つであり、ユーザーがシステムをいかに効率的かつ快適に利用できるかに関する重要な非機能要件です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +386,7 @@ export const SA_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "エ が正解です。\n\n経済産業省の「情報システム・モデル取引・契約書」では、請負型契約は「成果物」の定義が明確であることが重要視されます。システム開発においては、システム内部設計フェーズ以降で、具体的なプログラムやドキュメントといった「成果物」が明確になり、その品質や納期について契約を交わすことが現実的になります。システム結合フェーズでは、個別のプログラムを連携させる最終段階であり、請負契約によるリスク分担が効果を発揮しやすいフェーズと言えます。\n\nアは、システム化計画フェーズはまだ構想段階であり、請負契約で成果物を明確にするのが難しいため不適切です。イも同様に、要件定義フェーズで成果物の詳細が確定していないため、請負契約には早い段階と言えます。ウは、システム結合フェーズまで含んでいますが、要件定義フェーズからと範囲が広すぎるため、請負契約を推奨する範囲としては限定的すぎます。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +411,7 @@ export const SA_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "エンタープライズアーキテクチャにおける機能情報関連図（DFD）は、対象とする業務機能（プロセス）において、情報の発生源、到達点、処理、保管、そしてそれらの間を流れる情報（データフロー）を、統一的な記号で表現したものです。これにより、業務レベルのデータの流れと処理の関係を可視化します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +436,7 @@ export const SA_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "BCP（事業継続計画）策定における目標復旧時間（RTO: Recovery Time Objective）は、災害や障害発生時に、業務の停止が企業にとって許容できる最大限の時間を指します。企業はこのRTOの範囲内で業務を復旧させることを目標とします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +461,7 @@ export const SA_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "グリッドコンピューティングは、ネットワーク上に分散している様々な種類のコンピュータ資源（PCから大型コンピュータまで）を仮想的に一つに結合し、大規模な計算やデータ処理タスクを同時に実行することで、高速な処理能力を実現する方式です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +486,7 @@ export const SA_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "DLP（Digital Light Processing）プロジェクタは、テキサス・インスツルメンツ社が開発したDMD（Digital Micromirror Device）チップを使用し、微小な鏡に光源からの光を反射させて映像を生成・投影する動作方式をとります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +511,7 @@ export const SA_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "キャパシティプランニングは、将来のシステム利用量の変化を予測し、必要な処理能力（キャパシティ）を計画する活動です。システムに効率的に投資するため、将来の性能要件を満たしつつ、経済性（コスト）と拡張性を考慮した最適なシステム構成を決定します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +536,7 @@ export const SA_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "次数がnの関係Rにはn個の属性があります。射影はこれらの属性の部分集合を抽出する操作であり、各属性について「射影に含める」か「含めない」かの2つの選択肢があります。したがって、2のn乗（2ⁿ）通りの異なる射影が存在し、これには属性を全く含まない空の射影も含まれます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +561,7 @@ export const SA_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "SAN（Storage Area Network）は、磁気ディスク装置や磁気テープ装置などのストレージを、通常のLANとは独立した高速な専用ネットワーク（主にファイバチャネルやiSCSI）でサーバーと接続する方式です。これにより、ストレージへの高速なアクセスと柔軟な集中管理が可能になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +586,13 @@ export const SA_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "この問題は、既存の電話システムをIPネットワークに統合する際の接続構成における各装置の役割を問うものです。\n\n正解の根拠は、IPネットワークへの統合において、既存のPBX（構内交換機）がIPネットワークと、従来の電話機とを接続する役割を担います。PBXは、IPネットワークと従来の電話網を相互に接続し、内線通話や外線通話を制御する機能を持つことから、図中の「a」はPBXであると推測されます。次に、IPネットワークと外部の公衆網（PSTN）との間で音声データをIPパケットと電話信号との間で変換する装置が必要となり、これがVoIPゲートウェイの役割です。したがって、「c」はVoIPゲートウェイとなります。最後に、IPネットワークの外部との接続やルーティングを担うのはルータです。よって、「b」はルータが適切です。これらの役割分担から、「a: PBX / b: ルータ / c: VoIP ゲートウェイ」という組合せが最も妥当であり、選択肢アが正解となります。\n\n他の選択肢が誤りである理由を分析します。\nイは、PBX、ルータ、VoIPゲートウェイの順ですが、「b」がルータである点は合致するものの、「a」がPBX、「c」がVoIPゲートウェイとなるため、PBXとVoIPゲートウェイの配置が逆になっています。\nウは、VoIPゲートウェイ、PBX、ルータの順であり、PBXが「b」に配置されていますが、PBXは既存の内線網の親玉として機能するため、IPネットワークの入口付近である「a」に配置されるのが一般的です。\nエは、VoIPゲートウェイ、ルータ、PBXの順であり、PBXが「c」に配置されています。PBXはIPネットワークへの統合において、従来の内線網をIP化する起点となる装置であり、IPネットワークの終端に近い「c」に配置されるのは役割として不適切です。",
+    "choiceExplanations": {
+      "ア": "既存の電話機はPBXに接続します。VoIPゲートウェイで電話の信号をIP網で扱える形に変換し、ルータを通してIP網に送ります。",
+      "イ": "PBXの出力をルータでそのままIP網用に変換することはできません。PBXの次にはVoIPゲートウェイが必要です。",
+      "ウ": "既存の電話機をまとめて内線を交換する役割はPBXが担うので、電話機の次がPBXです。ゲートウェイはPBXとルータの間に置きます。",
+      "エ": "PBXは既存の電話機を収容します。IP網の手前に置くのは、VoIPゲートウェイから受け取ったIPパケットを転送するルータです。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +617,7 @@ export const SA_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "AES（Advanced Encryption Standard）は、米国標準技術局（NIST）によって制定された、共通鍵暗号方式の代表的なアルゴリズムです。共通鍵暗号方式では、暗号化と復号に同じ鍵を使用します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +642,7 @@ export const SA_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "CRL（Certificate Revocation List：証明書失効リスト）は、発行済みで有効期間中であるにもかかわらず、何らかの理由（秘密鍵の漏えいや利用者の退職など）で失効したデジタル証明書のシリアル番号を一覧にしたデータです。これにより、証明書利用者は提示された証明書が有効であるかを確認できます。CAは認証局、CPは証明書ポリシー、CPSは認証実施規程であり、失効した証明書の一覧ではありません。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sa_am2_qs.pdf",
     "license": "IPA-public"

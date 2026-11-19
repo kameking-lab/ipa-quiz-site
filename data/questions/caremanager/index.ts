@@ -1,18 +1,34 @@
+import { appendReplenishedQuestions } from "../published";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
+
 import y2024 from "@/data/qualification-staging/caremanager/2024.json";
+
 import y2025 from "@/data/qualification-staging/caremanager/2025.json";
 
+import y2023 from "./2023-annual.json";
+
+import remainder2023 from "./2023-annual-remainder.json";
+
+
 const KEYS: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ"];
+
 type Numbered = Record<"1" | "2" | "3" | "4" | "5", string>;
+
 interface Item {
   id: string; year: number; examDate: string; qNumber: number; lawAsOf: string;
   category: string; topicTags: string[]; question: string;
   choices: Numbered; requiredSelections: number; officialAnswerNumbers: number[]; summary: string;
   choiceExplanations: Numbered; lawSensitive: boolean;
   sourcePdfUrl: string; sourceAnswerUrls: string[]; sourceAttribution: string;
+  originalContent?: Question["originalContent"];
+  officialReferenceUrls?: string[];
+  lastUpdated?: string;
 }
+
 const NOTICE = (date: string) => `\n※出題時点（${date}）の法令・基準に基づく解説です。その後の改正等で結論が変わる場合があります。`;
+
 const byKey = (source: Numbered) => Object.fromEntries(KEYS.map((key, index) => [key, source[String(index + 1) as "1"]]));
+
 
 function toQuestion(item: Item): Question {
   const answer = item.officialAnswerNumbers.map((n) => KEYS[n - 1]!) as ChoiceKey[];
@@ -42,11 +58,23 @@ function toQuestion(item: Item): Question {
     sourcePdfUrl: item.sourcePdfUrl,
     sourceAnswerUrl: item.sourceAnswerUrls[0],
     sourceAttribution: item.sourceAttribution,
+    originalContent: item.originalContent,
+    officialReferenceUrls: item.officialReferenceUrls,
     license: "PREF-published",
     lawReferenceDate: item.lawAsOf,
-    lastUpdated: "2026-11-06",
+    lastUpdated: item.lastUpdated ?? "2026-11-06",
   };
 }
 
-/** 第28回（令和7年度）・第27回（令和6年度）各60問（独立レビュー PASS 済み）。 */
-export const CAREMANAGER_QUESTIONS: Question[] = [...(y2025 as unknown as Item[]), ...(y2024 as unknown as Item[])].map(toQuestion);
+
+const fullPapers = [...(y2025 as unknown as Item[]), ...(y2024 as unknown as Item[])].map(toQuestion);
+
+
+/** 第28・27回各60問に、第26回の介護支援分野24問を補充。 */
+export const CAREMANAGER_QUESTIONS: Question[] = appendReplenishedQuestions([
+  ...(y2025 as unknown as Item[]),
+  ...(y2024 as unknown as Item[]),
+  ...(y2023 as unknown as Item[]),
+].map(toQuestion), [
+  remainder2023,
+]);

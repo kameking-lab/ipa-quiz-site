@@ -1,0 +1,52 @@
+[
+  {
+    "id": "sc-2018a-pm1-q2",
+    "exam": "sc",
+    "session": "pm1",
+    "year": 2018,
+    "season": "autumn",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "インシデント対応",
+    "topicTags": [
+      "セキュリティインシデント対応"
+    ],
+    "difficulty": 4,
+    "question": "問2　セキュリティインシデント対応",
+    "answer": "設問 \n解答例・解答の要点 \n備考 \n設問１ \n \na ウ \n \n \n \nb ス \n \n \n \nc セ \n \n \n \nd エ \n \n \n \ne コ \n \n設問２ (1) SYN+ACK \n \n \n(2) (a) パケットがNSM センサの監視対象外であるため \n \n \n \n(b) 同一IP アドレスへのスキャン回数は少ないから \n \n設問３ (1) PC101，PC133，PC277，PC301，PC321，PC340 \n \n \n(2) イ，オ，カ \n \n設問４ (1) ① ・セキュリティ修正プログラムが適用されていること \n \n \n \n② ・マルウェア定義ファイルが更新されていること \n・PC がマルウェアに感染していないこと \n \n \n(2) VLAN を使い，PC 間の通信を禁止する。",
+    "modelAnswer": "設問 \n解答例・解答の要点 \n備考 \n設問１ \n \na ウ \n \n \n \nb ス \n \n \n \nc セ \n \n \n \nd エ \n \n \n \ne コ \n \n設問２ (1) SYN+ACK \n \n \n(2) (a) パケットがNSM センサの監視対象外であるため \n \n \n \n(b) 同一IP アドレスへのスキャン回数は少ないから \n \n設問３ (1) PC101，PC133，PC277，PC301，PC321，PC340 \n \n \n(2) イ，オ，カ \n \n設問４ (1) ① ・セキュリティ修正プログラムが適用されていること \n \n \n \n② ・マルウェア定義ファイルが更新されていること \n・PC がマルウェアに感染していないこと \n \n \n(2) VLAN を使い，PC 間の通信を禁止する。",
+    "explanation": "監視できる通信の範囲を確認し、無線LANの通信ログをDHCPのリース時刻と照合して感染端末を特定します。再発防止では、端末の更新状況の確認と端末間の通信制限を整理します。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/sc/2018-autumn-pm1/page-06.webp",
+      "/questions/ipa/sc/2018-autumn-pm1/page-07.webp",
+      "/questions/ipa/sc/2018-autumn-pm1/page-08.webp",
+      "/questions/ipa/sc/2018-autumn-pm1/page-09.webp",
+      "/questions/ipa/sc/2018-autumn-pm1/page-10.webp",
+      "/questions/ipa/sc/2018-autumn-pm1/page-11.webp"
+    ],
+    "imageAltTexts": [
+      "情報処理安全確保支援士 午後I 問2の本文・図表・設問（公式問題冊子 6ページ）",
+      "情報処理安全確保支援士 午後I 問2の本文・図表・設問（公式問題冊子 7ページ）",
+      "情報処理安全確保支援士 午後I 問2の本文・図表・設問（公式問題冊子 8ページ）",
+      "情報処理安全確保支援士 午後I 問2の本文・図表・設問（公式問題冊子 9ページ）",
+      "情報処理安全確保支援士 午後I 問2の本文・図表・設問（公式問題冊子 10ページ）",
+      "情報処理安全確保支援士 午後I 問2の本文・図表・設問（公式問題冊子 11ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/sc/2018-autumn-pm1/answer-q02-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "情報処理安全確保支援士 午後I 問2の公式解答例（1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sc_pm1_qs.pdf#page=6",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sc_pm1_ans.pdf#page=1",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2018年度秋期 情報処理安全確保支援士 午後I 問2",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  }
+]

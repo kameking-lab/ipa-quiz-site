@@ -24,6 +24,7 @@ export const DB_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "正解は「ア: 組」です。\n\nデータベースにおける関係 R(A, B)は、数学における関係の概念を応用したもので、属性Aと属性Bの定義域から取られる値のペアの集合として定義されます。問題文で「a₁とb₁を結ぶ線は、(a₁, b₁)のように、関係 R の要素を表している」と説明されているこの(a₁, b₁)のような個々のペアは、関係における「組（タプル）」と呼ばれます。これは、関係データベースの最も基本的な構成要素であり、行とも呼ばれます。\n\n他の選択肢が誤りである理由を説明します。\nイ: 属性とは、関係の列の見出しにあたるもので、例えば A や B のような名前や、その型、定義域を指します。個々のデータペアそのものを指すわけではありません。\nウ: ドメインとは、属性が取りうる値の集合全体のことです。例えば、属性Aの定義域{a1, a2, a3}はドメインにあたります。個々のデータペアはドメインの要素から構成されますが、ドメインそのものではありません。\nエ: 列は、関係データベースにおいては属性とほぼ同義で使われることが多く、表の縦方向の項目を指します。問題文で示されているのは、関係の個々のレコード、すなわち行に相当するデータペアであり、列（属性）そのものではありません。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const DB_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "GRANT文は、SQLにおけるデータ制御言語(DCL)の一つであり、データベースオブジェクトへのアクセス権限をユーザーに付与するために使用されます。具体的には、表への問合せ（SELECT）、更新（UPDATE）、追加（INSERT）、削除（DELETE）といった操作の許可を設定します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -71,7 +73,14 @@ export const DB_QUESTIONS_2010_SPRING_AM2: Question[] = [
       "エ": "UPDATE R SET A = 'AA02' WHERE A = 'ΑΑ01'"
     },
     "answer": "エ",
-    "explanation": "エが正解となるのは、UNIQUE制約の定義とSQLのUPDATE文の挙動に基づいています。UNIQUE制約は、指定された列の組み合わせに対して重複する値を許容しません。UPDATE文でA列の値を変更する際、もし変更後の値 'AA02' が既にRテーブルに存在し、かつB列の値も同じであれば、UNIQUE制約に違反します。問題文では「すべての列は値が決まっていない場合(NULL)もある」とありますが、UNIQUE制約においては、NULL値の扱いはデータベースシステムに依存することが一般的です。しかし、たとえNULLが許容されるとしても、'AA02' と対応するBの値の組み合わせが既に存在する場合は違反となります。\n\nアは、指定されたAとBの値を持つ行を削除するため、UNIQUE制約に影響を与えず、違反にはなりません。イは、A列に 'AA01' を、B列にNULLを挿入しています。NULLは重複しないとみなされる場合が多く、また、B列はUNIQUE制約の対象ですが、A列は単独ではUNIQUE制約が定義されていないため、このINSERT文単体では制約違反とはなりません。ウは、A列とB列にNULLを挿入しています。NULLは重複しないとみなされることが多いため、このINSERT文単体でUNIQUE制約に違反する可能性は低いと考えられます。",
+    "explanation": "UNIQUE制約は列AとBの組合せに対して定義されています。エでAA01をAA02に変えると、既存の（AA02, BB01）と同じ組が生じます。原本のSQLでは、Aの比較値は英字のAA01です。",
+    "choiceExplanations": {
+      "ア": "既存の（AA01, BB02）の行を削除する処理です。行の削除で（A, B）の組が新しく作られることはありません。",
+      "イ": "追加する（A, B）の組は（AA01, NULL）です。既存の（AA01, BB01）や（AA01, BB02）と同じ組にはなりません。",
+      "ウ": "AA01とBB02が入るのはC列とD列です。ユニーク制約の対象はA列とB列であり、追加する二列の値はともにNULLです。",
+      "エ": "（AA01, BB01）のAをAA02に更新すると（AA02, BB01）になり、同じ組が既に表にあるためユニーク制約に違反します。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +105,7 @@ export const DB_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "複合キーが複雑すぎる場合、システムが自動生成する連番などの代用キー（サロゲートキー）を新たな主キーとして導入するのが一般的です。元の複合キーは、そのエンティティを一意に識別する能力を持つため、代理キー（代替キー、alternate key）として保持することで、意味的な識別子としての役割を維持します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +130,13 @@ export const DB_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "エが正解となるのは、「学期が異なれば同じ授業科目を何度でも履修できる」という要件を正しく表現しているからです。UMLクラス図における多重度（*は多、1は一）と関連の表記法から、学生と授業科目の間に「履修する」という関連があり、さらに学期もこの履修行為と紐づく関係を示しています。具体的には、一人の学生は複数の履修記録を持ち、一つの授業科目も複数の履修記録に使われ、さらに一つの学期にも複数の履修記録が存在し、そして一つの履修記録は一人の学生、一つの授業科目、一つの学期に紐づきます。これは、学生が過去の学期で履修した授業科目を、別の学期で再度履修できるという状況を正確にモデル化しています。\n\nアは、学期と学生、授業科目の間にそれぞれ一対多の関連があるように見えますが、学生と授業科目の「履修する」という関連が不明確であり、学期が履修行為にどのように関わるかが表現されていません。イは、学生と授業科目の関連が多対多であることは示されていますが、学期が履修行為にどう紐づくかが欠けており、学期ごとに履修できるという要件を満たせません。ウは、学期と学生、授業科目の関連において、学生と授業科目、そして履修する、という関連がそれぞれ一対多となっているように見えますが、学期と履修する、という関連が1対1であり、一つの学期に一つの履修しかできないことを示唆してしまうため、学生が複数の科目を履修できる状況を表現できません。",
+    "choiceExplanations": {
+      "ア": "学期と学生だけを結ぶ図では、同じ学生が各科目をどの学期に履修したかを記録できません。学期まで含めて履修を表します。",
+      "イ": "図では学期が学生と授業科目の間の関連クラスとして置かれています。学期を学生・授業科目と並ぶ関連の端にするのが本問の表し方です。",
+      "ウ": "学生と学期の関連、学生と授業科目の関連が独立しています。特定の科目の履修と特定の学期が結び付いていません。",
+      "エ": "ひし形の三項関連で学生・授業科目・学期を一つの組として結び付けます。同じ学生と授業科目でも、学期が異なれば別の履修です。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +161,7 @@ export const DB_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "元の表には、主キーの一部である「商品番号」によって「商品名」や「商品単価」が決定される部分関数従属性が存在し、これは第2正規形に違反しています。情報無損失分解を行うには、この部分関数従属性を解消し、商品に関する属性を「商品」テーブルとして分離し、「発注」テーブルには主キーを維持しつつ注文数量のみを残すのが適切です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +186,7 @@ export const DB_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "エが正解となるのは、正規化における「関数従属性」の考え方に基づきます。この問題では、科目番号が主キーであり、基本給は教員ごとに決まるとされています。これは、基本給が科目番号ではなく、教員に（暗黙的に紐づく）教員IDに依存していることを示唆しています。このような状態は、第2正規形または第3正規形への違反、すなわち「部分関数従属」や「推移的関数従属」を引き起こす可能性があります。教員ごとに決まる基本給という属性が、主キーである科目番号ではなく、担当教員という部分キー（あるいは教員ID）に依存しているため、この状態では、ある教員が複数の科目を担当している場合、その教員の基本給を変更するたびに、担当しているすべての科目の行を更新する必要があります。もし一部の行だけを更新した場合、同じ教員に対して異なる基本給が登録されることになり、データ不整合が発生します。\n\nアは、教員が唯一担当していた科目の行を削除しても、基本給データは教員に紐づいて管理されているため、教員の基本給データだけが残るという現象は、正規化の観点からは問題となりません。むしろ、教員情報と科目情報が分離されていれば、このような場合でも教員の基本給データは失われません。\n\nイは、基本給の変更がコミット（データベースへの確定保存）と直接的にデータ不整合を生じさせるという記述は、正規化の課題とは異なります。コミットはトランザクション管理の側面であり、基本給の変更自体が非正規化による問題の根本原因です。\n\nウは、担当科目のない教員の基本給を登録する際に科目を削除しなければならないというのは、データの追加や削除に関する操作上の制約であり、正規化違反から直接導かれる問題ではありません。正規化はデータの冗長性や更新時の不整合を防ぐための構造に関するものです。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +211,7 @@ export const DB_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "第3正規形の定義は、第2正規形であることに加えて、非キー属性が他の非キー属性に対して関数従属しない（推移関数従属が存在しない）ことです。したがって、第2正規形である関係が第3正規形であるためには、推移従属性が存在しないことが条件となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -215,7 +235,14 @@ export const DB_QUESTIONS_2010_SPRING_AM2: Question[] = [
       "エ": "5"
     },
     "answer": "ウ",
-    "explanation": "この問題は、データベースの正規化、特に第3正規形（3NF）への正規化に関するものです。第3正規形とは、第2正規形であり、かつ、推移的関数従属がない状態を指します。推移的関数従属とは、非キー属性が他の非キー属性に従属している状態のことです。正規化の目的は、データの冗長性を排除し、更新時異常を防ぐことにあります。\n\n顧客の1回の注文に対して1枚の受注伝票が作られ、顧客は1回の注文で一つ以上の商品を注文できるという条件から、元の表には顧客情報、注文情報、商品情報が含まれていると推測されます。これらの情報がすべて1つの表にある場合、商品情報が注文ごとに繰り返されることになり、データの冗長性が生じます。\n\n第3正規形まで正規化を行うためには、まず、各エンティティ（顧客、注文、商品）ごとに独立した表を作成し、さらに、注文と商品の関係性を表す表（中間表）を作成する必要があります。具体的には、「顧客」表、「注文」表、「商品」表、そして「注文明細」表（どの注文でどこの商品がいくつ注文されたかを示す）の4つの表に分割されると考えられます。\n\nアの2つでは、顧客、注文、商品の情報が十分に分離されず、データの冗長性が残る可能性が高いです。イの3つでは、注文と商品の関連性を示す中間表が不足し、本来分けるべき情報が混在してしまう恐れがあります。エの5つは、通常、第3正規形までの正規化で必要とされる表の数を超えており、過剰な正規化である可能性が考えられます。したがって、第3正規形までの正規化で、適切にデータの整合性を保ちつつ冗長性を排除するためには、4つの表に分割するのが最も妥当です。",
+    "explanation": "受注番号から受注日と顧客コードが決まり、顧客コードから顧客名が決まります。商品コードから商品名と単価が決まり、受注番号と商品コードの組合せから受注数が決まります。よって、受注・顧客・商品・受注明細の4表に分けます。受注金額は単価と受注数から計算できます。",
+    "choiceExplanations": {
+      "ア": "受注番号と商品コードの組合せで受注数が決まりますが、受注日や商品名などは一方の項目だけで決まります。2表では依存先の違いを分離し切れません。",
+      "イ": "受注、商品、受注明細の3表に分けても、受注表に顧客名を置くと受注番号→顧客コード→顧客名という推移的な関数従属が残ります。",
+      "ウ": "受注番号で決まる受注、顧客コードで決まる顧客、商品コードで決まる商品、受注番号と商品コードで決まる受注明細の4表に分けます。",
+      "エ": "受注金額は商品表の単価と受注明細の受注数から計算できます。受注金額のために独立した表を設けなくても、必要な値を得られます。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +267,7 @@ export const DB_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "`IN`句は、指定された値がサブクエリの結果セット内に存在するかどうかを評価します。`EXISTS`句は、サブクエリが少なくとも1行を返した場合に真となるため、これらの意味は非常に近いです。選択肢イの`EXISTS`句を用いたSQL文は、「`TBL1.COL1`の値が`TBL2.COL1`に存在する行を`TBL1`から重複なく選択する」という元のSQL文と同じ論理を実現します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +292,7 @@ export const DB_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ビューは基底表（元の表）に対する論理的な定義であり、実際のデータは基底表に格納されています。ビューを通じてデータを問い合わせることは、実質的に基底表へアクセスすることになります。したがって、ビューに対してSELECT権限を持つユーザーは、ビューが参照する基底表に対してもSELECT権限が付与されている必要があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +317,13 @@ export const DB_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "正解はエです。（出典: IPA データベーススペシャリスト試験 2010年度春期 午前II 問12）",
+    "choiceExplanations": {
+      "ア": "A＝1とA＝3の両方で成立する組は（a, x）と（a, y）です。Uに含まれる（a, x）を除くので（a, y）だけが残ります。",
+      "イ": "B＝bはRのA＝3にありますが、A＝1にはありません。Tにある二つのAの値に共通する組を残すので（b, x）は選ばれません。",
+      "ウ": "差はセルの値を引き算する操作ではなく、同一の組を取り除く演算です。また、B＝bの組は商を求めた時点で除かれます。",
+      "エ": "Uの（c, z）は関係の商に入っていないので、差を取っても結果に現れません。セルに負号を付けて残すこともありません。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +348,7 @@ export const DB_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "正解はアです。（出典: IPA データベーススペシャリスト試験 2010年度春期 午前II 問13）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +373,7 @@ export const DB_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "正解はイです。（出典: IPA データベーススペシャリスト試験 2010年度春期 午前II 問14）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +398,7 @@ export const DB_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "2相ロック方式では、トランザクションはロックを獲得する「成長相」と、ロックを解除する「縮小相」の二つのフェーズを持ちます。一度ロック解除を始めたらそれ以降は新たなロックを獲得できないため、必要なロックを全て獲得し終えるまでロックを解除してはならない、という原則に相当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +423,7 @@ export const DB_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "DBMSがトランザクションのコミット完了とみなすのは、そのトランザクションによるすべての変更内容がログファイルに永続的に書き出された時点です。これにより、システム障害が発生してもログファイルを用いてデータベースを回復し、コミットされたトランザクションの永続性（Durability）を保証できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +448,7 @@ export const DB_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "デッドロックは、複数のトランザクションが互いに相手の保持する資源を待ち合うことで発生します。この資源の待ち関係をグラフで表現したものが「待ちグラフ」であり、このグラフ内に閉路（サイクル）が存在するかどうかを検出することで、デッドロックの発生を特定できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +473,7 @@ export const DB_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "同時実行制御の主な目的は、複数のトランザクションが並行してデータベースにアクセスする際に、それぞれが単独で実行されたかのような一貫性（直列可能性）を保つことです。これにより、データベースの整合性を維持しながら、システムのスループットとレスポンスを向上させることが可能になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +498,7 @@ export const DB_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "分散データベース環境における結合では、結合対象の全データを転送すると通信負荷が大きくなります。セミジョイン法は、結合キーのみを相手サイトに送信し、相手サイトで結合条件に合致するデータだけをフィルタリングして返送することで、データ転送量を大幅に削減し、通信負荷を最小限に抑えます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +523,7 @@ export const DB_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "データディクショナリは、データベースを構成するテーブル、ビュー、インデックス、制約、ユーザー、権限などのあらゆるオブジェクトに関するメタデータ（定義情報）を管理する特別なデータベースです。したがって、データベースのスキーマ定義情報がデータディクショナリに格納されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +548,7 @@ export const DB_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "PCはWebサーバーから送られてきたディジタル証明書が、信頼できる認証局によって発行され、かつ改ざんされていないかを検証する必要があります。この検証には、事前にPCが保持している（または信頼するルート証明書から取得した）認証局の公開鍵を用いて、証明書に付与された認証局の署名を復号・比較することで、証明書の正当性を確認します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +573,7 @@ export const DB_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "Fibre Channel (FC)は、ストレージネットワーク（SAN）で高速データ転送を実現するためのプロトコルです。伝送媒体には主に光ファイバが用いられますが、比較的短距離の接続においてはコスト効率の高い銅線（ツイストペアケーブル）も利用可能です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +598,13 @@ export const DB_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "この式はアムダールの法則に基づいています。システム全体の処理時間を1と仮定すると、性能改善を適用しなかった部分の処理時間は (1-R) です。性能改善を適用した部分の処理時間はRから R/A に短縮されるため、システム全体の新しい処理時間は (1-R) + (R/A) となり、その逆数が全体の性能改善比率となります。",
+    "choiceExplanations": {
+      "ア": "改善の倍率Aを掛ける対象は全体の性能でも未改善部分でもありません。所要時間に直すと未改善分は1－Rのままです。",
+      "イ": "改善前の全体の時間を1とすると、改善後は未改善分1－Rと改善分R÷Aの和です。全体の性能比はその逆数です。",
+      "ウ": "分母でRを変えず、1－RをAで割っています。改善された部分の元の所要時間はRなので、Aで割るのはRです。",
+      "エ": "分母に改善分R÷Aしかないため、改善されない部分の所要時間が抜けています。分母には1－Rも足します。"
+    },
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +629,7 @@ export const DB_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "システム方式設計の目的は、定義されたシステム要件をどのように実現するかをシステムの全体構造として具体化することです。したがって、設計されたシステム方式が、すべてのシステム要件と矛盾なく、かつ確実に整合しているかを評価することは、設計の妥当性を確認する上で最も重要な項目となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +654,7 @@ export const DB_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "SOA（サービス指向アーキテクチャ）は、業務上の個々の機能を独立した「サービス」として定義し、それらのサービスを組み合わせて全体のシステムやビジネスプロセスを構築するという設計思想です。これにより、システム間の連携が容易になり、変更への柔軟性や部品の再利用性が向上します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_db_am2_qs.pdf",
     "license": "IPA-public"

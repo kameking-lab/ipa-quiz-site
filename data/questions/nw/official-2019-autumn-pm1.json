@@ -1,0 +1,98 @@
+[
+  {
+    "id": "nw-2019a-pm1-q1",
+    "exam": "nw",
+    "year": 2019,
+    "season": "autumn",
+    "session": "pm1",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "ネットワーク",
+    "topicTags": [
+      "ネットワークの増強"
+    ],
+    "difficulty": 5,
+    "question": "問1 ネットワークの増強",
+    "answer": "問１\n                       出題趣旨\n 通信コンテンツがリッチになることで，ネットワークは広帯域化が求められている。また，ネットワーク断\nによる影響が大きくなってきており，ネットワークの冗長化も求められてきている。\n 広帯域化と冗長化の両方を実現するためにリンクアグリゲーション（LAG）がよく用いられる。LAG を利用\nする際には，それに適した設計や運用を行う必要がある。\n 本問では，ネットワークの増強を題材に，回線の広帯域化，冗長化技術として定着しているLAG を用いた\nネットワークの設計及び運用についての技術と経験を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1)  a  BGP 又は  BGP4\n              b バックボーン\n              c  GARP\n         (2) キ，ク，ケ\n         (3) キ，ク，ケ\n         (4) リンクダウンを伴わない故障発生時に，LAG のメンバから故障回線を自動で除\n      外できる。\n         (5) 1 G ビット／秒を超えたパケットが廃棄される。\n         (6) 通信の送信元と宛先MAC アドレスの組合せが少なくハッシュ関数の計算値が\n      分散しないから\n 設問２(1)  d  ICMP\n              e  SNMP トラップ 又は SNMP trap\n              f  MIB\n         (2)  (iii)\n         (3) コアルータ から  L3SW までの区間\n\n\n\n\n\n                                                1/3",
+    "modelAnswer": "問１\n                       出題趣旨\n 通信コンテンツがリッチになることで，ネットワークは広帯域化が求められている。また，ネットワーク断\nによる影響が大きくなってきており，ネットワークの冗長化も求められてきている。\n 広帯域化と冗長化の両方を実現するためにリンクアグリゲーション（LAG）がよく用いられる。LAG を利用\nする際には，それに適した設計や運用を行う必要がある。\n 本問では，ネットワークの増強を題材に，回線の広帯域化，冗長化技術として定着しているLAG を用いた\nネットワークの設計及び運用についての技術と経験を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1)  a  BGP 又は  BGP4\n              b バックボーン\n              c  GARP\n         (2) キ，ク，ケ\n         (3) キ，ク，ケ\n         (4) リンクダウンを伴わない故障発生時に，LAG のメンバから故障回線を自動で除\n      外できる。\n         (5) 1 G ビット／秒を超えたパケットが廃棄される。\n         (6) 通信の送信元と宛先MAC アドレスの組合せが少なくハッシュ関数の計算値が\n      分散しないから\n 設問２(1)  d  ICMP\n              e  SNMP トラップ 又は SNMP trap\n              f  MIB\n         (2)  (iii)\n         (3) コアルータ から  L3SW までの区間\n\n\n\n\n\n                                                1/3",
+    "explanation": "回線の帯域と冗長性を分けて考え、LAGを構成するポートの接続状態と障害時に残る通信経路を追う。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/nw/2019-autumn-pm1/page-03.webp",
+      "/questions/ipa/nw/2019-autumn-pm1/page-04.webp",
+      "/questions/ipa/nw/2019-autumn-pm1/page-05.webp",
+      "/questions/ipa/nw/2019-autumn-pm1/page-06.webp",
+      "/questions/ipa/nw/2019-autumn-pm1/page-07.webp"
+    ],
+    "imageAltTexts": [
+      "ネットワークスペシャリスト試験 2019年度秋期 午後I 問1 本文・設問（公式問題PDF 3ページ）",
+      "ネットワークスペシャリスト試験 2019年度秋期 午後I 問1 本文・設問（公式問題PDF 4ページ）",
+      "ネットワークスペシャリスト試験 2019年度秋期 午後I 問1 本文・設問（公式問題PDF 5ページ）",
+      "ネットワークスペシャリスト試験 2019年度秋期 午後I 問1 本文・設問（公式問題PDF 6ページ）",
+      "ネットワークスペシャリスト試験 2019年度秋期 午後I 問1 本文・設問（公式問題PDF 7ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/nw/2019-autumn-pm1/answer-q01-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "ネットワークスペシャリスト試験 2019年度秋期 午後I 問1 公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_nw_pm1_qs.pdf#page=3",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_nw_pm1_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html"
+    ],
+    "sourceAttribution": "出典：IPA ネットワークスペシャリスト試験 2019年度秋期 午後I 問1。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "nw-2019a-pm1-q2",
+    "exam": "nw",
+    "year": 2019,
+    "season": "autumn",
+    "session": "pm1",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "ネットワーク",
+    "topicTags": [
+      "Webシステムの構成変更"
+    ],
+    "difficulty": 5,
+    "question": "問2 Webシステムの構成変更",
+    "answer": "問２\n                       出題趣旨\n  WAF（Web Application Firewall）サービスのようなSaaS で提供されるサービスを利用する企業が増えてい\nる。このようなサービスを利用する際には，利用者，オンプレミス環境及びSaaS 間で行われる通信を理解\nし，適切に通信制御することが必要となる。\n このような状況を基に，既存のWeb システムにWAF サービスを導入する事例を取り上げ，DNS を用いた通\n信制御について解説した。また，以前から多くのWeb システムで利用されている負荷分散装置を設計する技\n術力も，ネットワーク技術者には要求される。\n  本問では，WAF サービスの導入と障害時の対応方法を題材に，DNS の基礎知識，負荷分散装置の応用技\n術，オンプレミス環境とSaaS の構成におけるネットワークの導入・運用設計技術について，実務で活用でき\nる水準かを問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１   T 社がIP-w1 を変更しても，A 社DNS サーバの変更作業が不要となる。\n 設問２(1) ア 順番\n       イ  80\n       ウ  200\n       エ  Set-Cookie\n       オ  Cookie\n         (2) 負荷が偏る。\n         (3) HTTP ヘッダを編集する処理\n 設問３(1) カ FW\n       変更内容 任意のIP アドレスからWeb システムへのHTTPS 通信を許可す\n           る。\n         (2) shop  IN  A  199.α.β.2\n         (3) XFF ヘッダに送信元IP アドレスを追加する設定\n\n\n\n\n\n                                                2/3",
+    "modelAnswer": "問２\n                       出題趣旨\n  WAF（Web Application Firewall）サービスのようなSaaS で提供されるサービスを利用する企業が増えてい\nる。このようなサービスを利用する際には，利用者，オンプレミス環境及びSaaS 間で行われる通信を理解\nし，適切に通信制御することが必要となる。\n このような状況を基に，既存のWeb システムにWAF サービスを導入する事例を取り上げ，DNS を用いた通\n信制御について解説した。また，以前から多くのWeb システムで利用されている負荷分散装置を設計する技\n術力も，ネットワーク技術者には要求される。\n  本問では，WAF サービスの導入と障害時の対応方法を題材に，DNS の基礎知識，負荷分散装置の応用技\n術，オンプレミス環境とSaaS の構成におけるネットワークの導入・運用設計技術について，実務で活用でき\nる水準かを問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１   T 社がIP-w1 を変更しても，A 社DNS サーバの変更作業が不要となる。\n 設問２(1) ア 順番\n       イ  80\n       ウ  200\n       エ  Set-Cookie\n       オ  Cookie\n         (2) 負荷が偏る。\n         (3) HTTP ヘッダを編集する処理\n 設問３(1) カ FW\n       変更内容 任意のIP アドレスからWeb システムへのHTTPS 通信を許可す\n           る。\n         (2) shop  IN  A  199.α.β.2\n         (3) XFF ヘッダに送信元IP アドレスを追加する設定\n\n\n\n\n\n                                                2/3",
+    "explanation": "DNSの名前解決、WAFを経由する通信経路、負荷分散装置のセッション維持を順に確認する。設問3には冊子冒頭の公式正誤表がある。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/nw/2019-autumn-pm1/page-08.webp",
+      "/questions/ipa/nw/2019-autumn-pm1/page-09.webp",
+      "/questions/ipa/nw/2019-autumn-pm1/page-10.webp",
+      "/questions/ipa/nw/2019-autumn-pm1/page-11.webp",
+      "/questions/ipa/nw/2019-autumn-pm1/page-12.webp",
+      "/questions/ipa/nw/2019-autumn-pm1/errata.webp"
+    ],
+    "imageAltTexts": [
+      "ネットワークスペシャリスト試験 2019年度秋期 午後I 問2 本文・設問（公式問題PDF 8ページ）",
+      "ネットワークスペシャリスト試験 2019年度秋期 午後I 問2 本文・設問（公式問題PDF 9ページ）",
+      "ネットワークスペシャリスト試験 2019年度秋期 午後I 問2 本文・設問（公式問題PDF 10ページ）",
+      "ネットワークスペシャリスト試験 2019年度秋期 午後I 問2 本文・設問（公式問題PDF 11ページ）",
+      "ネットワークスペシャリスト試験 2019年度秋期 午後I 問2 本文・設問（公式問題PDF 12ページ）",
+      "ネットワークスペシャリスト試験 2019年度秋期 午後I 問2 公式正誤表（公式問題PDF 2ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/nw/2019-autumn-pm1/answer-q02-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "ネットワークスペシャリスト試験 2019年度秋期 午後I 問2 公式解答例（公式PDF 2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_nw_pm1_qs.pdf#page=8",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_nw_pm1_ans.pdf#page=2",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html"
+    ],
+    "sourceAttribution": "出典：IPA ネットワークスペシャリスト試験 2019年度秋期 午後I 問2。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  }
+]

@@ -16,6 +16,7 @@ import source2025m from "./2025-october-batch-50-51.json";
 import source2025n from "./2025-october-batch-52-58.json";
 import source2025o from "./2025-october-batch-59-66.json";
 import source2026 from "./2026-early.json";
+import source2026Late from "./2026-late.json";
 
 const keys: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 
@@ -30,6 +31,8 @@ type Civil2SourceItem = {
   explanation: string;
   choiceExplanations: string[];
   imageUrl?: string;
+  imageAltText?: string;
+  isCalculation?: boolean;
   officialReferenceUrls?: string[];
 };
 
@@ -49,7 +52,7 @@ function toQuestions(source: Civil2Source): Question[] {
     }
 
     const edition = source.year === 2026
-      ? "令和8年度2級土木施工管理技術検定 第一次検定（前期・土木）"
+      ? `令和8年度2級土木施工管理技術検定 第一次検定（${source.season === "late" ? "後期" : "前期"}・土木）`
       : "令和7年度2級土木施工管理技術検定 第一次検定（10月実施・土木）";
 
     return {
@@ -72,17 +75,20 @@ function toQuestions(source: Civil2Source): Question[] {
       explanationCoverage: "full",
       hasImage: Boolean(item.imageUrl),
       imageUrls: item.imageUrl ? [item.imageUrl] : undefined,
+      imageAltTexts: item.imageAltText ? [item.imageAltText] : undefined,
+      isCalculation: item.isCalculation,
       sourcePdfUrl: source.questionUrl,
       sourceAnswerUrl: source.answerUrl,
       sourceAttribution: `出典：一般財団法人全国建設研修センター ${edition}No.${item.number}。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。`,
       officialReferenceUrls: item.officialReferenceUrls ?? [],
       license: "JCTC-authorized-reuse",
-      lastUpdated: "2026-09-26",
+      lastUpdated: source.season === "late" ? "2026-11-17" : "2026-09-26",
     };
   });
 }
 
-/** 令和8年度前期・令和7年度10月実施とも全66問を公開。 */
+/** 令和8年度後期・前期、令和7年度10月実施の各全66問。 */
+export const CIVIL2_2026_LATE_QUESTIONS = toQuestions(source2026Late as Civil2Source);
 export const CIVIL2_2026_QUESTIONS = toQuestions(source2026 as Civil2Source);
 export const CIVIL2_2025_QUESTIONS = [
   ...toQuestions(source2025Required as Civil2Source),
@@ -102,4 +108,4 @@ export const CIVIL2_2025_QUESTIONS = [
   ...toQuestions(source2025n as Civil2Source),
   ...toQuestions(source2025o as Civil2Source),
 ];
-export const CIVIL2_QUESTIONS: Question[] = [...CIVIL2_2026_QUESTIONS, ...CIVIL2_2025_QUESTIONS];
+export const CIVIL2_QUESTIONS: Question[] = [...CIVIL2_2026_LATE_QUESTIONS, ...CIVIL2_2026_QUESTIONS, ...CIVIL2_2025_QUESTIONS];

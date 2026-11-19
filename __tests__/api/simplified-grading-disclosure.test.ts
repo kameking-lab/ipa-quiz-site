@@ -119,7 +119,7 @@ describe("/api/essay-grade — 簡易判定の開示", () => {
   it("AI 応答が解析できないと gradingMode:'simplified' + X-Grading-Mode を返し、ログに残す", async () => {
     const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
     stubStream("採点できません。JSON ではない散文。");
-    const { POST } = await import("@/app/api/essay-grade/route");
+    const { POST } = await import("@/lib/essay/legacy-grade");
 
     const res = await POST(req("/api/essay-grade", ESSAY_BODY, "10.8.0.3"));
     expect(res.status).toBe(503);
@@ -146,7 +146,7 @@ describe("/api/essay-grade — 簡易判定の開示", () => {
         unnecessaryElements: [],
       }),
     );
-    const { POST } = await import("@/app/api/essay-grade/route");
+    const { POST } = await import("@/lib/essay/legacy-grade");
 
     const res = await POST(req("/api/essay-grade", ESSAY_BODY, "10.8.0.4"));
     const body = (await res.json()) as { gradingMode?: string };
@@ -169,7 +169,7 @@ describe("UI と文言", () => {
     // "GEMINI_API_KEY を設定すると…" のような内部都合の文言は利用者に無意味。
     for (const rel of [
       "app/api/scoring/route.ts",
-      "app/api/essay-grade/route.ts",
+      "lib/essay/legacy-grade.ts",
     ]) {
       const src = read(rel);
       // コメント行を除いた上で、文字列リテラル中に env 名が無いことを見る。

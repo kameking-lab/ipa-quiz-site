@@ -1,0 +1,1182 @@
+[
+  {
+    "id": "dekyo-charge-1-2025-first-theory-q1-1",
+    "exam": "dekyo-charge-1",
+    "session": "theory",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "first",
+    "qNumber": 1,
+    "part": "1",
+    "officialQuestionLabel": "1（1）",
+    "type": "multiple-choice",
+    "category": "端末設備・PBX",
+    "topicTags": [
+      "端末設備・PBX",
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 3,
+    "question": "電気通信事業者の電話網を介して接続された、誤り訂正機能を備えたG3ファクシミリ端末 間の通信において、受信側端末でデータが良好に受信できなかった場合に、受信側端末からの フレーム再送要求に対して、送信側端末がデータを再送する際にモデムの通信速度を下げる動 作は、一般に、 (ア) といわれる。",
+    "choices": {
+      "ア": "バックオフ",
+      "イ": "コールバック",
+      "ウ": "フォールバック",
+      "エ": "ダウンリンク",
+      "オ": "オートネゴシエーション"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "受信状態が悪いときに通信速度を下げて再送する動作はフォールバックである。単にフレームを送り直すことに加え、モデムの速度を下げるという条件に着目する。",
+    "choiceExplanations": {
+      "ア": "バックオフは送信を待つ時間などを調整する動作で、通信速度を下げる名称ではない。",
+      "イ": "コールバックは相手へ折り返し発信する機能で、モデム速度の低下ではない。",
+      "ウ": "フォールバックは回線状態などに応じて通信速度を下げる動作である。",
+      "エ": "ダウンリンクは下り方向の通信を表し、速度を下げる動作ではない。",
+      "オ": "オートネゴシエーションは能力や方式を自動調整するもので、この再送時の速度低下の名称とは異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-first/theory-q1-1.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第1回 端末設備の接続のための技術及び理論 第1問（1）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683648881d9e8.pdf#page=8",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files249368364982e423d.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed"
+  },
+  {
+    "id": "dekyo-charge-1-2025-first-theory-q1-2",
+    "exam": "dekyo-charge-1",
+    "session": "theory",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "first",
+    "qNumber": 1,
+    "part": "2",
+    "officialQuestionLabel": "1（2）",
+    "type": "multiple-choice",
+    "category": "端末設備・PBX",
+    "topicTags": [
+      "端末設備・PBX",
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 3,
+    "question": "デジタル式PBXの空間スイッチにおいて、音声情報ビット列は、 (イ) の開閉に従い、 多重化されたままタイムスロットの時間位置を変えないで、タイムスロット単位に入ハイウェ イから出ハイウェイへ乗り換える。",
+    "choices": {
+      "ア": "順番読み出しカウンタ",
+      "イ": "制御メモリ",
+      "ウ": "時分割ゲートスイッチ",
+      "エ": "多重・分離回路",
+      "オ": "時間スイッチ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "空間スイッチでは時分割ゲートスイッチの開閉で入出力ハイウェイを切り替える。タイムスロットの時間位置を入れ替える時間スイッチとは異なる。",
+    "choiceExplanations": {
+      "ア": "順番読み出しカウンタではなく、ハイウェイ間を接続するゲートスイッチの開閉を問う。",
+      "イ": "制御メモリは制御情報を保持するが、音声ビット列を通すスイッチそのものではない。",
+      "ウ": "時分割ゲートスイッチの開閉により、時間位置を変えずに出ハイウェイへ乗り換える。",
+      "エ": "多重・分離回路は信号の多重化や分離を行い、空間スイッチの接続動作そのものではない。",
+      "オ": "時間スイッチはタイムスロットの時間位置を変えるもので、この空間スイッチとは異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-first/theory-q1-2.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第1回 端末設備の接続のための技術及び理論 第1問（2）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683648881d9e8.pdf#page=8",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files249368364982e423d.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed"
+  },
+  {
+    "id": "dekyo-charge-1-2025-first-theory-q1-3",
+    "exam": "dekyo-charge-1",
+    "session": "theory",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "first",
+    "qNumber": 1,
+    "part": "3",
+    "officialQuestionLabel": "1（3）",
+    "type": "multiple-choice",
+    "category": "端末設備・PBX",
+    "topicTags": [
+      "端末設備・PBX",
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 3,
+    "question": "デジタル式PBXにおけるアナログ式内線回路の機能について述べた次の二つの記述は、 (ウ) 。 A 内線回路は、発呼、着信応答、通話中などの内線の状態を検出するために、内線側のA線 とB線とがループ状態にあるかどうかを監視する機能を有する。 B 内線回路は、内線側に接続されたアナログ電話機からのアナログ音声信号を時分割通話路 に送出するためのデコーダの機能を有する。",
+    "choices": {
+      "ア": "Aのみ正しい",
+      "イ": "Bのみ正しい",
+      "ウ": "AもBも正しい",
+      "エ": "AもBも正しくない"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "Aは正しい。内線回路はA線・B線のループ状態を監視し、発呼や応答などの状態を検出する。 Bは誤り。アナログ音声を時分割通話路へ送る側には符号器が必要であり、デコーダではない。",
+    "choiceExplanations": {
+      "ア": "Aは正しい。内線回路はA線・B線のループ状態を監視し、発呼や応答などの状態を検出する。 Bは誤り。アナログ音声を時分割通話路へ送る側には符号器が必要であり、デコーダではない。",
+      "イ": "Aの判定が異なる。内線回路はA線・B線のループ状態を監視し、発呼や応答などの状態を検出する。 Bの判定が異なる。アナログ音声を時分割通話路へ送る側には符号器が必要であり、デコーダではない。",
+      "ウ": "Bの判定が異なる。アナログ音声を時分割通話路へ送る側には符号器が必要であり、デコーダではない。",
+      "エ": "Aの判定が異なる。内線回路はA線・B線のループ状態を監視し、発呼や応答などの状態を検出する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-first/theory-q1-3.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第1回 端末設備の接続のための技術及び理論 第1問（3）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683648881d9e8.pdf#page=8",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files249368364982e423d.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed"
+  },
+  {
+    "id": "dekyo-charge-1-2025-first-theory-q1-4",
+    "exam": "dekyo-charge-1",
+    "session": "theory",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "first",
+    "qNumber": 1,
+    "part": "4",
+    "officialQuestionLabel": "1（4）",
+    "type": "multiple-choice",
+    "category": "端末設備・PBX",
+    "topicTags": [
+      "端末設備・PBX",
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 3,
+    "question": "1.5メガビット/秒方式のISDN一次群速度ユーザ・網インタフェースにおけるデジタル 回線終端装置について述べた次の二つの記述は、 (エ) 。 A デジタル回線終端装置からISDN端末側への給電出力は、420ミリワット以上と規定 されている。 B デジタル回線終端装置は、一般に、電気通信事業者側から遠隔給電されないため、ユーザ 宅内の商用電源などからのローカル給電により動作する。",
+    "choices": {
+      "ア": "Aのみ正しい",
+      "イ": "Bのみ正しい",
+      "ウ": "AもBも正しい",
+      "エ": "AもBも正しくない"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "Aは誤り。1.5M方式のデジタル回線終端装置について、端末側への給電出力420mW以上とする説明は適切でない。 Bは正しい。一般に網から遠隔給電されず、宅内の商用電源などによるローカル給電で動作する。",
+    "choiceExplanations": {
+      "ア": "Aの判定が異なる。1.5M方式のデジタル回線終端装置について、端末側への給電出力420mW以上とする説明は適切でない。 Bの判定が異なる。一般に網から遠隔給電されず、宅内の商用電源などによるローカル給電で動作する。",
+      "イ": "Aは誤り。1.5M方式のデジタル回線終端装置について、端末側への給電出力420mW以上とする説明は適切でない。 Bは正しい。一般に網から遠隔給電されず、宅内の商用電源などによるローカル給電で動作する。",
+      "ウ": "Aの判定が異なる。1.5M方式のデジタル回線終端装置について、端末側への給電出力420mW以上とする説明は適切でない。",
+      "エ": "Bの判定が異なる。一般に網から遠隔給電されず、宅内の商用電源などによるローカル給電で動作する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-first/theory-q1-4.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第1回 端末設備の接続のための技術及び理論 第1問（4）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683648881d9e8.pdf#page=8",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files249368364982e423d.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed"
+  },
+  {
+    "id": "dekyo-charge-1-2025-first-theory-q1-5",
+    "exam": "dekyo-charge-1",
+    "session": "theory",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "first",
+    "qNumber": 1,
+    "part": "5",
+    "officialQuestionLabel": "1（5）",
+    "type": "multiple-choice",
+    "category": "端末設備・PBX",
+    "topicTags": [
+      "端末設備・PBX",
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 3,
+    "question": "通信機器は、周辺装置から発生する電磁ノイズの影響を受けることがある。JISC 60050-161:1997EMCに関するIEV用語では、電磁妨害が存在する環境で、 機器、装置又はシステムが性能低下せずに動作することができる能力を、 (オ) と規定し ている。",
+    "choices": {
+      "ア": "電磁遮蔽",
+      "イ": "妨害電磁界強度",
+      "ウ": "電磁感受性",
+      "エ": "イミュニティ",
+      "オ": "電磁エミッション"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "電磁妨害のある環境で性能を低下させず動作する能力がイミュニティである。妨害を外へ出すエミッションや、影響を受けやすい性質である感受性とは向きが異なる。",
+    "choiceExplanations": {
+      "ア": "電磁遮蔽は妨害の侵入・放射を抑える手段であり、機器が耐えて動く能力の名称ではない。",
+      "イ": "妨害電磁界強度は妨害の大きさであり、機器の耐性の名称ではない。",
+      "ウ": "電磁感受性は妨害に影響される性質であり、性能低下せず動く能力とは逆の観点である。",
+      "エ": "イミュニティは電磁妨害があっても性能低下せず動作する能力である。",
+      "オ": "電磁エミッションは電磁エネルギーを外へ放出することで、妨害に耐える能力ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-first/theory-q1-5.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第1回 端末設備の接続のための技術及び理論 第1問（5）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683648881d9e8.pdf#page=8",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files249368364982e423d.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed"
+  },
+  {
+    "id": "dekyo-charge-1-2025-first-theory-q2-1",
+    "exam": "dekyo-charge-1",
+    "session": "theory",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "first",
+    "qNumber": 2,
+    "part": "1",
+    "officialQuestionLabel": "2（1）",
+    "type": "multiple-choice",
+    "category": "ISDNの基礎",
+    "topicTags": [
+      "ISDNの基礎",
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 3,
+    "question": "ISDN基本ユーザ・網インタフェースにおける機能群の一つであるNT2について述べた 次の記述のうち、誤っているものは、 (ア) である。",
+    "choices": {
+      "ア": "網終端装置2といわれ、一般に、TEとNT1の間に位置する。",
+      "イ": "交換、集線及び伝送路終端の機能がある。",
+      "ウ": "レイヤ2及びレイヤ3のプロトコル処理機能がある。",
+      "エ": "具体的な装置としてPBXなどが相当する。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "NT2は交換・集線や上位層の処理を行う機能群で、伝送路終端はNT1の役割である。②はNT1の機能をNT2へ含めているため誤りとなる。",
+    "choiceExplanations": {
+      "ア": "NT2は一般にTEとNT1の間に位置する網終端装置2という説明は正しい。",
+      "イ": "伝送路終端はNT1の機能であり、これをNT2の交換・集線機能へ加えた部分が誤りである。",
+      "ウ": "NT2がレイヤ2・3のプロトコル処理機能を持つという説明は正しい。",
+      "エ": "NT2に相当する具体的な装置にPBXがあるという説明は正しい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-first/theory-q2-1.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第1回 端末設備の接続のための技術及び理論 第2問（1）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683648881d9e8.pdf#page=9",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files249368364982e423d.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed"
+  },
+  {
+    "id": "dekyo-charge-1-2025-first-theory-q2-2",
+    "exam": "dekyo-charge-1",
+    "session": "theory",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "first",
+    "qNumber": 2,
+    "part": "2",
+    "officialQuestionLabel": "2（2）",
+    "type": "multiple-choice",
+    "category": "ISDNの基礎",
+    "topicTags": [
+      "ISDNの基礎",
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 3,
+    "question": "ISDN基本ユーザ・網インタフェースのレイヤ1におけるフレームは、1フレームがB及 びDチャネルの情報ビットとフレーム制御用ビットなどを合わせた (イ) ビットで構成さ れ、250マイクロ秒の周期で繰り返し送受信される。",
+    "choices": {
+      "ア": "16",
+      "イ": "24",
+      "ウ": "48",
+      "エ": "64",
+      "オ": "128"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "基本インタフェースのレイヤ1フレームは48ビットで、250μsごとに繰り返す。48÷250μs＝192kbit/sとなり、情報ビットに制御用ビットを加えた伝送速度にも対応する。",
+    "choiceExplanations": {
+      "ア": "16ビットは、B・Dチャネルと制御用ビットを含む1フレームの長さではない。",
+      "イ": "24ビットは、規定される48ビットのフレーム長の半分である。",
+      "ウ": "48ビットが250μs周期の基本インタフェースのフレーム長である。",
+      "エ": "64はBチャネルの速度64kbit/sなどと混同しやすいが、フレームのビット数ではない。",
+      "オ": "128は二つのBチャネルの合計情報速度などと混同しやすいが、フレーム長ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-first/theory-q2-2.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第1回 端末設備の接続のための技術及び理論 第2問（2）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683648881d9e8.pdf#page=9",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files249368364982e423d.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed"
+  },
+  {
+    "id": "dekyo-charge-1-2025-first-theory-q2-3",
+    "exam": "dekyo-charge-1",
+    "session": "theory",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "first",
+    "qNumber": 2,
+    "part": "3",
+    "officialQuestionLabel": "2（3）",
+    "type": "multiple-choice",
+    "category": "ISDNの基礎",
+    "topicTags": [
+      "ISDNの基礎",
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 3,
+    "question": "ISDN基本ユーザ・網インタフェースにおいて、一つの物理コネクション上に複数のデー タリンクコネクションが設定されている場合、個々のデータリンクコネクションの識別を行う ための識別子は、 (ウ) といわれ、SAPI及びTEIから構成される。",
+    "choices": {
+      "ア": "VPI",
+      "イ": "HDLC",
+      "ウ": "LAPB",
+      "エ": "ISUP",
+      "オ": "DLCI"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "同じ物理コネクション上のデータリンクを識別するDLCIは、SAPIとTEIから構成される。サービスの識別と端末の識別を組み合わせて、データリンクを識別する。",
+    "choiceExplanations": {
+      "ア": "VPIはATMなどの仮想パス識別子であり、SAPIとTEIから成る識別子ではない。",
+      "イ": "HDLCはデータリンクの制御手順であり、この識別子の名称ではない。",
+      "ウ": "LAPBはデータリンク手順であり、SAPIとTEIから成る識別子ではない。",
+      "エ": "ISUPは共通線信号方式のユーザ部であり、設問の識別子ではない。",
+      "オ": "DLCIはSAPIとTEIから構成され、データリンクコネクションを識別する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-first/theory-q2-3.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第1回 端末設備の接続のための技術及び理論 第2問（3）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683648881d9e8.pdf#page=9",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files249368364982e423d.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed"
+  },
+  {
+    "id": "dekyo-charge-1-2025-first-theory-q2-4",
+    "exam": "dekyo-charge-1",
+    "session": "theory",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "first",
+    "qNumber": 2,
+    "part": "4",
+    "officialQuestionLabel": "2（4）",
+    "type": "multiple-choice",
+    "category": "ISDNの基礎",
+    "topicTags": [
+      "ISDNの基礎",
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 3,
+    "question": "ISDN基本ユーザ・網インタフェースにおける使用チャネル及び呼の再設定について述べ た次の二つの記述は、 (エ) 。 A 回線交換モードにより通信を行う場合、呼設定情報など呼制御用のシグナリング情報は、 Bチャネルで伝送できる。 B 回線交換モードで呼を中断状態とした後に端末を別のジャックに差し込んで通信を再開す る場合、呼の再設定において、呼の中断前に使っていた呼番号がそのまま利用される。",
+    "choices": {
+      "ア": "Aのみ正しい",
+      "イ": "Bのみ正しい",
+      "ウ": "AもBも正しい",
+      "エ": "AもBも正しくない"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "Aは誤り。回線交換モードの呼制御用シグナリング情報はDチャネルで伝送し、Bチャネルではない。 Bは誤り。中断後の呼再設定では新たな呼番号を用いるため、中断前の番号をそのまま使う文は誤りである。",
+    "choiceExplanations": {
+      "ア": "Aの判定が異なる。回線交換モードの呼制御用シグナリング情報はDチャネルで伝送し、Bチャネルではない。",
+      "イ": "Bの判定が異なる。中断後の呼再設定では新たな呼番号を用いるため、中断前の番号をそのまま使う文は誤りである。",
+      "ウ": "Aの判定が異なる。回線交換モードの呼制御用シグナリング情報はDチャネルで伝送し、Bチャネルではない。 Bの判定が異なる。中断後の呼再設定では新たな呼番号を用いるため、中断前の番号をそのまま使う文は誤りである。",
+      "エ": "Aは誤り。回線交換モードの呼制御用シグナリング情報はDチャネルで伝送し、Bチャネルではない。 Bは誤り。中断後の呼再設定では新たな呼番号を用いるため、中断前の番号をそのまま使う文は誤りである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-first/theory-q2-4.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第1回 端末設備の接続のための技術及び理論 第2問（4）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683648881d9e8.pdf#page=9",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files249368364982e423d.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed"
+  },
+  {
+    "id": "dekyo-charge-1-2025-first-theory-q2-5",
+    "exam": "dekyo-charge-1",
+    "session": "theory",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "first",
+    "qNumber": 2,
+    "part": "5",
+    "officialQuestionLabel": "2（5）",
+    "type": "multiple-choice",
+    "category": "ISDNの基礎",
+    "topicTags": [
+      "ISDNの基礎",
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 3,
+    "question": "1.5メガビット/秒方式のISDN一次群速度ユーザ・網インタフェースでは、1フレーム を24個集めて1マルチフレームを構成していることから、24個のFビットを活用すること ができる。これらのFビットは、フレーム同期、 (オ) 及びリモートアラーム表示として 使用される。",
+    "choices": {
+      "ア": "CRCビット誤り検出",
+      "イ": "アドレスフィールド拡張ビット",
+      "ウ": "サブアドレス表示",
+      "エ": "コネクションマネジメント",
+      "オ": "発信者番号通知"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "一次群速度インタフェースの24個のFビットは、フレーム同期、CRCによる誤り検出、リモートアラーム表示に使う。Dチャネルで扱う番号や制御情報と区別する。",
+    "choiceExplanations": {
+      "ア": "CRCビット誤り検出は、Fビットを利用する機能の一つである。",
+      "イ": "アドレスフィールド拡張ビットは、ここで問うマルチフレームのFビットの用途ではない。",
+      "ウ": "サブアドレス表示は呼に関する情報で、Fビットの用途ではない。",
+      "エ": "コネクションマネジメントは、このFビットの三つの用途の名称ではない。",
+      "オ": "発信者番号通知は呼制御の情報であり、Fビットへ割り当てる用途ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-first/theory-q2-5.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第1回 端末設備の接続のための技術及び理論 第2問（5）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683648881d9e8.pdf#page=9",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files249368364982e423d.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed"
+  },
+  {
+    "id": "dekyo-charge-1-2025-first-theory-q3-1",
+    "exam": "dekyo-charge-1",
+    "session": "theory",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "first",
+    "qNumber": 3,
+    "part": "1",
+    "officialQuestionLabel": "3（1）",
+    "type": "multiple-choice",
+    "category": "トラヒック・セキュリティ",
+    "topicTags": [
+      "トラヒック・セキュリティ",
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 3,
+    "question": "完全線群のトラヒックについて述べた次の二つの記述は、 (ア) 。 A 待時式の系において、生起した呼が出回線塞がりに遭遇する確率は、一般に、呼損率とい われる。 B 即時式の系において、ある回線群に加わった呼量をaアーラン、そのときの呼損率をBと すると、この回線群で運ばれた呼量a_Cアーランは、次式で表される。 a_C=a(1-B)",
+    "choices": {
+      "ア": "Aのみ正しい",
+      "イ": "Bのみ正しい",
+      "ウ": "AもBも正しい",
+      "エ": "AもBも正しくない"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "Aは誤り。待時式で出回線塞がりに遭遇する確率は待合せ率であり、呼損率ではない。 Bは正しい。即時式で運ばれる呼量は、加わった呼量aから呼損分aBを差し引いたa(1−B)である。",
+    "choiceExplanations": {
+      "ア": "Aの判定が異なる。待時式で出回線塞がりに遭遇する確率は待合せ率であり、呼損率ではない。 Bの判定が異なる。即時式で運ばれる呼量は、加わった呼量aから呼損分aBを差し引いたa(1−B)である。",
+      "イ": "Aは誤り。待時式で出回線塞がりに遭遇する確率は待合せ率であり、呼損率ではない。 Bは正しい。即時式で運ばれる呼量は、加わった呼量aから呼損分aBを差し引いたa(1−B)である。",
+      "ウ": "Aの判定が異なる。待時式で出回線塞がりに遭遇する確率は待合せ率であり、呼損率ではない。",
+      "エ": "Bの判定が異なる。即時式で運ばれる呼量は、加わった呼量aから呼損分aBを差し引いたa(1−B)である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-first/theory-q3-1.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第1回 端末設備の接続のための技術及び理論 第3問（1）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683648881d9e8.pdf#page=10",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files249368364982e423d.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed"
+  },
+  {
+    "id": "dekyo-charge-1-2025-first-theory-q3-2",
+    "exam": "dekyo-charge-1",
+    "session": "theory",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "first",
+    "qNumber": 3,
+    "part": "2",
+    "officialQuestionLabel": "3（2）",
+    "type": "multiple-choice",
+    "category": "トラヒック・セキュリティ",
+    "topicTags": [
+      "トラヒック・セキュリティ",
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 3,
+    "question": "ある回線群が運んだ1時間当たりの (イ) は、運ばれた呼の平均回線保留時間中におけ る平均呼数の値に等しい。",
+    "choices": {
+      "ア": "最大呼数",
+      "イ": "待ち呼数",
+      "ウ": "トラヒック量",
+      "エ": "呼 数",
+      "オ": "呼数密度"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "運ばれた呼量は、平均回線保留時間を単位にした平均呼数として捉えられる。回線をどれだけ占有するかを表すトラヒック量を選び、単なる呼の件数と区別する。",
+    "choiceExplanations": {
+      "ア": "最大呼数はピーク時の件数であり、平均の回線占有を表す量ではない。",
+      "イ": "待ち呼数は接続待ちの呼の数であり、運ばれた呼量そのものではない。",
+      "ウ": "トラヒック量が、運ばれた呼の平均回線保留時間中における平均呼数に対応する。",
+      "エ": "単なる呼数では保留時間を反映できず、回線占有を表すトラヒック量とは異なる。",
+      "オ": "呼数密度ではなく、平均の回線占有を表すトラヒック量を問うている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-first/theory-q3-2.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第1回 端末設備の接続のための技術及び理論 第3問（2）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683648881d9e8.pdf#page=10",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files249368364982e423d.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed"
+  },
+  {
+    "id": "dekyo-charge-1-2025-first-theory-q3-3",
+    "exam": "dekyo-charge-1",
+    "session": "theory",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "first",
+    "qNumber": 3,
+    "part": "3",
+    "officialQuestionLabel": "3（3）",
+    "type": "multiple-choice",
+    "category": "トラヒック・セキュリティ",
+    "topicTags": [
+      "トラヒック・セキュリティ",
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 3,
+    "question": "出回線数が16回線の回線群について、使用中の出回線数を2分ごとに調査したところ、表 に示す結果が得られた。この回線群の調査時間中における出線能率は、 (ウ) パーセント とみなすことができる。 調査時刻 9:00 9:02 9:04 9:06 9:08 9:10 9:12 9:14 9:16 9:18 使用中の回線数 3 3 4 3 2 5 10 4 4 2",
+    "choices": {
+      "ア": "2",
+      "イ": "4",
+      "ウ": "8",
+      "エ": "25",
+      "オ": "50"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "使用中回線数の合計は40、観測回数は10なので、平均使用回線数は4回線である。出線能率は平均使用回線数÷全16回線＝4/16＝25％となる。",
+    "choiceExplanations": {
+      "ア": "2％は平均使用回線数4を全16回線で割った比に一致しない。",
+      "イ": "4は平均使用回線数であり、割合を百分率にした値ではない。",
+      "ウ": "8％は観測した平均使用回線数から算出する出線能率に一致しない。",
+      "エ": "25％は平均使用回線数4/全16回線を百分率にした値である。",
+      "オ": "50％は平均8回線を使う場合の値であり、観測結果の平均4回線とは異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-first/theory-q3-3.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第1回 端末設備の接続のための技術及び理論 第3問（3）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683648881d9e8.pdf#page=10",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files249368364982e423d.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed"
+  },
+  {
+    "id": "dekyo-charge-1-2025-first-theory-q3-4",
+    "exam": "dekyo-charge-1",
+    "session": "theory",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "first",
+    "qNumber": 3,
+    "part": "4",
+    "officialQuestionLabel": "3（4）",
+    "type": "multiple-choice",
+    "category": "トラヒック・セキュリティ",
+    "topicTags": [
+      "トラヒック・セキュリティ",
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 3,
+    "question": "有益なプログラムを装って他人のコンピュータに入り込むことにより、そのプログラムが実 行されるとユーザの意図しない悪意を持った動作を行い、自己増殖活動は行わないプログラム は、一般に、 (エ) といわれる。",
+    "choices": {
+      "ア": "ホットフィックス",
+      "イ": "トロイの木馬",
+      "ウ": "マクロウイルス",
+      "エ": "ワーム",
+      "オ": "ハニーポット"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "有益なプログラムを装って入り込み、実行されると悪意ある動作をするが、自己増殖しないものはトロイの木馬である。自己増殖するワームなどとの違いに着目する。",
+    "choiceExplanations": {
+      "ア": "ホットフィックスは不具合などへの修正であり、悪意ある偽装プログラムの名称ではない。",
+      "イ": "トロイの木馬は有益なソフトなどを装って入り込み、意図しない動作を行う。",
+      "ウ": "マクロウイルスはマクロ機能を悪用するウイルスで、この非自己増殖型の説明とは異なる。",
+      "エ": "ワームは自己増殖するため、設問の自己増殖しない条件に合わない。",
+      "オ": "ハニーポットは攻撃の観測などに使うおとりのシステムで、偽装侵入するプログラムではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-first/theory-q3-4.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第1回 端末設備の接続のための技術及び理論 第3問（4）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683648881d9e8.pdf#page=10",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files249368364982e423d.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed"
+  },
+  {
+    "id": "dekyo-charge-1-2025-first-theory-q3-5",
+    "exam": "dekyo-charge-1",
+    "session": "theory",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "first",
+    "qNumber": 3,
+    "part": "5",
+    "officialQuestionLabel": "3（5）",
+    "type": "multiple-choice",
+    "category": "トラヒック・セキュリティ",
+    "topicTags": [
+      "トラヒック・セキュリティ",
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 3,
+    "question": "デジタル署名及びデジタル証明書について述べた次の二つの記述は、 (オ) 。 A デジタル署名では、送信者の秘密鍵を用いて署名を行い、送信者の公開鍵を用いて署名の 検証を行う。 B デジタル証明書は、公開鍵の所有者を認識し、証明するためにデジタル署名を施したもの であり、一般に、認証局といわれる第三者機関が発行する。",
+    "choices": {
+      "ア": "Aのみ正しい",
+      "イ": "Bのみ正しい",
+      "ウ": "AもBも正しい",
+      "エ": "AもBも正しくない"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "Aは正しい。署名者の秘密鍵で署名し、その署名者の公開鍵で署名を検証する。 Bは正しい。公開鍵と所有者との対応を保証するデジタル証明書は、一般に認証局が署名して発行する。",
+    "choiceExplanations": {
+      "ア": "Bの判定が異なる。公開鍵と所有者との対応を保証するデジタル証明書は、一般に認証局が署名して発行する。",
+      "イ": "Aの判定が異なる。署名者の秘密鍵で署名し、その署名者の公開鍵で署名を検証する。",
+      "ウ": "Aは正しい。署名者の秘密鍵で署名し、その署名者の公開鍵で署名を検証する。 Bは正しい。公開鍵と所有者との対応を保証するデジタル証明書は、一般に認証局が署名して発行する。",
+      "エ": "Aの判定が異なる。署名者の秘密鍵で署名し、その署名者の公開鍵で署名を検証する。 Bの判定が異なる。公開鍵と所有者との対応を保証するデジタル証明書は、一般に認証局が署名して発行する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-first/theory-q3-5.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第1回 端末設備の接続のための技術及び理論 第3問（5）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683648881d9e8.pdf#page=10",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files249368364982e423d.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed"
+  },
+  {
+    "id": "dekyo-charge-1-2025-first-theory-q4-1",
+    "exam": "dekyo-charge-1",
+    "session": "theory",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "first",
+    "qNumber": 4,
+    "part": "1",
+    "officialQuestionLabel": "4（1）",
+    "type": "multiple-choice",
+    "category": "線路・機器の施工",
+    "topicTags": [
+      "線路・機器の施工",
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 3,
+    "question": "メタリックケーブルを用いた加入者線設備を構成する加入者保安器の機能について述べた次 の二つの記述は、 (ア) 。 A 加入者保安器は、加入者線設備を構成する線路側から端末へ雷などによる異常電圧が加わ ることを防止する機能を有している。 B 加入者保安器は、加入者回線の故障箇所が加入者線設備側かユーザ宅内側かを判定するた めに、分岐・結合機能を有している。",
+    "choices": {
+      "ア": "Aのみ正しい",
+      "イ": "Bのみ正しい",
+      "ウ": "AもBも正しい",
+      "エ": "AもBも正しくない"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "Aは正しい。加入者保安器は、線路側の雷などによる異常電圧から端末を保護する。 Bは誤り。故障区間を切り分けるのは切分け機能であり、分岐・結合機能という名称ではない。",
+    "choiceExplanations": {
+      "ア": "Aは正しい。加入者保安器は、線路側の雷などによる異常電圧から端末を保護する。 Bは誤り。故障区間を切り分けるのは切分け機能であり、分岐・結合機能という名称ではない。",
+      "イ": "Aの判定が異なる。加入者保安器は、線路側の雷などによる異常電圧から端末を保護する。 Bの判定が異なる。故障区間を切り分けるのは切分け機能であり、分岐・結合機能という名称ではない。",
+      "ウ": "Bの判定が異なる。故障区間を切り分けるのは切分け機能であり、分岐・結合機能という名称ではない。",
+      "エ": "Aの判定が異なる。加入者保安器は、線路側の雷などによる異常電圧から端末を保護する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-first/theory-q4-1.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第1回 端末設備の接続のための技術及び理論 第4問（1）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683648881d9e8.pdf#page=11",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files249368364982e423d.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed"
+  },
+  {
+    "id": "dekyo-charge-1-2025-first-theory-q4-2",
+    "exam": "dekyo-charge-1",
+    "session": "theory",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "first",
+    "qNumber": 4,
+    "part": "2",
+    "officialQuestionLabel": "4（2）",
+    "type": "multiple-choice",
+    "category": "線路・機器の施工",
+    "topicTags": [
+      "線路・機器の施工",
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 3,
+    "question": "直流電流の測定における固有誤差が±2パーセントのアナログ式テスタを用いて、5ミリア ンペアの直流電流を最大目盛値が10ミリアンペアの測定レンジで測定した場合、指針が示す 測定値の範囲は (イ) ミリアンペアである。",
+    "choices": {
+      "ア": "4.99~5.01",
+      "イ": "4.98~5.02",
+      "ウ": "4.9~5.1",
+      "エ": "4.8~5.2",
+      "オ": "3.0~7.0"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "アナログ式テスタの固有誤差は最大目盛値を基準に考える。10mAレンジの±2％は±0.2mAなので、真値5mAに対して指示値は4.8～5.2mAの範囲となる。",
+    "choiceExplanations": {
+      "ア": "4.99～5.01mAは、最大目盛10mAの2％である0.2mAを反映していない。",
+      "イ": "4.98～5.02mAは、最大目盛を基準にした±0.2mAより狭い。",
+      "ウ": "4.9～5.1mAは読取値5mAの2％であり、アナログ式の最大目盛基準とは異なる。",
+      "エ": "4.8～5.2mAが、5mA±(10mA×2％)の範囲に一致する。",
+      "オ": "3.0～7.0mAは誤差を±2mAとした値で、指定の±2％とは異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-first/theory-q4-2.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第1回 端末設備の接続のための技術及び理論 第4問（2）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683648881d9e8.pdf#page=11",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files249368364982e423d.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed"
+  },
+  {
+    "id": "dekyo-charge-1-2025-first-theory-q4-3",
+    "exam": "dekyo-charge-1",
+    "session": "theory",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "first",
+    "qNumber": 4,
+    "part": "3",
+    "officialQuestionLabel": "4（3）",
+    "type": "multiple-choice",
+    "category": "線路・機器の施工",
+    "topicTags": [
+      "線路・機器の施工",
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 3,
+    "question": "デジタルボタン電話装置の配線工事において、日本電線工業会規格(JCS)で規定されてい る星形構成の100対構内用ケーブルの対番号67番を指定されたときは、黄白粗巻テープの 10対ユニットにおけるカッド内の絶縁体の色が (ウ) の心線を選定する。",
+    "choices": {
+      "ア": "緑と白",
+      "イ": "紫と白",
+      "ウ": "青と白",
+      "エ": "赤と白",
+      "オ": "黄と白"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "67番は61～70番を収容する黄白粗巻の10対ユニット内で7番目の対となる。カッド内の順序と絶縁体の色を対応させると、赤と白の組合せを選ぶ。",
+    "choiceExplanations": {
+      "ア": "緑と白ではなく、ユニット内で7番目に当たる赤と白の対を選ぶ。",
+      "イ": "紫と白はユニット内の7番目に当たる色の組合せではない。",
+      "ウ": "青と白はユニット内での最初の対に当たり、67番の位置ではない。",
+      "エ": "61～70番のユニットの7番目は、赤と白の心線の組合せである。",
+      "オ": "黄と白はユニット内の7番目に当たる色の組合せではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-first/theory-q4-3.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第1回 端末設備の接続のための技術及び理論 第4問（3）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683648881d9e8.pdf#page=11",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files249368364982e423d.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed"
+  },
+  {
+    "id": "dekyo-charge-1-2025-first-theory-q4-4",
+    "exam": "dekyo-charge-1",
+    "session": "theory",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "first",
+    "qNumber": 4,
+    "part": "4",
+    "officialQuestionLabel": "4（4）",
+    "type": "multiple-choice",
+    "category": "線路・機器の施工",
+    "topicTags": [
+      "線路・機器の施工",
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 3,
+    "question": "JCSで規定されているエコケーブルの耐燃性ポリエチレンシース通信用構内ケーブル(耐燃 PEシースケーブル)を用いた、デジタル式PBXの配線工事などについて述べた次の二つの 記述は、 (エ) 。 A 配線工事終了後に回収された工事残材のうち、耐燃PEシースケーブルは、外被がポリエ チレン系の材料に統一されておりリサイクル対応が容易であるため、廃棄物の低減に寄与す ることができる。 B 耐燃PEシースケーブルは、ポリ塩化ビニル(PVC)シースケーブルと比較して、シース が硬く、許容曲げ半径が2倍以上であるため、配管の曲げ部に通線する場合には注意が必要 である。",
+    "choices": {
+      "ア": "Aのみ正しい",
+      "イ": "Bのみ正しい",
+      "ウ": "AもBも正しい",
+      "エ": "AもBも正しくない"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "Aは正しい。耐燃PEシースケーブルは外被材料をポリエチレン系へ統一でき、リサイクルや廃棄物低減に役立つ。 Bは誤り。許容曲げ半径がPVCシースケーブルの2倍以上になるとする説明は適切でない。",
+    "choiceExplanations": {
+      "ア": "Aは正しい。耐燃PEシースケーブルは外被材料をポリエチレン系へ統一でき、リサイクルや廃棄物低減に役立つ。 Bは誤り。許容曲げ半径がPVCシースケーブルの2倍以上になるとする説明は適切でない。",
+      "イ": "Aの判定が異なる。耐燃PEシースケーブルは外被材料をポリエチレン系へ統一でき、リサイクルや廃棄物低減に役立つ。 Bの判定が異なる。許容曲げ半径がPVCシースケーブルの2倍以上になるとする説明は適切でない。",
+      "ウ": "Bの判定が異なる。許容曲げ半径がPVCシースケーブルの2倍以上になるとする説明は適切でない。",
+      "エ": "Aの判定が異なる。耐燃PEシースケーブルは外被材料をポリエチレン系へ統一でき、リサイクルや廃棄物低減に役立つ。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-first/theory-q4-4.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第1回 端末設備の接続のための技術及び理論 第4問（4）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683648881d9e8.pdf#page=11",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files249368364982e423d.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed"
+  },
+  {
+    "id": "dekyo-charge-1-2025-first-theory-q4-5",
+    "exam": "dekyo-charge-1",
+    "session": "theory",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "first",
+    "qNumber": 4,
+    "part": "5",
+    "officialQuestionLabel": "4（5）",
+    "type": "multiple-choice",
+    "category": "線路・機器の施工",
+    "topicTags": [
+      "線路・機器の施工",
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 3,
+    "question": "デジタル式PBXの代表着信方式の設定において、代表グループ内の内線に優先順位を設け、 優先順位が高く、空いている内線を常に選択させる場合は、 (オ) 方式を選定する。",
+    "choices": {
+      "ア": "バーチャルライン応答",
+      "イ": "順次サーチ",
+      "ウ": "ラウンドロビン",
+      "エ": "ストレートライン応答",
+      "オ": "ダイレクトインライン"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "空いている内線のうち、あらかじめ定めた優先順位の高いものから選ぶ方式は順次サーチである。利用が均等になるように選ぶラウンドロビンと区別する。",
+    "choiceExplanations": {
+      "ア": "バーチャルライン応答は、この優先順位による代表着信の選択方式の名称ではない。",
+      "イ": "順次サーチは、優先順位の高い空き内線から順に選ぶ方式である。",
+      "ウ": "ラウンドロビンは利用をおおむね均等にする方式で、常に高順位を選ぶ方式ではない。",
+      "エ": "ストレートライン応答は、この代表グループの優先順位選択の名称ではない。",
+      "オ": "ダイレクトインラインは、この代表グループ内の選択方式の名称ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-first/theory-q4-5.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第1回 端末設備の接続のための技術及び理論 第4問（5）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683648881d9e8.pdf#page=11",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files249368364982e423d.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed"
+  },
+  {
+    "id": "dekyo-charge-1-2025-first-theory-q5-1",
+    "exam": "dekyo-charge-1",
+    "session": "theory",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "first",
+    "qNumber": 5,
+    "part": "1",
+    "officialQuestionLabel": "5（1）",
+    "type": "multiple-choice",
+    "category": "ISDN配線・施工管理",
+    "topicTags": [
+      "ISDN配線・施工管理",
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 3,
+    "question": "ISDN基本ユーザ・網インタフェースにおけるポイント・ツー・ポイント構成の場合、配 線ケーブルに接続されているモジュラジャックとTEとの間に使用できる延長接続コードは、 最長 (ア) メートルである。",
+    "choices": {
+      "ア": "3",
+      "イ": "7",
+      "ウ": "10",
+      "エ": "25",
+      "オ": "50"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "ポイント・ツー・ポイント構成でジャックとTEの間へ使用する延長接続コードの最長値は25mである。受動バス構成の端末接続コードの条件と混同しないようにする。",
+    "choiceExplanations": {
+      "ア": "3mは、このポイント・ツー・ポイント構成での延長接続コードの最長値ではない。",
+      "イ": "7mは、設問で問われている延長接続コードの最長値25mと異なる。",
+      "ウ": "10mは、受動バス構成のコード長などと混同しやすいが、この最長値ではない。",
+      "エ": "25mが、指定されたポイント・ツー・ポイント構成の延長接続コードの最長値である。",
+      "オ": "50mは、指定された延長接続コードの最長値25mを超える。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-first/theory-q5-1.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第1回 端末設備の接続のための技術及び理論 第5問（1）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683648881d9e8.pdf#page=12",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files249368364982e423d.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed"
+  },
+  {
+    "id": "dekyo-charge-1-2025-first-theory-q5-2",
+    "exam": "dekyo-charge-1",
+    "session": "theory",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "first",
+    "qNumber": 5,
+    "part": "2",
+    "officialQuestionLabel": "5（2）",
+    "type": "multiple-choice",
+    "category": "ISDN配線・施工管理",
+    "topicTags": [
+      "ISDN配線・施工管理",
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 3,
+    "question": "ISDN基本ユーザ・網インタフェースにおけるポイント・ツー・マルチポイント構成につ いて述べた次の二つの記述は、 (イ) 。 A 短距離受動バス配線構成では、1対のインタフェース線における配線極性は、全TE間で 同一とする必要はなく、反転してもよいとされている。 B 延長受動バス配線構成では、バス配線の途中に信号の増幅や再生などを行う能動素子を取 り付けることは許容されていない。",
+    "choices": {
+      "ア": "Aのみ正しい",
+      "イ": "Bのみ正しい",
+      "ウ": "AもBも正しい",
+      "エ": "AもBも正しくない"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "Aは誤り。短距離受動バスの配線極性は全TEで同一にする必要があり、任意に反転してよいわけではない。 Bは正しい。受動バス構成であるため、途中へ増幅器や再生器などの能動素子は取り付けない。",
+    "choiceExplanations": {
+      "ア": "Aの判定が異なる。短距離受動バスの配線極性は全TEで同一にする必要があり、任意に反転してよいわけではない。 Bの判定が異なる。受動バス構成であるため、途中へ増幅器や再生器などの能動素子は取り付けない。",
+      "イ": "Aは誤り。短距離受動バスの配線極性は全TEで同一にする必要があり、任意に反転してよいわけではない。 Bは正しい。受動バス構成であるため、途中へ増幅器や再生器などの能動素子は取り付けない。",
+      "ウ": "Aの判定が異なる。短距離受動バスの配線極性は全TEで同一にする必要があり、任意に反転してよいわけではない。",
+      "エ": "Bの判定が異なる。受動バス構成であるため、途中へ増幅器や再生器などの能動素子は取り付けない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-first/theory-q5-2.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第1回 端末設備の接続のための技術及び理論 第5問（2）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683648881d9e8.pdf#page=12",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files249368364982e423d.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed"
+  },
+  {
+    "id": "dekyo-charge-1-2025-first-theory-q5-3",
+    "exam": "dekyo-charge-1",
+    "session": "theory",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "first",
+    "qNumber": 5,
+    "part": "3",
+    "officialQuestionLabel": "5（3）",
+    "type": "multiple-choice",
+    "category": "ISDN配線・施工管理",
+    "topicTags": [
+      "ISDN配線・施工管理",
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 3,
+    "question": "ISDN基本ユーザ・網インタフェースにおけるバス配線では、一般に、ISO8877に 準拠した8端子のモジュラジャックが使用されており、その端子の使用に関する規格について 述べた次の二つの記述は、 (ウ) 。 A T線(1対)とR線(1対)には、3番~6番の四つの端子が使用される。 B ファントムモードの給電には、3番~6番の四つの端子が使用される。",
+    "choices": {
+      "ア": "Aのみ正しい",
+      "イ": "Bのみ正しい",
+      "ウ": "AもBも正しい",
+      "エ": "AもBも正しくない"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "Aは正しい。T線とR線の二対には、モジュラジャックの3番～6番を使用する。 Bは正しい。ファントム給電も信号線対の中点を利用し、3番～6番の端子を使用する。",
+    "choiceExplanations": {
+      "ア": "Bの判定が異なる。ファントム給電も信号線対の中点を利用し、3番～6番の端子を使用する。",
+      "イ": "Aの判定が異なる。T線とR線の二対には、モジュラジャックの3番～6番を使用する。",
+      "ウ": "Aは正しい。T線とR線の二対には、モジュラジャックの3番～6番を使用する。 Bは正しい。ファントム給電も信号線対の中点を利用し、3番～6番の端子を使用する。",
+      "エ": "Aの判定が異なる。T線とR線の二対には、モジュラジャックの3番～6番を使用する。 Bの判定が異なる。ファントム給電も信号線対の中点を利用し、3番～6番の端子を使用する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-first/theory-q5-3.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第1回 端末設備の接続のための技術及び理論 第5問（3）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683648881d9e8.pdf#page=12",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files249368364982e423d.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed"
+  },
+  {
+    "id": "dekyo-charge-1-2025-first-theory-q5-4",
+    "exam": "dekyo-charge-1",
+    "session": "theory",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "first",
+    "qNumber": 5,
+    "part": "4",
+    "officialQuestionLabel": "5（4）",
+    "type": "multiple-choice",
+    "category": "ISDN配線・施工管理",
+    "topicTags": [
+      "ISDN配線・施工管理",
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 3,
+    "question": "施工計画、施工管理などについて述べた次の記述のうち、誤っているものは、 (エ) で ある。",
+    "choices": {
+      "ア": "工事の受注者は、工事着手前に施工計画書を工事の発注者の監督職員に提出しなけ ればならない。",
+      "イ": "施工計画書には、工事概要、計画工程表、施工方法、安全管理などが記載されなけ ればならない。",
+      "ウ": "施工管理において、最初に計画した工程と実際に進行している工程とを比較検討し、 進捗に差異が生じてきているとき、その原因を調査し、取り除くことにより工事が計 画どおりの工程で進行するように管理し、調整を図ることは、工程管理といわれる。",
+      "エ": "発注者から提示された仕様書、契約図面などの設計図書相互間に不整合がある場合、 受注者は、当該設計図書を修正して工事を実施し、工事終了後、速やかに実施状況を 発注者に報告しなければならない。",
+      "オ": "工事費は、直接費と間接費に分けられ、現場管理費、共通仮設費などが含まれる間 接費は、一般に、工期が長くなると増加する。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "設計図書に不整合があれば、工事前に監督職員へ確認して指示を受ける。受注者が独断で修正して施工し、終了後に報告するという④は、必要な事前確認を欠いている。",
+    "choiceExplanations": {
+      "ア": "工事着手前に施工計画書を提出するという手順は正しい。",
+      "イ": "施工計画書へ工事概要、工程、施工方法、安全管理などを記載する説明は正しい。",
+      "ウ": "計画と実績を比較して差異の原因を除き、進捗を調整する工程管理の説明は正しい。",
+      "エ": "設計図書の不整合は事前に確認すべきで、独断で修正・施工して事後報告する手順は誤りである。",
+      "オ": "現場管理費などの間接費が一般に工期の長期化に伴い増加する説明は正しい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-first/theory-q5-4.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第1回 端末設備の接続のための技術及び理論 第5問（4）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683648881d9e8.pdf#page=12",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files249368364982e423d.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed"
+  },
+  {
+    "id": "dekyo-charge-1-2025-first-theory-q5-5",
+    "exam": "dekyo-charge-1",
+    "session": "theory",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "first",
+    "qNumber": 5,
+    "part": "5",
+    "officialQuestionLabel": "5（5）",
+    "type": "multiple-choice",
+    "category": "ISDN配線・施工管理",
+    "topicTags": [
+      "ISDN配線・施工管理",
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 3,
+    "question": "図に示すアローダイアグラムにおいて、フリーフロートが最も大きい作業は、作業 (オ) である。",
+    "choices": {
+      "ア": "C",
+      "イ": "E",
+      "ウ": "I",
+      "エ": "J",
+      "オ": "K"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "各節点の最早時刻を計算すると、節点6は9日、節点9は21日となる。作業Kのフリーフロートは21−9−9＝3日で、Cの1日、Eの2日、IとJの0日より大きい。",
+    "choiceExplanations": {
+      "ア": "作業Cのフリーフロートは4−0−3＝1日で、Kの3日より小さい。",
+      "イ": "作業Eのフリーフロートは12−4−6＝2日で、Kの3日より小さい。",
+      "ウ": "作業Iのフリーフロートは12−9−3＝0日で、最大ではない。",
+      "エ": "作業Jのフリーフロートは21−17−4＝0日で、最大ではない。",
+      "オ": "作業Kのフリーフロートは21−9−9＝3日で、選択肢中で最大である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-first/theory-q5-5.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第1回 端末設備の接続のための技術及び理論 第5問（5）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683648881d9e8.pdf#page=13",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files249368364982e423d.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed"
+  }
+]

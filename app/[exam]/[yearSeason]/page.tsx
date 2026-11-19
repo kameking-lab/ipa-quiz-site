@@ -6,7 +6,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ChevronRight } from "lucide-react";
 
-import type { ExamCode, Season } from "@/lib/questions/types";
+import type { ExamCode } from "@/lib/questions/types";
 import { examLabelAt } from "@/lib/exam-naming/history";
 import { questionSourceEdition } from "@/lib/questions/source-label";
 import { examLabel, formatYearSeason } from "@/lib/utils";
@@ -16,7 +16,7 @@ import {
   getQuestionsByExamStrict,
   groupByYearSeason,
 } from "@/lib/seo/exam-meta";
-import { questionPagePath } from "@/lib/seo/question-url";
+import { parseQuestionYearSeason, questionPagePath } from "@/lib/seo/question-url";
 import { isPlaceholderExplanation, isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/badge";
@@ -81,12 +81,6 @@ export async function generateStaticParams(): Promise<RouteParams[]> {
   return out;
 }
 
-function parseYearSeason(slug: string): { year: number; season: Season } | null {
-  const m = /^(\d{4})-(spring|autumn|cbt|published|first|second|round1|round2|early|may|september|january|october|late|annual|july|primary|kansai|february|june|august|march)$/.exec(slug);
-  if (!m) return null;
-  return { year: Number(m[1]), season: m[2] as Season };
-}
-
 export async function generateMetadata({
   params,
 }: {
@@ -96,7 +90,7 @@ export async function generateMetadata({
   if (!getAvailableExams().includes(exam as ExamCode)) {
     return { title: "年度が見つかりません", robots: { index: false } };
   }
-  const parsed = parseYearSeason(yearSeason);
+  const parsed = parseQuestionYearSeason(yearSeason);
   if (!parsed) return { title: "年度が見つかりません", robots: { index: false } };
   const pool = getQuestionsByExamStrict(exam as ExamCode).filter(q => q.year === parsed.year && q.season === parsed.season);
   const commonOnly = pool.length > 0 && pool.every(q => q.session === "am1");
@@ -133,7 +127,7 @@ export default async function ExamYearSeasonPage({
 }) {
   const { exam, yearSeason } = await params;
   if (!getAvailableExams().includes(exam as ExamCode)) notFound();
-  const parsed = parseYearSeason(yearSeason);
+  const parsed = parseQuestionYearSeason(yearSeason);
   if (!parsed) notFound();
 
   const code = exam as ExamCode;

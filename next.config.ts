@@ -163,6 +163,7 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       { source: "/features/ai-explanation", destination: "/features/copilot", statusCode: 301 },
+      { source: "/features/essay-grading", destination: "/essay", statusCode: 301 },
       // Retired duplicate entry points; query values are preserved by Next.
       { source: "/account/study-plan", destination: "/study-plan", statusCode: 301 },
       { source: "/quiz/review", destination: "/review", statusCode: 301 },

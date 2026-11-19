@@ -14,6 +14,39 @@ export class PostgresMonthlyStore implements MonthlyStore {
     return (await this.db.query<{ user_id: string }>(`SELECT user_id FROM billing_subscription_identity
       WHERE source_instance=$1 AND mode=$2 AND kind='customer' AND provider_id=$3`, [this.source, mode, customerId]))[0]?.user_id ?? null;
   }
+  async examEndsToReconcile(mode: Realm, now: number, scanned: string[] = []) {
+    return this.db.query<{ user_id: string; signup_id: string }>(`SELECT a.user_id, signup.key AS signup_id
+      FROM billing_subscription_account a CROSS JOIN LATERAL jsonb_each(a.payload->'signups') AS signup
+      CROSS JOIN LATERAL (SELECT a.payload->'contracts'->(signup.value->>'subscriptionId') AS contract) AS linked
+      WHERE a.source_instance=$1 AND a.mode=$2 AND a.payload#>>'{customer,id}' IS NOT NULL
+        AND NOT (signup.key = ANY($4::text[]))
+        AND (signup.value#>>'{appStoreOverlap,renewal}'='pending' OR
+          COALESCE((signup.value->>'examEndCheckAt')::bigint, 0) <= $3 AND (
+          (linked.contract#>>'{memberEnding,kind}'='exam'
+            AND linked.contract->>'status' NOT IN ('canceled','incomplete_expired')
+            AND linked.contract->>'cancelAtPeriodEnd' IS DISTINCT FROM 'true'
+            AND (linked.contract#>>'{memberEnding,at}')::bigint <= $3)
+          OR (jsonb_typeof(signup.value->'examEndAt')='number' AND linked.contract->'memberEnding' IS NULL AND (
+            (signup.value->>'state'='pending' AND signup.value->>'sessionId' IS NOT NULL)
+            OR (signup.value->>'state'='attached'
+              AND linked.contract->>'status' NOT IN ('canceled','incomplete_expired')
+              AND (signup.value->>'examEndApplied' IS DISTINCT FROM 'true'
+                OR ((signup.value->>'examEndAt')::bigint <= $3
+                  AND linked.contract->>'examCancelAt' IS NOT NULL)))
+            OR (linked.contract->>'status' IN ('canceled','incomplete_expired')
+              AND (signup.value->>'examEndAt')::bigint <= $3
+              AND signup.value->>'examFinalChecked' IS DISTINCT FROM 'true'
+              AND (signup.value->>'examEndEnforced' = 'true' OR linked.contract->>'examCancelAt' IS NOT NULL))))
+          OR EXISTS (SELECT 1 FROM jsonb_each_text(signup.value->'examChargeReviews') AS review WHERE review.value='pending')
+          OR jsonb_array_length(COALESCE(signup.value->'examWriteOffJobs', '[]'::jsonb)) > 0
+        ))
+      ORDER BY CASE WHEN signup.value#>>'{appStoreOverlap,renewal}'='pending' THEN -1
+          WHEN signup.value->>'state'='attached' AND linked.contract->>'status' NOT IN ('canceled','incomplete_expired')
+          AND signup.value->>'examEndApplied' IS DISTINCT FROM 'true' THEN 0
+          WHEN signup.value->>'state'='attached' THEN 1 ELSE 2 END,
+        COALESCE((signup.value->>'examEndCheckAt')::bigint, 0), (signup.value->>'examEndAt')::bigint, a.user_id, signup.key
+      LIMIT 24`, [this.source, mode, Math.floor(now), scanned]);
+  }
   async trialCardOwner(cardHash: string, mode: Realm, exceptUserId: string) {
     return (await (this.session.getStore() ?? this.db).query<{ user_id: string }>(`SELECT user_id FROM billing_subscription_account
       WHERE source_instance=$1 AND mode=$2 AND user_id<>$3 AND jsonb_exists(COALESCE(payload->'trialCards','{}'::jsonb), $4) LIMIT 1`,
@@ -31,16 +64,16 @@ export class PostgresMonthlyStore implements MonthlyStore {
     });
   }
 
-  purchaseTransaction<T>(userId: string, mode: Realm, source: string, fn: (account: Account, members: Account[]) => T) {
+  purchaseTransaction<T>(userId: string, mode: Realm, source: string, fn: (account: Account, members: Account[], verifiedMembers?: ReadonlySet<string>) => T) {
     if (source !== this.source) throw new BillingError("source_instance_mismatch", 503);
     return this.db.transaction(async sql => {
-      type User = { id: string; email: string | null };
-      const [current] = await sql.query<User>('SELECT id,email FROM "User" WHERE id=$1', [userId]);
+      type User = { id: string; email: string | null; emailVerified: Date | null };
+      const [current] = await sql.query<User>('SELECT id,email,"emailVerified" FROM "User" WHERE id=$1', [userId]);
       if (!current) throw new BillingError("sign_in_required", 401);
       const email = current.email && !privateRelayEmail(current.email) ? normalizedPurchaseEmail(current.email) || null : null;
       // Every buyer locks the same users in the same order. Single-user writers
       // (e.g. webhooks) use these locks too.
-      const users = await sql.query<User>(`SELECT id,email FROM "User"
+      const users = await sql.query<User>(`SELECT id,email,"emailVerified" FROM "User"
         WHERE id=$1 OR lower(btrim(email,$3))=$2 ORDER BY id FOR UPDATE`, [userId, email, PURCHASE_EMAIL_WHITESPACE]);
       const owner = users.find(u => u.id === userId);
       if (!owner) throw new BillingError("sign_in_required", 401);
@@ -48,7 +81,8 @@ export class PostgresMonthlyStore implements MonthlyStore {
       const members: Account[] = [];
       for (const u of users) members.push(await this.load(sql, u.id, mode, source));
       const before = members.map(a => JSON.stringify(a));
-      const result = fn(members[users.indexOf(owner)], members);
+      const verifiedMembers = new Set(users.filter(u => u.emailVerified && email).map(u => u.id));
+      const result = fn(members[users.indexOf(owner)], members, verifiedMembers);
       for (let i = 0; i < members.length; i++) {
         if (JSON.stringify(members[i]) !== before[i]) await this.save(sql, members[i]);
       }

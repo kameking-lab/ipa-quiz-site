@@ -165,7 +165,7 @@ describe("Stripe Checkout stays minimal", () => {
   it("reads a Checkout whose creation response was lost and verifies the saved signup binding", async () => {
     const f = await monthlyStripeFixture();
     const signup = f.store.accounts.get("stripe-test:alice")!.signups[f.result.orderId];
-    await expect(f.provider.checkoutSession("cus_monthly", signup)).resolves.toEqual({ id: f.session.id, status: "complete" });
+    await expect(f.provider.checkoutSession("cus_monthly", signup)).resolves.toEqual({ id: f.session.id, status: "complete", subscriptionId: f.session.subscription });
     const original = vi.mocked(f.fetcher).getMockImplementation()!;
     vi.mocked(f.fetcher).mockImplementation((input, options) => {
       const url = new URL(String(input));
@@ -174,7 +174,7 @@ describe("Stripe Checkout stays minimal", () => {
       return Promise.resolve(Response.json({ data: [f.session], has_more: false }));
     });
     const lost = { ...signup, sessionId: null, url: null };
-    await expect(f.provider.checkoutSession("cus_monthly", lost)).resolves.toEqual({ id: f.session.id, status: "complete" });
+    await expect(f.provider.checkoutSession("cus_monthly", lost)).resolves.toEqual({ id: f.session.id, status: "complete", subscriptionId: f.session.subscription });
     f.session.metadata.terms_hash = "changed";
     await expect(f.provider.checkoutSession("cus_monthly", lost)).rejects.toThrow();
   });

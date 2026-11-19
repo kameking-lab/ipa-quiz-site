@@ -63,7 +63,8 @@ describe("monthly Stripe adapter (public API fixtures)", () => {
   it("does not create another subscription when provider knows one even if local callbacks are delayed", async () => {
     const f = await monthlyStripeFixture(); const a = f.store.accounts.get("stripe-test:alice")!, signup = a.signups[f.result.orderId];
     signup.sessionId = null; signup.url = null;
-    await expect(f.service.checkout("alice", monthlyTerms(f.config), f.provider)).rejects.toMatchObject({ code: "subscription_exists" });
+    await expect(f.service.checkout("alice", monthlyTerms(f.config), f.provider)).resolves.toMatchObject({ recovered: true, orderId: signup.id });
+    expect((await f.service.status("alice", signup.id)).entitled).toBe(true);
     expect(vi.mocked(f.fetcher).mock.calls.filter(([url, init]) => String(url).endsWith("/checkout/sessions") && init?.method === "POST")).toHaveLength(1);
   });
   it("a fully expired checkout with no subscription closes the pending reservation", async () => {

@@ -1,0 +1,228 @@
+[
+  {
+    "id": "denken1-2023-secondary-power-management-q01",
+    "exam": "denken1",
+    "session": "denryoku",
+    "year": 2023,
+    "season": "second",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "発電機",
+    "topicTags": [
+      "タービン発電機の固定子巻線の直接水冷"
+    ],
+    "difficulty": 4,
+    "question": "問1 タービン発電機の固定子巻線の直接水冷",
+    "answer": "〔問１の標準解答〕\n  (1) 長所としては，同容量の発電機で固定子巻線を小形に製作することができる\n  ため，価格の低減や大容量化が可能となる。\n   短所としては，水質を保つための水処理装置や，水を固定子巻線に供給する\n  ためのポンプや配管などの設備が必要となる。\n  (2) 付属する機器は，貯水槽，ポンプ，イオン交換樹脂，導電率計，冷却器，圧\n  力調整弁，温度調整弁，冷却水入口圧力計，冷却水入口温度計などがある。\n   制御の対象となる物理量は，冷却水導電率，冷却水温度，冷却水圧力などが\n  ある。\n  (3) 固定子巻線内の純水が沸騰し始めるまでの時間以内に，緊急的に出力を降下\n  させるランバックを行う。それでも固定子巻線が許容温度以下にならない場合\n  は，発電機をトリップさせる。若しくは，ランバックさせずに即時，発電機を\n  トリップさせる場合もある。\n   ポンプの異常であって，予備がある場合はそちらに切り替える。",
+    "explanation": "冷却水が熱を受け取る経路を固定子巻線の構造と結び付け、水質管理と冷却効率の関係を整理する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken1/2023-secondary-power-management/page-03.webp"
+    ],
+    "imageAltTexts": [
+      "問1の本文・図表（公式問題冊子 3ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken1/2023-secondary-power-management/answer-q01-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "問1の公式標準解答（1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20231112_ch_first_q01.pdf#page=3",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20231112_ch_first_a01.pdf#page=1",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 2023年度 第一種電気主任技術者試験 二次試験 電力・管理",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denken1-2023-secondary-power-management-q02",
+    "exam": "denken1",
+    "session": "denryoku",
+    "year": 2023,
+    "season": "second",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "変圧器",
+    "topicTags": [
+      "ガス絶縁変圧器"
+    ],
+    "difficulty": 4,
+    "question": "問2 ガス絶縁変圧器",
+    "answer": "〔問２の標準解答〕\n  (1)\n  ・都市部の地下や屋内変電所：不燃性であることから，防火対策(防火設備や防\n   火区画)が簡略化・合理化できる。\n  ・山岳地の水力発電所・変電所：油入変圧器の場合，漏油による河川汚染のリ\n   スクがあるが，それが回避できる。\n                                                      - 1 -\n\n(2)\n ・変圧器コンサベータや放圧装置が不要となるため，変圧器室の高さが低減で\n  き建物建設コストの低減が図れる。\n  ・GIS 等と直結し合理的な配置設計により建物面積の縮小化が可能となること\n  から建物建設コストの低減が図れる。\n(3)\n  ・SF6 ガスは酸化劣化せず，吸湿呼吸器が不要なため，シリカゲル交換が不要と\n  なり，保守の省力化が可能となる。\n  ・GIS 等と同様のガスシール構造を有し，技術蓄積による長期信頼性が期待で\n  き，保守の省力化が可能となる。\n(4) SF6 ガスは鉱油に比べ熱容量が小さいことから，以下に示す方法で冷却性能\n を向上させている。（以下の冷却性能向上方策から二つ記載されていればよい。）\n  ・SF6 ガスの圧力を高めて，熱容量を増やす。\n ・高耐熱絶縁材料により巻線の温度上昇限度を高める。\n ・高ガス圧対応のガスブロアにより大量のガスを流す。\n ・巻線内部のガス流路構成を解析により最適化し，大量のガスを均一に流す。",
+    "explanation": "絶縁と冷却にガスを用いる構造を押さえ、冷却方式による違いを送風・循環の経路から読み取る。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken1/2023-secondary-power-management/page-04.webp"
+    ],
+    "imageAltTexts": [
+      "問2の本文・図表（公式問題冊子 4ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken1/2023-secondary-power-management/answer-q02-p01.webp",
+      "/questions/denken1/2023-secondary-power-management/answer-q02-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "問2の公式標準解答（1ページ）",
+      "問2の公式標準解答（2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20231112_ch_first_q01.pdf#page=4",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20231112_ch_first_a01.pdf#page=1",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 2023年度 第一種電気主任技術者試験 二次試験 電力・管理",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denken1-2023-secondary-power-management-q03",
+    "exam": "denken1",
+    "session": "denryoku",
+    "year": 2023,
+    "season": "second",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "送電",
+    "topicTags": [
+      "電力円線図"
+    ],
+    "difficulty": 4,
+    "question": "問3 電力円線図",
+    "answer": "〔問３の標準解答〕\n  (1)\n   ａ)\n    送電端から流れ出す電流 sI は\n            Es  Er                  I s          ············································ ①               Z   ･･･(答)\n   ｂ)\n    送電端から流れ出す sP ， Qs は Es ， sI を用いて，\n                  Es  Er  Es 2  Es e j Er  Es 2     j   Es Er     j\n     Ps    j Qs  Es I s  Es                                               j          e        e                     Z       Ze        Z      Z\n           Es 2     Es Er          Es 2     Es Er                   cos         cos                 j      sin          sin        ··· ②\n             Z        Z             Z       Z\n                                                      - 2 -\n\nEs 2     Es Er     Ps      cos         cos       ······························  ③         Z       Z          ･･･(答)\n        Es 2     Es Er    Qs       sin          sin       ································ ④         Z       Z          ･･･(答)\n ｃ)\n  ③，④式より\n                            2                                                   2             2                   2                                          2\n         Es           Es        Es Er      Ps      cos    Qs       sin              ··················· ⑤          Z             Z          Z\n        Es 2        Es 2        Es Er       x1      cos  , x2       sin  , x3       ························ ⑥         Z          Z           Z  ･･･(答)\n(2) 受電端に流れ込む有効電力 rP ，無効電力 Qr として，受電端円線図の式を送電\n 端円線図の式と同様に求めると以下となる。\n                           2                                                  2            2                  2                                         2        Er           Er        Es Er      Pr      cos    Qr       sin          Z            Z         Z\n                                                   - 3 -\n\njQ\n                       送電端円線図\n                                    x1 , x2\n                              有効電力損失･･･(答)\n                                    3x\n                              無効電力損失･･･(答)\n                                                P\n                    O\n                               3x\n                          x1 ,  x2\n                    受電端円線図\n(3)\n  基準インピーダンス ZN は，基準電圧 VN ，基準容量 SN として，\n         VN 2     ZN        250 より，          SN\n     R  0.02 p.u. ， X   0.08 p.u. ··································· ⑦\n     Z   R 2  X 2   0.082 462 ···································· ⑧\n          R              X       cos       0.242 54 ， sin        0.970 14 ······················ ⑨\n           Z               Z\n   Es  Er   1.0 ，及び⑦，⑧及び⑨式を⑥式に代入して，\n   送電端円線図の半径は12.1，中心は(2.94，11.8)・・・(答)\n                                                   - 4 -",
+    "explanation": "線路の電圧と電流の関係を複素数で表し、有効電力と無効電力の軌跡を円線図に対応付ける。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken1/2023-secondary-power-management/page-05.webp",
+      "/questions/denken1/2023-secondary-power-management/page-06.webp"
+    ],
+    "imageAltTexts": [
+      "問3の本文・図表（公式問題冊子 5ページ）",
+      "問3の本文・図表（公式問題冊子 6ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken1/2023-secondary-power-management/answer-q03-p02.webp",
+      "/questions/denken1/2023-secondary-power-management/answer-q03-p03.webp",
+      "/questions/denken1/2023-secondary-power-management/answer-q03-p04.webp"
+    ],
+    "answerImageAltTexts": [
+      "問3の公式標準解答（2ページ）",
+      "問3の公式標準解答（3ページ）",
+      "問3の公式標準解答（4ページ）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20231112_ch_first_q01.pdf#page=5",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20231112_ch_first_a01.pdf#page=2",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 2023年度 第一種電気主任技術者試験 二次試験 電力・管理",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denken1-2023-secondary-power-management-q04",
+    "exam": "denken1",
+    "session": "denryoku",
+    "year": 2023,
+    "season": "second",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "系統故障",
+    "topicTags": [
+      "2相短絡故障の対称分"
+    ],
+    "difficulty": 4,
+    "question": "問4 2相短絡故障の対称分",
+    "answer": "〔問４の標準解答〕\n  (1) 母線s におけるbc 相短絡故障時のabc 変数の電圧・電流制約式は下記。\n       Vsb  Vsc ， I sa  0 ， I sb   I sc  0\n   これを012 変数で表すと，\n       Vs0  0 ， Vs1  Vs2 ， I s0  0 ， I s1   I s2  0\n   したがって，零相成分は出現しない。一方，母線s における正・逆相の故障\n  基本式は下記。\n        Vs1  Es  Zs1･I s1\n        Vs2   Zs2･I s2\n  以上から正相分変数を取り出して，\n            Es            I s1\n           Zs1  Zs2\n          Es               ･･･(答)  (∵題意より Zs2  Zs1 )\n             2 Zs1\n  (2) 母線t の電圧 Et を求め，この Et と E0 の関係から短絡前の母線s の電圧 Es\n  を求める。\n   まず，母線t の sin   t は，母線t-0 間のリアクタンスを X t0 とするとき，\n         Et E0 sin   t           1.10  1.05sin   t       P      から 0.7\n            X t0                        0.6                                        0.1\n                                      2\n   これから sin   t   0.242 42   0.242 ･･･(答)\n                                           2\n   これから cos   t    1  sin   t    0.970 17 (∵題意より      )                                                        2\n   すなわち，母線t の短絡前の電圧 Et は，\n      Et  1.10 0.970 17  j0.242 42   1.067 2  j0.266 66\n   上から，短絡前母線s の電圧 Es は次式で求まる。\n     Es  0.75 Et  0.25 E0\n            0.75  1.0672  j0.26666   0.25  1.05   j0\n           1.0629   j0.2\n                                                      - 5 -\n\nEt  E0  【注： Es 値は，他の手順でも導出できる。例えば，母線t-0 間の電流 I t0                                                                                               j0.4\n   を求め，Es  E0   j0.3 I t0 からも導出できる。(これら2 式をまとめて表現する\n   と上式になる)】\n  上記 Es の絶対値を採って，\n     Es  1.081 5   1.08･･･答(   )\n(3) 母線s から右側インピーダンス Z1R と左側インピーダンス Z1L を計算し，これ\n らの並列和として Zs1 を求める。\n  まず， Z1R は，\n                j0.6\n     Z1R           j0.3             2\n  また， Z1L は，\n                    0.32\n     Z1L   j0.1    j        j0.5                     0.8\n  これらから Zs1 は,\n        Z1R  Z1L    Zs1                j0.187 5    j0.188 ･･･(答)\n        Z1R  Z1L\n(4) 2 相短絡故障時の正相短絡電流の絶対値 I s1 は，小問(1)の式から，\n         Es      1.081 5         I s1                       2.884   2.88 ･･･(答)\n           2 Zs1   2  0.187 5\n  また，このときの母線s の正相電圧 Vs1 は，小問(1)の式から，\n               Es   Es     Vs1  Es  Zs1･\n                  2 Zs1   2\n  これから，\n            1.081 5\n     Vs1           0.54075   0.541 ･･･(答)             2\n  【注：上記 Vs1 値は，他の手順でも導出できる。単純には Vs1  Es  Zs1･I s1 の右辺\n に直接各値を代入する方法もあるし，また Vs1  Zs1･ I s1 からも求めることもできる。】\n                                                      - 6 -",
+    "explanation": "bc相の短絡点の条件を正相・逆相の量に変換し、回線と電源を含めた系統で電流を求める。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken1/2023-secondary-power-management/page-07.webp"
+    ],
+    "imageAltTexts": [
+      "問4の本文・図表（公式問題冊子 7ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken1/2023-secondary-power-management/answer-q04-p05.webp",
+      "/questions/denken1/2023-secondary-power-management/answer-q04-p06.webp"
+    ],
+    "answerImageAltTexts": [
+      "問4の公式標準解答（5ページ）",
+      "問4の公式標準解答（6ページ）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20231112_ch_first_q01.pdf#page=7",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20231112_ch_first_a01.pdf#page=5",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 2023年度 第一種電気主任技術者試験 二次試験 電力・管理",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denken1-2023-secondary-power-management-q05",
+    "exam": "denken1",
+    "session": "denryoku",
+    "year": 2023,
+    "season": "second",
+    "qNumber": 5,
+    "type": "descriptive",
+    "category": "配電",
+    "topicTags": [
+      "分散型電源の連系"
+    ],
+    "difficulty": 4,
+    "question": "問5 分散型電源の連系",
+    "answer": "〔問５の標準解答〕\n          1  (1)         [p.u.]･･･(答)\n          r 2   x 2\n  (2) 位相の基準を連系点電圧V に置き，V に対する無限大母線電圧 VS の位相角を\n           を基準電圧とするので， v  1 e （r    j x ) i が成り立つ。    [rad]とすると， VS                                                                                      j\n  ここでi [p.u.]は，電線路を無限大母線に向かって流れる電流の単位法表示であ\n  る。一方，分散型電源の出力がp+j q [p.u.]なので， p +j q  v  i となる。この\n    2 式からi を消去すると，\n       v 2  ( r    j x )( p    j q )  v e j が得られる。整理すると，\n       v 2  ( rp  xq )+ j ( rq  xp)  v e j\n          0 であるから，上式の実数部が等しいとしてよい。したがって，\n       v 2  v (rp  xq)  0\n   この二次方程式を解き，正となる解を求めると，\n         1   1  4(rp  xq )\n        v         が得られる。\n                2\n   ここで，a が小さいときの近似式  1  a  1  0.5 a を適用すると，\n         1   1  2( rp  xq )\n        v                   1  rp  xq [p.u.]が得られる。\n                 2\n  (3) r  0.05，x  0.1 とすると，v  1  0.05×1.4+0.1×0  1.07 p.u.となって1.06 p.u.\n  を超えるので，連系することはできない。\n  (4) 1.06  1   0.05 p  0.1×( 0.2)\n  したがって，p   1.60 p.u.\n       16.0 MW･･･(答)\n                                                      - 7 -",
+    "explanation": "連系点の有効・無効電力を区別し、線路の抵抗・リアクタンスによる電圧変化を求める。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken1/2023-secondary-power-management/page-08.webp"
+    ],
+    "imageAltTexts": [
+      "問5の本文・図表（公式問題冊子 8ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken1/2023-secondary-power-management/answer-q05-p07.webp"
+    ],
+    "answerImageAltTexts": [
+      "問5の公式標準解答（7ページ）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20231112_ch_first_q01.pdf#page=8",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20231112_ch_first_a01.pdf#page=7",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 2023年度 第一種電気主任技術者試験 二次試験 電力・管理",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denken1-2023-secondary-power-management-q06",
+    "exam": "denken1",
+    "session": "denryoku",
+    "year": 2023,
+    "season": "second",
+    "qNumber": 6,
+    "type": "descriptive",
+    "category": "周波数制御",
+    "topicTags": [
+      "電力系統の周波数制御"
+    ],
+    "difficulty": 4,
+    "question": "問6 電力系統の周波数制御",
+    "answer": "〔問６の標準解答〕\n(1) 翼長の長い低圧タービン動翼に共振により振動が発生，又は補機の出力が低下\n して運転が停止する可能性がある。\n(2)\n ａ) 予想日負荷曲線を作成し，発電事業者等の発電計画により対処する。予想か\n  ら外れた部分については，調整力である水力発電所又は火力発電所等に指令し\n  て発電量を調整する。\n ｂ) 系統周波数を計測して基準周波数からの偏差を検出し，調整力である水力発\n  電所又は火力発電所等に，変動分に応じた出力調整を自動で指令して発電量を\n  調整する。\n ｃ) 発電所の内，周波数が下がった場合に出力を上昇させ，周波数が上がった場\n  合に出力を低下させるガバナフリー運転機能を有する発電機により発電量を\n  調整する。\n(3)\n ａ) 交流の単独系統，又は連系している他の交流系統に比べて，系統容量が大き\n  い系統に採用されている。\n ｂ) 周波数バイアス連系線電力制御方式（TBC）\n                                                      - 8 -",
+    "explanation": "需給の不一致で周波数が変わるため、発電機側の応答と系統全体で行う調整を分けて説明する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken1/2023-secondary-power-management/page-09.webp"
+    ],
+    "imageAltTexts": [
+      "問6の本文・図表（公式問題冊子 9ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken1/2023-secondary-power-management/answer-q06-p08.webp"
+    ],
+    "answerImageAltTexts": [
+      "問6の公式標準解答（8ページ）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20231112_ch_first_q01.pdf#page=9",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20231112_ch_first_a01.pdf#page=8",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 2023年度 第一種電気主任技術者試験 二次試験 電力・管理",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  }
+]

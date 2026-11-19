@@ -41,7 +41,7 @@ export default function NotFound() {
               className="inline-flex min-h-11 items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
             >
               <FileCheck className="h-3.5 w-3.5" />
-              午後論述のAI採点
+              IPA 論文対策
             </Link>
             <Link
               href="/faq"

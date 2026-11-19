@@ -80,11 +80,6 @@ export const FEATURE_LANDING_PAGES: FeatureLandingPage[] = [
         label: "AU 試験 COSO・COBIT 使い分け",
         description: "監査論文の権威性を一段引き上げる引用。",
       },
-      {
-        href: "/features/essay-grading",
-        label: "AI 論述添削",
-        description: "自分で書いた答案を見直す機能。",
-      },
     ],
     faqs: [
       {
@@ -102,86 +97,6 @@ export const FEATURE_LANDING_PAGES: FeatureLandingPage[] = [
     ],
   },
 
-  {
-    slug: "essay-grading",
-    title: "AI 論述添削 ── 独自練習問題で答案を見直す",
-    description:
-      "ST/SA/PM/SM/AU の論述対策向け独自練習問題で、設問への対応・論理性・具体性・業務の前提を見直します。利用条件と提供状態は各画面で確認できます。",
-    hero: {
-      badge: "差別化機能",
-      headline: "AI 論述添削",
-      subhead:
-        "自分で書いた答案について、編集部の確認観点による学習用フィードバックを確認します。IPAの公式採点や合格率の予測ではありません。",
-    },
-    benefits: [
-      {
-        title: "書き直す箇所を整理する",
-        body: "段落ごとの良い点と不足する説明を確認し、どこを修正するか決めます。",
-      },
-      {
-        title: "見直しの観点を確認する",
-        body: "設問に答えているか、判断の根拠があるか、業務の前提と矛盾しないかを確認します。実試験の配点を再現する機能ではありません。",
-      },
-      {
-        title: "論述5区分の練習問題",
-        body: "対象はST・SA・PM・SM・AUです。練習問題は編集部作成で、IPA過去問そのものではありません。提供状態は論述学習ページで確認してください。",
-      },
-    ],
-    howItWorks: [
-      {
-        step: "01",
-        title: "試験区分・大問を選ぶ",
-        body: "対応試験区分から、添削したい大問の問題文を選択。",
-      },
-      {
-        step: "02",
-        title: "答案を貼り付け",
-        body: "設問ア・イ・ウに分けて自分の答案を入力します。個人情報や業務上の秘密は入力しないでください。",
-      },
-      {
-        step: "03",
-        title: "添削結果を受け取る",
-        body: "AI添削が利用できる場合は学習用の評価と改善コメントを確認します。停止中や上限到達時は画面に案内が出ます。",
-      },
-    ],
-    primaryCta: { href: "/essay", label: "対象問題と利用条件を確認する" },
-    relatedLinks: [
-      {
-        href: "/features/industry-essays",
-        label: "業種別 論述事例集",
-        description: "そもそも何を書くかに悩まない題材集。",
-      },
-      {
-        href: "/blog/koudo-ronjutsu-kakikata-kotsu",
-        label: "合格答案の構成と書き方のコツ",
-        description: "添削に出す前に押さえる論述の型。",
-      },
-      {
-        href: "/keywords/sc-incident-response",
-        label: "SC 午後 II インシデント対応の傾向",
-        description: "頻出設問パターンと答案構成。",
-      },
-      {
-        href: "/transparency",
-        label: "AI 採点の透明性レポート",
-        description: "採点ロジック・データ取り扱いの開示。",
-      },
-    ],
-    faqs: [
-      {
-        q: "AI 採点の精度は本物の採点と一致しますか？",
-        a: "編集部作成の独自練習問題を、編集部の確認観点で評価する学習補助です。IPAの公式採点、配点、合格率の予測ではありません。",
-      },
-      {
-        q: "1 日に何回まで添削できますか？",
-        a: "提供状態・無料枠・月額プランの条件は料金ページと添削画面で確認してください。停止中や上限到達時には生成を行いません。",
-      },
-      {
-        q: "添削結果は保存されますか？",
-        a: "保存先と保存状態は添削画面や履歴画面で確認できます。端末内の記録は、ブラウザのデータ削除などで失われることがあります。",
-      },
-    ],
-  },
 
   {
     slug: "copilot",

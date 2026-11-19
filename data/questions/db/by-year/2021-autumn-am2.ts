@@ -24,6 +24,7 @@ export const DB_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "CAP定理は分散システムにおいて整合性、可用性、分断耐性の3つの特性を同時に満たすことができないと主張します。選択肢アは、可用性と分断耐性を優先し、整合性を一時的に緩和する「結果整合性」について述べており、CAP定理に基づいたシステム設計の一般的な特性を説明しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const DB_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "イは、組織階層のデータモデルに関する問題で、一つの子組織が複数の親組織から管轄される状況を記述できるか否かを問うています。組織階層は通常、親から子への一対多の関係であり、子の側から見ると、一つの親組織にのみ属するのが一般的です。提示されたモデルA、B、Cのいずれも、このような「子の多親所属」を直接的に表現する構造になっていないと解釈できるため、この選択肢が適切です。\n\nアは、新しい組織レベルの追加について述べていますが、階層構造の設計によっては、新しいレベルの追加が既存のモデル定義（例えば、固定的なレベル数や関連の定義）の変更を必要とする可能性があるため、どのモデルでも変更不要とは断言できません。\n\nウは、モデルBを関係データベースに実装する際の外部キーについて触れていますが、一般的に親組織が子の外部キーを持つのではなく、子組織が親組織のIDを外部キーとして保持することで階層関係を表現するため、この記述は逆であり不適切です。\n\nエは、モデルCにおいて親子関係の循環を防ぐ制約の必要性について述べていますが、問題文で「親と子は循環しないものとする」という制約が明記されているため、モデルC自体の設計にその制約が組み込まれているか、あるいは後から追加する必要があるかはモデルの具体的な構造によりますが、制約が必要であること自体は前提条件として与えられています。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const DB_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "関係R(A, B, C)の候補キーは{A, B}と{A, C}であり、非キー属性は存在しません。第3正規形の定義の一つは「2NFであり、かつ、任意の非自明な関数従属性X→Yについて、Xがスーパーキーであるか、またはYが主属性（候補キーの一部）である」です。与えられた関数従属性C→Bにおいて、決定項Cは候補キーではありませんが、被決定項Bは主属性であるため、この関数従属性は第3正規形を満たします。しかし、ボイス・コッド正規形では決定項がスーパーキーでなければならないため、C→BはBCNFを満たしません。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -95,7 +98,14 @@ export const DB_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
       "エ": "（E-R図）"
     },
     "answer": "イ",
-    "explanation": "イが正解である根拠は、提示された四つの表の関係性を最も正確に表現しているE-R図（Entity-Relationship Diagram、実体関連図）だからです。E-R図は、データベースの構造を視覚的に表現するもので、実体（表）とその間の関連（リレーションシップ）を示します。主キー（実線の下線）は、テーブル内のレコードを一意に識別する列、外部キー（破線の下線）は、他のテーブルの主キーを参照する列であり、これらが適切に示されているかが重要です。\n\nアは、主キーと外部キーの関連付けが、四つの表の論理的な関係性を正しく表現できていないため不適切です。ウは、表間の関連のカーディナリティ（多重度）が、問題文で想定されるデータ構造と一致しない可能性があり、不正確です。エは、外部キーの参照関係が誤っており、テーブル間の整合性を保てない構造になっているため不適切です。",
+    "explanation": "外部キーを持つ行は、参照先の主キーで1行を特定します。医師表と診察表の診療科コードは診療科表を、診察表の患者番号は患者表を参照します。参照する側が多になるため、三つの関連の多重度をすべて正しく示すのはイです。",
+    "choiceExplanations": {
+      "ア": "医師と診療科の多重度は合っていますが、一つの診察が複数の診療科や患者に対応しています。診察は各外部キーで一つずつを参照します。",
+      "イ": "医師と診察はそれぞれ診療科を一つ参照し、診察は患者も一つ参照します。同じ診療科や患者に複数の行から参照できます。",
+      "ウ": "医師・診療科間、診療科・診察間、診察・患者間のすべてで1と多が逆です。外部キーを持つ医師や診察が多の側です。",
+      "エ": "診察と診療科、患者の多重度は合っていますが、医師と診療科が逆です。医師表の診療科コードは一つの診療科を指します。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +130,7 @@ export const DB_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "第3正規形への分解は、関係データベースの正規化において重要な性質を持ちます。この分解は、常に情報損失なし（情報無損失）で行われるだけでなく、元の関係の関数従属性も完全に保存されるように設計されています。これは、実用的なデータベース設計において第3正規形が広く利用される主な理由の一つです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +155,13 @@ export const DB_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "エが正解となるのは、商品表と当月商品仕入合計表から、共通する仕入先コードを抽出し、かつ重複を排除した結果と推測されるからです。\n\nアは、K01が2回出現しているため、重複排除が行われていない、あるいは商品表と当月商品仕入合計表でK01に関連するレコードが複数存在し、それらがすべて集計されている状態と考えられ、仕入先コードのユニークな一覧ではないため不適切です。イは、K01とK03のみが出現しており、K02やK04といった他の仕入先コードが欠落しているため、網羅性に欠け不適切です。ウは、K02が2回出現しており、アと同様に重複排除がなされていない、あるいは関連レコードが複数存在すると推測され、仕入先コードのユニークな一覧としては不適切です。",
+    "choiceExplanations": {
+      "ア": "K01とK03はいずれも当月商品仕入合計表にあるので差集合から除かれます。さらに通常のEXCEPTの結果には重複は残りません。",
+      "イ": "K01とK03は両表にあるコードです。この組を求めるのは共通集合のINTERSECTで、差集合を求めるEXCEPTでは除かれます。",
+      "ウ": "残す仕入先コードの種類は合っていますが、K02が重複しています。ALL指定のないEXCEPTは結果の重複を取り除きます。",
+      "エ": "商品表にあるK01〜K04から、仕入合計表にもあるK01とK03を除きます。残るK02とK04を重複なしで返します。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +186,7 @@ export const DB_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "問題文(1)の「ダーティリードの回避」はREAD COMMITTED、REPEATABLE READ、SERIALIZABLE水準で満たされます。問題文(2)の「同一トランザクション内での複数回読み取りで値が異なる可能性」は、ノンリピータブルリードが発生する可能性があることを示しており、これはREAD COMMITTED水準の特性です。REPEATABLE READとSERIALIZABLEではノンリピータブルリードは回避されます。したがって、両方の条件を満たすのはREAD COMMITTEDです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -191,7 +210,14 @@ export const DB_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
       "エ": "ON C1.社員コード = C2. 社員コード\nWHERE C1.資格 = 'FE' AND C2. 資格 = 'AP'"
     },
     "answer": "ア",
-    "explanation": "正解はアです。\nこの問題は、自己結合させた「社員取得資格」表から、特定の条件を満たす社員を取得するSQL文の条件部分を問うています。JOIN句のON条件で結合キーを指定し、WHERE句で絞り込み条件を指定するのがSQLの基本的な構文です。\n\nアは、ON句で社員コードによる結合を指定し、AND句でC1（1つ目の社員取得資格表）の資格が'FE'、C2（2つ目の社員取得資格表）の資格が'AP'であるという条件を加えています。その上でWHERE句でC1の資格が'FE'という条件を再度指定していますが、これはJOIN句のAND条件で既に満たされているため、重複していますが文法的には問題ありません。\n\nイは、WHERE句の条件が「C1.資格 IS NOT NULL」となっており、これは「FE」資格を持つ社員に限定する条件を満たせないため誤りです。\nウは、WHERE句が「C2.資格 = 'AP'」となっていますが、JOIN句のAND条件でC1の資格は'FE'、C2の資格は'AP'という両方の条件が指定されているため、WHERE句でC2の資格のみを指定すると、C1の資格が'FE'であるという条件が失われてしまいます。\nエは、WHERE句に「C1.資格 = 'FE' AND C2. 資格 = 'AP'」と指定していますが、JOIN句のON条件で社員コードによる結合のみを指定しており、資格による絞り込み条件がWHERE句にのみ記載されています。一般的に、JOIN句のAND条件で両方のテーブルの条件を指定することは可能ですが、ここではON句で結合キーのみ、WHERE句で絞り込み条件を記述する方が自然なSQLの書き方であり、かつ、アがより適切な条件指定を示しています。",
+    "explanation": "結果に残すのはFEの行であり、APを持つ場合だけ右側にAPを表示します。ONで社員コードを照合して右側をAPに絞り、WHEREで左側をFEに絞るアなら、APを持たないFE取得者も残ります。右側の条件をWHEREに置くとNULLの行が落ちます。",
+    "choiceExplanations": {
+      "ア": "左側をWHEREでFE取得者だけに絞り、ONで同じ社員のAPだけを対応付けます。APがないS002とS003の行も右側がNULLで残ります。",
+      "イ": "WHERE条件は資格がNULLかどうかだけなので、左側のAP・DB・SMの行も残ります。結果は資格1がFEの行に限定されません。",
+      "ウ": "左外部結合でAPを取得していない社員の資格2はNULLです。WHEREでC2.資格＝APを指定すると、その行も削除されます。",
+      "エ": "右側のAPをONで絞らず、WHEREで絞っています。FEだけの社員の行も除外され、S002とS003が結果に残りません。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +242,7 @@ export const DB_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "関係における射影操作は、元の関係から属性（列）のサブセットを選択して新しい関係を生成します。属性がn個ある場合、各属性について「選択する」か「選択しない」かの2通りの選択肢があります。したがって、可能な射影の総数は2をn回掛け合わせた2ⁿとなります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -239,7 +266,14 @@ export const DB_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
       "エ": "MIN"
     },
     "answer": "ウ",
-    "explanation": "ウのMAXが正解です。問題文の条件(3)「同一“会員番号”で同一“項目名”の行が複数ある場合、より大きい行番号の項目値を採用する」という要件を満たすためには、各会員番号と項目名の組み合わせごとに、最も大きい行番号を持つ行の項目値を取得する必要があります。MAX関数は、指定された値の集合の中から最大値を取得する集計関数であり、この条件に合致します。\n\nアのCOUNTは、行数を数える関数であり、最大値を取得する目的には合いません。イのDISTINCTは、重複する値を除去するキーワードであり、集計関数ではないため、最大値を取得するという要件を満たせません。エのMINは、最小値を取得する関数であり、条件(3)で求められている最大値とは逆の動作になります。",
+    "explanation": "内側では会員番号・項目名ごとにMAX（行番号）を取り、同じ項目の最新行だけを選びます。外側ではCASEで各列に対応する項目値だけを残し、MAXで唯一の非NULL値を取り出します。会員0112の最終購入年月日には、行番号5の2021-02-01が入ります。",
+    "choiceExplanations": {
+      "ア": "COUNTは条件に該当する行数を返します。最新の行を決める行番号も、会員名や購入日の項目値も得られません。",
+      "イ": "DISTINCTは重複を除く指定で、各組の最新の行番号を求める集約関数としては使えません。外側でも項目値の抽出にはなりません。",
+      "ウ": "内側のMAXは会員番号・項目名ごとの最新行を選びます。外側のMAXはCASEで各列に振り分けた唯一の非NULL値を取り出します。",
+      "エ": "外側だけなら非NULL値が一つなのでMINでも値を取れますが、内側のMINは最も古い行番号を選ぶため更新前の値になります。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +298,7 @@ export const DB_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "和両立とは、二つの関係が同じ数の属性を持ち、対応する属性のドメインが同じである状態を指します。これは和集合、差集合、共通集合といった集合演算を行う際に必須の条件です。一方、直積はRのタプルとSのタプルを全て組み合わせて新しいタプルを生成する演算であり、属性の数や型が異なっていても実行可能であるため、和両立である必要はありません。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +323,7 @@ export const DB_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "2相コミットは分散トランザクションの原子性（Atomicity）を保証するためのプロトコルですが、いくつかの課題も抱えています。特に、第2相のコミットフェーズにおいて、主サイトからのコミット/ロールバック指示がネットワーク障害などにより特定の参加サイトに届かない場合、そのサイトは指示を待つ「ブロック状態」となり、トランザクションの状態が未定となる可能性があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +348,7 @@ export const DB_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "2相ロック方式では、トランザクションがロックを獲得できる拡張相と、ロックを解除できる縮小相の二つのフェーズに分かれます。拡張相ではロック解除は許されず、トランザクションは必要な全てのロックを獲得し終えてから（あるいはコミット時に）初めてロックを解除し始めることができます。この原則により、直列化可能性が保証されますが、デッドロックの可能性は残ります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +373,7 @@ export const DB_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ロックには共有ロック（読み取り用）と専有ロック（書き込み用）があります。共有ロックは複数のトランザクションで同時に獲得できますが、専有ロックは他のいかなるロックとも互換性がありません。Xが特定行aを共有ロックしている場合、Yがテーブル全体に専有ロックをかけようとすると、行aの共有ロックと競合するため、テーブルレベルの専有ロックは獲得できません。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +398,7 @@ export const DB_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "入れ子ループ法は、結合する二つの表のうち一方の表（外部ループ）の各タプルに対して、もう一方の表（内部ループ）全体をスキャンして結合条件を満たすタプルを探すアルゴリズムです。タプル数nの表が二つある場合、外部ループがn回、内部ループもそれぞれn回スキャンされるため、合計の比較回数は概ねn×nとなり、計算量はO(n²)となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +423,7 @@ export const DB_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "多版同時実行制御（MVCC）は、データの更新時に新しいバージョンを生成することで、読み取りと書き込みの競合によるロック待ちを回避する仕組みです。読み取りトランザクションは古いバージョンのデータを参照し、書き込みトランザクションは新しいバージョンを作成するため、読み取りと書き込みが互いにブロックし合うことが少なくなります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +448,7 @@ export const DB_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "Indexed Database API（IndexedDB）は、W3Cによって標準化されたWebブラウザ用のクライアントサイドストレージAPIです。Webアプリケーションが大量の構造化データをユーザーのブラウザに保存することを可能にし、データの読み書きはトランザクション内で実行されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +473,7 @@ export const DB_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "Apache Sparkはビッグデータ処理のためのオープンソースの分散コンピューティングフレームワークです。その中心的な特徴は、RDD（Resilient Distributed Dataset）と呼ばれる耐障害性のある分散データ集合を導入し、このRDDに対して様々な変換操作やアクションを実行することで、高速かつ柔軟なデータ処理を可能にすることです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +498,7 @@ export const DB_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "JPCERT/CCのインシデントハンドリングマニュアルに示される典型的なインシデントハンドリングプロセスは、「準備」「検知/連絡受付」「トリアージ」「インシデントレスポンス（対応）」「事後対応」の順序で進行します。選択肢エは、このプロセスにおける発生初期の重要なステップを正しく順序立てて説明しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +523,7 @@ export const DB_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ベイジアンフィルタは、迷惑メールを検知するための統計的な手法です。過去にユーザーが迷惑メールとして振り分けたメールと、正規のメールに含まれる単語や記号の特徴を学習し、その出現確率に基づいて新しいメールが迷惑メールである確率を統計的に判定します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +548,7 @@ export const DB_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "パケットフィルタリング型ファイアウォールは、ネットワーク層とトランスポート層のヘッダ情報に基づいて通信パケットの通過可否を判断します。具体的には、送信元IPアドレス、宛先IPアドレス、送信元ポート番号、宛先ポート番号といった情報を参照し、事前に設定されたルールセットと照合して許可または拒否を決定します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +573,7 @@ export const DB_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ECCメモリは、エラー訂正機能を持つメモリであり、データの信頼性を高めるために利用されます。1ビットの誤りを訂正し、2ビットの誤りを検出するために広く用いられているのはハミング符号です。パリティチェックやチェックサムは誤り検出には使われますが、誤り訂正能力はありません。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +598,7 @@ export const DB_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "必要な物理サーバの台数をNとすると、停止前の合計リソース消費量は0.6Nです。8台停止すると、稼働中のサーバは(N-8)台になり、そのリソース消費が80%以内である必要があります。したがって、0.6N <= 0.8 * (N-8)という不等式が成り立ちます。これを解くと、0.6N <= 0.8N - 6.4 => 6.4 <= 0.2N => N >= 32となります。よって、最低32台必要です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +623,7 @@ export const DB_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ソフトウェアの使用性（Usability）とは、ユーザーがシステムを効率的、効果的、そして満足して利用できる度合いを指します。オンラインヘルプの充実やドキュメントの整備は、ユーザーがシステムの操作方法を理解しやすくなり、問題解決能力を高めるため、直接的に使用性の向上に寄与する施策です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +648,7 @@ export const DB_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "マッシュアップとは、Web上で公開されている複数の異なるWebサービスやAPI（例えば、地図サービス、天気情報サービス、SNSなど）のデータを組み合わせて、新たな機能や価値を持つサービスを構築する手法のことです。既存のサービスを再利用することで、短期間で新しいサービスを生み出すことができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_db_am2_qs.pdf",
     "license": "IPA-public"

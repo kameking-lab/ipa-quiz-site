@@ -1,0 +1,1241 @@
+{
+  "schemaVersion": 1,
+  "lane": "qb-11",
+  "date": "2026-11-18",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "planAssignment": "jobs array index % 14 == 10",
+  "completedJobs": [
+    {
+      "jobId": "PLAN5-011",
+      "exam": "sc",
+      "year": 2022,
+      "season": "spring",
+      "session": "pm2",
+      "action": "不足分だけ新規補充",
+      "expectedQuestionCount": 2,
+      "addedRecords": 2,
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-025",
+      "exam": "nw",
+      "year": 2021,
+      "season": "spring",
+      "session": "pm2",
+      "action": "不足分だけ新規補充",
+      "expectedQuestionCount": 2,
+      "addedRecords": 2,
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-039",
+      "exam": "ap",
+      "year": 2024,
+      "season": "spring",
+      "session": "pm",
+      "action": "不足分だけ新規補充",
+      "expectedQuestionCount": 11,
+      "addedRecords": 11,
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-053",
+      "exam": "st",
+      "year": 2022,
+      "season": "spring",
+      "session": "pm2",
+      "action": "不足分だけ新規補充",
+      "expectedQuestionCount": 3,
+      "addedRecords": 3,
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-067",
+      "exam": "sm",
+      "year": 2025,
+      "season": "spring",
+      "session": "pm2",
+      "action": "不足分だけ新規補充",
+      "expectedQuestionCount": 2,
+      "addedRecords": 2,
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-081",
+      "exam": "pm",
+      "year": 2024,
+      "season": "autumn",
+      "session": "pm1",
+      "action": "不足分だけ新規補充",
+      "expectedQuestionCount": 3,
+      "addedRecords": 3,
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-095",
+      "exam": "db",
+      "year": 2022,
+      "season": "autumn",
+      "session": "pm1",
+      "action": "不足分だけ新規補充",
+      "expectedQuestionCount": 3,
+      "addedRecords": 3,
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-109",
+      "exam": "sg",
+      "year": 2026,
+      "season": "cbt",
+      "session": "kamoku-ab",
+      "action": "不足分だけ新規補充",
+      "expectedQuestionCount": 15,
+      "addedRecords": 15,
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "exam": "kankoji2",
+      "year": 2026,
+      "season": "late",
+      "session": "gakka",
+      "action": "新しく作らず、そのブランチを取り込む",
+      "expectedQuestionCount": 52,
+      "addedRecords": 52,
+      "status": "completed"
+    }
+  ],
+  "pendingJobIds": [
+    "PLAN5-123",
+    "PLAN5-137",
+    "PLAN5-151",
+    "PLAN5-165",
+    "PLAN5-179",
+    "PLAN5-193",
+    "PLAN5-207",
+    "PLAN5-221",
+    "PLAN5-235",
+    "PLAN5-249",
+    "PLAN5-263",
+    "PLAN5-277",
+    "PLAN5-291",
+    "PLAN5-305",
+    "PLAN5-319",
+    "PLAN5-333",
+    "PLAN5-347",
+    "PLAN5-361",
+    "PLAN5-375",
+    "PLAN5-389",
+    "PLAN5-403",
+    "PLAN5-417",
+    "PLAN5-445"
+  ],
+  "entries": [
+    {
+      "jobId": "PLAN5-011",
+      "id": "sc-2022h-pm2-q1",
+      "questionPages": [
+        2,
+        12
+      ],
+      "answerPages": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_sc_pm2_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_sc_pm2_ans.pdf",
+      "questionSha256": "6531cc6e9daa887b37091db2d28cbdf26199fa05045e427dca1aa5d1046c90c8",
+      "answerSha256": "b8576e34a370fbfaf189679113cb9beb74f276725b8b9cbc85ede2d10624a7f1",
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-011",
+      "id": "sc-2022h-pm2-q2",
+      "questionPages": [
+        13,
+        26
+      ],
+      "answerPages": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_sc_pm2_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_sc_pm2_ans.pdf",
+      "questionSha256": "6531cc6e9daa887b37091db2d28cbdf26199fa05045e427dca1aa5d1046c90c8",
+      "answerSha256": "b8576e34a370fbfaf189679113cb9beb74f276725b8b9cbc85ede2d10624a7f1",
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-025",
+      "id": "nw-2021h-pm2-q1",
+      "questionPages": [
+        2,
+        13
+      ],
+      "answerPages": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_nw_pm2_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_nw_pm2_ans.pdf",
+      "questionSha256": "c2f33fcde646cca5f5119196c1a1b99f1a14c6fd0fcb0d876c8c6c71d5c67e9b",
+      "answerSha256": "b6ddd3d47ef2fc77f439932f42b65bd8920fe0eac764d39b8f1a4a4bf2c13641",
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-025",
+      "id": "nw-2021h-pm2-q2",
+      "questionPages": [
+        14,
+        26
+      ],
+      "answerPages": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_nw_pm2_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_nw_pm2_ans.pdf",
+      "questionSha256": "c2f33fcde646cca5f5119196c1a1b99f1a14c6fd0fcb0d876c8c6c71d5c67e9b",
+      "answerSha256": "b6ddd3d47ef2fc77f439932f42b65bd8920fe0eac764d39b8f1a4a4bf2c13641",
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-039",
+      "id": "ap-2024h-pm-q1",
+      "questionPages": [
+        5,
+        11
+      ],
+      "answerPages": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf",
+      "questionSha256": "43a003abf1229427d0597b76e23896398280b11770147d117238cc9da6c33798",
+      "answerSha256": "772d9531137a4e1c36c3528db40da20b88723d0b0d6e8a10570d52b9f906a283",
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-039",
+      "id": "ap-2024h-pm-q2",
+      "questionPages": [
+        13,
+        17
+      ],
+      "answerPages": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf",
+      "questionSha256": "43a003abf1229427d0597b76e23896398280b11770147d117238cc9da6c33798",
+      "answerSha256": "772d9531137a4e1c36c3528db40da20b88723d0b0d6e8a10570d52b9f906a283",
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-039",
+      "id": "ap-2024h-pm-q3",
+      "questionPages": [
+        19,
+        23
+      ],
+      "answerPages": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf",
+      "questionSha256": "43a003abf1229427d0597b76e23896398280b11770147d117238cc9da6c33798",
+      "answerSha256": "772d9531137a4e1c36c3528db40da20b88723d0b0d6e8a10570d52b9f906a283",
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-039",
+      "id": "ap-2024h-pm-q4",
+      "questionPages": [
+        25,
+        29
+      ],
+      "answerPages": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf",
+      "questionSha256": "43a003abf1229427d0597b76e23896398280b11770147d117238cc9da6c33798",
+      "answerSha256": "772d9531137a4e1c36c3528db40da20b88723d0b0d6e8a10570d52b9f906a283",
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-039",
+      "id": "ap-2024h-pm-q5",
+      "questionPages": [
+        31,
+        34
+      ],
+      "answerPages": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf",
+      "questionSha256": "43a003abf1229427d0597b76e23896398280b11770147d117238cc9da6c33798",
+      "answerSha256": "772d9531137a4e1c36c3528db40da20b88723d0b0d6e8a10570d52b9f906a283",
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-039",
+      "id": "ap-2024h-pm-q6",
+      "questionPages": [
+        35,
+        39
+      ],
+      "answerPages": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf",
+      "questionSha256": "43a003abf1229427d0597b76e23896398280b11770147d117238cc9da6c33798",
+      "answerSha256": "772d9531137a4e1c36c3528db40da20b88723d0b0d6e8a10570d52b9f906a283",
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-039",
+      "id": "ap-2024h-pm-q7",
+      "questionPages": [
+        41,
+        44
+      ],
+      "answerPages": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf",
+      "questionSha256": "43a003abf1229427d0597b76e23896398280b11770147d117238cc9da6c33798",
+      "answerSha256": "772d9531137a4e1c36c3528db40da20b88723d0b0d6e8a10570d52b9f906a283",
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-039",
+      "id": "ap-2024h-pm-q8",
+      "questionPages": [
+        45,
+        49
+      ],
+      "answerPages": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf",
+      "questionSha256": "43a003abf1229427d0597b76e23896398280b11770147d117238cc9da6c33798",
+      "answerSha256": "772d9531137a4e1c36c3528db40da20b88723d0b0d6e8a10570d52b9f906a283",
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-039",
+      "id": "ap-2024h-pm-q9",
+      "questionPages": [
+        51,
+        55
+      ],
+      "answerPages": [
+        5
+      ],
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf",
+      "questionSha256": "43a003abf1229427d0597b76e23896398280b11770147d117238cc9da6c33798",
+      "answerSha256": "772d9531137a4e1c36c3528db40da20b88723d0b0d6e8a10570d52b9f906a283",
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-039",
+      "id": "ap-2024h-pm-q10",
+      "questionPages": [
+        57,
+        61
+      ],
+      "answerPages": [
+        5
+      ],
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf",
+      "questionSha256": "43a003abf1229427d0597b76e23896398280b11770147d117238cc9da6c33798",
+      "answerSha256": "772d9531137a4e1c36c3528db40da20b88723d0b0d6e8a10570d52b9f906a283",
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-039",
+      "id": "ap-2024h-pm-q11",
+      "questionPages": [
+        63,
+        66
+      ],
+      "answerPages": [
+        6
+      ],
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf",
+      "questionSha256": "43a003abf1229427d0597b76e23896398280b11770147d117238cc9da6c33798",
+      "answerSha256": "772d9531137a4e1c36c3528db40da20b88723d0b0d6e8a10570d52b9f906a283",
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-053",
+      "id": "st-2022h-pm2-q1",
+      "questionPages": [
+        3,
+        3
+      ],
+      "answerPages": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_st_pm2_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_st_pm2_ans.pdf",
+      "questionSha256": "4b2d5bfa53bafa4705c910710a0e97daf61863da935cb3c888220320386ef5dc",
+      "answerSha256": "0d28000049646395db6c277d9eb9973bb952c648544351af2fe5f531b1faef93",
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-053",
+      "id": "st-2022h-pm2-q2",
+      "questionPages": [
+        4,
+        4
+      ],
+      "answerPages": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_st_pm2_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_st_pm2_ans.pdf",
+      "questionSha256": "4b2d5bfa53bafa4705c910710a0e97daf61863da935cb3c888220320386ef5dc",
+      "answerSha256": "0d28000049646395db6c277d9eb9973bb952c648544351af2fe5f531b1faef93",
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-053",
+      "id": "st-2022h-pm2-q3",
+      "questionPages": [
+        5,
+        5
+      ],
+      "answerPages": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_st_pm2_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_st_pm2_ans.pdf",
+      "questionSha256": "4b2d5bfa53bafa4705c910710a0e97daf61863da935cb3c888220320386ef5dc",
+      "answerSha256": "0d28000049646395db6c277d9eb9973bb952c648544351af2fe5f531b1faef93",
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-067",
+      "id": "sm-2025h-pm2-q1",
+      "questionPages": [
+        4,
+        4
+      ],
+      "answerPages": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_sm_pm2_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_sm_pm2_ans.pdf",
+      "questionSha256": "5651ba2d589b047b456774a0392bcc7742d3429431d6bb3db8a7dd46bd683d04",
+      "answerSha256": "f8024d0cb763a5ea6ef73300132d84feaac9c40689a0aa23012c820a9ed85ac5",
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-067",
+      "id": "sm-2025h-pm2-q2",
+      "questionPages": [
+        6,
+        6
+      ],
+      "answerPages": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_sm_pm2_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_sm_pm2_ans.pdf",
+      "questionSha256": "5651ba2d589b047b456774a0392bcc7742d3429431d6bb3db8a7dd46bd683d04",
+      "answerSha256": "f8024d0cb763a5ea6ef73300132d84feaac9c40689a0aa23012c820a9ed85ac5",
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-081",
+      "id": "pm-2024a-pm1-q1",
+      "questionPages": [
+        2,
+        5
+      ],
+      "answerPages": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_pm_pm1_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_pm_pm1_ans.pdf",
+      "questionSha256": "e3edfa0ed071422c78e081126b17f0bc629e05ebf62b2443e03d7b1cdd8efc91",
+      "answerSha256": "10981bf6b77ba8ecc4db0cd180e864eca47f7b1377c0c303b5f7696d38b62e46",
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-081",
+      "id": "pm-2024a-pm1-q2",
+      "questionPages": [
+        6,
+        9
+      ],
+      "answerPages": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_pm_pm1_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_pm_pm1_ans.pdf",
+      "questionSha256": "e3edfa0ed071422c78e081126b17f0bc629e05ebf62b2443e03d7b1cdd8efc91",
+      "answerSha256": "10981bf6b77ba8ecc4db0cd180e864eca47f7b1377c0c303b5f7696d38b62e46",
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-081",
+      "id": "pm-2024a-pm1-q3",
+      "questionPages": [
+        10,
+        14
+      ],
+      "answerPages": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_pm_pm1_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_pm_pm1_ans.pdf",
+      "questionSha256": "e3edfa0ed071422c78e081126b17f0bc629e05ebf62b2443e03d7b1cdd8efc91",
+      "answerSha256": "10981bf6b77ba8ecc4db0cd180e864eca47f7b1377c0c303b5f7696d38b62e46",
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-095",
+      "id": "db-2022a-pm1-q1",
+      "questionPages": [
+        3,
+        12
+      ],
+      "answerPages": [
+        1,
+        2
+      ],
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_db_pm1_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_db_pm1_ans.pdf",
+      "questionSha256": "e0e338eb8bc6fdf8316c4b1cc940c371da65ece009bc69b454043ef0838824ae",
+      "answerSha256": "cac48730b601f84c66f043f152ade13f9e88bea83d6e798a91d4edc74c062f22",
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-095",
+      "id": "db-2022a-pm1-q2",
+      "questionPages": [
+        13,
+        19
+      ],
+      "answerPages": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_db_pm1_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_db_pm1_ans.pdf",
+      "questionSha256": "e0e338eb8bc6fdf8316c4b1cc940c371da65ece009bc69b454043ef0838824ae",
+      "answerSha256": "cac48730b601f84c66f043f152ade13f9e88bea83d6e798a91d4edc74c062f22",
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-095",
+      "id": "db-2022a-pm1-q3",
+      "questionPages": [
+        20,
+        25
+      ],
+      "answerPages": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_db_pm1_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_db_pm1_ans.pdf",
+      "questionSha256": "e0e338eb8bc6fdf8316c4b1cc940c371da65ece009bc69b454043ef0838824ae",
+      "answerSha256": "cac48730b601f84c66f043f152ade13f9e88bea83d6e798a91d4edc74c062f22",
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-109",
+      "id": "sg-2026cbt-kamoku-a-q1",
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+      "questionSha256": "98fab6c575dd0107c7243e6904857c23ce6c820e08deeed63509ae5ca01ef97a",
+      "answerSha256": "1fea6d3285f1951b7099e81fddfdf1891d0059dc72098e897a5182a43553b044",
+      "clips": [],
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-109",
+      "id": "sg-2026cbt-kamoku-a-q2",
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+      "questionSha256": "98fab6c575dd0107c7243e6904857c23ce6c820e08deeed63509ae5ca01ef97a",
+      "answerSha256": "1fea6d3285f1951b7099e81fddfdf1891d0059dc72098e897a5182a43553b044",
+      "clips": [],
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-109",
+      "id": "sg-2026cbt-kamoku-a-q3",
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+      "questionSha256": "98fab6c575dd0107c7243e6904857c23ce6c820e08deeed63509ae5ca01ef97a",
+      "answerSha256": "1fea6d3285f1951b7099e81fddfdf1891d0059dc72098e897a5182a43553b044",
+      "clips": [],
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-109",
+      "id": "sg-2026cbt-kamoku-a-q4",
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+      "questionSha256": "98fab6c575dd0107c7243e6904857c23ce6c820e08deeed63509ae5ca01ef97a",
+      "answerSha256": "1fea6d3285f1951b7099e81fddfdf1891d0059dc72098e897a5182a43553b044",
+      "clips": [],
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-109",
+      "id": "sg-2026cbt-kamoku-a-q5",
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+      "questionSha256": "98fab6c575dd0107c7243e6904857c23ce6c820e08deeed63509ae5ca01ef97a",
+      "answerSha256": "1fea6d3285f1951b7099e81fddfdf1891d0059dc72098e897a5182a43553b044",
+      "clips": [],
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-109",
+      "id": "sg-2026cbt-kamoku-a-q6",
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+      "questionSha256": "98fab6c575dd0107c7243e6904857c23ce6c820e08deeed63509ae5ca01ef97a",
+      "answerSha256": "1fea6d3285f1951b7099e81fddfdf1891d0059dc72098e897a5182a43553b044",
+      "clips": [
+        {
+          "page": 4,
+          "rect": [
+            45,
+            65,
+            475,
+            370
+          ]
+        }
+      ],
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-109",
+      "id": "sg-2026cbt-kamoku-a-q7",
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+      "questionSha256": "98fab6c575dd0107c7243e6904857c23ce6c820e08deeed63509ae5ca01ef97a",
+      "answerSha256": "1fea6d3285f1951b7099e81fddfdf1891d0059dc72098e897a5182a43553b044",
+      "clips": [],
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-109",
+      "id": "sg-2026cbt-kamoku-a-q8",
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+      "questionSha256": "98fab6c575dd0107c7243e6904857c23ce6c820e08deeed63509ae5ca01ef97a",
+      "answerSha256": "1fea6d3285f1951b7099e81fddfdf1891d0059dc72098e897a5182a43553b044",
+      "clips": [],
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-109",
+      "id": "sg-2026cbt-kamoku-a-q9",
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+      "questionSha256": "98fab6c575dd0107c7243e6904857c23ce6c820e08deeed63509ae5ca01ef97a",
+      "answerSha256": "1fea6d3285f1951b7099e81fddfdf1891d0059dc72098e897a5182a43553b044",
+      "clips": [],
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-109",
+      "id": "sg-2026cbt-kamoku-a-q10",
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+      "questionSha256": "98fab6c575dd0107c7243e6904857c23ce6c820e08deeed63509ae5ca01ef97a",
+      "answerSha256": "1fea6d3285f1951b7099e81fddfdf1891d0059dc72098e897a5182a43553b044",
+      "clips": [],
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-109",
+      "id": "sg-2026cbt-kamoku-a-q11",
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+      "questionSha256": "98fab6c575dd0107c7243e6904857c23ce6c820e08deeed63509ae5ca01ef97a",
+      "answerSha256": "1fea6d3285f1951b7099e81fddfdf1891d0059dc72098e897a5182a43553b044",
+      "clips": [
+        {
+          "page": 6,
+          "rect": [
+            45,
+            155,
+            475,
+            250
+          ]
+        }
+      ],
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-109",
+      "id": "sg-2026cbt-kamoku-a-q12",
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+      "questionSha256": "98fab6c575dd0107c7243e6904857c23ce6c820e08deeed63509ae5ca01ef97a",
+      "answerSha256": "1fea6d3285f1951b7099e81fddfdf1891d0059dc72098e897a5182a43553b044",
+      "clips": [
+        {
+          "page": 6,
+          "rect": [
+            145,
+            475,
+            440,
+            590
+          ]
+        }
+      ],
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-109",
+      "id": "sg-2026cbt-kamoku-a-q13",
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+      "questionSha256": "98fab6c575dd0107c7243e6904857c23ce6c820e08deeed63509ae5ca01ef97a",
+      "answerSha256": "1fea6d3285f1951b7099e81fddfdf1891d0059dc72098e897a5182a43553b044",
+      "clips": [
+        {
+          "page": 8
+        },
+        {
+          "page": 9
+        },
+        {
+          "page": 10
+        }
+      ],
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-109",
+      "id": "sg-2026cbt-kamoku-a-q14",
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+      "questionSha256": "98fab6c575dd0107c7243e6904857c23ce6c820e08deeed63509ae5ca01ef97a",
+      "answerSha256": "1fea6d3285f1951b7099e81fddfdf1891d0059dc72098e897a5182a43553b044",
+      "clips": [
+        {
+          "page": 12
+        },
+        {
+          "page": 13
+        }
+      ],
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-109",
+      "id": "sg-2026cbt-kamoku-a-q15",
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+      "questionSha256": "98fab6c575dd0107c7243e6904857c23ce6c820e08deeed63509ae5ca01ef97a",
+      "answerSha256": "1fea6d3285f1951b7099e81fddfdf1891d0059dc72098e897a5182a43553b044",
+      "clips": [
+        {
+          "page": 14
+        },
+        {
+          "page": 15
+        },
+        {
+          "page": 16
+        }
+      ],
+      "status": "completed"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q1",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q2",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q3",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q4",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q5",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q6",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q7",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q8",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q9",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q10",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q11",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q12",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q13",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q14",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q15",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q16",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q17",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q18",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q19",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q20",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q21",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q22",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q23",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q24",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q25",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q26",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q27",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q28",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q29",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q30",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q31",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q32",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q33",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q34",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q35",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q36",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q37",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q38",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q39",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q40",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q41",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q42",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q43",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q44",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q45",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q46",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q47",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q48",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q49",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q50",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q51",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    },
+    {
+      "jobId": "PLAN5-431",
+      "id": "kankoji2-2026-late-gakka-q52",
+      "sourceCommit": "5b198a61cabcf92893356eaa8d0d89b4046c61ed",
+      "sourcePath": "data/questions/kankoji2/2026-late.json",
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116k_seitou.pdf",
+      "status": "integrated-existing"
+    }
+  ],
+  "verification": {
+    "uniqueIds": 93,
+    "recordCount": 93,
+    "decodedImageCount": 178,
+    "importedFilesPreservedByteForByte": [
+      "data/questions/kankoji2/2026-late.json",
+      "data/questions/kankoji2/index.ts",
+      "public/images/questions/kankoji2/2026-late-q5.png",
+      "public/images/questions/kankoji2/2026-late-q8.png",
+      "public/images/questions/kankoji2/2026-late-q30.png",
+      "public/images/questions/kankoji2/2026-late-q44.png"
+    ],
+    "importedManuscriptSha256": "6d189bb947f7d116c07be6af9160e2c458684b627d9a29e82039be63f5c5d64f"
+  }
+}

@@ -91,6 +91,19 @@ it("scrolls the membership panel into view when a /billing link far down the pag
   expect(scrollTo).toHaveBeenCalledWith(expect.objectContaining({ top: 0 }));
 });
 
+it("keeps the selected exam for weekly review when a native buyer needs to sign in", async () => {
+  const signIn = vi.fn(async () => {});
+  const offer = vi.fn(async () => ({ product: { priceString: "¥980" } }));
+  const membership = { ...deviceMembership, offer } as unknown as typeof deviceMembership;
+  const target = "/me?exam=ip";
+  render(<><NativeTools membership={membership} signIn={signIn} /><a href={`/billing?returnTo=${encodeURIComponent(target)}`}>月額で復習計画を見る</a></>);
+  fireEvent.click(screen.getByRole("link", { name: "月額で復習計画を見る" }));
+  expect(screen.getByRole("heading", { name: "月額プランで今週の復習を始める" })).toBeVisible();
+  fireEvent.click(await screen.findByRole("button", { name: "¥980 / 月で登録" }));
+  await waitFor(() => expect(signIn).toHaveBeenCalledWith(`${target}#app-settings`));
+  expect(JSON.parse(nativePurchase.preferences.get("kakomon:purchase-intent:v1")!)).toMatchObject({ action: "buy", returnTo: target });
+});
+
 it("does not scroll when the panel is opened from its own button at the top", async () => {
   render(<NativeTools />);
   await act(async () => {});
@@ -175,6 +188,19 @@ it.each(["test-cancelled", "test-pending"] as const)("releases the server reserv
 });
 
 const pendingKey = "kakomon:pending-purchase:native-user";
+it("consumes the saved return after approval and relaunch for the purchasing user only", async () => {
+  const { reconcilePendingPurchase } = await import("@/mobile/src/pending-purchase");
+  const returnTo = "/quiz?mode=year&question=ip-q1";
+  nativePurchase.preferences.set(pendingKey, JSON.stringify({ state: "approval", attemptId: "approval-attempt",
+    returnTo, returnUntil: Date.now() + 60000 }));
+  const resume = vi.fn();
+  await reconcilePendingPurchase("other-user", true, undefined, resume);
+  expect(resume).not.toHaveBeenCalled();
+  await reconcilePendingPurchase("native-user", true, undefined, resume);
+  await reconcilePendingPurchase("native-user", true, undefined, resume);
+  expect(resume.mock.calls).toEqual([[returnTo]]);
+  expect(nativePurchase.preferences.has(pendingKey)).toBe(false);
+});
 function purchaseScreen(
   buy: (...args: [unknown, unknown, unknown, () => Promise<void>]) => Promise<void> = vi.fn(),
   restore = vi.fn(async () => {}),
@@ -279,7 +305,7 @@ it("rechecks a purchase interrupted while StoreKit was open, including before PA
   first.unmount();
   purchaseScreen();
   expect(await screen.findByRole("button", { name: "¥980 / 月で登録" })).toBeDisabled();
-  expect(screen.queryByRole("button", { name: "承認依頼をやり直す" })).toBeNull();
+  expect(screen.queryByRole("button", { name: "承認状況を確認" })).toBeNull();
   expect(nativePurchase.recover).toHaveBeenCalledWith({ reservationId: "native-attempt" });
   nativePurchase.recover.mockResolvedValue(null);
   window.dispatchEvent(new Event("online"));
@@ -329,23 +355,21 @@ it("records Ask to Buy when writing the local approval fails", async () => {
     throw "test-pending";
   });
   fireEvent.click(await screen.findByRole("button", { name: "¥980 / 月で登録" }));
-  expect(await screen.findByRole("button", { name: "承認依頼をやり直す" })).toBeEnabled();
+  expect(await screen.findByRole("button", { name: "承認状況を確認" })).toBeEnabled();
   expect(nativePurchase.recover).toHaveBeenCalledWith({ reservationId: "native-attempt", action: "approval" });
   expect(JSON.parse(nativePurchase.preferences.get(pendingKey)!)).toMatchObject({ state: "recheck" });
 });
 
-it("releases a declined approval on request and allows a second StoreKit purchase attempt", async () => {
+it("keeps StoreKit purchase blocked when checking approval finds no receipt", async () => {
   let retryChecked = false;
   nativePurchase.reserve.mockResolvedValueOnce({ id: "original", expiresAt: "2099-01-01T00:00:00.000Z", requiresStart: true });
   nativePurchase.recover.mockImplementation(async marker => {
     if ("action" in marker && marker.action === "retry-approval") {
       expect(nativePurchase.hasActive).toHaveBeenCalledOnce();
       retryChecked = true;
-      nativePurchase.hold.mockResolvedValue({ managed: true, pending: null });
-      return null;
+      return "processing";
     }
     if ("action" in marker && marker.action === "approval" && "reservationId" in marker && typeof marker.reservationId === "string") {
-      if (retryChecked && marker.reservationId === "original") return null;
       nativePurchase.hold.mockResolvedValue({ managed: true, pending: { approval: { reservationId: marker.reservationId } } });
     }
     return "processing";
@@ -356,21 +380,20 @@ it("releases a declined approval on request and allows a second StoreKit purchas
   });
   const first = purchaseScreen(askToBuy);
   const subscribe = await screen.findByRole("button", { name: "¥980 / 月で登録" });
-  expect(screen.queryByRole("button", { name: "承認依頼をやり直す" })).toBeNull();
+  expect(screen.queryByRole("button", { name: "承認状況を確認" })).toBeNull();
   fireEvent.click(subscribe);
-  await screen.findByRole("button", { name: "承認依頼をやり直す" });
+  await screen.findByRole("button", { name: "承認状況を確認" });
   expect(subscribe).toBeDisabled();
   first.unmount();
   purchaseScreen(askToBuy);
-  fireEvent.click(await screen.findByRole("button", { name: "承認依頼をやり直す" }));
-  await waitFor(() => expect(screen.getByRole("button", { name: "¥980 / 月で登録" })).toBeEnabled());
+  fireEvent.click(await screen.findByRole("button", { name: "承認状況を確認" }));
+  await waitFor(() => expect(screen.getByRole("button", { name: "承認状況を確認" })).toBeEnabled());
   expect(retryChecked).toBe(true);
   expect(nativePurchase.recover).toHaveBeenCalledWith({ reservationId: "original", action: "retry-approval" });
   expect(nativePurchase.release).not.toHaveBeenCalled();
-  fireEvent.click(screen.getByRole("button", { name: "¥980 / 月で登録" }));
-  await waitFor(() => expect(nativePurchase.start).toHaveBeenNthCalledWith(2, "native-attempt"));
-  await screen.findByRole("button", { name: "承認依頼をやり直す" });
-  expect(JSON.parse(nativePurchase.preferences.get(pendingKey)!)).toMatchObject({ state: "approval", reservation: { id: "native-attempt" } });
+  expect(screen.getByRole("button", { name: "¥980 / 月で登録" })).toBeDisabled();
+  expect(nativePurchase.start).toHaveBeenCalledOnce();
+  expect(JSON.parse(nativePurchase.preferences.get(pendingKey)!)).toMatchObject({ state: "approval", reservation: { id: "original" } });
 });
 
 it.each(["device-active", "device-error", "server-processing", "server-error"])("retains approval on retry when the check reports %s", async result => {
@@ -384,7 +407,7 @@ it.each(["device-active", "device-error", "server-processing", "server-error"])(
     return "processing";
   });
   purchaseScreen();
-  const retry = await screen.findByRole("button", { name: "承認依頼をやり直す" });
+  const retry = await screen.findByRole("button", { name: "承認状況を確認" });
   fireEvent.click(retry);
   await waitFor(() => expect(nativePurchase.hasActive).toHaveBeenCalledOnce());
   await waitFor(() => expect(retry).toBeEnabled());
@@ -393,15 +416,15 @@ it.each(["device-active", "device-error", "server-processing", "server-error"])(
   expect(screen.getByRole("button", { name: "¥980 / 月で登録" })).toBeDisabled();
 });
 
-it.each(["switch during StoreKit sync", "no local record", "release response lost"])("recovers the group's Ask to Buy after %s", async scenario => {
+it.each(["switch during StoreKit sync", "no local record", "check response lost"])("preserves the group's Ask to Buy after %s", async scenario => {
   vi.stubGlobal("Capacitor", { isNativePlatform: () => true });
   const storeKit = Promise.withResolvers<boolean>();
   const reservationId = "apple-approval";
-  const options = { name: "承認依頼をやり直す" };
+  const options = { name: "承認状況を確認" };
   const appleKey = "kakomon:pending-purchase:apple-user";
   const original = JSON.stringify({ state: "approval", attemptId: "original", reservation: { id: reservationId } });
   let session = scenario === "no local record" ? "google-user" : "apple-user";
-  let pending: AppStorePurchaseHold = { approval: { reservationId } };
+  const pending: AppStorePurchaseHold = { approval: { reservationId } };
   if (scenario !== "no local record") nativePurchase.preferences.set(appleKey, original);
   if (scenario !== "no local record") vi.mocked(beginLogin).mockImplementationOnce(async () => { session = "google-user"; });
   nativePurchase.hasActive.mockReturnValueOnce(storeKit.promise);
@@ -414,8 +437,7 @@ it.each(["switch during StoreKit sync", "no local record", "release response los
     if ("action" in body && body.action === "retry-approval") {
       expect(body).toEqual({ reservationId, action: "retry-approval" });
       retrySessions.push(session);
-      pending = null;
-      if (scenario === "release response lost") throw new Error("offline after commit");
+      if (scenario === "check response lost") throw new Error("offline");
     }
     return pending ? "processing" : null;
   });
@@ -431,17 +453,17 @@ it.each(["switch during StoreKit sync", "no local record", "release response los
   if (scenario !== "no local record") fireEvent.click(screen.getByRole("button", { name: "ログイン画面を開く" }));
   await act(async () => storeKit.resolve(false));
   expect(retrySessions).toEqual(["google-user"]);
-  if (scenario === "release response lost") expect(nativePurchase.preferences.get(appleKey)).toBe(original);
+  if (scenario === "check response lost") expect(nativePurchase.preferences.get(appleKey)).toBe(original);
   first.unmount();
   session = "apple-user";
-  if (scenario === "release response lost") nativePurchase.recover.mockRejectedValue(new Error("marker lookup unavailable"));
+  if (scenario === "check response lost") nativePurchase.recover.mockRejectedValue(new Error("marker lookup unavailable"));
   nativePurchase.hold.mockClear();
   renderSignIn();
   const subscribe = await screen.findByRole("button", { name: "¥980 / 月で登録" });
-  expect(subscribe).toBeEnabled();
+  expect(subscribe).toBeDisabled();
   expect(nativePurchase.hold).toHaveBeenCalledWith("apple-user");
-  expect(screen.queryByRole("button", options)).toBeNull();
-  expect(nativePurchase.preferences.has(appleKey)).toBe(false);
+  expect(screen.getByRole("button", options)).toBeEnabled();
+  expect(nativePurchase.preferences.has(appleKey)).toBe(scenario !== "no local record");
 });
 
 it("recovers the same attempt before the original purchase check returns, without opening StoreKit", async () => {

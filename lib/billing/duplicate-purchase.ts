@@ -52,21 +52,29 @@ export class DuplicatePurchaseGuard {
     }
   }
 
-  /** Monitoring cannot change purchase rights or make a successfully saved webhook fail. */
+  /** Report an overlap using verified provider rights, without changing access. */
   async audit(userId: string) {
     try {
       const current = await this.purchaseEmail(userId);
       if (!current) {
         const paid = await this.rights(userId);
-        if (paid.stripe && paid.appStore) console.warn("duplicate_purchase_stripe_app_store_same_account");
+        if (paid.stripe && paid.appStore) {
+          console.warn("duplicate_purchase_stripe_app_store_same_account");
+          return [userId];
+        }
         return;
       }
-      let stripe = false, appStore = false;
+      let stripe = false;
+      const appStoreUsers: string[] = [];
       for (const member of await this.members(current.email)) {
         const paid = await this.rights(member.id);
-        stripe ||= paid.stripe; appStore ||= paid.appStore;
+        stripe ||= paid.stripe;
+        if (paid.appStore) appStoreUsers.push(member.id);
       }
-      if (stripe && appStore) console.warn("duplicate_purchase_stripe_app_store_same_email");
+      if (stripe && appStoreUsers.length) {
+        console.warn("duplicate_purchase_stripe_app_store_same_email");
+        return appStoreUsers;
+      }
     } catch { console.warn("duplicate_purchase_audit_unavailable"); }
   }
 }

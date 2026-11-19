@@ -174,8 +174,8 @@ export async function checkIpRateLimit(
 export const TRACKED_ENDPOINTS = [
   "copilot",
   "essay-grade",
-  "generate-question",
   "scoring",
+  "weakness-advice",
 ] as const;
 
 export type TrackedEndpoint = (typeof TRACKED_ENDPOINTS)[number];

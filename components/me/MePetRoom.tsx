@@ -46,6 +46,8 @@ export function MePetRoom({ exam, minutes, todayCount, goal, passedExams }: {
   const mealOwner = doc?.profiles.find(item => item.care.meals.some(meal => meal.consumedAt === null));
   const meal = mealOwner?.care.meals.find(meal => meal.consumedAt === null);
   const enabled = view.status === "ready" && !busy;
+  const petted = pose === "petted";
+  const besideCertificate = petted && passedExams.length > 0;
   useEffect(() => {
     try { setPaused(JSON.parse(localStorage.getItem(LS_KEYS.studyRewardPreferences) ?? "null")?.paused === true); } catch { setPaused(false); }
     return () => { if (timer.current) clearTimeout(timer.current); };
@@ -90,11 +92,11 @@ export function MePetRoom({ exam, minutes, todayCount, goal, passedExams }: {
       <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-[70px] bg-room-floor" />
       <div aria-hidden="true" className="absolute bottom-12 left-5"><Leaf className="mx-auto size-10 -rotate-12 fill-activity-3 text-primary" /><span className="mx-auto block h-7 w-7 rounded-b-lg bg-orange-300 dark:bg-orange-900" /></div>
       <div aria-hidden="true" className="absolute bottom-8 left-1/2 h-11 w-48 -translate-x-1/2 rounded-[50%] bg-foreground/10" />
-      <button type="button" aria-label="チワワをなでる" disabled={!enabled} onClick={() => react("petted", "なでなで、うれしそう。")} className={`absolute bottom-7 left-1/2 size-48 -translate-x-1/2 rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary ${pose && !paused ? "motion-safe:animate-pulse" : ""}`}>
-        <RoomChihuahua src={pose === "petted" ? RELAXED_ROOM_ART.petted : pose === "meal" ? RELAXED_ROOM_ART.play : RELAXED_ROOM_ART.sleep} alt={`${ROOM_STAGE_LABELS[stage]}のチワワ（くつろぎ）`} />
+      <button type="button" aria-label="チワワをなでる" disabled={!enabled} onClick={() => react("petted", "なでなで、うれしそう。")} className={`absolute bottom-7 left-1/2 size-48 -translate-x-1/2 rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary ${besideCertificate ? "max-sm:origin-bottom max-sm:-ml-7 max-sm:scale-90" : ""} ${pose && !paused ? "motion-safe:animate-pulse" : ""}`}>
+        <RoomChihuahua src={petted ? RELAXED_ROOM_ART.petted : pose === "meal" ? RELAXED_ROOM_ART.play : RELAXED_ROOM_ART.sleep} alt={`${ROOM_STAGE_LABELS[stage]}のチワワ（くつろぎ）`} />
         {formal ? <svg aria-hidden="true" viewBox="0 0 100 70" width="54" height="38" className="pointer-events-none absolute bottom-[46px] left-[68%] -rotate-12 -translate-x-1/2 drop-shadow-sm"><path d="m22 9 28 10L78 9l17 48-25 7H30L5 57z" fill="#d7a34b" stroke="#a77927" strokeWidth="2" /><path d="m22 9 28 10-12 22-13-15zM78 9 50 19l12 22 13-15z" fill="#fff0c7" /><path d="M50 23v39" stroke="#b38537" strokeWidth="2" /><circle cx="54" cy="44" r="2" fill="#fff5d5" /><circle cx="54" cy="54" r="2" fill="#fff5d5" /></svg> : null}
         {accessory !== "none" ? <span aria-hidden="true" className={`absolute bottom-[54px] left-[68%] -translate-x-1/2 ${accessory === "star" ? "text-amber-500" : "text-rose-500"}`}><AccessoryArtwork accessory={accessory} /></span> : null}
-        {pose === "petted" ? <Heart aria-hidden="true" className="absolute right-2 top-3 size-7 fill-rose-300 text-rose-300" /> : null}
+        {petted ? <Heart aria-hidden="true" className="absolute right-2 top-3 size-7 fill-rose-300 text-rose-300" /> : null}
         {formal ? <Sparkles aria-hidden="true" className="absolute right-1 top-20 size-5 text-amber-500" /> : null}
       </button>
       {meal ? <button type="button" disabled={!enabled} aria-label="ごはんをあげる" onClick={() => void care({ type: "feed", rewardId: meal.rewardId }, mealOwner?.qualificationId)} className="absolute bottom-3 left-3 flex min-h-11 items-center gap-1 rounded-full border border-border bg-card px-3 text-xs text-primary hover:bg-muted"><Utensils aria-hidden="true" className="size-4" />{doc?.profiles.reduce((sum, item) => sum + item.care.meals.filter(meal => meal.consumedAt === null).length, 0)}</button> : todayCount >= goal ? <span className="absolute bottom-4 left-4 flex items-center gap-1 text-xs text-primary"><Utensils aria-hidden="true" className="size-4" />今日のごはん ✓</span> : null}

@@ -1,0 +1,164 @@
+{
+  "lane": "yd-14",
+  "checkedAgainst": "915edd90e",
+  "jobs": [
+    {
+      "jobId": "PLAN5-448",
+      "action": "rv-4原文の追点検",
+      "dataset": "data/questions/sekou-kenchiku2/2022-early.json",
+      "checkedQuestionNumbers": [
+        9,
+        10,
+        15,
+        44
+      ],
+      "officialAnswerFieldsVerified": 54,
+      "officialAnswerMismatches": 0,
+      "revisions": [
+        {
+          "number": 10,
+          "field": "imageAltTexts",
+          "summary": "原図のA–C、C–Bの長さを代替テキストに追記"
+        }
+      ],
+      "questionUrl": "https://www.fcip-shiken.jp/pdf/r04_2kgz_mondai.pdf",
+      "answerUrl": "https://www.fcip-shiken.jp/pdf/r04_2kgz_mondai.pdf#page=18",
+      "questionSha256": "5e95b12e8ebc64ad5dd70643aa952dfa0dd8db6c11d24c992b0fbe9e95771b4a",
+      "answerSha256": "5e95b12e8ebc64ad5dd70643aa952dfa0dd8db6c11d24c992b0fbe9e95771b4a"
+    },
+    {
+      "jobId": "PLAN5-434",
+      "action": "rv-4原文の追点検",
+      "dataset": "data/questions/batch1/kyusui-2024-gakka1.json",
+      "checkedQuestionNumbers": [
+        4,
+        11,
+        15,
+        16,
+        17,
+        18,
+        19,
+        22,
+        24,
+        26,
+        27,
+        28,
+        30,
+        31,
+        35,
+        36,
+        38,
+        40
+      ],
+      "officialAnswerFieldsVerified": 40,
+      "officialAnswerMismatches": 0,
+      "revisions": [
+        {
+          "number": 27,
+          "field": "imageAltTexts",
+          "summary": "分類図の枝と項目を代替テキストに追記"
+        },
+        {
+          "number": 35,
+          "field": "imageAltTexts",
+          "summary": "配管の長さ・口径・高さ、使用水量、損失水頭、動水勾配を代替テキストに追記"
+        }
+      ],
+      "questionUrl": "https://www.kyuukou.or.jp/shiken/file-r06/file-r06_gakka-01.pdf",
+      "answerUrl": "https://www.kyuukou.or.jp/shiken/file-r06/seitou-num.pdf",
+      "questionSha256": "11dc91890501af3f3a7a6940b61323bc20c912aae64c8c0270a243f03a2bfc7e",
+      "answerSha256": "da1663d89d1a290f0430c0b9b555b804a1457eb4436b4de4364c805df61a5f6c"
+    },
+    {
+      "jobId": "PLAN5-420",
+      "action": "rv-4原文の追点検",
+      "dataset": "data/questions/fp1/applied-2024-september.json",
+      "checkedQuestionNumbers": [
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65
+      ],
+      "officialAnswerFieldsVerified": 56,
+      "officialAnswerMismatches": 0,
+      "revisions": [],
+      "questionUrl": "https://products.kinzai.or.jp/wp-content/uploads/2026/11/fp01_g_oyo_202409.pdf",
+      "answerUrl": "https://products.kinzai.or.jp/wp-content/uploads/2026/11/fp01_g_202409.pdf",
+      "questionSha256": "ea57d6eb23c8f4f20501faad65ac025c28e89b7a795a5339e64370d1c9b0e723",
+      "answerSha256": "3de478d899dc70e64b44724b4cef210cff08e5d4321a2c155d474c99be699762"
+    },
+    {
+      "jobId": "PLAN5-406",
+      "action": "rv-4原文の追点検",
+      "dataset": "data/questions/denki2/2021-late.json",
+      "checkedQuestionNumbers": [
+        1,
+        3,
+        5,
+        6,
+        11,
+        15,
+        17,
+        20,
+        21,
+        23,
+        27,
+        31,
+        33,
+        34,
+        42,
+        45,
+        51,
+        55,
+        56,
+        61,
+        62,
+        63
+      ],
+      "officialAnswerFieldsVerified": 64,
+      "officialAnswerMismatches": 0,
+      "revisions": [
+        {
+          "number": 6,
+          "field": "question",
+          "summary": "選択肢表の変圧器容量の列見出しを復元"
+        },
+        {
+          "number": 11,
+          "field": "question",
+          "summary": "選択肢表の用語・単位の列見出しを復元"
+        },
+        {
+          "number": 17,
+          "field": "question",
+          "summary": "記号V、C、fの定義を原本の区切りで表示"
+        },
+        {
+          "number": 23,
+          "field": "question",
+          "summary": "選択肢表の施工場所・工事の種類の列見出しを復元"
+        },
+        {
+          "number": 34,
+          "field": "question",
+          "summary": "選択肢表の建設作業・建設機械の列見出しを復元"
+        }
+      ],
+      "questionUrl": "https://www.fcip-shiken.jp/pdf/r03_2dg_mondai.pdf",
+      "answerUrl": "https://www.fcip-shiken.jp/pdf/r03_2dg_mondai.pdf#page=29",
+      "questionSha256": "e0bc4035aec866229634d8a2e6388efdff350ad89ddacedf086482fb2551fcb9",
+      "answerSha256": "e0bc4035aec866229634d8a2e6388efdff350ad89ddacedf086482fb2551fcb9"
+    }
+  ]
+}

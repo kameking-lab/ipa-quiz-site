@@ -1,0 +1,245 @@
+{
+  "exam": "sa",
+  "year": 2015,
+  "season": "autumn",
+  "session": "am2",
+  "checkedAt": "2026-11-17",
+  "officialIndexUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/2015h27.html",
+  "files": {
+    "qs": {
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_sa_am2_qs.pdf",
+      "sha256": "3f0595e73498dc1ed149205eca1147846bd68ed7f2d35cce5170f91bd623c2d4"
+    },
+    "ans": {
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_sa_am2_ans.pdf",
+      "sha256": "e1c475974236dfda0c8db04d0f5023cd3711317adf35198f99ad8df691d1f5a4"
+    }
+  },
+  "questionCount": 25,
+  "remainingInSession": 0,
+  "officialAnswers": "アイイエイウエウアウエエイウウエイエウウアアエエア",
+  "verification": "公式問題冊子の全問題ページを画像で読み，本文・選択肢を転記。別の公式解答PDFをpdftotextで抽出して25件照合。本文ハッシュ・原本ページ・原図の切出し座標を記録。",
+  "duplicateCheck": "共有台帳2026-11-11のSA 2015行はspring am1のみ。yr-1と指定10ブランチ取り込み後，追加前のgit log --all -- data/questions/sa/by-year/2015-autumn-am2.tsに履歴なし。",
+  "questions": [
+    {
+      "qNumber": 1,
+      "answer": "ア",
+      "printedPage": 3,
+      "normalizedTextSha256": "3c566e7b59988bcd09e2ee90b9d1b0afcc82b84d122ec7ff70977924e09126bc"
+    },
+    {
+      "qNumber": 2,
+      "answer": "イ",
+      "printedPage": 3,
+      "normalizedTextSha256": "eb6a3670c2e65a604a22aba7a79bf405a42147432a32c59dd78d06bc47d2e3de",
+      "figure": {
+        "path": "/images/questions/sa/2015-autumn-am2-q2.png",
+        "sha256": "43e178fbdeb6189f4f126e09b8d72e672fd106f8568ec6e89e83d6d4440737a2",
+        "page": 3,
+        "cropPdfPoints": [
+          229,
+          287,
+          291,
+          374
+        ]
+      }
+    },
+    {
+      "qNumber": 3,
+      "answer": "イ",
+      "printedPage": 3,
+      "normalizedTextSha256": "d2590eb92c036880b470f38dc50c63da5f8ef6060f0cd0041c18f3ec44ca75c1"
+    },
+    {
+      "qNumber": 4,
+      "answer": "エ",
+      "printedPage": 4,
+      "normalizedTextSha256": "5dd597f17cd7473e492d3228e2522e2a477e7125a591a1146f028785eca4a77e"
+    },
+    {
+      "qNumber": 5,
+      "answer": "イ",
+      "printedPage": 4,
+      "normalizedTextSha256": "d38826a13ae51a084bc2305634b7d81c227da874c03b1a56d13475d57f8bb31a",
+      "figure": {
+        "path": "/images/questions/sa/2015-autumn-am2-q5.png",
+        "sha256": "b722f46768ea7b1fb4bda109d523ef70c6bfe41068b59469c803a6d6d0863838",
+        "page": 4,
+        "cropPdfPoints": [
+          104,
+          345,
+          428,
+          510
+        ]
+      }
+    },
+    {
+      "qNumber": 6,
+      "answer": "ウ",
+      "printedPage": 5,
+      "normalizedTextSha256": "a63a3e271f16168ea8a5d555651eee61fe5be498a9a8b7a4fb6fe9f575f5994e",
+      "referenceUrls": [
+        "https://research.google/pubs/mapreduce-simplified-data-processing-on-large-clusters/"
+      ]
+    },
+    {
+      "qNumber": 7,
+      "answer": "エ",
+      "printedPage": 5,
+      "normalizedTextSha256": "3f13c326bc1f1f45dd693fd9f815dca5f5596412dae773ac003094156df212d3"
+    },
+    {
+      "qNumber": 8,
+      "answer": "ウ",
+      "printedPage": 5,
+      "normalizedTextSha256": "9e87283fc3034a1f77cddc49383198842d0f57088c87ad9da80d7881b5b97c40"
+    },
+    {
+      "qNumber": 9,
+      "answer": "ア",
+      "printedPage": 6,
+      "normalizedTextSha256": "deb13d44bd877d5df48ef99f05be2efb3e7a7fade0d66a12ca708cadf3c1f2be"
+    },
+    {
+      "qNumber": 10,
+      "answer": "ウ",
+      "printedPage": 7,
+      "normalizedTextSha256": "865bc6d62316812f01baf06e8a55f11e937e15a5e8eb1ab10947157985361dc9"
+    },
+    {
+      "qNumber": 11,
+      "answer": "エ",
+      "printedPage": 7,
+      "normalizedTextSha256": "8b63689eb5d8c6959e7683bebfc419c709ee8a20f24fd18c33b303edbccb067b"
+    },
+    {
+      "qNumber": 12,
+      "answer": "エ",
+      "printedPage": 8,
+      "normalizedTextSha256": "a3ce7aa5b2e483393a10654996758f6f4c568da74d9cba1d02f55d6e6c9e6ac0",
+      "referenceUrls": [
+        "https://www.kirkpatrickpartners.com/the-kirkpatrick-model/"
+      ]
+    },
+    {
+      "qNumber": 13,
+      "answer": "イ",
+      "printedPage": 8,
+      "normalizedTextSha256": "2443dc1b82103d44e2ea18f59b1f67aede883fba16710868ad2fc778045b0dfd"
+    },
+    {
+      "qNumber": 14,
+      "answer": "ウ",
+      "printedPage": 9,
+      "normalizedTextSha256": "d2932b07eb76d489ab4a4ebe8cb1d98eafacf8c008f61fc708120ca63e7138cd"
+    },
+    {
+      "qNumber": 15,
+      "answer": "ウ",
+      "printedPage": 9,
+      "normalizedTextSha256": "8991aac73e7bf46d70c9c7dd5209ea8dfbb145ddffb6b437a2cf1f7de6bc39e6"
+    },
+    {
+      "qNumber": 16,
+      "answer": "エ",
+      "printedPage": 10,
+      "normalizedTextSha256": "59a862e4aae4db04fbbd02976007ae21eb7245093ea7635ce243a192d2711e25"
+    },
+    {
+      "qNumber": 17,
+      "answer": "イ",
+      "printedPage": 10,
+      "normalizedTextSha256": "38f7aa8c3acea2c23e8c35890413e913fc640337c6c04349b023046df3a7b830"
+    },
+    {
+      "qNumber": 18,
+      "answer": "エ",
+      "printedPage": 10,
+      "normalizedTextSha256": "78695b6f509b90514e85b8a57f5a5ad235409b04e49f8a67f1938cc566c0e0c5"
+    },
+    {
+      "qNumber": 19,
+      "answer": "ウ",
+      "printedPage": 11,
+      "normalizedTextSha256": "fe8244f413766a263f59221f2b510208d73d7f267edc5c62d009ff6ab1a1c697"
+    },
+    {
+      "qNumber": 20,
+      "answer": "ウ",
+      "printedPage": 11,
+      "normalizedTextSha256": "399c893e736073dd4329d0678eadff9763ed97001f28b58ff0e09fdc0db15bae",
+      "figure": {
+        "path": "/images/questions/sa/2015-autumn-am2-q20.png",
+        "sha256": "e566c684eb81c4245fdc5eef7e5ae539e87335aa7e3ef070b9e4bfaba1a914e8",
+        "page": 11,
+        "cropPdfPoints": [
+          75,
+          377,
+          429,
+          435
+        ]
+      }
+    },
+    {
+      "qNumber": 21,
+      "answer": "ア",
+      "printedPage": 12,
+      "normalizedTextSha256": "82886ad9e83b414b546d781c25e028c09dd834fe5bd7bdb10c8af5baea525aba"
+    },
+    {
+      "qNumber": 22,
+      "answer": "ア",
+      "printedPage": 12,
+      "normalizedTextSha256": "f86106d812a4b827746cbd93b46fbfc4d2e359a4ed1b361373f86e27d43886e8"
+    },
+    {
+      "qNumber": 23,
+      "answer": "エ",
+      "printedPage": 13,
+      "normalizedTextSha256": "2da85bcf5c5ae973be505324888b3af8522fe275b92de776c4ac6ace3af9be14"
+    },
+    {
+      "qNumber": 24,
+      "answer": "エ",
+      "printedPage": 13,
+      "normalizedTextSha256": "ee4e061ca97743d6092fbee7bc1de004aef5618dce0347061982e5336396beb3",
+      "referenceUrls": [
+        "https://www.rfc-editor.org/rfc/rfc5280.html#section-5"
+      ]
+    },
+    {
+      "qNumber": 25,
+      "answer": "ア",
+      "printedPage": 13,
+      "normalizedTextSha256": "0734111518be5a4e1afe006f766673b89c2fa554dadc732144384c4624d7abf9"
+    }
+  ],
+  "sourceConventions": {
+    "commonFrame": "共通フレーム2013",
+    "printedStandardsPage": 2,
+    "BABOK": "本問のエンタープライズアナリシスなどの活動名を保持。現行版の活動名へ置換しない。"
+  },
+  "supplementaryReferences": [
+    {
+      "url": "https://research.google/pubs/mapreduce-simplified-data-processing-on-large-clusters/",
+      "questionNumbers": [
+        6
+      ],
+      "basis": "Abstract：中間キーと値を生成するMap，同じ中間キーの値をまとめるReduce"
+    },
+    {
+      "url": "https://www.kirkpatrickpartners.com/the-kirkpatrick-model/",
+      "questionNumbers": [
+        12
+      ],
+      "basis": "Level 1〜4：反応，学習，行動，成果の評価対象。出題当時の4段階に沿って解説"
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc5280.html#section-5",
+      "questionNumbers": [
+        24
+      ],
+      "basis": "Section 5：CRLの形式と失効した証明書の情報"
+    }
+  ]
+}

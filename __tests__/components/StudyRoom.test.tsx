@@ -6,6 +6,27 @@ import { measuredPresence } from "@/lib/study-presence-contract";
 const snapshot = (count: number) => measuredPresence({ count, exams: count ? [{ exam: "fe", count }] : [] }, Date.now());
 afterEach(() => { cleanup(); vi.useRealTimers(); vi.unstubAllGlobals(); sessionStorage.clear(); localStorage.clear(); });
 
+it("keeps one decorative resting dog in the small room when zero people are measured or the count is unavailable", () => {
+  const { rerender } = render(<StudyRoom snapshot={snapshot(60)} current suggestions={[]} />);
+  const scene = screen.getByTestId("study-room-scene");
+  expect(scene.querySelector('img[src$="/curl-left.png"]')).toBeNull();
+
+  rerender(<StudyRoom snapshot={snapshot(0)} current suggestions={[]} />);
+  expect(scene).toHaveAttribute("data-stage", "0");
+  expect(screen.getByText("いま勉強中の人はいません")).toBeInTheDocument();
+  expect(screen.getByTestId("study-room-total")).toHaveTextContent("いま0人");
+  expect(scene.querySelectorAll('img[src$="/curl-left.png"][alt=""]')).toHaveLength(1);
+  expect(screen.queryAllByTestId("study-room-seat")).toHaveLength(0);
+
+  rerender(<StudyRoom snapshot={snapshot(0)} suggestions={[]} />);
+  expect(screen.getByText("前回は勉強中の人はいませんでした")).toBeInTheDocument();
+
+  rerender(<StudyRoom snapshot={null} suggestions={[]} />);
+  expect(screen.getByText("勉強中の人数を表示できません")).toBeInTheDocument();
+  expect(screen.queryByTestId("study-room-total")).not.toBeInTheDocument();
+  expect(scene.querySelectorAll('img[src$="/curl-left.png"][alt=""]')).toHaveLength(1);
+});
+
 it("grows immediately, shrinks only after 60 seconds, and cancels shrinking on growth", () => {
   vi.useFakeTimers();
   const { rerender } = render(<StudyRoom snapshot={snapshot(3)} suggestions={[]} />);

@@ -24,6 +24,7 @@ export const SM_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "JIS Q 20000-1:2020の「他の関係者」とは、サービス提供に直接的または間接的に関与し、その活動や成果がサービスマネジメントシステムに影響を与える外部組織や組織内の他部門を指します。具体的には、外部のサプライヤー、サービス提供に必要なリソースを提供する顧客（供給者として行動する顧客）、および組織内の他部門（内部供給者）などが含まれ、これらは組織が評価および選定の対象とすべき関係者です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const SM_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "JIS Q 20000-1:2020の7.2「力量」では、組織はサービスマネジメントシステム（SMS）やサービスのパフォーマンスおよび有効性に影響を与える業務を組織の管理下で行う人々が、適切な教育、訓練、または経験に基づいて力量を備えていることを確実にすることを要求しています。これは、サービス提供の品質を保証するための人的資源管理の側面です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const SM_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "サービスレベル合意書（SLA）は、一つの契約書で複数のサービスをカバーしたり、複数の顧客（例えば、組織内の複数の部署）に対して共通のサービスレベルを適用したりすることが可能です。これにより、組織はビジネスのニーズに合わせて柔軟なサービス契約形態を構築できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const SM_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ITIL 4における「サービス・カタログ管理」プラクティスの目的は、組織が提供する全てのサービスに関する一貫した情報を一元的に管理し、その情報を顧客や利用者などの関係者が容易に利用できるようにすることです。これにより、提供可能なサービスの内容、条件、費用などを明確に伝え、顧客の期待と合致させることができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,7 @@ export const SM_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "JIS Q 20000-1:2020において、リスク及び機会を決定する主要な目的は、サービスマネジメントシステムがその意図した成果を確実に達成できるという確信を組織に与えることです。これにより、望ましくない事象の発生を防止または低減し、継続的な改善を促進することができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -143,7 +148,14 @@ export const SM_QUESTIONS_2025_SPRING_AM2: Question[] = [
       "エ": "8.5"
     },
     "answer": "ウ",
-    "explanation": "ウの7.5時間が最短所要時間となる。この問題は、プロジェクトマネジメントにおけるクリティカルパス法（CPM）の考え方を用いて、作業の依存関係と並行作業、そして休憩時間を考慮した最短所要時間を算出するものである。CPMでは、各作業の開始可能時期と終了可能時期を分析し、プロジェクト全体の遅延が許されない一連の作業経路（クリティカルパス）を特定する。\n\nアの6.5時間が誤りである理由は、作業者3名による並行作業と各作業員が取得する1時間以上の休憩を考慮すると、全ての作業を完了させるにはさらに時間が必要となるためである。イの7.0時間も、休憩時間を考慮した作業完了までの最短時間を正確に算定できていないため不適切である。エの8.5時間は、休憩時間を過剰に、あるいは作業の依存関係を考慮せずに積み上げた結果である可能性が高い。作業は複数人で行われ、一部は並行して進められるが、各作業員は連続1時間以上の休憩を挟むため、単純な作業時間の合計や、最大同時作業時間だけでは最短所要時間は算出できない。",
+    "explanation": "最短は7.5時間です。短い抽出を担当した2人は開始から2.0～3.0時間に休憩し、利用者IDとマスターの登録を開始します。取引データ抽出の担当者は3.0～4.0時間に休憩し、取引データを登録します。これで全登録が7.0時間で完了し、二つの動作確認を並行して7.5時間で終えられます。7.5時間未満を狙うと、利用者IDの登録は3.0時間より前に始める必要があります。その担当者は休憩を後に回し、登録完了の6.0時間以降に1時間休んでから動作確認を担当するので、終了は7.5時間以降です。",
+    "choiceExplanations": {
+      "ア": "誤りです。休憩を入れなくても、オンライン停止、取引データ抽出、マスターデータ登録、動作確認の経路に0.5＋2.5＋3.5＋0.5＝7.0時間掛かります。",
+      "イ": "誤りです。7.0時間は休憩を省いた場合です。利用者IDデータ登録の担当者が開始から3時間未満で登録を始めると休憩を後に回すことになり、動作確認を7.0時間までに終えられません。",
+      "ウ": "正しいです。短い抽出を担当した2人は2.0～3.0時間、長い抽出を担当した人は3.0～4.0時間に休憩でき、三つの登録を7.0時間までに終えて動作確認を並行できます。",
+      "エ": "誤りです。各作業者の休憩を同時刻にそろえる必要はありません。長い抽出の担当者が休む間にも他の2人は登録を開始でき、全体を7.5時間で終えられます。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +180,7 @@ export const SM_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "JIS Q 20000-1:2020の8.5.6.2「展開」の要求事項として、リリースが稼働環境へ展開された後、文書化した受入れ基準に照らして検証され、問題なく展開されたことが確認された上で承認される必要があります。これは、サービスの変更が正しく適用され、安定して稼働することを保証するための重要なステップです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +205,7 @@ export const SM_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "目標復旧時間（RTO: Recovery Time Objective）は、ITサービスが停止した場合に、そのサービスを許容可能なレベルまで復旧させるまでに許容される最大の時間を指します。したがって、「中断したITサービスを24時間以内に復旧させる」という目標は、RTOを24時間に定めていることと合致します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +230,7 @@ export const SM_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "JIS Q 20000-1:2020の9.3.3「マネジメントレビューのアウトプット」では、マネジメントレビューの結果として、サービスマネジメントシステム（SMS）及びサービスに対する継続的改善の機会に関する決定を含まなければならないと規定されています。これは、トップマネジメントがシステムの現状を評価し、将来の改善活動の方向性を定めるための重要な要素です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +255,7 @@ export const SM_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ウォームスタンバイとは、バックアップシステムが常に起動状態にあり、メインシステムから定期的にデータが同期されている状態を指します。障害発生時にはバックアップシステムに切り替えますが、データが完全に最新ではない場合があるため、切り替え後にデータを最新状態にするための追加処理が必要となるのが特徴です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +280,7 @@ export const SM_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "エラープルーフ化の「排除」の原理は、ミスの発生源となる作業そのものをなくすことで、エラーの可能性を根本的に除去するアプローチです。磁気テープへのバックアップ作業を大容量の外部ディスク装置へのバックアップに変更することで、磁気テープの交換作業自体を不要にし、それに伴う交換ミスを完全に排除できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +305,7 @@ export const SM_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "BAS（Building Automation System）は、ビルディングオートメーションシステムの略で、データセンターのファシリティマネジメントにおいて、空調、電源、照明、防災などの設備機器の運転状況を監視し、その制御、故障の検出、および計測データの管理を集中して行うシステムです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +330,7 @@ export const SM_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "不活性ガス消火設備は、二酸化炭素、窒素、アルゴンなどの不活性ガスを放出することで、火災現場の酸素濃度を低下させて消火する設備です。この方式は水を使用しないため、サーバールームや電気設備、精密機械が設置されている場所での水損や汚損のリスクがなく、適切な消火方法とされます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +355,7 @@ export const SM_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "金融庁の「財務報告に係る内部統制の評価及び監査に関する実施基準」におけるITの統制目標において、「記録した取引に漏れ、重複がないこと」は「信頼性」に含まれます。信頼性は、ITシステムが財務報告に必要な情報を適時かつ正確に、そして完全に生成・処理する能力を指し、データの完全性がその重要な側面です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +380,7 @@ export const SM_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "リバースプロキシを使ったシングルサインオン（SSO）方式では、リバースプロキシが利用者の認証を代行するため、パスワード認証だけでなく、デジタル証明書やICカードなどの多様な認証方式を柔軟に採用することが可能です。これは、リバースプロキシがクライアントとバックエンドWebサーバ間の認証プロセスを一元的に制御できるためです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +405,7 @@ export const SM_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "JIS Q 0073:2010におけるリスクマトリックスの定義は、リスクの発生時の結果（影響度）と起こりやすさ（発生確率）の範囲を明確にすることにより、リスクの順位付けと視覚的な表示を行うための手段です。これにより、リスクの相対的な重要性を理解し、管理の優先順位付けに役立てることができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +430,7 @@ export const SM_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "JIS Q 22301:2020は、国際規格ISO 22301:2019を基にした日本産業規格であり、組織が事業継続マネジメントシステム（BCMS）を確立、実施、維持、改善するための要求事項を規定しています。この規格は、予期せぬ中断から組織を保護し、事業活動を継続するための枠組みを提供します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +455,7 @@ export const SM_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "プロジェクトマネジメントにおける「プロジェクトスコープのクリープ」とは、プロジェクトの当初の範囲が、正式な変更管理プロセスを経ずに、時間、コスト、および資源の調整も伴わずに、非公式かつコントロールされない形で徐々に拡大していく現象を指します。これはプロジェクトの遅延や予算超過の主な原因となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -455,7 +479,14 @@ export const SM_QUESTIONS_2025_SPRING_AM2: Question[] = [
       "エ": "4"
     },
     "answer": "ア",
-    "explanation": "正解はアです。プロジェクトのスケジュール短縮効果を判断するには、クリティカルパス（プロジェクト完了までの所要時間に最も影響を与える一連の作業経路）の長さを把握することが重要です。当初の計画におけるクリティカルパスの全長から、変更後の計画におけるクリティカルパスの全長を差し引くことで、短縮日数を計算できます。\n\nアは1日短縮されるという想定ですが、作業Eを分割することで、クリティカルパス上の所要時間が短縮され、結果としてプロジェクト全体の完了日が早まる可能性があります。\n\nイは2日短縮されるという想定ですが、作業Eの分割によるクリティカルパスへの影響が2日間とは異なるため不適切です。ウは3日短縮されるという想定ですが、これも同様に、作業Eの分割によるクリティカルパスへの影響が3日間とは異なるため不適切です。エは4日短縮されるという想定ですが、これも計算結果として4日間の短縮とはならないため不適切です。作業Eの分割によって、クリティカルパスが変化し、その影響を正確に評価することで、正しい短縮日数が特定されます。",
+    "explanation": "当初の最長経路はA→B→E→H→Iで、5＋8＋9＋4＋2＝28日です。変更後はE1とE2の完了を待ってE3を始めるので、Eに相当する区間は4＋2＝6日となり、この経路は25日です。一方でA→B→D→Gは5＋8＋7＋7＝27日のままです。変更後の全体は27日掛かるため、短縮日数は28−27＝1日です。",
+    "choiceExplanations": {
+      "ア": "正しいです。当初の最長経路A→B→E→H→Iは28日です。変更後はA→B→D→Gの27日が最長となり、プロジェクト全体は1日短縮されます。",
+      "イ": "誤りです。2日短縮には26日以内で全経路を終える必要があります。変更されていないA→B→D→Gだけで27日掛かるため、2日短縮はできません。",
+      "ウ": "誤りです。Eは9日から、E1とE2の遅い方にE3を足した6日となります。この経路だけなら3日短縮しますが、他の経路が最長になるため全体には適用できません。",
+      "エ": "誤りです。E3の開始にはE1だけでなく、ダミー作業で結ばれたE2の完了も必要です。E1の3日だけにE3の2日を足すと、Eの区間を誤って5日と見積もります。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +511,7 @@ export const SM_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "JIS Q 21500:2018のプロセス「品質の計画」では、プロジェクトの目標に基づいて、プロジェクトに適用すべき品質に関連する規格や、満たすべき品質要求事項を確定します。また、これらの品質要求事項を達成するために必要なツール、手順、技法、および資源を決定することもこの活動に含まれます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +536,7 @@ export const SM_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "メモリインタリーブとは、主記憶装置を複数の独立したバンクに分割し、CPUからの複数のアクセス要求をこれらのバンクに分散させることで、メモリへのアクセスを並列的に処理し、全体としてのメモリ帯域幅やアクセス速度を向上させる技術です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +561,7 @@ export const SM_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "システムの稼働率は、MTBF（平均故障間隔）を「MTBFとMTTR（平均復旧時間）の合計」で割る計算式で求められます（稼働率 = MTBF / (MTBF + MTTR)）。MTBFとMTTRが共に従来の1.5倍になった場合、式は (1.5 × MTBF) / (1.5 × MTBF + 1.5 × MTTR) となり、分子と分母の1.5が相殺されるため、稼働率は従来の稼働率と変わらず同じ値になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +586,7 @@ export const SM_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "複数のトランザクションが同時に同一データを更新しようとすると、データの整合性が損なわれる可能性があります。排他制御は、このような同時実行によるデータの矛盾を防ぐため、特定のデータへのアクセスを一時的に制限する技法です。これにより、一貫性と分離性を保証します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +611,7 @@ export const SM_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "スイッチングハブ間で複数の物理ポートを束ねて論理的に一つのリンクとして扱う技術は、リンクアグリゲーションと呼ばれます。この技術により、通信帯域の拡大と冗長性の向上が図られ、ネットワークの安定性とパフォーマンスが向上します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +636,7 @@ export const SM_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "36協定とは、労働基準法第36条に基づき、企業が労働者に法定労働時間を超える時間外労働や法定休日における労働をさせる場合に必要となる労使協定です。これを書面で締結し労働基準監督署に届け出ることによって、初めて合法的に時間外労働や休日労働が認められます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sm_am2_qs.pdf",
     "license": "IPA-public"

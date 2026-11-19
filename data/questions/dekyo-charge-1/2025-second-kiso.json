@@ -1,0 +1,1091 @@
+[
+  {
+    "id": "dekyo-charge-1-2025-second-kiso-q1-1",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 1,
+    "part": "1",
+    "officialQuestionLabel": "1（1）",
+    "type": "multiple-choice",
+    "category": "電気回路",
+    "topicTags": [
+      "電気回路",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "図１に示す回路において、２オームの抵抗に流れる電流は、 (ア) アンペアである。た だし、電池の内部抵抗は無視するものとする。",
+    "choices": {
+      "ア": "１",
+      "イ": "２",
+      "ウ": "３",
+      "エ": "４",
+      "オ": "５"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "右側の上下の節点電位を、左の下端を0 VとしてU、Lとする。左の中点は40 V、上端は80 V。節点方程式(U−80)/2＋(U−L)/3＋(U−40)/2＝0とL＋(L−U)/3＝0からU＝48 V。2 Ωには(48−40)/2＝4 A流れる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-second/q1-1.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第2回 電気通信技術の基礎 第1問（1）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926371c03d29.pdf#page=2",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files2527692639569429b.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "この選択肢の「１」は、計算で得られる「４」と一致しない。右側の上下の節点電位を、左の下端を0 VとしてU、Lとする。左の中点は40 V、上端は80 V。節点方程式(U−80)/2＋(U−L)/3＋(U−40)/2＝0とL＋(L−U)/3＝0からU＝48 V。2 Ωには(48−40)/2＝4 A流れる。",
+      "イ": "この選択肢の「２」は、計算で得られる「４」と一致しない。右側の上下の節点電位を、左の下端を0 VとしてU、Lとする。左の中点は40 V、上端は80 V。節点方程式(U−80)/2＋(U−L)/3＋(U−40)/2＝0とL＋(L−U)/3＝0からU＝48 V。2 Ωには(48−40)/2＝4 A流れる。",
+      "ウ": "この選択肢の「３」は、計算で得られる「４」と一致しない。右側の上下の節点電位を、左の下端を0 VとしてU、Lとする。左の中点は40 V、上端は80 V。節点方程式(U−80)/2＋(U−L)/3＋(U−40)/2＝0とL＋(L−U)/3＝0からU＝48 V。2 Ωには(48−40)/2＝4 A流れる。",
+      "エ": "計算で得られる値は「４」であり、この選択肢の値と一致する。右側の上下の節点電位を、左の下端を0 VとしてU、Lとする。左の中点は40 V、上端は80 V。節点方程式(U−80)/2＋(U−L)/3＋(U−40)/2＝0とL＋(L−U)/3＝0からU＝48 V。2 Ωには(48−40)/2＝4 A流れる。",
+      "オ": "この選択肢の「５」は、計算で得られる「４」と一致しない。右側の上下の節点電位を、左の下端を0 VとしてU、Lとする。左の中点は40 V、上端は80 V。節点方程式(U−80)/2＋(U−L)/3＋(U−40)/2＝0とL＋(L−U)/3＝0からU＝48 V。2 Ωには(48−40)/2＝4 A流れる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2025-second-kiso-q1-2",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 1,
+    "part": "2",
+    "officialQuestionLabel": "1（2）",
+    "type": "multiple-choice",
+    "category": "電気回路",
+    "topicTags": [
+      "電気回路",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "図２に示す回路において、端子ａ－ｂ間に４５ボルトの単一周波数の交流電圧を加えたとき、 回路に流れる全電流Ｉは、 (イ) アンペアである。",
+    "choices": {
+      "ア": "３",
+      "イ": "６",
+      "ウ": "９",
+      "エ": "１２",
+      "オ": "１５"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "コイル枝の電流は45/3＝15 Aで電圧より90度遅れ、コンデンサ枝は45/5＝9 Aで90度進む。両者の位相差は180度なので、全電流の大きさは15−9＝6 Aになる。二つの電流の算術和ではない。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-second/q1-2.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第2回 電気通信技術の基礎 第1問（2）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926371c03d29.pdf#page=2",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files2527692639569429b.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "この選択肢の「３」は、計算で得られる「６」と一致しない。コイル枝の電流は45/3＝15 Aで電圧より90度遅れ、コンデンサ枝は45/5＝9 Aで90度進む。両者の位相差は180度なので、全電流の大きさは15−9＝6 Aになる。二つの電流の算術和ではない。",
+      "イ": "計算で得られる値は「６」であり、この選択肢の値と一致する。コイル枝の電流は45/3＝15 Aで電圧より90度遅れ、コンデンサ枝は45/5＝9 Aで90度進む。両者の位相差は180度なので、全電流の大きさは15−9＝6 Aになる。二つの電流の算術和ではない。",
+      "ウ": "この選択肢の「９」は、計算で得られる「６」と一致しない。コイル枝の電流は45/3＝15 Aで電圧より90度遅れ、コンデンサ枝は45/5＝9 Aで90度進む。両者の位相差は180度なので、全電流の大きさは15−9＝6 Aになる。二つの電流の算術和ではない。",
+      "エ": "この選択肢の「１２」は、計算で得られる「６」と一致しない。コイル枝の電流は45/3＝15 Aで電圧より90度遅れ、コンデンサ枝は45/5＝9 Aで90度進む。両者の位相差は180度なので、全電流の大きさは15−9＝6 Aになる。二つの電流の算術和ではない。",
+      "オ": "この選択肢の「１５」は、計算で得られる「６」と一致しない。コイル枝の電流は45/3＝15 Aで電圧より90度遅れ、コンデンサ枝は45/5＝9 Aで90度進む。両者の位相差は180度なので、全電流の大きさは15−9＝6 Aになる。二つの電流の算術和ではない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2025-second-kiso-q1-3",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 1,
+    "part": "3",
+    "officialQuestionLabel": "1（3）",
+    "type": "multiple-choice",
+    "category": "電気回路",
+    "topicTags": [
+      "電気回路",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "電磁誘導によって巻数Nのコイルに生ずる誘導起電力eは、コイルを貫く磁束Φが時間tとともに変化する割合をΔΦ/Δtとすると、e＝（ウ）×ΔΦ/Δtで表される。",
+    "choices": {
+      "ア": "1/N²",
+      "イ": "1/(2N)",
+      "ウ": "√N",
+      "エ": "N",
+      "オ": "N²"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "電磁誘導で生じる起電力の大きさは、巻数Nと1巻当たりの磁束の変化率の積である。設問の式では係数がNとなる。符号まで扱う場合は、磁束変化を妨げる向きをレンツの法則で決める。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-second/q1-3.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第2回 電気通信技術の基礎 第1問（3）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926371c03d29.pdf#page=2",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files2527692639569429b.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "この選択肢の「1/N²」は、計算で得られる「N」と一致しない。電磁誘導で生じる起電力の大きさは、巻数Nと1巻当たりの磁束の変化率の積である。設問の式では係数がNとなる。符号まで扱う場合は、磁束変化を妨げる向きをレンツの法則で決める。",
+      "イ": "この選択肢の「1/(2N)」は、計算で得られる「N」と一致しない。電磁誘導で生じる起電力の大きさは、巻数Nと1巻当たりの磁束の変化率の積である。設問の式では係数がNとなる。符号まで扱う場合は、磁束変化を妨げる向きをレンツの法則で決める。",
+      "ウ": "この選択肢の「√N」は、計算で得られる「N」と一致しない。電磁誘導で生じる起電力の大きさは、巻数Nと1巻当たりの磁束の変化率の積である。設問の式では係数がNとなる。符号まで扱う場合は、磁束変化を妨げる向きをレンツの法則で決める。",
+      "エ": "計算で得られる値は「N」であり、この選択肢の値と一致する。電磁誘導で生じる起電力の大きさは、巻数Nと1巻当たりの磁束の変化率の積である。設問の式では係数がNとなる。符号まで扱う場合は、磁束変化を妨げる向きをレンツの法則で決める。",
+      "オ": "この選択肢の「N²」は、計算で得られる「N」と一致しない。電磁誘導で生じる起電力の大きさは、巻数Nと1巻当たりの磁束の変化率の積である。設問の式では係数がNとなる。符号まで扱う場合は、磁束変化を妨げる向きをレンツの法則で決める。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2025-second-kiso-q1-4",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 1,
+    "part": "4",
+    "officialQuestionLabel": "1（4）",
+    "type": "multiple-choice",
+    "category": "電気回路",
+    "topicTags": [
+      "電気回路",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "磁束密度Bテスラの平等磁界内で、磁界に直交して長さLメートルの直線導体を置き、Iアンペアの直流電流を流すと、磁界及び電流に垂直な方向に（エ）ニュートンの力が働く。",
+    "choices": {
+      "ア": "BIL",
+      "イ": "BI²L",
+      "ウ": "BI³L",
+      "エ": "B²IL",
+      "オ": "B³IL"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "磁界と導体が直交するとき、電流が受ける力の大きさはF＝BILである。Bは磁束密度、Iは電流、Lは磁界内の導体の長さ。平行なら力は0で、一般の角度ではsinθを掛ける。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-second/q1-4.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第2回 電気通信技術の基礎 第1問（4）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926371c03d29.pdf#page=2",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files2527692639569429b.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "計算で得られる値は「BIL」であり、この選択肢の値と一致する。磁界と導体が直交するとき、電流が受ける力の大きさはF＝BILである。Bは磁束密度、Iは電流、Lは磁界内の導体の長さ。平行なら力は0で、一般の角度ではsinθを掛ける。",
+      "イ": "この選択肢の「BI²L」は、計算で得られる「BIL」と一致しない。磁界と導体が直交するとき、電流が受ける力の大きさはF＝BILである。Bは磁束密度、Iは電流、Lは磁界内の導体の長さ。平行なら力は0で、一般の角度ではsinθを掛ける。",
+      "ウ": "この選択肢の「BI³L」は、計算で得られる「BIL」と一致しない。磁界と導体が直交するとき、電流が受ける力の大きさはF＝BILである。Bは磁束密度、Iは電流、Lは磁界内の導体の長さ。平行なら力は0で、一般の角度ではsinθを掛ける。",
+      "エ": "この選択肢の「B²IL」は、計算で得られる「BIL」と一致しない。磁界と導体が直交するとき、電流が受ける力の大きさはF＝BILである。Bは磁束密度、Iは電流、Lは磁界内の導体の長さ。平行なら力は0で、一般の角度ではsinθを掛ける。",
+      "オ": "この選択肢の「B³IL」は、計算で得られる「BIL」と一致しない。磁界と導体が直交するとき、電流が受ける力の大きさはF＝BILである。Bは磁束密度、Iは電流、Lは磁界内の導体の長さ。平行なら力は0で、一般の角度ではsinθを掛ける。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2025-second-kiso-q2-1",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 2,
+    "part": "1",
+    "officialQuestionLabel": "2（1）",
+    "type": "multiple-choice",
+    "category": "電子回路・半導体",
+    "topicTags": [
+      "電子回路・半導体",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "半導体の特性について述べた次の二つの記述は、 (ア) 。 Ａ 半導体中の自由電子や正孔に濃度差があるとき、自由電子や正孔が濃度の高い方から低い 方に移動する現象は、拡散といわれる。 Ｂ 半導体に電界を加えたとき、半導体中の自由電子や正孔が電界から力を受けて移動する現 象は、整合といわれる。",
+    "choices": {
+      "ア": "Ａのみ正しい",
+      "イ": "Ｂのみ正しい",
+      "ウ": "ＡもＢも正しい",
+      "エ": "ＡもＢも正しくない"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "Aの濃度差によるキャリアの移動は拡散であり正しい。Bの電界による移動はドリフトと呼ぶので、整合という名称は誤りである。濃度の勾配と電界のどちらが原因かを分けて考える。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-second/q2-1.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第2回 電気通信技術の基礎 第2問（1）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926371c03d29.pdf#page=3",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files2527692639569429b.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "Aは正しく、Bは誤り。この組合せが両方の判定に一致する。Aの濃度差によるキャリアの移動は拡散であり正しい。Bの電界による移動はドリフトと呼ぶので、整合という名称は誤りである。濃度の勾配と電界のどちらが原因かを分けて考える。",
+      "イ": "Aは正しく、Bは誤り。この組合せはAの正誤が逆、Bの正誤が逆。Aの濃度差によるキャリアの移動は拡散であり正しい。Bの電界による移動はドリフトと呼ぶので、整合という名称は誤りである。濃度の勾配と電界のどちらが原因かを分けて考える。",
+      "ウ": "Aは正しく、Bは誤り。この組合せはBの正誤が逆。Aの濃度差によるキャリアの移動は拡散であり正しい。Bの電界による移動はドリフトと呼ぶので、整合という名称は誤りである。濃度の勾配と電界のどちらが原因かを分けて考える。",
+      "エ": "Aは正しく、Bは誤り。この組合せはAの正誤が逆。Aの濃度差によるキャリアの移動は拡散であり正しい。Bの電界による移動はドリフトと呼ぶので、整合という名称は誤りである。濃度の勾配と電界のどちらが原因かを分けて考える。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2025-second-kiso-q2-2",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 2,
+    "part": "2",
+    "officialQuestionLabel": "2（2）",
+    "type": "multiple-choice",
+    "category": "電子回路・半導体",
+    "topicTags": [
+      "電子回路・半導体",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "図1のトランジスタ増幅回路で、トランジスタの特性が図2及び図3で表されるとき、コレクタ－エミッタ間の電圧VCEは（イ）ボルトとなる。ただし、R₁＝100オーム、R₂＝2.4キロオーム、R₃＝3キロオームとする。",
+    "choices": {
+      "ア": "２",
+      "イ": "４",
+      "ウ": "６",
+      "エ": "８",
+      "オ": "１０"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "図2からIB＝約40 μAでVBE＝約0.8 Vとなる。抵抗分圧側の供給電流とベース電流の関係にも合い、図3ではIC＝約4 mA。RC＝3 kΩの電圧降下は約12 VなのでVCE＝20−12＝8 Vとなる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-second/q2-2.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第2回 電気通信技術の基礎 第2問（2）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926371c03d29.pdf#page=3",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files2527692639569429b.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "この選択肢の「２」は、計算で得られる「８」と一致しない。図2からIB＝約40 μAでVBE＝約0.8 Vとなる。抵抗分圧側の供給電流とベース電流の関係にも合い、図3ではIC＝約4 mA。RC＝3 kΩの電圧降下は約12 VなのでVCE＝20−12＝8 Vとなる。",
+      "イ": "この選択肢の「４」は、計算で得られる「８」と一致しない。図2からIB＝約40 μAでVBE＝約0.8 Vとなる。抵抗分圧側の供給電流とベース電流の関係にも合い、図3ではIC＝約4 mA。RC＝3 kΩの電圧降下は約12 VなのでVCE＝20−12＝8 Vとなる。",
+      "ウ": "この選択肢の「６」は、計算で得られる「８」と一致しない。図2からIB＝約40 μAでVBE＝約0.8 Vとなる。抵抗分圧側の供給電流とベース電流の関係にも合い、図3ではIC＝約4 mA。RC＝3 kΩの電圧降下は約12 VなのでVCE＝20−12＝8 Vとなる。",
+      "エ": "計算で得られる値は「８」であり、この選択肢の値と一致する。図2からIB＝約40 μAでVBE＝約0.8 Vとなる。抵抗分圧側の供給電流とベース電流の関係にも合い、図3ではIC＝約4 mA。RC＝3 kΩの電圧降下は約12 VなのでVCE＝20−12＝8 Vとなる。",
+      "オ": "この選択肢の「１０」は、計算で得られる「８」と一致しない。図2からIB＝約40 μAでVBE＝約0.8 Vとなる。抵抗分圧側の供給電流とベース電流の関係にも合い、図3ではIC＝約4 mA。RC＝3 kΩの電圧降下は約12 VなのでVCE＝20−12＝8 Vとなる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2025-second-kiso-q2-3",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 2,
+    "part": "3",
+    "officialQuestionLabel": "2（3）",
+    "type": "multiple-choice",
+    "category": "電子回路・半導体",
+    "topicTags": [
+      "電子回路・半導体",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "ダイオードの特徴について述べた次の二つの記述は、 (ウ) 。 Ａ ツェナーダイオードは、逆方向に加えた電圧がある値を超えると急激に電流が増加し、広 い電流範囲で電圧を一定に保つ特性を有する。 Ｂ 可変容量ダイオードは、コンデンサの働きを持つ半導体素子であり、ｐｎ接合ダイオード に加える逆バイアス電圧を制御することにより、静電容量を変えることができる。",
+    "choices": {
+      "ア": "Ａのみ正しい",
+      "イ": "Ｂのみ正しい",
+      "ウ": "ＡもＢも正しい",
+      "エ": "ＡもＢも正しくない"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "Aのツェナーダイオードは、逆方向の降伏領域で電流が大きく変わっても電圧の変化が小さい特性を利用する。Bの可変容量ダイオードも、逆バイアスで接合の空乏層幅を変えて容量を制御する。両方とも正しい。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-second/q2-3.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第2回 電気通信技術の基礎 第2問（3）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926371c03d29.pdf#page=3",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files2527692639569429b.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "Aは正しく、Bは正しい。この組合せはBの正誤が逆。Aのツェナーダイオードは、逆方向の降伏領域で電流が大きく変わっても電圧の変化が小さい特性を利用する。Bの可変容量ダイオードも、逆バイアスで接合の空乏層幅を変えて容量を制御する。両方とも正しい。",
+      "イ": "Aは正しく、Bは正しい。この組合せはAの正誤が逆。Aのツェナーダイオードは、逆方向の降伏領域で電流が大きく変わっても電圧の変化が小さい特性を利用する。Bの可変容量ダイオードも、逆バイアスで接合の空乏層幅を変えて容量を制御する。両方とも正しい。",
+      "ウ": "Aは正しく、Bは正しい。この組合せが両方の判定に一致する。Aのツェナーダイオードは、逆方向の降伏領域で電流が大きく変わっても電圧の変化が小さい特性を利用する。Bの可変容量ダイオードも、逆バイアスで接合の空乏層幅を変えて容量を制御する。両方とも正しい。",
+      "エ": "Aは正しく、Bは正しい。この組合せはAの正誤が逆、Bの正誤が逆。Aのツェナーダイオードは、逆方向の降伏領域で電流が大きく変わっても電圧の変化が小さい特性を利用する。Bの可変容量ダイオードも、逆バイアスで接合の空乏層幅を変えて容量を制御する。両方とも正しい。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2025-second-kiso-q2-4",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 2,
+    "part": "4",
+    "officialQuestionLabel": "2（4）",
+    "type": "multiple-choice",
+    "category": "電子回路・半導体",
+    "topicTags": [
+      "電子回路・半導体",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "バリスタは、 (エ) 特性が非直線的な変化を示す半導体素子であり、過電圧の抑制、衝 撃性雑音の吸収などに用いられる。",
+    "choices": {
+      "ア": "静電容量－温度",
+      "イ": "損失－位相",
+      "ウ": "電圧－電流",
+      "エ": "周波数－振幅"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "バリスタは電圧と電流の関係が非線形で、印加電圧が高くなると大きな電流を流して電圧の上昇を抑える素子である。この性質によってサージなどの過電圧や衝撃性雑音を吸収する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-second/q2-4.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第2回 電気通信技術の基礎 第2問（4）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926371c03d29.pdf#page=3",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files2527692639569429b.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "バリスタの主要な特性は静電容量と温度の関係ではない。",
+      "イ": "損失と位相の関係を利用する素子という説明ではない。",
+      "ウ": "電圧と電流の非線形な関係によって、過電圧時に電流を逃がす。",
+      "エ": "周波数と振幅の関係を主な動作原理とするものではない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2025-second-kiso-q2-5",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 2,
+    "part": "5",
+    "officialQuestionLabel": "2（5）",
+    "type": "multiple-choice",
+    "category": "電子回路・半導体",
+    "topicTags": [
+      "電子回路・半導体",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "トランジスタ増幅回路を接地方式により分類したとき、入力インピーダンスが最も小さく、 出力インピーダンスが最も大きいものは、 (オ) 接地の回路である。",
+    "choices": {
+      "ア": "コレクタ",
+      "イ": "ベース",
+      "ウ": "カソード",
+      "エ": "エミッタ",
+      "オ": "ソース"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "ベース接地回路は、入力がエミッタ側であるため入力インピーダンスが小さく、出力がコレクタ側であるため出力インピーダンスが大きい。コレクタ接地回路はこれと逆に入力が大きく出力が小さい。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-second/q2-5.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第2回 電気通信技術の基礎 第2問（5）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926371c03d29.pdf#page=3",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files2527692639569429b.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "コレクタ接地は入力が高く出力が低いので、設問の大小関係とは逆になる。",
+      "イ": "ベース接地は入力がエミッタ側、出力がコレクタ側であり、設問に該当する。",
+      "ウ": "カソードはトランジスタの三つの端子の名称ではない。",
+      "エ": "エミッタ接地よりも、ベース接地の入力インピーダンスが小さい。",
+      "オ": "ソースは電界効果トランジスタの端子名で、ここでの分類に該当しない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2025-second-kiso-q3-1",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 3,
+    "part": "1",
+    "officialQuestionLabel": "3（1）",
+    "type": "multiple-choice",
+    "category": "論理回路",
+    "topicTags": [
+      "論理回路",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "図の斜線部分を表す論理式について、解答群から最も適したものを選びなさい。",
+    "choices": {
+      "ア": "解答群の①",
+      "イ": "解答群の②",
+      "ウ": "解答群の③",
+      "エ": "解答群の④",
+      "オ": "解答群の⑤"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "三つの斜線領域の論理積は、全ての図で共通に塗られている部分だけを残す操作である。図1～3を重ねると、Aの内側でBとCの外側にある領域が残り、AB̅C̅を表す④となる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-second/q3-1.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第2回 電気通信技術の基礎 第3問（1）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926371c03d29.pdf#page=4",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files2527692639569429b.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceImageUrls": {
+      "ア": "/questions/dekyo-charge-1/2025-second/q3-1-choice-1.png",
+      "イ": "/questions/dekyo-charge-1/2025-second/q3-1-choice-2.png",
+      "ウ": "/questions/dekyo-charge-1/2025-second/q3-1-choice-3.png",
+      "エ": "/questions/dekyo-charge-1/2025-second/q3-1-choice-4.png",
+      "オ": "/questions/dekyo-charge-1/2025-second/q3-1-choice-5.png"
+    },
+    "choiceExplanations": {
+      "ア": "解答群の①は、次の条件から得られる斜線領域・論理値と一致しない。三つの斜線領域の論理積は、全ての図で共通に塗られている部分だけを残す操作である。図1～3を重ねると、Aの内側でBとCの外側にある領域が残り、AB̅C̅を表す④となる。",
+      "イ": "解答群の②は、次の条件から得られる斜線領域・論理値と一致しない。三つの斜線領域の論理積は、全ての図で共通に塗られている部分だけを残す操作である。図1～3を重ねると、Aの内側でBとCの外側にある領域が残り、AB̅C̅を表す④となる。",
+      "ウ": "解答群の③は、次の条件から得られる斜線領域・論理値と一致しない。三つの斜線領域の論理積は、全ての図で共通に塗られている部分だけを残す操作である。図1～3を重ねると、Aの内側でBとCの外側にある領域が残り、AB̅C̅を表す④となる。",
+      "エ": "解答群の④は、求める斜線領域・論理値と一致する。三つの斜線領域の論理積は、全ての図で共通に塗られている部分だけを残す操作である。図1～3を重ねると、Aの内側でBとCの外側にある領域が残り、AB̅C̅を表す④となる。",
+      "オ": "解答群の⑤は、次の条件から得られる斜線領域・論理値と一致しない。三つの斜線領域の論理積は、全ての図で共通に塗られている部分だけを残す操作である。図1～3を重ねると、Aの内側でBとCの外側にある領域が残り、AB̅C̅を表す④となる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2025-second-kiso-q3-2",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 3,
+    "part": "2",
+    "officialQuestionLabel": "3（2）",
+    "type": "multiple-choice",
+    "category": "論理回路",
+    "topicTags": [
+      "論理回路",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "表に示す2進数X₁、X₂を用いて、乗算X₀＝X₁X₂からX₀を求め、2進数で表示する。X₀の先頭から4番目と5番目と6番目の数字を順に並べると（イ）である。",
+    "choices": {
+      "ア": "０００",
+      "イ": "００１",
+      "ウ": "１０１",
+      "エ": "１１０",
+      "オ": "１１１"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "110101₂は53、11101₂は29なので積は1537。2進数では11000000001₂であり、先頭から4番目・5番目・6番目は順に0・0・0となる。末尾からの桁位置と取り違えない。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-second/q3-2.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第2回 電気通信技術の基礎 第3問（2）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926371c03d29.pdf#page=4",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files2527692639569429b.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "計算で得られる値は「０００」であり、この選択肢の値と一致する。110101₂は53、11101₂は29なので積は1537。2進数では11000000001₂であり、先頭から4番目・5番目・6番目は順に0・0・0となる。末尾からの桁位置と取り違えない。",
+      "イ": "この選択肢の「００１」は、計算で得られる「０００」と一致しない。110101₂は53、11101₂は29なので積は1537。2進数では11000000001₂であり、先頭から4番目・5番目・6番目は順に0・0・0となる。末尾からの桁位置と取り違えない。",
+      "ウ": "この選択肢の「１０１」は、計算で得られる「０００」と一致しない。110101₂は53、11101₂は29なので積は1537。2進数では11000000001₂であり、先頭から4番目・5番目・6番目は順に0・0・0となる。末尾からの桁位置と取り違えない。",
+      "エ": "この選択肢の「１１０」は、計算で得られる「０００」と一致しない。110101₂は53、11101₂は29なので積は1537。2進数では11000000001₂であり、先頭から4番目・5番目・6番目は順に0・0・0となる。末尾からの桁位置と取り違えない。",
+      "オ": "この選択肢の「１１１」は、計算で得られる「０００」と一致しない。110101₂は53、11101₂は29なので積は1537。2進数では11000000001₂であり、先頭から4番目・5番目・6番目は順に0・0・0となる。末尾からの桁位置と取り違えない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2025-second-kiso-q3-3",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 3,
+    "part": "3",
+    "officialQuestionLabel": "3（3）",
+    "type": "multiple-choice",
+    "category": "論理回路",
+    "topicTags": [
+      "論理回路",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "図に示す論理回路について、空欄（ウ）に入る最も適したものを選びなさい。",
+    "choices": {
+      "ア": "解答群の①",
+      "イ": "解答群の②",
+      "ウ": "解答群の③",
+      "エ": "解答群の④",
+      "オ": "解答群の⑤"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "上段のOR回路から得られる式はA＋B̅である。MをORとすると、下段からの項はAを含むため、和を取った後に吸収則で消せる。したがってC＝A＋B̅となり、Mには解答群②のOR回路を用いる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-second/q3-3.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第2回 電気通信技術の基礎 第3問（3）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926371c03d29.pdf#page=5",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files2527692639569429b.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceImageUrls": {
+      "ア": "/questions/dekyo-charge-1/2025-second/q3-3-choice-1.png",
+      "イ": "/questions/dekyo-charge-1/2025-second/q3-3-choice-2.png",
+      "ウ": "/questions/dekyo-charge-1/2025-second/q3-3-choice-3.png",
+      "エ": "/questions/dekyo-charge-1/2025-second/q3-3-choice-4.png",
+      "オ": "/questions/dekyo-charge-1/2025-second/q3-3-choice-5.png"
+    },
+    "choiceExplanations": {
+      "ア": "解答群の①は、次の条件から得られる斜線領域・論理値と一致しない。上段のOR回路から得られる式はA＋B̅である。MをORとすると、下段からの項はAを含むため、和を取った後に吸収則で消せる。したがってC＝A＋B̅となり、Mには解答群②のOR回路を用いる。",
+      "イ": "解答群の②は、求める斜線領域・論理値と一致する。上段のOR回路から得られる式はA＋B̅である。MをORとすると、下段からの項はAを含むため、和を取った後に吸収則で消せる。したがってC＝A＋B̅となり、Mには解答群②のOR回路を用いる。",
+      "ウ": "解答群の③は、次の条件から得られる斜線領域・論理値と一致しない。上段のOR回路から得られる式はA＋B̅である。MをORとすると、下段からの項はAを含むため、和を取った後に吸収則で消せる。したがってC＝A＋B̅となり、Mには解答群②のOR回路を用いる。",
+      "エ": "解答群の④は、次の条件から得られる斜線領域・論理値と一致しない。上段のOR回路から得られる式はA＋B̅である。MをORとすると、下段からの項はAを含むため、和を取った後に吸収則で消せる。したがってC＝A＋B̅となり、Mには解答群②のOR回路を用いる。",
+      "オ": "解答群の⑤は、次の条件から得られる斜線領域・論理値と一致しない。上段のOR回路から得られる式はA＋B̅である。MをORとすると、下段からの項はAを含むため、和を取った後に吸収則で消せる。したがってC＝A＋B̅となり、Mには解答群②のOR回路を用いる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2025-second-kiso-q3-4",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 3,
+    "part": "4",
+    "officialQuestionLabel": "3（4）",
+    "type": "multiple-choice",
+    "category": "論理回路",
+    "topicTags": [
+      "論理回路",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "次の論理関数Xを簡単にした式として、空欄（エ）に入る最も適したものを選びなさい。",
+    "choices": {
+      "ア": "解答群の①",
+      "イ": "解答群の②",
+      "ウ": "解答群の③",
+      "エ": "解答群の④",
+      "オ": "解答群の⑤"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "元の式にある否定線を含め、(A＋B)と最後の因子を先に展開する。中間の和の否定にはド・モルガンの法則を適用する。吸収則とA・A̅＝0を使って不要な項を落とすとAC̅となり、解答群③に一致する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-second/q3-4.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第2回 電気通信技術の基礎 第3問（4）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926371c03d29.pdf#page=5",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files2527692639569429b.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceImageUrls": {
+      "ア": "/questions/dekyo-charge-1/2025-second/q3-4-choice-1.png",
+      "イ": "/questions/dekyo-charge-1/2025-second/q3-4-choice-2.png",
+      "ウ": "/questions/dekyo-charge-1/2025-second/q3-4-choice-3.png",
+      "エ": "/questions/dekyo-charge-1/2025-second/q3-4-choice-4.png",
+      "オ": "/questions/dekyo-charge-1/2025-second/q3-4-choice-5.png"
+    },
+    "choiceExplanations": {
+      "ア": "解答群の①は、次の条件から得られる斜線領域・論理値と一致しない。元の式にある否定線を含め、(A＋B)と最後の因子を先に展開する。中間の和の否定にはド・モルガンの法則を適用する。吸収則とA・A̅＝0を使って不要な項を落とすとAC̅となり、解答群③に一致する。",
+      "イ": "解答群の②は、次の条件から得られる斜線領域・論理値と一致しない。元の式にある否定線を含め、(A＋B)と最後の因子を先に展開する。中間の和の否定にはド・モルガンの法則を適用する。吸収則とA・A̅＝0を使って不要な項を落とすとAC̅となり、解答群③に一致する。",
+      "ウ": "解答群の③は、求める斜線領域・論理値と一致する。元の式にある否定線を含め、(A＋B)と最後の因子を先に展開する。中間の和の否定にはド・モルガンの法則を適用する。吸収則とA・A̅＝0を使って不要な項を落とすとAC̅となり、解答群③に一致する。",
+      "エ": "解答群の④は、次の条件から得られる斜線領域・論理値と一致しない。元の式にある否定線を含め、(A＋B)と最後の因子を先に展開する。中間の和の否定にはド・モルガンの法則を適用する。吸収則とA・A̅＝0を使って不要な項を落とすとAC̅となり、解答群③に一致する。",
+      "オ": "解答群の⑤は、次の条件から得られる斜線領域・論理値と一致しない。元の式にある否定線を含め、(A＋B)と最後の因子を先に展開する。中間の和の否定にはド・モルガンの法則を適用する。吸収則とA・A̅＝0を使って不要な項を落とすとAC̅となり、解答群③に一致する。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2025-second-kiso-q4-1",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 4,
+    "part": "1",
+    "officialQuestionLabel": "4（1）",
+    "type": "multiple-choice",
+    "category": "伝送理論",
+    "topicTags": [
+      "伝送理論",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "図1で入力電力が48ミリワット、回線の長さが（ア）キロメートル、伝送損失が1キロメートル当たり0.8デシベル、増幅器の利得が26デシベルのとき、負荷抵抗R₁で消費する電力は240ミリワットである。変成器は理想的で、入出力各部のインピーダンスは整合している。",
+    "choices": {
+      "ア": "１５",
+      "イ": "２０",
+      "ウ": "２５",
+      "エ": "４０",
+      "オ": "４５"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "負荷R₁とR₂は600 Ωずつの並列なので、二次側へ伝わった全電力の半分がR₁で消費される。二次側全体は480 mWで入力48 mWの10倍、総合利得10 dB。線路損失は26−10＝16 dB、長さは16/0.8＝20 kmとなる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-second/q4-1.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第2回 電気通信技術の基礎 第4問（1）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926371c03d29.pdf#page=6",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files2527692639569429b.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "この選択肢の「１５」は、計算で得られる「２０」と一致しない。負荷R₁とR₂は600 Ωずつの並列なので、二次側へ伝わった全電力の半分がR₁で消費される。二次側全体は480 mWで入力48 mWの10倍、総合利得10 dB。線路損失は26−10＝16 dB、長さは16/0.8＝20 kmとなる。",
+      "イ": "計算で得られる値は「２０」であり、この選択肢の値と一致する。負荷R₁とR₂は600 Ωずつの並列なので、二次側へ伝わった全電力の半分がR₁で消費される。二次側全体は480 mWで入力48 mWの10倍、総合利得10 dB。線路損失は26−10＝16 dB、長さは16/0.8＝20 kmとなる。",
+      "ウ": "この選択肢の「２５」は、計算で得られる「２０」と一致しない。負荷R₁とR₂は600 Ωずつの並列なので、二次側へ伝わった全電力の半分がR₁で消費される。二次側全体は480 mWで入力48 mWの10倍、総合利得10 dB。線路損失は26−10＝16 dB、長さは16/0.8＝20 kmとなる。",
+      "エ": "この選択肢の「４０」は、計算で得られる「２０」と一致しない。負荷R₁とR₂は600 Ωずつの並列なので、二次側へ伝わった全電力の半分がR₁で消費される。二次側全体は480 mWで入力48 mWの10倍、総合利得10 dB。線路損失は26−10＝16 dB、長さは16/0.8＝20 kmとなる。",
+      "オ": "この選択肢の「４５」は、計算で得られる「２０」と一致しない。負荷R₁とR₂は600 Ωずつの並列なので、二次側へ伝わった全電力の半分がR₁で消費される。二次側全体は480 mWで入力48 mWの10倍、総合利得10 dB。線路損失は26−10＝16 dB、長さは16/0.8＝20 kmとなる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2025-second-kiso-q4-2",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 4,
+    "part": "2",
+    "officialQuestionLabel": "4（2）",
+    "type": "multiple-choice",
+    "category": "伝送理論",
+    "topicTags": [
+      "伝送理論",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "平衡対ケーブルの伝送損失について述べた次の二つの記述は、 (イ) 。 Ａ 単位長さ当たりの心線導体抵抗を小さくすると、その伝送損失は増加する。 Ｂ 心線導体間の間隔を大きくすると、その伝送損失は増加する。",
+    "choices": {
+      "ア": "Ａのみ正しい",
+      "イ": "Ｂのみ正しい",
+      "ウ": "ＡもＢも正しい",
+      "エ": "ＡもＢも正しくない"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "Aは誤りで、導体抵抗を小さくすると抵抗による損失は減る。Bも誤りで、心線間隔を大きくすると静電容量が小さくなり、音声帯の伝送損失は小さくなる。したがって両方とも正しくない。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-second/q4-2.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第2回 電気通信技術の基礎 第4問（2）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926371c03d29.pdf#page=6",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files2527692639569429b.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "Aは誤りで、Bは誤り。この組合せはAの正誤が逆。Aは誤りで、導体抵抗を小さくすると抵抗による損失は減る。Bも誤りで、心線間隔を大きくすると静電容量が小さくなり、音声帯の伝送損失は小さくなる。したがって両方とも正しくない。",
+      "イ": "Aは誤りで、Bは誤り。この組合せはBの正誤が逆。Aは誤りで、導体抵抗を小さくすると抵抗による損失は減る。Bも誤りで、心線間隔を大きくすると静電容量が小さくなり、音声帯の伝送損失は小さくなる。したがって両方とも正しくない。",
+      "ウ": "Aは誤りで、Bは誤り。この組合せはAの正誤が逆、Bの正誤が逆。Aは誤りで、導体抵抗を小さくすると抵抗による損失は減る。Bも誤りで、心線間隔を大きくすると静電容量が小さくなり、音声帯の伝送損失は小さくなる。したがって両方とも正しくない。",
+      "エ": "Aは誤りで、Bは誤り。この組合せが両方の判定に一致する。Aは誤りで、導体抵抗を小さくすると抵抗による損失は減る。Bも誤りで、心線間隔を大きくすると静電容量が小さくなり、音声帯の伝送損失は小さくなる。したがって両方とも正しくない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2025-second-kiso-q4-3",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 4,
+    "part": "3",
+    "officialQuestionLabel": "4（3）",
+    "type": "multiple-choice",
+    "category": "伝送理論",
+    "topicTags": [
+      "伝送理論",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "アナログ信号を伝送する伝送路は、その減衰量が (ウ) に無関係に一定であり、かつ、 位相変化が (ウ) に比例するとき、信号をひずみなく伝送できる。",
+    "choices": {
+      "ア": "振 幅",
+      "イ": "雑 音",
+      "ウ": "周波数",
+      "エ": "変調度",
+      "オ": "特性インピーダンス"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "波形を保って伝送するには、周波数成分ごとの減衰量が同じで、位相変化が周波数に比例する必要がある。位相変化が周波数に比例すれば、各成分の遅延時間がそろい、位相ひずみを生じない。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-second/q4-3.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第2回 電気通信技術の基礎 第4問（3）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926371c03d29.pdf#page=6",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files2527692639569429b.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "ここでは信号振幅への比例条件ではなく、周波数特性の条件を問う。",
+      "イ": "雑音の量によって減衰特性の無ひずみ条件を表すものではない。",
+      "ウ": "各周波数成分の減衰が等しく、位相が周波数に比例すれば波形が保たれる。",
+      "エ": "変調度への比例条件は、信号波形を無ひずみで伝送する条件ではない。",
+      "オ": "整合に関係する量だが、設問の二つの周波数特性を表す変数ではない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2025-second-kiso-q4-4",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 4,
+    "part": "4",
+    "officialQuestionLabel": "4（4）",
+    "type": "multiple-choice",
+    "category": "伝送理論",
+    "topicTags": [
+      "伝送理論",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "図2で通信線路1の特性インピーダンスが240オーム、通信線路2が540オームのとき、巻線比n₁:n₂が（エ）の理想変成器を使うと接続点の反射損失はゼロとなる。",
+    "choices": {
+      "ア": "２：３",
+      "イ": "２：９",
+      "ウ": "３：２",
+      "エ": "４：９",
+      "オ": "９：４"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "理想変成器の整合条件はZ₁/Z₂＝(n₁/n₂)²である。240/540＝4/9なので、巻線比はその平方根を取って2/3。したがってn₁:n₂＝2:3であり、インピーダンス比4:9をそのまま巻線比にしない。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-second/q4-4.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第2回 電気通信技術の基礎 第4問（4）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926371c03d29.pdf#page=6",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files2527692639569429b.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "計算で得られる値は「２：３」であり、この選択肢の値と一致する。理想変成器の整合条件はZ₁/Z₂＝(n₁/n₂)²である。240/540＝4/9なので、巻線比はその平方根を取って2/3。したがってn₁:n₂＝2:3であり、インピーダンス比4:9をそのまま巻線比にしない。",
+      "イ": "この選択肢の「２：９」は、計算で得られる「２：３」と一致しない。理想変成器の整合条件はZ₁/Z₂＝(n₁/n₂)²である。240/540＝4/9なので、巻線比はその平方根を取って2/3。したがってn₁:n₂＝2:3であり、インピーダンス比4:9をそのまま巻線比にしない。",
+      "ウ": "この選択肢の「３：２」は、計算で得られる「２：３」と一致しない。理想変成器の整合条件はZ₁/Z₂＝(n₁/n₂)²である。240/540＝4/9なので、巻線比はその平方根を取って2/3。したがってn₁:n₂＝2:3であり、インピーダンス比4:9をそのまま巻線比にしない。",
+      "エ": "この選択肢の「４：９」は、計算で得られる「２：３」と一致しない。理想変成器の整合条件はZ₁/Z₂＝(n₁/n₂)²である。240/540＝4/9なので、巻線比はその平方根を取って2/3。したがってn₁:n₂＝2:3であり、インピーダンス比4:9をそのまま巻線比にしない。",
+      "オ": "この選択肢の「９：４」は、計算で得られる「２：３」と一致しない。理想変成器の整合条件はZ₁/Z₂＝(n₁/n₂)²である。240/540＝4/9なので、巻線比はその平方根を取って2/3。したがってn₁:n₂＝2:3であり、インピーダンス比4:9をそのまま巻線比にしない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2025-second-kiso-q5-1",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 5,
+    "part": "1",
+    "officialQuestionLabel": "5（1）",
+    "type": "multiple-choice",
+    "category": "デジタル通信",
+    "topicTags": [
+      "デジタル通信",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "1シンボル当たり2ビットの情報を伝送するQPSKを用いる。ビットレートがNビット／秒の場合、シンボルレートは（ア）シンボル／秒である。",
+    "choices": {
+      "ア": "N/4",
+      "イ": "N/2",
+      "ウ": "N",
+      "エ": "2N",
+      "オ": "4N"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "QPSKは一つのシンボルで2 bitを伝送するので、N bit/sを運ぶためのシンボルレートはN/2シンボル/sとなる。ビットレートは情報の個数、シンボルレートは変調状態を送る回数である。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-second/q5-1.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第2回 電気通信技術の基礎 第5問（1）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926371c03d29.pdf#page=7",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files2527692639569429b.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "この選択肢の「N/4」は、計算で得られる「N/2」と一致しない。QPSKは一つのシンボルで2 bitを伝送するので、N bit/sを運ぶためのシンボルレートはN/2シンボル/sとなる。ビットレートは情報の個数、シンボルレートは変調状態を送る回数である。",
+      "イ": "計算で得られる値は「N/2」であり、この選択肢の値と一致する。QPSKは一つのシンボルで2 bitを伝送するので、N bit/sを運ぶためのシンボルレートはN/2シンボル/sとなる。ビットレートは情報の個数、シンボルレートは変調状態を送る回数である。",
+      "ウ": "この選択肢の「N」は、計算で得られる「N/2」と一致しない。QPSKは一つのシンボルで2 bitを伝送するので、N bit/sを運ぶためのシンボルレートはN/2シンボル/sとなる。ビットレートは情報の個数、シンボルレートは変調状態を送る回数である。",
+      "エ": "この選択肢の「2N」は、計算で得られる「N/2」と一致しない。QPSKは一つのシンボルで2 bitを伝送するので、N bit/sを運ぶためのシンボルレートはN/2シンボル/sとなる。ビットレートは情報の個数、シンボルレートは変調状態を送る回数である。",
+      "オ": "この選択肢の「4N」は、計算で得られる「N/2」と一致しない。QPSKは一つのシンボルで2 bitを伝送するので、N bit/sを運ぶためのシンボルレートはN/2シンボル/sとなる。ビットレートは情報の個数、シンボルレートは変調状態を送る回数である。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2025-second-kiso-q5-2",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 5,
+    "part": "2",
+    "officialQuestionLabel": "5（2）",
+    "type": "multiple-choice",
+    "category": "デジタル通信",
+    "topicTags": [
+      "デジタル通信",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "PCM伝送の受信側では、パルス列から各パルス符号に対応するレベルの信号を生成し、サンプリング周波数の1/2を遮断周波数とする（イ）フィルタを通して信号を再生している。",
+    "choices": {
+      "ア": "帯域阻止",
+      "イ": "帯域通過",
+      "ウ": "低域通過",
+      "エ": "高域通過",
+      "オ": "利得等化"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "PCMの復号後の信号から元の音声帯域の成分を取り出すには低域通過フィルタを用いる。標本化によって生じる高い周波数側の繰返しスペクトルを除去し、連続したアナログ信号を再生するためである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-second/q5-2.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第2回 電気通信技術の基礎 第5問（2）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926371c03d29.pdf#page=7",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files2527692639569429b.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "帯域阻止フィルタは、特定の帯域を除く。音声低域全体を取り出す目的と異なる。",
+      "イ": "帯域通過フィルタでは、再生したい低周波成分全体を通す目的に合わない。",
+      "ウ": "低域通過フィルタで、標本化による高域の成分を除いて元の信号を再生する。",
+      "エ": "高域通過フィルタは低周波を除くので、復号した音声を取り出せない。",
+      "オ": "利得の周波数特性を補うことと、標本化成分を低域通過で除くことは異なる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2025-second-kiso-q5-3",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 5,
+    "part": "3",
+    "officialQuestionLabel": "5（3）",
+    "type": "multiple-choice",
+    "category": "デジタル通信",
+    "topicTags": [
+      "デジタル通信",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "光ファイバ通信に用いられる光の変調方法の一つに、物質に電界を加え、その強度を変化さ せると、物質の屈折率が変化する (ウ) 効果を利用したものがある。",
+    "choices": {
+      "ア": "ファラデー",
+      "イ": "ドップラー",
+      "ウ": "ラマン",
+      "エ": "ブリルアン",
+      "オ": "ポッケルス"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "電界に比例して物質の屈折率が変わる電気光学効果がポッケルス効果である。これにより光の位相などを制御できる。磁界による偏光面の回転を利用するファラデー効果とは区別する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-second/q5-3.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第2回 電気通信技術の基礎 第5問（3）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926371c03d29.pdf#page=7",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files2527692639569429b.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "ファラデー効果は磁界による偏光面の回転である。",
+      "イ": "ドップラー効果は光源と観測者の運動に伴う周波数の変化である。",
+      "ウ": "ラマン効果は物質との相互作用で光の周波数が変わる散乱に関係する。",
+      "エ": "ブリルアン効果は音響的な揺らぎと光の相互作用に関係する。",
+      "オ": "ポッケルス効果は、電界に応じた屈折率の変化を光変調に利用する。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2025-second-kiso-q5-4",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 5,
+    "part": "4",
+    "officialQuestionLabel": "5（4）",
+    "type": "multiple-choice",
+    "category": "デジタル通信",
+    "topicTags": [
+      "デジタル通信",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "雑音などについて述べた次の二つの記述は、 (エ) 。 Ａ 再生中継を行っているデジタル伝送方式において、中継区間で発生する雑音には、ランダ ム雑音、熱雑音などがあり、これらの雑音は各中継区間ごとに累積されて伝達される。 Ｂ 増幅回路などにおける信号電力対雑音電力比の劣化の程度を表す尺度として、雑音指数が 用いられる。",
+    "choices": {
+      "ア": "Ａのみ正しい",
+      "イ": "Ｂのみ正しい",
+      "ウ": "ＡもＢも正しい",
+      "エ": "ＡもＢも正しくない"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "Aは誤りで、再生中継では符号の識別と波形整形を行うため、各区間の雑音がそのままアナログ量として累積するわけではない。Bは正しく、雑音指数は回路を通過したことによるS/Nの劣化を表す。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-second/q5-4.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第2回 電気通信技術の基礎 第5問（4）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926371c03d29.pdf#page=7",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files2527692639569429b.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "Aは誤りで、Bは正しい。この組合せはAの正誤が逆、Bの正誤が逆。Aは誤りで、再生中継では符号の識別と波形整形を行うため、各区間の雑音がそのままアナログ量として累積するわけではない。Bは正しく、雑音指数は回路を通過したことによるS/Nの劣化を表す。",
+      "イ": "Aは誤りで、Bは正しい。この組合せが両方の判定に一致する。Aは誤りで、再生中継では符号の識別と波形整形を行うため、各区間の雑音がそのままアナログ量として累積するわけではない。Bは正しく、雑音指数は回路を通過したことによるS/Nの劣化を表す。",
+      "ウ": "Aは誤りで、Bは正しい。この組合せはAの正誤が逆。Aは誤りで、再生中継では符号の識別と波形整形を行うため、各区間の雑音がそのままアナログ量として累積するわけではない。Bは正しく、雑音指数は回路を通過したことによるS/Nの劣化を表す。",
+      "エ": "Aは誤りで、Bは正しい。この組合せはBの正誤が逆。Aは誤りで、再生中継では符号の識別と波形整形を行うため、各区間の雑音がそのままアナログ量として累積するわけではない。Bは正しく、雑音指数は回路を通過したことによるS/Nの劣化を表す。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2025-second-kiso-q5-5",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 5,
+    "part": "5",
+    "officialQuestionLabel": "5（5）",
+    "type": "multiple-choice",
+    "category": "デジタル通信",
+    "topicTags": [
+      "デジタル通信",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "シングルモード光ファイバの伝送帯域を制限する主な要因として、光ファイバの構造分散と 材料分散との和で表される (オ) がある。",
+    "choices": {
+      "ア": "波長分散",
+      "イ": "偏波分散",
+      "ウ": "モード分散",
+      "エ": "吸収損失",
+      "オ": "散乱損失"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "シングルモード光ファイバの波長分散は材料分散と構造分散の和である。波長ごとの伝搬速度差でパルスが広がり伝送帯域を制限する。複数の伝搬モード間の到達時間差で生じるモード分散とは区別する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2025-second/q5-5.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2025年度第2回 電気通信技術の基礎 第5問（5）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926371c03d29.pdf#page=7",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files2527692639569429b.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "波長分散は材料分散と構造分散を合わせたもので、設問の定義に一致する。",
+      "イ": "偏波分散は異なる偏波状態の伝搬時間差であり、二つの分散の和ではない。",
+      "ウ": "モード分散は複数の伝搬モード間の時間差で、シングルモードの主因とは異なる。",
+      "エ": "吸収損失は光パワーが失われる現象であり、伝搬速度差による分散ではない。",
+      "オ": "散乱による光パワーの損失と、材料・構造による分散を混同している。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  }
+]

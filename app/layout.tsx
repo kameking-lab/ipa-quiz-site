@@ -212,7 +212,7 @@ export default function RootLayout({
                       サービス
                     </h3>
                     <ul className="space-y-0">
-                      <li><Link prefetch={false} href="/essay" className="block py-2.5 hover:text-foreground">IPA 午後論述AI採点</Link></li>
+                      <li><Link prefetch={false} href="/essay" className="block py-2.5 hover:text-foreground">IPA 論文対策</Link></li>
                       <li><Link prefetch={false} href="/challenge" className="block py-2.5 hover:text-foreground">IPA デイリーチャレンジ</Link></li>
                       <li><Link prefetch={false} href="/mock-exam" className="block py-2.5 hover:text-foreground">IPA 模試モード</Link></li>
                       <li><Link href="/account/dashboard#mock-scores" prefetch={false} className="block py-2.5 hover:text-foreground">模試記録</Link></li>

@@ -24,6 +24,7 @@ export const AU_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "統計的サンプリングでは、監査目標や許容リスクレベルに基づき、必要なサンプル件数を統計的に算出することが可能です。これにより、コントロールの有効性を評価するために適切な規模のサンプルを事前に決定できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const AU_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "システム監査基準において、監査品質の確保は重要なテーマです。監査依頼者のニーズを充足し、監査目標を達成するための体制を整備することが、監査品質の維持・向上に不可欠とされています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const AU_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "試査とは、母集団から抽出した一部のデータ（サンプル）に対して監査手続を適用し、その結果から母集団全体の正当性について統計的に判断する手法です。全件検査とは異なり、効率的に全体を評価します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const AU_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ペネトレーションテストは、ネットワークやシステムの脆弱性を悪用し、実際に不正アクセスが成功するかを試行するテストです。そのため、ネットワークへのアクセスコントロールが設定通りに機能し、不正侵入を防御できるかを検証するのに最も適しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,7 @@ export const AU_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "リスクアプローチでは、監査資源を最も重要な領域に集中させ、効率的かつ効果的な監査を目指します。したがって、財務諸表の重要な虚偽表示リスクが高い項目に重点的にリソースを配分し、集中的に監査を実施することが適切です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +149,7 @@ export const AU_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "予備調査は、監査計画を策定するための重要な準備段階です。この段階で、監査対象となる業務、システム、組織などの現状や実態を把握し、監査リスクを評価するための基礎情報を収集します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +174,7 @@ export const AU_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "システム監査人は、監査対象部門が提出した改善実施状況報告書を確認するだけでなく、その改善策が実際に効果的であったかを評価するために、必要に応じて追加的な検証を実施するかどうかを検討する必要があります。これは、改善の実効性を担保するための重要なプロセスです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +199,7 @@ export const AU_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "RFP発行後、特定のITベンダのみに追加資料を提供することは、情報格差を生み、競争の公平性を損なう行為です。これは公正な選定プロセスの原則に反するため、監査報告書において指摘事項として記載すべきです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +224,7 @@ export const AU_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "更新ログの加工は、直接修正の事実を隠蔽し、監査証跡の改ざんにあたる重大な不正行為です。このような行為はシステムの信頼性と健全性を著しく損なうため、監査人が直ちに指摘すべき事項となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +249,7 @@ export const AU_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ITに係る業務処理統制は、個別の業務プロセスにおいて、データの入力、処理、出力の各段階で正確性、完全性、網羅性などを確保するための統制です。利用部門によるエラーデータの修正と再処理は、個別の業務処理におけるデータの正確性を担保する具体的な手続きであり、これに該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +274,7 @@ export const AU_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "SLAを策定する際は、まず何が成功の鍵となるか（CSF）を特定します。次に、その成功を測定するための具体的な指標（KPI）を設定し、最後にそのKPIにおいて達成すべき具体的な目標値（SLO）を定めるのが論理的な順序です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +299,7 @@ export const AU_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "データ管理者（DA）は、業務データそのものの意味内容、定義、構造、整合性、品質など、論理レベルのデータ管理を担当します。システム開発の設計工程において、論理データベース設計やデータ項目の標準化を行うのは、その主要な役割です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +324,7 @@ export const AU_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "フェアユースは、批評、解説、ニュース報道、教授、研究、調査といった公正な目的であれば、著作権者の許諾なしに著作物を利用できるという考え方です。これにより、公共の利益に資する情報利用を一定の範囲で認めます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +349,7 @@ export const AU_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "特許法第35条第1項によれば、職務発明について企業が特許を受ける権利を承継しない場合であっても、企業は当該特許権について無償の通常実施権を有すると定められています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +374,7 @@ export const AU_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "心の警備とは、集団凝集性が高まる中で、集団の既存の意見や決定に反する情報や異論がメンバーに届かないように、意図的に遮断したり阻止したりする行為を指します。これにより、集団の意見統一を維持しようとします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +399,7 @@ export const AU_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "コンピテンシモデルは、高い業績を上げる人材に共通して見られる、具体的な行動特性や思考様式を体系的に定義したものです。個人の知識やスキルだけでなく、動機や価値観も含めた成果に結びつく特性を指します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +424,7 @@ export const AU_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "AES（Advanced Encryption Standard）は共通鍵暗号方式の一つで、鍵長が128ビット、192ビット、256ビットのいずれかによって、暗号化処理の段数（ラウンド数）がそれぞれ10段、12段、14段と固定的に決まる特徴があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +449,7 @@ export const AU_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "サイバーセキュリティ基本法に基づき、内閣にサイバーセキュリティ戦略本部が設置されたのと同時に、その事務を処理する機関として内閣官房に内閣サイバーセキュリティセンター（NISC）が設置されました。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +474,7 @@ export const AU_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "CPS（Certification Practice Statement）は、公開鍵基盤（PKI）において認証局（CA）がディジタル証明書の発行、管理、失効など、認証業務をどのように運用するかを詳細に記述した文書です。これにより、認証局の運用方法の透明性と信頼性を確保します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +499,7 @@ export const AU_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "経済産業省が策定したサイバー・フィジカル・セキュリティ対策フレームワーク（CPSF）の主な目的は、Society 5.0のようなサイバー空間とフィジカル空間が融合する社会において、新たな産業活動が直面するリスクを適切に捉え、その全体像に応じたセキュリティ対策を整理することです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +524,7 @@ export const AU_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ビューは、基となる表の特定の行や列のみを公開することで、データへのアクセスを制限し、機密情報を隠蔽する目的で利用されます。これにより、必要な情報だけを提供しつつ、データのセキュリティとプライバシーを保護する手段となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +549,7 @@ export const AU_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ブロードキャストストームは、ネットワークスイッチ間にループ接続が発生することで、ブロードキャストフレームが無制限に複製され、ネットワーク全体に過剰なトラフィックを発生させる現象です。この結果、通信が著しく遅延したり、完全に停止したりする重大な障害を引き起こします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +574,7 @@ export const AU_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "カークパトリックモデルのレベル2（Learning）は、教育訓練によって受講者の知識、スキル、態度がどの程度変化したかを測定する段階です。理解度確認テストの実施は、受講者が研修内容をどの程度習得したかを直接評価する活動であり、このレベルに該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +599,7 @@ export const AU_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "VRIO分析は、企業の経営資源が競争優位の源泉となり得るかを評価するためのフレームワークです。経済的価値（Value）、希少性（Rarity）、模倣困難性（Imitability）、組織（Organization）の4つの観点から分析し、持続的な競争優位性を判断します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +624,7 @@ export const AU_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "SCM（サプライチェーンマネジメント）は、原材料の調達から生産、流通、販売に至るまでの一連のプロセスを企業間で統合的に管理・最適化する経営手法です。これにより、リードタイム短縮、在庫コスト削減、顧客満足度向上などの経営目標達成を目指します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_au_am2_qs.pdf",
     "license": "IPA-public"

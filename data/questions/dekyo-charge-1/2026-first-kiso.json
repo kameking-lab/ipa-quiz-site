@@ -1,0 +1,1081 @@
+[
+  {
+    "id": "dekyo-charge-1-2026-first-kiso-q1-1",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 1,
+    "part": "1",
+    "officialQuestionLabel": "1（1）",
+    "type": "multiple-choice",
+    "category": "電気回路",
+    "topicTags": [
+      "電気回路",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "図1に示す回路において、抵抗R₄に流れる電流は、（ア）アンペアである。ただし、電池の内部抵抗は無視するものとする。",
+    "choices": {
+      "ア": "２",
+      "イ": "４",
+      "ウ": "６",
+      "エ": "８",
+      "オ": "１０"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "上側と下側の共通節点間の電圧をVとすると、46 V電源側は5 Ωと20 Ωの並列で4 Ωとなる。節点の電流の式は(V−46)/4＋(V−38)/4＋V/5＝0。V＝30 Vなので、R₄の電流は30/5＝6 Aとなる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2026-first/q1-1.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2026年度第1回 電気通信技術の基礎 第1問（1）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a1628d6ad0ac.pdf#page=2",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a162a4510464.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "この選択肢の「２」は、計算で得られる「６」と一致しない。上側と下側の共通節点間の電圧をVとすると、46 V電源側は5 Ωと20 Ωの並列で4 Ωとなる。節点の電流の式は(V−46)/4＋(V−38)/4＋V/5＝0。V＝30 Vなので、R₄の電流は30/5＝6 Aとなる。",
+      "イ": "この選択肢の「４」は、計算で得られる「６」と一致しない。上側と下側の共通節点間の電圧をVとすると、46 V電源側は5 Ωと20 Ωの並列で4 Ωとなる。節点の電流の式は(V−46)/4＋(V−38)/4＋V/5＝0。V＝30 Vなので、R₄の電流は30/5＝6 Aとなる。",
+      "ウ": "計算で得られる値は「６」であり、この選択肢の値と一致する。上側と下側の共通節点間の電圧をVとすると、46 V電源側は5 Ωと20 Ωの並列で4 Ωとなる。節点の電流の式は(V−46)/4＋(V−38)/4＋V/5＝0。V＝30 Vなので、R₄の電流は30/5＝6 Aとなる。",
+      "エ": "この選択肢の「８」は、計算で得られる「６」と一致しない。上側と下側の共通節点間の電圧をVとすると、46 V電源側は5 Ωと20 Ωの並列で4 Ωとなる。節点の電流の式は(V−46)/4＋(V−38)/4＋V/5＝0。V＝30 Vなので、R₄の電流は30/5＝6 Aとなる。",
+      "オ": "この選択肢の「１０」は、計算で得られる「６」と一致しない。上側と下側の共通節点間の電圧をVとすると、46 V電源側は5 Ωと20 Ωの並列で4 Ωとなる。節点の電流の式は(V−46)/4＋(V−38)/4＋V/5＝0。V＝30 Vなので、R₄の電流は30/5＝6 Aとなる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2026-first-kiso-q1-2",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 1,
+    "part": "2",
+    "officialQuestionLabel": "1（2）",
+    "type": "multiple-choice",
+    "category": "電気回路",
+    "topicTags": [
+      "電気回路",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "図２に示す回路において、抵抗Ｒ、コイルＬ及びコンデンサＣにそれぞれ図に表記した大き さの電流が流れているとき、回路に流れる全電流Ｉは、 (イ) アンペアである。",
+    "choices": {
+      "ア": "１１",
+      "イ": "１３",
+      "ウ": "１５",
+      "エ": "１７",
+      "オ": "１９"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "抵抗電流5 Aは電圧と同相、コイル電流4 Aとコンデンサ電流16 Aは互いに逆向きの無効電流である。無効分は16−4＝12 Aとなり、全電流の大きさは√(5²＋12²)＝13 A。各枝の電流をそのまま足さない。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2026-first/q1-2.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2026年度第1回 電気通信技術の基礎 第1問（2）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a1628d6ad0ac.pdf#page=2",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a162a4510464.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "この選択肢の「１１」は、計算で得られる「１３」と一致しない。抵抗電流5 Aは電圧と同相、コイル電流4 Aとコンデンサ電流16 Aは互いに逆向きの無効電流である。無効分は16−4＝12 Aとなり、全電流の大きさは√(5²＋12²)＝13 A。各枝の電流をそのまま足さない。",
+      "イ": "計算で得られる値は「１３」であり、この選択肢の値と一致する。抵抗電流5 Aは電圧と同相、コイル電流4 Aとコンデンサ電流16 Aは互いに逆向きの無効電流である。無効分は16−4＝12 Aとなり、全電流の大きさは√(5²＋12²)＝13 A。各枝の電流をそのまま足さない。",
+      "ウ": "この選択肢の「１５」は、計算で得られる「１３」と一致しない。抵抗電流5 Aは電圧と同相、コイル電流4 Aとコンデンサ電流16 Aは互いに逆向きの無効電流である。無効分は16−4＝12 Aとなり、全電流の大きさは√(5²＋12²)＝13 A。各枝の電流をそのまま足さない。",
+      "エ": "この選択肢の「１７」は、計算で得られる「１３」と一致しない。抵抗電流5 Aは電圧と同相、コイル電流4 Aとコンデンサ電流16 Aは互いに逆向きの無効電流である。無効分は16−4＝12 Aとなり、全電流の大きさは√(5²＋12²)＝13 A。各枝の電流をそのまま足さない。",
+      "オ": "この選択肢の「１９」は、計算で得られる「１３」と一致しない。抵抗電流5 Aは電圧と同相、コイル電流4 Aとコンデンサ電流16 Aは互いに逆向きの無効電流である。無効分は16−4＝12 Aとなり、全電流の大きさは√(5²＋12²)＝13 A。各枝の電流をそのまま足さない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2026-first-kiso-q1-3",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 1,
+    "part": "3",
+    "officialQuestionLabel": "1（3）",
+    "type": "multiple-choice",
+    "category": "電気回路",
+    "topicTags": [
+      "電気回路",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "コイルに交流電流が流れると、コイル内には時間的に変化する磁束が生じ、流れる電流を妨 げる向きに誘導起電力が生ずる。このときの誘導起電力の大きさは、コイルの自己インダクタ ンスと (ウ) の積で表される。",
+    "choices": {
+      "ア": "電 流",
+      "イ": "電流変化率",
+      "ウ": "周波数",
+      "エ": "磁 束",
+      "オ": "磁束変化率"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "自己誘導の起電力の大きさはL|di/dt|で表される。Lは自己インダクタンス、di/dtは電流の時間変化率である。磁束変化率に巻数を掛ける式とは、使う変数の組合せを区別する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2026-first/q1-3.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2026年度第1回 電気通信技術の基礎 第1問（3）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a1628d6ad0ac.pdf#page=2",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a162a4510464.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "電流そのものではなく、時間に対する変化率が起電力を決める。",
+      "イ": "自己誘導ではLとdi/dtの積で起電力の大きさを求める。",
+      "ウ": "周波数だけでは、電流振幅による起電力の違いを表せない。",
+      "エ": "磁束の大きさが一定なら、自己誘導の起電力は生じない。",
+      "オ": "磁束変化率を用いる式では巻数を掛ける。Lと組み合わせるのは電流変化率。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2026-first-kiso-q1-4",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 1,
+    "part": "4",
+    "officialQuestionLabel": "1（4）",
+    "type": "multiple-choice",
+    "category": "電気回路",
+    "topicTags": [
+      "電気回路",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "正弦波交流電流の流れる回路における力率は、有効電力を (エ) で除することで求めら れる。",
+    "choices": {
+      "ア": "実効電流",
+      "イ": "無効電力",
+      "ウ": "最大電力",
+      "エ": "実効電圧",
+      "オ": "皮相電力"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "正弦波交流の有効電力Pと皮相電力Sの関係はP＝S cosφなので、力率cosφはP/Sである。電圧と電流の実効値の積が皮相電力であり、無効電力で割る式ではない。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2026-first/q1-4.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2026年度第1回 電気通信技術の基礎 第1問（4）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a1628d6ad0ac.pdf#page=2",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a162a4510464.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "電力を電流で割ると電圧となり、無次元の力率にはならない。",
+      "イ": "有効電力と無効電力の比は力率ではない。",
+      "ウ": "力率の分母には、実効電圧と実効電流の積を用いる。",
+      "エ": "電力を電圧で割ると電流となり、力率にはならない。",
+      "オ": "P＝S cosφより、皮相電力Sで割れば力率になる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2026-first-kiso-q2-1",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 2,
+    "part": "1",
+    "officialQuestionLabel": "2（1）",
+    "type": "multiple-choice",
+    "category": "電子回路・半導体",
+    "topicTags": [
+      "電子回路・半導体",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "ｐｎ接合の半導体に順方向の電圧を加えると、ｎ領域の電子はｐ領域に入り込み、ｐ領域の 正孔はｎ領域に入り込み、それぞれ少数キャリアとして半導体結晶内を拡散する。このとき、 ｐ領域では少数キャリアの電子が多数キャリアの正孔と、ｎ領域では少数キャリアの正孔が多 数キャリアの電子とそれぞれ (ア) する。",
+    "choices": {
+      "ア": "同 期",
+      "イ": "分 散",
+      "ウ": "再結合",
+      "エ": "共 振",
+      "オ": "共有結合"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "順方向電圧で注入された電子と正孔は、それぞれの領域で反対の種類の多数キャリアと再結合する。再結合は電子が正孔を埋める過程であり、分散や共振を意味するものではない。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2026-first/q2-1.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2026年度第1回 電気通信技術の基礎 第2問（1）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a1628d6ad0ac.pdf#page=3",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a162a4510464.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "同期は周期や位相をそろえることであり、キャリア消失の過程ではない。",
+      "イ": "分散は広がりを表す語であり、電子が正孔を埋める現象とは異なる。",
+      "ウ": "少数キャリアが反対種類の多数キャリアと再結合する。",
+      "エ": "共振は回路の周波数特性に関する現象で、キャリアの結合とは異なる。",
+      "オ": "共有結合は結晶の結合状態であり、ここでいう注入キャリアの過程ではない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2026-first-kiso-q2-2",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 2,
+    "part": "2",
+    "officialQuestionLabel": "2（2）",
+    "type": "multiple-choice",
+    "category": "電子回路・半導体",
+    "topicTags": [
+      "電子回路・半導体",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "図1のトランジスタ増幅回路でベース－エミッタ間に正弦波の入力信号電圧VIを加えたとき、コレクタ電流ICが図2のように変化した。ICとコレクタ－エミッタ間の電圧VCEとの関係が図3のとき、VIの振幅を100ミリボルトとすれば、電圧増幅度は（イ）である。",
+    "choices": {
+      "ア": "２０",
+      "イ": "３０",
+      "ウ": "４０",
+      "エ": "５０",
+      "オ": "６０"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "図2のコレクタ電流は1～3 mAで、振幅は1 mA。図3の傾きから電流が1 mA変化するとVCEは2 V変化する。出力電圧の振幅2 Vを入力振幅0.1 Vで割り、電圧増幅度の大きさは20となる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2026-first/q2-2.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2026年度第1回 電気通信技術の基礎 第2問（2）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a1628d6ad0ac.pdf#page=3",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a162a4510464.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "計算で得られる値は「２０」であり、この選択肢の値と一致する。図2のコレクタ電流は1～3 mAで、振幅は1 mA。図3の傾きから電流が1 mA変化するとVCEは2 V変化する。出力電圧の振幅2 Vを入力振幅0.1 Vで割り、電圧増幅度の大きさは20となる。",
+      "イ": "この選択肢の「３０」は、計算で得られる「２０」と一致しない。図2のコレクタ電流は1～3 mAで、振幅は1 mA。図3の傾きから電流が1 mA変化するとVCEは2 V変化する。出力電圧の振幅2 Vを入力振幅0.1 Vで割り、電圧増幅度の大きさは20となる。",
+      "ウ": "この選択肢の「４０」は、計算で得られる「２０」と一致しない。図2のコレクタ電流は1～3 mAで、振幅は1 mA。図3の傾きから電流が1 mA変化するとVCEは2 V変化する。出力電圧の振幅2 Vを入力振幅0.1 Vで割り、電圧増幅度の大きさは20となる。",
+      "エ": "この選択肢の「５０」は、計算で得られる「２０」と一致しない。図2のコレクタ電流は1～3 mAで、振幅は1 mA。図3の傾きから電流が1 mA変化するとVCEは2 V変化する。出力電圧の振幅2 Vを入力振幅0.1 Vで割り、電圧増幅度の大きさは20となる。",
+      "オ": "この選択肢の「６０」は、計算で得られる「２０」と一致しない。図2のコレクタ電流は1～3 mAで、振幅は1 mA。図3の傾きから電流が1 mA変化するとVCEは2 V変化する。出力電圧の振幅2 Vを入力振幅0.1 Vで割り、電圧増幅度の大きさは20となる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2026-first-kiso-q2-3",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 2,
+    "part": "3",
+    "officialQuestionLabel": "2（3）",
+    "type": "multiple-choice",
+    "category": "電子回路・半導体",
+    "topicTags": [
+      "電子回路・半導体",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "ダイオードの特徴について述べた次の二つの記述は、 (ウ) 。 Ａ フォトダイオードは、光を電気に変換する機能を持ち、順方向電圧を加えたｐｎ接合部に 光を当てると光の強さに応じた電流を生ずる半導体素子である。 Ｂ ＬＥＤは、電気を光に変換する機能を持ち、ｐｎ接合に逆方向電圧を加えると光を放出す る半導体素子である。",
+    "choices": {
+      "ア": "Ａのみ正しい",
+      "イ": "Ｂのみ正しい",
+      "ウ": "ＡもＢも正しい",
+      "エ": "ＡもＢも正しくない"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "Aはフォトダイオードのバイアスの向きが誤りで、通常は逆方向バイアスで光に応じた電流を取り出す。Bも誤りで、LEDは順方向の電流による電子と正孔の再結合を利用して発光する。両方とも正しくない。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2026-first/q2-3.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2026年度第1回 電気通信技術の基礎 第2問（3）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a1628d6ad0ac.pdf#page=3",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a162a4510464.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "Aは誤りで、Bは誤り。この組合せはAの正誤が逆。Aはフォトダイオードのバイアスの向きが誤りで、通常は逆方向バイアスで光に応じた電流を取り出す。Bも誤りで、LEDは順方向の電流による電子と正孔の再結合を利用して発光する。両方とも正しくない。",
+      "イ": "Aは誤りで、Bは誤り。この組合せはBの正誤が逆。Aはフォトダイオードのバイアスの向きが誤りで、通常は逆方向バイアスで光に応じた電流を取り出す。Bも誤りで、LEDは順方向の電流による電子と正孔の再結合を利用して発光する。両方とも正しくない。",
+      "ウ": "Aは誤りで、Bは誤り。この組合せはAの正誤が逆、Bの正誤が逆。Aはフォトダイオードのバイアスの向きが誤りで、通常は逆方向バイアスで光に応じた電流を取り出す。Bも誤りで、LEDは順方向の電流による電子と正孔の再結合を利用して発光する。両方とも正しくない。",
+      "エ": "Aは誤りで、Bは誤り。この組合せが両方の判定に一致する。Aはフォトダイオードのバイアスの向きが誤りで、通常は逆方向バイアスで光に応じた電流を取り出す。Bも誤りで、LEDは順方向の電流による電子と正孔の再結合を利用して発光する。両方とも正しくない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2026-first-kiso-q2-4",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 2,
+    "part": "4",
+    "officialQuestionLabel": "2（4）",
+    "type": "multiple-choice",
+    "category": "電子回路・半導体",
+    "topicTags": [
+      "電子回路・半導体",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "記憶素子を構成する基本単位であるメモリセルが、ＭＯＳトランジスタ１個とコンデンサ １個から構成され、コンデンサに電荷があるときは１、電荷がないときは０として記憶される 半導体メモリは、 (エ) といわれる。",
+    "choices": {
+      "ア": "ＭＲＡＭ",
+      "イ": "ＤＲＡＭ",
+      "ウ": "ＲＯＭ",
+      "エ": "ＳＲＡＭ",
+      "オ": "フラッシュメモリ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "1個のMOSトランジスタと1個のコンデンサで1ビットを記憶する構造はDRAMである。コンデンサの電荷は時間とともに失われるため、記憶を保持するには周期的なリフレッシュが必要になる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2026-first/q2-4.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2026年度第1回 電気通信技術の基礎 第2問（4）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a1628d6ad0ac.pdf#page=3",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a162a4510464.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "MRAMは磁気的な状態で記憶し、コンデンサの電荷を使う構成とは異なる。",
+      "イ": "DRAMの1ビットは、選択用MOSトランジスタと蓄電用コンデンサで構成する。",
+      "ウ": "ROMは読出し用メモリの区分で、設問の1T1Cセルを表す名称ではない。",
+      "エ": "SRAMはフリップフロップで状態を保持し、設問の構成とは異なる。",
+      "オ": "フラッシュメモリは浮遊ゲート等の蓄積電荷を利用し、1T1Cセルとは異なる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2026-first-kiso-q2-5",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 2,
+    "part": "5",
+    "officialQuestionLabel": "2（5）",
+    "type": "multiple-choice",
+    "category": "電子回路・半導体",
+    "topicTags": [
+      "電子回路・半導体",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "エミッタ接地増幅回路において、エミッタ電流が２ミリアンペア、コレクタ電流が１.９５ ミリアンペアであるとき、直流電流増幅率ｈ ＦＥ は、 (オ) となる。",
+    "choices": {
+      "ア": "０.９７５",
+      "イ": "１.０２",
+      "ウ": "３.９５",
+      "エ": "３９",
+      "オ": "４０"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "エミッタ電流はベース電流とコレクタ電流の和なので、IB＝2−1.95＝0.05 mA。エミッタ接地の直流電流増幅率はhFE＝IC/IB＝1.95/0.05＝39である。IC/IEの0.975とは区別する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2026-first/q2-5.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2026年度第1回 電気通信技術の基礎 第2問（5）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a1628d6ad0ac.pdf#page=3",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a162a4510464.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "この選択肢の「０.９７５」は、計算で得られる「３９」と一致しない。エミッタ電流はベース電流とコレクタ電流の和なので、IB＝2−1.95＝0.05 mA。エミッタ接地の直流電流増幅率はhFE＝IC/IB＝1.95/0.05＝39である。IC/IEの0.975とは区別する。",
+      "イ": "この選択肢の「１.０２」は、計算で得られる「３９」と一致しない。エミッタ電流はベース電流とコレクタ電流の和なので、IB＝2−1.95＝0.05 mA。エミッタ接地の直流電流増幅率はhFE＝IC/IB＝1.95/0.05＝39である。IC/IEの0.975とは区別する。",
+      "ウ": "この選択肢の「３.９５」は、計算で得られる「３９」と一致しない。エミッタ電流はベース電流とコレクタ電流の和なので、IB＝2−1.95＝0.05 mA。エミッタ接地の直流電流増幅率はhFE＝IC/IB＝1.95/0.05＝39である。IC/IEの0.975とは区別する。",
+      "エ": "計算で得られる値は「３９」であり、この選択肢の値と一致する。エミッタ電流はベース電流とコレクタ電流の和なので、IB＝2−1.95＝0.05 mA。エミッタ接地の直流電流増幅率はhFE＝IC/IB＝1.95/0.05＝39である。IC/IEの0.975とは区別する。",
+      "オ": "この選択肢の「４０」は、計算で得られる「３９」と一致しない。エミッタ電流はベース電流とコレクタ電流の和なので、IB＝2−1.95＝0.05 mA。エミッタ接地の直流電流増幅率はhFE＝IC/IB＝1.95/0.05＝39である。IC/IEの0.975とは区別する。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2026-first-kiso-q3-1",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 3,
+    "part": "1",
+    "officialQuestionLabel": "3（1）",
+    "type": "multiple-choice",
+    "category": "論理回路",
+    "topicTags": [
+      "論理回路",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "図の斜線部分を表す論理式について、解答群から最も適したものを選びなさい。",
+    "choices": {
+      "ア": "図１",
+      "イ": "図２",
+      "ウ": "図３",
+      "エ": "図４",
+      "オ": "図５"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "第1項はAとCの外側でBの内側、第2項はA・B・Cの全ての外側を表す。この二つの領域の和集合は、AにもCにも含まれない領域全体になる。これを斜線で表しているのが図1である。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2026-first/q3-1.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2026年度第1回 電気通信技術の基礎 第3問（1）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a1628d6ad0ac.pdf#page=4",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a162a4510464.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "図１は、求める斜線領域・論理値と一致する。第1項はAとCの外側でBの内側、第2項はA・B・Cの全ての外側を表す。この二つの領域の和集合は、AにもCにも含まれない領域全体になる。これを斜線で表しているのが図1である。",
+      "イ": "図２は、次の条件から得られる斜線領域・論理値と一致しない。第1項はAとCの外側でBの内側、第2項はA・B・Cの全ての外側を表す。この二つの領域の和集合は、AにもCにも含まれない領域全体になる。これを斜線で表しているのが図1である。",
+      "ウ": "図３は、次の条件から得られる斜線領域・論理値と一致しない。第1項はAとCの外側でBの内側、第2項はA・B・Cの全ての外側を表す。この二つの領域の和集合は、AにもCにも含まれない領域全体になる。これを斜線で表しているのが図1である。",
+      "エ": "図４は、次の条件から得られる斜線領域・論理値と一致しない。第1項はAとCの外側でBの内側、第2項はA・B・Cの全ての外側を表す。この二つの領域の和集合は、AにもCにも含まれない領域全体になる。これを斜線で表しているのが図1である。",
+      "オ": "図５は、次の条件から得られる斜線領域・論理値と一致しない。第1項はAとCの外側でBの内側、第2項はA・B・Cの全ての外側を表す。この二つの領域の和集合は、AにもCにも含まれない領域全体になる。これを斜線で表しているのが図1である。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2026-first-kiso-q3-2",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 3,
+    "part": "2",
+    "officialQuestionLabel": "3（2）",
+    "type": "multiple-choice",
+    "category": "論理回路",
+    "topicTags": [
+      "論理回路",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "表に示す2進数X₁～X₄を用いて、加算X₀＝X₁＋X₂＋X₃＋X₄からX₀を求め、これを16進数で表すと、（イ）になる。",
+    "choices": {
+      "ア": "２Ｂ８",
+      "イ": "２Ｃ２",
+      "ウ": "２Ｄ６",
+      "エ": "３Ｃ２",
+      "オ": "６Ｃ０"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "各2進数を10進数に直すと、11001111₂＝207、10110100₂＝180、10101001₂＝169、10010110₂＝150。和は706＝2×256＋12×16＋2なので、16進数では2C2になる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2026-first/q3-2.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2026年度第1回 電気通信技術の基礎 第3問（2）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a1628d6ad0ac.pdf#page=4",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a162a4510464.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "この選択肢の「２Ｂ８」は、計算で得られる「２Ｃ２」と一致しない。各2進数を10進数に直すと、11001111₂＝207、10110100₂＝180、10101001₂＝169、10010110₂＝150。和は706＝2×256＋12×16＋2なので、16進数では2C2になる。",
+      "イ": "計算で得られる値は「２Ｃ２」であり、この選択肢の値と一致する。各2進数を10進数に直すと、11001111₂＝207、10110100₂＝180、10101001₂＝169、10010110₂＝150。和は706＝2×256＋12×16＋2なので、16進数では2C2になる。",
+      "ウ": "この選択肢の「２Ｄ６」は、計算で得られる「２Ｃ２」と一致しない。各2進数を10進数に直すと、11001111₂＝207、10110100₂＝180、10101001₂＝169、10010110₂＝150。和は706＝2×256＋12×16＋2なので、16進数では2C2になる。",
+      "エ": "この選択肢の「３Ｃ２」は、計算で得られる「２Ｃ２」と一致しない。各2進数を10進数に直すと、11001111₂＝207、10110100₂＝180、10101001₂＝169、10010110₂＝150。和は706＝2×256＋12×16＋2なので、16進数では2C2になる。",
+      "オ": "この選択肢の「６Ｃ０」は、計算で得られる「２Ｃ２」と一致しない。各2進数を10進数に直すと、11001111₂＝207、10110100₂＝180、10101001₂＝169、10010110₂＝150。和は706＝2×256＋12×16＋2なので、16進数では2C2になる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2026-first-kiso-q3-3",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 3,
+    "part": "3",
+    "officialQuestionLabel": "3（3）",
+    "type": "multiple-choice",
+    "category": "論理回路",
+    "topicTags": [
+      "論理回路",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "図に示す論理回路について、空欄（ウ）に入る最も適したものを選びなさい。",
+    "choices": {
+      "ア": "ｄ１",
+      "イ": "ｄ２",
+      "ウ": "ｄ３",
+      "エ": "ｄ４",
+      "オ": "ｄ５",
+      "カ": "ｄ６"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "交差結合したNORゲートの出力は、入力によるセット・リセットの後に状態を保持する。aとbから生成される二つの入力を各区間で求め、帰還を反映するとdは第4区間と第8区間で0となり、波形d₂に一致する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2026-first/q3-3.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2026年度第1回 電気通信技術の基礎 第3問（3）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a1628d6ad0ac.pdf#page=5",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a162a4510464.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "ｄ１は、次の条件から得られる斜線領域・論理値と一致しない。交差結合したNORゲートの出力は、入力によるセット・リセットの後に状態を保持する。aとbから生成される二つの入力を各区間で求め、帰還を反映するとdは第4区間と第8区間で0となり、波形d₂に一致する。",
+      "イ": "ｄ２は、求める斜線領域・論理値と一致する。交差結合したNORゲートの出力は、入力によるセット・リセットの後に状態を保持する。aとbから生成される二つの入力を各区間で求め、帰還を反映するとdは第4区間と第8区間で0となり、波形d₂に一致する。",
+      "ウ": "ｄ３は、次の条件から得られる斜線領域・論理値と一致しない。交差結合したNORゲートの出力は、入力によるセット・リセットの後に状態を保持する。aとbから生成される二つの入力を各区間で求め、帰還を反映するとdは第4区間と第8区間で0となり、波形d₂に一致する。",
+      "エ": "ｄ４は、次の条件から得られる斜線領域・論理値と一致しない。交差結合したNORゲートの出力は、入力によるセット・リセットの後に状態を保持する。aとbから生成される二つの入力を各区間で求め、帰還を反映するとdは第4区間と第8区間で0となり、波形d₂に一致する。",
+      "オ": "ｄ５は、次の条件から得られる斜線領域・論理値と一致しない。交差結合したNORゲートの出力は、入力によるセット・リセットの後に状態を保持する。aとbから生成される二つの入力を各区間で求め、帰還を反映するとdは第4区間と第8区間で0となり、波形d₂に一致する。",
+      "カ": "ｄ６は、次の条件から得られる斜線領域・論理値と一致しない。交差結合したNORゲートの出力は、入力によるセット・リセットの後に状態を保持する。aとbから生成される二つの入力を各区間で求め、帰還を反映するとdは第4区間と第8区間で0となり、波形d₂に一致する。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2026-first-kiso-q3-4",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 3,
+    "part": "4",
+    "officialQuestionLabel": "3（4）",
+    "type": "multiple-choice",
+    "category": "論理回路",
+    "topicTags": [
+      "論理回路",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "次の論理関数Xを簡単にした式として、空欄（エ）に入る最も適したものを選びなさい。",
+    "choices": {
+      "ア": "解答群の①",
+      "イ": "解答群の②",
+      "ウ": "解答群の③",
+      "エ": "解答群の④",
+      "オ": "解答群の⑤"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "二つの長い否定線にド・モルガンの法則を使うと、X＝(A̅B＋B̅C)(AB̅＋BC̅)となる。展開してBB̅＝0、AA̅＝0などを整理すると、A̅BC̅＋AB̅Cが残るため、解答群④が正しい。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2026-first/q3-4.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2026年度第1回 電気通信技術の基礎 第3問（4）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a1628d6ad0ac.pdf#page=5",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a162a4510464.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceImageUrls": {
+      "ア": "/questions/dekyo-charge-1/2026-first/q3-4-choice-1.png",
+      "イ": "/questions/dekyo-charge-1/2026-first/q3-4-choice-2.png",
+      "ウ": "/questions/dekyo-charge-1/2026-first/q3-4-choice-3.png",
+      "エ": "/questions/dekyo-charge-1/2026-first/q3-4-choice-4.png",
+      "オ": "/questions/dekyo-charge-1/2026-first/q3-4-choice-5.png"
+    },
+    "choiceExplanations": {
+      "ア": "解答群の①は、次の条件から得られる斜線領域・論理値と一致しない。二つの長い否定線にド・モルガンの法則を使うと、X＝(A̅B＋B̅C)(AB̅＋BC̅)となる。展開してBB̅＝0、AA̅＝0などを整理すると、A̅BC̅＋AB̅Cが残るため、解答群④が正しい。",
+      "イ": "解答群の②は、次の条件から得られる斜線領域・論理値と一致しない。二つの長い否定線にド・モルガンの法則を使うと、X＝(A̅B＋B̅C)(AB̅＋BC̅)となる。展開してBB̅＝0、AA̅＝0などを整理すると、A̅BC̅＋AB̅Cが残るため、解答群④が正しい。",
+      "ウ": "解答群の③は、次の条件から得られる斜線領域・論理値と一致しない。二つの長い否定線にド・モルガンの法則を使うと、X＝(A̅B＋B̅C)(AB̅＋BC̅)となる。展開してBB̅＝0、AA̅＝0などを整理すると、A̅BC̅＋AB̅Cが残るため、解答群④が正しい。",
+      "エ": "解答群の④は、求める斜線領域・論理値と一致する。二つの長い否定線にド・モルガンの法則を使うと、X＝(A̅B＋B̅C)(AB̅＋BC̅)となる。展開してBB̅＝0、AA̅＝0などを整理すると、A̅BC̅＋AB̅Cが残るため、解答群④が正しい。",
+      "オ": "解答群の⑤は、次の条件から得られる斜線領域・論理値と一致しない。二つの長い否定線にド・モルガンの法則を使うと、X＝(A̅B＋B̅C)(AB̅＋BC̅)となる。展開してBB̅＝0、AA̅＝0などを整理すると、A̅BC̅＋AB̅Cが残るため、解答群④が正しい。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2026-first-kiso-q4-1",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 4,
+    "part": "1",
+    "officialQuestionLabel": "4（1）",
+    "type": "multiple-choice",
+    "category": "伝送理論",
+    "topicTags": [
+      "伝送理論",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "図において、電気通信回線１への入力電圧が２５０ミリボルト、電気通信回線１から電気通 信回線２への遠端漏話減衰量が (ア) デシベル、増幅器の利得が４０デシベル、変成器の 巻線比が５：３のとき、電圧計の読みは１５ミリボルトである。ただし、変成器は理想的なも のとし、電気通信回線及び増幅器の入出力インピーダンスは全て同一値で、各部は整合してい るものとする。",
+    "choices": {
+      "ア": "２０",
+      "イ": "３０",
+      "ウ": "４０",
+      "エ": "５０",
+      "オ": "６０"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "変成器の一次側電圧は15×5/3＝25 mV。利得40 dBの増幅器の入力は25/100＝0.25 mVとなる。元の250 mVとの比は1000なので、漏話減衰量は20 log₁₀1000＝60 dBである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2026-first/q4-1.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2026年度第1回 電気通信技術の基礎 第4問（1）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a1628d6ad0ac.pdf#page=6",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a162a4510464.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "この選択肢の「２０」は、計算で得られる「６０」と一致しない。変成器の一次側電圧は15×5/3＝25 mV。利得40 dBの増幅器の入力は25/100＝0.25 mVとなる。元の250 mVとの比は1000なので、漏話減衰量は20 log₁₀1000＝60 dBである。",
+      "イ": "この選択肢の「３０」は、計算で得られる「６０」と一致しない。変成器の一次側電圧は15×5/3＝25 mV。利得40 dBの増幅器の入力は25/100＝0.25 mVとなる。元の250 mVとの比は1000なので、漏話減衰量は20 log₁₀1000＝60 dBである。",
+      "ウ": "この選択肢の「４０」は、計算で得られる「６０」と一致しない。変成器の一次側電圧は15×5/3＝25 mV。利得40 dBの増幅器の入力は25/100＝0.25 mVとなる。元の250 mVとの比は1000なので、漏話減衰量は20 log₁₀1000＝60 dBである。",
+      "エ": "この選択肢の「５０」は、計算で得られる「６０」と一致しない。変成器の一次側電圧は15×5/3＝25 mV。利得40 dBの増幅器の入力は25/100＝0.25 mVとなる。元の250 mVとの比は1000なので、漏話減衰量は20 log₁₀1000＝60 dBである。",
+      "オ": "計算で得られる値は「６０」であり、この選択肢の値と一致する。変成器の一次側電圧は15×5/3＝25 mV。利得40 dBの増幅器の入力は25/100＝0.25 mVとなる。元の250 mVとの比は1000なので、漏話減衰量は20 log₁₀1000＝60 dBである。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2026-first-kiso-q4-2",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 4,
+    "part": "2",
+    "officialQuestionLabel": "4（2）",
+    "type": "multiple-choice",
+    "category": "伝送理論",
+    "topicTags": [
+      "伝送理論",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "平衡対ケーブルを用いて音声周波数帯域の信号を伝送するときの伝送損失は、 (イ) を 大きくすると増加する。",
+    "choices": {
+      "ア": "心線導体の直径",
+      "イ": "単位長さ当たりの心線導体抵抗",
+      "ウ": "心線導体間の間隔",
+      "エ": "単位長さ当たりのインダクタンス"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "音声周波数帯の平衡対ケーブルでは導体抵抗による損失を無視できない。単位長さ当たりの心線導体抵抗が増えると、線路中で熱として消費される電力が増え、伝送損失も大きくなる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2026-first/q4-2.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2026年度第1回 電気通信技術の基礎 第4問（2）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a1628d6ad0ac.pdf#page=6",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a162a4510464.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "直径が大きいほど導体抵抗は小さくなり、損失を減らす側に働く。",
+      "イ": "導体抵抗が大きいほど抵抗損失が増え、伝送損失も増える。",
+      "ウ": "心線間隔が大きいと静電容量が小さくなり、音声帯の損失を減らす側に働く。",
+      "エ": "インダクタンスを大きくすることは、音声帯の損失を減らす側に働く。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2026-first-kiso-q4-3",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 4,
+    "part": "3",
+    "officialQuestionLabel": "4（3）",
+    "type": "multiple-choice",
+    "category": "伝送理論",
+    "topicTags": [
+      "伝送理論",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "無限長の一様線路における音声周波での特性インピーダンスは周波数、線路の静電容量及び 導体抵抗から近似的に求めることができ、その大きさは、周波数の平方根と線路の静電容量の (ウ) する。",
+    "choices": {
+      "ア": "２乗に反比例し、導体抵抗の２乗に比例",
+      "イ": "２乗に比例し、導体抵抗の２乗に反比例",
+      "ウ": "平方根に反比例し、導体抵抗の平方根に比例",
+      "エ": "平方根に比例し、導体抵抗の平方根に反比例"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "音声周波数帯でRがωLより大きく、漏れコンダクタンスを無視できると、Z₀≃√(R/jωC)となる。その大きさは√Rに比例し、周波数と静電容量それぞれの平方根に反比例する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2026-first/q4-3.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2026年度第1回 電気通信技術の基礎 第4問（3）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a1628d6ad0ac.pdf#page=6",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a162a4510464.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "静電容量や抵抗への依存性は2乗ではなく平方根で表される。",
+      "イ": "静電容量と導体抵抗に対する増減の方向も、指数も一致しない。",
+      "ウ": "|Z₀|≃√(R/(ωC))なので、Cの平方根に反比例しRの平方根に比例する。",
+      "エ": "Cが増すとインピーダンスは下がり、Rが増すと上がるため増減が逆。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2026-first-kiso-q4-4",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 4,
+    "part": "4",
+    "officialQuestionLabel": "4（4）",
+    "type": "multiple-choice",
+    "category": "伝送理論",
+    "topicTags": [
+      "伝送理論",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "電力線からの誘導作用によって通信線に誘起される誘導電圧には、電磁誘導電圧と静電誘導 電圧がある。このうち、電磁誘導電圧は、一般に、電力線の (エ) に比例する。",
+    "choices": {
+      "ア": "電 流",
+      "イ": "電 圧",
+      "ウ": "インダクタンス",
+      "エ": "抵 抗",
+      "オ": "線 径"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "電磁誘導は電力線の電流がつくる磁界の変化による現象である。同じ周波数・配置・結合条件では、通信線に生じる誘導電圧は電力線の電流に比例する。電圧に関係する静電誘導と区別する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2026-first/q4-4.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2026年度第1回 電気通信技術の基礎 第4問（4）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a1628d6ad0ac.pdf#page=6",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a162a4510464.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "同じ結合条件なら、電力線電流が大きいほど磁界と誘導電圧が大きくなる。",
+      "イ": "電圧による結合は主に静電誘導として区別する。",
+      "ウ": "比例する対象として問われているのは、磁界を発生させる電流である。",
+      "エ": "抵抗の値だけでは電流や磁界の強さは定まらない。",
+      "オ": "線径そのものを比例変数として誘導電圧を求める関係ではない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2026-first-kiso-q5-1",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 5,
+    "part": "1",
+    "officialQuestionLabel": "5（1）",
+    "type": "multiple-choice",
+    "category": "デジタル通信",
+    "topicTags": [
+      "デジタル通信",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "アナログ音声信号を量子化ビット数nビットでPCM符号化し、1秒当たりに伝送されるデータ量がVビットのとき、標本化した際のサンプリング間隔は（ア）秒である。",
+    "choices": {
+      "ア": "V/n",
+      "イ": "1/(nV)",
+      "ウ": "V/(2n)",
+      "エ": "n/V",
+      "オ": "2n/V"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "1秒間のデータ量V bitを1標本当たりn bitで割ると、標本化周波数はV/n Hzとなる。サンプリング間隔はその逆数なのでn/V秒。ビットレートと標本化周波数を同じ値として扱わない。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2026-first/q5-1.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2026年度第1回 電気通信技術の基礎 第5問（1）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a1628d6ad0ac.pdf#page=7",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a162a4510464.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "この選択肢の「V/n」は、計算で得られる「n/V」と一致しない。1秒間のデータ量V bitを1標本当たりn bitで割ると、標本化周波数はV/n Hzとなる。サンプリング間隔はその逆数なのでn/V秒。ビットレートと標本化周波数を同じ値として扱わない。",
+      "イ": "この選択肢の「1/(nV)」は、計算で得られる「n/V」と一致しない。1秒間のデータ量V bitを1標本当たりn bitで割ると、標本化周波数はV/n Hzとなる。サンプリング間隔はその逆数なのでn/V秒。ビットレートと標本化周波数を同じ値として扱わない。",
+      "ウ": "この選択肢の「V/(2n)」は、計算で得られる「n/V」と一致しない。1秒間のデータ量V bitを1標本当たりn bitで割ると、標本化周波数はV/n Hzとなる。サンプリング間隔はその逆数なのでn/V秒。ビットレートと標本化周波数を同じ値として扱わない。",
+      "エ": "計算で得られる値は「n/V」であり、この選択肢の値と一致する。1秒間のデータ量V bitを1標本当たりn bitで割ると、標本化周波数はV/n Hzとなる。サンプリング間隔はその逆数なのでn/V秒。ビットレートと標本化周波数を同じ値として扱わない。",
+      "オ": "この選択肢の「2n/V」は、計算で得られる「n/V」と一致しない。1秒間のデータ量V bitを1標本当たりn bitで割ると、標本化周波数はV/n Hzとなる。サンプリング間隔はその逆数なのでn/V秒。ビットレートと標本化周波数を同じ値として扱わない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2026-first-kiso-q5-2",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 5,
+    "part": "2",
+    "officialQuestionLabel": "5（2）",
+    "type": "multiple-choice",
+    "category": "デジタル通信",
+    "topicTags": [
+      "デジタル通信",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "光変調方式の一つである直接変調方式では、一般に、光源として用いられる半導体レーザの 駆動電流を変化させることにより、半導体レーザから出力される光の (イ) を変化させて いる。",
+    "choices": {
+      "ア": "位 相",
+      "イ": "強 度",
+      "ウ": "波 長",
+      "エ": "モード分散",
+      "オ": "レイリー散乱"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "半導体レーザの駆動電流を信号に応じて変える直接変調では、出力される光の強度を変化させる。光の位相を外部変調器で変える方式や、光ファイバ内の分散・散乱とは異なる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2026-first/q5-2.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2026年度第1回 電気通信技術の基礎 第5問（2）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a1628d6ad0ac.pdf#page=7",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a162a4510464.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "この直接変調は、光の位相ではなく出力強度を変える方式である。",
+      "イ": "駆動電流によって半導体レーザの光出力強度が変化する。",
+      "ウ": "波長の変動はチャーピング等として扱い、直接強度変調の主たる量と区別する。",
+      "エ": "モード分散は光ファイバ内の伝搬モードの到達時間差である。",
+      "オ": "レイリー散乱は光の伝搬損失に関係し、変調する出力の量ではない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2026-first-kiso-q5-3",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 5,
+    "part": "3",
+    "officialQuestionLabel": "5（3）",
+    "type": "multiple-choice",
+    "category": "デジタル通信",
+    "topicTags": [
+      "デジタル通信",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "デジタル回線の伝送品質を評価する尺度の一つである％ＳＥＳは、１秒ごとに平均符号誤り率 を測定し、平均符号誤り率が (ウ) を超える符号誤りの発生した秒の延べ時間(秒)が、稼 働時間(秒)に占める割合を表したものである。",
+    "choices": {
+      "ア": "1×10⁻⁸",
+      "イ": "1×10⁻⁶",
+      "ウ": "1×10⁻⁵",
+      "エ": "1×10⁻⁴",
+      "オ": "1×10⁻³"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "この設問の%SESは、1秒区間で平均符号誤り率が10⁻³を超えた時間の割合を表す。10⁻³は1000ビットに1ビットの誤りに相当する。誤りが1個でもあった秒を数える尺度とは区別する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2026-first/q5-3.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2026年度第1回 電気通信技術の基礎 第5問（3）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a1628d6ad0ac.pdf#page=7",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a162a4510464.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "この選択肢の「1×10⁻⁸」は、計算で得られる「1×10⁻³」と一致しない。この設問の%SESは、1秒区間で平均符号誤り率が10⁻³を超えた時間の割合を表す。10⁻³は1000ビットに1ビットの誤りに相当する。誤りが1個でもあった秒を数える尺度とは区別する。",
+      "イ": "この選択肢の「1×10⁻⁶」は、計算で得られる「1×10⁻³」と一致しない。この設問の%SESは、1秒区間で平均符号誤り率が10⁻³を超えた時間の割合を表す。10⁻³は1000ビットに1ビットの誤りに相当する。誤りが1個でもあった秒を数える尺度とは区別する。",
+      "ウ": "この選択肢の「1×10⁻⁵」は、計算で得られる「1×10⁻³」と一致しない。この設問の%SESは、1秒区間で平均符号誤り率が10⁻³を超えた時間の割合を表す。10⁻³は1000ビットに1ビットの誤りに相当する。誤りが1個でもあった秒を数える尺度とは区別する。",
+      "エ": "この選択肢の「1×10⁻⁴」は、計算で得られる「1×10⁻³」と一致しない。この設問の%SESは、1秒区間で平均符号誤り率が10⁻³を超えた時間の割合を表す。10⁻³は1000ビットに1ビットの誤りに相当する。誤りが1個でもあった秒を数える尺度とは区別する。",
+      "オ": "計算で得られる値は「1×10⁻³」であり、この選択肢の値と一致する。この設問の%SESは、1秒区間で平均符号誤り率が10⁻³を超えた時間の割合を表す。10⁻³は1000ビットに1ビットの誤りに相当する。誤りが1個でもあった秒を数える尺度とは区別する。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2026-first-kiso-q5-4",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 5,
+    "part": "4",
+    "officialQuestionLabel": "5（4）",
+    "type": "multiple-choice",
+    "category": "デジタル通信",
+    "topicTags": [
+      "デジタル通信",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "デジタル中継伝送における伝送品質の劣化要因について述べた次の二つの記述は、 (エ) 。 Ａ 再生中継器を用いたデジタル中継伝送においては、再生中継器の信号受信部におけるタイ ミング抽出回路から出力されるタイミングパルスの位相変動によりジッタが発生することが ある。 Ｂ 符号間干渉は、一般に、デジタル信号の伝送に必要とされる帯域が十分に確保されていな い場合などに発生し、ビット誤りが生ずる要因の一つとなる。",
+    "choices": {
+      "ア": "Ａのみ正しい",
+      "イ": "Ｂのみ正しい",
+      "ウ": "ＡもＢも正しい",
+      "エ": "ＡもＢも正しくない"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "Aのタイミングパルスの位相変動はジッタの原因になる。Bも正しく、必要な帯域が不足すると波形が広がって隣接シンボルと重なり、符号間干渉やビット誤りが生じる。両方の記述が正しい。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2026-first/q5-4.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2026年度第1回 電気通信技術の基礎 第5問（4）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a1628d6ad0ac.pdf#page=7",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a162a4510464.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "Aは正しく、Bは正しい。この組合せはBの正誤が逆。Aのタイミングパルスの位相変動はジッタの原因になる。Bも正しく、必要な帯域が不足すると波形が広がって隣接シンボルと重なり、符号間干渉やビット誤りが生じる。両方の記述が正しい。",
+      "イ": "Aは正しく、Bは正しい。この組合せはAの正誤が逆。Aのタイミングパルスの位相変動はジッタの原因になる。Bも正しく、必要な帯域が不足すると波形が広がって隣接シンボルと重なり、符号間干渉やビット誤りが生じる。両方の記述が正しい。",
+      "ウ": "Aは正しく、Bは正しい。この組合せが両方の判定に一致する。Aのタイミングパルスの位相変動はジッタの原因になる。Bも正しく、必要な帯域が不足すると波形が広がって隣接シンボルと重なり、符号間干渉やビット誤りが生じる。両方の記述が正しい。",
+      "エ": "Aは正しく、Bは正しい。この組合せはAの正誤が逆、Bの正誤が逆。Aのタイミングパルスの位相変動はジッタの原因になる。Bも正しく、必要な帯域が不足すると波形が広がって隣接シンボルと重なり、符号間干渉やビット誤りが生じる。両方の記述が正しい。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-charge-1-2026-first-kiso-q5-5",
+    "exam": "dekyo-charge-1",
+    "session": "kiso",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 5,
+    "part": "5",
+    "officialQuestionLabel": "5（5）",
+    "type": "multiple-choice",
+    "category": "デジタル通信",
+    "topicTags": [
+      "デジタル通信",
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 3,
+    "question": "多元接続方式のうち、複数の送受信アンテナを利用する無線技術であるＭＩＭＯ(Multiple Input Multiple Output)を使用することにより、伝送路を空間的に分割して、同一時刻に同一 周波数を用いて複数の端末と通信できる方式は、 (オ) といわれる。",
+    "choices": {
+      "ア": "ＣＤＭＡ",
+      "イ": "ＣＳＭＡ",
+      "ウ": "ＦＤＭＡ",
+      "エ": "ＳＤＭＡ",
+      "オ": "ＴＤＭＡ"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "MIMOで複数のアンテナの空間特性を利用し、同じ時間・周波数の資源で端末を分ける方式はSDMAである。TDMAは時間、FDMAは周波数、CDMAは符号によって通信を分離する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-charge-1/2026-first/q5-5.png"
+    ],
+    "imageAltTexts": [
+      "第一級アナログ通信 2026年度第1回 電気通信技術の基礎 第5問（5）の公式問題・解答群"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a1628d6ad0ac.pdf#page=7",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a162a4510464.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。",
+    "license": "DEKYO-attributed",
+    "choiceExplanations": {
+      "ア": "CDMAは符号を変えて通信を分離する。空間による分離ではない。",
+      "イ": "CSMAは搬送波の有無を調べて送信する媒体アクセス方式である。",
+      "ウ": "FDMAは周波数帯を分けて通信する方式である。",
+      "エ": "SDMAはアンテナの空間特性を使い、同じ時刻・周波数の通信を分離する。",
+      "オ": "TDMAは時間スロットを分けて通信する方式である。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  }
+]

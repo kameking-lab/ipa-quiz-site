@@ -1,0 +1,128 @@
+[
+  {
+    "id": "es-2023a-pm2-q1",
+    "exam": "es",
+    "year": 2023,
+    "season": "autumn",
+    "session": "pm2",
+    "qNumber": 1,
+    "type": "essay",
+    "category": "組込みシステム",
+    "topicTags": [
+      "ファイブフォース分析",
+      "製品企画",
+      "脅威分析"
+    ],
+    "difficulty": 4,
+    "question": "組込みシステムの製品企画段階における脅威分析",
+    "answer": "昨今，組込みシステムの市場は，デジタルトランスフォーメーション（DX）推進，IoT の普及などによっ\nて，既存市場の拡大とともに新市場への進出の機会も増加している。その一方で，半導体電子部品不足などの\n問題も見受けられる。そのような状況下では，外部環境によって影響される脅威を分析して，その結果を基に\n対策案を検討し，自社の優位性を確保することが重要である。\n 本問は，脅威分析の一つであるファイブフォース分析を題材に，新市場への参入，新製品の投入を目的とし\nた製品企画の際の脅威を分析してその分析結果からの対応策について具体的に論述することを求めている。論\n述を通じて，エンベデッドシステムスペシャリストに必要な企画力，分析力などを評価する。",
+    "modelAnswer": "### 出題趣旨\n\n昨今，組込みシステムの市場は，デジタルトランスフォーメーション（DX）推進，IoT の普及などによっ\nて，既存市場の拡大とともに新市場への進出の機会も増加している。その一方で，半導体電子部品不足などの\n問題も見受けられる。そのような状況下では，外部環境によって影響される脅威を分析して，その結果を基に\n対策案を検討し，自社の優位性を確保することが重要である。\n 本問は，脅威分析の一つであるファイブフォース分析を題材に，新市場への参入，新製品の投入を目的とし\nた製品企画の際の脅威を分析してその分析結果からの対応策について具体的に論述することを求めている。論\n述を通じて，エンベデッドシステムスペシャリストに必要な企画力，分析力などを評価する。",
+    "explanation": "設問アは、製品概要、企画の経緯、分析した三つの脅威を800字相当以内で整理する。設問イは、そのうち重要と考えた二つの脅威を選び、分析方法、関連部門と検討した対策案、対策実施の課題と解決を800〜1,600字相当で述べる。設問ウは、脅威の分析結果、対策案、課題解決についての評価を600〜1,200字相当で書く。枠組みの名称を並べるだけでなく、製品固有の脅威から対策、その評価までを一貫させる。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_es_pm2_qs.pdf#page=4) / [出題趣旨PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_es_pm2_ans.pdf#page=1)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-official/es/2023-autumn-pm2/p02.webp",
+      "/questions/ipa-official/es/2023-autumn-pm2/p04.webp",
+      "/questions/ipa-official/es/2023-autumn-pm2/p05.webp"
+    ],
+    "imageAltTexts": [
+      "2023年午後II 問1：組込みシステムの製品企画段階における脅威分析（公式問題PDF 2ページ）",
+      "2023年午後II 問1：組込みシステムの製品企画段階における脅威分析（公式問題PDF 4ページ）",
+      "2023年午後II 問1：組込みシステムの製品企画段階における脅威分析（公式問題PDF 5ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-official/es/2023-autumn-pm2/q1-answer-p1.webp"
+    ],
+    "answerImageAltTexts": [
+      "問1の出題趣旨（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_es_pm2_qs.pdf#page=4",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_es_pm2_ans.pdf#page=1",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2023年度秋期 エンベデッドシステムスペシャリスト 午後II。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "es-2023a-pm2-q2",
+    "exam": "es",
+    "year": 2023,
+    "season": "autumn",
+    "session": "pm2",
+    "qNumber": 2,
+    "type": "essay",
+    "category": "組込みシステム",
+    "topicTags": [
+      "マルチコア",
+      "処理割当て",
+      "安全性・セキュリティ"
+    ],
+    "difficulty": 4,
+    "question": "組込みシステムにおけるマルチコアの活用",
+    "answer": "マルチコアプロセッサを用いた組込みシステムの開発においては，組込みシステムの特徴・目的，及び要求\nされる性能を把握して，どの処理をどのように各コアに割り当てるかを決定しなければならない。\n 本問は，マルチコアプロセッサを用いた組込みシステムにおいて，組込みシステムの用途と構成，課題と解\n決策としての各コアへの処理の割当ての考え方，安全性・セキュリティへの配慮，及び解決策の評価につい\nて，具体的に論述することを求めている。論述を通じて，エンベデッドシステムスペシャリストに必要な組込\nみシステムの特徴と課題の把握能力，及び課題解決能力を評価する。",
+    "modelAnswer": "### 出題趣旨\n\nマルチコアプロセッサを用いた組込みシステムの開発においては，組込みシステムの特徴・目的，及び要求\nされる性能を把握して，どの処理をどのように各コアに割り当てるかを決定しなければならない。\n 本問は，マルチコアプロセッサを用いた組込みシステムにおいて，組込みシステムの用途と構成，課題と解\n決策としての各コアへの処理の割当ての考え方，安全性・セキュリティへの配慮，及び解決策の評価につい\nて，具体的に論述することを求めている。論述を通じて，エンベデッドシステムスペシャリストに必要な組込\nみシステムの特徴と課題の把握能力，及び課題解決能力を評価する。",
+    "explanation": "用途と要求性能を先に示し、どの処理をどのコアへ割り当てたかを理由とともに説明する。並列化できる処理と、処理順序や共有資源に制約がある部分を分けると、割当ての妥当性が伝わる。安全性・セキュリティへの配慮と性能上の効果は、設計時の工夫と評価方法を対応付けて述べる。構成の紹介だけに終わらず、課題、解決策、評価を一貫させる。字数は原本の指定に従う。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_es_pm2_qs.pdf#page=6) / [出題趣旨PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_es_pm2_ans.pdf#page=1)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-official/es/2023-autumn-pm2/p02.webp",
+      "/questions/ipa-official/es/2023-autumn-pm2/p06.webp",
+      "/questions/ipa-official/es/2023-autumn-pm2/p07.webp"
+    ],
+    "imageAltTexts": [
+      "2023年午後II 問2：組込みシステムにおけるマルチコアの活用（公式問題PDF 2ページ）",
+      "2023年午後II 問2：組込みシステムにおけるマルチコアの活用（公式問題PDF 6ページ）",
+      "2023年午後II 問2：組込みシステムにおけるマルチコアの活用（公式問題PDF 7ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-official/es/2023-autumn-pm2/q2-answer-p1.webp"
+    ],
+    "answerImageAltTexts": [
+      "問2の出題趣旨（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_es_pm2_qs.pdf#page=6",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_es_pm2_ans.pdf#page=1",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2023年度秋期 エンベデッドシステムスペシャリスト 午後II。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "es-2023a-pm2-q3",
+    "exam": "es",
+    "year": 2023,
+    "season": "autumn",
+    "session": "pm2",
+    "qNumber": 3,
+    "type": "essay",
+    "category": "組込みシステム",
+    "topicTags": [
+      "要求分析",
+      "基盤選定",
+      "トレードオフ"
+    ],
+    "difficulty": 4,
+    "question": "組込みシステム開発時の基本要求の確認・設計・評価",
+    "answer": "組込みシステムの要求定義は，対象となる製品によって多種多様である。それらの要求定義に対応するため\nには，要求を分析し的確な機能要件・非機能要件を定義する必要がある。組込みシステムの開発時には，まず\n採用する基盤の検討を実施する。次に要件定義と基盤との整合性を吟味し，その結果から基盤を補完すること\nが重要である。\n 本問は，組込みシステムの開発において，要求分析から導出した要件定義を基に的確な基盤の選定・設計・\n評価について，具体的に論述することを求めている。論述を通じて，エンベデッドシステムスペシャリストに\n必要な要求分析力，設計能力などを評価する。",
+    "modelAnswer": "### 出題趣旨\n\n組込みシステムの要求定義は，対象となる製品によって多種多様である。それらの要求定義に対応するため\nには，要求を分析し的確な機能要件・非機能要件を定義する必要がある。組込みシステムの開発時には，まず\n採用する基盤の検討を実施する。次に要件定義と基盤との整合性を吟味し，その結果から基盤を補完すること\nが重要である。\n 本問は，組込みシステムの開発において，要求分析から導出した要件定義を基に的確な基盤の選定・設計・\n評価について，具体的に論述することを求めている。論述を通じて，エンベデッドシステムスペシャリストに\n必要な要求分析力，設計能力などを評価する。",
+    "explanation": "対象製品の用途から機能要件と非機能要件を整理し、それらを満たす基盤を選んだ理由を書く。採用基盤で不足する点には、補完方法と評価方法を対応付ける。ハードウェアとソフトウェアのどちらで機能を実現するかは、性能、消費電力、開発期間など対象製品の制約に沿って論じる。複数の条件の間で何を優先したかを具体化すると、設計判断の筋道が明確になる。字数は原本の指定に従う。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_es_pm2_qs.pdf#page=8) / [出題趣旨PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_es_pm2_ans.pdf#page=1)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-official/es/2023-autumn-pm2/p02.webp",
+      "/questions/ipa-official/es/2023-autumn-pm2/p08.webp",
+      "/questions/ipa-official/es/2023-autumn-pm2/p09.webp"
+    ],
+    "imageAltTexts": [
+      "2023年午後II 問3：組込みシステム開発時の基本要求の確認・設計・評価（公式問題PDF 2ページ）",
+      "2023年午後II 問3：組込みシステム開発時の基本要求の確認・設計・評価（公式問題PDF 8ページ）",
+      "2023年午後II 問3：組込みシステム開発時の基本要求の確認・設計・評価（公式問題PDF 9ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-official/es/2023-autumn-pm2/q3-answer-p1.webp"
+    ],
+    "answerImageAltTexts": [
+      "問3の出題趣旨（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_es_pm2_qs.pdf#page=8",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_es_pm2_ans.pdf#page=1",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2023年度秋期 エンベデッドシステムスペシャリスト 午後II。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  }
+]

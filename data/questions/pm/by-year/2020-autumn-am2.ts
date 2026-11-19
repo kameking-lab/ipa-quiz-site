@@ -24,6 +24,13 @@ export const PM_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "変更要求が提出され承認された場合、プロジェクトの計画を更新する必要が生じ（計画プロセス）、その更新された計画に基づいてプロジェクトの作業が実施されます（実行プロセス）。このため、変更要求を契機として「計画」と「実行」のプロセス群が相互に作用します。",
+    "choiceExplanations": {
+      "ア": "計画は目標や達成方法を具体化し、実行の前提を作ります。実行で生じた変更要求を受け取って評価し、承認するのは管理です。",
+      "イ": "出題対象のJIS Q 21500:2018では、実行から管理へ変更要求が渡り、管理で承認した変更が実行に戻って適用されます。",
+      "ウ": "終結は作業やプロジェクトを正式に完了させます。進行中に実行から変更要求が出た場合、手続を担当するのは管理です。",
+      "エ": "管理は変更要求を評価し、承認結果を実行に渡して作業へ反映させます。終結は完了時に成果などを確認するプロセス群です。"
+    },
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +55,13 @@ export const PM_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "JIS Q 21500:2018におけるプロセス「プロジェクト作業の管理」は、プロジェクトチームのパフォーマンスを最適化し、課題解決やコミュニケーションの促進、変更の調整を通じてプロジェクトの成功を目指すことを目的としています。これは、プロジェクト計画の実行段階で発生する広範な管理活動を含みます。",
+    "choiceExplanations": {
+      "ア": "品質目標や規格に適合しているかを確かめ、不満足な結果の原因を探す目的は品質の管理です。プロジェクト活動全体の統合とは区別します。",
+      "イ": "フィードバックや課題解決を通してチームの能力を引き出すのは、チームを管理する取組です。管理対象が要員とその働きに絞られます。",
+      "ウ": "変更の採否を正式に決めるのは変更の管理です。プロジェクト作業の管理は、変更以外も含めて計画に沿った活動全体を扱います。",
+      "エ": "出題対象のJIS Q 21500:2018では、個々の活動をプロジェクト全体計画に照らして統合し、全体として完了させることが目的です。"
+    },
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +86,7 @@ export const PM_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "プロジェクト憲章は、プロジェクトの存在を正式に承認する文書であり、プロジェクトマネージャを任命してその責任と権限を明確にします。また、ビジネスニーズ、プロジェクト目標、期待される結果といったプロジェクトの基本的な情報を記述し、プロジェクト立ち上げの根拠となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +111,7 @@ export const PM_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "RACIチャートは、プロジェクトにおけるタスクや意思決定に対する役割と責任を明確にするツールです。RACIは「Responsible（実行責任）」、「Accountable（説明責任）」、「Consulted（相談対応）」、「Informed（情報提供）」の頭文字を取ったものであり、選択肢アの組み合わせが適切です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +136,7 @@ export const PM_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "プロジェクトの状況をEVM（アーンドバリューマネジメント）で評価します。完成時総予算が1億円（10,000万円）、出来高が70%なので、アーンドバリュー（EV）は 10,000万円 × 70% = 7,000万円です。発生したコスト（実コスト、AC）は8,500万円と与えられているため、コスト差異（CV）は EV - AC = 7,000万円 - 8,500万円 = -1,500万円となります。したがって、選択肢イが正しいです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +161,7 @@ export const PM_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ガントチャートは、プロジェクトの各作業を横棒グラフで表現し、それぞれの作業の開始時点と終了時点、および期間を視覚的に把握できるという特徴があります。これにより、プロジェクト全体のスケジュールと進捗状況を直感的に理解しやすくなります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -167,7 +185,14 @@ export const PM_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
       "エ": "21"
     },
     "answer": "エ",
-    "explanation": "この問題は、プロジェクトのクリティカルパス（CP）を特定し、その経路上の最早開始時刻（ES）を計算することで解答できます。クリティカルパスとは、プロジェクト全体の所要日数に影響を与える一連の作業経路であり、その所要日数がプロジェクトの最短完了日数となります。作業 Hの遅くとも開始しなければならない時期は、クリティカルパス上の先行作業の最も遅い完了時刻（LF: Late Finish）と、作業 H自体の所要日数を考慮して算出されます。\n\nまず、選択肢エの21日を検討します。もし作業 Hがプロジェクト開始から21日経過後に開始される場合、クリティカルパス上の先行作業の完了時刻が21日以内であるならば、プロジェクト全体の最短日数で終了できる可能性があります。他の選択肢が誤りである理由を分析します。選択肢アの12日では、クリティカルパス上の先行作業の完了時刻が12日より遅い場合、作業 Hを早めに開始してもプロジェクトの最短日数での完了には寄与せず、不十分です。選択肢イの14日も同様に、クリティカルパス上の制約を考慮すると、作業 Hの開始を早める必要がない、あるいはさらに遅らせても問題ない可能性があります。選択肢ウの18日も、クリティカルパス上の遅延を考慮すると、21日という遅延許容度よりも早い開始日となり、十分な余裕がない、または不要な制約となる可能性があります。",
+    "explanation": "最長の経路はA→D→Gで、8＋10＋12＝30日です。Hの最早開始は、Cの12日と、ダミー作業につながるA→Dの18日、B→Eの14日の最大値で18日目です。HとIには5＋4＝9日かかるため、全体を30日で終えるには、Hを遅くとも30－9＝21日目に開始します。",
+    "choiceExplanations": {
+      "ア": "12日は作業Cの完了時刻です。HはCだけでなく、ダミー作業を介してDとEの両方の完了も待つ必要があります。",
+      "イ": "14日はB→Eの所要日数です。同じ合流点には18日かかるA→Dも到着するため、14日目に合流点を通過できません。",
+      "ウ": "18日目はCおよびダミー作業の両方が終わり、Hを最も早く開始できる時刻です。Hの経路にはさらに3日の余裕があります。",
+      "エ": "全体の最短日数はA→D→Gの30日です。Hを開始してからHとIで9日かかるので、その開始は30－9＝21日目までです。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +217,7 @@ export const PM_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "PMBOKガイド第6版によれば、資源平準化（Resource Leveling）は、資源の過負荷解消や使用量安定化のために、アクティビティの開始日と終了日を調整する技法です。この調整はプロジェクト全体の完了日を延長する可能性があり、その結果、クリティカルパスが変更される原因となることがよくあります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -215,7 +241,14 @@ export const PM_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
       "エ": "開発生産性(y軸), 開発規模(x軸)のグラフ (急な下り坂のカーブ)"
     },
     "answer": "エ",
-    "explanation": "開発規模が大きくなるにつれて、開発工数あたりの開発規模、すなわち開発生産性は低下する関係にあることが、提示されたCOCOMOの式から読み取れます。\n\n式は「開発工数 = 3.0 × (開発規模)^1.12」とあります。開発生産性は「開発規模 / 開発工数」なので、この式に代入すると、「開発生産性 = 開発規模 / (3.0 × (開発規模)^1.12) = (1 / 3.0) × (開発規模)^-0.12」となります。\nここで、開発規模は正の値であり、指数が負 (-0.12) であるため、開発規模が増加するにつれて開発生産性は減少します。また、指数が1より小さいため、開発規模の増加率よりも開発生産性の減少率は緩やかになります。したがって、開発生産性(y軸)と開発規模(x軸)の関係は下り坂のカーブを描き、規模の増加による生産性低下は、開発規模が小さい段階では比較的急激に、規模が大きくなるにつれて緩やかになる傾向を示唆します。\n\nアは、開発生産性が開発規模の増加とともに上昇する関係を示しており、式から導かれる結果と矛盾するため不適切です。イも同様に生産性の上昇を示しており、さらに「急な上り坂」という表現も、指数が負であることから誤りです。ウは「下り坂のカーブ」という点で正しい方向性ですが、開発規模の増加に対して生産性の低下が緩やかになる性質を「急な」という言葉で否定しているため、より正確な表現が求められます。エは、開発生産性が開発規模の増加とともに減少していく「下り坂のカーブ」であり、かつ「急な」という表現が、開発規模が小さい領域での生産性低下の度合いを示唆しているため、最も適切と言えます。",
+    "explanation": "開発規模をSとすると、開発生産性はS÷（3.0×S^1.12）＝（1÷3.0）×S^−0.12です。規模が増すと生産性は下がり、同じ規模の増分に対する低下幅は次第に小さくなるので、グラフはエです。ウは右に行くほど下り方が急になります。",
+    "choiceExplanations": {
+      "ア": "規模が増えるほど生産性が上がるグラフです。式では工数の指数1.12が1より大きく、規模を工数で割ると指数は－0.12になります。",
+      "イ": "規模が大きいほど生産性が急に上がるグラフです。工数は規模以上の割合で増えるので、工数当たりの開発規模は下がります。",
+      "ウ": "規模が大きいほど生産性が急に下がるグラフです。式の指数－0.12では、生産性は減少しながら傾きが緩やかになります。",
+      "エ": "規模をSとすると生産性はS÷（3.0×S^1.12）＝（1÷3.0）×S^−0.12となり、Sが大きいほど低下しながら傾きが緩やかになります。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -239,7 +272,14 @@ export const PM_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
       "エ": "240"
     },
     "answer": "ウ",
-    "explanation": "EMV（Expected Monetary Value：期待金額価値）は、意思決定における各選択肢の期待される金額的価値を計算し、より有利な選択肢を特定するための手法です。各選択肢の発生確率とその結果の金額に確率を乗じて合計することで算出されます。\n\nツールAを導入するEMVがツールBを導入するEMVを上回る条件を求めます。デシジョンツリーにおける「X」は、ある事象の発生確率と関連する金額を表すと考えられます。ツールAを導入した場合のEMVは、（確率1 * 金額1）+（確率2 * 金額2）...のように計算されます。同様にツールBを導入した場合のEMVも計算されます。問題文の「ツールAを導入するEMVがツールBを導入するEMVを上回る」という条件を数式で表現すると、「ツールAのEMV > ツールBのEMV」となります。この不等式をXについて解くことで、Xが幾らよりも大きい場合にAが有利になるかが分かります。計算の結果、Xが200より大きい場合にツールAを導入するEMVがツールBを上回ることが導き出されます。\n\nアは、Xが120以下の場合もツールBが有利になる可能性があるため不適切です。イは、Xが150以下の場合もツールBが有利になる可能性があり、条件を満たさないため誤りです。エは、Xが240以下の場合でもツールAが有利になる可能性があり、条件を過度に限定しているため正しくありません。",
+    "explanation": "効果額を発生確率で重み付けし、導入費用を引きます。Aは0.6X＋0.4×90－120＝0.6X－84万円、Bは0.6×120＋0.4×60－60＝36万円です。0.6X－84＞36を解くとX＞200万円です。",
+    "choiceExplanations": {
+      "ア": "Xが120万円なら、Aの期待効果は0.6×120＋0.4×90＝108万円で、費用を引くと－12万円です。Bの36万円を下回ります。",
+      "イ": "Xが150万円なら、Aの期待効果から費用を引いた額は0.6×150－84＝6万円です。Bの36万円には届きません。",
+      "ウ": "Aの純期待額は0.6X－84万円、Bは36万円です。AがBを上回る条件は0.6X＞120、すなわちX＞200です。",
+      "エ": "Xが240万円ならAの純期待額は60万円となり、すでにBの36万円を超えています。等しくなる境界は200万円です。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +304,13 @@ export const PM_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "好機に対する戦略の「強化」は、好機が発生する確率や、発生した場合のプラスの影響を増大させることを目指します。リスク共有のパートナーシップやジョイント・ベンチャーなどを形成することは、単独では実現が難しい好機を共同で追求し、その恩恵を最大化することで、好機の影響を強化する戦略とみなすことができます。",
+    "choiceExplanations": {
+      "ア": "好機の強化は、望ましい結果の発生確率や影響を高めます。追加の資源を投入すると、予定より早く作業が終わる可能性が高まります。",
+      "イ": "好機を活用しやすい相手と役割や利益を分け合うのは共有です。追加の資源で好機の確率や効果を高める強化と区別します。",
+      "ウ": "対処用の予備を設けるのは、リスクが現実になった際に備える取組です。予備を持つだけでは好機が生じる確率や効果は高まりません。",
+      "エ": "リスクを受容し、事象が起きた場合に対処する考え方です。事前の働き掛けで好機の発生確率や効果を高めるわけではありません。"
+    },
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +335,13 @@ export const PM_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ソフトウェアの保守性は、変更や修正のしやすさを示す指標です。出荷後の利用者からの改良要求件数が、システムの変更が必要となる頻度を示し、この値が小さいほど、システムは利用者のニーズに合致しており、かつ大きな変更を頻繁に必要としない、つまり保守性が高いと評価できます。したがって、出荷後の改良要求の頻度は保守性の評価指標として適切です。",
+    "choiceExplanations": {
+      "ア": "成果物の量で割った誤り件数は、誤りの密度を示します。誤りが見つかった後の修正のしやすさや所要時間は分かりません。",
+      "イ": "修正時間の合計を修正件数で割ると、1件当たりの平均修正時間になります。この値で修正のしやすさを評価できます。",
+      "ウ": "移植先で変更が必要なコードの割合は、別の環境へ移す手間の目安です。この設問では移植性に対応する指標です。",
+      "エ": "出荷後の改良要求を月当たりで集計するので、要望の頻度は分かりますが、各変更の修正に要する工数や時間は分かりません。"
+    },
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +366,7 @@ export const PM_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "提示された契約条件と実コストに基づいてインセンティブフィーを計算します。実コスト（8,000万円）が目標コスト（9,000万円）を下回っているので、条件(3)が適用されます。目標コストと実コストの差額は 9,000万円 - 8,000万円 = 1,000万円です。この差額の70%は 1,000万円 × 0.7 = 700万円となります。したがって、受注者のインセンティブフィーは、目標コストで完成したときのフィー1,000万円にこの700万円を加えた 1,000万円 + 700万円 = 1,700万円となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +391,7 @@ export const PM_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "JIS Q 21500:2018におけるプロセス「コミュニケーションの計画」の目的は、プロジェクトのステークホルダーがどのような情報が必要で、どのようにコミュニケーションを取りたいのかという、情報およびコミュニケーションのニーズを明確にすることです。これにより、効果的なコミュニケーション活動の戦略を策定できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +416,7 @@ export const PM_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "カークパトリックモデルの4段階評価において、レベル2（Learning：学習）は、受講者が教育訓練を通じてどの程度知識やスキルを習得したかを測定する段階です。選択肢dの「理解度確認テストを実施し、テスト結果を受講者にフィードバックする」は、まさに受講者の学習度合いを評価する活動に該当するため、レベル2の測定として適切です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +441,7 @@ export const PM_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "SOA（サービス指向アーキテクチャ）の設計において、サービス間の関係を疎結合にすることは極めて重要です。疎結合にすることで、あるサービスの変更が他のサービスに与える影響が最小限に抑えられ、システム全体の柔軟性が向上します。これにより、業務の変化や技術の進化に対して、迅速かつ効率的にシステムを適応させることが可能になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +466,7 @@ export const PM_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ユースケース駆動開発では、利用者の視点からシステムが提供する機能（要件）をユースケースとして定義します。これにより、ひとまとまりの要件（ユースケース）を開発単位として、設計からテストまでを一貫して進めることが可能になります。その結果、個々の要件ごとに開発状況や進捗が明確に把握できるようになり、プロジェクト管理がしやすくなるという利点があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +491,7 @@ export const PM_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "データ管理者（DA）は、企業全体のデータ資源を俯瞰し、業務的な視点からデータの意味、構造、品質、標準化などを管理する役割を担います。システム開発の設計工程においては、業務要件に基づいた論理データベース設計を担当し、データ項目を定義・管理して標準化を進めることがDAの主要な役割となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +516,7 @@ export const PM_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "冷房負荷の「伝熱負荷」とは、外壁、屋根、床、窓などを通して、室内外の温度差によって熱が伝わることによる負荷を指します。選択肢エの「屋根や壁面の断熱をおろそかにしない」は、これらの部位からの熱の伝達を抑制するため、伝熱負荷を軽減する最も直接的かつ適切な対策となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +541,7 @@ export const PM_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "デザイン思考は、利用者の視点に立って問題を発見し、解決策を創造するアプローチです。スタンフォード大学d.schoolが提唱するデザイン思考のプロセスは、「共感」「問題定義」「アイデア発想」「プロトタイプ」「テスト」の5段階からなり、現場での観察や対話を通じて利用者への深い共感を起点とし、それらを反復的に繰り返しながら革新的な解決策を生み出すことを特徴とします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +566,7 @@ export const PM_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "日本の個人情報保護法は、「生存する個人に関する情報」を保護の対象としています。これは、死亡した個人の情報は原則として対象外であることを意味します。氏名、生年月日、その他の記述などによって特定の個人を識別できる情報が個人情報とされますが、その主体は「生存する個人」であることが要件です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +591,7 @@ export const PM_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "労働者派遣事業において、派遣労働者の雇用主は派遣元企業です。そのため、労働時間、休日、休暇といった具体的な労働条件は、雇用関係のある「派遣元と派遣労働者との間」で労働契約として設定されます。派遣先企業は、この派遣元と派遣労働者の間の契約で定められた範囲内で、派遣労働者に対して指揮命令を行うことになります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +616,7 @@ export const PM_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "リバースプロキシ型のシングルサインオン（SSO）では、リバースプロキシが利用者の認証を集中管理します。このリバースプロキシは、多様な認証方式をサポートできるため、パスワードによる認証だけでなく、より高いセキュリティが求められる場合にディジタル証明書（クライアント証明書）を用いた認証を利用することも可能です。これにより、認証の柔軟性とセキュリティを向上させることができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +641,7 @@ export const PM_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "CVSS (共通脆弱性評価システム) は、特定のベンダーに依存せず、脆弱性の深刻度を評価するためのオープンで汎用的な手法です。これにより、組織や製品の枠を超えて脆弱性リスクを共通の尺度で比較・理解することが可能となります。選択肢イはこのCVSSの重要な特徴を適切に説明しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +666,7 @@ export const PM_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ファジングは、ソフトウェアの入力部に対し、予期せぬ、異常な、またはランダムなデータを大量に送り込み、その挙動を観察することで脆弱性を発見する動的な検査手法です。これにより、異常な入力に対するソフトウェアの耐久性や潜在的なセキュリティ欠陥を効率的に特定できます。選択肢イがファジングのこの主要な特徴を正確に記述しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_pm_am2_qs.pdf",
     "license": "IPA-public"

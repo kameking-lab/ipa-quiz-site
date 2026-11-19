@@ -2,6 +2,7 @@ import { Preferences } from "@capacitor/preferences";
 import { PURCHASE_MESSAGES } from "@/lib/billing/purchase-messages";
 import { readNativePurchaseHold, recoverNativePurchase, releaseNativePurchase, type PurchaseReservation } from "./purchases";
 import type { AppStorePurchaseState } from "@/lib/billing/subscription/domain";
+import { safeQuizReturn } from "@/lib/billing/quiz-return";
 
 export interface PendingPurchase {
   state: "preparing" | "recheck" | "approval" | "completed" | "release";
@@ -9,6 +10,8 @@ export interface PendingPurchase {
   revision?: number;
   reservation?: PurchaseReservation;
   expiresAt?: string;
+  returnTo?: string;
+  returnUntil?: number;
 }
 type PendingApproval = { reservationId: string | null };
 export type PendingPurchaseStatus = "processing" | { approval: PendingApproval } | null;
@@ -45,7 +48,8 @@ function readCurrentMarker(raw: string): PendingPurchase | null {
   }
 }
 
-export async function reconcilePendingPurchase(userId: string, appStoreEntitled: boolean, expected?: PendingPurchase): Promise<PendingPurchaseStatus> {
+export async function reconcilePendingPurchase(userId: string, appStoreEntitled: boolean, expected?: PendingPurchase,
+  onReturn?: (target: string) => void): Promise<PendingPurchaseStatus> {
   const key = pendingKey(userId);
   const { value } = await Preferences.get({ key }).catch(() => ({ value: null }));
   const marker = value ? readCurrentMarker(value) : null;
@@ -73,8 +77,8 @@ export async function reconcilePendingPurchase(userId: string, appStoreEntitled:
     if (!appStoreEntitled) {
       const { managed, pending } = await readNativePurchaseHold(userId);
       if (pending) return pending;
-      // A successful group read supersedes an old local approval, even if the
-      // previous release response or the auxiliary marker lookup failed.
+      // A successful group read supersedes an expired local approval, even
+      // if the auxiliary marker lookup failed.
       if (managed && marker?.state === "approval" && marker.reservation) recoveryFailed = false;
       if (!managed && marker && !marker.reservation && marker.expiresAt) {
         // Legacy checkout can return no reservation. Preserve its local expiry.
@@ -87,7 +91,15 @@ export async function reconcilePendingPurchase(userId: string, appStoreEntitled:
     }
     if (value && !recoveryFailed) {
       if (expected && value !== JSON.stringify(expected)) return "processing";
-      if (!await replaceMarker(key, value, null) && (await Preferences.get({ key })).value) return "processing";
+      const cleared = await replaceMarker(key, value, null);
+      if (!cleared && (await Preferences.get({ key })).value) return "processing";
+      if (cleared && appStoreEntitled && marker && ["approval", "completed", "recheck"].includes(marker.state)) {
+        const now = Date.now();
+        if (typeof marker.returnUntil === "number" && marker.returnUntil > now && marker.returnUntil <= now + 86400_000) {
+          const target = safeQuizReturn(marker.returnTo);
+          if (target) onReturn?.(target);
+        }
+      }
     }
     return null;
   } catch {
@@ -111,6 +123,5 @@ export async function retryPendingApproval(userId: string, { reservationId }: Pe
   if (await checkDevice()) return "active";
   if ((await Preferences.get({ key })).value !== value) return;
   const state = await recover({ legacy: true });
-  if (state === null) await replaceMarker(key, value, null);
-  return state;
+  return state ?? "processing";
 }

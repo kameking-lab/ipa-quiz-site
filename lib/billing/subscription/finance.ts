@@ -1,5 +1,5 @@
 import "server-only";
-import type { Account, Realm } from "./domain";
+import { invoiceCashDue, type Account, type Realm } from "./domain";
 /** Separate version from one-time orders. Never exports customer identity, signup URLs, credentials or raw events. */
 export function projectMonthlyFinanceSnapshot(accounts: Account[], sourceInstance: string, realm: Realm, generatedAt: string) {
   if (!Number.isFinite(Date.parse(generatedAt))) throw new Error("Invalid snapshot timestamp");
@@ -8,10 +8,12 @@ export function projectMonthlyFinanceSnapshot(accounts: Account[], sourceInstanc
   for (const a of accounts) {
     if (a.mode !== realm || a.sourceInstance !== sourceInstance) throw new Error("Finance realm mismatch");
     const allocated = new Map<string, number>();
-    for (const i of Object.values(a.invoices).filter(i => i.paid)) {
+    for (const i of Object.values(a.invoices).filter(i => i.paid && !i.examWriteOff && !i.deferredBalance)) {
       if (seenInvoices.has(i.id)) throw new Error("Duplicate invoice"); seenInvoices.add(i.id);
       invoices.push({ invoiceId: i.id, subscriptionId: i.subscriptionId, periodStart: i.periodStart, periodEnd: i.periodEnd,
-        confirmedGrossJPY: i.amount, paymentAllocations: i.payments.map(p => ({ invoicePaymentId: p.id, paymentId: p.paymentId, amountJPY: p.amount })), paidAt: null });
+        confirmedGrossJPY: invoiceCashDue(i), paymentAllocations: i.payments.map(p => ({ invoicePaymentId: p.id, paymentId: p.paymentId, amountJPY: p.amount })), paidAt: null,
+        ...(i.deferredDebit ? { deferredDebitJPY: i.deferredDebit.amount } : {}),
+        ...(i.carryover ? { collectedDeferredDebitJPY: i.carryover.amount } : {}) });
       for (const p of i.payments) allocated.set(p.paymentId, (allocated.get(p.paymentId) ?? 0) + p.amount);
     }
     for (const p of Object.values(a.payments)) {

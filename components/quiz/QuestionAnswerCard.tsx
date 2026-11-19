@@ -131,7 +131,7 @@ function ScoredQuestionAnswerCard({
     setOrderedSelected(undefined);
     setRevealed(false);
     setCopilotRequest(null);
-  }, [questionId]);
+  }, [question, questionId]);
 
   const keys = React.useMemo(
     () => getChoiceKeys(choices),

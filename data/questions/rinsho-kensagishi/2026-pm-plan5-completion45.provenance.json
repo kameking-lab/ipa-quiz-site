@@ -1,0 +1,471 @@
+{
+  "jobId": "PLAN5-157",
+  "addedCount": 45,
+  "newCount": 41,
+  "reusedDraftCount": 4,
+  "unchangedLoadedCount": 54,
+  "officialScorableCount": 99,
+  "officialExcludedQuestionNumbers": [
+    28
+  ],
+  "reusedSource": {
+    "blob": "0467035c71f5bff742215b560ed20d2a6f717b30",
+    "locations": [
+      [
+        "2cd980e37c48d088a5d9a00168a7724e03173d32",
+        "data/questions/rinsho-kensagishi/private-medical-hold11-20261019.json"
+      ]
+    ],
+    "questionNumbers": [
+      3,
+      5,
+      31,
+      42
+    ],
+    "changes": "本文・全肢・公式正答を保持。選択肢の列表示を整理し、旧保留理由を解説の短い注記で解消。"
+  },
+  "sourceFiles": [
+    {
+      "file": "tp260424-07b_01.pdf",
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07b_01.pdf",
+      "sha256": "a4ef918d6e4acd77a97a0ffa2714f3f76397bac5464db5f931f0c3fff622ed0e",
+      "pages": 44
+    },
+    {
+      "file": "tp260424-07b_02.pdf",
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07b_02.pdf",
+      "sha256": "486afaaa28746bfdb16a5ce5db008557f23762fcaaf013ba8fca55beebd6e2de",
+      "pages": 24
+    },
+    {
+      "file": "tp260424-07seitou.pdf",
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "pages": 1
+    }
+  ],
+  "questions": [
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q3",
+      "page": 5,
+      "officialAnswerCells": [
+        "4"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q5",
+      "page": 6,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q31",
+      "page": 16,
+      "officialAnswerCells": [
+        "5"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q42",
+      "page": 19,
+      "officialAnswerCells": [
+        "5"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q60",
+      "page": 26,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q61",
+      "page": 26,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q62",
+      "page": 27,
+      "officialAnswerCells": [
+        "5"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q63",
+      "page": 27,
+      "officialAnswerCells": [
+        "13"
+      ],
+      "requiredSelections": 2
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q64",
+      "page": 28,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q65",
+      "page": 28,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q66",
+      "page": 29,
+      "officialAnswerCells": [
+        "1"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q67",
+      "page": 29,
+      "officialAnswerCells": [
+        "24"
+      ],
+      "requiredSelections": 2
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q68",
+      "page": 29,
+      "officialAnswerCells": [
+        "45"
+      ],
+      "requiredSelections": 2
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q69",
+      "page": 30,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q70",
+      "page": 30,
+      "officialAnswerCells": [
+        "5"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q71",
+      "page": 30,
+      "officialAnswerCells": [
+        "1"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q72",
+      "page": 31,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q73",
+      "page": 31,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q74",
+      "page": 31,
+      "officialAnswerCells": [
+        "35"
+      ],
+      "requiredSelections": 2
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q75",
+      "page": 32,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q76",
+      "page": 32,
+      "officialAnswerCells": [
+        "25"
+      ],
+      "requiredSelections": 2
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q77",
+      "page": 32,
+      "officialAnswerCells": [
+        "4"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q78",
+      "page": 33,
+      "officialAnswerCells": [
+        "1"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q79",
+      "page": 33,
+      "officialAnswerCells": [
+        "4"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q80",
+      "page": 33,
+      "officialAnswerCells": [
+        "1"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q81",
+      "page": 34,
+      "officialAnswerCells": [
+        "4"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q82",
+      "page": 34,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q83",
+      "page": 34,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q84",
+      "page": 35,
+      "officialAnswerCells": [
+        "1"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q85",
+      "page": 35,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q86",
+      "page": 35,
+      "officialAnswerCells": [
+        "35"
+      ],
+      "requiredSelections": 2
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q87",
+      "page": 36,
+      "officialAnswerCells": [
+        "1"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q88",
+      "page": 36,
+      "officialAnswerCells": [
+        "4"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q89",
+      "page": 36,
+      "officialAnswerCells": [
+        "4"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q90",
+      "page": 37,
+      "officialAnswerCells": [
+        "4"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q91",
+      "page": 37,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q92",
+      "page": 37,
+      "officialAnswerCells": [
+        "5"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q93",
+      "page": 38,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q94",
+      "page": 38,
+      "officialAnswerCells": [
+        "5"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q95",
+      "page": 38,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q96",
+      "page": 39,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q97",
+      "page": 39,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q98",
+      "page": 39,
+      "officialAnswerCells": [
+        "4"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q99",
+      "page": 40,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q100",
+      "page": 40,
+      "officialAnswerCells": [
+        "45"
+      ],
+      "requiredSelections": 2
+    }
+  ],
+  "assets": [
+    {
+      "file": "public/images/exams/rinsho-kensagishi/2026-pm-completion/q64-figure-13.webp",
+      "pdf": "tp260424-07b_02.pdf",
+      "page": 17,
+      "clip": [
+        85,
+        70,
+        470,
+        410
+      ],
+      "scale": 2,
+      "sha256": "7f4c665acfd1ddd14e7e58f630666086185724ade092242873f3b8c880d83182",
+      "width": 770,
+      "height": 680
+    },
+    {
+      "file": "public/images/exams/rinsho-kensagishi/2026-pm-completion/q65-figure-14.webp",
+      "pdf": "tp260424-07b_02.pdf",
+      "page": 18,
+      "clip": [
+        85,
+        70,
+        470,
+        350
+      ],
+      "scale": 2,
+      "sha256": "1bf38f79db3410b3bc6ce47a6b782aca47d0e14a0ec537a52b3041fc5ed3b4f8",
+      "width": 770,
+      "height": 560
+    },
+    {
+      "file": "public/images/exams/rinsho-kensagishi/2026-pm-completion/q83-figure-15.webp",
+      "pdf": "tp260424-07b_02.pdf",
+      "page": 19,
+      "clip": [
+        85,
+        70,
+        470,
+        410
+      ],
+      "scale": 2,
+      "sha256": "653851ca0d980dac2af71664c1813f8d1fd738a7d8bb5741a709cf37083f21e8",
+      "width": 770,
+      "height": 680
+    },
+    {
+      "file": "public/images/exams/rinsho-kensagishi/2026-pm-completion/q85-figure-16.webp",
+      "pdf": "tp260424-07b_02.pdf",
+      "page": 20,
+      "clip": [
+        85,
+        70,
+        470,
+        355
+      ],
+      "scale": 2,
+      "sha256": "796cfd96e9be6a705b42cb232cbcc6a32575b4d89fe9aad33a29047eb875f3df",
+      "width": 770,
+      "height": 570
+    }
+  ]
+}

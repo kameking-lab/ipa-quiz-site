@@ -1,0 +1,2889 @@
+[
+  {
+    "id": "dekyo-digital2-2025-round2-kiso-q1-1",
+    "exam": "dekyo-digital2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 1,
+    "part": "1",
+    "type": "multiple-choice",
+    "category": "直並列回路の電源電圧",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "直並列回路の電源電圧"
+    ],
+    "difficulty": 3,
+    "question": "第1問（ア）　直並列回路の電源電圧",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "1（ア）",
+    "explanation": "R2の電圧は2×6=12 V。並列のR3には12÷4=3 Aが流れ、R1の電圧降下は(2+3)×2=10 Vです。電池電圧は12+10=22 Vとなります。",
+    "choiceExplanations": {
+      "ア": "R2の電圧は2×6=12 V。並列のR3には12÷4=3 Aが流れ、R1の電圧降下は(2+3)×2=10 Vです。電池電圧は12+10=22 Vとなります。",
+      "イ": "R1にはR2とR3の電流の和5 Aが流れます。並列部の12 VにR1の10 Vを加えるため、24 Vにはなりません。",
+      "ウ": "R2とR3は並列で電圧が共通です。R3の電流3 Aを含めて計算すると、電源電圧は26 Vではなく22 Vです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-kiso-q1-1.png"
+    ],
+    "imageAltTexts": [
+      "電気通信技術の基礎・第1問（ア）の公式問題と解答群。直並列回路の電源電圧に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": true
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-kiso-q1-2",
+    "exam": "dekyo-digital2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 1,
+    "part": "2",
+    "type": "multiple-choice",
+    "category": "LC直列回路の電流",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "LC直列回路の電流"
+    ],
+    "difficulty": 3,
+    "question": "第1問（イ）　LC直列回路の電流",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "1（イ）",
+    "explanation": "コイルとコンデンサのリアクタンスは逆符号です。合成リアクタンスの大きさは|12−3|=9 Ωなので、電流は45÷9=5 Aです。",
+    "choiceExplanations": {
+      "ア": "直列LC回路ではリアクタンスを単純に加えません。12 Ωと3 Ωの差を使うため、45÷15=3 Aではありません。",
+      "イ": "コイルとコンデンサのリアクタンスは逆符号です。合成リアクタンスの大きさは|12−3|=9 Ωなので、電流は45÷9=5 Aです。",
+      "ウ": "合成リアクタンスは9 Ωですが、これは電流の値ではありません。電圧45 Vを9 Ωで割ると5 Aになります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-kiso-q1-2.png"
+    ],
+    "imageAltTexts": [
+      "電気通信技術の基礎・第1問（イ）の公式問題と解答群。LC直列回路の電流に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": true
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-kiso-q1-3",
+    "exam": "dekyo-digital2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 1,
+    "part": "3",
+    "type": "multiple-choice",
+    "category": "静電容量の定義",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "静電容量の定義"
+    ],
+    "difficulty": 3,
+    "question": "第1問（ウ）　静電容量の定義",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "officialQuestionLabel": "1（ウ）",
+    "explanation": "静電容量Cは、蓄えられる電気量Qと端子間電圧Vとの比Q/Vです。単位もクーロン毎ボルトがファラドに対応します。",
+    "choiceExplanations": {
+      "ア": "静電容量は電気量を静電力で割る量ではありません。端子間電圧との比で定義されます。",
+      "イ": "電気量と電荷は同種の量であり、その比は静電容量になりません。C=Q/Vの分母を確認します。",
+      "ウ": "静電容量Cは、蓄えられる電気量Qと端子間電圧Vとの比Q/Vです。単位もクーロン毎ボルトがファラドに対応します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-kiso-q1-3.png"
+    ],
+    "imageAltTexts": [
+      "電気通信技術の基礎・第1問（ウ）の公式問題と解答群。静電容量の定義に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-kiso-q1-4",
+    "exam": "dekyo-digital2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 1,
+    "part": "4",
+    "type": "multiple-choice",
+    "category": "RL直列回路の位相",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "RL直列回路の位相"
+    ],
+    "difficulty": 3,
+    "question": "第1問（エ）　RL直列回路の位相",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "officialQuestionLabel": "1（エ）",
+    "explanation": "コイルでは電流が電圧より遅れます。抵抗とコイルの直列回路でも誘導性となるため、回路電流は印加電圧に対して位相が遅れます。",
+    "choiceExplanations": {
+      "ア": "電流の位相が進むのは容量性の回路の特徴です。コイルを含むこの回路では電流が遅れます。",
+      "イ": "抵抗だけなら電圧と電流は同相ですが、コイルの誘導性リアクタンスがあるので同相にはなりません。",
+      "ウ": "コイルでは電流が電圧より遅れます。抵抗とコイルの直列回路でも誘導性となるため、回路電流は印加電圧に対して位相が遅れます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-kiso-q1-4.png"
+    ],
+    "imageAltTexts": [
+      "電気通信技術の基礎・第1問（エ）の公式問題と解答群。RL直列回路の位相に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-kiso-q2-1",
+    "exam": "dekyo-digital2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 2,
+    "part": "1",
+    "type": "multiple-choice",
+    "category": "n形半導体",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "n形半導体"
+    ],
+    "difficulty": 3,
+    "question": "第2問（ア）　n形半導体",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "2（ア）",
+    "explanation": "n形半導体の多数キャリアは自由電子です。少数キャリアである正孔より自由電子が多いので、この記述が正しいと判断できます。",
+    "choiceExplanations": {
+      "ア": "n形半導体の多数キャリアは自由電子です。少数キャリアである正孔より自由電子が多いので、この記述が正しいと判断できます。",
+      "イ": "正孔が自由電子より多いのはp形半導体の特徴です。n形では自由電子が多数キャリアです。",
+      "ウ": "自由電子と正孔が同数という説明は、n形半導体の多数キャリアと少数キャリアの関係に一致しません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-kiso-q2-1.png"
+    ],
+    "imageAltTexts": [
+      "電気通信技術の基礎・第2問（ア）の公式問題と解答群。n形半導体に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-kiso-q2-2",
+    "exam": "dekyo-digital2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 2,
+    "part": "2",
+    "type": "multiple-choice",
+    "category": "ダイオードのリミッタ回路",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "ダイオードのリミッタ回路"
+    ],
+    "difficulty": 3,
+    "question": "第2問（イ）　ダイオードのリミッタ回路",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3",
+      "エ": "解答群の4"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "officialQuestionLabel": "2（イ）",
+    "explanation": "入力が−Eを下回るとダイオードが導通し、出力を−Eで制限します。それ以外は入力に追従するため、正側の山が残る③の波形です。",
+    "choiceExplanations": {
+      "ア": "この波形は正側だけを残して下限を+Eとしています。図のダイオードと電池の向きでは、制限されるのは負側の−Eです。",
+      "イ": "負側だけを通す波形ではありません。入力が−E以上の間はダイオードが遮断され、正側の入力も出力に現れます。",
+      "ウ": "入力が−Eを下回るとダイオードが導通し、出力を−Eで制限します。それ以外は入力に追従するため、正側の山が残る③の波形です。",
+      "エ": "正側と負側の両方を制限する波形です。この回路にある一つのダイオードは、負側の−Eを下限として働きます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-kiso-q2-2.png"
+    ],
+    "imageAltTexts": [
+      "電気通信技術の基礎・第2問（イ）の公式問題と解答群。ダイオードのリミッタ回路に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-kiso-q2-3",
+    "exam": "dekyo-digital2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 2,
+    "part": "3",
+    "type": "multiple-choice",
+    "category": "トランジスタの接地方式",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "トランジスタの接地方式"
+    ],
+    "difficulty": 3,
+    "question": "第2問（ウ）　トランジスタの接地方式",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "2（ウ）",
+    "explanation": "エミッタ接地は電流増幅と電圧増幅の両方が得られます。三つの基本接地方式の中で電力増幅作用が最も大きい方式として選びます。",
+    "choiceExplanations": {
+      "ア": "エミッタ接地は電流増幅と電圧増幅の両方が得られます。三つの基本接地方式の中で電力増幅作用が最も大きい方式として選びます。",
+      "イ": "コレクタ接地は電圧増幅率がほぼ1のエミッタフォロワです。最大の電力増幅を問う本問の答えではありません。",
+      "ウ": "ベース接地の電流増幅率は1未満です。電流と電圧の双方を増幅するエミッタ接地と区別します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-kiso-q2-3.png"
+    ],
+    "imageAltTexts": [
+      "電気通信技術の基礎・第2問（ウ）の公式問題と解答群。トランジスタの接地方式に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-kiso-q2-4",
+    "exam": "dekyo-digital2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 2,
+    "part": "4",
+    "type": "multiple-choice",
+    "category": "不揮発性メモリ",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "不揮発性メモリ"
+    ],
+    "difficulty": 3,
+    "question": "第2問（エ）　不揮発性メモリ",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "2（エ）",
+    "explanation": "PROMはユーザ側でデータを書き込めるROMです。電源を切っても内容が残る不揮発性と、ユーザによる書込みという二つの条件を満たします。",
+    "choiceExplanations": {
+      "ア": "RAMは通常、電源を切ると記憶内容を失います。不揮発性でユーザが書き込むという条件に当たりません。",
+      "イ": "PROMはユーザ側でデータを書き込めるROMです。電源を切っても内容が残る不揮発性と、ユーザによる書込みという二つの条件を満たします。",
+      "ウ": "マスクROMは製造時に内容を固定します。ユーザ側でデータを書き込むという条件に一致しません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-kiso-q2-4.png"
+    ],
+    "imageAltTexts": [
+      "電気通信技術の基礎・第2問（エ）の公式問題と解答群。不揮発性メモリに関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-kiso-q2-5",
+    "exam": "dekyo-digital2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 2,
+    "part": "5",
+    "type": "multiple-choice",
+    "category": "ベース接地の電流増幅率",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "ベース接地の電流増幅率"
+    ],
+    "difficulty": 3,
+    "question": "第2問（オ）　ベース接地の電流増幅率",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "2（オ）",
+    "explanation": "ベース接地の電流増幅率はα=ΔIC/ΔIEです。同じmA単位で1.96÷2=0.98となり、1より少し小さい値になります。",
+    "choiceExplanations": {
+      "ア": "0.04は与えられた電流の差です。電流増幅率はコレクタ電流の変化をエミッタ電流の変化で割って求めます。",
+      "イ": "ベース接地の電流増幅率はα=ΔIC/ΔIEです。同じmA単位で1.96÷2=0.98となり、1より少し小さい値になります。",
+      "ウ": "49は1.96÷(2−1.96)で得られる値です。これはベース電流の変化を分母にする計算で、ベース接地のαとは異なります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-kiso-q2-5.png"
+    ],
+    "imageAltTexts": [
+      "電気通信技術の基礎・第2問（オ）の公式問題と解答群。ベース接地の電流増幅率に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": true
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-kiso-q3-1",
+    "exam": "dekyo-digital2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 3,
+    "part": "1",
+    "type": "multiple-choice",
+    "category": "ベン図と論理和・論理積",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "ベン図と論理和・論理積"
+    ],
+    "difficulty": 3,
+    "question": "第3問（ア）　ベン図と論理和・論理積",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "officialQuestionLabel": "3（ア）",
+    "explanation": "A+CはA又はCに含まれる領域です。その領域とBとの共通部分には中央の三重の重なりも含まれるので、斜線が一致するのは図3です。",
+    "choiceExplanations": {
+      "ア": "図1はBのうちAにもCにも含まれない部分です。(A+C)・Bが表す重なり部分と逆になります。",
+      "イ": "図2では三つの集合に共通する中央部分が除かれています。論理式(A+C)・Bでは中央部分も含めます。",
+      "ウ": "A+CはA又はCに含まれる領域です。その領域とBとの共通部分には中央の三重の重なりも含まれるので、斜線が一致するのは図3です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-kiso-q3-1.png"
+    ],
+    "imageAltTexts": [
+      "電気通信技術の基礎・第3問（ア）の公式問題と解答群。ベン図と論理和・論理積に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-kiso-q3-2",
+    "exam": "dekyo-digital2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 3,
+    "part": "2",
+    "type": "multiple-choice",
+    "category": "2進数の論理和",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "2進数の論理和"
+    ],
+    "difficulty": 3,
+    "question": "第3問（イ）　2進数の論理和",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "3（イ）",
+    "explanation": "110001100と101010101の各桁のORは111011101です。256+128+64+16+8+4+1=477なので、答えは477です。",
+    "choiceExplanations": {
+      "ア": "260は各桁の論理和を10進数化した値ではありません。片方でも1の桁を1にしてから変換します。",
+      "イ": "110001100と101010101の各桁のORは111011101です。256+128+64+16+8+4+1=477なので、答えは477です。",
+      "ウ": "737は二つの2進数を10進数化して加えた値です。本問は算術加算ではなく各ビットの論理和を求めます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-kiso-q3-2.png"
+    ],
+    "imageAltTexts": [
+      "電気通信技術の基礎・第3問（イ）の公式問題と解答群。2進数の論理和に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": true
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-kiso-q3-3",
+    "exam": "dekyo-digital2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 3,
+    "part": "3",
+    "type": "multiple-choice",
+    "category": "論理回路とタイムチャート",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "論理回路とタイムチャート"
+    ],
+    "difficulty": 3,
+    "question": "第3問（ウ）　論理回路とタイムチャート",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3",
+      "エ": "解答群の4"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "3（ウ）",
+    "explanation": "MをNANDとすると、上側の否定論理積と下側の否定論理和をさらに否定するので、最終出力はa+bになります。図5のORの波形に一致します。",
+    "choiceExplanations": {
+      "ア": "MをNANDとすると、上側の否定論理積と下側の否定論理和をさらに否定するので、最終出力はa+bになります。図5のORの波形に一致します。",
+      "イ": "ANDでは、a=b=0のときMの二つの入力がともに1となって出力が1です。図5の開始時の0と一致しません。",
+      "ウ": "NORでは、a=0、b=1のとき出力が0となります。図5ではこの区間の出力は1です。",
+      "エ": "ORでは、a=b=0のときMへの二つの入力が1なので、出力が1になります。図5の出力条件と一致しません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-kiso-q3-3.png"
+    ],
+    "imageAltTexts": [
+      "電気通信技術の基礎・第3問（ウ）の公式問題と解答群。論理回路とタイムチャートに関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-kiso-q3-4",
+    "exam": "dekyo-digital2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 3,
+    "part": "4",
+    "type": "multiple-choice",
+    "category": "否定を含むブール代数",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "否定を含むブール代数"
+    ],
+    "difficulty": 3,
+    "question": "第3問（エ）　否定を含むブール代数",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "3（エ）",
+    "explanation": "第1項はAの否定・B・Cに整理できます。第2項はCとCの否定の積を含むため0となり、残る式は②です。原図で括弧全体と各文字に付く否定線を区別します。",
+    "choiceExplanations": {
+      "ア": "第1項はド・モルガンの法則でAの否定・B・Cとなり、A=0、B=C=1なら1です。常に0にはならず、否定線が付く範囲を原図で確認します。",
+      "イ": "第1項はAの否定・B・Cに整理できます。第2項はCとCの否定の積を含むため0となり、残る式は②です。原図で括弧全体と各文字に付く否定線を区別します。",
+      "ウ": "③にはCの値によらず成立する項が含まれますが、与式の第2項はCとCの否定の積で0です。第1項だけを残す②に一致します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-kiso-q3-4.png"
+    ],
+    "imageAltTexts": [
+      "電気通信技術の基礎・第3問（エ）の公式問題と解答群。否定を含むブール代数に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-kiso-q4-1",
+    "exam": "dekyo-digital2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 4,
+    "part": "1",
+    "type": "multiple-choice",
+    "category": "伝送損失と増幅器利得",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "伝送損失と増幅器利得"
+    ],
+    "difficulty": 3,
+    "question": "第4問（ア）　伝送損失と増幅器利得",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "4（ア）",
+    "explanation": "回線損失は25+15=40 dBです。出力電力が入力の1/10なので全体では−10 dBとなり、G−40=−10から増幅器利得Gは30 dBです。",
+    "choiceExplanations": {
+      "ア": "回線損失は25+15=40 dBです。出力電力が入力の1/10なので全体では−10 dBとなり、G−40=−10から増幅器利得Gは30 dBです。",
+      "イ": "40 dBは回線だけの損失です。入力28 mWに対して出力2.8 mWと10 dB低下しているため、損失の全量を補償していません。",
+      "ウ": "50 dBなら回線の40 dBを差し引いて全体が+10 dBとなります。本問の出力は入力の1/10なので逆です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-kiso-q4-1.png"
+    ],
+    "imageAltTexts": [
+      "電気通信技術の基礎・第4問（ア）の公式問題と解答群。伝送損失と増幅器利得に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": true
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-kiso-q4-2",
+    "exam": "dekyo-digital2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 4,
+    "part": "2",
+    "type": "multiple-choice",
+    "category": "静電誘導",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "静電誘導"
+    ],
+    "difficulty": 3,
+    "question": "第4問（イ）　静電誘導",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "4（イ）",
+    "explanation": "電力線の電圧により、電力線と通信線間の静電容量を介して生じるのが静電誘導です。設問の電力線電圧に比例するという条件に対応します。",
+    "choiceExplanations": {
+      "ア": "放電電圧は、この電力線と通信線の誘導現象の名称ではありません。電圧に比例する誘導を選びます。",
+      "イ": "電力線の電圧により、電力線と通信線間の静電容量を介して生じるのが静電誘導です。設問の電力線電圧に比例するという条件に対応します。",
+      "ウ": "電磁誘導は電力線の電流による磁束の変化に関係します。電力線電圧に比例する静電誘導と区別します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-kiso-q4-2.png"
+    ],
+    "imageAltTexts": [
+      "電気通信技術の基礎・第4問（イ）の公式問題と解答群。静電誘導に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-kiso-q4-3",
+    "exam": "dekyo-digital2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 4,
+    "part": "3",
+    "type": "multiple-choice",
+    "category": "無限長線路の入力インピーダンス",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "無限長線路の入力インピーダンス"
+    ],
+    "difficulty": 3,
+    "question": "第4問（ウ）　無限長線路の入力インピーダンス",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "officialQuestionLabel": "4（ウ）",
+    "explanation": "一様な無限長線路を入力から見たインピーダンスが特性インピーダンスです。終端からの反射が戻らない条件なので、両者は等しくなります。",
+    "choiceExplanations": {
+      "ア": "無限長一様線路の入力インピーダンスは特性インピーダンスの半分にはなりません。終端からの反射を考えない値です。",
+      "イ": "特性インピーダンスの2倍になるのではありません。無限長線路では入力インピーダンスそのものが特性インピーダンスです。",
+      "ウ": "一様な無限長線路を入力から見たインピーダンスが特性インピーダンスです。終端からの反射が戻らない条件なので、両者は等しくなります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-kiso-q4-3.png"
+    ],
+    "imageAltTexts": [
+      "電気通信技術の基礎・第4問（ウ）の公式問題と解答群。無限長線路の入力インピーダンスに関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-kiso-q4-4",
+    "exam": "dekyo-digital2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 4,
+    "part": "4",
+    "type": "multiple-choice",
+    "category": "dBmと電力",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "dBmと電力"
+    ],
+    "difficulty": 3,
+    "question": "第4問（エ）　dBmと電力",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "4（エ）",
+    "explanation": "dBmは1 mWを基準に10log10(P/1 mW)で表します。10 dBmは基準の10倍の電力なので、P=10 mWです。",
+    "choiceExplanations": {
+      "ア": "1 mWはdBmの基準電力で0 dBmです。10 dBmに対応する値ではありません。",
+      "イ": "dBmは1 mWを基準に10log10(P/1 mW)で表します。10 dBmは基準の10倍の電力なので、P=10 mWです。",
+      "ウ": "100 mWなら基準の100倍なので20 dBmです。10 dBmは10 mWに対応します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-kiso-q4-4.png"
+    ],
+    "imageAltTexts": [
+      "電気通信技術の基礎・第4問（エ）の公式問題と解答群。dBmと電力に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": true
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-kiso-q5-1",
+    "exam": "dekyo-digital2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 5,
+    "part": "1",
+    "type": "multiple-choice",
+    "category": "デジタル変調方式",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "デジタル変調方式"
+    ],
+    "difficulty": 3,
+    "question": "第5問（ア）　デジタル変調方式",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "5（ア）",
+    "explanation": "FSKは周波数偏移変調です。デジタル信号の1と0を搬送波の異なる周波数に対応させる方式なので、空欄に当てはまります。",
+    "choiceExplanations": {
+      "ア": "FSKは周波数偏移変調です。デジタル信号の1と0を搬送波の異なる周波数に対応させる方式なので、空欄に当てはまります。",
+      "イ": "ASKは振幅を変化させる方式です。周波数を変化させるという条件には対応しません。",
+      "ウ": "PSKは位相を変化させる方式です。搬送波の周波数を切り替えるFSKと区別します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-kiso-q5-1.png"
+    ],
+    "imageAltTexts": [
+      "電気通信技術の基礎・第5問（ア）の公式問題と解答群。デジタル変調方式に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-kiso-q5-2",
+    "exam": "dekyo-digital2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 5,
+    "part": "2",
+    "type": "multiple-choice",
+    "category": "PCMの伝送ビットレート",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "PCMの伝送ビットレート"
+    ],
+    "difficulty": 3,
+    "question": "第5問（イ）　PCMの伝送ビットレート",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "5（イ）",
+    "explanation": "1秒当たり8000標本に対し、1標本が7 bitです。8000×7=56000 bit/sとなるため、56 kbit/sで伝送できます。",
+    "choiceExplanations": {
+      "ア": "32 kbit/sは帯域幅4 kHzと別のビット数から得られる値です。本問では標本化周波数8 kHzを使います。",
+      "イ": "1秒当たり8000標本に対し、1標本が7 bitです。8000×7=56000 bit/sとなるため、56 kbit/sで伝送できます。",
+      "ウ": "64 kbit/sは8000標本に8 bitを割り当てた場合です。本問は1標本7 bitなので56 kbit/sです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-kiso-q5-2.png"
+    ],
+    "imageAltTexts": [
+      "電気通信技術の基礎・第5問（イ）の公式問題と解答群。PCMの伝送ビットレートに関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-kiso-q5-3",
+    "exam": "dekyo-digital2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 5,
+    "part": "3",
+    "type": "multiple-choice",
+    "category": "ビット誤り率",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "ビット誤り率"
+    ],
+    "difficulty": 3,
+    "question": "第5問（ウ）　ビット誤り率",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "5（ウ）",
+    "explanation": "BERはビット誤り率で、誤受信したビット数を伝送した総ビット数で割ったものです。設問の分子と分母がそのまま定義に対応します。",
+    "choiceExplanations": {
+      "ア": "%EFSは誤りのない秒の割合を表す指標です。誤ったビット数を総ビット数で割る尺度ではありません。",
+      "イ": "BERはビット誤り率で、誤受信したビット数を伝送した総ビット数で割ったものです。設問の分子と分母がそのまま定義に対応します。",
+      "ウ": "MOSは人の主観評価を平均した評点です。ビット数に基づいて算出するBERとは異なります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-kiso-q5-3.png"
+    ],
+    "imageAltTexts": [
+      "電気通信技術の基礎・第5問（ウ）の公式問題と解答群。ビット誤り率に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-kiso-q5-4",
+    "exam": "dekyo-digital2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 5,
+    "part": "4",
+    "type": "multiple-choice",
+    "category": "光受信器の雑音",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "光受信器の雑音"
+    ],
+    "difficulty": 3,
+    "question": "第5問（エ）　光受信器の雑音",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "5（エ）",
+    "explanation": "ショット雑音は、受光で生じる電荷の不規則な移動に起因します。電子の不規則な放出による受光電流の揺らぎという説明に一致します。",
+    "choiceExplanations": {
+      "ア": "ショット雑音は、受光で生じる電荷の不規則な移動に起因します。電子の不規則な放出による受光電流の揺らぎという説明に一致します。",
+      "イ": "熱雑音は熱運動に起因する雑音です。受光時の電子放出が不規則であるという設問の原因とは異なります。",
+      "ウ": "過負荷は受信器への入力が大きすぎる場合の問題です。不規則な受光電流の揺らぎの名称ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-kiso-q5-4.png"
+    ],
+    "imageAltTexts": [
+      "電気通信技術の基礎・第5問（エ）の公式問題と解答群。光受信器の雑音に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-kiso-q5-5",
+    "exam": "dekyo-digital2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 5,
+    "part": "5",
+    "type": "multiple-choice",
+    "category": "光源のスペクトル幅と分散",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "光源のスペクトル幅と分散"
+    ],
+    "difficulty": 3,
+    "question": "第5問（オ）　光源のスペクトル幅と分散",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "officialQuestionLabel": "5（オ）",
+    "explanation": "波長分散では波長ごとの伝搬速度差により光パルスが広がります。スペクトル幅の狭いレーザダイオードなら、LEDよりこの影響を抑えられます。",
+    "choiceExplanations": {
+      "ア": "モード分散は異なる伝搬モードの到着時間差によります。光源の波長スペクトル幅を狭くする効果と区別します。",
+      "イ": "レイリー散乱は光の散乱による損失です。設問は異なる波長の伝搬速度差による波形の広がりを問います。",
+      "ウ": "波長分散では波長ごとの伝搬速度差により光パルスが広がります。スペクトル幅の狭いレーザダイオードなら、LEDよりこの影響を抑えられます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-kiso-q5-5.png"
+    ],
+    "imageAltTexts": [
+      "電気通信技術の基礎・第5問（オ）の公式問題と解答群。光源のスペクトル幅と分散に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-riron-q1-1",
+    "exam": "dekyo-digital2",
+    "session": "riron",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 1,
+    "part": "1",
+    "type": "multiple-choice",
+    "category": "GE-PONのOLT",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "GE-PONのOLT"
+    ],
+    "difficulty": 3,
+    "question": "第1問（ア）　GE-PONのOLT",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "1（ア）",
+    "explanation": "GE-PONの上りの衝突はONUごとの送信時間を制御して防ぎます。各ONUに異なる波長を割り当てるという記述が誤りなので、この肢を選びます。",
+    "choiceExplanations": {
+      "ア": "GE-PONの上りの衝突はONUごとの送信時間を制御して防ぎます。各ONUに異なる波長を割り当てるという記述が誤りなので、この肢を選びます。",
+      "イ": "接続されたONUを発見して通信リンクを確立する機能の説明は適切です。上り制御を波長割当てとする①が誤りです。",
+      "ウ": "下りフレームのプリアンブルにONUの識別子を用いる説明は適切です。各ONUは自分宛てのフレームを識別します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-riron-q1-1.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続のための技術及び理論・第1問（ア）の公式問題と解答群。GE-PONのOLTに関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-riron-q1-2",
+    "exam": "dekyo-digital2",
+    "session": "riron",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 1,
+    "part": "2",
+    "type": "multiple-choice",
+    "category": "Bluetooth Class2",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "Bluetooth Class2"
+    ],
+    "difficulty": 3,
+    "question": "第1問（イ）　Bluetooth Class2",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "1（イ）",
+    "explanation": "設問が前提とするBluetooth Class2の最大通信距離の目安は約10 mです。実際の到達距離ではなく、クラスに対応する値を選ぶ問題です。",
+    "choiceExplanations": {
+      "ア": "本問で問うBluetooth Class2の距離目安は1 mではありません。クラスごとの出力と距離の目安を区別します。",
+      "イ": "設問が前提とするBluetooth Class2の最大通信距離の目安は約10 mです。実際の到達距離ではなく、クラスに対応する値を選ぶ問題です。",
+      "ウ": "100 mはこの問題のClass2の距離目安ではありません。Class2に対応する約10 mを選びます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-riron-q1-2.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続のための技術及び理論・第1問（イ）の公式問題と解答群。Bluetooth Class2に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-riron-q1-3",
+    "exam": "dekyo-digital2",
+    "session": "riron",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 1,
+    "part": "3",
+    "type": "multiple-choice",
+    "category": "SIPの標準化",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "SIPの標準化"
+    ],
+    "difficulty": 3,
+    "question": "第1問（ウ）　SIPの標準化",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "officialQuestionLabel": "1（ウ）",
+    "explanation": "SIPはRFC3261で規定される呼制御プロトコルです。セッションの開始や終了などの制御を扱い、設問のIPv4・IPv6での動作条件にも対応します。",
+    "choiceExplanations": {
+      "ア": "ICMPはIPの制御・エラー通知を扱うプロトコルです。RFC3261の呼制御プロトコルではありません。",
+      "イ": "H.323はITU-Tによる標準です。IETFのRFC3261という条件に当てはまるのはSIPです。",
+      "ウ": "SIPはRFC3261で規定される呼制御プロトコルです。セッションの開始や終了などの制御を扱い、設問のIPv4・IPv6での動作条件にも対応します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-riron-q1-3.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続のための技術及び理論・第1問（ウ）の公式問題と解答群。SIPの標準化に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-riron-q1-4",
+    "exam": "dekyo-digital2",
+    "session": "riron",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 1,
+    "part": "4",
+    "type": "multiple-choice",
+    "category": "IEEE802.11acの周波数帯",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "IEEE802.11acの周波数帯"
+    ],
+    "difficulty": 3,
+    "question": "第1問（エ）　IEEE802.11acの周波数帯",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "1（エ）",
+    "explanation": "IEEE802.11acで定められた方式は5 GHz帯を用います。802.11nなどと帯域を混同せず、規格と対応する周波数帯を組にして選びます。",
+    "choiceExplanations": {
+      "ア": "802.11acは2.4 GHz帯のみの方式ではありません。設問の規格に対応する帯域は5 GHz帯です。",
+      "イ": "IEEE802.11acで定められた方式は5 GHz帯を用います。802.11nなどと帯域を混同せず、規格と対応する周波数帯を組にして選びます。",
+      "ウ": "2.4 GHz帯と5 GHz帯の両方を用いるという説明は、802.11acの規格そのものの帯域条件に一致しません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-riron-q1-4.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続のための技術及び理論・第1問（エ）の公式問題と解答群。IEEE802.11acの周波数帯に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-riron-q1-5",
+    "exam": "dekyo-digital2",
+    "session": "riron",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 1,
+    "part": "5",
+    "type": "multiple-choice",
+    "category": "PoEの給電",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "PoEの給電"
+    ],
+    "difficulty": 3,
+    "question": "第1問（オ）　PoEの給電",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "1（オ）",
+    "explanation": "802.3atのPoEは、1000BASE-Tで通信に用いる配線でも2対4心を使って給電できます。信号に重ねて直流電力を供給できるため、①が正しい説明です。",
+    "choiceExplanations": {
+      "ア": "802.3atのPoEは、1000BASE-Tで通信に用いる配線でも2対4心を使って給電できます。信号に重ねて直流電力を供給できるため、①が正しい説明です。",
+      "イ": "100BASE-TXの空き対を利用する方式をオルタナティブAとする点が誤りです。信号対を使うAと空き対を使うBを区別します。",
+      "ウ": "PSEは接続機器がPoEに対応しているか検知して給電します。非対応機器を含めて無条件に給電するわけではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-riron-q1-5.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続のための技術及び理論・第1問（オ）の公式問題と解答群。PoEの給電に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-riron-q2-1",
+    "exam": "dekyo-digital2",
+    "session": "riron",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 2,
+    "part": "1",
+    "type": "multiple-choice",
+    "category": "HDLCのフラグとビット透過性",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "HDLCのフラグとビット透過性"
+    ],
+    "difficulty": 3,
+    "question": "第2問（ア）　HDLCのフラグとビット透過性",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3",
+      "エ": "解答群の4"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "officialQuestionLabel": "2（ア）",
+    "explanation": "HDLCのフラグは01111110です。データ中で1が5個続いた後に挿入された0は受信時に取り除くため、AもBも正しい組合せです。",
+    "choiceExplanations": {
+      "ア": "AだけでなくBも正しい説明です。フラグのビット列と、連続する1の後に挿入した0を取り除く操作を合わせて確認します。",
+      "イ": "BだけでなくAも正しい説明です。開始フラグは01111110で、データ部分では0の挿入・除去によりフラグとの混同を防ぎます。",
+      "ウ": "HDLCのフラグは01111110です。データ中で1が5個続いた後に挿入された0は受信時に取り除くため、AもBも正しい組合せです。",
+      "エ": "Aのフラグ列とBの0除去はいずれも適切です。両方誤りという組合せではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-riron-q2-1.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続のための技術及び理論・第2問（ア）の公式問題と解答群。HDLCのフラグとビット透過性に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-riron-q2-2",
+    "exam": "dekyo-digital2",
+    "session": "riron",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 2,
+    "part": "2",
+    "type": "multiple-choice",
+    "category": "VDSLの利用配線",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "VDSLの利用配線"
+    ],
+    "difficulty": 3,
+    "question": "第2問（イ）　VDSLの利用配線",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "2（イ）",
+    "explanation": "集合住宅のVDSL方式は、建物までの光配線と各戸までの既設電話用配線を組み合わせます。MDF室から住戸の区間の媒体は電話用配線です。",
+    "choiceExplanations": {
+      "ア": "集合住宅のVDSL方式は、建物までの光配線と各戸までの既設電話用配線を組み合わせます。MDF室から住戸の区間の媒体は電話用配線です。",
+      "イ": "VDSLで使うのは電話用のメタリック配線です。電力を供給する電気配線を使う方式とは異なります。",
+      "ウ": "映像配信用ケーブルは本問のVDSLの媒体ではありません。MDF室から各戸までは既設の電話用配線を使います。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-riron-q2-2.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続のための技術及び理論・第2問（イ）の公式問題と解答群。VDSLの利用配線に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-riron-q2-3",
+    "exam": "dekyo-digital2",
+    "session": "riron",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 2,
+    "part": "3",
+    "type": "multiple-choice",
+    "category": "HFCの伝送媒体",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "HFCの伝送媒体"
+    ],
+    "difficulty": 3,
+    "question": "第2問（ウ）　HFCの伝送媒体",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "2（ウ）",
+    "explanation": "HFCはHybrid Fiber Coaxialの略で、光ファイバケーブルと同軸ケーブルを組み合わせます。CATVの幹線と加入者側で異なる媒体を使う構成です。",
+    "choiceExplanations": {
+      "ア": "HFCは光ファイバと加入者無線の組合せではありません。光と同軸を組み合わせる構成です。",
+      "イ": "HFCはHybrid Fiber Coaxialの略で、光ファイバケーブルと同軸ケーブルを組み合わせます。CATVの幹線と加入者側で異なる媒体を使う構成です。",
+      "ウ": "平衡対メタリックケーブルとの組合せはHFCの説明ではありません。Coaxialが示す同軸ケーブルを選びます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-riron-q2-3.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続のための技術及び理論・第2問（ウ）の公式問題と解答群。HFCの伝送媒体に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-riron-q2-4",
+    "exam": "dekyo-digital2",
+    "session": "riron",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 2,
+    "part": "4",
+    "type": "multiple-choice",
+    "category": "OSIデータリンク層",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "OSIデータリンク層"
+    ],
+    "difficulty": 3,
+    "question": "第2問（エ）　OSIデータリンク層",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "2（エ）",
+    "explanation": "データリンク層は、フレームを構成して通信媒体上でデータ伝送を行う仕組みを扱います。フレーム単位の伝送という説明が第2層に対応します。",
+    "choiceExplanations": {
+      "ア": "経路選択やネットワーク間の中継はネットワーク層の役割です。第2層のデータリンク層とは異なります。",
+      "イ": "データリンク層は、フレームを構成して通信媒体上でデータ伝送を行う仕組みを扱います。フレーム単位の伝送という説明が第2層に対応します。",
+      "ウ": "信号レベルやコネクタ形状などの条件は物理層の役割です。データリンク層ではフレーム構成などを扱います。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-riron-q2-4.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続のための技術及び理論・第2問（エ）の公式問題と解答群。OSIデータリンク層に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-riron-q2-5",
+    "exam": "dekyo-digital2",
+    "session": "riron",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 2,
+    "part": "5",
+    "type": "multiple-choice",
+    "category": "IPv6アドレスの表記",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "IPv6アドレスの表記"
+    ],
+    "difficulty": 3,
+    "question": "第2問（オ）　IPv6アドレスの表記",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "officialQuestionLabel": "2（オ）",
+    "explanation": "IPv6アドレスは128 bitで、16 bitずつ8ブロックに区切ります。各ブロックを16進数で表し、コロンで接続する表記が設問に一致します。",
+    "choiceExplanations": {
+      "ア": "32 bitを4 bitずつ区切る表記ではIPv6のアドレス長に足りません。全体は128 bitです。",
+      "イ": "IPv6は64 bitのアドレスではありません。16 bitずつ8ブロックで全体128 bitとなります。",
+      "ウ": "IPv6アドレスは128 bitで、16 bitずつ8ブロックに区切ります。各ブロックを16進数で表し、コロンで接続する表記が設問に一致します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-riron-q2-5.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続のための技術及び理論・第2問（オ）の公式問題と解答群。IPv6アドレスの表記に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-riron-q3-1",
+    "exam": "dekyo-digital2",
+    "session": "riron",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 3,
+    "part": "1",
+    "type": "multiple-choice",
+    "category": "キーロガー",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "キーロガー"
+    ],
+    "difficulty": 3,
+    "question": "第3問（ア）　キーロガー",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "3（ア）",
+    "explanation": "キーロガーはキー入力を記録するソフトウェアです。入力された認証情報などを盗む目的で悪用されるという設問の説明に対応します。",
+    "choiceExplanations": {
+      "ア": "バックドアは通常の認証などを迂回する侵入口です。キーボード入力を記録する機能の名称ではありません。",
+      "イ": "キーロガーはキー入力を記録するソフトウェアです。入力された認証情報などを盗む目的で悪用されるという設問の説明に対応します。",
+      "ウ": "ハニーポットは攻撃の観測などに用いるおとりのシステムです。キー入力を保存するキーロガーとは異なります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-riron-q3-1.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続のための技術及び理論・第3問（ア）の公式問題と解答群。キーロガーに関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-riron-q3-2",
+    "exam": "dekyo-digital2",
+    "session": "riron",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 3,
+    "part": "2",
+    "type": "multiple-choice",
+    "category": "NAPTとIPマスカレード",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "NAPTとIPマスカレード"
+    ],
+    "difficulty": 3,
+    "question": "第3問（イ）　NAPTとIPマスカレード",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "officialQuestionLabel": "3（イ）",
+    "explanation": "IPマスカレードは、IPアドレスとポート番号の対応を変換して複数の内部端末が一つのグローバルIPを共有する機能です。設問のNAPTに対応します。",
+    "choiceExplanations": {
+      "ア": "IPアドレスプールは割り当てるアドレスの集合です。ポート番号も変換して一つのアドレスを共有する機能の名称ではありません。",
+      "イ": "ポートフォワーディングは特定ポート宛ての通信を内部機器へ転送する設定です。設問の変換機能全体の別名ではありません。",
+      "ウ": "IPマスカレードは、IPアドレスとポート番号の対応を変換して複数の内部端末が一つのグローバルIPを共有する機能です。設問のNAPTに対応します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-riron-q3-2.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続のための技術及び理論・第3問（イ）の公式問題と解答群。NAPTとIPマスカレードに関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-riron-q3-3",
+    "exam": "dekyo-digital2",
+    "session": "riron",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 3,
+    "part": "3",
+    "type": "multiple-choice",
+    "category": "ICMPv6のメッセージ",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "ICMPv6のメッセージ"
+    ],
+    "difficulty": 3,
+    "question": "第3問（ウ）　ICMPv6のメッセージ",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "3（ウ）",
+    "explanation": "パケット過大は、転送先のMTUを超えるパケットを通知するICMPv6のエラーメッセージです。エコー要求などの情報通知と区別して選びます。",
+    "choiceExplanations": {
+      "ア": "パケット過大は、転送先のMTUを超えるパケットを通知するICMPv6のエラーメッセージです。エコー要求などの情報通知と区別して選びます。",
+      "イ": "エコー要求は到達性の確認などに使う情報メッセージです。エラーメッセージの分類ではありません。",
+      "ウ": "近隣探索は近隣ノードとの情報交換に用います。設問で挙げたエラーメッセージはパケット過大です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-riron-q3-3.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続のための技術及び理論・第3問（ウ）の公式問題と解答群。ICMPv6のメッセージに関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-riron-q3-4",
+    "exam": "dekyo-digital2",
+    "session": "riron",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 3,
+    "part": "4",
+    "type": "multiple-choice",
+    "category": "ストアアンドフォワード",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "ストアアンドフォワード"
+    ],
+    "difficulty": 3,
+    "question": "第3問（エ）　ストアアンドフォワード",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "officialQuestionLabel": "3（エ）",
+    "explanation": "ストアアンドフォワードはフレーム全体を一旦受信し、FCSなどを確認してから転送します。異常なフレームを中継しないための検査を行える方式です。",
+    "choiceExplanations": {
+      "ア": "宛先MACアドレスまで受信して転送を始めるのは、カットスルー方式の説明です。フレーム全体の検査を待ちません。",
+      "イ": "先頭64 byteを確認して転送するのはフラグメントフリー方式です。FCSまで受信して確認する方式とは異なります。",
+      "ウ": "ストアアンドフォワードはフレーム全体を一旦受信し、FCSなどを確認してから転送します。異常なフレームを中継しないための検査を行える方式です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-riron-q3-4.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続のための技術及び理論・第3問（エ）の公式問題と解答群。ストアアンドフォワードに関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-riron-q3-5",
+    "exam": "dekyo-digital2",
+    "session": "riron",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 3,
+    "part": "5",
+    "type": "multiple-choice",
+    "category": "ルータとOSI階層",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "ルータとOSI階層"
+    ],
+    "difficulty": 3,
+    "question": "第3問（オ）　ルータとOSI階層",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "3（オ）",
+    "explanation": "ルータはネットワーク層の情報に基づいて経路を選択し、異なるネットワーク間を接続します。第3層の機器として設問の条件に対応します。",
+    "choiceExplanations": {
+      "ア": "レイヤ2スイッチはデータリンク層のMACアドレスに基づいて転送します。ネットワーク層の機能を問う本問の答えではありません。",
+      "イ": "ルータはネットワーク層の情報に基づいて経路を選択し、異なるネットワーク間を接続します。第3層の機器として設問の条件に対応します。",
+      "ウ": "リピータは物理層で信号を中継する機器です。ネットワーク層のアドレスや経路選択を扱いません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-riron-q3-5.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続のための技術及び理論・第3問（オ）の公式問題と解答群。ルータとOSI階層に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-riron-q4-1",
+    "exam": "dekyo-digital2",
+    "session": "riron",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 4,
+    "part": "1",
+    "type": "multiple-choice",
+    "category": "プラスチック光ファイバの光源",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "プラスチック光ファイバの光源"
+    ],
+    "difficulty": 3,
+    "question": "第4問（ア）　プラスチック光ファイバの光源",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "officialQuestionLabel": "4（ア）",
+    "explanation": "設問のプラスチック光ファイバの送信モジュールには、650 nmの光を出すLEDを用います。受信側のPDと、送信側の発光素子を区別します。",
+    "choiceExplanations": {
+      "ア": "PDは受光に用いるフォトダイオードです。設問は送信モジュールに使う発光素子を問います。",
+      "イ": "FETは電界効果トランジスタです。光ファイバへ光を送り出す素子の名称ではありません。",
+      "ウ": "設問のプラスチック光ファイバの送信モジュールには、650 nmの光を出すLEDを用います。受信側のPDと、送信側の発光素子を区別します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-riron-q4-1.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続のための技術及び理論・第4問（ア）の公式問題と解答群。プラスチック光ファイバの光源に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-riron-q4-2",
+    "exam": "dekyo-digital2",
+    "session": "riron",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 4,
+    "part": "2",
+    "type": "multiple-choice",
+    "category": "光ファイバの接続方法",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "光ファイバの接続方法"
+    ],
+    "difficulty": 3,
+    "question": "第4問（イ）　光ファイバの接続方法",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3",
+      "エ": "解答群の4"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "4（イ）",
+    "explanation": "Aはコネクタ接続を再接続不可としている点が誤りです。BのV溝で軸合わせし、電源不要の工具で接続する説明は適切なので、Bのみ正しい組合せです。",
+    "choiceExplanations": {
+      "ア": "コネクタ接続は着脱・再接続が可能なのでAが誤りです。一方でBのメカニカルスプライスの説明は正しいため、Aのみ正しいとはできません。",
+      "イ": "Aはコネクタ接続を再接続不可としている点が誤りです。BのV溝で軸合わせし、電源不要の工具で接続する説明は適切なので、Bのみ正しい組合せです。",
+      "ウ": "Bは正しいものの、Aのコネクタ接続は再接続可能です。両方正しいという組合せではありません。",
+      "エ": "Aは誤りですがBは適切です。両方誤りという組合せにはなりません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-riron-q4-2.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続のための技術及び理論・第4問（イ）の公式問題と解答群。光ファイバの接続方法に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-riron-q4-3",
+    "exam": "dekyo-digital2",
+    "session": "riron",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 4,
+    "part": "3",
+    "type": "multiple-choice",
+    "category": "T568Bの結線",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "T568Bの結線"
+    ],
+    "difficulty": 3,
+    "question": "第4問（ウ）　T568Bの結線",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "4（ウ）",
+    "explanation": "T568Bの8番ピンは茶の心線です。7番の白・茶の心線と組になる対であり、ピン番号と色の対応を確認して選びます。",
+    "choiceExplanations": {
+      "ア": "青の心線は8番ピンではありません。T568Bの配列で8番に対応する茶を選びます。",
+      "イ": "T568Bの8番ピンは茶の心線です。7番の白・茶の心線と組になる対であり、ピン番号と色の対応を確認して選びます。",
+      "ウ": "橙の心線は8番ピンに対応しません。T568Bの8番は茶です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-riron-q4-3.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続のための技術及び理論・第4問（ウ）の公式問題と解答群。T568Bの結線に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-riron-q4-4",
+    "exam": "dekyo-digital2",
+    "session": "riron",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 4,
+    "part": "4",
+    "type": "multiple-choice",
+    "category": "LAN配線試験",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "LAN配線試験"
+    ],
+    "difficulty": 3,
+    "question": "第4問（エ）　LAN配線試験",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "4（エ）",
+    "explanation": "UTP配線の測定項目には、信号の減衰を表す挿入損失や伝搬遅延時間などがあります。ワイヤマップでの結線確認と区別した適切な説明です。",
+    "choiceExplanations": {
+      "ア": "UTP配線の測定項目には、信号の減衰を表す挿入損失や伝搬遅延時間などがあります。ワイヤマップでの結線確認と区別した適切な説明です。",
+      "イ": "ワイヤマップは結線の正誤を調べます。挿入損失の測定までワイヤマップで行うという記述が誤りです。",
+      "ウ": "近端漏話減衰量・遠端漏話減衰量は伝送特性の測定項目です。結線を調べるワイヤマップの測定項目ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-riron-q4-4.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続のための技術及び理論・第4問（エ）の公式問題と解答群。LAN配線試験に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-riron-q4-5",
+    "exam": "dekyo-digital2",
+    "session": "riron",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 4,
+    "part": "5",
+    "type": "multiple-choice",
+    "category": "二重床の配線",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "二重床の配線"
+    ],
+    "difficulty": 3,
+    "question": "第4問（オ）　二重床の配線",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "4（オ）",
+    "explanation": "フリーアクセスフロアは床の下に配線空間を設ける二重床です。通信機械室などで電力線やLAN配線を配置・変更しやすくする構造に対応します。",
+    "choiceExplanations": {
+      "ア": "フリーアクセスフロアは床の下に配線空間を設ける二重床です。通信機械室などで電力線やLAN配線を配置・変更しやすくする構造に対応します。",
+      "イ": "セルラフロアは床構造内の配線路を利用する方式です。床全体の下に配線空間を設ける二重床の名称ではありません。",
+      "ウ": "レースウェイは配線を収める経路・部材です。機械室の二重床を指す名称ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-riron-q4-5.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続のための技術及び理論・第4問（オ）の公式問題と解答群。二重床の配線に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-houki-q1-1",
+    "exam": "dekyo-digital2",
+    "session": "houki",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 1,
+    "part": "1",
+    "type": "multiple-choice",
+    "category": "電気通信事業法の用語",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "電気通信事業法の用語"
+    ],
+    "difficulty": 3,
+    "question": "第1問（ア）　電気通信事業法の用語\n\n「電気通信事業法」又は「電気通信事業法施行規則」に規定する内容に照らして最も適したものを選び、その番号を記せ。",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "officialQuestionLabel": "1（ア）",
+    "explanation": "端末系伝送路設備の接続相手を端末設備又は事業用電気通信設備としている点が誤りです。法令の定義で用いる端末設備・自営電気通信設備との区別が要点です。",
+    "choiceExplanations": {
+      "ア": "電気通信設備の定義として適切です。電気通信を行う機械・器具・線路その他の電気的設備を指します。",
+      "イ": "同一構内又は同一建物内にある、回線設備の一端に接続する設備という端末設備の説明は適切です。",
+      "ウ": "端末系伝送路設備の接続相手を端末設備又は事業用電気通信設備としている点が誤りです。法令の定義で用いる端末設備・自営電気通信設備との区別が要点です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-houki-q1-1.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続に関する法規・第1問（ア）の公式問題と解答群。電気通信事業法の用語に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/359AC0000000086",
+      "https://laws.e-gov.go.jp/law/360M50001000025"
+    ]
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-houki-q1-2",
+    "exam": "dekyo-digital2",
+    "session": "houki",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 1,
+    "part": "2",
+    "type": "multiple-choice",
+    "category": "通信の秘密",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "通信の秘密"
+    ],
+    "difficulty": 3,
+    "question": "第1問（イ）　通信の秘密\n\n「電気通信事業法」又は「電気通信事業法施行規則」に規定する内容に照らして最も適したものを選び、その番号を記せ。",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "officialQuestionLabel": "1（イ）",
+    "explanation": "電気通信事業に従事する者は、取扱中の通信に関して知り得た他人の秘密を守る義務を負います。退職した後も続く義務なので、空欄は③です。",
+    "choiceExplanations": {
+      "ア": "全ての情報を外部に漏らさないという文言を選ぶ問題ではありません。規定は、通信に関して知った他人の秘密を守る義務です。",
+      "イ": "人命に関する情報の警察への通知義務という規定ではありません。通信に関して知り得た他人の秘密の保護を問います。",
+      "ウ": "電気通信事業に従事する者は、取扱中の通信に関して知り得た他人の秘密を守る義務を負います。退職した後も続く義務なので、空欄は③です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-houki-q1-2.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続に関する法規・第1問（イ）の公式問題と解答群。通信の秘密に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/359AC0000000086",
+      "https://laws.e-gov.go.jp/law/360M50001000025"
+    ]
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-houki-q1-3",
+    "exam": "dekyo-digital2",
+    "session": "houki",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 1,
+    "part": "3",
+    "type": "multiple-choice",
+    "category": "業務改善命令",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "業務改善命令"
+    ],
+    "difficulty": 3,
+    "question": "第1問（ウ）　業務改善命令\n\n「電気通信事業法」又は「電気通信事業法施行規則」に規定する内容に照らして最も適したものを選び、その番号を記せ。",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "1（ウ）",
+    "explanation": "不当な差別的取扱いがある場合、総務大臣は必要な限度で業務の方法の改善その他の措置を命じられます。設問の条文の空欄は業務の方法の改善です。",
+    "choiceExplanations": {
+      "ア": "不当な差別的取扱いがある場合、総務大臣は必要な限度で業務の方法の改善その他の措置を命じられます。設問の条文の空欄は業務の方法の改善です。",
+      "イ": "ここで問う命令の条文は、業務の一部停止を空欄にするものではありません。業務の方法の改善が対応します。",
+      "ウ": "契約内容の変更という語句ではありません。設問は業務の方法の改善その他の措置を命じる規定です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-houki-q1-3.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続に関する法規・第1問（ウ）の公式問題と解答群。業務改善命令に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/359AC0000000086",
+      "https://laws.e-gov.go.jp/law/360M50001000025"
+    ]
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-houki-q1-4",
+    "exam": "dekyo-digital2",
+    "session": "houki",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 1,
+    "part": "4",
+    "type": "multiple-choice",
+    "category": "自営電気通信設備",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "自営電気通信設備"
+    ],
+    "difficulty": 3,
+    "question": "第1問（エ）　自営電気通信設備\n\n「電気通信事業法」又は「電気通信事業法施行規則」に規定する内容に照らして最も適したものを選び、その番号を記せ。",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "1（エ）",
+    "explanation": "自営電気通信設備の定義では、回線設備を設置する電気通信事業者以外の者の設備から、端末設備を除きます。空欄は端末で、無線か交換かによる区分ではありません。",
+    "choiceExplanations": {
+      "ア": "自営電気通信設備の定義では、回線設備を設置する電気通信事業者以外の者の設備から、端末設備を除きます。空欄は端末で、無線か交換かによる区分ではありません。",
+      "イ": "無線設備を一律に除外する定義ではありません。自営電気通信設備から除く対象は端末設備です。",
+      "ウ": "交換設備を除外するという定義ではありません。端末設備との区分を確認します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-houki-q1-4.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続に関する法規・第1問（エ）の公式問題と解答群。自営電気通信設備に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/359AC0000000086",
+      "https://laws.e-gov.go.jp/law/360M50001000025"
+    ]
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-houki-q1-5",
+    "exam": "dekyo-digital2",
+    "session": "houki",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 1,
+    "part": "5",
+    "type": "multiple-choice",
+    "category": "工事担任者資格者証",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "工事担任者資格者証"
+    ],
+    "difficulty": 3,
+    "question": "第1問（オ）　工事担任者資格者証\n\n「電気通信事業法」又は「電気通信事業法施行規則」に規定する内容に照らして最も適したものを選び、その番号を記せ。",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3",
+      "エ": "解答群の4"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "1（オ）",
+    "explanation": "Aは認定養成課程の受講だけでは足りず、修了が必要なため誤りです。Bの返納命令から1年未経過の者には交付しないことができるという説明が正しく、Bのみ正しい組合せです。",
+    "choiceExplanations": {
+      "ア": "Aの認定養成課程を受講しただけで交付するという記述は誤りです。課程の修了が必要であり、Aのみ正しいとはできません。",
+      "イ": "Aは認定養成課程の受講だけでは足りず、修了が必要なため誤りです。Bの返納命令から1年未経過の者には交付しないことができるという説明が正しく、Bのみ正しい組合せです。",
+      "ウ": "Aは受講ではなく修了が要件です。Bは適切ですが、両方正しいという組合せにはなりません。",
+      "エ": "Bの交付を行わないことができるという説明は適切です。両方誤りの組合せではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-houki-q1-5.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続に関する法規・第1問（オ）の公式問題と解答群。工事担任者資格者証に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/359AC0000000086",
+      "https://laws.e-gov.go.jp/law/360M50001000025"
+    ]
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-houki-q2-1",
+    "exam": "dekyo-digital2",
+    "session": "houki",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 2,
+    "part": "1",
+    "type": "multiple-choice",
+    "category": "第二級アナログ通信の工事範囲",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "第二級アナログ通信の工事範囲"
+    ],
+    "difficulty": 3,
+    "question": "第2問（ア）　第二級アナログ通信の工事範囲\n\n「工事担任者規則」、「端末機器の技術基準適合認定等に関する規則」、「有線電気通信法」、「有線電気通信設備令」又は「不正アクセス行為の禁止等に関する法律」に規定する内容に照らして最も適したものを選び、その番号を記せ。",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "2（ア）",
+    "explanation": "第二級アナログ通信では、総合デジタル通信回線について基本インタフェース1回線の接続工事を扱います。設問の回線数の数え方は基本インタフェースです。",
+    "choiceExplanations": {
+      "ア": "第二級アナログ通信では、総合デジタル通信回線について基本インタフェース1回線の接続工事を扱います。設問の回線数の数え方は基本インタフェースです。",
+      "イ": "1次群インタフェースで1という工事範囲ではありません。第二級アナログ通信では基本インタフェースで数えます。",
+      "ウ": "毎秒64 kbit換算で1という指定ではありません。規則の基本インタフェースで1という表現に対応させます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-houki-q2-1.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続に関する法規・第2問（ア）の公式問題と解答群。第二級アナログ通信の工事範囲に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/360M50001000028",
+      "https://laws.e-gov.go.jp/law/416M60000008015",
+      "https://laws.e-gov.go.jp/law/328AC0000000096",
+      "https://laws.e-gov.go.jp/law/328CO0000000131",
+      "https://laws.e-gov.go.jp/law/411AC0000000128"
+    ]
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-houki-q2-2",
+    "exam": "dekyo-digital2",
+    "session": "houki",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 2,
+    "part": "2",
+    "type": "multiple-choice",
+    "category": "技術基準適合認定番号",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "技術基準適合認定番号"
+    ],
+    "difficulty": 3,
+    "question": "第2問（イ）　技術基準適合認定番号\n\n「工事担任者規則」、「端末機器の技術基準適合認定等に関する規則」、「有線電気通信法」、「有線電気通信設備令」又は「不正アクセス行為の禁止等に関する法律」に規定する内容に照らして最も適したものを選び、その番号を記せ。",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "2（イ）",
+    "explanation": "固定電話端末の最初の文字をQとする記述が誤りです。公式正答は①で、HのIP移動電話端末とPの専用通信回線設備等端末の記述は適切です。",
+    "choiceExplanations": {
+      "ア": "固定電話端末の最初の文字をQとする記述が誤りです。公式正答は①で、HのIP移動電話端末とPの専用通信回線設備等端末の記述は適切です。",
+      "イ": "IP移動電話端末の技術基準適合認定番号の最初の文字がHという説明は適切です。誤りを問うので選びません。",
+      "ウ": "専用通信回線設備等端末の最初の文字がPという説明は適切です。誤りは固定電話端末をQとする①です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-houki-q2-2.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続に関する法規・第2問（イ）の公式問題と解答群。技術基準適合認定番号に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/360M50001000028",
+      "https://laws.e-gov.go.jp/law/416M60000008015",
+      "https://laws.e-gov.go.jp/law/328AC0000000096",
+      "https://laws.e-gov.go.jp/law/328CO0000000131",
+      "https://laws.e-gov.go.jp/law/411AC0000000128"
+    ]
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-houki-q2-3",
+    "exam": "dekyo-digital2",
+    "session": "houki",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 2,
+    "part": "3",
+    "type": "multiple-choice",
+    "category": "有線電気通信設備の届出",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "有線電気通信設備の届出"
+    ],
+    "difficulty": 3,
+    "question": "第2問（ウ）　有線電気通信設備の届出\n\n「工事担任者規則」、「端末機器の技術基準適合認定等に関する規則」、「有線電気通信法」、「有線電気通信設備令」又は「不正アクセス行為の禁止等に関する法律」に規定する内容に照らして最も適したものを選び、その番号を記せ。",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "2（ウ）",
+    "explanation": "設置工事を要する場合は開始日の2週間前まで、工事を要しない場合は設置日から2週間以内に届け出ます。同じ記号の二つの空欄には同じ2週間が入ります。",
+    "choiceExplanations": {
+      "ア": "設問の届出期限は10日前・10日以内ではありません。工事がある場合とない場合の両方で2週間を用います。",
+      "イ": "設置工事を要する場合は開始日の2週間前まで、工事を要しない場合は設置日から2週間以内に届け出ます。同じ記号の二つの空欄には同じ2週間が入ります。",
+      "ウ": "この条文の期限は30日ではありません。設置工事の有無で起算点が変わりますが、期間はともに2週間です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-houki-q2-3.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続に関する法規・第2問（ウ）の公式問題と解答群。有線電気通信設備の届出に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/360M50001000028",
+      "https://laws.e-gov.go.jp/law/416M60000008015",
+      "https://laws.e-gov.go.jp/law/328AC0000000096",
+      "https://laws.e-gov.go.jp/law/328CO0000000131",
+      "https://laws.e-gov.go.jp/law/411AC0000000128"
+    ]
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-houki-q2-4",
+    "exam": "dekyo-digital2",
+    "session": "houki",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 2,
+    "part": "4",
+    "type": "multiple-choice",
+    "category": "有線電気通信設備令の用語",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "有線電気通信設備令の用語"
+    ],
+    "difficulty": 3,
+    "question": "第2問（エ）　有線電気通信設備令の用語\n\n「工事担任者規則」、「端末機器の技術基準適合認定等に関する規則」、「有線電気通信法」、「有線電気通信設備令」又は「不正アクセス行為の禁止等に関する法律」に規定する内容に照らして最も適したものを選び、その番号を記せ。",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "2（エ）",
+    "explanation": "電線は有線電気通信のための導体で、被覆があればそれを含みます。強電流電線に重畳する通信回線のものを除くという説明も含め、②が適切です。",
+    "choiceExplanations": {
+      "ア": "音声周波の周波数範囲を300 Hz超から4000 Hz以下とする点が誤りです。電線の定義を述べた②を選びます。",
+      "イ": "電線は有線電気通信のための導体で、被覆があればそれを含みます。強電流電線に重畳する通信回線のものを除くという説明も含め、②が適切です。",
+      "ウ": "絶縁物と保護物の双方で被覆するという説明は、絶縁電線とケーブルの定義を混同しています。正しい説明は②です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-houki-q2-4.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続に関する法規・第2問（エ）の公式問題と解答群。有線電気通信設備令の用語に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/360M50001000028",
+      "https://laws.e-gov.go.jp/law/416M60000008015",
+      "https://laws.e-gov.go.jp/law/328AC0000000096",
+      "https://laws.e-gov.go.jp/law/328CO0000000131",
+      "https://laws.e-gov.go.jp/law/411AC0000000128"
+    ]
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-houki-q2-5",
+    "exam": "dekyo-digital2",
+    "session": "houki",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 2,
+    "part": "5",
+    "type": "multiple-choice",
+    "category": "アクセス管理者",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "アクセス管理者"
+    ],
+    "difficulty": 3,
+    "question": "第2問（オ）　アクセス管理者\n\n「工事担任者規則」、「端末機器の技術基準適合認定等に関する規則」、「有線電気通信法」、「有線電気通信設備令」又は「不正アクセス行為の禁止等に関する法律」に規定する内容に照らして最も適したものを選び、その番号を記せ。",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "officialQuestionLabel": "2（オ）",
+    "explanation": "アクセス管理者は、電気通信回線を通じた特定電子計算機の利用について、その動作を管理する者です。空欄は動作を管理となります。",
+    "choiceExplanations": {
+      "ア": "利用の監視だけを行う者という定義ではありません。特定電子計算機の動作を管理する者を指します。",
+      "イ": "接続を制限する者という語句ではありません。法の定義は特定電子計算機の動作を管理する者です。",
+      "ウ": "アクセス管理者は、電気通信回線を通じた特定電子計算機の利用について、その動作を管理する者です。空欄は動作を管理となります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-houki-q2-5.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続に関する法規・第2問（オ）の公式問題と解答群。アクセス管理者に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/360M50001000028",
+      "https://laws.e-gov.go.jp/law/416M60000008015",
+      "https://laws.e-gov.go.jp/law/328AC0000000096",
+      "https://laws.e-gov.go.jp/law/328CO0000000131",
+      "https://laws.e-gov.go.jp/law/411AC0000000128"
+    ]
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-houki-q3-1",
+    "exam": "dekyo-digital2",
+    "session": "houki",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 3,
+    "part": "1",
+    "type": "multiple-choice",
+    "category": "デジタルデータ伝送用設備",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "デジタルデータ伝送用設備"
+    ],
+    "difficulty": 3,
+    "question": "第3問（ア）　デジタルデータ伝送用設備\n\n「端末設備等規則」に規定する内容に照らして最も適したものを選び、その番号を記せ。",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "3（ア）",
+    "explanation": "定義にある伝送交換の対象は符号又は影像です。音声を含む一般的なサービスの説明と区別して、端末設備等規則の用語に対応させます。",
+    "choiceExplanations": {
+      "ア": "定義にある伝送交換の対象は符号又は影像です。音声を含む一般的なサービスの説明と区別して、端末設備等規則の用語に対応させます。",
+      "イ": "規則の定義はデータ又は音声という組合せではありません。符号又は影像が空欄に対応します。",
+      "ウ": "音声又は影像ではありません。音声を符号に置き換えた①の組合せが定義と一致します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-houki-q3-1.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続に関する法規・第3問（ア）の公式問題と解答群。デジタルデータ伝送用設備に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/360M50001000031"
+    ]
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-houki-q3-2",
+    "exam": "dekyo-digital2",
+    "session": "houki",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 3,
+    "part": "2",
+    "type": "multiple-choice",
+    "category": "責任の分界点",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "責任の分界点"
+    ],
+    "difficulty": 3,
+    "question": "第3問（イ）　責任の分界点\n\n「端末設備等規則」に規定する内容に照らして最も適したものを選び、その番号を記せ。",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "officialQuestionLabel": "3（イ）",
+    "explanation": "利用者の端末設備は、事業用電気通信設備との間に責任を区分する分界点を持つ必要があります。二つの空欄はいずれも事業用電気通信設備です。",
+    "choiceExplanations": {
+      "ア": "端末系伝送路設備という限定ではありません。利用者の端末設備と事業用電気通信設備との間の分界点を問います。",
+      "イ": "自営電気通信設備を接続相手とする記述ではありません。責任分界の相手は事業用電気通信設備です。",
+      "ウ": "利用者の端末設備は、事業用電気通信設備との間に責任を区分する分界点を持つ必要があります。二つの空欄はいずれも事業用電気通信設備です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-houki-q3-2.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続に関する法規・第3問（イ）の公式問題と解答群。責任の分界点に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/360M50001000031"
+    ]
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-houki-q3-3",
+    "exam": "dekyo-digital2",
+    "session": "houki",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 3,
+    "part": "3",
+    "type": "multiple-choice",
+    "category": "音響衝撃の防止",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "音響衝撃の防止"
+    ],
+    "difficulty": 3,
+    "question": "第3問（ウ）　音響衝撃の防止\n\n「端末設備等規則」に規定する内容に照らして最も適したものを選び、その番号を記せ。",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "3（ウ）",
+    "explanation": "通話機能を持つ端末設備では、通話中に受話器から過大な音響衝撃が発生するのを防ぐ機能が必要です。設問はこの利用者の聴覚を保護する規定を問います。",
+    "choiceExplanations": {
+      "ア": "通話機能を持つ端末設備では、通話中に受話器から過大な音響衝撃が発生するのを防ぐ機能が必要です。設問はこの利用者の聴覚を保護する規定を問います。",
+      "イ": "反響音の防止を述べた条文ではありません。受話器から生じる過大な音響衝撃を防止する機能が対象です。",
+      "ウ": "誘導雑音ではありません。端末設備等規則がここで防止を求める対象は過大な音響衝撃です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-houki-q3-3.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続に関する法規・第3問（ウ）の公式問題と解答群。音響衝撃の防止に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/360M50001000031"
+    ]
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-houki-q3-4",
+    "exam": "dekyo-digital2",
+    "session": "houki",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 3,
+    "part": "4",
+    "type": "multiple-choice",
+    "category": "端末設備の絶縁抵抗",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "端末設備の絶縁抵抗"
+    ],
+    "difficulty": 3,
+    "question": "第3問（エ）　端末設備の絶縁抵抗\n\n「端末設備等規則」に規定する内容に照らして最も適したものを選び、その番号を記せ。",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "3（エ）",
+    "explanation": "使用電圧が250 V以下の場合、電源回路と筐体、及び電源回路と事業用電気通信設備との間の絶縁抵抗は2 MΩ以上です。条件の電圧と抵抗値を対応させます。",
+    "choiceExplanations": {
+      "ア": "設問の使用電圧250 V以下の条件では1 MΩ以上ではありません。必要な絶縁抵抗は2 MΩ以上です。",
+      "イ": "使用電圧が250 V以下の場合、電源回路と筐体、及び電源回路と事業用電気通信設備との間の絶縁抵抗は2 MΩ以上です。条件の電圧と抵抗値を対応させます。",
+      "ウ": "4 MΩは設問の250 V以下の条件に対応する規定値ではありません。ここでは2 MΩ以上を選びます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-houki-q3-4.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続に関する法規・第3問（エ）の公式問題と解答群。端末設備の絶縁抵抗に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/360M50001000031"
+    ]
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-houki-q3-5",
+    "exam": "dekyo-digital2",
+    "session": "houki",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 3,
+    "part": "5",
+    "type": "multiple-choice",
+    "category": "無線設備の筐体",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "無線設備の筐体"
+    ],
+    "difficulty": 3,
+    "question": "第3問（オ）　無線設備の筐体\n\n「端末設備等規則」に規定する内容に照らして最も適したものを選び、その番号を記せ。",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "3（オ）",
+    "explanation": "端末設備の部分相互間で電波を使う場合、所定の例外を除き、無線設備は一つの筐体に収め、容易に開けられないものとします。空欄は開けるです。",
+    "choiceExplanations": {
+      "ア": "容易に照合できないことを求める規定ではありません。無線設備を収めた筐体を容易に開けられないことが条件です。",
+      "イ": "端末設備の部分相互間で電波を使う場合、所定の例外を除き、無線設備は一つの筐体に収め、容易に開けられないものとします。空欄は開けるです。",
+      "ウ": "容易に取り外せないことという語句ではありません。筐体の開閉に関する条件を問うので②です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-houki-q3-5.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続に関する法規・第3問（オ）の公式問題と解答群。無線設備の筐体に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/360M50001000031"
+    ]
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-houki-q4-1",
+    "exam": "dekyo-digital2",
+    "session": "houki",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 4,
+    "part": "1",
+    "type": "multiple-choice",
+    "category": "アナログ電話端末の直流回路",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "アナログ電話端末の直流回路"
+    ],
+    "difficulty": 3,
+    "question": "第4問（ア）　アナログ電話端末の直流回路\n\n「端末設備等規則」に規定する内容及び同規則に基づく告示に照らして最も適したものを選び、その番号を記せ。",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "officialQuestionLabel": "4（ア）",
+    "explanation": "相手の応答を自動確認する場合、応答が確認できなければ選択信号の送出終了後2分以内に直流回路を開きます。通話が成立しないまま回路を閉じ続けないための条件です。",
+    "choiceExplanations": {
+      "ア": "発信・応答時は直流回路を閉じ、終了時は開きます。この選択肢は開閉を逆にしているため誤りです。",
+      "イ": "自動選択信号の送出開始を直流回路閉成から10秒以上後とする記述が誤りです。公式正答が示す適切な記述は③です。",
+      "ウ": "相手の応答を自動確認する場合、応答が確認できなければ選択信号の送出終了後2分以内に直流回路を開きます。通話が成立しないまま回路を閉じ続けないための条件です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-houki-q4-1.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続に関する法規・第4問（ア）の公式問題と解答群。アナログ電話端末の直流回路に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/360M50001000031"
+    ]
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-houki-q4-2",
+    "exam": "dekyo-digital2",
+    "session": "houki",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 4,
+    "part": "2",
+    "type": "multiple-choice",
+    "category": "押しボタンダイヤル信号",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "押しボタンダイヤル信号"
+    ],
+    "difficulty": 3,
+    "question": "第4問（イ）　押しボタンダイヤル信号\n\n「端末設備等規則」に規定する内容及び同規則に基づく告示に照らして最も適したものを選び、その番号を記せ。",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3",
+      "エ": "解答群の4"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "4（イ）",
+    "explanation": "Aの周期を信号送出時間とミニマムポーズの和とする説明は適切です。Bの高群周波数の範囲が不適切なので、Aのみ正しい組合せを選びます。",
+    "choiceExplanations": {
+      "ア": "Aの周期を信号送出時間とミニマムポーズの和とする説明は適切です。Bの高群周波数の範囲が不適切なので、Aのみ正しい組合せを選びます。",
+      "イ": "Aは正しくBは誤りです。高群周波数を1300～1700 Hz内の四つとする説明は規定の周波数に一致しません。",
+      "ウ": "Bが不適切なので両方正しいとはできません。周期の定義を述べたAだけが正しい組合せです。",
+      "エ": "Aの周期の説明は正しいため、両方誤りという組合せではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-houki-q4-2.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続に関する法規・第4問（イ）の公式問題と解答群。押しボタンダイヤル信号に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/360M50001000031"
+    ]
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-houki-q4-3",
+    "exam": "dekyo-digital2",
+    "session": "houki",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 4,
+    "part": "3",
+    "type": "multiple-choice",
+    "category": "直流電圧の印加禁止",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "直流電圧の印加禁止"
+    ],
+    "difficulty": 3,
+    "question": "第4問（ウ）　直流電圧の印加禁止\n\n「端末設備等規則」に規定する内容及び同規則に基づく告示に照らして最も適したものを選び、その番号を記せ。",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "4（ウ）",
+    "explanation": "アナログ電話端末等が直流電圧を加えてはいけない相手は電気通信回線です。端末から回線へ直流の電圧を加えることを禁じる規定に対応します。",
+    "choiceExplanations": {
+      "ア": "アナログ電話端末等が直流電圧を加えてはいけない相手は電気通信回線です。端末から回線へ直流の電圧を加えることを禁じる規定に対応します。",
+      "イ": "この条文の空欄は他の端末設備ではありません。接続先の電気通信回線を選びます。",
+      "ウ": "配線設備ではありません。アナログ電話端末等と電気通信回線の電気的関係を問う規定です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-houki-q4-3.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続に関する法規・第4問（ウ）の公式問題と解答群。直流電圧の印加禁止に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/360M50001000031"
+    ]
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-houki-q4-4",
+    "exam": "dekyo-digital2",
+    "session": "houki",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 4,
+    "part": "4",
+    "type": "multiple-choice",
+    "category": "回線間の漏話減衰量",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "回線間の漏話減衰量"
+    ],
+    "difficulty": 3,
+    "question": "第4問（エ）　回線間の漏話減衰量\n\n「端末設備等規則」に規定する内容及び同規則に基づく告示に照らして最も適したものを選び、その番号を記せ。",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "4（エ）",
+    "explanation": "複数の回線につながるアナログ電話端末等では、回線間の漏話減衰量が1500 Hzで70 dB以上必要です。大きいほど漏話が抑えられる量です。",
+    "choiceExplanations": {
+      "ア": "漏話雑音そのものを70 dB以上とする規定ではありません。回線間の漏話を抑える減衰量を問います。",
+      "イ": "複数の回線につながるアナログ電話端末等では、回線間の漏話減衰量が1500 Hzで70 dB以上必要です。大きいほど漏話が抑えられる量です。",
+      "ウ": "信号の伝送損失を70 dB以上にするという意味ではありません。回線相互間の漏話減衰量に関する基準です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-houki-q4-4.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続に関する法規・第4問（エ）の公式問題と解答群。回線間の漏話減衰量に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/360M50001000031"
+    ]
+  },
+  {
+    "id": "dekyo-digital2-2025-round2-houki-q4-5",
+    "exam": "dekyo-digital2",
+    "session": "houki",
+    "year": 2025,
+    "season": "round2",
+    "qNumber": 4,
+    "part": "5",
+    "type": "multiple-choice",
+    "category": "IP移動電話端末の自動再発信",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "IP移動電話端末の自動再発信"
+    ],
+    "difficulty": 3,
+    "question": "第4問（オ）　IP移動電話端末の自動再発信\n\n「端末設備等規則」に規定する内容及び同規則に基づく告示に照らして最も適したものを選び、その番号を記せ。",
+    "choices": {
+      "ア": "解答群の1",
+      "イ": "解答群の2",
+      "ウ": "解答群の3"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "officialQuestionLabel": "4（オ）",
+    "explanation": "自動再発信は3回以内とする規定です。③は5回以内としている点が誤りです。最初の発信から3分を超えた場合の別発信扱いと、火災・盗難等の非常時の例外は適切な記述です。",
+    "choiceExplanations": {
+      "ア": "告示条件に適合する送信タイミングの機能が必要という説明は適切です。誤りを問うため選びません。",
+      "イ": "応答を確認できなければ呼設定メッセージ送出後128秒以内に通信終了メッセージを送るという説明は適切です。",
+      "ウ": "自動再発信は3回以内とする規定です。③は5回以内としている点が誤りです。最初の発信から3分を超えた場合の別発信扱いと、火災・盗難等の非常時の例外は適切な記述です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-digital2/2025-round2-houki-q4-5.png"
+    ],
+    "imageAltTexts": [
+      "端末設備の接続に関する法規・第4問（オ）の公式問題と解答群。IP移動電話端末の自動再発信に関する設問。"
+    ],
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926389821001.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files252769263ab23c335.pdf",
+    "license": "DEKYO-attributed",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「令和7年度第2回 工事担任者試験 第二級デジタル通信」。解説は過去問AIの独自作成。",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/360M50001000031"
+    ]
+  }
+]

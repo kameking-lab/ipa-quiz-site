@@ -1,0 +1,325 @@
+{
+  "exam": "ishi",
+  "edition": "第120回医師国家試験",
+  "year": 2026,
+  "season": "annual",
+  "officialPageUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp260424-01.html",
+  "checkedAt": "2026-11-17",
+  "sources": [
+    {
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-01a_01.pdf",
+      "sha256": "1e2acfa55a903318d602991817104442706474508fa630501f8d483536f70b34",
+      "pages": 68
+    },
+    {
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-01seitou.pdf",
+      "sha256": "91d76eeffb1eab0eda50d996d0acf45a33ab422443feaba9bd0f8757abd6d220",
+      "pages": 2
+    }
+  ],
+  "coverage": {
+    "session": "mondai-a",
+    "firstQuestion": 1,
+    "lastQuestion": 15,
+    "addedCount": 15,
+    "officialSessionCount": 75,
+    "officialEditionCount": 400,
+    "remainingSessionCount": 60,
+    "remainingEditionCount": 385
+  },
+  "verification": {
+    "stems": 15,
+    "choices": 75,
+    "officialAnswers": 15,
+    "independentReaders": [
+      "PyMuPDF",
+      "pdfplumber"
+    ],
+    "officialAnswersChanged": 0,
+    "pdfplumberCidMapping": {
+      "7973": "穿",
+      "20175": "疼",
+      "7674": "倦",
+      "7728": "腿"
+    },
+    "visualReviewPdfPages": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "notes": [
+      "CID4文字は原本ページ画像で確認。正答は原本のまま。",
+      "問題A問12：喘鳴との関連の有無と公式正答aとを区別して注記。"
+    ]
+  },
+  "questions": [
+    {
+      "id": "ishi-2026-annual-mondai-a-q1",
+      "officialQuestion": "A001",
+      "answer": "A",
+      "problemPdfPage": 7,
+      "references": [
+        "https://www.jges.net/wp-content/uploads/2019/08/e8a4f9bbd0dacc9fba0bd8667de90c2b.pdf",
+        "https://www.saiseikai.or.jp/medical/disease/generalized_peritonitis/"
+      ]
+    },
+    {
+      "id": "ishi-2026-annual-mondai-a-q2",
+      "officialQuestion": "A002",
+      "answer": "D",
+      "problemPdfPage": 7,
+      "references": [
+        "https://www.urol.or.jp/lib/files/other/guideline/46_urolithiasis_2023.pdf"
+      ]
+    },
+    {
+      "id": "ishi-2026-annual-mondai-a-q3",
+      "officialQuestion": "A003",
+      "answer": "C",
+      "problemPdfPage": 7,
+      "references": [
+        "https://www.j-circ.or.jp/cms/wp-content/uploads/2025/03/JCS2025_Kato.pdf",
+        "https://www.j-circ.or.jp/cms/wp-content/uploads/2025/03/JCS2025_Saiki.pdf"
+      ]
+    },
+    {
+      "id": "ishi-2026-annual-mondai-a-q4",
+      "officialQuestion": "A004",
+      "answer": "E",
+      "problemPdfPage": 8,
+      "references": [
+        "https://www.jrs.or.jp/publication/file/guidelines_sas2020.pdf"
+      ]
+    },
+    {
+      "id": "ishi-2026-annual-mondai-a-q5",
+      "officialQuestion": "A005",
+      "answer": "E",
+      "problemPdfPage": 8,
+      "references": [
+        "https://www.joa.or.jp/public/sick/condition/scoliosis.html",
+        "https://www.sokuwan.jp/patient/faq.html"
+      ]
+    },
+    {
+      "id": "ishi-2026-annual-mondai-a-q6",
+      "officialQuestion": "A006",
+      "answer": "E",
+      "problemPdfPage": 8,
+      "references": [
+        "https://ganjoho.jp/public/support/condition/skin/index.html",
+        "https://www.haigan.gr.jp/public/guidebook/2022/2022/Q43.html"
+      ]
+    },
+    {
+      "id": "ishi-2026-annual-mondai-a-q7",
+      "officialQuestion": "A007",
+      "answer": "E",
+      "problemPdfPage": 9,
+      "references": [
+        "https://kennet.mhlw.go.jp/information/information/dictionary/alcohol/ya-052"
+      ]
+    },
+    {
+      "id": "ishi-2026-annual-mondai-a-q8",
+      "officialQuestion": "A008",
+      "answer": "E",
+      "problemPdfPage": 9,
+      "references": [
+        "https://cdn.jsn.or.jp/medic/guideline/pdf/guide/1-178_v3.pdf"
+      ]
+    },
+    {
+      "id": "ishi-2026-annual-mondai-a-q9",
+      "officialQuestion": "A009",
+      "answer": "B",
+      "problemPdfPage": 9,
+      "references": [
+        "https://www.j-circ.or.jp/cms/wp-content/uploads/2020/01/JCS2020_Ono.pdf"
+      ]
+    },
+    {
+      "id": "ishi-2026-annual-mondai-a-q10",
+      "officialQuestion": "A010",
+      "answer": "B",
+      "problemPdfPage": 10,
+      "references": [
+        "https://www.surg.med.tohoku.ac.jp/surg1/patient/disease/h-2.html",
+        "https://ganjoho.jp/public/cancer/biliary_tract/diagnosis.html"
+      ]
+    },
+    {
+      "id": "ishi-2026-annual-mondai-a-q11",
+      "officialQuestion": "A011",
+      "answer": "D",
+      "problemPdfPage": 10,
+      "references": [
+        "https://precon.cfa.go.jp/dictionary/dysmenorrhea/",
+        "https://www.jaog.or.jp/note/（1）月経困難症/"
+      ]
+    },
+    {
+      "id": "ishi-2026-annual-mondai-a-q12",
+      "officialQuestion": "A012",
+      "answer": "A",
+      "problemPdfPage": 10,
+      "references": [
+        "https://www.jsge.or.jp/committees/guideline/disease/pdf/gerd_2023.pdf"
+      ]
+    },
+    {
+      "id": "ishi-2026-annual-mondai-a-q13",
+      "officialQuestion": "A013",
+      "answer": "CE",
+      "problemPdfPage": 11,
+      "references": [
+        "https://www.jibika.or.jp/uploads/files/publish/gakkouhoken_kenkoushindan_2025_2_2.pdf",
+        "https://www.jstage.jst.go.jp/article/jjsdh/45/1/45_43/_pdf/-char/en"
+      ]
+    },
+    {
+      "id": "ishi-2026-annual-mondai-a-q14",
+      "officialQuestion": "A014",
+      "answer": "BE",
+      "problemPdfPage": 11,
+      "references": [
+        "https://www.japanthyroid.jp/doctor/guideline/japanese.html"
+      ]
+    },
+    {
+      "id": "ishi-2026-annual-mondai-a-q15",
+      "officialQuestion": "A015",
+      "answer": "D",
+      "problemPdfPage": 12,
+      "references": [
+        "https://www.jstage.jst.go.jp/article/naika/104/2/104_268/_pdf",
+        "https://kyusyu.jcho.go.jp/wp-content/uploads/2026/02/JCHOkyushu_formulary202601.pdf"
+      ]
+    }
+  ],
+  "clinicalSources": [
+    {
+      "question": 1,
+      "url": "https://www.jges.net/wp-content/uploads/2019/08/e8a4f9bbd0dacc9fba0bd8667de90c2b.pdf",
+      "finalUrl": "https://www.jges.net/wp-content/uploads/2019/08/e8a4f9bbd0dacc9fba0bd8667de90c2b.pdf",
+      "status": 200,
+      "file": "clinical-a01.pdf",
+      "sha256": "975e9e0435716fd4257673db5e070e661a75215d3490f472f46bc81c3cbb12c1"
+    },
+    {
+      "question": 2,
+      "url": "https://www.urol.or.jp/lib/files/other/guideline/46_urolithiasis_2023.pdf",
+      "finalUrl": "https://www.urol.or.jp/lib/files/other/guideline/46_urolithiasis_2023.pdf",
+      "status": 200,
+      "file": "clinical-a02.pdf",
+      "sha256": "ac787512db73cffe7af473382be9fc9d09185491ec52d2e7e16dee16da9c0e98"
+    },
+    {
+      "question": 3,
+      "url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2025/03/JCS2025_Kato.pdf",
+      "finalUrl": "https://www.j-circ.or.jp/cms/wp-content/uploads/2025/03/JCS2025_Kato.pdf",
+      "status": 200,
+      "file": "clinical-a03.pdf",
+      "sha256": "6fc3dca7a340e5879a7bf823776f7e1200182558a96b20e645886e25c987780f"
+    },
+    {
+      "question": 4,
+      "url": "https://www.jrs.or.jp/publication/file/guidelines_sas2020.pdf",
+      "finalUrl": "https://www.jrs.or.jp/publication/file/guidelines_sas2020.pdf",
+      "status": 200,
+      "file": "clinical-a04.pdf",
+      "sha256": "b3fe241eadfea5f7a52ed08ee3c54195facd6cedd104adac7e0559ef3cf03762"
+    },
+    {
+      "question": 5,
+      "url": "https://www.joa.or.jp/public/sick/condition/scoliosis.html",
+      "finalUrl": "https://www.joa.or.jp/public/sick/condition/scoliosis.html",
+      "status": 200,
+      "file": "clinical-a05.html",
+      "sha256": "a91cf6ed702b64489a07947e76201cbf396b3b51dbe91e0d397ca09d85a421b0"
+    },
+    {
+      "question": 6,
+      "url": "https://ganjoho.jp/public/support/condition/skin/index.html",
+      "finalUrl": "https://ganjoho.jp/public/support/condition/skin/index.html",
+      "status": 200,
+      "file": "clinical-a06.html",
+      "sha256": "a3b4bb9417063fc9ad1c165546163cacec3ab6e851f28c4f6b7c90c9d7e1c95e"
+    },
+    {
+      "question": 7,
+      "url": "https://kennet.mhlw.go.jp/information/information/dictionary/alcohol/ya-052",
+      "finalUrl": "https://kennet.mhlw.go.jp/information/information/dictionary/alcohol/ya-052",
+      "status": 200,
+      "file": "clinical-a07.html",
+      "sha256": "4f3d97eb781b0221b608cd0913b9c4c19db410650cb977e058be281a638929fb"
+    },
+    {
+      "question": 8,
+      "url": "https://cdn.jsn.or.jp/medic/guideline/pdf/guide/1-178_v3.pdf",
+      "finalUrl": "https://cdn.jsn.or.jp/medic/guideline/pdf/guide/1-178_v3.pdf",
+      "status": 200,
+      "file": "clinical-a08.pdf",
+      "sha256": "8c9927e9f444f837d20ad8ece6d63293ee5232780fc0b59d409e006accb48540"
+    },
+    {
+      "question": 9,
+      "url": "https://www.j-circ.or.jp/cms/wp-content/uploads/2020/01/JCS2020_Ono.pdf",
+      "finalUrl": "https://www.j-circ.or.jp/cms/wp-content/uploads/2020/01/JCS2020_Ono.pdf",
+      "status": 200,
+      "file": "clinical-a09.pdf",
+      "sha256": "b0349d124e528ce27ea3dcb5c2968454e2a1e6717891f315b551b12bb44130bd"
+    },
+    {
+      "question": 10,
+      "url": "https://www.surg.med.tohoku.ac.jp/surg1/patient/disease/h-2.html",
+      "finalUrl": "https://www.surg.med.tohoku.ac.jp/surg1/patient/disease/h-2.html",
+      "status": 200,
+      "file": "clinical-a10.html",
+      "sha256": "c044457f364e5255da56fedbb5e1f9e9330e2e496b4d166fcee7a9b72534218b"
+    },
+    {
+      "question": 11,
+      "url": "https://precon.cfa.go.jp/dictionary/dysmenorrhea/",
+      "finalUrl": "https://precon.cfa.go.jp/dictionary/dysmenorrhea/",
+      "status": 200,
+      "file": "clinical-a11.html",
+      "sha256": "f079f315a28740f26d1af5902c02817fb3cfc6e6ad66461ebec69414a68849be"
+    },
+    {
+      "question": 12,
+      "url": "https://www.jsge.or.jp/committees/guideline/disease/pdf/gerd_2023.pdf",
+      "finalUrl": "https://www.jsge.or.jp/committees/guideline/disease/pdf/gerd_2023.pdf",
+      "status": 200,
+      "file": "clinical-a12.pdf",
+      "sha256": "7ab9d729cbed490e9e015d710463aea832dc026ad2c5d1610c83f0163545934c"
+    },
+    {
+      "question": 13,
+      "url": "https://www.jibika.or.jp/uploads/files/publish/gakkouhoken_kenkoushindan_2025_2_2.pdf",
+      "finalUrl": "https://www.jibika.or.jp/uploads/files/publish/gakkouhoken_kenkoushindan_2025_2_2.pdf",
+      "status": 200,
+      "file": "clinical-a13.pdf",
+      "sha256": "1dbaf5ac0469becb59692395db061ab6d018e1ebccba38794143e4730c3243df"
+    },
+    {
+      "question": 14,
+      "url": "https://www.japanthyroid.jp/doctor/guideline/japanese.html",
+      "finalUrl": "https://www.japanthyroid.jp/doctor/guideline/japanese.html",
+      "status": 200,
+      "file": "clinical-a14.html",
+      "sha256": "d79659fac2b75b8a9400c4146bdbcc7d3dc20f4d93683776a51eadf6a15406d8"
+    },
+    {
+      "question": 15,
+      "url": "https://www.jstage.jst.go.jp/article/naika/104/2/104_268/_pdf",
+      "finalUrl": "https://www.jstage.jst.go.jp/article/naika/104/2/104_268/_pdf",
+      "status": 200,
+      "file": "clinical-a15.pdf",
+      "sha256": "832efb8aa2414e6f50023512ca333708612f65d27d81365d64be1704ce4e07fd"
+    }
+  ]
+}

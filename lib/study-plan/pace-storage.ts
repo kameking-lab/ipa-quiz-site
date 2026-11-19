@@ -110,8 +110,9 @@ export function mergePaceSyncEntries(entries: readonly StudyPlanSyncEntry[]): vo
   }
   write(LS_KEYS.pacePlanDeleted, deleted, false);
   write(LS_KEYS.pacePlans, [...plans.values()].filter(p => !deleted[p.id]).sort((a, b) => b.updatedAt.localeCompare(a.updatedAt)).slice(0, 20), false);
-  if (activity) {
+  if (activity && JSON.stringify(getLearningActions()) !== JSON.stringify(activity.actions)) {
     write(LS_KEYS.learningActivity, activity, false);
     write(LS_KEYS.learningPoints, dailyLearningPoints(activity.actions), false);
+    window.dispatchEvent(new Event("study-activity:synced"));
   }
 }

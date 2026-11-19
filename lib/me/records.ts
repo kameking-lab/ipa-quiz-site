@@ -105,7 +105,7 @@ export function buildMeRecords(history: HistoryEntry[], savedDays: Record<string
     record.entries.push(entry); record.correct += Number(entry.correct); records.set(key, record);
   }
   return {
-    total, minutes, averageQuestions: days ? total / days : 0, averageMinutes: learningDays ? minutes / learningDays : 0,
+    entries, total, minutes, averageQuestions: days ? total / days : 0, averageMinutes: learningDays ? minutes / learningDays : 0,
     streak: decayIfLapsed(streak, today).currentStreak,
     calendar: generateDayRange(84, now).map(date => ({ date, count: byDate[date] ?? 0 })),
     records: [...records.values()].sort((a, b) => b.date.localeCompare(a.date) || (a.exam ?? "").localeCompare(b.exam ?? "")),

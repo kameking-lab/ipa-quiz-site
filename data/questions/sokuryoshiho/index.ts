@@ -1,14 +1,35 @@
+import { appendReplenishedQuestions } from "../published";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
+
+
 import y2026 from "@/data/qualification-staging/sokuryoshiho/2026.json";
+
+
 import y2025 from "@/data/qualification-staging/sokuryoshiho/2025.json";
+
+
+import y2024 from "./2024.json";
+
+
+import y2023 from "./2023.json";
+
+import y2022 from "./2022-annual.json";
+
+
 import { projectStagedQuestions } from "../batch4/project-staged";
 
 const KEYS: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ"];
+
+
 const IMAGE_BASE = "/images/questions/sokuryoshiho";
+
+
 /** No.21 uses an excerpt of the 電子地形図25000; 測量法上の複製承認の要否が未確認のため公開しない。 */
 export const SOKURYOSHIHO_EXCLUDED_QNUMBERS: readonly number[] = [21];
 
 interface StagedImage { path: string; alt?: string }
+
+
 interface StagedSurveyQuestion {
   id: string; qNumber: number; choices: Record<string, string>; choiceExplanations: Record<string, string>;
   officialAnswerNumber: number | string; images?: StagedImage[] | null; referenceImages?: StagedImage[] | null;
@@ -44,6 +65,12 @@ function project(row: StagedSurveyQuestion): Question {
 }
 
 /** 令和8・7年 測量士補試験（各28問）。No.21は除外、令和8年No.12は参考扱い（lib/questions/assessment.ts）。 */
-export const SOKURYOSHIHO_QUESTIONS: Question[] = ([...y2026, ...y2025] as unknown as StagedSurveyQuestion[])
-  .filter((row) => !SOKURYOSHIHO_EXCLUDED_QNUMBERS.includes(row.qNumber))
-  .map(project);
+export const SOKURYOSHIHO_QUESTIONS: Question[] = appendReplenishedQuestions([
+  ...([...y2026, ...y2025] as unknown as StagedSurveyQuestion[])
+    .filter((row) => !SOKURYOSHIHO_EXCLUDED_QNUMBERS.includes(row.qNumber))
+    .map(project),
+  ...y2024 as Question[],
+], [
+  y2023,
+  y2022,
+]);

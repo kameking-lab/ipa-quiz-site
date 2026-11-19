@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
@@ -15,15 +15,20 @@ import { getLearningActions, listPacePlans } from "@/lib/study-plan/pace-storage
 import type { LearningAction } from "@/lib/study-plan/activity";
 import { examLabel } from "@/lib/utils";
 import { MePetRoom } from "./MePetRoom";
+import { WeaknessReport } from "./WeaknessReport";
+import type { WeaknessQuestionMeta } from "@/lib/me/weakness";
+import type { ExamDatePlan } from "@/lib/billing/exam-end";
+import { readExamDatePlans } from "@/lib/billing/exam-end-client";
 
 const intensity = ["bg-muted", "bg-activity-1", "bg-activity-2", "bg-activity-3", "bg-activity-4"] as const;
 const number = new Intl.NumberFormat("ja-JP", { maximumFractionDigits: 1 });
 const shortDate = (date: string) => `${Number(date.slice(5, 7))}/${Number(date.slice(8))}`;
-interface Snapshot { history: HistoryEntry[]; actions: LearningAction[]; days: Record<string, number>; exam: string | null; goal: number; passed: string[]; plans: unknown; now: Date }
+interface Snapshot { history: HistoryEntry[]; actions: LearningAction[]; days: Record<string, number>; exam: string | null; goal: number; passed: string[]; plans: unknown; examDatePlans: ExamDatePlan[]; now: Date }
 
-export function MeClient() {
+export function MeClient({ reportExam: requestedReportExam }: { reportExam?: string } = {}) {
   const [snapshot, setSnapshot] = useState<Snapshot | null>(null);
   const [metadata, setMetadata] = useState<Record<string, string>>({});
+  const [weaknessMeta, setWeaknessMeta] = useState<Record<string, WeaknessQuestionMeta>>({});
   const [questionLabels, setQuestionLabels] = useState<Record<string, string>>({});
   const [selected, setSelected] = useState<{ date: string; exam?: string | null } | null>(null);
   const [showAll, setShowAll] = useState(false);
@@ -43,40 +48,52 @@ export function MeClient() {
     const controllers = new Set<AbortController>();
     const refresh = () => {
       const epoch = ++generation;
+      controllers.forEach(controller => controller.abort());
       const history = createHistoryStore().getAllEntries();
+      const actions = getLearningActions();
       let plans: unknown = [];
       try { plans = JSON.parse(localStorage.getItem(LS_KEYS.studyPlans) ?? "[]"); } catch { /* no plan */ }
-      setSelected(null); setMetadata({}); setQuestionLabels({});
+      setSelected(null); setMetadata({}); setQuestionLabels({}); setWeaknessMeta({});
       const pacePlans = listPacePlans();
-      setSnapshot({ history, actions: getLearningActions(), days: getHeatmapMap(), exam: readLastQuestion()?.exam ?? pacePlans[0]?.exam ?? null,
-        goal: readDailyGoalTarget(), passed: passedPlanExams(plans, pacePlans), plans, now: new Date() });
-      const ids = [...new Set(history.map(entry => entry.id))].filter(id => id.length > 0 && id.length <= 120).slice(-2000);
+      setSnapshot({ history, actions, days: getHeatmapMap(), exam: readLastQuestion()?.exam ?? pacePlans[0]?.exam ?? null,
+        goal: readDailyGoalTarget(), passed: passedPlanExams(plans, pacePlans), plans, examDatePlans: readExamDatePlans(pacePlans), now: new Date() });
+      const ids = [...new Set([...actions.filter(action => action.kind === "answer").map(action => action.questionId), ...history.map(entry => entry.id)])]
+        .filter(id => id.length > 0 && id.length <= 120).slice(-2000);
       if (!ids.length) return;
       const controller = new AbortController(); controllers.add(controller);
       void fetch("/api/questions/meta", { method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ids }), signal: controller.signal }).then(async response => {
+        body: JSON.stringify({ ids, includeTopics: true }), signal: controller.signal }).then(async response => {
         if (!response.ok) return;
         const body: unknown = await response.json();
         if (!body || typeof body !== "object" || !("meta" in body) || !Array.isArray(body.meta) || epoch !== generation) return;
-        const found: Record<string, string> = {}, labels: Record<string, string> = {};
+        const found: Record<string, string> = {}, labels: Record<string, string> = {}, topics: Record<string, WeaknessQuestionMeta> = {};
         for (const row of body.meta) if (row && typeof row.id === "string" && typeof row.exam === "string") {
           found[row.id] = row.exam; if (typeof row.label === "string") labels[row.id] = row.label;
+          if (typeof row.category === "string") topics[row.id] = { exam: row.exam, category: row.category,
+            topicTags: Array.isArray(row.topicTags) ? row.topicTags.filter((tag: unknown): tag is string => typeof tag === "string") : [] };
         }
-        setMetadata(found); setQuestionLabels(labels);
+        setMetadata(found); setQuestionLabels(labels); setWeaknessMeta(topics);
       }).catch(() => { /* saved IDs remain reviewable while offline */ }).finally(() => controllers.delete(controller));
     };
     refresh();
     const visible = () => { if (!document.hidden) refresh(); };
     window.addEventListener("storage", refresh); window.addEventListener("focus", refresh);
     window.addEventListener("study-plan:changed", refresh);
+    window.addEventListener("study-activity:synced", refresh);
     window.addEventListener("pet-v1:owner-changed", refresh); document.addEventListener("visibilitychange", visible);
     return () => { generation++; controllers.forEach(controller => controller.abort());
       window.removeEventListener("storage", refresh); window.removeEventListener("focus", refresh);
       window.removeEventListener("study-plan:changed", refresh);
+      window.removeEventListener("study-activity:synced", refresh);
       window.removeEventListener("pet-v1:owner-changed", refresh); document.removeEventListener("visibilitychange", visible); };
   }, []);
-  const records = snapshot ? buildMeRecords(snapshot.history, snapshot.days, snapshot.now, metadata, snapshot.actions) : null;
+  const records = useMemo(() => snapshot ? buildMeRecords(snapshot.history, snapshot.days, snapshot.now, metadata, snapshot.actions) : null, [snapshot, metadata]);
   const exam = snapshot?.exam ?? records?.records[0]?.exam ?? "ip";
+  const mostRecent = records?.records.reduce<{ exam: string | null; at: number }>((latest, record) => {
+    const at = Math.max(...record.entries.map(entry => entry.at));
+    return record.exam && at > latest.at ? { exam: record.exam, at } : latest;
+  }, { exam: null, at: -1 });
+  const reportExam = mostRecent?.exam ?? exam;
   const today = records?.calendar.at(-1);
   const todayExamCount = records?.records.find(record => record.date === today?.date && record.exam === exam)?.entries.length ?? 0;
   const opened = selected ? records?.records.filter(record => record.date === selected.date && (selected.exam === undefined || selected.exam === record.exam)) ?? [] : [];
@@ -88,6 +105,8 @@ export function MeClient() {
         ["1日平均の分数", records?.averageMinutes, "分"], ["これまでの問題数", records?.total, "問"],
       ] as const).map(([label, value, unit]) => <div key={label} className="min-w-0 rounded-xl border border-border bg-card px-3.5 py-2.5"><dt className="text-xs leading-relaxed text-muted-foreground">{label}</dt><dd className="font-display text-[26px] leading-tight font-bold tabular-nums">{value === undefined ? "—" : number.format(value)}<span className="ml-1 font-sans text-xs font-normal text-muted-foreground">{unit}</span></dd></div>)}
     </dl>
+    {snapshot && records && <WeaknessReport history={records.entries}
+      meta={weaknessMeta} exam={reportExam} requestedExam={requestedReportExam} plans={snapshot.examDatePlans} now={snapshot.now} />}
     <section aria-labelledby="me-calendar" className="rounded-xl border border-border bg-card p-3"><div className="mb-2 flex flex-wrap items-baseline justify-between gap-2"><h2 id="me-calendar" className="text-sm font-bold">12週間のカレンダー</h2><span className="text-xs tabular-nums text-muted-foreground">{records ? `${shortDate(records.calendar[0].date)}–${shortDate(records.calendar[83].date)}` : ""}</span></div>
       <div className="flex gap-1.5"><div aria-hidden="true" className="grid grid-rows-7 gap-0.5 text-[10px] leading-none text-muted-foreground">{records?.calendar.slice(0, 7).map(day => <span key={day.date} className="flex h-6 items-center">{new Intl.DateTimeFormat("ja", { weekday: "narrow", timeZone: "Asia/Tokyo" }).format(new Date(`${day.date}T12:00:00+09:00`))}</span>)}</div>
         <div ref={calendarScroll} role="region" aria-label="日別の学習量" tabIndex={0} className="min-w-0 flex-1 overflow-x-auto rounded-sm outline-offset-2 focus-visible:outline-2 focus-visible:outline-primary">

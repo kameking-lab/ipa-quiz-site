@@ -350,15 +350,15 @@ export default function EssayGradingDemoPage() {
           <CardContent className="flex flex-wrap items-center justify-between gap-3 p-5">
             <div>
               <div className="mb-1 text-base font-bold text-zinc-900 dark:text-zinc-50">
-                自分の論述で試す
+                論述の練習問題
               </div>
               <p className="text-sm text-zinc-700 dark:text-zinc-300">
-                論述学習ページで対象問題と利用条件を確認できます。AI添削の提供状態は各画面の案内に従ってください。
+                5区分の練習問題と解答骨子を読めます。
               </p>
             </div>
             <Button asChild variant="primary">
               <Link href="/essay">
-                論述添削を始める
+                練習問題を見る
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>

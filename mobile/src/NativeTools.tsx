@@ -24,6 +24,7 @@ import { openQualificationUrl } from "./qualification-platform";
 import { ManageSubscriptionButton } from "@/app/billing/ManageSubscriptionButton";
 import { blocksNativeWebPurchase } from "../shared/native-billing-policy";
 import { installNativePetSupport, observePetStudyWrites, persistStudyAfterPets } from "./pet-support";
+import { safeQuizReturn, studyCheckoutHeading } from "@/lib/billing/quiz-return";
 const defaultMembership = deviceMembership;
 /** User-facing text for a failure: the message, without the "Error: " prefix String(e) adds. */
 export function noticeText(error: unknown): string { return error instanceof Error ? error.message : String(error); }
@@ -77,6 +78,13 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
   const signingOut = useRef(false);
   const running=useRef(false);
   const storeKitRunning=useRef(false);
+  const purchaseReturn = useRef<string | null>(null);
+  const [purchaseHeading, setPurchaseHeading] = useState<string | null>(null);
+  const setPurchaseReturn = useCallback((target: string | null) => {
+    purchaseReturn.current = target;
+    setPurchaseHeading(studyCheckoutHeading(target));
+  }, []);
+  const returnOnConfirmation = useRef<{ owner: string; target: string } | null>(null);
   const refreshing=useRef<Promise<unknown>>(Promise.resolve());
   const inSite = typeof location !== "undefined" && location.origin === SITE_ORIGIN;
   const refresh = useCallback((fresh = false) => {
@@ -106,9 +114,11 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     }
     user.current = result.entitlement.userId;
     let pending: PendingPurchaseStatus = null;
+    let confirmedReturn: string | undefined;
     if (!storeKitRunning.current) {
       pending = result.entitlement.userId
-        ? await reconcilePendingPurchase(result.entitlement.userId, result.entitlement.source === "app-store") : null;
+        ? await reconcilePendingPurchase(result.entitlement.userId, result.entitlement.entitled && result.entitlement.source === "app-store",
+          undefined, target => { confirmedReturn = target; }) : null;
       setPurchasePending(pending);
     }
     const signature=JSON.stringify([result.entitlement.userId,result.entitlement.entitled]);
@@ -122,11 +132,20 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
       if (cached && cached.access.userId !== result.entitlement.userId) await downloads.invalidate();
     }
     setSaved(await downloads.list());
+    const returning = returnOnConfirmation.current;
+    if (returning && result.entitlement.userId !== returning.owner) returnOnConfirmation.current = null;
+    const target = confirmedReturn ?? (returning?.owner === result.entitlement.userId ? returning?.target : undefined);
+    if (target && !signingOut.current && user.current === result.entitlement.userId
+      && result.entitlement.source === "app-store" && result.entitlement.entitled) {
+      returnOnConfirmation.current = null;
+      setPurchaseReturn(null);
+      location.replace(target);
+    }
     return { ...result, pending };
     });
     refreshing.current=task.catch(()=>{});
     return task;
-  }, [membership]);
+  }, [membership, setPurchaseReturn]);
   const run = useCallback(async (fn: ()=>Promise<void>)=>{
     if(running.current || signingOut.current)return;
     running.current=true;
@@ -177,12 +196,16 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     const click = (e: MouseEvent)=>{
       const a = (e.target as Element)?.closest?.("a[href]"); if (!a) return;
       const url = new URL(a.getAttribute("href")!, location.href);
-      if (url.origin === SITE_ORIGIN && ["/billing", "/billing/start"].includes(url.pathname.replace(/\/$/, ""))) { if (a.hasAttribute("data-monthly-plan")) sendConversion("plan_clicked"); e.preventDefault(); e.stopPropagation(); setOpen(true); setRevealTick(n=>n+1); }
+      if (url.origin === SITE_ORIGIN && ["/billing", "/billing/start"].includes(url.pathname.replace(/\/$/, ""))) {
+        if (a.hasAttribute("data-monthly-plan")) sendConversion("plan_clicked");
+        setPurchaseReturn(safeQuizReturn(url.searchParams.get("returnTo")));
+        e.preventDefault(); e.stopPropagation(); setOpen(true); setRevealTick(n=>n+1);
+      }
       else if (url.origin !== SITE_ORIGIN && url.protocol === "https:") { e.preventDefault(); e.stopPropagation(); void (isQualificationUrl(url.href) ? openQualificationUrl(url.href) : Browser.open({ url: url.href })).catch(()=>setNotice("リンクを開けませんでした。再度お試しください。")); }
     };
     document.addEventListener("click",click,true);
     return ()=>{ window.removeEventListener("mobile:signing-out",signingOutNow);window.removeEventListener("mobile:account-deleted",deleted);disposed=true; disposers.forEach(fn=>fn()); clearInterval(interval);clearInterval(mirror);imageObserver.disconnect();document.removeEventListener("load",cacheVisibleImages,true); window.fetch=original; document.removeEventListener("click",click,true); abort.current?.abort(); };
-  },[inSite,refresh,run]);
+  },[inSite,refresh,run,setPurchaseReturn]);
   // Loading the panel's data must never hold the action lock: a tap on
   // 「ログイン」 while it loads used to be silently dropped by run().
   const loadOffer = useCallback(async (r: { entitlement: MobileEntitlement; configuration: MobileConfiguration }, isCancelled: ()=>boolean = ()=>false) => {
@@ -206,20 +229,23 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
       const raw=(await Preferences.get({key:INTENT_KEY})).value;
       if (raw) {
         await Preferences.remove({key:INTENT_KEY});
-        const intent=JSON.parse(raw) as {action?:Intent;createdAt?:number};
-        if ((intent.action==="buy"||intent.action==="restore") && Date.now()-(intent.createdAt??0)<15*60000 && !cancelled) setResume(intent.action);
+        const intent=JSON.parse(raw) as {action?:Intent;createdAt?:number;returnTo?:string};
+        if ((intent.action==="buy"||intent.action==="restore") && Date.now()-(intent.createdAt??0)<15*60000 && !cancelled) {
+          setPurchaseReturn(safeQuizReturn(intent.returnTo) ?? purchaseReturn.current);
+          setResume(intent.action);
+        }
       }
     }
     const response = await fetch("/api/mobile/catalog", { cache:"no-store" });
     if (response.ok && !cancelled) setCatalog((await response.json() as { exams: CatalogEntry[] }).exams);
-  })().catch(error=>{ if(!cancelled && !(error instanceof StatusError))setNotice(error instanceof Error?error.message:"会員状態を確認できません。"); }); return ()=>{cancelled=true;}; },[open,inSite,refresh,loadOffer]);
+  })().catch(error=>{ if(!cancelled && !(error instanceof StatusError))setNotice(error instanceof Error?error.message:"会員状態を確認できません。"); }); return ()=>{cancelled=true;}; },[open,inSite,refresh,loadOffer,setPurchaseReturn]);
   useEffect(()=>{
     if (!revealTick) return;
     const reduced = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
     window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" });
     heading.current?.focus({ preventScroll: true });
   },[revealTick]);
-  const returnHere = ()=>`${location.pathname}${location.search}#app-settings`;
+  const returnHere = ()=>`${purchaseReturn.current ?? location.pathname + location.search}#app-settings`;
   const offerVisible = open && !!offer && !!access && !access.entitled;
   const offerWasVisible = useRef(false);
   useEffect(() => {
@@ -228,7 +254,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
   }, [offerVisible]);
   const loginFor = async (action: Intent)=>{
     if (action === "buy") sendConversion("signin_viewed");
-    await Preferences.set({key:INTENT_KEY,value:JSON.stringify({action,createdAt:Date.now()})});
+    await Preferences.set({key:INTENT_KEY,value:JSON.stringify({action,createdAt:Date.now(),returnTo:purchaseReturn.current})});
     setSigningIn("opening");
     try { await signIn(returnHere()); } finally { setTimeout(()=>setSigningIn(s=>s==="opening"?"":s),1500); }
     setNotice(action==="buy"?"ログインが終わると、そのまま購入画面に進みます。":"ログインが終わると、そのまま購入を復元します。");
@@ -242,6 +268,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     const selected=offer??await loadOffer(r);
     if(!selected)throw new StoreError("商品情報を取得できないため購入を開始できません。表示中の理由をご確認ください。","no_offer");
     const userId = r.entitlement.userId;
+    const target = safeQuizReturn(purchaseReturn.current);
     let pending: PendingPurchase | undefined;
     const writePending = async (next: PendingPurchase) => {
       const marker = { ...next, revision: (pending?.revision ?? 0) + 1 };
@@ -253,7 +280,8 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     storeKitRunning.current = true;
     try {
       await membership.buy(r.configuration, r.entitlement, selected, async () => {
-        const preparing: PendingPurchase = { state: "preparing", attemptId: crypto.randomUUID() };
+        const preparing: PendingPurchase = { state: "preparing", attemptId: crypto.randomUUID(),
+          ...(target ? { returnTo: target, returnUntil: Date.now() + 86400_000 } : {}) };
         const stale = () => new StoreError(PURCHASE_MESSAGES.app_store_purchase_pending, "purchase_check");
         if (!await writePending(preparing)) throw stale();
         setPurchasePending("processing");
@@ -265,7 +293,8 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
         if (!await writePending({ ...preparing, reservation: reservation ?? undefined, state: "recheck", expiresAt: fallbackPurchaseExpiry() })) throw stale();
         readyForStoreKit = true;
       });
-      if (pending) await writePending({ ...pending, state: "completed" });
+      const savedReturn = pending && await writePending({ ...pending, state: "completed" });
+      if (target && !savedReturn) returnOnConfirmation.current = { owner: userId, target };
     } catch (error) {
       const outcome = purchaseError(error);
       if (pending?.reservation && (outcome.rejected || !readyForStoreKit)) {
@@ -358,7 +387,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
       {notice && <p role="status" className="break-words rounded-xl bg-muted p-3 text-sm">{notice}</p>}
       {purchaseSignIn && <button type="button" className={secondary} disabled={busy || !!signingIn} onClick={()=>startLogin(true)}>ログインし直す</button>}
       <section aria-labelledby="native-plan" className={card}>
-        <h2 id="native-plan" className="font-bold">月額プラン</h2>
+        <h2 id="native-plan" className="font-bold">{!access?.entitled && purchaseHeading ? purchaseHeading : "月額プラン"}</h2>
         <p className="text-sm">演習は無料で1日{PLAN_OFFER.freeDaily}問、月額で回数無制限。</p>
         {!access ? <>{!statusError && <><p role="status">会員状態を確認しています…</p><button className={secondary} disabled={busy} onClick={()=>void run(async()=>{ await refresh(true); })}>会員状態を再確認</button></>}</> : <>
           <p className="font-semibold">{access.entitled ? access.source === "web" ? "ウェブの有料会員です。追加購入は不要です。" : "App Storeの有料会員です。" : "無料会員"}</p>
@@ -366,7 +395,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
           {purchasePending === "processing" && <p role="status" className="text-sm">購入内容をサーバーで確認中です。再購入せず「購入を復元」または会員状態の再確認をご利用ください。</p>}
           {purchasePending && purchasePending !== "processing" && !access.entitled && <div className="text-sm">
             <p role="status">購入の承認待ちです。</p>
-            <button type="button" className="min-h-11 underline underline-offset-4 disabled:opacity-50" disabled={busy || !!signingIn} onClick={retryApproval}>承認依頼をやり直す</button>
+            <button type="button" className="min-h-11 underline underline-offset-4 disabled:opacity-50" disabled={busy || !!signingIn} onClick={retryApproval}>承認状況を確認</button>
           </div>}
           {offer && !access.entitled && <button className={primary} disabled={busy||!!purchasePending||!!signingIn}
             aria-describedby="native-purchase-terms" onClick={()=>{sendConversion("plan_clicked");purchase();}}>

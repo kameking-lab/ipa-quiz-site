@@ -8,6 +8,7 @@ import { MonthlyService, monthlyTerms } from "@/lib/billing/subscription/service
 import { monthlyFixture, monthlyFixtureConfig } from "./monthly-fixture";
 import type { SqlSession } from "@/lib/billing/postgres-store";
 import { BillingError } from "@/lib/billing/domain";
+import { emptyAccount, type Signup } from "@/lib/billing/subscription/domain";
 
 const wiring = vi.hoisted(() => ({ user: "alice", check: vi.fn(), runtime: null as unknown, entitlement: vi.fn(), app: vi.fn(), appStatus: vi.fn() }));
 vi.mock("@/lib/billing/runtime", () => ({
@@ -67,6 +68,72 @@ async function stripePaid() {
 async function appPaid() {
   await pg.query('INSERT INTO "MobileRevenueCatAccount" ("userId","appUserId","sandboxExpiresAt") VALUES ($1,$2,$3)', ["bob", "opaque", new Date(Date.now()+3600000)]);
 }
+it("prioritizes attached orders while scanning more unresolved orders than one batch", async () => {
+  const date = Math.floor(now.getTime() / 1000);
+  const a = emptyAccount("alice", config.mode, config.sourceInstance);
+  a.customer = { id: "cus_alice", attemptId: "first", createdAt: now.toISOString() };
+  const signup = (id: string): Signup => ({ id, createdAt: now.toISOString(), terms: monthlyTerms(config), amount: 980,
+    priceId: config.priceId, state: "pending", sessionId: `cs_${id}`, url: null, subscriptionId: null, examEndAt: date - 300 });
+  for (let i = 0; i < 29; i++) a.signups[`pending-${i}`] = signup(`pending-${i}`);
+  a.signups.confirmed = { ...signup("confirmed"), state: "attached", subscriptionId: "sub_check", examEndAt: date + 86400 };
+  a.contracts.sub_check = { id: "sub_check", status: "active", customerId: "cus_alice", signupId: "confirmed", priceId: config.priceId,
+    periodStart: date - 86400, periodEnd: date + 86400, cancelAtPeriodEnd: false, renewalBlocked: false, amount: 980 };
+  await sql.query("INSERT INTO billing_subscription_account(user_id,mode,source_instance,payload) VALUES ($1,$2,$3,$4::jsonb)",
+    [a.userId, a.mode, a.sourceInstance, JSON.stringify(a)]);
+  const first = await store.examEndsToReconcile(config.mode, date);
+  expect(first[0]?.signup_id).toBe("confirmed");
+  expect(first).toHaveLength(24);
+  const scanned = first.map(row => row.signup_id);
+  const second = await store.examEndsToReconcile(config.mode, date, scanned);
+  expect(second).toHaveLength(6);
+  expect(new Set([...scanned, ...second.map(row => row.signup_id)]).size).toBe(30);
+});
+it("finds a member's elapsed exam cutoff independently of their checkout selection", async () => {
+  const f = await monthlyFixture();
+  await f.send();
+  const a = f.account();
+  const [signup] = Object.values(a.signups);
+  const [sub] = Object.values(a.contracts);
+  const date = Math.floor(now.getTime() / 1000);
+  sub.memberEnding = { kind: "exam", at: date - 1, renewalEnd: date + 3600 };
+  await sql.query("INSERT INTO billing_subscription_account(user_id,mode,source_instance,payload) VALUES ($1,$2,$3,$4::jsonb)",
+    [a.userId, a.mode, a.sourceInstance, JSON.stringify(a)]);
+  expect(await store.examEndsToReconcile(config.mode, date)).toEqual([{ user_id: a.userId, signup_id: signup.id }]);
+  signup.examEndAt = date - 600;
+  sub.memberEnding = { kind: "renew" };
+  await sql.query("UPDATE billing_subscription_account SET payload=$1::jsonb WHERE user_id=$2", [JSON.stringify(a), a.userId]);
+  expect(await store.examEndsToReconcile(config.mode, date)).toEqual([]);
+});
+it.each(["web", "app-store"] as const)("recovers an elapsed contract on the verified alternate login before %s purchase", async channel => {
+  const f = await monthlyFixture();
+  await f.send();
+  const member = structuredClone(f.account());
+  member.userId = "bob";
+  const [old] = Object.values(member.signups);
+  const [contract] = Object.values(member.contracts);
+  old.examEndAt = Math.floor(now.getTime() / 1000) - 600;
+  old.examEndApplied = true;
+  contract.examCancelAt = old.examEndAt;
+  await sql.query("INSERT INTO billing_subscription_account(user_id,mode,source_instance,payload) VALUES ($1,$2,$3,$4::jsonb)",
+    [member.userId, member.mode, member.sourceInstance, JSON.stringify(member)]);
+  const end = vi.fn(async () => {
+    f.observation.contracts[0].status = "canceled";
+    f.observation.contracts[0].examCancelAt = old.examEndAt;
+    return "ended" as const;
+  });
+  const fake = { ...f.provider, scheduleExamEnd: end, customer: vi.fn(async () => "cus_new"),
+    checkout: vi.fn(async () => ({ id: "cs_new", url: "https://checkout.stripe.com/c/pay/new" })) };
+  f.observation.contracts[0].examCancelAt = old.examEndAt;
+  const tryPurchase = () => channel === "web"
+    ? service.checkout("alice", monthlyTerms(config), fake)
+    : service.reserveAppStorePurchase("alice", fake, async () => {}, async () => {}, {}, Date.now());
+  await expect(tryPurchase()).rejects.toMatchObject({ code: "duplicate_purchase" });
+  expect(end).not.toHaveBeenCalled();
+  await pg.exec(`UPDATE "User" SET "emailVerified"=NOW() WHERE id='bob'`);
+  await expect(tryPurchase()).resolves.toBeDefined();
+  expect(end).toHaveBeenCalledOnce();
+  expect(end).toHaveBeenCalledWith(contract.id, member.customer?.id, expect.objectContaining({ id: old.id }), expect.any(Number));
+});
 it.each(["stripe", "appStore"])("matches trim/case differences and blocks a different account's %s", async source => {
   if (source === "stripe") await stripePaid(); else await appPaid();
   await expect(guard.assertCanPurchase("alice")).rejects.toMatchObject({ code: "duplicate_purchase_google" });
@@ -314,6 +381,32 @@ it.each(["open", "complete", "expired"] as const)("HTTP: cross-ID Web-first Chec
   if (status === "open") expect(provider.expireCheckout).toHaveBeenCalledWith("cs_test_monthly");
 });
 
+it("HTTP: a verified alternate login replaces the old Checkout only after Stripe expires it", async () => {
+  const first = await checkout(webRequest());
+  const { orderId } = await first.json();
+  expect(first.status).toBe(200);
+  await pg.exec(`UPDATE "User" SET "emailVerified"=NOW() WHERE id='bob'`);
+  vi.mocked(provider.customer).mockResolvedValueOnce("cus_switch");
+  vi.mocked(provider.checkout).mockResolvedValueOnce({ id: "cs_test_switch", url: "https://checkout.stripe.com/c/pay/switch" });
+  wiring.user = "bob";
+  const second = await checkout(webRequest());
+  expect(second.status).toBe(200);
+  expect(provider.expireCheckout).toHaveBeenCalledWith("cs_test_monthly");
+  expect(vi.mocked(provider.expireCheckout).mock.invocationCallOrder[0]).toBeLessThan(vi.mocked(provider.checkout).mock.invocationCallOrder[1]);
+  expect((await service.status("alice", orderId)).purchase?.status).toBe("expired");
+});
+
+it("HTTP: a verified alternate login cannot replace a Checkout that has just completed", async () => {
+  expect((await checkout(webRequest())).status).toBe(200);
+  await pg.exec(`UPDATE "User" SET "emailVerified"=NOW() WHERE id='bob'`);
+  vi.mocked(provider.expireCheckout).mockRejectedValueOnce(new BillingError("subscription_exists"));
+  wiring.user = "bob";
+  const second = await checkout(webRequest());
+  expect(second.status).toBe(409);
+  expect(await second.json()).toEqual({ error: "web_checkout_other_account" });
+  expect(provider.checkout).toHaveBeenCalledTimes(1);
+});
+
 it("HTTP: the first iOS buyer blocks both channels on the other ID before RevenueCat returns", async () => {
   const entered = Promise.withResolvers<void>(), continueRevenueCat = Promise.withResolvers<void>();
   wiring.app.mockImplementation(async (id: string) => {
@@ -528,7 +621,7 @@ async function requestApproval(id?: string) {
   return reservation;
 }
 
-it.each(["iOS", "Web"])("HTTP: a declined Ask to Buy at five minutes can be retried on %s", async channel => {
+it.each(["iOS", "Web"])("HTTP: an empty approval check keeps %s blocked until the original deadline", async channel => {
   const original = await requestApproval();
   now = new Date(now.getTime() + 5 * 60000);
   expect((await prepareNative()).status).toBe(409);
@@ -540,9 +633,14 @@ it.each(["iOS", "Web"])("HTTP: a declined Ask to Buy at five minutes can be retr
   expect(await (await pendingNative()).json()).toEqual({ managed: true, pending: { approval: { reservationId: original.id } } });
   expect(provider.checkout).not.toHaveBeenCalled();
   wiring.appStatus.mockClear();
-  expect(await (await transitionNative(original.id, "retry-approval")).json()).toEqual({ state: null });
+  expect(await (await transitionNative(original.id, "retry-approval")).json()).toEqual({ state: "processing" });
   expect(wiring.appStatus.mock.calls).toEqual([["alice", true], ["bob", true]]);
-  expect(await reservationInDb()).toBeUndefined();
+  const hold = await reservationInDb();
+  expect(hold).toMatchObject({ id: original.id, phase: "approval" });
+  expect((await checkout(webRequest())).status).toBe(409);
+  expect((await prepareNative()).status).toBe(409);
+  now = new Date(hold!.expiresAt);
+  expect(await (await transitionNative(original.id, "retry-approval")).json()).toEqual({ state: null });
   if (channel === "iOS") {
     wiring.user = "alice";
     expect(await (await pendingNative()).json()).toEqual({ managed: true, pending: null });
@@ -573,16 +671,17 @@ it.each(["other@example.invalid", "owner+tag@example.invalid", "owner@privaterel
   },
 );
 
-it.each([6, 23])("HTTP: can retry at %i hours after starting Ask to Buy", async hours => {
+it.each([6, 23])("HTTP: rechecking after %i hours does not release Ask to Buy", async hours => {
   const original = await requestApproval();
   now = new Date(now.getTime() + hours * 3600000);
   wiring.user = "bob";
   expect(await (await pendingNative()).json()).toMatchObject({ pending: { approval: { reservationId: original.id } } });
   expect((await prepareNative()).status).toBe(409);
   expect((await checkout(webRequest())).status).toBe(409);
-  expect(await (await transitionNative(original.id, "retry-approval")).json()).toEqual({ state: null });
-  wiring.user = "alice";
-  expect((await prepareNative()).status).toBe(200);
+  const hold = await reservationInDb();
+  expect(await (await transitionNative(original.id, "retry-approval")).json()).toEqual({ state: "processing" });
+  expect(await reservationInDb()).toEqual(hold);
+  expect((await checkout(webRequest())).status).toBe(409);
 });
 
 it("HTTP: records an approval whose StoreKit result arrives after switching logins", async () => {
@@ -634,18 +733,17 @@ it("HTTP: the retry action preserves uncertain and newer reservations", async ()
   wiring.appStatus.mockImplementationOnce(() => { checking.resolve(); return oldLookup.promise; });
   const slowRetry = transitionNative(first.id, "retry-approval");
   await checking.promise;
-  expect(await (await transitionNative(first.id, "retry-approval")).json()).toEqual({ state: null });
+  now = new Date((await reservationInDb())!.expiresAt);
   const next = await requestApproval("00000000-0000-4000-8000-000000000078");
   oldLookup.resolve(null);
   expect(await (await slowRetry).json()).toEqual({ state: "processing" });
   expect(await reservationInDb()).toMatchObject({ id: next.id, phase: "approval" });
 });
 
-it("HTTP: a still-approvable request that completes after release blocks the next purchase on either channel", async () => {
+it("HTTP: a purchase approved while still pending blocks another purchase on either channel", async () => {
   const original = await requestApproval();
   now = new Date(now.getTime() + 5 * 60000);
-  expect(await (await transitionNative(original.id, "retry-approval")).json()).toEqual({ state: null });
-  // StoreKit only delivers the transaction when the guardian approves. Model a delivery after the retry.
+  expect(await (await transitionNative(original.id, "retry-approval")).json()).toEqual({ state: "processing" });
   wiring.app.mockImplementation(async id => {
     if (id === "alice") throw new BillingError("app_store_subscription_exists");
   });
@@ -657,8 +755,10 @@ it("HTTP: a still-approvable request that completes after release blocks the nex
   expect(provider.checkout).not.toHaveBeenCalled();
 });
 
-it("logs a late App Store approval when Web payment already went through after the retry", async () => {
+it("retains a late App Store overlap, retries the Web stop from the cron queue and preserves paid access", async () => {
   const original = await requestApproval();
+  expect(await (await transitionNative(original.id, "retry-approval")).json()).toEqual({ state: "processing" });
+  now = new Date((await reservationInDb())!.expiresAt);
   expect(await (await transitionNative(original.id, "retry-approval")).json()).toEqual({ state: null });
   wiring.user = "bob";
   const response = await checkout(webRequest());
@@ -671,10 +771,29 @@ it("logs a late App Store approval when Web payment already went through after t
   vi.mocked(provider.observe).mockResolvedValueOnce(observation);
   expect(await service.receive({ id: "evt_web_paid" }, "web-paid", provider)).toBe("processed");
   expect((await service.status("bob")).entitled).toBe(true);
-  await pg.query('INSERT INTO "MobileRevenueCatAccount" ("userId","appUserId","sandboxExpiresAt") VALUES ($1,$2,$3)', ["alice", "late-approval", new Date(Date.now() + 3600000)]);
+  await pg.query('INSERT INTO "MobileRevenueCatAccount" ("userId","appUserId","sandboxExpiresAt") VALUES ($1,$2,$3)', ["alice", "late-approval", new Date(now.getTime() + 30 * 86400000)]);
   const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+  const stop = vi.fn().mockRejectedValueOnce(new Error("Stripe unavailable")).mockResolvedValue(end);
+  const retryProvider = { ...provider, stopAppStoreOverlapRenewal: stop };
+  const readOverlap = () => store.transaction("bob", config.mode, config.sourceInstance, async a => a.signups[orderId].appStoreOverlap, true);
   try {
-    await guard.audit("alice");
+    const appStoreUsers = (await guard.audit("alice"))!;
     expect(warn).toHaveBeenCalledWith("duplicate_purchase_stripe_app_store_same_email");
+    expect(await service.recordAppStoreOverlaps("alice", appStoreUsers)).toEqual([]);
+    await pg.exec('UPDATE "User" SET "emailVerified"=NOW() WHERE id=\'bob\'');
+    expect(await service.recordAppStoreOverlaps("alice", appStoreUsers)).toEqual([{ userId: "bob", orderId }]);
+    await expect(service.reconcileAppStoreOverlap("bob", orderId, retryProvider)).rejects.toThrow("Stripe unavailable");
+    expect(await readOverlap()).toMatchObject({ appStoreUserId: "alice", renewal: "pending" });
+    await store.transaction("bob", config.mode, config.sourceInstance, async a => { a.signups[orderId].examEndCheckAt = start + 600; });
+    expect(await store.examEndsToReconcile(config.mode, start)).toEqual([{ user_id: "bob", signup_id: orderId }]);
+    await Promise.all([
+      service.runExamEndCheck("bob", orderId, retryProvider),
+      service.reconcileAppStoreOverlap("bob", orderId, retryProvider),
+    ]);
+    expect(stop).toHaveBeenCalledTimes(2);
+    expect(await readOverlap()).toMatchObject({ appStoreUserId: "alice", renewal: "stopped" });
+    expect(await service.recordAppStoreOverlaps("bob", appStoreUsers)).toEqual([]);
+    expect(await store.examEndsToReconcile(config.mode, start)).toEqual([]);
+    expect(await service.status("bob")).toMatchObject({ entitled: true, subscription: { cancelAtPeriodEnd: true, renewalBlocked: false } });
   } finally { warn.mockRestore(); }
 });

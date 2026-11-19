@@ -1,0 +1,142 @@
+[
+  {
+    "id": "sc-2019h-pm1-q1",
+    "exam": "sc",
+    "year": 2019,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 1,
+    "category": "セキュリティ技術",
+    "topicTags": [
+      "Webサイトのセキュリティ"
+    ],
+    "difficulty": 4,
+    "explanation": "ブラウザのオリジン制御と利用者のログイン状態を区別する。許可対象のオリジンを照合する処理は、APIを呼び出す側と受ける側に分けて整理する。",
+    "sourceAttribution": "出典：IPA 2019年度春期 情報処理安全確保支援士試験 午後I 問1",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "descriptive",
+    "question": "問1 Webサイトのセキュリティ",
+    "answer": "問１\n\n出題趣旨\n\nWeb サービスには，Web ブラウザから利用するものだけでなく，サービスの機能の一部をプログラムから\n\nWeb API として利用するものもある。あるWeb サイトから読み込まれたスクリプトが異なるオリジンのWeb\n\nAPI にアクセスする場合，Same-Origin ポリシによって制限される。CORS（Cross-Origin Resource Sharing）を\n\n利用すれば制限を回避することができるが，セキュリティを考慮して実装する必要がある。\n\n本問では，小売業が運営しているWeb サイトでの情報連携を題材に，Web API を設計する能力を問う。\n\n設問 解答例・解答の要点 備考\n\n設問１ (1) a Same-Origin\n\n(2) b イ 順不同\n\nc キ\n\nd ク\n\n(3) Web サイトB へのログイン\n\n設問２ e (ⅴ)\n\n設問３ (1) f https://site-a.m-sha.co.jp\n\n(2) g 売れ筋商品情報配信の申込ページのオリジン\n\n(3) h Origin ヘッダフィールドの値\n\ni 許可するオリジンのリスト\n\nj 一致",
+    "modelAnswer": "問１\n\n出題趣旨\n\nWeb サービスには，Web ブラウザから利用するものだけでなく，サービスの機能の一部をプログラムから\n\nWeb API として利用するものもある。あるWeb サイトから読み込まれたスクリプトが異なるオリジンのWeb\n\nAPI にアクセスする場合，Same-Origin ポリシによって制限される。CORS（Cross-Origin Resource Sharing）を\n\n利用すれば制限を回避することができるが，セキュリティを考慮して実装する必要がある。\n\n本問では，小売業が運営しているWeb サイトでの情報連携を題材に，Web API を設計する能力を問う。\n\n設問 解答例・解答の要点 備考\n\n設問１ (1) a Same-Origin\n\n(2) b イ 順不同\n\nc キ\n\nd ク\n\n(3) Web サイトB へのログイン\n\n設問２ e (ⅴ)\n\n設問３ (1) f https://site-a.m-sha.co.jp\n\n(2) g 売れ筋商品情報配信の申込ページのオリジン\n\n(3) h Origin ヘッダフィールドの値\n\ni 許可するオリジンのリスト\n\nj 一致",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/sc/2019-spring-pm1/page-02.webp",
+      "/questions/ipa/sc/2019-spring-pm1/page-03.webp",
+      "/questions/ipa/sc/2019-spring-pm1/page-04.webp",
+      "/questions/ipa/sc/2019-spring-pm1/page-05.webp",
+      "/questions/ipa/sc/2019-spring-pm1/page-06.webp",
+      "/questions/ipa/sc/2019-spring-pm1/page-07.webp"
+    ],
+    "imageAltTexts": [
+      "問1の公式問題冊子 2ページ",
+      "問1の公式問題冊子 3ページ",
+      "問1の公式問題冊子 4ページ",
+      "問1の公式問題冊子 5ページ",
+      "問1の公式問題冊子 6ページ",
+      "問1の公式問題冊子 7ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/sc/2019-spring-pm1/answer-q01.webp"
+    ],
+    "answerImageAltTexts": [
+      "問1の公式解答例"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_sc_pm1_qs.pdf#page=2",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_sc_pm1_ans.pdf#page=1"
+  },
+  {
+    "id": "sc-2019h-pm1-q2",
+    "exam": "sc",
+    "year": 2019,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 2,
+    "category": "認証技術",
+    "topicTags": [
+      "クラウドサービスのセキュリティ"
+    ],
+    "difficulty": 4,
+    "explanation": "認証方式ごとに、利用者、ブラウザ、認証サーバが確認する情報を整理する。ワンタイムパスワードと、オリジンに結び付いた認証の違いが問われている。",
+    "sourceAttribution": "出典：IPA 2019年度春期 情報処理安全確保支援士試験 午後I 問2",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "descriptive",
+    "question": "問2 クラウドサービスのセキュリティ",
+    "answer": "問２\n\n出題趣旨\n\n近年，クラウドサービスに対するパスワード認証が破られての不正アクセス事件が度々発生している。さら\n\nに，利用するサービスが増えると，サービス毎に別々のパスワードを人が記憶することも難しくなるので，ク\n\nラウドサービス利用においては，認証連携及びより強力な認証方式が必要になってきている。そうした背景も\n\nあり，パスワードレス認証方式の標準化が進められている。\n\n本問では，クラウドサービスの利用における認証方式の強化を題材に，認証方式の安全性を評価する能力を\n\n問う。\n\n設問 解答例・解答の要点 備考\n\n設問１ (1) ホテルWi-Fi と同じSSID と事前共有鍵\n\n(2) a メールサービスP\n\nb 攻撃者が用意したWeb サーバ\n\n(3) HTTP で接続が開始されたから\n\n設問２ (1) OTP の入力を要求し，OTP を認証サーバX に中継する処理\n\n(2) c ウ\n\nd ア\n\ne エ\n\nf イ\n\n(3) 認証サーバX でオリジンb とオリジンs の一致を確認しているから",
+    "modelAnswer": "問２\n\n出題趣旨\n\n近年，クラウドサービスに対するパスワード認証が破られての不正アクセス事件が度々発生している。さら\n\nに，利用するサービスが増えると，サービス毎に別々のパスワードを人が記憶することも難しくなるので，ク\n\nラウドサービス利用においては，認証連携及びより強力な認証方式が必要になってきている。そうした背景も\n\nあり，パスワードレス認証方式の標準化が進められている。\n\n本問では，クラウドサービスの利用における認証方式の強化を題材に，認証方式の安全性を評価する能力を\n\n問う。\n\n設問 解答例・解答の要点 備考\n\n設問１ (1) ホテルWi-Fi と同じSSID と事前共有鍵\n\n(2) a メールサービスP\n\nb 攻撃者が用意したWeb サーバ\n\n(3) HTTP で接続が開始されたから\n\n設問２ (1) OTP の入力を要求し，OTP を認証サーバX に中継する処理\n\n(2) c ウ\n\nd ア\n\ne エ\n\nf イ\n\n(3) 認証サーバX でオリジンb とオリジンs の一致を確認しているから",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/sc/2019-spring-pm1/page-09.webp",
+      "/questions/ipa/sc/2019-spring-pm1/page-10.webp",
+      "/questions/ipa/sc/2019-spring-pm1/page-11.webp",
+      "/questions/ipa/sc/2019-spring-pm1/page-12.webp",
+      "/questions/ipa/sc/2019-spring-pm1/page-13.webp",
+      "/questions/ipa/sc/2019-spring-pm1/page-14.webp",
+      "/questions/ipa/sc/2019-spring-pm1/page-15.webp"
+    ],
+    "imageAltTexts": [
+      "問2の公式問題冊子 9ページ",
+      "問2の公式問題冊子 10ページ",
+      "問2の公式問題冊子 11ページ",
+      "問2の公式問題冊子 12ページ",
+      "問2の公式問題冊子 13ページ",
+      "問2の公式問題冊子 14ページ",
+      "問2の公式問題冊子 15ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/sc/2019-spring-pm1/answer-q02.webp"
+    ],
+    "answerImageAltTexts": [
+      "問2の公式解答例"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_sc_pm1_qs.pdf#page=9",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_sc_pm1_ans.pdf#page=1"
+  },
+  {
+    "id": "sc-2019h-pm1-q3",
+    "exam": "sc",
+    "year": 2019,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 3,
+    "category": "暗号技術",
+    "topicTags": [
+      "IoT機器の開発"
+    ],
+    "difficulty": 4,
+    "explanation": "機器とサーバの認証では、鍵を保持する主体と認証対象を区別する。機器の保護では、保存データの検証に使う情報をどこへ置くかまで確認する。",
+    "sourceAttribution": "出典：IPA 2019年度春期 情報処理安全確保支援士試験 午後I 問3",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "descriptive",
+    "question": "問3 IoT機器の開発",
+    "answer": "問３\n\n出題趣旨\n\n近年，IoT 機器が増加しており，そのセキュリティ対策も重要になってきている。IoT 機器はネットワーク\n\n経由だけでなく，物理的なアクセスも可能なので，それも考慮してセキュリティ設計を進める必要がある。ま\n\nた，IoT 機器が接続するサーバが複数あると，それらを連携して動作させるために，認証連携が必要になるこ\n\nとも多い。\n\n本問では，家庭用ゲーム機の開発を題材に，IoT 機器と複数のサーバ間での認証連携について設計する能\n\n力，及びIoT 機器のセキュリティ対策を検討する能力を問う。\n\n設問 解答例・解答の要点 備考\n\n設問１ エ\n\n設問２ (1) ゲームプログラムID\n\n(2) ゲームサーバに認証サーバと同じ共通鍵を保存する。\n\n(3) 仕様MAC の生成に共通鍵を使用する。\n\n範囲自身が管理するゲームサーバ上で動作する全ゲームプログラム\n\n(4) a オ\n\nb エ\n\nc カ\n\n(5) SSD を取り出し，PC などにつなげる。\n\n(6) 耐タンパ性\n\n設問３ ハッシュ値リストをTPM に保存する。",
+    "modelAnswer": "問３\n\n出題趣旨\n\n近年，IoT 機器が増加しており，そのセキュリティ対策も重要になってきている。IoT 機器はネットワーク\n\n経由だけでなく，物理的なアクセスも可能なので，それも考慮してセキュリティ設計を進める必要がある。ま\n\nた，IoT 機器が接続するサーバが複数あると，それらを連携して動作させるために，認証連携が必要になるこ\n\nとも多い。\n\n本問では，家庭用ゲーム機の開発を題材に，IoT 機器と複数のサーバ間での認証連携について設計する能\n\n力，及びIoT 機器のセキュリティ対策を検討する能力を問う。\n\n設問 解答例・解答の要点 備考\n\n設問１ エ\n\n設問２ (1) ゲームプログラムID\n\n(2) ゲームサーバに認証サーバと同じ共通鍵を保存する。\n\n(3) 仕様MAC の生成に共通鍵を使用する。\n\n範囲自身が管理するゲームサーバ上で動作する全ゲームプログラム\n\n(4) a オ\n\nb エ\n\nc カ\n\n(5) SSD を取り出し，PC などにつなげる。\n\n(6) 耐タンパ性\n\n設問３ ハッシュ値リストをTPM に保存する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/sc/2019-spring-pm1/page-16.webp",
+      "/questions/ipa/sc/2019-spring-pm1/page-17.webp",
+      "/questions/ipa/sc/2019-spring-pm1/page-18.webp",
+      "/questions/ipa/sc/2019-spring-pm1/page-19.webp",
+      "/questions/ipa/sc/2019-spring-pm1/page-20.webp",
+      "/questions/ipa/sc/2019-spring-pm1/page-21.webp"
+    ],
+    "imageAltTexts": [
+      "問3の公式問題冊子 16ページ",
+      "問3の公式問題冊子 17ページ",
+      "問3の公式問題冊子 18ページ",
+      "問3の公式問題冊子 19ページ",
+      "問3の公式問題冊子 20ページ",
+      "問3の公式問題冊子 21ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/sc/2019-spring-pm1/answer-q03.webp"
+    ],
+    "answerImageAltTexts": [
+      "問3の公式解答例"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_sc_pm1_qs.pdf#page=16",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_sc_pm1_ans.pdf#page=2"
+  }
+]

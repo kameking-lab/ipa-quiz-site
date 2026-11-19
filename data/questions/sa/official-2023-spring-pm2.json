@@ -1,0 +1,128 @@
+[
+  {
+    "id": "sa-2023h-pm2-q1",
+    "exam": "sa",
+    "session": "pm2",
+    "year": 2023,
+    "season": "spring",
+    "qNumber": 1,
+    "type": "essay",
+    "category": "システムアーキテクチャ",
+    "topicTags": [
+      "DX",
+      "システム改善",
+      "データ連携"
+    ],
+    "difficulty": 4,
+    "question": "問1 デジタルトランスフォーメーションを推進するための情報システムの改善について\n\nあなたの経験と考えに基づいて，設問ア〜設問ウに従って論述せよ。\n\n設問ア：800字以内。設問イ：800字以上1,600字以内。設問ウ：600字以上1,200字以内。",
+    "answer": "問１\n\n                       出題趣旨\n 近年，企業は競争優位の獲得や企業自身の存続のために，デジタルトランスフォーメーション（DX）を推進す\nることが増えている。しかし，DX の推進に必要な情報が整備されていないなどの課題が原因で，推進が困難に\nなる場合も多い。そのため，システムアーキテクトには，課題を解決してDX の推進を支援することが求められ\nており，その際には，既存の情報システムの改善が必要になることがある。\n  本問は，DX の推進のためのどのような課題をどのように解決したのか，その際に既存の情報システムをどの\nように改善したのか，及び改善に当たっての工夫について，その改善で課題が解決できると考えた理由を含め\nて具体的に論述することを求めている。論述を通じて，システムアーキテクトに必要な，DX 構想における情報\nシステムの改善計画の立案能力を評価する。",
+    "modelAnswer": "",
+    "scoringCriteria": "ア：DXの目的、情報システムの概要、課題が対応しているか。イ：改善内容と課題を解決できる理由が具体的か。ウ：イの改善に対する工夫が示されているか。ア800字以内、イ800〜1,600字、ウ600〜1,200字を確認する。",
+    "explanation": "論述の軸はDXの目的、推進を妨げる課題、その課題を解決する既存システムの改善である。設問アでは事業上の目的とシステムの概要を示し、なぜ現在の情報では目的を達成できないのかを具体化する。設問イは改善内容の羅列では足りず、その変更で課題を解決できる理由までつなぐ。例えば情報の連携やデータ項目の統一を選ぶ場合も、設問アで挙げた不足との対応が必要になる。設問ウでは、設問イの改善を実現する際に何を問題と考え、どのように工夫したかを述べる。情報の活用を進める目的と、個人の特定や項目の意味の違いなどへの配慮を、一貫した事例の中で説明する。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sa_pm2_qs.pdf) ／ [公式出題趣旨](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sa_pm2_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/sa/2023-spring-pm2/question-p02.webp",
+      "/images/questions/sa/2023-spring-pm2/question-p03.webp"
+    ],
+    "imageAltTexts": [
+      "システムアーキテクト 2023年春 午後II 問1：公式問題冊子2ページ（本文・図表・設問）",
+      "システムアーキテクト 2023年春 午後II 問1：公式問題冊子3ページ（本文・図表・設問）"
+    ],
+    "answerImageUrls": [
+      "/images/questions/sa/2023-spring-pm2/answer-q1-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式出題趣旨 問1：1ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sa_pm2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sa_pm2_ans.pdf",
+    "sourceAttribution": "出典：IPA（独立行政法人情報処理推進機構） 2023年度春期 システムアーキテクト 午後II 問1",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "officialQuestionLabel": "問1"
+  },
+  {
+    "id": "sa-2023h-pm2-q2",
+    "exam": "sa",
+    "session": "pm2",
+    "year": 2023,
+    "season": "spring",
+    "qNumber": 2,
+    "type": "essay",
+    "category": "要件定義",
+    "topicTags": [
+      "UI",
+      "要件定義",
+      "利用者像"
+    ],
+    "difficulty": 4,
+    "question": "問2 利用者と直接接点がない情報システムのユーザーインタフェースの検討について\n\nあなたの経験と考えに基づいて，設問ア〜設問ウに従って論述せよ。\n\n設問ア：800字以内。設問イ：800字以上1,600字以内。設問ウ：600字以上1,200字以内。",
+    "answer": "問２\n\n                       出題趣旨\n 近年，通販サイトやスマートフォンアプリケーションのように，開発者が利用者と直接の接点を持つことが\n難しい情報システムの開発が増えてきている。しかし，このような情報システムでは，システムアーキテクト\nが情報システムの要件を取りまとめる際に，ユーザーインタフェース（以下，UI という）の要件の検討におけ\nる課題が発生することが多い。\n 本問は，利用者と直接の接点を持つことが難しい情報システムのUI の要件の検討について，想定した利用者\n像，検討したUI，適切なUI を選択する際の課題とその対応策，UI を継続的に適切化していくための工夫など\nを具体的に論述することを求めている。論述を通じて，システムアーキテクトに必要な要件定義の能力を評価\nする。",
+    "modelAnswer": "",
+    "scoringCriteria": "ア：開発目的・対象業務・概要と直接接点の難しさが分かるか。イ：利用者像、検討したUI、選択時の課題と対応策を具体化したか。ウ：継続的な適切化の仕組みを示したか。字数はア800字以内、イ800〜1,600字、ウ600〜1,200字。",
+    "explanation": "開発者が利用者に直接確認しにくいという制約を、UIの要件をどのように決めるかという課題に結び付ける。設問アでは開発目的、対象業務、システム概要に加え、利用者との接点が持ちにくい事情を明らかにする。設問イでは、想定した利用者の特性と利用環境を基に、必要な機能とUIを検討し、適切なUIを選択する際の課題・対応策を示す。単に使いやすい画面を作ったという記述では、判断の根拠が伝わらない。設問ウは開発時の対策の繰返しではなく、運用中の利用状況の把握や改訂の仕組みなど、UIを継続的に適切化するための工夫を記述する。三つの設問を同じ利用者像と業務目的でつなぐ。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sa_pm2_qs.pdf) ／ [公式出題趣旨](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sa_pm2_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/sa/2023-spring-pm2/question-p02.webp",
+      "/images/questions/sa/2023-spring-pm2/question-p04.webp"
+    ],
+    "imageAltTexts": [
+      "システムアーキテクト 2023年春 午後II 問2：公式問題冊子2ページ（本文・図表・設問）",
+      "システムアーキテクト 2023年春 午後II 問2：公式問題冊子4ページ（本文・図表・設問）"
+    ],
+    "answerImageUrls": [
+      "/images/questions/sa/2023-spring-pm2/answer-q2-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式出題趣旨 問2：1ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sa_pm2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sa_pm2_ans.pdf",
+    "sourceAttribution": "出典：IPA（独立行政法人情報処理推進機構） 2023年度春期 システムアーキテクト 午後II 問2",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "officialQuestionLabel": "問2"
+  },
+  {
+    "id": "sa-2023h-pm2-q3",
+    "exam": "sa",
+    "session": "pm2",
+    "year": 2023,
+    "season": "spring",
+    "qNumber": 3,
+    "type": "essay",
+    "category": "システムアーキテクチャ",
+    "topicTags": [
+      "組込みシステム",
+      "再利用",
+      "アーキテクチャ"
+    ],
+    "difficulty": 4,
+    "question": "問3 再利用の容易化を考慮した組込みシステムのアーキテクチャについて\n\nあなたの経験と考えに基づいて，組込みシステムのシステムアーキテクトの立場から設問ア〜設問ウに従って論述せよ。\n\n設問ア：800字以内。設問イ：800字以上1,600字以内。設問ウ：600字以上1,200字以内。",
+    "answer": "問３\n\n                       出題趣旨\n 組込みシステムのシステムアーキテクトは，将来のソフトウェア・ハードウェアの変更に伴う改変に備え，\nシステム及び構成部品の再利用が容易になるアーキテクチャを構築することが求められる。\n 本問は，解答者が携わった組込みシステムのアーキテクチャ構築において，改変の対象となるシステムの再\n利用の容易化に対して，変更対象・範囲，改変の管理方法，及びテスト範囲についてどのような考慮をしたか，\n具体的に論述することを求めている。論述を通じて，組込みシステムのシステムアーキテクトに必要な，適切\nにアーキテクチャを構築するためのシステム理解力・アーキテクチャ構築力を評価する。",
+    "modelAnswer": "",
+    "scoringCriteria": "ア：構成、改変内容、再利用の目標を示したか。イ：変更対象・範囲、改変管理、テスト範囲を含めて考慮を説明したか。ウ：目標の達成度と今後の課題を評価したか。字数はア800字以内、イ800〜1,600字、ウ600〜1,200字。",
+    "explanation": "再利用の容易化という目的を、変更の対象と範囲、改変管理、テスト範囲に具体化する論述である。設問アでは対象システムの構成・概要と改変内容を示し、再利用によって何を達成したいかを目標として置く。設問イでは、変更が及ぶ構成部品やインタフェースを踏まえてアーキテクチャ上の考慮を説明する。部品を共通化したという結論だけでなく、想定した変更をどこへ閉じ込め、バリエーションをどう管理し、影響に応じたテスト範囲をどう決めたかまで述べる。設問ウでは、その考慮で目標をどこまで達成できたかを評価し、残る課題を次の改善につなげる。目標・設計判断・評価が同じ事例の上で対応していることが重要になる。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sa_pm2_qs.pdf) ／ [公式出題趣旨](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sa_pm2_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/sa/2023-spring-pm2/question-p02.webp",
+      "/images/questions/sa/2023-spring-pm2/question-p05.webp"
+    ],
+    "imageAltTexts": [
+      "システムアーキテクト 2023年春 午後II 問3：公式問題冊子2ページ（本文・図表・設問）",
+      "システムアーキテクト 2023年春 午後II 問3：公式問題冊子5ページ（本文・図表・設問）"
+    ],
+    "answerImageUrls": [
+      "/images/questions/sa/2023-spring-pm2/answer-q3-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式出題趣旨 問3：1ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sa_pm2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sa_pm2_ans.pdf",
+    "sourceAttribution": "出典：IPA（独立行政法人情報処理推進機構） 2023年度春期 システムアーキテクト 午後II 問3",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "officialQuestionLabel": "問3"
+  }
+]

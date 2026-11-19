@@ -1,0 +1,126 @@
+[
+  {
+    "id": "es-2020a-pm2-q1",
+    "exam": "es",
+    "year": 2020,
+    "season": "autumn",
+    "session": "pm2",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "組込みシステム",
+    "topicTags": [
+      "IoTを利用したスマートホーム"
+    ],
+    "difficulty": 5,
+    "question": "問1 IoTを利用したスマートホーム",
+    "answer": "問１ \n出題趣旨 \nIoT 機器の数は年々増加しており，家の中の機器もその一つである。機器がネットワークに接続することに\nよって快適な暮らしを実現でき，市場の成長が期待されている。 \n本問では，スマートホームを構成する機器を題材として，要求仕様の理解力，セキュリティを検討する能\n力，システム構成を検討する能力，ハードウェアの仕様を検討する能力，及び要求仕様の変更への対応能力を\n問う。 \n \n設問 \n解答例・解答の要点 \n備考 \n設問１ (1) (a) ビームフォーミング \n \n \n \n(b) 利用者の声紋認証 \n \n \n \n(c) 辞書データ \n \n \n(2) 不在モードでS ドアホン子機のボタンが押された場合 \n \n \n(3) 傍受のおそれが少なくなるように電波到達距離を制限したいから \n \n設問２ (1) a ( 204 , 51 ) \n \n \n \nb \n( 102 , 153 ) \n \n \n \nc \n( 96 , 144 ) \n \n \n(2) \n最小 \n376 \n \n \n \n最大 \n640 \n \n \n(3) (a) ほかのS ライトに指示する機能 \n \n \n \n(b) 再生音のずれを10 ミリ秒以下に保つこと \n \n \n(4) 80,000 \n \n設問３ \n \n(1) \n \n子供の利用者を撮影した画像はスマートホームの内部ネットワークだけにとど\nめておくことができる。 \n \n \n(2) (a) S ライトの人感センサが子供の利用者にも反応してしまうから \n \n \n \n(b) \n \nS カメラで撮影した画像から人を検出し，かつ，子供の利用者の画像と認\n識できないとき \n \n \n(3) \n理由 \n子供の利用者の画像と認識できないから \n \n \n \n機能・動作 訪問者への対応の機能によって，利用者のスマホに通知される。 \n \n \n(4) 留守番モードで，リビングのS ライトの人感センサが人を検知する。",
+    "modelAnswer": "問１ \n出題趣旨 \nIoT 機器の数は年々増加しており，家の中の機器もその一つである。機器がネットワークに接続することに\nよって快適な暮らしを実現でき，市場の成長が期待されている。 \n本問では，スマートホームを構成する機器を題材として，要求仕様の理解力，セキュリティを検討する能\n力，システム構成を検討する能力，ハードウェアの仕様を検討する能力，及び要求仕様の変更への対応能力を\n問う。 \n \n設問 \n解答例・解答の要点 \n備考 \n設問１ (1) (a) ビームフォーミング \n \n \n \n(b) 利用者の声紋認証 \n \n \n \n(c) 辞書データ \n \n \n(2) 不在モードでS ドアホン子機のボタンが押された場合 \n \n \n(3) 傍受のおそれが少なくなるように電波到達距離を制限したいから \n \n設問２ (1) a ( 204 , 51 ) \n \n \n \nb \n( 102 , 153 ) \n \n \n \nc \n( 96 , 144 ) \n \n \n(2) \n最小 \n376 \n \n \n \n最大 \n640 \n \n \n(3) (a) ほかのS ライトに指示する機能 \n \n \n \n(b) 再生音のずれを10 ミリ秒以下に保つこと \n \n \n(4) 80,000 \n \n設問３ \n \n(1) \n \n子供の利用者を撮影した画像はスマートホームの内部ネットワークだけにとど\nめておくことができる。 \n \n \n(2) (a) S ライトの人感センサが子供の利用者にも反応してしまうから \n \n \n \n(b) \n \nS カメラで撮影した画像から人を検出し，かつ，子供の利用者の画像と認\n識できないとき \n \n \n(3) \n理由 \n子供の利用者の画像と認識できないから \n \n \n \n機能・動作 訪問者への対応の機能によって，利用者のスマホに通知される。 \n \n \n(4) 留守番モードで，リビングのS ライトの人感センサが人を検知する。",
+    "explanation": "デバイス間通信と防犯モードの状態遷移を追い、画像を送信する範囲を必要な機器に絞る理由を考える。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2020-autumn-pm2/page-02.webp",
+      "/questions/ipa/es/2020-autumn-pm2/page-03.webp",
+      "/questions/ipa/es/2020-autumn-pm2/page-04.webp",
+      "/questions/ipa/es/2020-autumn-pm2/page-05.webp",
+      "/questions/ipa/es/2020-autumn-pm2/page-06.webp",
+      "/questions/ipa/es/2020-autumn-pm2/page-07.webp",
+      "/questions/ipa/es/2020-autumn-pm2/page-08.webp",
+      "/questions/ipa/es/2020-autumn-pm2/page-09.webp",
+      "/questions/ipa/es/2020-autumn-pm2/page-10.webp",
+      "/questions/ipa/es/2020-autumn-pm2/page-11.webp",
+      "/questions/ipa/es/2020-autumn-pm2/page-12.webp",
+      "/questions/ipa/es/2020-autumn-pm2/page-13.webp",
+      "/questions/ipa/es/2020-autumn-pm2/page-14.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後II 問1 本文・設問（公式PDF 2ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後II 問1 本文・設問（公式PDF 3ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後II 問1 本文・設問（公式PDF 4ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後II 問1 本文・設問（公式PDF 5ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後II 問1 本文・設問（公式PDF 6ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後II 問1 本文・設問（公式PDF 7ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後II 問1 本文・設問（公式PDF 8ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後II 問1 本文・設問（公式PDF 9ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後II 問1 本文・設問（公式PDF 10ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後II 問1 本文・設問（公式PDF 11ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後II 問1 本文・設問（公式PDF 12ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後II 問1 本文・設問（公式PDF 13ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後II 問1 本文・設問（公式PDF 14ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/es/2020-autumn-pm2/answer-q01-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後II 問1 公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d05l-att/2020r02o_es_pm2_qs.pdf#page=2",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d05l-att/2020r02o_es_pm2_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2020r02.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト 2020年度秋期 午後II 問1。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2020a-pm2-q2",
+    "exam": "es",
+    "year": 2020,
+    "season": "autumn",
+    "session": "pm2",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "組込みシステム",
+    "topicTags": [
+      "スマートバスシステム"
+    ],
+    "difficulty": 5,
+    "question": "問2 スマートバスシステム",
+    "answer": "問２ \n出題趣旨 \n近年，IoT によるバスの運行管理及び安全運転支援に関する研究が活発化しており，実証実験も行われてい\nる。 \n本問では，バスの運行管理及び安全運転支援を行うスマートバスシステムを題材として，システムの仕様を\n理解する能力，組込みシステムのソフトウェアの設計能力，機能追加に伴うソフトウェアの動作点を理解し設\n計する能力を問う。 \n \n設問 \n解答例・解答の要点 \n備考 \n設問１ (1) (a) b \nメッセージ名 スマートバスへの送信指示 \n \n \n \n \n \n通信内容 \n \nスマートバスz へのバス停停車指示メッセージの送信\nを指示する。 \n \n \n \n(b) c スマートバスz の到着までの予想時間の表示内容を更新する。 \n \n \n \n(c) d 送信完了 \n \n \n \n \ne 指示取消 \n \n \n(2) (a) スマートバスから送信する情報がない場合 \n \n \n \n(b) バス停待機指示メッセージを受信した場合 \n \n \n \n(c) 乗客の人数 \n \n \n(3) (a) 180 \n \n \n \n(b) 50 \n \n \n \n(c) 46 \n \n設問２ \n \n(1) \n \n(a) \n \nスマートバスがバス停付近で停車した場合とバス停で停車した場合を区別\nしたいから \n \n \n \n(b) カードID \n \n \n(2) 各履歴情報を基に解析した結果 \n \n \n(3) (a) a 緊急停車ボタン押下を受信した \n \n \n \n(b) スピーカ \n \n設問３ \n \n(1) \n \n① \n② \n・降車ボタン押下の有無の情報 \n・乗客の人数 \n \n \n(2) f バス停に設置された路側機の路側機ID \n \n \n(3) g 後方車載器ID \n \n \n \nh 後車情報 \n \n \n(4) (a) 車車間運行判定タスクが運行予定の判断を行っているタイミング \n \n \n \n(b) \nタスク名 \n運行管理 \n \n \n \n \n変更内容 \n \n \nバス停運行予定が降車ボタンによる停車の場合，バス停を通\n過する指示の通知を受けても，バス停運行予定を更新しな\nい。",
+    "modelAnswer": "問２ \n出題趣旨 \n近年，IoT によるバスの運行管理及び安全運転支援に関する研究が活発化しており，実証実験も行われてい\nる。 \n本問では，バスの運行管理及び安全運転支援を行うスマートバスシステムを題材として，システムの仕様を\n理解する能力，組込みシステムのソフトウェアの設計能力，機能追加に伴うソフトウェアの動作点を理解し設\n計する能力を問う。 \n \n設問 \n解答例・解答の要点 \n備考 \n設問１ (1) (a) b \nメッセージ名 スマートバスへの送信指示 \n \n \n \n \n \n通信内容 \n \nスマートバスz へのバス停停車指示メッセージの送信\nを指示する。 \n \n \n \n(b) c スマートバスz の到着までの予想時間の表示内容を更新する。 \n \n \n \n(c) d 送信完了 \n \n \n \n \ne 指示取消 \n \n \n(2) (a) スマートバスから送信する情報がない場合 \n \n \n \n(b) バス停待機指示メッセージを受信した場合 \n \n \n \n(c) 乗客の人数 \n \n \n(3) (a) 180 \n \n \n \n(b) 50 \n \n \n \n(c) 46 \n \n設問２ \n \n(1) \n \n(a) \n \nスマートバスがバス停付近で停車した場合とバス停で停車した場合を区別\nしたいから \n \n \n \n(b) カードID \n \n \n(2) 各履歴情報を基に解析した結果 \n \n \n(3) (a) a 緊急停車ボタン押下を受信した \n \n \n \n(b) スピーカ \n \n設問３ \n \n(1) \n \n① \n② \n・降車ボタン押下の有無の情報 \n・乗客の人数 \n \n \n(2) f バス停に設置された路側機の路側機ID \n \n \n(3) g 後方車載器ID \n \n \n \nh 後車情報 \n \n \n(4) (a) 車車間運行判定タスクが運行予定の判断を行っているタイミング \n \n \n \n(b) \nタスク名 \n運行管理 \n \n \n \n \n変更内容 \n \n \nバス停運行予定が降車ボタンによる停車の場合，バス停を通\n過する指示の通知を受けても，バス停運行予定を更新しな\nい。",
+    "explanation": "車両、路側機、バス停、管理サーバ間のメッセージと車載タスクの役割を対応付ける。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2020-autumn-pm2/page-15.webp",
+      "/questions/ipa/es/2020-autumn-pm2/page-16.webp",
+      "/questions/ipa/es/2020-autumn-pm2/page-17.webp",
+      "/questions/ipa/es/2020-autumn-pm2/page-18.webp",
+      "/questions/ipa/es/2020-autumn-pm2/page-19.webp",
+      "/questions/ipa/es/2020-autumn-pm2/page-20.webp",
+      "/questions/ipa/es/2020-autumn-pm2/page-21.webp",
+      "/questions/ipa/es/2020-autumn-pm2/page-22.webp",
+      "/questions/ipa/es/2020-autumn-pm2/page-23.webp",
+      "/questions/ipa/es/2020-autumn-pm2/page-24.webp",
+      "/questions/ipa/es/2020-autumn-pm2/page-25.webp",
+      "/questions/ipa/es/2020-autumn-pm2/page-26.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後II 問2 本文・設問（公式PDF 15ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後II 問2 本文・設問（公式PDF 16ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後II 問2 本文・設問（公式PDF 17ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後II 問2 本文・設問（公式PDF 18ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後II 問2 本文・設問（公式PDF 19ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後II 問2 本文・設問（公式PDF 20ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後II 問2 本文・設問（公式PDF 21ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後II 問2 本文・設問（公式PDF 22ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後II 問2 本文・設問（公式PDF 23ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後II 問2 本文・設問（公式PDF 24ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後II 問2 本文・設問（公式PDF 25ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後II 問2 本文・設問（公式PDF 26ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/es/2020-autumn-pm2/answer-q02-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後II 問2 公式解答例（公式PDF 2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d05l-att/2020r02o_es_pm2_qs.pdf#page=15",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d05l-att/2020r02o_es_pm2_ans.pdf#page=2",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2020r02.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト 2020年度秋期 午後II 問2。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  }
+]

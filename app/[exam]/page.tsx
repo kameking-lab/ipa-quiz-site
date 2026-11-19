@@ -543,7 +543,7 @@ export default async function ExamTopPage({
             <div className="mt-3 flex flex-wrap gap-2">
               <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" asChild variant="primary" size="sm">
                 <Link href="/essay">
-                  オリジナル論述教材で AI 添削
+                  論述の練習問題を見る
                   <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </Button>

@@ -510,7 +510,7 @@ function ScoredQuizPlayer({
               <span aria-hidden="true" className="tabular-nums">{formatElapsed(elapsed)}</span>
             </span>
             <span
-              aria-label={`正答 ${stats.correct} / 回答済み ${stats.answered}${
+              aria-label={`過去問の正答 ${stats.correct} / 回答済み ${stats.answered}${
                 stats.answered > 0
                   ? `（正答率 ${Math.round((stats.correct / stats.answered) * 100)}%）`
                   : ""
@@ -518,7 +518,7 @@ function ScoredQuizPlayer({
               className="tabular-nums"
             >
               <span aria-hidden="true">
-                正答 {stats.correct}/{stats.answered}
+                過去問 {stats.correct}/{stats.answered}
                 {stats.answered > 0 && (
                   <span className="ml-1 text-xs text-zinc-500 dark:text-zinc-400">
                     ({Math.round((stats.correct / stats.answered) * 100)}%)

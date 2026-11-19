@@ -1,0 +1,146 @@
+[
+  {
+    "id": "nw-2023h-pm1-q1",
+    "exam": "nw",
+    "year": 2023,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "ネットワーク",
+    "topicTags": [
+      "HTTP/2",
+      "TLS",
+      "経路制御"
+    ],
+    "difficulty": 4,
+    "question": "Webシステム更改に伴うネットワーク構成とプロトコル",
+    "answer": "設問１     a リバース\n              b 権威\n              c キャッシュ\n              d ストリーム\n              e  :method\n              f  TLS\n 設問２(1) リクエストを受けたのと同じ順序でレスポンスを返す必要がある。\n         (2) 通信開始時にTCP の上位のプロトコルを決定するため\n 設問３(1) (d)，(e)\n         (2) クライアントが利用可能なアプリケーション層のプロトコル\n 設問４(1) ア  172.21.10.0/24\n       イ  172.21.11.2\n       ウ  172.21.11.1\n         (2) 動作モード アプリケーションモード\n      理由        HTTP/2 リクエストをHTTP/1.1 に変換して負荷分散するから",
+    "modelAnswer": "```text\n設問１     a リバース\n              b 権威\n              c キャッシュ\n              d ストリーム\n              e  :method\n              f  TLS\n 設問２(1) リクエストを受けたのと同じ順序でレスポンスを返す必要がある。\n         (2) 通信開始時にTCP の上位のプロトコルを決定するため\n 設問３(1) (d)，(e)\n         (2) クライアントが利用可能なアプリケーション層のプロトコル\n 設問４(1) ア  172.21.10.0/24\n       イ  172.21.11.2\n       ウ  172.21.11.1\n         (2) 動作モード アプリケーションモード\n      理由        HTTP/2 リクエストをHTTP/1.1 に変換して負荷分散するから\n```",
+    "explanation": "HTTP/1.1の応答順序による制約と、HTTP/2のストリームによる多重化を区別する。TLSのALPNは、暗号化通信の開始時に、その上で使用するアプリケーションプロトコルを決める仕組みである。クラウド移行後の経路は、宛先ネットワークと次ホップを両方向で追う。負荷分散装置がHTTP/2からHTTP/1.1へ変換する役割を担う場合、単にパケットを中継する動作では要件を満たせない。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_nw_pm1_qs.pdf#page=2) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_nw_pm1_ans.pdf#page=1)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-official/nw/2023-spring-pm1/p02.webp",
+      "/questions/ipa-official/nw/2023-spring-pm1/p03.webp",
+      "/questions/ipa-official/nw/2023-spring-pm1/p04.webp",
+      "/questions/ipa-official/nw/2023-spring-pm1/p05.webp",
+      "/questions/ipa-official/nw/2023-spring-pm1/p06.webp",
+      "/questions/ipa-official/nw/2023-spring-pm1/p07.webp"
+    ],
+    "imageAltTexts": [
+      "2023年午後I 問1：Webシステム更改に伴うネットワーク構成とプロトコル（公式問題PDF 2ページ）",
+      "2023年午後I 問1：Webシステム更改に伴うネットワーク構成とプロトコル（公式問題PDF 3ページ）",
+      "2023年午後I 問1：Webシステム更改に伴うネットワーク構成とプロトコル（公式問題PDF 4ページ）",
+      "2023年午後I 問1：Webシステム更改に伴うネットワーク構成とプロトコル（公式問題PDF 5ページ）",
+      "2023年午後I 問1：Webシステム更改に伴うネットワーク構成とプロトコル（公式問題PDF 6ページ）",
+      "2023年午後I 問1：Webシステム更改に伴うネットワーク構成とプロトコル（公式問題PDF 7ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-official/nw/2023-spring-pm1/q1-answer-p1.webp"
+    ],
+    "answerImageAltTexts": [
+      "問1の公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_nw_pm1_qs.pdf#page=2",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_nw_pm1_ans.pdf#page=1",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2023年度春期 ネットワークスペシャリスト 午後I。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "nw-2023h-pm1-q2",
+    "exam": "nw",
+    "year": 2023,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "ネットワーク",
+    "topicTags": [
+      "IPマルチキャスト",
+      "PIM-SM",
+      "IGMPv3"
+    ],
+    "difficulty": 4,
+    "question": "IPマルチキャストによる高解像度映像の配信",
+    "answer": "設問１  ア フラッディング\n       イ  IGMP\n       ウ マルチキャスト\n       エ ツリー\n       オ  PIM-SM\n       カ  SSM\n       キ 復号\n 設問２(1) 配信先のレシーバの数に応じてソースの通信量が増加する。\n         (2) 160\n         (3) 全てのIP カメラに個別のIP アドレス及び個別のグループアドレスを使用す\n      る。\n 設問３(1) グループアドレスの設計が容易になる。\n         (2) ① ・グループアドレス\n       ② ・インタフェース\n         (3) Ⅰ カメラ管理サーバ\n       Ⅱ  443\n 設問４(1) (a) L3SW11，L3SW21\n             (b) L2SW11，L2SW21\n             (c) IGMPv3\n         (2) Web ページを改修するだけで対応完了できる。",
+    "modelAnswer": "```text\n設問１  ア フラッディング\n       イ  IGMP\n       ウ マルチキャスト\n       エ ツリー\n       オ  PIM-SM\n       カ  SSM\n       キ 復号\n 設問２(1) 配信先のレシーバの数に応じてソースの通信量が増加する。\n         (2) 160\n         (3) 全てのIP カメラに個別のIP アドレス及び個別のグループアドレスを使用す\n      る。\n 設問３(1) グループアドレスの設計が容易になる。\n         (2) ① ・グループアドレス\n       ② ・インタフェース\n         (3) Ⅰ カメラ管理サーバ\n       Ⅱ  443\n 設問４(1) (a) L3SW11，L3SW21\n             (b) L2SW11，L2SW21\n             (c) IGMPv3\n         (2) Web ページを改修するだけで対応完了できる。\n```",
+    "explanation": "ユニキャストでは受信者ごとに送信が増えるため、カメラとレシーバの増加が帯域にどう影響するかを計算する。マルチキャストでは、送信元、グループアドレス、受信インタフェースを分けて整理することが重要となる。SSMは受信する送信元を指定する方式なので、受信側のIGMPv3対応も必要になる。設定変更を行う装置と、Webページの改修だけで対応できる部分を分けると、移行作業の範囲を絞り込める。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_nw_pm1_qs.pdf#page=8) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_nw_pm1_ans.pdf#page=2)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-official/nw/2023-spring-pm1/p08.webp",
+      "/questions/ipa-official/nw/2023-spring-pm1/p09.webp",
+      "/questions/ipa-official/nw/2023-spring-pm1/p10.webp",
+      "/questions/ipa-official/nw/2023-spring-pm1/p11.webp",
+      "/questions/ipa-official/nw/2023-spring-pm1/p12.webp",
+      "/questions/ipa-official/nw/2023-spring-pm1/p13.webp"
+    ],
+    "imageAltTexts": [
+      "2023年午後I 問2：IPマルチキャストによる高解像度映像の配信（公式問題PDF 8ページ）",
+      "2023年午後I 問2：IPマルチキャストによる高解像度映像の配信（公式問題PDF 9ページ）",
+      "2023年午後I 問2：IPマルチキャストによる高解像度映像の配信（公式問題PDF 10ページ）",
+      "2023年午後I 問2：IPマルチキャストによる高解像度映像の配信（公式問題PDF 11ページ）",
+      "2023年午後I 問2：IPマルチキャストによる高解像度映像の配信（公式問題PDF 12ページ）",
+      "2023年午後I 問2：IPマルチキャストによる高解像度映像の配信（公式問題PDF 13ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-official/nw/2023-spring-pm1/q2-answer-p2.webp"
+    ],
+    "answerImageAltTexts": [
+      "問2の公式解答例（公式PDF 2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_nw_pm1_qs.pdf#page=8",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_nw_pm1_ans.pdf#page=2",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2023年度春期 ネットワークスペシャリスト 午後I。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "nw-2023h-pm1-q3",
+    "exam": "nw",
+    "year": 2023,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "ネットワーク",
+    "topicTags": [
+      "無線LAN",
+      "PoE",
+      "リンクアグリゲーション"
+    ],
+    "difficulty": 4,
+    "question": "大学の新校舎へのLAN導入",
+    "answer": "設問１     a トライバンド\n              b アンテナ\n              c パスワード\n              d チャネルボンディング\n              e  PoE++\n              f マルチギガビットイーサネット\n              g スタック\n              h  DHCP リレーエージェント\n 設問２(1) 周波数帯 ①  ・W52/W53\n            ② ・W56\n         利点    より多くのWLAN 端末が安定して通信できる。\n         (2) 周波数帯 ① ・W53\n            ② ・W56\n         動作   検知したチャネルの電波を停止し，他のチャネルに遷移して再\n             開する。\n         影響      AP との接続断や通信断が不定期に発生する。\n 設問３(1) 800\n         (2) 区間  (ii)\n       理由 平常時にリンク本数分の帯域を同時に利用できるから\n         (3)  機器  ① ・AP\n            ② ・フロアL2SW\n            ③ ・動画コンテンツサーバ\n        作業ミス  ループ状態になるような誤接続や設定ミス",
+    "modelAnswer": "```text\n設問１     a トライバンド\n              b アンテナ\n              c パスワード\n              d チャネルボンディング\n              e  PoE++\n              f マルチギガビットイーサネット\n              g スタック\n              h  DHCP リレーエージェント\n 設問２(1) 周波数帯 ①  ・W52/W53\n            ② ・W56\n         利点    より多くのWLAN 端末が安定して通信できる。\n         (2) 周波数帯 ① ・W53\n            ② ・W56\n         動作   検知したチャネルの電波を停止し，他のチャネルに遷移して再\n             開する。\n         影響      AP との接続断や通信断が不定期に発生する。\n 設問３(1) 800\n         (2) 区間  (ii)\n       理由 平常時にリンク本数分の帯域を同時に利用できるから\n         (3)  機器  ① ・AP\n            ② ・フロアL2SW\n            ③ ・動画コンテンツサーバ\n        作業ミス  ループ状態になるような誤接続や設定ミス\n```",
+    "explanation": "無線LANの設計では、周波数帯ごとのチャネルと、レーダー検知に伴うチャネル変更を対応付ける。接続可能な端末数だけでなく、安定した通信と不定期の接続断を評価する点が重要である。有線側ではAPへの給電、ポート速度、スイッチ間帯域を別々に確認する。リンクアグリゲーションによる平常時の帯域利用と、機器や配線の誤接続によるループの影響を、図の区間ごとに検討する。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_nw_pm1_qs.pdf#page=14) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_nw_pm1_ans.pdf#page=3)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-official/nw/2023-spring-pm1/p14.webp",
+      "/questions/ipa-official/nw/2023-spring-pm1/p15.webp",
+      "/questions/ipa-official/nw/2023-spring-pm1/p16.webp",
+      "/questions/ipa-official/nw/2023-spring-pm1/p17.webp",
+      "/questions/ipa-official/nw/2023-spring-pm1/p18.webp",
+      "/questions/ipa-official/nw/2023-spring-pm1/p19.webp"
+    ],
+    "imageAltTexts": [
+      "2023年午後I 問3：大学の新校舎へのLAN導入（公式問題PDF 14ページ）",
+      "2023年午後I 問3：大学の新校舎へのLAN導入（公式問題PDF 15ページ）",
+      "2023年午後I 問3：大学の新校舎へのLAN導入（公式問題PDF 16ページ）",
+      "2023年午後I 問3：大学の新校舎へのLAN導入（公式問題PDF 17ページ）",
+      "2023年午後I 問3：大学の新校舎へのLAN導入（公式問題PDF 18ページ）",
+      "2023年午後I 問3：大学の新校舎へのLAN導入（公式問題PDF 19ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-official/nw/2023-spring-pm1/q3-answer-p3.webp"
+    ],
+    "answerImageAltTexts": [
+      "問3の公式解答例（公式PDF 3ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_nw_pm1_qs.pdf#page=14",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_nw_pm1_ans.pdf#page=3",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2023年度春期 ネットワークスペシャリスト 午後I。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  }
+]

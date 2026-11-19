@@ -3,6 +3,7 @@ import { LS_KEYS } from "@/lib/storage/keys";
 import { createPacePlan } from "@/lib/study-plan/pace";
 import { getLearningActions, listPacePlans, recordLearningAction, savePacePlan } from "@/lib/study-plan/pace-storage";
 import { syncPacePlans, startPaceAutoSync } from "@/lib/study-plan/pace-sync";
+import { continueWeaknessWeek, readWeek, weaknessWeekKey } from "@/lib/me/weakness-week";
 
 const mocks = vi.hoisted(() => ({ session: vi.fn(), ownership: vi.fn() }));
 vi.mock("@/lib/sync/ownership", () => ({ readSyncAccount: mocks.session, readOwnership: mocks.ownership }));
@@ -57,6 +58,42 @@ describe("automatic StudyPlan-only sync", () => {
     expect(await syncPacePlans()).toBe("ok");
     expect(getLearningActions()).toHaveLength(3);
     expect(JSON.parse(fetcher.mock.calls[1][1].body).entries[0].progress.actions).toHaveLength(3);
+  });
+  it("loads the same finalized week on a second device and does not upload a provisional plan", async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-11-19T10:00:00+09:00"));
+    const key = weaknessWeekKey("A", "ap");
+    const week = { from: "2026-11-19", to: "2026-11-25", examDate: "2026-12-17", startedAt: Date.now(),
+      complete: true, groups: [[{ id: "q1", topic: "ネットワーク" }]] };
+    const provisional = weaknessWeekKey("A", "ip");
+    localStorage.setItem(provisional, JSON.stringify({ ...week, complete: false }));
+    const entries = [{ id: key, payload: { kind: "weakness-week-v1", week }, updatedAt: Date.now() }];
+    const fetcher = vi.fn().mockImplementation(async () => Response.json({ entries }));
+    vi.stubGlobal("fetch", fetcher);
+    expect(await syncPacePlans()).toBe("ok");
+    expect(readWeek(key)).toEqual(week);
+    expect(readWeek(provisional)?.complete).toBe(false);
+    expect(fetcher).toHaveBeenCalledTimes(1);
+  });
+  it("syncs the previous forecast and carries forward its unanswered questions", async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-11-26T10:00:00+09:00"));
+    const key = weaknessWeekKey("A", "ap");
+    const questions = ["q1", "q2", "q3"].map(id => ({ id, topic: "ネットワーク" }));
+    const next = { from: "2026-11-26", to: "2026-12-02", groups: [questions.slice(1)] };
+    const week = { from: "2026-11-19", to: "2026-11-25", examDate: "2026-12-02", startedAt: Date.parse("2026-11-19T00:00:00+09:00"),
+      complete: true, groups: [[questions[0]]], forecast: { from: next.from, to: next.to, count: 2, weeks: [next] } };
+    const remote = [{ id: key, payload: { kind: "weakness-week-v1", week }, updatedAt: week.startedAt }];
+    const fetcher = vi.fn().mockImplementation(async () => Response.json({ entries: remote }));
+    vi.stubGlobal("fetch", fetcher);
+    expect(await syncPacePlans()).toBe("ok");
+    const history = questions.slice(0, 2).map(question => ({ id: question.id, at: Date.now() - 86400_000, selected: "", correct: true }));
+    const resumed = continueWeaknessWeek(readWeek(key), "2026-11-26", week.examDate, history);
+    expect(resumed).toMatchObject({ from: next.from, to: next.to, groups: [[questions[2]]] });
+    localStorage.setItem(key, JSON.stringify(resumed));
+    expect(await syncPacePlans()).toBe("ok");
+    expect(JSON.parse(fetcher.mock.lastCall?.[1].body).entries[0].payload.week).toMatchObject({ from: next.from });
+    expect(readWeek(key)?.from).toBe(next.from);
   });
   it.each([401, 409, 503])("keeps all local data after HTTP %i", async status => {
     savePacePlan(plan); vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response(null, { status })));

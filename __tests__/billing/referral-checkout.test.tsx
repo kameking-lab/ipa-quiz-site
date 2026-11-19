@@ -1,4 +1,4 @@
-import { cleanup, render, screen, waitFor } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import type { PostHog } from "posthog-js";
 import { setPostHogClient } from "@/lib/posthog";
@@ -18,7 +18,9 @@ it("records a confirmed checkout once, with UTM and test realm, without sending 
   const fetcher = vi.fn(async () => Response.json({ url: "https://checkout.stripe.com/c/pay/cs_test_fixture", orderId: "private-order" }));
   vi.stubGlobal("fetch", fetcher);
   vi.stubGlobal("location", { ...window.location, replace: vi.fn() });
-  render(<AutoCheckout terms="test" returnTo={null} fallback="/billing" testMode />);
+  render(<AutoCheckout terms="test" returnTo={null} fallback="/billing" today="2026-11-19" testMode />);
+  fireEvent.click(screen.getByRole("radio", { name: "自動で終わらせない" }));
+  fireEvent.click(screen.getByRole("button", { name: "決済へ進む" }));
   await waitFor(() => expect(capture.mock.calls.some(call => call[0] === "checkout_started")).toBe(true));
   const events = capture.mock.calls.filter(call => call[0] === "checkout_started");
   expect(events).toHaveLength(1);
@@ -28,7 +30,9 @@ it("records a confirmed checkout once, with UTM and test realm, without sending 
 });
 it("does not count a failed checkout", async () => {
   vi.stubGlobal("fetch", vi.fn(async () => Response.json({ error: "sign_in_required" }, { status: 401 })));
-  render(<AutoCheckout terms="test" returnTo={null} fallback="/billing" />);
+  render(<AutoCheckout terms="test" returnTo={null} fallback="/billing" today="2026-11-19" />);
+  fireEvent.click(screen.getByRole("radio", { name: "自動で終わらせない" }));
+  fireEvent.click(screen.getByRole("button", { name: "決済へ進む" }));
   await screen.findByRole("alert");
   expect(capture.mock.calls.some(call => call[0] === "checkout_started")).toBe(false);
 });

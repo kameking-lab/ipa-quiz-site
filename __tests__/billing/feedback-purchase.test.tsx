@@ -15,7 +15,7 @@ it.each([true, false])("tracks confirmation views by customers with feedback his
   await screen.findByRole("heading", { name: "購入が完了しました" });
   await waitFor(() => expect(feedbackEvents()).toHaveLength(submitted ? 1 : 0));
   const statusCalls = fetcher.mock.calls.filter(([url]) => String(url).startsWith("/api/billing/status?"));
-  expect(statusCalls).toEqual([["/api/billing/status?order=order", { cache: "no-store" }]]);
+  expect(statusCalls).toEqual([["/api/billing/status?order=order", { cache: "no-store", method: "POST" }]]);
   view.unmount();
   render(<PurchaseStatus order="order" />);
   await screen.findByRole("heading", { name: "購入が完了しました" });

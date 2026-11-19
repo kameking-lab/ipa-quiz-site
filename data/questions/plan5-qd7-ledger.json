@@ -1,0 +1,82 @@
+{
+  "step": "qd-7",
+  "branch": "cx/kako-5y7-20261118",
+  "assignment": "jobs index % 14 == 6",
+  "baselineMain": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "checkedRefCount": 93,
+  "jobs": [
+    {
+      "jobId": "PLAN5-147",
+      "officialYear": 2022,
+      "edition": 74,
+      "session": "am",
+      "status": "complete",
+      "expectedCount": 100,
+      "existingCount": 10,
+      "addedCount": 90,
+      "practiceCount": 97,
+      "referenceOnlyCount": 3,
+      "referenceOnlyQuestionNumbers": [
+        3,
+        40,
+        69
+      ],
+      "alternativeAnswerQuestionNumbers": [
+        13
+      ],
+      "sourcePage": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-06.html",
+      "checkedAt": "2026-11-18",
+      "sources": [
+        {
+          "kind": "qs",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-06a_01.pdf",
+          "bytes": 1131318,
+          "pages": 48,
+          "sha256": "9148493e4f32d29ea507ccecfe8921b2fbdfa8a005d84dca96b8bda3441ad54b"
+        },
+        {
+          "kind": "ans",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-06seitou.pdf",
+          "bytes": 17997,
+          "pages": 1,
+          "sha256": "21147c5c4badfff161433aa4399da958ac28bf31cbde3e9128839cc05bc3d379"
+        },
+        {
+          "kind": "fig",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-06a_02.pdf",
+          "bytes": 60714603,
+          "pages": 24,
+          "sha256": "19608228d862584e6d936a64499df6590c8cf697b833047674f43faf09a31e94"
+        },
+        {
+          "qNumber": 3,
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken06/dl/AM03.pdf",
+          "bytes": 33658,
+          "sha256": "aca2eceb2964f719a9ba6618e1be759cc0d8498d719ae90d0bc5d387828567d8"
+        },
+        {
+          "qNumber": 13,
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken06/dl/AM13.pdf",
+          "bytes": 43290,
+          "sha256": "88948d85eb8e9c68534792e8a9ec6c25334254a095f26468973905317f2746b1"
+        },
+        {
+          "qNumber": 40,
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken06/dl/AM40.pdf",
+          "bytes": 35483,
+          "sha256": "12bb8036151519665fc567e4e62632cc0f92646b12c5959c559f3b06c339f1e7"
+        },
+        {
+          "qNumber": 69,
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken06/dl/AM69.pdf",
+          "bytes": 39555,
+          "sha256": "c394cb496bc00416ece275055182ee722520a5ce854bc70480ed90e59d7e81a7"
+        }
+      ],
+      "exam": "shinryo-hoshasengishi",
+      "season": "annual",
+      "action": "new-missing-originals",
+      "index": 146
+    }
+  ]
+}

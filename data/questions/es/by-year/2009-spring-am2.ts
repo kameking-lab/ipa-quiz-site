@@ -24,6 +24,7 @@ export const ES_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "スーパスカラは、複数の命令パイプラインを並行して動作させ、複数の命令を同時に実行することでCPUの処理能力を向上させる技術です。これにより、単一のクロックサイクルで複数の命令を完了させることが可能になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const ES_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "正解はエです。（出典: IPA エンベデッドシステムスペシャリスト試験 2009年度春期 午前II 問2）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const ES_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "コンピュータの命令実行は、まずメモリから命令を読み出す「命令フェッチ」、次にその命令の内容を解析する「命令の解読」の順で行われます。その後、命令の実行に必要なデータをメモリから読み出す「オペランド読出し」を行い、最後に実際に処理を実行する「命令の実行」となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const ES_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "配列データの総サイズ1Mバイトをブロックサイズ32バイトで割ると、必要なブロック数は32768ブロックです。32ビット整数型なので、1アクセスあたり4バイトのデータが読み出され、総アクセス数は1Mバイト/4バイト=262144回です。キャッシュメモリは32バイト単位で読み込まれるため、新しいブロックが読み出されるたびにミスヒットが発生し、ミスヒット数はブロック数と同じ32768回となります。したがって、ミスヒット率は (32768 / 262144) × 100 = 12.5%です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,7 @@ export const ES_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "メモリのデータ転送速度は、バス幅をメモリサイクルタイムで割ることで求められます。バス幅16ビットは2バイトであり、メモリサイクルタイムは80ナノ秒です。したがって、2バイト ÷ 80 × 10⁻⁹秒 = 0.025 × 10⁹ バイト/秒 = 25 Mバイト/秒となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +149,7 @@ export const ES_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "I²Cバスは、SDA（データ線）とSCL（クロック線）の2本の信号線で通信を行うシリアルバスです。このシンプルな2線式構造が特徴で、マスタ・スレーブ方式で複数のデバイス間通信を可能にします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +174,7 @@ export const ES_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "バスアービタは、複数の装置（マスタ）が同時にバスの使用を要求した場合に、どの装置にバスの使用権を与えるかを調停する役割を担います。これにより、バスの競合を防ぎ、複数の装置が効率的にバスを共有できるようになります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +199,7 @@ export const ES_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "平均アクセス時間は、平均位置決め時間、平均回転待ち時間、データ転送時間の合計です。平均回転待ち時間は1回転時間（60秒/6000回転=10ミリ秒）の半分で5ミリ秒、データ転送時間はデータブロックサイズ4kバイトが1トラック20kバイトの1/5なので、1回転時間10ミリ秒の1/5で2ミリ秒です。したがって、平均アクセス時間は20ミリ秒（平均位置決め時間）＋5ミリ秒（平均回転待ち時間）＋2ミリ秒（データ転送時間）＝27ミリ秒となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +224,7 @@ export const ES_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ホットスタンバイシステムでは、現用系の障害を迅速に検出し、待機系へ自動的に切り替えることが重要です。現用系が定期的に送る稼働確認メッセージ（ハートビート）が途切れることは、現用系に異常が発生したことを示す最も直接的な兆候であり、切り替え契機として適切です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +249,7 @@ export const ES_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "現在の応答時間は100ミリ秒＋400ミリ秒＋500ミリ秒＝1000ミリ秒です。各選択肢の短縮量を計算すると、最も短縮効果が大きいのは、最大のボトルネックである端末処理時間を改善するエ（100ミリ秒短縮）です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +274,7 @@ export const ES_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "アクセス制御は、所有者、グループ、その他の順に読取り(r)、書込み(w)、実行(x)の3ビットずつで表現されます。許可は「1」、禁止は「0」です。所有者には読取り、書込み、実行を許可するので111、グループとその他には読取りと実行を許可し書込みを禁止するので101となります。これらを連結すると「111101101」となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +299,7 @@ export const ES_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "インサーキットエミュレータ（ICE）は、ターゲットシステム（開発対象の組込みボード）のROMソケットに接続し、ROMの代わりにプログラムをロードして実行することで、ソフトウェアのデバッグを行う装置です。これにより、開発中のプログラムの書き換えや実行状態の確認が効率的に行えます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +324,7 @@ export const ES_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "オープンソースソフトウェアは、ソースコードの利用、改変、再配布を自由に行えることが特徴ですが、ライセンスの種類によっては、再配布に特定の条件が伴います。これらの条件は、利用分野や利用者の範囲を限定するような制約として機能する場合があり、これを「制限」と捉えることも可能です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +349,7 @@ export const ES_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ディジタルシグナルプロセッサ（DSP）は、アナログ信号をディジタル信号に変換（A/D変換）し、処理後に再びアナログ信号に戻す（D/A変換）必要があるため、これらの機能を内蔵したものが多く存在します。これにより、音声や画像などのアナログ信号を効率的に制御・処理することが可能です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +374,7 @@ export const ES_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "正解はエです。（出典: IPA エンベデッドシステムスペシャリスト試験 2009年度春期 午前II 問15）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +399,7 @@ export const ES_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "正解はウです。（出典: IPA エンベデッドシステムスペシャリスト試験 2009年度春期 午前II 問16）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +424,7 @@ export const ES_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ブリッジは、OSI基本参照モデルのデータリンク層（第2層）で動作し、MACアドレス（物理アドレス）情報に基づいてネットワークセグメント間のデータを中継する装置です。これにより、LANのトラフィックを分割し、通信効率を向上させます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +449,7 @@ export const ES_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "NAPT（Network Address Port Translation）は、TCP/UDPのポート番号を識別して、複数のプライベートIPアドレスを持つ端末が1つのグローバルIPアドレスを共有し、インターネットにアクセスできるようにする技術です。これにより、限られたグローバルIPアドレスの有効活用が可能になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +474,7 @@ export const ES_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "OP25B（Outbound Port 25 Blocking）は、インターネットサービスプロバイダ（ISP）が、自社のネットワークから外部のネットワークへのポート25番（SMTP）を使った通信を制限する措置です。主に、動的IPアドレスが割り当てられたユーザーが、ISP提供のメールサーバを介さずに直接スパムメールを送信することを防止するために実施されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +499,7 @@ export const ES_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ソフトウェアにディジタル署名を添付する目的は、配布されるソフトウェアが正規の作成者によって提供されたものであり、かつダウンロードや転送の過程で内容が改ざんされていないことを利用者が確認できるようにするためです。これにより、ソフトウェアの信頼性と完全性が保証されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +524,7 @@ export const ES_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "フェールセーフは、システムに故障が発生した場合でも、その故障が人命や財産に危害を与えないように、より安全な状態に移行させる設計思想です。交通管制システムが故障した際に信号機がすべて赤色に点灯するのは、交差点での衝突事故を防ぐための典型的なフェールセーフの例です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +549,7 @@ export const ES_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "事象駆動（イベントドリブン）プログラムにおける事象応答分析は、外部から発生する様々な事象（イベント）に対して、システムがどのような順序で、どのような処理を実行して応答するのか、その一連の動作や状態遷移を詳細に分析する手法です。これにより、システムの動的な振る舞いを明確に定義します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +574,7 @@ export const ES_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "臨時保守作業では、事前に保守作業者が障害の発生状況を正確に確認し、作業内容や影響範囲を把握することが極めて重要です。また、作業完了後には、障害の根本原因や実施された修理・対応処置、その結果を詳細に確認し、記録として残すことで、将来の予防保守や再発防止に役立てます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +599,7 @@ export const ES_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "スパイラルモデルは、開発とリスク分析のサイクルを繰り返しながら、段階的にシステムの完成度を高めていくプロセスモデルです。各サイクルで計画、リスク分析、開発、評価を行い、その結果を次のサイクルに反映させることで、リスクを管理しつつ、より高品質なシステムを構築していきます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +624,7 @@ export const ES_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "リバースエンジニアリングは、既存のソフトウェアやシステムを解析し、その設計情報や仕様などを抽出する技術です。特に、ソースプログラムから失われたり陳腐化したりした設計ドキュメント（プログラム仕様書など）を再構築する目的で利用され、システムの理解や保守に貢献します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_es_am2_qs.pdf",
     "license": "IPA-public"

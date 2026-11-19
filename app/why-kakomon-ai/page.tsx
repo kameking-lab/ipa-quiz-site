@@ -65,7 +65,7 @@ const COMPARISON_ROWS: ComparisonRow[] = [
   },
   {
     label: "午後・論述対策",
-    kakomonAi: "AI 採点（β）と業種別事例集を提供",
+    kakomonAi: "論述の練習問題と業種別の参考答案",
     doujou: "午前中心。午後は基本的に範囲外",
     yobikou: "添削サービスあり（数日サイクル・有料）",
     note: "予備校の添削は質が高い反面、フィードバックに時間がかかります。",
@@ -108,12 +108,6 @@ const STRENGTH_CARDS = [
     body: "ST/SA/PM/SM/AU 論文の『そもそも何を書くか』に悩まないよう、金融・製造・公共など業種別の業務事例を提供。",
     href: "/features/industry-essays",
     label: "事例集の使い方",
-  },
-  {
-    title: "AI 午後採点（β）",
-    body: "ST・SA・PM・SM・AU向けの独自練習問題で論述を見直します。AI添削は学習用の参考評価で、提供状態と利用条件は各画面で確認できます。",
-    href: "/features/essay-grading",
-    label: "AI 採点を試す",
   },
   {
     title: "本番想定の模試モード",

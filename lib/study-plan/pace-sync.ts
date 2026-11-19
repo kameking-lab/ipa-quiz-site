@@ -4,6 +4,7 @@ import { LS_KEYS } from "@/lib/storage/keys";
 import { readOwnership, readSyncAccount } from "@/lib/sync/ownership";
 import type { StudyPlanSyncEntry } from "@/lib/sync/types";
 import { getPaceSyncEntries, mergePaceSyncEntries } from "./pace-storage";
+import { getWeaknessWeekEntries, mergeWeaknessWeekEntries } from "@/lib/me/weakness-week";
 
 /** Auto-sync only this feature's data. Does not opt older history/bookmarks into cloud sync. */
 export async function syncPacePlans(readAccount = readSyncAccount): Promise<"ok" | "local-only" | "retry"> {
@@ -36,13 +37,15 @@ export async function syncPacePlans(readAccount = readSyncAccount): Promise<"ok"
     const remote = await exchange([]);
     if (!(await stillOwned())) return "local-only";
     mergePaceSyncEntries(remote);
-    const entries = getPaceSyncEntries();
+    const remoteWeeks = mergeWeaknessWeekEntries(account.id, remote);
+    const entries = [...getPaceSyncEntries(), ...getWeaknessWeekEntries(account.id).filter(week => !remoteWeeks.has(week.id))];
     // The existing API accepts 50 entries/request; tombstones also stay syncable.
     for (let offset = 0; offset < entries.length; offset += 50) {
       if (!(await stillOwned())) return "local-only";
       const result = await exchange(entries.slice(offset, offset + 50));
       if (!(await stillOwned())) return "local-only";
       mergePaceSyncEntries(result);
+      mergeWeaknessWeekEntries(account.id, result);
     }
     return "ok";
   } catch { return "retry"; }

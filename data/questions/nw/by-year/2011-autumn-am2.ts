@@ -24,6 +24,7 @@ export const NW_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "カテゴリ5EのUTPケーブルは、1000BASE-Tで広く利用される規格です。この規格は非シールドより対線（UTP）を使用し、4対の導線全てを用いて1Gbpsの通信を実現します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const NW_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "Router-LSA (Type 1 LSA) は、各OSPFルータが自身の直接接続されているリンクの状態を記述し、自身が所属するエリア内でのみフラッディングされます。これにより、エリア内のルータはエリア全体のトポロジー情報を把握できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const NW_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "呼量は「単位時間あたりの呼の発生回数 × 平均保留時間」で計算されます。1台の電話機あたりの呼発生頻度は3分に1回（180秒に1回）、平均保留時間は80秒なので、1台あたりの呼量は 80/180 アーランです。これが180台あるため、総呼量は (80/180) × 180 = 80 アーランとなります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const NW_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "BluetoothとIEEE 802.11無線LAN（Wi-Fi）は、ともに2.4GHz帯のISMバンドを使用しています。そのため、同じ空間で利用すると電波干渉を起こし、通信速度の低下や接続不良が発生する可能性があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -119,7 +123,14 @@ export const NW_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
       "エ": "50\t50"
     },
     "answer": "イ",
-    "explanation": "OSPF におけるルーティングパスの選択は、各インターフェースに設定された「コスト」の合計値によって決定されます。コストが小さいパスが優先されます。この問題では、拠点1と拠点3間の通信が WAN1 を経由し、拠点2と拠点3間の通信が WAN2 を経由するようにしたいという要件があります。\n\n正解であるイ（30、30）が適切である理由は、OSPF のコスト設定において、通常、帯域幅が狭いリンクには高いコストが、帯域幅が広いリンクには低いコストが設定される傾向にあるからです。拠点1から拠点3への通信経路における、ルータaからルータcへのパスと、ルータcからルータiへのパスのコスト合計が、WAN1のコスト設定と関連します。同様に、拠点2から拠点3への通信経路における、ルータbからルータdへのパスと、ルータdからルータiへのパスのコスト合計が、WAN2のコスト設定と関連します。選択肢イのようにxとyに30を設定することで、図示されている他の経路よりも、WAN1およびWAN2を経由する経路が最適パスとして選択されるように調整できます。\n\n他の選択肢が不適切な理由を分析します。ア（20、20）は、コストが低すぎると、WAN1やWAN2を経由しない、よりコストの低い他の経路がOSPFの計算で優先されてしまう可能性があります。ウ（40、40）やエ（50、50）は、コストが高すぎると、WAN1やWAN2を経由する経路が、本来意図しない他の、よりコストの低い経路よりも選択されにくくなる可能性があります。OSPFは単なる距離ではなく、ネットワークの性能や帯域幅を考慮したコストで最適な経路を計算します。",
+    "explanation": "経路のコストは各リンクの和です。拠点1からWAN1経由で拠点3までは30＋100＋30＋10＝170、拠点2からは50＋100＋30＋10＝190です。WAN2経由はどちらの拠点からも40＋100＋min（x, y）＋10です。これが170より大きく190より小さくなる組合せはx＝y＝30です。",
+    "choiceExplanations": {
+      "ア": "20では拠点1から拠点3へWAN2を経由するコストが170より小さい160になります。拠点1がWAN1を使う条件を満たせません。",
+      "イ": "30なら拠点1の最小コストはWAN1が170、WAN2が180です。拠点2ではWAN1が190、WAN2が180なので指定どおりに分かれます。",
+      "ウ": "40では拠点2から拠点3への最小コストがどちらのWANでも190になります。コストが同じなのでWAN2に限定できません。",
+      "エ": "50では拠点2から拠点3への最小コストがWAN1で190、WAN2で200です。拠点2もコストの小さいWAN1を経由します。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +155,7 @@ export const NW_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "フレームの種類や宛先に応じて優先度を変えて中継することは、ネットワークが最善を尽くすというベストエフォートの理念に基づき、トラフィックの差別化によってサービス品質を向上させる努力と解釈できます。これにより、特定の重要な通信に対して、品質保証がない中でも優先的な扱いを試み、全体としての効率性を高めることが期待されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +180,7 @@ export const NW_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "SAN (Storage Area Network) は、ストレージデバイスをサーバから独立させ、専用の高速ネットワークで接続する方式です。これにより、LANとは異なる経路で大容量のデータ転送が可能となり、ストレージの共有や管理が効率化されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +205,7 @@ export const NW_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "イーサネットフレームのプリアンブルは、フレームの先頭に位置し、受信側の機器が送信されてくるビット列に同期を取るための信号として機能します。これにより、データ本体を正確に受信できるよう準備が整えられます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +230,13 @@ export const NW_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "イが正解である理由は、負荷分散装置がマルチホーミング環境でクライアントからのトラフィックを複数のルータに分散させる際の一般的な動作に基づいています。この構成では、負荷分散装置はクライアントから見て、サーバへの通信の「出口」として機能します。したがって、パケットはまず負荷分散装置に到達し、そこで宛先IPアドレス（サーバのIPアドレス）は変更されずに、次のホップ（ルータ1またはルータ2）に転送されるために、宛先MACアドレスがそのルータのMACアドレスに置き換えられます。これは、ARP（Address Resolution Protocol）によって、IPアドレスに対応するMACアドレスが解決され、ルーティングテーブルに従って転送される仕組みによるものです。\n\nアは、宛先IPアドレスはサーバのままで、宛先MACアドレスをサーバのMACアドレスに置き換えるとしていますが、負荷分散装置がルータへトラフィックを転送する際、次のホップであるルータのMACアドレスに置き換える必要があり、サーバのMACアドレスのままではルータを越えられません。\n\nウは、宛先MACアドレスはそのままで、宛先IPアドレスを接続先ルータのIPアドレスに置き換えるとありますが、負荷分散装置は通常、宛先IPアドレスを書き換える（NATなど）のではなく、MACアドレスを書き換えて転送します。また、IPアドレスを置き換えるのは、NAT（Network Address Translation：IPアドレス変換）などの機能であり、負荷分散の基本的な処理ではありません。\n\nエは、宛先MACアドレスはそのままで、宛先IPアドレスをルータ1またはルータ2のIPアドレスに置き換えるとありますが、負荷分散装置は通常、MACアドレスを書き換えることでトラフィックを誘導し、宛先IPアドレスはサーバのIPアドレスのまま保持します。宛先IPアドレスをルータのIPアドレスに書き換えると、クライアントからはサーバへの通信であることが分からなくなってしまいます。",
+    "choiceExplanations": {
+      "ア": "接続先サーバは異なるネットワーク上にあるため、サーバのMACアドレスをこの区間の宛先にしても、選んだルータに転送できません。",
+      "イ": "最終宛先のIPアドレスを維持しつつ、次に渡すルータのMACアドレスをフレームの宛先に設定すれば、選んだISP側へ転送できます。",
+      "ウ": "接続先ルータを宛先IPアドレスにすると、最終的な宛先がサーバを示さなくなります。経由先の選択はこの区間の宛先MACに反映します。",
+      "エ": "ルータ1や2のIPアドレスをパケットの宛先にすると、ルータ自体が最終宛先になってしまいます。変更するのはフレームの宛先MACです。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +261,7 @@ export const NW_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "IPv6のマルチキャストアドレスは、特定のグループ内のすべてのインターフェースにパケットを送信するために使用され、常にプレフィックス「FF00::/8」で始まります。これはRFC 4291で定義されています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +286,7 @@ export const NW_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "RARP (Reverse Address Resolution Protocol) は、MACアドレスから対応するIPアドレスを解決するためのプロトコルです。これはデータリンク層で動作し、ブロードキャストを用いてネットワーク上のRARPサーバに問い合わせを行うことで、自身のIPアドレスを取得します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +311,7 @@ export const NW_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "正解はウです。（出典: IPA ネットワークスペシャリスト試験 2011年度秋期 午前II 問12）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +336,7 @@ export const NW_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "正解はイです。（出典: IPA ネットワークスペシャリスト試験 2011年度秋期 午前II 問13）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +361,7 @@ export const NW_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "IPヘッダのチェックサムは、ヘッダ部分のみの誤り検出に利用されます。一方、TCPヘッダとUDPヘッダのチェックサムは、それぞれのヘッダ部分に加えて、ペイロード（データ部分）の誤り検出も行い、さらに一部のIPヘッダ情報を含む疑似ヘッダも対象に含みます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +386,7 @@ export const NW_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "BGP-4において、IBGPルータ間のフルメッシュ接続はルーティング情報の伝達と冗長性のために必要ですが、ルータ数が増えるとN(N-1)/2のセッション数となりスケーラビリティの問題が生じます。ルートリフレクションは、ルートリフレクタと呼ばれる特定のルータが他のIBGPルータの代わりに経路情報を中継することで、フルメッシュ接続を不要にし、セッション数を削減します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +411,7 @@ export const NW_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "R値（R-factor）は、IP電話などの音声品質を客観的に評価する指標で、遅延、ジッタ、パケット損失率、エコー、ノイズといった様々なネットワークや音声コーデックのパラメータに基づいて算出されます。この値は0から100の範囲で表現され、高いほど品質が良いとされます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +436,7 @@ export const NW_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "URLのスキームが「https://」であるため、セキュアなHTTP通信（HTTPS）が行われます。HTTPSの標準TCPポート番号は443であり、URL中の「?port=123」はWebアプリケーションに渡されるクエリパラメータであって、接続先のポート番号を指定するものではありません。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +461,7 @@ export const NW_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "共通鍵暗号方式でN人の送受信者がそれぞれ相互に通信する場合、必要な共通鍵の総数は「N人から2人を選ぶ組み合わせ」の数で計算されます。100人の場合、計算式N(N-1)/2に当てはめると、100 × (100 - 1) / 2 = 4950個の共通鍵が必要となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +486,7 @@ export const NW_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "IEEE 802.1XとRADIUSを利用した無線LAN認証において、アクセスポイントは認証を要求するPC（サプリカント）と認証情報を持つサーバ（RADIUSサーバ）の間で認証情報を仲介するオーセンティケータとして機能します。このオーセンティケータは、RADIUSプロトコルを用いて認証サーバと通信するため、RADIUSクライアントの機能も実装します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +511,7 @@ export const NW_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "NIDS（ネットワーク型IDS）は、ネットワーク上を流れるパケットを監視し、既知の攻撃パターンや異常なトラフィックを検知するシステムです。その主要な目的は、管理下のネットワーク内への不正侵入の試みを早期に検知し、管理者へ警告を通知することにあります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +536,7 @@ export const NW_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "IPsecのAH（Authentication Header）は、IPパケットの認証と完全性の保護に特化したプロトコルです。AHはデータの暗号化は行わず、SPI、シーケンス番号、そしてハッシュ関数による認証データ（ICV）を使用して、パケットが途中で改ざんされていないこと、正しい送信元からのものであること、およびリプレイ攻撃を防ぐ機能を提供します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +561,7 @@ export const NW_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ECCメモリ（Error-Correcting Codeメモリ）において、2ビットの誤りを検出し、1ビットの誤りを訂正するために一般的に用いられるのはハミング符号です。ハミング符号は、付加されたパリティビットによって、データの特定の位置でのビット反転を特定し、自動的に訂正する能力を持っています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +586,7 @@ export const NW_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "グリッドコンピューティングは、地理的に分散した多数のコンピュータ（PCからスーパーコンピュータまで）の余剰計算リソースをネットワークで連結し、仮想的に一つの巨大なシステムとして機能させることで、大規模な計算処理を共同で実行する技術です。これにより、個々のリソースでは困難な複雑な問題の解決が可能となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +611,7 @@ export const NW_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "正解はイです。（出典: IPA ネットワークスペシャリスト試験 2011年度秋期 午前II 問24）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +636,7 @@ export const NW_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "CMMIモデルにおいて成熟度レベルが最も高いのはレベル5「最適化」です。このレベルでは、組織はプロセスを継続的に改善するための仕組みを確立し、イノベーションや技術革新を取り入れながら、組織全体のパフォーマンス向上を恒常的に追求します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_nw_am2_qs.pdf",
     "license": "IPA-public"

@@ -24,6 +24,7 @@ export const SA_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "アクティビティ図は、システムやビジネスプロセスの作業の流れや処理順序、並行処理を表現するために用いられます。フローチャートに似ており、分岐や合流、並列処理を明確に図示できるのが特徴です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -47,7 +48,14 @@ export const SA_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
       "エ": "1-1, 1-2, 1-3が順序立てて配置され、プロセス2, 3と異なるデータの流れで接続する図。"
     },
     "answer": "イ",
-    "explanation": "DFD（Data Flow Diagram、データフロー図）において、あるプロセスを子プロセスに分割して詳細化（下位DFD化）する場合、元のプロセスの入出力データフローは、子プロセスの集合体全体として維持される必要があります。\n\n正解のイが適切である根拠は、元のプロセス1が持つ入力と出力のデータフローは、分割された子プロセス1-1, 1-2, 1-3の集合体全体が受け取り、全体として処理し、元の出力へと流れるというDFDの階層化の原則に基づいているためです。選択肢ア、ウ、エは、この原則に反する、あるいはDFDの性質と合致しない記述を含んでいます。\n\n選択肢アは、子プロセスが並列に配置されることが必ずしも適切とは限らず、元のプロセス1の処理順序を無視している可能性があります。選択肢ウは、子プロセスが並列配置であることに加え、プロセス2, 3との接続が「異なるデータの流れ」であるという点が、上位DFDのデータフローとの整合性を欠く可能性が高いです。選択肢エは、子プロセスが順序立てて配置される点は元のプロセスの処理順序を反映している可能性がありますが、「異なるデータの流れ」でプロセス2, 3と接続するという記述は、上位DFDとのデータフローの対応関係が崩れていることを示唆しており、不適切です。",
+    "explanation": "親プロセス1の境界を横切る矢印は入力2本、出力2本です。イでは対応する矢印を残し、各子プロセスにも入力と出力があります。外部との入出力を保ちつつ、内部でデータを渡す関係を追加しています。",
+    "choiceExplanations": {
+      "ア": "プロセス1に入る外部からの矢印は2本ですが、図の子プロセス群に入る矢印は1本しかありません。分割しても外部との入出力は保ちます。",
+      "イ": "子プロセス群への外部入力が1-1と1-2に各1本あり、外部出力も1-1と1-3から各1本あります。親の入出力を保った分割です。",
+      "ウ": "外部入力は2本ともありますが、外部への出力が1-3からの1本しかありません。1-2にも入力だけがあり、出力が描かれていません。",
+      "エ": "外部との矢印は入力も出力も2本ずつありますが、1-2に入力がありません。1-2が出力するデータの入力元が示されていません。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +80,7 @@ export const SA_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "BPMNは、ビジネスプロセスを表現するための標準表記法であり、イベント、アクティビティ、ゲートウェイ（分岐・合流）などの要素と、それらをつなぐフローを示す矢印を用いて業務プロセスを視覚化します。これにより、ビジネスプロセスの明確な理解と分析を可能にします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +105,7 @@ export const SA_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "SQLインジェクションは、入力された特殊文字がSQL文の一部として不正に解釈されることで発生します。これを防ぐためには、入力された文字列中の特殊文字をエスケープ処理することで、それらがデータとして扱われるようにし、SQLの構文解析に影響を与えないようにする必要があります。プリペアドステートメントの利用も有効な対策です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +130,7 @@ export const SA_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "共通域（グローバル変数）の多用は、モジュール間のデータの依存関係を強め、結合度を高めます。これにより、あるモジュールの変更が予期せぬ形で他のモジュールに影響を及ぼす可能性があり、保守性や再利用性を低下させます。良いプログラムは、モジュール間の影響が少なく、独立性が高い特徴を持ちます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +155,7 @@ export const SA_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "このモジュールは、渡される処理コード（パラメータ）によって「挿入」「更新」「削除」という関連するが異なる機能を選択して実行します。これは「論理的強度」に分類され、機能ごとのモジュール分割や入口点の設置を検討することで、将来の仕様変更時の影響を最小限に抑え、保守性を高めることができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +180,7 @@ export const SA_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ブラックボックステストは、システムの内部構造を考慮せず、外部から見た機能仕様に基づいて行われます。同値クラス分割や境界値分析は、機能仕様からテストケースの代表的な値や、エラーが発生しやすい境界値を識別することで、効率的かつ網羅性の高いテストデータを設計する代表的な手法です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +205,7 @@ export const SA_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "プログラムテスト仕様書作成の一般的な手順は、まずテストの概要を記述し（a）、次にテストすべき項目を網羅的に列挙します（c）。その後、列挙された項目からテスト効率を考慮して具体的なテストケースを設定し（d）、各テストケースに対するテストデータと期待される結果を定義します（b）。最後に、テストを実際に実行するための詳細な手順を記述します（e）。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +230,7 @@ export const SA_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "全数検査を行わない場合、500個の製品のうち3%にあたる15個が出荷後に故障し、1個あたり200万円の修理費用が発生します。全数検査を実施すると、製造個数に対する故障率2%にあたる10個の故障が検査時に発見され、1個あたり50万円で修理されます。これにより、本来200万円かかっていたであろう修理費用が50万円で済むため、10個 × (200万円 - 50万円) = 1,500万円の修理費用が低減されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +255,7 @@ export const SA_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "日本の特許法では、発明者が自身の発明を製品販売などの形で公開した場合でも、その公開日から1年以内に出願手続きを行い、所定の要件（特許法第30条の適用申請）を満たせば、新規性が失われなかったものとして特許権の取得が可能です。したがって、販売後であっても、条件が合えば特許権の取得ができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +280,7 @@ export const SA_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "情報システムのアウトソーシングとは、企業が情報システムの開発、運用、保守といった業務の全部または一部を、専門的な知識やノウハウを持つ外部の企業に委託することです。これにより、自社のリソースを中核業務に集中させたり、コスト削減や品質向上を図ったりすることができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +305,7 @@ export const SA_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "共通フレーム2007において、システム化計画の立案は企画プロセスの主要な作業です。システム化の対象となる業務要件の定義作業は、企画プロセスで決定された方針に基づき、システムとして実現すべき具体的な要件を詳細化する要件定義プロセスの作業であり、システム化計画の立案よりも後のプロセスで実施されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +330,7 @@ export const SA_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ソフトウェアライフサイクルの企画プロセスの目的は、事業の目的や目標を達成するために、どのような情報システムが必要かを検討し、それに関連する要求事項を整理することです。また、システム化の全体方針や、システム実現に向けた実施計画を策定することもこのプロセスの重要な目的です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +355,7 @@ export const SA_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "非機能要件とは、システムの機能そのものではなく、性能、信頼性、保守性、可用性、セキュリティなど、システムの品質や特性に関する要件を指します。稼働率の維持や障害発生時の回復時間は、システムの可用性や信頼性といった品質特性に関わるため、非機能要件に該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +380,7 @@ export const SA_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "システム管理基準において、企画業務の段階では、経営戦略に基づいた全体最適化計画との整合性を確保しつつ、具体的な情報システム開発計画を策定することが求められます。この開発計画では、他のシステムとの役割分担や、組織体全体として最大の効果を上げるための機能実現が考慮されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +405,7 @@ export const SA_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "システムの機能要件を定義する上では、まず利害関係者からの様々なニーズを正確に把握し、それらを踏まえて、システム導入後の新しい業務のあり方や運用方法を明確にすることが不可欠です。これらの上位の要件が定義されて初めて、それを実現するためにシステムが「何をすべきか」という具体的な機能要件を定義できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +430,7 @@ export const SA_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "注文書は、買い手が売り手に対し、特定の商品やサービスの購入を申し込む意思表示を示す書類です。売り手がこの注文書の内容を確認し、それを受諾する旨の「請書」を買い手に渡すことで、双方の合意が形成され、正式な契約が成立します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +455,7 @@ export const SA_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "品質機能展開（QFD: Quality Function Deployment）は、顧客の要求品質を製品やサービスの具体的な設計品質、部品特性、工程条件などの技術要件に展開していく手法です。この手法では、「品質の家」と呼ばれる二元表を用いて、行に顧客要求品質を、列に管理可能な設計要素を配置し、両者の関係を評価することで、特に重要な品質要素や設計パラメータを特定します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +480,7 @@ export const SA_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "経済産業省のエンタープライズアーキテクチャ（EA）におけるビジネスアーキテクチャでは、組織の業務プロセスとその中で流れる情報を明確にすることが目的です。機能情報関連図（DFD）は、業務の機能と、それに伴って発生するデータの流れを視覚的に表現することで、現行業務の分析や新業務プロセスの設計を効果的に支援します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +505,7 @@ export const SA_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "Business Intelligence（BI）は、企業が保有する膨大な業務データを収集、蓄積し、それを分析・加工することで、経営層や各部門の意思決定を支援するための一連の技術やシステムを指します。これにより、現状の把握、傾向分析、将来予測などを行い、迅速かつ的確な経営判断や業務改善に役立てられます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +530,7 @@ export const SA_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "シリアルATA（SATA）は、主にPC内部において、ハードディスクドライブ（HDD）、ソリッドステートドライブ（SSD）、DVDドライブやBlu-rayドライブといった光学ドライブなどのストレージデバイスを接続するためのシリアルインタフェース規格です。並列転送方式のATA（IDE）の後継として開発され、高速なデータ転送とケーブルの取り回しの容易さが特徴です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +555,7 @@ export const SA_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "マルチプロセッサの性能Pの式において、nを無限大に近づけたときの極限値を求めます。Pの式をnで割ると P = 1 / ((1/n) + a - (a/n)) と変形できます。nが無限大になると、1/nやa/nの項は0に収束するため、Pの極限値は1/aとなります。a=0.1を代入すると、1/0.1 = 10 となるため、性能の上限は10です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -551,7 +579,14 @@ export const SA_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
       "エ": "SELECT 納品.顧客番号,納品.商品番号,納品.納品数量,顧客.顧客名\nFROM 納品,顧客\nWHERE 納品.顧客番号 = 顧客,顧客番号"
     },
     "answer": "エ",
-    "explanation": "このSQL文は、FROM句で納品表と顧客表を指定し、WHERE句で納品.顧客番号 = 顧客.顧客番号という結合条件を明示しています。これにより、両テーブルの顧客番号が一致する行が結合されます。SELECT句で出力する列を具体的に指定しているため、共通列である顧客番号が重複することなく、必要な情報を取得でき、実質的に「自然結合」の意図に沿った結果が得られます。",
+    "explanation": "自然結合では両表の共通列である顧客番号が等しい行を組み合わせ、共通列は一つだけ出力します。エは顧客番号を一度だけ列挙し、商品番号・納品数量・顧客名も出力します。原本のWHEREには「顧客.顧客番号」と記載されています。",
+    "choiceExplanations": {
+      "ア": "顧客番号が等しい行は結合できますが、SELECT *では両方の顧客番号列が出力されます。自然結合では共通列を一つにまとめます。",
+      "イ": "比較が<>なので、顧客番号の異なる納品と顧客を組み合わせます。自然結合では両表の同名の顧客番号が等しい行を結びます。",
+      "ウ": "INは顧客表に同じ番号がある納品行を選べますが、SELECTに顧客名がありません。自然結合には顧客側の固有列も含まれます。",
+      "エ": "原本のWHEREは納品と顧客の顧客番号を等値で比較します。SELECTで共通列は一度だけ選び、両表の固有列も取り出します。"
+    },
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +611,7 @@ export const SA_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ARP（Address Resolution Protocol）は、IPアドレスから対応するMACアドレスを取得するために使用されるプロトコルです。TCP/IPネットワークにおいて、論理アドレス（IPアドレス）と物理アドレス（MACアドレス）を相互に関連付ける重要な役割を担います。したがって、IPアドレスからMACアドレスを解決する目的にはARPが用いられます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +636,7 @@ export const SA_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "パケットフィルタリング型ファイアウォールは、IPアドレスやポート番号といった情報に基づいて通信の許可・拒否を判断します。外部に公開していないサービスへのアクセスは、そのサービスが利用する特定のポート番号への外部からの通信をファイアウォールでブロックするルールを設定することで、本来必要な他のサービスに影響を与えることなく防御が可能です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sa_am2_qs.pdf",
     "license": "IPA-public"

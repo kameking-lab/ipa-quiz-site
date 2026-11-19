@@ -1,0 +1,142 @@
+[
+  {
+    "id": "sc-2023h-pm1-q1",
+    "exam": "sc",
+    "year": 2023,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "セキュリティ",
+    "topicTags": [
+      "セキュアプログラミング",
+      "SQLインジェクション",
+      "レースコンディション"
+    ],
+    "difficulty": 4,
+    "question": "Webアプリケーションプログラムの開発",
+    "answer": "設問１(1)  a  13\n         (2)  b  in\n         (3)  c  WHERE head.order_no = ?\n              d  PreparedStatement stmt = conn.prepareStatement(sql)\n 設問２(1)  e  orderNo\n         (2)  f  static\n         (3) レースコンディション\n         (4)  g  String orderNo\n              h  new\n              i  getOrderInfoBean(orderNo)\n         (5)  j 得意先コード",
+    "modelAnswer": "```text\n設問１(1)  a  13\n         (2)  b  in\n         (3)  c  WHERE head.order_no = ?\n              d  PreparedStatement stmt = conn.prepareStatement(sql)\n 設問２(1)  e  orderNo\n         (2)  f  static\n         (3) レースコンディション\n         (4)  g  String orderNo\n              h  new\n              i  getOrderInfoBean(orderNo)\n         (5)  j 得意先コード\n```",
+    "explanation": "SQL文の構造と入力値を分離するには、プレースホルダを含むSQLをPreparedStatementで準備し、値を後から結び付ける。文字列の連結で条件を作る方法との違いをコードで追う。後半は複数の要求が共有するstaticな状態が焦点となる。要求ごとの注文番号を引数やインスタンス側に分離しても、閲覧者と得意先の対応を確認しなければ他社の注文は保護できない。入力対策、並行実行、認可の三つを区別して確認する。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sc_pm1_qs.pdf#page=3) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sc_pm1_ans.pdf#page=1)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-official/sc/2023-spring-pm1/p03.webp",
+      "/questions/ipa-official/sc/2023-spring-pm1/p04.webp",
+      "/questions/ipa-official/sc/2023-spring-pm1/p05.webp",
+      "/questions/ipa-official/sc/2023-spring-pm1/p06.webp",
+      "/questions/ipa-official/sc/2023-spring-pm1/p07.webp"
+    ],
+    "imageAltTexts": [
+      "2023年午後I 問1：Webアプリケーションプログラムの開発（公式問題PDF 3ページ）",
+      "2023年午後I 問1：Webアプリケーションプログラムの開発（公式問題PDF 4ページ）",
+      "2023年午後I 問1：Webアプリケーションプログラムの開発（公式問題PDF 5ページ）",
+      "2023年午後I 問1：Webアプリケーションプログラムの開発（公式問題PDF 6ページ）",
+      "2023年午後I 問1：Webアプリケーションプログラムの開発（公式問題PDF 7ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-official/sc/2023-spring-pm1/q1-answer-p1.webp"
+    ],
+    "answerImageAltTexts": [
+      "問1の公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sc_pm1_qs.pdf#page=3",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sc_pm1_ans.pdf#page=1",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2023年度春期 情報処理安全確保支援士 午後I。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "sc-2023h-pm1-q2",
+    "exam": "sc",
+    "year": 2023,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "セキュリティ",
+    "topicTags": [
+      "インシデント対応",
+      "ログ分析",
+      "DNS"
+    ],
+    "difficulty": 4,
+    "question": "Webアプリケーションプログラムへの不正アクセス",
+    "answer": "設問１     a パッシブ\n 設問２(1)  b コミュニティ\n         (2)  c バインド\n       下線①  2-3 によって起動した3-3 のポートへの通信が1-3 で拒否されている\n          から\n         (3)  d コネクト\n       下線②  2-4 によって開始された3-4 の通信が1-4 で許可されているから\n         (4)  e  1365\n 設問３(1) TXT レコードには任意の文字列を設定できるから\n         (2) 稼働しているファイルと内容が異なる可能性があるから\n         (3)  f 受付サーバ",
+    "modelAnswer": "```text\n設問１     a パッシブ\n 設問２(1)  b コミュニティ\n         (2)  c バインド\n       下線①  2-3 によって起動した3-3 のポートへの通信が1-3 で拒否されている\n          から\n         (3)  d コネクト\n       下線②  2-4 によって開始された3-4 の通信が1-4 で許可されているから\n         (4)  e  1365\n 設問３(1) TXT レコードには任意の文字列を設定できるから\n         (2) 稼働しているファイルと内容が異なる可能性があるから\n         (3)  f 受付サーバ\n```",
+    "explanation": "通信の成否は、プロセスが待受けを始めたかだけでなく、ファイアウォールがどちら向きの接続を許可しているかで判断する。攻撃者側から接続するバインド型と、侵入先から接続を開始するコネクト型を、通信記録の送信元・送信先・時刻に対応付ける。DNSのTXTレコードは任意の文字列を運べるため、名前解決先のIPアドレスだけを見ても攻撃内容を把握できない。調査対象のファイルが、実際に稼働していたものと同一であることも確かめる。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sc_pm1_qs.pdf#page=8) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sc_pm1_ans.pdf#page=1)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-official/sc/2023-spring-pm1/p08.webp",
+      "/questions/ipa-official/sc/2023-spring-pm1/p09.webp",
+      "/questions/ipa-official/sc/2023-spring-pm1/p10.webp",
+      "/questions/ipa-official/sc/2023-spring-pm1/p11.webp",
+      "/questions/ipa-official/sc/2023-spring-pm1/p12.webp"
+    ],
+    "imageAltTexts": [
+      "2023年午後I 問2：Webアプリケーションプログラムへの不正アクセス（公式問題PDF 8ページ）",
+      "2023年午後I 問2：Webアプリケーションプログラムへの不正アクセス（公式問題PDF 9ページ）",
+      "2023年午後I 問2：Webアプリケーションプログラムへの不正アクセス（公式問題PDF 10ページ）",
+      "2023年午後I 問2：Webアプリケーションプログラムへの不正アクセス（公式問題PDF 11ページ）",
+      "2023年午後I 問2：Webアプリケーションプログラムへの不正アクセス（公式問題PDF 12ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-official/sc/2023-spring-pm1/q2-answer-p1.webp"
+    ],
+    "answerImageAltTexts": [
+      "問2の公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sc_pm1_qs.pdf#page=8",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sc_pm1_ans.pdf#page=1",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2023年度春期 情報処理安全確保支援士 午後I。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "sc-2023h-pm1-q3",
+    "exam": "sc",
+    "year": 2023,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "セキュリティ",
+    "topicTags": [
+      "クラウドセキュリティ",
+      "アクセス制御",
+      "ネットワーク設計"
+    ],
+    "difficulty": 4,
+    "question": "クラウドサービスの導入",
+    "answer": "設問１(1)  a ア\n              b イ\n              c ウ\n         (2) 送信元制限機能で，本社のUTM からのアクセスだけを許可しているから\n 設問２(1)  d ア\n              e ウ\n              f イ\n         (2)  g イ\n 設問３(1) プロキシサーバではなく，P サービスを経由させる。\n         (2) 送信元制限機能で，営業所のUTM のグローバルIP アドレスを設定する。\n         (3) （イ）\n         (4)  h  6\n              i  2\n         (5) あ  4\n              j  https://△△△-a.jp/\n              k 研究開発部の従業員\n              l 許可\n       い  3\n              m 外部ストレージサービス\n              n 全て\n              o 禁止",
+    "modelAnswer": "```text\n設問１(1)  a ア\n              b イ\n              c ウ\n         (2) 送信元制限機能で，本社のUTM からのアクセスだけを許可しているから\n 設問２(1)  d ア\n              e ウ\n              f イ\n         (2)  g イ\n 設問３(1) プロキシサーバではなく，P サービスを経由させる。\n         (2) 送信元制限機能で，営業所のUTM のグローバルIP アドレスを設定する。\n         (3) （イ）\n         (4)  h  6\n              i  2\n         (5) あ  4\n              j  https://△△△-a.jp/\n              k 研究開発部の従業員\n              l 許可\n       い  3\n              m 外部ストレージサービス\n              n 全て\n              o 禁止\n```",
+    "explanation": "アクセス経路を変更すると、サービスから見える送信元IPアドレスも変わる。利用者がどの拠点からどの中継装置を通り、どのサービスに到達するのかを順に追うと、送信元制限に追加すべきアドレスを判断できる。URLや利用者属性による許可・禁止は、ルールの条件だけでなく評価順も確認する。研究開発部への個別許可と、外部ストレージ全体への禁止を、対象者・宛先・優先順位の組で整理する。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sc_pm1_qs.pdf#page=13) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sc_pm1_ans.pdf#page=2)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-official/sc/2023-spring-pm1/p13.webp",
+      "/questions/ipa-official/sc/2023-spring-pm1/p14.webp",
+      "/questions/ipa-official/sc/2023-spring-pm1/p15.webp",
+      "/questions/ipa-official/sc/2023-spring-pm1/p16.webp",
+      "/questions/ipa-official/sc/2023-spring-pm1/p17.webp",
+      "/questions/ipa-official/sc/2023-spring-pm1/p18.webp"
+    ],
+    "imageAltTexts": [
+      "2023年午後I 問3：クラウドサービスの導入（公式問題PDF 13ページ）",
+      "2023年午後I 問3：クラウドサービスの導入（公式問題PDF 14ページ）",
+      "2023年午後I 問3：クラウドサービスの導入（公式問題PDF 15ページ）",
+      "2023年午後I 問3：クラウドサービスの導入（公式問題PDF 16ページ）",
+      "2023年午後I 問3：クラウドサービスの導入（公式問題PDF 17ページ）",
+      "2023年午後I 問3：クラウドサービスの導入（公式問題PDF 18ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-official/sc/2023-spring-pm1/q3-answer-p2.webp"
+    ],
+    "answerImageAltTexts": [
+      "問3の公式解答例（公式PDF 2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sc_pm1_qs.pdf#page=13",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sc_pm1_ans.pdf#page=2",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2023年度春期 情報処理安全確保支援士 午後I。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  }
+]

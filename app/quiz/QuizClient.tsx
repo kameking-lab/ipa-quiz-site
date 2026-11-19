@@ -5,6 +5,7 @@ import * as React from "react";
 import type { Question, QuizMode } from "@/lib/questions/types";
 import { QuizPlayer } from "@/components/quiz/QuizPlayer";
 import { startSession } from "@/lib/motivation/session";
+import { LS_KEYS } from "@/lib/storage/keys";
 import { PracticeDailyLimit, PracticeLoading } from "@/components/quiz/PracticeTransition";
 import Link from "next/link";
 import { fetchPracticeQuestion, PracticeRequestError } from "@/lib/billing/guest-client";
@@ -165,7 +166,7 @@ export function QuizClient({
     }
     setInvalidQuestionId(false);
     url.searchParams.delete("question");
-    const sessionKey = `ipa-quiz:active-pool:v1:${url.pathname}${url.search}`;
+    const sessionKey = `${LS_KEYS.activeQuizPool}${url.pathname}${url.search}`;
     let ids = mockResultId
       ? (getMockExamHistory().find((result) => result.id === mockResultId)?.wrongQuestionIds ?? [])
         .filter((id) => poolIds.includes(id))
@@ -209,7 +210,7 @@ export function QuizClient({
     const url = new URL(window.location.href);
     url.searchParams.delete("question");
     try {
-      window.sessionStorage.setItem(`ipa-quiz:active-pool:v1:${url.pathname}${url.search}`, JSON.stringify(sessionIds));
+      window.sessionStorage.setItem(`${LS_KEYS.activeQuizPool}${url.pathname}${url.search}`, JSON.stringify(sessionIds));
     } catch { /* Practice remains usable without session storage. */ }
   }, [sessionIds]);
 
@@ -294,7 +295,7 @@ export function QuizClient({
     try {
       const url = new URL(window.location.href);
       url.searchParams.delete("question");
-      window.sessionStorage.setItem(`ipa-quiz:active-pool:v1:${url.pathname}${url.search}:related-order`, JSON.stringify(nextIds));
+      window.sessionStorage.setItem(`${LS_KEYS.activeQuizPool}${url.pathname}${url.search}:related-order`, JSON.stringify(nextIds));
     } catch { /* Continue in place when session storage is unavailable. */ }
     setSessionIds(nextIds);
     setCurrent(!(nativeClient() || billingGateEnabled && mode !== "review") ? cache.current.get(question.id) ?? null : null);

@@ -1,0 +1,71 @@
+{
+  "exam": "literas",
+  "scope": "社会理解力・2級2問、3級1問の公式例題のみ。1級と図表を使う3級の例題は未収録。",
+  "sourceExamYear": null,
+  "yearStorageMeaning": "year=2025は著作権表示版の年。試験実施年度ではない。",
+  "sources": [
+    {
+      "url": "https://literas.benesse.ne.jp/common/pdf/questionSample_society.pdf",
+      "sha256": "fb78323dab958d0eda5dd7e5efea94087cbdbe40544eb30d9e3e9484bc31acab",
+      "pages": 7
+    }
+  ],
+  "references": [
+    {
+      "url": "https://www.env.go.jp/press/files/jp/3928.html",
+      "sha256": "91212cb72dfd70d27b84d10c8ce71077d0cda0c61acdf38a22175eac879be1cd",
+      "status": 200
+    },
+    {
+      "url": "https://dx.ipa.go.jp/iot",
+      "sha256": "d66838cbb52d223aea05308cce1eb4effb0cd73cdf40ce0533fd53bbb303c667",
+      "status": 200
+    },
+    {
+      "url": "https://www.enecho.meti.go.jp/category/saving_and_new/saiene/renewable/biomass/index.html",
+      "status": 403,
+      "verification": "web検索で公式本文を確認。直接取得は403のためハッシュ未保存。"
+    }
+  ],
+  "questions": [
+    {
+      "id": "literas-2025-published-gakka-q1",
+      "pdfPage": 4,
+      "grade": 2,
+      "officialAnswer": 1,
+      "transcriptionSha256": "5ac5b1f227228ddaf62c540a557a733da9687b11a19d6bca90a553ef8df1b370"
+    },
+    {
+      "id": "literas-2025-published-gakka-q2",
+      "pdfPage": 4,
+      "grade": 2,
+      "officialAnswer": 4,
+      "transcriptionSha256": "888f131fecf0317b3e3454924f3f25e8eee7afcd4108ed6a0876903285e8235d"
+    },
+    {
+      "id": "literas-2025-published-gakka-q3",
+      "pdfPage": 5,
+      "grade": 3,
+      "officialAnswer": 1,
+      "transcriptionSha256": "ee7a2048ac345cd6689f3ec3f3929ab79fce0b127e39ce09f463bc0a35debc9a"
+    }
+  ],
+  "checks": {
+    "bodyDualExtraction": 3,
+    "choicesDualExtraction": 12,
+    "officialAnswerVisual": [
+      1,
+      4,
+      1
+    ],
+    "gradeVisual": [
+      2,
+      2,
+      3
+    ],
+    "sourcePages": [
+      4,
+      5
+    ]
+  }
+}

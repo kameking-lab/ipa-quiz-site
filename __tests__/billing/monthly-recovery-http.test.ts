@@ -69,4 +69,34 @@ describe("monthly signed HTTP recovery across runtime reconstruction (offline me
     const keys = stopCalls.map(([, options]) => (options!.headers as Record<string, string>)["Idempotency-Key"]);
     expect(keys[0]).toBeTruthy(); expect(keys[0]).toBe(keys[1]);
   });
+
+  it("preserves the paid Web period and stops its overlap once when the Stripe write response is lost", async () => {
+    const examEndAt = Date.parse("2026-03-16T15:00:00Z") / 1000;
+    const f = await monthlyStripeFixture({ examEndAt, exam: "ip" });
+    await f.service.receive(f.event(), "web-paid", f.provider);
+    const periodEnd = f.sub.items.data[0].current_period_end;
+    const readOverlap = () => f.store.accounts.get("stripe-test:alice")!.signups[f.result.orderId].appStoreOverlap;
+    await f.service.recordAppStoreOverlaps("alice", ["alice"]);
+
+    const fixtureFetch = vi.mocked(f.fetcher).getMockImplementation()!;
+    vi.mocked(f.fetcher).mockImplementation(async (input, options) => {
+      const response = await fixtureFetch(input, options);
+      if (options?.method === "POST") throw new Error("lost response after successful Stripe update");
+      return response;
+    });
+    vi.mocked(f.fetcher).mockClear();
+    await expect(f.service.reconcileAppStoreOverlap("alice", f.result.orderId, f.provider)).rejects.toThrow();
+    expect(readOverlap()?.renewal).toBe("pending");
+
+    await f.service.reconcileAppStoreOverlap("alice", f.result.orderId, f.provider);
+    await f.service.reconcileAppStoreOverlap("alice", f.result.orderId, f.provider);
+    expect(readOverlap()?.renewal).toBe("stopped");
+    const writes = vi.mocked(f.fetcher).mock.calls.filter(([, options]) => options?.method === "POST");
+    expect(writes).toHaveLength(1);
+    const [, options] = writes[0];
+    expect(new Headers(options?.headers).get("idempotency-key")).toContain("app-store-overlap");
+    expect((options?.body as URLSearchParams).get("proration_behavior")).toBe("none");
+    expect(f.sub).toMatchObject({ cancel_at: periodEnd });
+    expect(await f.service.status("alice")).toMatchObject({ entitled: true, expiresAt: new Date(periodEnd * 1000).toISOString() });
+  });
 });

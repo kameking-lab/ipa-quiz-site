@@ -1,0 +1,628 @@
+{
+  "year": 2023,
+  "season": "primary",
+  "examDate": "2023-08-19",
+  "sourceIndexUrl": "https://www.shiken.or.jp/chief/second/qa/",
+  "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20230819_ch_second_a01.pdf",
+  "sourceAnswerPdfSha256": "dfecfe5ba60fbd2816e3e99eafd8a267e5514def64d7a50c1d63d615f34bc45d",
+  "sourcePacketSha256": "1dfe0bfafcdcd75827e279dc426e41902ede1cd83a43afb5332145b3ba559884",
+  "questions": [
+    {
+      "id": "denken2-2023-primary-theory-q01",
+      "year": 2023,
+      "season": "primary",
+      "examDate": "2023-08-19",
+      "subject": "theory",
+      "number": 1,
+      "topic": "同軸円筒導体の電界と静電容量",
+      "questionText": "次の文章は，同軸円筒導体間の電界に関する記述である。文中の □ に当てはまる最も適切なものを解答群の中から選べ。\n図1のように，内部導体の外半径を a，外部導体の内半径を b とする同軸円筒導体を想定する。外部導体を接地し，内部導体に電圧 V を印加するとき，内部導体に蓄えられる単位長さ当たりの電荷を Q とする。\n内外導体間の誘電体の誘電率が ε₁ の場合，半径 r における電界 E(r) は①式のように表される。\nE(r) = □(1)　①\nこのときの E(r) の最小値を E_min，最大値を E_max とする。なお，E(r) を r について a から b まで積分した値が内外円筒間の電位差 V に等しいことから，この同軸円筒導体の単位長さ当たりの静電容量 C は②式のようになる。\nC = □(2)　②\n次に，図2のように内外導体間の誘電体の誘電率が r の一次関数 ε(r) として ε(a) = ε₂ から ε(b) = ε₁ まで変化する同軸円筒導体を考える。この場合，ε(r) は③式のように表される。\nε(r) = [(ε₁ − ε₂)/(b − a)]r + □(3)　③\nこの場合に，内部導体に図1と同じ電荷 Q を与える場合の内外導体間の電界を E₁(r) と表記する。①式で E_max となる r = r_max において，E₁(r_max) ≦ E_min となるための ε₂ の条件は，①式の ε₁ を ε(r) に置き換えることにより，ε₂ ≧ □(4) と算出される。ε₂ = □(4) のとき，E₁(r) は r = □(5) において最小となる。",
+      "choiceGroups": {
+        "イ": "(ε₂b − ε₁a)/(b − a)",
+        "ロ": "ε₁ − ε₂",
+        "ハ": "(ε₁b − ε₂a)/(b − a)",
+        "ニ": "2πε₁/ln(b/a)",
+        "ホ": "(a + b)/2",
+        "ヘ": "Q/(4πrε₁)",
+        "ト": "(a/b)ε₁",
+        "チ": "Q/(2πrε₁)",
+        "リ": "Q/(2πr²ε₁)",
+        "ヌ": "2πε₁/(b − a)",
+        "ル": "2πε₁/ln(a/b)",
+        "ヲ": "b",
+        "ワ": "ε₁",
+        "カ": "(b/a)ε₁",
+        "ヨ": "a"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "チ",
+          "explanation": "同軸円筒の電界は半径方向を向き、円筒面を通る電束から求められる。",
+          "derivation": "半径 r、長さ 1 の円筒面で電束密度は D = Q/(2πr)。一様な誘電体では E = D/ε₁ なので、E(r) = Q/(2πrε₁)。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ニ",
+          "explanation": "電位差は電界を a から b まで積分すると求まる。",
+          "derivation": "V = [Q/(2πε₁)]ln(b/a)。単位長さ当たりの容量 C = Q/V に代入して 2πε₁/ln(b/a) を得る。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "イ",
+          "explanation": "誘電率の切片は、③式に内側の境界条件を代入すると求められる。",
+          "derivation": "ε₂ = [(ε₁ − ε₂)/(b − a)]a + 切片。よって切片 = ε₂ − a(ε₁ − ε₂)/(b − a) = (ε₂b − ε₁a)/(b − a)。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "カ",
+          "explanation": "一様な場合の最小電界は外側 r = b。内側の誘電率 ε₂ を増やすと、新しい内側の電界が弱くなる。",
+          "derivation": "Q/(2πaε₂) ≦ Q/(2πbε₁) を整理すると aε₂ ≧ bε₁、すなわち ε₂ ≧ (b/a)ε₁ となる。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ホ",
+          "explanation": "電界を最小にするには、分母にある rε(r) を最大にする。",
+          "derivation": "ε₂ = (b/a)ε₁ を③式に代入すると rε(r) = (ε₁/a)[−r² + (a + b)r]。上に凸の放物線の頂点 r = (a + b)/2 が a と b の間にある。"
+        }
+      ],
+      "figures": [
+        "図1は外部導体を接地し、内部導体に電圧 V を加えた同軸円筒。図2は同じ形状で、誘電率 ε(r) が半径方向に変化する。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 4,
+          "url": "/images/denken2/2023-native/theory-p04.jpg",
+          "sha256": "b79420a2e8188b412adf3f6c5cbd182d8119aee196508504c9264a1833bbce72"
+        },
+        {
+          "physicalPage": 5,
+          "url": "/images/denken2/2023-native/theory-p05.jpg",
+          "sha256": "5277021a2432460e4bcf5cbbd4c2cc381d8f85ca5ffe4c91ba62449f01614aba"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20230819_ch_second_q01.pdf",
+      "sourcePdfSha256": "c4cb8f626a37254dddb5fe18c60ed3bd3945b8e51709c6f02cc5404118af04de",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken2-2023-primary-theory-q02",
+      "year": 2023,
+      "season": "primary",
+      "examDate": "2023-08-19",
+      "subject": "theory",
+      "number": 2,
+      "topic": "無限長直線電流と移動するコイルの誘導起電力",
+      "questionText": "次の文章は，無限長の直線電流が作る磁束に関する記述である。文中の □ に当てはまる最も適切なものを解答群の中から選べ。ただし，真空中の透磁率を μ₀ とする。\n真空中に無限長の直線電流 I が流れている。このとき，直線電流から距離 r（r > 0）離れた場所の磁束密度の大きさ B(r) は，①式である。\nB(r) = □(1)　①\n次に，直線電流と同一平面上に，図1のような巻数1の長方形コイルを置く。ただし，コイルの導体は十分細く，コイルに流れる電流は十分小さいものとする。直線電流が作り出す磁束のうち，直線電流から距離 l 離れた長方形コイルに鎖交する磁束を Φ(l) とする。ただし，紙面の手前から奥に鎖交する磁束の向きを正とする。\nここで，図2のように，長方形コイルを dl だけ直線電流から微小に遠ざけたときの鎖交磁束の変化 dΦ(l) を考える。図2において，ハッチングした領域の磁束の増減を考えれば良いので，B を用いて dΦ(l) = □(2) b dl と表せる。これより，②式が成り立つ。\ndΦ(l)/dl = □(2) b　②\nここで，t を時間とする。コイルが速度 v で直線電流から遠ざかっているとき③式が成り立つ。\nv = □(3)　③\nファラデーの法則により，コイルに誘起される電圧 V(l) は④式で表せる。\nV(l) = □(4)　④\n④式に①式，②式及び③式を代入すると，V(l) は⑤式のように計算できる。\nV(l) = □(5)　⑤",
+      "choiceGroups": {
+        "イ": "B(l + a) − B(l)",
+        "ロ": "−dΦ(l)/dt",
+        "ハ": "μ₀I/(2r)",
+        "ニ": "dl/dt",
+        "ホ": "μ₀I/(πr²)",
+        "ヘ": "−dΦ(l)/da",
+        "ト": "μ₀abvI/[πl²(l + a)]",
+        "チ": "da/dt",
+        "リ": "db/dt",
+        "ヌ": "B(l + dl) − B(l)",
+        "ル": "μ₀abvI/[2l(l + a)]",
+        "ヲ": "−dΦ(l)/dl",
+        "ワ": "μ₀I/(2πr)",
+        "カ": "B(l + b) − B(l)",
+        "ヨ": "μ₀abvI/[2πl(l + a)]"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ワ",
+          "explanation": "直線電流の周囲では、磁束密度の大きさは電線からの距離に反比例する。",
+          "derivation": "半径 r の円周で磁束密度が一定なので、アンペールの法則から 2πrB = μ₀I。したがって B(r) = μ₀I/(2πr)。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "イ",
+          "explanation": "移動すると、奥側の細帯が加わり、電線に近い細帯が外れる。",
+          "derivation": "細帯はどちらも面積 b dl。加わる側の磁束密度は B(l + a)、外れる側は B(l) なので、dΦ = [B(l + a) − B(l)]b dl。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ニ",
+          "explanation": "コイルが遠ざかる速さは、電線から近辺までの距離 l の時間変化率である。",
+          "derivation": "a と b はコイルの辺の長さで一定。微小時間 dt に l が dl だけ増えるため v = dl/dt。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "ロ",
+          "explanation": "誘導起電力は鎖交磁束の時間変化率に負号を付けたもの。",
+          "derivation": "ファラデーの法則で V(l) = −dΦ(l)/dt。巻数は 1。負号は磁束の変化を打ち消す向きに起電力が生じることを表す。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ヨ",
+          "explanation": "遠ざかると鎖交磁束が減るため、問題の符号規約では起電力が正になる。",
+          "derivation": "V(l) = −(dΦ/dl)(dl/dt) = bv[B(l) − B(l + a)]。B の式を入れ、1/l − 1/(l + a) = a/[l(l + a)] を用いると μ₀abvI/[2πl(l + a)]。"
+        }
+      ],
+      "figures": [
+        "図1では直線電流に平行なコイルの辺が b、垂直な辺が a。図2ではコイルを電線から dl だけ遠ざけた前後の差を網掛けで示す。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 6,
+          "url": "/images/denken2/2023-native/theory-p06.jpg",
+          "sha256": "4c0c1dee06d0496feba19b4242cb189baad7e08422718dffbf00456634cf7766"
+        },
+        {
+          "physicalPage": 7,
+          "url": "/images/denken2/2023-native/theory-p07.jpg",
+          "sha256": "65f45fac0486cba1c254b8160dc6531e060c635e6266d3a0fc13dcdaf90a1726"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20230819_ch_second_q01.pdf",
+      "sourcePdfSha256": "c4cb8f626a37254dddb5fe18c60ed3bd3945b8e51709c6f02cc5404118af04de",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken2-2023-primary-theory-q03",
+      "year": 2023,
+      "season": "primary",
+      "examDate": "2023-08-19",
+      "subject": "theory",
+      "number": 3,
+      "topic": "T形二端子対抵抗回路と二段縦続接続",
+      "questionText": "次の文章は，二端子対抵抗回路に関する記述である。文中の □ に当てはまる最も適切なものを解答群の中から選べ。\n図1に示すように，二次側が抵抗 R₁ で終端された 3 Ω，6 Ω，5 Ω の抵抗からなる T 形二端子対回路を考える。端子対 a–b 間の電圧を V₀，端子対 c–d 間の電圧を V₁，6 Ω の抵抗に掛かる電圧を V_m とする。R₁ = 7 Ω のとき，端子対 a–b から二次側を見たときのインピーダンスを Z₁ とすると，Z₁ = □(1)，V_m/V₀ = □(2)，V₁/V_m = □(3) となる。\n次に，図2に示すように，図1の T 形二端子対回路を二段縦続接続して図1と同じ抵抗 R₁ で終端した回路を考える。R₁ = 7 Ω のとき，R₁ に掛かる電圧を V₂ とすると，図2の回路の端子対 a–b 並びに端子対 c–d から二次側を見たときのインピーダンスはいずれも図1の Z₁ と等しいので V₁/V₀ = V₂/V₁ が成立し，V₂/V₀ = □(4) となる。このとき，図2の抵抗 R₁ = 7 Ω で消費する電力は V₀ を使って表すと □(5) [W] となる。",
+      "choiceGroups": {
+        "イ": "7/12",
+        "ロ": "4/7",
+        "ハ": "V₀²/163",
+        "ニ": "1/3²",
+        "ホ": "1/2²",
+        "ヘ": "1/4²",
+        "ト": "V₀²/567",
+        "チ": "V₀²/112",
+        "リ": "3/7",
+        "ヌ": "5/7",
+        "ル": "4 Ω",
+        "ヲ": "5 Ω",
+        "ワ": "11/12",
+        "カ": "5/12",
+        "ヨ": "7 Ω"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ヨ",
+          "explanation": "右側の 5 Ω と終端抵抗は直列で、中央の 6 Ω と並列になる。",
+          "derivation": "Z₁ = 3 + [6 × (5 + 7)]/[6 + (5 + 7)] = 3 + 4 = 7 Ω。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ロ",
+          "explanation": "中央の節点電圧は、入力抵抗 3 Ω と並列部の合成抵抗 4 Ω の分圧で求める。",
+          "derivation": "V_m = V₀ × 4/(3 + 4)。したがって V_m/V₀ = 4/7。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "イ",
+          "explanation": "出力電圧 V₁ は、右枝の直列抵抗 5 Ω と R₁ のうち、R₁ に掛かる電圧である。",
+          "derivation": "V₁/V_m = 7/(5 + 7) = 7/12。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "ニ",
+          "explanation": "各段の入力インピーダンスが 7 Ω なので、二段とも負荷 7 Ω のときの電圧比を使える。",
+          "derivation": "一段の電圧比は (4/7)(7/12) = 1/3。二段では V₂/V₀ = (1/3)²。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ト",
+          "explanation": "終端抵抗の消費電力には、最終段の出力電圧を使う。",
+          "derivation": "V₂ = V₀/9 を P = V₂²/7 に代入すると P = V₀²/(81 × 7) = V₀²/567 W。"
+        }
+      ],
+      "figures": [
+        "図1は入力から 3 Ω と 5 Ω が直列に並び、その接続点から下の共通線へ 6 Ω がつながる。図2は同じ T 形回路を2段接続し、最終段を R₁ で終端する。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 8,
+          "url": "/images/denken2/2023-native/theory-p08.jpg",
+          "sha256": "bbc1b9d363e49753698d11ab54b61a031249ecbe75483874c4520326540b3188"
+        },
+        {
+          "physicalPage": 9,
+          "url": "/images/denken2/2023-native/theory-p09.jpg",
+          "sha256": "939feecfcab330c34e7720cc0773269123dfa6f93768671b36c105f428f99981"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20230819_ch_second_q01.pdf",
+      "sourcePdfSha256": "c4cb8f626a37254dddb5fe18c60ed3bd3945b8e51709c6f02cc5404118af04de",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken2-2023-primary-theory-q04",
+      "year": 2023,
+      "season": "primary",
+      "examDate": "2023-08-19",
+      "subject": "theory",
+      "number": 4,
+      "topic": "正弦波交流回路のテブナン等価回路と負荷電力",
+      "questionText": "次の文章は，正弦波交流回路に関する記述である。文中の □ に当てはまる最も適切なものを解答群の中から選べ。\n図1の回路において，電源電圧 V̇ = 10∠0 = 10 V であり，各素子のインピーダンスは図1に示すとおりである。図1の回路において，電流 İ = □(1) A である。\n図1の回路の端子 a–b に負荷 Ż_L = 5 + j5 Ω を接続したときに，負荷 Ż_L を流れる電流 İ_L と負荷 Ż_L で消費される有効電力 P_L を，以下の手順に従って求める。\n端子 a–b から見込んだ図1の等価回路は図2となる。ただし，図2の等価回路において V̇₀ = □(2) V，Ż₀ = □(3) Ω である。\nしたがって，求める電流 İ_L と有効電力 P_L は，図2の等価回路の端子 a–b に負荷 Ż_L を接続したときに，負荷 Ż_L を流れる電流，及び負荷 Ż_L で消費される有効電力として，İ_L = □(4) A，及び P_L = □(5) W と求められる。",
+      "choiceGroups": {
+        "イ": "−j",
+        "ロ": "5 + j5",
+        "ハ": "10 + j10",
+        "ニ": "2 − j2",
+        "ホ": "5",
+        "ヘ": "j",
+        "ト": "2",
+        "チ": "−10 − j10",
+        "リ": "5 − j5",
+        "ヌ": "10 − j10",
+        "ル": "1 + j",
+        "ヲ": "j5",
+        "ワ": "2 + j2",
+        "カ": "20",
+        "ヨ": "10"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ト",
+          "explanation": "負荷を接続する前は、コイル・抵抗・コンデンサを同じ電流が流れる。",
+          "derivation": "j5 + 5 − j5 = 5 Ω。したがって İ = 10/5 = 2 A。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ヌ",
+          "explanation": "テブナンの等価電圧は、負荷を外したときの端子 a–b 間の電圧である。",
+          "derivation": "端子 a–b 間には 5 Ω と −j5 Ω の直列部分がある。V̇₀ = 2(5 − j5) = 10 − j10 V。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ロ",
+          "explanation": "等価インピーダンスは、理想電圧源を短絡して端子 a–b から見込む。",
+          "derivation": "j5 と (5 − j5) が並列となるので、Ż₀ = (j5)(5 − j5)/[j5 + (5 − j5)] = 5 + j5 Ω。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "イ",
+          "explanation": "等価電圧を等価インピーダンスと負荷の直列和で割る。",
+          "derivation": "İ_L = (10 − j10)/[(5 + j5) + (5 + j5)] = (1 − j)/(1 + j) = −j A。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ホ",
+          "explanation": "負荷の抵抗成分 5 Ω が有効電力を消費する。",
+          "derivation": "電流の実効値の大きさは |−j| = 1 A。P_L = |İ_L|² Re(Ż_L) = 1² × 5 = 5 W。"
+        }
+      ],
+      "figures": [
+        "図1は j5 Ω、5 Ω、−j5 Ω の直列回路で、出力端子 a–b は後ろの2素子の両端。図2は電圧源 V̇₀ とインピーダンス Ż₀ の直列等価回路。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 10,
+          "url": "/images/denken2/2023-native/theory-p10.jpg",
+          "sha256": "492ccacc3ce98a2556afd3f0e5dfee97c89d1746cb58c4e3ce09bfe7799ecf80"
+        },
+        {
+          "physicalPage": 11,
+          "url": "/images/denken2/2023-native/theory-p11.jpg",
+          "sha256": "9eca467a682371a23a494c51f9bbd1f16ea75cd7b0ffb328b8d68544119cb449"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20230819_ch_second_q01.pdf",
+      "sourcePdfSha256": "c4cb8f626a37254dddb5fe18c60ed3bd3945b8e51709c6f02cc5404118af04de",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken2-2023-primary-theory-q05",
+      "year": 2023,
+      "season": "primary",
+      "examDate": "2023-08-19",
+      "subject": "theory",
+      "number": 5,
+      "topic": "RL回路の過渡応答と自己誘導起電力",
+      "questionText": "次の文章は，電気回路の過渡現象に関する記述である。文中の □ に当てはまる最も適切なものを解答群の中から選べ。\n時刻 t < 0 では，図の回路のスイッチ S は a 側にあり，回路は定常状態にある。この回路において，t = 0 でスイッチ S を b 側に切り替えるものとする。\n図に示すように回路の電流を i(t) とすれば，t ≧ 0 では，次式の回路方程式が成り立つ。\n□(1) = 0\nt = 0 で i(0) = □(2) であることに注意して，この回路方程式を解けば，\ni(t) = □(3)\nを得る。このとき時定数は □(4) である。\nまた，t ≧ 0 において，コイル L に発生する起電力 v_L(t) は次式で与えられる。\nv_L(t) = −L di(t)/dt = □(5)",
+      "choiceGroups": {
+        "イ": "[(R₁ + R₂)/R₁]V exp[−(R₁ + R₂)t/L]",
+        "ロ": "L/R₁",
+        "ハ": "L di(t)/dt + R₁i(t)",
+        "ニ": "(R₂/R₁)V exp(−R₁t/L)",
+        "ホ": "L di(t)/dt + (R₁ + R₂)i(t)",
+        "ヘ": "L/(R₁ + R₂)",
+        "ト": "L di(t)/dt + R₂i(t)",
+        "チ": "(V/R₁) exp[−Lt/(R₁ + R₂)]",
+        "リ": "[(R₁ + R₂)/R₁]V exp[−Lt/(R₁ + R₂)]",
+        "ヌ": "(V/R₁) exp[−(R₁ + R₂)t/L]",
+        "ル": "(R₁ + R₂)/L",
+        "ヲ": "V/(R₁ + R₂)",
+        "ワ": "[V/(R₁ + R₂)] exp(−R₁t/L)",
+        "カ": "V/R₁",
+        "ヨ": "V/R₂"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ホ",
+          "explanation": "b 側に切り替えると、電源が外れて R₁、L、R₂ を通る閉回路が残る。",
+          "derivation": "キルヒホッフの電圧則により、同じ電流 i(t) に対する各電圧降下の和 L di(t)/dt + (R₁ + R₂)i(t) が 0 になる。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "カ",
+          "explanation": "切替え前の定常電流が、切替え直後にも流れる。",
+          "derivation": "a 側の直流定常状態では R₂ が外れ、コイルの電圧降下は 0。電流は V/R₁。有限電圧ではコイルの電流は不連続に変わらないので i(0) = V/R₁。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ヌ",
+          "explanation": "回路方程式は電流の変化率がそのときの電流に比例する形で、電流は指数関数で減衰する。",
+          "derivation": "di/dt = −[(R₁ + R₂)/L]i を解くと i(t) = i(0) exp[−(R₁ + R₂)t/L]。i(0) = V/R₁ を入れる。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "ヘ",
+          "explanation": "時定数は、電流が初期値の 1/e になるまでの時間である。",
+          "derivation": "exp(−t/τ) と (3) の指数を比較すると 1/τ = (R₁ + R₂)/L。よって τ = L/(R₁ + R₂)。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "イ",
+          "explanation": "電流が減るため、問題の向きに取ったコイルの起電力は正になる。",
+          "derivation": "−L di/dt = (R₁ + R₂)i(t)。 (3) の i(t) を代入すると [(R₁ + R₂)/R₁]V exp[−(R₁ + R₂)t/L]。"
+        }
+      ],
+      "figures": [
+        "スイッチ S の共通側に R₁ と L が直列につながる。a 側に直流電源 V、b 側に R₂ があり、上側のコイルを通った電流 i(t) は図の右側で下向き。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 12,
+          "url": "/images/denken2/2023-native/theory-p12.jpg",
+          "sha256": "8fc5f026565f0e0a4468c3a00976eb0faf6442887d376443ef0672c2ef916317"
+        },
+        {
+          "physicalPage": 13,
+          "url": "/images/denken2/2023-native/theory-p13.jpg",
+          "sha256": "8c7101adba2c9947c8735de6ca97f2747d3d2bb5dede7399646b56e7acb2e8fd"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20230819_ch_second_q01.pdf",
+      "sourcePdfSha256": "c4cb8f626a37254dddb5fe18c60ed3bd3945b8e51709c6f02cc5404118af04de",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken2-2023-primary-theory-q06",
+      "year": 2023,
+      "season": "primary",
+      "examDate": "2023-08-19",
+      "subject": "theory",
+      "number": 6,
+      "topic": "真空中の交流電界による電子の往復運動",
+      "questionText": "次の文章は，真空中における交流電界中の電子の運動に関する記述である。文中の □ に当てはまる最も適切なものを解答群の中から選べ。\n図のように x 軸を定め，原点から十分離れた平行平板電極が作る一様な交流電界 E(t) を，振幅 E₀ (> 0)，角周波数 ω として，E(t) = E₀ sin ωt とする。時刻 t = 0 で原点（x = 0）に電子が一つ存在する状況を考える。なお，電子の質量を m，電荷量を −e（e > 0）とし，電子の速度は x 軸に沿った方向のみを考えるものとし，質量の変化が無視できる範囲とする。電子は電界から力 F を受けて運動する。F の正の方向を x 軸の正の方向にとると，F = □(1) × sin ωt と表される。電子の速度を v とし，v の正の方向を x 軸の正の方向にとると，運動の第2法則より，次の微分方程式が得られる。\ndv/dt = □(2) × sin ωt\nt = 0 における電子の速度を v₀ (> 0) とすると，時刻 t (> 0) における電子の速度 v(t) は，上の微分方程式を t で積分することにより，\nv(t) = v₀ − □(3)(1 − cos ωt)\nと表される。さらに，時刻 t における電子の位置 x(t) は，x(t) = □(4) となる。このことから，電子が原点を中心に同じ区間を往復運動し続けるためには，角周波数が ω = □(5) でなければならないことがわかる。",
+      "choiceGroups": {
+        "イ": "−emE₀",
+        "ロ": "−eE₀/m",
+        "ハ": "−E₀/(em)",
+        "ニ": "eE₀/(mv₀)",
+        "ホ": "mE₀/(eω)",
+        "ヘ": "−eE₀",
+        "ト": "v₀t + [eE₀/(mω²)]sin ωt",
+        "チ": "[v₀ − eE₀/(mω²)]t + [eE₀/(mω)]sin ωt",
+        "リ": "mE₀/(ev₀)",
+        "ヌ": "−mE₀",
+        "ル": "−m/(eE₀)",
+        "ヲ": "eE₀ω/m",
+        "ワ": "eE₀/(mω)",
+        "カ": "[v₀ − eE₀/(mω)]t + [eE₀/(mω²)]sin ωt",
+        "ヨ": "ev₀/(mE₀)"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ヘ",
+          "explanation": "電子には、電界の向きと反対向きの力が作用する。",
+          "derivation": "電荷 q に働く力は F = qE。q = −e と E(t) = E₀ sin ωt を代入すると係数は −eE₀。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ロ",
+          "explanation": "加速度は電子に働く力を質量 m で割った値である。",
+          "derivation": "m dv/dt = −eE₀ sin ωt なので、dv/dt の sin ωt の係数は −eE₀/m。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ワ",
+          "explanation": "速度の変化は、加速度を 0 から t まで積分して求める。",
+          "derivation": "∫₀ᵗ sin(ωs) ds = (1 − cos ωt)/ω。v(t) − v₀ = −[eE₀/(mω)](1 − cos ωt)。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "カ",
+          "explanation": "速度は定数項と余弦項に分けて積分できる。",
+          "derivation": "x(0) = 0。定数項 v₀ − eE₀/(mω) の積分は t に比例し、余弦項の積分は [eE₀/(mω²)]sin ωt。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ニ",
+          "explanation": "原点を中心に同じ区間を往復するには、時間に比例する位置のずれが消える必要がある。",
+          "derivation": "v₀ − eE₀/(mω) = 0 を解くと ω = eE₀/(mv₀)。残る位置は原点を中心にした正弦振動になる。"
+        }
+      ],
+      "figures": [
+        "平行平板電極の間に x 軸があり、電子は原点にある。図では電界と x 軸の正方向を右向きの矢印で示す。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 14,
+          "url": "/images/denken2/2023-native/theory-p14.jpg",
+          "sha256": "9bec9838a4669caba6307320d3b081684c52b63bf36bacd6804f5a4e27a01cce"
+        },
+        {
+          "physicalPage": 15,
+          "url": "/images/denken2/2023-native/theory-p15.jpg",
+          "sha256": "af4835588f6950501eba294adc1446359adfb473476e2d2906d9d8d9af49daa3"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20230819_ch_second_q01.pdf",
+      "sourcePdfSha256": "c4cb8f626a37254dddb5fe18c60ed3bd3945b8e51709c6f02cc5404118af04de",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken2-2023-primary-theory-q07",
+      "year": 2023,
+      "season": "primary",
+      "examDate": "2023-08-19",
+      "subject": "theory",
+      "number": 7,
+      "topic": "CMOSのNAND回路と負荷容量の充電電流",
+      "questionText": "次の文章は，MOSFET を用いた回路に関する記述である。文中の □ に当てはまる最も適切なものを解答群の中から選べ。\n図に n チャネル MOSFET 及び p チャネル MOSFET からなる回路を示す。本問では，MOSFET のゲート-ソース間電圧 V_gs [V] は図中に示す向きを正とし，n チャネル MOSFET 及び p チャネル MOSFET はいずれも V_gs により制御される理想的なスイッチとみなせるとする。V_gs > V_T を満たすときにスイッチは導通し，ドレイン-ソース間は短絡（ショート）となる。一方，V_gs ≦ V_T のときスイッチは非導通となり，ドレイン-ソース間は開放（オープン）になる。ただし，V_T [V] は正の定数であり，電源電圧 V_DD [V] は V_T より十分に大きいとする。また，回路には C_L [F] の負荷容量が接続されている。\nまず，図の回路に入力電圧として V_in1 と V_in2 のいずれにも 0 V を加える。このとき各 MOSFET の状態は □(1) となるため，出力電圧 V_out [V] は □(2) となる。次に，V_in1 と V_in2 を V_DD 又は 0 V として回路の入出力電圧の関係を調べると，表 □(3) が得られる。V_DD に 1（真），0 V に 0（偽）をそれぞれ割り当てると，回路の出力の論理式は □(4) となる。\n図の回路にはいずれの状態でも定常的な電流は流れない。回路には負荷容量 C_L を充放電する電流のみが流れる。回路の出力が 0 V と V_DD を f [Hz] で繰り返しているとき，電源から回路に流れ込む平均電流は □(5) [A] となる。",
+      "choiceGroups": {
+        "イ": "V_in1・V_in2",
+        "ロ": "0",
+        "ハ": "C_L V_DD²/2",
+        "ニ": "¬(V_in1 + V_in2)",
+        "ホ": "f C_L V_DD",
+        "ヘ": "¬(V_in1・V_in2)",
+        "ト": "V_DD",
+        "チ": "V_DD/2",
+        "リ": "f C_L V_DD²",
+        "ヌ": "(A)",
+        "ル": "(B)",
+        "ヲ": "(C)",
+        "ワ": "M₁ と M₂ がオンとなり M₃ と M₄ がオフ",
+        "カ": "M₁ と M₃ がオンとなり M₂ と M₄ がオフ",
+        "ヨ": "M₃ と M₄ がオンとなり M₁ と M₂ がオフ"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ワ",
+          "explanation": "両入力が 0 V では、上側の p チャネルが二つとも導通し、下側の n チャネルが二つとも遮断する。",
+          "derivation": "図の電圧の向きでは、上側の M₁・M₂ のソースからゲートへの電位差は V_DD でしきい値を超える。下側の M₃・M₄ はどちらもオンの条件を満たさない。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ト",
+          "explanation": "導通した上側の素子を通って、出力端子は電源に接続される。",
+          "derivation": "下側の接地までの経路は開いている。負荷容量は上側から充電され、定常状態で V_out = V_DD になる。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ル",
+          "explanation": "入力の一方でも 0 V なら出力は V_DD。両方とも V_DD のときだけ出力は 0 V になる。",
+          "derivation": "p チャネルは並列で、どちらか一方がオンなら電源につながる。n チャネルは直列で、二つともオンの場合だけ接地につながる。表 (B) がこの対応を示す。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "ヘ",
+          "explanation": "両入力が 1 のときだけ出力が 0 なので、AND の否定である。",
+          "derivation": "入力を x₁、x₂ とすると x₁・x₂ は両方が 1 の行だけ 1。出力はこれを反転した ¬(x₁・x₂) となる。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ホ",
+          "explanation": "各周期で電源が負荷容量へ供給する電荷は C_L V_DD。",
+          "derivation": "出力が 0 V から V_DD に上がるときに Q = C_L V_DD を供給する。放電時は接地へ流れる。毎秒 f 回の充電なので平均電流は fQ = f C_L V_DD。"
+        }
+      ],
+      "figures": [
+        "上側の M₁・M₂ は電源と出力の間に並列、下側の M₃・M₄ は出力と接地の間に直列。出力端子から接地まで負荷容量 C_L がつながる。",
+        "入力 (V_in1, V_in2) の行順は (0, 0)、(V_DD, 0)、(0, V_DD)、(V_DD, V_DD)。出力の候補は、表(A) が V_DD・0・0・0、表(B) が V_DD・V_DD・V_DD・0、表(C) が 0・0・0・V_DD。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 16,
+          "url": "/images/denken2/2023-native/theory-p16.jpg",
+          "sha256": "0f78d81cdf0a6fd83b7c8255fa88f31abf8f38ed76598f753ff36a4eb6118017"
+        },
+        {
+          "physicalPage": 17,
+          "url": "/images/denken2/2023-native/theory-p17.jpg",
+          "sha256": "f098c09ca31142d861298cd2c20aa79b9edad8ecc952b64c9c67ac24fc8977cc"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20230819_ch_second_q01.pdf",
+      "sourcePdfSha256": "c4cb8f626a37254dddb5fe18c60ed3bd3945b8e51709c6f02cc5404118af04de",
+      "alternateQuestionRule": "問7と問8のどちらか1問を解答。両方解答すると採点されません。"
+    },
+    {
+      "id": "denken2-2023-primary-theory-q08",
+      "year": 2023,
+      "season": "primary",
+      "examDate": "2023-08-19",
+      "subject": "theory",
+      "number": 8,
+      "topic": "熱電形交流電力計と有効電力",
+      "questionText": "次の文章は，熱電形の交流電力計に関する記述である。文中の □ に当てはまる最も適切なものを解答群の中から選べ。\n図示した交流電力計は，理想変圧器，理想変流器，抵抗値がともに R である二つの抵抗，二つの熱電対及び直流電圧計で構成されている。なお，変圧器の一次巻線に流れる電流 Δi は十分小さい。また，節点 a は変圧器の二次巻線の中点である。\n時刻 t における負荷への入力電圧 u(t) 及び電流 i(t) を次式で表すものとする。なお，電圧に対する電流の位相角を θ，角周波数及び周期をそれぞれ ω 及び T で表す。\nu(t) = √2 U sin ωt\ni(t) = √2 I sin(ωt − θ)\n熱電対とは，異種の金属同士を接続し，その接点に温度差を与えたときに熱起電力が生じる □(1) 効果を応用した温度センサである。本回路では，抵抗のジュール熱によって生じる温度上昇に比例した直流電圧に変換している。なお，二つの熱電対は同形式であり，図中の「熱電対1」「熱電対2」の下に記した矢印の向きに起電力が生じるように接続されている。\ni₁(t) は，時刻 t における理想変圧器の二次電圧と抵抗から定まる電流であり，u(t) すなわち理想変圧器の一次電圧に比例する。また，2i₂(t) は，時刻 t における理想変流器の二次電流であり，i(t) すなわち理想変流器の一次電流に比例する。\nまず，i₁(t) 及び i₂(t) を用いて抵抗1及び抵抗2で消費する電力を求めると，それぞれ □(2) 及び □(3) となる。各抵抗では電力消費に伴い温度が上昇することから，熱電対1及び熱電対2に起電力が生じ，直流電圧計は次式に示す V₀ を指示する。\nV₀ ∝ □(2) − □(3) = □(4)\nu(t) と i₁(t)，i(t) と i₂(t) が比例関係にあることを考慮すると，V₀ は次式に示したとおり負荷の消費電力に比例する。\nV₀ ∝ (1/T)∫₀ᵀ □(5) dt = UI cos θ\n以上が，熱電形の交流電力計の測定原理である。",
+      "choiceGroups": {
+        "イ": "ペルチェ",
+        "ロ": "ホール",
+        "ハ": "ゼーベック",
+        "ニ": "(R/T)∫₀ᵀ[i₁(t) − i₂(t)] dt",
+        "ホ": "(1/RT)∫₀ᵀ[i₁(t) − i₂(t)]² dt",
+        "ヘ": "(4/RT)∫₀ᵀ i₁(t)i₂(t) dt",
+        "ト": "(R/T)∫₀ᵀ[i₁(t) + i₂(t)] dt",
+        "チ": "(4R/T)∫₀ᵀ i₁(t)i₂(t) dt",
+        "リ": "(R/T)∫₀ᵀ[i₁(t) + i₂(t)]² dt",
+        "ヌ": "(2R/T)∫₀ᵀ i₂(t)² dt",
+        "ル": "(R/T)∫₀ᵀ[i₁(t) − i₂(t)]² dt",
+        "ヲ": "(1/RT)∫₀ᵀ[i₁(t) + i₂(t)]² dt",
+        "ワ": "u(t)i(t)",
+        "カ": "i₂(t)²",
+        "ヨ": "i₁(t)²"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ハ",
+          "explanation": "異種金属の接点間の温度差で起電力が生じる現象はゼーベック効果である。",
+          "derivation": "熱電対は測温側と基準側の温度差を起電力に変える。この電力計では抵抗の発熱をこの起電力で測る。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "リ",
+          "explanation": "抵抗1では i₁(t) と i₂(t) が同じ向きに流れるため、合成電流は i₁(t) + i₂(t) になる。",
+          "derivation": "正答表が示す「消費する電力」は周期平均。瞬時電力 R[i₁(t) + i₂(t)]² を一周期積分して T で割る。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ル",
+          "explanation": "抵抗2では i₁(t) と i₂(t) の向きが反対になるため、電流の差を二乗する。",
+          "derivation": "瞬時電力は R[i₁(t) − i₂(t)]²。電流の基準方向を逆に取っても二乗値は同じ。これを一周期で平均する。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "チ",
+          "explanation": "二つの平均電力の差を取ると、各電流の二乗項が消え、積の項だけが残る。",
+          "derivation": "(i₁ + i₂)² − (i₁ − i₂)² = 4i₁i₂。両方の平均電力に共通の R/T を掛け、(4R/T)∫₀ᵀ i₁(t)i₂(t) dt を得る。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ワ",
+          "explanation": "変圧器側の電流は負荷電圧に、変流器側の電流は負荷電流に比例する。直流電圧計の指示は瞬時電力 u(t)i(t) の周期平均に比例する。",
+          "derivation": "u(t)i(t) = 2UI sin(ωt)sin(ωt − θ) = UI[cos θ − cos(2ωt − θ)]。後者の余弦項の周期平均は 0 なので、平均は UI cos θ になる。"
+        }
+      ],
+      "figures": [
+        "理想変圧器の二次巻線の両端は抵抗1・2へつながる。理想変流器の二次電流 2i₂(t) は、巻線の中点 a から左右へ分かれる。二つの熱電対は、起電力の差を直流電圧計に伝える向きに接続される。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 18,
+          "url": "/images/denken2/2023-native/theory-p18.jpg",
+          "sha256": "ec627af8f8c289d5b6c6bbfb5411fceeb667254663d024c4461a9d7687688755"
+        },
+        {
+          "physicalPage": 19,
+          "url": "/images/denken2/2023-native/theory-p19.jpg",
+          "sha256": "1f059f57d1dbc48a67482c4b8ec123dbd3427c263e22755065160c67e64f7dda"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20230819_ch_second_q01.pdf",
+      "sourcePdfSha256": "c4cb8f626a37254dddb5fe18c60ed3bd3945b8e51709c6f02cc5404118af04de",
+      "alternateQuestionRule": "問7と問8のどちらか1問を解答。両方解答すると採点されません。"
+    }
+  ]
+}

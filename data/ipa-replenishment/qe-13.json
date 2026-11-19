@@ -1,0 +1,2155 @@
+{
+  "schemaVersion": 1,
+  "lane": "qe-13",
+  "previousLane": "qd-13",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "checkedAt": "2026-11-17T22:46:53.001865+00:00",
+  "rows": [
+    {
+      "jobId": "PLAN5-153",
+      "exam": "hokenshi",
+      "year": 2023,
+      "storedYear": 2022,
+      "season": "annual",
+      "session": "pm",
+      "status": "completed-locally",
+      "action": "不足分だけ新規補充",
+      "officialQuestionCount": 55,
+      "questionCount": 55,
+      "edition": "第109回",
+      "examDate": "2023-02-10",
+      "sourcePage": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-03b_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-03seitou.pdf",
+      "duplicateAudit": {
+        "refs": 106,
+        "uniqueCommits": 88,
+        "exactMatches": 0
+      },
+      "sourceFiles": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-03b_01.pdf",
+          "sha256": "a973b1775f1dc01e0ec3df587969652d29cd204071e9e17fd466c0903d514c16",
+          "pages": 40
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-03seitou.pdf",
+          "sha256": "3f69e967f350871ba9b1425d1103e8b8bf14e99ac8ccacf036e3765c08d01d21",
+          "pages": 1
+        }
+      ],
+      "dataPath": "data/questions/hokenshi/2022-annual-pm.json",
+      "dataSha256": "36c3690bc62a424ae4aaa44644539133c920c81a87d7c6b0fb3643c58e17c1ea",
+      "officialAnswerNumbers": [
+        "2",
+        "2",
+        "4",
+        "1",
+        "3",
+        "3",
+        "3",
+        "1",
+        "1",
+        "4",
+        "4",
+        "2",
+        "2",
+        "1",
+        "2",
+        "4",
+        "1",
+        "4",
+        "2",
+        "1",
+        "2",
+        "4",
+        "4",
+        "3",
+        "1",
+        "2",
+        "2",
+        "5",
+        "5",
+        "25",
+        "45",
+        "24",
+        "34",
+        "15",
+        "14",
+        "3",
+        "2",
+        "4",
+        "2",
+        "4",
+        "4",
+        "1",
+        "2",
+        "15",
+        "3",
+        "4",
+        "1",
+        "1",
+        "3",
+        "4",
+        "1",
+        "4",
+        "30",
+        "2",
+        "3"
+      ],
+      "questionIds": [
+        "hokenshi-2022-annual-pm-q1",
+        "hokenshi-2022-annual-pm-q2",
+        "hokenshi-2022-annual-pm-q3",
+        "hokenshi-2022-annual-pm-q4",
+        "hokenshi-2022-annual-pm-q5",
+        "hokenshi-2022-annual-pm-q6",
+        "hokenshi-2022-annual-pm-q7",
+        "hokenshi-2022-annual-pm-q8",
+        "hokenshi-2022-annual-pm-q9",
+        "hokenshi-2022-annual-pm-q10",
+        "hokenshi-2022-annual-pm-q11",
+        "hokenshi-2022-annual-pm-q12",
+        "hokenshi-2022-annual-pm-q13",
+        "hokenshi-2022-annual-pm-q14",
+        "hokenshi-2022-annual-pm-q15",
+        "hokenshi-2022-annual-pm-q16",
+        "hokenshi-2022-annual-pm-q17",
+        "hokenshi-2022-annual-pm-q18",
+        "hokenshi-2022-annual-pm-q19",
+        "hokenshi-2022-annual-pm-q20",
+        "hokenshi-2022-annual-pm-q21",
+        "hokenshi-2022-annual-pm-q22",
+        "hokenshi-2022-annual-pm-q23",
+        "hokenshi-2022-annual-pm-q24",
+        "hokenshi-2022-annual-pm-q25",
+        "hokenshi-2022-annual-pm-q26",
+        "hokenshi-2022-annual-pm-q27",
+        "hokenshi-2022-annual-pm-q28",
+        "hokenshi-2022-annual-pm-q29",
+        "hokenshi-2022-annual-pm-q30",
+        "hokenshi-2022-annual-pm-q31",
+        "hokenshi-2022-annual-pm-q32",
+        "hokenshi-2022-annual-pm-q33",
+        "hokenshi-2022-annual-pm-q34",
+        "hokenshi-2022-annual-pm-q35",
+        "hokenshi-2022-annual-pm-q36",
+        "hokenshi-2022-annual-pm-q37",
+        "hokenshi-2022-annual-pm-q38",
+        "hokenshi-2022-annual-pm-q39",
+        "hokenshi-2022-annual-pm-q40",
+        "hokenshi-2022-annual-pm-q41",
+        "hokenshi-2022-annual-pm-q42",
+        "hokenshi-2022-annual-pm-q43",
+        "hokenshi-2022-annual-pm-q44",
+        "hokenshi-2022-annual-pm-q45",
+        "hokenshi-2022-annual-pm-q46",
+        "hokenshi-2022-annual-pm-q47",
+        "hokenshi-2022-annual-pm-q48",
+        "hokenshi-2022-annual-pm-q49",
+        "hokenshi-2022-annual-pm-q50",
+        "hokenshi-2022-annual-pm-q51",
+        "hokenshi-2022-annual-pm-q52",
+        "hokenshi-2022-annual-pm-q53",
+        "hokenshi-2022-annual-pm-q54",
+        "hokenshi-2022-annual-pm-q55"
+      ],
+      "choiceExplanationCount": 233,
+      "assets": [
+        {
+          "path": "public/questions/hokenshi/2022-annual-pm/q25.webp",
+          "questionNumber": 25,
+          "pdfPage": 15,
+          "clip": [
+            64,
+            149,
+            532,
+            416
+          ],
+          "sha256": "819581ec6709e15f748c453a490a49e5fd48405f1679df26a693041779178127",
+          "bytes": 18308
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-167",
+      "exam": "josanshi",
+      "year": 2024,
+      "storedYear": 2023,
+      "season": "annual",
+      "session": "am",
+      "status": "completed-locally",
+      "action": "不足分だけ新規補充",
+      "officialQuestionCount": 55,
+      "questionCount": 45,
+      "keptQuestionNumbers": [
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "edition": "第107回",
+      "examDate": "2024-02-08",
+      "sourcePage": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp240424-04a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp240424-04seitou.pdf",
+      "sourceFiles": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp240424-04a_01.pdf",
+          "sha256": "abba0e1ee7c45f80ff32f334076bb11417384e2f4edbd9153e15a0e3a32c0123",
+          "pages": 40
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp240424-04a_02.pdf",
+          "sha256": "b69f39df34f43bb486aa481760e348ce0cdd60c55eedbf05b15dc0dd94915b8b",
+          "pages": 16
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp240424-04seitou.pdf",
+          "sha256": "64608b1d78ca784db805eefd34534dd7ad7179a92e449b61819ddcc5aa32e97b",
+          "pages": 1
+        }
+      ],
+      "dataPath": "data/questions/josanshi/2023-annual-am-completion.json",
+      "dataSha256": "92710ac48383f8abe91bb876ab63969d370d9ebc6caf6bf91560dd864c6169bc",
+      "officialAnswerNumbers": [
+        "4",
+        "3",
+        "2",
+        "2",
+        "4",
+        "3",
+        "1",
+        "3",
+        "3",
+        "1",
+        "1",
+        "4",
+        "4",
+        "4",
+        "3",
+        "4",
+        "2",
+        "2",
+        "3",
+        "4",
+        "1",
+        "1",
+        "1",
+        "4",
+        "2",
+        "5",
+        "2",
+        "2",
+        "4",
+        "2",
+        "34",
+        "15",
+        "35",
+        "25",
+        "24",
+        "14",
+        "24",
+        "35",
+        "25",
+        "24",
+        "15",
+        "3",
+        "2",
+        "3",
+        "4",
+        "4",
+        "2",
+        "4",
+        "13",
+        "4",
+        "45",
+        "4",
+        "25",
+        "12",
+        "2"
+      ],
+      "questionIds": [
+        "josanshi-2023-annual-am-q1",
+        "josanshi-2023-annual-am-q4",
+        "josanshi-2023-annual-am-q13",
+        "josanshi-2023-annual-am-q14",
+        "josanshi-2023-annual-am-q15",
+        "josanshi-2023-annual-am-q16",
+        "josanshi-2023-annual-am-q17",
+        "josanshi-2023-annual-am-q18",
+        "josanshi-2023-annual-am-q19",
+        "josanshi-2023-annual-am-q20",
+        "josanshi-2023-annual-am-q21",
+        "josanshi-2023-annual-am-q22",
+        "josanshi-2023-annual-am-q23",
+        "josanshi-2023-annual-am-q24",
+        "josanshi-2023-annual-am-q25",
+        "josanshi-2023-annual-am-q26",
+        "josanshi-2023-annual-am-q27",
+        "josanshi-2023-annual-am-q28",
+        "josanshi-2023-annual-am-q29",
+        "josanshi-2023-annual-am-q30",
+        "josanshi-2023-annual-am-q31",
+        "josanshi-2023-annual-am-q32",
+        "josanshi-2023-annual-am-q33",
+        "josanshi-2023-annual-am-q34",
+        "josanshi-2023-annual-am-q35",
+        "josanshi-2023-annual-am-q36",
+        "josanshi-2023-annual-am-q37",
+        "josanshi-2023-annual-am-q38",
+        "josanshi-2023-annual-am-q39",
+        "josanshi-2023-annual-am-q40",
+        "josanshi-2023-annual-am-q41",
+        "josanshi-2023-annual-am-q42",
+        "josanshi-2023-annual-am-q43",
+        "josanshi-2023-annual-am-q44",
+        "josanshi-2023-annual-am-q45",
+        "josanshi-2023-annual-am-q46",
+        "josanshi-2023-annual-am-q47",
+        "josanshi-2023-annual-am-q48",
+        "josanshi-2023-annual-am-q49",
+        "josanshi-2023-annual-am-q50",
+        "josanshi-2023-annual-am-q51",
+        "josanshi-2023-annual-am-q52",
+        "josanshi-2023-annual-am-q53",
+        "josanshi-2023-annual-am-q54",
+        "josanshi-2023-annual-am-q55"
+      ],
+      "choiceExplanationCount": 205,
+      "checkedAt": "2026-11-17T23:01:21.754704+00:00",
+      "assets": [
+        {
+          "path": "public/questions/josanshi/2023-annual-am/q4.webp",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp240424-04a_01.pdf#page=8",
+          "pdfPage": 8,
+          "clip": [
+            83,
+            97,
+            524,
+            330
+          ],
+          "rotatedClockwise": 0,
+          "sha256": "4a708a44c523978d08a5e91849ce6b8f9e80aa305779ac60ebac6d0b9ff006c4",
+          "questionNumber": 4
+        },
+        {
+          "path": "public/questions/josanshi/2023-annual-am/q13.webp",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp240424-04a_01.pdf#page=12",
+          "pdfPage": 12,
+          "clip": [
+            78,
+            171,
+            545,
+            567
+          ],
+          "rotatedClockwise": 0,
+          "sha256": "9912d3160a01d03315279fbd50b9e362490505b3db409f6973712f342e28559e",
+          "questionNumber": 13
+        },
+        {
+          "path": "public/questions/josanshi/2023-annual-am/q44.webp",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp240424-04a_02.pdf#page=5",
+          "pdfPage": 5,
+          "clip": [
+            123,
+            97,
+            473,
+            337
+          ],
+          "rotatedClockwise": 0,
+          "sha256": "f06f691ff5f2f2908c138e1a0dbb05d9768df777b57c5780cc57778a99685a46",
+          "questionNumber": 44
+        },
+        {
+          "path": "public/questions/josanshi/2023-annual-am/q53.webp",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp240424-04a_02.pdf#page=9",
+          "pdfPage": 9,
+          "clip": [
+            90,
+            140,
+            406,
+            690
+          ],
+          "rotatedClockwise": 90,
+          "sha256": "03a71d7ed6ed61f1b620d975e2bad2270c03a51bdabee9b065dde74ae9d8e12e",
+          "questionNumber": 53
+        },
+        {
+          "path": "public/questions/josanshi/2023-annual-am/q55.webp",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp240424-04a_02.pdf#page=13",
+          "pdfPage": 13,
+          "clip": [
+            90,
+            67,
+            410,
+            760
+          ],
+          "rotatedClockwise": 90,
+          "sha256": "186b85173c027746119c92840f4d71f82e42bae0e75c60c33084f4487b6cf1ef",
+          "questionNumber": 55
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-181",
+      "exam": "rigaku-ryohoshi",
+      "year": 2022,
+      "season": "annual",
+      "session": "am",
+      "status": "completed-locally",
+      "action": "不足分だけ新規補充",
+      "officialQuestionCount": 100,
+      "questionCount": 90,
+      "choiceExplanationCount": 450,
+      "keptQuestionNumbers": [
+        23,
+        25,
+        27,
+        28,
+        30,
+        32,
+        33,
+        35,
+        37,
+        38
+      ],
+      "edition": "第57回",
+      "examDate": "2022-02-20",
+      "sourcePage": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-08_09.html",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-08a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-08seitou.pdf",
+      "sourceFiles": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-08a_01.pdf",
+          "sha256": "dd88c80418620e6a6388bcda088aa8db1d4122aa5ad8cb534f280455a022a780",
+          "pages": 56
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-08a_02.pdf",
+          "sha256": "f84c1a518b4711e572c638141d23ab23ba095ef93f75298af12838b0bc1018d1",
+          "pages": 20
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-08seitou.pdf",
+          "sha256": "cf8507ea2e3e3a6d6a0b76c3df4a7388ee800fa7e39536fcb2289273efe4fe88",
+          "pages": 1
+        }
+      ],
+      "dataPath": "data/questions/rigaku-ryohoshi/2022-annual-am-completion.json",
+      "dataSha256": "d3944dd98ee78964287927b34ff4bbe25625d4308a3ab7569b554770702c3e66",
+      "officialAnswerNumbers": [
+        "5",
+        "5",
+        "1",
+        "14",
+        "4",
+        "4",
+        "3",
+        "2",
+        "3 / 4",
+        "4",
+        "14",
+        "4",
+        "2",
+        "4",
+        "3",
+        "2",
+        "4",
+        "14",
+        "5",
+        "2",
+        "2",
+        "13",
+        "2",
+        "15",
+        "4",
+        "2",
+        "1",
+        "4",
+        "45",
+        "3",
+        "3",
+        "5",
+        "34",
+        "35",
+        "3",
+        "2",
+        "2",
+        "5",
+        "1",
+        "3",
+        "3",
+        "3",
+        "3",
+        "4",
+        "2",
+        "3",
+        "2",
+        "4",
+        "2",
+        "1",
+        "13 / 14 / 34",
+        "3",
+        "3",
+        "4",
+        "3",
+        "15",
+        "12",
+        "5",
+        "4",
+        "2",
+        "4",
+        "1",
+        "2",
+        "1",
+        "4",
+        "2",
+        "4",
+        "2",
+        "1",
+        "2",
+        "3 / 5",
+        "3",
+        "25",
+        "3",
+        "4",
+        "5",
+        "1",
+        "5",
+        "1",
+        "4",
+        "13",
+        "1",
+        "13",
+        "1",
+        "1 / 3",
+        "24",
+        "3",
+        "2",
+        "23",
+        "3",
+        "3",
+        "4",
+        "1",
+        "5",
+        "1",
+        "4",
+        "4",
+        "3",
+        "4",
+        "1 / 2"
+      ],
+      "receipts": [
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q1",
+          "questionNumber": 1,
+          "pdfPage": 7,
+          "officialAnswerColumns": [
+            "5"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q2",
+          "questionNumber": 2,
+          "pdfPage": 8,
+          "officialAnswerColumns": [
+            "5"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q3",
+          "questionNumber": 3,
+          "pdfPage": 8,
+          "officialAnswerColumns": [
+            "1"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q4",
+          "questionNumber": 4,
+          "pdfPage": 9,
+          "officialAnswerColumns": [
+            "14"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q5",
+          "questionNumber": 5,
+          "pdfPage": 10,
+          "officialAnswerColumns": [
+            "4"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q6",
+          "questionNumber": 6,
+          "pdfPage": 11,
+          "officialAnswerColumns": [
+            "4"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q7",
+          "questionNumber": 7,
+          "pdfPage": 12,
+          "officialAnswerColumns": [
+            "3"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q8",
+          "questionNumber": 8,
+          "pdfPage": 13,
+          "officialAnswerColumns": [
+            "2"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q9",
+          "questionNumber": 9,
+          "pdfPage": 13,
+          "officialAnswerColumns": [
+            "3",
+            "4"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q10",
+          "questionNumber": 10,
+          "pdfPage": 14,
+          "officialAnswerColumns": [
+            "4"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q11",
+          "questionNumber": 11,
+          "pdfPage": 15,
+          "officialAnswerColumns": [
+            "14"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q12",
+          "questionNumber": 12,
+          "pdfPage": 16,
+          "officialAnswerColumns": [
+            "4"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q13",
+          "questionNumber": 13,
+          "pdfPage": 17,
+          "officialAnswerColumns": [
+            "2"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q14",
+          "questionNumber": 14,
+          "pdfPage": 17,
+          "officialAnswerColumns": [
+            "4"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q15",
+          "questionNumber": 15,
+          "pdfPage": 18,
+          "officialAnswerColumns": [
+            "3"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q16",
+          "questionNumber": 16,
+          "pdfPage": 19,
+          "officialAnswerColumns": [
+            "2"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q17",
+          "questionNumber": 17,
+          "pdfPage": 20,
+          "officialAnswerColumns": [
+            "4"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q18",
+          "questionNumber": 18,
+          "pdfPage": 21,
+          "officialAnswerColumns": [
+            "14"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q19",
+          "questionNumber": 19,
+          "pdfPage": 22,
+          "officialAnswerColumns": [
+            "5"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q20",
+          "questionNumber": 20,
+          "pdfPage": 22,
+          "officialAnswerColumns": [
+            "2"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q21",
+          "questionNumber": 21,
+          "pdfPage": 23,
+          "officialAnswerColumns": [
+            "2"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q22",
+          "questionNumber": 22,
+          "pdfPage": 23,
+          "officialAnswerColumns": [
+            "13"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q24",
+          "questionNumber": 24,
+          "pdfPage": 24,
+          "officialAnswerColumns": [
+            "15"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q26",
+          "questionNumber": 26,
+          "pdfPage": 24,
+          "officialAnswerColumns": [
+            "2"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q29",
+          "questionNumber": 29,
+          "pdfPage": 25,
+          "officialAnswerColumns": [
+            "45"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q31",
+          "questionNumber": 31,
+          "pdfPage": 26,
+          "officialAnswerColumns": [
+            "3"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q34",
+          "questionNumber": 34,
+          "pdfPage": 27,
+          "officialAnswerColumns": [
+            "35"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q36",
+          "questionNumber": 36,
+          "pdfPage": 28,
+          "officialAnswerColumns": [
+            "2"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q39",
+          "questionNumber": 39,
+          "pdfPage": 29,
+          "officialAnswerColumns": [
+            "1"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q40",
+          "questionNumber": 40,
+          "pdfPage": 29,
+          "officialAnswerColumns": [
+            "3"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q41",
+          "questionNumber": 41,
+          "pdfPage": 29,
+          "officialAnswerColumns": [
+            "3"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q42",
+          "questionNumber": 42,
+          "pdfPage": 30,
+          "officialAnswerColumns": [
+            "3"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q43",
+          "questionNumber": 43,
+          "pdfPage": 30,
+          "officialAnswerColumns": [
+            "3"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q44",
+          "questionNumber": 44,
+          "pdfPage": 30,
+          "officialAnswerColumns": [
+            "4"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q45",
+          "questionNumber": 45,
+          "pdfPage": 31,
+          "officialAnswerColumns": [
+            "2"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q46",
+          "questionNumber": 46,
+          "pdfPage": 31,
+          "officialAnswerColumns": [
+            "3"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q47",
+          "questionNumber": 47,
+          "pdfPage": 31,
+          "officialAnswerColumns": [
+            "2"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q48",
+          "questionNumber": 48,
+          "pdfPage": 32,
+          "officialAnswerColumns": [
+            "4"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q49",
+          "questionNumber": 49,
+          "pdfPage": 32,
+          "officialAnswerColumns": [
+            "2"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q50",
+          "questionNumber": 50,
+          "pdfPage": 32,
+          "officialAnswerColumns": [
+            "1"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q51",
+          "questionNumber": 51,
+          "pdfPage": 33,
+          "officialAnswerColumns": [
+            "13",
+            "14",
+            "34"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q52",
+          "questionNumber": 52,
+          "pdfPage": 33,
+          "officialAnswerColumns": [
+            "3"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q53",
+          "questionNumber": 53,
+          "pdfPage": 33,
+          "officialAnswerColumns": [
+            "3"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q54",
+          "questionNumber": 54,
+          "pdfPage": 34,
+          "officialAnswerColumns": [
+            "4"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q55",
+          "questionNumber": 55,
+          "pdfPage": 34,
+          "officialAnswerColumns": [
+            "3"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q56",
+          "questionNumber": 56,
+          "pdfPage": 34,
+          "officialAnswerColumns": [
+            "15"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q57",
+          "questionNumber": 57,
+          "pdfPage": 35,
+          "officialAnswerColumns": [
+            "12"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q58",
+          "questionNumber": 58,
+          "pdfPage": 35,
+          "officialAnswerColumns": [
+            "5"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q59",
+          "questionNumber": 59,
+          "pdfPage": 35,
+          "officialAnswerColumns": [
+            "4"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q60",
+          "questionNumber": 60,
+          "pdfPage": 36,
+          "officialAnswerColumns": [
+            "2"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q61",
+          "questionNumber": 61,
+          "pdfPage": 36,
+          "officialAnswerColumns": [
+            "4"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q62",
+          "questionNumber": 62,
+          "pdfPage": 37,
+          "officialAnswerColumns": [
+            "1"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q63",
+          "questionNumber": 63,
+          "pdfPage": 37,
+          "officialAnswerColumns": [
+            "2"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q64",
+          "questionNumber": 64,
+          "pdfPage": 37,
+          "officialAnswerColumns": [
+            "1"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q65",
+          "questionNumber": 65,
+          "pdfPage": 38,
+          "officialAnswerColumns": [
+            "4"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q66",
+          "questionNumber": 66,
+          "pdfPage": 38,
+          "officialAnswerColumns": [
+            "2"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q67",
+          "questionNumber": 67,
+          "pdfPage": 38,
+          "officialAnswerColumns": [
+            "4"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q68",
+          "questionNumber": 68,
+          "pdfPage": 39,
+          "officialAnswerColumns": [
+            "2"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q69",
+          "questionNumber": 69,
+          "pdfPage": 39,
+          "officialAnswerColumns": [
+            "1"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q70",
+          "questionNumber": 70,
+          "pdfPage": 40,
+          "officialAnswerColumns": [
+            "2"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q71",
+          "questionNumber": 71,
+          "pdfPage": 41,
+          "officialAnswerColumns": [
+            "3",
+            "5"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q72",
+          "questionNumber": 72,
+          "pdfPage": 41,
+          "officialAnswerColumns": [
+            "3"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q73",
+          "questionNumber": 73,
+          "pdfPage": 41,
+          "officialAnswerColumns": [
+            "25"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q74",
+          "questionNumber": 74,
+          "pdfPage": 42,
+          "officialAnswerColumns": [
+            "3"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q75",
+          "questionNumber": 75,
+          "pdfPage": 42,
+          "officialAnswerColumns": [
+            "4"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q76",
+          "questionNumber": 76,
+          "pdfPage": 42,
+          "officialAnswerColumns": [
+            "5"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q77",
+          "questionNumber": 77,
+          "pdfPage": 43,
+          "officialAnswerColumns": [
+            "1"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q78",
+          "questionNumber": 78,
+          "pdfPage": 43,
+          "officialAnswerColumns": [
+            "5"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q79",
+          "questionNumber": 79,
+          "pdfPage": 43,
+          "officialAnswerColumns": [
+            "1"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q80",
+          "questionNumber": 80,
+          "pdfPage": 44,
+          "officialAnswerColumns": [
+            "4"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q81",
+          "questionNumber": 81,
+          "pdfPage": 44,
+          "officialAnswerColumns": [
+            "13"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q82",
+          "questionNumber": 82,
+          "pdfPage": 44,
+          "officialAnswerColumns": [
+            "1"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q83",
+          "questionNumber": 83,
+          "pdfPage": 45,
+          "officialAnswerColumns": [
+            "13"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q84",
+          "questionNumber": 84,
+          "pdfPage": 45,
+          "officialAnswerColumns": [
+            "1"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q85",
+          "questionNumber": 85,
+          "pdfPage": 45,
+          "officialAnswerColumns": [
+            "1",
+            "3"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q86",
+          "questionNumber": 86,
+          "pdfPage": 46,
+          "officialAnswerColumns": [
+            "24"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q87",
+          "questionNumber": 87,
+          "pdfPage": 46,
+          "officialAnswerColumns": [
+            "3"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q88",
+          "questionNumber": 88,
+          "pdfPage": 46,
+          "officialAnswerColumns": [
+            "2"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q89",
+          "questionNumber": 89,
+          "pdfPage": 47,
+          "officialAnswerColumns": [
+            "23"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q90",
+          "questionNumber": 90,
+          "pdfPage": 47,
+          "officialAnswerColumns": [
+            "3"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q91",
+          "questionNumber": 91,
+          "pdfPage": 47,
+          "officialAnswerColumns": [
+            "3"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q92",
+          "questionNumber": 92,
+          "pdfPage": 48,
+          "officialAnswerColumns": [
+            "4"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q93",
+          "questionNumber": 93,
+          "pdfPage": 48,
+          "officialAnswerColumns": [
+            "1"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q94",
+          "questionNumber": 94,
+          "pdfPage": 48,
+          "officialAnswerColumns": [
+            "5"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q95",
+          "questionNumber": 95,
+          "pdfPage": 49,
+          "officialAnswerColumns": [
+            "1"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q96",
+          "questionNumber": 96,
+          "pdfPage": 49,
+          "officialAnswerColumns": [
+            "4"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q97",
+          "questionNumber": 97,
+          "pdfPage": 49,
+          "officialAnswerColumns": [
+            "4"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q98",
+          "questionNumber": 98,
+          "pdfPage": 50,
+          "officialAnswerColumns": [
+            "3"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q99",
+          "questionNumber": 99,
+          "pdfPage": 50,
+          "officialAnswerColumns": [
+            "4"
+          ]
+        },
+        {
+          "id": "rigaku-ryohoshi-2022-annual-am-q100",
+          "questionNumber": 100,
+          "pdfPage": 50,
+          "officialAnswerColumns": [
+            "1",
+            "2"
+          ]
+        }
+      ],
+      "assets": [
+        {
+          "questionNumber": 3,
+          "path": "public/questions/rigaku-ryohoshi/57-am/q03.webp",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-08a_02.pdf#page=5",
+          "pdfPage": 5,
+          "clip": [
+            88,
+            64,
+            510,
+            755
+          ],
+          "sha256": "93cb0f465c20c51f013dfa30ba709c6b07806c29bf9efedc02fab51fc5cafc03"
+        },
+        {
+          "questionNumber": 4,
+          "path": "public/questions/rigaku-ryohoshi/57-am/q04.webp",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-08a_01.pdf#page=9",
+          "pdfPage": 9,
+          "clip": [
+            82,
+            130,
+            540,
+            755
+          ],
+          "sha256": "b87b13bcd46998a4328631d0a42d849bab28a8d37c57ba06f6da34251f34ca8c"
+        },
+        {
+          "questionNumber": 5,
+          "path": "public/questions/rigaku-ryohoshi/57-am/q05.webp",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-08a_01.pdf#page=10",
+          "pdfPage": 10,
+          "clip": [
+            80,
+            108,
+            545,
+            597
+          ],
+          "sha256": "f5003c228d8c5bac8d7183c18f0a827bcd2f878344a687b4879fc69e526253bc"
+        },
+        {
+          "questionNumber": 6,
+          "path": "public/questions/rigaku-ryohoshi/57-am/q06.webp",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-08a_02.pdf#page=7",
+          "pdfPage": 7,
+          "clip": [
+            113,
+            63,
+            510,
+            758
+          ],
+          "sha256": "53f6aed1428f6a0a7c19c9be2eb27900efd510276c45b87aec643aee498f9825"
+        },
+        {
+          "questionNumber": 7,
+          "path": "public/questions/rigaku-ryohoshi/57-am/q07.webp",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-08a_01.pdf#page=12",
+          "pdfPage": 12,
+          "clip": [
+            86,
+            157,
+            536,
+            337
+          ],
+          "sha256": "07c98fcbaa11a02657593b8eafaf2b2bd98889c988b7814479eff8ae7cae3279"
+        },
+        {
+          "questionNumber": 8,
+          "path": "public/questions/rigaku-ryohoshi/57-am/q08.webp",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-08a_02.pdf#page=9",
+          "pdfPage": 9,
+          "clip": [
+            129,
+            62,
+            487,
+            374
+          ],
+          "sha256": "a0ce75ef5c1dfd93dc3e4a4f7b541b71c6c5999b6483660071e672af8dd6aaa7"
+        },
+        {
+          "questionNumber": 10,
+          "path": "public/questions/rigaku-ryohoshi/57-am/q10.webp",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-08a_01.pdf#page=14",
+          "pdfPage": 14,
+          "clip": [
+            88,
+            102,
+            533,
+            610
+          ],
+          "sha256": "b9081d99b132143fab02679286b3ffe1feaa9a361f07b221fde3bbeed100de89"
+        },
+        {
+          "questionNumber": 12,
+          "path": "public/questions/rigaku-ryohoshi/57-am/q12.webp",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-08a_01.pdf#page=16",
+          "pdfPage": 16,
+          "clip": [
+            85,
+            134,
+            538,
+            392
+          ],
+          "sha256": "993237520b9cb36733b16ac607f06f6713675f06181a4b293f7d8925c75b8655"
+        },
+        {
+          "questionNumber": 13,
+          "path": "public/questions/rigaku-ryohoshi/57-am/q13.webp",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-08a_02.pdf#page=11",
+          "pdfPage": 11,
+          "clip": [
+            160,
+            63,
+            449,
+            530
+          ],
+          "sha256": "41e24393c56fa9da4360413f8c960a62e0a1c3bafffffc5c515899ff8c555ebb"
+        },
+        {
+          "questionNumber": 14,
+          "path": "public/questions/rigaku-ryohoshi/57-am/q14.webp",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-08a_01.pdf#page=17",
+          "pdfPage": 17,
+          "clip": [
+            85,
+            494,
+            539,
+            722
+          ],
+          "sha256": "96419f1b8b5f07e33f065da7040f397be818e11c30fcaea8b4dd33b592643221"
+        },
+        {
+          "questionNumber": 15,
+          "path": "public/questions/rigaku-ryohoshi/57-am/q15.webp",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-08a_01.pdf#page=18",
+          "pdfPage": 18,
+          "clip": [
+            86,
+            159,
+            540,
+            436
+          ],
+          "sha256": "96935a8d1a1e9a833a88602307ce9643f8402646caf7639507097a0fd50e64ba"
+        },
+        {
+          "questionNumber": 16,
+          "path": "public/questions/rigaku-ryohoshi/57-am/q16.webp",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-08a_01.pdf#page=19",
+          "pdfPage": 19,
+          "clip": [
+            216,
+            157,
+            407,
+            473
+          ],
+          "sha256": "35ddbbd0b28b65894d65887b77110276178dbef3fbe74f38f0dcd663067f433e"
+        },
+        {
+          "questionNumber": 17,
+          "path": "public/questions/rigaku-ryohoshi/57-am/q17.webp",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-08a_02.pdf#page=13",
+          "pdfPage": 13,
+          "clip": [
+            89,
+            64,
+            530,
+            758
+          ],
+          "sha256": "40aca94f3a7474076b922f93c5367529bb4d5013db32e3e755cec0409133c512"
+        },
+        {
+          "questionNumber": 60,
+          "path": "public/questions/rigaku-ryohoshi/57-am/q60.webp",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-08a_02.pdf#page=15",
+          "pdfPage": 15,
+          "clip": [
+            77,
+            63,
+            542,
+            445
+          ],
+          "sha256": "003b8d0be5b440d9e092f1816344ecfbe7dff4271f19ea1e29b315640d025978"
+        },
+        {
+          "questionNumber": 70,
+          "path": "public/questions/rigaku-ryohoshi/57-am/q70.webp",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-08a_01.pdf#page=40",
+          "pdfPage": 40,
+          "clip": [
+            86,
+            133,
+            536,
+            523
+          ],
+          "sha256": "7e07d7335344070f9e969cf7d80a7beaac832218415aa589ee7c52a33260c37e"
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-195",
+      "exam": "shino-kunrenshi",
+      "year": 2025,
+      "storedYear": 2024,
+      "edition": "第55回",
+      "examDate": "2025-02-20",
+      "season": "annual",
+      "session": "am",
+      "status": "completed-locally",
+      "action": "既存ブランチから取り込み",
+      "officialQuestionCount": 75,
+      "questionCount": 18,
+      "choiceExplanationCount": 90,
+      "sourceCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "sourcePaths": [
+        "data/questions/shino-kunrenshi/reviewed-33-20261013.json",
+        "data/questions/shino-kunrenshi/reviewed-remaining-am73-20261014.json"
+      ],
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-10a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-10seitou.pdf",
+      "sourceFiles": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-10a_01.pdf",
+          "pages": 36,
+          "sha256": "c49158cc7bcdb9f99c8d8689cd630a360cf090e69690b8f9ef213cbbdb951386"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-10seitou.pdf",
+          "pages": 1,
+          "sha256": "201acd5691cb654c979193515aff0297461e5f760a781bc8af63b4badd88cff4"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-10a_02.pdf",
+          "pages": 20,
+          "sha256": "2c5b6c1086c754e5e817071ff4ef0600cf47d99bc3ebb5c374fdecfe60a228c5"
+        }
+      ],
+      "dataPath": "data/questions/shino-kunrenshi/2024-annual-am-imported-plan5.json",
+      "dataSha256": "a53ee65d9f4bc74963c5dd31e41c49eac42a3ca1b32d8ffa6e371dfd893aab04",
+      "receipts": [
+        {
+          "questionNumber": 1,
+          "id": "shino-kunrenshi-2024-annual-am-q1",
+          "gitPath": "data/questions/shino-kunrenshi/reviewed-33-20261013.json",
+          "pdfPage": 5,
+          "officialAnswerColumns": [
+            "2"
+          ]
+        },
+        {
+          "questionNumber": 2,
+          "id": "shino-kunrenshi-2024-annual-am-q2",
+          "gitPath": "data/questions/shino-kunrenshi/reviewed-33-20261013.json",
+          "pdfPage": 5,
+          "officialAnswerColumns": [
+            "3"
+          ]
+        },
+        {
+          "questionNumber": 3,
+          "id": "shino-kunrenshi-2024-annual-am-q3",
+          "gitPath": "data/questions/shino-kunrenshi/reviewed-33-20261013.json",
+          "pdfPage": 5,
+          "officialAnswerColumns": [
+            "23"
+          ]
+        },
+        {
+          "questionNumber": 4,
+          "id": "shino-kunrenshi-2024-annual-am-q4",
+          "gitPath": "data/questions/shino-kunrenshi/reviewed-33-20261013.json",
+          "pdfPage": 6,
+          "officialAnswerColumns": [
+            "5"
+          ]
+        },
+        {
+          "questionNumber": 5,
+          "id": "shino-kunrenshi-2024-annual-am-q5",
+          "gitPath": "data/questions/shino-kunrenshi/reviewed-33-20261013.json",
+          "pdfPage": 6,
+          "officialAnswerColumns": [
+            "15"
+          ]
+        },
+        {
+          "questionNumber": 6,
+          "id": "shino-kunrenshi-2024-annual-am-q6",
+          "gitPath": "data/questions/shino-kunrenshi/reviewed-33-20261013.json",
+          "pdfPage": 6,
+          "officialAnswerColumns": [
+            "4"
+          ]
+        },
+        {
+          "questionNumber": 7,
+          "id": "shino-kunrenshi-2024-annual-am-q7",
+          "gitPath": "data/questions/shino-kunrenshi/reviewed-33-20261013.json",
+          "pdfPage": 7,
+          "officialAnswerColumns": [
+            "15"
+          ]
+        },
+        {
+          "questionNumber": 8,
+          "id": "shino-kunrenshi-2024-annual-am-q8",
+          "gitPath": "data/questions/shino-kunrenshi/reviewed-33-20261013.json",
+          "pdfPage": 7,
+          "officialAnswerColumns": [
+            "5"
+          ]
+        },
+        {
+          "questionNumber": 9,
+          "id": "shino-kunrenshi-2024-annual-am-q9",
+          "gitPath": "data/questions/shino-kunrenshi/reviewed-33-20261013.json",
+          "pdfPage": 7,
+          "officialAnswerColumns": [
+            "25"
+          ]
+        },
+        {
+          "questionNumber": 22,
+          "id": "shino-kunrenshi-2024-annual-am-q22",
+          "gitPath": "data/questions/shino-kunrenshi/reviewed-33-20261013.json",
+          "pdfPage": 12,
+          "officialAnswerColumns": [
+            "3"
+          ]
+        },
+        {
+          "questionNumber": 23,
+          "id": "shino-kunrenshi-2024-annual-am-q23",
+          "gitPath": "data/questions/shino-kunrenshi/reviewed-33-20261013.json",
+          "pdfPage": 12,
+          "officialAnswerColumns": [
+            "3"
+          ]
+        },
+        {
+          "questionNumber": 26,
+          "id": "shino-kunrenshi-2024-annual-am-q26",
+          "gitPath": "data/questions/shino-kunrenshi/reviewed-33-20261013.json",
+          "pdfPage": 13,
+          "officialAnswerColumns": [
+            "1"
+          ]
+        },
+        {
+          "questionNumber": 57,
+          "id": "shino-kunrenshi-2024-annual-am-q57",
+          "gitPath": "data/questions/shino-kunrenshi/reviewed-33-20261013.json",
+          "pdfPage": 24,
+          "officialAnswerColumns": [
+            "5"
+          ]
+        },
+        {
+          "questionNumber": 58,
+          "id": "shino-kunrenshi-2024-annual-am-q58",
+          "gitPath": "data/questions/shino-kunrenshi/reviewed-33-20261013.json",
+          "pdfPage": 24,
+          "officialAnswerColumns": [
+            "1"
+          ]
+        },
+        {
+          "questionNumber": 60,
+          "id": "shino-kunrenshi-2024-annual-am-q60",
+          "gitPath": "data/questions/shino-kunrenshi/reviewed-33-20261013.json",
+          "pdfPage": 25,
+          "officialAnswerColumns": [
+            "2"
+          ]
+        },
+        {
+          "questionNumber": 63,
+          "id": "shino-kunrenshi-2024-annual-am-q63",
+          "gitPath": "data/questions/shino-kunrenshi/reviewed-33-20261013.json",
+          "pdfPage": 26,
+          "officialAnswerColumns": [
+            "23"
+          ]
+        },
+        {
+          "questionNumber": 69,
+          "id": "shino-kunrenshi-2024-annual-am-q69",
+          "gitPath": "data/questions/shino-kunrenshi/reviewed-33-20261013.json",
+          "pdfPage": 28,
+          "officialAnswerColumns": [
+            "5"
+          ]
+        },
+        {
+          "questionNumber": 73,
+          "id": "shino-kunrenshi-2024-annual-am-q73",
+          "gitPath": "data/questions/shino-kunrenshi/reviewed-remaining-am73-20261014.json",
+          "pdfPage": 30,
+          "officialAnswerColumns": [
+            "1"
+          ]
+        }
+      ],
+      "officialAnswerNumbers": [
+        "2",
+        "3",
+        "23",
+        "5",
+        "15",
+        "4",
+        "15",
+        "5",
+        "25",
+        "1",
+        "3",
+        "2",
+        "3",
+        "5",
+        "4",
+        "4",
+        "3",
+        "5",
+        "4",
+        "1",
+        "5",
+        "3",
+        "3",
+        "1",
+        "45",
+        "1",
+        "2",
+        "4",
+        "3",
+        "5",
+        "5",
+        "5",
+        "14",
+        "1",
+        "2",
+        "2",
+        "5",
+        "1",
+        "5",
+        "3",
+        "34",
+        "5",
+        "5",
+        "4",
+        "4",
+        "4",
+        "5",
+        "4",
+        "35",
+        "4",
+        "5",
+        "34",
+        "5",
+        "25",
+        "5",
+        "1",
+        "5",
+        "1",
+        "5",
+        "2",
+        "4",
+        "4",
+        "23",
+        "5",
+        "5",
+        "2",
+        "4",
+        "4",
+        "5",
+        "2",
+        "5",
+        "1",
+        "1",
+        "4",
+        "5"
+      ],
+      "assets": [
+        {
+          "questionNumber": 73,
+          "path": "public/images/shino-kunrenshi/2024/annual/shino-kunrenshi-2024-annual-am-q73-figure-1.png",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-10a_02.pdf",
+          "sha256": "882be5a5c4a9a8721adfad2fba9c6cf9443f415465059b48402f5cb3f056a779"
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-209",
+      "exam": "yakuzaishi",
+      "year": 2025,
+      "edition": "第110回",
+      "season": "annual",
+      "session": "day1-1",
+      "storedSession": "required",
+      "status": "completed-locally",
+      "action": "既存ブランチから取り込み",
+      "officialQuestionCount": 90,
+      "questionCount": 21,
+      "choiceExplanationCount": 105,
+      "sourceCommit": "2a34c6ffc4e2b826dcabb96c05deadf36622330a",
+      "sourcePaths": [
+        "data/questions/yakuzaishi/2025-2026-saved141.json"
+      ],
+      "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf",
+      "sourceFiles": [
+        {
+          "url": "https://www.mhlw.go.jp/content/001455149.pdf",
+          "pages": 38,
+          "sha256": "a0e1fe5e30e2e2558e0ac06d64049aaa7989dfc529b08231a869c0637305c43d"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/001458551.pdf",
+          "pages": 2,
+          "sha256": "82f0c30e7e2c8432574359c94448ecd1c97cd28f1a509454557b537efe25fc51"
+        }
+      ],
+      "dataPath": "data/questions/yakuzaishi/2025-required-imported-plan5.json",
+      "dataSha256": "8f9860bfc5c73e35508229bbd85e9110bb375804209269753a2ae5bbdbc63288",
+      "officialAnswerNumbers": [
+        "3",
+        "4",
+        "5",
+        "5",
+        "1",
+        "4",
+        "3",
+        "5",
+        "4",
+        "3",
+        "3",
+        "5",
+        "3",
+        "5",
+        "2",
+        "4",
+        "1",
+        "3",
+        "3",
+        "3",
+        "1",
+        "4",
+        "4",
+        "2",
+        "2",
+        "4",
+        "1",
+        "5",
+        "1",
+        "3",
+        "4",
+        "4",
+        "5",
+        "1",
+        "5",
+        "3",
+        "2",
+        "3",
+        "3",
+        "2",
+        "5",
+        "4",
+        "5",
+        "2",
+        "3",
+        "4",
+        "4",
+        "4",
+        "5",
+        "1",
+        "2",
+        "2",
+        "1",
+        "3",
+        "1",
+        "2",
+        "2",
+        "4",
+        "1",
+        "5",
+        "1",
+        "3",
+        "1",
+        "2",
+        "1",
+        "1",
+        "4",
+        "3",
+        "4",
+        "1",
+        "2",
+        "3",
+        "2",
+        "3",
+        "5",
+        "2",
+        "1",
+        "3",
+        "2",
+        "2",
+        "5",
+        "4",
+        "2",
+        "1",
+        "5",
+        "5",
+        "4",
+        "4",
+        "3",
+        "2"
+      ],
+      "receipts": [
+        {
+          "questionNumber": 1,
+          "id": "yakuzaishi-2025-annual-required-q1",
+          "pdfPage": 2,
+          "officialAnswerColumns": [
+            "3"
+          ]
+        },
+        {
+          "questionNumber": 3,
+          "id": "yakuzaishi-2025-annual-required-q3",
+          "pdfPage": 3,
+          "officialAnswerColumns": [
+            "5"
+          ]
+        },
+        {
+          "questionNumber": 6,
+          "id": "yakuzaishi-2025-annual-required-q6",
+          "pdfPage": 4,
+          "officialAnswerColumns": [
+            "4"
+          ]
+        },
+        {
+          "questionNumber": 7,
+          "id": "yakuzaishi-2025-annual-required-q7",
+          "pdfPage": 4,
+          "officialAnswerColumns": [
+            "3"
+          ]
+        },
+        {
+          "questionNumber": 8,
+          "id": "yakuzaishi-2025-annual-required-q8",
+          "pdfPage": 5,
+          "officialAnswerColumns": [
+            "5"
+          ]
+        },
+        {
+          "questionNumber": 9,
+          "id": "yakuzaishi-2025-annual-required-q9",
+          "pdfPage": 5,
+          "officialAnswerColumns": [
+            "4"
+          ]
+        },
+        {
+          "questionNumber": 10,
+          "id": "yakuzaishi-2025-annual-required-q10",
+          "pdfPage": 6,
+          "officialAnswerColumns": [
+            "3"
+          ]
+        },
+        {
+          "questionNumber": 12,
+          "id": "yakuzaishi-2025-annual-required-q12",
+          "pdfPage": 7,
+          "officialAnswerColumns": [
+            "5"
+          ]
+        },
+        {
+          "questionNumber": 15,
+          "id": "yakuzaishi-2025-annual-required-q15",
+          "pdfPage": 8,
+          "officialAnswerColumns": [
+            "2"
+          ]
+        },
+        {
+          "questionNumber": 16,
+          "id": "yakuzaishi-2025-annual-required-q16",
+          "pdfPage": 9,
+          "officialAnswerColumns": [
+            "4"
+          ]
+        },
+        {
+          "questionNumber": 19,
+          "id": "yakuzaishi-2025-annual-required-q19",
+          "pdfPage": 10,
+          "officialAnswerColumns": [
+            "3"
+          ]
+        },
+        {
+          "questionNumber": 23,
+          "id": "yakuzaishi-2025-annual-required-q23",
+          "pdfPage": 11,
+          "officialAnswerColumns": [
+            "4"
+          ]
+        },
+        {
+          "questionNumber": 41,
+          "id": "yakuzaishi-2025-annual-required-q41",
+          "pdfPage": 19,
+          "officialAnswerColumns": [
+            "5"
+          ]
+        },
+        {
+          "questionNumber": 46,
+          "id": "yakuzaishi-2025-annual-required-q46",
+          "pdfPage": 21,
+          "officialAnswerColumns": [
+            "4"
+          ]
+        },
+        {
+          "questionNumber": 47,
+          "id": "yakuzaishi-2025-annual-required-q47",
+          "pdfPage": 22,
+          "officialAnswerColumns": [
+            "4"
+          ]
+        },
+        {
+          "questionNumber": 48,
+          "id": "yakuzaishi-2025-annual-required-q48",
+          "pdfPage": 22,
+          "officialAnswerColumns": [
+            "4"
+          ]
+        },
+        {
+          "questionNumber": 51,
+          "id": "yakuzaishi-2025-annual-required-q51",
+          "pdfPage": 23,
+          "officialAnswerColumns": [
+            "2"
+          ]
+        },
+        {
+          "questionNumber": 53,
+          "id": "yakuzaishi-2025-annual-required-q53",
+          "pdfPage": 24,
+          "officialAnswerColumns": [
+            "1"
+          ]
+        },
+        {
+          "questionNumber": 72,
+          "id": "yakuzaishi-2025-annual-required-q72",
+          "pdfPage": 31,
+          "officialAnswerColumns": [
+            "3"
+          ]
+        },
+        {
+          "questionNumber": 75,
+          "id": "yakuzaishi-2025-annual-required-q75",
+          "pdfPage": 32,
+          "officialAnswerColumns": [
+            "5"
+          ]
+        },
+        {
+          "questionNumber": 81,
+          "id": "yakuzaishi-2025-annual-required-q81",
+          "pdfPage": 35,
+          "officialAnswerColumns": [
+            "5"
+          ]
+        }
+      ],
+      "assets": [
+        {
+          "questionNumber": 1,
+          "path": "public/images/questions/yakuzaishi/pharmacy-110-required-q001-original.png",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=2",
+          "sha256": "7286d591139dbe94121990a3007fcf5c47869a7a52fb9bc2a74c3e8e992ed742"
+        },
+        {
+          "questionNumber": 6,
+          "path": "public/images/questions/yakuzaishi/pharmacy-110-required-q006-foundation-original-1.png",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=4",
+          "sha256": "14bfb608a0be65a210d75b7e07f00083974ecaa24a5eeaf81e63f6de632ad396"
+        },
+        {
+          "questionNumber": 7,
+          "path": "public/images/questions/yakuzaishi/pharmacy-110-required-q007-required-next-original-1.png",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=4",
+          "sha256": "956791443e4b0ddc1d4fdb3e7ca15a0db09f3030a4ca20927f8e716b99297f76"
+        },
+        {
+          "questionNumber": 8,
+          "path": "public/images/questions/yakuzaishi/pharmacy-110-required-q008-original.png",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=5",
+          "sha256": "b8e976e39957d0ea24074298f09f7aba3c2a367887b5bf339d8e8b8d9049ae6e"
+        },
+        {
+          "questionNumber": 9,
+          "path": "public/images/questions/yakuzaishi/pharmacy-110-required-q009-original.png",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=5",
+          "sha256": "053f8dde14d24d948d63225762de8fd6048729d4d4ac3c615e02f7a20b7172a0"
+        },
+        {
+          "questionNumber": 10,
+          "path": "public/images/questions/yakuzaishi/pharmacy-110-required-q010-required-next-original-1.png",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=6",
+          "sha256": "284d51968f59fa27de9d006df3293f686b3898dc58b0d4efca1c50384b580f60"
+        },
+        {
+          "questionNumber": 12,
+          "path": "public/images/questions/yakuzaishi/pharmacy-110-required-q012-original.png",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=7",
+          "sha256": "ce486d3a816024bce526b203bb5005ed8f326d85edbd05ee2173226fea42bfc3"
+        },
+        {
+          "questionNumber": 16,
+          "path": "public/images/questions/yakuzaishi/pharmacy-110-required-q016-required-next-original-1.png",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=9",
+          "sha256": "06bf671920830e16491bece98ae7db26a8be5bca8499d43ea982838aa701bb79"
+        },
+        {
+          "questionNumber": 19,
+          "path": "public/images/questions/yakuzaishi/pharmacy-110-required-q019-foundation-original-1.png",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=10",
+          "sha256": "94e008ba5ff25dc50f4ce7e2265a30cd01262c985f6b2ce62d02548275fd88ae"
+        },
+        {
+          "questionNumber": 23,
+          "path": "public/images/questions/yakuzaishi/pharmacy-110-required-q023-required-next-original-1.png",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=11",
+          "sha256": "e4914b83287b12a04065d0db266c27e6551a0a07fec988bcb767ba1f08dbf104"
+        },
+        {
+          "questionNumber": 41,
+          "path": "public/images/questions/yakuzaishi/pharmacy-110-required-q041-foundation-original-1.png",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=19",
+          "sha256": "740431438dc85009d2f1443a02372116477d950ebfb6f886164df0d6ba75f366"
+        },
+        {
+          "questionNumber": 51,
+          "path": "public/images/questions/yakuzaishi/pharmacy-110-required-q051-model-original.png",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=23",
+          "sha256": "456e7b25512433fbc54ddfcda86d9b302d7df5af270f29579267cff08e01c66b"
+        },
+        {
+          "questionNumber": 53,
+          "path": "public/images/questions/yakuzaishi/pharmacy-110-required-q053-foundation-original-1.png",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=24",
+          "sha256": "cd652a4d87c42d41be73cb9ca987e83cbd09a97da7f272facaf9e6c1e00195d0"
+        },
+        {
+          "questionNumber": 75,
+          "path": "public/images/questions/yakuzaishi/pharmacy-110-required-q075-system-next-original-1.png",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=32",
+          "sha256": "47712919a4793a352ddaa258250f68ed4692efe443530f4e9f39cab3ff32206b"
+        }
+      ],
+      "nonExamExamples": [
+        {
+          "label": "問400",
+          "pdfPage": 1,
+          "reason": "表紙の解答方法の記入例"
+        }
+      ]
+    }
+  ]
+}

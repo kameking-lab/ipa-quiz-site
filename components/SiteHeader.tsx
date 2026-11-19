@@ -80,10 +80,10 @@ function SiteHeaderContent({ search }: { search: Pick<URLSearchParams, "get"> | 
     ...(exam === "shika-ishi" ? [] : [{ href: learningHref("stream"), label: "ストリームモード" }]),
     { href: learningHref("review"), label: "復習モード" },
     { href: learningHref("weakness"), label: "弱点克服" },
-    ...(isMockExamCode(exam) ? [{ href: "/essay", label: "IPA 午後論述AI採点" }] : []),
+    ...(isMockExamCode(exam) ? [{ href: "/essay", label: "IPA 論文対策" }] : []),
   ] : [
     { href: "/#choose-qualification", label: "資格を選んで問題を解く" },
-    { href: "/essay", label: "IPA 午後論述AI採点" },
+    { href: "/essay", label: "IPA 論文対策" },
   ];
   const showMockExam = !exam || isMockExamCode(exam);
   const mockHref = exam

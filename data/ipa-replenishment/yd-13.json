@@ -1,0 +1,403 @@
+{
+  "schemaVersion": 1,
+  "lane": "yd-13",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "rows": [
+    {
+      "jobId": "PLAN5-307",
+      "exam": "denko1",
+      "year": 2024,
+      "season": "first",
+      "session": "gakka",
+      "status": "completed-locally",
+      "sourceKind": "official-cbt-examples",
+      "officialQuestionCount": 50,
+      "generalQuestionCount": 40,
+      "wiringDiagramQuestionCount": 10,
+      "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20240401_co_first_q01.pdf",
+      "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20240401_co_first_a01.pdf",
+      "sourcePdfSha256": "90c211f083b4a3457308c7d8a4ece3e2fe673815166996ea9c173dc6f5fcca53",
+      "sourceAnswerPdfSha256": "cb1b37800dd3e106a98ae0ad7fafa06bc4f1405482ae8b69edbfd659d89b143d",
+      "officialAnswers": "ハロロハハロロハロロニイハロロイロハニニロニニイニロニニイロイニハイニニハニニハニロイイニイロイロニ",
+      "questionPdfPages": [
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        6,
+        6,
+        6,
+        6,
+        6,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        8,
+        8,
+        8,
+        8,
+        8,
+        10,
+        10,
+        10,
+        10,
+        10,
+        11,
+        11,
+        11,
+        11,
+        11,
+        11,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        14,
+        14,
+        14,
+        14
+      ],
+      "dataPath": "data/questions/denko1/reviewed/20240401-q01-50.json",
+      "questionCount": 50,
+      "explanationCount": 50,
+      "choiceExplanationCount": 200,
+      "imageCount": 32,
+      "images": {
+        "/images/denko1/2024-first/facility-plan.png": {
+          "pdfPage": 9,
+          "clip": [
+            100,
+            113,
+            576,
+            877
+          ],
+          "sha256": "38c4a28bc1299b1327702a0361dff1b38d3ecba36addbdcf73810fdd9daa54e9"
+        },
+        "/images/denko1/2024-first/single-line.png": {
+          "pdfPage": 12,
+          "clip": [
+            172,
+            140,
+            573,
+            885
+          ],
+          "sha256": "d94b5e085dcf5b6973d2b75bd79987d7f1cbc5c6c35494b02d47493d3be11038"
+        },
+        "/images/denko1/2024-first/q01.png": {
+          "pdfPage": 3,
+          "clip": [
+            93,
+            298,
+            299,
+            403
+          ],
+          "sha256": "30f018d92336ffa5d72e8af94a9363b9125a2f46ffed5c46fe29f4aa696c63ad"
+        },
+        "/images/denko1/2024-first/q02.png": {
+          "pdfPage": 3,
+          "clip": [
+            93,
+            483,
+            299,
+            594
+          ],
+          "sha256": "a05fb4dda815366279ba3a1a2ea0a7b97163863a49dfa4acfbdf71d8244ad774"
+        },
+        "/images/denko1/2024-first/q03.png": {
+          "pdfPage": 3,
+          "clip": [
+            111,
+            676,
+            288,
+            808
+          ],
+          "sha256": "38c2f4fe18f0b55957f809ed9f2bf46b489300dc2dbbc1b53a2636f0df284fd7"
+        },
+        "/images/denko1/2024-first/q05.png": {
+          "pdfPage": 4,
+          "clip": [
+            93,
+            138,
+            299,
+            294
+          ],
+          "sha256": "5b792a13a1680f47ff4ecb2799b5c1880c00d9d03485831938ca85925f3d1b2a"
+        },
+        "/images/denko1/2024-first/q06.png": {
+          "pdfPage": 4,
+          "clip": [
+            93,
+            468,
+            299,
+            625
+          ],
+          "sha256": "24ac3d45625415bb98e62bb1ccd5ee44a525733cc92ad72c43f5a058196c19af"
+        },
+        "/images/denko1/2024-first/q07.png": {
+          "pdfPage": 4,
+          "clip": [
+            93,
+            819,
+            299,
+            941
+          ],
+          "sha256": "fb93444932b9611305a0e791fd8c95893f9fcbd6b15b7469dfba624b005ee471"
+        },
+        "/images/denko1/2024-first/q09.png": {
+          "pdfPage": 5,
+          "clip": [
+            121,
+            237,
+            280,
+            355
+          ],
+          "sha256": "6e0ebf7847ef13e56e2e3e7051040146d8943ec8ae836ea6436592d9f86e9912"
+        },
+        "/images/denko1/2024-first/q10.png": {
+          "pdfPage": 5,
+          "clip": [
+            93,
+            448,
+            299,
+            575
+          ],
+          "sha256": "9332caec147d959dae541a01d5e759b116b6938ac507e5f78e05101109290f54"
+        },
+        "/images/denko1/2024-first/q14.png": {
+          "pdfPage": 6,
+          "clip": [
+            93,
+            100,
+            299,
+            312
+          ],
+          "sha256": "733911067cccfb22177801b2dc8fe29cf7b9ec358b752c801562a82dea9c5225"
+        },
+        "/images/denko1/2024-first/q15.png": {
+          "pdfPage": 6,
+          "clip": [
+            105,
+            368,
+            282,
+            485
+          ],
+          "sha256": "b67643a5dbde250baf43daf5656c7cf2aab0fe0a4d0f361b1d5ae32d249377cb"
+        },
+        "/images/denko1/2024-first/q22.png": {
+          "pdfPage": 7,
+          "clip": [
+            117,
+            465,
+            266,
+            562
+          ],
+          "sha256": "5eb8b8bf74b43b794bee4c02243d13e387cb48985dddd00e1c8b190d272d9f65"
+        },
+        "/images/denko1/2024-first/q23.png": {
+          "pdfPage": 7,
+          "clip": [
+            121,
+            610,
+            260,
+            722
+          ],
+          "sha256": "9f1079c6ebe7c2d052392ee375a4c2eaa5e29c272fb6403fc1cff055dce1d32e"
+        },
+        "/images/denko1/2024-first/q25.png": {
+          "pdfPage": 8,
+          "clip": [
+            102,
+            97,
+            280,
+            231
+          ],
+          "sha256": "1761b2434a0ea4a13fbc1dda031ffd8febad070cb65fc07296113ee827575a85"
+        },
+        "/images/denko1/2024-first/q26.png": {
+          "pdfPage": 8,
+          "clip": [
+            95,
+            294,
+            293,
+            413
+          ],
+          "sha256": "62adc9371ce884a67a7776784ad1a8eae97b7a8207fa9c164d280a5182d8078f"
+        },
+        "/images/denko1/2024-first/q43-a.png": {
+          "pdfPage": 13,
+          "clip": [
+            380,
+            227,
+            416,
+            337
+          ],
+          "sha256": "72f19ef7a1e31de6744705f0b786087aac32cd108d981103eb2bd2d005aeee23"
+        },
+        "/images/denko1/2024-first/q43-b.png": {
+          "pdfPage": 13,
+          "clip": [
+            424,
+            227,
+            458,
+            337
+          ],
+          "sha256": "a0f8a73a6788ec3a2fb2e638c5dd597c839cd108d6248438174aff8aaea72e7e"
+        },
+        "/images/denko1/2024-first/q43-c.png": {
+          "pdfPage": 13,
+          "clip": [
+            465,
+            227,
+            503,
+            337
+          ],
+          "sha256": "898006afb1366dae323ce0b530f396f6d66d53cefcffde00119066cda749c5ab"
+        },
+        "/images/denko1/2024-first/q43-d.png": {
+          "pdfPage": 13,
+          "clip": [
+            508,
+            227,
+            543,
+            337
+          ],
+          "sha256": "d5d8f650a4ed88711d1ada31031857816c85d60241e1386379cd53c185ef4eb0"
+        },
+        "/images/denko1/2024-first/q45-a.png": {
+          "pdfPage": 13,
+          "clip": [
+            302,
+            459,
+            434,
+            567
+          ],
+          "sha256": "fb70368e612ccfd01bff8d47910bfcec07bda85d6b2b63e87130ed49e6ef3015"
+        },
+        "/images/denko1/2024-first/q45-b.png": {
+          "pdfPage": 13,
+          "clip": [
+            497,
+            459,
+            629,
+            567
+          ],
+          "sha256": "9fe8bb013daa103be4bcb8082ba221c1cc5500b5d1edd259cde4146474c75857"
+        },
+        "/images/denko1/2024-first/q45-c.png": {
+          "pdfPage": 13,
+          "clip": [
+            302,
+            593,
+            434,
+            704
+          ],
+          "sha256": "4112fdc5f43cd06c3fa610b535f10b6ba31a3a53a19ce14bed6d5087b2d539f9"
+        },
+        "/images/denko1/2024-first/q45-d.png": {
+          "pdfPage": 13,
+          "clip": [
+            497,
+            593,
+            629,
+            704
+          ],
+          "sha256": "63b68111b7061ca673eb7ad18e7466948611a605d39f5fe45b296ccd1901cc05"
+        },
+        "/images/denko1/2024-first/q46-a.png": {
+          "pdfPage": 13,
+          "clip": [
+            283,
+            754,
+            362,
+            918
+          ],
+          "sha256": "99bdc5f015cd429ab02f6b27801269d92074298e0b161fe5a9a6da3fd69e520a"
+        },
+        "/images/denko1/2024-first/q46-b.png": {
+          "pdfPage": 13,
+          "clip": [
+            378,
+            754,
+            454,
+            918
+          ],
+          "sha256": "6f06d7549a67cbfab58a3a5b16228710ae0134dd1e2692c9f101cf4afdd661d3"
+        },
+        "/images/denko1/2024-first/q46-c.png": {
+          "pdfPage": 13,
+          "clip": [
+            472,
+            754,
+            549,
+            918
+          ],
+          "sha256": "7be9b8ba13c55b586b68c1ee5eb92ab69842c5bee4dcc7c877797c8c1cdd05dc"
+        },
+        "/images/denko1/2024-first/q46-d.png": {
+          "pdfPage": 13,
+          "clip": [
+            566,
+            754,
+            644,
+            918
+          ],
+          "sha256": "110089d64e40ce37daf502cc99291f58f64d377cb1b40c202e80aa4c193fa0cd"
+        },
+        "/images/denko1/2024-first/q47-a.png": {
+          "pdfPage": 14,
+          "clip": [
+            299,
+            104,
+            446,
+            229
+          ],
+          "sha256": "fc0fdc6df1e5c53427500d3abc0504f927bdc81a0323fac84ba850f21c0ef29d"
+        },
+        "/images/denko1/2024-first/q47-b.png": {
+          "pdfPage": 14,
+          "clip": [
+            491,
+            124,
+            642,
+            204
+          ],
+          "sha256": "674ca736ad6028818ab6eadd435c47e87990964ef80aef75328d3b3e14303233"
+        },
+        "/images/denko1/2024-first/q47-c.png": {
+          "pdfPage": 14,
+          "clip": [
+            298,
+            269,
+            439,
+            362
+          ],
+          "sha256": "b7f3662db2cfc9b31728d98bb55080d5b98dee653687b7be798fe89800133b30"
+        },
+        "/images/denko1/2024-first/q47-d.png": {
+          "pdfPage": 14,
+          "clip": [
+            478,
+            275,
+            648,
+            366
+          ],
+          "sha256": "818f8a020226eaaff9dd1268b88055f7297498c1ee870d044e367436e3efbad8"
+        }
+      }
+    }
+  ]
+}

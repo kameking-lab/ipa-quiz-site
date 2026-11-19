@@ -1,0 +1,156 @@
+[
+  {
+    "id": "denken2-2021-secondary-machine-control-q01",
+    "exam": "denken2",
+    "session": "kikai",
+    "year": 2021,
+    "season": "second",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "誘導機",
+    "topicTags": [
+      "三相誘導電動機の等価回路"
+    ],
+    "difficulty": 4,
+    "question": "問1 三相誘導電動機の等価回路",
+    "answer": "〔問１の標準解答〕\n  (1) 入力電流 1I は，この場合，等価回路の励磁コンダクタンス 0g 及び励磁サセプ\n  タンス 0b は無視できるので，以下の式となる。\n             V1         I1          ・・・（答）                           2\n                     r2        2                r1         x                     s\n  (2) 二次（回転子）回路に流れる電流の一次側換算値を 2I とすると， 0g 及び 0b は\n  無視できるので I 2   I1 であるから，機械的出力 oP の式は以下となる。\n            1  s     2   1  s     2   1  s      V12     Po  3      r2 I 2   3      r2 I1   3      r2            2    ・・・（答）                 s              s             s                                                          r2       2                                                      r1         x                                                           s\n  (3)   f 及びp を用いて   s の式を表すと以下となる。\n           2   f\n         ・・・（答）\n            s    p\n  (4) 誘導電動機の発生トルクT は，以下の式となる。\n           Po          p      1  s       2   3 p   r2   2     T                      3      r2  I 2               I1\n           1  s    s   1  s 2   f      s         2   f   s\n           3 p   r2     V1 2                 ・・・（答）\n          2   f   s             2                             r2        2                         r1         x                              s\n  (5) 上記(4)の式から，分母をsについて整理して，\n           3 p   r2        V1 2            3 p            r2 V1 2     T                                                        ···· ①                                              2                                                                                        2          2   f   s                                       2   f                                                                               r2                              r1                                r2    r                                           2                                        x 2                                                         s r1 2   x 2   2 r1 r2                       r1 2  2                                                                                s                                s                                       s\n   ①式において，最大トルク Tm を求めるために，変数を滑りsとして分母をsで\n  微分し，分母の最小条件（極値となる条件）を求める。\n                                                      - 6 -\n\nd       2    2           r2 2       2    2   r2 2          s r1   x    2 r1 r2          r1   x      2   0     ds                        s                s\n              2    2   r2 2               2      r2 2  ∴   r1   x      2 ，         s      2    2                      s                  r1   x\n                     r2 2            r2           s\n                  r1 2   x 2       r1 2   x 2\n 電動機の場合，0   s  1 であるから，滑りの符号は正である。\n したがって， Tm のときの滑り sm は次式となる。\n               r2      sm           ················································ ②\n             r1 2  x 2\n                                 ・・・（答）\n(6) ②式を①式のsに代入し， Tm を求めると，\n          3 p                      r2 V1 2   Tm         2   f                                           2     2                      r2        2     2              2   r1   x                              r1   x    2 r1 r2   r2\n                                                              2                    r1 2   x 2                            r\n         3 p         V1 2             3 p      V1 2\n        2   f      2     2             2     2   2   f              2     2                   r1   x   2 r1    r1   x        2 r1  2  r1   x\n         3 p     V1 2             ・・・（答）\n        4   f           2     2                 r1    r1   x\n                                                   - 7 -",
+    "explanation": "等価回路の電力の流れを追い、二次入力、二次銅損、機械的出力を滑りと対応付ける。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken2/2021-secondary-machine-control/page-03.webp"
+    ],
+    "imageAltTexts": [
+      "問1の本文・図表（公式問題冊子 3ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken2/2021-secondary-machine-control/answer-q01-p06.webp",
+      "/questions/denken2/2021-secondary-machine-control/answer-q01-p07.webp"
+    ],
+    "answerImageAltTexts": [
+      "問1の公式標準解答（6ページ）",
+      "問1の公式標準解答（7ページ）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20211114_ch_second_q02.pdf#page=3",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20211114_ch_second_a01.pdf#page=6",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 2021年度 第二種電気主任技術者試験 二次試験 機械・制御",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denken2-2021-secondary-machine-control-q02",
+    "exam": "denken2",
+    "session": "kikai",
+    "year": 2021,
+    "season": "second",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "変圧器",
+    "topicTags": [
+      "単相変圧器の一次換算"
+    ],
+    "difficulty": 4,
+    "question": "問2 単相変圧器の一次換算",
+    "answer": "〔問２の標準解答〕\n  (1) 短絡インピーダンスの抵抗分をR [ ]とすると，％r [％]は次式で定義され\n  る。ここに Ploss 二次短絡試験の電力， P0 変圧器定格容量， V1 変圧器一次\n  定格電圧， 1I 変圧器一次定格電流\n         R×I1     R×I12      Ploss         1.5   ％r      ×100       ×100      ×100     ×100  0.75\n          V1       V1 ×I1       P0        200\n                          2       2         2        2     ％x  ％z ％r      4.5   0.75     20.25  0.562 5 ≒ 4.437 1\n      答え  ％r＝0.75 ％，％x＝4.44 ％\n  (2) Z：\n    ％z と実インピーダンスZ [ ]の関係は定格電圧と定格容量により次式で示さ\n  れる。\n                 1  V12       Z ％z×  ×\n                100  P0\n   ここでは一次換算を求めるので， V1 を一次電圧， P0 を変圧器容量として以下\n  となる。\n                 1   11 000 2       Z  4.5×  ×          27.225\n                100  200 000\n      答え    Z=27.2\n  (3) R，X:\n   小問(1)で求めた抵抗分とリアクタンス分のパーセント値及び小問(2)の\n      Z  27.225 を使って，次式のように求められる。\n     ％ r      0.75     R   × Z      ×27.225  4.537 5\n     ％ z       4.5\n     ％ r      4.437     X   × Z       ×27.225 ≒ 26.844\n     ％ z        4.5\n      答え    R=4.54 ，    X=26.8\n  (4) 二次電圧，リアクトル無効電力（ V2 ， QL ）\n    変圧器の一次，二次の巻数比はa=25(11 000 : 440)であるので，一次電流 1I は\n                                                      - 8 -\n\n1      1\n    I1  × I 2    ×400  16 A      a      25\n 皮相電力  S= 11000 16=176000 V･A\n 負荷リアクトルの抵抗は0 であるので，回路の有効電力は巻線の抵抗によ\nる分の次式で示される。\n                                             2                 2 変圧器巻線の有効電力 Pc  R 16   4.537 5 16   1161.6 W\n 変圧器巻線による無効電力は次式で示される。\n                                             2                2 変圧器巻線の無効電力 Qc  X×16   26.844×16   6 872.1 var\n 二次側負荷リアクトルの無効電力を QL [var]とすると次式が成立し，これを\n解いて， QL を求める。\n            2              2  S   Pc  Qc QL\n              2     2                      2             2  QL   S   Pc  Qc    176000     1161.6    6872.1\n    169120 var ≒169 kvar\n 二次電圧 V2 は\n      169120\n  V2            422.8 ≒ 423        400\n    答え  V2 =423 V， QL =169 kvar",
+    "explanation": "短絡試験の測定値から一次換算の抵抗とリアクタンスを求める。電流の換算には巻数比を用いる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken2/2021-secondary-machine-control/page-04.webp"
+    ],
+    "imageAltTexts": [
+      "問2の本文・図表（公式問題冊子 4ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken2/2021-secondary-machine-control/answer-q02-p08.webp",
+      "/questions/denken2/2021-secondary-machine-control/answer-q02-p09.webp"
+    ],
+    "answerImageAltTexts": [
+      "問2の公式標準解答（8ページ）",
+      "問2の公式標準解答（9ページ）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20211114_ch_second_q02.pdf#page=4",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20211114_ch_second_a01.pdf#page=8",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 2021年度 第二種電気主任技術者試験 二次試験 機械・制御",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denken2-2021-secondary-machine-control-q03",
+    "exam": "denken2",
+    "session": "kikai",
+    "year": 2021,
+    "season": "second",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "電力変換",
+    "topicTags": [
+      "IGBTを用いたチョッパ回路"
+    ],
+    "difficulty": 4,
+    "question": "問3 IGBTを用いたチョッパ回路",
+    "answer": "〔問３の標準解答〕\n  (1) （例1）入力 Vin よりも出力 Vout が大きい。太陽光発電で発電した直流電圧を\n  より高い電圧のバッテリに充電するから。（例2） Vin  Vout である。系統の電\n  圧波高値が太陽光発電の電圧よりも高いことがあるから。\n  (2) リアクトルには電源の直流電圧 Vin が直接印加される。リアクトルの電圧は\n               d i in\n     v L  Vin  L      0 となる。したがって，電流ini は増加する。                dt\n                                                      - 9 -\n\n(3) デバイスS をオフしても電流は流れ続ける。ダイオードD が導通する。リア\n                                d i in\n クトルの電圧は v L  Vin  Vout  L      0 となる。したがって，電流ini は減少す                                 d t\n る。\n(4) 電流 I in がダイオードD を流れるのはスイッチS がオフの期間 Toff だけであり，\n その大きさは I in である。スイッチS がオンの期間 Ton にダイオードD を流れる\n                                          Toff 電流はゼロである。したがって，平均値 I D は， I D   I in                                        Ton  Toff\n(5) 電源からチョッパへの入力電力 Vin ×I in と，チョッパから負荷への出力電力\n                                 Ton  Toff  Vout ×I D は等しく，また小問(4)より Vout  Vin                                   Toff",
+    "explanation": "スイッチのON・OFFに分けて各区間の電流経路をたどる。電流変化はリアクトル両端の電圧から求める。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken2/2021-secondary-machine-control/page-05.webp"
+    ],
+    "imageAltTexts": [
+      "問3の本文・図表（公式問題冊子 5ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken2/2021-secondary-machine-control/answer-q03-p09.webp",
+      "/questions/denken2/2021-secondary-machine-control/answer-q03-p10.webp"
+    ],
+    "answerImageAltTexts": [
+      "問3の公式標準解答（9ページ）",
+      "問3の公式標準解答（10ページ）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20211114_ch_second_q02.pdf#page=5",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20211114_ch_second_a01.pdf#page=9",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 2021年度 第二種電気主任技術者試験 二次試験 機械・制御",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denken2-2021-secondary-machine-control-q04",
+    "exam": "denken2",
+    "session": "kikai",
+    "year": 2021,
+    "season": "second",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "制御工学",
+    "topicTags": [
+      "フィードバック制御系"
+    ],
+    "difficulty": 4,
+    "question": "問4 フィードバック制御系",
+    "answer": "〔問４の標準解答〕\n  (1) まず，内側のフィードバック結合を等価変換すると\n            1\n            s 2 s  1         1\n            1          s 2 s  2      1              s\n            s 2 s  1\n  となる。したがって，開ループ伝達関数G s は，次のように求められる。\n           K      1    G s\n            Ts  1  s 2 s  2\n              K\n                          ········································· ①\n                s Ts  1  2 s  2\n                                                        ･･･(答)\n  (2) 閉ループ伝達関数 W ( s) は，小問(1)で求めた G( s) を使って\n          G( s )    W ( s)         ················································ ②\n             1 G( s )\n  で計算することができる。②式に①式を代入すると\n                                                     - 10 -\n\nK\n                s Ts  1  2 s  2  W ( s)\n               K           1\n                  s Ts  1  2 s  2\n               K\n                                ································· ③\n          2 Ts 3   2 T  2 s 2  2 s K\n                                                      ･･･(答)\n となる。\n(3) ③式に T  0 を代入すると閉ループ伝達関数 W ( s) は\n           K  W ( s)             ············································ ④\n           2 s 2  2 s K\n となる。④式から，この制御系の系の特性方程式は\n     2 s 2  2 s K  0 ··············································· ⑤\n であることがわかる。\n  目標値のステップ状変化に対する制御量の時間応答y  t が振動的になるの\n は，⑤式の根が複素数になる場合である。すなわち，⑤式の判別式D が D  0 と\n なる条件\n     4  8 K  0\n を解いて\n    K   0.5 ······················································ ⑥\n                                                      ･･･(答)\n を得る。\n(4) ④式で K  1 とおくと次のようになる。\n        Y ( s )      1  W ( s)                  ······································· ⑬\n        R( s )  2 s 2  2 s  1\n 目標値は単位インパルス関数なので， R( s)  1 である。したがって，\n              1            0.5   Y ( s)                       ·································· ⑭\n          2 s 2  2 s  1   s 2   s  0.5\n を逆ラプラス変換することで単位インパルス応答y  t を得ることができる。\n                                                  - 11 -\n\n1      0.5           1        0.5   y  t  L             L\n               s 2   s  0.5          s  0.5 2  0.5 2\n        e  0.5 t sin0.5 t ·············································· ⑮\n                                                      ･･･(答)\n(5) ③式に T  2 を代入すると閉ループ伝達関数 W ( s) は\n             K  W ( s)                  ······································· ⑱\n           4 s 3  6 s 2  2 s K\n となる。この制御系の特性方程式\n     4 s 3  6 s 2  2 s  K  0 ··········································· ⑲\n を使ってラウス表を作ると次のようになる。\n       3s 行      4      2      0\n       2s 行      6     K     0\n            12  4 K        1s 行            0\n               6\n       0s 行   K\n このシステムが安定となる必要十分条件は，次式が成立することである。\n    12  4 K  0 ··················································· ⑳\n    K  0 ······················································· ㉑\n ⑳式と㉑式から\n     0  K  3 ····················································· ㉒\n                                                      ･･･(答)\n を得る。\n                                                  - 12 -",
+    "explanation": "ブロック線図の前向き経路と帰還経路を整理し、閉ループの伝達関数を求める。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken2/2021-secondary-machine-control/page-06.webp"
+    ],
+    "imageAltTexts": [
+      "問4の本文・図表（公式問題冊子 6ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken2/2021-secondary-machine-control/answer-q04-p10.webp",
+      "/questions/denken2/2021-secondary-machine-control/answer-q04-p11.webp",
+      "/questions/denken2/2021-secondary-machine-control/answer-q04-p12.webp"
+    ],
+    "answerImageAltTexts": [
+      "問4の公式標準解答（10ページ）",
+      "問4の公式標準解答（11ページ）",
+      "問4の公式標準解答（12ページ）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20211114_ch_second_q02.pdf#page=6",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20211114_ch_second_a01.pdf#page=10",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 2021年度 第二種電気主任技術者試験 二次試験 機械・制御",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  }
+]

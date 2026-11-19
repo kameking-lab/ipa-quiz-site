@@ -67,7 +67,7 @@ export function EssayHistoryView({questions}: {questions: readonly {id:string;ti
             まだ採点履歴がありません。
           </p>
           <Button asChild variant="primary" size="lg" className="mt-4">
-            <Link href="/essay">AI 論述添削を試す</Link>
+            <Link href="/essay">論述の練習問題を見る</Link>
           </Button>
         </CardContent>
       </Card>

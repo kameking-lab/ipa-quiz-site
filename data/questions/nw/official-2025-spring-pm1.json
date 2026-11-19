@@ -1,0 +1,146 @@
+[
+  {
+    "id": "nw-2025h-pm1-q1",
+    "exam": "nw",
+    "year": 2025,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "ルータの更改",
+    "topicTags": [
+      "OSPF",
+      "VRRP",
+      "ネットワーク更改"
+    ],
+    "difficulty": 5,
+    "question": "問1 ルータの更改\n\n原本の本文・図表・設問に従って解答してください。",
+    "answer": "問１\n\n                       出題趣旨\n  企業におけるICT の利活用が進み，企業ネットワークの安定稼働はますます重要になっている。企業ネット\nワークの停止に伴う業務インパクトは大きく，企業ネットワークのメンテナンスによる短時間の停止ですら計\n画しにくくなってきている。\n 本問では，冗長化設計がなされた企業ネットワークにおけるルータの更改を題材として，OSPF やVRRP とい\nったプロトコルの理解，及びこれらの技術を活用した企業ネットワークの停止を伴わないメンテナンスの手法\nについて問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１  (1)  a バックボーン\n              b ルータ\n              c デフォルトゲートウェイ\n         (2) 不正なOSPF ルータと隣接関係になり経路交換してしまう問題\n         (3) 長くする。\n         (4) OSPF の経路情報が収束した状態\n 設問２  (1) 大阪本社  (ウ)\n       東京支社  (ア)，(イ)\n         (2) 65535 といった十分大きな値に変更する。\n         (3) 物理インタフェース閉塞の方が素早く切り戻せるから\n         (4) イーサネットケーブルにラベルを付与する。\n         (5) ① ・L3SW10\n       ② ・R11\n       ③ ・R20\n       ④ ・R30",
+    "modelAnswer": "問１\n\n                       出題趣旨\n  企業におけるICT の利活用が進み，企業ネットワークの安定稼働はますます重要になっている。企業ネット\nワークの停止に伴う業務インパクトは大きく，企業ネットワークのメンテナンスによる短時間の停止ですら計\n画しにくくなってきている。\n 本問では，冗長化設計がなされた企業ネットワークにおけるルータの更改を題材として，OSPF やVRRP とい\nったプロトコルの理解，及びこれらの技術を活用した企業ネットワークの停止を伴わないメンテナンスの手法\nについて問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１  (1)  a バックボーン\n              b ルータ\n              c デフォルトゲートウェイ\n         (2) 不正なOSPF ルータと隣接関係になり経路交換してしまう問題\n         (3) 長くする。\n         (4) OSPF の経路情報が収束した状態\n 設問２  (1) 大阪本社  (ウ)\n       東京支社  (ア)，(イ)\n         (2) 65535 といった十分大きな値に変更する。\n         (3) 物理インタフェース閉塞の方が素早く切り戻せるから\n         (4) イーサネットケーブルにラベルを付与する。\n         (5) ① ・L3SW10\n       ② ・R11\n       ③ ・R20\n       ④ ・R30",
+    "explanation": "冗長構成の機器を順番に交換しても、経路が収束する前に次の操作を行うと通信断につながる。更改対象へ流れる経路を十分大きなメトリックで迂回させ、OSPFの状態とVRRPによる転送先を確認する。切り戻し時間やケーブルの識別まで含めて作業手順を具体化する。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_nw_pm1_qs.pdf#page=3) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_nw_pm1_ans.pdf#page=1)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/nw/2025-spring-pm1/page-03.webp",
+      "/questions/ipa/nw/2025-spring-pm1/page-04.webp",
+      "/questions/ipa/nw/2025-spring-pm1/page-05.webp",
+      "/questions/ipa/nw/2025-spring-pm1/page-06.webp",
+      "/questions/ipa/nw/2025-spring-pm1/page-07.webp"
+    ],
+    "imageAltTexts": [
+      "ネットワークスペシャリスト 2025年度春期 午後I 問1 ルータの更改（公式問題PDF 3ページ）",
+      "ネットワークスペシャリスト 2025年度春期 午後I 問1 ルータの更改（公式問題PDF 4ページ）",
+      "ネットワークスペシャリスト 2025年度春期 午後I 問1 ルータの更改（公式問題PDF 5ページ）",
+      "ネットワークスペシャリスト 2025年度春期 午後I 問1 ルータの更改（公式問題PDF 6ページ）",
+      "ネットワークスペシャリスト 2025年度春期 午後I 問1 ルータの更改（公式問題PDF 7ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/nw/2025-spring-pm1/answer-q1.webp"
+    ],
+    "answerImageAltTexts": [
+      "ネットワークスペシャリスト 2025年度春期 午後I 問1 公式解答例"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_nw_pm1_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_nw_pm1_ans.pdf",
+    "sourceAttribution": "出典：IPA ネットワークスペシャリスト 2025年度春期 午後I 問1。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "nw-2025h-pm1-q2",
+    "exam": "nw",
+    "year": 2025,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "ネットワークの改善",
+    "topicTags": [
+      "NAPT",
+      "HTTP",
+      "トラブルシューティング"
+    ],
+    "difficulty": 5,
+    "question": "問2 ネットワークの改善\n\n原本の本文・図表・設問に従って解答してください。",
+    "answer": "問２\n\n                       出題趣旨\n  近年，学校におけるICT 利活用が注目されており，ネットワークを含めたICT 環境の整備が進められてい\n る。また，HTTP プロトコルは広く普及しており，その新バージョンへの移行がネットワーク環境の変化に合わ\nせて段階的に進められている。\n  ネットワークSE にとって，トラブルシューティングは必須の業務であり，これを行うには，利用している\nプロトコルなどの知識に加えて，問題の定義・情報収集・切り分け・仮説検証などを論理的に進めるスキルが\n求められる。\n  本問では，学校のネットワークを題材として，HTTP プロトコルの知識，及びトラブルシューティングの基本\n的スキルを問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１  (1)  a プライベート\n              b グローバル\n              c  PoE+\n         (2) PC が属するセグメント\n 設問２  (1) ログイン画面が表示されない事象が一部かつ不特定のPC だから\n         (2)  d 帯域確保\n         (3) (ⅲ)，(ⅳ)\n         (4)    PC 台数    327\n       エントリー数  120,000\n 設問３  (1) 先行の処理が終わるまで後続の処理が待たされるから\n         (2)  e リクエスト\n              f レスポンス\n              g ストリームID\n              h 並列\n         (3) 調整   UDP の保持時間を300 秒より小さくする。\n       効果  未使用のUDP フローによるNAPT 変換エントリーを早期に削除できる。",
+    "modelAnswer": "問２\n\n                       出題趣旨\n  近年，学校におけるICT 利活用が注目されており，ネットワークを含めたICT 環境の整備が進められてい\n る。また，HTTP プロトコルは広く普及しており，その新バージョンへの移行がネットワーク環境の変化に合わ\nせて段階的に進められている。\n  ネットワークSE にとって，トラブルシューティングは必須の業務であり，これを行うには，利用している\nプロトコルなどの知識に加えて，問題の定義・情報収集・切り分け・仮説検証などを論理的に進めるスキルが\n求められる。\n  本問では，学校のネットワークを題材として，HTTP プロトコルの知識，及びトラブルシューティングの基本\n的スキルを問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１  (1)  a プライベート\n              b グローバル\n              c  PoE+\n         (2) PC が属するセグメント\n 設問２  (1) ログイン画面が表示されない事象が一部かつ不特定のPC だから\n         (2)  d 帯域確保\n         (3) (ⅲ)，(ⅳ)\n         (4)    PC 台数    327\n       エントリー数  120,000\n 設問３  (1) 先行の処理が終わるまで後続の処理が待たされるから\n         (2)  e リクエスト\n              f レスポンス\n              g ストリームID\n              h 並列\n         (3) 調整   UDP の保持時間を300 秒より小さくする。\n       効果  未使用のUDP フローによるNAPT 変換エントリーを早期に削除できる。",
+    "explanation": "一部の不特定のPCだけに起きる事象は、回線全体の帯域不足という仮説だけでは説明できない。NAPTの変換エントリー数と保持時間を調べ、同時利用台数との関係を確認する。HTTP/2のストリームによる多重化とHTTP/3のUDP利用を区別し、未使用UDPフローの保持時間を短くする効果を説明する。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_nw_pm1_qs.pdf#page=8) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_nw_pm1_ans.pdf#page=2)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/nw/2025-spring-pm1/page-08.webp",
+      "/questions/ipa/nw/2025-spring-pm1/page-09.webp",
+      "/questions/ipa/nw/2025-spring-pm1/page-10.webp",
+      "/questions/ipa/nw/2025-spring-pm1/page-11.webp",
+      "/questions/ipa/nw/2025-spring-pm1/page-12.webp",
+      "/questions/ipa/nw/2025-spring-pm1/page-13.webp",
+      "/questions/ipa/nw/2025-spring-pm1/page-14.webp"
+    ],
+    "imageAltTexts": [
+      "ネットワークスペシャリスト 2025年度春期 午後I 問2 ネットワークの改善（公式問題PDF 8ページ）",
+      "ネットワークスペシャリスト 2025年度春期 午後I 問2 ネットワークの改善（公式問題PDF 9ページ）",
+      "ネットワークスペシャリスト 2025年度春期 午後I 問2 ネットワークの改善（公式問題PDF 10ページ）",
+      "ネットワークスペシャリスト 2025年度春期 午後I 問2 ネットワークの改善（公式問題PDF 11ページ）",
+      "ネットワークスペシャリスト 2025年度春期 午後I 問2 ネットワークの改善（公式問題PDF 12ページ）",
+      "ネットワークスペシャリスト 2025年度春期 午後I 問2 ネットワークの改善（公式問題PDF 13ページ）",
+      "ネットワークスペシャリスト 2025年度春期 午後I 問2 ネットワークの改善（公式問題PDF 14ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/nw/2025-spring-pm1/answer-q2.webp"
+    ],
+    "answerImageAltTexts": [
+      "ネットワークスペシャリスト 2025年度春期 午後I 問2 公式解答例"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_nw_pm1_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_nw_pm1_ans.pdf",
+    "sourceAttribution": "出典：IPA ネットワークスペシャリスト 2025年度春期 午後I 問2。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "nw-2025h-pm1-q3",
+    "exam": "nw",
+    "year": 2025,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "セキュアWebゲートウェイの導入",
+    "topicTags": [
+      "SWG",
+      "プロキシ",
+      "移行設計"
+    ],
+    "difficulty": 5,
+    "question": "問3 セキュアWebゲートウェイの導入\n\n原本の本文・図表・設問に従って解答してください。",
+    "answer": "問３\n\n                       出題趣旨\n リモートワークの拡大やセキュリティ強化の観点から，セキュリティ関連のクラウドサービスの利用が増え\nている。クラウドサービスを利用する場合，導入前にコストや機能仕様だけでなく，カスタマイズ性・メンテ\nナンス性，既存データの移行性やサービスの可用性などをサービス提供事業者が開示した情報から業務への影\n響を机上検討し，トライアル環境で検証することが重要である。\n 本問では，プロキシサーバから“セキュアWeb ゲートウェイサービス”への移行を題材として，移行計画に\n必要なネットワーク構成やサービス仕様に関する理解，企業ネットワークの設計・運用に関する能力を問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１  (1) 複数機器のログを時系列で確認するため\n         (2) ① ・登録したFQDN やIP アドレス宛ての通信をブロックするため\n       ② ・Web サイトへのアクセス履歴の確認のため\n         ・利用者認証を行うため\n         (3) L3SW のDHCP リースログ\n         (4)  a  syslog サーバ\n              b 認証サーバ\n         (5)  c  10080\n              d  443\n 設問２  (1) SWG サービスのルート証明書\n         (2) C&C サーバ\n 設問３  (1) ① ・2\n       ② ・7\n         (2) (B)，(A)，(H)，(I)，(E)，(I)，(K)\n         (3) 送信元           内部セグメント 又は ソフトE\n       宛先                        SWG サービス\n       プロトコル/宛先ポート番号   TCP/443\n         (4) アクセスを許可する送信元をSWG-GIP に変更する。\n         (5) ・FW（L3SW，回線，経由機器）の負荷軽減                ※解答の要点を\n          ・RTT の短縮（レスポンス改善）                      示す\n      ・可用性の向上（セキュリティ向上）\n      ※直接通信・経路短縮による利点を記述していること",
+    "modelAnswer": "問３\n\n                       出題趣旨\n リモートワークの拡大やセキュリティ強化の観点から，セキュリティ関連のクラウドサービスの利用が増え\nている。クラウドサービスを利用する場合，導入前にコストや機能仕様だけでなく，カスタマイズ性・メンテ\nナンス性，既存データの移行性やサービスの可用性などをサービス提供事業者が開示した情報から業務への影\n響を机上検討し，トライアル環境で検証することが重要である。\n 本問では，プロキシサーバから“セキュアWeb ゲートウェイサービス”への移行を題材として，移行計画に\n必要なネットワーク構成やサービス仕様に関する理解，企業ネットワークの設計・運用に関する能力を問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１  (1) 複数機器のログを時系列で確認するため\n         (2) ① ・登録したFQDN やIP アドレス宛ての通信をブロックするため\n       ② ・Web サイトへのアクセス履歴の確認のため\n         ・利用者認証を行うため\n         (3) L3SW のDHCP リースログ\n         (4)  a  syslog サーバ\n              b 認証サーバ\n         (5)  c  10080\n              d  443\n 設問２  (1) SWG サービスのルート証明書\n         (2) C&C サーバ\n 設問３  (1) ① ・2\n       ② ・7\n         (2) (B)，(A)，(H)，(I)，(E)，(I)，(K)\n         (3) 送信元           内部セグメント 又は ソフトE\n       宛先                        SWG サービス\n       プロトコル/宛先ポート番号   TCP/443\n         (4) アクセスを許可する送信元をSWG-GIP に変更する。\n         (5) ・FW（L3SW，回線，経由機器）の負荷軽減                ※解答の要点を\n          ・RTT の短縮（レスポンス改善）                      示す\n      ・可用性の向上（セキュリティ向上）\n      ※直接通信・経路短縮による利点を記述していること",
+    "explanation": "通信経路を移す際は、宛先とポートだけでなく、認証、ログ、証明書、送信元制限を対応付ける。端末利用者を追跡するにはDHCPリースログと他の機器の時刻を照合する必要がある。SWG経由へ変わる通信の送信元IPと、直接通信によって短縮できる経路を図でたどると移行手順を確認しやすい。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_nw_pm1_qs.pdf#page=15) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_nw_pm1_ans.pdf#page=3)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/nw/2025-spring-pm1/page-15.webp",
+      "/questions/ipa/nw/2025-spring-pm1/page-16.webp",
+      "/questions/ipa/nw/2025-spring-pm1/page-17.webp",
+      "/questions/ipa/nw/2025-spring-pm1/page-18.webp",
+      "/questions/ipa/nw/2025-spring-pm1/page-19.webp",
+      "/questions/ipa/nw/2025-spring-pm1/page-20.webp"
+    ],
+    "imageAltTexts": [
+      "ネットワークスペシャリスト 2025年度春期 午後I 問3 セキュアWebゲートウェイの導入（公式問題PDF 15ページ）",
+      "ネットワークスペシャリスト 2025年度春期 午後I 問3 セキュアWebゲートウェイの導入（公式問題PDF 16ページ）",
+      "ネットワークスペシャリスト 2025年度春期 午後I 問3 セキュアWebゲートウェイの導入（公式問題PDF 17ページ）",
+      "ネットワークスペシャリスト 2025年度春期 午後I 問3 セキュアWebゲートウェイの導入（公式問題PDF 18ページ）",
+      "ネットワークスペシャリスト 2025年度春期 午後I 問3 セキュアWebゲートウェイの導入（公式問題PDF 19ページ）",
+      "ネットワークスペシャリスト 2025年度春期 午後I 問3 セキュアWebゲートウェイの導入（公式問題PDF 20ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/nw/2025-spring-pm1/answer-q3.webp"
+    ],
+    "answerImageAltTexts": [
+      "ネットワークスペシャリスト 2025年度春期 午後I 問3 公式解答例"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_nw_pm1_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_nw_pm1_ans.pdf",
+    "sourceAttribution": "出典：IPA ネットワークスペシャリスト 2025年度春期 午後I 問3。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  }
+]

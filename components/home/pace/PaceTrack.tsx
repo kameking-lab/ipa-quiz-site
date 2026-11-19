@@ -73,7 +73,8 @@ function RunningChihuahua({ src, percent, fillRef }: {
   }, [fillRef, imageReady, percent]);
 
   return <g ref={runner} transform={`translate(${START_X} 0)`} aria-hidden="true">
-    <text ref={label} y="27" textAnchor="middle" fontSize="14" strokeWidth="3" strokeLinejoin="round" paintOrder="stroke" className="fill-primary stroke-card font-display font-bold tabular-nums">0%</text>
+    <rect x="-20" y="10" width="40" height="19" rx="8" className="fill-card" />
+    <text ref={label} y="27" textAnchor="middle" fontSize="14" className="fill-primary font-display font-bold tabular-nums">0%</text>
     <svg x={-FRAME_SIZE / 2} y="30" width={FRAME_SIZE} height={FRAME_SIZE} className="overflow-hidden">
       <image ref={strip} href={src} width={FRAME_SIZE * 4} height={FRAME_SIZE} x="0" onLoad={() => setImageReady(true)} onError={() => setImageReady(true)} />
     </svg>
@@ -91,15 +92,20 @@ export function PaceTrack({ plan, runArt, percent, target, onOpen, expanded = fa
   const at = (date: string) => span > 0 ? Math.max(0, Math.min(100, (Date.parse(date) - Date.parse(plan.startDate)) * 100 / span)) : 0;
   const bandStart = start ? at(start) : 0, bandEnd = deadline ? at(deadline) : 0;
   return <button type="button" onClick={onOpen} aria-label="学習計画の詳細を開く" aria-describedby={meterId} aria-haspopup="dialog" aria-expanded={expanded} className="block w-full rounded-xl">
-    <svg id={meterId} viewBox="0 0 320 112" className="mx-auto h-28 w-full max-w-[420px] overflow-visible" role="img" aria-label={`進み具合${Math.round(percent)}%、${target === null ? "受験日未設定" : `今日の目標${Math.round(target)}%`}`}>
+    <svg id={meterId} viewBox="0 -19 320 131" className="mx-auto h-[131px] w-full max-w-[420px] overflow-visible" role="img" aria-label={`進み具合${Math.round(percent)}%、${target === null ? "受験日未設定" : `今日の目標${Math.round(target)}%`}`}>
       <line x1="30" y1="79" x2="290" y2="79" strokeWidth="8" strokeLinecap="round" className="stroke-progress-track" />
       {deadline && bandEnd > bandStart && <g><rect x={trackX(bandStart)} y="71" width={trackX(bandEnd) - trackX(bandStart)} height="16" rx="4" className="fill-warning-soft stroke-warning-soft-foreground/35" /><text x={(trackX(bandStart) + trackX(bandEnd)) / 2} y="105" textAnchor="middle" fontSize="9" className="fill-warning-soft-foreground">申込{plan.registration?.estimated ? "（予定）" : "期間"}</text></g>}
       <line ref={fillRef} x1={START_X} y1="79" x2={START_X} y2="79" strokeWidth="8" strokeLinecap="round" className="stroke-primary" />
       {!passing.isDefault && passing.sourceUrl && <g><line x1={trackX(passing.percent)} x2={trackX(passing.percent)} y1="76" y2="88" className="stroke-muted-foreground" /><text x={trackX(passing.percent)} y="94" fontSize="9" textAnchor="middle" className="fill-muted-foreground">{passing.conditions?.includes("IRT") ? "基準点" : "合格ライン"}</text></g>}
-      {target !== null && <g><line x1={trackX(target)} x2={trackX(target)} y1="37" y2="75" strokeWidth="2" className="stroke-warning-soft-foreground" /><path d={`M${trackX(target)} 37 l14 0 -3 6 3 6 -14 0z`} className="fill-warning-soft-foreground" /><text x={Math.max(56, Math.min(264, trackX(target)))} y="12" textAnchor="middle" fontSize="10" className="fill-muted-foreground">今日の目標</text></g>}
-      <path d="M290 79V55m0 0c6-5 12 5 18 0v12c-6 5-12-5-18 0" fill="none" strokeWidth="2" className="stroke-primary" />
+      {/* Leave space for the runner's readout and bounce even when both marks are at the same percentage. */}
+      {target !== null && <g>
+        <line x1={trackX(target)} x2={trackX(target)} y1="-1" y2="75" strokeWidth="2" className="stroke-warning-soft-foreground" />
+        <path d={`M${trackX(target)} -1 h12 l-2 4 2 4h-12z`} className="fill-warning-soft-foreground" />
+        <text x={trackX(target)} y="-6" textAnchor="middle" fontSize="10" className="fill-muted-foreground">今日の目標</text>
+      </g>}
       <RunningChihuahua key={`${plan.id}/${runArt}`} src={runArt} percent={percent} fillRef={fillRef} />
       <text x="30" y="94" fontSize="10" className="fill-muted-foreground">{plan.startDate ? `${Number(plan.startDate.slice(5, 7))}/${Number(plan.startDate.slice(8))}` : "スタート"}</text><text x="290" y="94" textAnchor="end" fontSize="10" className="fill-muted-foreground">{plan.examDate ? `${Number(plan.examDate.slice(5, 7))}/${Number(plan.examDate.slice(8))}` : "試験日"}</text>
+      <path d="M296 99V85c4-3 8 3 12 0v8c-4 3-8-3-12 0" fill="none" strokeWidth="1.5" className="stroke-primary" />
     </svg>
   </button>;
 }

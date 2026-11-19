@@ -1,0 +1,138 @@
+[
+  {
+    "id": "db-2025a-pm2-q1",
+    "exam": "db",
+    "year": 2025,
+    "season": "autumn",
+    "session": "pm2",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "データベース",
+    "topicTags": [
+      "トランザクション",
+      "2相コミット",
+      "補償トランザクション"
+    ],
+    "difficulty": 4,
+    "question": "決済サービスにおけるトランザクション処理",
+    "answer": "設問１(1)  a SUM(獲得ポイント数)\n              b 残高反映F IS FALSE\n              c 残数 = A.残数 + B.加算ポイント数\n              d B.ポイント会員#, B.有効期限年月, B.加算ポイント数\n         (2) (a) ・参照する行の専有ロックを事前に取得するから\n        ・同じ行の複数回の読み込みがないから\n             (b) ・P2 の追加行の有無がP3 のステップによって異なるから\n             ・P2 の追加行のファントムリードが発生するから\n 設問２(1) (a) ⑨\n             (b) ロールバック実行指示\n             (c) ・時点A はコミット，ロールバックが不定の状態，時点B はコミットが確\n         定した状態\n         ・時点A はIn doubt の状態，時点B はIn commit の状態\n         (2) (a)  e コミット実行指示\n                  f ロールバック実行指示\n                  g トランザクションを終了\n             (b) ・ポイント会員が決済の完了を長時間待たされる。\n        ・同じポイント会員が決済サービスを利用できなくなる。\n             (c) 決済残高だけを消費し，ポイント残高を消費していない不正な状態\n 設問３(1) (a) テーブル名 決済履歴\n          列名   決済指示#\n              “決済履歴”テーブルに決済指示#が一致する行があれば処\n         処理概要\n              理を終了する。\n             (b)    更新中F がTRUE のときは更新中エラーを設定して処理を終了し，\n         先頭\n                       FALSE のときはTRUE に更新する。\n         末尾 更新中F をFALSE に更新する。\n         (2) (a)   決済会員の“決済残高”テーブルの残高に決済金額を加算して更新す\n                  h\n          る。\n                  i “決済履歴”テーブルから決済指示#が一致する行を削除する。\n             (b)  j 決済指示#，有効期限年月\n         (3) 事例 事例7\n       内容 取消処理が完了するまで，“ポイント残高”テーブルの残数が消費され\n         た状態になる。",
+    "modelAnswer": "```text\n設問１(1)  a SUM(獲得ポイント数)\n              b 残高反映F IS FALSE\n              c 残数 = A.残数 + B.加算ポイント数\n              d B.ポイント会員#, B.有効期限年月, B.加算ポイント数\n         (2) (a) ・参照する行の専有ロックを事前に取得するから\n        ・同じ行の複数回の読み込みがないから\n             (b) ・P2 の追加行の有無がP3 のステップによって異なるから\n             ・P2 の追加行のファントムリードが発生するから\n 設問２(1) (a) ⑨\n             (b) ロールバック実行指示\n             (c) ・時点A はコミット，ロールバックが不定の状態，時点B はコミットが確\n         定した状態\n         ・時点A はIn doubt の状態，時点B はIn commit の状態\n         (2) (a)  e コミット実行指示\n                  f ロールバック実行指示\n                  g トランザクションを終了\n             (b) ・ポイント会員が決済の完了を長時間待たされる。\n        ・同じポイント会員が決済サービスを利用できなくなる。\n             (c) 決済残高だけを消費し，ポイント残高を消費していない不正な状態\n 設問３(1) (a) テーブル名 決済履歴\n          列名   決済指示#\n              “決済履歴”テーブルに決済指示#が一致する行があれば処\n         処理概要\n              理を終了する。\n             (b)    更新中F がTRUE のときは更新中エラーを設定して処理を終了し，\n         先頭\n                       FALSE のときはTRUE に更新する。\n         末尾 更新中F をFALSE に更新する。\n         (2) (a)   決済会員の“決済残高”テーブルの残高に決済金額を加算して更新す\n                  h\n          る。\n                  i “決済履歴”テーブルから決済指示#が一致する行を削除する。\n             (b)  j 決済指示#，有効期限年月\n         (3) 事例 事例7\n       内容 取消処理が完了するまで，“ポイント残高”テーブルの残数が消費され\n         た状態になる。\n```",
+    "explanation": "分離レベルによる読取り結果と、複数サービスをまたぐ決済の整合性は別の問題として追う。ロックを取得する時点と同じ行を再読込みするかを確認し、ファントムリードの可能性を判断する。2相コミットでは、準備後に判断を待つ状態とコミットが確定した状態を区別する。後半は決済指示番号による重複処理の防止、更新中フラグ、取消処理の順序に着目する。一部の取消しだけが先に終わる時間帯に、残高がどう見えるかも検討する。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_pm2_qs.pdf#page=7) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_pm2_ans.pdf#page=1)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-official/db/2025-autumn-pm2/p03.webp",
+      "/questions/ipa-official/db/2025-autumn-pm2/p04.webp",
+      "/questions/ipa-official/db/2025-autumn-pm2/p05.webp",
+      "/questions/ipa-official/db/2025-autumn-pm2/p07.webp",
+      "/questions/ipa-official/db/2025-autumn-pm2/p08.webp",
+      "/questions/ipa-official/db/2025-autumn-pm2/p09.webp",
+      "/questions/ipa-official/db/2025-autumn-pm2/p10.webp",
+      "/questions/ipa-official/db/2025-autumn-pm2/p11.webp",
+      "/questions/ipa-official/db/2025-autumn-pm2/p12.webp",
+      "/questions/ipa-official/db/2025-autumn-pm2/p13.webp",
+      "/questions/ipa-official/db/2025-autumn-pm2/p14.webp",
+      "/questions/ipa-official/db/2025-autumn-pm2/p15.webp",
+      "/questions/ipa-official/db/2025-autumn-pm2/p16.webp",
+      "/questions/ipa-official/db/2025-autumn-pm2/p17.webp",
+      "/questions/ipa-official/db/2025-autumn-pm2/p18.webp",
+      "/questions/ipa-official/db/2025-autumn-pm2/p19.webp"
+    ],
+    "imageAltTexts": [
+      "2025年午後II 問1：決済サービスにおけるトランザクション処理（公式問題PDF 3ページ）",
+      "2025年午後II 問1：決済サービスにおけるトランザクション処理（公式問題PDF 4ページ）",
+      "2025年午後II 問1：決済サービスにおけるトランザクション処理（公式問題PDF 5ページ）",
+      "2025年午後II 問1：決済サービスにおけるトランザクション処理（公式問題PDF 7ページ）",
+      "2025年午後II 問1：決済サービスにおけるトランザクション処理（公式問題PDF 8ページ）",
+      "2025年午後II 問1：決済サービスにおけるトランザクション処理（公式問題PDF 9ページ）",
+      "2025年午後II 問1：決済サービスにおけるトランザクション処理（公式問題PDF 10ページ）",
+      "2025年午後II 問1：決済サービスにおけるトランザクション処理（公式問題PDF 11ページ）",
+      "2025年午後II 問1：決済サービスにおけるトランザクション処理（公式問題PDF 12ページ）",
+      "2025年午後II 問1：決済サービスにおけるトランザクション処理（公式問題PDF 13ページ）",
+      "2025年午後II 問1：決済サービスにおけるトランザクション処理（公式問題PDF 14ページ）",
+      "2025年午後II 問1：決済サービスにおけるトランザクション処理（公式問題PDF 15ページ）",
+      "2025年午後II 問1：決済サービスにおけるトランザクション処理（公式問題PDF 16ページ）",
+      "2025年午後II 問1：決済サービスにおけるトランザクション処理（公式問題PDF 17ページ）",
+      "2025年午後II 問1：決済サービスにおけるトランザクション処理（公式問題PDF 18ページ）",
+      "2025年午後II 問1：決済サービスにおけるトランザクション処理（公式問題PDF 19ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-official/db/2025-autumn-pm2/q1-answer-p1.webp"
+    ],
+    "answerImageAltTexts": [
+      "問1の公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_pm2_qs.pdf#page=7",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_pm2_ans.pdf#page=1",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2025年度秋期 データベーススペシャリスト 午後II。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "db-2025a-pm2-q2",
+    "exam": "db",
+    "year": 2025,
+    "season": "autumn",
+    "session": "pm2",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "データベース",
+    "topicTags": [
+      "概念データモデル",
+      "関係スキーマ",
+      "自然キー"
+    ],
+    "difficulty": 4,
+    "question": "宅配ピザチェーンの店舗資材配送業務の概念データモデリング",
+    "answer": "設問１(1)\n                                   DC           ベンダー\n\n            地区     ルート   区画   資材            商品\n\n                                               定番商品\n            郵便番号    店舗            共通資材 企画資材\n\n                                                  期間限定\n                                                  商品\n\n                                                               DC   共通資材                        棚                 レシピ        新商品                             資材在庫  調達条件\n\n         (2)\n                                            出荷\n\n                                            出荷店舗                                      出庫           納入                                            明細\n\n                                            出荷店舗                         資材要求  出庫要求  出庫明細                                            資材明細\n\n                共通資材          販売実績                補充要求                   発注    入荷    入庫\n\n                   企画資材\n                   計画要求\n          商品資材                      定量発注  定量発注\n           使用量        店舗追加                  入荷\n                      要求\n                                              計画発注                                       計画発注                                              入荷\n\n         (3) ア  DC コード\n      イ 地区コード\n      ウ  DC コード，ルート番号，車両番号\n      エ 地区コード，ルート番号，納入順，［DC コード］\n      オ  DC コード，区画番号，機能区分，棚数\n      カ  DC コード，区画番号，棚番号，資材コード，後続棚番号\n      キ  DC コード，発注ロットサイズ，発注リードタイム\n      ク 商品コード，サイズ，使用量\n\n      ケ 保管区画番号，基準在庫数，実在庫数，最終入庫棚番号，最終出庫棚番号 基準在庫数は，\n                                         キに解答しても\n                                           よい。\n\n        (4) コ 店舗コード，配送年月日，資材コード，要求区分\n      サ 店舗コード，配送年月日，資材コード\n      シ 店舗コード，配送年月日\n      ス 店舗コード，配送年月日，資材コード\n      セ  DC コード，ルート番号，配送年月日\n\n      ソ 店舗コード，配送年月日，［DC コード］，［ルート番号］\n      タ 店舗コード，配送年月日，資材コード\n\n      チ 店舗コード，配送年月日\n      ツ  DC コード，発注年月日，資材コード\n      テ 発注年月日\n      ト ［発注年月日］\n      ナ  DC コード，入荷年月日，資材コード\n\n設問２(1)\n\n                                   出庫    出荷\n\n                                         出荷店舗                            出庫要求  出庫明細                                         明細\n\n                            出荷予定         出荷店舗                      資材要求                            明細          資材明細\n\n        (2) ① ・出庫要求（DC コード，配送年月日，資材コード，出庫要求数）\n      ② ・出荷予定明細（店舗コード，配送年月日，資材コード，出荷予定数）\n      ③ ・出庫（DC コード，区画番号，配送年月日，出庫完了時分）\n      ④ ・出庫明細（DC コード，配送年月日，資材コード，［区画番号］，\n              出庫実績数）\n        (3) ニ 店舗コード，配送年月日，資材コード，要求区分，［DC コード］\n\n      ヌ 店舗コード，配送年月日，資材コード，［DC コード］",
+    "modelAnswer": "設問1・2の関係図と関係スキーマ",
+    "explanation": "まず地区、店舗、資材、商品などの管理対象と、その間の関係を業務から読み取る。図の多重度や識別関係は、表の項目名だけでなく、業務上どの単位で発生する情報かに対応付ける。自然キーを使う設計では、配送年月日や資材コードがどのエンティティを特定するかを明確にする。業務の進め方が変わる設問では、既存モデルをそのまま写さず、新しく必要になる出荷予定や明細の管理単位を再検討する。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_pm2_qs.pdf#page=20) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_pm2_ans.pdf#page=2)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-official/db/2025-autumn-pm2/p03.webp",
+      "/questions/ipa-official/db/2025-autumn-pm2/p04.webp",
+      "/questions/ipa-official/db/2025-autumn-pm2/p05.webp",
+      "/questions/ipa-official/db/2025-autumn-pm2/p20.webp",
+      "/questions/ipa-official/db/2025-autumn-pm2/p21.webp",
+      "/questions/ipa-official/db/2025-autumn-pm2/p22.webp",
+      "/questions/ipa-official/db/2025-autumn-pm2/p23.webp",
+      "/questions/ipa-official/db/2025-autumn-pm2/p24.webp",
+      "/questions/ipa-official/db/2025-autumn-pm2/p25.webp",
+      "/questions/ipa-official/db/2025-autumn-pm2/p26.webp",
+      "/questions/ipa-official/db/2025-autumn-pm2/p27.webp",
+      "/questions/ipa-official/db/2025-autumn-pm2/p28.webp",
+      "/questions/ipa-official/db/2025-autumn-pm2/p29.webp",
+      "/questions/ipa-official/db/2025-autumn-pm2/p30.webp",
+      "/questions/ipa-official/db/2025-autumn-pm2/p31.webp"
+    ],
+    "imageAltTexts": [
+      "2025年午後II 問2：宅配ピザチェーンの店舗資材配送業務の概念データモデリング（公式問題PDF 3ページ）",
+      "2025年午後II 問2：宅配ピザチェーンの店舗資材配送業務の概念データモデリング（公式問題PDF 4ページ）",
+      "2025年午後II 問2：宅配ピザチェーンの店舗資材配送業務の概念データモデリング（公式問題PDF 5ページ）",
+      "2025年午後II 問2：宅配ピザチェーンの店舗資材配送業務の概念データモデリング（公式問題PDF 20ページ）",
+      "2025年午後II 問2：宅配ピザチェーンの店舗資材配送業務の概念データモデリング（公式問題PDF 21ページ）",
+      "2025年午後II 問2：宅配ピザチェーンの店舗資材配送業務の概念データモデリング（公式問題PDF 22ページ）",
+      "2025年午後II 問2：宅配ピザチェーンの店舗資材配送業務の概念データモデリング（公式問題PDF 23ページ）",
+      "2025年午後II 問2：宅配ピザチェーンの店舗資材配送業務の概念データモデリング（公式問題PDF 24ページ）",
+      "2025年午後II 問2：宅配ピザチェーンの店舗資材配送業務の概念データモデリング（公式問題PDF 25ページ）",
+      "2025年午後II 問2：宅配ピザチェーンの店舗資材配送業務の概念データモデリング（公式問題PDF 26ページ）",
+      "2025年午後II 問2：宅配ピザチェーンの店舗資材配送業務の概念データモデリング（公式問題PDF 27ページ）",
+      "2025年午後II 問2：宅配ピザチェーンの店舗資材配送業務の概念データモデリング（公式問題PDF 28ページ）",
+      "2025年午後II 問2：宅配ピザチェーンの店舗資材配送業務の概念データモデリング（公式問題PDF 29ページ）",
+      "2025年午後II 問2：宅配ピザチェーンの店舗資材配送業務の概念データモデリング（公式問題PDF 30ページ）",
+      "2025年午後II 問2：宅配ピザチェーンの店舗資材配送業務の概念データモデリング（公式問題PDF 31ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-official/db/2025-autumn-pm2/q2-answer-p2.webp",
+      "/questions/ipa-official/db/2025-autumn-pm2/q2-answer-p3.webp"
+    ],
+    "answerImageAltTexts": [
+      "問2の公式解答例（公式PDF 2ページ）",
+      "問2の公式解答例（公式PDF 3ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_pm2_qs.pdf#page=20",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_pm2_ans.pdf#page=2",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2025年度秋期 データベーススペシャリスト 午後II。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  }
+]

@@ -1,0 +1,160 @@
+[
+  {
+    "id": "db-2022a-pm1-q1",
+    "exam": "db",
+    "year": 2022,
+    "season": "autumn",
+    "session": "pm1",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "概念データモデリング",
+    "topicTags": [
+      "概念データモデル",
+      "関係スキーマ",
+      "アフターサービス"
+    ],
+    "difficulty": 4,
+    "question": "住宅設備メーカーのアフターサービス業務について、公式問題の設問1〜2に答えよ。概念データモデルの表記規則、関係スキーマ、図の記入条件を含む。",
+    "answer": "設問1 (1) 概念データモデル：公式解答例1ページの図を参照。\n(2) ア：問合せ年月日時刻，問合せ内容，連絡先お名前，連絡先電話番号，媒体区分，案件番号\nイ：SLP製品使用者入力区分\nウ：SLPBPコード\nエ：通話社員番号，通話時間，通話成立フラグ，通話音声，受発区分\nオ：発信元web問合せ番号\nカ：出張年月日，出張時間帯\n設問2 (1)(a) あ：製品シリーズ，い：点検修理項目，う：案件\n(b) リレーションシップ：公式解答例2ページの図を参照。\n(2) キ：製品シリーズコード，ユニットコード\nク：ユニットコード，機能部品番号\nケ：FAQ番号，KW\nコ：案件番号，FAQ番号，可能性順位\nサ：FAQ番号，関連FAQ番号，関連度ランク\nシ：FAQ番号，MTコード\n主キー等の下線と関係の向きは公式解答例の図・表で照合する。",
+    "modelAnswer": "設問1 (1) 概念データモデル：公式解答例1ページの図を参照。\n\n(2) ア：問合せ年月日時刻，問合せ内容，連絡先お名前，連絡先電話番号，媒体区分，案件番号\n\nイ：SLP製品使用者入力区分\n\nウ：SLPBPコード\n\nエ：通話社員番号，通話時間，通話成立フラグ，通話音声，受発区分\n\nオ：発信元web問合せ番号\n\nカ：出張年月日，出張時間帯\n\n設問2 (1)(a) あ：製品シリーズ，い：点検修理項目，う：案件\n\n(b) リレーションシップ：公式解答例2ページの図を参照。\n\n(2) キ：製品シリーズコード，ユニットコード\n\nク：ユニットコード，機能部品番号\n\nケ：FAQ番号，KW\n\nコ：案件番号，FAQ番号，可能性順位\n\nサ：FAQ番号，関連FAQ番号，関連度ランク\n\nシ：FAQ番号，MTコード\n\n主キー等の下線と関係の向きは公式解答例の図・表で照合する。",
+    "explanation": "実装都合よりも、業務で何を識別し、何と何が対応するかを先に整理する。設問1は問合せの共通属性と、Web・通話などの媒体ごとの固有属性を分ける。案件、出張手配、出張実施の関係も、それぞれの業務上の意味と対応付ける。設問2は製品シリーズ、ユニット、機能部品、FAQ、案件の間に必要な関連を追加する。多対多の関連では組合せを識別する関係が必要になる。FAQ同士の関連ではFAQ番号と関連FAQ番号を別の役割として扱う。図の線の向きや主キーの下線は意味をもつため、原本の図表と一緒に確認する。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_db_pm1_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_db_pm1_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/question-assets/qb-11/db-2022a-pm1/p03.webp",
+      "/question-assets/qb-11/db-2022a-pm1/p04.webp",
+      "/question-assets/qb-11/db-2022a-pm1/p05.webp",
+      "/question-assets/qb-11/db-2022a-pm1/p06.webp",
+      "/question-assets/qb-11/db-2022a-pm1/p07.webp",
+      "/question-assets/qb-11/db-2022a-pm1/p08.webp",
+      "/question-assets/qb-11/db-2022a-pm1/p09.webp",
+      "/question-assets/qb-11/db-2022a-pm1/p10.webp",
+      "/question-assets/qb-11/db-2022a-pm1/p11.webp",
+      "/question-assets/qb-11/db-2022a-pm1/p12.webp"
+    ],
+    "imageAltTexts": [
+      "2022年午後I 問1の公式本文・図表・設問（原本3ページ）",
+      "2022年午後I 問1の公式本文・図表・設問（原本4ページ）",
+      "2022年午後I 問1の公式本文・図表・設問（原本5ページ）",
+      "2022年午後I 問1の公式本文・図表・設問（原本6ページ）",
+      "2022年午後I 問1の公式本文・図表・設問（原本7ページ）",
+      "2022年午後I 問1の公式本文・図表・設問（原本8ページ）",
+      "2022年午後I 問1の公式本文・図表・設問（原本9ページ）",
+      "2022年午後I 問1の公式本文・図表・設問（原本10ページ）",
+      "2022年午後I 問1の公式本文・図表・設問（原本11ページ）",
+      "2022年午後I 問1の公式本文・図表・設問（原本12ページ）"
+    ],
+    "answerImageUrls": [
+      "/question-assets/qb-11/db-2022a-pm1/answer-p01.webp",
+      "/question-assets/qb-11/db-2022a-pm1/answer-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問1（原本 1ページ）",
+      "IPA公式解答例 問1（原本 2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_db_pm1_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_db_pm1_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "db-2022a-pm1-q2",
+    "exam": "db",
+    "year": 2022,
+    "season": "autumn",
+    "session": "pm1",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "データ移行と可用性設計",
+    "topicTags": [
+      "トリガー",
+      "履歴管理",
+      "RPO",
+      "RTO",
+      "レプリケーション"
+    ],
+    "difficulty": 4,
+    "question": "見積業務システムのマスター保守とクラウド移行について、公式問題の設問1〜2に答えよ。",
+    "answer": "設問1 (1) a：商品コード，b：OR\n(2) テーブル名：見積依頼明細，見積回答明細\n制約：外部キー制約\n(3) c：商品コード，d：適用開始日（順不同）\ne：BEFORE，f：AFTER，g：OLD2，h：NEW2\n(4) i：2022-08-31，j：2022-09-01，k：NULL\n(5) 商品：3,5,6\n商品履歴：1,2,4\n設問2 (1) ア：ログの量，イ：5，ウ：1,800，エ：864,000，オ：1,728\n(2) ・非同期型では複製先へのログの到達を待たないから\n・同期型では複製先でのログのディスク出力を待つから\n(3) ・複製元の変更操作が複製先で未反映だった場合\n・複製元と複製先の間の通信が切断されていた場合\n・複製先のインスタンスが停止していた場合",
+    "modelAnswer": "設問1 (1) a：商品コード，b：OR\n\n(2) テーブル名：見積依頼明細，見積回答明細\n\n制約：外部キー制約\n\n(3) c：商品コード，d：適用開始日（順不同）\n\ne：BEFORE，f：AFTER，g：OLD2，h：NEW2\n\n(4) i：2022-08-31，j：2022-09-01，k：NULL\n\n(5) 商品：3,5,6\n\n商品履歴：1,2,4\n\n設問2 (1) ア：ログの量，イ：5，ウ：1,800，エ：864,000，オ：1,728\n\n(2) ・非同期型では複製先へのログの到達を待たないから\n\n・同期型では複製先でのログのディスク出力を待つから\n\n(3) ・複製元の変更操作が複製先で未反映だった場合\n\n・複製元と複製先の間の通信が切断されていた場合\n\n・複製先のインスタンスが停止していた場合",
+    "explanation": "設問1は現行アプリケーションへの影響を抑えながら、現在の商品情報と過去の履歴を分ける設計を問う。参照整合性を守る外部キー制約と、更新の前後で使うBEFORE・AFTER、OLD・NEWの行を区別する。適用日の境界をまたぐ移行では、現行表へ残す行と履歴表へ移す行を日付条件で振り分ける。設問2のRPOは失われ得るデータの時点、RTOは復旧までの時間という違いを意識し、ログ量と処理時間を問題の条件から見積もる。同期型は複製先のディスク出力まで待つが、非同期型は待たないため、複製先に未反映の変更が残る可能性を評価する。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_db_pm1_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_db_pm1_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/question-assets/qb-11/db-2022a-pm1/p13.webp",
+      "/question-assets/qb-11/db-2022a-pm1/p14.webp",
+      "/question-assets/qb-11/db-2022a-pm1/p15.webp",
+      "/question-assets/qb-11/db-2022a-pm1/p16.webp",
+      "/question-assets/qb-11/db-2022a-pm1/p17.webp",
+      "/question-assets/qb-11/db-2022a-pm1/p18.webp",
+      "/question-assets/qb-11/db-2022a-pm1/p19.webp"
+    ],
+    "imageAltTexts": [
+      "2022年午後I 問2の公式本文・図表・設問（原本13ページ）",
+      "2022年午後I 問2の公式本文・図表・設問（原本14ページ）",
+      "2022年午後I 問2の公式本文・図表・設問（原本15ページ）",
+      "2022年午後I 問2の公式本文・図表・設問（原本16ページ）",
+      "2022年午後I 問2の公式本文・図表・設問（原本17ページ）",
+      "2022年午後I 問2の公式本文・図表・設問（原本18ページ）",
+      "2022年午後I 問2の公式本文・図表・設問（原本19ページ）"
+    ],
+    "answerImageUrls": [
+      "/question-assets/qb-11/db-2022a-pm1/answer-p03.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問2（原本 3ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_db_pm1_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_db_pm1_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "db-2022a-pm1-q3",
+    "exam": "db",
+    "year": 2022,
+    "season": "autumn",
+    "session": "pm1",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "データベース性能とロック",
+    "topicTags": [
+      "デッドロック",
+      "ウィンドウ関数",
+      "性能改善"
+    ],
+    "difficulty": 4,
+    "question": "販売管理システムの倉庫管理業務について、公式問題の設問1〜3に答えよ。",
+    "answer": "設問1 (1) ・主キーが単調に増加する番号なので過去の注文番号の近くに行を挿入しないから\n・主キーの昇順に行を挿入するとき，表領域の最後のページに格納を続けるから\n(2) 再編成後に追加した各ページで既定の空き領域分のページが増えるから\n設問2 (1) a：異なる商品の“在庫”を逆順で更新することがあり得るから\nb：“棚別在庫”を常に主キーの順で更新しているから\nc：異なるジョブが同じ注文の明細行を更新することはないから\n(2) 処理名：注文登録\n変更内容：・“注文明細”に行を商品コードの順に登録する。\n・商品コードの順に注文明細番号を付与する。\n又は、処理名：在庫引当\n変更内容：“在庫”の行を商品コードの順に更新する。\n設問3 (1) あ：A.ピッカーID，い：B.棚番号，う：6番，え：S6，お：3番，か：S3\n(2) ・“出庫指示”の読込み順を出庫番号，商品コード，棚番号の順に変更する。\n・“棚別在庫”の行を商品コード，棚番号の順に更新する。",
+    "modelAnswer": "設問1 (1) ・主キーが単調に増加する番号なので過去の注文番号の近くに行を挿入しないから\n\n・主キーの昇順に行を挿入するとき，表領域の最後のページに格納を続けるから\n\n(2) 再編成後に追加した各ページで既定の空き領域分のページが増えるから\n\n設問2 (1) a：異なる商品の“在庫”を逆順で更新することがあり得るから\n\nb：“棚別在庫”を常に主キーの順で更新しているから\n\nc：異なるジョブが同じ注文の明細行を更新することはないから\n\n(2) 処理名：注文登録\n\n変更内容：・“注文明細”に行を商品コードの順に登録する。\n\n・商品コードの順に注文明細番号を付与する。\n\n又は、処理名：在庫引当\n\n変更内容：“在庫”の行を商品コードの順に更新する。\n\n設問3 (1) あ：A.ピッカーID，い：B.棚番号，う：6番，え：S6，お：3番，か：S3\n\n(2) ・“出庫指示”の読込み順を出庫番号，商品コード，棚番号の順に変更する。\n\n・“棚別在庫”の行を商品コード，棚番号の順に更新する。",
+    "explanation": "設問1では、主キーが増加し続ける表の挿入位置を考える。過去のページに空きを確保しても新規行が最後のページへ追加されるなら、その空きが挿入に使われず、領域の増加につながる。設問2のデッドロックは複数の処理が異なる順序で行をロックすることが原因になる。商品コードなどで更新順序を統一する対策を、実際の処理名と変更内容で述べる。設問3ではSQLの別名と列の役割を対応付け、ウィンドウ関数が扱うまとまりと並び順を確認する。出庫指示の読込み順や棚別在庫の更新順も、競合を避けるために一貫した順序へそろえる。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_db_pm1_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_db_pm1_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/question-assets/qb-11/db-2022a-pm1/p20.webp",
+      "/question-assets/qb-11/db-2022a-pm1/p21.webp",
+      "/question-assets/qb-11/db-2022a-pm1/p22.webp",
+      "/question-assets/qb-11/db-2022a-pm1/p23.webp",
+      "/question-assets/qb-11/db-2022a-pm1/p24.webp",
+      "/question-assets/qb-11/db-2022a-pm1/p25.webp"
+    ],
+    "imageAltTexts": [
+      "2022年午後I 問3の公式本文・図表・設問（原本20ページ）",
+      "2022年午後I 問3の公式本文・図表・設問（原本21ページ）",
+      "2022年午後I 問3の公式本文・図表・設問（原本22ページ）",
+      "2022年午後I 問3の公式本文・図表・設問（原本23ページ）",
+      "2022年午後I 問3の公式本文・図表・設問（原本24ページ）",
+      "2022年午後I 問3の公式本文・図表・設問（原本25ページ）"
+    ],
+    "answerImageUrls": [
+      "/question-assets/qb-11/db-2022a-pm1/answer-p04.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問3（原本 4ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_db_pm1_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_db_pm1_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  }
+]

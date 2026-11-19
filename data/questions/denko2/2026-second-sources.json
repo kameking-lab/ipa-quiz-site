@@ -1,0 +1,1807 @@
+{
+  "exam": "denko2",
+  "year": 2026,
+  "season": "second",
+  "examDate": "2026-10-25",
+  "checkedAt": "2026-11-17",
+  "officialIndexUrl": "https://www.shiken.or.jp/construction/second/qa/",
+  "sources": [
+    {
+      "kind": "question",
+      "url": "https://www.shiken.or.jp/construction/upload/20261025_co_second_q01.pdf",
+      "sha256": "33b9cad308dcd2c709b620ca3d9ee0ef82789bbb426b18fed368a52b5d907b14"
+    },
+    {
+      "kind": "answer",
+      "url": "https://www.shiken.or.jp/construction/upload/20261025_co_second_a01.pdf",
+      "sha256": "1ab548f0272acc89f394fa2b5eb35592df4bcca603cac2cfd8fbbcf3ac703376"
+    }
+  ],
+  "officialAnswers": {
+    "1": "ニ",
+    "2": "ハ",
+    "3": "ハ",
+    "4": "ニ",
+    "5": "ロ",
+    "6": "ロ",
+    "7": "ハ",
+    "8": "ハ",
+    "9": "ニ",
+    "10": "ロ",
+    "11": "イ",
+    "12": "ハ",
+    "13": "ロ",
+    "14": "イ",
+    "15": "ロ",
+    "16": "ニ",
+    "17": "ロ",
+    "18": "ニ",
+    "19": "イ",
+    "20": "ニ",
+    "21": "ロ",
+    "22": "ハ",
+    "23": "ハ",
+    "24": "ニ",
+    "25": "ロ",
+    "26": "ロ",
+    "27": "ニ",
+    "28": "イ",
+    "29": "ハ",
+    "30": "イ",
+    "31": "ロ",
+    "32": "イ",
+    "33": "ニ",
+    "34": "イ",
+    "35": "イ",
+    "36": "ニ",
+    "37": "イ",
+    "38": "ニ",
+    "39": "イ",
+    "40": "ハ",
+    "41": "ロ",
+    "42": "イ",
+    "43": "ハ",
+    "44": "ニ",
+    "45": "ニ",
+    "46": "ハ",
+    "47": "ハ",
+    "48": "イ",
+    "49": "ロ",
+    "50": "ロ"
+  },
+  "mapping": {
+    "イ": "ア",
+    "ロ": "イ",
+    "ハ": "ウ",
+    "ニ": "エ"
+  },
+  "questions": [
+    {
+      "number": 1,
+      "pdfPage": 5,
+      "bodyRaw": " 図のような回路で，スイッチS を閉じたとき，\n\na  b 端子間の電圧［V］は。\n              S\n\n\n              50 W        50 W\n                                          a\n\n   120 V                50 W\n              50 W\n                                     b",
+      "choicesRaw": "イ．30        ロ．40        ハ．50        ニ．60"
+    },
+    {
+      "number": 2,
+      "pdfPage": 5,
+      "bodyRaw": " ビニル絶縁電線(単線)の抵抗に関する記述\n\nとして，誤っているものは。",
+      "choicesRaw": "イ．電線の抵抗は，導体の長さに比例する。\n\nロ．電線の抵抗は，導体の直径の2乗に反比例する。\n\nハ．電線の抵抗は，導体の導電率に比例する。\n\nニ．電線の抵抗は，周囲温度が高くなると大きくなる。"
+    },
+    {
+      "number": 3,
+      "pdfPage": 5,
+      "bodyRaw": " 抵抗器に100 V の電圧を印加したとき，5 A\n\nの電流が流れた。1 時間30 分の間に抵抗器で\n\n発生する熱量［kJ］は。",
+      "choicesRaw": "イ．750       ロ．1 800      ハ．2 700      ニ．5 400"
+    },
+    {
+      "number": 4,
+      "pdfPage": 5,
+      "bodyRaw": " 単相200 V の回路に，消費電力2.0 kW，力率\n\n80 ％の負荷を接続した場合，回路に流れる\n\n電流［A］は。",
+      "choicesRaw": "イ．7.2         ロ．8.0         ハ．10.0        ニ．12.5"
+    },
+    {
+      "number": 5,
+      "pdfPage": 5,
+      "bodyRaw": " 図のような三相3 線式回路に流れる電流\n\nI［A］は。\n            I［A］\n\n\n                                  10 W\n            210 V\n 3φ3W                  10 W        10 W        210 V\n 電 源\n\n\n            210 V",
+      "choicesRaw": "イ．8.3         ロ．12.1        ハ．14.3        ニ．20.0"
+    },
+    {
+      "number": 6,
+      "pdfPage": 6,
+      "bodyRaw": " 図のような単相2 線式回路で，電源電圧は\n\n105 V，電線1 線当たりの抵抗は0.25 である。\n\nスイッチS を閉じると，抵抗負荷の両端の電圧\n\nは100 V になった。この配線の電力損失［W］\n\nは。\n                     0.25 W\n\n                              S\n  1φ2W\n  電　源105 V          抵抗\n                 負荷\n                     0.25 W",
+      "choicesRaw": "イ．25        ロ．50        ハ．75        ニ．100"
+    },
+    {
+      "number": 7,
+      "pdfPage": 6,
+      "bodyRaw": " 図のような単相3 線式回路で，消費電力\n\n100 W，500 W の2 つの負荷はともに抵抗負荷\n\nである。図中の 印点で断線した場合，a  b 間\n\nの電圧［V］は。\n\n ただし，断線によって負荷の抵抗値は変化\n\nしないものとする。\n                                  a\n\n           100 V        抵抗負荷                              100 W(100 W)\n1φ3W       200 V                  b\n電　源\n\n                抵抗負荷\n           100 V                              500 W(20 W)",
+      "choicesRaw": "イ．33         ロ．100        ハ．167        ニ．200"
+    },
+    {
+      "number": 8,
+      "pdfPage": 6,
+      "bodyRaw": " 金属管による低圧屋内配線工事で，管内に\n\n直径2.0 mm の600 V ビニル絶縁電線(軟銅線)\n\n5 本を収めて施設した場合，電線1 本当たりの\n\n許容電流［A］は。\n\n ただし，周囲温度は30 ℃以下，電流減少係数\n\nは0.56 とする。",
+      "choicesRaw": "イ．10        ロ．15        ハ．19        ニ．27"
+    },
+    {
+      "number": 9,
+      "pdfPage": 6,
+      "bodyRaw": " 図のような電熱器 H 1台と電動機 M 2 台が\n\n接続された単相2 線式の低圧屋内幹線がある。\n\nこの幹線の太さを決定する根拠となる電流\n\nIW［A］と幹線に施設しなければならない\n\n過電流遮断器の定格電流を決定する根拠となる\n\n電流IB［A］の組合せとして，適切なものは。\n\n ただし，需要率は100 ％とする。\n\n\n   Ｂ\n\n   幹\n   線\n     Ｂ  Ｈ 定格電流 5 A\n\n     Ｂ  Ｍ 定格電流 5 A\n\n     Ｂ  Ｍ 定格電流 15 A",
+      "choicesRaw": "イ．IW  27      ロ．IW  27      ハ．IW  30     ニ．IW  30\n     IB  55               IB  65               IB  55               IB  65"
+    },
+    {
+      "number": 10,
+      "pdfPage": 7,
+      "bodyRaw": " 低圧屋内配線の分岐回路の設計で，配線用\n\n遮断器の定格電流とコンセントの組合せと\n\nして，不適切なものは。",
+      "choicesRaw": "イ．       ロ．       ハ．       ニ．\n\n\n  Ｂ 30 A    Ｂ 30 A    Ｂ 20 A    Ｂ 20 A\n\n\n\n\n\n 30 Aコンセント   15 Aコンセント   20 Aコンセント   15 Aコンセント\n    2個          2個          1個         2個"
+    },
+    {
+      "number": 11,
+      "pdfPage": 7,
+      "bodyRaw": " 金属管工事において，絶縁ブッシングを\n\n使用する主な目的は。",
+      "choicesRaw": "イ．電線の被覆を損傷させないため。\n\nロ．電線の接続を容易にするため。\n\nハ．金属管を造営材に固定するため。\n\nニ．金属管相互を接続するため。"
+    },
+    {
+      "number": 12,
+      "pdfPage": 7,
+      "bodyRaw": "耐熱性が最も優れているものは。",
+      "choicesRaw": "イ．600V 二種ビニル絶縁電線\n\nロ．600V ビニル絶縁電線\n\nハ．MI ケーブル\n\nニ．600V ビニル絶縁ビニルシースケーブル"
+    },
+    {
+      "number": 13,
+      "pdfPage": 7,
+      "bodyRaw": " コンクリート壁に金属管を取り付けるとき\n\nに用いる材料及び工具の組合せとして，適切\n\nなものは。",
+      "choicesRaw": "イ．カールプラグ          ロ．サドル\n\n  ステープル             振動ドリル\n\n  ホルソ               カールプラグ\n\n  ハンマ               木ねじ\n\n\n\nハ．たがね             ニ．ボルト\n\n  コンクリート釘           ホルソ\n\n  ハンマ               振動ドリル\n\n  ステープル             サドル"
+    },
+    {
+      "number": 14,
+      "pdfPage": 7,
+      "bodyRaw": " 必要に応じ，スターデルタ始動を行う電動\n\n機は。",
+      "choicesRaw": "イ．一般用三相かご形誘導電動機\n\nロ．三相巻線形誘導電動機\n\nハ．直流分巻電動機\n\nニ．単相誘導電動機"
+    },
+    {
+      "number": 15,
+      "pdfPage": 7,
+      "bodyRaw": " 低圧電路に使用する定格電流30 Aの配線用\n\n遮断器に 60 Aの電流が継続して流れたとき，\n\nこの配線用遮断器が自動的に動作しなければ\n\nならない時間［分］の限度は。",
+      "choicesRaw": "イ．1        ロ．2        ハ．3        ニ．4"
+    },
+    {
+      "number": 16,
+      "pdfPage": 8,
+      "bodyRaw": "写真に示す材料の名称は。\n\n\n\n\n\n        拡大",
+      "choicesRaw": "イ．無機絶縁ケーブル\n\nロ．600V ビニル絶縁ビニルシースケーブル平形\n\nハ．600V 架橋ポリエチレン絶縁ビニルシースケーブル\n\nニ．600V ポリエチレン絶縁耐燃性ポリエチレンシースケーブル平形"
+    },
+    {
+      "number": 17,
+      "pdfPage": 8,
+      "bodyRaw": "写真に示す器具の用途は。",
+      "choicesRaw": "イ．リモコン配線の操作電源変圧器として用いる。\n\nロ．リモコン配線のリレーとして用いる。\n\nハ．リモコンリレー操作用のセレクタスイッチとして用いる。\n\nニ．リモコン用調光スイッチとして用いる。"
+    },
+    {
+      "number": 18,
+      "pdfPage": 8,
+      "bodyRaw": "写真に示す測定器の用途は。",
+      "choicesRaw": "イ．照度の測定に用いる。\n\nロ．作業者に帯電している静電気を除去するために用いる。\n\nハ．機器の取り付け位置の基準線を描くために用いる。\n\nニ．低圧の電気回路に電圧が印加されているかいないかを確かめるのに用いる。"
+    },
+    {
+      "number": 19,
+      "pdfPage": 8,
+      "bodyRaw": " 低圧屋内配線工事で，600V ビニル絶縁電線\n\n(軟銅線)をリングスリーブ用圧着工具とリング\n\nスリーブ(E 形)を用いて接続を行った。接続す\n\nる電線に適合するリングスリーブの種類と\n\n圧着マーク(刻印)の組合せで，適切なものは。",
+      "choicesRaw": "イ．直径1.6 mm 1 本と直径 2.0 mm 1 本の接続に，小スリーブを使用して圧着\n\n  マークを 小 にした。\n\nロ．直径2.0 mm 2 本の接続に，小スリーブを使用して圧着マークを ○ にした。\n\nハ．直径1.6 mm 4 本の接続に，中スリーブを使用して圧着マークを 中 にした。\n\nニ．直径1.6 mm 2 本と直径 2.0 mm 1 本の接続に，中スリーブを使用して圧着\n\n  マークを 中 にした。"
+    },
+    {
+      "number": 20,
+      "pdfPage": 8,
+      "bodyRaw": " 低圧屋内配線のケーブル工事の施工方法と\n\nして，不適切なものは。",
+      "choicesRaw": "イ．600V ビニル絶縁ビニルシースケーブル丸形を用いた木造住宅(メタルラス\n\n  壁)の配線工事において，ケーブルが外壁を貫通する施工を行う時は，\n\n  メタルラスを十分に切り開き，耐久性のある合成樹脂管にケーブルを収め\n\n  電気的に絶縁する。\n\nロ．建物のコンクリート床にMI ケーブルを直接埋め込み施設する。\n\nハ．600V ビニル絶縁ビニルシースケーブル平形を用いた低圧屋内配線工事の\n\n  場合に，ケーブルがガス管と交差する時は，直接触れないように施設する。\n\nニ．キャブタイヤケーブルを造営材の側面に沿って取り付ける場合，支持点間\n\n   の距離を1.5 m とし，その被覆を損傷しないように取り付ける。"
+    },
+    {
+      "number": 21,
+      "pdfPage": 9,
+      "bodyRaw": " 図に示す一般的な低圧屋内配線の工事で，\n\nスイッチボックス部分の回路は。ただし，a は\n\n電源からの非接地側電線(黒色)，b は電源から\n\nの接地側電線(白色)を示し，負荷には電源から\n\nの接地側電線が直接に結線されているものと\n\nする。\n\n なお，パイロットランプは100 V 用を使用\n\nする。\n\n\n            イ\n\n             スイッチボックス\n 1φ2W             イイ\n 100 V\n電　源\n\n\n 〇 は確認表示灯(パイロットランプ)を示す。",
+      "choicesRaw": "イ．                ロ．\n       黒                  黒\n            a                                         a\n\n\n       白                  白\n  (負荷へ)                                     b\n\n\n                         赤\n                        (負荷へ)\n\n\n\nハ．                ニ．\n       黒                 黒            a                                                    a\n\n\n       白                 白\n          b                  (負荷へ)\n\n\n       赤\n  (負荷へ)"
+    },
+    {
+      "number": 22,
+      "pdfPage": 9,
+      "bodyRaw": " D種接地工事の施工方法として，不適切な\n\nものは。",
+      "choicesRaw": "イ．移動して使用する電気機械器具の金属製外箱の接地線として，多心キャブ\n\n  タイヤケーブルの断面積0.75 mm2 の1 心を使用した。\n\nロ．低圧電路に地絡を生じた場合に0.5 秒以内に自動的に電路を遮断する装置\n\n  を設置し，接地抵抗値が300 であった。\n\nハ．単相100 V の電動機を水気のある場所に設置し，定格感度電流30 mA，\n\n  動作時間0.1 秒の電流動作型漏電遮断器を取り付けたので，接地工事を\n\n  省略した。\n\nニ．単相100 V のルームエアコンの接地線として，直径1.6 mm の軟銅線を使用\n\n  した。"
+    },
+    {
+      "number": 23,
+      "pdfPage": 9,
+      "bodyRaw": " 金属管工事で金属管とアウトレットボック\n\nスとを電気的に接続する方法として，施工上，\n\n最も適切なものは。",
+      "choicesRaw": "イ．                ロ．\n\n\n\n\n\nハ．                  ニ．"
+    },
+    {
+      "number": 24,
+      "pdfPage": 9,
+      "bodyRaw": " アナログ式回路計(電池内蔵)の回路抵抗\n\n測定に関する記述として，誤っている\n\nものは。",
+      "choicesRaw": "イ．測定レンジをOFF にして，指針が電圧表示の零の位置と一致しているか\n\n  確認する。\n\nロ．抵抗測定レンジに切り換える。被測定物の概略値が想定される場合は，\n\n  測定レンジの倍率を適正なものにする。\n\nハ．赤と黒の測定端子(テストリード)を短絡し，指針が0 になるよう調整\n\n  する。\n\nニ．被測定物に，赤と黒の測定端子(テストリード)を接続し，その時の指示値\n\n  を読む。なお，測定レンジに倍率表示がある場合は，読んだ指示値を倍率で\n\n  割って測定値とする。"
+    },
+    {
+      "number": 25,
+      "pdfPage": 10,
+      "bodyRaw": " 次のA～F は，絶縁抵抗計を用いた絶縁抵抗\n\nの測定方法の手順を示したものである。空欄\n\nに当てはまるものとして，適切なものは。\n\nA：被測定回路の無充電状態を確認する。\n\nB：絶縁抵抗計のバッテリーチェックをする。\n\nC：絶縁抵抗計の    チェックをする。\n\nD：絶縁抵抗計の開放(∞)チェックをする。\n\nE：被測定回路を測定する。\n\nF：被測定回路の残留電荷を放電する。",
+      "choicesRaw": "イ．検電      ロ．導通(0  )   ハ．絶縁     ニ．力率"
+    },
+    {
+      "number": 26,
+      "pdfPage": 10,
+      "bodyRaw": " 直読式接地抵抗計を用いて，接地抵抗を測\n\n定する場合，被測定接地極E に対する，2 つの\n\n補助接地極S((P)電圧用)及びH((C)電流用)\n\nの配置として，適切なものは。",
+      "choicesRaw": "イ．                      ロ．\n     S(P)      E        H(C)        E         S(P)      H(C)\n\n          10 m       10 m                     10 m       10 m\n\n\nハ．                     ニ．\n                                               H(C)\n     E        H(C)      S(P)\n                                E                    2 m\n                                                     S(P)\n          10 m       10 m"
+    },
+    {
+      "number": 27,
+      "pdfPage": 10,
+      "bodyRaw": " 単相交流電源から負荷に至る回路において，\n\n電圧計，電流計，電力計の結線方法として，\n\n正しいものは。",
+      "choicesRaw": "イ．                      ロ．\n        A                    W\n 電   W         負   電              負\n             V                   V  A 源              荷   源              荷\n\n\n\n\n\nハ．                     ニ．\n             V             A      W               W\n\n                    電 電                                  負     A           負                    源           V 源                荷                                  荷"
+    },
+    {
+      "number": 28,
+      "pdfPage": 10,
+      "bodyRaw": " 「電気工事士法」において，第二種電気工事士\n\n免状の交付を受けている者であっても従事\n\nできない電気工事の作業は。",
+      "choicesRaw": "イ．自家用電気工作物(最大電力500 kW 未満の需要設備)の低圧部分の電線\n\n  相互を接続する作業\n\nロ．自家用電気工作物(最大電力500 kW 未満の需要設備)の地中電線用の管を\n\n  設置する作業\n\nハ．一般用電気工作物の接地工事の作業\n\nニ．一般用電気工作物のネオン工事の作業"
+    },
+    {
+      "number": 29,
+      "pdfPage": 10,
+      "bodyRaw": " 「電気用品安全法」の適用を受ける電気用\n\n品に関する記述として，誤っているものは。",
+      "choicesRaw": "イ．電気工事士は，「電気用品安全法」に定められた所定の表示が付されて\n\n  いるものでなければ，電気用品を電気工作物の設置又は変更の工事に使用\n\n  してはならない。\n\nロ．   PSE の記号は，電気用品のうち特定電気用品を示す。\nハ．(PS)E の記号は，輸入した特定電気用品を示す。\nニ．  PSE の記号は，電気用品のうち特定電気用品以外の電気用品を示す。"
+    },
+    {
+      "number": 30,
+      "pdfPage": 10,
+      "bodyRaw": " 「電気設備に関する技術基準を定める省令」\n\nに関する記述として，誤っているものは。",
+      "choicesRaw": "イ．電気設備に接地を施す場合は，電流が大地に通ずることがないようにしな\n\n  ければならないと規定している。\n\nロ．電圧の種別である低圧，高圧及び特別高圧を規定している。\n\nハ．電気設備は，感電，火災その他人体に危害を及ぼし，又は物件に損傷を\n\n  与えるおそれがないように施設しなければならないと規定している。\n\nニ．電気の使用場所における低圧の電路の絶縁性能については，使用電圧の\n\n  区分に応じ，絶縁抵抗値を規定している。"
+    },
+    {
+      "number": 31,
+      "pdfPage": 11,
+      "bodyRaw": "①で示す図記号の器具の種類は。",
+      "choicesRaw": "イ．シーリング(天井直付)       ロ．引掛シーリング(角)\n\nハ．埋込器具            ニ．引掛形コンセント"
+    },
+    {
+      "number": 32,
+      "pdfPage": 11,
+      "bodyRaw": "②で示す部分の電路と大地間の絶縁抵抗とし\n\nて，許容される最小値［MW］は。",
+      "choicesRaw": "イ．0.1         ロ．0.2         ハ．0.4        ニ．1.0"
+    },
+    {
+      "number": 33,
+      "pdfPage": 11,
+      "bodyRaw": "③で示すコンセントの極配置(刃受)は。",
+      "choicesRaw": "イ．       ロ．       ハ．       ニ．"
+    },
+    {
+      "number": 34,
+      "pdfPage": 11,
+      "bodyRaw": "④で示す図記号の器具を用いる目的は。",
+      "choicesRaw": "イ．過電流と地絡電流を遮断する。  ロ．短絡電流のみを遮断する。\n\nハ．不平衡電流を遮断する。     ニ．地絡電流のみを遮断する。"
+    },
+    {
+      "number": 35,
+      "pdfPage": 11,
+      "bodyRaw": "⑤で示す部分に照明器具としてペンダントを\n\n取り付けたい。図記号は。",
+      "choicesRaw": "イ．       ロ．       ハ．       ニ．\n                CL         CP         CH"
+    },
+    {
+      "number": 36,
+      "pdfPage": 11,
+      "bodyRaw": "⑥で示す部分の接地工事における接地抵抗の\n\n許容される最大値［W］は。",
+      "choicesRaw": "イ．10         ロ．100        ハ．300       ニ．500"
+    },
+    {
+      "number": 37,
+      "pdfPage": 11,
+      "bodyRaw": "⑦で示す部分の最少電線本数(心線数)は。",
+      "choicesRaw": "イ．3        ロ．4        ハ．5       ニ．6"
+    },
+    {
+      "number": 38,
+      "pdfPage": 11,
+      "bodyRaw": "⑧で示す図記号の名称は。",
+      "choicesRaw": "イ．600V 耐燃性架橋ポリエチレン絶縁電線\n\nロ．600V 架橋ポリエチレン絶縁耐燃性ポリエチレンシースケーブル\n\nハ．600V 耐燃性ポリエチレン絶縁電線\n\nニ．600V ポリエチレン絶縁耐燃性ポリエチレンシースケーブル平形"
+    },
+    {
+      "number": 39,
+      "pdfPage": 11,
+      "bodyRaw": "⑨で示す部分の小勢力回路で使用できる電線\n\n(軟銅線)の導体の最小直径［mm］は。",
+      "choicesRaw": "イ．0.8         ロ．1.2         ハ．1.6        ニ．2.0"
+    },
+    {
+      "number": 40,
+      "pdfPage": 11,
+      "bodyRaw": "⑩で示す図記号の配線方法は。",
+      "choicesRaw": "イ．露出配線            ロ．ライティングダクト配線\n\nハ．床隠ぺい配線          ニ．天井隠ぺい配線"
+    },
+    {
+      "number": 41,
+      "pdfPage": 12,
+      "bodyRaw": "⑪で示す図記号の器具は。",
+      "choicesRaw": "イ．         ロ．         ハ．         ニ．"
+    },
+    {
+      "number": 42,
+      "pdfPage": 12,
+      "bodyRaw": "⑫で示す図記号の機器は。",
+      "choicesRaw": "イ．         ロ．         ハ．         ニ．"
+    },
+    {
+      "number": 43,
+      "pdfPage": 12,
+      "bodyRaw": "⑬で示すボックス内の接続\n\nをすべて圧着接続とする場\n\n合，使用するリングスリー\n\nブの種類と最少個数の組合\n\nせで，正しいものは。\n\nただし，使用する電線は，\n\nすべてVVF1.6 とする。",
+      "choicesRaw": "イ．         ロ．         ハ．         ニ．\n\n       小          小          小          小\n\n       ３個         １個         ３個         １個\n\n\n\n\n\n       中          中          中          中\n\n       ２個         ３個         １個         ４個"
+    },
+    {
+      "number": 44,
+      "pdfPage": 12,
+      "bodyRaw": "⑭で示す木造部分に配線用\n\nの穴をあけるための工具と\n\nして，正しいものは。",
+      "choicesRaw": "イ．         ロ．         ハ．         ニ．\n\n\n\n\n   拡大                              拡大"
+    },
+    {
+      "number": 45,
+      "pdfPage": 12,
+      "bodyRaw": "⑮で示すボックス内の接続\n\nをリングスリーブで圧着接\n\n続した場合のリングスリー\n\nブの種類，個数及び圧着接\n\n続後の刻印との組合せで，\n\n正しいものは。\n\nただし，使用する電線は\n\n特記のないものはVVF1.6\n\nとする。\n\nまた，写真に示すリング\n\nスリーブ中央の〇，小，中\n\nは刻印を表す。",
+      "choicesRaw": "イ．         ロ．         ハ．         ニ．\n\n\n\n             中      中   中    中   中\n    ○\n\n\n              中 １個       中 ２個       中 ２個\n\n\n\n\n  小   小    小   ○      小        ○\n\n\n\n\n   小 ３個       小 ２個       小 １個       小 １個"
+    },
+    {
+      "number": 46,
+      "pdfPage": 13,
+      "bodyRaw": "⑯で示す部分の配線工事に\n\n必要なケーブルは。\n\nただし，心線数は最少とす\n\nる。",
+      "choicesRaw": "イ．         ロ．         ハ．         ニ．"
+    },
+    {
+      "number": 47,
+      "pdfPage": 13,
+      "bodyRaw": "⑰で示す図記号の器具は。\n\nただし，写真下の図は，\n\n接点の構成を示す。",
+      "choicesRaw": "イ．         ロ．         ハ．         ニ．\n\n\n\n\n\n                                                           1                    3\n                                               0                      0\n                                                           3                    1"
+    },
+    {
+      "number": 48,
+      "pdfPage": 13,
+      "bodyRaw": "⑱で示すボックス内の接続\n\nをすべて差込形コネクタと\n\nする場合，使用する差込形\n\nコネクタの種類と最少個数\n\nの組合せで，正しいものは。\n\nただし，使用する電線は，\n\nすべてVVF1.6 とする。",
+      "choicesRaw": "イ．         ロ．         ハ．         ニ．\n\n\n        ３個         ３個         ２個         ３個\n\n\n\n\n\n        １個         １個         ２個         １個\n\n\n\n\n\n        １個         １個         １個         １個"
+    },
+    {
+      "number": 49,
+      "pdfPage": 13,
+      "bodyRaw": "⑲で示す地中配線工事で防\n\n護管(FEP)を切断するため\n\nの工具として，適切なもの\n\nは。",
+      "choicesRaw": "イ．         ロ．         ハ．         ニ．"
+    },
+    {
+      "number": 50,
+      "pdfPage": 13,
+      "bodyRaw": "この配線図の施工で，使用\n\nされることのないものは。",
+      "choicesRaw": "イ．         ロ．         ハ．         ニ．"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/images/denko2/2026-second/q1-figure.png",
+      "page": 5,
+      "rect": [
+        96,
+        194,
+        296,
+        306
+      ],
+      "sha256": "7f690c649a1850511d852c07eb1fb47d9409c6c4a0e7bf8a22b0959198131214"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q5-figure.png",
+      "page": 5,
+      "rect": [
+        96,
+        692,
+        298,
+        846
+      ],
+      "sha256": "5a673c2420bef69827e69c33bb2ef5d6ddea22ba54c3b87debb81b9ec417a7c6"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q6-figure.png",
+      "page": 6,
+      "rect": [
+        96,
+        164,
+        298,
+        257
+      ],
+      "excludedAdjacentTextRects": [
+        [
+          94,
+          160,
+          116,
+          173
+        ]
+      ],
+      "sha256": "6302649e35a95c6f20bf1af0f2f23a570c54d5aac5f6886d051dc851339de8b2"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q7-figure.png",
+      "page": 6,
+      "rect": [
+        93,
+        387,
+        298,
+        513
+      ],
+      "sha256": "3faff51e69a03ca1874b3e3cc1354e34ad5c2af4ab1b24818404f04078d35117"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q9-figure.png",
+      "page": 6,
+      "rect": [
+        94,
+        798,
+        298,
+        945
+      ],
+      "sha256": "e4bd8bdff012e8e1eca2d18111b60542bc26713ac27af33315d64f3e5f6ea38e"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q16-figure.png",
+      "page": 8,
+      "rect": [
+        95,
+        106,
+        301,
+        236
+      ],
+      "sha256": "a3dcc397f8ab281c18e46ed154b7241ba9f5dee2aa42effe7c7f9c60651c65e3"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q17-figure.png",
+      "page": 8,
+      "rect": [
+        95,
+        269,
+        301,
+        380
+      ],
+      "sha256": "de9ff616b28658189998c255615ec4d97027c1050592a1a948027f9863d5ea06"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q18-figure.png",
+      "page": 8,
+      "rect": [
+        95,
+        410,
+        301,
+        559
+      ],
+      "sha256": "1c080d1262f82089d8aaad146179c033dd72aa72e3b7a0f05fcd180ef3045ad8"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q21-figure.png",
+      "page": 9,
+      "rect": [
+        94,
+        224,
+        300,
+        337
+      ],
+      "excludedAdjacentTextRects": [
+        [
+          94,
+          218,
+          128,
+          231
+        ]
+      ],
+      "sha256": "4aea41d2e890846a6937e5f06fbbcb8e1093473bbfcc081aad65ce01e5581c44"
+    },
+    {
+      "path": "public/images/denko2/2026-second/wiring.png",
+      "page": 15,
+      "rect": [
+        63,
+        88,
+        672,
+        982
+      ],
+      "sha256": "7d2fe7fa61b0fae1a8b703f4378c85fb099b8c5a9ae292e2be82385074e5f08b"
+    },
+    {
+      "path": "public/images/denko2/2026-second/conditions.png",
+      "page": 11,
+      "rect": [
+        63,
+        81,
+        672,
+        261
+      ],
+      "sha256": "5f18b4dc4feed952910b55cf76b1a6d7c6a9b939a47713e4e73a248f3e9a32f7"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q10-a.png",
+      "page": 7,
+      "rect": [
+        304,
+        85,
+        393,
+        246
+      ],
+      "sha256": "4e8069083bf0d07f6f1af95645c848a35c67a92d0d76aec475f5e28fb5f9e9a8"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q10-b.png",
+      "page": 7,
+      "rect": [
+        397,
+        85,
+        485,
+        246
+      ],
+      "sha256": "95d136b7e3a44f6da2491a5408e59708dc2c2bf75b62acccb8cbb6a52c2ea524"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q10-c.png",
+      "page": 7,
+      "rect": [
+        489,
+        85,
+        577,
+        246
+      ],
+      "sha256": "fcaa9d32a30a812a8876b283b3f68c2728db9e0ca83255ada72da58a8dd36a1d"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q10-d.png",
+      "page": 7,
+      "rect": [
+        581,
+        85,
+        662,
+        246
+      ],
+      "sha256": "9ee03a4931ba27c16623f12604c1ef87d4bc00c0eb6ec75249bc3d9967d9af99"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q21-a.png",
+      "page": 9,
+      "rect": [
+        305,
+        85,
+        480,
+        215
+      ],
+      "sha256": "b90cf19ed49fa35e54529fd0a9f62b4b5fb7f0bfaca44e92a365862299348d5e"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q21-b.png",
+      "page": 9,
+      "rect": [
+        484,
+        85,
+        661,
+        215
+      ],
+      "sha256": "af79f856920d49f0a323ac096c305347d080e802a436ab89ab18524910523160"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q21-c.png",
+      "page": 9,
+      "rect": [
+        305,
+        219,
+        480,
+        335
+      ],
+      "sha256": "66d1d517cdfb8b768a62c674dde40482fc60ffbc4a2a8a296c6d788f069b499a"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q21-d.png",
+      "page": 9,
+      "rect": [
+        484,
+        219,
+        661,
+        335
+      ],
+      "sha256": "48d59e8997d9b0277a29b2f3a58ccd522bcb19431a08760607d61cfe7da53c18"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q23-a.png",
+      "page": 9,
+      "rect": [
+        305,
+        531,
+        480,
+        649
+      ],
+      "sha256": "ac23ddb69067aa6496ed19b0c3198854c676a704abf2fcc8472ffb066a5ac3cb"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q23-b.png",
+      "page": 9,
+      "rect": [
+        484,
+        531,
+        661,
+        649
+      ],
+      "sha256": "307d3cee1af977d3da6dc3298bf7643ad1a6f90c2abf9b9c6a06c847b1b7e263"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q23-c.png",
+      "page": 9,
+      "rect": [
+        305,
+        653,
+        480,
+        757
+      ],
+      "sha256": "4dcbc81ef31bcb013e6fd348e0d1585e1364d8a94ca661c7a6f8d4911273a32a"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q23-d.png",
+      "page": 9,
+      "rect": [
+        484,
+        653,
+        661,
+        757
+      ],
+      "sha256": "db498cea2359b2513bb8194fcfc8e9b308382a47505557edce597c142c17dd4a"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q26-a.png",
+      "page": 10,
+      "rect": [
+        305,
+        259,
+        480,
+        329
+      ],
+      "sha256": "05d3dc6a0055bb2f17d20b56aad6ea12ebe19e612d585e012f62498ed9193df3"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q26-b.png",
+      "page": 10,
+      "rect": [
+        484,
+        259,
+        661,
+        329
+      ],
+      "sha256": "03f9db8783e889cd580f3b5089698f350f5735a199dfa38ebe440f2fa7d2a2c2"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q26-c.png",
+      "page": 10,
+      "rect": [
+        305,
+        333,
+        480,
+        384
+      ],
+      "sha256": "74607ae6eee3526874350db9b617527de3551354ef6032142987159071ab1f35"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q26-d.png",
+      "page": 10,
+      "rect": [
+        484,
+        333,
+        661,
+        384
+      ],
+      "sha256": "77d84777691e536f1b8bb5c3bcbb87f05b9f06250e10aa68f4c550afca18a16e"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q27-a.png",
+      "page": 10,
+      "rect": [
+        305,
+        393,
+        480,
+        506
+      ],
+      "sha256": "9c6143c9dba83a450c4f220504ee35118dc57dac26d79e2d7e4f34c8cc2c7498"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q27-b.png",
+      "page": 10,
+      "rect": [
+        484,
+        393,
+        661,
+        506
+      ],
+      "sha256": "8d22d118998ff7c8362f1f7f630a9eea66a10ab24e1e1a1d93960d17a875f411"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q27-c.png",
+      "page": 10,
+      "rect": [
+        305,
+        510,
+        480,
+        603
+      ],
+      "sha256": "5e125acf30b54c23f613462e44aa27497ea8711234161f3b446a96c3621598fd"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q27-d.png",
+      "page": 10,
+      "rect": [
+        484,
+        510,
+        661,
+        603
+      ],
+      "sha256": "5a4aa09bbddf4244b24239a0ee747898bab4e4ca0a999bd3314c5d1f18f09776"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q29-marks.png",
+      "page": 10,
+      "rect": [
+        303,
+        723,
+        663,
+        835
+      ],
+      "sha256": "312b75e025382b4469fee36069293aa8a13f632d30d96e009baa0bc00d692c5e"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q33-a.png",
+      "page": 11,
+      "rect": [
+        301,
+        425,
+        387,
+        474
+      ],
+      "sha256": "00bebaf575bdbe9f4d5a4b4f8564ef0ca3d925c70626f55e4db4ddffd2851a97"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q33-b.png",
+      "page": 11,
+      "rect": [
+        391,
+        425,
+        478,
+        474
+      ],
+      "sha256": "fcbc802740bc9122df033a94f64df78877b714eb815f0596d0629eef7ce5a1ac"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q33-c.png",
+      "page": 11,
+      "rect": [
+        482,
+        425,
+        568,
+        474
+      ],
+      "sha256": "54424b4791267e96c793c460c467afbad2c791f3bc98ab8d27c5a471bf9d874e"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q33-d.png",
+      "page": 11,
+      "rect": [
+        572,
+        425,
+        652,
+        474
+      ],
+      "sha256": "aecbc6c3077afd0b9ee7e53d712cc45fad2e6debeb0c57a56e03f4116a4a596b"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q35-a.png",
+      "page": 11,
+      "rect": [
+        301,
+        553,
+        387,
+        590
+      ],
+      "sha256": "eb48054e9064b06cbaf9a2517c8d02ba1e36b2546025ba5b4cd3fe0a2f44ce77"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q35-b.png",
+      "page": 11,
+      "rect": [
+        391,
+        553,
+        478,
+        590
+      ],
+      "sha256": "71c17d9adfa1fe1c3dd98a857b6a22637897936256778a347579abe6f0655585"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q35-c.png",
+      "page": 11,
+      "rect": [
+        482,
+        553,
+        568,
+        590
+      ],
+      "sha256": "1c594e2e7bf9dba1a8b303992ca8d626e6d00127491f0483e40f9986f28cff0a"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q35-d.png",
+      "page": 11,
+      "rect": [
+        572,
+        553,
+        652,
+        590
+      ],
+      "sha256": "ea0b79decd9a9a238fa9cf2ff85a2e447e474a6dcdaa70477e9c04c4027a99e3"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q41-a.png",
+      "page": 12,
+      "rect": [
+        214,
+        88.4,
+        320,
+        198.7
+      ],
+      "sha256": "62d9aef86a094163bd37d736071473c1ef0aab2ddb719a60ddb9be196cef7562"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q41-b.png",
+      "page": 12,
+      "rect": [
+        324,
+        88.4,
+        430,
+        198.7
+      ],
+      "sha256": "99bb5073d536d4cefe1c1a5031109c697397f92a988c05b87e5f2e1973bb6f09"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q41-c.png",
+      "page": 12,
+      "rect": [
+        434,
+        88.4,
+        540,
+        198.7
+      ],
+      "sha256": "cc4b3c47b0fb68925b2e8c29857eaebd560117ac405ae1b02e0bbc396ae98df1"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q41-d.png",
+      "page": 12,
+      "rect": [
+        544,
+        88.4,
+        652,
+        198.7
+      ],
+      "sha256": "9bd3b7fe733f3f77830b262a65be3b7e9e820036006c998deb23617b3be1431b"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q42-a.png",
+      "page": 12,
+      "rect": [
+        214,
+        202.7,
+        320,
+        447.5
+      ],
+      "sha256": "8cfbba6f68a093230ef476d46c6129c2ca289b44678b968151b471aeafd20278"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q42-b.png",
+      "page": 12,
+      "rect": [
+        324,
+        202.7,
+        430,
+        447.5
+      ],
+      "sha256": "e16e43bf57041ad809c802ae696ffed21cea0f672fc6941ec8d3e51236d42186"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q42-c.png",
+      "page": 12,
+      "rect": [
+        434,
+        202.7,
+        540,
+        447.5
+      ],
+      "sha256": "9bf7973502fd47d3b42432cbd4c2161062db8104448c90796c109a32504fe4b2"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q42-d.png",
+      "page": 12,
+      "rect": [
+        544,
+        202.7,
+        652,
+        447.5
+      ],
+      "sha256": "1003364ea95c4405c2f461fb03964f20b14d7048b5cb088e2b37000eca755689"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q43-a.png",
+      "page": 12,
+      "rect": [
+        214,
+        451.5,
+        320,
+        600.5
+      ],
+      "sha256": "c9822d3f12100375afae295d589e22996ef28058fac455e485a5dac49a119877"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q43-b.png",
+      "page": 12,
+      "rect": [
+        324,
+        451.5,
+        430,
+        600.5
+      ],
+      "sha256": "274a84a22d0e859b5a032837db5c2a7d8bed5197b0768b0987e8e3d04a91df91"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q43-c.png",
+      "page": 12,
+      "rect": [
+        434,
+        451.5,
+        540,
+        600.5
+      ],
+      "sha256": "d37fff90531be8477a461a8d3291d09ee23260a118ca721ef82b52006831c679"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q43-d.png",
+      "page": 12,
+      "rect": [
+        544,
+        451.5,
+        652,
+        600.5
+      ],
+      "sha256": "9cf5ab5725627fd6182a7a21f20e75ad053b67d0900a405365dca6f407e62af7"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q44-a.png",
+      "page": 12,
+      "rect": [
+        214,
+        604.5,
+        320,
+        715.3
+      ],
+      "sha256": "859e8cbf9ec524177dabda02bba704b11343126257f0ebb8733eeab6affe3214"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q44-b.png",
+      "page": 12,
+      "rect": [
+        324,
+        604.5,
+        430,
+        715.3
+      ],
+      "sha256": "63ff46962a948ca224526f725bb6a9d26344d3f6376a04505be60597f2db0da3"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q44-c.png",
+      "page": 12,
+      "rect": [
+        434,
+        604.5,
+        540,
+        715.3
+      ],
+      "sha256": "c1e13b05c6d8bab18dd31d485c9a5c182f9ce6bc0e8a090e42b3f79a3d47217f"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q44-d.png",
+      "page": 12,
+      "rect": [
+        544,
+        604.5,
+        652,
+        715.3
+      ],
+      "sha256": "7e75f5ae60e8217f07526d8e7ecf25565f3b77d9ca2c9d091948da09212ceb1f"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q45-a.png",
+      "page": 12,
+      "rect": [
+        214,
+        719.3,
+        320,
+        963.4
+      ],
+      "sha256": "911fc006d95b1e17735339defb55ce2c280e69e8e18c202839994fafb3335545"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q45-b.png",
+      "page": 12,
+      "rect": [
+        324,
+        719.3,
+        430,
+        963.4
+      ],
+      "sha256": "bc9742eb9b85d51c0a7799e29513e9c70c1efbf9295c56b9d020a3361a12bb33"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q45-c.png",
+      "page": 12,
+      "rect": [
+        434,
+        719.3,
+        540,
+        963.4
+      ],
+      "sha256": "ef8829ab47d97b87ac729c803c44e08c1bbb559bd93a9664c817c8a429b4c46e"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q45-d.png",
+      "page": 12,
+      "rect": [
+        544,
+        719.3,
+        652,
+        963.4
+      ],
+      "sha256": "df73d00cc4ec41ca6bff2057d6bd3f41b7ee2a6f4005982b3baffa354b9c464b"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q46-a.png",
+      "page": 13,
+      "rect": [
+        214,
+        84.2,
+        320,
+        216
+      ],
+      "sha256": "e278f5fa2a088aa0d646fe9e0d05fb2d68468ebfe57f3b6272444fe1103e1a0b"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q46-b.png",
+      "page": 13,
+      "rect": [
+        324,
+        84.2,
+        430,
+        216
+      ],
+      "sha256": "7b38b7c6e01aaa5337cdb856637a96ad000e66e415b3b6eda005c2a80fbc0c0c"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q46-c.png",
+      "page": 13,
+      "rect": [
+        434,
+        84.2,
+        540,
+        216
+      ],
+      "sha256": "10e1c744d7e0f936f19fd400b4bd13e6bc836fec965a3497781176f31107b833"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q46-d.png",
+      "page": 13,
+      "rect": [
+        544,
+        84.2,
+        652,
+        216
+      ],
+      "sha256": "feaadfbd72d42e757913cc8da8c2df6c9c7acc0f71e23642c4fc14de78105e56"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q47-a.png",
+      "page": 13,
+      "rect": [
+        214,
+        220,
+        320,
+        369.4
+      ],
+      "sha256": "32a2a19f1ffc623264a4221d2d24a6bcb2c36f8225ec9a0ae120a8b4979bc705"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q47-b.png",
+      "page": 13,
+      "rect": [
+        324,
+        220,
+        430,
+        369.4
+      ],
+      "sha256": "ae146ef8f3c5640cf0139601e79251b4df0541c26c1ae06c947c170bda618acb"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q47-c.png",
+      "page": 13,
+      "rect": [
+        434,
+        220,
+        540,
+        369.4
+      ],
+      "sha256": "5752bdcda1d2798855dc184e4014b3b494d2f2f27d7f4a383ac8d7bafeff5c5e"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q47-d.png",
+      "page": 13,
+      "rect": [
+        544,
+        220,
+        652,
+        369.4
+      ],
+      "sha256": "28d393c2b3245a70d243e25b65d0397e3213180c6fdad519430f3acd3c65d364"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q48-a.png",
+      "page": 13,
+      "rect": [
+        214,
+        373.4,
+        320,
+        607.8
+      ],
+      "sha256": "742dc0c8a830088082871f6b42209724880c4e9cb8c53d59c4e5ffb08d23e909"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q48-b.png",
+      "page": 13,
+      "rect": [
+        324,
+        373.4,
+        430,
+        607.8
+      ],
+      "sha256": "3f2b87dfe7096a22ef8fd7d8a23a4023ccd30a0cf2625b3fe8790b03418585ef"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q48-c.png",
+      "page": 13,
+      "rect": [
+        434,
+        373.4,
+        540,
+        607.8
+      ],
+      "sha256": "51ce9ad9c4ab45340671de9803985e0c6beb4ab3e2c535cce29f5354973b54e8"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q48-d.png",
+      "page": 13,
+      "rect": [
+        544,
+        373.4,
+        652,
+        607.8
+      ],
+      "sha256": "c1fe7e52d54aec8377a29b15d43d620eb45b08e1337a61636ed80411fc375036"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q49-a.png",
+      "page": 13,
+      "rect": [
+        214,
+        611.8,
+        320,
+        727.1
+      ],
+      "sha256": "ec3fab129f807c767e488b51c98c1249fe37f834f4e45ae5a7e127cc11ba1288"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q49-b.png",
+      "page": 13,
+      "rect": [
+        324,
+        611.8,
+        430,
+        727.1
+      ],
+      "sha256": "48f4eace2fd1a08f66d7211f9124f36134de364b06d1d0e540069242d860fc6e"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q49-c.png",
+      "page": 13,
+      "rect": [
+        434,
+        611.8,
+        540,
+        727.1
+      ],
+      "sha256": "cac64b9306dbe1cf0c199cfa10c9bfb165deb6aaaeb99ad342d69b46777188e3"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q49-d.png",
+      "page": 13,
+      "rect": [
+        544,
+        611.8,
+        652,
+        727.1
+      ],
+      "sha256": "4d33cf7c65df1bd19dd15c8308a03a047db43ab3ecb3330cf53b9c11045cb786"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q50-a.png",
+      "page": 13,
+      "rect": [
+        214,
+        731.1,
+        320,
+        879.8
+      ],
+      "sha256": "62d6b56575ef5beea5521b7f4ba6d473306878a27fc65e8f3786c300ea5b9f91"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q50-b.png",
+      "page": 13,
+      "rect": [
+        324,
+        731.1,
+        430,
+        879.8
+      ],
+      "sha256": "56ea50edaabf439ea90b1345e9e4bf2656e1ea1ae3b3ef0e271d47793cf98007"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q50-c.png",
+      "page": 13,
+      "rect": [
+        434,
+        731.1,
+        540,
+        879.8
+      ],
+      "sha256": "8e5219cffdd3923f18549d3ed1f613826916d5acced6a00fb66fd38cc8f1424b"
+    },
+    {
+      "path": "public/images/denko2/2026-second/q50-d.png",
+      "page": 13,
+      "rect": [
+        544,
+        731.1,
+        652,
+        879.8
+      ],
+      "sha256": "6c9f078d0207441c74953cd4969a7891b330238713104fda51a5698f67c301bc"
+    }
+  ],
+  "transcriptionNotes": [
+    "原本のΩがPDFテキストではW又は空白になるため，原図を確認してΩへ復元。",
+    "問7の×印，問25の空欄，問29のPSE図形を原図で確認。",
+    "図形・写真の肢は原図を併記し，表示内容の文字による説明を付記。",
+    "配線図20問に15頁の全図と11頁の共通条件を併記。図中の照明対応名イ等は原本どおり。"
+  ],
+  "referenceEvidence": [
+    {
+      "url": "https://laws.e-gov.go.jp/law/409M50000400052",
+      "retrievedUrl": "https://laws.e-gov.go.jp/api/1/lawdata/409M50000400052",
+      "sha256": "5df0475457af74465c899504c10544a19d08a21df224f581b89fe1e0d7cdfcc9",
+      "sections": []
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/law/335AC0000000139",
+      "retrievedUrl": "https://laws.e-gov.go.jp/api/1/lawdata/335AC0000000139",
+      "sha256": "10a1d9a16dca983ab5289fc150bd984ff63724bb878dd9e9af70fbc56ce9cf8b",
+      "sections": [
+        {
+          "article": "2",
+          "text": "（用語の定義）第二条この法律において「一般用電気工作物等」とは、一般用電気工作物（電気事業法（昭和三十九年法律第百七十号）第三十八条第一項に規定する一般用電気工作物をいう。以下同じ。）及び小規模事業用電気工作物（同条第三項に規定する小規模事業用電気工作物をいう。以下同じ。）をいう。２この法律において「自家用電気工作物」とは、電気事業法第三十八条第四項に規定する自家用電気工作物（小規模事業用電気工作物及び発電所、変電所、最大電力五百キロワット以上の需要設備（電気を使用するために、その使用の場所と同一の構内（発電所又は変電所の構内を除く。）に設置する電気工作物（同法第二条第一項第十八号に規定する電気工作物をいう。）の総合体をいう。）その他の経済産業省令で定めるものを除く。）をいう。３この法律において「電気工事」とは、一般用電気工作物等又は自家用電気工作物を設置し、又は変更する工事をいう。ただし、政令で定める軽微な工事を除く。４この法律において「電気工事士」とは、次条第一項に規定する第一種電気工事士及び同条第二項に規定する第二種電気工事士をいう。"
+        },
+        {
+          "article": "3",
+          "text": "（電気工事士等）第三条第一種電気工事士免状の交付を受けている者（以下「第一種電気工事士」という。）でなければ、自家用電気工作物に係る電気工事（第三項に規定する電気工事を除く。第四項において同じ。）の作業（自家用電気工作物の保安上支障がないと認められる作業であつて、経済産業省令で定めるものを除く。）に従事してはならない。２第一種電気工事士又は第二種電気工事士免状の交付を受けている者（以下「第二種電気工事士」という。）でなければ、一般用電気工作物等に係る電気工事の作業（一般用電気工作物等の保安上支障がないと認められる作業であつて、経済産業省令で定めるものを除く。）に従事してはならない。３自家用電気工作物に係る電気工事のうち経済産業省令で定める特殊なもの（以下「特殊電気工事」という。）については、当該特殊電気工事に係る特種電気工事資格者認定証の交付を受けている者（以下「特種電気工事資格者」という。）でなければ、その作業（自家用電気工作物の保安上支障がないと認められる作業であつて、経済産業省令で定めるものを除く。）に従事してはならない。４自家用電気工作物に係る電気工事のうち経済産業省令で定める簡易なもの（以下「簡易電気工事」という。）については、第一項の規定にかかわらず、認定電気工事従事者認定証の交付を受けている者（以下「認定電気工事従事者」という。）は、その作業に従事することができる。"
+        }
+      ]
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/law/335M50000400097",
+      "retrievedUrl": "https://laws.e-gov.go.jp/api/1/lawdata/335M50000400097",
+      "sha256": "df95c2e503a33a27d770bac3f899f6d4a11389100c1406a7fb4549fbb79c2f75",
+      "sections": [
+        {
+          "article": "2",
+          "text": "（軽微な作業）第二条法第三条第一項の自家用電気工作物の保安上支障がないと認められる作業であつて、経済産業省令で定めるものは、次のとおりとする。一次に掲げる作業以外の作業イ電線相互を接続する作業（電気さく（定格一次電圧三百ボルト以下であつて感電により人体に危害を及ぼすおそれがないように出力電流を制限することができる電気さく用電源装置から電気を供給されるものに限る。以下同じ。）の電線を接続するものを除く。）ロがいしに電線（電気さくの電線及びそれに接続する電線を除く。ハ、ニ及びチにおいて同じ。）を取り付け、又はこれを取り外す作業ハ電線を直接造営材その他の物件（がいしを除く。）に取り付け、又はこれを取り外す作業ニ電線管、線樋ぴ、ダクトその他これらに類する物に電線を収める作業ホ配線器具を造営材その他の物件に取り付け、若しくはこれを取り外し、又はこれに電線を接続する作業（露出型点滅器又は露出型コンセントを取り換える作業を除く。）ヘ電線管を曲げ、若しくはねじ切りし、又は電線管相互若しくは電線管とボックスその他の附属品とを接続する作業ト金属製のボックスを造営材その他の物件に取り付け、又はこれを取り外す作業チ電線、電線管、線樋ぴ、ダクトその他これらに類する物が造営材を貫通する部分に金属製の防護装置を取り付け、又はこれを取り外す作業リ金属製の電線管、線樋ぴ、ダクトその他これらに類する物又はこれらの附属品を、建造物のメタルラス張り、ワイヤラス張り又は金属板張りの部分に取り付け、又はこれらを取り外す作業ヌ配電盤を造営材に取り付け、又はこれを取り外す作業ル接地線（電気さくを使用するためのものを除く。以下この条において同じ。）を自家用電気工作物（自家用電気工作物のうち最大電力五百キロワット未満の需要設備において設置される電気機器であつて電圧六百ボルト以下で使用するものを除く。）に取り付け、若しくはこれを取り外し、接地線相互若しくは接地線と接地極（電気さくを使用するためのものを除く。以下この条において同じ。）とを接続し、又は接地極を地面に埋設する作業ヲ電圧六百ボルトを超えて使用する電気機器に電線を接続する作業二第一種電気工事士が従事する前号イからヲまでに掲げる作業を補助する作業２法第三条第二項の一般用電気工作物等の保安上支障がないと認められる作業であつて、経済産業省令で定めるものは、次のとおりとする。一次に掲げる作業以外の作業イ前項第一号イからヌまで及びヲに掲げる作業ロ接地線を一般用電気工作物等（電圧六百ボルト以下で使用する電気機器を除く。）に取り付け、若しくはこれを取り外し、接地線相互若しくは接地線と接地極とを接続し、又は接地極を地面に埋設する作業二電気工事士が従事する前号イ及びロに掲げる作業を補助する作業"
+        }
+      ]
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/law/336AC0000000234",
+      "retrievedUrl": "https://laws.e-gov.go.jp/api/1/lawdata/336AC0000000234",
+      "sha256": "f340c4bfadd6c51fad3fd0e9ceafb09cc3561d9795d1e8d1401371a10beedbd6",
+      "sections": []
+    },
+    {
+      "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishaku.pdf",
+      "title": "電気設備の技術基準の解釈（令和7年11月20日改正）",
+      "savedSourcePath": "docs/evidence/denken3/input/review/meti-denki-interpretation-20251120.pdf",
+      "sha256": "7e0c8969263999fdfccf843d987ca8429ea2823aee1004e70471e6d4d812f7fd",
+      "retrievalNote": "公式の現行掲載URLは403。公式索引の同版表記と検索インデックスを確認し、リポジトリ保存済みの同版原典を全文抽出して対象条項を照合。",
+      "sections": [
+        {
+          "article": 17,
+          "pdfPage": 31
+        },
+        {
+          "article": 29,
+          "pdfPage": 38
+        },
+        {
+          "article": 33,
+          "pdfPage": 41
+        },
+        {
+          "article": 146,
+          "pdfPage": 145
+        },
+        {
+          "article": 148,
+          "pdfPage": 147
+        },
+        {
+          "article": 149,
+          "pdfPage": 148
+        },
+        {
+          "article": 164,
+          "pdfPage": 158
+        },
+        {
+          "article": 181,
+          "pdfPage": 179
+        }
+      ]
+    },
+    {
+      "url": "https://www.businessone.co.jp/DL/SAK/symbols.pdf",
+      "title": "作図名人シンボル一覧",
+      "pdfPage": 17,
+      "sha256": "4872e148a9f568598a9363bcefcf83733317efef824b17d49596079ff7d7b4f3",
+      "checked": "CPはチェーンペンダント、CHはシャンデリアの図記号。原本画像を確認。"
+    }
+  ],
+  "inheritedSources": [
+    {
+      "path": "data/questions/denko2/drafts/20260524.json",
+      "sha256": "944f68963559d1c95cfc0b5e6b2756707a301b37ab00c596e0071e0117b219ba"
+    },
+    {
+      "path": "data/questions/denko2/latest.ts",
+      "sha256": "18401d6c8fe068cb33417dda541612835ac2244824295b5f71d6dae77f27be81"
+    },
+    {
+      "path": "data/questions/denko2/reviewed.ts",
+      "sha256": "8f02026cb4ce9099a6aaeb25d2152fe2d6abe2421da073eef9becb56c70e848c"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20240526-q01-05.json",
+      "sha256": "2bf700d5f078599d1b2db9ad13919ea1f9069c99b9bc110d5c86518c52889a56"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20240526-q06-10.json",
+      "sha256": "af38a24f11b3489e2a5d66352c29c04c835c21e8e08e485a75b666e0c93c5651"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20240526-q11-15.json",
+      "sha256": "8977cd94f75d65aeea929fad1cee1fc6c38da57c7d7e0263b71bc24c73efd655"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20240526-q16-20.json",
+      "sha256": "792217448cf1f423c7524f32bbddf69327dbfb977208d240b7e3e09be6e98c57"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20240526-q21-25.json",
+      "sha256": "c9fd9be8dad19c4294010eba42f60ddf34e57188166a00e7da14a9b93e010afb"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20240526-q26-30.json",
+      "sha256": "5cd19c287d8519f114c78a5eb1754e2f54ba4f40161a64971d192486d3c74d22"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20240526-q31-35.json",
+      "sha256": "c2ae6434c76eaf7f8d565195741177995513c1856367201a62d105da61e6e650"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20240526-q36-40.json",
+      "sha256": "60237fa2b9dbd452b4a2d7af19eebcb2ac741212afb9d44679aa145d5c73aeec"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20240526-q41-45.json",
+      "sha256": "0cb7c3de06fe169c416fa5dd7dfc123f95c61bb4dfb97f1cafd3d5ca4c6c149e"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20240526-q46-50.json",
+      "sha256": "72d9fb5b7c9c86457f72e219627109f50e176b070dd1fa4eef9624420dcbcbd2"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20241027-q01-05.json",
+      "sha256": "3be6b2874b1172bc74f65d9764918591b05eb7495a179097ca419386c272d484"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20241027-q06-10.json",
+      "sha256": "3914e252b0d7817e676e7ed36b2fbee54d664e19e2b5da1af2e28f46b173045c"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20241027-q11-15.json",
+      "sha256": "8b256ed495da7d7968747e743bfc67cae98e749f0da064258e85621ec15fb66c"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20241027-q16-20.json",
+      "sha256": "3f706bea39fa54886df55dca5f19846babdf588eef60d454d9017787a07f7793"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20241027-q21-25.json",
+      "sha256": "1139dd75a81c0391c3f728d4ef97d795da1a0821df78f6d1d014b378871aed33"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20241027-q26-30.json",
+      "sha256": "631785038d3ede78f3c0553a6916fd0d2b448ee4c565e3094e874d0bbd0fbd5f"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20241027-q31-35.json",
+      "sha256": "540935f96a8006972e48990358ffee24b3fc294aa48f0338a8e4fcd50e29a487"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20241027-q36-40.json",
+      "sha256": "4d23a99496a3c908727cc0573660a93551cad9c7aa547479924d2142bc07d3a3"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20241027-q41-45.json",
+      "sha256": "9d3dafcc12f62314a390c3faf94f338f292727a4343e8322379fffb17c4aa8d0"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20241027-q46-50.json",
+      "sha256": "045d9e48204eca232dd24e3295048becc9f82773ea7ef6cff588e847d65a00b1"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20250525-q01-05.json",
+      "sha256": "fc652868f50d40d16d4dc6266d70227e4dcad98bc2eb3d354ee7cc92f4c0cc9b"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20250525-q06-10.json",
+      "sha256": "215bc2a696042232e3fe9292f0540fab661ed35b041345f7b93c418c2627cbe4"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20250525-q11-15.json",
+      "sha256": "50ea5171d45ff4df2d3206b29da9e83e28e809c5881ddc76a9f9e29821434a4a"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20250525-q16-20.json",
+      "sha256": "6612edf756048902d3cf12d5936c4b730d3902dd4c0f76120c856669a82c25a8"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20250525-q21-25.json",
+      "sha256": "69c7e14554daec395f130317b70725de57c8ca6dadebf4ebe2f0c3a52b65bb41"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20250525-q26-30.json",
+      "sha256": "b18b6d558510425e734e70e7ad9b27c4b385ffa5f21a1dab070bded42dc1c83d"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20250525-q31-35.json",
+      "sha256": "505e37d12cdad1d1479e980692b972fd3d637edb660726cd1fae6f7d6e2dc2b8"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20250525-q36-40.json",
+      "sha256": "7cb78c21895413d940039508dcfab4eeb9cbdaa29c6a9180f29d897b473269c7"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20250525-q41-45.json",
+      "sha256": "0388d1353f311f333de8486d0c36bdbad49e0f85b9368bc1f1842b0ce5d6922c"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20250525-q46-50.json",
+      "sha256": "dd32dc1371ed6890d84cdbc773f148198fd7108612b870c6bc80d8bbd5f3f5d2"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20251026-q01-05.json",
+      "sha256": "70833dd598076926004e0a5be77906d7a0ef1770bfadd42c4b6cbfcde9caecff"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20251026-q06-10.json",
+      "sha256": "0ed04d87a682652b53edd6ec9feffe110bb83e7216fe2c107975f61736af75c3"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20251026-q11-15.json",
+      "sha256": "2fbd8691ae791fa1f09283c2b38fc56bd0c6b3b963184cb6ca4a21ccf68ff9f6"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20251026-q16-20.json",
+      "sha256": "ee8124a6752f209bba24821e0d9977d2dc87453f8d8fe466ab140a3d6dcad8e4"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20251026-q21-25.json",
+      "sha256": "097f144a250c7ef72eba93f880c16cb606b870f1c769bf48b6f9b6ae4df4591c"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20251026-q26-30.json",
+      "sha256": "46f9bd7eccf18cd2d489b420f072d443649e4247cc8f8c1d837eed2759f8ee92"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20251026-q31-35.json",
+      "sha256": "772f8c2b37c683d39b44c0b4d365f7f30309a3c0ae18e93fc15a82f18c44dd4a"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20251026-q36-40.json",
+      "sha256": "4a070fe6ee16f9b025e3118d7c12ab14896bf8ddef116debb405df5c40998b92"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20251026-q41-45.json",
+      "sha256": "5f9ac873aea16f0138634be7d08b3a1b5c7eb4f5b0a819593d028db2108bce0f"
+    },
+    {
+      "path": "data/questions/denko2/reviewed/20251026-q46-50.json",
+      "sha256": "97b6bb132299ca85304a33a78e80bcdcd311f173d7f1a74136b83f783a9bc8d2"
+    },
+    {
+      "path": "data/questions/denko2/skills-draft.json",
+      "sha256": "1576e2be4677912991e08bdd5871b7d16e655bb37a3dc3235e0776dc66a0ea37"
+    }
+  ],
+  "verification": {
+    "officialAnswerIndependentMatches": 50,
+    "textExtractionChecks": [
+      {
+        "number": 1,
+        "bodyIndependentMatch": null,
+        "choicesIndependentMatch": true
+      },
+      {
+        "number": 2,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": true
+      },
+      {
+        "number": 3,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": true
+      },
+      {
+        "number": 4,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": true
+      },
+      {
+        "number": 5,
+        "bodyIndependentMatch": null,
+        "choicesIndependentMatch": true
+      },
+      {
+        "number": 6,
+        "bodyIndependentMatch": null,
+        "choicesIndependentMatch": true
+      },
+      {
+        "number": 7,
+        "bodyIndependentMatch": null,
+        "choicesIndependentMatch": true
+      },
+      {
+        "number": 8,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": true
+      },
+      {
+        "number": 9,
+        "bodyIndependentMatch": null,
+        "choicesIndependentMatch": null
+      },
+      {
+        "number": 10,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": null
+      },
+      {
+        "number": 11,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": true
+      },
+      {
+        "number": 12,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": true
+      },
+      {
+        "number": 13,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": null
+      },
+      {
+        "number": 14,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": true
+      },
+      {
+        "number": 15,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": true
+      },
+      {
+        "number": 16,
+        "bodyIndependentMatch": null,
+        "choicesIndependentMatch": true
+      },
+      {
+        "number": 17,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": true
+      },
+      {
+        "number": 18,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": true
+      },
+      {
+        "number": 19,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": true
+      },
+      {
+        "number": 20,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": true
+      },
+      {
+        "number": 21,
+        "bodyIndependentMatch": null,
+        "choicesIndependentMatch": null
+      },
+      {
+        "number": 22,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": true
+      },
+      {
+        "number": 23,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": null
+      },
+      {
+        "number": 24,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": true
+      },
+      {
+        "number": 25,
+        "bodyIndependentMatch": null,
+        "choicesIndependentMatch": true
+      },
+      {
+        "number": 26,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": null
+      },
+      {
+        "number": 27,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": null
+      },
+      {
+        "number": 28,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": true
+      },
+      {
+        "number": 29,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": null
+      },
+      {
+        "number": 30,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": true
+      },
+      {
+        "number": 31,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": true
+      },
+      {
+        "number": 32,
+        "bodyIndependentMatch": null,
+        "choicesIndependentMatch": true
+      },
+      {
+        "number": 33,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": null
+      },
+      {
+        "number": 34,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": true
+      },
+      {
+        "number": 35,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": null
+      },
+      {
+        "number": 36,
+        "bodyIndependentMatch": null,
+        "choicesIndependentMatch": true
+      },
+      {
+        "number": 37,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": true
+      },
+      {
+        "number": 38,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": true
+      },
+      {
+        "number": 39,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": true
+      },
+      {
+        "number": 40,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": true
+      },
+      {
+        "number": 41,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": null
+      },
+      {
+        "number": 42,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": null
+      },
+      {
+        "number": 43,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": null
+      },
+      {
+        "number": 44,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": null
+      },
+      {
+        "number": 45,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": null
+      },
+      {
+        "number": 46,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": null
+      },
+      {
+        "number": 47,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": null
+      },
+      {
+        "number": 48,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": null
+      },
+      {
+        "number": 49,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": null
+      },
+      {
+        "number": 50,
+        "bodyIndependentMatch": true,
+        "choicesIndependentMatch": null
+      }
+    ],
+    "manualTranscriptionReview": "PDF5～13頁・15頁の原図と全50問を目視照合。図形・写真の肢は原図80点で照合。テキスト抽出のΩ欠落、×印、空欄、下付き文字を原図に従って復元。",
+    "visualCropReview": "全80点のコンタクトシートを確認し、図中S・I・aと円弧の切れを修正。問6・21は図と重ならない隣接本文の末尾だけを除外し、その座標を記録。"
+  }
+}

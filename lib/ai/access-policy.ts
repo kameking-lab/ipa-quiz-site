@@ -1,4 +1,4 @@
-export const AI_FEATURES = ["copilot", "exam-library", "generate-question", "scoring", "essay-grade"] as const;
+export const AI_FEATURES = ["copilot", "exam-library", "scoring", "essay-grade"] as const;
 export type AiFeature = typeof AI_FEATURES[number];
 
 /** Approved 2026-10-31 business values. Runtime activation remains independently gated. */

@@ -7,6 +7,7 @@ export const runtime = "nodejs";
 
 const BodySchema = z.object({
   ids: z.array(z.string().min(1).max(120)).min(1).max(2000),
+  includeTopics: z.boolean().optional(),
 });
 
 export async function POST(req: Request) {
@@ -17,10 +18,11 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "invalid body" }, { status: 400 });
   }
 
-  const meta: Array<{ id: string; exam: string; category: string; label: string }> = [];
+  const meta: Array<{ id: string; exam: string; category: string; label: string; topicTags?: string[] }> = [];
   for (const id of parsed.ids) {
     const q = await findQuestionById(id);
-    if (q) meta.push({ id: q.id, exam: q.exam, category: q.category, label: questionHeading(q) });
+    if (q) meta.push({ id: q.id, exam: q.exam, category: q.category, label: questionHeading(q),
+      ...(parsed.includeTopics ? { topicTags: q.topicTags } : {}) });
   }
 
   return NextResponse.json({ meta });

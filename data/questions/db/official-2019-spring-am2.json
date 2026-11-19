@@ -1,0 +1,877 @@
+[
+  {
+    "id": "db-2019h-am2-q1",
+    "exam": "db",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 1,
+    "category": "データベーススペシャリスト",
+    "topicTags": [
+      "CAP定理"
+    ],
+    "difficulty": 4,
+    "explanation": "CAPの三要素は一貫性、可用性、分断耐性。通信の分断が起きた状況では、前二つを同時に保証することはできない。",
+    "sourceAttribution": "出典：IPA 2019年度春期 データベーススペシャリスト試験 午前II 問1",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問1 CAP定理",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "イ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2019-spring-am2/q01.webp"
+    ],
+    "imageAltTexts": [
+      "問1の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_qs.pdf#page=3",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_ans.pdf"
+  },
+  {
+    "id": "db-2019h-am2-q2",
+    "exam": "db",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 2,
+    "category": "データベーススペシャリスト",
+    "topicTags": [
+      "チェックポイントの頻度"
+    ],
+    "difficulty": 4,
+    "explanation": "ログとバッファの双方について消費速度と上限を対応させる。問題の切替えと初期化の順序から発生回数を数える。",
+    "sourceAttribution": "出典：IPA 2019年度春期 データベーススペシャリスト試験 午前II 問2",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問2 チェックポイントの頻度",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "ウ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2019-spring-am2/q02.webp"
+    ],
+    "imageAltTexts": [
+      "問2の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_qs.pdf#page=3",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_ans.pdf"
+  },
+  {
+    "id": "db-2019h-am2-q3",
+    "exam": "db",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 3,
+    "category": "データベーススペシャリスト",
+    "topicTags": [
+      "組織階層のデータモデル"
+    ],
+    "difficulty": 4,
+    "explanation": "親が一つの関係と、子が複数になり得る関係を各階層で確かめる。その多重度がモデルに表れているかを確認する。",
+    "sourceAttribution": "出典：IPA 2019年度春期 データベーススペシャリスト試験 午前II 問3",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問3 組織階層のデータモデル",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "エ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2019-spring-am2/q03.webp"
+    ],
+    "imageAltTexts": [
+      "問3の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_qs.pdf#page=4",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_ans.pdf"
+  },
+  {
+    "id": "db-2019h-am2-q4",
+    "exam": "db",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 4,
+    "category": "データベーススペシャリスト",
+    "topicTags": [
+      "プロパティグラフ"
+    ],
+    "difficulty": 4,
+    "explanation": "頂点と辺を図で対応させ、属性を持つ場所と辺の向きを確認する。名称だけが一致しても関係が逆なら合わない。",
+    "sourceAttribution": "出典：IPA 2019年度春期 データベーススペシャリスト試験 午前II 問4",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問4 プロパティグラフ",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "イ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2019-spring-am2/q04.webp"
+    ],
+    "imageAltTexts": [
+      "問4の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_qs.pdf#page=5",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_ans.pdf"
+  },
+  {
+    "id": "db-2019h-am2-q5",
+    "exam": "db",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 5,
+    "category": "データベーススペシャリスト",
+    "topicTags": [
+      "表の関係とE-R図"
+    ],
+    "difficulty": 4,
+    "explanation": "各表の外部キーがどの主キーを参照するかを追う。子の行が複数存在できる場合の多重度も確認する。",
+    "sourceAttribution": "出典：IPA 2019年度春期 データベーススペシャリスト試験 午前II 問5",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問5 表の関係とE-R図",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "イ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2019-spring-am2/q05.webp"
+    ],
+    "imageAltTexts": [
+      "問5の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_qs.pdf#page=6",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_ans.pdf"
+  },
+  {
+    "id": "db-2019h-am2-q6",
+    "exam": "db",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 6,
+    "category": "データベーススペシャリスト",
+    "topicTags": [
+      "学期ごとの履修履歴"
+    ],
+    "difficulty": 4,
+    "explanation": "学生と授業科目が同じでも別の学期なら別の履修になる。学期を識別できる属性または関係を持たせる。",
+    "sourceAttribution": "出典：IPA 2019年度春期 データベーススペシャリスト試験 午前II 問6",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問6 学期ごとの履修履歴",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "エ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2019-spring-am2/q06.webp"
+    ],
+    "imageAltTexts": [
+      "問6の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_qs.pdf#page=7",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_ans.pdf"
+  },
+  {
+    "id": "db-2019h-am2-q7",
+    "exam": "db",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 7,
+    "category": "データベーススペシャリスト",
+    "topicTags": [
+      "関係の正規化"
+    ],
+    "difficulty": 4,
+    "explanation": "正規形ごとに扱う従属性が異なる。関数従属、独立した多値従属、結合従属のどれが問題になるかを分けて読む。",
+    "sourceAttribution": "出典：IPA 2019年度春期 データベーススペシャリスト試験 午前II 問7",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問7 関係の正規化",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "ウ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2019-spring-am2/q07.webp"
+    ],
+    "imageAltTexts": [
+      "問7の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_qs.pdf#page=7",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_ans.pdf"
+  },
+  {
+    "id": "db-2019h-am2-q8",
+    "exam": "db",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 8,
+    "category": "データベーススペシャリスト",
+    "topicTags": [
+      "第3正規形の関数従属"
+    ],
+    "difficulty": 4,
+    "explanation": "非自明な関数従属で、決定項がスーパーキーでない場合は右辺が候補キーの一部かを確認する。",
+    "sourceAttribution": "出典：IPA 2019年度春期 データベーススペシャリスト試験 午前II 問8",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問8 第3正規形の関数従属",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "イ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2019-spring-am2/q08.webp"
+    ],
+    "imageAltTexts": [
+      "問8の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_qs.pdf#page=8",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_ans.pdf"
+  },
+  {
+    "id": "db-2019h-am2-q9",
+    "exam": "db",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 9,
+    "category": "データベーススペシャリスト",
+    "topicTags": [
+      "SQLの隔離性水準"
+    ],
+    "difficulty": 4,
+    "explanation": "未コミット読取り、再読取りでの値の変化、検索結果の行の増減を分け、それぞれに対応する隔離性水準を確認する。",
+    "sourceAttribution": "出典：IPA 2019年度春期 データベーススペシャリスト試験 午前II 問9",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問9 SQLの隔離性水準",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "ア",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2019-spring-am2/q09.webp"
+    ],
+    "imageAltTexts": [
+      "問9の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_qs.pdf#page=8",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_ans.pdf"
+  },
+  {
+    "id": "db-2019h-am2-q10",
+    "exam": "db",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 10,
+    "category": "データベーススペシャリスト",
+    "topicTags": [
+      "トランザクションの実行順序"
+    ],
+    "difficulty": 4,
+    "explanation": "データ項目ごとに、先行する読書きと後続する読書きの競合を調べる。依存関係が循環するかも確かめる。",
+    "sourceAttribution": "出典：IPA 2019年度春期 データベーススペシャリスト試験 午前II 問10",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問10 トランザクションの実行順序",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "イ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2019-spring-am2/q10.webp"
+    ],
+    "imageAltTexts": [
+      "問10の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_qs.pdf#page=9",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_ans.pdf"
+  },
+  {
+    "id": "db-2019h-am2-q11",
+    "exam": "db",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 11,
+    "category": "データベーススペシャリスト",
+    "topicTags": [
+      "社員取得資格のSQL"
+    ],
+    "difficulty": 4,
+    "explanation": "出力で重複が残るか、対象外の行がどの条件で除かれるかを確認し、空欄に入るSQLの句を選ぶ。",
+    "sourceAttribution": "出典：IPA 2019年度春期 データベーススペシャリスト試験 午前II 問11",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問11 社員取得資格のSQL",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "ア",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2019-spring-am2/q11.webp"
+    ],
+    "imageAltTexts": [
+      "問11の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_qs.pdf#page=10",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_ans.pdf"
+  },
+  {
+    "id": "db-2019h-am2-q12",
+    "exam": "db",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 12,
+    "category": "データベーススペシャリスト",
+    "topicTags": [
+      "関係の積集合"
+    ],
+    "difficulty": 4,
+    "explanation": "RとSに共通する組だけが積集合に残る。Rから、Sにない組を除けば同じ結果を得られる。",
+    "sourceAttribution": "出典：IPA 2019年度春期 データベーススペシャリスト試験 午前II 問12",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問12 関係の積集合",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "ア",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2019-spring-am2/q12.webp"
+    ],
+    "imageAltTexts": [
+      "問12の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_qs.pdf#page=11",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_ans.pdf"
+  },
+  {
+    "id": "db-2019h-am2-q13",
+    "exam": "db",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 13,
+    "category": "データベーススペシャリスト",
+    "topicTags": [
+      "異なる射影の数"
+    ],
+    "difficulty": 4,
+    "explanation": "各属性を選ぶか選ばないかで数える。属性の順番を別扱いするのではなく、射影に使う属性の集合を数える。",
+    "sourceAttribution": "出典：IPA 2019年度春期 データベーススペシャリスト試験 午前II 問13",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問13 異なる射影の数",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "イ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2019-spring-am2/q13.webp"
+    ],
+    "imageAltTexts": [
+      "問13の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_qs.pdf#page=11",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_ans.pdf"
+  },
+  {
+    "id": "db-2019h-am2-q14",
+    "exam": "db",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 14,
+    "category": "データベーススペシャリスト",
+    "topicTags": [
+      "会員属性の柔軟な追加"
+    ],
+    "difficulty": 4,
+    "explanation": "属性の定義と会員ごとの値を分ける。定義を追加することで属性を増やせるかと、値の整合性を確かめる。",
+    "sourceAttribution": "出典：IPA 2019年度春期 データベーススペシャリスト試験 午前II 問14",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問14 会員属性の柔軟な追加",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "ウ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2019-spring-am2/q14.webp"
+    ],
+    "imageAltTexts": [
+      "問14の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_qs.pdf#page=12",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_ans.pdf"
+  },
+  {
+    "id": "db-2019h-am2-q15",
+    "exam": "db",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 15,
+    "category": "データベーススペシャリスト",
+    "topicTags": [
+      "分散データベースの更新"
+    ],
+    "difficulty": 4,
+    "explanation": "参加する各サイトの準備結果を確認し、全体でコミットするか中止するかを調整する。確定を一部だけに残さない。",
+    "sourceAttribution": "出典：IPA 2019年度春期 データベーススペシャリスト試験 午前II 問15",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問15 分散データベースの更新",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "エ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2019-spring-am2/q15.webp"
+    ],
+    "imageAltTexts": [
+      "問15の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_qs.pdf#page=13",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_ans.pdf"
+  },
+  {
+    "id": "db-2019h-am2-q16",
+    "exam": "db",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 16,
+    "category": "データベーススペシャリスト",
+    "topicTags": [
+      "分散データベースの処理"
+    ],
+    "difficulty": 4,
+    "explanation": "サイト間でどの処理を分担し、どの時点で相手に結果を伝えるのかを確認して、選択肢を比較する。",
+    "sourceAttribution": "出典：IPA 2019年度春期 データベーススペシャリスト試験 午前II 問16",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問16 分散データベースの処理",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "ウ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2019-spring-am2/q16.webp"
+    ],
+    "imageAltTexts": [
+      "問16の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_qs.pdf#page=13",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_ans.pdf"
+  },
+  {
+    "id": "db-2019h-am2-q17",
+    "exam": "db",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 17,
+    "category": "データベーススペシャリスト",
+    "topicTags": [
+      "分散データベースの結合"
+    ],
+    "difficulty": 4,
+    "explanation": "結合に使う値や必要な行を先に絞り込めば、全行を別サイトへ送る場合より通信量を抑えられる。",
+    "sourceAttribution": "出典：IPA 2019年度春期 データベーススペシャリスト試験 午前II 問17",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問17 分散データベースの結合",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "ウ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2019-spring-am2/q17.webp"
+    ],
+    "imageAltTexts": [
+      "問17の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_qs.pdf#page=13",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_ans.pdf"
+  },
+  {
+    "id": "db-2019h-am2-q18",
+    "exam": "db",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 18,
+    "category": "データベーススペシャリスト",
+    "topicTags": [
+      "多版同時実行制御"
+    ],
+    "difficulty": 4,
+    "explanation": "データの複数の版を保持し、トランザクションが条件に合う版を読む。読取りと更新の競合を減らす。",
+    "sourceAttribution": "出典：IPA 2019年度春期 データベーススペシャリスト試験 午前II 問18",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問18 多版同時実行制御",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "ア",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2019-spring-am2/q18.webp"
+    ],
+    "imageAltTexts": [
+      "問18の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_qs.pdf#page=14",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_ans.pdf"
+  },
+  {
+    "id": "db-2019h-am2-q19",
+    "exam": "db",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 19,
+    "category": "データベーススペシャリスト",
+    "topicTags": [
+      "複合イベント処理"
+    ],
+    "difficulty": 4,
+    "explanation": "流れてくる複数のイベントを時刻や順序などの条件で組み合わせ、意味のあるパターンを検出する方式である。",
+    "sourceAttribution": "出典：IPA 2019年度春期 データベーススペシャリスト試験 午前II 問19",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問19 複合イベント処理",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "ア",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2019-spring-am2/q19.webp"
+    ],
+    "imageAltTexts": [
+      "問19の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_qs.pdf#page=14",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_ans.pdf"
+  },
+  {
+    "id": "db-2019h-am2-q20",
+    "exam": "db",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 20,
+    "category": "データベーススペシャリスト",
+    "topicTags": [
+      "電子メールの暗号化"
+    ],
+    "difficulty": 4,
+    "explanation": "本文には共通鍵暗号を使い、その共通鍵は受信者が復号できるよう受信者の公開鍵で暗号化する。",
+    "sourceAttribution": "出典：IPA 2019年度春期 データベーススペシャリスト試験 午前II 問20",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問20 電子メールの暗号化",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "エ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2019-spring-am2/q20.webp"
+    ],
+    "imageAltTexts": [
+      "問20の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_qs.pdf#page=15",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_ans.pdf"
+  },
+  {
+    "id": "db-2019h-am2-q21",
+    "exam": "db",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 21,
+    "category": "データベーススペシャリスト",
+    "topicTags": [
+      "ベイジアンフィルタ"
+    ],
+    "difficulty": 4,
+    "explanation": "学習した語の出現傾向から、受信文が迷惑メールである確率を推定する。単一語の禁止リストと区別する。",
+    "sourceAttribution": "出典：IPA 2019年度春期 データベーススペシャリスト試験 午前II 問21",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問21 ベイジアンフィルタ",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "エ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2019-spring-am2/q21.webp"
+    ],
+    "imageAltTexts": [
+      "問21の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_qs.pdf#page=15",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_ans.pdf"
+  },
+  {
+    "id": "db-2019h-am2-q22",
+    "exam": "db",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 22,
+    "category": "データベーススペシャリスト",
+    "topicTags": [
+      "キャッシュメモリ"
+    ],
+    "difficulty": 4,
+    "explanation": "よく使うデータを高速に参照するために保持する。読取りと書込みの時点で主記憶へのアクセスがどう変わるかを確認する。",
+    "sourceAttribution": "出典：IPA 2019年度春期 データベーススペシャリスト試験 午前II 問22",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問22 キャッシュメモリ",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "エ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2019-spring-am2/q22.webp"
+    ],
+    "imageAltTexts": [
+      "問22の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_qs.pdf#page=15",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_ans.pdf"
+  },
+  {
+    "id": "db-2019h-am2-q23",
+    "exam": "db",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 23,
+    "category": "データベーススペシャリスト",
+    "topicTags": [
+      "Webシステムの負荷分散"
+    ],
+    "difficulty": 4,
+    "explanation": "複数のサーバに要求を振り分ける方式について、どの層で振り分け先を決めるかを確認して選ぶ。",
+    "sourceAttribution": "出典：IPA 2019年度春期 データベーススペシャリスト試験 午前II 問23",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問23 Webシステムの負荷分散",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "エ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2019-spring-am2/q23.webp"
+    ],
+    "imageAltTexts": [
+      "問23の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_qs.pdf#page=16",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_ans.pdf"
+  },
+  {
+    "id": "db-2019h-am2-q24",
+    "exam": "db",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 24,
+    "category": "データベーススペシャリスト",
+    "topicTags": [
+      "SOAのサービス連携"
+    ],
+    "difficulty": 4,
+    "explanation": "明確なインタフェースを通じてサービスを呼び出す。異なる環境をつなぐ場合も、メッセージや通信の取り決めをそろえる。",
+    "sourceAttribution": "出典：IPA 2019年度春期 データベーススペシャリスト試験 午前II 問24",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問24 SOAのサービス連携",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "ウ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2019-spring-am2/q24.webp"
+    ],
+    "imageAltTexts": [
+      "問24の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_qs.pdf#page=16",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_ans.pdf"
+  },
+  {
+    "id": "db-2019h-am2-q25",
+    "exam": "db",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 25,
+    "category": "データベーススペシャリスト",
+    "topicTags": [
+      "DTCP-IP"
+    ],
+    "difficulty": 4,
+    "explanation": "家庭内ネットワークなどでコンテンツを送受信する際の保護方式。通信での暗号化と、機器による利用制御を組み合わせる。",
+    "sourceAttribution": "出典：IPA 2019年度春期 データベーススペシャリスト試験 午前II 問25",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問25 DTCP-IP",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "イ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2019-spring-am2/q25.webp"
+    ],
+    "imageAltTexts": [
+      "問25の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_qs.pdf#page=16",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_am2_ans.pdf"
+  }
+]

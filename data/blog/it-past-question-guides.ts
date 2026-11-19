@@ -159,7 +159,7 @@ export function withItPastQuestionGuide(post: BlogPost): BlogPost {
   if (!guide || !post.exam) return post;
   const examSource = `https://www.ipa.go.jp/shiken/kubun/${post.exam}.html`;
   const essayLink = post.exam === "sa" || post.exam === "pm"
-    ? "\n\n書いた論述答案は[午後論述 AI 採点](/essay)で構成や説明を振り返れます（AIの参考評価）。"
+    ? "\n\n[論述の練習問題](/essay)で、設問ア・イ・ウの構成を確認できます。"
     : "";
   const body = `${guide.introduction}
 

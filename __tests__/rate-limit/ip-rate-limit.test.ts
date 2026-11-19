@@ -63,8 +63,8 @@ describe("lib/rate-limit constants (SSOT)", () => {
     expect(mod.TRACKED_ENDPOINTS).toEqual([
       "copilot",
       "essay-grade",
-      "generate-question",
       "scoring",
+      "weakness-advice",
     ]);
   });
 });
@@ -257,15 +257,15 @@ describe("getApiUsageStats", () => {
 
   it("KV enabled → sums hourly buckets, derives cost, merges top-IP sets", async () => {
     enableKv();
-    // MGET returns the same 96 endpoint/hour counts in one command.
-    const values: unknown[] = new Array(98).fill(null);
+    // MGET returns all 96 endpoint/hour counts in one command.
+    const values: unknown[] = new Array(96).fill(null);
     // copilot (endpoint index 0 → positions 0..23): newest hour 5, one earlier hour 3.
     values[0] = 5;
     values[1] = 3;
     // top-IP sorted sets: [ip, score, ip, score, ...]
-    values[96] = ["1.2.3.4", "7"];
-    values[97] = ["1.2.3.4", "3", "5.6.7.8", "2"];
-    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(kvResponse([values.slice(0, 96), values[96], values[97]])));
+    const newestTopIps = ["1.2.3.4", "7"];
+    const earlierTopIps = ["1.2.3.4", "3", "5.6.7.8", "2"];
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(kvResponse([values, newestTopIps, earlierTopIps])));
 
     const mod = await import("@/lib/rate-limit");
     const stats = await mod.getApiUsageStats();
@@ -301,8 +301,8 @@ describe("getApiCallsHourlySeries", () => {
     const values: unknown[] = new Array(96).fill(null);
     values[0] = 1; // hour0, copilot
     values[24] = 2; // hour0, essay-grade
-    values[48] = 3; // hour0, generate-question
-    values[72] = 4; // hour0, scoring  → series[0] = 10
+    values[48] = 3; // hour0, scoring
+    values[72] = 4; // hour0, weakness-advice  → series[0] = 10
     values[2] = 5; // hour2, copilot  → series[2] = 5
     vi.stubGlobal("fetch", vi.fn().mockResolvedValue(kvResponse([values, [], []])));
 

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "lane": "ql-1",
+  "branch": "cx/kako-5y1-20261118",
+  "plan": "plan5.json",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "rows": [
+    {
+      "jobId": "PLAN5-225",
+      "planIndex": 224,
+      "status": "収録済み・原文再照合完了",
+      "sourceCommit": "623e506af",
+      "verifiedQuestionNumbers": [
+        262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273,
+        274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285
+      ],
+      "restoredPrecedingQuestionContext": { "questionNumber": 273, "precedingQuestionNumber": 272 },
+      "newQuestionCount": 0,
+      "importedQuestionCount": 0,
+      "officialUrl": "https://www.mhlw.go.jp/content/001074632.pdf",
+      "answerUrl": "https://www.mhlw.go.jp/content/001074906.pdf#page=2"
+    },
+    {
+      "jobId": "PLAN5-239",
+      "planIndex": 238,
+      "status": "収録済み・原文再照合完了",
+      "sourceCommit": "56d120b90",
+      "verifiedQuestionNumbers": [2, 15, 24],
+      "newQuestionCount": 0,
+      "importedQuestionCount": 0,
+      "officialUrl": "https://www.jaame.or.jp/ce/pdf/36am.pdf",
+      "answerUrl": "https://www.jaame.or.jp/ce/pdf/36ans.pdf#page=1"
+    },
+    {
+      "jobId": "PLAN5-309",
+      "planIndex": 308,
+      "status": "補助班で完了・収録済み",
+      "sourceBranch": "cx/kako-5yh1-20261118",
+      "sourceCommit": "53e7613cb",
+      "sourceLedger": "data/question-ingestion/plan5-yd1-ledger.json",
+      "officialQuestionCount": 50,
+      "verifiedAnswerCount": 50,
+      "newQuestionCount": 0,
+      "importedQuestionCount": 0,
+      "officialUrl": "https://www.shiken.or.jp/construction/upload/20231001_co_first_q01.pdf",
+      "answerUrl": "https://www.shiken.or.jp/construction/upload/20231001_co_first_a01.pdf"
+    },
+    {
+      "jobId": "PLAN5-421",
+      "planIndex": 420,
+      "status": "補助班で部分補充・残り3問の原図未確認",
+      "sourceBranch": "cx/kako-5yh1-20261118",
+      "sourceCommit": "df11fc258",
+      "sourceLedger": "data/question-ingestion/plan5-ya1-ledger.json",
+      "officialQuestionCount": 20,
+      "verifiedAnswerCount": 20,
+      "playableQuestionCount": 17,
+      "remainingQuestionNumbers": [1, 4, 5],
+      "newQuestionCount": 0,
+      "importedQuestionCount": 0,
+      "officialUrl": "https://www.hoyokyo.or.jp/08AP9-1.pdf",
+      "answerUrl": "https://www.hoyokyo.or.jp/exam/pasttest/08-1.html",
+      "missingFigurePdfPages": [2, 4]
+    }
+  ]
+}

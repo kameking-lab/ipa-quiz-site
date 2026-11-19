@@ -24,6 +24,7 @@ export const AU_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "JIS Q 19011:2019において、監査員とは監査を実施する個人を指します。監査チームリーダーは、監査チームをマネジメントする監査員として定義されており、明確に監査員に含まれる役割です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const AU_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "情報システムデューデリジェンスとは、企業買収や合併などの重要な意思決定に際して、対象企業の情報システムの現状、潜在的なリスク、将来的な価値などを詳細に評価するプロセスです。これにより、M&A取引における情報システム関連の意思決定を支援します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const AU_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "業務処理統制の監査では、特定の取引が適切に処理・承認されているかを確認します。出荷の正当性に関する統制の検証として、出荷一覧表に責任者の承認印があることを確認することは、承認統制が機能しているかを直接的に検証する有効な監査手続です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const AU_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "システム監査基準における「マネジメントの視点」は、IT資源の計画、実行、監視、改善（PDCAサイクル）といった管理活動が適切に行われているかを評価します。IT投資管理や情報セキュリティ対策のPDCAサイクルに基づいた管理は、このマネジメント活動を検証する項目に該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,7 @@ export const AU_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "試査とは、監査対象となる大量のデータ全てを検証するのではなく、その一部を抽出して監査手続を適用し、その結果からデータ全体の正当性を推測・判断する監査技法です。これにより、効率的かつ実用的な監査が可能となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +149,7 @@ export const AU_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "金融庁の「財務報告に係る内部統制の評価及び監査の基準」における「統制活動」とは、経営者の命令や指示が適切に実行されることを確保するために定める方針及び手続を指します。職務分掌や承認、資産の保護などがこれに該当し、組織目標の達成に貢献します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +174,7 @@ export const AU_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "内部監査業務の一部を外部の専門事業者に委託する場合、内部監査部門が外部専門家の専門性と独立性を尊重し、監査報告書の作成を一任して委託先の名義で経営者に提出させる運用がなされることがあります。これは、外部の専門的知見を最大限に活用し、その責任において報告を行うことを前提とした委託形態と解釈できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +199,7 @@ export const AU_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "監査計画は、監査の目的を達成するために、限られた資源の中で監査対象を網羅し、かつ効率的に監査を実施するために必要です。これにより、監査活動の方向性を明確にし、有効性の高いシステム監査を実現することができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +224,7 @@ export const AU_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "金融商品取引法に基づく内部統制報告制度は、主に財務報告の信頼性確保を目的としています。したがって、財務報告の信頼性以外の目的（例：業務の効率性）を達成するためのIT統制の整備や運用を直接的に求めるものではありません。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +249,7 @@ export const AU_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "金融庁の「財務報告に係る内部統制の評価及び監査に関する実施基準」における「統制環境」は、組織の気風を決定し、統制に対する組織内の全関係者の意識に影響を与える要素です。組織構造や慣行、経営者の哲学などがこれに該当し、内部統制の基盤を形成します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +274,7 @@ export const AU_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "JIS Q 20000-1:2020は、組織が顧客へのサービス提供において、サービスマネジメントシステムを確立し、実施し、維持し、継続的に改善するための要求事項を規定しています。これにより、サービス品質の向上と効率的な運用を目指します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +299,7 @@ export const AU_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "エラープルーフ化の原理において、「代替化」「排除」「容易化」は、作業を自動化したり、作業自体をなくしたり、作業を簡素化したりすることで、そもそも作業ミスが発生しにくい設計を目指します。これにより、ヒューマンエラーの発生を未然に防ぐ効果が期待されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +324,7 @@ export const AU_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "著作権法における職務著作の要件のうち、プログラムの著作物の場合は、法人等が自己の著作の名義の下に公表していること（公表の有無）を満たす必要がありません。プログラムは公表されなくとも職務著作として認められるため、プログラム以外の著作物とはこの点で要件が異なります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +349,7 @@ export const AU_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "技術者倫理におけるホイッスルブローイングとは、組織内部の人間が、その組織が行っている法令違反や社会的規範を逸脱する行為を、組織外の第三者（当局、メディアなど）に公表することです。これは、公益保護のために行われることがあります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +374,7 @@ export const AU_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "適格請求書等保存方式（インボイス制度）における適格請求書には、従来の区分記載請求書の内容に加え、登録番号、適用税率、および税率ごとに区分された消費税額などを記載することが義務付けられています。これにより、仕入税額控除の適用要件が明確化されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +399,7 @@ export const AU_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "リーダーシップのコンティンジェンシー理論（状況適応理論）は、唯一最適なリーダーシップスタイルは存在せず、その有効性は置かれた状況（部下の成熟度、タスクの性質など）によって異なるとする考え方です。状況に応じた適切なリーダーシップスタイルの選択の重要性を説きます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +424,7 @@ export const AU_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "X.509におけるCPS（Certification Practice Statement）は、認証局（CA）がデジタル証明書の発行、管理、失効、更新といった一連の運用をどのように行うかについて詳細に記述した文書です。これにより、認証局の運用方法の透明性と信頼性を確保します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +449,7 @@ export const AU_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "オープンリダイレクトを悪用した攻撃は、WebサイトがURL中のパラメータで指定された任意のURLへ利用者をリダイレクトする機能を悪用し、正規のサイトを経由して悪意のあるフィッシングサイトなどに誘導するものです。これにより、利用者を欺き、機密情報の窃取などを試みます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +474,7 @@ export const AU_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "CRYPTREC（暗号技術検討会）の主な活動内容は、電子政府で利用する暗号技術の安全性評価・監視、暗号技術の技術的検討、国際競争力の向上、および運用面での安全性向上に関する検討を行うことです。これにより、国内の暗号技術の健全な利用と発展を推進します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +499,7 @@ export const AU_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "pingは、ICMP（Internet Control Message Protocol）のエコー要求/応答メッセージを利用して、ネットワーク接続性を確認するコマンドです。DMZ上のコンピュータがインターネットからのpingに応答しないようにするには、ファイアウォールでICMPトラフィックの通過を禁止するルールを設定します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +524,7 @@ export const AU_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "自然結合は、両表に共通する列（この場合は顧客番号）を結合キーとして使用し、結合後の結果には各表の非共通列と、結合に使われた共通列の重複を排除したものが含まれます。選択肢エは、結合条件に顧客番号を指定し、納品表の全項目と顧客表の顧客名を抽出しており、自然結合の結果と一致します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +549,7 @@ export const AU_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "SAN（Storage Area Network）は、サーバと複数のストレージデバイスを、通常のLANとは異なる高速な専用ネットワーク（例えばFibre Channel）で接続する技術です。これにより、ストレージへのアクセス速度を向上させ、ストレージを一元的に管理することが可能となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +574,7 @@ export const AU_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "JIS X 25010における「性能効率性」は、システムが機能を発揮する際に、時間やメモリ、CPUなどの資源をいかに効率的に利用できるかを示す特性です。選択肢イは、明記された条件のもとで利用される資源の量と性能の関係を定義しており、この「性能効率性」の概念に合致します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +599,7 @@ export const AU_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "VRIOフレームワークは、企業が保有する経営資源が競争優位の源泉となり得るかを評価するための分析ツールです。その視点は、資源が「経済的価値（Value）」を持つか、「希少性（Rarity）」があるか、「模倣困難性（Imitability）」があるか、そして「組織（Organization）」によって活用されているか、の4点に集約されます。選択肢ウは、これらVRIOの各要素を具体的に説明しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +624,7 @@ export const AU_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "アンゾフの成長マトリクスは、企業が事業を拡大するための戦略を、製品（既存・新規）と市場（既存・新規）の二つの軸で分類するフレームワークです。これにより、市場浸透、製品開発、市場開拓、多角化という4つの成長戦略が導き出され、企業は自社の状況に応じた最適な成長方向を検討できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_au_am2_qs.pdf",
     "license": "IPA-public"

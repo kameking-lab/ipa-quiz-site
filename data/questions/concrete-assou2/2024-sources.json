@@ -1,0 +1,465 @@
+{
+  "exam": "concrete-assou2",
+  "candidateId": "javada-b442b8272d8d",
+  "year": 2024,
+  "season": "late",
+  "checkedAt": "2026-11-18",
+  "officialQuestionCount": 50,
+  "officialIndexUrl": "https://www.kentei.javada.or.jp/list02.html?v1=%E4%BB%A4%E5%92%8C6%E5%B9%B4%E5%BA%A6&v2=%E5%BE%8C%E6%9C%9F&v3=B50&v4=%E3%82%B3%E3%83%B3%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%88%E5%9C%A7%E9%80%81%E6%96%BD%E5%B7%A5%EF%BC%88%E3%82%B3%E3%83%B3%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%88%E5%9C%A7%E9%80%81%E5%B7%A5%E4%BA%8B%E4%BD%9C%E6%A5%AD%EF%BC%89",
+  "sources": [
+    {
+      "year": 2024,
+      "kind": "question",
+      "url": "https://www.kentei.javada.or.jp/pdf/R06-2-B50-%E3%82%B3%E3%83%B3%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%88%E5%9C%A7%E9%80%81%E6%96%BD%E5%B7%A5%EF%BC%88%E3%82%B3%E3%83%B3%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%88%E5%9C%A7%E9%80%81%E5%B7%A5%E4%BA%8B%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+      "status": 200,
+      "sha256": "8ec1cb3b5ea373c5aa634e309159f188d3f258159ace29b2e9c0843c6d79f2e8",
+      "bytes": 606644,
+      "pages": 8,
+      "textCharacters": 0,
+      "retrievedAgain": true
+    },
+    {
+      "year": 2024,
+      "kind": "answer",
+      "url": "https://www.kentei.javada.or.jp/pdf/R06-2-B50-%E3%82%B3%E3%83%B3%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%88%E5%9C%A7%E9%80%81%E6%96%BD%E5%B7%A5%EF%BC%88%E3%82%B3%E3%83%B3%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%88%E5%9C%A7%E9%80%81%E5%B7%A5%E4%BA%8B%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+      "status": 200,
+      "sha256": "28a7ca1148d39898538a2ef81dafe6c297a977ee4696954c96db3d25f114f665",
+      "bytes": 60486,
+      "pages": 1,
+      "textCharacters": 369,
+      "retrievedAgain": true
+    }
+  ],
+  "answerVerification": "公式正解表の画像から独立固定した50正答とpdfplumberによる表抽出が一致。公式正答の変更なし。",
+  "transcriptionVerification": "画像原本を目視して転記しWindows日本語OCRと照合。図は公式原本から切り出し。",
+  "figures": [
+    {
+      "officialQuestionLabel": "B群 1",
+      "page": 4,
+      "pdfClip": [
+        100.0,
+        120.58823529411765,
+        214.7058823529412,
+        317.6470588235294
+      ],
+      "url": "/images/questions/concrete-assou2/2024-late-b01.png",
+      "alt": "鉄筋コンクリート造の断面と部位を指すイ・ロ・ハ・ニ",
+      "sha256": "b029125106ba9b453013c87bc7b5281e51fbbb36b5287044aaca3723ce0e42dc"
+    },
+    {
+      "officialQuestionLabel": "B群 23",
+      "page": 8,
+      "pdfClip": [
+        97.05882352941177,
+        464.7058823529412,
+        485.29411764705884,
+        514.7058823529412
+      ],
+      "url": "/images/questions/concrete-assou2/2024-late-b23.png",
+      "alt": "四つの材料構造表示記号（イ・ロ・ハ・ニ）",
+      "sha256": "dc9814fe0f468ba24e17785d539b7aeee54038dec853669abadb5718a1ed4734"
+    }
+  ],
+  "questions": [
+    {
+      "id": "concrete-assou2-2024-late-gakka-a-001",
+      "officialQuestionLabel": "A群 1",
+      "page": 2,
+      "officialAnswerNumber": "○",
+      "bodySha256": "963aaf464d6e0cb764bec1d1d7f9d5c24f06d86e9fa2e1deb477c3aaa7fb99fe",
+      "choicesSha256": "52e1419048631e9b5a2befad23dca663678359cd8f98ac08dc9baf2cf069849d"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-a-002",
+      "officialQuestionLabel": "A群 2",
+      "page": 2,
+      "officialAnswerNumber": "×",
+      "bodySha256": "d371a9a4b0f4e8296c52cd203c4308d1da99e3a2f2c87dce01b9d925fa63c358",
+      "choicesSha256": "52e1419048631e9b5a2befad23dca663678359cd8f98ac08dc9baf2cf069849d"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-a-003",
+      "officialQuestionLabel": "A群 3",
+      "page": 2,
+      "officialAnswerNumber": "×",
+      "bodySha256": "7fa975ae63fdb58035915a068b3823b7215c0cf29a62ffc6401708030b21e1c5",
+      "choicesSha256": "52e1419048631e9b5a2befad23dca663678359cd8f98ac08dc9baf2cf069849d"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-a-004",
+      "officialQuestionLabel": "A群 4",
+      "page": 2,
+      "officialAnswerNumber": "×",
+      "bodySha256": "1d4cee3c73342f00bf0b3c48b8bbce01cf11ede7fd98b7b39de722fc0f44708a",
+      "choicesSha256": "52e1419048631e9b5a2befad23dca663678359cd8f98ac08dc9baf2cf069849d"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-a-005",
+      "officialQuestionLabel": "A群 5",
+      "page": 2,
+      "officialAnswerNumber": "○",
+      "bodySha256": "cbeabf13e229a5129af2a4a095f93b98df75826d9536495ab06b73a194c65277",
+      "choicesSha256": "52e1419048631e9b5a2befad23dca663678359cd8f98ac08dc9baf2cf069849d"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-a-006",
+      "officialQuestionLabel": "A群 6",
+      "page": 2,
+      "officialAnswerNumber": "○",
+      "bodySha256": "42d6a6ab96a0a2de1cd6d5805e3cdc8148334450c6b7ac2462e87a27bcb90125",
+      "choicesSha256": "52e1419048631e9b5a2befad23dca663678359cd8f98ac08dc9baf2cf069849d"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-a-007",
+      "officialQuestionLabel": "A群 7",
+      "page": 2,
+      "officialAnswerNumber": "○",
+      "bodySha256": "578c53c30336d7b678ff35d5c128adf8c04d70687cc15df42ada04ea0997b462",
+      "choicesSha256": "52e1419048631e9b5a2befad23dca663678359cd8f98ac08dc9baf2cf069849d"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-a-008",
+      "officialQuestionLabel": "A群 8",
+      "page": 2,
+      "officialAnswerNumber": "×",
+      "bodySha256": "0f233f4fd507de9622af825536f689b1fb519ab1e2ef19e9cfc5749c605ed512",
+      "choicesSha256": "52e1419048631e9b5a2befad23dca663678359cd8f98ac08dc9baf2cf069849d"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-a-009",
+      "officialQuestionLabel": "A群 9",
+      "page": 2,
+      "officialAnswerNumber": "×",
+      "bodySha256": "34b873ecfbb6da29794be2b34dde7263910b5c9debaee7f77d349fdc22e124f3",
+      "choicesSha256": "52e1419048631e9b5a2befad23dca663678359cd8f98ac08dc9baf2cf069849d"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-a-010",
+      "officialQuestionLabel": "A群 10",
+      "page": 2,
+      "officialAnswerNumber": "○",
+      "bodySha256": "257471e88b57e8234e859f91afca743edb782ccd72e0010f80527479b2c822b8",
+      "choicesSha256": "52e1419048631e9b5a2befad23dca663678359cd8f98ac08dc9baf2cf069849d"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-a-011",
+      "officialQuestionLabel": "A群 11",
+      "page": 2,
+      "officialAnswerNumber": "×",
+      "bodySha256": "75ec13707d17ff1bd35278c3c7f6e8d66d272f486feb41be92fd12f50babf913",
+      "choicesSha256": "52e1419048631e9b5a2befad23dca663678359cd8f98ac08dc9baf2cf069849d"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-a-012",
+      "officialQuestionLabel": "A群 12",
+      "page": 2,
+      "officialAnswerNumber": "○",
+      "bodySha256": "a8a26fad17fe10cb0bcd6173bcfc9ca9b61f3300e1b23dba263ce7c79a339f11",
+      "choicesSha256": "52e1419048631e9b5a2befad23dca663678359cd8f98ac08dc9baf2cf069849d"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-a-013",
+      "officialQuestionLabel": "A群 13",
+      "page": 2,
+      "officialAnswerNumber": "○",
+      "bodySha256": "697d1c1b546e75404aff480f194b241b31bbda71f532caf55975d5c631fd5973",
+      "choicesSha256": "52e1419048631e9b5a2befad23dca663678359cd8f98ac08dc9baf2cf069849d"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-a-014",
+      "officialQuestionLabel": "A群 14",
+      "page": 2,
+      "officialAnswerNumber": "○",
+      "bodySha256": "4d916dced28f022fd782e44832bab47a9717f366a7a974cf4ef02461f6e0a2d2",
+      "choicesSha256": "52e1419048631e9b5a2befad23dca663678359cd8f98ac08dc9baf2cf069849d"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-a-015",
+      "officialQuestionLabel": "A群 15",
+      "page": 2,
+      "officialAnswerNumber": "○",
+      "bodySha256": "2024ea2efc1fdab21680ae3e08b8a085a9973d051414cdd4ec4ef59387d6f796",
+      "choicesSha256": "52e1419048631e9b5a2befad23dca663678359cd8f98ac08dc9baf2cf069849d"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-a-016",
+      "officialQuestionLabel": "A群 16",
+      "page": 3,
+      "officialAnswerNumber": "○",
+      "bodySha256": "609610f295011004ae0c513aa947068e7dedefd3831e33b6887b620deb2f2668",
+      "choicesSha256": "52e1419048631e9b5a2befad23dca663678359cd8f98ac08dc9baf2cf069849d"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-a-017",
+      "officialQuestionLabel": "A群 17",
+      "page": 3,
+      "officialAnswerNumber": "○",
+      "bodySha256": "f59b5a052e6927f7ca9223f2377fb92bacbf7b5c512186cef76bcea3483e1ba3",
+      "choicesSha256": "52e1419048631e9b5a2befad23dca663678359cd8f98ac08dc9baf2cf069849d"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-a-018",
+      "officialQuestionLabel": "A群 18",
+      "page": 3,
+      "officialAnswerNumber": "○",
+      "bodySha256": "b47e975ff340ca18f1be2330bee050fa5fd3ee9c32b17ce839e4648ec47a812a",
+      "choicesSha256": "52e1419048631e9b5a2befad23dca663678359cd8f98ac08dc9baf2cf069849d"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-a-019",
+      "officialQuestionLabel": "A群 19",
+      "page": 3,
+      "officialAnswerNumber": "○",
+      "bodySha256": "2de3ad26e7e085b95abf41cd6274e8f79ac8e4f3d31e1b8519c719f2e091380d",
+      "choicesSha256": "52e1419048631e9b5a2befad23dca663678359cd8f98ac08dc9baf2cf069849d"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-a-020",
+      "officialQuestionLabel": "A群 20",
+      "page": 3,
+      "officialAnswerNumber": "×",
+      "bodySha256": "e55fd7c855869a82e06adc9de0fb8f130c00601118bfdf1fc5c3845713e56dd3",
+      "choicesSha256": "52e1419048631e9b5a2befad23dca663678359cd8f98ac08dc9baf2cf069849d"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-a-021",
+      "officialQuestionLabel": "A群 21",
+      "page": 3,
+      "officialAnswerNumber": "×",
+      "bodySha256": "931996b227264d0aa612a8e07a385fdbf3fcf4cfef65ffef303e15dd49762b81",
+      "choicesSha256": "52e1419048631e9b5a2befad23dca663678359cd8f98ac08dc9baf2cf069849d"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-a-022",
+      "officialQuestionLabel": "A群 22",
+      "page": 3,
+      "officialAnswerNumber": "○",
+      "bodySha256": "5d2d5276a08ce91bc5b694ad522673af0dacdd4885dd19baa21f0bc90f52734b",
+      "choicesSha256": "52e1419048631e9b5a2befad23dca663678359cd8f98ac08dc9baf2cf069849d"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-a-023",
+      "officialQuestionLabel": "A群 23",
+      "page": 3,
+      "officialAnswerNumber": "×",
+      "bodySha256": "373a8251ad79220bdccf611a9c0c2248412649e3ce79328e24c9d48f7d7cf154",
+      "choicesSha256": "52e1419048631e9b5a2befad23dca663678359cd8f98ac08dc9baf2cf069849d"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-a-024",
+      "officialQuestionLabel": "A群 24",
+      "page": 3,
+      "officialAnswerNumber": "×",
+      "bodySha256": "5815909f30fc41e0b59e831a721b024e1816813b2444a38a3ab1551e08dae2a8",
+      "choicesSha256": "52e1419048631e9b5a2befad23dca663678359cd8f98ac08dc9baf2cf069849d"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-a-025",
+      "officialQuestionLabel": "A群 25",
+      "page": 3,
+      "officialAnswerNumber": "○",
+      "bodySha256": "3c5fcbd5892c2c748a34c5b2074590e36a4588ebca1400c1a25df0f31994bca4",
+      "choicesSha256": "52e1419048631e9b5a2befad23dca663678359cd8f98ac08dc9baf2cf069849d"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-b-001",
+      "officialQuestionLabel": "B群 1",
+      "page": 4,
+      "officialAnswerNumber": "イ",
+      "bodySha256": "f9500461a6d8d5db55949823d492cb3eec7ecbe06d249f484513703ac0910f53",
+      "choicesSha256": "f4921bcdddfdd99f626b5983e3193444bab6d14b949f2cc0b6054a20fc1af442"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-b-002",
+      "officialQuestionLabel": "B群 2",
+      "page": 4,
+      "officialAnswerNumber": "ロ",
+      "bodySha256": "a687cf5d7cb2d9cfdc710af910caf55d7c845f75bb32a9ce5bb62a0bc49a44bf",
+      "choicesSha256": "b3d174f521ee9241f6a2195e318b30da19edc723748eadc189292a7b0041fa8d"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-b-003",
+      "officialQuestionLabel": "B群 3",
+      "page": 4,
+      "officialAnswerNumber": "ロ",
+      "bodySha256": "4ea6433ea5e7a718c74ca84c07ddbb152224e320ff47ab2af781d4e3c9f78b74",
+      "choicesSha256": "d7efef74727b0823a8207f48a1f03db46c63393db68cf740d9d55577bdd79562"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-b-004",
+      "officialQuestionLabel": "B群 4",
+      "page": 4,
+      "officialAnswerNumber": "ハ",
+      "bodySha256": "8868ab74813161d28e4f250fad07e61ec56c2202b7c3f8a233b388bf1951a7c7",
+      "choicesSha256": "af3e38cd88d34954ef24e57312252254477aacc00a904627962bad48a5b5a1da"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-b-005",
+      "officialQuestionLabel": "B群 5",
+      "page": 5,
+      "officialAnswerNumber": "ロ",
+      "bodySha256": "dfd9e8ef75fc983ba5f1a2eb4e9b68ab9fce62ddb4c41567947cea7adb56a388",
+      "choicesSha256": "eeced92b1135df71405806d57e89cd7f19a05680cf8df856dfe4335365a3ae30"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-b-006",
+      "officialQuestionLabel": "B群 6",
+      "page": 5,
+      "officialAnswerNumber": "ニ",
+      "bodySha256": "22a2af367b031548036b49a880655764c4df2dbf280fbe5d4ef956fa8dde0370",
+      "choicesSha256": "4326bea5fd6c4e521885a8c164f1d559f3cf5c787f907841340021ec3bc5b4a4"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-b-007",
+      "officialQuestionLabel": "B群 7",
+      "page": 5,
+      "officialAnswerNumber": "ハ",
+      "bodySha256": "0b661d090ed37e54bbdbf49a4d621f28a2b0ce6a5afa4bab12bada7640dfde01",
+      "choicesSha256": "9f4485e9eed85ae8f20bfc152cd48a64f5f61b20c352993d643ff5a5fb1791f9"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-b-008",
+      "officialQuestionLabel": "B群 8",
+      "page": 5,
+      "officialAnswerNumber": "イ",
+      "bodySha256": "21b2310e9dc157141ee715958aa802efd94b3743541f73340285eea8be5fbd1e",
+      "choicesSha256": "a86cdb8e8a1e0d0ebd47f1da5d12f340f1059def281e9a06d84b7a31682926b1"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-b-009",
+      "officialQuestionLabel": "B群 9",
+      "page": 5,
+      "officialAnswerNumber": "ロ",
+      "bodySha256": "86ee92014086e7890d04d8e52ae7a14b7aa994c901b8a2fe6b31d567d2bef174",
+      "choicesSha256": "e258c54efc2d8a67cf25f01d94ab882813eabfe06d22692e72c0797a2429d1d0"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-b-010",
+      "officialQuestionLabel": "B群 10",
+      "page": 6,
+      "officialAnswerNumber": "ハ",
+      "bodySha256": "c8a565df096c5f7b919159d057ac9dd07aa82c31acae0d3e77a5dcae8e994869",
+      "choicesSha256": "bf98a6c11b0d94d2972e6a4812b67fea25259fdfe18de5f78eb70d1e79c9a41d"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-b-011",
+      "officialQuestionLabel": "B群 11",
+      "page": 6,
+      "officialAnswerNumber": "イ",
+      "bodySha256": "4f25de72a0e30fc8d05b2d72d6b96d058f2249237215d60af7300136b0b90be6",
+      "choicesSha256": "d940c91e95ed23ca1233fe90fd92e8b48cc0f066beef8beebf5e5e4d98f800a2"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-b-012",
+      "officialQuestionLabel": "B群 12",
+      "page": 6,
+      "officialAnswerNumber": "ニ",
+      "bodySha256": "ca61fabd1ce173d9f0c2ebf7b566448efd4fa4c0cfe102f3d200a52b94c84ac3",
+      "choicesSha256": "850b9a65d742fcb5741ce0cfeab8459661c51b432c7991f75e33f050e303af20"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-b-013",
+      "officialQuestionLabel": "B群 13",
+      "page": 6,
+      "officialAnswerNumber": "ハ",
+      "bodySha256": "cb79b687c40db3059169130b222d0084ce5630b2f53e801f9cf722fcbfba9d2d",
+      "choicesSha256": "cf2a884312c2c6a9b5c6ea89d3100e54658137cfda17395068ff40e2d751e47c"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-b-014",
+      "officialQuestionLabel": "B群 14",
+      "page": 6,
+      "officialAnswerNumber": "ニ",
+      "bodySha256": "ab2957b0cb5793a0cde74a4d9385e3e0b588234a08bfe5640fc72d24b70e87e0",
+      "choicesSha256": "1607757f150d2d55e45f3fcdf807cf4e13b4f1d90f869cd855ca7f50c69045ab"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-b-015",
+      "officialQuestionLabel": "B群 15",
+      "page": 7,
+      "officialAnswerNumber": "ハ",
+      "bodySha256": "de33116dcec0abb628de42b09577b8319a1f2223902b7669f99b55b3e5289ea7",
+      "choicesSha256": "4df24bfd91ed769dce99d7e041fc0697af97bf5f58a2256960ef8d64ba58f8f5"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-b-016",
+      "officialQuestionLabel": "B群 16",
+      "page": 7,
+      "officialAnswerNumber": "ロ",
+      "bodySha256": "ab5ed84041aedcc68b29a26e4f93f0fb61cbcc4a9f43a9b118cd0449241e706f",
+      "choicesSha256": "96defd164c919f794ca944c9326aff1fe7b725339de35e93a745dbf97b2b67e7"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-b-017",
+      "officialQuestionLabel": "B群 17",
+      "page": 7,
+      "officialAnswerNumber": "ニ",
+      "bodySha256": "646f9b690f6e842197f663aa1d1ec5665076946853afd428298529509e317f87",
+      "choicesSha256": "4a9962360075b4d99ba3c89519343f9a0e12e086bd052933866c87186c56a858"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-b-018",
+      "officialQuestionLabel": "B群 18",
+      "page": 7,
+      "officialAnswerNumber": "イ",
+      "bodySha256": "220934e8491222d878d37008cf838782b2572d8119e8f816d6107f53abb34ecb",
+      "choicesSha256": "3a059c8f377191e8eb96ade5c0b73dd7fb1b8bc77cd2a24e423e79b9d3b36764"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-b-019",
+      "officialQuestionLabel": "B群 19",
+      "page": 7,
+      "officialAnswerNumber": "イ",
+      "bodySha256": "dfa919e53ae314bf17a00315d37b1d4a7a3d6330d22aaeea00a10d88816406f2",
+      "choicesSha256": "58309e9a0c7f680afb1f68e536af62844f5a7dec27d5e592c957afd32ca057f6"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-b-020",
+      "officialQuestionLabel": "B群 20",
+      "page": 8,
+      "officialAnswerNumber": "ロ",
+      "bodySha256": "1cbd51bf06fc54144faff65e14bf261851bad0bf2fcb3f7788de673ace9a1125",
+      "choicesSha256": "e1b0e2cc12f78f90709d68c5b2bc0cc8fe3dbc28e43414950d56a163f26aa610"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-b-021",
+      "officialQuestionLabel": "B群 21",
+      "page": 8,
+      "officialAnswerNumber": "ロ",
+      "bodySha256": "80af6e574ef127002b87085fc334367dc4aec3f2b60c15aa5c10fc56c42a6006",
+      "choicesSha256": "9f1671779f70f2b583909f11ff3e2f5709fa75efd34e0a444b647d941ce04242"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-b-022",
+      "officialQuestionLabel": "B群 22",
+      "page": 8,
+      "officialAnswerNumber": "ロ",
+      "bodySha256": "1a9eaaeeb17f04fa0b9f1e7540d57a0d3cbd79b81b02092c2db1ce45dcd5479f",
+      "choicesSha256": "b0f7ae4901303ad41d989f71588aafc163af4679b8baf4a6dcd5632d0065e46f"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-b-023",
+      "officialQuestionLabel": "B群 23",
+      "page": 8,
+      "officialAnswerNumber": "イ",
+      "bodySha256": "617c50dcb0e06c39a1a0a85ab162f3580707412fddf96ff644b7520ac1265f23",
+      "choicesSha256": "f4921bcdddfdd99f626b5983e3193444bab6d14b949f2cc0b6054a20fc1af442"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-b-024",
+      "officialQuestionLabel": "B群 24",
+      "page": 8,
+      "officialAnswerNumber": "ロ",
+      "bodySha256": "1aebc4ec9a9f6db153df4bd3bf6cfd06dac738348454dfe5c4e450b82366c6a6",
+      "choicesSha256": "d01188fdf1672636f8cac0b6cd5104b63fa24b258f675aadbf5d77184aa23c1d"
+    },
+    {
+      "id": "concrete-assou2-2024-late-gakka-b-025",
+      "officialQuestionLabel": "B群 25",
+      "page": 8,
+      "officialAnswerNumber": "ロ",
+      "bodySha256": "efed95341cd3f4b77aef247c4c357440516b23a46797ecbe3d9d80b5a1b3026a",
+      "choicesSha256": "946316ee7432ab70c06e6c58710eef0e88e382d5baaf00c793a04c838bbc7589"
+    }
+  ]
+}

@@ -5,57 +5,64 @@ import { PRICE_PAGE_LINK } from "@/lib/billing/price-page-link";
 import { QuizResumeLinks } from "./QuizResumeLinks";
 import { ManageSubscriptionButton } from "./ManageSubscriptionButton";
 import { posthogCapture } from "@/lib/posthog";
-import { readQuizReturn } from "@/lib/billing/quiz-return";
+import { readQuizReturn, safeQuizReturn } from "@/lib/billing/quiz-return";
 import { sendFunnelEvent } from "@/lib/billing/funnel-client";
 import { purchaseJourney } from "@/lib/billing/journey-client";
 import { useAccountStatus } from "@/components/account/AccountNavigation";
 import { sendConversion } from "@/lib/billing/conversion-client";
-interface Status { feedbackSubmitted?: boolean; billingModel?: "subscription"; canManage?: boolean; subscription?: { status: string; periodEnd: string; cancelAtPeriodEnd: boolean }; entitled: boolean; expiresAt: string | null; purchase: { id: string; status: string; expiresAt: string | null } | null }
+import { subscriptionEndingLabel } from "./SubscriptionEnding";
+import type { SubscriptionManagement } from "@/lib/billing/subscription/domain";
+interface Status { feedbackSubmitted?: boolean; billingModel?: "subscription"; canManage?: boolean; management?: SubscriptionManagement | null; subscription?: { status: string; periodEnd: string; cancelAtPeriodEnd: boolean; examCancelAt?: string }; entitled: boolean; expiresAt: string | null; purchase: { id: string; status: string; expiresAt: string | null; examEndPending?: boolean; returnTo?: string | null } | null }
 export function PurchaseStatus({ order, canceled = false, closeCheckout = false, testMode = true }: { order: string; canceled?: boolean; closeCheckout?: boolean; testMode?: boolean }) {
   const [status, setStatus] = useState<Status | null>(null);
   const [error, setError] = useState("");
   const [needsLogin, setNeedsLogin] = useState(false);
   const accountStatus = useAccountStatus(needsLogin);
   const [busy, setBusy] = useState(false);
-  const request = useRef(0);
-  const active = useRef(false);
-  const check = useCallback(async () => {
-    if (!order || active.current) return null;
-    active.current = true;
-    const id = ++request.current;
+  const checkState = useRef({ request: 0, active: false });
+  const check = useCallback(async (confirm = true) => {
+    const state = checkState.current;
+    if (!order || state.active) return null;
+    state.active = true;
+    const id = ++state.request;
     setBusy(true);
     try {
       if (closeCheckout) {
         await fetch("/api/billing/checkout", { method: "DELETE", headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ orderId: order }) }).catch(() => {});
       }
-      const res = await fetch(`/api/billing/status?order=${encodeURIComponent(order)}`, { cache: "no-store" });
-      if (id !== request.current) return null;
+      const res = await fetch(`/api/billing/status?order=${encodeURIComponent(order)}`, {
+        cache: "no-store", method: confirm && !canceled ? "POST" : "GET",
+      });
+      if (id !== state.request) return null;
       setNeedsLogin(res.status === 401);
       if (!res.ok) throw new Error("購入状況を確認できません。再購入せず、もう一度確認してください。");
       const next: Status = await res.json();
-      if (id !== request.current) return null;
+      if (id !== state.request) return null;
       setStatus(next); setError("");
       return next;
     } catch (e) {
-      if (id === request.current) { setStatus(null); setError(e instanceof Error ? e.message : "購入状況を確認できません。"); }
+      if (id === state.request) { setStatus(null); setError(e instanceof Error ? e.message : "購入状況を確認できません。"); }
       return null;
     } finally {
-      if (id === request.current) { active.current = false; setBusy(false); }
+      if (id === state.request) { state.active = false; setBusy(false); }
     }
-  }, [order, closeCheckout]);
+  }, [order, canceled, closeCheckout]);
   useEffect(() => {
+    const state = checkState.current;
     let disposed = false;
     let timer: ReturnType<typeof setTimeout> | undefined;
     let attempts = 0;
     setStatus(null); setError(""); setNeedsLogin(false);
     const run = async () => {
-      const next = await check();
+      const next = await check(attempts === 0 || attempts === 4);
       // Bounded confirmation; never resubmits a purchase.
-      if (!disposed && !canceled && next?.purchase?.status === "pending" && attempts++ < 4) timer = setTimeout(run, 2500);
+      const purchase = next?.purchase;
+      if (!disposed && !canceled && (purchase?.status === "pending" || purchase?.status === "paid" && purchase.examEndPending)
+        && attempts++ < 4) timer = setTimeout(run, 2500);
     };
-    void run();
-    return () => { disposed = true; clearTimeout(timer); request.current++; active.current = false; };
+    timer = setTimeout(run, 0);
+    return () => { disposed = true; clearTimeout(timer); state.request++; state.active = false; };
   }, [check, canceled]);
   const complete = status?.purchase?.id === order && status.purchase.status === "paid" && status.entitled;
   useEffect(() => { if (complete) purchaseJourney(order); }, [complete, order]);
@@ -79,13 +86,18 @@ export function PurchaseStatus({ order, canceled = false, closeCheckout = false,
   // Paid: go straight back to the page the plan button was tapped on (no extra tap).
   useEffect(() => {
     if (!complete) return;
-    let back: string | null = null;
-    try { back = readQuizReturn(window.sessionStorage, Date.now(), order) ?? readQuizReturn(window.sessionStorage); } catch { /* Stay on the confirmation. */ }
+    const savedReturn = safeQuizReturn(status?.purchase?.returnTo);
+    let back = savedReturn;
+    try {
+      const orderedReturn = savedReturn ?? readQuizReturn(window.sessionStorage, Date.now(), order);
+      back = orderedReturn ?? readQuizReturn(window.sessionStorage);
+    } catch { /* Stay on the confirmation. */ }
     if (!back) return;
     sendFunnelEvent("purchase_returned");
     location.replace(back);
-  }, [complete, order]);
+  }, [complete, order, status?.purchase?.returnTo]);
   const pending = status?.purchase?.status === "pending";
+  const examCancelAt = status?.subscription?.examCancelAt;
   const labels: Record<string, string> = { failed: "支払いは成立していません。", suspended: "返金手続を確認中のため利用を一時停止しています。", refunded: "返金により、この購入の利用は停止しています。", expired: "利用期間が満了しました。無料の演習・履歴は引き続き使えます。" };
   if (closeCheckout) labels.expired = "決済手続きを中止しました。";
   const title = complete ? "購入が完了しました" : canceled ? "決済画面から戻りました" : pending ? "支払いを確認しています" : "購入状況の確認";
@@ -101,7 +113,15 @@ export function PurchaseStatus({ order, canceled = false, closeCheckout = false,
       <div className="mt-3 space-y-3 text-sm">
         <p className="break-all">注文番号: {order}</p>
         {status?.purchase?.expiresAt && <p>この注文の有効期限: {new Date(status.purchase.expiresAt).toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" })}（日本時間）</p>}
-        {status?.billingModel === "subscription" ? <><p>毎月自動更新です。次回更新の停止は契約管理から行えます。</p>{status.subscription?.cancelAtPeriodEnd && <p>期間末の解約予約済みです。次回の自動更新は停止します。</p>}{status.canManage && <ManageSubscriptionButton />}</> : status && <p>自動更新はありません。</p>}
+        {status?.billingModel === "subscription" ? <>
+          {status.management ? <p>{subscriptionEndingLabel(status.management)}</p>
+            : examCancelAt ? <p>{new Date(examCancelAt).toLocaleDateString("ja-JP", { timeZone: "Asia/Tokyo" })} 0時（日本時間）に自動終了します。</p>
+            : status.purchase?.examEndPending ? <p>自動終了の設定を確認しています。</p>
+            : status.subscription?.cancelAtPeriodEnd ? <p>期間末の解約予約済みです。次回の自動更新は停止します。</p>
+            : status.subscription && !["canceled", "incomplete_expired"].includes(status.subscription.status) && <p>毎月自動更新です。次回更新の停止は契約管理から行えます。</p>}
+          {status.management ? <Link href="/billing" className="inline-flex min-h-11 items-center underline">契約管理</Link>
+            : status.canManage && <ManageSubscriptionButton />}
+        </> : status && <p>自動更新はありません。</p>}
       </div>
     </details>}
     <Link className="inline-flex min-h-11 items-center underline" href={PRICE_PAGE_LINK.href}>{PRICE_PAGE_LINK.label}・お問い合わせ</Link>

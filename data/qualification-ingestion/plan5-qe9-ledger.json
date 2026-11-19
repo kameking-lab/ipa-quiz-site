@@ -1,0 +1,235 @@
+{
+  "lane": "qe-9",
+  "checkedAt": "2026-11-18",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "jobs": [
+    {
+      "jobId": "PLAN5-149",
+      "arrayIndex": 148,
+      "key": "hokenshi|2026|annual|am|tp260424-03a_01.pdf",
+      "status": "completed",
+      "path": "data/questions/hokenshi/112-am-completion.json",
+      "exam": "hokenshi",
+      "officialYear": 2026,
+      "storedYear": 2025,
+      "round": 112,
+      "session": "am",
+      "sourcePage": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp260424-03_04_05.html",
+      "examDate": "2026-02-13",
+      "resultsUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken03_04_05/about.html",
+      "questionPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-03a_01.pdf",
+        "sha256": "8d74be4590eceeeb1aae34d49a1bc6db1d1b305c82d04b4ca02c6811080e27d2"
+      },
+      "answerPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-03seitou.pdf",
+        "sha256": "fe9a271716da63027d0d630dac08e9a5c85962eb3703e6482175667bd84805f6"
+      },
+      "sourceQuestionCount": 55,
+      "existingQuestionCount": 37,
+      "addedQuestionCount": 18,
+      "addedChoiceExplanationCount": 83,
+      "reusedPreparedCount": 15,
+      "newlyAuthoredCount": 3,
+      "officialMorningAnswers": [
+        "1",
+        "4",
+        "1",
+        "3",
+        "3",
+        "4",
+        "1",
+        "3",
+        "2",
+        "2",
+        "4",
+        "2",
+        "3",
+        "1",
+        "1",
+        "1",
+        "2",
+        "3",
+        "1",
+        "4",
+        "2",
+        "1",
+        "2",
+        "2",
+        "3",
+        "3",
+        "3",
+        "5",
+        "3",
+        "5",
+        "4",
+        "4",
+        "4",
+        "25",
+        "24",
+        "34",
+        "12",
+        "24",
+        "4",
+        "1",
+        "4",
+        "4",
+        "3",
+        "3",
+        "2",
+        "3",
+        "1",
+        "3",
+        "1",
+        "4",
+        "3",
+        "3",
+        "4",
+        "3",
+        "3"
+      ],
+      "questions": [
+        {
+          "id": "hokenshi-2025-annual-am-q2",
+          "questionNumber": 2,
+          "officialAnswerNumber": "4",
+          "physicalPdfPage": 7,
+          "preparedSource": "data/prepared-medical/hokenshi112/pilot.json"
+        },
+        {
+          "id": "hokenshi-2025-annual-am-q8",
+          "questionNumber": 8,
+          "officialAnswerNumber": "3",
+          "physicalPdfPage": 10,
+          "preparedSource": "data/prepared-medical/hokenshi112/pilot.json"
+        },
+        {
+          "id": "hokenshi-2025-annual-am-q9",
+          "questionNumber": 9,
+          "officialAnswerNumber": "2",
+          "physicalPdfPage": 10,
+          "preparedSource": "data/prepared-medical/hokenshi112/reviewed13/addition10.json"
+        },
+        {
+          "id": "hokenshi-2025-annual-am-q12",
+          "questionNumber": 12,
+          "officialAnswerNumber": "2",
+          "physicalPdfPage": 11,
+          "preparedSource": "data/prepared-medical/hokenshi112/reviewed13/addition10.json"
+        },
+        {
+          "id": "hokenshi-2025-annual-am-q15",
+          "questionNumber": 15,
+          "officialAnswerNumber": "1",
+          "physicalPdfPage": 12,
+          "preparedSource": "data/prepared-medical/hokenshi112/reviewed13/addition10.json"
+        },
+        {
+          "id": "hokenshi-2025-annual-am-q20",
+          "questionNumber": 20,
+          "officialAnswerNumber": "4",
+          "physicalPdfPage": 14,
+          "preparedSource": "data/prepared-medical/hokenshi112/reviewed13/addition10.json"
+        },
+        {
+          "id": "hokenshi-2025-annual-am-q22",
+          "questionNumber": 22,
+          "officialAnswerNumber": "1",
+          "physicalPdfPage": 15,
+          "preparedSource": "data/prepared-medical/hokenshi112/reviewed13/addition10.json"
+        },
+        {
+          "id": "hokenshi-2025-annual-am-q25",
+          "questionNumber": 25,
+          "officialAnswerNumber": "3",
+          "physicalPdfPage": 16,
+          "preparedSource": "data/prepared-medical/hokenshi112/reviewed13/addition10.json"
+        },
+        {
+          "id": "hokenshi-2025-annual-am-q29",
+          "questionNumber": 29,
+          "officialAnswerNumber": "3",
+          "physicalPdfPage": 18,
+          "preparedSource": "data/prepared-medical/hokenshi112/reviewed13/addition10.json"
+        },
+        {
+          "id": "hokenshi-2025-annual-am-q30",
+          "questionNumber": 30,
+          "officialAnswerNumber": "5",
+          "physicalPdfPage": 19,
+          "preparedSource": "data/prepared-medical/hokenshi112/reviewed13/addition10.json"
+        },
+        {
+          "id": "hokenshi-2025-annual-am-q31",
+          "questionNumber": 31,
+          "officialAnswerNumber": "4",
+          "physicalPdfPage": 19,
+          "preparedSource": "data/prepared-medical/hokenshi112/reviewed13/addition10.json"
+        },
+        {
+          "id": "hokenshi-2025-annual-am-q32",
+          "questionNumber": 32,
+          "officialAnswerNumber": "4",
+          "physicalPdfPage": 20,
+          "preparedSource": "data/prepared-medical/hokenshi112/reviewed13/addition10.json"
+        },
+        {
+          "id": "hokenshi-2025-annual-am-q33",
+          "questionNumber": 33,
+          "officialAnswerNumber": "4",
+          "physicalPdfPage": 20,
+          "preparedSource": "data/prepared-medical/hokenshi112/reviewed13/next3.json"
+        },
+        {
+          "id": "hokenshi-2025-annual-am-q34",
+          "questionNumber": 34,
+          "officialAnswerNumber": "25",
+          "physicalPdfPage": 21,
+          "preparedSource": "data/prepared-medical/hokenshi112/reviewed13/next3.json"
+        },
+        {
+          "id": "hokenshi-2025-annual-am-q35",
+          "questionNumber": 35,
+          "officialAnswerNumber": "24",
+          "physicalPdfPage": 21,
+          "preparedSource": "data/prepared-medical/hokenshi112/reviewed13/next3.json"
+        },
+        {
+          "id": "hokenshi-2025-annual-am-q36",
+          "questionNumber": 36,
+          "officialAnswerNumber": "34",
+          "physicalPdfPage": 22,
+          "preparedSource": null
+        },
+        {
+          "id": "hokenshi-2025-annual-am-q37",
+          "questionNumber": 37,
+          "officialAnswerNumber": "12",
+          "physicalPdfPage": 22,
+          "preparedSource": null
+        },
+        {
+          "id": "hokenshi-2025-annual-am-q38",
+          "questionNumber": 38,
+          "officialAnswerNumber": "24",
+          "physicalPdfPage": 23,
+          "preparedSource": null
+        }
+      ],
+      "figures": [
+        {
+          "questionNumber": 25,
+          "physicalPdfPage": 16,
+          "url": "/images/questions/hokenshi/112-am-q25-table.webp",
+          "clipPoints": [
+            95.0,
+            362.0,
+            462.0,
+            567.0
+          ],
+          "sha256": "978a4fbe18c925f849c759abdf4ead52f06a6a8501f042b57b1115354914a9c8"
+        }
+      ]
+    }
+  ]
+}

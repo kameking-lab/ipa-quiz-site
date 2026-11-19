@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 1,
+  "lane": "qd-11",
+  "previousLane": "qc-11",
+  "date": "2026-11-18",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "assignment": "jobs array index % 14 == 10",
+  "branchAudit": {
+    "refCount": 93,
+    "dataBlobCount": 420,
+    "ledgerBlobCount": 2,
+    "method": "origin/main + all available local/remote cx/kako-* and rel/kako-* refs; distinct data and replenishment ledger blobs. Pending ledger entries were not counted as completed."
+  },
+  "completedJobs": [
+    {
+      "jobId": "PLAN5-165",
+      "exam": "rinsho-kensagishi",
+      "year": 2022,
+      "season": "annual",
+      "session": "pm",
+      "status": "completed-official-originals-added",
+      "expectedOriginalQuestions": 100,
+      "existingOriginalQuestions": 0,
+      "addedRecords": 100,
+      "missingScoredQuestions": 0,
+      "officiallyExcludedQuestions": 0,
+      "dataPath": "data/questions/rinsho-kensagishi/2022-pm-official.json",
+      "sourceManifest": "data/questions/rinsho-kensagishi/2022-pm-official-sources.json",
+      "sourceFiles": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-07.html",
+          "file": "tp220421-07.html",
+          "bytes": 8587,
+          "sha256": "525cfbbca31ab0e9a71660de90879797fff737c4a90594a92418265863215bb8"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-07b_01.pdf",
+          "file": "tp220421-07b_01.pdf",
+          "bytes": 785299,
+          "sha256": "b4f232256376edb3eeec31788281dad53e20b4aee6a78dd0a4354a5b3c6db197"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-07b_02.pdf",
+          "file": "tp220421-07b_02.pdf",
+          "bytes": 99766248,
+          "sha256": "47fbe448609717097f60afea7cd324536a507bffa1a2bcdb2630bb52e7e7ebf8"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-07seitou.pdf",
+          "file": "tp220421-07seitou.pdf",
+          "bytes": 6199,
+          "sha256": "800401545abfdaf3f786248d7d525ba94714b06c3ea915ea3c60f167af70826d"
+        }
+      ],
+      "originalImageCount": 56,
+      "originalImageBytes": 11144108,
+      "notes": "公式正答B001–B100をそのまま収録。本文37ページ・別冊19ページと79/80の共通文を保持。独自の一般解説を明示し、全肢解説とは表示しない。"
+    },
+    {
+      "jobId": "PLAN5-179",
+      "exam": "rigaku-ryohoshi",
+      "year": 2023,
+      "season": "annual",
+      "session": "am",
+      "status": "completed-official-originals-added",
+      "expectedOriginalQuestions": 100,
+      "existingOriginalQuestions": 10,
+      "addedRecords": 89,
+      "missingScoredQuestions": 0,
+      "officiallyExcludedQuestions": 1,
+      "dataPath": "data/questions/rigaku-ryohoshi/2023-am-official-completion.json",
+      "sourceManifest": "data/questions/rigaku-ryohoshi/2023-am-official-sources.json",
+      "sourceFiles": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-08_09.html",
+          "file": "tp230524-08_09.html",
+          "bytes": 10007,
+          "sha256": "24f287fc80c51da1a023dc4422241de8a3b16fe1bef4bf1b3bfaf49b4a1197cc"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-08a_01.pdf",
+          "file": "tp230524-08a_01.pdf",
+          "bytes": 2709093,
+          "sha256": "07998c9f3c578335af0bfdade3be86f51ec9b809245d8d31c3c7e4b5cdcc4eef"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-08a_02.pdf",
+          "file": "tp230524-08a_02.pdf",
+          "bytes": 10154852,
+          "sha256": "13e0891f469ae74242553119b260bc62f4466a8150289fe2a890ba1bedbbe072"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-08seitou.pdf",
+          "file": "tp230524-08seitou.pdf",
+          "bytes": 9873,
+          "sha256": "7bc7a70536954418a09e655d7c890d238cbbab87994bd2a5aea5daf3443272fa"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2023/siken08_09/dl/kyoutu_AM55.pdf",
+          "file": "kyoutu_AM55.pdf",
+          "bytes": 52335,
+          "sha256": "b50060da6c7b0c9ef62b0f6e6d3b67e3fd5532809b1ea15d644c215a14e8c44f",
+          "text": "第\n（別　紙）\n55 問\n午前\n（　採点上の取り扱い　）\n ３通りの解答を正解として採点する。\n（　理　由　）\n ３つの選択肢が正解であるため、３通りの解答を正解として採点する。\n第58回理学療法士国家試験および第58回作業療法士国家試験における\n採点除外等の取扱いをした問題について\n"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2023/siken08_09/dl/kyoutu_AM63.pdf",
+          "file": "kyoutu_AM63.pdf",
+          "bytes": 66687,
+          "sha256": "045b962b4451906beb3feec7d27612a361596c48bc2e35c7f23e0abd8d909568",
+          "text": "第\n（別　紙）\n（　採点上の取り扱い　）\n複数の選択肢を正解として採点する。\n（　理　由　）\n複数の正解があるため。\n午前\n63 問\n第58回理学療法士国家試験および第58回作業療法士国家試験における\n採点除外等の取扱いをした問題について\n"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2023/siken08_09/dl/kyoutu_AM86.pdf",
+          "file": "kyoutu_AM86.pdf",
+          "bytes": 67772,
+          "sha256": "bc6f7edd305e000bab06f7b6a6ee96861620191f55bc40b26d440979e0f01890",
+          "text": "第\n（　採点上の取り扱い　）\n複数の選択肢を正解として採点する。\n（　理　由　）\n複数の正解があるため。\n（別　紙）\n午前\n86 問\n第58回理学療法士国家試験および第58回作業療法士国家試験における\n採点除外等の取扱いをした問題について\n"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2023/siken08_09/dl/kyoutu_AM96.pdf",
+          "file": "kyoutu_AM96.pdf",
+          "bytes": 70375,
+          "sha256": "587b64d10d8789675c3daa5379e58e15e7b4d6ec40304ed3075d6d6038508163",
+          "text": "第\n採点対象から除外する。\n（　理　由　）\n選択肢に正解がないため。\n午前\n96 問\n（　採点上の取り扱い　）\n第58回理学療法士国家試験および第58回作業療法士国家試験における\n採点除外等の取扱いをした問題について\n（別　紙）\n"
+        }
+      ],
+      "originalImageCount": 50,
+      "originalImageBytes": 4069234,
+      "notes": "既存10問を変更せず保持。89問追加で採点対象99問を収録。問96の公式採点除外は原文・全選択肢・原本画像・取扱いURLを台帳に保持。問55の3通りの2肢組合せ、63/86の択一複数正答を維持。"
+    },
+    {
+      "jobId": "PLAN5-193",
+      "exam": "shino-kunrenshi",
+      "year": 2026,
+      "storedYear": 2025,
+      "season": "annual",
+      "session": "am",
+      "status": "completed-existing-branch-integrated",
+      "expectedOriginalQuestions": 75,
+      "existingOriginalQuestions": 58,
+      "addedRecords": 15,
+      "newlyAuthoredRecords": 0,
+      "missingScoredQuestions": 0,
+      "officiallyExcludedQuestions": 2,
+      "dataPath": "data/questions/shino-kunrenshi/2026-am-branch-completion.json",
+      "sourceManifest": "data/questions/shino-kunrenshi/2026-am-branch-sources.json",
+      "sourceFiles": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp260424-10.html",
+          "file": "tp260424-10.html",
+          "bytes": 8563,
+          "sha256": "46ac71a8dbd81683e07f75482bb3145ce0191c884e12cf80e3df340c2f0c30be"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-10a_01.pdf",
+          "file": "tp260424-10a_01.pdf",
+          "bytes": 845962,
+          "sha256": "609eaf93da2da4158e9e86022571d8910ed3c8bbf6d5226106dfc58fc5a99efe"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-10seitou.pdf",
+          "file": "tp260424-10seitou.pdf",
+          "bytes": 67607,
+          "sha256": "2b6b4cc8a51cfd601d1ef4897c61c3947233ab94505f029922b94ec25d8b2583"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken10/dl/AM1.pdf",
+          "file": "shino-AM1.pdf",
+          "bytes": 62546,
+          "sha256": "623f105bce24dbc02d5c3b47679cda91aa266da70ea95c7e669cf4901378a925",
+          "text": "第\n（別　紙）\n1\n問\n午前\n（　採点上の取り扱い　）\n 採点対象から除外する。\n（　理　由　）\n 設問の状況設定が不十分であり、正解が得られないため。\n第56回視能訓練士国家試験における\n採点除外等の取扱いをした問題について\n"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken10/dl/AM37.pdf",
+          "file": "shino-AM37.pdf",
+          "bytes": 88775,
+          "sha256": "a7c7f7372068bd04227e48ea769dc28aa0518e81dc21d5071a2720bfa462eaf1",
+          "text": "第\n（別　紙）\n午前\n37 問\n（　採点上の取り扱い　）\n採点対象から除外する。\n（　理　由　）\n選択肢に正解がないため。\n第56回視能訓練士国家試験における\n採点除外等の取扱いをした問題について\n"
+        }
+      ],
+      "branchSources": [
+        {
+          "commit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+          "path": "data/questions/shino-kunrenshi/reviewed-12-am-20261013.json",
+          "blob": "ba910650240cf73aa5f337926f5dc05cf4c7bce0",
+          "sha256": "fc3fc18e8a3ff0a0328b2f609d1d07832b137f755d41a3699625f7066725fcbc",
+          "selectedQuestionNumbers": [
+            17,
+            18,
+            26,
+            30,
+            31,
+            39,
+            66,
+            67,
+            71,
+            72,
+            74,
+            75
+          ]
+        },
+        {
+          "commit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+          "path": "data/questions/shino-kunrenshi/reviewed-5-20261013.json",
+          "blob": "46af6fc4beab16509cafcb5faf55e5917b9baebf",
+          "sha256": "855b9061cb572753bca4ecee5f26a21b9774301ff3c6e38591b05d961fe1f385",
+          "selectedQuestionNumbers": [
+            56,
+            60
+          ]
+        },
+        {
+          "commit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+          "path": "data/questions/shino-kunrenshi/reviewed-remaining-6-20261014.json",
+          "blob": "6d4b1508c854bc44c59a52bcca005ec1c1095d1d",
+          "sha256": "d57bf39287ee8d397159f69c3652525daeeb1c153c33d741ff77c145fb94d9b4",
+          "selectedQuestionNumbers": [
+            69
+          ]
+        }
+      ],
+      "originalImageCount": 21,
+      "originalImageBytes": 3501068,
+      "notes": "指定された既存12コミットの15原問が同一内容であることを確認し、先頭コミットから15問・関連画像19点だけ取り込み。問1/37は公式採点除外であり原文と原本画像・公式取扱いを台帳に保持。計73問で採点対象の欠番なし。"
+    }
+  ],
+  "pendingAssignedJobs": [
+    "PLAN5-207",
+    "PLAN5-221",
+    "PLAN5-235",
+    "PLAN5-249",
+    "PLAN5-263",
+    "PLAN5-277",
+    "PLAN5-291",
+    "PLAN5-305",
+    "PLAN5-319",
+    "PLAN5-333",
+    "PLAN5-347",
+    "PLAN5-361",
+    "PLAN5-375",
+    "PLAN5-389",
+    "PLAN5-403",
+    "PLAN5-417",
+    "PLAN5-445"
+  ],
+  "untouched": [
+    "existing official answers",
+    "pricing",
+    "free quota",
+    "billing flow",
+    "AI model/provider/prompts",
+    "rate and cost limits"
+  ],
+  "humanDecisions": []
+}

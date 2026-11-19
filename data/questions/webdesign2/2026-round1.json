@@ -1,0 +1,1929 @@
+[
+  {
+    "id": "webdesign2-2026-round1-gakka-q1",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "HTML",
+    "topicTags": [
+      "HTML",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "正しいものは1、間違っているものは2を選びなさい。\n\ndir 属性はグローバル属性であり、全ての要素に指定できる。",
+    "choices": {
+      "ア": "正しい",
+      "イ": "間違っている"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "dirは文字の書字方向を指定するグローバル属性です。特定の要素に限らず指定できます。ltrは左から右、rtlは右から左の方向を表します。",
+    "choiceExplanations": {
+      "ア": "正しい判断です。dirは文字の書字方向を指定するグローバル属性です。特定の要素に限らず指定できます。ltrは左から右、rtlは右から左の方向を表します。",
+      "イ": "この判断は適切ではありません。dirは文字の書字方向を指定するグローバル属性です。特定の要素に限らず指定できます。ltrは左から右、rtlは右から左の方向を表します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "dir 属性はグローバル属性であり、全ての要素に指定できる。",
+      "choices": {
+        "ア": "正しい",
+        "イ": "間違っている"
+      }
+    },
+    "officialReferenceUrls": [
+      "https://html.spec.whatwg.org/multipage/"
+    ]
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q2",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "JavaScript",
+    "topicTags": [
+      "JavaScript",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "正しいものは1、間違っているものは2を選びなさい。\n\nJavaScript では、配列のインデックスは常に0 から始まる。",
+    "choices": {
+      "ア": "正しい",
+      "イ": "間違っている"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "JavaScriptの配列要素の位置は0から数えます。最初の要素の添字は0、次は1です。要素数3の通常の配列の添字は0、1、2になります。",
+    "choiceExplanations": {
+      "ア": "正しい判断です。JavaScriptの配列要素の位置は0から数えます。最初の要素の添字は0、次は1です。要素数3の通常の配列の添字は0、1、2になります。",
+      "イ": "この判断は適切ではありません。JavaScriptの配列要素の位置は0から数えます。最初の要素の添字は0、次は1です。要素数3の通常の配列の添字は0、1、2になります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "JavaScript では、配列のインデックスは常に0 から始まる。",
+      "choices": {
+        "ア": "正しい",
+        "イ": "間違っている"
+      }
+    }
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q3",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "ウェブ技術・運用",
+    "topicTags": [
+      "ウェブ技術・運用",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "正しいものは1、間違っているものは2を選びなさい。\n\nSSH でウェブサーバをリモート操作する際、パスワード認証のみを用いると、総当たり攻撃等により認証を突破 される可能性があるため、公開鍵認証の利用が推奨される。",
+    "choices": {
+      "ア": "正しい",
+      "イ": "間違っている"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "公開鍵認証では対応する秘密鍵の保有が必要になります。推測可能なパスワードだけに依存する認証と比べ、総当たりへの対策になります。",
+    "choiceExplanations": {
+      "ア": "正しい判断です。公開鍵認証では対応する秘密鍵の保有が必要になります。推測可能なパスワードだけに依存する認証と比べ、総当たりへの対策になります。",
+      "イ": "この判断は適切ではありません。公開鍵認証では対応する秘密鍵の保有が必要になります。推測可能なパスワードだけに依存する認証と比べ、総当たりへの対策になります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "SSH でウェブサーバをリモート操作する際、パスワード認証のみを用いると、総当たり攻撃等により認証を突破\n\nされる可能性があるため、公開鍵認証の利用が推奨される。",
+      "choices": {
+        "ア": "正しい",
+        "イ": "間違っている"
+      }
+    }
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q4",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "ウェブ技術・運用",
+    "topicTags": [
+      "ウェブ技術・運用",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "正しいものは1、間違っているものは2を選びなさい。\n\nSSL サーバ証明書において、最も信頼性が高いのはドメイン認証である。",
+    "choices": {
+      "ア": "正しい",
+      "イ": "間違っている"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "ドメイン認証はドメインを管理していることを確認する方式です。組織の実在等を含む検証より確認範囲が広いという意味ではありません。",
+    "choiceExplanations": {
+      "ア": "この判断は適切ではありません。ドメイン認証はドメインを管理していることを確認する方式です。組織の実在等を含む検証より確認範囲が広いという意味ではありません。",
+      "イ": "正しい判断です。ドメイン認証はドメインを管理していることを確認する方式です。組織の実在等を含む検証より確認範囲が広いという意味ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "SSL サーバ証明書において、最も信頼性が高いのはドメイン認証である。",
+      "choices": {
+        "ア": "正しい",
+        "イ": "間違っている"
+      }
+    }
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q5",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "HTML",
+    "topicTags": [
+      "HTML",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "正しいものは1、間違っているものは2を選びなさい。\n\np 要素を次のように記述すると文法エラーになる。\n\n```html\n<p>段落1\n<p>段落2\n<p>段落3\n</p>\n```",
+    "choices": {
+      "ア": "正しい",
+      "イ": "間違っている"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "pの終了タグは、直後に別のpが始まる場合などに省略できます。設問の記述はこの省略規則に当たります。終了タグの省略と、その要素自体が存在しないことを区別します。",
+    "choiceExplanations": {
+      "ア": "この判断は適切ではありません。pの終了タグは、直後に別のpが始まる場合などに省略できます。設問の記述はこの省略規則に当たります。終了タグの省略と、その要素自体が存在しないことを区別します。",
+      "イ": "正しい判断です。pの終了タグは、直後に別のpが始まる場合などに省略できます。設問の記述はこの省略規則に当たります。終了タグの省略と、その要素自体が存在しないことを区別します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "p 要素を次のように記述すると文法エラーになる。\n\n\n                           <p>段落1\n                           <p>段落2\n                           <p>段落3\n                                     </p>",
+      "choices": {
+        "ア": "正しい",
+        "イ": "間違っている"
+      }
+    },
+    "officialReferenceUrls": [
+      "https://html.spec.whatwg.org/multipage/"
+    ]
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q6",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "ウェブ技術・運用",
+    "topicTags": [
+      "ウェブ技術・運用",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "正しいものは1、間違っているものは2を選びなさい。\n\n情報機器作業者の労働衛生管理において、“作業時間又は作業内容に相当程度拘束性があると考えられるも の”については特に配慮されるべきである。",
+    "choices": {
+      "ア": "正しい",
+      "イ": "間違っている"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "作業時間や内容への拘束性は健康への影響に関係します。利用者が自分の裁量で休止しにくい作業では、作業管理などへの配慮が必要です。",
+    "choiceExplanations": {
+      "ア": "正しい判断です。作業時間や内容への拘束性は健康への影響に関係します。利用者が自分の裁量で休止しにくい作業では、作業管理などへの配慮が必要です。",
+      "イ": "この判断は適切ではありません。作業時間や内容への拘束性は健康への影響に関係します。利用者が自分の裁量で休止しにくい作業では、作業管理などへの配慮が必要です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "情報機器作業者の労働衛生管理において、“作業時間又は作業内容に相当程度拘束性があると考えられるも\n\nの”については特に配慮されるべきである。",
+      "choices": {
+        "ア": "正しい",
+        "イ": "間違っている"
+      }
+    }
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q7",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "法規",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "正しいものは1、間違っているものは2を選びなさい。\n\n著作隣接権は、著作物を創作した者に付与される権利である。",
+    "choices": {
+      "ア": "正しい",
+      "イ": "間違っている"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "著作隣接権は実演家、レコード製作者、放送事業者などに認められる権利です。著作者に生じる著作権とは区別します。",
+    "choiceExplanations": {
+      "ア": "この判断は適切ではありません。著作隣接権は実演家、レコード製作者、放送事業者などに認められる権利です。著作者に生じる著作権とは区別します。",
+      "イ": "正しい判断です。著作隣接権は実演家、レコード製作者、放送事業者などに認められる権利です。著作者に生じる著作権とは区別します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "著作隣接権は、著作物を創作した者に付与される権利である。",
+      "choices": {
+        "ア": "正しい",
+        "イ": "間違っている"
+      }
+    },
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/345AC0000000048"
+    ]
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q8",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "ウェブ技術・運用",
+    "topicTags": [
+      "ウェブ技術・運用",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "正しいものは1、間違っているものは2を選びなさい。\n\nユニバーサルデザインとは、これまで対象ユーザとして認識されずに除外されてきた人々を、デザインの初期 段階から巻き込んでデザインしていく手法のことである。",
+    "choices": {
+      "ア": "正しい",
+      "イ": "間違っている"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "従来除外されてきた人々を設計の初期から参加させる説明は、インクルーシブデザインです。ユニバーサルデザインという名称に置き換えないようにします。",
+    "choiceExplanations": {
+      "ア": "この判断は適切ではありません。従来除外されてきた人々を設計の初期から参加させる説明は、インクルーシブデザインです。ユニバーサルデザインという名称に置き換えないようにします。",
+      "イ": "正しい判断です。従来除外されてきた人々を設計の初期から参加させる説明は、インクルーシブデザインです。ユニバーサルデザインという名称に置き換えないようにします。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "ユニバーサルデザインとは、これまで対象ユーザとして認識されずに除外されてきた人々を、デザインの初期\n\n段階から巻き込んでデザインしていく手法のことである。",
+      "choices": {
+        "ア": "正しい",
+        "イ": "間違っている"
+      }
+    }
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q9",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "ウェブ技術・運用",
+    "topicTags": [
+      "ウェブ技術・運用",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "正しいものは1、間違っているものは2を選びなさい。\n\nHSL 色空間では、彩度が0%の場合、色相は表示結果に影響しない。",
+    "choices": {
+      "ア": "正しい",
+      "イ": "間違っている"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "彩度0%では無彩色になるため、色相の値を変えても表示の色は変わりません。明るさは別の成分です。白や黒、灰色では色相による色味は現れません。",
+    "choiceExplanations": {
+      "ア": "正しい判断です。彩度0%では無彩色になるため、色相の値を変えても表示の色は変わりません。明るさは別の成分です。白や黒、灰色では色相による色味は現れません。",
+      "イ": "この判断は適切ではありません。彩度0%では無彩色になるため、色相の値を変えても表示の色は変わりません。明るさは別の成分です。白や黒、灰色では色相による色味は現れません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "HSL 色空間では、彩度が0%の場合、色相は表示結果に影響しない。",
+      "choices": {
+        "ア": "正しい",
+        "イ": "間違っている"
+      }
+    }
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q10",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "法規",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "正しいものは1、間違っているものは2を選びなさい。\n\n個人情報保護法では、保護の対象としての「個人情報」と「個人データ」は分けて定義されている。",
+    "choices": {
+      "ア": "正しい",
+      "イ": "間違っている"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "個人情報と、そのうち個人情報データベース等を構成する個人データは別々に定義されています。両者は同じ範囲ではありません。",
+    "choiceExplanations": {
+      "ア": "正しい判断です。個人情報と、そのうち個人情報データベース等を構成する個人データは別々に定義されています。両者は同じ範囲ではありません。",
+      "イ": "この判断は適切ではありません。個人情報と、そのうち個人情報データベース等を構成する個人データは別々に定義されています。両者は同じ範囲ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "個人情報保護法では、保護の対象としての「個人情報」と「個人データ」は分けて定義されている。",
+      "choices": {
+        "ア": "正しい",
+        "イ": "間違っている"
+      }
+    },
+    "officialReferenceUrls": [
+      "https://www.ppc.go.jp/personalinfo/faq/APPI_QA/"
+    ]
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q11",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "JavaScript",
+    "topicTags": [
+      "JavaScript",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "正しいものは1、間違っているものは2を選びなさい。\n\nJavaScript では、const で宣言された変数は再代入できないが、その変数が参照するオブジェクトのプロパテ ィを変更することは可能である。",
+    "choices": {
+      "ア": "正しい",
+      "イ": "間違っている"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "constは変数への再代入を禁止します。参照先のオブジェクト自体を凍結する仕組みではないため、そのプロパティは変更できます。",
+    "choiceExplanations": {
+      "ア": "正しい判断です。constは変数への再代入を禁止します。参照先のオブジェクト自体を凍結する仕組みではないため、そのプロパティは変更できます。",
+      "イ": "この判断は適切ではありません。constは変数への再代入を禁止します。参照先のオブジェクト自体を凍結する仕組みではないため、そのプロパティは変更できます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "JavaScript では、const で宣言された変数は再代入できないが、その変数が参照するオブジェクトのプロパテ\n\nィを変更することは可能である。",
+      "choices": {
+        "ア": "正しい",
+        "イ": "間違っている"
+      }
+    }
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q12",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "PHP",
+    "topicTags": [
+      "PHP",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "正しいものは1、間違っているものは2を選びなさい。\n\nPHP において、unset()関数は複数の変数を破棄することができる。",
+    "choices": {
+      "ア": "正しい",
+      "イ": "間違っている"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "unsetには複数の変数を引数として渡せます。1回の呼び出しで複数の変数を破棄できます。unset($a, $b)のように、カンマで区切って渡します。",
+    "choiceExplanations": {
+      "ア": "正しい判断です。unsetには複数の変数を引数として渡せます。1回の呼び出しで複数の変数を破棄できます。unset($a, $b)のように、カンマで区切って渡します。",
+      "イ": "この判断は適切ではありません。unsetには複数の変数を引数として渡せます。1回の呼び出しで複数の変数を破棄できます。unset($a, $b)のように、カンマで区切って渡します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "PHP において、unset()関数は複数の変数を破棄することができる。",
+      "choices": {
+        "ア": "正しい",
+        "イ": "間違っている"
+      }
+    },
+    "officialReferenceUrls": [
+      "https://www.php.net/manual/ja/"
+    ]
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q13",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "アクセシビリティ",
+    "topicTags": [
+      "アクセシビリティ",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "正しいものは1、間違っているものは2を選びなさい。\n\nウェブアクセシビリティにおけるコントラスト比の要件は、ロゴまたはブランド名の一部である文字に対しても適用 される。",
+    "choices": {
+      "ア": "正しい",
+      "イ": "間違っている"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "ロゴやブランド名の一部となる文字には、通常の文字と同じ最低コントラスト比の要件は課されません。基準にある例外を確認します。",
+    "choiceExplanations": {
+      "ア": "この判断は適切ではありません。ロゴやブランド名の一部となる文字には、通常の文字と同じ最低コントラスト比の要件は課されません。基準にある例外を確認します。",
+      "イ": "正しい判断です。ロゴやブランド名の一部となる文字には、通常の文字と同じ最低コントラスト比の要件は課されません。基準にある例外を確認します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "ウェブアクセシビリティにおけるコントラスト比の要件は、ロゴまたはブランド名の一部である文字に対しても適用\n\nされる。",
+      "choices": {
+        "ア": "正しい",
+        "イ": "間違っている"
+      }
+    },
+    "officialReferenceUrls": [
+      "https://www.w3.org/TR/WCAG20/"
+    ]
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q14",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "ウェブ技術・運用",
+    "topicTags": [
+      "ウェブ技術・運用",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "正しいものは1、間違っているものは2を選びなさい。\n\nウェブブラウザの機能において、Cookie（クッキー）とキャッシュは同一のものを指している。",
+    "choices": {
+      "ア": "正しい",
+      "イ": "間違っている"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "Cookieは値の保存と送信、キャッシュは取得済みの内容の再利用を目的とする仕組みです。ブラウザに保存される点が似ていても役割は異なります。",
+    "choiceExplanations": {
+      "ア": "この判断は適切ではありません。Cookieは値の保存と送信、キャッシュは取得済みの内容の再利用を目的とする仕組みです。ブラウザに保存される点が似ていても役割は異なります。",
+      "イ": "正しい判断です。Cookieは値の保存と送信、キャッシュは取得済みの内容の再利用を目的とする仕組みです。ブラウザに保存される点が似ていても役割は異なります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "ウェブブラウザの機能において、Cookie（クッキー）とキャッシュは同一のものを指している。",
+      "choices": {
+        "ア": "正しい",
+        "イ": "間違っている"
+      }
+    }
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q15",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "ウェブ技術・運用",
+    "topicTags": [
+      "ウェブ技術・運用",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "正しいものは1、間違っているものは2を選びなさい。\n\nINSERT 文は、テーブルの既存データ行を更新するために使用される。",
+    "choices": {
+      "ア": "正しい",
+      "イ": "間違っている"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "既存行の更新にはUPDATEを使います。INSERTは新しい行を挿入する命令です。更新対象を条件で絞るには、UPDATEにWHERE句を付けます。",
+    "choiceExplanations": {
+      "ア": "この判断は適切ではありません。既存行の更新にはUPDATEを使います。INSERTは新しい行を挿入する命令です。更新対象を条件で絞るには、UPDATEにWHERE句を付けます。",
+      "イ": "正しい判断です。既存行の更新にはUPDATEを使います。INSERTは新しい行を挿入する命令です。更新対象を条件で絞るには、UPDATEにWHERE句を付けます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "INSERT 文は、テーブルの既存データ行を更新するために使用される。",
+      "choices": {
+        "ア": "正しい",
+        "イ": "間違っている"
+      }
+    }
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q16",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "category": "HTML",
+    "topicTags": [
+      "HTML",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "HTML Living Standard で定義されている要素はどれか。以下より1 つ選択しなさい。",
+    "choices": {
+      "ア": "qr",
+      "イ": "help",
+      "ウ": "search",
+      "エ": "translate"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "searchは検索や絞り込みを行うための操作部品などの領域を表す要素です。 qrという標準要素は定義されていません。 helpという標準要素は定義されていません。",
+    "choiceExplanations": {
+      "ア": "qrという標準要素は定義されていません。",
+      "イ": "helpという標準要素は定義されていません。",
+      "ウ": "searchは検索や絞り込みを行うための操作部品などの領域を表す要素です。",
+      "エ": "translateはグローバル属性の名前であり、要素名ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "HTML Living Standard で定義されている要素はどれか。以下より1 つ選択しなさい。",
+      "choices": {
+        "ア": "qr",
+        "イ": "help",
+        "ウ": "search",
+        "エ": "translate"
+      }
+    },
+    "officialReferenceUrls": [
+      "https://html.spec.whatwg.org/multipage/"
+    ]
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q17",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 17,
+    "type": "multiple-choice",
+    "category": "ウェブ技術・運用",
+    "topicTags": [
+      "ウェブ技術・運用",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "ウェブサイトのバックアップ計画で、RPO（Recovery Point Objective）が示すものはどれか。以下より1 つ選 択しなさい。",
+    "choices": {
+      "ア": "復旧にかかる時間の目標値",
+      "イ": "バックアップファイルのサイズ",
+      "ウ": "バックアップの実行頻度",
+      "エ": "どの時点のデータまで復旧させるかの目標値"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "RPOは障害後にどの時点のデータまで戻せる必要があるかを定める復旧時点の目標です。 復旧にかかる時間の目標はRTOです。 RPOはバックアップファイルの容量を表しません。",
+    "choiceExplanations": {
+      "ア": "復旧にかかる時間の目標はRTOです。",
+      "イ": "RPOはバックアップファイルの容量を表しません。",
+      "ウ": "実行頻度はRPOを満たすために設計する運用の一つです。",
+      "エ": "RPOは障害後にどの時点のデータまで戻せる必要があるかを定める復旧時点の目標です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "ウェブサイトのバックアップ計画で、RPO（Recovery Point Objective）が示すものはどれか。以下より1 つ選\n\n択しなさい。",
+      "choices": {
+        "ア": "復旧にかかる時間の目標値",
+        "イ": "バックアップファイルのサイズ",
+        "ウ": "バックアップの実行頻度",
+        "エ": "どの時点のデータまで復旧させるかの目標値"
+      }
+    }
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q18",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 18,
+    "type": "multiple-choice",
+    "category": "ウェブ技術・運用",
+    "topicTags": [
+      "ウェブ技術・運用",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "次のコード\n\n```javascript\nconsole.log('A');\nsetTimeout(function() {\n  console.log('B');\n}, 0);\nconsole.log('C');\n```",
+    "choices": {
+      "ア": "A → B → C",
+      "イ": "A → C → B",
+      "ウ": "B → A → C",
+      "エ": "C → B → A"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "同期処理のA、Cが先に出力され、その後タイマーのコールバックがBを出力します。 タイマーの待ち時間が0でも、Bは現在実行中の処理に割り込みません。 最初のconsole.logより先にタイマーの処理は実行されません。",
+    "choiceExplanations": {
+      "ア": "タイマーの待ち時間が0でも、Bは現在実行中の処理に割り込みません。",
+      "イ": "同期処理のA、Cが先に出力され、その後タイマーのコールバックがBを出力します。",
+      "ウ": "最初のconsole.logより先にタイマーの処理は実行されません。",
+      "エ": "同期処理は記述順なので、CがAより先にはなりません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "次のコードを実行した場合、コンソールに出力される順序として適切なものはどれか。以下より1 つ選択しなさ\n\nい。\n\n                             JavaScript\n\n                              console.log('A');\n                              setTimeout(function() {\n                                console.log('B');\n                              }, 0);\n                              console.log('C');",
+      "choices": {
+        "ア": "A → B → C",
+        "イ": "A → C → B",
+        "ウ": "B → A → C",
+        "エ": "C → B → A"
+      }
+    }
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q19",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 19,
+    "type": "multiple-choice",
+    "category": "アクセシビリティ",
+    "topicTags": [
+      "アクセシビリティ",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "次に示したのは、ウェブコンテンツ JIS(JISX8341-3)の達成基準 3.3.1 である。 A にあてはまる語句 として、最も適切なものを以下より1 つ選択しなさい。 3.3.1 A の特定の達成基準 入力 A が自動的に検出された場合は、 A となっている箇所が特定 され、その A が利用者にテキストで説明される(レベル A)。",
+    "choices": {
+      "ア": "ラベル",
+      "イ": "エラー",
+      "ウ": "無効項目",
+      "エ": "フィールド"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "入力エラーの場所を特定し、その内容をテキストで知らせる達成基準です。 検出した入力の誤りに当たる語句ではありません。 無効項目という語句を繰り返しても、入力の誤りを説明する定義にはなりません。",
+    "choiceExplanations": {
+      "ア": "検出した入力の誤りに当たる語句ではありません。",
+      "イ": "入力エラーの場所を特定し、その内容をテキストで知らせる達成基準です。",
+      "ウ": "無効項目という語句を繰り返しても、入力の誤りを説明する定義にはなりません。",
+      "エ": "フィールドそのものの検出ではなく、入力エラーの検出が条件です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "次に示したのは、ウェブコンテンツ JIS(JISX8341-3)の達成基準 3.3.1 である。  A  にあてはまる語句\n\nとして、最も適切なものを以下より1 つ選択しなさい。\n\n\n        3.3.1    A  の特定の達成基準\n\n    入力    A   が自動的に検出された場合は、   A   となっている箇所が特定\n\n   され、その   A   が利用者にテキストで説明される(レベル A)。",
+      "choices": {
+        "ア": "ラベル",
+        "イ": "エラー",
+        "ウ": "無効項目",
+        "エ": "フィールド"
+      }
+    },
+    "officialReferenceUrls": [
+      "https://www.w3.org/TR/WCAG20/"
+    ]
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q20",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 20,
+    "type": "multiple-choice",
+    "category": "ウェブ技術・運用",
+    "topicTags": [
+      "ウェブ技術・運用",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "「Wget」や「curl」コマンドの主な用途として正しいものはどれか。以下より1 つ選択しなさい。",
+    "choices": {
+      "ア": "画像を編集する。",
+      "イ": "コマンドラインからHTTP リクエストを送信してファイルをダウンロードする。",
+      "ウ": "HTML ファイルを自動生成する。",
+      "エ": "データベースをバックアップする。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "HTTPなどでリクエストを送信し、応答内容を取得する用途に使います。 画像を編集するコマンドという説明ではありません。 取得したHTMLを保存することはできますが、HTML生成が主用途ではありません。",
+    "choiceExplanations": {
+      "ア": "画像を編集するコマンドという説明ではありません。",
+      "イ": "HTTPなどでリクエストを送信し、応答内容を取得する用途に使います。",
+      "ウ": "取得したHTMLを保存することはできますが、HTML生成が主用途ではありません。",
+      "エ": "データベースの専用バックアップツールではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "「Wget」や「curl」コマンドの主な用途として正しいものはどれか。以下より1 つ選択しなさい。",
+      "choices": {
+        "ア": "画像を編集する。",
+        "イ": "コマンドラインからHTTP リクエストを送信してファイルをダウンロードする。",
+        "ウ": "HTML ファイルを自動生成する。",
+        "エ": "データベースをバックアップする。"
+      }
+    }
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q21",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 21,
+    "type": "multiple-choice",
+    "category": "ウェブ技術・運用",
+    "topicTags": [
+      "ウェブ技術・運用",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "ソーシャルエンジニアリングに該当するものはどれか。以下より1 つ選択しなさい。",
+    "choices": {
+      "ア": "スミッシング",
+      "イ": "SQL インジェクション",
+      "ウ": "セッションハイジャック",
+      "エ": "ディレクトリトラバーサル"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "SMSなどで人をだまし、偽サイトへ誘導するスミッシングは人の判断を狙います。 SQL文の解釈を悪用する技術的な攻撃です。 セッションの識別情報などを利用して、利用状態を乗っ取る攻撃です。",
+    "choiceExplanations": {
+      "ア": "SMSなどで人をだまし、偽サイトへ誘導するスミッシングは人の判断を狙います。",
+      "イ": "SQL文の解釈を悪用する技術的な攻撃です。",
+      "ウ": "セッションの識別情報などを利用して、利用状態を乗っ取る攻撃です。",
+      "エ": "ファイルのパスの制限を回避する脆弱性を悪用します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "ソーシャルエンジニアリングに該当するものはどれか。以下より1 つ選択しなさい。",
+      "choices": {
+        "ア": "スミッシング",
+        "イ": "SQL インジェクション",
+        "ウ": "セッションハイジャック",
+        "エ": "ディレクトリトラバーサル"
+      }
+    }
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q22",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 22,
+    "type": "multiple-choice",
+    "category": "CSS",
+    "topicTags": [
+      "CSS",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "CSS において、「適用対象の要素のcolor プロパティの値」を表すキーワードはどれか。以下より1 つ選択しな さい。",
+    "choices": {
+      "ア": "fontcolor",
+      "イ": "textcolor",
+      "ウ": "currentcolor",
+      "エ": "foregroundcolor"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "currentcolorはその要素のcolorプロパティの値を表します。 fontcolorというCSSキーワードではありません。 textcolorというCSSキーワードではありません。",
+    "choiceExplanations": {
+      "ア": "fontcolorというCSSキーワードではありません。",
+      "イ": "textcolorというCSSキーワードではありません。",
+      "ウ": "currentcolorはその要素のcolorプロパティの値を表します。",
+      "エ": "foregroundcolorというCSSキーワードではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "CSS において、「適用対象の要素のcolor プロパティの値」を表すキーワードはどれか。以下より1 つ選択しな\n\nさい。",
+      "choices": {
+        "ア": "fontcolor",
+        "イ": "textcolor",
+        "ウ": "currentcolor",
+        "エ": "foregroundcolor"
+      }
+    },
+    "officialReferenceUrls": [
+      "https://www.w3.org/TR/CSS/"
+    ]
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q23",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 23,
+    "type": "multiple-choice",
+    "category": "ウェブ技術・運用",
+    "topicTags": [
+      "ウェブ技術・運用",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "ウェブサーバの「Keep-Alive」設定の効果として正しいものはどれか。以下より1 つ選択しなさい。",
+    "choices": {
+      "ア": "サーバを停止させない。",
+      "イ": "データベースを常に最新状態に保つ。",
+      "ウ": "TCP 接続を再利用して複数のHTTP リクエストを処理し、パフォーマンスを向上させる。",
+      "エ": "画像ファイルを自動的に圧縮する。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "接続を使い回すことで、リクエストのたびに接続を確立する負担を減らします。 サーバプロセスが停止しないことを保証する設定ではありません。 データベース内容の更新とは関係しません。",
+    "choiceExplanations": {
+      "ア": "サーバプロセスが停止しないことを保証する設定ではありません。",
+      "イ": "データベース内容の更新とは関係しません。",
+      "ウ": "接続を使い回すことで、リクエストのたびに接続を確立する負担を減らします。",
+      "エ": "画像の圧縮を自動で行う設定ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "ウェブサーバの「Keep-Alive」設定の効果として正しいものはどれか。以下より1 つ選択しなさい。",
+      "choices": {
+        "ア": "サーバを停止させない。",
+        "イ": "データベースを常に最新状態に保つ。",
+        "ウ": "TCP 接続を再利用して複数のHTTP リクエストを処理し、パフォーマンスを向上させる。",
+        "エ": "画像ファイルを自動的に圧縮する。"
+      }
+    }
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q24",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 24,
+    "type": "multiple-choice",
+    "category": "JavaScript",
+    "topicTags": [
+      "JavaScript",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "次のHTML において、特定部分をクリックすることでp 要素の文字が標準よりも大きく表示されるようにした い。その場合に A に記述すべきJavaScript コードを、以下より1 つ選択しなさい。\n\n```html\n<!DOCTYPE html>\n<html lang=\"ja\">\n<head>\n<meta charset=\"utf-8\">\n<title>ウェブデザイン技能検定</title>\n</head>\n<body>\n  <header>\n    <a href=\"#\" onclick=\"fontLarge()\">大きく表示</a>\n  </header>\n  <main>\n    <p>ウェブデザイン技能検定は特定非営利活動法人インターネットスキル認定普及協会が実施するものです。</p>\n  </main>\n</body>\n<script>\nfunction fontLarge() {\n  document. A = \"2em\";\n}\n</script>\n</html>\n```",
+    "choices": {
+      "ア": "getElementByTag(\"p\").style.fontSize",
+      "イ": "getElementsByTagName(\"p\").style.fontSize",
+      "ウ": "querySelector(\"p\").style.fontSize",
+      "エ": "querySelectors(\"p\").style.fontSize"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "querySelectorは一致する最初の要素を返し、style.fontSizeを設定できます。 getElementByTagというDOMメソッドはありません。 getElementsByTagNameは要素の集合を返すため、その集合に直接styleを指定できません。",
+    "choiceExplanations": {
+      "ア": "getElementByTagというDOMメソッドはありません。",
+      "イ": "getElementsByTagNameは要素の集合を返すため、その集合に直接styleを指定できません。",
+      "ウ": "querySelectorは一致する最初の要素を返し、style.fontSizeを設定できます。",
+      "エ": "querySelectorsというDOMメソッドはありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "次のHTML において、特定部分をクリックすることでp 要素の文字が標準よりも大きく表示されるようにした\n\nい。その場合に   A   に記述すべきJavaScript コードを、以下より1 つ選択しなさい。\n\n\n     HTML\n\n         <!DOCTYPE html>\n         <html lang=\"ja\">\n         <head>\n         <meta charset=\"utf-8\">\n       <title>ウェブデザイン技能検定</title>\n         </head>\n         <body>\n                <header>\n                       <a href=\"#\" onclick=\"fontLarge()\">大きく表示</a>\n                </header>\n                <main>\n             <p>ウェブデザイン技能検定は特定非営利活動法人インターネッ\n     トスキル認定普及協会が実施するものです。</p>\n                </main>\n         </body>\n         <script>\n         function fontLarge() {\n                document.   A    = \"2em\";\n         }\n         </script>\n         </html>",
+      "choices": {
+        "ア": "getElementByTag(\"p\").style.fontSize",
+        "イ": "getElementsByTagName(\"p\").style.fontSize",
+        "ウ": "querySelector(\"p\").style.fontSize",
+        "エ": "querySelectors(\"p\").style.fontSize"
+      }
+    }
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q25",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 25,
+    "type": "multiple-choice",
+    "category": "ウェブ技術・運用",
+    "topicTags": [
+      "ウェブ技術・運用",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "HTTP ステータスコードにおいて、500 番台のコードが示す内容として最も適切なものはどれか。以下より1 つ 選択しなさい。",
+    "choices": {
+      "ア": "クライアント側のリクエストに誤りがあることを示す。",
+      "イ": "サーバ側で処理中にエラーが発生したことを示す。",
+      "ウ": "リクエストが正常に処理されたことを示す。",
+      "エ": "リダイレクトが必要であることを示す。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "500番台はサーバ側で要求を処理できなかった場合のエラーです。 リクエスト側の問題を表すのは主に400番台です。 正常な成功を表すのは主に200番台です。",
+    "choiceExplanations": {
+      "ア": "リクエスト側の問題を表すのは主に400番台です。",
+      "イ": "500番台はサーバ側で要求を処理できなかった場合のエラーです。",
+      "ウ": "正常な成功を表すのは主に200番台です。",
+      "エ": "転送に関する応答は主に300番台です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "HTTP ステータスコードにおいて、500 番台のコードが示す内容として最も適切なものはどれか。以下より1 つ\n\n選択しなさい。",
+      "choices": {
+        "ア": "クライアント側のリクエストに誤りがあることを示す。",
+        "イ": "サーバ側で処理中にエラーが発生したことを示す。",
+        "ウ": "リクエストが正常に処理されたことを示す。",
+        "エ": "リダイレクトが必要であることを示す。"
+      }
+    }
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q26",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 26,
+    "type": "multiple-choice",
+    "category": "HTML",
+    "topicTags": [
+      "HTML",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "次に示したのは、img 要素とそれに関連するテキストに関する説明文である。 A と B にあてはま る語句として最も適切なものを、以下より1 つ選択しなさい。 画像が表示される前提でその画像の補足説明をするのが A 、画像が表示 されない場合にその画像の代わりとして使用されるのが B である。",
+    "choices": {
+      "ア": "A ラベル B キャプション",
+      "イ": "A キャプション B レジェンド",
+      "ウ": "A 代替テキスト B キャプション",
+      "エ": "A キャプション B 代替テキスト"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "画像に添える説明がキャプション、画像に代わる内容が代替テキストです。 画像と一緒に見せる説明はキャプションであり、ラベルという対応ではありません。 画像の代わりとなるものは代替テキストです。",
+    "choiceExplanations": {
+      "ア": "画像と一緒に見せる説明はキャプションであり、ラベルという対応ではありません。",
+      "イ": "画像の代わりとなるものは代替テキストです。",
+      "ウ": "キャプションと代替テキストの役割が逆になっています。",
+      "エ": "画像に添える説明がキャプション、画像に代わる内容が代替テキストです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "次に示したのは、img 要素とそれに関連するテキストに関する説明文である。  A  と  B  にあてはま\n\nる語句として最も適切なものを、以下より1 つ選択しなさい。\n\n\n\n    画像が表示される前提でその画像の補足説明をするのが  A  、画像が表示\n\n    されない場合にその画像の代わりとして使用されるのが  B  である。",
+      "choices": {
+        "ア": "A ラベル B キャプション",
+        "イ": "A キャプション B レジェンド",
+        "ウ": "A 代替テキスト B キャプション",
+        "エ": "A キャプション B 代替テキスト"
+      }
+    },
+    "officialReferenceUrls": [
+      "https://html.spec.whatwg.org/multipage/"
+    ]
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q27",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 27,
+    "type": "multiple-choice",
+    "category": "ウェブ技術・運用",
+    "topicTags": [
+      "ウェブ技術・運用",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "セッション管理のセキュリティ対策として適切ではないものを以下より1 つ選択しなさい。",
+    "choices": {
+      "ア": "セッションID の定期的な再生成",
+      "イ": "HTTPS の使用",
+      "ウ": "セッションID をURL に含める",
+      "エ": "セッションタイムアウトの設定"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "URLに含めると履歴やログ、参照元情報などから漏れる危険があります。 IDを再生成することは、セッション固定などへの対策です。 HTTPSは通信経路での盗聴や改ざんへの対策になります。",
+    "choiceExplanations": {
+      "ア": "IDを再生成することは、セッション固定などへの対策です。",
+      "イ": "HTTPSは通信経路での盗聴や改ざんへの対策になります。",
+      "ウ": "URLに含めると履歴やログ、参照元情報などから漏れる危険があります。",
+      "エ": "一定時間で利用状態を失効させ、放置されたセッションの悪用を抑えます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "セッション管理のセキュリティ対策として適切ではないものを以下より1 つ選択しなさい。",
+      "choices": {
+        "ア": "セッションID の定期的な再生成",
+        "イ": "HTTPS の使用",
+        "ウ": "セッションID をURL に含める",
+        "エ": "セッションタイムアウトの設定"
+      }
+    }
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q28",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 28,
+    "type": "multiple-choice",
+    "category": "ウェブ技術・運用",
+    "topicTags": [
+      "ウェブ技術・運用",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "次のコード\n\n**main.php**\n\n```php\n<?php\ninclude_once \"test.php\";\ninclude_once \"test.php\";\n?>\n```\n\n**test.php**\n\n```php\n<?php\necho \"Hello\";\n?>\n```",
+    "choices": {
+      "ア": "「Hello」が1 回表示される。",
+      "イ": "「Hello」が2 回表示される。",
+      "ウ": "「test.php」のソースコード全体が1 回表示される。",
+      "エ": "「test.php」のソースコード全体が2 回表示される。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "include_onceは同じファイルを重複して読み込まないため、Helloの出力は1回です。 2回目のinclude_onceでは同じファイルを実行しません。 読み込んだPHPコードが実行されるので、ソースコードそのものの表示ではありません。",
+    "choiceExplanations": {
+      "ア": "include_onceは同じファイルを重複して読み込まないため、Helloの出力は1回です。",
+      "イ": "2回目のinclude_onceでは同じファイルを実行しません。",
+      "ウ": "読み込んだPHPコードが実行されるので、ソースコードそのものの表示ではありません。",
+      "エ": "ソースコードの表示でも、重複実行でもありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "次のコードを実行すると、ブラウザにはどのような内容が表示されるか。最も適切なものを、以下より1 つ選択し\n\nなさい。\n\n\n     main.php                                       test.php\n\n       <?php                                     <?php\n       include_once \"test.php\";                  echo \"Hello\";\n       include_once \"test.php\";                  ?>\n       ?>",
+      "choices": {
+        "ア": "「Hello」が1 回表示される。",
+        "イ": "「Hello」が2 回表示される。",
+        "ウ": "「test.php」のソースコード全体が1 回表示される。",
+        "エ": "「test.php」のソースコード全体が2 回表示される。"
+      }
+    }
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q29",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 29,
+    "type": "multiple-choice",
+    "category": "ウェブ技術・運用",
+    "topicTags": [
+      "ウェブ技術・運用",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "ターゲットユーザになったつもりで評価対象のウェブサイトを操作することによって、様々な問題点を指摘する、 ユーザビリティの評価手法は何か。最も適切なものを以下より1 つ選択しなさい。",
+    "choices": {
+      "ア": "ユーザビリティテスト",
+      "イ": "クラウドソーシング",
+      "ウ": "ヒューリスティック評価",
+      "エ": "認知的ウォークスルー"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "利用者が目的を達成する各操作をたどり、理解や判断の難しさを点検する方法です。 ユーザビリティテストは、実際の利用者に操作してもらう方法です。 クラウドソーシングは不特定多数へ業務等を依頼する方法です。",
+    "choiceExplanations": {
+      "ア": "ユーザビリティテストは、実際の利用者に操作してもらう方法です。",
+      "イ": "クラウドソーシングは不特定多数へ業務等を依頼する方法です。",
+      "ウ": "経験則や設計原則に照らした専門家の評価です。",
+      "エ": "利用者が目的を達成する各操作をたどり、理解や判断の難しさを点検する方法です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "ターゲットユーザになったつもりで評価対象のウェブサイトを操作することによって、様々な問題点を指摘する、\n\nユーザビリティの評価手法は何か。最も適切なものを以下より1 つ選択しなさい。",
+      "choices": {
+        "ア": "ユーザビリティテスト",
+        "イ": "クラウドソーシング",
+        "ウ": "ヒューリスティック評価",
+        "エ": "認知的ウォークスルー"
+      }
+    }
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q30",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 30,
+    "type": "multiple-choice",
+    "category": "ウェブ技術・運用",
+    "topicTags": [
+      "ウェブ技術・運用",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "「セキュアプログラミング」の原則として適切ではないものを以下より1 つ選択しなさい。",
+    "choices": {
+      "ア": "最小権限の原則",
+      "イ": "入力値の検証",
+      "ウ": "デフォルト拒否の原則",
+      "エ": "エラーメッセージに詳細な情報を含める"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "内部構造などの詳細を利用者へ露出すると攻撃に使われるため、表示する情報を制限します。 必要な権限だけを与え、被害の広がりを抑える原則です。 入力値の型や範囲などを検証することは基本的な対策です。",
+    "choiceExplanations": {
+      "ア": "必要な権限だけを与え、被害の広がりを抑える原則です。",
+      "イ": "入力値の型や範囲などを検証することは基本的な対策です。",
+      "ウ": "明示的に許可したものだけを受け入れる考え方です。",
+      "エ": "内部構造などの詳細を利用者へ露出すると攻撃に使われるため、表示する情報を制限します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "「セキュアプログラミング」の原則として適切ではないものを以下より1 つ選択しなさい。",
+      "choices": {
+        "ア": "最小権限の原則",
+        "イ": "入力値の検証",
+        "ウ": "デフォルト拒否の原則",
+        "エ": "エラーメッセージに詳細な情報を含める"
+      }
+    }
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q31",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 31,
+    "type": "multiple-choice",
+    "category": "HTML",
+    "topicTags": [
+      "HTML",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "次のうち、2 要素認証に該当する組合せとして最も適切なものはどれか。以下より1 つ選択しなさい。",
+    "choices": {
+      "ア": "パスワードと秘密の質問",
+      "イ": "パスワードとスマートフォンに送信されるワンタイムパスワード",
+      "ウ": "指紋認証と顔認証",
+      "エ": "パスワードとパスワード再入力"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "知識であるパスワードと、端末の所持に基づくコードを組み合わせます。 両方とも知識に基づく要素なので、異なる2要素にはなりません。 両方とも生体情報であり、異なる分類の2要素ではありません。",
+    "choiceExplanations": {
+      "ア": "両方とも知識に基づく要素なので、異なる2要素にはなりません。",
+      "イ": "知識であるパスワードと、端末の所持に基づくコードを組み合わせます。",
+      "ウ": "両方とも生体情報であり、異なる分類の2要素ではありません。",
+      "エ": "同じ知識の再入力で、認証要素は増えません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "次のうち、2 要素認証に該当する組合せとして最も適切なものはどれか。以下より1 つ選択しなさい。",
+      "choices": {
+        "ア": "パスワードと秘密の質問",
+        "イ": "パスワードとスマートフォンに送信されるワンタイムパスワード",
+        "ウ": "指紋認証と顔認証",
+        "エ": "パスワードとパスワード再入力"
+      }
+    },
+    "officialReferenceUrls": [
+      "https://html.spec.whatwg.org/multipage/"
+    ]
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q32",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 32,
+    "type": "multiple-choice",
+    "category": "CSS",
+    "topicTags": [
+      "CSS",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "CSS における長さを表す単位のうち、仕様書で定義されていないものはどれか。以下より1 つ選択しなさい。",
+    "choices": {
+      "ア": "in",
+      "イ": "out",
+      "ウ": "mm",
+      "エ": "cm"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "outというCSSの長さの単位は定義されていません。 inはインチを表す長さの単位です。 mmはミリメートルを表します。",
+    "choiceExplanations": {
+      "ア": "inはインチを表す長さの単位です。",
+      "イ": "outというCSSの長さの単位は定義されていません。",
+      "ウ": "mmはミリメートルを表します。",
+      "エ": "cmはセンチメートルを表します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "CSS における長さを表す単位のうち、仕様書で定義されていないものはどれか。以下より1 つ選択しなさい。",
+      "choices": {
+        "ア": "in",
+        "イ": "out",
+        "ウ": "mm",
+        "エ": "cm"
+      }
+    },
+    "officialReferenceUrls": [
+      "https://www.w3.org/TR/CSS/"
+    ]
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q33",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 33,
+    "type": "multiple-choice",
+    "category": "アクセシビリティ",
+    "topicTags": [
+      "アクセシビリティ",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "次に示したのは、ウェブコンテンツ JIS(JISX8341-3)の達成基準 3.2.3 である。 A にあてはまる語句 として、最も適切なものを以下より1 つ選択しなさい。 3.2.3 一貫したナビゲーションの達成基準 ウェブページ一式の中にある複数のウェブページ上で繰り返されているナビゲー ションのメカニズムは、繰り返されるたびに相対的に同じ A で出現する。た だし、利用者が変更した場合は除く(レベル AA)。",
+    "choices": {
+      "ア": "位置",
+      "イ": "順序",
+      "ウ": "サイズ",
+      "エ": "トーン＆マナー"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "繰り返すナビゲーションの相対的な順序を一貫させる基準です。 基準が求めるのは、必ずしも画面上の絶対的な位置の一致ではありません。 大きさを一律に固定する基準ではありません。",
+    "choiceExplanations": {
+      "ア": "基準が求めるのは、必ずしも画面上の絶対的な位置の一致ではありません。",
+      "イ": "繰り返すナビゲーションの相対的な順序を一貫させる基準です。",
+      "ウ": "大きさを一律に固定する基準ではありません。",
+      "エ": "トーンや見た目全般の統一を指す空欄ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "次に示したのは、ウェブコンテンツ JIS(JISX8341-3)の達成基準 3.2.3 である。  A  にあてはまる語句\n\nとして、最も適切なものを以下より1 つ選択しなさい。\n\n\n\n         3.2.3 一貫したナビゲーションの達成基準\n\n      ウェブページ一式の中にある複数のウェブページ上で繰り返されているナビゲー\n    ションのメカニズムは、繰り返されるたびに相対的に同じ    A   で出現する。た\n    だし、利用者が変更した場合は除く(レベル AA)。",
+      "choices": {
+        "ア": "位置",
+        "イ": "順序",
+        "ウ": "サイズ",
+        "エ": "トーン＆マナー"
+      }
+    },
+    "officialReferenceUrls": [
+      "https://www.w3.org/TR/WCAG20/"
+    ]
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q34",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 34,
+    "type": "multiple-choice",
+    "category": "PHP",
+    "topicTags": [
+      "PHP",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "PHP におけるecho とprint に関する記述として最も適切なものはどれか。以下より1 つ選択しなさい。",
+    "choices": {
+      "ア": "echo は値を返し、print は値を返さない。",
+      "イ": "echo 値を返さず、print は1 を返す。",
+      "ウ": "echo もprint も値を返さない。",
+      "エ": "echo もprint も1 を返す。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "echoは値を返さず、printは常に1を返します。 echoとprintの戻り値の関係が逆です。 printには戻り値1があります。",
+    "choiceExplanations": {
+      "ア": "echoとprintの戻り値の関係が逆です。",
+      "イ": "echoは値を返さず、printは常に1を返します。",
+      "ウ": "printには戻り値1があります。",
+      "エ": "echoは1を返す式ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "PHP におけるecho とprint に関する記述として最も適切なものはどれか。以下より1 つ選択しなさい。",
+      "choices": {
+        "ア": "echo は値を返し、print は値を返さない。",
+        "イ": "echo 値を返さず、print は1 を返す。",
+        "ウ": "echo もprint も値を返さない。",
+        "エ": "echo もprint も1 を返す。"
+      }
+    },
+    "officialReferenceUrls": [
+      "https://www.php.net/manual/ja/"
+    ]
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q35",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 35,
+    "type": "multiple-choice",
+    "category": "ウェブ技術・運用",
+    "topicTags": [
+      "ウェブ技術・運用",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "GIF の説明として適切なものはどれか。以下より1 つ選択しなさい。",
+    "choices": {
+      "ア": "1677 万色を扱うことができる。",
+      "イ": "ベクター画像のファイル形式である。",
+      "ウ": "透明度を指定して半透明の画像が作成できる。",
+      "エ": "複数の静止画像を連結したアニメーションが作成できる。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "複数フレームを順番に表示するアニメーションを扱えます。 GIFの1フレームの色数はパレットによる最大256色です。 GIFは画素に基づくラスター形式です。",
+    "choiceExplanations": {
+      "ア": "GIFの1フレームの色数はパレットによる最大256色です。",
+      "イ": "GIFは画素に基づくラスター形式です。",
+      "ウ": "通常のGIFの透明は透明・不透明の指定で、段階的な半透明ではありません。",
+      "エ": "複数フレームを順番に表示するアニメーションを扱えます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "GIF の説明として適切なものはどれか。以下より1 つ選択しなさい。",
+      "choices": {
+        "ア": "1677 万色を扱うことができる。",
+        "イ": "ベクター画像のファイル形式である。",
+        "ウ": "透明度を指定して半透明の画像が作成できる。",
+        "エ": "複数の静止画像を連結したアニメーションが作成できる。"
+      }
+    }
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q36",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 36,
+    "type": "multiple-choice",
+    "category": "HTML",
+    "topicTags": [
+      "HTML",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "HTML におけるhr 要素の説明として最も適切なものはどれか。以下より1 つ選択しなさい。",
+    "choices": {
+      "ア": "文書中に新しいセクションを作る要素",
+      "イ": "段落レベルの主題上の区切りを表す要素",
+      "ウ": "水平線を表示するための装飾要素",
+      "エ": "改行を行う要素"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "hrは段落レベルの主題の変わり目を表す要素です。 hrを置くことで新しいセクション要素が作られるわけではありません。 横線という外見だけでなく、主題上の区切りという意味があります。",
+    "choiceExplanations": {
+      "ア": "hrを置くことで新しいセクション要素が作られるわけではありません。",
+      "イ": "hrは段落レベルの主題の変わり目を表す要素です。",
+      "ウ": "横線という外見だけでなく、主題上の区切りという意味があります。",
+      "エ": "改行を表すbrとは異なります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "HTML におけるhr 要素の説明として最も適切なものはどれか。以下より1 つ選択しなさい。",
+      "choices": {
+        "ア": "文書中に新しいセクションを作る要素",
+        "イ": "段落レベルの主題上の区切りを表す要素",
+        "ウ": "水平線を表示するための装飾要素",
+        "エ": "改行を行う要素"
+      }
+    },
+    "officialReferenceUrls": [
+      "https://html.spec.whatwg.org/multipage/"
+    ]
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q37",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 37,
+    "type": "multiple-choice",
+    "category": "HTML",
+    "topicTags": [
+      "HTML",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "kbd 要素は、それが何であることを示す要素か。最も適切なものを以下より1 つ選択しなさい。",
+    "choices": {
+      "ア": "ユーザによる入力",
+      "イ": "音階の入力ツール",
+      "ウ": "スクリーンキーボードを表示させる",
+      "エ": "仮想キーボードが利用可能なテキスト入力欄"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "kbdはキーボードなどを通じた利用者の入力を表します。 音階を入力する部品を表す要素ではありません。 画面上にキーボードを生成する機能はありません。",
+    "choiceExplanations": {
+      "ア": "kbdはキーボードなどを通じた利用者の入力を表します。",
+      "イ": "音階を入力する部品を表す要素ではありません。",
+      "ウ": "画面上にキーボードを生成する機能はありません。",
+      "エ": "テキスト入力欄を作るのはinputやtextareaです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "kbd 要素は、それが何であることを示す要素か。最も適切なものを以下より1 つ選択しなさい。",
+      "choices": {
+        "ア": "ユーザによる入力",
+        "イ": "音階の入力ツール",
+        "ウ": "スクリーンキーボードを表示させる",
+        "エ": "仮想キーボードが利用可能なテキスト入力欄"
+      }
+    },
+    "officialReferenceUrls": [
+      "https://html.spec.whatwg.org/multipage/"
+    ]
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q38",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 38,
+    "type": "multiple-choice",
+    "category": "CSS",
+    "topicTags": [
+      "CSS",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "CSS において、セレクタ「main > h1」が示す対象として最も適切なものはどれか。以下より1 つ選択しなさい。",
+    "choices": {
+      "ア": "main 要素の子孫であるh1 要素",
+      "イ": "main 要素の子であるh1 要素",
+      "ウ": "h1 要素の子であるmain 要素",
+      "エ": "main 要素内で最初に現れるh1 要素"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": ">は子結合子で、mainの直下の子であるh1を選びます。 子孫全体を表すのは空白の結合子です。 h1の子であるmainという関係になり、設問の親子の向きと逆です。",
+    "choiceExplanations": {
+      "ア": "子孫全体を表すのは空白の結合子です。",
+      "イ": ">は子結合子で、mainの直下の子であるh1を選びます。",
+      "ウ": "h1の子であるmainという関係になり、設問の親子の向きと逆です。",
+      "エ": "最初の要素だけを選ぶという指定ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "CSS において、セレクタ「main > h1」が示す対象として最も適切なものはどれか。以下より1 つ選択しなさい。",
+      "choices": {
+        "ア": "main 要素の子孫であるh1 要素",
+        "イ": "main 要素の子であるh1 要素",
+        "ウ": "h1 要素の子であるmain 要素",
+        "エ": "main 要素内で最初に現れるh1 要素"
+      }
+    },
+    "officialReferenceUrls": [
+      "https://www.w3.org/TR/CSS/"
+    ]
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q39",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 39,
+    "type": "multiple-choice",
+    "category": "HTML",
+    "topicTags": [
+      "HTML",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "フローコンテンツに属する要素を以下より1 つ選択しなさい。",
+    "choices": {
+      "ア": "li",
+      "イ": "td",
+      "ウ": "hr",
+      "エ": "head"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "hrはフローコンテンツに属します。 liはリスト内の項目として使う要素で、フローコンテンツには分類されません。 tdは表のセルであり、フローコンテンツには分類されません。",
+    "choiceExplanations": {
+      "ア": "liはリスト内の項目として使う要素で、フローコンテンツには分類されません。",
+      "イ": "tdは表のセルであり、フローコンテンツには分類されません。",
+      "ウ": "hrはフローコンテンツに属します。",
+      "エ": "headは文書のメタデータを収める要素です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "フローコンテンツに属する要素を以下より1 つ選択しなさい。",
+      "choices": {
+        "ア": "li",
+        "イ": "td",
+        "ウ": "hr",
+        "エ": "head"
+      }
+    },
+    "officialReferenceUrls": [
+      "https://html.spec.whatwg.org/multipage/"
+    ]
+  },
+  {
+    "id": "webdesign2-2026-round1-gakka-q40",
+    "exam": "webdesign2",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "round1",
+    "examDate": "2026-05-24",
+    "qNumber": 40,
+    "type": "multiple-choice",
+    "category": "HTML",
+    "topicTags": [
+      "HTML",
+      "ウェブデザイン2級"
+    ],
+    "difficulty": 2,
+    "question": "HTML において、動画データと音声データのいずれも再生可能な要素はどれか。以下より1 つ選択しなさ い。",
+    "choices": {
+      "ア": "img",
+      "イ": "media",
+      "ウ": "video",
+      "エ": "picture"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "videoは動画を扱い、音声だけのメディアも再生できます。 imgは画像を埋め込む要素です。 mediaという標準HTML要素はありません。",
+    "choiceExplanations": {
+      "ア": "imgは画像を埋め込む要素です。",
+      "イ": "mediaという標準HTML要素はありません。",
+      "ウ": "videoは動画を扱い、音声だけのメディアも再生できます。",
+      "エ": "pictureは画像ソースの選択に使う要素です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAnswerUrl": "https://www.webdesign.gr.jp/img/2026/06/R08-1-2_gakka_open.pdf",
+    "sourceAttribution": "出典：インターネットスキル認定普及協会 ウェブデザイン技能検定2級 学科試験。解説は過去問AIが独自作成。",
+    "license": "NSPC-owner-authorized",
+    "lastUpdated": "2026-11-18",
+    "originalContent": {
+      "body": "HTML において、動画データと音声データのいずれも再生可能な要素はどれか。以下より1 つ選択しなさ\n\nい。",
+      "choices": {
+        "ア": "img",
+        "イ": "media",
+        "ウ": "video",
+        "エ": "picture"
+      }
+    },
+    "officialReferenceUrls": [
+      "https://html.spec.whatwg.org/multipage/"
+    ]
+  }
+]

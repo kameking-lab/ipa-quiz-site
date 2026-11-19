@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
-  NATIVE_EDITIONS, NATIVE_QUESTIONS, getNativeSubjectQuestions, nativeQuestionPath, nativeSubjectPath,
+  NATIVE_QUESTIONS, getNativeSubjectQuestions, nativeQuestionPath, nativeSubjectPath,
   type NativeSubject,
 } from "@/lib/denken2/native";
 
@@ -14,7 +14,7 @@ type Props = { params: Promise<{ edition: string; subject: string }> };
 const subjectLabel = (subject: NativeSubject) => ({ theory: "理論", power: "電力", machine: "機械", law: "法規" })[subject];
 function resolve(edition: string, subject: string): { year: number; subject: NativeSubject } | null {
   const year = Number(edition.slice(0, 4));
-  if (edition !== `${year}-primary` || !NATIVE_EDITIONS.some(item => item.year === year)) return null;
+  if (edition !== `${year}-primary`) return null;
   if (subject !== "theory" && subject !== "power" && subject !== "machine" && subject !== "law") return null;
   if (!getNativeSubjectQuestions(year, subject).length) return null;
   return { year, subject };

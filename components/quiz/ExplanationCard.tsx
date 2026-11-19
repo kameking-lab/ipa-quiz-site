@@ -133,15 +133,11 @@ export function ExplanationCard({
         </div>
       </div>
 
-      <div className="mb-5 space-y-3">
-        <div className="flex justify-end">
+      <div className="mb-5 flex justify-end">
         <Button size="xl" onClick={onNext} className="shrink-0 min-w-11 whitespace-normal px-5 py-2.5">
-          {nextLabel}
-          <ArrowRight className="h-4 w-4" />
+          {nextLabel}<ArrowRight className="h-4 w-4" />
         </Button>
-        </div>
       </div>
-
       {afterNavigation}
 
       {isPlaceholderExplanation(question.explanation) ? (

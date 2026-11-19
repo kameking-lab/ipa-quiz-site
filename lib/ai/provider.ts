@@ -131,8 +131,8 @@ function modelFromEnv(tier: ModelTier, raw: string | undefined): string {
 
 export function resolveModel(tier: ModelTier): string {
   // 午後記述・論述の AI 採点だけ上位モデルを使う（採点品質優先。Flash 系では
-  // 配点・キーワード照合の判断がブレるため）。無料の四択解説・一般コパイロット・
-  // 類題生成は free 層（flash-lite）のまま＝コスト効率。本番のモデル名は
+  // 配点・キーワード照合の判断がブレるため）。無料の四択解説・一般コパイロットは
+  // free 層（flash-lite）のまま＝コスト効率。本番のモデル名は
   // GEMINI_MODEL_GRADING で運用側が設定する。
   //
   // 既定値は flash（安全側）。既定を pro にしていると、env が消えた・新しい環境に

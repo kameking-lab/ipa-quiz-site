@@ -11,6 +11,7 @@ import { furnitureRoomMascots } from "@/lib/home/study-room-furniture";
 import { readLastQuestion } from "@/lib/storage/last-question";
 import { listExamLearningSummaries } from "@/lib/exam-library-session";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
+import { RoomChihuahua } from "./RoomChihuahua";
 import { StudyRoomSeat, type StudyRoomSeatDetail } from "./StudyRoomSeat";
 
 interface Suggestion { name: string; href: string; exam?: string }
@@ -48,15 +49,15 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
   })), [measured, seatDetails]);
   const targetStage = roomStage(filtered?.count ?? 0);
   const [stage, setStage] = useState(targetStage);
-  const hasSnapshot = filtered !== null;
+  const hasLearners = seats.length > 0;
   useEffect(() => {
-    if (!hasSnapshot) { setStage(0); return; }
+    if (!hasLearners) { setStage(0); return; }
     if (targetStage >= stage) { if (targetStage !== stage) setStage(targetStage); return; }
     const timer = setTimeout(() => setStage(targetStage), 60_000);
     return () => clearTimeout(timer);
     // Fresh samples within the same stage must not restart the shrink deadline.
-  }, [targetStage, stage, hasSnapshot]);
-  const renderedStage = Math.max(stage, targetStage);
+  }, [targetStage, stage, hasLearners]);
+  const renderedStage = hasLearners ? Math.max(stage, targetStage) : 0;
   const scene = studyRoomScene(renderedStage);
   const sceneHeight = scene.height;
   const sceneRef = useRef<HTMLDivElement>(null);
@@ -138,6 +139,8 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
   const Heading = standalone ? "h1" : "h2";
   const inspectedSeat = seats.find(seat => `${seat.exam}:${seat.index}` === inspected);
   const inspectedMascot = inspected && mascots.get(inspected);
+  const emptyMessage = !filtered ? "勉強中の人数を表示できません"
+    : current ? "いま勉強中の人はいません" : "前回は勉強中の人はいませんでした";
   return <div className="mx-auto w-full min-w-0 max-w-[800px] space-y-3 sm:space-y-4">
     <header className="flex min-w-0 items-center justify-between gap-2">
       <Heading id="study-room-title" className="text-xl font-bold tracking-tight">自習室</Heading>
@@ -176,7 +179,10 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
             art={mascot.art} />
         </div>;
       })}
-      {!seats.length && <p className="absolute inset-0 grid place-items-center px-4 text-sm text-muted-foreground"><span className="rounded-full bg-card/95 px-4 py-2 shadow-sm">{filtered ? "静かな、自習室。" : "自習室"}</span></p>}
+      {!hasLearners && <div className="absolute inset-0 flex flex-col items-center justify-center px-3">
+        <RoomChihuahua src="/images/home/room-chihuahuas/study/curl-left.png" alt="" className="h-[53%] max-h-52 w-[42%]" />
+        <p className="rounded-full bg-card px-4 py-2 text-center text-sm text-muted-foreground shadow-sm">{emptyMessage}</p>
+      </div>}
       {measured && measured.hidden > 0 && <span aria-label={`ほか${measured.hidden}人が勉強中`} className="absolute bottom-3 right-3 rounded-full border border-border bg-background px-3 py-1.5 text-sm font-semibold tabular-nums shadow-sm">+{measured.hidden}</span>}
     </div>
     </div>
