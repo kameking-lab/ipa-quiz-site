@@ -683,7 +683,7 @@ zoen2: {
             categories: ["造園技術"],
         }],
     seasons: ["early", "late"],
-    yearRange: { start: 2025, end: 2026 },
+    yearRange: { start: 2024, end: 2026 },
 },
 zoen1: {
     code: "zoen1",
