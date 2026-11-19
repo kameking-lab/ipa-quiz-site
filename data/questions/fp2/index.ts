@@ -1,4 +1,5 @@
 import type { Question } from "@/lib/questions/types";
+import academic2023September from "./academic-202309.json";
 import academic2024And2025 from "./academic-2024-2025.json";
 import academic2026May from "./academic-2026-05.json";
 
@@ -426,8 +427,9 @@ export function fp2May2026CoverageLabel(): string {
   return last >= FP2_2026_MAY_TOTAL ? `全${FP2_2026_MAY_TOTAL}問` : `問1〜${last}`;
 }
 
-/** 2024・2025年の公式公開4回は学科240問、2026年公表分は問1から連続する公開済み範囲のみ。 */
+/** 公式問題・正答を確認した学科問題。 */
 export const FP2_QUESTIONS: Question[] = [
   ...FP2_2026_MAY_QUESTIONS,
   ...academic2024And2025 as Question[],
+  ...academic2023September as Question[],
 ];

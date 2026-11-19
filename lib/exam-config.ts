@@ -513,7 +513,7 @@ fp2: {
             categories: ["ライフプランニングと資金計画", "リスク管理", "金融資産運用", "タックスプランニング", "不動産", "相続・事業承継"],
         }],
     seasons: ["may", "september", "january", "published"],
-    yearRange: { start: 2024, end: 2026 },
+    yearRange: { start: 2023, end: 2026 },
 },
 fp1: {
     code: "fp1",
