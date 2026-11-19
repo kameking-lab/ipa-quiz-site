@@ -206,6 +206,7 @@ josanshi: async () => isExamPublished("josanshi") ? (await import("@/data/questi
 "zensho-financial-statement-analysis": async () => isExamPublished("zensho-financial-statement-analysis") ? (await import("@/data/questions/zensho-financial-statement-analysis")).ZENSHO_FINANCIAL_STATEMENT_ANALYSIS_QUESTIONS : [],
 "dekyo-digital2": async () => isExamPublished("dekyo-digital2") ? (await import("@/data/questions/dekyo-digital2")).DEKYO_DIGITAL2_QUESTIONS : [],
 chizai1: async () => isExamPublished("chizai1") ? (await import("@/data/questions/chizai1")).CHIZAI1_QUESTIONS : [],
+"kogai-08": async () => isExamPublished("kogai-08") ? (await import("@/data/questions/kogai-08")).KOGAI_08_QUESTIONS : [],
 chizai2: async () => isExamPublished("chizai2") ? (await import("@/data/questions/chizai2")).CHIZAI2_QUESTIONS : [],
 kisho: async () => isExamPublished("kisho") ? (await import("@/data/questions/kisho")).KISHO_QUESTIONS : [],
 "jidosha-1-small-written": async () => isExamPublished("jidosha-1-small-written") ? (await import("@/data/questions/automotive")).getAutomotiveQuestions("jidosha-1-small-written") : [],
