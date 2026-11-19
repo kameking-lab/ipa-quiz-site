@@ -1547,7 +1547,7 @@ kankoji1: {
 "katei-hoiku": {
     code: "katei-hoiku", nameFull: "全国高等学校家庭科保育技術検定", urlSlug: "katei-hoiku", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 78, label: "筆記", categories: ["音楽・リズム表現技術", "造形表現技術", "言語表現技術", "家庭看護技術"] }],
-    seasons: ["first", "second"], yearRange: { start: 2025, end: 2025 },
+    seasons: ["first", "second"], yearRange: { start: 2024, end: 2025 },
 },
 "katei-shoku-chori": {
     code: "katei-shoku-chori", nameFull: "全国高等学校家庭科食物調理技術検定", urlSlug: "katei-shoku-chori", level: "basic",
