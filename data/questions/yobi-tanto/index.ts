@@ -9,6 +9,7 @@ import questions2024LiberalArts from "./2024-liberal.json";
 import questions2023PublicLaw from "./2023-public.json";
 import questions2023CriminalLaw from "./2023-criminal.json";
 import questions2023CivilLaw from "./2023-civil.json";
+import questions2023LiberalArts from "./2023-liberal.json";
 import questions2022CivilLaw from "./2022-civil.json";
 import { projectStagedQuestions } from "../batch4/project-staged";
 
@@ -22,5 +23,6 @@ export const YOBI_TANTO_QUESTIONS: Question[] = [
   ...questions2023PublicLaw as Question[],
   ...questions2023CriminalLaw as Question[],
   ...questions2023CivilLaw as Question[],
+  ...questions2023LiberalArts as Question[],
   ...questions2022CivilLaw as Question[],
 ];
