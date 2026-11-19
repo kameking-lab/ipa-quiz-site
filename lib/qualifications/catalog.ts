@@ -283,7 +283,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.mlit.go.jp/kankocho/seisaku_seido/ryokogyoho/chiikigenteikanrisha.html",
     officialReuseTermsUrl: "https://www.mlit.go.jp/kankocho/site-policy.html", status: "live",
     stagingDataPath: "data/qualification-staging/chiiki-ryoko",
-    reuseSummary: "2023〜2026年度の公式問題・正答・独自解説と原本図表を収録。全科目版236問。「すべて選ぶ」は全選択一致で採点します。問題・正答は公式原本、解説は過去問AIの独自作成です。",
+    reuseSummary: "2022〜2026年度の公式問題・正答・独自解説と原本図表を収録。全科目版296問。「すべて選ぶ」は全選択一致で採点します。問題・正答は公式原本、解説は過去問AIの独自作成です。",
     attributionTemplate: "出典：観光庁 地域限定旅行業務取扱管理者試験（全科目）問題・正解及び配点。原本画像化・文章整形・独自解説の追加は過去問AIによる加工。",
     remainingWork: [],
 },
