@@ -521,7 +521,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.moj.go.jp/shikaku_saiyo_index5.html",
     officialReuseTermsUrl: "https://www.moj.go.jp/hisho06_00280.html",
     status: "live",
-    reuseSummary: "令和7・6年度の午前各11問・午後各22問、計66原問を収録。択一60問は法務省の公式正答と全選択肢の独自解説を掲載。記述6問は公式問題に基づく独自解答例であり、法務省の公式解答ではありません。法務省の利用条件には第三者権利等の例外があります。",
+    reuseSummary: "令和7・6・4年度の択一90問に、法務省の公式正答と全選択肢の独自解説を掲載。令和7・6年度の記述6問には、公式問題に基づく独自解答例を収録。",
     attributionTemplate: "出典：法務省 令和○年度土地家屋調査士試験 午前・午後 第○問。解説・記述解答例は過去問AIが独自作成。",
     remainingWork: ["法令改正の継続確認", "第三者権利等の例外条件は掲載者が確認"],
 },

@@ -9,25 +9,25 @@ import { choiceDisplayLabel } from "@/lib/questions/display";
 import { buildQuestionJsonLd } from "@/lib/seo/question-jsonld";
 
 describe("土地家屋調査士・公式原問の完備", () => {
-  it("最新2回の午前11・午後22を原問で数え、択一60・記述6を重複させない", () => {
-    expect(CHOSASHI_QUESTIONS).toHaveLength(66);
+  it("年度別の午前・午後を原問で数え、択一90・記述6を重複させない", () => {
+    expect(CHOSASHI_QUESTIONS).toHaveLength(96);
     const identities = CHOSASHI_QUESTIONS.map(q => `${q.year}/${q.session}/${q.qNumber}`);
-    expect(new Set(identities).size).toBe(66);
-    for (const year of [2024, 2025]) {
-      for (const [session, total] of [["am", 11], ["pm", 22]] as const) {
+    expect(new Set(identities).size).toBe(96);
+    for (const [year, am, pm] of [[2022, 10, 20], [2024, 11, 22], [2025, 11, 22]] as const) {
+      for (const [session, total] of [["am", am], ["pm", pm]] as const) {
         const pool = CHOSASHI_QUESTIONS.filter(q => q.year === year && q.session === session);
         expect(pool.map(q => q.qNumber).sort((a,b) => a-b)).toEqual(Array.from({length:total},(_,i) => i+1));
       }
     }
-    expect(CHOSASHI_QUESTIONS.filter(q => q.type === "multiple-choice")).toHaveLength(60);
+    expect(CHOSASHI_QUESTIONS.filter(q => q.type === "multiple-choice")).toHaveLength(90);
     expect(CHOSASHI_QUESTIONS.filter(q => q.type === "descriptive")).toHaveLength(6);
   });
 
-  it("五択300肢に具体解説を持ち、公式番号を表示・正答へ一対一で対応する", () => {
+  it("五択450肢に具体解説を持ち、公式番号を表示・正答へ一対一で対応する", () => {
     for (const q of CHOSASHI_QUESTIONS.filter(q => q.type === "multiple-choice")) {
       expect(Object.keys(q.choices ?? {})).toEqual(["ア", "イ", "ウ", "エ", "オ"]);
       expect(choiceDisplayLabel(q.exam, String(q.answer) as "ア")).toBe(q.officialAnswerNumber);
-      expect(q.sourceAnswerUrl).toMatch(/^https:\/\/www\.moj\.go\.jp\/content\/\d+\.pdf$/);
+      expect(q.sourceAnswerUrl).toMatch(/^https:\/\/www\.moj\.go\.jp\.?\/content\/\d+\.pdf(?:#page=\d+)?$/);
       for (const key of ["ア", "イ", "ウ", "エ", "オ"] as const) expect(q.choiceExplanations?.[key]?.length).toBeGreaterThan(20);
     }
   });
@@ -35,7 +35,7 @@ describe("土地家屋調査士・公式原問の完備", () => {
   it("必要原図と独自作図のファイルが実在し、記述が公式解答として扱われない", () => {
     for (const q of CHOSASHI_QUESTIONS) {
       expect(isPracticeReadyQuestion(q), q.id).toBe(true);
-      expect(q.sourcePdfUrl).toMatch(/^https:\/\/www\.moj\.go\.jp\/content\/\d+\.pdf$/);
+      expect(q.sourcePdfUrl).toMatch(/^https:\/\/www\.moj\.go\.jp\.?\/content\/\d+\.pdf(?:#page=\d+)?$/);
       for (const url of q.imageUrls ?? []) expect(existsSync(join(process.cwd(),"public",url)), `${q.id}: ${url}`).toBe(true);
       if (q.type === "descriptive") {
         expect(q.modelAnswer).toContain("公式問題に基づく独自解答例");

@@ -322,7 +322,7 @@ chosashi: {
         { session: "pm", urlSlug: "pm", expectedQuestions: 22, label: "午後（択一20・記述2）", categories: ["民法", "不動産登記法", "土地家屋調査士法", "土地記述", "建物記述"] },
     ],
     seasons: ["autumn"],
-    yearRange: { start: 2024, end: 2025 },
+    yearRange: { start: 2022, end: 2025 },
 },
 ip: {
     code: "ip",

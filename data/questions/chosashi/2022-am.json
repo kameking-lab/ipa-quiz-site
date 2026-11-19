@@ -1,0 +1,502 @@
+[
+  {
+    "id": "chosashi-2022-am-q1",
+    "exam": "chosashi",
+    "session": "am",
+    "year": 2022,
+    "season": "autumn",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "測量",
+    "topicTags": [
+      "測量"
+    ],
+    "difficulty": 3,
+    "question": "GNSS測量に関する次のアからオまでの記述のうち、誤っているものの組合せは、後\n記 1 から 5 までのうち、どれか。\nア GNSS測量により、楕円体高を直接求めることができる。\nイ GNSS測量機を用いた基準点測量では、アンテナ高が必要である。\nウ GNSS衛星からの電波が遮られたために観測データが欠落し、位相記録が不連続と\nなる現象をマルチパスという。\nエ 基線解析を行う観測点間の距離が長い場合における電離層の影響により生ずる誤差\nは、 2 周波の電波の観測により軽減することができる。\nオ 基線解析を行うに当たっては、GNSS衛星の軌道情報を要しない。",
+    "choices": {
+      "ア": "アイ",
+      "イ": "アオ",
+      "ウ": "イエ",
+      "エ": "ウエ",
+      "オ": "ウオ"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "requiredSelections": 1,
+    "explanation": "ウ（誤） 遮断等で搬送波位相の連続性が失われる現象はサイクルスリップであり、マルチパスは反射波との重畳である。オ（誤） 基線解析には、電波を発したGNSS衛星の位置を求めるために軌道情報が必要である。",
+    "choiceExplanations": {
+      "ア": "ア（正） 楕円体高はGNSSで直接求められる量である。イ（正） アンテナの観測基準位置から地上標識までを換算するため、アンテナ高が必要である。",
+      "イ": "ア（正） 楕円体高はGNSSで直接求められる量である。オ（誤） 基線解析には、電波を発したGNSS衛星の位置を求めるために軌道情報が必要である。",
+      "ウ": "イ（正） アンテナの観測基準位置から地上標識までを換算するため、アンテナ高が必要である。エ（正） 電離層による遅延が周波数で異なることを利用し、二周波の観測で影響を軽減できる。",
+      "エ": "ウ（誤） 遮断等で搬送波位相の連続性が失われる現象はサイクルスリップであり、マルチパスは反射波との重畳である。エ（正） 電離層による遅延が周波数で異なることを利用し、二周波の観測で影響を軽減できる。",
+      "オ": "ウ（誤） 遮断等で搬送波位相の連続性が失われる現象はサイクルスリップであり、マルチパスは反射波との重畳である。オ（誤） 基線解析には、電波を発したGNSS衛星の位置を求めるために軌道情報が必要である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/chosashi/2022-am-q1-p2.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度土地家屋調査士試験 午前 第1問の原本"
+    ],
+    "sourcePdfUrl": "https://www.moj.go.jp./content/001383834.pdf#page=2",
+    "sourceAnswerUrl": "https://www.moj.go.jp./content/001383828.pdf",
+    "sourceAttribution": "出典：法務省「令和4年度土地家屋調査士試験筆記試験問題・正解」。解説は過去問AI作成。",
+    "officialReferenceUrls": [
+      "https://www.moj.go.jp/MINJI/minji05_00485.html"
+    ],
+    "license": "MOJ-attributed",
+    "isCalculation": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "chosashi-2022-am-q2",
+    "exam": "chosashi",
+    "session": "am",
+    "year": 2022,
+    "season": "autumn",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "測量",
+    "topicTags": [
+      "測量"
+    ],
+    "difficulty": 3,
+    "question": "誤差に関する次のアからオまでの記述のうち、誤っているものの組合せは、後記 1 か\nら 5 までのうち、どれか。\nア 鋼巻尺を温度変化により縮んだまま使用して測定したために生ずる誤差は、不定誤\n差である。\nイ 巻尺を使用して 1 目盛以下を目測するときの測定者の読定の偏りにより生ずる個人\n誤差は、定誤差である。\nウ 光波測距儀を使用して観測した距離の測定値は、気温が高くなると短くなる。\nエ 測定回数が十分に多い場合には、小さい誤差は、大きい誤差よりも多く発生する。\nオ 測定値に大きな定誤差が含まれている場合には、最小二乗法を適用することによ\nり、最確値を求めることができる。",
+    "choices": {
+      "ア": "アウ",
+      "イ": "アオ",
+      "ウ": "イウ",
+      "エ": "イエ",
+      "オ": "エオ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "requiredSelections": 1,
+    "explanation": "ア（誤） 一定の温度条件で縮んだ尺を補正せずに使うと測値が一方向に偏る定誤差となる。オ（誤） 最小二乗法で偶然誤差を調整しても大きな定誤差は除去されず、先にその原因の除去や補正が必要である。",
+    "choiceExplanations": {
+      "ア": "ア（誤） 一定の温度条件で縮んだ尺を補正せずに使うと測値が一方向に偏る定誤差となる。ウ（正） 気温が高くなると空気の屈折率が下がるので、同じ屈折率設定で比較した光波測距値は短くなる。",
+      "イ": "ア（誤） 一定の温度条件で縮んだ尺を補正せずに使うと測値が一方向に偏る定誤差となる。オ（誤） 最小二乗法で偶然誤差を調整しても大きな定誤差は除去されず、先にその原因の除去や補正が必要である。",
+      "ウ": "イ（正） 個人の読み取り方が一定方向に偏る場合は、系統的に生じる定誤差である。ウ（正） 気温が高くなると空気の屈折率が下がるので、同じ屈折率設定で比較した光波測距値は短くなる。",
+      "エ": "イ（正） 個人の読み取り方が一定方向に偏る場合は、系統的に生じる定誤差である。エ（正） 通常の偶然誤差の分布では、小さい誤差の方が大きい誤差より多い。",
+      "オ": "エ（正） 通常の偶然誤差の分布では、小さい誤差の方が大きい誤差より多い。オ（誤） 最小二乗法で偶然誤差を調整しても大きな定誤差は除去されず、先にその原因の除去や補正が必要である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/chosashi/2022-am-q2-p3.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度土地家屋調査士試験 午前 第2問の原本"
+    ],
+    "sourcePdfUrl": "https://www.moj.go.jp./content/001383834.pdf#page=3",
+    "sourceAnswerUrl": "https://www.moj.go.jp./content/001383828.pdf",
+    "sourceAttribution": "出典：法務省「令和4年度土地家屋調査士試験筆記試験問題・正解」。解説は過去問AI作成。",
+    "officialReferenceUrls": [
+      "https://www.moj.go.jp/MINJI/minji05_00485.html"
+    ],
+    "license": "MOJ-attributed",
+    "isCalculation": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "chosashi-2022-am-q3",
+    "exam": "chosashi",
+    "session": "am",
+    "year": 2022,
+    "season": "autumn",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "測量",
+    "topicTags": [
+      "測量"
+    ],
+    "difficulty": 3,
+    "question": "次の〔図〕のとおり、トランシットの望遠鏡内にあるスタジア線を用いて直立するホテ\nルの距離観測を行った。鉛直角(V)を 66°3′10′′としてホテルの 14 階の角の点(A点)\nを視準したとき、上スタジア線に 14 階の窓の上端が、下スタジア線に 14 階の窓の下端\nがそれぞれ重なった。この窓の高さが 1.00 mであるとき、A点の垂直下でホテルと地\n表面が接する点(B点)と器械点との水平距離(HS)の値として最も近いものは、後記\n1 から 5 までのうち、どれか。\nただし、望遠鏡内の上スタジア線と下スタジア線の間の距離の 100 倍が、器械点から\n視準したA点までの距離である。\n\n\n 〔図〕",
+    "choices": {
+      "ア": "16.48 m",
+      "イ": "40.59 m",
+      "ウ": "66.31 m",
+      "エ": "83.52 m",
+      "オ": "91.39 m"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "requiredSelections": 1,
+    "explanation": "窓の鉛直長1 mを視準線に直交する方向に投影し、100倍して斜距離を得る。水平成分はさらにsin Vを掛けて100 sin²(66°3′10″)≈83.52 mである。",
+    "choiceExplanations": {
+      "ア": "16.48 mは鉛直成分を含む長さの関係を取り違えており、求める水平距離は83.52 mである。",
+      "イ": "40.59 mは水平距離ではなく、より小さい鉛直成分に近い値である。",
+      "ウ": "66.31 mは距離に換算した値ではなく、鉛直角の数値に近い。",
+      "エ": "窓の鉛直長1 mを視準線に直交する方向に投影し、100倍して斜距離を得る。水平成分はさらにsin Vを掛けて100 sin²(66°3′10″)≈83.52 mである。",
+      "オ": "91.39 mは視準方向の斜距離に近く、水平距離にはもう一度sin Vを掛ける。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/chosashi/2022-am-q3-p4.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度土地家屋調査士試験 午前 第3問の原本"
+    ],
+    "sourcePdfUrl": "https://www.moj.go.jp./content/001383834.pdf#page=4",
+    "sourceAnswerUrl": "https://www.moj.go.jp./content/001383828.pdf",
+    "sourceAttribution": "出典：法務省「令和4年度土地家屋調査士試験筆記試験問題・正解」。解説は過去問AI作成。",
+    "officialReferenceUrls": [
+      "https://www.moj.go.jp/MINJI/minji05_00485.html"
+    ],
+    "license": "MOJ-attributed",
+    "isCalculation": true,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "chosashi-2022-am-q4",
+    "exam": "chosashi",
+    "session": "am",
+    "year": 2022,
+    "season": "autumn",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "測量",
+    "topicTags": [
+      "測量"
+    ],
+    "difficulty": 3,
+    "question": "既知点Aから出発し、既知点Bに結合する多角測量を行ったところ、次の〔観測結果〕\nのとおりの結果を得た。この場合において、閉合差をコンパス法則により補正量を算出\nして配分したときの測点 4 の合緯距(X座標)及び合経距(Y座標)の値として最も近いも\nのは、後記 1 から 5 までのうち、どれか。\nただし、水平角の観測と平面距離の測定のそれぞれの精度及び閉合比は許容範囲内に\nあるものとする。\n\n\n 〔観測結果〕\n測点\n\n\n\n\n 距 離 緯 距 経 距 合緯距 合経距\n(S)m ( x )m ( y )m (X)m (Y)m\n\n A -605.53 -120.77\n338.79 +47.25 -232.32\n1\n298.70 +66.92 -198.34\n2\n211.92 +286.36 -93.68\n3\n537.32 +56.62 -397.72\n4\n419.64 +349.04 -131.30\nB +200.59 -1174.03\n計 1806.37 +806.19 -1053.36\n\n\n X座標(m) Y座標(m)",
+    "choices": {
+      "ア": "-148.40、-1042.69",
+      "イ": "-148.40、-1042.72",
+      "ウ": "-148.43、-1042.72",
+      "エ": "-148.43、-1042.75",
+      "オ": "-148.46、-1042.75"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "requiredSelections": 1,
+    "explanation": "既知点間の差から観測合計を引くと閉合の補正全量はXが−0.07 m、Yが＋0.10 mである。測点4までの累積距離1386.73 mを全距離1806.37 mで割った割合で配分するとこの座標になる。",
+    "choiceExplanations": {
+      "ア": "各成分の閉合差を測点4までの累積距離の割合で配分すると、Xは約−148.43、Yは約−1042.75になる。",
+      "イ": "X、Yともに測点4までの距離に応じた符号付き補正を反映した座標と合わない。",
+      "ウ": "X座標は合うが、Y座標は既知点間の差と観測した経距合計との差＋0.10 mを累積距離に比例配分すると−1042.75 mになる。",
+      "エ": "既知点間の差から観測合計を引くと閉合の補正全量はXが−0.07 m、Yが＋0.10 mである。測点4までの累積距離1386.73 mを全距離1806.37 mで割った割合で配分するとこの座標になる。",
+      "オ": "Y座標は合うが、X座標の補正は−0.07 m全量ではなく、そのうち約−0.054 mである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/chosashi/2022-am-q4-p5.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度土地家屋調査士試験 午前 第4問の原本"
+    ],
+    "sourcePdfUrl": "https://www.moj.go.jp./content/001383834.pdf#page=5",
+    "sourceAnswerUrl": "https://www.moj.go.jp./content/001383828.pdf",
+    "sourceAttribution": "出典：法務省「令和4年度土地家屋調査士試験筆記試験問題・正解」。解説は過去問AI作成。",
+    "officialReferenceUrls": [
+      "https://www.moj.go.jp/MINJI/minji05_00485.html"
+    ],
+    "license": "MOJ-attributed",
+    "isCalculation": true,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "chosashi-2022-am-q5",
+    "exam": "chosashi",
+    "session": "am",
+    "year": 2022,
+    "season": "autumn",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "測量",
+    "topicTags": [
+      "測量"
+    ],
+    "difficulty": 3,
+    "question": "次の〔図〕のとおり、既知点T 1 、T 2 及びT 4 を使用し、甲土地の境界点であるA点\nの測量を行った。既知点T 2 の座標値は、次の〔表 1 〕のとおりであり、観測結果は、\n次の〔表 2 〕のとおりである。この場合において、A点の座標値として最も近いものは、\n後記 1 から 5 までのうち、どれか。\nただし、既知点T 2 から既知点T 1 への方向角は、325°30′50′′である。また、閉合\n差の制限は考慮しないものとする。\n\n\n 〔図〕\n\n\n\n\n 〔表 1 〕\n\n 点名 X座標(m) Y座標(m)\nT2 150.50 225.20\n\n\n 〔表 2 〕\n\n 水平角 距離(m)\nβ1 94°29′10′′ T 2 →P 65.40\nβ2 244°20′50′′ P→A 40.65\nβ3 276°39′10′′\n\n\n X座標(m) Y座標(m)",
+    "choices": {
+      "ア": "213.88、308.51",
+      "イ": "213.99、308.61",
+      "ウ": "214.10、308.71",
+      "エ": "214.21、308.81",
+      "オ": "214.32、308.91"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "requiredSelections": 1,
+    "explanation": "T₂からPへの方向角は60°、Pを経てAへは41°である。各辺で距離×cosをX増分、距離×sinをY増分として足すと約(213.88, 308.51) mになる。",
+    "choiceExplanations": {
+      "ア": "T₂からPへの方向角は60°、Pを経てAへは41°である。各辺で距離×cosをX増分、距離×sinをY増分として足すと約(213.88, 308.51) mになる。",
+      "イ": "二つの方向角と距離から合成した増分は約(63.38, 83.31) mで、この座標の増分より小さい。",
+      "ウ": "与えられたT₂の座標に二辺の北方向・東方向の増分を足すと、この組合せより両座標とも小さい。",
+      "エ": "P→T₂の方向角240°からβ₂とβ₃を加えて周に直すとP→Aは41°であり、この座標へ至る方向ではない。",
+      "オ": "65.40 mを60°、40.65 mを41°の方向に分けたときの座標増分を使うと、この肢より両座標とも小さくなる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/chosashi/2022-am-q5-p6.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度土地家屋調査士試験 午前 第5問の原本"
+    ],
+    "sourcePdfUrl": "https://www.moj.go.jp./content/001383834.pdf#page=6",
+    "sourceAnswerUrl": "https://www.moj.go.jp./content/001383828.pdf",
+    "sourceAttribution": "出典：法務省「令和4年度土地家屋調査士試験筆記試験問題・正解」。解説は過去問AI作成。",
+    "officialReferenceUrls": [
+      "https://www.moj.go.jp/MINJI/minji05_00485.html"
+    ],
+    "license": "MOJ-attributed",
+    "isCalculation": true,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "chosashi-2022-am-q6",
+    "exam": "chosashi",
+    "session": "am",
+    "year": 2022,
+    "season": "autumn",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "測量",
+    "topicTags": [
+      "測量"
+    ],
+    "difficulty": 3,
+    "question": "基準点測量において、既知点Aから既知点Bへの視通を確保することができなかった\nため、既知点AをC点に偏心して観測を行い、次の〔表〕のとおりの結果を得た。この\n場合におけるC点と既知点Aを結んだ直線とC点と既知点Bを結んだ直線の時計回りの\n夾角(∠ACB)の値として最も近いものは、後記 1 から 5 までのうち、どれか。\n\n\n 〔表〕\n\n 既知点Aから既知点Bまでの水平距離 44.32 m\nC点から既知点Bまでの水平距離 44.67 m\n偏心距離 3.23 m\n既知点Aから既知点Bへの方向角 334°26′\n既知点Aの位置関係 C点より西側",
+    "choices": {
+      "ア": "81°25′",
+      "イ": "81°32′",
+      "ウ": "81°43′",
+      "エ": "81°50′",
+      "オ": "81°56′"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "requiredSelections": 1,
+    "explanation": "余弦定理でcos∠ACB＝(3.23²＋44.67²−44.32²)/(2×3.23×44.67)となり、角は約81.715°である。度と分に直すと約81°43′である。",
+    "choiceExplanations": {
+      "ア": "81°25′では、余弦定理で既知の辺から求める角の約81.715°より約18′小さい。",
+      "イ": "81°32′は、辺長AC・BC・ABから求める夾角の約81°43′より小さい。",
+      "ウ": "余弦定理でcos∠ACB＝(3.23²＋44.67²−44.32²)/(2×3.23×44.67)となり、角は約81.715°である。度と分に直すと約81°43′である。",
+      "エ": "81°50′は既知の三辺が作る角より約7′大きい。",
+      "オ": "81°56′を余弦定理に入れると、ABの長さに与えられた44.32 mを再現できない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/chosashi/2022-am-q6-p7.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度土地家屋調査士試験 午前 第6問の原本"
+    ],
+    "sourcePdfUrl": "https://www.moj.go.jp./content/001383834.pdf#page=7",
+    "sourceAnswerUrl": "https://www.moj.go.jp./content/001383828.pdf",
+    "sourceAttribution": "出典：法務省「令和4年度土地家屋調査士試験筆記試験問題・正解」。解説は過去問AI作成。",
+    "officialReferenceUrls": [
+      "https://www.moj.go.jp/MINJI/minji05_00485.html"
+    ],
+    "license": "MOJ-attributed",
+    "isCalculation": true,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "chosashi-2022-am-q7",
+    "exam": "chosashi",
+    "session": "am",
+    "year": 2022,
+    "season": "autumn",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "category": "測量",
+    "topicTags": [
+      "測量"
+    ],
+    "difficulty": 3,
+    "question": "次の〔図〕のとおり、A、B、C、F、E及びAの各点を順次直線で結んだ範囲の甲\n土地とC、D、E、F及びCの各点を順次直線で結んだ範囲の乙土地があり、次の〔表〕\nは甲土地と乙土地を測量した成果である。A点とE点を結んだ直線上にX点を設置して\nC点とX点を結んだ直線により新たに甲′土地(A、B、C、X及びAの各点を順次直線\nで結んだ範囲の土地)と乙′土地(C、D、E、X及びCの各点を順次直線で結んだ範囲\nの土地)の区画に変更し、甲土地と甲′土地、乙土地と乙′土地の各面積がそれぞれ等し\nいものとする場合におけるE点とX点の水平距離として最も近いものは、後記 1 から 5\nまでのうち、どれか。\n\n\n 〔図〕\n\n\n\n\n 〔表〕\n\n 観測対象 角度又は水平距離\n∠CFE 100°\n∠AEF 30°\nEF 20.00 m\nCF 7.50 m",
+    "choices": {
+      "ア": "8.56 m",
+      "イ": "8.66 m",
+      "ウ": "8.76 m",
+      "エ": "8.86 m",
+      "オ": "8.96 m"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "requiredSelections": 1,
+    "explanation": "置換する三角形XECとFECの面積を等しくする。CからAEへの垂直距離は20 sin30°＋7.50 sin110°なので、EX＝20×7.50 sin100°をその距離で割った約8.66 mである。",
+    "choiceExplanations": {
+      "ア": "8.56 mでは、三角形XECの面積が約73.9 m²の三角形FECに届かない。",
+      "イ": "置換する三角形XECとFECの面積を等しくする。CからAEへの垂直距離は20 sin30°＋7.50 sin110°なので、EX＝20×7.50 sin100°をその距離で割った約8.66 mである。",
+      "ウ": "8.76 mを底辺とすると、CからAEへの高さが同じなので面積を過大にする。",
+      "エ": "8.86 mでは、同じ高さで元と同面積となる底辺約8.66 mより約0.20 m長い。",
+      "オ": "8.96 mは面積保存から得られる底辺の長さを約0.30 m上回る。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/chosashi/2022-am-q7-p8.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度土地家屋調査士試験 午前 第7問の原本"
+    ],
+    "sourcePdfUrl": "https://www.moj.go.jp./content/001383834.pdf#page=8",
+    "sourceAnswerUrl": "https://www.moj.go.jp./content/001383828.pdf",
+    "sourceAttribution": "出典：法務省「令和4年度土地家屋調査士試験筆記試験問題・正解」。解説は過去問AI作成。",
+    "officialReferenceUrls": [
+      "https://www.moj.go.jp/MINJI/minji05_00485.html"
+    ],
+    "license": "MOJ-attributed",
+    "isCalculation": true,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "chosashi-2022-am-q8",
+    "exam": "chosashi",
+    "session": "am",
+    "year": 2022,
+    "season": "autumn",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "測量",
+    "topicTags": [
+      "測量"
+    ],
+    "difficulty": 3,
+    "question": "次の〔図〕に対応する特定の平面直角座標系(平成 14 年国土交通省告示第 9 号)のA\n点、B点及びC点の各位置において観測を行った結果を平面直角座標に投影した場合に\nおける次のアからオまでの記述のうち、誤っているものの組合せは、後記 1 から 5 まで\nのうち、どれか。\n\n\n 〔図〕\n\n\n\n\n ア A点における観測結果を平面直角座標に投影した平面距離は、球面距離と等しくな\nる。\nイ A点は、原点から約 90km離れている。\nウ B点における観測結果を平面直角座標に投影した平面距離は、球面距離より長くな\nる。\nエ C点における観測結果を平面直角座標に投影した平面距離は、球面距離より長くな\nる。\nオ 原点におけるX軸の正方向は、真北方向と一致しない。",
+    "choices": {
+      "ア": "アイ",
+      "イ": "アオ",
+      "ウ": "イエ",
+      "エ": "ウエ",
+      "オ": "ウオ"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "requiredSelections": 1,
+    "explanation": "ウ（誤） BはX軸上で縮尺係数が0.9999であるため、投影距離は球面距離より短くなる。オ（誤） 原点で正のX軸は真北の方向に一致する。",
+    "choiceExplanations": {
+      "ア": "ア（正） Aは図に示された縮尺係数1.0000の線上で、投影距離と球面距離が一致する。イ（正） X軸から縮尺係数が1となる線までの距離は約90 kmで、図のAはその位置にある。",
+      "イ": "ア（正） Aは図に示された縮尺係数1.0000の線上で、投影距離と球面距離が一致する。オ（誤） 原点で正のX軸は真北の方向に一致する。",
+      "ウ": "イ（正） X軸から縮尺係数が1となる線までの距離は約90 kmで、図のAはその位置にある。エ（正） Cは縮尺係数1の線より外側にあり、局所的な縮尺係数が1を超える。",
+      "エ": "ウ（誤） BはX軸上で縮尺係数が0.9999であるため、投影距離は球面距離より短くなる。エ（正） Cは縮尺係数1の線より外側にあり、局所的な縮尺係数が1を超える。",
+      "オ": "ウ（誤） BはX軸上で縮尺係数が0.9999であるため、投影距離は球面距離より短くなる。オ（誤） 原点で正のX軸は真北の方向に一致する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/chosashi/2022-am-q8-p9.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度土地家屋調査士試験 午前 第8問の原本"
+    ],
+    "sourcePdfUrl": "https://www.moj.go.jp./content/001383834.pdf#page=9",
+    "sourceAnswerUrl": "https://www.moj.go.jp./content/001383828.pdf",
+    "sourceAttribution": "出典：法務省「令和4年度土地家屋調査士試験筆記試験問題・正解」。解説は過去問AI作成。",
+    "officialReferenceUrls": [
+      "https://www.moj.go.jp/MINJI/minji05_00485.html"
+    ],
+    "license": "MOJ-attributed",
+    "isCalculation": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "chosashi-2022-am-q9",
+    "exam": "chosashi",
+    "session": "am",
+    "year": 2022,
+    "season": "autumn",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "測量",
+    "topicTags": [
+      "測量"
+    ],
+    "difficulty": 3,
+    "question": "次の〔図〕のとおり、A、B、C、D及びAの各点を順次直線で結んだ範囲の敷地が\nあり、A点からD点までの座標値は次の〔表〕のとおりである。A点とD点を結んだ直線\n(以下「AD線」という。)に直交し、かつ、C点と交わる直線をR線とし、これをA点側\nに 4 m平行移動したL線とAD線との交点をP点とした場合におけるA点からP点まで\nの距離として最も近いものは、後記 1 から 5 までのうち、どれか。\n\n\n 〔図〕\n\n\n\n\n 〔表〕\n\n 点名 X座標(m) Y座標(m)\nA 10.00 20.00\nB 5.00 5.00\nC -16.50 20.00\nD -16.50 35.30",
+    "choices": {
+      "ア": "18.89 m",
+      "イ": "18.92 m",
+      "ウ": "18.95 m",
+      "エ": "18.98 m",
+      "オ": "19.01 m"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "requiredSelections": 1,
+    "explanation": "ACをADの単位方向ベクトルに投影した長さは26.50²/√(26.50²＋15.30²)≈22.95 mである。A側に4 m移動するためAPは約18.95 mである。",
+    "choiceExplanations": {
+      "ア": "座標の内積でCのAD方向距離は約22.95 mとなり、4 mを引いた結果は18.89 mより大きい。",
+      "イ": "4 m平行移動した後の距離は約18.95 mなので、18.92 mは少し小さい。",
+      "ウ": "ACをADの単位方向ベクトルに投影した長さは26.50²/√(26.50²＋15.30²)≈22.95 mである。A側に4 m移動するためAPは約18.95 mである。",
+      "エ": "18.98 mは、AD方向への投影から正確に4 mを引いた値より大きい。",
+      "オ": "19.01 mでは、AD方向への投影結果22.95 mから4 mを引く条件と合わない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/chosashi/2022-am-q9-p10.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度土地家屋調査士試験 午前 第9問の原本"
+    ],
+    "sourcePdfUrl": "https://www.moj.go.jp./content/001383834.pdf#page=10",
+    "sourceAnswerUrl": "https://www.moj.go.jp./content/001383828.pdf",
+    "sourceAttribution": "出典：法務省「令和4年度土地家屋調査士試験筆記試験問題・正解」。解説は過去問AI作成。",
+    "officialReferenceUrls": [
+      "https://www.moj.go.jp/MINJI/minji05_00485.html"
+    ],
+    "license": "MOJ-attributed",
+    "isCalculation": true,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "chosashi-2022-am-q10",
+    "exam": "chosashi",
+    "session": "am",
+    "year": 2022,
+    "season": "autumn",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "測量",
+    "topicTags": [
+      "測量"
+    ],
+    "difficulty": 3,
+    "question": "次の〔図〕のとおり、A、B、C、D及びAの各点を順次直線で結んだ範囲の敷地(以\n下「甲区画」という。)と、これに隣接するA、D、P及びAの各点を順次直線で結んだ\n範囲の敷地(以下「乙区画」という。)があり、甲区画の各点の座標値は次の〔表〕のとおり\nである。また、A点とP点を結んだ直線の長さは 52.00 mであり、D点とP点を結んだ\n直線の長さは 39.00 mである。\nこの場合において、A、B、E、F及びAの各点を順次直線で結んだ範囲の敷地(以\n下「丙区画」という。)が長方形となり、かつ、丙区画の面積が甲区画の面積と乙区画の\n面積を合計した値の 80 %となるようにE点とF点を新たに設定するときのF点のX座\n標の値として最も近いものは、後記 1 から 5 までのうち、どれか。\nただし、E点は、B点とC点を結んだ直線上に設定するものとする。\n\n 〔図〕\n\n\n\n\n 〔表〕\n\n 点名 X座標(m) Y座標(m)\nA -9.28 23.76\nB -9.28 -46.24\nC 48.32 -46.24\nD 50.72 -1.24",
+    "choices": {
+      "ア": "41.12 m",
+      "イ": "44.02 m",
+      "ウ": "46.34 m",
+      "エ": "48.66 m",
+      "オ": "52.72 m"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "requiredSelections": 1,
+    "explanation": "座標の求積式で甲は3396 m²、三辺39・52・65 mの直角三角形である乙は1014 m²である。その和の80％をAB＝70 mで割った長方形の高さをAのX座標−9.28 mに足すと、Xは41.12 mになる。",
+    "choiceExplanations": {
+      "ア": "座標の求積式で甲は3396 m²、三辺39・52・65 mの直角三角形である乙は1014 m²である。その和の80％をAB＝70 mで割った長方形の高さをAのX座標−9.28 mに足すと、Xは41.12 mになる。",
+      "イ": "長方形の面積は甲・乙の合計の80％であり、三角形APDの面積も含めて短辺を求める。",
+      "ウ": "長方形の長辺はABの70 mであり、面積から短辺を求めるとこの肢のX座標になる位置ではない。",
+      "エ": "80％に縮小するのは辺の長さではなく面積なので、面積を80％にしたうえでABの長さで割る。",
+      "オ": "FのX座標は、算出した長方形の短辺を既知のAのX座標に加えた値であり、求積結果を使うとこの肢までは達しない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/chosashi/2022-am-q10-p11.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度土地家屋調査士試験 午前 第10問の原本"
+    ],
+    "sourcePdfUrl": "https://www.moj.go.jp./content/001383834.pdf#page=11",
+    "sourceAnswerUrl": "https://www.moj.go.jp./content/001383828.pdf",
+    "sourceAttribution": "出典：法務省「令和4年度土地家屋調査士試験筆記試験問題・正解」。解説は過去問AI作成。",
+    "officialReferenceUrls": [
+      "https://www.moj.go.jp/MINJI/minji05_00485.html"
+    ],
+    "license": "MOJ-attributed",
+    "isCalculation": true,
+    "lastUpdated": "2026-11-20"
+  }
+]
