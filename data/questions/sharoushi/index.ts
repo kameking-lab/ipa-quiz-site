@@ -2,14 +2,18 @@ import type { Question } from "@/lib/questions/types";
 import paper2026 from "./2026-annual.json";
 import paper2025 from "./2025-annual.json";
 import paper2023 from "./2023-annual.json";
+import rousai2023 from "./rousai-2023-annual.json";
 import rousai2025 from "./rousai-2025-annual.json";
 import rousai2026 from "./rousai-2026-annual.json";
+import koyou2023 from "./koyou-2023-annual.json";
 import koyou2025 from "./koyou-2025-annual.json";
 import koyou2026 from "./koyou-2026-annual.json";
+import kenpo2023 from "./kenpo-2023-annual.json";
 import kenpo2025 from "./kenpo-2025-annual.json";
 import kenpo2026 from "./kenpo-2026-annual.json";
 import kounen2025 from "./kounen-2025-annual.json";
 import kounen2026 from "./kounen-2026-annual.json";
+import ippan2023 from "./ippan-2023-annual.json";
 import ippan2025 from "./ippan-2025-annual.json";
 import kokunen2025 from "./kokunen-2025-annual.json";
 import kokunen2026 from "./kokunen-2026-annual.json";
@@ -27,14 +31,18 @@ export const SHAROUSHI_QUESTIONS: Question[] = [
   ...(paper2026 as Question[]),
   ...(paper2025 as Question[]),
   ...(paper2023 as Question[]),
+  ...(rousai2023 as Question[]),
   ...(rousai2025 as Question[]),
   ...(rousai2026 as Question[]),
+  ...(koyou2023 as Question[]),
   ...(koyou2025 as Question[]),
   ...(koyou2026 as Question[]),
+  ...(kenpo2023 as Question[]),
   ...(kenpo2025 as Question[]),
   ...(kenpo2026 as Question[]),
   ...(kounen2025 as Question[]),
   ...(kounen2026 as Question[]),
+  ...(ippan2023 as Question[]),
   ...(ippan2025 as Question[]),
   ...(ippan2026 as Question[]),
   ...(kokunen2025 as Question[]),
