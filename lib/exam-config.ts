@@ -2012,6 +2012,13 @@ caremanager: {
             label: "教科専門（中学校・英語）",
             categories: ["中学校・英語"],
         },
+        {
+            session: "senmon-ko-eigo",
+            urlSlug: "senmon-ko-eigo",
+            expectedQuestions: 5,
+            label: "教科専門（高等学校・英語）",
+            categories: ["高等学校・英語"],
+        },
     ],
     seasons: ["annual"],
     yearRange: { start: 2022, end: 2025 },
