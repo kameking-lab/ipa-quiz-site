@@ -8,11 +8,12 @@ import officialAnswers from "@/reports/hoikushi-2rounds-20260929/official-answer
 import type { ChoiceKey } from "@/lib/questions/types";
 
 describe("保育士の案内と公開年度の一致", () => {
-  it("令和8年度前期154問と令和7年度後期158問を九科目ずつ公開する", () => {
+  it("令和8年度前期154問、令和7年度後期158問・前期156問を九科目ずつ公開する", () => {
     const ready = HOIKUSHI_QUESTIONS.filter(isPracticeReadyQuestion);
-    expect([...new Set(ready.map((q) => `${q.year}-${q.season}`))]).toEqual(["2026-early", "2025-late"]);
-    for (const [year, count] of [[2026, 154], [2025, 158]]) {
-      const round = ready.filter((q) => q.year === year);
+    const rounds = [[2026, "early", 154], [2025, "late", 158], [2025, "early", 156]] as const;
+    expect([...new Set(ready.map((q) => `${q.year}-${q.season}`))]).toEqual(rounds.map(([year, season]) => `${year}-${season}`));
+    for (const [year, season, count] of rounds) {
+      const round = ready.filter((q) => q.year === year && q.season === season);
       expect(round).toHaveLength(count);
       expect(new Set(round.map((q) => q.session)).size).toBe(9);
     }
@@ -40,6 +41,6 @@ describe("保育士の案内と公開年度の一致", () => {
     const entry = getQualificationByExamCode("hoikushi");
     expect(entry?.officialReuseTermsUrl).toBe("https://www.hoyokyo.or.jp/terms/");
     expect(entry?.reuseSummary).toContain("令和8年度前期154問");
-    expect(entry?.reuseSummary).toContain("令和7年度後期158問");
+    expect(entry?.reuseSummary).toContain("令和7年度後期158問・前期156問");
   });
 });

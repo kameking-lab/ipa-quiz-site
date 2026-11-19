@@ -1,4 +1,5 @@
 import type { ChoiceKey, Question, Season, Session } from "@/lib/questions/types";
+import source2025early from "./2025-early.json";
 import source2025late from "./2025-late.json";
 import source2026early from "./2026-early.json";
 
@@ -102,4 +103,5 @@ export const HOIKUSHI_2026_EARLY_QUESTIONS: Question[] = buildRound(source2026ea
 export const HOIKUSHI_QUESTIONS: Question[] = [
   ...HOIKUSHI_2026_EARLY_QUESTIONS,
   ...buildRound(source2025late as HoikushiSource),
+  ...buildRound(source2025early as HoikushiSource),
 ];
