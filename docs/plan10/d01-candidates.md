@@ -36,6 +36,7 @@
 | 2024（令和7年度採用） | 群馬県 第1次選考 教科専門（中学校・英語） | 5問 | [問題と正答（10ページ）](https://www.pref.gunma.jp/uploaded/attachment/643780.pdf) |
 | 2024（令和7年度採用） | 群馬県 第1次選考 教科専門（高等学校・英語） | 5問 | [問題と正答（11ページ）](https://www.pref.gunma.jp/uploaded/attachment/643802.pdf) |
 | 2023（令和6年度採用） | 群馬県 第1次選考 教科専門（中学校・英語） | 5問 | [問題と正答（9ページ）](https://www.pref.gunma.jp/uploaded/life/612847_618243_misc.pdf) |
+| 2023（令和6年度採用） | 群馬県 第1次選考 教科専門（高等学校・英語） | 5問 | [問題と正答（11ページ）](https://www.pref.gunma.jp/uploaded/life/612847_618263_misc.pdf) |
 | 2022（令和5年度採用） | 群馬県 第1次選考 教科専門（中学校・英語） | 5問 | [問題と正答（10ページ）](https://www.pref.gunma.jp/uploaded/life/168914_172634_misc.pdf) |
 
 - 2025年度の解答番号14は出題時の文言の誤りで全員正答扱い。収録データに公式の採点処理を記録し、通常演習から除外。 [群馬県の訂正](https://www.pref.gunma.jp/site/houdou/713945.html)
