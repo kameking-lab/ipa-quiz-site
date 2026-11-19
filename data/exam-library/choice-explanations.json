@@ -37891,5 +37891,705 @@
     "sources": [],
     "provisionalReview": true,
     "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241801-q1": {
+    "sourceHash": "a3dcbeaa09d289bb4533a0f44d2ecac83c472ab8ef5dcf50ae9a71c48fb1f111",
+    "correctChoice": 3,
+    "summary": "指針の実施時期には、物質や作業方法の新規採用・変更や、有害性について新しい知見を得たときなどがあります。担当者の交替だけは列挙されていません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "液体を扱う作業では、物質の有害性、揮発しやすさや飛散性、作業で取り扱う量を使ってリスクを区分し、必要な対策を選びます。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "CREATE-SIMPLEは職場の作業条件などを入力し、吸入によるばく露と、物質が皮膚に付着することによるばく露の双方を評価できます。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "指針の実施時期には、物質や作業方法の新規採用・変更や、有害性について新しい知見を得たときなどがあります。担当者の交替だけは列挙されていません。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "健康障害の起こりやすさと影響の重さを数値化し、これらの加算や乗算でリスクの大きさを見積もる方法も認められます。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "優先度の高い代替や工程変更などでリスクが十分に低減する場合、その評価においてさらに優先度の低い対策を検討する必要はありません。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241801-q2": {
+    "sourceHash": "3e952219115f0210f498ea1d204306f56dab43323daa65f3eb623f59a16037b0",
+    "correctChoice": 4,
+    "summary": "発がん性には胸に星形がある人体の絵表示を使います。選択肢にあるどくろの絵表示は強い急性毒性に対応します。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "試験管から垂れた液で金属や手が侵される絵表示は腐食性です。金属腐食性の危険有害性クラスに対応しています。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "皮膚感作性では、皮膚への接触に伴ってアレルギー反応が生じやすくなることを示し、感嘆符の絵表示が用いられます。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "呼吸器感作性では吸入によってアレルギー性の呼吸器症状が誘発され得ることを示し、胸に星形のある人体の絵表示を使います。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "発がん性には胸に星形がある人体の絵表示を使います。選択肢にあるどくろの絵表示は強い急性毒性に対応します。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "酸化性固体は他の物質の燃焼を助ける性質があり、円の上に炎が載った絵表示で酸化性の危険を示す組合せは適切です。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241801-q3": {
+    "sourceHash": "85e5f9d21cdb19e93ffc15f8f641959654c00d3d04b5a627a9de4cc5695ee1fd",
+    "correctChoice": 5,
+    "summary": "変異原性試験は遺伝子や染色体に変化を起こす性質を調べるものです。胎児の器官形成への影響は発生毒性試験で評価します。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "量－影響関係は、一人の個体におけるばく露量と、検査値などで示される影響の強さとの対応を表します。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "NOELは、試験で設定した量のうち、対象とする影響が一切認められなかった最も高いばく露量を表します。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "LOELは、試験で設定した複数のばく露量を比較したときに、何らかの影響が観察された最も低いばく露量です。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "LC₅₀は、所定の時間吸入させたときに、試験動物の半数が死亡すると推定される気中濃度で、急性吸入毒性を示します。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "変異原性試験は遺伝子や染色体に変化を起こす性質を調べるものです。胎児の器官形成への影響は発生毒性試験で評価します。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241801-q4": {
+    "sourceHash": "90c3138385fde0e10ca7dfdb0a80d7f3ae034fb44eacb386d11304998930163d",
+    "correctChoice": 2,
+    "summary": "n-ヘキサンのばく露の指標には、尿中2,5-ヘキサンジオンを用います。n-ヘキサノールを指標とする記述は誤りです。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "エチルベンゼンの代謝で生じるマンデル酸は尿中に排泄され、尿中の代謝物は職業ばく露を把握する指標になります。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "n-ヘキサンのばく露の指標には、尿中2,5-ヘキサンジオンを用います。n-ヘキサノールを指標とする記述は誤りです。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "これら塩素系溶剤の生物学的モニタリングには、尿中トリクロロ酢酸または総三塩化物などの代謝物指標が用いられます。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "血液中のカドミウム濃度は、作業者がカドミウムにどの程度ばく露したかを評価する生物学的モニタリングの指標の一つです。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "生物学的半減期は、代謝や排泄などにより体内に取り込まれた物質の量が、元の量の半分に減るまでに要する時間です。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241801-q5": {
+    "sourceHash": "7ce571ffd5800b9a047f4ddad6542af71ab6ea9dd503710f3f7da2e9099a4730",
+    "correctChoice": 1,
+    "summary": "加工で空気中に飛散する粉じんと元の岩石では、鉱物の組成比が同じとは限りません。遊離けい酸含有率は対象の粉じんで測定します。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "加工で空気中に飛散する粉じんと元の岩石では、鉱物の組成比が同じとは限りません。遊離けい酸含有率は対象の粉じんで測定します。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "ストークスの法則が成り立つ細かい粒子では、他の条件が同一なら空気中での終末沈降速度は粒径の二乗に比例します。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "めっきや蓄電池の充電では液面に達したガスの泡がはじけ、液体の細かいしぶきが空気中に浮遊してミストになります。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "1,4-ジオキサンは酸素原子を含む環状エーテルで、水にも多くの有機溶媒にも混和し、脂溶性と水溶性の両方があります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "クロロホルムの分子には電荷の偏りが残りますが、四塩化炭素は対称な構造で結合の極性が打ち消し合います。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241801-q6": {
+    "sourceHash": "c7bae50d7c39f75a8c902dbda4ec2ccd22171228dc192006c167f61b66c3e53c",
+    "correctChoice": 5,
+    "summary": "水に溶けやすいガスは、吸入したときに上気道の粘膜の水分へ取り込まれやすく、肺胞まで届きやすいという説明は逆です。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "一酸化炭素は赤血球中のヘモグロビンに強く結合し、酸素を運搬できるヘモグロビンを減らすことで組織を低酸素にします。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "空気中の二酸化炭素が増えると呼吸や循環が刺激され、さらに高濃度では短時間でも意識消失や致命的な呼吸障害を起こし得ます。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "二酸化窒素は気道などを刺激します。慢性的なばく露では慢性気管支炎や歯牙酸蝕症などが障害として挙げられます。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "窒素は通常の空気に多く含まれますが、潜水などで分圧が高くなると中枢神経に作用し、酔いに似た状態を生じ得ます。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "水に溶けやすいガスは、吸入したときに上気道の粘膜の水分へ取り込まれやすく、肺胞まで届きやすいという説明は逆です。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241801-q7": {
+    "sourceHash": "99fd836a127acf15a0ef6f629de0a319f3abfb8fb78b9868e9caa4e9cea52f85",
+    "correctChoice": 2,
+    "summary": "o-フタロジニトリルの有害性として問題となるのは神経系への影響などです。皮膚がんを代表的ながんとする組合せは合いません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "1,3-ブタジエンは造血系への発がん影響が問題になる物質であり、長期的な職業ばく露と白血病との関連が知られています。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "o-フタロジニトリルの有害性として問題となるのは神経系への影響などです。皮膚がんを代表的ながんとする組合せは合いません。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "コールタールやそのピッチを取り扱う作業での長期ばく露は、皮膚がんに加え肺がんのリスクとも関係します。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "ベリリウムやその化合物の職業性ばく露は感作だけでなく発がん性も問題となり、肺がんとの関連が知られています。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "重クロム酸の六価クロムは吸入ばく露で呼吸器を障害し、肺に加えて鼻腔・副鼻腔など上気道のがんとの関連も知られています。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241801-q8": {
+    "sourceHash": "14e1309f58e0e1748d7eb89a3bd1efd77f1d1c0a25b7e75d1d0976a6fe207a2f",
+    "correctChoice": 1,
+    "summary": "じん肺は粉じん吸入に伴う肺の線維増殖性変化が主体です。COPDや間質性肺炎を、そのままじん肺の病型とは扱いません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "じん肺は粉じん吸入に伴う肺の線維増殖性変化が主体です。COPDや間質性肺炎を、そのままじん肺の病型とは扱いません。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "吸入した粉じんの主成分に応じて呼び名があり、結晶質シリカを主因とするものはけい肺、石綿を主因とするものは石綿肺です。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "遊離けい酸を含む粉じんは肺に沈着した際の線維化の作用が強く、長くばく露するとけい肺を起こし得ます。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "じん肺では肺結核、結核性胸膜炎、続発性気管支炎などの合併症を生じることがあり、じん肺法はこれらを区分しています。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "肺内に残った粉じんや続く炎症により、ばく露を止めた後でも病変が進行して肺の線維化が悪化することがあります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241801-q9": {
+    "sourceHash": "eaad704047b81cf40f468bc3eee136dcdd6095b5fb27832cdab253f85eb56b33",
+    "correctChoice": 5,
+    "summary": "金属熱は金属ヒューム吸入後の発熱や悪寒などを特徴とし、通常は一過性です。記憶障害などの後遺症が多いとはいえません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "インジウム化合物のばく露は間質性肺障害を起こすことがあり、発がん性が疑われる化合物もあります。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "クロム酸や三酸化ヒ素の職業ばく露では鼻粘膜が損傷され、鼻中隔に穴が開く鼻中隔穿孔を起こすことがあります。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "無機水銀化合物は気道や消化管から吸収されることがあり、腎障害が重くなると血尿や蛋白尿、無尿などがみられます。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "鉛はヘム合成酵素を阻害して貧血を起こし、末梢神経の障害による垂れ手や、腎機能への影響も生じることがあります。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "金属熱は金属ヒューム吸入後の発熱や悪寒などを特徴とし、通常は一過性です。記憶障害などの後遺症が多いとはいえません。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241801-q10": {
+    "sourceHash": "10c5fb5948e84a6891242b6ee025744866365e2d9e4597164ba76f1d15341824",
+    "correctChoice": 4,
+    "summary": "トルエンの蒸気は空気より重い一方、液体の密度は水より小さく、水より大きいとする記述が誤りです。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "ハロゲン化有機溶剤には、代謝の過程などで肝細胞を傷めるものがあり、肝機能障害は重要な毒性として扱われます。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "1,2-ジクロロプロパンは肝臓や腎臓に有害で、職業性の高濃度ばく露が長期間続いた事例では胆管がんとの関連がみられます。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "アセトンなど一部の水溶性有機溶剤も、吸入だけでなく皮膚や粘膜から吸収され得るので、接触によるばく露も考慮します。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "トルエンの蒸気は空気より重い一方、液体の密度は水より小さく、水より大きいとする記述が誤りです。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "二硫化炭素では神経系や循環器への影響に加え、生殖機能への悪影響も報告されており、生殖毒性が問題となります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241801-q11": {
+    "sourceHash": "b76c48504b97ebd5c8a06e8f90a54c6053aa60e25289de20d04d56666a2081a8",
+    "correctChoice": 2,
+    "summary": "重症の熱中症では放熱や体温調節が破綻し、高体温や意識障害を生じ得ます。体温が著しく下がることが多いという説明は逆です。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "暑熱下では皮膚血流が増え、脳への血流が一時的に不足して立ちくらみや失神を生じる場合があります。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "重症の熱中症では放熱や体温調節が破綻し、高体温や意識障害を生じ得ます。体温が著しく下がることが多いという説明は逆です。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "体温は、代謝により生まれる熱と、皮膚などから環境に逃げる熱との釣り合いを取ることで一定の範囲に維持されます。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "凍瘡はしもやけのことで、冷えによる循環障害などにより、手指や足先など冷えやすい末梢部に起こります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "長時間にわたる寒冷ばく露は筋肉の緊張など身体への負担を増やし、腰痛などの筋骨格系の症状につながることがあります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241801-q12": {
+    "sourceHash": "abe0a3f1ea1fba8801b7f0798155bc61d09abe77f37ea70071e3a14d4e5a530e",
+    "correctChoice": 1,
+    "summary": "A(8)は周波数補正振動加速度実効値の3軸合成値aₕᵥに、ばく露時間の8時間に対する比の平方根√(T/8)を掛けて求めます。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "A(8)は周波数補正振動加速度実効値の3軸合成値aₕᵥに、ばく露時間の8時間に対する比の平方根√(T/8)を掛けて求めます。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "時間補正係数はT/8そのものではなく平方根です。振動エネルギーを時間で換算した後、加速度として表すためです。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "時間比を二乗するとばく露時間の効果を誤って評価します。8時間換算の日振動ばく露量では、時間比の平方根を乗じます。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "平方根の中に入るのは加速度の三軸合成値ではなく時間比です。振動加速度の値aₕᵥは平方根の外で掛け算します。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "この式は加速度を二乗して時間を直接掛けていますが、日振動ばく露量は加速度の単位で、aₕᵥに√(T/8)を掛けます。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241801-q13": {
+    "sourceHash": "59a2ad3f35515ed84b41aa529df05e518a150085d73a3bcf9e9d001ff3f77d41",
+    "correctChoice": 2,
+    "summary": "騒音計のA特性・C特性は周波数に対する感度の設定です。作業環境測定におけるA測定は測定点の取り方による区分です。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "A特性は低周波の音ほど強く減衰させます。図で低周波側の補正値が最も小さい点線の㋩がその特徴に合っています。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "騒音計のA特性・C特性は周波数に対する感度の設定です。作業環境測定におけるA測定は測定点の取り方による区分です。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "騒音の作業環境評価では、A測定の測定点のうち80 dB未満の値を除き、残った測定値を算術平均します。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "騒音で蝸牛の有毛細胞が傷つくと、振動を神経信号に変える機能が損なわれるため、感音性難聴になります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "可聴域より高い周波数の音が超音波です。超音波溶着機などの作業では頭痛や不快感が生じる場合があります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241801-q14": {
+    "sourceHash": "8c7da0d15a9fc52c001aa3def6073746a82aed4b5e45fdd2868a7c0fd5797a22",
+    "correctChoice": 5,
+    "summary": "歯への黄色の色素沈着や歯牙酸蝕症は、硫化水素の慢性中毒を代表する症状ではありません。眼や気道への刺激を区別します。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "大脳皮質は活動に必要な酸素消費量が多く、酸素が不足すると、判断力や意識などに関わる機能が早く低下します。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "排水に含まれる第一鉄化合物が酸化されると酸素が消費されるので、空気の出入りが少ない暗渠では酸素欠乏のおそれがあります。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "汚水や汚泥を動かすと内部にたまった硫化水素が空気中に放出され、一時的に作業者の吸入ばく露が増えることがあります。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "高濃度の硫化水素への連続ばく露は呼吸器を強く傷害して肺水腫などを生じることがあり、重症では生命を脅かします。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "歯への黄色の色素沈着や歯牙酸蝕症は、硫化水素の慢性中毒を代表する症状ではありません。眼や気道への刺激を区別します。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241801-q15": {
+    "sourceHash": "d3f2f84ebdcc836d28103e25c5a68cb4a42f56bfa4c1d07233cf05ea931985a2",
+    "correctChoice": 3,
+    "summary": "作業環境測定の吸光光度分析では、発色させて可視光の吸収を測る方法が一般的です。紫外域に限られるという説明は誤りです。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "可視光では短波長側に紫や青、長波長側に黄や赤が位置するので、青色光の波長は黄色光の波長より短くなります。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "赤外線は波長帯によって近・中・遠に分かれ、近赤外線などの短波長域は水晶体への熱影響により白内障と関係します。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "作業環境測定の吸光光度分析では、発色させて可視光の吸収を測る方法が一般的です。紫外域に限られるという説明は誤りです。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "マイクロ波は加熱や通信に利用されます。強いばく露で組織が過度に加熱されると熱傷や壊死を生じることがあります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "相対濃度計では粉じん粒子で散乱された光を検出し、その強さから濃度を推定します。レーザー光が光源となる機種があります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241801-q16": {
+    "sourceHash": "6562bf390797d779d21e630b108d194e14a229c29018446dd8b474252ed206f9",
+    "correctChoice": 3,
+    "summary": "電子捕獲型検出器（ECD）の線源には、一般にβ線を放出するニッケル63を用います。コバルト60が一般的という説明は誤りです。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "電離放射線にはX線・γ線のような電磁波と、α粒子・β粒子・中性子が移動する粒子線があり、いずれも電離作用を生じます。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "α線は粒子が重く電荷も大きいため物質中でエネルギーを失いやすく、α線・β線・γ線の中では透過力が最も弱いものです。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "電子捕獲型検出器（ECD）の線源には、一般にβ線を放出するニッケル63を用います。コバルト60が一般的という説明は誤りです。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "放射線被ばく後に時間をおいて発生し得る白血病は、放射線防護上しきい値を置かない確率的影響に分類されます。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "皮膚では分裂する細胞を含む基底層などが放射線の影響を受けやすく、一般に分化した神経細胞より感受性が高くなります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241801-q17": {
+    "sourceHash": "e97e54cc79cf2f8c8771c41bb190c1fe43840df91c26225e859e9d4c5cc07e07",
+    "correctChoice": 2,
+    "summary": "フランジはフード背面や側方からの無駄な吸い込みを抑えます。同じ捕捉性能に必要な排風量は、通常は少なくなります。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "ドラフトチェンバーは有害物の発散源の周囲を覆い、作業用の開口を残して吸引するので、囲い式フードに分類されます。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "フランジはフード背面や側方からの無駄な吸い込みを抑えます。同じ捕捉性能に必要な排風量は、通常は少なくなります。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "囲い式では風速の弱いところから有害物が漏れるのを防ぐ必要があるので、制御風速は開口面における最小風速を指します。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "排風量が同じなら、断面積を大きくするとダクト内の流速が下がって摩擦などによる圧力損失が一般に小さくなります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "汚染物を除去した空気が排風機を通るよう、空気清浄装置の下流側に排風機を置くのが一般的な配置です。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241801-q18": {
+    "sourceHash": "53b3e4526714c33c6da132eae7b131941f993d812ee3c8688deadb9c3ccaa3d7",
+    "correctChoice": 3,
+    "summary": "遮音が過大だと警報や会話が聞き取りにくくなります。騒音の大きさや作業中に必要な聞き取りを考えて選定します。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "オイルミストを含む作業には液体粒子で試験されたRL区分が適します。このうちRL3が最も高い粒子捕集効率を持ちます。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "送気マスクは作業場の空気をろ過するのではなく、外部から清浄な呼吸用空気を供給するので酸素欠乏環境でも使用できます。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "遮音が過大だと警報や会話が聞き取りにくくなります。騒音の大きさや作業中に必要な聞き取りを考えて選定します。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "気密服は気密構造、陽圧服は内側を陽圧にする構造で侵入を防ぎ、密閉服は所定の化学物質の侵入を抑えるよう設計されます。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "耐浸透性のクラスはピンホールなどを通じた漏れに関する指標で、数値が小さいクラスが低い漏れ率を表します。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241801-q19": {
+    "sourceHash": "98fbf34fed7f4f1a42a7a970e330fc990dc193a2b124cdae074a83b363c06995",
+    "correctChoice": 5,
+    "summary": "しめひもをヘルメットの上から掛けると面体がずれたり締付けが不均一になったりするので、顔との密着を安定して保てません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "隔離式は吸収缶を面体から離してホースにつなぐ構造で、直結式や直結式小型より高い濃度範囲で使用できる区分です。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "メタノールは一般の有機ガス用吸収缶で使う活性炭に吸着されにくいため、試験ガスのシクロヘキサンより早く破過します。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "一酸化炭素用吸収缶では触媒で一酸化炭素を酸化し、二酸化炭素に変えてから面体に空気を送り込みます。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "防じん機能付きの防毒マスクにも、液体や固体の粒子に対する捕集効率の区分があり、防じんマスクと同じ効率区分で考えます。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "しめひもをヘルメットの上から掛けると面体がずれたり締付けが不均一になったりするので、顔との密着を安定して保てません。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241801-q20": {
+    "sourceHash": "937eb74933e22e0a86ccfa8afeb1322c9827783a58fe28fd12d90c4a4ac39f5c",
+    "correctChoice": 1,
+    "summary": "鉱物性粉じんの管理濃度はE＝3.0÷(1.19Q＋1)です。遊離けい酸含有率Qの係数を1.49とした式は誤りです。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "鉱物性粉じんの管理濃度はE＝3.0÷(1.19Q＋1)です。遊離けい酸含有率Qの係数を1.49とした式は誤りです。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "D測定は発生源の近くで作業者が高濃度にばく露し得る作業を把握する測定で、その値は管理濃度との直接比較に用います。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "許容濃度は所定の作業条件を前提とするので、適用時は呼吸量に影響する労働強度や温熱条件、気圧なども考慮します。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "第1群はヒトに対して生殖毒性があることが知られている物質で、証拠の確実性に応じて第2群、第3群と区別されます。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "感作性物質は、アレルギー性の呼吸器反応を起こす気道感作性物質と、皮膚のアレルギー反応を起こす皮膚感作性物質に分けられます。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
   }
 }
