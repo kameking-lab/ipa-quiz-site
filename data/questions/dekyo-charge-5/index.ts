@@ -1,3 +1,4 @@
+import digital1First2024 from "./2024-round1-digital1.json";
 import analog2First2024 from "./2024-round1-analog2.json";
 import generalFirst2024 from "./2024-round1-general.json";
 import analog1First2024 from "./2024-round1-analog1.json";
@@ -15,6 +16,7 @@ export const DEKYO_CHARGE_QUESTIONS = [
   ...analog1,
   ...general,
   ...digital1,
+  ...digital1First2024,
   ...digital2First2024,
   ...analog1First2024,
   ...generalFirst2024,
