@@ -1274,6 +1274,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
   },
   {
+    slug: "kogai-08", examCode: "kogai-08", shortName: "公害防止管理者 汚水処理特論", fullName: "公害防止管理者等国家試験（汚水処理特論）",
+    domain: "safety", administrator: "一般社団法人産業環境管理協会",
+    officialQuestionsUrl: "https://www.jemai.or.jp/polconman/examination/past.html",
+    officialReuseTermsUrl: "https://www.jemai.or.jp/polconman/examination/past.html",
+    status: "live",
+    reuseSummary: "汚水処理特論の2025年度25問を、公式問題と正答に基づく全肢解説付きで収録しています。",
+    attributionTemplate: "出典：一般社団法人産業環境管理協会 年度別公害防止管理者等国家試験（汚水処理特論）。解説は過去問AI独自作成。",
+    remainingWork: [],
+  },
+  {
     slug: "chizai2", examCode: "chizai2", shortName: "知的財産管理技能検定2級", fullName: "知的財産管理技能検定2級",
     domain: "legal", administrator: "知的財産教育協会",
     officialQuestionsUrl: "https://www.kentei-info-ip-edu.org/gakushujoho/kakomon.html",
