@@ -2,5 +2,6 @@ import type { Question } from "@/lib/questions/types";
 import questions from "../batch3/dojo-osen.json";
 import annual2026 from "./2026-annual.json";
 import annual2023 from "./2023-annual.json";
+import annual2022 from "./2022-annual.json";
 /** INT7 public projection; reviewed source manuscripts remain private and unchanged. */
-export const QUESTIONS: Question[] = [...(questions as Question[]), ...(annual2026 as Question[]), ...(annual2023 as Question[])];
+export const QUESTIONS: Question[] = [...(questions as Question[]), ...(annual2026 as Question[]), ...(annual2023 as Question[]), ...(annual2022 as Question[])];
