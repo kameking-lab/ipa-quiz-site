@@ -1,4 +1,5 @@
 import { SASSHI1_QUESTIONS } from "./sasshi1";
+import { KYOIN_HIROSHIMA_QUESTIONS } from "./kyoin-hiroshima";
 import { EXAM_CODE_ALIASES } from "@/lib/questions/exam-aliases";
 import { SASSHI2_QUESTIONS } from "./sasshi2";
 import { ENGEI_SOSHOKU3_QUESTIONS } from "./engei-soshoku3";
@@ -343,6 +344,7 @@ import { KIKAI_HOZEN_QUESTIONS } from "./kikai-hozen";
 import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+  ...(isExamPublished("kyoin-hiroshima") ? { "kyoin-hiroshima": KYOIN_HIROSHIMA_QUESTIONS } : {}),
 ...(isExamPublished("fujin-kodomofuku2") ? { "fujin-kodomofuku2": FUJIN_KODOMOFUKU2_QUESTIONS } : {}),
 ...(isExamPublished("fujin-kodomofuku1") ? { "fujin-kodomofuku1": FUJIN_KODOMOFUKU1_QUESTIONS } : {}),
 ...(isExamPublished("toso1") ? { "toso1": TOSO1_QUESTIONS } : {}),

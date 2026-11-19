@@ -45,6 +45,16 @@ export interface QualificationCatalogEntry {
  * 「公式に問題と正答がある」だけでは live にせず、転載条件まで確認する。
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
+  {
+    slug: "kyoin-hiroshima", examCode: "kyoin-hiroshima", shortName: "広島県・広島市教員採用試験", fullName: "広島県・広島市公立学校教員採用候補者選考試験",
+    domain: "welfare", administrator: "広島県・広島市教育委員会",
+    officialQuestionsUrl: "https://www.pref.hiroshima.lg.jp/site/04file/r09shikenmondai1ji.html",
+    officialReuseTermsUrl: "https://www.pref.hiroshima.lg.jp/site/04file/r09shikenmondai1ji.html",
+    status: "live",
+    reuseSummary: "公式問題・正答と全選択肢の独自解説を収録。",
+    attributionTemplate: "出典：広島県・広島市教育委員会 広島県・広島市公立学校教員採用候補者選考試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+  },
   {"slug": "sasshi1", "examCode": "sasshi1", "shortName": "サッシ施工技能士 1級", "fullName": "技能検定 1級サッシ施工（ビル用サッシ施工作業）学科試験", "domain": "safety", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
   {"slug": "sasshi2", "examCode": "sasshi2", "shortName": "サッシ施工技能士 2級", "fullName": "技能検定 2級サッシ施工（ビル用サッシ施工作業）学科試験", "domain": "safety", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "2023・2024・2025年度の学科150問を収録。公式問題・正答と全肢の独自解説で学べます。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
   {"slug": "kyoka-plastic2", "examCode": "kyoka-plastic2", "shortName": "強化プラスチック成形技能士 2級", "fullName": "技能検定 2級強化プラスチック成形（手積み積層成形作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "2023・2024・2025年度の学科150問を収録。公式問題・正答と全肢の独自解説で学べます。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},

@@ -454,6 +454,7 @@ export function examTopDescription(exam: ExamCode, questionCount: number): strin
     return `${base}${examLabel(exam)}の過去問${questionCount}問を年度別・分野別に収録。AIコパイロット付きで効率的に学習。`;
 }
 const EXAM_FULL_NAMES: Record<ExamCode, string> = {
+    "kyoin-hiroshima": "広島県・広島市公立学校教員採用候補者選考試験",
     "sasshi2": "技能検定 2級サッシ施工（ビル用サッシ施工作業）学科試験",
     "sasshi1": "技能検定 1級サッシ施工（ビル用サッシ施工作業）学科試験",
     "kyoka-plastic2": "技能検定 2級強化プラスチック成形（手積み積層成形作業）学科試験",
@@ -824,6 +825,7 @@ export function examFullName(exam: ExamCode): string {
     return EXAM_FULL_NAMES[exam];
 }
 const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number) => string> = {
+    "kyoin-hiroshima": (c, y) => `広島県・広島市教員採用試験の過去問を${y}年度分・計${c}問収録。公式問題・正答と全選択肢の解説で学べます。`,
     "sasshi2": (c, y, k) => `技能検定 2級サッシ施工（ビル用サッシ施工作業）学科試験を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,
     "sasshi1": (c, y, k) => `技能検定 1級サッシ施工（ビル用サッシ施工作業）学科試験を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,
     "kyoka-plastic2": (c, y, k) => `技能検定 2級強化プラスチック成形（手積み積層成形作業）学科試験を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,

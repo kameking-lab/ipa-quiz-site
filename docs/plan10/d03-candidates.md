@@ -34,3 +34,11 @@
 | 熊本市 | 534 | 実施要項・結果を掲載。問題・正答の組は未取得。 [教員採用選考試験情報](https://www.city.kumamoto.jp/kiji0032481/) |
 
 添付の収録済み一覧と、`origin` の C19（東京都・大阪府の教員採用と裁判所事務官）を照合した。
+
+## 収録結果
+
+| 自治体 | 試験実施年度 | 区分 | 収録数 | 公式原本 |
+| --- | --- | --- | ---: | --- |
+| 広島県・広島市 | 2026 | 第1次 教職に関する専門教育科目 | 22 | [問題](https://www.pref.hiroshima.lg.jp/uploaded/attachment/676989.pdf)・[採点基準](https://www.pref.hiroshima.lg.jp/uploaded/attachment/676991.pdf) |
+
+収録数は、空欄の枝問を含む公式の解答欄単位。
