@@ -1303,7 +1303,7 @@ kangoshi: {
         { session: "eigo-hikki", urlSlug: "eigo-hikki", expectedQuestions: 5, label: "英語・筆記", categories: ["英語・筆記"] },
         { session: "eigo-kaiwa", urlSlug: "eigo-kaiwa", expectedQuestions: 7, label: "英会話", categories: ["英会話"] },
     ],
-    seasons: ["february", "august"], yearRange: { start: 2023, end: 2026 },
+    seasons: ["february", "august"], yearRange: { start: 2022, end: 2026 },
 },
 "maritime4": {
     code: "maritime4", nameFull: "第四級海上無線通信士試験", urlSlug: "maritime4", level: "specialist",
