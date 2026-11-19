@@ -1559,6 +1559,11 @@ kankoji1: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 3, label: "筆記", categories: ["I種（マスターコース）", "II種（ラインケアコース）", "III種（セルフケアコース）"] }],
     seasons: ["autumn"], yearRange: { start: 2019, end: 2023 },
 },
+"building-cleaning-ssw1": {
+    code: "building-cleaning-ssw1", nameFull: "ビルクリーニング分野特定技能1号評価試験", urlSlug: "building-cleaning-ssw1", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 17, label: "筆記", categories: ["清掃用具", "洗剤", "清掃手順", "接客"] }],
+    seasons: ["published"], yearRange: { start: 2019, end: 2019 },
+},
 "yamaguchi-chori": {
     code: "yamaguchi-chori", nameFull: "調理師", urlSlug: "yamaguchi-chori", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 60, label: "学科", categories: ["公衆衛生学", "食品学", "栄養学", "食品衛生学", "調理理論", "食文化概論"] }],

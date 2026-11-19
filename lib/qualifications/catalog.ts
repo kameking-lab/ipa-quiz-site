@@ -1572,6 +1572,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
   },
   {
+    slug: "building-cleaning-ssw1", examCode: "building-cleaning-ssw1", shortName: "ビルクリーニング特定技能1号", fullName: "ビルクリーニング分野特定技能1号評価試験",
+    domain: "personal-services", administrator: "公益社団法人全国ビルメンテナンス協会",
+    officialQuestionsUrl: "https://www.j-bma.or.jp/qualification-training/zairyu-1go",
+    officialReuseTermsUrl: "https://www.j-bma.or.jp/qualification-training/zairyu-1go",
+    status: "live",
+    reuseSummary: "2019年に公表された判断試験の問題・正答と独自の全肢解説を収録。",
+    attributionTemplate: "出典：公益社団法人全国ビルメンテナンス協会。解説は過去問AIが作成。",
+    remainingWork: [],
+  },
+  {
     slug: "yamaguchi-chori", examCode: "yamaguchi-chori", shortName: "調理師", fullName: "調理師",
     domain: "personal-services", administrator: "山口県 生活衛生課",
     officialQuestionsUrl: "https://www.pref.yamaguchi.lg.jp/site/syoku-anshin/320296.html",

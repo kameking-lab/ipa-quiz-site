@@ -310,6 +310,7 @@ import { KANKOJI1_QUESTIONS } from "./kankoji1";
 import { KATEI_HOIKU_QUESTIONS } from "./katei-hoiku";
 import { KATEI_SHOKU_CHORI_QUESTIONS } from "./katei-shoku-chori";
 import { MENTAL_HEALTH_MANAGEMENT_QUESTIONS } from "./mental-health-management";
+import { BUILDING_CLEANING_SSW1_QUESTIONS } from "./building-cleaning-ssw1";
 import { YAMAGUCHI_CHORI_QUESTIONS } from "./yamaguchi-chori";
 import { YAMAGUCHI_SEIKA_QUESTIONS } from "./yamaguchi-seika";
 import { YAMAGUCHI_FUGU_QUESTIONS } from "./yamaguchi-fugu";
@@ -608,6 +609,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("katei-hoiku") ? { "katei-hoiku": KATEI_HOIKU_QUESTIONS } : {}),
 ...(isExamPublished("katei-shoku-chori") ? { "katei-shoku-chori": KATEI_SHOKU_CHORI_QUESTIONS } : {}),
 ...(isExamPublished("mental-health-management") ? { "mental-health-management": MENTAL_HEALTH_MANAGEMENT_QUESTIONS } : {}),
+...(isExamPublished("building-cleaning-ssw1") ? { "building-cleaning-ssw1": BUILDING_CLEANING_SSW1_QUESTIONS } : {}),
 ...(isExamPublished("yamaguchi-chori") ? { "yamaguchi-chori": YAMAGUCHI_CHORI_QUESTIONS } : {}),
 ...(isExamPublished("yamaguchi-seika") ? { "yamaguchi-seika": YAMAGUCHI_SEIKA_QUESTIONS } : {}),
 ...(isExamPublished("yamaguchi-fugu") ? { "yamaguchi-fugu": YAMAGUCHI_FUGU_QUESTIONS } : {}),
