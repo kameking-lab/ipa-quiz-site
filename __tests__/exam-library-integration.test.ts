@@ -14,6 +14,7 @@ import peLq3d from "@/reports/LQ3D-20261104/adoption-manifest.json";
 const isReviewedOctoberImport = (id: string) => /^lckohyo-LC202621(?:0[23679]|1[01279])-q\d+$/.test(id);
 
 const historicalMetalKeys = {
+  "emkohyo-EM20221808": [1, 2, 2, 2, 2, 3, 3, 2, 1, 4, 3, 2, 5, 4, 2, 3, 1, 4, 4],
   "emkohyo-EM20231808": [3, 4, 3, 4, 2, 4, 5, 3, 4, 3, 3, 2, 1, 1, 5, 3, 4, 2, 2, 4],
   "emkohyo-EM20241808": [2, 4, 4, 1, 1, 1, 3, 2, 5, 5, 5, 4, 2, 2, 4, 1, 2, 4, 2, 3],
 };
