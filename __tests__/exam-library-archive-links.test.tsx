@@ -6,7 +6,12 @@ import { EXAM_CATALOG } from "@/lib/exam-library-catalog";
 import { examSourcePdfUrl, parseExamCatalogEntry } from "@/lib/exam-library-model";
 import { loadExamPaper } from "@/lib/exam-library-papers";
 
-const archiveEntries = catalog.filter((entry) => entry.sourceMode === "official-archive-copy");
+const archiveEntries = catalog.filter(
+  (entry) => entry.group === "cskohyo" && entry.sourceMode === "official-archive-copy",
+);
+const archivedHealthEntries = catalog.filter(
+  (entry) => entry.group === "lckohyo" && entry.sourceMode === "official-archive-copy",
+);
 
 beforeEach(() => {
   window.localStorage.clear();
@@ -60,5 +65,24 @@ describe("archived consultant PDF links", () => {
 
   it("rejects archive mode outside the reviewed year", () => {
     expect(parseExamCatalogEntry({ ...archiveEntries[0], id: "cskohyo-CS20221901" })).toBeNull();
+  });
+});
+
+describe("official occupational health PDFs preserved in the archive", () => {
+  it("includes the October 2024 original", () => {
+    expect(archivedHealthEntries.some((entry) => entry.id === "lckohyo-LC20242114")).toBe(true);
+  });
+
+  it.each(archivedHealthEntries)("preserves and links to the exact original for $id", (raw) => {
+    const entry = parseExamCatalogEntry(raw)!;
+    expect(entry.pdfUrl).toBe(raw.pdfUrl);
+    expect(examSourcePdfUrl(entry)).toBe(raw.archiveSourceUrl);
+    expect(parseExamCatalogEntry({
+      ...raw,
+      archiveSourceUrl: raw.archiveSourceUrl?.replace(raw.pdfUrl, "https://example.com/copy.pdf"),
+    })).toBeNull();
+    const questions = loadExamPaper(entry.id);
+    expect(questions).toHaveLength(44);
+    expect(questions?.every((question) => question.choiceExplanation?.choices.length === 5)).toBe(true);
   });
 });

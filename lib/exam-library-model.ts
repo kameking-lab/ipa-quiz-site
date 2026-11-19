@@ -189,12 +189,19 @@ export function parseExamCatalogEntry(value: unknown): ExamCatalogEntry | null {
   if (typeof checkedAt !== "string" || !isValidMonthOrDay(checkedAt, "exam")) return null;
   const sourceMode = value.sourceMode ?? "official-pdf";
   if (sourceMode !== "official-pdf" && sourceMode !== "official-archive-copy") return null;
-  // 公開コピーは出典監査済みの2021年度と配布元・パスだけを許可する。
-  if (sourceMode === "official-archive-copy" && (
-    !/^cskohyo-CS202119\d{2}$/u.test(id) ||
-    typeof value.archiveSourceUrl !== "string" ||
-    !/^https:\/\/osh-lab\.com\/wp-content\/uploads\/2022\/06\/[a-f0-9]{32}\.pdf$/u.test(value.archiveSourceUrl)
-  )) return null;
+  // 公式サイトの保存記録は、カタログに載せた公式PDFそのものに限る。
+  if (sourceMode === "official-archive-copy") {
+    const archiveUrl = value.archiveSourceUrl;
+    if (typeof archiveUrl !== "string") return null;
+    const archivedOfficialPdf = group === "lckohyo"
+      && /^lckohyo-LC20(?:22|23|24)[12]114$/u.test(id)
+      && pdfUrl.endsWith(`/${id.slice("lckohyo-".length)}.pdf`)
+      && archiveUrl.replace(/^https:\/\/web\.archive\.org\/web\/\d{14}id_\//u, "") === pdfUrl
+      && archiveUrl !== pdfUrl;
+    const reviewedConsultantCopy = /^cskohyo-CS202119\d{2}$/u.test(id)
+      && /^https:\/\/osh-lab\.com\/wp-content\/uploads\/2022\/06\/[a-f0-9]{32}\.pdf$/u.test(archiveUrl);
+    if (!archivedOfficialPdf && !reviewedConsultantCopy) return null;
+  }
 
   const entry: ExamCatalogEntry = {
     id,
