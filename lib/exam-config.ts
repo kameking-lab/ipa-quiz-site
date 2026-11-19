@@ -115,7 +115,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       session: "gakka", urlSlug: "gakka", expectedQuestions: 120, label: "4級",
       categories: ["読み", "同音・同訓異字", "漢字識別", "熟語の構成", "部首", "対義語・類義語", "漢字と送りがな", "四字熟語", "誤字訂正", "書き取り"],
     }],
-    seasons: ["february"], yearRange: { start: 2024, end: 2024 },
+    seasons: ["february"], yearRange: { start: 2023, end: 2024 },
   },
   "dekyo-charge-2": {
     code: "dekyo-charge-2",
