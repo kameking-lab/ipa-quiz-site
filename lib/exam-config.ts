@@ -1475,7 +1475,7 @@ shuwa: {
 "kogai-taiki-yugai": {
     code: "kogai-taiki-yugai", nameFull: "公害防止管理者 大気有害物質特論", urlSlug: "kogai-taiki-yugai", level: "specialist",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 10, label: "大気有害物質特論", categories: ["大気有害物質特論"] }],
-    seasons: ["annual"], yearRange: { start: 2025, end: 2025 },
+    seasons: ["annual"], yearRange: { start: 2024, end: 2025 },
 },
 "kogai-04": {
     code: "kogai-04", nameFull: "公害防止管理者 ばいじん・粉じん特論", urlSlug: "kogai-04", level: "specialist",
