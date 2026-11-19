@@ -24,6 +24,8 @@
 | 実施機関・年度 | 一般 | 農業用品目 | 特定品目 |
 | --- | ---: | ---: | ---: |
 | 関西広域連合 2025年度 | 46問 | 48問 | 47問 |
+| 関西広域連合 2024年度 | 48問 | 48問 | 48問 |
 
 - 関西広域連合2025年度の原本は各区分50問で、正答表は3区分共通。問1～35は3区分の問題冊子で共通。問題データには区分ごとの原本URLと公式の問番号を保持している。 [一般](https://www.kouiki-kansai.jp/material/files/group/12/01_R7dokugekishiken_ippan.pdf)・[農業用品目](https://www.kouiki-kansai.jp/material/files/group/12/02_R7dokugekishiken_nougyo.pdf)・[特定品目](https://www.kouiki-kansai.jp/material/files/group/12/03_R7dokugekishiken_tokutei.pdf)・[公式正答](https://www.kouiki-kansai.jp/material/files/group/12/R7dokugeki_kaitou.pdf)
 - 危険物の生成や高毒性物質の具体的な処理手順を含む設問は収録対象から外した。2025年度は3区分共通の問35、一般の問39・40・50、農業用品目の問39、特定品目の問48・50。
+- 関西広域連合2024年度も各区分50問で、問1～35と正答表は3区分共通。危険物の生成や高毒性物質の具体的な処理手順を含む一般の問40・50、農業用品目の問40・43、特定品目の問49・50を収録対象から外した。 [一般](https://www.kouiki-kansai.jp/material/files/group/12/01_R6dokugekishiken_ippan.pdf)・[農業用品目](https://www.kouiki-kansai.jp/material/files/group/12/02_R6dokugekishiken_nougyou.pdf)・[特定品目](https://www.kouiki-kansai.jp/material/files/group/12/03_R6dokugekishiken_tokutei.pdf)・[公式正答](https://www.kouiki-kansai.jp/material/files/group/12/R6dokugekishiken_kaitou.pdf)
