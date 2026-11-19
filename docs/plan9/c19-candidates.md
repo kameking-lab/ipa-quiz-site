@@ -22,6 +22,7 @@
 
 - 2024～2026年度の教職教養を各25問収録。2024年度は当時の東京都公式ページに掲載されていたPDFの保存版を使用した。 [当時の公式ページ](https://web.archive.org/web/20250327193958id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/recruit/exam.html)・[問題](https://web.archive.org/web/20250404121040id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf)・[正答](https://web.archive.org/web/20250814123945id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf)
 - 専門教養の小学校全科は2025年度18問、2026年度15問を収録。公開版で問題文・楽譜が伏せられている解答番号は、2025年度が15・16、2026年度が1～3・15・16。
+- 2022年度の小学校全科は、東京都公式サイトが公開したPDFの保存版から17問を収録した。解答番号1～5、29、34は本文や参照する作品が伏せられている。11～22は数値の符号・桁や座標を複数の欄でマークする形式で、択一式としては収録できなかった。 [問題](https://web.archive.org/web/20230621004424id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai01.pdf)・[正答](https://web.archive.org/web/20230629061039id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito01.pdf)
 - 公式ポータルの現行掲載は直近2年度。2022・2023年度の教職教養と2024年度の専門教養は、対応する問題・正答の組を取得できなかった。論文は評価の観点が公開されており、正答を取得できない。 [公式FAQ](https://www.kyoinsaiyopr.metro.tokyo.lg.jp/recruit/faq.html)
 - 2025・2026年度のその他の専門教養には、校種・教科別に公式の問題・正答がある。収録は未完了。
 
