@@ -5,6 +5,7 @@ import qualifications from "./qualifications.json";
 import priorSittings from "./prior-sittings.json";
 import priorAssets from "./prior-assets.json";
 import motorcycle2024First from "./2024-first-2-motorcycle.json";
+import motorcycle2023First from "./2023-first-2-motorcycle.json";
 
 export type AutomotiveExamCode =
   | "jidosha-1-small-written" | "jidosha-2-gasoline" | "jidosha-2-diesel"
@@ -22,7 +23,7 @@ const imageBindings: Record<string, Array<{ url: string; physicalPage: number }>
  */
 export const AUTOMOTIVE_PRIOR_SITTING_IDS: ReadonlySet<string> = new Set(priorSittings.map((q) => q.id));
 
-export const AUTOMOTIVE_QUESTIONS: Question[] = [...reviewed, ...priorSittings, ...motorcycle2024First].map((q) => {
+export const AUTOMOTIVE_QUESTIONS: Question[] = [...reviewed, ...priorSittings, ...motorcycle2024First, ...motorcycle2023First].map((q) => {
   const figures = imageBindings[q.id] ?? q.sourceFigureAssets;
   return {
     ...q,
