@@ -1784,9 +1784,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.courts.go.jp/saiyo/sikenjoho/siken/siken_mondai/index.html",
     officialReuseTermsUrl: "https://www.courts.go.jp/saiyo/sikenjoho/siken/siken_mondai/index.html",
     status: "live",
-    reuseSummary: "2026年度の基礎能力試験21問・専門試験50問を公式問題・正答と全肢の独自解説で収録。",
+    reuseSummary: "2025・2026年度の基礎能力試験41問と、2026年度の専門試験50問を公式問題・正答と全肢の独自解説で収録。",
     attributionTemplate: "出典：裁判所 裁判所職員採用一般職試験（裁判所事務官・大卒程度区分）。解説は過去問AIの独自作成。",
-    remainingWork: ["過年度の収録"],
+    remainingWork: ["2025年度の専門試験および過年度の収録"],
   },
   {
     slug: "kyoin-tokyo", examCode: "kyoin-tokyo", shortName: "東京都教員採用試験", fullName: "東京都公立学校教員採用候補者選考",
