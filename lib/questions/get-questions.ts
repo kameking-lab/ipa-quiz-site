@@ -5,6 +5,7 @@ import { isExamPublished } from "@/lib/qualifications/catalog";
 // Bundler-friendly lazy loaders — each exam chunk is only loaded on demand.
 // To add a new exam: (1) create data/questions/{exam}/index.ts, (2) uncomment the loader.
 const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
+  "aigan-kangoshi": async () => isExamPublished("aigan-kangoshi") ? (await import("@/data/questions/aigan-kangoshi")).AIGAN_KANGOSHI_QUESTIONS : [],
   "zensho-eco-78": async () => isExamPublished("zensho-eco-78") ? (await import("@/data/questions/zensho-eco-78")).ZENSHO_ECO_78_QUESTIONS : [],
   "sasshi1": async () => isExamPublished("sasshi1") ? (await import("@/data/questions/sasshi1")).SASSHI1_QUESTIONS : [],
   "sasshi2": async () => isExamPublished("sasshi2") ? (await import("@/data/questions/sasshi2")).SASSHI2_QUESTIONS : [],

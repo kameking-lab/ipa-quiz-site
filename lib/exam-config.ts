@@ -109,6 +109,15 @@ function am2(categories: string[]): SessionConfig {
 // ------- Exam configs -------
 
 export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
+  "aigan-kangoshi": {
+    code: "aigan-kangoshi",
+    nameFull: "愛玩動物看護師国家試験",
+    urlSlug: "aigan-kangoshi",
+    level: "advanced",
+    sessions: [{ session: "required", urlSlug: "required", expectedQuestions: 50, label: "必須問題", categories: ["必須問題"] }],
+    seasons: ["annual"],
+    yearRange: { start: 2024, end: 2024 },
+  },
   "zensho-eco-78": {
     code: "zensho-eco-78",
     nameFull: "商業経済検定試験",

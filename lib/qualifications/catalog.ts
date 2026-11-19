@@ -46,6 +46,19 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
+    slug: "aigan-kangoshi",
+    examCode: "aigan-kangoshi",
+    shortName: "愛玩動物看護師",
+    fullName: "愛玩動物看護師国家試験",
+    domain: "welfare",
+    administrator: "一般財団法人動物看護師統一認定機構",
+    officialQuestionsUrl: "https://www.ccrvn.jp/aigan.shiken.mondai.kakoshiken.html",
+    officialReuseTermsUrl: "https://www.ccrvn.jp/aigan.shiken.mondai.kakoshiken.html",
+    status: "live",
+    reuseSummary: "第2回（2024年実施）の必須問題50問を収録。",
+    remainingWork: [],
+  },
+  {
     slug: "zensho-eco-78",
     examCode: "zensho-eco-78",
     shortName: "商業経済検定",

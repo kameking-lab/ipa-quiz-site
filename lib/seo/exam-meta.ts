@@ -454,6 +454,7 @@ export function examTopDescription(exam: ExamCode, questionCount: number): strin
     return `${base}${examLabel(exam)}の過去問${questionCount}問を年度別・分野別に収録。AIコパイロット付きで効率的に学習。`;
 }
 const EXAM_FULL_NAMES: Record<ExamCode, string> = {
+  "aigan-kangoshi": "愛玩動物看護師国家試験",
   "zensho-eco-78": "商業経済検定試験",
     "sasshi2": "技能検定 2級サッシ施工（ビル用サッシ施工作業）学科試験",
     "sasshi1": "技能検定 1級サッシ施工（ビル用サッシ施工作業）学科試験",
@@ -825,6 +826,7 @@ export function examFullName(exam: ExamCode): string {
     return EXAM_FULL_NAMES[exam];
 }
 const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number) => string> = {
+  "aigan-kangoshi": (c) => `愛玩動物看護師国家試験の公式過去問${c}問を収録。公式正答と選択肢別の解説で学べます。`,
   "zensho-eco-78": (c) => `商業経済検定試験の公式過去問${c}問を収録。模範解答と独自解説で学習できます。`,
     "sasshi2": (c, y, k) => `技能検定 2級サッシ施工（ビル用サッシ施工作業）学科試験を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,
     "sasshi1": (c, y, k) => `技能検定 1級サッシ施工（ビル用サッシ施工作業）学科試験を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,
