@@ -1,11 +1,19 @@
 import type { Question } from "@/lib/questions/types";
-import paper1 from "./2025-late-joho-hardware.json";
-import paper2 from "./2025-late-joho-level2.json";
-import paper3 from "./2025-late-joho-level3.json";
-import paper4 from "./2025-late-joho-programming.json";
-import paper5 from "./2026-early-joho-hardware.json";
-import paper6 from "./2026-early-joho-level2.json";
-import paper7 from "./2026-early-joho-level3.json";
-import paper8 from "./2026-early-joho-programming.json";
+import round74Hardware from "./2025-early-joho-hardware.json";
+import round74Programming from "./2025-early-joho-programming.json";
+import round74Level2 from "./2025-early-joho-level2.json";
+import round74Level3 from "./2025-early-joho-level3.json";
+import round75Hardware from "./2025-late-joho-hardware.json";
+import round75Programming from "./2025-late-joho-programming.json";
+import round75Level2 from "./2025-late-joho-level2.json";
+import round75Level3 from "./2025-late-joho-level3.json";
+import round76Hardware from "./2026-early-joho-hardware.json";
+import round76Programming from "./2026-early-joho-programming.json";
+import round76Level2 from "./2026-early-joho-level2.json";
+import round76Level3 from "./2026-early-joho-level3.json";
 
-export const ZENKOU_JOHO_QUESTIONS = [...paper1, ...paper2, ...paper3, ...paper4, ...paper5, ...paper6, ...paper7, ...paper8] as Question[];
+export const ZENKOU_JOHO_QUESTIONS = [
+  ...round74Hardware, ...round74Programming, ...round74Level2, ...round74Level3,
+  ...round75Hardware, ...round75Programming, ...round75Level2, ...round75Level3,
+  ...round76Hardware, ...round76Programming, ...round76Level2, ...round76Level3,
+] as Question[];

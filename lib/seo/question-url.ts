@@ -16,9 +16,10 @@ export function questionNumberSegment(qNumber: number, part?: QuestionPart): str
 
 /** 枝番(a)/(b)と、数字の枝番で解答欄を分ける資格。 */
 const PART_EXAMS: Record<"letter" | "blank", readonly string[]> = {
-  letter: ["denken3", "maritime4", "aviation-comm", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1"],
+  letter: ["denken3", "maritime4", "aviation-comm", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "katei-shokumotsu"],
   blank: ["denken2", "denken1", "chusho-kigyo-shindanshi", "shiho-tanto", "yobi-tanto", "tsukanshi",
-    "unko-kanrisha-kamotsu", "unko-kanrisha-ryokaku", "shobo-setsubishi-kou1", "shobo-setsubishi-kou4", "shobo-setsubishi-otsu6"],
+    "unko-kanrisha-kamotsu", "unko-kanrisha-ryokaku", "shobo-setsubishi-kou1", "shobo-setsubishi-kou4", "shobo-setsubishi-otsu6",
+    "katei-shokumotsu", "katei-hifuku"],
 };
 
 export function parseQuestionNumberSegment(exam: string, qnum: string): { qNumber: number; part?: QuestionPart } | null {
