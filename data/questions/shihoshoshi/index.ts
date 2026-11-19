@@ -1,6 +1,7 @@
 import type { Question } from "@/lib/questions/types";
 import questions2026 from "./2026.json";
 import questions2025 from "./2025.json";
+import questions2023Pm from "./2023-pm.json";
 import questions2022Am from "./2022-am.json";
 import questions2022Pm from "./2022-pm.json";
 import batch1Holds from "./batch1-holds.json";
@@ -15,6 +16,7 @@ export const SHIHOSHOSHI_BATCH1_QUESTIONS: Question[] = SHIHOSHOSHI_QUESTIONS.ma
 
 export const SHIHOSHOSHI_PUBLIC_QUESTIONS: Question[] = [
   ...SHIHOSHOSHI_BATCH1_QUESTIONS,
+  ...questions2023Pm as Question[],
   ...questions2022Am as Question[],
   ...questions2022Pm as Question[],
 ];
