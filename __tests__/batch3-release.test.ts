@@ -15,6 +15,7 @@ import { sessionLabel, buildQuestionJsonLd } from "@/lib/seo/question-jsonld";
 import { GET as nextGET } from "@/app/api/questions/next/route";
 import scope from "@/reports/int7-20261105/release-scope.json";
 import receipt from "@/reports/int7-20261105/projection-receipt.json";
+import nurse2023 from "@/data/questions/junkango-kansai/2023-sources.json";
 import nurse2024 from "@/data/questions/junkango-kansai/2024-sources.json";
 
 const codes = Object.keys(scope) as (keyof typeof scope)[];
@@ -24,7 +25,7 @@ describe("INT7 batch3 public release integration", () => {
     expect(EXAM_CONFIGS[code].sessions.every(s => /[一-龯ぁ-んァ-ン]/.test(s.label))).toBe(true);
     if (code === "dojo-osen") expect(EXAM_CONFIGS[code].sessions.find(s => s.session === "pm")?.label).toBe("午後（選択式）");
     if (code === "chiiki-ryoko") expect(questions.every(q => /[一-龯ぁ-んァ-ン]/.test(q.category))).toBe(true);
-    expect(questions).toHaveLength(scope[code].exercises + (code === "junkango-kansai" ? nurse2024.answers.length : 0));
+    expect(questions).toHaveLength(scope[code].exercises + (code === "junkango-kansai" ? nurse2024.answers.length + nurse2023.answers.length : 0));
     expect(await getQuestionsForExam(code)).toEqual(questions);
     expect(getRegisteredExamCodes()).toContain(code);
     expect(getQualificationByExamCode(code)?.status).toBe("live");
@@ -49,15 +50,18 @@ describe("INT7 batch3 public release integration", () => {
     const graph = buildQuestionJsonLd({question: sample, pageUrlAbs: `https://www.kakomon-ai.jp${questionPagePath(sample)}`, title: scope[code].name, lastUpdatedISO: "2026-11-05"})["@graph"];
     expect(JSON.stringify(graph)).toContain(getQualificationByExamCode(code)!.administrator);
   });
-  it("uses the February 2024 Kansai nursing exam's official answer order", () => {
-    const round = QUESTIONS_BY_EXAM["junkango-kansai"]!.filter(q => q.year === 2024);
+  it.each([
+    { year: 2024, examDate: "2024-02-04", edition: "令和5年度（2024年実施）", source: nurse2024 },
+    { year: 2023, examDate: "2023-02-05", edition: "令和4年度（2023年実施）", source: nurse2023 },
+  ])("uses the $year Kansai nursing exam's official answer order", ({ year, examDate, edition, source }) => {
+    const round = QUESTIONS_BY_EXAM["junkango-kansai"]!.filter(q => q.year === year);
     expect(round.map(q => q.qNumber)).toEqual(Array.from({ length: 150 }, (_, i) => i + 1));
-    expect(round.map(q => q.answer)).toEqual(nurse2024.answers.map(n => "アイウエ"[Number(n) - 1]));
+    expect(round.map(q => q.answer)).toEqual(source.answers.map(n => "アイウエ"[Number(n) - 1]));
     for (const q of round) {
-      expect(q.sourcePdfUrl).toBe(nurse2024.sourcePdfUrl);
-      expect(q.sourceAnswerUrl).toBe(nurse2024.sourceAnswerUrl);
-      expect(q.examDate).toBe("2024-02-04");
-      expect(questionSourceEdition(q)).toBe("令和5年度（2024年実施）");
+      expect(q.sourcePdfUrl).toBe(source.sourcePdfUrl);
+      expect(q.sourceAnswerUrl).toBe(source.sourceAnswerUrl);
+      expect(q.examDate).toBe(examDate);
+      expect(questionSourceEdition(q)).toBe(edition);
       expect(Object.keys(q.choiceExplanations ?? {})).toEqual(Object.keys(q.choices ?? {}));
     }
   });
