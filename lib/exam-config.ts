@@ -116,7 +116,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 250, label: "学科", categories: ["マーケティング", "ビジネス基礎", "商品開発と流通", "ビジネス・マネジメント", "ビジネス法規"] }],
     seasons: ["annual"],
-    yearRange: { start: 2024, end: 2025 },
+    yearRange: { start: 2022, end: 2025 },
   },
   "sasshi1": {"code":"sasshi1","nameFull":"技能検定 1級サッシ施工（ビル用サッシ施工作業）学科試験","urlSlug":"sasshi1","level":"specialist","sessions":[{"session":"gakka","urlSlug":"gakka","expectedQuestions":50,"label":"学科（A群 真偽法・B群 多肢択一法）","categories":["施工・墨出し","工具・加工","材料・シーリング","安全衛生・法令","ガラス・建具","性能・規格","建築構造","製図","図面・製図","安全衛生","工具・溶接","建具・金物","建築構造・関連工事","施工計画","材料・製品","設備・揚重","運搬・養生"]}],"seasons":["early"],"yearRange":{"start":2023,"end":2025}},
   "sasshi2": {"code":"sasshi2","nameFull":"技能検定 2級サッシ施工（ビル用サッシ施工作業）学科試験","urlSlug":"sasshi2","level":"basic","sessions":[{"session":"gakka","urlSlug":"gakka","expectedQuestions":50,"label":"学科（A群 真偽法・B群 多肢択一法）","categories":["施工・墨出し","工具・加工","材料・シーリング","安全衛生・法令","ガラス・建具","性能・規格","建築構造","製図"]}],"seasons":["early"],"yearRange":{"start":2023,"end":2025}},
