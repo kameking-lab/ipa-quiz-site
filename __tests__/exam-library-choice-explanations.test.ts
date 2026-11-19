@@ -138,7 +138,7 @@ describe("structured choice explanations", () => {
     }
   });
 
-  it("renders source-limited EM drafts only with explicit provisional metadata", () => {
+  it("requires provisional metadata for source-limited EM and archived 2024 second-class boiler explanations", () => {
     const emQuestion = { ...question, id: "emkohyo-TEST-q1" };
     const provisional = {
       ...valid,
@@ -152,6 +152,8 @@ describe("structured choice explanations", () => {
       sources: [],
     });
     expect(parseExamChoiceExplanation(provisional, question, sourceHash)).toBeNull();
+    expect(parseExamChoiceExplanation(provisional, { ...question, id: "lckohyo-LC20242103-q1" }, sourceHash)?.provisionalReview).toBe(true);
+    expect(parseExamChoiceExplanation(provisional, { ...question, id: "lckohyo-LC20252103-q1" }, sourceHash)).toBeNull();
     expect(parseExamChoiceExplanation({ ...provisional, lastCheckedAt: "2026-02-31" }, emQuestion, sourceHash)).toBeNull();
     expect(parseExamChoiceExplanation({ ...provisional, provisionalReview: false }, emQuestion, sourceHash)).toBeNull();
     expect(parseExamChoiceExplanation({ ...provisional, summary: `${valid.summary} 要確認` }, emQuestion, sourceHash)).toBeNull();

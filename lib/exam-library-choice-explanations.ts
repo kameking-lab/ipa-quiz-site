@@ -9,6 +9,7 @@ const MIN_SUMMARY_LENGTH = 20;
 const MIN_REASON_LENGTH = 40;
 const CHECK_DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/u;
 const DRAFT_MARKER_PATTERN = /HOLD|FIX|TODO|未確認|要確認|確認待ち|準備中|仮置き|根拠不足|調査中|要検索/u;
+const PROVISIONAL_QUESTION_PATTERN = /^(?:emkohyo-|lckohyo-LC2024[12]103-q\d+$)/u;
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -74,7 +75,7 @@ export function parseExamChoiceExplanation(
   const provisionalReview = value.provisionalReview === true;
   if (
     (value.provisionalReview !== undefined && !provisionalReview) ||
-    (provisionalReview && !question.id.startsWith("emkohyo-")) ||
+    (provisionalReview && !PROVISIONAL_QUESTION_PATTERN.test(question.id)) ||
     (provisionalReview && (
       typeof value.lastCheckedAt !== "string" ||
       !CHECK_DATE_PATTERN.test(value.lastCheckedAt) ||

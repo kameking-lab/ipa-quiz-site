@@ -151,7 +151,7 @@ for (const [id, overlay] of Object.entries(choiceExplanations)) {
   const provisional = overlay.provisionalReview === true;
   const draftMarker = /HOLD|FIX|TODO|未確認|要確認|確認待ち|準備中|仮置き|根拠不足|調査中|要検索/u;
   check(overlay.provisionalReview === undefined || provisional, `Invalid provisional flag: ${id}`);
-  check(!provisional || id.startsWith('emkohyo-'), `Provisional overlay outside EM: ${id}`);
+  check(!provisional || /^(?:emkohyo-|lckohyo-LC2024[12]103-q\d+$)/u.test(id), `Provisional overlay outside supported papers: ${id}`);
   check(!provisional || /^\d{4}-\d{2}-\d{2}$/u.test(overlay.lastCheckedAt)
     && !Number.isNaN(Date.parse(`${overlay.lastCheckedAt}T00:00:00Z`))
     && new Date(`${overlay.lastCheckedAt}T00:00:00Z`).toISOString().slice(0, 10) === overlay.lastCheckedAt,

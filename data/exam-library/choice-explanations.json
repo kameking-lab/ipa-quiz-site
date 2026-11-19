@@ -39991,5 +39991,1405 @@
     "sources": [],
     "provisionalReview": true,
     "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q1": {
+    "sourceHash": "2a222a5ebdd259b0916cb87396565f6c7c9004b90760b3ca6168ed127d82cd93",
+    "correctChoice": 5,
+    "summary": "臨界点に近づくと気相と液相の差が小さくなり、飽和水の蒸発熱は減少して臨界点でゼロになる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "過熱度は過熱蒸気と同じ圧力の飽和蒸気との温度差であり、圧力条件をそろえて比較する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "乾き度は湿り蒸気に含まれる蒸気の質量割合で、乾き飽和蒸気には水滴がないので1になる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "飽和水を同じ圧力で蒸発させると、飽和水の比エンタルピに比蒸発熱が加わる。この和が飽和蒸気の比エンタルピである。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "圧力が高い飽和蒸気は密度が大きくなるため、質量当たりの体積である比体積は小さくなる。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "臨界点に近づくと気相と液相の差が小さくなり、飽和水の蒸発熱は減少して臨界点でゼロになる。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q2": {
+    "sourceHash": "5e39b45074c25703347da9724ef23d8e26d299cce149edea979e1340105506c2",
+    "correctChoice": 4,
+    "summary": "炉筒を胴の中心に置くと循環流を形成しにくい場合があり、偏心させることで自然循環を促せる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "水が加熱されると密度が小さくなり、気泡を含む水とともに上昇し、比較的冷たい水が下降する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "圧力が高くなるほど飽和水と飽和蒸気の密度差が小さくなるため、自然循環の駆動力は弱まる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "主に加熱されて水と蒸気が上昇する管と、比較的温度が低く水が下降する管を分けると、流れが安定しやすい。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "炉筒を胴の中心に置くと循環流を形成しにくい場合があり、偏心させることで自然循環を促せる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "気泡が伝熱面に停滞すると水で十分に冷却できなくなり、焼損や膨出などにつながる。冷却不足は局部的な金属温度の上昇を招く。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q3": {
+    "sourceHash": "b428ddf5930214ecbeedf842dd164dca60784412029b450fb42085453fe0496f",
+    "correctChoice": 5,
+    "summary": "液体燃料を使う通常のボイラーの効率計算には、水蒸気の凝縮潜熱を含めない低発熱量を一般に用いる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "ボイラー効率は、燃料等から供給した全熱量に対し蒸気が吸収した熱量の割合として表す。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "蒸気発生に要する熱は、蒸気と給水の比エンタルピ差に応じて変わり、圧力や温度が影響する。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "蒸気ボイラーの能力は、最大連続負荷での単位時間当たりの蒸発量を用いて表す。一般にはkg/hで表示する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "換算蒸発量は、実際の条件での吸収熱を、基準状態で水を蒸発させる量へ換算した値である。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "液体燃料を使う通常のボイラーの効率計算には、水蒸気の凝縮潜熱を含めない低発熱量を一般に用いる。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q4": {
+    "sourceHash": "95fe8c6e9edc5d6c70e330b7f9d018e5fcc2dc96ffd644d4b6b583ea9f4b42c2",
+    "correctChoice": 2,
+    "summary": "水管ボイラーは伝熱面積当たりの保有水量が比較的少なく、小径の管は高圧に適する。大きな胴内に水を保有する丸ボイラーと対照的である。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "水冷壁は炉壁の内側に並べた水管で構成され、炉内の放射熱を吸収する。水管の内部を流れる水が熱を受け取る。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "水管ボイラーは伝熱面積当たりの保有水量が比較的少なく、小径の管は高圧に適する。大きな胴内に水を保有する丸ボイラーと対照的である。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "多数の水管を配置して伝熱面積を広く取れるので、熱効率を高めやすい。炉壁や煙道にも伝熱面を配置できる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "保有水量が丸ボイラーより少ないため、蒸気需要が変わると圧力や水位の変動が現れやすい。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "水管に付着したスケールは過熱を招きやすく、高圧になるほど厳密な給水とボイラー水の管理が必要になる。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q5": {
+    "sourceHash": "e79ffab341d4470f0fc60a8178bfe72b5168d8e68be8db0cc89764bd19c0d445",
+    "correctChoice": 4,
+    "summary": "ガセット板を胴に直接溶接するＴ継手では、片側だけのすみ肉溶接では強度を満たさない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "管ステーは管板の補強に用いる鋼管で、管板へ溶接やねじ込みで取り付ける。鏡板などの変形を抑える補強材の一種である。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "ねじ込みの管ステー端部が火炎に触れる場合は、端部を縁曲げする。端を広げて管板にかかるようにする。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "鏡板にブリージングスペースを確保すると、熱膨張によって生じる応力を緩和できる。炉筒の伸縮に伴う鏡板の変形を妨げにくくする。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "ガセット板を胴に直接溶接するＴ継手では、片側だけのすみ肉溶接では強度を満たさない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "棒ステーのうち、両鏡板を結ぶのは長手ステー、鏡板と胴板を斜めにつなぐのは斜めステーである。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q6": {
+    "sourceHash": "f8e4af2c951dd9b839dbdc29f127ad10fe4c49d665206e004de59e3485e9b589",
+    "correctChoice": 5,
+    "summary": "二色水面計では屈折率の差によって蒸気部が赤、水部が緑色などに見えるため、設問では色が逆である。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "蒸気ボイラーには、貫流式等を除き、原則として二つ以上のガラス水面計を見やすく配置する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "安全低水面が読めるよう、ガラス管の可視範囲の最低位置を安全低水面に合わせる。これより高く付けると安全低水面付近の水位を直接確認できない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "ガラス水面計は本体や蒸気ドラムに直接取り付ける方式と、水柱管を介する方式がある。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "丸形ガラス水面計は、主として最高使用圧力が1MPa以下のボイラー等で用いる。より高い圧力には平形などが用いられる。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "二色水面計では屈折率の差によって蒸気部が赤、水部が緑色などに見えるため、設問では色が逆である。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q7": {
+    "sourceHash": "c6211c9125d661189771ed6f1635ed3c9641c6e80b76c3db1f14fb5d51d9f82d",
+    "correctChoice": 1,
+    "summary": "仕切弁を全開すると流路はほぼ直線となり、流動抵抗が小さい。Ｙ字形に曲がることが理由ではない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "仕切弁を全開すると流路はほぼ直線となり、流動抵抗が小さい。Ｙ字形に曲がることが理由ではない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "玉形弁では流体が弁体と弁座部で曲がって通過するので、仕切弁より抵抗が大きい。このため全開時の圧力損失も比較的大きい。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "沸水防止管は蒸気取出し口の下で水分が蒸気に伴われるのを抑える気水分離器の一種である。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "主蒸気管の傾斜と適所の蒸気トラップによって、凝縮した水の滞留を防ぐ。曲がり部の半径も十分に取り、蒸気と凝縮水を円滑に流す。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "複数のボイラーを同じ蒸気管に接続する場合、逆止め弁で停止側などへの蒸気の逆流を防止する。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q8": {
+    "sourceHash": "76a16df225f8eb8dbc47ddf690ff4e63f519a8bc092223f9e21a00f0241dc0f3",
+    "correctChoice": 3,
+    "summary": "逃がし管に流れを遮断する弁やコックを設けると、閉止時に水の膨張による圧力を逃がせない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "逃がし管は加熱膨張した水を逃がすため、ボイラーと高い位置の開放形膨張タンクを連絡する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "開放形膨張タンクには水位を確認する験水管や、余分な水を排出するオーバーフロー管がある。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "逃がし管に流れを遮断する弁やコックを設けると、閉止時に水の膨張による圧力を逃がせない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "開放形の逃がし管がない設備や膨張タンクが密閉形の場合は、圧力を逃がす弁を用いる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "温水の体積膨張で圧力が上がると、逃がし弁の弁体が開き、水が排出される。閉鎖された温水回路を過圧から保護する。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q9": {
+    "sourceHash": "c2684137d15349e9e1e715f5c1004e7011d0af02b20a65342fa8bf9ce1e26d40",
+    "correctChoice": 2,
+    "summary": "エコノマイザの代表的な種類は鋼管形と鋳鉄管形であり、鋼板形という組み合わせが誤っている。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "節炭器とも呼ばれ、排ガスが持つ熱を給水に移して捨てる熱を少なくする装置である。煙道中のガスが給水管に接する位置で熱交換する。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "エコノマイザの代表的な種類は鋼管形と鋳鉄管形であり、鋼板形という組み合わせが誤っている。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "給水をあらかじめ温めると、ボイラーで同じ蒸気量を発生させるための燃料を節約できる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "煙道に伝熱面を置くと排ガスの通過抵抗が加わり、通風抵抗は増加する。ファンの通風能力を検討する際にこの損失を考慮する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "硫黄分を含む燃料を使い、伝熱面が酸露点以下になると、凝縮した酸により低温腐食が生じ得る。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q10": {
+    "sourceHash": "d88862afb1888c41c0f7c9713903216c53e84f0b2325802e6131d57ef8f58c55",
+    "correctChoice": 3,
+    "summary": "二要素制御が用いる信号はドラム水位と蒸気流量である。蒸気圧力を第二要素とする方式ではない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "測定する信号の数に応じて、ドラム水位の制御は単要素、二要素、三要素に分けられる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "ドラム水位だけの単要素制御では、負荷急変時に水位が一時的に逆方向へ動く場合などに対応しにくい。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "二要素制御が用いる信号はドラム水位と蒸気流量である。蒸気圧力を第二要素とする方式ではない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "電極式は水の電気伝導性を利用するため、凝縮水で電気伝導率が低くなると検出に支障が出る。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "水位の設定値との偏差に応じて給水調節弁の開度を変える方法は、単要素制御の一例である。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q11": {
+    "sourceHash": "f2267ff2a2ace65a6f074a4fe6df0f1669dded44939bdd7a07aca58d9ab7a781",
+    "correctChoice": 4,
+    "summary": "始動時に空気を外へ逃がせるよう、点火前に空気抜き弁を開け、蒸気が出ることを確認してから閉じる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "点火前に常用より高い水位を確認した場合は、吹出しで適切な水位まで戻しておく。水位が高すぎると、蒸気に水分が混入しやすくなる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "水側の験水コックで水が出ることを確かめると、水位や通路の状態を確認できる。下側のコックから蒸気しか出ない場合、正常な水位を確認できない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "圧力がないときに指針がゼロに戻らない圧力計は、測定を誤るため正常なものと交換する。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "始動時に空気を外へ逃がせるよう、点火前に空気抜き弁を開け、蒸気が出ることを確認してから閉じる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "点火前の炉内と煙道を換気し、残留した可燃性ガスによる異常燃焼を防ぐ。炉内にガスを残したまま点火すると危険である。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q12": {
+    "sourceHash": "0c33ad64406d69fee025d2bd8ae320c5b5e056ba819c09057936d494716796c3",
+    "correctChoice": 4,
+    "summary": "燃焼が不安定になりやすい低負荷時を避け、適切な負荷でスートブローを行う。吹き落としたすすを排出できるガス流れも必要である。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "水管外面等のすすを取り除くと、すすによる伝熱の妨げやガス側の通風抵抗を減らせる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "汚れの付き方は燃料や負荷等で変わるため、運転状況を見てスートブローの回数を決める。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "同じ場所に吹き付け続けると管の損耗等を招くため、長時間の集中を避ける。長時間の噴射は伝熱管の局所的な浸食につながる。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "燃焼が不安定になりやすい低負荷時を避け、適切な負荷でスートブローを行う。吹き落としたすすを排出できるガス流れも必要である。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "煙道ガス温度や通風損失の変化を見ると、すす除去による伝熱や通風の改善を確認できる。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q13": {
+    "sourceHash": "7f4f788e6b44a3553a21e2364604f6aebe0da78931794af6f66f64c22655ddd5",
+    "correctChoice": 4,
+    "summary": "プライミングは水位が過度に高いときや急激に蒸気量が増えたときなどに起こりやすい。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "プライミングは、水滴が発生蒸気に巻き込まれてボイラーの外へ運ばれてしまう現象である。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "ホーミングは持続する泡が蒸気側に達し、泡に含まれる水分が蒸気と一緒に流出する現象である。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "ボイラー水の濃縮で溶解物質が増加すると泡が消えにくくなり、ホーミングを起こしやすい。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "プライミングは水位が過度に高いときや急激に蒸気量が増えたときなどに起こりやすい。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "ボイラー水に油脂が混入すると泡が安定しやすく、ホーミングの原因になる。油脂が水面の泡を消えにくくするためである。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q14": {
+    "sourceHash": "53d64863f4080b90e082baae2acc1c17be7d2f74d92406b17677451e1de79d12",
+    "correctChoice": 5,
+    "summary": "燃料停止、炉内と煙道の換気、給水と圧力低下、蒸気弁等の操作、ダンパ閉止の順である。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "蒸気弁等を操作する前に燃料供給を停止し、炉内と煙道の残留ガスを換気する。Aを先頭にする順序では燃料を遮断しないまま送気を止めることになる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "燃料遮断後の換気は給水の停止より先に行うため、BをEより先に置けない。燃料を止めた後、停止操作を進める前に炉内の残留ガスを排出する。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "ダンパを閉じると十分な換気ができないため、換気を済ませてからダンパを閉じる。したがってDをEの前に置く順序は適切でない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "燃料の遮断後はまず換気を行う。直ちにダンパを閉じる順序では燃料ガスが滞留し得る。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "燃料停止、炉内と煙道の換気、給水と圧力低下、蒸気弁等の操作、ダンパ閉止の順である。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q15": {
+    "sourceHash": "86c2418c4e508072734aa2fecaaa0094907724874fa607f11a88ea52d2e5dfbf",
+    "correctChoice": 4,
+    "summary": "ガラス水面計のドレンコックは、ハンドルをコックの管軸と直角にして開く構造として扱う。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "水柱管の連絡管にある止め弁は、誤って閉じると水位を読めなくなるため、全開を確保する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "水側連絡管を水柱管に向かって上がり勾配にすると、スラッジなどが水側連絡管に残りにくい。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "水柱管下部から定期的に吹き出し、スラッジを除去して連絡管の閉塞を防止する。連絡管が詰まると、ボイラー本体の水位を正しく表示できない。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "ガラス水面計のドレンコックは、ハンドルをコックの管軸と直角にして開く構造として扱う。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "プライミング等では一時的に水位を正しく読めないため、落ち着いた後に水面計の機能を確かめる。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q16": {
+    "sourceHash": "6d386c38d7259126b56284ac8a9d477a392e6ba14f281238d5df4dd3b987b11c",
+    "correctChoice": 1,
+    "summary": "吹出し圧力が低いときは圧力をいったん下げ、調整ボルトを締めてばねの押付け力を増やす。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "吹出し圧力が低いときは圧力をいったん下げ、調整ボルトを締めてばねの押付け力を増やす。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "過熱器の安全弁を先に吹き出させると、過熱器を流れる蒸気を確保して管の過熱を防ぎやすい。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "給水側の圧力を考慮し、エコノマイザの安全弁は本体の安全弁の設定より高い圧力に調整する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "ボイラー同士を連絡したときは、最も低い最高使用圧力を基準とし、その機器を過圧から保護する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "安全弁の手動作動試験は、弁体や弁座の損傷を避けるため、最高使用圧力の75%以上で行う。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q17": {
+    "sourceHash": "6092e996814af79bca2a93e71d0055f5f1b40aaf879bda77d57d3fb49d4f6918",
+    "correctChoice": 1,
+    "summary": "炉筒煙管ボイラーの吹出しは、低負荷で水の循環が弱い状況などに行う。最大負荷に近い状態で行うものではない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "炉筒煙管ボイラーの吹出しは、低負荷で水の循環が弱い状況などに行う。最大負荷に近い状態で行うものではない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "鋳鉄製蒸気ボイラーでは燃焼を止め、必要な分のボイラー水を吹出しで入れ替える。燃焼を止めずに大きく水を抜くと、加熱面が冷却不足になる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "運転中に水冷壁を吹き出すと冷却水の循環が損なわれるため、停止してから行う。水冷壁の管が十分に冷却されず、過熱するおそれがある。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "吹出し中は水位等を常に監視できるよう、担当者は他の作業を行わず吹出しに専念する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "二つの吹出し弁を閉める場合は、流量を調整する漸開弁を先に閉め、その後に急開弁を閉める。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q18": {
+    "sourceHash": "f3fbb66b618485242b383326426d02b67904f07b523b1655a03b9a0c8bb8b9f4",
+    "correctChoice": 1,
+    "summary": "すすは燃焼ガスに接する外側に付くため、除去するのは外面清掃やスートブローである。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "すすは燃焼ガスに接する外側に付くため、除去するのは外面清掃やスートブローである。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "水側のスケールやスラッジを除去すると、伝熱面の過熱や腐食、損傷の原因を減らせる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "内面の付着物や腐食の状態を確認すると、これまでの水処理や吹出しが適切だったか判断できる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "細い管や穴に付着物が詰まると水面計や制御装置が機能しなくなるため、内面を清掃する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "スラッジ等による水の通路の狭まりや詰まりを取り除き、水循環を確保することが目的に含まれる。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q19": {
+    "sourceHash": "90131f6ea8ee94c3298d51c2527395e18b1081728c8ae8046e930830f1763319",
+    "correctChoice": 3,
+    "summary": "伝熱面に固着した硬い析出物はスケールである。スラッジは沈殿や分散した状態で存在する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "溶存酸素は鋼の腐食に関わり、特に局部的な孔食を起こす原因になる。鉄の表面で溶存酸素が関与する電気化学反応が起きる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "溶けた二酸化炭素は水を酸性にし、鋼材の腐食を促すことがある。水と反応して炭酸を生じ、pHを下げるためである。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "伝熱面に固着した硬い析出物はスケールである。スラッジは沈殿や分散した状態で存在する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "水中に分散する不溶性の微粒子や、乳化した油分は懸濁物となる。これらは水に溶けたイオンと異なり、粒子や微細な液滴として存在する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "スケールは鋼ほど熱をよく伝えないため、付着すると伝熱面の金属温度が上がりやすい。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q20": {
+    "sourceHash": "33fe5b486a1f7972f362071ba996f16fabc5eba24626d1d7a6b94234a6ad5d67",
+    "correctChoice": 3,
+    "summary": "単純軟化の処理水の硬度が上昇するのは、樹脂の交換能力が低下して硬度成分が漏れ出すためである。臨界点を超えるという説明ではない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "ナトリウム形の強酸性陽イオン交換樹脂で、カルシウムイオン等をナトリウムイオンに置き換える。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "カルシウムやマグネシウムは水の硬度の主な原因で、軟化装置によって除去できる。硬度成分はナトリウム形の樹脂で交換される。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "単純軟化の処理水の硬度が上昇するのは、樹脂の交換能力が低下して硬度成分が漏れ出すためである。臨界点を超えるという説明ではない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "樹脂に取り込まれたカルシウム等を高濃度の食塩水で置き換え、ナトリウム形へ戻す。再生しておくと軟化に必要なイオン交換能力が回復する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "樹脂の働きを保つため、汚染や減少を定期的に確認し、必要な洗浄や補充を行う。鉄分の付着は、樹脂の交換能力を回復しにくくする場合がある。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q21": {
+    "sourceHash": "6d8f4aad9ea47f64077c60463961fa006fcfab2e456e520a86c1b2e8f83e857f",
+    "correctChoice": 1,
+    "summary": "固体・液体燃料の元素組成は一般に元素分析で表し、燃料を構成する化合物等を示す成分分析は主に気体燃料に使う。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "固体・液体燃料の元素組成は一般に元素分析で表し、燃料を構成する化合物等を示す成分分析は主に気体燃料に使う。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "燃料が外部の火源を使わずに燃え始める最低温度を着火温度という。すでに火源がある状態で引火する最低温度とは区別する。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "発熱量は一定量の燃料を完全に燃焼させたときに生じる熱量である。不完全燃焼の状態で測る熱量とは区別する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "固体燃料や液体燃料では、通常、質量当たりの熱量であるMJ/kgを使用する。気体燃料では、標準状態での体積当たりの発熱量で表すことが多い。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "高発熱量と低発熱量の差は水蒸気の凝縮潜熱で、燃料中の水分と水素の燃焼で生じる水の量に左右される。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q22": {
+    "sourceHash": "05fc10115a85aa1ef090f46fd2791f55ea78953b82224793604778f7ee499da9",
+    "correctChoice": 5,
+    "summary": "Ｃ重油はＡ重油より密度が大きく、一般に質量当たりの発熱量は小さい。体積当たりで比べる場合は密度も掛ける必要がある。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "重油は温度の上昇により体積が増えるので、同じ質量でも密度は低くなる。密度は一定体積に含まれる質量なので、膨張すると値が小さくなる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "重油の実際の引火点は油種により異なるが、一般に100℃前後である。引火点は火源を近づけたときに蒸気へ着火し得る最低温度である。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "加熱すると重油は流れやすくなり、粘度が低下する。粘度の高い油は、加熱して適切な粘度に調整してから噴霧する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "重油の比熱は一定ではなく、油の密度や温度によって異なる。燃料加熱に必要な熱量を見積もる際はこの変化を考慮する。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "Ｃ重油はＡ重油より密度が大きく、一般に質量当たりの発熱量は小さい。体積当たりで比べる場合は密度も掛ける必要がある。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q23": {
+    "sourceHash": "e378b4994ab329d2213c663d95368d7b074d5b88b29a1b62ee4ba0cf0d658c85",
+    "correctChoice": 2,
+    "summary": "燃焼灰をほとんど生じない気体燃料では、固体燃料の灰が融着してできるクリンカは生じにくい。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "メタンを主成分とする気体燃料は、石炭等に比べ、炭素に対して水素の割合が大きい。メタンは炭素原子1個に水素原子4個が結合している。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "燃焼灰をほとんど生じない気体燃料では、固体燃料の灰が融着してできるクリンカは生じにくい。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "天然ガス等の主成分はメタンなどのガス状の炭化水素である。都市ガスなどでは、液体燃料のように油を加熱し噴霧する工程が不要である。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "熱量当たりの二酸化炭素排出量は、一般にメタンを主成分とする燃料の方が石炭より少ない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "漏えいした燃料ガスと空気の濃度が燃焼範囲に入ると、着火により爆発のおそれがある。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q24": {
+    "sourceHash": "80ec32d6171e5050d86a96de8ca92a8457db5032337ced379a9059a2b460ceda",
+    "correctChoice": 5,
+    "summary": "所要の油面を保つ自動調節装置は、一般に貯蔵タンクではなくサービスタンクに設ける。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "大量の燃料を蓄える貯蔵タンクと、バーナ供給に用いるサービスタンクに分けられる。後者は燃焼装置への油供給を安定させるために用いる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "サービスタンクは、一般に最大燃焼量に換算して約2時間分を貯蔵する。貯蔵タンクからの補給が途切れても短時間は燃焼を維持できる容量である。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "油送入管をタンク上部から入れることで、底部に沈んだ水分や沈殿物をかき混ぜにくい。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "油取り出し口を底部より上に置くと、底部の水や沈殿物が供給管へ入りにくくなる。タンクの底にたまる水や汚れがバーナへ運ばれるのを防ぐためである。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "所要の油面を保つ自動調節装置は、一般に貯蔵タンクではなくサービスタンクに設ける。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q25": {
+    "sourceHash": "651ee4acda8728cdb9236cfb3de357bd381470fad596c4fe6a3e5ca8418fbec4",
+    "correctChoice": 5,
+    "summary": "排ガス中の酸素を減らし三酸化硫黄の生成を抑えると、硫酸の露点は上がるのでなく下がる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "硫黄分を減らすと、燃焼時に硫酸の生成につながる硫黄酸化物が減り、低温腐食を抑制できる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "酸性の凝縮液に接触し得る伝熱面には耐食材料を用いると、腐食による損傷を減らせる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "給水温度を上げてエコノマイザ面を高温に保つと、硫酸分が凝縮しにくくなる。酸露点以下の表面に硫酸蒸気が凝縮すると腐食が起こりやすい。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "空気を蒸気式予熱器で先に温めると、ガス式空気予熱器の冷端の温度低下を抑えられる。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "排ガス中の酸素を減らし三酸化硫黄の生成を抑えると、硫酸の露点は上がるのでなく下がる。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q26": {
+    "sourceHash": "d7d7bde1f3b83288691dc4fddf09ac698da5e97f4b7be2e2ba651e1554cf7935",
+    "correctChoice": 3,
+    "summary": "油加熱器の主目的は粘度を下げて霧化を改善することで、噴射油量の調節範囲を変える方式ではない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "稼働するバーナの本数を変えると、設備全体として噴射する油量を段階的に調節できる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "流量特性の異なるノズルチップへ交換すると、所定圧力での噴射油量を変えられる。同じ噴霧圧力でも、ノズルの大きさによって油の流量が変わる。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "油加熱器の主目的は粘度を下げて霧化を改善することで、噴射油量の調節範囲を変える方式ではない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "戻り油式は一部の油を戻し、戻り量を変えて噴射量を広い範囲で調節できる。ノズルでの霧化に必要な圧力を保ちながら、噴射量を変えられる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "プランジャ式はノズルへの油流量の調節によって、噴射油量の調節範囲を広げられる。ノズルへ送る油量を機械的に調整できるのが特徴である。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q27": {
+    "sourceHash": "69353a9dc25990ad5d7592a703c3f3ad0dbec91b32f96108dd75356b4b708bac",
+    "correctChoice": 5,
+    "summary": "ガス火炎は油火炎より輝度が低く、一般に炉内での放射伝熱が少ない分、接触伝熱面での熱移動が多くなる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "気体燃料は元からガス状であり、液体燃料の霧化や蒸発に相当する準備を必要としない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "燃料ガスと空気の混ぜ方を調整しやすく、バーナの火炎の広がりや長さを変えやすい。空気との混合の仕方で火炎の形状や燃え方を調節する。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "燃料と空気を調節しやすく、点火、消火を含む燃焼の自動制御にも向く。点火や停止時に、液体燃料を霧化する操作が必要ない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "液体燃料の粘度を下げるための加熱や、噴霧用の空気・蒸気は必要ない。ガスは空気とそのまま混ぜて燃焼できる。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "ガス火炎は油火炎より輝度が低く、一般に炉内での放射伝熱が少ない分、接触伝熱面での熱移動が多くなる。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q28": {
+    "sourceHash": "38ed9bc14353d094f593c97c17925e2162e1f07fcf8433569f7eef420c765784",
+    "correctChoice": 2,
+    "summary": "空気を予熱して火炎温度を上げると、高温で生成するサーマルNOxは増えやすい。空気予熱は熱回収には有用でも、この働きだけではNOxの生成を抑えない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "燃焼域の酸素を減らすと、高温下で窒素と酸素が反応して生じるNOxを抑えられる。高温火炎に酸素が多いと、空気由来の窒素が酸化されやすくなる。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "空気を予熱して火炎温度を上げると、高温で生成するサーマルNOxは増えやすい。空気予熱は熱回収には有用でも、この働きだけではNOxの生成を抑えない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "高温での滞留時間を減らすと、窒素が酸化されてNOxになる時間が短くなる。窒素の酸化が進む時間を減らすことが生成量の低下につながる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "排煙脱硝設備は燃焼後の排ガスに含まれるNOxを取り除き、大気への排出を抑える。これは燃焼条件で生成を抑える方法とは異なり、燃焼後に除去する方法である。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "排ガスを燃焼域に戻すと火炎の最高温度や酸素濃度が下がり、NOxの生成を抑えられる。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q29": {
+    "sourceHash": "72367ef05269f7cd374504ccb3cf40b6c995e957f1023253574b1dedc9d655d5",
+    "correctChoice": 1,
+    "summary": "燃焼室熱負荷は、燃焼室の単位容積当たりに単位時間で発生する熱量である。通常の水管ボイラーの油・ガスバーナでは200〜1200kW/m³が目安になる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "燃焼室熱負荷は、燃焼室の単位容積当たりに単位時間で発生する熱量である。通常の水管ボイラーの油・ガスバーナでは200〜1200kW/m³が目安になる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "単位容積は合うが、放射で伝わる部分だけでなく、燃焼によって発生する熱量を用いる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "燃焼室熱負荷の基になるのは燃料が放出する熱量で、伝熱面などに吸収された熱量ではない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "単位面積ではなく単位容積が基準である。したがって単位はkW/m³で表され、数値の範囲が合っていても選択肢の組み合わせは成立しない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "燃焼室熱負荷は単位容積当たりの発生熱量であり、面積当たりの放射伝熱量ではない。燃焼ガスや伝熱面の放射で移動する熱だけを指す値ではない。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q30": {
+    "sourceHash": "7477979bae0b59b1677a9f0edc70851b6a316b429ff472c555ee027dd4ba93c0",
+    "correctChoice": 4,
+    "summary": "平衡通風では押込と誘引の両ファンを運転するため、一般に押込通風のみより動力を要する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "押込通風は吸気側のファンで燃焼用空気に圧力を加え、炉内へ送る方式である。ファンを燃焼用空気の供給側に設置する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "押し込んだ空気が噴霧燃料と十分に混ざると、燃料が燃焼しやすくなり、効率が高まる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "誘引ファンで排ガスを吸い出すと炉内は負圧に保たれ、燃焼ガスが外部に漏れにくい。これは燃焼ガスを炉から引き出す誘引通風の特徴である。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "平衡通風では押込と誘引の両ファンを運転するため、一般に押込通風のみより動力を要する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "二つのファンを併用し、炉内を大気圧よりわずかに低く保つことで燃焼ガスの漏れを防ぎやすい。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q31": {
+    "sourceHash": "8a9088d26d2fbf001e0387d283c3025ba6301b1b52f0c172eea784ce88f58c03",
+    "correctChoice": 4,
+    "summary": "蒸気ドラムはボイラーの伝熱面積に算入しない。燃焼ガスから水へ伝熱する面を算定する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "燃焼ガスに触れる部分の管寄せは、法令上の伝熱面積に算入する対象である。伝熱面積に算入するのは水側全体でなく、燃焼ガス等に触れる部分である。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "煙管は燃焼ガスから水へ熱を伝えるため、その対象部分を伝熱面積に算入する。煙管内面のうち、燃焼ガスに触れる部分が該当する。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "水管の燃焼ガス等に触れる部分は伝熱面積に算入する。水管の金属壁を介して、外側の燃焼ガスから内部の水へ熱を伝える。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "蒸気ドラムはボイラーの伝熱面積に算入しない。燃焼ガスから水へ伝熱する面を算定する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "炉筒のうち燃焼ガス等に触れる面は、伝熱面積に含まれる。水が炉筒の外側を囲み、内側を通る燃焼ガスの熱を受けるためである。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q32": {
+    "sourceHash": "909b7ff54e6c016aac73ae62cdd959fc7ca5abfab8e68131816ee4c65c59ea6f",
+    "correctChoice": 3,
+    "summary": "煙突や煙道に近い可燃物を被覆する場合の材料は不燃性のものと規定され、金属製の材料に限定されない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "設問の除外区分以外の蒸気ボイラーで伝熱面積が3m²を超えるものは、ボイラー室に設置する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "保守点検や安全確保のため、ボイラー最上部と上部構造物との距離は原則1.2m以上である。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "煙突や煙道に近い可燃物を被覆する場合の材料は不燃性のものと規定され、金属製の材料に限定されない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "緊急時の避難に支障がない場合を除き、ボイラー室に出入口を二つ以上設けなければならない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "重油をボイラー室内に貯蔵する場合、ボイラー外側からの距離は原則2m以上である。燃料と高温のボイラーの間に安全な離隔を確保するためである。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q33": {
+    "sourceHash": "ec338f0778b87048cc2da36fd8a2ea20b204f59ba358d57f7ddb85a940e92b9a",
+    "correctChoice": 1,
+    "summary": "伝熱面積が14m²以下の温水ボイラーは技能講習修了者等も取り扱えるが、設問の15m²の機器はこの範囲を超える。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "伝熱面積が14m²以下の温水ボイラーは技能講習修了者等も取り扱えるが、設問の15m²の機器はこの範囲を超える。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "示された内径及び長さの蒸気ボイラーは例外の寸法範囲内なので、技能講習修了者等でも取り扱える。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "気水分離器を持たない伝熱面積30m²以下の貫流ボイラーは、免許に限られない区分に含まれる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "伝熱面積3m²以下の蒸気ボイラーは、免許所持者以外の所定の講習修了者でも取り扱える。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "伝熱面積及び気水分離器の寸法と内容積が所定の範囲内にあり、技能講習修了者等も取り扱える。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q34": {
+    "sourceHash": "5e8d4f0a22d5a45fc0a900eb9b36e4ffaeb9e160ad32c9bb85dff05ee5a5c51f",
+    "correctChoice": 2,
+    "summary": "法令に基づき表示するのは、蒸気ボイラーの安全低水面の位置であり、設問の「安全低水位」という規定ではない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "圧力計には最高使用圧力を読み取れるよう、該当する目盛り位置に見やすく表示する必要がある。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "法令に基づき表示するのは、蒸気ボイラーの安全低水面の位置であり、設問の「安全低水位」という規定ではない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "水高計は機能に有害な振動を避け、内部温度が80℃以上とならないよう措置する。振動や高温によって水高計の指示が不安定になるのを防ぐ。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "燃焼ガスに触れる給水管等は、熱による損傷を受けないよう耐熱材料で防護することが求められる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "逃がし管が凍ると圧力を逃がせなくなるため、保温等による凍結防止が必要である。圧力を逃がす経路を常に使用可能な状態に保つ必要がある。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q35": {
+    "sourceHash": "1a14aef2e4ae1b63d2f984349f34b1f9e365199efc21dc81c81768f8a727732a",
+    "correctChoice": 2,
+    "summary": "ボイラーの自主検査は1か月以内ごとに1回行い、ボイラー本体、燃焼装置、自動制御装置、附属装置及び附属品を対象とする。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "検査周期と自動制御装置は合うが、排水処理装置に代わり附属装置及び附属品が対象になる。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "ボイラーの自主検査は1か月以内ごとに1回行い、ボイラー本体、燃焼装置、自動制御装置、附属装置及び附属品を対象とする。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "検査周期は1か月であるが、法令上の対象は自動制御装置と附属装置・附属品であり、選択肢の装置名とは異なる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "6か月では法令の周期より長い。自動制御装置に加え、附属装置及び附属品も検査する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "自主検査は6か月でなく1か月以内ごとに行う。自動制御装置も法令に掲げる検査対象である。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q36": {
+    "sourceHash": "ea46861e9175fb5689ca3876590d416c496ed40dc685d2595cf8d31b63ba2a4e",
+    "correctChoice": 5,
+    "summary": "輸入者が原則として受けるのは使用検査である。構造検査は国内で製造する場合などに行う。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "落成検査に合格したボイラーや、落成検査の必要がないと認められたボイラーには、所轄労働基準監督署長が検査証を交付する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "検査証の有効期間を更新するには、使用中の安全性を確認する性能検査を受ける。落成検査は設置時などに行われ、有効期間更新のための検査とは異なる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "検査証の有効期間は原則1年で、性能検査の結果に応じて異なる期間を定めて更新できる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "過熱器を変更すると、所轄署長が不要と認める場合を除いて変更検査を受ける必要がある。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "輸入者が原則として受けるのは使用検査である。構造検査は国内で製造する場合などに行う。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q37": {
+    "sourceHash": "0fef564d29a13e15c9a8096aa8a32ae6099ad4f78006e1cf8d7f7975246d4b5a",
+    "correctChoice": 3,
+    "summary": "法令はボイラーの燃焼装置を変更した場合を、変更検査の対象として挙げている。検査が不要と認められる例外は、設問で除かれている。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "給水装置の変更は、変更検査を必要とする変更箇所として列挙されていない。試験で問われる列挙箇所には過熱器や燃焼装置などが含まれる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "空気予熱器の変更は、法令が変更検査を求める箇所に含まれない。これに対し、燃焼装置は変更検査を要する箇所である。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "法令はボイラーの燃焼装置を変更した場合を、変更検査の対象として挙げている。検査が不要と認められる例外は、設問で除かれている。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "使用を廃止したボイラーを再び設置しようとするときに受けるのは使用再開検査である。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "構造検査後に長期間設置されなかったボイラーを設置する際は使用検査の対象になる。燃焼装置などを変更した際に行う変更検査には当たらない。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q38": {
+    "sourceHash": "787822f74267524a2ec3c714b8ed026af93e8900894df24ca8c49cbaaa109719",
+    "correctChoice": 4,
+    "summary": "水温が120℃を超える鋼製温水ボイラーには、最高使用圧力以下に保つことができる安全弁を備える。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "設問の規定の対象は鋼製の温水ボイラーであり、一定の温度条件で圧力を抑える設備は安全弁である。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "鋼製と安全弁は合うが、法令の温度条件は100℃でなく120℃を超える場合である。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "120℃は合うが、対象は鋳鉄製でなく鋼製であり、備えるのは返り管ではなく安全弁である。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "水温が120℃を超える鋼製温水ボイラーには、最高使用圧力以下に保つことができる安全弁を備える。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "法令の温度条件は120℃超であり、鋼製の対象機器に備えるのは安全弁である。鋳鉄製のボイラーと返り管を組み合わせた記述は、この規定と一致しない。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q39": {
+    "sourceHash": "4c53b53f370620f3b1c98db961864b63e4722cfb88900986d929182d373d69a7",
+    "correctChoice": 3,
+    "summary": "圧力計の目盛盤の最大指度は、最高使用圧力の1.5倍以上3倍以下の範囲でなければならない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "最高使用圧力を基準にする点は正しいが、最大指度の範囲は1.5倍以上3倍以下である。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "上限の3倍は合うが、下限を1.2倍とする記述は誤りである。規格が定める最大指度の下限は最高使用圧力の1.5倍である。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "圧力計の目盛盤の最大指度は、最高使用圧力の1.5倍以上3倍以下の範囲でなければならない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "圧力計の最大指度を定める基準は常用圧力ではなく最高使用圧力で、倍率の範囲も異なる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "1.5倍以上3倍以下は正しいが、倍率を掛ける基準は常用圧力ではなく最高使用圧力である。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20242103-q40": {
+    "sourceHash": "ee6356f435a876c6655ede2f2d0e19d5d083e1b7b12bef0db6b9380671128260",
+    "correctChoice": 3,
+    "summary": "自動給水調整装置はボイラーごとの水位や状態に応じて調整する必要があり、2基に共通とする規定ではない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "鋼製蒸気ボイラーでは、最大蒸発量に相当する水を補える能力の給水装置が必要である。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "近接した複数の蒸気ボイラーを結合して使う場合、全体を一つとみなして給水能力を確保する。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "自動給水調整装置はボイラーごとの水位や状態に応じて調整する必要があり、2基に共通とする規定ではない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "貫流ボイラーの給水管には、規格により給水弁だけを取り付け、逆止め弁を省略できる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "本体内の給水内管は、点検や清掃、交換ができるよう取外し可能な構造を求められる。内部に設置された管も、汚れの除去や交換ができるようにする。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
   }
 }
