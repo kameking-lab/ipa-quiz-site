@@ -2,6 +2,7 @@ import extracted from "@/data/questions/fp2/practical-2024-2025.json";
 import figures from "@/data/questions/fp2/practical-figures-2024-2025.json";
 import explanations from "@/data/questions/fp2/practical-explanations-2024-2025.json";
 import sharedCases from "@/data/questions/fp2/practical-shared-context-2024-2025.json";
+import historical2023May from "@/data/questions/fp2/practical-202305.json";
 import historical2023September from "@/data/questions/fp2/practical-202309.json";
 
 export interface PracticalSolution {
@@ -44,9 +45,12 @@ const DATA = extracted as Record<string, RawEdition>;
 const FIGURES = figures as Record<string, Record<string, PracticalPanel[]>>;
 const SOLUTIONS = explanations as Record<string, Record<string, PracticalSolution>>;
 const SHARED_CASES = sharedCases as Record<string, Record<string, PracticalSharedContext>>;
-const HISTORICAL_EDITIONS: Partial<Record<string, HistoricalEdition>> = { "202309": historical2023September };
+const HISTORICAL_EDITIONS: Partial<Record<string, HistoricalEdition>> = {
+  "202305": historical2023May,
+  "202309": historical2023September,
+};
 
-export const FP2_PRACTICAL_EDITIONS = ["202309", "202405", "202409", "202501", "202505", "202605"] as const;
+export const FP2_PRACTICAL_EDITIONS = ["202305", "202309", "202405", "202409", "202501", "202505", "202605"] as const;
 
 export function practicalEditionLabel(edition: string): string {
   const labels: Record<string, string> = {
