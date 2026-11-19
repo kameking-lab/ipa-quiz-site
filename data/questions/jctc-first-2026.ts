@@ -20,7 +20,7 @@ type SourceItem = {
 
 export type JctcFirstSource = {
   exam: "zoen2" | "tsushin2";
-  year: 2023 | 2024 | 2025 | 2026;
+  year: 2022 | 2023 | 2024 | 2025 | 2026;
   season: "early" | "late";
   session: "gakka";
   officialQuestionCount: number;
