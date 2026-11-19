@@ -782,8 +782,8 @@ civil1: {
         { session: "gakka-II", urlSlug: "2-kyu", expectedQuestions: 18, label: "2級・筆記（表計算）", categories: ["表計算", "ハードウェア", "情報の表現", "基本操作"] },
         { session: "gakka-III", urlSlug: "3-kyu", expectedQuestions: 20, label: "3級・筆記（ワープロ）", categories: ["ワープロ", "基本操作", "日本語入力"] },
     ],
-    seasons: ["first"],
-    yearRange: { start: 2026, end: 2026 },
+    seasons: ["first", "second"],
+    yearRange: { start: 2025, end: 2026 },
 },
 shakai: {
     code: "shakai",
