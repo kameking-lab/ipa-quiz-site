@@ -40,7 +40,10 @@
 | 自治体 | 試験実施年度 | 区分 | 収録数 | 公式原本 |
 | --- | --- | --- | ---: | --- |
 | 広島県・広島市 | 2026 | 第1次 教職に関する専門教育科目 | 22 | [問題](https://www.pref.hiroshima.lg.jp/uploaded/attachment/676989.pdf)・[採点基準](https://www.pref.hiroshima.lg.jp/uploaded/attachment/676991.pdf) |
+| 広島県・広島市 | 2025 | 第1次 教職に関する専門教育科目 | 17 | [問題](https://www.pref.hiroshima.lg.jp/uploaded/attachment/632142.pdf)・[採点基準](https://www.pref.hiroshima.lg.jp/uploaded/attachment/632145.pdf) |
 | 沖縄県 | 2026 | 第1次 一般教養・教職教養（午前の部） | 44 | [問題](https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/040/383/r8am.pdf)・[正答・配点](https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/040/383/r8-2syuuseiseitouhaiten.pdf) |
 | 沖縄県 | 2026 | 第1次 一般教養・教職教養（午後の部） | 45 | [問題](https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/040/383/r8pm.pdf)・[正答・配点](https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/040/383/r8-2syuuseiseitouhaiten.pdf) |
 
 収録数は、空欄の枝問を含む公式の解答欄単位。
+
+- 広島県・広島市の2025年度教職教養では、解答番号11の図、12～14の共通本文が公開版に掲載されていないため、該当の4問を除外した。 [問題](https://www.pref.hiroshima.lg.jp/uploaded/attachment/632142.pdf)
