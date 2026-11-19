@@ -259,7 +259,7 @@ export const KYOIN_TOKYO_2025_SENMON: Question[] = [
       "算数・数学"
     ],
     "difficulty": 3,
-    "question": "次の表は、Ａ～Ｅの5人が行ったテストの得点を示したものである。表の得点の分布の範囲として適切なものは、下の1～4のうちのどれか。\n\nＡ：67　Ｂ：78　Ｃ：91　Ｄ：83　Ｅ：56",
+    "question": "次の表は、Ａ～Ｅの5人が行ったテストの得点を示したものである。表の得点の分布の範囲として適切なものは、下の1～4のうちのどれか。",
     "choices": {
       "ア": "35",
       "イ": "56",
@@ -275,11 +275,17 @@ export const KYOIN_TOKYO_2025_SENMON: Question[] = [
       "ウ": "75は五人の得点の平均である。分布の範囲は平均でなく、最大91と最小56の差を指す。",
       "エ": "78は、得点を小さい順に並べたとき中央にある中央値である。範囲は両端の最大値と最小値の差なので35になる。"
     },
-    "hasImage": false,
+    "hasImage": true,
     "sourcePdfUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/recruit/exam_r7/mondai01.pdf",
     "sourceAnswerUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/recruit/exam_r7/seito01.pdf",
     "sourceAttribution": "出典：東京都教育委員会 令和7年度東京都公立学校教員採用候補者選考（令和8年度採用） 専門教養 小学校全科 解答番号8。解説は過去問AIの独自作成。",
-    "license": "PREF-published"
+    "license": "PREF-published",
+    "imageUrls": [
+      "/questions/kyoin-tokyo/2025/senmon-08.webp"
+    ],
+    "imageAltTexts": [
+      "Ａ、Ｂ、Ｃ、Ｄ、Ｅの得点は順に67、78、91、83、56。"
+    ]
   },
   {
     "id": "kyoin-tokyo-2025-annual-senmon-09",
@@ -446,7 +452,7 @@ export const KYOIN_TOKYO_2025_SENMON: Question[] = [
       "理科"
     ],
     "difficulty": 3,
-    "question": "次の表は、気温と飽和水蒸気量との関係を表したものである。気温20℃、湿度70％の空気を25℃にしたときの湿度の値［％］として最も適切なものは、下の1～4のうちではどれか。\n\n気温［℃］　10　15　20　25　30\n飽和水蒸気量［g/m³］　9.4　12.8　17.3　23.1　30.4",
+    "question": "次の表は、気温と飽和水蒸気量との関係を表したものである。気温20℃、湿度70％の空気を25℃にしたときの湿度の値［％］として最も適切なものは、下の1～4のうちではどれか。",
     "choices": {
       "ア": "52.4",
       "イ": "64.2",
@@ -462,11 +468,17 @@ export const KYOIN_TOKYO_2025_SENMON: Question[] = [
       "ウ": "74.9％は20℃と25℃の飽和水蒸気量17.3と23.1の比であり、最初の空気が飽和している場合の値である。問題では最初の湿度が70％なので、その分も掛ける。",
       "エ": "25℃に上がると飽和水蒸気量は増えるが、実際に含む水蒸気量は変わらない。そのため相対湿度は初めの70％より下がる。"
     },
-    "hasImage": false,
+    "hasImage": true,
     "sourcePdfUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/recruit/exam_r7/mondai01.pdf",
     "sourceAnswerUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/recruit/exam_r7/seito01.pdf",
     "sourceAttribution": "出典：東京都教育委員会 令和7年度東京都公立学校教員採用候補者選考（令和8年度採用） 専門教養 小学校全科 解答番号13。解説は過去問AIの独自作成。",
-    "license": "PREF-published"
+    "license": "PREF-published",
+    "imageUrls": [
+      "/questions/kyoin-tokyo/2025/senmon-13.webp"
+    ],
+    "imageAltTexts": [
+      "気温10、15、20、25、30℃での飽和水蒸気量は順に9.4、12.8、17.3、23.1、30.4 g/m³。"
+    ]
   },
   {
     "id": "kyoin-tokyo-2025-annual-senmon-14",

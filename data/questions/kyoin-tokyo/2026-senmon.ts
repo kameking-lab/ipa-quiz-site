@@ -283,7 +283,7 @@ export const KYOIN_TOKYO_2026_SENMON: Question[] = [
       "理科"
     ],
     "difficulty": 3,
-    "question": "次の表は、硝酸カリウムの水への溶解度を示したものである。80℃の水50gに硝酸カリウム62.0gをすべて溶かした後、この水溶液を20℃まで冷やしたときに出てくる硝酸カリウムの結晶の質量［g］の値として最も適切なものは、下の1～4のうちではどれか。\n\n水の温度　0℃　20℃　40℃　60℃　80℃\n硝酸カリウム　13.3g　31.6g　63.9g　109g　169g",
+    "question": "次の表は、硝酸カリウムの水への溶解度を示したものである。80℃の水50gに硝酸カリウム62.0gをすべて溶かした後、この水溶液を20℃まで冷やしたときに出てくる硝酸カリウムの結晶の質量［g］の値として最も適切なものは、下の1～4のうちではどれか。",
     "choices": {
       "ア": "15.2",
       "イ": "30.4",
@@ -299,11 +299,17 @@ export const KYOIN_TOKYO_2026_SENMON: Question[] = [
       "ウ": "20℃で水50gに溶ける量は31.6×50/100＝15.8gである。初めの62.0gのうち残りの46.2gが結晶として出てくる。",
       "エ": "68.7gは当初溶かした量62.0gを上回る。80℃での最大溶解量ではなく、実際に溶かした62.0gから20℃で溶ける15.8gを引く。"
     },
-    "hasImage": false,
+    "hasImage": true,
     "sourcePdfUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/recruit/exam_r8/%E5%95%8F%E9%A1%8C/%E5%B0%8F%E5%AD%A6%E6%A0%A1%E5%85%A8%E7%A7%91.pdf",
     "sourceAnswerUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/recruit/exam_r8/%E6%AD%A3%E7%AD%94%E8%A1%A8/%E5%B0%8F%E5%AD%A6%E6%A0%A1%E5%85%A8%E7%A7%91.pdf",
     "sourceAttribution": "出典：東京都教育委員会 令和8年度東京都公立学校教員採用候補者選考（令和9年度採用） 専門教養 小学校全科 解答番号11。解説は過去問AIの独自作成。",
-    "license": "PREF-published"
+    "license": "PREF-published",
+    "imageUrls": [
+      "/questions/kyoin-tokyo/2026/senmon-11.webp"
+    ],
+    "imageAltTexts": [
+      "水温0、20、40、60、80℃での溶解度は、水100g当たり順に13.3、31.6、63.9、109、169g。"
+    ]
   },
   {
     "id": "kyoin-tokyo-2026-annual-senmon-12",
