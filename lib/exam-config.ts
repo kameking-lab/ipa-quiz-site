@@ -115,7 +115,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       { session: "ippan", urlSlug: "ippan", expectedQuestions: 15, label: "公害総論", categories: ["公害総論"] },
       { session: "taiki-gairon", urlSlug: "taiki-gairon", expectedQuestions: 10, label: "大気概論", categories: ["大気概論"] },
     ],
-    seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
+    seasons: ["annual"], yearRange: { start: 2023, end: 2026 },
   },
   "zensho-bc": {
     code: "zensho-bc", nameFull: "全商ビジネスコミュニケーション検定試験", urlSlug: "zensho-bc", level: "basic",
