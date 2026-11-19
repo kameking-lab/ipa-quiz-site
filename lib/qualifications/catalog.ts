@@ -1383,6 +1383,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
 },
   {
+    slug: "zensho-bc", examCode: "zensho-bc", shortName: "全商ビジネスコミュニケーション検定",
+    fullName: "全商ビジネスコミュニケーション検定試験", domain: "personal-services",
+    administrator: "公益財団法人全国商業高等学校協会", status: "live",
+    officialQuestionsUrl: "https://zensho.or.jp/examination/pastexams/bc/",
+    officialReuseTermsUrl: "https://zensho.or.jp/examination/pastexams/bc/",
+    reuseSummary: "公式問題と模範解答を収録。解説は過去問AIが作成しています。",
+    attributionTemplate: "出典：公益財団法人全国商業高等学校協会 ビジネスコミュニケーション検定試験 問題・模範解答。",
+    remainingWork: [],
+  },
+  {
     slug: "jken-katsuyo3", examCode: "jken-katsuyo3", shortName: "J検 情報活用3級", fullName: "情報検定（J検）情報活用3級",
     domain: "information-technology", administrator: "一般財団法人職業教育・キャリア教育財団",
     officialQuestionsUrl: "https://www.jken.sgec.or.jp/docs/past_test.html",
