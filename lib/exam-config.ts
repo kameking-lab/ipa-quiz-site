@@ -1554,6 +1554,11 @@ kankoji1: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 59, label: "筆記", categories: ["2級", "準1級", "1級"] }],
     seasons: ["second"], yearRange: { start: 2025, end: 2025 },
 },
+"mental-health-management": {
+    code: "mental-health-management", nameFull: "メンタルヘルス・マネジメント検定試験", urlSlug: "mental-health-management", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 3, label: "筆記", categories: ["I種（マスターコース）", "II種（ラインケアコース）", "III種（セルフケアコース）"] }],
+    seasons: ["autumn"], yearRange: { start: 2023, end: 2023 },
+},
 "yamaguchi-chori": {
     code: "yamaguchi-chori", nameFull: "調理師", urlSlug: "yamaguchi-chori", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 60, label: "学科", categories: ["公衆衛生学", "食品学", "栄養学", "食品衛生学", "調理理論", "食文化概論"] }],

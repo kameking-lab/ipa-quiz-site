@@ -1562,6 +1562,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
   },
   {
+    slug: "mental-health-management", examCode: "mental-health-management", shortName: "メンタルヘルス・マネジメント検定", fullName: "メンタルヘルス・マネジメント検定試験",
+    domain: "welfare", administrator: "大阪商工会議所",
+    officialQuestionsUrl: "https://www.mental-health.ne.jp/procedure/",
+    officialReuseTermsUrl: "https://www.mental-health.ne.jp/procedure/",
+    status: "live",
+    reuseSummary: "公式パンフレットに掲載されたI・II・III種の本試験問題抜粋と正答を収録。",
+    attributionTemplate: "出典：大阪商工会議所。解説は過去問AIが作成。",
+    remainingWork: [],
+  },
+  {
     slug: "yamaguchi-chori", examCode: "yamaguchi-chori", shortName: "調理師", fullName: "調理師",
     domain: "personal-services", administrator: "山口県 生活衛生課",
     officialQuestionsUrl: "https://www.pref.yamaguchi.lg.jp/site/syoku-anshin/320296.html",
