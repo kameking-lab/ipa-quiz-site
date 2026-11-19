@@ -872,10 +872,10 @@ eisei1: {
     level: "basic",
     sessions: [{
         session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "科学と人間生活",
-        categories: ["光の性質", "熱の性質とエネルギー", "プラスチック", "食品にかかわる物質", "ヒトの体内環境", "身のまわりの微生物", "日本で起こる災害", "太陽の活動と気象現象", "金属の性質", "繊維", "火山", "月と潮汐"],
+        categories: ["光の性質", "熱の性質とエネルギー", "プラスチック", "食品にかかわる物質", "ヒトの体内環境", "身のまわりの微生物", "日本で起こる災害", "太陽の活動と気象現象", "金属の性質", "繊維", "火山", "月と潮汐", "植物の反応と光合成", "太陽・地球・月"],
     }],
     seasons: ["first", "second"],
-    yearRange: { start: 2024, end: 2024 },
+    yearRange: { start: 2023, end: 2024 },
 },
 "zensho-calc-1": {
     code: "zensho-calc-1",
