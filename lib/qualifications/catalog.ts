@@ -1811,9 +1811,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     domain: "personal-services", administrator: "一般社団法人日本旅行業協会",
     officialQuestionsUrl: "https://www.jata-net.or.jp/seminar/page-41637/exam_xaminationquestion/",
     officialReuseTermsUrl: "https://www.jata-net.or.jp/seminar/page-41637/exam_xaminationquestion/", status: "live",
-    reuseSummary: "令和8・7年度の旅行業法令・約款110問を収録。「すべて選ぶ」は全選択一致で採点。国内旅行実務・海外旅行実務は未収録。問題・正答は公式原本、解説は過去問AIの独自作成です。",
+    reuseSummary: "令和8・7年度の旅行業法令・約款110問と令和8年度の国内・海外旅行実務84問を収録。「すべて選ぶ」は全選択一致で採点。海外旅行実務の問50は公式の全員加点として保存。問題・正答は公式原本、解説は過去問AIの独自作成です。",
     attributionTemplate: "出典：一般社団法人日本旅行業協会 令和○年度総合旅行業務取扱管理者試験 科目 問○。解説は過去問AIの独自作成。",
-    remainingWork: ["国内旅行実務（各年32問）・海外旅行実務（各年52問）の転記・解説"],
+    remainingWork: ["令和7年度の国内旅行実務32問・海外旅行実務52問の転記・解説"],
 },
   {
     slug: "shiho-tanto", examCode: "shiho-tanto", shortName: "司法試験（短答）", fullName: "司法試験 短答式（憲法・民法・刑法）",

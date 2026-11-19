@@ -1764,6 +1764,8 @@ shihoshoshi: {
     sessions: [
         { session: "hoki", urlSlug: "hoki", expectedQuestions: 25, label: "旅行業法令", categories: ["旅行業法令"] },
         { session: "yakkan", urlSlug: "yakkan", expectedQuestions: 30, label: "約款", categories: ["約款"] },
+        { session: "kokunai", urlSlug: "kokunai", expectedQuestions: 32, label: "国内旅行実務", categories: ["国内旅行実務"] },
+        { session: "kaigai", urlSlug: "kaigai", expectedQuestions: 52, label: "海外旅行実務", categories: ["海外旅行実務"] },
     ], seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
 },
 "shiho-tanto": {
