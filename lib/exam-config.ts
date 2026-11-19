@@ -2009,8 +2009,8 @@ caremanager: {
     code: "kokka-ippan-kou", nameFull: "国家公務員採用一般職試験（高卒者試験）", urlSlug: "kokka-ippan-kou", level: "basic",
     sessions: [
         { session: "kiso", urlSlug: "kiso", expectedQuestions: 40, label: "基礎能力試験", categories: ["文章理解", "判断推理", "数的推理", "資料解釈", "数学", "物理", "化学", "生物", "地学", "世界史", "日本史", "地理", "国語", "英語", "政治", "経済", "倫理", "情報"] },
-        { session: "tekisei", urlSlug: "tekisei", expectedQuestions: 120, label: "適性試験（事務区分）", categories: ["演算記号", "分類表", "正本と副本の照合", "表の計算", "記号・英字の変換", "二つの表の照合"] },
-    ], seasons: ["annual"], yearRange: { start: 2024, end: 2025 },
+        { session: "tekisei", urlSlug: "tekisei", expectedQuestions: 120, label: "適性試験（事務区分）", categories: ["演算記号", "分類表", "正本と副本の照合", "表の計算", "記号・英字の変換", "二つの表の照合", "集計表の計算", "文字の置き換え", "表の照合"] },
+    ], seasons: ["annual"], yearRange: { start: 2023, end: 2025 },
 },
 tsukanshi: {
     code: "tsukanshi", nameFull: "通関士試験", urlSlug: "tsukanshi", level: "advanced",
