@@ -1766,7 +1766,7 @@ shihoshoshi: {
         { session: "yakkan", urlSlug: "yakkan", expectedQuestions: 30, label: "約款", categories: ["約款"] },
         { session: "jitsumu", urlSlug: "jitsumu", expectedQuestions: 32, label: "国内旅行実務", categories: ["国内観光資源", "宿泊", "貸切バス", "フェリー", "国内航空", "旅客鉄道"] },
         { session: "kaigai-jitsumu", urlSlug: "kaigai-jitsumu", expectedQuestions: 52, label: "海外旅行実務", categories: ["国際航空運賃", "旅券・出入国手続", "旅行英語", "海外観光資源", "海外旅行その他の実務"] },
-    ], seasons: ["annual"], yearRange: { start: 2023, end: 2026 },
+    ], seasons: ["annual"], yearRange: { start: 2022, end: 2026 },
 },
 "shiho-tanto": {
     code: "shiho-tanto", nameFull: "司法試験（短答式）", urlSlug: "shiho-tanto", level: "specialist",
