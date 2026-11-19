@@ -1439,6 +1439,15 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
   },
   {
+    slug: "multimedia-kentei-basic", examCode: "multimedia-kentei-basic", shortName: "マルチメディア検定 ベーシック", fullName: "マルチメディア検定 ベーシック",
+    domain: "information-technology", administrator: "公益財団法人画像情報教育振興協会（CG-ARTS）",
+    officialQuestionsUrl: "https://www.cgarts.or.jp/kentei/past_download/",
+    officialReuseTermsUrl: "https://www.cgarts.or.jp/termsofuse/",
+    status: "live", reuseSummary: "公式問題・正答と全肢の独自解説を収録。",
+    attributionTemplate: "出典：公益財団法人画像情報教育振興協会（CG-ARTS）マルチメディア検定 ベーシック。",
+    remainingWork: [],
+  },
+  {
     slug: "g-kentei", examCode: "g-kentei", shortName: "G検定", fullName: "G検定（ジェネラリスト検定）",
     domain: "information-technology", administrator: "一般社団法人日本ディープラーニング協会",
     officialQuestionsUrl: "https://www.jdla.org/certificate/general/issues/",
