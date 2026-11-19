@@ -111,7 +111,10 @@ function am2(categories: string[]): SessionConfig {
 export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
   "kogai-13": {
     code: "kogai-13", nameFull: "公害防止管理者", urlSlug: "kogai-13", level: "specialist",
-    sessions: [{ session: "ippan", urlSlug: "ippan", expectedQuestions: 15, label: "公害総論", categories: ["公害総論"] }],
+    sessions: [
+      { session: "ippan", urlSlug: "ippan", expectedQuestions: 15, label: "公害総論", categories: ["公害総論"] },
+      { session: "taiki-gairon", urlSlug: "taiki-gairon", expectedQuestions: 10, label: "大気概論", categories: ["大気概論"] },
+    ],
     seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
   },
   "zensho-bc": {
