@@ -296,6 +296,7 @@ import { JOKASO_CANDIDATES } from "./jokaso";
 import { IJI_SHUZEN_QUESTIONS } from "./iji-shuzen";
 import { DENKI1_QUESTIONS } from "./denki1";
 import { SHUWA_QUESTIONS } from "./shuwa";
+import { G_KENTEI_QUESTIONS } from "./g-kentei";
 import { JKEN_KATSUYO1_QUESTIONS } from "./jken-katsuyo1";
 import { JKEN_KATSUYO2_QUESTIONS } from "./jken-katsuyo2";
 import { JKEN_KATSUYO3_QUESTIONS } from "./jken-katsuyo3";
@@ -593,6 +594,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("shuwa") ? { shuwa: SHUWA_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("jken-katsuyo3") ? { "jken-katsuyo3": JKEN_KATSUYO3_QUESTIONS } : {}),
 ...(isExamPublished("jken-katsuyo2") ? { "jken-katsuyo2": JKEN_KATSUYO2_QUESTIONS } : {}),
+...(isExamPublished("g-kentei") ? { "g-kentei": G_KENTEI_QUESTIONS } : {}),
 ...(isExamPublished("jken-katsuyo1") ? { "jken-katsuyo1": JKEN_KATSUYO1_QUESTIONS } : {}),
 ...(isExamPublished("jken-system") ? { "jken-system": JKEN_SYSTEM_QUESTIONS } : {}),
 ...(isExamPublished("shinrishi") ? { shinrishi: SHINRISHI_QUESTIONS } : {}),

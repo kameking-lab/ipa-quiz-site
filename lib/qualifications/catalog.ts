@@ -1403,6 +1403,15 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
 },
   {
+    slug: "g-kentei", examCode: "g-kentei", shortName: "G検定", fullName: "G検定（ジェネラリスト検定）",
+    domain: "information-technology", administrator: "一般社団法人日本ディープラーニング協会",
+    officialQuestionsUrl: "https://www.jdla.org/certificate/general/issues/",
+    officialReuseTermsUrl: "https://www.jdla.org/",
+    status: "live", reuseSummary: "試験実施機関が公開した実際の出題と正答、全肢の独自解説を収録。",
+    attributionTemplate: "出典：一般社団法人日本ディープラーニング協会「G検定の例題・過去問」。",
+    remainingWork: [],
+  },
+  {
     slug: "jken-katsuyo1", examCode: "jken-katsuyo1", shortName: "J検 情報活用1級", fullName: "情報検定（J検）情報活用1級",
     domain: "information-technology", administrator: "一般財団法人職業教育・キャリア教育財団",
     officialQuestionsUrl: "https://www.jken.sgec.or.jp/docs/past_test.html",
