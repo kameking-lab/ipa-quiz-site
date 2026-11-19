@@ -1485,7 +1485,7 @@ shuwa: {
         { session: "gakka-III", urlSlug: "grade-3", expectedQuestions: 50, label: "3級 筆記", categories: ["筆記"] },
     ],
     seasons: ["first", "second"],
-    yearRange: { start: 2024, end: 2024 },
+    yearRange: { start: 2023, end: 2024 },
 },
 "jken-system": {
     code: "jken-system", nameFull: "情報検定（J検）情報システム試験", urlSlug: "jken-system", level: "basic",
