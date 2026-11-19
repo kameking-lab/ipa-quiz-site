@@ -36491,5 +36491,623 @@
     ],
     "provisionalReview": true,
     "lastCheckedAt": "2026-09-25"
+  },
+  "cskohyo-CS20261909-q1": {
+    "sourceHash": "aad0f1f18cfcce634926d59ad75a5b49f08740cb10064211f766303a31b8b307",
+    "correctChoice": 1,
+    "summary": "常時3,000人では衛生管理者は5人以上で、少なくとも1人が専任となり、専属の産業医を置く。必要な情報提供と事業者の同意があれば産業医巡視は2か月に1回にできる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "常時3,000人は衛生管理者5人以上の区分で、専任と専属は異なる要件である。産業医の巡視を緩和できる条件を満たすときの頻度も2か月に1回で合う。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "設問の有害業務は著しい寒冷下での業務のみであり、衛生工学衛生管理者免許を有する者を選ぶ要件を加える必要はない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "産業医を2人以上とするのは常時3,000人を超える事業場である。情報提供を受けたときの緩和も3か月ではなく2か月である。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "常時3,000人の事業場で6人以上という衛生管理者の人数要件は成立しない。産業医の条件と3か月という頻度も法令に合わない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "人数の区分は3,000人を超える場合と区別する必要がある。6人以上と2人以上の双方が当該事業場の要件を超えている。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032?occasion_date=20260401"
+      }
+    ]
+  },
+  "cskohyo-CS20261909-q2": {
+    "sourceHash": "e68214221ef78d11ccb31eb6718eedbc19e63e1a5d4f63f7be4a2e708f5df2e2",
+    "correctChoice": 3,
+    "summary": "規格と型式検定の両方を要するイ、および年1回の定期自主検査を要する設備としてのホが適切である。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "イは正しいが、ロの電動ファン付き保護具に付された一酸化炭素用条件は規制対象から除かれる。ニも示された条件での義務ではない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "イ、ホは適切でも、ロには一酸化炭素用という除外対象の条件が含まれるため、すべて正しい組合せにはならない。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "防じんマスクには規格と型式検定の両方が必要で、弗化水素の排ガス処理装置は特化則の定期自主検査の対象となる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "一酸化炭素用を規格・型式検定の対象とするロは誤りであり、イとホの適切な二つの組合せも欠けている。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "ホの定期自主検査は正しいが、エックス線装置を定期自主検査の対象とするハの組合せは適切ではない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生法施行令",
+        "url": "https://laws.e-gov.go.jp/law/347CO0000000318?occasion_date=20260401"
+      },
+      {
+        "title": "特定化学物質障害予防規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000039?occasion_date=20260401"
+      },
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032?occasion_date=20260401"
+      }
+    ]
+  },
+  "cskohyo-CS20261909-q3": {
+    "sourceHash": "990ed730ecbca27062d75758e97802baf1c184de031c15c992b8589ba907d877",
+    "correctChoice": 4,
+    "summary": "指示後に専門家の確認・助言を受け、改善計画を作成し、実施した措置の記録を保存する。規則は改善完了報告書の提出までは求めていない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "所轄署長の指示を受けた事業者は、管理状況の確認と実行できる改善措置の助言を化学物質管理専門家から遅滞なく受ける。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "専門家の確認結果と助言は、事業者が改善の計画を立てられるよう、速やかに書面によって通知する決まりである。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "助言の書面通知を受けた事業者は、その内容に基づく改善措置の計画を通知後1か月以内に作成する。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "改善計画の作成・実施や記録保存の定めはあるが、改善措置の完了を所轄署長へ報告する書面は定められていない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "実施した改善措置の記録は、専門家からの助言の通知や改善計画と併せて3年間保存することが求められる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032?occasion_date=20260401"
+      }
+    ]
+  },
+  "cskohyo-CS20261909-q4": {
+    "sourceHash": "b6180471db059f7e3e339bab4a61ba28d037ad012b8c37a803894cd29a1d0bde",
+    "correctChoice": 3,
+    "summary": "実施事務から人事権限を持つ者を除くイと、高ストレス者の申出に応じ面接指導を行うハが正しい。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "イとハは正しいが、ロの結果通知は検査を実施した医師等から本人に行い、事業者への提供には原則として本人の同意が必要である。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "イは正しいが、事業者を介する結果通知と検査実施直後の報告は規則どおりでなく、申出に応じた面接指導のハも欠ける。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "直接の人事権がある者は実施事務に従事できず、面接指導が必要とされた高ストレス者の申出には事業者が応じる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "事業者を介する結果通知は検査の秘密保持に反する。ニの報告も検査後直ちにという取扱いではなく、定期に行う。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "ハは正しいが、報告の時期に関するニが誤っている。また、直接の人事権限のある者を実施事務から除くイが欠ける。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032?occasion_date=20260401"
+      },
+      {
+        "title": "労働安全衛生法",
+        "url": "https://laws.e-gov.go.jp/law/347AC0000000057?occasion_date=20260401"
+      }
+    ]
+  },
+  "cskohyo-CS20261909-q5": {
+    "sourceHash": "21e636131c8793c31e9b50aea0ada357a5ea6e78d5398f35ccb875f354b4346c",
+    "correctChoice": 4,
+    "summary": "動力ハンマーを用いる屋内の金属鍛造では等価騒音レベルを6か月以内ごとに、該当坑内では炭酸ガス濃度を1か月以内ごとに測定する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "イの石油ベンジンは、この払拭作業について測定義務が生じる第一種・第二種有機溶剤に当たらない。ロの測定間隔も1年ではない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "ニは該当するが、イの払拭作業には設問どおりの測定義務がなく、ホでは放射性物質取扱作業室の測定事項が違う。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "等価騒音レベルを挙げたハは正しい。鉛濃度の測定を1年ごととするロと、放射性物質取扱作業室の測定事項を線量当量率とするホが誤りである。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "金属鍛造の騒音測定と、炭酸ガスが停滞する坑内の濃度測定について、測定項目とそれぞれの頻度が対応する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "ハとニは正しいが、放射性物質取扱作業室では空気中の放射性物質濃度を測定するため、ホを加えると誤りになる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032?occasion_date=20260401"
+      },
+      {
+        "title": "有機溶剤中毒予防規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000036?occasion_date=20260401"
+      },
+      {
+        "title": "鉛中毒予防規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000037?occasion_date=20260401"
+      },
+      {
+        "title": "電離放射線障害防止規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000041?occasion_date=20260401"
+      }
+    ]
+  },
+  "cskohyo-CS20261909-q6": {
+    "sourceHash": "19575e09a1ddd622f3803fbecb193a9323467d0c145d57551f788b6ebff4e5aa",
+    "correctChoice": 1,
+    "summary": "中央管理方式の空気調和設備は工事開始30日前までの届出を要し、主要構造部分の構造と設備点検の要領を記載する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "30日前の期限に加え、空調装置の主要構造部分と点検方法が必要な記載事項となる。三つの欄とも規則に合致する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "期限は30日前でよいが、記載するのは空調設備の主要構造部分の構造と設備点検の要領であり、建築物・中央管理ではない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "期限と設備点検は適切だが、Ｂで求められるのは空調器の主要構造部分の構造であり、建築物一般の構造ではない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "ＢとＣは正しいが、中央管理方式の設備の計画は所轄署長に工事開始の30日前までに届け出るので14日前ではない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "期限の14日前、建築物の構造、中央管理の要領はいずれも設問の届出に求められる項目の組合せとは異なる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生法",
+        "url": "https://laws.e-gov.go.jp/law/347AC0000000057?occasion_date=20260401"
+      },
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032?occasion_date=20260401"
+      }
+    ]
+  },
+  "cskohyo-CS20261909-q7": {
+    "sourceHash": "75c5db36838d89c7de72266b65bc6d77abb59dd6a996514279edcd12128f0871",
+    "correctChoice": 3,
+    "summary": "強烈な騒音を発する場所では騒音対策や保護具等が求められるが、設問が述べる立入禁止・表示の対象には列挙されていない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "熱中症が疑われる作業従事者について報告できる体制を事前に整備し、その体制を対象者に周知する必要がある。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "作業上の給湿は有害とならない範囲で実施するよう求められ、噴霧に使う水も衛生上清浄なものでなければならない。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "強烈な騒音の作業場について騒音対策は必要だが、この選択肢の立入禁止措置は労働安全衛生規則585条の対象ではない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "多量の発汗を伴う現場では、労働者への塩分と水分の補給のため塩と飲料水を備えることとされている。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "常時50人以上または常時女性30人以上のいずれかを満たす事業場では、臥床できる男女別の休養室等が必要となる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032?occasion_date=20260401"
+      }
+    ]
+  },
+  "cskohyo-CS20261909-q8": {
+    "sourceHash": "a4100456dfa751d52a2967efa1f46fa0e1fc482c534bf4ac70dee3f28e68df2a",
+    "correctChoice": 1,
+    "summary": "タンク内の第三種溶剤の吹付けに関するイと、側方吸引型フードの制御風速を示すロが正しい。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "タンク内の吹付けに必要な発散防止設備と、外付け側方吸引型に要求される制御風速0.5 m/sの両方が規則に合っている。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "イ・ロは適切だが、タンク等の内部での第一種有機溶剤業務についてニが挙げる防毒マスク等は必要な保護具の要件に合わない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "イは正しいが、第三種溶剤でタンク外にも健診義務があるとするハ、および第一種溶剤の保護具を挙げたニは誤りである。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "ロの側方吸引型フードの基準は正しい。ハの有機溶剤等健康診断の規定は、第三種溶剤を扱うタンク外作業には適用されない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "ハは健診の対象範囲が広すぎる。ニは送気マスク等が必要な条件を満たさず、正しいイとロを含んでいない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "有機溶剤中毒予防規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000036?occasion_date=20260401"
+      }
+    ]
+  },
+  "cskohyo-CS20261909-q9": {
+    "sourceHash": "d4e911936e9cd3089737fbf1e12e7a59e937b69cb1e78a0d19b7e7139523ec12",
+    "correctChoice": 5,
+    "summary": "溶接ヒュームは特定化学物質としての規制の対象である。法令で定義されるリスクアセスメント対象物の指定とは別に扱われる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "ベリリウム及びその化合物は労働安全衛生法施行令の別表第3と特化則で第一類物質として規定される。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "四塩化炭素には特化則上の特別有機溶剤としての規制が適用されるので、区分を示したこの記述は正しい。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "フェノールは大量漏えい等への措置の対象となる第三類物質の一つとして、施行令別表第3に掲げられている。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "インジウム化合物は特別管理物質として、作業記録等の長期保存をはじめとする特別管理の対象となる。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "溶接ヒューム自体は法令で指定されるリスクアセスメント対象物に含まれない。特化則による作業環境管理等の規制は別途適用される。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生法施行令",
+        "url": "https://laws.e-gov.go.jp/law/347CO0000000318?occasion_date=20260401"
+      },
+      {
+        "title": "特定化学物質障害予防規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000039?occasion_date=20260401"
+      },
+      {
+        "title": "労働安全衛生法",
+        "url": "https://laws.e-gov.go.jp/law/347AC0000000057?occasion_date=20260401"
+      }
+    ]
+  },
+  "cskohyo-CS20261909-q10": {
+    "sourceHash": "1e36911218349d5f87adaab615c809c41761a6f16d7e86e83112f354a9b000a9",
+    "correctChoice": 5,
+    "summary": "自記記録圧力計を設ける場所は気こう室であり、対象は0.1 MPa以上の気圧下での高圧室内業務である。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "作業室の気積は、そこで業務に従事している人数を基準として、1人当たり4立方メートル以上を確保する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "加圧・減圧を受ける高圧室内作業者1人当たり、気こう室の床面積0.3平方メートル以上と気積0.6立方メートル以上が必要である。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "作業室へ送気する管には、気圧や空気の逆流による危険を防ぐため、作業室に近接する部分に逆止弁を設ける。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "作業室や気こう室へ送る空気は清浄にする必要がある。清浄装置は空気圧縮機とこれらの室の間に設ける。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "設置する場所を作業室としている点が誤りである。0.1 MPa以上の気圧下の業務で気こう室に自記記録圧力計を置く。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "高気圧作業安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000040?occasion_date=20260401"
+      }
+    ]
+  },
+  "cskohyo-CS20261909-q11": {
+    "sourceHash": "94aa5e2dccf4210608dd131387e73506a9404ac71cf8df4eca4d1aba264ca710",
+    "correctChoice": 2,
+    "summary": "管理区域の基準は3か月で1.3 mSvを超えるおそれのある実効線量、または限度の10分の1を超えるおそれのある表面密度である。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "実効線量と10分の1は正しいが、管理区域を区分する線量の閾値を5 mSvとし、算定に1 mm線量当量を使う点が誤りである。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "外部被ばく及び空気中放射性物質の実効線量の合計は3か月1.3 mSvが基準で、外部被ばくの算定には1 cm線量当量を用いる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "実効線量と1.3 mSvは正しいが、表面密度は限度の5分の1でなく10分の1、外部放射線の算定は1 cm線量当量である。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "管理区域の判定には人体の組織別の等価線量ではなく実効線量を使い、その3か月間の基準も5 mSvとは異なる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "1.3 mSvと1 cmは正しいが、区分に用いるのは実効線量であり、表面密度は限度の10分の1と比較する。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "電離放射線障害防止規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000041?occasion_date=20260401"
+      }
+    ]
+  },
+  "cskohyo-CS20261909-q12": {
+    "sourceHash": "177d6fb38fda03fd7a6e6e93f159031467d6c07f53dcd49845f2d4fec1b2a209",
+    "correctChoice": 1,
+    "summary": "第一種酸素欠乏危険作業ではその日の作業を始める前に酸素濃度を測定する。作業終了後の一律の測定義務はない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "規則は作業開始前の酸素濃度測定を定めており、作業が終了した後にも必ず測るとするこの記述は誤っている。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "一部を請け負わせる場合、酸素欠乏による転落のおそれがあるときは、請負人に命綱等の使用の必要性を周知する。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "入退場の人数を把握することで、作業を請け負った者に関わる作業従事者が取り残されていないか確認できる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "異常を早期に把握するため、作業状況を監視して異常時に主任者等へ知らせる体制などを設ける必要がある。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "酸素欠乏の発生時に作業者を避難・救出できるよう、適切な呼吸用保護具やはしご・ロープ等を備える。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "酸素欠乏症等防止規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000042?occasion_date=20260401"
+      }
+    ]
+  },
+  "cskohyo-CS20261909-q13": {
+    "sourceHash": "47407d4b2ef3c7789916f250ef561c1125b26dfa3e44e4d0e36fb107c2b1531d",
+    "correctChoice": 5,
+    "summary": "指定された石綿含有のおそれのある製品を輸入する場合、所定の書面で含有率を確認し、輸入日から3年間保存する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "ロは該当するが、イの届出期限、ハの報告方法、ニの健康管理手帳の交付要件は、いずれも規定に合わない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "届出の期限を作業開始日とするイ、報告を一律年1回とするハ、対象業務の経験年数だけで交付されるとするニは誤っている。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "吹付け石綿作業の法令上の計画届には着手に先立った期限がある。また、ニの業務に関する手帳は10年の経験だけで交付されない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "ロの輸入時の書面確認と保存は正しいが、試験研究のための石綿製造についてハが示した一律年1回という報告は規定に合わない。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "対象製品を輸入する際の書面確認・保存義務を述べたロのみが正しく、届出期日や健康管理手帳の条件を挙げた他の記述とは区別する。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032?occasion_date=20260401"
+      },
+      {
+        "title": "石綿障害予防規則",
+        "url": "https://laws.e-gov.go.jp/law/417M60000100021?occasion_date=20260401"
+      }
+    ]
+  },
+  "cskohyo-CS20261909-q14": {
+    "sourceHash": "55b006fe670a937c44dc05f275b3c0ac17c2e60823c212b6e1fa88d158b759c7",
+    "correctChoice": 5,
+    "summary": "管理2・管理3でじん肺に合併した続発性気管支拡張症が認められる場合、じん肺法上、療養を要する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "管理1まで健診を毎年とするイ、手持式機器での溶射を含めるハ、坑内作業場を対象とするニはいずれも規定と異なる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "管理1で常時粉じん作業に従事する労働者の定期健診は3年以内ごとである。ニの測定義務も示された坑内作業場には当てはまらない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "ロは適切だが、特定粉じん作業として指定される金属溶射箇所の規定から手持式溶射機を用いるものは除かれている。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "ロは適切だが、粉じん障害防止規則の定期測定は所定の屋内作業場が対象で、ニが挙げる坑内作業場を含めていない。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "管理2または3の者がじん肺と合併した続発性気管支拡張症にかかったと認められるときは療養の対象となる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "じん肺法",
+        "url": "https://laws.e-gov.go.jp/law/335AC0000000030?occasion_date=20260401"
+      },
+      {
+        "title": "じん肺法施行規則",
+        "url": "https://laws.e-gov.go.jp/law/335M50002000006?occasion_date=20260401"
+      },
+      {
+        "title": "粉じん障害防止規則",
+        "url": "https://laws.e-gov.go.jp/law/354M50002000018?occasion_date=20260401"
+      }
+    ]
+  },
+  "cskohyo-CS20261909-q15": {
+    "sourceHash": "a4941a359ec3e7affb363fe08d1d3a44775dd68669a517dadb513aecfc0a1872",
+    "correctChoice": 5,
+    "summary": "多量の低温物体を扱う場所は、酸素や炭酸ガスの濃度を理由に立入制限を外せない。関係者以外の立入り禁止が必要である。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "各種商品小売業で常時800人の場合は衛生管理者3人以上で、第二種免許の選任も可能である。設問の有害業務の人数では専任までは要しない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "保健衛生区分の労働衛生コンサルタント試験合格は産業医要件の一つであり、この事業場では産業医を専属とする条件にも当たらない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "所定の有害業務の健診を配置替え時と6か月以内ごとに行い、規則が特例を置く胸部エックス線検査を年1回とする扱いは許容される。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "一般の長時間労働者については、月80時間を超える時間外・休日労働に加え疲労が蓄積し、本人から申出がある場合に面接指導を行う。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "適用の根拠は多量の低温物体を取り扱う場所という点にある。酸欠や炭酸ガス中毒の条件を満たさなくても立入制限が必要となる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032?occasion_date=20260401"
+      }
+    ]
   }
 }
