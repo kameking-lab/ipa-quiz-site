@@ -1254,6 +1254,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
   },
   {
+    slug: "dekyo-digital2", examCode: "dekyo-digital2", shortName: "工事担任者 第二級デジタル通信", fullName: "工事担任者 第二級デジタル通信",
+    domain: "electrical", administrator: "一般財団法人日本データ通信協会 電気通信国家試験センター",
+    officialQuestionsUrl: "https://www.dekyo.or.jp/shiken/charge/exam",
+    officialReuseTermsUrl: "https://www.dekyo.or.jp/shiken/charge/exam",
+    status: "live",
+    reuseSummary: "2024年度第2回の基礎・技術及び理論・法規を、公式問題と正答に基づく全62問で演習できます。図のある設問には原図を付けています。",
+    attributionTemplate: "出典：日本データ通信協会 電気通信国家試験センター 工事担任者試験 第二級デジタル通信（問題・正答）。解説は過去問AI独自作成。",
+    remainingWork: [],
+  },
+  {
     slug: "chizai1", examCode: "chizai1", shortName: "知的財産管理技能検定1級", fullName: "知的財産管理技能検定1級",
     domain: "legal", administrator: "知的財産教育協会",
     officialQuestionsUrl: "https://www.kentei-info-ip-edu.org/gakushujoho/kakomon.html",

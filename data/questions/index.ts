@@ -285,6 +285,7 @@ import { MARITIME3_QUESTIONS } from "./maritime3";
 import { LAND_SPECIAL2_QUESTIONS } from "./land-special2";
 import { LAND_SPECIAL3_QUESTIONS } from "./land-special3";
 import { ZENSHO_FINANCIAL_STATEMENT_ANALYSIS_QUESTIONS } from "./zensho-financial-statement-analysis";
+import { DEKYO_DIGITAL2_QUESTIONS } from "./dekyo-digital2";
 import { CHIZAI1_QUESTIONS } from "./chizai1";
 import { CHIZAI2_QUESTIONS } from "./chizai2";
 import { KISHO_QUESTIONS } from "./kisho";
@@ -573,6 +574,7 @@ takken: TAKKEN_QUESTIONS,
 ...(isExamPublished("shika-ishi") ? { "shika-ishi": SHIKA_ISHI_QUESTIONS } : {}),
 ...(isExamPublished("kenchiku-setsubishi") ? { "kenchiku-setsubishi": KENCHIKU_SETSUBISHI_STUDY_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("zensho-financial-statement-analysis") ? { "zensho-financial-statement-analysis": ZENSHO_FINANCIAL_STATEMENT_ANALYSIS_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+...(isExamPublished("dekyo-digital2") ? { "dekyo-digital2": DEKYO_DIGITAL2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("chizai1") ? { chizai1: CHIZAI1_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("chizai2") ? { chizai2: CHIZAI2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("kisho") ? { kisho: KISHO_QUESTIONS } : {}),

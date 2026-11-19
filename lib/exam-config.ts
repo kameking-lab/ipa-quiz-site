@@ -1364,6 +1364,15 @@ riyoshi: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 88, label: "財務諸表分析", categories: ["財務諸表分析"] }],
     seasons: ["annual"], yearRange: { start: 2022, end: 2023 },
 },
+"dekyo-digital2": {
+    code: "dekyo-digital2", nameFull: "工事担任者 第二級デジタル通信", urlSlug: "dekyo-digital2", level: "specialist",
+    sessions: [
+        { session: "kiso", urlSlug: "kiso", expectedQuestions: 22, label: "電気通信技術の基礎", categories: ["電気通信技術の基礎"] },
+        { session: "senmon", urlSlug: "senmon", expectedQuestions: 20, label: "端末設備の接続のための技術及び理論", categories: ["端末設備の接続のための技術及び理論"] },
+        { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "端末設備の接続に関する法規", categories: ["端末設備の接続に関する法規"] },
+    ],
+    seasons: ["second"], yearRange: { start: 2024, end: 2024 },
+},
 chizai1: {
     code: "chizai1", nameFull: "知的財産管理技能検定1級", urlSlug: "chizai1", level: "specialist",
     sessions: [
