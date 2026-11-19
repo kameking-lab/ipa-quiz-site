@@ -1257,7 +1257,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     slug: "jidosha-1-small-written", examCode: "jidosha-1-small-written", shortName: "一級小型自動車整備士（筆記）", fullName: "一級小型自動車整備士（筆記）", domain: "automotive",
     administrator: "一般社団法人日本自動車整備振興会連合会",
     officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
-    reuseSummary: "令和5〜7年度第2回の150原問を収録。令和5年度の全員正解1問は参照用です。公式問題・正答と全選択肢の解説、必要な原図を確認できます。法令は各試験日時点です。",
+    reuseSummary: "令和4〜7年度第2回の200原問を収録。令和5年度の全員正解1問は参照用です。公式問題・正答と全選択肢の解説、必要な原図を確認できます。法令は各試験日時点です。",
     attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
     remainingWork: [],
 },

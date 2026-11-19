@@ -5,6 +5,7 @@ import qualifications from "./qualifications.json";
 import priorSittings from "./prior-sittings.json";
 import priorAssets from "./prior-assets.json";
 import written2023 from "./1-small-written-2023.json";
+import written2022 from "./1-small-written-2022.json";
 
 export type AutomotiveExamCode =
   | "jidosha-1-small-written" | "jidosha-2-gasoline" | "jidosha-2-diesel"
@@ -41,7 +42,7 @@ const acceptedQuestions = [...reviewed, ...priorSittings].map<Question>((q) => (
   imageAltTexts: imageBindings[q.id].map((asset) => `${q.sourceAttribution} 原問題の図表（PDF ${asset.physicalPage}ページ）`),
 }));
 
-const archivedWrittenQuestions = written2023.map<Question>((q) => ({
+const archivedWrittenQuestions = [...written2023, ...written2022].map<Question>((q) => ({
   ...q,
   exam: "jidosha-1-small-written",
   session: "gakka",
@@ -49,7 +50,9 @@ const archivedWrittenQuestions = written2023.map<Question>((q) => ({
   type: "multiple-choice",
   difficulty: 4,
   license: "JASPA-owner-authorized",
-  officialScoring: q.officialScoring && { kind: "credit-for-all", reason: q.officialScoring.reason },
+  officialScoring: "officialScoring" in q && q.officialScoring
+    ? { kind: "credit-for-all", reason: q.officialScoring.reason }
+    : undefined,
 }));
 
 export const AUTOMOTIVE_QUESTIONS: Question[] = [...acceptedQuestions, ...archivedWrittenQuestions];

@@ -1,0 +1,2952 @@
+[
+  {
+    "id": "jidosha-2022-second-1-small-written-q01",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 1,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "抵抗計のレンジ・応答時間・開放電圧"
+    ],
+    "question": "抵抗計のレンジ・応答時間・開放電圧。公式問題のNo.1を読み、不適切なものを選べ。",
+    "choices": {
+      "ア": "50 kΩレンジの応答時間",
+      "イ": "5 kΩレンジの短絡電流",
+      "ウ": "開放電圧は負荷で変動しない",
+      "エ": "500 Ωレンジの確度"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "choiceExplanations": {
+      "ア": "確度の範囲に達するまで最大3秒を見込みます。読み取りは表示が安定してから行います。",
+      "イ": "プローブを短絡すると負荷抵抗はほぼ0 Ωとなります。このときの試験電流は、5 kΩレンジの最大測定電流の上限側に近づきます。",
+      "ウ": "2.5 V未満はプローブを開放した無負荷時の端子電圧です。抵抗を接続したときまで同じ電圧とはいえません。",
+      "エ": "表の0.05＋2はゼロ調整後の表示値の±0.05％と末尾2桁分の誤差を表します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/33f9831f6903d5f8c251c873ca30761a99a2d40d964b7098cabe575b658def83.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.1 抵抗計のレンジ・応答時間・開放電圧（公式冊子2ページ）"
+    ],
+    "sourcePages": [
+      2
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=2",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.1",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "2.5 V未満はプローブを開放した無負荷時の端子電圧です。抵抗を接続したときまで同じ電圧とはいえません。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q02",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 2,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": true,
+    "topicTags": [
+      "デジタルテスタの負荷・波高率・確度"
+    ],
+    "question": "デジタルテスタの負荷・波高率・確度。公式問題のNo.2を読み、最も適切なものを選べ。",
+    "choices": {
+      "ア": "正・誤・誤",
+      "イ": "誤・正・正",
+      "ウ": "正・誤・正",
+      "エ": "誤・正・誤"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "choiceExplanations": {
+      "ア": "測る抵抗とテスタの並列合成は約45.5 kΩなので、イの測定値は約0.417 Vです。ロとハが合います。",
+      "イ": "イは500 kΩと50 kΩの並列によって約0.417 Vとなります。ロの波高率は√2、ハの誤差は±（12.494×0.0003＋0.002）≒±0.006 Vです。",
+      "ウ": "ハの範囲は正しいですが、テスタ接続による電圧の低下でイは誤りです。ロの最大値と実効値の比は√2です。",
+      "エ": "イとロの判定は合いますが、ハも表示値の0.03％と末尾2カウントの合計から求めた範囲と一致します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/33f9831f6903d5f8c251c873ca30761a99a2d40d964b7098cabe575b658def83.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.2 デジタルテスタの負荷・波高率・確度（公式冊子2ページ）"
+    ],
+    "sourcePages": [
+      2
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=2",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.2",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "イは500 kΩと50 kΩの並列によって約0.417 Vとなります。ロの波高率は√2、ハの誤差は±（12.494×0.0003＋0.002）≒±0.006 Vです。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q03",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 3,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "イグナイタ回路の三つの測定波形"
+    ],
+    "question": "イグナイタ回路の三つの測定波形。公式問題のNo.3を読み、最も適切なものを選べ。",
+    "choices": {
+      "ア": "イ・ロ・ニ",
+      "イ": "ロ・イ・ハ",
+      "ウ": "イ・ロ・ハ",
+      "エ": "ロ・イ・ニ"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "choiceExplanations": {
+      "ア": "一次コイル両端のV₁は遮断時に負側へ振れるイ、駆動側の対地電圧V₂は正側へ振れるロです。ECU指示信号V₃は図のプルアップを引き下げるニです。",
+      "イ": "一次コイル両端と駆動側の対地波形を逆にしています。V₃も高い電位を短時間引き下げるニです。",
+      "ウ": "V₁とV₂は合いますが、V₃はプルアップされた線をECUが引き下げるため、立ち下がりパルスのニです。",
+      "エ": "V₃は合いますが、遮断時にV₁の測定極性は負側、V₂の対地電圧は正側へ大きく変化します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/10603647895281acd44b44a78baff80647b8fcf3a38deb31230be5b72d162270.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.3 イグナイタ回路の三つの測定波形（公式冊子3ページ）"
+    ],
+    "sourcePages": [
+      3
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 3,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=3",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.3",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "一次コイル両端のV₁は遮断時に負側へ振れるイ、駆動側の対地電圧V₂は正側へ振れるロです。ECU指示信号V₃は図のプルアップを引き下げるニです。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q04",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 4,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "温間アイドル時にNからDへ切り替えた波形"
+    ],
+    "question": "温間アイドル時にNからDへ切り替えた波形。公式問題のNo.4を読み、不適切なものを選べ。",
+    "choices": {
+      "ア": "O₂センサ電圧",
+      "イ": "電子スロットル開度",
+      "ウ": "点火時期",
+      "エ": "インジェクタ噴射時間"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "choiceExplanations": {
+      "ア": "暖機後のO₂センサ電圧は空燃比フィードバックに伴って上下します。負荷変化時の一時的な変動もあり得ます。",
+      "イ": "レンジ切替えで負荷が加わると、アイドル制御はスロットル開度を一時的に変えて回転低下を補います。",
+      "ウ": "負荷変化時には点火時期もトルク補正に利用されます。提示波形では切替えに対応した変化が見られず、このモードに合いません。",
+      "エ": "吸入空気量の変化に合わせて燃料噴射時間が一時的に変化するため、提示された噴射波形は負荷変動と整合します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/10f67e35d0507ce6f14d3bd6b3d23f5ef3b4acd924dff369a45b57c4d213086f.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.4 温間アイドル時にNからDへ切り替えた波形（公式冊子4ページ）"
+    ],
+    "sourcePages": [
+      4
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 4,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=4",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.4",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "負荷変化時には点火時期もトルク補正に利用されます。提示波形では切替えに対応した変化が見られず、このモードに合いません。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q05",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 5,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "車載CANのバスと通信処理"
+    ],
+    "question": "車載CANのバスと通信処理。公式問題のNo.5を読み、最も適切なものを選べ。",
+    "choices": {
+      "ア": "支線側ECUの終端抵抗",
+      "イ": "データリンク層と物理層",
+      "ウ": "断線や終端抵抗はテスタで確認不可",
+      "エ": "トランシーバ経由のRxD入力"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "choiceExplanations": {
+      "ア": "通信の反射を抑える終端抵抗はメインバスの両端に配置します。任意の支線側ECUに設けるという説明は合いません。",
+      "イ": "優先順位や誤り検出はデータリンク層ですが、CANバスの電気的特性の定義は物理層です。",
+      "ウ": "断線・短絡・終端抵抗の有無はテスタの抵抗測定でも確認できます。ノイズや波形を見るにはオシロスコープが役立ちます。",
+      "エ": "トランシーバがバス上の差動信号を論理信号に変え、コントローラのRxDで受けてマイコンがデータを処理します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/a24e00b6e592dbb457005c94483d80c2f431f6eac4563c1e6c5ecb2ec1cfb5e1.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.5 車載CANのバスと通信処理（公式冊子5ページ）"
+    ],
+    "sourcePages": [
+      5
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 5,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=5",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.5",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "トランシーバがバス上の差動信号を論理信号に変え、コントローラのRxDで受けてマイコンがデータを処理します。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q06",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 6,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "オシロスコープのプローブとトリガ"
+    ],
+    "question": "オシロスコープのプローブとトリガ。公式問題のNo.6を読み、不適切なものを選べ。",
+    "choices": {
+      "ア": "×10で時間も10倍",
+      "イ": "AUTOの自動掃引",
+      "ウ": "傾き方向の選択",
+      "エ": "外部同期入力"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "choiceExplanations": {
+      "ア": "×10プローブは縦軸の電圧を10分の1にして入力します。横軸の時間設定や読み取り値は10倍になりません。",
+      "イ": "AUTOは入力なしやトリガ不成立でも掃引します。この設問の機器では低い周波数で同期が成立しない場合にも基準線を確認できます。",
+      "ウ": "SLOPEを切り替えると、波形がトリガ電圧を上昇方向と下降方向のどちらで横切ったときに同期するかを選べます。",
+      "エ": "EXTは外部端子の信号をトリガ源にする設定です。表示対象とは別の信号で掃引を同期させられます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/a24e00b6e592dbb457005c94483d80c2f431f6eac4563c1e6c5ecb2ec1cfb5e1.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.6 オシロスコープのプローブとトリガ（公式冊子5ページ）"
+    ],
+    "sourcePages": [
+      5
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 5,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=5",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.6",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "×10プローブは縦軸の電圧を10分の1にして入力します。横軸の時間設定や読み取り値は10倍になりません。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q07",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 7,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "CNG自動車の燃料遮断と温度監視"
+    ],
+    "question": "CNG自動車の燃料遮断と温度監視。公式問題のNo.7を読み、不適切なものを選べ。",
+    "choices": {
+      "ア": "自動車用13Aと排出物",
+      "イ": "エンジン側遮断弁",
+      "ウ": "燃料フィルタ下流の手動遮断弁",
+      "エ": "燃料温度センサと警告灯"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "choiceExplanations": {
+      "ア": "一般的に都市ガス13Aを用い、石油系燃料に比べて二酸化炭素排出量が少なく、硫黄酸化物やすすも抑えられます。",
+      "イ": "エンジン側遮断弁はレギュレータの上流にあり、エンジン停止時にはソレノイドを切って燃料供給を止めます。",
+      "ウ": "手動燃料遮断弁は燃料フィルタより上流です。整備時などに下流への燃料供給を手動で止められます。",
+      "エ": "容器側とエンジン側で燃料温度を監視します。容器側センサは5ウェイ・コネクタにあり、高温異常時に警告灯を点滅させます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/a24e00b6e592dbb457005c94483d80c2f431f6eac4563c1e6c5ecb2ec1cfb5e1.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.7 CNG自動車の燃料遮断と温度監視（公式冊子5ページ）"
+    ],
+    "sourcePages": [
+      5
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 5,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=5",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.7",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "手動燃料遮断弁は燃料フィルタより上流です。整備時などに下流への燃料供給を手動で止められます。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q08",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 8,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "スロットルと磁気抵抗式クランク角センサの診断範囲"
+    ],
+    "question": "スロットルと磁気抵抗式クランク角センサの診断範囲。公式問題のNo.8を読み、最も適切なものを選べ。",
+    "choices": {
+      "ア": "ロ・イ",
+      "イ": "ニ・ロ",
+      "ウ": "ニ・イ",
+      "エ": "ハ・ニ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "choiceExplanations": {
+      "ア": "スロットル側はIG ON時から上下限を判定できるニです。クランクセンサ側は作動中に上下を判定するロです。",
+      "イ": "静止位置も出力するスロットルセンサにはIG ON時から上下限のあるニ、回転パルスを出力するクランク角センサには作動中に上下限のあるロが該当します。",
+      "ウ": "スロットル側のニは合います。クランク角センサは下限側だけのイではなく、回転中の高側も検出対象です。",
+      "エ": "スロットル信号には上限も必要です。一方、クランク角のパルス診断をIG ON時から行うニは適切ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/2bab704e400639f769325e3ebf36c1ea34ab8b6b47b3320da972195a298a24ac.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.8 スロットルと磁気抵抗式クランク角センサの診断範囲（公式冊子6ページ）"
+    ],
+    "sourcePages": [
+      6
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 6,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=6",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.8",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "静止位置も出力するスロットルセンサにはIG ON時から上下限のあるニ、回転パルスを出力するクランク角センサには作動中に上下限のあるロが該当します。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q09",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 9,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "プランジャ式ソレノイドの診断しきい値"
+    ],
+    "question": "プランジャ式ソレノイドの診断しきい値。公式問題のNo.9を読み、不適切なものを選べ。",
+    "choices": {
+      "ア": "駆動時約12 V",
+      "イ": "分圧電圧より高いしきい値",
+      "ウ": "停止時は約0 V",
+      "エ": "5 Vより高いしきい値"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "choiceExplanations": {
+      "ア": "駆動時はアンプからほぼ車両電源電圧が出ます。正常なら診断信号がしきい値を下回りません。",
+      "イ": "停止時の診断点は抵抗Rとコイルrの分圧で低くなります。正常停止と高側の異常を区別するしきい値はこの分圧値より上に置きます。",
+      "ウ": "停止時はrがRに比べて小さいため、診断点は5r/（R＋r）でほぼ0 Vです。",
+      "エ": "コイルが開路したときに診断点が約5 Vになるのを異常として検出します。しきい値を5 Vより上にすると検出できません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/70d1c78cbb4ecb2d90f7deddc4dbda3becb8bd89a62b802a878617130e47c8d1.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.9 プランジャ式ソレノイドの診断しきい値（公式冊子7ページ）"
+    ],
+    "sourcePages": [
+      7
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 7,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=7",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.9",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "コイルが開路したときに診断点が約5 Vになるのを異常として検出します。しきい値を5 Vより上にすると検出できません。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q10",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 10,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "パラレル・シリーズハイブリッドの作動"
+    ],
+    "question": "パラレル・シリーズハイブリッドの作動。公式問題のNo.10を読み、最も適切なものを選べ。",
+    "choices": {
+      "ア": "Nレンジ時のシャットダウン",
+      "イ": "出力制限警告灯とRレンジ",
+      "ウ": "回生時はモータが直流を発生",
+      "エ": "検査はすべてDレンジ"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "choiceExplanations": {
+      "ア": "NではインバータのトランジスタをすべてOFFにします。モータの駆動力とジェネレータの発電・充電は得られません。",
+      "イ": "電池温度や残容量は出力制限の要因です。電池容量による点灯条件をRレンジ以外とする記述がこの車両の制御と合いません。",
+      "ウ": "回生時は三相モータで生じた交流をインバータで直流側に戻します。モータが直流を直接出力するわけではありません。",
+      "エ": "点検項目によって必要な整備モードやシフト位置が異なります。制動力などの試験をすべてDレンジで行うわけではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/0adf4f9c8babf0b652c5415aa23ad9f08496b28be2e3d4103beeaefa2bcd5943.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.10 パラレル・シリーズハイブリッドの作動（公式冊子8ページ）"
+    ],
+    "sourcePages": [
+      8
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 8,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=8",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.10",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "NではインバータのトランジスタをすべてOFFにします。モータの駆動力とジェネレータの発電・充電は得られません。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q11",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 11,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "筒内噴射エンジンの負荷別燃焼"
+    ],
+    "question": "筒内噴射エンジンの負荷別燃焼。公式問題のNo.11を読み、不適切なものを選べ。",
+    "choices": {
+      "ア": "均質燃焼と成層燃焼を同じ扱い",
+      "イ": "低負荷の圧縮後期噴射",
+      "ウ": "中負荷の均質リーン運転",
+      "エ": "高負荷の吸入前期噴射"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "choiceExplanations": {
+      "ア": "均質燃焼では混合気を均等にします。点火プラグの周囲を濃くして混合気に濃淡を作るのは成層燃焼です。",
+      "イ": "圧縮行程後期の噴射で、燃料の濃い領域を点火プラグ付近に形成する成層燃焼が可能になります。",
+      "ウ": "吸入行程前期に噴射するとピストン下降による気流で燃料が広がり、薄く均質な混合気を作れます。",
+      "エ": "高負荷では燃料の気化熱で吸気を冷却し、体積効率を高めながら理論空燃比付近の均質燃焼で出力を得ます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/0adf4f9c8babf0b652c5415aa23ad9f08496b28be2e3d4103beeaefa2bcd5943.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.11 筒内噴射エンジンの負荷別燃焼（公式冊子8ページ）"
+    ],
+    "sourcePages": [
+      8
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 8,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=8",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.11",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "均質燃焼では混合気を均等にします。点火プラグの周囲を濃くして混合気に濃淡を作るのは成層燃焼です。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q12",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 12,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "光学式クランク角センサの断線・短絡診断"
+    ],
+    "question": "光学式クランク角センサの断線・短絡診断。公式問題のNo.12を読み、不適切なものを選べ。",
+    "choices": {
+      "ア": "V₁に規定信号なし",
+      "イ": "V₁とV₂に電位差",
+      "ウ": "V₅とV₆に電位差",
+      "エ": "V₃とV₄の規定出力の比較"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "choiceExplanations": {
+      "ア": "5 V電源が失われたりホトインタラプタが故障したりすると、ロータが回転してもセンサ端のV₁で規定のパルスを得られません。",
+      "イ": "V₁とV₂は各端の信号と各端の信号アースの差です。電源線の断線でもプルアップや出力状態が変わり得るので、電源系を除外する判断はできません。",
+      "ウ": "V₅とV₆は信号アース線両端の対地電圧です。この線の断線や抵抗増大で差が生じ、共通のECUアース断線とは区別します。",
+      "エ": "V₃とV₄が正常で一致するなら信号が伝わっています。単一の地絡では導通のある両端がともに引き下げられるため、差が出る症状では断線を疑います。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/1d115c95bbd06730019c89ee0d80fe19bf855157873558324c758c57564eca15.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.12 光学式クランク角センサの断線・短絡診断（公式冊子9ページ）"
+    ],
+    "sourcePages": [
+      9
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 9,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=9",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.12",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "V₁とV₂は各端の信号と各端の信号アースの差です。電源線の断線でもプルアップや出力状態が変わり得るので、電源系を除外する判断はできません。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q13",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 13,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "EGR用DCブラシモータのPWM回路"
+    ],
+    "question": "EGR用DCブラシモータのPWM回路。公式問題のNo.13を読み、最も適切なものを選べ。",
+    "choices": {
+      "ア": "CW最大時のV₃が12 V",
+      "イ": "CW最大時V₁が約11 V",
+      "ウ": "停止中のV₁に電圧",
+      "エ": "両方向の低側電圧で配線確認"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "choiceExplanations": {
+      "ア": "図の最大駆動時のモータ端子間V₃は約11 Vです。負側のロ線が地絡すればシャントでの正常な電圧降下を迂回し、端子間が約12 Vになり得ます。",
+      "イ": "V₁はアンプのCW側端子対地電圧です。端子間電圧V₃の正常値約11 Vと混同できず、V₁の値一つでECUの正常を確定できません。",
+      "ウ": "停止時に出る電圧の原因は制御側や配線だけとは限りません。負荷となるブラシモータ内部の異常の切り分けも必要です。",
+      "エ": "CCW最大時のCW側V₁は低側の約0 V、CW最大時のCCW側V₂にはシャント分の約1 Vが現れます。両方向で戻り経路が成立しています。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/3841807adfe8c29ca16ddcddb38cd0a349731886e5a739e745f92e070b9f0c7b.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.13 EGR用DCブラシモータのPWM回路（公式冊子10ページ）"
+    ],
+    "sourcePages": [
+      10
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 10,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=10",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.13",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "CCW最大時のCW側V₁は低側の約0 V、CW最大時のCCW側V₂にはシャント分の約1 Vが現れます。両方向で戻り経路が成立しています。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q14",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 14,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "コモンレールの制御とサプライポンプ"
+    ],
+    "question": "コモンレールの制御とサプライポンプ。公式問題のNo.14を読み、不適切なものを選べ。",
+    "choices": {
+      "ア": "電磁弁とコマンドピストン",
+      "イ": "水温・吸気温・吸気圧補正",
+      "ウ": "2プランジャが交互に圧送",
+      "エ": "吸入量制御でレール圧調整"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "choiceExplanations": {
+      "ア": "コマンドピストンの両側に生じる圧力差でノズルニードルを開閉し、電磁弁の信号で時期と噴射量を制御します。",
+      "イ": "冷時の燃焼安定や実際の吸入空気量に合わせ、冷却水温、吸気温および吸気圧で噴射量を補正します。",
+      "ウ": "インナカム式の当該ポンプでは、対向するプランジャはカムで同時に押されます。一方の吸入中にもう一方が圧送する構造とした点が適切ではありません。",
+      "エ": "要求圧と実際のレール圧を比較し、吸入側のサクションコントロールバルブでポンプに入る燃料量を変えて圧力を調整します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/0621b46549ec8d58e7978553a86770dff7f30cd1ec235f0185e93dd306ea1ee8.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.14 コモンレールの制御とサプライポンプ（公式冊子11ページ）"
+    ],
+    "sourcePages": [
+      11
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 11,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=11",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.14",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "インナカム式の当該ポンプでは、対向するプランジャはカムで同時に押されます。一方の吸入中にもう一方が圧送する構造とした点が適切ではありません。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q15",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 15,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": true,
+    "topicTags": [
+      "スロットル位置センサの接触抵抗と分圧"
+    ],
+    "question": "スロットル位置センサの接触抵抗と分圧。公式問題のNo.15を読み、最も適切なものを選べ。",
+    "choices": {
+      "ア": "正・誤・誤",
+      "イ": "誤・正・誤",
+      "ウ": "正・誤・正",
+      "エ": "誤・正・正"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "choiceExplanations": {
+      "ア": "イの下側抵抗は7.7 kΩで、出力は5×7.7/10.2≒3.77 Vです。ロは約2.78 Vなので正しい記述です。",
+      "イ": "イは約3.77 V、ロは5×7.5/13.5≒2.78 V、ハは5×15/17.5≒4.29 Vです。従って誤・正・誤です。",
+      "ウ": "イは約3.77 Vで誤り、ロは約2.78 Vで正しいです。ハの下側は7.5 kΩと接触抵抗の和の15 kΩになります。",
+      "エ": "イとロは合いますが、ハは約4.29 Vです。4.07 Vとはなりません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/6c5879be56dec715963d763377c67718a33018d69680bfd5d8df7c2c26cb202d.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.15 スロットル位置センサの接触抵抗と分圧（公式冊子12ページ）"
+    ],
+    "sourcePages": [
+      12
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 12,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=12",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.15",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "イは約3.77 V、ロは5×7.5/13.5≒2.78 V、ハは5×15/17.5≒4.29 Vです。従って誤・正・誤です。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q16",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 16,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "ブレーキと駆動系の振動・騒音"
+    ],
+    "question": "ブレーキと駆動系の振動・騒音。公式問題のNo.16を読み、不適切なものを選べ。",
+    "choices": {
+      "ア": "ゴム付きシムの鳴き対策",
+      "イ": "歯のかみ合いで出るガタ打ち",
+      "ウ": "ドライブシャフトの等速性",
+      "エ": "二次偶力の周期"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "choiceExplanations": {
+      "ア": "パッド背面に付けるシムのゴム層が振動を減衰させ、ブレーキ鳴きを抑えます。",
+      "イ": "かみ合い歯数に対応する周波数成分は主にギヤのかみ合い音です。ガタ打ち音はバックラッシュ内で歯面が衝突することで生じます。",
+      "ウ": "等速性は入力軸の角変位に出力軸の角変位がどの程度一致するかを見ます。差があると回転変動が出ます。",
+      "エ": "ジョイント角があるとスパイダを介した二次偶力が生じ、軸1回転当たり2回の変動成分を持ちます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/23c90d2be47d698334497535ad6f501ca3ee3d6f3f35dc0f9cd82c0ead8d5660.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.16 ブレーキと駆動系の振動・騒音（公式冊子13ページ）"
+    ],
+    "sourcePages": [
+      13
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 13,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=13",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.16",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "かみ合い歯数に対応する周波数成分は主にギヤのかみ合い音です。ガタ打ち音はバックラッシュ内で歯面が衝突することで生じます。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q17",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 17,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "エンジンマウントと共鳴・制振材料"
+    ],
+    "question": "エンジンマウントと共鳴・制振材料。公式問題のNo.17を読み、不適切なものを選べ。",
+    "choices": {
+      "ア": "液封マウントの低周波と高周波",
+      "イ": "吸気系レゾネータ",
+      "ウ": "拘束型・非拘束型制振材",
+      "エ": "膜振動とばね上振動"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "choiceExplanations": {
+      "ア": "低周波でオリフィス内を液体が動くことで減衰を得ます。高周波側ではダイヤフラムなどでばね定数上昇を抑えるため、記述は役割を逆にしています。",
+      "イ": "レゾネータは吸気系の共鳴特性を変え、吸気騒音の問題となる周波数の成分を低減します。",
+      "ウ": "非拘束型では制振材の伸縮で振動エネルギーを消費します。拘束型は拘束層を追加し、せん断変形による減衰を利用できます。",
+      "エ": "内外板の局所的なたわみは弾性振動です。ばね上質量の全体の揺れは剛体振動として扱えます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/23c90d2be47d698334497535ad6f501ca3ee3d6f3f35dc0f9cd82c0ead8d5660.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.17 エンジンマウントと共鳴・制振材料（公式冊子13ページ）"
+    ],
+    "sourcePages": [
+      13
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 13,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=13",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.17",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "低周波でオリフィス内を液体が動くことで減衰を得ます。高周波側ではダイヤフラムなどでばね定数上昇を抑えるため、記述は役割を逆にしています。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q18",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 18,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "タイヤ振動と回転バランス"
+    ],
+    "question": "タイヤ振動と回転バランス。公式問題のNo.18を読み、最も適切なものを選べ。",
+    "choices": {
+      "ア": "凹凸を包み込むエンベロープ特性",
+      "イ": "遠心力は回転速度に比例",
+      "ウ": "静止時のダイナミックバランス",
+      "エ": "ランアウトは剛性の均一性"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "choiceExplanations": {
+      "ア": "エンベロープ特性は凹凸をタイヤ形状の変形で吸収する性質です。これが悪いと段差からの突き上げを伝えやすくなります。",
+      "イ": "不釣合い質量による遠心力は角速度の二乗に比例します。回転速度に比例するとした説明は不適切です。",
+      "ウ": "示されているのは静的バランスです。ダイナミックバランスでは回転時の左右の不釣合いによる偶力も扱います。",
+      "エ": "ランアウトは回転時の幾何学的な振れのことです。タイヤの剛性が均一かどうかはユニフォミティで評価します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/23c90d2be47d698334497535ad6f501ca3ee3d6f3f35dc0f9cd82c0ead8d5660.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.18 タイヤ振動と回転バランス（公式冊子13ページ）"
+    ],
+    "sourcePages": [
+      13
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 13,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=13",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.18",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "エンベロープ特性は凹凸をタイヤ形状の変形で吸収する性質です。これが悪いと段差からの突き上げを伝えやすくなります。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q19",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 19,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "差動トランス式EPSトルクセンサ"
+    ],
+    "question": "差動トランス式EPSトルクセンサ。公式問題のNo.19を読み、最も適切なものを選べ。",
+    "choices": {
+      "ア": "中立なのにV₃とV₄が異なる",
+      "イ": "CCWなのにV₁とV₃が図2と異なる",
+      "ウ": "CCWでV₁とV₂が異なる",
+      "エ": "CCWでも中立時波形のまま"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "choiceExplanations": {
+      "ア": "V₃とV₄はセンサとECUのそれぞれで計測しています。間の信号線の断線や接触抵抗を除外できません。",
+      "イ": "CCW時のコイル応答が正常と異なるときは、出力を拘束するような信号線地絡も候補です。記述は地絡を除外しています。",
+      "ウ": "V₁とV₂の測定にはセンサ側とECU側の異なる端子が含まれます。差があれば信号線だけでなくコイルa側の駆動線も確認します。",
+      "エ": "操舵しても両コイルが中立時の特性を示すなら、差動トランスのムービングコアが移動していない可能性があります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/89fabebd51a78d195631b148fad050e49a46f68a356fbe84c767259193fe6baa.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.19 差動トランス式EPSトルクセンサ（公式冊子14ページ）"
+    ],
+    "sourcePages": [
+      14
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 14,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=14",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.19",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "操舵しても両コイルが中立時の特性を示すなら、差動トランスのムービングコアが移動していない可能性があります。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q20",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 20,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": true,
+    "topicTags": [
+      "ばね定数を2倍・質量を半分にした固有振動数"
+    ],
+    "question": "ばね定数を2倍・質量を半分にした固有振動数。公式問題のNo.20を読み、最も適切なものを選べ。",
+    "choices": {
+      "ア": "変化なし",
+      "イ": "1/2倍",
+      "ウ": "2倍",
+      "エ": "4倍"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "choiceExplanations": {
+      "ア": "ばね定数の増加も質量の減少も周波数を上げます。効果が相殺されるわけではありません。",
+      "イ": "質量を半分にすると周波数は上昇します。比の平方根を取るため、元の1/2倍にはなりません。",
+      "ウ": "固有振動数の比は√（2÷0.5）＝2です。ばね定数を質量で割った比の平方根を取ります。",
+      "エ": "ばね定数と質量の比は4倍ですが、固有振動数はその平方根に比例するため2倍です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/d0ef205ebd1602c079bf529350f10114c4119f51b7a82945e55c627239f1979c.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.20 ばね定数を2倍・質量を半分にした固有振動数（公式冊子15ページ）"
+    ],
+    "sourcePages": [
+      15
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 15,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=15",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.20",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "固有振動数の比は√（2÷0.5）＝2です。ばね定数を質量で割った比の平方根を取ります。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q21",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 21,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "4速ATの信号異常時の制御"
+    ],
+    "question": "4速ATの信号異常時の制御。公式問題のNo.21を読み、最も適切なものを選べ。",
+    "choices": {
+      "ア": "誤・正・誤",
+      "イ": "誤・誤・正",
+      "ウ": "正・正・正",
+      "エ": "正・誤・正"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "choiceExplanations": {
+      "ア": "ライン圧の異常でソレノイドをOFFにすると高油圧となり、ハのように変速ショックが増えます。重複レンジ信号のロは正しくありません。",
+      "イ": "イとロのエンジンブレーキ範囲・重複信号優先の説明は該当機のフェイルセーフに合いません。ライン圧ソレノイドをOFFにするハは正しいです。",
+      "ウ": "ハは正しいですが、オーバランクラッチ異常時の効き方やD優先の説明をどちらも正しいとする点が誤りです。",
+      "エ": "ロとハの判定は合いますが、オーバランクラッチのOFF時の解放とエンジンブレーキを述べたイも不適切です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/d0ef205ebd1602c079bf529350f10114c4119f51b7a82945e55c627239f1979c.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.21 4速ATの信号異常時の制御（公式冊子15ページ）"
+    ],
+    "sourcePages": [
+      15
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 15,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=15",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.21",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "イとロのエンジンブレーキ範囲・重複信号優先の説明は該当機のフェイルセーフに合いません。ライン圧ソレノイドをOFFにするハは正しいです。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q22",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 22,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "ABSのFSR・PMR信号の異常検知"
+    ],
+    "question": "ABSのFSR・PMR信号の異常検知。公式問題のNo.22を読み、最も適切なものを選べ。",
+    "choices": {
+      "ア": "FSR停止時の地絡を下降で検出",
+      "イ": "FSR ON・PMR停止時の地絡",
+      "ウ": "FSR駆動中のアース断線を下降で検出",
+      "エ": "PMR駆動中の地絡を下降で検出"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "choiceExplanations": {
+      "ア": "図1でFSR停止時の低電圧域は診断不可です。地絡による低電圧をこの条件では異常として区別できません。",
+      "イ": "図2でPMRの駆動停止条件では、低電圧側が異常検知範囲です。FSRがONで電源供給されているのに地絡で低くなれば検出できます。",
+      "ウ": "コイルのアース線の断線で電流が流れない場合は地絡と同じではありません。下降側を検知するとした説明は回路と合いません。",
+      "エ": "PMR駆動中の正常電圧は低く、図2ではその領域を異常と区別できません。地絡による下降を検知する条件は停止側です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/3396da4d27d590031dc409905d373877250a16cb54e9ffee200eabe5831d781d.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.22 ABSのFSR・PMR信号の異常検知（公式冊子16ページ）"
+    ],
+    "sourcePages": [
+      16
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 16,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=16",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.22",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "図2でPMRの駆動停止条件では、低電圧側が異常検知範囲です。FSRがONで電源供給されているのに地絡で低くなれば検出できます。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q23",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 23,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "誘導式車輪速センサの回転速度と波形"
+    ],
+    "question": "誘導式車輪速センサの回転速度と波形。公式問題のNo.23を読み、最も適切なものを選べ。",
+    "choices": {
+      "ア": "低速イ・高速へ",
+      "イ": "低速ハ・高速ニ",
+      "ウ": "低速へ・高速イ",
+      "エ": "低速ロ・高速ホ"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "choiceExplanations": {
+      "ア": "誘導式では速度が上がるほど振幅と周波数が増します。時間軸が20 msのイよりも、5 msで振幅も大きいへが高速です。",
+      "イ": "振幅だけでなく時間軸も比較します。ハは5 ms目盛なので、20 ms目盛のニを高速側とした組合せは合いません。",
+      "ウ": "へは短い時間軸で振幅が大きいので高速、イは低速です。順序が逆です。",
+      "エ": "コイルが誘導電圧を発生する方式なので、整形される前の出力波形は交流です。矩形波のロやホとは異なります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/b2de4e71bddfdbeca1150ece544e130d7565a9eccbbf2303d11afa0580222469.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.23 誘導式車輪速センサの回転速度と波形（公式冊子17ページ）"
+    ],
+    "sourcePages": [
+      17
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 17,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=17",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.23",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "誘導式では速度が上がるほど振幅と周波数が増します。時間軸が20 msのイよりも、5 msで振幅も大きいへが高速です。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q24",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 24,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": true,
+    "topicTags": [
+      "4音源の音圧レベルの合成"
+    ],
+    "question": "4音源の音圧レベルの合成。公式問題のNo.24を読み、最も適切なものを選べ。",
+    "choices": {
+      "ア": "約48.6 dB",
+      "イ": "約56.6 dB",
+      "ウ": "約59.6 dB",
+      "エ": "約64.0 dB"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "choiceExplanations": {
+      "ア": "合成値は最も大きい単独音源の56 dBより大きくなります。48.6 dBはその条件を満たしません。",
+      "イ": "56.6 dBは48 dBと56 dBを各1個だけ合成した値です。この組が二つあるので、さらに約3 dB加わります。",
+      "ウ": "同じレベルの2音源をそれぞれ合成して51 dBと59 dBです。差8 dBに対応する約0.6 dBを59 dBに足し、約59.6 dBとなります。",
+      "エ": "異なる音源のdB値はそのまま足し合わせません。エネルギーを足した結果は、最も大きい59 dBの組に約0.6 dBを加えた値です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/e488fe7f430b7dfc633d61f7223639d4ccb292968e4f0340a3adcbca6d99fb96.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.24 4音源の音圧レベルの合成（公式冊子18ページ）"
+    ],
+    "sourcePages": [
+      18
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 18,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=18",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.24",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "同じレベルの2音源をそれぞれ合成して51 dBと59 dBです。差8 dBに対応する約0.6 dBを59 dBに足し、約59.6 dBとなります。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q25",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 25,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "スチールベルト式CVTの各油圧弁"
+    ],
+    "question": "スチールベルト式CVTの各油圧弁。公式問題のNo.25を読み、不適切なものを選べ。",
+    "choices": {
+      "ア": "デューティ弁とスリップ制御",
+      "イ": "ON・OFF弁による経路切替",
+      "ウ": "Pレンジの解放と機械式固定",
+      "エ": "クラッチプレッシャを減圧する弁"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "choiceExplanations": {
+      "ア": "デューティ弁はスリップコントロール弁の設定を変え、クラッチ、ブレーキ、ロックアップの作動圧を制御します。",
+      "イ": "ON・OFF弁の切替えで、同じ油圧制御をロックアップ側か前進クラッチ・後退ブレーキ側に振り分けます。",
+      "ウ": "Pでは前進クラッチと後退ブレーキを解放する一方、パーキングポールがギヤにかみ合い動力伝達系を機械的にロックします。",
+      "エ": "クラッチプレッシャバルブが減圧する元圧はラインプレッシャです。既に調整されたクラッチプレッシャを元圧とする記述は誤りです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/e488fe7f430b7dfc633d61f7223639d4ccb292968e4f0340a3adcbca6d99fb96.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.25 スチールベルト式CVTの各油圧弁（公式冊子18ページ）"
+    ],
+    "sourcePages": [
+      18
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 18,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=18",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.25",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "クラッチプレッシャバルブが減圧する元圧はラインプレッシャです。既に調整されたクラッチプレッシャを元圧とする記述は誤りです。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q26",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 26,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "車両の振動現象と共振する部分"
+    ],
+    "question": "車両の振動現象と共振する部分。公式問題のNo.26を読み、不適切なものを選べ。",
+    "choices": {
+      "ア": "シミー",
+      "イ": "サージ",
+      "ウ": "エンジンワインドアップ",
+      "エ": "しゃくり"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "choiceExplanations": {
+      "ア": "中高速走行のステアリング回転方向の振動で、タイヤなどの入力がフロントサスペンションからステアリング系の共振を励起します。",
+      "イ": "定常走行でエンジントルクが変動し、駆動系のねじり共振で車体全体が前後に揺れる現象をサージと呼びます。",
+      "ウ": "加減速時のトルクがエンジンの支持系を動かし、剛体振動による車体の上下の揺れにつながります。",
+      "エ": "アクセルを開閉した直後の衝撃と、駆動系のねじり振動が車体前後方向に続くしゃくりを区別します。表は発生条件と共振系の対応が適切ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/00734b8021be2b665780f8513f9b15a9f6dd70f07645fb84c3f7d990600cf61b.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.26 車両の振動現象と共振する部分（公式冊子19ページ）"
+    ],
+    "sourcePages": [
+      19
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 19,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=19",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.26",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "アクセルを開閉した直後の衝撃と、駆動系のねじり振動が車体前後方向に続くしゃくりを区別します。表は発生条件と共振系の対応が適切ではありません。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q27",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 27,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "SRSとプリテンショナELRベルトの作動"
+    ],
+    "question": "SRSとプリテンショナELRベルトの作動。公式問題のNo.27を読み、不適切なものを選べ。",
+    "choices": {
+      "ア": "アンテナによる乗員検知",
+      "イ": "プリテンショナだけの作動",
+      "ウ": "ロードリミッタ作動開始と底付き",
+      "エ": "側面衝突センサの信号"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "choiceExplanations": {
+      "ア": "乗員がいるとアンテナの出力が変化します。複数のアンテナの出力比を用いて乗員の大きさを判定する方式です。",
+      "イ": "前面衝突の程度や装着の状態に応じて、エアバッグが展開しなくてもプリテンショナのみを作動させる方式があります。",
+      "ウ": "荷重制限は、ロッキング部が拘束された状態でトーションバーがねじれてベルトを繰り出すことで始まります。機構の底付きを作動開始とする説明は誤りです。",
+      "エ": "側面衝突の加速度はセンサで電気信号になり、フィルタを経て衝突判定回路で評価されます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/00734b8021be2b665780f8513f9b15a9f6dd70f07645fb84c3f7d990600cf61b.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.27 SRSとプリテンショナELRベルトの作動（公式冊子19ページ）"
+    ],
+    "sourcePages": [
+      19
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 19,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=19",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.27",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "荷重制限は、ロッキング部が拘束された状態でトーションバーがねじれてベルトを繰り出すことで始まります。機構の底付きを作動開始とする説明は誤りです。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q28",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 28,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "車両安定制御の油路と圧力検出"
+    ],
+    "question": "車両安定制御の油路と圧力検出。公式問題のNo.28を読み、最も適切なものを選べ。",
+    "choices": {
+      "ア": "正・誤・誤",
+      "イ": "誤・正・正",
+      "ウ": "正・正・誤",
+      "エ": "誤・誤・正"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "choiceExplanations": {
+      "ア": "非通電時はマスタシリンダカット弁が開き、吸入弁は閉じます。補助変圧室に入るのは大気で、説明された二系統のマスタ圧センサの構成でもありません。",
+      "イ": "非通電時の二つの弁の状態を示したイは正しいです。ロでは補助変圧室へ大気を入れ、ハのセンサ構成も合いません。",
+      "ウ": "イは正しくハは誤りですが、ロも補助変圧室に負圧を導入するという点が誤りです。",
+      "エ": "イは弁の正常な非通電状態を示しています。一方、ハの二つのマスタ圧センサを内蔵するという説明はこの装置に合いません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/6d44c555df238291ed926a32288468b01626d471e2bff8d0577239dc431e9922.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.28 車両安定制御の油路と圧力検出（公式冊子20ページ）"
+    ],
+    "sourcePages": [
+      20
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 20,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=20",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.28",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "非通電時はマスタシリンダカット弁が開き、吸入弁は閉じます。補助変圧室に入るのは大気で、説明された二系統のマスタ圧センサの構成でもありません。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q29",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 29,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "オートエアコンの室温・日射・冷媒圧センサ"
+    ],
+    "question": "オートエアコンの室温・日射・冷媒圧センサ。公式問題のNo.29を読み、不適切なものを選べ。",
+    "choices": {
+      "ア": "アスピレータ型は専用ファンで吸込み",
+      "イ": "プルダウン日射センサの出力",
+      "ウ": "ストレンゲージによる冷媒圧計測",
+      "エ": "光量と日射センサの抵抗"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "choiceExplanations": {
+      "ア": "アスピレータ型は空調ダクトの気流で生じる負圧を使って車室内の空気を吸い込みます。モータとファンで強制吸入する方式とは区別します。",
+      "イ": "光量が多くなると光電流が増え、プルダウン抵抗での電圧降下が増えるので信号電圧が上がります。",
+      "ウ": "ひずみに応じた出力電圧は圧力の変化を連続量として表し、ECUで処理できる信号に変換します。",
+      "エ": "受光量が増すと光電流が増えて見かけの抵抗が小さくなります。日射を受けやすい場所にセンサを設けます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/6d44c555df238291ed926a32288468b01626d471e2bff8d0577239dc431e9922.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.29 オートエアコンの室温・日射・冷媒圧センサ（公式冊子20ページ）"
+    ],
+    "sourcePages": [
+      20
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 20,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=20",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.29",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "アスピレータ型は空調ダクトの気流で生じる負圧を使って車室内の空気を吸い込みます。モータとファンで強制吸入する方式とは区別します。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q30",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 30,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "右旋回でのアンダーステア抑制"
+    ],
+    "question": "右旋回でのアンダーステア抑制。公式問題のNo.30を読み、最も適切なものを選べ。",
+    "choices": {
+      "ア": "外側前輪の制動・右向き",
+      "イ": "外側前輪の制動・左向き",
+      "ウ": "複数輪の制動・右向き",
+      "エ": "複数輪の制動・左向き"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "choiceExplanations": {
+      "ア": "実際のヨーが不足しているため右向きの補正が必要です。ただし左前輪だけの制動では図に示す右旋回の補正を作れません。",
+      "イ": "外側前輪を制動して左向きの補正を加える作動は右向きの回頭を抑える方向です。実際のヨーが目標より小さい条件に合いません。",
+      "ウ": "右旋回でヨーが不足するとアンダーステアと判断します。図3のように各輪の制動力を調整し、右向きのヨーモーメントを加えます。",
+      "エ": "複数輪のブレーキを使っても、図の左向きの補正では右旋回時のヨー不足を補えません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/504080da39def863ad0fadf436f87fb5e2b5d44e6c93513dc1ee8077c3997fff.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.30 右旋回でのアンダーステア抑制（公式冊子21ページ）"
+    ],
+    "sourcePages": [
+      21
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 21,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=21",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.30",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "右旋回でヨーが不足するとアンダーステアと判断します。図3のように各輪の制動力を調整し、右向きのヨーモーメントを加えます。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q31",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 31,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "二つの分岐回路とヒューズの溶断"
+    ],
+    "question": "二つの分岐回路とヒューズの溶断。公式問題のNo.31を読み、最も適切なものを選べ。",
+    "choices": {
+      "ア": "スイッチ1でヒューズ2が溶断",
+      "イ": "スイッチ1でヒューズ3が溶断",
+      "ウ": "スイッチ3を入れるとヒューズ2が溶断",
+      "エ": "スイッチ2を入れるとヒューズ3が溶断"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "choiceExplanations": {
+      "ア": "BとCをつないでも負荷2は残ります。BとHの短絡ならスイッチ2が開いたままでもヒューズ2から直接アースへ流れます。",
+      "イ": "GとHをつないでも負荷3は回路に残ります。FとHの短絡なら負荷を迂回するのでヒューズ3の溶断原因になります。",
+      "ウ": "BとGが短絡しているとスイッチ3を閉じた時点でヒューズ2からアースへの経路ができます。CとHの短絡ならスイッチ2を入れた段階で溶断します。",
+      "エ": "CとFがつながるだけでは、スイッチ2を入れたときにヒューズ3の電流が直接アースへ流れる経路になりません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/e441fae2f7ab2ece4b04f85a6c34f6f4ce3924649d7a46f310e54e8ee8934645.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.31 二つの分岐回路とヒューズの溶断（公式冊子22ページ）"
+    ],
+    "sourcePages": [
+      22
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 22,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=22",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.31",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "BとGが短絡しているとスイッチ3を閉じた時点でヒューズ2からアースへの経路ができます。CとHの短絡ならスイッチ2を入れた段階で溶断します。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q32",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 32,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "始動不能時のセンサ・燃料・点火系診断"
+    ],
+    "question": "始動不能時のセンサ・燃料・点火系診断。公式問題のNo.32を読み、不適切なものを選べ。",
+    "choices": {
+      "ア": "初爆はあるが完爆しない場合",
+      "イ": "水温センサハーネス端子間5 V",
+      "ウ": "燃料ポンプ端子に12 V",
+      "エ": "圧力センサ取外し後も0 kPa"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "choiceExplanations": {
+      "ア": "初爆しても連続燃焼しない原因には点火プラグや燃圧調整の不良も含まれます。これらを除外する記述は不適切です。",
+      "イ": "コネクタを外してハーネスの電源・アース側に正規の5 Vが確認できれば、この条件で双方の導通は保たれていると判断できます。",
+      "ウ": "電源端子に12 Vがあってもポンプ内部やアース系が不良なら駆動しません。燃料ラインの異常でもインジェクタに燃圧が届きません。",
+      "エ": "センサを外しても最小値に張り付くなら、ハーネス側の信号線地絡など、センサ以外が入力を低く固定している可能性があります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/e441fae2f7ab2ece4b04f85a6c34f6f4ce3924649d7a46f310e54e8ee8934645.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.32 始動不能時のセンサ・燃料・点火系診断（公式冊子22ページ）"
+    ],
+    "sourcePages": [
+      22
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 22,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=22",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.32",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "初爆しても連続燃焼しない原因には点火プラグや燃圧調整の不良も含まれます。これらを除外する記述は不適切です。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q33",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 33,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": true,
+    "topicTags": [
+      "CAN通信の線間抵抗と対地抵抗"
+    ],
+    "question": "CAN通信の線間抵抗と対地抵抗。公式問題のNo.33を読み、不適切なものを選べ。",
+    "choices": {
+      "ア": "AB 60 Ω・Cは0 Ω・Dは60 Ω",
+      "イ": "AB 120 Ω・CとDは無限大",
+      "ウ": "AB 0 Ω・CとDは無限大",
+      "エ": "AB 60 Ω・CとDは無限大"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "choiceExplanations": {
+      "ア": "Cが0 ΩならCAN-H側が地絡しています。CAN-LのDからは2個の終端抵抗を並列に通るため60 Ωになります。",
+      "イ": "120 Ωは測定点から片側の終端抵抗しか見えない値です。CAN-HでもCAN-Lでも、片側の終端に向かう線が断線すれば起こり得ます。",
+      "ウ": "地絡がなく線間が0 ΩならCAN-HとCAN-Lの線間短絡を疑います。終端抵抗の断線は線間抵抗を上げる方向です。",
+      "エ": "主バスの両端がつながっていれば60 Ωとなります。ECU1に至る支線の断線は主バスの終端抵抗測定では判別できません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/817caa3c325f74ba07fe5fb54f992cabe47203c3231c5e341004e058d3d40dc4.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.33 CAN通信の線間抵抗と対地抵抗（公式冊子23ページ）"
+    ],
+    "sourcePages": [
+      23
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 23,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=23",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.33",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "120 Ωは測定点から片側の終端抵抗しか見えない値です。CAN-HでもCAN-Lでも、片側の終端に向かう線が断線すれば起こり得ます。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q34",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 34,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "インジェクタが12 Vに固定したときの診断"
+    ],
+    "question": "インジェクタが12 Vに固定したときの診断。公式問題のNo.34を読み、最も適切なものを選べ。",
+    "choices": {
+      "ア": "ECU内部不良",
+      "イ": "インジェクタからECUの配線抵抗増大",
+      "ウ": "ニードルバルブの閉固着",
+      "エ": "a点とインジェクタの配線抵抗増大"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "choiceExplanations": {
+      "ア": "正常なら駆動時にECUのトランジスタがV₁をアースへ引き下げます。回転を変えても12 VのままならECU内の駆動回路不良が候補です。",
+      "イ": "V₁はECUの駆動出力にあります。そこまでの負荷側配線に抵抗があっても、正常なスイッチの駆動時にはECU端子は低くなります。",
+      "ウ": "ニードルの機械的固着で燃料が出なくても、電気的にコイルを駆動すればV₁にスイッチング波形が現れます。",
+      "エ": "上流の電源線の抵抗が増えると通電時の電圧降下が問題になります。正常なECUの引下げが現れず常時12 Vになる説明にはなりません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/e40955e4b7638346a41e21d409445d6f91f74dd07bedbba10628d82cca37624e.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.34 インジェクタが12 Vに固定したときの診断（公式冊子24ページ）"
+    ],
+    "sourcePages": [
+      24
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 24,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=24",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.34",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "正常なら駆動時にECUのトランジスタがV₁をアースへ引き下げます。回転を変えても12 VのままならECU内の駆動回路不良が候補です。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q35",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 35,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "カム角センサの両端波形からの診断"
+    ],
+    "question": "カム角センサの両端波形からの診断。公式問題のNo.35を読み、不適切なものを選べ。",
+    "choices": {
+      "ア": "端子②④で0 V・アース断線なし",
+      "イ": "端子⑤⑦で0 V・センサ単体正常",
+      "ウ": "コネクタB取外しで波形回復",
+      "エ": "端子②④で0 V・下流信号線の断線なし"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "choiceExplanations": {
+      "ア": "点検はセンサ近くの信号・アース間で行います。信号の地絡で波形が消え、下流のアース線がただ断線しただけではセンサ出力は消えません。",
+      "イ": "センサ単体に規定波形があっても、ECU側へ伝わるまでの信号線の断線があれば端子⑤⑦では測れません。信号線を除外できません。",
+      "ウ": "Bを外すと正しい波形が戻るなら、センサとハーネス側まで信号は来ています。接続時だけ出力を低くするECU側の短絡を疑います。",
+      "エ": "端子②④はセンサに近い側なので、下流が開路してもセンサが正常なら波形を測れます。そこで0 Vならセンサ自体などを点検します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/d5c6cf838f0716ae916fb595ba9bcb3c98845fcd56d5f76e5901b2c8af6500e2.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.35 カム角センサの両端波形からの診断（公式冊子25ページ）"
+    ],
+    "sourcePages": [
+      25
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 25,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=25",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.35",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "センサ単体に規定波形があっても、ECU側へ伝わるまでの信号線の断線があれば端子⑤⑦では測れません。信号線を除外できません。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q36",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 36,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "ATオーバドライブスイッチの電圧点検"
+    ],
+    "question": "ATオーバドライブスイッチの電圧点検。公式問題のNo.36を読み、不適切なものを選べ。",
+    "choices": {
+      "ア": "開指示でV₃なし・V₅取外しで回復",
+      "イ": "閉指示でV₅に電圧",
+      "ウ": "コネクタAを外しランプが消灯",
+      "エ": "V₂とV₃に電圧・V₄はなし"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "choiceExplanations": {
+      "ア": "開く指示なのにV₃が低く、スイッチ端子V₅を外すと回復するなら、スイッチ接点の固着などで信号線が接地されていたと考えられます。",
+      "イ": "スイッチを閉じたときV₅はアース電位になるはずです。電圧があれば接点が閉じないか、V₆を含む接地側の断線を疑います。",
+      "ウ": "コネクタAを外してECUを切り離した状態で、ランプ両端に電位差があるのに点かないならランプ自体の不良が考えられます。",
+      "エ": "Aを切ると配線側への給電はランプ側のV₂が起点です。V₂に電圧があるのにその先のV₄にない場合、V₂とV₄間の断線を除外できません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/efd620fad75077c847d96ee4ff8dd0569618f1db618edb099926fb68a4604d87.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.36 ATオーバドライブスイッチの電圧点検（公式冊子26ページ）"
+    ],
+    "sourcePages": [
+      26
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 26,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=26",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.36",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "Aを切ると配線側への給電はランプ側のV₂が起点です。V₂に電圧があるのにその先のV₄にない場合、V₂とV₄間の断線を除外できません。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q37",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 37,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "EPSモード切替スイッチの信号診断"
+    ],
+    "question": "EPSモード切替スイッチの信号診断。公式問題のNo.37を読み、最も適切なものを選べ。",
+    "choices": {
+      "ア": "標準・軽めでB信号が低い",
+      "イ": "重めでAが低く機能しない",
+      "ウ": "どちらの切替でも全信号が低い",
+      "エ": "個別信号が低くアース線断線と判断"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "choiceExplanations": {
+      "ア": "B信号が低いままなら配線地絡やECUのほか、スイッチの接点が接地側に固着している可能性もあります。",
+      "イ": "モード切替えに応じてA信号がECU端子まで正常に変化するなら、重めモード不作動をこのスイッチの不良とする根拠が弱くなります。",
+      "ウ": "標準時に両線が高く、片方だけを接地するはずのモードで両線とも低くなるなら、AとBが短絡して同じ電位になっています。",
+      "エ": "アース線が断線したときはモードを切り替えても信号線を低くできません。B側が低くなる測定結果と合いません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/88bdf10f5c8498db06c003eb6ddef5c18d795b433af7bafa4b6251c415631885.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.37 EPSモード切替スイッチの信号診断（公式冊子27ページ）"
+    ],
+    "sourcePages": [
+      27
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 27,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=27",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.37",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "標準時に両線が高く、片方だけを接地するはずのモードで両線とも低くなるなら、AとBが短絡して同じ電位になっています。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q38",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 38,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "ABSの診断コードと再現条件"
+    ],
+    "question": "ABSの診断コードと再現条件。公式問題のNo.38を読み、最も適切なものを選べ。",
+    "choices": {
+      "ア": "車輪速センサコードが再現しない",
+      "イ": "マイコン診断と連続作動",
+      "ウ": "4輪を同じサイズに交換",
+      "エ": "パルサ診断と警告灯の消灯"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "choiceExplanations": {
+      "ア": "一度記録された車輪速系統のコードが、再始動後に所定車速以上で再現しなければ、一時的な外来ノイズによる誤検知が候補です。",
+      "イ": "マイコン診断コードには機種ごとの検出条件があります。ABSの連続作動による検出を一律に除外する説明は適切ではありません。",
+      "ウ": "全輪を同じ寸法に変更すると4輪間の回転数比は保たれます。異径タイヤ診断は主に車輪間の差を検出します。",
+      "エ": "信号が瞬時に戻ったことだけで消灯を判断できません。パルサ異常後は所定の再確認条件と警告保持条件があるためです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/88bdf10f5c8498db06c003eb6ddef5c18d795b433af7bafa4b6251c415631885.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.38 ABSの診断コードと再現条件（公式冊子27ページ）"
+    ],
+    "sourcePages": [
+      27
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 27,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=27",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.38",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "一度記録された車輪速系統のコードが、再始動後に所定車速以上で再現しなければ、一時的な外来ノイズによる誤検知が候補です。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q39",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 39,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "エアミックスモータの電源と位置検出"
+    ],
+    "question": "エアミックスモータの電源と位置検出。公式問題のNo.39を読み、不適切なものを選べ。",
+    "choices": {
+      "ア": "HOT指示時にV₁がない",
+      "イ": "COLD指示時の地絡切分け",
+      "ウ": "位置検出信号とプルアップ",
+      "エ": "V₈に電圧・V₅を外してもV₁₀が低い"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "choiceExplanations": {
+      "ア": "M–HOT指示で駆動側V₁に電圧がなければ、ECU出力が出ていないか、出力後の線が地絡で引き下げられています。",
+      "イ": "モータ側V₇を外しても低く、ECU出力側を線から切り離すと電圧が出るなら、切り離したV₂とV₇の間の地絡が疑われます。",
+      "ウ": "位置検出の出力はモータ側で確認します。ECUの入力を外した状態では内部プルアップの5 Vが現れるはずです。",
+      "エ": "V₅端子を外しても、モータ側V₁₀から切り離し点までの線が車体に地絡していれば低電位のままです。この地絡は除外できません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/1727ac9a7ffca0fe7b01399d193a63cfb79a224e182fde6ee0f50c5a52b115a7.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.39 エアミックスモータの電源と位置検出（公式冊子28ページ）"
+    ],
+    "sourcePages": [
+      28
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 28,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=28",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.39",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "V₅端子を外しても、モータ側V₁₀から切り離し点までの線が車体に地絡していれば低電位のままです。この地絡は除外できません。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q40",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 40,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": true,
+    "topicTags": [
+      "車速と減速比から求める振動周波数"
+    ],
+    "question": "車速と減速比から求める振動周波数。公式問題のNo.40を読み、不適切なものを選べ。",
+    "choices": {
+      "ア": "11 Hzはタイヤ不釣合い",
+      "イ": "33 Hzはジョイント角",
+      "ウ": "45 Hzはプロペラシャフト不釣合い",
+      "エ": "68 Hzはエンジントルク変動"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "choiceExplanations": {
+      "ア": "100 km/hは約27.78 m/sです。タイヤ周長2π×0.4 mで割ると回転は約11 Hzとなり、一次の不釣合いと合います。",
+      "イ": "トリポード形のジョイントでは三次の成分が現れることがあります。タイヤ・ドライブシャフトの回転周波数約11 Hzの3倍は33 Hzです。",
+      "ウ": "プロペラシャフト回転はタイヤの約11 Hzに最終減速比4.111を掛けた約45 Hzです。不釣合いは回転の一次成分に現れます。",
+      "エ": "エンジン回転は約45×0.752＝34 Hzです。4ストローク6気筒では1回転当たり3回の燃焼なので、主なトルク変動は約102 Hzです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/5c06d222a708f4d266f7208f0b9291cb5ea620453ce0b21d134202d6c513f55f.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.40 車速と減速比から求める振動周波数（公式冊子29ページ）"
+    ],
+    "sourcePages": [
+      29
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 29,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=29",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.40",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "エンジン回転は約45×0.752＝34 Hzです。4ストローク6気筒では1回転当たり3回の燃焼なので、主なトルク変動は約102 Hzです。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q41",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 41,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "整備作業の災害防止とハインリッヒの考え方"
+    ],
+    "question": "整備作業の災害防止とハインリッヒの考え方。公式問題のNo.41を読み、最も適切なものを選べ。",
+    "choices": {
+      "ア": "整理の定義",
+      "イ": "1対29対300の内訳",
+      "ウ": "間接原因は個人の努力で除去",
+      "エ": "直接原因の除去"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "choiceExplanations": {
+      "ア": "置き場所・置き方を決めてすぐ使えるようにするのは整頓です。整理は必要な物と不要な物を分けることです。",
+      "イ": "1は重い災害、29は軽い災害、300は傷害のない事故に相当します。300を安全が確保された事例とする説明は誤りです。",
+      "ウ": "間接原因には設備や管理、教育など個人だけで是正できない要因もあります。",
+      "エ": "災害を防ぐには、発生へ直接つながる不安全な行動や状態を取り除くことが重要です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/5c06d222a708f4d266f7208f0b9291cb5ea620453ce0b21d134202d6c513f55f.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.41 整備作業の災害防止とハインリッヒの考え方（公式冊子29ページ）"
+    ],
+    "sourcePages": [
+      29
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 29,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=29",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.41",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "災害を防ぐには、発生へ直接つながる不安全な行動や状態を取り除くことが重要です。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q42",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 42,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "整備工場の廃棄物・騒音・排水管理"
+    ],
+    "question": "整備工場の廃棄物・騒音・排水管理。公式問題のNo.42を読み、不適切なものを選べ。",
+    "choices": {
+      "ア": "廃不凍液の処理とマニフェスト",
+      "イ": "廃油缶・シンナーへの二法一律適用",
+      "ウ": "騒音源と近隣対策",
+      "エ": "油水分離槽の清掃"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "choiceExplanations": {
+      "ア": "不凍液は排水に流さず、産業廃棄物として性状に応じて扱います。委託処理ではマニフェストで移動・処理を確認します。",
+      "イ": "廃油缶や廃溶剤の委託処理は廃棄物処理法に従います。排出されたすべての品目に資源有効利用促進法で同じ処理義務が課されるという記述は不適切です。",
+      "ウ": "排気音、空気圧縮機、洗浄機などが周囲の生活環境に影響するため、該当する規制や地域の基準を確認します。",
+      "エ": "油水分離槽で工場排水から油分を取り除き、槽内の汚泥は定期的に回収して適切に処理します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/5c06d222a708f4d266f7208f0b9291cb5ea620453ce0b21d134202d6c513f55f.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.42 整備工場の廃棄物・騒音・排水管理（公式冊子29ページ）"
+    ],
+    "sourcePages": [
+      29
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 29,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=29",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.42",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "廃油缶や廃溶剤の委託処理は廃棄物処理法に従います。排出されたすべての品目に資源有効利用促進法で同じ処理義務が課されるという記述は不適切です。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q43",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 43,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "自動車リサイクル制度と関連事業者"
+    ],
+    "question": "自動車リサイクル制度と関連事業者。公式問題のNo.43を読み、最も適切なものを選べ。",
+    "choices": {
+      "ア": "二輪は対象、小型特殊は対象外",
+      "イ": "関連事業者の登録・許可機関",
+      "ウ": "電子マニフェストと料金請求",
+      "エ": "フロン類回収業者の役割"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "choiceExplanations": {
+      "ア": "自動車リサイクル法では二輪車なども適用除外です。大型・小型特殊だけが対象外という説明ではありません。",
+      "イ": "関連事業者は事業の区分に応じ都道府県知事等の登録・許可を受けます。国土交通大臣をその登録・許可先とする説明は不適切です。",
+      "ウ": "電子マニフェストは引取り・引渡し報告を記録して処理状況を追跡します。料金請求の証明を主機能とする説明は合いません。",
+      "エ": "フロン類回収業者は登録を受け、基準に従って回収したフロン類を自動車メーカーや輸入業者へ引き渡します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/0023cba050edd7916d4a260638e5c2c4b76f4c6072a55b74d367825037cbe937.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.43 自動車リサイクル制度と関連事業者（公式冊子30ページ）"
+    ],
+    "sourcePages": [
+      30
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 30,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=30",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.43",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "フロン類回収業者は登録を受け、基準に従って回収したフロン類を自動車メーカーや輸入業者へ引き渡します。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q44",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 44,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "自動車の資源有効利用と3R"
+    ],
+    "question": "自動車の資源有効利用と3R。公式問題のNo.44を読み、不適切なものを選べ。",
+    "choices": {
+      "ア": "エンジン構造部材のアルミ化",
+      "イ": "熱可塑性樹脂の利用",
+      "ウ": "エンジン・変速機のリビルト",
+      "エ": "損傷バンパの回収"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "choiceExplanations": {
+      "ア": "アルミ化の代表目的は部品の軽量化です。これを試験の区分で部材の耐久性向上の事例とした点が不適切です。",
+      "イ": "熱可塑性樹脂は加熱して成形し直せるため、材料を再利用しやすくする設計に当たります。",
+      "ウ": "回収したエンジンや変速機を再生して供給すると、新品の部品に置き換えずに既存部品を活用できます。",
+      "エ": "損傷バンパを用途に応じた経路で回収すると、樹脂を再生材として別の製品に使いやすくなります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/0023cba050edd7916d4a260638e5c2c4b76f4c6072a55b74d367825037cbe937.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.44 自動車の資源有効利用と3R（公式冊子30ページ）"
+    ],
+    "sourcePages": [
+      30
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 30,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=30",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.44",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "アルミ化の代表目的は部品の軽量化です。これを試験の区分で部材の耐久性向上の事例とした点が不適切です。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q45",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 45,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": true,
+    "topicTags": [
+      "指定数量の倍数と保管内容変更"
+    ],
+    "question": "指定数量の倍数と保管内容変更。公式問題のNo.45を読み、不適切なものを選べ。",
+    "choices": {
+      "ア": "ブレーキ液を800 Lに減量",
+      "イ": "エンジン油を1,400 Lに増量",
+      "ウ": "ガソリンを30 Lに増量",
+      "エ": "灯油100 Lを同量の軽油に置換"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "choiceExplanations": {
+      "ア": "ブレーキ液の減量で指定数量の倍数は0.95から0.90へ下がります。指定数量未満のため市町村条例の反映が必要です。",
+      "イ": "第4石油類のエンジン油200 Lの追加は200/6,000倍です。合計は約0.98なので指定数量未満です。",
+      "ウ": "第1石油類のガソリン10 Lの追加は0.05倍で、合計が1.00倍になります。この場合は消防法に基づく手続きの対象です。",
+      "エ": "灯油と軽油はともに非水溶性の第2石油類です。100 Lを置き換えても倍数の合計0.95は変わりません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/0023cba050edd7916d4a260638e5c2c4b76f4c6072a55b74d367825037cbe937.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.45 指定数量の倍数と保管内容変更（公式冊子30ページ）"
+    ],
+    "sourcePages": [
+      30
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 30,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=30",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.45",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "灯油と軽油はともに非水溶性の第2石油類です。100 Lを置き換えても倍数の合計0.95は変わりません。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q46",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 46,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "小型四輪車の後退灯などの取付基準"
+    ],
+    "question": "小型四輪車の後退灯などの取付基準。公式問題のNo.46を読み、不適切なものを選べ。",
+    "choices": {
+      "ア": "補助制動灯の兼用と高さ",
+      "イ": "尾灯の照射方向と外端",
+      "ウ": "後退灯の上縁1.25 m",
+      "エ": "車幅灯の位置と作動表示"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "choiceExplanations": {
+      "ア": "補助制動灯を尾灯と兼用せず、下縁を所定位置以上かつ制動灯の上縁を含む高さ以上に設けます。",
+      "イ": "尾灯は後方に向け、両側にある場合は最外側の照明部を車体の最外側から400 mm以内に納めます。",
+      "ウ": "後退灯は点滅させず、照明部上縁は地上1.20 m以下、下縁は0.25 m以上です。1.25 m以下とする記述は誤りです。",
+      "エ": "車幅灯の照明部を最外側から400 mm以内に設け、運転者が点灯操作状態を確認できるようにします。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/063f95ac60f593f20c82b1dd5d57b79f2c2fbeac5fed228cb5be734f08566e4d.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.46 小型四輪車の後退灯などの取付基準（公式冊子31ページ）"
+    ],
+    "sourcePages": [
+      31
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 31,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=31",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.46",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "後退灯は点滅させず、照明部上縁は地上1.20 m以下、下縁は0.25 m以上です。1.25 m以下とする記述は誤りです。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q47",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 47,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": true,
+    "topicTags": [
+      "特定整備事業場の従業員と整備士の基準"
+    ],
+    "question": "特定整備事業場の従業員と整備士の基準。公式問題のNo.47を読み、最も適切なものを選べ。",
+    "choices": {
+      "ア": "1人・2人",
+      "イ": "1人・3人",
+      "ウ": "2人・2人",
+      "エ": "2人・3人"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "choiceExplanations": {
+      "ア": "従業員の最低数は2人です。9人の事業場なら整備士は4分の1以上で、2人では不足します。",
+      "イ": "9人に対する有資格者の数は3人で正しいですが、従業員の最低数を1人とする点が誤りです。",
+      "ウ": "従業員の最低数2人は合います。従業員9人の4分の1は2.25人で、有資格者2人では基準に達しません。",
+      "エ": "特定整備に従事する従業員が2人以上必要です。従業員が9人の事業場では、整備士資格を持つ者が少なくとも3人必要です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/063f95ac60f593f20c82b1dd5d57b79f2c2fbeac5fed228cb5be734f08566e4d.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.47 特定整備事業場の従業員と整備士の基準（公式冊子31ページ）"
+    ],
+    "sourcePages": [
+      31
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 31,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=31",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.47",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "特定整備に従事する従業員が2人以上必要です。従業員が9人の事業場では、整備士資格を持つ者が少なくとも3人必要です。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q48",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 48,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "自動車寸法を測定する際の状態"
+    ],
+    "question": "自動車寸法を測定する際の状態。公式問題のNo.48を読み、不適切なものを選べ。",
+    "choices": {
+      "ア": "空車状態",
+      "イ": "車外の鏡やアンテナを取り付けた状態",
+      "ウ": "走行時に使わない装置は格納",
+      "エ": "走行時の使用状態と例外"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "choiceExplanations": {
+      "ア": "寸法は積載による車両姿勢の変化を避けるため、所定の空車状態を基準とします。",
+      "イ": "寸法の測定では、ここで列挙した後写鏡や後方等確認装置などを取り外した状態として扱います。取り付けたままとする記述が誤りです。",
+      "ウ": "はしごややぐらのように走行時に格納する装置は、格納した状態で測定します。",
+      "エ": "走行中も状態が変わる装置は使用される状態で確認します。ただし、開閉式の窓など設問の例外には閉鎖または格納の状態を用います。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/6558f47810a11f008c294450f3542ac0a6a466a02fb41827f922d52902d6b71c.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.48 自動車寸法を測定する際の状態（公式冊子32ページ）"
+    ],
+    "sourcePages": [
+      32
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 32,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=32",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.48",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "寸法の測定では、ここで列挙した後写鏡や後方等確認装置などを取り外した状態として扱います。取り付けたままとする記述が誤りです。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q49",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 49,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "指定整備記録簿の保存"
+    ],
+    "question": "指定整備記録簿の保存。公式問題のNo.49を読み、最も適切なものを選べ。",
+    "choices": {
+      "ア": "検査の日から2年",
+      "イ": "記載の日から2年",
+      "ウ": "検査の日から3年",
+      "エ": "記載の日から3年"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "choiceExplanations": {
+      "ア": "2年間という保存期間は合いますが、起算日は検査日ではなく記録簿への記載日です。",
+      "イ": "指定整備記録簿は記載した日から2年間保存します。保存期間と起算日の両方が合っています。",
+      "ウ": "保存の起算日を検査日とする点も、保存期間を3年とする点も法令と合いません。",
+      "エ": "起算日は記載日で合っていますが、所定の保存期間は3年ではなく2年です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/6558f47810a11f008c294450f3542ac0a6a466a02fb41827f922d52902d6b71c.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.49 指定整備記録簿の保存（公式冊子32ページ）"
+    ],
+    "sourcePages": [
+      32
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 32,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=32",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.49",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "指定整備記録簿は記載した日から2年間保存します。保存期間と起算日の両方が合っています。"
+  },
+  {
+    "id": "jidosha-2022-second-1-small-written-q50",
+    "exam": "jidosha-1-small-written",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "second",
+    "originalJaspaTerm": "second",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "qNumber": 50,
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2023-03-26",
+    "difficulty": 4,
+    "isCalculation": false,
+    "topicTags": [
+      "自家用貨物自動車等の6か月ごとの点検"
+    ],
+    "question": "自家用貨物自動車等の6か月ごとの点検。公式問題のNo.50を読み、最も適切なものを選べ。",
+    "choices": {
+      "ア": "原動機の低速・加速状態",
+      "イ": "ショックアブソーバの油漏れ・損傷",
+      "ウ": "ブレーキホース・パイプ",
+      "エ": "マフラの機能"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "choiceExplanations": {
+      "ア": "原動機本体の低速および加速の状態は、この車種別表の6か月ごとの列にはありません。",
+      "イ": "ショックアブソーバの油漏れや損傷は、6か月ごとの欄ではなく12か月ごとの欄にあります。",
+      "ウ": "制動装置のホース・パイプの漏れ、損傷、取付状態は、自家用貨物自動車等で6か月ごとに点検します。",
+      "エ": "マフラの機能は、設問の自家用貨物自動車等の6か月ごとの点検項目ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/automotive/6558f47810a11f008c294450f3542ac0a6a466a02fb41827f922d52902d6b71c.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度第2回 一級小型自動車整備士（筆記） No.50 自家用貨物自動車等の6か月ごとの点検（公式冊子32ページ）"
+    ],
+    "sourcePages": [
+      32
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 32,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf#page=32",
+        "pdfSha256": "7349efc61fc0e919f252400824d66adb6baf4f67478a009715214d2ac7ddcacf"
+      }
+    ],
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_1k.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2022/20230326_ka1.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和4年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.50",
+    "license": "JASPA-owner-authorized",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "explanation": "制動装置のホース・パイプの漏れ、損傷、取付状態は、自家用貨物自動車等で6か月ごとに点検します。"
+  }
+]
