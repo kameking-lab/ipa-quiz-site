@@ -8,6 +8,7 @@ import { AUTOMOTIVE_QUESTIONS, getAutomotiveQuestions } from "@/data/questions/a
 import metadata from "@/data/questions/automotive/qualifications.json";
 import reviewed from "@/data/questions/automotive/reviewed.json";
 import priorSittings from "@/data/questions/automotive/prior-sittings.json";
+import written2023 from "@/data/questions/automotive/1-small-written-2023.json";
 import recovery from "@/data/qualification-staging/automotive/latest-two/qa/lq1b-recovery-ledger.json";
 import continuation from "@/data/qualification-staging/automotive/latest-two/qa/lq1c-progress.json";
 import continuationCandidates from "@/data/qualification-staging/automotive/latest-two/qa/lq1c-candidates.json";
@@ -53,19 +54,19 @@ describe("recovered automotive release", () => {
     const recoveredCodes = new Set(metadata.map(row => row.exam));
     const recoveredCards = [...directory.featured, ...directory.compact].filter(card => recoveredCodes.has(card.key));
     expect(recoveredCards).toHaveLength(11);
-    expect(recoveredCards.reduce((sum, card) => sum + card.questionCount, 0)).toBe(recovery.releaseOriginals + priorSittings.length);
+    expect(recoveredCards.reduce((sum, card) => sum + card.questionCount, 0)).toBe(metadata.reduce((sum, row) => sum + row.reviewed, 0));
     for (const row of metadata) {
       const exam = row.exam as AutomotiveExamCode;
       const questions = getAutomotiveQuestions(exam);
+      const practiceQuestions = questions.filter(isPracticeReadyQuestion);
       expect(isExamPublished(exam), exam).toBe(true);
       expect(EXAM_CONFIGS[exam].sessions[0].expectedQuestions).toBe(row.questionsPerPaper);
       expect(ALL_EXAM_CODES as string[]).not.toContain(exam);
-      expect(questions, exam).toHaveLength(row.reviewed);
+      expect(practiceQuestions, exam).toHaveLength(row.reviewed);
       expect(QUESTIONS_BY_EXAM[exam], exam).toEqual(questions);
       expect(await getQuestionsForExam(exam), exam).toEqual(questions);
-      expect(questions.every(isPracticeReadyQuestion), exam).toBe(true);
       expect(defaultPracticeSession(exam), exam).toBe("gakka");
-      expect(await getPoolIds({ exam, mode: "random", session: defaultPracticeSession(exam) }), exam).toEqual(questions.map((q) => q.id));
+      expect(await getPoolIds({ exam, mode: "random", session: defaultPracticeSession(exam) }), exam).toEqual(practiceQuestions.map((q) => q.id));
       expect(await findQuestionById(questions[0].id), exam).toEqual(questions[0]);
     }
   });
@@ -73,8 +74,8 @@ describe("recovered automotive release", () => {
   it("preserves accepted candidate bytes with matching receipt hashes and excludes unresolved originals", () => {
     expect(recovery.recoveredReviewedOriginals).toBe(385);
     // W2 (2026-11-06) appended the previous sitting of five subjects; see automotive-prior-sittings.test.ts.
-    expect(AUTOMOTIVE_QUESTIONS).toHaveLength(recovery.releaseOriginals + priorSittings.length);
-    expect(new Set(AUTOMOTIVE_QUESTIONS.map((q) => q.id)).size).toBe(recovery.releaseOriginals + priorSittings.length);
+    expect(AUTOMOTIVE_QUESTIONS).toHaveLength(recovery.releaseOriginals + priorSittings.length + written2023.length);
+    expect(new Set(AUTOMOTIVE_QUESTIONS.map((q) => q.id)).size).toBe(AUTOMOTIVE_QUESTIONS.length);
     expect(recovery.notYetReleasedIds).toHaveLength(610 - recovery.releaseOriginals);
     const ids = new Set(AUTOMOTIVE_QUESTIONS.map((q) => q.id));
     for (const id of recovery.notYetReleasedIds) expect(ids.has(id), id).toBe(false);

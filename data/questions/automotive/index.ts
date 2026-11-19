@@ -4,6 +4,7 @@ import assets from "./assets.json";
 import qualifications from "./qualifications.json";
 import priorSittings from "./prior-sittings.json";
 import priorAssets from "./prior-assets.json";
+import written2023 from "./1-small-written-2023.json";
 
 export type AutomotiveExamCode =
   | "jidosha-1-small-written" | "jidosha-2-gasoline" | "jidosha-2-diesel"
@@ -21,8 +22,7 @@ const imageBindings: Record<string, Array<{ url: string; physicalPage: number }>
  */
 export const AUTOMOTIVE_PRIOR_SITTING_IDS: ReadonlySet<string> = new Set(priorSittings.map((q) => q.id));
 
-/** Existing accepted candidates only. The remaining saved originals stay in staging. */
-export const AUTOMOTIVE_QUESTIONS: Question[] = [...reviewed, ...priorSittings].map((q) => ({
+const acceptedQuestions = [...reviewed, ...priorSittings].map<Question>((q) => ({
   ...q,
   exam: `jidosha-${q.subject}` as AutomotiveExamCode,
   session: "gakka",
@@ -40,6 +40,19 @@ export const AUTOMOTIVE_QUESTIONS: Question[] = [...reviewed, ...priorSittings].
   imageUrls: imageBindings[q.id].map((asset) => asset.url),
   imageAltTexts: imageBindings[q.id].map((asset) => `${q.sourceAttribution} 原問題の図表（PDF ${asset.physicalPage}ページ）`),
 }));
+
+const archivedWrittenQuestions = written2023.map<Question>((q) => ({
+  ...q,
+  exam: "jidosha-1-small-written",
+  session: "gakka",
+  season: "second",
+  type: "multiple-choice",
+  difficulty: 4,
+  license: "JASPA-owner-authorized",
+  officialScoring: q.officialScoring && { kind: "credit-for-all", reason: q.officialScoring.reason },
+}));
+
+export const AUTOMOTIVE_QUESTIONS: Question[] = [...acceptedQuestions, ...archivedWrittenQuestions];
 
 export function getAutomotiveQuestions(exam: AutomotiveExamCode): Question[] {
   return AUTOMOTIVE_QUESTIONS.filter((q) => q.exam === exam);

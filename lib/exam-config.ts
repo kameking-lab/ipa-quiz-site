@@ -1372,7 +1372,7 @@ kisho: { code: "kisho", nameFull: "気象予報士試験", urlSlug: "kisho", lev
 "jidosha-1-small-written": {
     code: "jidosha-1-small-written", nameFull: "一級小型自動車整備士（筆記）", urlSlug: "jidosha-1-small-written", level: "specialist",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科", categories: ["一級小型自動車（筆記）"] }],
-    seasons: ["first", "second"], yearRange: { start: 2024, end: 2026 },
+    seasons: ["first", "second"], yearRange: { start: 2023, end: 2026 },
 },
 "jidosha-2-gasoline": {
     code: "jidosha-2-gasoline", nameFull: "二級ガソリン自動車整備士", urlSlug: "jidosha-2-gasoline", level: "specialist",
