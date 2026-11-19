@@ -36491,5 +36491,723 @@
     ],
     "provisionalReview": true,
     "lastCheckedAt": "2026-09-25"
+  },
+  "cskohyo-20261020-safety-law-q1": {
+    "sourceHash": "588eff50d5eeb29df5c7bbe108c68c19aea86f339df06acb00ee4b8cdaf35428",
+    "correctChoice": 2,
+    "summary": "主要な安全衛生管理者の選任・職務と、安全衛生推進者の周知義務を区別する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "総括安全衛生管理者には、その事業場で事業の実施を統括管理する者を充てる。事業の運営を統括する立場に安全衛生の管理も行わせる規定である。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "氏名等の周知義務としてこの肢が述べる内容は、安全管理者に対する規定ではない。安全衛生推進者等を選任したときの氏名周知の規定と区別する。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "安全管理者には作業場等を巡視する義務があり、設備や作業方法に危険のおそれを認めたときは直ちに必要な防止措置を行う。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "燃料小売業は安全管理の対象業種に含まれ、常時10人以上50人未満の事業場では安全衛生推進者を選任する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "安全委員会は危険防止の基本対策や安全に係る労働災害の原因と再発防止などを調査審議し、事業者に意見を述べる機関である。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生法",
+        "url": "https://laws.e-gov.go.jp/law/347AC0000000057"
+      },
+      {
+        "title": "労働安全衛生法施行令",
+        "url": "https://laws.e-gov.go.jp/law/347CO0000000318"
+      },
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      }
+    ]
+  },
+  "cskohyo-20261020-safety-law-q2": {
+    "sourceHash": "ed33bee096e76565ae3424a53e7ff31ece0254860e52ce843103461134d9511e",
+    "correctChoice": 3,
+    "summary": "建設工事の安全衛生管理体制と、権限を持つ監督機関および救護管理者の要件を確認する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "労働安全衛生法第15条では、都道府県労働局長は災害防止に必要な場合、統括安全衛生責任者の業務執行について事業者に勧告できる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "元方安全衛生管理者が事故などで職務を行えない場合には、選任義務のある事業者が代わりに職務を行う代理者を選任する。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "労働基準監督署長が増員・解任を命じ得る規定は元方安全衛生管理者に関するもので、この肢の安全衛生責任者には適用されない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "たて坑なしのずい道で出入口から1,000 m以上の地点で作業する場合は、その距離に達して作業する時までに救護の技術的事項の管理者を選任する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "救護に関する技術的事項の管理者は事業場に専属の者から選任する。所轄都道府県労働局長の許可を受けた場合には例外が認められる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生法",
+        "url": "https://laws.e-gov.go.jp/law/347AC0000000057"
+      },
+      {
+        "title": "労働安全衛生法施行令",
+        "url": "https://laws.e-gov.go.jp/law/347CO0000000318"
+      },
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      }
+    ]
+  },
+  "cskohyo-20261020-safety-law-q3": {
+    "sourceHash": "871657a32f986945ed786a5741a869844fe57fc0d9054a4e86e016178b29f59f",
+    "correctChoice": 1,
+    "summary": "機械の刃部を扱う作業や回転部分について、停止や防護装置の法令上の例外を確認する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "刃部を清掃・点検・調整などするときの原則は運転停止である。機械の構造上、労働者に危険を及ぼすおそれがない場合には例外となる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "労働安全衛生規則第115条は、木材加工用以外の丸のこ盤に歯の接触予防装置を設けることを求め、治具を使う場合の適用除外は定めていない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "危険な回転軸等には覆い、囲い、スリーブ、踏切橋等を設ける規定があり、保護具を使用させるだけで代替できるという規定ではない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "遠心機械の最高使用回転数を超える運転は禁止される。内容物が自動で取り出されることや蓋の有無によってこの上限は変わらない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "手押しかんな盤の刃の接触予防装置には、治具や工具を使えば省けるという例外は設けられていない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生法",
+        "url": "https://laws.e-gov.go.jp/law/347AC0000000057"
+      },
+      {
+        "title": "労働安全衛生法施行令",
+        "url": "https://laws.e-gov.go.jp/law/347CO0000000318"
+      },
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      }
+    ]
+  },
+  "cskohyo-20261020-safety-law-q4": {
+    "sourceHash": "bf958ac19ee450a0355fcb014daca822fd4a561ffeb3b5483320792a2df8fa91",
+    "correctChoice": 2,
+    "summary": "荷役運搬機械の始業前点検、許容荷重、使用する資材と誘導の規則を確認する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "不整地運搬車では、作業開始前に制動装置等のほか、履帯又は車輪の異常の有無も点検する。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "フォークローダーでは場所の状況などに適応した作業計画が必要である。地形・地質の事前調査結果まで記録するという肢の規定は車両系建設機械に関するものである。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "フォークリフトのパレットやスキッドは、荷の重量に見合う強度を備え、著しい損傷・変形・腐食のないものを使う。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "許容荷重は機械の構造・材料だけでなく荷の重心位置でも変わるため、実際の荷の重心位置で許容荷重を確認し、機械の能力を超えないようにする。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "誘導者を置く場合は一定の合図を決め、その誘導者に合図を行わせることで運転者と意思を確実に共有する。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生法",
+        "url": "https://laws.e-gov.go.jp/law/347AC0000000057"
+      },
+      {
+        "title": "労働安全衛生法施行令",
+        "url": "https://laws.e-gov.go.jp/law/347CO0000000318"
+      },
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      }
+    ]
+  },
+  "cskohyo-20261020-safety-law-q5": {
+    "sourceHash": "bf54408386f50791c3475ce20d34c426a461623fa107564f1cbd79d912c51aa5",
+    "correctChoice": 5,
+    "summary": "建設機械と高所作業車の計画・使用上の要件を、最高速度の例外も含めて確認する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "巻上げ装置に荷重がかかった状態では、くい打機等の運転者を運転位置から離れさせてはならない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "飛来物による危険がある仕事に運転室のない解体用機械は原則として使えないが、状況に応じてその危険を防止する措置を講じたときは例外がある。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "車両系建設機械へのアタッチメントの装着は機械の構造上定められた重量までであり、その重量を超えるものの装着は禁止される。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "高所作業車は、道路上の走行作業を除き、作業場所や機種・能力に合った作業計画を事前に定め、その計画に沿って使用する。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "適正な制限速度を定める規定には最高速度10 km/h以下の車両系建設機械を除く例外がある。最高速度にかかわらず一律に必要とする肢は誤りである。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生法",
+        "url": "https://laws.e-gov.go.jp/law/347AC0000000057"
+      },
+      {
+        "title": "労働安全衛生法施行令",
+        "url": "https://laws.e-gov.go.jp/law/347CO0000000318"
+      },
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      }
+    ]
+  },
+  "cskohyo-20261020-safety-law-q6": {
+    "sourceHash": "df838a13297c5b0db12d9ec3f493000a117fbcc5c083df0463536c251f2de397",
+    "correctChoice": 1,
+    "summary": "単管足場の壁つなぎの上限と、足場や作業構台の安全措置・点検の違いを確認する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "単管足場の壁つなぎの間隔は原則として垂直5 m以下、水平5.5 m以下であり、控えなしで垂直9 m、水平8 mとすることはできない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "つり足場・張出し足場以外では、組立て等の作業主任者を選任する対象は高さ5 m以上の構造の足場であり、ここで示された4.5 mはその基準に達しない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "足場材の緊結等で幅40 cm以上の作業床を設けることが困難なときは設置幅の例外がある。別途必要な墜落防止措置は免除されない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "作業構台のその日の開始前点検と、組立て・一部解体・変更等の後の点検は義務が異なる。点検者の指名が求められるのは後者である。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "作業構台の作業床では床材間の隙間を3 cm以下とするため、最大3 cmは認められる範囲内である。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生法",
+        "url": "https://laws.e-gov.go.jp/law/347AC0000000057"
+      },
+      {
+        "title": "労働安全衛生法施行令",
+        "url": "https://laws.e-gov.go.jp/law/347CO0000000318"
+      },
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      }
+    ]
+  },
+  "cskohyo-20261020-safety-law-q7": {
+    "sourceHash": "eaefd97d2d1732337ed8780cf09e9f1f6f3b9f322f7353e50e77827b001bc56c",
+    "correctChoice": 4,
+    "summary": "火気使用、溶解作業、化学設備周辺の建築材料その他の火災予防規則を確認する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "ガス集合溶接装置を使う金属の溶接・溶断・加熱作業では、免許を持つ者からガス溶接作業主任者を選任する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "爆発・火災のおそれのある場所では点火源となる機械等や火気の使用を禁じる。臨時作業で危険が生じない措置を講じた場合は例外である。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "溶解炉へ金属くずを入れる前に水、火薬類、危険物や密閉容器が混じっていないことを確認し、爆発等を防ぐ必要がある。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "化学設備近辺の建築部分に求めるのは不燃性材料による構造等である。取り扱う物質等に応じた腐食防止の規定を、建物の壁や屋根の材料と混同している。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "化学設備等を分解したり内部に入ったりする改造・修理・清掃作業では、作業箇所と周辺の可燃性ガス等の濃度を随時測定する。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生法",
+        "url": "https://laws.e-gov.go.jp/law/347AC0000000057"
+      },
+      {
+        "title": "労働安全衛生法施行令",
+        "url": "https://laws.e-gov.go.jp/law/347CO0000000318"
+      },
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      }
+    ]
+  },
+  "cskohyo-20261020-safety-law-q8": {
+    "sourceHash": "109a9c12e801a6ffaa60ff21c51152d0a99815ebf90176e9c46f1f1021f88e2e",
+    "correctChoice": 4,
+    "summary": "作業の電圧と態様に応じて、感電防止装置、配線や絶縁用防具の要件を区別する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "湿潤場所で可搬式電動機械器具に必要なのは、漏電時に電路を遮断する感電防止用漏電遮断装置である。自動電撃防止装置とは用途が違う。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "通路面で仮設配線等を使う例外は、車両などの通過で絶縁被覆が破損しない措置を講じた場合である。始業前の点検で異常がないだけでは足りない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "絶縁用防具の絶縁性能の定期自主検査は6か月以内ごとに1回である。1年以内ごととする肢は期間を取り違えている。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "特別高圧活線作業で活線作業用器具を使う場合、器具の使用に加え、身体等と充電電路との間に使用電圧に応じた接近限界距離を保つ。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "作業指揮者に方法の周知や直接指揮などを行わせるこの規定は、高圧・特別高圧の作業等を対象とする。低圧活線作業にそのまま適用されない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生法",
+        "url": "https://laws.e-gov.go.jp/law/347AC0000000057"
+      },
+      {
+        "title": "労働安全衛生法施行令",
+        "url": "https://laws.e-gov.go.jp/law/347CO0000000318"
+      },
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      }
+    ]
+  },
+  "cskohyo-20261020-safety-law-q9": {
+    "sourceHash": "35be0e62de62549988dc4b29fa611060ddcdfe2d5f3e333512566dbeef3380e5",
+    "correctChoice": 3,
+    "summary": "ボイラー室の出入口、整備作業および附属品の管理について、規則の要件を確認する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "ボイラー及び圧力容器安全規則第28条がガラス水面計などに表示するよう求めるのは常用水位である。安全低水面と取り違えている。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "煙道内部に入る労働者を使用中のボイラーから守るには、管の連絡を確実に遮断する必要がある。監視人を置いても遮断に代えることはできない。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "ボイラー室は二つ以上の出入口を備えるのが原則だが、取扱労働者の緊急避難に支障がない場合はこの限りでない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "過熱器用の安全弁は、過熱器への蒸気の流れを確保するため、胴の安全弁より先に作動するよう調整する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "蒸気ボイラーの圧力計などには最高使用圧力を示す表示が必要だが、肢のように一般のボイラー温度計に一律で最高使用温度の表示を課す規定ではない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生法",
+        "url": "https://laws.e-gov.go.jp/law/347AC0000000057"
+      },
+      {
+        "title": "労働安全衛生法施行令",
+        "url": "https://laws.e-gov.go.jp/law/347CO0000000318"
+      },
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      },
+      {
+        "title": "ボイラー及び圧力容器安全規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000033"
+      }
+    ]
+  },
+  "cskohyo-20261020-safety-law-q10": {
+    "sourceHash": "359ab94aa5934b155034133b4d3e9681853660fbf0e0b754697fec5d18f25990",
+    "correctChoice": 3,
+    "summary": "クレーン等の通路、玉掛用具、運転作業および安全装置の法令上の要件を確認する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "クレーンの運転室などとそこへ通ずる歩道との間隔は0.3 m以下が原則である。墜落による危険のおそれがなければ例外が認められる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "クレーンの玉掛けに使うワイヤロープには安全係数6以上が必要で、切断荷重に対して十分な余裕を持たせる。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "移動式クレーンの作業では必要な作業方法等を決め、合図を統一する。複数台によるつり上げを理由に指揮者の選任を一律に義務付ける規定ではない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "エレベーターのファイナルリミットスイッチや非常止め等は、異常時に確実に作用するよう事前に調整する必要がある。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "使用中に緊急の操作が必要になる場合があるため、ゴンドラを操作する者をその使用中に操作位置から離れさせてはならない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生法",
+        "url": "https://laws.e-gov.go.jp/law/347AC0000000057"
+      },
+      {
+        "title": "労働安全衛生法施行令",
+        "url": "https://laws.e-gov.go.jp/law/347CO0000000318"
+      },
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      },
+      {
+        "title": "クレーン等安全規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000034"
+      },
+      {
+        "title": "ゴンドラ安全規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000035"
+      }
+    ]
+  },
+  "cskohyo-20261020-safety-law-q11": {
+    "sourceHash": "5aae533f3983cc837f417f267397177b546fb6dc8d42c3eebe1d068e0bf26e7c",
+    "correctChoice": 5,
+    "summary": "元方事業者、注文者、機械等貸与者が負う具体的な措置と指導の対象を確認する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "化学設備の分解・内部立入り等を伴う改造や修理の注文者は、取り扱う化学物質による請負人の労働者の災害を防ぐため必要な措置を講じる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "特定元方事業者は関係請負人が安全衛生教育を行えるよう指導・援助し、教育の場所や教材を提供するなどの措置を講じる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "元方事業者がクレーン運転の合図を統一した場合には、関係請負人も同じ合図を採用し、混在する作業で合図が食い違う危険を防止する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "機械等を貸与する際には、能力および特性その他の使用上の注意事項を記載した書面等により、借受人に必要な情報を交付する。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "関係請負人の作業計画の適合を指導する対象として規則が挙げるのは所定の車両系建設機械やつり上げ荷重3トン以上の移動式クレーンであり、高所作業車ではない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生法",
+        "url": "https://laws.e-gov.go.jp/law/347AC0000000057"
+      },
+      {
+        "title": "労働安全衛生法施行令",
+        "url": "https://laws.e-gov.go.jp/law/347CO0000000318"
+      },
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      }
+    ]
+  },
+  "cskohyo-20261020-safety-law-q12": {
+    "sourceHash": "eb26a9c9cbeabf9e3d3d5e9a3df0788ad8b95a147d1269d80c93a7427292a388",
+    "correctChoice": 3,
+    "summary": "特定機械等に必要な検査と、予防装置の型式検定、特定自主検査を区別する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "クレーン等安全規則第178条により建設用リフトの検査証は設置から廃止まで有効であり、性能検査を受けて有効期間を更新する制度ではない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "構造検査を受けてから長期間設置されなかったボイラーを設置する際は使用検査の対象になる。休止していたボイラーの使用再開検査とは別である。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "可動式の木材加工用丸のこ盤の歯の接触予防装置は型式検定の対象であり、製造した者は登録型式検定機関の検定を受ける必要がある。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "車両系建設機械の特定自主検査は、登録検査業者のほか、事業者が資格要件を満たす所属労働者に実施させることもできる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "ゴンドラ安全規則では、製造検査等を受けたゴンドラを設置するときに所轄労働基準監督署長への設置届が必要となる。設置者に落成検査を課す規定ではない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生法",
+        "url": "https://laws.e-gov.go.jp/law/347AC0000000057"
+      },
+      {
+        "title": "労働安全衛生法施行令",
+        "url": "https://laws.e-gov.go.jp/law/347CO0000000318"
+      },
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      },
+      {
+        "title": "ボイラー及び圧力容器安全規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000033"
+      },
+      {
+        "title": "クレーン等安全規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000034"
+      },
+      {
+        "title": "ゴンドラ安全規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000035"
+      }
+    ]
+  },
+  "cskohyo-20261020-safety-law-q13": {
+    "sourceHash": "8f7ce22f0fcdca5cbc5c8bea62e02c855ca525b23dd7da132a3d5230910c9880",
+    "correctChoice": 4,
+    "summary": "就業制限、特別教育、作業主任者の選任と職長教育の対象業務・基準を区別する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "制限荷重5トン以上の揚貨装置の運転は就業制限の対象である。事業者は揚貨装置運転士免許を受けた者をその業務に就かせる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "支間の斜距離の合計が350 m以上の運材索道の組立て等は対象作業であり、有資格者から林業架線作業主任者を選任する。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "同じ場所の一つの作業に複数の作業主任者を置く場合は、指揮や安全管理が重複・欠落しないよう、各人の職務の分担を定める。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "クレーンや移動式クレーンの玉掛けで特別教育の対象となるのは、つり上げ荷重1トン未満の場合である。1トン以上は原則として技能講習を要する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "自動車整備業は職長等教育が必要な業種に含まれ、新たに職長となる者に作業方法の決定、配置や指導監督の方法等を教育する。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生法",
+        "url": "https://laws.e-gov.go.jp/law/347AC0000000057"
+      },
+      {
+        "title": "労働安全衛生法施行令",
+        "url": "https://laws.e-gov.go.jp/law/347CO0000000318"
+      },
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      },
+      {
+        "title": "クレーン等安全規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000034"
+      }
+    ]
+  },
+  "cskohyo-20261020-safety-law-q14": {
+    "sourceHash": "c3a74ba7fa29223cbfc39d217f709c415fc4e3a227e9d4aadfd6ecce942b8262",
+    "correctChoice": 5,
+    "summary": "特別安全衛生改善計画の指示要件と、計画作成・不履行時の措置を確認する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "対象となる重大な労働災害には死亡災害だけでなく、障害等級第1級から第7級までに該当する障害が残る災害なども含まれる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "労働安全衛生規則第84条の再発要件は、3年以内に同じ事業者の別の事業場で再発防止措置が同様の重大災害が起きた場合である。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "改善計画を作成するときは過半数組合、又は過半数代表者の意見を聴く。意見聴取は必要だが同意を得るまでは求められていない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "指示に従わないなどの場合に厚生労働大臣が行う措置は、法に規定する勧告等の段階を経る。直ちに公表しなければならないという規定ではない。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "特別安全衛生改善計画の指示に際し、専門的助言が必要なら、大臣は労働安全・衛生コンサルタントの診断を受け、計画について意見を聴くよう勧奨できる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生法",
+        "url": "https://laws.e-gov.go.jp/law/347AC0000000057"
+      },
+      {
+        "title": "労働安全衛生法施行令",
+        "url": "https://laws.e-gov.go.jp/law/347CO0000000318"
+      },
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      }
+    ]
+  },
+  "cskohyo-20261020-safety-law-q15": {
+    "sourceHash": "b0092b92c70a4c8125aa8bdebc0eadc0019c9d62ccb8a949974605fb262e57be",
+    "correctChoice": 2,
+    "summary": "対象事業場の業種・人数・機械台数に照らし、委員会や作業主任者等の要件を判断する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "輸送用機械器具製造業で70人では総括安全衛生管理者の選任規模に達しない。化学科卒で実務5年と所定研修を満たす者は安全管理者になれる。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "輸送用機械器具製造業で常時70人を使用する場合、安全委員会又は安全衛生委員会が必要である。労働者の意見を聴く機会だけでは代えられない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "産業用ロボットの教示等を駆動源を遮断して行うときは、教示等に関する作業開始前点検の規定の対象から除かれる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "動力プレスが3台では作業主任者の選任に係る5台以上の要件に達しない。金型等の取付けや調整の業務には別途、特別教育が必要である。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "フォークリフトの前照灯・後照灯は原則必要だが、作業を安全に行うために必要な照度が確保されている場所では例外が認められる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生法",
+        "url": "https://laws.e-gov.go.jp/law/347AC0000000057"
+      },
+      {
+        "title": "労働安全衛生法施行令",
+        "url": "https://laws.e-gov.go.jp/law/347CO0000000318"
+      },
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      }
+    ]
   }
 }
