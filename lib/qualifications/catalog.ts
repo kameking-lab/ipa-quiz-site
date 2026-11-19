@@ -229,7 +229,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.pref.kanagawa.jp/docs/t3u/cnt/f5510/documents/junkan.html",
     officialReuseTermsUrl: "https://www.pref.kanagawa.jp/master/sitepolicy.html",
     status: "live",
-    reuseSummary: "神奈川・青森・福島・山口・高知・佐賀で使われた令和7年度のB日程150問を、公式正答と全選択肢の解説付きで収録。",
+    reuseSummary: "神奈川・青森・福島・山口・高知・佐賀などの令和6・7年度B日程を、公式正答と全選択肢の解説付きで収録。",
     remainingWork: [],
   },
   {"slug": "sokuryoshi", "examCode": "sokuryoshi", "shortName": "測量士", "fullName": "測量士", "domain": "construction", "administrator": "国土地理院", "officialQuestionsUrl": "https://www.gsi.go.jp/LAW/SHIKEN/past.html", "officialReuseTermsUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html", "status": "live", "stagingDataPath": "data/qualification-staging/sokuryoshi", "reuseSummary": "2025・2026年の公式問題・正答・独自解説と原本図表を収録。午前56問・午後10大問。午後は必須1題と選択4題から2題。記述・作図は公式解答例で自己確認し、自動採点しません。問題・正答は公式原本、解説は過去問AIの独自作成です。", "remainingWork": []},
