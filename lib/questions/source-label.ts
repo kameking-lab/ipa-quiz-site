@@ -167,6 +167,8 @@ if (q.year === 2025 && q.season === "annual" &&
       return `${q.year}年${Number(jafpEdition[2])}月公表問題`;
     }
   }
-  if (q.exam === "kanken-4" && q.season === "february") return `${q.fiscalYear ?? q.year}年度第3回`;
+  if (q.exam === "kanken-4" && (q.season === "february" || q.season === "june")) {
+    return `${q.fiscalYear ?? q.year}年度第${q.season === "june" ? 1 : 3}回`;
+  }
   return formatYearSeason(q.year, q.season);
 }
