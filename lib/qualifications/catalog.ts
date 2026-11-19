@@ -1225,7 +1225,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://zenkoukyo.or.jp/index_kentei/exam_result/",
     officialReuseTermsUrl: "https://zenkoukyo.or.jp/index_kentei/exam_result/",
     status: "live",
-    reuseSummary: "第94回の2〜4級、全3種目を収録。公式の問題・正答と図表を使い、計算の手順を確認できます。",
+    reuseSummary: "第93・94回の2〜4級、各級の全3種目を収録。公式の問題・正答と図表を使い、計算の手順を確認できます。",
     remainingWork: [],
   },
   {
