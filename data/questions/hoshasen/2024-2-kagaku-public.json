@@ -1,0 +1,1019 @@
+[
+  {
+    "id": "hoshasen-2-2024-kagaku-q01",
+    "exam": "hoshasen-2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 201,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "化学",
+      "半減期3時間と4時間の核種の放射能の比が1/4になる時間"
+    ],
+    "difficulty": 3,
+    "question": "半減期3時間と4時間の核種の放射能の比が1/4になる時間（公式問題 1）",
+    "choices": {
+      "ア": "1",
+      "イ": "6",
+      "ウ": "12",
+      "エ": "24",
+      "オ": "36"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "officialQuestionLabel": "1（化学）",
+    "explanation": "時間tにおける比は2^(−t/3＋t/4)＝2^(−t/12)である。1/4＝2⁻²なのでt＝24時間となる。",
+    "choiceExplanations": {
+      "ア": "1時間で比は2^(−1/12)となり、1/4まで下がらない。",
+      "イ": "6時間では比は2^(−6/12)≒0.71である。",
+      "ウ": "12時間で比は1/2になる。1/4にはさらに12時間を要する。",
+      "エ": "時間tにおける比は2^(−t/3＋t/4)＝2^(−t/12)である。1/4＝2⁻²なのでt＝24時間となる。",
+      "オ": "36時間では指数が−3になり、比は1/8である。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2_butsurikagakuseibutsu.pdf#page=11",
+    "sourcePages": [
+      11
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第2種放射線取扱主任者試験 化学 問1。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-2/2024/kagaku/q01-official.png"
+    ],
+    "imageAltTexts": [
+      "第2種 化学 問1の公式問題 PDF 11ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-2-2024-kagaku-q02",
+    "exam": "hoshasen-2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 202,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "化学",
+      "1半減期の間に壊変で放出されるγ線の総数"
+    ],
+    "difficulty": 3,
+    "question": "1半減期の間に壊変で放出されるγ線の総数（公式問題 2）",
+    "choices": {
+      "ア": "10⁹×T÷ln 2",
+      "イ": "10⁹×T÷2",
+      "ウ": "10⁹÷T×ln 2",
+      "エ": "10⁹×T÷2÷ln 2",
+      "オ": "10⁹×T÷2×ln 2"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "officialQuestionLabel": "2（化学）",
+    "explanation": "初期原子数は10⁹T/ln 2である。その半分が壊変し、各壊変で光子1本を出す。",
+    "choiceExplanations": {
+      "ア": "式は初期原子数A₀/λを与える。一半減期に壊変するのはその半分である。",
+      "イ": "半分という係数は必要だが、壊変定数の逆数T/ln 2を使うためln 2でも割る。",
+      "ウ": "初期の放射能から個数を求めるには壊変定数λを掛けるのでなく割る。",
+      "エ": "初期原子数は10⁹T/ln 2である。その半分が壊変し、各壊変で光子1本を出す。",
+      "オ": "壊変定数はln 2/Tなので、初期原子数を求める計算ではln 2を分母に置く。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2_butsurikagakuseibutsu.pdf#page=11",
+    "sourcePages": [
+      11
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第2種放射線取扱主任者試験 化学 問2。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-2/2024/kagaku/q02-official.png"
+    ],
+    "imageAltTexts": [
+      "第2種 化学 問2の公式問題 PDF 11ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-2-2024-kagaku-q03",
+    "exam": "hoshasen-2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 203,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "化学",
+      "モリブデン99と娘核種テクネチウム99mの放射能"
+    ],
+    "difficulty": 3,
+    "question": "モリブデン99と娘核種テクネチウム99mの放射能（公式問題 3）",
+    "choices": {
+      "ア": "ABCのみ",
+      "イ": "ABDのみ",
+      "ウ": "ACDのみ",
+      "エ": "BCDのみ",
+      "オ": "ABCDすべて"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "officialQuestionLabel": "3（化学）",
+    "explanation": "Aはモリブデン99のβ⁻壊変で準安定状態のテクネチウム99mが生じる、Cは精製直後は親から娘が生成され、初めは娘の放射能が増加する、Dは親の半減期は娘より長いが無限に長いと扱えるほどではなく、過渡平衡となる。",
+    "choiceExplanations": {
+      "ア": "Bは該当しない（娘核種の数は親の半減期66時間後から減り始めるとは限らず、娘の生成速度と壊変速度が等しい時点が最大になる）。Dも含める必要がある（親の半減期は娘より長いが無限に長いと扱えるほどではなく、過渡平衡となる）。",
+      "イ": "Bは該当しない（娘核種の数は親の半減期66時間後から減り始めるとは限らず、娘の生成速度と壊変速度が等しい時点が最大になる）。Cも含める必要がある（精製直後は親から娘が生成され、初めは娘の放射能が増加する）。",
+      "ウ": "Aはモリブデン99のβ⁻壊変で準安定状態のテクネチウム99mが生じる、Cは精製直後は親から娘が生成され、初めは娘の放射能が増加する、Dは親の半減期は娘より長いが無限に長いと扱えるほどではなく、過渡平衡となる。",
+      "エ": "Bは該当しない（娘核種の数は親の半減期66時間後から減り始めるとは限らず、娘の生成速度と壊変速度が等しい時点が最大になる）。Aも含める必要がある（モリブデン99のβ⁻壊変で準安定状態のテクネチウム99mが生じる）。",
+      "オ": "Bは該当しない（娘核種の数は親の半減期66時間後から減り始めるとは限らず、娘の生成速度と壊変速度が等しい時点が最大になる）。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2_butsurikagakuseibutsu.pdf#page=11",
+    "sourcePages": [
+      11
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第2種放射線取扱主任者試験 化学 問3。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-2/2024/kagaku/q03-official.png"
+    ],
+    "imageAltTexts": [
+      "第2種 化学 問3の公式問題 PDF 11ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-2-2024-kagaku-q05",
+    "exam": "hoshasen-2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 205,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "化学",
+      "天然のウラン系列とトリウム系列"
+    ],
+    "difficulty": 3,
+    "question": "天然のウラン系列とトリウム系列（公式問題 5）",
+    "choices": {
+      "ア": "ABCのみ",
+      "イ": "ABDのみ",
+      "ウ": "ACDのみ",
+      "エ": "BCDのみ",
+      "オ": "ABCDすべて"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "officialQuestionLabel": "5（化学）",
+    "explanation": "Aはトリウム232から鉛208への質量数の差24はα壊変6回に相当する、Cはウラン238の系列は安定な鉛206に至る、Dはウラン238の系列にはウラン234が現れる。",
+    "choiceExplanations": {
+      "ア": "Bは該当しない（トリウム系列で生じるラドンはラドン220であり、ラドン222はウラン系列にある）。Dも含める必要がある（ウラン238の系列にはウラン234が現れる）。",
+      "イ": "Bは該当しない（トリウム系列で生じるラドンはラドン220であり、ラドン222はウラン系列にある）。Cも含める必要がある（ウラン238の系列は安定な鉛206に至る）。",
+      "ウ": "Aはトリウム232から鉛208への質量数の差24はα壊変6回に相当する、Cはウラン238の系列は安定な鉛206に至る、Dはウラン238の系列にはウラン234が現れる。",
+      "エ": "Bは該当しない（トリウム系列で生じるラドンはラドン220であり、ラドン222はウラン系列にある）。Aも含める必要がある（トリウム232から鉛208への質量数の差24はα壊変6回に相当する）。",
+      "オ": "Bは該当しない（トリウム系列で生じるラドンはラドン220であり、ラドン222はウラン系列にある）。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2_butsurikagakuseibutsu.pdf#page=12",
+    "sourcePages": [
+      12
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第2種放射線取扱主任者試験 化学 問5。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-2/2024/kagaku/q05-official.png"
+    ],
+    "imageAltTexts": [
+      "第2種 化学 問5の公式問題 PDF 12ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-2-2024-kagaku-q06",
+    "exam": "hoshasen-2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 206,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "化学",
+      "ネプツニウム系列のα壊変8回に伴うβ⁻壊変回数"
+    ],
+    "difficulty": 3,
+    "question": "ネプツニウム系列のα壊変8回に伴うβ⁻壊変回数（公式問題 6）",
+    "choices": {
+      "ア": "3",
+      "イ": "4",
+      "ウ": "5",
+      "エ": "6",
+      "オ": "7"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "6（化学）",
+    "explanation": "α壊変8回で原子番号は93−16＝77になる。β⁻壊変1回で原子番号が1増すので81になるには4回である。",
+    "choiceExplanations": {
+      "ア": "β⁻壊変3回では原子番号が93−16＋3＝80となる。",
+      "イ": "α壊変8回で原子番号は93−16＝77になる。β⁻壊変1回で原子番号が1増すので81になるには4回である。",
+      "ウ": "5回なら最後の原子番号は82になり、タリウムの81より一つ大きい。",
+      "エ": "6回では原子番号83になる。",
+      "オ": "7回では原子番号が84になり、設問の終点と合わない。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2_butsurikagakuseibutsu.pdf#page=12",
+    "sourcePages": [
+      12
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第2種放射線取扱主任者試験 化学 問6。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-2/2024/kagaku/q06-official.png"
+    ],
+    "imageAltTexts": [
+      "第2種 化学 問6の公式問題 PDF 12ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-2-2024-kagaku-q07",
+    "exam": "hoshasen-2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 207,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "化学",
+      "β壊変と軌道電子捕獲の仕組み"
+    ],
+    "difficulty": 3,
+    "question": "β壊変と軌道電子捕獲の仕組み（公式問題 7）",
+    "choices": {
+      "ア": "ABのみ",
+      "イ": "ACのみ",
+      "ウ": "ADのみ",
+      "エ": "BCのみ",
+      "オ": "BDのみ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "officialQuestionLabel": "7（化学）",
+    "explanation": "Aはβ⁻壊変で核の中性子が陽子になるので原子番号が一つ増える、Dは電子捕獲で生じる軌道電子の空孔が埋まる際にオージェ電子が放出される場合がある。",
+    "choiceExplanations": {
+      "ア": "Bは該当しない（β⁺壊変の陽電子のエネルギーはニュートリノとの分配によって連続分布を示す）。Dも含める必要がある（電子捕獲で生じる軌道電子の空孔が埋まる際にオージェ電子が放出される場合がある）。",
+      "イ": "Cは該当しない（β⁺壊変では陽子が中性子に変わる）。Dも含める必要がある（電子捕獲で生じる軌道電子の空孔が埋まる際にオージェ電子が放出される場合がある）。",
+      "ウ": "Aはβ⁻壊変で核の中性子が陽子になるので原子番号が一つ増える、Dは電子捕獲で生じる軌道電子の空孔が埋まる際にオージェ電子が放出される場合がある。",
+      "エ": "Bは該当しない（β⁺壊変の陽電子のエネルギーはニュートリノとの分配によって連続分布を示す）。Aも含める必要がある（β⁻壊変で核の中性子が陽子になるので原子番号が一つ増える）。",
+      "オ": "Bは該当しない（β⁺壊変の陽電子のエネルギーはニュートリノとの分配によって連続分布を示す）。Aも含める必要がある（β⁻壊変で核の中性子が陽子になるので原子番号が一つ増える）。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2_butsurikagakuseibutsu.pdf#page=12",
+    "sourcePages": [
+      12
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第2種放射線取扱主任者試験 化学 問7。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-2/2024/kagaku/q07-official.png"
+    ],
+    "imageAltTexts": [
+      "第2種 化学 問7の公式問題 PDF 12ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-2-2024-kagaku-q08",
+    "exam": "hoshasen-2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 208,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "化学",
+      "壊変に伴うγ線を放出しない核種の組合せ"
+    ],
+    "difficulty": 3,
+    "question": "壊変に伴うγ線を放出しない核種の組合せ（公式問題 8）",
+    "choices": {
+      "ア": "ACのみ",
+      "イ": "ADのみ",
+      "ウ": "BCのみ",
+      "エ": "BDのみ",
+      "オ": "CDのみ"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "8（化学）",
+    "explanation": "Aは炭素14はβ⁻壊変し、この壊変ではγ線の放出を伴わない、Cはニッケル63は低エネルギーのβ⁻線を放出し、この壊変ではγ線を伴わない。",
+    "choiceExplanations": {
+      "ア": "Aは炭素14はβ⁻壊変し、この壊変ではγ線の放出を伴わない、Cはニッケル63は低エネルギーのβ⁻線を放出し、この壊変ではγ線を伴わない。",
+      "イ": "Dは該当しない（セシウム137の娘核種バリウム137mからγ線が放出される）。Cも含める必要がある（ニッケル63は低エネルギーのβ⁻線を放出し、この壊変ではγ線を伴わない）。",
+      "ウ": "Bは該当しない（ナトリウム22は励起した娘核を経てγ線を生じ、陽電子枝では消滅放射も生じる）。Aも含める必要がある（炭素14はβ⁻壊変し、この壊変ではγ線の放出を伴わない）。",
+      "エ": "Bは該当しない（ナトリウム22は励起した娘核を経てγ線を生じ、陽電子枝では消滅放射も生じる）。Aも含める必要がある（炭素14はβ⁻壊変し、この壊変ではγ線の放出を伴わない）。",
+      "オ": "Dは該当しない（セシウム137の娘核種バリウム137mからγ線が放出される）。Aも含める必要がある（炭素14はβ⁻壊変し、この壊変ではγ線の放出を伴わない）。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2_butsurikagakuseibutsu.pdf#page=13",
+    "sourcePages": [
+      13
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第2種放射線取扱主任者試験 化学 問8。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-2/2024/kagaku/q08-official.png"
+    ],
+    "imageAltTexts": [
+      "第2種 化学 問8の公式問題 PDF 13ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-2-2024-kagaku-q09",
+    "exam": "hoshasen-2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 209,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "化学",
+      "500MBqの炭素11で標識した二酸化炭素の質量"
+    ],
+    "difficulty": 3,
+    "question": "500MBqの炭素11で標識した二酸化炭素の質量（公式問題 9）",
+    "choices": {
+      "ア": "6×10⁻¹⁷",
+      "イ": "1×10⁻¹⁴",
+      "ウ": "6×10⁻¹³",
+      "エ": "1×10⁻¹²",
+      "オ": "6×10⁻¹¹"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "officialQuestionLabel": "9（化学）",
+    "explanation": "分子数はA/λ≒8.6×10¹¹個である。6×10²³で割り、炭素11と酸素2原子の質量に当たる43g/molを掛けて約6×10⁻¹¹gとなる。",
+    "choiceExplanations": {
+      "ア": "6×10⁻¹⁷gでは、壊変定数を使って放射能から計算した分子数約8.6×10¹¹個を説明できない。",
+      "イ": "二酸化炭素のモル質量は炭素11と酸素16の二つを合わせた43g/molである。分子数をこのモル質量で換算する。",
+      "ウ": "6×10⁻¹³gは、分子数とモル質量43g/molから得る値より約2桁小さい。",
+      "エ": "5.0×10⁸×1,200÷0.7で分子数を出す。その数をアボガドロ定数で割り43g/molを掛けると約6×10⁻¹¹gになるため、この値は小さい。",
+      "オ": "分子数はA/λ≒8.6×10¹¹個である。6×10²³で割り、炭素11と酸素2原子の質量に当たる43g/molを掛けて約6×10⁻¹¹gとなる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2_butsurikagakuseibutsu.pdf#page=13",
+    "sourcePages": [
+      13
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第2種放射線取扱主任者試験 化学 問9。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-2/2024/kagaku/q09-official.png"
+    ],
+    "imageAltTexts": [
+      "第2種 化学 問9の公式問題 PDF 13ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-2-2024-kagaku-q10",
+    "exam": "hoshasen-2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 210,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "化学",
+      "放射線源を利用した検査・測定の組合せ"
+    ],
+    "difficulty": 3,
+    "question": "放射線源を利用した検査・測定の組合せ（公式問題 10）",
+    "choices": {
+      "ア": "ADのみ",
+      "イ": "AEのみ",
+      "ウ": "BCのみ",
+      "エ": "BEのみ",
+      "オ": "CDのみ"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "officialQuestionLabel": "10（化学）",
+    "explanation": "Cはコバルト60のγ線を使う工業用ラジオグラフィがある、Dはイリジウム192のγ線を使い材料内部などを非破壊で調べることがある。",
+    "choiceExplanations": {
+      "ア": "Aは該当しない（トリチウムのβ線は透過力が低く、一般的なレベル計の透過測定には適さない）。Cも含める必要がある（コバルト60のγ線を使う工業用ラジオグラフィがある）。",
+      "イ": "Aは該当しない（トリチウムのβ線は透過力が低く、一般的なレベル計の透過測定には適さない）。Cも含める必要がある（コバルト60のγ線を使う工業用ラジオグラフィがある）。",
+      "ウ": "Bは該当しない（鉄55は特性X線源などに使われるが、この組合せの密度計の代表的な線源ではない）。Dも含める必要がある（イリジウム192のγ線を使い材料内部などを非破壊で調べることがある）。",
+      "エ": "Bは該当しない（鉄55は特性X線源などに使われるが、この組合せの密度計の代表的な線源ではない）。Cも含める必要がある（コバルト60のγ線を使う工業用ラジオグラフィがある）。",
+      "オ": "Cはコバルト60のγ線を使う工業用ラジオグラフィがある、Dはイリジウム192のγ線を使い材料内部などを非破壊で調べることがある。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2_butsurikagakuseibutsu.pdf#page=13",
+    "sourcePages": [
+      13
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第2種放射線取扱主任者試験 化学 問10。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-2/2024/kagaku/q10-official.png"
+    ],
+    "imageAltTexts": [
+      "第2種 化学 問10の公式問題 PDF 13ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-2-2024-kagaku-q11-slot-A",
+    "exam": "hoshasen-2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 211,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "化学",
+      "セリウム線量計で四価イオンが三価イオンになる反応"
+    ],
+    "difficulty": 3,
+    "question": "セリウム線量計で四価イオンが三価イオンになる反応（公式問題 11・解答欄A）",
+    "choices": {
+      "ア": "酸化",
+      "イ": "還元",
+      "ウ": "中和",
+      "エ": "電気分解",
+      "オ": "昇華",
+      "カ": "励起"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "11（化学・解答欄A）",
+    "explanation": "Ce⁴⁺が電子を1個受け取ってCe³⁺になるので還元である。",
+    "choiceExplanations": {
+      "ア": "電子を失って酸化数が増える反応を指す。この欄は「還元」に当たる。",
+      "イ": "Ce⁴⁺が電子を1個受け取ってCe³⁺になるので還元である。",
+      "ウ": "酸と塩基が反応して酸性・塩基性を弱める反応である。この欄は「還元」に当たる。",
+      "エ": "外部から電流を流して電極の反応を進める方法である。この欄は「還元」に当たる。",
+      "オ": "固体が液体を経ずに気体になる相変化である。この欄は「還元」に当たる。",
+      "カ": "エネルギーを得て高いエネルギー状態になる現象である。この欄は「還元」に当たる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2_butsurikagakuseibutsu.pdf#page=14",
+    "sourcePages": [
+      14
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第2種放射線取扱主任者試験 化学 問11。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-2/2024/kagaku/q11-p14-official.png"
+    ],
+    "imageAltTexts": [
+      "第2種 化学 問11の公式問題 PDF 14ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-2-2024-kagaku-q11-slot-B",
+    "exam": "hoshasen-2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 212,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "化学",
+      "化学線量計のG値の測定で原問が使うコバルト60の放射線"
+    ],
+    "difficulty": 3,
+    "question": "化学線量計のG値の測定で原問が使うコバルト60の放射線（公式問題 11・解答欄B）",
+    "choices": {
+      "ア": "X線",
+      "イ": "消滅放射線",
+      "ウ": "α線",
+      "エ": "β⁻線",
+      "オ": "β⁺線",
+      "カ": "γ線",
+      "キ": "δ線"
+    },
+    "answer": "カ",
+    "officialAnswerNumber": 6,
+    "officialQuestionLabel": "11（化学・解答欄B）",
+    "explanation": "コバルト60の壊変で励起した娘核がエネルギーを放出し、線量計に照射するγ線となる。",
+    "choiceExplanations": {
+      "ア": "電子軌道の遷移や制動放射などで出る光子を指す。この欄は「γ線」に当たる。",
+      "イ": "電子・陽電子の対消滅などから出る放射線である。この欄は「γ線」に当たる。",
+      "ウ": "ヘリウム原子核からなる放射線を指す。この欄は「γ線」に当たる。",
+      "エ": "コバルト60はβ⁻壊変するが、ここでは外部の溶液に照射する透過力のある光子を用いる。この欄は「γ線」に当たる。",
+      "オ": "陽電子の流れであり、コバルト60はβ⁺壊変でない。この欄は「γ線」に当たる。",
+      "カ": "コバルト60の壊変で励起した娘核がエネルギーを放出し、線量計に照射するγ線となる。",
+      "キ": "粒子の飛跡に沿って生じるエネルギーの高い二次電子の呼称である。この欄は「γ線」に当たる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2_butsurikagakuseibutsu.pdf#page=14",
+    "sourcePages": [
+      14
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第2種放射線取扱主任者試験 化学 問11。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-2/2024/kagaku/q11-p14-official.png"
+    ],
+    "imageAltTexts": [
+      "第2種 化学 問11の公式問題 PDF 14ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-2-2024-kagaku-q11-slot-C",
+    "exam": "hoshasen-2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 213,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "化学",
+      "放射線化学の従来のG値を表す基準となる吸収エネルギー"
+    ],
+    "difficulty": 3,
+    "question": "放射線化学の従来のG値を表す基準となる吸収エネルギー（公式問題 11・解答欄C）",
+    "choices": {
+      "ア": "1.25",
+      "イ": "2.45",
+      "ウ": "7.35",
+      "エ": "15.5",
+      "オ": "30.0",
+      "カ": "40",
+      "キ": "50",
+      "ク": "100",
+      "ケ": "150",
+      "コ": "200"
+    },
+    "answer": "ク",
+    "officialAnswerNumber": 8,
+    "officialQuestionLabel": "11（化学・解答欄C）",
+    "explanation": "従来のG値は100eVのエネルギー付与当たりの変化した粒子数を表す。",
+    "choiceExplanations": {
+      "ア": "1.25eVはこの定義の規格化に使わない。従来のG値は100eV当たりで表す。",
+      "イ": "2.45eVはこの定義の規格化に使わない。従来のG値は100eV当たりで表す。",
+      "ウ": "7.35eVはこの定義の規格化に使わない。従来のG値は100eV当たりで表す。",
+      "エ": "15.5eVはこの定義の規格化に使わない。従来のG値は100eV当たりで表す。",
+      "オ": "30.0eVはこの定義の規格化に使わない。従来のG値は100eV当たりで表す。",
+      "カ": "40eVはこの定義の規格化に使わない。従来のG値は100eV当たりで表す。",
+      "キ": "50eVはこの定義の規格化に使わない。従来のG値は100eV当たりで表す。",
+      "ク": "従来のG値は100eVのエネルギー付与当たりの変化した粒子数を表す。",
+      "ケ": "150eVはこの定義の規格化に使わない。従来のG値は100eV当たりで表す。",
+      "コ": "200eVはこの定義の規格化に使わない。従来のG値は100eV当たりで表す。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2_butsurikagakuseibutsu.pdf#page=14",
+    "sourcePages": [
+      14
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第2種放射線取扱主任者試験 化学 問11。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-2/2024/kagaku/q11-p14-official.png"
+    ],
+    "imageAltTexts": [
+      "第2種 化学 問11の公式問題 PDF 14ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-2-2024-kagaku-q11-slot-D",
+    "exam": "hoshasen-2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 214,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "化学",
+      "原問におけるセリウム線量計のG値"
+    ],
+    "difficulty": 3,
+    "question": "原問におけるセリウム線量計のG値（公式問題 11・解答欄D）",
+    "choices": {
+      "ア": "1.25",
+      "イ": "2.45",
+      "ウ": "7.35",
+      "エ": "15.5",
+      "オ": "30.0",
+      "カ": "40",
+      "キ": "50",
+      "ク": "100",
+      "ケ": "150",
+      "コ": "200"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "11（化学・解答欄D）",
+    "explanation": "原問のセリウム線量計では吸収エネルギー100eV当たりのイオンの変化数を2.45としている。",
+    "choiceExplanations": {
+      "ア": "1.25はセリウム線量計に原問が採用する収率2.45と異なる。100eV当たりに変化するイオン数を評価する。",
+      "イ": "原問のセリウム線量計では吸収エネルギー100eV当たりのイオンの変化数を2.45としている。",
+      "ウ": "7.35はセリウム線量計に原問が採用する収率2.45と異なる。100eV当たりに変化するイオン数を評価する。",
+      "エ": "15.5はセリウム線量計に原問が採用する収率2.45と異なる。100eV当たりに変化するイオン数を評価する。",
+      "オ": "30.0はセリウム線量計に原問が採用する収率2.45と異なる。100eV当たりに変化するイオン数を評価する。",
+      "カ": "40はセリウム線量計に原問が採用する収率2.45と異なる。100eV当たりに変化するイオン数を評価する。",
+      "キ": "50はセリウム線量計に原問が採用する収率2.45と異なる。100eV当たりに変化するイオン数を評価する。",
+      "ク": "100はセリウム線量計に原問が採用する収率2.45と異なる。100eV当たりに変化するイオン数を評価する。",
+      "ケ": "150はセリウム線量計に原問が採用する収率2.45と異なる。100eV当たりに変化するイオン数を評価する。",
+      "コ": "200はセリウム線量計に原問が採用する収率2.45と異なる。100eV当たりに変化するイオン数を評価する。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2_butsurikagakuseibutsu.pdf#page=14",
+    "sourcePages": [
+      14
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第2種放射線取扱主任者試験 化学 問11。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-2/2024/kagaku/q11-p14-official.png"
+    ],
+    "imageAltTexts": [
+      "第2種 化学 問11の公式問題 PDF 14ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-2-2024-kagaku-q11-slot-E",
+    "exam": "hoshasen-2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 215,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "化学",
+      "セリウム線量計の吸光度を測定する波長320nmの領域"
+    ],
+    "difficulty": 3,
+    "question": "セリウム線量計の吸光度を測定する波長320nmの領域（公式問題 11・解答欄E）",
+    "choices": {
+      "ア": "窒素",
+      "イ": "酸素",
+      "ウ": "二酸化炭素",
+      "エ": "遠赤外",
+      "オ": "赤外",
+      "カ": "可視",
+      "キ": "紫外"
+    },
+    "answer": "キ",
+    "officialAnswerNumber": 7,
+    "officialQuestionLabel": "11（化学・解答欄E）",
+    "explanation": "320nmは可視光より短い領域にあり、紫外光で吸光度を測る。",
+    "choiceExplanations": {
+      "ア": "空気の多くを占める気体であり、フリッケ線量計の酸化収率を特に変える溶存気体とは異なる。この欄は「紫外」に当たる。",
+      "イ": "フリッケ線量計でイオンの酸化の収率に影響する溶存成分である。この欄は「紫外」に当たる。",
+      "ウ": "水に溶けると酸性度に関係するが設問の酸化反応で注目する溶存気体とは異なる。この欄は「紫外」に当たる。",
+      "エ": "可視光よりはるかに長い波長の光の領域である。この欄は「紫外」に当たる。",
+      "オ": "可視域より波長の長い光を指す。この欄は「紫外」に当たる。",
+      "カ": "人の目で見えるおおむね400～700nm台の光の範囲である。この欄は「紫外」に当たる。",
+      "キ": "320nmは可視光より短い領域にあり、紫外光で吸光度を測る。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2_butsurikagakuseibutsu.pdf#page=14",
+    "sourcePages": [
+      14
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第2種放射線取扱主任者試験 化学 問11。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-2/2024/kagaku/q11-p14-official.png"
+    ],
+    "imageAltTexts": [
+      "第2種 化学 問11の公式問題 PDF 14ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-2-2024-kagaku-q11-slot-F",
+    "exam": "hoshasen-2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 216,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "化学",
+      "フリッケ線量計の反応収率に影響する溶存気体"
+    ],
+    "difficulty": 3,
+    "question": "フリッケ線量計の反応収率に影響する溶存気体（公式問題 11・解答欄F）",
+    "choices": {
+      "ア": "窒素",
+      "イ": "酸素",
+      "ウ": "二酸化炭素",
+      "エ": "遠赤外",
+      "オ": "赤外",
+      "カ": "可視",
+      "キ": "紫外"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "11（化学・解答欄F）",
+    "explanation": "溶存酸素が存在すると放射線で水に生じた活性種が関与する鉄イオンの酸化収率が変わる。",
+    "choiceExplanations": {
+      "ア": "空気の多くを占める気体であり、フリッケ線量計の酸化収率を特に変える溶存気体とは異なる。この欄は「酸素」に当たる。",
+      "イ": "溶存酸素が存在すると放射線で水に生じた活性種が関与する鉄イオンの酸化収率が変わる。",
+      "ウ": "水に溶けると酸性度に関係するが設問の酸化反応で注目する溶存気体とは異なる。この欄は「酸素」に当たる。",
+      "エ": "可視光よりはるかに長い波長の光の領域である。この欄は「酸素」に当たる。",
+      "オ": "可視域より波長の長い光を指す。この欄は「酸素」に当たる。",
+      "カ": "人の目で見えるおおむね400～700nm台の光の範囲である。この欄は「酸素」に当たる。",
+      "キ": "可視域より短波長であり320nmを含む。この欄は「酸素」に当たる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2_butsurikagakuseibutsu.pdf#page=14",
+    "sourcePages": [
+      14
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第2種放射線取扱主任者試験 化学 問11。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-2/2024/kagaku/q11-p14-official.png"
+    ],
+    "imageAltTexts": [
+      "第2種 化学 問11の公式問題 PDF 14ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-2-2024-kagaku-q11-slot-ア",
+    "exam": "hoshasen-2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 217,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "化学",
+      "原問のセリウム線量計が対象とする大線量側の上限"
+    ],
+    "difficulty": 3,
+    "question": "原問のセリウム線量計が対象とする大線量側の上限（公式問題 11・解答欄ア）",
+    "choices": {
+      "ア": "1×10¹",
+      "イ": "5×10¹",
+      "ウ": "1×10²",
+      "エ": "5×10²",
+      "オ": "1×10³",
+      "カ": "5×10³",
+      "キ": "1×10⁴",
+      "ク": "5×10⁴"
+    },
+    "answer": "ク",
+    "officialAnswerNumber": 8,
+    "officialQuestionLabel": "11（化学・解答欄ア）",
+    "explanation": "原問のセリウム線量計はフリッケ線量計よりも大線量に対応し、上限は5×10⁴Gyとされる。",
+    "choiceExplanations": {
+      "ア": "1×10¹Gyは原問が問う上端の5×10⁴Gyより小さい。セリウム線量計は大きな吸収線量の計測に用いられる。",
+      "イ": "5×10¹Gyは原問が問う上端の5×10⁴Gyより小さい。セリウム線量計は大きな吸収線量の計測に用いられる。",
+      "ウ": "1×10²Gyは原問が問う上端の5×10⁴Gyより小さい。セリウム線量計は大きな吸収線量の計測に用いられる。",
+      "エ": "5×10²Gyは原問が問う上端の5×10⁴Gyより小さい。セリウム線量計は大きな吸収線量の計測に用いられる。",
+      "オ": "1×10³Gyは原問が問う上端の5×10⁴Gyより小さい。セリウム線量計は大きな吸収線量の計測に用いられる。",
+      "カ": "5×10³Gyは原問が問う上端の5×10⁴Gyより小さい。セリウム線量計は大きな吸収線量の計測に用いられる。",
+      "キ": "1×10⁴Gyは原問が問う上端の5×10⁴Gyより小さい。セリウム線量計は大きな吸収線量の計測に用いられる。",
+      "ク": "原問のセリウム線量計はフリッケ線量計よりも大線量に対応し、上限は5×10⁴Gyとされる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2_butsurikagakuseibutsu.pdf#page=14",
+    "sourcePages": [
+      14
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第2種放射線取扱主任者試験 化学 問11。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-2/2024/kagaku/q11-p14-official.png"
+    ],
+    "imageAltTexts": [
+      "第2種 化学 問11の公式問題 PDF 14ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-2-2024-kagaku-q11-slot-G",
+    "exam": "hoshasen-2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 218,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "化学",
+      "アラニン線量計で吸収線量に比例して生成するもの"
+    ],
+    "difficulty": 3,
+    "question": "アラニン線量計で吸収線量に比例して生成するもの（公式問題 11・解答欄G）",
+    "choices": {
+      "ア": "結合電子",
+      "イ": "フリーラジカル",
+      "ウ": "メタン",
+      "エ": "アンモニア",
+      "オ": "酢酸"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "11（化学・解答欄G）",
+    "explanation": "アラニンを照射すると比較的安定なフリーラジカルが生じ、その量から吸収線量を求められる。",
+    "choiceExplanations": {
+      "ア": "原子や分子に束縛された電子の一般的な名称である。この欄は「フリーラジカル」に当たる。",
+      "イ": "アラニンを照射すると比較的安定なフリーラジカルが生じ、その量から吸収線量を求められる。",
+      "ウ": "炭素と水素からなる気体であり測る不対電子の個数を表さない。この欄は「フリーラジカル」に当たる。",
+      "エ": "窒素と水素からなる分子で原問の測定対象の活性種とは異なる。この欄は「フリーラジカル」に当たる。",
+      "オ": "カルボキシ基を持つ有機酸であり原問の測定信号の対象とは異なる。この欄は「フリーラジカル」に当たる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2_butsurikagakuseibutsu.pdf#page=14",
+    "sourcePages": [
+      14
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第2種放射線取扱主任者試験 化学 問11。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-2/2024/kagaku/q11-p14-official.png"
+    ],
+    "imageAltTexts": [
+      "第2種 化学 問11の公式問題 PDF 14ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-2-2024-kagaku-q11-slot-H",
+    "exam": "hoshasen-2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 219,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "化学",
+      "アラニン中のフリーラジカルを測る装置"
+    ],
+    "difficulty": 3,
+    "question": "アラニン中のフリーラジカルを測る装置（公式問題 11・解答欄H）",
+    "choices": {
+      "ア": "X線光電子分光（XPS）",
+      "イ": "荷電粒子誘起X線分析（PIXE）",
+      "ウ": "核磁気共鳴（NMR）",
+      "エ": "蛍光X線（XRF）分析",
+      "オ": "電子スピン共鳴（ESR）"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "officialQuestionLabel": "11（化学・解答欄H）",
+    "explanation": "電子スピン共鳴で不対電子の信号強度を測り、生成したラジカルの量に換算する。",
+    "choiceExplanations": {
+      "ア": "X線照射で飛び出す電子のエネルギーから表面の化学状態を分析する。この欄は「電子スピン共鳴（ESR）」に当たる。",
+      "イ": "荷電粒子で励起して出る特性X線によって元素を分析する。この欄は「電子スピン共鳴（ESR）」に当たる。",
+      "ウ": "原子核のスピンを検出し、対象が電子のスピンではない。この欄は「電子スピン共鳴（ESR）」に当たる。",
+      "エ": "試料から出る特性X線を測って元素組成を分析する。この欄は「電子スピン共鳴（ESR）」に当たる。",
+      "オ": "電子スピン共鳴で不対電子の信号強度を測り、生成したラジカルの量に換算する。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2_butsurikagakuseibutsu.pdf#page=14",
+    "sourcePages": [
+      14,
+      15
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第2種放射線取扱主任者試験 化学 問11。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-2/2024/kagaku/q11-p14-official.png",
+      "/images/questions/hoshasen-2/2024/kagaku/q11-p15-official.png"
+    ],
+    "imageAltTexts": [
+      "第2種 化学 問11の公式問題 PDF 14ページ",
+      "第2種 化学 問11の公式問題 PDF 15ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-2-2024-kagaku-q11-slot-イ",
+    "exam": "hoshasen-2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 220,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "化学",
+      "原問のアラニン線量計の測定線量範囲の上端"
+    ],
+    "difficulty": 3,
+    "question": "原問のアラニン線量計の測定線量範囲の上端（公式問題 11・解答欄イ）",
+    "choices": {
+      "ア": "10²",
+      "イ": "10⁵",
+      "ウ": "10⁸",
+      "エ": "10¹¹",
+      "オ": "10¹⁴",
+      "カ": "10¹⁷"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "11（化学・解答欄イ）",
+    "explanation": "原問の条件ではアラニン線量計は1Gyから10⁵Gyまでの広い範囲を扱える。",
+    "choiceExplanations": {
+      "ア": "10²Gyは原問が採用する範囲の上端10⁵Gyと異なる。上端と測定範囲に含まれる一つの値は区別する。",
+      "イ": "原問の条件ではアラニン線量計は1Gyから10⁵Gyまでの広い範囲を扱える。",
+      "ウ": "10⁸Gyは原問が採用する範囲の上端10⁵Gyと異なる。上端と測定範囲に含まれる一つの値は区別する。",
+      "エ": "10¹¹Gyは原問が採用する範囲の上端10⁵Gyと異なる。上端と測定範囲に含まれる一つの値は区別する。",
+      "オ": "10¹⁴Gyは原問が採用する範囲の上端10⁵Gyと異なる。上端と測定範囲に含まれる一つの値は区別する。",
+      "カ": "10¹⁷Gyは原問が採用する範囲の上端10⁵Gyと異なる。上端と測定範囲に含まれる一つの値は区別する。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2_butsurikagakuseibutsu.pdf#page=14",
+    "sourcePages": [
+      14,
+      15
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第2種放射線取扱主任者試験 化学 問11。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-2/2024/kagaku/q11-p14-official.png",
+      "/images/questions/hoshasen-2/2024/kagaku/q11-p15-official.png"
+    ],
+    "imageAltTexts": [
+      "第2種 化学 問11の公式問題 PDF 14ページ",
+      "第2種 化学 問11の公式問題 PDF 15ページ"
+    ],
+    "publicAllowed": true
+  }
+]
