@@ -195,6 +195,7 @@ import { SEKOU_1KENCHIKU_QUESTIONS } from "./sekou-1kenchiku";
 import { PUBLIC_KHK_KAGAKU_QUESTIONS } from "./khk-kagaku/public";
 import { KENCHIKUSHI1_QUESTIONS } from "./kenchikushi1";
 import { BATCH1_QUESTIONS } from "./batch1";
+import { GIJUTSUSHI1_TEKISEI_QUESTIONS } from "./gijutsushi1-tekisei";
 import { REFORM_MGR_QUESTIONS } from "./reform-mgr";
 import { SHOHI_SODAN_QUESTIONS } from "./shohi-sodan";
 import type { ExamCode, Question } from "@/lib/questions/types";
@@ -476,6 +477,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("kyusui") ? { "kyusui": BATCH1_QUESTIONS["kyusui"]!.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("biru-kan") ? { "biru-kan": BATCH1_QUESTIONS["biru-kan"]!.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("gijutsushi1-kikai") ? { "gijutsushi1-kikai": BATCH1_QUESTIONS["gijutsushi1-kikai"]!.filter(isPracticeReadyQuestion) } : {}),
+...(isExamPublished("gijutsushi1-tekisei") ? { "gijutsushi1-tekisei": GIJUTSUSHI1_TEKISEI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("hoshasen-1") ? { "hoshasen-1": BATCH1_QUESTIONS["hoshasen-1"]!.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("hoshasen-2") ? { "hoshasen-2": BATCH1_QUESTIONS["hoshasen-2"]!.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("khk-kikai-kou") ? { "khk-kikai-kou": BATCH1_QUESTIONS["khk-kikai-kou"]!.filter(isPracticeReadyQuestion) } : {}),
