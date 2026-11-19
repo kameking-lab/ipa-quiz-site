@@ -1408,7 +1408,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jken.sgec.or.jp/docs/past_test.html",
     officialReuseTermsUrl: "https://www.jken.sgec.or.jp/docs/past_test.html",
     status: "live",
-    reuseSummary: "令和8年度前期・令和7年度後期の公式問題・正答を収録。解答欄ごとに演習できます。解説は独自作成です。",
+    reuseSummary: "令和8年度前期・令和7年度後期・令和6年度後期の公式問題・正答を収録。解答欄ごとに演習できます。解説は独自作成です。",
     attributionTemplate: "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用試験。問題・正答は公式公表資料、解説は過去問AI作成。",
     remainingWork: [],
 },

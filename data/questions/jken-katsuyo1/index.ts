@@ -1,5 +1,6 @@
+import second2024 from "./2024-second.json";
 import data from "./latest-two.json";
 import { normalizeQuestionData } from "@/lib/questions/native-b";
 
-/** 未公開候補。公開レジストリと遅延ローダーは資格台帳のゲートを必ず通す。 */
-export const JKEN_KATSUYO1_QUESTIONS = data.map(normalizeQuestionData);
+/** 公式資料の回ごとに追加し、レジストリと遅延ローダーから共通で参照する。 */
+export const JKEN_KATSUYO1_QUESTIONS = [...data, ...second2024].map(normalizeQuestionData);
