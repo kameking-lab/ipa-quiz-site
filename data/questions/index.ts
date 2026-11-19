@@ -238,6 +238,7 @@ import { isExamPublished } from "@/lib/qualifications/catalog";
 import { KANTEISHI_QUESTIONS } from "./kanteishi";
 import { KAIKEISHI_QUESTIONS } from "./kaikeishi";
 import { EISEI1_QUESTIONS } from "./eisei1";
+import { GIJUTSUSHI1_KISO_QUESTIONS } from "./gijutsushi1-kiso";
 import { KANKEN_3_QUESTIONS } from "./kanken-3";
 import { EISEI2_QUESTIONS } from "./eisei2";
 import { SOUKAN_QUESTIONS } from "./soukan";
@@ -476,6 +477,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("chintai") ? { "chintai": BATCH1_QUESTIONS["chintai"]!.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("kyusui") ? { "kyusui": BATCH1_QUESTIONS["kyusui"]!.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("biru-kan") ? { "biru-kan": BATCH1_QUESTIONS["biru-kan"]!.filter(isPracticeReadyQuestion) } : {}),
+...(isExamPublished("gijutsushi1-kiso") ? { "gijutsushi1-kiso": GIJUTSUSHI1_KISO_QUESTIONS } : {}),
 ...(isExamPublished("gijutsushi1-kikai") ? { "gijutsushi1-kikai": BATCH1_QUESTIONS["gijutsushi1-kikai"]!.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("hoshasen-1") ? { "hoshasen-1": BATCH1_QUESTIONS["hoshasen-1"]!.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("hoshasen-2") ? { "hoshasen-2": BATCH1_QUESTIONS["hoshasen-2"]!.filter(isPracticeReadyQuestion) } : {}),
