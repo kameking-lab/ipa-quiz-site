@@ -37191,5 +37191,705 @@
     "sources": [],
     "provisionalReview": true,
     "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241804-q1": {
+    "sourceHash": "cbcaf5205caa533f224fa1cbfef9c5aaab1a540d069c3f1d478c665eb878a11d",
+    "correctChoice": 4,
+    "summary": "圧力は力を面積で割るため、Pa＝N/m²＝N·m⁻²です。N·m⁻³は力を体積で割った量の単位です。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "電荷のSI単位はクーロン（C）です。1 Cは1 Aの電流を1秒間流したときの電荷に当たります。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "エネルギーのSI単位はジュール（J）です。1 Jは1 Nの力で物体をその力の向きに1 m動かす仕事に当たります。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "光度は光がある方向へどれほど強く出ているかを表します。SI基本単位のカンデラの記号はcdです。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "圧力は力を面積で割るため、Pa＝N/m²＝N·m⁻²です。N·m⁻³は力を体積で割った量の単位です。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "理想気体の状態方程式PV＝nRTから、Rの単位は圧力と体積の積を物質量と温度で割ったJ·K⁻¹·mol⁻¹です。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241804-q2": {
+    "sourceHash": "a6372796d2ff15407cd79f1006510d5a07bee84776692e42e2c906f28cb2754e",
+    "correctChoice": 4,
+    "summary": "CuとS各1個、O9個、H10個の原子量を足すと249.6786です。最も粗い項の小数第3位まで丸めて249.679 g/molです。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "249は整数まで切り捨てた値です。与えられた原子量は、合計値を小数第3位まで示せる精度です。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "249.7は小数第1位まで丸めた値です。銅と硫黄の原子量は小数第3位まで示されているため、そこまで残します。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "249.68は小数第2位までの丸めです。加算では小数点以下の桁数が最も少ない項に合わせ、小数第3位まで残します。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "CuとS各1個、O9個、H10個の原子量を足すと249.6786です。最も粗い項の小数第3位まで丸めて249.679 g/molです。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "249.6786は丸める前の計算結果です。小数第4位に精度がないため、最終結果は小数第3位へ丸めます。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241804-q3": {
+    "sourceHash": "561c7f11459c4e11a1fa8000e0869de6e642e8f81e2339b8863eebae72296171",
+    "correctChoice": 4,
+    "summary": "ジメチルエーテルは例えばメタノール同士の脱水によって得られます。酢酸を酸化して得られるエーテルではありません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "イソプロピルアルコールは第二級アルコールです。酸化すると、ヒドロキシ基のついていた位置にカルボニル基をもつアセトンになります。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "トルエンのベンゼン環につくメチル基を酸化すると、その側鎖はカルボキシ基になり、安息香酸を生じます。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "エタノールは第一級アルコールです。酸化の過程で末端にアルデヒド基をもつアセトアルデヒドができます。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "ジメチルエーテルは例えばメタノール同士の脱水によって得られます。酢酸を酸化して得られるエーテルではありません。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "フェノール類を酸化すると、芳香環の一部がカルボニル基を持つキノンの構造になる場合があります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241804-q4": {
+    "sourceHash": "3e8a89be10e2539a0ffe24ba0f1e089ee41231e93df70ea52ec412dbef4d3252",
+    "correctChoice": 3,
+    "summary": "C＋O₂→CO₂では酸素1 molにつき二酸化炭素1 molが生成します。温度と体積も同じなので圧力は1.0気圧です。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "炭素1 molと酸素1 molから二酸化炭素1 molができます。気体粒子の数が酸素の0.3倍に減る反応ではありません。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "酸素分子1個が二酸化炭素分子1個に対応します。酸素の原子1個ではなく、O₂分子を単位に反応式を読みます。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "C＋O₂→CO₂では酸素1 molにつき二酸化炭素1 molが生成します。温度と体積も同じなので圧力は1.0気圧です。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "燃焼途中の温度に注目すると圧力が変わり得ますが、設問は燃焼後に元の25℃まで戻したときの圧力を問うています。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "原子数の違いで圧力を2倍にすることはできません。気体として数えるのは二酸化炭素分子の物質量です。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241804-q5": {
+    "sourceHash": "f54cded651d223462068d172b8d3156bd62cd6676053bc2a3afb744ad2987837",
+    "correctChoice": 3,
+    "summary": "ヘキサン中は45÷10＝4.5 mg/mL、水中は(50−45)÷200＝0.025 mg/mLなので、4.5÷0.025＝180です。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "80ではヘキサンと水の濃度比を過小評価します。水相の残量は50−45＝5 mgで、濃度は5÷200＝0.025 mg/mLです。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "130は、ヘキサン相の濃度45÷10＝4.5 mg/mLと、水相の濃度5÷200＝0.025 mg/mLの比ではありません。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "ヘキサン中は45÷10＝4.5 mg/mL、水中は(50−45)÷200＝0.025 mg/mLなので、4.5÷0.025＝180です。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "分配係数の分母には、抽出前の水溶液の濃度ではなく抽出後の水相の濃度を使います。この条件では比は180です。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "各相で体積が違うので、溶質の質量同士の比で求めることはできません。それぞれを各相の体積で割ってから比を取ります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241804-q6": {
+    "sourceHash": "90cbf9340078fe44bccbe59bfd339fc09f1e9702c760e61219430d5f00b0898d",
+    "correctChoice": 3,
+    "summary": "塩酸100 mLは110 gで、塩化水素は22.0 gです。水100 gを加えるので、質量パーセントは22.0÷210×100≒10.5％です。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "10.0％は質量が同じだけの水を加えた場合の計算です。等体積でも、塩酸と水は密度が異なり、質量は同じではありません。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "10.3％は、塩化水素22 gを溶液全体210 gで割った結果より小さいです。体積ではなく総質量を分母に使います。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "塩酸100 mLは110 gで、塩化水素は22.0 gです。水100 gを加えるので、質量パーセントは22.0÷210×100≒10.5％です。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "10.8％では、210 gの溶液中の塩化水素が約22.7 gになります。水を加えるだけなので塩化水素は元の22.0 gのままです。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "11.0％は、塩化水素22.0 gを総質量200 gで割った場合の値です。塩酸の密度を反映すると総質量は210 gになります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241804-q7": {
+    "sourceHash": "543fd6b322180a68a790c605fe1231da6fdfd8a0df543f207adb60e3527d8a8c",
+    "correctChoice": 3,
+    "summary": "メスフラスコは標線まで入れたときの受入体積を校正します。排出した量を量る方式では、内壁に残る分だけ受入体積より小さくなります。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "ビュレットで読み取るときは、最小目盛の間を目視で10等分して体積を見積もります。読み取り値の差で吐出量を求めます。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "容量が小さいピペットでは、許容誤差の絶対量が小さくても容量に対する割合は大きいことがあります。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "メスフラスコは標線まで入れたときの受入体積を校正します。排出した量を量る方式では、内壁に残る分だけ受入体積より小さくなります。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "目盛りは一般に動かしたピストンで計量した体積を示します。針の内部に残る体積は、その目盛値に含めない設計があります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "マイクロシリンジの公称容量に対する精度の仕様は製品ごとに示されます。分析に用いる際は、使用する製品の仕様を確認します。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241804-q8": {
+    "sourceHash": "3bb8ba03d6e6459df6e18d211f1390f319b5043f7fa01b21c4c85c8c4b572c18",
+    "correctChoice": 4,
+    "summary": "10 ppm×100 L＝1.0 mLの蒸気です。25℃、1気圧のモル体積を約24.5 L/molとすると、質量は約2.94 mgです。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "0.3 mgは求める質量よりおよそ1桁小さいです。全量100 Lの10 ppmは対象成分の体積1 mLに当たります。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "0.6 mgに相当する蒸気の体積は100 L中では1 mLに届きません。気体の体積比1×10⁻⁵を使います。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "1.5 mgは約3.0 mgの半分です。基準の100 Lを半分にした場合の値に相当します。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "10 ppm×100 L＝1.0 mLの蒸気です。25℃、1気圧のモル体積を約24.5 L/molとすると、質量は約2.94 mgです。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "6.0 mgは目標のほぼ2倍です。同温同圧で100 Lに入れれば、およそ20 ppmになります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241804-q9": {
+    "sourceHash": "0c8c09985764e7f7459a3d5a0a97130ba9ef72a6a5241bec274b55441609fa34",
+    "correctChoice": 3,
+    "summary": "一次標準物質は純度が既知で安定な物質です。それを用いて滴定液の濃度を標定します。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "試薬特級は試薬ごとのJISで成分や不純物の上限などが示されています。特級がすべて同一の純度という意味ではありません。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "特定用途の試薬には、分析を妨げる不純物の種類や許容濃度を別に定めた規格が用いられることがあります。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "一次標準物質は純度が既知で安定な物質です。それを用いて滴定液の濃度を標定します。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "例えば水酸化ナトリウムは空気中の二酸化炭素を吸収して炭酸塩を生じます。その結果、元の試薬の純度が下がります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "酸と塩基が容器の破損などで接触すると発熱や飛散のおそれがあります。分けて保管することで事故時の混合を避けられます。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241804-q10": {
+    "sourceHash": "4b8089b51a6198b96b5087f11ace3fd18335cce37efb56353db8f46beb63540b",
+    "correctChoice": 2,
+    "summary": "軸方向観察ではプラズマの低温側の領域を含め、光軸に沿って信号を集めます。イオン化干渉が横方向より小さいとはいえません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "回折格子は、波長に応じて光を異なる方向へ分けます。目的元素の発光線を選ぶ分光器に使われます。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "軸方向観察ではプラズマの低温側の領域を含め、光軸に沿って信号を集めます。イオン化干渉が横方向より小さいとはいえません。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "ICP発光は、広い濃度域で発光強度と濃度の関係を直線として扱いやすく、一般に原子吸光より直線範囲が広いです。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "プラズマ中で励起された中性原子やイオンが低い準位へ移ると発光します。波長により元素を見分けられます。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "複数元素の発光線を同時に分光・検出する構成があり、同一の試料から多元素を測定できます。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241804-q11": {
+    "sourceHash": "664a84033316d0f5798fca2ef7af1460340cb782e18d364fad58ab3fa31aa160",
+    "correctChoice": 2,
+    "summary": "銅の物質量は1.00×10⁻⁴×1.00×10⁻³＝1.00×10⁻⁷ molです。63.5 g/molを掛け、mgに換算した6.35×10⁻³ mgが答えです。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "6.35×10⁻⁴ mgは正しい質量より10分の1小さいです。1.00 mLは10⁻³ Lで、10⁻⁴ Lではありません。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "銅の物質量は1.00×10⁻⁴×1.00×10⁻³＝1.00×10⁻⁷ molです。63.5 g/molを掛け、mgに換算した6.35×10⁻³ mgが答えです。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "6.35×10⁻² mgは正しい値の10倍です。1.00 mLを1.00×10⁻³ Lとし、体積を正しく換算します。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "6.35×10⁻¹ mgは正しい質量の100倍になります。試料は1.00 mLで、0.100 Lではありません。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "6.35 mgはこの濃度の溶液を1.00 L取った場合の値です。設問の1.00 mLはその1000分の1です。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241804-q12": {
+    "sourceHash": "dd426753b86f4e772b8d424f8fd0dec1814256aacade61e473704523ffde9eef",
+    "correctChoice": 3,
+    "summary": "硝酸カリウムは、強塩基である水酸化ナトリウムと定量的な中和反応をする酸ではありません。標定にはフタル酸水素カリウムなどを用います。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "一次標準物質には組成と純度が明確で、保存中に分解したり吸湿したりしにくい固体が適します。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "塩化ナトリウムから供給される塩化物イオンは、銀イオンと反応して塩化銀を生じます。その量から硝酸銀を標定できます。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "硝酸カリウムは、強塩基である水酸化ナトリウムと定量的な中和反応をする酸ではありません。標定にはフタル酸水素カリウムなどを用います。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "炭酸ナトリウムは塩酸と中和反応をします。純度が分かっている量を用いることで、塩酸の濃度を求められます。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "シュウ酸ナトリウムは酸性条件で過マンガン酸イオンによって酸化されます。この定量的な酸化還元反応で標定します。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241804-q13": {
+    "sourceHash": "83ef1f57ad6123331490497eca89e41a4d717abc719057d6768d2d35c7bf4353",
+    "correctChoice": 5,
+    "summary": "溶媒と溶質の相互作用で吸収スペクトルは変化し得ます。溶媒を替えると吸収極大波長が移動する場合があります。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "ランベルト・ベールの法則が成り立ち、波長と光路長を固定した条件では、吸光度は対象物質の濃度に比例します。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "濃度と波長を固定し、ランベルト・ベールの法則が成り立つ条件では、光路長が長いほど吸光度は大きくなります。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "吸収極大波長を使うと、同じ濃度でも吸光度が大きく感度を確保しやすいため、通常、測定波長として選びます。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "濃度と光路長を固定すれば、吸光度はモル吸光係数に比例します。吸収極大ではその係数も極大です。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "溶媒と溶質の相互作用で吸収スペクトルは変化し得ます。溶媒を替えると吸収極大波長が移動する場合があります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241804-q14": {
+    "sourceHash": "17efb3ed8ba302cb39001baaf6714a5f7d94a53bd4c6069d4f17abe855159850",
+    "correctChoice": 2,
+    "summary": "A＝εclよりc＝0.480÷(1.2×10⁴×2.0)＝2.0×10⁻⁵ mol/Lです。0.100 Lに含まれる質量は120 µgです。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "60 µgは正しい量の半分です。濃度2.0×10⁻⁵ mol/Lに100 mLと60 g/molを掛けると120 µgになります。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "A＝εclよりc＝0.480÷(1.2×10⁴×2.0)＝2.0×10⁻⁵ mol/Lです。0.100 Lに含まれる質量は120 µgです。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "240 µgは光路長を1.0 cmとして計算した場合の値です。設問の光路長は2.0 cmなので、濃度はその半分です。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "300 µgに対応する濃度では、設問の光路長とモル吸光係数で得る吸光度が0.480より大きくなります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "360 µgは正しい120 µgの3倍です。吸光度に比例するのは濃度なので、εと光路長で割ってから質量へ換算します。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241804-q15": {
+    "sourceHash": "ca8d4597c2a643861e9af481fae743d996c0b0fc1aaa515c3f76da8cba8b8738",
+    "correctChoice": 3,
+    "summary": "吸光度は透過光強度と入射光強度の比の負の対数です。入射光強度そのものに比例する量ではありません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "中空陰極ランプは陰極の元素に固有の線スペクトルを発します。その元素の気相原子に吸収される線を光源として用います。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "原子吸光分析で主に光を吸収するのは、原子化された目的元素の基底状態にある中性原子です。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "吸光度は透過光強度と入射光強度の比の負の対数です。入射光強度そのものに比例する量ではありません。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "原子の密度や温度はフレーム内で一様ではありません。光が通る高さなどが変わると測定される吸光度も変わります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "既知濃度の標準液を複数測って吸光度との関係を求め、未知試料の吸光度を検量線と照合して定量します。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241804-q16": {
+    "sourceHash": "e8063d6c1d7e70eef282b11e0bc3296f1aa0cf355ea4457dec0aa48d04cc8dcf",
+    "correctChoice": 1,
+    "summary": "分光蛍光光度計では紫外から可視まで広い波長の励起光を得られるキセノンランプなどが用いられます。タングステンランプは代表的な光源ではありません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "分光蛍光光度計では紫外から可視まで広い波長の励起光を得られるキセノンランプなどが用いられます。タングステンランプは代表的な光源ではありません。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "励起分光器で光源からの光を分光し、測定対象を励起するのに適した波長を選んで試料に当てます。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "石英は多くのガラスと異なり紫外域までよく透過するので、紫外光で励起する測定にも使用できます。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "蛍光分光器は試料が放出した蛍光を波長別に分けます。波長を選択して蛍光強度やスペクトルを測定します。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "蛍光は弱いことが多いため、入射光を電気信号に変え、その信号を段階的に増幅する光電子増倍管が使われます。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241804-q17": {
+    "sourceHash": "374693eda2af7127bfb25c0365e4df9a574b3eefe9d09928fb488ec1a384a6f0",
+    "correctChoice": 1,
+    "summary": "理論段数はカラム長さを理論段相当高さで割って求めます。同じ長さなら、理論段相当高さが高いほど理論段数は少なくなります。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "理論段数はカラム長さを理論段相当高さで割って求めます。同じ長さなら、理論段相当高さが高いほど理論段数は少なくなります。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "狭い内径では、分子が気相内で固定相まで移動する距離が小さくなり、一般に高い理論段数を得られます。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "液相の膜が薄いと、固定相内で試料成分が移動する距離が小さくなり、ピークの広がりを抑えやすくなります。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "極性液相と極性官能基を持つ化合物は相互作用しやすいため、液相にとどまる時間が延びる傾向があります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "無極性の液相では、無極性化合物同士の保持の違いには揮発性が大きく関係し、低沸点側が先に溶出します。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241804-q18": {
+    "sourceHash": "e5c31a6f0bfd0823ce5cfa9c79a27a07f0ce1c31f4945b568c6b029f012c46ef",
+    "correctChoice": 2,
+    "summary": "FPDは主に硫黄やリンを含む化合物からの特徴的な発光を測定します。飽和炭化水素は代表的な測定対象ではありません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "FIDは水素炎で有機化合物から生じるイオンの電流を測定します。不飽和炭化水素を含め多くの有機物に応答します。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "FPDは主に硫黄やリンを含む化合物からの特徴的な発光を測定します。飽和炭化水素は代表的な測定対象ではありません。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "ECDは電子を捕獲しやすい物質の検出に適しています。有機ハロゲン化合物はその代表的な対象です。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "芳香族炭化水素の多くは光によってイオンになりやすく、PIDの光イオン化で生じる電流を用いて検出できます。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "TIDやFTDは窒素やリンを含む有機化合物へ選択的に応答するため、有機リン化合物の測定に適します。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241804-q19": {
+    "sourceHash": "13451178423d636511eb527ed49ca1497d9d758b535c182b1f340648320cfade",
+    "correctChoice": 2,
+    "summary": "X線管の特性X線からモノクロメーターなどで必要な波長を選び、ゴニオメーターで回折角を測定します。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "特性X線とモノクロメーターの組合せは適切です。コリメーターはビームの方向をそろえるもので、回折角を測る役割とは異なります。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "X線管の特性X線からモノクロメーターなどで必要な波長を選び、ゴニオメーターで回折角を測定します。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "Kα線やKβ線は陽極元素の電子準位に由来する特性X線です。連続X線に含まれる波長成分を指す名称ではありません。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "ブラッグ反射を用いて必要な波長を選ぶ装置はモノクロメーターです。利用するKα線などは特性X線です。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "入射線の波長の選択と回折角の測定は異なる操作です。測定には角度を制御・記録するゴニオメーターを使います。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241804-q20": {
+    "sourceHash": "3fbc773e7171b19704d7e02ff5c20e3893718420c9d2d854d0cc967d35c7f10f",
+    "correctChoice": 2,
+    "summary": "6年は半減期12年の半分なので、放射能は1000×(1/2)^(6/12)≒707 Bqです。選択肢では700 Bqが最も近いです。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "800 Bqは理論値約707 Bqから約93 Bq離れています。半減期の半分が経過すると残る割合は1/√2です。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "6年は半減期12年の半分なので、放射能は1000×(1/2)^(6/12)≒707 Bqです。選択肢では700 Bqが最も近いです。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "600 Bqは約707 Bqから100 Bq以上離れています。放射能は時間に比例して一定量ずつ減るわけではありません。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "500 Bqになるのは、半減期に当たる12年経過したときです。設問の時間はその半分の6年です。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "250 Bqは初めの4分の1で、半減期を2回経た24年後の値です。6年ではそこまで減りません。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
   }
 }
