@@ -294,7 +294,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     level: "specialist",
     sessions: [{ session: "kiso", urlSlug: "kiso", expectedQuestions: 30, label: "基礎科目", categories: ["basis"] }],
     seasons: ["annual"],
-    yearRange: { start: 2025, end: 2025 },
+    yearRange: { start: 2024, end: 2025 },
 },
 "gijutsushi1-kikai": {"code":"gijutsushi1-kikai","nameFull":"技術士第一次試験・機械部門","urlSlug":"gijutsushi1-kikai","level":"specialist","sessions":[{"session":"ippan","urlSlug":"ippan","expectedQuestions":15,"label":"適性科目","categories":["aptitude"]},{"session":"kiso","urlSlug":"kiso","expectedQuestions":30,"label":"基礎科目","categories":["basis"]},{"session":"kikai","urlSlug":"kikai","expectedQuestions":34,"label":"専門科目","categories":["mechanical"]}],"seasons":["annual"],"yearRange":{"start":2024,"end":2025}},
 "hoshasen-1": {"code":"hoshasen-1","nameFull":"第一種放射線取扱主任者","urlSlug":"hoshasen-1","level":"specialist","sessions":[{"session":"gakka","urlSlug":"gakka","expectedQuestions":269,"label":"学科","categories":["生物学","物理学","化学","実務","法令"]}],"seasons":["annual"],"yearRange":{"start":2025,"end":2026}},
