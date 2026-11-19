@@ -1811,7 +1811,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     domain: "personal-services", administrator: "大韓民国 国立国際教育院", status: "live",
     officialQuestionsUrl: "https://www.topik.go.kr/TWSTDY/TWSTDY0080.do",
     officialReuseTermsUrl: "https://www.topik.go.kr/TWSTDY/TWSTDY0080.do",
-    reuseSummary: "第91・96・102回の読解を収録。問題・正答は国立国際教育院の公開版を使用。",
+    reuseSummary: "第83・91・96・102回の読解を収録。問題・正答は国立国際教育院の公開版を使用。",
     attributionTemplate: "出典：大韓民国 国立国際教育院 韓国語能力試験。解説は過去問AIの独自作成。",
     remainingWork: ["聞き取り（原本は音声で公開）"],
   },
