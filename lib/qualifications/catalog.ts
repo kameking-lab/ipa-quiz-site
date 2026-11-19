@@ -1789,6 +1789,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["第60回の公式正答（2026-11-10以降）を確認して解答・解説を追加"],
 },
   {
+    slug: "zensho-eco-81", examCode: "zensho-eco-81", shortName: "商業経済検定", fullName: "商業経済検定試験",
+    domain: "accounting", administrator: "公益財団法人全国商業高等学校協会",
+    officialQuestionsUrl: "https://zensho.or.jp/examination/pastexams/economics/",
+    officialReuseTermsUrl: "https://zensho.or.jp/examination/pastexams/economics/",
+    status: "live",
+    reuseSummary: "第37回（2022年度）のビジネス基礎を、公式問題・模範解答と全選択肢の独自解説で収録。",
+    attributionTemplate: "出典：全国商業高等学校協会 商業経済検定試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+  },
+  {
     slug: "career-consultant", examCode: "career-consultant", shortName: "キャリアコンサルタント（学科）", fullName: "国家資格キャリアコンサルタント試験 学科試験",
     domain: "welfare", administrator: "特定非営利活動法人キャリアコンサルティング協議会・特定非営利活動法人日本キャリア開発協会",
     officialQuestionsUrl: "https://www.career-shiken.org/about/learninfo/",

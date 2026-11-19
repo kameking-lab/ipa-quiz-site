@@ -245,6 +245,7 @@ kenki2: async () => isExamPublished("kenki2") ? (await import("@/data/questions/
 kenki1: async () => isExamPublished("kenki1") ? (await import("@/data/questions/kenki1")).KENKI1_QUESTIONS : [],
 gyosei: async () => isExamPublished("gyosei") ? (await import("@/data/questions/gyosei")).GYOSEI_QUESTIONS : [],
 shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/questions/shihoshoshi")).SHIHOSHOSHI_BATCH1_QUESTIONS : [],
+"zensho-eco-81": async () => isExamPublished("zensho-eco-81") ? (await import("@/data/questions/zensho-eco-81")).ZENSHO_ECO_81_QUESTIONS : [],
 "career-consultant": async () => isExamPublished("career-consultant") ? (await import("@/data/questions/career-consultant")).CAREER_CONSULTANT_QUESTIONS : [],
 "kanri-eiyoshi": async () => isExamPublished("kanri-eiyoshi") ? (await import("@/data/questions/kanri-eiyoshi")).KANRI_EIYOSHI_QUESTIONS : [],
 "sogo-ryoko": async () => isExamPublished("sogo-ryoko") ? (await import("@/data/questions/sogo-ryoko")).SOGO_RYOKO_QUESTIONS : [],
