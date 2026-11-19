@@ -818,6 +818,7 @@ const EXAM_FULL_NAMES: Record<ExamCode, string> = {
 
 
 
+    "zensho-boki-2": "全商簿記実務検定試験 2級",
     "tsukanshi": "通関士試験"
 };
 export function examFullName(exam: ExamCode): string {
@@ -1188,6 +1189,7 @@ const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number)
 
 
 
+    "zensho-boki-2": (c) => `全商簿記2級の公式過去問${c}問を収録。記入式は公式解答、選択式は全肢解説で確認できます。`,
     "tsukanshi": (c) => `通関士試験の${c}。公式正答どおりに収録。`
 };
 function publishedYearRange(exam: ExamCode): string {
