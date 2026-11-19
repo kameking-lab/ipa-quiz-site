@@ -531,7 +531,7 @@ fp2: {
     level: "specialist",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 15, label: "公害総論", categories: ["公害総論"] }],
     seasons: ["annual"],
-    yearRange: { start: 2025, end: 2025 },
+    yearRange: { start: 2024, end: 2025 },
 },
 "dekyo-charge-5": {
     code: "dekyo-charge-5",
