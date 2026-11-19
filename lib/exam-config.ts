@@ -284,7 +284,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法令", categories: ["法令"] },
       { session: "gas-technology", urlSlug: "gas-technology", expectedQuestions: 20, label: "保安管理技術", categories: ["保安管理技術"] },
     ],
-    seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
+    seasons: ["annual"], yearRange: { start: 2023, end: 2026 },
   },
 
   "shobo-setsubishi-otsu4": {
