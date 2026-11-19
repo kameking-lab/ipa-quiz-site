@@ -1,4 +1,5 @@
 import type { ChoiceKey, Question } from "@/lib/questions/types";
+import r5 from "./2023-july.json";
 import r6 from "./2024-july.json";
 import r7 from "./2025-july.json";
 import r8 from "./2026-july.json";
@@ -14,9 +15,13 @@ type Source = {
 function convert(source: Source): Question[] {
   if (source.questions.length !== 72) throw new Error("建築施工管理: 72原問が必要です");
   return source.questions.map((q, index) => {
-    const count = q.number >= 51 && q.number <= 60 ? 5 : 4;
+    const firstAppliedQuestion = source.year <= 2023 ? 55 : 51;
+    const count = q.number >= firstAppliedQuestion && q.number <= 60 ? 5 : 4;
+    const requiredSelections = count === 5 && source.year <= 2023 ? 2 : 1;
     if (q.number !== index + 1 || q.choices.length !== count || q.choiceExplanations.length !== count ||
-        !q.officialAnswerNumbers.length || q.officialAnswerNumbers.some(n => n < 1 || n > count)) {
+        q.officialAnswerNumbers.length < requiredSelections ||
+        (requiredSelections > 1 && q.officialAnswerNumbers.length !== requiredSelections) ||
+        q.officialAnswerNumbers.some(n => n < 1 || n > count)) {
       throw new Error(`建築施工管理 ${source.year} No.${q.number}: データ不整合`);
     }
     const usedKeys = keys.slice(0, count);
@@ -27,8 +32,8 @@ function convert(source: Source): Question[] {
       qNumber: q.number, type: "multiple-choice", category: q.category, topicTags: [q.category], difficulty: 3,
       question: q.question, choices: Object.fromEntries(usedKeys.map((k, i) => [k, q.choices[i]!])),
       answer: answers.length === 1 ? answers[0]! : answers,
-      requiredSelections: 1,
-      officialAnswerNumber: q.officialAnswerNumbers.join("または"),
+      requiredSelections,
+      officialAnswerNumber: q.officialAnswerNumbers.join(requiredSelections === 2 ? "・" : "または"),
       explanation: q.explanation,
       choiceExplanations: Object.fromEntries(usedKeys.map((k, i) => [k, q.choiceExplanations[i]!])),
       explanationCoverage: "full", hasImage: Boolean(q.imageUrls?.length), imageUrls: q.imageUrls,
@@ -39,4 +44,4 @@ function convert(source: Source): Question[] {
   });
 }
 /** 公開判定は資格台帳に従う。ここは公開前検証でも直接読み込む。 */
-export const SEKOU_1KENCHIKU_QUESTIONS: Question[] = [...convert(r6), ...convert(r7), ...convert(r8)];
+export const SEKOU_1KENCHIKU_QUESTIONS: Question[] = [...convert(r5), ...convert(r6), ...convert(r7), ...convert(r8)];

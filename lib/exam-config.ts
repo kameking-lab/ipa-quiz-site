@@ -250,7 +250,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       { session: "am", urlSlug: "am", expectedQuestions: 44, label: "第一次検定 午前の部", categories: ["建築学", "共通", "建築施工", "施工管理法"] },
       { session: "pm", urlSlug: "pm", expectedQuestions: 28, label: "第一次検定 午後の部", categories: ["施工管理法", "法規"] },
     ],
-    seasons: ["july"], yearRange: { start: 2024, end: 2026 },
+    seasons: ["july"], yearRange: { start: 2023, end: 2026 },
   },
 
   "khk-kagaku": {
