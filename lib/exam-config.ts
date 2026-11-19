@@ -878,7 +878,7 @@ jobpass: {
         categories: ["ビジネス常識", "時事・社会", "組織・業務基本", "コミュニケーション手法"],
     }],
     seasons: ["second"],
-    yearRange: { start: 2023, end: 2024 },
+    yearRange: { start: 2022, end: 2024 },
 },
 "kounin-science": {
     code: "kounin-science",
