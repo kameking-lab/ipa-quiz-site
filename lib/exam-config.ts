@@ -1765,7 +1765,7 @@ shihoshoshi: {
         session: "gakka", urlSlug: "gakka", expectedQuestions: 60, label: "試験問題",
         categories: ["リスニング（原稿）", "発音・声調", "文法・語彙", "語順・翻訳", "長文読解"],
     }],
-    seasons: ["march", "round2", "autumn"], yearRange: { start: 2025, end: 2026 },
+    seasons: ["march", "round2", "autumn"], yearRange: { start: 2024, end: 2026 },
 },
 "biz-career-logistics3": {
     code: "biz-career-logistics3", nameFull: "ビジネス・キャリア検定 3級ロジスティクス管理", urlSlug: "biz-career-logistics3", level: "basic",
