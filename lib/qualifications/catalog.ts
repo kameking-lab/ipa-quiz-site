@@ -1836,6 +1836,14 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["一般教養科目（各年44問中20問選択）の収録可否"],
 },
   {
+    slug: "zensho-boki-2", examCode: "zensho-boki-2", shortName: "全商簿記2級", fullName: "全商簿記実務検定試験 2級",
+    domain: "accounting", administrator: "全国商業高等学校協会",
+    officialQuestionsUrl: "https://zensho.or.jp/examination/pastexams/bookkeeping/",
+    officialReuseTermsUrl: "https://zensho.or.jp/examination/pastexams/bookkeeping/", status: "live",
+    reuseSummary: "公式問題・正答を収録。記入式の問題は公式解答と照合でき、選択式の問題は全肢解説で確認できます。",
+    remainingWork: [],
+  },
+  {
     slug: "sokuryoshiho", examCode: "sokuryoshiho", shortName: "測量士補", fullName: "測量士補",
     domain: "construction", administrator: "国土地理院",
     officialQuestionsUrl: "https://www.gsi.go.jp/LAW/SHIKEN/past.html",
