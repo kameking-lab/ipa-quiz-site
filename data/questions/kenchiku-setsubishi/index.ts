@@ -1,6 +1,7 @@
 import type { KenchikuQuestion as Question } from "./types";
 import { readKenchikuSavedSource } from "./saved-source-reader";
 import paper2022Am1 from "./2022-am1.json";
+import paper2022Am2 from "./2022-am2.json";
 import paper2023Am1 from "./2023-am1.json";
 import paper2023Am2 from "./2023-am2.json";
 import paper2023Pm from "./2023-pm.json";
@@ -14,7 +15,7 @@ import paper2026Pm from "./2026-pm.json";
 // Originals include documented source corrections. Only the study export is public.
 // Q18 remains private until its official-answer/legal interpretation conflict is resolved.
 const baseline = [paper2025Am1, paper2025Am2, paper2025Pm, paper2026Am1, paper2026Am2, paper2026Pm].flatMap(readKenchikuSavedSource);
-const materials = [...baseline, ...[paper2023Am1, paper2023Am2, paper2023Pm, paper2022Am1].flatMap(readKenchikuSavedSource)];
+const materials = [...baseline, ...[paper2023Am1, paper2023Am2, paper2023Pm, paper2022Am1, paper2022Am2].flatMap(readKenchikuSavedSource)];
 if (baseline.length !== 210 || new Set(materials.map((q) => q.id)).size !== materials.length) {
   throw new Error("kenchiku-setsubishi material count or IDs mismatch");
 }
