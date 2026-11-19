@@ -1,4 +1,5 @@
 import type { ChoiceKey, Question } from "@/lib/questions/types";
+import general2023 from "./2023-general.json";
 import required2023 from "./2023-required.json";
 import general2024 from "./2024-general.json";
 import required2024 from "./2024-required.json";
@@ -54,4 +55,5 @@ export const AIGAN_KANGOSHI_QUESTIONS: Question[] = [
   ...convert(required2024, "required", "必須問題", "https://www.ccrvn.jp/aigan_shiken/hissu.d2kokkasiken.pdf", 1),
   ...convert(general2024, "ippan", "一般問題", "https://www.ccrvn.jp/aigan_shiken/ippan.d2kokkasiken.pdf", 2),
   ...convert(required2023, "required", "必須問題", "https://www.ccrvn.jp/aigan_shiken/1kokkasiken-hissu.pdf", 1, firstExam),
+  ...convert(general2023, "ippan", "一般問題", "https://www.ccrvn.jp/aigan_shiken/1kokkasiken-ippan.pdf", 2, firstExam),
 ];
