@@ -1,5 +1,6 @@
 import type { Question } from "@/lib/questions/types";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
+import morning2023 from "./2023-am.json";
 import previous from "../batch1/biru-kan.json";
 import morning from "@/data/qualification-staging/biru-kan/2026/am-questions.json";
 import afternoon from "@/data/qualification-staging/biru-kan/2026/pm-questions.json";
@@ -14,6 +15,7 @@ export const BIRU_KAN_2026_QUESTIONS: Question[] = ([...morning, ...afternoon] a
   .filter(isPracticeReadyQuestion);
 
 export const BIRU_KAN_QUESTIONS: Question[] = [
+  ...morning2023 as Question[],
   ...previous as Question[],
   ...BIRU_KAN_2026_QUESTIONS,
 ].filter(isPracticeReadyQuestion);
