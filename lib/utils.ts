@@ -191,6 +191,7 @@ export const EXAM_LABELS: Record<string, string> = {
     "amateur2": "第二級アマチュア無線技士",
     "maritime-radar": "レーダー級海上特殊無線技士",
     "amateur1": "第一級アマチュア無線技士",
+    "dekyo-charge-5": "電気通信設備工事担任者",
     "maritime-special1": "第一級海上特殊無線技士",
     "aviation-comm": "航空無線通信士",
     "riku-toku-kokunai": "国内電信級陸上特殊無線技士",
