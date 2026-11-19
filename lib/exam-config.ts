@@ -1997,7 +1997,8 @@ caremanager: {
     sessions: [
         { session: "kyotsu", urlSlug: "kyotsu", expectedQuestions: 15, label: "教職教養（小・中・義務・特支）", categories: ["教育法規", "教育課程", "生徒指導", "教育史", "教育施策", "特別支援教育", "教育心理"] },
         { session: "kyotsu-koko", urlSlug: "kyotsu-koko", expectedQuestions: 10, label: "教職教養（高校）", categories: ["教育法規", "教育課程", "学校安全", "生徒指導", "教育施策"] },
-    ], seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
+        { session: "ippan", urlSlug: "ippan", expectedQuestions: 30, label: "一般教養（高校）", categories: ["教育法規", "教育施策", "国語", "社会", "算数・数学", "理科", "英語"] },
+    ], seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
 },
 "kyoin-gifu": {
     code: "kyoin-gifu", nameFull: "岐阜県公立学校教員採用選考試験", urlSlug: "kyoin-gifu", level: "advanced",
