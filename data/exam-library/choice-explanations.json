@@ -36491,5 +36491,805 @@
     ],
     "provisionalReview": true,
     "lastCheckedAt": "2026-09-25"
+  },
+  "emkohyo-EM20241808-q1": {
+    "sourceHash": "903bcbcce819c8fac8ff6ba84686d4bbb820d1f933ae27c4e0e4996ae2aa8d3c",
+    "correctChoice": 2,
+    "summary": "クロムは濃硝酸中で表面に保護性の酸化皮膜を作って不動態化するため、溶解が進みにくくなる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "カドミウムは希硝酸によって酸化されて硝酸塩を生じるため、希硝酸に溶けるという説明は正しい。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "クロムは濃硝酸中で表面に保護性の酸化皮膜を作って不動態化するため、溶解が進みにくくなる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "バナジウムは希硝酸と過酸化水素水の混合液に溶け、過酸化水素はバナジウムのペルオキソ錯体の形成にも関係する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "マンガンは卑な金属で、塩酸と反応してマンガンイオンとして溶液に移るため、塩酸に溶ける。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "鉛は硝酸と反応して水に溶ける硝酸鉛となるため、硫酸塩などの難溶性の皮膜が生じる場合と異なる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 職場のあんぜんサイト 金属クロム",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7440-47-3.html"
+      }
+    ]
+  },
+  "emkohyo-EM20241808-q2": {
+    "sourceHash": "96b21b848afe83e9fd1b6c02dc70f434e6481a102fdb3540aa68197c0f59d2a0",
+    "correctChoice": 4,
+    "summary": "硝酸鉛ではPb²⁺一つに硝酸イオンNO₃⁻が二つ必要なので、正しい化学式はPb(NO₃)₂となる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "過マンガン酸イオンはMnO₄⁻なので、1価のカリウムイオンと1対1で結合してKMnO₄となる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "カドミウムイオンはCd²⁺で、これに塩化物イオンが二つ対応するため、塩化カドミウムはCdCl₂となる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "三酸化二ヒ素の名称はヒ素原子が二つ、酸素原子が三つであることを表しており、式はAs₂O₃になる。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "硝酸鉛ではPb²⁺一つに硝酸イオンNO₃⁻が二つ必要なので、正しい化学式はPb(NO₃)₂となる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "クロム酸イオンはCrO₄²⁻なので、1価のカリウムイオンが二つ組み合わさってK₂CrO₄になる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 職場のあんぜんサイト 過マンガン酸カリウム",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7722-64-7.html"
+      },
+      {
+        "title": "厚生労働省 職場のあんぜんサイト 三酸化二ヒ素",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/1327-53-3.html"
+      }
+    ]
+  },
+  "emkohyo-EM20241808-q3": {
+    "sourceHash": "deeb0c7ef67c6a6b076b6c20aa846a0ecd17e5a1999c72259f64014ef783b534",
+    "correctChoice": 4,
+    "summary": "ICP発光分光分析で測るのは励起された原子やイオンの発光線である。ラマン線は光の非弾性散乱に由来する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "吸光光度分析では、分子やイオンが特定波長の光を吸収して電子のエネルギー状態が変わることを利用する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "励起スペクトルは一定の蛍光波長を観測しながら励起波長を走査したもので、蛍光光度分析で使われる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "原子吸光分析では、一定の範囲で吸光度が基底状態の原子数密度と光路長に比例することを利用して定量する。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "ICP発光分光分析で測るのは励起された原子やイオンの発光線である。ラマン線は光の非弾性散乱に由来する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "プラズマで生じた分子イオンの質量電荷比が目的元素のイオンに重なると、ICP質量分析で干渉が起こる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 食品添加物公定書 一般試験法",
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf"
+      }
+    ]
+  },
+  "emkohyo-EM20241808-q4": {
+    "sourceHash": "becbfcfc7e76ad42358146f28afb9592da9c72872b23daec9175c79e77532f76",
+    "correctChoice": 1,
+    "summary": "発色反応の出発物質はクロム(Ⅵ)である。クロム(Ⅲ)は反応の途中で生じて、酸化された試薬と錯体を形成する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "発色反応の出発物質はクロム(Ⅵ)である。クロム(Ⅲ)は反応の途中で生じて、酸化された試薬と錯体を形成する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "ブロムフェノールブルーは酸塩基指示薬であり、変色域の高pH側で青紫色を示すので記述は正しい。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "NBPHAはバナジウムと発色性の錯体を形成するため、バナジウムの吸光光度分析に用いられる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "この選択肢は水素化物発生原子吸光分析における還元剤の役割を述べているため、誤りを選ぶ本問の正答にはならない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "硫酸ナトリウムの添加で塩析が起こり、抽出対象が有機層へ移りやすくなり、分離状態も改善する。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "産業技術総合研究所 計量標準総合センター クロメート皮膜中の6価クロムの測定手順書",
+        "url": "https://unit.aist.go.jp/nmij/collab/bb_kai/cr6.pdf"
+      },
+      {
+        "title": "環境省 大気粉じん中の重金属類の測定方法",
+        "url": "https://www.env.go.jp/content/900402514.pdf"
+      }
+    ]
+  },
+  "emkohyo-EM20241808-q5": {
+    "sourceHash": "038719ddfe02eca03a15b11946bdcbe8eaa1fa451434dd02b62e470bbdcfb452",
+    "correctChoice": 1,
+    "summary": "吸光光度分析法は光の吸収の変化から微量成分を測れるため、一般的に重量分析法や容量分析法よりも高感度である。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "吸光光度分析法は光の吸収の変化から微量成分を測れるため、一般的に重量分析法や容量分析法よりも高感度である。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "発色試薬には無機のものと有機のものがあり、測定対象に応じて選択するので、記述は正しい。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "加熱で発色を促進した場合も、試料を常温に戻して測定すると、標準液と温度条件をそろえられる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "プラスチックセルは材質によって透過波長や耐溶媒性が異なり、測定波長と溶媒への適合性を確認する必要がある。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "pHにより分子の解離や錯体の生成状態が変化すると、同じ濃度でも吸光度やモル吸光係数が変化し得る。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 食品添加物公定書 一般試験法",
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf"
+      }
+    ]
+  },
+  "emkohyo-EM20241808-q6": {
+    "sourceHash": "6ebf2052b69fc969eb9ec2f5f23db5f88a99c1cc61f63652e794e83e709e3bf9",
+    "correctChoice": 1,
+    "summary": "光源には試料原子の吸収線よりも幅の狭い輝線を用いる。吸収線より幅が広い光では吸収されない成分が混ざる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "光源には試料原子の吸収線よりも幅の狭い輝線を用いる。吸収線より幅が広い光では吸収されない成分が混ざる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "電気加熱原子化法では少量の試料から高い原子密度を得られるため、一般にフレーム法より感度が高い。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "定量範囲では、吸光度は光が通る距離と基底状態にある対象原子の濃度の積に比例するので、記述は正しい。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "中空陰極ランプ内の放電により陰極の金属原子が蒸気になり、封入ガスのイオンとの衝突で励起されて発光する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "フレームに入る試料のミストが細かく粒径がそろうほど、試料導入や原子化が安定し、ノイズが減少する。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 食品添加物公定書 一般試験法",
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf"
+      }
+    ]
+  },
+  "emkohyo-EM20241808-q7": {
+    "sourceHash": "f52d81bff779344c83fde004bde25dff60f68f91781fedddcf876f00138f6f62",
+    "correctChoice": 3,
+    "summary": "粘度が変わると噴霧される液滴やプラズマに届く試料量が変化するため、試料溶液の粘度は測定値に影響する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "ICP発光分析は一般にダイナミックレンジが広く、フレーム原子吸光法より検量線の直線範囲を広く取りやすい。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "ICPではアルゴンを用い、高周波でプラズマを生成し、プラズマのエネルギーで試料原子などを励起する。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "粘度が変わると噴霧される液滴やプラズマに届く試料量が変化するため、試料溶液の粘度は測定値に影響する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "他元素の発光線が目的元素の近くにあると信号が重なり、目的元素の発光強度を過大に読むことがある。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "最大強度の線に重なりや飽和がある場合は、発光強度が低くても干渉の少ない線を選ぶ方が正確に測定できる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 食品添加物公定書 一般試験法",
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf"
+      }
+    ]
+  },
+  "emkohyo-EM20241808-q8": {
+    "sourceHash": "29ed95ea6e3003cd7c27e091a67cd2f5a624353ebbd737b6b21daf6a494fb854",
+    "correctChoice": 2,
+    "summary": "蛍光は直角方向だけに発生しない。装置では励起光が検出器に直接入るのを避けるため、直角方向を観測する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "キセノンランプは紫外から可視部までの広い範囲で強い連続光を出すため、蛍光光度分析の励起光源に使われる。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "蛍光は直角方向だけに発生しない。装置では励起光が検出器に直接入るのを避けるため、直角方向を観測する。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "金属イオン単独では蛍光を示さなくても、蛍光を示す金属キレートに変換して定量できる場合がある。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "溶媒によって励起状態と基底状態の安定性の差が変わり、蛍光スペクトルの波長や強度が変化することがある。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "溶媒のラマン線は励起波長を変えると移動するため、試料の蛍光と励起波長への応答を比較して区別できる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 第十八改正日本薬局方 蛍光光度法",
+        "url": "https://www.mhlw.go.jp/content/11120000/001022457.pdf"
+      }
+    ]
+  },
+  "emkohyo-EM20241808-q9": {
+    "sourceHash": "952094ce767bf543dac8db4677efc815db814c38d2d3ae49d19e6a90772ddd71",
+    "correctChoice": 5,
+    "summary": "ICP質量分析では測定するm/zを切り替えるなどして、一つの試料から多数の元素を分析することが可能である。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "ICPでイオンになった原子は、質量分析計で質量を電荷数で割った値m/zの違いによって分けて検出される。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "同一元素の同位体でも質量数が異なるため、質量分析計でピークを区別し、同位体比などを測定できる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "ICPは多数の金属元素をイオン化でき、質量分析計によって広い範囲の金属元素を分析できるのが特徴である。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "ICP質量分析は金属イオンを質量ごとに高感度で検出でき、一般にICP発光分析より低い濃度まで測定できる。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "ICP質量分析では測定するm/zを切り替えるなどして、一つの試料から多数の元素を分析することが可能である。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 無機元素の多元素同時測定法（酸分解／ICP-MS法）",
+        "url": "https://www.env.go.jp/content/900403678.pdf"
+      }
+    ]
+  },
+  "emkohyo-EM20241808-q10": {
+    "sourceHash": "bc1ebf37c651e2145eeec5918512e9d7786da573a3ead8041a524d252c8cf297",
+    "correctChoice": 5,
+    "summary": "シアン化カリウムの役割は共存金属による干渉を抑えることであり、モリンの酸化を防ぐ目的という説明は誤りである。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "作業環境空気のベリリウムは粒子状成分としてろ過捕集でき、この方法ではガラス繊維ろ紙を用いる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "試料は酸を使って溶液とし、モリンとの蛍光錯体形成に適したアルカリ性の条件に調整して測定する。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "錯体の形成状態やモリンの解離状態はアルカリ濃度に左右されるため、その条件によって蛍光強度が変化する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "このベリリウム定量の測定条件では、モリン試薬自体の蛍光は対象錯体の定量を妨げる信号として扱わない。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "シアン化カリウムの役割は共存金属による干渉を抑えることであり、モリンの酸化を防ぐ目的という説明は誤りである。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 作業環境測定基準",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+      },
+      {
+        "title": "環境省 大気粉じん中の重金属類の測定方法",
+        "url": "https://www.env.go.jp/content/900402514.pdf"
+      }
+    ]
+  },
+  "emkohyo-EM20241808-q11": {
+    "sourceHash": "52e58cba943e7553cc2baa96c0a58a678fba9363901fbb34dd4b67e44ccb484b",
+    "correctChoice": 5,
+    "summary": "試料をMIBK相で測るので、標準液も抽出などで溶媒条件を合わせる。標準水溶液をそのまま導入すると条件が異なる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "粒子をろ紙に集めた後に酸で溶かす前処理によって、カドミウムを均一な溶液中に移し定量できるようにする。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "カドミウムをAPDCでキレート化し、有機相のMIBKに抽出するため、錯体ができるようにpHを調整する。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "有機溶媒が燃焼に寄与するので、水溶液を測る場合と同じアセチレン量を前提にせず、燃料流量を調整する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "カドミウムの測定に用いられる代表的な原子吸光線は228.8 nmであり、この波長は定量に使用できる。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "試料をMIBK相で測るので、標準液も抽出などで溶媒条件を合わせる。標準水溶液をそのまま導入すると条件が異なる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 作業環境測定基準",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+      },
+      {
+        "title": "環境省 大気粉じん中の重金属類の測定方法",
+        "url": "https://www.env.go.jp/content/900402514.pdf"
+      }
+    ]
+  },
+  "emkohyo-EM20241808-q12": {
+    "sourceHash": "909b6df460c01d397efa11cd10b49dac6830e99651bedbbb233026ff83a037ce",
+    "correctChoice": 4,
+    "summary": "発色に必要なのは適切な酸性範囲であり、硫酸濃度を必ず1 mol/L以上とするという条件は適切でない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "水溶性の六価クロムを対象とするこの方法では、精製水を用いた液体捕集によってクロム化合物を取り込める。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "二クロム酸カリウムやクロム酸カリウムではクロムが六価であり、既知量から六価クロムの標準液を調製できる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "六価クロムに由来する赤紫色の錯体を生成させ、その可視域の吸光度を測定して六価クロムを定量する。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "発色に必要なのは適切な酸性範囲であり、硫酸濃度を必ず1 mol/L以上とするという条件は適切でない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "鉄(Ⅲ)も発色に関わる反応で妨害を起こし得るので、共存する場合は反応条件や干渉を確認して測定する。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "産業技術総合研究所 計量標準総合センター クロメート皮膜中の6価クロムの測定手順書",
+        "url": "https://unit.aist.go.jp/nmij/collab/bb_kai/cr6.pdf"
+      },
+      {
+        "title": "環境省 大気粉じん中の重金属類の測定方法",
+        "url": "https://www.env.go.jp/content/900402514.pdf"
+      }
+    ]
+  },
+  "emkohyo-EM20241808-q13": {
+    "sourceHash": "8052dc341d32ca90c78d96eec4e62a26c05f02c5186d73a5ea40fa9a6650504f",
+    "correctChoice": 2,
+    "summary": "バナジウムは黒鉛炉に残りやすく、後続の試料に影響する。原子化温度が高い場合でも炉のクリーニングは必要である。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "硝酸に金属不純物があると微量のバナジウムの測定値に影響するため、有害金属測定に適した高純度試薬が望ましい。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "バナジウムは黒鉛炉に残りやすく、後続の試料に影響する。原子化温度が高い場合でも炉のクリーニングは必要である。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "バナジウムは難揮発性であり、この電気加熱原子化法では高温で吸光測定できる原子の状態にする。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "メタバナジン酸アンモニウムは組成が明確で、所定量のバナジウムを含む標準原液の調製に使用できる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "分析液に合わせて標準液を硝酸で希釈すれば、試料と標準液の溶液条件の違いによる影響を抑えられる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 作業環境測定基準",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+      },
+      {
+        "title": "環境省 大気粉じん中の重金属類の測定方法",
+        "url": "https://www.env.go.jp/content/900402514.pdf"
+      }
+    ]
+  },
+  "emkohyo-EM20241808-q14": {
+    "sourceHash": "a01e100aa03b1132caa1850743724db94f88ae84fab8991f85e149a5d55db973",
+    "correctChoice": 2,
+    "summary": "この方法では金属のブランクを抑えられる石英繊維ろ紙を用いる。混合セルロースメンブランを用いるという記述が誤りである。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "粒径によって肺の深いところに届きやすさが異なるため、吸入性粉じんを測定するときは分粒装置で粒径を選別する。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "この方法では金属のブランクを抑えられる石英繊維ろ紙を用いる。混合セルロースメンブランを用いるという記述が誤りである。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "濃度が保証された標準液を所定の硝酸で希釈して濃度系列を作れば、試料の定量に用いる検量線が得られる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "酸に含まれる微量金属は結果の上乗せになるため、有害金属測定用など分析目的に適した高純度試薬を用いる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "電気加熱法では黒鉛炉でマンガンを原子にし、この方法では2,300 ℃付近を原子化段階の温度として用いる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 マンガン及びマンガン化合物の新たな測定法の検討結果報告書",
+        "url": "https://www.mhlw.go.jp/file/05-Shingikai-11201000-Roudoukijunkyoku-Soumuka/0000149437.pdf"
+      }
+    ]
+  },
+  "emkohyo-EM20241808-q15": {
+    "sourceHash": "9ccb4fd53f7fdb050853c1adf0bfaa22b150e5952927fb1488baac00518473d8",
+    "correctChoice": 4,
+    "summary": "この分析法では水素化物を分離して所定の加熱部で原子化するため、設問の空気・アセチレンフレームの記述は誤りである。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "捕集した粉じんから分析対象のヒ素を溶液に移す前処理について述べており、設問の分析法の説明と合う。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "水素化物発生の条件をそろえるため、測定前にヒ素の化学形態を三価へ統一する操作を予備還元という。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "この記述は、分析でヒ素を測定系へ送るための水素化物発生の段階を説明しており、原子化の説明ではない。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "この分析法では水素化物を分離して所定の加熱部で原子化するため、設問の空気・アセチレンフレームの記述は誤りである。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "標準原液は量が分かっているヒ素化合物から調製し、測定した信号をヒ素の濃度に換算する基準に用いる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 食品添加物公定書 一般試験法",
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf"
+      }
+    ]
+  },
+  "emkohyo-EM20241808-q16": {
+    "sourceHash": "e0d9e952b4bca7eaddff2591688f1708802b4ecf56bf6076f6a50ea39285f141",
+    "correctChoice": 1,
+    "summary": "水銀蒸気の水への溶解度が高いわけではない。液体捕集では酸化性の捕集液に化学的に取り込むことで捕集する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "水銀蒸気の水への溶解度が高いわけではない。液体捕集では酸化性の捕集液に化学的に取り込むことで捕集する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "硫酸酸性の過マンガン酸カリウムで水銀蒸気を酸化し、揮発しにくいイオンの状態で捕集液に取り込む。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "バブラーの内壁に残った成分が失われないように捕集液で洗い、その洗液も試料液に合わせて回収する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "アスコルビン酸を還元剤として用いる場合は、塩化スズ由来の不溶性オキシクロライドの生成を抑えられる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "ヒドロキシルアミン溶液は過剰な酸化剤を除く段階で使い、水銀イオンを測定用の原子にする役割とは区別する。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 総水銀の測定方法",
+        "url": "https://www.env.go.jp/kijun/wt_a01.html"
+      },
+      {
+        "title": "厚生労働省 作業環境測定基準",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+      }
+    ]
+  },
+  "emkohyo-EM20241808-q17": {
+    "sourceHash": "48a5bdedeb39eb605147beae87785cd330c0cb0275dd697adf5698aa62d895e3",
+    "correctChoice": 2,
+    "summary": "この鉛のDDTC抽出で用いる条件は弱酸性ではない。キレートの生成と抽出は所定のpHに調整して行う。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "DDTCやAPDCは鉛とキレートを形成し、水相から有機相のMIBKへ移す目的に使用できる。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "この鉛のDDTC抽出で用いる条件は弱酸性ではない。キレートの生成と抽出は所定のpHに調整して行う。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "酒石酸ナトリウム・カリウムを加えると、共存金属の妨害を抑えながら目的の鉛を抽出するのに役立つ。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "鉛錯体を有機相に移すと、抽出されず水相に残る陰イオンなどから分けられ、分析時の干渉を低減できる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "抽出相の濃度や品質が時間経過で変わらないよう、MIBKを分離したら所定の時間内に分析する。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 作業環境測定基準",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+      },
+      {
+        "title": "環境省 大気粉じん中の重金属類の測定方法",
+        "url": "https://www.env.go.jp/content/900402514.pdf"
+      }
+    ]
+  },
+  "emkohyo-EM20241808-q18": {
+    "sourceHash": "8e623b539853c7d2f56d1d13026efe3f36826dd14a4d1ed4206dab398461e43b",
+    "correctChoice": 4,
+    "summary": "最終試料液の酸を必要以上に濃くすると噴霧や吸収測定を妨げるため、2 mol/L以上が望ましいという説明は誤りである。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "粉状ニッケル化合物は作業環境空気中の粒子として、ガラス繊維ろ紙などを使うろ過捕集法で集めることができる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "捕集した粉じんからニッケルを溶液に移す段階を述べている。温浴を用いると試料を穏やかに加熱できる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "ニッケル原子の吸収線のうち232.0 nmは感度が高く、ニッケルの原子吸光定量に使われる波長である。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "最終試料液の酸を必要以上に濃くすると噴霧や吸収測定を妨げるため、2 mol/L以上が望ましいという説明は誤りである。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "硫酸が共存すると試料の粘度やフレームへの導入状態が変わり、吸光測定の干渉となる場合がある。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 作業環境測定基準",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+      },
+      {
+        "title": "環境省 大気粉じん中の重金属類の測定方法",
+        "url": "https://www.env.go.jp/content/900402514.pdf"
+      }
+    ]
+  },
+  "emkohyo-EM20241808-q19": {
+    "sourceHash": "26fb0a2668e113d679c488c75a8f030c91ca469e06cf6b13b96700817b19423a",
+    "correctChoice": 2,
+    "summary": "有機相と水相の質量比は(100×10)対100なので、有機相に入る質量は10×10/11≒9.09 µgとなる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "分配係数と相の体積を合わせた質量比は有機相対水相で10対1になる。9.0 µgへの丸めにはならない。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "有機相と水相の質量比は(100×10)対100なので、有機相に入る質量は10×10/11≒9.09 µgとなる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "抽出量は全量10 µgに10/11を掛けた約9.09 µgなので、小数第1位まででは9.1 µgになる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "濃度比と質量比は相の体積が違うので一致しない。正しい質量比を用いると有機相の質量は約9.09 µgになる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "水相にも全量の1/11に当たる約0.91 µgが残る。全量をほぼ移した9.4 µgという計算にはならない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 食品添加物公定書 一般試験法",
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf"
+      }
+    ]
+  },
+  "emkohyo-EM20241808-q20": {
+    "sourceHash": "62abf9b8859149445c916da953c2996f89ef8af27845294585d37ec14d78721a",
+    "correctChoice": 3,
+    "summary": "鉛の質量は0.15 µg/mL×100 mL＝0.015 mgで、捕集量は30 L/min×10 min＝0.30 m³である。両者を割ると0.050 mg/m³となる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "この濃度を捕集空気0.30 m³に掛けると0.0030 mgとなるが、試料液から計算した鉛の質量は0.015 mgである。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "これは最終試料液の体積を50 mLとして計算した値であり、抽出後に定容した100 mLを使う必要がある。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "鉛の質量は0.15 µg/mL×100 mL＝0.015 mgで、捕集量は30 L/min×10 min＝0.30 m³である。両者を割ると0.050 mg/m³となる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "捕集空気は300 Lであるため0.30 m³を使う。0.100 mg/m³は同じ鉛の質量に対して空気体積を半分にした場合の値である。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "0.15は試料液のµg/mLで表した濃度である。空気中濃度を出すには質量を求め、捕集空気体積と単位を換算する。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 作業環境測定基準",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+      },
+      {
+        "title": "環境省 大気粉じん中の重金属類の測定方法",
+        "url": "https://www.env.go.jp/content/900402514.pdf"
+      }
+    ]
   }
 }

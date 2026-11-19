@@ -13,6 +13,10 @@ import peLq3d from "@/reports/LQ3D-20261104/adoption-manifest.json";
 
 const isReviewedOctoberImport = (id: string) => /^lckohyo-LC202621(?:0[23679]|1[01279])-q\d+$/.test(id);
 
+const historicalMetalKeys = {
+  "emkohyo-EM20241808": [2, 4, 4, 1, 1, 1, 3, 2, 5, 5, 5, 4, 2, 2, 4, 1, 2, 4, 2, 3],
+};
+
 describe("official exam library integration", () => {
   it("requires every authored plain explanation to be substantive and preserves its answer-key snapshot", () => {
     const questions = listAvailableExamIds().flatMap((id) => loadExamPaper(id) ?? []);
@@ -51,8 +55,17 @@ describe("official exam library integration", () => {
     const surveySnapshot = answerSnapshot.filter(([id]) => String(id).startsWith("private-gsi-survey-assistant-20261021-"));
     const peIds = new Set(EXAM_CATALOG.filter(entry => entry.group === "pe-first").flatMap(entry => (loadExamPaper(entry.id) ?? []).map(question => question.id)));
     const peSnapshot = answerSnapshot.filter(([id]) => peIds.has(String(id)));
-    const existingSnapshot = answerSnapshot.filter(([id]) => !String(id).startsWith("private-gsi-survey-assistant-20261021-") && !peIds.has(String(id)) && !isReviewedOctoberImport(String(id)));
-    expect(answerSnapshot).toHaveLength(3153 + (peContinuation.length + peLq3d.length + historicalPePapers.length) * 35);
+    const metalIds = new Set<string>();
+    for (const [id, officialKeys] of Object.entries(historicalMetalKeys)) {
+      const paper = loadExamPaper(id) ?? [];
+      expect(paper.map((question) => question.correctChoice)).toEqual(officialKeys);
+      for (const question of paper) {
+        expect(question.choiceExplanation?.choices).toHaveLength(5);
+        metalIds.add(question.id);
+      }
+    }
+    const existingSnapshot = answerSnapshot.filter(([id]) => !String(id).startsWith("private-gsi-survey-assistant-20261021-") && !peIds.has(String(id)) && !isReviewedOctoberImport(String(id)) && !metalIds.has(String(id)));
+    expect(answerSnapshot).toHaveLength(3153 + metalIds.size + (peContinuation.length + peLq3d.length + historicalPePapers.length) * 35);
     expect(peSnapshot).toHaveLength(594 + (peContinuation.length + peLq3d.length + historicalPePapers.length) * 35);
     // Preserve the previous 2,154 official keys independently of the new reviewed packet.
     expect(existingSnapshot).toHaveLength(2154);
