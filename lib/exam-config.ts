@@ -1481,7 +1481,7 @@ kounin: {
     level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 24, label: "英語", categories: ["英語"] }],
     seasons: ["round1", "round2"],
-    yearRange: { start: 2023, end: 2024 },
+    yearRange: { start: 2022, end: 2024 },
 },
 "zensho-bido": {
     code: "zensho-bido",
