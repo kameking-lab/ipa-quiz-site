@@ -1794,7 +1794,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://kyoin-pref-osaka.com/test/r9results-2-2/",
     officialReuseTermsUrl: "https://kyoin-pref-osaka.com/test/r9results-2-2/",
     status: "live",
-    reuseSummary: "2025・2026年度実施の第1次選考の筆答各27問を公式問題・正答と全肢の独自解説で収録。",
+    reuseSummary: "2024～2026年度実施の第1次選考の筆答各27問を公式問題・正答と全肢の独自解説で収録。",
     attributionTemplate: "出典：大阪府教育委員会 大阪府公立学校教員採用選考テスト 第1次選考 筆答。解説は過去問AIの独自作成。",
     remainingWork: ["過年度の第1次選考筆答および第2次選考の収録"],
   },
