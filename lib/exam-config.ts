@@ -1784,7 +1784,7 @@ shihoshoshi: {
         { session: "civil-procedure", urlSlug: "civil-procedure", expectedQuestions: 15, label: "民事訴訟法", categories: ["民事訴訟法"] },
         { session: "criminal-law", urlSlug: "criminal-law", expectedQuestions: 13, label: "刑法", categories: ["刑法"] },
         { session: "criminal-procedure", urlSlug: "criminal-procedure", expectedQuestions: 13, label: "刑事訴訟法", categories: ["刑事訴訟法"] },
-    ], seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+    ], seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
 },
 sokuryoshiho: {
     code: "sokuryoshiho", nameFull: "測量士補試験", urlSlug: "sokuryoshiho", level: "basic",
