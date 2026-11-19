@@ -7,6 +7,7 @@ import rousai2022 from "./rousai-2022-annual.json";
 import rousai2023 from "./rousai-2023-annual.json";
 import rousai2025 from "./rousai-2025-annual.json";
 import rousai2026 from "./rousai-2026-annual.json";
+import koyou2022 from "./koyou-2022-annual.json";
 import koyou2023 from "./koyou-2023-annual.json";
 import koyou2025 from "./koyou-2025-annual.json";
 import koyou2026 from "./koyou-2026-annual.json";
@@ -41,6 +42,7 @@ export const SHAROUSHI_QUESTIONS: Question[] = [
   ...(rousai2025 as Question[]),
   ...(rousai2026 as Question[]),
   ...(koyou2023 as Question[]),
+  ...(koyou2022 as Question[]),
   ...(koyou2025 as Question[]),
   ...(koyou2026 as Question[]),
   ...(kenpo2023 as Question[]),
