@@ -8,10 +8,11 @@ import { findQuestionByRoute, questionPagePath } from "@/lib/seo/question-url";
 import type { ChoiceKey } from "@/lib/questions/types";
 
 describe("通関士 第59回: 択一式の「該当なし＝0」", () => {
-  const nonePrompts = TSUKANSHI_QUESTIONS.filter((q) => !q.part && q.choices?.[TSUKANSHI_NONE_KEY] !== undefined);
+  const questions = TSUKANSHI_QUESTIONS.filter((q) => q.year === 2025);
+  const nonePrompts = questions.filter((q) => !q.part && q.choices?.[TSUKANSHI_NONE_KEY] !== undefined);
   it("publishes all 105 answer units and keeps every unit practice-ready", () => {
-    expect(TSUKANSHI_QUESTIONS).toHaveLength(105);
-    expect(TSUKANSHI_QUESTIONS.filter(isPracticeReadyQuestion)).toHaveLength(105);
+    expect(questions).toHaveLength(105);
+    expect(questions.filter(isPracticeReadyQuestion)).toHaveLength(105);
   });
   it("moves the 0 option of the 30 single/multi-choice prompts to タ and labels it 0", () => {
     expect(nonePrompts).toHaveLength(30);
@@ -25,20 +26,20 @@ describe("通関士 第59回: 択一式の「該当なし＝0」", () => {
     expect(choiceDisplayLabel("tsukanshi", "オ")).toBe("5");
   });
   it("shows the official answer 0 where 0 is correct", () => {
-    const q18 = TSUKANSHI_QUESTIONS.find((q) => q.id === "tsukanshi-2025-annual-tsukan-law-q18")!;
+    const q18 = questions.find((q) => q.id === "tsukanshi-2025-annual-tsukan-law-q18")!;
     expect(q18.answer).toBe(TSUKANSHI_NONE_KEY);
     expect(formatQuestionAnswerForDisplay(q18, q18.answer as ChoiceKey)).toBe("0");
   });
   it("keeps word-bank blanks numbered 1〜15 (カ stays 6)", () => {
-    const bank = TSUKANSHI_QUESTIONS.find((q) => q.part && q.choices?.ソ !== undefined)!;
+    const bank = questions.find((q) => q.part && q.choices?.ソ !== undefined)!;
     expect(bank.choices?.カ).toBeDefined();
     expect(choiceDisplayLabel("tsukanshi", "カ")).toBe("6");
     expect(choiceDisplayLabel("tsukanshi", "ソ")).toBe("15");
   });
   it("resolves every answer-unit URL", () => {
-    for (const q of TSUKANSHI_QUESTIONS) {
+    for (const q of questions) {
       const [, , exam, yearSeason, section, qnum] = questionPagePath(q).split("/");
-      expect(findQuestionByRoute(TSUKANSHI_QUESTIONS, { exam, yearSeason, section, qnum })?.id, q.id).toBe(q.id);
+      expect(findQuestionByRoute(questions, { exam, yearSeason, section, qnum })?.id, q.id).toBe(q.id);
     }
   });
 });

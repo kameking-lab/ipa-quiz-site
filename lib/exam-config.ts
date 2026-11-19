@@ -1998,7 +1998,7 @@ tsukanshi: {
         { session: "tsukan-law", urlSlug: "tsukan-law", expectedQuestions: 20, label: "通関業法", categories: ["通関業法"] },
         { session: "customs-law", urlSlug: "customs-law", expectedQuestions: 30, label: "関税法等", categories: ["関税法等"] },
         { session: "tsukan-practical", urlSlug: "tsukan-practical", expectedQuestions: 15, label: "通関実務", categories: ["通関実務"] },
-    ], seasons: ["annual"], yearRange: { start: 2025, end: 2025 },
+    ], seasons: ["annual"], yearRange: { start: 2024, end: 2025 },
 }
 };
 
