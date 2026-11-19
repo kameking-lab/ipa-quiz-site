@@ -317,6 +317,7 @@ export const EXAM_LABELS: Record<string, string> = {
     "caremanager": "ケアマネ試験",
     "zensho-calc": "全商ビジネス計算実務検定",
     "kanken-2": "日本漢字能力検定2級",
+    "kogai-17": "公害防止管理者・大気関係技術特論",
     "kounin-physics": "高卒認定・物理基礎",
 
     "tekko2": "鉄工技能士 2級",

@@ -254,6 +254,7 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 "caremanager": async () => isExamPublished("caremanager") ? (await import("@/data/questions/caremanager")).CAREMANAGER_QUESTIONS : [],
 "zensho-calc": async () => isExamPublished("zensho-calc") ? (await import("@/data/questions/zensho-calc")).ZENSHO_CALC_QUESTIONS : [],
 "kanken-2": async () => isExamPublished("kanken-2") ? (await import("@/data/questions/kanken-2")).KANKEN_2_QUESTIONS : [],
+"kogai-17": async () => isExamPublished("kogai-17") ? (await import("@/data/questions/kogai-17")).KOGAI_17_QUESTIONS : [],
 "kounin-physics": async () => isExamPublished("kounin-physics") ? (await import("@/data/questions/kounin-physics")).KOUNIN_PHYSICS_QUESTIONS : [],
 "denshi-kiki-kumitate2": async () => isExamPublished("denshi-kiki-kumitate2") ? (await import("@/data/questions/denshi-kiki-kumitate2")).DENSHI_KIKI_KUMITATE2_QUESTIONS : [],
 "kinzoku-netsushori1": async () => isExamPublished("kinzoku-netsushori1") ? (await import("@/data/questions/kinzoku-netsushori1")).KINZOKU_NETSUSHORI1_QUESTIONS : [],

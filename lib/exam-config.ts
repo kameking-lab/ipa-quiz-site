@@ -1795,6 +1795,14 @@ sokuryoshiho: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 28, label: "試験問題", categories: ["測量法規", "多角測量", "GNSS測量", "水準測量", "地形測量", "写真測量", "地図編集", "応用測量"] }],
     seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
 },
+"kogai-17": {
+    code: "kogai-17", nameFull: "公害防止管理者 大気関係技術特論", urlSlug: "kogai-17", level: "specialist",
+    sessions: [{
+      session: "gakka", urlSlug: "gakka", expectedQuestions: 20, label: "大気関係技術特論",
+      categories: ["燃料と燃焼", "排煙脱硫と脱硝", "測定と分析", "集じん", "大気拡散と気象", "公害防止設備"],
+    }],
+    seasons: ["annual"], yearRange: { start: 2025, end: 2025 },
+},
 "kounin-physics": {
     code: "kounin-physics",
     nameFull: "高等学校卒業程度認定試験 物理基礎",

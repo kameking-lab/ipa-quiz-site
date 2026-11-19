@@ -1845,6 +1845,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["No.21の地形図（電子地形図25000）の測量法上の複製承認要否の確認"],
 },
   {
+    slug: "kogai-17", examCode: "kogai-17", shortName: "公害防止管理者・大気関係技術特論",
+    fullName: "公害防止管理者等国家試験 大気関係技術特論",
+    domain: "construction", administrator: "一般社団法人産業環境管理協会",
+    officialQuestionsUrl: "https://www.jemai.or.jp/polconman/examination/past.html",
+    officialReuseTermsUrl: "https://www.jemai.or.jp/polconman/examination/past.html",
+    status: "live",
+    reuseSummary: "公式の問題と正答に基づき、全選択肢に解説を付けて収録。",
+    remainingWork: [],
+  },
+  {
     slug: "kounin-physics", examCode: "kounin-physics", shortName: "高卒認定・物理基礎",
     fullName: "高等学校卒業程度認定試験 物理基礎", domain: "personal-services", administrator: "文部科学省",
     officialQuestionsUrl: "https://www.mext.go.jp/a_menu/koutou/shiken/1421021.htm",

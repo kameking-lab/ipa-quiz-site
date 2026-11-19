@@ -324,6 +324,7 @@ import { SOKURYOSHIHO_QUESTIONS } from "./sokuryoshiho";
 import { CAREMANAGER_QUESTIONS } from "./caremanager";
 import { ZENSHO_CALC_QUESTIONS } from "./zensho-calc";
 import { KANKEN_2_QUESTIONS } from "./kanken-2";
+import { KOGAI_17_QUESTIONS } from "./kogai-17";
 import { KOUNIN_PHYSICS_QUESTIONS } from "./kounin-physics";
 
 import { QUESTIONS as KIKAI_HOZEN1_QUESTIONS } from "./kikai-hozen1";
@@ -624,6 +625,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("caremanager") ? { "caremanager": CAREMANAGER_QUESTIONS } : {}),
 ...(isExamPublished("zensho-calc") ? { "zensho-calc": ZENSHO_CALC_QUESTIONS } : {}),
 ...(isExamPublished("kanken-2") ? { "kanken-2": KANKEN_2_QUESTIONS } : {}),
+...(isExamPublished("kogai-17") ? { "kogai-17": KOGAI_17_QUESTIONS } : {}),
 ...(isExamPublished("kounin-physics") ? { "kounin-physics": KOUNIN_PHYSICS_QUESTIONS } : {}),
 
 ...(isExamPublished("tekko2") ? { "tekko2": TEKKO2_QUESTIONS } : {}),
