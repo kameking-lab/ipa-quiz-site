@@ -1,6 +1,7 @@
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 import y2025 from "@/data/qualification-staging/tsukanshi/2025.json";
 import y2024 from "./2024.json";
+import y2023 from "./2023.json";
 import { projectStagedQuestions } from "../batch4/project-staged";
 
 /**
@@ -22,5 +23,5 @@ function moveNoneChoice(question: Question): Question {
 
 export const TSUKANSHI_QUESTIONS: Question[] = [
   ...projectStagedQuestions(y2025).map(moveNoneChoice),
-  ...projectStagedQuestions(y2024),
+  ...projectStagedQuestions([...y2024, ...y2023]),
 ];
