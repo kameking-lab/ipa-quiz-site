@@ -1543,7 +1543,7 @@ kankoji1: {
         { session: "mondai-a", urlSlug: "mondai-a", expectedQuestions: 44, label: "第一次検定 問題A", categories: ["一般基礎（必須）", "空調・衛生設備（選択）", "設備機器・材料（必須）"] },
         { session: "mondai-b", urlSlug: "mondai-b", expectedQuestions: 29, label: "第一次検定 問題B", categories: ["施工管理法（必須）", "法規（選択）", "施工管理法・応用能力（必須）"] },
     ],
-    seasons: ["september"], yearRange: { start: 2026, end: 2026 },
+    seasons: ["september"], yearRange: { start: 2025, end: 2026 },
 },
 "kogai-11": {
     code: "kogai-11", nameFull: "公害防止管理者 騒音・振動概論", urlSlug: "kogai-11", level: "advanced",

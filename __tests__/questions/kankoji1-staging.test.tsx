@@ -18,11 +18,12 @@ import { createHistoryStore } from "@/lib/storage/history";
 
 vi.mock("next/navigation", () => ({ useRouter: () => ({ push: vi.fn(), replace: vi.fn(), prefetch: vi.fn(), back: vi.fn() }) }));
 const keys = ["ア", "イ", "ウ", "エ"];
-const getB = (n: number) => KANKOJI1_QUESTIONS.find(q => q.session === "mondai-b" && q.qNumber === n)!;
+const questions2026 = KANKOJI1_QUESTIONS.filter(q => q.year === 2026);
+const getB = (n: number) => questions2026.find(q => q.session === "mondai-b" && q.qNumber === n)!;
 beforeEach(() => { cleanup(); window.localStorage.clear(); createHistoryStore().reset(); });
 
-describe("1級管工事 令和8年度・未公開", () => {
-  it("batch1公開後: 資格台帳・同期/非同期公開プールのすべてで未公開を守る", async () => {
+describe("1級管工事 令和8年度", () => {
+  it("資格台帳・同期/非同期の公開プールで受験年度を扱う", async () => {
     expect(QUALIFICATION_CATALOG.find(q => q.slug === "sekou-1kankoji")?.status).toBe("live");
     expect(isExamPublished("kankoji1")).toBe(true);
     expect(getRegisteredExamCodes()).toContain("kankoji1");
@@ -32,10 +33,10 @@ describe("1級管工事 令和8年度・未公開", () => {
     expect(EXAM_CONFIGS.kankoji1.sessions.map(s => s.expectedQuestions)).toEqual([44, 29]);
   });
   it("A44問・B29問、全73問を欠落重複なく収録し公式正答全件と照合する", () => {
-    expect(KANKOJI1_QUESTIONS).toHaveLength(73);
-    expect(new Set(KANKOJI1_QUESTIONS.map(q => q.id)).size).toBe(73);
+    expect(questions2026).toHaveLength(73);
+    expect(new Set(questions2026.map(q => q.id)).size).toBe(73);
     for (const paper of source.papers) {
-      const qs = KANKOJI1_QUESTIONS.filter(q => q.session === paper.session);
+      const qs = questions2026.filter(q => q.session === paper.session);
       expect(qs.map(q => q.qNumber)).toEqual(Array.from({ length: paper.officialQuestionCount }, (_, i) => i + 1));
       qs.forEach(q => {
         const official = answers[paper.paper as "A" | "B"][q.qNumber - 1];
@@ -51,7 +52,7 @@ describe("1級管工事 令和8年度・未公開", () => {
         expect(Object.values(q.choiceExplanations!).every(v => v!.length > 15)).toBe(true);
         expect(q.explanationCoverage).toBe("full");
         const [, , exam, yearSeason, section, qnum] = questionPagePath(q).split("/");
-        expect(findQuestionByRoute(KANKOJI1_QUESTIONS, { exam, yearSeason, section, qnum })?.id).toBe(q.id);
+        expect(findQuestionByRoute(questions2026, { exam, yearSeason, section, qnum })?.id).toBe(q.id);
       });
     }
   });
@@ -60,9 +61,9 @@ describe("1級管工事 令和8年度・未公開", () => {
     const raw = "docs/evidence/sekou-1kankoji-latest2/input/";
     expect(hash(raw + "20260907k_seitou.pdf")).toBe(source.answerSha256);
     for (const p of source.papers) expect(hash(raw + `20260907k_mondai${p.paper.toLowerCase()}.pdf`)).toBe(p.questionSha256);
-    expect(KANKOJI1_QUESTIONS.filter(q => q.hasImage)).toHaveLength(7);
+    expect(questions2026.filter(q => q.hasImage)).toHaveLength(7);
     for (const f of figures) {
-      const q = KANKOJI1_QUESTIONS.find(q => q.session === `mondai-${f.paper.toLowerCase()}` && q.qNumber === f.number)!;
+      const q = questions2026.find(q => q.session === `mondai-${f.paper.toLowerCase()}` && q.qNumber === f.number)!;
       expect(q.imageUrls).toEqual([f.publicPath]);
       expect(hash("public" + f.publicPath)).toBe(f.sha256);
     }
