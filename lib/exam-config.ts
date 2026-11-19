@@ -1472,6 +1472,11 @@ shuwa: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 20, label: "電気通信システム", categories: ["電気回路", "伝送技術", "通信網"] }],
     seasons: ["second"], yearRange: { start: 2024, end: 2024 },
 },
+"kogai-taiki-yugai": {
+    code: "kogai-taiki-yugai", nameFull: "公害防止管理者 大気有害物質特論", urlSlug: "kogai-taiki-yugai", level: "specialist",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 10, label: "大気有害物質特論", categories: ["大気有害物質特論"] }],
+    seasons: ["annual"], yearRange: { start: 2025, end: 2025 },
+},
 "zensho-eco-80": {
     code: "zensho-eco-80", nameFull: "商業経済検定", urlSlug: "zensho-eco-80", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 100, label: "学科", categories: ["ビジネス基礎", "マーケティング"] }],

@@ -342,6 +342,7 @@ import { TETSUDO_SHARYO2_QUESTIONS } from "./tetsudo-sharyo2";
 import { KIKAI_HOZEN_QUESTIONS } from "./kikai-hozen";
 import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
 import { DEKYO_CHIEF_2_QUESTIONS } from "./dekyo-chief-2";
+import { KOGAI_TAIKI_YUGAI_QUESTIONS } from "./kogai-taiki-yugai";
 import { ZENSHO_ECO_QUESTIONS } from "./zensho-eco-80";
 import { KANKEN_7_QUESTIONS } from "./kanken-7";
 
@@ -715,6 +716,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 
 ...(isExamPublished("tsukanshi") ? { "tsukanshi": TSUKANSHI_QUESTIONS } : {}),
 ...(isExamPublished("dekyo-chief-2") ? { "dekyo-chief-2": DEKYO_CHIEF_2_QUESTIONS } : {}),
+...(isExamPublished("kogai-taiki-yugai") ? { "kogai-taiki-yugai": KOGAI_TAIKI_YUGAI_QUESTIONS } : {}),
 ...(isExamPublished("zensho-eco-80") ? { "zensho-eco-80": ZENSHO_ECO_QUESTIONS } : {}),
 ...(isExamPublished("kanken-7") ? { "kanken-7": KANKEN_7_QUESTIONS } : {}),
 };

@@ -1403,6 +1403,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
   },
   {
+    slug: "kogai-taiki-yugai", examCode: "kogai-taiki-yugai", shortName: "大気有害物質特論", fullName: "公害防止管理者 大気有害物質特論",
+    domain: "safety", administrator: "一般社団法人産業環境管理協会",
+    officialQuestionsUrl: "https://www.jemai.or.jp/polconman/examination/past.html",
+    officialReuseTermsUrl: "https://www.jemai.or.jp/polconman/examination/past.html",
+    status: "live",
+    reuseSummary: "大気有害物質特論の公式問題と正答を収録。",
+    attributionTemplate: "出典：一般社団法人産業環境管理協会 公害防止管理者等国家試験。解説は過去問AI作成。",
+    remainingWork: [],
+  },
+  {
     slug: "zensho-eco-80", examCode: "zensho-eco-80", shortName: "商業経済検定", fullName: "商業経済検定",
     domain: "accounting", administrator: "公益財団法人全国商業高等学校協会",
     officialQuestionsUrl: "https://zensho.or.jp/examination/pastexams/economics/",
