@@ -1393,6 +1393,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
   },
   {
+    slug: "dekyo-chief-2", examCode: "dekyo-chief-2", shortName: "電気通信主任技術者", fullName: "電気通信主任技術者",
+    domain: "electrical", administrator: "一般財団法人日本データ通信協会",
+    officialQuestionsUrl: "https://www.dekyo.or.jp/shiken/chief/exam",
+    officialReuseTermsUrl: "https://www.dekyo.or.jp/shiken/chief/exam",
+    status: "live",
+    reuseSummary: "伝送交換・線路の共通科目「電気通信システム」の公式問題と正答を収録。",
+    attributionTemplate: "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験。解説は過去問AI作成。",
+    remainingWork: [],
+  },
+  {
     slug: "zensho-eco-80", examCode: "zensho-eco-80", shortName: "商業経済検定", fullName: "商業経済検定",
     domain: "accounting", administrator: "公益財団法人全国商業高等学校協会",
     officialQuestionsUrl: "https://zensho.or.jp/examination/pastexams/economics/",
