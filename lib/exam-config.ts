@@ -1801,7 +1801,7 @@ sokuryoshiho: {
       session: "gakka", urlSlug: "gakka", expectedQuestions: 20, label: "大気関係技術特論",
       categories: ["燃料と燃焼", "排煙脱硫と脱硝", "測定と分析", "集じん", "大気拡散と気象", "公害防止設備"],
     }],
-    seasons: ["annual"], yearRange: { start: 2024, end: 2025 },
+    seasons: ["annual"], yearRange: { start: 2023, end: 2025 },
 },
 "kounin-physics": {
     code: "kounin-physics",
