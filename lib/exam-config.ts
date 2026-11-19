@@ -243,7 +243,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     { session: "dokugeki-nougyou", urlSlug: "dokugeki-nougyou", expectedQuestions: 50, label: "農業用品目", categories: ["毒物及び劇物に関する法規", "基礎化学", "毒物及び劇物の性質、貯蔵、識別及びその他取扱方法"] },
     { session: "dokugeki-tokutei", urlSlug: "dokugeki-tokutei", expectedQuestions: 50, label: "特定品目", categories: ["毒物及び劇物に関する法規", "基礎化学", "毒物及び劇物の性質、貯蔵、識別及びその他取扱方法"] },
   ],
-  seasons: ["annual"], yearRange: { start: 2024, end: 2025 },
+  seasons: ["annual"], yearRange: { start: 2023, end: 2025 },
 },
 "dokugeki-chiba": {"code": "dokugeki-chiba", "nameFull": "毒物劇物取扱者", "urlSlug": "dokugeki-chiba", "level": "specialist", "sessions": [{"session": "dokugeki-ippan", "urlSlug": "dokugeki-ippan", "expectedQuestions": 80, "label": "一般", "categories": ["毒物及び劇物に関する法規", "基礎化学", "毒物及び劇物の性質及び貯蔵その他取扱方法", "毒物及び劇物の識別及び取扱方法"]}, {"session": "dokugeki-nougyou", "urlSlug": "dokugeki-nougyou", "expectedQuestions": 80, "label": "農業用品目", "categories": ["毒物及び劇物に関する法規", "基礎化学", "毒物及び劇物の性質及び貯蔵その他取扱方法", "毒物及び劇物の識別及び取扱方法"]}, {"session": "dokugeki-tokutei", "urlSlug": "dokugeki-tokutei", "expectedQuestions": 80, "label": "特定品目", "categories": ["毒物及び劇物に関する法規", "基礎化学", "毒物及び劇物の性質及び貯蔵その他取扱方法", "毒物及び劇物の識別及び取扱方法"]}], "seasons": ["annual"], "yearRange": {"start": 2025, "end": 2026}},
 "jokaso-setsubishi": {"code": "jokaso-setsubishi", "nameFull": "浄化槽設備士（学科）", "urlSlug": "jokaso-setsubishi", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 50, "label": "学科", "categories": ["浄化槽設備士学科"]}], "seasons": ["annual"], "yearRange": {"start": 2025, "end": 2026}},
