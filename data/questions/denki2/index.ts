@@ -3,25 +3,45 @@ import source2026 from "./2026-early.json";
 import source2025 from "./2025-late.json";
 import source2024Late from "./2024-late.json";
 import source2024Early from "./2024-early.json";
+import source2023Late from "./2023-late.json";
 import questions2024Secondary from "./2024-late-jitsumu.json";
 import questions2023Secondary from "./2023-late-jitsumu.json";
 import questions2022Secondary from "./2022-late-jitsumu.json";
 
 const keys: ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ"];
-type Source = typeof source2026 | typeof source2024Late | typeof source2024Early;
+interface Source {
+  year: number;
+  season: string;
+  edition: string;
+  questionUrl: string;
+  answerUrl: string;
+  answerPdfPage: number;
+  questions: {
+    number: number;
+    pdfPage: number;
+    question: string;
+    choices: string[];
+    officialAnswerNumbers: number[];
+    category: string;
+    topic: string;
+    explanation: string;
+    choiceExplanations: string[];
+    imageUrl?: string;
+    imageAltText?: string;
+  }[];
+}
 
 function toQuestions(source: Source, lastUpdated = "2026-11-03"): Question[] {
+  const firstFiveChoice = source.year < 2024 ? 39 : 37;
   return source.questions.map((item): Question => {
     const answerNumber = item.officialAnswerNumbers[0];
     const answer = keys[answerNumber - 1];
     if (!answer || item.officialAnswerNumbers.length !== 1 ||
-        item.choices.length !== (item.number >= 37 && item.number <= 40 ? 5 : 4) ||
+        item.choices.length !== (item.number >= firstFiveChoice && item.number < firstFiveChoice + 4 ? 5 : 4) ||
         item.choiceExplanations.length !== item.choices.length) {
       throw new Error(`Invalid denki2 ${source.year}-${source.season} No.${item.number}`);
     }
-    const imageUrl = "imageUrl" in item && typeof item.imageUrl === "string" ? item.imageUrl : undefined;
-    const imageAltText = "imageAltText" in item && typeof item.imageAltText === "string"
-      ? item.imageAltText : undefined;
+    const { imageUrl, imageAltText } = item;
     return {
       id: `denki2-${source.year}-${source.season}-gakka-q${item.number}`,
       exam: "denki2", session: "gakka", year: source.year, season: source.season as Season,
@@ -44,13 +64,14 @@ function toQuestions(source: Source, lastUpdated = "2026-11-03"): Question[] {
 
 /** 公開は資格カタログのゲートで制御する。 */
 export const DENKI2_2026_QUESTIONS = toQuestions(source2026);
-export const DENKI2_2025_QUESTIONS = toQuestions(source2025 as Source);
+export const DENKI2_2025_QUESTIONS = toQuestions(source2025);
 export const DENKI2_QUESTIONS: Question[] = [
   ...DENKI2_2026_QUESTIONS,
   ...DENKI2_2025_QUESTIONS,
   ...toQuestions(source2024Late, "2026-11-19"),
   ...questions2024Secondary as Question[],
   ...toQuestions(source2024Early, "2026-11-19"),
+  ...toQuestions(source2023Late, "2026-11-19"),
   ...questions2023Secondary as Question[],
   ...questions2022Secondary as Question[],
 ];
