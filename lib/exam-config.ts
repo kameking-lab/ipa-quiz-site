@@ -1459,6 +1459,12 @@ shuwa: {
 },
 "reform-mgr": { code: "reform-mgr", nameFull: "マンションリフォームマネジャー学科試験", urlSlug: "reform-mgr", level: "specialist", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（未公開）", categories: ["??"] }], seasons: ["annual"], yearRange: { start: 2025, end: 2026 } },
 "shohi-sodan": { code: "shohi-sodan", nameFull: "消費生活相談員資格試験（マークシート部分）", urlSlug: "shohi-sodan", level: "specialist", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 160, label: "マークシート式試験（未公開）", categories: ["??"] }], seasons: ["annual"], yearRange: { start: 2024, end: 2025 } },
+"cg-creator-basic": {
+    code: "cg-creator-basic", nameFull: "CGクリエイター検定 ベーシック", urlSlug: "cg-creator-basic", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "ベーシック",
+        categories: ["知的財産権", "モデリング", "マテリアルとレンダリング", "アニメーション", "映像表現", "ライティング", "写真とレタッチ", "デザインと表現", "色彩", "ディジタル画像"] }],
+    seasons: ["early", "late"], yearRange: { start: 2025, end: 2026 },
+},
 "g-kentei": {
     code: "g-kentei", nameFull: "G検定（ジェネラリスト検定）", urlSlug: "g-kentei", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 0, label: "公式公開問題",
