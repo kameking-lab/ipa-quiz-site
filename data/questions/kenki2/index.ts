@@ -14,8 +14,8 @@ import y2025_3 from "@/data/qualification-staging/kenki/level2/2025-type3.json";
 import y2025_4 from "@/data/qualification-staging/kenki/level2/2025-type4.json";
 import y2025_5 from "@/data/qualification-staging/kenki/level2/2025-type5.json";
 import y2025_6 from "@/data/qualification-staging/kenki/level2/2025-type6.json";
+import common2024 from "./2024-common.json";
 
-/** 全冊子304原問。公開は資格台帳のゲートで制御する。 */
 export const KENKI2_QUESTIONS: Question[] = [
   ...toKenkiQuestions(y2026_0, "kenki2", "kyotsu"),
   ...toKenkiQuestions(y2026_1, "kenki2", "kenki-type1"),
@@ -31,4 +31,5 @@ export const KENKI2_QUESTIONS: Question[] = [
   ...toKenkiQuestions(y2025_4, "kenki2", "kenki-type4"),
   ...toKenkiQuestions(y2025_5, "kenki2", "kenki-type5"),
   ...toKenkiQuestions(y2025_6, "kenki2", "kenki-type6"),
+  ...common2024 as Question[],
 ];

@@ -1577,7 +1577,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     administrator: "一般社団法人日本建設機械施工協会",
     officialQuestionsUrl: "https://jcmanet-shiken.jp/kako-shiken-mondai/",
     officialReuseTermsUrl: "https://jcmanet.or.jp/kentei/", status: "live",
-    reuseSummary: "令和8・7年度の共通各32問・第1〜6種各20問、計304問を非公開で準備。公式正答・全肢解説・必要図を保存。法規は出題時点の法令。",
+    reuseSummary: "令和8・7年度の共通・第1〜6種と、令和6年度の共通32問を収録。公式正答・全肢解説・必要図を掲載。法規は出題時点の法令。",
     remainingWork: ["監督側による独立レビューと指摘修正後の合格確認"],
 },
   {

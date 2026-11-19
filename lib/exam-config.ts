@@ -1742,7 +1742,7 @@ kenki2: {
         { session: "kenki-type5", urlSlug: "kenki-type5", expectedQuestions: 20, label: "第5種（舗装機械）", categories: ["第5種（舗装機械）"] },
         { session: "kenki-type6", urlSlug: "kenki-type6", expectedQuestions: 20, label: "第6種（基礎工事機械）", categories: ["第6種（基礎工事機械）"] },
     ],
-    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+    seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
 },
 kenki1: {
     code: "kenki1", nameFull: "1級建設機械施工管理技術検定（第一次検定）", urlSlug: "kenki1", level: "specialist",
