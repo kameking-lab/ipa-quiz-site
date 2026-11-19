@@ -1371,7 +1371,7 @@ riyoshi: {
         { session: "senmon", urlSlug: "senmon", expectedQuestions: 20, label: "端末設備の接続のための技術及び理論", categories: ["端末設備の接続のための技術及び理論"] },
         { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "端末設備の接続に関する法規", categories: ["端末設備の接続に関する法規"] },
     ],
-    seasons: ["first", "second"], yearRange: { start: 2024, end: 2024 },
+    seasons: ["first", "second"], yearRange: { start: 2023, end: 2024 },
 },
 chizai1: {
     code: "chizai1", nameFull: "知的財産管理技能検定1級", urlSlug: "chizai1", level: "specialist",
