@@ -1,4 +1,5 @@
 import type { ChoiceKey, Question } from "@/lib/questions/types";
+import basic2024 from "./2024-basic.json";
 import marketing2024 from "./2024-marketing.json";
 import basic2025 from "./2025-basic.json";
 import law2025 from "./2025-businesshouki.json";
@@ -74,4 +75,5 @@ export const ZENSHO_ECO_78_QUESTIONS: Question[] = [
   ...convert(management2025, "ビジネス・マネジメント", (item) => String(item.page)),
   ...convert(law2025, "ビジネス法規", (item) => item.passageKey ?? String(item.page)),
   ...convert(marketing2024, "マーケティング", (item) => String(item.page), round39),
+  ...convert(basic2024, "ビジネス基礎", (item) => item.passageKey, round39),
 ];
