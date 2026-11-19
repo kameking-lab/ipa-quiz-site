@@ -1,0 +1,4047 @@
+[
+  {
+    "id": "radio21-aviation-comm-2023-02-kogaku-a01",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 1,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "無線工学"
+    ],
+    "difficulty": 3,
+    "question": "A-1 図に示すように、真空中の点aに置かれた +Q 〔C〕の点電荷から1〔m〕離れた点b における電界の強さの値が8〔mV/m〕であるとき、\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-1",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-kogaku-a01.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 無線工学 A-1 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211736id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211713id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 無線工学 A-1（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "点電荷の電界は距離の二乗に反比例します。距離が1 mから2 mになると8÷4＝2 mV/mです。",
+    "choiceExplanations": {
+      "ア": "1 mV/mになるには距離を約√8倍にする必要があり、2 mでの値ではありません。",
+      "イ": "点電荷の電界は距離の二乗に反比例します。距離が1 mから2 mになると8÷4＝2 mV/mです。",
+      "ウ": "距離を2倍にすると電界の強さは4分の1です。3 mV/mではこの関係を満たしません。",
+      "エ": "4 mV/mは距離に単純に反比例するとして求めた値です。点電荷では距離の二乗を用います。",
+      "オ": "点bと点cの距離差を電界から差し引くのではなく、点電荷からの距離の比の二乗で求めます。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-kogaku-a02",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 2,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "無線工学"
+    ],
+    "difficulty": 3,
+    "question": "A-2 次の記述は、図に示す交流回路の電力について述べたものである。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-2",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-kogaku-a02.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 無線工学 A-2 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211736id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211713id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 無線工学 A-2（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "有効電力は電圧と電流の実効値の積に力率cos θを掛けて求めます。実効値の積VIは皮相電力で単位はVAです。",
+    "choiceExplanations": {
+      "ア": "有効電力は電圧と電流の実効値の積に力率cos θを掛けて求めます。実効値の積VIは皮相電力で単位はVAです。",
+      "イ": "VIを無効電力としています。無効電力に対応するのは位相の直交成分で、VI sin θで求めます。",
+      "ウ": "VIは皮相電力ですが、有効電力は力率で割るのではなく掛けます。",
+      "エ": "有効電力はVI cos θです。またVIは無効電力ではなく皮相電力です。",
+      "オ": "電力の計算にはVとIの積を使います。V/Iの次元は抵抗で電力にはなりません。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-kogaku-a03",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 3,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "無線工学"
+    ],
+    "difficulty": 3,
+    "question": "A-3 次の記述は、半導体について述べたものである。このうち誤っているものを下の番号から選べ。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-3",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-kogaku-a03.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 無線工学 A-3 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211736id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211713id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 無線工学 A-3（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "一般的な半導体では温度上昇によってキャリアが増えるため、常温付近で抵抗が小さくなる性質を示します。抵抗が大きくなるとした点が誤りです。",
+    "choiceExplanations": {
+      "ア": "5価のヒ素には共有結合に使わない電子があり、電子を与えるドナーとしてn形を作ります。",
+      "イ": "3価のインジウムを加えると共有結合を満たす電子が不足し、正孔を作るアクセプターとしてp形を作ります。",
+      "ウ": "p形ではアクセプターの添加により正孔の濃度が電子より高くなります。",
+      "エ": "n形ではドナーの添加で自由電子が供給され、自由電子が多数キャリアとなります。",
+      "オ": "一般的な半導体では温度上昇によってキャリアが増えるため、常温付近で抵抗が小さくなる性質を示します。抵抗が大きくなるとした点が誤りです。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-kogaku-a04",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 4,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "無線工学"
+    ],
+    "difficulty": 3,
+    "question": "A-4 次の記述は、増幅回路の電圧利得について述べたものである。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-4",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-kogaku-a04.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 無線工学 A-4 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211736id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211713id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 無線工学 A-4（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "電圧比に対し20 log₁₀(Vo/Vi)で利得を求めます。縦続接続では電圧比が掛け合わされるため、dBで表した利得はG₁＋G₂となります。",
+    "choiceExplanations": {
+      "ア": "電圧そのものの比をデシベルにする係数は20です。10は電力比に用います。",
+      "イ": "増幅の比は出力を入力で割ったVo/Viです。直列接続した場合のdB値は足し合わせます。",
+      "ウ": "電圧比に対し20 log₁₀(Vo/Vi)で利得を求めます。縦続接続では電圧比が掛け合わされるため、dBで表した利得はG₁＋G₂となります。",
+      "エ": "縦続接続で掛けるのはデシベルに直す前の電圧比です。対数の値であるdBは足し合わせます。",
+      "オ": "入力を出力で割ると電圧比が逆になります。利得を求める分子は出力電圧です。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-kogaku-a05",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 5,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "無線工学"
+    ],
+    "difficulty": 3,
+    "question": "A-5 次の記述は、図1に示すDSB(A3E)振幅変調波vAM について述べたものである。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-5",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-kogaku-a05.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 無線工学 A-5 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211736id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211713id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 無線工学 A-5（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "振幅の最大値XはC＋S、最小値YはC−Sです。したがってS/Cと(X−Y)/(X＋Y)は等しくなります。",
+    "choiceExplanations": {
+      "ア": "変調度は信号波の振幅Sを搬送波Cで割りますが、波形から求めるときも差を和で割るのでBが逆です。",
+      "イ": "振幅の最大値XはC＋S、最小値YはC−Sです。したがってS/Cと(X−Y)/(X＋Y)は等しくなります。",
+      "ウ": "(X−Y)/(X＋Y)は正しい形ですが、振幅の比はC/Sではなく信号波を分子にしたS/Cです。",
+      "エ": "変調度はS/Cであり、また包絡線の和に対する差の比で求めます。どちらの分子と分母も逆です。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-kogaku-a06",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 6,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "無線工学"
+    ],
+    "difficulty": 3,
+    "question": "A-6 次の記述は、FM(F3E)通信方式の一般的な特徴について述べたものである。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-6",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-kogaku-a06.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 無線工学 A-6 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211736id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211713id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 無線工学 A-6（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "入力がしきい値を下回るとS/Nが低下し、リミタで振幅雑音を抑えます。強い希望波が選ばれやすい捕捉効果もFMの特徴です。",
+    "choiceExplanations": {
+      "ア": "弱い電波を受けるとしきい値以下でS/Nは悪くなりますが、リミタは振幅の変化を取り除くのでパルス性雑音の影響を受けにくくなります。",
+      "イ": "混信波より強いと混信の影響を受けにくい点は適切ですが、パルス性の振幅変動はリミタで抑えます。",
+      "ウ": "入力がしきい値を下回るとS/Nが低下し、リミタで振幅雑音を抑えます。強い希望波が選ばれやすい捕捉効果もFMの特徴です。",
+      "エ": "入力が弱すぎると出力のS/Nは良くなるのではなく急激に悪化します。",
+      "オ": "FMの捕捉効果により混信を受けにくいのは希望波が妨害波より強い場合です。入力のしきい値以下ではS/Nも悪化します。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-kogaku-a07",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 7,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "無線工学"
+    ],
+    "difficulty": 3,
+    "question": "A-7 次の記述は、ILS(計器着陸装置)の基本的な概念について述べたものである。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-7",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-kogaku-a07.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 無線工学 A-7 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211736id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211713id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 無線工学 A-7（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "ローカライザは水平方向、グライド・パスは垂直方向のずれを示します。マーカ・ビーコンは距離の目安となります。",
+    "choiceExplanations": {
+      "ア": "ローカライザが示すのは滑走路中心線からの左右のずれです。進入角からの上下のずれはグライド・パスで分かります。",
+      "イ": "マーカ・ビーコンは標識地点の通過によって距離の手掛かりを与えますが、他の二つの割当てが逆です。",
+      "ウ": "進入角からの上下のずれはグライド・パスが示します。しかしローカライザが示すのは進行方向の位置ではなく左右です。",
+      "エ": "ローカライザは水平方向、グライド・パスは垂直方向のずれを示します。マーカ・ビーコンは距離の目安となります。",
+      "オ": "グライド・パスは定めた進入角より上下どちらに外れたかを示します。前後の位置を示す装置ではありません。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-kogaku-a08",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 8,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "無線工学"
+    ],
+    "difficulty": 3,
+    "question": "A-8 次の記述は、ACAS(航空機衝突防止装置)IIを搭載した2 機の航空機が接近したときの、ACASIIの動作について述べたものである。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-8",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-kogaku-a08.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 無線工学 A-8 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211736id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211713id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 無線工学 A-8（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "相互に回避指示を調整する通信にはモードSのデータリンクを使います。モードAはその回避情報の交換に使いません。",
+    "choiceExplanations": {
+      "ア": "相手機が送信する識別に必要な情報を受信することで、その機体を監視対象にできます。",
+      "イ": "個別に質問し、応答から相手機との距離、方位及び高度等を監視します。",
+      "ウ": "相手機との位置関係と接近の状態を監視し、交通情報として乗員に知らせます。",
+      "エ": "ACASⅡの回避指示は垂直方向について行われ、画面と音声で乗員に伝達されます。",
+      "オ": "相互に回避指示を調整する通信にはモードSのデータリンクを使います。モードAはその回避情報の交換に使いません。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-kogaku-a09",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 9,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "無線工学"
+    ],
+    "difficulty": 3,
+    "question": "A-9 次の記述は、電池について述べたものである。このうち誤っているものを下の番号から選べ。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-9",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-kogaku-a09.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 無線工学 A-9 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211736id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211713id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 無線工学 A-9（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "同じ電圧の電池を並列につなぐと端子電圧は1個と同じで、合成の容量が増えます。電圧が2倍になるのは同じ電池2個を直列につないだ場合です。",
+    "choiceExplanations": {
+      "ア": "異なる起電力の電池を並列にすると電池間に電流が流れ、発熱や損傷につながるおそれがあります。",
+      "イ": "同じ10 Ahの電池を直列につなぐと電圧は加算されますが、両方に同じ電流が流れるため容量は10 Ahです。",
+      "ウ": "同じ電圧の電池を並列につなぐと端子電圧は1個と同じで、合成の容量が増えます。電圧が2倍になるのは同じ電池2個を直列につないだ場合です。",
+      "エ": "二次電池は充電により化学反応を元に戻し、繰り返し使用できる電池です。",
+      "オ": "鉛蓄電池とリチウムイオン蓄電池は繰返し充電して使える二次電池です。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-kogaku-a10",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 10,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "無線工学"
+    ],
+    "difficulty": 3,
+    "question": "A-10 次の記述は、送信アンテナと給電線の整合について述べたものである。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-10",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-kogaku-a10.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 無線工学 A-10 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211736id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211713id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 無線工学 A-10（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "アンテナの入力インピーダンスを給電線の特性インピーダンスに整合させると反射波がなく、定在波が生じません。不整合では反射によって電力が戻ります。",
+    "choiceExplanations": {
+      "ア": "アンテナの入力インピーダンスを給電線の特性インピーダンスに整合させると反射波がなく、定在波が生じません。不整合では反射によって電力が戻ります。",
+      "イ": "整合時と不整合時の現象が逆です。反射は不整合時に生じます。",
+      "ウ": "整合させるのはアンテナの損失抵抗だけではなく、給電点の入力インピーダンスです。",
+      "エ": "損失抵抗を合わせるとした点に加え、反射と定在波が生じる条件も誤っています。",
+      "オ": "整合と不整合の結果は合っていますが、対象はアンテナの損失抵抗ではなく給電点インピーダンスです。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-kogaku-b01",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 1,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "無線工学"
+    ],
+    "difficulty": 3,
+    "question": "B-1 次の記述は、受信機の性能について述べたものである。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-1",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-kogaku-b01.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 無線工学 B-1 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211736id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211713id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 無線工学 B-1（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "b",
+    "type": "native-b",
+    "answer": "",
+    "officialAnswerNumber": "6,7,8,4,5",
+    "explanation": "感度は微弱な電波を所定の品質で受信できるかを示します。\n\n選択度は多数の電波から目的の電波だけを取り出す性能です。\n\n忠実度は送信側が送り出した信号を受信側で元に近い状態に戻せるかを表します。\n\n安定度は調整をやり直さずに出力をどの程度一定に保てるかを示します。\n\n内部雑音は受信機の内部で生じ、出力に混入する雑音です。",
+    "choiceExplanations": {
+      "ア": "周波数の高低にどこまで対応できるかは帯域の問題で、感度の定義ではありません。",
+      "イ": "選択度は複数の電波を同時に受ける能力ではなく、必要な電波を選ぶ性能です。",
+      "ウ": "忠実に再現するのは搬送波そのものではなく、搬送波に載せた情報の信号です。",
+      "エ": "再調整なしで一定の出力が得られることが、受信の安定性を表します。",
+      "オ": "受信機の回路自身が内部雑音を生じるため、オに入ります。",
+      "カ": "弱い電波をどこまで受信できるかを示すため、アに入ります。",
+      "キ": "周辺の不要な電波を除き、目的の電波を選ぶのでイに入ります。",
+      "ク": "伝送された信号をどの程度再現できるかを表すのでウに入ります。",
+      "ケ": "再調整を繰り返さなければ出力が一定に保てない場合は、安定度が低いことを示します。",
+      "コ": "送信機で発生する変動は、受信機内部から生じる雑音の説明ではありません。"
+    },
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "高い周波数の",
+          "explanation": "周波数の高低にどこまで対応できるかは帯域の問題で、感度の定義ではありません。"
+        },
+        {
+          "id": "2",
+          "label": "二つ以上の電波",
+          "explanation": "選択度は複数の電波を同時に受ける能力ではなく、必要な電波を選ぶ性能です。"
+        },
+        {
+          "id": "3",
+          "label": "搬送波",
+          "explanation": "忠実に再現するのは搬送波そのものではなく、搬送波に載せた情報の信号です。"
+        },
+        {
+          "id": "4",
+          "label": "行わずに",
+          "explanation": "再調整なしで一定の出力が得られることが、受信の安定性を表します。"
+        },
+        {
+          "id": "5",
+          "label": "受信機",
+          "explanation": "受信機の回路自身が内部雑音を生じるため、オに入ります。"
+        },
+        {
+          "id": "6",
+          "label": "微弱な",
+          "explanation": "弱い電波をどこまで受信できるかを示すため、アに入ります。"
+        },
+        {
+          "id": "7",
+          "label": "目的の電波のみ",
+          "explanation": "周辺の不要な電波を除き、目的の電波を選ぶのでイに入ります。"
+        },
+        {
+          "id": "8",
+          "label": "信号",
+          "explanation": "伝送された信号をどの程度再現できるかを表すのでウに入ります。"
+        },
+        {
+          "id": "9",
+          "label": "繰り返して",
+          "explanation": "再調整を繰り返さなければ出力が一定に保てない場合は、安定度が低いことを示します。"
+        },
+        {
+          "id": "10",
+          "label": "送信機",
+          "explanation": "送信機で発生する変動は、受信機内部から生じる雑音の説明ではありません。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "6",
+          "explanation": "感度は微弱な電波を所定の品質で受信できるかを示します。"
+        },
+        {
+          "label": "イ",
+          "answer": "7",
+          "explanation": "選択度は多数の電波から目的の電波だけを取り出す性能です。"
+        },
+        {
+          "label": "ウ",
+          "answer": "8",
+          "explanation": "忠実度は送信側が送り出した信号を受信側で元に近い状態に戻せるかを表します。"
+        },
+        {
+          "label": "エ",
+          "answer": "4",
+          "explanation": "安定度は調整をやり直さずに出力をどの程度一定に保てるかを示します。"
+        },
+        {
+          "label": "オ",
+          "answer": "5",
+          "explanation": "内部雑音は受信機の内部で生じ、出力に混入する雑音です。"
+        }
+      ],
+      "officialLabel": "B-1",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表の配点は小設問各1点です。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-kogaku-b02",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 2,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "無線工学"
+    ],
+    "difficulty": 3,
+    "question": "B-2 次の記述は、GPS (Global Positioning System) について述べたものである。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-2",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-kogaku-b02.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 無線工学 B-2 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211736id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211713id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 無線工学 B-2（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "b",
+    "type": "native-b",
+    "answer": "",
+    "officialAnswerNumber": "1,7,3,9,5",
+    "explanation": "GPS衛星は軌道傾斜角約55度の六つの軌道面に配置されます。\n\n各衛星は約12時間で軌道を一周し、一日におよそ二周します。\n\nGPSの測位信号に使われるL帯は、300 MHz〜3 GHzの極超短波に含まれます。\n\n3次元座標と受信機の時計誤差という四つの未知数を求めるには、通常4個以上の衛星を使います。\n\n信号の送信時刻と衛星の位置を示す軌道情報から、受信機の位置を求めます。",
+    "choiceExplanations": {
+      "ア": "公称のGPS衛星群は異なる六つの軌道面に配置されます。",
+      "イ": "GPS衛星の軌道周期は約12時間であり、地球の自転一周期の24時間ではありません。",
+      "ウ": "GPSのL帯信号はUHFに含まれ、ウに入ります。",
+      "エ": "3次元位置と受信機の時計の誤差を求めるのに衛星2個では足りません。",
+      "オ": "衛星の測位用信号には送信時刻が含まれるため、オに当てはまります。",
+      "カ": "二つの軌道面ではなく、六つの軌道面に分かれて配置されます。",
+      "キ": "衛星の軌道周期は約12時間であり、イに入ります。",
+      "ク": "VHFより高い周波数のL帯でGPS測位信号を送信します。",
+      "ケ": "三つの位置座標と時計誤差を求めるため、通常4個以上を使用します。",
+      "コ": "測位には衛星の軌道と信号送信時刻が必要で、気象情報はこの空欄に入りません。"
+    },
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "6つの軌道上",
+          "explanation": "公称のGPS衛星群は異なる六つの軌道面に配置されます。"
+        },
+        {
+          "id": "2",
+          "label": "24時間",
+          "explanation": "GPS衛星の軌道周期は約12時間であり、地球の自転一周期の24時間ではありません。"
+        },
+        {
+          "id": "3",
+          "label": "極超短波（UHF）帯",
+          "explanation": "GPSのL帯信号はUHFに含まれ、ウに入ります。"
+        },
+        {
+          "id": "4",
+          "label": "2個",
+          "explanation": "3次元位置と受信機の時計の誤差を求めるのに衛星2個では足りません。"
+        },
+        {
+          "id": "5",
+          "label": "時刻情報",
+          "explanation": "衛星の測位用信号には送信時刻が含まれるため、オに当てはまります。"
+        },
+        {
+          "id": "6",
+          "label": "2つの軌道上",
+          "explanation": "二つの軌道面ではなく、六つの軌道面に分かれて配置されます。"
+        },
+        {
+          "id": "7",
+          "label": "12時間",
+          "explanation": "衛星の軌道周期は約12時間であり、イに入ります。"
+        },
+        {
+          "id": "8",
+          "label": "超短波（VHF）帯",
+          "explanation": "VHFより高い周波数のL帯でGPS測位信号を送信します。"
+        },
+        {
+          "id": "9",
+          "label": "4個",
+          "explanation": "三つの位置座標と時計誤差を求めるため、通常4個以上を使用します。"
+        },
+        {
+          "id": "10",
+          "label": "気象情報",
+          "explanation": "測位には衛星の軌道と信号送信時刻が必要で、気象情報はこの空欄に入りません。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "GPS衛星は軌道傾斜角約55度の六つの軌道面に配置されます。"
+        },
+        {
+          "label": "イ",
+          "answer": "7",
+          "explanation": "各衛星は約12時間で軌道を一周し、一日におよそ二周します。"
+        },
+        {
+          "label": "ウ",
+          "answer": "3",
+          "explanation": "GPSの測位信号に使われるL帯は、300 MHz〜3 GHzの極超短波に含まれます。"
+        },
+        {
+          "label": "エ",
+          "answer": "9",
+          "explanation": "3次元座標と受信機の時計誤差という四つの未知数を求めるには、通常4個以上の衛星を使います。"
+        },
+        {
+          "label": "オ",
+          "answer": "5",
+          "explanation": "信号の送信時刻と衛星の位置を示す軌道情報から、受信機の位置を求めます。"
+        }
+      ],
+      "officialLabel": "B-2",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表の配点は小設問各1点です。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-kogaku-b03",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 3,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "無線工学"
+    ],
+    "difficulty": 3,
+    "question": "B-3 次の記述は、図に示す原理的な構造のアルホードループアンテナについて述べたものである。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-3",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-kogaku-b03.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 無線工学 B-3 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211736id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211713id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 無線工学 B-3（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "b",
+    "type": "native-b",
+    "answer": "",
+    "officialAnswerNumber": "6,2,8,4,10",
+    "explanation": "素子面を水平にして用いるアルホードループは水平偏波を放射します。\n\nVORに用いる周波数は超短波のVHF帯です。\n\n水平面内で各方向に電波を放射する用途に適し、おおむね全方向性です。\n\n図のような正方形のループでは、おおむね一波長の周長を四辺に分けたλ/4が一辺の長さです。\n\nこの用途では、方位情報を与えるVHF全方向式無線標識であるVORに用いられます。",
+    "choiceExplanations": {
+      "ア": "設問のように素子を水平に配置した場合は水平偏波であり、垂直偏波ではありません。",
+      "イ": "航空無線航法でこのアンテナを使うVORはVHF帯を用います。",
+      "ウ": "この素子は水平面を広く覆うように使われ、一方向だけに強く放射するものではありません。",
+      "エ": "四辺それぞれの長さは波長の4分の1です。",
+      "オ": "SSRのアンテナを問う記述ではなく、VORで使う水平偏波のループです。",
+      "カ": "素子を含む面を水平にして用いるため、水平偏波となります。",
+      "キ": "この用途で使う周波数はVHF帯で、マイクロ波のSHF帯ではありません。",
+      "ク": "水平面内では、向きによる電波の強さの差が小さく、ほぼ全方向性となります。",
+      "ケ": "全周はおおむね一波長ですが、図のlは一辺を指しているのでλではありません。",
+      "コ": "VORの方位情報を航空機へ届ける施設で、この水平偏波のアンテナを用います。"
+    },
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "垂直",
+          "explanation": "設問のように素子を水平に配置した場合は水平偏波であり、垂直偏波ではありません。"
+        },
+        {
+          "id": "2",
+          "label": "超短波（VHF）帯",
+          "explanation": "航空無線航法でこのアンテナを使うVORはVHF帯を用います。"
+        },
+        {
+          "id": "3",
+          "label": "単一指向性",
+          "explanation": "この素子は水平面を広く覆うように使われ、一方向だけに強く放射するものではありません。"
+        },
+        {
+          "id": "4",
+          "label": "λ/4",
+          "explanation": "四辺それぞれの長さは波長の4分の1です。"
+        },
+        {
+          "id": "5",
+          "label": "SSR",
+          "explanation": "SSRのアンテナを問う記述ではなく、VORで使う水平偏波のループです。"
+        },
+        {
+          "id": "6",
+          "label": "水平",
+          "explanation": "素子を含む面を水平にして用いるため、水平偏波となります。"
+        },
+        {
+          "id": "7",
+          "label": "マイクロ波（SHF）帯",
+          "explanation": "この用途で使う周波数はVHF帯で、マイクロ波のSHF帯ではありません。"
+        },
+        {
+          "id": "8",
+          "label": "ほぼ全方向性",
+          "explanation": "水平面内では、向きによる電波の強さの差が小さく、ほぼ全方向性となります。"
+        },
+        {
+          "id": "9",
+          "label": "λ",
+          "explanation": "全周はおおむね一波長ですが、図のlは一辺を指しているのでλではありません。"
+        },
+        {
+          "id": "10",
+          "label": "VOR",
+          "explanation": "VORの方位情報を航空機へ届ける施設で、この水平偏波のアンテナを用います。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "6",
+          "explanation": "素子面を水平にして用いるアルホードループは水平偏波を放射します。"
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "VORに用いる周波数は超短波のVHF帯です。"
+        },
+        {
+          "label": "ウ",
+          "answer": "8",
+          "explanation": "水平面内で各方向に電波を放射する用途に適し、おおむね全方向性です。"
+        },
+        {
+          "label": "エ",
+          "answer": "4",
+          "explanation": "図のような正方形のループでは、おおむね一波長の周長を四辺に分けたλ/4が一辺の長さです。"
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "この用途では、方位情報を与えるVHF全方向式無線標識であるVORに用いられます。"
+        }
+      ],
+      "officialLabel": "B-3",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表の配点は小設問各1点です。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-kogaku-b04",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 4,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "無線工学"
+    ],
+    "difficulty": 3,
+    "question": "B-4 次の記述は、超短波(VHF)帯の電波伝搬について述べたものである。このうち正しいものを1、誤っているものを2 として解答せよ。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-4",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-kogaku-b04.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 無線工学 B-4 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211736id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211713id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 無線工学 B-4（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "b",
+    "type": "native-b",
+    "answer": "",
+    "officialAnswerNumber": "1,2,1,1,2",
+    "explanation": "通常の電離層の状態ではVHF波は反射せず通り抜けます。ただしスポラジックE層などによる異常伝搬は例外です。\n\nVHFの地表波は、中波に比べて地表付近を遠くまで伝わりにくく、減衰は大きくなります。\n\n電波が屈折してダクトに閉じ込められると、通常の見通し距離を超えて伝搬することがあります。\n\n山頂付近で回折し、送信アンテナと受信アンテナが互いに見通せない位置にも電波が届く場合があります。\n\nVHFは普通の電離層で反射しにくく、一般に受信するのは見通し内の直接波や地面等からの反射波です。",
+    "choiceExplanations": {
+      "ア": "記述が出題の条件や規定に適合するときに選びます。",
+      "イ": "記述が出題の条件や規定に適合しないときに選びます。"
+    },
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1",
+          "explanation": "記述が出題の条件や規定に適合するときに選びます。"
+        },
+        {
+          "id": "2",
+          "label": "2",
+          "explanation": "記述が出題の条件や規定に適合しないときに選びます。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "通常の電離層の状態ではVHF波は反射せず通り抜けます。ただしスポラジックE層などによる異常伝搬は例外です。"
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "VHFの地表波は、中波に比べて地表付近を遠くまで伝わりにくく、減衰は大きくなります。"
+        },
+        {
+          "label": "ウ",
+          "answer": "1",
+          "explanation": "電波が屈折してダクトに閉じ込められると、通常の見通し距離を超えて伝搬することがあります。"
+        },
+        {
+          "label": "エ",
+          "answer": "1",
+          "explanation": "山頂付近で回折し、送信アンテナと受信アンテナが互いに見通せない位置にも電波が届く場合があります。"
+        },
+        {
+          "label": "オ",
+          "answer": "2",
+          "explanation": "VHFは普通の電離層で反射しにくく、一般に受信するのは見通し内の直接波や地面等からの反射波です。"
+        }
+      ],
+      "officialLabel": "B-4",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表の配点は小設問各1点です。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-houki-a01",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 1,
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "法規"
+    ],
+    "difficulty": 3,
+    "question": "A-1 航空移動業務の無線局の免許後の変更に関する次の記述のうち、電波法(第17条から第19条まで)の規定に照らし、\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-1",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-houki-a01.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 法規 A-1 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211641id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211638id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 法規 A-1（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "questionNotice": "解説は2023年2月期の出題時点の法令・規則に基づきます。",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "変更検査が原則として必要なのは、設備の設置場所を変更した場合又は無線設備を変更する工事を行った場合です。通信の相手方や通信事項の変更も検査の対象とした点が誤りです。",
+    "choiceExplanations": {
+      "ア": "混信を除去する場合など特に必要と認めるとき、免許人の申請に基づき総務大臣は電波の型式、周波数や空中線電力の指定を変更できます。",
+      "イ": "変更検査が原則として必要なのは、設備の設置場所を変更した場合又は無線設備を変更する工事を行った場合です。通信の相手方や通信事項の変更も検査の対象とした点が誤りです。",
+      "ウ": "目的や通信の条件、設備の設置場所等を変更する場合には総務大臣の許可が必要で、軽微な工事には省令の例外があります。",
+      "エ": "無線設備の変更工事で指定の周波数、電波の型式又は空中線電力に変更が生じてはならず、設備は法の技術基準に適合する必要があります。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-houki-a02",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 2,
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "法規"
+    ],
+    "difficulty": 3,
+    "question": "A-2 次の記述は、航空無線通信士の資格の無線従事者が行うことのできる無線設備の操作(アマチュア無線局の無線設備の操\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-2",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-houki-a02.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 法規 A-2 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211641id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211638id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 法規 A-2（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "questionNotice": "解説は2023年2月期の出題時点の法令・規則に基づきます。",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "通信操作の対象には航空局と航空地球局が含まれます。技術操作は外部の調整部分で、指定された航空局等の無線設備は空中線電力250 W以下です。",
+    "choiceExplanations": {
+      "ア": "空中線電力250 Wという値は合っていますが、航空地球局も含まれます。技術操作の対象は外部の調整部分です。",
+      "イ": "局の範囲は合っていますが、技術操作は外部の調整部分であり、この区分の空中線電力は250 W以下です。",
+      "ウ": "外部調整部分という条件は合っていますが、航空地球局が含まれ、空中線電力の上限は500 Wではなく250 Wです。",
+      "エ": "通信操作の対象には航空局と航空地球局が含まれます。技術操作は外部の調整部分で、指定された航空局等の無線設備は空中線電力250 W以下です。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-houki-a03",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 3,
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "法規"
+    ],
+    "difficulty": 3,
+    "question": "A-3 次の記述は、航空機局の運用について述べたものである。電波法(第70条の2)の規定に照らし、\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-3",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-houki-a03.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 法規 A-3 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211641id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211638id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 法規 A-3（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "questionNotice": "解説は2023年2月期の出題時点の法令・規則に基づきます。",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "航空機局は航行中及び航行の準備中に運用できます。航空局は妨害除去のための措置を求めることができ、通信の順序や時刻等について指示できます。",
+    "choiceExplanations": {
+      "ア": "航空機局の運用には航行の準備中も含まれます。航空局からの指示は通信の順序や時刻、電波の型式や周波数に関するものです。",
+      "イ": "航行の準備中も運用が認められます。妨害を受けた航空局が求めるのは妨害を除去する措置であり、運用停止を命令する権限ではありません。",
+      "ウ": "航空機局は航行中及び航行の準備中に運用できます。航空局は妨害除去のための措置を求めることができ、通信の順序や時刻等について指示できます。",
+      "エ": "航行中と準備中という区分は合っていますが、妨害の除去措置を求めることと、運用の停止命令は異なります。指示できる通信事項も異なります。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-houki-a04",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 4,
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "法規"
+    ],
+    "difficulty": 3,
+    "question": "A-4 義務航空機局の無線設備の機能試験に関する次の記述のうち、無線局運用規則(第9条の2及び第9条の3)の規定に照\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-4",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-houki-a04.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 法規 A-4 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211641id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211638id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 法規 A-4（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "questionNotice": "解説は2023年2月期の出題時点の法令・規則に基づきます。",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "第9条の3は、送信出力、変調度、受信感度、選択度が規定の性能を保つか、1,000時間使用するごとに1回以上試験するよう定めます。",
+    "choiceExplanations": {
+      "ア": "第9条の3は、送信出力、変調度、受信感度、選択度が規定の性能を保つか、1,000時間使用するごとに1回以上試験するよう定めます。",
+      "イ": "航空局などとの通信連絡による機能確認は、毎日1回以上という定期の義務ではなく飛行前の確認に関連します。",
+      "ウ": "無線設備が完全に動作する状態であることを確かめるのは、毎日という単位ではなく、当該航空機の飛行前です。",
+      "エ": "飛行前に確認するのは、無線設備が完全に動作できる状態かどうかです。有効通達距離を飛行の都度試験する規定ではありません。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-houki-a05",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 5,
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "法規"
+    ],
+    "difficulty": 3,
+    "question": "A-5 次の記述は、無線電話通信における通報の送信等について述べたものである。無線局運用規則(第16条)の規定に照ら\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-5",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-houki-a05.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 法規 A-5 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211641id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211638id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 法規 A-5（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "questionNotice": "解説は2023年2月期の出題時点の法令・規則に基づきます。",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "無線電話では語辞を区切って明瞭に発音します。遭難、緊急及び安全通信の通報は受信者が筆記できる速さにします。",
+    "choiceExplanations": {
+      "ア": "通報を区切って明瞭に発音する点は適切ですが、遭難通信等の速度は1分50字ではなく受信者が筆記できる程度です。",
+      "イ": "無線電話では語辞を区切って明瞭に発音します。遭難、緊急及び安全通信の通報は受信者が筆記できる速さにします。",
+      "ウ": "遭難通信等の速さについては合っていますが、通報の送信の要件は簡潔さと時間よりも、語辞を区切り明瞭に発音することです。",
+      "エ": "通報は語辞を区切って明瞭に発音します。遭難通信等で1分50字を一律に上限としているわけではありません。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-houki-a06",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 6,
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "法規"
+    ],
+    "difficulty": 3,
+    "question": "A-6 義務航空機局がその運用を中止しようとするときの措置に関する次の記述のうち、無線局運用規則(第148条)の規定\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-6",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-houki-a06.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 法規 A-6 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211641id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211638id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 法規 A-6（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "questionNotice": "解説は2023年2月期の出題時点の法令・規則に基づきます。",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "中止の旨と再開予定時刻を、責任航空局又は交通情報航空局に通知します。再開予定時刻を変更するときも同様です。",
+    "choiceExplanations": {
+      "ア": "通知先は通信できる全ての航空局ではありません。責任航空局又は交通情報航空局に通知します。",
+      "イ": "全ての航空局と航空機局への通知は求められていません。運用中止の旨及び再開予定時刻を所定の航空局に伝えます。",
+      "ウ": "中止の旨と再開予定時刻を、責任航空局又は交通情報航空局に通知します。再開予定時刻を変更するときも同様です。",
+      "エ": "飛行区域にある全ての責任航空局へ通知する規定ではありません。第148条が定める通知事項は中止の旨と再開予定時刻です。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-houki-a07",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 7,
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "法規"
+    ],
+    "difficulty": 3,
+    "question": "A-7 次に掲げる事項のうち、航空移動業務において121.5MHzの電波を使用することができる場合に該当しないものは\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-7",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-houki-a07.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 法規 A-7 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211641id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211638id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 法規 A-7（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "questionNotice": "解説は2023年2月期の出題時点の法令・規則に基づきます。",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "正常運航に関する通常の通信には指定された業務用の周波数を使います。121.5 MHzを通常連絡に使用できるとする規定ではありません。",
+    "choiceExplanations": {
+      "ア": "急迫の危険があり普段の周波数が不明又は使用中の場合は、121.5 MHzで連絡することが認められます。",
+      "イ": "正常運航に関する通常の通信には指定された業務用の周波数を使います。121.5 MHzを通常連絡に使用できるとする規定ではありません。",
+      "ウ": "121.5 MHzしか使えない航空機局と航空局の間の通信は、第153条で認められる場合に含まれます。",
+      "エ": "告示の試験方法に従うことを条件に、無線機器の試験や調整の信号を送信できる場合があります。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-houki-a08",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 8,
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "法規"
+    ],
+    "difficulty": 3,
+    "question": "A-8 次の記述は、航空移動業務の無線電話通信において連絡設定ができない場合の措置について述べたものである。無線局運\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-8",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-houki-a08.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 法規 A-8 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211641id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211638id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 法規 A-8（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "questionNotice": "解説は2023年2月期の出題時点の法令・規則に基づきます。",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "協力を求めるのは通信可能な他の航空局又は航空機局です。これらの局は航空機局を呼び出し、連絡が取れない場合の通知先には当該機を運行する者が含まれます。",
+    "choiceExplanations": {
+      "ア": "協力を求めるのは通信可能な他の航空局又は航空機局です。これらの局は航空機局を呼び出し、連絡が取れない場合の通知先には当該機を運行する者が含まれます。",
+      "イ": "他の航空局や航空機局に協力を求める点は合っていますが、協力局の措置は呼出し等で、通知先は所有者ではなく運行する者です。",
+      "ウ": "協力を求める先はすべての無線局ではなく、通信可能な他の航空局又は航空機局です。通知先も単なる所有者ではありません。",
+      "エ": "協力する局の種類と行う措置が異なります。協力を求められた局は当該機の航空機局に呼出し等を行います。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-houki-a09",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 9,
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "法規"
+    ],
+    "difficulty": 3,
+    "question": "A-9 遭難通信及び緊急通信の取扱い等に関する次の記述のうち、電波法(第52条、第66条、第67条及び第70条の6)\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-9",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-houki-a09.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 法規 A-9 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211641id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211638id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 法規 A-9（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "questionNotice": "解説は2023年2月期の出題時点の法令・規則に基づきます。",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "重大かつ急迫の危険に陥った場合の通信は遭難通信の定義です。緊急通信は船舶又は航空機に重大かつ急迫の危険があるおそれがある場合などに行います。",
+    "choiceExplanations": {
+      "ア": "遭難通信の電波を受けた局は、通信を妨害するおそれのある発射を直ちに止めなければなりません。",
+      "イ": "航空局等は遭難通信を他の通信より優先させ、応答した上で救助の通信に関して最善の措置をとります。",
+      "ウ": "重大かつ急迫の危険に陥った場合の通信は遭難通信の定義です。緊急通信は船舶又は航空機に重大かつ急迫の危険があるおそれがある場合などに行います。",
+      "エ": "該当局は緊急通信が自局に関係ないと分かるまでは受信を続け、省令で定める場合には少なくとも3分間受信します。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-houki-a10",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 10,
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "法規"
+    ],
+    "difficulty": 3,
+    "question": "A-10 次の記述は、遭難航空機局が遭難通信に使用する電波について述べたものである。無線局運用規則(第168条)の規定\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-10",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-houki-a10.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 法規 A-10 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211641id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211638id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 法規 A-10（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "questionNotice": "解説は2023年2月期の出題時点の法令・規則に基づきます。",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "まず責任航空局などが指示した電波を使用し、救助に必要なときに限って変更できます。F3E電波156.8 MHzも使用できます。",
+    "choiceExplanations": {
+      "ア": "責任航空局という箇所は合っていますが、変更は救助のために必要な場合に限り、別途使える周波数の例は156.8 MHzです。",
+      "イ": "救助のために必要なら変更できる点は合っていますが、第168条は責任航空局又は交通情報航空局の指示を挙げています。156.65 MHzとした点も異なります。",
+      "ウ": "156.8 MHzは合っていますが、航空局は責任航空局又は交通情報航空局を指します。変更は救助を受けるために必要な場合です。",
+      "エ": "まず責任航空局などが指示した電波を使用し、救助に必要なときに限って変更できます。F3E電波156.8 MHzも使用できます。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-houki-a11",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 11,
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "法規"
+    ],
+    "difficulty": 3,
+    "question": "A-11 航空移動業務の遭難通信が終了したときに遭難通信を宰領した航空局が執らなければならない措置に関する次の記述の\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-11",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-houki-a11.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 法規 A-11 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211641id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211638id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 法規 A-11（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "questionNotice": "解説は2023年2月期の出題時点の法令・規則に基づきます。",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "遭難通信を宰領した航空局は、終了を直ちに航空交通管制機関と当該航空機を運行する者に知らせます。",
+    "choiceExplanations": {
+      "ア": "遭難通信を宰領した航空局は、終了を直ちに航空交通管制機関と当該航空機を運行する者に知らせます。",
+      "イ": "現場付近の船舶への通知は、この条文が通信終了時の措置として指定する通知先ではありません。",
+      "ウ": "付近を航行する他の航空機ではなく、管制機関と遭難に係る航空機の運行者が指定された通知先です。",
+      "エ": "海上保安庁その他の救助機関に直ちに通知することを、第174条は終了時の義務として定めていません。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-houki-a12",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 12,
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "法規"
+    ],
+    "difficulty": 3,
+    "question": "A-12 次の記述は、航空移動業務の無線局における緊急通報の送信事項について述べたものである。無線局運用規則(第176\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-12",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-houki-a12.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 法規 A-12 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211641id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211638id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 法規 A-12（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "questionNotice": "解説は2023年2月期の出題時点の法令・規則に基づきます。",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "航空機の識別又は航空機局の呼出符号等、緊急事態の種類、機長がとる措置、航空機の位置、高度、針路などを順次伝えます。",
+    "choiceExplanations": {
+      "ア": "航空機の識別又は航空機局の呼出符号等、緊急事態の種類、機長がとる措置、航空機の位置、高度、針路などを順次伝えます。",
+      "イ": "呼出符号等は合っていますが、発生時刻と出発地・目的地ではなく、事態の種類と現在の位置・高度・針路が求められます。",
+      "ウ": "位置、高度及び針路は合っていますが、免許人名ではなく航空機を識別できる呼出符号等を知らせます。また、緊急事態の種類を示します。",
+      "エ": "緊急事態の種類は送信しますが、機体の識別には呼出符号等を使い、位置、高度及び針路を知らせます。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-houki-a13",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 13,
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "法規"
+    ],
+    "difficulty": 3,
+    "question": "A-13 総務大臣が無線局に対して臨時に電波の発射の停止を命ずることができるときに関する次の事項のうち、電波法(第28\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-13",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-houki-a13.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 法規 A-13 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211641id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211638id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 法規 A-13（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "questionNotice": "解説は2023年2月期の出題時点の法令・規則に基づきます。",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "第28条がここで挙げるのは周波数の偏差や幅、高調波の強度などです。周波数の安定度を独立した要件として挙げていません。",
+    "choiceExplanations": {
+      "ア": "周波数の幅が規定に適合しない発射は、臨時の発射停止命令が可能な事項に含まれます。",
+      "イ": "総務省令で規定される周波数の偏差は電波の質の対象です。適合しない場合は臨時停止を命じられます。",
+      "ウ": "高調波の強度なども電波の質に関する規定の対象です。その不適合は臨時停止命令の根拠になり得ます。",
+      "エ": "第28条がここで挙げるのは周波数の偏差や幅、高調波の強度などです。周波数の安定度を独立した要件として挙げていません。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-houki-a14",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 14,
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "法規"
+    ],
+    "difficulty": 3,
+    "question": "A-14 次の記述は、無線局の検査の結果について述べたものである。電波法施行規則(第39条)の規定に照らし、\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-14",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-houki-a14.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 法規 A-14 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211641id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211638id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 法規 A-14（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "questionNotice": "解説は2023年2月期の出題時点の法令・規則に基づきます。",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "検査結果について指示を受け、相当な措置をした場合、その措置を速やかに総務大臣又は総合通信局長等に報告します。",
+    "choiceExplanations": {
+      "ア": "検査の結果に関する指示を受けて相当な措置をとった後、速やかにその内容を報告します。再検査まで求める規定ではありません。",
+      "イ": "相当な措置の契機は検査結果に関する指示であり、条文は報告後に再検査を受けるところまで規定していません。",
+      "ウ": "措置内容を速やかに報告する点は合っていますが、総務大臣等から受けるものは指導ではなく指示です。",
+      "エ": "検査結果について指示を受け、相当な措置をした場合、その措置を速やかに総務大臣又は総合通信局長等に報告します。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-houki-b01",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 1,
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "法規"
+    ],
+    "difficulty": 3,
+    "question": "B-1 航空移動業務の無線局の免許状に関する次の記述のうち、電波法(第14条、第21条及び第24条)、電波法施行規則\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-1",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-houki-b01.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 法規 B-1 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211641id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211638id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 法規 B-1（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "questionNotice": "解説は2023年2月期の出題時点の法令・規則に基づきます。",
+    "part": "b",
+    "type": "native-b",
+    "answer": "",
+    "officialAnswerNumber": "1,2,2,1,2",
+    "explanation": "免許状に記載した事項が変更されたときは、免許状を大臣に提出して訂正を受けます。\n\n設問の規定では免許が失効した場合に免許状を返納します。1か月以内に自分で廃棄するという記述は誤りです。\n\n汚損して再交付を受けた場合は旧免許状を返納します。自ら廃棄するとの記述が誤りです。\n\n免許状は原則として無線局に備え付けます。\n\n予備免許の後には落成検査などの手続があり、本免許を与える段階で免許状を交付します。",
+    "choiceExplanations": {
+      "ア": "記述が出題の条件や規定に適合するときに選びます。",
+      "イ": "記述が出題の条件や規定に適合しないときに選びます。"
+    },
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1",
+          "explanation": "記述が出題の条件や規定に適合するときに選びます。"
+        },
+        {
+          "id": "2",
+          "label": "2",
+          "explanation": "記述が出題の条件や規定に適合しないときに選びます。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "免許状に記載した事項が変更されたときは、免許状を大臣に提出して訂正を受けます。"
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "設問の規定では免許が失効した場合に免許状を返納します。1か月以内に自分で廃棄するという記述は誤りです。"
+        },
+        {
+          "label": "ウ",
+          "answer": "2",
+          "explanation": "汚損して再交付を受けた場合は旧免許状を返納します。自ら廃棄するとの記述が誤りです。"
+        },
+        {
+          "label": "エ",
+          "answer": "1",
+          "explanation": "免許状は原則として無線局に備え付けます。"
+        },
+        {
+          "label": "オ",
+          "answer": "2",
+          "explanation": "予備免許の後には落成検査などの手続があり、本免許を与える段階で免許状を交付します。"
+        }
+      ],
+      "officialLabel": "B-1",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表の配点は小設問各1点です。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-houki-b02",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 2,
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "法規"
+    ],
+    "difficulty": 3,
+    "question": "B-2 次の記述は、義務航空機局の送信設備の有効通達距離について述べたものである。電波法施行規則(第31条の3)の規\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-2",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-houki-b02.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 法規 B-2 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211641id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211638id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 法規 B-2（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "questionNotice": "解説は2023年2月期の出題時点の法令・規則に基づきます。",
+    "part": "b",
+    "type": "native-b",
+    "answer": "",
+    "officialAnswerNumber": "2,3,6,8,9",
+    "explanation": "118 MHzから144 MHzまでの周波数を使うA3E電波の送信設備が対象です。\n\n同じ条項は、A3E電波の設備とともにATCトランスポンダの設備を挙げています。\n\n通達距離は原則370.4 km以上で、最高高度から算出したDがこれ未満ならDの値以上です。\n\n式D＝3.8√hのhには、その航空機が飛行する最高高度を使います。\n\n式に代入する最高高度の数値はメートルで表し、Dはキロメートルで得られます。",
+    "choiceExplanations": {
+      "ア": "アに入る電波の型式は、この義務航空機局の送信設備についてはA3Eです。",
+      "イ": "VHFのこの範囲で通達距離の対象となる送信設備はA3Eを使用します。",
+      "ウ": "ATCトランスポンダの送信設備がイに入ります。",
+      "エ": "機上DMEは距離を測るための別の設備であり、この条項でイに挙がるのはATCトランスポンダです。",
+      "オ": "規定は通達距離の基準に370.4 kmを用い、314.8 kmとはしていません。",
+      "カ": "最高高度から求めた通達距離がこれ未満のときには計算値を使い、それ以外では370.4 kmが基準です。",
+      "キ": "距離の計算で変数hに入るのは高度であり、最大巡航速度を入力しません。",
+      "ク": "hは見通し距離の計算に用いるので、その航空機の最高高度を入れます。",
+      "ケ": "最高高度をメートルで表した数をhとして用います。",
+      "コ": "計算した通達距離の単位はキロメートルですが、高度hの入力単位はメートルです。"
+    },
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "J3E電波",
+          "explanation": "アに入る電波の型式は、この義務航空機局の送信設備についてはA3Eです。"
+        },
+        {
+          "id": "2",
+          "label": "A3E電波",
+          "explanation": "VHFのこの範囲で通達距離の対象となる送信設備はA3Eを使用します。"
+        },
+        {
+          "id": "3",
+          "label": "ATCトランスポンダ",
+          "explanation": "ATCトランスポンダの送信設備がイに入ります。"
+        },
+        {
+          "id": "4",
+          "label": "機上DME",
+          "explanation": "機上DMEは距離を測るための別の設備であり、この条項でイに挙がるのはATCトランスポンダです。"
+        },
+        {
+          "id": "5",
+          "label": "314.8キロメートル",
+          "explanation": "規定は通達距離の基準に370.4 kmを用い、314.8 kmとはしていません。"
+        },
+        {
+          "id": "6",
+          "label": "370.4キロメートル",
+          "explanation": "最高高度から求めた通達距離がこれ未満のときには計算値を使い、それ以外では370.4 kmが基準です。"
+        },
+        {
+          "id": "7",
+          "label": "最大巡航速度（毎時）",
+          "explanation": "距離の計算で変数hに入るのは高度であり、最大巡航速度を入力しません。"
+        },
+        {
+          "id": "8",
+          "label": "最高高度",
+          "explanation": "hは見通し距離の計算に用いるので、その航空機の最高高度を入れます。"
+        },
+        {
+          "id": "9",
+          "label": "メートル",
+          "explanation": "最高高度をメートルで表した数をhとして用います。"
+        },
+        {
+          "id": "10",
+          "label": "キロメートル",
+          "explanation": "計算した通達距離の単位はキロメートルですが、高度hの入力単位はメートルです。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "2",
+          "explanation": "118 MHzから144 MHzまでの周波数を使うA3E電波の送信設備が対象です。"
+        },
+        {
+          "label": "イ",
+          "answer": "3",
+          "explanation": "同じ条項は、A3E電波の設備とともにATCトランスポンダの設備を挙げています。"
+        },
+        {
+          "label": "ウ",
+          "answer": "6",
+          "explanation": "通達距離は原則370.4 km以上で、最高高度から算出したDがこれ未満ならDの値以上です。"
+        },
+        {
+          "label": "エ",
+          "answer": "8",
+          "explanation": "式D＝3.8√hのhには、その航空機が飛行する最高高度を使います。"
+        },
+        {
+          "label": "オ",
+          "answer": "9",
+          "explanation": "式に代入する最高高度の数値はメートルで表し、Dはキロメートルで得られます。"
+        }
+      ],
+      "officialLabel": "B-2",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表の配点は小設問各1点です。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-houki-b03",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 3,
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "法規"
+    ],
+    "difficulty": 3,
+    "question": "B-3 無線局の免許人から総務大臣に対する報告に関する次の事項のうち、電波法(第80条)の規定に照らし、この規定に定\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-3",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-houki-b03.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 法規 B-3 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211641id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211638id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 法規 B-3（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "questionNotice": "解説は2023年2月期の出題時点の法令・規則に基づきます。",
+    "part": "b",
+    "type": "native-b",
+    "answer": "",
+    "officialAnswerNumber": "2,1,2,1,1",
+    "explanation": "外国の主管庁の検査で指示を受けた事実そのものは、この条文が定める報告事項には当たりません。\n\n外国で総務大臣があらかじめ告示した以外の運用制限を受けた場合は報告します。\n\n航行中に無線従事者を補充できず無資格者が操作したこと自体は、この条文が掲げる報告事項ではありません。\n\n電波法又は命令に違反して運用した無線局を認めた場合は報告対象です。\n\n遭難通信や緊急通信を行ったときは、免許人から総務大臣への報告に含まれます。",
+    "choiceExplanations": {
+      "ア": "記述が出題の条件や規定に適合するときに選びます。",
+      "イ": "記述が出題の条件や規定に適合しないときに選びます。"
+    },
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1",
+          "explanation": "記述が出題の条件や規定に適合するときに選びます。"
+        },
+        {
+          "id": "2",
+          "label": "2",
+          "explanation": "記述が出題の条件や規定に適合しないときに選びます。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "2",
+          "explanation": "外国の主管庁の検査で指示を受けた事実そのものは、この条文が定める報告事項には当たりません。"
+        },
+        {
+          "label": "イ",
+          "answer": "1",
+          "explanation": "外国で総務大臣があらかじめ告示した以外の運用制限を受けた場合は報告します。"
+        },
+        {
+          "label": "ウ",
+          "answer": "2",
+          "explanation": "航行中に無線従事者を補充できず無資格者が操作したこと自体は、この条文が掲げる報告事項ではありません。"
+        },
+        {
+          "label": "エ",
+          "answer": "1",
+          "explanation": "電波法又は命令に違反して運用した無線局を認めた場合は報告対象です。"
+        },
+        {
+          "label": "オ",
+          "answer": "1",
+          "explanation": "遭難通信や緊急通信を行ったときは、免許人から総務大臣への報告に含まれます。"
+        }
+      ],
+      "officialLabel": "B-3",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表の配点は小設問各1点です。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-houki-b04",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 4,
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "法規"
+    ],
+    "difficulty": 3,
+    "question": "B-4 航空移動業務の無線局の運用に関する次の記述のうち、電波法(第52条、第54条、第55条、第57条及び第58条)\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-4",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-houki-b04.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 法規 B-4 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211641id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf#page=7",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211638id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 法規 B-4（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "questionNotice": "解説は2023年2月期の出題時点の法令・規則に基づきます。",
+    "part": "b",
+    "type": "native-b",
+    "answer": "",
+    "officialAnswerNumber": "2,1,1,2,1",
+    "explanation": "免許状に記載された空中線電力は上限であり、その範囲内で通信に必要な最小の値を用います。\n\n無線設備の機器を試験・調整するときは、他の通信への影響を抑えるため、なるべく擬似空中線回路を使います。\n\n免許状の運用許容時間の制限には、遭難通信など、省令まで含めて定められる例外があります。\n\n暗語を禁じる第58条の対象はアマチュア無線局です。航空移動業務に同条の禁止を適用した点が誤りです。\n\n免許の目的や相手方、通信事項の範囲に従うのが原則です。遭難通信など個別に定められた通信には例外があります。",
+    "choiceExplanations": {
+      "ア": "記述が出題の条件や規定に適合するときに選びます。",
+      "イ": "記述が出題の条件や規定に適合しないときに選びます。"
+    },
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1",
+          "explanation": "記述が出題の条件や規定に適合するときに選びます。"
+        },
+        {
+          "id": "2",
+          "label": "2",
+          "explanation": "記述が出題の条件や規定に適合しないときに選びます。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "2",
+          "explanation": "免許状に記載された空中線電力は上限であり、その範囲内で通信に必要な最小の値を用います。"
+        },
+        {
+          "label": "イ",
+          "answer": "1",
+          "explanation": "無線設備の機器を試験・調整するときは、他の通信への影響を抑えるため、なるべく擬似空中線回路を使います。"
+        },
+        {
+          "label": "ウ",
+          "answer": "1",
+          "explanation": "免許状の運用許容時間の制限には、遭難通信など、省令まで含めて定められる例外があります。"
+        },
+        {
+          "label": "エ",
+          "answer": "2",
+          "explanation": "暗語を禁じる第58条の対象はアマチュア無線局です。航空移動業務に同条の禁止を適用した点が誤りです。"
+        },
+        {
+          "label": "オ",
+          "answer": "1",
+          "explanation": "免許の目的や相手方、通信事項の範囲に従うのが原則です。遭難通信など個別に定められた通信には例外があります。"
+        }
+      ],
+      "officialLabel": "B-4",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表の配点は小設問各1点です。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-houki-b05",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 5,
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "法規"
+    ],
+    "difficulty": 3,
+    "question": "B-5 義務航空機局に備え付けておかなければならない無線業務日誌に関する次の記述のうち、電波法施行規則(第40条)の\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-5",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-houki-b05.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 法規 B-5 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211641id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf#page=7",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211638id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 法規 B-5（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "questionNotice": "解説は2023年2月期の出題時点の法令・規則に基づきます。",
+    "part": "b",
+    "type": "native-b",
+    "answer": "",
+    "officialAnswerNumber": "1,2,2,1,1",
+    "explanation": "機器の故障が起きた事実だけでなく、原因と講じた措置の内容も無線業務日誌に記録します。\n\n使用を終えた日誌は、その日から2年間保存します。次の定期検査の日までを期間とする記述は誤りです。\n\n日誌には遭難、緊急、安全等の運用上重要な通信を記録します。試験又は調整の通信の概要を一律に記録する規定ではありません。\n\n法令に違反して運用している無線局を認めたときは、その事実を日誌に記載します。\n\n国際航空に従事する航空機の航空機局の日誌には、時刻の基準として協定世界時を用います。",
+    "choiceExplanations": {
+      "ア": "記述が出題の条件や規定に適合するときに選びます。",
+      "イ": "記述が出題の条件や規定に適合しないときに選びます。"
+    },
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1",
+          "explanation": "記述が出題の条件や規定に適合するときに選びます。"
+        },
+        {
+          "id": "2",
+          "label": "2",
+          "explanation": "記述が出題の条件や規定に適合しないときに選びます。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "機器の故障が起きた事実だけでなく、原因と講じた措置の内容も無線業務日誌に記録します。"
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "使用を終えた日誌は、その日から2年間保存します。次の定期検査の日までを期間とする記述は誤りです。"
+        },
+        {
+          "label": "ウ",
+          "answer": "2",
+          "explanation": "日誌には遭難、緊急、安全等の運用上重要な通信を記録します。試験又は調整の通信の概要を一律に記録する規定ではありません。"
+        },
+        {
+          "label": "エ",
+          "answer": "1",
+          "explanation": "法令に違反して運用している無線局を認めたときは、その事実を日誌に記載します。"
+        },
+        {
+          "label": "オ",
+          "answer": "1",
+          "explanation": "国際航空に従事する航空機の航空機局の日誌には、時刻の基準として協定世界時を用います。"
+        }
+      ],
+      "officialLabel": "B-5",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表の配点は小設問各1点です。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-houki-b06",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 6,
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "法規"
+    ],
+    "difficulty": 3,
+    "question": "B-6 次の記述は、航空業務の一般的な通信手続について述べたものである。無線通信規則(第45条)の規定に照らし、\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-6",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-houki-b06.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 法規 B-6 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211641id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf#page=7",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211638id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 法規 B-6（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "questionNotice": "解説は2023年2月期の出題時点の法令・規則に基づきます。",
+    "part": "b",
+    "type": "native-b",
+    "answer": "",
+    "officialAnswerNumber": "1,3,6,7,10",
+    "explanation": "航空局は、その局の指定運用区域内にいて聴守中と判断できる航空機局を呼び出せます。\n\n相近接した呼出しを受けたときは、優先順位に従い、各航空機局が伝送できる順序を決めます。\n\n航空機局相互間の通信にも航空局が必要に応じて介入でき、航空機局は関連する指示に従います。\n\n航空局から応答がないときは、少なくとも10秒の間隔を取ってから次の呼出しを行います。\n\n航空機局は呼出しと次の呼出しの間に搬送波を輻射しません。",
+    "choiceExplanations": {
+      "ア": "航空局が航空機局を呼び出せる条件には、その航空局の指定運用区域内にいることが含まれます。",
+      "イ": "聴守中という条件のほかに要求されるのは、機体が運用区域内にいることです。",
+      "ウ": "複数機がほぼ同時に呼び出してきた場合は、無線通信規則の優先順位で伝送順序を決めます。",
+      "エ": "ここでは時刻の指定ではなく、複数の航空機局の伝送の先後を決めます。",
+      "オ": "介入に従うよう規定されているのは航空機局相互間の通信です。",
+      "カ": "航空機局同士の通信に航空局が介入する必要があれば、航空機局はその指示に従います。",
+      "キ": "呼出しに応答がなければ次の呼出しの前に少なくとも10秒間待ちます。",
+      "ク": "応答を待ってから再度呼ぶまでの規定の最小間隔は30秒間ではなく10秒間です。",
+      "ケ": "この手続が呼出しと呼出しの間で禁じるものは、搬送波の輻射です。",
+      "コ": "次の呼出しを待っている間は搬送波を輻射してはなりません。"
+    },
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "その航空局の指定運用区域内",
+          "explanation": "航空局が航空機局を呼び出せる条件には、その航空局の指定運用区域内にいることが含まれます。"
+        },
+        {
+          "id": "2",
+          "label": "応答可能な状態",
+          "explanation": "聴守中という条件のほかに要求されるのは、機体が運用区域内にいることです。"
+        },
+        {
+          "id": "3",
+          "label": "順序",
+          "explanation": "複数機がほぼ同時に呼び出してきた場合は、無線通信規則の優先順位で伝送順序を決めます。"
+        },
+        {
+          "id": "4",
+          "label": "時刻",
+          "explanation": "ここでは時刻の指定ではなく、複数の航空機局の伝送の先後を決めます。"
+        },
+        {
+          "id": "5",
+          "label": "航空機の安全運航に関する通信",
+          "explanation": "介入に従うよう規定されているのは航空機局相互間の通信です。"
+        },
+        {
+          "id": "6",
+          "label": "航空機局相互間の通信",
+          "explanation": "航空機局同士の通信に航空局が介入する必要があれば、航空機局はその指示に従います。"
+        },
+        {
+          "id": "7",
+          "label": "10秒間",
+          "explanation": "呼出しに応答がなければ次の呼出しの前に少なくとも10秒間待ちます。"
+        },
+        {
+          "id": "8",
+          "label": "30秒間",
+          "explanation": "応答を待ってから再度呼ぶまでの規定の最小間隔は30秒間ではなく10秒間です。"
+        },
+        {
+          "id": "9",
+          "label": "試験電波を発射",
+          "explanation": "この手続が呼出しと呼出しの間で禁じるものは、搬送波の輻射です。"
+        },
+        {
+          "id": "10",
+          "label": "搬送波を輻射",
+          "explanation": "次の呼出しを待っている間は搬送波を輻射してはなりません。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "航空局は、その局の指定運用区域内にいて聴守中と判断できる航空機局を呼び出せます。"
+        },
+        {
+          "label": "イ",
+          "answer": "3",
+          "explanation": "相近接した呼出しを受けたときは、優先順位に従い、各航空機局が伝送できる順序を決めます。"
+        },
+        {
+          "label": "ウ",
+          "answer": "6",
+          "explanation": "航空機局相互間の通信にも航空局が必要に応じて介入でき、航空機局は関連する指示に従います。"
+        },
+        {
+          "label": "エ",
+          "answer": "7",
+          "explanation": "航空局から応答がないときは、少なくとも10秒の間隔を取ってから次の呼出しを行います。"
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "航空機局は呼出しと次の呼出しの間に搬送波を輻射しません。"
+        }
+      ],
+      "officialLabel": "B-6",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表の配点は小設問各1点です。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-hikki-a01",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 1,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "A-1 共通の英文を読み、設問に答えてください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-1",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-hikki-a01.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英語・筆記 A-1 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211512id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_hikki.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英語・筆記 A-1（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "業界はSAFを増産して2030年の排出削減につなげ、2050年までに従来のジェット燃料を代替する目標を示しました。",
+    "choiceExplanations": {
+      "ア": "本文では航空業界の指導者がSAFの生産拡大と既存のジェット燃料の置換を掲げたと述べています。計画に合意していないとは書かれていません。",
+      "イ": "業界はSAFを増産して2030年の排出削減につなげ、2050年までに従来のジェット燃料を代替する目標を示しました。",
+      "ウ": "2030年の目標はSAFの増産による排出削減です。電動旅客機はさらに将来の技術として説明されています。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-hikki-a02",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 2,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "A-2 共通の英文を読み、設問に答えてください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-2",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-hikki-a02.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英語・筆記 A-2 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211512id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_hikki.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英語・筆記 A-2（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "本文はSAFの価格が従来のジェット燃料を大きく上回り、航空会社からの需要増加に伴ってさらに上がると説明しています。",
+    "choiceExplanations": {
+      "ア": "本文は原料の例として食用油、動物脂肪、廃棄物を挙げますが、原料の入手難を主な欠点とはしていません。",
+      "イ": "廃棄物はSAFに使用できる原料の一例です。本文は廃棄物を利用するため燃料がクリーンではないとは述べていません。",
+      "ウ": "本文はSAFの価格が従来のジェット燃料を大きく上回り、航空会社からの需要増加に伴ってさらに上がると説明しています。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-hikki-a03",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 3,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "A-3 共通の英文を読み、設問に答えてください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-3",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-hikki-a03.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英語・筆記 A-3 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211512id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_hikki.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英語・筆記 A-3（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "本文の bridge fuel は将来の技術が利用可能になるまでのつなぎを意味します。その先の例として電動機や水素を動力とする航空機が挙がっています。",
+    "choiceExplanations": {
+      "ア": "本文の bridge fuel は将来の技術が利用可能になるまでのつなぎを意味します。その先の例として電動機や水素を動力とする航空機が挙がっています。",
+      "イ": "垂直離着陸は開発中の小型電動機の例です。将来の全機種に求められる方式とは述べられていません。",
+      "ウ": "中型旅客機に電池を積むのは現状難しいと述べています。大型・中型機の製造が将来やむとする記述はありません。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-hikki-a04",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 4,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "A-4 共通の英文を読み、設問に答えてください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-4",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-hikki-a04.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英語・筆記 A-4 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211512id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_hikki.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英語・筆記 A-4（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "同じ出力のために必要な電池の重量はジェット燃料の約40倍と本文は述べています。中型機を長距離飛行させるにはこの差が大きな障害となります。",
+    "choiceExplanations": {
+      "ア": "本文では電池の充電方法や充電時間を中心的な問題としていません。電力に対する電池の重量に着目しています。",
+      "イ": "大きな電池が爆発しやすいという説明は本文にありません。設問の課題は燃料に比べた重量です。",
+      "ウ": "同じ出力のために必要な電池の重量はジェット燃料の約40倍と本文は述べています。中型機を長距離飛行させるにはこの差が大きな障害となります。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-hikki-a05",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 5,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "A-5 共通の英文を読み、設問に答えてください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-5",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-hikki-a05.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英語・筆記 A-5 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211512id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_hikki.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英語・筆記 A-5（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "Rutherfordは水素を「とても軽い燃料」と述べています。一方で貯蔵には大きな容積が必要で、燃料タンクは重くなります。",
+    "choiceExplanations": {
+      "ア": "Rutherfordは水素を「とても軽い燃料」と述べています。一方で貯蔵には大きな容積が必要で、燃料タンクは重くなります。",
+      "イ": "将来の利用可能性には慎重ながら肯定的ですが、従来の燃料を近いうちに全て置き換えるとは述べていません。",
+      "ウ": "水素そのものが重すぎるという説明は逆です。水素は軽いものの、貯蔵装置は重くなるという話です。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-hikki-a06",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 6,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "A-6 Messages without specific address containing meteorological information received from an aircraft in flight\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-6",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-hikki-a06.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英語・筆記 A-6 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211512id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_hikki.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英語・筆記 A-6（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "受信点に関係する気象官署に遅滞なく転送します。speedily は本文の without delay に対応します。",
+    "choiceExplanations": {
+      "ア": "受信点に関係する気象官署に遅滞なく転送します。speedily は本文の without delay に対応します。",
+      "イ": "気象情報の信頼性を理由に破棄するのではなく、宛先のない気象通報を関係する気象官署へ転送します。",
+      "ウ": "転送先は航空機の出発地ではなく、受信した地点に関係する気象官署です。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-hikki-a07",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 7,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "A-7 In order to avoid any possible confusion, when issuing ATC clearances and reading back such clearances,\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-7",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-hikki-a07.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英語・筆記 A-7 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211512id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_hikki.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英語・筆記 A-7（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "管制承認の対象を取り違えないよう、発出する管制官も復唱する操縦者も対象航空機の呼出符号を添えます。",
+    "choiceExplanations": {
+      "ア": "always とあるので、緊急時だけに限らず管制承認を発出又は復唱するときに付けます。",
+      "イ": "付けるのは管制局の呼出符号ではなく、その承認が適用される航空機の呼出符号です。",
+      "ウ": "管制承認の対象を取り違えないよう、発出する管制官も復唱する操縦者も対象航空機の呼出符号を添えます。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-hikki-a08",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 8,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "A-8 The inspectors of governments or appropriate administrations of countries who visit an aircraft station or aircraft\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-8",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-hikki-a08.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英語・筆記 A-8 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211512id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_hikki.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英語・筆記 A-8（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "検査官は免許状の提示を求められます。局の運用者は求められたら当該免許状を提示します。",
+    "choiceExplanations": {
+      "ア": "検査官は免許状の提示を求められます。局の運用者は求められたら当該免許状を提示します。",
+      "イ": "produce the license は免許状を提示することです。検査前に写しを作成する義務を述べたものではありません。",
+      "ウ": "検査対象である局の免許状を提示する場面であり、検査官自身の免許状を求めたり再作成したりする場面ではありません。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-hikki-a09",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 9,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "A-9 The service of a mobile station is placed under the supreme authority of the person responsible for the aircraft\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-9",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-hikki-a09.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英語・筆記 A-9 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211512id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_hikki.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英語・筆記 A-9（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "移動局を搭載する航空機などの責任者が、移動局の業務を最終的に指揮します。その責任者は各運用者に規則を守らせます。",
+    "choiceExplanations": {
+      "ア": "本文の supreme authority は、機体や車両の責任者に帰属します。時間帯などに応じて責任が変わるとはしていません。",
+      "イ": "移動局を搭載する航空機などの責任者が、移動局の業務を最終的に指揮します。その責任者は各運用者に規則を守らせます。",
+      "ウ": "操作する者は無線通信規則を守る必要がありますが、本文の最終的な権限者は移動体の責任者です。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-hikki-b01-1",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 10,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "アの空欄に入れる最も適切な語句を選んでください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-1・空欄ア",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-hikki-b01.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英語・筆記 B-1の原問と語群。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211512id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_hikki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英語・筆記 B-1（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "compound",
+      "イ": "contact",
+      "ウ": "estimates",
+      "エ": "exaggerates",
+      "オ": "graves",
+      "カ": "grooves",
+      "キ": "less",
+      "ク": "recycle",
+      "ケ": "save"
+    },
+    "answer": "カ",
+    "officialAnswerNumber": "6",
+    "explanation": "parallel grooves は平行な溝です。measuring 以下では溝の深さを説明しています。",
+    "choiceExplanations": {
+      "ア": "空欄アは「grooves」が適切です。compound は化合物や複合体を意味し、フィルムの表面の細い溝を表す語ではありません。",
+      "イ": "空欄アは「grooves」が適切です。contact with air は空気との接触という意味で、area of の後に置けます。",
+      "ウ": "空欄アは「grooves」が適切です。estimates は会社が節約量を見積もるという文脈に合います。",
+      "エ": "空欄アは「grooves」が適切です。exaggerates は誇張するという意味で、試算するという原文の意味とは異なります。",
+      "オ": "空欄アは「grooves」が適切です。graves は墓という意味で、フィルムに刻まれた細い溝のことではありません。",
+      "カ": "parallel grooves は平行な溝です。measuring 以下では溝の深さを説明しています。",
+      "キ": "空欄アは「grooves」が適切です。less は不可算名詞 drag の量が少なくなることを示します。",
+      "ク": "空欄アは「grooves」が適切です。recycle は資源などを再利用することを意味し、燃料の使用量を節約する意味ではありません。",
+      "ケ": "空欄アは「grooves」が適切です。save は消費を抑えて燃料を節約することを表し、could の後にもそのまま置けます。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-hikki-b01-2",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 11,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "イの空欄に入れる最も適切な語句を選んでください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-1・空欄イ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-hikki-b01.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英語・筆記 B-1の原問と語群。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211512id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_hikki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英語・筆記 B-1（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "compound",
+      "イ": "contact",
+      "ウ": "estimates",
+      "エ": "exaggerates",
+      "オ": "graves",
+      "カ": "grooves",
+      "キ": "less",
+      "ク": "recycle",
+      "ケ": "save"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "contact with air は空気との接触であり、area of contact でその面積を表します。",
+    "choiceExplanations": {
+      "ア": "空欄イは「contact」が適切です。compound は化合物や複合体を意味し、フィルムの表面の細い溝を表す語ではありません。",
+      "イ": "contact with air は空気との接触であり、area of contact でその面積を表します。",
+      "ウ": "空欄イは「contact」が適切です。estimates は会社が節約量を見積もるという文脈に合います。",
+      "エ": "空欄イは「contact」が適切です。exaggerates は誇張するという意味で、試算するという原文の意味とは異なります。",
+      "オ": "空欄イは「contact」が適切です。graves は墓という意味で、フィルムに刻まれた細い溝のことではありません。",
+      "カ": "空欄イは「contact」が適切です。grooves は溝の複数形で、parallel や深さの説明と対応します。",
+      "キ": "空欄イは「contact」が適切です。less は不可算名詞 drag の量が少なくなることを示します。",
+      "ク": "空欄イは「contact」が適切です。recycle は資源などを再利用することを意味し、燃料の使用量を節約する意味ではありません。",
+      "ケ": "空欄イは「contact」が適切です。save は消費を抑えて燃料を節約することを表し、could の後にもそのまま置けます。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-hikki-b01-3",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 12,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "ウの空欄に入れる最も適切な語句を選んでください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-1・空欄ウ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-hikki-b01.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英語・筆記 B-1の原問と語群。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211512id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_hikki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英語・筆記 B-1（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "compound",
+      "イ": "contact",
+      "ウ": "estimates",
+      "エ": "exaggerates",
+      "オ": "graves",
+      "カ": "grooves",
+      "キ": "less",
+      "ク": "recycle",
+      "ケ": "save"
+    },
+    "answer": "キ",
+    "officialAnswerNumber": "7",
+    "explanation": "less drag はより小さい抗力を表し、フィルムの溝の効果を示します。",
+    "choiceExplanations": {
+      "ア": "空欄ウは「less」が適切です。compound は化合物や複合体を意味し、フィルムの表面の細い溝を表す語ではありません。",
+      "イ": "空欄ウは「less」が適切です。contact with air は空気との接触という意味で、area of の後に置けます。",
+      "ウ": "空欄ウは「less」が適切です。estimates は会社が節約量を見積もるという文脈に合います。",
+      "エ": "空欄ウは「less」が適切です。exaggerates は誇張するという意味で、試算するという原文の意味とは異なります。",
+      "オ": "空欄ウは「less」が適切です。graves は墓という意味で、フィルムに刻まれた細い溝のことではありません。",
+      "カ": "空欄ウは「less」が適切です。grooves は溝の複数形で、parallel や深さの説明と対応します。",
+      "キ": "less drag はより小さい抗力を表し、フィルムの溝の効果を示します。",
+      "ク": "空欄ウは「less」が適切です。recycle は資源などを再利用することを意味し、燃料の使用量を節約する意味ではありません。",
+      "ケ": "空欄ウは「less」が適切です。save は消費を抑えて燃料を節約することを表し、could の後にもそのまま置けます。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-hikki-b01-4",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 13,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "エの空欄に入れる最も適切な語句を選んでください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-1・空欄エ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-hikki-b01.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英語・筆記 B-1の原問と語群。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211512id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_hikki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英語・筆記 B-1（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "compound",
+      "イ": "contact",
+      "ウ": "estimates",
+      "エ": "exaggerates",
+      "オ": "graves",
+      "カ": "grooves",
+      "キ": "less",
+      "ク": "recycle",
+      "ケ": "save"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "主語は単数の The company なので estimates を用います。that 以下が見積もりの内容です。",
+    "choiceExplanations": {
+      "ア": "空欄エは「estimates」が適切です。compound は化合物や複合体を意味し、フィルムの表面の細い溝を表す語ではありません。",
+      "イ": "空欄エは「estimates」が適切です。contact with air は空気との接触という意味で、area of の後に置けます。",
+      "ウ": "主語は単数の The company なので estimates を用います。that 以下が見積もりの内容です。",
+      "エ": "空欄エは「estimates」が適切です。exaggerates は誇張するという意味で、試算するという原文の意味とは異なります。",
+      "オ": "空欄エは「estimates」が適切です。graves は墓という意味で、フィルムに刻まれた細い溝のことではありません。",
+      "カ": "空欄エは「estimates」が適切です。grooves は溝の複数形で、parallel や深さの説明と対応します。",
+      "キ": "空欄エは「estimates」が適切です。less は不可算名詞 drag の量が少なくなることを示します。",
+      "ク": "空欄エは「estimates」が適切です。recycle は資源などを再利用することを意味し、燃料の使用量を節約する意味ではありません。",
+      "ケ": "空欄エは「estimates」が適切です。save は消費を抑えて燃料を節約することを表し、could の後にもそのまま置けます。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-hikki-b01-5",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 14,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "オの空欄に入れる最も適切な語句を選んでください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-1・空欄オ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-hikki-b01.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英語・筆記 B-1の原問と語群。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211512id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_hikki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英語・筆記 B-1（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "compound",
+      "イ": "contact",
+      "ウ": "estimates",
+      "エ": "exaggerates",
+      "オ": "graves",
+      "カ": "grooves",
+      "キ": "less",
+      "ク": "recycle",
+      "ケ": "save"
+    },
+    "answer": "ケ",
+    "officialAnswerNumber": "9",
+    "explanation": "save fuel で燃料を節約するという意味になり、could の後には動詞の原形を置きます。",
+    "choiceExplanations": {
+      "ア": "空欄オは「save」が適切です。compound は化合物や複合体を意味し、フィルムの表面の細い溝を表す語ではありません。",
+      "イ": "空欄オは「save」が適切です。contact with air は空気との接触という意味で、area of の後に置けます。",
+      "ウ": "空欄オは「save」が適切です。estimates は会社が節約量を見積もるという文脈に合います。",
+      "エ": "空欄オは「save」が適切です。exaggerates は誇張するという意味で、試算するという原文の意味とは異なります。",
+      "オ": "空欄オは「save」が適切です。graves は墓という意味で、フィルムに刻まれた細い溝のことではありません。",
+      "カ": "空欄オは「save」が適切です。grooves は溝の複数形で、parallel や深さの説明と対応します。",
+      "キ": "空欄オは「save」が適切です。less は不可算名詞 drag の量が少なくなることを示します。",
+      "ク": "空欄オは「save」が適切です。recycle は資源などを再利用することを意味し、燃料の使用量を節約する意味ではありません。",
+      "ケ": "save fuel で燃料を節約するという意味になり、could の後には動詞の原形を置きます。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-hikki-b02-1",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 15,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "アの空欄に入れる最も適切な語句を選んでください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-2・空欄ア",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-hikki-b02.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英語・筆記 B-2の原問と語群。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211512id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_hikki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英語・筆記 B-2（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "accompanied",
+      "イ": "accomplished",
+      "ウ": "at which",
+      "エ": "enables",
+      "オ": "internals",
+      "カ": "intervals",
+      "キ": "onto",
+      "ク": "permitting",
+      "ケ": "what"
+    },
+    "answer": "ク",
+    "officialAnswerNumber": "8",
+    "explanation": "permitting the next ones to land or take off で、次の航空機の離着陸を可能にするという結果を表します。",
+    "choiceExplanations": {
+      "ア": "空欄アは「permitting」が適切です。accompanied は付き添われた、伴われたという意味で、滑走路を空けられるようにする手段の説明とは異なります。",
+      "イ": "空欄アは「permitting」が適切です。accomplished は達成されたという意味で、This is accomplished by によって手段を述べます。",
+      "ウ": "空欄アは「permitting」が適切です。at which は接続角と離脱速度の両方を先行詞とし、それぞれの値を示す関係を表します。",
+      "エ": "空欄アは「permitting」が適切です。enables は現在形の動詞で、コンマに続く分詞構文としてそのまま置くことはできません。",
+      "オ": "空欄アは「permitting」が適切です。internals は内部機構などを指し、次の航空機との時間的な間隔を意味しません。",
+      "カ": "空欄アは「permitting」が適切です。intervals は間隔で、in shorter intervals でより短い間隔を表します。",
+      "キ": "空欄アは「permitting」が適切です。onto はある面の上への移動を表し、誘導路へ入る方向を示します。",
+      "ク": "permitting the next ones to land or take off で、次の航空機の離着陸を可能にするという結果を表します。",
+      "ケ": "空欄アは「permitting」が適切です。what は先行詞を含むため、すでに angles や speed がある箇所の関係表現には合いません。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-hikki-b02-2",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 16,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "イの空欄に入れる最も適切な語句を選んでください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-2・空欄イ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-hikki-b02.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英語・筆記 B-2の原問と語群。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211512id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_hikki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英語・筆記 B-2（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "accompanied",
+      "イ": "accomplished",
+      "ウ": "at which",
+      "エ": "enables",
+      "オ": "internals",
+      "カ": "intervals",
+      "キ": "onto",
+      "ク": "permitting",
+      "ケ": "what"
+    },
+    "answer": "カ",
+    "officialAnswerNumber": "6",
+    "explanation": "shorter intervals はより短い間隔で、in shorter intervals が離着陸の頻度を表します。",
+    "choiceExplanations": {
+      "ア": "空欄イは「intervals」が適切です。accompanied は付き添われた、伴われたという意味で、滑走路を空けられるようにする手段の説明とは異なります。",
+      "イ": "空欄イは「intervals」が適切です。accomplished は達成されたという意味で、This is accomplished by によって手段を述べます。",
+      "ウ": "空欄イは「intervals」が適切です。at which は接続角と離脱速度の両方を先行詞とし、それぞれの値を示す関係を表します。",
+      "エ": "空欄イは「intervals」が適切です。enables は現在形の動詞で、コンマに続く分詞構文としてそのまま置くことはできません。",
+      "オ": "空欄イは「intervals」が適切です。internals は内部機構などを指し、次の航空機との時間的な間隔を意味しません。",
+      "カ": "shorter intervals はより短い間隔で、in shorter intervals が離着陸の頻度を表します。",
+      "キ": "空欄イは「intervals」が適切です。onto はある面の上への移動を表し、誘導路へ入る方向を示します。",
+      "ク": "空欄イは「intervals」が適切です。permitting は現在分詞で、前の動作が次の航空機の離着陸を可能にするという結果を表します。",
+      "ケ": "空欄イは「intervals」が適切です。what は先行詞を含むため、すでに angles や speed がある箇所の関係表現には合いません。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-hikki-b02-3",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 17,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "ウの空欄に入れる最も適切な語句を選んでください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-2・空欄ウ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-hikki-b02.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英語・筆記 B-2の原問と語群。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211512id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_hikki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英語・筆記 B-2（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "accompanied",
+      "イ": "accomplished",
+      "ウ": "at which",
+      "エ": "enables",
+      "オ": "internals",
+      "カ": "intervals",
+      "キ": "onto",
+      "ク": "permitting",
+      "ケ": "what"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "be accomplished by doing は、ある方法を使えば実現できることを示します。",
+    "choiceExplanations": {
+      "ア": "空欄ウは「accomplished」が適切です。accompanied は付き添われた、伴われたという意味で、滑走路を空けられるようにする手段の説明とは異なります。",
+      "イ": "be accomplished by doing は、ある方法を使えば実現できることを示します。",
+      "ウ": "空欄ウは「accomplished」が適切です。at which は接続角と離脱速度の両方を先行詞とし、それぞれの値を示す関係を表します。",
+      "エ": "空欄ウは「accomplished」が適切です。enables は現在形の動詞で、コンマに続く分詞構文としてそのまま置くことはできません。",
+      "オ": "空欄ウは「accomplished」が適切です。internals は内部機構などを指し、次の航空機との時間的な間隔を意味しません。",
+      "カ": "空欄ウは「accomplished」が適切です。intervals は間隔で、in shorter intervals でより短い間隔を表します。",
+      "キ": "空欄ウは「accomplished」が適切です。onto はある面の上への移動を表し、誘導路へ入る方向を示します。",
+      "ク": "空欄ウは「accomplished」が適切です。permitting は現在分詞で、前の動作が次の航空機の離着陸を可能にするという結果を表します。",
+      "ケ": "空欄ウは「accomplished」が適切です。what は先行詞を含むため、すでに angles や speed がある箇所の関係表現には合いません。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-hikki-b02-4",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 18,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "エの空欄に入れる最も適切な語句を選んでください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-2・空欄エ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-hikki-b02.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英語・筆記 B-2の原問と語群。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211512id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_hikki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英語・筆記 B-2（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "accompanied",
+      "イ": "accomplished",
+      "ウ": "at which",
+      "エ": "enables",
+      "オ": "internals",
+      "カ": "intervals",
+      "キ": "onto",
+      "ク": "permitting",
+      "ケ": "what"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "angles at which と speed at which の両方で使います。at は接続角や速度の値に対応します。",
+    "choiceExplanations": {
+      "ア": "空欄エは「at which」が適切です。accompanied は付き添われた、伴われたという意味で、滑走路を空けられるようにする手段の説明とは異なります。",
+      "イ": "空欄エは「at which」が適切です。accomplished は達成されたという意味で、This is accomplished by によって手段を述べます。",
+      "ウ": "angles at which と speed at which の両方で使います。at は接続角や速度の値に対応します。",
+      "エ": "空欄エは「at which」が適切です。enables は現在形の動詞で、コンマに続く分詞構文としてそのまま置くことはできません。",
+      "オ": "空欄エは「at which」が適切です。internals は内部機構などを指し、次の航空機との時間的な間隔を意味しません。",
+      "カ": "空欄エは「at which」が適切です。intervals は間隔で、in shorter intervals でより短い間隔を表します。",
+      "キ": "空欄エは「at which」が適切です。onto はある面の上への移動を表し、誘導路へ入る方向を示します。",
+      "ク": "空欄エは「at which」が適切です。permitting は現在分詞で、前の動作が次の航空機の離着陸を可能にするという結果を表します。",
+      "ケ": "空欄エは「at which」が適切です。what は先行詞を含むため、すでに angles や speed がある箇所の関係表現には合いません。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-hikki-b02-5",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 19,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "オの空欄に入れる最も適切な語句を選んでください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-2・空欄オ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-hikki-b02.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英語・筆記 B-2の原問と語群。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211512id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_hikki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英語・筆記 B-2（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "accompanied",
+      "イ": "accomplished",
+      "ウ": "at which",
+      "エ": "enables",
+      "オ": "internals",
+      "カ": "intervals",
+      "キ": "onto",
+      "ク": "permitting",
+      "ケ": "what"
+    },
+    "answer": "キ",
+    "officialAnswerNumber": "7",
+    "explanation": "onto は誘導路の上に移動することを表し、滑走路の外への動きを補います。",
+    "choiceExplanations": {
+      "ア": "空欄オは「onto」が適切です。accompanied は付き添われた、伴われたという意味で、滑走路を空けられるようにする手段の説明とは異なります。",
+      "イ": "空欄オは「onto」が適切です。accomplished は達成されたという意味で、This is accomplished by によって手段を述べます。",
+      "ウ": "空欄オは「onto」が適切です。at which は接続角と離脱速度の両方を先行詞とし、それぞれの値を示す関係を表します。",
+      "エ": "空欄オは「onto」が適切です。enables は現在形の動詞で、コンマに続く分詞構文としてそのまま置くことはできません。",
+      "オ": "空欄オは「onto」が適切です。internals は内部機構などを指し、次の航空機との時間的な間隔を意味しません。",
+      "カ": "空欄オは「onto」が適切です。intervals は間隔で、in shorter intervals でより短い間隔を表します。",
+      "キ": "onto は誘導路の上に移動することを表し、滑走路の外への動きを補います。",
+      "ク": "空欄オは「onto」が適切です。permitting は現在分詞で、前の動作が次の航空機の離着陸を可能にするという結果を表します。",
+      "ケ": "空欄オは「onto」が適切です。what は先行詞を含むため、すでに angles や speed がある箇所の関係表現には合いません。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-hikki-b03-1",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 20,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "アの空欄に入れる最も適切な語句を選んでください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-3・空欄ア",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-hikki-b03.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英語・筆記 B-3の原問と語群。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211512id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_hikki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英語・筆記 B-3（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "authorizing",
+      "イ": "depression",
+      "ウ": "ignoring",
+      "エ": "interference",
+      "オ": "precautions",
+      "カ": "prescribe",
+      "キ": "promotions",
+      "ク": "subscribe",
+      "ケ": "suppression"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "before authorizing tests and experiments は試験や実験を許可する前に、という意味です。",
+    "choiceExplanations": {
+      "ア": "before authorizing tests and experiments は試験や実験を許可する前に、という意味です。",
+      "イ": "空欄アは「authorizing」が適切です。depression は低下や落ち込みなどを指し、輻射を止めるという意味には合いません。",
+      "ウ": "空欄アは「authorizing」が適切です。ignoring は無視することです。",
+      "エ": "空欄アは「authorizing」が適切です。harmful interference は有害な混信という意味で、避けるべきものを示します。",
+      "オ": "空欄アは「authorizing」が適切です。precautions は予防措置であり、take precautions で対策を講じることを表します。",
+      "カ": "空欄アは「authorizing」が適切です。prescribe は措置を定め、指示することです。",
+      "キ": "空欄アは「authorizing」が適切です。promotions は販売促進や昇進などを指し、混信への予防措置のことではありません。",
+      "ク": "空欄アは「authorizing」が適切です。subscribe は購読や同意などを意味し、この場合に主管庁が措置を求めることを表しません。",
+      "ケ": "空欄アは「authorizing」が適切です。suppression は抑制や抑圧を意味し、ここでは輻射の抑圧を表します。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-hikki-b03-2",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 21,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "イの空欄に入れる最も適切な語句を選んでください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-3・空欄イ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-hikki-b03.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英語・筆記 B-3の原問と語群。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211512id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_hikki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英語・筆記 B-3（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "authorizing",
+      "イ": "depression",
+      "ウ": "ignoring",
+      "エ": "interference",
+      "オ": "precautions",
+      "カ": "prescribe",
+      "キ": "promotions",
+      "ク": "subscribe",
+      "ケ": "suppression"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "避けるべきは有害な混信なので harmful interference が適切です。",
+    "choiceExplanations": {
+      "ア": "空欄イは「interference」が適切です。authorize は許可するという意味で、before の後に動名詞の形で置きます。",
+      "イ": "空欄イは「interference」が適切です。depression は低下や落ち込みなどを指し、輻射を止めるという意味には合いません。",
+      "ウ": "空欄イは「interference」が適切です。ignoring は無視することです。",
+      "エ": "避けるべきは有害な混信なので harmful interference が適切です。",
+      "オ": "空欄イは「interference」が適切です。precautions は予防措置であり、take precautions で対策を講じることを表します。",
+      "カ": "空欄イは「interference」が適切です。prescribe は措置を定め、指示することです。",
+      "キ": "空欄イは「interference」が適切です。promotions は販売促進や昇進などを指し、混信への予防措置のことではありません。",
+      "ク": "空欄イは「interference」が適切です。subscribe は購読や同意などを意味し、この場合に主管庁が措置を求めることを表しません。",
+      "ケ": "空欄イは「interference」が適切です。suppression は抑制や抑圧を意味し、ここでは輻射の抑圧を表します。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-hikki-b03-3",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 22,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "ウの空欄に入れる最も適切な語句を選んでください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-3・空欄ウ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-hikki-b03.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英語・筆記 B-3の原問と語群。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211512id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_hikki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英語・筆記 B-3（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "authorizing",
+      "イ": "depression",
+      "ウ": "ignoring",
+      "エ": "interference",
+      "オ": "precautions",
+      "カ": "prescribe",
+      "キ": "promotions",
+      "ク": "subscribe",
+      "ケ": "suppression"
+    },
+    "answer": "カ",
+    "officialAnswerNumber": "6",
+    "explanation": "shall prescribe the taking of は、措置を講じるよう定めることを意味します。",
+    "choiceExplanations": {
+      "ア": "空欄ウは「prescribe」が適切です。authorize は許可するという意味で、before の後に動名詞の形で置きます。",
+      "イ": "空欄ウは「prescribe」が適切です。depression は低下や落ち込みなどを指し、輻射を止めるという意味には合いません。",
+      "ウ": "空欄ウは「prescribe」が適切です。ignoring は無視することです。",
+      "エ": "空欄ウは「prescribe」が適切です。harmful interference は有害な混信という意味で、避けるべきものを示します。",
+      "オ": "空欄ウは「prescribe」が適切です。precautions は予防措置であり、take precautions で対策を講じることを表します。",
+      "カ": "shall prescribe the taking of は、措置を講じるよう定めることを意味します。",
+      "キ": "空欄ウは「prescribe」が適切です。promotions は販売促進や昇進などを指し、混信への予防措置のことではありません。",
+      "ク": "空欄ウは「prescribe」が適切です。subscribe は購読や同意などを意味し、この場合に主管庁が措置を求めることを表しません。",
+      "ケ": "空欄ウは「prescribe」が適切です。suppression は抑制や抑圧を意味し、ここでは輻射の抑圧を表します。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-hikki-b03-4",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 23,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "エの空欄に入れる最も適切な語句を選んでください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-3・空欄エ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-hikki-b03.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英語・筆記 B-3の原問と語群。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211512id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_hikki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英語・筆記 B-3（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "authorizing",
+      "イ": "depression",
+      "ウ": "ignoring",
+      "エ": "interference",
+      "オ": "precautions",
+      "カ": "prescribe",
+      "キ": "promotions",
+      "ク": "subscribe",
+      "ケ": "suppression"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "all possible precautions で、周波数と時刻を選ぶ等の可能なあらゆる予防措置を表します。",
+    "choiceExplanations": {
+      "ア": "空欄エは「precautions」が適切です。authorize は許可するという意味で、before の後に動名詞の形で置きます。",
+      "イ": "空欄エは「precautions」が適切です。depression は低下や落ち込みなどを指し、輻射を止めるという意味には合いません。",
+      "ウ": "空欄エは「precautions」が適切です。ignoring は無視することです。",
+      "エ": "空欄エは「precautions」が適切です。harmful interference は有害な混信という意味で、避けるべきものを示します。",
+      "オ": "all possible precautions で、周波数と時刻を選ぶ等の可能なあらゆる予防措置を表します。",
+      "カ": "空欄エは「precautions」が適切です。prescribe は措置を定め、指示することです。",
+      "キ": "空欄エは「precautions」が適切です。promotions は販売促進や昇進などを指し、混信への予防措置のことではありません。",
+      "ク": "空欄エは「precautions」が適切です。subscribe は購読や同意などを意味し、この場合に主管庁が措置を求めることを表しません。",
+      "ケ": "空欄エは「precautions」が適切です。suppression は抑制や抑圧を意味し、ここでは輻射の抑圧を表します。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-hikki-b03-5",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 24,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "オの空欄に入れる最も適切な語句を選んでください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-3・空欄オ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-hikki-b03.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英語・筆記 B-3の原問と語群。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211512id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_hikki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英語・筆記 B-3（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "authorizing",
+      "イ": "depression",
+      "ウ": "ignoring",
+      "エ": "interference",
+      "オ": "precautions",
+      "カ": "prescribe",
+      "キ": "promotions",
+      "ク": "subscribe",
+      "ケ": "suppression"
+    },
+    "answer": "ケ",
+    "officialAnswerNumber": "9",
+    "explanation": "the reduction or suppression of radiation は、輻射を低減すること又はさらに抑圧することを指します。",
+    "choiceExplanations": {
+      "ア": "空欄オは「suppression」が適切です。authorize は許可するという意味で、before の後に動名詞の形で置きます。",
+      "イ": "空欄オは「suppression」が適切です。depression は低下や落ち込みなどを指し、輻射を止めるという意味には合いません。",
+      "ウ": "空欄オは「suppression」が適切です。ignoring は無視することです。",
+      "エ": "空欄オは「suppression」が適切です。harmful interference は有害な混信という意味で、避けるべきものを示します。",
+      "オ": "空欄オは「suppression」が適切です。precautions は予防措置であり、take precautions で対策を講じることを表します。",
+      "カ": "空欄オは「suppression」が適切です。prescribe は措置を定め、指示することです。",
+      "キ": "空欄オは「suppression」が適切です。promotions は販売促進や昇進などを指し、混信への予防措置のことではありません。",
+      "ク": "空欄オは「suppression」が適切です。subscribe は購読や同意などを意味し、この場合に主管庁が措置を求めることを表しません。",
+      "ケ": "the reduction or suppression of radiation は、輻射を低減すること又はさらに抑圧することを指します。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-kaiwa-q01",
+    "exam": "aviation-comm",
+    "session": "eigo-kaiwa",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 1,
+    "subject": "英会話",
+    "category": "英会話",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英会話"
+    ],
+    "difficulty": 3,
+    "question": "Q-1 公式の放送用質問文を読み、設問に答えてください。\n\n公開原本の質問文を読み、選択肢から答えてください。",
+    "officialQuestionLabel": "Q-1",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-kaiwa-q01.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英会話 Q-1 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211633id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_kaiwa.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英会話 Q-1（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "questionNotice": "公式公表の放送用質問文を掲載しています。",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "a piece of cake は「とても簡単なこと」を意味します。友人は数学の試験が簡単だったと述べています。",
+    "choiceExplanations": {
+      "ア": "a piece of cake は「とても簡単なこと」を意味します。友人は数学の試験が簡単だったと述べています。",
+      "イ": "sweet は食べ物の味などを表し、試験について述べる慣用表現 a piece of cake の意味ではありません。",
+      "ウ": "difficult は難しいという意味ですが、友人の慣用表現は正反対の「簡単だった」を表します。",
+      "エ": "tiresome はうんざりさせられるという意味です。a piece of cake は難しさがないことを述べています。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-kaiwa-q02",
+    "exam": "aviation-comm",
+    "session": "eigo-kaiwa",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 2,
+    "subject": "英会話",
+    "category": "英会話",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英会話"
+    ],
+    "difficulty": 3,
+    "question": "Q-2 公式の放送用質問文を読み、設問に答えてください。\n\n公開原本の質問文を読み、選択肢から答えてください。",
+    "officialQuestionLabel": "Q-2",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-kaiwa-q02.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英会話 Q-2 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211633id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_kaiwa.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英会話 Q-2（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "questionNotice": "公式公表の放送用質問文を掲載しています。",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "等しい二辺に向かい合う二つの底角が等しくなります。これは二等辺三角形の基本的性質です。",
+    "choiceExplanations": {
+      "ア": "三つの角がすべて等しいのは正三角形の場合です。二等辺三角形の一般の性質は少なくとも二つの角が等しいことです。",
+      "イ": "等しい二辺に向かい合う二つの底角が等しくなります。これは二等辺三角形の基本的性質です。",
+      "ウ": "頂角が鈍角の二等辺三角形も作れるので、すべての角が常に鋭角であるとは限りません。",
+      "エ": "平面三角形の内角の和は180°です。360°は四角形の内角の和に当たります。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-kaiwa-q03",
+    "exam": "aviation-comm",
+    "session": "eigo-kaiwa",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 3,
+    "subject": "英会話",
+    "category": "英会話",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英会話"
+    ],
+    "difficulty": 3,
+    "question": "Q-3 公式の放送用質問文を読み、設問に答えてください。\n\n公開原本の質問文を読み、選択肢から答えてください。",
+    "officialQuestionLabel": "Q-3",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-kaiwa-q03.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英会話 Q-3 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211633id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_kaiwa.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英会話 Q-3（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "questionNotice": "公式公表の放送用質問文を掲載しています。",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "光年は光が一年に進む距離で、天体間などの大きな距離を表す長さの単位です。",
+    "choiceExplanations": {
+      "ア": "光年の year は移動時間を示すものであり、定義される量は光がその間に移動する距離です。",
+      "イ": "光速は単位時間当たりの距離です。光年は一年という時間を光速に掛けた長さです。",
+      "ウ": "光年は光が一年に進む距離で、天体間などの大きな距離を表す長さの単位です。",
+      "エ": "地球と太陽の平均距離を基準にするのは天文単位です。光年の基準は光の速さと一年です。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-kaiwa-q04",
+    "exam": "aviation-comm",
+    "session": "eigo-kaiwa",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 4,
+    "subject": "英会話",
+    "category": "英会話",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英会話"
+    ],
+    "difficulty": 3,
+    "question": "Q-4 公式の放送用質問文を読み、設問に答えてください。\n\n公開原本の質問文を読み、選択肢から答えてください。",
+    "officialQuestionLabel": "Q-4",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-kaiwa-q04.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英会話 Q-4 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211633id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_kaiwa.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英会話 Q-4（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "questionNotice": "公式公表の放送用質問文を掲載しています。",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "holdover time は除氷・防氷液が効果を保つ目安の時間です。降雪の中で離陸待ちが延びる場合に確認します。",
+    "choiceExplanations": {
+      "ア": "機内食の温度は、降雪下で離陸を待つ機体の安全に直接関係しません。",
+      "イ": "ここでは地上での待機が長くなることによって、機体の防除氷処理の効果が切れることが問題になります。",
+      "ウ": "管制側のレーダーに雪が積もるかよりも、自機の翼などに着氷・積雪が起きないかを考える場面です。",
+      "エ": "holdover time は除氷・防氷液が効果を保つ目安の時間です。降雪の中で離陸待ちが延びる場合に確認します。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-kaiwa-q05",
+    "exam": "aviation-comm",
+    "session": "eigo-kaiwa",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 5,
+    "subject": "英会話",
+    "category": "英会話",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英会話"
+    ],
+    "difficulty": 3,
+    "question": "Q-5 公式の放送用質問文を読み、設問に答えてください。\n\n公開原本の質問文を読み、選択肢から答えてください。",
+    "officialQuestionLabel": "Q-5",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-kaiwa-q05.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英会話 Q-5 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211633id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_kaiwa.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英会話 Q-5（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "questionNotice": "公式公表の放送用質問文を掲載しています。",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "降水の後の低温では滑走路に雪や氷が残ったり、水が凍ったりします。設問の滑りやすさを最もよく説明します。",
+    "choiceExplanations": {
+      "ア": "寒くても乾燥しているなら、降水や積雪による滑りやすさはこの条件からは説明できません。",
+      "イ": "蒸し暑さ自体は滑走路が滑りやすいことを示しません。水、雪、氷などの状態が問題になります。",
+      "ウ": "台風の後に濡れていることもあり得ますが、晴天との記述のみでは設問の状況を最も直接には説明しません。",
+      "エ": "降水の後の低温では滑走路に雪や氷が残ったり、水が凍ったりします。設問の滑りやすさを最もよく説明します。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-kaiwa-q06",
+    "exam": "aviation-comm",
+    "session": "eigo-kaiwa",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 6,
+    "subject": "英会話",
+    "category": "英会話",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英会話"
+    ],
+    "difficulty": 3,
+    "question": "Q-6 公式の放送用質問文を読み、設問に答えてください。\n\n公開原本の質問文を読み、選択肢から答えてください。",
+    "officialQuestionLabel": "Q-6",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-kaiwa-q06.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英会話 Q-6 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211633id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_kaiwa.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英会話 Q-6（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "questionNotice": "公式公表の放送用質問文を掲載しています。",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "相手機の緑は機体の右、赤は機体の左です。自分から見て逆側に見えるため、相手機は正面をこちらに向けています。",
+    "choiceExplanations": {
+      "ア": "相手機の緑は機体の右、赤は機体の左です。自分から見て逆側に見えるため、相手機は正面をこちらに向けています。",
+      "イ": "左右に横切る場合とは異なり、左右の航法灯が逆向きに見えるのは機体がこちらを正面に向けた状態です。",
+      "ウ": "両灯の左右が自分の左右と逆になるのは、正面から機体を見るためです。右から左に横切ることは示していません。",
+      "エ": "離れていく機体を後方から見る場合とは、灯火の左右の関係が異なります。降下についての情報もありません。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2023-02-eigo-kaiwa-q07",
+    "exam": "aviation-comm",
+    "session": "eigo-kaiwa",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 7,
+    "subject": "英会話",
+    "category": "英会話",
+    "topicTags": [
+      "航空無線通信士",
+      "2023-02期",
+      "英会話"
+    ],
+    "difficulty": 3,
+    "question": "Q-7 公式の放送用質問文を読み、設問に答えてください。\n\n公開原本の質問文を読み、選択肢から答えてください。",
+    "officialQuestionLabel": "Q-7",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2023/2023-02-eigo-kaiwa-q07.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2023年2月期 英会話 Q-7 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211633id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo_kaiwa.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211544id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和5年2月期 英会話 Q-7（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "questionNotice": "公式公表の放送用質問文を掲載しています。",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "濃霧や荒天では、目視で飛行するための視程などの条件を満たさない場合があります。この中でVFRが禁止となる状況に当たります。",
+    "choiceExplanations": {
+      "ア": "VFRの可否には視程や雲との距離が関係し、20度を超えること自体は禁止の条件ではありません。",
+      "イ": "低温だけで有視界飛行方式が禁止になるわけではありません。必要な有視界気象状態を満たすかを確認します。",
+      "ウ": "濃霧や荒天では、目視で飛行するための視程などの条件を満たさない場合があります。この中でVFRが禁止となる状況に当たります。",
+      "エ": "霧や雲がなく視界が明瞭なら、選択肢の気象条件は有視界飛行を妨げません。"
+    }
+  }
+]
