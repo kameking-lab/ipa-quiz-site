@@ -103,20 +103,23 @@ describe('aviation communication68 local registration candidate',()=>{
  });
  it('retains all338 old runtime records and raw source/core bytes independently of player extensions',()=>{
   const oracle=integrationOracle.aviation338;
-  const current=[...RIKU_TECH1_QUESTIONS,...MARITIME4_QUESTIONS,...LAND_SPECIAL1_QUESTIONS];
+  const current=[...RIKU_TECH1_QUESTIONS,...MARITIME4_QUESTIONS.filter(q=>q.year===2026),...LAND_SPECIAL1_QUESTIONS];
   const ordered=[...current].sort((a,b)=>a.id<b.id?-1:a.id>b.id?1:0);
   expect(current).toHaveLength(oracle.originalCount);
   expect(runtimeFingerprint(ordered)).toBe(oracle.normalizedRuntimeSha256);
-  expect(sourceFilesUnder(oracle.sourceRoots)).toEqual(oracle.files.filter(pin=>oracle.sourceRoots.some(root=>pin.path.startsWith(root+'/'))).map(pin=>pin.path));
-  // IOS1 (666a49bca) added account grants to both display components.
-  // Only these display components have separately accepted UI extensions.
-  // Every original-data/core pin and the 338-record runtime fingerprint above remain exact.
-  const reviewedDisplayPins: Readonly<Record<string,string>> = {
+  expect(sourceFilesUnder(oracle.sourceRoots)).toEqual([
+   ...oracle.files.filter(pin=>oracle.sourceRoots.some(root=>pin.path.startsWith(root+'/'))).map(pin=>pin.path),
+   'data/questions/maritime4/2025-august.json',
+  ].sort());
+  // IOS1 added account grants to the display components. PLAN9-C05 extends the maritime loader.
+  // The original question data and the 338-record runtime fingerprint above remain exact.
+  const reviewedRuntimePins: Readonly<Record<string,string>> = {
     ...int8RuntimePins,
     'components/quiz/QuizPlayer.tsx': releaseRuntimePins['components/quiz/QuizPlayer.tsx'],
     'components/quiz/QuestionAnswerCard.tsx': releaseRuntimePins['components/quiz/QuestionAnswerCard.tsx'],
     'components/quiz/stream/StreamQuizPlayer.tsx': releaseRuntimePins['components/quiz/stream/StreamQuizPlayer.tsx'],
+    'data/questions/maritime4/index.ts': 'b1d8fade3a40aad5c8382fbb73a6090d3784206debc86154fa4cee6a9120587d',
   };
-  for(const pin of oracle.files)expect(repositoryTextSha256(pin.path),pin.path).toBe(reviewedDisplayPins[pin.path] ?? pin.sha256);
+  for(const pin of oracle.files)expect(repositoryTextSha256(pin.path),pin.path).toBe(reviewedRuntimePins[pin.path] ?? pin.sha256);
  });
 });

@@ -471,7 +471,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     shortName: "第四級海上無線通信士", fullName: "第四級海上無線通信士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
     officialQuestionsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", officialReuseTermsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", status: "live",
-    reuseSummary: "2026年2月・8月の2回、各回の無線工学18問・法規20問、計76原問を収録。公式正答・全肢解説・原図と解答群で演習できます。A/Bは同じ問題冊子内の区分で、B問題は1原問の5枠を個別に採点します。法令は各実施回当時の内容です。",
+    reuseSummary: "2025年8月、2026年2月・8月の3回、各回の無線工学18問・法規20問、計114原問を収録。公式正答・全肢解説・原図と解答群で演習できます。A/Bは同じ問題冊子内の区分で、B問題は1原問の5枠を個別に採点します。法令は各実施回当時の内容です。",
     attributionTemplate: "出典：公益財団法人日本無線協会 第四級海上無線通信士試験 ○年○月 法規・無線工学 問○（問題・正答）。解説と原図の切出しは過去問AIが作成・加工。",
     remainingWork: ["現行法令との差を学習時に確認"],
 },

@@ -1309,7 +1309,7 @@ kangoshi: {
         { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 18, label: "無線工学", categories: ["無線工学"] },
         { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["法規"] },
     ],
-    seasons: ["february", "august"], yearRange: { start: 2026, end: 2026 },
+    seasons: ["february", "august"], yearRange: { start: 2025, end: 2026 },
 },
 "land-special1": {
     code: "land-special1", nameFull: "第一級陸上特殊無線技士試験", urlSlug: "land-special1", level: "specialist",

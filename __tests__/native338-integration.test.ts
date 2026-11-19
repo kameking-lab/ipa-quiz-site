@@ -22,9 +22,9 @@ const pools = { "riku-tech1": RIKU_TECH1_QUESTIONS, maritime4: MARITIME4_QUESTIO
 const combined = Object.values(pools).flat();
 
 describe("three qualification native338 integration", () => {
-  it("registers the same338 records through eager, lazy and practice routes", async () => {
-    expect(combined).toHaveLength(338);
-    expect(new Set(combined.map(q => q.id)).size).toBe(338);
+  it("registers 376 records through eager, lazy and practice routes", async () => {
+    expect(combined).toHaveLength(376);
+    expect(new Set(combined.map(q => q.id)).size).toBe(376);
     expect(new Set(getRegisteredExamCodes())).toEqual(new Set(ALL_QUIZ_EXAM_CODES));
     for (const [exam, questions] of Object.entries(pools)) {
       const code = exam as keyof typeof pools;
@@ -41,26 +41,26 @@ describe("three qualification native338 integration", () => {
 
   it("counts original questions separately from native B answer cells", () => {
     const native = combined.filter(q => q.type === "native-b");
-    expect(native).toHaveLength(62);
-    expect(native.reduce((n,q) => n + q.nativeB!.slots.length, 0)).toBe(310);
-    expect(combined.filter(q => q.type === "multiple-choice")).toHaveLength(276);
-    expect(combined.reduce((n,q) => n + (q.nativeB?.slots.length ?? 1), 0)).toBe(586);
+    expect(native).toHaveLength(73);
+    expect(native.reduce((n,q) => n + q.nativeB!.slots.length, 0)).toBe(365);
+    expect(combined.filter(q => q.type === "multiple-choice")).toHaveLength(303);
+    expect(combined.reduce((n,q) => n + (q.nativeB?.slots.length ?? 1), 0)).toBe(668);
     expect(RIKU_TECH1_QUESTIONS.filter(q => q.nativeB)).toHaveLength(40);
-    expect(MARITIME4_QUESTIONS.filter(q => q.nativeB)).toHaveLength(22);
+    expect(MARITIME4_QUESTIONS.filter(q => q.nativeB)).toHaveLength(33);
     expect(groupByYearSeason(RIKU_TECH1_QUESTIONS).map(g => g.count)).toEqual([95,95]);
-    expect(groupByYearSeason(MARITIME4_QUESTIONS).map(g => g.count)).toEqual([38,38]);
+    expect(groupByYearSeason(MARITIME4_QUESTIONS).map(g => g.count)).toEqual([38,38,38]);
     expect(groupByYearSeason(LAND_SPECIAL1_QUESTIONS).map(g => g.count)).toEqual([36,36]);
   });
 
   it("resolves all canonical URLs including August A/B with overlapping numbers", () => {
     const routes = combined.map(questionPagePath);
-    expect(new Set(routes).size).toBe(338);
+    expect(new Set(routes).size).toBe(376);
     for (const q of combined) {
       const [, , exam, yearSeason, section, qnum] = questionPagePath(q).split("/");
       expect(findQuestionByRoute(combined, { exam:exam!, yearSeason:yearSeason!, section:section!, qnum:qnum! })?.id).toBe(q.id);
     }
     const august = MARITIME4_QUESTIONS.filter(q => q.season === "august");
-    expect(august).toHaveLength(38);
+    expect(august).toHaveLength(76);
     expect(august.some(q => questionPagePath(q).endsWith("q1a"))).toBe(true);
     expect(august.some(q => questionPagePath(q).endsWith("q1b"))).toBe(true);
     expect(formatYearSeason(2026,"august")).toBe("2026年8月試験");
@@ -119,7 +119,7 @@ describe("three qualification native338 integration", () => {
         assets.add(url);
       }
     }
-    expect(assets.size).toBe(206);
+    expect(assets.size).toBe(244);
     expect(getQualificationByExamCode("land-special1")?.reuseSummary).toContain("13:30 B版72問は未収録");
   });
 });

@@ -36,7 +36,7 @@ describe("native338 actual entry points", () => {
       ["riku-tech1","july","kiso",25],
       ["riku-tech1","january","kogaku-a",25],
       ["riku-tech1","july","kogaku-b",25],
-      ["maritime4","august","houki",20],
+      ["maritime4","august","houki",40],
       ["maritime4","february","kogaku",18],
       ["land-special1","june","kogaku",24],
     ] as const;
@@ -49,7 +49,7 @@ describe("native338 actual entry points", () => {
     }
   });
 
-  it("round-trips all76 search hits through the real A/B canonical routes", async () => {
+  it("round-trips all 114 search hits through the real A/B canonical routes", async () => {
     const hits = [];
     for (const offset of [0,60]) {
       const response = await searchGet(new Request(`http://localhost/api/search/questions?exam=maritime4&limit=60&offset=${offset}`));
@@ -57,7 +57,7 @@ describe("native338 actual entry points", () => {
       const body = await response.json();
       hits.push(...body.hits);
     }
-    expect(hits).toHaveLength(76);
+    expect(hits).toHaveLength(114);
     for (const hit of hits) {
       expect(["a","b"]).toContain(hit.part);
       const [, , exam,yearSeason,section,qnum] = questionPagePath(hit).split("/");
@@ -80,7 +80,7 @@ describe("native338 actual entry points", () => {
       body:JSON.stringify({ historyIds:questions.map(q => q.id), reviewStore:{}, today:"2026-10-15" }) }));
     expect(response.status).toBe(200);
     const body = await response.json();
-    expect(body.questions).toHaveLength(62);
+    expect(body.questions).toHaveLength(73);
     expect(new Set(body.questions.map((q: {id:string}) => q.id))).toEqual(new Set(questions.map(q => q.id)));
   });
 
