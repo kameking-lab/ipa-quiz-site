@@ -865,6 +865,18 @@ eisei1: {
     seasons: ["published", "october"],
     yearRange: { start: 2025, end: 2026 },
 },
+"kounin-science": {
+    code: "kounin-science",
+    nameFull: "高卒認定試験 科学と人間生活",
+    urlSlug: "kounin-science",
+    level: "basic",
+    sessions: [{
+        session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "科学と人間生活",
+        categories: ["光の性質", "熱の性質とエネルギー", "プラスチック", "食品にかかわる物質", "ヒトの体内環境", "身のまわりの微生物", "日本で起こる災害", "太陽の活動と気象現象"],
+    }],
+    seasons: ["second"],
+    yearRange: { start: 2024, end: 2024 },
+},
 "zensho-calc-1": {
     code: "zensho-calc-1",
     nameFull: "全商ビジネス計算実務検定 1級",

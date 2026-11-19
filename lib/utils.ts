@@ -276,6 +276,7 @@ export const EXAM_LABELS: Record<string, string> = {
     "jidosha-1-small-written": "一級小型自動車整備士（筆記）",
     "jidosha-2-gasoline": "二級ガソリン自動車整備士",
     "gijutsushi1-kiso": "技術士第一次試験 基礎科目",
+    "kounin-science": "高卒認定 科学と人間生活",
     "zensho-calc-1": "全商ビジネス計算1級",
     "kanken-3": "漢検3級",
     "jidosha-2-diesel": "二級ジーゼル自動車整備士",

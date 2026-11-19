@@ -239,6 +239,7 @@ import { KANTEISHI_QUESTIONS } from "./kanteishi";
 import { KAIKEISHI_QUESTIONS } from "./kaikeishi";
 import { EISEI1_QUESTIONS } from "./eisei1";
 import { GIJUTSUSHI1_KISO_QUESTIONS } from "./gijutsushi1-kiso";
+import { KOUNIN_SCIENCE_QUESTIONS } from "./kounin-science";
 import { ZENSHO_CALC_1_QUESTIONS } from "./zensho-calc-1";
 import { KANKEN_3_QUESTIONS } from "./kanken-3";
 import { EISEI2_QUESTIONS } from "./eisei2";
@@ -548,6 +549,7 @@ takken: TAKKEN_QUESTIONS,
 ...(isExamPublished("tohan") ? { tohan: TOHAN_QUESTIONS } : {}),
 ...(isExamPublished("kanri") ? { kanri: KANRI_QUESTIONS } : {}),
 ...(isExamPublished("eisei1") ? { eisei1: EISEI1_QUESTIONS } : {}),
+...(isExamPublished("kounin-science") ? { "kounin-science": KOUNIN_SCIENCE_QUESTIONS } : {}),
 ...(isExamPublished("zensho-calc-1") ? { "zensho-calc-1": ZENSHO_CALC_1_QUESTIONS } : {}),
 ...(isExamPublished("kanken-3") ? { "kanken-3": KANKEN_3_QUESTIONS } : {}),
 ...(isExamPublished("eisei2") ? { eisei2: EISEI2_QUESTIONS } : {}),
