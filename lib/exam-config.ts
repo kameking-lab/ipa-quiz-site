@@ -1472,7 +1472,7 @@ shuwa: {
 "jken-katsuyo3": {
     code: "jken-katsuyo3", nameFull: "情報検定（J検）情報活用3級", urlSlug: "jken-katsuyo3", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 46, label: "情報活用3級", categories: ["情報表現と処理手順", "パソコンの基礎", "インターネットの基礎", "インターネットの利用", "情報機器の基本操作", "情報社会とコンピュータ", "情報モラル"] }],
-    seasons: ["first", "second"], yearRange: { start: 2023, end: 2026 },
+    seasons: ["first", "second"], yearRange: { start: 2022, end: 2026 },
 },
 "jken-system": {
     code: "jken-system", nameFull: "情報検定（J検）情報システム試験", urlSlug: "jken-system", level: "basic",
