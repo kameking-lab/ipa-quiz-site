@@ -55,7 +55,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://zensho.or.jp/examination/pastexams/economics/",
     officialReuseTermsUrl: "https://zensho.or.jp/examination/pastexams/",
     status: "live",
-    reuseSummary: "第40回（令和7年度）のマーケティング、ビジネス基礎、商品開発と流通を収録。",
+    reuseSummary: "第40回（令和7年度）のマーケティング、ビジネス基礎、商品開発と流通、ビジネス・マネジメントを収録。",
     remainingWork: [],
   },
   {"slug": "sasshi1", "examCode": "sasshi1", "shortName": "サッシ施工技能士 1級", "fullName": "技能検定 1級サッシ施工（ビル用サッシ施工作業）学科試験", "domain": "safety", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
