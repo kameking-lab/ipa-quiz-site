@@ -1550,6 +1550,14 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
   },
   {
+    slug: "chori-kansai", examCode: "chori-kansai", shortName: "調理師試験（関西広域連合）", fullName: "調理師試験（関西広域連合）",
+    domain: "personal-services", administrator: "関西広域連合",
+    officialQuestionsUrl: "https://www.kouiki-kansai.jp/hodo/9257.html", officialReuseTermsUrl: "https://www.kouiki-kansai.jp/hodo/9257.html",
+    status: "live",
+    reuseSummary: "公式問題・正答と全選択肢の独自解説を収録。法令・制度は出題時点。",
+    remainingWork: [],
+  },
+  {
     slug: "yamaguchi-chori", examCode: "yamaguchi-chori", shortName: "調理師", fullName: "調理師",
     domain: "personal-services", administrator: "山口県 生活衛生課",
     officialQuestionsUrl: "https://www.pref.yamaguchi.lg.jp/site/syoku-anshin/320296.html",
