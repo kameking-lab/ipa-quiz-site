@@ -225,6 +225,7 @@ jokaso: async () => isExamPublished("jokaso") ? (await import("@/data/questions/
 denki1: async () => isExamPublished("denki1") ? (await import("@/data/questions/denki1")).DENKI1_QUESTIONS : [],
 shuwa: async () => isExamPublished("shuwa") ? (await import("@/data/questions/shuwa")).SHUWA_QUESTIONS : [],
 "kanken-7": async () => isExamPublished("kanken-7") ? (await import("@/data/questions/kanken-7")).KANKEN_7_QUESTIONS : [],
+"cfp-souzoku": async () => isExamPublished("cfp-souzoku") ? (await import("@/data/questions/cfp-souzoku")).CFP_SOUZOKU_QUESTIONS : [],
 "dekyo-chief-2": async () => isExamPublished("dekyo-chief-2") ? (await import("@/data/questions/dekyo-chief-2")).DEKYO_CHIEF_2_QUESTIONS : [],
 "kogai-taiki-yugai": async () => isExamPublished("kogai-taiki-yugai") ? (await import("@/data/questions/kogai-taiki-yugai")).KOGAI_TAIKI_YUGAI_QUESTIONS : [],
 "kogai-04": async () => isExamPublished("kogai-04") ? (await import("@/data/questions/kogai-04")).KOGAI_BAIJIN_QUESTIONS : [],

@@ -341,6 +341,7 @@ import { TETSUDO_SHARYO2_QUESTIONS } from "./tetsudo-sharyo2";
 
 import { KIKAI_HOZEN_QUESTIONS } from "./kikai-hozen";
 import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
+import { CFP_SOUZOKU_QUESTIONS } from "./cfp-souzoku";
 import { DEKYO_CHIEF_2_QUESTIONS } from "./dekyo-chief-2";
 import { KOGAI_TAIKI_YUGAI_QUESTIONS } from "./kogai-taiki-yugai";
 import { KOGAI_BAIJIN_QUESTIONS } from "./kogai-04";
@@ -716,6 +717,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("tobi2") ? { "tobi2": TOBI2_QUESTIONS } : {}),
 
 ...(isExamPublished("tsukanshi") ? { "tsukanshi": TSUKANSHI_QUESTIONS } : {}),
+...(isExamPublished("cfp-souzoku") ? { "cfp-souzoku": CFP_SOUZOKU_QUESTIONS } : {}),
 ...(isExamPublished("dekyo-chief-2") ? { "dekyo-chief-2": DEKYO_CHIEF_2_QUESTIONS } : {}),
 ...(isExamPublished("kogai-taiki-yugai") ? { "kogai-taiki-yugai": KOGAI_TAIKI_YUGAI_QUESTIONS } : {}),
 ...(isExamPublished("kogai-04") ? { "kogai-04": KOGAI_BAIJIN_QUESTIONS } : {}),

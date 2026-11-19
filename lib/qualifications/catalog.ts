@@ -1393,6 +1393,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
   },
   {
+    slug: "cfp-souzoku", examCode: "cfp-souzoku", shortName: "CFP® 相続・事業承継設計", fullName: "CFP®資格審査試験 相続・事業承継設計",
+    domain: "finance", administrator: "日本FP協会",
+    officialQuestionsUrl: "https://www.jafp.or.jp/aim/cfp/cfp_exam/mohan.shtml",
+    officialReuseTermsUrl: "https://www.jafp.or.jp/aim/cfp/cfp_exam/mohan.shtml",
+    status: "live",
+    reuseSummary: "相続・事業承継設計の公式問題と正答を収録。",
+    attributionTemplate: "出典：日本FP協会 CFP®資格審査試験。解説は過去問AI作成。",
+    remainingWork: [],
+  },
+  {
     slug: "dekyo-chief-2", examCode: "dekyo-chief-2", shortName: "電気通信主任技術者", fullName: "電気通信主任技術者",
     domain: "electrical", administrator: "一般財団法人日本データ通信協会",
     officialQuestionsUrl: "https://www.dekyo.or.jp/shiken/chief/exam",
