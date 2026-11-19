@@ -33,8 +33,8 @@ export const KYOIN_TOKYO_2024: Question[] = [
       "オ": "教員が使命を自覚して研究と修養に励むという規定は、教育基本法第９条第１項にある。"
     },
     "hasImage": false,
-    "sourcePdfUrl": "https://web.archive.org/web/20250404121040id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
-    "sourceAnswerUrl": "https://web.archive.org/web/20250814123945id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
+    "sourcePdfUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
+    "sourceAnswerUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
     "sourceAttribution": "出典：東京都教育委員会 令和6年度東京都公立学校教員採用候補者選考（令和7年度採用） 教職教養 問1。解説は過去問AIの独自作成。",
     "license": "PREF-published"
   },
@@ -70,8 +70,8 @@ export const KYOIN_TOKYO_2024: Question[] = [
       "オ": "学校教育法第３条では、学校の種類に応じた設置基準を定めるのは文部科学大臣とされている。"
     },
     "hasImage": false,
-    "sourcePdfUrl": "https://web.archive.org/web/20250404121040id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
-    "sourceAnswerUrl": "https://web.archive.org/web/20250814123945id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
+    "sourcePdfUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
+    "sourceAnswerUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
     "sourceAttribution": "出典：東京都教育委員会 令和6年度東京都公立学校教員採用候補者選考（令和7年度採用） 教職教養 問2。解説は過去問AIの独自作成。",
     "license": "PREF-published"
   },
@@ -107,8 +107,8 @@ export const KYOIN_TOKYO_2024: Question[] = [
       "オ": "全課程を修了したと認めた児童・生徒に卒業証書を授与するのは、その学校の校長である。"
     },
     "hasImage": false,
-    "sourcePdfUrl": "https://web.archive.org/web/20250404121040id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
-    "sourceAnswerUrl": "https://web.archive.org/web/20250814123945id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
+    "sourcePdfUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
+    "sourceAnswerUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
     "sourceAttribution": "出典：東京都教育委員会 令和6年度東京都公立学校教員採用候補者選考（令和7年度採用） 教職教養 問3。解説は過去問AIの独自作成。",
     "license": "PREF-published"
   },
@@ -144,8 +144,8 @@ export const KYOIN_TOKYO_2024: Question[] = [
       "オ": "ジフテリアは、学校で予防すべき感染症のうち第一種に分類される。"
     },
     "hasImage": false,
-    "sourcePdfUrl": "https://web.archive.org/web/20250404121040id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
-    "sourceAnswerUrl": "https://web.archive.org/web/20250814123945id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
+    "sourcePdfUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
+    "sourceAnswerUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
     "sourceAttribution": "出典：東京都教育委員会 令和6年度東京都公立学校教員採用候補者選考（令和7年度採用） 教職教養 問4。解説は過去問AIの独自作成。",
     "license": "PREF-published"
   },
@@ -181,8 +181,8 @@ export const KYOIN_TOKYO_2024: Question[] = [
       "オ": "保健主事には、教諭に加え、養護教諭も充てることができる。養護教諭は児童・生徒の養護をつかさどる。"
     },
     "hasImage": false,
-    "sourcePdfUrl": "https://web.archive.org/web/20250404121040id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
-    "sourceAnswerUrl": "https://web.archive.org/web/20250814123945id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
+    "sourcePdfUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
+    "sourceAnswerUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
     "sourceAttribution": "出典：東京都教育委員会 令和6年度東京都公立学校教員採用候補者選考（令和7年度採用） 教職教養 問5。解説は過去問AIの独自作成。",
     "license": "PREF-published"
   },
@@ -218,8 +218,8 @@ export const KYOIN_TOKYO_2024: Question[] = [
       "オ": "特別免許状は授与した教育委員会の所在する都道府県内で効力を有する。普通免許状は全国で有効である。"
     },
     "hasImage": false,
-    "sourcePdfUrl": "https://web.archive.org/web/20250404121040id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
-    "sourceAnswerUrl": "https://web.archive.org/web/20250814123945id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
+    "sourcePdfUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
+    "sourceAnswerUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
     "sourceAttribution": "出典：東京都教育委員会 令和6年度東京都公立学校教員採用候補者選考（令和7年度採用） 教職教養 問6。解説は過去問AIの独自作成。",
     "license": "PREF-published"
   },
@@ -255,8 +255,8 @@ export const KYOIN_TOKYO_2024: Question[] = [
       "オ": "政治的団体の結成への関与や役員就任に加え、構成員になるよう、又はならないよう勧誘する運動も制限の対象である。"
     },
     "hasImage": false,
-    "sourcePdfUrl": "https://web.archive.org/web/20250404121040id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
-    "sourceAnswerUrl": "https://web.archive.org/web/20250814123945id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
+    "sourcePdfUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
+    "sourceAnswerUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
     "sourceAttribution": "出典：東京都教育委員会 令和6年度東京都公立学校教員採用候補者選考（令和7年度採用） 教職教養 問7。解説は過去問AIの独自作成。",
     "license": "PREF-published"
   },
@@ -292,8 +292,8 @@ export const KYOIN_TOKYO_2024: Question[] = [
       "オ": "地方教育行政の組織及び運営に関する法律第14条では、教育長は会議後に議事録を速やかに作成し、公表するよう努めると定めている。"
     },
     "hasImage": false,
-    "sourcePdfUrl": "https://web.archive.org/web/20250404121040id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
-    "sourceAnswerUrl": "https://web.archive.org/web/20250814123945id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
+    "sourcePdfUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
+    "sourceAnswerUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
     "sourceAttribution": "出典：東京都教育委員会 令和6年度東京都公立学校教員採用候補者選考（令和7年度採用） 教職教養 問8。解説は過去問AIの独自作成。",
     "license": "PREF-published"
   },
@@ -329,8 +329,8 @@ export const KYOIN_TOKYO_2024: Question[] = [
       "オ": "国や地方公共団体は、被虐待児が年齢と能力に応じて十分な教育を受けられるよう、必要な施策を「講ずるものとする」と規定されている。"
     },
     "hasImage": false,
-    "sourcePdfUrl": "https://web.archive.org/web/20250404121040id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
-    "sourceAnswerUrl": "https://web.archive.org/web/20250814123945id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
+    "sourcePdfUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
+    "sourceAnswerUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
     "sourceAttribution": "出典：東京都教育委員会 令和6年度東京都公立学校教員採用候補者選考（令和7年度採用） 教職教養 問9。解説は過去問AIの独自作成。",
     "license": "PREF-published"
   },
@@ -366,8 +366,8 @@ export const KYOIN_TOKYO_2024: Question[] = [
       "オ": "『児童の世紀』の著者はスウェーデンのエレン・ケイである。ルソーの教育論は『エミール』で知られる。"
     },
     "hasImage": false,
-    "sourcePdfUrl": "https://web.archive.org/web/20250404121040id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
-    "sourceAnswerUrl": "https://web.archive.org/web/20250814123945id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
+    "sourcePdfUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
+    "sourceAnswerUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
     "sourceAttribution": "出典：東京都教育委員会 令和6年度東京都公立学校教員採用候補者選考（令和7年度採用） 教職教養 問10。解説は過去問AIの独自作成。",
     "license": "PREF-published"
   },
@@ -403,8 +403,8 @@ export const KYOIN_TOKYO_2024: Question[] = [
       "オ": "国民学校令は1941年に公布され、小学校を国民学校とした。国民学校は初等科と高等科に分かれていた。"
     },
     "hasImage": false,
-    "sourcePdfUrl": "https://web.archive.org/web/20250404121040id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
-    "sourceAnswerUrl": "https://web.archive.org/web/20250814123945id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
+    "sourcePdfUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
+    "sourceAnswerUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
     "sourceAttribution": "出典：東京都教育委員会 令和6年度東京都公立学校教員採用候補者選考（令和7年度採用） 教職教養 問11。解説は過去問AIの独自作成。",
     "license": "PREF-published"
   },
@@ -440,8 +440,8 @@ export const KYOIN_TOKYO_2024: Question[] = [
       "オ": "定めた論題について肯定側と否定側に分かれ、ルールに沿って討論するのはディベートである。"
     },
     "hasImage": false,
-    "sourcePdfUrl": "https://web.archive.org/web/20250404121040id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
-    "sourceAnswerUrl": "https://web.archive.org/web/20250814123945id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
+    "sourcePdfUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
+    "sourceAnswerUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
     "sourceAttribution": "出典：東京都教育委員会 令和6年度東京都公立学校教員採用候補者選考（令和7年度採用） 教職教養 問12。解説は過去問AIの独自作成。",
     "license": "PREF-published"
   },
@@ -477,8 +477,8 @@ export const KYOIN_TOKYO_2024: Question[] = [
       "オ": "教職員間で情報を共有し、必要に応じて専門家・専門機関や保護者と協働することが、体罰を防ぐ具体的行動に含まれる。"
     },
     "hasImage": false,
-    "sourcePdfUrl": "https://web.archive.org/web/20250404121040id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
-    "sourceAnswerUrl": "https://web.archive.org/web/20250814123945id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
+    "sourcePdfUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
+    "sourceAnswerUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
     "sourceAttribution": "出典：東京都教育委員会 令和6年度東京都公立学校教員採用候補者選考（令和7年度採用） 教職教養 問13。解説は過去問AIの独自作成。",
     "license": "PREF-published"
   },
@@ -514,8 +514,8 @@ export const KYOIN_TOKYO_2024: Question[] = [
       "オ": "アのプログラムは未然防止教育のＢである。予兆がある児童生徒への早期の働きかけがウのＣに当たる。"
     },
     "hasImage": false,
-    "sourcePdfUrl": "https://web.archive.org/web/20250404121040id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
-    "sourceAnswerUrl": "https://web.archive.org/web/20250814123945id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
+    "sourcePdfUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
+    "sourceAnswerUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
     "sourceAttribution": "出典：東京都教育委員会 令和6年度東京都公立学校教員採用候補者選考（令和7年度採用） 教職教養 問14。解説は過去問AIの独自作成。",
     "license": "PREF-published"
   },
@@ -551,8 +551,8 @@ export const KYOIN_TOKYO_2024: Question[] = [
       "オ": "キャリア教育は全校で取り組む。全体計画の作成や実践に教職員が関われる校内推進体制を整えることが重要である。"
     },
     "hasImage": false,
-    "sourcePdfUrl": "https://web.archive.org/web/20250404121040id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
-    "sourceAnswerUrl": "https://web.archive.org/web/20250814123945id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
+    "sourcePdfUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
+    "sourceAnswerUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
     "sourceAttribution": "出典：東京都教育委員会 令和6年度東京都公立学校教員採用候補者選考（令和7年度採用） 教職教養 問15。解説は過去問AIの独自作成。",
     "license": "PREF-published"
   },
@@ -588,8 +588,8 @@ export const KYOIN_TOKYO_2024: Question[] = [
       "オ": "人権教育のための国連10年は1994年の採択で、この中では最後に当たる。"
     },
     "hasImage": false,
-    "sourcePdfUrl": "https://web.archive.org/web/20250404121040id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
-    "sourceAnswerUrl": "https://web.archive.org/web/20250814123945id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
+    "sourcePdfUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
+    "sourceAnswerUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
     "sourceAttribution": "出典：東京都教育委員会 令和6年度東京都公立学校教員採用候補者選考（令和7年度採用） 教職教養 問16。解説は過去問AIの独自作成。",
     "license": "PREF-published"
   },
@@ -625,8 +625,8 @@ export const KYOIN_TOKYO_2024: Question[] = [
       "オ": "注意欠陥多動性障害の中心的な特徴は、不注意や多動性・衝動性である。設問の中心は発音や発話のリズムの困難である。"
     },
     "hasImage": false,
-    "sourcePdfUrl": "https://web.archive.org/web/20250404121040id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
-    "sourceAnswerUrl": "https://web.archive.org/web/20250814123945id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
+    "sourcePdfUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
+    "sourceAnswerUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
     "sourceAttribution": "出典：東京都教育委員会 令和6年度東京都公立学校教員採用候補者選考（令和7年度採用） 教職教養 問17。解説は過去問AIの独自作成。",
     "license": "PREF-published"
   },
@@ -662,8 +662,8 @@ export const KYOIN_TOKYO_2024: Question[] = [
       "オ": "「いま、ここ」の気付きや体験の全体性に焦点を当てるのはゲシュタルト療法である。"
     },
     "hasImage": false,
-    "sourcePdfUrl": "https://web.archive.org/web/20250404121040id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
-    "sourceAnswerUrl": "https://web.archive.org/web/20250814123945id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
+    "sourcePdfUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
+    "sourceAnswerUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
     "sourceAttribution": "出典：東京都教育委員会 令和6年度東京都公立学校教員採用候補者選考（令和7年度採用） 教職教養 問18。解説は過去問AIの独自作成。",
     "license": "PREF-published"
   },
@@ -699,8 +699,8 @@ export const KYOIN_TOKYO_2024: Question[] = [
       "オ": "ボウルビィは愛着を、危機に備え、特定の相手との近接を求め維持する傾向として説明した。"
     },
     "hasImage": false,
-    "sourcePdfUrl": "https://web.archive.org/web/20250404121040id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
-    "sourceAnswerUrl": "https://web.archive.org/web/20250814123945id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
+    "sourcePdfUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
+    "sourceAnswerUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
     "sourceAttribution": "出典：東京都教育委員会 令和6年度東京都公立学校教員採用候補者選考（令和7年度採用） 教職教養 問19。解説は過去問AIの独自作成。",
     "license": "PREF-published"
   },
@@ -736,8 +736,8 @@ export const KYOIN_TOKYO_2024: Question[] = [
       "オ": "遊び仲間との関係を学ぶ児童期が、市民としての知的技能を発達させる青年期や適した社会集団を選ぶ成人期に先立つ。"
     },
     "hasImage": false,
-    "sourcePdfUrl": "https://web.archive.org/web/20250404121040id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
-    "sourceAnswerUrl": "https://web.archive.org/web/20250814123945id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
+    "sourcePdfUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
+    "sourceAnswerUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
     "sourceAttribution": "出典：東京都教育委員会 令和6年度東京都公立学校教員採用候補者選考（令和7年度採用） 教職教養 問20。解説は過去問AIの独自作成。",
     "license": "PREF-published"
   },
@@ -773,8 +773,8 @@ export const KYOIN_TOKYO_2024: Question[] = [
       "オ": "欲求不満を引き起こす対人場面で、漫画の吹き出しに入る言葉を答えるのはＰ－Ｆスタディである。"
     },
     "hasImage": false,
-    "sourcePdfUrl": "https://web.archive.org/web/20250404121040id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
-    "sourceAnswerUrl": "https://web.archive.org/web/20250814123945id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
+    "sourcePdfUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
+    "sourceAnswerUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
     "sourceAttribution": "出典：東京都教育委員会 令和6年度東京都公立学校教員採用候補者選考（令和7年度採用） 教職教養 問21。解説は過去問AIの独自作成。",
     "license": "PREF-published"
   },
@@ -810,8 +810,8 @@ export const KYOIN_TOKYO_2024: Question[] = [
       "オ": "同じ集団の中での位置や順位をみるのは相対評価である。総括的評価は一定期間の指導後に学習成果をまとめて捉える。"
     },
     "hasImage": false,
-    "sourcePdfUrl": "https://web.archive.org/web/20250404121040id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
-    "sourceAnswerUrl": "https://web.archive.org/web/20250814123945id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
+    "sourcePdfUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
+    "sourceAnswerUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
     "sourceAttribution": "出典：東京都教育委員会 令和6年度東京都公立学校教員採用候補者選考（令和7年度採用） 教職教養 問22。解説は過去問AIの独自作成。",
     "license": "PREF-published"
   },
@@ -847,8 +847,8 @@ export const KYOIN_TOKYO_2024: Question[] = [
       "オ": "中学校英語では、短い情報の聞き取りや事実と考えを区別した読み取りができていた。日常的な文章の概要把握や、社会的な話題で意見と理由を表すことには課題が示された。"
     },
     "hasImage": false,
-    "sourcePdfUrl": "https://web.archive.org/web/20250404121040id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
-    "sourceAnswerUrl": "https://web.archive.org/web/20250814123945id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
+    "sourcePdfUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
+    "sourceAnswerUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
     "sourceAttribution": "出典：東京都教育委員会 令和6年度東京都公立学校教員採用候補者選考（令和7年度採用） 教職教養 問23。解説は過去問AIの独自作成。",
     "license": "PREF-published"
   },
@@ -884,8 +884,8 @@ export const KYOIN_TOKYO_2024: Question[] = [
       "オ": "Ｃは社会とつながり、子供を支えるイに当たる。エビデンスやデータを生かすＡがウに当たる。"
     },
     "hasImage": false,
-    "sourcePdfUrl": "https://web.archive.org/web/20250404121040id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
-    "sourceAnswerUrl": "https://web.archive.org/web/20250814123945id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
+    "sourcePdfUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
+    "sourceAnswerUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
     "sourceAttribution": "出典：東京都教育委員会 令和6年度東京都公立学校教員採用候補者選考（令和7年度採用） 教職教養 問24。解説は過去問AIの独自作成。",
     "license": "PREF-published"
   },
@@ -921,8 +921,8 @@ export const KYOIN_TOKYO_2024: Question[] = [
       "オ": "道徳の時間を特設したアは1958年の改訂である。この中では最初に当たる。"
     },
     "hasImage": false,
-    "sourcePdfUrl": "https://web.archive.org/web/20250404121040id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
-    "sourceAnswerUrl": "https://web.archive.org/web/20250814123945id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
+    "sourcePdfUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf",
+    "sourceAnswerUrl": "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf",
     "sourceAttribution": "出典：東京都教育委員会 令和6年度東京都公立学校教員採用候補者選考（令和7年度採用） 教職教養 問25。解説は過去問AIの独自作成。",
     "license": "PREF-published"
   }

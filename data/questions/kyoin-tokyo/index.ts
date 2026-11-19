@@ -1,6 +1,7 @@
 import type { Question } from "@/lib/questions/types";
 import { KYOIN_TOKYO_2022_SENMON } from "./2022-senmon";
 import { KYOIN_TOKYO_2024 } from "./2024";
+import { KYOIN_TOKYO_2024_SENMON } from "./2024-senmon";
 import { KYOIN_TOKYO_2025 } from "./2025";
 import { KYOIN_TOKYO_2025_SENMON } from "./2025-senmon";
 import { KYOIN_TOKYO_2026 } from "./2026";
@@ -12,5 +13,6 @@ export const KYOIN_TOKYO_QUESTIONS: Question[] = [
   ...KYOIN_TOKYO_2025,
   ...KYOIN_TOKYO_2025_SENMON,
   ...KYOIN_TOKYO_2024,
+  ...KYOIN_TOKYO_2024_SENMON,
   ...KYOIN_TOKYO_2022_SENMON,
 ];

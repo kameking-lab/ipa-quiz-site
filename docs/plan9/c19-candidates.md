@@ -12,6 +12,8 @@
 
 - 国家公務員一般職（高卒者）・税務職員は人事院の掲載ページに試験問題がある。年度の対応が確認できる正答表の確認が必要。 [高卒者の問題](https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_16.html)・[税務職員の問題](https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_28.html)・[正答番号の公表](https://www.jinji.go.jp/saiyo/seitou.html)
 - 神奈川県公立学校教員採用候補者選考の問題・正答は、県の案内では県政情報センターでの閲覧。 [公開案内](https://www.pref.kanagawa.jp/docs/y4g/cnt/f7272/20240725/2.html)
+- 埼玉県公立学校教員採用選考試験は、2025年度実施の第1次受験者4,565人（免除者を含む）。問題・正答の公開先は県政情報センターで、オンラインの原本を取得できなかった。 [実施結果](https://www.pref.saitama.lg.jp/documents/274218/r8-sikennnkekka.pdf)・[公開案内](https://www.pref.saitama.lg.jp/f2210/r9kyouinsaiyou/r9top.html)
+- 千葉県・千葉市公立学校教員採用候補者選考の第1次選考は正答表を取得できる。対応する問題原本を取得できなかった。 [公式正答](https://www.pref.chiba.lg.jp/kyouiku/syokuin/ninyo/r09/itiji-seitou2026.html)
 - 特別区職員採用試験の公式サイトは確認時に403を返し、原本と正答を取得できなかった。 [特別区人事委員会](https://www.tokyo23city.or.jp/jinji/)
 - 国家公務員の総合職（大卒・院卒）、一般職（大卒）、国税専門官などは依頼の補充済み一覧に含まれる。
 
@@ -20,11 +22,11 @@
 
 ### 東京都公立学校教員採用候補者選考
 
-- 2024～2026年度の教職教養を各25問収録。2024年度は当時の東京都公式ページに掲載されていたPDFの保存版を使用した。 [当時の公式ページ](https://web.archive.org/web/20250327193958id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/recruit/exam.html)・[問題](https://web.archive.org/web/20250404121040id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf)・[正答](https://web.archive.org/web/20250814123945id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf)
-- 専門教養の小学校全科は2025年度18問、2026年度15問を収録。公開版で問題文・楽譜が伏せられている解答番号は、2025年度が15・16、2026年度が1～3・15・16。
+- 2024～2026年度の教職教養を各25問収録。2024年度のPDFは、当時の案内にあった東京都の旧掲載先で取得した。 [2024年度の問題](https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf)・[正答](https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf)
+- 専門教養の小学校全科は2024・2025年度各18問、2026年度15問を収録。公開版で本文・楽譜が伏せられている解答番号は、2024年度が14・19、2025年度が15・16、2026年度が1～3・15・16。 [2024年度の問題](https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai01.pdf)・[正答](https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito01.pdf)
 - 2022年度の小学校全科は、東京都公式サイトが公開したPDFの保存版から17問を収録した。解答番号1～5、29、34は本文や参照する作品が伏せられている。11～22は数値の符号・桁や座標を複数の欄でマークする形式で、択一式としては収録できなかった。 [問題](https://web.archive.org/web/20230621004424id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai01.pdf)・[正答](https://web.archive.org/web/20230629061039id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito01.pdf)
-- 公式ポータルの現行掲載は直近2年度。2022・2023年度の教職教養と2024年度の専門教養は、対応する問題・正答の組を取得できなかった。論文は評価の観点が公開されており、正答を取得できない。 [公式FAQ](https://www.kyoinsaiyopr.metro.tokyo.lg.jp/recruit/faq.html)
-- 2025・2026年度のその他の専門教養には、校種・教科別に公式の問題・正答がある。収録は未完了。
+- 公式ポータルの現行掲載は直近2年度。2022年度の教職教養と2023年度は、対応する問題・正答の組を取得できなかった。論文は評価の観点が公開されており、正答を取得できない。 [公式FAQ](https://www.kyoinsaiyopr.metro.tokyo.lg.jp/recruit/faq.html)
+- 2024～2026年度のその他の専門教養には、校種・教科別に公式の問題・正答がある。収録は未完了。 [2024年度の掲載記録](https://web.archive.org/web/20250327193958id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/recruit/exam.html)
 
 ### 裁判所職員採用一般職試験（裁判所事務官・大卒程度区分）
 
