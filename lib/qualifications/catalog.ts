@@ -1793,8 +1793,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     domain: "welfare", administrator: "特定非営利活動法人キャリアコンサルティング協議会・特定非営利活動法人日本キャリア開発協会",
     officialQuestionsUrl: "https://www.career-shiken.org/about/learninfo/",
     officialReuseTermsUrl: "https://www.career-shiken.org/about/learninfo/", status: "live",
-    reuseSummary: "第33回（2026年11月）・第32回（2026年7月）の学科試験各50問、計100問。公式問題・正答と全肢の独自解説を収録。",
-    attributionTemplate: "出典：キャリアコンサルティング協議会・日本キャリア開発協会 2026年度第○回国家資格キャリアコンサルタント試験 学科試験 問○。解説は過去問AIの独自作成。",
+    reuseSummary: "第31〜33回の学科試験各50問、計150問。公式問題・正答と全肢の独自解説を収録。",
+    attributionTemplate: "出典：キャリアコンサルティング協議会・日本キャリア開発協会 ○年度第○回国家資格キャリアコンサルタント試験 学科試験 問○。解説は過去問AIの独自作成。",
     remainingWork: ["実技（論述・面接）は対象外"],
 },
   {
