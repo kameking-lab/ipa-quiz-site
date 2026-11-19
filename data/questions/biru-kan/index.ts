@@ -1,5 +1,6 @@
 import type { Question } from "@/lib/questions/types";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
+import afternoon2022 from "./2022-pm.json";
 import morning2022 from "./2022-am.json";
 import afternoon2023 from "./2023-pm.json";
 import morning2023 from "./2023-am.json";
@@ -18,6 +19,7 @@ export const BIRU_KAN_2026_QUESTIONS: Question[] = ([...morning, ...afternoon] a
 
 export const BIRU_KAN_QUESTIONS: Question[] = [
   ...morning2022 as Question[],
+  ...afternoon2022 as Question[],
   ...morning2023 as Question[],
   ...afternoon2023 as Question[],
   ...previous as Question[],
