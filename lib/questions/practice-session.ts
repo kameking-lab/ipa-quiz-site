@@ -9,7 +9,7 @@ export function defaultPracticeSession(exam: ExamCode, year?: number): Session {
   if (!["ip","sg","fe","ap","st","sa","pm","nw","db","es","sc","sm","au","fp2","fp1","fp3","denken3","denken2","denken1","denko2","denko1","takken","civil2","kankoji2","zoen2","zoen1","tsushin2","tsushin1","kaigo","civil1","shakai","seishin","tohan","kanri","eisei1","eisei2","soukan","hoikushi","mankan","kashikin","sharoushi","kangoshi","yakuzaishi","ahaki-anma","ahaki-hari-kyu","hokenshi","josanshi","rigaku-ryohoshi","sagyo-ryohoshi","shino-kunrenshi","rinsho-kensagishi","shinryo-hoshasengishi","rinsho-kogishi","shika-ishi","riyoshi","chusho-kigyo-shindanshi","chosashi","judo-seifukushi","riku-toku-kokunai","kai-toku2","kai-toku3","koku-toku","land-special1","riku-tech1","maritime4","aviation-comm","amateur1","maritime-special1","riku-tech2","amateur2","maritime-radar","general1","general2","general3","maritime3","maritime2","maritime1","land-special2","land-special3","kanteishi","kaikeishi","gas-kou","gas-otsu","gas-hei"].includes(exam)) return EXAM_CONFIGS[exam]?.sessions[0]?.session ?? "gakka";
 
   if (exam === "kenchiku-setsubishi") return "am1";
-  if (exam === "chizai2") return "gakka";
+  if ((exam === "chizai2" || exam === "chizai3")) return "gakka";
   if (exam === "kisho") return "ippan";
   if (exam === "kanteishi") return "gyosei";
   if (exam === "kaikeishi") return "kigyo";
@@ -51,7 +51,7 @@ export function practiceSessionLabel(session: Session, exam?: ExamCode): string 
     if (session === "am2") return "建築法規";
     if (session === "pm") return "建築設備";
   }
-  if (exam === "chizai2" && session === "practical") return "実技";
+  if ((exam === "chizai2" || exam === "chizai3") && session === "practical") return "実技";
   if (exam === "kisho" && session === "ippan") return "学科一般";
   if (exam === "kisho" && session === "senmon") return "学科専門";
   if (exam === "kanteishi" && session === "riron") return "鑑定評価理論";

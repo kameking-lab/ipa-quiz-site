@@ -1253,6 +1253,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["令和8年建築法規問18の出題機関による訂正又は直接解釈の確認", "第二次試験は未収録"],
 },
   {
+    slug: "chizai3", examCode: "chizai3", shortName: "知的財産管理技能検定3級", fullName: "知的財産管理技能検定3級",
+    domain: "legal", administrator: "知的財産教育協会",
+    officialQuestionsUrl: "https://www.kentei-info-ip-edu.org/gakushujoho/kakomon/",
+    officialReuseTermsUrl: "https://www.kentei-info-ip-edu.org/gakushujoho/kakomon/",
+    status: "live",
+    reuseSummary: "第52回（2025年11月16日）の学科30問・実技29問を収録。選択肢ごとに解説を掲載しています。法令は試験の基準日時点です。",
+    attributionTemplate: "出典：知的財産教育協会 第○回 知的財産管理技能検定3級 学科・実技 問○（問題・正答）。解説は過去問AI独自作成。",
+    remainingWork: [],
+  },
+  {
     slug: "chizai2", examCode: "chizai2", shortName: "知的財産管理技能検定2級", fullName: "知的財産管理技能検定2級",
     domain: "legal", administrator: "知的財産教育協会",
     officialQuestionsUrl: "https://www.kentei-info-ip-edu.org/gakushujoho/kakomon.html",
