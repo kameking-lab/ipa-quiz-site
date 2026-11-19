@@ -1784,9 +1784,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.courts.go.jp/saiyo/sikenjoho/siken/siken_mondai/index.html",
     officialReuseTermsUrl: "https://www.courts.go.jp/saiyo/sikenjoho/siken/siken_mondai/index.html",
     status: "live",
-    reuseSummary: "2024～2026年度の基礎能力試験62問、2025・2026年度の専門試験100問を公式問題・正答と全肢の独自解説で収録。",
+    reuseSummary: "2024～2026年度の基礎能力試験62問、2024～2026年度の専門試験140問を公式問題・正答と全肢の独自解説で収録。",
     attributionTemplate: "出典：裁判所 裁判所職員採用一般職試験（裁判所事務官・大卒程度区分）。解説は過去問AIの独自作成。",
-    remainingWork: ["2024年度の専門試験および過年度の収録"],
+    remainingWork: ["過年度の基礎能力試験と専門試験の収録"],
   },
   {
     slug: "kyoin-osaka", examCode: "kyoin-osaka", shortName: "大阪府教員採用試験", fullName: "大阪府公立学校教員採用選考テスト",
