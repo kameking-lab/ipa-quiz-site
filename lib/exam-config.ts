@@ -515,6 +515,15 @@ fp2: {
     seasons: ["may", "september", "january", "published"],
     yearRange: { start: 2024, end: 2026 },
 },
+"kogai-taiki-tokuron": {
+    code: "kogai-taiki-tokuron",
+    nameFull: "公害防止管理者等国家試験（大気特論）",
+    urlSlug: "kogai-taiki-tokuron",
+    level: "specialist",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 15, label: "大気特論", categories: ["大気特論"] }],
+    seasons: ["annual"],
+    yearRange: { start: 2025, end: 2025 },
+},
 "kogai-01": {
     code: "kogai-01",
     nameFull: "公害防止管理者等国家試験（公害総論）",
