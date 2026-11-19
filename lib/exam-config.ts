@@ -116,6 +116,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     level: "basic",
     sessions: [
       { session: "dekyo-digital", urlSlug: "dekyo-digital", expectedQuestions: 62, label: "第二級デジタル通信", categories: ["基礎", "技術及び理論", "法規"] },
+      { session: "dekyo-analog", urlSlug: "dekyo-analog", expectedQuestions: 62, label: "第二級アナログ通信", categories: ["基礎", "技術及び理論", "法規"] },
     ],
     seasons: ["round2"],
     yearRange: { start: 2024, end: 2024 },
