@@ -1551,7 +1551,7 @@ kankoji1: {
         session: "gakka", urlSlug: "gakka", expectedQuestions: 25, label: "騒音・振動概論",
         categories: ["法令", "騒音", "振動"],
     }],
-    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+    seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
 },
 "zensho-marketing": {
     code: "zensho-marketing", nameFull: "全商商業経済検定 マーケティング", urlSlug: "zensho-marketing", level: "basic",

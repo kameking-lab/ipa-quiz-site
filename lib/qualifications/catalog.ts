@@ -1548,7 +1548,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jemai.or.jp/polconman/examination/past.html",
     officialReuseTermsUrl: "https://www.jemai.or.jp/polconman/examination/past.html",
     status: "live",
-    reuseSummary: "2025年度の騒音・振動概論の公式問題・正答と独自の全肢解説を収録。",
+    reuseSummary: "2024・2025年度の騒音・振動概論の公式問題・正答と独自の全肢解説を収録。",
     attributionTemplate: "出典：一般社団法人産業環境管理協会 公害防止管理者等国家試験 騒音・振動概論（問題・正答）。解説は過去問AI作成。",
     remainingWork: [],
 },
