@@ -1,0 +1,3 @@
+import { KOKKA_IPPAN_DAI_2026_KADAI_TAIOU } from "./2026-kadai-taiou";
+
+export const KOKKA_IPPAN_DAI_QUESTIONS = [...KOKKA_IPPAN_DAI_2026_KADAI_TAIOU];
