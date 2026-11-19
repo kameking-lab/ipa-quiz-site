@@ -865,6 +865,18 @@ eisei1: {
     seasons: ["published", "october"],
     yearRange: { start: 2025, end: 2026 },
 },
+"zensho-calc-1": {
+    code: "zensho-calc-1",
+    nameFull: "全商ビジネス計算実務検定 1級",
+    urlSlug: "zensho-calc-1",
+    level: "basic",
+    sessions: [{
+        session: "gakka", urlSlug: "gakka", expectedQuestions: 110, label: "1級",
+        categories: ["乗算", "除算", "見取算", "ビジネス計算"],
+    }],
+    seasons: ["first", "second"],
+    yearRange: { start: 2025, end: 2025 },
+},
 "kanken-3": {
     code: "kanken-3",
     nameFull: "日本漢字能力検定 3級",

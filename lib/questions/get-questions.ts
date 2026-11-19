@@ -178,6 +178,7 @@ seishin: async () => isExamPublished("seishin") ? (await import("@/data/question
 tohan: async () => isExamPublished("tohan") ? (await import("@/data/questions/tohan")).TOHAN_QUESTIONS : [],
 kanri: async () => isExamPublished("kanri") ? (await import("@/data/questions/kanri")).KANRI_QUESTIONS : [],
 eisei1: async () => isExamPublished("eisei1") ? (await import("@/data/questions/eisei1")).EISEI1_QUESTIONS : [],
+"zensho-calc-1": async () => isExamPublished("zensho-calc-1") ? (await import("@/data/questions/zensho-calc-1")).ZENSHO_CALC_1_QUESTIONS : [],
 "kanken-3": async () => isExamPublished("kanken-3") ? (await import("@/data/questions/kanken-3")).KANKEN_3_QUESTIONS : [],
 eisei2: async () => isExamPublished("eisei2") ? (await import("@/data/questions/eisei2")).EISEI2_QUESTIONS : [],
 soukan: async () => isExamPublished("soukan") ? (await import("@/data/questions/soukan")).SOUKAN_QUESTIONS : [],
