@@ -1999,7 +1999,7 @@ caremanager: {
         { session: "kamoku-a", urlSlug: "tiri-a", expectedQuestions: 20, label: "地理A", categories: ["地図からとらえる現代世界", "世界の生活文化の多様性", "地球的課題の地理的考察", "自然環境と防災", "生活圏の地域調査"] },
         { session: "kamoku-b", urlSlug: "tiri-b", expectedQuestions: 20, label: "地理B", categories: ["地図と地域調査", "自然環境と資源・産業", "人口・都市・生活文化", "世界の諸地域", "地球的課題"] },
     ],
-    seasons: ["round2", "round1"], yearRange: { start: 2023, end: 2024 },
+    seasons: ["round2", "round1"], yearRange: { start: 2022, end: 2024 },
 },
 "zensho-boki-2": {
     code: "zensho-boki-2", nameFull: "全商簿記実務検定試験 2級", urlSlug: "zensho-boki-2", level: "basic",
