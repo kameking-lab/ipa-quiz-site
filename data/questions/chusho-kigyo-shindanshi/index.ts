@@ -27,6 +27,7 @@ import { CHUSHO_2023_D_QUESTIONS } from "./2023-unei";
 import { CHUSHO_2023_E_QUESTIONS } from "./2023-keiei-houmu";
 import { CHUSHO_2023_F_QUESTIONS } from "./2023-keiei-joho";
 import { CHUSHO_2023_G_QUESTIONS } from "./2023-chusho-seisaku";
+import { CHUSHO_2022_E_QUESTIONS } from "./2022-keiei-houmu";
 import { CHUSHO_2022_F_QUESTIONS } from "./2022-keiei-joho";
 
 export const CHUSHO_KIGYO_SHINDANSHI_QUESTIONS: Question[] = [
@@ -58,5 +59,6 @@ export const CHUSHO_KIGYO_SHINDANSHI_QUESTIONS: Question[] = [
   ...CHUSHO_2023_E_QUESTIONS,
   ...CHUSHO_2023_F_QUESTIONS,
   ...CHUSHO_2023_G_QUESTIONS,
+  ...CHUSHO_2022_E_QUESTIONS,
   ...CHUSHO_2022_F_QUESTIONS,
 ];
