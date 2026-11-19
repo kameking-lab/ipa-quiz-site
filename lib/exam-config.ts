@@ -538,7 +538,7 @@ fp2: {
             categories: ["電気通信技術の基礎", "端末設備の接続のための技術及び理論", "端末設備の接続に関する法規"],
         },
         {
-            session: "dekyo-general", urlSlug: "general", expectedQuestions: 96, label: "総合通信",
+            session: "dekyo-general", urlSlug: "general", expectedQuestions: 97, label: "総合通信",
             categories: ["電気通信技術の基礎", "端末設備の接続のための技術及び理論", "端末設備の接続に関する法規"],
         },
     ],
