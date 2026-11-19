@@ -20,10 +20,12 @@ export function validateKenchikuIngestion() {
       check(sha(JSON.stringify(q)) === original.contentSha256, `Original content hash: ${original.id}`);
     }
   }
-  const materials = KENCHIKU_SETSUBISHI_QUESTIONS;
+  const packetIds = new Set(manifest.packets.flatMap((packet) => packet.items.map((item) => item.id)));
+  const materials = KENCHIKU_SETSUBISHI_QUESTIONS.filter((q) => packetIds.has(q.id));
+  const study = KENCHIKU_SETSUBISHI_STUDY_QUESTIONS.filter((q) => packetIds.has(q.id));
   check(materials.length === 210 && new Set(materials.map((q) => q.id)).size === 210, "210 unique originals");
   for (const year of [2025, 2026]) check(materials.filter((q) => q.year === year).length === 105, `105 originals: ${year}`);
-  check(KENCHIKU_SETSUBISHI_STUDY_QUESTIONS.length === 209 && KENCHIKU_SETSUBISHI_REFERENCE_QUESTIONS.length === 1, "209/1 boundary");
+  check(study.length === 209 && KENCHIKU_SETSUBISHI_REFERENCE_QUESTIONS.length === 1, "209/1 boundary");
   check(KENCHIKU_SETSUBISHI_REFERENCE_QUESTIONS[0].id === manifest.referenceOnly[0], "Reference-only ID");
   const urls = new Set(materials.flatMap((q) => [...(q.imageUrls ?? []), ...Object.values(q.choiceImageUrls ?? {}).filter((url): url is string => Boolean(url))]));
   check(urls.size === 32 && materials.filter((q) => q.hasImage).length === 23, "23 image questions / 32 assets");

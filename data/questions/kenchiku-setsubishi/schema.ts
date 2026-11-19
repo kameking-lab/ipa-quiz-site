@@ -9,7 +9,7 @@ const officialPdf = z.string().url().refine((value) => {
 
 export const KenchikuQuestionSchema = z.object({
   id: text, exam: z.literal("kenchiku-setsubishi"),
-  session: z.enum(["am1", "am2", "pm"]), year: z.union([z.literal(2025), z.literal(2026)]),
+  session: z.enum(["am1", "am2", "pm"]), year: z.union([z.literal(2023), z.literal(2025), z.literal(2026)]),
   season: z.literal("annual"), qNumber: z.number().int().positive(),
   subject: text, type: z.literal("multiple-choice"), category: text,
   topicTags: z.array(text), difficulty: z.number().int().min(1).max(5),
