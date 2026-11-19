@@ -365,6 +365,7 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 
 
   "zenkou-keisan-gijutsu": async () => isExamPublished("zenkou-keisan-gijutsu") ? (await import("@/data/questions/zenkou-keisan-gijutsu")).ZENKOU_KEISAN_GIJUTSU_QUESTIONS : [],
+  "katei-shokumotsu": async () => isExamPublished("katei-shokumotsu") ? (await import("@/data/questions/katei-shokumotsu")).KATEI_SHOKUMOTSU_QUESTIONS : [],
 "tsukanshi": async () => isExamPublished("tsukanshi") ? (await import("@/data/questions/tsukanshi")).TSUKANSHI_QUESTIONS : []
 };
 

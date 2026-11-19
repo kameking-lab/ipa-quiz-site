@@ -341,6 +341,7 @@ import { TETSUDO_SHARYO2_QUESTIONS } from "./tetsudo-sharyo2";
 
 import { KIKAI_HOZEN_QUESTIONS } from "./kikai-hozen";
 import { ZENKOU_KEISAN_GIJUTSU_QUESTIONS } from "./zenkou-keisan-gijutsu";
+import { KATEI_SHOKUMOTSU_QUESTIONS } from "./katei-shokumotsu";
 import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
@@ -712,6 +713,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("tobi2") ? { "tobi2": TOBI2_QUESTIONS } : {}),
 
   ...(isExamPublished("zenkou-keisan-gijutsu") ? { "zenkou-keisan-gijutsu": ZENKOU_KEISAN_GIJUTSU_QUESTIONS } : {}),
+  ...(isExamPublished("katei-shokumotsu") ? { "katei-shokumotsu": KATEI_SHOKUMOTSU_QUESTIONS } : {}),
 ...(isExamPublished("tsukanshi") ? { "tsukanshi": TSUKANSHI_QUESTIONS } : {})
 };
 

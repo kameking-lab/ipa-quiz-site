@@ -819,6 +819,7 @@ const EXAM_FULL_NAMES: Record<ExamCode, string> = {
 
 
     "zenkou-keisan-gijutsu": "計算技術検定試験",
+    "katei-shokumotsu": "全国高等学校家庭科食物調理技術検定",
     "tsukanshi": "通関士試験"
 };
 export function examFullName(exam: ExamCode): string {
@@ -1190,6 +1191,7 @@ const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number)
 
 
     "zenkou-keisan-gijutsu": (c, y) => `計算技術検定を${c}問・${y}回分収録。公式正答と独自解説で学べます。`,
+    "katei-shokumotsu": (c, y) => `家庭科技術検定・食物調理を${c}問・${y}回分収録。公式正答と独自解説で学べます。`,
     "tsukanshi": (c) => `通関士試験の${c}。公式正答どおりに収録。`
 };
 function publishedYearRange(exam: ExamCode): string {

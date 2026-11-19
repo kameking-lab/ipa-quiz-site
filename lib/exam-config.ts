@@ -109,6 +109,17 @@ function am2(categories: string[]): SessionConfig {
 // ------- Exam configs -------
 
 export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
+  "katei-shokumotsu": {
+    code: "katei-shokumotsu", nameFull: "全国高等学校家庭科食物調理技術検定", urlSlug: "katei-shokumotsu", level: "basic",
+    sessions: [
+    { session: "shokumotsu-2", urlSlug: "shokumotsu-2", expectedQuestions: 11, label: "2級・筆記", categories: ["食品と栄養", "調理", "食品衛生", "食事計画"] },
+    { session: "shokumotsu-pre1", urlSlug: "shokumotsu-pre1", expectedQuestions: 12, label: "準1級・筆記", categories: ["食品と栄養", "調理", "食品衛生", "食事計画"] },
+    { session: "shokumotsu-old3", urlSlug: "shokumotsu-old3", expectedQuestions: 12, label: "旧3級・筆記", categories: ["食品と栄養", "調理", "食品衛生", "食事計画"] },
+    { session: "shokumotsu-old2", urlSlug: "shokumotsu-old2", expectedQuestions: 11, label: "旧2級・筆記", categories: ["食品と栄養", "調理", "食品衛生", "食事計画"] },
+    ],
+    seasons: ["early", "late"],
+    yearRange: { start: 2024, end: 2025 },
+  },
   "zenkou-keisan-gijutsu": {
     code: "zenkou-keisan-gijutsu", nameFull: "計算技術検定試験", urlSlug: "zenkou-keisan-gijutsu", level: "basic",
     sessions: [
