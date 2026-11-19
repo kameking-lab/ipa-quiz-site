@@ -201,6 +201,7 @@ josanshi: async () => isExamPublished("josanshi") ? (await import("@/data/questi
 "gas-hei": async () => isExamPublished("gas-hei") ? (await import("@/data/questions/gas/hei")).GAS_HEI_QUESTIONS : [],
 "rinsho-kensagishi": async () => isExamPublished("rinsho-kensagishi") ? (await import("@/data/questions/rinsho-kensagishi")).RINSHO_KENSAGISHI_QUESTIONS : [],
 "shinryo-hoshasengishi": async () => isExamPublished("shinryo-hoshasengishi") ? (await import("@/data/questions/shinryo-hoshasengishi")).SHINRYO_HOSHASENGISHI_QUESTIONS : [],
+ishi: async () => isExamPublished("ishi") ? (await import("@/data/questions/ishi")).ISHI_QUESTIONS : [],
 "shika-ishi": async () => isExamPublished("shika-ishi") ? (await import("@/data/questions/shika-ishi")).SHIKA_ISHI_QUESTIONS : [],
 "kenchiku-setsubishi": async () => isExamPublished("kenchiku-setsubishi") ? (await import("@/data/questions/kenchiku-setsubishi")).KENCHIKU_SETSUBISHI_STUDY_QUESTIONS : [],
 chizai2: async () => isExamPublished("chizai2") ? (await import("@/data/questions/chizai2")).CHIZAI2_QUESTIONS : [],

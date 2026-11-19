@@ -261,6 +261,7 @@ import { GAS_OTSU_QUESTIONS } from "./gas/otsu";
 import { GAS_HEI_QUESTIONS } from "./gas/hei";
 import { RINSHO_KENSAGISHI_QUESTIONS } from "./rinsho-kensagishi";
 import { SHINRYO_HOSHASENGISHI_QUESTIONS } from "./shinryo-hoshasengishi";
+import { ISHI_QUESTIONS } from "./ishi";
 import { SHIKA_ISHI_QUESTIONS } from "./shika-ishi";
 import { RIYOSHI_QUESTIONS } from "./riyoshi";
 import { RIKU_TOKU_KOKUNAI_QUESTIONS } from "./riku-toku-kokunai";
@@ -569,6 +570,7 @@ takken: TAKKEN_QUESTIONS,
 ...(isExamPublished("gas-hei") ? { "gas-hei": GAS_HEI_QUESTIONS } : {}),
 ...(isExamPublished("rinsho-kensagishi") ? { "rinsho-kensagishi": RINSHO_KENSAGISHI_QUESTIONS } : {}),
 ...(isExamPublished("shinryo-hoshasengishi") ? { "shinryo-hoshasengishi": SHINRYO_HOSHASENGISHI_QUESTIONS } : {}),
+...(isExamPublished("ishi") ? { ishi: ISHI_QUESTIONS } : {}),
 ...(isExamPublished("shika-ishi") ? { "shika-ishi": SHIKA_ISHI_QUESTIONS } : {}),
 ...(isExamPublished("kenchiku-setsubishi") ? { "kenchiku-setsubishi": KENCHIKU_SETSUBISHI_STUDY_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("chizai2") ? { chizai2: CHIZAI2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),

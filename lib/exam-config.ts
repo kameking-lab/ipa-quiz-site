@@ -1137,6 +1137,18 @@ kangoshi: {
     seasons: ["annual"],
     yearRange: { start: 2025, end: 2026 },
 },
+ishi: {
+    code: "ishi",
+    nameFull: "医師国家試験",
+    urlSlug: "ishi",
+    level: "advanced",
+    sessions: [
+        { session: "mondai-b", urlSlug: "mondai-b", expectedQuestions: 50, label: "問題B", categories: [] },
+        { session: "mondai-e", urlSlug: "mondai-e", expectedQuestions: 50, label: "問題E", categories: [] },
+    ],
+    seasons: ["annual"],
+    yearRange: { start: 2023, end: 2023 },
+},
 "shika-ishi": {
     code: "shika-ishi",
     nameFull: "歯科医師国家試験",
