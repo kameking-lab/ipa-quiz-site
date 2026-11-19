@@ -1847,10 +1847,10 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
     slug: "caremanager", examCode: "caremanager", shortName: "ケアマネ", fullName: "介護支援専門員実務研修受講試験",
     domain: "welfare", administrator: "都道府県（全国共通問題）",
-    officialQuestionsUrl: "https://www.fukushi.metro.tokyo.lg.jp/kourei/shikaku/r7_seitoukijyun",
+    officialQuestionsUrl: "https://www.fukushi.metro.tokyo.lg.jp/kourei/hoken/kaigo_lib/care/shikenjyouhou",
     officialReuseTermsUrl: "https://www.fukushi.metro.tokyo.lg.jp/kourei/shikaku/r7_seitoukijyun",
     status: "live",
-    reuseSummary: "第27回（令和6年度）・第28回（令和7年度）の各60問、計120問を、公式正答と全選択肢の解説付きで収録。",
+    reuseSummary: "各回の問題を、公式正答と全選択肢の解説付きで収録。",
     attributionTemplate: "出典：第○回介護支援専門員実務研修受講試験 問題○（○○掲載）",
     remainingWork: ["第29回（2026-10-11）は正答公表（合格発表 2026-11-24 予定）後に追加", "法改正・報酬改定で成立しなくなった問題の失効管理"],
 },

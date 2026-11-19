@@ -1794,7 +1794,7 @@ sokuryoshiho: {
 caremanager: {
     code: "caremanager", nameFull: "介護支援専門員実務研修受講試験", urlSlug: "caremanager", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 60, label: "試験問題", categories: ["介護支援分野", "保健医療サービスの知識等", "福祉サービスの知識等"] }],
-    seasons: ["annual"], yearRange: { start: 2024, end: 2025 },
+    seasons: ["annual"], yearRange: { start: 2022, end: 2025 },
 },
 "kensetsu-kikai-seibi2": {
     code: "kensetsu-kikai-seibi2", nameFull: "技能検定 2級建設機械整備（建設機械整備作業）学科試験", urlSlug: "kensetsu-kikai-seibi2", level: "basic",

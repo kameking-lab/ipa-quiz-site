@@ -1,6 +1,7 @@
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 import y2024 from "@/data/qualification-staging/caremanager/2024.json";
 import y2025 from "@/data/qualification-staging/caremanager/2025.json";
+import y2022 from "./2022.json";
 
 const KEYS: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ"];
 type Numbered = Record<"1" | "2" | "3" | "4" | "5", string>;
@@ -48,5 +49,7 @@ function toQuestion(item: Item): Question {
   };
 }
 
-/** 第28回（令和7年度）・第27回（令和6年度）各60問（独立レビュー PASS 済み）。 */
-export const CAREMANAGER_QUESTIONS: Question[] = [...(y2025 as unknown as Item[]), ...(y2024 as unknown as Item[])].map(toQuestion);
+export const CAREMANAGER_QUESTIONS: Question[] = [
+  ...[...(y2025 as unknown as Item[]), ...(y2024 as unknown as Item[])].map(toQuestion),
+  ...(y2022 as Question[]),
+];
