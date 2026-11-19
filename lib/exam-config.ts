@@ -1750,7 +1750,7 @@ shihoshoshi: {
 "career-consultant": {
     code: "career-consultant", nameFull: "国家資格キャリアコンサルタント試験（学科）", urlSlug: "career-consultant", level: "specialist",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科試験", categories: ["キャリアコンサルティングの社会的意義", "キャリアコンサルティングを行うために必要な知識", "キャリアコンサルティングを行うために必要な技能", "キャリアコンサルタントの倫理と行動"] }],
-    seasons: ["autumn", "july", "march"], yearRange: { start: 2023, end: 2026 },
+    seasons: ["autumn", "july", "march"], yearRange: { start: 2022, end: 2026 },
 },
 "kanri-eiyoshi": {
     code: "kanri-eiyoshi", nameFull: "管理栄養士国家試験", urlSlug: "kanri-eiyoshi", level: "specialist",
