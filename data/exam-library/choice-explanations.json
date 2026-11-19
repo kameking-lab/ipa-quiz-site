@@ -37237,5 +37237,755 @@
         "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1"
       }
     ]
+  },
+  "emkohyo-EM20242803-q1": {
+    "sourceHash": "9634ef496586f75db9896154abb0076a8c4f9d6d788759755d9f6e541adad3f3",
+    "correctChoice": 4,
+    "summary": "鉱物性粉じんの管理濃度は、一定容積の空気に含まれる粉じんの質量を用いる。粒子の個数で示す値ではない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "温度と圧力で気体の容積が変わるため、一般に25℃・1気圧を基準に環境空気中の濃度を比較する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "有機溶剤の濃度は、空気の容積に対して蒸気が占める容積の割合として示し、管理濃度には通常ppmを用いる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "遊離けい酸の含有率が大きくなるほど、基準の計算式で得られる管理濃度は小さくなる。粉じんの組成を考慮した規定である。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "鉱物性粉じんの管理濃度の単位はmg/m³であり、空気の単位容積当たりの質量である。粒子数濃度とは測る量が異なる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "リフラクトリーセラミックファイバーは繊維状の物質である。この場合は空気の単位容積当たりの繊維数で濃度を表す。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242803-q2": {
+    "sourceHash": "aeae22eab574bc29cc12dd3318d7260a438f1734c9c7cbebed41e08ffa0a6799",
+    "correctChoice": 5,
+    "summary": "壁で仕切られ、有害物質の濃度分布が異なる作業場所は、同一人が二つの作業を受け持つことだけを理由にまとめない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "単位作業場所は空間的な濃度の分布と行動範囲をみて決める。装置周囲の異なる高さの作業床を立体的にまとめる場合もある。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "発散の状態に系統的な時間帯差があるときは、平均化によって差が見えなくならないよう、時間帯ごとに分けて扱う。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "同じ区域内に明確な系統差があると、全域を一つの分布として評価しにくい。大きな差がないか変動がランダムな範囲を単位とする。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "クロム酸を含む粒子と有機溶剤の蒸気は、同じ区域でも発散や移動のしかたが異なり得る。対象物質別に設定できる。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "仕切りのある調合と吹付けの場所では、別々の濃度分布が生じる。作業者が同じというだけで同じ単位作業場所にできない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 作業環境測定基準",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1"
+      }
+    ]
+  },
+  "emkohyo-EM20242803-q3": {
+    "sourceHash": "34d77b4d3c9d7a9ab487c73d6cc5371c3d98cbb41104ab8534fd9a7eaa5d29b5",
+    "correctChoice": 5,
+    "summary": "相対濃度指示方法による粉じんのA測定では、各点で連続10分という一律の条件は課されていない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "縦方向と横方向にそれぞれ一定の間隔で線を引き、交点を選ぶ。規則的に点を配置する等間隔系統抽出法である。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "各方向の線は原則6 m以下の等間隔とするが、縦方向の間隔と横方向の間隔について同一であることは要求されない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "おおむね30 m²以下で濃度もほぼ均一な場合、測定点数を五未満にできる。ただし測定値の総数は基準に従い確保する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "一日に採取できる数を超えるほど測定点が多い場合は、測定を続けられる規模になるよう、単位作業場所の区画を見直す。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "相対濃度計による粉じん測定では、一点ごとに連続十分間必要なわけではない。採取時間と測定点数の組合せを確認する。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 作業環境測定基準",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1"
+      }
+    ]
+  },
+  "emkohyo-EM20242803-q4": {
+    "sourceHash": "7c30494d9772bbf2b2faeb691f149992b6440bd2e4f9512a16780e2801d6e930",
+    "correctChoice": 5,
+    "summary": "B測定点は100〜150 cmに限定されない。作業の実態に応じ、床上50〜150 cmの範囲を基本とする。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "高濃度が予想される所が複数あり最大点を事前に選べない場合は、各候補点を実測し、その中で最も高い値を採用する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "検知管ごとの採取が短い場合は十分の中で間隔を均等にして測定し、得られた濃度を算術平均してB測定値にする。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "相対濃度から質量濃度へ換算するときは、対象粉じんに対してA測定で設定した質量濃度変換係数を用いる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "一回二分の測定を連続五回行うと合計十分間になる。その各指示値の算術平均をB測定の代表値とする。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "評価対象は作業者の呼吸位置であり、高さの下限を床上100 cmに固定しない。床上50〜150 cmの範囲が基本となる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 作業環境測定基準",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1"
+      }
+    ]
+  },
+  "emkohyo-EM20242803-q5": {
+    "sourceHash": "00ad0380a19b7fd5921add13a41674957dedfa5b11b7d1f639106f841d0bf0d6",
+    "correctChoice": 4,
+    "summary": "四塩化炭素は対称な分子で全体として無極性である。非対称なクロロホルムの方が分子の極性は大きい。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "二硫化炭素は直線状で両側が同じ硫黄原子になっている。結合の双極子が対称に打ち消し合い無極性となる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "アセトンには極性のあるカルボニル基が含まれる。その結合による偏りが分子全体として残るため極性がある。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "メタノールにはヒドロキシ基があり、電子の分布が分子の中で偏っている。水と混和する極性分子である。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "四塩化炭素では四方向の結合双極子が打ち消し合う。一方、クロロホルムには三つの塩素と一つの水素があり極性をもつ。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "酢酸エチルのエステル基は電子の偏りを持つ。対称なベンゼンでは分子全体の双極子がゼロなので、酢酸エチルの方が極性が大きい。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242803-q6": {
+    "sourceHash": "9b80ca043c158e9a073b053b9d5c97cc79eadae1d7248847dcf55f3f7a02757f",
+    "correctChoice": 1,
+    "summary": "騒音A測定の平均値の算定では80 dB未満の測定値を除く。提示された値では平均は約82 dBである。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "二つの78 dBを平均値の算定から除き、81・82・83 dBの各二点をエネルギー平均すると約82.1 dBとなる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "測定値は全点でも78〜83 dB、平均の対象となる点では81〜83 dBに収まる。いずれにせよ提示値の標準偏差は3 dB未満である。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "面積は3 m×10 m＝30 m²である。著しく狭い作業場の目安であるおおむね30 m²以下に当たる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "算出したA測定平均値は85 dB未満で、B測定値は85以上90 dB未満である。この組合せの管理区分は第Ⅱである。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "狭い作業場所で騒音の分布のばらつきが小さいと観測されているため、次回のA測定では五点未満に設定する扱いが可能である。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 作業環境測定基準",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1"
+      },
+      {
+        "title": "厚生労働省 騒音障害防止のためのガイドラインの改訂について",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc7618&dataType=1&pageNo=1"
+      }
+    ]
+  },
+  "emkohyo-EM20242803-q7": {
+    "sourceHash": "339ed7a2539341ec455b3af873199754ff16e3af41dc2f2a763263701c51ec93",
+    "correctChoice": 4,
+    "summary": "同一労働者をC測定とD測定の両方に選べるが、測定時間と目的が違うため、各測定用の個人サンプラーを装着する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "C測定では作業時間を通じたばく露を把握する。ばく露がほぼ均一という条件の下では、試料の採取時間を短縮できる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "対象者が五人未満なら、一人の作業時間を分割して試料を複数採取し、採取した試料数と同じ人数を測ったものとみなす規定がある。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "場所外にいる間の空気で結果が変わらない場合はポンプを止めなくてもよい。濃度の分母となる時間は単位作業場所内の滞在時間とする。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "C測定は作業時間全体側のばく露を、D測定は最大ばく露が推定される連続十五分を測る。両方を行う者にはそれぞれの採取装置が必要である。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "D測定には必要な連続十五分間を確保する必要がある。該当作業が十五分に満たない場所では、その個人サンプリング法を選べない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 作業環境測定基準",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1"
+      }
+    ]
+  },
+  "emkohyo-EM20242803-q8": {
+    "sourceHash": "22483b70febab824afd6f05ff46c7f9a25a0822f1ed23e5297a5b8ece4cb330f",
+    "correctChoice": 5,
+    "summary": "設問の時点で、フッ化水素は個人サンプリング法による測定対象として定められた特定化学物質に含まれていない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "インジウム化合物の濃度は、作業環境測定基準が個人サンプラーを用いた試料採取を定める対象に含めている。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "クロム酸及びその塩は、対象として基準に挙げられている。捕集材と分析方法は物質に対応する規定を確認する。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "3,3′-ジクロロ-4,4′-ジアミノジフェニルメタンは、個人サンプリング法の対象に含まれる特定化学物質である。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "トリレンジイソシアネートは所定の捕集方法により個人サンプリング法を適用できる対象物質に含まれている。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "フッ化水素は取り扱う場所で測定が必要な物質でも、C・D測定の対象とされた物質の範囲には含まれていない。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242803-q9": {
+    "sourceHash": "617a2aeb2a883d9c2fc6bc8fe8509305149eebd5a86165bcd59de074556d3a3a",
+    "correctChoice": 2,
+    "summary": "クロム酸ミストの捕集には適合するろ過材や液体捕集を用いる。シリカゲル管を組み合わせた記述が不適切である。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "空気中のシアン化水素には溶液中に導入する液体捕集方法が使える。その捕集器具としてミゼットインピンジャーを用いる。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "クロム酸ミストは液滴状の粒子で、対応する膜や液体捕集を用いる。ガスを吸着させるシリカゲル管は該当しない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "水銀の蒸気は適切な捕集液に接触させて保持できる。吸引した空気を液中で泡にする捕集器具がバブラーである。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "アクリルアミドの採取には、グラスファイバーフィルターと活性炭フェルトを組み合わせ、粒子状成分や通過成分を保持する方法がある。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "トリクロロエチレンの蒸気は活性炭に吸着する。活性炭管を使う固体捕集は、この物質の濃度測定に用いられる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 作業環境測定基準",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1"
+      }
+    ]
+  },
+  "emkohyo-EM20242803-q10": {
+    "sourceHash": "94b69bb6409ac979eb3c51b7703db27774053c6159250ac5d6f4f5879b41242c",
+    "correctChoice": 3,
+    "summary": "面積式流量計の指示は気体の密度の影響を受け、校正条件と異なるときには温度に応じた補正を検討する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "ポンプの脈動は流量計の指示を揺らす。流量計とポンプの間の空気だめで圧力や流量の急な変動を緩和できる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "石けん膜の移動した区間に対応する容積を求め、それを通過にかかった時間で割ると、体積流量を計算できる。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "温度が変われば空気の密度が変わり、浮子に働く力と流量指示の関係も変わる。温度補正を不要とする記述は誤りである。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "大きい圧力損失で流量計側の圧力が下がると、校正条件との違いが増し、面積式の指示は真の流量より大きく出る。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "オリフィスで流路を絞ると、流れによって板の前後に差圧が生じる。その差圧が流量に対応することを利用する。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242803-q11": {
+    "sourceHash": "e627e7eecb009270025312893cc43a2b8294e056d60fa0f3299e449fe1e97e8e",
+    "correctChoice": 3,
+    "summary": "ポーラスポリマービーズは活性炭に比べ表面が不活性であり、不安定な成分を捕集するときの変質を抑えやすい。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "吸着に使用する活性炭は、乾燥した空気や窒素を通しながら加熱して水分を除く処理を行い、捕集への影響を抑えられる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "シリカゲルは極性をもつ表面で極性物質と相互作用する。極性の高い蒸気を捕集する場合に適することがある。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "多孔性の高分子ビーズの表面は活性炭より化学的に不活性である。吸着した不安定な化合物が反応する可能性を抑えられる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "固体捕集の捕集材は対象に合わせて選択する。吸着剤やカラム充填材に限らず、金属繊維を利用する場合もある。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "活性炭管を立てて用いることで、捕集剤の片寄りや空気が捕集剤を十分通らない流路が生じるのを抑える。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 作業環境測定基準",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1"
+      }
+    ]
+  },
+  "emkohyo-EM20242803-q12": {
+    "sourceHash": "e7741c9ab91f9a33fae21437689d346f323c1db563c0ab015e446164c7b6c936",
+    "correctChoice": 2,
+    "summary": "微細粒子の捕集でろ過流速を下げると、粒子が繊維に拡散して付着する時間が長くなり、拡散による捕集率は上がる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "鉛ヒュームのような浮遊粒子を直接ろ過材に導く方式として、前面が開いたオープンフェース型ホルダーを用いる。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "拡散作用による捕集では、流速が遅いほど粒子がろ材の繊維へ移動できる時間が長くなる。捕集率の変化の向きが逆である。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "粒子状として採取するマゼンタの捕集材には、対象と分析方法に対応するものとしてガラス繊維ろ紙を用いる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "0.1 μm未満の細かい粒子はブラウン運動の影響が大きく、ろ材に当たる機会が増える。小さい粒子ほど拡散捕集されやすい。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "マンガンを含む粒子は、指定されたフィルターによるろ過捕集ができる。適用するろ材の一つが石英繊維ろ紙である。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 作業環境測定基準",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1"
+      }
+    ]
+  },
+  "emkohyo-EM20242803-q13": {
+    "sourceHash": "caa2af565daf582bbf9451fc492cc1ea0a085ee52e76b7d5796eb8d37a71d189",
+    "correctChoice": 1,
+    "summary": "インピンジャーの粒子捕集は慣性衝突による。粒径が小さいほど流れに追随しやすく、衝突による捕集は難しくなる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "粒径の小さな粒子ほど空気の流線を外れにくい。インピンジャーの捕集液に慣性で衝突する割合はむしろ低くなる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "ベンゼンの採取方法には液体捕集がある。使用する捕集液へ試料空気を通す器具としてミゼットインピンジャーを使える。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "小型ガス吸収管に速い流量でガスを通すと、ガスと液体が十分に接触する時間が短くなり、吸収率は低下しやすい。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "直接捕集では容器表面への吸着などによる濃度変化を抑えるため、真空捕集瓶と捕集袋にそれぞれ適切な最低容積を確保する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "真空捕集瓶の試料は、加熱や日光による変質を避ける。捕集から分析までの時間も短くし、採取時の濃度を保つ。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 作業環境測定基準",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1"
+      }
+    ]
+  },
+  "emkohyo-EM20242803-q14": {
+    "sourceHash": "8b9c618706a628796e2b8d7895435b4529c27cee510f5365c4ac7863596b23fc",
+    "correctChoice": 1,
+    "summary": "光散乱式の相対濃度計の指示は、測定部の粒子による散乱光に基づく。吸引流量の低下から指示値の低下を直接は導けない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "この方式は測定部の散乱光を捉えるもので、単位時間に内部へ入った粒子を単純に数える方式として説明するのは誤りである。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "試験で扱う通常の測定条件では、相対濃度計は粉じんによる散乱に応答する。気温や湿度だけで指示値が大きく変わるとするものではない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "濃度と粒子の性質が変わらなければ、一定時間当たりのカウントは一定である。時間を長くすると累積カウントは比例して増える。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "質量濃度が分かっている併行測定から変換係数Kを求める。以後は相対濃度RにKを掛けて質量濃度Cに換算する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "同じ質量濃度のもとでは細かい粒子が多数存在する。設問の粒径0.3 μmと5 μmでは、0.3 μmの粉じんの散乱光強度が大きい。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 作業環境測定基準",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1"
+      }
+    ]
+  },
+  "emkohyo-EM20242803-q15": {
+    "sourceHash": "50ce1842552af96cac1863ba732dfd966663d7d81bfa950fe9bcca5b9356264a",
+    "correctChoice": 4,
+    "summary": "検知管の使用可否は対象物質や測定条件に応じて決まる。特別有機溶剤のすべてに対する一律の禁止ではない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "検知剤の反応や変色の進行が濃度の一次関数になるとは限らない。各検知管に付された校正済みの目盛を読む。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "連続吸引で一定の速度・時間を要求する検知管と、真空で一定容積を採る採取器は使用条件が異なり、代用できない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "定量下限は精度を保って数値を読み取れる範囲の下端である。それを下回る変色を濃度値として保証するものではない。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "特別有機溶剤でも、所定の濃度範囲・精度などを満たす対象と条件では検知管で測定できる。物質群全体の禁止とはならない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "大気圧が高いと同一容積に含まれる気体量が増えるため、標準圧の目盛で読むと指示が高くなる。必要に応じて圧力補正する。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 作業環境測定基準",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1"
+      }
+    ]
+  },
+  "emkohyo-EM20242803-q16": {
+    "sourceHash": "8b9ba70fad963f790880da7ca317c3198664a2677e93bb2ae912422ecb260eb5",
+    "correctChoice": 2,
+    "summary": "固体捕集に放射性水銀、直接捕集にトリチウム化水蒸気を組み合わせた肢が、設問の原本で正答として示されている。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "ウランを含む空気中の粒子をガス容器に直接採取する方法で評価する組合せにはならない。粒子とガスを分けて考える。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "水銀の蒸気には固体の捕集材を用いる方法がある。トリチウム化水蒸気は、測定器に応じて気体試料を直接捕集する例に当たる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "放射性ヨウ素を固体に捕集する場合があっても、通常は粒子状の放射性セシウムを直接捕集する組合せにはならない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "アルゴンは気体なので直接捕集できる場合があるが、粒子状のプルトニウムの側をガス状物質の固体捕集として扱うのは適切でない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "トリチウム化水蒸気の側が合っていても、放射性タリウムをこの場合のガス状物質の固体捕集とする点が組合せに合わない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 作業環境測定基準",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1"
+      }
+    ]
+  },
+  "emkohyo-EM20242803-q17": {
+    "sourceHash": "eb35bfc6dbc292dc2971b1e8eb5acd132953a5b24f59476d14ab4802dcc2f33a",
+    "correctChoice": 5,
+    "summary": "濃度限度の100分の1で検出下限に達する空気量を求め、毎分95 Lで吸引すると約215時間になる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "20時間で吸引する容積を目標濃度と計数効率に掛けると、計数率は約0.22 s⁻¹にしかならず検出下限に届かない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "60時間の場合に見込まれる計数率は約0.67 s⁻¹で、求められる2.4 s⁻¹より低い。採取時間を延ばす必要がある。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "90時間では目標濃度の空気を毎分95 L吸引しても、計数効率補正後に約1.0 s⁻¹にとどまり、検出下限に足りない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "150時間でも計数率は約1.68 s⁻¹である。空気の容積だけでなく、0.28の計数効率を加味して計算する。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "必要時間は2.4÷(7.0×10⁻⁹×0.28×95,000)分であり、60で割って時間に換算すると約214.8時間となる。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242803-q18": {
+    "sourceHash": "a0c217c8b5b7eef78ac8c0d649b689712c112086fb3c63798f8fa119caa22d71",
+    "correctChoice": 1,
+    "summary": "幾何標準偏差は対数値の標準偏差を指数変換した値であり、1未満にはならない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "対数値の標準偏差はゼロ以上である。その指数である幾何標準偏差の最小値は1で、濃度にばらつきがないときに等しい。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "幾何標準偏差は濃度のばらつきを比率として示す量である。元の濃度の単位を変えても値が変わらず、単位をもたない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "作業環境中の濃度は正の値で上側に長い裾を持つことが多い。この性質を表せる対数正規分布によって近似する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "標準正規分布のマイナス1からプラス1の範囲の確率は約68%である。元の分布に戻すと平均から一標準偏差の範囲になる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "正規分布は平均で位置が、標準偏差で広がりが決まる。一方を変えても他方は固定できる、別々のパラメータである。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242803-q19": {
+    "sourceHash": "328cdb2fd655a5cc340549d24f3ad7c25615e792443c714764eb137600813472",
+    "correctChoice": 2,
+    "summary": "繰り返し測定から得た算術平均値は真値の推定に使える値であり、それ自体が常に真値になるわけではない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "測定値と真値のずれが測定誤差である。測定値から参照される値を引く差として扱い、その符号も意味を持つ。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "測定回数を増やして平均を求めても、装置の校正ずれなど一定の偏りは残る。平均値は真値とは区別される。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "校正のずれのように、測定のたびに平均的な結果を一定の方向へずらす成分が系統誤差に当たる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "測定対象が変わらない場合にも、観測には予測しにくいばらつきが現れる。この反復測定のずれが偶然誤差である。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "読み取りや記録の誤りは観測者の作業上のミスであり、測定器の偏りや反復の統計的ばらつきとは区別される。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 作業環境測定基準",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1"
+      }
+    ]
+  },
+  "emkohyo-EM20242803-q20": {
+    "sourceHash": "fdb6c65c43f5fafbaa9f96f00a079928bb529f438225e7ed04e7787ba349d21f",
+    "correctChoice": 1,
+    "summary": "A測定の第1評価値は濃度分布の上側95%点に相当し、算術平均値を推定するのは第2評価値である。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "第1評価値は上側の濃度水準を評価する。算術平均を推定する指標としたところが誤りで、役割は第2評価値に対応する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "第1評価値より管理濃度が高いので、分布のうち管理濃度を上回る領域の確率は、第1評価値を上回る側の5%より小さくなる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "第1評価値が管理濃度以下でも、B測定値がその1.5倍なら第一管理区分にはならない。評価表の組合せは第二管理区分となる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "A測定の第2評価値は、測定値の幾何平均値に幾何標準偏差から得た補正を適用して、算術平均濃度を推定する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "第1・第2評価値に用いるばらつきの補正は、幾何平均値を下げない。濃度にばらつきがなければ幾何平均値に等しくなり得る。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 作業環境測定基準",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1"
+      },
+      {
+        "title": "厚生労働省 作業環境評価基準",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1"
+      }
+    ]
   }
 }
