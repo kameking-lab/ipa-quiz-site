@@ -18,3 +18,12 @@
 - 千葉県2025・2026年度の全3区分は `dokugeki-chiba` に収録済み。依頼の収録済み一覧にある毒物劇物取扱者試験のコードは同コードのみ。
 - `origin/cx/kako-cloud-c19-20261119` の東京都・大阪府の教員採用と裁判所事務官は、今回の毒物劇物取扱者試験と別試験。
 - 関西広域連合と埼玉県の2026年度はそれぞれ12月5日・12月13日実施予定で、確認時点では問題・正答が未公表。東京都の2022・2023年度は現行の都の公開ページで問題・正答を確認できなかった。 [関西広域連合の受験案内](https://www.kouiki-kansai.jp/koikirengo/jisijimu/shikakumenkyo/dokugeki_1/dokugeki_5/index.html)・[埼玉県の受験案内](https://www.pref.saitama.lg.jp/a0701/eiseishiken/dokugekishiken/h30/goannai.html)
+
+## 収録済み
+
+| 実施機関・年度 | 一般 | 農業用品目 | 特定品目 |
+| --- | ---: | ---: | ---: |
+| 関西広域連合 2025年度 | 46問 | 48問 | 47問 |
+
+- 関西広域連合2025年度の原本は各区分50問で、正答表は3区分共通。問1～35は3区分の問題冊子で共通。問題データには区分ごとの原本URLと公式の問番号を保持している。 [一般](https://www.kouiki-kansai.jp/material/files/group/12/01_R7dokugekishiken_ippan.pdf)・[農業用品目](https://www.kouiki-kansai.jp/material/files/group/12/02_R7dokugekishiken_nougyo.pdf)・[特定品目](https://www.kouiki-kansai.jp/material/files/group/12/03_R7dokugekishiken_tokutei.pdf)・[公式正答](https://www.kouiki-kansai.jp/material/files/group/12/R7dokugeki_kaitou.pdf)
+- 危険物の生成や高毒性物質の具体的な処理手順を含む設問は収録対象から外した。2025年度は3区分共通の問35、一般の問39・40・50、農業用品目の問39、特定品目の問48・50。

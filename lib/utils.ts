@@ -157,6 +157,7 @@ export const EXAM_LABELS: Record<string, string> = {
   tobi3: "とび技能士 3級",
   "benrishi": "弁理士（短答式）",
   "sokuryoshi": "測量士",
+  "dokugeki-kansai": "毒物劇物取扱者（関西広域連合）",
   "dokugeki-chiba": "毒物劇物取扱者",
   "jokaso-setsubishi": "浄化槽設備士（学科）",
   "chiiki-ryoko": "地域限定旅行業務取扱管理者",

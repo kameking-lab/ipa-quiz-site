@@ -258,6 +258,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
 },
   {
+    slug: "dokugeki-kansai", examCode: "dokugeki-kansai", shortName: "毒物劇物取扱者（関西広域連合）",
+    fullName: "毒物劇物取扱者試験（関西広域連合）", domain: "pharmacy", administrator: "関西広域連合",
+    officialQuestionsUrl: "https://www.kouiki-kansai.jp/koikirengo/jisijimu/shikakumenkyo/dokugeki_1/7605.html",
+    officialReuseTermsUrl: "https://www.kouiki-kansai.jp/site/221.html",
+    status: "live", stagingDataPath: "data/questions/dokugeki-kansai",
+    reuseSummary: "2025年度の一般・農業用品目・特定品目の公式問題・正答と全選択肢の独自解説を収録。",
+    attributionTemplate: "出典：関西広域連合 毒物劇物取扱者試験。問題・選択肢をテキスト化。解説は過去問AIの独自作成。",
+    remainingWork: [],
+  },
+  {
     slug: "dokugeki-chiba", examCode: "dokugeki-chiba", shortName: "毒物劇物取扱者", fullName: "毒物劇物取扱者試験 一般・農業用品目・特定品目",
     domain: "pharmacy", administrator: "千葉県",
     officialQuestionsUrl: "https://www.pref.chiba.lg.jp/yakumu/dokugeki/r8shikenzissikekka.html",
