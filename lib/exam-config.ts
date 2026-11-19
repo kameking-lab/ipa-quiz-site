@@ -2005,6 +2005,13 @@ caremanager: {
             label: "一般教養・教職",
             categories: ["国語", "社会", "数学", "理科", "英語", "芸術", "教育法規", "教育心理", "生徒指導", "特別支援教育", "学校保健", "教育施策"],
         },
+        {
+            session: "senmon",
+            urlSlug: "senmon",
+            expectedQuestions: 4,
+            label: "教科専門（中学校・英語）",
+            categories: ["中学校・英語"],
+        },
     ],
     seasons: ["annual"],
     yearRange: { start: 2022, end: 2025 },
