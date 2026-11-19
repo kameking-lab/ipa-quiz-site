@@ -8,11 +8,12 @@ import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { isExamPublished } from "@/lib/qualifications/catalog";
 
 const keys = ["ア", "イ", "ウ", "エ"];
-describe("kenki1 official two-year staging", () => {
+describe("kenki1 official past papers", () => {
   it("retains every original question and its official answer", () => {
-    expect(KENKI1_QUESTIONS).toHaveLength(112);
-    expect(new Set(KENKI1_QUESTIONS.map(q => q.id)).size).toBe(112);
-    for (const year of [2025, 2026] as const) {
+    const years = [2024, 2025, 2026] as const;
+    expect(KENKI1_QUESTIONS).toHaveLength(years.length * 56);
+    expect(new Set(KENKI1_QUESTIONS.map(q => q.id)).size).toBe(KENKI1_QUESTIONS.length);
+    for (const year of years) {
       const questions = KENKI1_QUESTIONS.filter(q => q.year === year);
       expect(questions.map(q => q.qNumber)).toEqual(Array.from({ length: 56 }, (_, i) => i + 1));
       for (const q of questions) {
@@ -30,7 +31,7 @@ describe("kenki1 official two-year staging", () => {
   });
   it("keeps the complete figures and corrected units and symbols", () => {
     const figures = KENKI1_QUESTIONS.filter(q => q.hasImage);
-    expect(figures).toHaveLength(3);
+    expect(figures).toHaveLength(4);
     for (const q of figures) {
       for (const url of q.imageUrls ?? []) expect(existsSync(join(process.cwd(), "public", url))).toBe(true);
     }

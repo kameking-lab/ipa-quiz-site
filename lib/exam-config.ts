@@ -1733,7 +1733,7 @@ kenki2: {
 kenki1: {
     code: "kenki1", nameFull: "1級建設機械施工管理技術検定（第一次検定）", urlSlug: "kenki1", level: "specialist",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 56, label: "第一次検定", categories: ["土木一般", "施工管理", "建設機械", "法規"] }],
-    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+    seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
 },
 gyosei: {
     code: "gyosei", nameFull: "行政書士試験", urlSlug: "gyosei", level: "advanced",
