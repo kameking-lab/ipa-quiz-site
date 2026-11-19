@@ -2033,6 +2033,13 @@ caremanager: {
             label: "教科専門（高等学校・政治・経済）",
             categories: ["高等学校・政治・経済"],
         },
+        {
+            session: "senmon-ko-ongaku",
+            urlSlug: "senmon-ko-ongaku",
+            expectedQuestions: 7,
+            label: "教科専門（高等学校・音楽）",
+            categories: ["高等学校・音楽"],
+        },
     ],
     seasons: ["annual"],
     yearRange: { start: 2022, end: 2025 },

@@ -1788,9 +1788,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.pref.gunma.jp/site/kyouiku/list70-400.html",
     officialReuseTermsUrl: "https://www.pref.gunma.jp/page/15257.html",
     status: "live",
-    reuseSummary: "群馬県教員採用試験の一般教養・教職と中学校英語の択一式を、公式問題・正答と全選択肢の解説で収録。",
+    reuseSummary: "群馬県教員採用試験の一般教養・教職と教科専門の択一式を、公式問題・正答と全選択肢の解説で収録。",
     attributionTemplate: "出典：群馬県教育委員会 群馬県公立学校教員採用選考試験。解説は過去問AIの独自作成。",
-    remainingWork: ["2026年度実施の公式問題と正答の確認", "教科専門の択一式"],
+    remainingWork: ["2026年度実施の公式問題と正答の確認", "収録済み以外の教科・年度の択一式の確認と追加"],
   },
   {
     slug: "tsukanshi", examCode: "tsukanshi", shortName: "通関士", fullName: "通関士試験",
