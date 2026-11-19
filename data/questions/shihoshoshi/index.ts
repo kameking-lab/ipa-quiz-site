@@ -1,6 +1,7 @@
 import type { Question } from "@/lib/questions/types";
 import questions2026 from "./2026.json";
 import questions2025 from "./2025.json";
+import questions2022Am from "./2022-am.json";
 import batch1Holds from "./batch1-holds.json";
 
 /** 未公開。全肢の法的理由を収録し、根拠未確認の問題は needsReview で保留。 */
@@ -10,3 +11,8 @@ export const SHIHOSHOSHI_QUESTIONS: Question[] = [...questions2026, ...questions
 export const SHIHOSHOSHI_BATCH1_QUESTIONS: Question[] = SHIHOSHOSHI_QUESTIONS.map(question =>
   batch1Holds.includes(question.id) ? { ...question, needsReview: true } : question,
 );
+
+export const SHIHOSHOSHI_PUBLIC_QUESTIONS: Question[] = [
+  ...SHIHOSHOSHI_BATCH1_QUESTIONS,
+  ...questions2022Am as Question[],
+];

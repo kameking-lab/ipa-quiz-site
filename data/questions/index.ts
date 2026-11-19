@@ -314,7 +314,7 @@ import { getKeiryoshiCandidates } from "./keiryoshi";
 import { KENKI2_QUESTIONS } from "./kenki2";
 import { KENKI1_QUESTIONS } from "./kenki1";
 import { GYOSEI_QUESTIONS } from "./gyosei";
-import { SHIHOSHOSHI_BATCH1_QUESTIONS } from "./shihoshoshi";
+import { SHIHOSHOSHI_PUBLIC_QUESTIONS } from "./shihoshoshi";
 import { CAREER_CONSULTANT_QUESTIONS } from "./career-consultant";
 import { KANRI_EIYOSHI_QUESTIONS } from "./kanri-eiyoshi";
 import { SOGO_RYOKO_QUESTIONS } from "./sogo-ryoko";
@@ -611,7 +611,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("kenki2") ? { kenki2: KENKI2_QUESTIONS } : {}),
 ...(isExamPublished("kenki1") ? { kenki1: KENKI1_QUESTIONS } : {}),
 ...(isExamPublished("gyosei") ? { gyosei: GYOSEI_QUESTIONS } : {}),
-...(isExamPublished("shihoshoshi") ? { shihoshoshi: SHIHOSHOSHI_BATCH1_QUESTIONS } : {}),
+...(isExamPublished("shihoshoshi") ? { shihoshoshi: SHIHOSHOSHI_PUBLIC_QUESTIONS } : {}),
 ...(isExamPublished("career-consultant") ? { "career-consultant": CAREER_CONSULTANT_QUESTIONS } : {}),
 ...(isExamPublished("kanri-eiyoshi") ? { "kanri-eiyoshi": KANRI_EIYOSHI_QUESTIONS } : {}),
 ...(isExamPublished("sogo-ryoko") ? { "sogo-ryoko": SOGO_RYOKO_QUESTIONS } : {}),

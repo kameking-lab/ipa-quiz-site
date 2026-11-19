@@ -1745,7 +1745,7 @@ shihoshoshi: {
     sessions: [
         { session: "am", urlSlug: "am", expectedQuestions: 35, label: "午前（多肢択一式）", categories: ["憲法", "民法", "刑法", "会社法・商法"] },
         { session: "pm", urlSlug: "pm", expectedQuestions: 35, label: "午後（多肢択一式）", categories: ["民事訴訟法・民事執行法・民事保全法", "司法書士法", "供託法", "不動産登記法", "商業登記法"] },
-    ], seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+    ], seasons: ["annual"], yearRange: { start: 2022, end: 2026 },
 },
 "career-consultant": {
     code: "career-consultant", nameFull: "国家資格キャリアコンサルタント試験（学科）", urlSlug: "career-consultant", level: "specialist",
