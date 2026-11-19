@@ -1368,7 +1368,7 @@ chizai2: {
 kisho: { code: "kisho", nameFull: "気象予報士試験", urlSlug: "kisho", level: "specialist",
     sessions: [{ session: "ippan", urlSlug: "ippan", expectedQuestions: 15, label: "学科一般", categories: ["学科一般"] },
         { session: "senmon", urlSlug: "senmon", expectedQuestions: 15, label: "学科専門", categories: ["学科専門"] }],
-    seasons: ["first", "second"], yearRange: { start: 2024, end: 2026 } },
+    seasons: ["first", "second"], yearRange: { start: 2023, end: 2026 } },
 "jidosha-1-small-written": {
     code: "jidosha-1-small-written", nameFull: "一級小型自動車整備士（筆記）", urlSlug: "jidosha-1-small-written", level: "specialist",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科", categories: ["一級小型自動車（筆記）"] }],
