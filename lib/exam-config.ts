@@ -1419,7 +1419,7 @@ kisho: { code: "kisho", nameFull: "気象予報士試験", urlSlug: "kisho", lev
 "jidosha-body": {
     code: "jidosha-body", nameFull: "自動車車体整備士", urlSlug: "jidosha-body", level: "specialist",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "学科", categories: ["自動車車体"] }],
-    seasons: ["first", "second"], yearRange: { start: 2023, end: 2026 },
+    seasons: ["first", "second"], yearRange: { start: 2022, end: 2026 },
 },
 "jidosha-electrical": {
     code: "jidosha-electrical", nameFull: "自動車電気装置整備士", urlSlug: "jidosha-electrical", level: "specialist",

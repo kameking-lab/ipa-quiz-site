@@ -1329,7 +1329,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     slug: "jidosha-body", examCode: "jidosha-body", shortName: "自動車車体整備士", fullName: "自動車車体整備士", domain: "automotive",
     administrator: "一般社団法人日本自動車整備振興会連合会",
     officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
-    reuseSummary: "令和8年度第1回、令和7年度第2回、令和6年度第1・2回、令和5年度第1・2回の学科239問を収録。公式問題・正答と全選択肢の解説、必要な原図を確認できます。法令は各試験日時点です。",
+    reuseSummary: "令和8年度第1回、令和7年度第2回、令和6年度第1・2回、令和5年度第1・2回、令和4年度第2回の学科279問を収録。公式問題・正答と全選択肢の解説、必要な原図を確認できます。法令は各試験日時点です。",
     attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
     remainingWork: ["未収録1原問の内容照合"],
 },
