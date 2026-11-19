@@ -1442,7 +1442,7 @@ kisho: { code: "kisho", nameFull: "気象予報士試験", urlSlug: "kisho", lev
 "jidosha-2-diesel": {
     code: "jidosha-2-diesel", nameFull: "二級ジーゼル自動車整備士", urlSlug: "jidosha-2-diesel", level: "specialist",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "学科", categories: ["二級ジーゼル自動車"] }],
-    seasons: ["first", "second"], yearRange: { start: 2024, end: 2026 },
+    seasons: ["first", "second"], yearRange: { start: 2023, end: 2026 },
 },
 "jidosha-2-chassis": {
     code: "jidosha-2-chassis", nameFull: "二級自動車シャシ整備士", urlSlug: "jidosha-2-chassis", level: "specialist",
