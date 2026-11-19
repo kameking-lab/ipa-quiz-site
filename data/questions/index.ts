@@ -308,6 +308,7 @@ import { SEKOU_KENCHIKU2_QUESTIONS } from "./sekou-kenchiku2";
 import { DENKI2_QUESTIONS } from "./denki2";
 import { KANKOJI1_QUESTIONS } from "./kankoji1";
 import { YAMAGUCHI_CHORI_QUESTIONS } from "./yamaguchi-chori";
+import { KOGAI_11_QUESTIONS } from "./kogai-11";
 import { ZENSHO_MARKETING_QUESTIONS } from "./zensho-marketing";
 import { YAMAGUCHI_SEIKA_QUESTIONS } from "./yamaguchi-seika";
 import { YAMAGUCHI_FUGU_QUESTIONS } from "./yamaguchi-fugu";
@@ -604,6 +605,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("denki2") ? { denki2: DENKI2_QUESTIONS } : {}),
 ...(isExamPublished("kankoji1") ? { kankoji1: KANKOJI1_QUESTIONS } : {}),
 ...(isExamPublished("yamaguchi-chori") ? { "yamaguchi-chori": YAMAGUCHI_CHORI_QUESTIONS } : {}),
+...(isExamPublished("kogai-11") ? { "kogai-11": KOGAI_11_QUESTIONS } : {}),
 ...(isExamPublished("zensho-marketing") ? { "zensho-marketing": ZENSHO_MARKETING_QUESTIONS } : {}),
 ...(isExamPublished("yamaguchi-seika") ? { "yamaguchi-seika": YAMAGUCHI_SEIKA_QUESTIONS } : {}),
 ...(isExamPublished("yamaguchi-fugu") ? { "yamaguchi-fugu": YAMAGUCHI_FUGU_QUESTIONS } : {}),

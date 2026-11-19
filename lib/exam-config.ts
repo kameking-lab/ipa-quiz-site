@@ -1545,6 +1545,14 @@ kankoji1: {
     ],
     seasons: ["september"], yearRange: { start: 2026, end: 2026 },
 },
+"kogai-11": {
+    code: "kogai-11", nameFull: "公害防止管理者 騒音・振動概論", urlSlug: "kogai-11", level: "advanced",
+    sessions: [{
+        session: "gakka", urlSlug: "gakka", expectedQuestions: 25, label: "騒音・振動概論",
+        categories: ["法令", "騒音", "振動"],
+    }],
+    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+},
 "zensho-marketing": {
     code: "zensho-marketing", nameFull: "全商商業経済検定 マーケティング", urlSlug: "zensho-marketing", level: "basic",
     sessions: [{

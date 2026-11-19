@@ -1542,6 +1542,17 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["監督役による独立レビューと公開判断"],
 },
   {
+    slug: "kogai-11", examCode: "kogai-11",
+    shortName: "公害防止管理者 騒音・振動概論", fullName: "公害防止管理者等国家試験 騒音・振動概論",
+    domain: "safety", administrator: "一般社団法人産業環境管理協会",
+    officialQuestionsUrl: "https://www.jemai.or.jp/polconman/examination/past.html",
+    officialReuseTermsUrl: "https://www.jemai.or.jp/polconman/examination/past.html",
+    status: "live",
+    reuseSummary: "2025年度の騒音・振動概論の公式問題・正答と独自の全肢解説を収録。",
+    attributionTemplate: "出典：一般社団法人産業環境管理協会 公害防止管理者等国家試験 騒音・振動概論（問題・正答）。解説は過去問AI作成。",
+    remainingWork: [],
+},
+  {
     slug: "zensho-marketing", examCode: "zensho-marketing",
     shortName: "全商商業経済検定 マーケティング", fullName: "全商商業経済検定試験 マーケティング",
     domain: "accounting", administrator: "公益財団法人全国商業高等学校協会",
