@@ -302,7 +302,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.env.go.jp/water/dojo/kanri.html",
     officialReuseTermsUrl: "https://www.env.go.jp/mail.html", status: "live",
     stagingDataPath: "data/qualification-staging/dojo-osen",
-    reuseSummary: "2024・2025年の公式問題・正答・独自解説と原本図表を収録。160原問中、2025年度調査問30の公式全員正解1問を除く159問を演習できます。問題・正答は公式原本、解説は過去問AIの独自作成です。",
+    reuseSummary: "2024・2025年度の問題と、その他の年度の調査問題の一部を収録。公式問題・正答、独自解説、必要な原本図表を確認できます。問題・正答は公式原本、解説は過去問AIの独自作成です。",
     attributionTemplate: "出典：環境省 令和○年度土壌汚染調査技術管理者試験 ○科目 問○。原問題画像は公式PDFの切出し。解説は過去問AIの独自作成。",
     remainingWork: [],
 },
