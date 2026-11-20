@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { YAMAGUCHI_SEIKA_QUESTIONS } from "@/data/questions/yamaguchi-seika";
 import { YAMAGUCHI_FUGU_QUESTIONS } from "@/data/questions/yamaguchi-fugu";
+import groups2024 from "@/data/questions/yamaguchi-fugu/2024-original-groups.json";
 import groups2025 from "@/data/questions/yamaguchi-fugu/2025-original-groups.json";
 import groups2026 from "@/data/questions/yamaguchi-fugu/2026-original-groups.json";
 import { existsSync } from "node:fs";
@@ -78,16 +79,17 @@ describe("製菓衛生師: 全選択科目と公式正答", () => {
 
 describe("ふぐ処理師: 原大問を保持した解答欄別演習", () => {
   const answers: Record<number, string> = {
+    2024: "キイコカオアコケエウ○×○××××○××オエウキカ○××○○○×○○○××○○×××○○×○×××○エウオアイ××○○×オイアキエコシク×○×○××○○××○×○ウキエオクイ○○××○○○○イエオカウ",
     2025: "コアクカキキコイクエ××○○○○×○○×○○○×○イキオエウイウアオエ×○○×○×○×○○××○×○ウアエオイウイエオア×○×○キオエアカイクウ×○○○×○○××○×××○×○×○○×○○○×○×○○",
     2026: "キイコカオキイコアカ××○○○イ×○×○キカクオケキカオエコ×○××○○○×○×○○×○×××××○オウエアイエアウオイ××○○○○ウカアイク××○○×○××○○×○○×○×○×エウオイカア×○×○○",
   };
-  for (const year of [2025, 2026]) it(`${year}: 100欄の正答・全語群解説と原大問`, () => {
+  for (const year of [2024, 2025, 2026]) it(`${year}: 100欄の正答・全語群解説と原大問`, () => {
     const qs = YAMAGUCHI_FUGU_QUESTIONS.filter(q => q.year === year);
     expect(qs).toHaveLength(100);
     expect(qs.map(q => q.qNumber)).toEqual(Array.from({ length: 100 }, (_, i) => i + 1));
     expect(qs.map(q => q.officialAnswerNumber).join("")).toBe(answers[year]);
-    const groups = year === 2025 ? groups2025 : groups2026;
-    expect(groups).toHaveLength(year === 2025 ? 18 : 19);
+    const groups = year === 2024 ? groups2024 : year === 2025 ? groups2025 : groups2026;
+    expect(groups).toHaveLength(year === 2022 ? 21 : year === 2024 || year === 2025 ? 18 : 19);
     expect(groups.flatMap(g => g.slots)).toEqual(qs.map(q => q.qNumber));
     for (const q of qs) {
       const group = groups.find(g => g.slots.includes(q.qNumber))!;
@@ -103,8 +105,8 @@ describe("ふぐ処理師: 原大問を保持した解答欄別演習", () => {
     }
   });
   it("batch1公開後: 6分岐の図と条件テキストを保持し非公開とする", async () => {
-    expect(YAMAGUCHI_FUGU_QUESTIONS.filter(q => q.hasImage).map(q => q.qNumber)).toEqual([90,91,92,93,94,95]);
-    for (const q of YAMAGUCHI_FUGU_QUESTIONS.filter(q => q.hasImage)) {
+    expect(YAMAGUCHI_FUGU_QUESTIONS.filter(q => q.year === 2026 && q.hasImage).map(q => q.qNumber)).toEqual([90,91,92,93,94,95]);
+    for (const q of YAMAGUCHI_FUGU_QUESTIONS.filter(q => q.year === 2026 && q.hasImage)) {
       expect(q.question).toContain("小棘なし");
       expect(q.question).toContain("尾ひれの下縁は白い");
       expect(Object.keys(q.choices ?? {})).toHaveLength(6);

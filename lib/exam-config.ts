@@ -1586,7 +1586,7 @@ kankoji1: {
 "yamaguchi-fugu": {
     code: "yamaguchi-fugu", nameFull: "ふぐ処理師（学科）", urlSlug: "yamaguchi-fugu", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 100, label: "学科", categories: ["衛生法規", "食品衛生学", "ふぐに関する知識"] }],
-    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+    seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
 },
 "keiryoshi": {
     "code": "keiryoshi",
