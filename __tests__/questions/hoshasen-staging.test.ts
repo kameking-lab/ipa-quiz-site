@@ -9,7 +9,7 @@ import held from "@/data/questions/hoshasen/held-2026-2-kagaku-q9.json";
 describe("hoshasen unpublished source staging", () => {
   it("batch1公開後: retains the distinct source sessions without publishing candidates", () => {
     expect(HOSHASEN_STAGED_QUESTIONS.filter(q => q.format !== "multi-part")).toHaveLength(498);
-    expect(HOSHASEN_STAGED_QUESTIONS.filter(q => q.format === "multi-part")).toHaveLength(38);
+    expect(HOSHASEN_STAGED_QUESTIONS.filter(q => q.format === "multi-part")).toHaveLength(40);
     expect(HOSHASEN_STAGED_QUESTIONS).toHaveLength(audit.stagedQuestions);
     expect(new Set(HOSHASEN_STAGED_QUESTIONS.map(q => q.id)).size).toBe(audit.stagedQuestions);
     const entry = QUALIFICATION_CATALOG.find(q => q.slug === "hoshasen");
@@ -46,7 +46,7 @@ describe("hoshasen unpublished source staging", () => {
 
   it("preserves every multi-part blank and independently transcribed official key", () => {
     const multi = HOSHASEN_STAGED_QUESTIONS.filter(q => q.format === "multi-part");
-    expect(multi.reduce((n,q) => n+q.blanks.length,0)).toBe(497);
+    expect(multi.reduce((n,q) => n+q.blanks.length,0)).toBe(527);
     expect(multi.map(q => q.id).sort()).toEqual(Object.keys(audit.multiPartAnswerKeys).sort());
     for (const q of multi) {
       const expected = audit.multiPartAnswerKeys[q.id as keyof typeof audit.multiPartAnswerKeys];
@@ -75,7 +75,7 @@ describe("hoshasen unpublished source staging", () => {
           .toEqual(Array.from({ length: count }, (_, i) => i + 1));
       }
     }
-    expect(audit.stagedQuestions).toBe(536);
+    expect(audit.stagedQuestions).toBe(538);
     expect(audit.remainingPrimaryQuestions).toBe(2);
     expect(audit.heldPrimaryQuestions).toBe(1);
   });
