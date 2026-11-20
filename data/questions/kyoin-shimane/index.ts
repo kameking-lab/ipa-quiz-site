@@ -1,5 +1,7 @@
 import { KYOIN_SHIMANE_2026 } from "./2026";
+import { KYOIN_SHIMANE_2025 } from "./2025";
 
 export const KYOIN_SHIMANE_QUESTIONS = [
   ...KYOIN_SHIMANE_2026,
+  ...KYOIN_SHIMANE_2025,
 ];
