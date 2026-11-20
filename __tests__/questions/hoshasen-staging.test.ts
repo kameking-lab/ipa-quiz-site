@@ -8,7 +8,7 @@ import held from "@/data/questions/hoshasen/held-2026-2-kagaku-q9.json";
 
 describe("hoshasen unpublished source staging", () => {
   it("batch1公開後: retains the distinct source sessions without publishing candidates", () => {
-    expect(HOSHASEN_STAGED_QUESTIONS.filter(q => q.format !== "multi-part")).toHaveLength(616);
+    expect(HOSHASEN_STAGED_QUESTIONS.filter(q => q.format !== "multi-part")).toHaveLength(646);
     expect(HOSHASEN_STAGED_QUESTIONS.filter(q => q.format === "multi-part")).toHaveLength(58);
     expect(HOSHASEN_STAGED_QUESTIONS).toHaveLength(audit.stagedQuestions);
     expect(new Set(HOSHASEN_STAGED_QUESTIONS.map(q => q.id)).size).toBe(audit.stagedQuestions);
@@ -36,7 +36,7 @@ describe("hoshasen unpublished source staging", () => {
   });
 
   it("preserves source acquisition evidence and reports incomplete coverage", () => {
-    expect(audit.files).toHaveLength(32);
+    expect(audit.files).toHaveLength(34);
     expect(audit.files.every(f => f.bytes > 0 && /^[a-f0-9]{64}$/.test(f.sha256))).toBe(true);
     expect(audit.stagedQuestions).toBe(HOSHASEN_STAGED_QUESTIONS.length);
     expect(audit.stagedChoiceExplanations).toBe(HOSHASEN_STAGED_QUESTIONS.reduce((n,q) => n+(q.format === "multi-part" ? q.blanks.reduce((m,b) => m+b.choiceExplanations.length,0) : q.choiceExplanations.length),0));
@@ -76,7 +76,7 @@ describe("hoshasen unpublished source staging", () => {
         expect(first.filter(q => q.subject === subject).map(q => q.number).sort((a,b) => a-b)).toEqual(numbers);
       }
     }
-    expect(audit.stagedQuestions).toBe(674);
+    expect(audit.stagedQuestions).toBe(704);
     expect(audit.remainingPrimaryQuestions).toBe(4);
     expect(audit.heldPrimaryQuestions).toBe(1);
   });
