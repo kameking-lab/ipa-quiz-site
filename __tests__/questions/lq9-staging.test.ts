@@ -7,6 +7,7 @@ import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { SHOHI_SODAN_QUESTIONS } from "@/data/questions/shohi-sodan";
 import { REFORM_MGR_QUESTIONS } from "@/data/questions/reform-mgr";
+import s23 from "@/data/questions/shohi-sodan/2023.json";
 import s24 from "@/data/questions/shohi-sodan/2024.json";
 import s25 from "@/data/questions/shohi-sodan/2025.json";
 import r25 from "@/data/questions/reform-mgr/2025.json";
@@ -21,9 +22,9 @@ import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 const all = [...SHOHI_SODAN_QUESTIONS, ...REFORM_MGR_QUESTIONS];
 describe("LQ9 private qualification staging", () => {
   it("retains every printed subquestion and matches the separately extracted official answer tables", () => {
-    expect(all).toHaveLength(420);
-    expect(new Set(all.map(q => q.id)).size).toBe(420);
-    for (const source of [s24, s25]) {
+    expect(all).toHaveLength(580);
+    expect(new Set(all.map(q => q.id)).size).toBe(580);
+    for (const source of [s23, s24, s25]) {
       expect(source.questions).toHaveLength(160);
       const table = skeys[String(source.year) as keyof typeof skeys] as Record<string, string[]>;
       const positions: string[] = [];
@@ -31,7 +32,7 @@ describe("LQ9 private qualification staging", () => {
         const answer = table[String(q.officialQuestionNumber)][q.subQuestion - 1];
         expect(q.officialAnswer).toBe(answer);
         const expected = q.choices.length === 2 ? (answer === "〇" || answer === "○" ? 1 : 2)
-          : q.officialQuestionNumber === 3 || q.officialQuestionNumber === 17 ? Number(answer)
+          : /^\d+$/.test(answer) ? Number(answer)
           : q.question.includes("下線部") ? answer === "〇" || answer === "○" ? 1 : answer === "ア" ? 2 : 3
           : "アイウ".indexOf(answer) + 1;
         expect(q.officialAnswerNumber).toBe(expected);

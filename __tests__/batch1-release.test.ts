@@ -20,7 +20,7 @@ describe("batch 1 complete public registry", () => {
           .filter(([period]) => code !== "yamaguchi-seika" || /^(2024|2025|2026)-/.test(period))
           .filter(([period]) => !row.session || period.endsWith(`/${row.session}`)).reduce((count, [, value]) => count + value, 0), 0);
       // 初回出荷の記録は保持し、今回の公開補充分を加算する。
-      const additions: Record<string, number> = { "biru-kan": 180, "yamaguchi-seika": 66 };
+      const additions: Record<string, number> = { "biru-kan": 180, "yamaguchi-seika": 66, "yamaguchi-fugu": 300, "shohi-sodan": 160 };
       const replenished = row.codes.reduce((sum, code) => sum + (additions[code] ?? 0), 0);
       expect(actual, row.name).toBe(row.expected + replenished);
       for (const code of row.codes) {

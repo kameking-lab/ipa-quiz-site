@@ -1,6 +1,6 @@
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 export interface StagingSource {
-  year: number; questionUrl: string; answerUrl: string;
+  year: number; questionUrl: string; answerUrl: string; answerPdfPage?: number;
   questions: { number: number; pdfPage: number; question: string; choices: string[];
     officialAnswerNumber: number; officialQuestionNumber?: number; subQuestion?: number;
     explanation: string; choiceExplanations: string[]; imageUrl?: string; imageAltText?: string; needsReview?: boolean; reviewReason?: string; officialReferenceUrls?: string[] }[];
@@ -25,7 +25,7 @@ export function convertLq9(source: StagingSource, exam: "shohi-sodan" | "reform-
       explanationCoverage: "full", needsReview: q.needsReview, officialReferenceUrls: q.officialReferenceUrls, hasImage: Boolean(q.imageUrl),
       ...(q.imageUrl ? { imageUrls: [q.imageUrl], imageAltTexts: [q.imageAltText!] } : {}),
       sourcePdfUrl: source.questionUrl, sourceAnswerUrl: source.answerUrl,
-      sourceAttribution: `出典：${shohi ? "独立行政法人国民生活センター 消費生活相談員資格試験" : "公益財団法人住宅リフォーム・紛争処理支援センター マンションリフォームマネジャー学科試験"} ${source.year}年度 ${originalLabel}（問題PDF ${q.pdfPage}ページ、正答PDF ${shohi ? source.year === 2025 ? 34 : 33 : 1}ページ）。改行・空白・ルビを整理。${shohi ? "○×・下線指摘・語句選択の公式ラベルは元データに保持し、画面の選択肢キーへ順番に対応。原文の下線を太字に変更。" : "選択肢１〜４をア〜エに対応。"}解説は当サイト独自作成。`,
+      sourceAttribution: `出典：${shohi ? "独立行政法人国民生活センター 消費生活相談員資格試験" : "公益財団法人住宅リフォーム・紛争処理支援センター マンションリフォームマネジャー学科試験"} ${source.year}年度 ${originalLabel}（問題PDF ${q.pdfPage}ページ、正答PDF ${shohi ? (source.answerPdfPage ?? (source.year === 2025 ? 34 : 33)) : 1}ページ）。改行・空白・ルビを整理。${shohi ? "○×・下線指摘・語句選択の公式ラベルは元データに保持し、画面の選択肢キーへ順番に対応。原文の下線を太字に変更。" : "選択肢１〜４をア〜エに対応。"}解説は当サイト独自作成。`,
       license: shohi ? "KOKUSEN-owner-authorized" : "CHORD-owner-authorized",
       questionNotice: `${q.reviewReason ? q.reviewReason + " " : ""}${source.year}年度の出題当時の制度・統計・法令に基づく問題です。原問：${originalLabel}。`,
       lawReferenceDate: `${source.year}-${shohi ? "05" : "04"}-01`,

@@ -41,5 +41,17 @@
     ]
   },
   "latestScope": "Official past-question index lists 2025 and 2024 as the newest public complete question/answer papers as checked 2026-11-04. 2026 is not listed there.",
-  "reviewedContentCommit": "dd5b01dc1"
+  "reviewedContentCommit": "dd5b01dc1",
+  "historicalAdditions": [
+    {
+      "year": 2023,
+      "url": "https://www.kokusen.go.jp/shikaku/pdf/23shiken_mondai.pdf",
+      "sha256": "6b6239a645c0f5aa59536d3263ad7a1304a6dde884eb6cdd62d8629202c9a462",
+      "pages": 32,
+      "answerPage": 32,
+      "questions": 160,
+      "choiceExplanations": 368,
+      "verification": "Official keys matched from both layout-text and PDF text extraction. Underlines reconstructed from the line rectangles in the original PDF."
+    }
+  ]
 }
