@@ -1114,6 +1114,7 @@ kangoshi: {
         { session: "kogai-wastewater", urlSlug: "kogai-wastewater", expectedQuestions: 25, label: "汚水処理特論", categories: ["汚水処理特論"] },
         { session: "kogai-water-hazardous", urlSlug: "kogai-water-hazardous", expectedQuestions: 15, label: "水質有害物質特論", categories: ["水質有害物質特論"] },
         { session: "kogai-large-water", urlSlug: "kogai-large-water", expectedQuestions: 10, label: "大規模水質特論", categories: ["大規模水質特論"] },
+        { session: "kogai-noise-vibration", urlSlug: "kogai-noise-vibration", expectedQuestions: 25, label: "騒音・振動概論", categories: ["騒音・振動概論"] },
     ],
     seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
 },
