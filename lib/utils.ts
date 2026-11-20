@@ -370,6 +370,7 @@ export const EXAM_LABELS: Record<string, string> = {
 
     "kikai-hozen": "機械保全技能士 2級",
     "kouku-kanseikan": "航空管制官",
+    "homusho-senmonshokuin": "法務省専門職員（人間科学）",
     "rodo-kijun-kantokukan": "労働基準監督官",
     "kokka-ippan-dai": "国家一般職（大卒程度）",
     "kokka-ippan-kou": "国家一般職（高卒者）",

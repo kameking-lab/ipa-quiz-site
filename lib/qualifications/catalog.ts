@@ -1789,6 +1789,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["外国語試験・適性試験Ⅰの過年度の補充"],
   },
   {
+    slug: "homusho-senmonshokuin", examCode: "homusho-senmonshokuin", shortName: "法務省専門職員（人間科学）", fullName: "法務省専門職員（人間科学）採用試験",
+    domain: "legal", administrator: "人事院",
+    officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_19.html",
+    officialReuseTermsUrl: "https://www.jinji.go.jp/shinsei/notice.html",
+    status: "live",
+    reuseSummary: "2026年度の矯正心理専門職の専門試験・必須問題のうち、公式冊子に本文がある19問を収録。",
+    attributionTemplate: "出典：人事院「法務省専門職員（人間科学）採用試験 専門試験（多肢選択式）」。解説は過去問AIの独自作成。",
+    remainingWork: ["2026年度の法務教官・保護観察官の必須部分と2025・2024年度の専門択一の補充"],
+  },
+  {
     slug: "rodo-kijun-kantokukan", examCode: "rodo-kijun-kantokukan", shortName: "労働基準監督官", fullName: "労働基準監督官採用試験",
     domain: "legal", administrator: "人事院",
     officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_23.html",

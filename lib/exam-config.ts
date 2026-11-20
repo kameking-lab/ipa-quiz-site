@@ -1999,6 +1999,12 @@ caremanager: {
         { session: "tekisei", urlSlug: "tekisei", expectedQuestions: 60, label: "適性試験Ⅰ", categories: ["記憶検査", "空間関係検査Ⅰ", "空間関係検査Ⅱ"] },
     ], seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
 },
+"homusho-senmonshokuin": {
+    code: "homusho-senmonshokuin", nameFull: "法務省専門職員（人間科学）採用試験", urlSlug: "homusho-senmonshokuin", level: "advanced",
+    sessions: [
+        { session: "psychology", urlSlug: "psychology", expectedQuestions: 20, label: "専門試験（矯正心理専門職の必須問題）", categories: ["認知心理学", "学習心理学", "感情心理学", "人格心理学", "心理検査", "発達心理学", "社会心理学", "臨床心理学", "心理統計"] },
+    ], seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
+},
 "rodo-kijun-kantokukan": {
     code: "rodo-kijun-kantokukan", nameFull: "労働基準監督官採用試験", urlSlug: "rodo-kijun-kantokukan", level: "advanced",
     sessions: [
