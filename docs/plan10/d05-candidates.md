@@ -21,6 +21,8 @@
 | 神奈川県 | 997人 | 調理師試験 | 2025 | [問題](https://www.pref.kanagawa.jp/documents/5214/r7mondai.pdf)・[正答](https://www.pref.kanagawa.jp/documents/5214/r7kaitou.pdf) |
 | 神奈川県 | 997人 | 調理師試験 | 2024 第2回 | [問題](https://www.pref.kanagawa.jp/documents/5214/r6_2_mondai.pdf)・[正答](https://www.pref.kanagawa.jp/documents/5214/r6_2_kaitou.pdf) |
 | 神奈川県 | 997人 | 調理師試験 | 2024 第1回 | [問題](https://www.pref.kanagawa.jp/documents/5214/r6_1_mondai.pdf)・[正答](https://www.pref.kanagawa.jp/documents/5214/r6_1_kaitou.pdf) |
+| 神奈川県 | 997人 | 調理師試験 | 2023 第2回 | [公式問題の保存版](https://web.archive.org/web/20260213072312id_/https://www.pref.kanagawa.jp/documents/5214/r5_2_mondai.pdf)・[公式正答の保存版](https://web.archive.org/web/20260213065258id_/https://www.pref.kanagawa.jp/documents/5214/r5_2_kaitou.pdf) |
+| 神奈川県 | 997人 | 調理師試験 | 2023 第1回 | [公式問題の保存版](https://web.archive.org/web/20250520164225id_/http://www.pref.kanagawa.jp/documents/5214/r5_1_mondai.pdf)・[公式正答の保存版](https://web.archive.org/web/20250519111329id_/http://www.pref.kanagawa.jp/documents/5214/r5_1_kaitou.pdf) |
 | 北海道 | 972人 | 調理師試験 | 2026 | [問題](https://www.pref.hokkaido.lg.jp/fs/1/3/2/2/4/0/7/1/_/R8%20%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf)・[正答](https://www.pref.hokkaido.lg.jp/fs/1/3/2/2/4/0/7/2/_/R8%20%E8%A7%A3%E7%AD%94.pdf) |
 | 北海道 | 972人 | 調理師試験 | 2025 | [問題](https://www.pref.hokkaido.lg.jp/fs/1/2/9/6/0/3/4/1/_/%E4%BB%A4%E5%92%8C7%E5%B9%B4%E5%BA%A6%20%E5%8C%97%E6%B5%B7%E9%81%93%E8%AA%BF%E7%90%86%E5%B8%AB%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf)・[正答](https://www.pref.hokkaido.lg.jp/fs/1/2/9/6/0/3/4/2/_/%E4%BB%A4%E5%92%8C7%E5%B9%B4%E5%BA%A6%20%E5%8C%97%E6%B5%B7%E9%81%93%E8%AA%BF%E7%90%86%E5%B8%AB%E8%A9%A6%E9%A8%93%E8%A7%A3%E7%AD%94.pdf) |
 | 北海道 | 972人 | 調理師試験 | 2024 | [問題](https://www.pref.hokkaido.lg.jp/fs/1/2/9/6/0/3/3/8/_/R6%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf)・[正答](https://www.pref.hokkaido.lg.jp/fs/1/2/9/6/0/3/3/3/_/03%20R6%20%E8%A7%A3%E7%AD%94.pdf) |
@@ -29,6 +31,7 @@
 | 静岡県 | 506人 | 調理師試験 | 2025 | [問題](https://www.pref.shizuoka.jp/_res/projects/default_project/_page_/001/024/968/r7chourishimondai.pdf)・[正答](https://www.pref.shizuoka.jp/_res/projects/default_project/_page_/001/024/968/r7chourishikaitou.pdf) |
 | 静岡県 | 506人 | 調理師試験 | 2024 | [問題](https://www.pref.shizuoka.jp/_res/projects/default_project/_page_/001/024/968/r6chorishishikenmondai.pdf)・[正答](https://www.pref.shizuoka.jp/_res/projects/default_project/_page_/001/024/968/r6chorishishikenkaito.pdf) |
 | 静岡県 | 506人 | 調理師試験 | 2023 | [問題](https://www.pref.shizuoka.jp/_res/projects/default_project/_page_/001/024/968/r5_chourishishikennmondai.pdf)・[正答](https://www.pref.shizuoka.jp/_res/projects/default_project/_page_/001/024/968/r5_chourishishikennseitou.pdf) |
+| 静岡県 | 506人 | 調理師試験 | 2022 | [公式問題の保存版](https://web.archive.org/web/20250519060836id_/https://www.pref.shizuoka.jp/_res/projects/default_project/_page_/001/024/968/r4tyourisikenmondai.pdf)・[公式正答の保存版](https://web.archive.org/web/20250517181018id_/https://www.pref.shizuoka.jp/_res/projects/default_project/_page_/001/024/968/r4tyouriseitou.pdf) |
 | 長野県 | 457人 | 調理師試験 | 2026 | [問題](https://www.pref.nagano.lg.jp/shokusei/sangyo/shiken/chorishi/documents/8chtest.pdf)・[正答](https://www.pref.nagano.lg.jp/shokusei/sangyo/shiken/chorishi/documents/8chseitou.pdf) |
 | 長野県 | 457人 | 調理師試験 | 2025 | [公式問題の保存版](https://web.archive.org/web/20251027082614id_/https://www.pref.nagano.lg.jp/shokusei/sangyo/shiken/chorishi/documents/7chtest.pdf)・[公式正答の保存版](https://web.archive.org/web/20251027073628id_/https://www.pref.nagano.lg.jp/shokusei/sangyo/shiken/chorishi/documents/7chseitou.pdf) |
 | 長野県 | 457人 | 調理師試験 | 2024 | [公式問題の保存版](https://web.archive.org/web/20250813030713id_/https://www.pref.nagano.lg.jp/shokusei/sangyo/shiken/chorishi/documents/6chtest.pdf)・[公式正答の保存版](https://web.archive.org/web/20250813042746id_/https://www.pref.nagano.lg.jp/shokusei/sangyo/shiken/chorishi/documents/6chseitou.pdf) |
@@ -39,22 +42,26 @@
 | 栃木県 | 361人 | 調理師試験 | 2022 | [問題](https://www.pref.tochigi.lg.jp/e07/documents/20230915105202.pdf)・[正答](https://www.pref.tochigi.lg.jp/e07/documents/20230915105225.pdf) |
 | 沖縄県 | 348人 | 調理師試験 | 2026 | [問題・正答](https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/027/372/r8cho_qa.pdf) |
 | 沖縄県 | 348人 | 調理師試験 | 2025 | [問題・正答](https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/027/372/r7cook_qa.pdf) |
+| 沖縄県 | 348人 | 調理師試験 | 2024 | [公式問題・正答の保存版](https://web.archive.org/web/20260120004355id_/https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/027/372/2024_cho_mondai_kaitou.pdf) |
+| 沖縄県 | 348人 | 調理師試験 | 2023 | [公式問題・正答の保存版](https://web.archive.org/web/20240831192049id_/https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/027/372/2023_cho_mondai_kaitou.pdf) |
 | 群馬県 | 263人 | 調理師試験 | 2026 | [問題](https://www.pref.gunma.jp/uploaded/attachment/716740.pdf)・[正答](https://www.pref.gunma.jp/uploaded/attachment/716743.pdf) |
 | 群馬県 | 263人 | 調理師試験 | 2025 | [問題](https://www.pref.gunma.jp/uploaded/attachment/678201.pdf)・[正答](https://www.pref.gunma.jp/uploaded/attachment/678203.pdf) |
 | 群馬県 | 263人 | 調理師試験 | 2024 | [問題](https://www.pref.gunma.jp/uploaded/attachment/678267.pdf)・[正答](https://www.pref.gunma.jp/uploaded/attachment/678265.pdf) |
+| 群馬県 | 263人 | 調理師試験 | 2023 | [公式問題の保存版](https://web.archive.org/web/20250415224349id_/https://www.pref.gunma.jp/uploaded/attachment/605802.pdf)・[公式正答の保存版](https://web.archive.org/web/20250415224407id_/https://www.pref.gunma.jp/uploaded/attachment/639313.pdf) |
+| 群馬県 | 263人 | 調理師試験 | 2022 | [公式問題の保存版](https://web.archive.org/web/20250415224813id_/https://www.pref.gunma.jp/uploaded/attachment/135044.pdf)・[公式正答の保存版](https://web.archive.org/web/20250415224349id_/https://www.pref.gunma.jp/uploaded/attachment/639315.pdf) |
 | 愛媛県 | 176人 | 調理師試験 | 2025 | [問題](https://www.pref.ehime.jp/uploaded/attachment/156910.pdf)・[正答](https://www.pref.ehime.jp/uploaded/attachment/156912.pdf) |
 | 愛媛県 | 176人 | 調理師試験 | 2024 | [問題](https://www.pref.ehime.jp/uploaded/attachment/125992.pdf)・[正答](https://www.pref.ehime.jp/uploaded/attachment/125994.pdf) |
 | 愛媛県 | 176人 | 調理師試験 | 2023 | [問題](https://www.pref.ehime.jp/uploaded/attachment/104177.pdf)・[正答](https://www.pref.ehime.jp/uploaded/attachment/104182.pdf) |
 | 愛媛県 | 176人 | 調理師試験 | 2022 | [問題](https://www.pref.ehime.jp/uploaded/attachment/104178.pdf)・[正答](https://www.pref.ehime.jp/uploaded/attachment/104183.pdf) |
-| 奈良県 | 342人（2024年度） | 調理師試験 | 2024 | [公式問題の保存版](https://web.archive.org/web/20260210214850id_/https://www.pref.nara.jp/secure/313671/R6cyori.pdf)・[公式正答の保存版](https://web.archive.org/web/20260210203325id_/https://www.pref.nara.jp/secure/313671/R6cyorikai.pdf) |
+| 奈良県 | 213人（2024年度） | 調理師試験 | 2024 | [公式問題の保存版](https://web.archive.org/web/20260210214850id_/https://www.pref.nara.jp/secure/313671/R6cyori.pdf)・[公式正答の保存版](https://web.archive.org/web/20260210203325id_/https://www.pref.nara.jp/secure/313671/R6cyorikai.pdf) |
 
 ## 原本の公開状況
 
 - 調理技術技能センターの公式一覧にある2023〜2025年度のPDFは取得時に403を返したため、委託元の岐阜県が公開している同センターの原本を取得した。 [岐阜県の問題・正答](https://www.pref.gifu.lg.jp/page/11051.html)
 - 調理技術技能センターの2026年度は12月18日公表予定。2022年度の原本は岐阜県が以前公開していた問題・正答のウェブアーカイブ保存版を取得した。 [2026年度の案内](https://chouri-ggc.or.jp/chourishishiken/all_delegation/)・[過去問題](https://chouri-ggc.or.jp/chourishishiken/past_questions/)・[2022年度旧問題リンク](https://chouri-ggc.or.jp/cms/wp-content/uploads/2022/12/%E3%80%90R04%E3%80%91%E8%AA%BF%E7%90%86%E5%B8%AB%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf)
-- 静岡県の2026年度は確認時点で原本・正答の掲載なし。2022年度も現行の公表一覧に掲載なし。 [静岡県の案内](https://www.pref.shizuoka.jp/kenkofukushi/eiseiyakuji/shokuanzen/shokushiken/1024968.html)
-- 神奈川県の公式掲載は直近4回分。2022・2023年度は公式の問題・正答を揃えて取得できなかった。 [神奈川県の過去問](https://www.pref.kanagawa.jp/docs/e8z/cnt/f4501/)
-- 長野県、沖縄県、群馬県は表にある年度分を取得した。長野県の2022・2023年度、沖縄県の2022〜2024年度、群馬県の2022・2023年度は公式の問題・正答を揃えて取得できなかった。長野県の2024・2025年度は公式PDFの保存版を取得した。沖縄県の2023・2024年度、群馬県の2023年度の旧PDFリンクは確認時に404を返した。 [長野県](https://www.pref.nagano.lg.jp/shokusei/sangyo/shiken/chorishi/ch_kakomon.html)・[沖縄県](https://www.pref.okinawa.jp/kurashikankyo/shoku/1004023/1027370/1027372.html)・[群馬県](https://www.pref.gunma.jp/site/shokunoanzen/8244.html)
+- 静岡県の2026年度は確認時点で原本・正答の掲載なし。2022年度は公式PDFの保存版を取得した。 [静岡県の案内](https://www.pref.shizuoka.jp/kenkofukushi/eiseiyakuji/shokuanzen/shokushiken/1024968.html)
+- 神奈川県の公式掲載は直近4回分。2023年度の2回分は公式PDFの保存版を取得した。2022年度は公式の問題・正答を揃えて取得できなかった。 [神奈川県の過去問](https://www.pref.kanagawa.jp/docs/e8z/cnt/f4501/)
+- 長野県、沖縄県、群馬県は表にある年度分を取得した。長野県の2022・2023年度、沖縄県の2022〜2024年度、群馬県の2023年度の2回分は公式PDFの保存版を取得した。2022年度は公式の問題・正答を揃えて取得できなかった。長野県の2024・2025年度は公式PDFの保存版を取得した。沖縄県の2023・2024年度、群馬県の2023年度の旧PDFリンクは確認時に404を返した。 [長野県](https://www.pref.nagano.lg.jp/shokusei/sangyo/shiken/chorishi/ch_kakomon.html)・[沖縄県](https://www.pref.okinawa.jp/kurashikankyo/shoku/1004023/1027370/1027372.html)・[群馬県](https://www.pref.gunma.jp/site/shokunoanzen/8244.html)
 - 愛媛県は2022〜2025年度の県実施分を公開。2026年度は調理技術技能センターの共通試験に移行した。 [愛媛県の試験案内](https://www.pref.ehime.jp/page/55585.html)
 - 奈良県は2025年度から関西広域連合の試験を実施。2024年度の県独自試験は公式PDFの保存版を取得した。2023年度の旧PDFリンクは確認時に403を返した。2022年度も問題・正答の原本を揃えて取得できなかった。 [2023年度問題・正答](https://www.pref.nara.jp/secure/313669/R5cyorikai.pdf)・[2024年度問題](https://www.pref.nara.jp/secure/313671/R6cyori.pdf)・[2024年度正答](https://www.pref.nara.jp/secure/313671/R6cyorikai.pdf)・[厚生労働省 令和6年度実績](https://www.mhlw.go.jp/content/10900000/001516201.pdf)
 - 福島県の2022年度は県独自実施。公式の問題と正答は揃えて取得できなかった。 [厚生労働省 令和4年度実績](https://www.mhlw.go.jp/content/10900000/001104940.pdf)
