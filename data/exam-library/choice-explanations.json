@@ -39283,5 +39283,1673 @@
         "url": "https://www.env.go.jp/chemi/rhm/current/03-01-01.html"
       }
     ]
+  },
+  "lckohyo-LC20242105-q1": {
+    "sourceHash": "320c7f7291331aaf02372322db875c50fff16a2c53847b62c3bf7b82e29a88d8",
+    "correctChoice": 2,
+    "summary": "同一物体内で高温部から低温部へ熱が移動するのは熱伝導である。熱伝達は固体表面と流体との間の熱移動を指す。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "熱の伝わり方を機構で区分すると、物体内部の熱伝導、固体と流体間の熱伝達、電磁波による放射伝熱になる。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "同一物体内で高温部から低温部へ熱が移動するのは熱伝導である。熱伝達は固体表面と流体との間の熱移動を指す。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "熱放射のエネルギーは電磁波で運ばれるため、対向面どうしが離れていても熱交換が生じ、真空中を隔てても伝わる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "高温流体から固体壁を経由して反対側の低温流体に至るまでの過程全体は、熱貫流または熱通過と呼ぶ。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "高温側の流体から壁への熱伝達、壁内部の熱伝導、壁から低温側流体への熱伝達が直列に重なる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov ボイラー及び圧力容器安全規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000033"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q2": {
+    "sourceHash": "98b2417d9412bb56f60d7664356e734f8aec371e788daa2f1e210685d0dc6748",
+    "correctChoice": 5,
+    "summary": "全半球形は曲面全体で圧力を膜応力として受けやすい。材質、径、厚さが同じなら全半球形の方が一般に強い。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "煙管を管穴に通し、管端を保持して水側と燃焼ガス側とを隔てる鏡板は、管を取り付ける機能から管板と呼ぶ。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "管端を拡径して固定するころ広げでは、管穴の内面に接触長さが必要であるため、厚さを確保しやすい平管板を用いる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "平板と曲面板があり、曲面板には周辺を丸めた皿形、半だ円体形、曲率が一定の全半球形などがある。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "平板に圧力が作用すると径の大きいものほど曲げの影響が大きいので、ステーで板を支えて負担を軽減する。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "全半球形は曲面全体で圧力を膜応力として受けやすい。材質、径、厚さが同じなら全半球形の方が一般に強い。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov ボイラー及び圧力容器安全規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000033"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q3": {
+    "sourceHash": "f7f8963b9a2d4cfe9b6f88aee8e3570c64467b1b7cbfec4e3b1ba19d076317bb",
+    "correctChoice": 3,
+    "summary": "エコノマイザは排ガスの余熱で給水を予熱する。燃焼用空気を予熱して熱回収する機器は空気予熱器である。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "温水用の水高計は水の圧力を測定する。一般的な圧力計と同様の検出機構を用い、水頭などで表示できる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "ガラスの溝で光が全反射を起こす蒸気部は明るく、光が水へ進む水部は暗く見えるため、境界から水位が分かる。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "エコノマイザは排ガスの余熱で給水を予熱する。燃焼用空気を予熱して熱回収する機器は空気予熱器である。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "高い温度の燃焼ガスで飽和蒸気に追加の熱を与え、その圧力に対応する飽和温度より高い過熱蒸気に変える。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "減圧装置は上流で発生した高圧蒸気を利用先で必要とする圧力に下げ、供給条件が変動しても下流圧力を調整する。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov ボイラー及び圧力容器安全規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000033"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q4": {
+    "sourceHash": "c8620d587e6ba86cbff9920b03064866753dd4d7b37fcef5a0e6587433730362",
+    "correctChoice": 3,
+    "summary": "引張試験の伸びは破断に至るまでの標点間の増加分を試験前の標点距離で割った値であり、破断後の長さで割らない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "外力が作用すると材料内部にそれに抗する力が生じる。断面の単位面積当たりのその内力が応力となる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "降伏点付近では荷重を増やさなくても変形が進み始める。弾性的な範囲を過ぎ、塑性変形が顕著になる境目の応力である。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "引張試験の伸びは破断に至るまでの標点間の増加分を試験前の標点距離で割った値であり、破断後の長さで割らない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "鋼材の高温強さは加熱された状態での強さを表し、一般に高温域で温度が上がると引張強さは低下する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "引張強さは最大の引張荷重を原断面積で割った値で、力をN、断面積をmm²で表せば単位はN/mm²になる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov ボイラー及び圧力容器安全規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000033"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q5": {
+    "sourceHash": "77141ef2d88c9a53a8c4dbc5882bd04d0d81b41c5e7913d6d70c702c7f8a56a4",
+    "correctChoice": 2,
+    "summary": "炭素3%は普通の溶接用鋼の組成を大きく超え鋳鉄に近い。ボイラーの溶接用鋼には炭素量を抑えた鋼を使う。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "炭素量の増加で鋼は硬く強くなる反面、溶接後の急冷で硬化組織ができやすくなり、溶接割れの危険が増す。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "炭素3%は普通の溶接用鋼の組成を大きく超え鋳鉄に近い。ボイラーの溶接用鋼には炭素量を抑えた鋼を使う。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "適量のマンガンは脱酸や組織の改善に役立つ。硫黄を硫化マンガンとして固定する作用も、鋼の性質の改善に寄与する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "けい素は溶鋼を脱酸し、残留したけい素は鋼を強化する。添加量が大きいと溶接性や加工性の低下を招く。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "リンが粒界などに偏析すると、特に低温側のじん性が低下する。そのため有害な不純物として含有量を制限する。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov ボイラー及び圧力容器安全規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000033"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q6": {
+    "sourceHash": "2784e365035db3f1ecbb0836b933121bd226e4b80e3c5e053e6bde8461f9c720",
+    "correctChoice": 4,
+    "summary": "規格は圧縮だけの部分を除き、応力集中箇所や著しい高温部、皿形鏡板のすみの丸みなどの曲げが著しい部分での溶接を避けるよう求める。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "例外は圧縮応力しか受けない部分であり、引張ではない。避けるべき条件は残留応力一般ではなく応力集中である。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "例外を引張とした点が違う。鏡板形状も、規格は局部曲げが大きくなる皿形鏡板のすみの丸みを例に挙げる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "圧縮応力のみの部分と皿形の例は合うが、規格が挙げるのは外力で応力が局部的に高まる応力集中箇所である。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "規格は圧縮だけの部分を除き、応力集中箇所や著しい高温部、皿形鏡板のすみの丸みなどの曲げが著しい部分での溶接を避けるよう求める。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "圧縮と応力集中は合うが、平鏡板には選択肢が想定する皿形鏡板のすみの丸みの形状がなく、規定の例とは異なる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov ボイラー及び圧力容器安全規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000033"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q7": {
+    "sourceHash": "7dc7a0fdb14f7b179e57ad3089a59cc7de2e32f943e226d74f70c49e07999931",
+    "correctChoice": 1,
+    "summary": "管ステーは先にころ広げをして管穴になじませてから溶接する。溶接後に拡径すると、完成した継手に負担がかかる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "管ステーは先にころ広げをして管穴になじませてから溶接する。溶接後に拡径すると、完成した継手に負担がかかる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "管ステーのすみ肉の脚長には4 mm以上と管厚以上の両条件があり、どちらも満たすよう大きい方を下限とする。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "ステー端を外面より内側に引っ込めないことは、要求される溶接形状を確保し、継手の状態を確かめる上でも重要である。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "火炎にさらされる側に端を過度に突出させないよう、板の外面からの突出は10 mm以内とする条件がある。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "ガセットステーを胴板に取り付けるときは、位置と継手形状に応じてK形、レ形、両側すみ肉のいずれかを用いる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov ボイラー及び圧力容器安全規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000033"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q8": {
+    "sourceHash": "d0257ecbdcb2bb05e77ce2351db10564d72ab1f62e9a146de9a4e385ed35ce65",
+    "correctChoice": 5,
+    "summary": "胴の周継手の重ね溶接には板厚の上限があり、18 mmの胴板は適用範囲を外れるのでこの工法を採用できない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "裏当金は裏側で溶融金属を支える補助部材である。規格では裏当金の取付部を重ね溶接で施工できるものに含める。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "蒸気を取り出すドームと胴の取付部は、胴板同士の長手継手と異なる取付部として重ね溶接を認める箇所である。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "穴の周辺などに取り付ける強め材は補強部材であり、規格が重ね溶接を認める取付部の例に挙げられる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "所定の厚さ以下の胴と鏡板との周継手には重ね溶接を適用できる。厚さ16 mmどうしの組合せは許容範囲に入る。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "胴の周継手の重ね溶接には板厚の上限があり、18 mmの胴板は適用範囲を外れるのでこの工法を採用できない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov ボイラー及び圧力容器安全規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000033"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q9": {
+    "sourceHash": "77e2584251f0261ace9879a693ceb111f16f95b4aaaecffcfce98af296a65329",
+    "correctChoice": 3,
+    "summary": "溶接順序の選定で変形を抑える点はよいが、材料や板厚により予熱が必要である。予熱を一律に省く点が適切でない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "欠陥を健全部まで除き、適切な形状の開先を作ることで、次の溶接で融合しやすくなり欠陥の再発を防げる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "割れ先端の少し先に穴を設けて先端の応力集中を緩和する手法がある。はつり中の割れ進展を防ぐことが目的となる。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "溶接順序の選定で変形を抑える点はよいが、材料や板厚により予熱が必要である。予熱を一律に省く点が適切でない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "はつり補修後はグラインダで余盛や段差を滑らかにする。形状を整えることで、継手表面の急な応力集中を抑えられる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "磁粉や浸透による探傷で補修面に残った割れなどを確認する。どの方法を使うかは材料や検出対象に応じて選ぶ。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov ボイラー及び圧力容器安全規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000033"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q10": {
+    "sourceHash": "9bafe9188805a8962306c9cc85dbc41c7763546fed59ecfe9de8e538ffc75fe3",
+    "correctChoice": 4,
+    "summary": "過熱管の取付部も漏止め溶接を適用できる箇所である。高温ガスの影響を理由に一律禁止する記述が誤りである。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "漏止め溶接は継手の気密を補うために施すものである。策定済みの強度を確保する主継手の代りにはならない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "のど厚を必要以上に大きくすると入熱と変形が増える。漏れを防ぐという目的を満たす範囲で小さくする。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "水管の取付部では、拡管などによる構造上の固定をしたうえで、気密を確保する漏止め溶接を行うことができる。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "過熱管の取付部も漏止め溶接を適用できる箇所である。高温ガスの影響を理由に一律禁止する記述が誤りである。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "漏止め溶接は本体の強度を担う厚肉継手と区別され、規格で溶接後熱処理を省略できるものとして扱われる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov ボイラー及び圧力容器安全規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000033"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q11": {
+    "sourceHash": "531cc5685c7c30edbb49a1e17c90990e8a69506daffd8b63d3ecf6a7b27063f5",
+    "correctChoice": 2,
+    "summary": "ビード下割れには拡散性水素、熱影響部の硬化及び引張応力が関わる。ジグで位置を保持するだけでは防止対策にならない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "部材を所定の位置に拘束すると溶接中の熱膨張や冷却時の収縮による相対変位が抑えられ、ひずみを減らせる。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "ビード下割れには拡散性水素、熱影響部の硬化及び引張応力が関わる。ジグで位置を保持するだけでは防止対策にならない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "ジグの当て面で部材の開先間隔や角度をそろえることで、溶接前の組立精度や溶接後の寸法精度が向上する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "位置決めや隙間の確認を繰り返す時間を短縮でき、同じ継手を数多く製作するときは工数の節減につながる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "作業のたびに部材の位置と姿勢を再現しやすくなるため、溶接部の形状や施工結果のばらつきを抑えられる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "文部科学省 公共建築工事標準仕様書（溶接材料・施工）",
+        "url": "https://www.mext.go.jp/a_menu/shisetu/eizen/04032202/020/001.pdf"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q12": {
+    "sourceHash": "0dd7bb457e8a29d4827f62a344bbdd7d2cd0de03a968a8a8898f8669a1c952c1",
+    "correctChoice": 2,
+    "summary": "長さを固定した大電流域では、電流が増すと電圧は上昇する傾向を示す。低電流域の垂下特性をそのまま延長できない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "鉄を電極とするアーク柱は高温のプラズマであり、溶接の熱源として約6000℃という温度の目安が用いられる。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "長さを固定した大電流域では、電流が増すと電圧は上昇する傾向を示す。低電流域の垂下特性をそのまま延長できない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "交流では周期ごとに電流がゼロ付近まで下がるため再点弧が必要となる。電流の向きが一定の直流と比べ維持しにくい。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "溶接材料を溶かして供給する方式では電極を正側にする棒プラスが用いられる。被覆棒では製品指定にも従う。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "この設問の直流アークの説明では、棒マイナスでは母材側への熱の供給が多くなり溶込みが大きくなる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "文部科学省 公共建築工事標準仕様書（溶接材料・施工）",
+        "url": "https://www.mext.go.jp/a_menu/shisetu/eizen/04032202/020/001.pdf"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q13": {
+    "sourceHash": "9eeefebcf586e64634877c64b71ce1152b0927f115aec647615b06597e817d6e",
+    "correctChoice": 4,
+    "summary": "ビードの終端のくぼみはクレータである。ブローホールはガスが金属内に閉じ込められた結果できる空洞をいう。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "母材は部材として接合の対象となる金属を指す。用語としては、溶断される対象の材料にも用いられる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "アークなどから熱を受けて液体になった金属が、電極の直下や周囲にたまる部分を溶融池と呼ぶ。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "被覆剤やフラックスなどから生じる非金属質の生成物がスラグで、溶接ビード表面などに現れる。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "ビードの終端のくぼみはクレータである。ブローホールはガスが金属内に閉じ込められた結果できる空洞をいう。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "すみ肉溶接の根元に当たるルートから、ビードと母材の境界である止端までを母材側の面に沿って測った距離が脚長である。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "文部科学省 公共建築工事標準仕様書（溶接材料・施工）",
+        "url": "https://www.mext.go.jp/a_menu/shisetu/eizen/04032202/020/001.pdf"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q14": {
+    "sourceHash": "ae7fb73643a3d9339a3fb488cc0a321a299cbc530d2456d37210121b53ca8072",
+    "correctChoice": 3,
+    "summary": "多層法では先にできた層が次層の入熱で再加熱され、結晶組織が細かくなりやすいので、層数を増すほど粗くなるとはいえない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "前進法では全体の進行と各ビードの向きが一致する。後退法よりひずみや残留応力が終端側に累積しやすい。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "対称法では中央を起点に両端側へ進め、収縮を両側に分ける一つの区間は200～300 mm程度が目安となる。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "多層法では先にできた層が次層の入熱で再加熱され、結晶組織が細かくなりやすいので、層数を増すほど粗くなるとはいえない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "単層は薄板や小さい脚長で用いられ、サブマージアーク溶接では大きな溶込みを得られるためより厚い板にも適用できる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "飛石法は連続する区間を一度に溶接しないため、局所的な熱の集中や一方向への収縮が減り、変形を抑えやすい。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "文部科学省 公共建築工事標準仕様書（溶接材料・施工）",
+        "url": "https://www.mext.go.jp/a_menu/shisetu/eizen/04032202/020/001.pdf"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q15": {
+    "sourceHash": "bd5350fe6ed4d41bdaaf4e9015e863da237e46ec75ccbeab3552cb7f77aef2ad",
+    "correctChoice": 1,
+    "summary": "基準線より上の寸法9 mmは矢の反対側を表す。矢の側の開先深さは、基準線より下に記された16 mmである。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "基準線より上の寸法9 mmは矢の反対側を表す。矢の側の開先深さは、基準線より下に記された16 mmである。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "基準線の下に示された開先角度は矢の側の指定である。図の下側の角度の表示は60°と読める。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "矢の反対側の指示は基準線の上に書かれており、そこに記された90°が反対側の開先角度を示す。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "開先の中央に記された寸法3は接合前に部材の根元で空ける距離を指し、ルート間隔が3 mmになる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "図の仕上げ方法を表す符号Cはチッピングを指定しているので、指定された輪郭になるようにチッピングで仕上げる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "文部科学省 公共建築工事標準仕様書（溶接材料・施工）",
+        "url": "https://www.mext.go.jp/a_menu/shisetu/eizen/04032202/020/001.pdf"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q16": {
+    "sourceHash": "830b9d288ae93d7eb623f50192e10d00ec525a96aa37f9d9cf8fca0bd2e10c8b",
+    "correctChoice": 3,
+    "summary": "適切な予熱や後熱は硬化や割れを抑えて、じん性の確保に役立つ。切欠きじん性を低下させることはその目的に当たらない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "予熱で急冷を避け、条件に応じて後熱で水素の放出を促すと、低温割れなどの発生を抑えやすくなる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "溶接直後の冷却速度が緩やかになれば急冷でできる硬い組織を抑制でき、溶接金属や熱影響部の硬化を防げる。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "適切な予熱や後熱は硬化や割れを抑えて、じん性の確保に役立つ。切欠きじん性を低下させることはその目的に当たらない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "温度差による局部的な膨張や収縮を抑え、施工中と冷却後に残る溶接による角変形などを小さくする効果がある。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "冷却時の温度勾配の緩和や熱処理による応力緩和によって、溶接部に残る引張方向の応力を減らすことができる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "文部科学省 公共建築工事標準仕様書（溶接材料・施工）",
+        "url": "https://www.mext.go.jp/a_menu/shisetu/eizen/04032202/020/001.pdf"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q17": {
+    "sourceHash": "5fe77b8ce421a391aa920e6ffe4571a0362992f3eb516a53a824f4f22a3a5fc8",
+    "correctChoice": 5,
+    "summary": "インサートリングは一方からの裏波溶接などに使う挿入材である。はつった裏面を溶接する工程の必須部材ではない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "初層のルートは融合不足や欠陥が生じやすい。反対側から健全な溶着部まで取り除いてから溶接すると継手を確実にできる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "研削、工作機械による切削、アークで溶かして吹き飛ばすエアアークガウジングは、いずれも裏側の除去に用いる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "エアアークガウジングではアークで金属を溶融し空気で排出するので、裏溶接に必要な溝を作りやすい。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "溝の表面に残ったスラグ状の付着物や硬い層は次の溶接の妨げとなるため、研削して健全な面を露出させる。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "インサートリングは一方からの裏波溶接などに使う挿入材である。はつった裏面を溶接する工程の必須部材ではない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "文部科学省 公共建築工事標準仕様書（溶接材料・施工）",
+        "url": "https://www.mext.go.jp/a_menu/shisetu/eizen/04032202/020/001.pdf"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q18": {
+    "sourceHash": "273474cb92c5e4411b94c72d41e480b60992a4320eb9d28a48b107ad8c5b4674",
+    "correctChoice": 5,
+    "summary": "エンドタブは本体の外側で開始時や終了時の不安定な部分を受ける部材であり、重要な長手継手にも使用する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "粒状フラックスで覆った部分の内部でアークが発生し、ワイヤの送給と走行を連続させて溶接する方式である。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "ワイヤは主な溶着金属を供給し、フラックスは保護や成分調整に関わる。組合せによって金属の性質やビード形状が変わる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "開先の形や根元の間隔に誤差があると熱の集中と溶着量が設定からずれ、溶込み過多による溶け落ちが起こり得る。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "厚板ではU形開先で継手の断面積と溶着量を抑えやすい。必要な厚さまで何層にも分けて溶接を積み上げていく。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "エンドタブは本体の外側で開始時や終了時の不安定な部分を受ける部材であり、重要な長手継手にも使用する。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "文部科学省 公共建築工事標準仕様書（溶接材料・施工）",
+        "url": "https://www.mext.go.jp/a_menu/shisetu/eizen/04032202/020/001.pdf"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q19": {
+    "sourceHash": "7fb26318602855d6e8860abefcd52fe70f3b863a290e424320d475673f5f1842",
+    "correctChoice": 2,
+    "summary": "アルミニウムは表面酸化膜を除くクリーニング作用も必要なので一般に交流TIGを用いる。直流で棒マイナスとする記述は一般的な施工法と合わない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "タングステンの非消耗電極を使う方法と、金属ワイヤを電極として溶かす方法があり、どちらも保護ガスで溶接部を覆う。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "アルミニウムは表面酸化膜を除くクリーニング作用も必要なので一般に交流TIGを用いる。直流で棒マイナスとする記述は一般的な施工法と合わない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "MIGは消耗性の細いワイヤを棒プラスで用い、断面積当たりの電流が大きい。被覆アークと比べて高い溶着速度を得られる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "MIGはアルゴンなどの不活性ガスで保護しながら、母材に応じた金属ワイヤを電極兼溶加材として連続供給する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "活性ガスである二酸化炭素だけを保護ガスとして用いるMAGの方式は、炭酸ガスアーク溶接と呼ばれる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "文部科学省 公共建築工事標準仕様書（溶接材料・施工）",
+        "url": "https://www.mext.go.jp/a_menu/shisetu/eizen/04032202/020/001.pdf"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q20": {
+    "sourceHash": "e6156596c0473ce2e7f64062aed0b09ba1cb73c6fa07df292e6c3ebff0a61c04",
+    "correctChoice": 1,
+    "summary": "一般的な目安は約300 mm間隔で一箇所20～50 mm程度の長さである。記述は各部の長さと間隔を逆にしている。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "一般的な目安は約300 mm間隔で一箇所20～50 mm程度の長さである。記述は各部の長さと間隔を逆にしている。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "本溶接に取り込まれることのある仮付けにも、母材と溶接材料に合う条件を使い、割れや溶込み不良を残さない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "片側から一方向に仮付けを進めると収縮が偏って開先が変形することがあるため、できるだけ対称に配置する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "両側から溶接して裏はつりを行う継手では、そのはつりで除去される側にタックを置いて本溶接部に影響しにくくする。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "材料や溶接条件からタック部の品質が本溶接に適さないときは、削り取って健全な状態から本溶接する。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "文部科学省 公共建築工事標準仕様書（溶接材料・施工）",
+        "url": "https://www.mext.go.jp/a_menu/shisetu/eizen/04032202/020/001.pdf"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q21": {
+    "sourceHash": "42aed36245090e7cb2ef06d776d167b92a1a1939058100885a974e2a51f020ec",
+    "correctChoice": 5,
+    "summary": "硫黄は溶接中に低融点化合物を形成し、高温割れの原因になり得る。機械的性質を改善するために添加する成分ではない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "心線はアークを維持する電極であり、自らも溶けて継手に金属を供給する。その金属が冷えて継手を接合する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "心線の区間ごとに成分や材質が偏っていると溶接金属の品質に差が生じるため、均一で欠陥の少ない素材を用いる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "軟鋼用の心線には成分が管理された良質の炭素鋼を用いる。不純物を抑えて溶接金属の健全性を保つ。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "炭素が多いと溶融金属中でガスを生じやすくなるので、気孔などを抑えるため一般の炭素鋼材より低炭素の素材を用いる。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "硫黄は溶接中に低融点化合物を形成し、高温割れの原因になり得る。機械的性質を改善するために添加する成分ではない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "文部科学省 公共建築工事標準仕様書（溶接材料・施工）",
+        "url": "https://www.mext.go.jp/a_menu/shisetu/eizen/04032202/020/001.pdf"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q22": {
+    "sourceHash": "16ca90f1393f95f714c0ffb762af64069657777e08f2901db2c21dce10642ad2",
+    "correctChoice": 3,
+    "summary": "高セルロース系は被覆材からガスを多く発生させるため、水素量が最も少ないという説明は誤りである。割れ感受性が高い場合は低水素系が適する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "イルミナイト系は姿勢を選びにくく作業性がよい。溶着金属の機械的な性質も良好なため一般用に利用される。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "ライムチタニヤ系は、ライムとチタン酸化物系の被覆で安定した操作性を得やすく、立向上進を含む各姿勢で使える。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "高セルロース系は被覆材からガスを多く発生させるため、水素量が最も少ないという説明は誤りである。割れ感受性が高い場合は低水素系が適する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "高酸化チタン系はアークを安定させて操作しやすく、姿勢を選びにくい。薄鋼板用にも使われる代表的な被覆である。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "鉄粉酸化鉄系は大きな溶着量を得やすく、溶融金属を保持しやすい下向や水平すみ肉の施工に主に用いる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "文部科学省 公共建築工事標準仕様書（溶接材料・施工）",
+        "url": "https://www.mext.go.jp/a_menu/shisetu/eizen/04032202/020/001.pdf"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q23": {
+    "sourceHash": "d7845d2725e6285cdc5d9e931b011419bf0c0c833e1fe62ffa6b896890b72727",
+    "correctChoice": 4,
+    "summary": "イルミナイト系の標準的な乾燥温度として試験が想定するのは100～150℃程度であり、150～200℃とする記述は適切でない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "被覆剤が吸湿するとアーク中で水素を生じ、溶接部に水素が入ることで割れや気孔などの溶接欠陥を招くことがある。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "床からの湿気を避けるため溶接棒はパレットや棚で保管する。貯蔵室を乾燥状態にし、結露を防ぐことも重要である。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "被覆の種類に合わせてメーカーの指定温度で乾燥する。指定時間の範囲で加熱して被覆剤の水分を減らす。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "イルミナイト系の標準的な乾燥温度として試験が想定するのは100～150℃程度であり、150～200℃とする記述は適切でない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "低水素系の棒は放置して吸湿した場合に再乾燥するが、被覆の品質が劣化するため何度でも再乾燥できるわけではない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "文部科学省 公共建築工事標準仕様書（溶接材料・施工）",
+        "url": "https://www.mext.go.jp/a_menu/shisetu/eizen/04032202/020/001.pdf"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q24": {
+    "sourceHash": "c8dfd052023362c32f89a87ebfdf6de6a5fac7e89c6af6b0098a5ff881995b7a",
+    "correctChoice": 5,
+    "summary": "異なる組織が接している溶接部では、局部電池や応力などにより母材より腐食が進みやすい場合があり、一般に腐食しにくいとはいえない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "溶接金属は一度溶けて凝固した金属なので鋳造に似た組織を持つ。冷却履歴によって母材より少し硬くなる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "炭素量だけで強さやじん性が決まるわけではない。成分を調整した溶接金属は低炭素でも良好な機械的性質を得られる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "単層の溶接金属では凝固が融合境界側から進行し、断面に枝が分かれたようなデンドライト組織が形成される。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "溶融部に近い場所では母材の温度が最も高くなり、結晶粒が粗くなる。冷却時に硬化しやすい場所でもある。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "異なる組織が接している溶接部では、局部電池や応力などにより母材より腐食が進みやすい場合があり、一般に腐食しにくいとはいえない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "文部科学省 公共建築工事標準仕様書（溶接材料・施工）",
+        "url": "https://www.mext.go.jp/a_menu/shisetu/eizen/04032202/020/001.pdf"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q25": {
+    "sourceHash": "48dbcb2849260da515aa27778c3a50307d7cc2e1578ed7a9fa0d674897500010",
+    "correctChoice": 3,
+    "summary": "電流が不足すると溶込みが浅くなり、溶融金属の流動性も不足してスラグが残りやすい。大きすぎる電流を代表的原因とする記述が適切でない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "速度が遅すぎたり電流が小さすぎたりすると、母材への融合が不十分なまま溶融金属が止端を越えて重なることがある。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "狭い開先ではアークがルートに届きにくい。電流が不足すると溶込みが浅くなり、ルートに未溶着部が残る。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "電流が不足すると溶込みが浅くなり、溶融金属の流動性も不足してスラグが残りやすい。大きすぎる電流を代表的原因とする記述が適切でない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "アークが長すぎると保護状態が悪化し、過大な電流などで溶融池のガスの発生状況も変わり、凝固時に気泡が残ることがある。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "電流が過大だとビードの縁の母材が強く溶かされ、溶着金属で埋まりきらない溝状のアンダカットが生じやすい。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "文部科学省 公共建築工事標準仕様書（溶接材料・施工）",
+        "url": "https://www.mext.go.jp/a_menu/shisetu/eizen/04032202/020/001.pdf"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q26": {
+    "sourceHash": "f1e9a37bc2175ab4405f3dfcc9d98f5bbd5895a5e98fa9c8647712df76576bde",
+    "correctChoice": 1,
+    "summary": "ビード下割れはビード直下にある母材の熱影響部に生じる。急冷による硬化と拡散性水素などが発生に関わる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "ビード下割れはビード直下にある母材の熱影響部に生じる。急冷による硬化と拡散性水素などが発生に関わる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "ビード縦割れは溶着ビードに沿って長手方向に走る割れであり、母材のビード下に生じる割れと区別する。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "クレータ割れはアークを止めた終端のくぼみにできる。終端の溶接金属が凝固するときの収縮が関係する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "内部割れは外表面から見えない位置にある割れを指す。この設問が問うビード直下の熱影響部の割れには固有の名称がある。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "硫黄割れは溶接金属に集まった硫黄などが低融点の化合物を作って起こる、凝固に伴う高温割れの一種である。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "文部科学省 公共建築工事標準仕様書（溶接材料・施工）",
+        "url": "https://www.mext.go.jp/a_menu/shisetu/eizen/04032202/020/001.pdf"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q27": {
+    "sourceHash": "9b9286368d7309e19842f1dc18159d00e6ff199868f9bb814164f63d144a235c",
+    "correctChoice": 4,
+    "summary": "融合不良は溶接金属が母材や前層と十分に溶け合わず境界に残るきずであり、溶込み不良などとともに第2種に属する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "割れは細長く見える場合でも、継手強度に大きく影響することから独立した第3種のきずとして扱われる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "丸い気孔であるブローホールは、透過像で比較的丸く見える第1種のきずに区分される。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "タングステンは鋼より放射線の減弱が大きく、巻込みによって透過写真に特有の像が出る。第4種のきずとして扱う。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "融合不良は溶接金属が母材や前層と十分に溶け合わず境界に残るきずであり、溶込み不良などとともに第2種に属する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "アンダカットはビードの止端に沿って表面に形成される溝である。設問のきず分類で問われる融合不良とは発生部位と形態が異なる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "文部科学省 公共建築工事標準仕様書（溶接材料・施工）",
+        "url": "https://www.mext.go.jp/a_menu/shisetu/eizen/04032202/020/001.pdf"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q28": {
+    "sourceHash": "76bb3b029a4b39460987e40a31a7af868e6e79cc6e11bb6c3d0aa67e15f33372",
+    "correctChoice": 2,
+    "summary": "曲げ試験では試験片の表面に大きなひずみを与え、きずの開口や割れの発生を確認することで継手の変形能力を調べる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "破面試験は試験片を破断させて断面に現れたスラグ巻込みなどの内部状態を観察するため、曲げ延性の試験とは区別する。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "曲げ試験では試験片の表面に大きなひずみを与え、きずの開口や割れの発生を確認することで継手の変形能力を調べる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "疲労試験は繰返し荷重にどの程度耐えられるかを調べる。単調に曲げ変形を与えるときの延性の測定ではない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "硬さ試験は圧子を押し込むときの局所の抵抗を測る。試験片全体が割れずに曲がる能力とは異なる性質である。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "溶接割れ試験は、一定の拘束や施工条件で割れができる傾向を調べるものであり、所定の変形に耐えるかを直接評価しない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "文部科学省 公共建築工事標準仕様書（溶接材料・施工）",
+        "url": "https://www.mext.go.jp/a_menu/shisetu/eizen/04032202/020/001.pdf"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q29": {
+    "sourceHash": "0dff499dfa5b0d7e4a30bcf655964522234b7133666875d6a68b57ebc7d87dee",
+    "correctChoice": 4,
+    "summary": "蛍光浸透液の蛍光を観察する際に照射するのは紫外線である。赤外線を用いるとする記述が適切でない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "表面に開いたきずに浸透液が入るので、次層で覆われる前の初層や、仕上がった最終層の表面検査に用いられる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "液体が毛管現象で入れるのは表面まで開いているきずである。表面につながっていない内部欠陥には適用できない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "赤い染色浸透液を使うと、きずに残った液が現像剤に吸い出され、明るい背景の上に赤色の指示模様が現れる。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "蛍光浸透液の蛍光を観察する際に照射するのは紫外線である。赤外線を用いるとする記述が適切でない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "浸透探傷は材質の磁性に依存しない。試験面が緻密で清浄なら、非磁性金属にも磁性のある金属にも使える。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "文部科学省 公共建築工事標準仕様書（溶接材料・施工）",
+        "url": "https://www.mext.go.jp/a_menu/shisetu/eizen/04032202/020/001.pdf"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q30": {
+    "sourceHash": "dd6d2a619fb2112c9fe7ac9d5163545837763027b04ac0bbf6ff86a2586be404",
+    "correctChoice": 4,
+    "summary": "垂下特性で溶接電圧の変化に対し電流を安定させる。交流機では無効電力の割合を小さくするため、良好な力率も求められる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "定電圧特性ではアーク長に応じて電流が変わりやすく、ワイヤ送給式で用いる。手溶接に必要なのは垂下特性である。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "ほぼ一定の電流を維持する点は関連するが、ここで問題が問う組合せは垂下特性と、交流溶接機の力率である。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "交流溶接機には整流回路を使って直流化する効率という条件を組み合わせない。交流について要求されるのは良好な力率である。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "垂下特性で溶接電圧の変化に対し電流を安定させる。交流機では無効電力の割合を小さくするため、良好な力率も求められる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "垂下特性は合っているが、設問の最後は交流機の電力利用について尋ねており、直流機の整流効率の組合せは該当しない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "文部科学省 公共建築工事標準仕様書（溶接材料・施工）",
+        "url": "https://www.mext.go.jp/a_menu/shisetu/eizen/04032202/020/001.pdf"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q31": {
+    "sourceHash": "ba24c57ea4877419340eaf02ab67e51313dccbae7ed42f21cc5fd4c9029d6c00",
+    "correctChoice": 5,
+    "summary": "発生熱量はI²Rt＝3²×11×80＝7,920 J。選択肢の有効数字に丸めると7.9×10³ Jである。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "電流の二乗に抵抗と時間を掛けるので、熱量は3²×11×80 Jとなる。2.6×10² Jは計算結果より大幅に小さい。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "2.6×10³ Jは電流を二乗せず一度だけ掛けた値に近い。電力をI²Rで表すと電流は二乗して掛ける。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "2.6×10⁴ Jは正しい値より3倍以上大きい。抵抗11 Ωと電流の二乗9 A²から電力は99 Wと求める。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "7.9×10² Jは99 Wに約8秒を掛けた場合の値である。通電時間80秒に対応する熱量はその10倍程度になる。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "発生熱量はI²Rt＝3²×11×80＝7,920 J。選択肢の有効数字に丸めると7.9×10³ Jである。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "文部科学省 公共建築工事標準仕様書（溶接材料・施工）",
+        "url": "https://www.mext.go.jp/a_menu/shisetu/eizen/04032202/020/001.pdf"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q32": {
+    "sourceHash": "61326282e320e1cd3f542f6493ade0390db075d04c5f2039ecd6537f2174bb36",
+    "correctChoice": 1,
+    "summary": "交流アーク溶接機は主に変圧器で構成できる。整流器などを必要とする直流機に比べて、一般的には構造が簡単である。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "交流アーク溶接機は主に変圧器で構成できる。整流器などを必要とする直流機に比べて、一般的には構造が簡単である。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "交流では電極側と母材側の正負が周期的に入れ替わるので、直流のように一定の極性を選んで使い続けられない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "単相交流の溶接機を三相電源の一部の相に接続すると、それぞれの相にかかる負荷が均等にならないことがある。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "電流が反転するたびに瞬時にゼロとなりアークが消えやすくなるため、交流では直流よりアークが不安定になりやすい。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "交流では磁場の方向も周期的に変わるため、直流の一方向の磁場によってアークが偏向する磁気吹きが起こりにくい。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov 労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q33": {
+    "sourceHash": "404f252b0e1cbcaed182abe1e88c430dd871f8178268ac973eb02c250ed959dc",
+    "correctChoice": 3,
+    "summary": "接地、規格に適合する絶縁ホルダ、狭所での交流機の自動電撃防止装置は、いずれも感電やアーク作業災害の防止に役立つ。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "機器の接地は感電対策として適切だが、アーク光に対する保護には遮光性能が求められ、無色でよいとするBが誤りである。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "接地と絶縁されたホルダは必要だが、Bの無色の眼鏡でよいという説明が不適切であり、狭所で必要なDも抜けている。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "接地、規格に適合する絶縁ホルダ、狭所での交流機の自動電撃防止装置は、いずれも感電やアーク作業災害の防止に役立つ。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "狭い金属容器内で自動電撃防止装置を使う点は正しいが、アークに対する保護眼鏡を無色にするBは適切でない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "絶縁性能のあるホルダと電撃防止装置は必要である。溶接機外箱などの確実な接地というAの対策も含める必要がある。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov 労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q34": {
+    "sourceHash": "da9671fc98b099609783b783b8b0348a398a70aaf4c9d1c7f62f28288039ce73",
+    "correctChoice": 2,
+    "summary": "作業開始前の測定、主任者の選任と職務の履行、作業者への特別教育が必要である。防じんマスクでは酸素を補給できない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "当日の酸素測定も作業主任者の選任も必要だが、作業者への特別教育も行う必要があり、この組合せだけでは不足する。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "作業開始前の測定、主任者の選任と職務の履行、作業者への特別教育が必要である。防じんマスクでは酸素を補給できない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "酸素濃度測定と教育は適切だが、Cの防じんマスクは粉じんを捕集する器具であり、酸素欠乏を防ぐ機能を持たない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "作業主任者を選任する点は適切である。しかし酸素が不足する場所で防じんマスクを装着しても、酸素欠乏症は防げない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "特別教育は必要である。防じんマスクの装着を対策に含める点が適切でなく、事前測定と主任者の選任も必要となる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov 酸素欠乏症等防止規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000042"
+      },
+      {
+        "title": "e-Gov 労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q35": {
+    "sourceHash": "f87c795614224f3c95033434e0b3823eeacd0a4ca894847fd3cd1d00ecb0e58b",
+    "correctChoice": 2,
+    "summary": "溶接ヒュームと一酸化炭素は有害で、高温多湿の場所では熱中症にも注意が必要である。紫外線についてのDは適切でない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "低水素系のヒュームによる症状と換気不十分下の一酸化炭素中毒は想定されるが、急速に悪化し得る熱中症も含める必要がある。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "溶接ヒュームと一酸化炭素は有害で、高温多湿の場所では熱中症にも注意が必要である。紫外線についてのDは適切でない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "ヒュームによる有害作用はあるが、アークの紫外線では主に角膜などが障害される。Dのように影響の中心を網膜とするのは適切でない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "一酸化炭素と熱中症は注意すべきだが、紫外線の説明が誤っている。炭酸ガスアーク溶接では換気も必要になる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "熱中症は短時間で悪化し得るが、紫外線に関するDは誤りである。ヒュームや一酸化炭素による健康障害も対象となる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov 労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q36": {
+    "sourceHash": "d8fef7c2fec130ffe56544de37ff1e4a017e4771927644e6bf2fee2c7787c12f",
+    "correctChoice": 3,
+    "summary": "普通ボイラー溶接士は溶接部の厚さが25 mm以下であれば、第一種圧力容器の胴の長手継手の溶接も担当できる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "管台の取付けは、部位の厚さだけで普通ボイラー溶接士の業務から外れるとはいえない。厚い部材での付属部品取付けには例外がある。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "欠陥修繕にも資格による就業制限が適用され、軽微な溶接を除き所定の資格が必要となる。深さにかかわらず無資格でよいわけではない。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "普通ボイラー溶接士は溶接部の厚さが25 mm以下であれば、第一種圧力容器の胴の長手継手の溶接も担当できる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "自動溶接機を用いて行う溶接は、手動の業務と異なり設問の資格による就業制限の対象から除かれる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "溶接部の厚さが25 mm以下の周継手は、普通ボイラー溶接士の資格で行える。特別の資格に限る条件ではない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov ボイラー及び圧力容器安全規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000033"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q37": {
+    "sourceHash": "aed675adae6821aa04991e2ab44160433b8b27179192399fca63d0a9d6be8b0c",
+    "correctChoice": 4,
+    "summary": "構造検査は原則として登録製造時等検査機関が行い、溶接ボイラーは構造検査に先立って溶接検査を受ける必要がある。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "構造検査の前に溶接検査を受ける点は正しいが、構造検査を行うのは原則として登録製造時等検査機関である。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "所轄労働基準監督署長はこの構造検査の原則的な実施者ではない。落成検査はボイラーの設置後の段階の検査である。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "登録製造時等検査機関が原則として構造検査を実施するが、性能検査は使用中のボイラーに関するもので先行検査には当たらない。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "構造検査は原則として登録製造時等検査機関が行い、溶接ボイラーは構造検査に先立って溶接検査を受ける必要がある。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "実施機関は正しいが、溶接で製造したものに要求される先行検査は接合部の溶接検査であり、使用検査ではない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov ボイラー及び圧力容器安全規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000033"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q38": {
+    "sourceHash": "a4ec771702f62dc50deb07a43e866c9d5e2ebf43847b63c111cb463aed28a438",
+    "correctChoice": 3,
+    "summary": "水管ボイラーでは水管などの規定された伝熱面を対象とし、ドラムの面積自体は伝熱面積に算入しない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "立てボイラーの横管では、燃焼ガスが管の外側に当たり水は管の内側にあるため、横管の外径側の面積を用いる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "煙管内を高温の燃焼ガスが通り、外側を水が取り囲むため、煙管では燃焼ガスと接する内径側で算定する。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "水管ボイラーでは水管などの規定された伝熱面を対象とし、ドラムの面積自体は伝熱面積に算入しない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "貫流ボイラーは燃焼室入口から過熱器入口までの水管について、燃焼ガスなどと接する側の面積を算定対象とする。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "エコノマイザにも熱交換面はあるが、法令上のボイラーの伝熱面積を算定するときにはその伝熱面は含めない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov ボイラー及び圧力容器安全規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000033"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q39": {
+    "sourceHash": "84e76b6fd0cc1caff82ea6a5e96fb17bb8a58cef049e4c4697c430c17afe9e31",
+    "correctChoice": 2,
+    "summary": "水圧試験に必要な準備は構造検査側の規定であり、溶接検査の受検者が行う準備として挙げられていない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "構造検査では各部を検査担当者が観察・計測できるように、受検者がボイラーを検査しやすい場所と位置に置く。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "水圧試験に必要な準備は構造検査側の規定であり、溶接検査の受検者が行う準備として挙げられていない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "溶接検査の機械試験を行えるよう、試験板などから所定の方法で試験片を作って用意することが求められる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "溶接部の内部状態を確かめる放射線検査を実施できるよう、溶接検査の受検者には事前の準備が求められる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "機器や溶接方法に関する情報を説明する必要もあるため、溶接検査の受検者は検査に立ち会うことが求められる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov ボイラー及び圧力容器安全規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000033"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20242105-q40": {
+    "sourceHash": "6b47bfc273c8f87127c677a5a40a68a605603c2c284abfdb8a4669cbfb4529e2",
+    "correctChoice": 4,
+    "summary": "18 mmの試験板では引張試験で強さを、表曲げと裏曲げでそれぞれの面が引張りになる状態での延性と健全性を確認する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "自由曲げ、側曲げ、裏曲げだけでは必要な引張強さを評価できない。公表設問の板厚では引張試験も必要である。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "硬さ試験は材料の局部的な押込み抵抗を調べるが、この板厚の胴の長手継手の試験板について求められる組合せには入らない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "引張試験は必要だが、18 mmの場合は側曲げと自由曲げではなく、表側と裏側それぞれの曲げ試験を組み合わせる。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "18 mmの試験板では引張試験で強さを、表曲げと裏曲げでそれぞれの面が引張りになる状態での延性と健全性を確認する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "引張と表曲げは合うが、側曲げとすると必要な裏曲げを欠く。設問の板厚では表曲げと裏曲げの両方を行う。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov ボイラー及び圧力容器安全規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000033"
+      },
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
   }
 }
