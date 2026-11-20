@@ -1567,7 +1567,7 @@ kankoji1: {
 "chori-shizuoka": {
     code: "chori-shizuoka", nameFull: "調理師試験（静岡県）", urlSlug: "chori-shizuoka", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 60, label: "学科", categories: ["公衆衛生学", "食品学", "栄養学", "食品衛生学", "調理理論", "食文化概論"] }],
-    seasons: ["annual"], yearRange: { start: 2023, end: 2025 },
+    seasons: ["annual"], yearRange: { start: 2022, end: 2025 },
 },
 "chori-nagano": {
     code: "chori-nagano", nameFull: "調理師試験（長野県）", urlSlug: "chori-nagano", level: "basic",
