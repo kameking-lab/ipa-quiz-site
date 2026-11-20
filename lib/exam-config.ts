@@ -1220,8 +1220,9 @@ kangoshi: {
         { session: "kogaku-b", urlSlug: "kogaku-b", expectedQuestions: 25, label: "無線工学B", categories: ["無線工学B"] },
         { session: "hoki", urlSlug: "hoki", expectedQuestions: 25, label: "法規", categories: ["法規"] },
         { session: "tiri", urlSlug: "tiri", expectedQuestions: 35, label: "地理", categories: ["地理"] },
+        { session: "eigo", urlSlug: "eigo", expectedQuestions: 19, label: "英語", categories: ["英語"] },
     ],
-    seasons: ["march", "september"], yearRange: { start: 2026, end: 2026 },
+    seasons: ["march", "september"], yearRange: { start: 2023, end: 2026 },
 },
 "general2": {
     code: "general2", nameFull: "第二級総合無線通信士試験", urlSlug: "general2", level: "specialist",
