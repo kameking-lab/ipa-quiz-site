@@ -870,8 +870,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     administrator: "広島県・香川県・山口県など",
     officialQuestionsUrl: "https://www.pref.hiroshima.lg.jp/site/tourokuhannbaisya/iyakuhintourokuhanbaisya.html",
     status: "live",
-    reuseSummary: "令和5〜8年度の中国・四国共通問題を、公式正答と全選択肢の解説付きで演習できます。",
-    attributionTemplate: "出典：広島県 令和○年度登録販売者試験（午前／午後）問○",
+    reuseSummary: "令和4〜8年度の中国・四国共通問題を、公式正答と全選択肢の解説付きで演習できます。",
+    attributionTemplate: "出典：広島県・香川県・山口県 令和○年度登録販売者試験（午前／午後）問○",
     remainingWork: [],
   },
   {
