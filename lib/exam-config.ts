@@ -3198,7 +3198,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
 
 },
   "reform-mgr": { code: "reform-mgr", nameFull: "マンションリフォームマネジャー学科試験", urlSlug: "reform-mgr", level: "specialist", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（未公開）", categories: ["??"] }], seasons: ["annual"], yearRange: { start: 2022, end: 2026 } },
-  "shohi-sodan": { code: "shohi-sodan", nameFull: "消費生活相談員資格試験（マークシート部分）", urlSlug: "shohi-sodan", level: "specialist", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 160, label: "マークシート式試験（未公開）", categories: ["??"] }], seasons: ["annual"], yearRange: { start: 2024, end: 2025 } },
+  "shohi-sodan": { code: "shohi-sodan", nameFull: "消費生活相談員資格試験（マークシート部分）", urlSlug: "shohi-sodan", level: "specialist", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 160, label: "マークシート式試験", categories: ["消費生活相談"] }], seasons: ["annual"], yearRange: { start: 2022, end: 2025 } },
   jobpass3: {
     code: "jobpass3", nameFull: "ビジネス能力検定 ジョブパス 3級", urlSlug: "jobpass3", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 35, label: "3級（ペーパー方式）", categories: ["ビジネス常識", "時事・社会", "組織・業務基本", "コミュニケーション手法"] }],

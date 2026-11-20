@@ -132,6 +132,7 @@ const examsWithAdditionalPapers = new Set<ExamCode>([
   "kokuzei-senmonkan",
   "zaimu-senmonkan",
   "chori-ehime",
+  "shohi-sodan",
 ]);
 
 const papersByExam = new Map<ExamCode, Question[]>();
