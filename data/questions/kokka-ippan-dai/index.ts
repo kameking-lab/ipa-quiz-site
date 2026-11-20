@@ -11,6 +11,7 @@ import { KOKKA_IPPAN_DAI_2026_SENMON_NOSON } from "./2026-senmon-noson";
 import { KOKKA_IPPAN_DAI_2026_SENMON_RINGAKU } from "./2026-senmon-ringaku";
 import { KOKKA_IPPAN_DAI_2025_KADAI_TAIOU } from "./2025-kadai-taiou";
 import { KOKKA_IPPAN_DAI_2025_SENMON } from "./2025-senmon";
+import { KOKKA_IPPAN_DAI_2025_SENMON_RINGAKU } from "./2025-senmon-ringaku";
 import { KOKKA_IPPAN_DAI_2024_KISO } from "./2024-kiso";
 import { KOKKA_IPPAN_DAI_2024_SENMON } from "./2024-senmon";
 
@@ -28,6 +29,7 @@ export const KOKKA_IPPAN_DAI_QUESTIONS = [
   ...KOKKA_IPPAN_DAI_2026_SENMON_RINGAKU,
   ...KOKKA_IPPAN_DAI_2025_KADAI_TAIOU,
   ...KOKKA_IPPAN_DAI_2025_SENMON,
+  ...KOKKA_IPPAN_DAI_2025_SENMON_RINGAKU,
   ...KOKKA_IPPAN_DAI_2024_KISO,
   ...KOKKA_IPPAN_DAI_2024_SENMON,
 ];
