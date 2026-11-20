@@ -914,7 +914,7 @@ tohan: {
         ],
     }],
     seasons: ["annual"],
-    yearRange: { start: 2026, end: 2026 },
+    yearRange: { start: 2025, end: 2026 },
 },
 "tohan-hokkaido-tohoku": {
     code: "tohan-hokkaido-tohoku",
