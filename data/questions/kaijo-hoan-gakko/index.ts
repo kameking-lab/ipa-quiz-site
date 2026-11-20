@@ -3,6 +3,7 @@ import { KAIJO_HOAN_GAKKO_2025_GAKKA_EIGO } from "./2025-gakka-eigo";
 import { KAIJO_HOAN_GAKKO_2025_GAKKA_SUGAKU } from "./2025-gakka-sugaku";
 import { KAIJO_HOAN_GAKKO_2025_KISO } from "./2025-kiso";
 import { KAIJO_HOAN_GAKKO_2025_KISO_SPECIAL } from "./2025-kiso-special";
+import { KAIJO_HOAN_GAKKO_2024_GAKKA_BUTSURI } from "./2024-gakka-butsuri";
 import { KAIJO_HOAN_GAKKO_2024_GAKKA_EIGO } from "./2024-gakka-eigo";
 import { KAIJO_HOAN_GAKKO_2024_GAKKA_SUGAKU } from "./2024-gakka-sugaku";
 import { KAIJO_HOAN_GAKKO_2024_KISO } from "./2024-kiso";
@@ -18,4 +19,5 @@ export const KAIJO_HOAN_GAKKO_QUESTIONS = [
     ...KAIJO_HOAN_GAKKO_2024_KISO,
     ...KAIJO_HOAN_GAKKO_2024_GAKKA_SUGAKU,
     ...KAIJO_HOAN_GAKKO_2024_GAKKA_EIGO,
+    ...KAIJO_HOAN_GAKKO_2024_GAKKA_BUTSURI,
 ];
