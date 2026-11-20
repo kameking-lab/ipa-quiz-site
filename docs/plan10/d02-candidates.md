@@ -45,12 +45,13 @@
 | 2026（2027） | 神戸市・一般選考 専門（小学校） | 57問 | [問題](https://www.city.kobe.lg.jp/documents/85876/03_shogakkou.pdf)・[正答](https://www.city.kobe.lg.jp/documents/85876/03shougakkou_kaitou.pdf)。解答番号7～11・19・22～24・28・45・46・70～76は必要な本文・図・選択肢が公式PDFで非掲載。20・21・55は掲載本文で解答できる。 |
 | 2026（2027） | 神戸市・一般選考 専門（小学校・英語コース） | 独自2問 | [問題](https://www.city.kobe.lg.jp/documents/85876/04_shoei.pdf)・[正答](https://www.city.kobe.lg.jp/documents/85876/04shoei_kaitou.pdf)。解答番号1～65は小学校の冊子と共通（1～49、51、53～67に対応）。独自問題66・67を収録。68～73の会話・長文は公式PDFで非掲載。 |
 | 2026（令和9） | 長野県・専門教科（中学校・社会） | 19解答単位 | [問題](https://www.pref.nagano.lg.jp/kyoiku/gimukyo/jukense/documents/02_shakai.pdf)・[解答例](https://www.pref.nagano.lg.jp/kyoiku/gimukyo/jukense/documents/02_shakai_k.pdf)。選択・並べ替え・整数の記入式を収録。地図、人口資料、歴史史料が非掲載の設問と語句・文章の記述式は未収録。問2(4)③は掲載されている年次と設問文で解答できる。 |
+| 2026（令和9） | 長野県・専門教科（中学校・数学） | 14解答単位 | [問題](https://www.pref.nagano.lg.jp/kyoiku/gimukyo/jukense/documents/03_suugaku.pdf)・[解答](https://www.pref.nagano.lg.jp/kyoiku/gimukyo/jukense/documents/03_suugaku_k.pdf)。選択式、非負整数・小数の記入式を収録。式・集合・根号・負数・複数の座標・証明・語句の記入は未収録。問2(2)②は記号選択を収録し、公式解答例の記述を解説に反映。 |
 
 ## 未収録の公式資料
 
 | 実施年度 | 自治体・区分 | 公式資料と状況 |
 | --- | --- | --- |
-| 2026 | 長野県・小学校と中学校社会の記述式、その他の校種・教科の専門 | [小・中・義務・特支の一覧](https://www.pref.nagano.lg.jp/kyoiku/gimukyo/jukense/r7senkou.html)、[高校の一覧](https://www.pref.nagano.lg.jp/kyoiku/koko/saiyo-nyuushi/joho/kokokyoinsenkomondaikoukai09.html)。小学校と中学校社会の語句等の記入式と、その他の校種・教科の専門は未収録。 |
+| 2026 | 長野県・小学校と中学校社会・数学の記述式、その他の校種・教科の専門 | [小・中・義務・特支の一覧](https://www.pref.nagano.lg.jp/kyoiku/gimukyo/jukense/r7senkou.html)、[高校の一覧](https://www.pref.nagano.lg.jp/kyoiku/koko/saiyo-nyuushi/joho/kokokyoinsenkomondaikoukai09.html)。小学校と中学校社会・数学の語句等の記入式と、その他の校種・教科の専門は未収録。 |
 | 2025 | 長野県・教職教養 | 検索で確認した[小・中・義務・特支の問題](https://www.pref.nagano.lg.jp/kyoiku/gimukyo/jukense/documents/14_kyoushoku.pdf)と[正答](https://www.pref.nagano.lg.jp/kyoiku/gimukyo/jukense/documents/15_kyoushokukyouyou.pdf)は現行URLで404。 |
 | 2024 | 長野県・高校の専門 | [令和7年度採用の問題・解答例](https://www.pref.nagano.lg.jp/kyoiku/koko/saiyo-nyuushi/joho/kokokyoinsenkomondaikoukai07.html)に専門教科別の資料あり。未収録。 |
 | 2025 | 岐阜県・小学校以外の教科専門 | [令和8年度採用の問題・解答](https://www.pref.gifu.lg.jp/site/edu/415625.html)に中学・高校・特支等の資料あり。未収録。 |
