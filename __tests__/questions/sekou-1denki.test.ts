@@ -1,7 +1,7 @@
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { DENKI1_QUESTIONS, DENKI1_2025_QUESTIONS, DENKI1_2026_QUESTIONS } from "@/data/qualification-staging/sekou-1denki";
+import { DENKI1_QUESTIONS as corpus, DENKI1_2025_QUESTIONS, DENKI1_2026_QUESTIONS } from "@/data/qualification-staging/sekou-1denki";
 import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { ALL_EXAM_CODES, ALL_QUIZ_EXAM_CODES, EXAM_CONFIGS, buildPdfUrl } from "@/lib/exam-config";
 import { getQualificationByExamCode, isExamPublished } from "@/lib/qualifications/catalog";
@@ -13,6 +13,8 @@ import { filterQuestions, shuffleChoices } from "@/lib/questions/filter";
 import { buildQuestionJsonLd } from "@/lib/seo/question-jsonld";
 import type { ChoiceKey } from "@/lib/questions/types";
 
+const DENKI1_QUESTIONS = corpus.filter(q => q.year === 2025 || q.year === 2026);
+
 // Independently transcribed from the official final-page answer tables, by row.
 const official2026 = ["323222", "143411", "3344124134", "2424233241", "3143122241", "33", "12242323", "12", "431234", "4314123", "341341243", "1224134141", "324"].join("");
 const official2025 = ["332223", "421113", "1313341441", "2321221133", "2434212343", "41", "42444134", "21", "354534", "4433344", "111243311", "2231132432", "414"].join("");
@@ -21,6 +23,7 @@ describe("1級電気工事施工管理 第一次 未公開ステージング", (
   it("keeps two complete annual papers with the original numbering", () => {
     expect(DENKI1_QUESTIONS).toHaveLength(178);
     expect(new Set(DENKI1_QUESTIONS.map(q => q.id)).size).toBe(178);
+    expect(new Set(corpus.map(q => q.id)).size).toBe(corpus.length);
     for (const paper of [DENKI1_2026_QUESTIONS, DENKI1_2025_QUESTIONS]) {
       expect(paper.map(q => q.qNumber)).toEqual(Array.from({ length: 89 }, (_, i) => i + 1));
       expect(paper.every(q => q.exam === "denki1" && q.session === "gakka" && q.season === "annual")).toBe(true);

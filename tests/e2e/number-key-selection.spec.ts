@@ -28,9 +28,10 @@ test.describe("number-key 1 selects the first displayed choice", () => {
     await page.getByRole("searchbox").fill("AP");
     const exam = page.getByRole("link", { name: /応用情報技術者/ });
     await expect(exam).toHaveCount(1);
-    await expect(exam).toHaveAttribute("href", "/ap");
+    await expect(exam).toHaveAttribute("href", "/challenge?exam=ap");
     await exam.click();
-    await expect(page).toHaveURL(/\/ap$/);
+    await expect(page).toHaveURL(/\/quiz\?.*\bexam=ap\b/);
+    await expect(page.getByRole("radiogroup")).toBeVisible();
   });
 
   test("/challenge with a selected exam starts that exam's five-question quiz", async ({ page }) => {

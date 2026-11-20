@@ -6,6 +6,7 @@ import { ChevronDown, ChevronRight, Search, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import type { HomeDirectoryDomain } from "@/lib/home/home-directory";
+import { groupHomeDirectoryItems } from "@/lib/home/grouped-directory";
 import { calculatePace, refreshThinRange, type AnswerAttempt, type PacePlan } from "@/lib/study-plan/pace";
 import { listPacePlans, savePacePlan, deletePacePlan } from "@/lib/study-plan/pace-storage";
 import { answersToday, deadlineWarning, shouldShowPaceOffer, type PaceOffer } from "@/lib/study-plan/home";
@@ -17,6 +18,8 @@ import { LS_KEYS } from "@/lib/storage/keys";
 import { qualificationRunArt, qualificationStudyArt } from "@/lib/home/study-room";
 import { passingLineForExam } from "@/lib/study-plan/policy";
 import { qualificationIdsForExam } from "@/lib/study-plan/schedule";
+import { searchQualifications } from "@/lib/qualifications/search";
+import { groupQualifications, qualificationGroupLabel } from "@/lib/qualifications/groups";
 import { PRICE_PAGE_LINK } from "@/lib/billing/price-page-link";
 import { PlanCreateSheet } from "./PlanCreateSheet";
 import { PaceTrack } from "./PaceTrack";
@@ -42,6 +45,7 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false }: {
     if (["#choose-qualification", "#home-directory-title"].includes(location.hash)) router.replace("/search");
   }, [router]);
   const items = useMemo(() => domains.flatMap(d => [...d.featured, ...d.compact]), [domains]);
+  const directoryItems = useMemo(() => groupHomeDirectoryItems(items), [items]);
   const planItems = useMemo(() => items.filter(item => planExamKeys.includes(item.key)), [items, planExamKeys]);
   const [plans, setPlans] = useState<PacePlan[]>([]);
   const [active, setActive] = useState("");
@@ -111,12 +115,12 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false }: {
   const pace = plan ? calculatePace(plan, attempts, today) : null;
   const warning = plan && !plan.result && (pace?.daysRemaining === null || (pace?.daysRemaining ?? -1) >= 0) ? deadlineWarning(plan, today) : null;
   const item = items.find(i => i.key === plan?.exam);
-  const initialExam = plan?.exam ?? (planItems.some(i => i.key === recent) ? recent : planItems[0]?.key ?? "ip");
+  const initialExam = plan?.exam ?? (planItems.some(i => i.key === recent) ? recent : planItems[0]?.key ?? "");
   const completedToday = answersToday(attempts, today, plan ? new Set(plan.range.questionIds) : undefined);
   const term = query.normalize("NFKC").trim().toLowerCase();
   const picks = term ? [] : upcomingExamPicks(items.map(i => i.key), [], new Date(`${today}T00:00:00+09:00`));
-  const matched = term ? items.filter(i => `${i.name}${i.abbr ?? ""}`.normalize("NFKC").toLowerCase().includes(term)).slice(0, 6)
-    : picks.map(pick => items.find(i => i.key === pick.key)!).filter(Boolean);
+  const matched = term ? searchQualifications(directoryItems, query, "home")
+    : picks.map(pick => directoryItems.find(i => i.key === pick.key)!).filter(Boolean);
   function updatePlan(patch: Partial<PacePlan>) {
     if (!plan) return;
     if (!savePacePlan({ ...plan, ...patch, updatedAt: new Date().toISOString() })) setError("保存できませんでした。");
@@ -190,7 +194,7 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false }: {
         <h2 id="home-results-title" className="mb-2 mt-4 text-xs text-muted-foreground">{term ? "検索結果" : "試験が近い資格"}</h2>
         <ul id="home-qualification-results" aria-labelledby="home-results-title" className="space-y-1.5">{matched.map(i => {
           const date = picks.find(pick => pick.key === i.key)?.next;
-          return <li key={i.key}><Link href={i.href} className={`${styles.result} rounded-lg border border-border bg-card px-3`}><span>{i.name}</span><span className="flex shrink-0 items-center gap-1 text-xs text-muted-foreground">{date && <time dateTime={date.date}>{shortDate(date.date)}{date.endDate ? `〜${shortDate(date.endDate)}` : ""}{date.note ? `（${date.note}）` : ""}</time>}<ChevronRight aria-hidden="true" className="size-4" /></span></Link></li>;
+          return <li key={i.key}><Link href={i.href} className={`${styles.result} rounded-lg border border-border bg-card px-3`}><span>{i.name}</span><span className="flex shrink-0 items-center gap-1 text-xs text-muted-foreground">{date && <time dateTime={date.date}>{i.children ? "直近 " : ""}{shortDate(date.date)}{date.endDate ? `〜${shortDate(date.endDate)}` : ""}{date.note ? `（${date.note}）` : ""}</time>}<ChevronRight aria-hidden="true" className="size-4" /></span></Link></li>;
         })}</ul>
         {term && matched.length > 0 && <p role="status" className="sr-only">検索結果 {matched.length}件</p>}
         {term && !matched.length && <p role="status" className="py-4 text-sm text-muted-foreground">該当する資格が見つかりませんでした。</p>}
@@ -201,7 +205,16 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false }: {
     {error && <p role="alert" className="mt-3 text-sm text-destructive">{error}</p>}
     <StudyRoomLine />
     <PlanCreateSheet open={sheet === "create"} onOpenChange={open => setSheet(open ? "create" : null)} items={planItems} initialExam={initialExam} onCreated={id => { setActive(id); refresh(); }} />
-    <Sheet open={sheet === "switch"} onOpenChange={open => setSheet(open ? "switch" : null)}><SheetContent side="bottom" aria-describedby={undefined} className={`${styles.sheet} mx-auto max-h-[min(85dvh,calc(100dvh-var(--safe-top)-1rem))] max-w-[640px] overflow-y-auto pb-[max(1.5rem,var(--safe-bottom))]`}><SheetHeader><SheetTitle>受ける資格</SheetTitle></SheetHeader><div className="mt-5 space-y-2">{plans.map(p => <button key={p.id} onClick={() => { setActive(p.id); setSheet(null); }} className="flex min-h-12 w-full items-center justify-between rounded-xl bg-muted px-4 text-left text-sm"><span>{items.find(i => i.key === p.exam)?.name ?? p.exam}<span className="ml-2 text-xs text-muted-foreground">{p.examDate}</span></span>{plan?.id === p.id ? "✓" : ""}</button>)}<Button variant="outline" asChild className="min-h-12 w-full"><Link href="/me#study-progress">学習計画</Link></Button></div></SheetContent></Sheet>
+    <Sheet open={sheet === "switch"} onOpenChange={open => setSheet(open ? "switch" : null)}><SheetContent side="bottom" aria-describedby={undefined} className={`${styles.sheet} mx-auto max-h-[min(85dvh,calc(100dvh-var(--safe-top)-1rem))] max-w-[640px] overflow-y-auto pb-[max(1.5rem,var(--safe-bottom))]`}><SheetHeader><SheetTitle>受ける資格</SheetTitle></SheetHeader><div className="mt-5 space-y-2">
+      {groupQualifications(plans, p => p.exam).map(row => {
+        const planButton = (p: PacePlan, label: string) => <button key={p.id} type="button" onClick={() => { setActive(p.id); setSheet(null); }} className="flex min-h-12 w-full items-center justify-between rounded-xl bg-muted px-4 text-left text-sm"><span>{label}<span className="ml-2 text-xs text-muted-foreground">{p.examDate}</span></span>{plan?.id === p.id ? "✓" : ""}</button>;
+        if ("item" in row) return planButton(row.item, items.find(i => i.key === row.item.exam)?.name ?? row.item.exam);
+        return <details key={row.group.slug} className="rounded-xl border border-border px-3">
+          <summary className="min-h-12 cursor-pointer py-3 text-sm font-medium">{qualificationGroupLabel(row.group, new Set(row.children.map(child => child.item.exam)).size)}</summary>
+          <div className="space-y-2 pb-3">{row.children.map(({ item, label }) => planButton(item, label))}</div>
+        </details>;
+      })}
+      <Button variant="outline" asChild className="min-h-12 w-full"><Link href="/me#study-progress">学習計画</Link></Button></div></SheetContent></Sheet>
     <Sheet open={sheet === "detail"} onOpenChange={open => { if (!open) setSheet(null); }}><SheetContent side="bottom" aria-describedby={undefined} className={`${styles.sheet} mx-auto max-h-[min(85dvh,calc(100dvh-var(--safe-top)-1rem))] max-w-[640px] overflow-y-auto pb-[max(1.5rem,var(--safe-bottom))]`}><SheetHeader><SheetTitle>学習計画</SheetTitle></SheetHeader>{plan && <div className="mt-5 space-y-4 text-sm"><p className="font-semibold">{item?.name ?? plan.exam}　{plan.registration?.label}</p><dl className="space-y-3">{[["申込開始", plan.registration?.start], ["申込締切", plan.registration?.deadline], ["試験日", plan.examDate], ["合格発表", plan.registration?.resultDate]].map(([label, value]) => <div key={label} className="flex justify-between gap-3"><dt className="text-muted-foreground">{label}</dt><dd>{value ?? "未発表"}{plan.registration?.estimated && label?.startsWith("申込") ? "（予定）" : ""}</dd></div>)}</dl>{plan.registration?.sourceUrl && <a href={plan.registration.sourceUrl} target="_blank" rel="noopener noreferrer" className="block min-h-11 py-3 underline">申込ページを開く（公式） ↗</a>}<details><summary className="min-h-11 cursor-pointer py-3 font-medium">申し込み・計画の変更</summary>{!plan.registered && <Button className="min-h-12 w-full" onClick={() => updatePlan({ registered: true })}>申込済みにする</Button>}<a href={`https://tsugino-shikaku.jp/${qualificationIdsForExam(plan.exam)[0] ? `shikaku/${qualificationIdsForExam(plan.exam)[0]}` : "calendar"}`} target="_blank" rel="noopener noreferrer" className="block py-3 underline">日程を次の資格で見る ↗</a><p>今日 {completedToday}問 · {Math.round(pace?.percent ?? 0)}%</p>{passingLineForExam(plan.exam).sourceUrl && <a className="block underline" href={passingLineForExam(plan.exam).sourceUrl!} target="_blank" rel="noopener noreferrer">合格基準（公式）</a>}{passingLineForExam(plan.exam).conditions && <p className="text-xs text-muted-foreground">{passingLineForExam(plan.exam).conditions}</p>}<Link className="block py-3 underline" href="/me">学習の記録</Link><Button variant="outline" className="min-h-12 w-full" onClick={() => setSheet("create")}>受ける回を変更</Button><button className="min-h-11 w-full text-destructive" onClick={() => { if (deletePacePlan(plan.id)) { setActive(""); setSheet(null); refresh(); } else setError("削除できませんでした。"); }}>計画を削除</button></details></div>}</SheetContent></Sheet>
   </>;
 }

@@ -111,16 +111,32 @@ const examsWithAdditionalPapers = new Set<ExamCode>([
   "zensho-english",
   "zensho-financial-statement-analysis",
   "zensho-info",
+  "chosashi",
+  "dekyo-digital2",
+  "kokka-ippan-dai",
+  "kouku-kanseikan",
+  "kyoin-tokyo",
+  "rodo-kijun-kantokukan",
+  "shuwa",
+  "zensho-marketing",
 ]);
 
 const papersByExam = new Map<ExamCode, Question[]>();
+
+function additionalPaperSource(exam: ExamCode): string {
+  return `data/questions/${exam}/additional-papers.json`;
+}
+
+export function getAdditionalPaperSourcePaths(): string[] {
+  return [...examsWithAdditionalPapers].map(additionalPaperSource);
+}
 
 /** Read additions only for registered exams. Production serves the generated corpus. */
 export function loadAdditionalPapers(exam: ExamCode): Question[] | undefined {
   if (!examsWithAdditionalPapers.has(exam)) return undefined;
   let papers = papersByExam.get(exam);
   if (!papers) {
-    const file = join(process.cwd(), "data", "questions", exam, "additional-papers.json");
+    const file = join(process.cwd(), additionalPaperSource(exam));
     papers = JSON.parse(readFileSync(file, "utf8")) as Question[];
     papersByExam.set(exam, papers);
   }

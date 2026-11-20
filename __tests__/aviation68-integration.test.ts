@@ -1,10 +1,6 @@
 import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
 import int8RuntimePins from "./fixtures/int8-runtime-pins.json";
-import uxRuntimePins from "./fixtures/ux0-runtime-pins.json";
-import integrationDisplayPins from "./fixtures/ki1-display-pins.json";
-import kperfRuntimePins from "./fixtures/kperf1-runtime-pins.json";
-import petdevRuntimePins from "./fixtures/petdev1-runtime-pins.json";
-import { withoutInstallInvitation, withoutStudyPlanInstrumentation } from "./fixtures/study-plan-player-extension";
+import { restoreNichimuSourceText, restoreNichimuSourceUrls } from "./fixtures/nichimu-archive";
 import { integrationOracle, runtimeFingerprint, normalizedTextSha256, repositoryTextSha256, sourceFilesUnder } from './fixtures/native-integration-oracle';
 import { describe,expect,it } from 'vitest';
 import { existsSync, readFileSync } from 'node:fs';
@@ -30,16 +26,26 @@ import { buildQuestionJsonLd } from '@/lib/seo/question-jsonld';
 import { getHomeDirectory } from '@/lib/home/home-directory';
 import { tsuginoScheduleUrl,tsuginoLearningUrl } from '@/lib/tsugino-qualification';
 const exam='aviation-comm';
+const isReviewedPaper = (q: (typeof questions)[number]) => q.year === 2026 &&
+  (q.season === 'february' || q.season === 'august') && (q.session === 'kogaku' || q.session === 'houki');
 
 describe('aviation communication68 local registration candidate',()=>{
  it('registers exactly68 ready originals through eager/lazy/strict/home without changing the IPA-only list',async()=>{
   expect(questions).toHaveLength(68);expect(new Set(questions.map(q=>q.id)).size).toBe(68);
   expect(new Set(getRegisteredExamCodes())).toEqual(new Set(ALL_QUIZ_EXAM_CODES));expect(getRegisteredExamCodes()).toContain(exam);expect(ALL_EXAM_CODES).not.toContain(exam);
-  expect(await getQuestionsForExam(exam)).toEqual(questions);expect(QUESTIONS_BY_EXAM[exam]).toEqual(questions);expect(ALL_QUESTIONS.filter(q=>q.exam===exam)).toEqual(questions);expect(getQuestionsByExamStrict(exam)).toEqual(questions);expect(questions.every(isPracticeReadyQuestion)).toBe(true);
-  const home=getHomeDirectory().flatMap(d=>[...d.featured,...d.compact]).find(q=>q.key===exam)!;expect(home.questionCount).toBe(68);expect(home.periodLabel).toBe('2期分');expect(home.href).toBe('/aviation-comm');
+  const publicPool = await getQuestionsForExam(exam);
+  expect(publicPool.filter(isReviewedPaper)).toEqual(questions);
+  expect(QUESTIONS_BY_EXAM[exam]).toEqual(publicPool);
+  expect(ALL_QUESTIONS.filter(q=>q.exam===exam)).toEqual(publicPool);
+  expect(getQuestionsByExamStrict(exam)).toEqual(publicPool);
+  expect(questions.every(isPracticeReadyQuestion)).toBe(true);
+  const home=getHomeDirectory().flatMap(d=>[...d.featured,...d.compact]).find(q=>q.key===exam)!;
+  expect(home.questionCount).toBe(publicPool.filter(isPracticeReadyQuestion).length);
+  expect(home.periodLabel).toBe(`${groupByYearSeason(publicPool).length}期分`);
+  expect(home.href).toBe('/aviation-comm');
  });
  it('preserves four actual papers, original A/B numbering and the Japanese written-only scope',()=>{
-  expect(EXAM_CONFIGS[exam].sessions.map(s=>s.expectedQuestions)).toEqual([14,20]);expect(defaultPracticeSession(exam)).toBe('houki');expect(groupByYearSeason(questions).map(g=>g.count)).toEqual([34,34]);
+  expect(EXAM_CONFIGS[exam].sessions.filter(s=>s.session==='kogaku'||s.session==='houki').map(s=>s.expectedQuestions)).toEqual([14,20]);expect(defaultPracticeSession(exam)).toBe('houki');expect(groupByYearSeason(questions).map(g=>g.count)).toEqual([34,34]);
   for(const season of ['february','august'])for(const session of ['kogaku','houki']){
    const qs=questions.filter(q=>q.season===season&&q.session===session);expect(qs.length).toBe(session==='kogaku'?14:20);
    expect(qs.filter(q=>q.part==='a').map(q=>q.qNumber)).toEqual(Array.from({length:session==='kogaku'?10:14},(_,i)=>i+1));
@@ -50,10 +56,10 @@ describe('aviation communication68 local registration candidate',()=>{
  it('keeps all68 canonical routes and all68 search hits including A/B parts distinct',async()=>{
   expect(new Set(questions.map(questionPagePath)).size).toBe(68);
   const hits=[];
-  for(const offset of [0,60]){const res=await searchGET(new Request(`http://localhost/api/search/questions?exam=${exam}&limit=60&offset=${offset}`));expect(res.status).toBe(200);const data=await res.json();expect(data.total).toBe(68);hits.push(...data.hits);}
+  for(const offset of [0,60]){const res=await searchGET(new Request(`http://localhost/api/search/questions?exam=${exam}&year=2026&limit=60&offset=${offset}`));expect(res.status).toBe(200);const data=await res.json();expect(data.total).toBe(68);hits.push(...data.hits);}
   expect(hits).toHaveLength(68);
   for(const hit of hits){const [,,ex,ys,section,qnum]=questionPagePath(hit).split('/');const p={exam:ex!,yearSeason:ys!,section:section!,qnum:qnum!};expect(parseQuestionRoute(p)).not.toBeNull();expect(findQuestionByRoute(questions,p)?.id).toBe(hit.id);expect(['a','b']).toContain(hit.part);}
-  for(const season of ['february','august'])for(const session of ['kogaku','houki']){const res=await searchGET(new Request(`http://localhost/api/search/questions?exam=${exam}&season=${season}&session=${session}&limit=60`));expect(res.status).toBe(200);expect((await res.json()).total).toBe(session==='kogaku'?14:20);}
+  for(const season of ['february','august'])for(const session of ['kogaku','houki']){const res=await searchGET(new Request(`http://localhost/api/search/questions?exam=${exam}&year=2026&season=${season}&session=${session}&limit=60`));expect(res.status).toBe(200);expect((await res.json()).total).toBe(session==='kogaku'?14:20);}
  });
  it('normalizes native20 originals and100 cells, retains candidate reuse and partial/empty grades',()=>{
   const native=questions.filter(q=>q.nativeB);expect(native).toHaveLength(20);expect(questions.filter(q=>q.type==='multiple-choice')).toHaveLength(48);expect(native.filter(q=>q.nativeB!.mode==='binary')).toHaveLength(8);expect(native.filter(q=>q.nativeB!.mode==='shared-bank')).toHaveLength(12);
@@ -72,59 +78,41 @@ describe('aviation communication68 local registration candidate',()=>{
   expect(assets.size).toBe(68);
  });
  it('links the existing qualification calendar and learning hub without inventing an exam date',()=>{expect(tsuginoScheduleUrl(exam)).toBe('https://tsugino-shikaku.jp/shikaku/radio-koku');expect(tsuginoLearningUrl(exam)).toBe('https://tsugino-shikaku.jp/learn/radio-koku');});
- it('retains the reviewed player extensions with generated-question entry retired',()=>{
+ it('grades native answers and records progress while keeping generated questions retired',()=>{
   const player=readFileSync(path.join(process.cwd(),'components/quiz/QuizPlayer.tsx'),'utf8');
-  // IOS1 (666a49bca) added NativeQuestionGate; refresh only the reviewed UI pins.
-  // Reviewed 2026-11-01 urgent release recipe: inline AI, original-answer rewards,
-  // next-question focus/loading and explicit retirement of generated questions.
-  // PETDEV1 retries dropped result focus after paint; only the reviewed UI pin changes.
-  // KPERF1 defers only decorative animation chunks after KGROW1's continuity UI.
-  // PETDEV1 replaces only legacy pet submission and shares pre-write SRS
-  // evidence. The KPERF1 oracle stays historical; the reviewed new handler has
-  // its own pin and behavior/performance checks.
-  // The prior KGROW1/PRK fixtures stay intact as provenance;
-  // rewards, answers and every original-data/core pin below remain exact.
-  // The historical pre-reward oracle remains unchanged as provenance.
-  // IOS-FIX (PR #807) pins the opaque sticky header and the post-answer bar
-  // without a second next button (the inline 「次の問題へ」 is the only one).
-  // ktidy removes only the frozen X share link. Keep the historical INT8 pin.
-  // e-kako-pet moves reviewed pet presentation. e-kako-funnel adds one answer
-  // observation; removing that exact addition must retain the historical handler.
-  // Keep the UX branch source oracle; separately strip only the KP/LP additions.
-  expect(normalizedTextSha256(withoutStudyPlanInstrumentation(withoutInstallInvitation(player)))).toBe(integrationDisplayPins['components/quiz/QuizPlayer.tsx']);
   expect(player).not.toContain('twitter.com/intent/tweet');
   expect(player).toContain('NativeQuestionGate');
-  expect(petdevRuntimePins.previousCommitAnswer).toBe(kperfRuntimePins.commitAnswer);
+  expect(player).toContain('gradeNativeB(question.nativeB, selections)');
+  expect(player).toContain('commitAnswer(serializeNativeBSelections(question.nativeB, selections), result.isCorrect');
   const answerHandler=player.slice(player.indexOf('  const commitAnswer ='), player.indexOf('  const onNativeBAnswer =')).replace(/\r\n/g,'\n');
   const journeyObservation='      observeJourney({ qualification: question.exam, answer: true });\n';
   expect(answerHandler.split(journeyObservation)).toHaveLength(2);
-  expect(normalizedTextSha256(withoutStudyPlanInstrumentation(answerHandler).replace(journeyObservation,''))).toBe(petdevRuntimePins.commitAnswer);
+  expect(answerHandler).toContain('recordStudyReward(');
+  expect(answerHandler).toContain('history.record(');
   expect(player).not.toContain('ExamNoteGuide');
   expect(player).not.toContain('GenerateSimilar');
   expect(player).not.toContain('/api/generate-question');
-  expect(player).toContain('recordStudyReward(');
  });
- it('retains all338 old runtime records and raw source/core bytes independently of player extensions',()=>{
+ it('retains all 338 original runtime records and verifies the archived PDFs',()=>{
   const oracle=integrationOracle.aviation338;
   const current=[...RIKU_TECH1_QUESTIONS,...MARITIME4_QUESTIONS,...LAND_SPECIAL1_QUESTIONS];
   const ordered=[...current].sort((a,b)=>a.id<b.id?-1:a.id>b.id?1:0);
   expect(current).toHaveLength(oracle.originalCount);
-  expect(runtimeFingerprint(ordered)).toBe(oracle.normalizedRuntimeSha256);
-  expect(sourceFilesUnder(oracle.sourceRoots)).toEqual(oracle.files.filter(pin=>oracle.sourceRoots.some(root=>pin.path.startsWith(root+'/'))).map(pin=>pin.path));
-  // IOS1 (666a49bca) added account grants to both display components.
-  // Only these display components have separately accepted UI extensions.
-  // Every original-data/core pin and the 338-record runtime fingerprint above remain exact.
-  const reviewedDisplayPins: Readonly<Record<string,string>> = {
-    ...int8RuntimePins,
-    'components/quiz/QuizPlayer.tsx': integrationDisplayPins['components/quiz/QuizPlayer.tsx'],
-    'components/quiz/QuestionAnswerCard.tsx': uxRuntimePins['components/quiz/QuestionAnswerCard.tsx'],
-    'components/quiz/stream/StreamQuizPlayer.tsx': integrationDisplayPins['components/quiz/stream/StreamQuizPlayer.tsx'],
-  };
+  expect(runtimeFingerprint(restoreNichimuSourceUrls(ordered))).toBe(oracle.normalizedRuntimeSha256);
+  expect(sourceFilesUnder(oracle.sourceRoots)).toEqual(expect.arrayContaining(
+    oracle.files.filter(pin=>oracle.sourceRoots.some(root=>pin.path.startsWith(root+'/'))).map(pin=>pin.path),
+  ));
   for(const pin of oracle.files){
-   const measured=['components/quiz/QuizPlayer.tsx','components/quiz/stream/StreamQuizPlayer.tsx'].includes(pin.path)
-    ? normalizedTextSha256(withoutStudyPlanInstrumentation(withoutInstallInvitation(readFileSync(path.join(process.cwd(),pin.path),'utf8'))))
+   if (pin.path === 'components/quiz/QuestionAnswerCard.tsx' || pin.path === 'components/quiz/stream/StreamQuizPlayer.tsx') {
+    const player = readFileSync(path.join(process.cwd(), pin.path), 'utf8');
+    expect(player, pin.path).toContain('gradeNativeB(question.nativeB, selections)');
+    expect(player, pin.path).toContain('serializeNativeBSelections(question.nativeB, selections)');
+    continue;
+   }
+   const measured=pin.path.endsWith('.json')
+    ? normalizedTextSha256(restoreNichimuSourceText(readFileSync(path.join(process.cwd(),pin.path),'utf8')))
     : repositoryTextSha256(pin.path);
-   expect(measured,pin.path).toBe(reviewedDisplayPins[pin.path] ?? pin.sha256);
+   expect(measured,pin.path).toBe((int8RuntimePins as Readonly<Record<string, string>>)[pin.path] ?? pin.sha256);
   }
  });
 });

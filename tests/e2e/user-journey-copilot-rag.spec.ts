@@ -87,20 +87,21 @@ test.describe("copilot UI: question page integration", () => {
     expect(res.status()).toBe(200);
   });
 
-  test("question page renders AI copilot section", async ({ page }) => {
+  test("question page offers AI follow-up without opening it by default", async ({ page }) => {
     await page.goto(QUESTION);
-    // The AI copilot panel should appear on the page
-    const copilot = page.locator("[aria-label='AI コパイロット']");
-    await expect(copilot).toBeVisible();
+    await expect(page.locator("summary").filter({ hasText: /^AIに質問$/ })).toBeVisible();
+    await expect(page.getByRole("textbox", { name: /^AIへの質問を入力/ })).toHaveCount(0);
   });
 
-  test("copilot panel is keyboard-accessible (focusable child elements)", async ({ page }) => {
+  test("keyboard opens the AI follow-up with input focus and a processing notice", async ({ page }) => {
     await page.goto(QUESTION);
-    const copilot = page.locator("[aria-label='AI コパイロット']");
+    await page.locator("summary").filter({ hasText: /^AIに質問$/ }).press("Enter");
+    const copilot = page.getByRole("region", { name: "この問題についてAIに質問", exact: true });
     await expect(copilot).toBeVisible();
-    // Panel should contain at least one interactive element
-    const buttons = copilot.locator("button, input, textarea, a");
-    await expect(buttons.first()).toBeVisible();
+    await expect(copilot.getByRole("textbox", { name: /^AIへの質問を入力/ })).toBeFocused();
+    await expect(copilot.getByRole("button", { name: "送信", exact: true })).toBeDisabled();
+    await expect(copilot.getByText("Google Geminiで処理します", { exact: false })).toBeVisible();
+    await expect(copilot.getByRole("link", { name: "プライバシーポリシー" })).toHaveAttribute("href", "/privacy#2");
   });
 });
 

@@ -41,7 +41,7 @@ describe("native338 actual entry points", () => {
       ["land-special1","june","kogaku",24],
     ] as const;
     for (const [exam,season,session,total] of cases) {
-      const response = await searchGet(new Request(`http://localhost/api/search/questions?exam=${exam}&season=${season}&session=${session}&limit=60`));
+      const response = await searchGet(new Request(`http://localhost/api/search/questions?exam=${exam}&year=2026&season=${season}&session=${session}&limit=60`));
       expect(response.status).toBe(200);
       const data = await response.json();
       expect(data.total).toBe(total);
@@ -52,7 +52,7 @@ describe("native338 actual entry points", () => {
   it("round-trips all76 search hits through the real A/B canonical routes", async () => {
     const hits = [];
     for (const offset of [0,60]) {
-      const response = await searchGet(new Request(`http://localhost/api/search/questions?exam=maritime4&limit=60&offset=${offset}`));
+      const response = await searchGet(new Request(`http://localhost/api/search/questions?exam=maritime4&year=2026&limit=60&offset=${offset}`));
       expect(response.status).toBe(200);
       const body = await response.json();
       hits.push(...body.hits);

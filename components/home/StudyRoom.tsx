@@ -11,6 +11,7 @@ import { furnitureRoomMascots } from "@/lib/home/study-room-furniture";
 import { readLastQuestion } from "@/lib/storage/last-question";
 import { listExamLearningSummaries } from "@/lib/exam-library-session";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
+import { QualificationSelect } from "@/components/qualifications/QualificationSelect";
 import { RoomChihuahua } from "./RoomChihuahua";
 import { StudyRoomSeat, type StudyRoomSeatDetail } from "./StudyRoomSeat";
 
@@ -27,7 +28,8 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
   seatDetails?: readonly StudyRoomSeatDetail[];
 }) {
   const [ownExam, setOwnExam] = useState<string | null>(null);
-  const selectedExam = (exam && canonicalPresenceExam(exam)) || ownExam;
+  const [chosenExam, setChosenExam] = useState<string>();
+  const selectedExam = chosenExam ?? ((exam && canonicalPresenceExam(exam)) || ownExam);
   useEffect(() => {
     const last = readLastQuestion();
     const paper = listExamLearningSummaries().find(item => item.answered > 0);
@@ -108,7 +110,7 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
     update();
     return () => { observer?.disconnect(); document.removeEventListener("visibilitychange", update); };
   }, [seatKey]);
-  const suggestion = suggestions.find(item => item.exam && canonicalPresenceExam(item.exam) === selectedExam);
+  const suggestion = suggestions.find(item => item.exam && (item.exam === selectedExam || canonicalPresenceExam(item.exam) === selectedExam));
   const href = selectedExam && Object.hasOwn(EXAM_CONFIGS, selectedExam)
     ? `/quiz?mode=random&exam=${encodeURIComponent(selectedExam)}` : suggestion?.href ?? "/search";
 
@@ -167,6 +169,12 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
       </div>}
     </div>
     {snapshot && !current && <p className="text-right text-xs text-muted-foreground"><time dateTime={snapshot.measuredAt}>{new Date(snapshot.measuredAt).toLocaleString("ja-JP", { month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit", timeZone: "Asia/Tokyo" })}</time> 時点</p>}
-    <Link href={href} className="flex min-h-12 items-center justify-center rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground outline-offset-2 hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-primary">席について解く</Link>
+    {standalone && suggestions.length > 0 && <details className="rounded-xl border border-border px-3">
+      <summary className="min-h-11 cursor-pointer py-3 text-sm font-medium">資格を選ぶ</summary>
+      <QualificationSelect items={suggestions.flatMap(item => item.exam ? [{ key: item.exam, name: item.name }] : [])}
+        value={suggestion?.exam ?? ""} onChange={setChosenExam} label="資格" emptyLabel="資格を選ぶ" className="pb-3 text-sm font-medium"
+        fieldClass="mt-1 block min-h-11 w-full min-w-0 rounded-lg border border-border bg-background px-2 text-base" />
+    </details>}
+    {(chosenExam !== "" || !standalone) && <Link href={href} className="flex min-h-12 items-center justify-center rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground outline-offset-2 hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-primary">席について解く</Link>}
   </div>;
 }

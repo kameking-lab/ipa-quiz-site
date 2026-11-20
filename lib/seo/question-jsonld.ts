@@ -35,6 +35,21 @@ export function sessionLabel(session: string, exam?: ExamCode): string {
   if (parsed && (exam === "kenki1" || exam === "kenki2" || exam === "kanteishi" || exam === "kaikeishi")) return practiceSessionLabel(parsed, exam);
   if (parsed && ["gyosei", "kanri", "kansa", "rousai", "koyou", "kenpo", "kounen", "kokunen", "ippan", "sentaku", "required", "theory", "practical", "kiso", "kogaku-a", "kogaku-b", "hoki", "tiri"].includes(parsed)) return practiceSessionLabel(parsed);
   const map: Record<string, string> = {
+    "gaikokugo": "外国語試験（多肢選択式）",
+    "kadai-taiou": "課題対応能力試験（教養区分）",
+    "kyoshoku-chuko": "教職教養（中学校・高等学校）",
+    "kyoshoku-sho": "教職教養（小学校・養護・栄養）",
+    "kyotsu-koko": "教職教養（高校）",
+    "psychology": "専門試験（矯正心理専門職の必須問題）",
+    "senmon-b": "専門試験（労働基準監督Ｂ）",
+    "senmon-chu-shakai": "教科専門（中学校・社会）",
+    "senmon-ko-eigo": "教科専門（高等学校・英語）",
+    "senmon-ko-ongaku": "教科専門（高等学校・音楽）",
+    "senmon-ko-seikei": "教科専門（高等学校・政治・経済）",
+    "senmon-shakai": "専門教科（中学校・社会）",
+    "senmon-shogakko-eigo": "専門（小学校・英語コースの独自問題）",
+    "senmon-sugaku": "専門教科（中学校・数学）",
+    "tekisei": "適性試験Ⅰ",
     "constitution": "憲法",
     "civil-law": "民法",
     "criminal-law": "刑法",

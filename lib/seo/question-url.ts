@@ -21,7 +21,8 @@ const PART_EXAMS: Record<"letter" | "blank", readonly string[]> = {
   blank: ["denken2", "denken1", "chusho-kigyo-shindanshi", "shiho-tanto", "yobi-tanto", "tsukanshi",
     "unko-kanrisha-kamotsu", "unko-kanrisha-ryokaku", "shobo-setsubishi-kou1", "shobo-setsubishi-kou4", "shobo-setsubishi-otsu6",
     "dekyo-charge-1", "dekyo-charge-3", "dekyo-charge-5", "dekyo-digital2", "zensho-eco-79",
-    "katei-hifuku", "katei-shokumotsu", "shobo-setsubishi-kou2", "shobo-setsubishi-kou3", "shobo-setsubishi-kou5", "zenkou-pc"],
+    "katei-hifuku", "katei-shokumotsu", "shobo-setsubishi-kou2", "shobo-setsubishi-kou3", "shobo-setsubishi-kou5", "zenkou-pc",
+  "kyoin-gunma",],
 };
 
 export function parseQuestionNumberSegment(exam: string, qnum: string): { qNumber: number; part?: QuestionPart } | null {

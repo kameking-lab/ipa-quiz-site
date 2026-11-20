@@ -3,17 +3,17 @@ import { RIGAKU_RYOHOUSHI_QUESTIONS } from "@/data/questions/rigaku-ryohoshi";
 import manifest from "@/data/questions/rigaku-ryohoshi/source-manifest.json";
 import previous2026 from "@/data/questions/rigaku-ryohoshi/2026-annual.json";
 import previous2025 from "@/data/questions/rigaku-ryohoshi/2025-annual.json";
-const original29 = [...previous2026, ...previous2025];
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
+import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { choiceDisplayLabel } from "@/lib/questions/display";
 
+const original29 = [...previous2026, ...previous2025];
 const choices = ["ア", "イ", "ウ", "エ", "オ"] as const;
 
 describe("理学療法士の部分収録", () => {
-  it("保存した29原問のみを公開母集団へ入れ、保留35原問を混入させない", async () => {
+  it("保存した29原問を公開配信に保持する", async () => {
     const loaded = await getQuestionsForExam("rigaku-ryohoshi");
     expect(loaded).toEqual(RIGAKU_RYOHOUSHI_QUESTIONS);
-    expect(loaded.filter((q) => q.year >= 2025)).toHaveLength(183);
     expect(original29).toHaveLength(29);
     for (const original of original29) expect(loaded.find((q) => q.id === original.id)).toEqual(original);
     expect(new Set(loaded.map((question) => question.id)).size).toBe(loaded.length);
@@ -26,6 +26,23 @@ describe("理学療法士の部分収録", () => {
     expect(manifest.officialLatestTwoRoundOriginals).toBe(400);
     expect(manifest.latestTwoRoundsComplete).toBe(false);
     expect(manifest.localReadyOriginals + manifest.heldWithinNewScope).toBe(manifest.newSourceScopeIncludingUnwrittenAlternativeCells);
+  });
+
+  it("最新2回の午前・午後を公式採点対象の問番号で配信する", () => {
+    const excludedNumbers = { "2025-am": [3, 20], "2025-pm": [98], "2026-am": [20], "2026-pm": [] } as const;
+    for (const [paper, excluded] of Object.entries(excludedNumbers)) {
+      const [year, session] = paper.split("-");
+      const questions = RIGAKU_RYOHOUSHI_QUESTIONS.filter(
+        (q) => q.year === Number(year) && q.session === session && isPracticeReadyQuestion(q),
+      );
+      expect(questions.map((q) => q.qNumber).sort((a, b) => a - b), paper).toEqual(
+        Array.from({ length: 100 }, (_, i) => i + 1).filter((number) => !excluded.some((q) => q === number)),
+      );
+    }
+    for (const number of [3, 20]) {
+      const original = RIGAKU_RYOHOUSHI_QUESTIONS.find(q => q.year === 2025 && q.session === "am" && q.qNumber === number);
+      expect(original?.answer).toBe("公式正答なし（採点対象から除外）");
+    }
   });
 
   it("全問で公式キー・5肢・全肢理由を持ち、図と代替採点の保留問を除外する", () => {

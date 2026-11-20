@@ -4,6 +4,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 
 import { QuestionSourcePresentation } from "@/components/quiz/QuestionSourcePresentation";
+import { ExplanationCard } from "@/components/quiz/ExplanationCard";
 import { KANTEISHI_QUESTIONS } from "@/data/questions/kanteishi";
 import { KAIKEISHI_QUESTIONS } from "@/data/questions/kaikeishi";
 import reviewedManifest from "@/data/questions/pdl-reviewed-manifest.json";
@@ -23,6 +24,10 @@ const numberedKeys: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ", "
 
 function sourceMarkup(question: Question, phase: "before" | "after"): string {
   return renderToStaticMarkup(<QuestionSourcePresentation question={question} phase={phase} />);
+}
+
+function explanationMarkup(question: Question): string {
+  return renderToStaticMarkup(<ExplanationCard question={question} selected={String(question.answer)} isCorrect onNext={() => {}} />);
 }
 
 describe("locally connected PDL question data", () => {
@@ -117,10 +122,10 @@ describe("locally connected PDL question data", () => {
       const html = sourceMarkup(q, phase);
       expect(html).toContain("景観区域内");
       expect(html).toContain("国土交通省");
-      expect(html).toContain(q.sourcePdfUrl);
-      expect(html).toContain(q.sourceAnswerUrl);
       expect(html).toContain("過去問AI");
     }
+    expect(explanationMarkup(q)).toContain(q.sourcePdfUrl);
+    expect(explanationMarkup(q)).toContain(q.sourceAnswerUrl);
   });
 
   it("renders original tables and shared facts before answering and authored sections afterward", () => {
@@ -134,8 +139,9 @@ describe("locally connected PDL question data", () => {
     expect(accounting.sourcePresentation?.originalAuthor).toBe("公認会計士・監査審査会");
     expect(accounting.sourcePresentation?.processor).toBe("過去問AI");
     expect(accounting.sourcePresentation?.processedParts.length).toBeGreaterThanOrEqual(3);
-    expect(sourceMarkup(accounting, "before")).toContain(accounting.sourcePdfUrl);
-    expect(sourceMarkup(accounting, "after")).toContain(accounting.sourceAnswerUrl);
+    const explanation = explanationMarkup(accounting);
+    expect(explanation).toContain(accounting.sourcePdfUrl);
+    expect(explanation).toContain(accounting.sourceAnswerUrl);
   });
 });
 

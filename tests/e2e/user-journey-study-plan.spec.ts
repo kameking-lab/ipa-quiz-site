@@ -24,7 +24,8 @@ test("a stored pace plan remains visible when the creation sheet closes", async 
   await page.goto("/study-plan");
   await page.goto("/");
   await expect(page.getByRole("link", { name: /今日の問題を解く/ })).toBeVisible();
-  await page.getByRole("button", { name: "学習計画の詳細を開く" }).click();
+  await page.getByRole("button", { name: /^学習計画の詳細/ }).click();
+  await page.locator("summary").filter({ hasText: "申し込み・計画の変更" }).click();
   await expect(page.getByRole("button", { name: "計画を削除" })).toBeVisible();
 });
 test("legacy result pages remain reachable without rewriting their saved payload", async ({ page }) => {

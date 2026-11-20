@@ -152,8 +152,8 @@ describe("buildQuestionJsonLd", () => {
         expect(resource.license).toBeUndefined();
         expect(JSON.stringify(resource)).not.toContain("https://www.ipa.go.jp/shiken/faq.html");
     });
-    it("attributes all 308 published shinrishi questions to JCCPP with its official terms", () => {
-        expect(SHINRISHI_QUESTIONS).toHaveLength(308);
+    it("attributes the published shinrishi questions to JCCPP with its official terms", () => {
+        expect(SHINRISHI_QUESTIONS).toHaveLength(769);
         const expectedAuthor = {
             "@type": "Organization",
             name: "一般財団法人公認心理師試験研修センター",
@@ -229,6 +229,21 @@ describe("sessionLabel", () => {
     });
     it("maps every Session union member to a real label", () => {
         const SESSION_PRESENCE: Record<Session, true> = {
+            "gaikokugo": true,
+            "kadai-taiou": true,
+            "kyoshoku-chuko": true,
+            "kyoshoku-sho": true,
+            "kyotsu-koko": true,
+            "psychology": true,
+            "senmon-b": true,
+            "senmon-chu-shakai": true,
+            "senmon-ko-eigo": true,
+            "senmon-ko-ongaku": true,
+            "senmon-ko-seikei": true,
+            "senmon-shakai": true,
+            "senmon-shogakko-eigo": true,
+            "senmon-sugaku": true,
+            "tekisei": true,
             "shokumotsu-2": true,
             "shokumotsu-pre1": true,
             "shokumotsu-old3": true,

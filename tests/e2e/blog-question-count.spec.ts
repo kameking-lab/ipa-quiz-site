@@ -45,11 +45,10 @@ test.describe("blog ↔ exam-list question-count consistency (SSOT)", () => {
     expect(home, "IPA JSON-LD must advertise the IP exam count").not.toBeNull();
 
     const blogHtml = await (await request.get("/blog/ip-nani-kara-benkyou")).text();
-    // React splits text around interpolations with <!-- --> comment markers —
-    // strip them so 「この試験を演習する（<!-- -->2,381<!-- -->問）」 matches.
+    // React inserts comment markers at interpolation boundaries.
     const clean = blogHtml.replace(/<!--[^>]*-->/g, "");
-    const m = clean.match(/この試験を演習する（([\d,]+)問）/);
-    expect(m, "blog IP CTA must render a 「この試験を演習する（N問）」 count").not.toBeNull();
+    const m = clean.match(/この資格の過去問を解く（全([\d,]+)問・無料）/);
+    expect(m, "blog IP CTA must show the qualification's question count").not.toBeNull();
     const blog = Number(m![1].replace(/,/g, ""));
 
     // The whole point: the blog must show the SSOT (indexable) count, identical

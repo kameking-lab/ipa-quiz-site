@@ -24,7 +24,7 @@ const ALL_KEYS: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ"];
 const KEYS: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 const YEAR_OF_ROUND: Record<number, number> = { 115: 2025, 114: 2024 };
 const PREVIOUS_AM_QUESTIONS = KANGOSHI_QUESTIONS.filter((q) => q.session === "am" && q.qNumber <= 75);
-const SCOPE = "第115・114回 午前 問1〜90のうち178問収録";
+const SCOPE = "第115・114回は計479原問を収録";
 const norm = (s: string) => s.normalize("NFKC").replace(/\s+/g, "");
 const transcriptA = readJson<Transcript>("transcriptA.json");
 const transcriptB = readJson<Transcript>("transcriptB.json");
@@ -42,7 +42,7 @@ describe("看護師国家試験（第115回・第114回 午前 問1〜75。第11
     expect(new Set(PREVIOUS_AM_QUESTIONS.map((q) => q.id)).size).toBe(149);
     const fiveChoice = PREVIOUS_AM_QUESTIONS.filter((q) => Object.keys(q.choices ?? {}).length === 5).map((q) => q.id).sort();
     expect(fiveChoice).toEqual(["kangoshi-2025-annual-am-q24", "kangoshi-2025-annual-am-q25", "kangoshi-2025-annual-am-q74", "kangoshi-2025-annual-am-q75"]);
-    expect(EXAM_CONFIGS.kangoshi.yearRange).toEqual({ start: 2021, end: 2025 });
+    expect(EXAM_CONFIGS.kangoshi.yearRange).toEqual({ start: 2016, end: 2025 });
   });
 
   it("転記: 独立2転記（A・B）が本文・全肢・正答で一致し、公開文面はB稿と一致する", () => {
@@ -151,7 +151,7 @@ describe("看護師国家試験（第115回・第114回 午前 問1〜75。第11
     expect(usesNumberedChoices("kangoshi")).toBe(true);
   });
 
-  it("収録範囲の表示: 午前 問1〜75のうち149問であることと採点除外問題の未収録を明示し、全試験対応をうたわない", () => {
+  it("収録範囲の表示: 2回分の件数と公式の採点除外を表示する", () => {
     const entry = getQualificationByExamCode("kangoshi")!;
     expect(entry.status).toBe("live");
     expect(entry.reuseSummary).toContain(SCOPE);

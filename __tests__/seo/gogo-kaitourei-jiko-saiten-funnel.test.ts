@@ -15,7 +15,6 @@ import { extractFaq } from "@/lib/blog/faq";
 // (2) 核心（IPAが問題・配点割合・解答例・採点講評を無料公開・解答例は一例・部分点内訳は非公開）
 //     を述べ、公式入手先 ipa.go.jp へリンクし、
 // (3) 記述式区分（AP/NW/DB/SC/ES）はハブ＋AIコパイロットへ、論文区分（ST/SA/PM/SM/AU）は
-//     旗艦 /essay（参考評価）へ scope を分けて funnel し（誇大回避＝採点基準非公開を明記）、
 // (4) 既存 gogo-kijutsu-buhanten から inbound を受け orphan 化せず、
 // (5) FAQPage 化でき blog サイトマップに掲載される、ことを pin する。
 
@@ -54,12 +53,10 @@ describe("午後 解答例・自己採点記事の事実性と funnel", () => {
     }
   });
 
-  it("論文区分は旗艦 /essay（参考評価）へ送客し、採点基準が非公開である旨を明記する（誇大回避）", () => {
+  it("論文区分は旗艦 /essay（論述の練習問題）へ送客し、採点基準が非公開である旨を明記する（誇大回避）", () => {
     const body = getBlogPostBySlug(SLUG)!.body;
-    // 論文区分の自己採点は旗艦 /essay（AI採点）へ
     expect(body).toContain("](/essay");
-    // 参考評価＝断定しない／採点基準は IPA 非公開
-    expect(body).toContain("参考");
+    expect(body).toContain("[論述の練習問題](/essay)");
     // 論文区分ハブも案内
     for (const hub of ["](/st", "](/sa", "](/pm", "](/sm", "](/au"]) {
       expect(body, `${hub} へのリンクが無い`).toContain(hub);

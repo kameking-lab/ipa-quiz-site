@@ -58,7 +58,8 @@ const edition = z.object({
   questions: z.array(question).length(16),
 }).strict();
 const powerLawEdition = edition.safeExtend({
-  questions: z.array(question).length(14),
+  excludedPrimaryHolds: z.tuple([z.literal("law-q03"), z.literal("law-q05"), z.literal("law-q06")]),
+  questions: z.array(question).length(11),
 });
 
 export type NativeQuestion = z.infer<typeof question>;
@@ -138,8 +139,10 @@ if (NATIVE_2025_POWER_LAW.year !== 2025 || NATIVE_2025_POWER_LAW.examDate !== NA
   || NATIVE_2025_POWER_LAW.sourcePacketSha256 !== "f0a20036710d21190064c6f2bb77a31db802488bdea0264bce42d69785ee3106") {
   throw new Error("2025 power/law source changed");
 }
-const expectedPowerLaw = (["power", "law"] as const).flatMap(subject =>
-  Array.from({ length: 7 }, (_, i) => [subject, i + 1] as const));
+const expectedPowerLaw = [
+  ...Array.from({ length: 7 }, (_, i) => ["power", i + 1] as const),
+  ...[1, 2, 4, 7].map(number => ["law", number] as const),
+];
 for (const [index, [subject, number]] of expectedPowerLaw.entries()) {
   const q = NATIVE_2025_POWER_LAW.questions[index];
   if (!q || q.id !== `denken2-2025-primary-${subject}-q${String(number).padStart(2, "0")}`

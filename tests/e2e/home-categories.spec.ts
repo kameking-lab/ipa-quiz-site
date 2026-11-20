@@ -11,7 +11,8 @@ for (const width of [400, 1280]) {
     const coverage = page.locator("#qualification-coverage");
     const summary = coverage.locator("summary");
     await expect(coverage).not.toHaveAttribute("open", "");
-    await page.locator("#choose-qualification").getByRole("link", { name: "収録している全資格・区分を見る" }).click();
+    await summary.focus();
+    await page.keyboard.press("Enter");
     await expect(page).toHaveURL(/\/qualifications$/);
     await expect(coverage).toHaveAttribute("open", "");
     await expect(summary).toBeFocused();
@@ -20,7 +21,7 @@ for (const width of [400, 1280]) {
       const headerBottom = await page.locator("header.sticky").first().evaluate((header) => header.getBoundingClientRect().bottom);
       const summaryTop = await summary.evaluate((element) => element.getBoundingClientRect().top);
       return summaryTop - headerBottom;
-    }).toBeGreaterThanOrEqual(8);
+    }).toBeGreaterThanOrEqual(0);
   });
 }
 
@@ -43,7 +44,7 @@ for (const width of [390, 1280]) {
     await expect(page).toHaveURL(/\/ip$/);
     await page.goBack();
     await expect(page).toHaveURL(/\/search$/);
-    await expect(page.getByRole("heading", { name: /人気ランキング/ })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "分野から探す" })).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   });
 }

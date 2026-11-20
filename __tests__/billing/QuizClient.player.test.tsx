@@ -138,6 +138,8 @@ describe("QuizClient with the real player and local learning stores", () => {
   });
 });
 it("submits feedback at the wall, answers bonus questions 11-20, stops at 21 and preserves exhaustion on reload", async () => {
+  // Compile the real lazy component before starting the UI wait for its link.
+  await import("@/components/quiz/FeedbackUnlock");
   const pool = FE_QUESTIONS_2009_AUTUMN_AM.slice(0, 21);
   const questions = new Map(pool.map(q => [q.id, q]));
   const ordinary = new Set(pool.slice(0, 10).map(q => q.id));

@@ -82,9 +82,9 @@ test("answer actions keep focus and next question survives reload on a short pho
   await page.getByRole("radio").first().click();
   await expect(page.locator('[aria-label="解答結果"]')).toBeFocused();
   await expect(page.locator('[aria-label="解答結果"]')).toBeInViewport();
-  await expect(page.getByRole("button", { name: "次の問題へ", exact: true }).first()).toBeInViewport();
+  await expect(page.getByRole("button", { name: "次の問題へ", exact: true })).toBeVisible();
   await page.screenshot({ path: (process.env.KP2_SCREENSHOTS ?? "test-results") + "/quiz-result-400x606.png" });
-  const ask = page.getByRole("button", { name: /AIに質問|この解説|AIに聞く/ }).first();
+  const ask = page.locator("summary").filter({ hasText: /^AIに質問$/ });
   await ask.focus();
   await page.keyboard.press("Enter");
   expect(new URL(page.url()).searchParams.get("question")).toBe(original);

@@ -2,9 +2,12 @@ import { describe, expect, it } from "vitest";
 import { EXAM_CONFIGS, ALL_EXAM_CODES } from "@/lib/exam-config";
 import { isExamPublished, getQualificationByExamCode } from "@/lib/qualifications/catalog";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
+import { GENGO_CHOKAKUSHI_PUBLISHED_QUESTIONS, GENGO_CHOKAKUSHI_QUESTIONS } from "@/data/questions/gengo-chokakushi";
+import { examMetaDescription } from "@/lib/seo/exam-meta";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { questionSourceEdition } from "@/lib/questions/source-label";
 import { examLabel } from "@/lib/utils";
+import { isCompleteSelectionCorrect } from "@/lib/questions/answers";
 
 const exam = "gengo-chokakushi" as const;
 
@@ -13,17 +16,33 @@ describe("speech-language-hearing therapist registration", () => {
     const config = EXAM_CONFIGS[exam];
     expect(config.nameFull).toBe("言語聴覚士国家試験");
     expect(config.seasons).toEqual(["annual"]);
-    expect(config.yearRange).toEqual({ start: 2025, end: 2026 });
+    expect(config.yearRange).toEqual({ start: 2023, end: 2026 });
     expect(config.sessions.map(({ session, expectedQuestions }) => [session, expectedQuestions])).toEqual([["am", 100], ["pm", 100]]);
     expect(examLabel(exam)).toBe("言語聴覚士");
     expect(ALL_EXAM_CODES).not.toContain(exam);
   });
 
-  it("keeps both registries closed before the publication decision", async () => {
-    expect(getQualificationByExamCode(exam)?.status).toBe("terms-review-required");
-    expect(isExamPublished(exam)).toBe(false);
-    expect(QUESTIONS_BY_EXAM[exam]).toBeUndefined();
-    expect(await getQuestionsForExam(exam)).toEqual([]);
+  it("serves the three approved notices and excludes the later staging manuscript", async () => {
+    expect(getQualificationByExamCode(exam)?.status).toBe("live");
+    expect(isExamPublished(exam)).toBe(true);
+    const released = await getQuestionsForExam(exam);
+    expect(released).toEqual(GENGO_CHOKAKUSHI_PUBLISHED_QUESTIONS);
+    expect(QUESTIONS_BY_EXAM[exam]).toEqual(released);
+    expect(examMetaDescription(exam, released.length)).toContain("第25・26回の公式採点通知から3問");
+    expect(released.map(q => [q.id, q.officialAnswerNumber])).toEqual([
+      ["gengo-chokakushi-2024-annual-am-q44", "3または4"],
+      ["gengo-chokakushi-2024-annual-am-q96", "3または4"],
+      ["gengo-chokakushi-2023-annual-am-q92", "4または5"],
+    ]);
+    const stagedIds = new Set(GENGO_CHOKAKUSHI_QUESTIONS.map(q => q.id));
+    for (const q of released) {
+      expect(stagedIds.has(q.id), q.id).toBe(false);
+      expect(q.sourceAnswerUrl, q.id).toMatch(/^https:\/\/www\.mhlw\.go\.jp\//);
+      expect(q.requiredSelections).toBe(1);
+      const choices = q.answer as string[];
+      for (const choice of choices) expect(isCompleteSelectionCorrect(q.answer, [choice], q.requiredSelections)).toBe(true);
+      expect(isCompleteSelectionCorrect(q.answer, choices, q.requiredSelections)).toBe(false);
+    }
   });
 
   it.each([

@@ -28,7 +28,7 @@ test("a saved plan without an appointment shows no invented target or paid nudge
   await setup(page, { ...makePlan(), examDate: null });
   await page.goto("/");
   await expect(page.getByRole("img", { name: "進み具合0%、受験日未設定" })).toBeVisible();
-  await expect(page.locator("main svg path.fill-amber-400")).toHaveCount(0);
+  await expect(page.locator("main svg path.fill-warning-soft-foreground")).toHaveCount(0);
   await expect(page.getByText("日程未設定", { exact: true })).toBeVisible();
   await expect(page.getByRole("link", { name: /回数無制限で追いつけます/ })).toHaveCount(0);
 });
@@ -56,21 +56,24 @@ for (const [percent, target] of [[0, 0], [50, 50], [100, 100]] as const) {
     const track = page.getByRole("img", { name: `進み具合${percent}%、今日の目標${target}%` });
     await expect(track).toBeVisible();
     const geometry = await track.evaluate(el => {
-      const image = el.querySelector("image")!, flag = el.querySelector("path")!;
-      const imageBox = image.getBoundingClientRect(), flagBox = flag.getBoundingClientRect(), box = el.getBoundingClientRect();
-      return { dogCenter: Number(image.getAttribute("x")) + Number(image.getAttribute("width")) / 2,
+      const image = el.querySelector("image")!, flag = el.querySelector<SVGPathElement>("path.fill-warning-soft-foreground")!;
+      const frame = image.closest("svg")!, runner = frame.closest<SVGGElement>("g")!;
+      const position = runner.transform.baseVal.getItem(0).matrix;
+      const viewport = runner.ownerSVGElement!.viewBox.baseVal;
+      const frameLeft = position.e + frame.x.baseVal.value;
+      const frameTop = position.f + frame.y.baseVal.value;
+      const flagBox = flag.getBBox();
+      return { dogCenter: position.e,
         flagX: Number(flag.getAttribute("d")!.match(/^M([\d.]+)/)![1]),
-        inside: imageBox.left >= box.left && imageBox.right <= box.right && flagBox.right <= box.right,
-        separate: flagBox.bottom < imageBox.top, animation: getComputedStyle(image.parentElement!).animationName };
+        inside: frameLeft >= viewport.x && frameLeft + frame.width.baseVal.value <= viewport.x + viewport.width
+          && flagBox.x + flagBox.width <= viewport.x + viewport.width,
+        separate: flagBox.y + flagBox.height < frameTop, spriteOffset: image.getAttribute("x") };
     });
     expect(geometry.dogCenter).toBeCloseTo(30 + percent * 2.6);
     expect(geometry.flagX).toBeCloseTo(30 + target * 2.6);
     expect(geometry.inside).toBe(true);
     expect(geometry.separate).toBe(true);
-    expect(geometry.animation).toBe("none");
-    await page.emulateMedia({ reducedMotion: "no-preference" });
-    await expect.poll(() => track.evaluate(el => document.getAnimations().some(animation =>
-      (animation.effect as KeyframeEffect | null)?.target === el.querySelector("image")!.parentElement))).toBe(true);
+    expect(geometry.spriteOffset).toBe("0");
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   });
 }
@@ -91,7 +94,7 @@ test("idle refresh does not change mastery or learning points, failed confirmati
     window.dispatchEvent(new Event("study-plan:changed"));
   }, { key: LS_KEYS.history, id: catalog[0].id });
   await expect(page.getByRole("img", { name: /進み具合50%/ })).toBeVisible(); // 49.5%, rounded for display
-  await expect.poll(async () => Number(await page.locator('svg line.stroke-emerald-500').getAttribute("x2"))).toBeCloseTo(158.7);
+  await expect.poll(async () => Number(await page.locator('svg line.stroke-primary').getAttribute("x2"))).toBeCloseTo(158.7);
 });
 
 for (const source of ["failure", "manual", "fallback", "ondemand", "past-only"] as const) {
@@ -106,7 +109,7 @@ for (const source of ["failure", "manual", "fallback", "ondemand", "past-only"] 
     } }));
     await page.goto("/study-plan");
     const save = page.getByRole("button", { name: "この回で作成" });
-    await expect(page.getByRole("dialog")).toBeVisible();
+    await expect(page.getByRole("region", { name: "学習計画を作成" })).toBeVisible();
     await page.getByRole("combobox", { name: "受ける資格" }).selectOption("ip");
     if (source === "failure") await expect(page.getByText(/日程を取得できませんでした/)).toBeVisible();
     if (source !== "fallback") {
@@ -131,7 +134,8 @@ test("iOS WebView safe areas keep the create sheet and date field usable", async
     });
   });
   await page.route("**/api/exam-schedule/ip", r => r.fulfill({ json: { exam: "ip", source: "manual", sessions: [] } }));
-  await page.goto("/study-plan");
+  await page.goto("/");
+  await page.getByRole("button", { name: "学習計画を作成", exact: true }).click();
   await page.getByRole("combobox", { name: "受ける資格" }).selectOption("ip");
   const input = page.getByLabel("受験日", { exact: true });
   await expect(input).toBeVisible();

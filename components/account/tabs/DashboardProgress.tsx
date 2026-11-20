@@ -14,6 +14,7 @@ import {
 import { ArrowRight } from "lucide-react";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { examLabel } from "@/lib/utils";
+import { groupQualifications, qualificationGroupLabel } from "@/lib/qualifications/groups";
 import {
   computeCategoryStats,
   computeExamProbabilities,
@@ -163,11 +164,14 @@ export function DashboardProgress() {
           試験別 記録の正答率
         </h2>
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
-          {data.examProbs.filter(prob => prob.answered > 0)
-            .sort((a, b) => b.answered - a.answered || b.accuracy - a.accuracy)
-            .map((p) => (
-              <ExamRow key={p.exam} prob={p} />
-            ))}
+          {groupQualifications(data.examProbs.filter(prob => prob.answered > 0)
+            .sort((a, b) => b.answered - a.answered || b.accuracy - a.accuracy), prob => prob.exam).map(row => {
+            if ("item" in row) return <ExamRow key={row.item.exam} prob={row.item} />;
+            return <details key={row.group.slug} className="min-w-0 rounded-xl border border-border px-3">
+              <summary className="min-h-11 cursor-pointer py-3 text-sm font-semibold">{qualificationGroupLabel(row.group, row.children.length)}</summary>
+              <div className="space-y-2 pb-3">{row.children.map(({ item, label }) => <ExamRow key={item.exam} prob={item} label={label} />)}</div>
+            </details>;
+          })}
         </div>
       </section>}
     </div>
@@ -190,7 +194,7 @@ function SummaryCard({ label, value, unit, accent }: { label: string; value: str
   );
 }
 
-function ExamRow({ prob }: { prob: ExamPassProbability }) {
+function ExamRow({ prob, label = examLabel(prob.exam) }: { prob: ExamPassProbability; label?: string }) {
   const hasAnswers = prob.answered > 0;
   const observedAccuracy = Math.round(prob.accuracy * 100);
   return (
@@ -199,7 +203,7 @@ function ExamRow({ prob }: { prob: ExamPassProbability }) {
       className="group flex items-center justify-between gap-3 rounded-xl border border-zinc-200 bg-white p-3 transition-colors hover:border-sky-300 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-sky-700"
     >
       <div className="min-w-0 flex-1">
-        <div className="break-words text-sm font-semibold">{examLabel(prob.exam)}</div>
+        <div className="break-words text-sm font-semibold">{label}</div>
         <div className="flex items-center gap-2 text-[11px] text-zinc-500 dark:text-zinc-400">
           <span>{prob.answered}問 解答済</span>
 

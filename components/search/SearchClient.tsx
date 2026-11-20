@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { QualificationSelect } from "@/components/qualifications/QualificationSelect";
 import { examLabel, seasonLabel, formatYearSeason } from "@/lib/utils";
 import { questionPagePath } from "@/lib/seo/question-url";
 import { LS_KEYS } from "@/lib/storage/keys";
@@ -346,8 +347,10 @@ interface FacetPanelProps {
 }
 
 function FacetPanel({ facets, query, onChange }: FacetPanelProps) {
+  const fieldClass = "mt-1 block min-h-11 w-full min-w-0 rounded-lg border border-border bg-background px-2 text-base text-foreground sm:text-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
+  const exams = EXAM_OPTIONS.filter(code => (facets?.exam[code] ?? 0) > 0 || query.exam === code || !facets)
+    .map(code => ({ key: code, name: examLabel(code), count: facets?.exam[code] ?? 0 }));
   const fields = [
-    {key: "exam", label: "資格", options: EXAM_OPTIONS.filter(code => (facets?.exam[code] ?? 0) > 0 || query.exam === code || !facets).map(code => [code, examLabel(code), facets?.exam[code] ?? 0])},
     {key: "year", label: "年度", options: Object.entries(facets?.year ?? {}).sort((a,b) => Number(b[0])-Number(a[0])).map(([v,n]) => [v, v+"年", n])},
     {key: "season", label: "実施回", options: SEASON_OPTIONS.filter(v => (facets?.season[v] ?? 0) > 0 || query.season === v).map(v => [v, seasonLabel(v), facets?.season[v] ?? 0])},
     {key: "category", label: "分野", options: Object.entries(facets?.category ?? {}).sort((a,b) => b[1]-a[1]).map(([v,n]) => [v,v,n])},
@@ -356,9 +359,10 @@ function FacetPanel({ facets, query, onChange }: FacetPanelProps) {
   return (
     <section aria-label="絞り込み" className="pb-4">
       <div className="grid grid-cols-2 gap-3 md:grid-cols-1">
+        {(exams.length > 0 || query.exam) && <QualificationSelect items={exams} label="資格" emptyLabel="すべて" value={query.exam} onChange={value => onChange({ exam: EXAM_OPTIONS.find(code => code === value) ?? "" })} className="col-span-full min-w-0 text-xs font-medium text-muted-foreground" fieldClass={fieldClass} />}
         {fields.filter(field => field.options.length > 0 || query[field.key]).map(field => <label key={field.key} className="min-w-0 text-xs font-medium text-muted-foreground">
           {field.label}
-          <select value={query[field.key]} onChange={e => onChange({[field.key]:e.target.value})} className="mt-1 block min-h-11 w-full min-w-0 rounded-lg border border-border bg-background px-2 text-base text-foreground sm:text-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+          <select value={query[field.key]} onChange={e => onChange({[field.key]:e.target.value})} className={fieldClass}>
             <option value="">すべて</option>
             {query[field.key] && !field.options.some(([v]) => v === query[field.key]) && <option value={query[field.key]}>{query[field.key]}</option>}
             {field.options.map(([value,label,count]) => <option key={String(value)} value={value}>{label} ({count})</option>)}

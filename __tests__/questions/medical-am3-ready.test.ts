@@ -12,9 +12,9 @@ const kana = ["ア", "イ", "ウ", "エ", "オ"];
 describe("保存済み午前3原問の局所受入れ", () => {
   it("原本ID・午前年度・公式キーと全5肢を保持する", () => {
     expect(rows.map((q) => q.id).sort()).toEqual(evidence.goIds);
-    expect(SAGYO_RYOHOSHI_QUESTIONS).toHaveLength(324);
-    expect(SHINO_KUNRENSHI_QUESTIONS).toHaveLength(220);
     for (const q of rows) {
+      const pool = q.exam === "sagyo-ryohoshi" ? SAGYO_RYOHOSHI_QUESTIONS : SHINO_KUNRENSHI_QUESTIONS;
+      expect(pool.filter(item => item.id === q.id)).toEqual([q]);
       expect(q.id).toBe(`${q.exam}-${q.year}-annual-am-q${q.qNumber}`);
       expect(q.session).toBe("am");
       expect(q.needsReview).toBe(false);

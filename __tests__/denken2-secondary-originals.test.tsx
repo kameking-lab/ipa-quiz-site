@@ -28,8 +28,8 @@ describe("Denken2 written originals, latest two sittings", () => {
       expect(q).not.toHaveProperty("choices");
       expect(q).not.toHaveProperty("correctIndex");
     }
-    expect(NATIVE_QUESTIONS).toHaveLength(43);
-    expect(DENKEN2_QUESTIONS).toHaveLength(70); // 14 primary originals; blank drills are not original counts.
+    expect(NATIVE_QUESTIONS.filter(q => q.year === 2025 || q.year === 2026)).toHaveLength(43);
+    expect(DENKEN2_QUESTIONS.filter(q => q.year === 2026 && q.season === "primary" && (q.subject === "law" || q.subject === "power"))).toHaveLength(70);
     for (const number of [3, 5, 6]) expect(getNativeQuestion(2025, "law", number)).toBeUndefined();
     expect(getSecondaryQuestion(2026, "machine-control", 1)).toBeUndefined();
     expect(getSecondaryQuestion(2025, "machine-control", 5)).toBeUndefined();

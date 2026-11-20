@@ -23,7 +23,7 @@ import theory2026 from "@/data/questions/denken1/native-2026-theory.json";
 import power2026 from "@/data/questions/denken1/native-2026-power.json";
 import machine2026 from "@/data/questions/denken1/native-2026-machine.json";
 import law2026 from "@/data/questions/denken1/native-2026-law.json";
-import { DENKEN1_QUESTIONS } from "@/data/questions/denken1";
+import { ALL_DENKEN1_QUESTIONS } from "@/data/questions/denken1";
 
 const text = z.string().trim().min(1);
 const hash = z.string().regex(/^[a-f0-9]{64}$/);
@@ -137,7 +137,7 @@ if (new Set(DENKEN1_NATIVE_QUESTIONS.map(q => q.id)).size !== DENKEN1_NATIVE_QUE
 const legacySessionSubject: Record<string, Denken1NativeSubject> = {
   riron: "theory", denryoku: "power", kikai: "machine", houki: "law",
 };
-const publishedOriginals = new Set(DENKEN1_QUESTIONS.map(q => `${q.year}:${q.season}:${legacySessionSubject[q.session] ?? q.session}:${q.qNumber}`));
+const publishedOriginals = new Set(ALL_DENKEN1_QUESTIONS.map(q => `${q.year}:${q.season}:${legacySessionSubject[q.session] ?? q.session}:${q.qNumber}`));
 for (const q of DENKEN1_NATIVE_QUESTIONS) publishedOriginals.add(`${q.year}:primary:${q.subject}:${q.number}`);
 export const DENKEN1_PUBLISHED_ORIGINAL_COUNT = publishedOriginals.size;
 export const denken1NativeSubjectPath = (year: number, subject: Denken1NativeSubject) => `/denken1/${year}-primary/${subject}`;

@@ -6,7 +6,7 @@ import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { questionSourceEdition } from "@/lib/questions/source-label";
 import { questionHeading, questionTitle } from "@/lib/seo/question-meta";
 import { questionBreadcrumbItems } from "@/lib/seo/question-jsonld";
-import { EXAM_DESCRIPTIONS, examMetaDescription, groupByYearSeason } from "@/lib/seo/exam-meta";
+import { examMetaDescription, groupByYearSeason } from "@/lib/seo/exam-meta";
 import type { ExamCode, Question } from "@/lib/questions/types";
 
 type Receipt = { id: string; sourceQuestionNumber: number; physicalPages: number[]; officialKeyLiteral: string };
@@ -26,14 +26,14 @@ const editions = {
 describe("medical history: official text excerpts", () => {
   for (const exam of exams) {
     const directory = path.join(process.cwd(), "data/questions", exam);
-    it(`${exam}: discloses all three partial editions`, async () => {
-      expect(readdirSync(directory).filter((f) => /^202[234]-annual-text.json$/.test(f)).sort())
-        .toEqual(["2022-annual-text.json", "2023-annual-text.json", "2024-annual-text.json"]);
+    it(`${exam}: keeps the 30 originally reviewed questions and reports current scope`, async () => {
+      const files = readdirSync(directory).filter(f => /^202[234]-annual-text.json$/.test(f)).sort();
+      expect(files).toEqual(["2022-annual-text.json", "2023-annual-text.json", "2024-annual-text.json"]);
       const loaded = await getQuestionsForExam(exam);
-      expect(loaded.filter((q) => q.year >= 2022 && q.year <= 2024)).toHaveLength(30);
-      expect(EXAM_DESCRIPTIONS[exam]).toContain("2024〜2022年");
-      expect(EXAM_DESCRIPTIONS[exam]).toContain("各10問");
-      expect(examMetaDescription(exam, loaded.length)).toContain("部分収録");
+      const retained = new Set(files.flatMap(file => (JSON.parse(readFileSync(path.join(directory, file), "utf8")) as Question[]).map(q => q.id)));
+      expect(retained.size).toBe(30);
+      expect(loaded.filter(q => retained.has(q.id))).toHaveLength(30);
+      expect(examMetaDescription(exam, loaded.length)).toContain(`${loaded.length.toLocaleString("ja-JP")}問収録`);
     });
     for (const file of readdirSync(directory).filter((f) => /^202[234]-annual-text.json$/.test(f))) {
       it(`${exam}/${file}: preserves keys, source identity, and practice registration`, async () => {

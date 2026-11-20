@@ -87,6 +87,9 @@ export interface HomeDirectoryItem {
 
   extra?: string;
 
+  children?: readonly HomeDirectoryItem[];
+  searchTerms?: readonly string[];
+
 }
 
 export interface HomeDirectoryDomain {
@@ -262,7 +265,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   {"code": "sakui-rotary1", "name": "さく井技能士1級（ロータリー式）", "sub": "さく井技能検定1級（ロータリー式さく井工事作業）の2025・2024年度後期各50問、計100問を、公式正答と全肢解説付きで収録。", "domain": "construction"},
   {"code": "kouku-kanseikan", "name": "航空管制官（基礎能力）", "sub": "航空管制官採用試験の2026年度基礎能力から、判断推理・数的推理・資料解釈・時事・情報を公式正答・全肢解説・原図付きで学べます。", "domain": "legal"},
   {"code": "cfp-realestate", "name": "CFP®不動産運用設計", "sub": "2026年度第1回・第2回の不動産運用設計各50問、計100問を公式正答・独自解説・原本の設例と図表付きで収録。", "domain": "money"},
-  {"code": "building-cleaning3", "name": "ビルクリーニング技能士3級", "sub": "2025・2024年度の学科試験各25問、計50問を公式正答と独自解説付きで収録。", "domain": "safety"},
+  {"code": "building-cleaning3", "name": "ビルクリーニング技能士3級", "sub": "2022〜2025年度の学科試験各25問、計100問を公式正答と独自解説付きで収録。", "domain": "safety"},
   {"code": "kogai-taiki-gairon", "name": "公害防止管理者・大気概論", "sub": "2026年度の大気概論・全10問を公式正答と全肢の独自解説付きで収録。", "domain": "safety"},
   {"code": "restaurant-1", "name": "レストランサービス技能検定1級（学科）", "sub": "2025・2026年度の学科試験を各100問、計200問収録。公式問題・正答と独自解説で、料飲サービス・食品衛生・国際儀礼を学べます。", "domain": "welfare"},
   {"code": "cfp-souzoku", "name": "CFP®・相続・事業承継設計", "sub": "2026年度第1・2回の相続・事業承継設計を全100問収録。公式問題・正答と独自解説で、相続・遺言・財産評価・事業承継を学べます。", "domain": "money"},
@@ -282,8 +285,6 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   {"code":"zensho-eco-81","name":"商業経済検定 ビジネス・マネジメント","sub":"2024・2025年度の全100問・公式模範解答","domain":"money"},
   {"code":"kogai-07","name":"公害防止管理者・水質概論","sub":"2026年度・水質概論の全10問と原図","domain":"safety"},
   {"code":"webdesign-3","name":"ウェブデザイン技能検定3級","sub":"2025年度第4回・2026年度第1回と第2回の学科75問","domain":"it"},
-  {code: "kokka-ippan-dai", name: "国家一般職（大卒程度）", "sub": "2026年度・基礎能力11問を部分収録", "domain": "legal"},
-  {"code": "kokka-sogo-in", "name": "国家総合職（院卒者）", "sub": "2026年度・大卒共通の基礎能力9問を部分収録", "domain": "legal"},
   {"code": "toukei1", "name": "統計検定1級", "sub": "2025年11月・統計数理全5原問25小問と公式略解", "domain": "it"},
   { code: "sasshi1", name: "サッシ施工技能士 1級", sub: "ビル用サッシ施工作業 学科", domain: "safety" },
   { code: "sasshi2", name: "サッシ施工技能士 2級", sub: "ビル用サッシ施工作業 学科", domain: "safety" },
@@ -537,11 +538,11 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "kikenbutsu-otsu1", name: "危険物取扱者 乙種第1類", sub: "2026年6月公表版・性質/消火の実出題抜粋10問", domain: "safety" },
   { code: "kikenbutsu-otsu2", name: "危険物取扱者 乙種第2類", sub: "2026年6月公表版・性質/消火の実出題抜粋10問", domain: "safety" },
   { code: "kikenbutsu-otsu6", name: "危険物取扱者 乙種第6類", sub: "2026年6月公表版・性質/消火の実出題抜粋10問", domain: "safety" },
-  { code: "riyoshi", name: "理容師", sub: "第52〜54回の全165原問・全肢解説", domain: "welfare" },
+  { code: "riyoshi", name: "理容師", sub: "年度別の公式過去問", domain: "welfare" },
   { code: "hokenshi", name: "保健師", sub: "国家試験の確認済み原問を部分収録", domain: "welfare" },
   { code: "josanshi", name: "助産師", sub: "国家試験の確認済み原問を部分収録", domain: "welfare" },
   { code: "rigaku-ryohoshi", name: "理学療法士", sub: "第61回午前の採点対象99問を収録", domain: "welfare" },
-  { code: "sagyo-ryohoshi", name: "作業療法士", sub: "第61回午前99問を含む、第60・61回の364問", domain: "welfare" },
+  { code: "sagyo-ryohoshi", name: "作業療法士", sub: "午前・午後の公式過去問を年度別に収録", domain: "welfare" },
   { code: "gengo-chokakushi", name: "言語聴覚士", sub: "第27・28回の公式通知を確認中（公開保留）", domain: "welfare" },
   { code: "judo-seifukushi", name: "柔道整復師", sub: "第34・33回 午前・午後、第32回 午前", domain: "welfare" },
   { code: "rinsho-kogishi", name: "臨床工学技士", sub: "第36回午前の全90問を含む第36・38・39回の公式問題", domain: "welfare" },
@@ -551,23 +552,21 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "khk-reito-2", name: "第二種冷凍機械", sub: "令和7・6年度", domain: "safety" },
   { code: "khk-reito-3", name: "第三種冷凍機械", sub: "令和7・6年度", domain: "safety" },
   { code: "gas-hei", name: "ガス主任技術者 丙種", sub: "令和8・7年度 法令・基礎・ガス技術", domain: "safety" },
-  { code: "shino-kunrenshi", name: "視能訓練士", sub: "第54回午前と第55・56回午前・午後の294問", domain: "welfare" },
+  { code: "shino-kunrenshi", name: "視能訓練士", sub: "午前・午後の公式過去問を年度別に収録", domain: "welfare" },
   { code: "rinsho-kensagishi", name: "臨床検査技師", sub: "\u7b2c72\u30fb71\u56de\uff082026\u30fb2025\u5e74\u5b9f\u65bd\uff09\u5348\u524d\u30fb\u5348\u5f8c\u306e\u78ba\u8a8d\u6e08\u307f\u539f\u554f\u3092\u90e8\u5206\u53ce\u9332", domain: "welfare" },
   { code: "shinryo-hoshasengishi", name: "診療放射線技師", sub: "第75回午前100問を含む518原問と全肢解説", domain: "welfare" },
   { code: "zensho-eco-77", name: "商業経済検定・ビジネス基礎", sub: "第40・39回の各50問・公式正答と独自解説付き", domain: "money" },
   { code: "eikenp2", name: "英検準2級", sub: "一次試験・公式音源と独自解説付き", domain: "welfare" },
   { code: "literas", name: "リテラス論理言語力検定", sub: "公式例題・社会理解力2級2問、3級1問を部分収録", domain: "welfare" },
   { code: "cfp", name: "CFP®資格審査試験", sub: "2026年度第1回・金融資産運用設計14問を全肢解説付きで部分収録", domain: "money" },
-  {"code": "kokka-ippan-dai", "name": "国家一般職（大卒程度）", "sub": "2026年度の基礎能力試験から問11〜16・18〜21の10問を全肢解説付きで部分収録。", "domain": "money"},
-  { code: "kokka-ippan-dai", name: "国家一般職（大卒程度）", sub: "2026年度・基礎能力13問を解説・原図付きで部分収録", domain: "legal" },
-  { code: "kokka-ippan-dai", name: "国家一般職（大卒程度）", sub: "2026年度・基礎能力10問を解説・原図付きで部分収録", domain: "legal" },
-  { code: "kokka-sogo-in", name: "国家総合職（院卒者）", sub: "2026年度・基礎能力14問を解説・原図付きで部分収録", domain: "legal" },
+  { code: "kokka-ippan-dai", name: "国家一般職（大卒程度）", sub: "基礎能力試験の公式問題・正答と学習用解説", domain: "legal" },
+  { code: "kokka-sogo-in", name: "国家総合職（院卒者）", sub: "基礎能力試験の公式問題・正答と学習用解説", domain: "legal" },
   { code: "kokka-sogo-dai", name: "国家総合職（大卒程度）", sub: "2026年度・基礎能力9問を全肢解説付きで部分収録", domain: "money" },
   { code: "boueki-c", name: "貿易実務検定C級", sub: "公式出題例・英語7問を全肢解説付きで部分収録", domain: "money" },
   { code: "service2", name: "サービス接遇検定2級", sub: "公式出題例・択一3問を全肢解説付きで部分収録", domain: "welfare" },
   { code: "apef3", name: "仏検3級", sub: "2015年度秋季・筆記12設問、全肢解説", domain: "welfare" },
   { code: "ishi", name: "医師国家試験", sub: "第120回・問題Aの問1〜15、全肢解説", domain: "welfare" },
-  { code: "shika-ishi", name: "歯科医師", sub: "第119・118回の問題A〜D、第117回の問題B", domain: "welfare" },
+  { code: "shika-ishi", name: "歯科医師", sub: "問題A〜Dの公式過去問を年度別に収録", domain: "welfare" },
   { code: "yakuzaishi", name: "薬剤師", sub: "第110回1日目③の45問など、第108・110・111回の407問", domain: "welfare" },
   { code: "ahaki-anma", name: "あん摩マッサージ指圧師", sub: "第34・33回の計319原問。第34回は全160問", domain: "welfare" },
   { code: "ahaki-hari-kyu", name: "はり師・きゅう師", sub: "第34・33回の午前・午後と第30回午前の全90問", domain: "welfare" },

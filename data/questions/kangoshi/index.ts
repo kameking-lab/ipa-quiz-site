@@ -46,7 +46,7 @@ import official2020AnnualAm from "./official-2020-annual-am.json";
 import official2017AnnualAm from "./official-2017-annual-am.json";
 
 
-/** 第115・114回の464原問、第113回午前120問・午後119問、第112・111回の午前各10問を収録。未確認・採点除外は未収録。 */
+/** 第115・114回の479原問と過年度の原問を収録。第115回午前問32は公式採点除外のため未収録。 */
 export const KANGOSHI_QUESTIONS: Question[] = [
   ...(official2017AnnualAm as Question[]),
   ...(official2020AnnualAm as Question[]),

@@ -8,6 +8,7 @@ import { ALL_QUIZ_EXAM_CODES, EXAM_CONFIGS } from "@/lib/exam-config";
 import { getQualificationByExamCode, isExamPublished } from "@/lib/qualifications/catalog";
 import { getQuestionsForExam, getRegisteredExamCodes } from "@/lib/questions/get-questions";
 import { isPracticeReadyQuestion, shuffleChoices } from "@/lib/questions/filter";
+import { isCompleteSelectionCorrect } from "@/lib/questions/answers";
 import { choiceDisplayLabel } from "@/lib/questions/display";
 import { questionSourceEdition } from "@/lib/questions/source-label";
 import { getHomeDirectory } from "@/lib/home/home-directory";
@@ -38,9 +39,12 @@ describe("eight prepared qualifications are published", () => {
     const directory = getHomeDirectory().flatMap(domain => [...domain.featured, ...domain.compact]);
     for (const exam of exams) {
       expect(params).toContainEqual({ exam });
-      expect(directory.find(item => item.key === exam)).toMatchObject({ href: `/${exam}`, questionCount: counts[exam] });
-      const card = [...doc.querySelectorAll("article")].find(article => article.querySelector(`a[href="/${exam}"]`));
-      expect(card?.textContent).toContain(`収録 ${counts[exam]}問`);
+      const publicCount = getQuestionsByExamStrict(exam).length;
+      expect(directory.find(item => item.key === exam)).toMatchObject({ href: `/${exam}`, questionCount: publicCount });
+      const qualification = getQualificationByExamCode(exam)!;
+      const card = [...doc.querySelectorAll("article")].find(article => article.querySelector("h2")?.textContent === qualification.shortName);
+      expect(card?.textContent).toContain(`収録 ${publicCount}問`);
+      expect(card?.querySelector(`a[href="${qualification.officialQuestionsUrl}"]`)).not.toBeNull();
       expect(card?.textContent).not.toMatch(/非公開で保管|許可待ち/);
       const metadata = await generateMetadata({ params: Promise.resolve({ exam }) });
       expect(metadata.alternates?.canonical).toBe(`/${exam}`);
@@ -50,17 +54,27 @@ describe("eight prepared qualifications are published", () => {
 
   for (const exam of exams) {
     const dir = join(process.cwd(), "data/questions", exam);
-    const questions: Question[] = readdirSync(dir)
-      .filter(name => /^(published-|20\d\d)/.test(name) && name.endsWith(".json"))
+    const files = readdirSync(dir).filter(name => /^(published-|20\d\d)/.test(name) && name.endsWith(".json"));
+    const isInitialFile = (name: string) => (
+      (!(exam === "unko-kanrisha-ryokaku" || exam === "unko-kanrisha-kamotsu") || name !== "2022.json")
+      && (exam !== "kikenbutsu-otsu4" || name === "published-202606.json")
+    );
+    const questions: Question[] = files
       .flatMap(name => JSON.parse(readFileSync(join(dir, name), "utf8")));
+    const original: Question[] = files.filter(isInitialFile)
+      .flatMap(name => JSON.parse(readFileSync(join(dir, name), "utf8")));
+    const byId = (items: Question[]) => [...items].sort((a, b) => a.id.localeCompare(b.id));
 
     it(`${exam}: exposes the same complete corpus to lists, pages, search and practice`, async () => {
       expect(getQualificationByExamCode(exam)?.status).toBe("live");
       expect(isExamPublished(exam)).toBe(true);
-      expect(questions).toHaveLength(counts[exam]);
-      expect(QUESTIONS_BY_EXAM[exam]).toEqual(questions);
-      expect(await getQuestionsForExam(exam)).toEqual(questions);
-      expect(getQuestionsByExamStrict(exam)).toEqual(questions);
+      expect(original).toHaveLength(counts[exam]);
+      const current = getQuestionsByExamStrict(exam);
+      const originalIds = new Set(original.map(q => q.id));
+      expect(byId(current.filter(q => originalIds.has(q.id)))).toEqual(byId(original));
+      expect(byId(QUESTIONS_BY_EXAM[exam] ?? [])).toEqual(byId(questions));
+      expect(byId(await getQuestionsForExam(exam))).toEqual(byId(questions));
+      expect(byId(current)).toEqual(byId(questions));
       expect(getRegisteredExamCodes()).toContain(exam);
       expect(ALL_QUIZ_EXAM_CODES).toContain(exam);
       expect(getAvailableExams()).toContain(exam);
@@ -106,7 +120,16 @@ describe("eight prepared qualifications are published", () => {
         expect(Object.keys(q.choiceExplanations!).sort()).toEqual(keys.sort());
         for (const reason of Object.values(q.choiceExplanations!)) expect(reason!.length).toBeGreaterThan(12);
         for (const key of Array.isArray(q.answer) ? q.answer : [q.answer]) expect(keys).toContain(key);
-        if (Array.isArray(q.answer)) expect(q.requiredSelections).toBe(q.answer.length);
+        if (Array.isArray(q.answer)) {
+          if (q.id === "kikenbutsu-otsu4-2025-published-q24") {
+            expect(q.officialAnswerNumber).toBe("3,5");
+            expect(q.requiredSelections).toBe(1);
+            for (const key of q.answer) expect(isCompleteSelectionCorrect(q.answer, [key], q.requiredSelections)).toBe(true);
+            expect(isCompleteSelectionCorrect(q.answer, q.answer, q.requiredSelections)).toBe(false);
+          } else {
+            expect(q.requiredSelections).toBe(q.answer.length);
+          }
+        }
         expect(choiceDisplayLabel(exam, "ア")).toBe("1");
         expect(shuffleChoices(q)).toBe(q);
       }

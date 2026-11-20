@@ -1,12 +1,13 @@
 import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
 import { integrationOracle, runtimeFingerprint } from './fixtures/native-integration-oracle';
+import { restoreNichimuSourceUrls } from './fixtures/nichimu-archive';
 import { describe,it,expect } from 'vitest';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { RIKU_TECH2_QUESTIONS as riku } from '@/data/questions/riku-tech2';
 import { AMATEUR2_QUESTIONS as am2 } from '@/data/questions/amateur2';
 import { MARITIME_RADAR_QUESTIONS as radar } from '@/data/questions/maritime-radar';
-import { AMATEUR1_QUESTIONS as am } from '@/data/questions/amateur1';
+import { AMATEUR1_QUESTIONS } from '@/data/questions/amateur1';
 import { MARITIME_SPECIAL1_QUESTIONS as sea } from '@/data/questions/maritime-special1';
 import { AVIATION_COMM_QUESTIONS as avi } from '@/data/questions/aviation-comm';
 import { getAllQuestions,getQuestionById } from '@/lib/questions/load';
@@ -26,13 +27,14 @@ import { GET as nextGET } from '@/app/api/questions/next/route';
 import { GET as searchGET } from '@/app/api/search/questions/route';
 import { POST as duePOST } from '@/app/api/review/due/route';
 const holds=new Set(['radio21-amateur1-2026-05-kogaku-q19','radio21-riku-tech2-2026-01-kogaku-b-q25','radio21-amateur2-2026-05-kogaku-q17']);
+const am = AMATEUR1_QUESTIONS.filter(q => q.year === 2026 && (q.season === 'may' || q.season === 'august'));
 const all=[...avi,...am,...sea,...riku,...am2,...radar];
 const cases=[{exam:'riku-tech2',qs:riku,stored:190,ready:189,periodCounts:[94,95],sessions:['houki','kiso','kogaku-a','kogaku-b']},{exam:'amateur2',qs:am2,stored:110,ready:109,periodCounts:[54,55],sessions:['houki','kogaku']},{exam:'maritime-radar',qs:radar,stored:48,ready:48,periodCounts:[24,24],sessions:['houki','kogaku']}] as const;
 describe('581-ready combined candidate integration',()=>{
  it('retains584 originals/581 ready, three exact HOLDs and1000 raw versus993 ready grading cells',()=>{expect(all).toHaveLength(584);expect(new Set(all.map(q=>q.id)).size).toBe(584);const ready=all.filter(isPracticeReadyQuestion);expect(ready).toHaveLength(581);expect(new Set(all.filter(q=>!isPracticeReadyQuestion(q)).map(q=>q.id))).toEqual(holds);expect(new Set(getRegisteredExamCodes())).toEqual(new Set(ALL_QUIZ_EXAM_CODES));expect(all.reduce((n,q)=>n+(q.nativeB?.slots.length??1),0)).toBe(1000);expect(ready.reduce((n,q)=>n+(q.nativeB?.slots.length??1),0)).toBe(993);});
  for(const {exam,qs,stored,ready,periodCounts} of cases){
   it(`${exam}: preserves exact normalized final data and every source asset`,async()=>{
-   expect(runtimeFingerprint(qs)).toBe(integrationOracle.producers[exam].normalizedRuntimeSha256);expect(qs).toHaveLength(stored);expect(await getQuestionsForExam(exam)).toEqual(qs);expect(QUESTIONS_BY_EXAM[exam]).toEqual(qs.filter(isPracticeReadyQuestion));expect(ALL_EXAM_CODES).not.toContain(exam);expect(qs.every(q=>q.exam===exam&&q.year===2026)).toBe(true);
+   expect(runtimeFingerprint(restoreNichimuSourceUrls(qs))).toBe(integrationOracle.producers[exam].normalizedRuntimeSha256);expect(qs).toHaveLength(stored);expect(await getQuestionsForExam(exam)).toEqual(qs);expect(QUESTIONS_BY_EXAM[exam]).toEqual(qs.filter(isPracticeReadyQuestion));expect(ALL_EXAM_CODES).not.toContain(exam);expect(qs.every(q=>q.exam===exam&&q.year===2026)).toBe(true);
    for(const q of qs){expect(shuffleChoices(q)).toBe(q);expect(usesNumberedChoices(exam)).toBe(true);expect(choiceDisplayLabel(exam,'ア')).toBe('1');for(const url of [...(q.imageUrls??[]),...(q.nativeB?.bankImageUrls??[])])expect(existsSync(path.join(process.cwd(),'public',url.slice(1)))).toBe(true);}
   });
   it(`${exam}: shows only practice-ready totals and free past-paper scope`,()=>{expect(getQuestionsByExamStrict(exam)).toHaveLength(ready);expect(groupByYearSeason(getQuestionsByExamStrict(exam)).map(g=>g.count).sort((a,b)=>a-b)).toEqual(periodCounts);const home=getHomeDirectory().flatMap(d=>[...d.featured,...d.compact]).find(c=>c.key===exam)!;expect(home.questionCount).toBe(ready);expect(home.periodLabel).toBe('2期分');const catalog=getQualificationByExamCode(exam)!;expect(catalog.status).toBe('live');expect(catalog.reuseSummary).toContain('無料');expect(catalog.reuseSummary).toContain('回数制限なく');});

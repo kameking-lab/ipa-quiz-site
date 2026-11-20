@@ -1,3 +1,4 @@
+import { expectPublishedKhk2026 } from "../fixtures/khk-2026-publication";
 import { describe, expect, it } from "vitest";
 import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
@@ -82,12 +83,14 @@ describe("高圧ガス2026 乙種機械・第一種冷凍機械の非公開原�
     expect(validateKhk2026Fill2("reito-first", broken).length).toBeGreaterThan(0);
   });
 
-  it("公開・同期・遅延配信に2026出題を混入させない", async () => {
-    const ids = new Set([...kikai, ...reito].map(q => q.id));
+  it("照合済み原問を公式正答と出典を維持して配信する", async () => {
+    const staged = [...kikai, ...reito];
     expect([...kikai, ...reito].every(q => q.publicAllowed === false && !q.needsReview)).toBe(true);
-    for (const pool of [ALL_QUESTIONS, QUESTIONS_BY_EXAM["khk-kikai-otsu"], QUESTIONS_BY_EXAM["khk-reito-1"], await getQuestionsForExam("khk-kikai-otsu"), await getQuestionsForExam("khk-reito-1")]) {
-      if (!pool) throw new Error("公開用プールが未定義");
-      expect(pool.some(q => ids.has(q.id))).toBe(false);
+    expectPublishedKhk2026(staged, ALL_QUESTIONS);
+    for (const exam of ["khk-kikai-otsu", "khk-reito-1"] as const) {
+      const originals = staged.filter(q => q.exam === exam);
+      expectPublishedKhk2026(originals, QUESTIONS_BY_EXAM[exam] ?? []);
+      expectPublishedKhk2026(originals, await getQuestionsForExam(exam));
     }
   });
 });

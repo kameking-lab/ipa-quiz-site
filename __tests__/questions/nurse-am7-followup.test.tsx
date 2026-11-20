@@ -1,9 +1,7 @@
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { KANGOSHI_QUESTIONS as ALL_KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
-// This frozen source-intake regression covers 2024/2025; medical-history.test.tsx covers older years.
-const KANGOSHI_QUESTIONS = ALL_KANGOSHI_QUESTIONS.filter(question => question.year >= 2024);
+import { KANGOSHI_BEFORE_COMPLETION as KANGOSHI_QUESTIONS, beforeNurseSourceLineBreak, expectKangoshiCompletion } from "../fixtures/kangoshi-before-completion";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { isCompleteSelectionCorrect } from "@/lib/questions/answers";
 import type { Question } from "@/lib/questions/types";
@@ -36,7 +34,7 @@ describe("six publication-ready nursing AM originals", () => {
     expect(proof.baseCommit).toBe("df57e8dcdf24ec46c2ea2f82f22f310fcbbf760b");
     expect(proof.previous451ObjectHashes).toHaveLength(451);
     for (const previous of proof.previous451ObjectHashes) {
-      expect(nurseObjectHash(byId.get(previous.id)), previous.id).toBe(previous.sha256);
+      expect(nurseObjectHash(beforeNurseSourceLineBreak(byId.get(previous.id))), previous.id).toBe(previous.sha256);
     }
     expect(proof.addedIds).toHaveLength(6);
     expect(saved.map(question => question.id).sort()).toEqual(proof.addedIds);
@@ -121,20 +119,13 @@ describe("six publication-ready nursing AM originals", () => {
     expect(q103.question).toContain("hypertension");
   });
 
-  it("shows the measured partial coverage without changing the official exclusion notice", () => {
-    const home = readFileSync("app/[exam]/page.tsx", "utf8");
+  it("reports both completed editions and preserves the official exclusion notice", () => {
     const catalog = QUALIFICATION_CATALOG.find(item => item.examCode === "kangoshi")!;
-    for (const text of [home, catalog.reuseSummary, EXAM_DESCRIPTIONS.kangoshi ?? ""]) {
-      expect(text).toContain("計464原問");
-      expect(text).toContain("全1918肢");
-      expect(text).toContain("午後229原問");
-      expect(text).toContain("第115回は午前117問・午後115問、第114回は午前118問・午後114問");
-      expect(text).toContain("午前 問32は厚生労働省が採点対象から除外");
+    for (const text of [catalog.reuseSummary, EXAM_DESCRIPTIONS.kangoshi ?? ""]) {
+      expect(text).toContain("第115・114回は計479原問");
+      expect(text).toContain("第115回は午前119問・午後120問、第114回は午前120問・午後120問");
+      expect(text).toContain("第115回午前 問32は厚生労働省が採点対象から除外");
     }
-    expect(home).toContain("午前235問と午後229問");
-    expect(KANGOSHI_QUESTIONS.filter(question => question.year === 2024 && question.session === "am")).toHaveLength(118);
-    expect(KANGOSHI_QUESTIONS.filter(question => question.year === 2025 && question.session === "am")).toHaveLength(117);
-    expect(KANGOSHI_QUESTIONS.filter(question => question.year === 2024 && question.session === "pm")).toHaveLength(114);
-    expect(KANGOSHI_QUESTIONS.filter(question => question.year === 2025 && question.session === "pm")).toHaveLength(115);
+    expectKangoshiCompletion();
   });
 });

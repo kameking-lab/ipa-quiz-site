@@ -19,6 +19,7 @@ import questions from "./2024-annual-mondai-e.json";
 
 
 import source2026D from "./2026-annual-mondai-d.json";
+import source2026C from "./2026-annual-mondai-c.json";
 
 import source2025C from "./2025-annual-mondai-c.json";
 
@@ -28,6 +29,7 @@ export const ISHI_QUESTIONS = appendReplenishedQuestions(data as Question[], [
   mondaiB,
   mondaiF,
   questions,
+  source2026C,
   source2026D,
   source2025C,
 ]);

@@ -3,6 +3,7 @@ import { CHUSHO_SECONDARY_ORIGINAL_COUNT } from "@/lib/chusho-secondary/data";
 import { HomeQualificationFinder } from "@/components/home/landing/HomeQualificationFinder";
 import { getHomeDirectory } from "@/lib/home/home-directory";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -11,6 +12,8 @@ import { fp2May2026CoverageLabel } from "@/data/questions/fp2";
 import { FP2_PRACTICAL_EDITIONS, getPracticalEdition } from "@/lib/fp2/practical";
 import { FP3_PRACTICAL_EDITIONS, getPracticalEdition as getFp3PracticalEdition } from "@/lib/fp3/practical";
 import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
+import { getPublishedQualificationGroups } from "@/lib/qualifications/published-groups";
+import { groupQualifications, qualificationGroupLabel, qualificationGroupPath } from "@/lib/qualifications/groups";
 import { NATIVE_QUESTIONS } from "@/lib/denken2/native";
 import { DENKEN1_PUBLISHED_ORIGINAL_COUNT } from "@/lib/denken1/native";
 
@@ -32,6 +35,7 @@ const fp3PracticalCount = FP3_PRACTICAL_EDITIONS.reduce(
 );
 
 export default function QualificationsPage() {
+  const groups = new Map(getPublishedQualificationGroups().map(({ group, children }) => [group.slug, children.length]));
   return (
     <main className="mx-auto w-full max-w-3xl flex-1 px-4 pb-16 pt-6 sm:px-6 sm:pt-10">
       <header className="mb-6">
@@ -44,7 +48,16 @@ export default function QualificationsPage() {
       <details id="qualification-coverage" className="group mt-6 rounded-2xl border border-border bg-card p-4">
         <summary className="scroll-mt-20 min-h-11 cursor-pointer py-3 text-base font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">資格ごとの収録範囲・公式資料を見る</summary>
         <div className="mt-3 grid gap-4 sm:grid-cols-2">
-        {published.map((item) => (
+        {groupQualifications(published, item => item.examCode ?? item.slug).map(row => {
+          if ("group" in row) {
+            const { group } = row;
+            const count = groups.get(group.slug);
+            return count ? <Link key={group.slug} href={qualificationGroupPath(group.slug)} prefetch={false} className="flex min-h-11 items-center rounded-2xl border border-border bg-card p-5 font-bold shadow-sm hover:bg-muted">
+              {qualificationGroupLabel(group, count)}
+            </Link> : null;
+          }
+          const { item } = row;
+          return (
           <article key={item.slug} className="rounded-2xl border border-border bg-card p-5 shadow-sm">
             <div className="mb-3 flex items-center justify-between gap-3">
               <h2 className="text-lg font-bold">{item.shortName}</h2>
@@ -59,7 +72,8 @@ export default function QualificationsPage() {
               </a>
             </div>
           </article>
-        ))}
+          );
+        })}
         </div>
       </details>
 

@@ -15,22 +15,27 @@ import { sessionLabel, buildQuestionJsonLd } from "@/lib/seo/question-jsonld";
 import { GET as nextGET } from "@/app/api/questions/next/route";
 import scope from "@/reports/int7-20261105/release-scope.json";
 import receipt from "@/reports/int7-20261105/projection-receipt.json";
+import type { Question } from "@/lib/questions/types";
 
 const codes = Object.keys(scope) as (keyof typeof scope)[];
 describe("INT7 batch3 public release integration", () => {
   it.each(codes)("serves %s through eager/lazy registries, canonical routes, home and question API", async code => {
     const questions = QUESTIONS_BY_EXAM[code]!;
+    const projection = JSON.parse(readFileSync(`data/questions/batch3/${code}.json`, "utf8")) as Question[];
+    const projectionIds = new Set(projection.map(q => q.id));
+    const original = questions.filter(q => projectionIds.has(q.id));
     expect(EXAM_CONFIGS[code].sessions.every(s => /[一-龯ぁ-んァ-ン]/.test(s.label))).toBe(true);
     if (code === "dojo-osen") expect(EXAM_CONFIGS[code].sessions.find(s => s.session === "pm")?.label).toBe("午後（選択式）");
-    if (code === "chiiki-ryoko") expect(questions.every(q => /[一-龯ぁ-んァ-ン]/.test(q.category))).toBe(true);
-    expect(questions).toHaveLength(scope[code].exercises);
+    if (code === "chiiki-ryoko") expect(original.every(q => /[一-龯ぁ-んァ-ン]/.test(q.category))).toBe(true);
+    expect(projection).toHaveLength(scope[code].exercises);
+    expect(original).toEqual(projection);
     expect(await getQuestionsForExam(code)).toEqual(questions);
     expect(getRegisteredExamCodes()).toContain(code);
     expect(getQualificationByExamCode(code)?.status).toBe("live");
-    expect(getHomeDirectory().flatMap(d => [...d.featured, ...d.compact]).find(q => q.key === code)?.questionCount).toBe(questions.length);
-    expect(questions.every(isPracticeReadyQuestion)).toBe(true);
+    expect(getHomeDirectory().flatMap(d => [...d.featured, ...d.compact]).find(q => q.key === code)?.questionCount).toBe(questions.filter(isPracticeReadyQuestion).length);
+    expect(original.every(isPracticeReadyQuestion)).toBe(true);
     expect(new Set(questions.map(questionPagePath)).size).toBe(questions.length);
-    for (const q of questions) {
+    for (const q of original) {
       expect(EXAM_CONFIGS[code].sessions.find(s => s.session === q.session)?.categories).toContain(q.category);
       const [, , exam, yearSeason, section, qnum] = questionPagePath(q).split("/");
       expect(findQuestionByRoute(ALL_QUESTIONS, {exam, yearSeason, section, qnum})?.id).toBe(q.id);
@@ -41,7 +46,7 @@ describe("INT7 batch3 public release integration", () => {
         expect(text).not.toMatch(/\?{3,}|\uFFFD/);
       }
     }
-    const sample = questions[0];
+    const sample = original[0];
     const response = await nextGET(new Request(`http://localhost/api/questions/next?id=${sample.id}`));
     expect(response.status).toBe(200);
     expect((await response.json()).id).toBe(sample.id);

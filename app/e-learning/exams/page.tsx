@@ -2,6 +2,8 @@ import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import Link from "next/link";
 import { referralRedirectHref } from "@/lib/analytics/referral-query";
 import type { Metadata } from "next";
+import { getPublishedQualificationGroups } from "@/lib/qualifications/published-groups";
+import { qualificationGroupLabel, qualificationGroupPath } from "@/lib/qualifications/groups";
 import { permanentRedirect } from "next/navigation";
 import { ExternalLink } from "lucide-react";
 import { ExamStructuredData } from "@/components/exam-library/exam-structured-data";
@@ -116,6 +118,9 @@ export default async function ExamLibraryPage({ searchParams }: ExamLibraryPageP
   const scoredTotal = playable.reduce((total, item) => total + (item.scoredCount ?? 0), 0);
   const checkedAt = latestCheckedAt();
   const url = `${SITE_URL}${EXAM_LIBRARY_PATH}`;
+  const groupLinks = initialSubject ? [] : getPublishedQualificationGroups().flatMap(({ group, children }) => group.library ? [{
+    id: group.library.group, href: qualificationGroupPath(group.slug), label: qualificationGroupLabel(group, children.length),
+  }] : []);
 
   return (
     <div className="mx-auto w-full max-w-3xl px-4 py-8 sm:px-6">
@@ -134,6 +139,7 @@ export default async function ExamLibraryPage({ searchParams }: ExamLibraryPageP
           key={`${initialGroup}-${initialSubject ?? "all"}`}
           groups={groups}
           items={items}
+          groupLinks={groupLinks}
           initialGroup={initialGroup}
           initialSubject={initialSubject}
           initialYear={firstValue(params.year)}

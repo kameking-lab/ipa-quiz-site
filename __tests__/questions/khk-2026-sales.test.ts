@@ -1,3 +1,4 @@
+import { expectPublishedKhk2026 } from "../fixtures/khk-2026-publication";
 import { describe, expect, it } from "vitest";
 import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { readKhk2026Sales, validateKhk2026Sales } from "@/scripts/lib/validate-khk-2026-sales";
@@ -81,7 +82,7 @@ describe("高圧ガス販売2026の非公開原本", () => {
     expect(validateKhk2026Sales("second", broken).length).toBeGreaterThan(0);
   });
 
-  it("2026年度全11区分480出題をそろえ、公開プールへの混入を防ぐ", () => {
+  it("2026年度全11区分480原問の公式正答と出典を公開配信で維持する", () => {
     const groups = [kou, otsu, lpg, special, kikaiKou, kikaiOtsu, reitoFirst, reitoSecond, reitoThird, first, second];
     expect(groups.map(g => g.length)).toEqual([35, 50, 60, 60, 35, 50, 35, 40, 35, 40, 40]);
     const all = groups.flat();
@@ -89,8 +90,8 @@ describe("高圧ガス販売2026の非公開原本", () => {
     const ids = new Set(all.map(q => q.id));
     expect(ids.size).toBe(480);
     expect(all.every(q => q.publicAllowed === false)).toBe(true);
-    expect(ALL_QUESTIONS.some(q => ids.has(q.id))).toBe(false);
-    expect(Object.values(QUESTIONS_BY_EXAM).flat().some(q => ids.has(q.id))).toBe(false);
+    expectPublishedKhk2026(all, ALL_QUESTIONS);
+    expectPublishedKhk2026(all, Object.values(QUESTIONS_BY_EXAM).flat());
   });
 
   it("選択に必要なグラフの欠落を検出する", () => {

@@ -23,9 +23,11 @@ describe("ExplanationCard learning continuity", () => {
     render(<ExplanationCard {...props} />);
     expect(screen.getAllByRole("link", { name: /公式問題の公開ページ/ })).toHaveLength(1);
   });
-  it("offers a single source followed by the next action", () => {
+  it("keeps the answer source in collapsed details before the next action", () => {
     render(<ExplanationCard {...props} question={{ ...question, sourceAnswerUrl: "https://example.com/answer.pdf" }} />);
-    expect(document.querySelector('[href="https://example.com/answer.pdf"]')).toBeNull();
+    const answer = document.querySelector('[href="https://example.com/answer.pdf"]');
+    expect(answer).toHaveTextContent("公式正答PDF");
+    expect(answer?.closest("details")?.open).toBe(false);
     const source = screen.getByRole("link", { name: /公式問題の公開ページ/ });
     const next = screen.getByRole("button", { name: "次の問題へ" });
     expect(source.compareDocumentPosition(next)).toBe(Node.DOCUMENT_POSITION_FOLLOWING);

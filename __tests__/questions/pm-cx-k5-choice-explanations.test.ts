@@ -34,8 +34,8 @@ const deferredByPaper: Record<string, number[]> = {
 const deferredIds = new Set(Object.entries(deferredByPaper).flatMap(([paper, numbers]) =>
   numbers.map((number) => `pm-${paper}-am2-q${number}`),
 ));
-const morningII = PM_QUESTIONS.filter((question) => question.session === "am2");
 const overlayIds = new Set(Object.keys(overlay));
+const morningII = PM_QUESTIONS.filter(q => q.session === "am2" && (overlayIds.has(q.id) || deferredIds.has(q.id)));
 function withoutChoiceExplanations(question: Question) {
   const copy = { ...question };
   delete copy.choiceExplanations;
@@ -85,7 +85,8 @@ describe("PM morning II choice explanations, cx-k5", () => {
 
   it("changes only choice explanations after existing corrections", () => {
     const corrected = applyIpaCorrections("pm", BY_YEAR_QUESTIONS);
-    expect(PM_QUESTIONS.map(withoutChoiceExplanations))
+    const originals = new Set(corrected.map(q => q.id));
+    expect(PM_QUESTIONS.filter(q => originals.has(q.id)).map(withoutChoiceExplanations))
       .toEqual(corrected.map(withoutChoiceExplanations));
     const once = applyChoiceExplanationOverlay(corrected, overlay);
     expect(applyChoiceExplanationOverlay(once, overlay)).toEqual(once);

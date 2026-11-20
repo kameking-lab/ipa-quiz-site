@@ -39,7 +39,9 @@ describe("Riyoshi latest two official papers", () => {
   it("releases the 165 reviewed originals in both public question readers", async () => {
     expect(isExamPublished("riyoshi")).toBe(true);
     expect(RIYOSHI_QUESTIONS).toEqual(RIYOSHI_CANDIDATES);
-    expect(await getQuestionsForExam("riyoshi")).toEqual(RIYOSHI_CANDIDATES);
+    const loaded = await getQuestionsForExam("riyoshi");
+    expect(loaded).toEqual(expect.arrayContaining(RIYOSHI_CANDIDATES));
+    expect(new Set(loaded.map(q => q.id)).size).toBe(loaded.length);
     expect(getRegisteredExamCodes()).toContain("riyoshi");
     expect(ALL_EXAM_CODES).not.toContain("riyoshi");
     expect(ALL_QUIZ_EXAM_CODES).toContain("riyoshi");

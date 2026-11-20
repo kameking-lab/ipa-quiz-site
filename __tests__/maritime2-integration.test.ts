@@ -28,7 +28,7 @@ describe("maritime2 registered original-only candidate", () => {
     expect(getQuestionsByExamStrict(exam)).toEqual(ready);
     expect(new Set(await getPoolIds({exam,mode:"random"}))).toEqual(new Set(ready.map(q=>q.id)));
     expect(new Set(getRegisteredExamCodes())).toEqual(new Set(ALL_QUIZ_EXAM_CODES));expect(ALL_EXAM_CODES).not.toContain(exam);
-    expect(getQuestionsByExamStrict("kai-toku2")).toHaveLength(48);
+    expect(getQuestionsByExamStrict("kai-toku2")).toHaveLength(72);
     expect(defaultPracticeSession(exam)).toBe("kiso");
     expect(EXAM_CONFIGS[exam].sessions.map(s=>s.expectedQuestions)).toEqual([25,25,25,20]);
     expect(stored.every(isPracticeReadyQuestion)).toBe(true);

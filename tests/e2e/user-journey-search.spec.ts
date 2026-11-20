@@ -22,9 +22,9 @@ test.describe("search page: HTTP & structure", () => {
     await suppressWelcomeModal(page);
     await page.goto("/search");
     await page.getByText("問題文で探す", { exact: true }).click();
-    const searchInput = page.locator("#search-input");
+    const searchInput = page.getByRole("searchbox", { name: "キーワード", exact: true });
     await expect(searchInput).toBeVisible({ timeout: 10000 });
-    await expect(searchInput).toHaveAttribute("placeholder", /TCP|例/);
+    await expect(searchInput).toBeEditable();
   });
 
 
@@ -36,8 +36,11 @@ test.describe("search page: HTTP & structure", () => {
     await page.goto("/search?q=SQL");
     // networkidle is unreliable on Next.js pages with streaming + analytics;
     // tests use explicit element waits below instead.
-    const filterSection = page.locator("[aria-label='絞り込み']");
-    await expect(filterSection).toBeVisible({ timeout: 15000 });
+    await expect(page.getByRole("region", { name: "検索結果" })).toBeVisible({ timeout: 15000 });
+    await page.locator("summary").filter({ hasText: /^絞り込み$/ }).click();
+    const filters = page.getByRole("region", { name: "絞り込み", exact: true });
+    await expect(filters.getByRole("combobox", { name: "資格", exact: true })).toBeVisible();
+    await expect(filters.getByRole("combobox", { name: "年度", exact: true })).toBeVisible();
   });
 });
 

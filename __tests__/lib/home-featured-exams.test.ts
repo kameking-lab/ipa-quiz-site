@@ -73,6 +73,14 @@ describe("home pickup selection", () => {
     const rows = [row("sc", 999, "2026-12-01"), row("nw", 30, "2026-12-01"), row("nw", 30, "2026-12-02"), row("ap", 20, "2026-12-01"), row("fp1", 10, "2026-12-01"), row("not-published", 9999, "2026-12-01")];
     expect(upcomingExamPicks(keys, ["sc"], now, rows).map(pick => pick.key)).toEqual(["nw", "ap", "fp1"]);
   });
+  it("uses one slot for a parent before limiting picks and shows its nearest confirmed date", () => {
+    const rows = [row("chori-gunma", 100, "2026-12-01"), row("chori-hokkaido", 100, "2026-11-21"), row("sc", 30, "2026-12-01"), row("nw", 20, "2026-12-01")];
+    const available = rows.map(item => item.key);
+    const picks = upcomingExamPicks(available, [], now, rows);
+    expect(picks.map(pick => pick.key)).toEqual(["group:chori", "sc", "nw"]);
+    expect(picks[0]).toMatchObject({ candidates: 100, next: { date: "2026-11-21" } });
+    expect(upcomingExamPicks(available, ["group:chori"], now, rows).map(pick => pick.key)).toEqual(["sc", "nw"]);
+  });
   it("fills stale data by popularity with no expired date labels", () => {
     const rows = [row("sc", 10, "2020-01-01"), row("nw", 40), row("ap", 20, "2020-01-01"), row("fp1", 30, "2020-01-01")];
     const picks = upcomingExamPicks(keys, [], now, rows);

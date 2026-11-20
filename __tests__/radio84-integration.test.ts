@@ -11,6 +11,7 @@ import { findQuestionByRoute, parseQuestionRoute, questionPagePath } from "@/lib
 import { searchQuestions } from "@/lib/search/question-index";
 import { buildQuestionJsonLd } from "@/lib/seo/question-jsonld";
 import type { ExamCode, Question } from "@/lib/questions/types";
+import { expectNichimuArchiveUrl } from "./fixtures/nichimu-archive";
 
 const DOMESTIC = "riku-toku-kokunai" as ExamCode;
 const SEA3 = "kai-toku3" as ExamCode;
@@ -44,6 +45,12 @@ const officialCells = [
 function paperKey(q: Pick<Question, "exam" | "year" | "season" | "session">): string {
   return `${q.exam}/${q.year}/${q.season}/${q.session}`;
 }
+const reviewedPaperKeys = new Set(papers.map(paperKey));
+const isReviewedPaper = (question: Question) => reviewedPaperKeys.has(paperKey(question));
+
+async function loadReviewedPapers() {
+  return (await Promise.all(RADIO.map((exam) => getQuestionsForExam(exam)))).flat().filter(isReviewedPaper);
+}
 function routeParts(path: string) {
   const [, , exam, yearSeason, section, qnum] = path.split("/");
   return { exam: exam!, yearSeason: yearSeason!, section: section!, qnum: qnum! };
@@ -68,24 +75,24 @@ describe("radio84 product integration", () => {
     expect(defaultPracticeSession(SEA3)).toBe("houki");
   });
 
-  it("registers two playable lazy pools and the same 84 unique eager records", async () => {
+  it("registers identical eager and lazy pools and keeps all 84 reviewed records playable", async () => {
     expect(getRegisteredExamCodes()).toEqual(expect.arrayContaining([...RADIO]));
     const [domestic, sea3] = await Promise.all(RADIO.map((exam) => getQuestionsForExam(exam)));
-    expect(domestic).toHaveLength(24);
-    expect(sea3).toHaveLength(60);
+    expect(domestic.filter(isReviewedPaper)).toHaveLength(24);
+    expect(sea3.filter(isReviewedPaper)).toHaveLength(60);
     const lazy = [...domestic, ...sea3];
-    expect(new Set(lazy.map((q) => q.id)).size).toBe(84);
-    expect(lazy.every(isPracticeReadyQuestion)).toBe(true);
+    expect(new Set(lazy.map((q) => q.id)).size).toBe(lazy.length);
+    expect(lazy.filter(isReviewedPaper).every(isPracticeReadyQuestion)).toBe(true);
     const eager = ALL_QUESTIONS.filter((q) => RADIO.includes(q.exam as (typeof RADIO)[number]));
-    expect(eager).toHaveLength(84);
+    expect(eager).toHaveLength(lazy.length);
     expect(new Set(eager.map((q) => q.id))).toEqual(new Set(lazy.map((q) => q.id)));
-    expect(QUESTIONS_BY_EXAM[DOMESTIC]).toHaveLength(24);
-    expect(QUESTIONS_BY_EXAM[SEA3]).toHaveLength(60);
+    expect(QUESTIONS_BY_EXAM[DOMESTIC]).toEqual(domestic);
+    expect(QUESTIONS_BY_EXAM[SEA3]).toEqual(sea3);
     expect((await getQuestionsForExam("ap")).some((q) => RADIO.includes(q.exam as (typeof RADIO)[number]))).toBe(false);
   });
 
   it("preserves the six independently specified period and subject boundaries", async () => {
-    const pool = (await Promise.all(RADIO.map((exam) => getQuestionsForExam(exam)))).flat();
+    const pool = await loadReviewedPapers();
     const actual = new Map<string, number>();
     for (const q of pool) actual.set(paperKey(q), (actual.get(paperKey(q)) ?? 0) + 1);
     expect(actual).toEqual(new Map(papers.map((p) => [paperKey(p), p.size])));
@@ -96,7 +103,7 @@ describe("radio84 product integration", () => {
   });
 
   it("round-trips every month, subject and official qNumber through the real question route", async () => {
-    const pool = (await Promise.all(RADIO.map((exam) => getQuestionsForExam(exam)))).flat();
+    const pool = await loadReviewedPapers();
     const paths = pool.map(questionPagePath);
     expect(new Set(paths).size).toBe(84);
     for (const [index, path] of paths.entries()) {
@@ -110,7 +117,7 @@ describe("radio84 product integration", () => {
   });
 
   it("matches sparse official answer cells, retaining true/false rather than four choices", async () => {
-    const pool = (await Promise.all(RADIO.map((exam) => getQuestionsForExam(exam)))).flat();
+    const pool = await loadReviewedPapers();
     for (const cell of officialCells) expect(findCell(pool, cell).answer, JSON.stringify(cell)).toBe(cell.answer);
     for (const q of pool.filter((item) => item.exam === SEA3)) {
       expect(Object.keys(q.choices ?? {}), q.id).toEqual(["ア", "イ"]);
@@ -132,7 +139,7 @@ describe("radio84 product integration", () => {
   });
 
   it("keeps official numbered choices and answer metadata unchanged during quiz shuffle", async () => {
-    const pool = (await Promise.all(RADIO.map((exam) => getQuestionsForExam(exam)))).flat();
+    const pool = await loadReviewedPapers();
     expect(pool).toHaveLength(84);
     for (const q of pool) {
       const before = { choices: structuredClone(q.choices), answer: q.answer,
@@ -146,13 +153,19 @@ describe("radio84 product integration", () => {
   });
 
   it("keeps official provenance and exam-month law dates without IPA attribution", async () => {
-    const pool = (await Promise.all(RADIO.map((exam) => getQuestionsForExam(exam)))).flat();
+    const pool = await loadReviewedPapers();
     for (const q of pool) {
       expect(q.license, q.id).toBe("NICHIMU-educational-reuse");
-      expect(q.sourcePdfUrl, q.id).toMatch(/^https:\/\/www\.nichimu\.or\.jp\//);
-      expect(q.sourceAnswerUrl, q.id).toMatch(/^https:\/\/www\.nichimu\.or\.jp\//);
+      const month = q.season === "october" ? "10" : q.season === "june" ? "06" : "02";
+      if (q.exam === DOMESTIC) {
+        expectNichimuArchiveUrl(q.sourcePdfUrl, q.exam, `${q.year}-${month}`);
+        expectNichimuArchiveUrl(q.sourceAnswerUrl, q.exam, `${q.year}-${month}`);
+      } else {
+        expect(q.sourcePdfUrl, q.id).toMatch(/^https:\/\/www\.nichimu\.or\.jp\//);
+        expect(q.sourceAnswerUrl, q.id).toMatch(/^https:\/\/www\.nichimu\.or\.jp\//);
+      }
       if (q.session === "houki") {
-        expect(q.lawReferenceDate, q.id).toMatch(new RegExp(`^${q.year}-${q.season === "october" ? "10" : q.season === "june" ? "06" : "02"}-`));
+        expect(q.lawReferenceDate, q.id).toMatch(new RegExp(`^${q.year}-${month}-`));
       }
       expect(q.sourceAttribution, q.id).toContain("日本無線協会");
       const resource = buildQuestionJsonLd({ question: q, pageUrlAbs: `https://www.kakomon-ai.jp${questionPagePath(q)}`,
@@ -169,10 +182,10 @@ describe("radio84 product integration", () => {
   });
 
   it("exposes both new qualifications in search exam facets", async () => {
-    for (const [exam, expected] of [[DOMESTIC, 24], [SEA3, 60]] as const) {
-      const result = await searchQuestions({ exam, limit: 1 });
-      expect(result.total).toBe(expected);
-      expect(result.facets.exam[exam]).toBe(expected);
+    for (const { exam, year, season, session, size } of papers) {
+      const result = await searchQuestions({ exam, year, season, session, limit: 1 });
+      expect(result.total).toBe(size);
+      expect(result.facets.exam[exam]).toBe(size);
       expect(result.hits[0]?.exam).toBe(exam);
     }
   });

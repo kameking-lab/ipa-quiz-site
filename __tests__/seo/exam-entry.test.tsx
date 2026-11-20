@@ -12,12 +12,16 @@ describe.each(Object.keys(EXAM_ENTRIES) as ExamEntryCode[])("%s search landing",
   const years = groupByYearSeason(questions);
   const categories = groupByCategory(questions);
 
-  it("only advertises the morning questions actually included in the count", () => {
+  it("advertises the sessions actually included in the count", () => {
     expect(questions.length).toBeGreaterThan(0);
-    expect(questions.every(q => ["am", "am1", "am2"].includes(q.session))).toBe(true);
+    const sessions = new Set(questions.map(q => q.session));
+    expect(sessions).toEqual(exam === "ap" ? new Set(["am", "pm"])
+      : exam === "sc" ? new Set(["am1", "am2", "pm", "pm1", "pm2"])
+      : new Set(["am1", "am2", "pm1", "pm2"]));
     const description = examMetaDescription(exam, questions.length);
     expect(description).toContain(questions.length.toLocaleString("ja-JP"));
     expect(description).toContain("午前");
+    expect(description).toContain(exam === "ap" ? "旧午後" : "旧午後II");
     expect(description).not.toContain("未対応");
     expect(description).toContain("AIに質問");
     expect(examTopDescription(exam, questions.length)).toBe(description);

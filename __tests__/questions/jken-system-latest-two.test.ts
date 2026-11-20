@@ -63,13 +63,15 @@ describe("J検情報システム latest two official papers in staging", () => {
     expect(q.question).toContain("正規化前の受注表の主キーは受注番号（原図では実線の下線）");
   });
 
-  it("hides all staging questions from public registries, lazy loaders and exam lists", async () => {
+  it("serves each of the 227 reviewed slots through the public registries and lazy loader", async () => {
     expect(isExamPublished("jken-system")).toBe(true);
     expect(QUALIFICATION_CATALOG.find(q => q.slug === "jken-system")?.status).toBe("live");
-    expect(QUESTIONS_BY_EXAM["jken-system"]).toHaveLength(227);
-    expect(ALL_QUESTIONS.some(q => q.exam === "jken-system")).toBe(true);
-    expect(await getQuestionsForExam("jken-system")).toHaveLength(227);
-    expect(getQuestionsByExamStrict("jken-system")).toHaveLength(227);
+    const loaded = await getQuestionsForExam("jken-system");
+    expect(loaded).toEqual(expect.arrayContaining(JKEN_SYSTEM_QUESTIONS));
+    expect(new Set(loaded.map(q => q.id)).size).toBe(loaded.length);
+    expect(QUESTIONS_BY_EXAM["jken-system"]).toEqual(loaded);
+    expect(ALL_QUESTIONS.filter(q => q.exam === "jken-system")).toEqual(loaded);
+    expect(getQuestionsByExamStrict("jken-system")).toEqual(loaded);
     expect(ALL_QUIZ_EXAM_CODES).toContain("jken-system");
     expect(getAvailableExams()).toContain("jken-system");
     expect(ALL_EXAM_CODES).not.toContain("jken-system");

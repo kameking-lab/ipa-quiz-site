@@ -81,7 +81,7 @@ describe("flagship /essay structured data", () => {
     expect(SOURCE).toContain('slug: "koudo-ronbun-jikan-haibun"');
     expect(SOURCE).toContain('slug: "koudo-ronbun-hyouka-rank"');
     expect(SOURCE).toContain('slug: "koudo-ronjutsu-jiko-saiten"');
-    expect(SOURCE).toContain("論述の書き方・採点を学ぶ");
+    expect(SOURCE).toContain("論述の書き方・参考書");
   });
 
   it("does not advertise AP/FE essay practice", () => {

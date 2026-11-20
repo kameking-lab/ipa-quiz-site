@@ -6,20 +6,14 @@ test.beforeEach(async ({ page }) => {
   await page.route("**/api/copilot**", route => route.abort());
 });
 
-test("FP3 question survives the static-page CTA and normal-mode switch", async ({ page }) => {
+test("FP3 question has a readable explanation and links to the next original", async ({ page }) => {
   await page.goto("/q/fp3/2026-published/gakka/q11");
-  const start = page.getByRole("link", { name: "クイズモードで開く", exact: true });
-  await expect(start).toHaveAttribute("href", /question=fp3-2026-published-gakka-q11/);
-  await start.click();
-  await expect(page).toHaveURL(/question=fp3-2026-published-gakka-q11/);
-  const modeNav = page.getByRole("navigation", { name: "クイズモード切替" });
-  await modeNav.getByText("学習モード：").click();
-  const normal = modeNav.getByRole("link", { name: "通常クイズ", exact: true }).filter({ visible: true });
-  await normal.click();
-  await expect(page).toHaveURL(/mode=random/);
-  await expect(page).toHaveURL(/question=fp3-2026-published-gakka-q11/);
-  await expect(page.getByText(/売りオペ/).first()).toBeVisible();
-  await expect(modeNav.getByRole("link", { name: "模試", exact: true })).toHaveCount(0);
+  const explanation = page.getByRole("region", { name: "解説", exact: true });
+  await expect(explanation).toContainText("売りオペ");
+  const next = page.getByRole("navigation", { name: "解説のあとに学ぶ" }).getByRole("link", { name: "次の問題へ" });
+  await expect(next).toHaveAttribute("href", "/q/fp3/2026-published/gakka/q12");
+  await next.click();
+  await expect(page).toHaveURL("/q/fp3/2026-published/gakka/q12");
 });
 
 for (const paper of [
@@ -32,9 +26,11 @@ for (const paper of [
     const page = await context.newPage();
     const response = await page.goto(paper.path);
     expect(response?.status()).toBe(200);
-    const links = page.locator(`a[href="${paper.first}"]`);
-    expect(await links.count()).toBeGreaterThan(0);
-    await links.last().click();
+    const explanations = page.locator("details").filter({ has: page.getByText("問題別の解説", { exact: true }) });
+    await explanations.locator("summary").click();
+    const link = explanations.locator(`a[href="${paper.first}"]`);
+    await expect(link).toBeVisible();
+    await link.press("Enter");
     await expect(page).toHaveURL(paper.first);
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", `https://www.kakomon-ai.jp${paper.first}`);
     await context.close();
@@ -59,8 +55,10 @@ test("worked guide contains its problem, comparison, and check and the old URL i
 
 test("dental and land-surveyor pages distinguish originals and independent explanations", async ({ page }) => {
   await page.goto("/q/chosashi/2025-autumn/am/q11");
-  await expect(page.getByRole("link", { name: "公式答案用紙", exact: true }).first()).toBeVisible();
-  await expect(page.getByRole("link", { name: /公式出題の趣旨/ }).first()).toBeVisible();
+  const source = page.getByRole("group", { name: "出典", exact: true });
+  await source.getByText("出典の詳細", { exact: true }).click();
+  await expect(source.getByRole("link", { name: "公式答案用紙", exact: true }).first()).toBeVisible();
+  await expect(source.getByRole("link", { name: /公式出題の趣旨/ }).first()).toBeVisible();
   await expect(page.locator("main")).not.toContainText("IPAシラバス");
   await page.goto("/q/shika-ishi/2026-annual/mondai-a/q5");
   expect(await page.locator('main img[src*="shika-ishi"]').count()).toBeGreaterThan(0);

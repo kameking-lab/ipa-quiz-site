@@ -59,8 +59,7 @@ test.describe("home SERP snippet", () => {
     for (const code of ["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au"]) {
       expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith(`/${code}`))).toBe(true);
     }
-    // The all-qualification catalog lives at the root; /ipa retains its IPA list.
-    await page.goto("/");
+    await page.goto("/search");
     for (const code of ["fp3", "denko2", "denken3", "denken2", "takken", "civil2", "kankoji2", "zoen2", "tsushin2", "kaigo", "civil1", "denko1", "shakai", "seishin", "tohan", "benrishi", "junkango-kansai"]) {
       await expect(page.locator(`a[href="/${code}"]`).first()).toBeAttached();
     }

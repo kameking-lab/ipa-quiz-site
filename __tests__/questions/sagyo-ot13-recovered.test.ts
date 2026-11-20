@@ -10,6 +10,7 @@ import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { getQuestionsByExamStrict } from "@/lib/seo/exam-meta";
 import { ALL_QUESTIONS } from "@/data/questions";
 import { checkExplanationConsistency } from "@/lib/questions/explanation-consistency";
+import { reviewedOtIds } from "../fixtures/rehabilitation-reviewed-ids";
 
 const keys = ["ア", "イ", "ウ", "エ", "オ"] as const;
 const scope = [...OT13_RECOVERED_QUESTIONS, ...OT13_OFFICIAL_EXCLUSIONS];
@@ -111,12 +112,13 @@ describe("OT13 recovered originals and local integration candidates", () => {
   it("connects all 11 originals through static, lazy and SEO registries while exclusions remain unscored", async () => {
     const lazy = await getQuestionsForExam("sagyo-ryohoshi");
     const seo = getQuestionsByExamStrict("sagyo-ryohoshi");
-    expect(SAGYO_RYOHOSHI_QUESTIONS).toHaveLength(324);
-    expect(SAGYO_RYOHOSHI_QUESTIONS.filter(question => question.session === "am")).toHaveLength(144);
-    expect(SAGYO_RYOHOSHI_QUESTIONS.filter(question => question.session === "pm")).toHaveLength(180);
-    expect(new Set(SAGYO_RYOHOSHI_QUESTIONS.map(question => question.id)).size).toBe(324);
-    expect(lazy).toEqual(SAGYO_RYOHOSHI_QUESTIONS);
-    expect(seo).toEqual(SAGYO_RYOHOSHI_QUESTIONS);
+    const reviewed = SAGYO_RYOHOSHI_QUESTIONS.filter(q => reviewedOtIds.has(q.id));
+    expect(reviewed).toHaveLength(324);
+    expect(reviewed.filter(question => question.session === "am")).toHaveLength(144);
+    expect(reviewed.filter(question => question.session === "pm")).toHaveLength(180);
+    expect(new Set(reviewed.map(question => question.id))).toEqual(reviewedOtIds);
+    expect(lazy.filter(q => reviewedOtIds.has(q.id))).toEqual(reviewed);
+    expect(seo.filter(q => reviewedOtIds.has(q.id))).toEqual(reviewed);
     for (const original of OT13_RECOVERED_QUESTIONS) {
       expect(SAGYO_RYOHOSHI_QUESTIONS.find(question => question.id === original.id)).toEqual(original);
       expect(ALL_QUESTIONS.find(question => question.id === original.id)).toEqual(original);

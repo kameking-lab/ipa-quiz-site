@@ -128,6 +128,7 @@ function authorityBadge(question: ExamQuestion): string {
   if (isExamReferenceOnly(question)) return "参照専用・採点対象外";
   if (isScorableQuestion(question)) return "公式正答で採点";
   if (question.answerAuthority === "descriptive") return "記述・自己確認";
+  if (question.officialAllCandidatesCorrect) return "採点なし（公式は全員正解）";
   return "採点なし（公式正答未登録）";
 }
 
@@ -864,7 +865,7 @@ export function ExamQuestionPlayer({
                       {scorable ? ` ／ 公式正答 ${choiceText(current.correctChoice)}` : ""}
                     </p>
                   ) : null}
-                  {!scorable ? (
+                  {!scorable && !current.officialAllCandidatesCorrect ? (
                     <p className="mt-1">
                       {current.answerAuthority === "descriptive"
                         ? "記述式のため、このサイトでは正誤を判定しません。"

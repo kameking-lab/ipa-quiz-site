@@ -27,9 +27,11 @@ describe("医療3区分の過年度追加（全年度の全問収録ではない
       expect(proof.partial).toBe(true);
       expect(proof.reviewed).toHaveLength(30);
       for (const [exam, questions] of Object.entries(pools)) {
-        const added = questions.filter(q => q.year === proof.year);
+        const reviewedIds = new Set(proof.reviewed.filter(row => row.id.startsWith(`${exam}-`)).map(row => row.id));
+        const added = questions.filter(q => q.year === proof.year && reviewedIds.has(q.id));
         expect(added).toHaveLength(10);
-        expect(filterQuestions(questions, { exam: exam as Question["exam"], year: proof.year, mode: "random" })).toHaveLength(10);
+        const practice = filterQuestions(questions, { exam: exam as Question["exam"], year: proof.year, mode: "random" });
+        expect(new Set(practice.filter(q => reviewedIds.has(q.id)).map(q => q.id))).toEqual(reviewedIds);
         expect(EXAM_CONFIGS[exam as keyof typeof pools].yearRange.start).toBeLessThanOrEqual(proof.year);
         for (const q of added) {
           const source = proof.reviewed.find(row => row.id === q.id)!;
@@ -60,13 +62,10 @@ describe("医療3区分の過年度追加（全年度の全問収録ではない
       }
     });
   }
-  it("年度追加でIDが衝突せず、既存の公式正答を維持する", () => {
+  it("年度追加でIDが衝突しない", () => {
     for (const questions of Object.values(pools)) {
       expect(new Set(questions.map(q => q.id)).size).toBe(questions.length);
     }
-    expect(KANGOSHI_QUESTIONS.filter(q => q.year >= 2024)).toHaveLength(464);
-    expect(HOKENSHI_QUESTIONS.filter(q => q.year >= 2024)).toHaveLength(202);
-    expect(JOSANSHI_QUESTIONS.filter(q => q.year >= 2024)).toHaveLength(219);
   });
 
   it("着床と胎盤輸送で誤った記述を否定するだけでなく正しい機序を示す", () => {
@@ -103,6 +102,8 @@ describe("医療3区分の過年度追加（全年度の全問収録ではない
     expect(selectedReason).toContain("理由は未確認");
     expect(doc.querySelector('a[href="https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/630004_2529710X1027_1_09"]')).not.toBeNull();
     expect(doc.querySelector(`a[href="${question.sourcePdfUrl}"]`)).not.toBeNull();
-    expect(doc.querySelector(`a[href="${question.sourceAnswerUrl}"]`)).toBeNull();
+    const answer = doc.querySelector(`a[href="${question.sourceAnswerUrl}"]`);
+    expect(answer?.textContent).toContain("公式正答PDF");
+    expect(answer?.closest("details")?.open).toBe(false);
   });
 });

@@ -68,8 +68,8 @@ test("390px: a six-choice worked example keeps all choices and its actual choice
 test("the study room returns to the qualification last answered on this device", async ({ page }) => {
   await page.addInitScript(() => localStorage.setItem("ipa-quiz:last-question:v1", JSON.stringify({ exam: "sg", year: 2025, season: "cbt", session: "kamoku-a", qNumber: 5, answeredAt: Date.now() })));
   await page.goto("/");
-  const link = page.getByRole("link", { name: "情報セキュリティマネジメントをもう1問", exact: true }).first();
-  await expect(link).toHaveAttribute("href", "/quiz?mode=random&exam=sg");
+  const link = page.getByRole("link", { name: "続きを解く", exact: true });
+  await expect(link).toHaveAttribute("href", "/quiz?mode=year&exam=sg&year=2025&season=cbt&session=kamoku-a&question=sg-2025cbt-kamoku-a-q5");
   await link.click();
   await expect(page).toHaveURL(/exam=sg/);
   await expect(page.getByRole("radio").first()).toBeVisible();

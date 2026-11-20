@@ -32,7 +32,10 @@ it("問題詳細のHTMLに解説、原典、次問、関連資料を順に含め
   const next = html.querySelector('nav[aria-label="解説のあとに学ぶ"] a')!;
   expect(explanation.querySelector("summary")).toBeNull();
   expect(explanation.compareDocumentPosition(source) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
-  expect(source.querySelectorAll('a[href*=".pdf"]')).toHaveLength(1);
+  expect(source.querySelector(':scope > a[href*=".pdf"]')?.textContent).toContain("公式問題PDF");
+  const sourceDetails = source.querySelector("details")!;
+  expect(sourceDetails.open).toBe(false);
+  expect(sourceDetails.querySelector('a[href*=".pdf"]')?.textContent).toContain("公式正答PDF");
   expect(source.compareDocumentPosition(next) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
   expect(next.getAttribute("href")).toBe("/q/ap/2025-autumn/am/q13");
   const related = [...html.querySelectorAll("details")].find((element) => element.querySelector("summary")?.textContent === "関連資料")!;

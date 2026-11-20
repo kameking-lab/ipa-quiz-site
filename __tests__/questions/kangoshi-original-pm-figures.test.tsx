@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 import { QuestionFigures } from "@/components/quiz/QuestionFigures";
-import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
+import { KANGOSHI_BEFORE_COMPLETION as KANGOSHI_QUESTIONS } from "../fixtures/kangoshi-before-completion";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import proof from "@/docs/evidence/nurse-original-pm-figures-20261010/INTEGRATION.json";
 

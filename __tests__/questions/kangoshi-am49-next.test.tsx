@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
-import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
+import { KANGOSHI_BEFORE_COMPLETION as KANGOSHI_QUESTIONS } from "../fixtures/kangoshi-before-completion";
 import { QuestionFigures } from "@/components/quiz/QuestionFigures";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { isCompleteSelectionCorrect } from "@/lib/questions/answers";

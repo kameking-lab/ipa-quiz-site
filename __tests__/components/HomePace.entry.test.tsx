@@ -28,6 +28,34 @@ beforeEach(() => {
 afterEach(() => { cleanup(); localStorage.clear(); vi.unstubAllGlobals(); });
 
 describe("home plan entry", () => {
+  it("finds IT Passport by nickname and keeps its existing destination", async () => {
+    render(<HomePace domains={domains} planExamKeys={["ip", "fe"]} />);
+    const search = await screen.findByRole("searchbox", { name: "資格名・略称で検索" });
+    fireEvent.change(search, { target: { value: "あいぱす" } });
+    expect(screen.getByRole("link", { name: "ITパスポート" })).toHaveAttribute("href", "/ip");
+  });
+
+  it("uses the parent in home search and fetches a study schedule only after choosing a child", async () => {
+    const regional = { ...domains[0], featured: [...domains[0].featured,
+      { key: "chori-hokkaido", name: "調理師試験（北海道）", href: "/chori-hokkaido", questionCount: 60, periodLabel: "1期分" },
+      { key: "chori-gunma", name: "調理師試験（群馬県）", href: "/chori-gunma", questionCount: 60, periodLabel: "1期分" },
+    ] };
+    render(<HomePace domains={[regional]} planExamKeys={["ip", "chori-hokkaido", "chori-gunma"]} />);
+    fireEvent.change(screen.getByRole("searchbox", { name: "資格名・略称で検索" }), { target: { value: "北海道" } });
+    expect(screen.getByRole("link", { name: "調理師試験（都道府県別 2）" })).toHaveAttribute("href", "/qualifications/chori");
+    fireEvent.click(screen.getByRole("button", { name: "学習計画を作成" }));
+    fireEvent.change(screen.getByLabelText("受ける資格"), { target: { value: "group:chori" } });
+    expect(screen.queryByLabelText("受験日")).not.toBeInTheDocument();
+    const child = screen.getByLabelText("地域");
+    expect(child).toHaveValue("");
+    fireEvent.change(child, { target: { value: "chori-gunma" } });
+    expect(await screen.findByLabelText("受験日")).toBeVisible();
+    const calls = vi.mocked(fetch).mock.calls.map(([url]) => url);
+    expect(calls).toContain("/api/exam-schedule/chori-gunma");
+    expect(calls).not.toContain("/api/exam-schedule/group%3Achori");
+    expect(calls).not.toContain("/api/exam-schedule/");
+  });
+
   it.each([false, true])("opens creation from the home screen with prior study (%s)", async (returning) => {
     if (returning) localStorage.setItem(LS_KEYS.lastQuestion, JSON.stringify({ ...catalog[0], answeredAt: 1 }));
     render(<HomePace domains={domains} planExamKeys={["ip", "fe"]} />);

@@ -29,7 +29,37 @@ const PLAIN_NUMBER_CHOICE_EXAMS: readonly ExamCode[] = ["unko-kanrisha-ryokaku",
   "khk-hanbai",
   "kikenbutsu-otsu3",
   "kikenbutsu-otsu5",
-  "khk-hanbai2",];
+  "khk-hanbai2",
+  "chori-center",
+  "chori-gunma",
+  "chori-hokkaido",
+  "chori-kanagawa",
+  "chori-kansai",
+  "chori-nagano",
+  "chori-okinawa",
+  "chori-shizuoka",
+  "chori-tochigi",
+  "dokugeki-kansai",
+  "dokugeki-tokyo",
+  "homusho-senmonshokuin",
+  "junkango-b",
+  "junkango-saitama",
+  "kokka-ippan-kou",
+  "kyoin-gifu",
+  "kyoin-gunma",
+  "kyoin-hiroshima",
+  "kyoin-kobe",
+  "kyoin-kochi",
+  "kyoin-nagano",
+  "kyoin-nagasaki",
+  "kyoin-okinawa",
+  "kyoin-shimane",
+  "shokuhin-eisei-kanshiin",
+  "tohan-chugoku-shikoku",
+  "tohan-hokkaido-tohoku",
+  "tohan-kitakanto-koshinetsu",
+  "tohan-kyushu-okinawa",
+  "tohan-tokai-hokuriku",];
 
 /** 公式問題が選択肢をＡ〜Ｅで示す試験。内部キー ア〜オ と順番で対応させる。 */
 const ALPHABET_CHOICE_EXAMS: readonly ExamCode[] = ["sharoushi"];
@@ -168,6 +198,10 @@ const IROHA_CHOICE_EXAMS = new Set<ExamCode>([
 ]);
 
 export function choiceDisplayLabel(exam: ExamCode, key: ChoiceKey): string {
+  if (exam === "kyotsu-joho1") {
+    const index = "アイウエオカキクケコサシスセソタ".indexOf(key);
+    return index >= 0 ? index.toString(16).toUpperCase() : key;
+  }
   if (TRUE_FALSE_CHOICE_EXAMS.has(exam)) return key === "ア" ? "○" : key === "イ" ? "×" : key;
   if (IROHA_CHOICE_EXAMS.has(exam)) {
     const index = IROHA_CHOICE_KEYS.indexOf(key);

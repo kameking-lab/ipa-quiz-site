@@ -9,6 +9,7 @@ test("FP3 question 11 keeps its year-list solve and static explanation links aft
   const solve = page.getByRole("link", { name: "問11を解く", exact: true });
   await expect(solve).toContainText("金融資産運用");
   await expect(solve).not.toContainText("リスク管理");
+  await page.getByText("問題別の解説", { exact: true }).click();
   await expect(page.getByRole("link", { name: "問11の解説を見る", exact: true })).toHaveAttribute("href", questionPath);
   await solve.click();
   const selected = new URL(page.url());

@@ -2350,15 +2350,25 @@
     "answer": "ウ",
     "officialAnswerNumber": "C",
     "requiredSelections": 1,
-    "explanation": "複数の薬剤を使用しているため、薬同士が作用に影響していないかを確認する。",
-    "explanationCoverage": "official-summary",
+    "explanation": "TSH高値とFT4低値は甲状腺ホルモンの作用不足を示します。朝食後に併用するようになった炭酸カルシウムがレボチロキシンの吸収を妨げ、甲状腺機能低下症が悪化したと考えられます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-01c_01.pdf",
     "sourceAnswerUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken01/dl/seitou.pdf",
     "sourceAttribution": "出典：厚生労働省「第120回医師国家試験」問題C 問49（冊子PDF 24ページ、公式正答）。",
     "license": "MHLW-attributed",
     "sourceExamYear": 2026,
-    "sourceExamSession": "第120回 問題C"
+    "sourceExamSession": "第120回 問題C",
+    "choiceExplanations": {
+      "ア": "発熱がなくCRPも低値で、感染症を示す所見に乏しいです。",
+      "イ": "甲状腺は左右対称に腫大しています。結節や頸部リンパ節の腫大を認めず、甲状腺癌を積極的に疑う所見は示されていません。",
+      "ウ": "炭酸カルシウムをレボチロキシンと同時に服用すると、レボチロキシンの吸収が低下します。開始後の経過は、甲状腺ホルモンの補充が不十分になったことと整合します。",
+      "エ": "亜急性甲状腺炎では甲状腺の痛みや炎症所見が診断の手がかりになります。本例では頸部痛の記載がなく、CRPも低値です。",
+      "オ": "免疫関連有害事象を生じ得る免疫チェックポイント阻害薬の使用歴がありません。提示されている薬剤とサプリメントの服用状況が手がかりです。"
+    },
+    "officialReferenceUrls": [
+      "https://www.info.pmda.go.jp/juutoku/file/jfm2203020.pdf"
+    ]
   },
   {
     "id": "ishi-2026-annual-mondai-c-q50",

@@ -20,7 +20,6 @@ import StreamQuizPage from "@/app/quiz/stream/page";
 import YearModePage, { generateMetadata as yearMetadata } from "@/app/modes/year/page";
 import TopicModePage, { generateMetadata as topicMetadata } from "@/app/modes/topic/page";
 import { QuizClient } from "@/app/quiz/QuizClient";
-import { QuizModeTabs } from "@/components/quiz/QuizModeTabs";
 import { StreamQuizLoader } from "@/components/quiz/stream/StreamQuizLoader";
 import { filterQuestions } from "@/lib/questions/filter";
 import { quizBackHref } from "@/lib/questions/practice-session";
@@ -73,18 +72,13 @@ describe("知財2級の学習モード間で資格と問題集合を保持", () 
     expect(Object.fromEntries(quizLinks(denied)[0].searchParams)).toMatchObject({ ...params, mode: "random" });
   });
 
-  it.each(["gakka", "practical"] as const)("通常→ストリーム→無料試用で%sを保持", async session => {
+  it.each(["gakka", "practical"] as const)("通常とストリームの無料試用で%sを保持", async session => {
     const params = { mode: "random", exam: "chizai2", session, returnTo: "/chizai2" };
     access.query = new URLSearchParams(params).toString();
     const normal = await QuizPage({ searchParams: Promise.resolve(params) });
     assertIds(playerProps(normal).poolIds, questions.filter(q => q.session === session));
     expect(playerProps(normal).exam).toBe("chizai2");
-    const tabs = elements(normal).find(node => node.type === QuizModeTabs)!;
-    const html = renderToStaticMarkup(tabs);
-    const document = new DOMParser().parseFromString(html, "text/html");
-    const streamHref = document.querySelector<HTMLAnchorElement>('a[href^="/quiz/stream?"]')!.getAttribute("href")!;
-    const streamParams = Object.fromEntries(new URL(streamHref, "https://local.invalid").searchParams);
-    expect(streamParams).toMatchObject({ exam: "chizai2", session, returnTo: "/chizai2" });
+    const streamParams = { exam: params.exam, session, returnTo: params.returnTo };
     const expected = filterQuestions(questions, { mode: "random", exam: "chizai2", session })
       .filter(q => (q.requiredSelections ?? 1) === 1).slice(0, 60);
     const stream = await StreamQuizPage({ searchParams: Promise.resolve(streamParams) });

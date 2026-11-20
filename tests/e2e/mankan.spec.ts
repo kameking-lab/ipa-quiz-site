@@ -16,8 +16,7 @@ test.describe("マンション管理士試験", () => {
     await expect(choices).toHaveCount(4);
     await choices.nth(1).click();
     await expect(page.getByText("正解！").first()).toBeVisible();
-    // Official sources and the nonofficial-explanation disclosure are readable by default.
-    await expect(page.getByRole("group", { name: "AI生成の解説に関する詳細" })).toBeVisible();
+    await expect(page.getByRole("group", { name: "出典", exact: true }).getByRole("link", { name: /^公式問題PDF/ })).toBeVisible();
     await expect(page.getByText(/出典：令和7年度 マンション管理士試験 問1/).filter({ visible: true }).first()).toBeVisible();
     await expect(page.getByText(/マンション管理センターとは関係ありません/).filter({ visible: true }).first()).toBeVisible();
   });

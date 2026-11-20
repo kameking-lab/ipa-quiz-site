@@ -15,8 +15,7 @@ const SHAKAI_2025_QUESTIONS: Question[] = SHAKAI_2025_SOURCE.questions.map((item
 /**
  * 第37回（令和6年度）社会福祉士国家試験。
  * 共通科目（問題1〜84）は第27回精神保健福祉士と同一の問題PDF（sp_am_*_37.pdf）・同一の公式正答で、
- * 解説付きの原文は seishin/2024-annual.json にある。社会福祉士側はそれを共有し、
- * 共通科目84問の本文・正答・解説を精神保健福祉士側の収録データと共有する。
+ * 保留3問を除く共通科目81問の本文・正答・解説を seishin/2024-annual.json から共有する。
  * 専門科目（問題85〜129）は shakai/2024-annual.json。
  */
 const SEISHIN_2024_SHARED = seishin2024 as SsscSource;

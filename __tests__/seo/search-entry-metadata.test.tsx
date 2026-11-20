@@ -38,12 +38,23 @@ describe("search entry metadata", () => {
     expect(metadata.alternates?.canonical).toBe(`/${exam}`);
   });
 
-  it.each(["shika-ishi", "rinsho-kensagishi", "shinryo-hoshasengishi", "chosashi", "sharoushi"] as const)("preserves the existing partial coverage detail for %s", exam => {
+  it.each(["shika-ishi", "chosashi", "sharoushi"] as const)("preserves the existing partial coverage detail for %s", exam => {
     const count = getQuestionsByExamStrict(exam).length;
     const original = examMetaDescription(exam, count);
     const metadata = examSearchMetadata(exam, count);
     expect(metadata.description).toContain(original);
     expect(metadata.title).not.toContain(`全${count.toLocaleString("ja-JP")}問`);
+    expect(metadata.description).toContain("無料");
+  });
+
+  it.each([["rinsho-kensagishi", 929], ["shinryo-hoshasengishi", 995]] as const)("describes the expanded public corpus for %s", (exam, count) => {
+    const questions = getQuestionsByExamStrict(exam);
+    expect(questions).toHaveLength(count);
+    const firstYear = Math.min(...questions.map(question => question.year));
+    const lastYear = Math.max(...questions.map(question => question.year));
+    const metadata = examSearchMetadata(exam, count);
+    expect(metadata.title).toContain(`全${count.toLocaleString("ja-JP")}問`);
+    expect(metadata.description).toContain(`${firstYear}〜${lastYear}年度`);
     expect(metadata.description).toContain("無料");
   });
 

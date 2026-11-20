@@ -13,7 +13,8 @@ for (const [session, label] of SUBJECTS) {
     await expect(page.getByRole("heading", { name: "令和8年度 一次試験の科目を選ぶ" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "令和8年度 理論・機械の原問を解く" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "2025年度 理論・機械の原問を解く" })).toBeVisible();
-    await expect(page.getByText(/法規の問3・問5・問6は未収録です/)).toBeVisible();
+    const historicLaw = page.getByRole("region", { name: "2025年度 電力・法規の原問を解く" });
+    await expect(historicLaw.getByRole("link", { name: /法規/ })).toBeVisible();
     await expect(page.getByRole("link", { name: "二次試験の全20問を見る" })).toHaveAttribute("href", "/denken2/secondary");
     const card = page.getByRole("link", { name: new RegExp(`${label}を解く`) });
     await expect(card).toContainText("35空欄");

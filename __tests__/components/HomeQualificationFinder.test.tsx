@@ -4,6 +4,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { HomeQualificationFinder } from "@/components/home/landing/HomeQualificationFinder";
 import { HomeDirectory } from "@/components/home/landing/HomeDirectory";
 import { getHomeDirectory } from "@/lib/home/home-directory";
+import { groupHomeDirectoryItems } from "@/lib/home/grouped-directory";
 import { upcomingExamPicks } from "@/lib/home/featured-exams";
 const domains = getHomeDirectory();
 beforeEach(() => { cleanup(); localStorage.clear(); window.history.replaceState(null, "", "/"); });
@@ -12,7 +13,8 @@ describe("qualification discovery", () => {
     render(<HomeQualificationFinder domains={domains} homeDirectory={<HomeDirectory domains={domains} />} />);
     const results = document.getElementById("qualification-results")!;
     const items = domains.flatMap(domain => [...domain.featured, ...domain.compact]);
-    expect([...results.querySelectorAll("a")].map(a => a.getAttribute("href"))).toEqual(upcomingExamPicks(items.map(item => item.key), [], new Date()).map(pick => items.find(item => item.key === pick.key)!.href));
+    const visible = groupHomeDirectoryItems(items);
+    expect([...results.querySelectorAll("a")].map(a => a.getAttribute("href"))).toEqual(upcomingExamPicks(items.map(item => item.key), [], new Date()).map(pick => visible.find(item => item.key === pick.key)!.href));
     expect(document.querySelectorAll("details[open]")).toHaveLength(0);
     fireEvent.change(screen.getByRole("searchbox"), { target: { value: "宅建" } });
     expect(screen.getByRole("link", { name: /^宅建/ })).toHaveAttribute("href", "/takken");
@@ -41,6 +43,19 @@ describe("qualification discovery", () => {
     expect(row).toHaveAttribute("href", "/sc");
     expect(row).not.toHaveAttribute("aria-expanded");
     expect(screen.queryByText("選んだ資格")).not.toBeInTheDocument();
+  });
+  it("applies the domain filter to nickname matches", () => {
+    render(<HomeQualificationFinder domains={domains} />);
+    fireEvent.change(screen.getByRole("searchbox"), { target: { value: "たっけん" } });
+    expect(screen.getByRole("link", { name: /^宅建/ })).toHaveAttribute("href", "/takken");
+    fireEvent.change(screen.getByRole("combobox"), { target: { value: "it" } });
+    expect(screen.queryByRole("link", { name: /^宅建/ })).not.toBeInTheDocument();
+  });
+  it("finds an engineering department in its own field and links to the parent", () => {
+    render(<HomeQualificationFinder domains={domains} />);
+    fireEvent.change(screen.getByRole("combobox"), { target: { value: "electrical" } });
+    fireEvent.change(screen.getByRole("searchbox"), { target: { value: "技術士一次・電気電子" } });
+    expect(screen.getByRole("link", { name: /^技術士第一次試験（科目・部門別 22）/ })).toHaveAttribute("href", "/qualifications/gijutsushi-first");
   });
   it("filters a domain, reports empty searches and resets filters", () => {
     render(<HomeQualificationFinder domains={domains} />);
@@ -158,10 +173,11 @@ describe("qualification discovery", () => {
     expect((document.getElementById("qualification-coverage") as HTMLDetailsElement).open).toBe(false);
     expect(click.defaultPrevented).toBe(false);
   });
-  it("keeps every real qualification href in server-rendered collapsed genres", () => {
+  it("keeps each parent href in server-rendered collapsed genres", () => {
     const doc = new DOMParser().parseFromString(renderToStaticMarkup(<HomeDirectory domains={domains} />), "text/html");
     const hrefs = new Set(Array.from(doc.querySelectorAll("a")).map((a) => a.getAttribute("href")));
-    for (const item of domains.flatMap((d) => [...d.featured, ...d.compact])) expect(hrefs).toContain(item.href);
+    for (const item of groupHomeDirectoryItems(domains.flatMap((d) => [...d.featured, ...d.compact]))) expect(hrefs).toContain(item.href);
+    expect(hrefs).not.toContain("/chori-hokkaido");
     expect(doc.querySelectorAll("details[id^=domain-]")).toHaveLength(domains.length);
     expect(doc.querySelectorAll("details[open]")).toHaveLength(0);
   });

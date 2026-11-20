@@ -4,6 +4,8 @@ import { useEffect, useMemo, useRef, useState, type MouseEvent, type ReactNode }
 
 import { ArrowRight, Search, X } from "lucide-react";
 import type { HomeDirectoryDomain, HomeDomainId } from "@/lib/home/home-directory";
+import { groupHomeDirectoryItems } from "@/lib/home/grouped-directory";
+import { searchQualifications } from "@/lib/qualifications/search";
 import { HomeFeaturedExams, QualificationCard } from "./HomeFeaturedExams";
 
 function normalize(value: string): string {
@@ -59,11 +61,20 @@ export function HomeQualificationFinder({ domains, directoryHref = "#home-direct
     summary?.focus();
     summary?.scrollIntoView?.({ block: "start" });
   }
-  const items = useMemo(() => domains.flatMap((domain) =>
+  const rawItems = useMemo(() => domains.flatMap((domain) =>
     [...domain.featured, ...domain.compact].map((item) => ({ ...item, domainId: domain.id, domainTitle: domain.title }))), [domains]);
+  const items = useMemo(() => groupHomeDirectoryItems(rawItems), [rawItems]);
   const term = normalize(query);
-  const matching = items.filter((item) => (!domainId || item.domainId === domainId) &&
-    (!term || normalize([item.name, item.abbr, item.sub, item.domainTitle].join(" ")).includes(term)));
+  const inDomain = useMemo(() => {
+    if (!domainId) return items;
+    const keys = new Set(rawItems.filter(item => item.domainId === domainId).map(item => item.key));
+    return items.flatMap(item => {
+      if (!item.children) return keys.has(item.key) ? [item] : [];
+      const children = item.children.filter(child => keys.has(child.key));
+      return children.length ? [{ ...item, children }] : [];
+    });
+  }, [rawItems, items, domainId]);
+  const matching = term ? searchQualifications(inDomain, query, "directory") : inDomain;
   const browsing = !term && !domainId;
   const visible = browsing ? items.filter((item) => ["ip", "fe", "denko2", "fp3"].includes(item.key)) : matching;
 
@@ -86,7 +97,7 @@ export function HomeQualificationFinder({ domains, directoryHref = "#home-direct
         {domains.map(domain => <option key={domain.id} value={domain.id}>{domain.title}</option>)}
       </select></div>
       <p id="qualification-result-count" role="status" aria-live="polite" className="sr-only">{browsing ? "資格を選ぶ" : matching.length + "資格・区分"}</p>
-      {homeDirectory && browsing ? <div id="qualification-results"><HomeFeaturedExams items={items} onChoose={() => rememberFilters(query, domainId)} /></div> : visible.length > 0 ? <ul id="qualification-results" className="study-results">
+      {homeDirectory && browsing ? <div id="qualification-results"><HomeFeaturedExams items={rawItems} onChoose={() => rememberFilters(query, domainId)} /></div> : visible.length > 0 ? <ul id="qualification-results" className="study-results">
         {visible.map((item) => <li key={item.key}><QualificationCard item={item} onChoose={() => rememberFilters(query, domainId)} /></li>)}
       </ul> : <div id="qualification-results" className="study-empty"><p>該当する資格が見つかりませんでした。</p></div>}
       {homeDirectory ? <div hidden={!browsing}>{homeDirectory}</div> : showDirectoryLink ? <a href={directoryHref} onClick={openDirectory} className="study-text-link">収録している全資格・区分を見る<ArrowRight aria-hidden="true" className="h-4 w-4" /></a> : null}

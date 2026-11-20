@@ -19,6 +19,13 @@ const images = new Set();
 const groups = {};
 const authority = { official: 0, unconfirmed: 0, descriptive: 0 };
 const duplicates = new Map();
+const mixedBoilerKeys = new Map([
+  ['lckohyo-LC20260401-2', [5, 3, 5, 3, 3, 4, 3, 2]],
+  ['lckohyo-LC20251101', [1, 1, 4, 2, 5, 3, 1, 4]],
+  ['lckohyo-LC20241101', [2, 2, 2, 4, 3, 4, 2, 3]],
+]);
+const singleChoiceBoilerNumbers = [4, 5, 10, 11, 16, 17, 22, 23];
+let archivePapers;
 
 for (const paper of catalog) {
   check(/^(lckohyo|emkohyo|cskohyo)-[A-Za-z0-9-]+$/.test(paper.id), `Unsafe paper ID: ${paper.id}`);
@@ -31,8 +38,7 @@ for (const paper of catalog) {
     paper.sourceMode === 'official-pdf' || paper.sourceMode === 'official-archive-copy',
     `Unexpected source mode: ${paper.id}`,
   );
-  if (paper.sourceMode === 'official-archive-copy') {
-    check(/^cskohyo-CS202119\d{2}$/u.test(paper.id), `Archive copy outside reviewed 2021 consultant set: ${paper.id}`);
+  if (paper.sourceMode === 'official-archive-copy' && /^cskohyo-CS202119\d{2}$/u.test(paper.id)) {
     check(
       typeof paper.archiveSourceUrl === 'string' &&
         /^https:\/\/osh-lab\.com\/wp-content\/uploads\/2022\/06\/[a-f0-9]{32}\.pdf$/u.test(paper.archiveSourceUrl),
@@ -43,6 +49,15 @@ for (const paper of catalog) {
         'https://web.archive.org/web/20220528065047id_/https://www.exam.or.jp/exmn/csv/cspdf.csv',
       `Missing official archive manifest: ${paper.id}`,
     );
+  } else if (paper.sourceMode === 'official-archive-copy') {
+    archivePapers ??= read('official-archive-papers.json');
+    const pinned = Object.hasOwn(archivePapers, paper.id) ? archivePapers[paper.id] : undefined;
+    const original = typeof paper.archiveSourceUrl === 'string'
+      ? /^https:\/\/web\.archive\.org\/web\/\d{14}id_\/(https:\/\/www\.exam\.or\.jp\/[^?#]+\.pdf)$/u.exec(paper.archiveSourceUrl)?.[1]
+      : undefined;
+    check(pinned && original === paper.pdfUrl && pinned.pdfUrl === paper.pdfUrl
+      && pinned.archiveSourceUrl === paper.archiveSourceUrl && pinned.pdfSha256 === paper.pdfSha256,
+      `Archive copy does not match a reviewed official PDF: ${paper.id}`);
   }
   check(['reference', 'official-choice'].includes(paper.answerMode), `Unexpected answer mode: ${paper.id}`);
   for (const key of ['pdfUrl', 'indexUrl']) {
@@ -68,11 +83,21 @@ for (const paper of catalog) {
     check(Array.isArray(q.sourcePages) && q.sourcePages.length > 0 && q.sourcePages.every(p => Number.isInteger(p) && p > 0 && p <= paper.pageCount), `Invalid PDF pages: ${q.id}`);
     check(Object.hasOwn(authority, q.answerAuthority), `Invalid answer authority: ${q.id}`);
     if (Object.hasOwn(authority, q.answerAuthority)) authority[q.answerAuthority]++;
-    // 特級の同一PDFには記述16問と公式正答付き択一8問が併載されている。
-    const mixedBoilerChoice = ['lckohyo-LC20260401-2', 'lckohyo-LC20251101'].includes(paper.id)
-      && [4, 5, 10, 11, 16, 17, 22, 23].includes(q.number)
-      && q.answerAuthority === 'official' && q.choiceCount === 5;
-    check(mixedBoilerChoice || (paper.answerMode === 'reference') === (q.answerAuthority === 'descriptive'), `Paper/question answer mode mismatch: ${q.id}`);
+    // 各科目の原問4・5だけが五肢択一。採点キーは冊子末尾の正答表と照合する。
+    const boilerKeys = mixedBoilerKeys.get(paper.id);
+    const boilerChoiceIndex = singleChoiceBoilerNumbers.indexOf(q.number);
+    if (boilerKeys && boilerChoiceIndex !== -1) {
+      check(paper.answerMode === 'reference' && q.sourceQuestionNumber === 4 + (boilerChoiceIndex % 2)
+        && q.answerAuthority === 'official' && q.choiceCount === 5 && q.correctChoice === boilerKeys[boilerChoiceIndex],
+      `Mixed boiler question differs from official key: ${q.id}`);
+    } else {
+      check((paper.answerMode === 'reference') === (q.answerAuthority === 'descriptive'), `Paper/question answer mode mismatch: ${q.id}`);
+    }
+    if (q.officialAllCandidatesCorrect !== undefined || q.id === 'emkohyo-EM20221808-q1') {
+      check(q.id === 'emkohyo-EM20221808-q1' && q.officialAllCandidatesCorrect === true
+        && q.answerAuthority === 'unconfirmed' && q.correctChoice === null && q.choiceCount === 5,
+      `Question differs from official all-candidates-correct scoring: ${q.id}`);
+    }
     if (q.answerAuthority === 'official') {
       check(q.choiceCount === 5 && Number.isInteger(q.correctChoice) && q.correctChoice >= 1 && q.correctChoice <= 5, `Invalid official answer: ${q.id}`);
     } else {

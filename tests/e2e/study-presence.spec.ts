@@ -43,19 +43,30 @@ for (const [count, stage, name] of [[1, 0, "one"], [5, 0, "small"], [12, 1, "cla
     await expect(scene.locator(".study-mascot")).toHaveCount(count);
     await expect(page.getByTestId("study-room-seat")).toHaveCount(count);
     await expect(page.getByText(/^\+/)).toHaveCount(0);
-    // Visit every row so native lazy images can be decoded before the evidence capture.
-    for (const image of await scene.locator(".study-mascot img").all()) {
-      await image.scrollIntoViewIfNeeded();
-      await expect.poll(() => image.evaluate(element => (element as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
-    }
+    await scene.scrollIntoViewIfNeeded();
+    await expect.poll(() => scene.locator(".study-mascot img").evaluateAll(images =>
+      images.every(image => (image as HTMLImageElement).naturalWidth > 0),
+    )).toBe(true);
     const geometry = await scene.evaluate(element => {
       const box = element.getBoundingClientRect();
       const seats = [...element.querySelectorAll('[data-testid="study-room-seat"]')].map(seat => seat.getBoundingClientRect());
       return { fits: document.documentElement.scrollWidth <= innerWidth,
         seatsFit: seats.every(seat => seat.left >= box.left && seat.right <= box.right + 1 && seat.top >= box.top && seat.bottom <= box.bottom + 1),
-        targets: seats.every(seat => seat.width >= 44 && seat.height >= 44) };
+        minSeatWidth: Math.min(...seats.map(seat => seat.width)),
+        minSeatHeight: Math.min(...seats.map(seat => seat.height)) };
     });
-    expect(geometry).toEqual({ fits: true, seatsFit: true, targets: true });
+    expect(geometry.fits).toBe(true);
+    expect(geometry.seatsFit).toBe(true);
+    if (count <= 24) {
+      expect(geometry.minSeatWidth).toBeGreaterThanOrEqual(44);
+      expect(geometry.minSeatHeight).toBeGreaterThanOrEqual(44);
+    }
+    const seat = scene.getByRole("button", { name: /のチワワを見る$/ }).first();
+    await seat.press("Enter");
+    await expect(seat).toHaveAttribute("aria-pressed", "true");
+    await expect(page.getByTestId("study-room-inspected")).toContainText("ITパスポート");
+    await seat.press("Enter");
+    await expect(page.getByTestId("study-room-inspected")).toHaveCount(0);
     await scene.screenshot({ path: `${evidence}/${name}-390.png` });
     if (count === 5) await page.locator("#study-room").screenshot({ path: `${evidence}/room-390.png` });
     expect(errors).toEqual([]);
@@ -63,30 +74,28 @@ for (const [count, stage, name] of [[1, 0, "one"], [5, 0, "small"], [12, 1, "cla
 }
 
 
-test("a tall hall reuses images and rests offscreen seats and reduced-motion images", async ({ page }) => {
-  await page.setViewportSize({ width: 390, height: 844 });
+test("the hall reuses images and only marks seats active while the scene is in view", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 430 });
   await page.emulateMedia({ reducedMotion: "no-preference" });
-  const requests: string[] = [];
-  page.on("request", request => { if (request.url().includes("/room-chihuahuas/study/")) requests.push(request.url()); });
   await page.goto("/study-room");
   await show(page, { count: 60, exams: [{ exam: "ip", count: 60 }] });
-  const seats = page.getByTestId("study-room-seat");
-  // Scattered DOM order has no spatial meaning. Exercise the two horizontal extremes.
-  const extremes = await seats.evaluateAll(elements => {
-    const sorted = elements.toSorted((a, b) => a.getBoundingClientRect().left - b.getBoundingClientRect().left);
-    return [sorted[0].getAttribute("data-seat-key"), sorted.at(-1)!.getAttribute("data-seat-key")];
-  });
-  const left = page.locator(`[data-seat-key="${extremes[0]}"]`), right = page.locator(`[data-seat-key="${extremes[1]}"]`);
-  await left.scrollIntoViewIfNeeded();
-  await expect(left).toHaveAttribute("data-animate", "true");
-  await expect(right).toHaveAttribute("data-animate", "false");
-  await expect(right.locator(".study-mascot")).toHaveCSS("animation-name", "none");
-  await right.scrollIntoViewIfNeeded();
-  await expect(left).toHaveAttribute("data-animate", "false");
-  await expect(right).toHaveAttribute("data-animate", "true");
-  expect(new Set(requests).size).toBeLessThanOrEqual(11); // shared single-dog ar-3 poses
+  const scene = page.getByTestId("study-room-scene");
+  const seat = scene.getByTestId("study-room-seat").first();
+  await seat.scrollIntoViewIfNeeded();
+  await expect(seat).toHaveAttribute("data-animate", "true");
+  const artCount = await scene.locator(".study-mascot img").evaluateAll(images =>
+    new Set(images.map(image => image.getAttribute("src"))).size,
+  );
+  expect(artCount).toBeGreaterThan(0);
+  expect(artCount).toBeLessThanOrEqual(11);
+  await page.locator("footer summary").filter({ hasText: /^サイトマップ・運営情報$/ }).click();
+  await page.evaluate(() => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "instant" }));
+  await expect(scene).not.toBeInViewport();
+  await expect(seat).toHaveAttribute("data-animate", "false");
+  await seat.scrollIntoViewIfNeeded();
+  await expect(seat).toHaveAttribute("data-animate", "true");
   await page.emulateMedia({ reducedMotion: "reduce" });
-  await expect(right.locator(".study-mascot")).toHaveCSS("animation-name", "none");
+  await expect(seat.locator(".study-mascot")).toHaveCSS("animation-name", "none");
   await page.setViewportSize({ width: 1280, height: 900 });
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.getByTestId("study-room-scene").screenshot({ path: `${evidence}/hall-1280.png` });

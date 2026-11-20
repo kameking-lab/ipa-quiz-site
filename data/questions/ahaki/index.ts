@@ -15,8 +15,6 @@ import anma2022Morning from "./ahaki-anma-2022-am.json";
 
 import anma2025 from "./ahaki-anma-2025.json";
 
-import anma2025Q124 from "./ahaki-anma-2025-q124.json";
-
 import anma2026 from "./ahaki-anma-2026.json";
 
 import hari2022 from "./ahaki-hari-kyu-2022.json";
@@ -46,7 +44,7 @@ import hari2022Morning from "./ahaki-hari-kyu-2022-am.json";
 /** The 161–170 and 171–180 tracks remain in the single official hari/kyuu booklet. */
 export const AHAKI_ANMA_QUESTIONS: Question[] = [
   ...([...anma2026, ...anma2026Q147] as Question[]).sort((a, b) => a.qNumber - b.qNumber),
-  ...([...anma2025, ...anma2025Q124] as Question[]).sort((a, b) => a.qNumber - b.qNumber),
+  ...(anma2025 as Question[]),
   ...(anma2024Morning as Question[]),
   ...(anma2024Afternoon as Question[]),
   ...(anma2023Morning as Question[]),

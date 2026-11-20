@@ -23,6 +23,20 @@ export const REFERENCE_ONLY_QUESTION_IDS: ReadonlySet<string> = new Set([
   "yakuzaishi-2026-annual-practical-q199",
   "yakuzaishi-2024-annual-practical-q330",
   "kangoshi-2018-annual-am-q5",
+  "tohan-kyushu-okinawa-2024-annual-gakka-q44",
+  "tohan-kyushu-okinawa-2024-annual-gakka-q69",
+  "tohan-kyushu-okinawa-2025-annual-gakka-q35",
+  "jken-katsuyo2-220619-m7-s4",
+  "jken-katsuyo2-221218-m5-s7",
+  "chusho-kigyo-shindanshi-2022-annual-unei-q3",
+  "chusho-kigyo-shindanshi-2023-annual-unei-q14",
+  "chusho-kigyo-shindanshi-2023-annual-unei-q31",
+  "shuwa-2023-annual-mondai-d-10",
+  "shuwa-2024-annual-mondai-b-13",
+  "shuwa-2024-annual-mondai-d-19",
+  "kyoin-gunma-2025-annual-kyotsu-14",
+  "kyoin-kobe-2022-annual-kyotsu-16",
+  "kyoin-nagano-2026-annual-kyotsu-13",
 ]);
 
 

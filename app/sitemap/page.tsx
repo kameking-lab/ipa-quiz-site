@@ -7,6 +7,8 @@ import { getAllBlogSlugs, getBlogPostBySlug } from "@/data/blog";
 import { getExamQuestionCount } from "@/lib/constants/exam-question-counts";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { QUALIFICATION_HUBS, qualificationHubPath } from "@/lib/exam-qualification-hubs";
+import { getPublishedQualificationGroups } from "@/lib/qualifications/published-groups";
+import { qualificationGroupLabel, qualificationGroupPath } from "@/lib/qualifications/groups";
 import type { ExamCode } from "@/lib/questions/types";
 import { examLabel } from "@/lib/utils";
 
@@ -128,6 +130,17 @@ export default function HtmlSitemapPage() {
               </Link>
             </li>
           ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="qualification-groups" className="mb-10">
+        <h2 id="qualification-groups" className="mb-3 text-lg font-bold text-foreground">地域・部門別の資格</h2>
+        <ul className="grid gap-2 text-sm sm:grid-cols-2">
+          {getPublishedQualificationGroups().map(({ group, children }) => <li key={group.slug}>
+            <Link href={qualificationGroupPath(group.slug)} prefetch={false} className="text-sky-600 hover:underline dark:text-sky-400">
+              {qualificationGroupLabel(group, children.length)}
+            </Link>
+          </li>)}
         </ul>
       </section>
 

@@ -36,6 +36,8 @@ import {
   qualificationHubPath,
 } from "@/lib/exam-qualification-hubs";
 import { getQualificationHubEntries } from "@/lib/exam-qualification-hub-data";
+import { getPublishedQualificationGroups } from "@/lib/qualifications/published-groups";
+import { qualificationGroupPath } from "@/lib/qualifications/groups";
 
 // Build date (YYYY-MM-DD). Auto-advances every deploy, so genuinely static
 // pages no longer carry a hand-maintained literal that goes stale (E-5).
@@ -326,6 +328,9 @@ export function renderMainSitemapXml(): string {
   const now = new Date().toISOString();
   return renderUrlSet([
     ...STATIC_ROUTES.map((r) => ({ lastModified: now, ...r })),
+    ...getPublishedQualificationGroups().map(({ group }) => ({
+      url: `${SITE_BASE_URL}${qualificationGroupPath(group.slug)}`, changeFrequency: "monthly", priority: 0.8,
+    })),
     ...getEssayRoutes().map((r) => ({ lastModified: now, ...r })),
   ]);
 }

@@ -23,10 +23,12 @@ import { WeaknessReport } from "./WeaknessReport";
 import type { WeaknessQuestionMeta } from "@/lib/me/weakness";
 import type { ExamDatePlan } from "@/lib/billing/exam-end";
 import { readExamDatePlans } from "@/lib/billing/exam-end-client";
+import { QualificationSelect } from "@/components/qualifications/QualificationSelect";
 
 const intensity = ["bg-muted", "bg-activity-1", "bg-activity-2", "bg-activity-3", "bg-activity-4"] as const;
 const number = new Intl.NumberFormat("ja-JP", { maximumFractionDigits: 1 });
 const shortDate = (date: string) => `${Number(date.slice(5, 7))}/${Number(date.slice(8))}`;
+const reportExams = new Set<string>(ALL_QUIZ_EXAM_CODES);
 interface Snapshot { history: HistoryEntry[]; actions: LearningAction[]; days: Record<string, number>; exam: string | null; goal: number; passed: string[]; plans: unknown; examDatePlans: ExamDatePlan[]; hasSafetyHistory: boolean; now: Date }
 
 export function MeClient({ reportExam: requestedReportExam }: { reportExam?: string } = {}) {
@@ -35,6 +37,7 @@ export function MeClient({ reportExam: requestedReportExam }: { reportExam?: str
   const [weaknessMeta, setWeaknessMeta] = useState<Record<string, WeaknessQuestionMeta>>({});
   const [questionLabels, setQuestionLabels] = useState<Record<string, string>>({});
   const [selected, setSelected] = useState<{ date: string; exam?: string | null } | null>(null);
+  const [chosenReportExam, setChosenReportExam] = useState<string>();
   const calendarScroll = useRef<HTMLDivElement>(null);
   const recordTrigger = useRef<HTMLButtonElement | null>(null);
   const openRecord = (selection: { date: string; exam?: string | null }, button: HTMLButtonElement) => {
@@ -97,7 +100,11 @@ export function MeClient({ reportExam: requestedReportExam }: { reportExam?: str
     return record.exam && at > latest.at ? { exam: record.exam, at } : latest;
   }, { exam: null, at: -1 });
   const reportExam = mostRecent?.exam ?? exam;
-  const wrongExam = requestedReportExam ?? reportExam;
+  const reportChoice = chosenReportExam ?? requestedReportExam;
+  const wrongExam = reportChoice || reportExam;
+  const progressOptions = [...new Set(records?.records.flatMap(record => record.exam && reportExams.has(record.exam) ? [record.exam] : []))]
+    .map(key => ({ key, name: examLabel(key) }));
+  const progressValue = reportChoice ?? (progressOptions.some(option => option.key === reportExam) ? reportExam : "");
   const hasWrong = records?.records.some((record) => record.exam === wrongExam && record.entries.some((entry) => !entry.correct));
   const wrongHref = '/quiz?' + new URLSearchParams({ mode: "review", reviewKind: "wrong", exam: wrongExam });
   const menuLink = "flex min-h-11 items-center py-2 text-sm font-medium underline-offset-4 hover:underline";
@@ -119,8 +126,13 @@ export function MeClient({ reportExam: requestedReportExam }: { reportExam?: str
       {snapshot?.hasSafetyHistory && <Link href="/e-learning/progress" className={menuLink}>安全衛生の進捗・復習</Link>}
       <Link href={snapshot?.examDatePlans.length ? "/#today" : "/study-plan"} className={menuLink}>{snapshot?.examDatePlans.length ? "学習計画を見る" : "学習計画を作成"}</Link>
     </nav>
-    {snapshot && records && <WeaknessReport history={records.entries}
-      meta={weaknessMeta} exam={reportExam} requestedExam={requestedReportExam} plans={snapshot.examDatePlans} now={snapshot.now} />}
+    {progressOptions.length > 1 && <details className="rounded-xl border border-border px-3">
+      <summary className="min-h-11 cursor-pointer py-3 text-sm font-medium">進捗を見る資格を選ぶ</summary>
+      <QualificationSelect items={progressOptions} value={progressValue} onChange={setChosenReportExam} label="資格" emptyLabel="資格を選ぶ"
+        className="pb-3 text-sm font-medium" fieldClass="mt-1 block min-h-11 w-full min-w-0 rounded-lg border border-border bg-background px-2 text-base" />
+    </details>}
+    {snapshot && records && reportChoice !== "" && <WeaknessReport history={records.entries}
+      meta={weaknessMeta} exam={reportExam} requestedExam={reportChoice} plans={snapshot.examDatePlans} now={snapshot.now} />}
     <section aria-labelledby="me-calendar" className="rounded-xl border border-border bg-card p-3"><div className="mb-2 flex flex-wrap items-baseline justify-between gap-2"><h2 id="me-calendar" className="text-sm font-bold">12週間のカレンダー</h2><span className="text-xs tabular-nums text-muted-foreground">{records ? `${shortDate(records.calendar[0].date)}–${shortDate(records.calendar[83].date)}` : ""}</span></div>
       <div className="flex gap-1.5"><div aria-hidden="true" className="grid grid-rows-7 gap-0.5 text-[10px] leading-none text-muted-foreground">{records?.calendar.slice(0, 7).map(day => <span key={day.date} className="flex h-6 items-center">{new Intl.DateTimeFormat("ja", { weekday: "narrow", timeZone: "Asia/Tokyo" }).format(new Date(`${day.date}T12:00:00+09:00`))}</span>)}</div>
         <div ref={calendarScroll} role="region" aria-label="日別の学習量" tabIndex={0} className="min-w-0 flex-1 overflow-x-auto rounded-sm outline-offset-2 focus-visible:outline-2 focus-visible:outline-primary">

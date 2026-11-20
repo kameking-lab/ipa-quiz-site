@@ -70,6 +70,7 @@ export interface ExamChoiceExplanation {
 }
 
 export interface ExamQuestion {
+  officialAllCandidatesCorrect?: true;
   referenceOnly?: boolean;
   referenceNotice?: string;
   officialKey?: number;
@@ -182,8 +183,7 @@ export function parseExamCatalogEntry(value: unknown): ExamCatalogEntry | null {
   if (dateKind !== "publication" && dateKind !== "exam") return null;
   // 免許試験（lckohyo）の日付は公表時期。実施日として扱わない。
   if (group === "lckohyo" && dateKind !== "publication") return null;
-  const recordedExamMonth = id === "emkohyo-EM20232804" && dateKind === "exam" && date === "2024-02";
-  if (typeof date !== "string" || (!recordedExamMonth && !isValidMonthOrDay(date, dateKind))) return null;
+  if (typeof date !== "string" || !isValidMonthOrDay(date, dateKind)) return null;
   const officialOrigin = group === "pe-first" ? "https://www.engineer.or.jp/" : OFFICIAL_ORIGIN;
   if (typeof pdfUrl !== "string" || !pdfUrl.startsWith(officialOrigin)) return null;
   if (typeof indexUrl !== "string" || !indexUrl.startsWith(officialOrigin)) return null;
@@ -281,6 +281,9 @@ export function parseExamQuestion(value: unknown, examId: string): ExamQuestion 
     choiceCount: authority === "descriptive" ? 0 : choiceCount,
     answerAuthority: authority,
   };
+  if (authority === "unconfirmed" && choiceCount === 5 && value.officialAllCandidatesCorrect === true) {
+    question.officialAllCandidatesCorrect = true;
+  }
   if (isNonNegativeInteger(value.sourceQuestionNumber) && value.sourceQuestionNumber > 0) {
     question.sourceQuestionNumber = value.sourceQuestionNumber;
   }
@@ -372,6 +375,7 @@ export function boilerAnswerPage(examId: string, questionNumber: number): number
   const pages: Record<string, readonly number[]> = {
     "lckohyo-LC20260401-2": [32,33,34,34,34,34,35,35,36,36,36,36,37,38,39,39,39,39,40,40,41,41,41,41],
     "lckohyo-LC20251101": [30,31,32,32,32,32,33,34,35,35,35,35,36,37,38,38,38,38,39,39,40,40,40,40],
+    "lckohyo-LC20241101": [34,35,36,36,36,36,37,38,39,39,39,39,40,41,42,42,42,42,43,44,45,45,45,45],
   };
   return pages[examId]?.[questionNumber - 1];
 }

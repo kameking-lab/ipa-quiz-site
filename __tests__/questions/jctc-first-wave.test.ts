@@ -17,8 +17,8 @@ const allNumbers = Array.from({ length: 40 }, (_, index) => index + 1);
 
 describe("JCTC first-stage questions with official provenance", () => {
   it.each([
-    ["zoen2", garden, ZOEN2_QUESTIONS.filter((q) => q.year === 2026), 40, 40],
-    ["tsushin2", telecom, TSUSHIN2_QUESTIONS.filter(q => q.year === 2026 && telecom.questions.some(item => item.number === q.qNumber)), 65, 5],
+    ["zoen2", garden, ZOEN2_QUESTIONS.filter(q => q.year === garden.year && q.season === garden.season), 40, 40],
+    ["tsushin2", telecom, TSUSHIN2_QUESTIONS.filter(q => q.year === telecom.year && q.season === telecom.season && telecom.questions.some(item => item.number === q.qNumber)), 65, 5],
   ] as const)("%s retains original PDF hashes and all official answers", (exam, source, questions, officialCount, count) => {
     expect(source.officialQuestionCount).toBe(officialCount);
     expect(source.publishedCount).toBe(count);
@@ -40,16 +40,15 @@ describe("JCTC first-stage questions with official provenance", () => {
   });
 
   it("retains the original five and restores formerly deferred telecom figures", () => {
-    expect(TSUSHIN2_QUESTIONS).toHaveLength(130);
+    expect(TSUSHIN2_QUESTIONS.filter(q => q.year === telecom.year && q.season === telecom.season)).toHaveLength(65);
     for (const number of [1, 2, 3, 5, 6]) {
-      expect(TSUSHIN2_QUESTIONS.find(q => q.year === 2026 && q.qNumber === number)).toBeDefined();
+      expect(TSUSHIN2_QUESTIONS.find(q => q.year === telecom.year && q.season === telecom.season && q.qNumber === number)).toBeDefined();
     }
     expect(telecom.deferred.map((q) => q.number)).toEqual([1, 2, 3, 5, 6]);
   });
 
   it("covers both gardening sittings completely, without duplicate question IDs", () => {
-    expect(ZOEN2_QUESTIONS).toHaveLength(80);
-    expect(new Set(ZOEN2_QUESTIONS.map((q) => q.id)).size).toBe(80);
+    expect(new Set(ZOEN2_QUESTIONS.map((q) => q.id)).size).toBe(ZOEN2_QUESTIONS.length);
     for (const source of [garden, garden2025]) {
       const selected = ZOEN2_QUESTIONS.filter((q) => q.year === source.year && q.season === source.season);
       expect(source.publishedCount).toBe(40);
@@ -106,7 +105,10 @@ describe("JCTC first-stage questions with official provenance", () => {
 
   it("does not assert reuse permission for newly restored material", () => {
     const added2025 = new Set([9,16,17,20,22,24,27,28,29,37,38,39,40]);
-    const added = ZOEN2_QUESTIONS.filter((q) => q.year === 2026 ? q.qNumber >= 11 : added2025.has(q.qNumber));
+    const added = ZOEN2_QUESTIONS.filter(q => (
+      (q.year === garden.year && q.season === garden.season && q.qNumber >= 11)
+      || (q.year === garden2025.year && q.season === garden2025.season && added2025.has(q.qNumber))
+    ));
     expect(added).toHaveLength(43);
     expect(added.every((q) => q.license === "JCTC-attributed")).toBe(true);
     expect(garden.releaseStatus).toBe("DRAFT_IMPLEMENTATION_COMPLETE");

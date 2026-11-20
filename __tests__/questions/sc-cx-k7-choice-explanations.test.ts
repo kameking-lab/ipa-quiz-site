@@ -118,8 +118,10 @@ describe("SC cx-k7 morning I choice explanations", () => {
       morningIIOverlay,
     );
     const expected = applyChoiceExplanationOverlay(baseline, overlay);
-    expect(SC_QUESTIONS).toEqual(expected);
-    for (const [index, question] of SC_QUESTIONS.entries()) {
+    const originalIds = new Set(baseline.map(q => q.id));
+    const retained = SC_QUESTIONS.filter(q => originalIds.has(q.id));
+    expect(retained).toEqual(expected);
+    for (const [index, question] of retained.entries()) {
       const { choiceExplanations: added, ...actualFields } = question;
       const { choiceExplanations: before, ...originalFields } = baseline[index]!;
       expect(actualFields, question.id).toEqual(originalFields);

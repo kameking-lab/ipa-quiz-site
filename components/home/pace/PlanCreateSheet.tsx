@@ -8,6 +8,7 @@ import { createPacePlan } from "@/lib/study-plan/pace";
 import { savePacePlan } from "@/lib/study-plan/pace-storage";
 import { loadPlanCatalog } from "@/lib/study-plan/client";
 import { japanDate } from "@/lib/home/featured-exams";
+import { QualificationSelect } from "@/components/qualifications/QualificationSelect";
 import styles from "./HomePace.module.css";
 
 const fieldClass = "mt-1.5 min-h-11 w-full min-w-0 rounded-lg border border-input bg-card px-3";
@@ -30,8 +31,9 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCrea
   useEffect(() => { if (open) setExam(initialExam); }, [open, initialExam]);
   useEffect(() => {
     if (!open) return;
+    setLoading(!!exam); setError(""); setDate(""); setSessions([]); setSessionId(""); setScheduleFailed(false);
+    if (!exam) return;
     const controller = new AbortController();
-    setLoading(true); setError(""); setDate(""); setSessions([]); setSessionId(""); setScheduleFailed(false);
     void fetch(`/api/exam-schedule/${encodeURIComponent(exam)}`, { signal: controller.signal })
       .then(async response => {
         if (!response.ok) throw new Error("schedule");
@@ -49,7 +51,7 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCrea
     session.datePrecision === "month" || !!session.examDateEnd && session.examDateEnd !== session.examDate;
   const examDate = manual ? date : session?.examDate ?? "";
   async function create() {
-    if (!examDate || examDate < japanDate(new Date())) return;
+    if (!exam || !examDate || examDate < japanDate(new Date())) return;
     setSaving(true); setError("");
     try {
       const catalog = await loadPlanCatalog(exam);
@@ -67,7 +69,8 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCrea
   }
   const fields = (
       <div className="mt-4 space-y-3">
-        <label className="block text-sm font-medium">受ける資格<select className={fieldClass} value={exam} onChange={e => setExam(e.target.value)}>{items.map(item => <option key={item.key} value={item.key}>{item.name}</option>)}</select></label>
+        <QualificationSelect items={items} value={exam} onChange={setExam} label="受ける資格" emptyLabel="資格を選ぶ" className="text-sm font-medium" fieldClass={fieldClass} />
+        {exam && <>
         {loading ? <p role="status" className="text-sm text-muted-foreground">日程を確認中…</p> : <>
           {sessions.length > 0 && <fieldset className="space-y-2">
             <legend className="mb-1.5 text-sm font-medium">受ける回</legend>
@@ -93,6 +96,7 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCrea
         <details className="rounded-xl border border-border px-3"><summary className="min-h-11 cursor-pointer py-3 text-sm font-medium">1日の勉強時間</summary><fieldset aria-label="1日の勉強時間" className="grid grid-cols-2 gap-3 pb-3"><label className="text-xs text-muted-foreground">平日（分）<input type="number" min={1} max={1440} value={weekday} onChange={e => setWeekday(Number(e.target.value))} className={`${fieldClass} text-base text-foreground`} /></label><label className="text-xs text-muted-foreground">休日（分）<input type="number" min={1} max={1440} value={holiday} onChange={e => setHoliday(Number(e.target.value))} className={`${fieldClass} text-base text-foreground`} /></label></fieldset></details>
         {error && <p role="alert" className="text-sm text-destructive">{error}</p>}
         <Button size="xl" className="w-full" disabled={loading || saving || !examDate || examDate < japanDate(new Date()) || !Number.isInteger(weekday) || weekday < 1 || weekday > 1440 || !Number.isInteger(holiday) || holiday < 1 || holiday > 1440} onClick={() => void create()}>{saving ? "作成中…" : "この回で作成"}</Button>
+        </>}
       </div>
   );
   if (embedded) return <section aria-labelledby="plan-title">

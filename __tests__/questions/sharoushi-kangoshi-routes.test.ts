@@ -5,6 +5,7 @@ import QuizPage from "@/app/quiz/page";
 import QuestionPage, { generateMetadata } from "@/app/q/[exam]/[yearSeason]/[section]/[qnum]/page";
 import { SHAROUSHI_QUESTIONS } from "@/data/questions/sharoushi";
 import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
+import { getQuestionsByExamStrict } from "@/lib/seo/exam-meta";
 import { questionPagePath } from "@/lib/seo/question-url";
 
 const exams = ["sharoushi", "kangoshi"] as const;
@@ -46,7 +47,7 @@ describe("merged labor consultant and nurse routes", () => {
     expect(client.props.exam).toBe(exam);
     const selectedSession = session ?? (exam === "kangoshi" ? "am" : "gakka");
     expect(client.props.poolIds.toSorted()).toEqual(
-      questionsForExam(exam).filter((q) => q.session === selectedSession).map((q) => q.id).toSorted(),
+      getQuestionsByExamStrict(exam).filter((q) => q.session === selectedSession).map((q) => q.id).toSorted(),
     );
   });
 });

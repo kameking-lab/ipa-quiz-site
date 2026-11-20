@@ -32,7 +32,38 @@ export type ExamCode = "eiken2" | "restaurant-2" | "kogai-17" | "dekyo-chief-3" 
   | "khk-hanbai"
   | "kikenbutsu-otsu3"
   | "kikenbutsu-otsu5"
-  | "khk-hanbai2";
+  | "khk-hanbai2"
+  | "chori-center"
+  | "chori-gunma"
+  | "chori-hokkaido"
+  | "chori-kanagawa"
+  | "chori-kansai"
+  | "chori-nagano"
+  | "chori-okinawa"
+  | "chori-shizuoka"
+  | "chori-tochigi"
+  | "dokugeki-kansai"
+  | "dokugeki-tokyo"
+  | "homusho-senmonshokuin"
+  | "junkango-b"
+  | "junkango-saitama"
+  | "kokka-ippan-kou"
+  | "kyoin-gifu"
+  | "kyoin-gunma"
+  | "kyoin-hiroshima"
+  | "kyoin-kobe"
+  | "kyoin-kochi"
+  | "kyoin-nagano"
+  | "kyoin-nagasaki"
+  | "kyoin-okinawa"
+  | "kyoin-shimane"
+  | "kyotsu-joho1"
+  | "shokuhin-eisei-kanshiin"
+  | "tohan-chugoku-shikoku"
+  | "tohan-hokkaido-tohoku"
+  | "tohan-kitakanto-koshinetsu"
+  | "tohan-kyushu-okinawa"
+  | "tohan-tokai-hokuriku";
 
 
 export type IpaExamCode = "ip" | "sg" | "fe" | "ap" | "st" | "sa" | "pm" | "nw" | "db" | "es" | "sc" | "sm" | "au";
@@ -68,7 +99,22 @@ export type Session = "cfp-risk" | "reading" | "writing" | "listening" | "eju-bi
   | "baijin-funjin"
   | "osui-shori"
   | "dekyo-digital"
-  | "dekyo-analog";
+  | "dekyo-analog"
+  | "gaikokugo"
+  | "kadai-taiou"
+  | "kyoshoku-chuko"
+  | "kyoshoku-sho"
+  | "kyotsu-koko"
+  | "psychology"
+  | "senmon-b"
+  | "senmon-chu-shakai"
+  | "senmon-ko-eigo"
+  | "senmon-ko-ongaku"
+  | "senmon-ko-seikei"
+  | "senmon-shakai"
+  | "senmon-shogakko-eigo"
+  | "senmon-sugaku"
+  | "tekisei";
 
 
 export const QUESTION_SEASONS = [
@@ -230,7 +276,7 @@ export interface Question {
   sourceAnswerKind?: "example" | "intent";
   sourceAttribution?: string;
   officialReferenceUrls?: string[];
-  license: "EIKEN-owner-authorized" | "JASSO-attributed" | "KANKEN-owner-authorized" | "ZENSHO-owner-authorized" | "DEKYO-owner-authorized" | "JEMAI-owner-authorized" | "CCRVN-owner-authorized" | "CAREER-KENTEI-owner-authorized" | "JBMA-owner-authorized" | "HRS-owner-authorized" | "DEKYO-attributed" | "JEMAI-attributed" | "NSPC-owner-authorized" | "TOUKEI-attributed" | "BENESSE-owner-authorized" | "JINJI-attributed" | "BOUJITSU-owner-authorized" | "JITSUMU-owner-authorized" | "APEF-owner-authorized" | "KANKEN-attributed" | "MEXT-attributed" | "ZENSHO-attributed" | "SUKEN-attributed" | "JLPT-attributed" | "JBMA-attributed" | "MAFF-attributed" | "owner-managed" | "ZENSHO-official" | "JAVADA-owner-authorized" | "UNKAN-permission-required" | "SHOUBO-permission-required" | "INT7-owner-decision" | "KHK-attributed" | "JAEIC-owner-approved-staging" | "CHINTAI-owner-authorized" | "KYUSUI-owner-authorized" | "JAHMEC-owner-authorized" | "NUSTEC-owner-authorized" | "ECCJ-owner-approved" | "MLIT-PDL-1.0" | "CPAAOB-PDL-1.0" | "IPA-public" | "JAFP-reuse-with-attribution" | "KINZAI-reuse-with-attribution" | "ECEE-educational-reuse" | "RETIO-reuse" | "JCTC-authorized-reuse" | "SSSC-reuse" | "KANSAI-UNION-reuse" | "KANRIKYO-educational-reuse" | "EXAM-OR-JP-attributed" | "IPEJ-attributed" | "HOYOKYO-attributed" | "MANKAN-attributed" | "JFSA-attributed" | "SHAROSI-attributed" | "MHLW-attributed" | "AHK-attributed" | "JAAME-attributed" | "RBC-attributed" | "JF-CMCA-attributed" | "JCTC-attributed" | "MOJ-attributed" | "ZAIJUSEI-attributed" | "NICHIMU-educational-reuse" | "NICHIMU-past-question-study-use" | "JIA-attributed" | "JMBSC-permission-required" | "JAEIC-permission-required" | "IP-EDU-authorized-reuse" | "JASPA-owner-authorized" | "SHOUBO-owner-authorized" | "JECES-owner-cleared" | "FCIP-owner-confirmed" | "JYOUBUN-owner-authorized" | "KOKUSEN-owner-authorized" | "CHORD-owner-authorized" | "SGEC-owner-authorized" | "JKEN-owner-cleared" | "JCCPP-attributed" | "KHK-owner-decision" | "FCIP-owner-authorized" | "YAMAGUCHI-attributed" | "METI-attributed" | "JCM-authorized-reuse" | "GYOSEI-owner-cleared" | "CAREER-SHIKEN-owner-authorized" | "JATA-owner-authorized" | "GSI-attributed" | "PREF-published" | "JIPM-owner-decision" | "CUSTOMS-attributed" | "CGARTS-owner-authorized" | "CHUKEN-owner-authorized" | "COURTS-attributed" | "DCCI-owner-authorized" | "JDLA-owner-authorized" | "JSWA-owner-decision" | "KATEI-ED-owner-authorized" | "KATEI-owner-decision" | "KCCI-owner-authorized" | "MEXT-owner-authorized" | "NIIED-owner-authorized" | "ZENKOU-owner-decision" | "ZENKOU-terms-review-required" | "ZENKOUKYO-owner-authorized";
+  license: "EIKEN-owner-authorized" | "JASSO-attributed" | "KANKEN-owner-authorized" | "ZENSHO-owner-authorized" | "DEKYO-owner-authorized" | "JEMAI-owner-authorized" | "CCRVN-owner-authorized" | "CAREER-KENTEI-owner-authorized" | "JBMA-owner-authorized" | "HRS-owner-authorized" | "DEKYO-attributed" | "JEMAI-attributed" | "NSPC-owner-authorized" | "TOUKEI-attributed" | "BENESSE-owner-authorized" | "JINJI-attributed" | "BOUJITSU-owner-authorized" | "JITSUMU-owner-authorized" | "APEF-owner-authorized" | "KANKEN-attributed" | "MEXT-attributed" | "ZENSHO-attributed" | "SUKEN-attributed" | "JLPT-attributed" | "JBMA-attributed" | "MAFF-attributed" | "owner-managed" | "ZENSHO-official" | "JAVADA-owner-authorized" | "UNKAN-permission-required" | "SHOUBO-permission-required" | "INT7-owner-decision" | "KHK-attributed" | "JAEIC-owner-approved-staging" | "CHINTAI-owner-authorized" | "KYUSUI-owner-authorized" | "JAHMEC-owner-authorized" | "NUSTEC-owner-authorized" | "ECCJ-owner-approved" | "MLIT-PDL-1.0" | "CPAAOB-PDL-1.0" | "IPA-public" | "JAFP-reuse-with-attribution" | "KINZAI-reuse-with-attribution" | "ECEE-educational-reuse" | "RETIO-reuse" | "JCTC-authorized-reuse" | "SSSC-reuse" | "KANSAI-UNION-reuse" | "KANRIKYO-educational-reuse" | "EXAM-OR-JP-attributed" | "IPEJ-attributed" | "HOYOKYO-attributed" | "MANKAN-attributed" | "JFSA-attributed" | "SHAROSI-attributed" | "MHLW-attributed" | "AHK-attributed" | "JAAME-attributed" | "RBC-attributed" | "JF-CMCA-attributed" | "JCTC-attributed" | "MOJ-attributed" | "ZAIJUSEI-attributed" | "NICHIMU-educational-reuse" | "NICHIMU-past-question-study-use" | "JIA-attributed" | "JMBSC-permission-required" | "JAEIC-permission-required" | "IP-EDU-authorized-reuse" | "JASPA-owner-authorized" | "SHOUBO-owner-authorized" | "JECES-owner-cleared" | "FCIP-owner-confirmed" | "JYOUBUN-owner-authorized" | "KOKUSEN-owner-authorized" | "CHORD-owner-authorized" | "SGEC-owner-authorized" | "JKEN-owner-cleared" | "JCCPP-attributed" | "KHK-owner-decision" | "FCIP-owner-authorized" | "YAMAGUCHI-attributed" | "METI-attributed" | "JCM-authorized-reuse" | "GYOSEI-owner-cleared" | "CAREER-SHIKEN-owner-authorized" | "JATA-owner-authorized" | "GSI-attributed" | "PREF-published" | "JIPM-owner-decision" | "CUSTOMS-attributed" | "CGARTS-owner-authorized" | "CHUKEN-owner-authorized" | "COURTS-attributed" | "DCCI-owner-authorized" | "JDLA-owner-authorized" | "JSWA-owner-decision" | "KATEI-ED-owner-authorized" | "KATEI-owner-decision" | "KCCI-owner-authorized" | "MEXT-owner-authorized" | "NIIED-owner-authorized" | "ZENKOU-owner-decision" | "ZENKOU-terms-review-required" | "ZENKOUKYO-owner-authorized" | "DNC-owner-decision" | "JINJI-owner-authorized";
   isCalculation?: boolean;
   needsReview?: boolean;
   lastUpdated?: string;

@@ -1,3 +1,34 @@
+import release_chori_center from "./chori-center/release-papers.json";
+import release_chori_gunma from "./chori-gunma/release-papers.json";
+import release_chori_hokkaido from "./chori-hokkaido/release-papers.json";
+import release_chori_kanagawa from "./chori-kanagawa/release-papers.json";
+import release_chori_kansai from "./chori-kansai/release-papers.json";
+import release_chori_nagano from "./chori-nagano/release-papers.json";
+import release_chori_okinawa from "./chori-okinawa/release-papers.json";
+import release_chori_shizuoka from "./chori-shizuoka/release-papers.json";
+import release_chori_tochigi from "./chori-tochigi/release-papers.json";
+import release_dokugeki_kansai from "./dokugeki-kansai/release-papers.json";
+import release_dokugeki_tokyo from "./dokugeki-tokyo/release-papers.json";
+import release_homusho_senmonshokuin from "./homusho-senmonshokuin/release-papers.json";
+import release_junkango_b from "./junkango-b/release-papers.json";
+import release_junkango_saitama from "./junkango-saitama/release-papers.json";
+import release_kokka_ippan_kou from "./kokka-ippan-kou/release-papers.json";
+import release_kyoin_gifu from "./kyoin-gifu/release-papers.json";
+import release_kyoin_gunma from "./kyoin-gunma/release-papers.json";
+import release_kyoin_hiroshima from "./kyoin-hiroshima/release-papers.json";
+import release_kyoin_kobe from "./kyoin-kobe/release-papers.json";
+import release_kyoin_kochi from "./kyoin-kochi/release-papers.json";
+import release_kyoin_nagano from "./kyoin-nagano/release-papers.json";
+import release_kyoin_nagasaki from "./kyoin-nagasaki/release-papers.json";
+import release_kyoin_okinawa from "./kyoin-okinawa/release-papers.json";
+import release_kyoin_shimane from "./kyoin-shimane/release-papers.json";
+import release_kyotsu_joho1 from "./kyotsu-joho1/release-papers.json";
+import release_shokuhin_eisei_kanshiin from "./shokuhin-eisei-kanshiin/release-papers.json";
+import release_tohan_chugoku_shikoku from "./tohan-chugoku-shikoku/release-papers.json";
+import release_tohan_hokkaido_tohoku from "./tohan-hokkaido-tohoku/release-papers.json";
+import release_tohan_kitakanto_koshinetsu from "./tohan-kitakanto-koshinetsu/release-papers.json";
+import release_tohan_kyushu_okinawa from "./tohan-kyushu-okinawa/release-papers.json";
+import release_tohan_tokai_hokuriku from "./tohan-tokai-hokuriku/release-papers.json";
 import { ZENKOU_KEISAN_GIJUTSU_QUESTIONS } from "./zenkou-keisan-gijutsu";
 import { KATEI_SHOKUMOTSU_QUESTIONS } from "./katei-shokumotsu";
 import { KATEI_HIFUKU_QUESTIONS } from "./katei-hifuku";
@@ -850,7 +881,7 @@ import { RIGAKU_RYOHOUSHI_QUESTIONS } from "./rigaku-ryohoshi";
 import { SAGYO_RYOHOSHI_QUESTIONS } from "./sagyo-ryohoshi";
 
 
-import { GENGO_CHOKAKUSHI_QUESTIONS } from "./gengo-chokakushi";
+import { GENGO_CHOKAKUSHI_PUBLISHED_QUESTIONS } from "./gengo-chokakushi";
 
 
 import { SHINO_KUNRENSHI_QUESTIONS } from "./shino-kunrenshi";
@@ -1574,7 +1605,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("josanshi") ? { josanshi: JOSANSHI_QUESTIONS } : {}),
   ...(isExamPublished("rigaku-ryohoshi") ? { "rigaku-ryohoshi": RIGAKU_RYOHOUSHI_QUESTIONS } : {}),
   ...(isExamPublished("sagyo-ryohoshi") ? { "sagyo-ryohoshi": SAGYO_RYOHOSHI_QUESTIONS } : {}),
-  ...(isExamPublished("gengo-chokakushi") ? { "gengo-chokakushi": GENGO_CHOKAKUSHI_QUESTIONS } : {}),
+  ...(isExamPublished("gengo-chokakushi") ? { "gengo-chokakushi": GENGO_CHOKAKUSHI_PUBLISHED_QUESTIONS } : {}),
   ...(isExamPublished("shino-kunrenshi") ? { "shino-kunrenshi": SHINO_KUNRENSHI_QUESTIONS } : {}),
   ...(isExamPublished("rinsho-kogishi") ? { "rinsho-kogishi": RINSHO_KOGISHI_QUESTIONS } : {}),
   ...(isExamPublished("judo-seifukushi") ? { "judo-seifukushi": JUDO_SEIFUKUSHI_QUESTIONS } : {}),
@@ -1726,10 +1757,45 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("shobo-setsubishi-kou2") ? { "shobo-setsubishi-kou2": SHOBO_SETSUBISHI_KOU2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("shobo-setsubishi-kou5") ? { "shobo-setsubishi-kou5": SHOBO_SETSUBISHI_KOU5_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("gesuido-3shu") ? { "gesuido-3shu": GESUIDO_3SHU_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("chori-center") ? { "chori-center": release_chori_center as unknown as Question[] } : {}),
+  ...(isExamPublished("chori-gunma") ? { "chori-gunma": release_chori_gunma as unknown as Question[] } : {}),
+  ...(isExamPublished("chori-hokkaido") ? { "chori-hokkaido": release_chori_hokkaido as unknown as Question[] } : {}),
+  ...(isExamPublished("chori-kanagawa") ? { "chori-kanagawa": release_chori_kanagawa as unknown as Question[] } : {}),
+  ...(isExamPublished("chori-kansai") ? { "chori-kansai": release_chori_kansai as unknown as Question[] } : {}),
+  ...(isExamPublished("chori-nagano") ? { "chori-nagano": release_chori_nagano as unknown as Question[] } : {}),
+  ...(isExamPublished("chori-okinawa") ? { "chori-okinawa": release_chori_okinawa as unknown as Question[] } : {}),
+  ...(isExamPublished("chori-shizuoka") ? { "chori-shizuoka": release_chori_shizuoka as unknown as Question[] } : {}),
+  ...(isExamPublished("chori-tochigi") ? { "chori-tochigi": release_chori_tochigi as unknown as Question[] } : {}),
+  ...(isExamPublished("dokugeki-kansai") ? { "dokugeki-kansai": release_dokugeki_kansai as unknown as Question[] } : {}),
+  ...(isExamPublished("dokugeki-tokyo") ? { "dokugeki-tokyo": release_dokugeki_tokyo as unknown as Question[] } : {}),
+  ...(isExamPublished("homusho-senmonshokuin") ? { "homusho-senmonshokuin": release_homusho_senmonshokuin as unknown as Question[] } : {}),
+  ...(isExamPublished("junkango-b") ? { "junkango-b": release_junkango_b as unknown as Question[] } : {}),
+  ...(isExamPublished("junkango-saitama") ? { "junkango-saitama": release_junkango_saitama as unknown as Question[] } : {}),
+  ...(isExamPublished("kokka-ippan-kou") ? { "kokka-ippan-kou": release_kokka_ippan_kou as unknown as Question[] } : {}),
+  ...(isExamPublished("kyoin-gifu") ? { "kyoin-gifu": release_kyoin_gifu as unknown as Question[] } : {}),
+  ...(isExamPublished("kyoin-gunma") ? { "kyoin-gunma": release_kyoin_gunma as unknown as Question[] } : {}),
+  ...(isExamPublished("kyoin-hiroshima") ? { "kyoin-hiroshima": release_kyoin_hiroshima as unknown as Question[] } : {}),
+  ...(isExamPublished("kyoin-kobe") ? { "kyoin-kobe": release_kyoin_kobe as unknown as Question[] } : {}),
+  ...(isExamPublished("kyoin-kochi") ? { "kyoin-kochi": release_kyoin_kochi as unknown as Question[] } : {}),
+  ...(isExamPublished("kyoin-nagano") ? { "kyoin-nagano": release_kyoin_nagano as unknown as Question[] } : {}),
+  ...(isExamPublished("kyoin-nagasaki") ? { "kyoin-nagasaki": release_kyoin_nagasaki as unknown as Question[] } : {}),
+  ...(isExamPublished("kyoin-okinawa") ? { "kyoin-okinawa": release_kyoin_okinawa as unknown as Question[] } : {}),
+  ...(isExamPublished("kyoin-shimane") ? { "kyoin-shimane": release_kyoin_shimane as unknown as Question[] } : {}),
+  ...(isExamPublished("kyotsu-joho1") ? { "kyotsu-joho1": release_kyotsu_joho1 as unknown as Question[] } : {}),
+  ...(isExamPublished("shokuhin-eisei-kanshiin") ? { "shokuhin-eisei-kanshiin": release_shokuhin_eisei_kanshiin as unknown as Question[] } : {}),
+  ...(isExamPublished("tohan-chugoku-shikoku") ? { "tohan-chugoku-shikoku": release_tohan_chugoku_shikoku as unknown as Question[] } : {}),
+  ...(isExamPublished("tohan-hokkaido-tohoku") ? { "tohan-hokkaido-tohoku": release_tohan_hokkaido_tohoku as unknown as Question[] } : {}),
+  ...(isExamPublished("tohan-kitakanto-koshinetsu") ? { "tohan-kitakanto-koshinetsu": release_tohan_kitakanto_koshinetsu as unknown as Question[] } : {}),
+  ...(isExamPublished("tohan-kyushu-okinawa") ? { "tohan-kyushu-okinawa": release_tohan_kyushu_okinawa as unknown as Question[] } : {}),
+  ...(isExamPublished("tohan-tokai-hokuriku") ? { "tohan-tokai-hokuriku": release_tohan_tokai_hokuriku as unknown as Question[] } : {}),
 };
 
 for (const exam of Object.keys(QUESTIONS_BY_EXAM) as ExamCode[]) {
   const questions = QUESTIONS_BY_EXAM[exam];
+  if (!isExamPublished(exam)) {
+    delete QUESTIONS_BY_EXAM[exam];
+    continue;
+  }
   if (!questions) continue;
   const additional = loadAdditionalPapers(exam);
   QUESTIONS_BY_EXAM[exam] = publishedQuestions(additional ? appendReplenishedQuestions(questions, [additional]) : questions);

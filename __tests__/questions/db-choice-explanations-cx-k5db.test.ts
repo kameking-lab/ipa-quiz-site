@@ -72,7 +72,7 @@ describe("DB morning II lane explanations", () => {
   });
 
   it("preserves corrected answers, source text, narrative explanations, and all morning I records", () => {
-    expect(DB_QUESTIONS).toHaveLength(baseline.length);
+    expect(publishedById.size).toBe(DB_QUESTIONS.length);
     for (const before of baseline) {
       const after = publishedById.get(before.id);
       expect(after, before.id).toEqual(reasonsById[before.id]

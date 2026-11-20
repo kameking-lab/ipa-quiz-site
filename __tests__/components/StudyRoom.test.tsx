@@ -70,6 +70,18 @@ it("starts a supported quiz directly and resolves library qualification aliases 
   expect(screen.getByRole("link", { name: "席について解く" })).toHaveAttribute("href", "/e-learning/exams/qualifications/ni-kyu-boiler-gishi");
 });
 
+it("chooses a region after selecting a parent in the standalone study room", () => {
+  render(<StudyRoom standalone snapshot={snapshot(3)} suggestions={[
+    { exam: "chori-hokkaido", name: "調理師試験（北海道）", href: "/chori-hokkaido" },
+    { exam: "chori-gunma", name: "調理師試験（群馬県）", href: "/chori-gunma" },
+  ]} />);
+  fireEvent.click(screen.getByText("資格を選ぶ", { selector: "summary" }));
+  fireEvent.change(screen.getByLabelText("資格"), { target: { value: "group:chori" } });
+  expect(screen.queryByRole("link", { name: "席について解く" })).toBeNull();
+  fireEvent.change(screen.getByLabelText("地域"), { target: { value: "chori-hokkaido" } });
+  expect(screen.getByRole("link", { name: "席について解く" })).toHaveAttribute("href", "/quiz?mode=random&exam=chori-hokkaido");
+});
+
 it("preserves the position and visual label of a premium seat", () => {
   render(<StudyRoom snapshot={snapshot(3)} suggestions={[]} seatDetails={[{ exam: "fe", index: 2, premium: true }]} />);
   const seats = screen.getAllByTestId("study-room-seat");

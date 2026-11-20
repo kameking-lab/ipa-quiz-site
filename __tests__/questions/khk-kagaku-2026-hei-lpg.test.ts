@@ -1,3 +1,4 @@
+import { expectPublishedKhk2026 } from "../fixtures/khk-2026-publication";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
@@ -28,18 +29,20 @@ describe("2026 KHK hei-lpg private source corpus", () => {
     }
   });
 
-  it("keeps staged IDs out of public, internal-ready, synchronous and lazy serving pools", async () => {
+  it("publishes the reviewed originals and approved assets while retaining the staging snapshot", async () => {
     const stagedIds = new Set(KHK_2026_HEI_LPG_STAGING.map(q => q.id));
     expect(manifest.publicAllowed).toBe(false);
     expect(KHK_2026_HEI_LPG_STAGING.every(q => q.publicAllowed === false)).toBe(true);
-    for (const pool of [ready, publicQuestions, QUESTIONS_BY_EXAM["khk-kagaku"], await getQuestionsForExam("khk-kagaku")]) {
-      expect(pool!.some(q => stagedIds.has(q.id))).toBe(false);
+    for (const pool of [ready, publicQuestions]) {
+      expect(pool.some(q => stagedIds.has(q.id))).toBe(false);
     }
+    expectPublishedKhk2026(KHK_2026_HEI_LPG_STAGING, QUESTIONS_BY_EXAM["khk-kagaku"] ?? []);
+    expectPublishedKhk2026(KHK_2026_HEI_LPG_STAGING, await getQuestionsForExam("khk-kagaku"));
     for (const asset of review.assets) {
-      expect(imageAllowlist).not.toContain(asset.file);
+      expect(imageAllowlist).toContain(asset.file);
     }
     const assetLoader = readFileSync(resolve("data/questions/khk-kagaku/assets.server.ts"), "utf8");
-    expect(assetLoader).not.toContain("2026-CX-shared-");
+    expect(assetLoader).toContain("2026-CX-shared-");
   });
 
   it("independently recomputes all five numeric answers with printed units and pressure conventions", () => {

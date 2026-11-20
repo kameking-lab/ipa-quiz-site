@@ -14,16 +14,27 @@ const sha = (value: string | Buffer) => createHash("sha256").update(value).diges
 const byId = new Map(KANGOSHI_QUESTIONS.map(question => [question.id, question]));
 
 describe("nursing PM original figures added after 416 originals", () => {
-  it("retains all 416 previous question objects and adds exactly the two documented originals", () => {
+  it("retains all 416 previous question objects and the two documented original figures", () => {
     expect(proof.previous416ObjectHashes).toHaveLength(416);
     for (const old of proof.previous416ObjectHashes) expect(historicalNurseHash(byId.get(old.id), old.id), old.id).toBe(old.sha256);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(464);
-    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(464);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(479);
+    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(479);
     expect(proof.figures.map(figure => figure.id).sort()).toEqual([
       "kangoshi-2024-annual-pm-q19", "kangoshi-2025-annual-pm-q58",
     ]);
     expect(byId.has("kangoshi-2025-annual-am-q32")).toBe(false);
-    expect(byId.has("kangoshi-2025-annual-pm-q77")).toBe(false);
+  });
+
+  it("preserves the official PM 77 key and presents the difference with the original figure", () => {
+    const question = byId.get("kangoshi-2025-annual-pm-q77")!;
+    expect(question.sourcePdfUrl).toBe("https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05c_01.pdf#page=30");
+    expect(question.sourceAnswerUrl).toBe("https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1");
+    expect(question.officialAnswerNumber).toBe("4");
+    expect(question.answer).toBe("エ");
+    expect(question.choices?.エ).toBe("④");
+    expect(question.explanation).toContain("公式正答は4（④）ですが、原図では第一減数分裂は③に当たります。");
+    expect(question.imageUrls).toEqual(["/images/exams/kangoshi/plan5-114/115-pm-q77.webp"]);
+    expect(readFileSync("public/images/exams/kangoshi/plan5-114/115-pm-q77.webp").subarray(8, 12).toString("ascii")).toBe("WEBP");
   });
 
   it("uses each official source stem, all four choices, official key and exact original figure bytes", () => {

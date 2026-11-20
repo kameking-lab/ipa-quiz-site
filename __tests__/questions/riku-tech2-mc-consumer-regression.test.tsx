@@ -10,6 +10,7 @@ import { isPracticeReadyQuestion, shuffleChoices } from "@/lib/questions/filter"
 import type { ChoiceKey } from "@/lib/questions/types";
 import { normalizeQuestionData } from "@/lib/questions/native-b";
 import { buildQuestionJsonLd } from "@/lib/seo/question-jsonld";
+import { restoreNichimuSourceUrls } from "../fixtures/nichimu-archive";
 
 const questions = raw.map(normalizeQuestionData);
 const ordinary = questions.filter((question) => question.type === "multiple-choice");
@@ -60,11 +61,11 @@ describe("second-class land engineer ordinary-question consumers", () => {
   it("preserves every official answer URL in data and links to the question source", () => {
     for (const [index, question] of questions.entries()) {
       const originalUrl = raw[index]!.sourceAnswerPdfUrl;
-      expect(question.sourceAnswerUrl).toBe(originalUrl);
-      expect(getOfficialAnswerPdfUrl(question.sourcePdfUrl, question.sourceAnswerUrl)).toBe(originalUrl);
+      expect(restoreNichimuSourceUrls([question])[0]?.sourceAnswerUrl).toBe(originalUrl);
+      expect(getOfficialAnswerPdfUrl(question.sourcePdfUrl, question.sourceAnswerUrl)).toBe(question.sourceAnswerUrl);
       const html = renderToStaticMarkup(<ExplanationCard question={question} selected={String(question.answer)} isCorrect onNext={() => {}} />);
       expect(html).toContain(`href="${escaped(question.sourcePdfUrl)}"`);
-      expect(html).not.toContain(`href="${escaped(originalUrl)}"`);
+      expect(html).toContain(`href="${escaped(question.sourceAnswerUrl!)}"`);
     }
   });
 

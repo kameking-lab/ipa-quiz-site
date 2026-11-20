@@ -16,7 +16,8 @@ describe("理学療法士第61・60回の後続原本照合済み141原問", () 
     expect(previous).toHaveLength(29);
     for (const q of previous) expect(byId.get(q.id)).toEqual(q);
     expect(rows).toHaveLength(141);
-    expect(RIGAKU_RYOHOUSHI_QUESTIONS.filter((q) => q.year >= 2025)).toHaveLength(183);
+    const publicById = new Map(RIGAKU_RYOHOUSHI_QUESTIONS.map((q) => [q.id, q]));
+    for (const q of rows) expect(publicById.get(q.id), q.id).toEqual(q);
     expect(new Set(RIGAKU_RYOHOUSHI_QUESTIONS.map((q) => q.id)).size).toBe(RIGAKU_RYOHOUSHI_QUESTIONS.length);
     expect(manifest.newRawOriginals).toBe(manifest.newReadyOriginals + manifest.heldWithinNewRaw);
     expect(manifest.newReadyOriginals).toBe(rows.length);

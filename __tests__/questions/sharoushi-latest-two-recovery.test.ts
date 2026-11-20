@@ -20,7 +20,9 @@ const kana = ["ア", "イ", "ウ", "エ", "オ"];
 
 describe("Sharoushi saved-original recovery", () => {
   it("adds source-verified originals without changing the baseline 123", () => {
-    expect(SHAROUSHI_QUESTIONS).toHaveLength(130);
+    const publicIds = new Set(SHAROUSHI_QUESTIONS.map((q) => q.id));
+    expect(publicIds.size).toBe(SHAROUSHI_QUESTIONS.length);
+    for (const id of baseline.publicIds) expect(publicIds.has(id), id).toBe(true);
     for (const file of baseline.publicFiles) {
       expect(hash(readFileSync(file.path, "utf8").replace(/\r\n/g, "\n")), file.path).toBe(file.sha256);
     }

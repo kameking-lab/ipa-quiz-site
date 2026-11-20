@@ -40,7 +40,7 @@ import { NativeBDataSchema, nativeBQuestionIssue } from "../lib/questions/native
  *   pnpm validate:questions --fix            # 自動修正可能な問題のみ報告
  */
 
-import { writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 import { numericQuestionIssue } from "@/lib/questions/numeric";
 import { orderingQuestionIssue } from "@/lib/questions/ordering";
@@ -77,6 +77,10 @@ import { KHK_2026_OTSU_STAGING, KHK_2026_KIKAI_KOU_STAGING, validateKhk2026Fill 
 import { KHK_2026_KIKAI_OTSU_STAGING, KHK_2026_REITO_FIRST_STAGING, validateKhk2026Fill2 } from "./lib/validate-khk-2026-fill-2";
 import { KHK_2026_REITO_SECOND_STAGING, KHK_2026_REITO_THIRD_STAGING, validateKhk2026Fill3 } from "./lib/validate-khk-2026-fill-3";
 import { readKhk2026Sales, validateKhk2026Sales } from "./lib/validate-khk-2026-sales";
+import { applyQualityExceptions, hasChoiceImage, hasQuestionImage, publicImageExists, type QualityExceptions } from "./lib/question-quality";
+import { collectPublishedQualityIssues } from "./lib/validate-published-question-quality";
+
+const imageExists = publicImageExists(join(process.cwd(), "public"));
 
 
 // Publication-gated pilots still require the same schema and source validation
@@ -133,10 +137,9 @@ const QuestionSchema = z.object({
   category: z.string().min(1),
   topicTags: z.array(z.string()),
   difficulty: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4), z.literal(5)]),
-  question: z.string().min(1),
+  question: z.string(),
   choices: z
     .partialRecord(z.enum(CHOICE_KEYS), z.string())
-    .refine((choices) => Object.values(choices).filter(Boolean).length >= 2, "選択肢は2個以上必要です")
     .optional(),
   officialScoring: z.object({ kind: z.enum(["credit-for-all", "excluded"]), reason: z.string().trim().min(1) }).optional(),
   publicAllowed: z.boolean().optional(),
@@ -155,7 +158,7 @@ const QuestionSchema = z.object({
   sourceAttribution: z.string().min(1).optional(),
   lawReferenceDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
   officialReferenceUrls: z.array(z.string().url()).optional(),
-  license: z.enum(["EIKEN-owner-authorized", "JASSO-attributed", "KANKEN-owner-authorized", "ZENSHO-owner-authorized", "DEKYO-owner-authorized", "JEMAI-owner-authorized", "CCRVN-owner-authorized", "CAREER-KENTEI-owner-authorized", "JBMA-owner-authorized", "HRS-owner-authorized", "DEKYO-attributed", "JEMAI-attributed", "NSPC-owner-authorized", "TOUKEI-attributed", "BENESSE-owner-authorized", "JINJI-attributed", "BOUJITSU-owner-authorized", "JITSUMU-owner-authorized", "APEF-owner-authorized", "KANKEN-attributed", "MEXT-attributed", "ZENSHO-attributed", "SUKEN-attributed", "JLPT-attributed", "JBMA-attributed", "MAFF-attributed", "owner-managed", "ZENSHO-official", "JAVADA-owner-authorized", "UNKAN-permission-required", "SHOUBO-permission-required", "INT7-owner-decision", "KHK-attributed", "JAEIC-owner-approved-staging", "CHINTAI-owner-authorized", "KYUSUI-owner-authorized", "JAHMEC-owner-authorized", "NUSTEC-owner-authorized", "ECCJ-owner-approved", "MLIT-PDL-1.0", "CPAAOB-PDL-1.0", "IPA-public", "JAFP-reuse-with-attribution", "KINZAI-reuse-with-attribution", "ECEE-educational-reuse", "RETIO-reuse", "JCTC-authorized-reuse", "SSSC-reuse", "KANSAI-UNION-reuse", "KANRIKYO-educational-reuse", "EXAM-OR-JP-attributed", "IPEJ-attributed", "HOYOKYO-attributed", "MANKAN-attributed", "JFSA-attributed", "SHAROSI-attributed", "MHLW-attributed", "AHK-attributed", "JAAME-attributed", "RBC-attributed", "JF-CMCA-attributed", "JCTC-attributed", "MOJ-attributed", "ZAIJUSEI-attributed", "NICHIMU-educational-reuse", "NICHIMU-past-question-study-use", "JIA-attributed", "JMBSC-permission-required", "JAEIC-permission-required", "IP-EDU-authorized-reuse", "JASPA-owner-authorized", "SHOUBO-owner-authorized", "JECES-owner-cleared", "FCIP-owner-confirmed", "JYOUBUN-owner-authorized", "KOKUSEN-owner-authorized", "CHORD-owner-authorized", "SGEC-owner-authorized", "JKEN-owner-cleared", "JCCPP-attributed", "KHK-owner-decision", "FCIP-owner-authorized", "YAMAGUCHI-attributed", "METI-attributed", "JCM-authorized-reuse", "GYOSEI-owner-cleared", "CAREER-SHIKEN-owner-authorized", "JATA-owner-authorized", "GSI-attributed", "PREF-published", "JIPM-owner-decision", "CUSTOMS-attributed", "CGARTS-owner-authorized", "CHUKEN-owner-authorized", "COURTS-attributed", "DCCI-owner-authorized", "JDLA-owner-authorized", "JSWA-owner-decision", "KATEI-ED-owner-authorized", "KATEI-owner-decision", "KCCI-owner-authorized", "MEXT-owner-authorized", "NIIED-owner-authorized", "ZENKOU-owner-decision", "ZENKOU-terms-review-required", "ZENKOUKYO-owner-authorized"]),
+  license: z.enum(["EIKEN-owner-authorized", "JASSO-attributed", "KANKEN-owner-authorized", "ZENSHO-owner-authorized", "DEKYO-owner-authorized", "JEMAI-owner-authorized", "CCRVN-owner-authorized", "CAREER-KENTEI-owner-authorized", "JBMA-owner-authorized", "HRS-owner-authorized", "DEKYO-attributed", "JEMAI-attributed", "NSPC-owner-authorized", "TOUKEI-attributed", "BENESSE-owner-authorized", "JINJI-attributed", "BOUJITSU-owner-authorized", "JITSUMU-owner-authorized", "APEF-owner-authorized", "KANKEN-attributed", "MEXT-attributed", "ZENSHO-attributed", "SUKEN-attributed", "JLPT-attributed", "JBMA-attributed", "MAFF-attributed", "owner-managed", "ZENSHO-official", "JAVADA-owner-authorized", "UNKAN-permission-required", "SHOUBO-permission-required", "INT7-owner-decision", "KHK-attributed", "JAEIC-owner-approved-staging", "CHINTAI-owner-authorized", "KYUSUI-owner-authorized", "JAHMEC-owner-authorized", "NUSTEC-owner-authorized", "ECCJ-owner-approved", "MLIT-PDL-1.0", "CPAAOB-PDL-1.0", "IPA-public", "JAFP-reuse-with-attribution", "KINZAI-reuse-with-attribution", "ECEE-educational-reuse", "RETIO-reuse", "JCTC-authorized-reuse", "SSSC-reuse", "KANSAI-UNION-reuse", "KANRIKYO-educational-reuse", "EXAM-OR-JP-attributed", "IPEJ-attributed", "HOYOKYO-attributed", "MANKAN-attributed", "JFSA-attributed", "SHAROSI-attributed", "MHLW-attributed", "AHK-attributed", "JAAME-attributed", "RBC-attributed", "JF-CMCA-attributed", "JCTC-attributed", "MOJ-attributed", "ZAIJUSEI-attributed", "NICHIMU-educational-reuse", "NICHIMU-past-question-study-use", "JIA-attributed", "JMBSC-permission-required", "JAEIC-permission-required", "IP-EDU-authorized-reuse", "JASPA-owner-authorized", "SHOUBO-owner-authorized", "JECES-owner-cleared", "FCIP-owner-confirmed", "JYOUBUN-owner-authorized", "KOKUSEN-owner-authorized", "CHORD-owner-authorized", "SGEC-owner-authorized", "JKEN-owner-cleared", "JCCPP-attributed", "KHK-owner-decision", "FCIP-owner-authorized", "YAMAGUCHI-attributed", "METI-attributed", "JCM-authorized-reuse", "GYOSEI-owner-cleared", "CAREER-SHIKEN-owner-authorized", "JATA-owner-authorized", "GSI-attributed", "PREF-published", "JIPM-owner-decision", "CUSTOMS-attributed", "CGARTS-owner-authorized", "CHUKEN-owner-authorized", "COURTS-attributed", "DCCI-owner-authorized", "JDLA-owner-authorized", "JSWA-owner-decision", "KATEI-ED-owner-authorized", "KATEI-owner-decision", "KCCI-owner-authorized", "MEXT-owner-authorized", "NIIED-owner-authorized", "ZENKOU-owner-decision", "ZENKOU-terms-review-required", "ZENKOUKYO-owner-authorized", "DNC-owner-decision", "JINJI-owner-authorized"]),
   isCalculation: z.boolean().optional(),
 });
 
@@ -269,6 +272,20 @@ function validate(questions: Question[]): ValidationResult {
       continue;
     }
 
+    const invalidText = !q.question && !hasQuestionImage(q, imageExists);
+    const invalidChoices = q.choices && CHOICE_KEYS.filter(key => {
+      const text = q.choices?.[key];
+      return text !== undefined && (Boolean(text) || hasChoiceImage(q, key, imageExists));
+    }).length < 2;
+    if (invalidText || invalidChoices) {
+      fail++;
+      byExam[examKey].fail++;
+      const message = invalidText ? "問題文または原本画像が必要です" : "選択肢は2個以上必要です";
+      issues.push({ id: q.id, level: "error", message });
+      console.error(`[FAIL] ${q.id}: ${message}`);
+      continue;
+    }
+
     // Duplicate id
     if (seenIds.has(q.id)) {
       fail++;
@@ -338,7 +355,10 @@ function validate(questions: Question[]): ValidationResult {
         continue;
       }
       const answers = Array.isArray(q.answer) ? q.answer : [q.answer];
-      const ans = answers.find(key => !CHOICE_KEYS.some((choice) => choice === key) || !q.choices?.[key as keyof typeof q.choices]);
+      const ans = answers.find(key => {
+        const choice = CHOICE_KEYS.find(choice => choice === key);
+        return !choice || q.choices?.[choice] === undefined || (!q.choices[choice] && !hasChoiceImage(q, choice, imageExists));
+      });
       if (!q.officialScoring && (ans !== undefined || answers.length === 0)) {
         fail++;
         byExam[examKey].fail++;
@@ -639,13 +659,24 @@ console.log(`\nValidated ${questions.length} public-schema questions + ${private
 
 if (opts.fix) reportFixes(questions);
 
-if (opts.report) {
-  const docsDir = join(process.cwd(), "docs");
-  mkdirSync(docsDir, { recursive: true });
-  const md = generateReport(result, questions.length);
-  const outPath = join(docsDir, "QUESTION_QUALITY.md");
-  writeFileSync(outPath, md, "utf-8");
-  console.log(`\n[report] docs/QUESTION_QUALITY.md を生成しました。`);
+async function validatePublishedQuality() {
+  const { count, issues } = await collectPublishedQualityIssues(process.cwd(), opts.exams, imageExists);
+  const qualityExceptions = JSON.parse(readFileSync(join(process.cwd(), "scripts/lib/question-quality-exceptions.json"), "utf8")) as QualityExceptions;
+  const { failures, excepted } = applyQualityExceptions(issues, qualityExceptions);
+  for (const { id, rule, message } of failures) console.error(`[FAIL] [${rule}] ${id}: ${message}`);
+  console.log(`Quality gate: ${count} published questions, ${failures.length} errors, ${excepted} existing exceptions.`);
+  if (opts.report) {
+    const docsDir = join(process.cwd(), "docs");
+    mkdirSync(docsDir, { recursive: true });
+    const errors = failures.slice(0, 50).map(({ id, rule, message }) => `- \`${id}\` [${rule}] ${message}`).join("\n");
+    const md = `${generateReport(result, questions.length)}\n## 公開問題の品質ゲート\n\n公開 ${count} 問、エラー ${failures.length} 件、既存の例外 ${excepted} 件。\n\n${errors}\n`;
+    writeFileSync(join(docsDir, "QUESTION_QUALITY.md"), md, "utf-8");
+    console.log("\n[report] docs/QUESTION_QUALITY.md を生成しました。");
+  }
+  if (result.fail > 0 || failures.length > 0) process.exitCode = 1;
 }
 
-if (result.fail > 0) process.exit(1);
+validatePublishedQuality().catch((error: unknown) => {
+  console.error(error);
+  process.exitCode = 1;
+});

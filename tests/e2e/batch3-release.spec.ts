@@ -1,5 +1,4 @@
 import { expect, test } from "@playwright/test";
-import { mkdirSync } from "node:fs";
 import { questionPagePath } from "../../lib/seo/question-url";
 import scope from "../../reports/int7-20261105/release-scope.json";
 import benrishi from "../../data/questions/batch3/benrishi.json";
@@ -25,17 +24,16 @@ test("batch3: new qualification hubs and retained GSC entry URLs work at mobile 
   }
 });
 test("batch3: surveyor afternoon uses manual assessment, original figures and official examples", async ({page}) => {
-  await page.goto("/q/sokuryoshi/2026-annual/pm/q1");
-  const model = page.getByRole("region", {name: "記述の独自解答例"});
-  await expect(model.getByText(/自動採点を行いません/)).toBeVisible();
-  await expect(model.locator('img')).toHaveCount(2);
-  await page.getByRole("link", {name: /クイズモードで開く/}).first().click();
-  await expect(page).toHaveURL(/\/quiz\?/);
-  await expect(page.getByRole("heading", {name: "測量士 年度別過去問演習"})).toBeVisible();
+  await page.goto("/sokuryoshi/2026-annual");
+  const afternoon = page.getByRole("region", { name: "午後（記述・作図の自己確認）", exact: true });
+  await afternoon.locator('a[href="/q/sokuryoshi/2026-annual/pm/q1"]').click();
+  await expect(page).toHaveURL("/q/sokuryoshi/2026-annual/pm/q1");
   const practice = page.getByRole("region", {name: "記述の独自解答例"});
-  await expect(practice).toBeVisible();
-  await practice.locator("summary").click();
-  await expect(practice.locator("details")).toHaveJSProperty("open", true);
+  await expect(practice.getByText(/自動採点を行いません/)).toBeVisible();
+  await expect(practice.locator("img")).toHaveCount(2);
+  const solution = practice.locator("details").filter({ has: page.getByText("独自解答例と作図例を確認する", { exact: true }) });
+  await solution.locator("summary").click();
+  await expect(solution).toHaveJSProperty("open", true);
   const example = practice.locator('img').first();
   await example.scrollIntoViewIfNeeded();
   await expect.poll(() => example.evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth > 0)).toBe(true);
@@ -60,6 +58,5 @@ test("batch3: source figures render and contact site parameter retains both supp
   await expect(page.getByRole("radio", {name: "次の資格について"})).toBeChecked();
   await expect(page.locator("#legacy-benefits")).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
-  mkdirSync("reports/int7-20261105/screenshots", {recursive:true});
-  await page.screenshot({path:"reports/int7-20261105/screenshots/contact-mobile.png", fullPage:true});
+  await page.screenshot({path: testInfo.outputPath("contact-mobile.png"), fullPage:true});
 });

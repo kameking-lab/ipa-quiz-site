@@ -69,7 +69,7 @@ function deadLinks(relPath: string): string[] {
 describe("global footer / bottom-nav static internal links resolve", () => {
   it("the layout footer exposes its hardcoded links (sanity)", () => {
     const hrefs = staticHrefs("app/layout.tsx");
-    expect(hrefs).toContain("/");
+    expect(hrefs).toEqual(expect.arrayContaining(["/sitemap", "/about", "/privacy"]));
     expect(hrefs.length).toBeGreaterThanOrEqual(10);
   });
 

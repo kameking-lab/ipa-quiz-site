@@ -5,6 +5,12 @@ on:
     branches: [main]
     paths:
       - "data/questions/**"
+      - "lib/questions/get-questions.ts"
+      - "package.json"
+      - "scripts/validate-questions.ts"
+      - "scripts/tsconfig.question-corpus.json"
+      - "scripts/lib/*question-quality*"
+      - "__tests__/scripts/question-quality.test.ts"
       - "data/chusho-secondary/**"
       - "lib/chusho-secondary/**"
       - "components/chusho-secondary/**"
@@ -25,6 +31,12 @@ on:
     branches: [main]
     paths:
       - "data/questions/**"
+      - "lib/questions/get-questions.ts"
+      - "package.json"
+      - "scripts/validate-questions.ts"
+      - "scripts/tsconfig.question-corpus.json"
+      - "scripts/lib/*question-quality*"
+      - "__tests__/scripts/question-quality.test.ts"
       - "data/chusho-secondary/**"
       - "lib/chusho-secondary/**"
       - "components/chusho-secondary/**"
@@ -65,8 +77,11 @@ jobs:
       - name: Verify SME secondary source pages and editorial examples
         run: pnpm exec vitest run __tests__/chusho-secondary-latest-two.test.tsx __tests__/components/ChushoSecondaryAnswerPractice.test.tsx
 
-      - name: Run question schema validation
+      - name: Run question schema and quality validation
         run: pnpm validate:questions
+
+      - name: Test question quality rules
+        run: pnpm exec vitest run __tests__/scripts/question-quality.test.ts --maxWorkers=1
 
       - name: Verify electrician original-review coverage and live gate
         run: |
