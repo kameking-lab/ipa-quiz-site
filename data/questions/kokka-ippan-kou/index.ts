@@ -2,6 +2,7 @@ import { KOKKA_IPPAN_KOU_2025_KISO } from "./2025-kiso";
 import { KOKKA_IPPAN_KOU_2025_TEKISEI } from "./2025-tekisei";
 import { KOKKA_IPPAN_KOU_2024_KISO } from "./2024-kiso";
 import { KOKKA_IPPAN_KOU_2024_TEKISEI } from "./2024-tekisei";
+import { KOKKA_IPPAN_KOU_2023_KISO } from "./2023-kiso";
 import { KOKKA_IPPAN_KOU_2023_TEKISEI } from "./2023-tekisei";
 
 export const KOKKA_IPPAN_KOU_QUESTIONS = [
@@ -9,5 +10,6 @@ export const KOKKA_IPPAN_KOU_QUESTIONS = [
   ...KOKKA_IPPAN_KOU_2025_TEKISEI,
   ...KOKKA_IPPAN_KOU_2024_KISO,
   ...KOKKA_IPPAN_KOU_2024_TEKISEI,
+  ...KOKKA_IPPAN_KOU_2023_KISO,
   ...KOKKA_IPPAN_KOU_2023_TEKISEI,
 ];
