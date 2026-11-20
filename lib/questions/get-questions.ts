@@ -364,6 +364,7 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 
 
 
+"kaijo-hoan-gakko": async () => isExamPublished("kaijo-hoan-gakko") ? (await import("@/data/questions/kaijo-hoan-gakko")).KAIJO_HOAN_GAKKO_QUESTIONS : [],
 "kouku-kanseikan": async () => isExamPublished("kouku-kanseikan") ? (await import("@/data/questions/kouku-kanseikan")).KOUKU_KANSEIKAN_QUESTIONS : [],
 "zaimu-senmonkan": async () => isExamPublished("zaimu-senmonkan") ? (await import("@/data/questions/zaimu-senmonkan")).ZAIMU_SENMONKAN_QUESTIONS : [],
 "shokuhin-eisei-kanshiin": async () => isExamPublished("shokuhin-eisei-kanshiin") ? (await import("@/data/questions/shokuhin-eisei-kanshiin")).SHOKUHIN_EISEI_KANSHIIN_QUESTIONS : [],

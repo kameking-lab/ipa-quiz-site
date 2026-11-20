@@ -1779,6 +1779,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["1級・電気系・設備診断作業の追加"],
 },
   {
+    slug: "kaijo-hoan-gakko", examCode: "kaijo-hoan-gakko", shortName: "海上保安学校学生", fullName: "海上保安学校学生採用試験",
+    domain: "legal", administrator: "人事院",
+    officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_31.html",
+    officialReuseTermsUrl: "https://www.jinji.go.jp/shinsei/notice.html",
+    status: "live",
+    reuseSummary: "2026年度特別試験の基礎能力試験の公開問題33問を、公式正答・全肢解説付きで収録。",
+    attributionTemplate: "出典：人事院「海上保安学校学生採用試験 基礎能力試験」。解説は過去問AIの独自作成。",
+    remainingWork: ["通常試験と過年度の追加"],
+  },
+  {
     slug: "kouku-kanseikan", examCode: "kouku-kanseikan", shortName: "航空管制官", fullName: "航空管制官採用試験",
     domain: "legal", administrator: "人事院",
     officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_24.html",
