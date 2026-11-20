@@ -1,0 +1,898 @@
+[
+  {
+    "id": "dekyo-chief-2-2022-first-gakka-q1",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "first",
+    "qNumber": 1,
+    "sourceExamSession": "第1回",
+    "officialQuestionLabel": "問1",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "電気回路",
+    "topicTags": [
+      "クーロン力の合成"
+    ],
+    "difficulty": 2,
+    "question": "空気中で、同じ大きさの電荷を持つ帯電体A、B、Cを図の正三角形の頂点に置く。Aの電荷Q₁は負、BとCの電荷Q₂とQ₃は正である。Cに働く力の方向を示す矢線を選べ。",
+    "choices": {
+      "ア": "（ア）",
+      "イ": "（イ）",
+      "ウ": "（ウ）",
+      "エ": "（エ）",
+      "オ": "（オ）"
+    },
+    "answer": "イ",
+    "explanation": "CにはAへ向かう引力と、Bから離れる右向きの反発力が同じ大きさで働きます。両者の合力はその中間の（イ）の方向です。",
+    "choiceExplanations": {
+      "ア": "Aから受ける引力は（ア）の方向ですが、Bから受ける反発力も加わります。",
+      "イ": "CにはAへ向かう引力と、Bから離れる右向きの反発力が同じ大きさで働きます。両者の合力はその中間の（イ）の方向です。",
+      "ウ": "右向きはBから受ける反発力の方向です。Aからの引力には上向きの成分があります。",
+      "エ": "ここで働く力のうち鉛直成分があるのはAへの引力で、上向きです。",
+      "オ": "合力の鉛直成分は上向きであり、下向きの成分がある矢線は該当しません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc6cbf21d0.pdf#page=2",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc70cebdb8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和4年度第1回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/dekyo-chief-2/2022-first/system-q1.png"
+    ],
+    "imageAltTexts": [
+      "正三角形の上にA、左下にB、右下にCを配置し、Cを始点とする五つの矢線を示す図"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "dekyo-chief-2-2022-first-gakka-q2",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "first",
+    "qNumber": 2,
+    "sourceExamSession": "第1回",
+    "officialQuestionLabel": "問2",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "電気回路",
+    "topicTags": [
+      "対称な抵抗回路"
+    ],
+    "difficulty": 2,
+    "question": "図に示す全ての抵抗が5 Ωのとき、端子AとBの間の合成抵抗を求めよ。",
+    "choices": {
+      "ア": "1 Ω",
+      "イ": "2 Ω",
+      "ウ": "3 Ω",
+      "エ": "4 Ω",
+      "オ": "5 Ω"
+    },
+    "answer": "オ",
+    "explanation": "右側の二つの節点は等電位なので右端の抵抗に電流は流れません。10 Ωの二つの直列経路が並列になり、合成抵抗は5 Ωです。",
+    "choiceExplanations": {
+      "ア": "全ての抵抗が端子AとBに直接並列に入っているわけではありません。対称な2経路はそれぞれ10 Ωです。",
+      "イ": "対称な右側の二つの節点は同じ電位になります。中央の抵抗には電流が流れず、10 Ωの2経路を並列にした値を求めます。",
+      "ウ": "AからBを結ぶ二つの等価な枝は、それぞれ5 Ωの抵抗を二つ直列にした構成です。",
+      "エ": "右側の二つの接続点へA、Bから同じ抵抗でつながるので、右端の抵抗には電圧がかかりません。残りの回路で合成抵抗を求めます。",
+      "オ": "右側の二つの節点は等電位なので右端の抵抗に電流は流れません。10 Ωの二つの直列経路が並列になり、合成抵抗は5 Ωです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc6cbf21d0.pdf#page=2",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc70cebdb8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和4年度第1回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/dekyo-chief-2/2022-first/system-q2.png"
+    ],
+    "imageAltTexts": [
+      "端子AとBから右側の二つの節点にそれぞれ抵抗がつながり、右側の節点間にも抵抗がある回路"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "dekyo-chief-2-2022-first-gakka-q3",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "first",
+    "qNumber": 3,
+    "sourceExamSession": "第1回",
+    "officialQuestionLabel": "問3",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "電気回路",
+    "topicTags": [
+      "トランジスタのコレクタ電圧"
+    ],
+    "difficulty": 2,
+    "question": "図のトランジスタ回路において、電源電圧V꜀꜀が18 V、コレクタ抵抗R꜀が4 kΩのとき、コレクタ・エミッタ間電圧V꜀ₑを求めよ。直流電流増幅率hFEは100、ベース電流Iᵦは25 μAとする。",
+    "choices": {
+      "ア": "2 V",
+      "イ": "4 V",
+      "ウ": "6 V",
+      "エ": "8 V",
+      "オ": "10 V"
+    },
+    "answer": "エ",
+    "explanation": "コレクタ電流は100×25 μA＝2.5 mAです。V꜀ₑ＝18 V−(2.5 mA×4 kΩ)＝8 Vです。",
+    "choiceExplanations": {
+      "ア": "コレクタ電流は25 μAの100倍なので、抵抗による電圧降下は10 Vです。18 Vからこの電圧降下を引きます。",
+      "イ": "4 kΩはコレクタ抵抗の値で、電源電圧から引くのは抵抗における実際の電圧降下です。",
+      "ウ": "この値になるには12 Vの電圧降下が必要ですが、2.5 mA×4 kΩ＝10 Vです。",
+      "エ": "コレクタ電流は100×25 μA＝2.5 mAです。V꜀ₑ＝18 V−(2.5 mA×4 kΩ)＝8 Vです。",
+      "オ": "10 Vはコレクタ抵抗にかかる電圧です。コレクタ・エミッタ間の電圧は残りの8 Vです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc6cbf21d0.pdf#page=3",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc70cebdb8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和4年度第1回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/dekyo-chief-2/2022-first/system-q3.png"
+    ],
+    "imageAltTexts": [
+      "直流電源V꜀꜀とベース抵抗Rᵦ、コレクタ抵抗R꜀、ベース電流Iᵦ、コレクタ・エミッタ間電圧V꜀ₑの回路"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "dekyo-chief-2-2022-first-gakka-q4",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "first",
+    "qNumber": 4,
+    "sourceExamSession": "第1回",
+    "officialQuestionLabel": "問4",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "電気回路",
+    "topicTags": [
+      "論理式を表すゲート"
+    ],
+    "difficulty": 2,
+    "question": "AとBを入力、Cを出力とする。C＝A・(A＋B)＋B・(¬A＋¬B)で表される論理回路のゲートを選べ。¬は後続する変数の否定を表す。",
+    "choices": {
+      "ア": "AND",
+      "イ": "OR",
+      "ウ": "NOT",
+      "エ": "NAND",
+      "オ": "NOR"
+    },
+    "answer": "イ",
+    "explanation": "吸収則で第1項はAとなり、第2項はB・¬Aです。A＋B・¬A＝A＋BなのでORです。",
+    "choiceExplanations": {
+      "ア": "ANDの出力が1になるのはAとBが両方1のときだけですが、与えられた論理式はどちらか一方が1でも成立します。",
+      "イ": "吸収則で第1項はAとなり、第2項はB・¬Aです。A＋B・¬A＝A＋BなのでORです。",
+      "ウ": "NOTは単一の入力の値を反転します。この式は二つの入力の論理和です。",
+      "エ": "NANDはAとBがともに1のとき出力が0です。与えられた式ではAが1ならCは1です。",
+      "オ": "NORはどちらか一方が1で出力が0になります。問題の式はその場合に1になります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc6cbf21d0.pdf#page=3",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc70cebdb8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和4年度第1回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-chief-2-2022-first-gakka-q5",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "first",
+    "qNumber": 5,
+    "sourceExamSession": "第1回",
+    "officialQuestionLabel": "問5",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "伝送技術",
+    "topicTags": [
+      "フラグ同期"
+    ],
+    "difficulty": 2,
+    "question": "データ伝送で、ビットパターン01111110を送信データの前後に付け、伝送ブロックの開始と終了を送信側と受信側で合わせる同期方式を選べ。",
+    "choices": {
+      "ア": "調歩",
+      "イ": "SYN",
+      "ウ": "キャラクタ",
+      "エ": "フラグ",
+      "オ": "クロック"
+    },
+    "answer": "エ",
+    "explanation": "01111110はHDLC等でフレームの開始や終了を示すフラグのビット列です。",
+    "choiceExplanations": {
+      "ア": "調歩同期は文字単位などでスタートビットとストップビットを付けます。ブロック境界を示すビットパターンを使う方式はフラグ同期です。",
+      "イ": "SYNは文字指向の同期方式などで使う同期用の制御文字で、このビットパターンでブロックを囲むフラグとは異なります。",
+      "ウ": "キャラクタ同期は制御文字や文字単位を基準にします。ここではビットパターンでフレームの境界を識別しています。",
+      "エ": "01111110はHDLC等でフレームの開始や終了を示すフラグのビット列です。",
+      "オ": "クロックは各ビットを読み取る時間基準です。ブロックの境界を表す信号はフラグです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc6cbf21d0.pdf#page=3",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc70cebdb8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和4年度第1回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-chief-2-2022-first-gakka-q6",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "first",
+    "qNumber": 6,
+    "sourceExamSession": "第1回",
+    "officialQuestionLabel": "問6",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "電気回路",
+    "topicTags": [
+      "高周波電力の測定"
+    ],
+    "difficulty": 2,
+    "question": "マイクロ波出力などの高周波電力を測る際、バレッタと同様に電力を吸収したときの抵抗値の変化を電力に換算できる素子を選べ。",
+    "choices": {
+      "ア": "熱電対",
+      "イ": "サイリスタ",
+      "ウ": "ダイオード",
+      "エ": "トランジスタ",
+      "オ": "サーミスタ"
+    },
+    "answer": "オ",
+    "explanation": "高周波電力を吸収して素子の温度が変わると、サーミスタの抵抗値が変化します。その変化から電力を求めます。",
+    "choiceExplanations": {
+      "ア": "熱電対は温度差によって生じる起電力を測ります。抵抗の変化を測る素子として設問が挙げるのはサーミスタです。",
+      "イ": "サイリスタは電力のスイッチングや制御に用いる素子で、吸収による温度上昇から抵抗変化を測る素子ではありません。",
+      "ウ": "高周波のダイオード検波は整流を利用します。問題の方法は熱による抵抗変化を利用します。",
+      "エ": "トランジスタは増幅やスイッチングに使われます。問題では温度変化に応じて大きく抵抗が変わる測定素子を問います。",
+      "オ": "高周波電力を吸収して素子の温度が変わると、サーミスタの抵抗値が変化します。その変化から電力を求めます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc6cbf21d0.pdf#page=3",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc70cebdb8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和4年度第1回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-chief-2-2022-first-gakka-q7",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "first",
+    "qNumber": 7,
+    "sourceExamSession": "第1回",
+    "officialQuestionLabel": "問7",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "伝送技術",
+    "topicTags": [
+      "変成器によるインピーダンス整合"
+    ],
+    "difficulty": 2,
+    "question": "図の通信線路1の特性インピーダンスが576 Ω、通信線路2が900 Ωのとき、接続点で反射が生じない理想変成器の巻線比n₁：n₂を選べ。",
+    "choices": {
+      "ア": "3：2",
+      "イ": "3：5",
+      "ウ": "4：3",
+      "エ": "4：5",
+      "オ": "5：4"
+    },
+    "answer": "エ",
+    "explanation": "線路1側へ見えるインピーダンスは900×(n₁/n₂)²です。576/900＝16/25なので巻線比は4：5です。",
+    "choiceExplanations": {
+      "ア": "この比で900 Ωを線路1に換算すると、900×(3/2)²＝2,025 Ωとなり、576 Ωとは一致しません。",
+      "イ": "この巻線比で換算すると324 Ωで、576 Ωにはなりません。",
+      "ウ": "900 Ωに(4/3)²を掛けると1,600 Ωです。線路1の方が低いインピーダンスなので、巻線数もn₁の方を小さくします。",
+      "エ": "線路1側へ見えるインピーダンスは900×(n₁/n₂)²です。576/900＝16/25なので巻線比は4：5です。",
+      "オ": "巻線比の向きが逆です。線路1側を576 Ωにするには、n₁をn₂より少なくします。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc6cbf21d0.pdf#page=3",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc70cebdb8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和4年度第1回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/dekyo-chief-2/2022-first/system-q7.png"
+    ],
+    "imageAltTexts": [
+      "特性インピーダンス576 Ωと900 Ωの二つの通信線路間に、巻線比n₁対n₂の変成器を接続した図"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "dekyo-chief-2-2022-first-gakka-q8",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "first",
+    "qNumber": 8,
+    "sourceExamSession": "第1回",
+    "officialQuestionLabel": "問8",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "伝送技術",
+    "topicTags": [
+      "角度変調"
+    ],
+    "difficulty": 2,
+    "question": "キャリア変調のうち、搬送波の位相角を変える方法と周波数を変える方法の総称を選べ。",
+    "choices": {
+      "ア": "パルスアナログ変調",
+      "イ": "角度変調",
+      "ウ": "直接変調",
+      "エ": "振幅変調",
+      "オ": "単側波帯変調"
+    },
+    "answer": "イ",
+    "explanation": "位相変調も周波数変調も、搬送波を表す正弦波の位相角の変化に関係するため角度変調と呼びます。",
+    "choiceExplanations": {
+      "ア": "標本化した信号でパルスの振幅等を変える方式は、正弦波搬送波の位相や周波数を変える方式の総称ではありません。",
+      "イ": "位相変調も周波数変調も、搬送波を表す正弦波の位相角の変化に関係するため角度変調と呼びます。",
+      "ウ": "直接変調は発振器などへ直接信号を加える構成を表し、位相変調と周波数変調をまとめる分類名ではありません。",
+      "エ": "振幅変調は搬送波の振幅を変える方式です。位相を変える方式は角度変調に属します。",
+      "オ": "単側波帯は振幅変調で生じる側波帯の一方を伝送する方式です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc6cbf21d0.pdf#page=4",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc70cebdb8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和4年度第1回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-chief-2-2022-first-gakka-q9",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "first",
+    "qNumber": 9,
+    "sourceExamSession": "第1回",
+    "officialQuestionLabel": "問9",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "伝送技術",
+    "topicTags": [
+      "デジタル再生中継器"
+    ],
+    "difficulty": 2,
+    "question": "デジタル再生中継器で、パルスの振幅が閾値レベルを超えた場合にパルスを発生する機能を選べ。",
+    "choices": {
+      "ア": "等化増幅",
+      "イ": "リタイミング",
+      "ウ": "識別再生",
+      "エ": "スライサ",
+      "オ": "フィルタリング"
+    },
+    "answer": "ウ",
+    "explanation": "識別再生では受信したパルスの電圧を閾値と比較し、判定した値に対応するパルスを作り直します。",
+    "choiceExplanations": {
+      "ア": "等化増幅は伝送路で弱まった信号を増幅し周波数特性の偏りを補います。閾値でビットを判定するのは識別再生です。",
+      "イ": "リタイミングは再生したパルスのタイミングをクロックに合わせます。受信振幅を閾値で判定する処理は識別再生です。",
+      "ウ": "識別再生では受信したパルスの電圧を閾値と比較し、判定した値に対応するパルスを作り直します。",
+      "エ": "スライサは振幅を閾値と比較する判定回路を指す語です。設問が問う再生中継器の機能の名称は識別再生です。",
+      "オ": "フィルタリングは周波数成分などを選択します。パルスを判定して作り直す機能ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc6cbf21d0.pdf#page=4",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc70cebdb8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和4年度第1回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-chief-2-2022-first-gakka-q10",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "first",
+    "qNumber": 10,
+    "sourceExamSession": "第1回",
+    "officialQuestionLabel": "問10",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "通信網",
+    "topicTags": [
+      "デジタル交換機の監視走査"
+    ],
+    "difficulty": 2,
+    "question": "電話用デジタル交換機の基本機能のうち、加入者の発呼や終話を検出する機能を選べ。",
+    "choices": {
+      "ア": "ハイブリッド",
+      "イ": "スイッチ制御",
+      "ウ": "信号送受",
+      "エ": "番号翻訳",
+      "オ": "監視走査"
+    },
+    "answer": "オ",
+    "explanation": "加入者線の状態を逐次確認し、受話器を上げたときなどの状態変化から発呼や終話を検出します。",
+    "choiceExplanations": {
+      "ア": "ハイブリッドは2線式の加入者線と4線式などの送受経路を変換します。",
+      "イ": "スイッチ制御は通話路を接続・切断します。加入者線の状態変化を検出するのは監視走査です。",
+      "ウ": "信号をやり取りする機能とは別に、加入者線を走査してその状態の変化を検出します。",
+      "エ": "番号翻訳は選択された相手先の番号に基づき、経路を決めるための情報を得る機能です。",
+      "オ": "加入者線の状態を逐次確認し、受話器を上げたときなどの状態変化から発呼や終話を検出します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc6cbf21d0.pdf#page=4",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc70cebdb8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和4年度第1回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-chief-2-2022-first-gakka-q11",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "first",
+    "qNumber": 11,
+    "sourceExamSession": "第1回",
+    "officialQuestionLabel": "問11",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "通信網",
+    "topicTags": [
+      "保留時間から求める呼数"
+    ],
+    "difficulty": 2,
+    "question": "ある回線群のトラヒックを20分間調べた。表のとおり保留時間別に呼数を集計し、回線群の総呼量は3.0アーランだった。保留時間が1呼当たり200秒である呼の数を求めよ。",
+    "choices": {
+      "ア": "2呼",
+      "イ": "3呼",
+      "ウ": "4呼",
+      "エ": "6呼",
+      "オ": "8呼"
+    },
+    "answer": "ウ",
+    "explanation": "総保留時間は3.0×20×60＝3,600秒、既知分は110×5＋120×10＋150×7＝2,800秒です。差の800秒を200で割ると4呼です。",
+    "choiceExplanations": {
+      "ア": "2呼なら200秒の呼は400秒分で、既知分と合わせ3,200秒です。3.0アーランに対応する延べ3,600秒に届きません。",
+      "イ": "3呼では残りの呼の保留時間が600秒分で、既知分と合計して3,400秒です。",
+      "ウ": "総保留時間は3.0×20×60＝3,600秒、既知分は110×5＋120×10＋150×7＝2,800秒です。差の800秒を200で割ると4呼です。",
+      "エ": "6呼だと200秒の呼だけで1,200秒になり、既知分を足すと観測された延べ3,600秒を超えます。",
+      "オ": "観測時間全体の総保留時間から既知の2,800秒を引くと800秒です。8呼では200×8＝1,600秒となります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc6cbf21d0.pdf#page=4",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc70cebdb8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和4年度第1回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/dekyo-chief-2/2022-first/system-q11.png"
+    ],
+    "imageAltTexts": [
+      "1呼当たりの保留時間と呼数の表。110秒が5呼、120秒が10呼、150秒が7呼、200秒は空欄"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "dekyo-chief-2-2022-first-gakka-q12",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "first",
+    "qNumber": 12,
+    "sourceExamSession": "第1回",
+    "officialQuestionLabel": "問12",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "通信網",
+    "topicTags": [
+      "網状網のリンク数"
+    ],
+    "difficulty": 2,
+    "question": "網状網の交換ノードが8個である場合、各交換ノードの間を結ぶリンクの総数を求めよ。",
+    "choices": {
+      "ア": "24",
+      "イ": "28",
+      "ウ": "56",
+      "エ": "64",
+      "オ": "128"
+    },
+    "answer": "イ",
+    "explanation": "異なる2ノードの組数を求めればよいので、8×7÷2＝28本です。",
+    "choiceExplanations": {
+      "ア": "各ノードが接続する相手は自分以外の7個です。リンク1本が二つのノードに数えられることも考えます。",
+      "イ": "異なる2ノードの組数を求めればよいので、8×7÷2＝28本です。",
+      "ウ": "8×7は各ノードから見た接続の合計で、同じリンクを両端から1度ずつ数えています。",
+      "エ": "自分自身との組と両方向の重複を含めて数えています。リンクは異なる2ノードの組ごとに1本です。",
+      "オ": "網状網では各リンクを端点二つの組として数えます。8ノードの場合は28組です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc6cbf21d0.pdf#page=4",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc70cebdb8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和4年度第1回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "isCalculation": true
+  },
+  {
+    "id": "dekyo-chief-2-2022-first-gakka-q13",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "first",
+    "qNumber": 13,
+    "sourceExamSession": "第1回",
+    "officialQuestionLabel": "問13",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "通信網",
+    "topicTags": [
+      "無線LANとスペクトル拡散"
+    ],
+    "difficulty": 2,
+    "question": "無線LANの伝送方式のうち、小出力で耐干渉性や秘匿性を確保するため、衛星通信でも利用される方式を選べ。",
+    "choices": {
+      "ア": "ベースバンド",
+      "イ": "共通線信号",
+      "ウ": "スペクトル拡散",
+      "エ": "振幅変調",
+      "オ": "周波数変調"
+    },
+    "answer": "ウ",
+    "explanation": "信号を広い周波数帯に拡散し、受信側で逆拡散する方式です。狭帯域の干渉の影響を受けにくくする効果があります。",
+    "choiceExplanations": {
+      "ア": "ベースバンド方式は搬送波に載せる変調を行わず伝送する方式です。ここでは広い周波数帯へ信号を拡散します。",
+      "イ": "共通線信号方式は複数の通話回線の制御信号を共通の信号回線で伝える仕組みです。",
+      "ウ": "信号を広い周波数帯に拡散し、受信側で逆拡散する方式です。狭帯域の干渉の影響を受けにくくする効果があります。",
+      "エ": "振幅変調は信号に応じて搬送波の振幅を変えます。設問で求める信号帯域を大きく広げる方式ではありません。",
+      "オ": "通常の周波数変調は搬送波の周波数偏移で情報を表します。拡散系列等によるスペクトル拡散とは区別されます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc6cbf21d0.pdf#page=4",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc70cebdb8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和4年度第1回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-chief-2-2022-first-gakka-q14",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "first",
+    "qNumber": 14,
+    "sourceExamSession": "第1回",
+    "officialQuestionLabel": "問14",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "通信網",
+    "topicTags": [
+      "携帯電話番号の事業者識別"
+    ],
+    "difficulty": 2,
+    "question": "試験当時の携帯電話番号の体系で、先頭の070、080又は090に続く何桁が、一般に携帯電話事業者（MNO）別に指定されているか。利用者が番号ポータビリティで他のMNOへ移った場合、この数字だけでは現在の契約先を識別できない。",
+    "choices": {
+      "ア": "1桁",
+      "イ": "2桁",
+      "ウ": "3桁",
+      "エ": "4桁",
+      "オ": "5桁"
+    },
+    "answer": "ウ",
+    "explanation": "070、080、090に続く3桁が事業者別の割当ての区分です。番号を持ち運べるため、割当てを受けた事業者と現在の契約先は異なる場合があります。",
+    "choiceExplanations": {
+      "ア": "070・080・090に続く最初の1桁だけで、割当てられた番号帯を区分するものではありません。",
+      "イ": "試験当時の体系では、070等の直後の3桁を合わせた番号帯が事業者ごとに指定されていました。",
+      "ウ": "070、080、090に続く3桁が事業者別の割当ての区分です。番号を持ち運べるため、割当てを受けた事業者と現在の契約先は異なる場合があります。",
+      "エ": "直後の4桁全部を用いる規則ではなく、問われている事業者別の区分は直後の3桁です。",
+      "オ": "事業者別の割当ては、先頭の区分番号に続く3桁の範囲で行われます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc6cbf21d0.pdf#page=5",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc70cebdb8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和4年度第1回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-chief-2-2022-first-gakka-q15",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "first",
+    "qNumber": 15,
+    "sourceExamSession": "第1回",
+    "officialQuestionLabel": "問15",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "通信網",
+    "topicTags": [
+      "電話交換の監視信号"
+    ],
+    "difficulty": 2,
+    "question": "公衆交換電話網（PSTN）で交換機が着信側を呼び出しているとき、着信側の加入者線ループを検出した交換機が、発信側端末へ回線の極性を反転して送る監視信号を選べ。",
+    "choices": {
+      "ア": "起動信号",
+      "イ": "応答信号",
+      "ウ": "選択信号",
+      "エ": "呼出信号",
+      "オ": "起動完了信号"
+    },
+    "answer": "イ",
+    "explanation": "被呼側が応答するとその加入者線で閉ループが検出され、発信側への極性反転などで応答を知らせます。",
+    "choiceExplanations": {
+      "ア": "起動信号は回線を使用する手続の開始を伝える信号です。ここでは着信側が応答したことを発信側に伝えます。",
+      "イ": "被呼側が応答するとその加入者線で閉ループが検出され、発信側への極性反転などで応答を知らせます。",
+      "ウ": "選択信号は通信相手の番号などの選択情報を交換設備に送るための信号です。",
+      "エ": "呼出信号は着信側の機器に着信を知らせます。設問で問うのは発信側に返す信号です。",
+      "オ": "起動完了信号は呼設定の初期に受信準備ができたことなどを示します。被呼側が電話に出たことは応答信号で知らせます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc6cbf21d0.pdf#page=5",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc70cebdb8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和4年度第1回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-chief-2-2022-first-gakka-q16",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "first",
+    "qNumber": 16,
+    "sourceExamSession": "第1回",
+    "officialQuestionLabel": "問16",
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "通信網",
+    "topicTags": [
+      "DRAMのリフレッシュ"
+    ],
+    "difficulty": 2,
+    "question": "コンピュータの主記憶装置に用いる半導体メモリのうち、電荷を蓄えて記憶し、その電荷が時間とともに失われるため一定時間ごとに再書込みが必要なものを選べ。",
+    "choices": {
+      "ア": "DRAM",
+      "イ": "EPROM",
+      "ウ": "MROM",
+      "エ": "SRAM",
+      "オ": "フラッシュメモリ"
+    },
+    "answer": "ア",
+    "explanation": "DRAMのメモリセルの蓄積電荷は漏れ電流で徐々に減ります。記憶を保持するため定期的にリフレッシュします。",
+    "choiceExplanations": {
+      "ア": "DRAMのメモリセルの蓄積電荷は漏れ電流で徐々に減ります。記憶を保持するため定期的にリフレッシュします。",
+      "イ": "EPROMは書き込んだ内容を電源なしで保持し、紫外線などで消去できます。定期的な再書込みは不要です。",
+      "ウ": "マスクROMは製造時にデータを固定する読出し専用メモリです。",
+      "エ": "SRAMは電源がある間、回路が状態を保持します。DRAMのような周期的なリフレッシュを必要としません。",
+      "オ": "フラッシュメモリは電源を切っても保持できる方式で、通常の動作中にDRAMのようなリフレッシュを必要としません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc6cbf21d0.pdf#page=5",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc70cebdb8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和4年度第1回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-chief-2-2022-first-gakka-q17",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "first",
+    "qNumber": 17,
+    "sourceExamSession": "第1回",
+    "officialQuestionLabel": "問17",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "伝送技術",
+    "topicTags": [
+      "OFDMのサブキャリア"
+    ],
+    "difficulty": 2,
+    "question": "無線LANで用いられるOFDMは、高速な信号系列をどのような複数のサブキャリアに分割し、並列に伝送する方式か。",
+    "choices": {
+      "ア": "キャリア間にガードバンドを設けた",
+      "イ": "キャリアごとにフィルタを設けた",
+      "ウ": "時間により切り替わる特定の周波数から構成される",
+      "エ": "直接拡散方式を用いて変調する",
+      "オ": "直交する"
+    },
+    "answer": "オ",
+    "explanation": "OFDMはサブキャリアの間隔を直交するように選び、受信側で他のサブキャリアの信号の影響を除いて復調できます。",
+    "choiceExplanations": {
+      "ア": "サブキャリアのスペクトルを重ねつつ、互いの直交性を使って分離するのがOFDMです。各キャリア間に空いた帯域を設ける方式ではありません。",
+      "イ": "OFDMのキャリア分離の条件は直交性です。キャリアごとに独立した帯域フィルタを設けることを定義には含めません。",
+      "ウ": "時刻によって搬送波周波数を切り替える方式は周波数ホッピングです。OFDMは複数のサブキャリアを並列に使います。",
+      "エ": "直接拡散は信号を拡散系列で広帯域化する方式です。OFDMの特徴は複数の直交する搬送波に分けることです。",
+      "オ": "OFDMはサブキャリアの間隔を直交するように選び、受信側で他のサブキャリアの信号の影響を除いて復調できます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc6cbf21d0.pdf#page=5",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc70cebdb8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和4年度第1回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-chief-2-2022-first-gakka-q18",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "first",
+    "qNumber": 18,
+    "sourceExamSession": "第1回",
+    "officialQuestionLabel": "問18",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "伝送技術",
+    "topicTags": [
+      "マルチモード光ファイバの分散"
+    ],
+    "difficulty": 2,
+    "question": "光ファイバの伝送帯域を制限する主な要因のうち、マルチモード光ファイバに特有のものを選べ。",
+    "choices": {
+      "ア": "吸収損失",
+      "イ": "構造分散",
+      "ウ": "材料分散",
+      "エ": "レイリー散乱",
+      "オ": "モード分散"
+    },
+    "answer": "オ",
+    "explanation": "複数のモード間で伝搬時間が異なると受信したパルスが広がります。単一モードではモード間の到達時刻の差が生じません。",
+    "choiceExplanations": {
+      "ア": "光を材料が吸収する現象はマルチモードとシングルモードの双方で生じます。",
+      "イ": "構造分散は導波路の構造のために群速度が光の波長によって異なる現象で、シングルモードでも生じます。",
+      "ウ": "材料分散は屈折率が光の波長によって変わるために生じます。複数のモードの有無とは別の現象です。",
+      "エ": "ガラス内の微小な揺らぎによるレイリー散乱は、シングルモード光ファイバでも損失を生みます。",
+      "オ": "複数のモード間で伝搬時間が異なると受信したパルスが広がります。単一モードではモード間の到達時刻の差が生じません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc6cbf21d0.pdf#page=5",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc70cebdb8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和4年度第1回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-chief-2-2022-first-gakka-q19",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "first",
+    "qNumber": 19,
+    "sourceExamSession": "第1回",
+    "officialQuestionLabel": "問19",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "電気回路",
+    "topicTags": [
+      "低圧電路の漏電遮断器"
+    ],
+    "difficulty": 2,
+    "question": "交流の低圧電路の地絡事故を検出して、その電路を自動的に遮断するための装置を選べ。",
+    "choices": {
+      "ア": "真空遮断器",
+      "イ": "配線用遮断器",
+      "ウ": "漏電遮断器",
+      "エ": "過電流継電器",
+      "オ": "断路器"
+    },
+    "answer": "ウ",
+    "explanation": "正常な電路では往復の電流がつり合い、地絡時には電流の差が生じます。漏電遮断器はこの差を検出して電路を開きます。",
+    "choiceExplanations": {
+      "ア": "真空遮断器は真空を消弧に利用する遮断器です。低圧配線で漏電を検出して遮断するために使う装置は漏電遮断器です。",
+      "イ": "一般の配線用遮断器は過負荷・短絡による過電流を遮断します。小さな漏れ電流の検出には漏電機能が必要です。",
+      "ウ": "正常な電路では往復の電流がつり合い、地絡時には電流の差が生じます。漏電遮断器はこの差を検出して電路を開きます。",
+      "エ": "過電流継電器は過電流を検出して別の機器に遮断を指示する機器で、低圧電路で地絡を検出して直接遮断する機器とは異なります。",
+      "オ": "断路器は回路を無負荷の状態で機器の点検などのために切り離します。地絡を検出して自動遮断する機能は備えません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc6cbf21d0.pdf#page=5",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc70cebdb8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和4年度第1回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-chief-2-2022-first-gakka-q20",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "first",
+    "qNumber": 20,
+    "sourceExamSession": "第1回",
+    "officialQuestionLabel": "問20",
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "伝送技術",
+    "topicTags": [
+      "モードフィールド径"
+    ],
+    "difficulty": 2,
+    "question": "シングルモード光ファイバでは、伝搬する光はコアからクラッドへも広がるので、コアとクラッドの境界が光の広がりの端にはならない。光強度分布から求める構造パラメータを選べ。",
+    "choices": {
+      "ア": "モードフィールド径",
+      "イ": "比屈折率差",
+      "ウ": "遮断波長",
+      "エ": "開口数",
+      "オ": "偏心率"
+    },
+    "answer": "ア",
+    "explanation": "モードフィールド径は基本モードの電界分布の広がりを表す直径です。光強度のガウス近似では、中心の強度の1/e²に減少する位置で求められます。",
+    "choiceExplanations": {
+      "ア": "モードフィールド径は基本モードの電界分布の広がりを表す直径です。光強度のガウス近似では、中心の強度の1/e²に減少する位置で求められます。",
+      "イ": "比屈折率差はコアとクラッドの屈折率の違いを表す値です。光強度分布の広がりを直接表す値ではありません。",
+      "ウ": "遮断波長は、光ファイバで特定のモードが伝搬できる波長の境界を表します。",
+      "エ": "開口数はファイバが光を取り込める入射角の範囲に関連する値です。モードの光強度分布の直径を示すものではありません。",
+      "オ": "偏心率は光ファイバの断面の中心のずれなどを表します。伝搬するモードの光の広がりはモードフィールド径で表します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc6cbf21d0.pdf#page=6",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/1450/files145062cfc70cebdb8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和4年度第1回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  }
+]
