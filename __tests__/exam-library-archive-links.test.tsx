@@ -53,6 +53,17 @@ describe("archived consultant PDF links", () => {
     })).toBeNull();
   });
 
+  it("requires the original year and folder for an older X-ray publication", () => {
+    const paper = catalog.find((entry) => entry.id === "lckohyo-LC20232117")!;
+    const entry = EXAM_CATALOG.find((candidate) => candidate.id === paper.id)!;
+    expect(examSourcePdfUrl(entry)).toBe(paper.archiveSourceUrl);
+    expect(parseExamCatalogEntry({
+      ...paper,
+      pdfUrl: paper.pdfUrl.replace("lc_r052", "lc_r051"),
+      archiveSourceUrl: paper.archiveSourceUrl!.replace("lc_r052", "lc_r051"),
+    })).toBeNull();
+  });
+
   it("keeps current official sources on their official PDF", () => {
     const entry = EXAM_CATALOG.find((candidate) => candidate.id === "cskohyo-CS20251901")!;
     expect(entry.sourceMode).toBe("official-pdf");

@@ -35,19 +35,28 @@ for (const paper of catalog) {
     const archiveUrl = paper.archiveSourceUrl;
     const consultant = /^cskohyo-CS202119\d{2}$/u.test(paper.id);
     const publishedPaper = /^lckohyo-LC2024[12]1(?:05|17)$/u.test(paper.id);
-    check(consultant || publishedPaper, `Archive copy outside reviewed sets: ${paper.id}`);
-    check(
-      typeof archiveUrl === 'string' && (consultant
-        ? /^https:\/\/osh-lab\.com\/wp-content\/uploads\/2022\/06\/[a-f0-9]{32}\.pdf$/u.test(archiveUrl)
-        : /^https:\/\/web\.archive\.org\/web\/\d{14}id_\/https:\/\/www\.exam\.or\.jp\/wp-content\/uploads\/2024\/(?:08|12)\/LC2024[12]1(?:05|17)\.pdf$/u.test(archiveUrl)
-          && archiveUrl.endsWith(`/${paper.pdfUrl}`)
-          && paper.pdfUrl?.endsWith(`/${paper.id.slice('lckohyo-'.length)}.pdf`)),
-      `Missing reviewed archive source: ${paper.id}`,
-    );
-    const manifestUrl = consultant
-      ? 'https://web.archive.org/web/20220528065047id_/https://www.exam.or.jp/exmn/csv/cspdf.csv'
-      : 'https://web.archive.org/web/20250119073601id_/https://www.exam.or.jp/lckohyo/';
-    check(paper.officialArchiveManifestUrl === manifestUrl, `Missing official archive manifest: ${paper.id}`);
+    const olderXrayPaper = /^lckohyo-(LC(202[23])([12])117)$/u.exec(paper.id);
+    const reviewedOlderXrayPdf = olderXrayPaper
+      && paper.pdfUrl === `https://www.exam.or.jp/lc_r0${Number(olderXrayPaper[2]) - 2018}${olderXrayPaper[3]}/${olderXrayPaper[1]}.pdf`;
+    check(consultant || publishedPaper || reviewedOlderXrayPdf, `Archive copy outside reviewed sets: ${paper.id}`);
+    if (consultant) {
+      check(typeof archiveUrl === 'string'
+        && /^https:\/\/osh-lab\.com\/wp-content\/uploads\/2022\/06\/[a-f0-9]{32}\.pdf$/u.test(archiveUrl),
+      `Missing reviewed archive source: ${paper.id}`);
+      check(paper.officialArchiveManifestUrl === 'https://web.archive.org/web/20220528065047id_/https://www.exam.or.jp/exmn/csv/cspdf.csv',
+        `Missing official archive manifest: ${paper.id}`);
+    } else {
+      const reviewedArchive = typeof archiveUrl === 'string'
+        && /^https:\/\/web\.archive\.org\/web\/\d{14}id_\/(.+)$/u.exec(archiveUrl)?.[1] === paper.pdfUrl;
+      const publishedPdf = publishedPaper
+        && /^https:\/\/www\.exam\.or\.jp\/wp-content\/uploads\/2024\/(?:08|12)\/LC2024[12]1(?:05|17)\.pdf$/u.test(paper.pdfUrl)
+        && paper.pdfUrl.endsWith(`/${paper.id.slice('lckohyo-'.length)}.pdf`);
+      check(reviewedArchive && (publishedPdf || reviewedOlderXrayPdf), `Missing reviewed archive source: ${paper.id}`);
+      if (publishedPdf) {
+        check(paper.officialArchiveManifestUrl === 'https://web.archive.org/web/20250119073601id_/https://www.exam.or.jp/lckohyo/',
+          `Missing official archive manifest: ${paper.id}`);
+      }
+    }
   }
   check(['reference', 'official-choice'].includes(paper.answerMode), `Unexpected answer mode: ${paper.id}`);
   for (const key of ['pdfUrl', 'indexUrl']) {

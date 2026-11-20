@@ -198,7 +198,11 @@ export function parseExamCatalogEntry(value: unknown): ExamCatalogEntry | null {
       && /^https:\/\/web\.archive\.org\/web\/\d{14}id_\/https:\/\/www\.exam\.or\.jp\/wp-content\/uploads\/2024\/(?:08|12)\/LC2024[12]1(?:05|17)\.pdf$/u.test(archiveUrl)
       && archiveUrl.endsWith(`/${pdfUrl}`)
       && pdfUrl.endsWith(`/${id.slice("lckohyo-".length)}.pdf`);
-    if (!reviewedConsultantCopy && !reviewedPublishedPaper) return null;
+    const olderXrayPaper = /^lckohyo-(LC(202[23])([12])117)$/u.exec(id);
+    const reviewedOlderXrayPaper = olderXrayPaper
+      && pdfUrl === `https://www.exam.or.jp/lc_r0${Number(olderXrayPaper[2]) - 2018}${olderXrayPaper[3]}/${olderXrayPaper[1]}.pdf`
+      && /^https:\/\/web\.archive\.org\/web\/\d{14}id_\/(.+)$/u.exec(archiveUrl)?.[1] === pdfUrl;
+    if (!reviewedConsultantCopy && !reviewedPublishedPaper && !reviewedOlderXrayPaper) return null;
   }
 
   const entry: ExamCatalogEntry = {
