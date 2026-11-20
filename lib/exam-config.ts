@@ -609,7 +609,7 @@ fp3: {
             categories: ["ライフプランニングと資金計画", "リスク管理", "金融資産運用", "タックスプランニング", "不動産", "相続・事業承継"],
         }],
     seasons: ["published"],
-    yearRange: { start: 2023, end: 2025 },
+    yearRange: { start: 2024, end: 2025 },
 },
 denken3: {
     code: "denken3",
@@ -623,7 +623,7 @@ denken3: {
         { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["電気事業法", "電気設備技術基準", "電気施設管理"] },
     ],
     seasons: ["first", "second"],
-    yearRange: { start: 2023, end: 2025 },
+    yearRange: { start: 2024, end: 2025 },
 },
 denken1: {
     code: "denken1",
@@ -664,7 +664,7 @@ denko2: {
             categories: ["電気理論・配電", "電気機器・材料・工具", "施工・法規・検査", "配線図"],
         }],
     seasons: ["first", "second"],
-    yearRange: { start: 2023, end: 2026 },
+    yearRange: { start: 2024, end: 2026 },
 },
 denko1: {
     code: "denko1",
@@ -694,7 +694,7 @@ takken: {
             categories: ["権利関係", "法令上の制限", "税・価格評定", "宅建業法", "免除科目"],
         }],
     seasons: ["october"],
-    yearRange: { start: 2023, end: 2025 },
+    yearRange: { start: 2024, end: 2025 },
 },
 civil2: {
     code: "civil2",
@@ -848,7 +848,7 @@ shakai: {
         },
     ],
     seasons: ["annual"],
-    yearRange: { start: 2023, end: 2025 },
+    yearRange: { start: 2024, end: 2025 },
 },
 seishin: {
     code: "seishin",
@@ -875,7 +875,7 @@ seishin: {
         },
     ],
     seasons: ["annual"],
-    yearRange: { start: 2023, end: 2025 },
+    yearRange: { start: 2024, end: 2025 },
 },
 tohan: {
     code: "tohan",
@@ -896,7 +896,7 @@ tohan: {
             ],
         }],
     seasons: ["kansai"],
-    yearRange: { start: 2023, end: 2025 },
+    yearRange: { start: 2024, end: 2025 },
 },
 kanri: {
     code: "kanri",
@@ -975,7 +975,7 @@ mankan: {
             categories: ["区分所有法", "民法", "被災区分所有法", "マンション建替え円滑化法", "都市計画法・建築基準法", "標準管理規約", "維持保全・建物設備", "マンション管理適正化法", "会計・税務"],
         }],
     seasons: ["annual"],
-    yearRange: { start: 2023, end: 2025 },
+    yearRange: { start: 2024, end: 2025 },
 },
 kashikin: {
     code: "kashikin",
@@ -1071,7 +1071,7 @@ josanshi: {
     level: "advanced",
     sessions: [{ session: "am", urlSlug: "am", expectedQuestions: 100, label: "午前", categories: ["午前"] }, { session: "pm", urlSlug: "pm", expectedQuestions: 100, label: "午後", categories: ["午後"] }],
     seasons: ["annual"],
-    yearRange: { start: 2023, end: 2025 },
+    yearRange: { start: 2024, end: 2025 },
 },
   "gengo-chokakushi": {
     code: "gengo-chokakushi",
