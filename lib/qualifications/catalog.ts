@@ -1517,7 +1517,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     domain: "construction", administrator: "一般財団法人全国建設研修センター",
     officialQuestionsUrl: "https://www.jctc.jp/mondai/", officialReuseTermsUrl: "https://www.jctc.jp/mondai/",
     status: "live",
-    reuseSummary: "令和5〜8年度の第一次検定292問（各年度A44・B29）、訂正後の公式正答、原本の図表、全肢解説を収録。",
+    reuseSummary: "令和4〜8年度の第一次検定365問（各年度A44・B29）、訂正後の公式正答、原本の図表、全肢解説を収録。",
     attributionTemplate: "出典：一般財団法人全国建設研修センター 令和8年度1級管工事施工管理技術検定 第一次検定 問題A／B。解説は過去問AI作成。",
     remainingWork: ["監督役による独立レビューと公開判断"],
 },

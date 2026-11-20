@@ -3,11 +3,12 @@ import paper2026 from "./2026-september.json";
 import paper2025 from "./2025-september.json";
 import paper2024 from "./2024-september.json";
 import paper2023 from "./2023-september.json";
+import paper2022 from "./2022-september.json";
 
 const keys: ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 
 /** 第一次検定の公式問題と訂正後の公式正答。 */
-export const KANKOJI1_QUESTIONS: Question[] = [paper2026, paper2025, paper2024, paper2023].flatMap((source) =>
+export const KANKOJI1_QUESTIONS: Question[] = [paper2026, paper2025, paper2024, paper2023, paper2022].flatMap((source) =>
   source.papers.flatMap((paper) => {
     if (paper.questions.length !== paper.officialQuestionCount) throw new Error("kankoji1 count mismatch");
     return paper.questions.map((item): Question => {
