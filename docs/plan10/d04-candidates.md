@@ -109,6 +109,7 @@
 | 2024 | 一般職（大卒程度） 基礎能力試験 | 29 | [問題冊子・末尾の正答番号表（36ページ）](https://www.jinji.go.jp/content/000007497.pdf) |
 | 2024 | 一般職（大卒程度・行政区分） 専門試験（多肢選択式） | 78 | [問題冊子・末尾の正答番号表（89ページ）](https://www.jinji.go.jp/content/000010273.pdf) |
 | 2024 | 一般職（大卒程度・デジタル・電気・電子区分） 専門試験（多肢選択式） | 44 | [問題冊子・末尾の正答番号表（38ページ）](https://www.jinji.go.jp/content/000007500.pdf) |
+| 2024 | 一般職（大卒程度・機械区分） 専門試験（多肢選択式） | 20 | [問題冊子・末尾の正答番号表（37ページ）](https://www.jinji.go.jp/content/000007502.pdf) |
 | 2024 | 財務専門官 専門試験（多肢選択式） | 11 | [問題冊子・末尾の正答番号表（84ページ）](https://www.jinji.go.jp/content/000007522.pdf) |
 | 2024 | 労働基準監督官（労働基準監督A） 専門試験（多肢選択式） | 26 | [問題冊子・末尾の正答番号表（50ページ）](https://www.jinji.go.jp/content/000007529.pdf) |
 | 2024 | 労働基準監督官（労働基準監督B） 専門試験（多肢選択式） | 19 | [問題冊子・末尾の正答番号表（35ページ）](https://www.jinji.go.jp/content/000007531.pdf) |
@@ -277,3 +278,5 @@
 2025年度の農業農村工学区分は農学区分No. 39と共通するNo. 40を除く39問を収録した。構造力学、水理学、工程計画など13問の図表は公式冊子から添付した。排水計画と農道の解説は、農林水産省の土地改良事業計画設計基準も参照した。 [農業農村工学](https://www.jinji.go.jp/content/000016359.pdf) [排水の技術書](https://www.maff.go.jp/j/council/seisaku/nousin/seibibukai/gijutu_syoiinkai/attach/pdf/siryou-12.pdf) [農道の基準](https://www.maff.go.jp/j/nousin/noukan/tyotei/kizyun/noudou.html)
 
 2024年度のデジタル・電気・電子区分は、必須No. 1～36、選択A（情報工学）No. 37～40、選択B（電子工学）No. 41～44を収録した。プログラム、配列の図および回路図など26点を公式冊子から添付した。 [デジタル・電気・電子](https://www.jinji.go.jp/content/000007500.pdf)
+
+2024年度の機械区分はNo. 21～40を収録し、12問に公式冊子の図を添付した。No. 1～20はデジタル・電気・電子区分と問題・正答番号が一致する。 [機械](https://www.jinji.go.jp/content/000007502.pdf) [デジタル・電気・電子](https://www.jinji.go.jp/content/000007500.pdf)
