@@ -42619,5 +42619,1653 @@
         "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
       }
     ]
+  },
+  "lckohyo-LC20241117-q1": {
+    "sourceHash": "94ab92d24d07f0887a672f7329b13a6695c6956478cc121f6e526b6f5bba47b7",
+    "correctChoice": 3,
+    "summary": "特性エックス線は原子の内殻の空孔を別の殻の電子が埋めるときに放出される。原子核の準位遷移に由来する場合はガンマ線である。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "高速電子が減速や偏向の際に放出するエネルギーは連続的に変わるので、制動放射は連続スペクトルを示す。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "特性エックス線の波長は標的元素の内殻と外殻との準位差に対応するため、元素に固有の値になる。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "特性エックス線は原子の内殻の空孔を別の殻の電子が埋めるときに放出される。原子核の準位遷移に由来する場合はガンマ線である。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "エックス線は物質中の電子にエネルギーを渡し、放出された電子が周囲を電離するため、間接電離放射線に区分される。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "波長と振動数の積が波の速さである。真空中のエックス線は電磁波なので、その積は光速cとなる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 放射線の発生",
+        "url": "https://www.env.go.jp/chemi/rhm/current/01-03-01.html"
+      },
+      {
+        "title": "環境省 放射線による電離作用",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-02-01.html"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q2": {
+    "sourceHash": "2bab6961cd133d72e90a88fb92d84d4ec933902311309dd7fbe671a09376302f",
+    "correctChoice": 5,
+    "summary": "制動放射へ変換される割合は、この範囲では原子番号と管電圧の積にほぼ比例する。発生効率に管電圧の二乗は使わない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "電子は陰極から陽極に加速される。慣用的な電流の向きは負電荷をもつ電子の移動と反対なので、陽極から陰極となる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "フィラメント電流で陰極の温度が変わると、熱電子の放出量も変わる。これを用いて管電流を調整できる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "傾斜した標的の実焦点を利用線束の方向から見ると投影面積は小さくなり、見かけの焦点を小さくできる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "励起電圧を超えると内殻の空孔ができて特性エックス線が生じる。高速電子の制動による連続成分も同時に発生する。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "制動放射へ変換される割合は、この範囲では原子番号と管電圧の積にほぼ比例する。発生効率に管電圧の二乗は使わない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 放射線の発生",
+        "url": "https://www.env.go.jp/chemi/rhm/current/01-03-01.html"
+      },
+      {
+        "title": "環境省 放射線による電離作用",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-02-01.html"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q3": {
+    "sourceHash": "5084c4d73c5a628e578fb6dcca136de79fc68ac6d616fdb08f402c5a574d3c86",
+    "correctChoice": 1,
+    "summary": "管電流が増えると単位時間に陽極へ衝突する電子の数が増えるため、管電圧が一定なら連続エックス線の全強度が増加する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "管電流が増えると単位時間に陽極へ衝突する電子の数が増えるため、管電圧が一定なら連続エックス線の全強度が増加する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "最大強度となる波長は管電圧などによって変わる。管電圧を固定して電子の数だけを増やしても波長の位置は移動しない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "最短波長は、1個の電子の全運動エネルギーを1光子に渡した場合に対応するため、管電流ではなく管電圧で決まる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "最大光子エネルギーは1個の電子に与えられる加速エネルギーで決まる。管電流を増やしても個々の電子の加速電圧は変わらない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "管電流を増やすと標的に届く電子の数が増える。加速電圧が同じなら光子のエネルギースペクトルの形は変わらず、線質は硬くならない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 放射線の発生",
+        "url": "https://www.env.go.jp/chemi/rhm/current/01-03-01.html"
+      },
+      {
+        "title": "環境省 放射線による電離作用",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-02-01.html"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q4": {
+    "sourceHash": "897d1b2f9adb95ca880dcfca07e0618a0ef9828239f3595ec2435fa544148ad2",
+    "correctChoice": 4,
+    "summary": "光電効果では光子のエネルギーを電子の放出に使う。電子対生成でも光子が吸収され、電子と陽電子が生じる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "光電効果では光子が吸収されるが、レイリー散乱では光子は進行方向を変えて残るのでこの組合せは適切でない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "レイリー散乱でもコンプトン散乱でも入射光子に由来する散乱光子が残る。後者ではエネルギーの一部が電子に移る。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "光電効果では光子が消滅するが、コンプトン効果の後にはエネルギーの小さくなった散乱光子が存在する。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "光電効果では光子のエネルギーを電子の放出に使う。電子対生成でも光子が吸収され、電子と陽電子が生じる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "電子対生成では光子が消滅する。コンプトン効果では光子は方向とエネルギーを変えて残るため組合せが違う。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 放射線の発生",
+        "url": "https://www.env.go.jp/chemi/rhm/current/01-03-01.html"
+      },
+      {
+        "title": "環境省 放射線による電離作用",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-02-01.html"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q5": {
+    "sourceHash": "00e416fdc5c9c1aae850c72119bcbd6d61c54f51e3cd739623d7fc997e7cee45",
+    "correctChoice": 5,
+    "summary": "太い線束では散乱成分が検出されて減弱が緩やかに見えるので、細い線束との比較で見かけの減弱係数は小さくなる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "物質ごとに散乱・吸収の割合が異なり、同じ物質でも入射光子のエネルギーによってこれらの割合が変わる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "線束が広いと検出点へ届く散乱光子の寄与が増えるため、狭い線束よりもビルドアップが大きくなる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "物質が薄いほど一次線の散乱が起こる経路が短くなり、測定値に加わる散乱線の割合が小さくなる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "透過後に物体から遠ざかると測定点に入る散乱線の割合が低下し、一次線だけの場合を表す再生係数1に近づく。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "太い線束では散乱成分が検出されて減弱が緩やかに見えるので、細い線束との比較で見かけの減弱係数は小さくなる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 放射線の発生",
+        "url": "https://www.env.go.jp/chemi/rhm/current/01-03-01.html"
+      },
+      {
+        "title": "環境省 放射線による電離作用",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-02-01.html"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q6": {
+    "sourceHash": "db6e3bfb4ba3cde799106cddbf295bf6b77cd8090871b3c2b2a3b44292e46279",
+    "correctChoice": 2,
+    "summary": "線減弱係数は光子が物質と相互作用する割合を表すため、材料の元素と光子のエネルギーにより変わる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "物質を構成する元素は変数に含まれるが、厚さは減弱量を計算するときに係数に掛ける量であり、係数自体を変えない。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "線減弱係数は光子が物質と相互作用する割合を表すため、材料の元素と光子のエネルギーにより変わる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "元素の種類は関係するが、入射強度は指数減弱式の初期値である。強度を変えても同じ厚さで減る割合は同じである。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "入射エネルギーは関係するが、厚さを増すと増大するのは透過時の減弱量であって、線減弱係数ではない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "厚さと入射強度は透過後の強度を変える。どちらも単色の細い線束に対する材料の線減弱係数を変えない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 放射線の発生",
+        "url": "https://www.env.go.jp/chemi/rhm/current/01-03-01.html"
+      },
+      {
+        "title": "環境省 放射線による電離作用",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-02-01.html"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q7": {
+    "sourceHash": "177a59bdd5abde05d110c08092dc3b72dd6453e01bd5bd358b43f52f383ba937",
+    "correctChoice": 4,
+    "summary": "距離rでの線量は65×(3/r)² mSvとなり、1.3 mSv以下とするには約21.2 m以上が必要になる。選択肢では22 mが最短である。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "3か月の照射時間は90秒×400×13＝130時間となる。9 mではこの時間での線量が約7.2 mSvになる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "12 mはP点の4倍の距離なので、3か月の線量はP点の65 mSvの1/16、約4.1 mSvとなる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "17 mでは65×(3/17)²で約2.0 mSvとなる。管理区域を設定する際の3か月の基準1.3 mSvを超える。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "距離rでの線量は65×(3/r)² mSvとなり、1.3 mSv以下とするには約21.2 m以上が必要になる。選択肢では22 mが最短である。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "27 mなら3か月の線量は約0.80 mSvで基準を満たすが、22 mでも満たせるため最短の候補ではない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov 電離放射線障害防止規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000041"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q8": {
+    "sourceHash": "14dd484076a08cd0c91bae7e99bcbcdfe9fc9d7d829ea10def7ac27d204dae20",
+    "correctChoice": 5,
+    "summary": "前方散乱は角度と板厚の増加に伴い小さくなる。影の影響を除くと、後方では散乱角の増加に伴って率が大きくなる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "前方散乱線は散乱角が大きいほど弱くなる。また鋼板を厚くすると板内の吸収が増え、板を出る前方散乱は減る。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "板厚による減少と後方散乱の傾向は合うが、前方散乱はより前向きの小さな角度で強い。散乱角とともに増すわけではない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "板厚の効果は合うが、前方は角度が増すと減少する。装置の影を除く後方の範囲では角度が増すと大きくなる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "前方で角度が大きいほど減る点は合うが、板が厚くなったときにも減少する。後方の角度変化の向きも違う。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "前方散乱は角度と板厚の増加に伴い小さくなる。影の影響を除くと、後方では散乱角の増加に伴って率が大きくなる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 放射線の発生",
+        "url": "https://www.env.go.jp/chemi/rhm/current/01-03-01.html"
+      },
+      {
+        "title": "環境省 放射線による電離作用",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-02-01.html"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q9": {
+    "sourceHash": "7d7f9589bfdf81481f989c73f78f146c980b48c800bbf8496b5ca3502b6d137a",
+    "correctChoice": 1,
+    "summary": "マイクロアナライザーは細く絞った電子線で試料を励起し、放出された特性エックス線を分析する。散乱の分析が主原理ではない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "マイクロアナライザーは細く絞った電子線で試料を励起し、放出された特性エックス線を分析する。散乱の分析が主原理ではない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "単結晶では特定の方向で格子面からの回折が起こる。回折像の位置や方向を測ると結晶方位を定められる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "元素ごとに固有のエネルギーの蛍光エックス線が生じるため、分光して各成分の強度を調べると元素分析ができる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "応力によって生じた格子面間隔の変化を、ブラッグ回折の角度の変化から求め、材料内部の応力に換算する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "エックス線CTはさまざまな方向から透過した線の強度を測り、その減弱情報を再構成して内部の断面像を得る。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 放射線の発生",
+        "url": "https://www.env.go.jp/chemi/rhm/current/01-03-01.html"
+      },
+      {
+        "title": "環境省 放射線による電離作用",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-02-01.html"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q10": {
+    "sourceHash": "b7890432e73c6cb81dd63147f82fc8a2c57b6075ee1df88a0678a3ae8c13e21a",
+    "correctChoice": 5,
+    "summary": "同じ減弱にはμxが等しくなればよい。鉛の厚さ5 mmに(11.4×0.93)/(7.8×0.11)を掛けると約61.8 mmなので、62 mmが最小である。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "鉄の線減弱係数は7.8×0.11＝0.858 cm⁻¹である。厚さ22 mmでの指数の値は約1.89で、鉛の5.30に及ばない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "厚さ35 mmの鉄ではμxは約3.00である。鉛5 mmの約5.30より小さいため、鉄側の透過線量が高い。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "鉄42 mmでは減弱の指数μxが約3.60となる。鉛板の条件に相当する約5.30を満たすにはさらに厚さが必要である。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "45 mmを使っても鉄の指数μxは約3.86で、鉛の条件を満たさない。厚さの比較では材料ごとの線減弱係数を使う。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "同じ減弱にはμxが等しくなればよい。鉛の厚さ5 mmに(11.4×0.93)/(7.8×0.11)を掛けると約61.8 mmなので、62 mmが最小である。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 放射線の発生",
+        "url": "https://www.env.go.jp/chemi/rhm/current/01-03-01.html"
+      },
+      {
+        "title": "環境省 放射線による電離作用",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-02-01.html"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q11": {
+    "sourceHash": "b6cb6c2936f3ace53e70a30a62e67fb00a81a1eeb95f652dfa80a18aa224f921",
+    "correctChoice": 3,
+    "summary": "測定器での測定が著しく困難な場合などの法令上の例外を除き、立ち入る労働者は管理区域内で測定器を装着する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "放射線装置室である旨の標識と、管理区域である旨の標識は別の役割があり、一方を掲げるだけで管理区域の明示義務がなくなることはない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "事業者は必要のある者以外の立入りを禁止する。放射線業務従事者以外が業務上必要で入る場合まで一律に禁止する規定ではない。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "測定器での測定が著しく困難な場合などの法令上の例外を除き、立ち入る労働者は管理区域内で測定器を装着する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "被ばく線量の測定結果は個々の労働者について記録・保存し通知する。管理区域の見やすい場所に個人の線量記録を掲示するものではない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "管理区域の設定で外部放射線による実効線量を求める際は1 cm線量当量を用いる。示された70 µmとの差で切り替える条件はない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov 電離放射線障害防止規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000041"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q12": {
+    "sourceHash": "bc3befd60c5c175b942e5f9367ab37b0010626d1c14e930b973bda890e6e9841",
+    "correctChoice": 1,
+    "summary": "研究や教育のため使用するたびに組み立てる装置は、エックス線装置構造規格が適用対象から除いている。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "研究や教育のため使用するたびに組み立てる装置は、エックス線装置構造規格が適用対象から除いている。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "輸入装置でも国内で使用される場合は規格の適用を受け得る。海外製であることは適用除外の条件ではない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "定格管電圧100 kV未満であるだけでは規格から除かれない。適用範囲の除外には規格に特定の条件が定められている。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "構造規格への適合と型式検定制度は別である。構造規格が適用されるすべての装置が型式検定の対象になるわけではない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "医療用と工業用などは利用条件と装置の構成が異なり、管からの漏えい線を制限する遮蔽の基準にも区別がある。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov 電離放射線障害防止規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000041"
+      },
+      {
+        "title": "厚生労働省 エックス線装置構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74062000"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q13": {
+    "sourceHash": "a4adcdd677928211f809005317b6a72ce6fda38adb31b7085a3b3deb02382a1b",
+    "correctChoice": 4,
+    "summary": "腹部の基本測定と手指だけでは、体幹のうち被ばくの多い頭・頸部の線量が確認できない。頭・頸部の着用も必要である。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "男性の基本の装着部位は胸部である。頭・頸部が最も多く被ばくするおそれがある場合は、そこにも線量計を追加する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "胸・上腕部が最も放射線にさらされる男性は胸部で代表できる。次に多い手指について装着を求める条件には当たらない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "男性の基本となる装着部位は胸部である。手指が最も強くさらされる場合は末端部の測定を追加する。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "腹部の基本測定と手指だけでは、体幹のうち被ばくの多い頭・頸部の線量が確認できない。頭・頸部の着用も必要である。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "設問の女性は腹部を測定し、頭・頸部が最も被ばくするのでその部位を追加する。手指は最も被ばくする部位ではない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov 電離放射線障害防止規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000041"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q14": {
+    "sourceHash": "5f515d0bdfce4f74803e08386ebd8bedf31a23a1be3a25351ebc873824f6cbc4",
+    "correctChoice": 4,
+    "summary": "事業者は選任した作業主任者の氏名と担当させる事項を掲示などの方法で関係労働者に周知する必要がある。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "作業主任者は対象となる作業について選任する。事業場ごとに必ず1人だけ選べば足りるという規定ではない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "免許には年齢に関する制限があるが、20歳未満を一律に不適格とする規定ではなく、ここでの基準は18歳である。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "挙げられた免状などを持つ者に試験の免除が認められる場合でも、選任にはエックス線作業主任者免許が必要である。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "事業者は選任した作業主任者の氏名と担当させる事項を掲示などの方法で関係労働者に周知する必要がある。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "作業環境測定の実施は事業者に課された義務である。これ自体はエックス線作業主任者固有の職務として規定されていない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov 電離放射線障害防止規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000041"
+      },
+      {
+        "title": "e-Gov 労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q15": {
+    "sourceHash": "568625b5e84fc71e84858ffe0905e36ea9dccd181c2ad91526d96adfbb7498cb",
+    "correctChoice": 5,
+    "summary": "測定結果は管理区域に立ち入る者が把握できるよう、掲示その他の方法で知らせることが求められる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "固定使用による6か月以内の例外は、装置の使用方法と遮蔽物の位置が一定の場合である。被照射体の位置だけでは要件を満たさない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "記録すべき事項には測定者の氏名が含まれるが、その者の資格まで同じ条項で記録すべき事項には入っていない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "この作業場の環境測定結果の保存期間は5年間である。健康診断個人票や個人線量記録などとは保存期間が異なる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "作業環境測定の結果には記録・保存と周知が求められる。測定のたびに監督署長へ遅滞なく提出するものではない。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "測定結果は管理区域に立ち入る者が把握できるよう、掲示その他の方法で知らせることが求められる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov 電離放射線障害防止規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000041"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q16": {
+    "sourceHash": "449da218c40f4aa2e1f453250915aacee605175dc1c5a8f0ae1475d9dec29691",
+    "correctChoice": 2,
+    "summary": "水晶体には5年間100 mSvと1年間50 mSvの両上限が適用される。皮膚の等価線量は1年間500 mSvが限度である。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "水晶体について5年間100 mSvかつ1年間50 mSvは正しい。皮膚の年間限度を250 mSvとしている点が異なる。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "水晶体には5年間100 mSvと1年間50 mSvの両上限が適用される。皮膚の等価線量は1年間500 mSvが限度である。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "水晶体の1年と皮膚の値は正しいが、水晶体について5年間で許容される値は150 mSvではなく100 mSvである。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "水晶体の期間ごとの値が高すぎ、皮膚の1年間の値が低すぎる。規則は水晶体100 mSv／5年及び50 mSv／年、皮膚500 mSv／年とする。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "皮膚に関しては合うが、水晶体の上限は5年間も1年間もこれより低い。両期間の上限を同時に満たす必要がある。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov 電離放射線障害防止規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000041"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q17": {
+    "sourceHash": "d7d95be8aa0bc1340f2a5f7a1cdc413c0d7e6ebb9e3c980eb0d085fcfc391ca7",
+    "correctChoice": 1,
+    "summary": "装置外側の1 cm線量当量率を20 µSv/h以下に抑える構造の装置は、規則に定める遮蔽要件を満たして室外で使用できる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "装置外側の1 cm線量当量率を20 µSv/h以下に抑える構造の装置は、規則に定める遮蔽要件を満たして室外で使用できる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "放射線装置室を他の目的に使用してはならない。磁気や超音波による非破壊検査を同じ室で行う扱いは適切でない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "この管電圧の装置を放射線装置室で使う場合は、関係者に通電を自動で知らせる措置が必要で、手動表示では足りない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "室外の作業で立入禁止とした場所は標識で明示する。作業に従事する者が対象の立入制限にも表示が必要である。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "照射中に作業者の一部が装置内に入るおそれがあるときは、安全装置を規定に従って作動させる。2.5倍での作動では遅すぎる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov 電離放射線障害防止規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000041"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q18": {
+    "sourceHash": "0acaeca5ae900e34a64eba2d69edb54af767627b6342d130c3d4dff9878b9ad2",
+    "correctChoice": 3,
+    "summary": "事業者が医師の意見を聴く対象は異常の所見がある労働者である。所見のない者について聴取しないことは違反に当たらない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "雇入れ・配置替え時の健診は定期健診とは省略条件が異なる。被ばく歴がないというだけで皮膚検査を省略できない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "線量要件を満たす定期健診でも、医師が省略を判断できるのは被ばく歴の調査・評価以外である。この記述は調査・評価も省いている。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "事業者が医師の意見を聴く対象は異常の所見がある労働者である。所見のない者について聴取しないことは違反に当たらない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "健診個人票を指定機関に引き渡せるのは、取り扱いの要件として少なくとも5年間保存した後である。3年では足りない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "定期の電離放射線健康診断を行った場合は報告を要する。事業場の常時使用労働者が10人未満でも例外ではない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov 電離放射線障害防止規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000041"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q19": {
+    "sourceHash": "f891b9ad4ff6d257049732ced7c81b46a3bec36bf2e6c30fee0838bf94fc120f",
+    "correctChoice": 5,
+    "summary": "照射を停止しにくい遮蔽物の破損事故は電離則に基づき報告し、総括安全衛生管理者の選任は労働安全衛生規則に基づき報告する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "エックス線作業主任者の選任と、放射線装置室の使用廃止は、この設問で問われる監督署長への報告事項に当たらない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "遮蔽物が照射中に破損して直ちに停止できない事故は報告を要する。通常の主任者の選任と室の廃止は含めない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "総括安全衛生管理者の選任結果は報告が必要だが、エックス線作業主任者の選任には同様の報告を求めていない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "事故と総括安全衛生管理者の選任は報告する。一方、放射線装置室の使用を廃止したこと自体はこの報告の対象でない。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "照射を停止しにくい遮蔽物の破損事故は電離則に基づき報告し、総括安全衛生管理者の選任は労働安全衛生規則に基づき報告する。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov 電離放射線障害防止規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000041"
+      },
+      {
+        "title": "e-Gov 労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q20": {
+    "sourceHash": "d638e72a468e22b497ada84fd04678d39d72395a99ad78dd62a49bed608dc89a",
+    "correctChoice": 4,
+    "summary": "労働者総数と有害業務従事者数はいずれも衛生工学衛生管理者を置く条件に達しない。この事業場では全員を第一種の免許保有者から選任できる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "常時500人超1,000人以下の区分では衛生管理者が3人以上必要である。2人でよいのはこの規模より小さい区分である。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "選任すべき衛生管理者が複数いる場合の非専属の労働衛生コンサルタントの例外は1人までであり、2人にはできない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "専任の衛生管理者が必要となる場合でも、2,000人超という理由だけで専任者を2人以上置く義務が生じるわけではない。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "労働者総数と有害業務従事者数はいずれも衛生工学衛生管理者を置く条件に達しない。この事業場では全員を第一種の免許保有者から選任できる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "常時500人以上が指定の有害業務に従事するため、総数が1,000人未満でも非専属では足りず、専属の産業医が必要となる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov 電離放射線障害防止規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000041"
+      },
+      {
+        "title": "e-Gov 労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q21": {
+    "sourceHash": "f25966afe04bfc7b4e7bd5eba98fec501057e500fc881f6fba945dc6b14f680a",
+    "correctChoice": 4,
+    "summary": "等価線量は臓器・組織の吸収線量に放射線加重係数を適用する防護量である。測定用に定義された実用量とは区別する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "吸収線量は、物質に付与されたエネルギーをその質量で割った値である。測定対象の物理的状態を表す量に分類する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "カーマは、光子などが生じさせた荷電粒子の初期運動エネルギーを単位質量当たりで表した物理量である。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "1 cm線量当量は個人や作業場での被ばくの監視に用いられる実用量である。放射線防護量を測定で評価する助けとなる。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "等価線量は臓器・組織の吸収線量に放射線加重係数を適用する防護量である。測定用に定義された実用量とは区別する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "測定対象を直接記述する物理量、防護上の影響を評価する防護量、現場の測定に利用する実用量に分類できる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 様々な測定機器",
+        "url": "https://www.env.go.jp/chemi/rhm/current/02-04-01.html"
+      },
+      {
+        "title": "環境省 ベクレルとシーベルト",
+        "url": "https://www.env.go.jp/chemi/rhm/current/02-03-01.html"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q22": {
+    "sourceHash": "9829431efe08f4d10a02270b3dcf9b85331c3c93a01d7aef890f7692d5cafc6e",
+    "correctChoice": 5,
+    "summary": "グロー曲線は加熱しながら熱ルミネセンスの発光を測ったときの曲線である。通常のシンチレーション検出器のパルス信号とは異なる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "電離箱は電極間で生じた電荷をほぼすべて集める飽和領域で使う。一次電離による電荷量を電流として測定する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "半導体に放射線が入射して生じた電子と正孔の対を電界で分離・収集すると、入射に対応した電気信号が得られる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "GM計数管では一度始まった放電を速やかに終わらせるため消滅ガスを加える。次の放射線を計数できる状態に戻す。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "光刺激ルミネセンス線量計は、放射線照射で蓄えられた情報を光で刺激して輝尽性蛍光として読み出す方式である。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "グロー曲線は加熱しながら熱ルミネセンスの発光を測ったときの曲線である。通常のシンチレーション検出器のパルス信号とは異なる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 様々な測定機器",
+        "url": "https://www.env.go.jp/chemi/rhm/current/02-04-01.html"
+      },
+      {
+        "title": "環境省 ベクレルとシーベルト",
+        "url": "https://www.env.go.jp/chemi/rhm/current/02-03-01.html"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q23": {
+    "sourceHash": "a04d2013dd37a139420435467c80800379f66a83a6ba79d17dbc6f7d7a77c426",
+    "correctChoice": 3,
+    "summary": "電離箱領域では一次電離電荷をほぼ失わず収集する。比例計数管領域でも増幅率が一定なら信号は一次電離量に比例する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "電離箱領域では一次電離でできた電荷を集めるが、再結合領域では電荷の一部が中和され、一次電離量に比例した検出に適さない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "比例計数管領域ではガス増幅後も一次電離量との比例関係が保たれる。再結合領域はこの条件で用いられない。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "電離箱領域では一次電離電荷をほぼ失わず収集する。比例計数管領域でも増幅率が一定なら信号は一次電離量に比例する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "電離箱領域は該当するが、GM領域のパルスは全体に広がる放電で生じ、一次電離の大きさに比例しない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "比例計数管はパルスに入射エネルギーの情報を残す。GM領域の放電はほぼ同じ大きさになり、その情報を保持しない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 様々な測定機器",
+        "url": "https://www.env.go.jp/chemi/rhm/current/02-04-01.html"
+      },
+      {
+        "title": "環境省 ベクレルとシーベルト",
+        "url": "https://www.env.go.jp/chemi/rhm/current/02-03-01.html"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q24": {
+    "sourceHash": "530956603c80d73abce74bee7267bc03c294490d35559d98dee85e6acfe0ac71",
+    "correctChoice": 3,
+    "summary": "空気の一次電離を測る電離箱式は一般に感度が低く、弱い線量率の検出には高感度のシンチレーション式などが向く。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "計数率が高い場所では短い時間でも十分な件数が得られる。時定数を小さくして応答を速くすることができる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "電離箱式では湿気による漏れ電流などで指示の零点が変わることがあるため、測定前に零点や使用環境を確認する。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "空気の一次電離を測る電離箱式は一般に感度が低く、弱い線量率の検出には高感度のシンチレーション式などが向く。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "通常のNaI(Tl)式線量測定器は、低エネルギーの光子では入射窓などの吸収と感度の変化が大きく、その領域の測定には適さない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "一般的な半導体式サーベイメータでは、20 keV付近で窓や外装に光子が吸収されることなどから測定に適さない機種がある。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 様々な測定機器",
+        "url": "https://www.env.go.jp/chemi/rhm/current/02-04-01.html"
+      },
+      {
+        "title": "環境省 ベクレルとシーベルト",
+        "url": "https://www.env.go.jp/chemi/rhm/current/02-03-01.html"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q25": {
+    "sourceHash": "63e3b550867130b36629f1ee9ae3260a92f9020d7ea13fcacdc6c0e739de6b10",
+    "correctChoice": 5,
+    "summary": "GM計数管の分解時間によって数え落としが生じる。200 µsを秒に直し、490/(1−490×0.0002)で約540 cpsを得る。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "分解時間200 µsでの補正係数は1/(1−490×0.0002)となる。約540 cpsとなるので値と時間の名称が異なる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "約540 cpsという値は合うが、ここでは二つのパルスを区別できる最小の時間間隔である分解時間を用いる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "回復時間は検出器のパルスが通常の高さに戻るまでの時間である。数え落としの補正に使う量の名称とは異なる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "用いる時間の名称は正しい。ただし490×0.0002＝0.098なので、490/(1−0.098)は約543 cpsとなる。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "GM計数管の分解時間によって数え落としが生じる。200 µsを秒に直し、490/(1−490×0.0002)で約540 cpsを得る。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 様々な測定機器",
+        "url": "https://www.env.go.jp/chemi/rhm/current/02-04-01.html"
+      },
+      {
+        "title": "環境省 ベクレルとシーベルト",
+        "url": "https://www.env.go.jp/chemi/rhm/current/02-03-01.html"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q26": {
+    "sourceHash": "0d8f3c2e25e2cc63b9201b82ca90aee1d74acf810e0a19742530d615eae85030",
+    "correctChoice": 4,
+    "summary": "読出しはTLDで加熱、RPLDで紫外線を使う。両方とも適切なアニーリング処理により初期化して再使用できる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "加熱でTLD、紫外線でRPLDを読み出すBは正しい。素子ごとの感度のばらつきが小さいのは一般にRPLDである。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "Aは感度のばらつきの関係が逆である。Cも繰り返し読める線量計を逆にしており、どちらも正しくない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "TLDは加熱し、RPLDは紫外線を当てて読み出す。一方、繰り返し読み出せるのはRPLDであり、Cは誤りである。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "読出しはTLDで加熱、RPLDで紫外線を使う。両方とも適切なアニーリング処理により初期化して再使用できる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "Dの再使用に関する説明は正しいが、Cは信号の消失と繰返し読出しの関係をTLDとRPLDで取り違えている。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 様々な測定機器",
+        "url": "https://www.env.go.jp/chemi/rhm/current/02-04-01.html"
+      },
+      {
+        "title": "環境省 ベクレルとシーベルト",
+        "url": "https://www.env.go.jp/chemi/rhm/current/02-03-01.html"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q27": {
+    "sourceHash": "d9b629e4d4e54a61b4db1e0e0ec5ea563e79f4d1e2bbd031cf466b3d2aabed5a",
+    "correctChoice": 4,
+    "summary": "フェーディングは蓄積型の線量計で保存中に線量の情報が失われ、読み値が小さくなる現象である。指針の揺れはこれに当たらない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "W値は一対のイオンを作るのに必要な平均エネルギーである。気体の種類で異なり、一定範囲で入射エネルギーにはあまり依存しない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "プラトーは印加電圧を変えても計数率がほとんど変わらない範囲である。長く平らな範囲の計数管は動作を安定させやすい。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "線量率が同じでも光子のエネルギーが変化すると指示が変わる性質は、測定器のエネルギー依存性と呼ばれる。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "フェーディングは蓄積型の線量計で保存中に線量の情報が失われ、読み値が小さくなる現象である。指針の揺れはこれに当たらない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "独立で一定の平均率で発生する放射線事象を一定時間数える場合、計数がポアソン分布に従う。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 様々な測定機器",
+        "url": "https://www.env.go.jp/chemi/rhm/current/02-04-01.html"
+      },
+      {
+        "title": "環境省 ベクレルとシーベルト",
+        "url": "https://www.env.go.jp/chemi/rhm/current/02-03-01.html"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q28": {
+    "sourceHash": "c1d3232772eaf8f49ea5cbdff62ca04567af789a3966514c9701ba99af90d08e",
+    "correctChoice": 4,
+    "summary": "胸・腹は0.4 mSv、頭・頸部と体幹で最大の部位は1.3 mSvである。0.89×0.4＋0.11×1.3＝0.499 mSvとなる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "用いる量は各体幹部位の1 cm線量当量である。頭・頸部の寄与だけで約0.10 mSvあり、これに胸部などの寄与が加わる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "胸部と腹部の合計寄与は(0.44＋0.45)×0.4で約0.36 mSvとなる。さらに頭・頸部と最大部位の項を足す。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "0.4 mSvは防護衣内の部位の測定値である。最大被ばく部位となる頭・頸部のより高い値も式に入れる必要がある。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "胸・腹は0.4 mSv、頭・頸部と体幹で最大の部位は1.3 mSvである。0.89×0.4＋0.11×1.3＝0.499 mSvとなる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "手指の70 µm線量当量は、問題の式で使う体幹の最大部位の1 cm線量当量には含めない。実効線量は約0.50 mSvである。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "e-Gov 電離放射線障害防止規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000041"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q29": {
+    "sourceHash": "fa8e7405095c0bb76b2ca847aca099c31e96679d5516003e30b5e31da3ba3f78",
+    "correctChoice": 3,
+    "summary": "観測数は1,000×60＝60,000である。その平方根を60秒で割ると約4.08 cpsとなり、4 cpsに最も近い。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "1分の総計数は6万回で、ポアソン分布の標準偏差は約245回になる。毎秒の計数率で表すと約4.1 cpsである。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "総計数の平方根でばらつきを求め、測定時間の60秒で割る。1.1 cpsではその計算で得られる値より小さい。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "観測数は1,000×60＝60,000である。その平方根を60秒で割ると約4.08 cpsとなり、4 cpsに最も近い。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "この測定は60秒間の平均計数率である。13 cpsは、総計数の平方根を60で割った統計的なばらつきより大きい。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "32 cpsは1秒間に1,000回を観測したときのばらつきに近い。ここでは60秒分を平均しており、ばらつきは小さくなる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 様々な測定機器",
+        "url": "https://www.env.go.jp/chemi/rhm/current/02-04-01.html"
+      },
+      {
+        "title": "環境省 ベクレルとシーベルト",
+        "url": "https://www.env.go.jp/chemi/rhm/current/02-03-01.html"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q30": {
+    "sourceHash": "8bd4ddad347f73a85283ee18919000c20ab68c4df74f2383730963206c6f0a02",
+    "correctChoice": 3,
+    "summary": "3 mSv/h×24/3,600 h＝0.020 mSvである。マイクロシーベルトに換算するため1,000倍すると20 µSvになる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "3 mSv/hは毎秒約0.833 µSvである。10 µSvはその線量率で12秒に相当し、設問の時間の半分である。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "15 µSvは18秒間の積算値に相当する。測定を24秒続けており、その分だけ積算線量は大きくなる。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "3 mSv/h×24/3,600 h＝0.020 mSvである。マイクロシーベルトに換算するため1,000倍すると20 µSvになる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "30 µSvを得るには、この線源条件で36秒間の積算が必要である。実際に指針が達したのは24秒後である。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "45 µSvに達するには54秒間を要する。24秒の積算を求めるときは秒を時間に換算し、3 mSv/hを掛ける。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 様々な測定機器",
+        "url": "https://www.env.go.jp/chemi/rhm/current/02-04-01.html"
+      },
+      {
+        "title": "環境省 ベクレルとシーベルト",
+        "url": "https://www.env.go.jp/chemi/rhm/current/02-03-01.html"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q31": {
+    "sourceHash": "0a92c91e23576949a50ea01e80574bb9fb9649cb78e15284e619e8b4eff6495d",
+    "correctChoice": 1,
+    "summary": "小腸では増殖が盛んな腺窩のクリプト細胞の方が、分化して絨毛先端に移動した細胞よりも放射線に対して感受性が高い。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "小腸では増殖が盛んな腺窩のクリプト細胞の方が、分化して絨毛先端に移動した細胞よりも放射線に対して感受性が高い。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "成人の分化した神経細胞は比較的感受性が低いが、胎児期には神経の形成と細胞増殖が盛んな時期があり、感受性が高い。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "皮膚では分裂して表皮を更新する基底細胞が、分化の進んだ角質層よりも高い感受性を示し、一般則に沿っている。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "G2期の後期から細胞分裂期にかけては障害を受けやすい。分裂まで時間のあるG1期の初期より感受性が高い。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "DNA合成が進んだS期後半は放射線に比較的抵抗性である。S期の中で比較すると初期の方が感受性が高い。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 放射線による電離作用",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-02-01.html"
+      },
+      {
+        "title": "環境省 確定的影響と時期特異性",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-05-01.html"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q32": {
+    "sourceHash": "65415bdd1c41a0c6274983a83a12349bbef0d3dceb4bec85b1a7a210787876ea",
+    "correctChoice": 3,
+    "summary": "組織の感受性の比較では小腸粘膜が最も高く、次いで皮脂腺となる。甲状腺の感受性はこの三つでは最も低い。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "皮脂腺も影響を受けるが、小腸粘膜では上皮の更新が盛んで放射線感受性がより高いため、AとBは逆の順になる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "甲状腺を小腸粘膜より上に置く点が誤りである。細胞の入れ替わりが速い小腸粘膜が三つの中で最も高い。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "組織の感受性の比較では小腸粘膜が最も高く、次いで皮脂腺となる。甲状腺の感受性はこの三つでは最も低い。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "最上位を小腸粘膜とする点は正しいが、皮脂腺の方が甲状腺より感受性が高く、二番目と三番目の順を入れ替える必要がある。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "放射線を受けた甲状腺に特有の影響はあるが、この組織反応の感受性の順では小腸粘膜と皮脂腺より下位になる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 放射線による電離作用",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-02-01.html"
+      },
+      {
+        "title": "環境省 確定的影響と時期特異性",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-05-01.html"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q33": {
+    "sourceHash": "dda6668ce2f51a9dc108152017e134081145f4ae2977dbd709a4610bbf3fe673",
+    "correctChoice": 4,
+    "summary": "集団の半数に対応する値は中央値を表す半数致死線量である。設問はこれを平均致死線量とする点が誤っている。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "同じ合計線量でも時間をかけて照射すると照射中に細胞が損傷を修復でき、急速に照射した場合より効果が小さくなり得る。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "同じ生物効果を生じるために必要な酸素の少ない条件での線量を、酸素のある条件での線量と比べて酸素の影響を表す。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "温度は放射線で生じた反応の進み方にも影響し、温度が下がると生物効果が小さくなる場合がある。これを温度効果という。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "集団の半数に対応する値は中央値を表す半数致死線量である。設問はこれを平均致死線量とする点が誤っている。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "組織加重係数は組織ごとの確率的影響への相対的な寄与を表す。全組織について係数を合計すると1になる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 放射線による電離作用",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-02-01.html"
+      },
+      {
+        "title": "環境省 確定的影響と時期特異性",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-05-01.html"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q34": {
+    "sourceHash": "9a2ba7ab22c4f7d7e8a600bfb9d7224ae665e12dc5c246458602b8ac66410a59",
+    "correctChoice": 5,
+    "summary": "一定線量で一つ一つの酵素分子に直接エネルギーが付与される確率は、その分子の濃度に依存しないので不活性化する割合も一定である。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "水の電離などでできた反応性の化学種が別の分子に作用する過程は間接作用である。標的分子の直接電離とは区別する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "二次電子が標的となる生体高分子そのものを電離・励起するのは直接作用であり、水などの反応を経由する間接作用ではない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "エックス線などの低LET放射線では水を介する間接作用が大きく寄与するため、直接作用の方が大きいとの記述が適切でない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "SH基を持つ化合物の保護作用には、水から生じたラジカルとの反応などが関わる。主に間接作用に関係する現象である。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "一定線量で一つ一つの酵素分子に直接エネルギーが付与される確率は、その分子の濃度に依存しないので不活性化する割合も一定である。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 放射線による電離作用",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-02-01.html"
+      },
+      {
+        "title": "環境省 確定的影響と時期特異性",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-05-01.html"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q35": {
+    "sourceHash": "b27f07134fda1dc99e72c193a4887e1e48b9cab2e73120864c15fa65efadc0fe",
+    "correctChoice": 1,
+    "summary": "基準には一般にエックス線やガンマ線を使う。生物効果比は評価する反応や線量率などの条件でも変わるのでAとCが正しい。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "基準には一般にエックス線やガンマ線を使う。生物効果比は評価する反応や線量率などの条件でも変わるのでAとCが正しい。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "Aは正しいが、LETが高くなると生物効果比は最大値を越えて低下することがあり、その後一定とするDは誤りである。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "Cの条件依存性は正しいが、エックス線の生物効果比は基準とする放射線や照射条件で変わり、常に1未満ではない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "Bはエックス線が常に1未満とする点、DはLETに伴う最大値の後を一定とする点でそれぞれ誤りである。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "Cの条件依存性は正しいが、高LET側では標的に過剰なエネルギーが集中するため、Dの一定となるという説明は合わない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 放射線による電離作用",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-02-01.html"
+      },
+      {
+        "title": "環境省 確定的影響と時期特異性",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-05-01.html"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q36": {
+    "sourceHash": "dd6806f7e1ad838d5d747712994e2466d766994ae2e417dec098408b14f72c2f",
+    "correctChoice": 1,
+    "summary": "身体的影響には線量で重篤度が増す組織反応と、重篤度より発生確率が変化する確率的影響があり、白血病の潜伏期は線量で変わる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "身体的影響には線量で重篤度が増す組織反応と、重篤度より発生確率が変化する確率的影響があり、白血病の潜伏期は線量で変わる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "Aは適切であるが、Dが挙げる特定条件から血球減少が不可逆であることや潜伏期間を一律に定めることはできない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "Cは適切である。晩発影響には白内障のようにしきい線量のある組織反応も含まれ、全てにしきい値がないわけではない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "晩発影響でも組織反応にはしきい線量がある。また造血障害の回復や経過は照射や個体の条件によって異なる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "白血病の潜伏期に関するCは正しいが、Dは造血機能の回復可能性と時間経過を特定の線量だけで決めている点が誤りである。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 放射線による電離作用",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-02-01.html"
+      },
+      {
+        "title": "環境省 確定的影響と時期特異性",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-05-01.html"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q37": {
+    "sourceHash": "78f7c827a0d431310931a853ff9566d273ec04d5508e3a93c69813ba93e37b94",
+    "correctChoice": 5,
+    "summary": "血球の中では一般に赤血球の寿命が長く、造血の停止から末梢血で減少が分かるまでに時間がかかる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "赤色骨髄の造血幹細胞が障害されると新しい血球の供給が減る。時間とともに末梢血中の血球数にも減少が現れる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "赤血球は酸素を運ぶため減少すると貧血になり、血小板は止血を担うため減少すると出血しやすくなる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "リンパ球は成熟した血球でも放射線感受性が高い。急性被ばく後は他の白血球集団に先立って減少が現れやすい。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "リンパ球以外の白血球では被ばく直後の初期反応で一時的な増加も見られる。その後は造血障害に伴い減少する場合がある。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "血球の中では一般に赤血球の寿命が長く、造血の停止から末梢血で減少が分かるまでに時間がかかる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 放射線による電離作用",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-02-01.html"
+      },
+      {
+        "title": "環境省 確定的影響と時期特異性",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-05-01.html"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q38": {
+    "sourceHash": "9c8600b6ff222106c08b44f379e6d6f4242af4ef606e93cc3749d87d8203c25b",
+    "correctChoice": 2,
+    "summary": "確率的影響では被ばく線量で変わると考えられるのは発生確率である。発生した影響の重篤度は線量で変わらないと扱う。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "発生率はある範囲で急に高まりやがて飽和するため、確定的影響の発生率は一般にS字状の曲線で表す。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "確率的影響では被ばく線量で変わると考えられるのは発生確率である。発生した影響の重篤度は線量で変わらないと扱う。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "確率的影響については発生リスクを低く保つことが防護の目的になる。全ての発生を完全に防止することを前提にはしていない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "確定的影響は対象組織に与えられた線量をもとに評価する。確率的影響の管理に使う実効線量は、個々の組織反応の評価量ではない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "遺伝的影響は放射線防護では確率的影響に分類され、発生する頻度と線量の関係を考える。確定的影響とは扱いが異なる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 放射線による電離作用",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-02-01.html"
+      },
+      {
+        "title": "環境省 確定的影響と時期特異性",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-05-01.html"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q39": {
+    "sourceHash": "e652a80b75fd4ee2fef2d0f1a091495e8341dc4dde30c8b143b0b841222ae356",
+    "correctChoice": 2,
+    "summary": "体細胞で生じた変化は通常は生殖細胞を通じて伝わらない。子孫に受け継がれる影響は生殖細胞の遺伝情報に由来する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "生殖腺の被ばくは被ばくした本人に不妊などの身体的影響ももたらし得るため、すべてが遺伝的影響とはいえない。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "体細胞で生じた変化は通常は生殖細胞を通じて伝わらない。子孫に受け継がれる影響は生殖細胞の遺伝情報に由来する。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "胎児が直接被ばくしてその本人に生じた発育遅延は発生・発達への影響であり、子孫に伝わる遺伝的影響とは異なる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "フレームシフトや塩基置換は主に遺伝子配列の変化の型である。染色体異常には染色体の欠失、転座などがある。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "倍加線量が小さい場合は少ない線量で自然発生頻度に相当する影響が加わることを示す。影響が起きにくいとの方向が逆である。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 放射線による電離作用",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-02-01.html"
+      },
+      {
+        "title": "環境省 確定的影響と時期特異性",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-05-01.html"
+      }
+    ]
+  },
+  "lckohyo-LC20241117-q40": {
+    "sourceHash": "9f48779ac18bedc5f9e1e453cf74b232d0e92e9cfe4d0e742295ad2987c638aa",
+    "correctChoice": 1,
+    "summary": "白血球減少、永久不妊、脱毛はいずれも細胞や組織に一定以上の損傷が起きた場合に現れる組織反応に分類される。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "白血球減少、永久不妊、脱毛はいずれも細胞や組織に一定以上の損傷が起きた場合に現れる組織反応に分類される。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "白血球減少は組織反応である。一方、甲状腺がんは発生する確率を扱う確率的影響で、しきい値を設定しない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "白血球減少と脱毛はしきい値のある組織反応であるが、甲状腺がんは該当せず、永久不妊が該当する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "永久不妊は生殖組織の反応でしきい線量がある。甲状腺がんは放射線防護でしきい値を仮定しない確率的影響である。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "永久不妊と脱毛に加え、造血組織の損傷に起因する白血球減少についても、しきい値のある組織反応に該当する。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 放射線による電離作用",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-02-01.html"
+      },
+      {
+        "title": "環境省 確定的影響と時期特異性",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-05-01.html"
+      }
+    ]
   }
 }
