@@ -1199,7 +1199,7 @@ const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number)
 
 
 
-    "kaijo-hoan-gakko": (c, y) => `海上保安学校学生採用試験の基礎能力試験を${y}年度分・計${c}問収録。公式正答と全肢解説付き。`,
+    "kaijo-hoan-gakko": (c, y) => `海上保安学校学生採用試験の基礎能力試験・学科試験を${y}年度分・計${c}問収録。公式正答と全肢解説付き。`,
     "kouku-kanseikan": (c, y) => `航空管制官採用試験の適性試験Ⅰ・外国語試験の公開問題を${y}年度分・計${c}問収録。公式正答と全肢解説付き。`,
     "zaimu-senmonkan": (c, y) => `財務専門官採用試験の専門試験（多肢選択式）を${y}年度分・計${c}問収録。人事院の公式正答と全肢解説付き。`,
     "shokuhin-eisei-kanshiin": (c, y) => `食品衛生監視員採用試験の基礎能力試験（専門職共通）を${y}年度分・計${c}問収録。人事院の公式正答と全肢解説付き。`,
