@@ -7,6 +7,7 @@ import { KOKKA_SOGO_DAI_2025_SENMON_SEIJI } from "./2025-senmon-seiji";
 import { KOKKA_SOGO_DAI_2026_SENMON_SEIJI } from "./2026-senmon-seiji";
 import { KOKKA_SOGO_DAI_2025_SENMON_DIGITAL } from "./2025-senmon-digital";
 import { KOKKA_SOGO_DAI_2026_SENMON_DIGITAL } from "./2026-senmon-digital";
+import { KOKKA_SOGO_DAI_2025_SENMON_NINGENKAGAKU } from "./2025-senmon-ningenkagaku";
 import { KOKKA_SOGO_DAI_2026_SENMON_NINGENKAGAKU } from "./2026-senmon-ningenkagaku";
 import { KOKKA_SOGO_DAI_2026_SENMON_KOGAKU } from "./2026-senmon-kogaku";
 import { KOKKA_SOGO_DAI_2026_SENMON_SURI_BUTSURI_CHIKYU } from "./2026-senmon-suri-butsuri-chikyu";
@@ -31,5 +32,6 @@ export const KOKKA_SOGO_DAI_QUESTIONS = [
   ...KOKKA_SOGO_DAI_2025_SENMON_KEIZAI,
   ...KOKKA_SOGO_DAI_2025_SENMON_SEIJI,
   ...KOKKA_SOGO_DAI_2025_SENMON_DIGITAL,
+  ...KOKKA_SOGO_DAI_2025_SENMON_NINGENKAGAKU,
   ...KOKKA_SOGO_DAI_2024_KISO,
 ];
