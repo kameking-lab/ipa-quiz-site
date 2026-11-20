@@ -1,0 +1,1840 @@
+[
+  {
+    "id": "riku-tech1-2022-july-fa408-kogaku-a-q101",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "july",
+    "qNumber": 101,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "ISDB-Tの分散パイロット補間とガードインターバル"
+    ],
+    "difficulty": 3,
+    "question": "ISDB-Tの分散パイロット補間とガードインターバル。公式原問のA-1に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2022-july-fa408-kogaku-a-q101-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-1の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220722230446id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201900id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialQuestionLabel": "A-1",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-1（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "252 μs、3、420 μs",
+      "イ": "336 μs、3、448 μs",
+      "ウ": "252 μs、3、336 μs",
+      "エ": "252 μs、4、252 μs",
+      "オ": "336 μs、4、315 μs"
+    },
+    "choiceExplanations": {
+      "ア": "ガードと補間後の間隔は合うが、3サブキャリア間隔に対応する遅延範囲は有効シンボル長の1/3となる。",
+      "イ": "補間後の間隔は合う。ガードは1,008 μsの1/4、補間後の等化範囲は1,008 μsの1/3である。",
+      "ウ": "ガード長は1,008/4=252 μsである。12本間隔のパイロットは4シンボル間で3本ずつずれるので、補間後の間隔は3本となり、理想的な等化範囲は1,008/3=336 μsとなる。",
+      "エ": "ガードは合うが、12本の間隔で4回に分けて挿入するため、補間後の周波数方向の間隔は4本ではなく3本である。",
+      "オ": "336 μsは3本間隔に基づく等化範囲である。ガード長は有効シンボル長の1/4なので252 μsとなる。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "ガード長は1,008/4=252 μsである。12本間隔のパイロットは4シンボル間で3本ずつずれるので、補間後の間隔は3本となり、理想的な等化範囲は1,008/3=336 μsとなる。"
+  },
+  {
+    "id": "riku-tech1-2022-july-fa408-kogaku-a-q102",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "july",
+    "qNumber": 102,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "BPSKと16QAMの同一信号点間隔での尖頭電力"
+    ],
+    "difficulty": 3,
+    "question": "BPSKと16QAMの同一信号点間隔での尖頭電力。公式原問のA-2に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2022-july-fa408-kogaku-a-q102-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-2の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220722230446id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201900id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialQuestionLabel": "A-2",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-2（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "a²/4、9b²/2、13 dB",
+      "イ": "a²/4、9b²/4、10 dB",
+      "ウ": "a²/8、9b²/4、13 dB",
+      "エ": "a²/8、9b²/2、16 dB",
+      "オ": "a²、9b²/2、7 dB"
+    },
+    "choiceExplanations": {
+      "ア": "13 dBの比は近いが、それぞれ瞬時の振幅の二乗ではなく、搬送波周期で平均したピーク包絡線電力を求める。",
+      "イ": "16QAMの値は合うが、BPSKのa²/4は振幅の二乗である。正弦波の平均電力には1/2を掛ける。",
+      "ウ": "BPSKの最大振幅はa/2で、16QAMでは各軸の最大値が3b/2である。搬送波周期で平均した最大電力はa²/8と9b²/4になり、b=aなら電力比18で約13 dBとなる。",
+      "エ": "BPSK側は合うが、16QAM側も最大包絡線振幅の二乗の半分で求める。",
+      "オ": "BPSKのaは点の間隔であり、振幅はその半分である。また両信号で平均電力に換算するため振幅の二乗を2で割る。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "BPSKの最大振幅はa/2で、16QAMでは各軸の最大値が3b/2である。搬送波周期で平均した最大電力はa²/8と9b²/4になり、b=aなら電力比18で約13 dBとなる。"
+  },
+  {
+    "id": "riku-tech1-2022-july-fa408-kogaku-a-q103",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "july",
+    "qNumber": 103,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "位相連続FSKの直交条件とMSK・GMSK"
+    ],
+    "difficulty": 3,
+    "question": "位相連続FSKの直交条件とMSK・GMSK。公式原問のA-3に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2022-july-fa408-kogaku-a-q103-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-3の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220722230446id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201900id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialQuestionLabel": "A-3",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-3（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "［1/2+(n−1)］π、0.5、狭帯域化",
+      "イ": "［1/2+(n−1)］π、0.25、狭帯域化",
+      "ウ": "［1/2+(n−1)］π、0.25、誤り率特性の向上",
+      "エ": "nπ、0.5、狭帯域化",
+      "オ": "nπ、0.5、誤り率特性の向上"
+    },
+    "choiceExplanations": {
+      "ア": "変調指数とGMSKの目的は合うが、差周波項を積分すると末端の正弦が零になる必要がある。",
+      "イ": "指定の半整数倍のπでは正弦が零にならない。最小の非零の変調指数は0.5である。",
+      "ウ": "直交条件の角はπの整数倍であり、最小の非零指数は0.5になる。ガウスフィルタを使う目的は主に狭帯域化である。",
+      "エ": "差周波項を積分した分子はsin［2π(f₁−f₂)T］なので、角がnπなら零になる。最小の非零の変調指数は0.5であり、ガウスろ波で側波を抑え、さらに狭帯域化する。",
+      "オ": "直交条件と指数は合うが、ガウスフィルタによる波形整形の目的はスペクトルの広がりを抑えることである。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "差周波項を積分した分子はsin［2π(f₁−f₂)T］なので、角がnπなら零になる。最小の非零の変調指数は0.5であり、ガウスろ波で側波を抑え、さらに狭帯域化する。"
+  },
+  {
+    "id": "riku-tech1-2022-july-fa408-kogaku-a-q104",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "july",
+    "qNumber": 104,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "デジタル処理型AM送信機のビット重みと分担電力"
+    ],
+    "difficulty": 3,
+    "question": "デジタル処理型AM送信機のビット重みと分担電力。公式原問のA-4に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2022-july-fa408-kogaku-a-q104-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-4の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220722230446id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201900id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialQuestionLabel": "A-4",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-4（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "電力効率、LSB、MSB、200 W",
+      "イ": "電力効率、MSB、LSB、100 W",
+      "ウ": "送信出力、MSB、LSB、100 W",
+      "エ": "送信出力、MSB、LSB、200 W",
+      "オ": "送信出力、LSB、MSB、100 W"
+    },
+    "choiceExplanations": {
+      "ア": "1台当たりの電力は近いが、入力の直流成分は無変調出力を決める。粗い振幅を表すのは上位ビットである。",
+      "イ": "上位と下位の割当ては合うが、直流成分は無変調出力の基準である。全体の尖頭電力は800 Wの4倍になる。",
+      "ウ": "出力の基準と割当ては合うが、100%変調の最大振幅は2倍なので尖頭電力は4倍となる。",
+      "エ": "直流オフセットが無変調の出力を決め、上位MSBが粗い振幅、下位LSBが細かい振幅に対応する。尖頭電力は3,200 Wで、下位の重みの和がほぼ1台相当なので、上位の1台当たりは約200 Wとなる。",
+      "オ": "直流分が出力を決める点は合うが、粗い情報はMSB側である。尖頭電力3,200 Wを約16台分で割る。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "直流オフセットが無変調の出力を決め、上位MSBが粗い振幅、下位LSBが細かい振幅に対応する。尖頭電力は3,200 Wで、下位の重みの和がほぼ1台相当なので、上位の1台当たりは約200 Wとなる。"
+  },
+  {
+    "id": "riku-tech1-2022-july-fa408-kogaku-a-q105",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "july",
+    "qNumber": 105,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "二乗検波したAM波の信号成分と二次高調波"
+    ],
+    "difficulty": 3,
+    "question": "二乗検波したAM波の信号成分と二次高調波。公式原問のA-5に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2022-july-fa408-kogaku-a-q105-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-5の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220722230446id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201900id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialQuestionLabel": "A-5",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-5（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "kA²m、k²A²m²/4",
+      "イ": "kA²m、kA²m²/4",
+      "ウ": "k²Am、k²Am²/4",
+      "エ": "k²A²m、k²A²m²/4",
+      "オ": "k²A²m、kA²m²/4"
+    },
+    "choiceExplanations": {
+      "ア": "信号波成分は合うが、式はi=ke²なので二次高調波にもkは一乗だけ掛かる。",
+      "イ": "搬送波の二乗を低域で平均するとkA²（1+m sin pt）²/2になる。展開すると信号波の振幅はkA²m、二次高調波の振幅の大きさはkA²m²/4である。",
+      "ウ": "入力電圧の振幅Aは二乗され、検波器の定数kはこの二乗に掛けるだけである。",
+      "エ": "A²とmの次数は合うが、定数kは入力電圧を二乗した後に掛けるため、k²にはならない。",
+      "オ": "二次高調波の振幅は合う。基本波も同じkが一乗だけ入る。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "搬送波の二乗を低域で平均するとkA²（1+m sin pt）²/2になる。展開すると信号波の振幅はkA²m、二次高調波の振幅の大きさはkA²m²/4である。"
+  },
+  {
+    "id": "riku-tech1-2022-july-fa408-kogaku-a-q106",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "july",
+    "qNumber": 106,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "遅延検波の基準シンボル・差動符号化・誤り率"
+    ],
+    "difficulty": 3,
+    "question": "遅延検波の基準シンボル・差動符号化・誤り率。公式原問のA-6に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2022-july-fa408-kogaku-a-q106-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-6の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220722230446id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201900id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialQuestionLabel": "A-6",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-6（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "後、差動、DBPSK",
+      "イ": "後、帯域分割、DBPSK",
+      "ウ": "後、帯域分割、DQPSK",
+      "エ": "前、帯域分割、DQPSK",
+      "オ": "前、差動、DQPSK"
+    },
+    "choiceExplanations": {
+      "ア": "差動符号化を使う点は合うが、遅延回路では1シンボル前を基準にする。同一C/NではDQPSKの方が誤り率が大きい。",
+      "イ": "遅延で参照できるのはすでに受信した前のシンボルである。情報を位相差で送るため差動符号化を行う。",
+      "ウ": "DQPSKの誤り率の比較は合うが、必要なのは過去の位相を基準とする差動符号化であり、帯域分割ではない。",
+      "エ": "基準の時刻と誤り率の比較は合うが、送信データを連続するシンボルの位相差に対応させるには差動符号化を用いる。",
+      "オ": "遅延させた1シンボル前を参照するため、情報は差動符号化する。同じC/Nでは位相の判定境界がより近いDQPSKの方が誤りやすい。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "遅延させた1シンボル前を参照するため、情報は差動符号化する。同じC/Nでは位相の判定境界がより近いDQPSKの方が誤りやすい。"
+  },
+  {
+    "id": "riku-tech1-2022-july-fa408-kogaku-a-q107",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "july",
+    "qNumber": 107,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "FM受信機のしきい値と搬送波対内部雑音電力"
+    ],
+    "difficulty": 3,
+    "question": "FM受信機のしきい値と搬送波対内部雑音電力。公式原問のA-7に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2022-july-fa408-kogaku-a-q107-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-7の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220722230446id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201900id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourcePages": [
+      3
+    ],
+    "officialQuestionLabel": "A-7",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-7（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "E_C=8E_N、p_th=2√2p_ni、6 dB",
+      "イ": "E_C=8E_N、p_th=8p_ni、9 dB",
+      "ウ": "√2E_C=4E_N、p_th=8p_ni、9 dB",
+      "エ": "√2E_C=4E_N、p_th=2√2p_ni、9 dB",
+      "オ": "√2E_C=4E_N、p_th=2√2p_ni、6 dB"
+    },
+    "choiceExplanations": {
+      "ア": "しきい値では両者の尖頭電圧を等置する。実効電圧比は4/√2であり、電力比はその二乗になる。",
+      "イ": "電力比とdB値は合うが、尖頭電圧の換算係数は搬送波が√2、雑音が4である。",
+      "ウ": "実効値の比から両者の尖頭電圧が等しくなる条件は√2E_C=4E_Nである。電力比は電圧比の二乗で8となり、10 log₁₀8≈9 dBである。",
+      "エ": "電圧の関係とdB差は合うが、2√2は実効電圧の比であり、電力比ではない。",
+      "オ": "電圧比は合うが、電力比は二乗して8になる。dBでは約9 dBに相当する。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "実効値の比から両者の尖頭電圧が等しくなる条件は√2E_C=4E_Nである。電力比は電圧比の二乗で8となり、10 log₁₀8≈9 dBである。"
+  },
+  {
+    "id": "riku-tech1-2022-july-fa408-kogaku-a-q108",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "july",
+    "qNumber": 108,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "AM受信機における三次相互変調と混変調"
+    ],
+    "difficulty": 3,
+    "question": "AM受信機における三次相互変調と混変調。公式原問のA-8に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2022-july-fa408-kogaku-a-q108-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-8の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220722230446id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201900id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourcePages": [
+      3
+    ],
+    "officialQuestionLabel": "A-8",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-8（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "3次、抑圧、f_d±f_u",
+      "イ": "3次、変調、f_d±f_m",
+      "ウ": "3次、変調、f_d±f_u",
+      "エ": "5次、変調、f_d±f_m",
+      "オ": "5次、抑圧、f_d±f_m"
+    },
+    "choiceExplanations": {
+      "ア": "三次である点は合うが、強い妨害波の変調が希望波に移る現象である。希望波近くの成分に残るのは変調周波数f_mである。",
+      "イ": "2f₁−f₂などは三次の非線形項で発生する。混変調では妨害波の側波と搬送波の周波数差f_mが希望波に移り、f_d±f_mの成分が生じる。",
+      "ウ": "次数と現象の名称は合うが、妨害波の搬送波は変調成分と差を取る際に相殺される。",
+      "エ": "混変調とその側波は合うが、二つの周波数の係数の絶対値の和が3なので三次積である。",
+      "オ": "生成する側波の式は合うが、相互変調は三次であり、希望波は妨害波の情報によって変調を受ける。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "2f₁−f₂などは三次の非線形項で発生する。混変調では妨害波の側波と搬送波の周波数差f_mが希望波に移り、f_d±f_mの成分が生じる。"
+  },
+  {
+    "id": "riku-tech1-2022-july-fa408-kogaku-a-q109",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "july",
+    "qNumber": 109,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "鉛蓄電池の充電方式とトリクル充電の目的"
+    ],
+    "difficulty": 3,
+    "question": "鉛蓄電池の充電方式とトリクル充電の目的。公式原問のA-9に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2022-july-fa408-kogaku-a-q109-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-9の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220722230446id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201900id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourcePages": [
+      3
+    ],
+    "officialQuestionLabel": "A-9",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-9（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "準定電流充電は直列抵抗で電流を制限する",
+      "イ": "定電圧充電では初期の電流が大きく徐々に低下する",
+      "ウ": "定電流・定電圧充電は後半を定電圧に切り替える",
+      "エ": "浮動充電は電池と負荷を電源に並列接続して行う",
+      "オ": "トリクル充電は負荷電流に近い電流で常に充電して負荷変動を吸収する"
+    },
+    "choiceExplanations": {
+      "ア": "準定電流方式では直列抵抗により充電初期の電流を抑え、終期まで電流が緩やかに変化する。",
+      "イ": "充電の進行により電池の端子電圧が上がるので、定電圧を保つ充電器から流れる電流は減る。",
+      "ウ": "初期は一定の電流で充電し、所定の電圧に達した後は定電圧に切り替えて電流を低下させる。",
+      "エ": "負荷へ電力を供給しながら、並列の電池を充電した状態に保つ方式である。",
+      "オ": "これが誤りである。トリクル充電は自己放電を補う程度の小電流で行い、負荷電流に近い電流を常時流す方式ではない。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "これが誤りである。トリクル充電は自己放電を補う程度の小電流で行い、負荷電流に近い電流を常時流す方式ではない。"
+  },
+  {
+    "id": "riku-tech1-2022-july-fa408-kogaku-a-q110",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "july",
+    "qNumber": 110,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "ツェナーダイオードの逆方向動作と温度係数"
+    ],
+    "difficulty": 3,
+    "question": "ツェナーダイオードの逆方向動作と温度係数。公式原問のA-10に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2022-july-fa408-kogaku-a-q110-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-10の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220722230446id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201900id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourcePages": [
+      3
+    ],
+    "officialQuestionLabel": "A-10",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-10（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "通常は逆バイアスで定電圧特性を利用する",
+      "イ": "ツェナー電圧や許容電力損失が定格にある",
+      "ウ": "正温度係数を負温度係数のシリコンダイオードで補償できる",
+      "エ": "5～6 Vより高い型は負温度係数、低い型は正温度係数となる",
+      "オ": "5～6 Vより低い場合にはトンネル効果が支配的である"
+    },
+    "choiceExplanations": {
+      "ア": "逆方向の降伏領域では電流が変化しても端子電圧が比較的一定なので、定電圧に利用する。",
+      "イ": "定電圧素子としての電圧と、過熱を防ぐ許容電力などが部品の定格である。",
+      "ウ": "順方向に用いたシリコンダイオードの負の温度係数を加え、正の温度係数を一部打ち消せる。",
+      "エ": "これが誤りである。一般に低い降伏電圧で支配的なトンネル効果は負、高い降伏電圧で支配的なアバランシェ効果は正の温度係数を持つ。",
+      "オ": "低い降伏電圧では接合内の強い電界によるトンネル効果が支配的である。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "これが誤りである。一般に低い降伏電圧で支配的なトンネル効果は負、高い降伏電圧で支配的なアバランシェ効果は正の温度係数を持つ。"
+  },
+  {
+    "id": "riku-tech1-2022-july-fa408-kogaku-a-q111",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "july",
+    "qNumber": 111,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "DME・SBAS・GBAS・ILS・マルチラテレーション"
+    ],
+    "difficulty": 3,
+    "question": "DME・SBAS・GBAS・ILS・マルチラテレーション。公式原問のA-11に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2022-july-fa408-kogaku-a-q111-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-11の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220722230446id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201900id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourcePages": [
+      3
+    ],
+    "officialQuestionLabel": "A-11",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-11（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "DMEは異周波の応答と往復時間で測距する",
+      "イ": "SBASは静止衛星からGPS補強信号を提供する",
+      "ウ": "GBASはVHFで補強信号などを送り空港の精密進入を支援する",
+      "エ": "ILSは水平のローカライザーにUHF、垂直のグライドパスにVHFを使う",
+      "オ": "マルチラテレーションは複数局での受信時刻差を用いる"
+    },
+    "choiceExplanations": {
+      "ア": "DMEは質問信号と別周波数の応答を使い、既知の応答遅延を除いた伝搬時間から距離を求める。",
+      "イ": "地上網から得たGNSS補正などを静止衛星経由で広域に提供する。",
+      "ウ": "地上施設で得た補正や進入経路の情報をVHFで放送し、航空機の精密進入を支援する。",
+      "エ": "これが誤りである。ILSのローカライザーはVHF帯、グライドパスはUHF帯であり、選択肢の対応は逆である。",
+      "オ": "複数の受信点で測る到達時間差から航空機の位置を求める。単一のレーダーから死角になる場所も、受信局の配置で監視できる。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "これが誤りである。ILSのローカライザーはVHF帯、グライドパスはUHF帯であり、選択肢の対応は逆である。"
+  },
+  {
+    "id": "riku-tech1-2022-july-fa408-kogaku-a-q112",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "july",
+    "qNumber": 112,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "パルスレーダーの探知距離と往復の伝搬損"
+    ],
+    "difficulty": 3,
+    "question": "パルスレーダーの探知距離と往復の伝搬損。公式原問のA-12に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2022-july-fa408-kogaku-a-q112-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-12の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220722230446id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201900id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourcePages": [
+      4
+    ],
+    "officialQuestionLabel": "A-12",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-12（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "10 km",
+      "イ": "20 km",
+      "ウ": "50 km",
+      "エ": "100 km",
+      "オ": "200 km"
+    },
+    "choiceExplanations": {
+      "ア": "受信電力はPₜGσAₑ/［(4π)²r⁴］で、−80 dBmは10⁻¹¹ Wである。利得1,000と実効面積1.6 m²などを入れるとr⁴=10¹⁶ m⁴であり、r=10 kmとなる。",
+      "イ": "往復の幾何学的な広がりで受信電力は距離の四乗に反比例する。距離を20 kmにすると、しきい値より12 dBほど小さくなる。",
+      "ウ": "30 dBiは倍率1,000である。所定のしきい値に対して五倍の距離では625分の一の電力になる。",
+      "エ": "計算した距離の十倍では、受信電力が一万分の一になるため、この条件で検知できない。",
+      "オ": "−80 dBmをワットに直し、レーダー方程式で距離の四乗根を取ると200 kmより短くなる。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "受信電力はPₜGσAₑ/［(4π)²r⁴］で、−80 dBmは10⁻¹¹ Wである。利得1,000と実効面積1.6 m²などを入れるとr⁴=10¹⁶ m⁴であり、r=10 kmとなる。"
+  },
+  {
+    "id": "riku-tech1-2022-july-fa408-kogaku-a-q113",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "july",
+    "qNumber": 113,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "衛星SCPCとデマンドアサインメント"
+    ],
+    "difficulty": 3,
+    "question": "衛星SCPCとデマンドアサインメント。公式原問のA-13に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2022-july-fa408-kogaku-a-q113-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-13の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220722230446id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201900id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourcePages": [
+      4
+    ],
+    "officialQuestionLabel": "A-13",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-13（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "複数、時分割、大きい",
+      "イ": "複数、時分割、小さい",
+      "ウ": "一つ、周波数分割、大きい",
+      "エ": "一つ、時分割、大きい",
+      "オ": "一つ、周波数分割、小さい"
+    },
+    "choiceExplanations": {
+      "ア": "SCPCは一チャネルに一搬送波を割り当て、その周波数によって分離する。需要割当ては小規模な地球局が多い場合に効率がよい。",
+      "イ": "地球局の規模の傾向は合うが、一チャネルに割り当てる搬送波は一つで、周波数分割を使う。",
+      "ウ": "SCPCの二つの特徴は合うが、回線を必要なときだけ割り当てる利点は、一局当たりの通信容量が小さい局が多数ある場合に大きい。",
+      "エ": "一音声チャネル当たり一搬送波を用いる。搬送波は時間で交代せず周波数で分離し、要求割当ては小容量局の共用に適する。",
+      "オ": "単一チャネルごとに一つの搬送波を置く周波数分割方式である。小容量の多数局で、必要時だけ回線を割り当てると空きの固定回線を減らせる。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "単一チャネルごとに一つの搬送波を置く周波数分割方式である。小容量の多数局で、必要時だけ回線を割り当てると空きの固定回線を減らせる。"
+  },
+  {
+    "id": "riku-tech1-2022-july-fa408-kogaku-a-q114",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "july",
+    "qNumber": 114,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "ガウス雑音下でのBPSK同期検波の判定誤り"
+    ],
+    "difficulty": 3,
+    "question": "ガウス雑音下でのBPSK同期検波の判定誤り。公式原問のA-14に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2022-july-fa408-kogaku-a-q114-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-14の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220722230446id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201900id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourcePages": [
+      4
+    ],
+    "officialQuestionLabel": "A-14",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-14（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "P₀+P₁、√（CNR/2）、高い",
+      "イ": "P₀+P₁、√CNR、低い",
+      "ウ": "P₀+P₁、√CNR、高い",
+      "エ": "P₀×P₁、√CNR、低い",
+      "オ": "P₀×P₁、√（CNR/2）、高い"
+    },
+    "choiceExplanations": {
+      "ア": "各誤りの確率を加える点は合うが、A²/(2σ²)がそのまま搬送波対雑音電力比である。搬送波電力はベースバンドの信号電力の半分になる。",
+      "イ": "二符号は等確率なので誤り率は（P₀+P₁）/2である。CNR=A²/(2σ²)で、ベースバンドのA²/σ²より3 dB低い。",
+      "ウ": "誤り率と誤差補関数の引数は合うが、搬送波側の信号電力はA²/2なのでベースバンドの比より小さい。",
+      "エ": "誤差補関数の引数と電力比の関係は合うが、二種の誤判定の確率は積ではなく、発生確率で重みを付けて加える。",
+      "オ": "二つの符号の誤りの期待値は和になる。誤差補関数の引数は√CNRで、CNRはベースバンドのSNRより低い。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "二符号は等確率なので誤り率は（P₀+P₁）/2である。CNR=A²/(2σ²)で、ベースバンドのA²/σ²より3 dB低い。"
+  },
+  {
+    "id": "riku-tech1-2022-july-fa408-kogaku-a-q115",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "july",
+    "qNumber": 115,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "周期矩形パルス列のsinc包絡線と周波数間隔"
+    ],
+    "difficulty": 3,
+    "question": "周期矩形パルス列のsinc包絡線と周波数間隔。公式原問のA-15に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2022-july-fa408-kogaku-a-q115-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-15の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220722230446id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201900id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourcePages": [
+      4
+    ],
+    "officialQuestionLabel": "A-15",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-15（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "sin（πfT_P）/(πfT_P)、5T_P、広く",
+      "イ": "sin（πfT_P）/(πfT_P)、5T_P、狭く",
+      "ウ": "sin（πfT_P）/(πfT_P)、5/T_P、狭く",
+      "エ": "πfT_P/sin（πfT_P）、5T_P、広く",
+      "オ": "πfT_P/sin（πfT_P）、5/T_P、狭く"
+    },
+    "choiceExplanations": {
+      "ア": "矩形パルスの包絡線はsinc形で、最初の零点は1/T_Pである。1/T_P=5/TからT=5T_Pとなり、Tを小さくすれば間隔1/Tは広がる。",
+      "イ": "包絡線と周期は合うが、線スペクトル間隔が繰返し周波数なら、周期を短くすると間隔は広がる。",
+      "ウ": "5/T_Pは周波数の次元であり、繰返し周期としては5T_Pである。周期を短くすると線スペクトル間隔は広がる。",
+      "エ": "周期と間隔は合うが、sinc形の分子が正弦である。逆数にすると分母が最初の零点で発散する。",
+      "オ": "包絡線はsinc形であって逆数ではない。零点の条件から周期は5T_P、周期を短くすると間隔は広くなる。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "矩形パルスの包絡線はsinc形で、最初の零点は1/T_Pである。1/T_P=5/TからT=5T_Pとなり、Tを小さくすれば間隔1/Tは広がる。"
+  },
+  {
+    "id": "riku-tech1-2022-july-fa408-kogaku-a-q116",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "july",
+    "qNumber": 116,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "三点移動平均フィルタの振幅と線形位相"
+    ],
+    "difficulty": 3,
+    "question": "三点移動平均フィルタの振幅と線形位相。公式原問のA-16に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2022-july-fa408-kogaku-a-q116-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-16の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220722230446id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201900id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourcePages": [
+      5
+    ],
+    "officialQuestionLabel": "A-16",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-16（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "ローパス、［1+2 cos ω］の絶対値/3、+ω",
+      "イ": "ローパス、［1+2 cos ω］の絶対値/3、−ω",
+      "ウ": "ローパス、［1−2 cos ω］の絶対値/3、+ω",
+      "エ": "ハイパス、［1−2 cos ω］の絶対値/3、−ω",
+      "オ": "ハイパス、［1−2 cos ω］の絶対値/3、+ω"
+    },
+    "choiceExplanations": {
+      "ア": "振幅特性は合うが、伝達関数に含まれる遅延因子はe^(−jω)なので位相の傾きは負である。",
+      "イ": "H(e^(jω))をe^(−jω)（1+2 cos ω）/3と因数分解すると、振幅は実係数の絶対値、線形位相項は−ωである。実係数が負になる範囲の偏角にはπのずれが加わる。",
+      "ウ": "移動平均は低域を通すが、因数分解した余弦項の符号は正である。遅延が生む位相の傾きは負になる。",
+      "エ": "遅延因子の位相は合うが、直流に対する利得が1となるローパスであり、振幅の余弦項は加算する。",
+      "オ": "直流に対する利得は1であって除去しない。振幅の余弦項は加算し、遅延は負の線形位相になる。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "H(e^(jω))をe^(−jω)（1+2 cos ω）/3と因数分解すると、振幅は実係数の絶対値、線形位相項は−ωである。実係数が負になる範囲の偏角にはπのずれが加わる。"
+  },
+  {
+    "id": "riku-tech1-2022-july-fa408-kogaku-a-q117",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "july",
+    "qNumber": 117,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "AMの側帯波と搬送波のレベル差から求める変調度"
+    ],
+    "difficulty": 3,
+    "question": "AMの側帯波と搬送波のレベル差から求める変調度。公式原問のA-17に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2022-july-fa408-kogaku-a-q117-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-17の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220722230446id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201900id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourcePages": [
+      5
+    ],
+    "officialQuestionLabel": "A-17",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-17（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "2S/A、10%",
+      "イ": "2S/A、25%",
+      "ウ": "2S/A、50%",
+      "エ": "S/A、25%",
+      "オ": "S/A、50%"
+    },
+    "choiceExplanations": {
+      "ア": "変調度の式は合うが、レベル差12 dBは側帯波の振幅が搬送波の約1/4であることを示すので、変調度は約50%である。",
+      "イ": "25%は側帯波一つの振幅を搬送波振幅で割った比である。変調度はその2倍となる。",
+      "ウ": "一側帯波の振幅はS=m_aA/2なので、m_a=2S/Aである。12 dBの差からS/A≈1/4であり、変調度は約50%となる。",
+      "エ": "25%は振幅比を百分率にした値である。一側帯波は変調度に対して半分の振幅になるので2を掛ける。",
+      "オ": "変調度の数値は合うが、振幅比の計算式では側帯波一つの振幅Sに2を掛ける。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "一側帯波の振幅はS=m_aA/2なので、m_a=2S/Aである。12 dBの差からS/A≈1/4であり、変調度は約50%となる。"
+  },
+  {
+    "id": "riku-tech1-2022-july-fa408-kogaku-a-q118",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "july",
+    "qNumber": 118,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "離れた変復調器のBER測定に用いる擬似ランダム系列"
+    ],
+    "difficulty": 3,
+    "question": "離れた変復調器のBER測定に用いる擬似ランダム系列。公式原問のA-18に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2022-july-fa408-kogaku-a-q118-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-18の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220722230446id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201900id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourcePages": [
+      5
+    ],
+    "officialQuestionLabel": "A-18",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-18（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "ランダム、異なる、受信パルス列",
+      "イ": "擬似ランダム、異なる、受信パルス列",
+      "ウ": "擬似ランダム、同一の、受信パルス列",
+      "エ": "ランダム、同一の、副搬送波",
+      "オ": "擬似ランダム、異なる、副搬送波"
+    },
+    "choiceExplanations": {
+      "ア": "受信側で同じ参照系列を再現する必要があるため、再現可能な擬似ランダム列を同じパターン発生器で生成する。",
+      "イ": "パターンと同期元は合うが、受信側では送信側と同一の系列を作る発生器が必要である。",
+      "ウ": "広い周波数成分を持ちつつ遠隔でも再現できる擬似ランダム列を使う。受信列から同期を取り、送信側と同一のパターンを作ってビットごとに比較する。",
+      "エ": "同一の比較基準は必要だが、真にランダムな列では別の場所で再現できない。クロックとフレームは受信パルス列から抽出する。",
+      "オ": "擬似ランダムは適切だが、元と同一のパターンが必要で、同期に用いるのは受信パルス列である。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "広い周波数成分を持ちつつ遠隔でも再現できる擬似ランダム列を使う。受信列から同期を取り、送信側と同一のパターンを作ってビットごとに比較する。"
+  },
+  {
+    "id": "riku-tech1-2022-july-fa408-kogaku-a-q119",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "july",
+    "qNumber": 119,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "フラクショナルN PLLの分周サイクルと周波数ステップ"
+    ],
+    "difficulty": 3,
+    "question": "フラクショナルN PLLの分周サイクルと周波数ステップ。公式原問のA-19に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2022-july-fa408-kogaku-a-q119-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-19の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220722230446id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201900id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourcePages": [
+      6
+    ],
+    "officialQuestionLabel": "A-19",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-19（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "4、6、1,004 MHz、1 MHz",
+      "イ": "4、6、1,004 MHz、0.1 MHz",
+      "ウ": "4、6、1,006 MHz、0.1 MHz",
+      "エ": "6、4、1,004 MHz、1 MHz",
+      "オ": "6、4、1,006 MHz、0.1 MHz"
+    },
+    "choiceExplanations": {
+      "ア": "出力周波数とステップは合うが、分周数101を用いるのが10回のうち4回である。",
+      "イ": "分周数の比の割当てが逆で、分母10である以上、10 MHzの基準から得る1段は1 MHzになる。",
+      "ウ": "101で分周する回数は6回ではなく4回なので、平均の分周数は100.4である。基準周波数は10 MHzだから刻みは1 MHzとなる。",
+      "エ": "分周数100を6回、101を4回使うと実効分周数は100.4である。基準10 MHzとの積は1,004 MHzで、分子を1だけ変えれば1 MHz動く。",
+      "オ": "分周の回数は合うが、その平均は100.4である。周波数と刻みはそれぞれ1,004 MHzと1 MHzになる。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "分周数100を6回、101を4回使うと実効分周数は100.4である。基準10 MHzとの積は1,004 MHzで、分子を1だけ変えれば1 MHz動く。"
+  },
+  {
+    "id": "riku-tech1-2022-july-fa408-kogaku-a-q120",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "july",
+    "qNumber": 120,
+    "type": "multiple-choice",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "FFTアナライザの時間窓と周波数分解能"
+    ],
+    "difficulty": 3,
+    "question": "FFTアナライザの時間窓と周波数分解能。公式原問のA-20に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2022-july-fa408-kogaku-a-q120-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-20の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220722230446id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201900id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourcePages": [
+      6
+    ],
+    "officialQuestionLabel": "A-20",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A A-20（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "下げる、窓関数、NΔt",
+      "イ": "下げる、アンチエイリアシングフィルタ、Δt/N",
+      "ウ": "上げる、窓関数、NΔt",
+      "エ": "上げる、窓関数、Δt/N",
+      "オ": "上げる、アンチエイリアシングフィルタ、NΔt"
+    },
+    "choiceExplanations": {
+      "ア": "FFTの周波数間隔は観測時間Tの逆数である。長い時間窓で分解能を高めると時間変化を追う能力は下がり、T=NΔtとし、端でのリーケージは窓関数で抑える。",
+      "イ": "時間の分解能を下げる点は合うが、アンチエイリアシングフィルタの目的は折返しの抑制である。時間窓は点数と周期の積である。",
+      "ウ": "窓関数と時間窓の式は合うが、周波数分解能を高めるために長く観測すると、時間分解能は下がる。",
+      "エ": "リーケージの対策は合うが、時間窓はN個の標本間隔分であり、長くすると時間分解能は下がる。",
+      "オ": "時間窓の式は合うが、長い観測は時間分解能を下げる。リーケージ対策には切り出す波形に窓関数を掛ける。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "FFTの周波数間隔は観測時間Tの逆数である。長い時間窓で分解能を高めると時間変化を追う能力は下がり、T=NΔtとし、端でのリーケージは窓関数で抑える。"
+  },
+  {
+    "id": "riku-tech1-2022-july-fa408-kogaku-a-q121",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "july",
+    "qNumber": 121,
+    "type": "native-b",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "日本のWiMAXの周波数・スケーラブルOFDMA・適応変調"
+    ],
+    "difficulty": 3,
+    "question": "日本のWiMAXの周波数・スケーラブルOFDMA・適応変調。公式原問のB-1に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2022-july-fa408-kogaku-a-q121-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A B-1の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220722230446id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201900id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourcePages": [
+      6
+    ],
+    "officialQuestionLabel": "B-1",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A B-1（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "nativeB": {
+      "mode": "binary",
+      "officialLabel": "B-1",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "正しい"
+        },
+        {
+          "id": "2",
+          "label": "誤っている"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "1.7 GHz帯を利用する",
+          "answer": "2",
+          "explanation": "誤っている。設問の国内WiMAXには2.5 GHz帯が用いられる。",
+          "candidateExplanations": {
+            "2": "誤っている。設問の国内WiMAXには2.5 GHz帯が用いられる。",
+            "1": "設問の国内WiMAXには2.5 GHz帯が用いられる。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "帯域幅ごとにサブキャリア間隔を変えるスケーラブルOFDMでドプラの影響を一定にする",
+          "answer": "2",
+          "explanation": "誤っている。スケーラブルOFDMAでは、帯域幅の変更でFFTサイズなどを変え、サブキャリア間隔をほぼ一定に保つ。",
+          "candidateExplanations": {
+            "2": "誤っている。スケーラブルOFDMAでは、帯域幅の変更でFFTサイズなどを変え、サブキャリア間隔をほぼ一定に保つ。",
+            "1": "スケーラブルOFDMAでは、帯域幅の変更でFFTサイズなどを変え、サブキャリア間隔をほぼ一定に保つ。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "WiFiよりサブキャリア数が多く、長距離や見通し外のマルチパス下でも高速伝送を行える",
+          "answer": "1",
+          "explanation": "正しい。サブキャリアを細かく分け、ガード区間でマルチパスの影響を抑えることで、見通し外などの環境で高速伝送が可能になる。",
+          "candidateExplanations": {
+            "1": "正しい。サブキャリアを細かく分け、ガード区間でマルチパスの影響を抑えることで、見通し外などの環境で高速伝送が可能になる。",
+            "2": "サブキャリアを細かく分け、ガード区間でマルチパスの影響を抑えることで、見通し外などの環境で高速伝送が可能になる。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "時分割複信方式が規定されている",
+          "answer": "1",
+          "explanation": "正しい。設問の方式は同じ周波数帯を上りと下りで時間を分けて使用するTDDである。",
+          "candidateExplanations": {
+            "1": "正しい。設問の方式は同じ周波数帯を上りと下りで時間を分けて使用するTDDである。",
+            "2": "設問の方式は同じ周波数帯を上りと下りで時間を分けて使用するTDDである。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "受信状況に応じて変調方式を選ぶ差動位相変調が可能である",
+          "answer": "2",
+          "explanation": "誤っている。受信品質に応じて変調方式を選ぶ仕組みは適応変調である。差動位相変調は隣接シンボルとの位相差で情報を表す方式で、別の概念である。",
+          "candidateExplanations": {
+            "2": "誤っている。受信品質に応じて変調方式を選ぶ仕組みは適応変調である。差動位相変調は隣接シンボルとの位相差で情報を表す方式で、別の概念である。",
+            "1": "受信品質に応じて変調方式を選ぶ仕組みは適応変調である。差動位相変調は隣接シンボルとの位相差で情報を表す方式で、別の概念である。"
+          }
+        }
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    },
+    "explanation": "誤っている。設問の国内WiMAXには2.5 GHz帯が用いられる。\n誤っている。スケーラブルOFDMAでは、帯域幅の変更でFFTサイズなどを変え、サブキャリア間隔をほぼ一定に保つ。\n正しい。サブキャリアを細かく分け、ガード区間でマルチパスの影響を抑えることで、見通し外などの環境で高速伝送が可能になる。\n正しい。設問の方式は同じ周波数帯を上りと下りで時間を分けて使用するTDDである。\n誤っている。受信品質に応じて変調方式を選ぶ仕組みは適応変調である。差動位相変調は隣接シンボルとの位相差で情報を表す方式で、別の概念である。"
+  },
+  {
+    "id": "riku-tech1-2022-july-fa408-kogaku-a-q122",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "july",
+    "qNumber": 122,
+    "type": "native-b",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "OFDM受信のガードインターバル相関と同期"
+    ],
+    "difficulty": 3,
+    "question": "OFDM受信のガードインターバル相関と同期。公式原問のB-2に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2022-july-fa408-kogaku-a-q122-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A B-2の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220722230446id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201900id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourcePages": [
+      6
+    ],
+    "officialQuestionLabel": "B-2",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A B-2（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "nativeB": {
+      "mode": "shared-bank",
+      "officialLabel": "B-2",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "離散"
+        },
+        {
+          "id": "2",
+          "label": "1"
+        },
+        {
+          "id": "3",
+          "label": "積分"
+        },
+        {
+          "id": "4",
+          "label": "ある（同じ波形）"
+        },
+        {
+          "id": "5",
+          "label": "振幅"
+        },
+        {
+          "id": "6",
+          "label": "逆離散"
+        },
+        {
+          "id": "7",
+          "label": "1/2"
+        },
+        {
+          "id": "8",
+          "label": "微分"
+        },
+        {
+          "id": "9",
+          "label": "ない（違う波形）"
+        },
+        {
+          "id": "10",
+          "label": "位相"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "受信時は離散フーリエ変換に必要なサンプルを生成し、サブキャリアの信号点を復元する。",
+          "candidateExplanations": {
+            "1": "受信時は離散フーリエ変換に必要なサンプルを生成し、サブキャリアの信号点を復元する。",
+            "2": "サイクリックプレフィックスと複製元の間の有効シンボル期間数である。空欄アに当てはまるのは「離散」である。",
+            "3": "同じ区間の積を足し合わせて相関値を得る操作である。空欄アに当てはまるのは「離散」である。",
+            "4": "サイクリックプレフィックスと複製元の波形の関係である。空欄アに当てはまるのは「離散」である。",
+            "5": "相関の大きさはタイミング検出に使えるが、搬送周波数誤差が複製区間間に生む主な差ではない。空欄アに当てはまるのは「離散」である。",
+            "6": "送信側で周波数領域のデータを時間標本に変換する方向である。空欄アに当てはまるのは「離散」である。",
+            "7": "サイクリックプレフィックスと有効区間の末尾を重ねるには、この遅延より長くする。空欄アに当てはまるのは「離散」である。",
+            "8": "積の時間変化を取る操作であり、相関を求める総和にはならない。空欄アに当てはまるのは「離散」である。",
+            "9": "波形の繰返しを利用するため、対応する区間に相関がないという条件には当てはまらない。空欄アに当てはまるのは「離散」である。",
+            "10": "周波数誤差が時間差と組み合わさったときの相関の複素角の変化である。空欄アに当てはまるのは「離散」である。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "ガード区間は有効シンボル末尾のコピーである。そのコピーと元の部分は有効シンボル長1個分だけ離れている。",
+          "candidateExplanations": {
+            "1": "受信した時間標本を周波数領域に変換するときのフーリエ変換である。空欄イに当てはまるのは「1」である。",
+            "2": "ガード区間は有効シンボル末尾のコピーである。そのコピーと元の部分は有効シンボル長1個分だけ離れている。",
+            "3": "同じ区間の積を足し合わせて相関値を得る操作である。空欄イに当てはまるのは「1」である。",
+            "4": "サイクリックプレフィックスと複製元の波形の関係である。空欄イに当てはまるのは「1」である。",
+            "5": "相関の大きさはタイミング検出に使えるが、搬送周波数誤差が複製区間間に生む主な差ではない。空欄イに当てはまるのは「1」である。",
+            "6": "送信側で周波数領域のデータを時間標本に変換する方向である。空欄イに当てはまるのは「1」である。",
+            "7": "サイクリックプレフィックスと有効区間の末尾を重ねるには、この遅延より長くする。空欄イに当てはまるのは「1」である。",
+            "8": "積の時間変化を取る操作であり、相関を求める総和にはならない。空欄イに当てはまるのは「1」である。",
+            "9": "波形の繰返しを利用するため、対応する区間に相関がないという条件には当てはまらない。空欄イに当てはまるのは「1」である。",
+            "10": "周波数誤差が時間差と組み合わさったときの相関の複素角の変化である。空欄イに当てはまるのは「1」である。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "3",
+          "explanation": "積を区間にわたり積分すると、同じ波形の区間で相関値が大きくなる。",
+          "candidateExplanations": {
+            "1": "受信した時間標本を周波数領域に変換するときのフーリエ変換である。空欄ウに当てはまるのは「積分」である。",
+            "2": "サイクリックプレフィックスと複製元の間の有効シンボル期間数である。空欄ウに当てはまるのは「積分」である。",
+            "3": "積を区間にわたり積分すると、同じ波形の区間で相関値が大きくなる。",
+            "4": "サイクリックプレフィックスと複製元の波形の関係である。空欄ウに当てはまるのは「積分」である。",
+            "5": "相関の大きさはタイミング検出に使えるが、搬送周波数誤差が複製区間間に生む主な差ではない。空欄ウに当てはまるのは「積分」である。",
+            "6": "送信側で周波数領域のデータを時間標本に変換する方向である。空欄ウに当てはまるのは「積分」である。",
+            "7": "サイクリックプレフィックスと有効区間の末尾を重ねるには、この遅延より長くする。空欄ウに当てはまるのは「積分」である。",
+            "8": "積の時間変化を取る操作であり、相関を求める総和にはならない。空欄ウに当てはまるのは「積分」である。",
+            "9": "波形の繰返しを利用するため、対応する区間に相関がないという条件には当てはまらない。空欄ウに当てはまるのは「積分」である。",
+            "10": "周波数誤差が時間差と組み合わさったときの相関の複素角の変化である。空欄ウに当てはまるのは「積分」である。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "4",
+          "explanation": "コピーと元の区間は同じ波形であるため、時間を揃えたときの相関の大きさがピークになる。",
+          "candidateExplanations": {
+            "1": "受信した時間標本を周波数領域に変換するときのフーリエ変換である。空欄エに当てはまるのは「ある（同じ波形）」である。",
+            "2": "サイクリックプレフィックスと複製元の間の有効シンボル期間数である。空欄エに当てはまるのは「ある（同じ波形）」である。",
+            "3": "同じ区間の積を足し合わせて相関値を得る操作である。空欄エに当てはまるのは「ある（同じ波形）」である。",
+            "4": "コピーと元の区間は同じ波形であるため、時間を揃えたときの相関の大きさがピークになる。",
+            "5": "相関の大きさはタイミング検出に使えるが、搬送周波数誤差が複製区間間に生む主な差ではない。空欄エに当てはまるのは「ある（同じ波形）」である。",
+            "6": "送信側で周波数領域のデータを時間標本に変換する方向である。空欄エに当てはまるのは「ある（同じ波形）」である。",
+            "7": "サイクリックプレフィックスと有効区間の末尾を重ねるには、この遅延より長くする。空欄エに当てはまるのは「ある（同じ波形）」である。",
+            "8": "積の時間変化を取る操作であり、相関を求める総和にはならない。空欄エに当てはまるのは「ある（同じ波形）」である。",
+            "9": "波形の繰返しを利用するため、対応する区間に相関がないという条件には当てはまらない。空欄エに当てはまるのは「ある（同じ波形）」である。",
+            "10": "周波数誤差が時間差と組み合わさったときの相関の複素角の変化である。空欄エに当てはまるのは「ある（同じ波形）」である。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "周波数のずれがあると同じ波形でも離れた時刻では位相差が生じるため、相関の位相を同期に利用できる。",
+          "candidateExplanations": {
+            "1": "受信した時間標本を周波数領域に変換するときのフーリエ変換である。空欄オに当てはまるのは「位相」である。",
+            "2": "サイクリックプレフィックスと複製元の間の有効シンボル期間数である。空欄オに当てはまるのは「位相」である。",
+            "3": "同じ区間の積を足し合わせて相関値を得る操作である。空欄オに当てはまるのは「位相」である。",
+            "4": "サイクリックプレフィックスと複製元の波形の関係である。空欄オに当てはまるのは「位相」である。",
+            "5": "相関の大きさはタイミング検出に使えるが、搬送周波数誤差が複製区間間に生む主な差ではない。空欄オに当てはまるのは「位相」である。",
+            "6": "送信側で周波数領域のデータを時間標本に変換する方向である。空欄オに当てはまるのは「位相」である。",
+            "7": "サイクリックプレフィックスと有効区間の末尾を重ねるには、この遅延より長くする。空欄オに当てはまるのは「位相」である。",
+            "8": "積の時間変化を取る操作であり、相関を求める総和にはならない。空欄オに当てはまるのは「位相」である。",
+            "9": "波形の繰返しを利用するため、対応する区間に相関がないという条件には当てはまらない。空欄オに当てはまるのは「位相」である。",
+            "10": "周波数のずれがあると同じ波形でも離れた時刻では位相差が生じるため、相関の位相を同期に利用できる。"
+          }
+        }
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    },
+    "explanation": "受信時は離散フーリエ変換に必要なサンプルを生成し、サブキャリアの信号点を復元する。\nガード区間は有効シンボル末尾のコピーである。そのコピーと元の部分は有効シンボル長1個分だけ離れている。\n積を区間にわたり積分すると、同じ波形の区間で相関値が大きくなる。\nコピーと元の区間は同じ波形であるため、時間を揃えたときの相関の大きさがピークになる。\n周波数のずれがあると同じ波形でも離れた時刻では位相差が生じるため、相関の位相を同期に利用できる。"
+  },
+  {
+    "id": "riku-tech1-2022-july-fa408-kogaku-a-q123",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "july",
+    "qNumber": 123,
+    "type": "native-b",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "FM受信機の20 dB雑音抑圧感度の測定"
+    ],
+    "difficulty": 3,
+    "question": "FM受信機の20 dB雑音抑圧感度の測定。公式原問のB-3に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2022-july-fa408-kogaku-a-q123-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A B-3の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220722230446id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf#page=7",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201900id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourcePages": [
+      7
+    ],
+    "officialQuestionLabel": "B-3",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A B-3（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "nativeB": {
+      "mode": "shared-bank",
+      "officialLabel": "B-3",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "断（OFF）"
+        },
+        {
+          "id": "2",
+          "label": "受信機"
+        },
+        {
+          "id": "3",
+          "label": "無変調"
+        },
+        {
+          "id": "4",
+          "label": "高い値"
+        },
+        {
+          "id": "5",
+          "label": "3"
+        },
+        {
+          "id": "6",
+          "label": "接（ON）"
+        },
+        {
+          "id": "7",
+          "label": "低周波発振器"
+        },
+        {
+          "id": "8",
+          "label": "変調状態"
+        },
+        {
+          "id": "9",
+          "label": "低い値"
+        },
+        {
+          "id": "10",
+          "label": "6"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "無入力の雑音出力が必要なので、スケルチは断にしておく。",
+          "candidateExplanations": {
+            "1": "無入力の雑音出力が必要なので、スケルチは断にしておく。",
+            "2": "定格出力の1/2に合わせる対象の機器である。空欄アに当てはまるのは「断（OFF）」である。",
+            "3": "復調出力に試験用音声が含まれない搬送波の状態である。空欄アに当てはまるのは「断（OFF）」である。",
+            "4": "雑音が抑圧される場合のレベル差と反対である。空欄アに当てはまるのは「断（OFF）」である。",
+            "5": "電圧の2倍をdBで表した場合の差としては小さい。空欄アに当てはまるのは「断（OFF）」である。",
+            "6": "測るべき無入力時の雑音までスケルチで遮られ得る設定である。空欄アに当てはまるのは「断（OFF）」である。",
+            "7": "試験用低周波信号を供給するが、受信機出力レベルの調整対象ではない。空欄アに当てはまるのは「断（OFF）」である。",
+            "8": "最初に出力を合わせる際には用いるが、雑音を抑圧する搬送波の測定条件ではない。空欄アに当てはまるのは「断（OFF）」である。",
+            "9": "搬送波を入れたことによって復調出力の雑音が下がる方向である。空欄アに当てはまるのは「断（OFF）」である。",
+            "10": "開放電圧と整合終端電圧の2倍の差を換算したdB値である。空欄アに当てはまるのは「断（OFF）」である。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "定格出力の半分になるように調整するのは受信機の出力レベルである。",
+          "candidateExplanations": {
+            "1": "スケルチが受信機の雑音出力を遮らないようにする設定である。空欄イに当てはまるのは「受信機」である。",
+            "2": "定格出力の半分になるように調整するのは受信機の出力レベルである。",
+            "3": "復調出力に試験用音声が含まれない搬送波の状態である。空欄イに当てはまるのは「受信機」である。",
+            "4": "雑音が抑圧される場合のレベル差と反対である。空欄イに当てはまるのは「受信機」である。",
+            "5": "電圧の2倍をdBで表した場合の差としては小さい。空欄イに当てはまるのは「受信機」である。",
+            "6": "測るべき無入力時の雑音までスケルチで遮られ得る設定である。空欄イに当てはまるのは「受信機」である。",
+            "7": "試験用低周波信号を供給するが、受信機出力レベルの調整対象ではない。空欄イに当てはまるのは「受信機」である。",
+            "8": "最初に出力を合わせる際には用いるが、雑音を抑圧する搬送波の測定条件ではない。空欄イに当てはまるのは「受信機」である。",
+            "9": "搬送波を入れたことによって復調出力の雑音が下がる方向である。空欄イに当てはまるのは「受信機」である。",
+            "10": "開放電圧と整合終端電圧の2倍の差を換算したdB値である。空欄イに当てはまるのは「受信機」である。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "3",
+          "explanation": "測定するのは変調による音声信号でなく雑音の減少なので、信号発生器は無変調にする。",
+          "candidateExplanations": {
+            "1": "スケルチが受信機の雑音出力を遮らないようにする設定である。空欄ウに当てはまるのは「無変調」である。",
+            "2": "定格出力の1/2に合わせる対象の機器である。空欄ウに当てはまるのは「無変調」である。",
+            "3": "測定するのは変調による音声信号でなく雑音の減少なので、信号発生器は無変調にする。",
+            "4": "雑音が抑圧される場合のレベル差と反対である。空欄ウに当てはまるのは「無変調」である。",
+            "5": "電圧の2倍をdBで表した場合の差としては小さい。空欄ウに当てはまるのは「無変調」である。",
+            "6": "測るべき無入力時の雑音までスケルチで遮られ得る設定である。空欄ウに当てはまるのは「無変調」である。",
+            "7": "試験用低周波信号を供給するが、受信機出力レベルの調整対象ではない。空欄ウに当てはまるのは「無変調」である。",
+            "8": "最初に出力を合わせる際には用いるが、雑音を抑圧する搬送波の測定条件ではない。空欄ウに当てはまるのは「無変調」である。",
+            "9": "搬送波を入れたことによって復調出力の雑音が下がる方向である。空欄ウに当てはまるのは「無変調」である。",
+            "10": "開放電圧と整合終端電圧の2倍の差を換算したdB値である。空欄ウに当てはまるのは「無変調」である。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "9",
+          "explanation": "雑音抑圧感度は基準の雑音出力を指定の20 dBだけ低下させる入力電圧である。",
+          "candidateExplanations": {
+            "1": "スケルチが受信機の雑音出力を遮らないようにする設定である。空欄エに当てはまるのは「低い値」である。",
+            "2": "定格出力の1/2に合わせる対象の機器である。空欄エに当てはまるのは「低い値」である。",
+            "3": "復調出力に試験用音声が含まれない搬送波の状態である。空欄エに当てはまるのは「低い値」である。",
+            "4": "雑音が抑圧される場合のレベル差と反対である。空欄エに当てはまるのは「低い値」である。",
+            "5": "電圧の2倍をdBで表した場合の差としては小さい。空欄エに当てはまるのは「低い値」である。",
+            "6": "測るべき無入力時の雑音までスケルチで遮られ得る設定である。空欄エに当てはまるのは「低い値」である。",
+            "7": "試験用低周波信号を供給するが、受信機出力レベルの調整対象ではない。空欄エに当てはまるのは「低い値」である。",
+            "8": "最初に出力を合わせる際には用いるが、雑音を抑圧する搬送波の測定条件ではない。空欄エに当てはまるのは「低い値」である。",
+            "9": "雑音抑圧感度は基準の雑音出力を指定の20 dBだけ低下させる入力電圧である。",
+            "10": "開放電圧と整合終端電圧の2倍の差を換算したdB値である。空欄エに当てはまるのは「低い値」である。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "同じ内部抵抗と負荷抵抗で終端すると開放端電圧の1/2になる。電圧比2は20 log₁₀2≈6 dBである。",
+          "candidateExplanations": {
+            "1": "スケルチが受信機の雑音出力を遮らないようにする設定である。空欄オに当てはまるのは「6」である。",
+            "2": "定格出力の1/2に合わせる対象の機器である。空欄オに当てはまるのは「6」である。",
+            "3": "復調出力に試験用音声が含まれない搬送波の状態である。空欄オに当てはまるのは「6」である。",
+            "4": "雑音が抑圧される場合のレベル差と反対である。空欄オに当てはまるのは「6」である。",
+            "5": "電圧の2倍をdBで表した場合の差としては小さい。空欄オに当てはまるのは「6」である。",
+            "6": "測るべき無入力時の雑音までスケルチで遮られ得る設定である。空欄オに当てはまるのは「6」である。",
+            "7": "試験用低周波信号を供給するが、受信機出力レベルの調整対象ではない。空欄オに当てはまるのは「6」である。",
+            "8": "最初に出力を合わせる際には用いるが、雑音を抑圧する搬送波の測定条件ではない。空欄オに当てはまるのは「6」である。",
+            "9": "搬送波を入れたことによって復調出力の雑音が下がる方向である。空欄オに当てはまるのは「6」である。",
+            "10": "同じ内部抵抗と負荷抵抗で終端すると開放端電圧の1/2になる。電圧比2は20 log₁₀2≈6 dBである。"
+          }
+        }
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    },
+    "explanation": "無入力の雑音出力が必要なので、スケルチは断にしておく。\n定格出力の半分になるように調整するのは受信機の出力レベルである。\n測定するのは変調による音声信号でなく雑音の減少なので、信号発生器は無変調にする。\n雑音抑圧感度は基準の雑音出力を指定の20 dBだけ低下させる入力電圧である。\n同じ内部抵抗と負荷抵抗で終端すると開放端電圧の1/2になる。電圧比2は20 log₁₀2≈6 dBである。"
+  },
+  {
+    "id": "riku-tech1-2022-july-fa408-kogaku-a-q124",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "july",
+    "qNumber": 124,
+    "type": "native-b",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "妨害波測定器の準尖頭値検波と過負荷係数"
+    ],
+    "difficulty": 3,
+    "question": "妨害波測定器の準尖頭値検波と過負荷係数。公式原問のB-4に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2022-july-fa408-kogaku-a-q124-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A B-4の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220722230446id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf#page=7",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201900id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourcePages": [
+      7
+    ],
+    "officialQuestionLabel": "B-4",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A B-4（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "nativeB": {
+      "mode": "shared-bank",
+      "officialLabel": "B-4",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "通過帯域幅"
+        },
+        {
+          "id": "2",
+          "label": "3"
+        },
+        {
+          "id": "3",
+          "label": "積"
+        },
+        {
+          "id": "4",
+          "label": "充電及び放電時定数"
+        },
+        {
+          "id": "5",
+          "label": "波形"
+        },
+        {
+          "id": "6",
+          "label": "共振周波数及びQ"
+        },
+        {
+          "id": "7",
+          "label": "1"
+        },
+        {
+          "id": "8",
+          "label": "比"
+        },
+        {
+          "id": "9",
+          "label": "繰返し周期"
+        },
+        {
+          "id": "10",
+          "label": "利得"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "パルス雑音のスペクトルは広いため、測定器の通過帯域幅によって信号のうち通る成分が変わる。",
+          "candidateExplanations": {
+            "1": "パルス雑音のスペクトルは広いため、測定器の通過帯域幅によって信号のうち通る成分が変わる。",
+            "2": "図で直線からの偏差として規定する値とは異なる。空欄アに当てはまるのは「通過帯域幅」である。",
+            "3": "同じ単位の入力電圧を掛けると無次元の過負荷係数にはならない。空欄アに当てはまるのは「通過帯域幅」である。",
+            "4": "パルスの間隔によって準尖頭検波の応答を変える検波器の定数である。空欄アに当てはまるのは「通過帯域幅」である。",
+            "5": "フィルタや検波回路の影響で形が変わる出力雑音の性質である。空欄アに当てはまるのは「通過帯域幅」である。",
+            "6": "回路の選択特性に関係するが、設問で直接規定するのは測定器の通過帯域幅である。空欄アに当てはまるのは「通過帯域幅」である。",
+            "7": "図で直線応答からの離れを測る基準のdB値である。空欄アに当てはまるのは「通過帯域幅」である。",
+            "8": "二つの同じ単位の入力電圧を使い無次元の係数にする操作である。空欄アに当てはまるのは「通過帯域幅」である。",
+            "9": "パルス列の時間間隔であり、検波器通過後のパルスの時間波形そのものではない。空欄アに当てはまるのは「通過帯域幅」である。",
+            "10": "増幅の大きさであり、設問が検波後のパルスの形について示す語とは異なる。空欄アに当てはまるのは「通過帯域幅」である。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "5",
+          "explanation": "帯域幅や検波時定数などにより、出力に現れるパルス状雑音の波形が変わって指示値にも影響する。",
+          "candidateExplanations": {
+            "1": "パルス雑音のうちどの周波数成分が通過するかを決める範囲である。空欄イに当てはまるのは「波形」である。",
+            "2": "図で直線からの偏差として規定する値とは異なる。空欄イに当てはまるのは「波形」である。",
+            "3": "同じ単位の入力電圧を掛けると無次元の過負荷係数にはならない。空欄イに当てはまるのは「波形」である。",
+            "4": "パルスの間隔によって準尖頭検波の応答を変える検波器の定数である。空欄イに当てはまるのは「波形」である。",
+            "5": "帯域幅や検波時定数などにより、出力に現れるパルス状雑音の波形が変わって指示値にも影響する。",
+            "6": "回路の選択特性に関係するが、設問で直接規定するのは測定器の通過帯域幅である。空欄イに当てはまるのは「波形」である。",
+            "7": "図で直線応答からの離れを測る基準のdB値である。空欄イに当てはまるのは「波形」である。",
+            "8": "二つの同じ単位の入力電圧を使い無次元の係数にする操作である。空欄イに当てはまるのは「波形」である。",
+            "9": "パルス列の時間間隔であり、検波器通過後のパルスの時間波形そのものではない。空欄イに当てはまるのは「波形」である。",
+            "10": "増幅の大きさであり、設問が検波後のパルスの形について示す語とは異なる。空欄イに当てはまるのは「波形」である。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "4",
+          "explanation": "準尖頭値の直線検波器には、所定の充電及び放電の時定数を与える。それによりパルス頻度に応じた妨害を評価できる。",
+          "candidateExplanations": {
+            "1": "パルス雑音のうちどの周波数成分が通過するかを決める範囲である。空欄ウに当てはまるのは「充電及び放電時定数」である。",
+            "2": "図で直線からの偏差として規定する値とは異なる。空欄ウに当てはまるのは「充電及び放電時定数」である。",
+            "3": "同じ単位の入力電圧を掛けると無次元の過負荷係数にはならない。空欄ウに当てはまるのは「充電及び放電時定数」である。",
+            "4": "準尖頭値の直線検波器には、所定の充電及び放電の時定数を与える。それによりパルス頻度に応じた妨害を評価できる。",
+            "5": "フィルタや検波回路の影響で形が変わる出力雑音の性質である。空欄ウに当てはまるのは「充電及び放電時定数」である。",
+            "6": "回路の選択特性に関係するが、設問で直接規定するのは測定器の通過帯域幅である。空欄ウに当てはまるのは「充電及び放電時定数」である。",
+            "7": "図で直線応答からの離れを測る基準のdB値である。空欄ウに当てはまるのは「充電及び放電時定数」である。",
+            "8": "二つの同じ単位の入力電圧を使い無次元の係数にする操作である。空欄ウに当てはまるのは「充電及び放電時定数」である。",
+            "9": "パルス列の時間間隔であり、検波器通過後のパルスの時間波形そのものではない。空欄ウに当てはまるのは「充電及び放電時定数」である。",
+            "10": "増幅の大きさであり、設問が検波後のパルスの形について示す語とは異なる。空欄ウに当てはまるのは「充電及び放電時定数」である。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "7",
+          "explanation": "過負荷の基準点はパルスを加えたときの検波出力が理想直線から1 dB離れる入力値である。",
+          "candidateExplanations": {
+            "1": "パルス雑音のうちどの周波数成分が通過するかを決める範囲である。空欄エに当てはまるのは「1」である。",
+            "2": "図で直線からの偏差として規定する値とは異なる。空欄エに当てはまるのは「1」である。",
+            "3": "同じ単位の入力電圧を掛けると無次元の過負荷係数にはならない。空欄エに当てはまるのは「1」である。",
+            "4": "パルスの間隔によって準尖頭検波の応答を変える検波器の定数である。空欄エに当てはまるのは「1」である。",
+            "5": "フィルタや検波回路の影響で形が変わる出力雑音の性質である。空欄エに当てはまるのは「1」である。",
+            "6": "回路の選択特性に関係するが、設問で直接規定するのは測定器の通過帯域幅である。空欄エに当てはまるのは「1」である。",
+            "7": "過負荷の基準点はパルスを加えたときの検波出力が理想直線から1 dB離れる入力値である。",
+            "8": "二つの同じ単位の入力電圧を使い無次元の係数にする操作である。空欄エに当てはまるのは「1」である。",
+            "9": "パルス列の時間間隔であり、検波器通過後のパルスの時間波形そのものではない。空欄エに当てはまるのは「1」である。",
+            "10": "増幅の大きさであり、設問が検波後のパルスの形について示す語とは異なる。空欄エに当てはまるのは「1」である。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "8",
+          "explanation": "過負荷の基準となる入力電圧を、指示計が最大目盛に達する入力電圧で割って比を求める。",
+          "candidateExplanations": {
+            "1": "パルス雑音のうちどの周波数成分が通過するかを決める範囲である。空欄オに当てはまるのは「比」である。",
+            "2": "図で直線からの偏差として規定する値とは異なる。空欄オに当てはまるのは「比」である。",
+            "3": "同じ単位の入力電圧を掛けると無次元の過負荷係数にはならない。空欄オに当てはまるのは「比」である。",
+            "4": "パルスの間隔によって準尖頭検波の応答を変える検波器の定数である。空欄オに当てはまるのは「比」である。",
+            "5": "フィルタや検波回路の影響で形が変わる出力雑音の性質である。空欄オに当てはまるのは「比」である。",
+            "6": "回路の選択特性に関係するが、設問で直接規定するのは測定器の通過帯域幅である。空欄オに当てはまるのは「比」である。",
+            "7": "図で直線応答からの離れを測る基準のdB値である。空欄オに当てはまるのは「比」である。",
+            "8": "過負荷の基準となる入力電圧を、指示計が最大目盛に達する入力電圧で割って比を求める。",
+            "9": "パルス列の時間間隔であり、検波器通過後のパルスの時間波形そのものではない。空欄オに当てはまるのは「比」である。",
+            "10": "増幅の大きさであり、設問が検波後のパルスの形について示す語とは異なる。空欄オに当てはまるのは「比」である。"
+          }
+        }
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    },
+    "explanation": "パルス雑音のスペクトルは広いため、測定器の通過帯域幅によって信号のうち通る成分が変わる。\n帯域幅や検波時定数などにより、出力に現れるパルス状雑音の波形が変わって指示値にも影響する。\n準尖頭値の直線検波器には、所定の充電及び放電の時定数を与える。それによりパルス頻度に応じた妨害を評価できる。\n過負荷の基準点はパルスを加えたときの検波出力が理想直線から1 dB離れる入力値である。\n過負荷の基準となる入力電圧を、指示計が最大目盛に達する入力電圧で割って比を求める。"
+  },
+  {
+    "id": "riku-tech1-2022-july-fa408-kogaku-a-q125",
+    "exam": "riku-tech1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "july",
+    "qNumber": 125,
+    "type": "native-b",
+    "category": "無線工学A",
+    "subject": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "FMステレオの主・副チャネルとパイロット信号"
+    ],
+    "difficulty": 3,
+    "question": "FMステレオの主・副チャネルとパイロット信号。公式原問のB-5に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2022-july-fa408-kogaku-a-q125-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A B-5の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220722230446id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a.pdf#page=7",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201900id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-a-kaito.pdf",
+    "sourcePages": [
+      7
+    ],
+    "officialQuestionLabel": "B-5",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2022年7月期 FA408 無線工学A B-5（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "nativeB": {
+      "mode": "shared-bank",
+      "officialLabel": "B-5",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "振幅変調"
+        },
+        {
+          "id": "2",
+          "label": "多重信号"
+        },
+        {
+          "id": "3",
+          "label": "右側信号（R）"
+        },
+        {
+          "id": "4",
+          "label": "乗算・除算により"
+        },
+        {
+          "id": "5",
+          "label": "副チャネル信号"
+        },
+        {
+          "id": "6",
+          "label": "周波数変調"
+        },
+        {
+          "id": "7",
+          "label": "パイロット信号"
+        },
+        {
+          "id": "8",
+          "label": "主チャネル信号"
+        },
+        {
+          "id": "9",
+          "label": "加算・減算により"
+        },
+        {
+          "id": "10",
+          "label": "左側信号（L）"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "差信号L−Rで38 kHzの副搬送波を抑圧搬送波振幅変調し、残る側波帯を副チャネルとして使う。",
+          "candidateExplanations": {
+            "1": "差信号L−Rで38 kHzの副搬送波を抑圧搬送波振幅変調し、残る側波帯を副チャネルとして使う。",
+            "2": "複数の信号を合わせた全体を示し、副搬送波再生用の単一信号とは異なる。空欄アに当てはまるのは「振幅変調」である。",
+            "3": "復調後に左右分離で得る一方の音声である。空欄アに当てはまるのは「振幅変調」である。",
+            "4": "和と差から左右を求めるための直接の演算ではない。空欄アに当てはまるのは「振幅変調」である。",
+            "5": "差信号で変調した副搬送波の側波帯であり、モノラルの音声帯域外にある。空欄アに当てはまるのは「振幅変調」である。",
+            "6": "ステレオ複合信号を放送するRF段で用いるが、副搬送波に差信号を載せる変調とは異なる。空欄アに当てはまるのは「振幅変調」である。",
+            "7": "副搬送波の同期再生などに使う19 kHzの信号である。空欄アに当てはまるのは「振幅変調」である。",
+            "8": "モノラル機でも受信する和信号である。空欄アに当てはまるのは「振幅変調」である。",
+            "9": "和信号と差信号を組み合わせて左右を分離する演算である。空欄アに当てはまるのは「振幅変調」である。",
+            "10": "復調後に左右分離で得るもう一方の音声である。空欄アに当てはまるのは「振幅変調」である。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "7",
+          "explanation": "19 kHzのパイロット信号はステレオの識別に用いられ、倍周波の副搬送波を復元する基準にもなる。",
+          "candidateExplanations": {
+            "1": "副搬送波の振幅を差信号に従って変える変調である。空欄イに当てはまるのは「パイロット信号」である。",
+            "2": "複数の信号を合わせた全体を示し、副搬送波再生用の単一信号とは異なる。空欄イに当てはまるのは「パイロット信号」である。",
+            "3": "復調後に左右分離で得る一方の音声である。空欄イに当てはまるのは「パイロット信号」である。",
+            "4": "和と差から左右を求めるための直接の演算ではない。空欄イに当てはまるのは「パイロット信号」である。",
+            "5": "差信号で変調した副搬送波の側波帯であり、モノラルの音声帯域外にある。空欄イに当てはまるのは「パイロット信号」である。",
+            "6": "ステレオ複合信号を放送するRF段で用いるが、副搬送波に差信号を載せる変調とは異なる。空欄イに当てはまるのは「パイロット信号」である。",
+            "7": "19 kHzのパイロット信号はステレオの識別に用いられ、倍周波の副搬送波を復元する基準にもなる。",
+            "8": "モノラル機でも受信する和信号である。空欄イに当てはまるのは「パイロット信号」である。",
+            "9": "和信号と差信号を組み合わせて左右を分離する演算である。空欄イに当てはまるのは「パイロット信号」である。",
+            "10": "復調後に左右分離で得るもう一方の音声である。空欄イに当てはまるのは「パイロット信号」である。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "9",
+          "explanation": "和に差を加えると2Lとなり、差を引くと2Rになる。この加算と減算で音声を分離する。",
+          "candidateExplanations": {
+            "1": "副搬送波の振幅を差信号に従って変える変調である。空欄ウに当てはまるのは「加算・減算により」である。",
+            "2": "複数の信号を合わせた全体を示し、副搬送波再生用の単一信号とは異なる。空欄ウに当てはまるのは「加算・減算により」である。",
+            "3": "復調後に左右分離で得る一方の音声である。空欄ウに当てはまるのは「加算・減算により」である。",
+            "4": "和と差から左右を求めるための直接の演算ではない。空欄ウに当てはまるのは「加算・減算により」である。",
+            "5": "差信号で変調した副搬送波の側波帯であり、モノラルの音声帯域外にある。空欄ウに当てはまるのは「加算・減算により」である。",
+            "6": "ステレオ複合信号を放送するRF段で用いるが、副搬送波に差信号を載せる変調とは異なる。空欄ウに当てはまるのは「加算・減算により」である。",
+            "7": "副搬送波の同期再生などに使う19 kHzの信号である。空欄ウに当てはまるのは「加算・減算により」である。",
+            "8": "モノラル機でも受信する和信号である。空欄ウに当てはまるのは「加算・減算により」である。",
+            "9": "和に差を加えると2Lとなり、差を引くと2Rになる。この加算と減算で音声を分離する。",
+            "10": "復調後に左右分離で得るもう一方の音声である。空欄ウに当てはまるのは「加算・減算により」である。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "5",
+          "explanation": "モノラル機器は音声帯域のみを通すため、より高い周波数にある副チャネル信号を取り除く。",
+          "candidateExplanations": {
+            "1": "副搬送波の振幅を差信号に従って変える変調である。空欄エに当てはまるのは「副チャネル信号」である。",
+            "2": "複数の信号を合わせた全体を示し、副搬送波再生用の単一信号とは異なる。空欄エに当てはまるのは「副チャネル信号」である。",
+            "3": "復調後に左右分離で得る一方の音声である。空欄エに当てはまるのは「副チャネル信号」である。",
+            "4": "和と差から左右を求めるための直接の演算ではない。空欄エに当てはまるのは「副チャネル信号」である。",
+            "5": "モノラル機器は音声帯域のみを通すため、より高い周波数にある副チャネル信号を取り除く。",
+            "6": "ステレオ複合信号を放送するRF段で用いるが、副搬送波に差信号を載せる変調とは異なる。空欄エに当てはまるのは「副チャネル信号」である。",
+            "7": "副搬送波の同期再生などに使う19 kHzの信号である。空欄エに当てはまるのは「副チャネル信号」である。",
+            "8": "モノラル機でも受信する和信号である。空欄エに当てはまるのは「副チャネル信号」である。",
+            "9": "和信号と差信号を組み合わせて左右を分離する演算である。空欄エに当てはまるのは「副チャネル信号」である。",
+            "10": "復調後に左右分離で得るもう一方の音声である。空欄エに当てはまるのは「副チャネル信号」である。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "8",
+          "explanation": "音声帯域には主チャネルである和信号L+Rがあり、これがモノラル音声として受信される。",
+          "candidateExplanations": {
+            "1": "副搬送波の振幅を差信号に従って変える変調である。空欄オに当てはまるのは「主チャネル信号」である。",
+            "2": "複数の信号を合わせた全体を示し、副搬送波再生用の単一信号とは異なる。空欄オに当てはまるのは「主チャネル信号」である。",
+            "3": "復調後に左右分離で得る一方の音声である。空欄オに当てはまるのは「主チャネル信号」である。",
+            "4": "和と差から左右を求めるための直接の演算ではない。空欄オに当てはまるのは「主チャネル信号」である。",
+            "5": "差信号で変調した副搬送波の側波帯であり、モノラルの音声帯域外にある。空欄オに当てはまるのは「主チャネル信号」である。",
+            "6": "ステレオ複合信号を放送するRF段で用いるが、副搬送波に差信号を載せる変調とは異なる。空欄オに当てはまるのは「主チャネル信号」である。",
+            "7": "副搬送波の同期再生などに使う19 kHzの信号である。空欄オに当てはまるのは「主チャネル信号」である。",
+            "8": "音声帯域には主チャネルである和信号L+Rがあり、これがモノラル音声として受信される。",
+            "9": "和信号と差信号を組み合わせて左右を分離する演算である。空欄オに当てはまるのは「主チャネル信号」である。",
+            "10": "復調後に左右分離で得るもう一方の音声である。空欄オに当てはまるのは「主チャネル信号」である。"
+          }
+        }
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    },
+    "explanation": "差信号L−Rで38 kHzの副搬送波を抑圧搬送波振幅変調し、残る側波帯を副チャネルとして使う。\n19 kHzのパイロット信号はステレオの識別に用いられ、倍周波の副搬送波を復元する基準にもなる。\n和に差を加えると2Lとなり、差を引くと2Rになる。この加算と減算で音声を分離する。\nモノラル機器は音声帯域のみを通すため、より高い周波数にある副チャネル信号を取り除く。\n音声帯域には主チャネルである和信号L+Rがあり、これがモノラル音声として受信される。"
+  }
+]
