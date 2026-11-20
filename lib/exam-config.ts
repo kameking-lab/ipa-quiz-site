@@ -1120,6 +1120,7 @@ kangoshi: {
         { session: "kogai-dioxin-basics", urlSlug: "kogai-dioxin-basics", expectedQuestions: 15, label: "ダイオキシン類概論", categories: ["ダイオキシン類概論"] },
         { session: "kogai-dioxin-technology", urlSlug: "kogai-dioxin-technology", expectedQuestions: 25, label: "ダイオキシン類特論", categories: ["ダイオキシン類特論"] },
         { session: "kogai-air-water-basics", urlSlug: "kogai-air-water-basics", expectedQuestions: 10, label: "大気・水質概論", categories: ["大気・水質概論"] },
+        { session: "kogai-air-water-air-technology", urlSlug: "kogai-air-water-air-technology", expectedQuestions: 20, label: "大気関係技術特論", categories: ["大気関係技術特論"] },
     ],
     seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
 },
