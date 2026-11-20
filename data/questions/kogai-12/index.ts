@@ -22,5 +22,6 @@ import airBasics2024 from "./2024-kogai-air-basics.json";
 import airTechnology2024 from "./2024-kogai-air-technology.json";
 import dust2024 from "./2024-kogai-dust.json";
 import airHazardous2024 from "./2024-kogai-air-hazardous.json";
+import largeAir2024 from "./2024-kogai-large-air.json";
 
-export const KOGAI_QUESTIONS: Question[] = [...general2025, ...airBasics2025, ...airTechnology2025, ...dust2025, ...airHazardous2025, ...largeAir2025, ...waterBasics2025, ...wastewater2025, ...waterHazardous2025, ...largeWater2025, ...noiseVibration2025, ...noiseTechnology2025, ...generalDust2025, ...dioxinBasics2025, ...dioxinTechnology2025, ...airWaterBasics2025, ...airWaterAirTechnology2025, ...airWaterWaterTechnology2025, ...general2024, ...airBasics2024, ...airTechnology2024, ...dust2024, ...airHazardous2024] as Question[];
+export const KOGAI_QUESTIONS: Question[] = [...general2025, ...airBasics2025, ...airTechnology2025, ...dust2025, ...airHazardous2025, ...largeAir2025, ...waterBasics2025, ...wastewater2025, ...waterHazardous2025, ...largeWater2025, ...noiseVibration2025, ...noiseTechnology2025, ...generalDust2025, ...dioxinBasics2025, ...dioxinTechnology2025, ...airWaterBasics2025, ...airWaterAirTechnology2025, ...airWaterWaterTechnology2025, ...general2024, ...airBasics2024, ...airTechnology2024, ...dust2024, ...airHazardous2024, ...largeAir2024] as Question[];
