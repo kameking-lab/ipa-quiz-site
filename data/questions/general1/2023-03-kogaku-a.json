@@ -1,0 +1,1653 @@
+[
+  {
+    "id": "radio21-general1-2023-03-kogaku-a-q01",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2023,
+    "season": "march",
+    "qNumber": 1,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "エンファシス"
+    ],
+    "difficulty": 3,
+    "question": "FM送受信機のエンファシスに関するＡ、Ｂ、Ｃの組合せを選ぶ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610212304id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610212236id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2023年3月期 無線工学A A-1（問題・正答、試験問題記号 503）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2023-03-kogaku-a-q01-p01.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2023年3月期 A-1 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "小さく／高域／周波数特性",
+      "イ": "小さく／低域／信号対雑音比",
+      "ウ": "大きく／低域／信号対雑音比",
+      "エ": "大きく／低域／周波数特性",
+      "オ": "大きく／高域／信号対雑音比"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "復調で高域ほど雑音振幅が大きくなるため、受信側で高域を減衰させ、送信側の逆特性と合わせて信号対雑音比を改善する。",
+    "choiceExplanations": {
+      "ア": "FM復調後の雑音は一般に高域でより大きくなるため、「小さく」は合わない。",
+      "イ": "改善するのは信号対雑音比だが、復調後に大きくなる雑音成分は高域である。",
+      "ウ": "復調後の雑音が周波数とともに大きくなる点は合うが、ディエンファシスで低減するのは高域である。",
+      "エ": "送受合成の周波数特性を保ちながら改善する量は信号対雑音比であり、受信側では高域の雑音を抑える。",
+      "オ": "復調で高域ほど雑音振幅が大きくなるため、受信側で高域を減衰させ、送信側の逆特性と合わせて信号対雑音比を改善する。"
+    }
+  },
+  {
+    "id": "radio21-general1-2023-03-kogaku-a-q02",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2023,
+    "season": "march",
+    "qNumber": 2,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "振幅変調の電力"
+    ],
+    "difficulty": 3,
+    "question": "搬送波電力1 kW、正弦波変調度40％、終段効率80％のAM送信機の出力と電力損失を求める。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610212304id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610212236id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2023年3月期 無線工学A A-2（問題・正答、試験問題記号 503）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2023-03-kogaku-a-q02-p01.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2023年3月期 A-2 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1.30 kW／325 W",
+      "イ": "1.30 kW／260 W",
+      "ウ": "1.18 kW／295 W",
+      "エ": "1.18 kW／236 W",
+      "オ": "1.08 kW／270 W"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "出力は1000×(1＋2×0.2²)＝1080 Wであり、入力1350 Wから出力を引くと損失270 Wとなる。",
+    "choiceExplanations": {
+      "ア": "この組の損失は出力の４分の１として計算しているが、変調度0.4で加わる側帯波電力は合計80 Wである。",
+      "イ": "1.30 kWは大き過ぎ、失われる20％の基準になるのは出力ではなく増幅器の入力電力である。",
+      "ウ": "295 Wは1.18 kWに対応する損失だが、片側帯波は搬送波電力の0.2²倍なので正しい出力は1.08 kWである。",
+      "エ": "両側帯波電力の合計は80 Wなので、1.18 kWにもその20％の236 Wにもならない。",
+      "オ": "出力は1000×(1＋2×0.2²)＝1080 Wであり、入力1350 Wから出力を引くと損失270 Wとなる。"
+    }
+  },
+  {
+    "id": "radio21-general1-2023-03-kogaku-a-q03",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2023,
+    "season": "march",
+    "qNumber": 3,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "FMの占有帯域"
+    ],
+    "difficulty": 3,
+    "question": "変調信号6 kHz、変調指数5/3のFM波の占有周波数帯幅の近似値を求める。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610212304id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610212236id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2023年3月期 無線工学A A-3（問題・正答、試験問題記号 503）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2023-03-kogaku-a-q03-p01.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2023年3月期 A-3 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "32 kHz",
+      "イ": "16 kHz",
+      "ウ": "8.5 kHz",
+      "エ": "5 kHz",
+      "オ": "3 kHz"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "最大周波数偏移が10 kHzとなり、カーソンの近似式2×(10＋6)から32 kHzとなる。",
+    "choiceExplanations": {
+      "ア": "最大周波数偏移が10 kHzとなり、カーソンの近似式2×(10＋6)から32 kHzとなる。",
+      "イ": "16 kHzは最大偏移と変調周波数を足した値であり、両側に広がる帯域を得るには２倍する。",
+      "ウ": "変調周波数6 kHzに変調指数を掛けると偏移だけでも10 kHzとなり、占有帯域が8.5 kHzにはならない。",
+      "エ": "5 kHzでは最大周波数偏移10 kHzすら含められず、両側の側帯波の広がりも考慮していない。",
+      "オ": "3 kHzは変調信号周波数の半分だが、占有帯域は最大偏移と変調周波数を用いて両側を含める。"
+    }
+  },
+  {
+    "id": "radio21-general1-2023-03-kogaku-a-q04",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2023,
+    "season": "march",
+    "qNumber": 4,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "BPSKリング変調"
+    ],
+    "difficulty": 3,
+    "question": "図のBPSK変調回路で、s＝1とs＝0の順に出力を選ぶ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610212304id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610212236id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2023年3月期 無線工学A A-4（問題・正答、試験問題記号 503）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2023-03-kogaku-a-q04-p01.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2023年3月期 A-4 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "−Acos(3ωt)／Acos(3ωt)",
+      "イ": "−Acos(2ωt)／Acos(2ωt)",
+      "ウ": "Acos(ωt)／−Acos(ωt)",
+      "エ": "Acos(2ωt)／−Acos(2ωt)",
+      "オ": "−Acos(ωt)／Acos(ωt)"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "図の極性ではs＝1で搬送波と同相、s＝0で逆相となり、振幅と周波数は変わらない。",
+    "choiceExplanations": {
+      "ア": "BPSKは搬送波の位相を切り替えるので、信号の周波数が３倍になるという式は合わない。",
+      "イ": "二値入力で逆位相の波形が出るが、出力の搬送波周波数はωのままで２ωにはならない。",
+      "ウ": "図の極性ではs＝1で搬送波と同相、s＝0で逆相となり、振幅と周波数は変わらない。",
+      "エ": "極性が反転する関係は合うが、スイッチするのは位相であり角周波数を２倍にしない。",
+      "オ": "搬送波の周波数は合うが、図の変成器の極性に対するs＝1とs＝0の位相を逆にしている。"
+    }
+  },
+  {
+    "id": "radio21-general1-2023-03-kogaku-a-q05",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2023,
+    "season": "march",
+    "qNumber": 5,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "抵抗の熱雑音"
+    ],
+    "difficulty": 3,
+    "question": "抵抗Rから取り出せる有能熱雑音電力がPₐのとき、同温度で２Rから得られる有能熱雑音電力を選ぶ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610212304id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610212236id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2023年3月期 無線工学A A-5（問題・正答、試験問題記号 503）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2023-03-kogaku-a-q05-p01.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2023年3月期 A-5 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "Pₐ",
+      "イ": "2Pₐ",
+      "ウ": "Pₐ/2",
+      "エ": "Pₐ/3",
+      "オ": "2Pₐ/3"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "負荷が整合しているときの有能雑音電力は同温度・同じ帯域幅なら抵抗値によらず、kTBである。",
+    "choiceExplanations": {
+      "ア": "負荷が整合しているときの有能雑音電力は同温度・同じ帯域幅なら抵抗値によらず、kTBである。",
+      "イ": "抵抗を２倍にすると開放端の雑音電圧の二乗は増えるが、整合負荷の抵抗も２倍になるため電力は増えない。",
+      "ウ": "抵抗の増加だけを考えて半減とするのは、抵抗増加に伴う雑音電圧の増加を考慮していない。",
+      "エ": "熱雑音電力を抵抗の比で割る関係にはならず、３分の１とする根拠はない。",
+      "オ": "温度と帯域幅を固定して整合させるので、抵抗値の変更で有能熱雑音電力が３分の２にはならない。"
+    }
+  },
+  {
+    "id": "radio21-general1-2023-03-kogaku-a-q06",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2023,
+    "season": "march",
+    "qNumber": 6,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "QPSK同期検波"
+    ],
+    "difficulty": 3,
+    "question": "QPSK復調器の出力１が正になる位相Ａと、出力２が負になる位相Ｂを選ぶ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610212304id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610212236id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2023年3月期 無線工学A A-6（問題・正答、試験問題記号 503）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2023-03-kogaku-a-q06-p02.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2023年3月期 A-6 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "7π/4／7π/4",
+      "イ": "5π/4／π/4",
+      "ウ": "5π/4／3π/4",
+      "エ": "3π/4／π/4",
+      "オ": "3π/4／7π/4"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "低域通過後の出力１はcosθ、出力２はsinθに比例し、7π/4ではそれぞれ正と負になる。",
+    "choiceExplanations": {
+      "ア": "低域通過後の出力１はcosθ、出力２はsinθに比例し、7π/4ではそれぞれ正と負になる。",
+      "イ": "5π/4ではcosθが負で、π/4ではsinθが正なので、両方とも必要な符号に合わない。",
+      "ウ": "5π/4は出力１のcosθが負であり、3π/4の出力２のsinθも要求と逆になる。",
+      "エ": "3π/4はcosθが負、π/4はsinθが正なので、条件をともに満たさない。",
+      "オ": "7π/4で出力２は負になるが、3π/4で出力１のcosθは負になる。"
+    }
+  },
+  {
+    "id": "radio21-general1-2023-03-kogaku-a-q07",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2023,
+    "season": "march",
+    "qNumber": 7,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "スーパヘテロダイン受信機"
+    ],
+    "difficulty": 3,
+    "question": "受信機の感度、選択度、自動利得調整に関する組合せを選ぶ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610212304id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610212236id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2023年3月期 無線工学A A-7（問題・正答、試験問題記号 503）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2023-03-kogaku-a-q07-p02.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2023年3月期 A-7 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "低周波増幅器／近接周波数／受信周波数",
+      "イ": "低周波増幅器／影像周波数／受信強度",
+      "ウ": "中間周波増幅器／近接周波数／受信強度",
+      "エ": "中間周波増幅器／影像周波数／受信周波数",
+      "オ": "中間周波増幅器／影像周波数／受信強度"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "中間周波増幅器で大きな利得を得て近接周波数を選別し、受信強度の変動にAGCが対応する。",
+    "choiceExplanations": {
+      "ア": "近接周波数に対する選択は合うが、高利得を得るのは中間周波段であり、AGCは受信強度の変化を補償する。",
+      "イ": "AGCで補償するのは受信強度だが、低周波増幅器より前の中間周波段に選択度を担うフィルタがある。",
+      "ウ": "中間周波増幅器で大きな利得を得て近接周波数を選別し、受信強度の変動にAGCが対応する。",
+      "エ": "中間周波増幅器は合うが、影像の抑制は変換前の選択が重要であり、AGCは周波数を補償しない。",
+      "オ": "中間周波段のフィルタは近接周波数との選別に寄与し、変換後に同じ周波数になる影像とは区別する。"
+    }
+  },
+  {
+    "id": "radio21-general1-2023-03-kogaku-a-q08",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2023,
+    "season": "march",
+    "qNumber": 8,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "SSBリング復調"
+    ],
+    "difficulty": 3,
+    "question": "455 kHz入力から1.5 kHzと908.5 kHzの成分を得たリング復調器の基準搬送波を求める。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610212304id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610212236id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2023年3月期 無線工学A A-8（問題・正答、試験問題記号 503）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2023-03-kogaku-a-q08-p02.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2023年3月期 A-8 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "456.5 kHz",
+      "イ": "455.5 kHz",
+      "ウ": "454.5 kHz",
+      "エ": "453.5 kHz",
+      "オ": "452.5 kHz"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "455＋453.5＝908.5 kHzであり、周波数差も1.5 kHzになる。",
+    "choiceExplanations": {
+      "ア": "456.5 kHzも差は1.5 kHzだが、和は911.5 kHzとなり、もう一方の成分と一致しない。",
+      "イ": "455.5 kHzでは差が0.5 kHz、和が910.5 kHzとなるため、両方の条件が合わない。",
+      "ウ": "454.5 kHzと入力455 kHzの差は0.5 kHzであり、音声成分が1.5 kHzにならない。",
+      "エ": "455＋453.5＝908.5 kHzであり、周波数差も1.5 kHzになる。",
+      "オ": "452.5 kHzでは入力との周波数差が2.5 kHzとなり、必要な1.5 kHzを超える。"
+    }
+  },
+  {
+    "id": "radio21-general1-2023-03-kogaku-a-q09",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2023,
+    "season": "march",
+    "qNumber": 9,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "安定化電源"
+    ],
+    "difficulty": 3,
+    "question": "スイッチング・レギュレータの説明から誤っているものを選ぶ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610212304id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610212236id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2023年3月期 無線工学A A-9（問題・正答、試験問題記号 503）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2023-03-kogaku-a-q09-p02.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2023年3月期 A-9 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "線形制御方式より損失が小さい。",
+      "イ": "線形制御方式より雑音が発生しにくい。",
+      "ウ": "直流―直流方式には平滑回路が必要である。",
+      "エ": "チョッパ方式とインバータ方式がある。",
+      "オ": "線形制御方式より小形・軽量化を図れる。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "切替えに伴う急な電圧・電流変化は高周波の雑音を生じ得るため、線形方式より雑音が発生しにくいとはいえない。",
+    "choiceExplanations": {
+      "ア": "スイッチ素子を主に導通か遮断で動かすと、線形制御で電圧差を素子に負担させるより損失を抑えやすい。",
+      "イ": "切替えに伴う急な電圧・電流変化は高周波の雑音を生じ得るため、線形方式より雑音が発生しにくいとはいえない。",
+      "ウ": "断続する波形から安定した直流を得るには、インダクタやコンデンサなどで平滑する。",
+      "エ": "スイッチで直流を断続するチョッパ方式や、交流へ変換してから安定した電力を取り出すインバータ方式がある。",
+      "オ": "高い周波数でスイッチングできるので、変成器や平滑部品を小形化しやすい。"
+    }
+  },
+  {
+    "id": "radio21-general1-2023-03-kogaku-a-q10",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2023,
+    "season": "march",
+    "qNumber": 10,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "ベクトルネットワーク測定"
+    ],
+    "difficulty": 3,
+    "question": "ベクトルネットワーク・アナライザで両方を測定できる組を選ぶ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610212304id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610212236id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2023年3月期 無線工学A A-10（問題・正答、試験問題記号 503）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2023-03-kogaku-a-q10-p02.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2023年3月期 A-10 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "アンテナのインピーダンス／矩形波のデューティ比",
+      "イ": "ケーブルの電気長／アンテナのインピーダンス",
+      "ウ": "ケーブルの電気長／矩形波のデューティ比",
+      "エ": "単一正弦波の周波数／フィルタの位相特性",
+      "オ": "単一正弦波の周波数／ケーブルの電気長"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "複素Ｓパラメータの位相などからケーブルの電気長を、反射係数からアンテナのインピーダンスを求められる。",
+    "choiceExplanations": {
+      "ア": "インピーダンスは反射係数から求まるが、デューティ比は時間波形を測定して求める量である。",
+      "イ": "複素Ｓパラメータの位相などからケーブルの電気長を、反射係数からアンテナのインピーダンスを求められる。",
+      "ウ": "ケーブルの電気長は測れるが、周期に対する矩形波のオン時間の割合は通常オシロスコープで調べる。",
+      "エ": "フィルタの位相特性は測れるが、外部の単一正弦波の周波数を調べるには周波数計などを用いる。",
+      "オ": "ケーブルの電気長は測れるが、任意の信号源の周波数を数える目的には周波数計を使う。"
+    }
+  },
+  {
+    "id": "radio21-general1-2023-03-kogaku-a-q11",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2023,
+    "season": "march",
+    "qNumber": 11,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "計数形周波数計"
+    ],
+    "difficulty": 3,
+    "question": "周波数計におけるパルスの通過箇所、周波数の式、±１カウント誤差を生む条件を選ぶ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610212304id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610212236id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2023年3月期 無線工学A A-11（問題・正答、試験問題記号 503）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2023-03-kogaku-a-q11-p03.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2023年3月期 A-11 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "トリガ回路／N×T／同期している",
+      "イ": "トリガ回路／N/T／同期していない",
+      "ウ": "ゲート回路／N/T／同期している",
+      "エ": "ゲート回路／N/T／同期していない",
+      "オ": "ゲート回路／N×T／同期していない"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "ゲート回路を通過したN個をゲート時間Tで割り、境界と入力が非同期なので端のパルスの数え方に最大１個程度の差が出る。",
+    "choiceExplanations": {
+      "ア": "一定の測定時間を作るのはゲート回路であり、周波数はパルス数に時間を掛けるのではなく時間で割る。",
+      "イ": "式と誤差の条件は合うが、パルス数を制限するのはゲート回路であってトリガ回路ではない。",
+      "ウ": "通過箇所と式は合うが、±１カウント誤差は入力パルス列とゲートの時間境界が非同期の場合に生じる。",
+      "エ": "ゲート回路を通過したN個をゲート時間Tで割り、境界と入力が非同期なので端のパルスの数え方に最大１個程度の差が出る。",
+      "オ": "ゲート回路と非同期は合うが、毎秒当たりの回数はN×TではなくN/Tである。"
+    }
+  },
+  {
+    "id": "radio21-general1-2023-03-kogaku-a-q12",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2023,
+    "season": "march",
+    "qNumber": 12,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "無停電電源"
+    ],
+    "difficulty": 3,
+    "question": "図のUPSで、負荷へのバイパス、蓄電池、エンジン発電機から供給される電力の種類を選ぶ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610212304id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610212236id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2023年3月期 無線工学A A-12（問題・正答、試験問題記号 503）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2023-03-kogaku-a-q12-p03.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2023年3月期 A-12 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "交流／交流／直流",
+      "イ": "交流／直流／直流",
+      "ウ": "交流／直流／交流",
+      "エ": "直流／交流／直流",
+      "オ": "直流／直流／交流"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "バイパスは交流をそのまま負荷へ送り、蓄電池は直流をインバータへ送り、発電機は交流入力を補う。",
+    "choiceExplanations": {
+      "ア": "バイパスの出力は交流だが、蓄電池は直流を供給し、発電機からの入力は交流である。",
+      "イ": "蓄電池の直流は合うが、図では発電機出力を商用の代わりに交流入力へ接続する。",
+      "ウ": "バイパスは交流をそのまま負荷へ送り、蓄電池は直流をインバータへ送り、発電機は交流入力を補う。",
+      "エ": "バイパス経路は整流器を通さず、蓄電池から出るのも交流ではなく直流である。",
+      "オ": "蓄電池と発電機の種類は合うが、負荷へのバイパスでは交流を供給する。"
+    }
+  },
+  {
+    "id": "radio21-general1-2023-03-kogaku-a-q13",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2023,
+    "season": "march",
+    "qNumber": 13,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "衛星回線の合成雑音"
+    ],
+    "difficulty": 3,
+    "question": "４種類の雑音電力に対する総合C/Nの式と、各C/Nが100の場合の真数を選ぶ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610212304id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610212236id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2023年3月期 無線工学A A-13（問題・正答、試験問題記号 503）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2023-03-kogaku-a-q13-p03.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2023年3月期 A-13 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1/(N₁/C＋N₂/C＋N₃/C＋N₄/C)／20",
+      "イ": "1/(N₁/C＋N₂/C＋N₃/C＋N₄/C)／25",
+      "ウ": "1/(N₁/C＋N₂/C＋N₃/C＋N₄/C)／14",
+      "エ": "1/(C/N₁＋C/N₂＋C/N₃＋C/N₄)／25",
+      "オ": "1/(C/N₁＋C/N₂＋C/N₃＋C/N₄)／20"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "雑音対搬送波電力比の和は４×0.01＝0.04なので、総合C/Nはその逆数の25である。",
+    "choiceExplanations": {
+      "ア": "雑音電力を足してから逆数を取る式は正しいが、同じ比100を４つ合わせると25になる。",
+      "イ": "雑音対搬送波電力比の和は４×0.01＝0.04なので、総合C/Nはその逆数の25である。",
+      "ウ": "式は合うが、雑音が４成分なので比100の４分の１になり、14ではない。",
+      "エ": "数値25は合うものの、足すのはC/Nではなく成分ごとのN/Cである。",
+      "オ": "分母には各雑音電力を搬送波電力で割った量を並べ、条件の値は100÷4になる。"
+    }
+  },
+  {
+    "id": "radio21-general1-2023-03-kogaku-a-q14",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2023,
+    "season": "march",
+    "qNumber": 14,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "パルスの距離分解能"
+    ],
+    "difficulty": 3,
+    "question": "送信パルス幅1.0 μsのレーダーの距離分解能を求める。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610212304id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610212236id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2023年3月期 無線工学A A-14（問題・正答、試験問題記号 503）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2023-03-kogaku-a-q14-p03.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2023年3月期 A-14 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "90 m",
+      "イ": "120 m",
+      "ウ": "150 m",
+      "エ": "180 m",
+      "オ": "210 m"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "往復時間差がパルス幅に等しい距離差はcτ/2となり、3×10⁸×10⁻⁶÷2＝150 mである。",
+    "choiceExplanations": {
+      "ア": "90 mの距離差に対する往復伝搬時間の差は約0.6 μsで、送信パルス幅より短い。",
+      "イ": "120 mの距離差は往復時間差0.8 μsに当たり、1.0 μsのパルスを分離するには足りない。",
+      "ウ": "往復時間差がパルス幅に等しい距離差はcτ/2となり、3×10⁸×10⁻⁶÷2＝150 mである。",
+      "エ": "180 mなら往復時間差1.2 μsとなり分離できるが、最小の距離差ではない。",
+      "オ": "210 mは約1.4 μsの往復時間差に当たり、設問の最小の距離差より大きい。"
+    }
+  },
+  {
+    "id": "radio21-general1-2023-03-kogaku-a-q15",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2023,
+    "season": "march",
+    "qNumber": 15,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "アイパターン"
+    ],
+    "difficulty": 3,
+    "question": "アイパターンの縦・横の開きと符号誤り率の関係を選ぶ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610212304id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610212236id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2023年3月期 無線工学A A-15（問題・正答、試験問題記号 503）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2023-03-kogaku-a-q15-p04.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2023年3月期 A-15 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "雑音／クロック／大きく",
+      "イ": "雑音／ドット／大きく",
+      "ウ": "雑音／ドット／小さく",
+      "エ": "信号／ドット／小さく",
+      "オ": "信号／クロック／小さく"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "縦の開きは雑音の振幅に対する余裕、横の開きはクロックの揺らぎに対する余裕であり、開きが狭まると誤りやすくなる。",
+    "choiceExplanations": {
+      "ア": "縦の開きは雑音の振幅に対する余裕、横の開きはクロックの揺らぎに対する余裕であり、開きが狭まると誤りやすくなる。",
+      "イ": "縦方向と誤り率は合うが、横方向で見るずれは識別時刻を決めるクロックのジッタである。",
+      "ウ": "縦は雑音余裕を表すが、ドットではなくクロックの揺らぎを考え、開口が狭まれば誤り率は増える。",
+      "エ": "縦方向の余裕は信号そのものより雑音の許容幅を示し、開口の縮小で誤り率は低くならない。",
+      "オ": "クロック信号の揺らぎは横の開きに関係するが、縦は雑音の余裕を示し、開口が小さいほど誤り率が高くなる。"
+    }
+  },
+  {
+    "id": "radio21-general1-2023-03-kogaku-a-q16",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2023,
+    "season": "march",
+    "qNumber": 16,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "中間周波増幅器の利得"
+    ],
+    "difficulty": 3,
+    "question": "図の中間周波増幅器の利得測定で、AGCの状態、調整する機器と利得を選ぶ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610212304id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610212236id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2023年3月期 無線工学A A-16（問題・正答、試験問題記号 503）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2023-03-kogaku-a-q16-p04.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2023年3月期 A-16 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "接（ON）／SG／160 dB",
+      "イ": "接（ON）／局部発振器／80 dB",
+      "ウ": "断（OFF）／SG／160 dB",
+      "エ": "断（OFF）／SG／80 dB",
+      "オ": "断（OFF）／局部発振器／80 dB"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "AGCを切り、SGで低周波出力を同じに合わせると中間周波段の利得は120−40＝80 dBである。",
+    "choiceExplanations": {
+      "ア": "測定中に増幅度が変わらないようAGCを切り、等出力の入力電圧の差を使うので160 dBではない。",
+      "イ": "80 dBは妥当だが、AGCはOFFにして、局部発振器ではなく標準信号発生器の出力を調整する。",
+      "ウ": "AGCとSGは合うが、両測定のdBμVを足すのでなく差をとる。",
+      "エ": "AGCを切り、SGで低周波出力を同じに合わせると中間周波段の利得は120−40＝80 dBである。",
+      "オ": "AGCの状態と結果の利得は合うが、比較する供給電圧は局部発振器ではなくSGの出力である。"
+    }
+  },
+  {
+    "id": "radio21-general1-2023-03-kogaku-a-q17",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2023,
+    "season": "march",
+    "qNumber": 17,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "地上デジタルテレビ"
+    ],
+    "difficulty": 3,
+    "question": "地上デジタルテレビの映像圧縮、変調方式、シンボル時間を選ぶ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610212304id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610212236id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2023年3月期 無線工学A A-17（問題・正答、試験問題記号 503）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2023-03-kogaku-a-q17-p04.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2023年3月期 A-17 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "JPEG2／VSB／長く",
+      "イ": "JPEG2／OFDM／短く",
+      "ウ": "MPEG2／VSB／短く",
+      "エ": "MPEG2／OFDM／短く",
+      "オ": "MPEG2／OFDM／長く"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "MPEG2で映像を圧縮し、OFDMで多数の搬送波に分けるため、単一搬送波に比べシンボル時間が長くなる。",
+    "choiceExplanations": {
+      "ア": "日本の標準方式は地上デジタル映像の圧縮にMPEG2、伝送にOFDMを用いる。",
+      "イ": "OFDMは正しいが、映像圧縮をJPEG2とする点、シンボル時間が短くなるとする点は誤りである。",
+      "ウ": "MPEG2は正しいが、伝送で多くの搬送波に分ける方式はVSBではなくOFDMである。",
+      "エ": "MPEG2とOFDMは合うが、サブキャリアごとのシンボル時間はむしろ長くなる。",
+      "オ": "MPEG2で映像を圧縮し、OFDMで多数の搬送波に分けるため、単一搬送波に比べシンボル時間が長くなる。"
+    }
+  },
+  {
+    "id": "radio21-general1-2023-03-kogaku-a-q18",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2023,
+    "season": "march",
+    "qNumber": 18,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "計器着陸システム"
+    ],
+    "difficulty": 3,
+    "question": "ILSのマーカ・ビーコン、ローカライザ、グライド・パスの順に使用する周波数帯を選ぶ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610212304id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610212236id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2023年3月期 無線工学A A-18（問題・正答、試験問題記号 503）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2023-03-kogaku-a-q18-p05.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2023年3月期 A-18 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "UHF／VHF／VHF",
+      "イ": "UHF／VHF／UHF",
+      "ウ": "UHF／UHF／VHF",
+      "エ": "VHF／VHF／UHF",
+      "オ": "VHF／UHF／VHF"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "マーカの75 MHzとローカライザの約108〜112 MHzはVHF、グライド・パスの約330 MHzはUHFである。",
+    "choiceExplanations": {
+      "ア": "ローカライザはVHFだが、マーカ・ビーコンもVHFで、垂直方向のグライド・パスはUHFである。",
+      "イ": "ローカライザとグライド・パスは合うが、マーカ・ビーコンで使う75 MHzはVHFに属する。",
+      "ウ": "滑走路中心からのずれを示すローカライザはUHFではなくVHFを使う。",
+      "エ": "マーカの75 MHzとローカライザの約108〜112 MHzはVHF、グライド・パスの約330 MHzはUHFである。",
+      "オ": "マーカのVHFは合うが、水平を示すローカライザはVHF、上下方向のグライド・パスはUHFである。"
+    }
+  },
+  {
+    "id": "radio21-general1-2023-03-kogaku-a-q19",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2023,
+    "season": "march",
+    "qNumber": 19,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "オシロスコープのプローブ"
+    ],
+    "difficulty": 3,
+    "question": "図のプローブで防ぐ現象Ａと、調整の条件Ｂを選ぶ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610212304id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610212236id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2023年3月期 無線工学A A-19（問題・正答、試験問題記号 503）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2023-03-kogaku-a-q19-p05.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2023年3月期 A-19 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "波形ひずみ／(C＋Cₜ)Rᵢ ≫ CᵢR",
+      "イ": "波形ひずみ／(C＋Cᵢ)Rᵢ ＝ CₜR",
+      "ウ": "波形ひずみ／(C＋Cₜ)Rᵢ ＝ CᵢR",
+      "エ": "ショット雑音／(C＋Cᵢ)Rᵢ ≫ CₜR",
+      "オ": "ショット雑音／(C＋Cₜ)Rᵢ ＝ CᵢR"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "ケーブルと入力の容量の和C＋Cᵢと入力抵抗の時定数を、プローブのCₜRに一致させると平坦になる。",
+    "choiceExplanations": {
+      "ア": "防ぐのは波形ひずみだが、伝達関数の周波数依存を消すには２つのRC時定数を一致させる必要がある。",
+      "イ": "ケーブルと入力の容量の和C＋Cᵢと入力抵抗の時定数を、プローブのCₜRに一致させると平坦になる。",
+      "ウ": "調整で変化させるCₜはプローブ側のRと組み合わせ、線路容量Cにはオシロスコープ入力容量Cᵢを足す。",
+      "エ": "目的は周波数特性の不平坦による波形ひずみを防ぐことで、ショット雑音の抑制ではない。",
+      "オ": "ショット雑音は電流の離散性による別の現象であり、図の調整は振幅の周波数依存を補償する。"
+    }
+  },
+  {
+    "id": "radio21-general1-2023-03-kogaku-a-q20",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2023,
+    "season": "march",
+    "qNumber": 20,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "PCMの標本化"
+    ],
+    "difficulty": 3,
+    "question": "PCMでの標本化間隔、ナイキスト周波数条件、条件を満たさない場合に生じる雑音を選ぶ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610212304id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610212236id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2023年3月期 無線工学A A-20（問題・正答、試験問題記号 503）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2023-03-kogaku-a-q20-p05.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2023年3月期 A-20 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "周波数／含まない／折り返し雑音",
+      "イ": "周波数／含む／折り返し雑音",
+      "ウ": "周波数／含まない／量子化雑音",
+      "エ": "時間／含む／量子化雑音",
+      "オ": "時間／含まない／折り返し雑音"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "一定時間ごとに信号を取り出し、入力がf/2より高い成分を含まないようにして折り返しを防ぐ。",
+    "choiceExplanations": {
+      "ア": "帯域制限と雑音の種類は合うが、標本化は一定の時間間隔で振幅を取り出す操作である。",
+      "イ": "標本の間隔は時間であり、f/2を超える成分が入力にあると折り返しが起こり得る。",
+      "ウ": "量子化雑音は連続値を有限の段階に丸めることによって生じ、標本化の折り返しとは異なる。",
+      "エ": "時間間隔は合うが、f/2より高い成分は除去する必要があり、残した場合は折り返しとなる。",
+      "オ": "一定時間ごとに信号を取り出し、入力がf/2より高い成分を含まないようにして折り返しを防ぐ。"
+    }
+  },
+  {
+    "id": "radio21-general1-2023-03-kogaku-a-q21",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2023,
+    "season": "march",
+    "qNumber": 21,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "受信感度の抑圧"
+    ],
+    "difficulty": 3,
+    "question": "強い妨害波による受信機の感度抑圧について各記述の正誤を判定する。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610212304id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610212236id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2023年3月期 無線工学A B-1（問題・正答、試験問題記号 503）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2023-03-kogaku-a-q21-p05.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2023年3月期 B-1 公式原問題"
+    ],
+    "type": "native-b",
+    "explanation": "強く近接した妨害波が入力段を圧縮すると、希望波に対する感度が下がる。\n\n妨害波によって受信機の入力段が線形に増幅できなくなることが、感度抑圧を引き起こす。\n\n変調波には側帯波があり、その周波数成分や振幅変化によって妨害が大きくなることがある。\n\n強い妨害波で飽和しないよう、高周波段の利得を必要な感度が得られる範囲で下げる方法がある。\n\n妨害波の周波数が希望波から離れると受信機の選択回路で減衰しやすく、許容入力は一般に高くなる。",
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "正しい（1）"
+        },
+        {
+          "id": "2",
+          "label": "誤っている（2）"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "希望波に近い強い妨害波が加わると受信感度が抑圧される。",
+          "answer": "1",
+          "explanation": "強く近接した妨害波が入力段を圧縮すると、希望波に対する感度が下がる。",
+          "candidateExplanations": {
+            "1": "強く近接した妨害波が入力段を圧縮すると、希望波に対する感度が下がる。",
+            "2": "この記述は妥当である。強く近接した妨害波が入力段を圧縮すると、希望波に対する感度が下がる。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "高周波増幅段や周波数変換段が妨害波で飽和し、感度抑圧が生じる。",
+          "answer": "1",
+          "explanation": "妨害波によって受信機の入力段が線形に増幅できなくなることが、感度抑圧を引き起こす。",
+          "candidateExplanations": {
+            "1": "妨害波によって受信機の入力段が線形に増幅できなくなることが、感度抑圧を引き起こす。",
+            "2": "この記述は妥当である。妨害波によって受信機の入力段が線形に増幅できなくなることが、感度抑圧を引き起こす。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "近接する妨害波が変調されると、無変調の場合より妨害が大きくなることがある。",
+          "answer": "1",
+          "explanation": "変調波には側帯波があり、その周波数成分や振幅変化によって妨害が大きくなることがある。",
+          "candidateExplanations": {
+            "1": "変調波には側帯波があり、その周波数成分や振幅変化によって妨害が大きくなることがある。",
+            "2": "この記述は妥当である。変調波には側帯波があり、その周波数成分や振幅変化によって妨害が大きくなることがある。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "必要な信号対雑音比を確保できる範囲で、高周波増幅部の利得を上げると抑圧を軽減できる。",
+          "answer": "2",
+          "explanation": "強い妨害波で飽和しないよう、高周波段の利得を必要な感度が得られる範囲で下げる方法がある。",
+          "candidateExplanations": {
+            "1": "この記述には誤りがある。強い妨害波で飽和しないよう、高周波段の利得を必要な感度が得られる範囲で下げる方法がある。",
+            "2": "強い妨害波で飽和しないよう、高周波段の利得を必要な感度が得られる範囲で下げる方法がある。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "希望波の入力が一定の場合、周波数差が大きいほど妨害波の許容入力は低くなる。",
+          "answer": "2",
+          "explanation": "妨害波の周波数が希望波から離れると受信機の選択回路で減衰しやすく、許容入力は一般に高くなる。",
+          "candidateExplanations": {
+            "1": "この記述には誤りがある。妨害波の周波数が希望波から離れると受信機の選択回路で減衰しやすく、許容入力は一般に高くなる。",
+            "2": "妨害波の周波数が希望波から離れると受信機の選択回路で減衰しやすく、許容入力は一般に高くなる。"
+          }
+        }
+      ],
+      "officialLabel": "B-1",
+      "bankImageUrls": [
+        "/questions/general1/2023-03-kogaku-a-q21-p05.png"
+      ],
+      "bankImageAltTexts": [
+        "第一級総合無線通信士 無線工学A 2023年3月期 B-1 公式原問題"
+      ]
+    }
+  },
+  {
+    "id": "radio21-general1-2023-03-kogaku-a-q22",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2023,
+    "season": "march",
+    "qNumber": 22,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "GPS測位の誤差"
+    ],
+    "difficulty": 3,
+    "question": "GPS測位で生じる誤差と補正方法に関する各記述の正誤を判定する。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610212304id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610212236id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2023年3月期 無線工学A B-2（問題・正答、試験問題記号 503）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2023-03-kogaku-a-q22-p06.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2023年3月期 B-2 公式原問題"
+    ],
+    "type": "native-b",
+    "explanation": "周波数の異なる信号で遅延の大きさが異なるため、その差を使って電離層遅延を見積もれる。\n\nGPS帯での対流圏遅延は電離層遅延と異なり周波数差で分離できず、大気モデル等で補正する。\n\n周囲の地表や建物で反射しやすいのは低仰角からの信号であり、高い仰角の衛星を避けるという説明は誤りである。\n\n放送された補正値によって誤差を減らせるが、モデルが推定し切れない長周期の誤差成分は残る。\n\n反射波は受信アンテナ周辺の環境に依存するため、基準局と移動局で共通の誤差を除くDGPSにはなじまない。",
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "正しい（1）"
+        },
+        {
+          "id": "2",
+          "label": "誤っている（2）"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "電離層遅延量は周波数の二乗に反比例し、２周波以上の測定で遅延の影響を軽減できる。",
+          "answer": "1",
+          "explanation": "周波数の異なる信号で遅延の大きさが異なるため、その差を使って電離層遅延を見積もれる。",
+          "candidateExplanations": {
+            "1": "周波数の異なる信号で遅延の大きさが異なるため、その差を使って電離層遅延を見積もれる。",
+            "2": "この記述は妥当である。周波数の異なる信号で遅延の大きさが異なるため、その差を使って電離層遅延を見積もれる。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "対流圏遅延は測位に用いる周波数にほぼ依存せず、２周波以上を測っても軽減できない。",
+          "answer": "1",
+          "explanation": "GPS帯での対流圏遅延は電離層遅延と異なり周波数差で分離できず、大気モデル等で補正する。",
+          "candidateExplanations": {
+            "1": "GPS帯での対流圏遅延は電離層遅延と異なり周波数差で分離できず、大気モデル等で補正する。",
+            "2": "この記述は妥当である。GPS帯での対流圏遅延は電離層遅延と異なり周波数差で分離できず、大気モデル等で補正する。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "マルチパスの影響を減らすため、仰角の高い衛星を使わないようにする。",
+          "answer": "2",
+          "explanation": "周囲の地表や建物で反射しやすいのは低仰角からの信号であり、高い仰角の衛星を避けるという説明は誤りである。",
+          "candidateExplanations": {
+            "1": "この記述には誤りがある。周囲の地表や建物で反射しやすいのは低仰角からの信号であり、高い仰角の衛星を避けるという説明は誤りである。",
+            "2": "周囲の地表や建物で反射しやすいのは低仰角からの信号であり、高い仰角の衛星を避けるという説明は誤りである。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "衛星のクロック誤差や軌道誤差を航法メッセージで補正しても、長周期のバイアス成分は残る。",
+          "answer": "1",
+          "explanation": "放送された補正値によって誤差を減らせるが、モデルが推定し切れない長周期の誤差成分は残る。",
+          "candidateExplanations": {
+            "1": "放送された補正値によって誤差を減らせるが、モデルが推定し切れない長周期の誤差成分は残る。",
+            "2": "この記述は妥当である。放送された補正値によって誤差を減らせるが、モデルが推定し切れない長周期の誤差成分は残る。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "基準局との差を使うDGPSで、受信点のマルチパスによる誤差を良好に補正できる。",
+          "answer": "2",
+          "explanation": "反射波は受信アンテナ周辺の環境に依存するため、基準局と移動局で共通の誤差を除くDGPSにはなじまない。",
+          "candidateExplanations": {
+            "1": "この記述には誤りがある。反射波は受信アンテナ周辺の環境に依存するため、基準局と移動局で共通の誤差を除くDGPSにはなじまない。",
+            "2": "反射波は受信アンテナ周辺の環境に依存するため、基準局と移動局で共通の誤差を除くDGPSにはなじまない。"
+          }
+        }
+      ],
+      "officialLabel": "B-2",
+      "bankImageUrls": [
+        "/questions/general1/2023-03-kogaku-a-q22-p06.png"
+      ],
+      "bankImageAltTexts": [
+        "第一級総合無線通信士 無線工学A 2023年3月期 B-2 公式原問題"
+      ]
+    }
+  },
+  {
+    "id": "radio21-general1-2023-03-kogaku-a-q23",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2023,
+    "season": "march",
+    "qNumber": 23,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "国際NAVTEX"
+    ],
+    "difficulty": 3,
+    "question": "国際NAVTEXで英文の海上安全情報を送る海域、周波数、変調方式などの空欄を埋める。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610212304id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610212236id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2023年3月期 無線工学A B-3（問題・正答、試験問題記号 503）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2023-03-kogaku-a-q23-p06.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2023年3月期 B-3 公式原問題"
+    ],
+    "type": "native-b",
+    "explanation": "日本のNAVTEXでは、沿岸から概ね300海里までを対象とした海上安全情報を提供する。\n\n沿岸の英文放送に用いる国際共通周波数は518 kHzである。\n\n狭帯域直接印刷で各符号を周波数の違いで表す周波数偏移変調を使う。\n\n設問の国際NAVTEXでは、低速の狭帯域印刷電信として100 bpsで送信する。\n\n同じ周波数を使う複数の局の送信が重ならないよう、各局の放送時間を割り当てる。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "518",
+          "explanation": "英文国際NAVTEX用の周波数の数値。"
+        },
+        {
+          "id": "2",
+          "label": "418",
+          "explanation": "国際NAVTEXの周波数と異なる数値。"
+        },
+        {
+          "id": "3",
+          "label": "パルス符号変調（PCM）方式",
+          "explanation": "信号値をパルスの符号で表す方式。"
+        },
+        {
+          "id": "4",
+          "label": "周波数偏移（FS）変調方式",
+          "explanation": "符号によって周波数を切り替える変調方式。"
+        },
+        {
+          "id": "5",
+          "label": "放送内容",
+          "explanation": "放送で伝える情報の内容。"
+        },
+        {
+          "id": "6",
+          "label": "800海里",
+          "explanation": "日本沿岸で想定する提供距離を上回る範囲。"
+        },
+        {
+          "id": "7",
+          "label": "300海里",
+          "explanation": "沿岸からの対象海域の目安。"
+        },
+        {
+          "id": "8",
+          "label": "400 bps",
+          "explanation": "300海里や518 kHzとは異なり通信速度を表す値。"
+        },
+        {
+          "id": "9",
+          "label": "100 bps",
+          "explanation": "国際NAVTEXで用いる通信速度。"
+        },
+        {
+          "id": "10",
+          "label": "放送時間",
+          "explanation": "送信局ごとに割り当てる時間枠。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "日本の海岸局からの提供を想定する沿岸海域の範囲",
+          "answer": "7",
+          "explanation": "日本のNAVTEXでは、沿岸から概ね300海里までを対象とした海上安全情報を提供する。",
+          "candidateExplanations": {
+            "1": "英文国際NAVTEX用の周波数の数値。日本のNAVTEXでは、沿岸から概ね300海里までを対象とした海上安全情報を提供する。",
+            "2": "国際NAVTEXの周波数と異なる数値。日本のNAVTEXでは、沿岸から概ね300海里までを対象とした海上安全情報を提供する。",
+            "3": "信号値をパルスの符号で表す方式。日本のNAVTEXでは、沿岸から概ね300海里までを対象とした海上安全情報を提供する。",
+            "4": "符号によって周波数を切り替える変調方式。日本のNAVTEXでは、沿岸から概ね300海里までを対象とした海上安全情報を提供する。",
+            "5": "放送で伝える情報の内容。日本のNAVTEXでは、沿岸から概ね300海里までを対象とした海上安全情報を提供する。",
+            "6": "日本沿岸で想定する提供距離を上回る範囲。日本のNAVTEXでは、沿岸から概ね300海里までを対象とした海上安全情報を提供する。",
+            "7": "日本のNAVTEXでは、沿岸から概ね300海里までを対象とした海上安全情報を提供する。",
+            "8": "300海里や518 kHzとは異なり通信速度を表す値。日本のNAVTEXでは、沿岸から概ね300海里までを対象とした海上安全情報を提供する。",
+            "9": "国際NAVTEXで用いる通信速度。日本のNAVTEXでは、沿岸から概ね300海里までを対象とした海上安全情報を提供する。",
+            "10": "送信局ごとに割り当てる時間枠。日本のNAVTEXでは、沿岸から概ね300海里までを対象とした海上安全情報を提供する。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "国際NAVTEXの受信周波数（kHz）",
+          "answer": "1",
+          "explanation": "沿岸の英文放送に用いる国際共通周波数は518 kHzである。",
+          "candidateExplanations": {
+            "1": "沿岸の英文放送に用いる国際共通周波数は518 kHzである。",
+            "2": "国際NAVTEXの周波数と異なる数値。沿岸の英文放送に用いる国際共通周波数は518 kHzである。",
+            "3": "信号値をパルスの符号で表す方式。沿岸の英文放送に用いる国際共通周波数は518 kHzである。",
+            "4": "符号によって周波数を切り替える変調方式。沿岸の英文放送に用いる国際共通周波数は518 kHzである。",
+            "5": "放送で伝える情報の内容。沿岸の英文放送に用いる国際共通周波数は518 kHzである。",
+            "6": "日本沿岸で想定する提供距離を上回る範囲。沿岸の英文放送に用いる国際共通周波数は518 kHzである。",
+            "7": "沿岸からの対象海域の目安。沿岸の英文放送に用いる国際共通周波数は518 kHzである。",
+            "8": "300海里や518 kHzとは異なり通信速度を表す値。沿岸の英文放送に用いる国際共通周波数は518 kHzである。",
+            "9": "国際NAVTEXで用いる通信速度。沿岸の英文放送に用いる国際共通周波数は518 kHzである。",
+            "10": "送信局ごとに割り当てる時間枠。沿岸の英文放送に用いる国際共通周波数は518 kHzである。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "国際NAVTEXの変調方式",
+          "answer": "4",
+          "explanation": "狭帯域直接印刷で各符号を周波数の違いで表す周波数偏移変調を使う。",
+          "candidateExplanations": {
+            "1": "英文国際NAVTEX用の周波数の数値。狭帯域直接印刷で各符号を周波数の違いで表す周波数偏移変調を使う。",
+            "2": "国際NAVTEXの周波数と異なる数値。狭帯域直接印刷で各符号を周波数の違いで表す周波数偏移変調を使う。",
+            "3": "信号値をパルスの符号で表す方式。狭帯域直接印刷で各符号を周波数の違いで表す周波数偏移変調を使う。",
+            "4": "狭帯域直接印刷で各符号を周波数の違いで表す周波数偏移変調を使う。",
+            "5": "放送で伝える情報の内容。狭帯域直接印刷で各符号を周波数の違いで表す周波数偏移変調を使う。",
+            "6": "日本沿岸で想定する提供距離を上回る範囲。狭帯域直接印刷で各符号を周波数の違いで表す周波数偏移変調を使う。",
+            "7": "沿岸からの対象海域の目安。狭帯域直接印刷で各符号を周波数の違いで表す周波数偏移変調を使う。",
+            "8": "300海里や518 kHzとは異なり通信速度を表す値。狭帯域直接印刷で各符号を周波数の違いで表す周波数偏移変調を使う。",
+            "9": "国際NAVTEXで用いる通信速度。狭帯域直接印刷で各符号を周波数の違いで表す周波数偏移変調を使う。",
+            "10": "送信局ごとに割り当てる時間枠。狭帯域直接印刷で各符号を周波数の違いで表す周波数偏移変調を使う。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "国際NAVTEXの信号伝送速度",
+          "answer": "9",
+          "explanation": "設問の国際NAVTEXでは、低速の狭帯域印刷電信として100 bpsで送信する。",
+          "candidateExplanations": {
+            "1": "英文国際NAVTEX用の周波数の数値。設問の国際NAVTEXでは、低速の狭帯域印刷電信として100 bpsで送信する。",
+            "2": "国際NAVTEXの周波数と異なる数値。設問の国際NAVTEXでは、低速の狭帯域印刷電信として100 bpsで送信する。",
+            "3": "信号値をパルスの符号で表す方式。設問の国際NAVTEXでは、低速の狭帯域印刷電信として100 bpsで送信する。",
+            "4": "符号によって周波数を切り替える変調方式。設問の国際NAVTEXでは、低速の狭帯域印刷電信として100 bpsで送信する。",
+            "5": "放送で伝える情報の内容。設問の国際NAVTEXでは、低速の狭帯域印刷電信として100 bpsで送信する。",
+            "6": "日本沿岸で想定する提供距離を上回る範囲。設問の国際NAVTEXでは、低速の狭帯域印刷電信として100 bpsで送信する。",
+            "7": "沿岸からの対象海域の目安。設問の国際NAVTEXでは、低速の狭帯域印刷電信として100 bpsで送信する。",
+            "8": "300海里や518 kHzとは異なり通信速度を表す値。設問の国際NAVTEXでは、低速の狭帯域印刷電信として100 bpsで送信する。",
+            "9": "設問の国際NAVTEXでは、低速の狭帯域印刷電信として100 bpsで送信する。",
+            "10": "送信局ごとに割り当てる時間枠。設問の国際NAVTEXでは、低速の狭帯域印刷電信として100 bpsで送信する。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "送信局相互の混信を避けるため割り当てるもの",
+          "answer": "10",
+          "explanation": "同じ周波数を使う複数の局の送信が重ならないよう、各局の放送時間を割り当てる。",
+          "candidateExplanations": {
+            "1": "英文国際NAVTEX用の周波数の数値。同じ周波数を使う複数の局の送信が重ならないよう、各局の放送時間を割り当てる。",
+            "2": "国際NAVTEXの周波数と異なる数値。同じ周波数を使う複数の局の送信が重ならないよう、各局の放送時間を割り当てる。",
+            "3": "信号値をパルスの符号で表す方式。同じ周波数を使う複数の局の送信が重ならないよう、各局の放送時間を割り当てる。",
+            "4": "符号によって周波数を切り替える変調方式。同じ周波数を使う複数の局の送信が重ならないよう、各局の放送時間を割り当てる。",
+            "5": "放送で伝える情報の内容。同じ周波数を使う複数の局の送信が重ならないよう、各局の放送時間を割り当てる。",
+            "6": "日本沿岸で想定する提供距離を上回る範囲。同じ周波数を使う複数の局の送信が重ならないよう、各局の放送時間を割り当てる。",
+            "7": "沿岸からの対象海域の目安。同じ周波数を使う複数の局の送信が重ならないよう、各局の放送時間を割り当てる。",
+            "8": "300海里や518 kHzとは異なり通信速度を表す値。同じ周波数を使う複数の局の送信が重ならないよう、各局の放送時間を割り当てる。",
+            "9": "国際NAVTEXで用いる通信速度。同じ周波数を使う複数の局の送信が重ならないよう、各局の放送時間を割り当てる。",
+            "10": "同じ周波数を使う複数の局の送信が重ならないよう、各局の放送時間を割り当てる。"
+          }
+        }
+      ],
+      "officialLabel": "B-3",
+      "bankImageUrls": [
+        "/questions/general1/2023-03-kogaku-a-q23-p06.png"
+      ],
+      "bankImageAltTexts": [
+        "第一級総合無線通信士 無線工学A 2023年3月期 B-3 公式原問題"
+      ]
+    }
+  },
+  {
+    "id": "radio21-general1-2023-03-kogaku-a-q24",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2023,
+    "season": "march",
+    "qNumber": 24,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "直接拡散方式"
+    ],
+    "difficulty": 3,
+    "question": "直接拡散方式の拡散符号、特性と測距への利用に関する空欄を埋める。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610212304id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610212236id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2023年3月期 無線工学A B-4（問題・正答、試験問題記号 503）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2023-03-kogaku-a-q24-p06.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2023年3月期 B-4 公式原問題"
+    ],
+    "type": "native-b",
+    "explanation": "直接拡散では雑音に似た性質を持つ擬似雑音符号と信号とを組み合わせる。\n\n受信側で拡散符号を同期させて元の信号を取り出すため、一定の受信条件では耐妨害性などに優れる。\n\nエネルギーが広い帯域に分散するため、一般に帯域内の雑音に比べて存在を検出しにくい。\n\nGPSは各衛星の拡散符号との相関から信号の到着時刻を推定し、測距に利用する。\n\n別々の符号を使って信号を分離するので、符号分割多元接続となる。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "リードソロモン",
+          "explanation": "伝送誤りの訂正に用いる符号。"
+        },
+        {
+          "id": "2",
+          "label": "劣って",
+          "explanation": "妨害や雑音への耐性が低いことを示す語。"
+        },
+        {
+          "id": "3",
+          "label": "され易い",
+          "explanation": "信号の存在が見つかりやすいことを示す語。"
+        },
+        {
+          "id": "4",
+          "label": "GPS（Global Positioning System）",
+          "explanation": "衛星信号を用いて測距・位置計算を行うシステム。"
+        },
+        {
+          "id": "5",
+          "label": "符号分割",
+          "explanation": "異なる符号で通信路を区別する方式。"
+        },
+        {
+          "id": "6",
+          "label": "擬似雑音（PN）",
+          "explanation": "雑音に似た性質を持つ再現可能な符号。"
+        },
+        {
+          "id": "7",
+          "label": "優れて",
+          "explanation": "妨害や雑音への耐性が高いことを示す語。"
+        },
+        {
+          "id": "8",
+          "label": "され難い",
+          "explanation": "妨害や雑音の中で信号を見つけにくいことを示す語。"
+        },
+        {
+          "id": "9",
+          "label": "LRIT（船舶長距離識別追跡）装置",
+          "explanation": "船舶を長距離から識別・追跡するための装置。"
+        },
+        {
+          "id": "10",
+          "label": "時分割",
+          "explanation": "通信する時間帯を分ける多元接続方式。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "情報信号を広い周波数帯に拡散する符号",
+          "answer": "6",
+          "explanation": "直接拡散では雑音に似た性質を持つ擬似雑音符号と信号とを組み合わせる。",
+          "candidateExplanations": {
+            "1": "伝送誤りの訂正に用いる符号。直接拡散では雑音に似た性質を持つ擬似雑音符号と信号とを組み合わせる。",
+            "2": "妨害や雑音への耐性が低いことを示す語。直接拡散では雑音に似た性質を持つ擬似雑音符号と信号とを組み合わせる。",
+            "3": "信号の存在が見つかりやすいことを示す語。直接拡散では雑音に似た性質を持つ擬似雑音符号と信号とを組み合わせる。",
+            "4": "衛星信号を用いて測距・位置計算を行うシステム。直接拡散では雑音に似た性質を持つ擬似雑音符号と信号とを組み合わせる。",
+            "5": "異なる符号で通信路を区別する方式。直接拡散では雑音に似た性質を持つ擬似雑音符号と信号とを組み合わせる。",
+            "6": "直接拡散では雑音に似た性質を持つ擬似雑音符号と信号とを組み合わせる。",
+            "7": "妨害や雑音への耐性が高いことを示す語。直接拡散では雑音に似た性質を持つ擬似雑音符号と信号とを組み合わせる。",
+            "8": "妨害や雑音の中で信号を見つけにくいことを示す語。直接拡散では雑音に似た性質を持つ擬似雑音符号と信号とを組み合わせる。",
+            "9": "船舶を長距離から識別・追跡するための装置。直接拡散では雑音に似た性質を持つ擬似雑音符号と信号とを組み合わせる。",
+            "10": "通信する時間帯を分ける多元接続方式。直接拡散では雑音に似た性質を持つ擬似雑音符号と信号とを組み合わせる。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "妨害や雑音に対する耐性",
+          "answer": "7",
+          "explanation": "受信側で拡散符号を同期させて元の信号を取り出すため、一定の受信条件では耐妨害性などに優れる。",
+          "candidateExplanations": {
+            "1": "伝送誤りの訂正に用いる符号。受信側で拡散符号を同期させて元の信号を取り出すため、一定の受信条件では耐妨害性などに優れる。",
+            "2": "妨害や雑音への耐性が低いことを示す語。受信側で拡散符号を同期させて元の信号を取り出すため、一定の受信条件では耐妨害性などに優れる。",
+            "3": "信号の存在が見つかりやすいことを示す語。受信側で拡散符号を同期させて元の信号を取り出すため、一定の受信条件では耐妨害性などに優れる。",
+            "4": "衛星信号を用いて測距・位置計算を行うシステム。受信側で拡散符号を同期させて元の信号を取り出すため、一定の受信条件では耐妨害性などに優れる。",
+            "5": "異なる符号で通信路を区別する方式。受信側で拡散符号を同期させて元の信号を取り出すため、一定の受信条件では耐妨害性などに優れる。",
+            "6": "雑音に似た性質を持つ再現可能な符号。受信側で拡散符号を同期させて元の信号を取り出すため、一定の受信条件では耐妨害性などに優れる。",
+            "7": "受信側で拡散符号を同期させて元の信号を取り出すため、一定の受信条件では耐妨害性などに優れる。",
+            "8": "妨害や雑音の中で信号を見つけにくいことを示す語。受信側で拡散符号を同期させて元の信号を取り出すため、一定の受信条件では耐妨害性などに優れる。",
+            "9": "船舶を長距離から識別・追跡するための装置。受信側で拡散符号を同期させて元の信号を取り出すため、一定の受信条件では耐妨害性などに優れる。",
+            "10": "通信する時間帯を分ける多元接続方式。受信側で拡散符号を同期させて元の信号を取り出すため、一定の受信条件では耐妨害性などに優れる。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "広い周波数帯に拡散した信号の検知のしやすさ",
+          "answer": "8",
+          "explanation": "エネルギーが広い帯域に分散するため、一般に帯域内の雑音に比べて存在を検出しにくい。",
+          "candidateExplanations": {
+            "1": "伝送誤りの訂正に用いる符号。エネルギーが広い帯域に分散するため、一般に帯域内の雑音に比べて存在を検出しにくい。",
+            "2": "妨害や雑音への耐性が低いことを示す語。エネルギーが広い帯域に分散するため、一般に帯域内の雑音に比べて存在を検出しにくい。",
+            "3": "信号の存在が見つかりやすいことを示す語。エネルギーが広い帯域に分散するため、一般に帯域内の雑音に比べて存在を検出しにくい。",
+            "4": "衛星信号を用いて測距・位置計算を行うシステム。エネルギーが広い帯域に分散するため、一般に帯域内の雑音に比べて存在を検出しにくい。",
+            "5": "異なる符号で通信路を区別する方式。エネルギーが広い帯域に分散するため、一般に帯域内の雑音に比べて存在を検出しにくい。",
+            "6": "雑音に似た性質を持つ再現可能な符号。エネルギーが広い帯域に分散するため、一般に帯域内の雑音に比べて存在を検出しにくい。",
+            "7": "妨害や雑音への耐性が高いことを示す語。エネルギーが広い帯域に分散するため、一般に帯域内の雑音に比べて存在を検出しにくい。",
+            "8": "エネルギーが広い帯域に分散するため、一般に帯域内の雑音に比べて存在を検出しにくい。",
+            "9": "船舶を長距離から識別・追跡するための装置。エネルギーが広い帯域に分散するため、一般に帯域内の雑音に比べて存在を検出しにくい。",
+            "10": "通信する時間帯を分ける多元接続方式。エネルギーが広い帯域に分散するため、一般に帯域内の雑音に比べて存在を検出しにくい。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "高精度の時間測定を利用して位置を求める仕組み",
+          "answer": "4",
+          "explanation": "GPSは各衛星の拡散符号との相関から信号の到着時刻を推定し、測距に利用する。",
+          "candidateExplanations": {
+            "1": "伝送誤りの訂正に用いる符号。GPSは各衛星の拡散符号との相関から信号の到着時刻を推定し、測距に利用する。",
+            "2": "妨害や雑音への耐性が低いことを示す語。GPSは各衛星の拡散符号との相関から信号の到着時刻を推定し、測距に利用する。",
+            "3": "信号の存在が見つかりやすいことを示す語。GPSは各衛星の拡散符号との相関から信号の到着時刻を推定し、測距に利用する。",
+            "4": "GPSは各衛星の拡散符号との相関から信号の到着時刻を推定し、測距に利用する。",
+            "5": "異なる符号で通信路を区別する方式。GPSは各衛星の拡散符号との相関から信号の到着時刻を推定し、測距に利用する。",
+            "6": "雑音に似た性質を持つ再現可能な符号。GPSは各衛星の拡散符号との相関から信号の到着時刻を推定し、測距に利用する。",
+            "7": "妨害や雑音への耐性が高いことを示す語。GPSは各衛星の拡散符号との相関から信号の到着時刻を推定し、測距に利用する。",
+            "8": "妨害や雑音の中で信号を見つけにくいことを示す語。GPSは各衛星の拡散符号との相関から信号の到着時刻を推定し、測距に利用する。",
+            "9": "船舶を長距離から識別・追跡するための装置。GPSは各衛星の拡散符号との相関から信号の到着時刻を推定し、測距に利用する。",
+            "10": "通信する時間帯を分ける多元接続方式。GPSは各衛星の拡散符号との相関から信号の到着時刻を推定し、測距に利用する。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "チャネルごとに異なる拡散符号を使う多元接続",
+          "answer": "5",
+          "explanation": "別々の符号を使って信号を分離するので、符号分割多元接続となる。",
+          "candidateExplanations": {
+            "1": "伝送誤りの訂正に用いる符号。別々の符号を使って信号を分離するので、符号分割多元接続となる。",
+            "2": "妨害や雑音への耐性が低いことを示す語。別々の符号を使って信号を分離するので、符号分割多元接続となる。",
+            "3": "信号の存在が見つかりやすいことを示す語。別々の符号を使って信号を分離するので、符号分割多元接続となる。",
+            "4": "衛星信号を用いて測距・位置計算を行うシステム。別々の符号を使って信号を分離するので、符号分割多元接続となる。",
+            "5": "別々の符号を使って信号を分離するので、符号分割多元接続となる。",
+            "6": "雑音に似た性質を持つ再現可能な符号。別々の符号を使って信号を分離するので、符号分割多元接続となる。",
+            "7": "妨害や雑音への耐性が高いことを示す語。別々の符号を使って信号を分離するので、符号分割多元接続となる。",
+            "8": "妨害や雑音の中で信号を見つけにくいことを示す語。別々の符号を使って信号を分離するので、符号分割多元接続となる。",
+            "9": "船舶を長距離から識別・追跡するための装置。別々の符号を使って信号を分離するので、符号分割多元接続となる。",
+            "10": "通信する時間帯を分ける多元接続方式。別々の符号を使って信号を分離するので、符号分割多元接続となる。"
+          }
+        }
+      ],
+      "officialLabel": "B-4",
+      "bankImageUrls": [
+        "/questions/general1/2023-03-kogaku-a-q24-p06.png"
+      ],
+      "bankImageAltTexts": [
+        "第一級総合無線通信士 無線工学A 2023年3月期 B-4 公式原問題"
+      ]
+    }
+  },
+  {
+    "id": "radio21-general1-2023-03-kogaku-a-q25",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2023,
+    "season": "march",
+    "qNumber": 25,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "サーミスタ電力計"
+    ],
+    "difficulty": 3,
+    "question": "図のNTCサーミスタ電力計で、ブリッジと直流電力による置換測定の空欄を埋める。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610212304id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610212236id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2023年3月期 無線工学A B-5（問題・正答、試験問題記号 503）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2023-03-kogaku-a-q25-p06.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2023年3月期 B-5 公式原問題"
+    ],
+    "type": "native-b",
+    "explanation": "抵抗比のつり合いを検流計で確かめるため、抵抗測定用のホイートストンブリッジを用いる。\n\n小さな発熱による抵抗変化を測るため、一般的な計器は10 mW程度のマイクロ波電力の測定に適する。\n\n平衡ではサーミスタに流れる電流が全体のI₀/2であり、抵抗値はR₂なので電力はI₀²R₂/4となる。\n\nNTCは負の温度係数を持つため、加熱で温度が上がると抵抗値が減少する。\n\n同じ抵抗値となる平衡状態で減らした直流電力が吸収されたマイクロ波電力となるので、(I₀²−I₁²)R₂/4である。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "ホイートストン",
+          "explanation": "抵抗の比の平衡を使うブリッジ。"
+        },
+        {
+          "id": "2",
+          "label": "ウィーン",
+          "explanation": "抵抗と容量で周波数を選ぶブリッジ。"
+        },
+        {
+          "id": "3",
+          "label": "減少",
+          "explanation": "値が小さくなる変化を表す語。"
+        },
+        {
+          "id": "4",
+          "label": "増加",
+          "explanation": "値が大きくなる変化を表す語。"
+        },
+        {
+          "id": "5",
+          "label": "(I₀²−I₁²)R₂/4",
+          "explanation": "直流電力の置換前後の差として求める式。"
+        },
+        {
+          "id": "6",
+          "label": "10 mW",
+          "explanation": "0.01 Wである小電力の測定の目安。"
+        },
+        {
+          "id": "7",
+          "label": "10 W",
+          "explanation": "10 mWより1000倍大きい電力の値。"
+        },
+        {
+          "id": "8",
+          "label": "I₀²R₂/2",
+          "explanation": "全電流を半分にして二乗する考えと一致しない電力式。"
+        },
+        {
+          "id": "9",
+          "label": "I₀²R₂/4",
+          "explanation": "平衡時の枝電流I₀/2を二乗して求めた電力。"
+        },
+        {
+          "id": "10",
+          "label": "(I₀²−I₁²)R₂/2",
+          "explanation": "枝電流の二乗に必要な分母４の代わりに２を使った差の式。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "サーミスタの抵抗変化の検出に使うブリッジ",
+          "answer": "1",
+          "explanation": "抵抗比のつり合いを検流計で確かめるため、抵抗測定用のホイートストンブリッジを用いる。",
+          "candidateExplanations": {
+            "1": "抵抗比のつり合いを検流計で確かめるため、抵抗測定用のホイートストンブリッジを用いる。",
+            "2": "抵抗と容量で周波数を選ぶブリッジ。抵抗比のつり合いを検流計で確かめるため、抵抗測定用のホイートストンブリッジを用いる。",
+            "3": "値が小さくなる変化を表す語。抵抗比のつり合いを検流計で確かめるため、抵抗測定用のホイートストンブリッジを用いる。",
+            "4": "値が大きくなる変化を表す語。抵抗比のつり合いを検流計で確かめるため、抵抗測定用のホイートストンブリッジを用いる。",
+            "5": "直流電力の置換前後の差として求める式。抵抗比のつり合いを検流計で確かめるため、抵抗測定用のホイートストンブリッジを用いる。",
+            "6": "0.01 Wである小電力の測定の目安。抵抗比のつり合いを検流計で確かめるため、抵抗測定用のホイートストンブリッジを用いる。",
+            "7": "10 mWより1000倍大きい電力の値。抵抗比のつり合いを検流計で確かめるため、抵抗測定用のホイートストンブリッジを用いる。",
+            "8": "全電流を半分にして二乗する考えと一致しない電力式。抵抗比のつり合いを検流計で確かめるため、抵抗測定用のホイートストンブリッジを用いる。",
+            "9": "平衡時の枝電流I₀/2を二乗して求めた電力。抵抗比のつり合いを検流計で確かめるため、抵抗測定用のホイートストンブリッジを用いる。",
+            "10": "枝電流の二乗に必要な分母４の代わりに２を使った差の式。抵抗比のつり合いを検流計で確かめるため、抵抗測定用のホイートストンブリッジを用いる。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "一般的なサーミスタ電力計が適する電力の大きさ",
+          "answer": "6",
+          "explanation": "小さな発熱による抵抗変化を測るため、一般的な計器は10 mW程度のマイクロ波電力の測定に適する。",
+          "candidateExplanations": {
+            "1": "抵抗の比の平衡を使うブリッジ。小さな発熱による抵抗変化を測るため、一般的な計器は10 mW程度のマイクロ波電力の測定に適する。",
+            "2": "抵抗と容量で周波数を選ぶブリッジ。小さな発熱による抵抗変化を測るため、一般的な計器は10 mW程度のマイクロ波電力の測定に適する。",
+            "3": "値が小さくなる変化を表す語。小さな発熱による抵抗変化を測るため、一般的な計器は10 mW程度のマイクロ波電力の測定に適する。",
+            "4": "値が大きくなる変化を表す語。小さな発熱による抵抗変化を測るため、一般的な計器は10 mW程度のマイクロ波電力の測定に適する。",
+            "5": "直流電力の置換前後の差として求める式。小さな発熱による抵抗変化を測るため、一般的な計器は10 mW程度のマイクロ波電力の測定に適する。",
+            "6": "小さな発熱による抵抗変化を測るため、一般的な計器は10 mW程度のマイクロ波電力の測定に適する。",
+            "7": "10 mWより1000倍大きい電力の値。小さな発熱による抵抗変化を測るため、一般的な計器は10 mW程度のマイクロ波電力の測定に適する。",
+            "8": "全電流を半分にして二乗する考えと一致しない電力式。小さな発熱による抵抗変化を測るため、一般的な計器は10 mW程度のマイクロ波電力の測定に適する。",
+            "9": "平衡時の枝電流I₀/2を二乗して求めた電力。小さな発熱による抵抗変化を測るため、一般的な計器は10 mW程度のマイクロ波電力の測定に適する。",
+            "10": "枝電流の二乗に必要な分母４の代わりに２を使った差の式。小さな発熱による抵抗変化を測るため、一般的な計器は10 mW程度のマイクロ波電力の測定に適する。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "入力前の電流計の読みI₀を用いたサーミスタの直流電力",
+          "answer": "9",
+          "explanation": "平衡ではサーミスタに流れる電流が全体のI₀/2であり、抵抗値はR₂なので電力はI₀²R₂/4となる。",
+          "candidateExplanations": {
+            "1": "抵抗の比の平衡を使うブリッジ。平衡ではサーミスタに流れる電流が全体のI₀/2であり、抵抗値はR₂なので電力はI₀²R₂/4となる。",
+            "2": "抵抗と容量で周波数を選ぶブリッジ。平衡ではサーミスタに流れる電流が全体のI₀/2であり、抵抗値はR₂なので電力はI₀²R₂/4となる。",
+            "3": "値が小さくなる変化を表す語。平衡ではサーミスタに流れる電流が全体のI₀/2であり、抵抗値はR₂なので電力はI₀²R₂/4となる。",
+            "4": "値が大きくなる変化を表す語。平衡ではサーミスタに流れる電流が全体のI₀/2であり、抵抗値はR₂なので電力はI₀²R₂/4となる。",
+            "5": "直流電力の置換前後の差として求める式。平衡ではサーミスタに流れる電流が全体のI₀/2であり、抵抗値はR₂なので電力はI₀²R₂/4となる。",
+            "6": "0.01 Wである小電力の測定の目安。平衡ではサーミスタに流れる電流が全体のI₀/2であり、抵抗値はR₂なので電力はI₀²R₂/4となる。",
+            "7": "10 mWより1000倍大きい電力の値。平衡ではサーミスタに流れる電流が全体のI₀/2であり、抵抗値はR₂なので電力はI₀²R₂/4となる。",
+            "8": "全電流を半分にして二乗する考えと一致しない電力式。平衡ではサーミスタに流れる電流が全体のI₀/2であり、抵抗値はR₂なので電力はI₀²R₂/4となる。",
+            "9": "平衡ではサーミスタに流れる電流が全体のI₀/2であり、抵抗値はR₂なので電力はI₀²R₂/4となる。",
+            "10": "枝電流の二乗に必要な分母４の代わりに２を使った差の式。平衡ではサーミスタに流れる電流が全体のI₀/2であり、抵抗値はR₂なので電力はI₀²R₂/4となる。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "マイクロ波で加熱したときのNTCサーミスタの抵抗変化",
+          "answer": "3",
+          "explanation": "NTCは負の温度係数を持つため、加熱で温度が上がると抵抗値が減少する。",
+          "candidateExplanations": {
+            "1": "抵抗の比の平衡を使うブリッジ。NTCは負の温度係数を持つため、加熱で温度が上がると抵抗値が減少する。",
+            "2": "抵抗と容量で周波数を選ぶブリッジ。NTCは負の温度係数を持つため、加熱で温度が上がると抵抗値が減少する。",
+            "3": "NTCは負の温度係数を持つため、加熱で温度が上がると抵抗値が減少する。",
+            "4": "値が大きくなる変化を表す語。NTCは負の温度係数を持つため、加熱で温度が上がると抵抗値が減少する。",
+            "5": "直流電力の置換前後の差として求める式。NTCは負の温度係数を持つため、加熱で温度が上がると抵抗値が減少する。",
+            "6": "0.01 Wである小電力の測定の目安。NTCは負の温度係数を持つため、加熱で温度が上がると抵抗値が減少する。",
+            "7": "10 mWより1000倍大きい電力の値。NTCは負の温度係数を持つため、加熱で温度が上がると抵抗値が減少する。",
+            "8": "全電流を半分にして二乗する考えと一致しない電力式。NTCは負の温度係数を持つため、加熱で温度が上がると抵抗値が減少する。",
+            "9": "平衡時の枝電流I₀/2を二乗して求めた電力。NTCは負の温度係数を持つため、加熱で温度が上がると抵抗値が減少する。",
+            "10": "枝電流の二乗に必要な分母４の代わりに２を使った差の式。NTCは負の温度係数を持つため、加熱で温度が上がると抵抗値が減少する。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "直流電流の読みをI₀からI₁に変えたときのマイクロ波電力",
+          "answer": "5",
+          "explanation": "同じ抵抗値となる平衡状態で減らした直流電力が吸収されたマイクロ波電力となるので、(I₀²−I₁²)R₂/4である。",
+          "candidateExplanations": {
+            "1": "抵抗の比の平衡を使うブリッジ。同じ抵抗値となる平衡状態で減らした直流電力が吸収されたマイクロ波電力となるので、(I₀²−I₁²)R₂/4である。",
+            "2": "抵抗と容量で周波数を選ぶブリッジ。同じ抵抗値となる平衡状態で減らした直流電力が吸収されたマイクロ波電力となるので、(I₀²−I₁²)R₂/4である。",
+            "3": "値が小さくなる変化を表す語。同じ抵抗値となる平衡状態で減らした直流電力が吸収されたマイクロ波電力となるので、(I₀²−I₁²)R₂/4である。",
+            "4": "値が大きくなる変化を表す語。同じ抵抗値となる平衡状態で減らした直流電力が吸収されたマイクロ波電力となるので、(I₀²−I₁²)R₂/4である。",
+            "5": "同じ抵抗値となる平衡状態で減らした直流電力が吸収されたマイクロ波電力となるので、(I₀²−I₁²)R₂/4である。",
+            "6": "0.01 Wである小電力の測定の目安。同じ抵抗値となる平衡状態で減らした直流電力が吸収されたマイクロ波電力となるので、(I₀²−I₁²)R₂/4である。",
+            "7": "10 mWより1000倍大きい電力の値。同じ抵抗値となる平衡状態で減らした直流電力が吸収されたマイクロ波電力となるので、(I₀²−I₁²)R₂/4である。",
+            "8": "全電流を半分にして二乗する考えと一致しない電力式。同じ抵抗値となる平衡状態で減らした直流電力が吸収されたマイクロ波電力となるので、(I₀²−I₁²)R₂/4である。",
+            "9": "平衡時の枝電流I₀/2を二乗して求めた電力。同じ抵抗値となる平衡状態で減らした直流電力が吸収されたマイクロ波電力となるので、(I₀²−I₁²)R₂/4である。",
+            "10": "枝電流の二乗に必要な分母４の代わりに２を使った差の式。同じ抵抗値となる平衡状態で減らした直流電力が吸収されたマイクロ波電力となるので、(I₀²−I₁²)R₂/4である。"
+          }
+        }
+      ],
+      "officialLabel": "B-5",
+      "bankImageUrls": [
+        "/questions/general1/2023-03-kogaku-a-q25-p06.png"
+      ],
+      "bankImageAltTexts": [
+        "第一級総合無線通信士 無線工学A 2023年3月期 B-5 公式原問題"
+      ]
+    }
+  }
+]
