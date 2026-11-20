@@ -515,6 +515,15 @@ fp2: {
     seasons: ["may", "september", "january", "published"],
     yearRange: { start: 2024, end: 2026 },
 },
+"cfp-realestate": {
+    code: "cfp-realestate",
+    nameFull: "CFP®資格審査試験（不動産運用設計）",
+    urlSlug: "cfp-realestate",
+    level: "advanced",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "不動産運用設計", categories: ["不動産運用設計"] }],
+    seasons: ["round1", "round2"],
+    yearRange: { start: 2025, end: 2025 },
+},
 "kogai-taiki-tokuron": {
     code: "kogai-taiki-tokuron",
     nameFull: "公害防止管理者等国家試験（大気特論）",
