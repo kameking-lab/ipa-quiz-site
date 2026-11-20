@@ -1,0 +1,1735 @@
+[
+  {
+    "id": "radio21-general1-2022-03-kogaku-a-q01",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "march",
+    "qNumber": 1,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "PLL周波数シンセサイザ"
+    ],
+    "difficulty": 3,
+    "question": "図のPLLで水晶発振器周波数10 MHz、固定分周比1/20と1/8、可変分周比1/102とする。位相比較器の二つの入力周波数が等しくなる出力周波数を選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230728045810id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230728045839id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2022年3月期 無線工学A A-1（問題・正答、試験問題記号 403）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2022-03-kogaku-a-q01-p01.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2022年3月期 A-1 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "400.4 MHz",
+      "イ": "402.0 MHz",
+      "ウ": "404.0 MHz",
+      "エ": "406.4 MHz",
+      "オ": "408.0 MHz"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "10/20＝fₒ/(8×102)より、fₒ＝0.5×8×102＝408.0 MHzになる。",
+    "choiceExplanations": {
+      "ア": "基準側は10/20＝0.5 MHzで、出力周波数を二つの分周器の合成分周数816で割るとこの値になる。",
+      "イ": "基準側0.5 MHzに掛ける帰還側の分周数は8×102なので、402.0 MHzでは位相比較器の二入力が一致しない。",
+      "ウ": "404.0 MHzを8×102で割ると0.5 MHzより低くなる。",
+      "エ": "406.4 MHzでも8×102で分周すると基準の0.5 MHzよりわずかに低い。",
+      "オ": "10/20＝fₒ/(8×102)より、fₒ＝0.5×8×102＝408.0 MHzになる。"
+    }
+  },
+  {
+    "id": "radio21-general1-2022-03-kogaku-a-q02",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "march",
+    "qNumber": 2,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "リング変調器の側波帯"
+    ],
+    "difficulty": 3,
+    "question": "図の理想的なダイオードリング変調器で、搬送波f꜀を変調信号fₚで変調したとき、端子a-bに出る周波数成分を選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230728045810id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230728045839id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2022年3月期 無線工学A A-2（問題・正答、試験問題記号 403）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2022-03-kogaku-a-q02-p01.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2022年3月期 A-2 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "f꜀±fₚ",
+      "イ": "f꜀±2fₚ",
+      "ウ": "f꜀及びf꜀±fₚ",
+      "エ": "f꜀及びf꜀±2fₚ",
+      "オ": "fₚ及びf꜀並びにf꜀±fₚ"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "理想的な平衡変調で搬送波が抑圧され、積の和差周波数である上下側波帯f꜀±fₚが得られる。",
+    "choiceExplanations": {
+      "ア": "理想的な平衡変調で搬送波が抑圧され、積の和差周波数である上下側波帯f꜀±fₚが得られる。",
+      "イ": "単一の信号周波数fₚを搬送波と掛け合わせた側波帯の間隔はfₚであり、その二倍ではない。",
+      "ウ": "側波帯は合うが、理想的な平衡回路では搬送波の単独成分は相殺される。",
+      "エ": "搬送波の単独成分が抑圧され、側波帯はf꜀±fₚとなる。",
+      "オ": "理想的な平衡変調では変調信号と搬送波の単独成分は現れず、和と差の成分が出力される。"
+    }
+  },
+  {
+    "id": "radio21-general1-2022-03-kogaku-a-q03",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "march",
+    "qNumber": 3,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "16QAMとQPSK"
+    ],
+    "difficulty": 3,
+    "question": "16QAMについて、同じ周波数帯域幅でのQPSKに対する理論的なベースバンド信号の伝送速度の上限A、直交する二つのASK信号の合成方法B、1シンボル当たりのビット数Cを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230728045810id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230728045839id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2022年3月期 無線工学A A-3（問題・正答、試験問題記号 403）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": true,
+    "imageUrls": [
+      "/questions/general1/2022-03-kogaku-a-q03-p01.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2022年3月期 A-3 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "4倍／加算／4ビット",
+      "イ": "4倍／掛け算／3ビット",
+      "ウ": "2倍／加算／4ビット",
+      "エ": "2倍／加算／3ビット",
+      "オ": "2倍／掛け算／4ビット"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "公開された正答表（AA403）は1を指定しており、直交するASK信号の加算と4ビットは16QAMの説明に合う。同じシンボル速度でのビットレートは4÷2＝2倍であり、Aはこの比較と一致しない。",
+    "choiceExplanations": {
+      "ア": "公開された正答表（AA403）は1を指定しており、直交するASK信号の加算と4ビットは16QAMの説明に合う。同じシンボル速度でのビットレートは4÷2＝2倍であり、Aはこの比較と一致しない。",
+      "イ": "16QAMでは直交するASK信号を足し合わせる。16通りの信号点は3ビットでは表せない。",
+      "ウ": "同じシンボル速度なら1シンボル4ビットと2ビットでビットレートの比は2倍となり、BとCも16QAMの説明に合う。保存されている公式正答表の指定は1である。",
+      "エ": "同じシンボル速度での伝送ビットレートの比と加算は合うが、16QAMの信号点数は2³ではなく2⁴である。",
+      "オ": "16QAMの1シンボルは4ビットだが、I成分とQ成分は掛け算でなく加算する。"
+    }
+  },
+  {
+    "id": "radio21-general1-2022-03-kogaku-a-q04",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "march",
+    "qNumber": 4,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "直接FM送信機"
+    ],
+    "difficulty": 3,
+    "question": "図の直接FM送信機の構成で、プレエンファシス回路の直後A、帰還ループで分周出力を比較する機器B、帰還ループの基準信号源Cを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230728045810id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230728045839id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2022年3月期 無線工学A A-4（問題・正答、試験問題記号 403）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2022-03-kogaku-a-q04-p01.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2022年3月期 A-4 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "周波数弁別器／周波数混合器／水晶発振器",
+      "イ": "周波数弁別器／位相比較器／自励発振器",
+      "ウ": "周波数弁別器／位相比較器／水晶発振器",
+      "エ": "IDC回路／周波数混合器／自励発振器",
+      "オ": "IDC回路／位相比較器／水晶発振器"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "IDC回路は過大な周波数偏移を抑制する。分周出力を位相比較し、基準の水晶発振器に同期させる。",
+    "choiceExplanations": {
+      "ア": "水晶発振器は基準に使うが、変調信号はIDC回路で制限し、帰還では位相比較を行う。",
+      "イ": "位相比較器は合うが、変調信号の振幅を制限するのはIDC回路で、安定な基準信号には水晶発振器を用いる。",
+      "ウ": "BとCは合うが、低周波信号の経路に置くAはリアクタンス変調前に振幅を制限するIDC回路である。",
+      "エ": "IDC回路は合うが、二つの分周出力の位相を比較し、基準は水晶発振器で作る。",
+      "オ": "IDC回路は過大な周波数偏移を抑制する。分周出力を位相比較し、基準の水晶発振器に同期させる。"
+    }
+  },
+  {
+    "id": "radio21-general1-2022-03-kogaku-a-q05",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "march",
+    "qNumber": 5,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "BPSKの検波"
+    ],
+    "difficulty": 3,
+    "question": "BPSKの同期検波で再生する信号A、遅延検波における遅延B、同じC/Nで理論上の符号誤り率が小さい方式Cを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230728045810id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230728045839id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2022年3月期 無線工学A A-5（問題・正答、試験問題記号 403）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2022-03-kogaku-a-q05-p02.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2022年3月期 A-5 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "パイロット信号／一つのシンボル周期／同期検波",
+      "イ": "パイロット信号／搬送波の1周期／遅延検波",
+      "ウ": "搬送波／搬送波の1周期／遅延検波",
+      "エ": "搬送波／一つのシンボル周期／同期検波",
+      "オ": "搬送波／一つのシンボル周期／遅延検波"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "同期検波は同期した搬送波を基準とする。遅延検波は一シンボル前を基準とし、同じC/Nでの理論誤り率は同期検波の方が小さい。",
+    "choiceExplanations": {
+      "ア": "BとCは合うが、同期検波は受信信号から再生した搬送波を位相基準にする。",
+      "イ": "遅延検波の遅延は情報の一シンボル周期であり、同期検波が理論上有利である。",
+      "ウ": "再生する搬送波は正しいが、遅延では前シンボルと比較し、同期検波の方が誤り率は小さい。",
+      "エ": "同期検波は同期した搬送波を基準とする。遅延検波は一シンボル前を基準とし、同じC/Nでの理論誤り率は同期検波の方が小さい。",
+      "オ": "AとBは正しいが、遅延検波は雑音を含む前シンボルを比較基準にするため、同じC/Nでは同期検波の方が有利である。"
+    }
+  },
+  {
+    "id": "radio21-general1-2022-03-kogaku-a-q06",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "march",
+    "qNumber": 6,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "受信機の影像周波数"
+    ],
+    "difficulty": 3,
+    "question": "スーパヘテロダイン受信機の影像周波数が混合器で変換される周波数A、影像対策で選択度を上げる増幅器B、局部発振周波数を受信周波数より低くしたときに影像周波数が受信周波数より2fᵢꜰだけどうなるかCを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230728045810id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230728045839id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2022年3月期 無線工学A A-6（問題・正答、試験問題記号 403）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2022-03-kogaku-a-q06-p02.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2022年3月期 A-6 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "局部発振／高周波／低い",
+      "イ": "局部発振／高周波／高い",
+      "ウ": "局部発振／中間周波／高い",
+      "エ": "中間／中間周波／低い",
+      "オ": "中間／高周波／低い"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "影像波は周波数変換後に希望波と同じ中間周波数となる。前段の高周波選択度で抑制でき、低側局発の場合には影像は希望周波数より2fᵢꜰ低い。",
+    "choiceExplanations": {
+      "ア": "影像波は混合器で希望波と同じ中間周波数に変換されるため出力に現れる。",
+      "イ": "混合後の周波数は中間周波数であり、局部発振が希望周波数より低いなら影像波も希望周波数より低い方にある。",
+      "ウ": "混合後は中間周波数で、影像を選別するのは混合前の高周波増幅器である。",
+      "エ": "AとCは正しいが、混合後には希望波と影像波が同じ周波数になるため、対策を行うのは高周波段である。",
+      "オ": "影像波は周波数変換後に希望波と同じ中間周波数となる。前段の高周波選択度で抑制でき、低側局発の場合には影像は希望周波数より2fᵢꜰ低い。"
+    }
+  },
+  {
+    "id": "radio21-general1-2022-03-kogaku-a-q07",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "march",
+    "qNumber": 7,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "FM受信機の入力電力"
+    ],
+    "difficulty": 3,
+    "question": "雑音指数6 dB、等価雑音帯域幅4 MHz、熱雑音密度−204 dBW/Hzの受信機で、入力換算のC/Nを40 dBにするための入力信号電力を選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230728045810id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230728045839id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2022年3月期 無線工学A A-7（問題・正答、試験問題記号 403）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2022-03-kogaku-a-q07-p02.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2022年3月期 A-7 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "−104 dBW",
+      "イ": "−100 dBW",
+      "ウ": "−98 dBW",
+      "エ": "−92 dBW",
+      "オ": "−86 dBW"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "帯域と雑音指数を含む等価入力雑音は−204＋66＋6＝−132 dBWである。これより40 dB大きい信号は−92 dBWとなる。",
+    "choiceExplanations": {
+      "ア": "雑音指数を含めた入力換算雑音は−132 dBWであり、その40 dB上が必要になる。",
+      "イ": "4 MHzを電力に対する対数値にすると約66 dBであり、雑音密度にこれと雑音指数を足して評価する。",
+      "ウ": "−98 dBWは受信機の雑音指数を無視したときの結果であり、雑音指数の6 dBを加える。",
+      "エ": "帯域と雑音指数を含む等価入力雑音は−204＋66＋6＝−132 dBWである。これより40 dB大きい信号は−92 dBWとなる。",
+      "オ": "受信機の雑音指数は等価入力雑音の計算で一度だけ加えるため、−86 dBWにはならない。"
+    }
+  },
+  {
+    "id": "radio21-general1-2022-03-kogaku-a-q08",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "march",
+    "qNumber": 8,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "増幅器の雑音指数"
+    ],
+    "difficulty": 3,
+    "question": "入力の信号対雑音比Sᵢ/Nᵢと出力の信号対雑音比Sₒ/Nₒにより、増幅器の雑音指数F（真数）の式A、内部雑音がないときの値B、内部雑音が大きいときの変化Cを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230728045810id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230728045839id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2022年3月期 無線工学A A-8（問題・正答、試験問題記号 403）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2022-03-kogaku-a-q08-p02.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2022年3月期 A-8 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "(Sᵢ/Nᵢ)/(Sₒ/Nₒ)／1／大きい",
+      "イ": "(Sᵢ/Nᵢ)/(Sₒ/Nₒ)／1／小さい",
+      "ウ": "(Sᵢ/Nᵢ)/(Sₒ/Nₒ)／0／小さい",
+      "エ": "(Sₒ/Nₒ)/(Sᵢ/Nᵢ)／1／小さい",
+      "オ": "(Sₒ/Nₒ)/(Sᵢ/Nᵢ)／0／大きい"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "雑音指数は入力S/Nを出力S/Nで割って求める。内部雑音がなければ両S/Nが等しく1、出力に雑音が加わるほどFは大きくなる。",
+    "choiceExplanations": {
+      "ア": "雑音指数は入力S/Nを出力S/Nで割って求める。内部雑音がなければ両S/Nが等しく1、出力に雑音が加わるほどFは大きくなる。",
+      "イ": "式と無雑音時の値は正しいが、内部雑音が増すと出力S/Nが小さくなるため雑音指数は増加する。",
+      "ウ": "無雑音なら入出力のS/Nの比は1であり、出力S/Nの低下はFを大きくする。",
+      "エ": "Bは適切だが、雑音指数の分子は入力S/Nであり、出力S/Nが低いほどFは大きい。",
+      "オ": "内部雑音でFが増える点は合うが、式の比の向きが逆であり、内部雑音がなくてもFは0ではない。"
+    }
+  },
+  {
+    "id": "radio21-general1-2022-03-kogaku-a-q09",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "march",
+    "qNumber": 9,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "整流回路の性能指標"
+    ],
+    "difficulty": 3,
+    "question": "交流分実効値iᵣ、直流分Iᴅᴄ、無負荷電圧Vₒ、定格負荷電圧Vₙ、負荷への電力P₁、供給電力P₂で表したリプル率A、電圧変動率B、整流効率Cの百分率にする前の式を選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230728045810id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230728045839id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2022年3月期 無線工学A A-9（問題・正答、試験問題記号 403）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2022-03-kogaku-a-q09-p02.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2022年3月期 A-9 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "iᵣ/Iᴅᴄ／Vₙ/(Vₒ−Vₙ)／P₁/P₂",
+      "イ": "iᵣ/Iᴅᴄ／(Vₒ−Vₙ)/Vₙ／P₁/P₂",
+      "ウ": "iᵣ/Iᴅᴄ／Vₙ/(Vₒ−Vₙ)／P₁/(P₁＋P₂)",
+      "エ": "iᵣ/(iᵣ＋Iᴅᴄ)／Vₙ/(Vₒ−Vₙ)／P₁/P₂",
+      "オ": "iᵣ/(iᵣ＋Iᴅᴄ)／(Vₒ−Vₙ)/Vₙ／P₁/(P₁＋P₂)"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "リプル率は交流分実効値を直流分で割り、電圧変動率は電圧の低下分を定格負荷時の値で割る。整流効率は負荷に供給する分を入力電力で割る。",
+    "choiceExplanations": {
+      "ア": "リプル率と効率は合うが、電圧変動率は負荷による電圧の差を定格負荷電圧で割る。",
+      "イ": "リプル率は交流分実効値を直流分で割り、電圧変動率は電圧の低下分を定格負荷時の値で割る。整流効率は負荷に供給する分を入力電力で割る。",
+      "ウ": "Aは正しいが、Bの比は逆で、効率の分母は一周期当たりの供給電力P₂である。",
+      "エ": "Cだけが合う。リプル率は直流分を分母にし、電圧変動率は電圧差を分子にする。",
+      "オ": "Bは合うが、Aでは直流分だけを分母にし、Cでは入力電力だけを分母に用いる。"
+    }
+  },
+  {
+    "id": "radio21-general1-2022-03-kogaku-a-q10",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "march",
+    "qNumber": 10,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "据置用鉛蓄電池"
+    ],
+    "difficulty": 3,
+    "question": "据置用鉛蓄電池について誤っている記述を選べ。一定電流でt時間後に放電終止電圧に達する放電をt時間率放電とする。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230728045810id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230728045839id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2022年3月期 無線工学A A-10（問題・正答、試験問題記号 403）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2022-03-kogaku-a-q10-p03.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2022年3月期 A-10 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "蓄電池を収納するケース又は室内を適切に換気する。",
+      "イ": "雰囲気温度が低いほど放電容量は小さく、その低下は大きな放電電流の場合ほど著しい。",
+      "ウ": "放電電流が大きい場合は放電し過ぎないよう、電流が小さい場合より放電終止電圧を高く設定する。",
+      "エ": "tが小さいほど放電電流は大きくなり、放電容量は低下する。",
+      "オ": "深放電後の定電圧充電では初期に大電流が流れるため、充電電流を制限する。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "大電流放電では内部抵抗等による端子電圧の低下が大きいため、一般に小電流時より低い放電終止電圧を設定する。",
+    "choiceExplanations": {
+      "ア": "充電時などに発生するガスが蓄積しないよう、蓄電池を置く場所の換気が必要である。",
+      "イ": "低温では反応が遅くなり、特に大電流放電では利用できる容量が低下しやすい。",
+      "ウ": "大電流放電では内部抵抗等による端子電圧の低下が大きいため、一般に小電流時より低い放電終止電圧を設定する。",
+      "エ": "短い時間率で大電流を流すほど、鉛蓄電池の取り出せる電力量は少なくなる。",
+      "オ": "放電後の電池に定電圧を加えると大電流が流れ得るため、初期に電流を制限する。"
+    }
+  },
+  {
+    "id": "radio21-general1-2022-03-kogaku-a-q11",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "march",
+    "qNumber": 11,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "デジタルマルチメータ"
+    ],
+    "difficulty": 3,
+    "question": "図のデジタルマルチメータで、A-D変換に入れる信号A、間接比較で測定量を処理する演算B、直接比較に使う回路Cを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230728045810id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230728045839id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2022年3月期 無線工学A A-11（問題・正答、試験問題記号 403）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2022-03-kogaku-a-q11-p03.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2022年3月期 A-11 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "直流電圧／微分／コンパレータ",
+      "イ": "直流電圧／積分／コンパレータ",
+      "ウ": "直流電圧／微分／ミクサ",
+      "エ": "交流電圧／微分／コンパレータ",
+      "オ": "交流電圧／積分／ミクサ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "入力変換部は直流電圧をA-D変換器へ渡す。間接比較では積分し、直接比較ではコンパレータが基準量と比較する。",
+    "choiceExplanations": {
+      "ア": "信号の変換先と直接比較の回路は正しいが、間接比較では入力を積分してその傾きを使う。",
+      "イ": "入力変換部は直流電圧をA-D変換器へ渡す。間接比較では積分し、直接比較ではコンパレータが基準量と比較する。",
+      "ウ": "Aは正しいが、間接比較では積分を用い、直接比較は信号を混合するミクサではなくコンパレータを使う。",
+      "エ": "直接比較の回路は合うが、入力は直流電圧に変換し、間接比較には積分を使う。",
+      "オ": "間接比較の積分は合うが、この構成でのA-D変換入力は直流電圧であり、ミクサは直接比較を行わない。"
+    }
+  },
+  {
+    "id": "radio21-general1-2022-03-kogaku-a-q12",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "march",
+    "qNumber": 12,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "標準信号発生器の出力"
+    ],
+    "difficulty": 3,
+    "question": "内部抵抗と負荷がともに50 Ωの標準信号発生器で、負荷に5 mWを消費させる実効電圧v₂（A）と信号源の実効電圧v₁（B）をdBμVで求めよ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230728045810id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230728045839id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2022年3月期 無線工学A A-12（問題・正答、試験問題記号 403）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2022-03-kogaku-a-q12-p03.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2022年3月期 A-12 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "110／113",
+      "イ": "110／116",
+      "ウ": "114／117",
+      "エ": "114／120",
+      "オ": "117／123"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "v₂＝√(0.005×50)＝0.5 Vで約114 dBμVである。等しい抵抗の分圧なのでv₁＝1 Vとなり、120 dBμVである。",
+    "choiceExplanations": {
+      "ア": "5 mWと50 Ωから負荷電圧は0.5 Vとなり、110 dBμVより高い。",
+      "イ": "等しい抵抗による6 dB差は正しいが、負荷電圧0.5 Vは約114 dBμVである。",
+      "ウ": "負荷電圧の値は合うが、信号源電圧は負荷電圧の2倍で、差は約6 dBとなる。",
+      "エ": "v₂＝√(0.005×50)＝0.5 Vで約114 dBμVである。等しい抵抗の分圧なのでv₁＝1 Vとなり、120 dBμVである。",
+      "オ": "負荷に必要な0.5 Vは約114 dBμVなので、両値とも約3 dB高い。"
+    }
+  },
+  {
+    "id": "radio21-general1-2022-03-kogaku-a-q13",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "march",
+    "qNumber": 13,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "直接拡散"
+    ],
+    "difficulty": 3,
+    "question": "直接拡散方式について、信号を拡散する符号A、高精度の時間測定を生かす応用B、チャネルごとに異なる符号を割り当てる多元接続Cを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230728045810id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230728045839id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2022年3月期 無線工学A A-13（問題・正答、試験問題記号 403）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2022-03-kogaku-a-q13-p03.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2022年3月期 A-13 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "擬似雑音（PN）／AIS／周波数分割",
+      "イ": "擬似雑音（PN）／GPS／符号分割",
+      "ウ": "巡回冗長（CRC）／AIS／符号分割",
+      "エ": "巡回冗長（CRC）／GPS／符号分割",
+      "オ": "巡回冗長（CRC）／GPS／周波数分割"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "情報信号をPN符号で拡散する。GPSの測距に使われ、利用者ごとに異なる符号を用いると符号分割多元接続になる。",
+    "choiceExplanations": {
+      "ア": "PN符号は合うが、測距への応用はGPSで、符号を分ける多元接続は符号分割である。",
+      "イ": "情報信号をPN符号で拡散する。GPSの測距に使われ、利用者ごとに異なる符号を用いると符号分割多元接続になる。",
+      "ウ": "符号分割は合うが、CRCは誤り検出用であり、測距に利用するのはGPSである。",
+      "エ": "GPSと符号分割は合うが、拡散に用いるのはCRCでなく擬似雑音符号である。",
+      "オ": "応用例は合うが、拡散にはPN符号を用い、符号で利用者を区別する方式は符号分割である。"
+    }
+  },
+  {
+    "id": "radio21-general1-2022-03-kogaku-a-q14",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "march",
+    "qNumber": 14,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "FMのプレエンファシス測定"
+    ],
+    "difficulty": 3,
+    "question": "図のFM送信機のプレエンファシス測定で、1,000 Hzの変調信号の波形Aと、同じ復調レベルを得る測定で出力レベルを比較する機器B、入力一定の測定で飽和に注意する周波数Cを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230728045810id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230728045839id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2022年3月期 無線工学A A-14（問題・正答、試験問題記号 403）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2022-03-kogaku-a-q14-p04.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2022年3月期 A-14 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "正弦波／低周波発振器／300 Hz",
+      "イ": "正弦波／低周波発振器／3,000 Hz",
+      "ウ": "矩形波／低周波発振器／300 Hz",
+      "エ": "矩形波／変調度計／300 Hz",
+      "オ": "矩形波／変調度計／3,000 Hz"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "各測定周波数の正弦波を使い、同じ復調出力に必要な低周波発振器のレベルを比較する。入力を固定する方法では高い3,000 Hzでの飽和に注意する。",
+    "choiceExplanations": {
+      "ア": "単一周波数の正弦波と低周波発振器は合うが、プレエンファシスで利得が上がる高い周波数で飽和を避ける。",
+      "イ": "各測定周波数の正弦波を使い、同じ復調出力に必要な低周波発振器のレベルを比較する。入力を固定する方法では高い3,000 Hzでの飽和に注意する。",
+      "ウ": "矩形波には高調波が含まれ、周波数ごとの特性の測定には正弦波を用いる。",
+      "エ": "正弦波を用い、比較するのは低周波発振器のレベルである。",
+      "オ": "3,000 Hzでの飽和への注意は適切だが、試験信号は正弦波で、同一復調出力での比較対象は低周波発振器である。"
+    }
+  },
+  {
+    "id": "radio21-general1-2022-03-kogaku-a-q15",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "march",
+    "qNumber": 15,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "SSB送信機の周波数偏差"
+    ],
+    "difficulty": 3,
+    "question": "図のSSB送信機の周波数偏差測定について正しい記述を選べ。J3Eでは測定値から変調周波数及び公称搬送波周波数を引き、R3E・H3Eでは測定値から公称搬送波周波数を引く。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230728045810id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230728045839id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2022年3月期 無線工学A A-15（問題・正答、試験問題記号 403）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2022-03-kogaku-a-q15-p04.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2022年3月期 A-15 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "周波数計の測定精度の数値は、SSB無線設備に定める許容偏差のHz値以上とする。",
+      "イ": "低周波発振器の周波数精度の数値は、SSB無線設備に定める許容偏差のHz値以上とする。",
+      "ウ": "J3Eでは無変調で測定する。",
+      "エ": "R3Eでは無変調で測定する。",
+      "オ": "H3Eでは変調して測定する。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "R3Eは低減搬送波を残す方式なので、無変調の状態でその搬送波周波数を測れる。",
+    "choiceExplanations": {
+      "ア": "測定器の周波数誤差は設備の許容偏差より十分小さくする必要がある。",
+      "イ": "低周波発振器の周波数誤差が大きいと変調周波数の差引計算にも誤差が入るため、許容偏差と同等以上の大きさの誤差は認められない。",
+      "ウ": "J3Eでは搬送波が抑圧されるため、変調して得る側波帯の周波数から搬送波の偏差を求める。",
+      "エ": "R3Eは低減搬送波を残す方式なので、無変調の状態でその搬送波周波数を測れる。",
+      "オ": "H3Eは全搬送波を伴うため、R3Eと同様に無変調で搬送波の周波数偏差を測れる。"
+    }
+  },
+  {
+    "id": "radio21-general1-2022-03-kogaku-a-q16",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "march",
+    "qNumber": 16,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "パルスレーダーの方位分解能"
+    ],
+    "difficulty": 3,
+    "question": "パルスレーダーから(9/π)×10³ m離れた二つの点物標を分離して探知できる最小水平距離が150 mである。方位分解能に最も近いものを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230728045810id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230728045839id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2022年3月期 無線工学A A-16（問題・正答、試験問題記号 403）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2022-03-kogaku-a-q16-p04.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2022年3月期 A-16 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1.0度",
+      "イ": "2.0度",
+      "ウ": "3.0度",
+      "エ": "4.0度",
+      "オ": "5.0度"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "方位角を小角近似すると150/(9,000/π)＝π/60 radになる。度に直すと3.0度である。",
+    "choiceExplanations": {
+      "ア": "1度がこの距離で張る幅は約50 mで、150 mより小さい。",
+      "イ": "2度はこの距離で約100 mに相当するため、分離できる最小水平距離150 mに足りない。",
+      "ウ": "方位角を小角近似すると150/(9,000/π)＝π/60 radになる。度に直すと3.0度である。",
+      "エ": "4度はこの距離で約200 mの幅に当たり、最小の150 mより大きい。",
+      "オ": "5度の広がりは約250 mに相当するため、設問の150 mを上回る。"
+    }
+  },
+  {
+    "id": "radio21-general1-2022-03-kogaku-a-q17",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "march",
+    "qNumber": 17,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "水晶発振周波数の安定化"
+    ],
+    "difficulty": 3,
+    "question": "送信機の水晶発振器で発振周波数が変動する原因と対策について誤っているものを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230728045810id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230728045839id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2022年3月期 無線工学A A-17（問題・正答、試験問題記号 403）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2022-03-kogaku-a-q17-p04.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2022年3月期 A-17 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "温度変化を抑えるため水晶発振器を恒温槽に入れる。",
+      "イ": "負荷変動の影響を抑えるため次段に緩衝増幅器を設ける。",
+      "ウ": "同じ温度係数の回路素子を組み合わせて温度変化による周波数変動を打ち消す。",
+      "エ": "水晶振動子やトランジスタ、コイル、コンデンサ等の定数が温度で変化することが原因になり得る。",
+      "オ": "後段の周波数逓倍器や励振増幅器、電力増幅器等の負荷変動が原因になり得る。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "温度変化を相殺するには、温度変化が周波数にもたらす影響が互いに打ち消し合うよう素子を選ぶ。同じ温度係数を組み合わせるだけでは補償できない。",
+    "choiceExplanations": {
+      "ア": "恒温槽で発振器周辺の温度を一定にし、温度に起因する周波数の変化を抑える。",
+      "イ": "緩衝増幅器が後段を発振回路から分離し、後段の負荷変動による周波数変化を抑える。",
+      "ウ": "温度変化を相殺するには、温度変化が周波数にもたらす影響が互いに打ち消し合うよう素子を選ぶ。同じ温度係数を組み合わせるだけでは補償できない。",
+      "エ": "温度による回路素子の定数の変化は、発振条件や発振周波数に影響し得る。",
+      "オ": "後段から見た負荷が変動すると発振回路の条件も変化し、周波数のずれが起こり得る。"
+    }
+  },
+  {
+    "id": "radio21-general1-2022-03-kogaku-a-q18",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "march",
+    "qNumber": 18,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "航空用距離測定装置"
+    ],
+    "difficulty": 3,
+    "question": "DMEで地上局が質問信号に応答する方法A、質問信号に対する応答信号の周波数B、航空機が発射する質問信号の時間間隔Cを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230728045810id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230728045839id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2022年3月期 無線工学A A-18（問題・正答、試験問題記号 403）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2022-03-kogaku-a-q18-p05.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2022年3月期 A-18 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "手動／同じ／不規則",
+      "イ": "手動／異なる／規則的",
+      "ウ": "自動／異なる／不規則",
+      "エ": "自動／異なる／規則的",
+      "オ": "自動／同じ／規則的"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "地上局は質問信号に別周波数で自動応答する。機上局は不規則な質問間隔に合う応答を識別し、往復の時間から距離を得る。",
+    "choiceExplanations": {
+      "ア": "質問間隔は不規則で合うが、地上局は質問を受けて別の周波数で自動応答する。",
+      "イ": "別周波数は合うが、応答は自動であり、質問間隔は他の航空機の応答との識別のため不規則にする。",
+      "ウ": "地上局は質問信号に別周波数で自動応答する。機上局は不規則な質問間隔に合う応答を識別し、往復の時間から距離を得る。",
+      "エ": "AとBは適切だが、複数機での応答を区別するため質問間隔を不規則にする。",
+      "オ": "自動応答は正しいが、応答に別周波数を使い、質問間隔は不規則にする。"
+    }
+  },
+  {
+    "id": "radio21-general1-2022-03-kogaku-a-q19",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "march",
+    "qNumber": 19,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "オシロスコープの構成"
+    ],
+    "difficulty": 3,
+    "question": "図の減衰器、垂直増幅器、トリガ回路、掃引信号発生回路及び水平増幅器を持つ測定器Aと、繰返し方形波を入力したとき観測できるものBを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230728045810id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230728045839id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2022年3月期 無線工学A A-19（問題・正答、試験問題記号 403）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2022-03-kogaku-a-q19-p05.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2022年3月期 A-19 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "FFTアナライザ／各スペクトルの振幅及び周波数",
+      "イ": "スペクトルアナライザ／方形波の振幅及び繰返し周波数",
+      "ウ": "スペクトルアナライザ／各スペクトルの振幅及び周波数",
+      "エ": "オシロスコープ／各スペクトルの振幅及び周波数",
+      "オ": "オシロスコープ／方形波の振幅及び繰返し周波数"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "入力を垂直軸に、トリガで同期させた時間を水平軸に表示するオシロスコープである。方形波の振幅と周期から求める繰返し周波数を測れる。",
+    "choiceExplanations": {
+      "ア": "FFTの周波数分析では各成分が分かるが、図は入力を垂直軸に、時間掃引を水平軸に与えて波形を表示する。",
+      "イ": "方形波の振幅と周期を波形で読む構成はオシロスコープである。",
+      "ウ": "周波数領域の観測内容としては適切だが、図はトリガにより時間掃引を同期させるオシロスコープである。",
+      "エ": "機器名は合うが、図の構成で直接見るのは時間波形であり、各周波数のスペクトルではない。",
+      "オ": "入力を垂直軸に、トリガで同期させた時間を水平軸に表示するオシロスコープである。方形波の振幅と周期から求める繰返し周波数を測れる。"
+    }
+  },
+  {
+    "id": "radio21-general1-2022-03-kogaku-a-q20",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "march",
+    "qNumber": 20,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "PCMの伝送ビットレート"
+    ],
+    "difficulty": 3,
+    "question": "アナログ信号を24 kHzで標本化し、各標本を16ビットで量子化してPCM伝送する。誤り訂正符号等を付加しないときのビットレートを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230728045810id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230728045839id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2022年3月期 無線工学A A-20（問題・正答、試験問題記号 403）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2022-03-kogaku-a-q20-p05.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2022年3月期 A-20 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "384 kbps",
+      "イ": "408 kbps",
+      "ウ": "432 kbps",
+      "エ": "768 kbps",
+      "オ": "864 kbps"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "1秒に24,000標本を作り、各標本を16ビットにするので24,000×16＝384,000 bit/sである。",
+    "choiceExplanations": {
+      "ア": "1秒に24,000標本を作り、各標本を16ビットにするので24,000×16＝384,000 bit/sである。",
+      "イ": "付加するビットがないため、標本の個数と1標本当たりの16ビットを掛けた値だけでよい。",
+      "ウ": "量子化ビットに余分なビットを加えず、24 kHzと16ビットの積で384 kbpsとなる。",
+      "エ": "標本化周波数24 kHzはすでに標本数を示すため、ここで2倍する必要はない。",
+      "オ": "符号化する各標本は16ビットであり、必要な伝送レートは24,000×16 bit/sで足りる。"
+    }
+  },
+  {
+    "id": "radio21-general1-2022-03-kogaku-a-q21",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "march",
+    "qNumber": 21,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "受信機の感度抑圧効果"
+    ],
+    "difficulty": 3,
+    "question": "スーパヘテロダイン方式のFM（F3E）受信機の感度抑圧効果について、各記述の正誤を答えよ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230728045810id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230728045839id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2022年3月期 無線工学A B-1（問題・正答、試験問題記号 403）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2022-03-kogaku-a-q21-p05.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2022年3月期 B-1 公式原問題"
+    ],
+    "type": "native-b",
+    "explanation": "希望波と局部発振に対して対称な周波数という条件は影像周波数に関するもので、この効果に固有の条件ではない。\n\n感度抑圧は強い信号で受信機の増幅段の動作が変わり、弱い希望波に対する利得が低下する現象である。\n\n感度抑圧に及ぼす妨害の程度は入力レベルや周波数差、変調による成分の広がりに依存する。無変調であることから変調時より妨害が大きいとする記述は本問の判定と合わない。\n\n強い妨害波によって増幅部が飽和するのを防ぐには、必要なS/Nを保ちつつ高周波増幅部の利得を抑える方法がある。\n\n周波数差が大きい妨害波は同調回路で抑えやすくなるため、許容できる妨害波の入力レベルは一般に高くなる。",
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "正しい"
+        },
+        {
+          "id": "2",
+          "label": "誤っている"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "局部発振周波数を挟み希望波と対称にある妨害波が、感度抑圧の発生条件である。",
+          "answer": "2",
+          "explanation": "希望波と局部発振に対して対称な周波数という条件は影像周波数に関するもので、この効果に固有の条件ではない。",
+          "candidateExplanations": {
+            "1": "この記述には誤りがある。希望波と局部発振に対して対称な周波数という条件は影像周波数に関するもので、この効果に固有の条件ではない。",
+            "2": "希望波と局部発振に対して対称な周波数という条件は影像周波数に関するもので、この効果に固有の条件ではない。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "妨害波が中間周波数に変換され利得が増加するために、感度抑圧が生じる。",
+          "answer": "2",
+          "explanation": "感度抑圧は強い信号で受信機の増幅段の動作が変わり、弱い希望波に対する利得が低下する現象である。",
+          "candidateExplanations": {
+            "1": "この記述には誤りがある。感度抑圧は強い信号で受信機の増幅段の動作が変わり、弱い希望波に対する利得が低下する現象である。",
+            "2": "感度抑圧は強い信号で受信機の増幅段の動作が変わり、弱い希望波に対する利得が低下する現象である。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "希望波近傍の無変調の妨害波は、同じ妨害波が変調されている場合より妨害の程度が大きくなることがある。",
+          "answer": "2",
+          "explanation": "感度抑圧に及ぼす妨害の程度は入力レベルや周波数差、変調による成分の広がりに依存する。無変調であることから変調時より妨害が大きいとする記述は本問の判定と合わない。",
+          "candidateExplanations": {
+            "1": "この記述には誤りがある。感度抑圧に及ぼす妨害の程度は入力レベルや周波数差、変調による成分の広がりに依存する。無変調であることから変調時より妨害が大きいとする記述は本問の判定と合わない。",
+            "2": "感度抑圧に及ぼす妨害の程度は入力レベルや周波数差、変調による成分の広がりに依存する。無変調であることから変調時より妨害が大きいとする記述は本問の判定と合わない。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "規定のS/Nが得られる範囲で高周波増幅の利得を低くすることで感度抑圧を軽減できる。",
+          "answer": "1",
+          "explanation": "強い妨害波によって増幅部が飽和するのを防ぐには、必要なS/Nを保ちつつ高周波増幅部の利得を抑える方法がある。",
+          "candidateExplanations": {
+            "1": "強い妨害波によって増幅部が飽和するのを防ぐには、必要なS/Nを保ちつつ高周波増幅部の利得を抑える方法がある。",
+            "2": "この記述は妥当である。強い妨害波によって増幅部が飽和するのを防ぐには、必要なS/Nを保ちつつ高周波増幅部の利得を抑える方法がある。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "希望波信号の入力レベルが一定なら、希望波と妨害波との周波数差が大きいほど妨害波の許容限界入力レベルは低くなる。",
+          "answer": "2",
+          "explanation": "周波数差が大きい妨害波は同調回路で抑えやすくなるため、許容できる妨害波の入力レベルは一般に高くなる。",
+          "candidateExplanations": {
+            "1": "この記述には誤りがある。周波数差が大きい妨害波は同調回路で抑えやすくなるため、許容できる妨害波の入力レベルは一般に高くなる。",
+            "2": "周波数差が大きい妨害波は同調回路で抑えやすくなるため、許容できる妨害波の入力レベルは一般に高くなる。"
+          }
+        }
+      ],
+      "officialLabel": "B-1",
+      "bankImageUrls": [
+        "/questions/general1/2022-03-kogaku-a-q21-p05.png"
+      ],
+      "bankImageAltTexts": [
+        "第一級総合無線通信士 無線工学A 2022年3月期 B-1 公式原問題"
+      ]
+    }
+  },
+  {
+    "id": "radio21-general1-2022-03-kogaku-a-q22",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "march",
+    "qNumber": 22,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "GPSの衛星と測位"
+    ],
+    "difficulty": 3,
+    "question": "GPSの基本的な衛星配置、信号及び測位原理に関する空欄を埋めよ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230728045810id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230728045839id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2022年3月期 無線工学A B-2（問題・正答、試験問題記号 403）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2022-03-kogaku-a-q22-p06.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2022年3月期 B-2 公式原問題"
+    ],
+    "type": "native-b",
+    "explanation": "基本のGPS構成では6軌道に衛星を分散させ、合計24基を配置する。\n\nGPS衛星は約2万km上空の中軌道を約12時間で周回する。\n\nGPS衛星は測距に必要な高い時刻精度を得るため、原子時計を搭載する。\n\nGPSのL1信号は1575.42 MHzであり、ここでは1.5 GHz帯とされる。\n\n位置の三座標と受信機時計のずれの四つの未知量を解くので、独立した衛星信号が少なくとも4基分必要である。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "12",
+          "explanation": "基本のGPS衛星配置の個数より少ない。"
+        },
+        {
+          "id": "2",
+          "label": "20,000 km",
+          "explanation": "GPSが使う中軌道の高度に近い。"
+        },
+        {
+          "id": "3",
+          "label": "水晶時計",
+          "explanation": "水晶振動子の周波数を利用する時計である。"
+        },
+        {
+          "id": "4",
+          "label": "1.5 GHz帯",
+          "explanation": "GPSのL1信号の周波数帯を示す。"
+        },
+        {
+          "id": "5",
+          "label": "4",
+          "explanation": "三つの位置座標と時計誤差に対応する数である。"
+        },
+        {
+          "id": "6",
+          "label": "24",
+          "explanation": "基本のGPS衛星配置の個数である。"
+        },
+        {
+          "id": "7",
+          "label": "36,000 km",
+          "explanation": "静止軌道に近い高度である。"
+        },
+        {
+          "id": "8",
+          "label": "原子時計",
+          "explanation": "原子の遷移周波数を基準にする時計である。"
+        },
+        {
+          "id": "9",
+          "label": "2.5 GHz帯",
+          "explanation": "GPSの代表的な測位信号の周波数帯とは異なる。"
+        },
+        {
+          "id": "10",
+          "label": "3",
+          "explanation": "三次元で時刻のずれも解くための衛星数に満たない。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "6つの軌道に分散配置される基本の衛星数を選べ。",
+          "answer": "6",
+          "explanation": "基本のGPS構成では6軌道に衛星を分散させ、合計24基を配置する。",
+          "candidateExplanations": {
+            "1": "基本のGPS衛星配置の個数より少ない。基本のGPS構成では6軌道に衛星を分散させ、合計24基を配置する。",
+            "2": "GPSが使う中軌道の高度に近い。基本のGPS構成では6軌道に衛星を分散させ、合計24基を配置する。",
+            "3": "水晶振動子の周波数を利用する時計である。基本のGPS構成では6軌道に衛星を分散させ、合計24基を配置する。",
+            "4": "GPSのL1信号の周波数帯を示す。基本のGPS構成では6軌道に衛星を分散させ、合計24基を配置する。",
+            "5": "三つの位置座標と時計誤差に対応する数である。基本のGPS構成では6軌道に衛星を分散させ、合計24基を配置する。",
+            "6": "基本のGPS構成では6軌道に衛星を分散させ、合計24基を配置する。",
+            "7": "静止軌道に近い高度である。基本のGPS構成では6軌道に衛星を分散させ、合計24基を配置する。",
+            "8": "原子の遷移周波数を基準にする時計である。基本のGPS構成では6軌道に衛星を分散させ、合計24基を配置する。",
+            "9": "GPSの代表的な測位信号の周波数帯とは異なる。基本のGPS構成では6軌道に衛星を分散させ、合計24基を配置する。",
+            "10": "三次元で時刻のずれも解くための衛星数に満たない。基本のGPS構成では6軌道に衛星を分散させ、合計24基を配置する。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "GPS衛星の軌道高度のおおよその値を選べ。",
+          "answer": "2",
+          "explanation": "GPS衛星は約2万km上空の中軌道を約12時間で周回する。",
+          "candidateExplanations": {
+            "1": "基本のGPS衛星配置の個数より少ない。GPS衛星は約2万km上空の中軌道を約12時間で周回する。",
+            "2": "GPS衛星は約2万km上空の中軌道を約12時間で周回する。",
+            "3": "水晶振動子の周波数を利用する時計である。GPS衛星は約2万km上空の中軌道を約12時間で周回する。",
+            "4": "GPSのL1信号の周波数帯を示す。GPS衛星は約2万km上空の中軌道を約12時間で周回する。",
+            "5": "三つの位置座標と時計誤差に対応する数である。GPS衛星は約2万km上空の中軌道を約12時間で周回する。",
+            "6": "基本のGPS衛星配置の個数である。GPS衛星は約2万km上空の中軌道を約12時間で周回する。",
+            "7": "静止軌道に近い高度である。GPS衛星は約2万km上空の中軌道を約12時間で周回する。",
+            "8": "原子の遷移周波数を基準にする時計である。GPS衛星は約2万km上空の中軌道を約12時間で周回する。",
+            "9": "GPSの代表的な測位信号の周波数帯とは異なる。GPS衛星は約2万km上空の中軌道を約12時間で周回する。",
+            "10": "三次元で時刻のずれも解くための衛星数に満たない。GPS衛星は約2万km上空の中軌道を約12時間で周回する。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "衛星が送信する正確な時刻の基準を作る機器を選べ。",
+          "answer": "8",
+          "explanation": "GPS衛星は測距に必要な高い時刻精度を得るため、原子時計を搭載する。",
+          "candidateExplanations": {
+            "1": "基本のGPS衛星配置の個数より少ない。GPS衛星は測距に必要な高い時刻精度を得るため、原子時計を搭載する。",
+            "2": "GPSが使う中軌道の高度に近い。GPS衛星は測距に必要な高い時刻精度を得るため、原子時計を搭載する。",
+            "3": "水晶振動子の周波数を利用する時計である。GPS衛星は測距に必要な高い時刻精度を得るため、原子時計を搭載する。",
+            "4": "GPSのL1信号の周波数帯を示す。GPS衛星は測距に必要な高い時刻精度を得るため、原子時計を搭載する。",
+            "5": "三つの位置座標と時計誤差に対応する数である。GPS衛星は測距に必要な高い時刻精度を得るため、原子時計を搭載する。",
+            "6": "基本のGPS衛星配置の個数である。GPS衛星は測距に必要な高い時刻精度を得るため、原子時計を搭載する。",
+            "7": "静止軌道に近い高度である。GPS衛星は測距に必要な高い時刻精度を得るため、原子時計を搭載する。",
+            "8": "GPS衛星は測距に必要な高い時刻精度を得るため、原子時計を搭載する。",
+            "9": "GPSの代表的な測位信号の周波数帯とは異なる。GPS衛星は測距に必要な高い時刻精度を得るため、原子時計を搭載する。",
+            "10": "三次元で時刻のずれも解くための衛星数に満たない。GPS衛星は測距に必要な高い時刻精度を得るため、原子時計を搭載する。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "GPS衛星が1.2 GHz帯のほかに使う代表的な周波数帯を選べ。",
+          "answer": "4",
+          "explanation": "GPSのL1信号は1575.42 MHzであり、ここでは1.5 GHz帯とされる。",
+          "candidateExplanations": {
+            "1": "基本のGPS衛星配置の個数より少ない。GPSのL1信号は1575.42 MHzであり、ここでは1.5 GHz帯とされる。",
+            "2": "GPSが使う中軌道の高度に近い。GPSのL1信号は1575.42 MHzであり、ここでは1.5 GHz帯とされる。",
+            "3": "水晶振動子の周波数を利用する時計である。GPSのL1信号は1575.42 MHzであり、ここでは1.5 GHz帯とされる。",
+            "4": "GPSのL1信号は1575.42 MHzであり、ここでは1.5 GHz帯とされる。",
+            "5": "三つの位置座標と時計誤差に対応する数である。GPSのL1信号は1575.42 MHzであり、ここでは1.5 GHz帯とされる。",
+            "6": "基本のGPS衛星配置の個数である。GPSのL1信号は1575.42 MHzであり、ここでは1.5 GHz帯とされる。",
+            "7": "静止軌道に近い高度である。GPSのL1信号は1575.42 MHzであり、ここでは1.5 GHz帯とされる。",
+            "8": "原子の遷移周波数を基準にする時計である。GPSのL1信号は1575.42 MHzであり、ここでは1.5 GHz帯とされる。",
+            "9": "GPSの代表的な測位信号の周波数帯とは異なる。GPSのL1信号は1575.42 MHzであり、ここでは1.5 GHz帯とされる。",
+            "10": "三次元で時刻のずれも解くための衛星数に満たない。GPSのL1信号は1575.42 MHzであり、ここでは1.5 GHz帯とされる。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "三次元の位置と受信機の時刻補正を同時に求めるため、原理上必要な衛星の最低数を選べ。",
+          "answer": "5",
+          "explanation": "位置の三座標と受信機時計のずれの四つの未知量を解くので、独立した衛星信号が少なくとも4基分必要である。",
+          "candidateExplanations": {
+            "1": "基本のGPS衛星配置の個数より少ない。位置の三座標と受信機時計のずれの四つの未知量を解くので、独立した衛星信号が少なくとも4基分必要である。",
+            "2": "GPSが使う中軌道の高度に近い。位置の三座標と受信機時計のずれの四つの未知量を解くので、独立した衛星信号が少なくとも4基分必要である。",
+            "3": "水晶振動子の周波数を利用する時計である。位置の三座標と受信機時計のずれの四つの未知量を解くので、独立した衛星信号が少なくとも4基分必要である。",
+            "4": "GPSのL1信号の周波数帯を示す。位置の三座標と受信機時計のずれの四つの未知量を解くので、独立した衛星信号が少なくとも4基分必要である。",
+            "5": "位置の三座標と受信機時計のずれの四つの未知量を解くので、独立した衛星信号が少なくとも4基分必要である。",
+            "6": "基本のGPS衛星配置の個数である。位置の三座標と受信機時計のずれの四つの未知量を解くので、独立した衛星信号が少なくとも4基分必要である。",
+            "7": "静止軌道に近い高度である。位置の三座標と受信機時計のずれの四つの未知量を解くので、独立した衛星信号が少なくとも4基分必要である。",
+            "8": "原子の遷移周波数を基準にする時計である。位置の三座標と受信機時計のずれの四つの未知量を解くので、独立した衛星信号が少なくとも4基分必要である。",
+            "9": "GPSの代表的な測位信号の周波数帯とは異なる。位置の三座標と受信機時計のずれの四つの未知量を解くので、独立した衛星信号が少なくとも4基分必要である。",
+            "10": "三次元で時刻のずれも解くための衛星数に満たない。位置の三座標と受信機時計のずれの四つの未知量を解くので、独立した衛星信号が少なくとも4基分必要である。"
+          }
+        }
+      ],
+      "officialLabel": "B-2",
+      "bankImageUrls": [
+        "/questions/general1/2022-03-kogaku-a-q22-p06.png"
+      ],
+      "bankImageAltTexts": [
+        "第一級総合無線通信士 無線工学A 2022年3月期 B-2 公式原問題"
+      ]
+    }
+  },
+  {
+    "id": "radio21-general1-2022-03-kogaku-a-q23",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "march",
+    "qNumber": 23,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "国際ナブテックス"
+    ],
+    "difficulty": 3,
+    "question": "我が国の国際ナブテックスについて、対象となる沿岸水域、信号及び混信の回避の空欄を埋めよ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230728045810id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230728045839id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2022年3月期 無線工学A B-3（問題・正答、試験問題記号 403）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2022-03-kogaku-a-q23-p06.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2022年3月期 B-3 公式原問題"
+    ],
+    "type": "native-b",
+    "explanation": "設問の国際ナブテックスは、日本沿岸から約300海里以内の船舶への海上安全情報を扱う。\n\n国際向けの英文ナブテックス放送には518 kHzを使用する。\n\n狭帯域直接印刷電信は信号状態を周波数の切替えで表す周波数偏移変調を用いる。\n\n設問の狭帯域直接印刷電信の伝送速度は100 bpsである。\n\n送信局ごとに異なる放送時間を割り当て、同じ周波数を同時に使うことによる混信を抑える。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "518 kHz",
+          "explanation": "国際的な英文ナブテックスの周波数である。"
+        },
+        {
+          "id": "2",
+          "label": "418 kHz",
+          "explanation": "この受信で国際的に統一されている周波数とは異なる。"
+        },
+        {
+          "id": "3",
+          "label": "パルス符号変調（PCM）方式",
+          "explanation": "標本を量子化して符号に変える方式である。"
+        },
+        {
+          "id": "4",
+          "label": "周波数偏移（FS）変調方式",
+          "explanation": "二値の違いを周波数で表す方式である。"
+        },
+        {
+          "id": "5",
+          "label": "放送内容",
+          "explanation": "各送信で伝える情報の内容である。"
+        },
+        {
+          "id": "6",
+          "label": "800海里",
+          "explanation": "日本沿岸向けの設問の対象距離より遠い。"
+        },
+        {
+          "id": "7",
+          "label": "300海里",
+          "explanation": "設問の対象水域の沿岸からのおおよその距離である。"
+        },
+        {
+          "id": "8",
+          "label": "400 bps",
+          "explanation": "設問の方式の信号速度より速い。"
+        },
+        {
+          "id": "9",
+          "label": "100 bps",
+          "explanation": "国際ナブテックスの狭帯域直接印刷電信の速度である。"
+        },
+        {
+          "id": "10",
+          "label": "放送時間",
+          "explanation": "同一周波数の共用時に局ごとに割り当てる時間である。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "海岸局からの英文海上安全情報が対象とする、日本沿岸からのおおよその距離を選べ。",
+          "answer": "7",
+          "explanation": "設問の国際ナブテックスは、日本沿岸から約300海里以内の船舶への海上安全情報を扱う。",
+          "candidateExplanations": {
+            "1": "国際的な英文ナブテックスの周波数である。設問の国際ナブテックスは、日本沿岸から約300海里以内の船舶への海上安全情報を扱う。",
+            "2": "この受信で国際的に統一されている周波数とは異なる。設問の国際ナブテックスは、日本沿岸から約300海里以内の船舶への海上安全情報を扱う。",
+            "3": "標本を量子化して符号に変える方式である。設問の国際ナブテックスは、日本沿岸から約300海里以内の船舶への海上安全情報を扱う。",
+            "4": "二値の違いを周波数で表す方式である。設問の国際ナブテックスは、日本沿岸から約300海里以内の船舶への海上安全情報を扱う。",
+            "5": "各送信で伝える情報の内容である。設問の国際ナブテックスは、日本沿岸から約300海里以内の船舶への海上安全情報を扱う。",
+            "6": "日本沿岸向けの設問の対象距離より遠い。設問の国際ナブテックスは、日本沿岸から約300海里以内の船舶への海上安全情報を扱う。",
+            "7": "設問の国際ナブテックスは、日本沿岸から約300海里以内の船舶への海上安全情報を扱う。",
+            "8": "設問の方式の信号速度より速い。設問の国際ナブテックスは、日本沿岸から約300海里以内の船舶への海上安全情報を扱う。",
+            "9": "国際ナブテックスの狭帯域直接印刷電信の速度である。設問の国際ナブテックスは、日本沿岸から約300海里以内の船舶への海上安全情報を扱う。",
+            "10": "同一周波数の共用時に局ごとに割り当てる時間である。設問の国際ナブテックスは、日本沿岸から約300海里以内の船舶への海上安全情報を扱う。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "国際ナブテックス受信機に国際的に統一されている周波数を選べ。",
+          "answer": "1",
+          "explanation": "国際向けの英文ナブテックス放送には518 kHzを使用する。",
+          "candidateExplanations": {
+            "1": "国際向けの英文ナブテックス放送には518 kHzを使用する。",
+            "2": "この受信で国際的に統一されている周波数とは異なる。国際向けの英文ナブテックス放送には518 kHzを使用する。",
+            "3": "標本を量子化して符号に変える方式である。国際向けの英文ナブテックス放送には518 kHzを使用する。",
+            "4": "二値の違いを周波数で表す方式である。国際向けの英文ナブテックス放送には518 kHzを使用する。",
+            "5": "各送信で伝える情報の内容である。国際向けの英文ナブテックス放送には518 kHzを使用する。",
+            "6": "日本沿岸向けの設問の対象距離より遠い。国際向けの英文ナブテックス放送には518 kHzを使用する。",
+            "7": "設問の対象水域の沿岸からのおおよその距離である。国際向けの英文ナブテックス放送には518 kHzを使用する。",
+            "8": "設問の方式の信号速度より速い。国際向けの英文ナブテックス放送には518 kHzを使用する。",
+            "9": "国際ナブテックスの狭帯域直接印刷電信の速度である。国際向けの英文ナブテックス放送には518 kHzを使用する。",
+            "10": "同一周波数の共用時に局ごとに割り当てる時間である。国際向けの英文ナブテックス放送には518 kHzを使用する。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "狭帯域直接印刷電信で二つの信号状態を表す変調方式を選べ。",
+          "answer": "4",
+          "explanation": "狭帯域直接印刷電信は信号状態を周波数の切替えで表す周波数偏移変調を用いる。",
+          "candidateExplanations": {
+            "1": "国際的な英文ナブテックスの周波数である。狭帯域直接印刷電信は信号状態を周波数の切替えで表す周波数偏移変調を用いる。",
+            "2": "この受信で国際的に統一されている周波数とは異なる。狭帯域直接印刷電信は信号状態を周波数の切替えで表す周波数偏移変調を用いる。",
+            "3": "標本を量子化して符号に変える方式である。狭帯域直接印刷電信は信号状態を周波数の切替えで表す周波数偏移変調を用いる。",
+            "4": "狭帯域直接印刷電信は信号状態を周波数の切替えで表す周波数偏移変調を用いる。",
+            "5": "各送信で伝える情報の内容である。狭帯域直接印刷電信は信号状態を周波数の切替えで表す周波数偏移変調を用いる。",
+            "6": "日本沿岸向けの設問の対象距離より遠い。狭帯域直接印刷電信は信号状態を周波数の切替えで表す周波数偏移変調を用いる。",
+            "7": "設問の対象水域の沿岸からのおおよその距離である。狭帯域直接印刷電信は信号状態を周波数の切替えで表す周波数偏移変調を用いる。",
+            "8": "設問の方式の信号速度より速い。狭帯域直接印刷電信は信号状態を周波数の切替えで表す周波数偏移変調を用いる。",
+            "9": "国際ナブテックスの狭帯域直接印刷電信の速度である。狭帯域直接印刷電信は信号状態を周波数の切替えで表す周波数偏移変調を用いる。",
+            "10": "同一周波数の共用時に局ごとに割り当てる時間である。狭帯域直接印刷電信は信号状態を周波数の切替えで表す周波数偏移変調を用いる。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "国際ナブテックスの信号伝送速度を選べ。",
+          "answer": "9",
+          "explanation": "設問の狭帯域直接印刷電信の伝送速度は100 bpsである。",
+          "candidateExplanations": {
+            "1": "国際的な英文ナブテックスの周波数である。設問の狭帯域直接印刷電信の伝送速度は100 bpsである。",
+            "2": "この受信で国際的に統一されている周波数とは異なる。設問の狭帯域直接印刷電信の伝送速度は100 bpsである。",
+            "3": "標本を量子化して符号に変える方式である。設問の狭帯域直接印刷電信の伝送速度は100 bpsである。",
+            "4": "二値の違いを周波数で表す方式である。設問の狭帯域直接印刷電信の伝送速度は100 bpsである。",
+            "5": "各送信で伝える情報の内容である。設問の狭帯域直接印刷電信の伝送速度は100 bpsである。",
+            "6": "日本沿岸向けの設問の対象距離より遠い。設問の狭帯域直接印刷電信の伝送速度は100 bpsである。",
+            "7": "設問の対象水域の沿岸からのおおよその距離である。設問の狭帯域直接印刷電信の伝送速度は100 bpsである。",
+            "8": "設問の方式の信号速度より速い。設問の狭帯域直接印刷電信の伝送速度は100 bpsである。",
+            "9": "設問の狭帯域直接印刷電信の伝送速度は100 bpsである。",
+            "10": "同一周波数の共用時に局ごとに割り当てる時間である。設問の狭帯域直接印刷電信の伝送速度は100 bpsである。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "複数の送信局が同じ周波数を使う際、混信を避けるために各局に割り当てるものを選べ。",
+          "answer": "10",
+          "explanation": "送信局ごとに異なる放送時間を割り当て、同じ周波数を同時に使うことによる混信を抑える。",
+          "candidateExplanations": {
+            "1": "国際的な英文ナブテックスの周波数である。送信局ごとに異なる放送時間を割り当て、同じ周波数を同時に使うことによる混信を抑える。",
+            "2": "この受信で国際的に統一されている周波数とは異なる。送信局ごとに異なる放送時間を割り当て、同じ周波数を同時に使うことによる混信を抑える。",
+            "3": "標本を量子化して符号に変える方式である。送信局ごとに異なる放送時間を割り当て、同じ周波数を同時に使うことによる混信を抑える。",
+            "4": "二値の違いを周波数で表す方式である。送信局ごとに異なる放送時間を割り当て、同じ周波数を同時に使うことによる混信を抑える。",
+            "5": "各送信で伝える情報の内容である。送信局ごとに異なる放送時間を割り当て、同じ周波数を同時に使うことによる混信を抑える。",
+            "6": "日本沿岸向けの設問の対象距離より遠い。送信局ごとに異なる放送時間を割り当て、同じ周波数を同時に使うことによる混信を抑える。",
+            "7": "設問の対象水域の沿岸からのおおよその距離である。送信局ごとに異なる放送時間を割り当て、同じ周波数を同時に使うことによる混信を抑える。",
+            "8": "設問の方式の信号速度より速い。送信局ごとに異なる放送時間を割り当て、同じ周波数を同時に使うことによる混信を抑える。",
+            "9": "国際ナブテックスの狭帯域直接印刷電信の速度である。送信局ごとに異なる放送時間を割り当て、同じ周波数を同時に使うことによる混信を抑える。",
+            "10": "送信局ごとに異なる放送時間を割り当て、同じ周波数を同時に使うことによる混信を抑える。"
+          }
+        }
+      ],
+      "officialLabel": "B-3",
+      "bankImageUrls": [
+        "/questions/general1/2022-03-kogaku-a-q23-p06.png"
+      ],
+      "bankImageAltTexts": [
+        "第一級総合無線通信士 無線工学A 2022年3月期 B-3 公式原問題"
+      ]
+    }
+  },
+  {
+    "id": "radio21-general1-2022-03-kogaku-a-q24",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "march",
+    "qNumber": 24,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "PCMの量子化と標本化"
+    ],
+    "difficulty": 3,
+    "question": "PCM方式の処理順序、標本化及び雑音について空欄を埋めよ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230728045810id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230728045839id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2022年3月期 無線工学A B-4（問題・正答、試験問題記号 403）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2022-03-kogaku-a-q24-p06.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2022年3月期 B-4 公式原問題"
+    ],
+    "type": "native-b",
+    "explanation": "標本の振幅を一定の段階に丸める工程を量子化という。\n\n量子化で選ばれた段階の番号は符号化によってビット列で表される。\n\n標本化定理によると、標本化周波数が信号帯域の最高周波数の2倍を上回れば、理想条件で復元できる。\n\n高い周波数成分が標本化によって低い成分として現れ、元の帯域に折り返される。\n\nステップ数が増えると各段階の間隔が狭くなり、丸める振幅の差と量子化雑音は小さくなる。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "復号化",
+          "explanation": "符号を元の情報に戻す処理である。"
+        },
+        {
+          "id": "2",
+          "label": "多重化",
+          "explanation": "複数の信号を一つの伝送路にまとめる処理である。"
+        },
+        {
+          "id": "3",
+          "label": "2倍",
+          "explanation": "標本化周波数の下限を求めるための倍率である。"
+        },
+        {
+          "id": "4",
+          "label": "折り返し雑音",
+          "explanation": "高域の成分が標本化で低域に現れる現象である。"
+        },
+        {
+          "id": "5",
+          "label": "大きい",
+          "explanation": "雑音などが増える方向を表す。"
+        },
+        {
+          "id": "6",
+          "label": "量子化",
+          "explanation": "連続値を離散値に変える処理である。"
+        },
+        {
+          "id": "7",
+          "label": "符号化",
+          "explanation": "値を所定の符号で表す処理である。"
+        },
+        {
+          "id": "8",
+          "label": "1/2",
+          "explanation": "最高周波数から標本化周波数の下限を求める倍率として不足する。"
+        },
+        {
+          "id": "9",
+          "label": "ショット雑音",
+          "explanation": "電荷の離散的な流れに由来する雑音である。"
+        },
+        {
+          "id": "10",
+          "label": "小さい",
+          "explanation": "雑音などが減る方向を表す。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "アナログ入力の標本の振幅を離散的な値に割り当てる処理を選べ。",
+          "answer": "6",
+          "explanation": "標本の振幅を一定の段階に丸める工程を量子化という。",
+          "candidateExplanations": {
+            "1": "符号を元の情報に戻す処理である。標本の振幅を一定の段階に丸める工程を量子化という。",
+            "2": "複数の信号を一つの伝送路にまとめる処理である。標本の振幅を一定の段階に丸める工程を量子化という。",
+            "3": "標本化周波数の下限を求めるための倍率である。標本の振幅を一定の段階に丸める工程を量子化という。",
+            "4": "高域の成分が標本化で低域に現れる現象である。標本の振幅を一定の段階に丸める工程を量子化という。",
+            "5": "雑音などが増える方向を表す。標本の振幅を一定の段階に丸める工程を量子化という。",
+            "6": "標本の振幅を一定の段階に丸める工程を量子化という。",
+            "7": "値を所定の符号で表す処理である。標本の振幅を一定の段階に丸める工程を量子化という。",
+            "8": "最高周波数から標本化周波数の下限を求める倍率として不足する。標本の振幅を一定の段階に丸める工程を量子化という。",
+            "9": "電荷の離散的な流れに由来する雑音である。標本の振幅を一定の段階に丸める工程を量子化という。",
+            "10": "雑音などが減る方向を表す。標本の振幅を一定の段階に丸める工程を量子化という。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "離散的な標本値を伝送用のパルス符号列に変換する処理を選べ。",
+          "answer": "7",
+          "explanation": "量子化で選ばれた段階の番号は符号化によってビット列で表される。",
+          "candidateExplanations": {
+            "1": "符号を元の情報に戻す処理である。量子化で選ばれた段階の番号は符号化によってビット列で表される。",
+            "2": "複数の信号を一つの伝送路にまとめる処理である。量子化で選ばれた段階の番号は符号化によってビット列で表される。",
+            "3": "標本化周波数の下限を求めるための倍率である。量子化で選ばれた段階の番号は符号化によってビット列で表される。",
+            "4": "高域の成分が標本化で低域に現れる現象である。量子化で選ばれた段階の番号は符号化によってビット列で表される。",
+            "5": "雑音などが増える方向を表す。量子化で選ばれた段階の番号は符号化によってビット列で表される。",
+            "6": "連続値を離散値に変える処理である。量子化で選ばれた段階の番号は符号化によってビット列で表される。",
+            "7": "量子化で選ばれた段階の番号は符号化によってビット列で表される。",
+            "8": "最高周波数から標本化周波数の下限を求める倍率として不足する。量子化で選ばれた段階の番号は符号化によってビット列で表される。",
+            "9": "電荷の離散的な流れに由来する雑音である。量子化で選ばれた段階の番号は符号化によってビット列で表される。",
+            "10": "雑音などが減る方向を表す。量子化で選ばれた段階の番号は符号化によってビット列で表される。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "元の信号を復元できるようにするには、標本化周波数を信号の最高周波数の何倍より高くするか。",
+          "answer": "3",
+          "explanation": "標本化定理によると、標本化周波数が信号帯域の最高周波数の2倍を上回れば、理想条件で復元できる。",
+          "candidateExplanations": {
+            "1": "符号を元の情報に戻す処理である。標本化定理によると、標本化周波数が信号帯域の最高周波数の2倍を上回れば、理想条件で復元できる。",
+            "2": "複数の信号を一つの伝送路にまとめる処理である。標本化定理によると、標本化周波数が信号帯域の最高周波数の2倍を上回れば、理想条件で復元できる。",
+            "3": "標本化定理によると、標本化周波数が信号帯域の最高周波数の2倍を上回れば、理想条件で復元できる。",
+            "4": "高域の成分が標本化で低域に現れる現象である。標本化定理によると、標本化周波数が信号帯域の最高周波数の2倍を上回れば、理想条件で復元できる。",
+            "5": "雑音などが増える方向を表す。標本化定理によると、標本化周波数が信号帯域の最高周波数の2倍を上回れば、理想条件で復元できる。",
+            "6": "連続値を離散値に変える処理である。標本化定理によると、標本化周波数が信号帯域の最高周波数の2倍を上回れば、理想条件で復元できる。",
+            "7": "値を所定の符号で表す処理である。標本化定理によると、標本化周波数が信号帯域の最高周波数の2倍を上回れば、理想条件で復元できる。",
+            "8": "最高周波数から標本化周波数の下限を求める倍率として不足する。標本化定理によると、標本化周波数が信号帯域の最高周波数の2倍を上回れば、理想条件で復元できる。",
+            "9": "電荷の離散的な流れに由来する雑音である。標本化定理によると、標本化周波数が信号帯域の最高周波数の2倍を上回れば、理想条件で復元できる。",
+            "10": "雑音などが減る方向を表す。標本化定理によると、標本化周波数が信号帯域の最高周波数の2倍を上回れば、理想条件で復元できる。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "標本化前に標本化周波数の半分を超える周波数成分が残ると何が生じるか。",
+          "answer": "4",
+          "explanation": "高い周波数成分が標本化によって低い成分として現れ、元の帯域に折り返される。",
+          "candidateExplanations": {
+            "1": "符号を元の情報に戻す処理である。高い周波数成分が標本化によって低い成分として現れ、元の帯域に折り返される。",
+            "2": "複数の信号を一つの伝送路にまとめる処理である。高い周波数成分が標本化によって低い成分として現れ、元の帯域に折り返される。",
+            "3": "標本化周波数の下限を求めるための倍率である。高い周波数成分が標本化によって低い成分として現れ、元の帯域に折り返される。",
+            "4": "高い周波数成分が標本化によって低い成分として現れ、元の帯域に折り返される。",
+            "5": "雑音などが増える方向を表す。高い周波数成分が標本化によって低い成分として現れ、元の帯域に折り返される。",
+            "6": "連続値を離散値に変える処理である。高い周波数成分が標本化によって低い成分として現れ、元の帯域に折り返される。",
+            "7": "値を所定の符号で表す処理である。高い周波数成分が標本化によって低い成分として現れ、元の帯域に折り返される。",
+            "8": "最高周波数から標本化周波数の下限を求める倍率として不足する。高い周波数成分が標本化によって低い成分として現れ、元の帯域に折り返される。",
+            "9": "電荷の離散的な流れに由来する雑音である。高い周波数成分が標本化によって低い成分として現れ、元の帯域に折り返される。",
+            "10": "雑音などが減る方向を表す。高い周波数成分が標本化によって低い成分として現れ、元の帯域に折り返される。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "入力の範囲を一定として量子化ステップ数を増やすと、量子化雑音はどうなるか。",
+          "answer": "10",
+          "explanation": "ステップ数が増えると各段階の間隔が狭くなり、丸める振幅の差と量子化雑音は小さくなる。",
+          "candidateExplanations": {
+            "1": "符号を元の情報に戻す処理である。ステップ数が増えると各段階の間隔が狭くなり、丸める振幅の差と量子化雑音は小さくなる。",
+            "2": "複数の信号を一つの伝送路にまとめる処理である。ステップ数が増えると各段階の間隔が狭くなり、丸める振幅の差と量子化雑音は小さくなる。",
+            "3": "標本化周波数の下限を求めるための倍率である。ステップ数が増えると各段階の間隔が狭くなり、丸める振幅の差と量子化雑音は小さくなる。",
+            "4": "高域の成分が標本化で低域に現れる現象である。ステップ数が増えると各段階の間隔が狭くなり、丸める振幅の差と量子化雑音は小さくなる。",
+            "5": "雑音などが増える方向を表す。ステップ数が増えると各段階の間隔が狭くなり、丸める振幅の差と量子化雑音は小さくなる。",
+            "6": "連続値を離散値に変える処理である。ステップ数が増えると各段階の間隔が狭くなり、丸める振幅の差と量子化雑音は小さくなる。",
+            "7": "値を所定の符号で表す処理である。ステップ数が増えると各段階の間隔が狭くなり、丸める振幅の差と量子化雑音は小さくなる。",
+            "8": "最高周波数から標本化周波数の下限を求める倍率として不足する。ステップ数が増えると各段階の間隔が狭くなり、丸める振幅の差と量子化雑音は小さくなる。",
+            "9": "電荷の離散的な流れに由来する雑音である。ステップ数が増えると各段階の間隔が狭くなり、丸める振幅の差と量子化雑音は小さくなる。",
+            "10": "ステップ数が増えると各段階の間隔が狭くなり、丸める振幅の差と量子化雑音は小さくなる。"
+          }
+        }
+      ],
+      "officialLabel": "B-4",
+      "bankImageUrls": [
+        "/questions/general1/2022-03-kogaku-a-q24-p06.png"
+      ],
+      "bankImageAltTexts": [
+        "第一級総合無線通信士 無線工学A 2022年3月期 B-4 公式原問題"
+      ]
+    }
+  },
+  {
+    "id": "radio21-general1-2022-03-kogaku-a-q25",
+    "exam": "general1",
+    "session": "kogaku-a",
+    "year": 2022,
+    "season": "march",
+    "qNumber": 25,
+    "category": "無線工学A",
+    "topicTags": [
+      "無線工学A",
+      "スペクトルアナライザによる不要発射測定"
+    ],
+    "difficulty": 3,
+    "question": "スペクトルアナライザで送信機の搬送周波数近傍の不要発射を評価する手順について、空欄を埋めよ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230728045810id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230728045839id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/sogo-tu-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2022年3月期 無線工学A B-5（問題・正答、試験問題記号 403）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2022-03-kogaku-a-q25-p06.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学A 2022年3月期 B-5 公式原問題"
+    ],
+    "type": "native-b",
+    "explanation": "強い搬送波の一部がフィルタの裾に入り、小さい不要発射を測る妨げとなる。\n\n許容値の評価に使う参照帯域幅が、十分に離れた周波数で用いる測定のRBWとなる。\n\n狭いRBWでの測定値を参照帯域幅に対応させるため、分解能帯域幅換算値を加える。\n\n指定された範囲に含まれる不要発射成分の電力を合計し、参照帯域幅当たりの電力を算出する。\n\n参照帯域幅100 kHzの半分だけ中心をスプリアス領域側にずらすと、測定範囲の端が境界に一致する。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "側波帯雑音",
+          "explanation": "変調された信号の側波帯周辺に含まれる雑音である。"
+        },
+        {
+          "id": "2",
+          "label": "搬送波",
+          "explanation": "搬送周波数の強い成分を指す。"
+        },
+        {
+          "id": "3",
+          "label": "雑音電力の入力換算値",
+          "explanation": "内部雑音を測定系の入力側へ換算した値である。"
+        },
+        {
+          "id": "4",
+          "label": "電力総和",
+          "explanation": "対象帯域の電力を足し合わせた値である。"
+        },
+        {
+          "id": "5",
+          "label": "25 kHz",
+          "explanation": "本問の参照帯域幅の4分の1である。"
+        },
+        {
+          "id": "6",
+          "label": "ビデオ帯域幅",
+          "explanation": "検波後の波形の平滑化に関わるフィルタの幅である。"
+        },
+        {
+          "id": "7",
+          "label": "参照帯域幅",
+          "explanation": "許容値の電力を規定する周波数帯域の幅である。"
+        },
+        {
+          "id": "8",
+          "label": "分解能帯域幅換算値",
+          "explanation": "狭い測定帯域から所定の帯域に換算する値である。"
+        },
+        {
+          "id": "9",
+          "label": "バースト内平均電力",
+          "explanation": "短時間の送信区間内で求める平均電力である。"
+        },
+        {
+          "id": "10",
+          "label": "50 kHz",
+          "explanation": "本問の参照帯域幅の半分である。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "搬送周波数近傍で広いRBWを使用すると、フィルタの裾で十分に減衰できず測定値に影響するものを選べ。",
+          "answer": "2",
+          "explanation": "強い搬送波の一部がフィルタの裾に入り、小さい不要発射を測る妨げとなる。",
+          "candidateExplanations": {
+            "1": "変調された信号の側波帯周辺に含まれる雑音である。強い搬送波の一部がフィルタの裾に入り、小さい不要発射を測る妨げとなる。",
+            "2": "強い搬送波の一部がフィルタの裾に入り、小さい不要発射を測る妨げとなる。",
+            "3": "内部雑音を測定系の入力側へ換算した値である。強い搬送波の一部がフィルタの裾に入り、小さい不要発射を測る妨げとなる。",
+            "4": "対象帯域の電力を足し合わせた値である。強い搬送波の一部がフィルタの裾に入り、小さい不要発射を測る妨げとなる。",
+            "5": "本問の参照帯域幅の4分の1である。強い搬送波の一部がフィルタの裾に入り、小さい不要発射を測る妨げとなる。",
+            "6": "検波後の波形の平滑化に関わるフィルタの幅である。強い搬送波の一部がフィルタの裾に入り、小さい不要発射を測る妨げとなる。",
+            "7": "許容値の電力を規定する周波数帯域の幅である。強い搬送波の一部がフィルタの裾に入り、小さい不要発射を測る妨げとなる。",
+            "8": "狭い測定帯域から所定の帯域に換算する値である。強い搬送波の一部がフィルタの裾に入り、小さい不要発射を測る妨げとなる。",
+            "9": "短時間の送信区間内で求める平均電力である。強い搬送波の一部がフィルタの裾に入り、小さい不要発射を測る妨げとなる。",
+            "10": "本問の参照帯域幅の半分である。強い搬送波の一部がフィルタの裾に入り、小さい不要発射を測る妨げとなる。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "搬送波から十分離れた周波数で、その値をRBWとして用いる規定上の帯域幅を選べ。",
+          "answer": "7",
+          "explanation": "許容値の評価に使う参照帯域幅が、十分に離れた周波数で用いる測定のRBWとなる。",
+          "candidateExplanations": {
+            "1": "変調された信号の側波帯周辺に含まれる雑音である。許容値の評価に使う参照帯域幅が、十分に離れた周波数で用いる測定のRBWとなる。",
+            "2": "搬送周波数の強い成分を指す。許容値の評価に使う参照帯域幅が、十分に離れた周波数で用いる測定のRBWとなる。",
+            "3": "内部雑音を測定系の入力側へ換算した値である。許容値の評価に使う参照帯域幅が、十分に離れた周波数で用いる測定のRBWとなる。",
+            "4": "対象帯域の電力を足し合わせた値である。許容値の評価に使う参照帯域幅が、十分に離れた周波数で用いる測定のRBWとなる。",
+            "5": "本問の参照帯域幅の4分の1である。許容値の評価に使う参照帯域幅が、十分に離れた周波数で用いる測定のRBWとなる。",
+            "6": "検波後の波形の平滑化に関わるフィルタの幅である。許容値の評価に使う参照帯域幅が、十分に離れた周波数で用いる測定のRBWとなる。",
+            "7": "許容値の評価に使う参照帯域幅が、十分に離れた周波数で用いる測定のRBWとなる。",
+            "8": "狭い測定帯域から所定の帯域に換算する値である。許容値の評価に使う参照帯域幅が、十分に離れた周波数で用いる測定のRBWとなる。",
+            "9": "短時間の送信区間内で求める平均電力である。許容値の評価に使う参照帯域幅が、十分に離れた周波数で用いる測定のRBWとなる。",
+            "10": "本問の参照帯域幅の半分である。許容値の評価に使う参照帯域幅が、十分に離れた周波数で用いる測定のRBWとなる。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "狭いRBWで不要発射を探索するとき、許容値と比較するため振幅測定値に加える量を選べ。",
+          "answer": "8",
+          "explanation": "狭いRBWでの測定値を参照帯域幅に対応させるため、分解能帯域幅換算値を加える。",
+          "candidateExplanations": {
+            "1": "変調された信号の側波帯周辺に含まれる雑音である。狭いRBWでの測定値を参照帯域幅に対応させるため、分解能帯域幅換算値を加える。",
+            "2": "搬送周波数の強い成分を指す。狭いRBWでの測定値を参照帯域幅に対応させるため、分解能帯域幅換算値を加える。",
+            "3": "内部雑音を測定系の入力側へ換算した値である。狭いRBWでの測定値を参照帯域幅に対応させるため、分解能帯域幅換算値を加える。",
+            "4": "対象帯域の電力を足し合わせた値である。狭いRBWでの測定値を参照帯域幅に対応させるため、分解能帯域幅換算値を加える。",
+            "5": "本問の参照帯域幅の4分の1である。狭いRBWでの測定値を参照帯域幅に対応させるため、分解能帯域幅換算値を加える。",
+            "6": "検波後の波形の平滑化に関わるフィルタの幅である。狭いRBWでの測定値を参照帯域幅に対応させるため、分解能帯域幅換算値を加える。",
+            "7": "許容値の電力を規定する周波数帯域の幅である。狭いRBWでの測定値を参照帯域幅に対応させるため、分解能帯域幅換算値を加える。",
+            "8": "狭いRBWでの測定値を参照帯域幅に対応させるため、分解能帯域幅換算値を加える。",
+            "9": "短時間の送信区間内で求める平均電力である。狭いRBWでの測定値を参照帯域幅に対応させるため、分解能帯域幅換算値を加える。",
+            "10": "本問の参照帯域幅の半分である。狭いRBWでの測定値を参照帯域幅に対応させるため、分解能帯域幅換算値を加える。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "詳細測定で参照帯域幅を掃引範囲とする場合、許容値と比較するために求める量を選べ。",
+          "answer": "4",
+          "explanation": "指定された範囲に含まれる不要発射成分の電力を合計し、参照帯域幅当たりの電力を算出する。",
+          "candidateExplanations": {
+            "1": "変調された信号の側波帯周辺に含まれる雑音である。指定された範囲に含まれる不要発射成分の電力を合計し、参照帯域幅当たりの電力を算出する。",
+            "2": "搬送周波数の強い成分を指す。指定された範囲に含まれる不要発射成分の電力を合計し、参照帯域幅当たりの電力を算出する。",
+            "3": "内部雑音を測定系の入力側へ換算した値である。指定された範囲に含まれる不要発射成分の電力を合計し、参照帯域幅当たりの電力を算出する。",
+            "4": "指定された範囲に含まれる不要発射成分の電力を合計し、参照帯域幅当たりの電力を算出する。",
+            "5": "本問の参照帯域幅の4分の1である。指定された範囲に含まれる不要発射成分の電力を合計し、参照帯域幅当たりの電力を算出する。",
+            "6": "検波後の波形の平滑化に関わるフィルタの幅である。指定された範囲に含まれる不要発射成分の電力を合計し、参照帯域幅当たりの電力を算出する。",
+            "7": "許容値の電力を規定する周波数帯域の幅である。指定された範囲に含まれる不要発射成分の電力を合計し、参照帯域幅当たりの電力を算出する。",
+            "8": "狭い測定帯域から所定の帯域に換算する値である。指定された範囲に含まれる不要発射成分の電力を合計し、参照帯域幅当たりの電力を算出する。",
+            "9": "短時間の送信区間内で求める平均電力である。指定された範囲に含まれる不要発射成分の電力を合計し、参照帯域幅当たりの電力を算出する。",
+            "10": "本問の参照帯域幅の半分である。指定された範囲に含まれる不要発射成分の電力を合計し、参照帯域幅当たりの電力を算出する。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "不要発射周波数が境界周波数から50 kHz以内のとき、境界から何kHz離した周波数を中心とするか。",
+          "answer": "10",
+          "explanation": "参照帯域幅100 kHzの半分だけ中心をスプリアス領域側にずらすと、測定範囲の端が境界に一致する。",
+          "candidateExplanations": {
+            "1": "変調された信号の側波帯周辺に含まれる雑音である。参照帯域幅100 kHzの半分だけ中心をスプリアス領域側にずらすと、測定範囲の端が境界に一致する。",
+            "2": "搬送周波数の強い成分を指す。参照帯域幅100 kHzの半分だけ中心をスプリアス領域側にずらすと、測定範囲の端が境界に一致する。",
+            "3": "内部雑音を測定系の入力側へ換算した値である。参照帯域幅100 kHzの半分だけ中心をスプリアス領域側にずらすと、測定範囲の端が境界に一致する。",
+            "4": "対象帯域の電力を足し合わせた値である。参照帯域幅100 kHzの半分だけ中心をスプリアス領域側にずらすと、測定範囲の端が境界に一致する。",
+            "5": "本問の参照帯域幅の4分の1である。参照帯域幅100 kHzの半分だけ中心をスプリアス領域側にずらすと、測定範囲の端が境界に一致する。",
+            "6": "検波後の波形の平滑化に関わるフィルタの幅である。参照帯域幅100 kHzの半分だけ中心をスプリアス領域側にずらすと、測定範囲の端が境界に一致する。",
+            "7": "許容値の電力を規定する周波数帯域の幅である。参照帯域幅100 kHzの半分だけ中心をスプリアス領域側にずらすと、測定範囲の端が境界に一致する。",
+            "8": "狭い測定帯域から所定の帯域に換算する値である。参照帯域幅100 kHzの半分だけ中心をスプリアス領域側にずらすと、測定範囲の端が境界に一致する。",
+            "9": "短時間の送信区間内で求める平均電力である。参照帯域幅100 kHzの半分だけ中心をスプリアス領域側にずらすと、測定範囲の端が境界に一致する。",
+            "10": "参照帯域幅100 kHzの半分だけ中心をスプリアス領域側にずらすと、測定範囲の端が境界に一致する。"
+          }
+        }
+      ],
+      "officialLabel": "B-5",
+      "bankImageUrls": [
+        "/questions/general1/2022-03-kogaku-a-q25-p06.png"
+      ],
+      "bankImageAltTexts": [
+        "第一級総合無線通信士 無線工学A 2022年3月期 B-5 公式原問題"
+      ]
+    }
+  }
+]
