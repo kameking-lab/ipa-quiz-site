@@ -1858,8 +1858,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_13.html",
     officialReuseTermsUrl: "https://www.jinji.go.jp/shinsei/notice.html",
     status: "live",
-    reuseSummary: "2024年度の院卒者試験・大卒程度試験に共通する基礎能力試験30問を、公式正答・全肢解説付きで収録。",
-    attributionTemplate: "出典：人事院「総合職試験（院卒者試験・大卒程度試験） 基礎能力試験」。解説は過去問AIの独自作成。",
+    reuseSummary: "2024年度の院卒者試験・大卒程度試験に共通する基礎能力試験30問と、2026年度の法律区分の専門試験49問を、公式正答・全肢解説付きで収録。",
+    attributionTemplate: "出典：人事院「国家公務員採用総合職試験」。解説は過去問AIの独自作成。",
     remainingWork: ["未収録の試験区分の補充"],
   },
   {

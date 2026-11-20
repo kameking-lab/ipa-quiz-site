@@ -1,5 +1,7 @@
 import { KOKKA_SOGO_DAI_2024_KISO } from "./2024-kiso";
+import { KOKKA_SOGO_DAI_2026_SENMON_HOURITSU } from "./2026-senmon-houritsu";
 
 export const KOKKA_SOGO_DAI_QUESTIONS = [
+  ...KOKKA_SOGO_DAI_2026_SENMON_HOURITSU,
   ...KOKKA_SOGO_DAI_2024_KISO,
 ];

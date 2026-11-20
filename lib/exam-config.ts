@@ -2051,7 +2051,8 @@ caremanager: {
     code: "kokka-sogo-dai", nameFull: "国家公務員採用総合職試験（大卒程度・教養区分以外）", urlSlug: "kokka-sogo-dai", level: "advanced",
     sessions: [
         { session: "kiso", urlSlug: "kiso", expectedQuestions: 30, label: "基礎能力試験", categories: ["文章理解", "判断推理", "数的推理", "資料解釈", "時事", "情報"] },
-    ], seasons: ["annual"], yearRange: { start: 2024, end: 2024 },
+        { session: "senmon-houritsu", urlSlug: "senmon-houritsu", expectedQuestions: 49, label: "専門試験（法律区分）", categories: ["憲法", "行政法", "民法", "商法・会社法", "刑法", "労働法", "国際法", "経済学", "財政学"] },
+    ], seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
 },
 "kokka-sogo-kyoyo": {
     code: "kokka-sogo-kyoyo", nameFull: "国家公務員採用総合職試験（大卒程度試験・教養区分）", urlSlug: "kokka-sogo-kyoyo", level: "specialist",
