@@ -1,0 +1,962 @@
+[
+  {
+    "id": "kogai-13-2022-annual-suishitsu-gijutsu-q01",
+    "exam": "kogai-13",
+    "year": 2022,
+    "season": "annual",
+    "examDate": "2022-10-02",
+    "session": "suishitsu-gijutsu",
+    "qNumber": 1,
+    "officialAnswerNumber": 5,
+    "type": "multiple-choice",
+    "subject": "水質関係技術特論",
+    "category": "水質関係技術特論",
+    "topicTags": [
+      "工場排水の種類と分別処理"
+    ],
+    "difficulty": 2,
+    "question": "問1　工場排水の種類と分別処理。掲載の公式問題画像の問1を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "排水量の削減のメリットの一つは,処理装置の規模を小さくできることである。",
+      "イ": "工場内の排水を大別すると,製造排水,冷却排水,衛生排水に分けることができる。",
+      "ウ": "冷却排水は,工程における冷却や空調に用いられた水で,一般に量は多いが, 汚染度は低いことが多い。",
+      "エ": "衛生排水は,工場内のトイレ,食堂などからの排水で,その量は従業員数に依存する。",
+      "オ": "工場内の異なる種類の排水は,すべて混合してから処理することが望ましい。"
+    },
+    "answer": "オ",
+    "explanation": "工場排水は性状・負荷に応じて分別し、必要な処理を行う。汚染の少ない冷却水などまで全て混ぜると、処理対象の水量をむやみに増やすことになる。",
+    "choiceExplanations": {
+      "ア": "削減で処理する水量が減れば、処理装置の必要容量を縮小しやすくなる。",
+      "イ": "排出箇所と使用目的から、製造排水、冷却排水、衛生排水に大別できる。",
+      "ウ": "冷却・空調用途は水量が多いことがあり、工程の汚染物質と直接触れなければ汚染度は低い。",
+      "エ": "トイレや食堂に由来する衛生排水は、従業員の利用者数に応じて増減する。",
+      "オ": "異なる排水を常に全量混合する必要はない。性状に合わせて系統を分け、高濃度排水を先に処理することができる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2022/suishitsu-gijutsu-p03.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 公害防止管理者 水質関係技術特論 公式問題冊子PDF 3ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724180429id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R04_18.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724172205id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR04.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和4年度 公害防止管理者等国家試験 水質関係技術特論 問1（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2022-annual-suishitsu-gijutsu-q02",
+    "exam": "kogai-13",
+    "year": 2022,
+    "season": "annual",
+    "examDate": "2022-10-02",
+    "session": "suishitsu-gijutsu",
+    "qNumber": 2,
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "subject": "水質関係技術特論",
+    "category": "水質関係技術特論",
+    "topicTags": [
+      "粒子の終末沈降速度とストークスの式"
+    ],
+    "difficulty": 2,
+    "question": "問2　粒子の終末沈降速度とストークスの式。掲載の公式問題画像の問2を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "終末沈降速度は,粒子に働く抵抗力と浮力の和が重力と等しい状態で,一定速度で沈降している速度のことである。",
+      "イ": "沈降速度は,レイノルズ数の値によって,ニュートンの式,アレンの式,ストークスの式のいずれかの式によって表される。",
+      "ウ": "粒子の直径が小さくなると,レイノルズ数は小さくなる。",
+      "エ": "ストークスの式では,沈降速度は粒子の直径の 3 乗に比例する。",
+      "オ": "ストークスの式では,沈降速度は粒子と水の密度差に比例する。"
+    },
+    "answer": "エ",
+    "explanation": "粘性抵抗が支配する領域での沈降速度は、v＝(ρp−ρ)gd²/(18μ)であり、粒径の二乗に比例する。",
+    "choiceExplanations": {
+      "ア": "沈降方向の重力が浮力と抗力の和で打ち消されると加速度がゼロになり、そのときの速度が終末沈降速度である。",
+      "イ": "粒子レイノルズ数に応じ、粘性領域のストークス式、中間のアレン式、慣性が強い領域のニュートン式を使う。",
+      "ウ": "粒径が小さいほど代表長さが短く、通常は沈降速度も低下するので、粒子レイノルズ数は小さくなる。",
+      "エ": "重力から浮力を引いた力はd³、ストークス抵抗はdvに比例する。釣り合わせるとvはd²に比例する。",
+      "オ": "ストークス式の駆動力は粒子と水の密度差に由来し、他条件が同じなら速度は密度差と比例する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2022/suishitsu-gijutsu-p03.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 公害防止管理者 水質関係技術特論 公式問題冊子PDF 3ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724180429id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R04_18.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724172205id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR04.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和4年度 公害防止管理者等国家試験 水質関係技術特論 問2（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2022-annual-suishitsu-gijutsu-q03",
+    "exam": "kogai-13",
+    "year": 2022,
+    "season": "annual",
+    "examDate": "2022-10-02",
+    "session": "suishitsu-gijutsu",
+    "qNumber": 3,
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "subject": "水質関係技術特論",
+    "category": "水質関係技術特論",
+    "topicTags": [
+      "加圧浮上分離の原理と運転特性"
+    ],
+    "difficulty": 2,
+    "question": "問3　加圧浮上分離の原理と運転特性。掲載の公式問題画像の問3を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "加圧による水の密度変化を利用して懸濁物質を浮上させる。",
+      "イ": "加圧時の常用圧力はゲージ圧で 200 〜 500 kPa 程度である。",
+      "ウ": "所要動力は一般に凝集沈殿法と比べて大きい。",
+      "エ": "凝集沈殿法と比較して,一般に汚泥含水率は低いが,処理水濁度は高い。",
+      "オ": "排水が乳化油を含む場合は凝集剤の添加を検討する。"
+    },
+    "answer": "ア",
+    "explanation": "加圧下で水に溶けた空気が減圧時に細かな気泡となり、懸濁粒子に付着して浮上させる。水自体の密度変化を利用する方式ではない。",
+    "choiceExplanations": {
+      "ア": "加圧は空気を溶かすために行う。固形物を浮かせるのは減圧によって生じる気泡の浮力である。",
+      "イ": "加圧溶解槽の通常の運転圧力はゲージ圧でおよそ200〜500 kPaである。",
+      "ウ": "加圧水を作るポンプなどが必要なため、一般に凝集沈殿法より所要動力が大きい。",
+      "エ": "浮上汚泥は水面に集まって比較的濃縮されやすい。凝集沈殿より処理水の濁度が高くなる場合がある。",
+      "オ": "乳化油の微細な粒子を凝集させると、気泡を付着させて分離しやすくできる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2022/suishitsu-gijutsu-p03.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 公害防止管理者 水質関係技術特論 公式問題冊子PDF 3ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724180429id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R04_18.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724172205id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR04.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和4年度 公害防止管理者等国家試験 水質関係技術特論 問3（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2022-annual-suishitsu-gijutsu-q04",
+    "exam": "kogai-13",
+    "year": 2022,
+    "season": "annual",
+    "examDate": "2022-10-02",
+    "session": "suishitsu-gijutsu",
+    "qNumber": 4,
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "subject": "水質関係技術特論",
+    "category": "水質関係技術特論",
+    "topicTags": [
+      "急速砂ろ過の工程と逆洗"
+    ],
+    "difficulty": 2,
+    "question": "問4　急速砂ろ過の工程と逆洗。掲載の公式問題画像の問4を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "排水処理の分野では,急速砂ろ過は生物処理の前処理として用いられることが多い。",
+      "イ": "重力式砂ろ過機では,ろ過池の上部が開かれているので,池内の様子が観察でき,保守や管理が容易である。",
+      "ウ": "圧力式砂ろ過機は密閉構造になっており,ポンプの圧力で水をろ過する。",
+      "エ": "ろ過を続けているとろ過抵抗が上昇するので,ろ層下部から圧力水を上向きに流してろ層を洗浄する。",
+      "オ": "砂の粒度が不ぞろいなものほど,ろ材としては好ましくない。"
+    },
+    "answer": "ア",
+    "explanation": "排水処理の急速砂ろ過は、生物処理後の微細な懸濁物の除去など、後段の清澄化に使われることが多い。",
+    "choiceExplanations": {
+      "ア": "生物処理の前に粗い固形物を除くにはスクリーンや沈殿が用いられる。急速砂ろ過は一般に清澄化の後段に置く。",
+      "イ": "重力式は開放型のろ過池で、ろ層や水面の様子を確認しやすい。",
+      "ウ": "圧力式は密閉容器内のろ層にポンプ圧で通水する。",
+      "エ": "抵抗が上がったら下から圧力水を逆流させ、ろ材に捕捉された懸濁物を洗い出す。",
+      "オ": "粒径の不ぞろいな砂では、細粒が間隙を埋めて圧力損失が増えるなどの問題が出やすい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2022/suishitsu-gijutsu-p04.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 公害防止管理者 水質関係技術特論 公式問題冊子PDF 4ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724180429id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R04_18.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724172205id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR04.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和4年度 公害防止管理者等国家試験 水質関係技術特論 問4（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2022-annual-suishitsu-gijutsu-q05",
+    "exam": "kogai-13",
+    "year": 2022,
+    "season": "annual",
+    "examDate": "2022-10-02",
+    "session": "suishitsu-gijutsu",
+    "qNumber": 5,
+    "officialAnswerNumber": 5,
+    "type": "multiple-choice",
+    "subject": "水質関係技術特論",
+    "category": "水質関係技術特論",
+    "topicTags": [
+      "標準酸化還元電位と反応の向き"
+    ],
+    "difficulty": 2,
+    "question": "問5　標準酸化還元電位と反応の向き。掲載の公式問題画像の問5を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "原子又は化合物から電子が失われることを酸化という。",
+      "イ": "排水は多数の酸化剤,還元剤を含む雑多な系であり,その中には微生物による生物的な酸化還元系も含まれる。",
+      "ウ": "オゾンは塩素よりも酸化力が強い。",
+      "エ": "酸化還元対を含む溶液に白金電極と水素電極とを入れると,両極間に電位差が生じるが,これを酸化還元電位という。",
+      "オ": "標準酸化還元電位の高い系は,より低い系を還元することができる。"
+    },
+    "answer": "オ",
+    "explanation": "標準酸化還元電位の高い系の酸化体は電子を受け取りやすい。電子を渡す低い系を酸化する。",
+    "choiceExplanations": {
+      "ア": "酸化は電子を失う反応であり、還元は逆に電子を受け取る反応である。",
+      "イ": "排水には複数の酸化還元対があり、微生物の代謝反応による電子移動も含まれる。",
+      "ウ": "標準電位の比較では、オゾンは塩素より高い酸化力を示す。",
+      "エ": "酸化還元対と接触する不活性な白金電極の電位を、水素電極などの基準電極に対して表す。",
+      "オ": "電位の高い側が電子を受け取って還元され、電位の低い側が電子を渡して酸化される。低い系を還元するという説明は向きが逆である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2022/suishitsu-gijutsu-p04.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 公害防止管理者 水質関係技術特論 公式問題冊子PDF 4ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724180429id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R04_18.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724172205id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR04.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和4年度 公害防止管理者等国家試験 水質関係技術特論 問5（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2022-annual-suishitsu-gijutsu-q06",
+    "exam": "kogai-13",
+    "year": 2022,
+    "season": "annual",
+    "examDate": "2022-10-02",
+    "session": "suishitsu-gijutsu",
+    "qNumber": 6,
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "subject": "水質関係技術特論",
+    "category": "水質関係技術特論",
+    "topicTags": [
+      "膜分離のろ過方式と用途"
+    ],
+    "difficulty": 2,
+    "question": "問6　膜分離のろ過方式と用途。掲載の公式問題画像の問6を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "精密ろ過膜は微細な懸濁粒子や細菌などの除去に用いられる。",
+      "イ": "長期間使用に伴う膜の汚染や膜の目詰まりは避けられないので,定期的に物理洗浄や薬品洗浄を行う。",
+      "ウ": "全量ろ過式は排水処理や海水淡水化に用いられることが多い。",
+      "エ": "中空糸形の膜モジュールは,外径が細い管状の膜を多数束ねたものである。",
+      "オ": "電気透析法は溶解塩類の除去に用いられる。"
+    },
+    "answer": "ウ",
+    "explanation": "排水処理や海水淡水化では、膜面に平行な流れをつくり、濃縮側を取り出すクロスフロー式が多く使われる。",
+    "choiceExplanations": {
+      "ア": "精密ろ過膜は、細菌や微小な懸濁粒子を孔径に応じて分離する。",
+      "イ": "膜汚染や目詰まりで透過性能が低下するので、逆洗などの物理洗浄や薬品洗浄を行う。",
+      "ウ": "全量ろ過は供給流を膜に通すため、濃縮成分が膜面にたまりやすい。排水や海水ではクロスフロー式が一般的である。",
+      "エ": "中空糸形では細い中空管状の膜を束ねて容器に収め、大きな膜面積を確保する。",
+      "オ": "電気透析ではイオン交換膜と電位差を用いてイオンを移動させ、溶解塩類を分離する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2022/suishitsu-gijutsu-p04.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 公害防止管理者 水質関係技術特論 公式問題冊子PDF 4ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724180429id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R04_18.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724172205id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR04.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和4年度 公害防止管理者等国家試験 水質関係技術特論 問6（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2022-annual-suishitsu-gijutsu-q07",
+    "exam": "kogai-13",
+    "year": 2022,
+    "season": "annual",
+    "examDate": "2022-10-02",
+    "session": "suishitsu-gijutsu",
+    "qNumber": 7,
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "subject": "水質関係技術特論",
+    "category": "水質関係技術特論",
+    "topicTags": [
+      "汚泥脱水方式と前処理"
+    ],
+    "difficulty": 2,
+    "question": "問7　汚泥脱水方式と前処理。掲載の公式問題画像の問7を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "沈降分離によって発生する汚泥はまだ流動性を有し,固体としての取り扱いができないので,脱水することが必要である。",
+      "イ": "凝集剤添加は,汚泥中の微粒子を凝集して粗大粒子とすることにより,ろ過の比抵抗を下げる方法である。",
+      "ウ": "ろ過助剤の添加による前処理は,脱水ケーキの量が増大し,ケーキの処理, 処分のコストが高くなる欠点がある。",
+      "エ": "ベルトプレスは運転騒音が大きく,遠心脱水に比べて動力が大きい。",
+      "オ": "フィルタープレスは,一般に間欠的に運転される。"
+    },
+    "answer": "エ",
+    "explanation": "ベルトプレスはベルト間で汚泥を連続的に圧搾する。高速で回転する遠心脱水機に比べ、通常は動力も騒音も小さい。",
+    "choiceExplanations": {
+      "ア": "濃縮だけの汚泥には水分が多く流動性があるので、脱水して運搬・処分しやすいケーキにする。",
+      "イ": "微粒子を粗大なフロックにすると間隙が確保され、水を通しやすくなることでろ過比抵抗を下げられる。",
+      "ウ": "ろ過助剤を加えると助剤自体がケーキに入り、処分する固形分や費用が増える。",
+      "エ": "ベルトプレスの運転は遠心脱水機のような高速回転を必要とせず、騒音・動力がともに大きいとする説明は不適切である。",
+      "オ": "フィルタープレスは汚泥供給・加圧・ケーキ取り出しを繰り返すため、一般に間欠運転である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2022/suishitsu-gijutsu-p05.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 公害防止管理者 水質関係技術特論 公式問題冊子PDF 5ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724180429id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R04_18.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724172205id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR04.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和4年度 公害防止管理者等国家試験 水質関係技術特論 問7（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2022-annual-suishitsu-gijutsu-q08",
+    "exam": "kogai-13",
+    "year": 2022,
+    "season": "annual",
+    "examDate": "2022-10-02",
+    "session": "suishitsu-gijutsu",
+    "qNumber": 8,
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "subject": "水質関係技術特論",
+    "category": "水質関係技術特論",
+    "topicTags": [
+      "有機排水の生物処理における生物相の遷移"
+    ],
+    "difficulty": 2,
+    "question": "問8　有機排水の生物処理における生物相の遷移。掲載の公式問題画像の問8を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "細菌,原生動物,微小な後生動物などから構成される混合培養系である。",
+      "イ": "微生物の食物連鎖により,排水は浄化される。",
+      "ウ": "排水の浄化に伴う水質の変化と出現する生物種の遷移には相関がある。",
+      "エ": "細菌は原生動物の捕食者である。",
+      "オ": "原生動物は処理水質を推定する指標生物の一つである。"
+    },
+    "answer": "エ",
+    "explanation": "有機物を分解して増えた細菌を原生動物が捕食する。図では細菌とそれを餌とする生物の増殖時期にずれがある。",
+    "choiceExplanations": {
+      "ア": "有機物を分解する細菌に加えて、原生動物や輪虫などの後生動物も存在する混合培養系である。",
+      "イ": "有機物を利用する細菌と、その細菌等が餌となる食物連鎖が浄化に寄与する。",
+      "ウ": "有機物負荷や酸素条件などが変わるにつれて、その環境に適した生物が現れる。",
+      "エ": "生物処理においては主に原生動物が細菌を捕食する。選択肢は捕食関係を反対にしている。",
+      "オ": "原生動物の種類や出現状況は、汚泥の状態や処理水質を推定する手掛かりになる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2022/suishitsu-gijutsu-p06.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 公害防止管理者 水質関係技術特論 公式問題冊子PDF 6ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724180429id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R04_18.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724172205id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR04.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和4年度 公害防止管理者等国家試験 水質関係技術特論 問8（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2022-annual-suishitsu-gijutsu-q09",
+    "exam": "kogai-13",
+    "year": 2022,
+    "season": "annual",
+    "examDate": "2022-10-02",
+    "session": "suishitsu-gijutsu",
+    "qNumber": 9,
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "subject": "水質関係技術特論",
+    "category": "水質関係技術特論",
+    "topicTags": [
+      "汚泥容量指標SVIの計算"
+    ],
+    "difficulty": 2,
+    "question": "問9　汚泥容量指標SVIの計算。掲載の公式問題画像の問9を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "80",
+      "イ": "100",
+      "ウ": "120",
+      "エ": "140",
+      "オ": "160"
+    },
+    "answer": "イ",
+    "explanation": "1 L中の沈降汚泥は200 mLで、固形物は2000 mg＝2 gである。200÷2＝100 mL/gとなる。",
+    "choiceExplanations": {
+      "ア": "80 mL/gなら固形物2 gに対して汚泥容積160 mLとなり、20%の沈降容積に合わない。",
+      "イ": "汚泥容量指標は固形物1 g当たりの30分沈降後の容積であり、ここでは100 mL/gである。",
+      "ウ": "120 mL/gでは同じ固形物量の沈降容積が240 mLとなり、実測より多い。",
+      "エ": "140 mL/gなら汚泥が280 mLを占めるため、実測200 mLとは合わない。",
+      "オ": "160 mL/gなら汚泥が320 mLを占めるため、20%の条件を満たさない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2022/suishitsu-gijutsu-p06.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 公害防止管理者 水質関係技術特論 公式問題冊子PDF 6ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724180429id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R04_18.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724172205id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR04.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和4年度 公害防止管理者等国家試験 水質関係技術特論 問9（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2022-annual-suishitsu-gijutsu-q10",
+    "exam": "kogai-13",
+    "year": 2022,
+    "season": "annual",
+    "examDate": "2022-10-02",
+    "session": "suishitsu-gijutsu",
+    "qNumber": 10,
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "subject": "水質関係技術特論",
+    "category": "水質関係技術特論",
+    "topicTags": [
+      "回分式活性汚泥法の運転サイクル"
+    ],
+    "difficulty": 2,
+    "question": "問10　回分式活性汚泥法の運転サイクル。掲載の公式問題画像の問10を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "単一の槽で反応槽と沈殿槽の機能を持たせている。",
+      "イ": "運転は, 「流入」「攪拌(反応)」「沈殿」「排出」 を繰り返して行う。",
+      "ウ": "連続式活性汚泥法に比べると固液分離は不安定である。",
+      "エ": "1 サイクル中に嫌気・好気の条件を自由に設定できる。",
+      "オ": "負荷条件の変化に幅広く対応できるため,中小規模工場排水向けに多く採用されている。"
+    },
+    "answer": "ウ",
+    "explanation": "沈殿工程では流入や曝気などを止め、同じ槽で静置して固液分離できる。連続式より一般に不安定とする記述が不適切である。",
+    "choiceExplanations": {
+      "ア": "同じ槽を時間で切り替え、生物反応と沈殿分離の両方に使う。",
+      "イ": "流入、反応、静置沈殿、上澄みの排出などを一つのサイクルとして繰り返す。",
+      "ウ": "静置中に流入や曝気で沈殿を乱されにくいため、適切に運転すれば安定した固液分離を得られる。",
+      "エ": "曝気と撹拌の運転を時間ごとに変え、サイクル内に嫌気・好気条件を設定できる。",
+      "オ": "時間配分などを変えて負荷変動に対応でき、中小規模の工場排水で用いられる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2022/suishitsu-gijutsu-p07.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 公害防止管理者 水質関係技術特論 公式問題冊子PDF 7ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724180429id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R04_18.pdf#page=7",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724172205id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR04.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和4年度 公害防止管理者等国家試験 水質関係技術特論 問10（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2022-annual-suishitsu-gijutsu-q11",
+    "exam": "kogai-13",
+    "year": 2022,
+    "season": "annual",
+    "examDate": "2022-10-02",
+    "session": "suishitsu-gijutsu",
+    "qNumber": 11,
+    "officialAnswerNumber": 5,
+    "type": "multiple-choice",
+    "subject": "水質関係技術特論",
+    "category": "水質関係技術特論",
+    "topicTags": [
+      "嫌気性メタン発酵の特徴"
+    ],
+    "difficulty": 2,
+    "question": "問11　嫌気性メタン発酵の特徴。掲載の公式問題画像の問11を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "対象排水濃度は高い。",
+      "イ": "水理学的滞留時間は長い。",
+      "ウ": "汚泥生成率は低い。",
+      "エ": "所要動力が小さい。",
+      "オ": "スタートアップに要する期間が短い。"
+    },
+    "answer": "オ",
+    "explanation": "メタン生成を担う微生物は増殖が遅く、安定するまでに時間がかかる。好気性活性汚泥より始動期間が短いとした説明が誤りである。",
+    "choiceExplanations": {
+      "ア": "有機物濃度の高い排水でメタンとしてエネルギーを回収できる。",
+      "イ": "嫌気性微生物による反応速度が比較的遅いため、一般には長い水理学的滞留時間をとる。",
+      "ウ": "嫌気条件では細胞合成に利用できるエネルギーが少なく、処理した有機物当たりの余剰汚泥生成量が小さい。",
+      "エ": "好気処理に必要な空気の供給がないため、一般に動力が小さい。",
+      "オ": "メタン生成菌群を適切な濃度まで増やすには時間がかかり、立上げには長い期間を要する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2022/suishitsu-gijutsu-p07.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 公害防止管理者 水質関係技術特論 公式問題冊子PDF 7ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724180429id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R04_18.pdf#page=7",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724172205id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR04.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和4年度 公害防止管理者等国家試験 水質関係技術特論 問11（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2022-annual-suishitsu-gijutsu-q12",
+    "exam": "kogai-13",
+    "year": 2022,
+    "season": "annual",
+    "examDate": "2022-10-02",
+    "session": "suishitsu-gijutsu",
+    "qNumber": 12,
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "subject": "水質関係技術特論",
+    "category": "水質関係技術特論",
+    "topicTags": [
+      "循環式硝化脱窒素法のフロー"
+    ],
+    "difficulty": 2,
+    "question": "問12　循環式硝化脱窒素法のフロー。掲載の公式問題画像の問12を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "再曝気槽",
+      "イ": "硝化槽",
+      "ウ": "脱窒素槽",
+      "エ": "沈殿槽",
+      "オ": "二次脱窒素槽"
+    },
+    "answer": "ア",
+    "explanation": "図の流れは脱窒素槽、硝化槽、二次脱窒素槽、再曝気槽、沈殿槽の順である。沈殿槽の一つ手前の(d)は再曝気槽となる。",
+    "choiceExplanations": {
+      "ア": "二次脱窒素後の水に酸素を供給して沈殿槽に送る位置にある(d)が再曝気槽である。",
+      "イ": "循環硝化液の取出し元は(b)の流出側であり、(b)が硝化槽である。",
+      "ウ": "硝化液が排水と混ざる最初の(a)で、流入有機物を利用して脱窒素する。",
+      "エ": "汚泥を返送・引き抜く配管がつながる最後の(e)が沈殿槽である。",
+      "オ": "循環で戻らなかった硝化液を処理する二次脱窒素槽は、硝化槽の直後の(c)に当たる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2022/suishitsu-gijutsu-p08.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 公害防止管理者 水質関係技術特論 公式問題冊子PDF 8ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724180429id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R04_18.pdf#page=8",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724172205id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR04.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和4年度 公害防止管理者等国家試験 水質関係技術特論 問12（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2022-annual-suishitsu-gijutsu-q13",
+    "exam": "kogai-13",
+    "year": 2022,
+    "season": "annual",
+    "examDate": "2022-10-02",
+    "session": "suishitsu-gijutsu",
+    "qNumber": 13,
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "subject": "水質関係技術特論",
+    "category": "水質関係技術特論",
+    "topicTags": [
+      "中和槽のpH計と中和剤の管理"
+    ],
+    "difficulty": 2,
+    "question": "問13　中和槽のpH計と中和剤の管理。掲載の公式問題画像の問13を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "pH 調整槽の維持管理における主なポイントは,pH 計の管理と中和剤の調節である。",
+      "イ": "pH 計を適切に維持するには,標準液による校正,電極内部液の補給,電極の洗浄を定期的に行う必要がある。",
+      "ウ": "pH 電極の内部液の消費量が多い場合は,液絡部の点検,又は電極の交換が必要である。",
+      "エ": "中和剤は濃厚なほど pH の制御が容易なので,可能な限り高濃度に設定するのがよい。",
+      "オ": "中和剤として水酸化カルシウムの懸濁液を使用する場合は,反応に時間を要するので,中和槽の容量を確保する。"
+    },
+    "answer": "エ",
+    "explanation": "過度に濃い中和剤はわずかな注入量の変化でpHを大きく変えやすい。必要な制御精度や応答速度に合わせて薬液濃度を設定する。",
+    "choiceExplanations": {
+      "ア": "pHを正しく測ることと、中和剤の濃度・添加量を適切に調整することが運転管理の基本である。",
+      "イ": "pH計は標準液で校正し、内部液の補給や電極の汚れの除去を行う。",
+      "ウ": "内部液の過剰な消費は液絡部や電極の異常を示す場合があるため、点検または交換する。",
+      "エ": "濃厚な薬液は投入量の微調整を難しくし、過剰な中和を起こしやすい。運転条件に応じて希釈する。",
+      "オ": "水酸化カルシウムの懸濁液は溶解と反応に時間がかかるため、混合・滞留に必要な槽容量を確保する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2022/suishitsu-gijutsu-p08.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 公害防止管理者 水質関係技術特論 公式問題冊子PDF 8ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724180429id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R04_18.pdf#page=8",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724172205id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR04.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和4年度 公害防止管理者等国家試験 水質関係技術特論 問13（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2022-annual-suishitsu-gijutsu-q14",
+    "exam": "kogai-13",
+    "year": 2022,
+    "season": "annual",
+    "examDate": "2022-10-02",
+    "session": "suishitsu-gijutsu",
+    "qNumber": 14,
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "subject": "水質関係技術特論",
+    "category": "水質関係技術特論",
+    "topicTags": [
+      "活性炭吸着塔のメリーゴーランド方式"
+    ],
+    "difficulty": 2,
+    "question": "問14　活性炭吸着塔のメリーゴーランド方式。掲載の公式問題画像の問14を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "メリーゴーランド方式で,複数の粒状活性炭充塡塔に直列に通水する場合には,新炭を充塡した塔を最前段とする。",
+      "イ": "活性炭充塡塔が飽和する前に,浮遊物質による目詰まりが起こるのを避けるには,排水を清澄にする前処理が必要である。",
+      "ウ": "流動層によらない上向流の活性炭充塡塔の場合,通水速度は活性炭層がわずかに膨張する程度に調整する。",
+      "エ": "COD を吸着した活性炭を再生利用する場合は,再生時の減少分を補充し再充塡する。",
+      "オ": "活性炭を充塡した槽の内部で作業をする場合は,酸欠にならないよう,十分な換気が必要である。"
+    },
+    "answer": "ア",
+    "explanation": "新炭を入れた塔は最終段に置く。最前段が破過したら交換し、後続の塔を順次前に送ることで吸着能力を使い切りやすくする。",
+    "choiceExplanations": {
+      "ア": "原水側は先に運転した塔が負荷を受け、最後段の新炭で漏れ出した成分を吸着する。",
+      "イ": "前処理で浮遊物質を取り除けば、活性炭が吸着で飽和する前の目詰まりを防げる。",
+      "ウ": "上向流固定層では床がわずかに膨張する程度の通水速度として、流路偏りや過度の流動を避ける。",
+      "エ": "活性炭の再生では摩耗や焼失による減量があり、失われた量を補充して再充塡する。",
+      "オ": "活性炭を入れた槽では酸素濃度が低下する危険があるため、内部作業に先立ち十分に換気する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2022/suishitsu-gijutsu-p09.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 公害防止管理者 水質関係技術特論 公式問題冊子PDF 9ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724180429id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R04_18.pdf#page=9",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724172205id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR04.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和4年度 公害防止管理者等国家試験 水質関係技術特論 問14（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2022-annual-suishitsu-gijutsu-q15",
+    "exam": "kogai-13",
+    "year": 2022,
+    "season": "annual",
+    "examDate": "2022-10-02",
+    "session": "suishitsu-gijutsu",
+    "qNumber": 15,
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "subject": "水質関係技術特論",
+    "category": "水質関係技術特論",
+    "topicTags": [
+      "工場排水試料の保存条件"
+    ],
+    "difficulty": 2,
+    "question": "問15　工場排水試料の保存条件。掲載の公式問題画像の問15を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "BOD／0 〜 10 °Cの暗所",
+      "イ": "ノルマルヘキサン抽出物質／NaOH で弱アルカリ性",
+      "ウ": "銅,亜鉛などの金属元素／HNO 3 で pH 約 1",
+      "エ": "COD／0 〜 10 °Cの暗所",
+      "オ": "pH／保存できない"
+    },
+    "answer": "イ",
+    "explanation": "ノルマルヘキサン抽出物質の測定用試料は酸性にして保存する。弱アルカリ性にする組合せが誤りである。",
+    "choiceExplanations": {
+      "ア": "BOD用試料は微生物反応を抑えるため0〜10℃の暗所に置き、早めに測定する。",
+      "イ": "ノルマルヘキサン抽出物質の試料は酸性にして保存する。水酸化ナトリウムでアルカリ性にする条件とは異なる。",
+      "ウ": "銅や亜鉛の試料は硝酸でpHを約1にし、金属が沈殿や容器への吸着で失われるのを抑える。",
+      "エ": "CODの試料を0〜10℃の暗所に保存し、採取時からの組成変化を抑える。",
+      "オ": "pHは気体との平衡や化学反応で変わりやすく、保存に適さないため採取後速やかに測定する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2022/suishitsu-gijutsu-p09.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 公害防止管理者 水質関係技術特論 公式問題冊子PDF 9ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724180429id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R04_18.pdf#page=9",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724172205id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR04.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和4年度 公害防止管理者等国家試験 水質関係技術特論 問15（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2022-annual-suishitsu-gijutsu-q16",
+    "exam": "kogai-13",
+    "year": 2022,
+    "season": "annual",
+    "examDate": "2022-10-02",
+    "session": "suishitsu-gijutsu",
+    "qNumber": 16,
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "subject": "水質関係技術特論",
+    "category": "水質関係技術特論",
+    "topicTags": [
+      "開水路と管路の流量測定"
+    ],
+    "difficulty": 2,
+    "question": "問16　開水路と管路の流量測定。掲載の公式問題画像の問16を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "容器による測定では,器具はバケツ類など容量既知のものを用いる。",
+      "イ": "堰は,堰板,支え板及び水路で構成される。",
+      "ウ": "フリューム式の流量計は管路で用いられる。",
+      "エ": "電磁流量計は固形物の影響がない。",
+      "オ": "超音波式の流量計は圧力損失がない。"
+    },
+    "answer": "ウ",
+    "explanation": "フリューム式は開水路で水路を絞り、上流等の水位と流量との関係を利用する方式である。",
+    "choiceExplanations": {
+      "ア": "一定容量のバケツなどを満たすのに要する時間から、容量を時間で割って流量を求められる。",
+      "イ": "堰は水路内に堰板を取り付け、水頭から流量を求める構成である。",
+      "ウ": "フリュームは自由表面のある開水路の水深を測る。水で満たされた管路用の方式とする説明が誤りである。",
+      "エ": "電磁式には流路内の機械的可動部がなく、導電性を持つ流体なら懸濁固形物を含む水にも適用できる。",
+      "オ": "超音波式は流路を絞る必要がなく、測定のために新たな圧力損失を生じない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2022/suishitsu-gijutsu-p09.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 公害防止管理者 水質関係技術特論 公式問題冊子PDF 9ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724180429id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R04_18.pdf#page=9",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724172205id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR04.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和4年度 公害防止管理者等国家試験 水質関係技術特論 問16（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2022-annual-suishitsu-gijutsu-q17",
+    "exam": "kogai-13",
+    "year": 2022,
+    "season": "annual",
+    "examDate": "2022-10-02",
+    "session": "suishitsu-gijutsu",
+    "qNumber": 17,
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "subject": "水質関係技術特論",
+    "category": "水質関係技術特論",
+    "topicTags": [
+      "浮遊物質（SS）のろ過と乾燥"
+    ],
+    "difficulty": 2,
+    "question": "問17　浮遊物質（SS）のろ過と乾燥。掲載の公式問題画像の問17を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "網目2 mm",
+      "イ": "孔径0.45 µm",
+      "ウ": "ガラス繊維ろ紙",
+      "エ": "105〜110 ℃",
+      "オ": "デシケーター"
+    },
+    "answer": "イ",
+    "explanation": "浮遊物質を重量法で測定する場合、試験で用いるガラス繊維ろ紙の孔径は1 µmである。0.45 µmとした下線が誤りである。",
+    "choiceExplanations": {
+      "ア": "網目2 mmのふるいで粗大物を除いた試料を測定に用いる。",
+      "イ": "SSの測定では孔径1 µmのガラス繊維ろ紙で捕捉する。0.45 µmは別の分析操作にも用いられる孔径である。",
+      "ウ": "捕捉した浮遊物質を乾燥後に秤量するため、ガラス繊維ろ紙を用いる。",
+      "エ": "付着した水分を除くため、105〜110℃で加熱乾燥を行う。",
+      "オ": "乾燥後に空気中の水分を吸わないよう、デシケーターの中で放冷してから質量を測る。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2022/suishitsu-gijutsu-p10.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 公害防止管理者 水質関係技術特論 公式問題冊子PDF 10ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724180429id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R04_18.pdf#page=10",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724172205id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR04.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和4年度 公害防止管理者等国家試験 水質関係技術特論 問17（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2022-annual-suishitsu-gijutsu-q18",
+    "exam": "kogai-13",
+    "year": 2022,
+    "season": "annual",
+    "examDate": "2022-10-02",
+    "session": "suishitsu-gijutsu",
+    "qNumber": 18,
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "subject": "水質関係技術特論",
+    "category": "水質関係技術特論",
+    "topicTags": [
+      "植物プランクトン増殖の温度・光・栄養制限"
+    ],
+    "difficulty": 2,
+    "question": "問18　植物プランクトン増殖の温度・光・栄養制限。掲載の公式問題画像の問18を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "植物プランクトンの最大可能比増殖速度は温度の関数で計算される。",
+      "イ": "栄養塩濃度の制限は,リービッヒの最小律に従うと窒素やりん等の栄養塩濃度の制限の強い方を考慮する。",
+      "ウ": "光合成−光応答の式によって,光強度による光合成速度の変化が計算される。",
+      "エ": "植物プランクトンの炭素現存量は溶存体有機物とクロロフィル a 濃度の比から計算される。",
+      "オ": "水中での光強度はランバート−ベールの式から計算される。"
+    },
+    "answer": "エ",
+    "explanation": "クロロフィルa濃度から細胞の炭素現存量を推定するには、植物プランクトン炭素量とクロロフィルaの比を用いる。溶存体有機物との比ではない。",
+    "choiceExplanations": {
+      "ア": "代謝や増殖の速度は温度に依存するため、最大可能比増殖速度は温度の関数として扱われる。",
+      "イ": "リービッヒの最小律では、窒素やりんなどの中で増殖への制限が最も強いものが増殖を規定する。",
+      "ウ": "光合成と光強度の応答式では、光量に伴う増加、飽和などを表現できる。",
+      "エ": "溶存有機物は植物プランクトン細胞に含まれる炭素とは異なる。細胞炭素の推定には炭素対クロロフィルa比を使う。",
+      "オ": "深さに応じて光が指数関数的に弱まることをランバート−ベールの式で表現できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2022/suishitsu-gijutsu-p10.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 公害防止管理者 水質関係技術特論 公式問題冊子PDF 10ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724180429id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R04_18.pdf#page=10",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724172205id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR04.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和4年度 公害防止管理者等国家試験 水質関係技術特論 問18（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2022-annual-suishitsu-gijutsu-q19",
+    "exam": "kogai-13",
+    "year": 2022,
+    "season": "annual",
+    "examDate": "2022-10-02",
+    "session": "suishitsu-gijutsu",
+    "qNumber": 19,
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "subject": "水質関係技術特論",
+    "category": "水質関係技術特論",
+    "topicTags": [
+      "開放循環冷却水系の補給量"
+    ],
+    "difficulty": 2,
+    "question": "問19　開放循環冷却水系の補給量。掲載の公式問題画像の問19を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "0.5",
+      "イ": "1.0",
+      "ウ": "1.5",
+      "エ": "2.0",
+      "オ": "2.5"
+    },
+    "answer": "ウ",
+    "explanation": "補給水Mは蒸発水Eと、濃縮された冷却水として失われる量Bの和である。溶解成分の収支からM/B＝3、E＝1.0%なのでB＝0.5%、M＝1.5%となる。",
+    "choiceExplanations": {
+      "ア": "0.5%は蒸発以外の濃縮水の排出割合であり、全補給量には蒸発分も加える。",
+      "イ": "1.0%は蒸発水量だけを補う量であり、濃縮倍数を保つ排出分が含まれていない。",
+      "ウ": "補給量1.5%と蒸発以外の排出0.5%の比が3となり、濃縮倍数と一致する。",
+      "エ": "補給量2.0%、蒸発量1.0%なら排出量も1.0%となり、濃縮倍数は2になる。",
+      "オ": "補給量2.5%では蒸発以外の排出が1.5%となるため、濃縮倍数は約1.67である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2022/suishitsu-gijutsu-p10.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 公害防止管理者 水質関係技術特論 公式問題冊子PDF 10ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724180429id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R04_18.pdf#page=10",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724172205id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR04.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和4年度 公害防止管理者等国家試験 水質関係技術特論 問19（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2022-annual-suishitsu-gijutsu-q20",
+    "exam": "kogai-13",
+    "year": 2022,
+    "season": "annual",
+    "examDate": "2022-10-02",
+    "session": "suishitsu-gijutsu",
+    "qNumber": 20,
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "subject": "水質関係技術特論",
+    "category": "水質関係技術特論",
+    "topicTags": [
+      "製鉄所の工程別排水と汚染物質"
+    ],
+    "difficulty": 2,
+    "question": "問20　製鉄所の工程別排水と汚染物質。掲載の公式問題画像の問20を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "高炉排水",
+      "イ": "廃安水",
+      "ウ": "熱延直接冷却水",
+      "エ": "めっき排水",
+      "オ": "冷延排水"
+    },
+    "answer": "イ",
+    "explanation": "コークス炉ガスの冷却などで生じる廃安水には、石炭の乾留に由来するフェノール、アンモニア、シアンが含まれる。",
+    "choiceExplanations": {
+      "ア": "高炉排水はガス洗浄などに由来し、懸濁するダスト等が問題になる。設問の三成分の組合せは廃安水に対応する。",
+      "イ": "コークス製造工程のガス液などから生じる廃安水が、フェノール、アンモニア、シアンを伴う。",
+      "ウ": "熱延の直接冷却水ではスケールなどの懸濁物質や油分が代表的である。",
+      "エ": "めっき排水では使用しためっき液に由来する金属類などを管理する。設問の三成分がそろう廃安水とは異なる。",
+      "オ": "冷延排水では圧延油や潤滑剤などによる油分が問題になりやすい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2022/suishitsu-gijutsu-p11.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 公害防止管理者 水質関係技術特論 公式問題冊子PDF 11ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724180429id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R04_18.pdf#page=11",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724172205id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR04.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和4年度 公害防止管理者等国家試験 水質関係技術特論 問20（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  }
+]
