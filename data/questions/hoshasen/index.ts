@@ -11,6 +11,7 @@ import firstLaw2026 from "./2026-1-hourei.json";
 import secondLaw2025 from "./2025-2-hourei.json";
 import second2026 from "./2026-2.json";
 import first2025 from "./2025-1.json";
+import firstPhysics2023 from "./2023-1-butsuri.json";
 import firstLaw2023 from "./2023-1-hourei.json";
 import firstLaw2024 from "./2024-1-hourei.json";
 import firstPhysics2024 from "./2024-1-butsuri.json";
@@ -50,8 +51,11 @@ const CommonSchema = z.object({
 const SingleSchema = CommonSchema.extend({
   format: z.literal("single-choice").optional(),
   choices: z.array(z.string().min(1)).length(5),
-  officialAnswerNumber: z.number().int().min(1).max(5),
+  officialAnswerNumber: z.number().int().min(1).max(5).nullable(),
+  allAnswersAccepted: z.boolean().optional(),
   choiceExplanations: z.array(z.string().min(10)).length(5),
+}).refine(q => Boolean(q.allAnswersAccepted) === (q.officialAnswerNumber === null), {
+  message: "A null answer requires the official all-answers-accepted ruling",
 });
 const GroupSchema = z.object({
   id: z.string().min(1),
@@ -89,4 +93,4 @@ export const HoshasenStagedQuestionSchema = z.union([SingleSchema, MultiSchema])
 export type HoshasenStagedQuestion = z.infer<typeof HoshasenStagedQuestionSchema>;
 export const HOSHASEN_STAGED_QUESTIONS: HoshasenStagedQuestion[] = z
   .array(HoshasenStagedQuestionSchema)
-  .parse([...first2026, ...second2026, ...first2025, ...second2025, ...chemistry2026, ...chemistry2025, ...biology2026, ...biology2025, ...practical2026, ...practical2025, ...firstChemistry2026, ...firstBiology2026, ...firstBiology2025, ...firstChemistry2025, ...secondLaw2026, ...secondLaw2025, ...firstLaw2026, ...firstLaw2025, ...firstLaw2024, ...firstLaw2023, ...firstPhysics2024, ...firstBiology2024, ...firstChemistry2024, ...multi]);
+  .parse([...first2026, ...second2026, ...first2025, ...second2025, ...chemistry2026, ...chemistry2025, ...biology2026, ...biology2025, ...practical2026, ...practical2025, ...firstChemistry2026, ...firstBiology2026, ...firstBiology2025, ...firstChemistry2025, ...secondLaw2026, ...secondLaw2025, ...firstLaw2026, ...firstLaw2025, ...firstLaw2024, ...firstLaw2023, ...firstPhysics2023, ...firstPhysics2024, ...firstBiology2024, ...firstChemistry2024, ...multi]);

@@ -8,7 +8,7 @@ import held from "@/data/questions/hoshasen/held-2026-2-kagaku-q9.json";
 
 describe("hoshasen unpublished source staging", () => {
   it("batch1公開後: retains the distinct source sessions without publishing candidates", () => {
-    expect(HOSHASEN_STAGED_QUESTIONS.filter(q => q.format !== "multi-part")).toHaveLength(528);
+    expect(HOSHASEN_STAGED_QUESTIONS.filter(q => q.format !== "multi-part")).toHaveLength(558);
     expect(HOSHASEN_STAGED_QUESTIONS.filter(q => q.format === "multi-part")).toHaveLength(46);
     expect(HOSHASEN_STAGED_QUESTIONS).toHaveLength(audit.stagedQuestions);
     expect(new Set(HOSHASEN_STAGED_QUESTIONS.map(q => q.id)).size).toBe(audit.stagedQuestions);
@@ -36,7 +36,7 @@ describe("hoshasen unpublished source staging", () => {
   });
 
   it("preserves source acquisition evidence and reports incomplete coverage", () => {
-    expect(audit.files).toHaveLength(28);
+    expect(audit.files).toHaveLength(29);
     expect(audit.files.every(f => f.bytes > 0 && /^[a-f0-9]{64}$/.test(f.sha256))).toBe(true);
     expect(audit.stagedQuestions).toBe(HOSHASEN_STAGED_QUESTIONS.length);
     expect(audit.stagedChoiceExplanations).toBe(HOSHASEN_STAGED_QUESTIONS.reduce((n,q) => n+(q.format === "multi-part" ? q.blanks.reduce((m,b) => m+b.choiceExplanations.length,0) : q.choiceExplanations.length),0));
@@ -76,12 +76,16 @@ describe("hoshasen unpublished source staging", () => {
         expect(first.filter(q => q.subject === subject).map(q => q.number).sort((a,b) => a-b)).toEqual(numbers);
       }
     }
-    expect(audit.stagedQuestions).toBe(574);
+    expect(audit.stagedQuestions).toBe(604);
     expect(audit.remainingPrimaryQuestions).toBe(2);
     expect(audit.heldPrimaryQuestions).toBe(1);
   });
 
   it("preserves the official all-answers-accepted ruling without a fictitious key", () => {
+    const allScored = HOSHASEN_STAGED_QUESTIONS.find(q => q.id === "hoshasen-1-2023-butsuri-q18");
+    expect(allScored).toMatchObject({ allAnswersAccepted: true, officialAnswerNumber: null });
+    expect(HoshasenStagedQuestionSchema.safeParse({ ...allScored, officialAnswerNumber: 5 }).success).toBe(false);
+    expect(HoshasenStagedQuestionSchema.safeParse({ ...allScored, allAnswersAccepted: false }).success).toBe(false);
     const accepted = HOSHASEN_STAGED_QUESTIONS.flatMap(q => q.format === "multi-part"
       ? q.blanks.filter(b => b.allAnswersAccepted).map(b => ({ q, b })) : []);
     expect(accepted.map(({ q, b }) => [q.id, b.id])).toEqual([["hoshasen-1-2025-kagaku-q31", "F"]]);

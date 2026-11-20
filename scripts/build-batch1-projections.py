@@ -136,7 +136,7 @@ for q in hoshasen:
         if q['id'] == 'hoshasen-2-2026-jitsumu-q11':
             prompt = prompt.replace('核種｜壊変形式｜半減期｜利用する放射線', '|核種|壊変形式|半減期|利用する放射線|\n|---|---|---|---|')
             prompt = re.sub(r'^(¹⁴⁷Pm|¹³⁷Cs|²⁴¹Am)｜(.+)$', lambda m: '|'+m[1]+'|'+m[2].replace('｜','|')+'|', prompt, flags=re.M)
-        n.update(question=prompt, choices=choice_map(options), answer=KEYS[answer-1],
+        n.update(question=prompt, choices=choice_map(options), answer=[] if answer is None else KEYS[answer-1],
                  officialAnswerNumber=answer, explanation=(blank['explanation']+'\n\n' if blank else '')+q['explanation'],
                  choiceExplanations=choice_map(explanations), explanationCoverage='full',
                  category=q['subject'], sourcePdfUrl=q['sourcePdfUrl'], sourceAnswerUrl=q['sourceAnswerUrl'],
@@ -145,6 +145,9 @@ for q in hoshasen:
                  imageUrls=[asset(q['imagePath'])] if q['hasImage'] else [],
                  imageAltTexts=[q['imageAltText']] if q['hasImage'] else [],
                  questionNotice=f'公式原問：{q["subject"]} 問{q["number"]}'+(f'／解答欄{blank["id"]}。原文を保持し、解答欄ごとに演習します。' if blank else '。'))
+        if answer is None:
+            assert q.get('allAnswersAccepted') and not blank
+            n['officialScoring'] = {'kind': 'credit-for-all', 'reason': q['explanation']}
         questions[exam].append(n)
 
 for exam in ['khk-kikai-kou', 'khk-kikai-otsu']:
