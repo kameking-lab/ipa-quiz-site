@@ -1999,6 +1999,12 @@ caremanager: {
         { session: "tekisei", urlSlug: "tekisei", expectedQuestions: 60, label: "適性試験Ⅰ", categories: ["記憶検査", "空間関係検査Ⅰ", "空間関係検査Ⅱ"] },
     ], seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
 },
+"shokuhin-eisei-kanshiin": {
+    code: "shokuhin-eisei-kanshiin", nameFull: "食品衛生監視員採用試験", urlSlug: "shokuhin-eisei-kanshiin", level: "advanced",
+    sessions: [
+        { session: "kiso", urlSlug: "kiso", expectedQuestions: 30, label: "基礎能力試験（専門職共通）", categories: ["文章理解", "判断推理", "数的推理", "資料解釈", "時事"] },
+    ], seasons: ["annual"], yearRange: { start: 2024, end: 2024 },
+},
 "homusho-senmonshokuin": {
     code: "homusho-senmonshokuin", nameFull: "法務省専門職員（人間科学）採用試験", urlSlug: "homusho-senmonshokuin", level: "advanced",
     sessions: [

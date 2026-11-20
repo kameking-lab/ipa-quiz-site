@@ -1789,6 +1789,15 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["外国語試験・適性試験Ⅰの過年度の補充"],
   },
   {
+    slug: "shokuhin-eisei-kanshiin", examCode: "shokuhin-eisei-kanshiin", shortName: "食品衛生監視員", fullName: "食品衛生監視員採用試験",
+    domain: "pharmacy", administrator: "人事院",
+    officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_22.html",
+    officialReuseTermsUrl: "https://www.jinji.go.jp/shinsei/notice.html",
+    status: "live",
+    reuseSummary: "2024年度の基礎能力試験（専門職共通）30問を、公式正答と全肢解説付きで収録。",
+    attributionTemplate: "出典：人事院「基礎能力試験（食品衛生監視員などの共通問題）」。解説は過去問AIの独自作成。",
+  },
+  {
     slug: "homusho-senmonshokuin", examCode: "homusho-senmonshokuin", shortName: "法務省専門職員（人間科学）", fullName: "法務省専門職員（人間科学）採用試験",
     domain: "legal", administrator: "人事院",
     officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_19.html",
