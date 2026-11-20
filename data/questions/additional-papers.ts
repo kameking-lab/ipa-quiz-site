@@ -123,6 +123,15 @@ const examsWithAdditionalPapers = new Set<ExamCode>([
   "eikenp2plus",
   "denko1",
   "fp3",
+  "fp1",
+  "yamaguchi-fugu",
+  "kaijo-hoan-gakko",
+  "keimukan",
+  "kokka-sogo-dai",
+  "kokka-sogo-kyoyo",
+  "kokuzei-senmonkan",
+  "zaimu-senmonkan",
+  "chori-ehime",
 ]);
 
 const papersByExam = new Map<ExamCode, Question[]>();

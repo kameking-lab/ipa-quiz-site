@@ -564,6 +564,11 @@ export function examTopDescription(exam: ExamCode, questionCount: number): strin
 }
 
 const EXAM_FULL_NAMES: Record<ExamCode, string> = {
+  "kaijo-hoan-gakko": "海上保安学校学生採用試験",
+  keimukan: "刑務官採用試験",
+  "kokka-sogo-kyoyo": "国家公務員採用総合職試験（大卒程度試験・教養区分）",
+  "zaimu-senmonkan": "財務専門官採用試験",
+  "chori-ehime": "調理師試験（愛媛県）",
   "zenkou-pc": "パソコン利用技術検定",
   "concrete-assou2": "技能検定 2級コンクリート圧送施工（コンクリート圧送工事作業）学科試験",
   "kawarabuki1": "技能検定 1級かわらぶき（かわらぶき作業）学科試験",
@@ -1082,6 +1087,11 @@ export function examFullName(exam: ExamCode): string {
 }
 
 const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number) => string> = {
+  "kaijo-hoan-gakko": (c) => `海上保安学校学生採用試験の基礎能力試験と学科試験から${c}問を収録。公式正答と全肢の解説で演習できます。`,
+  keimukan: (c) => `刑務官採用試験の基礎能力試験から${c}問を収録。公式正答と全肢の解説で演習できます。`,
+  "kokka-sogo-kyoyo": (c) => `国家総合職（大卒程度・教養区分）の基礎能力試験Ⅰ部・Ⅱ部から${c}問を収録。公式正答と全肢の解説で演習できます。`,
+  "zaimu-senmonkan": (c) => `財務専門官採用試験の専門試験から${c}問を収録。憲法、行政法、経済学、社会学を学べます。`,
+  "chori-ehime": (c, y) => `愛媛県の調理師試験を${c}問・${y}回分収録。公式正答と全肢の解説で演習できます。`,
   "zenkou-pc": (c, y) => `パソコン利用技術検定の公式問題から${c}問・${y}回分を収録。`,
   "kogai-13": (c) => `公害防止管理者等国家試験の2026年度「ばいじん・一般粉じん特論」全${c}問を収録。公式問題・正答と全肢の独自解説で学べます。`,
   "kogai-18": (c) => `公害防止管理者等国家試験の2026年度「水質関係技術特論」全${c}問を収録。公式問題・正答と全肢の独自解説で学べます。`,

@@ -63,7 +63,12 @@ export type ExamCode = "eiken2" | "restaurant-2" | "kogai-17" | "dekyo-chief-3" 
   | "tohan-hokkaido-tohoku"
   | "tohan-kitakanto-koshinetsu"
   | "tohan-kyushu-okinawa"
-  | "tohan-tokai-hokuriku";
+  | "tohan-tokai-hokuriku"
+  | "kaijo-hoan-gakko"
+  | "keimukan"
+  | "kokka-sogo-kyoyo"
+  | "zaimu-senmonkan"
+  | "chori-ehime";
 
 
 export type IpaExamCode = "ip" | "sg" | "fe" | "ap" | "st" | "sa" | "pm" | "nw" | "db" | "es" | "sc" | "sm" | "au";
@@ -129,7 +134,23 @@ export type Session = "cfp-risk" | "reading" | "writing" | "listening" | "eju-bi
   | "kinzai-kojin"
   | "kinzai-chusho"
   | "kinzai-seiho"
-  | "kinzai-hoken";
+  | "kinzai-hoken"
+  | "gakka-butsuri"
+  | "gakka-eigo"
+  | "gakka-sugaku"
+  | "kiso-special"
+  | "senmon-butsuri"
+  | "senmon-digital"
+  | "senmon-doboku"
+  | "senmon-kagaku"
+  | "senmon-kenchiku"
+  | "senmon-kikai"
+  | "senmon-nogaku"
+  | "senmon-noson"
+  | "senmon-ringaku"
+  | "senmon-gijutsu"
+  | "kiso-i"
+  | "kiso-ii";
 
 
 export const QUESTION_SEASONS = [

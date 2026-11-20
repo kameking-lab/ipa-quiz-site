@@ -68,6 +68,23 @@ export const PRACTICE_SESSIONS: readonly Session[] = ["cfp-risk", "reading", "wr
   "kinzai-chusho",
   "kinzai-seiho",
   "kinzai-hoken",
+
+  "gakka-butsuri",
+  "gakka-eigo",
+  "gakka-sugaku",
+  "kiso-special",
+  "senmon-butsuri",
+  "senmon-digital",
+  "senmon-doboku",
+  "senmon-kagaku",
+  "senmon-kenchiku",
+  "senmon-kikai",
+  "senmon-nogaku",
+  "senmon-noson",
+  "senmon-ringaku",
+  "senmon-gijutsu",
+  "kiso-i",
+  "kiso-ii",
 ];
 
 /** Specialist practice starts with the specialist paper; common AM I is explicit. */
@@ -190,6 +207,12 @@ const CONFIGURED_SESSION_LABEL_EXAMS: readonly ExamCode[] = [
 
   "fp2",
   "fp3",
+
+  "kaijo-hoan-gakko",
+  "keimukan",
+  "kokka-sogo-kyoyo",
+  "zaimu-senmonkan",
+  "chori-ehime",
 ];
 
 
@@ -229,6 +252,37 @@ export function practiceSessionLabel(session: Session, exam?: ExamCode): string 
   if (exam === "kaikeishi" && session === "kigyo") return "企業法";
   if (exam === "kaikeishi" && session === "zaimu") return "財務会計論";
   return ({
+    "zensho-bido-jitsugi-1": "1級 ビジネス文書部門 実技",
+    "zensho-bido-jitsugi-2": "2級 ビジネス文書部門 実技",
+    "zensho-bido-jitsugi-3": "3級 ビジネス文書部門 実技",
+    "zensho-bido-sokudo-1": "1級 速度部門",
+    "zensho-bido-sokudo-2": "2級 速度部門",
+    "zensho-bido-sokudo-3": "3級 速度部門",
+    "zensho-calc-2-ordinary": "2級 普通計算",
+    "zensho-info-grade-3-practical": "3級 実技",
+    "zensho-info-business-2-practical": "2級 ビジネス情報 実技",
+    "zensho-info-business-2": "2級 ビジネス情報 筆記",
+    "kinzai-kojin": "金財 個人資産相談業務",
+    "kinzai-chusho": "金財 中小事業主資産相談業務",
+    "kinzai-seiho": "金財 生保顧客資産相談業務",
+    "kinzai-sonpo": "金財 損保顧客資産相談業務",
+    "kinzai-hoken": "金財 保険顧客資産相談業務",
+    "gakka-butsuri": "学科試験（物理）",
+    "gakka-eigo": "学科試験（英語）",
+    "gakka-sugaku": "学科試験（数学）",
+    "kiso-special": "基礎能力試験（特別）",
+    "senmon-butsuri": "専門試験（物理）",
+    "senmon-digital": "専門試験（デジタル・電気・電子）",
+    "senmon-doboku": "専門試験（土木）",
+    "senmon-kagaku": "専門試験（化学）",
+    "senmon-kenchiku": "専門試験（建築）",
+    "senmon-kikai": "専門試験（機械）",
+    "senmon-nogaku": "専門試験（農学）",
+    "senmon-noson": "専門試験（農業農村工学）",
+    "senmon-ringaku": "専門試験（林学）",
+    "senmon-gijutsu": "専門試験（技術）",
+    "kiso-i": "基礎能力試験Ⅰ部",
+    "kiso-ii": "基礎能力試験Ⅱ部",
     "katei-old2": "旧2級・筆記",
     "katei-old3": "旧3級・筆記",
     "kogai-soron": "公害総論",

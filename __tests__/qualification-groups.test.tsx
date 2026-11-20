@@ -18,7 +18,7 @@ describe("qualification groups", () => {
     const directory = groupHomeDirectory(getHomeDirectory());
     const cards = directory.flatMap(domain => [...domain.featured, ...domain.compact]);
     expect(Object.fromEntries(groups.map(({ group, children }) => [group.slug, children.length]))).toEqual({
-      chori: 10, "gijutsushi-first": 22, tohan: 6, junkango: 3, dokugeki: 3, kyoin: 11,
+      chori: 11, "gijutsushi-first": 22, tohan: 6, junkango: 3, dokugeki: 3, kyoin: 11, "kokka-sogo": 3,
     });
     for (const { group, children } of groups) {
       const href = qualificationGroupPath(group.slug);
