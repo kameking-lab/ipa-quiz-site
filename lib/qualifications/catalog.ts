@@ -857,7 +857,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     administrator: "福岡県・沖縄県など",
     officialQuestionsUrl: "https://www.pref.fukuoka.lg.jp/contents/kakotorokuhanbaisyasiken.html",
     status: "live",
-    reuseSummary: "令和6・7年度の九州・沖縄共通問題を、公式正答と全選択肢の解説付きで演習できます。",
+    reuseSummary: "令和5〜7年度の九州・沖縄共通問題を、公式正答と全選択肢の解説付きで演習できます。",
     attributionTemplate: "出典：福岡県 令和○年度登録販売者試験（午前／午後）問○",
     remainingWork: [],
   },

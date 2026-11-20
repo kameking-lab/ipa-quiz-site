@@ -893,7 +893,7 @@ tohan: {
         ],
     }],
     seasons: ["annual"],
-    yearRange: { start: 2024, end: 2025 },
+    yearRange: { start: 2023, end: 2025 },
 },
 "tohan-chugoku-shikoku": {
     code: "tohan-chugoku-shikoku",
