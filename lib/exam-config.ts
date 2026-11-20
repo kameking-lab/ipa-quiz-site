@@ -1557,7 +1557,7 @@ kankoji1: {
 "chori-kanagawa": {
     code: "chori-kanagawa", nameFull: "調理師試験（神奈川県）", urlSlug: "chori-kanagawa", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 60, label: "学科", categories: ["公衆衛生学", "食品学", "栄養学", "食品衛生学", "調理理論", "食文化概論"] }],
-    seasons: ["annual", "round2"], yearRange: { start: 2024, end: 2026 },
+    seasons: ["annual", "round2", "round1"], yearRange: { start: 2024, end: 2026 },
 },
 "chori-hokkaido": {
     code: "chori-hokkaido", nameFull: "調理師試験（北海道）", urlSlug: "chori-hokkaido", level: "basic",
