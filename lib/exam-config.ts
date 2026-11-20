@@ -1495,7 +1495,7 @@ shuwa: {
 },
 "zensho-eco-80": {
     code: "zensho-eco-80", nameFull: "商業経済検定", urlSlug: "zensho-eco-80", level: "basic",
-    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 100, label: "学科", categories: ["ビジネス基礎", "マーケティング"] }],
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 150, label: "学科", categories: ["ビジネス基礎", "マーケティング", "ビジネス経済A"] }],
     seasons: ["annual"], yearRange: { start: 2022, end: 2023 },
 },
 "jken-katsuyo1": {
