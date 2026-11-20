@@ -1,3 +1,4 @@
+import april2022Kogaku from "./2022-april-kogaku.json";
 import april2022Houki from "./2022-april-houki.json";
 import data from "./two-sittings.json";
 import december2024Kogaku from "./2024-december-kogaku.json";
@@ -5,4 +6,4 @@ import december2024Houki from "./2024-december-houki.json";
 import november2025 from "./2025-november.json";
 import { normalizeQuestionData } from "@/lib/questions/native-b";
 
-export const AMATEUR1_QUESTIONS = [...data, ...november2025, ...december2024Houki, ...december2024Kogaku, ...april2022Houki].map(normalizeQuestionData);
+export const AMATEUR1_QUESTIONS = [...data, ...november2025, ...december2024Houki, ...december2024Kogaku, ...april2022Houki, ...april2022Kogaku].map(normalizeQuestionData);
