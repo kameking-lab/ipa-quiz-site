@@ -1,0 +1,1537 @@
+[
+  {
+    "id": "radio21-amateur2-2022-april-kogaku-q01",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "spring",
+    "qNumber": 1,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "電磁誘導"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-1",
+    "sourceExamSession": "令和4年4月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20220412080155id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220412080153id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和4年4月期（IZ404）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/amateur2/2022-april-kogaku/q01.png"
+    ],
+    "imageAltTexts": [
+      "磁束密度Bの磁界を横切って速度vで移動する導体D"
+    ],
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "図のように磁束密度Bの一様な磁界中で長さlの直線導体Dを磁界に直角に一定速度vで動かす。磁界は紙面に平行、Dは紙面に垂直とする。Dには［A］eが生じ、これを［B］現象という。Dの両端に生じるeの大きさは［C］Vである。",
+    "choices": {
+      "ア": "A：起磁力　B：電磁誘導　C：Blv",
+      "イ": "A：起磁力　B：磁気誘導　C：Blv²",
+      "ウ": "A：起電力　B：磁気誘導　C：Blv",
+      "エ": "A：起電力　B：磁気誘導　C：Blv²",
+      "オ": "A：起電力　B：電磁誘導　C：Blv"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "磁界を横切る導体では、電磁誘導によって両端に起電力が生じる。直交して動く長さlの導体では e=Blv となる。",
+    "choiceExplanations": {
+      "ア": "電磁誘導と式は合うが、導体に現れる電圧は起磁力ではなく起電力である。",
+      "イ": "導体に生じるのは起電力で、速度の二乗ではなく速度に比例する。",
+      "ウ": "起電力と式は合うが、磁界を横切る運動で起電力を生じる現象は電磁誘導である。",
+      "エ": "起電力を生む現象は電磁誘導であり、その大きさはvに比例する。",
+      "オ": "磁界を横切る導体では、電磁誘導によって両端に起電力が生じる。直交して動く長さlの導体では e=Blv となる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2022-april-kogaku-q02",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "spring",
+    "qNumber": 2,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "平行平板コンデンサ"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-2",
+    "sourceExamSession": "令和4年4月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20220412080155id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220412080153id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和4年4月期（IZ404）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/amateur2/2022-april-kogaku/q02.png"
+    ],
+    "imageAltTexts": [
+      "面積Sの電極と間隔d、誘電体を含む平行平板コンデンサ"
+    ],
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "図の平行平板コンデンサの静電容量を求めよ。電極の面積は30 cm²、電極間隔は3 mm、真空の誘電率は9×10⁻¹² F/m、誘電体の比誘電率は2とする。",
+    "choices": {
+      "ア": "9 pF",
+      "イ": "12 pF",
+      "ウ": "15 pF",
+      "エ": "18 pF",
+      "オ": "36 pF"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "C=ε₀εᵣS/d で、S=0.003 m²、d=0.003 mである。代入すると18×10⁻¹² Fとなる。",
+    "choiceExplanations": {
+      "ア": "9 pFは空気とほぼ同じ比誘電率1で計算した値であり、ここでは比誘電率2を掛ける。",
+      "イ": "電極面積0.003 m²と間隔0.003 mの比は1 mなので、与えられた条件から12 pFにはならない。",
+      "ウ": "誘電率は9×10⁻¹² F/mの2倍であり、面積と間隔の比を掛けると18 pFである。",
+      "エ": "C=ε₀εᵣS/d で、S=0.003 m²、d=0.003 mである。代入すると18×10⁻¹² Fとなる。",
+      "オ": "比誘電率2は一度だけ掛けるので、真空の場合の容量9 pFは18 pFになる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2022-april-kogaku-q03",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "spring",
+    "qNumber": 3,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "導体・絶縁体・半導体"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-3",
+    "sourceExamSession": "令和4年4月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20220412080155id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220412080153id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和4年4月期（IZ404）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "導体、絶縁体及び半導体の一般的な特徴について、誤っている記述を選べ。",
+    "choices": {
+      "ア": "一定の温度において、導体の抵抗値は断面積に比例する。",
+      "イ": "絶縁体には、ビニール、雲母、ガラス、空気、油などがある。",
+      "ウ": "電流が流れやすく抵抗率が小さい物質を導体といい、銀、銅、鉄、アルミニウムなどがある。",
+      "エ": "抵抗率が導体と絶縁体の中間にある物質を半導体といい、ゲルマニウムやシリコンなどがある。",
+      "オ": "半導体の抵抗率は、温度の上昇に伴って減少する。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "均質な導体の抵抗は R=ρl/S であり、断面積が大きくなるほど小さくなる。",
+    "choiceExplanations": {
+      "ア": "均質な導体の抵抗は R=ρl/S であり、断面積が大きくなるほど小さくなる。",
+      "イ": "これらは通常の条件で電流を通しにくく、電気絶縁に用いられる。",
+      "ウ": "列挙された金属はいずれも自由電子によって電気をよく通す導体である。",
+      "エ": "どちらも半導体を構成する代表的な元素である。",
+      "オ": "一般に温度が上がると電荷を運ぶキャリアが増加し、抵抗率が低下する。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2022-april-kogaku-q04",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "spring",
+    "qNumber": 4,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "直列共振"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-4",
+    "sourceExamSession": "令和4年4月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20220412080155id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220412080153id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和4年4月期（IZ404）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/amateur2/2022-april-kogaku/q04.png"
+    ],
+    "imageAltTexts": [
+      "交流電源、抵抗、コンデンサとコイルの直列回路"
+    ],
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "図の直列共振回路で、容量Cを変えずに共振周波数を1/3にするには、インダクタンスLを何倍にすればよいか。",
+    "choices": {
+      "ア": "1/9倍",
+      "イ": "1/3倍",
+      "ウ": "1/√3倍",
+      "エ": "3倍",
+      "オ": "9倍"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "共振周波数は f₀=1/(2π√LC) である。周波数を1/3に下げるには√Lを3倍、Lを9倍にする。",
+    "choiceExplanations": {
+      "ア": "Lを1/9にすると √L は1/3となり、周波数は逆に3倍になる。",
+      "イ": "Lを1/3にすると、共振周波数は1/3ではなく√3倍になる。",
+      "ウ": "Lの平方根に反比例するため、Lを減らせば周波数は高くなる。",
+      "エ": "Lを3倍にしても共振周波数は1/√3にしか下がらない。",
+      "オ": "共振周波数は f₀=1/(2π√LC) である。周波数を1/3に下げるには√Lを3倍、Lを9倍にする。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2022-april-kogaku-q05",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "spring",
+    "qNumber": 5,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "LR積分回路"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-5",
+    "sourceExamSession": "令和4年4月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20220412080155id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220412080153id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和4年4月期（IZ404）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/amateur2/2022-april-kogaku/q05.png"
+    ],
+    "imageAltTexts": [
+      "入力方形波、LR積分回路と出力波形の候補1〜4"
+    ],
+    "type": "multiple-choice",
+    "question": "図1の幅Tの方形波を図2の積分回路に入力したとき、出力電圧の波形に最も近い図を選べ。tは時間とし、時定数L/RはTより十分大きいものとする。",
+    "choices": {
+      "ア": "図の1",
+      "イ": "図の2",
+      "ウ": "図の3",
+      "エ": "図の4"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "方形波が入るとコイル電流が徐々に増え、抵抗の出力電圧も上がる。入力が零に戻ると、電流と出力電圧は減衰する。",
+    "choiceExplanations": {
+      "ア": "時定数がパルス幅より大きいので、入力開始直後から出力はゆっくり増加する。終端直前だけ急上昇する波形にはならない。",
+      "イ": "方形波が入るとコイル電流が徐々に増え、抵抗の出力電圧も上がる。入力が零に戻ると、電流と出力電圧は減衰する。",
+      "ウ": "立ち上がりと立ち下がりに急峻なパルスが出る波形は、抵抗で電流を取り出すこの積分回路の出力ではない。",
+      "エ": "正負のパルスを生じるのは微分に対応する。この回路の抵抗の出力はコイル電流に比例する。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2022-april-kogaku-q06",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "spring",
+    "qNumber": 6,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "接合形トランジスタ"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-6",
+    "sourceExamSession": "令和4年4月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20220412080155id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220412080153id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和4年4月期（IZ404）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "電極①、②、③を調べると②から①へ電流が流れ、③から①へは流れなかった。①をコレクタとすると、②の名称は［A］で、この接合形トランジスタは［B］形である。",
+    "choices": {
+      "ア": "A：ベース　B：PNP",
+      "イ": "A：ベース　B：NPN",
+      "ウ": "A：エミッタ　B：PNP",
+      "エ": "A：エミッタ　B：NPN"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "ベース・コレクタ間のPN接合を順方向にしたとき②から①に流れる。したがって②はP形ベースで、全体はNPN形である。",
+    "choiceExplanations": {
+      "ア": "②はベースだが、②から①へ順方向に流れるため、②はP形、①はN形である。",
+      "イ": "ベース・コレクタ間のPN接合を順方向にしたとき②から①に流れる。したがって②はP形ベースで、全体はNPN形である。",
+      "ウ": "ベースを開いたままのエミッタとコレクタの間には、通常の導通試験で順方向に流れる接合はない。",
+      "エ": "NPN形は合うが、コレクタと順方向に導通する②はP形のベースである。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2022-april-kogaku-q07",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "spring",
+    "qNumber": 7,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "FETの利得と自己バイアス"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-7",
+    "sourceExamSession": "令和4年4月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20220412080155id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220412080153id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和4年4月期（IZ404）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/amateur2/2022-april-kogaku/q07.png"
+    ],
+    "imageAltTexts": [
+      "ドレインD、ゲートG、ソースSと自己バイアス抵抗のあるFET増幅回路"
+    ],
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "図のFET増幅回路でID=3 mA、ES=0.6 V、gm=6 mS、負荷抵抗RL=4 kΩとする。ドレイン抵抗rD≫RLで、CSのインピーダンスは十分小さい。電圧増幅度の大きさAVとバイアス抵抗RSの組合せを選べ。",
+    "choices": {
+      "ア": "A：12　B：300 Ω",
+      "イ": "A：12　B：200 Ω",
+      "ウ": "A：24　B：300 Ω",
+      "エ": "A：24　B：200 Ω"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "rDがRLより十分大きいので利得の大きさは gmRL≒24 である。自己バイアス抵抗は ES/ID=200 Ω である。",
+    "choiceExplanations": {
+      "ア": "負荷を使った利得は約24である。自己バイアス抵抗は0.6 V÷3 mAで200 Ωとなる。",
+      "イ": "抵抗は正しいが、ソースは交流的にバイパスされるため、利得は6 mS×4 kΩで24となる。",
+      "ウ": "利得は正しいが、300 Ωに3 mAが流れれば自己バイアスは0.9 Vになる。",
+      "エ": "rDがRLより十分大きいので利得の大きさは gmRL≒24 である。自己バイアス抵抗は ES/ID=200 Ω である。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2022-april-kogaku-q08",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "spring",
+    "qNumber": 8,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "水晶発振器の安定化"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-8",
+    "sourceExamSession": "令和4年4月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20220412080155id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220412080153id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和4年4月期（IZ404）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "水晶発振器の発振周波数を安定にする一般的な方法のうち、誤っているものを選べ。",
+    "choices": {
+      "ア": "機械的衝撃や振動の影響を軽減する。",
+      "イ": "水晶発振器と負荷との間に緩衝増幅器を設ける。",
+      "ウ": "水晶発振器又は水晶発振子を恒温槽に入れる。",
+      "エ": "水晶発振器と負荷との結合を密にする。",
+      "オ": "電源に定電圧回路を用いる。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "負荷と密に結合すると負荷変動の影響が発振器に伝わりやすくなり、周波数の安定を損なう。",
+    "choiceExplanations": {
+      "ア": "振動や衝撃で水晶の共振周波数が変動するため、機械的な影響を抑える。",
+      "イ": "緩衝増幅器は負荷の変化が発振器へ伝わるのを抑える。",
+      "ウ": "水晶を一定温度に保つことで、温度による発振周波数のずれを減らす。",
+      "エ": "負荷と密に結合すると負荷変動の影響が発振器に伝わりやすくなり、周波数の安定を損なう。",
+      "オ": "電源電圧が安定すると、電源変動に起因する発振周波数のずれを抑えられる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2022-april-kogaku-q09",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "spring",
+    "qNumber": 9,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "デジタル信号処理"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-9",
+    "sourceExamSession": "令和4年4月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20220412080155id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220412080153id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和4年4月期（IZ404）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "音声などのアナログ信号を［A］でデジタルに変換してDSPに取り込む。DSPで信号を［B］することでデジタルフィルタ等を実現する。",
+    "choices": {
+      "ア": "A：D-A変換器　B：演算処理",
+      "イ": "A：D-A変換器　B：位相変換",
+      "ウ": "A：A-D変換器　B：演算処理",
+      "エ": "A：A-D変換器　B：位相変換"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "A-D変換器で信号をサンプリング・量子化する。DSPは得たデジタル値に演算を行い、フィルタなどを実現する。",
+    "choiceExplanations": {
+      "ア": "DSPでは演算処理を行うが、入力をデジタルにするのはA-D変換器である。",
+      "イ": "D-A変換器はデジタル信号をアナログに戻す用途であり、DSPは各種の数値演算を行う。",
+      "ウ": "A-D変換器で信号をサンプリング・量子化する。DSPは得たデジタル値に演算を行い、フィルタなどを実現する。",
+      "エ": "入力の変換方法は合うが、デジタルフィルタは位相変換だけでなく、乗算や加算などの演算処理によって実現する。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2022-april-kogaku-q10",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "spring",
+    "qNumber": 10,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "ALC"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-10",
+    "sourceExamSession": "令和4年4月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20220412080155id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220412080153id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和4年4月期（IZ404）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "SSB(J3E)送信機のALC回路の働きとして正しい記述を選べ。",
+    "choices": {
+      "ア": "送信機と空中線との整合が取れていないとき、送信の動作を止める。",
+      "イ": "電力増幅器に一定レベル以上の入力電圧が加わったとき、増幅器の増幅度を自動的に下げる。",
+      "ウ": "音声入力レベルが低いとき、マイクの増幅度を自動的に上げる。",
+      "エ": "音声の低音部を強調する。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "ALCは過入力を検出して自動的に利得を抑え、ひずみなどの増加を防ぐ。",
+    "choiceExplanations": {
+      "ア": "不整合で反射電力が増えた場合の送信停止は保護回路の役割で、ここでのALCの機能とは異なる。",
+      "イ": "ALCは過入力を検出して自動的に利得を抑え、ひずみなどの増加を防ぐ。",
+      "ウ": "設問のALCは高いレベルの入力を制限する制御であり、低レベルの音声を増幅する機能ではない。",
+      "エ": "低域を強調するのは音声の周波数特性を調整する回路で、ALCは送信レベルを制御する。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2022-april-kogaku-q11",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "spring",
+    "qNumber": 11,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "直接FM送信機"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-11",
+    "sourceExamSession": "令和4年4月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20220412080155id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220412080153id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和4年4月期（IZ404）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/amateur2/2022-april-kogaku/q11.png"
+    ],
+    "imageAltTexts": [
+      "空欄A〜Cを含む直接FM送信機のブロック図"
+    ],
+    "type": "multiple-choice",
+    "question": "図に示す直接周波数変調方式のFM(F3E)送信機で、空欄A〜Cに入る正しい組合せを選べ。",
+    "choices": {
+      "ア": "A：IDC回路　B：電圧制御発振器(VCO)　C：位相比較器",
+      "イ": "A：IDC回路　B：周波数弁別器　C：分周器",
+      "ウ": "A：AFC回路　B：電圧制御発振器(VCO)　C：分周器",
+      "エ": "A：AFC回路　B：周波数弁別器　C：局部発振器"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "IDCが周波数偏移を制限し、VCOが音声電圧を周波数の変化に変える。位相比較器は水晶基準と比較し発振を安定させる。",
+    "choiceExplanations": {
+      "ア": "IDCが周波数偏移を制限し、VCOが音声電圧を周波数の変化に変える。位相比較器は水晶基準と比較し発振を安定させる。",
+      "イ": "IDCは正しいが、直接変調を行うのはVCOで、ここで水晶基準と比較するのは位相比較器である。",
+      "ウ": "VCOは正しいが、音声経路のAには周波数偏移を制限するIDCが入る。",
+      "エ": "周波数弁別器はFMの復調側の回路であり、この送信機ではVCOで直接変調する。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2022-april-kogaku-q12",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "spring",
+    "qNumber": 12,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "影像周波数"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-12",
+    "sourceExamSession": "令和4年4月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20220412080155id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220412080153id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和4年4月期（IZ404）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "受信周波数433.2 MHzを局部発振周波数fLと共に混合して中間周波数10.7 MHzを得る。fLと影像周波数fUの正しい組合せを選べ。",
+    "choices": {
+      "ア": "A：443.9 MHz　B：465.3 MHz",
+      "イ": "A：443.9 MHz　B：401.1 MHz",
+      "ウ": "A：422.5 MHz　B：454.6 MHz",
+      "エ": "A：422.5 MHz　B：411.8 MHz"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "433.2−422.5=10.7 MHzとなる。局部発振の反対側に10.7 MHz離れた411.8 MHzも同じ中間周波数を生む。",
+    "choiceExplanations": {
+      "ア": "局部発振が443.9 MHzなら、影像はそこから10.7 MHz高い454.6 MHzである。",
+      "イ": "401.1 MHzと局部発振443.9 MHzとの差は42.8 MHzで、所定の中間周波数にならない。",
+      "ウ": "454.6 MHzは、局部発振を443.9 MHzにした場合の影像周波数である。",
+      "エ": "433.2−422.5=10.7 MHzとなる。局部発振の反対側に10.7 MHz離れた411.8 MHzも同じ中間周波数を生む。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2022-april-kogaku-q13",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "spring",
+    "qNumber": 13,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "半波長ダイポール"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-13",
+    "sourceExamSession": "令和4年4月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20220412080155id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220412080153id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和4年4月期（IZ404）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "半波長ダイポールアンテナについて、誤っている記述を選べ。",
+    "choices": {
+      "ア": "定在波アンテナである。",
+      "イ": "放射抵抗は約73 Ωである。",
+      "ウ": "アンテナ利得を絶対利得で表すと、約2.15 dBである。",
+      "エ": "アンテナを水平に設置すると、水平面内の指向性は8字形となる。",
+      "オ": "電圧分布は両端で最小となる。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "開放された両端で最小となるのは電流である。電圧は両端で最大となる。",
+    "choiceExplanations": {
+      "ア": "両端が開放された素子上に定在波の電圧・電流分布が生じる。",
+      "イ": "自由空間の細い半波長ダイポールでは、給電点の放射抵抗はおよそ73 Ωである。",
+      "ウ": "等方性アンテナを基準にした最大利得は理想条件で約2.15 dBiになる。",
+      "エ": "素子軸方向の放射が弱く、軸と直角の方向が強くなるので8字形になる。",
+      "オ": "開放された両端で最小となるのは電流である。電圧は両端で最大となる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2022-april-kogaku-q14",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "spring",
+    "qNumber": 14,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "コーリニアアレー"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-14",
+    "sourceExamSession": "令和4年4月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20220412080155id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220412080153id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和4年4月期（IZ404）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "垂直偏波用のコーリニアアレーは、放射素子として［A］アンテナを垂直の一直線上に等間隔で多段接続する。［B］で鋭いビームを持ち、［C］では全方向性になる。",
+    "choices": {
+      "ア": "A：1/4波長垂直接地　B：垂直面内　C：水平面内",
+      "イ": "A：1/4波長垂直接地　B：水平面内　C：垂直面内",
+      "ウ": "A：垂直半波長ダイポール　B：垂直面内　C：水平面内",
+      "エ": "A：垂直半波長ダイポール　B：水平面内　C：垂直面内"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "垂直半波長ダイポールを垂直方向に並べると仰角方向のビーム幅が狭くなる。水平方向には全方向性を保つ。",
+    "choiceExplanations": {
+      "ア": "指向性は合うが、原理的には垂直半波長ダイポールを直線上に配列する。",
+      "イ": "放射素子は垂直半波長ダイポールで、鋭いビームを持つのは垂直面内である。",
+      "ウ": "垂直半波長ダイポールを垂直方向に並べると仰角方向のビーム幅が狭くなる。水平方向には全方向性を保つ。",
+      "エ": "放射素子は合うが、垂直面でビームが狭く、水平方向には全方向性となる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2022-april-kogaku-q15",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "spring",
+    "qNumber": 15,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "電離層"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-15",
+    "sourceExamSession": "令和4年4月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20220412080155id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220412080153id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和4年4月期（IZ404）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "地上約200 km以上の高さにあり、電子密度の日変化が夏季より冬季の方が大きい電離層はどれか。",
+    "choices": {
+      "ア": "D層",
+      "イ": "E層",
+      "ウ": "スポラジックE層(Es層)",
+      "エ": "F層"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "F層は約200 km以上の高さに形成され、電子密度は日照や季節に応じて変化する。",
+    "choiceExplanations": {
+      "ア": "D層は地上約60〜90 km付近の低い層であり、200 km以上の層ではない。",
+      "イ": "E層は主に約100 km付近に形成されるので、高さの条件と一致しない。",
+      "ウ": "Es層はE層付近に一時的に形成される高電子密度の層で、200 km以上のF層とは異なる。",
+      "エ": "F層は約200 km以上の高さに形成され、電子密度は日照や季節に応じて変化する。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2022-april-kogaku-q16",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "spring",
+    "qNumber": 16,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "衛星のドプラ効果"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-16",
+    "sourceExamSession": "令和4年4月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20220412080155id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220412080153id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和4年4月期（IZ404）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "周回衛星の電波は、衛星が受信点へ近づくと送信周波数より［A］周波数、最も近づいたときは［B］周波数、遠ざかるときには［C］周波数で受信される。",
+    "choices": {
+      "ア": "A：高い　B：送信周波数より低い　C：送信周波数と同じ",
+      "イ": "A：高い　B：送信周波数と同じ　C：送信周波数より低い",
+      "ウ": "A：低い　B：送信周波数より高い　C：送信周波数と同じ",
+      "エ": "A：低い　B：送信周波数と同じ　C：送信周波数より高い"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "接近中は受信周波数が高く、最接近では視線方向の速度成分が零となる。遠ざかる場合は低くなる。",
+    "choiceExplanations": {
+      "ア": "接近中に高くなるのは正しいが、最接近では距離の変化率が零となり、遠ざかると低くなる。",
+      "イ": "接近中は受信周波数が高く、最接近では視線方向の速度成分が零となる。遠ざかる場合は低くなる。",
+      "ウ": "接近中は低くなるのではなく高くなり、最接近では送信周波数と一致する。",
+      "エ": "最接近の値は合うが、接近時に高く、遠ざかる時に低くなる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2022-april-kogaku-q17",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "spring",
+    "qNumber": 17,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "アナログテスタ"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-17",
+    "sourceExamSession": "令和4年4月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20220412080155id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220412080153id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和4年4月期（IZ404）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "永久磁石可動コイル形計器を用いるアナログ式テスタの使用方法について、誤っている記述を選べ。",
+    "choices": {
+      "ア": "電圧の測定誤差を減らすため、測定値が最大目盛に近くなるレンジを選ぶ。",
+      "イ": "メータの指示は、メータの正面から読み取る。",
+      "ウ": "測定前に指針を確かめ、ずれていたら零位調整ネジで修正する。",
+      "エ": "電圧測定では、内部抵抗が大きいほど被測定回路への電気的影響は小さい。",
+      "オ": "交流電圧測定レンジを使えば、どんな波形の交流でも正確に電圧を測定できる。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "一般的なアナログ式計器の交流レンジは正弦波を前提とした換算を行う。波形が異なると実効値を正しく示さないことがある。",
+    "choiceExplanations": {
+      "ア": "フルスケールに対する誤差が同じなら、指示値を大きくした方が測定値に対する相対誤差は小さい。",
+      "イ": "正面から読むことで、目盛と指針の位置のずれによる視差を抑える。",
+      "ウ": "無入力時の指針を零に合わせることで、零点のずれによる誤差を減らせる。",
+      "エ": "高い入力抵抗の電圧計は回路から引く電流が少なく、回路の動作への影響を小さくできる。",
+      "オ": "一般的なアナログ式計器の交流レンジは正弦波を前提とした換算を行う。波形が異なると実効値を正しく示さないことがある。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2022-april-kogaku-q18",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "spring",
+    "qNumber": 18,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "計数形周波数計"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-18",
+    "sourceExamSession": "令和4年4月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20220412080155id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220412080153id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和4年4月期（IZ404）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/amateur2/2022-april-kogaku/q18.png"
+    ],
+    "imageAltTexts": [
+      "増幅・波形整形・パルス変換・ゲート・計数・表示回路を含む周波数計"
+    ],
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "図の計数形周波数計で、波形整形回路は信号を［A］に整形し、パルス変換回路は［B］を用いて計数しやすいパルスにする。繰返し周期は等しく、ゲートが開くT秒間にN個数えると入力の周波数は［C］Hzとなる。",
+    "choices": {
+      "ア": "A：方形波　B：微分回路　C：N/T",
+      "イ": "A：方形波　B：乗算回路　C：T/N",
+      "ウ": "A：正弦波　B：微分回路　C：T/N",
+      "エ": "A：正弦波　B：乗算回路　C：N/T"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "信号を方形波に整え、微分回路で立ち上がりなどから短いパルスを作る。1秒当たりの個数はN/Tである。",
+    "choiceExplanations": {
+      "ア": "信号を方形波に整え、微分回路で立ち上がりなどから短いパルスを作る。1秒当たりの個数はN/Tである。",
+      "イ": "方形波は合うが、パルス生成は微分を利用し、T/Nは周期である。",
+      "ウ": "微分は合うが、整形後の方形波から計数用パルスを作る。周波数はN/Tとなる。",
+      "エ": "周波数の式は正しいが、まず方形波に整形し、次に微分回路でパルスへ変換する。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2022-april-kogaku-q19",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "spring",
+    "qNumber": 19,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "ブリッジ整流の平均電圧"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-19",
+    "sourceExamSession": "令和4年4月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20220412080155id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220412080153id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和4年4月期（IZ404）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/amateur2/2022-april-kogaku/q19.png"
+    ],
+    "imageAltTexts": [
+      "交流電源に接続した4個のダイオードと負荷の回路"
+    ],
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "図の整流回路の正弦波電源電圧Eが実効値11.2 Vのとき、負荷にかかる脈流電圧の平均値に最も近い値を選べ。ダイオードD₁〜D₄は理想的に動作する。",
+    "choices": {
+      "ア": "8 V",
+      "イ": "9 V",
+      "ウ": "10 V",
+      "エ": "11 V"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "全波整流の平均はピーク値の2/π倍なので、11.2√2×2/π≒10.1 Vとなる。",
+    "choiceExplanations": {
+      "ア": "半波整流やピーク換算だけではなく、全波整流した正弦波の平均値を求める。所定の入力では約10.1 Vである。",
+      "イ": "係数2/πを掛ける対象は実効値11.2 Vではなく、ピーク値11.2√2 Vである。",
+      "ウ": "全波整流の平均はピーク値の2/π倍なので、11.2√2×2/π≒10.1 Vとなる。",
+      "エ": "実効値を丸めた値に近いが、整流後に問われているのは平均値であり約10.1 Vである。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2022-april-kogaku-q20",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "spring",
+    "qNumber": 20,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "インバータ"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-20",
+    "sourceExamSession": "令和4年4月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20220412080155id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220412080153id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和4年4月期（IZ404）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "インバータは、蓄電池などの直流電圧を［A］などを用いて［B］電圧にし、これを［C］で昇圧または降圧して所要の電圧を得る装置である。正しい組合せを選べ。",
+    "choices": {
+      "ア": "A：トランジスタ　B：交流　C：変圧器",
+      "イ": "A：トランジスタ　B：交流　C：整流器",
+      "ウ": "A：トランジスタ　B：直流　C：整流器",
+      "エ": "A：バリスタ　B：交流　C：変圧器",
+      "オ": "A：バリスタ　B：直流　C：整流器"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "トランジスタなどで直流をスイッチングして交流を作り、その交流の電圧を変圧器で変える。",
+    "choiceExplanations": {
+      "ア": "トランジスタなどで直流をスイッチングして交流を作り、その交流の電圧を変圧器で変える。",
+      "イ": "トランジスタで交流化する点は正しいが、交流電圧の昇降圧は変圧器で行う。",
+      "ウ": "トランジスタをスイッチングして交流電圧に変換する。整流器の働きは交流から直流への変換である。",
+      "エ": "交流への変換には高速にオン・オフできるスイッチング素子を用いる。バリスタは主に過電圧保護に使う。",
+      "オ": "入力直流を交流へ変換してから昇降圧する。バリスタによる直流変換や整流器による昇降圧ではない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2022-april-kogaku-q21",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "spring",
+    "qNumber": 21,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "交流ブリッジ"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "B-1",
+    "sourceExamSession": "令和4年4月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20220412080155id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220412080153id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和4年4月期（IZ404）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/amateur2/2022-april-kogaku/q21.png"
+    ],
+    "imageAltTexts": [
+      "コイルLₛ・Lₓ、抵抗Rₐ・Rᵦ、検流計と交流電源を用いたブリッジ"
+    ],
+    "type": "native-b",
+    "question": "図の交流ブリッジについて、各空欄に当てはまる候補を選べ。交流電源の角周波数はωとする。",
+    "explanation": "コイルの誘導性リアクタンスは角周波数とインダクタンスの積である。\n\n未知のコイルにも X=ωL の関係を適用する。\n\n図では Lₛ/Rₐ=Lₓ/Rᵦ が成り立つので、Lₓに掛かるのはRₐである。\n\n平衡時の比の式を交差乗算すると、Lₛに掛かるのはRᵦである。\n\nLₓRₐ=LₛRᵦ をRₐで割ると、比はRᵦ/Rₐである。",
+    "explanationCoverage": "full",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "ωLₛ",
+          "explanation": "既知のコイルのリアクタンスはωとLₛの積である。"
+        },
+        {
+          "id": "2",
+          "label": "ωLₓ",
+          "explanation": "未知のコイルのリアクタンスはωとLₓの積である。"
+        },
+        {
+          "id": "3",
+          "label": "Rₐ",
+          "explanation": "図の平衡式でLₓ側に掛かる抵抗はRₐである。"
+        },
+        {
+          "id": "4",
+          "label": "Lₓ",
+          "explanation": "Lₓは未知のインダクタンス自体であり、リアクタンスにはωを掛ける。"
+        },
+        {
+          "id": "5",
+          "label": "Rₐ/Rᵦ",
+          "explanation": "未知Lₓを求める式では、この逆のRᵦ/Rₐが必要である。"
+        },
+        {
+          "id": "6",
+          "label": "1/(ωLₛ)",
+          "explanation": "これは誘導性リアクタンスωLₛの逆数で、リアクタンスではない。"
+        },
+        {
+          "id": "7",
+          "label": "1/(ωLₓ)",
+          "explanation": "未知のコイルのリアクタンスはωLₓであり、その逆数ではない。"
+        },
+        {
+          "id": "8",
+          "label": "Rᵦ",
+          "explanation": "平衡式のLₛ側に掛かる抵抗がRᵦである。"
+        },
+        {
+          "id": "9",
+          "label": "Lₛ",
+          "explanation": "Lₛは基準の自己インダクタンスであり、それ自体は抵抗でもリアクタンスでもない。"
+        },
+        {
+          "id": "10",
+          "label": "Rᵦ/Rₐ",
+          "explanation": "この抵抗比を既知のLₛに掛けて未知のLₓを求める。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "自己インダクタンスLₛのコイルのリアクタンスは Xₛ=［ア］Ωである。",
+          "answer": "1",
+          "explanation": "コイルの誘導性リアクタンスは角周波数とインダクタンスの積である。",
+          "candidateExplanations": {
+            "1": "コイルの誘導性リアクタンスは角周波数とインダクタンスの積である。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "未知の自己インダクタンスLₓのコイルのリアクタンスは Xₓ=［イ］Ωである。",
+          "answer": "2",
+          "explanation": "未知のコイルにも X=ωL の関係を適用する。",
+          "candidateExplanations": {
+            "2": "未知のコイルにも X=ωL の関係を適用する。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "ブリッジ平衡時に Lₓ×［ウ］=Lₛ×［エ］ が成り立つ。",
+          "answer": "3",
+          "explanation": "図では Lₛ/Rₐ=Lₓ/Rᵦ が成り立つので、Lₓに掛かるのはRₐである。",
+          "candidateExplanations": {
+            "3": "図では Lₛ/Rₐ=Lₓ/Rᵦ が成り立つので、Lₓに掛かるのはRₐである。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "ブリッジ平衡時に Lₓ×［ウ］=Lₛ×［エ］ が成り立つ。",
+          "answer": "8",
+          "explanation": "平衡時の比の式を交差乗算すると、Lₛに掛かるのはRᵦである。",
+          "candidateExplanations": {
+            "8": "平衡時の比の式を交差乗算すると、Lₛに掛かるのはRᵦである。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "平衡式をLₓについて解くと Lₓ=Lₛ×［オ］H となる。",
+          "answer": "10",
+          "explanation": "LₓRₐ=LₛRᵦ をRₐで割ると、比はRᵦ/Rₐである。",
+          "candidateExplanations": {
+            "10": "LₓRₐ=LₛRᵦ をRₐで割ると、比はRᵦ/Rₐである。"
+          }
+        }
+      ],
+      "officialLabel": "B-1"
+    }
+  },
+  {
+    "id": "radio21-amateur2-2022-april-kogaku-q22",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "spring",
+    "qNumber": 22,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "P形・N形半導体"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "B-2",
+    "sourceExamSession": "令和4年4月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20220412080155id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220412080153id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和4年4月期（IZ404）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "native-b",
+    "question": "半導体について、各空欄に当てはまる候補を選べ。",
+    "explanation": "不純物の影響が無視できるものを真性半導体と呼ぶ。\n\n3価の不純物により正孔が生じて多数キャリアとなり、P形になる。\n\n5価の不純物は余分な電子を供与し、電子が多数キャリアのN形になる。\n\nP形では価電子帯の正孔が電流の担い手として多い。\n\nN形では不純物から供与された電子が多数キャリアである。",
+    "explanationCoverage": "full",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "原子",
+          "explanation": "ドーピングに使う元素の単位であり、問題のキャリアや半導体の分類名ではない。"
+        },
+        {
+          "id": "2",
+          "label": "電界",
+          "explanation": "電荷に力を及ぼす場であり、半導体中を流れるキャリアではない。"
+        },
+        {
+          "id": "3",
+          "label": "MOS形",
+          "explanation": "絶縁膜を介してゲートで制御する素子に関する分類で、不純物の価数によるP形・N形の区別とは異なる。"
+        },
+        {
+          "id": "4",
+          "label": "P",
+          "explanation": "アクセプタの添加で正孔が多数となる半導体がP形である。"
+        },
+        {
+          "id": "5",
+          "label": "真性",
+          "explanation": "不純物を実質的に含まない半導体が真性半導体である。"
+        },
+        {
+          "id": "6",
+          "label": "正孔",
+          "explanation": "価電子帯の電子が欠けた位置が正のキャリアとして働く。"
+        },
+        {
+          "id": "7",
+          "label": "電子",
+          "explanation": "五価の不純物を加えて自由電子を増やしたN形で、多数キャリアとなる。"
+        },
+        {
+          "id": "8",
+          "label": "接合形",
+          "explanation": "半導体材料を接合した素子などに用いる分類で、不純物を加えていない半導体の名称ではない。"
+        },
+        {
+          "id": "9",
+          "label": "N",
+          "explanation": "ドナーの添加で電子が多数となる半導体がN形である。"
+        },
+        {
+          "id": "10",
+          "label": "化合物",
+          "explanation": "複数の元素からなる半導体の分類で、純度や多数キャリアによる分類とは異なる。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "不純物をほとんど含まない、ほぼ純粋な半導体を［ア］半導体という。",
+          "answer": "5",
+          "explanation": "不純物の影響が無視できるものを真性半導体と呼ぶ。",
+          "candidateExplanations": {
+            "5": "不純物の影響が無視できるものを真性半導体と呼ぶ。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "4価のシリコンなどに3価のインジウムなどを添加したものは［イ］形半導体である。",
+          "answer": "4",
+          "explanation": "3価の不純物により正孔が生じて多数キャリアとなり、P形になる。",
+          "candidateExplanations": {
+            "4": "3価の不純物により正孔が生じて多数キャリアとなり、P形になる。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "4価のシリコンなどに5価のアンチモンなどを添加したものは［ウ］形半導体である。",
+          "answer": "9",
+          "explanation": "5価の不純物は余分な電子を供与し、電子が多数キャリアのN形になる。",
+          "candidateExplanations": {
+            "9": "5価の不純物は余分な電子を供与し、電子が多数キャリアのN形になる。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "P形半導体の多数キャリアは［エ］である。",
+          "answer": "6",
+          "explanation": "P形では価電子帯の正孔が電流の担い手として多い。",
+          "candidateExplanations": {
+            "6": "P形では価電子帯の正孔が電流の担い手として多い。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "N形半導体の多数キャリアは［オ］である。",
+          "answer": "7",
+          "explanation": "N形では不純物から供与された電子が多数キャリアである。",
+          "candidateExplanations": {
+            "7": "N形では不純物から供与された電子が多数キャリアである。"
+          }
+        }
+      ],
+      "officialLabel": "B-2"
+    }
+  },
+  {
+    "id": "radio21-amateur2-2022-april-kogaku-q23",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "spring",
+    "qNumber": 23,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "中間周波増幅器"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "B-3",
+    "sourceExamSession": "令和4年4月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20220412080155id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220412080153id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和4年4月期（IZ404）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "native-b",
+    "question": "スーパヘテロダイン式AM(A3E)受信機の中間周波増幅器について、空欄に当てはまる候補を選べ。",
+    "explanation": "中間周波の帯域選択により、欲しい信号の近くにある別の周波数を減衰させる。\n\n通過帯域が広過ぎると、所要帯域の外側まで増幅・通過させる。\n\n近接する不要信号と希望信号の区別が難しくなるので、選択度が下がる。\n\n通過帯域が狭いと、希望信号を構成する側波帯成分の一部が削られる。\n\n所要信号の周波数成分が欠けるので、復調音が元の音声を再現しにくくなる。",
+    "explanationCoverage": "full",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "過変調",
+          "explanation": "過変調は送信側で包絡線が崩れることであり、中間周波の帯域選択で取り除く近接周波数妨害とは異なる。"
+        },
+        {
+          "id": "2",
+          "label": "狭い",
+          "explanation": "所要帯域より狭いと必要な側波帯成分の一部が通らない。"
+        },
+        {
+          "id": "3",
+          "label": "選択",
+          "explanation": "近接信号を分離する能力が選択度である。"
+        },
+        {
+          "id": "4",
+          "label": "忠実度",
+          "explanation": "信号成分が削られると、元の波形を忠実に復元する能力が下がる。"
+        },
+        {
+          "id": "5",
+          "label": "影像周波数",
+          "explanation": "影像信号は同じ中間周波へ変換されるため、主に混合器の前で除去する。"
+        },
+        {
+          "id": "6",
+          "label": "混変調",
+          "explanation": "混変調は非線形回路で生じる妨害で、ここでは主に近接周波数の選択性を扱う。"
+        },
+        {
+          "id": "7",
+          "label": "広い",
+          "explanation": "中間周波の通過帯域が広過ぎると、不要な隣接周波数成分も通る。"
+        },
+        {
+          "id": "8",
+          "label": "変調",
+          "explanation": "変調は情報を搬送波に載せる操作であり、受信機が近接信号を分ける選択度とは異なる。"
+        },
+        {
+          "id": "9",
+          "label": "安定度",
+          "explanation": "周波数などを一定に保つ尺度で、信号成分の欠落により悪化する忠実度を指さない。"
+        },
+        {
+          "id": "10",
+          "label": "近接周波数",
+          "explanation": "所望信号から少し離れた近接信号は、中間周波増幅段の帯域選択で抑える。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "中間周波の信号を増幅するとともに、［ア］妨害を除去する。",
+          "answer": "10",
+          "explanation": "中間周波の帯域選択により、欲しい信号の近くにある別の周波数を減衰させる。",
+          "candidateExplanations": {
+            "10": "中間周波の帯域選択により、欲しい信号の近くにある別の周波数を減衰させる。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "占有周波数帯幅に比べて通過帯域が極端に［イ］場合、不要な帯域も増幅される。",
+          "answer": "7",
+          "explanation": "通過帯域が広過ぎると、所要帯域の外側まで増幅・通過させる。",
+          "candidateExplanations": {
+            "7": "通過帯域が広過ぎると、所要帯域の外側まで増幅・通過させる。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "不要な帯域まで増幅されると［ウ］度が悪くなる。",
+          "answer": "3",
+          "explanation": "近接する不要信号と希望信号の区別が難しくなるので、選択度が下がる。",
+          "candidateExplanations": {
+            "3": "近接する不要信号と希望信号の区別が難しくなるので、選択度が下がる。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "占有周波数帯幅に比べて通過帯域が極端に［エ］場合、必要な帯域の一部が増幅されない。",
+          "answer": "2",
+          "explanation": "通過帯域が狭いと、希望信号を構成する側波帯成分の一部が削られる。",
+          "candidateExplanations": {
+            "2": "通過帯域が狭いと、希望信号を構成する側波帯成分の一部が削られる。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "必要な帯域の一部が増幅されない場合、復調音の［オ］が悪くなる。",
+          "answer": "4",
+          "explanation": "所要信号の周波数成分が欠けるので、復調音が元の音声を再現しにくくなる。",
+          "candidateExplanations": {
+            "4": "所要信号の周波数成分が欠けるので、復調音が元の音声を再現しにくくなる。"
+          }
+        }
+      ],
+      "officialLabel": "B-3"
+    }
+  },
+  {
+    "id": "radio21-amateur2-2022-april-kogaku-q24",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "spring",
+    "qNumber": 24,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "同軸給電線"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "B-4",
+    "sourceExamSession": "令和4年4月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20220412080155id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220412080153id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和4年4月期（IZ404）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "native-b",
+    "question": "同軸給電線について、各記述が正しいか答えよ。",
+    "explanation": "同軸線の特性インピーダンスは径の比の対数に比例し、比誘電率の平方根に反比例する。\n\n75 Ωの方は外部導体の内径が大きくなるので、記述の大小関係は逆である。\n\n誘電体による減衰は一般に高周波になるほど大きくなる。\n\n内部導体を外部導体が包む構造によって、外来電磁界の影響を抑えられる。\n\n不平衡の同軸線を平衡形のアンテナへ直結すると外部導体の表面にコモンモード電流が流れ得る。",
+    "explanationCoverage": "full",
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "正しい"
+        },
+        {
+          "id": "2",
+          "label": "誤っている"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "特性インピーダンスは、内部導体の外径、外部導体の内径、間の絶縁物の比誘電率を用いて求められる。",
+          "answer": "1",
+          "explanation": "同軸線の特性インピーダンスは径の比の対数に比例し、比誘電率の平方根に反比例する。",
+          "candidateExplanations": {
+            "1": "同軸線の特性インピーダンスは径の比の対数に比例し、比誘電率の平方根に反比例する。",
+            "2": "同軸線の二つの導体径と内部媒質の比誘電率が分かれば、理想的な線の特性インピーダンスを計算できる。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "50 Ωと75 Ωの給電線で内部導体の外径と絶縁物の比誘電率が同じなら、外部導体の内径は75 Ωの方が小さい。",
+          "answer": "2",
+          "explanation": "75 Ωの方は外部導体の内径が大きくなるので、記述の大小関係は逆である。",
+          "candidateExplanations": {
+            "1": "比誘電率と内側導体の径が一定なら、外部導体の内径が大きい方が特性インピーダンスは高い。",
+            "2": "75 Ωの方は外部導体の内径が大きくなるので、記述の大小関係は逆である。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "導体間の絶縁物による損失は、周波数が低いほど大きくなる。",
+          "answer": "2",
+          "explanation": "誘電体による減衰は一般に高周波になるほど大きくなる。",
+          "candidateExplanations": {
+            "1": "通常の誘電体損失は周波数とともに増加するため、記述は逆である。",
+            "2": "誘電体による減衰は一般に高周波になるほど大きくなる。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "外部導体がシールドの役目をするので、雑音など外部からの影響を受けにくい。",
+          "answer": "1",
+          "explanation": "内部導体を外部導体が包む構造によって、外来電磁界の影響を抑えられる。",
+          "candidateExplanations": {
+            "1": "内部導体を外部導体が包む構造によって、外来電磁界の影響を抑えられる。",
+            "2": "外部導体によってシールドされるため、外部から雑音が入りにくい。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "同軸給電線を半波長ダイポールへ直接つなぐと、外部導体に漏洩電流が流れ、給電線から放射される場合がある。",
+          "answer": "1",
+          "explanation": "不平衡の同軸線を平衡形のアンテナへ直結すると外部導体の表面にコモンモード電流が流れ得る。",
+          "candidateExplanations": {
+            "1": "不平衡の同軸線を平衡形のアンテナへ直結すると外部導体の表面にコモンモード電流が流れ得る。",
+            "2": "外部導体の外側に流れる電流が放射することがあるので、この記述は正しい。"
+          }
+        }
+      ],
+      "officialLabel": "B-4"
+    }
+  },
+  {
+    "id": "radio21-amateur2-2022-april-kogaku-q25",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "spring",
+    "qNumber": 25,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "CM形電力計"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "B-5",
+    "sourceExamSession": "令和4年4月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20220412080155id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220412080153id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和4年4月期（IZ404）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "native-b",
+    "question": "CM形電力計の測定原理について、各空欄に当てはまる候補を選べ。",
+    "explanation": "送信電力は、送信機をアンテナ又は擬似負荷につないだ状態で測る。\n\n電圧に対応する信号を容量結合、電流に対応する信号を誘導結合で取り出す。\n\n結合回路が取り出す成分は給電線の電流や電圧に比例する。\n\n進行波と反射波を分けて測ることで、負荷側から戻る電力も分かる。\n\n進行波と反射波の比から、負荷が給電線にどの程度整合しているかを判断できる。",
+    "explanationCoverage": "full",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "高調波",
+          "explanation": "和と差で分離するのは伝搬方向の異なる電力であり、高調波の成分ではない。"
+        },
+        {
+          "id": "2",
+          "label": "占有周波数帯幅",
+          "explanation": "占有帯域を求めるには周波数ごとの電力分布が必要で、この電力計は進行波と反射波の電力を扱う。"
+        },
+        {
+          "id": "3",
+          "label": "比例",
+          "explanation": "給電線の電圧と電流にそれぞれ比例する信号を足し引きする。"
+        },
+        {
+          "id": "4",
+          "label": "抵抗結合",
+          "explanation": "設問のCM形では容量結合と誘導結合で信号を取り出す。"
+        },
+        {
+          "id": "5",
+          "label": "受信機",
+          "explanation": "送信側を測るときの終端はアンテナ又は擬似負荷である。"
+        },
+        {
+          "id": "6",
+          "label": "反射波",
+          "explanation": "方向性結合を利用して、負荷側から戻る反射波の電力を分離して測る。"
+        },
+        {
+          "id": "7",
+          "label": "負荷の整合状態",
+          "explanation": "整合していれば反射が小さいため、進行波と反射波の測定値から整合の程度を判断できる。"
+        },
+        {
+          "id": "8",
+          "label": "反比例",
+          "explanation": "結合による信号の大きさは電圧や電流に比例し、その逆数を取るのではない。"
+        },
+        {
+          "id": "9",
+          "label": "誘導結合",
+          "explanation": "給電線の電流で生じる磁界を利用し、電流に比例する成分を得る。"
+        },
+        {
+          "id": "10",
+          "label": "擬似負荷",
+          "explanation": "アンテナの代わりに擬似負荷をつないでも、CM形電力計をその間に挿入して測れる。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "CM形電力計は送信機と［ア］又はアンテナとの間に挿入する。",
+          "answer": "10",
+          "explanation": "送信電力は、送信機をアンテナ又は擬似負荷につないだ状態で測る。",
+          "candidateExplanations": {
+            "10": "送信電力は、送信機をアンテナ又は擬似負荷につないだ状態で測る。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "容量結合と［イ］で給電線から測定用の信号を取り出す。",
+          "answer": "9",
+          "explanation": "電圧に対応する信号を容量結合、電流に対応する信号を誘導結合で取り出す。",
+          "candidateExplanations": {
+            "9": "電圧に対応する信号を容量結合、電流に対応する信号を誘導結合で取り出す。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "給電線の電流及び電圧に［ウ］する成分の和と差を利用する。",
+          "answer": "3",
+          "explanation": "結合回路が取り出す成分は給電線の電流や電圧に比例する。",
+          "candidateExplanations": {
+            "3": "結合回路が取り出す成分は給電線の電流や電圧に比例する。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "進行波電力と［エ］電力を測定できる。",
+          "answer": "6",
+          "explanation": "進行波と反射波を分けて測ることで、負荷側から戻る電力も分かる。",
+          "candidateExplanations": {
+            "6": "進行波と反射波を分けて測ることで、負荷側から戻る電力も分かる。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "消費電力のほかに［オ］を知ることもできる。",
+          "answer": "7",
+          "explanation": "進行波と反射波の比から、負荷が給電線にどの程度整合しているかを判断できる。",
+          "candidateExplanations": {
+            "7": "進行波と反射波の比から、負荷が給電線にどの程度整合しているかを判断できる。"
+          }
+        }
+      ],
+      "officialLabel": "B-5"
+    }
+  }
+]
