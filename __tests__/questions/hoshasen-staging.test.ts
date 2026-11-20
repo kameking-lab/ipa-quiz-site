@@ -9,7 +9,7 @@ import held from "@/data/questions/hoshasen/held-2026-2-kagaku-q9.json";
 describe("hoshasen unpublished source staging", () => {
   it("batch1公開後: retains the distinct source sessions without publishing candidates", () => {
     expect(HOSHASEN_STAGED_QUESTIONS.filter(q => q.format !== "multi-part")).toHaveLength(733);
-    expect(HOSHASEN_STAGED_QUESTIONS.filter(q => q.format === "multi-part")).toHaveLength(63);
+    expect(HOSHASEN_STAGED_QUESTIONS.filter(q => q.format === "multi-part")).toHaveLength(68);
     expect(HOSHASEN_STAGED_QUESTIONS).toHaveLength(audit.stagedQuestions);
     expect(new Set(HOSHASEN_STAGED_QUESTIONS.map(q => q.id)).size).toBe(audit.stagedQuestions);
     const entry = QUALIFICATION_CATALOG.find(q => q.slug === "hoshasen");
@@ -36,7 +36,7 @@ describe("hoshasen unpublished source staging", () => {
   });
 
   it("preserves source acquisition evidence and reports incomplete coverage", () => {
-    expect(audit.files).toHaveLength(37);
+    expect(audit.files).toHaveLength(38);
     expect(audit.files.every(f => f.bytes > 0 && /^[a-f0-9]{64}$/.test(f.sha256))).toBe(true);
     expect(audit.stagedQuestions).toBe(HOSHASEN_STAGED_QUESTIONS.length);
     expect(audit.stagedChoiceExplanations).toBe(HOSHASEN_STAGED_QUESTIONS.reduce((n,q) => n+(q.format === "multi-part" ? q.blanks.reduce((m,b) => m+b.choiceExplanations.length,0) : q.choiceExplanations.length),0));
@@ -46,7 +46,7 @@ describe("hoshasen unpublished source staging", () => {
 
   it("preserves every multi-part blank and independently transcribed official key", () => {
     const multi = HOSHASEN_STAGED_QUESTIONS.filter(q => q.format === "multi-part");
-    expect(multi.reduce((n,q) => n+q.blanks.length,0)).toBe(811);
+    expect(multi.reduce((n,q) => n+q.blanks.length,0)).toBe(859);
     expect(multi.map(q => q.id).sort()).toEqual(Object.keys(audit.multiPartAnswerKeys).sort());
     for (const q of multi) {
       const expected = audit.multiPartAnswerKeys[q.id as keyof typeof audit.multiPartAnswerKeys];
@@ -76,8 +76,8 @@ describe("hoshasen unpublished source staging", () => {
         expect(first.filter(q => q.subject === subject).map(q => q.number).sort((a,b) => a-b)).toEqual(numbers);
       }
     }
-    expect(audit.stagedQuestions).toBe(796);
-    expect(audit.remainingPrimaryQuestions).toBe(8);
+    expect(audit.stagedQuestions).toBe(801);
+    expect(audit.remainingPrimaryQuestions).toBe(9);
     expect(audit.heldPrimaryQuestions).toBe(1);
   });
 
