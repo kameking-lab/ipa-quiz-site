@@ -2003,7 +2003,7 @@ caremanager: {
     code: "zaimu-senmonkan", nameFull: "財務専門官採用試験", urlSlug: "zaimu-senmonkan", level: "advanced",
     sessions: [
         { session: "senmon", urlSlug: "senmon", expectedQuestions: 76, label: "専門試験（多肢選択式）", categories: ["憲法", "行政法", "経済学", "社会学"] },
-    ], seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+    ], seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
 },
 "shokuhin-eisei-kanshiin": {
     code: "shokuhin-eisei-kanshiin", nameFull: "食品衛生監視員採用試験", urlSlug: "shokuhin-eisei-kanshiin", level: "advanced",

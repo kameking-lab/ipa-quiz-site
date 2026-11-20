@@ -1794,7 +1794,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_20.html",
     officialReuseTermsUrl: "https://www.jinji.go.jp/shinsei/notice.html",
     status: "live",
-    reuseSummary: "2025・2026年度の専門試験（多肢選択式）のうち、憲法、行政法、経済学、社会学の計17問を公式正答・全肢解説付きで収録。",
+    reuseSummary: "2024～2026年度の専門試験（多肢選択式）のうち、憲法、行政法、経済学、社会学の計28問を公式正答・全肢解説付きで収録。",
     attributionTemplate: "出典：人事院「財務専門官採用試験 専門試験（多肢選択式）」。解説は過去問AIの独自作成。",
     remainingWork: ["2025・2024年度の専門択一の補充"],
   },
