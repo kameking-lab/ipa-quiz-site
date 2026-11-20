@@ -119,6 +119,10 @@ const examsWithAdditionalPapers = new Set<ExamCode>([
   "rodo-kijun-kantokukan",
   "shuwa",
   "zensho-marketing",
+  "mokuzo-kenchikushi",
+  "eikenp2plus",
+  "denko1",
+  "fp3",
 ]);
 
 const papersByExam = new Map<ExamCode, Question[]>();

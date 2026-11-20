@@ -51,7 +51,24 @@ export const PRACTICE_SESSIONS: readonly Session[] = ["cfp-risk", "reading", "wr
   "senmon-shakai",
   "senmon-shogakko-eigo",
   "senmon-sugaku",
-  "tekisei",];
+  "tekisei",
+  "zensho-bido-jitsugi-3",
+  "zensho-bido-sokudo-2",
+  "zensho-bido-jitsugi-1",
+  "zensho-bido-sokudo-1",
+  "zensho-bido-jitsugi-2",
+  "zensho-bido-sokudo-3",
+  "zensho-calc-2-ordinary",
+  "zensho-info-grade-3-practical",
+  "zensho-info-business-2-practical",
+  "zensho-info-business-2",
+
+  "kinzai-sonpo",
+  "kinzai-kojin",
+  "kinzai-chusho",
+  "kinzai-seiho",
+  "kinzai-hoken",
+];
 
 /** Specialist practice starts with the specialist paper; common AM I is explicit. */
 export function defaultPracticeSession(exam: ExamCode, year?: number): Session {
@@ -168,6 +185,11 @@ const CONFIGURED_SESSION_LABEL_EXAMS: readonly ExamCode[] = [
   "tohan-kyushu-okinawa",
   "tohan-tokai-hokuriku",
   "kouku-kanseikan",
+
+  "zensho-bido",
+
+  "fp2",
+  "fp3",
 ];
 
 

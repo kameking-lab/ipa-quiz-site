@@ -114,7 +114,22 @@ export type Session = "cfp-risk" | "reading" | "writing" | "listening" | "eju-bi
   | "senmon-shakai"
   | "senmon-shogakko-eigo"
   | "senmon-sugaku"
-  | "tekisei";
+  | "tekisei"
+  | "zensho-bido-jitsugi-3"
+  | "zensho-bido-sokudo-2"
+  | "zensho-bido-jitsugi-1"
+  | "zensho-bido-sokudo-1"
+  | "zensho-bido-jitsugi-2"
+  | "zensho-bido-sokudo-3"
+  | "zensho-calc-2-ordinary"
+  | "zensho-info-grade-3-practical"
+  | "zensho-info-business-2-practical"
+  | "zensho-info-business-2"
+  | "kinzai-sonpo"
+  | "kinzai-kojin"
+  | "kinzai-chusho"
+  | "kinzai-seiho"
+  | "kinzai-hoken";
 
 
 export const QUESTION_SEASONS = [

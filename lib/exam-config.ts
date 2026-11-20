@@ -306,7 +306,14 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     ],
     seasons: ["round1"], yearRange: { start: 2026, end: 2026 },
   },
-  "zensho-bido": {"code": "zensho-bido", "nameFull": "全商ビジネス文書実務検定", "urlSlug": "zensho-bido", "level": "basic", "sessions": [{"session": "gakka-II", "urlSlug": "gakka-II", "expectedQuestions": 8, "label": "2級 筆記", "categories": ["2級 筆記"]}, {"session": "gakka-I", "urlSlug": "gakka-I", "expectedQuestions": 8, "label": "1級 筆記", "categories": ["1級 筆記"]}, {"session": "gakka-III", "urlSlug": "gakka-III", "expectedQuestions": 8, "label": "3級 筆記", "categories": ["3級 筆記"]}], "seasons": ["annual",
+  "zensho-bido": {"code": "zensho-bido", "nameFull": "全商ビジネス文書実務検定", "urlSlug": "zensho-bido", "level": "basic", "sessions": [{"session": "gakka-II", "urlSlug": "gakka-II", "expectedQuestions": 8, "label": "2級 筆記", "categories": ["2級 筆記"]}, {"session": "gakka-I", "urlSlug": "gakka-I", "expectedQuestions": 8, "label": "1級 筆記", "categories": ["1級 筆記"]}, {"session": "gakka-III", "urlSlug": "gakka-III", "expectedQuestions": 8, "label": "3級 筆記", "categories": ["3級 筆記"]},
+      {"session":"zensho-bido-jitsugi-3","urlSlug":"zensho-bido-jitsugi-3","expectedQuestions":1,"label":"3級 ビジネス文書部門 実技","categories":[]},
+      {"session":"zensho-bido-sokudo-2","urlSlug":"zensho-bido-sokudo-2","expectedQuestions":1,"label":"2級 速度部門","categories":[]},
+      {"session":"zensho-bido-jitsugi-1","urlSlug":"zensho-bido-jitsugi-1","expectedQuestions":1,"label":"1級 ビジネス文書部門 実技","categories":[]},
+      {"session":"zensho-bido-sokudo-1","urlSlug":"zensho-bido-sokudo-1","expectedQuestions":1,"label":"1級 速度部門","categories":[]},
+      {"session":"zensho-bido-jitsugi-2","urlSlug":"zensho-bido-jitsugi-2","expectedQuestions":1,"label":"2級 ビジネス文書部門 実技","categories":[]},
+      {"session":"zensho-bido-sokudo-3","urlSlug":"zensho-bido-sokudo-3","expectedQuestions":1,"label":"3級 速度部門","categories":[]},
+    ], "seasons": ["annual",
   "first",
   "second",], "yearRange": {"start": 2022, "end": 2026}},
   "kanken-6": {"code": "kanken-6", "nameFull": "日本漢字能力検定6級", "urlSlug": "kanken-6", "level": "basic", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 120, "label": "6級", "categories": ["読み", "漢字と送りがな", "部首名と部首", "画数", "熟語の構成", "三字の熟語", "対義語・類義語", "熟語作り", "音と訓", "同じ読みの漢字", "漢字"]}], "seasons": ["annual"], "yearRange": {"start": 2026, "end": 2026}},
@@ -331,7 +338,13 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
   },
   "zensho-info": {
     code: "zensho-info", nameFull: "全商情報処理検定", urlSlug: "zensho-info", level: "specialist",
-    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 7, label: "1級 ビジネス情報", categories: ["1級ビジネス情報", "1級プログラミング", "2級ビジネス情報", "2級プログラミング", "3級", "コンピュータ用語", "ネットワークの用語", "リレーショナルデータベース", "図表・ネットワーク", "情報処理の用語", "情報技術と割合", "情報技術の用語", "月額料金計算書", "業務と情報の活用", "表計算と分析", "表計算による業務処理", "表計算による見積もり", "通信とデータの計算"] }, {"session": "jken-programming", "urlSlug": "jken-programming", "expectedQuestions": 7, "label": "1級 プログラミング", "categories": ["用語", "基礎理論", "プログラム", "流れ図"]}, {"session": "programming-1", "urlSlug": "programming-1", "expectedQuestions": 7, "label": "第74回 1級 プログラミング", "categories": ["情報処理の用語", "ソフトウェアと機器の説明", "数値表現とシステムの指標", "配列の順位付けと並べ替え", "鉄道路線の年間乗客数", "販売データの処理", "移動図書館の巡回と図書の集計"]}, { session: "zensho-info-pro2", urlSlug: "zensho-info-pro2", expectedQuestions: 7, label: "2級 プログラミング", categories: ["情報機器・言語", "情報処理用語", "数の表現と基礎知識", "プログラムの追跡", "流れ図の空欄", "留学プランの集計", "サイズ別出荷の集計"] }, { session: "jken-business", urlSlug: "jken-business", expectedQuestions: 7, label: "1級 ビジネス情報", categories: ["ネットワークと信頼性", "企業連携・データ復旧・分析", "情報処理の用語", "料金計算書の表計算", "表計算の参照・計算・分析", "通信・記憶容量・作業日数", "関係データベースとSQL"] }],
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 7, label: "1級 ビジネス情報", categories: ["1級ビジネス情報", "1級プログラミング", "2級ビジネス情報", "2級プログラミング", "3級", "コンピュータ用語", "ネットワークの用語", "リレーショナルデータベース", "図表・ネットワーク", "情報処理の用語", "情報技術と割合", "情報技術の用語", "月額料金計算書", "業務と情報の活用", "表計算と分析", "表計算による業務処理", "表計算による見積もり", "通信とデータの計算"] }, {"session": "jken-programming", "urlSlug": "jken-programming", "expectedQuestions": 7, "label": "1級 プログラミング", "categories": ["用語", "基礎理論", "プログラム", "流れ図"]}, {"session": "programming-1", "urlSlug": "programming-1", "expectedQuestions": 7, "label": "第74回 1級 プログラミング", "categories": ["情報処理の用語", "ソフトウェアと機器の説明", "数値表現とシステムの指標", "配列の順位付けと並べ替え", "鉄道路線の年間乗客数", "販売データの処理", "移動図書館の巡回と図書の集計"]}, { session: "zensho-info-pro2", urlSlug: "zensho-info-pro2", expectedQuestions: 7, label: "2級 プログラミング", categories: ["情報機器・言語", "情報処理用語", "数の表現と基礎知識", "プログラムの追跡", "流れ図の空欄", "留学プランの集計", "サイズ別出荷の集計"] }, { session: "jken-business", urlSlug: "jken-business", expectedQuestions: 7, label: "1級 ビジネス情報", categories: ["ネットワークと信頼性", "企業連携・データ復旧・分析", "情報処理の用語", "料金計算書の表計算", "表計算の参照・計算・分析", "通信・記憶容量・作業日数", "関係データベースとSQL"] },
+      {"session":"gakka-III","urlSlug":"gakka-III","expectedQuestions":7,"label":"3級 筆記","categories":[]},
+      {"session":"zensho-info-grade-3-practical","urlSlug":"zensho-info-grade-3-practical","expectedQuestions":1,"label":"3級 実技","categories":[]},
+      {"session":"zensho-info-business-2-practical","urlSlug":"zensho-info-business-2-practical","expectedQuestions":1,"label":"2級 ビジネス情報 実技","categories":[]},
+      {"session":"zensho-info-business-2","urlSlug":"zensho-info-business-2","expectedQuestions":6,"label":"2級 ビジネス情報 筆記","categories":[]},
+      { session: "practical", urlSlug: "practical", expectedQuestions: 1, label: "3級 実技", categories: [] },
+    ],
     seasons: ["annual", "round1",
   "round2",], yearRange: { start: 2022, end: 2026 },
 },
@@ -540,10 +553,12 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       { session: "gakka-I", urlSlug: "gakka-I", expectedQuestions: 20, label: "1級 ビジネス計算", categories: ["ビジネス計算"] },
       { session: "gakka-II", urlSlug: "gakka-II", expectedQuestions: 30, label: "2級 普通計算", categories: ["乗算", "除算", "見取算"] },
       {"session": "zensho-calc-grade-1-business", "urlSlug": "zensho-calc-grade-1-business", "expectedQuestions": 20, "label": "第153回 1級 ビジネス計算", "categories": ["単利の借入日数", "ヤードからメートル・円への換算", "電子記録債権の割引料", "期首払い年金の終価", "株式購入の支払総額", "値引き販売と利益率", "定額法の帳簿価額", "配当と希望利回りから指値", "複利年金の現価", "仲介手数料と売主の手取金", "定率法の帳簿価額", "期末払い積立金の逆算", "単利最終利回り", "半年複利での負債の現価", "予定売価と実売価から原価", "積数法の利息", "電子記録債権の割引手取額", "年複利の元利合計", "諸掛と売価", "年賦償還表"]},
-      {"session": "zensho-calc-grade-3-ordinary", "urlSlug": "zensho-calc-grade-3-ordinary", "expectedQuestions": 30, "label": "第153回 3級 普通計算", "categories": ["乗算", "除算", "見取算"]},
+      {"session": "zensho-calc-grade-3-ordinary", "urlSlug": "zensho-calc-grade-3-ordinary", "expectedQuestions": 30, "label": "3級 普通計算", "categories": ["乗算", "除算", "見取算"]},
       { session: "zensho-calc-2-business", urlSlug: "zensho-calc-2-business", expectedQuestions: 20, label: "2級 ビジネス計算", categories: ["ビジネス計算"] },
       { session: "gakka-IV", urlSlug: "gakka-IV", expectedQuestions: 20, label: "3級 ビジネス計算", categories: ["ビジネス計算"] },
   { session: "gakka-III", urlSlug: "gakka-III", expectedQuestions: 80, label: "3級", categories: BUSINESS_CALC_CATEGORIES },
+
+      {"session":"zensho-calc-2-ordinary","urlSlug":"zensho-calc-2-ordinary","expectedQuestions":90,"label":"2級 普通計算","categories":[]},
     ],
     seasons: ["annual", "round1", "round2",
   "first",
@@ -1075,7 +1090,9 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
   "kukaku-seiri": {"code": "kukaku-seiri", "nameFull": "土地区画整理士（学科）", "urlSlug": "kukaku-seiri", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 40, "label": "学科", "categories": ["土地区画整理事業総論", "換地計画", "土地評価", "法規"]}], "seasons": ["annual"], "yearRange": { start: 2026, end: 2026 }},
   "dojo-osen": {"code": "dojo-osen", "nameFull": "土壌汚染調査技術管理者", "urlSlug": "dojo-osen", "level": "specialist", "sessions": [{"session": "am", "urlSlug": "am", "expectedQuestions": 35, "label": "午前", "categories": ["調査"]}, {"session": "pm", "urlSlug": "pm", "expectedQuestions": 45, "label": "午後（選択式）", "categories": ["対策", "法令等"]}], "seasons": ["annual"], "yearRange": { start: 2022, end: 2026 }},
   "kenchikushi2": {"code": "kenchikushi2", "nameFull": "二級建築士", "urlSlug": "kenchikushi2", "level": "specialist", "sessions": [{"session": "gakka-I", "urlSlug": "gakka-I", "expectedQuestions": 25, "label": "学科I（計画）", "categories": ["建築計画", "日本建築史", "西洋建築史", "環境工学の単位", "換気", "伝熱・断熱", "湿り空気", "日照・日射", "色彩", "吸音・遮音", "屋外気候", "住宅計画", "集合住宅", "事務所・商業計画", "教育・図書館", "美術館", "各部寸法・面積", "バリアフリー", "建築生産", "設備の用語", "空気調和", "給排水衛生", "雨水利用・排水", "電気設備", "防災・消防設備", "環境・省エネルギー", "建築史", "建築作品", "環境工学の基礎", "伝熱", "日照・照明", "音環境", "環境評価", "集合住宅計画", "オフィス計画", "教育・図書館計画", "公共建築計画", "建築寸法", "住宅のバリアフリー", "防犯計画", "建築設備の基礎", "空気調和設備", "給排水衛生設備", "消防設備", "省エネルギー", "まちづくり", "住宅作品", "文化施設", "日照・日射・採光", "熱伝導率", "環境工学の用語", "結露", "給湯設備"]}, {"session": "gakka-II", "urlSlug": "gakka-II", "expectedQuestions": 25, "label": "学科II（法規）", "categories": ["建築法規", "法令用語", "確認・維持保全", "確認対象", "住宅の一般構造", "平均天井高さ", "構造計算対象", "構造荷重・地盤", "構造の仕様規定", "防火区画・外壁", "避難施設", "内装制限", "道路・接道", "用途制限", "用途地域をまたぐ敷地", "建蔽率の緩和", "容積率の計算", "高さ制限・日影", "高さ制限の計算", "防火地域", "用途変更", "二級建築士の業務範囲", "建築士事務所", "建設関連法令", "バリアフリー法", "建築物省エネ法", "用語の定義", "確認・検査", "確認が必要な行為", "採光面積", "構造計算の対象", "構造強度・荷重", "防火区画・界壁", "用途地域の制限", "建蔽率", "容積率の不算入", "維持保全・既存不適格・罰則", "建築士の業務範囲", "建築士の義務", "消防法", "耐震改修促進法"]}, {"session": "gakka-III", "urlSlug": "gakka-III", "expectedQuestions": 25, "label": "学科III（構造）", "categories": ["断面一次モーメント", "断面二次モーメント", "梁の曲げ応力度", "単純梁の応力", "静定ラーメン", "静定トラス", "弾性座屈", "荷重・地震力", "風圧力", "地盤・基礎", "木造用語", "木質構造設計", "木質接合", "壁式RC造", "RC構造", "RC配筋", "鉄骨構造", "鉄骨接合", "構造計画", "耐震設計", "木材", "コンクリート", "セメント", "鋼材応力ひずみ", "建築材料", "仕上げ・断熱材料", "曲げ応力度", "張出し梁", "荷重・外力", "木造の部材", "木造軸組", "枠組壁工法", "RC造の構造特性", "RC造の配筋", "木材・木質材料", "コンクリート材料", "鋼材", "ガラス", "設計用地震力", "補強ブロック造", "柱のせん断補強", "耐震計画", "耐震診断・改修", "コンクリートの性質", "石材・左官材料"]}, {"session": "gakka-IV", "urlSlug": "gakka-IV", "expectedQuestions": 25, "label": "学科IV（施工）", "categories": ["工程表", "材料保管", "安全管理", "建設廃棄物", "仮設足場", "木造基礎", "土工・地業", "鉄筋加工・継手", "鉄筋施工・検査", "型枠工事", "コンクリート施工", "鉄骨建方", "鉄骨溶接", "押出成形セメント板", "木工事", "木造接合金物", "屋根防水", "左官・タイル・石", "塗装", "建具・ガラス・内装", "住宅設備", "改修", "施工機械・工法", "建築積算", "請負契約", "施工計画", "申請・届出", "作業主任者", "仮設工事", "木造住宅の基礎", "土工事", "鉄筋工事", "コンクリートの検査", "コンクリートの締固め", "高力ボルト工事", "鉄骨工事", "ALCパネル", "木工事の下地・精度", "木工事の接合", "防水工事", "塗装工事", "設備工事", "改修工事", "測量器具", "標準請負契約約款", "工事監理", "鉄筋加工・圧接", "高力ボルト・鉄骨建方", "スタッド・溶接", "補強ブロック造工事", "木工事・床組", "木工事・継手", "左官・タイル・石工事", "請負契約約款"]}, {"session": "practical", "urlSlug": "practical", "expectedQuestions": 1, "label": "設計製図", "categories": ["設計製図"]}], "seasons": ["annual"], "yearRange": {"start": 2017, end: 2026}, "legacySeasons": ["annual"], "legacyYearRange": {"start": 2020, "end": 2020}},
-  "mokuzo-kenchikushi": {"code": "mokuzo-kenchikushi", "nameFull": "木造建築士（学科）", "urlSlug": "mokuzo-kenchikushi", "level": "specialist", "sessions": [{"session": "gakka-I", "urlSlug": "gakka-I", "expectedQuestions": 25, "label": "学科I（計画）", "categories": ["神社建築", "住宅史", "環境用語", "空気環境", "伝熱・結露", "光・色彩", "音環境", "気候・地球環境", "住宅外構", "集合住宅形式", "併用住宅", "木造用語", "事務所・商業施設", "住宅平面寸法", "住宅各部寸法", "住宅の窓", "屋根形式", "階段安全", "高齢者・車椅子", "住宅リフォーム", "設備用語", "空調・換気", "給排水・ガス", "排水設備", "電気設備", "配管", "設備省エネ", "建築作品", "環境工学単位", "気候・環境", "戸建住宅計画", "集合住宅", "敷地調査", "伝統建築", "建築用途と用語", "住宅寸法", "階段計画", "内部仕上げ", "車椅子住宅", "環境配慮手法", "空調設備", "換気設備", "給排水衛生", "電気・防災", "設備配管", "建具・内装"]}, {"session": "gakka-II", "urlSlug": "gakka-II", "expectedQuestions": 25, "label": "学科II（法規）", "categories": ["法令用語", "建築面積", "確認変更", "確認対象", "共同住宅一般構造", "住宅換気", "採光計算", "平均天井高さ", "木造仕様", "構造耐久・欠込み", "防火性能", "内装制限", "2項道路後退", "低層用途制限", "用途地域", "建蔽率", "容積率", "高さ制限", "防火地域", "建築基準法制度", "木造建築士業務", "建築士事務所", "都市計画施設", "法の目的", "関連法令", "面積・高さ・階数", "確認・検査", "全国の確認対象", "居室採光", "住宅階段", "木造構造仕様", "木造軸組・柱", "共同住宅避難施設", "道路・接道", "第一種中高層住居専用地域", "用途制限", "防火・準防火地域", "建築士の業務", "建築物省エネ法", "バリアフリー法"]}, {"session": "gakka-III", "urlSlug": "gakka-III", "expectedQuestions": 25, "label": "学科III（構造）", "categories": ["荷重・外力", "地震力と風荷重", "木造部材名称", "基礎・地盤", "アンカーボルト", "柱・横架材", "梁の曲げ強さ", "梁の孔・切欠き", "存在壁量", "耐力壁仕様", "軸組の軸力", "柱脚引抜き", "小屋組", "洋小屋トラス", "床組", "枠組壁工法", "構造計画", "耐震改修", "鉛直荷重の伝達", "木材の乾燥収縮", "木材の基準強度", "木材の防腐・防蟻", "木質材料", "鉄筋コンクリート材料", "建築材料", "地震・風", "地盤・基礎", "土台・アンカーボルト", "柱の座屈", "梁端の欠込み", "風圧用見付面積", "耐力壁", "洋小屋組", "2階床組", "鉛直荷重の流れ", "木材の性質", "木材強度", "防腐・防蟻", "鉄筋コンクリート", "木造建築物への荷重", "水平力の検討方向", "木造の部材名称", "布基礎と地盤", "土台へのめり込み", "床梁の振動と剛性", "長方形断面の断面係数", "梁の切欠きと角孔", "耐力壁配置の四分割法", "軸組の耐力壁の仕様", "耐力壁端部の引抜き", "節点法とゼロ部材", "束立て小屋組の力", "洋小屋組の軸力", "床組と根太のスパン", "枠組壁工法と丸太組構法", "地震力と風圧力の壁量", "耐震改修の効果", "木造建築物の荷重伝達", "含水率と木材強度", "木質材料の構成", "コンクリートの圧縮強度", "仕上げ材料の性質"]}, {"session": "gakka-IV", "urlSlug": "gakka-IV", "expectedQuestions": 25, "label": "学科IV（施工）", "categories": ["申請・届出", "仮設工事", "地盤調査・地業", "基礎施工", "木材の加工・使い方", "木取り・使用部位", "施工順序", "樹種と部位", "合板等の留付け", "継手", "仕口", "接合金物", "規矩術・さしがね", "小屋束の寸法", "床梁断面", "断面図の部材名称", "墨付けの合印", "屋根工事", "タイル・左官", "木部塗装", "内装・断熱施工", "設備施工", "木工具", "積算・工事費構成", "設計図書の優先順位", "安全管理", "土工・地業", "木材乾燥変形", "木材の使い方", "部材と樹種", "合板耐力壁施工", "仕口名称", "継手の図", "規矩術", "さしがね", "床伏図の断面", "床下部材", "墨付け合印", "屋根・防水", "左官・タイル", "塗装", "建具・内装", "設備配管", "機械・器具", "建築積算", "設計図書", "仕上げ材料の現場保管", "単管足場の建地間隔", "地盤調査・地業の用語", "土に接する布基礎のかぶり", "木取りと乾燥変形", "木表・木裏と部材の向き", "木造工事の施工順序", "木造の部材と樹種", "構造用合板の継目", "木材を長さ方向につなぐ継手", "交差する部材の仕口", "木造の接合金物", "垂木欠きの寸法", "規矩基準勾配図の名称", "床伏図の梁断面", "通気層をもつ外壁の断面", "木材加工の合印", "板金屋根の瓦棒と下葺", "壁タイルの接着と目地直し", "木部のクリヤラッカー仕上げ", "壁下地の合板の留付け", "給湯用銅管の曲げ加工", "墨出しと木工事の用語", "建築積算の数量と単位", "工事請負契約の記載事項"]}], "seasons": ["annual"], "yearRange": {"start": 2021, end: 2026}},
+  "mokuzo-kenchikushi": {"code": "mokuzo-kenchikushi", "nameFull": "木造建築士（学科）", "urlSlug": "mokuzo-kenchikushi", "level": "specialist", "sessions": [{"session": "gakka-I", "urlSlug": "gakka-I", "expectedQuestions": 25, "label": "学科I（計画）", "categories": ["神社建築", "住宅史", "環境用語", "空気環境", "伝熱・結露", "光・色彩", "音環境", "気候・地球環境", "住宅外構", "集合住宅形式", "併用住宅", "木造用語", "事務所・商業施設", "住宅平面寸法", "住宅各部寸法", "住宅の窓", "屋根形式", "階段安全", "高齢者・車椅子", "住宅リフォーム", "設備用語", "空調・換気", "給排水・ガス", "排水設備", "電気設備", "配管", "設備省エネ", "建築作品", "環境工学単位", "気候・環境", "戸建住宅計画", "集合住宅", "敷地調査", "伝統建築", "建築用途と用語", "住宅寸法", "階段計画", "内部仕上げ", "車椅子住宅", "環境配慮手法", "空調設備", "換気設備", "給排水衛生", "電気・防災", "設備配管", "建具・内装"]}, {"session": "gakka-II", "urlSlug": "gakka-II", "expectedQuestions": 25, "label": "学科II（法規）", "categories": ["法令用語", "建築面積", "確認変更", "確認対象", "共同住宅一般構造", "住宅換気", "採光計算", "平均天井高さ", "木造仕様", "構造耐久・欠込み", "防火性能", "内装制限", "2項道路後退", "低層用途制限", "用途地域", "建蔽率", "容積率", "高さ制限", "防火地域", "建築基準法制度", "木造建築士業務", "建築士事務所", "都市計画施設", "法の目的", "関連法令", "面積・高さ・階数", "確認・検査", "全国の確認対象", "居室採光", "住宅階段", "木造構造仕様", "木造軸組・柱", "共同住宅避難施設", "道路・接道", "第一種中高層住居専用地域", "用途制限", "防火・準防火地域", "建築士の業務", "建築物省エネ法", "バリアフリー法"]}, {"session": "gakka-III", "urlSlug": "gakka-III", "expectedQuestions": 25, "label": "学科III（構造）", "categories": ["荷重・外力", "地震力と風荷重", "木造部材名称", "基礎・地盤", "アンカーボルト", "柱・横架材", "梁の曲げ強さ", "梁の孔・切欠き", "存在壁量", "耐力壁仕様", "軸組の軸力", "柱脚引抜き", "小屋組", "洋小屋トラス", "床組", "枠組壁工法", "構造計画", "耐震改修", "鉛直荷重の伝達", "木材の乾燥収縮", "木材の基準強度", "木材の防腐・防蟻", "木質材料", "鉄筋コンクリート材料", "建築材料", "地震・風", "地盤・基礎", "土台・アンカーボルト", "柱の座屈", "梁端の欠込み", "風圧用見付面積", "耐力壁", "洋小屋組", "2階床組", "鉛直荷重の流れ", "木材の性質", "木材強度", "防腐・防蟻", "鉄筋コンクリート", "木造建築物への荷重", "水平力の検討方向", "木造の部材名称", "布基礎と地盤", "土台へのめり込み", "床梁の振動と剛性", "長方形断面の断面係数", "梁の切欠きと角孔", "耐力壁配置の四分割法", "軸組の耐力壁の仕様", "耐力壁端部の引抜き", "節点法とゼロ部材", "束立て小屋組の力", "洋小屋組の軸力", "床組と根太のスパン", "枠組壁工法と丸太組構法", "地震力と風圧力の壁量", "耐震改修の効果", "木造建築物の荷重伝達", "含水率と木材強度", "木質材料の構成", "コンクリートの圧縮強度", "仕上げ材料の性質"]}, {"session": "gakka-IV", "urlSlug": "gakka-IV", "expectedQuestions": 25, "label": "学科IV（施工）", "categories": ["申請・届出", "仮設工事", "地盤調査・地業", "基礎施工", "木材の加工・使い方", "木取り・使用部位", "施工順序", "樹種と部位", "合板等の留付け", "継手", "仕口", "接合金物", "規矩術・さしがね", "小屋束の寸法", "床梁断面", "断面図の部材名称", "墨付けの合印", "屋根工事", "タイル・左官", "木部塗装", "内装・断熱施工", "設備施工", "木工具", "積算・工事費構成", "設計図書の優先順位", "安全管理", "土工・地業", "木材乾燥変形", "木材の使い方", "部材と樹種", "合板耐力壁施工", "仕口名称", "継手の図", "規矩術", "さしがね", "床伏図の断面", "床下部材", "墨付け合印", "屋根・防水", "左官・タイル", "塗装", "建具・内装", "設備配管", "機械・器具", "建築積算", "設計図書", "仕上げ材料の現場保管", "単管足場の建地間隔", "地盤調査・地業の用語", "土に接する布基礎のかぶり", "木取りと乾燥変形", "木表・木裏と部材の向き", "木造工事の施工順序", "木造の部材と樹種", "構造用合板の継目", "木材を長さ方向につなぐ継手", "交差する部材の仕口", "木造の接合金物", "垂木欠きの寸法", "規矩基準勾配図の名称", "床伏図の梁断面", "通気層をもつ外壁の断面", "木材加工の合印", "板金屋根の瓦棒と下葺", "壁タイルの接着と目地直し", "木部のクリヤラッカー仕上げ", "壁下地の合板の留付け", "給湯用銅管の曲げ加工", "墨出しと木工事の用語", "建築積算の数量と単位", "工事請負契約の記載事項"]},
+      { session: "practical", urlSlug: "practical", expectedQuestions: 1, label: "設計製図", categories: ["設計製図"] },
+    ], "seasons": ["annual"], "yearRange": {"start": 2021, end: 2026}},
   "sekou-1kenchiku": {
     code: "sekou-1kenchiku", nameFull: "1級建築施工管理技術検定（第一次検定）", urlSlug: "sekou-1kenchiku", level: "advanced",
     sessions: [
@@ -1452,7 +1469,12 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
 
             categories: ["ライフプランニングと資金計画", "リスク管理", "金融資産運用", "タックスプランニング", "不動産", "相続・事業承継"],
 
-        }],
+        },
+      {"session":"kinzai-sonpo","urlSlug":"kinzai-sonpo","expectedQuestions":15,"label":"金財 損保顧客資産相談業務","categories":[]},
+      {"session":"kinzai-kojin","urlSlug":"kinzai-kojin","expectedQuestions":15,"label":"金財 個人資産相談業務","categories":[]},
+      {"session":"kinzai-chusho","urlSlug":"kinzai-chusho","expectedQuestions":15,"label":"金財 中小事業主資産相談業務","categories":[]},
+      {"session":"kinzai-seiho","urlSlug":"kinzai-seiho","expectedQuestions":15,"label":"金財 生保顧客資産相談業務","categories":[]},
+    ],
 
     seasons: ["may", "september", "january", "published"],
 
@@ -1502,11 +1524,16 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
 
             categories: ["ライフプランニングと資金計画", "リスク管理", "金融資産運用", "タックスプランニング", "不動産", "相続・事業承継"],
 
-        }],
+        },
+      {"session":"kinzai-hoken","urlSlug":"kinzai-hoken","expectedQuestions":15,"label":"金財 保険顧客資産相談業務","categories":[]},
+      {"session":"kinzai-kojin","urlSlug":"kinzai-kojin","expectedQuestions":15,"label":"金財 個人資産相談業務","categories":[]},
+    ],
 
-    seasons: ["published"],
+    seasons: ["published",
+      "may",
+    ],
 
-    yearRange: { start: 2024, end: 2025 },
+    yearRange: { start: 2024, end: 2026 },
 
 },
   denken3: {
@@ -1631,7 +1658,9 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
             label: "筆記・午前",
             categories: ["電気理論・配電", "電気機器・発変電", "高圧設備・材料・施工", "設備図・検査・法令", "配線図(単線結線図)"],
         },
-        ],
+
+      { session: "practical", urlSlug: "practical", expectedQuestions: 10, label: "技能試験", categories: ["技能試験"] },
+    ],
     seasons: ["first", "second", "annual",],
     yearRange: { start: 2016, end: 2026 },
 },

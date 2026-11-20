@@ -1,3 +1,4 @@
+import exams20260718 from "./2026-07-18.json";
 import exams20231224 from "./2023-12-24.json";
 import exams20231223 from "./2023-12-23.json";
 import exams20230723 from "./2023-07-23.json";
@@ -8,6 +9,7 @@ import exams20220724 from "./2022-07-24.json";
 import exams20220723 from "./2022-07-23.json";
 
 export const DENKO2_ARCHIVED_SKILLS = [
+  ...exams20260718,
   ...exams20231224,
   ...exams20231223,
   ...exams20230723,
