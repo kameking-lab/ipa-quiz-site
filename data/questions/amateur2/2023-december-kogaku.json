@@ -1,0 +1,1541 @@
+[
+  {
+    "id": "radio21-amateur2-2023-december-kogaku-q01",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "late",
+    "qNumber": 1,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "コイル"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-1",
+    "sourceExamSession": "令和5年12月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20240617082338id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240227185557id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和5年12月期（IZ512）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "コイルの電気的性質について、誤っているものを選べ。",
+    "choices": {
+      "ア": "コイルの自己インダクタンスは、コイルの巻数の二乗に比例する。",
+      "イ": "交流電圧を加えたとき、流れる電流の位相は加えた電圧の位相より遅れる。",
+      "ウ": "電流が増加するとき、電流がさらに増加する方向に起電力が生ずる。",
+      "エ": "周波数が高くなるほど交流電流は流れにくい。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "自己誘導の起電力は電流の変化を妨げる方向に生じるので、増加を抑える向きになる。",
+    "choiceExplanations": {
+      "ア": "形状や透磁率が一定なら、自己インダクタンスは巻数の二乗に比例する。",
+      "イ": "理想的なコイルでは v=L di/dt の関係により、電流は電圧より90°遅れる。",
+      "ウ": "自己誘導の起電力は電流の変化を妨げる方向に生じるので、増加を抑える向きになる。",
+      "エ": "誘導性リアクタンスは 2πfL であり、周波数とともに大きくなる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2023-december-kogaku-q02",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "late",
+    "qNumber": 2,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "表皮効果"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-2",
+    "sourceExamSession": "令和5年12月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20240617082338id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240227185557id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和5年12月期（IZ512）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "導線に高周波電流を流すと、周波数が高くなるほど電流は導線の［A］に密集して流れ、導線の実効抵抗は直流電流を流したときに比べて［B］なる。この現象を［C］という。空欄に入る正しい組合せを選べ。",
+    "choices": {
+      "ア": "A：中心部　B：大きく　C：ゼーベック効果",
+      "イ": "A：中心部　B：小さく　C：表皮効果",
+      "ウ": "A：表面近く　B：小さく　C：ゼーベック効果",
+      "エ": "A：表面近く　B：大きく　C：表皮効果"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "高周波では電流が導線の表面近くに集中し、実効断面積が減ることで実効抵抗が増す。",
+    "choiceExplanations": {
+      "ア": "電流は中心部ではなく表面に集中する。ゼーベック効果は温度差による起電力である。",
+      "イ": "表皮効果で電流が集中するのは導線の表面近くで、実効抵抗は増える。",
+      "ウ": "表面近くに集中するが、通電に使える実効断面積が減るため実効抵抗は大きくなる。",
+      "エ": "高周波では電流が導線の表面近くに集中し、実効断面積が減ることで実効抵抗が増す。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2023-december-kogaku-q03",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "late",
+    "qNumber": 3,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "分圧回路"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-3",
+    "sourceExamSession": "令和5年12月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20240617082338id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240227185557id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和5年12月期（IZ512）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/amateur2/2023-december-kogaku/q03.png"
+    ],
+    "imageAltTexts": [
+      "R₁、R₂、R₃とスイッチSを接続した分圧回路"
+    ],
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "図の回路で、スイッチSを開いたときのab間の電圧は、Sを閉じたときのab間の電圧の何倍か。ただし、R₁=40 Ω、R₂=40 Ω、R₃=10 Ωとする。",
+    "choices": {
+      "ア": "2倍",
+      "イ": "3倍",
+      "ウ": "4倍",
+      "エ": "5倍",
+      "オ": "6倍"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "閉路時にR₂とR₃の並列合成抵抗は8 Ωとなる。開放時の分圧は40/80、閉路時は8/48なので、電圧比は3倍となる。",
+    "choiceExplanations": {
+      "ア": "開放時の分圧は電源の1/2で、閉路時の分圧は1/6である。従って両者の比は2倍より大きい。",
+      "イ": "閉路時にR₂とR₃の並列合成抵抗は8 Ωとなる。開放時の分圧は40/80、閉路時は8/48なので、電圧比は3倍となる。",
+      "ウ": "40 Ωと10 Ωの抵抗値を割った4は、この回路における分圧比の変化を表さない。",
+      "エ": "閉路時の分圧を求めるには、R₁=40 Ωを並列合成抵抗8 Ωに加えた全抵抗48 Ωを用いる。",
+      "オ": "6は閉路時のab間電圧に対する電源電圧の比である。開放時のab間電圧は電源電圧の半分である。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2023-december-kogaku-q04",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "late",
+    "qNumber": 4,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "低域フィルタ"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-4",
+    "sourceExamSession": "令和5年12月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20240617082338id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240227185557id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和5年12月期（IZ512）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/amateur2/2023-december-kogaku/q04.png"
+    ],
+    "imageAltTexts": [
+      "低域フィルタの通過・減衰帯域と特性曲線①〜③"
+    ],
+    "type": "multiple-choice",
+    "question": "図に示す低域フィルタ(LPF)の特性等について、誤っているものを選べ。",
+    "choices": {
+      "ア": "LPFを実現する原理的な回路としては、コイルとコンデンサをL形、T形あるいはπ形などに配置したものがある。",
+      "イ": "特性図において、Aの部分は通過帯域、Bの部分は減衰帯域である。",
+      "ウ": "特性図において、f꜀はLPFに通す正弦波の周波数を上げていったとき、十分低い周波数のときに比べて出力が3 dB下がる周波数である。",
+      "エ": "特性曲線②が実際の特性であるとき、LPFとして理想的な特性に近いものは①より③の特性を持つLPFの方である。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "理想的な低域フィルタでは遮断周波数の直後に急激に減衰する。図では遮断付近の傾きがより急な①が近い。",
+    "choiceExplanations": {
+      "ア": "コイルの直列枝とコンデンサの並列枝を組み合わせて、これらの低域フィルタを構成できる。",
+      "イ": "遮断周波数より低い側のAが通過帯域で、高い側のBが減衰帯域に相当する。",
+      "ウ": "遮断周波数は、通過帯域の基準値から出力が3 dB低下する点を指す。",
+      "エ": "理想的な低域フィルタでは遮断周波数の直後に急激に減衰する。図では遮断付近の傾きがより急な①が近い。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2023-december-kogaku-q05",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "late",
+    "qNumber": 5,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "電界効果トランジスタ"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-5",
+    "sourceExamSession": "令和5年12月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20240617082338id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240227185557id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和5年12月期（IZ512）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "電界効果トランジスタ(FET)について、誤っているものを選べ。",
+    "choices": {
+      "ア": "FETは構造によって、接合形とMOS形に大別され、キャリアが1種類のユニポーラ形である。",
+      "イ": "FETは、ゲート電圧でドレイン電流を制御する電圧制御素子である。",
+      "ウ": "ソース接地及びドレイン接地増幅回路は、入力インピーダンスが非常に大きい。",
+      "エ": "ドレイン接地増幅回路の入力と出力電圧の位相は、逆相である。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "ドレイン接地はソースフォロワで、出力は入力と同相になる。",
+    "choiceExplanations": {
+      "ア": "FETは主に電子または正孔の一方を用い、ゲート構造によって接合形やMOS形に分類される。",
+      "イ": "ゲート・ソース間電圧でチャネルの導電性を変え、ドレイン電流を制御する。",
+      "ウ": "いずれもゲートに信号を入力するため、ゲート電流が小さく入力インピーダンスが高い。",
+      "エ": "ドレイン接地はソースフォロワで、出力は入力と同相になる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2023-december-kogaku-q06",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "late",
+    "qNumber": 6,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "可変容量ダイオード"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-6",
+    "sourceExamSession": "令和5年12月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20240617082338id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240227185557id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和5年12月期（IZ512）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "PN接合ダイオードに加える［A］電圧を増加させるほど空乏層の幅は広くなり、静電容量は［B］なる。このように電圧で容量を変えられる素子は［C］ともいう。空欄に入る正しい組合せを選べ。",
+    "choices": {
+      "ア": "A：逆方向　B：大きく　C：バリスタ",
+      "イ": "A：逆方向　B：小さく　C：バラクタダイオード",
+      "ウ": "A：順方向　B：大きく　C：バラクタダイオード",
+      "エ": "A：順方向　B：小さく　C：バリスタ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "バラクタは逆バイアスで使い、逆電圧の増加に伴う接合容量の低下を利用する。",
+    "choiceExplanations": {
+      "ア": "逆電圧の増加で空乏層が広がり、静電容量は小さくなる。バリスタは電圧で抵抗が変化する素子である。",
+      "イ": "バラクタは逆バイアスで使い、逆電圧の増加に伴う接合容量の低下を利用する。",
+      "ウ": "可変容量として利用する場合には、PN接合を逆方向にバイアスする。",
+      "エ": "ここで扱うのは逆電圧で接合容量が変化するバラクタである。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2023-december-kogaku-q07",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "late",
+    "qNumber": 7,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "ソース接地増幅回路"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-7",
+    "sourceExamSession": "令和5年12月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20240617082338id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240227185557id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和5年12月期（IZ512）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/amateur2/2023-december-kogaku/q07.png"
+    ],
+    "imageAltTexts": [
+      "FET、結合コンデンサC₁・C₂、ソース側のC₃と各抵抗を含む増幅回路"
+    ],
+    "type": "multiple-choice",
+    "question": "図のFETソース接地増幅回路は［A］結合増幅回路である。C₃は［B］コンデンサである。電圧増幅度は［C］。正しい組合せを選べ。",
+    "choices": {
+      "ア": "A：RC　B：バイパス　C：1より大きくすることができる",
+      "イ": "A：RC　B：カップリング　C：ほぼ1である",
+      "ウ": "A：直接　B：バイパス　C：ほぼ1である",
+      "エ": "A：直接　B：カップリング　C：1より大きくすることができる"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "入出力をコンデンサで結合し、C₃がソース抵抗の交流成分をバイパスする。ソース接地回路では電圧利得の大きさを1より大きくできる。",
+    "choiceExplanations": {
+      "ア": "入出力をコンデンサで結合し、C₃がソース抵抗の交流成分をバイパスする。ソース接地回路では電圧利得の大きさを1より大きくできる。",
+      "イ": "C₃はソース抵抗と並列に入るバイパス用である。電圧利得がほぼ1となる代表的な回路はドレイン接地である。",
+      "ウ": "C₃はバイパス用だが、図の入出力には結合コンデンサC₁とC₂がある。ソース接地で電圧利得は1に限定されない。",
+      "エ": "電圧利得を1より大きくできるが、結合はRCでありC₃はバイパス用である。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2023-december-kogaku-q08",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "late",
+    "qNumber": 8,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "PLL"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-8",
+    "sourceExamSession": "令和5年12月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20240617082338id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240227185557id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和5年12月期（IZ512）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/amateur2/2023-december-kogaku/q08.png"
+    ],
+    "imageAltTexts": [
+      "固定・可変分周器、位相比較器、低域フィルタ、電圧制御発振器を含むPLL回路"
+    ],
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "図のPLL周波数シンセサイザで、基準発振器の出力が4 MHz、固定分周器の分周比Mが16、出力周波数f₀が32 MHzのとき、可変分周器の分周比Nを選べ。",
+    "choices": {
+      "ア": "32",
+      "イ": "64",
+      "ウ": "128",
+      "エ": "256",
+      "オ": "512"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "ロック時に位相比較器に入力される周波数は等しい。32/N=4/16 よりN=128となる。",
+    "choiceExplanations": {
+      "ア": "N=32では出力の分周結果は1 MHzとなり、基準側の0.25 MHzと一致しない。",
+      "イ": "N=64では出力の分周結果は0.5 MHzとなり、基準側の値の2倍である。",
+      "ウ": "ロック時に位相比較器に入力される周波数は等しい。32/N=4/16 よりN=128となる。",
+      "エ": "N=256だと出力の分周結果は0.125 MHzで、基準側の値の半分である。",
+      "オ": "N=512のとき出力の分周結果は0.0625 MHzで、基準側とは一致しない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2023-december-kogaku-q09",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "late",
+    "qNumber": 9,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "SSB通信"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-9",
+    "sourceExamSession": "令和5年12月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20240617082338id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240227185557id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和5年12月期（IZ512）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "DSB(A3E)方式と比較したSSB(J3E)方式では、搬送波を抑圧するため［A］が生じず、占有周波数帯幅はほぼ半分で［B］の影響が少ない。変調度100%のDSBの片側側波帯と同じ電力を送り出す場合、SSBの送信電力はDSBの搬送波電力の1/4であり、DSBの全電力の［C］で済む。正しい組合せを選べ。",
+    "choices": {
+      "ア": "A：ビート妨害　B：干渉性フェージング　C：1/8",
+      "イ": "A：ビート妨害　B：選択性フェージング　C：1/6",
+      "ウ": "A：トラッキングエラー　B：干渉性フェージング　C：1/6",
+      "エ": "A：トラッキングエラー　B：選択性フェージング　C：1/8"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "搬送波抑圧でビート妨害が抑えられ、帯域が狭いSSBは選択性フェージングの影響も少ない。片側側波帯の電力は搬送波電力の1/4で、DSB全体の1/6である。",
+    "choiceExplanations": {
+      "ア": "搬送波を抑圧することでビート妨害は抑えられるが、ここで比較するのは選択性フェージングである。電力比は1/6となる。",
+      "イ": "搬送波抑圧でビート妨害が抑えられ、帯域が狭いSSBは選択性フェージングの影響も少ない。片側側波帯の電力は搬送波電力の1/4で、DSB全体の1/6である。",
+      "ウ": "電力比は合うが、トラッキングエラーは受信機などの同調追従の誤差であり、搬送波によるビート妨害とは異なる。",
+      "エ": "帯域の説明は正しいが、搬送波抑圧で抑えるのはビート妨害であり、全電力に対する比は1/6である。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2023-december-kogaku-q10",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "late",
+    "qNumber": 10,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "寄生振動"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-10",
+    "sourceExamSession": "令和5年12月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20240617082338id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240227185557id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和5年12月期（IZ512）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "BCIなどを防止するため送信機側で行う寄生振動防止対策のうち、誤っているものを選べ。",
+    "choices": {
+      "ア": "同調回路と高周波チョークコイルなどは、相互の結合が密になるように配置する。",
+      "イ": "トランジスタは、なるべく電極間容量の小さいものを選ぶ。",
+      "ウ": "電力増幅器のコレクタ側とベース側の結合を打ち消すため、中和回路を取り付ける。",
+      "エ": "電力増幅器のコレクタ回路またはベース回路の電極の近くに、直列に寄生振動防止回路を挿入する。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "意図しない帰還を減らすため、同調回路とチョークコイルの相互結合は小さくする。",
+    "choiceExplanations": {
+      "ア": "意図しない帰還を減らすため、同調回路とチョークコイルの相互結合は小さくする。",
+      "イ": "電極間容量を小さくすると、高周波信号が入力側へ回り込む経路の結合を弱められる。",
+      "ウ": "中和回路は電極間容量による帰還を打ち消し、発振を抑える。",
+      "エ": "電極の近くに損失を持つ素子を入れると、寄生周波数での発振を抑えられる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2023-december-kogaku-q11",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "late",
+    "qNumber": 11,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "FM受信機"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-11",
+    "sourceExamSession": "令和5年12月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20240617082338id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240227185557id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和5年12月期（IZ512）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "FM(F3E)受信機では、中間周波増幅器と［A］との間に振幅制限器を挿入して、雑音や混信などによる［B］成分を除き、振幅を一定に保つ。振幅制限器は、ある電圧［C］の入力に対し出力を一定にする。正しい組合せを選べ。",
+    "choices": {
+      "ア": "A：周波数混合器　B：FM　C：以上",
+      "イ": "A：周波数混合器　B：AM　C：以下",
+      "ウ": "A：周波数弁別器　B：AM　C：以上",
+      "エ": "A：周波数弁別器　B：AM　C：以下",
+      "オ": "A：周波数弁別器　B：FM　C：以上"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "FM信号の復調前に不要な振幅変動を取り除く。一定以上の入力に対しては、振幅制限器の出力振幅がほぼ一定となる。",
+    "choiceExplanations": {
+      "ア": "振幅制限器は中間周波増幅の後、弁別器の前に置く。除去するのは不要な振幅変動である。",
+      "イ": "除去対象はAM成分だが、振幅制限器は弁別器の前で閾値以上の信号を制限する。",
+      "ウ": "FM信号の復調前に不要な振幅変動を取り除く。一定以上の入力に対しては、振幅制限器の出力振幅がほぼ一定となる。",
+      "エ": "挿入位置と除去対象は正しいが、振幅が一定になるのは入力が制限レベル以上の領域である。",
+      "オ": "取り除くのは不要な振幅変動である。信号を運ぶ周波数変動は弁別器へ渡す。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2023-december-kogaku-q12",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "late",
+    "qNumber": 12,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "影像周波数"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-12",
+    "sourceExamSession": "令和5年12月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20240617082338id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240227185557id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和5年12月期（IZ512）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "スーパヘテロダイン受信機で、受信周波数145.4 MHzと局部発振周波数fLから中間周波数10.7 MHzを得る。局部発振周波数fL及び影像周波数fUの正しい組合せを選べ。",
+    "choices": {
+      "ア": "A：156.1 MHz　B：113.3 MHz",
+      "イ": "A：156.1 MHz　B：155.7 MHz",
+      "ウ": "A：134.7 MHz　B：124.0 MHz",
+      "エ": "A：134.7 MHz　B：166.8 MHz"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "受信周波数から10.7 MHz引くと局部発振は134.7 MHzとなる。そこからさらに10.7 MHz低い124.0 MHzが影像周波数である。",
+    "choiceExplanations": {
+      "ア": "局部発振156.1 MHzに対する影像は、受信信号と反対側に10.7 MHz離れた166.8 MHzである。",
+      "イ": "155.7 MHzは局部発振156.1 MHzから0.4 MHzしか離れておらず、同じ中間周波数を生じない。",
+      "ウ": "受信周波数から10.7 MHz引くと局部発振は134.7 MHzとなる。そこからさらに10.7 MHz低い124.0 MHzが影像周波数である。",
+      "エ": "166.8 MHzは局部発振が156.1 MHzの場合に対応する影像周波数である。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2023-december-kogaku-q13",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "late",
+    "qNumber": 13,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "トラップ付きアンテナ"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-13",
+    "sourceExamSession": "令和5年12月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20240617082338id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240227185557id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和5年12月期（IZ512）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/amateur2/2023-december-kogaku/q13.png"
+    ],
+    "imageAltTexts": [
+      "左右に並列LCトラップを入れたダイポールアンテナ"
+    ],
+    "type": "multiple-choice",
+    "question": "図の3.5 MHz及び7 MHz用トラップ付き半波長ダイポールについて、3.5 MHzではLC回路が［A］リアクタンスとして働き、①と②の間に［B］が入ったことと等価になる。7 MHzではトラップが共振してインピーダンスが［C］なり、②が電気的に切り離されて①が動作する。正しい組合せを選べ。",
+    "choices": {
+      "ア": "A：容量性　B：短縮コンデンサ　C：高く",
+      "イ": "A：容量性　B：短縮コンデンサ　C：低く",
+      "ウ": "A：容量性　B：延長コイル　C：低く",
+      "エ": "A：誘導性　B：延長コイル　C：低く",
+      "オ": "A：誘導性　B：延長コイル　C：高く"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "共振点より低い3.5 MHzでは並列LC回路が誘導性を示し、延長コイルとして働く。7 MHzでは並列共振し、インピーダンスが高くなる。",
+    "choiceExplanations": {
+      "ア": "7 MHzで共振したトラップは高インピーダンスだが、3.5 MHz側では誘導性を示す。",
+      "イ": "並列共振するトラップのインピーダンスは共振周波数で高くなり、外側を切り離す。",
+      "ウ": "延長コイルに相当するのは誘導性リアクタンスであり、共振時は高インピーダンスとなる。",
+      "エ": "3.5 MHzの動作は合うが、7 MHzの並列共振時には高インピーダンスになる。",
+      "オ": "共振点より低い3.5 MHzでは並列LC回路が誘導性を示し、延長コイルとして働く。7 MHzでは並列共振し、インピーダンスが高くなる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2023-december-kogaku-q14",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "late",
+    "qNumber": 14,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "アンテナの指向性"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-14",
+    "sourceExamSession": "令和5年12月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20240617082338id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240227185557id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和5年12月期（IZ512）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "各種アンテナの特徴について、誤っているものを選べ。",
+    "choices": {
+      "ア": "ホイップアンテナは、水平面内では無指向性であり、構造が簡単で設置する場所が狭くてすむ。",
+      "イ": "折り返し半波長ダイポールアンテナは、半波長ダイポールアンテナとほぼ同じ指向特性を持つ。",
+      "ウ": "ループアンテナは、その寸法が波長に比べて十分小さく、ループ面が大地に垂直のとき、水平面内の指向性は8字形である。",
+      "エ": "八木アンテナは、半波長ダイポールアンテナに導波器及び反射器を付加して、一方向に強く電波を放射するようにしたものである。",
+      "オ": "パラボラアンテナは、利得が大きなものほど、半値角(半値幅)も大きい。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "開口が波長に対して大きいほど、利得が増加し、主ビームの半値幅は狭くなる。",
+    "choiceExplanations": {
+      "ア": "垂直に立てたホイップは水平面内でほぼ一様な指向性を持ち、省スペースで設置できる。",
+      "イ": "折り返し構造で給電点インピーダンスは変化するが、指向特性は通常の半波長ダイポールに近い。",
+      "ウ": "小形ループは面に垂直な方向にヌルがあり、水平面では8字形になる。",
+      "エ": "給電素子に導波器と反射器を組み合わせて、導波器側へ放射を集中させる。",
+      "オ": "開口が波長に対して大きいほど、利得が増加し、主ビームの半値幅は狭くなる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2023-december-kogaku-q15",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "late",
+    "qNumber": 15,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "最高使用可能周波数"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-15",
+    "sourceExamSession": "令和5年12月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20240617082338id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240227185557id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和5年12月期（IZ512）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "ある距離で電波を電離層に［A］に入射させて通信するときに使える最高周波数をMUFという。入射角をθ、臨界周波数をf₀とするとMUFは［B］で表される。臨界周波数が高いほど、また送受信点間の距離が［C］ほどMUFは高くなる。正しい組合せを選べ。",
+    "choices": {
+      "ア": "A：斜め　B：f₀ secθ　C：長い",
+      "イ": "A：斜め　B：f₀ secθ　C：短い",
+      "ウ": "A：斜め　B：f₀ cosθ　C：短い",
+      "エ": "A：垂直　B：f₀ secθ　C：短い",
+      "オ": "A：垂直　B：f₀ cosθ　C：長い"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "斜め入射のMUFはセカント則に従う。電離層の高さなどが一定なら、距離が長いほど入射角が大きくなりMUFは高い。",
+    "choiceExplanations": {
+      "ア": "斜め入射のMUFはセカント則に従う。電離層の高さなどが一定なら、距離が長いほど入射角が大きくなりMUFは高い。",
+      "イ": "セカント則の式は合っているが、距離が短いほど垂直入射に近づき、MUFは低くなる。",
+      "ウ": "斜め入射のMUFは f₀/cosθ であり、余弦を乗じない。",
+      "エ": "垂直入射ではθ=0となり、上限は臨界周波数そのものになる。",
+      "オ": "離れた地点間の電離層通信は斜め入射で行い、上限はセカント則で求める。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2023-december-kogaku-q16",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "late",
+    "qNumber": 16,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "電波伝搬"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-16",
+    "sourceExamSession": "令和5年12月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20240617082338id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240227185557id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和5年12月期（IZ512）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "周波数帯別の電波伝搬の特徴について、正しいものを選べ。",
+    "choices": {
+      "ア": "中波(MF)帯の電波は、日中はE層またはF層で反射して電離層波が遠くまで伝搬する。",
+      "イ": "一般に短波(HF)帯の電波を用いる通信回線では、昼間は比較的低い周波数を使用し、夜間は比較的高い周波数を使用する。",
+      "ウ": "短波(HF)帯の電波の伝搬は、季節変化の影響を受けず年間を通して変わらない。",
+      "エ": "超短波(VHF)帯の電波は直進する性質があるが、回折波により建物や障害物等の裏側に届くこともある。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "VHF帯は見通し内の伝搬が主体だが、障害物の縁で回折し、その背後に届くこともある。",
+    "choiceExplanations": {
+      "ア": "日中の中波はD層で吸収されやすく、電離層波による遠距離受信は主に夜間に起こる。",
+      "イ": "昼間は電離が強くなり高い周波数が使え、夜間は使用可能な周波数が下がる。",
+      "ウ": "電離層の状態が季節や昼夜、太陽活動などで変化するので、短波の伝搬も変化する。",
+      "エ": "VHF帯は見通し内の伝搬が主体だが、障害物の縁で回折し、その背後に届くこともある。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2023-december-kogaku-q17",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "late",
+    "qNumber": 17,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "ブリッジ整流"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-17",
+    "sourceExamSession": "令和5年12月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20240617082338id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240227185557id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和5年12月期（IZ512）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/amateur2/2023-december-kogaku/q17.png"
+    ],
+    "imageAltTexts": [
+      "4個のダイオードを用いたブリッジ整流回路"
+    ],
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "図の理想的な整流回路で、交流電源電圧が実効値50 Vの正弦波であるとき、各ダイオードに加わる最大逆電圧に最も近い値を選べ。交流電圧を加える前にコンデンサは無充電とする。",
+    "choices": {
+      "ア": "68 V",
+      "イ": "71 V",
+      "ウ": "75 V",
+      "エ": "80 V"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "ブリッジ整流で各ダイオードに加わる最大逆電圧は、理想条件では交流入力のピークに等しい。50√2≒70.7 Vとなる。",
+    "choiceExplanations": {
+      "ア": "ピークを求めるには正弦波の実効値に√2を掛ける。その結果は約70.7 Vである。",
+      "イ": "ブリッジ整流で各ダイオードに加わる最大逆電圧は、理想条件では交流入力のピークに等しい。50√2≒70.7 Vとなる。",
+      "ウ": "実効値を1.5倍にすると75 Vだが、正弦波の換算係数は√2である。",
+      "エ": "50 Vの正弦波に1.6倍の係数を適用する根拠はなく、ピークは約71 Vである。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2023-december-kogaku-q18",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "late",
+    "qNumber": 18,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "インバータ"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-18",
+    "sourceExamSession": "令和5年12月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20240617082338id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240227185557id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和5年12月期（IZ512）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "インバータは、蓄電池などの直流電圧を［A］などを用いて［B］電圧にし、これを［C］で昇圧または降圧して所要の電圧を得る装置である。正しい組合せを選べ。",
+    "choices": {
+      "ア": "A：バリスタ　B：交流　C：変圧器",
+      "イ": "A：バリスタ　B：直流　C：整流器",
+      "ウ": "A：トランジスタ　B：交流　C：整流器",
+      "エ": "A：トランジスタ　B：直流　C：整流器",
+      "オ": "A：トランジスタ　B：交流　C：変圧器"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "トランジスタなどで直流をスイッチングして交流を作り、その交流の電圧を変圧器で変える。",
+    "choiceExplanations": {
+      "ア": "交流への変換には高速にオン・オフできるスイッチング素子を用いる。バリスタは主に過電圧保護に使う。",
+      "イ": "入力直流を交流へ変換してから昇降圧する。バリスタによる直流変換や整流器による昇降圧ではない。",
+      "ウ": "トランジスタで交流化する点は正しいが、交流電圧の昇降圧は変圧器で行う。",
+      "エ": "トランジスタをスイッチングして交流電圧に変換する。整流器の働きは交流から直流への変換である。",
+      "オ": "トランジスタなどで直流をスイッチングして交流を作り、その交流の電圧を変圧器で変える。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2023-december-kogaku-q19",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "late",
+    "qNumber": 19,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "オシロスコープ"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-19",
+    "sourceExamSession": "令和5年12月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20240617082338id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240227185557id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和5年12月期（IZ512）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/amateur2/2023-december-kogaku/q19.png"
+    ],
+    "imageAltTexts": [
+      "時間目盛上の正弦波の図"
+    ],
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "図の正弦波の実効値Vと周波数fの組合せとして最も近いものを選べ。縦軸は1目盛当たり10 V、横軸は1目盛当たり1 msとする。",
+    "choices": {
+      "ア": "A：14.1 V　B：250 Hz",
+      "イ": "A：14.1 V　B：500 Hz",
+      "ウ": "A：28.3 V　B：250 Hz",
+      "エ": "A：28.3 V　B：500 Hz"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "振幅2目盛は20 Vなので実効値は20/√2≒14.1 Vとなる。周期4 msの逆数は250 Hzである。",
+    "choiceExplanations": {
+      "ア": "振幅2目盛は20 Vなので実効値は20/√2≒14.1 Vとなる。周期4 msの逆数は250 Hzである。",
+      "イ": "電圧は合うが、2 msは周期の半分である。周波数は4 msの逆数である。",
+      "ウ": "周波数は合うが、40 Vはピーク・ツー・ピーク値である。5割の20 Vを√2で割って実効値を求める。",
+      "エ": "ピーク・ツー・ピークの4目盛ではなく振幅2目盛を用いる。周期は2目盛ではなく4目盛である。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2023-december-kogaku-q20",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "late",
+    "qNumber": 20,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "ベクトルネットワークアナライザ"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-20",
+    "sourceExamSession": "令和5年12月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20240617082338id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240227185557id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和5年12月期（IZ512）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "一般的なVNA(ベクトルネットワークアナライザ)の測定項目について、誤っているものを選べ。",
+    "choices": {
+      "ア": "アンテナのVSWR特性の測定ができる。",
+      "イ": "同軸ケーブルの電気的長さが測定できる。",
+      "ウ": "LPFやHPFなどの周波数特性の測定ができる。",
+      "エ": "スミスチャートの表示ができる。",
+      "オ": "送信機・アンテナ間に接続して空中線電力の測定ができる。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "空中線電力は電力計や方向性電力計などで測る。通常のVNAは自らの試験信号で反射や透過を測定する装置である。",
+    "choiceExplanations": {
+      "ア": "VNAは反射係数を測り、そこからVSWRを周波数ごとに表示できる。",
+      "イ": "伝送の位相変化や遅延から同軸ケーブルの電気的長さを求められる。",
+      "ウ": "VNAは信号を掃引しながら透過特性を測り、フィルタの通過・減衰特性を調べられる。",
+      "エ": "測定した複素反射係数をスミスチャート上に表示して整合状態を確認できる。",
+      "オ": "空中線電力は電力計や方向性電力計などで測る。通常のVNAは自らの試験信号で反射や透過を測定する装置である。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-amateur2-2023-december-kogaku-q21",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "late",
+    "qNumber": 21,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "静電容量"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "B-1",
+    "sourceExamSession": "令和5年12月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20240617082338id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240227185557id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和5年12月期（IZ512）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "native-b",
+    "question": "コンデンサの静電容量について、各空欄に当てはまる候補を選べ。",
+    "explanation": "電極面積と誘電率が一定なら、静電容量は電極間隔に反比例する。\n\n電極間隔と誘電率が一定なら、静電容量は電極面積に比例する。\n\n金属板間を満たす誘電体の比誘電率にほぼ比例して増えるため、3倍となる。\n\n電荷は Q=CV なので、1 Fと1 Vの積は1 Cになる。\n\nV=Q/C から 250/50=5 V となる。",
+    "explanationCoverage": "full",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1",
+          "explanation": "定義から1 Vで1 Cを蓄える容量が1 Fである。"
+        },
+        {
+          "id": "2",
+          "label": "30",
+          "explanation": "誘電体による倍率はほぼ比誘電率に等しく、30倍ではない。"
+        },
+        {
+          "id": "3",
+          "label": "5",
+          "explanation": "250 μCを50 μFで割ると5 Vになる。"
+        },
+        {
+          "id": "4",
+          "label": "の二乗に反比例",
+          "explanation": "平行板コンデンサの静電容量は板間距離の1乗に反比例する。"
+        },
+        {
+          "id": "5",
+          "label": "に比例",
+          "explanation": "板間距離と誘電率が一定なら、静電容量は対向面積に比例する。"
+        },
+        {
+          "id": "6",
+          "label": "10",
+          "explanation": "50 μFに10 Vを加えると500 μCとなる。"
+        },
+        {
+          "id": "7",
+          "label": "3",
+          "explanation": "空気の比誘電率はほぼ1なので、比誘電率3の誘電体を満たすと静電容量はほぼ3倍になる。"
+        },
+        {
+          "id": "8",
+          "label": "50",
+          "explanation": "50はμF単位の静電容量で、電圧を求めるには電荷を静電容量で割る。"
+        },
+        {
+          "id": "9",
+          "label": "の二乗に比例",
+          "explanation": "対向面積に対する静電容量の比例関係は面積の1乗である。"
+        },
+        {
+          "id": "10",
+          "label": "に反比例",
+          "explanation": "電極間隔を広げると、同じ電圧で蓄えられる電荷が減り静電容量は低下する。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "平行板コンデンサの静電容量は、金属板の間隔［ア］する。",
+          "answer": "10",
+          "explanation": "電極面積と誘電率が一定なら、静電容量は電極間隔に反比例する。",
+          "candidateExplanations": {
+            "10": "電極面積と誘電率が一定なら、静電容量は電極間隔に反比例する。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "平行板コンデンサの静電容量は、金属板の面積［イ］する。",
+          "answer": "5",
+          "explanation": "電極間隔と誘電率が一定なら、静電容量は電極面積に比例する。",
+          "candidateExplanations": {
+            "5": "電極間隔と誘電率が一定なら、静電容量は電極面積に比例する。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "金属板間を比誘電率3の誘電体で満たしたときの静電容量は、空気のときのほぼ［ウ］倍となる。",
+          "answer": "7",
+          "explanation": "金属板間を満たす誘電体の比誘電率にほぼ比例して増えるため、3倍となる。",
+          "candidateExplanations": {
+            "7": "金属板間を満たす誘電体の比誘電率にほぼ比例して増えるため、3倍となる。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "1 Vを加えたときに［エ］Cを蓄えるコンデンサの静電容量は1 Fである。",
+          "answer": "1",
+          "explanation": "電荷は Q=CV なので、1 Fと1 Vの積は1 Cになる。",
+          "candidateExplanations": {
+            "1": "電荷は Q=CV なので、1 Fと1 Vの積は1 Cになる。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "50 μFのコンデンサに［オ］Vを加えると250 μCを蓄える。",
+          "answer": "3",
+          "explanation": "V=Q/C から 250/50=5 V となる。",
+          "candidateExplanations": {
+            "3": "V=Q/C から 250/50=5 V となる。"
+          }
+        }
+      ],
+      "officialLabel": "B-1"
+    }
+  },
+  {
+    "id": "radio21-amateur2-2023-december-kogaku-q22",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "late",
+    "qNumber": 22,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "論理回路"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "B-2",
+    "sourceExamSession": "令和5年12月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20240617082338id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240227185557id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和5年12月期（IZ512）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/amateur2/2023-december-kogaku/q22.png"
+    ],
+    "imageAltTexts": [
+      "ア：NOT、イ：OR、ウ：NOR、エ：NAND、オ：Bを反転してANDする回路と出力値の候補"
+    ],
+    "type": "native-b",
+    "question": "図の論理回路にA=1、B=0を加えた場合について、図中の出力Xが正しければ「正しい」、誤っていれば「誤っている」を選べ。正論理とする。",
+    "explanation": "NOTゲートでA=1を反転すると、図のとおり0になる。\n\nA=1とB=0の論理和は1となり、図の0と一致しない。\n\nORゲートとNOTゲートの組合せで、論理和1を反転した出力は0になる。\n\nA=1とB=0の論理積は0であり、NANDゲートはこれを反転して1を出す。\n\nB=0の反転は1で、A=1との論理積は1となる。",
+    "explanationCoverage": "full",
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "正しい"
+        },
+        {
+          "id": "2",
+          "label": "誤っている"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "アの回路図で X=0 としている。",
+          "answer": "1",
+          "explanation": "NOTゲートでA=1を反転すると、図のとおり0になる。",
+          "candidateExplanations": {
+            "1": "NOTゲートでA=1を反転すると、図のとおり0になる。",
+            "2": "NOTゲートは入力Aを反転するので、図の0が正しい。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "イの回路図で X=0 としている。",
+          "answer": "2",
+          "explanation": "A=1とB=0の論理和は1となり、図の0と一致しない。",
+          "candidateExplanations": {
+            "1": "ORゲートは片方の入力が1なら出力も1なので、図の0は誤りである。",
+            "2": "A=1とB=0の論理和は1となり、図の0と一致しない。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "ウの回路図で X=1 としている。",
+          "answer": "2",
+          "explanation": "ORゲートとNOTゲートの組合せで、論理和1を反転した出力は0になる。",
+          "candidateExplanations": {
+            "1": "ORゲートの出力1を反転すると0になるので、図の1は誤りである。",
+            "2": "ORゲートとNOTゲートの組合せで、論理和1を反転した出力は0になる。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "エの回路図で X=1 としている。",
+          "answer": "1",
+          "explanation": "A=1とB=0の論理積は0であり、NANDゲートはこれを反転して1を出す。",
+          "candidateExplanations": {
+            "1": "A=1とB=0の論理積は0であり、NANDゲートはこれを反転して1を出す。",
+            "2": "図の端子の小丸は反転を示すため、論理積0の反転結果は1で合っている。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "オの回路図で X=1 としている。",
+          "answer": "1",
+          "explanation": "B=0の反転は1で、A=1との論理積は1となる。",
+          "candidateExplanations": {
+            "1": "B=0の反転は1で、A=1との論理積は1となる。",
+            "2": "BはANDゲートに入る前に反転されるので、1と1の論理積1で合っている。"
+          }
+        }
+      ],
+      "officialLabel": "B-2"
+    }
+  },
+  {
+    "id": "radio21-amateur2-2023-december-kogaku-q23",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "late",
+    "qNumber": 23,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "理想演算増幅器"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "B-3",
+    "sourceExamSession": "令和5年12月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20240617082338id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240227185557id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和5年12月期（IZ512）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/amateur2/2023-december-kogaku/q23.png"
+    ],
+    "imageAltTexts": [
+      "端子1に負符号、端子2に正符号が付いた演算増幅器"
+    ],
+    "type": "native-b",
+    "question": "図の理想的な演算増幅器について、各空欄に当てはまる候補を選べ。",
+    "explanation": "入力端子1には「−」が付いているので、反転入力である。\n\n理想演算増幅器では入力に電流が流れず、入力インピーダンスは無限大である。\n\n理想演算増幅器の二つの入力端子には信号電流が流れない。\n\n理想モデルでは帰還をかけない状態の電圧利得を無限大と仮定する。\n\n二つの入力電圧の差を増幅するため、基本となるのは差動増幅回路である。",
+    "explanationCoverage": "full",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "流れない",
+          "explanation": "入力インピーダンスが無限大という理想条件なので、入力端子に電流は流れない。"
+        },
+        {
+          "id": "2",
+          "label": "零",
+          "explanation": "理想演算増幅器の出力インピーダンスは零とするが、入力インピーダンスは無限大とする。"
+        },
+        {
+          "id": "3",
+          "label": "電圧増幅度",
+          "explanation": "開ループの電圧増幅度は理想モデルで無限大である。"
+        },
+        {
+          "id": "4",
+          "label": "非反転",
+          "explanation": "非反転端子は正符号の端子2であり、負符号の端子1は反転端子である。"
+        },
+        {
+          "id": "5",
+          "label": "スタガ同調増幅回路",
+          "explanation": "同調周波数をずらした複数の段で帯域を広げる回路であり、ここで求める差動入力の基本回路とは異なる。"
+        },
+        {
+          "id": "6",
+          "label": "流れる",
+          "explanation": "入力インピーダンスが無限大の理想モデルでは、入力電流は流れない。"
+        },
+        {
+          "id": "7",
+          "label": "無限大",
+          "explanation": "入力インピーダンスを無限大と仮定することで入力電流は零になる。"
+        },
+        {
+          "id": "8",
+          "label": "位相遅延",
+          "explanation": "理想条件の無限大は電圧増幅度に対するものである。"
+        },
+        {
+          "id": "9",
+          "label": "反転",
+          "explanation": "負符号が付いた端子1は、非反転入力を一定にして電圧を上げると出力が下がる反転入力である。"
+        },
+        {
+          "id": "10",
+          "label": "差動増幅回路",
+          "explanation": "二つの端子の入力電圧差を増幅する回路である。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "入力端子1は［ア］入力端子である。",
+          "answer": "9",
+          "explanation": "入力端子1には「−」が付いているので、反転入力である。",
+          "candidateExplanations": {
+            "9": "入力端子1には「−」が付いているので、反転入力である。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "入力インピーダンスは［イ］である。",
+          "answer": "7",
+          "explanation": "理想演算増幅器では入力に電流が流れず、入力インピーダンスは無限大である。",
+          "candidateExplanations": {
+            "7": "理想演算増幅器では入力に電流が流れず、入力インピーダンスは無限大である。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "入力端子2から演算増幅器には電流が［ウ］。",
+          "answer": "1",
+          "explanation": "理想演算増幅器の二つの入力端子には信号電流が流れない。",
+          "candidateExplanations": {
+            "1": "理想演算増幅器の二つの入力端子には信号電流が流れない。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "［エ］は無限大である。",
+          "answer": "3",
+          "explanation": "理想モデルでは帰還をかけない状態の電圧利得を無限大と仮定する。",
+          "candidateExplanations": {
+            "3": "理想モデルでは帰還をかけない状態の電圧利得を無限大と仮定する。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "動作原理として、一般に［オ］を用いる。",
+          "answer": "10",
+          "explanation": "二つの入力電圧の差を増幅するため、基本となるのは差動増幅回路である。",
+          "candidateExplanations": {
+            "10": "二つの入力電圧の差を増幅するため、基本となるのは差動増幅回路である。"
+          }
+        }
+      ],
+      "officialLabel": "B-3"
+    }
+  },
+  {
+    "id": "radio21-amateur2-2023-december-kogaku-q24",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "late",
+    "qNumber": 24,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "電圧定在波比"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "B-4",
+    "sourceExamSession": "令和5年12月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20240617082338id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240227185557id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和5年12月期（IZ512）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "native-b",
+    "question": "給電線のVSWRについて、各空欄に当てはまる候補を選べ。",
+    "explanation": "VSWRはVoltage Standing Wave Ratioの略で、電圧定在波比をいう。\n\n進行波と反射波が重なって定在波を作ると、位置によって電圧振幅が変わる。\n\n電圧の最大値を最小値で割るので V₂/V₁ である。\n\n特性インピーダンスと等しい負荷で終端すると整合する。\n\n反射がないと電圧の最大値と最小値は一致するので、比は1になる。",
+    "explanationCoverage": "full",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "V₂/V₁",
+          "explanation": "電圧振幅の最大値V₂を最小値V₁で割るとVSWRになる。"
+        },
+        {
+          "id": "2",
+          "label": "電圧定在波比",
+          "explanation": "給電線の電圧の最大振幅と最小振幅の比を指す。"
+        },
+        {
+          "id": "3",
+          "label": "周波数特性",
+          "explanation": "周波数による応答の変化を表す一般的な用語であり、VSWRそのものの名称ではない。"
+        },
+        {
+          "id": "4",
+          "label": "定在波",
+          "explanation": "給電線上の進行波と反射波が重なると定在波が生じる。"
+        },
+        {
+          "id": "5",
+          "label": "1",
+          "explanation": "整合時には反射波がなく、電圧の最大値と最小値が等しいためVSWRは1となる。"
+        },
+        {
+          "id": "6",
+          "label": "V₁/V₂",
+          "explanation": "最小値を最大値で割ると分子と分母が逆になる。"
+        },
+        {
+          "id": "7",
+          "label": "電流定在波比",
+          "explanation": "設問のVSWRは電圧の定在波比を指す。"
+        },
+        {
+          "id": "8",
+          "label": "特性インピーダンス",
+          "explanation": "反射をなくすには負荷インピーダンスを給電線の特性インピーダンスに合わせる。"
+        },
+        {
+          "id": "9",
+          "label": "抑圧搬送波",
+          "explanation": "搬送波成分を減らす変調方式の用語で、給電線上の進行波と反射波の重なりを指さない。"
+        },
+        {
+          "id": "10",
+          "label": "零",
+          "explanation": "整合時は電圧の最大値と最小値の比が1になる。零になるのは反射係数である。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "VSWRとは［ア］のことである。",
+          "answer": "2",
+          "explanation": "VSWRはVoltage Standing Wave Ratioの略で、電圧定在波比をいう。",
+          "candidateExplanations": {
+            "2": "VSWRはVoltage Standing Wave Ratioの略で、電圧定在波比をいう。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "給電線上に［イ］が生じる場合、電圧の最大のところと最小のところができる。",
+          "answer": "4",
+          "explanation": "進行波と反射波が重なって定在波を作ると、位置によって電圧振幅が変わる。",
+          "candidateExplanations": {
+            "4": "進行波と反射波が重なって定在波を作ると、位置によって電圧振幅が変わる。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "最小電圧をV₁、最大電圧をV₂とすると、VSWRは［ウ］で表される。",
+          "answer": "1",
+          "explanation": "電圧の最大値を最小値で割るので V₂/V₁ である。",
+          "candidateExplanations": {
+            "1": "電圧の最大値を最小値で割るので V₂/V₁ である。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "給電線にその［エ］と等しい負荷を接続する。",
+          "answer": "8",
+          "explanation": "特性インピーダンスと等しい負荷で終端すると整合する。",
+          "candidateExplanations": {
+            "8": "特性インピーダンスと等しい負荷で終端すると整合する。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "整合する負荷を接続すると、給電線のVSWRは［オ］になる。",
+          "answer": "5",
+          "explanation": "反射がないと電圧の最大値と最小値は一致するので、比は1になる。",
+          "candidateExplanations": {
+            "5": "反射がないと電圧の最大値と最小値は一致するので、比は1になる。"
+          }
+        }
+      ],
+      "officialLabel": "B-4"
+    }
+  },
+  {
+    "id": "radio21-amateur2-2023-december-kogaku-q25",
+    "exam": "amateur2",
+    "session": "kogaku",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "late",
+    "qNumber": 25,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "熱電対形電流計"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "B-5",
+    "sourceExamSession": "令和5年12月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20240617082338id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240227185557id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/ama-2-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級アマチュア無線技士「無線工学」令和5年12月期（IZ512）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/amateur2/2023-december-kogaku/q25.png"
+    ],
+    "imageAltTexts": [
+      "測定電流を流す部分aと、部分bから指示計Mにつながる熱電対形電流計"
+    ],
+    "type": "native-b",
+    "question": "図の熱電対形電流計について、各空欄に当てはまる候補を選べ。",
+    "explanation": "測定電流を流すaは、ジュール熱を生じる熱線である。\n\nbの熱電対は熱線で生じた熱を受けて、直流の熱起電力を生む。\n\n熱起電力による直流を測る指示計として永久磁石可動コイル形を使う。\n\n熱線の平均発熱が電流の二乗平均に対応するので交流の実効値を測定できる。\n\n熱線は寄生リアクタンスを小さくでき、広い帯域でインピーダンスが小さい。",
+    "explanationCoverage": "full",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "熱電対",
+          "explanation": "熱電対は温度差を電圧に変換し、図ではbに配置される。"
+        },
+        {
+          "id": "2",
+          "label": "熱線",
+          "explanation": "測定電流で発熱するaの部分が熱線である。"
+        },
+        {
+          "id": "3",
+          "label": "実効値",
+          "explanation": "平均電力を等しくする直流と比較することで、交流電流の実効値を求められる。"
+        },
+        {
+          "id": "4",
+          "label": "永久磁石可動コイル",
+          "explanation": "熱電対の直流出力は永久磁石可動コイル形計器で指示できる。"
+        },
+        {
+          "id": "5",
+          "label": "小さい",
+          "explanation": "熱線のインピーダンスが小さいことは、高周波電流を測る際に回路への影響を抑えるのに役立つ。"
+        },
+        {
+          "id": "6",
+          "label": "分流器",
+          "explanation": "分流器は測定電流を複数の枝に分けるための抵抗で、図中の温度検出部ではない。"
+        },
+        {
+          "id": "7",
+          "label": "リッツ線",
+          "explanation": "リッツ線は高周波抵抗を小さくするためのより線で、図のaは測定電流で発熱する熱線である。"
+        },
+        {
+          "id": "8",
+          "label": "平均値",
+          "explanation": "交流電流の振幅の単純な平均ではなく、発熱に対応する実効値が得られる。"
+        },
+        {
+          "id": "9",
+          "label": "誘導",
+          "explanation": "熱起電力の直流出力は可動コイル形計器で測る。誘導形計器は交流磁界を利用して動作する。"
+        },
+        {
+          "id": "10",
+          "label": "大きい",
+          "explanation": "この構成では、熱線のインピーダンスが小さいことが広帯域での測定に適している理由である。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "図のaの部分は［ア］である。",
+          "answer": "2",
+          "explanation": "測定電流を流すaは、ジュール熱を生じる熱線である。",
+          "candidateExplanations": {
+            "2": "測定電流を流すaは、ジュール熱を生じる熱線である。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "図のbの部分は［イ］である。",
+          "answer": "1",
+          "explanation": "bの熱電対は熱線で生じた熱を受けて、直流の熱起電力を生む。",
+          "candidateExplanations": {
+            "1": "bの熱電対は熱線で生じた熱を受けて、直流の熱起電力を生む。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "指示計には［ウ］形計器が用いられる。",
+          "answer": "4",
+          "explanation": "熱起電力による直流を測る指示計として永久磁石可動コイル形を使う。",
+          "candidateExplanations": {
+            "4": "熱起電力による直流を測る指示計として永久磁石可動コイル形を使う。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "熱電対形電流計は交流電流の［エ］及び直流電流を測定できる。",
+          "answer": "3",
+          "explanation": "熱線の平均発熱が電流の二乗平均に対応するので交流の実効値を測定できる。",
+          "candidateExplanations": {
+            "3": "熱線の平均発熱が電流の二乗平均に対応するので交流の実効値を測定できる。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "aの部分のインピーダンスは、広い周波数帯域にわたり極めて［オ］ため、高周波電流の測定にも適する。",
+          "answer": "5",
+          "explanation": "熱線は寄生リアクタンスを小さくでき、広い帯域でインピーダンスが小さい。",
+          "candidateExplanations": {
+            "5": "熱線は寄生リアクタンスを小さくでき、広い帯域でインピーダンスが小さい。"
+          }
+        }
+      ],
+      "officialLabel": "B-5"
+    }
+  }
+]
