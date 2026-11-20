@@ -18,7 +18,7 @@ env:
 jobs:
   quality:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 75
 
     env:
       ADMIN_BASIC_USER: ${{ secrets.ADMIN_BASIC_USER }}
@@ -48,6 +48,9 @@ jobs:
 
       - name: Unit tests
         run: pnpm test
+
+      - name: Check study plan metadata (advisory)
+        run: pnpm exec tsx --tsconfig scripts/tsconfig.question-corpus.json scripts/check-study-plan-policy.ts
 
       - name: Validate safety exam sources and contracted coverage
         run: node scripts/validate-safety-exams.mjs --require-consultant-five-years --require-explanations

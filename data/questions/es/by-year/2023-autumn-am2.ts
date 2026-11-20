@@ -24,6 +24,7 @@ export const ES_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "big.LITTLEテクノロジは、ARM社が提唱するマルチコアプロセッサの設計思想です。消費電力が小さく処理能力が低いLITTLEコアと、消費電力が大きく処理能力が高いbigコアを組み合わせ、タスクに応じて効率的に使い分けることで、性能と電力効率の両立を図ります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const ES_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "正解はウです。（出典: IPA エンベデッドシステムスペシャリスト試験 令和5年度秋期 午前II 問2）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const ES_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "パイプライン処理では、最初の命令が完了するまでにDステージ分のピッチ時間（D×P）がかかります。2番目以降の命令は、前の命令の1ピッチ後に完了するため、I個の命令が全て完了するには、最初の命令の完了後に追加で (I-1)×P秒かかります。したがって、合計時間は (D×P) + (I-1)×P = (D+I-1)×P となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const ES_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "正解はアです。（出典: IPA エンベデッドシステムスペシャリスト試験 令和5年度秋期 午前II 問4）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,7 @@ export const ES_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "稼働率Aは MTBF / (MTBF + MTTR) で定義されます。MTBFとMTTRがともに従来の1.5倍になった場合、新しい稼働率A'は (1.5 × MTBF) / (1.5 × MTBF + 1.5 × MTTR) となります。この式を簡略化すると、分母分子の1.5が相殺され、A' = MTBF / (MTBF + MTTR) となり、従来の稼働率と同じ値になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +149,13 @@ export const ES_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "正解はイです。（出典: IPA エンベデッドシステムスペシャリスト試験 令和5年度秋期 午前II 問6）",
+    "choiceExplanations": {
+      "ア": "誤りです。処理AはまだXがセマフォiもoも取得していない段階です。Yは先にo、次にiを確保できるため、Xが資源を解放するのを待つことはありません。",
+      "イ": "正しいです。Xがiだけを持つ間にYがoを取得すると、YはXのiを待ちます。Xは再開してもYのoを待つため、互いに資源を解放できません。",
+      "ウ": "誤りです。処理CまでにXはiとoの両方を取得しています。Yは最初のoの取得で待つため、再開したXは資源を追加取得せずに処理を進められます。",
+      "エ": "誤りです。処理Dは入出力の後ですが、Xはまだiとoを保持しています。Yがoの取得で待っている間にXが再開し、両方を順に解放できます。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +180,7 @@ export const ES_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "プログラムの局所参照性とは、プログラム実行中にCPUが特定のメモリ領域に集中的にアクセスする特性のことです。ループによる反復実行は、短い時間に同じ命令やデータを繰り返し参照するため、高い局所参照性（特に時間的局所性と空間的局所性）を示します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +205,7 @@ export const ES_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "リソーススタベーション（飢餓状態）とは、オペレーティングシステムにおいて、優先度の低いプロセスが、優先度の高いプロセスに常にリソースを奪われ、いつまで経っても必要なリソースを獲得できない状態を指します。これにより、そのプロセスは実行される機会を永久に失う可能性があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +230,7 @@ export const ES_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "プロファイラは、プログラムの実行中に、どの関数やコードブロックにどれだけの時間が費やされているか、またはどれだけ頻繁に実行されているかといった性能データを計測し、統計を取るためのツールです。これにより、プログラムの性能ボトルネックを特定し、最適化の対象を絞り込むことができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +255,7 @@ export const ES_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "DCモーターにおけるPWM (Pulse Width Modulation) 制御は、供給されるパルスのデューティ比（オン時間の割合）を変化させることによって、モーターに印加される平均電圧を調整する方法です。これにより、モーターの回転数をきめ細かく制御することが可能になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +280,13 @@ export const ES_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "正解はエです。（出典: IPA エンベデッドシステムスペシャリスト試験 令和5年度秋期 午前II 問11）",
+    "choiceExplanations": {
+      "ア": "誤りです。タイマークロックは分周後も1MHzあり、1カウントは1マイクロ秒です。0から1までの2カウントでは20ミリ秒に届きません。",
+      "イ": "誤りです。設定値19は0から数えて20カウントで、約20マイクロ秒です。ミリ秒をマイクロ秒に換算するときには1,000倍する必要があります。",
+      "ウ": "誤りです。設定値1,999では約2,000マイクロ秒、すなわち2ミリ秒で割込みが起きます。20ミリ秒を作るには約10倍のカウントが必要です。",
+      "エ": "正しいです。32MHzを32分周すると1MHzなので、20ミリ秒は20,000カウントに相当します。カウンターは0も数えるため、比較値は19,999です。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +311,7 @@ export const ES_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "フォトカプラは、発光素子（LED）と受光素子（フォトトランジスタなど）を組み合わせて、電気信号を光信号に変換して伝達することで、入力側と出力側の回路を電気的に絶縁する部品です。これにより、ノイズの侵入防止や、電位差のある回路間での安全な信号伝達が可能になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +336,7 @@ export const ES_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "スパニングツリープロトコル (STP) は、レイヤー2ネットワークにおいて複数経路が存在することで発生するイーサネットフレームのループを防ぐためのプロトコルです。冗長な経路を論理的に遮断してツリー構造を形成し、ループを回避します。障害発生時には自動的に経路を開放して通信を継続させます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +361,7 @@ export const ES_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "SAML (Security Assertion Markup Language) は、異なるインターネットドメイン間でユーザーの認証情報や認可情報を交換するためのXMLベースの標準規格です。この技術により、ユーザーは一度の認証で複数のサービスにアクセスできるシングルサインオン (SSO) を実現できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +386,7 @@ export const ES_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "NOTICE (National Operation Towards IoT Clean Environment) は、総務省とNICTが2019年から実施している取り組みです。国内のグローバルIPアドレスを持つIoT機器に対し、容易に推測されるパスワードなどを試行してサイバー攻撃に悪用されるおそれのある機器を調査し、インターネットサービスプロバイダを通じて利用者に注意喚起を行います。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +411,13 @@ export const ES_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "正解はエです。（出典: IPA エンベデッドシステムスペシャリスト試験 令和5年度秋期 午前II 問16）",
+    "choiceExplanations": {
+      "ア": "誤りです。別のログサーバにあるaを最初に採ると、稼働中に変化するdの確保が後回しになります。表の証拠の中では、まずdを保全します。",
+      "イ": "誤りです。bのインストール用CDは内容が固定された媒体であり、この中で最初に確保する理由はありません。ルーティングテーブルの状態dを先に採ります。",
+      "ウ": "誤りです。cは侵入先サーバのファイルで、遠隔にあるaより先に確保します。ただし、cよりも揮発しやすい稼働中のルーティングテーブルdが先です。",
+      "エ": "正しいです。稼働中のルーティング情報d、侵入先ディスク上のc、遠隔サーバのログa、内容が固定されたCDのbの順で、失われやすいものから保全します。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +442,13 @@ export const ES_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "正解はイです。（出典: IPA エンベデッドシステムスペシャリスト試験 令和5年度秋期 午前II 問17）",
+    "choiceExplanations": {
+      "ア": "誤りです。コンテキストは共通の帳票出力を呼べますが、図の構成でPDFやHTMLを指定して使うには、対応する具体的なストラテジを選ぶ必要があります。",
+      "イ": "正しいです。PDF用とHTML用は同じ帳票出力インタフェースを持つ別クラスです。新形式を追加するときも、共通インタフェースを実装するクラスを追加できます。",
+      "ウ": "誤りです。基底クラスは帳票出力の共通インタフェースを示しています。どの出力処理が動くかは、コンテキストに設定した具体クラスで決まります。",
+      "エ": "誤りです。コンテキストは設定されたストラテジに帳票出力を任せます。PDF用とHTML用の出力処理をそれぞれの具体クラスに置くことで、処理を差し替えられます。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +473,7 @@ export const ES_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ドメインエンジニアリングは、特定の業務分野（ドメイン）を特定し、そのドメイン内で再利用可能なソフトウェア資産（業務知識、ソフトウェア部品、アーキテクチャなど）を体系的に整備・開発するプロセスです。これにより、そのドメイン内でのソフトウェア開発の効率と品質を向上させることを目指します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +498,13 @@ export const ES_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "正解はウです。（出典: IPA エンベデッドシステムスペシャリスト試験 令和5年度秋期 午前II 問19）",
+    "choiceExplanations": {
+      "ア": "誤りです。空欄をS1とするとa、bの後もS1です。そこからcでS0へ戻り、dでもS0に留まるので、最後のaでS1となります。",
+      "イ": "誤りです。空欄をS2とするとa、bの後にS2に達します。S2ではc、d、最後のaのどれでもS2のままで、最終状態はS4になりません。",
+      "ウ": "正しいです。S0からaでS1、bでS3、cでS2と進みます。S2でdが起きるともう一方の空欄からS3に戻り、最後のaでS4になります。",
+      "エ": "誤りです。空欄をS4とすると、最初のa、bでS4に到達しても、そこが終点ではありません。cとdではS4に留まり、最後のaでS0へ移ります。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +529,7 @@ export const ES_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "「製品設計に必要不可欠な範囲でだけ知的財産権が許諾されている」という契約は、A社IPを使って半導体を設計することのみが許諾されていることを示唆します。製造や販売は別途許諾が必要となることが多いため、B社がその半導体製品を量産することは、ライセンス契約の範囲を超え、使用許諾違反となるおそれがあります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +554,7 @@ export const ES_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "RISC-V (リスクファイブ) は、カリフォルニア大学バークレー校で開発された、オープン標準として提供されている命令セットアーキテクチャ (ISA) です。ロイヤリティフリーであり、モジュール化されているため、特定用途向けにカスタマイズしやすいという特徴があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +579,7 @@ export const ES_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ブランドリポジショニング戦略は、既存のブランドネームを維持しつつ、そのブランドが持つイメージやターゲットとする市場セグメントを再定義・変更することで、新たな価値を創造し、市場での競争力を高める戦略です。既存ブランドの認識を刷新し、より魅力的なものとすることを目指します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +604,7 @@ export const ES_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "技術経営における「死の谷」とは、研究開発段階で生まれた先進的な技術が、実際に製品化・事業化されるまでの間に直面する、資金調達や市場開拓などの困難な時期を指します。多くの技術がこの段階で事業化に至らずに消滅してしまうことから、このように呼ばれます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +629,7 @@ export const ES_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "IMU (Inertial Measurement Unit: 慣性計測装置) は、加速度センサーやジャイロセンサー（角速度センサー）などを組み合わせて、物体の3次元的な姿勢（傾きや向き）や動き（加速度、角速度）を検出する装置です。ヘッドマウントディスプレイでは、ユーザーの頭の動きをトラッキングするために利用されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +654,7 @@ export const ES_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "LoRaWANは、IoTで使用される低消費電力広域無線 (LPWA) 技術の一つで、免許不要のISMバンドを利用します。その設計のための仕様はLoRa Allianceによって公開されており、オープン標準として利用可能です。他の選択肢は免許帯域を使用するか、通信方式が異なります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_es_am2_qs.pdf",
     "license": "IPA-public"

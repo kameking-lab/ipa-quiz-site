@@ -31,8 +31,6 @@ function makeQuestion(): EssayQuestion {
 beforeEach(() => {
   cleanup();
   window.localStorage.clear();
-  // Exercise evaluation after the separately tested IOS1 Gemini consent flow.
-  localStorage.setItem("kakomon:ai-consent:20261103", "allowed");
 });
 
 // 各論述 textarea は CardTitle「設問X」と紐づかない裸のコントロールだった。
@@ -81,6 +79,21 @@ describe("EssayEditor — ヒント開閉ボタンの aria-expanded", () => {
 });
 
 describe("EssayEditor evaluation side effects", () => {
+  it("sends from the action with the processing notice and no consent dialog", async () => {
+    const confirm = vi.spyOn(window, "confirm");
+    const fetcher = vi.fn().mockResolvedValue(Response.json({ error: "unavailable" }, { status: 503 }));
+    vi.stubGlobal("fetch", fetcher);
+    render(<EssayEditor question={makeQuestion()} />);
+    expect(screen.getByText(/Google Geminiで処理します/)).toBeVisible();
+    expect(screen.getByRole("link", { name: "プライバシーポリシー" })).toHaveAttribute("href", "/privacy#2");
+    fireEvent.change(screen.getByLabelText("設問アの論述"), { target: { value: "答案を保持する".repeat(30) } });
+    fireEvent.click(screen.getByRole("button", { name: "AI に採点してもらう" }));
+    await waitFor(() => expect(fetcher).toHaveBeenCalled());
+    expect(confirm).not.toHaveBeenCalled();
+    await screen.findByText("採点に失敗しました（HTTP 503）");
+    vi.restoreAllMocks(); vi.unstubAllGlobals();
+  });
+
   it.each([
     {status: "unavailable", message: "内容未評価"},
     {gradingMode: "simplified", rank: "A", passProbability: 70, subResults: []},

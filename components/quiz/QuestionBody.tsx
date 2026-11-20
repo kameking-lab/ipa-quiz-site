@@ -124,19 +124,32 @@ function RubyText({ text }: { text: string }) {
   return <>{nodes}</>;
 }
 
-function InlineText({ text }: { text: string }) {
-  return text.split(/(`[^`]+`|\*\*[^*]+\*\*)/g).map((part, i) => {
+const INLINE_FORMAT = /(`[^`]+`|\*\*[^*]+\*\*)/g;
+const EXPLANATION_INLINE_FORMAT = /(`[^`]+`|\*\*[^*]+\*\*|(?<!!)\[[^\]\r\n]+\]\(https:\/\/[^\s()]+\))/g;
+const REFERENCE_LINK = /^\[([^\]\r\n]+)\]\((https:\/\/[^\s()]+)\)$/;
+
+export function QuestionInlineText({ text, linkReferences = false }: { text: string; linkReferences?: boolean }) {
+  return text.split(linkReferences ? EXPLANATION_INLINE_FORMAT : INLINE_FORMAT).map((part, i) => {
     if (part.startsWith("`") && part.endsWith("`")) {
       return <code key={i} className="rounded bg-muted px-1 font-mono">{part.slice(1, -1)}</code>;
     }
     if (part.startsWith("**") && part.endsWith("**")) {
       return <strong key={i}>{part.slice(2, -2)}</strong>;
     }
+    const reference = linkReferences && part.match(REFERENCE_LINK);
+    if (reference) {
+      try {
+        const url = new URL(reference[2]);
+        return <a key={i} href={url.href} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">{reference[1]}</a>;
+      } catch {
+        return part;
+      }
+    }
     return part.includes("｛") ? <RubyText key={i} text={part} /> : part;
   });
 }
 
-export function QuestionBody({ text }: { text: string }): ReactElement {
+export function QuestionBody({ text, linkReferences = false }: { text: string; linkReferences?: boolean }): ReactElement {
   const blocks = parseQuestionBlocks(text);
   return (
     <>
@@ -147,7 +160,7 @@ export function QuestionBody({ text }: { text: string }): ReactElement {
         if (b.kind === "p") {
           return (
             <p key={i} className="mb-3 last:mb-0">
-              <InlineText text={b.text} />
+              <QuestionInlineText text={b.text} linkReferences={linkReferences} />
             </p>
           );
         }
@@ -162,7 +175,7 @@ export function QuestionBody({ text }: { text: string }): ReactElement {
                       scope="col"
                       className="border border-border bg-muted/50 px-3 py-2 text-left font-semibold"
                     >
-                      <InlineText text={h} />
+                      <QuestionInlineText text={h} linkReferences={linkReferences} />
                     </th>
                   ))}
                 </tr>
@@ -175,7 +188,7 @@ export function QuestionBody({ text }: { text: string }): ReactElement {
                         key={ci}
                         className="border border-border px-3 py-2 align-top"
                       >
-                        <InlineText text={cell} />
+                        <QuestionInlineText text={cell} linkReferences={linkReferences} />
                       </td>
                     ))}
                   </tr>

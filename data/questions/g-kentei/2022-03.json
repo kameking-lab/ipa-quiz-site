@@ -1,0 +1,82 @@
+[
+  {
+    "id": "g-kentei-2022-03-q04",
+    "exam": "g-kentei",
+    "session": "gakka",
+    "year": 2022,
+    "season": "cbt",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "機械学習の概要",
+    "topicTags": [
+      "重回帰分析"
+    ],
+    "difficulty": 2,
+    "question": "重回帰分析の例として、最も適切な選択肢を1つ選べ",
+    "choices": {
+      "ア": "今日の株価から明日の株価を予測し、その結果から明後日の株価を予測する",
+      "イ": "ポイントカードのユーザ情報に記録された購買記録から、顧客の嗜好性をグループ分けする",
+      "ウ": "出店予定の小売店舗の売上高を、地域の人口、店舗面積、販売品目数から予測する",
+      "エ": "アンケートに含まれるたくさんの項目を2つの分析軸に集約して分析する"
+    },
+    "answer": "ウ",
+    "explanation": "人口、店舗面積、販売品目数の複数を説明変数とし、売上高を連続量として予測するので重回帰分析の例です。",
+    "choiceExplanations": {
+      "ア": "予測した株価を翌々日の予測に使うのは時系列の逐次予測で、複数の説明変数を使った回帰とは限りません。",
+      "イ": "嗜好に基づき顧客群を見つける課題はクラスタリングです。",
+      "ウ": "人口、店舗面積、販売品目数の複数を説明変数とし、売上高を連続量として予測するので重回帰分析の例です。",
+      "エ": "多数の変数を少数の軸にまとめるのは次元削減で、代表例に主成分分析があります。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jdla.org/certificate/general/issues/#g-issues_No03",
+    "sourceAnswerUrl": "https://www.jdla.org/certificate/general/issues/#ans",
+    "sourceAttribution": "出典：一般社団法人日本ディープラーニング協会「G検定の例題・過去問」 G検定2022#3に出題された過去問題。",
+    "license": "JDLA-owner-authorized",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第3回",
+    "officialQuestionLabel": "第3回・公開Q4"
+  },
+  {
+    "id": "g-kentei-2022-03-q16",
+    "exam": "g-kentei",
+    "session": "gakka",
+    "year": 2022,
+    "season": "cbt",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "category": "AIに必要な数理・統計知識",
+    "topicTags": [
+      "期待値"
+    ],
+    "difficulty": 2,
+    "question": "6面体のサイコロの出る目の確率が以下の式に従う場合の (x) の期待値として、最も適切な選択肢を1つ選べ",
+    "choices": {
+      "ア": "1",
+      "イ": "3",
+      "ウ": "3.5",
+      "エ": "0"
+    },
+    "answer": "ウ",
+    "explanation": "どの目も確率1/6で出るため、期待値は (1＋2＋3＋4＋5＋6)/6＝3.5です。",
+    "choiceExplanations": {
+      "ア": "1は出る目の最小値です。他の目も同じ確率で出るので、期待値は1より大きくなります。",
+      "イ": "3は出る目の一つですが、1から6までの和21を6で割ると3.5です。",
+      "ウ": "どの目も確率1/6で出るため、期待値は (1＋2＋3＋4＋5＋6)/6＝3.5です。",
+      "エ": "出る目はすべて1以上なので、その加重平均が0になることはありません。"
+    },
+    "hasImage": true,
+    "imageUrls": [
+      "/images/g-kentei/2022-03-q16.png"
+    ],
+    "imageAltTexts": [
+      "確率質量関数 f(x) = 1/6（x = 1, 2, …, 6）"
+    ],
+    "sourcePdfUrl": "https://www.jdla.org/certificate/general/issues/#g-issues_No08",
+    "sourceAnswerUrl": "https://www.jdla.org/certificate/general/issues/#ans",
+    "sourceAttribution": "出典：一般社団法人日本ディープラーニング協会「G検定の例題・過去問」 G検定2022#3に出題された過去問題。",
+    "license": "JDLA-owner-authorized",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第3回",
+    "officialQuestionLabel": "第3回・公開Q16"
+  }
+]

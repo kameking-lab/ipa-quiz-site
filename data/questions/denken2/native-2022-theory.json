@@ -1,0 +1,625 @@
+{
+  "year": 2022,
+  "season": "primary",
+  "examDate": "2022-08-20",
+  "sourceIndexUrl": "https://www.shiken.or.jp/chief/second/qa/",
+  "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20220820_ch_second_a01.pdf",
+  "sourceAnswerPdfSha256": "80aac761e77ba76cc31f010e474741589b5637d7523e811ba33ae4954369bddf",
+  "sourcePacketSha256": "186ee900253bcdf19ae2ce5553e4dd09cdc3dc9a3eb4f287005b8381873f5775",
+  "questions": [
+    {
+      "id": "denken2-2022-primary-theory-q01",
+      "year": 2022,
+      "season": "primary",
+      "examDate": "2022-08-20",
+      "subject": "theory",
+      "number": 1,
+      "topic": "電荷を帯びた球の電界",
+      "questionText": "次の文章は，電荷を帯びた球の作る電界に関する記述である。文中の空欄に当てはまる最も適切なものを解答群の中から選べ。\n図のように，真空中の原点 O からの距離が r であるとき，0≦r≦a，a＜r≦2a，r＞2a の領域をそれぞれ領域 A，B，C とする。領域 A と B にはそれぞれ電荷密度 ＋ρ，−ρ/7 で電荷が一様に分布している。また，領域 C に電荷は存在しない。ただし，ρ＞0 であり，全ての領域の誘電率は真空中の誘電率 ε₀ である。\nこのとき，領域 A に存在する電荷の合計は (1) である。\nまた，球の中心から距離 r の位置における r 方向の電界 E(r) は，領域 A（0≦r≦a）のとき (2)，領域 B（a＜r≦2a）のとき (3)，領域 C（r＞2a）のとき (4) である。\nこのとき，E(r) の符号に着目すると，r→∞ の無限遠点を電位の基準とした場合に，中心 O（r＝0）の電位の符号は，(5) 。",
+      "choiceGroups": {
+        "イ": "4πa³ρ",
+        "ロ": "ρa³/(3ε₀r²)",
+        "ハ": "ρa²/(3ε₀r)",
+        "ニ": "ρr/(3ε₀)",
+        "ホ": "ρ(8a³/r²−r)/(21ε₀)",
+        "ヘ": "8πa³ρ/3",
+        "ト": "負である",
+        "チ": "ρ(4a³/r²−r)/(9ε₀)",
+        "リ": "ρ(6a³/r²＋r)/(21ε₀)",
+        "ヌ": "−ρa²/(3ε₀r)",
+        "ル": "正である",
+        "ヲ": "4πa³ρ/3",
+        "ワ": "0",
+        "カ": "∛2 ρa/(3ε₀)",
+        "ヨ": "a の大きさによって正か負かが変わる"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ヲ",
+          "explanation": "領域 A には半径 a の球の体積に比例する電荷が存在する。",
+          "derivation": "電荷密度が一定なので、球の体積 4πa³/3 に ρ を掛け、4πa³ρ/3 となる。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ニ",
+          "explanation": "球の内側では電界の強さは中心からの距離に比例する。",
+          "derivation": "半径 r の球面が包む電荷は 4πr³ρ/3。ガウスの法則 4πr²E＝Q/ε₀ から E＝ρr/(3ε₀)。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ホ",
+          "explanation": "領域 B では、領域 A の正電荷と半径 r までの殻の負電荷を加える。",
+          "derivation": "包む電荷は (4πρ/3)[a³−(r³−a³)/7]。これを 4πε₀r² で割り、ρ(8a³/r²−r)/(21ε₀) を得る。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "ワ",
+          "explanation": "領域 C の電界は 0 になる。",
+          "derivation": "B の体積は A の7倍で電荷密度は −ρ/7。両領域の全電荷が相殺するため、外側のガウス面が囲む正味電荷は 0。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ル",
+          "explanation": "無限遠で電位をゼロとすると中心の電位は正。",
+          "derivation": "電位は V(0)＝∫₀^∞ E(r) dr。E(r) は 0＜r＜2a で正、外側でゼロなので積分値は正になる。"
+        }
+      ],
+      "figures": [
+        "領域 A・B・C と中心からの距離は公式PDFの4ページに掲載。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 4,
+          "url": "/images/denken2/2022-native/theory-q01-p04.jpg",
+          "sha256": "22467ac2e3ff6c2476a349db4ef65c68276d144db9fe503baf8f912823d90dd0"
+        },
+        {
+          "physicalPage": 5,
+          "url": "/images/denken2/2022-native/theory-q01-p05.jpg",
+          "sha256": "944d7c5425d72c7b2e8bfbc1841b91febbf6cd3287be4c608499dd1cfc21edb7"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20220820_ch_second_q01.pdf",
+      "sourcePdfSha256": "186ee900253bcdf19ae2ce5553e4dd09cdc3dc9a3eb4f287005b8381873f5775",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken2-2022-primary-theory-q02",
+      "year": 2022,
+      "season": "primary",
+      "examDate": "2022-08-20",
+      "subject": "theory",
+      "number": 2,
+      "topic": "環状鉄心の磁気回路",
+      "questionText": "次の文章は，磁気回路に関する記述である。文中の空欄に当てはまる最も適切なものを解答群の中から選べ。なお，真空の透磁率は μ₀，鉄心の比透磁率は μᵣ であり，鉄心の磁束の飽和やヒステリシス特性は無視できるものとする。\n図に示すように，中央部の穴の半径が a，断面の形状が幅 b，高さ c の長方形である環状鉄心があり，その中心軸上を直線電流 I が流れている。アンペアの周回積分の法則を用いると，中心から距離 r の鉄心内部の地点（a≦r≦a＋b）の磁束密度の大きさは B(r)＝(1) と求められるので，鉄心内の磁束は，\nΦ_ampere＝c∫[a, a＋b] B(r) dr＝(2)\nとなる。\n鉄心内部の磁束を簡便に取り扱う近似手法として，磁気回路が用いられる場合がある。鉄心の断面の中心を通る円周を磁路とすると，磁気抵抗は R_m＝(3) となるので，磁気回路に基づいて求めた鉄心内の磁束は，\nΦ_mc＝I/R_m＝(4)\nとなる。\na＝2 cm，b＝1 cm，c＝1 cm，μᵣ＝5 000，I＝1 kA の場合を考えると，Φ_ampere と Φ_mc の値はともに (5) mWb 程度となるので，この条件では磁気回路による取り扱いがかなり正確であることがわかる。なお，真空の透磁率を μ₀＝4π×10⁻⁷ H/m とし，必要であれば ln 1.5≒0.4 を用いてもよい。",
+      "choiceGroups": {
+        "イ": "0.3",
+        "ロ": "μ₀μᵣIbc/(2πa)",
+        "ハ": "200",
+        "ニ": "π(a＋b)/(μ₀μᵣbc)",
+        "ホ": "μ₀μᵣIc ln(b/a)/(2π)",
+        "ヘ": "μ₀μᵣIc/π",
+        "ト": "μ₀μᵣIc ln((a＋b)/a)/(2π)",
+        "チ": "I/(2πr)",
+        "リ": "μ₀μᵣIbc/[π(2a＋b)]",
+        "ヌ": "μ₀μᵣI/(2πr)",
+        "ル": "1/(μ₀μᵣc)",
+        "ヲ": "4",
+        "ワ": "μ₀I/(2πr)",
+        "カ": "π(2a＋b)/(μ₀μᵣbc)",
+        "ヨ": "μ₀μᵣIbc/[π(a＋b)]"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ヌ",
+          "explanation": "円周方向の磁界に鉄心の透磁率を掛ければ磁束密度になる。",
+          "derivation": "円周上で 2πrH＝I、鉄心中で B＝μ₀μᵣH なので、B(r)＝μ₀μᵣI/(2πr)。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ト",
+          "explanation": "磁束は半径方向に値が変わる磁束密度を断面で積分する。",
+          "derivation": "面積要素は c dr。c∫[a,a＋b] μ₀μᵣI/(2πr) dr＝μ₀μᵣIc ln((a＋b)/a)/(2π) となる。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "カ",
+          "explanation": "磁気抵抗には断面中心を通る磁路の長さを使う。",
+          "derivation": "中心半径は a＋b/2、磁路長は π(2a＋b)、断面積は bc。R_m＝π(2a＋b)/(μ₀μᵣbc)。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "リ",
+          "explanation": "磁気回路による磁束は起磁力を磁気抵抗で割った値。",
+          "derivation": "巻数に相当する直線電流の鎖交は1回なので、Φ_mc＝I/R_m＝μ₀μᵣIbc/[π(2a＋b)]。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ヲ",
+          "explanation": "与えられた値ではどちらの方法でも約 4 mWb になる。",
+          "derivation": "積分では μ₀μᵣIc/(2π)＝0.010 Wb に ln 1.5≒0.4 を掛ける。近似式にも同じ SI 単位の値を代入すると 0.004 Wb。"
+        }
+      ],
+      "figures": [
+        "環状鉄心と直線電流の位置関係は公式PDFの7ページに掲載。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 6,
+          "url": "/images/denken2/2022-native/theory-q02-p06.jpg",
+          "sha256": "a8a5ed18d1a01441c6121b72620cd9d16c8a300a308c7c0c755c1321c2eb3478"
+        },
+        {
+          "physicalPage": 7,
+          "url": "/images/denken2/2022-native/theory-q02-p07.jpg",
+          "sha256": "9103d1a8606f369c240b71f9fbf9c3e1ca3140ace1f2e8bc703a06d8b9d25bdc"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20220820_ch_second_q01.pdf",
+      "sourcePdfSha256": "186ee900253bcdf19ae2ce5553e4dd09cdc3dc9a3eb4f287005b8381873f5775",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken2-2022-primary-theory-q03",
+      "year": 2022,
+      "season": "primary",
+      "examDate": "2022-08-20",
+      "subject": "theory",
+      "number": 3,
+      "topic": "節点法で解く直流回路",
+      "questionText": "次の文章は，直流回路に関する記述である。文中の空欄に当てはまる最も適切なものを解答群の中から選べ。\n図のような5個の抵抗 R と4種類の直流電圧源，スイッチからなる回路を考える。節点 a の電位を V とする。\n(a) スイッチが開いているとき，各抵抗 R の電流は I₁＋I₂＋I₃＋I₄＝0 を満たす。それぞれの抵抗 R の電流を E と V と R の式で表すと，V＝(1) を得る。これより各電流の比は I₄/I₁＝I₃/I₂＝(2) となる。\n(b) スイッチを閉じているとき，各抵抗 R の電流は I₁＋I₂＋I₃＋I₄＝I₀ を満たす。I₀＝V/R を利用すると V＝(3) となり，各抵抗 R の電流のうち，電流 (4) は零となる。回路の消費電力は (5) となる。",
+      "choiceGroups": {
+        "イ": "3E",
+        "ロ": "I₁",
+        "ハ": "5E/2",
+        "ニ": "I₄",
+        "ホ": "2E",
+        "ヘ": "4E²/R",
+        "ト": "−3",
+        "チ": "7E/2",
+        "リ": "−1",
+        "ヌ": "−2",
+        "ル": "6E²/R",
+        "ヲ": "10E²/R",
+        "ワ": "I₂",
+        "カ": "I₃",
+        "ヨ": "4E"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ハ",
+          "explanation": "スイッチが開いているとき、V は四つの電源電圧の平均になる。",
+          "derivation": "I_k＝(kE−V)/R。四枝の電流の和を 0 と置くと 10E−4V＝0 から V＝5E/2。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "リ",
+          "explanation": "二つの電流比はいずれも −1。",
+          "derivation": "V＝2.5E のとき I₁＝−1.5E/R と I₄＝1.5E/R、I₂＝−0.5E/R と I₃＝0.5E/R なので分子・分母は大きさが等しく符号が逆。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ホ",
+          "explanation": "スイッチを閉じると V＝2E となる。",
+          "derivation": "接地へ向かう枝にも V/R が流れる。キルヒホッフの電流則から (10E−4V)/R＝V/R を解く。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "ワ",
+          "explanation": "電圧源が 2E の枝の電流 I₂ がゼロとなる。",
+          "derivation": "電源端と節点 a がともに 2E なので、I₂ の枝の抵抗に電位差がかからない。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ヲ",
+          "explanation": "五つの抵抗の消費電力を足すと 10E²/R になる。",
+          "derivation": "抵抗両端の電圧の大きさは E、0、E、2E、2E。各枝の V²/R を合計すると (1＋0＋1＋4＋4)E²/R。"
+        }
+      ],
+      "figures": [
+        "電圧源とスイッチを含む抵抗回路は公式PDFの8ページに掲載。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 8,
+          "url": "/images/denken2/2022-native/theory-q03-p08.jpg",
+          "sha256": "a146a5386ed367b049b9976d5781302d0a8fe020009c1afef509bd382d130ec8"
+        },
+        {
+          "physicalPage": 9,
+          "url": "/images/denken2/2022-native/theory-q03-p09.jpg",
+          "sha256": "9d15ec55b4baf4fe74d0898c14d1c299282737985bed9c6287f0db881ccfcd7a"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20220820_ch_second_q01.pdf",
+      "sourcePdfSha256": "186ee900253bcdf19ae2ce5553e4dd09cdc3dc9a3eb4f287005b8381873f5775",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken2-2022-primary-theory-q04",
+      "year": 2022,
+      "season": "primary",
+      "examDate": "2022-08-20",
+      "subject": "theory",
+      "number": 4,
+      "topic": "抵抗・コイル回路の過渡現象",
+      "questionText": "次の文章は，回路の過渡現象に関する記述である。文中の空欄に当てはまる最も適切なものを解答群の中から選べ。\n図に示すような，抵抗，コイル，直流電圧源，及びスイッチからなる回路を考える。初期状態ではスイッチは開いており，回路には電流は流れていないものとする。\n時刻 t＝0 でスイッチを閉じると，図に示す電流 i₁，i₂，i₃ について\ni₁＝i₂＋i₃ … ①\nRi₂＝Ri₃＋L di₃/dt … ②\nE＝Ri₁＋Ri₂ … ③\nという式が得られる。③式に①式を代入し，さらに②式を代入すると，③式は i₃ を用いて，\nE＝(1) i₃＋(2) di₃/dt … ③′\nと表すことができる。i₃(0)＝0 であることを考慮すると i₃(t) は，\ni₃(t)＝(3)×(1−e^(−t/τ₁))\nと求められる。ここで τ₁＝(4) である。\nスイッチを閉じてから十分な時間が経過した時刻 t＝T にスイッチを開くと，t≧T における i₃(t) は\ni₃(t)＝(3)×e^(−(t−T)/τ₂)\nとなり，τ₂＝(5) である。",
+      "choiceGroups": {
+        "イ": "E/(3R)",
+        "ロ": "3L/R",
+        "ハ": "LR",
+        "ニ": "E/R",
+        "ホ": "L",
+        "ヘ": "R",
+        "ト": "3L",
+        "チ": "L/(2R)",
+        "リ": "2E/R",
+        "ヌ": "2LR",
+        "ル": "2R",
+        "ヲ": "2R/L",
+        "ワ": "3R",
+        "カ": "2L",
+        "ヨ": "2L/(3R)"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ワ",
+          "explanation": "i₃ の係数は 3R になる。",
+          "derivation": "③に i₁＝i₂＋i₃ を入れると E＝2Ri₂＋Ri₃。②の Ri₂＝Ri₃＋L di₃/dt を代入すると、電流の項は 3Ri₃。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "カ",
+          "explanation": "電流の時間微分の係数は 2L になる。",
+          "derivation": "E＝2Ri₂＋Ri₃ に ②を入れると、微分項 L di₃/dt が2倍で現れる。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "イ",
+          "explanation": "十分な時間が経過した後のコイル電流は E/(3R)。",
+          "derivation": "閉路時の方程式 E＝3Ri₃＋2L di₃/dt の微分項を 0 とすると定常値を得る。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "ヨ",
+          "explanation": "閉路時の時定数は 2L/(3R)。",
+          "derivation": "一次微分方程式の斉次解は exp[−(3R/2L)t] に比例し、指数の係数の逆数が時定数。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "チ",
+          "explanation": "開路後の時定数は L/(2R)。",
+          "derivation": "電源側が切れて、コイルに流れていた電流は 2 個の R を直列に通る。方程式 L di₃/dt＋2Ri₃＝0 から時定数を得る。"
+        }
+      ],
+      "figures": [
+        "三つの抵抗とコイルの回路図は公式PDFの11ページに掲載。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 10,
+          "url": "/images/denken2/2022-native/theory-q04-p10.jpg",
+          "sha256": "c827378cbea3101264e29f95be090d5325e764f6227c1d24d3ac39945753187e"
+        },
+        {
+          "physicalPage": 11,
+          "url": "/images/denken2/2022-native/theory-q04-p11.jpg",
+          "sha256": "064aea207a3a35db7f8cf2d3e7826f09914af67f9e7ce5bb6564a2bec5a3c4b8"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20220820_ch_second_q01.pdf",
+      "sourcePdfSha256": "186ee900253bcdf19ae2ce5553e4dd09cdc3dc9a3eb4f287005b8381873f5775",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken2-2022-primary-theory-q05",
+      "year": 2022,
+      "season": "primary",
+      "examDate": "2022-08-20",
+      "subject": "theory",
+      "number": 5,
+      "topic": "変成器を含む交流回路",
+      "questionText": "次の文章は，変成器を含む交流回路に関する記述である。文中の空欄に当てはまる最も適切なものを解答群の中から選べ。なお，図の回路において電源の電圧は Ė，角周波数は ω，変成器の一次側コイルのインダクタンスは L₁，二次側コイルのインダクタンスは L₂，相互インダクタンスは M＞0 であり，変成器の巻線抵抗は無視するものとする。\n図の回路の一次側と二次側において，以下の回路方程式\nĖ＝(1)−jωMİ₂\n0＝(2)＋(R＋jωL₂)İ₂\nが成り立つ。\nしたがって，二次側電流 İ₂ と一次側電流 İ₁ の関係は，\nİ₂＝(3)\nと表せる。\n以上より，図の回路の一次側から見たインピーダンス Ż は，\nŻ＝jωL₁＋(4)\nとなる。\nまた，図の回路において，二次側の抵抗 R＝∞ とすれば，回路の一次側電流 İ₁＝(5) となる。",
+      "choiceGroups": {
+        "イ": "(ωM)²/(R＋jωL₁)",
+        "ロ": "Ė/(jωL₂)",
+        "ハ": "(ωM)²/(R＋jωL₂)",
+        "ニ": "jωMİ₁/(R＋jωL₁)",
+        "ホ": "jωL₁İ₁",
+        "ヘ": "Ė/(jωM)",
+        "ト": "(ωM)²/(R＋jωM)",
+        "チ": "−jωMİ₁",
+        "リ": "Ė/(jωL₁)",
+        "ヌ": "jωMİ₁/(R＋jωM)",
+        "ル": "jωL₁İ₂",
+        "ヲ": "jωMİ₁/(R＋jωL₂)",
+        "ワ": "jωMİ₂",
+        "カ": "−jωMİ₂",
+        "ヨ": "−jωL₁İ₁"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ホ",
+          "explanation": "一次側の自己誘導による電圧降下を求める。",
+          "derivation": "フェーザ表示では微分を jω 倍に置き換える。一次巻線 L₁ の自己誘導項は jωL₁İ₁。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "チ",
+          "explanation": "相互誘導による二次側の項は −jωMİ₁。",
+          "derivation": "点印に対し一次電流は点から入り、二次電流は点から出る向きなので、回路方程式の相互項の符号は負になる。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ヲ",
+          "explanation": "二次側の方程式を İ₂ について解く。",
+          "derivation": "0＝−jωMİ₁＋(R＋jωL₂)İ₂ より、İ₂＝jωMİ₁/(R＋jωL₂)。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "ハ",
+          "explanation": "二次負荷が一次側に反映された項は (ωM)²/(R＋jωL₂)。",
+          "derivation": "一次式の −jωMİ₂ に (3) の式を入れると (−j)(j)＝1。一次側の電圧を İ₁ で割って反映項を得る。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "リ",
+          "explanation": "二次側を開放すると一次電流は Ė/(jωL₁) になる。",
+          "derivation": "R→∞ で İ₂→0。一次式は Ė＝jωL₁İ₁ となる。"
+        }
+      ],
+      "figures": [
+        "変成器の結線と巻線の点印は公式PDFの12ページに掲載。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 12,
+          "url": "/images/denken2/2022-native/theory-q05-p12.jpg",
+          "sha256": "5e336706b166a855145e5f39941d1816633762c51b25afe0671c025141f0ee93"
+        },
+        {
+          "physicalPage": 13,
+          "url": "/images/denken2/2022-native/theory-q05-p13.jpg",
+          "sha256": "4f562f527e61497ff0621b9ea511378b1855bc58417b1ed49b2f95747c246dbe"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20220820_ch_second_q01.pdf",
+      "sourcePdfSha256": "186ee900253bcdf19ae2ce5553e4dd09cdc3dc9a3eb4f287005b8381873f5775",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken2-2022-primary-theory-q06",
+      "year": 2022,
+      "season": "primary",
+      "examDate": "2022-08-20",
+      "subject": "theory",
+      "number": 6,
+      "topic": "半導体の降伏電界",
+      "questionText": "次の文章は，半導体の降伏電界に関する記述である。文中の空欄に当てはまる最も適切なものを解答群の中から選べ。\n半導体中の電子が，電界から力を受けて一定の平均速度 v で運動している状況を考える。v が電界の大きさ F に比例するものとし，その比例定数を μ とおくと v＝(1) と表され，μ を (2) と呼ぶ。速さ v で運動する電子の運動エネルギーは，電子の有効質量を m とすると，(3) と表される。電界 F が大きくなると，(3) が半導体の禁制帯幅 E_g を超える状況が生じる。この際，運動する電子は衝突によって運動エネルギーを失う代わりに，価電子帯の電子を伝導帯に励起させることにより，電子正孔対が生じてキャリヤ濃度が増加する。新たに生成した電子も電界によって加速され，同様に次々と電子正孔対を生じることから指数関数的にキャリヤ濃度が増加し，電流が急激に増大する。半導体の破壊の原因ともなるこのような現象を (4) 降伏と呼び，この現象が生じる目安となる電界の大きさ F を，μ，m，E_g などを用いて不等式で表すと F＞(5) となる。",
+      "choiceGroups": {
+        "イ": "ツェナー",
+        "ロ": "拡散定数",
+        "ハ": "F/μ",
+        "ニ": "μF",
+        "ホ": "μ/F",
+        "ヘ": "ミーゼス",
+        "ト": "mv²/2",
+        "チ": "透磁率",
+        "リ": "アバランシェ",
+        "ヌ": "√[E_g/(μm)]",
+        "ル": "mv²",
+        "ヲ": "移動度",
+        "ワ": "mv",
+        "カ": "E_g/(μm)",
+        "ヨ": "√(2E_g/m)/μ"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ニ",
+          "explanation": "比例定数 μ と電界 F の積が平均速度になる。",
+          "derivation": "設問は速さの大きさを比較しているので、電界の大きさ F に対して v＝μF。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ヲ",
+          "explanation": "速度と電界を結び付ける比例定数を移動度と呼ぶ。",
+          "derivation": "移動度は単位電界当たりのドリフト速度を表し、SIでは m²/(V·s) の次元を持つ。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ト",
+          "explanation": "電子の運動エネルギーは mv²/2。",
+          "derivation": "速度の二乗と有効質量の積を半分にして得る。mv は運動量の式。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "リ",
+          "explanation": "連鎖的にキャリヤが増える現象をアバランシェ降伏と呼ぶ。",
+          "derivation": "加速された電子の衝突で電子正孔対が生じ、それらも加速されて衝突を繰り返す。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ヨ",
+          "explanation": "設問の近似では降伏の目安は F＞√(2E_g/m)/μ。",
+          "derivation": "mv²/2＞E_g に v＝μF を代入し、mμ²F²/2＞E_g を正の F について解く。"
+        }
+      ],
+      "figures": [],
+      "sourcePages": [
+        {
+          "physicalPage": 14,
+          "url": "/images/denken2/2022-native/theory-q06-p14.jpg",
+          "sha256": "b27ce8cf89a8b05c3c11583018ed81ea598b34c945ed79542a7e9efd3522f77a"
+        },
+        {
+          "physicalPage": 15,
+          "url": "/images/denken2/2022-native/theory-q06-p15.jpg",
+          "sha256": "1acc6758503d6c80d840ed99b67be7061a565d5347c96f63f9578923ac6c97c8"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20220820_ch_second_q01.pdf",
+      "sourcePdfSha256": "186ee900253bcdf19ae2ce5553e4dd09cdc3dc9a3eb4f287005b8381873f5775",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken2-2022-primary-theory-q07",
+      "year": 2022,
+      "season": "primary",
+      "examDate": "2022-08-20",
+      "subject": "theory",
+      "number": 7,
+      "topic": "演算増幅器の基本特性",
+      "questionText": "次の文章は，演算増幅器に関する記述である。文中の空欄に当てはまる最も適切なものを解答群の中から選べ。\na　理想演算増幅器の差動電圧利得と同相電圧利得を dB で表すと，(1) である。\nb　演算増幅器を用いて増幅回路を実現する場合，通常，(2) 増幅回路を構成して用いられる。演算増幅器を用いた (2) 増幅回路において演算増幅器の2個の入力端子の (3) となることを仮想短絡と呼ぶ。\nc　直流における差動電圧利得が 100 dB，遮断周波数が 10 Hz の1次の周波数特性を有する演算増幅器がある。この演算増幅器の利得帯域幅積（GB 積）は，(4) である。遮断周波数以上の周波数では周波数が10倍に増加すると，演算増幅器の電圧利得は 20 dB 低下する。そのため，電圧利得が 0 dB となる周波数（ユニティゲイン周波数）は GB 積と等しい。\nd　理想演算増幅器を用いた下図の回路の電圧増幅度 v_out/v_in は (5) である。",
+      "choiceGroups": {
+        "イ": "−R_b/R_a",
+        "ロ": "1 kHz",
+        "ハ": "1 MHz",
+        "ニ": "(R_a＋R_b)/R_a",
+        "ホ": "−R_a/R_b",
+        "ヘ": "100 kHz",
+        "ト": "負帰還",
+        "チ": "正帰還",
+        "リ": "無帰還",
+        "ヌ": "電位が回路構成によらず常に零",
+        "ル": "電流が回路構成によらず常に零",
+        "ヲ": "電位がほぼ等電位",
+        "ワ": "ともに＋∞",
+        "カ": "差動電圧利得が＋∞であり，同相電圧利得が−∞",
+        "ヨ": "同相電圧利得が＋∞であり，差動電圧利得が−∞"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "カ",
+          "explanation": "理想演算増幅器は差動利得が無限大で、同相利得がゼロ。",
+          "derivation": "電圧利得を 20 log₁₀ の式で dB 表示すると、無限大の利得は＋∞ dB、ゼロ利得は極限で−∞ dB。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ト",
+          "explanation": "一定の増幅率を得る回路では負帰還を用いる。",
+          "derivation": "出力の一部を入力の差を小さくする向きに戻す。帰還回路の定数で全体の利得を決められる。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ヲ",
+          "explanation": "仮想短絡では二つの入力端子の電位がほぼ等しくなる。",
+          "derivation": "大きな差動利得と負帰還により有限の出力を得るのに必要な入力端子間電圧が小さくなる。端子同士を直接接続する必要はない。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "ハ",
+          "explanation": "利得帯域幅積は 1 MHz。",
+          "derivation": "100 dB は電圧比 10^(100/20)＝10⁵。遮断周波数 10 Hz を掛けると 10⁶ Hz になる。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "イ",
+          "explanation": "反転増幅回路の利得は −R_b/R_a。",
+          "derivation": "非反転入力が接地され、反転入力の電位も仮想接地で 0 V。入力電流が流れ込まないので v_in/R_a＋v_out/R_b＝0。"
+        }
+      ],
+      "figures": [
+        "反転増幅回路は公式PDFの16ページに掲載。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 16,
+          "url": "/images/denken2/2022-native/theory-q07-p16.jpg",
+          "sha256": "fc328a50acf8dbfce4f16586cddc655651a6a4abdf66517e0d08a760c9945eeb"
+        },
+        {
+          "physicalPage": 17,
+          "url": "/images/denken2/2022-native/theory-q07-p17.jpg",
+          "sha256": "7d877eda2ac2ed945916c3e4dd8efab4799036e4f519f0e49205957b60e2e2ef"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20220820_ch_second_q01.pdf",
+      "sourcePdfSha256": "186ee900253bcdf19ae2ce5553e4dd09cdc3dc9a3eb4f287005b8381873f5775",
+      "alternateQuestionRule": "問7又は問8のどちらか1問を選択。両方解答すると採点されない。"
+    },
+    {
+      "id": "denken2-2022-primary-theory-q08",
+      "year": 2022,
+      "season": "primary",
+      "examDate": "2022-08-20",
+      "subject": "theory",
+      "number": 8,
+      "topic": "電流比較器による電力計の校正",
+      "questionText": "次の文章は，電流比較器による電力計の校正に関する記述である。文中の空欄に当てはまる最も適切なものを解答群の中から選べ。\n図は，校正対象の電力計と，電流比較器，抵抗 R，静電容量 C のコンデンサ，検流計及び交流電圧計から成る電力計の校正回路である。電流比較器は，鉄心や巻線の損失や漏れ磁束のない理想的なもので，N_R，N_C，N_X 及び N_D は各巻線の巻数を表し，N_R，N_C 及び N_X は可変である。\n電力計の校正の手順及び原理は次のとおりである。\nまず，角周波数が等しく ω である正弦波電圧 Ė 及び正弦波電流 İ を電力計及び校正回路に加える。次に，検流計が零を指すように N_R，N_C 及び N_X を調整し，さらに，Ė の実効値 ∣Ė∣ を交流電圧計で測定する。\n検流計が零を指すのは，各巻線を流れる電流によって生じる鉄心内の磁束が零になり，各巻線に生じる起電力が零になったときである。このとき，抵抗に流れる電流 İ_R は (1)，コンデンサに流れる電流 İ_C は (2) となる。また，各巻線の巻数と流れる電流の向きや，鉄心内の磁束が零であることを考慮すると，起磁力に関する等式 (3) が成立する。\n(3) を İ について解き，İ_R 及び İ_C を代入する。さらに両辺に Ė の共役複素数 Ē を乗じると次式が得られる。\nĒİ＝(4)−j(5)\nなお，(4) 及び (5) は，それぞれ，電力計へ入力される有効電力及び無効電力である。\n以上のように，この校正回路は，既知の値（R，C，ω及び巻数）と ∣Ė∣ の測定値から有効電力及び無効電力を求め，電力計の校正を実現している。",
+      "choiceGroups": {
+        "イ": "N_Rİ_R＋N_Cİ_C−N_Xİ＝0",
+        "ロ": "−jωCĖ",
+        "ハ": "N_X ∣Ė∣²/(N_CωC)",
+        "ニ": "N_Rİ_R−N_Cİ_C−N_Xİ＝0",
+        "ホ": "RĖ",
+        "ヘ": "R/Ė",
+        "ト": "N_CωC ∣Ė∣/N_X",
+        "チ": "jωCĖ",
+        "リ": "N_CωC ∣Ė∣²/N_X",
+        "ヌ": "N_R ∣Ė∣²/(N_XR)",
+        "ル": "Ė/(jωC)",
+        "ヲ": "Ė/R",
+        "ワ": "N_Rİ_R＋N_Cİ_C＋N_Xİ＝0",
+        "カ": "N_R ∣Ė∣/(N_XR)",
+        "ヨ": "N_XR ∣Ė∣²/N_R"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ヲ",
+          "explanation": "平衡時の抵抗電流は Ė/R。",
+          "derivation": "検流計が零のときは鉄心の磁束も起電力も零。抵抗に電圧 Ė がかかるのでオームの法則を使う。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "チ",
+          "explanation": "コンデンサ電流は jωCĖ。",
+          "derivation": "コンデンサのアドミタンスは jωC。電流は電圧より90度進む。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ニ",
+          "explanation": "図の巻線の向きから N_Rİ_R−N_Cİ_C−N_Xİ＝0。",
+          "derivation": "各巻線の巻数と電流の積の向きをそろえて足す。検流計が零になる平衡条件では起磁力の合計がゼロ。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "ヌ",
+          "explanation": "実数部分は N_R ∣Ė∣²/(N_XR)。",
+          "derivation": "İ＝[N_R/(N_XR)−jN_CωC/N_X]Ė に共役複素数 Ē を掛けると、ĒĖ＝∣Ė∣² になる。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "リ",
+          "explanation": "式の負の虚数項の係数は N_CωC ∣Ė∣²/N_X。",
+          "derivation": "コンデンサ電流 jωCĖ の項は起磁力の式で負号を持つ。Ē を掛けた後の −j の係数が設問の無効電力。"
+        }
+      ],
+      "figures": [
+        "電力計の校正回路は公式PDFの19ページに掲載。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 18,
+          "url": "/images/denken2/2022-native/theory-q08-p18.jpg",
+          "sha256": "b4a43a0a90fb9ff1911b989789b665dd7965fed0e5c4ab74f0193612998b3f38"
+        },
+        {
+          "physicalPage": 19,
+          "url": "/images/denken2/2022-native/theory-q08-p19.jpg",
+          "sha256": "7b95157f45a73b5189097693a858ae6cc1f642dd156de611e01e4846410bf539"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20220820_ch_second_q01.pdf",
+      "sourcePdfSha256": "186ee900253bcdf19ae2ce5553e4dd09cdc3dc9a3eb4f287005b8381873f5775",
+      "alternateQuestionRule": "問7又は問8のどちらか1問を選択。両方解答すると採点されない。"
+    }
+  ]
+}

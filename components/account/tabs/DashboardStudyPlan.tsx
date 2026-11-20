@@ -27,8 +27,7 @@ export function DashboardStudyPlan() {
   const plan = plans.find((item) => item.id === selectedId);
   if (!plan) return <section className="rounded-2xl border border-border bg-card p-5">
     <h2 className="text-lg font-semibold">今日の学習計画</h2>
-    <p className="my-3 text-sm text-muted-foreground">期間と学習時間から、毎日の演習・復習を計算します。</p>
-    <Button asChild><Link href="/study-plan">学習計画を作成する</Link></Button>
+    <Button asChild size="lg" className="mt-4"><Link href="/study-plan">学習計画を作成する</Link></Button>
   </section>;
   const day = plan.daily.find((item) => item.date === today);
   const stats = computeCompletionStats(plan, progress);
@@ -46,9 +45,7 @@ export function DashboardStudyPlan() {
       {day.tasks.length > 0 && day.tasks.every((task) => progress[task.key]?.done) ? <p role="status" className="text-sm font-semibold text-emerald-700 dark:text-emerald-300">今日のタスクは完了です。</p> : null}
     </> : <p className="text-sm text-muted-foreground">今日はこの計画の期間外です。全日程を確認するか、新しい計画を作成できます。</p>}
     <div className="flex flex-wrap gap-3 text-sm">
-      <Link className="inline-flex min-h-11 items-center text-primary underline" href={`/study-plan/result/${plan.id}`}>この計画の全日程を見る</Link>
-      <Link className="inline-flex min-h-11 items-center text-primary underline" href="/study-plan">学習計画を作成・見直す</Link>
+      <details><summary className="min-h-11 cursor-pointer py-3">全日程</summary><Link className="inline-flex min-h-11 items-center text-primary underline" href={`/study-plan/result/${plan.id}`}>この計画の全日程を見る</Link></details>
     </div>
-    <p className="text-xs text-muted-foreground">タスクの完了チェックは全日程の表示と共通です。</p>
   </section>;
 }

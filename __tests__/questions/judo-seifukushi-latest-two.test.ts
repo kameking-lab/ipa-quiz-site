@@ -14,7 +14,8 @@ import { EXAM_CONFIGS, ALL_EXAM_CODES } from "@/lib/exam-config";
 import type { ChoiceKey } from "@/lib/questions/types";
 
 const choiceKeys: ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
-const questions = JUDO_SEIFUKUSHI_QUESTIONS;
+const reviewed = (q: typeof JUDO_SEIFUKUSHI_QUESTIONS[number]) => q.year === 2024 || q.year === 2025;
+const questions = JUDO_SEIFUKUSHI_QUESTIONS.filter(reviewed);
 const byId = new Map(questions.map(q => [q.id, q]));
 
 describe("柔道整復師 第34・33回の全原問", () => {
@@ -147,6 +148,7 @@ describe("柔道整復師 第34・33回の全原問", () => {
   it("登録と遅延ローダが500件を提供する", async () => {
     expect(getRegisteredExamCodes()).toContain("judo-seifukushi");
     const lazy = await getQuestionsForExam("judo-seifukushi");
-    expect(lazy.map(q => q.id)).toEqual(questions.map(q => q.id));
+    expect(lazy.filter(reviewed).map(q => q.id)).toEqual(questions.map(q => q.id));
+    expect(new Set(lazy.map(q => q.id)).size).toBe(lazy.length);
   });
 });

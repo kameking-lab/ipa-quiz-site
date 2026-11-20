@@ -1,20 +1,21 @@
 import { canonicalPresenceExam, type StudyPresenceSnapshot } from "@/lib/study-presence";
 import catalog from "./study-room-mascots.generated.json";
 import variety from "./study-room-variety.json";
+import type { HomeDomainId } from "./home-directory";
 
 /** Maximum illustrations, not a room capacity. */
-export const STUDY_ROOM_VISIBLE_LIMIT = 12;
+export const STUDY_ROOM_VISIBLE_LIMIT = 120;
 export function roomStage(count: number) {
-  return count >= 49 ? 4 : count >= 25 ? 3 : count >= 13 ? 2 : count >= 6 ? 1 : 0;
+  return count >= 49 ? 3 + Math.ceil(count / 120) : count >= 25 ? 3 : count >= 13 ? 2 : count >= 6 ? 1 : 0;
 }
-export function measuredRoom(snapshot: StudyPresenceSnapshot) {
+export function measuredRoom(snapshot: StudyPresenceSnapshot, visibleLimit = STUDY_ROOM_VISIBLE_LIMIT) {
   const seats: { exam: string; index: number }[] = [];
   for (const row of snapshot.exams) {
-    const remaining = Math.min(row.count, STUDY_ROOM_VISIBLE_LIMIT - seats.length);
-    for (let i = 0; i < remaining; i++) seats.push({ exam: row.exam, index: seats.length });
-    if (seats.length === STUDY_ROOM_VISIBLE_LIMIT) break;
+    const remaining = Math.min(row.count, visibleLimit - seats.length);
+    for (let i = 0; i < remaining; i++) seats.push({ exam: row.exam, index: i });
+    if (seats.length === visibleLimit) break;
   }
-  return { seats, hidden: snapshot.count - seats.length, stage: roomStage(snapshot.count) };
+  return { seats, hidden: Math.max(0, snapshot.count - seats.length), stage: roomStage(snapshot.count) };
 }
 
 export const MASCOT_VISIT_KEY = "study-room-mascot-visit:v1";
@@ -49,9 +50,10 @@ const awayCatalog = catalog as typeof catalog & {
   vacant?: string;
 };
 /** Mean over 12 slots: 80% study, 15% desk antics, 5% away. Never more than one away. */
-export function roomMascots(seed: number): SeatMascot[] {
+export function roomMascots(seed: number, count = 12): SeatMascot[] {
   const random = randomFor(seed);
-  const slots = Array.from({ length: STUDY_ROOM_VISIBLE_LIMIT }, (_, i) => i);
+  // Preserve the visit's first twelve poses. Extra seats reuse their art, with at most one away dog.
+  const slots = Array.from({ length: 12 }, (_, i) => i);
   for (let i = slots.length - 1; i > 0; i--) {
     const j = Math.floor(random() * (i + 1));
     [slots[i], slots[j]] = [slots[j], slots[i]];
@@ -61,13 +63,18 @@ export function roomMascots(seed: number): SeatMascot[] {
   const awaySlot = random() < 0.6 ? slots[breakCount] : -1;
   const hasAwayArt = Boolean(awayCatalog.vacant && (Object.keys(awayCatalog.away?.exams ?? {}).length || Object.keys(awayCatalog.away?.fields ?? {}).length));
   const studying = [0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 11];
-  return slots.map((_, index) => {
+  const base = slots.map((_, index): SeatMascot => {
     const mirrored = random() < 0.5;
     const state = index === awaySlot && hasAwayArt ? "away" : breaks.has(index) ? "break" : "study";
     const pose = state === "break" ? 9 : studying[Math.floor(random() * studying.length)];
     return { src: `/images/home/study-room-mascots/generic-${pose}.webp`, state,
       stateLabel: state === "away" ? "席を立って遊んでいる" : state === "break" ? "あるある：うたた寝" : "勉強中", mirrored,
       ...(state === "away" ? { vacantSrc: awayCatalog.vacant } : {}) };
+  });
+  return Array.from({ length: Math.min(STUDY_ROOM_VISIBLE_LIMIT, Math.max(0, count)) }, (_, index) => {
+    const slot = base[index % base.length];
+    return index >= base.length && slot.state === "away"
+      ? { ...slot, state: "study", stateLabel: "勉強中", vacantSrc: undefined } : slot;
   });
 }
 
@@ -111,6 +118,21 @@ export function roomCharacter(exam: string): string {
   const field = awayCatalog.away?.examFields[code];
   return field ? `field-${field}` : code;
 }
+
+// Newly added exams can already be selected in a plan before the room has custom art.
+const runningField: Record<HomeDomainId, string> = {
+  it: "it-basics", safety: "safety", electrical: "electrical", construction: "civil",
+  money: "finance", "real-estate": "real-estate", legal: "legal", welfare: "welfare", automotive: "mechanical",
+};
+
+export function qualificationRunArt(exam: string, domain?: HomeDomainId): string {
+  const code = canonicalPresenceExam(exam) ?? exam;
+  const wardrobe = awayCatalog.away;
+  const field = wardrobe && Object.hasOwn(wardrobe.examFields, code) ? wardrobe.examFields[code] : domain && runningField[domain];
+  const outfit = wardrobe && Object.hasOwn(wardrobe.exams, code) ? code : field ? `field-${field}` : "generic";
+  return `/images/home/pace-run/${outfit}.webp`;
+}
+
 export function idleArt(exam: string, idle: IdleVariant): string | null {
   return characterIdleArt(roomCharacter(exam), idle);
 }

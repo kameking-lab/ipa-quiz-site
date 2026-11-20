@@ -24,6 +24,7 @@ export const NW_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "Automatic MDI/MDI-Xは、ネットワーク機器のイーサネットポートが、接続されたケーブルがストレートかクロスかを自動的に判別し、送受信のピン配置を調整する機能です。これにより、ユーザーはケーブルの種類を意識することなく、両方のタイプのケーブルを使用して機器を接続できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const NW_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "DNSのMXレコード（Mail eXchanger record）は、特定のドメイン宛ての電子メールを受け付けるメールサーバのホスト名と優先順位を指定するために使用されます。メール送信時に、送信側のMTAはMXレコードを参照して、メールを配送すべきメールサーバを特定します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const NW_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "IEEE 802.11a/g/n/acといった近年の無線LAN規格では、直交周波数分割多重（OFDM: Orthogonal Frequency Division Multiplexing）という多重化方式が採用されています。OFDMは、複数の狭い周波数帯域（サブキャリア）にデータを分散して送信することで、高速かつ電波干渉に強い通信を実現します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -95,7 +98,14 @@ export const NW_QUESTIONS_2021_SPRING_AM2: Question[] = [
       "エ": "11"
     },
     "answer": "ウ",
-    "explanation": "この問題は、ネットワークにおける論理回線の最大同時使用数を問うものです。論理回線の最大同時使用数は、各地点間の論理回線の総和ではなく、ネットワーク全体でボトルネックとなる経路における論理回線の総和によって決まります。これは、ネットワーク設計における「帯域幅」の概念、すなわち通信路が一度に伝送できるデータ量の上限とも関連します。\n\nまず、正解である「ウ: 10」がなぜ正しいのかを説明します。図に示されている経路のうち、複数の地点を経由する経路の論理回線の多重度を合計していくと、ある特定の経路、あるいはその一部で最大10の論理回線が同時に使用可能であることがわかります。これは、ネットワーク設計において、どこかの経路が他の経路よりも先に飽和（traffic congestion：通信の渋滞）しないように、全体の設計が考慮されていることを意味します。\n\n次に、他の選択肢が誤りである理由を分析します。\nアの「8」は、特定の経路の論理回線多重度の合計よりも小さい値であり、より多くの論理回線を使用できる可能性を考慮していないため不適切です。\nイの「9」は、一部の経路の論理回線多重度の合計値に近いものの、ネットワーク全体で許容される最大値としては不足している可能性があります。\nエの「11」は、図に示されたどの経路においても、同時に使用できる論理回線の総和が11に達するような設計になっていないため不適切です。ネットワーク設計では、各リンクの多重度を考慮し、その合計が超えないように設計されます。",
+    "explanation": "X・Aとその他の地点を分けると、境界のX→B、X→C、A→B、A→Dで合計10本までです。実際にXからAへ3本、Bへ4本、Cへ3本を送り、AからBへ2本とDへ1本、BからD・E・Cへ順に2・3・1本、CからFへ4本を通せます。FからEへ1本、Gへ3本、EからGへ1本を回すと、D・E・GからYへ合計10本を通せます。",
+    "choiceExplanations": {
+      "ア": "X・A側からB・C・D側へ抜ける4本の容量を合計すると10です。例えばD→Yを3本、E→Yを3本、G→Yを4本使えます。",
+      "イ": "D→YとE→Yの各3本に加え、G→YはFからの3本とEからの1本を通せます。Gを経由する分を3本で止めると不足します。",
+      "ウ": "XとAを一つの側とすると外へ出る回線は合計4＋3＋2＋1＝10です。D→Yに3本、E→Yに3本、G→Yに4本通せるので10が上限です。",
+      "エ": "Xから直接出る回線容量だけなら4＋4＋3＝11です。ただしAから先に進めるのはA→Bの2本とA→Dの1本までです。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +130,7 @@ export const NW_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "CSMA (Carrier Sense Multiple Access) 方式は、キャリア信号を検出する（Carrier Sense）ことにより、伝送路が使用中か否かを確認してからデータ送信を開始するという共通の原理に基づいています。これにより、複数の端末が共有媒体上でデータの衝突を回避または検出しながらアクセスを調整します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +155,7 @@ export const NW_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "アドミッション制御は、ネットワークのQoSを実現するためのトラフィック制御方式の一つであり、通信を開始する前にネットワークに対して帯域などのリソースの利用可否を要求し、その確保状況に基づいて通信の開始を制御します。これにより、ネットワーク全体の品質を維持し、過負荷を防ぐことができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -167,7 +179,14 @@ export const NW_QUESTIONS_2021_SPRING_AM2: Question[] = [
       "エ": "1,480"
     },
     "answer": "ウ",
-    "explanation": "TCPパケットがフラグメント化されずに送信できる最大長を求めるには、ネットワークの最大伝送単位（MTU）からTCPヘッダーとIPヘッダーの長さを差し引く必要があります。MTUは1,500オクテットです。TCPヘッダーは通常20オクテット、IPヘッダーも通常20オクテットです。したがって、TCPペイロード（データ）の最大長は、1,500（MTU） - 20（TCPヘッダー） - 20（IPヘッダー） = 1,460オクテットとなります。\n\nアはTCPヘッダーのみを考慮しており、IPヘッダーの分が不足しています。イはIPヘッダーの長さを誤って解釈しているか、TCPオプションフィールドの最大長を考慮した誤った計算に基づいています。エはTCPヘッダーまたはIPヘッダーのどちらか一方の長さを考慮していません。",
+    "explanation": "MTUの1,500オクテットはIPパケットの上限です。図のMACヘッダー14オクテットとFCSの4オクテットはその外側です。IPとTCPのヘッダーがそれぞれ20オクテットなので、データの最大長は1,500－20－20＝1,460オクテットです。",
+    "choiceExplanations": {
+      "ア": "1,446はIPとTCPのヘッダーだけでなく、MACヘッダーの14オクテットも引いた値です。MACヘッダーはIPパケットの外側に付きます。",
+      "イ": "1,456はIPとTCPの各ヘッダーのほか、末尾のFCSの4オクテットも引いた値です。FCSもMTUの対象外です。",
+      "ウ": "MTUの1,500オクテットに収まるのはIPヘッダー、TCPヘッダー、データです。1,500－20－20＝1,460です。",
+      "エ": "1,480はMTUからヘッダーを一つ分だけ引いた値です。IPヘッダーに加え、TCPヘッダーの20オクテットも差し引きます。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +211,7 @@ export const NW_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "BGP-4 (Border Gateway Protocol version 4) は、インターネット上の異なる自律システム（AS: Autonomous System）間で経路情報を交換し、ルーティングを確立するためのプロトコルです。これは外部ゲートウェイプロトコル（EGP）に分類され、ISP間の経路制御に広く利用されています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +236,7 @@ export const NW_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "DNSでは、1つのホスト名に対して複数のIPアドレスを対応させることでロードバランシングを実現できます。また、複数の異なるホスト名が同一のIPアドレスを指し示すことも可能であり、例えばWebサーバとFTPサーバが同じIPアドレスを共有するケースなどがあります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -239,7 +260,14 @@ export const NW_QUESTIONS_2021_SPRING_AM2: Question[] = [
       "エ": "172.16.1.192\n255.255.255.192"
     },
     "answer": "ウ",
-    "explanation": "ウが正解となるのは、可変長サブネットマスク（VLSM）を利用して、図示されている各セグメントのホスト数要件を満たし、かつIPアドレス空間の無駄を最小限に抑える必要があるからです。サブネットマスク255.255.255.192は、1つのネットワークを4つのサブネットに分割し、各サブネットで最大62台のホストを収容できます。セグメントAに割り当てるネットワークアドレス172.16.1.128は、このサブネットマスクで生成される有効なサブネットアドレスの一つです。\n\nアはサブネットマスク255.255.255.128では、1つのネットワークを2つのサブネットに分割し、各サブネットで最大30台のホストを収容できますが、セグメントAのホスト数要件を満たせないため不適切です。\nイはネットワークアドレス172.16.1.128とサブネットマスク255.255.255.128の組み合わせですが、このサブネットマスクではホスト数が不足するため、セグメントAの要求を満たせません。\nエはネットワークアドレス172.16.1.192とサブネットマスク255.255.255.192の組み合わせですが、172.16.1.128から始まるサブネットが他に存在することを考慮すると、IPアドレス空間の利用効率が悪くなる可能性があるため、より適切な選択肢があります。",
+    "explanation": "図の172.16.1.xの末尾に着目します。Bは／27で32〜63、Cは／30で224〜227、Dは／26で64〜127です。Aの候補のうち他の範囲と重複しないのは、172.16.1.128を先頭とする／26の128〜191だけです。これを割り当てれば、各セグメントを異なるサブネットとして経路を設定できます。",
+    "choiceExplanations": {
+      "ア": "マスクが／25なので末尾は0〜127です。セグメントBの32〜63とDの64〜127を両方含むため、重複します。",
+      "イ": "マスクが／25なので末尾は128〜255です。ルータ間を接続するセグメントCの224〜227がこの範囲に含まれます。",
+      "ウ": "マスクが／26なので末尾は128〜191です。Bの32〜63、Dの64〜127、Cの224〜227のいずれとも重複しません。",
+      "エ": "マスクが／26なので末尾は192〜255です。その中にセグメントCの224〜227が含まれ、Cと重複します。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +292,7 @@ export const NW_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "MPLS (Multi-Protocol Label Switching) は、IPパケットのヘッダ解析に代わり、「ラベル」と呼ばれる短い識別子をパケットに付加して、そのラベルに基づいてパケットを転送する技術です。これにより、IPアドレスに依存しない高速なルーティングと、様々なネットワーク層プロトコルへの対応が可能になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +317,7 @@ export const NW_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "MQTT (Message Queuing Telemetry Transport) は、IoTデバイス間の軽量なメッセージングに特化したプロトコルであり、Publish/Subscribe (パブリッシュ/サブスクライブ) 型のメッセージングモデルを採用しています。このモデルでは、メッセージの送信者と受信者が直接通信せず、ブローカーを介して「トピック」を通じて情報のやり取りを行います。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +342,7 @@ export const NW_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "TCP（Transmission Control Protocol）とUDP（User Datagram Protocol）は共にトランスポート層のプロトコルであり、ネットワーク上でアプリケーション間の通信を識別するためにポート番号を使用します。そのため、送信元ポート番号はTCPヘッダとUDPヘッダの両方に共通して含まれるフィールドです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +367,7 @@ export const NW_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ネットワークアドレス192.168.10.192/28において、/28はネットワーク部が28ビット、ホスト部が4ビットであることを意味します。ホスト部4ビットで表現できるアドレス数は16個（2^4）なので、192.168.10.192から始まるサブネットは192.168.10.192～192.168.10.207の範囲となります。この範囲の最終アドレスである192.168.10.207がブロードキャストアドレスです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +392,7 @@ export const NW_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "IEEE 802.11nおよびIEEE 802.11ac規格は、無線LANの高速化と広帯域化を実現するために策定されました。IEEE 802.11nは、2.4 GHz帯と5 GHz帯の両方に対応しており、より広範な環境での利用を可能にしました。一方、IEEE 802.11acは、5 GHz帯のみを使用することで、さらに高速な通信を実現しています。したがって、日本国内において、IEEE 802.11nが2.4 GHz帯と5 GHz帯の両方、IEEE 802.11acが5 GHz帯を使用するという組合せが適切です。\n\n選択肢アは、IEEE 802.11acが5 GHz帯のみを使用する点が正しくないため不適切です。選択肢イは、IEEE 802.11acが2.4 GHz帯を使用するという点が誤りです。選択肢エは、IEEE 802.11nが5 GHz帯のみに対応しているかのような記述になっており、2.4 GHz帯も使用できる点を見落としています。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +417,7 @@ export const NW_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ポリモーフィック型マルウェアは、感染するたびに自身のコード構造や暗号化方式を変化させることで、アンチウイルスソフトウェアのパターンマッチングによる検知を回避しようとします。これにより、同じマルウェアであっても異なるシグネチャを持つかのように見せかけ、検出を困難にします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +442,7 @@ export const NW_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "リフレクタ攻撃は、攻撃者が送信元IPアドレスを偽装し、特定のサービスにリクエストを送ることで、大量の応答パケットを標的のIPアドレスに送りつけるDDoS攻撃の一種です。DNS、NTP、Memcachedなどのサービスは、小さなリクエストに対して大きな応答を返す特性があるため、この攻撃に悪用されやすい傾向があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +467,7 @@ export const NW_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "前方秘匿性（Forward Secrecy）とは、セッション鍵の導出に用いられた長期秘密鍵が将来的に漏洩したとしても、過去の通信内容が解読されないというセキュリティ上の特性です。これは、各セッションで一時的な鍵を生成・使用し、セッション終了後に破棄することで実現されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +492,7 @@ export const NW_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "IEEE 802.1Xは、有線および無線LANにおいて、ネットワークポートへのアクセスを許可する前にユーザーまたはデバイスの認証を行うための標準フレームワークを定めています。この認証は、EAP（Extensible Authentication Protocol）を使用して様々な認証方式をサポートします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +517,7 @@ export const NW_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "OP25B (Outbound Port 25 Blocking) は、ISPがスパムメール対策として実施する措置の一つで、ISP管理下にある動的IPアドレスを割り当てられたネットワーク（例えば家庭や企業のユーザーPC）から、ISP管理外の外部ネットワークへのTCPポート25（SMTP）の直接通信を遮断します。これにより、PCがマルウェアに感染して勝手にスパムメールを送信することを防ぎます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +542,7 @@ export const NW_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "OSコマンドインジェクションは、Webアプリケーションの入力値が、Perlの`system`関数やPHPの`exec`関数などのOSコマンド実行機能に不適切に渡されることを利用し、攻撃者が意図しないOSコマンドをアプリケーションに実行させる脆弱性を悪用する攻撃手法です。これにより、不正なシェルスクリプトの実行などが可能になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -527,7 +566,14 @@ export const NW_QUESTIONS_2021_SPRING_AM2: Question[] = [
       "エ": "28.0"
     },
     "answer": "イ",
-    "explanation": "イが正解となるのは、プログラムの実行時間を計算する以下の定義式に基づきます。\n\n実行時間 = 命令数 × CPI × クロックサイクル時間\n\nここで、クロックサイクル時間はクロック周波数の逆数であり、1GHz は 10^9 Hz なので、クロックサイクル時間は 1 / (10^9 Hz) = 1 ns (ナノ秒) となります。\n\n問題文から、3種類の演算命令の合計命令数は 1,000,000 命令です。CPI (Cycles Per Instruction) は、1命令あたりに必要なクロックサイクル数を示す指標です。\n\n表から各命令のCPIと構成比率を読み取ると、以下のように計算できます。\n\n平均CPI = (命令1のCPI × 命令1の構成比率) + (命令2のCPI × 命令2の構成比率) + (命令3のCPI × 命令3の構成比率)\n表を参照し、例えば命令1のCPIが1.5、構成比率が50%、命令2のCPIが2.0、構成比率が30%、命令3のCPIが3.0、構成比率が20%だったと仮定すると、\n平均CPI = (1.5 × 0.5) + (2.0 × 0.3) + (3.0 × 0.2) = 0.75 + 0.6 + 0.6 = 1.95 となります。\n（注：実際の問題の表の値によって平均CPIは変動しますが、この計算方法が重要です。）\n\nこの平均CPIを用いて実行時間を計算します。\n実行時間 = 1,000,000 命令 × 平均CPI × 1 ns\n例えば平均CPIが1.95だった場合、実行時間は 1,000,000 × 1.95 × 1 ns = 1,950,000 ns = 1.95 ms となります。\n\n選択肢イの 2.8 ms に最も近い結果を得るには、表のCPIと構成比率から計算される平均CPIが約2.8となる必要があります。\n\nアの0.4 msは、命令数やCPIが著しく低い場合、あるいはクロック周波数が非常に高い場合にのみ得られる値であり、提示された条件からは考えにくいです。\nウの4.0 msは、平均CPIが4.0である場合に相当し、問題の表の値から計算される平均CPIよりも高すぎます。\nエの28.0 msは、命令数が大幅に多かったり、平均CPIが極端に高かったり、クロック周波数が低かったりした場合に考えられる値であり、問題の条件とは乖離しています。",
+    "explanation": "命令1個当たりの平均クロック周期数は3×0.2＋5×0.2＋2×0.6＝2.8です。100万命令では280万クロックになり、1GHzで1ミリ秒に実行できるのは100万クロックなので、2.8ミリ秒かかります。",
+    "choiceExplanations": {
+      "ア": "0.4ミリ秒は浮動小数点乗算以外の命令を無視しても小さすぎます。乗算だけで20万命令×5＝100万クロック、1ミリ秒かかります。",
+      "イ": "平均CPIは3×0.2＋5×0.2＋2×0.6＝2.8です。100万命令で280万クロック必要なので、1GHzでは2.8ミリ秒です。",
+      "ウ": "命令の種類ごとにCPIが異なり、構成比率は最もCPIが小さい整数演算が60％です。比率を反映した平均は4.0でなく2.8です。",
+      "エ": "1GHzは1ミリ秒当たり100万クロックです。必要な280万クロックを100万で割るので、28.0ミリ秒にはなりません。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +598,7 @@ export const NW_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "M/M/1待ち行列モデルにおいて、到着率 λ = 6ファイル/時間 = 1/600 ファイル/秒、処理率 μ = 50バイト/秒です。1ファイル7,500バイトなので、1ファイルあたりの処理時間 = 7,500/50 = 150秒、したがってファイルの処理率 μ_files = 1/150 ファイル/秒です。システム内の平均滞留時間WsはWs = 1 / (μ_files - λ) = 1 / (1/150 - 1/600) = 1 / (3/600) = 200秒となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +623,7 @@ export const NW_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "FTA (Fault Tree Analysis) は、システムで発生しうる望ましくない特定の事象（トップ事象）を設定し、その事象がどのような基本事象の組み合わせによって発生するかを、ANDゲートやORゲートなどの論理記号を用いて樹形図（フォールトツリー）として体系的に分析する手法です。これにより、障害の根本原因やその発生確率を評価できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +648,7 @@ export const NW_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "リバースエンジニアリングは、既存のソフトウェア製品の実行ファイルやソースコードなどを解析し、その内部構造、設計、動作原理、および仕様を解明する技術です。ソースプログラムからプログラム仕様書を作成する行為は、まさに既存ソフトウェアの機能や構造を逆分析して文書化することに該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_nw_am2_qs.pdf",
     "license": "IPA-public"

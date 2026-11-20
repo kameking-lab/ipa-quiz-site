@@ -2,8 +2,10 @@ import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
 import { createElement } from "react";
 import { HomeDirectory } from "@/components/home/landing/HomeDirectory";
+import { QualificationDirectory } from "@/components/home/pace/QualificationDirectory";
 import { EXAM_QUESTION_COUNTS } from "@/lib/constants/exam-question-counts";
 import { getHomeDirectory } from "@/lib/home/home-directory";
+import { groupHomeDirectory } from "@/lib/home/grouped-directory";
 import { QUALIFICATION_HUBS, qualificationHubPath } from "@/lib/exam-qualification-hubs";
 import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
 import { ALL_EXAM_CODES } from "@/lib/exam-config";
@@ -11,7 +13,7 @@ import { EXAM_CATALOG, EXAM_LIBRARY_PATH } from "@/lib/exam-library-catalog";
 import { getExamPaperStats } from "@/lib/exam-library-papers";
 import { qualificationHubForEntry } from "@/lib/exam-qualification-hubs";
 import { frequentExamKeys, HOME_EXAM_CALENDAR, upcomingExamPicks } from "@/lib/home/featured-exams";
-import { getQuestionsByExamStrict } from "@/lib/seo/exam-meta";
+import { getQuestionsByExamStrict, groupByYearSeason } from "@/lib/seo/exam-meta";
 
 describe("home directory", () => {
   const domains = getHomeDirectory();
@@ -88,7 +90,7 @@ describe("home directory", () => {
   it("offers the dentist corpus with its actual published count", () => {
     const dentist = all.find((item) => item.key === "shika-ishi");
     expect(dentist?.href).toBe("/shika-ishi");
-    expect(dentist?.questionCount).toBe(726);
+    expect(dentist?.questionCount).toBe(1755);
     expect(dentist?.periodLabel).toBe("5期分");
   });
 
@@ -100,12 +102,11 @@ describe("home directory", () => {
     }
   });
 
-  it("links the three Riyoshi papers with the published question count", () => {
+  it("links the Riyoshi papers with the published question and paper counts", () => {
     const item = all.find((entry) => entry.key === "riyoshi");
     expect(item?.href).toBe("/riyoshi");
-    expect(item?.questionCount).toBe(165);
-    expect(item?.periodLabel).toBe("3期分");
-    expect(item?.sub).toContain("全165原問・全肢解説");
+    expect(item?.questionCount).toBe(195);
+    expect(item?.periodLabel).toBe(`${groupByYearSeason(getQuestionsByExamStrict("riyoshi")).length}期分`);
   });
 
   it("never advertises an empty qualification and sums domain totals from cards", () => {
@@ -140,23 +141,26 @@ describe("home directory", () => {
     }
   });
 
-  it("shows the current partial OT and orthoptist counts in their cards", () => {
-    for (const [code, count] of [["sagyo-ryohoshi", 324], ["shino-kunrenshi", 220]] as const) {
+  it("shows the current OT and orthoptist counts in their cards", () => {
+    for (const [code, count] of [["sagyo-ryohoshi", 989], ["shino-kunrenshi", 744]] as const) {
       const item = all.find((entry) => entry.key === code);
       expect(item?.questionCount).toBe(count);
-      expect(item?.sub).toContain(`${count}原問`);
-      expect(item?.sub).toContain("部分収録");
+      expect(item?.sub).toContain("午前・午後の公式過去問");
     }
   });
 
   it("keeps every qualification in the initial HTML inside collapsed category disclosures", () => {
+    const grouped = groupHomeDirectory(domains);
+    const visible = grouped.flatMap(d => [...d.featured, ...d.compact]);
     const html = renderToStaticMarkup(createElement(HomeDirectory, { domains }));
     const doc = new DOMParser().parseFromString(html, "text/html");
-    expect(doc.querySelectorAll("details")).toHaveLength(domains.length);
+    expect(doc.querySelectorAll("details")).toHaveLength(grouped.length);
     expect(doc.querySelectorAll("details[open]")).toHaveLength(0);
     const hrefs = [...html.matchAll(/href="([^"]+)"/g)].map((match) => match[1]?.replaceAll("&amp;", "&"));
-    for (const item of all) expect(hrefs.filter((href) => href === item.href)).toHaveLength(1);
-    expect(hrefs.length).toBe(all.length + domains.length);
+    for (const item of visible) expect(hrefs.filter((href) => href === item.href)).toHaveLength(1);
+    expect(hrefs.length).toBe(visible.length + grouped.length);
+    expect(hrefs).toContain("/qualifications/chori");
+    expect(hrefs).not.toContain("/chori-hokkaido");
   });
 
   it("classifies registered qualifications by the catalog, including older cards", () => {
@@ -165,16 +169,34 @@ describe("home directory", () => {
     for (const key of ["gyosei", "sharoushi", "benrishi", "chizai2", "tsukanshi"]) expect(findDomain(key)).toBe("legal");
     expect(findDomain("fp3")).toBe("money");
     // The same catalog-domain mapping used for new qualifications covers every registered live exam.
-    const expected = { "information-technology": "it", finance: "money", accounting: "money", "real-estate": "real-estate", legal: "legal", construction: "construction", electrical: "electrical", safety: "safety", welfare: "welfare", pharmacy: "welfare", "personal-services": "welfare", automotive: "automotive" };
+    const expected = { "information-technology": "it", business: "money", finance: "money", accounting: "money", "real-estate": "real-estate", legal: "legal", construction: "construction", electrical: "electrical", safety: "safety", welfare: "welfare", pharmacy: "welfare", "personal-services": "welfare", automotive: "automotive" };
     for (const entry of QUALIFICATION_CATALOG.filter(entry => entry.status === "live" && entry.examCode && !["eisei1", "eisei2"].includes(entry.examCode))) {
       expect(findDomain(entry.examCode!), entry.examCode).toBe(expected[entry.domain]);
     }
   });
+
+  it("renders links for all qualifications and their sections in the shared directory HTML", () => {
+    const grouped = groupHomeDirectory(domains);
+    const html = renderToStaticMarkup(createElement(QualificationDirectory, { domains: grouped }));
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    expect(doc.querySelectorAll('details[id^="domain-"]')).toHaveLength(grouped.length);
+    expect(doc.querySelectorAll("details[open]")).toHaveLength(0);
+    const links = new Map([...doc.querySelectorAll("a[href]")].map(link => [link.getAttribute("href"), link]));
+    for (const { href } of all) expect(links.has(href), href).toBe(true);
+    for (const { href, children } of grouped.flatMap(domain => [...domain.featured, ...domain.compact])) {
+      if (!children) continue;
+      const parent = doc.querySelectorAll(`a[href="${href}"]`);
+      expect(parent, href).toHaveLength(1);
+      for (const child of children) {
+        expect(links.get(child.href)?.closest("details")?.parentElement, child.href).toBe(parent[0].parentElement);
+      }
+    }
+  });
 });
 
-it("土地家屋調査士の最新2回66原問への入口を表示する", () => {
+it("土地家屋調査士の公開107原問への入口を表示する", () => {
   const item = getHomeDirectory().flatMap(d => [...d.featured, ...d.compact]).find(entry => entry.key === "chosashi");
   expect(item?.href).toBe("/chosashi");
-  expect(item?.questionCount).toBe(66);
-  expect(item?.periodLabel).toBe("2期分");
+  expect(item?.questionCount).toBe(107);
+  expect(item?.periodLabel).toBe("4期分");
 });

@@ -1,0 +1,3828 @@
+[
+  {
+    "id": "amateur1-2026-november-kogaku-q1",
+    "exam": "amateur1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 1,
+    "officialQuestionLabel": "A-1",
+    "category": "無線工学",
+    "topicTags": [
+      "コンデンサの直列接続"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 無線工学 A-1。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次の記述は、図に示すように二つの平行平板コンデンサC₁及びC₂を直列に接続し、両端に直流電圧V＝14〔V〕を加えたときの電圧等について述べたものである。□内に入れるべき字句の正しい組合せを下の番号から選べ。ただし、C₁及びC₂の電極の構造(面積、間隔、材質)は等しく、電極間の誘電体の比誘電率εᵣは、C₁では1、C₂では6とする。\n(1) C₂の静電容量はC₁の静電容量の[A]倍である。\n(2) C₁とC₂に蓄えられた電荷の量は[B]。\n(3) C₁の電圧V₁は[C]〔V〕、C₂の電圧V₂は[D]〔V〕である。",
+    "choices": {
+      "ア": "A：1/6／B：等しい／C：2／D：12",
+      "イ": "A：1/6／B：等しくない／C：12／D：2",
+      "ウ": "A：6／B：等しい／C：12／D：2",
+      "エ": "A：6／B：等しくない／C：2／D：12"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "正答は3。同じ電極構造では静電容量は比誘電率に比例するためC₂＝6C₁。直列接続では蓄積電荷Qが等しく、V＝Q/CよりV₁：V₂＝6：1となる。合計14 VからV₁＝12 V、V₂＝2 V。",
+    "choiceExplanations": {
+      "ア": "誤り。Aは「1/6」ではなく「6」、Cは「2」ではなく「12」、Dは「12」ではなく「2」。同じ電極構造では静電容量は比誘電率に比例するためC₂＝6C₁。直列接続では蓄積電荷Qが等しく、V＝Q/CよりV₁：V₂＝6：1となる。合計14 VからV₁＝12 V、V₂＝2 V。",
+      "イ": "誤り。Aは「1/6」ではなく「6」、Bは「等しくない」ではなく「等しい」。同じ電極構造では静電容量は比誘電率に比例するためC₂＝6C₁。直列接続では蓄積電荷Qが等しく、V＝Q/CよりV₁：V₂＝6：1となる。合計14 VからV₁＝12 V、V₂＝2 V。",
+      "ウ": "正しい組合せ。同じ電極構造では静電容量は比誘電率に比例するためC₂＝6C₁。直列接続では蓄積電荷Qが等しく、V＝Q/CよりV₁：V₂＝6：1となる。合計14 VからV₁＝12 V、V₂＝2 V。",
+      "エ": "誤り。Bは「等しくない」ではなく「等しい」、Cは「2」ではなく「12」、Dは「12」ではなく「2」。同じ電極構造では静電容量は比誘電率に比例するためC₂＝6C₁。直列接続では蓄積電荷Qが等しく、V＝Q/CよりV₁：V₂＝6：1となる。合計14 VからV₁＝12 V、V₂＝2 V。"
+    },
+    "isCalculation": true,
+    "imageUrls": [
+      "/questions/amateur1/2026-november-kogaku-q1.png"
+    ],
+    "imageAltTexts": [
+      "C₁・C₂を直列に接続したコンデンサ回路。比誘電率1と6、全電圧V及び各電圧V₁・V₂の向きを示す。"
+    ],
+    "originalContent": {
+      "body": "次の記述は、図に示すように二つの平行平板コンデンサC₁及びC₂を直列に接続し、両端に直流電圧V＝14〔V〕を加えたときの電圧等について述べたものである。□内に入れるべき字句の正しい組合せを下の番号から選べ。ただし、C₁及びC₂の電極の構造(面積、間隔、材質)は等しく、電極間の誘電体の比誘電率εᵣは、C₁では1、C₂では6とする。\n(1) C₂の静電容量はC₁の静電容量の[A]倍である。\n(2) C₁とC₂に蓄えられた電荷の量は[B]。\n(3) C₁の電圧V₁は[C]〔V〕、C₂の電圧V₂は[D]〔V〕である。",
+      "choices": {
+        "ア": "A：1/6／B：等しい／C：2／D：12",
+        "イ": "A：1/6／B：等しくない／C：12／D：2",
+        "ウ": "A：6／B：等しい／C：12／D：2",
+        "エ": "A：6／B：等しくない／C：2／D：12"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-kogaku-q2",
+    "exam": "amateur1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 2,
+    "officialQuestionLabel": "A-2",
+    "category": "無線工学",
+    "topicTags": [
+      "相互誘導"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 無線工学 A-2。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "図に示す回路において、コイルAの自己インダクタンスが64〔mH〕及びコイルBの自己インダクタンスが16〔mH〕であるとき、端子ab間の合成インダクタンスの値として、正しいものを下の番号から選べ。ただし、直列に接続されているコイルA及びコイルBの間の結合係数を0.5とする。",
+    "choices": {
+      "ア": "40〔mH〕",
+      "イ": "48〔mH〕",
+      "ウ": "56〔mH〕",
+      "エ": "64〔mH〕",
+      "オ": "72〔mH〕"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "正答は2。相互インダクタンスM＝k√(L₁L₂)＝0.5√(64×16)＝16 mH。図は両コイルの磁束が打ち消し合う差動接続なので、L＝64＋16－2×16＝48 mH。結合の極性を図から読むことが要点。",
+    "choiceExplanations": {
+      "ア": "誤り。結合を無視した合計80 mHを単に半分にする計算ではない。相互項2Mを差し引く。",
+      "イ": "正しい。差動接続の合成値はL₁＋L₂－2M＝80－32＝48 mHである。",
+      "ウ": "誤り。相互インダクタンスは16 mHであり、合計80 mHから24 mHを引く根拠はない。",
+      "エ": "誤り。64 mHはコイルA単独の値であり、Bと相互誘導の寄与を含んでいない。",
+      "オ": "誤り。結合係数だけを自己インダクタンスに掛けて調整せず、2k√(L₁L₂)を使う。"
+    },
+    "isCalculation": true,
+    "imageUrls": [
+      "/questions/amateur1/2026-november-kogaku-q2.png"
+    ],
+    "imageAltTexts": [
+      "共通磁心に巻いたコイルA・Bの直列差動接続。端子a・bと巻線の向きを示す。"
+    ],
+    "originalContent": {
+      "body": "図に示す回路において、コイルAの自己インダクタンスが64〔mH〕及びコイルBの自己インダクタンスが16〔mH〕であるとき、端子ab間の合成インダクタンスの値として、正しいものを下の番号から選べ。ただし、直列に接続されているコイルA及びコイルBの間の結合係数を0.5とする。",
+      "choices": {
+        "ア": "40〔mH〕",
+        "イ": "48〔mH〕",
+        "ウ": "56〔mH〕",
+        "エ": "64〔mH〕",
+        "オ": "72〔mH〕"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-kogaku-q3",
+    "exam": "amateur1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 3,
+    "officialQuestionLabel": "A-3",
+    "category": "無線工学",
+    "topicTags": [
+      "熱電効果"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 無線工学 A-3。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "ゼーベック効果についての記述として、正しいものを下の番号から選べ。",
+    "choices": {
+      "ア": "電流の流れている導体又は半導体に、電流と直角な方向に磁界を加えると、電流及び磁界に直角な方向に起電力が生じる現象をいう。",
+      "イ": "水晶などの結晶体に、圧力や張力を加えると、結晶体の両面に電荷が現れる現象をいう。",
+      "ウ": "異種の金属を接合して一つの閉回路を作り、両接合点を異なる温度に保つと、起電力が生じて電流が流れる現象をいう。",
+      "エ": "磁性体に外部から磁界を加えるとひずみが生じ、また、磁化された状態でひずみを与えると磁化に変化が起こる現象をいう。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "正答は3。異種金属の二つの接合点に温度差を与えると熱起電力が生じるのがゼーベック効果である。温度差を電気信号へ変換する熱電対の原理として使われる。",
+    "choiceExplanations": {
+      "ア": "誤り。電流・磁界と直交する方向に電圧を生じるのはホール効果である。温度差による熱起電力ではない。",
+      "イ": "誤り。力を加えた結晶に電荷が現れるのは圧電効果であり、熱電対の原理とは区別する。",
+      "ウ": "正しい。異種金属の接合点間の温度差で起電力が生じ、閉回路なら電流が流れる。",
+      "エ": "誤り。磁界によるひずみは磁歪、ひずみによる磁化の変化は逆磁歪に関する記述である。"
+    },
+    "isCalculation": false,
+    "originalContent": {
+      "body": "ゼーベック効果についての記述として、正しいものを下の番号から選べ。",
+      "choices": {
+        "ア": "電流の流れている導体又は半導体に、電流と直角な方向に磁界を加えると、電流及び磁界に直角な方向に起電力が生じる現象をいう。",
+        "イ": "水晶などの結晶体に、圧力や張力を加えると、結晶体の両面に電荷が現れる現象をいう。",
+        "ウ": "異種の金属を接合して一つの閉回路を作り、両接合点を異なる温度に保つと、起電力が生じて電流が流れる現象をいう。",
+        "エ": "磁性体に外部から磁界を加えるとひずみが生じ、また、磁化された状態でひずみを与えると磁化に変化が起こる現象をいう。"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-kogaku-q4",
+    "exam": "amateur1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 4,
+    "officialQuestionLabel": "A-4",
+    "category": "無線工学",
+    "topicTags": [
+      "複素交流回路"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 無線工学 A-4。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "図に示す回路において、抵抗R₁が10〔Ω〕、抵抗R₂が10〔Ω〕及びコンデンサCのリアクタンスが10〔Ω〕であるとき、R₂を流れる電流İの値として、正しいものを下の番号から選べ。",
+    "choices": {
+      "ア": "4＋j5〔A〕",
+      "イ": "4－j2〔A〕",
+      "ウ": "5＋j4〔A〕",
+      "エ": "8＋j4〔A〕",
+      "オ": "8－j4〔A〕"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "正答は5。R₂とCの並列合成は10(－j10)/(10－j10)＝5－j5 Ω。電圧分割からR₂の電流は200(5－j5)/{10(15－j5)}＝8－j4 Aとなる。全電流とR₂を流れる枝電流を区別する。",
+    "choiceExplanations": {
+      "ア": "誤り。この値は求める計算結果と一致しない。R₂とCの並列合成は10(－j10)/(10－j10)＝5－j5 Ω。電圧分割からR₂の電流は200(5－j5)/{10(15－j5)}＝8－j4 Aとなる。全電流とR₂を流れる枝電流を区別する。",
+      "イ": "誤り。この値は求める計算結果と一致しない。R₂とCの並列合成は10(－j10)/(10－j10)＝5－j5 Ω。電圧分割からR₂の電流は200(5－j5)/{10(15－j5)}＝8－j4 Aとなる。全電流とR₂を流れる枝電流を区別する。",
+      "ウ": "誤り。この値は求める計算結果と一致しない。R₂とCの並列合成は10(－j10)/(10－j10)＝5－j5 Ω。電圧分割からR₂の電流は200(5－j5)/{10(15－j5)}＝8－j4 Aとなる。全電流とR₂を流れる枝電流を区別する。",
+      "エ": "誤り。この値は求める計算結果と一致しない。R₂とCの並列合成は10(－j10)/(10－j10)＝5－j5 Ω。電圧分割からR₂の電流は200(5－j5)/{10(15－j5)}＝8－j4 Aとなる。全電流とR₂を流れる枝電流を区別する。",
+      "オ": "正しい組合せ。R₂とCの並列合成は10(－j10)/(10－j10)＝5－j5 Ω。電圧分割からR₂の電流は200(5－j5)/{10(15－j5)}＝8－j4 Aとなる。全電流とR₂を流れる枝電流を区別する。"
+    },
+    "isCalculation": true,
+    "imageUrls": [
+      "/questions/amateur1/2026-november-kogaku-q4.png"
+    ],
+    "imageAltTexts": [
+      "200 V交流電源とR₁の直列部分、その先のC・R₂の並列部分、R₂の電流İの向きを示す。"
+    ],
+    "originalContent": {
+      "body": "図に示す回路において、抵抗R₁が10〔Ω〕、抵抗R₂が10〔Ω〕及びコンデンサCのリアクタンスが10〔Ω〕であるとき、R₂を流れる電流İの値として、正しいものを下の番号から選べ。",
+      "choices": {
+        "ア": "4＋j5〔A〕",
+        "イ": "4－j2〔A〕",
+        "ウ": "5＋j4〔A〕",
+        "エ": "8＋j4〔A〕",
+        "オ": "8－j4〔A〕"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-kogaku-q5",
+    "exam": "amateur1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 5,
+    "officialQuestionLabel": "A-5",
+    "category": "無線工学",
+    "topicTags": [
+      "RLC回路の電力"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 無線工学 A-5。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "図に示すRLC直列回路において、抵抗Rで消費される電力の値として、最も近いものを下の番号から選べ。ただし、抵抗Rの値は20〔Ω〕、コイルLのリアクタンスは40〔Ω〕、コンデンサCのリアクタンスは20〔Ω〕とする。",
+    "choices": {
+      "ア": "125〔W〕",
+      "イ": "177〔W〕",
+      "ウ": "250〔W〕",
+      "エ": "320〔W〕",
+      "オ": "500〔W〕"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "正答は3。合成リアクタンスは40－20＝20 Ω。インピーダンスの大きさは√(20²＋20²)＝20√2 Ωであり、図の100 VからI＝100/(20√2) A。抵抗の電力P＝I²R＝250 W。コイルとコンデンサのリアクタンスは差をとる。",
+    "choiceExplanations": {
+      "ア": "誤り。この値は求める計算結果と一致しない。合成リアクタンスは40－20＝20 Ω。インピーダンスの大きさは√(20²＋20²)＝20√2 Ωであり、図の100 VからI＝100/(20√2) A。抵抗の電力P＝I²R＝250 W。コイルとコンデンサのリアクタンスは差をとる。",
+      "イ": "誤り。この値は求める計算結果と一致しない。合成リアクタンスは40－20＝20 Ω。インピーダンスの大きさは√(20²＋20²)＝20√2 Ωであり、図の100 VからI＝100/(20√2) A。抵抗の電力P＝I²R＝250 W。コイルとコンデンサのリアクタンスは差をとる。",
+      "ウ": "正しい組合せ。合成リアクタンスは40－20＝20 Ω。インピーダンスの大きさは√(20²＋20²)＝20√2 Ωであり、図の100 VからI＝100/(20√2) A。抵抗の電力P＝I²R＝250 W。コイルとコンデンサのリアクタンスは差をとる。",
+      "エ": "誤り。この値は求める計算結果と一致しない。合成リアクタンスは40－20＝20 Ω。インピーダンスの大きさは√(20²＋20²)＝20√2 Ωであり、図の100 VからI＝100/(20√2) A。抵抗の電力P＝I²R＝250 W。コイルとコンデンサのリアクタンスは差をとる。",
+      "オ": "誤り。この値は求める計算結果と一致しない。合成リアクタンスは40－20＝20 Ω。インピーダンスの大きさは√(20²＋20²)＝20√2 Ωであり、図の100 VからI＝100/(20√2) A。抵抗の電力P＝I²R＝250 W。コイルとコンデンサのリアクタンスは差をとる。"
+    },
+    "isCalculation": true,
+    "imageUrls": [
+      "/questions/amateur1/2026-november-kogaku-q5.png"
+    ],
+    "imageAltTexts": [
+      "100 V交流電源にコイルL、コンデンサC、抵抗Rを直列接続した回路。"
+    ],
+    "originalContent": {
+      "body": "図に示すRLC直列回路において、抵抗Rで消費される電力の値として、最も近いものを下の番号から選べ。ただし、抵抗Rの値は20〔Ω〕、コイルLのリアクタンスは40〔Ω〕、コンデンサCのリアクタンスは20〔Ω〕とする。",
+      "choices": {
+        "ア": "125〔W〕",
+        "イ": "177〔W〕",
+        "ウ": "250〔W〕",
+        "エ": "320〔W〕",
+        "オ": "500〔W〕"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-kogaku-q6",
+    "exam": "amateur1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 6,
+    "officialQuestionLabel": "A-6",
+    "category": "無線工学",
+    "topicTags": [
+      "正弦波交流"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 無線工学 A-6。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "図に示す正弦波交流において、電圧の最大値Vₘが63〔V〕のとき、平均値(正の半周期の平均)Vₐ、実効値Vₑ及び繰り返し周波数fの値の組合せとして、最も近いものを下の番号から選べ。",
+    "choices": {
+      "ア": "Vₐ：40〔V〕／Vₑ：45〔V〕／f：150〔Hz〕",
+      "イ": "Vₐ：40〔V〕／Vₑ：45〔V〕／f：200〔Hz〕",
+      "ウ": "Vₐ：40〔V〕／Vₑ：48〔V〕／f：200〔Hz〕",
+      "エ": "Vₐ：45〔V〕／Vₑ：48〔V〕／f：150〔Hz〕",
+      "オ": "Vₐ：45〔V〕／Vₑ：50〔V〕／f：200〔Hz〕"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "正答は2。正の半周期の平均は2Vₘ/π≒40.1 V、実効値はVₘ/√2≒44.5 V。図の15 msには3周期が含まれるため、T＝5 ms、f＝1/T＝200 Hz。全周期平均の0 Vと混同しない。",
+    "choiceExplanations": {
+      "ア": "誤り。fは「150〔Hz〕」ではなく「200〔Hz〕」。正の半周期の平均は2Vₘ/π≒40.1 V、実効値はVₘ/√2≒44.5 V。図の15 msには3周期が含まれるため、T＝5 ms、f＝1/T＝200 Hz。全周期平均の0 Vと混同しない。",
+      "イ": "正しい組合せ。正の半周期の平均は2Vₘ/π≒40.1 V、実効値はVₘ/√2≒44.5 V。図の15 msには3周期が含まれるため、T＝5 ms、f＝1/T＝200 Hz。全周期平均の0 Vと混同しない。",
+      "ウ": "誤り。Vₑは「48〔V〕」ではなく「45〔V〕」。正の半周期の平均は2Vₘ/π≒40.1 V、実効値はVₘ/√2≒44.5 V。図の15 msには3周期が含まれるため、T＝5 ms、f＝1/T＝200 Hz。全周期平均の0 Vと混同しない。",
+      "エ": "誤り。Vₐは「45〔V〕」ではなく「40〔V〕」、Vₑは「48〔V〕」ではなく「45〔V〕」、fは「150〔Hz〕」ではなく「200〔Hz〕」。正の半周期の平均は2Vₘ/π≒40.1 V、実効値はVₘ/√2≒44.5 V。図の15 msには3周期が含まれるため、T＝5 ms、f＝1/T＝200 Hz。全周期平均の0 Vと混同しない。",
+      "オ": "誤り。Vₐは「45〔V〕」ではなく「40〔V〕」、Vₑは「50〔V〕」ではなく「45〔V〕」。正の半周期の平均は2Vₘ/π≒40.1 V、実効値はVₘ/√2≒44.5 V。図の15 msには3周期が含まれるため、T＝5 ms、f＝1/T＝200 Hz。全周期平均の0 Vと混同しない。"
+    },
+    "isCalculation": true,
+    "imageUrls": [
+      "/questions/amateur1/2026-november-kogaku-q6.png"
+    ],
+    "imageAltTexts": [
+      "最大値Vₘの正弦波。15 msの区間内に3周期が描かれている。"
+    ],
+    "originalContent": {
+      "body": "図に示す正弦波交流において、電圧の最大値Vₘが63〔V〕のとき、平均値(正の半周期の平均)Vₐ、実効値Vₑ及び繰り返し周波数fの値の組合せとして、最も近いものを下の番号から選べ。",
+      "choices": {
+        "ア": "Vₐ：40〔V〕／Vₑ：45〔V〕／f：150〔Hz〕",
+        "イ": "Vₐ：40〔V〕／Vₑ：45〔V〕／f：200〔Hz〕",
+        "ウ": "Vₐ：40〔V〕／Vₑ：48〔V〕／f：200〔Hz〕",
+        "エ": "Vₐ：45〔V〕／Vₑ：48〔V〕／f：150〔Hz〕",
+        "オ": "Vₐ：45〔V〕／Vₑ：50〔V〕／f：200〔Hz〕"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-kogaku-q7",
+    "exam": "amateur1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 7,
+    "officialQuestionLabel": "A-7",
+    "category": "無線工学",
+    "topicTags": [
+      "トランジスタの周波数特性"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 無線工学 A-7。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次の記述は、トランジスタの周波数特性について述べたものである。□内に入れるべき字句の正しい組合せを下の番号から選べ。\nトランジスタの電流増幅率の大きさが、その周波数特性の平坦部における値の[A]になるときの周波数を[B]周波数という。この周波数が[C]ほど高周波特性の良いトランジスタである。",
+    "choices": {
+      "ア": "A：1/√2／B：トランジション／C：低い",
+      "イ": "A：1/2／B：トランジション／C：高い",
+      "ウ": "A：1/√2／B：トランジション／C：高い",
+      "エ": "A：1/2／B：遮断／C：低い",
+      "オ": "A：1/√2／B：遮断／C：高い"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "正答は5。平坦部の電流増幅率の1/√2となる点は、利得が約3 dB下がる遮断周波数である。遮断周波数が高ければ、より高い周波数まで増幅率を維持できる。トランジション周波数は電流増幅率が1となる点なので異なる。",
+    "choiceExplanations": {
+      "ア": "誤り。Bは「トランジション」ではなく「遮断」、Cは「低い」ではなく「高い」。平坦部の電流増幅率の1/√2となる点は、利得が約3 dB下がる遮断周波数である。遮断周波数が高ければ、より高い周波数まで増幅率を維持できる。トランジション周波数は電流増幅率が1となる点なので異なる。",
+      "イ": "誤り。Aは「1/2」ではなく「1/√2」、Bは「トランジション」ではなく「遮断」。平坦部の電流増幅率の1/√2となる点は、利得が約3 dB下がる遮断周波数である。遮断周波数が高ければ、より高い周波数まで増幅率を維持できる。トランジション周波数は電流増幅率が1となる点なので異なる。",
+      "ウ": "誤り。Bは「トランジション」ではなく「遮断」。平坦部の電流増幅率の1/√2となる点は、利得が約3 dB下がる遮断周波数である。遮断周波数が高ければ、より高い周波数まで増幅率を維持できる。トランジション周波数は電流増幅率が1となる点なので異なる。",
+      "エ": "誤り。Aは「1/2」ではなく「1/√2」、Cは「低い」ではなく「高い」。平坦部の電流増幅率の1/√2となる点は、利得が約3 dB下がる遮断周波数である。遮断周波数が高ければ、より高い周波数まで増幅率を維持できる。トランジション周波数は電流増幅率が1となる点なので異なる。",
+      "オ": "正しい組合せ。平坦部の電流増幅率の1/√2となる点は、利得が約3 dB下がる遮断周波数である。遮断周波数が高ければ、より高い周波数まで増幅率を維持できる。トランジション周波数は電流増幅率が1となる点なので異なる。"
+    },
+    "isCalculation": false,
+    "originalContent": {
+      "body": "次の記述は、トランジスタの周波数特性について述べたものである。□内に入れるべき字句の正しい組合せを下の番号から選べ。\nトランジスタの電流増幅率の大きさが、その周波数特性の平坦部における値の[A]になるときの周波数を[B]周波数という。この周波数が[C]ほど高周波特性の良いトランジスタである。",
+      "choices": {
+        "ア": "A：1/√2／B：トランジション／C：低い",
+        "イ": "A：1/2／B：トランジション／C：高い",
+        "ウ": "A：1/√2／B：トランジション／C：高い",
+        "エ": "A：1/2／B：遮断／C：低い",
+        "オ": "A：1/√2／B：遮断／C：高い"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-kogaku-q8",
+    "exam": "amateur1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 8,
+    "officialQuestionLabel": "A-8",
+    "category": "無線工学",
+    "topicTags": [
+      "三端子発振回路"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 無線工学 A-8。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "図は、3端子接続形のトランジスタ発振回路の原理的構成例を示したものである。この回路が発振するときのリアクタンスX₁、X₂及びX₃の特性の正しい組合せを下の番号から選べ。",
+    "choices": {
+      "ア": "X₁：誘導性／X₂：容量性／X₃：誘導性",
+      "イ": "X₁：容量性／X₂：容量性／X₃：容量性",
+      "ウ": "X₁：誘導性／X₂：誘導性／X₃：誘導性",
+      "エ": "X₁：誘導性／X₂：容量性／X₃：容量性"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "正答は4。図の接続ではX₂とX₃が同じ種類、X₁がそれらと逆の種類になると、共振と正帰還の位相条件を満たす。選択肢ではX₁が誘導性、X₂・X₃が容量性の4が該当する。リアクタンスの番号と接続位置を対応させる。",
+    "choiceExplanations": {
+      "ア": "誤り。X₃は「誘導性」ではなく「容量性」。図の接続ではX₂とX₃が同じ種類、X₁がそれらと逆の種類になると、共振と正帰還の位相条件を満たす。選択肢ではX₁が誘導性、X₂・X₃が容量性の4が該当する。リアクタンスの番号と接続位置を対応させる。",
+      "イ": "誤り。X₁は「容量性」ではなく「誘導性」。図の接続ではX₂とX₃が同じ種類、X₁がそれらと逆の種類になると、共振と正帰還の位相条件を満たす。選択肢ではX₁が誘導性、X₂・X₃が容量性の4が該当する。リアクタンスの番号と接続位置を対応させる。",
+      "ウ": "誤り。X₂は「誘導性」ではなく「容量性」、X₃は「誘導性」ではなく「容量性」。図の接続ではX₂とX₃が同じ種類、X₁がそれらと逆の種類になると、共振と正帰還の位相条件を満たす。選択肢ではX₁が誘導性、X₂・X₃が容量性の4が該当する。リアクタンスの番号と接続位置を対応させる。",
+      "エ": "正しい組合せ。図の接続ではX₂とX₃が同じ種類、X₁がそれらと逆の種類になると、共振と正帰還の位相条件を満たす。選択肢ではX₁が誘導性、X₂・X₃が容量性の4が該当する。リアクタンスの番号と接続位置を対応させる。"
+    },
+    "isCalculation": false,
+    "imageUrls": [
+      "/questions/amateur1/2026-november-kogaku-q8.png"
+    ],
+    "imageAltTexts": [
+      "トランジスタと三つのリアクタンスX₁・X₂・X₃の接続位置を示す発振回路。"
+    ],
+    "originalContent": {
+      "body": "図は、3端子接続形のトランジスタ発振回路の原理的構成例を示したものである。この回路が発振するときのリアクタンスX₁、X₂及びX₃の特性の正しい組合せを下の番号から選べ。",
+      "choices": {
+        "ア": "X₁：誘導性／X₂：容量性／X₃：誘導性",
+        "イ": "X₁：容量性／X₂：容量性／X₃：容量性",
+        "ウ": "X₁：誘導性／X₂：誘導性／X₃：誘導性",
+        "エ": "X₁：誘導性／X₂：容量性／X₃：容量性"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-kogaku-q9",
+    "exam": "amateur1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 9,
+    "officialQuestionLabel": "A-9",
+    "category": "無線工学",
+    "topicTags": [
+      "論理回路"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 無線工学 A-9。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "図に示す論理回路の名称として、正しいものを下の番号から選べ。ただし、正(＋)の電圧を1とした正論理とする。",
+    "choices": {
+      "ア": "NOR",
+      "イ": "OR",
+      "ウ": "EX-OR",
+      "エ": "AND",
+      "オ": "NAND"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "正答は1。入力ダイオード部はOR動作をし、その出力をトランジスタの接地エミッタ回路で反転する。少なくとも一方の入力が1ならトランジスタが導通して出力0、両入力が0のときだけ出力1となるためNORである。",
+    "choiceExplanations": {
+      "ア": "正しい。出力が1になるのは入力A・Bがともに0の場合だけであり、ORの否定に一致する。",
+      "イ": "誤り。ダイオード部はORだが、その後にトランジスタによる出力の反転がある。",
+      "ウ": "誤り。EX-ORは二つの入力が異なるとき出力1となるが、この回路ではそのとき出力0になる。",
+      "エ": "誤り。ANDは両入力が1のとき出力1となる。図ではその場合トランジスタが導通し出力0になる。",
+      "オ": "誤り。NANDは両入力が1のときだけ出力0である。図は片方だけが1でも出力0となる。"
+    },
+    "isCalculation": false,
+    "imageUrls": [
+      "/questions/amateur1/2026-november-kogaku-q9.png"
+    ],
+    "imageAltTexts": [
+      "入力A・Bをダイオードでまとめ、トランジスタのベースへ接続し、コレクタを出力とする論理回路。"
+    ],
+    "originalContent": {
+      "body": "図に示す論理回路の名称として、正しいものを下の番号から選べ。ただし、正(＋)の電圧を1とした正論理とする。",
+      "choices": {
+        "ア": "NOR",
+        "イ": "OR",
+        "ウ": "EX-OR",
+        "エ": "AND",
+        "オ": "NAND"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-kogaku-q10",
+    "exam": "amateur1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 10,
+    "officialQuestionLabel": "A-10",
+    "category": "無線工学",
+    "topicTags": [
+      "FET増幅回路"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 無線工学 A-10。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "図に示す等価回路で表した電界効果トランジスタ(FET)に、入出力関連素子(C₁、C₂及びR_L)を接続した増幅回路において、相互コンダクタンスgₘが8〔mS〕、ドレイン抵抗r_dが18〔kΩ〕、負荷抵抗R_Lが6〔kΩ〕のとき、この回路の電圧増幅度V_ds/V_gsの大きさの値として、最も近いものを下の番号から選べ。ただし、コンデンサC₁及びC₂のリアクタンスは無視できるものとする。",
+    "choices": {
+      "ア": "18",
+      "イ": "36",
+      "ウ": "48",
+      "エ": "60",
+      "オ": "120"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "正答は2。交流的な負荷はr_dとR_Lの並列で18×6/(18＋6)＝4.5 kΩ。増幅度の大きさはgₘ(r_d∥R_L)＝8 mS×4.5 kΩ＝36。ソース接地回路の位相は反転するが、この設問は増幅度の大きさを問う。",
+    "choiceExplanations": {
+      "ア": "誤り。この値は求める計算結果と一致しない。交流的な負荷はr_dとR_Lの並列で18×6/(18＋6)＝4.5 kΩ。増幅度の大きさはgₘ(r_d∥R_L)＝8 mS×4.5 kΩ＝36。ソース接地回路の位相は反転するが、この設問は増幅度の大きさを問う。",
+      "イ": "正しい組合せ。交流的な負荷はr_dとR_Lの並列で18×6/(18＋6)＝4.5 kΩ。増幅度の大きさはgₘ(r_d∥R_L)＝8 mS×4.5 kΩ＝36。ソース接地回路の位相は反転するが、この設問は増幅度の大きさを問う。",
+      "ウ": "誤り。この値は求める計算結果と一致しない。交流的な負荷はr_dとR_Lの並列で18×6/(18＋6)＝4.5 kΩ。増幅度の大きさはgₘ(r_d∥R_L)＝8 mS×4.5 kΩ＝36。ソース接地回路の位相は反転するが、この設問は増幅度の大きさを問う。",
+      "エ": "誤り。この値は求める計算結果と一致しない。交流的な負荷はr_dとR_Lの並列で18×6/(18＋6)＝4.5 kΩ。増幅度の大きさはgₘ(r_d∥R_L)＝8 mS×4.5 kΩ＝36。ソース接地回路の位相は反転するが、この設問は増幅度の大きさを問う。",
+      "オ": "誤り。この値は求める計算結果と一致しない。交流的な負荷はr_dとR_Lの並列で18×6/(18＋6)＝4.5 kΩ。増幅度の大きさはgₘ(r_d∥R_L)＝8 mS×4.5 kΩ＝36。ソース接地回路の位相は反転するが、この設問は増幅度の大きさを問う。"
+    },
+    "isCalculation": true,
+    "imageUrls": [
+      "/questions/amateur1/2026-november-kogaku-q10.png"
+    ],
+    "imageAltTexts": [
+      "FETをgₘVᵍˢの電流源とrᵈで表し、入出力コンデンサと負荷Rᴸを接続した等価回路。"
+    ],
+    "originalContent": {
+      "body": "図に示す等価回路で表した電界効果トランジスタ(FET)に、入出力関連素子(C₁、C₂及びR_L)を接続した増幅回路において、相互コンダクタンスgₘが8〔mS〕、ドレイン抵抗r_dが18〔kΩ〕、負荷抵抗R_Lが6〔kΩ〕のとき、この回路の電圧増幅度V_ds/V_gsの大きさの値として、最も近いものを下の番号から選べ。ただし、コンデンサC₁及びC₂のリアクタンスは無視できるものとする。",
+      "choices": {
+        "ア": "18",
+        "イ": "36",
+        "ウ": "48",
+        "エ": "60",
+        "オ": "120"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-kogaku-q11",
+    "exam": "amateur1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 11,
+    "officialQuestionLabel": "A-11",
+    "category": "無線工学",
+    "topicTags": [
+      "FSK変調"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 無線工学 A-11。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次の記述は、デジタル変調方式の一つであるFSKの一般的な特徴について述べたものである。□内に入れるべき字句の正しい組合せを下の番号から選べ。\n(1) FSKは、デジタル信号に応じて、搬送波の周波数を変化させる変調方式であり、振幅が常に[A]ため、ASKに比べて伝送路で生じる振幅の変動やノイズの影響を受けにくい。\n(2) 2値FSKでは、それぞれ異なる二つの送信周波数を使用し、4値FSKでは異なる四つの送信周波数を使用する。\n(3) 4値FSKは、一つのシンボルで[B]ビットのデータを伝送する。\n(4) 4値FSKは、2値FSKと同じ変調速度(シンボルレート)の場合、4値FSKのデータ伝送速度(ビットレート)は2値FSKの[C]になる。",
+    "choices": {
+      "ア": "A：一定である／B：2／C：2倍",
+      "イ": "A：一定である／B：2／C：1/2倍",
+      "ウ": "A：一定である／B：4／C：4倍",
+      "エ": "A：変動する／B：4／C：2倍",
+      "オ": "A：変動する／B：4／C：1/2倍"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "正答は1。FSKは振幅を一定に保って周波数を切り替える変調である。4状態はlog₂4＝2ビットに対応するため、4値FSKでは1シンボルが2ビット。2値FSKは1ビットなので、同じシンボルレートではビットレートが2倍になる。",
+    "choiceExplanations": {
+      "ア": "正しい組合せ。FSKは振幅を一定に保って周波数を切り替える変調である。4状態はlog₂4＝2ビットに対応するため、4値FSKでは1シンボルが2ビット。2値FSKは1ビットなので、同じシンボルレートではビットレートが2倍になる。",
+      "イ": "誤り。Cは「1/2倍」ではなく「2倍」。FSKは振幅を一定に保って周波数を切り替える変調である。4状態はlog₂4＝2ビットに対応するため、4値FSKでは1シンボルが2ビット。2値FSKは1ビットなので、同じシンボルレートではビットレートが2倍になる。",
+      "ウ": "誤り。Bは「4」ではなく「2」、Cは「4倍」ではなく「2倍」。FSKは振幅を一定に保って周波数を切り替える変調である。4状態はlog₂4＝2ビットに対応するため、4値FSKでは1シンボルが2ビット。2値FSKは1ビットなので、同じシンボルレートではビットレートが2倍になる。",
+      "エ": "誤り。Aは「変動する」ではなく「一定である」、Bは「4」ではなく「2」。FSKは振幅を一定に保って周波数を切り替える変調である。4状態はlog₂4＝2ビットに対応するため、4値FSKでは1シンボルが2ビット。2値FSKは1ビットなので、同じシンボルレートではビットレートが2倍になる。",
+      "オ": "誤り。Aは「変動する」ではなく「一定である」、Bは「4」ではなく「2」、Cは「1/2倍」ではなく「2倍」。FSKは振幅を一定に保って周波数を切り替える変調である。4状態はlog₂4＝2ビットに対応するため、4値FSKでは1シンボルが2ビット。2値FSKは1ビットなので、同じシンボルレートではビットレートが2倍になる。"
+    },
+    "isCalculation": false,
+    "originalContent": {
+      "body": "次の記述は、デジタル変調方式の一つであるFSKの一般的な特徴について述べたものである。□内に入れるべき字句の正しい組合せを下の番号から選べ。\n(1) FSKは、デジタル信号に応じて、搬送波の周波数を変化させる変調方式であり、振幅が常に[A]ため、ASKに比べて伝送路で生じる振幅の変動やノイズの影響を受けにくい。\n(2) 2値FSKでは、それぞれ異なる二つの送信周波数を使用し、4値FSKでは異なる四つの送信周波数を使用する。\n(3) 4値FSKは、一つのシンボルで[B]ビットのデータを伝送する。\n(4) 4値FSKは、2値FSKと同じ変調速度(シンボルレート)の場合、4値FSKのデータ伝送速度(ビットレート)は2値FSKの[C]になる。",
+      "choices": {
+        "ア": "A：一定である／B：2／C：2倍",
+        "イ": "A：一定である／B：2／C：1/2倍",
+        "ウ": "A：一定である／B：4／C：4倍",
+        "エ": "A：変動する／B：4／C：2倍",
+        "オ": "A：変動する／B：4／C：1/2倍"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-kogaku-q12",
+    "exam": "amateur1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 12,
+    "officialQuestionLabel": "A-12",
+    "category": "無線工学",
+    "topicTags": [
+      "FMの占有帯域"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 無線工学 A-12。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "アマチュア局においてFM(F3E)通信を行うとき、占有周波数帯幅を12.5〔kHz〕とし、最大周波数偏移を3.25〔kHz〕としたときの変調信号の最高周波数の値として最も近いものを下の番号から選べ。",
+    "choices": {
+      "ア": "1.0〔kHz〕",
+      "イ": "1.5〔kHz〕",
+      "ウ": "2.0〔kHz〕",
+      "エ": "2.5〔kHz〕",
+      "オ": "3.0〔kHz〕"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "正答は5。カーソンの近似式B≒2(Δf＋fₘ)から、fₘ≒B/2－Δf＝12.5/2－3.25＝3.0 kHz。最大周波数偏移は中心周波数から片側への振れなので、帯域幅全体とそのまま差し引かない。",
+    "choiceExplanations": {
+      "ア": "誤り。この値は求める計算結果と一致しない。カーソンの近似式B≒2(Δf＋fₘ)から、fₘ≒B/2－Δf＝12.5/2－3.25＝3.0 kHz。最大周波数偏移は中心周波数から片側への振れなので、帯域幅全体とそのまま差し引かない。",
+      "イ": "誤り。この値は求める計算結果と一致しない。カーソンの近似式B≒2(Δf＋fₘ)から、fₘ≒B/2－Δf＝12.5/2－3.25＝3.0 kHz。最大周波数偏移は中心周波数から片側への振れなので、帯域幅全体とそのまま差し引かない。",
+      "ウ": "誤り。この値は求める計算結果と一致しない。カーソンの近似式B≒2(Δf＋fₘ)から、fₘ≒B/2－Δf＝12.5/2－3.25＝3.0 kHz。最大周波数偏移は中心周波数から片側への振れなので、帯域幅全体とそのまま差し引かない。",
+      "エ": "誤り。この値は求める計算結果と一致しない。カーソンの近似式B≒2(Δf＋fₘ)から、fₘ≒B/2－Δf＝12.5/2－3.25＝3.0 kHz。最大周波数偏移は中心周波数から片側への振れなので、帯域幅全体とそのまま差し引かない。",
+      "オ": "正しい組合せ。カーソンの近似式B≒2(Δf＋fₘ)から、fₘ≒B/2－Δf＝12.5/2－3.25＝3.0 kHz。最大周波数偏移は中心周波数から片側への振れなので、帯域幅全体とそのまま差し引かない。"
+    },
+    "isCalculation": true,
+    "originalContent": {
+      "body": "アマチュア局においてFM(F3E)通信を行うとき、占有周波数帯幅を12.5〔kHz〕とし、最大周波数偏移を3.25〔kHz〕としたときの変調信号の最高周波数の値として最も近いものを下の番号から選べ。",
+      "choices": {
+        "ア": "1.0〔kHz〕",
+        "イ": "1.5〔kHz〕",
+        "ウ": "2.0〔kHz〕",
+        "エ": "2.5〔kHz〕",
+        "オ": "3.0〔kHz〕"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-kogaku-q13",
+    "exam": "amateur1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 13,
+    "officialQuestionLabel": "A-13",
+    "category": "無線工学",
+    "topicTags": [
+      "SSBの周波数変換"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 無線工学 A-13。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "図に示すSSB(J3E)送信機の構成例において、第1帯域フィルタの出力として中心周波数4,500〔kHz〕の下側波帯(LSB)が現れ、第2帯域フィルタの出力として中心周波数14,230〔kHz〕の上側波帯(USB)が現れた。第2局部発振器の発振周波数の値として、正しいものを下の番号から選べ。",
+    "choices": {
+      "ア": "4,498.5〔kHz〕",
+      "イ": "9,730.0〔kHz〕",
+      "ウ": "14,228.5〔kHz〕",
+      "エ": "18,730.0〔kHz〕",
+      "オ": "23,960.0〔kHz〕"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "正答は4。LSBからUSBへ側波帯を反転させるには、第2局部発振周波数から入力周波数を引いた差成分を用いる。fᴸᴼ－4,500＝14,230よりfᴸᴼ＝18,730 kHz。9,730 kHzを加える変換では側波帯の向きが反転しない。",
+    "choiceExplanations": {
+      "ア": "誤り。この値は求める計算結果と一致しない。LSBからUSBへ側波帯を反転させるには、第2局部発振周波数から入力周波数を引いた差成分を用いる。fᴸᴼ－4,500＝14,230よりfᴸᴼ＝18,730 kHz。9,730 kHzを加える変換では側波帯の向きが反転しない。",
+      "イ": "誤り。この値は求める計算結果と一致しない。LSBからUSBへ側波帯を反転させるには、第2局部発振周波数から入力周波数を引いた差成分を用いる。fᴸᴼ－4,500＝14,230よりfᴸᴼ＝18,730 kHz。9,730 kHzを加える変換では側波帯の向きが反転しない。",
+      "ウ": "誤り。この値は求める計算結果と一致しない。LSBからUSBへ側波帯を反転させるには、第2局部発振周波数から入力周波数を引いた差成分を用いる。fᴸᴼ－4,500＝14,230よりfᴸᴼ＝18,730 kHz。9,730 kHzを加える変換では側波帯の向きが反転しない。",
+      "エ": "正しい組合せ。LSBからUSBへ側波帯を反転させるには、第2局部発振周波数から入力周波数を引いた差成分を用いる。fᴸᴼ－4,500＝14,230よりfᴸᴼ＝18,730 kHz。9,730 kHzを加える変換では側波帯の向きが反転しない。",
+      "オ": "誤り。この値は求める計算結果と一致しない。LSBからUSBへ側波帯を反転させるには、第2局部発振周波数から入力周波数を引いた差成分を用いる。fᴸᴼ－4,500＝14,230よりfᴸᴼ＝18,730 kHz。9,730 kHzを加える変換では側波帯の向きが反転しない。"
+    },
+    "isCalculation": true,
+    "imageUrls": [
+      "/questions/amateur1/2026-november-kogaku-q13.png"
+    ],
+    "imageAltTexts": [
+      "マイクロホンから平衡変調器、第1帯域フィルタ、周波数混合器、第2帯域フィルタを経てアンテナへ至るSSB送信機。"
+    ],
+    "originalContent": {
+      "body": "図に示すSSB(J3E)送信機の構成例において、第1帯域フィルタの出力として中心周波数4,500〔kHz〕の下側波帯(LSB)が現れ、第2帯域フィルタの出力として中心周波数14,230〔kHz〕の上側波帯(USB)が現れた。第2局部発振器の発振周波数の値として、正しいものを下の番号から選べ。",
+      "choices": {
+        "ア": "4,498.5〔kHz〕",
+        "イ": "9,730.0〔kHz〕",
+        "ウ": "14,228.5〔kHz〕",
+        "エ": "18,730.0〔kHz〕",
+        "オ": "23,960.0〔kHz〕"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-kogaku-q14",
+    "exam": "amateur1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 14,
+    "officialQuestionLabel": "A-14",
+    "category": "無線工学",
+    "topicTags": [
+      "復調回路"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 無線工学 A-14。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次の記述は、アナログ方式の受信機における各種電波型式の復調の一般的な回路構成について述べたものである。このうち誤っているものを下の番号から選べ。",
+    "choices": {
+      "ア": "SSB(J3E)波の復調に、変調に使用するリング回路を共用することはできない。",
+      "イ": "DSB(A3E)波の復調に用いられる包絡線検波回路は、平均値検波回路に比較して検波効率が良い。",
+      "ウ": "SSB(J3E)波の復調においては、抑圧された搬送波に相当する周波数を復元するため、復調用局部発振器が用いられる。",
+      "エ": "DSB(A3E)波の復調に用いられる二乗検波回路は、搬送波の振幅が大きい場合、直線検波回路に比較して出力のひずみが大きい。",
+      "オ": "FM(F3E)波の復調には、入力搬送波の周波数変化に比例した電圧又は電流を取り出す回路が必要であり、この作用を行わせる回路が周波数弁別器である。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "正答は1。リング変調器は周波数混合に利用でき、SSB復調時には局部発振信号と受信信号を掛け合わせる検波回路として共用できる。「共用することはできない」という1が誤りである。誤った記述を選ぶ設問なので、他の復調原理と区別する。",
+    "choiceExplanations": {
+      "ア": "誤った記述なので正答。リング回路は平衡変調だけでなく、局部発振信号を加えたSSBの復調にも使える。",
+      "イ": "正しい記述。包絡線を追従して取り出す検波は、平均値を利用する検波より検波効率がよい。",
+      "ウ": "正しい記述。SSBでは搬送波が抑圧されているため、復調側の局部発振器で相当する信号を補う。",
+      "エ": "正しい記述。大振幅では二乗特性による高次成分の影響が大きくなり、直線検波よりひずみが増える。",
+      "オ": "正しい記述。FM復調では周波数の変化を振幅の変化に変換する周波数弁別の作用を利用する。"
+    },
+    "isCalculation": false,
+    "originalContent": {
+      "body": "次の記述は、アナログ方式の受信機における各種電波型式の復調の一般的な回路構成について述べたものである。このうち誤っているものを下の番号から選べ。",
+      "choices": {
+        "ア": "SSB(J3E)波の復調に、変調に使用するリング回路を共用することはできない。",
+        "イ": "DSB(A3E)波の復調に用いられる包絡線検波回路は、平均値検波回路に比較して検波効率が良い。",
+        "ウ": "SSB(J3E)波の復調においては、抑圧された搬送波に相当する周波数を復元するため、復調用局部発振器が用いられる。",
+        "エ": "DSB(A3E)波の復調に用いられる二乗検波回路は、搬送波の振幅が大きい場合、直線検波回路に比較して出力のひずみが大きい。",
+        "オ": "FM(F3E)波の復調には、入力搬送波の周波数変化に比例した電圧又は電流を取り出す回路が必要であり、この作用を行わせる回路が周波数弁別器である。"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-kogaku-q15",
+    "exam": "amateur1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 15,
+    "officialQuestionLabel": "A-15",
+    "category": "無線工学",
+    "topicTags": [
+      "相互変調"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 無線工学 A-15。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次の記述は、受信機で発生する相互変調による混信について述べたものである。□内に入れるべき字句の正しい組合せを下の番号から選べ。\n一般に、相互変調による混信とは、ある周波数の電波を受信中に、受信機に希望波以外の二つ以上の不要波が混入したとき、回路の[A]により、入力されたそれぞれの信号の整数倍の周波数の[B]の成分が生じ、これらの周波数の中に受信機の受信周波数又は[C]や影像周波数に合致したものがあるときに生じる混信をいう。",
+    "choices": {
+      "ア": "A：非直線性／B：和又は差／C：中間周波数",
+      "イ": "A：非直線性／B：積／C：中間周波数",
+      "ウ": "A：非直線性／B：積／C：局部発振周波数",
+      "エ": "A：直線性／B：積／C：中間周波数",
+      "オ": "A：直線性／B：和又は差／C：局部発振周波数"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "正答は1。非直線な回路へ複数の信号が入ると、mf₁±nf₂のような和・差の周波数成分が発生する。これが受信周波数、中間周波数又は影像周波数に重なると混信となる。周波数そのものの積を生じるという説明や、直線性を原因とする説明は合わない。",
+    "choiceExplanations": {
+      "ア": "正しい組合せ。非直線な回路へ複数の信号が入ると、mf₁±nf₂のような和・差の周波数成分が発生する。これが受信周波数、中間周波数又は影像周波数に重なると混信となる。周波数そのものの積を生じるという説明や、直線性を原因とする説明は合わない。",
+      "イ": "誤り。Bは「積」ではなく「和又は差」。非直線な回路へ複数の信号が入ると、mf₁±nf₂のような和・差の周波数成分が発生する。これが受信周波数、中間周波数又は影像周波数に重なると混信となる。周波数そのものの積を生じるという説明や、直線性を原因とする説明は合わない。",
+      "ウ": "誤り。Bは「積」ではなく「和又は差」、Cは「局部発振周波数」ではなく「中間周波数」。非直線な回路へ複数の信号が入ると、mf₁±nf₂のような和・差の周波数成分が発生する。これが受信周波数、中間周波数又は影像周波数に重なると混信となる。周波数そのものの積を生じるという説明や、直線性を原因とする説明は合わない。",
+      "エ": "誤り。Aは「直線性」ではなく「非直線性」、Bは「積」ではなく「和又は差」。非直線な回路へ複数の信号が入ると、mf₁±nf₂のような和・差の周波数成分が発生する。これが受信周波数、中間周波数又は影像周波数に重なると混信となる。周波数そのものの積を生じるという説明や、直線性を原因とする説明は合わない。",
+      "オ": "誤り。Aは「直線性」ではなく「非直線性」、Cは「局部発振周波数」ではなく「中間周波数」。非直線な回路へ複数の信号が入ると、mf₁±nf₂のような和・差の周波数成分が発生する。これが受信周波数、中間周波数又は影像周波数に重なると混信となる。周波数そのものの積を生じるという説明や、直線性を原因とする説明は合わない。"
+    },
+    "isCalculation": false,
+    "originalContent": {
+      "body": "次の記述は、受信機で発生する相互変調による混信について述べたものである。□内に入れるべき字句の正しい組合せを下の番号から選べ。\n一般に、相互変調による混信とは、ある周波数の電波を受信中に、受信機に希望波以外の二つ以上の不要波が混入したとき、回路の[A]により、入力されたそれぞれの信号の整数倍の周波数の[B]の成分が生じ、これらの周波数の中に受信機の受信周波数又は[C]や影像周波数に合致したものがあるときに生じる混信をいう。",
+      "choices": {
+        "ア": "A：非直線性／B：和又は差／C：中間周波数",
+        "イ": "A：非直線性／B：積／C：中間周波数",
+        "ウ": "A：非直線性／B：積／C：局部発振周波数",
+        "エ": "A：直線性／B：積／C：中間周波数",
+        "オ": "A：直線性／B：和又は差／C：局部発振周波数"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-kogaku-q16",
+    "exam": "amateur1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 16,
+    "officialQuestionLabel": "A-16",
+    "category": "無線工学",
+    "topicTags": [
+      "整流ダイオードの逆電圧"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 無線工学 A-16。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "図に示す変圧器T、ダイオードD及びコンデンサCで構成される全波整流回路において、Tの二次側電圧の実効値が各100〔V〕の単一正弦波であるとき、無負荷のときの各ダイオードDに印加される逆方向の電圧の最大値として、最も近いものを下の番号から選べ。ただし、各ダイオードDの特性は同一とする。",
+    "choices": {
+      "ア": "100〔V〕",
+      "イ": "140〔V〕",
+      "ウ": "200〔V〕",
+      "エ": "280〔V〕",
+      "オ": "300〔V〕"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "正答は4。中点タップ式でコンデンサ入力の全波整流回路である。各半巻線の最大電圧は100√2 V。無負荷時はコンデンサの充電電圧と非導通側の巻線電圧が逆方向に重なるため、最大逆電圧は2×100√2≒283 Vとなる。",
+    "choiceExplanations": {
+      "ア": "誤り。この値は求める計算結果と一致しない。中点タップ式でコンデンサ入力の全波整流回路である。各半巻線の最大電圧は100√2 V。無負荷時はコンデンサの充電電圧と非導通側の巻線電圧が逆方向に重なるため、最大逆電圧は2×100√2≒283 Vとなる。",
+      "イ": "誤り。この値は求める計算結果と一致しない。中点タップ式でコンデンサ入力の全波整流回路である。各半巻線の最大電圧は100√2 V。無負荷時はコンデンサの充電電圧と非導通側の巻線電圧が逆方向に重なるため、最大逆電圧は2×100√2≒283 Vとなる。",
+      "ウ": "誤り。この値は求める計算結果と一致しない。中点タップ式でコンデンサ入力の全波整流回路である。各半巻線の最大電圧は100√2 V。無負荷時はコンデンサの充電電圧と非導通側の巻線電圧が逆方向に重なるため、最大逆電圧は2×100√2≒283 Vとなる。",
+      "エ": "正しい組合せ。中点タップ式でコンデンサ入力の全波整流回路である。各半巻線の最大電圧は100√2 V。無負荷時はコンデンサの充電電圧と非導通側の巻線電圧が逆方向に重なるため、最大逆電圧は2×100√2≒283 Vとなる。",
+      "オ": "誤り。この値は求める計算結果と一致しない。中点タップ式でコンデンサ入力の全波整流回路である。各半巻線の最大電圧は100√2 V。無負荷時はコンデンサの充電電圧と非導通側の巻線電圧が逆方向に重なるため、最大逆電圧は2×100√2≒283 Vとなる。"
+    },
+    "isCalculation": true,
+    "imageUrls": [
+      "/questions/amateur1/2026-november-kogaku-q16.png"
+    ],
+    "imageAltTexts": [
+      "中点タップ付き変圧器の各100 V巻線と2個のダイオード、平滑コンデンサCから成る全波整流回路。"
+    ],
+    "originalContent": {
+      "body": "図に示す変圧器T、ダイオードD及びコンデンサCで構成される全波整流回路において、Tの二次側電圧の実効値が各100〔V〕の単一正弦波であるとき、無負荷のときの各ダイオードDに印加される逆方向の電圧の最大値として、最も近いものを下の番号から選べ。ただし、各ダイオードDの特性は同一とする。",
+      "choices": {
+        "ア": "100〔V〕",
+        "イ": "140〔V〕",
+        "ウ": "200〔V〕",
+        "エ": "280〔V〕",
+        "オ": "300〔V〕"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-kogaku-q17",
+    "exam": "amateur1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 17,
+    "officialQuestionLabel": "A-17",
+    "category": "無線工学",
+    "topicTags": [
+      "直列形定電圧回路"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 無線工学 A-17。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次の記述は、図に示す直列形定電圧回路の動作原理について述べたものである。□内に入れるべき字句の正しい組合せを下の番号から選べ。\n(1) 図において、出力電圧が上昇すると、トランジスタTr₂のベース電圧V_Rが上昇するが、Tr₂のエミッタはツェナーダイオードD_Zにより常に一定の電圧V_Zに保たれているので、Tr₂のコレクタ電流I_C2は[A]する。\n(2) 従って、抵抗R₁における電圧降下が大きくなり、制御用トランジスタTr₁のベース電位は[B]し、Tr₁のコレクタ-エミッタ間の電圧V_CE1が増加して出力電圧の上昇を妨げ、一定電圧となるように動作する。\n(3) 過負荷又は出力の短絡に対する、トランジスタ[C]の保護回路が必要である。",
+    "choices": {
+      "ア": "A：増加／B：上昇／C：Tr₁",
+      "イ": "A：増加／B：低下／C：Tr₂",
+      "ウ": "A：増加／B：低下／C：Tr₁",
+      "エ": "A：減少／B：上昇／C：Tr₂",
+      "オ": "A：減少／B：低下／C：Tr₂"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "正答は3。出力が上がると検出用Tr₂のベース・エミッタ間電圧が増え、コレクタ電流は増加する。R₁の電圧降下が増えてTr₁のベース電位が低下し、直列のTr₁の電圧降下を増やして出力を戻す。負荷電流が集中するTr₁には短絡保護が必要である。",
+    "choiceExplanations": {
+      "ア": "誤り。Bは「上昇」ではなく「低下」。出力が上がると検出用Tr₂のベース・エミッタ間電圧が増え、コレクタ電流は増加する。R₁の電圧降下が増えてTr₁のベース電位が低下し、直列のTr₁の電圧降下を増やして出力を戻す。負荷電流が集中するTr₁には短絡保護が必要である。",
+      "イ": "誤り。Cは「Tr₂」ではなく「Tr₁」。出力が上がると検出用Tr₂のベース・エミッタ間電圧が増え、コレクタ電流は増加する。R₁の電圧降下が増えてTr₁のベース電位が低下し、直列のTr₁の電圧降下を増やして出力を戻す。負荷電流が集中するTr₁には短絡保護が必要である。",
+      "ウ": "正しい組合せ。出力が上がると検出用Tr₂のベース・エミッタ間電圧が増え、コレクタ電流は増加する。R₁の電圧降下が増えてTr₁のベース電位が低下し、直列のTr₁の電圧降下を増やして出力を戻す。負荷電流が集中するTr₁には短絡保護が必要である。",
+      "エ": "誤り。Aは「減少」ではなく「増加」、Bは「上昇」ではなく「低下」、Cは「Tr₂」ではなく「Tr₁」。出力が上がると検出用Tr₂のベース・エミッタ間電圧が増え、コレクタ電流は増加する。R₁の電圧降下が増えてTr₁のベース電位が低下し、直列のTr₁の電圧降下を増やして出力を戻す。負荷電流が集中するTr₁には短絡保護が必要である。",
+      "オ": "誤り。Aは「減少」ではなく「増加」、Cは「Tr₂」ではなく「Tr₁」。出力が上がると検出用Tr₂のベース・エミッタ間電圧が増え、コレクタ電流は増加する。R₁の電圧降下が増えてTr₁のベース電位が低下し、直列のTr₁の電圧降下を増やして出力を戻す。負荷電流が集中するTr₁には短絡保護が必要である。"
+    },
+    "isCalculation": false,
+    "imageUrls": [
+      "/questions/amateur1/2026-november-kogaku-q17.png"
+    ],
+    "imageAltTexts": [
+      "直列制御Tr₁、誤差検出Tr₂、ツェナーダイオードDᶻ及び出力分圧器による定電圧回路。"
+    ],
+    "originalContent": {
+      "body": "次の記述は、図に示す直列形定電圧回路の動作原理について述べたものである。□内に入れるべき字句の正しい組合せを下の番号から選べ。\n(1) 図において、出力電圧が上昇すると、トランジスタTr₂のベース電圧V_Rが上昇するが、Tr₂のエミッタはツェナーダイオードD_Zにより常に一定の電圧V_Zに保たれているので、Tr₂のコレクタ電流I_C2は[A]する。\n(2) 従って、抵抗R₁における電圧降下が大きくなり、制御用トランジスタTr₁のベース電位は[B]し、Tr₁のコレクタ-エミッタ間の電圧V_CE1が増加して出力電圧の上昇を妨げ、一定電圧となるように動作する。\n(3) 過負荷又は出力の短絡に対する、トランジスタ[C]の保護回路が必要である。",
+      "choices": {
+        "ア": "A：増加／B：上昇／C：Tr₁",
+        "イ": "A：増加／B：低下／C：Tr₂",
+        "ウ": "A：増加／B：低下／C：Tr₁",
+        "エ": "A：減少／B：上昇／C：Tr₂",
+        "オ": "A：減少／B：低下／C：Tr₂"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-kogaku-q18",
+    "exam": "amateur1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 18,
+    "officialQuestionLabel": "A-18",
+    "category": "無線工学",
+    "topicTags": [
+      "鉛蓄電池の浮動充電"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 無線工学 A-18。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次の記述は、鉛蓄電池の浮動充電方式について述べたものである。□内に入れるべき字句の正しい組合せを下の番号から選べ。\n(1) 鉛蓄電池と負荷は、[A]。\n(2) 通常、充電は[B]行われる。\n(3) 1セル当たりの電圧は、標準的な鉛蓄電池の場合[C]〔V〕程度である。",
+    "choices": {
+      "ア": "A：停電時に接続する／B：常時／C：1.2",
+      "イ": "A：停電時に接続する／B：間欠的に／C：1.2",
+      "ウ": "A：常時接続されている／B：常時／C：2.0",
+      "エ": "A：常時接続されている／B：常時／C：1.2",
+      "オ": "A：常時接続されている／B：間欠的に／C：2.0"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "正答は3。浮動充電では蓄電池を負荷に常時接続し、通常は充電器から負荷へ給電しながら蓄電池も常時充電する。停電時は接続を切り替えず蓄電池が給電を引き継ぐ。鉛蓄電池の1セルの公称電圧は約2.0 Vであり、実際の浮動充電電圧そのものとは区別する。",
+    "choiceExplanations": {
+      "ア": "誤り。Aは「停電時に接続する」ではなく「常時接続されている」、Cは「1.2」ではなく「2.0」。浮動充電では蓄電池を負荷に常時接続し、通常は充電器から負荷へ給電しながら蓄電池も常時充電する。停電時は接続を切り替えず蓄電池が給電を引き継ぐ。鉛蓄電池の1セルの公称電圧は約2.0 Vであり、実際の浮動充電電圧そのものとは区別する。",
+      "イ": "誤り。Aは「停電時に接続する」ではなく「常時接続されている」、Bは「間欠的に」ではなく「常時」、Cは「1.2」ではなく「2.0」。浮動充電では蓄電池を負荷に常時接続し、通常は充電器から負荷へ給電しながら蓄電池も常時充電する。停電時は接続を切り替えず蓄電池が給電を引き継ぐ。鉛蓄電池の1セルの公称電圧は約2.0 Vであり、実際の浮動充電電圧そのものとは区別する。",
+      "ウ": "正しい組合せ。浮動充電では蓄電池を負荷に常時接続し、通常は充電器から負荷へ給電しながら蓄電池も常時充電する。停電時は接続を切り替えず蓄電池が給電を引き継ぐ。鉛蓄電池の1セルの公称電圧は約2.0 Vであり、実際の浮動充電電圧そのものとは区別する。",
+      "エ": "誤り。Cは「1.2」ではなく「2.0」。浮動充電では蓄電池を負荷に常時接続し、通常は充電器から負荷へ給電しながら蓄電池も常時充電する。停電時は接続を切り替えず蓄電池が給電を引き継ぐ。鉛蓄電池の1セルの公称電圧は約2.0 Vであり、実際の浮動充電電圧そのものとは区別する。",
+      "オ": "誤り。Bは「間欠的に」ではなく「常時」。浮動充電では蓄電池を負荷に常時接続し、通常は充電器から負荷へ給電しながら蓄電池も常時充電する。停電時は接続を切り替えず蓄電池が給電を引き継ぐ。鉛蓄電池の1セルの公称電圧は約2.0 Vであり、実際の浮動充電電圧そのものとは区別する。"
+    },
+    "isCalculation": false,
+    "originalContent": {
+      "body": "次の記述は、鉛蓄電池の浮動充電方式について述べたものである。□内に入れるべき字句の正しい組合せを下の番号から選べ。\n(1) 鉛蓄電池と負荷は、[A]。\n(2) 通常、充電は[B]行われる。\n(3) 1セル当たりの電圧は、標準的な鉛蓄電池の場合[C]〔V〕程度である。",
+      "choices": {
+        "ア": "A：停電時に接続する／B：常時／C：1.2",
+        "イ": "A：停電時に接続する／B：間欠的に／C：1.2",
+        "ウ": "A：常時接続されている／B：常時／C：2.0",
+        "エ": "A：常時接続されている／B：常時／C：1.2",
+        "オ": "A：常時接続されている／B：間欠的に／C：2.0"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-kogaku-q19",
+    "exam": "amateur1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 19,
+    "officialQuestionLabel": "A-19",
+    "category": "無線工学",
+    "topicTags": [
+      "折返しダイポール"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 無線工学 A-19。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次の記述は、図に示す素子の太さが均一な二線式折返し半波長ダイポールアンテナについて述べたものである。□内に入れるべき字句の正しい組合せを下の番号から選べ。ただし、波長をλ〔m〕とする。\n(1) 実効長は[A]〔m〕であり、アンテナ利得を[B]で表すと約2.15〔dB〕である。\n(2) このアンテナに75〔Ω〕の給電線を接続したとき、給電点におけるVSWRは、約[C]である。",
+    "choices": {
+      "ア": "A：λ/π／B：相対利得／C：2.0",
+      "イ": "A：λ/π／B：相対利得／C：4.0",
+      "ウ": "A：2λ/π／B：相対利得／C：3.0",
+      "エ": "A：2λ/π／B：絶対利得／C：3.0",
+      "オ": "A：2λ/π／B：絶対利得／C：4.0"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "正答は5。二線式折返し形の実効長は2λ/π。等方性アンテナ基準の絶対利得が約2.15 dBで、半波長ダイポール基準の相対利得は約0 dBとなる。給電点抵抗は約300 Ωなので、75 Ω線路とのVSWRは約300/75＝4である。",
+    "choiceExplanations": {
+      "ア": "誤り。Aは「λ/π」ではなく「2λ/π」、Bは「相対利得」ではなく「絶対利得」、Cは「2.0」ではなく「4.0」。二線式折返し形の実効長は2λ/π。等方性アンテナ基準の絶対利得が約2.15 dBで、半波長ダイポール基準の相対利得は約0 dBとなる。給電点抵抗は約300 Ωなので、75 Ω線路とのVSWRは約300/75＝4である。",
+      "イ": "誤り。Aは「λ/π」ではなく「2λ/π」、Bは「相対利得」ではなく「絶対利得」。二線式折返し形の実効長は2λ/π。等方性アンテナ基準の絶対利得が約2.15 dBで、半波長ダイポール基準の相対利得は約0 dBとなる。給電点抵抗は約300 Ωなので、75 Ω線路とのVSWRは約300/75＝4である。",
+      "ウ": "誤り。Bは「相対利得」ではなく「絶対利得」、Cは「3.0」ではなく「4.0」。二線式折返し形の実効長は2λ/π。等方性アンテナ基準の絶対利得が約2.15 dBで、半波長ダイポール基準の相対利得は約0 dBとなる。給電点抵抗は約300 Ωなので、75 Ω線路とのVSWRは約300/75＝4である。",
+      "エ": "誤り。Cは「3.0」ではなく「4.0」。二線式折返し形の実効長は2λ/π。等方性アンテナ基準の絶対利得が約2.15 dBで、半波長ダイポール基準の相対利得は約0 dBとなる。給電点抵抗は約300 Ωなので、75 Ω線路とのVSWRは約300/75＝4である。",
+      "オ": "正しい組合せ。二線式折返し形の実効長は2λ/π。等方性アンテナ基準の絶対利得が約2.15 dBで、半波長ダイポール基準の相対利得は約0 dBとなる。給電点抵抗は約300 Ωなので、75 Ω線路とのVSWRは約300/75＝4である。"
+    },
+    "isCalculation": true,
+    "imageUrls": [
+      "/questions/amateur1/2026-november-kogaku-q19.png"
+    ],
+    "imageAltTexts": [
+      "長さ約λ/2、同じ太さの2本の素子で構成した折返し半波長ダイポールと給電位置。"
+    ],
+    "originalContent": {
+      "body": "次の記述は、図に示す素子の太さが均一な二線式折返し半波長ダイポールアンテナについて述べたものである。□内に入れるべき字句の正しい組合せを下の番号から選べ。ただし、波長をλ〔m〕とする。\n(1) 実効長は[A]〔m〕であり、アンテナ利得を[B]で表すと約2.15〔dB〕である。\n(2) このアンテナに75〔Ω〕の給電線を接続したとき、給電点におけるVSWRは、約[C]である。",
+      "choices": {
+        "ア": "A：λ/π／B：相対利得／C：2.0",
+        "イ": "A：λ/π／B：相対利得／C：4.0",
+        "ウ": "A：2λ/π／B：相対利得／C：3.0",
+        "エ": "A：2λ/π／B：絶対利得／C：3.0",
+        "オ": "A：2λ/π／B：絶対利得／C：4.0"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-kogaku-q20",
+    "exam": "amateur1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 20,
+    "officialQuestionLabel": "A-20",
+    "category": "無線工学",
+    "topicTags": [
+      "同軸トラップ"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 無線工学 A-20。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次の記述は、同軸給電線路に同軸トラップを取付け、給電線に流れる自局が発射する電波の第2高調波電流を除去する方法について述べたものである。このうち正しいものを下の番号から選べ。ただし、T形接栓の内部においては、同軸給電線路と同軸トラップの内部導体同士及び外部導体同士がそれぞれ接続されているものとし、線路とトラップの同軸ケーブルの特性インピーダンスの値は同一とする。また、波長とは同軸線路上の波長とする。",
+    "choices": {
+      "ア": "図1で、長さl₁を基本波の波長の1/2にする。",
+      "イ": "図1で、長さl₁を基本波の波長の1/3にする。",
+      "ウ": "図1で、長さl₁を基本波の波長の1/4にする。",
+      "エ": "図2で、長さl₂を基本波の波長の1/2にする。",
+      "オ": "図2で、長さl₂を基本波の波長の1/4にする。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "正答は5。図2の短絡スタブを基本波のλ/4にすると、基本波では接続点から高インピーダンスに見える。第2高調波では長さがその波長のλ₂/2となり、接続点で短絡に見えるため第2高調波を取り除ける。終端の開放・短絡と、対象周波数での電気長を組にして考える。",
+    "choiceExplanations": {
+      "ア": "誤り。開放スタブの基本波λ/2は第2高調波でも1波長となり、接続点が開放に見えて高調波を短絡しない。",
+      "イ": "誤り。基本波λ/3の開放スタブは第2高調波に対して2λ₂/3であり、必要な短絡条件と一致しない。",
+      "ウ": "誤り。開放スタブのλ/4は基本波を短絡してしまう一方、第2高調波では開放に見える。",
+      "エ": "誤り。短絡スタブの基本波λ/2は基本波でも短絡に見え、基本波の伝送を妨げる。",
+      "オ": "正しい。短絡スタブは基本波λ/4で開放、第2高調波のλ₂/2で短絡に見えるため目的に合う。"
+    },
+    "isCalculation": false,
+    "imageUrls": [
+      "/questions/amateur1/2026-november-kogaku-q20.png"
+    ],
+    "imageAltTexts": [
+      "T形接栓から分岐する同軸トラップ。図1は先端開放、図2は先端短絡で、長さl₁・l₂を示す。"
+    ],
+    "originalContent": {
+      "body": "次の記述は、同軸給電線路に同軸トラップを取付け、給電線に流れる自局が発射する電波の第2高調波電流を除去する方法について述べたものである。このうち正しいものを下の番号から選べ。ただし、T形接栓の内部においては、同軸給電線路と同軸トラップの内部導体同士及び外部導体同士がそれぞれ接続されているものとし、線路とトラップの同軸ケーブルの特性インピーダンスの値は同一とする。また、波長とは同軸線路上の波長とする。",
+      "choices": {
+        "ア": "図1で、長さl₁を基本波の波長の1/2にする。",
+        "イ": "図1で、長さl₁を基本波の波長の1/3にする。",
+        "ウ": "図1で、長さl₁を基本波の波長の1/4にする。",
+        "エ": "図2で、長さl₂を基本波の波長の1/2にする。",
+        "オ": "図2で、長さl₂を基本波の波長の1/4にする。"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-kogaku-q21",
+    "exam": "amateur1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 21,
+    "officialQuestionLabel": "A-21",
+    "category": "無線工学",
+    "topicTags": [
+      "電波の見通し距離"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 無線工学 A-21。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "超短波(VHF)帯通信において、送信アンテナの地上高を25〔m〕、受信アンテナの地上高を16〔m〕としたとき、電波の見通し距離の値として、最も近いものを下の番号から選べ。ただし、大気は標準大気とする。",
+    "choices": {
+      "ア": "27.8〔km〕",
+      "イ": "32.2〔km〕",
+      "ウ": "37.1〔km〕",
+      "エ": "40.4〔km〕",
+      "オ": "49.5〔km〕"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "正答は3。標準大気の屈折を考慮した電波見通し距離はd≒4.12(√h₁＋√h₂) km。高さをmで代入すると4.12(√25＋√16)＝4.12×9≒37.1 km。幾何学的な見通しの係数約3.57と区別する。",
+    "choiceExplanations": {
+      "ア": "誤り。この値は求める計算結果と一致しない。標準大気の屈折を考慮した電波見通し距離はd≒4.12(√h₁＋√h₂) km。高さをmで代入すると4.12(√25＋√16)＝4.12×9≒37.1 km。幾何学的な見通しの係数約3.57と区別する。",
+      "イ": "誤り。この値は求める計算結果と一致しない。標準大気の屈折を考慮した電波見通し距離はd≒4.12(√h₁＋√h₂) km。高さをmで代入すると4.12(√25＋√16)＝4.12×9≒37.1 km。幾何学的な見通しの係数約3.57と区別する。",
+      "ウ": "正しい組合せ。標準大気の屈折を考慮した電波見通し距離はd≒4.12(√h₁＋√h₂) km。高さをmで代入すると4.12(√25＋√16)＝4.12×9≒37.1 km。幾何学的な見通しの係数約3.57と区別する。",
+      "エ": "誤り。この値は求める計算結果と一致しない。標準大気の屈折を考慮した電波見通し距離はd≒4.12(√h₁＋√h₂) km。高さをmで代入すると4.12(√25＋√16)＝4.12×9≒37.1 km。幾何学的な見通しの係数約3.57と区別する。",
+      "オ": "誤り。この値は求める計算結果と一致しない。標準大気の屈折を考慮した電波見通し距離はd≒4.12(√h₁＋√h₂) km。高さをmで代入すると4.12(√25＋√16)＝4.12×9≒37.1 km。幾何学的な見通しの係数約3.57と区別する。"
+    },
+    "isCalculation": true,
+    "originalContent": {
+      "body": "超短波(VHF)帯通信において、送信アンテナの地上高を25〔m〕、受信アンテナの地上高を16〔m〕としたとき、電波の見通し距離の値として、最も近いものを下の番号から選べ。ただし、大気は標準大気とする。",
+      "choices": {
+        "ア": "27.8〔km〕",
+        "イ": "32.2〔km〕",
+        "ウ": "37.1〔km〕",
+        "エ": "40.4〔km〕",
+        "オ": "49.5〔km〕"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-kogaku-q22",
+    "exam": "amateur1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 22,
+    "officialQuestionLabel": "A-22",
+    "category": "無線工学",
+    "topicTags": [
+      "電離層と偏波"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 無線工学 A-22。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次の記述は、電離層伝搬について述べたものである。□内に入れるべき字句の正しい組合せを下の番号から選べ。\nダイポールアンテナから放射された短波(HF)帯の水平偏波の電波が電離層で反射して伝搬するとき、電波は、[A]の影響を受けて[B]偏波となって地上に到達する。このため、受信点では垂直偏波用のアンテナでも受信できるようになるが、この偏波の状態は時間的に変化するために[C]フェージングを生じる。",
+    "choices": {
+      "ア": "A：地球磁界／B：だ円／C：吸収性",
+      "イ": "A：地球磁界／B：だ円／C：偏波性",
+      "ウ": "A：地球磁界／B：垂直／C：干渉性",
+      "エ": "A：第一種減衰／B：だ円／C：吸収性",
+      "オ": "A：第一種減衰／B：垂直／C：偏波性"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "正答は2。電離層中では地球磁界の影響を受け、送信時の水平偏波がそのまま保たれるとは限らず、だ円偏波となる。偏波の状態が時間とともに変わると、受信アンテナとの偏波の合い方が変化し、偏波性フェージングを生じる。",
+    "choiceExplanations": {
+      "ア": "誤り。Cは「吸収性」ではなく「偏波性」。電離層中では地球磁界の影響を受け、送信時の水平偏波がそのまま保たれるとは限らず、だ円偏波となる。偏波の状態が時間とともに変わると、受信アンテナとの偏波の合い方が変化し、偏波性フェージングを生じる。",
+      "イ": "正しい組合せ。電離層中では地球磁界の影響を受け、送信時の水平偏波がそのまま保たれるとは限らず、だ円偏波となる。偏波の状態が時間とともに変わると、受信アンテナとの偏波の合い方が変化し、偏波性フェージングを生じる。",
+      "ウ": "誤り。Bは「垂直」ではなく「だ円」、Cは「干渉性」ではなく「偏波性」。電離層中では地球磁界の影響を受け、送信時の水平偏波がそのまま保たれるとは限らず、だ円偏波となる。偏波の状態が時間とともに変わると、受信アンテナとの偏波の合い方が変化し、偏波性フェージングを生じる。",
+      "エ": "誤り。Aは「第一種減衰」ではなく「地球磁界」、Cは「吸収性」ではなく「偏波性」。電離層中では地球磁界の影響を受け、送信時の水平偏波がそのまま保たれるとは限らず、だ円偏波となる。偏波の状態が時間とともに変わると、受信アンテナとの偏波の合い方が変化し、偏波性フェージングを生じる。",
+      "オ": "誤り。Aは「第一種減衰」ではなく「地球磁界」、Bは「垂直」ではなく「だ円」。電離層中では地球磁界の影響を受け、送信時の水平偏波がそのまま保たれるとは限らず、だ円偏波となる。偏波の状態が時間とともに変わると、受信アンテナとの偏波の合い方が変化し、偏波性フェージングを生じる。"
+    },
+    "isCalculation": false,
+    "originalContent": {
+      "body": "次の記述は、電離層伝搬について述べたものである。□内に入れるべき字句の正しい組合せを下の番号から選べ。\nダイポールアンテナから放射された短波(HF)帯の水平偏波の電波が電離層で反射して伝搬するとき、電波は、[A]の影響を受けて[B]偏波となって地上に到達する。このため、受信点では垂直偏波用のアンテナでも受信できるようになるが、この偏波の状態は時間的に変化するために[C]フェージングを生じる。",
+      "choices": {
+        "ア": "A：地球磁界／B：だ円／C：吸収性",
+        "イ": "A：地球磁界／B：だ円／C：偏波性",
+        "ウ": "A：地球磁界／B：垂直／C：干渉性",
+        "エ": "A：第一種減衰／B：だ円／C：吸収性",
+        "オ": "A：第一種減衰／B：垂直／C：偏波性"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-kogaku-q23",
+    "exam": "amateur1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 23,
+    "officialQuestionLabel": "A-23",
+    "category": "無線工学",
+    "topicTags": [
+      "パルス波形の測定"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 無線工学 A-23。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次の記述は、図に示すオシロスコープで観測したパルス電圧波形について述べたものである。□内に入れるべき字句の最も近い組合せを下の番号から選べ。\n(1) パルス繰り返し周期は、[A]である。\n(2) パルス繰り返し周波数は、[B]である。\n(3) 図のaの目盛の電圧が0〔V〕のとき、この波形の電圧の平均の値は0.6〔V〕よりも[C]。",
+    "choices": {
+      "ア": "A：50〔μs〕／B：10.0〔kHz〕／C：小さい",
+      "イ": "A：50〔μs〕／B：12.5〔kHz〕／C：大きい",
+      "ウ": "A：80〔μs〕／B：10.0〔kHz〕／C：大きい",
+      "エ": "A：80〔μs〕／B：12.5〔kHz〕／C：小さい"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "正答は4。横1目盛20 μsで、同じ立上がりの間隔が4目盛なので周期80 μs、周波数12.5 kHzとなる。高さは3目盛×0.5＝1.5 V、パルス幅は1.5目盛でデューティ比1.5/4。平均は1.5×1.5/4＝0.5625 Vとなり0.6 Vより小さい。",
+    "choiceExplanations": {
+      "ア": "誤り。Aは「50〔μs〕」ではなく「80〔μs〕」、Bは「10.0〔kHz〕」ではなく「12.5〔kHz〕」。横1目盛20 μsで、同じ立上がりの間隔が4目盛なので周期80 μs、周波数12.5 kHzとなる。高さは3目盛×0.5＝1.5 V、パルス幅は1.5目盛でデューティ比1.5/4。平均は1.5×1.5/4＝0.5625 Vとなり0.6 Vより小さい。",
+      "イ": "誤り。Aは「50〔μs〕」ではなく「80〔μs〕」、Cは「大きい」ではなく「小さい」。横1目盛20 μsで、同じ立上がりの間隔が4目盛なので周期80 μs、周波数12.5 kHzとなる。高さは3目盛×0.5＝1.5 V、パルス幅は1.5目盛でデューティ比1.5/4。平均は1.5×1.5/4＝0.5625 Vとなり0.6 Vより小さい。",
+      "ウ": "誤り。Bは「10.0〔kHz〕」ではなく「12.5〔kHz〕」、Cは「大きい」ではなく「小さい」。横1目盛20 μsで、同じ立上がりの間隔が4目盛なので周期80 μs、周波数12.5 kHzとなる。高さは3目盛×0.5＝1.5 V、パルス幅は1.5目盛でデューティ比1.5/4。平均は1.5×1.5/4＝0.5625 Vとなり0.6 Vより小さい。",
+      "エ": "正しい組合せ。横1目盛20 μsで、同じ立上がりの間隔が4目盛なので周期80 μs、周波数12.5 kHzとなる。高さは3目盛×0.5＝1.5 V、パルス幅は1.5目盛でデューティ比1.5/4。平均は1.5×1.5/4＝0.5625 Vとなり0.6 Vより小さい。"
+    },
+    "isCalculation": true,
+    "imageUrls": [
+      "/questions/amateur1/2026-november-kogaku-q23.png"
+    ],
+    "imageAltTexts": [
+      "縦1目盛0.5 V、横1目盛20 μsのパルス波形。高さ3目盛、周期4目盛、幅1.5目盛でaが基準電位。"
+    ],
+    "originalContent": {
+      "body": "次の記述は、図に示すオシロスコープで観測したパルス電圧波形について述べたものである。□内に入れるべき字句の最も近い組合せを下の番号から選べ。\n(1) パルス繰り返し周期は、[A]である。\n(2) パルス繰り返し周波数は、[B]である。\n(3) 図のaの目盛の電圧が0〔V〕のとき、この波形の電圧の平均の値は0.6〔V〕よりも[C]。",
+      "choices": {
+        "ア": "A：50〔μs〕／B：10.0〔kHz〕／C：小さい",
+        "イ": "A：50〔μs〕／B：12.5〔kHz〕／C：大きい",
+        "ウ": "A：80〔μs〕／B：10.0〔kHz〕／C：大きい",
+        "エ": "A：80〔μs〕／B：12.5〔kHz〕／C：小さい"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-kogaku-q24",
+    "exam": "amateur1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 24,
+    "officialQuestionLabel": "A-24",
+    "category": "無線工学",
+    "topicTags": [
+      "デジタルマルチメータ"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 無線工学 A-24。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次の記述は、デジタルマルチメータの一般的な特徴について述べたものである。このうち誤っているものを下の番号から選べ。",
+    "choices": {
+      "ア": "増幅器、A-D変換器、クロック信号発生器、カウンタなどで構成され、A-D変換器の方式には、積分形などがある。",
+      "イ": "電圧測定において、アナログ方式のテスタ(回路計)に比べて入力インピーダンスが低く、被測定物に接続したときの被測定量の変動が大きい。",
+      "ウ": "被測定量は、通常、直流電圧に変換して測定される。",
+      "エ": "測定結果はデジタル表示され、読取り誤差がない。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "正答は2。デジタルマルチメータの電圧入力は一般に高インピーダンスで、被測定回路から取り出す電流を小さくできる。そのためアナログテスタより負荷による測定値の変化を抑えやすく、入力インピーダンスが低いとする2が誤りである。",
+    "choiceExplanations": {
+      "ア": "正しい記述。アナログ入力をA-D変換し、基準クロックなどを使って数値表示する。積分形はA-D変換方式の一つ。",
+      "イ": "誤った記述なので正答。通常は高入力インピーダンスであり、電圧測定時の回路への負荷を小さくできる。",
+      "ウ": "正しい記述。電流や抵抗なども内部で電圧へ変換して測定する構成が一般的である。",
+      "エ": "正しい記述。数字を直接読むため、指針目盛の視差や補間の読取り誤差がない。量子化や器差まで零という意味ではない。"
+    },
+    "isCalculation": false,
+    "originalContent": {
+      "body": "次の記述は、デジタルマルチメータの一般的な特徴について述べたものである。このうち誤っているものを下の番号から選べ。",
+      "choices": {
+        "ア": "増幅器、A-D変換器、クロック信号発生器、カウンタなどで構成され、A-D変換器の方式には、積分形などがある。",
+        "イ": "電圧測定において、アナログ方式のテスタ(回路計)に比べて入力インピーダンスが低く、被測定物に接続したときの被測定量の変動が大きい。",
+        "ウ": "被測定量は、通常、直流電圧に変換して測定される。",
+        "エ": "測定結果はデジタル表示され、読取り誤差がない。"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-kogaku-q25",
+    "exam": "amateur1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 25,
+    "officialQuestionLabel": "A-25",
+    "category": "無線工学",
+    "topicTags": [
+      "方向性結合器"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 無線工学 A-25。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次の記述は、図に示すCM形方向性結合器の原理等について述べたものである。□内に入れるべき字句の正しい組合せを下の番号から選べ。ただし、検出器の内部抵抗と終端抵抗の値は等しいものとし、静電容量をC、相互インダクタンスをMとする。\n(1) 送信機側から主線路に高周波電圧v及び電流iを流すと、副線路には容量結合によって[A]に比例した電流i_cと、誘導結合によって[B]に比例した電流i_mが流れる。\n(2) i_cは検出器と終端抵抗に二分され、それぞれの流れる方向は逆方向となる。一方、誘導結合によって生じる電流i_mの流れる方向は、結合の方向により検出器側から終端抵抗側、又はその逆方向のいずれかの一方向となる。検出器に流れる電流を、i_mと二分されたi_cの和となるように回路が構成されている場合、検出器において[C]電力を測定することができる。\n(3) 次に、検出器と終端抵抗を入替え[D]電力を測定すれば、定在波比を算出することができる。",
+    "choices": {
+      "ア": "A：i／B：v／C：反射波／D：進行波",
+      "イ": "A：i／B：v／C：進行波／D：反射波",
+      "ウ": "A：v／B：i／C：反射波／D：進行波",
+      "エ": "A：v／B：i／C：進行波／D：反射波"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "正答は4。容量結合では主線路の電圧v、誘導結合では電流iに比例する検出成分を得る。進行波成分を同相に加算する接続で進行波電力を取り出し、検出器と終端抵抗を入れ替えると反射波電力を取り出せる。両電力から反射係数とVSWRを求められる。",
+    "choiceExplanations": {
+      "ア": "誤り。Aは「i」ではなく「v」、Bは「v」ではなく「i」、Cは「反射波」ではなく「進行波」、Dは「進行波」ではなく「反射波」。容量結合では主線路の電圧v、誘導結合では電流iに比例する検出成分を得る。進行波成分を同相に加算する接続で進行波電力を取り出し、検出器と終端抵抗を入れ替えると反射波電力を取り出せる。両電力から反射係数とVSWRを求められる。",
+      "イ": "誤り。Aは「i」ではなく「v」、Bは「v」ではなく「i」。容量結合では主線路の電圧v、誘導結合では電流iに比例する検出成分を得る。進行波成分を同相に加算する接続で進行波電力を取り出し、検出器と終端抵抗を入れ替えると反射波電力を取り出せる。両電力から反射係数とVSWRを求められる。",
+      "ウ": "誤り。Cは「反射波」ではなく「進行波」、Dは「進行波」ではなく「反射波」。容量結合では主線路の電圧v、誘導結合では電流iに比例する検出成分を得る。進行波成分を同相に加算する接続で進行波電力を取り出し、検出器と終端抵抗を入れ替えると反射波電力を取り出せる。両電力から反射係数とVSWRを求められる。",
+      "エ": "正しい組合せ。容量結合では主線路の電圧v、誘導結合では電流iに比例する検出成分を得る。進行波成分を同相に加算する接続で進行波電力を取り出し、検出器と終端抵抗を入れ替えると反射波電力を取り出せる。両電力から反射係数とVSWRを求められる。"
+    },
+    "isCalculation": false,
+    "imageUrls": [
+      "/questions/amateur1/2026-november-kogaku-q25.png"
+    ],
+    "imageAltTexts": [
+      "主線路から相互インダクタンスMと容量Cで副線路に結合し、検出器と終端抵抗を接続したCM形方向性結合器。"
+    ],
+    "originalContent": {
+      "body": "次の記述は、図に示すCM形方向性結合器の原理等について述べたものである。□内に入れるべき字句の正しい組合せを下の番号から選べ。ただし、検出器の内部抵抗と終端抵抗の値は等しいものとし、静電容量をC、相互インダクタンスをMとする。\n(1) 送信機側から主線路に高周波電圧v及び電流iを流すと、副線路には容量結合によって[A]に比例した電流i_cと、誘導結合によって[B]に比例した電流i_mが流れる。\n(2) i_cは検出器と終端抵抗に二分され、それぞれの流れる方向は逆方向となる。一方、誘導結合によって生じる電流i_mの流れる方向は、結合の方向により検出器側から終端抵抗側、又はその逆方向のいずれかの一方向となる。検出器に流れる電流を、i_mと二分されたi_cの和となるように回路が構成されている場合、検出器において[C]電力を測定することができる。\n(3) 次に、検出器と終端抵抗を入替え[D]電力を測定すれば、定在波比を算出することができる。",
+      "choices": {
+        "ア": "A：i／B：v／C：反射波／D：進行波",
+        "イ": "A：i／B：v／C：進行波／D：反射波",
+        "ウ": "A：v／B：i／C：反射波／D：進行波",
+        "エ": "A：v／B：i／C：進行波／D：反射波"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-kogaku-q26",
+    "exam": "amateur1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 26,
+    "officialQuestionLabel": "B-1",
+    "category": "無線工学",
+    "topicTags": [
+      "導線の電気抵抗"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 無線工学 B-1。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "native-b",
+    "question": "次の記述は、導線の電気抵抗について述べたものである。□内に入れるべき字句を下の番号から選べ。(1) 導線の電気抵抗の値は、 ア  に比例し、 イ  に反比例する。このときの比例定数を抵抗率といい、その単位はウ  である。(2) 導線に高周波電流を流すと、周波数が高くなるに従って抵抗は  エ  する。これは、高周波電流は導線の  オ  では流れにくくなるためで、これを表皮効果という。",
+    "answer": "",
+    "officialAnswerNumber": "6・2・4・5・8",
+    "explanation": "ア＝6。抵抗R＝ρl/Sなので、同じ材質・断面積なら導線が長いほど抵抗が大きい。アは長さ。\n\nイ＝2。抵抗は断面積Sに反比例する。太い導線ほど電流の通り道が広く、抵抗は小さい。\n\nウ＝4。ρ＝RS/lより、抵抗率の単位はΩ×m²/m＝Ω･mとなる。\n\nエ＝5。高周波になるほど表皮効果で有効な通電断面積が減少し、交流抵抗は増加する。\n\nオ＝8。高周波電流は表面に集中し、中心部分には流れにくくなる。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "体積",
+          "explanation": "体積そのものを抵抗に比例させる式ではない。導線の長さと断面積を別々に考える。"
+        },
+        {
+          "id": "2",
+          "label": "断面積",
+          "explanation": "R＝ρl/Sの分母に入る量で、イに対応する。"
+        },
+        {
+          "id": "3",
+          "label": "表面部分",
+          "explanation": "表皮効果で電流が集中する側は表面部分であり、オの流れにくい部分ではない。"
+        },
+        {
+          "id": "4",
+          "label": "〔Ω･m〕",
+          "explanation": "抵抗率ρの単位であり、ウに対応する。"
+        },
+        {
+          "id": "5",
+          "label": "増加",
+          "explanation": "周波数上昇に伴う導線の交流抵抗の変化で、エに対応する。"
+        },
+        {
+          "id": "6",
+          "label": "長さ",
+          "explanation": "R＝ρl/Sの分子に入る量で、アに対応する。"
+        },
+        {
+          "id": "7",
+          "label": "表面積",
+          "explanation": "抵抗に反比例するのは断面積であり、導線外側の表面積ではない。"
+        },
+        {
+          "id": "8",
+          "label": "中心部分",
+          "explanation": "高周波電流が流れにくくなる導線の内部で、オに対応する。"
+        },
+        {
+          "id": "9",
+          "label": "〔Ω/m〕",
+          "explanation": "Ω/mは長さ当たりの抵抗の単位であり、抵抗率Ω･mとは異なる。"
+        },
+        {
+          "id": "10",
+          "label": "減少",
+          "explanation": "表皮効果は通電断面を狭くし抵抗を増やすので、減少はエに合わない。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "6",
+          "explanation": "抵抗R＝ρl/Sなので、同じ材質・断面積なら導線が長いほど抵抗が大きい。アは長さ。"
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "抵抗は断面積Sに反比例する。太い導線ほど電流の通り道が広く、抵抗は小さい。"
+        },
+        {
+          "label": "ウ",
+          "answer": "4",
+          "explanation": "ρ＝RS/lより、抵抗率の単位はΩ×m²/m＝Ω･mとなる。"
+        },
+        {
+          "label": "エ",
+          "answer": "5",
+          "explanation": "高周波になるほど表皮効果で有効な通電断面積が減少し、交流抵抗は増加する。"
+        },
+        {
+          "label": "オ",
+          "answer": "8",
+          "explanation": "高周波電流は表面に集中し、中心部分には流れにくくなる。"
+        }
+      ],
+      "officialLabel": "B-1",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    },
+    "originalContent": {
+      "body": "次の記述は、導線の電気抵抗について述べたものである。□内に入れるべき字句を下の番号から選べ。(1) 導線の電気抵抗の値は、 ア  に比例し、 イ  に反比例する。このときの比例定数を抵抗率といい、その単位はウ  である。(2) 導線に高周波電流を流すと、周波数が高くなるに従って抵抗は  エ  する。これは、高周波電流は導線の  オ  では流れにくくなるためで、これを表皮効果という。"
+    }
+  },
+  {
+    "id": "amateur1-2026-november-kogaku-q27",
+    "exam": "amateur1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 27,
+    "officialQuestionLabel": "B-2",
+    "category": "無線工学",
+    "topicTags": [
+      "フォトトランジスタ"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 無線工学 B-2。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "native-b",
+    "question": "次の記述は、フォトトランジスタについて述べたものである。このうち正しいものを1、誤っているものを2として解答せよ。",
+    "answer": "",
+    "officialAnswerNumber": "2・2・1・1・2",
+    "explanation": "ア＝2。フォトトランジスタは光を電気信号へ変換する受光素子であり、光を発する素子ではない。\n\nイ＝2。トランジスタの電流増幅作用があるため、一般にフォトダイオードより高い感度を得る。\n\nウ＝1。光で生じた電流をベース電流に相当する入力として使うので、ベース端子を外へ出さず2端子で使用できる。\n\nエ＝1。光の有無や強さを電流へ変えられるため、光学読取りや光リレーに利用できる。\n\nオ＝2。フォトカプラ等は発光ダイオードと受光素子を組み合わせる。ツェナーダイオードを発光素子として組み合わせる説明は誤り。",
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "正しい"
+        },
+        {
+          "id": "2",
+          "label": "誤っている"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "2",
+          "explanation": "フォトトランジスタは光を電気信号へ変換する受光素子であり、光を発する素子ではない。",
+          "prompt": "電気信号を光信号に変換する発光素子である。"
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "トランジスタの電流増幅作用があるため、一般にフォトダイオードより高い感度を得る。",
+          "prompt": "フォトダイオードと比較すると、低感度である。"
+        },
+        {
+          "label": "ウ",
+          "answer": "1",
+          "explanation": "光で生じた電流をベース電流に相当する入力として使うので、ベース端子を外へ出さず2端子で使用できる。",
+          "prompt": "ベースに電極を設けず2端子素子として使用することができる。"
+        },
+        {
+          "label": "エ",
+          "answer": "1",
+          "explanation": "光の有無や強さを電流へ変えられるため、光学読取りや光リレーに利用できる。",
+          "prompt": "光電読取り装置や光継電器(光リレー回路)などに使用されている。"
+        },
+        {
+          "label": "オ",
+          "answer": "2",
+          "explanation": "フォトカプラ等は発光ダイオードと受光素子を組み合わせる。ツェナーダイオードを発光素子として組み合わせる説明は誤り。",
+          "prompt": "フォトトランジスタとツェナーダイオードを組合せて、一つのパッケージに入れたものに、フォトカプラやフォトインタラプタがある。"
+        }
+      ],
+      "officialLabel": "B-2",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    },
+    "originalContent": {
+      "body": "次の記述は、フォトトランジスタについて述べたものである。このうち正しいものを1、誤っているものを2として解答せよ。"
+    }
+  },
+  {
+    "id": "amateur1-2026-november-kogaku-q28",
+    "exam": "amateur1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 28,
+    "officialQuestionLabel": "B-3",
+    "category": "無線工学",
+    "topicTags": [
+      "GPS"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 無線工学 B-3。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "native-b",
+    "question": "次の記述は、GPS(Global Positioning System)について述べたものである。□内に入れるべき字句を下の番号から選べ。(1)  GPS の各衛星は、地上から高度約20,000〔km〕の軌道上を約  ア  周期で周回している。(2) 測定点の位置は、 イ  の衛星の位置と衛星までの距離から求められる。(3) その距離は、衛星から発射された  ウ  を測定して計算により求める。(4) 測位に使用している周波数は  エ  帯である。(5) アマチュア局においては、GPS の信号は、自局が発射する電波に位置情報を重畳したり、通信機や測定器の  オ  基準として利用したりしている。",
+    "answer": "",
+    "officialAnswerNumber": "6・7・3・4・10",
+    "explanation": "ア＝6。高度約20,000 kmを周回するGPS衛星の公転周期は約12時間である。\n\nイ＝7。複数の衛星からの距離を使い、位置座標と受信機の時計誤差を求める。\n\nウ＝3。衛星信号が到達するまでの時間と電波の速度から距離を計算する。\n\nエ＝4。GPS測位信号のL帯は極超短波(UHF)に含まれる。VHFではない。\n\nオ＝10。GPS由来の正確な時刻情報を使い、通信機や測定器の周波数基準を安定させる。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "6時間",
+          "explanation": "この高度のGPS衛星の周期として6時間は短く、正答の約12時間に一致しない。"
+        },
+        {
+          "id": "2",
+          "label": "一つ",
+          "explanation": "一つの衛星からの距離だけでは測定点の位置を一意に決められない。"
+        },
+        {
+          "id": "3",
+          "label": "電波が測定点で受信されるまでの時間",
+          "explanation": "測距の基になる信号の伝搬時間で、ウに対応する。"
+        },
+        {
+          "id": "4",
+          "label": "極超短波(UHF)",
+          "explanation": "GPSの測位信号が使う周波数帯で、エに対応する。"
+        },
+        {
+          "id": "5",
+          "label": "電圧",
+          "explanation": "GPSから得る基準はこの設問では電圧でなく周波数である。"
+        },
+        {
+          "id": "6",
+          "label": "12時間",
+          "explanation": "GPS衛星の概略の周回周期で、アに対応する。"
+        },
+        {
+          "id": "7",
+          "label": "複数",
+          "explanation": "位置計算に用いる衛星の数の表現で、イに対応する。"
+        },
+        {
+          "id": "8",
+          "label": "電波を測定点で受信したときの電波の強度",
+          "explanation": "信号強度だけでは伝搬時間に基づく精密な距離測定にならない。"
+        },
+        {
+          "id": "9",
+          "label": "超短波(VHF)",
+          "explanation": "超短波はVHFであり、GPSの測位に使うL帯とは異なる。"
+        },
+        {
+          "id": "10",
+          "label": "周波数",
+          "explanation": "通信機や測定器の基準として使う量で、オに対応する。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "6",
+          "explanation": "高度約20,000 kmを周回するGPS衛星の公転周期は約12時間である。"
+        },
+        {
+          "label": "イ",
+          "answer": "7",
+          "explanation": "複数の衛星からの距離を使い、位置座標と受信機の時計誤差を求める。"
+        },
+        {
+          "label": "ウ",
+          "answer": "3",
+          "explanation": "衛星信号が到達するまでの時間と電波の速度から距離を計算する。"
+        },
+        {
+          "label": "エ",
+          "answer": "4",
+          "explanation": "GPS測位信号のL帯は極超短波(UHF)に含まれる。VHFではない。"
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "GPS由来の正確な時刻情報を使い、通信機や測定器の周波数基準を安定させる。"
+        }
+      ],
+      "officialLabel": "B-3",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    },
+    "originalContent": {
+      "body": "次の記述は、GPS(Global Positioning System)について述べたものである。□内に入れるべき字句を下の番号から選べ。(1)  GPS の各衛星は、地上から高度約20,000〔km〕の軌道上を約  ア  周期で周回している。(2) 測定点の位置は、 イ  の衛星の位置と衛星までの距離から求められる。(3) その距離は、衛星から発射された  ウ  を測定して計算により求める。(4) 測位に使用している周波数は  エ  帯である。(5) アマチュア局においては、GPS の信号は、自局が発射する電波に位置情報を重畳したり、通信機や測定器の  オ  基準として利用したりしている。"
+    }
+  },
+  {
+    "id": "amateur1-2026-november-kogaku-q29",
+    "exam": "amateur1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 29,
+    "officialQuestionLabel": "B-4",
+    "category": "無線工学",
+    "topicTags": [
+      "全波整流"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 無線工学 B-4。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "native-b",
+    "question": "次の記述は、図に示す整流回路について述べたものである。□内に入れるべき字句を下の番号から選べ。ただし、ダイオードの順方向抵抗の値は零、逆方向抵抗の値は無限大とする。\n(1) この整流回路は、交流を4個のダイオードで整流する単相の[ア]整流回路である。\n(2) 交流電源の電流について、その振幅(電流の最大値)をIₘとすると、平均値は[イ]、実効値は[ウ]であり、波形率は約[エ]となる。\n(3) 図中の直流電流計Ａは永久磁石可動コイル形電流計であり、その指示値が1〔mA〕であるとき、Iₘの値は約[オ]〔mA〕である。",
+    "answer": "",
+    "officialAnswerNumber": "5・4・3・9・7",
+    "explanation": "ア＝5。4個のダイオードのブリッジは交流の両半周期を同じ向きに流す単相全波整流回路である。\n\nイ＝4。全波整流波の平均値は2Iₘ/πとなる。符号付き交流を全周期で平均する0とは区別する。\n\nウ＝3。正弦波を全波整流しても二乗の平均は変わらず、実効値はIₘ/√2である。\n\nエ＝9。波形率は実効値/平均値なのでπ/(2√2)≒1.11。最大値/実効値の波高率ではない。\n\nオ＝7。可動コイル形計器は整流電流の平均値を示すため、1＝2Iₘ/πからIₘ＝π/2≒1.57 mA。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "Iₘ/2",
+          "explanation": "最大値の半分は、正弦波全波整流の平均値・実効値のいずれにも一致しない。"
+        },
+        {
+          "id": "2",
+          "label": "Iₘ/π",
+          "explanation": "Iₘ/πは半波整流の全周期平均値であり、この全波回路の平均値ではない。"
+        },
+        {
+          "id": "3",
+          "label": "Iₘ/√2",
+          "explanation": "正弦波の実効値の式であり、ウに対応する。"
+        },
+        {
+          "id": "4",
+          "label": "2Iₘ/π",
+          "explanation": "全波整流波の平均値の式であり、イに対応する。"
+        },
+        {
+          "id": "5",
+          "label": "全波",
+          "explanation": "両半周期を整流する回路の分類で、アに対応する。"
+        },
+        {
+          "id": "6",
+          "label": "3.14",
+          "explanation": "πの近似値だが、平均1 mAから最大値を求める係数はπ/2である。"
+        },
+        {
+          "id": "7",
+          "label": "1.57",
+          "explanation": "π/2の近似値で、オの最大電流値に対応する。"
+        },
+        {
+          "id": "8",
+          "label": "1.41",
+          "explanation": "√2の近似値であり波高率に対応する。波形率の1.11ではない。"
+        },
+        {
+          "id": "9",
+          "label": "1.11",
+          "explanation": "π/(2√2)の近似値で、エの波形率に対応する。"
+        },
+        {
+          "id": "10",
+          "label": "倍電圧",
+          "explanation": "コンデンサの充電を使う倍電圧整流とは異なり、図は全波ブリッジである。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "5",
+          "explanation": "4個のダイオードのブリッジは交流の両半周期を同じ向きに流す単相全波整流回路である。"
+        },
+        {
+          "label": "イ",
+          "answer": "4",
+          "explanation": "全波整流波の平均値は2Iₘ/πとなる。符号付き交流を全周期で平均する0とは区別する。"
+        },
+        {
+          "label": "ウ",
+          "answer": "3",
+          "explanation": "正弦波を全波整流しても二乗の平均は変わらず、実効値はIₘ/√2である。"
+        },
+        {
+          "label": "エ",
+          "answer": "9",
+          "explanation": "波形率は実効値/平均値なのでπ/(2√2)≒1.11。最大値/実効値の波高率ではない。"
+        },
+        {
+          "label": "オ",
+          "answer": "7",
+          "explanation": "可動コイル形計器は整流電流の平均値を示すため、1＝2Iₘ/πからIₘ＝π/2≒1.57 mA。"
+        }
+      ],
+      "officialLabel": "B-4",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    },
+    "imageUrls": [
+      "/questions/amateur1/2026-november-kogaku-q29.png"
+    ],
+    "imageAltTexts": [
+      "4個のダイオードのブリッジ、負荷抵抗、直流電流計A及び交流電源の接続。"
+    ],
+    "originalContent": {
+      "body": "次の記述は、図に示す整流回路について述べたものである。□内に入れるべき字句を下の番号から選べ。ただし、ダイオードの順方向抵抗の値は零、逆方向抵抗の値は無限大とする。\n(1) この整流回路は、交流を4個のダイオードで整流する単相の[ア]整流回路である。\n(2) 交流電源の電流について、その振幅(電流の最大値)をIₘとすると、平均値は[イ]、実効値は[ウ]であり、波形率は約[エ]となる。\n(3) 図中の直流電流計Ａは永久磁石可動コイル形電流計であり、その指示値が1〔mA〕であるとき、Iₘの値は約[オ]〔mA〕である。"
+    }
+  },
+  {
+    "id": "amateur1-2026-november-kogaku-q30",
+    "exam": "amateur1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 30,
+    "officialQuestionLabel": "B-5",
+    "category": "無線工学",
+    "topicTags": [
+      "可動コイル形電流計"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 無線工学 B-5。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "native-b",
+    "question": "次の記述は、図に示す原理的構造の永久磁石可動コイル形電流計の動作原理について述べたものである。□内に入れるべき字句を下の番号から選べ。\n(1) 可動コイルに直流電流が流れると、フレミングの[ア]の法則に従った電磁力により、[イ]の大きさに比例した駆動トルクが生じる。\n(2) うず巻ばねの制御トルクと可動コイルの駆動トルクが[ウ]とき、指針が静止する。\n(3) うず巻ばねの制御トルクは、指針の振れ(角度)に[エ]するので、目盛は[オ]となる。",
+    "answer": "",
+    "officialAnswerNumber": "4・8・10・2・6",
+    "explanation": "ア＝4。磁界中の電流に働く電磁力の向きはフレミングの左手の法則で求める。\n\nイ＝8。一定の磁界とコイル構造では駆動トルクはコイル電流に比例する。\n\nウ＝10。駆動トルクとばねの制御トルクが等しく釣り合った位置で指針が静止する。\n\nエ＝2。うず巻ばねの制御トルクは振れ角に比例する。\n\nオ＝6。電流に比例する駆動トルクと、角度に比例する制御トルクが釣り合うので平等目盛となる。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "2乗目盛",
+          "explanation": "永久磁石可動コイル形では電流と振れ角が比例するため、2乗目盛ではない。"
+        },
+        {
+          "id": "2",
+          "label": "比例",
+          "explanation": "ばねの制御トルクと角度の関係で、エに対応する。"
+        },
+        {
+          "id": "3",
+          "label": "抵抗",
+          "explanation": "駆動トルクを決める直接の量はコイル電流であり、抵抗ではない。"
+        },
+        {
+          "id": "4",
+          "label": "左手",
+          "explanation": "電流が磁界中で受ける力の法則で、アに対応する。"
+        },
+        {
+          "id": "5",
+          "label": "異なる",
+          "explanation": "二つのトルクが異なれば回転が続くため、静止条件に合わない。"
+        },
+        {
+          "id": "6",
+          "label": "平等目盛",
+          "explanation": "等間隔の電流変化に対して等間隔の角度変化となり、オに対応する。"
+        },
+        {
+          "id": "7",
+          "label": "反比例",
+          "explanation": "ばねの制御トルクは振れ角に比例し、反比例はしない。"
+        },
+        {
+          "id": "8",
+          "label": "電流",
+          "explanation": "駆動トルクに比例する量で、イに対応する。"
+        },
+        {
+          "id": "9",
+          "label": "右手",
+          "explanation": "右手の法則は電磁誘導の向きに使い、ここで問う電磁力の法則ではない。"
+        },
+        {
+          "id": "10",
+          "label": "等しい",
+          "explanation": "駆動・制御トルクの釣合いであり、ウに対応する。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "4",
+          "explanation": "磁界中の電流に働く電磁力の向きはフレミングの左手の法則で求める。"
+        },
+        {
+          "label": "イ",
+          "answer": "8",
+          "explanation": "一定の磁界とコイル構造では駆動トルクはコイル電流に比例する。"
+        },
+        {
+          "label": "ウ",
+          "answer": "10",
+          "explanation": "駆動トルクとばねの制御トルクが等しく釣り合った位置で指針が静止する。"
+        },
+        {
+          "label": "エ",
+          "answer": "2",
+          "explanation": "うず巻ばねの制御トルクは振れ角に比例する。"
+        },
+        {
+          "label": "オ",
+          "answer": "6",
+          "explanation": "電流に比例する駆動トルクと、角度に比例する制御トルクが釣り合うので平等目盛となる。"
+        }
+      ],
+      "officialLabel": "B-5",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    },
+    "imageUrls": [
+      "/questions/amateur1/2026-november-kogaku-q30.png"
+    ],
+    "imageAltTexts": [
+      "永久磁石、磁極片、円柱状軟鉄心、可動コイル、軸、うず巻ばね及び指針から成る電流計。"
+    ],
+    "originalContent": {
+      "body": "次の記述は、図に示す原理的構造の永久磁石可動コイル形電流計の動作原理について述べたものである。□内に入れるべき字句を下の番号から選べ。\n(1) 可動コイルに直流電流が流れると、フレミングの[ア]の法則に従った電磁力により、[イ]の大きさに比例した駆動トルクが生じる。\n(2) うず巻ばねの制御トルクと可動コイルの駆動トルクが[ウ]とき、指針が静止する。\n(3) うず巻ばねの制御トルクは、指針の振れ(角度)に[エ]するので、目盛は[オ]となる。"
+    }
+  },
+  {
+    "id": "amateur1-2026-november-houki-q1",
+    "exam": "amateur1",
+    "session": "houki",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 1,
+    "officialQuestionLabel": "A-1",
+    "category": "法規",
+    "topicTags": [
+      "電波法の定義"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 法規 A-1。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次の記述のうち、電波法で定める用語の定義に該当するものはどれか。電波法（第２条）の規定に照らし、下の１から５までのうちから一つ選べ。",
+    "choices": {
+      "ア": "「無線電話」とは、電波を利用して、ラジオ音声及びその他の音響を送り、又は受けるための通信設備をいう。",
+      "イ": "「無線従事者」とは、無線設備の操作又は管理を行う者であって、総務大臣の免許を受けたものをいう。",
+      "ウ": "「無線設備」とは、無線電信、無線電話その他電波を送り、又は受けるための電気的設備をいう。",
+      "エ": "「無線局」とは、無線設備及び無線従事者の総体をいう。ただし、受信のみを目的とするものを含まない。",
+      "オ": "「電波」とは、４００万メガヘルツ以下の周波数の電磁波をいう。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "正答は3。電波法第2条の無線設備は、無線電信・無線電話その他電波を送受するための電気的設備をいう。無線従事者は無線設備の操作又はその監督を行い免許を受けた者であり、設備とその操作を行う者の総体である無線局とも区別する。",
+    "choiceExplanations": {
+      "ア": "誤り。無線電話の定義にあるのは音声その他の音響であり、文字・影像まで含める記述ではない。",
+      "イ": "誤り。法定の文言は無線設備の「操作又はその監督」であり、「操作又は管理」ではない。",
+      "ウ": "正しい。電波を送受するための電気的設備という無線設備の定義に一致する。",
+      "エ": "誤り。無線局は無線設備及びその操作を行う者の総体であり、単に無線従事者とした定義ではない。",
+      "オ": "誤り。電波法が定義する電波は300万MHz以下であり、400万MHzではない。"
+    },
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131"
+    ],
+    "originalContent": {
+      "body": "次の記述のうち、電波法で定める用語の定義に該当するものはどれか。電波法（第２条）の規定に照らし、下の１から５までのうちから一つ選べ。",
+      "choices": {
+        "ア": "「無線電話」とは、電波を利用して、ラジオ音声及びその他の音響を送り、又は受けるための通信設備をいう。",
+        "イ": "「無線従事者」とは、無線設備の操作又は管理を行う者であって、総務大臣の免許を受けたものをいう。",
+        "ウ": "「無線設備」とは、無線電信、無線電話その他電波を送り、又は受けるための電気的設備をいう。",
+        "エ": "「無線局」とは、無線設備及び無線従事者の総体をいう。ただし、受信のみを目的とするものを含まない。",
+        "オ": "「電波」とは、４００万メガヘルツ以下の周波数の電磁波をいう。"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-houki-q2",
+    "exam": "amateur1",
+    "session": "houki",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 2,
+    "officialQuestionLabel": "A-2",
+    "category": "法規",
+    "topicTags": [
+      "予備免許"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 法規 A-2。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次の記述のうち、無線局の予備免許を受けた者が、指定された工事落成の期限（期限の延長があったときは、その期限）経過後２週間以内に工事が落成した旨の届出をしなかったときに総務大臣が行う処分に適合するものはどれか。電波法（第１１条）の規定に照らし、下の１から４までのうちから一つ選べ。",
+    "choices": {
+      "ア": "総務大臣は、その工事落成の期限の延長の申請をするよう命じなければならない。",
+      "イ": "総務大臣は、その予備免許を取り消し、再度免許の申請をするよう指示しなければならない。",
+      "ウ": "総務大臣は、その無線局の免許を拒否しなければならない。",
+      "エ": "総務大臣は、速やかにその工事落成の届出をするよう命じなければならない。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "正答は3。電波法第11条では、指定された工事落成期限の経過後2週間以内に落成届がなければ、総務大臣は無線局の免許を拒否しなければならない。期限の延長があれば、延長後の期限を起点とする。",
+    "choiceExplanations": {
+      "ア": "誤り。落成期限経過後の未届について、延長申請をするよう命ずる規定ではない。",
+      "イ": "誤り。予備免許取消しと再申請の指示ではなく、条文は無線局の免許の拒否を定める。",
+      "ウ": "正しい。「免許を拒否しなければならない」という第11条の義務的な処分に一致する。",
+      "エ": "誤り。速やかな落成届を命ずるだけの措置ではなく、免許を拒否する。"
+    },
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131"
+    ],
+    "originalContent": {
+      "body": "次の記述のうち、無線局の予備免許を受けた者が、指定された工事落成の期限（期限の延長があったときは、その期限）経過後２週間以内に工事が落成した旨の届出をしなかったときに総務大臣が行う処分に適合するものはどれか。電波法（第１１条）の規定に照らし、下の１から４までのうちから一つ選べ。",
+      "choices": {
+        "ア": "総務大臣は、その工事落成の期限の延長の申請をするよう命じなければならない。",
+        "イ": "総務大臣は、その予備免許を取り消し、再度免許の申請をするよう指示しなければならない。",
+        "ウ": "総務大臣は、その無線局の免許を拒否しなければならない。",
+        "エ": "総務大臣は、速やかにその工事落成の届出をするよう命じなければならない。"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-houki-q3",
+    "exam": "amateur1",
+    "session": "houki",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 3,
+    "officialQuestionLabel": "A-3",
+    "category": "法規",
+    "topicTags": [
+      "変更工事"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 法規 A-3。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次の記述は、アマチュア無線局の変更等の許可等について述べたものである。電波法（第９条及び第１７条）の規定に照らし、□内に入れるべき最も適切な字句の組合せを下の１から５までのうちから一つ選べ。なお、同じ記号の□内には、同じ字句が入るものとする。① 免許人は、無線設備の設置場所の変更をし、又は無線設備の Ａ  をしようとするときは、あらかじめ、総務大臣の許可を受けなければならない。ただし、無線設備の Ａ  であって総務省令で定める軽微な事項については、この限りでない。② ①のただし書の事項について無線設備の Ａ  をしたときは、 Ｂ  、その旨を総務大臣に届け出なければならない。③ ①の Ａ  は、周波数、電波の型式又は空中線電力に変更を来すものであってはならず、かつ、 Ｃ  に合致するものでなければならない。",
+    "choices": {
+      "ア": "A：変更の工事／B：遅滞なく／C：電波法第３章（無線設備）の技術基準",
+      "イ": "A：工事設計の変更／B：１０日以内に／C：電波法第３章（無線設備）の技術基準",
+      "ウ": "A：工事設計の変更／B：遅滞なく／C：無線局（基幹放送局を除く。）の開設の根本的基準",
+      "エ": "A：変更の工事／B：１０日以内に／C：無線局（基幹放送局を除く。）の開設の根本的基準",
+      "オ": "A：変更の工事／B：遅滞なく／C：無線局（基幹放送局を除く。）の開設の根本的基準"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "正答は1。変更の工事には原則として事前の許可が必要で、軽微な事項の例外では工事後に遅滞なく届け出る。電波法第17条が準用する第9条第3項により、変更は第3章の技術基準に合致しなければならない。",
+    "choiceExplanations": {
+      "ア": "正しい組合せ。変更の工事には原則として事前の許可が必要で、軽微な事項の例外では工事後に遅滞なく届け出る。電波法第17条が準用する第9条第3項により、変更は第3章の技術基準に合致しなければならない。",
+      "イ": "誤り。Aは「工事設計の変更」ではなく「変更の工事」、Bは「１０日以内に」ではなく「遅滞なく」。変更の工事には原則として事前の許可が必要で、軽微な事項の例外では工事後に遅滞なく届け出る。電波法第17条が準用する第9条第3項により、変更は第3章の技術基準に合致しなければならない。",
+      "ウ": "誤り。Aは「工事設計の変更」ではなく「変更の工事」、Cは「無線局（基幹放送局を除く。）の開設の根本的基準」ではなく「電波法第３章（無線設備）の技術基準」。変更の工事には原則として事前の許可が必要で、軽微な事項の例外では工事後に遅滞なく届け出る。電波法第17条が準用する第9条第3項により、変更は第3章の技術基準に合致しなければならない。",
+      "エ": "誤り。Bは「１０日以内に」ではなく「遅滞なく」、Cは「無線局（基幹放送局を除く。）の開設の根本的基準」ではなく「電波法第３章（無線設備）の技術基準」。変更の工事には原則として事前の許可が必要で、軽微な事項の例外では工事後に遅滞なく届け出る。電波法第17条が準用する第9条第3項により、変更は第3章の技術基準に合致しなければならない。",
+      "オ": "誤り。Cは「無線局（基幹放送局を除く。）の開設の根本的基準」ではなく「電波法第３章（無線設備）の技術基準」。変更の工事には原則として事前の許可が必要で、軽微な事項の例外では工事後に遅滞なく届け出る。電波法第17条が準用する第9条第3項により、変更は第3章の技術基準に合致しなければならない。"
+    },
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131"
+    ],
+    "originalContent": {
+      "body": "次の記述は、アマチュア無線局の変更等の許可等について述べたものである。電波法（第９条及び第１７条）の規定に照らし、□内に入れるべき最も適切な字句の組合せを下の１から５までのうちから一つ選べ。なお、同じ記号の□内には、同じ字句が入るものとする。① 免許人は、無線設備の設置場所の変更をし、又は無線設備の Ａ  をしようとするときは、あらかじめ、総務大臣の許可を受けなければならない。ただし、無線設備の Ａ  であって総務省令で定める軽微な事項については、この限りでない。② ①のただし書の事項について無線設備の Ａ  をしたときは、 Ｂ  、その旨を総務大臣に届け出なければならない。③ ①の Ａ  は、周波数、電波の型式又は空中線電力に変更を来すものであってはならず、かつ、 Ｃ  に合致するものでなければならない。",
+      "choices": {
+        "ア": "A：変更の工事／B：遅滞なく／C：電波法第３章（無線設備）の技術基準",
+        "イ": "A：工事設計の変更／B：１０日以内に／C：電波法第３章（無線設備）の技術基準",
+        "ウ": "A：工事設計の変更／B：遅滞なく／C：無線局（基幹放送局を除く。）の開設の根本的基準",
+        "エ": "A：変更の工事／B：１０日以内に／C：無線局（基幹放送局を除く。）の開設の根本的基準",
+        "オ": "A：変更の工事／B：遅滞なく／C：無線局（基幹放送局を除く。）の開設の根本的基準"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-houki-q4",
+    "exam": "amateur1",
+    "session": "houki",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 4,
+    "officialQuestionLabel": "A-4",
+    "category": "法規",
+    "topicTags": [
+      "指定変更"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 法規 A-4。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "アマチュア無線局の呼出符号、電波の型式、周波数又は空中線電力の指定の変更に関する次の記述のうち、電波法（第１９条）の規定に照らし、この規定に定めるところに適合するものはどれか。下の１から４までのうちから一つ選べ。",
+    "choices": {
+      "ア": "総務大臣は、免許人が周波数又は空中線電力の指定の変更を申請した場合において、電波の規整その他公益上必要があると認めるときは、その指定を変更しなければならない。",
+      "イ": "総務大臣は、免許人が呼出符号の指定の変更を申請した場合において、混信の除去その他特に必要があると認めるときは、その指定を変更することができる。",
+      "ウ": "総務大臣は、免許人が電波の型式及び周波数の指定の変更を申請した場合において、当該無線局が適合表示無線設備のみを使用するものであるときは、その指定を変更することができる。",
+      "エ": "総務大臣は、免許人が周波数又は空中線電力の指定の変更を申請した場合において、当該無線局の行う無線通信の通信量その他総務省令で定める事項を満たすときは、その指定を変更しなければならない。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "正答は2。電波法第19条では、識別信号等の指定変更の申請があり、混信の除去その他特に必要があると認めるとき、総務大臣は指定を変更することができる。義務的な変更ではなく、適合表示設備だけという条件でもない。",
+    "choiceExplanations": {
+      "ア": "誤り。公益上必要なら必ず変更するという義務規定ではない。条件と効果の双方を確認する。",
+      "イ": "正しい。呼出符号の変更申請について、混信除去その他特に必要な場合に変更できる。",
+      "ウ": "誤り。適合表示無線設備だけを使用することを第19条の変更要件とする規定ではない。",
+      "エ": "誤り。通信量を満たせば変更しなければならないという規定ではない。"
+    },
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131"
+    ],
+    "originalContent": {
+      "body": "アマチュア無線局の呼出符号、電波の型式、周波数又は空中線電力の指定の変更に関する次の記述のうち、電波法（第１９条）の規定に照らし、この規定に定めるところに適合するものはどれか。下の１から４までのうちから一つ選べ。",
+      "choices": {
+        "ア": "総務大臣は、免許人が周波数又は空中線電力の指定の変更を申請した場合において、電波の規整その他公益上必要があると認めるときは、その指定を変更しなければならない。",
+        "イ": "総務大臣は、免許人が呼出符号の指定の変更を申請した場合において、混信の除去その他特に必要があると認めるときは、その指定を変更することができる。",
+        "ウ": "総務大臣は、免許人が電波の型式及び周波数の指定の変更を申請した場合において、当該無線局が適合表示無線設備のみを使用するものであるときは、その指定を変更することができる。",
+        "エ": "総務大臣は、免許人が周波数又は空中線電力の指定の変更を申請した場合において、当該無線局の行う無線通信の通信量その他総務省令で定める事項を満たすときは、その指定を変更しなければならない。"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-houki-q5",
+    "exam": "amateur1",
+    "session": "houki",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 5,
+    "officialQuestionLabel": "A-5",
+    "category": "法規",
+    "topicTags": [
+      "電波の質"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 法規 A-5。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次の記述は、送信設備に使用する電波の質及び周波数の許容偏差について述べたものである。電波法（第２８条）、電波法施行規則（第２条）及び無線設備規則（第５条及び別表第１号）の規定に照らし、□内に入れるべき最も適切な字句の組合せを下の１から４までのうちから一つ選べ。① 送信設備に使用する電波の周波数の偏差及び幅、 Ａ  の強度等電波の質は、総務省令で定めるところに適合するものでなければならない。② 「周波数の許容偏差」とは、発射によって占有する周波数帯の中央の周波数の割当周波数からの許容することができる最大の偏差又は発射の Ｂ  の基準周波数からの許容することができる最大の偏差をいい、百万分率又はヘルツで表す。③ ９ｋＨｚを超え５２６.５ｋＨｚ以下の周波数の電波を使用するアマチュア局の送信設備に使用する電波の周波数の許容偏差は Ｃ  とする。",
+    "choices": {
+      "ア": "A：帯域外発射／B：特性周波数／C：１００万分の５００",
+      "イ": "A：帯域外発射／B：代表周波数／C：１００万分の１００",
+      "ウ": "A：高調波／B：代表周波数／C：１００万分の５００",
+      "エ": "A：高調波／B：特性周波数／C：１００万分の１００"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "正答は4。電波法第28条の電波の質には高調波の強度等が含まれる。周波数の許容偏差は特性周波数の基準周波数からの最大偏差等で、設問の9 kHz超526.5 kHz以下のアマチュア局は100万分の100となる。",
+    "choiceExplanations": {
+      "ア": "誤り。Aは「帯域外発射」ではなく「高調波」、Cは「１００万分の５００」ではなく「１００万分の１００」。電波法第28条の電波の質には高調波の強度等が含まれる。周波数の許容偏差は特性周波数の基準周波数からの最大偏差等で、設問の9 kHz超526.5 kHz以下のアマチュア局は100万分の100となる。",
+      "イ": "誤り。Aは「帯域外発射」ではなく「高調波」、Bは「代表周波数」ではなく「特性周波数」。電波法第28条の電波の質には高調波の強度等が含まれる。周波数の許容偏差は特性周波数の基準周波数からの最大偏差等で、設問の9 kHz超526.5 kHz以下のアマチュア局は100万分の100となる。",
+      "ウ": "誤り。Bは「代表周波数」ではなく「特性周波数」、Cは「１００万分の５００」ではなく「１００万分の１００」。電波法第28条の電波の質には高調波の強度等が含まれる。周波数の許容偏差は特性周波数の基準周波数からの最大偏差等で、設問の9 kHz超526.5 kHz以下のアマチュア局は100万分の100となる。",
+      "エ": "正しい組合せ。電波法第28条の電波の質には高調波の強度等が含まれる。周波数の許容偏差は特性周波数の基準周波数からの最大偏差等で、設問の9 kHz超526.5 kHz以下のアマチュア局は100万分の100となる。"
+    },
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325M50080000018"
+    ],
+    "originalContent": {
+      "body": "次の記述は、送信設備に使用する電波の質及び周波数の許容偏差について述べたものである。電波法（第２８条）、電波法施行規則（第２条）及び無線設備規則（第５条及び別表第１号）の規定に照らし、□内に入れるべき最も適切な字句の組合せを下の１から４までのうちから一つ選べ。① 送信設備に使用する電波の周波数の偏差及び幅、 Ａ  の強度等電波の質は、総務省令で定めるところに適合するものでなければならない。② 「周波数の許容偏差」とは、発射によって占有する周波数帯の中央の周波数の割当周波数からの許容することができる最大の偏差又は発射の Ｂ  の基準周波数からの許容することができる最大の偏差をいい、百万分率又はヘルツで表す。③ ９ｋＨｚを超え５２６.５ｋＨｚ以下の周波数の電波を使用するアマチュア局の送信設備に使用する電波の周波数の許容偏差は Ｃ  とする。",
+      "choices": {
+        "ア": "A：帯域外発射／B：特性周波数／C：１００万分の５００",
+        "イ": "A：帯域外発射／B：代表周波数／C：１００万分の１００",
+        "ウ": "A：高調波／B：代表周波数／C：１００万分の５００",
+        "エ": "A：高調波／B：特性周波数／C：１００万分の１００"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-houki-q6",
+    "exam": "amateur1",
+    "session": "houki",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 6,
+    "officialQuestionLabel": "A-6",
+    "category": "法規",
+    "topicTags": [
+      "受信設備"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 法規 A-6。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次の記述は、受信設備の条件について述べたものである。電波法（第２９条）及び無線設備規則（第２４条及び第２５条）の規定に照らし、□内に入れるべき最も適切な字句の組合せを下の１から４までのうちから一つ選べ。なお、同じ記号の□内には、同じ字句が入るものとする。① 受信設備は、その副次的に発する電波又は Ａ  が、総務省令で定める限度を超えて Ｂ  を与えるものであってはならない。② ①の副次的に発する電波が Ｂ  を与えない限度は、受信空中線と電気的常数の等しい擬似空中線回路を使用して測定した場合に、その回路の電力が４ナノワット以下でなければならない。ただし、無線設備規則第２４条（副次的に発する電波等の限度）の規定において、別に定めのある場合は、その定めるところによるものとする。③ その他の条件として、受信設備は、なるべく次の(1)から(4)までに適合するものでなければならない。(1) 内部雑音が小さいこと。(2) 感度が十分であること。(3) 選択度が適正であること。(4) Ｃ  が十分であること。",
+    "choices": {
+      "ア": "A：高周波電流／B：重要無線通信を行う無線局の運用に妨害／C：安定度",
+      "イ": "A：高周波電流／B：他の無線設備の機能に支障／C：了解度",
+      "ウ": "A：空中線電流／B：他の無線設備の機能に支障／C：安定度",
+      "エ": "A：空中線電流／B：重要無線通信を行う無線局の運用に妨害／C：了解度"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "正答は2。電波法第29条は副次的な電波又は高周波電流が他の無線設備の機能に支障を与えることを制限する。無線設備規則第25条のその他の条件は内部雑音・感度・選択度・了解度であり、Cは了解度となる。",
+    "choiceExplanations": {
+      "ア": "誤り。Bは「重要無線通信を行う無線局の運用に妨害」ではなく「他の無線設備の機能に支障」、Cは「安定度」ではなく「了解度」。電波法第29条は副次的な電波又は高周波電流が他の無線設備の機能に支障を与えることを制限する。無線設備規則第25条のその他の条件は内部雑音・感度・選択度・了解度であり、Cは了解度となる。",
+      "イ": "正しい組合せ。電波法第29条は副次的な電波又は高周波電流が他の無線設備の機能に支障を与えることを制限する。無線設備規則第25条のその他の条件は内部雑音・感度・選択度・了解度であり、Cは了解度となる。",
+      "ウ": "誤り。Aは「空中線電流」ではなく「高周波電流」、Cは「安定度」ではなく「了解度」。電波法第29条は副次的な電波又は高周波電流が他の無線設備の機能に支障を与えることを制限する。無線設備規則第25条のその他の条件は内部雑音・感度・選択度・了解度であり、Cは了解度となる。",
+      "エ": "誤り。Aは「空中線電流」ではなく「高周波電流」、Bは「重要無線通信を行う無線局の運用に妨害」ではなく「他の無線設備の機能に支障」。電波法第29条は副次的な電波又は高周波電流が他の無線設備の機能に支障を与えることを制限する。無線設備規則第25条のその他の条件は内部雑音・感度・選択度・了解度であり、Cは了解度となる。"
+    },
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325M50080000018"
+    ],
+    "originalContent": {
+      "body": "次の記述は、受信設備の条件について述べたものである。電波法（第２９条）及び無線設備規則（第２４条及び第２５条）の規定に照らし、□内に入れるべき最も適切な字句の組合せを下の１から４までのうちから一つ選べ。なお、同じ記号の□内には、同じ字句が入るものとする。① 受信設備は、その副次的に発する電波又は Ａ  が、総務省令で定める限度を超えて Ｂ  を与えるものであってはならない。② ①の副次的に発する電波が Ｂ  を与えない限度は、受信空中線と電気的常数の等しい擬似空中線回路を使用して測定した場合に、その回路の電力が４ナノワット以下でなければならない。ただし、無線設備規則第２４条（副次的に発する電波等の限度）の規定において、別に定めのある場合は、その定めるところによるものとする。③ その他の条件として、受信設備は、なるべく次の(1)から(4)までに適合するものでなければならない。(1) 内部雑音が小さいこと。(2) 感度が十分であること。(3) 選択度が適正であること。(4) Ｃ  が十分であること。",
+      "choices": {
+        "ア": "A：高周波電流／B：重要無線通信を行う無線局の運用に妨害／C：安定度",
+        "イ": "A：高周波電流／B：他の無線設備の機能に支障／C：了解度",
+        "ウ": "A：空中線電流／B：他の無線設備の機能に支障／C：安定度",
+        "エ": "A：空中線電流／B：重要無線通信を行う無線局の運用に妨害／C：了解度"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-houki-q7",
+    "exam": "amateur1",
+    "session": "houki",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 7,
+    "officialQuestionLabel": "A-7",
+    "category": "法規",
+    "topicTags": [
+      "周波数の安定"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 法規 A-7。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次の記述のうち、送信装置の周波数の安定のための条件に適合しないものはどれか。無線設備規則（第１５条及び第１６条）の規定に照らし、下の１から４までのうちから一つ選べ。",
+    "choices": {
+      "ア": "周波数をその許容偏差内に維持するため、発振回路の方式は、できる限り外囲の温度又は湿度の変化によって影響を受けないものでなければならない。",
+      "イ": "周波数をその許容偏差内に維持するため、送信装置は、できる限り電源電圧又は負荷の変化によって発振周波数に影響を与えないものでなければならない。",
+      "ウ": "水晶発振回路に使用する水晶発振子は、周波数をその許容偏差内に維持するため、発振周波数が総務大臣の行う検定に合格した検査機器の回路によりあらかじめ試験を行って決定されているものであること。",
+      "エ": "移動局（移動するアマチュア局を含む。）の送信装置は、実際上起り得る振動又は衝撃によっても周波数をその許容偏差内に維持するものでなければならない。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "正答は3。温湿度、電源・負荷の変化、移動局の振動・衝撃に対して周波数を許容偏差内に維持することが求められる。一方、水晶発振子について3が述べる総務大臣の検定に合格した機器による試験は、設備規則第15・16条の条件ではない。",
+    "choiceExplanations": {
+      "ア": "適合する記述。発振回路は外囲の温度・湿度の変化の影響をできる限り受けない方式とする。",
+      "イ": "適合する記述。電源電圧や負荷の変化が発振周波数へ及ぼす影響をできる限り抑える。",
+      "ウ": "適合しない記述なので正答。水晶発振子の周波数を、指定された検定合格機器で試験して決定するという要件はない。",
+      "エ": "適合する記述。移動局では実際に起こり得る振動・衝撃の下でも許容偏差を維持する。"
+    },
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325M50080000018"
+    ],
+    "originalContent": {
+      "body": "次の記述のうち、送信装置の周波数の安定のための条件に適合しないものはどれか。無線設備規則（第１５条及び第１６条）の規定に照らし、下の１から４までのうちから一つ選べ。",
+      "choices": {
+        "ア": "周波数をその許容偏差内に維持するため、発振回路の方式は、できる限り外囲の温度又は湿度の変化によって影響を受けないものでなければならない。",
+        "イ": "周波数をその許容偏差内に維持するため、送信装置は、できる限り電源電圧又は負荷の変化によって発振周波数に影響を与えないものでなければならない。",
+        "ウ": "水晶発振回路に使用する水晶発振子は、周波数をその許容偏差内に維持するため、発振周波数が総務大臣の行う検定に合格した検査機器の回路によりあらかじめ試験を行って決定されているものであること。",
+        "エ": "移動局（移動するアマチュア局を含む。）の送信装置は、実際上起り得る振動又は衝撃によっても周波数をその許容偏差内に維持するものでなければならない。"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-houki-q8",
+    "exam": "amateur1",
+    "session": "houki",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 8,
+    "officialQuestionLabel": "A-8",
+    "category": "法規",
+    "topicTags": [
+      "高圧電気の安全施設"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 法規 A-8。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "高圧電気（注）に対する安全施設に関する次の記述のうち、電波法施行規則（第２３条）の規定に照らし、この規定に定めるところに適合するものはどれか。下の１から４までのうちから一つ選べ。注 高周波若しくは交流の電圧３００ボルト又は直流の電圧７５０ボルトを超える電気をいう。",
+    "choices": {
+      "ア": "送信設備の各単位装置相互間をつなぐ電線であって高圧電気を通ずるものは、丈夫な絶縁体の内に収容しなければならない。ただし、無線従事者以外の者が出入しない場所に装置する場合は、この限りでない。",
+      "イ": "送信設備の各単位装置相互間をつなぐ電線であって高圧電気を通ずるものは、接地された金属しゃへい体の内に収容しなければならない。ただし、無線従事者以外の者が出入しない場所に装置する場合は、この限りでない。",
+      "ウ": "送信設備の各単位装置相互間をつなぐ電線であって高圧電気を通ずるものは、金属しゃへい体の内に収容しなければならない。ただし、取扱者のほか出入できないように設備した場所に装置する場合は、この限りでない。",
+      "エ": "送信設備の各単位装置相互間をつなぐ電線であって高圧電気を通ずるものは、線溝若しくは丈夫な絶縁体又は接地された金属しゃへい体の内に収容しなければならない。ただし、取扱者のほか出入できないように設備した場所に装置する場合は、この限りでない。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "正答は4。施行規則第23条では、単位装置間の高圧配線を線溝、丈夫な絶縁体又は接地した金属しゃへい体へ収容する。例外は取扱者以外が出入りできないよう設備した場所であり、無線従事者以外が出入りしないだけでは足りない。",
+    "choiceExplanations": {
+      "ア": "誤り。収容方法を丈夫な絶縁体だけに限定し、例外も無線従事者の出入りで判断している。",
+      "イ": "誤り。接地金属しゃへい体だけでなく他の収容方法もあり、例外の条件も異なる。",
+      "ウ": "誤り。金属しゃへい体を使う場合には接地が必要で、接地の条件を欠いている。",
+      "エ": "正しい。三つの収容方法と、取扱者以外の出入りを防ぐ場所についての例外が一致する。"
+    },
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325M50080000014"
+    ],
+    "originalContent": {
+      "body": "高圧電気（注）に対する安全施設に関する次の記述のうち、電波法施行規則（第２３条）の規定に照らし、この規定に定めるところに適合するものはどれか。下の１から４までのうちから一つ選べ。注 高周波若しくは交流の電圧３００ボルト又は直流の電圧７５０ボルトを超える電気をいう。",
+      "choices": {
+        "ア": "送信設備の各単位装置相互間をつなぐ電線であって高圧電気を通ずるものは、丈夫な絶縁体の内に収容しなければならない。ただし、無線従事者以外の者が出入しない場所に装置する場合は、この限りでない。",
+        "イ": "送信設備の各単位装置相互間をつなぐ電線であって高圧電気を通ずるものは、接地された金属しゃへい体の内に収容しなければならない。ただし、無線従事者以外の者が出入しない場所に装置する場合は、この限りでない。",
+        "ウ": "送信設備の各単位装置相互間をつなぐ電線であって高圧電気を通ずるものは、金属しゃへい体の内に収容しなければならない。ただし、取扱者のほか出入できないように設備した場所に装置する場合は、この限りでない。",
+        "エ": "送信設備の各単位装置相互間をつなぐ電線であって高圧電気を通ずるものは、線溝若しくは丈夫な絶縁体又は接地された金属しゃへい体の内に収容しなければならない。ただし、取扱者のほか出入できないように設備した場所に装置する場合は、この限りでない。"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-houki-q9",
+    "exam": "amateur1",
+    "session": "houki",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 9,
+    "officialQuestionLabel": "A-9",
+    "category": "法規",
+    "topicTags": [
+      "目的外使用と空中線電力"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 法規 A-9。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次の記述は、アマチュア無線局の目的外使用の禁止等について述べたものである。電波法（第５２条から第５４条まで及び第１１０条）の規定に照らし、□内に入れるべき最も適切な字句の組合せを下の１から５までのうちから一つ選べ。① 無線局は、免許記録に記録されている目的又は通信の相手方若しくは通信事項の範囲を超えて運用してはならない。ただし、次の(1)から(6)までに掲げる通信については、この限りでない。(1) 遭難通信    (2) 緊急通信    (3) 安全通信    (4) 非常通信    (5) 放送の受信    (6) その他総務省令で定める通信② 無線局を運用する場合においては、 Ａ  、識別信号、電波の型式及び周波数は、その無線局の免許記録に記録されているところによらなければならない。ただし、遭難通信については、この限りでない。③ 無線局を運用する場合においては、空中線電力は、次の(1)及び(2)の定めるところによらなければならない。ただし、遭難通信については、この限りでない。(1) 免許記録に記録されているものの範囲内であること。(2) 通信を行うため Ｂ  であること。④ ①、②又は③(1)に違反して無線局を運用した者は、 Ｃ  に処する。",
+    "choices": {
+      "ア": "A：送信空中線の型式／B：必要最小のもの／C：６月以下の拘禁刑又は３０万円以下の罰金",
+      "イ": "A：無線設備の設置場所／B：必要最小のもの／C：１年以下の拘禁刑又は１００万円以下の罰金",
+      "ウ": "A：無線設備の設置場所／B：確実かつ十分なもの／C：６月以下の拘禁刑又は３０万円以下の罰金",
+      "エ": "A：送信空中線の型式／B：確実かつ十分なもの／C：１年以下の拘禁刑又は１００万円以下の罰金",
+      "オ": "A：無線設備の設置場所／B：確実かつ十分なもの／C：１年以下の拘禁刑又は１００万円以下の罰金"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "正答は2。運用時の指定事項には無線設備の設置場所が含まれる。空中線電力は免許記録の範囲内で通信に必要最小としなければならない。設問の目的等・指定事項・電力上限への違反に対する罰則は1年以下の拘禁刑又は100万円以下の罰金である。",
+    "choiceExplanations": {
+      "ア": "誤り。Aは「送信空中線の型式」ではなく「無線設備の設置場所」、Cは「６月以下の拘禁刑又は３０万円以下の罰金」ではなく「１年以下の拘禁刑又は１００万円以下の罰金」。運用時の指定事項には無線設備の設置場所が含まれる。空中線電力は免許記録の範囲内で通信に必要最小としなければならない。設問の目的等・指定事項・電力上限への違反に対する罰則は1年以下の拘禁刑又は100万円以下の罰金である。",
+      "イ": "正しい組合せ。運用時の指定事項には無線設備の設置場所が含まれる。空中線電力は免許記録の範囲内で通信に必要最小としなければならない。設問の目的等・指定事項・電力上限への違反に対する罰則は1年以下の拘禁刑又は100万円以下の罰金である。",
+      "ウ": "誤り。Bは「確実かつ十分なもの」ではなく「必要最小のもの」、Cは「６月以下の拘禁刑又は３０万円以下の罰金」ではなく「１年以下の拘禁刑又は１００万円以下の罰金」。運用時の指定事項には無線設備の設置場所が含まれる。空中線電力は免許記録の範囲内で通信に必要最小としなければならない。設問の目的等・指定事項・電力上限への違反に対する罰則は1年以下の拘禁刑又は100万円以下の罰金である。",
+      "エ": "誤り。Aは「送信空中線の型式」ではなく「無線設備の設置場所」、Bは「確実かつ十分なもの」ではなく「必要最小のもの」。運用時の指定事項には無線設備の設置場所が含まれる。空中線電力は免許記録の範囲内で通信に必要最小としなければならない。設問の目的等・指定事項・電力上限への違反に対する罰則は1年以下の拘禁刑又は100万円以下の罰金である。",
+      "オ": "誤り。Bは「確実かつ十分なもの」ではなく「必要最小のもの」。運用時の指定事項には無線設備の設置場所が含まれる。空中線電力は免許記録の範囲内で通信に必要最小としなければならない。設問の目的等・指定事項・電力上限への違反に対する罰則は1年以下の拘禁刑又は100万円以下の罰金である。"
+    },
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131"
+    ],
+    "originalContent": {
+      "body": "次の記述は、アマチュア無線局の目的外使用の禁止等について述べたものである。電波法（第５２条から第５４条まで及び第１１０条）の規定に照らし、□内に入れるべき最も適切な字句の組合せを下の１から５までのうちから一つ選べ。① 無線局は、免許記録に記録されている目的又は通信の相手方若しくは通信事項の範囲を超えて運用してはならない。ただし、次の(1)から(6)までに掲げる通信については、この限りでない。(1) 遭難通信    (2) 緊急通信    (3) 安全通信    (4) 非常通信    (5) 放送の受信    (6) その他総務省令で定める通信② 無線局を運用する場合においては、 Ａ  、識別信号、電波の型式及び周波数は、その無線局の免許記録に記録されているところによらなければならない。ただし、遭難通信については、この限りでない。③ 無線局を運用する場合においては、空中線電力は、次の(1)及び(2)の定めるところによらなければならない。ただし、遭難通信については、この限りでない。(1) 免許記録に記録されているものの範囲内であること。(2) 通信を行うため Ｂ  であること。④ ①、②又は③(1)に違反して無線局を運用した者は、 Ｃ  に処する。",
+      "choices": {
+        "ア": "A：送信空中線の型式／B：必要最小のもの／C：６月以下の拘禁刑又は３０万円以下の罰金",
+        "イ": "A：無線設備の設置場所／B：必要最小のもの／C：１年以下の拘禁刑又は１００万円以下の罰金",
+        "ウ": "A：無線設備の設置場所／B：確実かつ十分なもの／C：６月以下の拘禁刑又は３０万円以下の罰金",
+        "エ": "A：送信空中線の型式／B：確実かつ十分なもの／C：１年以下の拘禁刑又は１００万円以下の罰金",
+        "オ": "A：無線設備の設置場所／B：確実かつ十分なもの／C：１年以下の拘禁刑又は１００万円以下の罰金"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-houki-q10",
+    "exam": "amateur1",
+    "session": "houki",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 10,
+    "officialQuestionLabel": "A-10",
+    "category": "法規",
+    "topicTags": [
+      "無線通信の秘密"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 法規 A-10。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次の記述は、無線通信（注）の秘密の保護について述べたものである。電波法（第５９条及び第１０９条）の規定に照らし、□内に入れるべき最も適切な字句の組合せを下の１から４までのうちから一つ選べ。注 電気通信事業法第４条（秘密の保護）第１項又は第１６４条（適用除外等）第３項の通信であるものを除く。① 何人も法律に別段の定めがある場合を除くほか、 Ａ  行われる無線通信を Ｂ  を漏らし、又はこれを窃用してはならない。②  Ｃ  がその業務に関し知り得た無線局の取扱中に係る無線通信の秘密を漏らし、又は窃用したときは、２年以下の拘禁刑又は１００万円以下の罰金に処する。",
+    "choices": {
+      "ア": "A：総務省令で定める周波数により／B：聴守してその秘密／C：無線通信の業務に従事する者",
+      "イ": "A：特定の相手方に対して／B：聴守してその秘密／C：免許人又は無線従事者",
+      "ウ": "A：特定の相手方に対して／B：傍受してその存在若しくは内容／C：無線通信の業務に従事する者",
+      "エ": "A：総務省令で定める周波数により／B：傍受してその存在若しくは内容／C：免許人又は無線従事者"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "正答は3。特定の相手方に向けた無線通信を傍受して、その存在又は内容を漏らしたり窃用したりしてはならない。第109条が定める業務上の秘密漏えいの主体は無線通信の業務に従事する者で、免許人・無線従事者だけに限定されない。",
+    "choiceExplanations": {
+      "ア": "誤り。Aは「総務省令で定める周波数により」ではなく「特定の相手方に対して」、Bは「聴守してその秘密」ではなく「傍受してその存在若しくは内容」。特定の相手方に向けた無線通信を傍受して、その存在又は内容を漏らしたり窃用したりしてはならない。第109条が定める業務上の秘密漏えいの主体は無線通信の業務に従事する者で、免許人・無線従事者だけに限定されない。",
+      "イ": "誤り。Bは「聴守してその秘密」ではなく「傍受してその存在若しくは内容」、Cは「免許人又は無線従事者」ではなく「無線通信の業務に従事する者」。特定の相手方に向けた無線通信を傍受して、その存在又は内容を漏らしたり窃用したりしてはならない。第109条が定める業務上の秘密漏えいの主体は無線通信の業務に従事する者で、免許人・無線従事者だけに限定されない。",
+      "ウ": "正しい組合せ。特定の相手方に向けた無線通信を傍受して、その存在又は内容を漏らしたり窃用したりしてはならない。第109条が定める業務上の秘密漏えいの主体は無線通信の業務に従事する者で、免許人・無線従事者だけに限定されない。",
+      "エ": "誤り。Aは「総務省令で定める周波数により」ではなく「特定の相手方に対して」、Cは「免許人又は無線従事者」ではなく「無線通信の業務に従事する者」。特定の相手方に向けた無線通信を傍受して、その存在又は内容を漏らしたり窃用したりしてはならない。第109条が定める業務上の秘密漏えいの主体は無線通信の業務に従事する者で、免許人・無線従事者だけに限定されない。"
+    },
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131"
+    ],
+    "originalContent": {
+      "body": "次の記述は、無線通信（注）の秘密の保護について述べたものである。電波法（第５９条及び第１０９条）の規定に照らし、□内に入れるべき最も適切な字句の組合せを下の１から４までのうちから一つ選べ。注 電気通信事業法第４条（秘密の保護）第１項又は第１６４条（適用除外等）第３項の通信であるものを除く。① 何人も法律に別段の定めがある場合を除くほか、 Ａ  行われる無線通信を Ｂ  を漏らし、又はこれを窃用してはならない。②  Ｃ  がその業務に関し知り得た無線局の取扱中に係る無線通信の秘密を漏らし、又は窃用したときは、２年以下の拘禁刑又は１００万円以下の罰金に処する。",
+      "choices": {
+        "ア": "A：総務省令で定める周波数により／B：聴守してその秘密／C：無線通信の業務に従事する者",
+        "イ": "A：特定の相手方に対して／B：聴守してその秘密／C：免許人又は無線従事者",
+        "ウ": "A：特定の相手方に対して／B：傍受してその存在若しくは内容／C：無線通信の業務に従事する者",
+        "エ": "A：総務省令で定める周波数により／B：傍受してその存在若しくは内容／C：免許人又は無線従事者"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-houki-q11",
+    "exam": "amateur1",
+    "session": "houki",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 11,
+    "officialQuestionLabel": "A-11",
+    "category": "法規",
+    "topicTags": [
+      "虚偽の通信"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 法規 A-11。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "無線設備によって虚偽の通信を発した者に対する罰則に関する次の記述のうち、電波法（第１０６条）の規定に照らし、この規定に定めるところに該当するものはどれか。下の１から４までのうちから一つ選べ。",
+    "choices": {
+      "ア": "自己若しくは他人に利益を与え、又は他人に損害を加える目的で、無線設備によって故意に虚偽の通信を発した者は、１年以下の拘禁刑又は５０万円以下の罰金に処する。",
+      "イ": "自己の不正な利益を図り、又は他人に損害を加える目的で、無線設備によって虚偽の通信を発した者は、２年以下の拘禁刑又は１００万円以下の罰金に処する。",
+      "ウ": "自己若しくは他人に利益を与え、又は他人に損害を加える目的で、無線設備によって虚偽の通信を発した者は、３年以下の拘禁刑又は１５０万円以下の罰金に処する。",
+      "エ": "自己の不正な利益を図り、又は他人に損害を加える目的で、無線設備によって故意に虚偽の通信を発した者は、５年以下の拘禁刑又は２５０万円以下の罰金に処する。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "正答は3。電波法第106条は、自己又は他人に利益を与え、又は他人に損害を加える目的で虚偽の通信を発した者について、3年以下の拘禁刑又は150万円以下の罰金とする。利益を「自己の不正な利益」だけに限定せず、目的と刑を組で確認する。",
+    "choiceExplanations": {
+      "ア": "誤り。目的に関する表現のほか、1年・50万円という刑の上限も第106条と一致しない。",
+      "イ": "誤り。目的を自己の不正な利益に狭め、刑も2年・100万円としている。",
+      "ウ": "正しい。自己又は他人への利益等の目的と、3年以下・150万円以下の刑が一致する。",
+      "エ": "誤り。自己の不正な利益という限定と、5年・250万円という刑の双方が一致しない。"
+    },
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131"
+    ],
+    "originalContent": {
+      "body": "無線設備によって虚偽の通信を発した者に対する罰則に関する次の記述のうち、電波法（第１０６条）の規定に照らし、この規定に定めるところに該当するものはどれか。下の１から４までのうちから一つ選べ。",
+      "choices": {
+        "ア": "自己若しくは他人に利益を与え、又は他人に損害を加える目的で、無線設備によって故意に虚偽の通信を発した者は、１年以下の拘禁刑又は５０万円以下の罰金に処する。",
+        "イ": "自己の不正な利益を図り、又は他人に損害を加える目的で、無線設備によって虚偽の通信を発した者は、２年以下の拘禁刑又は１００万円以下の罰金に処する。",
+        "ウ": "自己若しくは他人に利益を与え、又は他人に損害を加える目的で、無線設備によって虚偽の通信を発した者は、３年以下の拘禁刑又は１５０万円以下の罰金に処する。",
+        "エ": "自己の不正な利益を図り、又は他人に損害を加える目的で、無線設備によって故意に虚偽の通信を発した者は、５年以下の拘禁刑又は２５０万円以下の罰金に処する。"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-houki-q12",
+    "exam": "amateur1",
+    "session": "houki",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 12,
+    "officialQuestionLabel": "A-12",
+    "category": "法規",
+    "topicTags": [
+      "呼出しへの応答"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 法規 A-12。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次の事項のうち、無線局が無線電信通信で自局に対する呼出しを受信した場合において、呼出局の呼出符号が不確実であるときに執るべき措置に該当するものはどれか。無線局運用規則（第１３条、第２３条、第２６条及び別表第２号）の規定に照らし、下の１から４までのうちから一つ選べ。",
+    "choices": {
+      "ア": "その呼出しが反復され、かつ、呼出局の呼出符号が確実に判明するまで応答してはならない。",
+      "イ": "応答事項のうち相手局の呼出符号の代わりに「ＱＲＺ？」を使用して、直ちに応答しなければならない。",
+      "ウ": "応答事項のうち相手局の呼出符号の代わりに「ＣＱ」を使用して、直ちに応答しなければならない。",
+      "エ": "応答事項のうち相手局の呼出符号の代わりに「ＲＰＴ」を使用して、直ちに呼出しの反復を求めなければならない。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "正答は2。呼出しを受信しても相手の呼出符号が不確実なときは、応答の相手局呼出符号をQRZ?に置き換えて直ちに応答する。QRZ?は誰がこちらを呼んでいるかを尋ねる符号であり、CQやRPTとは目的が異なる。",
+    "choiceExplanations": {
+      "ア": "誤り。符号が判明するまで一切応答しないのではなく、QRZ?を用いて直ちに応答する。",
+      "イ": "正しい。相手局の呼出符号に代えてQRZ?を使用する手順である。",
+      "ウ": "誤り。CQは不特定の各局への一般呼出しであり、不確実な呼出局の確認にはQRZ?を用いる。",
+      "エ": "誤り。RPTによる反復要求をこの応答手順に置き換えることはできない。"
+    },
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325M50080000017"
+    ],
+    "originalContent": {
+      "body": "次の事項のうち、無線局が無線電信通信で自局に対する呼出しを受信した場合において、呼出局の呼出符号が不確実であるときに執るべき措置に該当するものはどれか。無線局運用規則（第１３条、第２３条、第２６条及び別表第２号）の規定に照らし、下の１から４までのうちから一つ選べ。",
+      "choices": {
+        "ア": "その呼出しが反復され、かつ、呼出局の呼出符号が確実に判明するまで応答してはならない。",
+        "イ": "応答事項のうち相手局の呼出符号の代わりに「ＱＲＺ？」を使用して、直ちに応答しなければならない。",
+        "ウ": "応答事項のうち相手局の呼出符号の代わりに「ＣＱ」を使用して、直ちに応答しなければならない。",
+        "エ": "応答事項のうち相手局の呼出符号の代わりに「ＲＰＴ」を使用して、直ちに呼出しの反復を求めなければならない。"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-houki-q13",
+    "exam": "amateur1",
+    "session": "houki",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 13,
+    "officialQuestionLabel": "A-13",
+    "category": "法規",
+    "topicTags": [
+      "通信の終了符号"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 法規 A-13。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次の記述は、無線電信通信における通報の送信の終了及び通信の終了について述べたものである。無線局運用規則（第１２条、第１３条、第３６条及び第３８条並びに別表第１号及び別表第２号）の規定に照らし、□内に入れるべき最も適切な略符号を表すモールス符号の組合せを下の１から４までのうちから一つ選べ。① 通報の送信を終了し、他に送信すべき通報がないことを通知しようとするときは、送信した通報に続いて次の(1)及び(2)に掲げる事項を順次送信するものとする。(1) Ａ(2) Ｂ② 通信が終了したときは、「 Ｃ  」を送信するものとする。ただし、海上移動業務以外の業務においては、これを省略することができる。\n注 モールス符号の点、線の長さ及び間隔は、簡略化してある。",
+    "choices": {
+      "ア": "－・ ・・ ・－・・    －・－       ・・・－・－",
+      "イ": "－・ ・・ ・－・・    － ・・－    －・－・ ・－・・",
+      "ウ": "・－・－・          － ・・－     ・・・－・－",
+      "エ": "・－・－・          －・－       －・－・ ・－・・"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "正答は1。送信する通報が残っていなければNILを続け、送信終了を示すKを送る。通信の終了は連続符号のSKである。選択肢1はAがNIL、BがK、CがSKの組合せ。ARは通報の終わり、TUは謝意、CLは閉局の符号なので区別する。",
+    "choiceExplanations": {
+      "ア": "正しい。AのNIL、BのK、Cの連続符号SKが、設問の三つの手順に対応する。",
+      "イ": "誤り。NILは合うが、BをTU、CをCLとしており、送信終了・通信終了の符号と一致しない。",
+      "ウ": "誤り。Aは連続符号AR、BはTUであり、NILとKの組合せではない。",
+      "エ": "誤り。BのKは合うが、AがAR、CがCLとなっている。"
+    },
+    "isCalculation": false,
+    "imageUrls": [
+      "/questions/amateur1/2026-november-houki-q13.png"
+    ],
+    "imageAltTexts": [
+      "法規A-13の公式選択肢表。数字1～4の順にモールス符号を配置。点・線の字間を原本どおりに示す。"
+    ],
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325M50080000017"
+    ],
+    "originalContent": {
+      "body": "次の記述は、無線電信通信における通報の送信の終了及び通信の終了について述べたものである。無線局運用規則（第１２条、第１３条、第３６条及び第３８条並びに別表第１号及び別表第２号）の規定に照らし、□内に入れるべき最も適切な略符号を表すモールス符号の組合せを下の１から４までのうちから一つ選べ。① 通報の送信を終了し、他に送信すべき通報がないことを通知しようとするときは、送信した通報に続いて次の(1)及び(2)に掲げる事項を順次送信するものとする。(1) Ａ(2) Ｂ② 通信が終了したときは、「 Ｃ  」を送信するものとする。ただし、海上移動業務以外の業務においては、これを省略することができる。\n注 モールス符号の点、線の長さ及び間隔は、簡略化してある。",
+      "choices": {
+        "ア": "－・ ・・ ・－・・    －・－       ・・・－・－",
+        "イ": "－・ ・・ ・－・・    － ・・－    －・－・ ・－・・",
+        "ウ": "・－・－・          － ・・－     ・・・－・－",
+        "エ": "・－・－・          －・－       －・－・ ・－・・"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-houki-q14",
+    "exam": "amateur1",
+    "session": "houki",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 14,
+    "officialQuestionLabel": "A-14",
+    "category": "法規",
+    "topicTags": [
+      "非常通信の前置符号"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 法規 A-14。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次の記述は、無線電信通信における非常の場合の通報の送信方法について述べたものである。無線局運用規則（第１２条、第１３条及び第１３５条並びに別表第１号及び別表第２号）の規定に照らし、□内に入れるべき最も適切な略符号を表すモールス符号の組合せを下の１から４までのうちから一つ選べ。電波法第７４条（非常の場合の無線通信）第１項に規定する通信において通報を送信しようとするときは、「ヒゼウ」（欧文であるときは、「□」）を前置して行うものとする。\n注 モールス符号の点、線の長さ及び間隔は、簡略化してある。",
+    "choices": {
+      "ア": "・ －・・－",
+      "イ": "・ －・・－ －－・・",
+      "ウ": "－－－・・・－－－",
+      "エ": "・・・－－－・・・"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "正答は2。非常の場合の通報にはヒゼウ、欧文ではEXZを前置する。選択肢2はE「・」、X「－・・－」、Z「－－・・」でEXZとなる。SOSの遭難信号や、その並びを逆にした符号とは区別する。",
+    "choiceExplanations": {
+      "ア": "誤り。EとXだけのEXであり、非常通信を表すEXZのZが欠けている。",
+      "イ": "正しい。E・X・Zの符号を順に並べたEXZで、ヒゼウの欧文に相当する。",
+      "ウ": "誤り。図の連続した符号はSOSではなくOSOの並びであり、EXZではない。",
+      "エ": "誤り。SOSの連続符号であり、設問の非常通報に前置するEXZではない。"
+    },
+    "isCalculation": false,
+    "imageUrls": [
+      "/questions/amateur1/2026-november-houki-q14.png"
+    ],
+    "imageAltTexts": [
+      "法規A-14の公式選択肢表。数字1～4の順にモールス符号を配置。点・線の字間を原本どおりに示す。"
+    ],
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325M50080000017"
+    ],
+    "originalContent": {
+      "body": "次の記述は、無線電信通信における非常の場合の通報の送信方法について述べたものである。無線局運用規則（第１２条、第１３条及び第１３５条並びに別表第１号及び別表第２号）の規定に照らし、□内に入れるべき最も適切な略符号を表すモールス符号の組合せを下の１から４までのうちから一つ選べ。電波法第７４条（非常の場合の無線通信）第１項に規定する通信において通報を送信しようとするときは、「ヒゼウ」（欧文であるときは、「□」）を前置して行うものとする。\n注 モールス符号の点、線の長さ及び間隔は、簡略化してある。",
+      "choices": {
+        "ア": "・ －・・－",
+        "イ": "・ －・・－ －－・・",
+        "ウ": "－－－・・・－－－",
+        "エ": "・・・－－－・・・"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-houki-q15",
+    "exam": "amateur1",
+    "session": "houki",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 15,
+    "officialQuestionLabel": "A-15",
+    "category": "法規",
+    "topicTags": [
+      "Q符号"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 法規 A-15。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "無線電信通信において次の略符号を表すモールス符号のうち、「送信機の電力を減少してください。」を示すＱ符号を表したものはどれか。無線局運用規則（第１２条及び第１３条並びに別表第１号及び別表第２号）の規定に照らし、下の１から４までのうちから一つ選べ。\n注 モールス符号の点、線の長さ及び間隔は、簡略化してある。",
+    "choices": {
+      "ア": "－－・－ ・・・ ・－－",
+      "イ": "－－・－ ・・・ ・－－・",
+      "ウ": "－－・－ ・－・ ・－－・",
+      "エ": "－－・－ ・－・ ・・・－"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "正答は3。送信機の電力を減少してください、に対応するQ符号はQRPである。選択肢3はQ「－－・－」、R「・－・」、P「・－－・」の並び。QRSは送信速度を遅くする要求なので、電力と速度を取り違えない。",
+    "choiceExplanations": {
+      "ア": "誤り。QSWを表す符号の並びであり、電力を減少するQRPではない。",
+      "イ": "誤り。QSPは伝送の中継に関する符号であり、電力を下げる要求ではない。",
+      "ウ": "正しい。三文字を復号するとQRPとなり、送信機の電力を減少してください、に対応する。",
+      "エ": "誤り。QRSは送信をもっと遅くしてください、の意味であり、電力の減少とは異なる。"
+    },
+    "isCalculation": false,
+    "imageUrls": [
+      "/questions/amateur1/2026-november-houki-q15.png"
+    ],
+    "imageAltTexts": [
+      "法規A-15の公式選択肢表。数字1～4の順にモールス符号を配置。点・線の字間を原本どおりに示す。"
+    ],
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325M50080000017"
+    ],
+    "originalContent": {
+      "body": "無線電信通信において次の略符号を表すモールス符号のうち、「送信機の電力を減少してください。」を示すＱ符号を表したものはどれか。無線局運用規則（第１２条及び第１３条並びに別表第１号及び別表第２号）の規定に照らし、下の１から４までのうちから一つ選べ。\n注 モールス符号の点、線の長さ及び間隔は、簡略化してある。",
+      "choices": {
+        "ア": "－－・－ ・・・ ・－－",
+        "イ": "－－・－ ・・・ ・－－・",
+        "ウ": "－－・－ ・－・ ・－－・",
+        "エ": "－－・－ ・－・ ・・・－"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-houki-q16",
+    "exam": "amateur1",
+    "session": "houki",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 16,
+    "officialQuestionLabel": "A-16",
+    "category": "法規",
+    "topicTags": [
+      "信号強度のQ符号"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 法規 A-16。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "無線電信通信において次の略符号を表すモールス符号のうち、「そちらの信号の強さは、強いです。」を示すＱ符号を表したものはどれか。無線局運用規則（第１２条及び第１３条並びに別表第１号及び別表第２号）の規定に照らし、下の１から４までのうちから一つ選べ。\n注 モールス符号の点、線の長さ及び間隔は、簡略化してある。",
+    "choices": {
+      "ア": "－－・－ ・・・ ・－ ・・・・－",
+      "イ": "－－・－ ・－・ －・ ・・・・・",
+      "ウ": "－－・－ ・・・ ・－ ・・－－－",
+      "エ": "－－・－ ・－・ －・ ・・・－－"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "正答は1。信号の強さはQSAの5段階で表し、強いはQSA4である。選択肢1がQSA4を表す。QRNは空電による妨害の程度なので、後ろの数値だけを見て信号強度の評価と判断しない。",
+    "choiceExplanations": {
+      "ア": "正しい。QSA4であり、信号の強さの5段階中「強い」に対応する。",
+      "イ": "誤り。QRN5は空電による妨害についての符号であり、信号強度のQSAではない。",
+      "ウ": "誤り。QSA2は信号が弱い段階で、強いに対応する4ではない。",
+      "エ": "誤り。QRN3は空電の程度を表しており、信号の強さを表すQSA4ではない。"
+    },
+    "isCalculation": false,
+    "imageUrls": [
+      "/questions/amateur1/2026-november-houki-q16.png"
+    ],
+    "imageAltTexts": [
+      "法規A-16の公式選択肢表。数字1～4の順にモールス符号を配置。点・線の字間を原本どおりに示す。"
+    ],
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325M50080000017"
+    ],
+    "originalContent": {
+      "body": "無線電信通信において次の略符号を表すモールス符号のうち、「そちらの信号の強さは、強いです。」を示すＱ符号を表したものはどれか。無線局運用規則（第１２条及び第１３条並びに別表第１号及び別表第２号）の規定に照らし、下の１から４までのうちから一つ選べ。\n注 モールス符号の点、線の長さ及び間隔は、簡略化してある。",
+      "choices": {
+        "ア": "－－・－ ・・・ ・－ ・・・・－",
+        "イ": "－－・－ ・－・ －・ ・・・・・",
+        "ウ": "－－・－ ・・・ ・－ ・・－－－",
+        "エ": "－－・－ ・－・ －・ ・・・－－"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-houki-q17",
+    "exam": "amateur1",
+    "session": "houki",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 17,
+    "officialQuestionLabel": "A-17",
+    "category": "法規",
+    "topicTags": [
+      "技術基準適合命令"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 法規 A-17。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次の記述のうち、アマチュア無線局の無線設備が技術基準に適合していないと認める場合に総務大臣が行うことができる処分に適合するものはどれか。電波法（第７１条の５）の規定に照らし、下の１から４までのうちから一つ選べ。",
+    "choices": {
+      "ア": "総務大臣は、無線設備が電波法第３章（無線設備）に定める技術基準に適合していないと認めるときは、当該無線設備を使用する無線局の免許人に対し、臨時に電波の発射を命じて、その発射する電波の質を検査することができる。",
+      "イ": "総務大臣は、無線設備が電波法第３章（無線設備）に定める技術基準に適合していないと認めるときは、当該無線設備を使用する無線局の免許人に対し、その技術基準に適合するように当該無線設備の修理その他の必要な措置をとるべきことを命ずることができる。",
+      "ウ": "総務大臣は、無線設備が電波法第３章（無線設備）に定める技術基準に適合していないと認めるときは、当該無線設備を使用する無線局の免許人に対し、期間を定めて周波数又は空中線電力を制限することができる。",
+      "エ": "総務大臣は、無線設備が電波法第３章（無線設備）に定める技術基準に適合していないと認めるときは、当該無線設備を使用する無線局の周波数又は空中線電力の指定を変更することができる。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "正答は2。電波法第71条の5は、技術基準に適合しない無線設備を使用する無線局の免許人へ、修理その他必要な措置を命じることができると定める。電波発射による検査、周波数・電力の制限、指定変更とは区別する。",
+    "choiceExplanations": {
+      "ア": "誤り。臨時の電波発射による電波の質の検査は、ここで問う修理等の適合命令ではない。",
+      "イ": "正しい。技術基準に適合するよう、修理その他必要な措置を命ずる処分である。",
+      "ウ": "誤り。期間を定めた周波数又は空中線電力の制限は、第71条の5の適合命令の内容ではない。",
+      "エ": "誤り。周波数又は電力の指定変更を行うという条文ではなく、設備を適合させる措置を命じる。"
+    },
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131"
+    ],
+    "originalContent": {
+      "body": "次の記述のうち、アマチュア無線局の無線設備が技術基準に適合していないと認める場合に総務大臣が行うことができる処分に適合するものはどれか。電波法（第７１条の５）の規定に照らし、下の１から４までのうちから一つ選べ。",
+      "choices": {
+        "ア": "総務大臣は、無線設備が電波法第３章（無線設備）に定める技術基準に適合していないと認めるときは、当該無線設備を使用する無線局の免許人に対し、臨時に電波の発射を命じて、その発射する電波の質を検査することができる。",
+        "イ": "総務大臣は、無線設備が電波法第３章（無線設備）に定める技術基準に適合していないと認めるときは、当該無線設備を使用する無線局の免許人に対し、その技術基準に適合するように当該無線設備の修理その他の必要な措置をとるべきことを命ずることができる。",
+        "ウ": "総務大臣は、無線設備が電波法第３章（無線設備）に定める技術基準に適合していないと認めるときは、当該無線設備を使用する無線局の免許人に対し、期間を定めて周波数又は空中線電力を制限することができる。",
+        "エ": "総務大臣は、無線設備が電波法第３章（無線設備）に定める技術基準に適合していないと認めるときは、当該無線設備を使用する無線局の周波数又は空中線電力の指定を変更することができる。"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-houki-q18",
+    "exam": "amateur1",
+    "session": "houki",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 18,
+    "officialQuestionLabel": "A-18",
+    "category": "法規",
+    "topicTags": [
+      "非常の場合の無線通信"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 法規 A-18。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次の記述は、非常の場合の無線通信について述べたものである。電波法（第７４条）の規定に照らし、□内に入れるべき最も適切な字句の組合せを下の１から４までのうちから一つ選べ。なお、同じ記号の□内には、同じ字句が入るものとする。① 総務大臣は、地震、台風、洪水、津波、雪害、火災、暴動その他非常の事態が発生し、又は発生するおそれがある場合においては、人命の救助、 Ａ  、交通通信の確保又は Ｂ  のために必要な通信を Ｃ  に行わせることができる。② 総務大臣が①により Ｃ  に通信を行わせたときは、国は、その通信に要した実費を弁償しなければならない。",
+    "choices": {
+      "ア": "A：財産の保全／B：秩序の維持／C：電気通信事業者",
+      "イ": "A：財産の保全／B：電気の供給／C：無線局",
+      "ウ": "A：災害の救援／B：秩序の維持／C：無線局",
+      "エ": "A：災害の救援／B：電気の供給／C：電気通信事業者"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "正答は3。電波法第74条の目的は人命の救助、災害の救援、交通通信の確保又は秩序の維持であり、必要な通信を無線局に行わせることができる。国はその通信に要した実費を弁償する。Aは災害の救援、Bは秩序の維持、Cは無線局。",
+    "choiceExplanations": {
+      "ア": "誤り。Aは「財産の保全」ではなく「災害の救援」、Cは「電気通信事業者」ではなく「無線局」。電波法第74条の目的は人命の救助、災害の救援、交通通信の確保又は秩序の維持であり、必要な通信を無線局に行わせることができる。国はその通信に要した実費を弁償する。Aは災害の救援、Bは秩序の維持、Cは無線局。",
+      "イ": "誤り。Aは「財産の保全」ではなく「災害の救援」、Bは「電気の供給」ではなく「秩序の維持」。電波法第74条の目的は人命の救助、災害の救援、交通通信の確保又は秩序の維持であり、必要な通信を無線局に行わせることができる。国はその通信に要した実費を弁償する。Aは災害の救援、Bは秩序の維持、Cは無線局。",
+      "ウ": "正しい組合せ。電波法第74条の目的は人命の救助、災害の救援、交通通信の確保又は秩序の維持であり、必要な通信を無線局に行わせることができる。国はその通信に要した実費を弁償する。Aは災害の救援、Bは秩序の維持、Cは無線局。",
+      "エ": "誤り。Bは「電気の供給」ではなく「秩序の維持」、Cは「電気通信事業者」ではなく「無線局」。電波法第74条の目的は人命の救助、災害の救援、交通通信の確保又は秩序の維持であり、必要な通信を無線局に行わせることができる。国はその通信に要した実費を弁償する。Aは災害の救援、Bは秩序の維持、Cは無線局。"
+    },
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131"
+    ],
+    "originalContent": {
+      "body": "次の記述は、非常の場合の無線通信について述べたものである。電波法（第７４条）の規定に照らし、□内に入れるべき最も適切な字句の組合せを下の１から４までのうちから一つ選べ。なお、同じ記号の□内には、同じ字句が入るものとする。① 総務大臣は、地震、台風、洪水、津波、雪害、火災、暴動その他非常の事態が発生し、又は発生するおそれがある場合においては、人命の救助、 Ａ  、交通通信の確保又は Ｂ  のために必要な通信を Ｃ  に行わせることができる。② 総務大臣が①により Ｃ  に通信を行わせたときは、国は、その通信に要した実費を弁償しなければならない。",
+      "choices": {
+        "ア": "A：財産の保全／B：秩序の維持／C：電気通信事業者",
+        "イ": "A：財産の保全／B：電気の供給／C：無線局",
+        "ウ": "A：災害の救援／B：秩序の維持／C：無線局",
+        "エ": "A：災害の救援／B：電気の供給／C：電気通信事業者"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-houki-q19",
+    "exam": "amateur1",
+    "session": "houki",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 19,
+    "officialQuestionLabel": "A-19",
+    "category": "法規",
+    "topicTags": [
+      "無線局に対する監督"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 法規 A-19。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次の記述のうち、無線局（登録局を除く。）の免許人が電波法、放送法若しくはこれらの法律に基づく命令又はこれらに基づく処分に違反したときに、総務大臣が行うことができる制限に該当しないものはどれか。電波法（第７６条）の規定に照らし、下の１から４までのうちから一つ選べ。",
+    "choices": {
+      "ア": "総務大臣は、期間を定めて無線局の電波の型式を制限することができる。",
+      "イ": "総務大臣は、期間を定めて無線局の空中線電力を制限することができる。",
+      "ウ": "総務大臣は、期間を定めて無線局の運用許容時間を制限することができる。",
+      "エ": "総務大臣は、期間を定めて無線局の周波数を制限することができる。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "正答は1。電波法第76条第1項で制限できるのは運用許容時間、周波数又は空中線電力である。電波の型式はこの制限の列挙に含まれないので、該当しないものは1となる。免許の指定事項すべてを制限できるという規定ではない。",
+    "choiceExplanations": {
+      "ア": "該当しないので正答。電波の型式は第76条第1項の制限事項には列挙されていない。",
+      "イ": "該当する。空中線電力は、期間を定めて制限できる事項として明記されている。",
+      "ウ": "該当する。運用許容時間は、期間を定めて制限できる事項である。",
+      "エ": "該当する。周波数も制限の列挙に含まれ、電波の型式とは扱いが異なる。"
+    },
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131"
+    ],
+    "originalContent": {
+      "body": "次の記述のうち、無線局（登録局を除く。）の免許人が電波法、放送法若しくはこれらの法律に基づく命令又はこれらに基づく処分に違反したときに、総務大臣が行うことができる制限に該当しないものはどれか。電波法（第７６条）の規定に照らし、下の１から４までのうちから一つ選べ。",
+      "choices": {
+        "ア": "総務大臣は、期間を定めて無線局の電波の型式を制限することができる。",
+        "イ": "総務大臣は、期間を定めて無線局の空中線電力を制限することができる。",
+        "ウ": "総務大臣は、期間を定めて無線局の運用許容時間を制限することができる。",
+        "エ": "総務大臣は、期間を定めて無線局の周波数を制限することができる。"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-houki-q20",
+    "exam": "amateur1",
+    "session": "houki",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 20,
+    "officialQuestionLabel": "A-20",
+    "category": "法規",
+    "topicTags": [
+      "無線従事者の免許取消し"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 法規 A-20。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次の記述は、無線従事者の免許の取消し等について述べたものである。電波法（第７９条）の規定に照らし、□内に入れるべき最も適切な字句の組合せを下の１から４までのうちから一つ選べ。総務大臣は、無線従事者が次の(1)から(3)までのいずれかに該当するときは、その免許を取り消し、又は Ａ  以内の期間を定めてその Ｂ  することができる。(1) 電波法若しくは電波法に基く命令又はこれらに基く処分に違反したとき。(2) Ｃ  とき。(3) 電波法第４２条第３号に該当するに至ったとき。",
+    "choices": {
+      "ア": "A：３箇月／B：無線設備の操作の範囲を制限／C：日本の国籍を失った",
+      "イ": "A：６箇月／B：業務に従事することを停止／C：日本の国籍を失った",
+      "ウ": "A：６箇月／B：無線設備の操作の範囲を制限／C：不正な手段により免許を受けた",
+      "エ": "A：３箇月／B：業務に従事することを停止／C：不正な手段により免許を受けた"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "正答は4。電波法第79条は、法令違反、不正な手段による免許取得等の場合、免許取消し又は3箇月以内の業務従事停止を定める。無線設備の操作範囲の制限や、日本国籍の喪失をこの事由とする組合せは一致しない。",
+    "choiceExplanations": {
+      "ア": "誤り。Bは「無線設備の操作の範囲を制限」ではなく「業務に従事することを停止」、Cは「日本の国籍を失った」ではなく「不正な手段により免許を受けた」。電波法第79条は、法令違反、不正な手段による免許取得等の場合、免許取消し又は3箇月以内の業務従事停止を定める。無線設備の操作範囲の制限や、日本国籍の喪失をこの事由とする組合せは一致しない。",
+      "イ": "誤り。Aは「６箇月」ではなく「３箇月」、Cは「日本の国籍を失った」ではなく「不正な手段により免許を受けた」。電波法第79条は、法令違反、不正な手段による免許取得等の場合、免許取消し又は3箇月以内の業務従事停止を定める。無線設備の操作範囲の制限や、日本国籍の喪失をこの事由とする組合せは一致しない。",
+      "ウ": "誤り。Aは「６箇月」ではなく「３箇月」、Bは「無線設備の操作の範囲を制限」ではなく「業務に従事することを停止」。電波法第79条は、法令違反、不正な手段による免許取得等の場合、免許取消し又は3箇月以内の業務従事停止を定める。無線設備の操作範囲の制限や、日本国籍の喪失をこの事由とする組合せは一致しない。",
+      "エ": "正しい組合せ。電波法第79条は、法令違反、不正な手段による免許取得等の場合、免許取消し又は3箇月以内の業務従事停止を定める。無線設備の操作範囲の制限や、日本国籍の喪失をこの事由とする組合せは一致しない。"
+    },
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131"
+    ],
+    "originalContent": {
+      "body": "次の記述は、無線従事者の免許の取消し等について述べたものである。電波法（第７９条）の規定に照らし、□内に入れるべき最も適切な字句の組合せを下の１から４までのうちから一つ選べ。総務大臣は、無線従事者が次の(1)から(3)までのいずれかに該当するときは、その免許を取り消し、又は Ａ  以内の期間を定めてその Ｂ  することができる。(1) 電波法若しくは電波法に基く命令又はこれらに基く処分に違反したとき。(2) Ｃ  とき。(3) 電波法第４２条第３号に該当するに至ったとき。",
+      "choices": {
+        "ア": "A：３箇月／B：無線設備の操作の範囲を制限／C：日本の国籍を失った",
+        "イ": "A：６箇月／B：業務に従事することを停止／C：日本の国籍を失った",
+        "ウ": "A：６箇月／B：無線設備の操作の範囲を制限／C：不正な手段により免許を受けた",
+        "エ": "A：３箇月／B：業務に従事することを停止／C：不正な手段により免許を受けた"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-houki-q21",
+    "exam": "amateur1",
+    "session": "houki",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 21,
+    "officialQuestionLabel": "A-21",
+    "category": "法規",
+    "topicTags": [
+      "国際通信の秘密"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 法規 A-21。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次の記述は、電気通信の秘密について述べたものである。国際電気通信連合憲章（第３７条）の規定に照らし、□内に入れるべき最も適切な字句を下の１から４までのうちから一つ選べ。構成国は、国際通信の秘密を確保するため、    をとることを約束する。",
+    "choices": {
+      "ア": "電気通信回線設備の技術開発に関する勧告を踏まえ、最新の技術を導入する措置",
+      "イ": "使用される無線通信のシステムを改善する措置",
+      "ウ": "使用される電気通信のシステムに適合するすべての可能な措置",
+      "エ": "電波の監視の強化等無線通信の秩序の維持に必要な措置"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "正答は3。国際電気通信連合憲章第37条は、国際通信の秘密を確保するため、使用する電気通信のシステムに適合するすべての可能な措置をとることを構成国に約束させる。技術開発や電波監視など特定の方法だけに狭めていない。",
+    "choiceExplanations": {
+      "ア": "誤り。最新技術の導入という特定の方法を求める文言ではない。",
+      "イ": "誤り。無線通信システムの改善だけに限定する規定ではなく、電気通信システム全体に応じた措置である。",
+      "ウ": "正しい。使用される電気通信のシステムに適合するすべての可能な措置、という規定に一致する。",
+      "エ": "誤り。電波監視による通信秩序の維持だけを定める規定ではない。"
+    },
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://www.itu.int/en/council/Documents/basic-texts/Constitution-E.pdf",
+      "https://www.itu.int/pub/R-REG-RR-2024"
+    ],
+    "originalContent": {
+      "body": "次の記述は、電気通信の秘密について述べたものである。国際電気通信連合憲章（第３７条）の規定に照らし、□内に入れるべき最も適切な字句を下の１から４までのうちから一つ選べ。構成国は、国際通信の秘密を確保するため、    をとることを約束する。",
+      "choices": {
+        "ア": "電気通信回線設備の技術開発に関する勧告を踏まえ、最新の技術を導入する措置",
+        "イ": "使用される無線通信のシステムを改善する措置",
+        "ウ": "使用される電気通信のシステムに適合するすべての可能な措置",
+        "エ": "電波の監視の強化等無線通信の秩序の維持に必要な措置"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-houki-q22",
+    "exam": "amateur1",
+    "session": "houki",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 22,
+    "officialQuestionLabel": "A-22",
+    "category": "法規",
+    "topicTags": [
+      "アマチュア業務への周波数分配"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 法規 A-22。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次に掲げる周波数帯のうち、無線通信規則に定めるところによりアマチュア業務へ分配されている周波数帯に該当しないものはどれか。無線通信規則（第５条）の規定に照らし、下の１から５までのうちから一つ選べ。",
+    "choices": {
+      "ア": "２４,４５０ｋＨｚ～２４,６００ｋＨｚ",
+      "イ": "２８,０００ｋＨｚ～２９,７００ｋＨｚ",
+      "ウ": "１０,１００ｋＨｚ～１０,１５０ｋＨｚ",
+      "エ": "１４,０００ｋＨｚ～１４,３５０ｋＨｚ",
+      "オ": "１８,０６８ｋＨｚ～１８,１６８ｋＨｚ"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "正答は1。24 MHz帯でアマチュア業務に分配されるのは24,890～24,990 kHzであり、選択肢1の24,450～24,600 kHzではない。他の選択肢はそれぞれ10 MHz、14 MHz、18 MHz、28 MHzのアマチュア業務の周波数帯に対応する。",
+    "choiceExplanations": {
+      "ア": "該当しないので正答。24,450～24,600 kHzを24 MHz帯のアマチュア業務の分配と取り違えない。",
+      "イ": "該当する。28,000～29,700 kHzは28 MHz帯としてアマチュア業務へ分配されている。",
+      "ウ": "該当する。10,100～10,150 kHzは10 MHz帯としてアマチュア業務へ分配されている。",
+      "エ": "該当する。14,000～14,350 kHzは14 MHz帯のアマチュア業務の分配に当たる。",
+      "オ": "該当する。18,068～18,168 kHzは18 MHz帯のアマチュア業務の分配に当たる。"
+    },
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://www.itu.int/pub/R-REG-RR-2024"
+    ],
+    "originalContent": {
+      "body": "次に掲げる周波数帯のうち、無線通信規則に定めるところによりアマチュア業務へ分配されている周波数帯に該当しないものはどれか。無線通信規則（第５条）の規定に照らし、下の１から５までのうちから一つ選べ。",
+      "choices": {
+        "ア": "２４,４５０ｋＨｚ～２４,６００ｋＨｚ",
+        "イ": "２８,０００ｋＨｚ～２９,７００ｋＨｚ",
+        "ウ": "１０,１００ｋＨｚ～１０,１５０ｋＨｚ",
+        "エ": "１４,０００ｋＨｚ～１４,３５０ｋＨｚ",
+        "オ": "１８,０６８ｋＨｚ～１８,１６８ｋＨｚ"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-houki-q23",
+    "exam": "amateur1",
+    "session": "houki",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 23,
+    "officialQuestionLabel": "A-23",
+    "category": "法規",
+    "topicTags": [
+      "局の技術特性"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 法規 A-23。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "局の技術特性に関する次の記述のうち、無線通信規則（第３条）の規定に照らし、この規定に定めるところに適合しないものはどれか。下の１から４までのうちから一つ選べ。",
+    "choices": {
+      "ア": "局において使用する装置の選択及び動作並びにそのすべての発射は、無線通信規則に適合しなければならない。",
+      "イ": "発射の周波数帯幅は、スペクトルを最も効率的に使用し得るようなものでなければならない。このためには、一般的には、周波数帯幅を技術の現状及び業務の性質によって可能な最小の値に維持することが必要である。",
+      "ウ": "送信局が発射する電波は、その電波について主管庁が定める周波数の許容偏差に従うよう努力するものとする。",
+      "エ": "受信機の動作特性は、その受信機が、そこから適当な距離にあり、かつ、無線通信規則に従って運用している送信機から混信を受けることがないようなものを採用するものとする。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "正答は3。無線通信規則第3条は、送信局の発射周波数を周波数の許容偏差に従わせる義務を定める。選択肢3の「従うよう努力する」という努力義務への置換が誤りである。装置・発射の規則適合や必要最小限の帯域幅等は同条の趣旨に合う。",
+    "choiceExplanations": {
+      "ア": "適合する記述。装置の選択と動作及びすべての発射は、無線通信規則に適合する必要がある。",
+      "イ": "適合する記述。技術と業務の性質が許す最小の帯域幅を維持し、スペクトルを効率よく使用する。",
+      "ウ": "適合しないので正答。許容偏差に従うことは単なる努力目標ではなく、従わなければならない基準である。",
+      "エ": "適合する記述。適当な距離で規則に従って運用する送信機から混信を受けない動作特性を採用する。"
+    },
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://www.itu.int/pub/R-REG-RR-2024"
+    ],
+    "originalContent": {
+      "body": "局の技術特性に関する次の記述のうち、無線通信規則（第３条）の規定に照らし、この規定に定めるところに適合しないものはどれか。下の１から４までのうちから一つ選べ。",
+      "choices": {
+        "ア": "局において使用する装置の選択及び動作並びにそのすべての発射は、無線通信規則に適合しなければならない。",
+        "イ": "発射の周波数帯幅は、スペクトルを最も効率的に使用し得るようなものでなければならない。このためには、一般的には、周波数帯幅を技術の現状及び業務の性質によって可能な最小の値に維持することが必要である。",
+        "ウ": "送信局が発射する電波は、その電波について主管庁が定める周波数の許容偏差に従うよう努力するものとする。",
+        "エ": "受信機の動作特性は、その受信機が、そこから適当な距離にあり、かつ、無線通信規則に従って運用している送信機から混信を受けることがないようなものを採用するものとする。"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-houki-q24",
+    "exam": "amateur1",
+    "session": "houki",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 24,
+    "officialQuestionLabel": "A-24",
+    "category": "法規",
+    "topicTags": [
+      "国際アマチュア通信"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 法規 A-24。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "multiple-choice",
+    "question": "次の記述は、異なる国のアマチュア局相互間の無線通信等について述べたものである。無線通信規則（第２５条）の規定に照らし、□内に入れるべき最も適切な字句の組合せを下の１から４までのうちから一つ選べ。① 異なる国のアマチュア局相互間の伝送は、アマチュア衛星業務の地上コマンド局と宇宙局との間で交わされる制御信号を除き、 Ａ  されたものであってはならない。② アマチュア局は、 Ｂ  に限って、 Ｃ  の伝送を行うことができる。主管庁は、その管轄下にあるアマチュア局への本条項の適用について決定することができる。",
+    "choices": {
+      "ア": "A：意味を隠すために暗号化／B：主管庁相互間の特別とりきめがある場合／C：アマチュア局以外の局との国際通信",
+      "イ": "A：伝送効率を高めるために高速化／B：主管庁相互間の特別とりきめがある場合／C：第三者のために国際通信",
+      "ウ": "A：伝送効率を高めるために高速化／B：緊急時及び災害救助時／C：アマチュア局以外の局との国際通信",
+      "エ": "A：意味を隠すために暗号化／B：緊急時及び災害救助時／C：第三者のために国際通信"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "正答は4。無線通信規則第25条は、制御信号の例外を除き意味を隠すための暗号化を禁じる。また第三者のための国際通信を認めるのは緊急時・災害救助時であり、単なる高速化やアマチュア以外の局との通信を条件とする組合せではない。",
+    "choiceExplanations": {
+      "ア": "誤り。Bは「主管庁相互間の特別とりきめがある場合」ではなく「緊急時及び災害救助時」、Cは「アマチュア局以外の局との国際通信」ではなく「第三者のために国際通信」。無線通信規則第25条は、制御信号の例外を除き意味を隠すための暗号化を禁じる。また第三者のための国際通信を認めるのは緊急時・災害救助時であり、単なる高速化やアマチュア以外の局との通信を条件とする組合せではない。",
+      "イ": "誤り。Aは「伝送効率を高めるために高速化」ではなく「意味を隠すために暗号化」、Bは「主管庁相互間の特別とりきめがある場合」ではなく「緊急時及び災害救助時」。無線通信規則第25条は、制御信号の例外を除き意味を隠すための暗号化を禁じる。また第三者のための国際通信を認めるのは緊急時・災害救助時であり、単なる高速化やアマチュア以外の局との通信を条件とする組合せではない。",
+      "ウ": "誤り。Aは「伝送効率を高めるために高速化」ではなく「意味を隠すために暗号化」、Cは「アマチュア局以外の局との国際通信」ではなく「第三者のために国際通信」。無線通信規則第25条は、制御信号の例外を除き意味を隠すための暗号化を禁じる。また第三者のための国際通信を認めるのは緊急時・災害救助時であり、単なる高速化やアマチュア以外の局との通信を条件とする組合せではない。",
+      "エ": "正しい組合せ。無線通信規則第25条は、制御信号の例外を除き意味を隠すための暗号化を禁じる。また第三者のための国際通信を認めるのは緊急時・災害救助時であり、単なる高速化やアマチュア以外の局との通信を条件とする組合せではない。"
+    },
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://www.itu.int/pub/R-REG-RR-2024"
+    ],
+    "originalContent": {
+      "body": "次の記述は、異なる国のアマチュア局相互間の無線通信等について述べたものである。無線通信規則（第２５条）の規定に照らし、□内に入れるべき最も適切な字句の組合せを下の１から４までのうちから一つ選べ。① 異なる国のアマチュア局相互間の伝送は、アマチュア衛星業務の地上コマンド局と宇宙局との間で交わされる制御信号を除き、 Ａ  されたものであってはならない。② アマチュア局は、 Ｂ  に限って、 Ｃ  の伝送を行うことができる。主管庁は、その管轄下にあるアマチュア局への本条項の適用について決定することができる。",
+      "choices": {
+        "ア": "A：意味を隠すために暗号化／B：主管庁相互間の特別とりきめがある場合／C：アマチュア局以外の局との国際通信",
+        "イ": "A：伝送効率を高めるために高速化／B：主管庁相互間の特別とりきめがある場合／C：第三者のために国際通信",
+        "ウ": "A：伝送効率を高めるために高速化／B：緊急時及び災害救助時／C：アマチュア局以外の局との国際通信",
+        "エ": "A：意味を隠すために暗号化／B：緊急時及び災害救助時／C：第三者のために国際通信"
+      }
+    }
+  },
+  {
+    "id": "amateur1-2026-november-houki-q25",
+    "exam": "amateur1",
+    "session": "houki",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 25,
+    "officialQuestionLabel": "B-1",
+    "category": "法規",
+    "topicTags": [
+      "送信空中線の条件"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 法規 B-1。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "native-b",
+    "question": "次の記述は、送信空中線の型式及び構成等について述べたものである。無線設備規則（第２０条及び第２２条）の規定に照らし、□内に入れるべき最も適切な字句を下の１から１０までのうちからそれぞれ一つ選べ。① 送信空中線の型式及び構成は、次の(1)から(3)までに適合するものでなければならない。(1) 空中線の ア  がなるべく大であること。(2) イ  であること。(3) 満足な指向特性が得られること。② 空中線の指向特性は、次の(1)から(4)までに掲げる事項によって定める。            (1) 主輻射方向及び副輻射方向(2) ウ  の主輻射の角度の幅(3) 空中線を設置する位置の近傍にあるものであって電波の伝わる方向を エ  もの(4) オ  よりの輻射",
+    "answer": "",
+    "officialAnswerNumber": "9・6・7・3・10",
+    "explanation": "ア＝9。設備規則第20条は、空中線の利得及び能率をなるべく大きくすることを求める。\n\nイ＝6。型式及び構成の条件は整合が十分であること。調整が容易という文言ではない。\n\nウ＝7。第22条が指向特性を決める事項として挙げるのは、水平面の主輻射の角度の幅である。\n\nエ＝3。近傍の物体が電波の伝わる方向を乱すことを指向特性に織り込む。\n\nオ＝10。空中線だけでなく給電線からの輻射も指向特性を決める事項である。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "調整が容易",
+          "explanation": "調整の容易さではなく、規定の文言は整合が十分であること。"
+        },
+        {
+          "id": "2",
+          "label": "垂直面",
+          "explanation": "この条文の主輻射角の幅は垂直面ではなく水平面である。"
+        },
+        {
+          "id": "3",
+          "label": "乱す",
+          "explanation": "近傍物体による伝搬方向への影響の文言で、エに対応する。"
+        },
+        {
+          "id": "4",
+          "label": "放射効率",
+          "explanation": "放射効率だけでなく、アの規定の文言は利得及び能率である。"
+        },
+        {
+          "id": "5",
+          "label": "カウンターポイズ",
+          "explanation": "オで指向特性の要素として明記されるのは給電線からの輻射である。"
+        },
+        {
+          "id": "6",
+          "label": "整合が十分",
+          "explanation": "空中線の型式・構成の条件で、イに対応する。"
+        },
+        {
+          "id": "7",
+          "label": "水平面",
+          "explanation": "主輻射の角度の幅を規定する面で、ウに対応する。"
+        },
+        {
+          "id": "8",
+          "label": "妨げる",
+          "explanation": "規定は方向を「乱す」ものであり、単に妨げるという文言ではない。"
+        },
+        {
+          "id": "9",
+          "label": "利得及び能率",
+          "explanation": "なるべく大とする空中線の性能で、アに対応する。"
+        },
+        {
+          "id": "10",
+          "label": "給電線",
+          "explanation": "指向特性に含める輻射の発生源で、オに対応する。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "9",
+          "explanation": "設備規則第20条は、空中線の利得及び能率をなるべく大きくすることを求める。"
+        },
+        {
+          "label": "イ",
+          "answer": "6",
+          "explanation": "型式及び構成の条件は整合が十分であること。調整が容易という文言ではない。"
+        },
+        {
+          "label": "ウ",
+          "answer": "7",
+          "explanation": "第22条が指向特性を決める事項として挙げるのは、水平面の主輻射の角度の幅である。"
+        },
+        {
+          "label": "エ",
+          "answer": "3",
+          "explanation": "近傍の物体が電波の伝わる方向を乱すことを指向特性に織り込む。"
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "空中線だけでなく給電線からの輻射も指向特性を決める事項である。"
+        }
+      ],
+      "officialLabel": "B-1",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    },
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325M50080000018"
+    ],
+    "originalContent": {
+      "body": "次の記述は、送信空中線の型式及び構成等について述べたものである。無線設備規則（第２０条及び第２２条）の規定に照らし、□内に入れるべき最も適切な字句を下の１から１０までのうちからそれぞれ一つ選べ。① 送信空中線の型式及び構成は、次の(1)から(3)までに適合するものでなければならない。(1) 空中線の ア  がなるべく大であること。(2) イ  であること。(3) 満足な指向特性が得られること。② 空中線の指向特性は、次の(1)から(4)までに掲げる事項によって定める。            (1) 主輻射方向及び副輻射方向(2) ウ  の主輻射の角度の幅(3) 空中線を設置する位置の近傍にあるものであって電波の伝わる方向を エ  もの(4) オ  よりの輻射"
+    }
+  },
+  {
+    "id": "amateur1-2026-november-houki-q26",
+    "exam": "amateur1",
+    "session": "houki",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 26,
+    "officialQuestionLabel": "B-2",
+    "category": "法規",
+    "topicTags": [
+      "Q符号の意義"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 法規 B-2。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "native-b",
+    "question": "次に掲げる無線電信通信に使用するＱ符号及び問符並びにその意義の組合せについて、無線局運用規則（第１３条及び別表第２号）の規定に照らし、Ｑ符号及び問符並びにその意義の組合せが適合するものを１、適合しないものを２として解答せよ。",
+    "answer": "",
+    "officialAnswerNumber": "2・1・2・2・1",
+    "explanation": "ア＝2。QSB?は、こちらの信号の強さに変動があるかという質問。他の周波数へ変更して伝送するかという意味ではない。\n\nイ＝1。QRH?は、こちらの周波数が変化するかという質問であり、提示された意義に適合する。\n\nウ＝2。QRK?は、こちらの信号の明瞭度についての質問。空電による妨害を尋ねる符号はQRN?である。\n\nエ＝2。QRM?は他の局の混信を受けているかという質問。通信中かを尋ねる符号はQRL?である。\n\nオ＝1。QTH?は緯度・経度又は他の表示による位置の質問であり、示された意義に適合する。",
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "適合する"
+        },
+        {
+          "id": "2",
+          "label": "適合しない"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "2",
+          "explanation": "QSB?は、こちらの信号の強さに変動があるかという質問。他の周波数へ変更して伝送するかという意味ではない。",
+          "prompt": "ＱＳＢ？：こちらは他の周波数に変更して伝送しましょうか。"
+        },
+        {
+          "label": "イ",
+          "answer": "1",
+          "explanation": "QRH?は、こちらの周波数が変化するかという質問であり、提示された意義に適合する。",
+          "prompt": "ＱＲＨ？：こちらの周波数は、変化しますか。"
+        },
+        {
+          "label": "ウ",
+          "answer": "2",
+          "explanation": "QRK?は、こちらの信号の明瞭度についての質問。空電による妨害を尋ねる符号はQRN?である。",
+          "prompt": "ＱＲＫ？：そちらは、空電に妨げられていますか。"
+        },
+        {
+          "label": "エ",
+          "answer": "2",
+          "explanation": "QRM?は他の局の混信を受けているかという質問。通信中かを尋ねる符号はQRL?である。",
+          "prompt": "ＱＲＭ？：そちらは、通信中ですか。"
+        },
+        {
+          "label": "オ",
+          "answer": "1",
+          "explanation": "QTH?は緯度・経度又は他の表示による位置の質問であり、示された意義に適合する。",
+          "prompt": "ＱＴＨ？：緯度及び経度で示す（又は他の表示による。）そちらの位置は、何ですか。"
+        }
+      ],
+      "officialLabel": "B-2",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    },
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325M50080000017"
+    ],
+    "originalContent": {
+      "body": "次に掲げる無線電信通信に使用するＱ符号及び問符並びにその意義の組合せについて、無線局運用規則（第１３条及び別表第２号）の規定に照らし、Ｑ符号及び問符並びにその意義の組合せが適合するものを１、適合しないものを２として解答せよ。"
+    }
+  },
+  {
+    "id": "amateur1-2026-november-houki-q27",
+    "exam": "amateur1",
+    "session": "houki",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 27,
+    "officialQuestionLabel": "B-3",
+    "category": "法規",
+    "topicTags": [
+      "欧文モールス符号"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 法規 B-3。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "native-b",
+    "question": "次に掲げるアルファベットの字句及びモールス符号の組合せのうち、無線局運用規則（第１２条及び別表第１号）の規定に照らし、その組合せが適合するものを１、適合しないものを２として解答せよ。\n注 モールス符号の点、線の長さ及び間隔は、簡略化してある。",
+    "answer": "",
+    "officialAnswerNumber": "1・2・1・2・1",
+    "explanation": "ア＝1。順にB・U・K・R・G・M・E・N・L・Dと復号でき、提示された字句の各文字と一致する。\n\nイ＝2。6文字目の「・・－・」はFであり、字句のY「－・－－」と一致しない。他の文字が一致しても全体は不適合。\n\nウ＝1。順にD・E・R・H・A・C・N・I・E・Rとなり、字句の順序と各符号の双方が一致する。\n\nエ＝2。7文字目の「・－－」はWであり、字句のJ「・－－－」ではない。線が一つ不足している。\n\nオ＝1。順にR・I・D・G・E・C・A・R・M・Bと復号でき、提示された字句に適合する。",
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "適合する"
+        },
+        {
+          "id": "2",
+          "label": "適合しない"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "順にB・U・K・R・G・M・E・N・L・Dと復号でき、提示された字句の各文字と一致する。",
+          "prompt": "ＢＵＫＲＧＭＥＮＬＤ：－・・・ ・・－ －・－ ・－・ －－・ －－ ・ －・ ・－・・ －・・"
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "6文字目の「・・－・」はFであり、字句のY「－・－－」と一致しない。他の文字が一致しても全体は不適合。",
+          "prompt": "ＲＮＴＢＩＹＵＡＣＨ：・－・ －・ － －・・・ ・・ ・・－・ ・・－ ・－ －・－・ ・・・・"
+        },
+        {
+          "label": "ウ",
+          "answer": "1",
+          "explanation": "順にD・E・R・H・A・C・N・I・E・Rとなり、字句の順序と各符号の双方が一致する。",
+          "prompt": "ＤＥＲＨＡＣＮＩＥＲ：－・・ ・ ・－・ ・・・・ ・－ －・－・ －・ ・・ ・ ・－・"
+        },
+        {
+          "label": "エ",
+          "answer": "2",
+          "explanation": "7文字目の「・－－」はWであり、字句のJ「・－－－」ではない。線が一つ不足している。",
+          "prompt": "ＢＨＡＧＥＳＪＯＴＡ：－・・・ ・・・・ ・－ －－・ ・ ・・・ ・－－ －－－ － ・－"
+        },
+        {
+          "label": "オ",
+          "answer": "1",
+          "explanation": "順にR・I・D・G・E・C・A・R・M・Bと復号でき、提示された字句に適合する。",
+          "prompt": "ＲＩＤＧＥＣＡＲＭＢ：・－・ ・・ －・・ －－・ ・ －・－・ ・－ ・－・ －－ －・・・"
+        }
+      ],
+      "officialLabel": "B-3",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    },
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325M50080000017"
+    ],
+    "originalContent": {
+      "body": "次に掲げるアルファベットの字句及びモールス符号の組合せのうち、無線局運用規則（第１２条及び別表第１号）の規定に照らし、その組合せが適合するものを１、適合しないものを２として解答せよ。\n注 モールス符号の点、線の長さ及び間隔は、簡略化してある。"
+    }
+  },
+  {
+    "id": "amateur1-2026-november-houki-q28",
+    "exam": "amateur1",
+    "session": "houki",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 28,
+    "officialQuestionLabel": "B-4",
+    "category": "法規",
+    "topicTags": [
+      "無線局の廃止"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 法規 B-4。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "native-b",
+    "question": "次の記述は、アマチュア無線局の廃止等について述べたものである。電波法（第２２条から第２４条まで、第７８条及び第１１３条）の規定に照らし、□内に入れるべき最も適切な字句を下の１から１０までのうちからそれぞれ一つ選べ。① 免許人は、その無線局を ア  ときは、その旨を総務大臣に届け出なければならない。② 免許人が無線局を廃止したときは、免許は、その効力を失う。③ 無線局の免許がその効力を失ったときは、総務大臣は、当該免許に係る免許記録 イ  しなければならない。④ 無線局の免許がその効力を失ったときは、免許人であった者は、 ウ  空中線の エ  その他の総務省令で定める電波の発射を防止するために必要な措置を講じなければならない。⑤ ④に違反した者は、 オ  以下の罰金に処する。",
+    "answer": "",
+    "officialAnswerNumber": "6・7・2・10・4",
+    "explanation": "ア＝6。第22条は無線局を廃止するときの届出を定めるので、「廃止する」が入る。\n\nイ＝7。第24条の免許失効時の措置は、免許記録にその旨を記録することであり、記録を抹消することではない。\n\nウ＝2。免許失効後の電波発射防止措置は第78条により遅滞なく行う。2週間の猶予ではない。\n\nエ＝10。必要な電波発射防止措置の一つとして空中線の撤去を行う。廃棄までを一律に求める文言ではない。\n\nオ＝4。第78条に反する場合の第113条の罰金上限は30万円である。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "廃止した",
+          "explanation": "第22条の届出の表現は「廃止するとき」であり、廃止したときではない。"
+        },
+        {
+          "id": "2",
+          "label": "遅滞なく",
+          "explanation": "電波発射防止措置を行う時期で、ウに対応する。"
+        },
+        {
+          "id": "3",
+          "label": "を抹消",
+          "explanation": "免許記録を消すのではなく、失効した旨を記録する。"
+        },
+        {
+          "id": "4",
+          "label": "３０万円",
+          "explanation": "第113条の当該違反に対する罰金上限で、オに対応する。"
+        },
+        {
+          "id": "5",
+          "label": "廃棄",
+          "explanation": "空中線の処分方法を廃棄に限定する規定ではない。"
+        },
+        {
+          "id": "6",
+          "label": "廃止する",
+          "explanation": "無線局の届出を要する状況の表現で、アに対応する。"
+        },
+        {
+          "id": "7",
+          "label": "にその旨を記録",
+          "explanation": "第24条が総務大臣に求める措置で、イに対応する。"
+        },
+        {
+          "id": "8",
+          "label": "２週間以内に",
+          "explanation": "電波発射防止措置は遅滞なく行うので、2週間の固定期限ではない。"
+        },
+        {
+          "id": "9",
+          "label": "５０万円",
+          "explanation": "当該違反の上限は30万円であり、50万円は合わない。"
+        },
+        {
+          "id": "10",
+          "label": "撤去",
+          "explanation": "空中線について行う電波発射防止措置で、エに対応する。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "6",
+          "explanation": "第22条は無線局を廃止するときの届出を定めるので、「廃止する」が入る。"
+        },
+        {
+          "label": "イ",
+          "answer": "7",
+          "explanation": "第24条の免許失効時の措置は、免許記録にその旨を記録することであり、記録を抹消することではない。"
+        },
+        {
+          "label": "ウ",
+          "answer": "2",
+          "explanation": "免許失効後の電波発射防止措置は第78条により遅滞なく行う。2週間の猶予ではない。"
+        },
+        {
+          "label": "エ",
+          "answer": "10",
+          "explanation": "必要な電波発射防止措置の一つとして空中線の撤去を行う。廃棄までを一律に求める文言ではない。"
+        },
+        {
+          "label": "オ",
+          "answer": "4",
+          "explanation": "第78条に反する場合の第113条の罰金上限は30万円である。"
+        }
+      ],
+      "officialLabel": "B-4",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    },
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131"
+    ],
+    "originalContent": {
+      "body": "次の記述は、アマチュア無線局の廃止等について述べたものである。電波法（第２２条から第２４条まで、第７８条及び第１１３条）の規定に照らし、□内に入れるべき最も適切な字句を下の１から１０までのうちからそれぞれ一つ選べ。① 免許人は、その無線局を ア  ときは、その旨を総務大臣に届け出なければならない。② 免許人が無線局を廃止したときは、免許は、その効力を失う。③ 無線局の免許がその効力を失ったときは、総務大臣は、当該免許に係る免許記録 イ  しなければならない。④ 無線局の免許がその効力を失ったときは、免許人であった者は、 ウ  空中線の エ  その他の総務省令で定める電波の発射を防止するために必要な措置を講じなければならない。⑤ ④に違反した者は、 オ  以下の罰金に処する。"
+    }
+  },
+  {
+    "id": "amateur1-2026-november-houki-q29",
+    "exam": "amateur1",
+    "session": "houki",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 29,
+    "officialQuestionLabel": "B-5",
+    "category": "法規",
+    "topicTags": [
+      "免許不要局等への監督"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 法規 B-5。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "native-b",
+    "question": "次の記述は、免許等を要しない無線局及び受信設備に対する監督について述べたものである。電波法（第８２条）の規定に照らし、□内に入れるべき最も適切な字句を下の１から１０までのうちからそれぞれ一つ選べ。① 総務大臣は、電波法第４条（無線局の開設）第１号から第３号までに掲げる無線局（以下「免許等を要しない無線局」という。）の無線設備の発する電波又は受信設備が副次的に発する電波若しくは高周波電流が他の無線設備の機能に ア  障害を与えるときは、その設備の イ  に対し、その障害を ウ  するために必要な措置をとるべきことを命ずることができる。② 総務大臣は、免許等を要しない無線局の無線設備について又は放送の受信を目的とする エ  について①の措置をとるべきことを命じた場合において特に必要があると認めるときは、その職員を当該設備のある場所に派遣し、その設備を オ させることができる。",
+    "answer": "",
+    "officialAnswerNumber": "7・1・5・4・3",
+    "explanation": "ア＝7。電波法第82条の措置命令は、他の無線設備の機能に継続的かつ重大な障害を与える場合に行う。\n\nイ＝1。命令の相手方は設備の所有者又は占有者であり、施設者・利用者という文言ではない。\n\nウ＝5。命令は障害を除去するため必要な措置をとる内容である。\n\nエ＝4。放送の受信を目的とする受信設備以外の受信設備について、必要な検査を行わせることができる。\n\nオ＝3。特に必要な場合に職員へ行わせるのは、設備の検査である。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "所有者又は占有者",
+          "explanation": "措置命令の相手方で、イに対応する。"
+        },
+        {
+          "id": "2",
+          "label": "重大な",
+          "explanation": "重大なだけでなく継続的という条件も必要。"
+        },
+        {
+          "id": "3",
+          "label": "検査",
+          "explanation": "特に必要な場合に職員へ行わせる行為で、オに対応する。"
+        },
+        {
+          "id": "4",
+          "label": "受信設備以外の受信設備",
+          "explanation": "放送目的の受信設備を除く対象を示し、エに対応する。"
+        },
+        {
+          "id": "5",
+          "label": "除去",
+          "explanation": "障害をなくすための措置という表現で、ウに対応する。"
+        },
+        {
+          "id": "6",
+          "label": "施設者又は利用者",
+          "explanation": "命令の相手方の条文上の文言は所有者又は占有者である。"
+        },
+        {
+          "id": "7",
+          "label": "継続的かつ重大な",
+          "explanation": "障害について求められる二つの条件で、アに対応する。"
+        },
+        {
+          "id": "8",
+          "label": "実地に調査",
+          "explanation": "条文が用いる行為の名称は検査であり、実地に調査という語ではない。"
+        },
+        {
+          "id": "9",
+          "label": "受信設備",
+          "explanation": "エは単なる受信設備ではなく、放送受信目的の設備を除いた受信設備。"
+        },
+        {
+          "id": "10",
+          "label": "低減",
+          "explanation": "命令は障害の低減にとどめず除去のため必要な措置を求める。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "7",
+          "explanation": "電波法第82条の措置命令は、他の無線設備の機能に継続的かつ重大な障害を与える場合に行う。"
+        },
+        {
+          "label": "イ",
+          "answer": "1",
+          "explanation": "命令の相手方は設備の所有者又は占有者であり、施設者・利用者という文言ではない。"
+        },
+        {
+          "label": "ウ",
+          "answer": "5",
+          "explanation": "命令は障害を除去するため必要な措置をとる内容である。"
+        },
+        {
+          "label": "エ",
+          "answer": "4",
+          "explanation": "放送の受信を目的とする受信設備以外の受信設備について、必要な検査を行わせることができる。"
+        },
+        {
+          "label": "オ",
+          "answer": "3",
+          "explanation": "特に必要な場合に職員へ行わせるのは、設備の検査である。"
+        }
+      ],
+      "officialLabel": "B-5",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    },
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131"
+    ],
+    "originalContent": {
+      "body": "次の記述は、免許等を要しない無線局及び受信設備に対する監督について述べたものである。電波法（第８２条）の規定に照らし、□内に入れるべき最も適切な字句を下の１から１０までのうちからそれぞれ一つ選べ。① 総務大臣は、電波法第４条（無線局の開設）第１号から第３号までに掲げる無線局（以下「免許等を要しない無線局」という。）の無線設備の発する電波又は受信設備が副次的に発する電波若しくは高周波電流が他の無線設備の機能に ア  障害を与えるときは、その設備の イ  に対し、その障害を ウ  するために必要な措置をとるべきことを命ずることができる。② 総務大臣は、免許等を要しない無線局の無線設備について又は放送の受信を目的とする エ  について①の措置をとるべきことを命じた場合において特に必要があると認めるときは、その職員を当該設備のある場所に派遣し、その設備を オ させることができる。"
+    }
+  },
+  {
+    "id": "amateur1-2026-november-houki-q30",
+    "exam": "amateur1",
+    "session": "houki",
+    "year": 2026,
+    "season": "november",
+    "qNumber": 30,
+    "officialQuestionLabel": "B-6",
+    "category": "法規",
+    "topicTags": [
+      "局の識別"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki.pdf",
+    "sourceAnswerUrl": "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-11/ama-1-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 令和8年11月期 法規 B-6。改行・空白・添字の表記を整理。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "explanationCoverage": "full",
+    "lastUpdated": "2026-11-17",
+    "needsReview": false,
+    "type": "native-b",
+    "question": "局の識別に関する次の記述のうち、無線通信規則（第１９条）の規定に照らし、この規定に定めるところに適合するものを１、適合しないものを２として解答せよ。",
+    "answer": "",
+    "officialAnswerNumber": "1・2・1・2・1",
+    "explanation": "ア＝1。すべての伝送を識別可能にする原則と、技術上識別信号の伝送が必ずしも可能でない無線方式への認識を述べたもので、適合する。\n\nイ＝2。第19条は実行可能な限り頻繁に識別信号を送ることを求め、アマチュア局について少なくとも5分ごととする規定ではない。\n\nウ＝1。無線通信規則第19条は、アマチュア業務のすべての伝送に識別信号を伴わせると定める。\n\nエ＝2。国際符字列に基づかない特別取決めの例外をアマチュア局へ適用することはできない。\n\nオ＝1。虚偽又はまぎらわしい識別表示を使う伝送は禁止される。識別可能性を確保する原則に対応する。",
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "適合する"
+        },
+        {
+          "id": "2",
+          "label": "適合しない"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "すべての伝送を識別可能にする原則と、技術上識別信号の伝送が必ずしも可能でない無線方式への認識を述べたもので、適合する。",
+          "prompt": "すべての伝送は、識別信号その他の手段によって識別され得るものでなければならない。しかしながら、技術の現状では、一部の無線方式（例えば、無線測位、無線中継システム及び宇宙通信システム）については、識別信号の伝送が必ずしも可能ではないことを認める。"
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "第19条は実行可能な限り頻繁に識別信号を送ることを求め、アマチュア局について少なくとも5分ごととする規定ではない。",
+          "prompt": "アマチュア局は、その伝送中に少なくとも５分ごとに識別信号を伝送しなければならない。"
+        },
+        {
+          "label": "ウ",
+          "answer": "1",
+          "explanation": "無線通信規則第19条は、アマチュア業務のすべての伝送に識別信号を伴わせると定める。",
+          "prompt": "アマチュア業務においては、すべての伝送は、識別信号を伴うものとする。"
+        },
+        {
+          "label": "エ",
+          "answer": "2",
+          "explanation": "国際符字列に基づかない特別取決めの例外をアマチュア局へ適用することはできない。",
+          "prompt": "アマチュア局は、特別取決めにより国際符字列に基づかない識別信号を持つことができる。"
+        },
+        {
+          "label": "オ",
+          "answer": "1",
+          "explanation": "虚偽又はまぎらわしい識別表示を使う伝送は禁止される。識別可能性を確保する原則に対応する。",
+          "prompt": "虚偽の又はまぎらわしい識別表示を使用する伝送はすべて禁止する。"
+        }
+      ],
+      "officialLabel": "B-6",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    },
+    "officialReferenceUrls": [
+      "https://www.itu.int/pub/R-REG-RR-2024"
+    ],
+    "originalContent": {
+      "body": "局の識別に関する次の記述のうち、無線通信規則（第１９条）の規定に照らし、この規定に定めるところに適合するものを１、適合しないものを２として解答せよ。"
+    }
+  }
+]

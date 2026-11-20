@@ -36,7 +36,8 @@ const commas = (s: string) => s.replace(/(?<=\d)，(?=\d{3})/g, ",");
 const nfkc = (s: string) => s.normalize("NFKC").replace(/\s/g, "");
 
 describe("社会保険労務士試験 第58・57回 労働基準法及び労働安全衛生法 択一の先行10問", () => {
-  const gakka = SHAROUSHI_QUESTIONS.filter((q) => q.session === "gakka");
+  const reviewedYears = new Set(manifest.sittings.map((sitting) => sitting.year));
+  const gakka = SHAROUSHI_QUESTIONS.filter((q) => q.session === "gakka" && reviewedYears.has(q.year));
   const expected = manifest.sittings.flatMap((s) => s.questions.map((q) => ({ sitting: s, q })));
 
   it("先行マニフェストの10問50肢を保持し、全体では20問100肢", () => {

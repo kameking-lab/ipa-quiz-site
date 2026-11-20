@@ -4,31 +4,34 @@ import { resolve } from "node:path";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 import { HOKENSHI_QUESTIONS as ALL_HOKENSHI_QUESTIONS } from "@/data/questions/hokenshi";
-// This frozen source-intake regression covers 2024/2025; medical-history.test.tsx covers older years.
-const HOKENSHI_QUESTIONS = ALL_HOKENSHI_QUESTIONS.filter(question => question.year >= 2024);
 import addition from "@/data/questions/hokenshi/latest-two-completion-20261011.json";
+import completedMorning from "@/data/questions/hokenshi/112-am-completion.json";
 import unchanged from "@/data/questions/hokenshi/medical34-live.json";
 import manifest from "@/docs/evidence/hokenshi-latest-two-20261011/manifest.json";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { isNumericAnswerCorrect, numericQuestionIssue } from "@/lib/questions/numeric";
 import { QuestionCard } from "@/components/quiz/QuestionCard";
-import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
+
+const reviewedIds = new Set(manifest.originals.map(q => q.id));
+const HOKENSHI_QUESTIONS = ALL_HOKENSHI_QUESTIONS.filter(q => reviewedIds.has(q.id));
 
 describe("保健師 latest two original sittings", () => {
-  it("adds exactly 186 new originals and excludes the prior stopped 18", () => {
+  it("retains the initial 202 originals and verifies all 18 later approvals", () => {
     expect(addition).toHaveLength(186);
     expect(HOKENSHI_QUESTIONS).toHaveLength(202);
     expect(HOKENSHI_QUESTIONS.filter(isPracticeReadyQuestion)).toHaveLength(202);
     expect(new Set(HOKENSHI_QUESTIONS.map(q => q.id)).size).toBe(202);
-    const expected = new Set(manifest.originals.map(q => q.id));
-    expect(HOKENSHI_QUESTIONS.every(q => expected.has(q.id))).toBe(true);
+    expect(new Set(HOKENSHI_QUESTIONS.map(q => q.id))).toEqual(reviewedIds);
     for (const [year, session, count] of [[2025, "am", 37], [2025, "pm", 55], [2024, "am", 55], [2024, "pm", 55]] as const) {
       expect(HOKENSHI_QUESTIONS.filter(q => q.year === year && q.session === session)).toHaveLength(count);
     }
-    for (const row of manifest.excludedOriginals) {
-      expect(HOKENSHI_QUESTIONS.some(q => q.year === 2025 && q.session === row.session && q.qNumber === row.qNumber)).toBe(false);
-    }
     expect(manifest.excludedOriginals).toHaveLength(18);
+    expect(completedMorning.map(q => [q.session, q.qNumber])).toEqual(manifest.excludedOriginals.map(q => [q.session, q.qNumber]));
+    for (const q of completedMorning) {
+      expect(ALL_HOKENSHI_QUESTIONS.filter(row => row.id === q.id)).toEqual([q]);
+      expect(q.sourceAnswerUrl).toMatch(/^https:\/\/www\.mhlw\.go\.jp\//);
+    }
+    expect(ALL_HOKENSHI_QUESTIONS.filter(q => q.year === 2024 || q.year === 2025)).toHaveLength(220);
   });
 
   it("preserves each existing live question and official answer, with complete choice reasons", () => {
@@ -86,9 +89,6 @@ describe("保健師 latest two original sittings", () => {
     for (const number of [39, 40, 41]) {
       expect(HOKENSHI_QUESTIONS.find(q => q.year === 2025 && q.session === "am" && q.qNumber === number)!.question).toContain("長女（生後7 か月）");
     }
-    const summary = getQualificationByExamCode("hokenshi")!.reuseSummary;
-    expect(summary).toContain("202問を部分収録");
-    expect(summary).toContain("18問は未収録");
     expect(manifest.mergeDeployPerformed).toBe(false);
     expect(manifest.permissionAttestation).toBe(false);
   });

@@ -1,3 +1,4 @@
+import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import { strictContentGateEnabled } from "@/lib/billing/content-policy";
 import { ContentPage } from "@/mobile/server/ContentPage";
 import type { Metadata } from "next";
@@ -64,12 +65,12 @@ export async function generateMetadata({ params }: ExamPageProps): Promise<Metad
   if (!resolved) return {};
   const { entry, questions } = resolved;
   const scoredCount = questions.filter(isScorableQuestion).length;
-  return {
+  return withCanonicalSocialMetadata({
     title: `${examTitle(entry)}（${describeExamDate(entry)}）過去問演習`,
     description: examDescription(entry, questions.length, scoredCount),
     alternates: { canonical: examPath(entry.id) },
     robots: { index: true, follow: true },
-  };
+  });
 }
 
 export default async function ExamPage({ params, searchParams }: ExamPageProps) {

@@ -21,11 +21,11 @@ describe("Building equipment public integration", () => {
   it("serves the same 209 originals through eager/lazy loaders and public counts", async () => {
     const questions = await getQuestionsForExam(exam);
     expect(questions).toEqual(QUESTIONS_BY_EXAM[exam]);
-    expect(questions).toHaveLength(209);
-    expect(getExamQuestionCount(exam)).toBe(209);
+    expect(questions.filter(q => q.year === 2025 || q.year === 2026)).toHaveLength(209);
+    expect(getExamQuestionCount(exam)).toBe(questions.length);
     const construction = getHomeDirectory().find(domain => domain.id === "construction")!;
     expect([...construction.featured, ...construction.compact]).toContainEqual(expect.objectContaining({
-      key: exam, href: `/${exam}`, name: "建築設備士", questionCount: 209,
+      key: exam, href: `/${exam}`, name: "建築設備士", questionCount: questions.length,
     }));
     expect(questions.filter(q => q.year === 2025)).toHaveLength(105);
     expect(questions.filter(q => q.year === 2026)).toHaveLength(104);

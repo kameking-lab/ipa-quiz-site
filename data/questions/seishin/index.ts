@@ -22,8 +22,7 @@ const SEISHIN_2025_QUESTIONS: Question[] = [
 /**
  * 第27回（令和6年度）精神保健福祉士国家試験。専門科目48問と、社会福祉士第37回と同一の
  * 共通科目（公式の精神保健福祉士試験ページが sp_am_*_37.pdf を掲載し、正答も84問すべて同一）。
- * 社会福祉士第37回は未公開のため共通科目もこのJSONに持ち、原文と一次資料から公式正答を
- * 一意に説明できない問題（withheld）は公開データに含めない。
+ * 保留3問を除く共通科目81問をこのJSONに保存し、社会福祉士第37回でも参照する。
  */
 const SEISHIN_2024_QUESTIONS: Question[] = SEISHIN_2024_SOURCE.questions.map((item) =>
   toSsscQuestion("seishin", SEISHIN_2024_SOURCE, SEISHIN_2024_SOURCE.questionPdfs, item));

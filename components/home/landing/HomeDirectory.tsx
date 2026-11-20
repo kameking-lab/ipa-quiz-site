@@ -1,13 +1,14 @@
 
 import { ArrowRight, ChevronDown, CircuitBoard, Coins, House, Scale, Zap, HardHat, ShieldCheck, HeartPulse, Car } from "lucide-react";
 import type { HomeDirectoryDomain, HomeDomainId } from "@/lib/home/home-directory";
+import { groupHomeDirectory } from "@/lib/home/grouped-directory";
 
 const icons = { it: CircuitBoard, money: Coins, "real-estate": House, legal: Scale, electrical: Zap, construction: HardHat, safety: ShieldCheck, welfare: HeartPulse, automotive: Car } satisfies Record<HomeDomainId, typeof Coins>;
 
 export function HomeDirectory({ domains }: { domains: readonly HomeDirectoryDomain[] }) {
   return <section aria-labelledby="home-directory-title" className="study-directory">
     <div className="study-section-head"><h2 id="home-directory-title" tabIndex={-1} className="scroll-mt-24">分野から探す</h2></div>
-    <div className="study-domain-grid">{domains.map((domain) => {
+    <div className="study-domain-grid">{groupHomeDirectory(domains).map((domain) => {
       const Icon = icons[domain.id];
       return <details key={domain.id} id={`domain-${domain.id}`} className="study-domain scroll-mt-24">
       <summary className="study-domain-heading"><Icon aria-hidden="true" className="study-domain-icon" /><span className="study-domain-label">{domain.title}<span>{domain.qualificationCount}資格・区分</span></span><ChevronDown aria-hidden="true" className="study-domain-chevron" /></summary>

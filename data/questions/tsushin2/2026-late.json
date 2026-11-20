@@ -1,0 +1,2627 @@
+[
+  {
+    "id": "tsushin2-2026-late-gakka-q1",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "点電荷と電界"
+    ],
+    "difficulty": 2,
+    "question": "下図に示すように，電荷量 Q［C］の点電荷から距離 r［m］離れた場所の電界の強さを E₁［V/m］としたとき，電荷量 2Q［C］の点電荷から距離 0.5r［m］離れた場所の電界の強さ E₂［V/m］の値として，適当なものは次のうちどれか。",
+    "choices": {
+      "ア": "E₁［V/m］",
+      "イ": "4E₁［V/m］",
+      "ウ": "8E₁［V/m］",
+      "エ": "16E₁［V/m］"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "点電荷による電界の強さは電荷量に比例し、距離の2乗に反比例する。電荷量を2倍、距離を0.5倍にすると E₂/E₁＝2/(0.5)²＝8。したがって選択肢3の8E₁となる。距離を半分にした効果は2倍ではなく4倍である。",
+    "choiceExplanations": {
+      "ア": "電荷量と距離の両方が変化するので、元のE₁のままにはならない。",
+      "イ": "4E₁は距離を半分にする効果だけを計算した値で、電荷量2倍の効果が抜けている。",
+      "ウ": "2Qと0.5rを電界の式に代入すると、元の電界の8倍となる。",
+      "エ": "距離の効果4倍と電荷量の効果2倍の積は8倍であり、16倍ではない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.1。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17",
+    "imageUrls": [
+      "/images/tsushin2/2026-late/q01-figure.png"
+    ],
+    "imageAltTexts": [
+      "点電荷Qから距離rにある点の電界E₁。"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q2",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "抵抗の直並列接続"
+    ],
+    "difficulty": 2,
+    "question": "下図に示す回路において，AB間の合成抵抗 R［Ω］の値として，適当なものは次のうちどれか。\nただし，R₁＝2［Ω］，R₂＝3［Ω］，R₃＝6［Ω］，R₄＝3［Ω］とする。",
+    "choices": {
+      "ア": "2.4［Ω］",
+      "イ": "4 ［Ω］",
+      "ウ": "6.2［Ω］",
+      "エ": "14 ［Ω］"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "R₁、R₂、R₃は同じ二つの節点につながる並列接続で、その合成抵抗は1/(1/2＋1/3＋1/6)＝1 Ω。これとR₄＝3 Ωが直列なので、AB間は1＋3＝4 Ωとなる。図の見た目の並びではなく、接続される節点を確認する。",
+    "choiceExplanations": {
+      "ア": "2.4 Ωではない。3本の並列部分だけで1 Ωとなり、その後に3 Ωが直列に加わる。",
+      "イ": "並列部分1 Ωと直列部分3 Ωの和で、AB間は4 Ωとなる。",
+      "ウ": "6.2 Ωではない。並列抵抗の逆数の和は1となり、その逆数は1 Ωである。",
+      "エ": "14 Ωは4本すべてを直列として足した値であり、実際の接続と異なる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.2。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17",
+    "imageUrls": [
+      "/images/tsushin2/2026-late/q02-figure.png"
+    ],
+    "imageAltTexts": [
+      "R₁・R₂・R₃の並列部分とR₄が直列につながるAB間の回路。"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q3",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "RC直列回路"
+    ],
+    "difficulty": 2,
+    "question": "下図に示す RC 直列回路において，抵抗 R ＝ 6［Ω］，容量性リアクタンス X_C＝ 8［Ω］としたとき，この回路全体の合成インピーダンスの大きさ Z［Ω］の値として，適当なものは次のうちどれか。",
+    "choices": {
+      "ア": "2［Ω］",
+      "イ": "10［Ω］",
+      "ウ": "14［Ω］",
+      "エ": "100［Ω］"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "RC直列回路では抵抗成分と容量性リアクタンスの成分が直交する。インピーダンスは6−j8 Ωなので、大きさは√(6²＋8²)＝10 Ω。数値の単純な和14 Ωや差2 Ωではなく、二乗和の平方根を求める。",
+    "choiceExplanations": {
+      "ア": "6 Ωと8 Ωの差を求めた値だが、直交する成分同士を単純に引くことはできない。",
+      "イ": "√(36＋64)＝10 Ωとなり、回路全体のインピーダンスの大きさに一致する。",
+      "ウ": "6 Ωと8 Ωの和だが、抵抗と容量性リアクタンスは位相が異なるため単純加算しない。",
+      "エ": "100は二乗和6²＋8²の値である。大きさを得るには平方根をとる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.3。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17",
+    "imageUrls": [
+      "/images/tsushin2/2026-late/q03-figure.png"
+    ],
+    "imageAltTexts": [
+      "交流電源に抵抗Rと容量性リアクタンスX_Cが直列に接続された回路。"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q4",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "基数変換"
+    ],
+    "difficulty": 2,
+    "question": "10 進数の 286 を2 進数に変換したものとして，適当なものは次のうちどれか。",
+    "choices": {
+      "ア": "11110",
+      "イ": "11110001",
+      "ウ": "100011110",
+      "エ": "101000110"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "286＝256＋16＋8＋4＋2＝2⁸＋2⁴＋2³＋2²＋2¹である。2⁸から2⁰の桁を順に並べると100011110となる。選択肢3が正しい。桁を省略せず、128・64・32・1の桁が0となることも確認する。",
+    "choiceExplanations": {
+      "ア": "11110₂＝16＋8＋4＋2＝30であり、286とは一致しない。",
+      "イ": "11110001₂＝128＋64＋32＋16＋1＝241である。",
+      "ウ": "100011110₂＝256＋16＋8＋4＋2＝286となる。",
+      "エ": "101000110₂＝256＋64＋4＋2＝326であり、64の桁が余分に立っている。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.4。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17",
+    "isCalculation": true
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q5",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "論理回路の真理値表"
+    ],
+    "difficulty": 2,
+    "question": "下図に示す論理回路の真理値表として，適当なものは次のうちどれか。\n各選択肢は入力（A, B）＝（0,0）,（0,1）,（1,0）,（1,1）の順の出力 F を示す。",
+    "choices": {
+      "ア": "F：0, 0, 0, 1",
+      "イ": "F：0, 0, 1, 0",
+      "ウ": "F：1, 0, 1, 1",
+      "エ": "F：1, 1, 0, 1"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "上側のAND回路の出力はA・B、下側のNOT回路の出力はBの否定であり、最後にORをとる。F＝A・B＋¬Bとなる。入力00、01、10、11の順に評価すると1、0、1、1となるので選択肢3が適当である。",
+    "choiceExplanations": {
+      "ア": "0、0、0、1はAND回路だけの真理値表であり、Bを反転する経路が反映されていない。",
+      "イ": "0、0、1、0では、B＝0のときにNOT回路から1が入力される動作と一致しない。",
+      "ウ": "B＝0ならF＝1、B＝1ならF＝Aとなるため、出力は1、0、1、1である。",
+      "エ": "1、1、0、1では、入力01と10の出力が実際の回路の動作と逆になっている。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.5。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17",
+    "imageUrls": [
+      "/images/tsushin2/2026-late/q05-figure.png"
+    ],
+    "imageAltTexts": [
+      "AとBをANDに入力し、その出力とBのNOT出力をORに入力してFを得る回路。"
+    ]
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q6",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "デジタル変調"
+    ],
+    "difficulty": 2,
+    "question": "デジタル変調方式に関する下記の文章中の空欄のア，イに当てはまる語句の組合せとして，適当なものは次のうちどれか。「デジタル信号の1 と0 に応じて2 つの周波数に対応させる変調方式をア，デジタル信号に対して一定の振幅の搬送波をオン，オフする変調方式をイという。」",
+    "choices": {
+      "ア": "ア：FSK、イ：PSK",
+      "イ": "ア：PSK、イ：FSK",
+      "ウ": "ア：ASK、イ：PSK",
+      "エ": "ア：FSK、イ：ASK"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "二つの周波数をデジタル値に対応させる方式はFSKである。搬送波の振幅を変える方式はASKで、そのうち搬送波を出す・止めることで値を表すのがオンオフ方式である。したがってア＝FSK、イ＝ASKの選択肢4を選ぶ。",
+    "choiceExplanations": {
+      "ア": "アのFSKは合うが、イのPSKは搬送波の位相を変える方式である。",
+      "イ": "PSKは位相を変える方式であり、二つの周波数を使い分けるアの説明に合わない。",
+      "ウ": "ASKは振幅、PSKは位相を変える方式であり、どちらの空欄にも合わない。",
+      "エ": "FSKは周波数の切替え、ASKは振幅の切替えに対応し、両空欄に合う。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.6。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q7",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "パケット交換"
+    ],
+    "difficulty": 2,
+    "question": "パケット交換方式に関する下記の文章中の空欄のア，イに当てはまる語句の組合せとして，適当なものは次のうちどれか。「パケット交換はア交換のひとつで，この方式では，端末からの信号をパケットとよぶ一定量の単位に区切り，それぞれのパケットに宛先の情報を入れたイを付加して転送する。」",
+    "choices": {
+      "ア": "ア：回線、イ：ヘッダ",
+      "イ": "ア：回線、イ：フッタ",
+      "ウ": "ア：蓄積、イ：ヘッダ",
+      "エ": "ア：蓄積、イ：フッタ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "パケット交換は、受け取ったデータをいったん蓄えてから次の装置へ送る蓄積交換に分類される。宛先などの制御情報はパケットの先頭側のヘッダに付ける。ア＝蓄積、イ＝ヘッダであり、選択肢3が適当である。",
+    "choiceExplanations": {
+      "ア": "ヘッダは合うが、パケット交換を回線交換に分類している点が誤りである。",
+      "イ": "回線を占有する回線交換とは異なり、宛先情報も通常はフッタではなくヘッダに置く。",
+      "ウ": "パケット単位で蓄積して転送し、ヘッダの宛先情報を利用するため正しい組合せである。",
+      "エ": "蓄積交換という分類は合うが、宛先情報を入れる部分はフッタではなくヘッダである。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.7。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q8",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "UHF帯の電波伝搬"
+    ],
+    "difficulty": 2,
+    "question": "UHF 帯の電波の伝わり方に関する次の記述のうち，適当でないものはどれか。",
+    "choices": {
+      "ア": "地表面や建物などで反射されたマルチパス波も伝わる。",
+      "イ": "電離層と大地で反射されて遠距離に伝わる。",
+      "ウ": "ラジオダクトが発生すると通常の伝搬範囲を超えて遠くまで伝搬することがある。",
+      "エ": "見通し距離内の通信では，直接波や大地反射波が利用される。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "UHF帯では、見通し内の直接波や反射波のほか、周囲の建物などによるマルチパスが問題になる。一方、電離層と大地との反射で遠距離へ伝わる性質は、主に短波帯の説明である。適当でない記述は選択肢2である。",
+    "choiceExplanations": {
+      "ア": "地表面や建物からの反射波が受信点に到達することがあり、適当な記述である。",
+      "イ": "電離層反射を利用する遠距離伝搬をUHF帯の一般的な伝搬としている点が不適当である。",
+      "ウ": "大気の屈折率分布によるラジオダクトでは、通常より遠くまで伝搬する場合がある。",
+      "エ": "見通し内では直接波や大地で反射した波が利用されるため、適当な記述である。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.8。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q9",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "文字コード"
+    ],
+    "difficulty": 2,
+    "question": "文字コードに関する次の記述に該当する名称として，適当なものは次のうちどれか。「世界各国の文字を統一的に扱うことを目的に開発された文字コードであり，ISO で標準化された文字コードである。」",
+    "choices": {
+      "ア": "Unicode",
+      "イ": "EUC",
+      "ウ": "ASCII",
+      "エ": "EBCDIC"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "世界の文字を共通の符号体系で扱うための規格がUnicodeである。ISO/IEC 10646の符号位置とも整合が図られている。EUC、ASCII、EBCDICは、設問のような世界各国の文字を統一的に扱う体系の名称には当たらないため、選択肢1が適当である。",
+    "choiceExplanations": {
+      "ア": "世界各国の文字を統一的に扱う目的に合う名称であり、公式正答である。",
+      "イ": "EUCは主に日本語などの文字処理で用いられる符号化方式で、設問の名称ではない。",
+      "ウ": "ASCIIは英数字や記号、制御文字を中心とする符号体系であり、対象範囲が異なる。",
+      "エ": "EBCDICは汎用機などで用いられる文字コードで、世界の文字を統一する体系ではない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.9。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q10",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "コンピュータの基本構成"
+    ],
+    "difficulty": 2,
+    "question": "コンピュータの構成や基本機能に関する次の記述のうち，適当でないものはどれか。",
+    "choices": {
+      "ア": "演算装置と制御装置を組み合わせた装置を中央処理装置という。",
+      "イ": "制御機能，演算機能，記憶機能，入力機能，出力機能の5 大機能がある。",
+      "ウ": "主記憶装置は，プログラムやデータを保存するための装置で，電源を切ってもその内容が消えることはない。",
+      "エ": "コンピュータ内部では，0 と1 のデータを用いて論理演算が行われる。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "通常の主記憶に使うRAMは揮発性であり、電源を切ると保持していた内容が失われる。電源を切っても保存できる補助記憶装置と区別する。設問は適当でないものを選ぶため、選択肢3が正答である。",
+    "choiceExplanations": {
+      "ア": "演算装置と制御装置をまとめて中央処理装置とする説明であり、適当である。",
+      "イ": "制御・演算・記憶・入力・出力をコンピュータの五大機能とする説明である。",
+      "ウ": "通常の主記憶RAMは揮発性であるため、電源断後も内容が消えないとする記述は不適当。",
+      "エ": "コンピュータ内部で0と1の二値データを用いて論理演算する説明は適当である。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.10。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q11",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "npn形トランジスタ"
+    ],
+    "difficulty": 2,
+    "question": "下図に示す⒜，⒝の npn 形トランジスタ回路の動作に関する次の記述のうち，適当なものはどれか。",
+    "choices": {
+      "ア": "⒜の回路は，C－B 間に順電圧が加わるため C－B 接合面付近の空乏層が狭くなる。",
+      "イ": "⒜の回路は，ベース電流が流れるがコレクタ電流は流れない。",
+      "ウ": "⒝の回路は，B－E 間に逆電圧が加わるため B－E 接合面付近の空乏層が広くなる。",
+      "エ": "⒝の回路は，ベース電流が流れるとコレクタ電流も流れる。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "図⒜はベースとエミッタが短絡され、ベース・エミッタ間に順方向のバイアスがない。図⒝ではその接合に順方向の電圧が加わり、ベース電流に応じてコレクタ電流が流れる。したがって選択肢4が適当である。電源の極性と各接合への電圧の向きを読む。",
+    "choiceExplanations": {
+      "ア": "図⒜のコレクタはベースより高い電位であり、C−B接合が順方向になる説明ではない。",
+      "イ": "図⒜ではB−E間が短絡されているため、通常の増幅動作に必要なベース電流は流れない。",
+      "ウ": "図⒝ではB−E間は順方向にバイアスされており、逆方向という記述が不適当である。",
+      "エ": "図⒝はB−E間を順方向とし、ベース電流に応じてコレクタ電流が流れる回路である。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.11。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17",
+    "imageUrls": [
+      "/images/tsushin2/2026-late/q11-figure.png"
+    ],
+    "imageAltTexts": [
+      "図⒜はベースとエミッタを接続したnpn回路、図⒝はB−E間に順方向電圧を加えるnpn回路。"
+    ]
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q12",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "負帰還増幅回路"
+    ],
+    "difficulty": 2,
+    "question": "負帰還増幅回路に関する下記の文章中の空欄のア，イに当てはまる語句の組合せとして，適当なものは次のうちどれか。「下図に示す回路の入力信号 v_i と帰還信号 v_f がアの場合，負帰還増幅回路と呼ばれる。負帰還を行うことで，利得は低下するが安定した増幅回路が得られ，イを改善することができる。」",
+    "choices": {
+      "ア": "ア：逆位相、イ：周波数特性",
+      "イ": "ア：逆位相、イ：入力信号の雑音",
+      "ウ": "ア：同位相、イ：周波数特性",
+      "エ": "ア：同位相、イ：入力信号の雑音"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "帰還信号を入力信号と逆位相にして入力を打ち消す向きに戻すのが負帰還である。利得は下がるが、増幅回路の特性が安定し、周波数特性などを改善できる。入力に含まれる雑音自体を選別して除く働きとは区別し、選択肢1を選ぶ。",
+    "choiceExplanations": {
+      "ア": "逆位相で戻すことで負帰還となり、周波数特性の改善も得られるため適当である。",
+      "イ": "逆位相は合うが、入力信号に既に含まれる雑音を除去するという説明にはならない。",
+      "ウ": "入力と同位相の帰還は正帰還であり、負帰還増幅回路の説明と異なる。",
+      "エ": "同位相は負帰還ではなく、入力信号の雑音の除去もこの仕組みの説明に合わない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.12。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17",
+    "imageUrls": [
+      "/images/tsushin2/2026-late/q12-figure.png"
+    ],
+    "imageAltTexts": [
+      "入力に帰還信号を戻す増幅回路。入力v_i、出力v_o、帰還信号v_f。"
+    ]
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q13",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "マルチモード光ファイバ"
+    ],
+    "difficulty": 2,
+    "question": "マルチモード光ファイバに関する次の記述のうち，適当でないものはどれか。",
+    "choices": {
+      "ア": "マルチモード光ファイバのコア径は，シングルモード光ファイバのコア径より大きい。",
+      "イ": "マルチモード光ファイバにはステップインデックス型があり，コア部の屈折率が2 次曲線状になっている。",
+      "ウ": "光ファイバ内に複数の異なる伝搬経路が存在し，光路長の異なる光が同時に伝搬する。",
+      "エ": "マルチモード光ファイバは，安価で取扱いが容易であり，短い距離の伝送に利用されている。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "ステップインデックス型は、コア内の屈折率がほぼ一定で、クラッドとの境界で段階的に変わる。一方、コア内の屈折率を中心から外側へ連続的に変えるのはグレーデッドインデックス型である。両者を取り違えた選択肢2が不適当である。",
+    "choiceExplanations": {
+      "ア": "一般にマルチモードのコア径はシングルモードより大きく、適当な記述である。",
+      "イ": "コアの屈折率分布を2次曲線状とする説明は、ステップ型ではなくグレーデッド型に対応する。",
+      "ウ": "複数のモードで伝搬するため、光路長の異なる光が同時に伝わるという説明は適当。",
+      "エ": "短距離の構内伝送などに使われるマルチモード光ファイバの特徴を述べている。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.13。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q14",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "FTTHの光アクセス方式"
+    ],
+    "difficulty": 2,
+    "question": "FTTH における通信方式に関する下記の文章に該当する名称として，適当なものは次のうちどれか。「通信事業者のルータから電柱などに設置されている光スプリッタまでは1 心の光ファイバで，光スプリッタからユーザ宅まではユーザ毎に1 心の光ファイバにより通信を行う光アクセス方式である。」",
+    "choices": {
+      "ア": "SS 方式",
+      "イ": "ADS 方式",
+      "ウ": "PON 方式",
+      "エ": "VDSL 方式"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "光スプリッタで1本の光ファイバを複数の利用者へ分岐する方式がPONである。途中の分岐に受動的な光部品を使い、事業者側の装置と利用者側の装置の間を共有する。1心を利用者ごとに分けるという設問の構成は、選択肢3に当たる。",
+    "choiceExplanations": {
+      "ア": "SS方式は利用者ごとに専用の光ファイバを使う構成で、スプリッタで共有する説明と異なる。",
+      "イ": "ADS方式は能動装置を用いる分岐方式であり、設問の光スプリッタによる構成と異なる。",
+      "ウ": "受動的な光スプリッタで分岐する光アクセス方式がPONである。",
+      "エ": "VDSLは既存の電話用銅線などを利用する方式で、利用者宅まで光で接続する説明ではない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.14。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q15",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "内線電話の接続信号"
+    ],
+    "difficulty": 2,
+    "question": "内線電話機の通話接続の動作に関する下記の文章中の空欄のア～ウに当てはまる語句の組合せとして，適当なものは次のうちどれか。・発信側電話機の送受話器を上げると交換機に対してアが送られ，交換機はそれに対して発信音を返す。・発信側電話機において相手先の電話番号を押すと交換機に対してイが送られ，それにより接続先を特定した交換機は，着信側電話機にウを送る。",
+    "choices": {
+      "ア": "ア：発呼信号、イ：選択信号、ウ：呼出信号",
+      "イ": "ア：選択信号、イ：発呼信号、ウ：呼出信号",
+      "ウ": "ア：発呼信号、イ：呼出信号、ウ：応答信号",
+      "エ": "ア：呼出信号、イ：選択信号、ウ：応答信号"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "受話器を上げたことを交換機へ知らせるのが発呼信号である。続いて電話番号に対応する選択信号で相手を指定し、交換機が着信側へ呼出信号を送る。ア＝発呼信号、イ＝選択信号、ウ＝呼出信号の選択肢1が適当である。",
+    "choiceExplanations": {
+      "ア": "発呼、接続先の選択、相手への呼出しという順序が、設問の動作に一致する。",
+      "イ": "受話器を上げた段階は発呼信号であり、選択信号と発呼信号の順序が逆である。",
+      "ウ": "番号を知らせる段階は選択信号であり、呼出信号ではない。着信時点の信号も応答信号ではない。",
+      "エ": "受話器を上げるときは発呼信号、番号を送るときは選択信号であり、組合せが一致しない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.15。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q16",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "ツイストペアケーブル"
+    ],
+    "difficulty": 2,
+    "question": "LAN に用いられるツイストペアケーブルに関する次の記述のうち，適当でないものはどれか。",
+    "choices": {
+      "ア": "STP ケーブルは，外部からの電磁波の影響を軽減するため全体を金属製の網などで覆っている。",
+      "イ": "構造や伝送性能によりカテゴリ5 e やカテゴリ7 などの分類がある。",
+      "ウ": "UTP ケーブルは，銅線を2 本ずつ撚り合わせた5 ペアで構成されている。",
+      "エ": "絶縁物で被覆された2 本の銅線を撚り合わせることで，外部からのノイズの影響を低減している。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "一般的なLAN用UTPケーブルは、絶縁した銅線を2本ずつ撚った4ペア、計8本で構成する。5ペアとした選択肢3が不適当である。撚り合わせは外来ノイズの影響を小さくするためであり、STPではさらにシールドも使う。",
+    "choiceExplanations": {
+      "ア": "STPはシールドを設けて外部の電磁的な影響を軽減するケーブルであり、適当である。",
+      "イ": "カテゴリ5eやカテゴリ7など、構造・伝送性能による分類があるという説明は適当。",
+      "ウ": "一般的なLAN用UTPは4ペア8本である。5ペアとする点が不適当である。",
+      "エ": "2本の線を撚り合わせることにより外来ノイズの影響を低減する説明は適当である。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.16。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q17",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 17,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "OFDMA"
+    ],
+    "difficulty": 2,
+    "question": "携帯電話の多元接続方式に用いられる OFDMA に関する次の記述のうち，適当なものはどれか。",
+    "choices": {
+      "ア": "周波数帯域を分割し，それぞれの通信回線に異なる1 つの搬送波を割り当てる方式である。",
+      "イ": "直交する周波数軸と時間軸チャネルを分割して，それぞれの通信回線に割り当てる方式である。",
+      "ウ": "1 つの周波数を使用し，それぞれの通信回線に異なる拡散符号を割り当てる方式である。",
+      "エ": "1 つの搬送波を使用して，それぞれの通信回線に時間軸上で分割した各タイムスロットを割り当てる方式である。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "OFDMAは直交する多数のサブキャリアを用い、周波数方向と時間方向の資源を利用者へ割り当てる多元接続方式である。選択肢2が適当である。一つの周波数を符号で分けるCDMAや、時間だけで分けるTDMAと区別する。",
+    "choiceExplanations": {
+      "ア": "各回線へ異なる一つの搬送波を割り当てる説明は、基本的なFDMAに対応する。",
+      "イ": "周波数軸と時間軸に分けた通信資源を各回線に割り当てる説明であり、OFDMAに合う。",
+      "ウ": "拡散符号によって通信回線を分ける説明は、CDMAの考え方である。",
+      "エ": "一つの搬送波を時間で区切って割り当てる説明は、TDMAに対応する。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.17。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q18",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 18,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "フェージングの種類"
+    ],
+    "difficulty": 2,
+    "question": "フェージングに関する下記の文章に該当する名称として，適当なものは次のうちどれか。「送信点からの経路長が異なる2 つ以上の伝搬経路を通って電波が受信点に到達すると，その距離に応じて位相にずれが生じるために発生するフェージングである。」",
+    "choices": {
+      "ア": "偏波性フェージング",
+      "イ": "干渉性フェージング",
+      "ウ": "選択性フェージング",
+      "エ": "吸収性フェージング"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "異なる長さの経路を通った電波は、受信点に到達すると位相がずれる。その重なり方によって強め合いや弱め合いが生じ、受信強度が変動するのが干渉性フェージングである。設問は経路差による干渉を述べているので、選択肢2を選ぶ。",
+    "choiceExplanations": {
+      "ア": "偏波性は偏波面の変化に起因するもので、設問が直接説明する経路差による干渉とは異なる。",
+      "イ": "複数経路から届く波の位相差による干渉が原因であり、設問の説明に一致する。",
+      "ウ": "選択性は周波数によって減衰量が異なる性質に着目した名称で、設問の答えではない。",
+      "エ": "吸収性は伝搬途中での吸収量の変化によるもので、経路長による位相差の説明とは異なる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.18。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q19",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 19,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "ダイポールアンテナの指向性"
+    ],
+    "difficulty": 2,
+    "question": "半波長水平ダイポールアンテナの水平面内指向性に関する下記の文章中の空欄のア～ウに当てはまる語句の組合せとして，適当なものは次のうちどれか。「半波長水平ダイポールアンテナはアの指向性を持ち，放射される電波の強さは，アンテナ素子に対し，直角方向がイ，延長線方向がウとなる。」",
+    "choices": {
+      "ア": "ア：扇形、イ：最大値、ウ：最小値",
+      "イ": "ア：8の字形、イ：最小値、ウ：最大値",
+      "ウ": "ア：扇形、イ：最小値、ウ：最大値",
+      "エ": "ア：8の字形、イ：最大値、ウ：最小値"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "半波長水平ダイポールの水平面内指向性は8の字形であり、素子に直角の方向で放射が最大、素子の延長線方向で最小となる。したがってア＝8の字形、イ＝最大値、ウ＝最小値の選択肢4が適当である。",
+    "choiceExplanations": {
+      "ア": "最大・最小の方向は合うが、水平面内指向性は扇形ではなく8の字形である。",
+      "イ": "8の字形は合うが、直角方向が最小、延長線方向が最大という記述は逆である。",
+      "ウ": "指向性の形も最大・最小の方向も、水平ダイポールの特徴に合わない。",
+      "エ": "8の字形で、素子に直角の方向が最大、延長線方向が最小となるため適当である。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.19。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q20",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 20,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "マイクロ波の中継方式"
+    ],
+    "difficulty": 2,
+    "question": "マイクロ波通信の中継方式に関する次の記述のうち，適当でないものはどれか。",
+    "choices": {
+      "ア": "ヘテロダイン中継方式では，パルスを再生するため，雑音の累積がない。",
+      "イ": "遠距離の区間で通信を行うために，見通し距離内に，中継局が設けられる。",
+      "ウ": "送受信機を設置せず，反射板を用いて電波の方向を変えて中継する方式がある。",
+      "エ": "中継区間ごとに，上り下りで異なる2 つの周波数を交互に用いる2 周波中継方式がある。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "ヘテロダイン中継は受信した信号を周波数変換して増幅・再送信する方式であり、パルスを再生する方式ではない。中継で雑音が累積し得るため、選択肢1が不適当である。再生中継と、周波数変換だけを行う中継を区別する。",
+    "choiceExplanations": {
+      "ア": "ヘテロダイン方式でパルス再生を行い雑音累積がないとする点が不適当である。",
+      "イ": "マイクロ波は見通しが重要なため、見通し距離内に中継局を設けるという説明は適当。",
+      "ウ": "反射板で進行方向を変える無給電の中継方式があり、適当な記述である。",
+      "エ": "区間や方向に応じて二つの周波数を使い分ける2周波中継方式の説明は適当である。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.20。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q21",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 21,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "TCPとUDP"
+    ],
+    "difficulty": 2,
+    "question": "トランスポート層のプロトコルである TCP と UDP に関する次の記述のうち，適当でないものはどれか。",
+    "choices": {
+      "ア": "TCP は，データの伝送に先立ち，コネクションの確立を行う。",
+      "イ": "UDP は，相手にデータが届いたことを確認しない通信方式である。",
+      "ウ": "TCP は，遅延を生じさせないために再送信は行わない。",
+      "エ": "UDP は，ストリーミング配信に使用されている。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "TCPはコネクションを確立し、確認応答や再送によってデータの信頼性を確保する。「再送信は行わない」とした選択肢3が不適当である。UDP自体は到着確認や再送を行わず、その性質からストリーミングなどにも使われる。",
+    "choiceExplanations": {
+      "ア": "TCPは通信に先立ってコネクションを確立する方式であり、適当な記述である。",
+      "イ": "UDP自身には相手への到着を確認する仕組みがなく、適当な記述である。",
+      "ウ": "TCPはデータの欠落などに対応するため再送を行うので、不適当な記述である。",
+      "エ": "UDPはストリーミング配信などで利用されることがあり、適当な記述である。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.21。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q22",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 22,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "ルータの役割"
+    ],
+    "difficulty": 2,
+    "question": "ルータの役割や機能に関する次の記述のうち，適当でないものはどれか。",
+    "choices": {
+      "ア": "OSI 参照モデルのデータリンク層において動作する接続機器で，MAC アドレスを基に接続する。",
+      "イ": "ネットワークに追加や廃止される LAN もあるため，適宜，ルーティングテーブルを更新しなければならない。",
+      "ウ": "ネットワークの境界で，外部からのパケットを自分のネットワークに転送したり，別のネットワークに転送したりする。",
+      "エ": "経路情報を自動的に交換しパケットの転送経路を決定するルーティング方法を，ダイナミックルーティングという。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "ルータはネットワーク層で動作し、宛先IPアドレスや経路情報に基づいてパケットを転送する。データリンク層でMACアドレスを基に転送するという選択肢1は、主にブリッジやレイヤ2スイッチの説明であり不適当である。",
+    "choiceExplanations": {
+      "ア": "ルータはネットワーク層でIPアドレスを基に経路を選ぶので、層とアドレスの説明が異なる。",
+      "イ": "接続先ネットワークの追加や廃止に応じて経路情報を更新する必要があり、適当である。",
+      "ウ": "異なるネットワーク間でパケットを転送する役割を述べており、適当である。",
+      "エ": "経路情報を自動交換して経路を決める方法はダイナミックルーティングである。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.22。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q23",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 23,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "共通鍵暗号と公開鍵暗号"
+    ],
+    "difficulty": 2,
+    "question": "暗号化方式に関する次の記述のうち，適当なものはどれか。",
+    "choices": {
+      "ア": "共通鍵暗号方式は，通信相手が多くても鍵の管理が容易であるため，インターネットでの暗号化に広く利用されている。",
+      "イ": "公開鍵暗号方式は，暗号化に使用した鍵と異なる鍵を用いて復号処理を行う。",
+      "ウ": "共通鍵暗号方式は，復号処理に使用する鍵は通信相手によらず1 個で済む。",
+      "エ": "公開鍵暗号方式は，共通鍵暗号方式に比べて暗号化や復号処理に要する計算処理量が少ない。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "公開鍵暗号方式では、対になる二つの鍵を用い、一方で暗号化したデータをもう一方で復号する。選択肢2が適当である。共通鍵暗号は同じ鍵を共有するため多数の相手との鍵管理が課題となる一方、一般に公開鍵暗号より計算負荷が小さい。",
+    "choiceExplanations": {
+      "ア": "共通鍵暗号は通信相手が増えると安全な鍵の共有と管理が課題となるため、不適当である。",
+      "イ": "暗号化と復号に対になる別の鍵を使う点が、公開鍵暗号方式の特徴である。",
+      "ウ": "共通鍵方式で相手によらず一つの鍵を使えば、他の相手の通信まで読める問題が生じる。",
+      "エ": "公開鍵暗号は一般に共通鍵暗号より計算負荷が大きく、大小関係が逆である。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.23。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q24",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 24,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "IPv4のホスト部"
+    ],
+    "difficulty": 2,
+    "question": "LAN に繋がっている端末の IPv4 アドレスが「192.168.3.169」でサブネットマスクが「255.255.255.224」のとき，この端末のホストアドレスを 10 進数で表したものとして，適当なものは次のうちどれか。",
+    "choices": {
+      "ア": "9",
+      "イ": "41",
+      "ウ": "105",
+      "エ": "169"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "マスクの最終オクテット224は2進数で11100000であり、ホスト部は下位5ビットである。169は10101001なので、下位5ビットは01001＝9。ネットワークアドレスは192.168.3.160であり、設問のホスト部は選択肢1の9となる。",
+    "choiceExplanations": {
+      "ア": "169とマスクの反転値31の論理積をとると9となり、ホスト部に一致する。",
+      "イ": "41は下位6ビットを取り出した値であり、指定されたマスクのホスト部5ビットと異なる。",
+      "ウ": "105は下位7ビットを取り出した値であり、ホスト部のビット数を取り違えている。",
+      "エ": "169は最終オクテット全体であり、その上位3ビットのネットワーク部まで含んでいる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.24。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17",
+    "isCalculation": true
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q25",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 25,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "SSDの特徴"
+    ],
+    "difficulty": 2,
+    "question": "補助記憶装置である SSD（Solid State Drive）の特徴に関する次の記述のうち，適当でないものはどれか。",
+    "choices": {
+      "ア": "ハードディスクに比べて消費電力が小さく，衝撃に強い。",
+      "イ": "書き換え回数に上限があるため，ファイルの書き込みを頻繁に行う用途には適していない。",
+      "ウ": "記憶媒体に磁気ディスクを使う。",
+      "エ": "ハードディスクに比べてアクセスが高速である。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "SSDは半導体の記憶素子を用いる補助記憶装置であり、磁気ディスクを回転させるHDDとは異なる。磁気ディスクを記憶媒体とする選択肢3が不適当である。機械的な駆動部がない利点と、書換え寿命への配慮を併せて押さえる。",
+    "choiceExplanations": {
+      "ア": "機械的な駆動部を持たず、一般にHDDより省電力で衝撃に強いという説明は適当。",
+      "イ": "フラッシュメモリには書換え寿命があり、頻繁な書込みでは耐久性の検討が必要である。",
+      "ウ": "SSDの記憶媒体は半導体メモリであり、磁気ディスクを使うという記述は不適当である。",
+      "エ": "回転やヘッド移動の待ち時間がないため、一般にHDDよりアクセスが高速である。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.25。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q26",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 26,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "プリンタの印刷方式"
+    ],
+    "difficulty": 2,
+    "question": "インクジェットプリンタの仕組みに関する記述として，適当なものは次のうちどれか。",
+    "choices": {
+      "ア": "細いピンが並ぶ印刷ヘッドでインクリボンを叩いて文字や図形を印刷する。",
+      "イ": "固形インクを熱によって気体に変化させて印刷用紙に転写する。",
+      "ウ": "紙についた薬品を熱で変色させることによって印刷する。",
+      "エ": "ノズルの先からインクを霧状に用紙に吹き付けて印刷する。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "インクジェットプリンタは、微細なノズルからインクを吐出して用紙に文字や画像を形成する。選択肢4が適当である。インクリボンへの打撃、昇華による転写、感熱紙の発色という他の印刷方式と区別する。",
+    "choiceExplanations": {
+      "ア": "ピンでインクリボンを叩く説明は、ドットインパクト方式に対応する。",
+      "イ": "熱でインクを気化させて転写する説明は、昇華型の印刷方式に対応する。",
+      "ウ": "用紙の薬品を熱で発色させる説明は、感熱方式に対応する。",
+      "エ": "ノズルからインクを吐出して用紙に付着させる説明で、インクジェット方式に合う。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.26。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q27",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 27,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "USBの接続"
+    ],
+    "difficulty": 2,
+    "question": "USB に関する下記の文章中の空欄のア，イに当てはまる語句と数値の組合せとして，適当なものは次のうちどれか。「パソコンと周辺機器をつなぐアインタフェースで，最大でイ台までの周辺機器を接続することができ，USB 3.2 規格の転送速度は最大で 20 Gbps である。」",
+    "choices": {
+      "ア": "ア：シリアル、イ：63",
+      "イ": "ア：シリアル、イ：127",
+      "ウ": "ア：パラレル、イ：63",
+      "エ": "ア：パラレル、イ：127"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "USBはシリアル通信による周辺機器接続の規格であり、一つのUSBバスに接続できるデバイス数はハブを含め最大127台である。ア＝シリアル、イ＝127の選択肢2が適当。設問のUSB 3.2の最大転送速度と、接続台数を混同しない。",
+    "choiceExplanations": {
+      "ア": "シリアルは合うが、設問で問うUSBバスの最大接続台数は63台ではなく127台である。",
+      "イ": "シリアルインタフェースで最大127台という組合せであり、設問の説明に合う。",
+      "ウ": "USBはパラレルインタフェースではなく、最大接続台数もこの組合せとは異なる。",
+      "エ": "127台は合うが、USBの通信方式をパラレルとしている点が誤りである。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.27。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q28",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 28,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "ランサムウェア"
+    ],
+    "difficulty": 2,
+    "question": "ランサムウェアに関する記述として，適当なものは次のうちどれか。",
+    "choices": {
+      "ア": "ネットワークを通じてコンピュータを外部から操るプログラムである。",
+      "イ": "有益なプログラムのふりをしてデータの破壊などを行うプログラムである。",
+      "ウ": "個人情報やアクセス履歴を収集するプログラムである。",
+      "エ": "コンピュータ内のデータを暗号化するなどして金銭を要求するプログラムである。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "ランサムウェアは、データを暗号化するなどして利用不能にし、復旧などの見返りとして金銭を要求する不正プログラムである。選択肢4が適当である。遠隔操作、正規ソフトへの偽装、情報収集だけを述べた説明とは区別する。",
+    "choiceExplanations": {
+      "ア": "外部からコンピュータを操る説明であり、金銭を要求するランサムウェアの特徴ではない。",
+      "イ": "有益なソフトを装う説明はトロイの木馬の特徴で、ランサムウェアを特定する説明ではない。",
+      "ウ": "情報や履歴を収集する説明はスパイウェアの特徴であり、設問の名称とは異なる。",
+      "エ": "データ暗号化などにより金銭を要求する点が、ランサムウェアの特徴に一致する。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.28。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q29",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 29,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "地上デジタルテレビ放送"
+    ],
+    "difficulty": 2,
+    "question": "我が国の地上デジタルテレビ放送に関する次の記述のうち，適当でないものはどれか。",
+    "choices": {
+      "ア": "地上デジタルテレビ放送の周波数帯域幅は1 チャネルあたり6 MHz で，VHF 帯の電波が使用されている。",
+      "イ": "地上デジタルテレビ放送の変調方式には，OFDM 方式が使用されている。",
+      "ウ": "地上デジタルテレビ放送は，電子番組表，データ放送，双方向番組など多様なサービスが可能である。",
+      "エ": "隣接する中継局で同一チャネルの周波数を使って同一放送の再送信を行うことができる。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "我が国の地上デジタルテレビ放送ではUHF帯を用いる。1チャネル6 MHzという部分は適当だが、VHF帯を用いるとした選択肢1が不適当である。OFDMや同一周波数を使ったネットワーク構成、データ放送なども特徴として押さえる。",
+    "choiceExplanations": {
+      "ア": "帯域幅6 MHzは合うが、用いる周波数帯はUHF帯であり、VHF帯ではない。",
+      "イ": "多数の直交する搬送波で伝送するOFDM方式が用いられており、適当である。",
+      "ウ": "電子番組表やデータ放送などのサービスが可能であるため、適当な記述である。",
+      "エ": "送信タイミングなどの条件を整え、同じ周波数で同じ放送を中継する構成が可能である。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.29。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q30",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 30,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "デジタル映像信号"
+    ],
+    "difficulty": 2,
+    "question": "我が国のデジタルテレビ放送の映像信号に関する下記の文章中の空欄のア，イに当てはまる語句の組合せとして，適当なものは次のうちどれか。「ハイビジョン映像の信号は 1920 × 1080 の画素からなるが，各画素は，アを表す輝度信号と色を表す色差信号に分けることができ，これらの膨大なデータをすべて伝送するために動画像データのイ技術が必要である。」",
+    "choices": {
+      "ア": "ア：鮮やかさ、イ：多重化",
+      "イ": "ア：鮮やかさ、イ：圧縮符号化",
+      "ウ": "ア：明るさ、イ：多重化",
+      "エ": "ア：明るさ、イ：圧縮符号化"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "輝度信号は映像の明るさに対応し、色の情報は色差信号などで表す。また、画素ごとの情報をそのまま送るとデータ量が大きいため、動画像を圧縮符号化して伝送する。ア＝明るさ、イ＝圧縮符号化の選択肢4が適当である。",
+    "choiceExplanations": {
+      "ア": "輝度が表すのは鮮やかさではなく明るさであり、多重化もデータ量の削減を指す技術ではない。",
+      "イ": "圧縮符号化は合うが、輝度信号を鮮やかさの情報としている点が誤りである。",
+      "ウ": "明るさは合うが、膨大なデータ量を削減するための技術は多重化ではなく圧縮符号化である。",
+      "エ": "輝度は明るさ、伝送データ量の削減は圧縮符号化に対応するため適当である。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.30。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q31",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 31,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "マイクロホンの原理"
+    ],
+    "difficulty": 2,
+    "question": "マイクロホンに関する下記の文章に該当する名称として，適当なものは次のうちどれか。「電極の一方が固定電極，他方が振動板になっており，音圧による振動板の振動に応じて電極間の静電容量が増減する性質を利用したマイクロホンで，音圧に対する応答が非常に速く，周波数特性も優れている。」",
+    "choices": {
+      "ア": "ダイナミックマイクロホン",
+      "イ": "リボンマイクロホン",
+      "ウ": "コンデンサマイクロホン",
+      "エ": "カーボンマイクロホン"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "固定電極と振動板を向かい合わせ、振動による静電容量の変化を電気信号に変えるのはコンデンサマイクロホンである。選択肢3が適当である。名称だけでなく、電磁誘導を使う方式や抵抗変化を使う方式との違いを確認する。",
+    "choiceExplanations": {
+      "ア": "ダイナミック方式は磁界中のコイルの運動による電磁誘導を利用し、静電容量の変化ではない。",
+      "イ": "リボン方式は磁界内の薄い導体の振動を利用する方式で、設問の二つの電極の構造とは異なる。",
+      "ウ": "振動板と固定電極の間の静電容量変化を利用するため、設問の説明に一致する。",
+      "エ": "カーボン方式は圧力による炭素粒の抵抗変化を利用し、静電容量の変化ではない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.31。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q32",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 32,
+    "type": "multiple-choice",
+    "category": "電気通信技術",
+    "topicTags": [
+      "Bluetooth"
+    ],
+    "difficulty": 2,
+    "question": "Bluetooth の特徴に関する次の記述のうち，適当でないものはどれか。",
+    "choices": {
+      "ア": "Bluetooth は，赤外線通信（IrDA）に比べて通信可能範囲が広い。",
+      "イ": "Bluetooth は，通信の使用周波数帯として 2.4 GHz 帯を用いている。",
+      "ウ": "Bluetooth は，低消費電力であり，スマートフォンや PC と周辺機器との間の無線接続に利用されている。",
+      "エ": "Bluetooth は，干渉の影響が少ない MIMO を採用している。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "Bluetoothは2.4 GHz帯を用いる近距離の無線通信で、周辺機器の接続などに使われる。選択肢4のようにMIMOを基本的な特徴とする説明は不適当である。干渉対策として用いる周波数ホッピングと、複数アンテナのMIMOを区別する。",
+    "choiceExplanations": {
+      "ア": "赤外線を用いるIrDAと比べ、一般に利用可能な範囲が広いという説明は適当である。",
+      "イ": "Bluetoothが使用する周波数帯は2.4 GHz帯であり、適当な記述である。",
+      "ウ": "低消費電力の無線接続としてスマートフォンなどの周辺機器に利用される。",
+      "エ": "Bluetoothの基本的な干渉対策をMIMOとする記述は不適当である。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.32。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q33",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 33,
+    "type": "multiple-choice",
+    "category": "関連分野",
+    "topicTags": [
+      "低圧屋内配線の施設場所"
+    ],
+    "difficulty": 2,
+    "question": "低圧屋内配線における，施設場所での工事の種類に関する次の記述のうち，「電気設備の技術基準の解釈」上，誤っているものはどれか。",
+    "choices": {
+      "ア": "金属ダクト工事は，使用電圧が 300 V 超過で，乾燥した点検できない隠ぺい場所に施設することができる。",
+      "イ": "平形保護層工事は，使用電圧が 300 V 以下で，乾燥した点検できる隠ぺい場所に施設することができる。",
+      "ウ": "合成樹脂管工事は，使用電圧が 300 V 以下で，湿気の多い点検できない隠ぺい場所に施設することができる。",
+      "エ": "金属管工事は，使用電圧が 300 V 超過で，湿気の多い展開した場所に施設することができる。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "金属ダクト工事は点検できる場所に施設するもので、点検できない隠ぺい場所を認める選択肢1が誤りである。使用電圧だけでなく、乾燥・湿気の状態や、展開した場所・点検できる隠ぺい場所という区分を併せて判断する。",
+    "choiceExplanations": {
+      "ア": "金属ダクト工事を点検できない隠ぺい場所に施設できるとする点が誤りである。",
+      "イ": "300 V以下で乾燥した点検できる隠ぺい場所は、平形保護層工事の施設条件に合う。",
+      "ウ": "合成樹脂管工事は、設問の湿気が多く点検できない隠ぺい場所にも施設できる。",
+      "エ": "金属管工事は、設問の使用電圧と湿気の多い展開した場所という条件に対応できる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.33。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [
+      "https://www.meti.go.jp/policy/safety_security/industrial_safety/oshirase/2025/11/251120-23.pdf"
+    ],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q34",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 34,
+    "type": "multiple-choice",
+    "category": "関連分野",
+    "topicTags": [
+      "C種接地工事"
+    ],
+    "difficulty": 2,
+    "question": "「電気設備の技術基準の解釈」において，C 種接地工事の接地抵抗値として，定められているものは次のうちどれか。ただし，低圧電路において，当該電路に地絡が生じた場合に 0.5 秒以内に自動的に電路を遮断する装置を有しないものとする。",
+    "choices": {
+      "ア": "5 Ω以下",
+      "イ": "10 Ω以下",
+      "ウ": "100 Ω以下",
+      "エ": "500 Ω以下"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "設問のように、地絡時に0.5秒以内で自動遮断する装置がない場合、C種接地工事の接地抵抗値は10 Ω以下である。したがって選択肢2を選ぶ。自動遮断装置がある場合の緩和条件を、本問へそのまま当てはめない。",
+    "choiceExplanations": {
+      "ア": "5 Ω以下は本問で定められた基準値ではない。C種接地の原則の値は10 Ω以下である。",
+      "イ": "自動遮断による緩和を用いないC種接地工事の基準値に一致する。",
+      "ウ": "100 Ω以下ではC種接地工事の原則の値10 Ω以下を満たすとは限らない。",
+      "エ": "本問には自動遮断による緩和条件がないため、500 Ω以下を選ぶことはできない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.34。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [
+      "https://www.meti.go.jp/policy/safety_security/industrial_safety/oshirase/2025/11/251120-23.pdf"
+    ],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q35",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 35,
+    "type": "multiple-choice",
+    "category": "関連分野",
+    "topicTags": [
+      "LEDの発光原理"
+    ],
+    "difficulty": 2,
+    "question": "照明設備に用いられる LED ランプに関する次の記述のうち，適当なものはどれか。",
+    "choices": {
+      "ア": "電流を流すと発光する半導体素子を用いている。",
+      "イ": "消灯するとすぐには再始動できない。",
+      "ウ": "点灯方式はグロースタータ方式である。",
+      "エ": "発光原理は，熱放射である。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "LEDは半導体の接合に電流を流したときに発光する素子であり、選択肢1が適当である。熱でフィラメントを光らせる白熱電球や、放電を使うランプと発光原理が異なる。グロースタータはLEDの点灯方式ではない。",
+    "choiceExplanations": {
+      "ア": "電流によって発光する半導体素子を利用するという記述で、LEDの原理に合う。",
+      "イ": "LEDは消灯後もすぐ再点灯でき、再始動まで待つことを特徴とするランプではない。",
+      "ウ": "グロースタータ方式は蛍光ランプなどの点灯方式であり、LEDの発光原理とは異なる。",
+      "エ": "熱放射は白熱電球などの発光原理であり、LEDの発光原理ではない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.35。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q36",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 36,
+    "type": "multiple-choice",
+    "category": "関連分野",
+    "topicTags": [
+      "空気調和の要素"
+    ],
+    "difficulty": 2,
+    "question": "室内空気環境を維持するために空気調和設備を用いて調整を行う空気調和の要素として，適当でないものは次のうちどれか。",
+    "choices": {
+      "ア": "空気の湿度",
+      "イ": "室内の日射量",
+      "ウ": "空気の清浄度",
+      "エ": "室内の気流分布"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "空気調和で調整する主な要素には、温度、湿度、清浄度、気流がある。室内の日射量は建物の開口や日よけなどに関係する条件であり、空気そのものの調整要素ではない。選択肢2が適当でないものである。",
+    "choiceExplanations": {
+      "ア": "湿度は室内空気の状態を左右し、加湿や除湿によって調整する要素である。",
+      "イ": "日射量は空調負荷に影響するが、空気調和の直接の調整要素として挙げるものではない。",
+      "ウ": "清浄度は空気中の汚れなどに関する要素であり、空気調和の対象となる。",
+      "エ": "気流分布は室内の快適性に関係し、送風などによって調整する要素である。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.36。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q37",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 37,
+    "type": "multiple-choice",
+    "category": "関連分野",
+    "topicTags": [
+      "機械換気の方式"
+    ],
+    "difficulty": 2,
+    "question": "第3 種機械換気方式に関する記述として，適当なものは次のうちどれか。",
+    "choices": {
+      "ア": "給気機で空気を取り入れ排気口から自然排気する方式で，給気量が完全に確保できる。",
+      "イ": "給気機で空気を取り入れ排気機で空気を排出する方式で，外気から遮断された大きな空間の換気に適している。",
+      "ウ": "排気機で空気を排出し給気口から自然給気する方式で，汚染空気が他の部屋に拡散するのを避けることができる。",
+      "エ": "換気の原動力が建物内外空気の温度差や風で，動力費が不要で停電でも機能する。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "第3種機械換気は、機械で排気し、給気口から自然に外気を取り入れる方式である。室内が負圧になり、汚染した空気が周囲へ広がりにくい。したがって選択肢3が適当である。給気と排気のどちらを機械で行うかで各方式を区別する。",
+    "choiceExplanations": {
+      "ア": "機械給気・自然排気は第2種機械換気の説明であり、第3種ではない。",
+      "イ": "給気と排気の両方を機械で行うのは第1種機械換気の説明である。",
+      "ウ": "機械排気・自然給気の組合せであり、負圧により汚染空気の流出を抑える。",
+      "エ": "温度差や風を利用し動力を使わない説明は、機械換気ではなく自然換気である。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.37。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q38",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 38,
+    "type": "multiple-choice",
+    "category": "関連分野",
+    "topicTags": [
+      "コンクリートの性質"
+    ],
+    "difficulty": 2,
+    "question": "フレッシュコンクリートの性質に関する下記の文章中のに当てはまる語句として，適当なものは次のうちどれか。「フレッシュコンクリートの変形あるいは流動に対する抵抗性のことをといい，圧送性や充填性に大きく影響する。」",
+    "choices": {
+      "ア": "コンシステンシー",
+      "イ": "ワーカビリティー",
+      "ウ": "プラスティシティー",
+      "エ": "フィニッシャビリティー"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "コンシステンシーは、フレッシュコンクリートの変形や流動に対する抵抗性を表す。選択肢1が適当である。ワーカビリティーは材料分離への抵抗なども含む施工のしやすさ、フィニッシャビリティーは仕上げやすさであり、用語の範囲を区別する。",
+    "choiceExplanations": {
+      "ア": "変形や流動に対する抵抗性を表す用語で、設問の定義に一致する。",
+      "イ": "ワーカビリティーは施工のしやすさを総合的に表し、設問の抵抗性だけを指す用語ではない。",
+      "ウ": "プラスティシティーは容易に型を変え、分離せずに形を保つ性質に着目した用語である。",
+      "エ": "フィニッシャビリティーは表面の仕上げやすさに関する性質で、設問の定義とは異なる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.38。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q39",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 39,
+    "type": "multiple-choice",
+    "category": "関連分野",
+    "topicTags": [
+      "建築構造"
+    ],
+    "difficulty": 2,
+    "question": "建築構造に関する次の記述に該当する名称として，適当なものは次のうちどれか。「柱や梁などで構成された四角形の対角線上に部材を入れて，地震や暴風に耐えるようにした構造である。」",
+    "choices": {
+      "ア": "ラーメン構造",
+      "イ": "ブレース構造",
+      "ウ": "壁式構造",
+      "エ": "シェル構造"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "柱と梁で囲まれた四角形の対角線に斜材を入れ、水平力に抵抗させるのはブレース構造である。選択肢2が適当である。斜材の引張りや圧縮で変形を抑える構造であり、柱と梁の剛接合で抵抗するラーメン構造と区別する。",
+    "choiceExplanations": {
+      "ア": "ラーメン構造は柱と梁を剛接合した骨組で抵抗するもので、対角の斜材を特徴としない。",
+      "イ": "四角形の対角線に入れた斜材で地震や風の水平力に抵抗する構造である。",
+      "ウ": "壁式構造は壁などの面で力を受ける構造で、対角の部材を特徴とするものではない。",
+      "エ": "シェル構造は薄い曲面を利用して力を負担する構造であり、設問の説明とは異なる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.39。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q40",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 40,
+    "type": "multiple-choice",
+    "category": "施工管理法",
+    "topicTags": [
+      "設計図書"
+    ],
+    "difficulty": 2,
+    "question": "「公共工事標準請負契約約款」において，設計図書に含まれないものは次のうちどれか。",
+    "choices": {
+      "ア": "図面",
+      "イ": "仕様書",
+      "ウ": "現場説明書",
+      "エ": "競争参加資格確認申請書"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "公共工事標準請負契約約款の設計図書には、図面、仕様書、現場説明書などが含まれる。競争参加資格確認申請書は、入札に参加する資格を確認するための書類であるため、設計図書に含まれない。選択肢4が正答である。",
+    "choiceExplanations": {
+      "ア": "図面は工事の形状や寸法などを定める書類であり、設計図書に含まれる。",
+      "イ": "仕様書は材料や施工の仕様などを定める書類であり、設計図書に含まれる。",
+      "ウ": "現場説明書は設計図書を構成する書類として扱われ、除外するものではない。",
+      "エ": "競争参加資格の確認に使う申請書であり、工事内容を定める設計図書ではない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.40。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [
+      "https://www.cgr.mlit.go.jp/chiki/kensei/kyoka/5/koukyou_yakkan.html"
+    ],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q41",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 41,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "一般建設業と特定建設業"
+    ],
+    "difficulty": 2,
+    "question": "一般建設業の許可に関する次の記述のうち，「建設業法」上，誤っているものはどれか。",
+    "choices": {
+      "ア": "2 以上の都道府県の区域内に営業所を設けて営業をしようとする場合にあっては，国土交通大臣の許可を受けなければならない。",
+      "イ": "建設業者は，許可を受けた建設業に係る建設工事を請け負う場合においては，当該建設工事に附帯する他の建設業に係る建設工事を請け負うことができる。",
+      "ウ": "一般建設業者が発注者から直接請け負った電気通信工事を施工する場合，下請代金の総額が 5,000 万円以上となる下請契約を締結することができる。",
+      "エ": "一般建設業の許可を受けた者が，当該許可に係る建設業について，特定建設業の許可を受けたときは，その者に対する当該建設業に係る一般建設業の許可は，その効力を失う。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "電気通信工事を発注者から直接請け負い、下請代金の総額が5,000万円以上となる下請契約を結ぶ場合は、特定建設業の許可が必要となる。一般建設業の許可だけでできるとする選択肢3が誤りである。元請の請負額と下請代金の総額を混同しない。",
+    "choiceExplanations": {
+      "ア": "営業所を2以上の都道府県に設ける場合に国土交通大臣の許可を受けるという記述は正しい。",
+      "イ": "許可を受けた建設工事に附帯する他の工事も請け負えるという規定に合う。",
+      "ウ": "発注者から直接受注して下請総額が基準以上となるため、一般許可だけでは足りない。",
+      "エ": "同じ業種の特定建設業の許可を受けたとき、従来の一般建設業の許可は効力を失う。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.41。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/api/2/law_data/324AC0000000100?asof=2026-11-15"
+    ],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q42",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 42,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "建設工事の請負契約"
+    ],
+    "difficulty": 2,
+    "question": "建設工事の請負契約に関する次の記述のうち，「建設業法」上，誤っているものはどれか。",
+    "choices": {
+      "ア": "建設業者は，建設工事の注文者から請求があったときは，請負契約の成立後に，建設工事の見積書を交付しなければならない。",
+      "イ": "注文者は，その注文した建設工事を施工するために通常必要と認められる期間に比して著しく短い期間を工期とする請負契約を締結してはならない。",
+      "ウ": "委託その他いかなる名義をもってするかを問わず，報酬を得て建設工事の完成を目的として締結する契約は，建設工事の請負契約とみなして，建設業法の規定が適用される。",
+      "エ": "建設工事の請負契約の当事者は，各々の対等な立場における合意に基いて公正な契約を締結し，信義に従って誠実にこれを履行しなければならない。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "建設業者は注文者から求められた見積書を、請負契約が成立する前に交付する。契約成立後としている選択肢1が誤りである。注文者が内容と金額を検討してから契約できるようにするもので、契約の名称ではなく実質による判断も押さえる。",
+    "choiceExplanations": {
+      "ア": "見積書の交付時期は契約の成立前であり、成立後としている点が誤りである。",
+      "イ": "通常必要な期間に比べ著しく短い工期の請負契約を禁じる規定に合う。",
+      "ウ": "委託などの名称でも、報酬を得て建設工事を完成させる契約は建設業法上の請負契約とみなす。",
+      "エ": "対等な合意による公正な契約と、信義に従った誠実な履行を求める規定に合う。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.42。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/api/2/law_data/324AC0000000100?asof=2026-11-15"
+    ],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q43",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 43,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "電気通信工事の主任技術者"
+    ],
+    "difficulty": 2,
+    "question": "電気通信工事の工事現場に配置する主任技術者に関する次の記述のうち，「建設業法」上，誤っているものはどれか。",
+    "choices": {
+      "ア": "工事現場における建設工事の施工に従事する者は，主任技術者がその職務として行う指導に従わなければならない。",
+      "イ": "第三種電気主任技術者の資格を有することは，電気通信工事の主任技術者になるための要件である。",
+      "ウ": "発注者から直接請け負った建設工事を下請契約を行わずに自ら施工する場合は，当該工事現場における建設工事の施工の技術上の管理をつかさどるものは，主任技術者でよい。",
+      "エ": "主任技術者は，当該工事現場の施工計画の作成，工程管理，品質管理その他の技術上の管理を行わなければならない。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "主任技術者に必要な資格等は工事の業種に対応している。第三種電気主任技術者は電気通信工事の主任技術者となるための要件ではない。選択肢2が誤りである。電気工事と電気通信工事という別の業種を名称の近さだけで結び付けない。",
+    "choiceExplanations": {
+      "ア": "施工に従事する者は、主任技術者が職務として行う指導に従う必要がある。",
+      "イ": "第三種電気主任技術者を電気通信工事の主任技術者要件とする点が誤りである。",
+      "ウ": "下請契約をせず自ら施工する場合は主任技術者でよいという記述は正しい。",
+      "エ": "主任技術者は施工計画、工程、品質など施工の技術上の管理を行う必要がある。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.43。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/api/2/law_data/324AC0000000100?asof=2026-11-15"
+    ],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q44",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 44,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "労働契約と解雇予告"
+    ],
+    "difficulty": 2,
+    "question": "労働契約に関する次の記述のうち，「労働基準法」上，誤っているものはどれか。",
+    "choices": {
+      "ア": "労働契約は，期間の定めのないものを除き，一定の事業の完了に必要な期間を定めるもののほかは，原則として3 年を超える期間について締結してはならない。",
+      "イ": "使用者は，労働契約の不履行について違約金を定め，又は損害賠償額を予定する契約をしてはならない。",
+      "ウ": "使用者は，労働契約の締結に際し，労働者に対して賃金，労働時間その他の労働条件を明示しなければならない。",
+      "エ": "使用者は，原則として，労働者を解雇しようとする場合においては，少くとも 20 日前にその予告をしなければならない。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "労働基準法の解雇予告は、原則として少なくとも30日前に行う。20日前とする選択肢4が誤りである。有期契約の原則上限、違約金等を予定する契約の禁止、契約締結時の労働条件の明示は、それぞれ設問の記述どおりである。",
+    "choiceExplanations": {
+      "ア": "一定の事業完了に必要な期間を定める場合などを除き、原則3年を超える有期契約は締結できない。",
+      "イ": "契約不履行について違約金や損害賠償額をあらかじめ決める契約は禁止される。",
+      "ウ": "労働契約の締結時には賃金、労働時間などの労働条件を明示する必要がある。",
+      "エ": "原則は少なくとも30日前の予告であり、20日前としている点が誤りである。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.44。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000049?asof=2026-11-15"
+    ],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q45",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 45,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "休業補償"
+    ],
+    "difficulty": 2,
+    "question": "休業補償に関する下記の文章中の空欄のア，イに当てはまる語句の組合せとして，「労働基準法」上，正しいものは次のうちどれか。「労働者が，業務上負傷し，又は疾病にかかった場合に，その療養のため労働することができないために賃金を受けない場合においては，使用者は，ア平均賃金のイの休業補償を行わなければならない。」",
+    "choices": {
+      "ア": "ア：労働者の療養中、イ：60％",
+      "イ": "ア：労働者の療養中、イ：80％",
+      "ウ": "ア：6ヶ月間、イ：60％",
+      "エ": "ア：6ヶ月間、イ：80％"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "労働基準法の休業補償は、業務上の負傷や疾病の療養により働けず、賃金を受けない場合に行う。補償は労働者の療養中について平均賃金の60％であり、選択肢1が正しい。労災保険の給付などの別制度と数値を混同しない。",
+    "choiceExplanations": {
+      "ア": "労働者の療養中について平均賃金の60％とする組合せで、労働基準法の規定に合う。",
+      "イ": "期間の説明は合うが、労働基準法上の休業補償の割合は80％ではなく60％である。",
+      "ウ": "60％は合うが、休業補償の期間を6ヶ月間に固定する記述が誤りである。",
+      "エ": "補償期間を6ヶ月間とし、割合も80％としているため、両方が規定と異なる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.45。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000049?asof=2026-11-15"
+    ],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q46",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 46,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "作業主任者の選任"
+    ],
+    "difficulty": 2,
+    "question": "「労働安全衛生法」上，作業主任者の選任を必要としない作業は，次のうちどれか。",
+    "choices": {
+      "ア": "掘削面の高さが3 m の地山の掘削の作業",
+      "イ": "橋梁に通信用配管を取り付けるためのつり足場（ゴンドラのつり足場を除く。）の組立ての作業",
+      "ウ": "高さが4 m の無線通信用鉄塔の組立ての作業",
+      "エ": "湧水が滞留しているマンホール内部の作業"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "高さ4 mの無線通信用鉄塔の組立ては、設問の条件では鉄骨の組立て等作業主任者の選任対象となる高さ5 m以上に達しない。選択肢3が正答である。地山の掘削、つり足場の組立て、酸素欠乏危険場所の作業には、それぞれ対応する選任規定がある。",
+    "choiceExplanations": {
+      "ア": "掘削面の高さ3 mは地山の掘削作業の選任対象となる高さに当たり、選任が必要である。",
+      "イ": "ゴンドラを除くつり足場の組立ては、足場の組立て等作業主任者の選任対象である。",
+      "ウ": "高さ4 mでは、鉄骨の組立て等の選任対象となる高さ5 m以上に達しない。",
+      "エ": "湧水が滞留するマンホール内部は酸素欠乏危険場所として扱われ、選任が必要である。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.46。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-11-15"
+    ],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q47",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 47,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "雇入れ時の安全衛生教育"
+    ],
+    "difficulty": 2,
+    "question": "建設業を営む事業者が，労働者を雇入れたときにその労働者に対して行う安全又は衛生のための教育の内容に関することとして，「労働安全衛生法」上，定められていないものは次のうちどれか。",
+    "choices": {
+      "ア": "事故時等における応急措置及び退避に関すること。",
+      "イ": "作業手順に関すること。",
+      "ウ": "安全装置，有害物抑制装置又は保護具の性能及びこれらの取扱い方法に関すること。",
+      "エ": "作業後の事務処理に関すること。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "労働安全衛生規則は雇入れ時の教育として、作業手順、保護具などの取扱い、事故時の応急措置と退避などを挙げている。「作業後の事務処理」は設問の教育事項として定められていないため、選択肢4を選ぶ。",
+    "choiceExplanations": {
+      "ア": "事故時の応急措置や退避は、雇入れ時の安全衛生教育の事項に含まれる。",
+      "イ": "作業手順は、安全に業務を行うための教育事項として挙げられている。",
+      "ウ": "安全装置や保護具の性能と取扱いは、教育事項として定められている。",
+      "エ": "作業後の事務処理は、設問が問う安全衛生教育の列挙事項に含まれていない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.47。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2026-11-15"
+    ],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q48",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 48,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "河川の管理"
+    ],
+    "difficulty": 2,
+    "question": "「河川法」に関する次の記述のうち，誤っているものはどれか。",
+    "choices": {
+      "ア": "1 級河川の全ての管理は，当該河川の存する都道府県を統轄する都道府県知事が行う。",
+      "イ": "準用河川は，1 級河川及び2 級河川以外の河川で市町村長が指定した河川である。",
+      "ウ": "河川法上の河川には，ダム，堰，堤防などの河川管理施設も含まれる。",
+      "エ": "河川管理施設の敷地である土地の区域は河川区域である。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "河川法では、一級河川の管理は原則として国土交通大臣が行う。区間によって都道府県知事が管理する場合はあるが、全てを知事が管理するとした選択肢1は誤りである。準用河川の指定や河川区域の説明と区別する。",
+    "choiceExplanations": {
+      "ア": "一級河川の全てを都道府県知事が管理するわけではなく、原則の管理者は国土交通大臣である。",
+      "イ": "一級・二級以外の河川で、市町村長が指定して規定を準用するのが準用河川である。",
+      "ウ": "河川法上の河川には、流水などに加えて河川管理施設も含むという説明である。",
+      "エ": "河川管理施設の敷地である土地の区域は、河川区域に含まれる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.48。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/api/2/law_data/339AC0000000167?asof=2026-11-15"
+    ],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q49",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 49,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "通信の秘密"
+    ],
+    "difficulty": 2,
+    "question": "「電気通信事業法」に関する次の記述のうち，誤っているものはどれか。",
+    "choices": {
+      "ア": "電気通信役務とは電気通信設備を用いて他人の通信を媒介し，その他電気通信設備を他人の通信の用に供することをいう。",
+      "イ": "電気通信事業者の取扱中に係る通信の秘密は，検閲の必要がある場合を除き侵してはならない。",
+      "ウ": "電気通信事業者は，電気通信役務の提供について，不当な差別的取扱いをしてはならない。",
+      "エ": "電気通信とは有線，無線その他の電磁的方式により，符号，音響又は影像を送り，伝え，又は受けることをいう。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "電気通信事業法では、検閲をしてはならず、事業者の取扱中の通信の秘密も侵してはならない。「検閲の必要がある場合」を秘密侵害の例外とする選択肢2は誤りである。電気通信と電気通信役務の定義、不当な差別的取扱いの禁止も確認する。",
+    "choiceExplanations": {
+      "ア": "電気通信設備を用いて他人の通信を媒介することなどを役務とする定義に合う。",
+      "イ": "検閲の必要を理由に通信の秘密を侵害できるという例外はなく、誤った記述である。",
+      "ウ": "電気通信役務の提供における不当な差別的取扱いを禁じる規定に合う。",
+      "エ": "有線・無線その他の電磁的方式による符号、音響、影像の送受信という定義に合う。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.49。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/api/2/law_data/359AC0000000086?asof=2026-11-15"
+    ],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q50",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 50,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "架空電線の高さ"
+    ],
+    "difficulty": 2,
+    "question": "架空電線の高さの規定に関する下記の文章中の空欄のア，イに当てはまる数値の組合せとして，「有線電気通信設備令」上，正しいものは次のうちどれか。・架空電線が道路上にあるときは，横断歩道橋の上にあるときを除き，車道の路面からア m 以上であること。・架空電線が横断歩道橋の上にあるときは，横断歩道橋の路面からイ m 以上であること。",
+    "choices": {
+      "ア": "ア：4、イ：2",
+      "イ": "ア：4、イ：3",
+      "ウ": "ア：5、イ：2",
+      "エ": "ア：5、イ：3"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "有線電気通信設備令では、設問の架空電線の高さは車道の路面から5 m以上、横断歩道橋の路面から3 m以上である。ア＝5、イ＝3の選択肢4が正しい。どちらも同じ値ではなく、対象となる路面を読み分ける。",
+    "choiceExplanations": {
+      "ア": "車道上を4 m、歩道橋上を2 mとしており、設問の規定値とどちらも異なる。",
+      "イ": "歩道橋上3 mは合うが、車道上は4 mではなく5 m以上である。",
+      "ウ": "車道上5 mは合うが、歩道橋上は2 mではなく3 m以上である。",
+      "エ": "車道の路面から5 m以上、横断歩道橋の路面から3 m以上であり、両方が合う。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.50。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/api/2/law_data/328CO0000000131?asof=2026-11-15"
+    ],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q51",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 51,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "無線局による妨害の防止"
+    ],
+    "difficulty": 2,
+    "question": "無線局の運用等に関する下記の文章中の空欄のア，イに当てはまる語句の組合せとして，「電波法」上，正しいものは次のうちどれか。「無線局は，原則として他の無線局又は電波天文業務の用に供するアその他の総務省令で定めるアで総務大臣が指定するものにその運用を阻害するようなイその他の妨害を与えないように運用しなければならない。」",
+    "choices": {
+      "ア": "ア：送信設備、イ：混信",
+      "イ": "ア：送信設備、イ：漏えい",
+      "ウ": "ア：受信設備、イ：混信",
+      "エ": "ア：受信設備、イ：漏えい"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "電波法は、他の無線局や指定された受信設備に対して、その運用を妨げる混信その他の妨害を与えないよう運用することを求めている。ア＝受信設備、イ＝混信の選択肢3が正しい。保護する対象は送信設備ではなく受信設備である。",
+    "choiceExplanations": {
+      "ア": "混信は合うが、電波天文業務などの保護対象を送信設備としている点が誤りである。",
+      "イ": "保護対象は受信設備であり、規定の語句も漏えいではなく混信である。",
+      "ウ": "受信設備と混信の組合せが、無線局の運用に関する規定に一致する。",
+      "エ": "受信設備は合うが、空欄イは漏えいではなく混信である。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.51。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000131?asof=2026-11-15"
+    ],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q52",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 52,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "消防用設備等の分類"
+    ],
+    "difficulty": 2,
+    "question": "避難設備に該当するものとして，「消防法」上，正しいものは次のうちどれか。",
+    "choices": {
+      "ア": "ガス漏れ火災警報設備",
+      "イ": "誘導灯及び誘導標識",
+      "ウ": "放送設備",
+      "エ": "無線通信補助設備"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "消防法施行令では、誘導灯と誘導標識は避難設備に分類される。選択肢2が正しい。ガス漏れ火災警報設備と放送設備は警報設備、無線通信補助設備は消火活動上必要な施設に当たり、分類を混同しない。",
+    "choiceExplanations": {
+      "ア": "ガス漏れ火災警報設備は警報設備に分類され、避難設備そのものではない。",
+      "イ": "避難の方向などを示す誘導灯・誘導標識は、避難設備に分類される。",
+      "ウ": "放送設備は警報設備の区分に含まれ、設問の避難設備ではない。",
+      "エ": "無線通信補助設備は消火活動上必要な施設の区分であり、避難設備ではない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.52。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/api/2/law_data/336CO0000000037?asof=2026-11-15"
+    ],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q53",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 53,
+    "type": "multiple-choice",
+    "category": "施工管理法",
+    "topicTags": [
+      "光ファイバケーブルの施工"
+    ],
+    "difficulty": 2,
+    "question": "光ファイバケーブルの施工に関する次の記述のうち，適当でないものはどれか。",
+    "choices": {
+      "ア": "光ファイバケーブルの敷設時は，ケーブルの端末からケーブル内に水が入らないように防水処置を施す。",
+      "イ": "光ファイバケーブルの敷設時は，テンションメンバに延線用より返し金物を取付け，一定の速度で敷設し，張力の変動や衝撃を与えないようにする。",
+      "ウ": "光ファイバケーブルの敷設後は，接続損失及び伝送損失の測定，クロージャの気密試験，外観確認を行うものとする。",
+      "エ": "光ファイバケーブルの許容される曲げ半径は，敷設時及び固定時ともに仕上がり外径の 10 倍以上とする。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "光ファイバケーブルは、固定時だけでなく敷設中の曲げにも注意する。標準仕様では基本的に敷設中は仕上り外径の20倍以上、固定時は10倍以上とし、種類によって追加条件もある。両方を10倍以上とした選択肢4が不適当である。",
+    "choiceExplanations": {
+      "ア": "端末からの水の浸入を防ぐため、防水処置を施すという記述は適当である。",
+      "イ": "テンションメンバへ金物を取り付け、速度を一定にし張力の変動や衝撃を避ける施工は適当。",
+      "ウ": "敷設後に損失測定やクロージャの気密試験、外観確認を行うという記述は適当である。",
+      "エ": "敷設中は基本的に外径の20倍以上であり、固定時と同じ10倍以上でよいとする点が不適当。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.53。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/gobuild/content/001888825.pdf"
+    ],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q54",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 54,
+    "type": "multiple-choice",
+    "category": "施工管理法",
+    "topicTags": [
+      "UTPケーブルの成端"
+    ],
+    "difficulty": 2,
+    "question": "UTP ケーブルの端末処理に関する次の記述のうち，適当でないものはどれか。",
+    "choices": {
+      "ア": "モジュラプラグの成端は，ケーブル外被除去，より戻し，心線先端切り揃え，プラグへの心線挿入，かしめ，検査の手順で行う。",
+      "イ": "ケーブルを成端するときは，既定のピン割り当てどおりに結線を行う。",
+      "ウ": "成端時のよりを戻す長さは，正確に成端するため，できる限り長くする。",
+      "エ": "専用工具を使用してプラグをかしめるときは，心線がプラグの奥まで入っていることを確認し，ラチェット機構を有する専用工具はロックが解除されるまでしっかりしめる。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "ツイストペアのよりはノイズ低減などの伝送性能を支えているため、成端に必要な範囲でできるだけ短く戻す。「できる限り長くする」とした選択肢3が不適当である。心線のピン配列、奥までの挿入、専用工具によるかしめも併せて確認する。",
+    "choiceExplanations": {
+      "ア": "外被除去から心線の準備、プラグへの挿入、かしめ、検査という順序は適当である。",
+      "イ": "指定されたピン配列どおりに結線することは、正しい接続と伝送性能のために必要である。",
+      "ウ": "より戻しを長くすると伝送性能を損ねやすいため、必要最小限とする。",
+      "エ": "挿入状態を確認し、ラチェットが解除されるまで専用工具を操作するという記述は適当。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.54。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/gobuild/content/001888825.pdf"
+    ],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q55",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 55,
+    "type": "multiple-choice",
+    "category": "施工管理法",
+    "topicTags": [
+      "施工計画の立案"
+    ],
+    "difficulty": 2,
+    "question": "施工計画の作成に関する次の記述のうち，適当でないものはどれか。",
+    "choices": {
+      "ア": "施工計画は，設計図書などの内容について発注者側と十分に協議し，その意図を理解したうえで計画を立てる。",
+      "イ": "施工計画は1 つのみでなく，代替案を作り比較検討して最良の計画を採用する。",
+      "ウ": "過去の技術にとらわれず，新工法や新技術を取り入れ，工夫や改善を心がけて計画を立てる。",
+      "エ": "発注者の要求品質が最適とは限らないので，経済性を最優先にした計画とする。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "施工計画は、要求品質、安全、工期、経済性などを総合して立てる。発注者の要求品質を満たすことを外し、経済性を最優先とした選択肢4は不適当である。設計意図の確認、代替案の比較、新技術や改善の検討は適切な進め方である。",
+    "choiceExplanations": {
+      "ア": "設計図書の内容と発注者の意図を十分に確認してから計画することは適当である。",
+      "イ": "代替案を作って比較し、条件に合った計画を採用することは適当である。",
+      "ウ": "過去の方法だけに縛られず、新工法や改善を検討して計画することは適当である。",
+      "エ": "経済性だけを最優先にして要求品質を軽視する計画は不適当である。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.55。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q56",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 56,
+    "type": "multiple-choice",
+    "category": "施工管理法",
+    "topicTags": [
+      "消防設備工事の着手届"
+    ],
+    "difficulty": 2,
+    "question": "甲種消防設備士が工事に着手する前に消防長又は消防署長に届け出なければならない消防用設備等として，「消防法」上，誤っているものは次のうちどれか。",
+    "choices": {
+      "ア": "屋内消火栓設備",
+      "イ": "非常用照明設備",
+      "ウ": "不活性ガス消火設備",
+      "エ": "自動火災報知設備"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "甲種消防設備士の工事着手届の対象には、屋内消火栓設備、不活性ガス消火設備、自動火災報知設備などがある。非常用照明設備は設問の消防用設備等の工事着手届の対象ではないため、選択肢2が誤りである。",
+    "choiceExplanations": {
+      "ア": "屋内消火栓設備の工事は、設問の工事着手届の対象に含まれる。",
+      "イ": "非常用照明設備は設問の着手届の対象設備ではなく、誤りとして選ぶものである。",
+      "ウ": "不活性ガス消火設備の工事は、設問の工事着手届の対象に含まれる。",
+      "エ": "自動火災報知設備の工事は、設問の工事着手届の対象に含まれる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.56。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/api/2/law_data/336M50000008006?asof=2026-11-15"
+    ],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q57",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 57,
+    "type": "multiple-choice",
+    "category": "施工管理法",
+    "topicTags": [
+      "工程管理の目的"
+    ],
+    "difficulty": 2,
+    "question": "工程管理に関する次の記述のうち，適当なものはどれか。",
+    "choices": {
+      "ア": "工程管理の目的は，工期内に品質を確保しながら所定の構造物を経済的な価格で施工することにある。",
+      "イ": "一般的に，施工速度を極端に速めて突貫工事により工期を短縮しても，結果的に品質の低下や工事原価の増大は生じない。",
+      "ウ": "工程計画と実施工程の間に差が生じても，実施工程の分析や工程計画の見直しは必要ない。",
+      "エ": "工事の施工順序と所要の日数をわかりやすく図表化した散布図を用いる。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "工程管理は、必要な品質を確保しつつ工期内に経済的に施工するため、順序や期間を計画し進捗を調整する。選択肢1が適当である。工期を無理に短くすれば品質や原価に影響し、計画との差が出れば原因の分析と見直しが必要となる。",
+    "choiceExplanations": {
+      "ア": "品質・工期・経済性を合わせて管理する目的を述べており、適当である。",
+      "イ": "突貫工事による極端な短縮は、品質低下や費用増大を招くことがあるため不適当である。",
+      "ウ": "計画と実績の差が生じたときこそ原因を分析し、工程を見直す必要がある。",
+      "エ": "施工順序や所要日数の管理には工程表を使う。散布図は二つの量の関係を見る図である。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.57。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q58",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 58,
+    "type": "multiple-choice",
+    "category": "施工管理法",
+    "topicTags": [
+      "工程表の特徴"
+    ],
+    "difficulty": 2,
+    "question": "工程管理で使われる各種工程表に関する次の記述のうち，適当なものはどれか。",
+    "choices": {
+      "ア": "バーチャートは，各部分工事に必要な日数はわからないが，各部分工事の進捗度合いはよくわかる。",
+      "イ": "ガントチャートは，工事区間が線状に長い工事に用いられ，作業の期間，着手地点や作業方向がわかりやすい。",
+      "ウ": "ネットワーク工程表は，各部分工事間の順序や関連性が明確であり，クリティカルパスを求めることができる。",
+      "エ": "タクト工程表は，各部分工事の工程を斜線で表し，勾配の緩急により施工速度が把握できる。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "ネットワーク工程表は、作業の順序や依存関係を示し、全体工期を決めるクリティカルパスを求められる。選択肢3が適当である。バーは日数、ガントは進捗率、斜線の勾配で速度を表す方式は座標式という違いを整理する。",
+    "choiceExplanations": {
+      "ア": "バーチャートは横棒の長さから各作業の日数を読み取れるので、日数がわからない点が不適当。",
+      "イ": "線状の工事で期間や位置、方向を示す説明は、ガントチャートの特徴ではない。",
+      "ウ": "作業間の順序関係を明示し、クリティカルパスを求められるため適当である。",
+      "エ": "斜線の勾配で施工速度を示すのは座標式工程表の説明で、タクト工程表ではない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.58。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q59",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 59,
+    "type": "multiple-choice",
+    "category": "施工管理法",
+    "topicTags": [
+      "測定器の種類"
+    ],
+    "difficulty": 2,
+    "question": "測定器に関する下記の文章に該当する測定器の名称として，適当なものは次のうちどれか。「電気信号の時間的変化を観測し，直流から高周波までの電圧や周期，時間，位相差などを，波形として表示し測定することができる。」",
+    "choices": {
+      "ア": "スペクトラムアナライザ",
+      "イ": "周波数カウンタ",
+      "ウ": "オシロスコープ",
+      "エ": "デジタルマルチメータ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "電圧などの信号を時間軸上の波形として表示し、周期、時間差、位相差などを測るのはオシロスコープである。選択肢3が適当である。周波数成分を見るスペクトラムアナライザや、数値を表示する他の測定器との違いを押さえる。",
+    "choiceExplanations": {
+      "ア": "スペクトラムアナライザは主に周波数ごとの信号レベルを表示し、設問の時間波形とは異なる。",
+      "イ": "周波数カウンタは信号の繰返し数から周波数を数値で測るものである。",
+      "ウ": "時間に対する電気信号の変化を波形表示するため、設問の説明に合う。",
+      "エ": "デジタルマルチメータは電圧・電流・抵抗などを数値で測るもので、設問の波形表示ではない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.59。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q60",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 60,
+    "type": "multiple-choice",
+    "category": "施工管理法",
+    "topicTags": [
+      "品質管理の図表"
+    ],
+    "difficulty": 2,
+    "question": "品質管理に用いる図表のうち，得られるデータを幾つかの区間に分け，各区間に入るデータの数を数えて棒グラフの形に整理した下図の名称として，適当なものは次のうちどれか。",
+    "choices": {
+      "ア": "ヒストグラム",
+      "イ": "特性要因図",
+      "ウ": "管理図",
+      "エ": "パレート図"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "測定値を幾つかの区間に分け、区間ごとのデータ数である度数を隣り合う棒で表すのはヒストグラムである。選択肢1が適当である。データの分布やばらつき、中心の位置をつかむための図で、原因の関係や時系列を示す図とは目的が異なる。",
+    "choiceExplanations": {
+      "ア": "区間ごとの度数を棒で示す図であり、設問の説明と図の形に一致する。",
+      "イ": "特性要因図は結果と原因の関係を魚の骨のように整理するもので、度数分布ではない。",
+      "ウ": "管理図は時系列データと管理限界などから工程の状態を見る図である。",
+      "エ": "パレート図は項目を度数の大きい順に並べ、累積比率などを併せて示す図である。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.60。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17",
+    "imageUrls": [
+      "/images/tsushin2/2026-late/q60-figure.png"
+    ],
+    "imageAltTexts": [
+      "横軸の区間ごとに縦軸の度数を隣接する棒で示した分布図。"
+    ]
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q61",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 61,
+    "type": "multiple-choice",
+    "category": "施工管理法",
+    "topicTags": [
+      "停電作業と復電"
+    ],
+    "difficulty": 2,
+    "question": "交流 100 V の低圧の電路を開路して行う停電作業に関する次の記述のうち，「労働安全衛生法」上，適当でないものはどれか。",
+    "choices": {
+      "ア": "開路した開閉器に，作業中は通電禁止に関する所要事項を表示する。",
+      "イ": "検電器は，当該充電電路の電圧に応じた絶縁効力を有するものを使用する。",
+      "ウ": "作業に着手する前に，開路した電路の停電の状態を確認する。",
+      "エ": "開路した電路に通電するときは，当該電路を短絡接地器具を用いて確実に短絡接地する。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "通電するときは、作業者に感電の危険がないことと、短絡接地器具を取り外したことを確認する。通電時に短絡接地するとした選択肢4が不適当である。停電作業中の保護措置と、復電前の確認を逆にしない。",
+    "choiceExplanations": {
+      "ア": "作業中の誤通電を防ぐため、開閉器に通電禁止の事項を表示する措置は適当である。",
+      "イ": "検電には、対象電圧に応じた絶縁性能を備えた器具を使う必要がある。",
+      "ウ": "作業開始前に電路が停電していることを確認するのは、感電防止の基本である。",
+      "エ": "復電前は短絡接地器具を取り外す。通電時に短絡接地するという記述は不適当である。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.61。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2026-11-15"
+    ],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q62",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 62,
+    "type": "multiple-choice",
+    "category": "施工管理法",
+    "topicTags": [
+      "メタル通信ケーブルの屋内配線"
+    ],
+    "difficulty": 2,
+    "question": "メタル通信ケーブルの屋内配線に関する下記の文章中の空欄のア～エに当てはまる数値と語句の組合せとして，適当なものは次のうちどれか。・ケーブルラック配線は，トレイ形ケーブルラックを除き，ケーブルを整然と並べ，水平部ではア m 以下，垂直部ではイ m 以下の間隔ごとに固定する。・二重天井内配線によりケーブルを支持せずにウ配線とする場合は，エと接触しないように整然と敷設する。",
+    "choices": {
+      "ア": "ア：3、イ：1.5、ウ：ころがし、エ：強電流電線",
+      "イ": "ア：3、イ：2.5、ウ：ちょう架、エ：強電流電線",
+      "ウ": "ア：5、イ：1.5、ウ：ちょう架、エ：天井材",
+      "エ": "ア：5、イ：2.5、ウ：ころがし、エ：天井材"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "トレイ形を除くケーブルラック配線では、水平部3 m以下、垂直部1.5 m以下ごとに固定する。支持しない二重天井内の配線はころがし配線で、強電流電線との接触を避ける。四つの空欄が全て合う選択肢1が適当である。",
+    "choiceExplanations": {
+      "ア": "水平3 m・垂直1.5 m、ころがし配線、強電流電線との非接触が全て合う。",
+      "イ": "水平3 mと強電流電線は合うが、垂直2.5 mとちょう架配線が合わない。",
+      "ウ": "水平5 mとちょう架配線が合わず、接触を避ける対象も天井材ではない。",
+      "エ": "ころがし配線は合うが、固定間隔と接触を避ける対象が合わない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.62。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/gobuild/content/001888825.pdf"
+    ],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q63",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 63,
+    "type": "multiple-choice",
+    "category": "施工管理法",
+    "topicTags": [
+      "施工計画の事前調査"
+    ],
+    "difficulty": 2,
+    "question": "施工計画立案時の事前調査に関する下記の①～④の4 つの記述から，適当なもののみを全てあげている組合せは，次のうちどれか。①契約条件の調査では，契約書や設計図書に基づく工事内容や数量の確認を行う。②経済情勢や自然条件の変化などの不確定要素は，事前調査の調査項目から除外する。③現場条件の調査は，調査の精度を高めるため，ひとりで調査する。④現場条件の調査では，資機材を運搬する輸送ルートや交通規制，道路状況を調べる。",
+    "choices": {
+      "ア": "①②",
+      "イ": "①④",
+      "ウ": "②③",
+      "エ": "③④"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "①の契約図書による工事内容・数量の確認と、④の輸送経路・交通規制・道路状況の調査が適当である。不確定要素もリスクとして調べ、現場は必要な関係者や専門家と確認する。したがって①④を挙げる選択肢2が正答である。",
+    "choiceExplanations": {
+      "ア": "①は適当だが、経済情勢や自然条件の変化を調査から外す②が不適当である。",
+      "イ": "契約条件を確認する①と、資機材輸送に関係する現場条件を調べる④がともに適当。",
+      "ウ": "②は不確定要素を除く点、③は精度向上のため一人に限定する点が不適当である。",
+      "エ": "④は適当だが、調査を一人で行うことが精度を高めるとする③が不適当である。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.63。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q64",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 64,
+    "type": "multiple-choice",
+    "category": "施工管理法",
+    "topicTags": [
+      "出来高累計曲線"
+    ],
+    "difficulty": 2,
+    "question": "工程管理に用いられる出来高累計曲線に関する下記の①～④の4 つの記述から，適当なもののみを全てあげている組合せは，次のうちどれか。①縦軸に部分工事をとり，横軸に各工事の出来高比率を棒線で記入した図表である。②一般的な出来高累計曲線は，変曲点をもつ V 字型の曲線となる。③出来高累計曲線の傾きは，一般的に，工事の初期段階では緩やかで，中期で急速に大きくなり，終期には再び緩やかになる。④一般的に，作業の進捗度合いはわかりやすいが，作業に必要な日数や工期に影響する作業はわからない。",
+    "choices": {
+      "ア": "①②",
+      "イ": "①④",
+      "ウ": "②③",
+      "エ": "③④"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "出来高累計曲線は横軸に時間、縦軸に累計出来高をとる。一般に初期と終期の傾きが緩く中期が急なS字型となり、進捗は読みやすいが作業の依存関係や所要日数はわからない。③④が適当で、選択肢4が正答である。",
+    "choiceExplanations": {
+      "ア": "①はガントチャートに相当する説明であり、②のV字型も出来高累計曲線の特徴と異なる。",
+      "イ": "④は適当だが、①の部分工事ごとの棒線という説明は累計曲線ではない。",
+      "ウ": "③は適当だが、一般的な曲線をV字型とする②が不適当である。",
+      "エ": "初期・終期が緩やかで中期が急という③と、読み取れる情報の限界を述べる④が適当。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.64。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  },
+  {
+    "id": "tsushin2-2026-late-gakka-q65",
+    "exam": "tsushin2",
+    "session": "gakka",
+    "year": 2026,
+    "season": "late",
+    "qNumber": 65,
+    "type": "multiple-choice",
+    "category": "施工管理法",
+    "topicTags": [
+      "墜落による危険の防止"
+    ],
+    "difficulty": 2,
+    "question": "墜落等による労働者の危険の防止に関する下記の①～④の4 つの記述のうち，「労働安全衛生法」上，正しいものの数は，次のうちどれか。①高さが2 m の箇所で作業を行う場合において，足場を組み立てる等の方法により作業床を設ける。②高さが2 m の作業床の端，開口部等に，囲い，手すり，覆い等を設ける。③高さが 6.75 m をこえる箇所で作業する場合，フルハーネス型墜落制止用器具を使用する。④高さが2 m 以上の箇所であって作業床を設けることが困難なところにおいて，フルハーネス型墜落制止用器具を用いて作業を行う業務に労働者を従事させるときは，特別教育を実施する。",
+    "choices": {
+      "ア": "1 つ",
+      "イ": "2 つ",
+      "ウ": "3 つ",
+      "エ": "4 つ"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "①の作業床、②の端部等の囲い、③の6.75 mを超える箇所でのフルハーネス型の使用、④の該当業務に対する特別教育は、いずれも正しい。4つ全てが該当するため選択肢4を選ぶ。墜落を防ぐ設備を先に設け、作業条件に応じた器具と教育を組み合わせる。",
+    "choiceExplanations": {
+      "ア": "①②は高さ2 mの箇所の設備、③④は器具と教育に関する正しい記述であり、1つだけではない。",
+      "イ": "作業床と囲いに加えてフルハーネス型の使用と特別教育の記述も正しく、2つではない。",
+      "ウ": "③の高さ条件も④の特別教育の条件も適切であり、誤りを一つ除く組合せにはならない。",
+      "エ": "①から④まで全て正しいため、正しい記述の数は4つである。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_mondaia.pdf",
+    "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116e_seitou.pdf",
+    "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.65。ルビ・改行・空白を整理し、数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2026-11-15",
+      "https://www.mhlw.go.jp/web/t_doc?dataId=00tc4287&dataType=1"
+    ],
+    "license": "JCTC-attributed",
+    "lastUpdated": "2026-11-17"
+  }
+]

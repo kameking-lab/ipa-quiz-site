@@ -1,0 +1,625 @@
+{
+  "year": 2024,
+  "season": "primary",
+  "examDate": "2024-08-18",
+  "sourceIndexUrl": "https://www.shiken.or.jp/chief/second/qa/",
+  "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20240818_ch_second_a01.pdf",
+  "sourceAnswerPdfSha256": "22629ab78519128d5280f6f0a2f40e129514f870affe23f0aaef5be4bc636d29",
+  "sourcePacketSha256": "567ff27cc8a04f8cb607764f718d4bdff7f19b5a625f945922723a93e7ecedc6",
+  "questions": [
+    {
+      "id": "denken2-2024-primary-theory-q01",
+      "year": 2024,
+      "season": "primary",
+      "examDate": "2024-08-18",
+      "subject": "theory",
+      "number": 1,
+      "topic": "二層誘電体を挿入した平行平板コンデンサ",
+      "questionText": "次の文章は，誘電体が挿入された平行平板コンデンサに関する記述である。文中の □ に当てはまる最も適切なものを解答群の中から選べ。\n平行平板コンデンサ内を次の2種類の誘電体で完全に満たす。\n誘電体1：誘電率は ε₁，印加できる最大電界は E₁ₘ\n誘電体2：誘電率は ε₂，印加できる最大電界は E₂ₘ\nただし，ε₁E₁ₘ > ε₂E₂ₘ であり，端効果は無視できるものとする。\n図のように誘電体1と2は同体積で，界面が電極と平行になっている。電極間の距離は d である。このコンデンサにおいて，二つの誘電体内部の (1) の大きさは同じであるので，誘電体1と2の電界をそれぞれ E₁，E₂ とするとき，(2) の関係が成り立つ。\nε₁E₁ₘ > ε₂E₂ₘ なので，印加電圧を上げていくと先に最大電界に達するのは (3) であり，このことから，そのときの電界 E₁，E₂ はそれぞれ (4) である。\nしたがって，電極間に印加できる最大電圧 Vₘ は (5) である。",
+      "choiceGroups": {
+        "イ": "誘電体1",
+        "ロ": "(d/2)(ε₁E₁ₘ + ε₂E₂ₘ)/(ε₁ + ε₂)",
+        "ハ": "誘電体2",
+        "ニ": "(d/2)(1 + ε₂/ε₁)E₂ₘ",
+        "ホ": "電束密度",
+        "ヘ": "(d/2)(1 + ε₁/ε₂)E₁ₘ",
+        "ト": "電界",
+        "チ": "ε₁E₁ = ε₂E₂",
+        "リ": "分極",
+        "ヌ": "ε₁E₂ = ε₂E₁",
+        "ル": "(1 + ε₁/ε₂)E₂ = (1 + ε₂/ε₁)E₁",
+        "ヲ": "E₁ = E₂",
+        "ワ": "E₁ = E₁ₘ，E₂ = (ε₁/ε₂)E₁ₘ",
+        "カ": "E₁ = (ε₂/ε₁)E₂ₘ，E₂ = E₂ₘ",
+        "ヨ": "E₁ = ε₁E₁ₘ/(ε₁ + ε₂)，E₂ = ε₂E₂ₘ/(ε₁ + ε₂)"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ホ",
+          "explanation": "界面に自由電荷がないので、界面に垂直な電束密度は両側で等しい。",
+          "derivation": "界面をまたぐ薄い柱にガウスの法則を適用すると、二つの底面から出入りする電束が等しくなり、D₁ = D₂ となる。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "チ",
+          "explanation": "電束密度 D は誘電率と電界の積である。",
+          "derivation": "D₁ = ε₁E₁、D₂ = ε₂E₂ を D₁ = D₂ に代入する。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ハ",
+          "explanation": "電圧の上昇とともに増える共通の電束密度が、先に誘電体2の上限に達する。",
+          "derivation": "材料ごとの電束密度の上限は ε₁E₁ₘ と ε₂E₂ₘ。条件では後者の方が小さい。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "カ",
+          "explanation": "誘電体2で E₂ = E₂ₘ となる時の共通の電束密度から E₁ を求める。",
+          "derivation": "ε₁E₁ = ε₂E₂ₘ を ε₁ で割ると E₁ = (ε₂/ε₁)E₂ₘ となる。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ニ",
+          "explanation": "各層の電圧降下を足すと、電極間に印加できる最大電圧になる。",
+          "derivation": "Vₘ = (d/2)E₁ + (d/2)E₂ に直前の結果を入れ、(d/2)(1 + ε₂/ε₁)E₂ₘ を得る。"
+        }
+      ],
+      "figures": [
+        "電極と平行な界面で二層に分かれ、各誘電体の厚さは d/2。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 4,
+          "url": "/images/denken2/2024-native/theory-p04.jpg",
+          "sha256": "909de21d19a00a84e03b3502e800d6fa627a6279e19ea88959f8e86bc43c6367"
+        },
+        {
+          "physicalPage": 5,
+          "url": "/images/denken2/2024-native/theory-p05.jpg",
+          "sha256": "38c809f026574d4f08ce93d2c54e1f746f1100f07751c6088a78d26e8e569946"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20240818_ch_second_q01.pdf",
+      "sourcePdfSha256": "f45338083caf11791bfb47a725d163afb47d5794c784c0fd8bcafc5806ad1373",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken2-2024-primary-theory-q02",
+      "year": 2024,
+      "season": "primary",
+      "examDate": "2024-08-18",
+      "subject": "theory",
+      "number": 2,
+      "topic": "円柱導体の磁界・内部磁気エネルギー・表皮効果",
+      "questionText": "次の文章は，円柱導体内外の電磁界に関する記述である。文中の □ に当てはまる最も適切なものを解答群の中から選べ。\n図のように，透磁率 μ，導電率 σ の材料からなる半径 a の十分に長い円柱導体を考える。\n大きさが I の直流電流が，一様な密度で円柱導体に流れている場合，導体内で中心軸からの位置 r（≦ a）における磁界の強さは (1) となる。r における単位体積当たりの磁気エネルギーを wₘ(r) とすると，微小幅 dr，単位長さの円筒のもつエネルギーは wₘ(r) 2πr dr と表される。これを r = 0〜a の範囲で積分することにより，円柱導体の内部に蓄えられる単位長さ当たりの磁気エネルギー Wᵢ = (2) を求めることができる。\nI を流すために必要な電圧は，単位長さ当たり E_DC = (3) である。一方，実効値が I と同じ大きさの交流を流すために必要な単位長さ当たりの交流電圧の実効値 E_AC は，E_DC と (4) の関係がある。周波数が高い場合，表皮効果により，導体断面における交流電流の電流密度 J は図 (5) のようになる。",
+      "choiceGroups": {
+        "イ": "E_AC < E_DC",
+        "ロ": "E_AC > E_DC",
+        "ハ": "E_AC = E_DC",
+        "ニ": "μI²/(24π²a)",
+        "ホ": "I/(2πr)",
+        "ヘ": "μI/(8π)",
+        "ト": "μI²/(32π²)",
+        "チ": "rI/(2πa²)",
+        "リ": "σI/(πa²)",
+        "ヌ": "μI²/(16π)",
+        "ル": "I/(σπa²)",
+        "ヲ": "rI/(πa²)",
+        "ワ": "図（中心で大きく、表面に向かって低下）",
+        "カ": "図（半径方向に一定）",
+        "ヨ": "図（表面に向かって増加）"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "チ",
+          "explanation": "導体内部でアンペールの法則を使うときは、半径 r の円が囲む電流だけを数える。",
+          "derivation": "電流密度が一様なので、円が囲む電流は I·r²/a²。周長 2πr で割ると H(r) = rI/(2πa²) となる。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ヌ",
+          "explanation": "磁気エネルギー密度 μH²/2 を薄い円筒ごとに積分する。",
+          "derivation": "Wᵢ = ∫₀ᵃ (μ/2)[rI/(2πa²)]²·2πr dr = [μI²/(4πa⁴)]·a⁴/4 = μI²/(16π)。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ル",
+          "explanation": "断面積 πa² と導電率 σ から、単位長さの直流抵抗を求める。",
+          "derivation": "抵抗率は 1/σ なので、単位長さの抵抗は 1/(σπa²)。これに I を掛ける。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "ロ",
+          "explanation": "交流では表皮効果で実効抵抗が増すため、同じ実効電流にはより大きい電圧が必要になる。",
+          "derivation": "直流は断面全体に一様に流れる。交流で表面側に電流が偏ると、同じ電流に対する抵抗成分の電圧降下が大きくなる。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ヨ",
+          "explanation": "表皮効果によって高周波の電流密度は導体表面側で高くなる。",
+          "derivation": "横軸の r = 0 が中心、r = a が表面。表面に近づくほど J が増える図を選ぶ。"
+        }
+      ],
+      "figures": [
+        "円柱の断面に半径 a と中心軸から距離 r の微小幅 dr の円環を示す。解答群の曲線は半径方向の電流密度を示す。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 6,
+          "url": "/images/denken2/2024-native/theory-p06.jpg",
+          "sha256": "652777f84070cdaddb8891da1b99ca30413d2bd758044073ac9a8ce2e0a4ea1c"
+        },
+        {
+          "physicalPage": 7,
+          "url": "/images/denken2/2024-native/theory-p07.jpg",
+          "sha256": "5d825bd3e0ffab975e42be2e3babfa57bafcc58f6a47f49e343770a78c8afbfb"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20240818_ch_second_q01.pdf",
+      "sourcePdfSha256": "f45338083caf11791bfb47a725d163afb47d5794c784c0fd8bcafc5806ad1373",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken2-2024-primary-theory-q03",
+      "year": 2024,
+      "season": "primary",
+      "examDate": "2024-08-18",
+      "subject": "theory",
+      "number": 3,
+      "topic": "キルヒホッフの法則と直流回路の電位差",
+      "questionText": "次の文章は，直流回路に関する記述である。文中の □ に当てはまる最も適切なものを解答群の中から選べ。\n図に示すような直流電圧源及び抵抗から構成される回路を考える。ただし，回路の電圧・電流は，図の矢印の向きを正とする。\nこの回路において，点 b における電流則を踏まえれば，電流 I₁ = (1) A，電流 I₂ = (2) A である。また，点 a 及び点 b 間の電圧 V_ab = (3) V，点 b 及び点 c 間の電圧 V_bc = (4) V であり，点 a 及び点 d 間の電圧の大きさ |V_ad| = (5) V である。",
+      "choiceGroups": {
+        "イ": "−3",
+        "ロ": "−2",
+        "ハ": "−1",
+        "ニ": "0",
+        "ホ": "1",
+        "ヘ": "2",
+        "ト": "3",
+        "チ": "4",
+        "リ": "5",
+        "ヌ": "6",
+        "ル": "7",
+        "ヲ": "8",
+        "ワ": "9",
+        "カ": "10",
+        "ヨ": "11"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ホ",
+          "explanation": "左の閉回路の電源は 4 V、抵抗の合計は 4 Ω である。",
+          "derivation": "図の I₁ の向きに電源で 4 V 上昇し、二つの 2 Ω で電圧降下する。4 − (2 + 2)I₁ = 0 より I₁ = 1 A。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ニ",
+          "explanation": "左右を結ぶ枝は b–c の1本だけなので、定常直流で左右間の正味の電流は流れない。",
+          "derivation": "左の閉回路から点 b に入る電流と、点 b から左の閉回路へ出る電流はともに I₁。点 b で電流則を適用すると残る枝の I₂ = 0 A。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ヘ",
+          "explanation": "a から b へ向かう 2 Ω に 1 A が流れるため、a の方が 2 V 高い。",
+          "derivation": "V_ab = V_a − V_b = 2 Ω × 1 A = 2 V。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "リ",
+          "explanation": "b–c 枝の抵抗には電流が流れないため、電位差はその枝の電源だけで決まる。",
+          "derivation": "図では電源の長線が b 側。V_b − V_c は +5 V となる。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ワ",
+          "explanation": "右の閉回路の電流は 1 A で、c から d へ向かう 2 Ω に 2 V の降下がある。",
+          "derivation": "右の電流は 5/(2 + 3) = 1 A。V_a − V_d = (V_a − V_b) + (V_b − V_c) + (V_c − V_d) = 2 + 5 + 2 = 9 V。"
+        }
+      ],
+      "figures": [
+        "左の閉回路には 4 V 電源と 2 Ω が二つ、右の閉回路には 5 V 電源と 2 Ω・3 Ω がある。b と c を 5 Ω および 5 V 電源の直列枝でつなぐ。電源極性と電圧の矢印は原本図を参照。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 8,
+          "url": "/images/denken2/2024-native/theory-p08.jpg",
+          "sha256": "440772e0fb9d87f1d8c3e367e68b5282b68ab272bc99fe946bcb1c0bcf776e57"
+        },
+        {
+          "physicalPage": 9,
+          "url": "/images/denken2/2024-native/theory-p09.jpg",
+          "sha256": "99669d3f5d536caae0cb9c7035249ad895b068af4531deca4923a6186650cd3d"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20240818_ch_second_q01.pdf",
+      "sourcePdfSha256": "f45338083caf11791bfb47a725d163afb47d5794c784c0fd8bcafc5806ad1373",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken2-2024-primary-theory-q04",
+      "year": 2024,
+      "season": "primary",
+      "examDate": "2024-08-18",
+      "subject": "theory",
+      "number": 4,
+      "topic": "RC回路の過渡応答と充電時定数",
+      "questionText": "次の文章は，回路の過渡現象に関する記述である。文中の □ に当てはまる最も適切なものを解答群の中から選べ。\n図1に示すように，抵抗，コンデンサ，直流電流源，スイッチからなる回路を考える。初期状態ではスイッチが開いており回路は定常状態にあるものとする。時刻 t = 0 でスイッチを閉じた後スイッチを通過する電流 i の変化について考察する。\nスイッチを入れる前の初期状態においてコンデンサ C の電圧 v_C は (1) である。スイッチを入れた直後に流れる電流 i(0) は R₃ とは無関係であり，次のように計算できる。\ni(0) = (2)\nその後コンデンサ C には電流が流入して徐々に電圧が増加するが，電圧が増加すればするほど電流の流入は少なくなり，やがて定常状態に達する。定常状態ではコンデンサ C の電圧は一定で電流は流れないので，R₂ の電流は全て R₃ に流れる。スイッチ右側の負荷は抵抗 R₂ と (3) の直列接続であるので，定常状態でスイッチを流れる電流 i(∞) は\ni(∞) = (4)\n以下，コンデンサ C の充電時定数 τ について考える。v_C は，定常項 v_Cs（図2参照）と過渡項 v_Ct（図3参照）を足し合わせたものである。このうち v_Cs は時間的に変化せず，v_Ct の時定数は τ である。過渡項は「定常状態（図2）の C の電圧 v_Cs(∞) と同じ大きさで極性が逆向きの電圧 v_Ct(0) が C に生じている状態（図3：左端の電流源は開放）」から開始される放電現象であるから，その時定数 τ は容量 C と，図3において C の両端から見た等価抵抗 (5) の積で与えられる。",
+      "choiceGroups": {
+        "イ": "R₁",
+        "ロ": "R₃",
+        "ハ": "0",
+        "ニ": "IR₁",
+        "ホ": "IR₃",
+        "ヘ": "C",
+        "ト": "R₃(R₁ + R₂)/(R₁ + R₂ + R₃)",
+        "チ": "R₁(R₂ + R₃)/(R₁ + R₂ + R₃)",
+        "リ": "R₁R₂R₃/(R₂R₃ + R₃R₁ + R₁R₂)",
+        "ヌ": "R₁I/(R₁ + R₂)",
+        "ル": "R₂I/(R₁ + R₂)",
+        "ヲ": "R₁R₂I/(R₁ + R₂)",
+        "ワ": "CR₁I/(R₁ + R₂ + R₃)",
+        "カ": "R₁I/(R₁ + R₂ + R₃)",
+        "ヨ": "(R₂ + R₃)I/(R₁ + R₂ + R₃)"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ハ",
+          "explanation": "スイッチを開いた定常状態では、C は並列の R₃ を通じて放電し終えている。",
+          "derivation": "右側に独立した電源はないので、定常時には R₃ の電流は 0。C の端子電圧も 0 である。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ヌ",
+          "explanation": "C の電圧はスイッチを閉じた瞬間も 0 であり、直後は短絡として扱える。",
+          "derivation": "R₃ の両端が同電位なので、電流源 I は R₁ と R₂ の並列に分流する。右枝の i(0) は IR₁/(R₁ + R₂)。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ロ",
+          "explanation": "直流定常状態の C には電流が流れず、R₂ を通る電流は R₃ に流れる。",
+          "derivation": "C の枝を開放すると、スイッチ右側で残る電流経路は R₂ と R₃ の直列になる。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "カ",
+          "explanation": "定常時には R₁ と、直列の R₂ + R₃ に電源電流が分かれる。",
+          "derivation": "電流分配則を右枝に適用すると、i(∞) = IR₁/(R₁ + R₂ + R₃)。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ト",
+          "explanation": "電流源を開放して C から見ると、R₃ と R₂ + R₁ が並列になる。",
+          "derivation": "並列合成抵抗は R₃(R₁ + R₂)/(R₁ + R₂ + R₃)。これに C を掛けると充電時定数を得る。"
+        }
+      ],
+      "figures": [
+        "図1の右側は R₂ と、C・R₃ の並列枝からなる。図2は定常項、図3は電流源を開放した過渡項の等価回路を示す。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 10,
+          "url": "/images/denken2/2024-native/theory-p10.jpg",
+          "sha256": "2724bcc1e061490c30708b08bfaca0c0d6a6c6923a2c9f7a3af4c908b82c8e6f"
+        },
+        {
+          "physicalPage": 11,
+          "url": "/images/denken2/2024-native/theory-p11.jpg",
+          "sha256": "72d74fd9d045a7d2d31cf25f449ebda644e81383101a72b8190ed2bba36b1607"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20240818_ch_second_q01.pdf",
+      "sourcePdfSha256": "f45338083caf11791bfb47a725d163afb47d5794c784c0fd8bcafc5806ad1373",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken2-2024-primary-theory-q05",
+      "year": 2024,
+      "season": "primary",
+      "examDate": "2024-08-18",
+      "subject": "theory",
+      "number": 5,
+      "topic": "理想変圧器を含む交流回路と共振",
+      "questionText": "次の文章は理想変圧器を含む交流回路に関する記述である。文中の □ に当てはまる最も適切なものを解答群の中から選べ。\n図のように，電圧 Ė，角周波数 ω の正弦波交流電源に抵抗値 R の抵抗，インダクタンス L のコイル，巻数比 a:1 の理想変圧器，静電容量 C のコンデンサとスイッチが接続されている。理想変圧器の一次側，二次側の電圧，電流の関係は次のとおりである。\n[V̇₁, İ₁]ᵀ = diag(a, 1/a)[V̇₂, İ₂]ᵀ\n(a) 回路のスイッチが開いているとき，理想変圧器の一次側の電流 İ₁ は İ₁ = (1) となる。電流 İ₁ が電源電圧 Ė と同相となるのは巻数比 a が a = (2) のときである。このとき理想変圧器の一次側の電圧 V̇₁ が |V̇₁| = |Ė| となる角周波数 ω は ω = (3) である。\n(b) 回路のスイッチが閉じているとき，理想変圧器の一次側の電流 İ₁ は İ₁ = (4) となる。このときの回路の消費電力を P とすると P = (5) となる。",
+      "choiceGroups": {
+        "イ": "Ė/√(R² + ω²L²)",
+        "ロ": "Ėa/[R + jωL + a/(jωC)]",
+        "ハ": "Ė/R",
+        "ニ": "Ėa²/[R + jωL + a²/(jωC)]",
+        "ホ": "ω√(LC)",
+        "ヘ": "Ė/[R + jωL + a²/(jωC)]",
+        "ト": "ω²LC",
+        "チ": "1/(CR)",
+        "リ": "R/L",
+        "ヌ": "1/[ω√(LC)]",
+        "ル": "|Ė|²ωL/(R² + ω²L²)",
+        "ヲ": "|Ė|²R/(R² + ω²L²)",
+        "ワ": "1/(LC)",
+        "カ": "|Ė|²/R",
+        "ヨ": "Ė/(R + jωL)"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ヘ",
+          "explanation": "スイッチを開くと二次負荷は C で、そのインピーダンスを一次側へ換算すると a² 倍になる。",
+          "derivation": "V̇₁ = aV̇₂、İ₁ = İ₂/a より V̇₁/İ₁ = a²/(jωC)。これと R + jωL の和で Ė を割る。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ホ",
+          "explanation": "電流が電源電圧と同相になる条件は、直列合成インピーダンスの虚部が 0 であること。",
+          "derivation": "ωL − a²/(ωC) = 0 を解くと a² = ω²LC。巻数比 a は正なので a = ω√(LC)。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "リ",
+          "explanation": "同相条件では合成インピーダンスは R だけになり、一次側の変圧器電圧の大きさは ωL|Ė|/R となる。",
+          "derivation": "|V̇₁| = [a²/(ωC)]|İ₁|。a²/(ωC) = ωL、|İ₁| = |Ė|/R より、|V̇₁| = |Ė| となるのは ω = R/L。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "ヨ",
+          "explanation": "スイッチを閉じると二次側が短絡され、一次側から見た理想変圧器のインピーダンスも 0 になる。",
+          "derivation": "電源から見た残りのインピーダンスは R + jωL。したがって İ₁ = Ė/(R + jωL)。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ヲ",
+          "explanation": "平均消費電力は抵抗 R で生じる。理想コイルと理想変圧器による平均消費電力は 0 である。",
+          "derivation": "P = |İ₁|²R に |İ₁|² = |Ė|²/(R² + ω²L²) を代入する。"
+        }
+      ],
+      "figures": [
+        "一次側には R と L が直列。二次側では C とスイッチが並列に接続されている。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 12,
+          "url": "/images/denken2/2024-native/theory-p12.jpg",
+          "sha256": "2963bdc750a98690fc7c5ff4b4fb7cd204d1d80386d7bf72f32b6d00554577d9"
+        },
+        {
+          "physicalPage": 13,
+          "url": "/images/denken2/2024-native/theory-p13.jpg",
+          "sha256": "0510dae1eba71c0cf4a90ef727b37e63fed56614b687ebd2620e39335bc548aa"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20240818_ch_second_q01.pdf",
+      "sourcePdfSha256": "f45338083caf11791bfb47a725d163afb47d5794c784c0fd8bcafc5806ad1373",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken2-2024-primary-theory-q06",
+      "year": 2024,
+      "season": "primary",
+      "examDate": "2024-08-18",
+      "subject": "theory",
+      "number": 6,
+      "topic": "交流ブリッジの平衡と浮遊容量による漏れ電流",
+      "questionText": "次の文章は，交流ブリッジと浮遊容量に関する記述である。文中の □ に当てはまる最も適切なものを解答群の中から選べ。\n図1は，インピーダンス Z_x を校正するための交流ブリッジで，既知の標準インピーダンス Z₁，Z₂，Z₃，検出器 D 及び電源で構成される。なお，I_x，I₁，I₂，I₃ は4辺を流れる電流，I_a，I_b，I_c は浮遊容量を通じてグランドへ流れる漏れ電流である。\nまず，図1から浮遊容量を除去した回路を考える。Z₂ を調整して D が零を指したとき，電流は I_x = I₁，I₂ = I₃ のように均衡し，校正値は Z_x = Z₁Z₃/Z₂ で得られる。\n次に，図1のとおりに浮遊容量を有する回路で，D が零を指した場合を考える。このとき，c とグランドは等電位なので I_c = 0 である。一方，a 及び b は，グランドに対して電位差を持つため，I_a 及び I_b（ただし，I_a + I_b ≠ 0）が流れる。よって，4辺の電流の均衡は (1) のように崩れ，その結果，校正誤差が生じる。ゆえに，漏れ電流起因の校正誤差を減ずるための仕組みが必要になる。\n一例を図2に示す。この回路は，インダクタ（抵抗 R_x とインダクタンス L_x の直列）を校正するのに用いられる (2) ブリッジに，増幅率が −A の増幅器を図のように付加したものである。なお，d は接地されておらず，容量性リアクタンス X_d を通じて漏れ電流 I_d が流れる。また，D は零を指している。\nR₂ と C₂ の合成インピーダンスを Z₂，b 及び d の電位を，それぞれ，V_b 及び V_d とすれば，V_b = −AV_d，V_d = X_d I_d，V_d − V_b = Z₂I₂ であるから，次式が求められる。\nI_d/I₂ = (3)\n上式において，A が十分に大きい場合，I_d ≒ 0 と見なせるので，I₂ = I₃ が成立する。さらに，V_d ≒ 0 と見なせるので，c 及び d はグランドと等電位になる。よって，I_c = 0 となるから，I_x = I₁ が成立する。\nこのように，図2の校正回路は，漏れ電流の影響を受けずに4辺の電流が均衡する。そして，インダクタの校正値である R_x = (4)，L_x = (5) が得られる。",
+      "choiceGroups": {
+        "イ": "シェーリング",
+        "ロ": "ケルビンダブル",
+        "ハ": "マクスウェル",
+        "ニ": "I_x ≠ I₁，I₂ ≠ I₃",
+        "ホ": "I_x ≠ I₁，I₂ = I₃",
+        "ヘ": "I_x = I₁，I₂ ≠ I₃",
+        "ト": "R₂R₃/R₁",
+        "チ": "R₁R₃/R₂",
+        "リ": "C₂R₁R₂R₃",
+        "ヌ": "R₁R₂/R₃",
+        "ル": "Z₂/(AX_d)",
+        "ヲ": "C₂R₁R₃",
+        "ワ": "Z₂/[(A + 1)X_d]",
+        "カ": "AZ₂/X_d",
+        "ヨ": "C₂R₂R₃"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ヘ",
+          "explanation": "検出器の電流が 0 で、点 c からも漏れ電流が流れないため、c 側の2辺は均衡する。",
+          "derivation": "c では I_x = I₁。d にはグランド側から I_a + I_b が戻るので、図の向きでは I₂ = I₃ + I_a + I_b となり、I₂ ≠ I₃。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ハ",
+          "explanation": "未知のインダクタを、既知の抵抗とコンデンサの並列枝を使って求める構成はマクスウェルブリッジである。",
+          "derivation": "図2では未知枝が R_x + jωL_x、向かい側の標準枝は R₂ と C₂ の並列。この組合せに平衡条件を適用する。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ワ",
+          "explanation": "反転増幅器により、d と b の電位差は V_d の (A + 1) 倍になる。",
+          "derivation": "Z₂I₂ = V_d − V_b = (A + 1)V_d = (A + 1)X_d I_d。両辺を (A + 1)X_d I₂ で割る。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "チ",
+          "explanation": "平衡式に並列枝のアドミタンスを入れ、実部を比較する。",
+          "derivation": "Z_x = R₁R₃/Z₂ = R₁R₃(1/R₂ + jωC₂)。実部より R_x = R₁R₃/R₂。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ヲ",
+          "explanation": "同じ平衡式の虚部を比較すると、未知インダクタンスが得られる。",
+          "derivation": "R_x + jωL_x = R₁R₃/R₂ + jωC₂R₁R₃。虚部の ω を消去して L_x = C₂R₁R₃。"
+        }
+      ],
+      "figures": [
+        "図1では検出器 D が c–d 間にあり、d は接地されている。図2では d を接地から切り離し、増幅率 −A の増幅器を追加する。ブリッジの Z₂ は R₂ と C₂ の並列。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 14,
+          "url": "/images/denken2/2024-native/theory-p14.jpg",
+          "sha256": "a83b02529011b7656539e7523d6748b2b9b113d0972de1274a1ad53c1bef176e"
+        },
+        {
+          "physicalPage": 15,
+          "url": "/images/denken2/2024-native/theory-p15.jpg",
+          "sha256": "8849cedf1d5bf628e0b0cfadccfa79885d54bbebe781eaf103ce760940ab93db"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20240818_ch_second_q01.pdf",
+      "sourcePdfSha256": "f45338083caf11791bfb47a725d163afb47d5794c784c0fd8bcafc5806ad1373",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken2-2024-primary-theory-q07",
+      "year": 2024,
+      "season": "primary",
+      "examDate": "2024-08-18",
+      "subject": "theory",
+      "number": 7,
+      "topic": "p形半導体の正孔のドリフト速度・移動度",
+      "questionText": "次の文章は，半導体中の電界による電気伝導に関する記述である。文中の □ に当てはまる最も適切なものを解答群の中から選べ。なお，半導体中の正孔の電荷量を e（> 0），有効質量を mₕ とし，有効質量の変化は無視できるものとする。\np 形半導体中に一定の電界 E が一様に印加されているとき，一つの正孔は電界から力 F₁ = (1) を受けて運動する。その速度を v とする。一方，半導体中で運動する正孔は，格子振動などによる散乱を受け，速度 v に比例する大きさで，v を減速させる向きの力 F₂ を受ける。その比例定数を mₕ/τ と仮定すると，F₂ = (2) と表される。なお，τ は，正孔が散乱を受けるまでの時間の目安となる定数である。\nF₁ と F₂ が釣り合うと速度 v は一定となり，その大きさは v = (3) · E と表される。この v をドリフト速度と呼び，(3) は，(4) と呼ばれる。v が一定である場合は正孔の運動エネルギーは変化しないが，一方で，正孔は電界から常に仕事をされている。すなわち，電界から力 F₁ を受けて距離 Δx 移動する際に正孔が電界から受け取るエネルギーは F₁ · Δx であり，単位時間当たりに受け取るエネルギー P は，Δx 進むのに必要な時間 Δt で除すことにより，P = F₁ · Δx/Δt である。これを e，τ，mₕ，E を用いて表すと，P = (5) となる。P は正孔一つ当たりのジュール損失に相当する。",
+      "choiceGroups": {
+        "イ": "フェルミ準位",
+        "ロ": "拡散定数",
+        "ハ": "移動度",
+        "ニ": "[mₕ/(e²τ)]E²",
+        "ホ": "(e²τ/mₕ)E²",
+        "ヘ": "mₕ/(vτ)",
+        "ト": "e/E",
+        "チ": "mₕ/(eτ)",
+        "リ": "eτ/mₕ",
+        "ヌ": "eE",
+        "ル": "vmₕ/τ",
+        "ヲ": "(eτ²/mₕ)E²",
+        "ワ": "E/e",
+        "カ": "τ/(emₕ)",
+        "ヨ": "vτ/mₕ"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ヌ",
+          "explanation": "正孔の電荷量は +e であり、電界と同じ向きの力を受ける。",
+          "derivation": "力の大きさは電荷量と電界の大きさの積なので F₁ = eE。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ル",
+          "explanation": "散乱による力の大きさは、速度と比例定数 mₕ/τ の積である。",
+          "derivation": "速度と同じ向きを正に取ると、この力の成分は −vmₕ/τ。問題の F₂ は減速方向の力の大きさを表すので vmₕ/τ。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "リ",
+          "explanation": "定常ドリフトでは電界の力と散乱による減速力が釣り合う。",
+          "derivation": "eE = vmₕ/τ を v について解くと v = (eτ/mₕ)E。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "ハ",
+          "explanation": "電界の強さに対するドリフト速度の比例係数を移動度という。",
+          "derivation": "正孔の移動度 μₕ は v/E = eτ/mₕ。単位は m²/(V·s)。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ホ",
+          "explanation": "電界の力が単位時間にする仕事は、力とドリフト速度の積である。",
+          "derivation": "P = F₁v = eE·(eτ/mₕ)E = (e²τ/mₕ)E²。定常時は平均運動エネルギーが増えず、この仕事が散乱に伴う損失になる。"
+        }
+      ],
+      "figures": [],
+      "sourcePages": [
+        {
+          "physicalPage": 16,
+          "url": "/images/denken2/2024-native/theory-p16.jpg",
+          "sha256": "b81be09cfd09caf8a7e59a41a1f14b1e1c90d6cfdabd684a576ad15c2a683257"
+        },
+        {
+          "physicalPage": 17,
+          "url": "/images/denken2/2024-native/theory-p17.jpg",
+          "sha256": "76df6b14b9b42d0ed91763ca4211c7b734ab5ab514aa1854dc4cfb43cfb756a6"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20240818_ch_second_q01.pdf",
+      "sourcePdfSha256": "f45338083caf11791bfb47a725d163afb47d5794c784c0fd8bcafc5806ad1373",
+      "alternateQuestionRule": "問7と問8は選択問題。本試験ではどちらか一方を解答し、両方解答すると採点されません。"
+    },
+    {
+      "id": "denken2-2024-primary-theory-q08",
+      "year": 2024,
+      "season": "primary",
+      "examDate": "2024-08-18",
+      "subject": "theory",
+      "number": 8,
+      "topic": "負帰還増幅回路の利得と遮断周波数",
+      "questionText": "次の文章は，負帰還増幅回路に関する記述である。文中の □ に当てはまる最も適切なものを解答群の中から選べ。\n図は負帰還増幅回路を表すブロック図である。図は増幅器と減衰器から構成され，増幅器の電圧増幅度は A 倍，減衰器の減衰率は H（≦ 1）倍である。\n出力電圧 v_out は増幅器の入力電圧 v_i を用いて v_out = Av_i と表せる。一方，v_i は v_i = v_in − Hv_out であるから，負帰還増幅回路全体の電圧増幅度 v_out/v_in は，\nv_out/v_in = (1)\nとなる。ここで |AH| が1より十分大きいとすると (1) は (2) に近似できる。このことから負帰還増幅回路は電圧増幅度が (3) 性質を有することが分かる。\n次に，増幅器の電圧増幅度は，\nA = A₀/(1 + jf/f_c) … ①\nで表される周波数特性を有するとする。ここで A₀ と f_c はそれぞれ増幅器の直流における電圧増幅度と遮断周波数であり，ともに正の実数である。負帰還増幅回路全体の電圧増幅度 v_out/v_in は，①式を (1) の A に代入し，①式と同じ形に整理することにより\nv_out/v_in = (4)\nとなる。(4) より，負帰還増幅回路の直流における電圧増幅度は A₀/(5) となり，遮断周波数は増幅器の遮断周波数 f_c の (5) 倍となることがわかる。",
+      "choiceGroups": {
+        "イ": "[(1 + A₀H)A₀]/{1 + jf/[(1 + A₀H)f_c]}",
+        "ロ": "[A₀/(1 + A₀H)]/{1 + jf/[(1 + A₀H)f_c]}",
+        "ハ": "[A₀/(1 − A₀H)]/{1 + jf/[(1 − A₀H)f_c]}",
+        "ニ": "A",
+        "ホ": "H",
+        "ヘ": "AH",
+        "ト": "1/A",
+        "チ": "1/H",
+        "リ": "1/(AH)",
+        "ヌ": "1 + A₀H",
+        "ル": "1 − A₀H",
+        "ヲ": "A/(1 + AH)",
+        "ワ": "A の変動の影響を受けにくい",
+        "カ": "H の変動の影響を受けにくい",
+        "ヨ": "A と H の変動の影響を受けにくい"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ヲ",
+          "explanation": "増幅器には入力から帰還信号を引いた電圧が入る。",
+          "derivation": "v_out = A(v_in − Hv_out) なので、出力項を左辺に集めると (1 + AH)v_out = Av_in。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "チ",
+          "explanation": "ループ利得の絶対値が十分大きいと、分母の 1 を無視できる。",
+          "derivation": "A/(1 + AH) = 1/(1/A + H)。|1/A| が |H| に比べて十分小さければ 1/H に近づく。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ワ",
+          "explanation": "高いループ利得の範囲で、全体の利得は主に減衰器 H で決まる。",
+          "derivation": "利得が 1/H に近ければ、A が変動しても 1/A の項の影響は小さい。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "ロ",
+          "explanation": "単一の遮断周波数をもつ増幅器の式を閉ループ利得に代入する。",
+          "derivation": "A/(1 + AH) = A₀/(1 + A₀H + jf/f_c)。分母の定数項 1 + A₀H で分子・分母を割って標準形にする。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ヌ",
+          "explanation": "標準形の分子が直流利得、周波数項の分母が遮断周波数を示す。",
+          "derivation": "直流利得は A₀/(1 + A₀H)、遮断周波数は (1 + A₀H)f_c。どちらにも入る係数は 1 + A₀H。"
+        }
+      ],
+      "figures": [
+        "出力 v_out の一部を減衰器 H に通し、入力 v_in から差し引いて増幅器 A に入れる。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 18,
+          "url": "/images/denken2/2024-native/theory-p18.jpg",
+          "sha256": "8ae25338f9a7776ddae95117295846627d559ce9838209e606641a6f22778127"
+        },
+        {
+          "physicalPage": 19,
+          "url": "/images/denken2/2024-native/theory-p19.jpg",
+          "sha256": "6ef1ae848eff54242e7434d867da2d5cd003f692cdb41035fb0f54fc2811baf3"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20240818_ch_second_q01.pdf",
+      "sourcePdfSha256": "f45338083caf11791bfb47a725d163afb47d5794c784c0fd8bcafc5806ad1373",
+      "alternateQuestionRule": "問7と問8は選択問題。本試験ではどちらか一方を解答し、両方解答すると採点されません。"
+    }
+  ]
+}

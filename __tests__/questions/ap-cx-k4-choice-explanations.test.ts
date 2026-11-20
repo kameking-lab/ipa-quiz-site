@@ -5,11 +5,13 @@ import { applyIpaCorrections } from "@/data/questions/corrections";
 import overlay from "@/data/questions/ap/choice-explanations-cx-k4.json";
 
 const original = applyIpaCorrections("ap", AP_BY_YEAR_QUESTIONS);
+const originalIds = new Set(original.map(q => q.id));
+const publishedOriginals = AP_QUESTIONS.filter(q => originalIds.has(q.id));
 
 describe("AP cx-k4 choice explanation overlay", () => {
   it("preserves every corrected question and official answer", () => {
-    expect(AP_QUESTIONS).toHaveLength(original.length);
-    for (const [index, question] of AP_QUESTIONS.entries()) {
+    expect(publishedOriginals).toHaveLength(original.length);
+    for (const [index, question] of publishedOriginals.entries()) {
       expect({ ...question, choiceExplanations: undefined }, question.id).toEqual({
         ...original[index]!, choiceExplanations: undefined,
       });

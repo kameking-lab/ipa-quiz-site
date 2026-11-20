@@ -13,7 +13,24 @@ const post=(id="q-practice",cookie="")=>POST(new Request("http://localhost:3338/
 beforeEach(()=>{wiring.user="alice";for(const [k,v] of Object.entries({AUTH_SECRET:"test-only-secret",BILLING_PRODUCT:"subscription",BILLING_MODE:"stripe-test",BILLING_WEBHOOK_MODE:"stripe-test",BILLING_SUBSCRIPTION_ENABLED:"true",BILLING_SOURCE_INSTANCE:"monthly-fixture",BILLING_STRIPE_TEST_PRICE_ID:"price_monthly",BILLING_SUBSCRIPTION_PORTAL_CONFIGURATION_ID:"bpc_fixture",BILLING_ORIGIN:"http://localhost:3338",BILLING_STARTS_AT:"2026-01-02T00:00:00Z",BILLING_NOTICE_AT:"2026-01-01T00:00:00Z",BILLING_LEGAL_REVIEWED:"true",BILLING_SELLER_NAME:"Fixture",BILLING_SELLER_ADDRESS:"Fixture",BILLING_SELLER_PHONE:"000",BILLING_SUPPORT_EMAIL:"fake@example.invalid",BILLING_REFUND_TERMS:"Fixture only"}))vi.stubEnv(k,v);});
 afterEach(()=>vi.unstubAllEnvs());
 describe("practice gate -> normal Auth identity -> real monthly service (offline memory)",()=>{
- it("monthly enabled charges one trial question, then preserves paid access without trial consumption",async()=>{const f=await monthlyFixture();wiring.runtime=f;expect(practiceGateEnabled()).toBe(true);const first=await post();expect(first.status).toBe(200);expect((await first.json()).access).toMatchObject({kind:"trial",remaining:9});await f.send();const paid=await post("q-paid");expect((await paid.json()).access.kind).toBe("pass");expect((await f.service.status("alice")).entitled).toBe(true);});
+ it("preserves paid access past the exhausted free daily allowance", async () => {
+   const f = await monthlyFixture();
+   wiring.runtime = f;
+   expect(practiceGateEnabled()).toBe(true);
+   for (let i = 0; i < 10; i++) {
+     const response = await post(`q-free-${i}`);
+     expect(response.status).toBe(200);
+     expect((await response.json()).access).toMatchObject({ kind: "trial", remaining: 9 - i });
+   }
+   expect((await post("q-paid-0")).status).toBe(429);
+   await f.send();
+   for (let i = 0; i < 12; i++) {
+     const response = await post(`q-paid-${i}`);
+     expect(response.status).toBe(200);
+     expect((await response.json()).access).toMatchObject({ kind: "pass", remaining: null });
+   }
+   expect((await f.service.status("alice")).entitled).toBe(true);
+ });
  it("another signed-in identity cannot use Alice's paid entitlement",async()=>{const f=await monthlyFixture();wiring.runtime=f;await f.send();wiring.user="bob";const r=await post();expect((await r.json()).access.kind).toBe("trial");expect((await f.service.status("alice")).entitled).toBe(true);});
  it("anonymous cannot grant or mutate an existing paid account",async()=>{const f=await monthlyFixture();wiring.runtime=f;await f.send();const before=JSON.stringify(f.account());wiring.user=null;expect((await post()).status).toBe(428);expect(JSON.stringify(f.account())).toBe(before);});
  it("missing cookie signing secret lets signed-in users reopen only existing free grants, and keeps paid access",async()=>{

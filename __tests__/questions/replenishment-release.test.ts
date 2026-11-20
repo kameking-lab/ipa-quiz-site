@@ -47,8 +47,10 @@ describe("replenishment release serving integration", () => {
     expect(source.every(q => q.publicAllowed === false)).toBe(true);
   });
 
-  it("does not add any of the held 2026 high-pressure-gas corpus", async () => {
-    expect((await getQuestionsForExam("khk-kagaku")).some(q => q.year === 2026)).toBe(false);
-    expect(QUESTIONS_BY_EXAM["khk-kagaku"]!.some(q => q.year === 2026)).toBe(false);
+  it("adds exactly 205 approved 2026 chemical questions in both loaders", async () => {
+    const approved = (await getQuestionsForExam("khk-kagaku")).filter(q => q.year === 2026);
+    expect(approved).toHaveLength(205);
+    expect(approved.every(isPracticeReadyQuestion)).toBe(true);
+    expect(QUESTIONS_BY_EXAM["khk-kagaku"]?.filter(q => q.year === 2026)).toEqual(approved);
   });
 });

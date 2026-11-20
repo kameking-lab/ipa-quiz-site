@@ -16,7 +16,7 @@ export const dynamic = "force-dynamic";
 const ENDPOINT_LABELS: Record<string, string> = {
   copilot: "AI コパイロット",
   "essay-grade": "論述採点",
-  "generate-question": "類題生成",
+  "weakness-advice": "弱点レポートの助言",
   scoring: "午後採点",
 };
 

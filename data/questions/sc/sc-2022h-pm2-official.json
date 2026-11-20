@@ -1,0 +1,127 @@
+[
+  {
+    "id": "sc-2022h-pm2-q1",
+    "exam": "sc",
+    "year": 2022,
+    "season": "spring",
+    "session": "pm2",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "Webセキュリティ",
+    "topicTags": [
+      "XSS",
+      "クリックジャッキング",
+      "SSRF",
+      "セキュア開発"
+    ],
+    "difficulty": 4,
+    "question": "Webサイトのセキュリティに関する次の記述を読んで，設問1〜6に答えよ。",
+    "answer": "設問1 (1) ア\n(2) ・ダウンロードするライブラリに既知の脆弱性がないかを確認する。\n・特定のWebサイトからの入手をルール化し，明文化する。\n\n設問2 a：利用者ID，b：セッションオブジェクト（順不同）\n\n設問3 (1) c：イ，d：ア，e：ア，f：ア，g：イ，h：イ\n(2) i：エ，j：イ\n\n設問4 topicの値をhttps://db-y.b-sha.co.jp/に変更した。\n\n設問5 (1) k：V氏が用意したサイト\n(2) returnURLの値を固定値にする。\n\n設問6 (1) ①一部のセッション管理の脆弱性，②認可・アクセス制御の脆弱性\n(2) 改良フェーズにおける1か月の休止期間\n(3) ・専門技術者による脆弱性診断が必要なときは，改良リリースを次回に持ち越す。\n・半年に一度，改良リリースの期間を長くする。\n・定期的に，期間の長い改良リリースを設ける。\n(4) CSRF対策用トークンの発行，HTMLへの埋め込み，必要なひも付け，及びこれを検証する処理",
+    "modelAnswer": "設問1 (1) ア\n\n(2) ・ダウンロードするライブラリに既知の脆弱性がないかを確認する。\n\n・特定のWebサイトからの入手をルール化し，明文化する。\n\n設問2 a：利用者ID，b：セッションオブジェクト（順不同）\n\n設問3 (1) c：イ，d：ア，e：ア，f：ア，g：イ，h：イ\n\n(2) i：エ，j：イ\n\n設問4 topicの値をhttps://db-y.b-sha.co.jp/に変更した。\n\n設問5 (1) k：V氏が用意したサイト\n\n(2) returnURLの値を固定値にする。\n\n設問6 (1) ①一部のセッション管理の脆弱性，②認可・アクセス制御の脆弱性\n\n(2) 改良フェーズにおける1か月の休止期間\n\n(3) ・専門技術者による脆弱性診断が必要なときは，改良リリースを次回に持ち越す。\n\n・半年に一度，改良リリースの期間を長くする。\n\n・定期的に，期間の長い改良リリースを設ける。\n\n(4) CSRF対策用トークンの発行，HTMLへの埋め込み，必要なひも付け，及びこれを検証する処理",
+    "explanation": "設問1は、入力値がHTMLの属性やタグとして解釈される位置を確認する。GETのクエリ文字列から属性値を抜けてイベントハンドラを実行できるリクエストを選ぶ。ライブラリは入手先の管理だけでなく、既知の脆弱性の確認まで開発手順に含める。\n\n設問2はCSRF対策用トークンを誰のどのセッションに結び付けるかが要点。設問3では、実際に操作させたいページを透明にして手前へ置くと、見えているページを押したつもりで別の操作が成立する。埋め込みを制御するX-Frame-OptionsとContent-Security-Policyが対策になる。\n\n設問4・5は、利用者が指定できるURLをサーバが取得する処理に注目する。topicの宛先を書き換える攻撃と、外部サイトからの転送を使う攻撃を区別し、後者ではreturnURLを固定して任意の転送先を指定させない。\n\n設問6は、短期間のリリースと診断期間の両立が論点。ツールだけで確認できないセッション管理や認可の問題を専門家の診断で補い、休止期間や長いリリース期間を確保する。CSRFの実装支援はトークンを生成するだけでは足りず、埋め込み・ひも付け・検証まで一連の処理にする。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_sc_pm2_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_sc_pm2_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/question-assets/qb-11/sc-2022h-pm2/p02.webp",
+      "/question-assets/qb-11/sc-2022h-pm2/p03.webp",
+      "/question-assets/qb-11/sc-2022h-pm2/p04.webp",
+      "/question-assets/qb-11/sc-2022h-pm2/p05.webp",
+      "/question-assets/qb-11/sc-2022h-pm2/p06.webp",
+      "/question-assets/qb-11/sc-2022h-pm2/p07.webp",
+      "/question-assets/qb-11/sc-2022h-pm2/p08.webp",
+      "/question-assets/qb-11/sc-2022h-pm2/p09.webp",
+      "/question-assets/qb-11/sc-2022h-pm2/p10.webp",
+      "/question-assets/qb-11/sc-2022h-pm2/p11.webp",
+      "/question-assets/qb-11/sc-2022h-pm2/p12.webp"
+    ],
+    "imageAltTexts": [
+      "2022年午後II 問1の公式本文・図表・設問（原本2ページ）",
+      "2022年午後II 問1の公式本文・図表・設問（原本3ページ）",
+      "2022年午後II 問1の公式本文・図表・設問（原本4ページ）",
+      "2022年午後II 問1の公式本文・図表・設問（原本5ページ）",
+      "2022年午後II 問1の公式本文・図表・設問（原本6ページ）",
+      "2022年午後II 問1の公式本文・図表・設問（原本7ページ）",
+      "2022年午後II 問1の公式本文・図表・設問（原本8ページ）",
+      "2022年午後II 問1の公式本文・図表・設問（原本9ページ）",
+      "2022年午後II 問1の公式本文・図表・設問（原本10ページ）",
+      "2022年午後II 問1の公式本文・図表・設問（原本11ページ）",
+      "2022年午後II 問1の公式本文・図表・設問（原本12ページ）"
+    ],
+    "answerImageUrls": [
+      "/question-assets/qb-11/sc-2022h-pm2/answer-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問1（原本 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_sc_pm2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_sc_pm2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "sc-2022h-pm2-q2",
+    "exam": "sc",
+    "year": 2022,
+    "season": "spring",
+    "session": "pm2",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "認証とクラウドセキュリティ",
+    "topicTags": [
+      "CDN",
+      "Kerberos",
+      "SAML",
+      "OAuth",
+      "OpenID Connect"
+    ],
+    "difficulty": 4,
+    "question": "クラウドサービスへの移行に関する次の記述を読んで，設問1〜5に答えよ。",
+    "answer": "設問1 (1) a：キャッシュ\n(2) b：DDoS\n(3) c：Host\n(4) Y-CDN-U-FQDNを名前解決したIPアドレスと同じIPアドレスをもつWebサイト\n(5) d：TLSの接続先サーバ名\n\n設問2 (1) STは認証サーバに送られないから\n(2) 総当たり攻撃はオフラインで行われ，ログインに失敗しないから\n\n設問3 (1) e：ウ\n(2) f：ア\n(3) g：偽造\n(4) h：1，i：3，j：4（i，jは順不同）\n\n設問4 (1) k：ウ，l：イ，m：ア\n(2) n：エ\n(3) o：(2)，p：(6)\n(4) q：ウ\n\n設問5 (1) r：オ，s：エ，t：ウ\n(2) u：(8)\n(3) v：イ\n(4) w：認証要求，x：IDトークン",
+    "modelAnswer": "設問1 (1) a：キャッシュ\n\n(2) b：DDoS\n\n(3) c：Host\n\n(4) Y-CDN-U-FQDNを名前解決したIPアドレスと同じIPアドレスをもつWebサイト\n\n(5) d：TLSの接続先サーバ名\n\n設問2 (1) STは認証サーバに送られないから\n\n(2) 総当たり攻撃はオフラインで行われ，ログインに失敗しないから\n\n設問3 (1) e：ウ\n\n(2) f：ア\n\n(3) g：偽造\n\n(4) h：1，i：3，j：4（i，jは順不同）\n\n設問4 (1) k：ウ，l：イ，m：ア\n\n(2) n：エ\n\n(3) o：(2)，p：(6)\n\n(4) q：ウ\n\n設問5 (1) r：オ，s：エ，t：ウ\n\n(2) u：(8)\n\n(3) v：イ\n\n(4) w：認証要求，x：IDトークン",
+    "explanation": "設問1ではCDNがコンテンツをキャッシュして配信負荷を分散する一方、同じIPアドレスを複数のWebサイトで共有する点を押さえる。IPアドレスだけで遮断すると別サイトも巻き込む。HTTPではHost、TLSの接続開始時には接続先サーバ名がサイトを識別する手掛かりになる。\n\n設問2のSTはサービス利用時に使うチケットであり、利用のたびに認証サーバへ送るものではない。取得済みデータを使うオフラインの総当たりでは、認証サーバでログイン失敗が起きないので、失敗回数によるロックでは防げない。\n\n設問3は、SaaS側が信頼する認証情報を誰が発行し、どの経路で渡すかを表2と照合する。署名などの検証は、認証情報の偽造を防ぐために行う。\n\n設問4は、認証を担当するIDaaS、利用先サービス、別サービスの役割を図9上で対応付ける。認証とAPIへのアクセス権限付与を分け、認可コードを用いる手順とPKCEを結び付ける。\n\n設問5は、移行前後の動画サーバと認証サーバの役割を区別する。base64urlは表現形式であり、それだけで署名の検証や利用者認証が済むわけではない。OpenID Connectの認証要求とIDトークンを、図10の送受信方向に沿って確認する。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_sc_pm2_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_sc_pm2_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/question-assets/qb-11/sc-2022h-pm2/p13.webp",
+      "/question-assets/qb-11/sc-2022h-pm2/p14.webp",
+      "/question-assets/qb-11/sc-2022h-pm2/p15.webp",
+      "/question-assets/qb-11/sc-2022h-pm2/p16.webp",
+      "/question-assets/qb-11/sc-2022h-pm2/p17.webp",
+      "/question-assets/qb-11/sc-2022h-pm2/p18.webp",
+      "/question-assets/qb-11/sc-2022h-pm2/p19.webp",
+      "/question-assets/qb-11/sc-2022h-pm2/p20.webp",
+      "/question-assets/qb-11/sc-2022h-pm2/p21.webp",
+      "/question-assets/qb-11/sc-2022h-pm2/p22.webp",
+      "/question-assets/qb-11/sc-2022h-pm2/p23.webp",
+      "/question-assets/qb-11/sc-2022h-pm2/p24.webp",
+      "/question-assets/qb-11/sc-2022h-pm2/p25.webp",
+      "/question-assets/qb-11/sc-2022h-pm2/p26.webp"
+    ],
+    "imageAltTexts": [
+      "2022年午後II 問2の公式本文・図表・設問（原本13ページ）",
+      "2022年午後II 問2の公式本文・図表・設問（原本14ページ）",
+      "2022年午後II 問2の公式本文・図表・設問（原本15ページ）",
+      "2022年午後II 問2の公式本文・図表・設問（原本16ページ）",
+      "2022年午後II 問2の公式本文・図表・設問（原本17ページ）",
+      "2022年午後II 問2の公式本文・図表・設問（原本18ページ）",
+      "2022年午後II 問2の公式本文・図表・設問（原本19ページ）",
+      "2022年午後II 問2の公式本文・図表・設問（原本20ページ）",
+      "2022年午後II 問2の公式本文・図表・設問（原本21ページ）",
+      "2022年午後II 問2の公式本文・図表・設問（原本22ページ）",
+      "2022年午後II 問2の公式本文・図表・設問（原本23ページ）",
+      "2022年午後II 問2の公式本文・図表・設問（原本24ページ）",
+      "2022年午後II 問2の公式本文・図表・設問（原本25ページ）",
+      "2022年午後II 問2の公式本文・図表・設問（原本26ページ）"
+    ],
+    "answerImageUrls": [
+      "/question-assets/qb-11/sc-2022h-pm2/answer-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問2（原本 2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_sc_pm2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_sc_pm2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  }
+]

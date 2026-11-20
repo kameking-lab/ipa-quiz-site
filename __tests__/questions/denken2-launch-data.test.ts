@@ -43,6 +43,8 @@ const sha256 = (data: string | Buffer) => createHash("sha256").update(data).dige
 
 const session = manifest.sessions[0]!;
 const papers = session.subjects;
+const launchQuestions = DENKEN2_QUESTIONS.filter((q) => q.year === 2026 && q.season === "primary"
+  && (q.subject === "law" || q.subject === "power"));
 const files = readdirSync(reviewedDir).filter((name) => name.endsWith(".json")).sort();
 const rowsByFile = new Map(files.map((name) => [name.replace(/\.json$/, ""), JSON.parse(readFileSync(join(reviewedDir, name), "utf8")) as Row[]]));
 
@@ -52,11 +54,11 @@ describe("Denken 2 first-stage launch data (2026 power + law)", () => {
     expect(papers.flatMap((paper) => paper.questions)).toHaveLength(14);
     expect(papers.flatMap((paper) => paper.questions.flatMap((q) => q.blanks))).toHaveLength(70);
     expect(files).toHaveLength(14);
-    expect(DENKEN2_QUESTIONS).toHaveLength(70);
-    expect(new Set(DENKEN2_QUESTIONS.map((q) => q.id)).size).toBe(70);
-    expect(DENKEN2_QUESTIONS.filter(isPracticeReadyQuestion)).toHaveLength(70);
+    expect(launchQuestions).toHaveLength(70);
+    expect(new Set(launchQuestions.map((q) => q.id)).size).toBe(70);
+    expect(launchQuestions.filter(isPracticeReadyQuestion)).toHaveLength(70);
     for (const paper of papers) {
-      expect(DENKEN2_QUESTIONS.filter((q) => q.session === paper.session)).toHaveLength(35);
+      expect(launchQuestions.filter((q) => q.session === paper.session)).toHaveLength(35);
       const pdf = join(root, "docs", "evidence", "denken2", "input", paper.url.split("/").pop()!);
       expect(sha256(readFileSync(pdf)), paper.url).toBe(paper.sha256);
     }
@@ -65,7 +67,7 @@ describe("Denken 2 first-stage launch data (2026 power + law)", () => {
   });
 
   it("binds every published unit to the official answer sheet and its reviewed row", () => {
-    for (const q of DENKEN2_QUESTIONS) {
+    for (const q of launchQuestions) {
       const paper = papers.find((p) => p.subject === q.subject)!;
       const official = paper.questions.find((item) => item.question === q.qNumber)!;
       const blank = Number(q.part);
@@ -117,12 +119,12 @@ describe("Denken 2 first-stage launch data (2026 power + law)", () => {
   });
 
   it("gives each blank a distinct playable route and orders blanks within a question", () => {
-    const paths = DENKEN2_QUESTIONS.map(questionPagePath);
+    const paths = launchQuestions.map(questionPagePath);
     expect(new Set(paths).size).toBe(70);
     expect(paths).toContain("/q/denken2/2026-primary/houki/q1-3");
     for (const [index, path] of paths.entries()) {
       const [, , exam, yearSeason, section, qnum] = path.split("/");
-      expect(findQuestionByRoute(DENKEN2_QUESTIONS, { exam: exam!, yearSeason: yearSeason!, section: section!, qnum: qnum! })?.id, path).toBe(DENKEN2_QUESTIONS[index]!.id);
+      expect(findQuestionByRoute(DENKEN2_QUESTIONS, { exam: exam!, yearSeason: yearSeason!, section: section!, qnum: qnum! })?.id, path).toBe(launchQuestions[index]!.id);
     }
     expect(parseQuestionRoute({ exam: "denken3", yearSeason: "2026-primary", section: "houki", qnum: "q1-3" })).toBeNull();
     expect(parseQuestionRoute({ exam: "denken2", yearSeason: "2026-primary", section: "houki", qnum: "q1a" })).toBeNull();

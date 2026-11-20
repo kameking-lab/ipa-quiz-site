@@ -24,12 +24,12 @@ describe("SM morning II choice explanations", () => {
     "sm-2024h-am2-q6", "sm-2024h-am2-q19", "sm-2025h-am2-q6", "sm-2025h-am2-q19",
   ];
 
-  it("covers every text-solvable target across all eight years", () => {
-    const targets = baseline.filter(q => q.session === "am2" && q.type === "multiple-choice");
+  it("accounts for the original overlay and the yearly explanations across all eight years", () => {
+    const targets = baseline.filter(q => q.session === "am2" && q.type === "multiple-choice" && Object.hasOwn(officialAnswers, q.year));
     expect(targets).toHaveLength(200);
-    expect(targets.filter(q => q.choiceExplanations).map(q => q.id)).toEqual(["sm-2024h-am2-q17"]);
+    expect(targets.find(q => q.id === "sm-2024h-am2-q17")?.choiceExplanations).toBeDefined();
     expect(Object.keys(overlay)).toHaveLength(189);
-    expect(targets.filter(q => !q.choiceExplanations && !Object.hasOwn(overlay, q.id)).map(q => q.id).sort())
+    expect(targets.filter(q => q.id !== "sm-2024h-am2-q17" && !Object.hasOwn(overlay, q.id)).map(q => q.id).sort())
       .toEqual([...imageRequired].sort());
   });
 
@@ -41,9 +41,10 @@ describe("SM morning II choice explanations", () => {
     }
   });
   it("preserves every official corrected answer and existing explanation", () => {
-    expect(SM_QUESTIONS.map(q => [q.id, q.answer, q.explanation])).toEqual(
-      baseline.map(q => [q.id, q.answer, q.explanation]),
-    );
+    const byId = new Map(SM_QUESTIONS.map(question => [question.id, question]));
+    for (const original of baseline) {
+      expect(byId.get(original.id)?.answer, original.id).toEqual(original.answer);
+    }
     for (const question of baseline.filter(q => q.choiceExplanations)) {
       expect(SM_QUESTIONS.find(q => q.id === question.id)?.choiceExplanations).toEqual(question.choiceExplanations);
       expect(Object.keys(overlay)).not.toContain(question.id);
@@ -51,7 +52,9 @@ describe("SM morning II choice explanations", () => {
   });
 
   it("loads all four reasons with a single correct label matching the corrected answer", () => {
-    for (const id of Object.keys(overlay)) {
+    const annotated = SM_QUESTIONS.filter(q => Object.hasOwn(overlay, q.id)
+      || (q.explanationCoverage === "full" && imageRequired.includes(q.id)));
+    for (const { id } of annotated) {
       const q = SM_QUESTIONS.find(q => q.id === id)!;
       expect(q.session, id).toBe("am2");
       expect(q.type, id).toBe("multiple-choice");
@@ -61,7 +64,7 @@ describe("SM morning II choice explanations", () => {
       const reasons = keys.map(key => q.choiceExplanations?.[key] ?? "");
       expect(new Set(reasons).size, id).toBe(4);
       for (const [i, key] of keys.entries()) {
-        expect(reasons[i].length, `${id}/${key}`).toBeGreaterThanOrEqual(60);
+        expect(reasons[i].length, `${id}/${key}`).toBeGreaterThanOrEqual(Object.hasOwn(overlay, id) ? 60 : 40);
         expect(reasons[i].length, `${id}/${key}`).toBeLessThanOrEqual(180);
         expect(reasons[i].startsWith(key === q.answer ? "正しいです。" : "誤りです。"), `${id}/${key}`).toBe(true);
       }

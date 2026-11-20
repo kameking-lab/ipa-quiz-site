@@ -32,7 +32,7 @@ describe("QuizClient with the real player and local learning stores", () => {
     const started = new Set<string>();
     let cookie = false;
     const fetcher = vi.fn(async (url: string, options?: RequestInit) => {
-      if (url === "/api/funnel" || url === "/api/activity") return new Response(null, { status: 204 });
+      if (url === "/api/funnel" || url === "/api/activity" || url === "/api/funnel/conversion") return new Response(null, { status: 204 });
       if (url === "/api/auth/session") return Response.json({});
       if (url === "/api/questions/related") return Response.json({ questions: [] });
       if (url.startsWith("/api/questions/next?")) {
@@ -89,14 +89,13 @@ describe("QuizClient with the real player and local learning stores", () => {
     const reward = sessionStorage.getItem(LS_KEYS.studyReward);
     fireEvent.click(screen.getByRole("button", { name: "次の問題へ" }));
     const limit = await screen.findByRole("region", { name: "今日の無料10問はここまで" });
-    // Purchase first, one line of terms, the feedback bonus, a tiny "tomorrow" line: nothing else.
-    const plan = screen.getByRole("link", { name: /7日間無料で試す/ });
+    const plan = screen.getByRole("link", { name: /月額プランに申し込む/ });
     const start = new URL(plan.getAttribute("href")!, window.location.origin);
     expect(start.pathname).toBe("/billing/start");
     const resume = start.searchParams.get("returnTo");
     expect(resume).toBe(`/quiz?mode=year&exam=fp3&question=${fp[5].id}`);
-    expect(limit).toHaveTextContent("税込・毎月自動更新・いつでも解約可");
-    expect(limit).toHaveTextContent("明日また10問");
+    expect(limit).toHaveTextContent("毎月自動更新。解約は契約管理から。");
+    expect(limit).toHaveTextContent("月額プランは演習回数無制限。");
     expect(limit).not.toHaveTextContent("このボタンだけで課金は始まりません");
     expect(screen.queryByRole("link", { name: "保存済みの履歴を無料で復習する" })).toBeNull();
     expect(document.activeElement).toHaveAttribute("aria-label", "本日の無料演習の終了");
@@ -106,13 +105,13 @@ describe("QuizClient with the real player and local learning stores", () => {
     expect(sessionStorage.getItem(LS_KEYS.studyReward)).toBe(reward);
     expect(JSON.parse(localStorage.getItem(LS_KEYS.studyRewardPreferences)!)).toEqual({ closed: false, paused: true });
     expect(createHistoryStore().getAllEntries().some(entry => entry.id === fp[5].id)).toBe(false);
-    expect(fetcher.mock.calls.every(([url]) => url.startsWith("/api/questions/next?") || url === "/api/billing/question" || url === "/api/questions/related" || url === "/api/auth/session" || url === "/api/funnel" || url === "/api/activity")).toBe(true);
+    expect(fetcher.mock.calls.every(([url]) => url.startsWith("/api/questions/next?") || url === "/api/billing/question" || url === "/api/questions/related" || url === "/api/auth/session" || url === "/api/funnel" || url === "/api/activity" || url === "/api/funnel/conversion")).toBe(true);
     expect(capture.mock.calls.filter(call => call[0] === "referral_landed")).toHaveLength(1);
     const limits = capture.mock.calls.filter(call => call[0] === "practice_free_limit_reached");
     expect(limits).toHaveLength(1);
     expect(limits[0][1]).toMatchObject({ utm_source: "tsugino_shikaku", utm_content: "fe.hero", reason: "last_free_question", free_daily: 10 });
     expect(capture.mock.calls.some(call => call[0] === "quiz_started" && call[1].utm_content === "fe.hero")).toBe(true);
-    const upgrade = screen.getByRole("link", { name: /7日間無料で試す/ });
+    const upgrade = screen.getByRole("link", { name: /月額プランに申し込む/ });
     upgrade.addEventListener("click", event => event.preventDefault());
     fireEvent.click(upgrade);
     expect(capture.mock.calls.some(call => call[0] === "practice_upgrade_clicked" && call[1].utm_content === "fe.hero")).toBe(true);
@@ -139,6 +138,8 @@ describe("QuizClient with the real player and local learning stores", () => {
   });
 });
 it("submits feedback at the wall, answers bonus questions 11-20, stops at 21 and preserves exhaustion on reload", async () => {
+  // Compile the real lazy component before starting the UI wait for its link.
+  await import("@/components/quiz/FeedbackUnlock");
   const pool = FE_QUESTIONS_2009_AUTUMN_AM.slice(0, 21);
   const questions = new Map(pool.map(q => [q.id, q]));
   const ordinary = new Set(pool.slice(0, 10).map(q => q.id));

@@ -1,3 +1,4 @@
+import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -14,11 +15,11 @@ function resolve(edition: string, subject: string) {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { edition, subject } = await params;
   const part = resolve(edition, subject);
-  return part ? {
+  return part ? withCanonicalSocialMetadata({
     title: `電験一種 ${part.year}年度 一次試験 ${names[part.subject]} 過去問${part.questions.length}原問`,
     description: `公式問題の${names[part.subject]}${part.questions.length}原問・${part.questions.reduce((sum, q) => sum + q.slots.length, 0)}回答欄を原問単位で収録。図・数式・正答・解説を確認できます。`,
     alternates: { canonical: denken1NativeSubjectPath(part.year, part.subject) },
-  } : { title: "問題が見つかりません", robots: { index: false } };
+  }) : { title: "問題が見つかりません", robots: { index: false } };
 }
 export default async function Page({ params }: Props) {
   const { edition, subject } = await params;

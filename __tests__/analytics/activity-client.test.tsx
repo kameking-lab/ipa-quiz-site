@@ -9,6 +9,8 @@ afterEach(() => { cleanup(); vi.clearAllTimers(); vi.useRealTimers(); vi.unstubA
 
 it("records page views once per navigation and answers even without the external SDK", async () => {
   const beacon = vi.fn<(url: string, body?: Blob) => boolean>(() => true); Object.defineProperty(navigator, "sendBeacon", { configurable: true, value: beacon });
+  const fetcher = vi.fn(async () => new Response(null, { status: 204 })); vi.stubGlobal("fetch", fetcher);
+  const activityCalls = () => beacon.mock.calls.filter(([url]) => url === "/api/activity");
   const { ActivityTracker } = await import("@/components/analytics/ActivityTracker");
   const { posthogCapture } = await import("@/lib/posthog");
   const { flushActivity } = await import("@/lib/analytics/activity-client");
@@ -17,13 +19,13 @@ it("records page views once per navigation and answers even without the external
   posthogCapture("page_view", { path: location.href }); // external page view must not double count
   posthogCapture("question_answered", { exam: "sc", questionId: "private-question", userId: "private-user" });
   act(() => { vi.advanceTimersByTime(2000); });
-  expect(beacon).toHaveBeenCalledTimes(1);
-  expect(beacon.mock.calls[0][0]).toBe("/api/activity");
-  const payload = JSON.parse(await (beacon.mock.calls[0] as unknown as [string, Blob])[1].text());
+  expect(activityCalls()).toHaveLength(1);
+  expect(fetcher).toHaveBeenCalledWith("/api/funnel/conversion", expect.objectContaining({ body: '{"event":"guest_answered"}', keepalive: true }));
+  const payload = JSON.parse(await activityCalls()[0][1]!.text());
   expect(payload.events).toEqual([{ event: "page_view", qualification: "sc", page: "question" }, { event: "question_answered", qualification: "sc", page: "question" }]);
   pathname = "/ap"; window.history.replaceState({}, "", pathname); rerender(<ActivityTracker />);
-  act(flushActivity); expect(beacon).toHaveBeenCalledTimes(2);
-  pathname = "/admin"; window.history.replaceState({}, "", pathname); rerender(<ActivityTracker />); act(flushActivity); expect(beacon).toHaveBeenCalledTimes(2);
+  act(flushActivity); expect(activityCalls()).toHaveLength(2);
+  pathname = "/admin"; window.history.replaceState({}, "", pathname); rerender(<ActivityTracker />); act(flushActivity); expect(activityCalls()).toHaveLength(2);
 });
 
 it("falls back to a keepalive request when beacon cannot queue and never resends accepted counts", async () => {

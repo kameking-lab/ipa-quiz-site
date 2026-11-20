@@ -36,14 +36,18 @@ describe("original source presentation", () => {
     for (const text of ["共通設例", "設例の全行", "数量表", "123", "本文末尾の条件まで表示", "第一の選択肢", "第二の選択肢", "選択肢後の注記", "架空の原作成者", "架空の加工者", "文字起こし", "公共データ利用規約（PDL）", "設問の適用範囲に注意"]) {
       expect(html).toContain(text);
     }
-    expect(html).toContain("<details");
+    const rawQuestion = html.match(/<details[^>]*><summary[^>]*>原問を見る<\/summary>(.*?)<\/details>/s)?.[1];
+    expect(html.match(/<details/g)).toHaveLength(1);
+    expect(rawQuestion).toContain("本文末尾の条件まで表示");
+    expect(rawQuestion).toContain("第一の選択肢");
+    expect(rawQuestion).toContain("第二の選択肢");
     expect(html).toContain('<dt class="font-semibold">1</dt>');
     expect(html).toContain('<dt class="font-semibold">2</dt>');
     expect(html).not.toContain('<dt class="font-semibold">ア</dt>');
-    expect(html).toContain('href="https://example.invalid/question.pdf"');
-    expect(html).toContain('href="https://example.invalid/answer.pdf"');
-    expect(html).toContain("問題PDF");
-    expect(html).toContain("公式正答PDF");
+    expect(html).not.toContain('href="https://example.invalid/question.pdf"');
+    expect(html).not.toContain('href="https://example.invalid/answer.pdf"');
+    expect(html).not.toContain("問題PDF");
+    expect(html).not.toContain("公式正答PDF");
     expect(html).not.toContain("命題の検討");
   });
 

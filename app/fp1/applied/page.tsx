@@ -1,13 +1,14 @@
+import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import { getFp1ExtensionQuestions, getFp1PublishedExtension } from "@/lib/fp1/published-extension";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FP1_APPLIED_EDITIONS, getFp1AppliedEdition } from "@/lib/fp1/applied";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalSocialMetadata({
   title: "FP1級 学科応用編の問題・模範解答",
   description: "FP1級学科応用編の原問と公式模範解答を、共通設例・空欄ごとの独自解説と一緒に確認できます。2026年5月と9月の収録済み問題を掲載。",
   alternates: { canonical: "/fp1/applied" },
-};
+});
 
 export default function Fp1AppliedIndex() {
   return <main className="mx-auto w-full max-w-3xl px-4 py-8 sm:py-12">

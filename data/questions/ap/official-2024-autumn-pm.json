@@ -1,0 +1,575 @@
+[
+  {
+    "id": "ap-2024a-pm-q1",
+    "exam": "ap",
+    "year": 2024,
+    "season": "autumn",
+    "session": "pm",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "情報セキュリティ",
+    "topicTags": [
+      "Webサイトのセキュリティ"
+    ],
+    "difficulty": 5,
+    "question": "問1 Webサイトのセキュリティ。次の本文・図表を読み、設問に答えよ。",
+    "answer": "問１\n\n                       出題趣旨\n パスワードの管理方法が不適切であったことによって，不正アクセスの被害が拡大する事例が発生している。\n  本問では，EC サイトに対するペネトレーションテストの結果を題材として，パスワードの安全な管理方法に\nついての理解を問う。\n\n\n  設問                解答例・解答の要点                 備考\n  設問１  ハッシュ値からパスワードの割出しは難しい。\n  設問２  機密性\n  設問３     a オ\n              b カ\n  設問４  イ\n  設問５  多層防御\n 設問６(1) 会員テーブルの窃取だけではペッパーを得ることができないから\n         (2)  c   704",
+    "modelAnswer": "問１\n\n                       出題趣旨\n パスワードの管理方法が不適切であったことによって，不正アクセスの被害が拡大する事例が発生している。\n  本問では，EC サイトに対するペネトレーションテストの結果を題材として，パスワードの安全な管理方法に\nついての理解を問う。\n\n\n  設問                解答例・解答の要点                 備考\n  設問１  ハッシュ値からパスワードの割出しは難しい。\n  設問２  機密性\n  設問３     a オ\n              b カ\n  設問４  イ\n  設問５  多層防御\n 設問６(1) 会員テーブルの窃取だけではペッパーを得ることができないから\n         (2)  c   704",
+    "explanation": "パスワードのハッシュ化は、元のパスワードを割り出しにくくするために行う。会員テーブルと別にペッパーを保管すると、テーブルだけが盗まれても攻撃に必要な情報がそろわない。ソルトやペッパーの役割を分け、多層防御の考え方と結び付けて整理する。計算では本文に示された試行回数と処理時間の条件をそろえる。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_qs.pdf#page=6) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_ans.pdf#page=1)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2024-autumn-pm/page-03.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-04.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-05.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-06.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-07.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-08.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-09.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2024年度秋期 午後 問1 共通の記述ルール（公式問題PDF 3ページ）",
+      "応用情報技術者 2024年度秋期 午後 問1 共通の記述ルール（公式問題PDF 4ページ）",
+      "応用情報技術者 2024年度秋期 午後 問1 共通の記述ルール（公式問題PDF 5ページ）",
+      "応用情報技術者 2024年度秋期 午後 問1 本文・図表・設問（公式問題PDF 6ページ）",
+      "応用情報技術者 2024年度秋期 午後 問1 本文・図表・設問（公式問題PDF 7ページ）",
+      "応用情報技術者 2024年度秋期 午後 問1 本文・図表・設問（公式問題PDF 8ページ）",
+      "応用情報技術者 2024年度秋期 午後 問1 本文・図表・設問（公式問題PDF 9ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2024-autumn-pm/answer-q1.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者 2024年度秋期 午後 問1 公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2024r06.html"
+    ],
+    "sourceAttribution": "出典：IPA 応用情報技術者 2024年度秋期 午後 問1。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "ap-2024a-pm-q2",
+    "exam": "ap",
+    "year": 2024,
+    "season": "autumn",
+    "session": "pm",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "経営戦略",
+    "topicTags": [
+      "コーヒーチェーン店のブランド再構築"
+    ],
+    "difficulty": 5,
+    "question": "問2 コーヒーチェーン店のブランド再構築。次の本文・図表を読み、設問に答えよ。",
+    "answer": "問２\n\n                       出題趣旨\n 昨今，デジタル化，脱炭素化などによる人々の社会意識の変容が経営環境を変化させたことで，“ブランド”，\n“人的資本経営”などの非財務情報に基づく戦略の策定が，経営課題としての重みを増してきている。\n 本問では，コーヒーチェーン店のブランド再構築による企業の成長や利益性向上を題材として，“人的資本”\nを強化することで，顧客へのサービス品質向上につなげるサービスプロフィットチェーンに基づく戦略の策定\nについての理解を問う。\n\n\n  設問               解答例・解答の要点                備考\n 設問１  (1)   a 従業員満足度\n               b 顧客満足度\n         (2)  機会 環境や倫理に対する社会意識の高まり\n        強み 環境に配慮した高品質なコーヒー豆の使用\n         (3)   c ・顧客がQ 社にもたらす利益\n         ・顧客生涯価値\n         (4)   d リピート率\n 設問２  (1)   e 自己評価と部下からの評価とのギャップ\n         (2)   f 共感\n         (3) 香り深いコーヒーの淹れ方のマニュアル化",
+    "modelAnswer": "問２\n\n                       出題趣旨\n 昨今，デジタル化，脱炭素化などによる人々の社会意識の変容が経営環境を変化させたことで，“ブランド”，\n“人的資本経営”などの非財務情報に基づく戦略の策定が，経営課題としての重みを増してきている。\n 本問では，コーヒーチェーン店のブランド再構築による企業の成長や利益性向上を題材として，“人的資本”\nを強化することで，顧客へのサービス品質向上につなげるサービスプロフィットチェーンに基づく戦略の策定\nについての理解を問う。\n\n\n  設問               解答例・解答の要点                備考\n 設問１  (1)   a 従業員満足度\n               b 顧客満足度\n         (2)  機会 環境や倫理に対する社会意識の高まり\n        強み 環境に配慮した高品質なコーヒー豆の使用\n         (3)   c ・顧客がQ 社にもたらす利益\n         ・顧客生涯価値\n         (4)   d リピート率\n 設問２  (1)   e 自己評価と部下からの評価とのギャップ\n         (2)   f 共感\n         (3) 香り深いコーヒーの淹れ方のマニュアル化",
+    "explanation": "従業員の満足がサービス品質を通じて顧客満足や継続利用につながる流れを追う。SWOT分析では社会意識の変化という外部の機会と、自社の商品や調達にある強みを分ける。店長の自己評価と部下の評価の差を捉え、接客やコーヒー提供の改善を顧客への価値につなげて説明する。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_qs.pdf#page=10) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_ans.pdf#page=1)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2024-autumn-pm/page-03.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-04.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-05.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-10.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-11.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-12.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-13.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2024年度秋期 午後 問2 共通の記述ルール（公式問題PDF 3ページ）",
+      "応用情報技術者 2024年度秋期 午後 問2 共通の記述ルール（公式問題PDF 4ページ）",
+      "応用情報技術者 2024年度秋期 午後 問2 共通の記述ルール（公式問題PDF 5ページ）",
+      "応用情報技術者 2024年度秋期 午後 問2 本文・図表・設問（公式問題PDF 10ページ）",
+      "応用情報技術者 2024年度秋期 午後 問2 本文・図表・設問（公式問題PDF 11ページ）",
+      "応用情報技術者 2024年度秋期 午後 問2 本文・図表・設問（公式問題PDF 12ページ）",
+      "応用情報技術者 2024年度秋期 午後 問2 本文・図表・設問（公式問題PDF 13ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2024-autumn-pm/answer-q2-p1.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者 2024年度秋期 午後 問2 公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2024r06.html"
+    ],
+    "sourceAttribution": "出典：IPA 応用情報技術者 2024年度秋期 午後 問2。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "ap-2024a-pm-q3",
+    "exam": "ap",
+    "year": 2024,
+    "season": "autumn",
+    "session": "pm",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "アルゴリズム",
+    "topicTags": [
+      "素数を列挙するアルゴリズム"
+    ],
+    "difficulty": 5,
+    "question": "問3 素数を列挙するアルゴリズム。次の本文・図表を読み、設問に答えよ。",
+    "answer": "問３\n\n                       出題趣旨\n 素数は，数学における学問的な用途のほか，暗号処理の分野などで活用されている。\n                                                                  ふるい\n 本問では，素数を列挙するアルゴリズムの一つであるエラトステネスの篩 を題材として，素数の性質を利用\nした効率化の手法についての理解を問う。\n\n\n  設問                解答例・解答の要点                 備考\n  設問１  ア  N2\n  設問２  イ  isPrime[d]がtrue と等しい\n       ウ t＋d\n  設問３  エ  isPrime[(d－1)÷2]がtrue と等しい\n       オ (t－1)÷2\n       カ t＋2×d\n  設問４    (L1)  171\n             (L2)  13\n             (L3)  2",
+    "modelAnswer": "問３\n\n                       出題趣旨\n 素数は，数学における学問的な用途のほか，暗号処理の分野などで活用されている。\n                                                                  ふるい\n 本問では，素数を列挙するアルゴリズムの一つであるエラトステネスの篩 を題材として，素数の性質を利用\nした効率化の手法についての理解を問う。\n\n\n  設問                解答例・解答の要点                 備考\n  設問１  ア  N2\n  設問２  イ  isPrime[d]がtrue と等しい\n       ウ t＋d\n  設問３  エ  isPrime[(d－1)÷2]がtrue と等しい\n       オ (t－1)÷2\n       カ t＋2×d\n  設問４    (L1)  171\n             (L2)  13\n             (L3)  2",
+    "explanation": "エラトステネスの篩では、素数の倍数を除外する処理を配列の添字に対応させる。奇数だけを保存する方式では、数値tを配列上の位置に変換する式と、次の候補へ進む増分が変わる。条件式を空欄に埋めるだけでなく、ループごとの処理対象と終了条件を手で追うと、実行回数の差を確かめられる。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_qs.pdf#page=14) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_ans.pdf#page=2)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2024-autumn-pm/page-03.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-04.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-05.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-14.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-15.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-16.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-17.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2024年度秋期 午後 問3 共通の記述ルール（公式問題PDF 3ページ）",
+      "応用情報技術者 2024年度秋期 午後 問3 共通の記述ルール（公式問題PDF 4ページ）",
+      "応用情報技術者 2024年度秋期 午後 問3 共通の記述ルール（公式問題PDF 5ページ）",
+      "応用情報技術者 2024年度秋期 午後 問3 本文・図表・設問（公式問題PDF 14ページ）",
+      "応用情報技術者 2024年度秋期 午後 問3 本文・図表・設問（公式問題PDF 15ページ）",
+      "応用情報技術者 2024年度秋期 午後 問3 本文・図表・設問（公式問題PDF 16ページ）",
+      "応用情報技術者 2024年度秋期 午後 問3 本文・図表・設問（公式問題PDF 17ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2024-autumn-pm/answer-q3.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者 2024年度秋期 午後 問3 公式解答例（公式PDF 2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2024r06.html"
+    ],
+    "sourceAttribution": "出典：IPA 応用情報技術者 2024年度秋期 午後 問3。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "ap-2024a-pm-q4",
+    "exam": "ap",
+    "year": 2024,
+    "season": "autumn",
+    "session": "pm",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "システムアーキテクチャ",
+    "topicTags": [
+      "データ分析機能の配置"
+    ],
+    "difficulty": 5,
+    "question": "問4 データ分析機能の配置。次の本文・図表を読み、設問に答えよ。",
+    "answer": "問４\n\n                       出題趣旨\n 昨今，動画処理や機械学習に必要な大量の計算を，専用のハードウェアを用いて高速に行うことが一般的に\nなりつつある。\n 本問では，動画配信サービスの動画配信者向け機能を題材として，CPU やGPU を用いて計算を行った場合の処\n理時間の違いやネットワーク伝送を含めた機能の最適配置についての理解と設計能力を問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１(1) ア，イ，エ，オ\n         (2)  a  1.6\n 設問２(1)  b  50\n              c  10\n              d  4\n         (2)  e  0.8\n         (3) アウトプットデータと比較してインプットデータの量が多いから\n         (4) 素材データをAP サーバのSSD にキャッシュする。\n 設問３(1)  f ア\n              g イ\n         (2) 追加・更新のない過去のデータ",
+    "modelAnswer": "問４\n\n                       出題趣旨\n 昨今，動画処理や機械学習に必要な大量の計算を，専用のハードウェアを用いて高速に行うことが一般的に\nなりつつある。\n 本問では，動画配信サービスの動画配信者向け機能を題材として，CPU やGPU を用いて計算を行った場合の処\n理時間の違いやネットワーク伝送を含めた機能の最適配置についての理解と設計能力を問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１(1) ア，イ，エ，オ\n         (2)  a  1.6\n 設問２(1)  b  50\n              c  10\n              d  4\n         (2)  e  0.8\n         (3) アウトプットデータと比較してインプットデータの量が多いから\n         (4) 素材データをAP サーバのSSD にキャッシュする。\n 設問３(1)  f ア\n              g イ\n         (2) 追加・更新のない過去のデータ",
+    "explanation": "CPUとGPUの計算時間だけで配置を決めず、入力と出力の転送時間を含めて比較する。入力データの方が多いと、計算の高速化より転送量の削減が効く場合がある。素材データのSSDへのキャッシュや、更新されない過去データの扱いを、本文の利用頻度と更新条件に合わせて考える。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_qs.pdf#page=18) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_ans.pdf#page=2)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2024-autumn-pm/page-03.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-04.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-05.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-18.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-19.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-20.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-21.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-22.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2024年度秋期 午後 問4 共通の記述ルール（公式問題PDF 3ページ）",
+      "応用情報技術者 2024年度秋期 午後 問4 共通の記述ルール（公式問題PDF 4ページ）",
+      "応用情報技術者 2024年度秋期 午後 問4 共通の記述ルール（公式問題PDF 5ページ）",
+      "応用情報技術者 2024年度秋期 午後 問4 本文・図表・設問（公式問題PDF 18ページ）",
+      "応用情報技術者 2024年度秋期 午後 問4 本文・図表・設問（公式問題PDF 19ページ）",
+      "応用情報技術者 2024年度秋期 午後 問4 本文・図表・設問（公式問題PDF 20ページ）",
+      "応用情報技術者 2024年度秋期 午後 問4 本文・図表・設問（公式問題PDF 21ページ）",
+      "応用情報技術者 2024年度秋期 午後 問4 本文・図表・設問（公式問題PDF 22ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2024-autumn-pm/answer-q4-p2.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者 2024年度秋期 午後 問4 公式解答例（公式PDF 2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2024r06.html"
+    ],
+    "sourceAttribution": "出典：IPA 応用情報技術者 2024年度秋期 午後 問4。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "ap-2024a-pm-q5",
+    "exam": "ap",
+    "year": 2024,
+    "season": "autumn",
+    "session": "pm",
+    "qNumber": 5,
+    "type": "descriptive",
+    "category": "ネットワーク",
+    "topicTags": [
+      "セキュアWebゲートウェイサービスの導入"
+    ],
+    "difficulty": 5,
+    "question": "問5 セキュアWebゲートウェイサービスの導入。次の本文・図表を読み、設問に答えよ。",
+    "answer": "問５\n\n                       出題趣旨\n 企業内のネットワーク利用や管理において，クラウドサービスを利用したインターネットセキュリティ対策\nが増加してきている。\n  本問では，セキュアWeb ゲートウェイサービスの社内ネットワークへの適用検討を題材として，ネットワー\nクの変更設計や運用管理の知識を問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１(1)  a  NAPT\n         (2) ip1\n 設問２(1)  b  URL\n         (2) ウ\n 設問３(1)  c  ip8\n         (2)  d 業務サーバ\n  設問４     e プロキシサーバ 又は  ip3\n              f  443",
+    "modelAnswer": "問５\n\n                       出題趣旨\n 企業内のネットワーク利用や管理において，クラウドサービスを利用したインターネットセキュリティ対策\nが増加してきている。\n  本問では，セキュアWeb ゲートウェイサービスの社内ネットワークへの適用検討を題材として，ネットワー\nクの変更設計や運用管理の知識を問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１(1)  a  NAPT\n         (2) ip1\n 設問２(1)  b  URL\n         (2) ウ\n 設問３(1)  c  ip8\n         (2)  d 業務サーバ\n  設問４     e プロキシサーバ 又は  ip3\n              f  443",
+    "explanation": "社内プロキシ、業務サーバ、クラウド側ゲートウェイのどこを通信が通るかを図で追う。NAPTで変わる送信元と、サーバが実際に観測するアドレスを区別する。経路変更後も必要な通信が成立するように、接続先だけでなくプロキシの指定やHTTPSで用いるポートも対応付ける。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_qs.pdf#page=24) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_ans.pdf#page=3)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2024-autumn-pm/page-03.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-04.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-05.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-24.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-25.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-26.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-27.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-28.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2024年度秋期 午後 問5 共通の記述ルール（公式問題PDF 3ページ）",
+      "応用情報技術者 2024年度秋期 午後 問5 共通の記述ルール（公式問題PDF 4ページ）",
+      "応用情報技術者 2024年度秋期 午後 問5 共通の記述ルール（公式問題PDF 5ページ）",
+      "応用情報技術者 2024年度秋期 午後 問5 本文・図表・設問（公式問題PDF 24ページ）",
+      "応用情報技術者 2024年度秋期 午後 問5 本文・図表・設問（公式問題PDF 25ページ）",
+      "応用情報技術者 2024年度秋期 午後 問5 本文・図表・設問（公式問題PDF 26ページ）",
+      "応用情報技術者 2024年度秋期 午後 問5 本文・図表・設問（公式問題PDF 27ページ）",
+      "応用情報技術者 2024年度秋期 午後 問5 本文・図表・設問（公式問題PDF 28ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2024-autumn-pm/answer-q5.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者 2024年度秋期 午後 問5 公式解答例（公式PDF 3ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2024r06.html"
+    ],
+    "sourceAttribution": "出典：IPA 応用情報技術者 2024年度秋期 午後 問5。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "ap-2024a-pm-q6",
+    "exam": "ap",
+    "year": 2024,
+    "season": "autumn",
+    "session": "pm",
+    "qNumber": 6,
+    "type": "descriptive",
+    "category": "データベース",
+    "topicTags": [
+      "トレーディングカードの個人間売買サイト"
+    ],
+    "difficulty": 5,
+    "question": "問6 トレーディングカードの個人間売買サイト。次の本文・図表を読み、設問に答えよ。",
+    "answer": "問６\n\n                       出題趣旨\n 近年，個人間での商取引のニーズが増加しており，オンライン上でのフリーマーケットの場を提供するプラ\nットフォームが多数生み出されている。\n 本問では，トレーディングカードの個人間売買サイトの構築を題材として，E-R 図，SQL 文による再帰的な問\n合せの記述，及びインデックスの原理に関する理解を問う。\n\n\n  設問                解答例・解答の要点                 備考\n  設問１     a\n\n              b\n              c 追跡番号\n              d\n\n  設問２     e  WITH RECURSIVE\n              f  UNION ALL\n              g 出品.カテゴリID = 指定カテゴリ.カテゴリID\n              h  LIKE '%' || :キーワード || '%'\n 設問３(1) ア，ウ，オ\n         (2)  出品表   カテゴリID，出品価格\n       カテゴリ表 上位カテゴリID",
+    "modelAnswer": "問６\n\n                       出題趣旨\n 近年，個人間での商取引のニーズが増加しており，オンライン上でのフリーマーケットの場を提供するプラ\nットフォームが多数生み出されている。\n 本問では，トレーディングカードの個人間売買サイトの構築を題材として，E-R 図，SQL 文による再帰的な問\n合せの記述，及びインデックスの原理に関する理解を問う。\n\n\n  設問                解答例・解答の要点                 備考\n  設問１     a\n\n              b\n              c 追跡番号\n              d\n\n  設問２     e  WITH RECURSIVE\n              f  UNION ALL\n              g 出品.カテゴリID = 指定カテゴリ.カテゴリID\n              h  LIKE '%' || :キーワード || '%'\n 設問３(1) ア，ウ，オ\n         (2)  出品表   カテゴリID，出品価格\n       カテゴリ表 上位カテゴリID",
+    "explanation": "商品や出品と配送の関係を、業務上の対応関係からE-R図に落とし込む。階層カテゴリをたどる再帰問合せでは、最初に選ぶ行と親子を結ぶ条件を分けて読む。キーワード検索のLIKE条件と、検索条件に合わせたインデックスの列の並びは異なる検討点であり、対象表と条件を確認して答える。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_qs.pdf#page=30) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_ans.pdf#page=3)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2024-autumn-pm/page-03.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-04.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-05.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-30.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-31.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-32.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-33.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-34.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2024年度秋期 午後 問6 共通の記述ルール（公式問題PDF 3ページ）",
+      "応用情報技術者 2024年度秋期 午後 問6 共通の記述ルール（公式問題PDF 4ページ）",
+      "応用情報技術者 2024年度秋期 午後 問6 共通の記述ルール（公式問題PDF 5ページ）",
+      "応用情報技術者 2024年度秋期 午後 問6 本文・図表・設問（公式問題PDF 30ページ）",
+      "応用情報技術者 2024年度秋期 午後 問6 本文・図表・設問（公式問題PDF 31ページ）",
+      "応用情報技術者 2024年度秋期 午後 問6 本文・図表・設問（公式問題PDF 32ページ）",
+      "応用情報技術者 2024年度秋期 午後 問6 本文・図表・設問（公式問題PDF 33ページ）",
+      "応用情報技術者 2024年度秋期 午後 問6 本文・図表・設問（公式問題PDF 34ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2024-autumn-pm/answer-q6-p3.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者 2024年度秋期 午後 問6 公式解答例（公式PDF 3ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2024r06.html"
+    ],
+    "sourceAttribution": "出典：IPA 応用情報技術者 2024年度秋期 午後 問6。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "ap-2024a-pm-q7",
+    "exam": "ap",
+    "year": 2024,
+    "season": "autumn",
+    "session": "pm",
+    "qNumber": 7,
+    "type": "descriptive",
+    "category": "組込みシステム",
+    "topicTags": [
+      "スマートイヤホンの制御"
+    ],
+    "difficulty": 5,
+    "question": "問7 スマートイヤホンの制御。次の本文・図表を読み、設問に答えよ。",
+    "answer": "問７\n\n                       出題趣旨\n 近年，音声アシストやノイズキャンセルなどの様々な機能が搭載されたワイヤレスイヤホンが市販されてい\nる。\n  本問では，Bluetooth で接続して，音声アシスト機能，ノイズキャンセル機能付きのワイヤレスイヤホンを題\n材として，供給するクロックの周波数及び消費電力を考慮した最適なクロックの周波数を考察する能力，デッ\nドライン制御を行うときのタスクの優先度を決定する能力，及びクロックの供給を再開する条件についての理\n解を問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１(1)  a 音源再生機能\n                                           順不同\n              b 音声アシスト機能\n         (2) イ\n  設問２  オ\n 設問３(1)  f マイク\n              g スピーカー\n              h 特定語検出\n         (2) 特定語検出\n 設問４(1)  i 待ち状態\n         (2) クロックの再開に掛かる5 ミリ秒以下の周期で動くタスクがあるから",
+    "modelAnswer": "問７\n\n                       出題趣旨\n 近年，音声アシストやノイズキャンセルなどの様々な機能が搭載されたワイヤレスイヤホンが市販されてい\nる。\n  本問では，Bluetooth で接続して，音声アシスト機能，ノイズキャンセル機能付きのワイヤレスイヤホンを題\n材として，供給するクロックの周波数及び消費電力を考慮した最適なクロックの周波数を考察する能力，デッ\nドライン制御を行うときのタスクの優先度を決定する能力，及びクロックの供給を再開する条件についての理\n解を問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１(1)  a 音源再生機能\n                                           順不同\n              b 音声アシスト機能\n         (2) イ\n  設問２  オ\n 設問３(1)  f マイク\n              g スピーカー\n              h 特定語検出\n         (2) 特定語検出\n 設問４(1)  i 待ち状態\n         (2) クロックの再開に掛かる5 ミリ秒以下の周期で動くタスクがあるから",
+    "explanation": "各機能のタスクが期限内に終わるかを、クロック周波数と消費電力の両面から比較する。入力の検出、処理、音声出力の依存関係を整理してから優先度を決める。クロック停止から再開までの時間も待ち時間になるため、周期が短いタスクの存在と照らして停止の可否を判断する。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_qs.pdf#page=36) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_ans.pdf#page=4)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2024-autumn-pm/page-03.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-04.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-05.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-36.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-37.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-38.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-39.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-40.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2024年度秋期 午後 問7 共通の記述ルール（公式問題PDF 3ページ）",
+      "応用情報技術者 2024年度秋期 午後 問7 共通の記述ルール（公式問題PDF 4ページ）",
+      "応用情報技術者 2024年度秋期 午後 問7 共通の記述ルール（公式問題PDF 5ページ）",
+      "応用情報技術者 2024年度秋期 午後 問7 本文・図表・設問（公式問題PDF 36ページ）",
+      "応用情報技術者 2024年度秋期 午後 問7 本文・図表・設問（公式問題PDF 37ページ）",
+      "応用情報技術者 2024年度秋期 午後 問7 本文・図表・設問（公式問題PDF 38ページ）",
+      "応用情報技術者 2024年度秋期 午後 問7 本文・図表・設問（公式問題PDF 39ページ）",
+      "応用情報技術者 2024年度秋期 午後 問7 本文・図表・設問（公式問題PDF 40ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2024-autumn-pm/answer-q7.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者 2024年度秋期 午後 問7 公式解答例（公式PDF 4ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2024r06.html"
+    ],
+    "sourceAttribution": "出典：IPA 応用情報技術者 2024年度秋期 午後 問7。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "ap-2024a-pm-q8",
+    "exam": "ap",
+    "year": 2024,
+    "season": "autumn",
+    "session": "pm",
+    "qNumber": 8,
+    "type": "descriptive",
+    "category": "ソフトウェア開発",
+    "topicTags": [
+      "データ連携ハブのオブジェクト指向設計"
+    ],
+    "difficulty": 5,
+    "question": "問8 データ連携ハブのオブジェクト指向設計。次の本文・図表を読み、設問に答えよ。",
+    "answer": "問８\n\n                       出題趣旨\n 昨今，企業の情報システムを構成するソフトウェアは，顧客ニーズや多くの業務バリエーションに対応する\nために規模や複雑さが増大している。\n 本問では，データ連携ハブのためのソフトウェア設計を題材として，オブジェクト指向に関する理解とソフ\nトウェアの設計能力を問う。\n\n\n  設問                解答例・解答の要点                 備考\n  設問１     a カプセル化\n              b 継承\n              c 多相性\n 設問２(1)  d データ取得()\n         (2)  e オ\n              f ア\n         (3)  g  XML\n              h  HTTPS\n 設問３(1) 連携データ，コネクタ\n         (2) フォーマット",
+    "modelAnswer": "問８\n\n                       出題趣旨\n 昨今，企業の情報システムを構成するソフトウェアは，顧客ニーズや多くの業務バリエーションに対応する\nために規模や複雑さが増大している。\n 本問では，データ連携ハブのためのソフトウェア設計を題材として，オブジェクト指向に関する理解とソフ\nトウェアの設計能力を問う。\n\n\n  設問                解答例・解答の要点                 備考\n  設問１     a カプセル化\n              b 継承\n              c 多相性\n 設問２(1)  d データ取得()\n         (2)  e オ\n              f ア\n         (3)  g  XML\n              h  HTTPS\n 設問３(1) 連携データ，コネクタ\n         (2) フォーマット",
+    "explanation": "カプセル化、継承、多相性が、図のどの構造や呼出しに対応するかを確認する。取得先や出力形式の違いをクラスごとの責務として切り分けると、共通処理を保ちつつ追加に対応できる。設問のクラス名、操作名、通信方式は、データが流れる順序と対応付けて答える。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_qs.pdf#page=42) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_ans.pdf#page=4)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2024-autumn-pm/page-03.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-04.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-05.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-42.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-43.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-44.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-45.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2024年度秋期 午後 問8 共通の記述ルール（公式問題PDF 3ページ）",
+      "応用情報技術者 2024年度秋期 午後 問8 共通の記述ルール（公式問題PDF 4ページ）",
+      "応用情報技術者 2024年度秋期 午後 問8 共通の記述ルール（公式問題PDF 5ページ）",
+      "応用情報技術者 2024年度秋期 午後 問8 本文・図表・設問（公式問題PDF 42ページ）",
+      "応用情報技術者 2024年度秋期 午後 問8 本文・図表・設問（公式問題PDF 43ページ）",
+      "応用情報技術者 2024年度秋期 午後 問8 本文・図表・設問（公式問題PDF 44ページ）",
+      "応用情報技術者 2024年度秋期 午後 問8 本文・図表・設問（公式問題PDF 45ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2024-autumn-pm/answer-q8-p4.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者 2024年度秋期 午後 問8 公式解答例（公式PDF 4ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2024r06.html"
+    ],
+    "sourceAttribution": "出典：IPA 応用情報技術者 2024年度秋期 午後 問8。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "ap-2024a-pm-q9",
+    "exam": "ap",
+    "year": 2024,
+    "season": "autumn",
+    "session": "pm",
+    "qNumber": 9,
+    "type": "descriptive",
+    "category": "プロジェクトマネジメント",
+    "topicTags": [
+      "新サービスのプロジェクト計画"
+    ],
+    "difficulty": 5,
+    "question": "問9 新サービスのプロジェクト計画。次の本文・図表を読み、設問に答えよ。",
+    "answer": "問９\n\n                       出題趣旨\n  昨今，DX プロジェクトに取り組む企業が増えている。DX プロジェクトでは従来型のプロジェクト計画に加え\nて，新たな観点のプロジェクト計画が必要である。特に，新事業開発を実現するプロジェクトではビジネスや\n業務の変革の目標を設定した上で，ステークホルダの役割分担を定義することが不可欠である。\n 本問では，電気機器メーカーの新たなサービスを実現するプロジェクト計画の作成を題材として，プロジェ\nクトマネジメントの観点から，プロジェクト遂行に必要なチームの編成やリスクマネジメントに関する知識と\n応用能力を問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１(1) 消費者向けのヘルスケア市場に進出\n         (2) 健康増進に関わるサービスの提供\n 設問２(1) イ\n         (2) サービス開始までに仮説検証プロセスの反復が必要だから\n 設問３(1)  a 軽減\n              b 受容 又は 保有\n         (2) 各メンバーが本プロジェクトへの貢献についての認識に基づいて活動できるか\n      ら\n         (3)  c 顧客への体験価値の提供",
+    "modelAnswer": "問９\n\n                       出題趣旨\n  昨今，DX プロジェクトに取り組む企業が増えている。DX プロジェクトでは従来型のプロジェクト計画に加え\nて，新たな観点のプロジェクト計画が必要である。特に，新事業開発を実現するプロジェクトではビジネスや\n業務の変革の目標を設定した上で，ステークホルダの役割分担を定義することが不可欠である。\n 本問では，電気機器メーカーの新たなサービスを実現するプロジェクト計画の作成を題材として，プロジェ\nクトマネジメントの観点から，プロジェクト遂行に必要なチームの編成やリスクマネジメントに関する知識と\n応用能力を問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１(1) 消費者向けのヘルスケア市場に進出\n         (2) 健康増進に関わるサービスの提供\n 設問２(1) イ\n         (2) サービス開始までに仮説検証プロセスの反復が必要だから\n 設問３(1)  a 軽減\n              b 受容 又は 保有\n         (2) 各メンバーが本プロジェクトへの貢献についての認識に基づいて活動できるか\n      ら\n         (3)  c 顧客への体験価値の提供",
+    "explanation": "新しいヘルスケア事業で顧客にどのような体験価値を提供するのかを、チーム編成や役割分担の基準にする。仮説検証を反復する必要がある場面では、従来の製品開発との違いを具体的に説明する。リスクを軽減する対策と受容する判断を分け、各メンバーが目標への貢献を理解できる計画に結び付ける。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_qs.pdf#page=46) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_ans.pdf#page=5)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2024-autumn-pm/page-03.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-04.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-05.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-46.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-47.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-48.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-49.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-50.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2024年度秋期 午後 問9 共通の記述ルール（公式問題PDF 3ページ）",
+      "応用情報技術者 2024年度秋期 午後 問9 共通の記述ルール（公式問題PDF 4ページ）",
+      "応用情報技術者 2024年度秋期 午後 問9 共通の記述ルール（公式問題PDF 5ページ）",
+      "応用情報技術者 2024年度秋期 午後 問9 本文・図表・設問（公式問題PDF 46ページ）",
+      "応用情報技術者 2024年度秋期 午後 問9 本文・図表・設問（公式問題PDF 47ページ）",
+      "応用情報技術者 2024年度秋期 午後 問9 本文・図表・設問（公式問題PDF 48ページ）",
+      "応用情報技術者 2024年度秋期 午後 問9 本文・図表・設問（公式問題PDF 49ページ）",
+      "応用情報技術者 2024年度秋期 午後 問9 本文・図表・設問（公式問題PDF 50ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2024-autumn-pm/answer-q9.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者 2024年度秋期 午後 問9 公式解答例（公式PDF 5ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2024r06.html"
+    ],
+    "sourceAttribution": "出典：IPA 応用情報技術者 2024年度秋期 午後 問9。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "ap-2024a-pm-q10",
+    "exam": "ap",
+    "year": 2024,
+    "season": "autumn",
+    "session": "pm",
+    "qNumber": 10,
+    "type": "descriptive",
+    "category": "サービスマネジメント",
+    "topicTags": [
+      "サービスデスクの立上げ"
+    ],
+    "difficulty": 5,
+    "question": "問10 サービスデスクの立上げ。次の本文・図表を読み、設問に答えよ。",
+    "answer": "問10\n\n                       出題趣旨\n サービスデスクで行うサービス要求管理では，問合せなどのサービス要求への対応ノウハウを蓄積して，対\n応の品質や所要時間を改善することが重要である。サービスデスクの立上げ時には，これを適切に実施できる\nようにサービスデスクを設計する必要がある。\n 本問では，営業支援サービスのサービスデスク立上げを題材として，サービスデスクの立上げステップ策定，\nサービスデスクで行う要求管理のプロセス作成及びサービスデスクの要員工数算出に関する能力を問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１(1)  a 最初の連絡で回答\n         (2)  b サービスデスク用ドキュメントの説明\n 設問２(1)  c 問合せ対応ノウハウ集\n         (2)  目的  現在のサービス課の業務を極力サービスデスクに移管するため\n       調査内容 通常変更の中に標準変更にできるものがないかを調査する。\n  設問３  一次解決率\n  設問４    3",
+    "modelAnswer": "問10\n\n                       出題趣旨\n サービスデスクで行うサービス要求管理では，問合せなどのサービス要求への対応ノウハウを蓄積して，対\n応の品質や所要時間を改善することが重要である。サービスデスクの立上げ時には，これを適切に実施できる\nようにサービスデスクを設計する必要がある。\n 本問では，営業支援サービスのサービスデスク立上げを題材として，サービスデスクの立上げステップ策定，\nサービスデスクで行う要求管理のプロセス作成及びサービスデスクの要員工数算出に関する能力を問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１(1)  a 最初の連絡で回答\n         (2)  b サービスデスク用ドキュメントの説明\n 設問２(1)  c 問合せ対応ノウハウ集\n         (2)  目的  現在のサービス課の業務を極力サービスデスクに移管するため\n       調査内容 通常変更の中に標準変更にできるものがないかを調査する。\n  設問３  一次解決率\n  設問４    3",
+    "explanation": "サービスデスクで最初の連絡時に回答できるようにするには、既存の対応ノウハウと文書を引き継ぐ必要がある。通常変更のうち標準変更にできる作業を調べることで、移管可能な業務の範囲を検討できる。一次解決率の定義と要員工数の計算では、対象件数、所要時間、稼働できる時間の単位をそろえる。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_qs.pdf#page=52) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_ans.pdf#page=5)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2024-autumn-pm/page-03.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-04.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-05.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-52.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-53.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-54.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-55.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-56.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2024年度秋期 午後 問10 共通の記述ルール（公式問題PDF 3ページ）",
+      "応用情報技術者 2024年度秋期 午後 問10 共通の記述ルール（公式問題PDF 4ページ）",
+      "応用情報技術者 2024年度秋期 午後 問10 共通の記述ルール（公式問題PDF 5ページ）",
+      "応用情報技術者 2024年度秋期 午後 問10 本文・図表・設問（公式問題PDF 52ページ）",
+      "応用情報技術者 2024年度秋期 午後 問10 本文・図表・設問（公式問題PDF 53ページ）",
+      "応用情報技術者 2024年度秋期 午後 問10 本文・図表・設問（公式問題PDF 54ページ）",
+      "応用情報技術者 2024年度秋期 午後 問10 本文・図表・設問（公式問題PDF 55ページ）",
+      "応用情報技術者 2024年度秋期 午後 問10 本文・図表・設問（公式問題PDF 56ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2024-autumn-pm/answer-q10-p5.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者 2024年度秋期 午後 問10 公式解答例（公式PDF 5ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2024r06.html"
+    ],
+    "sourceAttribution": "出典：IPA 応用情報技術者 2024年度秋期 午後 問10。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "ap-2024a-pm-q11",
+    "exam": "ap",
+    "year": 2024,
+    "season": "autumn",
+    "session": "pm",
+    "qNumber": 11,
+    "type": "descriptive",
+    "category": "システム監査",
+    "topicTags": [
+      "チャットボット導入の開発計画の監査"
+    ],
+    "difficulty": 5,
+    "question": "問11 チャットボット導入の開発計画の監査。次の本文・図表を読み、設問に答えよ。",
+    "answer": "問11\n\n                       出題趣旨\n 昨今，監査対象とすべき重要なシステムにAI を応用したシステムを活用することが多くなってきている。監\n査人には，機械学習やディープラーニングなどの知識がますます求められている。\n  本問では，AI を応用したチャットボット導入における開発計画を題材として，開発計画の適切性について監\n査で確認すべきコントロール及び監査手続を検討する能力を問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１(1)  a 学習\n              b 手作業入力\n         (2)  c 目標レベル\n         (3)  d レビュー\n 設問２(1)  e イ\n         (2)  f 季節性のある製品\n              g 本番移行\n              h 受入テスト",
+    "modelAnswer": "問11\n\n                       出題趣旨\n 昨今，監査対象とすべき重要なシステムにAI を応用したシステムを活用することが多くなってきている。監\n査人には，機械学習やディープラーニングなどの知識がますます求められている。\n  本問では，AI を応用したチャットボット導入における開発計画を題材として，開発計画の適切性について監\n査で確認すべきコントロール及び監査手続を検討する能力を問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１(1)  a 学習\n              b 手作業入力\n         (2)  c 目標レベル\n         (3)  d レビュー\n 設問２(1)  e イ\n         (2)  f 季節性のある製品\n              g 本番移行\n              h 受入テスト",
+    "explanation": "学習データの準備、回答品質の目標、レビュー、受入テストを開発計画の流れに沿って確認する。製品の季節性によって試験データが偏らないかを考え、本番移行の前に必要な検証を行う。監査では技術の名称だけでなく、どの段階のコントロールが欠けると品質の問題を見逃すかを具体化する。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_qs.pdf#page=58) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_ans.pdf#page=6)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2024-autumn-pm/page-03.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-04.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-05.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-58.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-59.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-60.webp",
+      "/questions/ipa/ap/2024-autumn-pm/page-61.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2024年度秋期 午後 問11 共通の記述ルール（公式問題PDF 3ページ）",
+      "応用情報技術者 2024年度秋期 午後 問11 共通の記述ルール（公式問題PDF 4ページ）",
+      "応用情報技術者 2024年度秋期 午後 問11 共通の記述ルール（公式問題PDF 5ページ）",
+      "応用情報技術者 2024年度秋期 午後 問11 本文・図表・設問（公式問題PDF 58ページ）",
+      "応用情報技術者 2024年度秋期 午後 問11 本文・図表・設問（公式問題PDF 59ページ）",
+      "応用情報技術者 2024年度秋期 午後 問11 本文・図表・設問（公式問題PDF 60ページ）",
+      "応用情報技術者 2024年度秋期 午後 問11 本文・図表・設問（公式問題PDF 61ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2024-autumn-pm/answer-q11.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者 2024年度秋期 午後 問11 公式解答例（公式PDF 6ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_pm_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2024r06.html"
+    ],
+    "sourceAttribution": "出典：IPA 応用情報技術者 2024年度秋期 午後 問11。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  }
+]

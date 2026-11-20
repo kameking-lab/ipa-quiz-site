@@ -1,0 +1,142 @@
+[
+  {
+    "id": "db-2018h-pm2-q1",
+    "exam": "db",
+    "year": 2018,
+    "season": "spring",
+    "session": "pm2",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "データベース",
+    "topicTags": [
+      "データベース設計"
+    ],
+    "difficulty": 5,
+    "question": "問1 データベースの設計、実装",
+    "answer": "設問                 解答例・解答の要点                 備考\n設問１(1) ア精算期限，上司承認日，精査日，仮払金額，仮払金残高，支払実行日\n      イ申請番号，精算日，精算金額\n\n       (2)     項目                  NOT  格納長   索引の種類と構成列\n                 データ型\n       列名                         NULL  (バイト)   P  NU  NU  NU  U\n       外貨金額     DECIMAL(12,2)        N          8\n       支払先     NCHAR VARYING(100)    N         45\n       支払目的    NCHAR VARYING(1000)    Y         132\n       支払予定日   DATE              N          5                       1\n       支払番号    INTEGER            N          5                       2\n\n       (3) ウ申請種別 = '1' OR 申請種別 = '2' AND 支払先 IS NOT NULL\n       (4)  a  4,000\n            b  15\n            c  100,000\n            d  400\n 設問２    e  10\n            f  2\n            g  3\n            h  1\n            i  0.41\n設問３(1) ① 仮想CPU 数  8\n        クラス名   C4\n      ②更新ログの保存から障害発生までの間に更新がコミットされた場合\n       (2) ①  j  115,500\n                k  220,000\n                l  1,432,600（1,322,400 も可）\n                m  2,600（2,400 も可）\n                n  2,600（2,400 も可）\n      ②  処理名  経費伝票作成\n        対策内容  バッチPGM と同じ処理を行うストアドプロシジャを作成し，AP\n              から呼び出す。\n       (3) データベースを平日の8 時に起動し，23 時に停止する。",
+    "modelAnswer": "```text\n設問                 解答例・解答の要点                 備考\n設問１(1) ア精算期限，上司承認日，精査日，仮払金額，仮払金残高，支払実行日\n      イ申請番号，精算日，精算金額\n\n       (2)     項目                  NOT  格納長   索引の種類と構成列\n                 データ型\n       列名                         NULL  (バイト)   P  NU  NU  NU  U\n       外貨金額     DECIMAL(12,2)        N          8\n       支払先     NCHAR VARYING(100)    N         45\n       支払目的    NCHAR VARYING(1000)    Y         132\n       支払予定日   DATE              N          5                       1\n       支払番号    INTEGER            N          5                       2\n\n       (3) ウ申請種別 = '1' OR 申請種別 = '2' AND 支払先 IS NOT NULL\n       (4)  a  4,000\n            b  15\n            c  100,000\n            d  400\n 設問２    e  10\n            f  2\n            g  3\n            h  1\n            i  0.41\n設問３(1) ① 仮想CPU 数  8\n        クラス名   C4\n      ②更新ログの保存から障害発生までの間に更新がコミットされた場合\n       (2) ①  j  115,500\n                k  220,000\n                l  1,432,600（1,322,400 も可）\n                m  2,600（2,400 も可）\n                n  2,600（2,400 も可）\n      ②  処理名  経費伝票作成\n        対策内容  バッチPGM と同じ処理を行うストアドプロシジャを作成し，AP\n              から呼び出す。\n       (3) データベースを平日の8 時に起動し，23 時に停止する。\n```",
+    "explanation": "既存データと新システムの扱いを分け、設計上のキーと検索・集計処理への影響を確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2018-spring-pm2/page-03.webp",
+      "/questions/ipa/db/2018-spring-pm2/page-04.webp",
+      "/questions/ipa/db/2018-spring-pm2/page-05.webp",
+      "/questions/ipa/db/2018-spring-pm2/page-06.webp",
+      "/questions/ipa/db/2018-spring-pm2/page-07.webp",
+      "/questions/ipa/db/2018-spring-pm2/page-08.webp",
+      "/questions/ipa/db/2018-spring-pm2/page-09.webp",
+      "/questions/ipa/db/2018-spring-pm2/page-10.webp",
+      "/questions/ipa/db/2018-spring-pm2/page-11.webp",
+      "/questions/ipa/db/2018-spring-pm2/page-12.webp",
+      "/questions/ipa/db/2018-spring-pm2/page-13.webp",
+      "/questions/ipa/db/2018-spring-pm2/page-14.webp",
+      "/questions/ipa/db/2018-spring-pm2/page-15.webp",
+      "/questions/ipa/db/2018-spring-pm2/page-16.webp",
+      "/questions/ipa/db/2018-spring-pm2/page-17.webp",
+      "/questions/ipa/db/2018-spring-pm2/page-18.webp",
+      "/questions/ipa/db/2018-spring-pm2/page-19.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 2018年度春期 午後II 共通の解答要領（公式問題PDF 3ページ）",
+      "データベーススペシャリスト 2018年度春期 午後II 共通の解答要領（公式問題PDF 4ページ）",
+      "データベーススペシャリスト 2018年度春期 午後II 共通の解答要領（公式問題PDF 5ページ）",
+      "データベーススペシャリスト 2018年度春期 午後II 問1 本文・設問（公式問題PDF 6ページ）",
+      "データベーススペシャリスト 2018年度春期 午後II 問1 本文・設問（公式問題PDF 7ページ）",
+      "データベーススペシャリスト 2018年度春期 午後II 問1 本文・設問（公式問題PDF 8ページ）",
+      "データベーススペシャリスト 2018年度春期 午後II 問1 本文・設問（公式問題PDF 9ページ）",
+      "データベーススペシャリスト 2018年度春期 午後II 問1 本文・設問（公式問題PDF 10ページ）",
+      "データベーススペシャリスト 2018年度春期 午後II 問1 本文・設問（公式問題PDF 11ページ）",
+      "データベーススペシャリスト 2018年度春期 午後II 問1 本文・設問（公式問題PDF 12ページ）",
+      "データベーススペシャリスト 2018年度春期 午後II 問1 本文・設問（公式問題PDF 13ページ）",
+      "データベーススペシャリスト 2018年度春期 午後II 問1 本文・設問（公式問題PDF 14ページ）",
+      "データベーススペシャリスト 2018年度春期 午後II 問1 本文・設問（公式問題PDF 15ページ）",
+      "データベーススペシャリスト 2018年度春期 午後II 問1 本文・設問（公式問題PDF 16ページ）",
+      "データベーススペシャリスト 2018年度春期 午後II 問1 本文・設問（公式問題PDF 17ページ）",
+      "データベーススペシャリスト 2018年度春期 午後II 問1 本文・設問（公式問題PDF 18ページ）",
+      "データベーススペシャリスト 2018年度春期 午後II 問1 本文・設問（公式問題PDF 19ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/db/2018-spring-pm2/answer-q01-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "データベーススペシャリスト 2018年度春期 午後II 問1 公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_pm2_qs.pdf#page=6",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_pm2_ans.pdf#page=1",
+    "sourceAnswerKind": "example",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "sourceAttribution": "出典：IPA データベーススペシャリスト 2018年度春期 午後II 問1。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2018h-pm2-q2",
+    "exam": "db",
+    "year": 2018,
+    "season": "spring",
+    "session": "pm2",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "データベース",
+    "topicTags": [
+      "概念データモデル"
+    ],
+    "difficulty": 5,
+    "question": "問2 受注、製造指図、発注、入荷業務の概念データモデリング",
+    "answer": "設問                    解答例・解答の要点\n(1)  ア 中間仕掛品の製造を指図する\n   イ 構成部品を発注する\n(2)              サブタイプ\n                       受注品目   投入品目   製造品目   発注品目\n          品目\n          全体設計           ○\n          内製ユニット         ○            ○\n\n          購買ユニット         ○                   ○\n          中間仕掛品                ○      ○\n          構成部品                 ○            ○\n          専用すり合せ部品       ○            ○\n          汎用すり合せ部品       ○                   ○\n          ソフトウェア         ○            ○      ○\n          設置・試運転         ○\n\n(3)  あ 得意先\n   い 商談\n   う 入荷\n\n部門       取引先\n\n\n                     得意先あ   仕入先    品目\n        社員\n\n             契約先  出荷先\n                                     受注品目 投入品目 製造品目 発注品目\n\n\n        商談い                              在庫  品目構成\n\n\n\n         受注\n\n\n\n        受注明細\n\n           全体設計              製造指図\n           受注明細\n\n             ユニット              ユニット\n             受注明細              製造指図\n\n                すり合せ              すり合せ                          すり合せ                部品受注              部品製造                          部品設計                 明細                指図\n\n                   ソフトウ              ソフトウ\n                   ェア受注              ェア製造\n                    明細               指図\n\n                      設置・試              中間仕掛\n                      運転受注              品見込製\n                      明細                造指図\n\n                                           中間仕掛\n                                           品製造指\n                      設置・試                  図\n                      運転指示\n\n\n             発注\n\n\n                  ユニット  すり合せ  ソフトウ  構成部品 構成部品\n                  発注   部品発注  ェア発注  定量発注 都度発注\n             入荷う\n\n\n\n\n        所要量\n         展開\n\n(4)    a 上位部門コード\n       b 取引先区分\n       c 契約先フラグ，出荷先フラグ\n       d 案件名，案件内容，商談年月日，契約取引先コード，技術営業社員コード\n       e 全体設計内容\n       f 工程順\n       g すり合せ箇所\n       h 詳細仕様\n       i 開始予定年月日，終了予定年月日\n       j 受注#，受注明細#，専汎区分\n       k 受注#，受注明細#，指示年月日\n       l 受注#，受注明細#\n\nm 設計#\nn 受注#，受注明細#，納品方法\no 製造品目コード，製造指図数量，優先度\np 製造品目コード，製造指図数量\nq 入荷#，入荷年月日，入荷数量，発注#\nr 所要量明細#，投入品目コード，必要数量，引当済数量，発注#，製造#\n  ユニット発注（発注#，受注#，受注明細#，直納区分）\n追\n加 すり合せ部品発注（発注#，設計#，発注数量）\nす ソフトウェア発注（発注#，受注#，受注明細#，瑕疵担保期間）\nる\nサ 構成部品定量発注（発注#，発注品目コード，発注数量，発注時在庫数量）\nブ  構成部品都度発注（発注#，発注品目コード，発注数量，希望納入年月日）タ\nイ\nプ",
+    "modelAnswer": "```text\n設問                    解答例・解答の要点\n(1)  ア 中間仕掛品の製造を指図する\n   イ 構成部品を発注する\n(2)              サブタイプ\n                       受注品目   投入品目   製造品目   発注品目\n          品目\n          全体設計           ○\n          内製ユニット         ○            ○\n\n          購買ユニット         ○                   ○\n          中間仕掛品                ○      ○\n          構成部品                 ○            ○\n          専用すり合せ部品       ○            ○\n          汎用すり合せ部品       ○                   ○\n          ソフトウェア         ○            ○      ○\n          設置・試運転         ○\n\n(3)  あ 得意先\n   い 商談\n   う 入荷\n\n部門       取引先\n\n\n                     得意先あ   仕入先    品目\n        社員\n\n             契約先  出荷先\n                                     受注品目 投入品目 製造品目 発注品目\n\n\n        商談い                              在庫  品目構成\n\n\n\n         受注\n\n\n\n        受注明細\n\n           全体設計              製造指図\n           受注明細\n\n             ユニット              ユニット\n             受注明細              製造指図\n\n                すり合せ              すり合せ                          すり合せ                部品受注              部品製造                          部品設計                 明細                指図\n\n                   ソフトウ              ソフトウ\n                   ェア受注              ェア製造\n                    明細               指図\n\n                      設置・試              中間仕掛\n                      運転受注              品見込製\n                      明細                造指図\n\n                                           中間仕掛\n                                           品製造指\n                      設置・試                  図\n                      運転指示\n\n\n             発注\n\n\n                  ユニット  すり合せ  ソフトウ  構成部品 構成部品\n                  発注   部品発注  ェア発注  定量発注 都度発注\n             入荷う\n\n\n\n\n        所要量\n         展開\n\n(4)    a 上位部門コード\n       b 取引先区分\n       c 契約先フラグ，出荷先フラグ\n       d 案件名，案件内容，商談年月日，契約取引先コード，技術営業社員コード\n       e 全体設計内容\n       f 工程順\n       g すり合せ箇所\n       h 詳細仕様\n       i 開始予定年月日，終了予定年月日\n       j 受注#，受注明細#，専汎区分\n       k 受注#，受注明細#，指示年月日\n       l 受注#，受注明細#\n\nm 設計#\nn 受注#，受注明細#，納品方法\no 製造品目コード，製造指図数量，優先度\np 製造品目コード，製造指図数量\nq 入荷#，入荷年月日，入荷数量，発注#\nr 所要量明細#，投入品目コード，必要数量，引当済数量，発注#，製造#\n  ユニット発注（発注#，受注#，受注明細#，直納区分）\n追\n加 すり合せ部品発注（発注#，設計#，発注数量）\nす ソフトウェア発注（発注#，受注#，受注明細#，瑕疵担保期間）\nる\nサ 構成部品定量発注（発注#，発注品目コード，発注数量，発注時在庫数量）\nブ  構成部品都度発注（発注#，発注品目コード，発注数量，希望納入年月日）タ\nイ\nプ\n```",
+    "explanation": "各業務で作られるデータを区別し、各エンティティの識別子と対応する多重度を公式解答例の図で照合する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2018-spring-pm2/page-03.webp",
+      "/questions/ipa/db/2018-spring-pm2/page-04.webp",
+      "/questions/ipa/db/2018-spring-pm2/page-05.webp",
+      "/questions/ipa/db/2018-spring-pm2/page-21.webp",
+      "/questions/ipa/db/2018-spring-pm2/page-22.webp",
+      "/questions/ipa/db/2018-spring-pm2/page-23.webp",
+      "/questions/ipa/db/2018-spring-pm2/page-24.webp",
+      "/questions/ipa/db/2018-spring-pm2/page-25.webp",
+      "/questions/ipa/db/2018-spring-pm2/page-26.webp",
+      "/questions/ipa/db/2018-spring-pm2/page-27.webp",
+      "/questions/ipa/db/2018-spring-pm2/page-28.webp",
+      "/questions/ipa/db/2018-spring-pm2/page-29.webp",
+      "/questions/ipa/db/2018-spring-pm2/page-30.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 2018年度春期 午後II 共通の解答要領（公式問題PDF 3ページ）",
+      "データベーススペシャリスト 2018年度春期 午後II 共通の解答要領（公式問題PDF 4ページ）",
+      "データベーススペシャリスト 2018年度春期 午後II 共通の解答要領（公式問題PDF 5ページ）",
+      "データベーススペシャリスト 2018年度春期 午後II 問2 本文・設問（公式問題PDF 21ページ）",
+      "データベーススペシャリスト 2018年度春期 午後II 問2 本文・設問（公式問題PDF 22ページ）",
+      "データベーススペシャリスト 2018年度春期 午後II 問2 本文・設問（公式問題PDF 23ページ）",
+      "データベーススペシャリスト 2018年度春期 午後II 問2 本文・設問（公式問題PDF 24ページ）",
+      "データベーススペシャリスト 2018年度春期 午後II 問2 本文・設問（公式問題PDF 25ページ）",
+      "データベーススペシャリスト 2018年度春期 午後II 問2 本文・設問（公式問題PDF 26ページ）",
+      "データベーススペシャリスト 2018年度春期 午後II 問2 本文・設問（公式問題PDF 27ページ）",
+      "データベーススペシャリスト 2018年度春期 午後II 問2 本文・設問（公式問題PDF 28ページ）",
+      "データベーススペシャリスト 2018年度春期 午後II 問2 本文・設問（公式問題PDF 29ページ）",
+      "データベーススペシャリスト 2018年度春期 午後II 問2 本文・設問（公式問題PDF 30ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/db/2018-spring-pm2/answer-q02-p02.webp",
+      "/questions/ipa/db/2018-spring-pm2/answer-q02-p03.webp",
+      "/questions/ipa/db/2018-spring-pm2/answer-q02-p04.webp"
+    ],
+    "answerImageAltTexts": [
+      "データベーススペシャリスト 2018年度春期 午後II 問2 公式解答例（公式PDF 2ページ）",
+      "データベーススペシャリスト 2018年度春期 午後II 問2 公式解答例（公式PDF 3ページ）",
+      "データベーススペシャリスト 2018年度春期 午後II 問2 公式解答例（公式PDF 4ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_pm2_qs.pdf#page=21",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_pm2_ans.pdf#page=2",
+    "sourceAnswerKind": "example",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "sourceAttribution": "出典：IPA データベーススペシャリスト 2018年度春期 午後II 問2。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  }
+]

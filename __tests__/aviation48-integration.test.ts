@@ -12,6 +12,8 @@ import { defaultPracticeSession, parsePracticeSession } from "@/lib/questions/pr
 import { findQuestionByRoute, parseQuestionRoute, questionPagePath } from "@/lib/seo/question-url";
 import { searchQuestions } from "@/lib/search/question-index";
 import { buildQuestionJsonLd } from "@/lib/seo/question-jsonld";
+import type { Question } from "@/lib/questions/types";
+import { expectNichimuArchiveUrl } from "./fixtures/nichimu-archive";
 
 const EXAM = "koku-toku" as const;
 const NIC = "https://www.nichimu.or.jp/";
@@ -20,23 +22,23 @@ const papers = [
   ["february", "houki", 1, 12], ["february", "kogaku", 13, 24],
   ["june", "houki", 1, 12], ["june", "kogaku", 13, 24],
 ] as const;
+const is2026Paper = (q: Question) => q.year === 2026 && (q.season === "february" || q.season === "june");
 
 describe("aviation special 48 product integration", () => {
-  it("loads exactly the same 48 playable records eagerly and lazily", async () => {
+  it("loads the same public pool eagerly and lazily, including all 48 reviewed 2026 records", async () => {
     expect(getRegisteredExamCodes()).toContain(EXAM);
     const lazy = await getQuestionsForExam(EXAM);
     const eager = ALL_QUESTIONS.filter((q) => q.exam === EXAM);
-    expect(QUESTIONS_BY_EXAM[EXAM]).toHaveLength(48);
-    expect(lazy).toHaveLength(48);
-    expect(eager).toHaveLength(48);
-    expect(new Set(lazy.map((q) => q.id)).size).toBe(48);
+    expect(QUESTIONS_BY_EXAM[EXAM]).toEqual(eager);
+    expect(lazy.filter(is2026Paper)).toHaveLength(48);
+    expect(new Set(lazy.map((q) => q.id)).size).toBe(lazy.length);
     expect(lazy).toEqual(eager);
     expect(lazy.every(isPracticeReadyQuestion)).toBe(true);
     expect((await getQuestionsForExam("ap")).every((q) => q.exam !== EXAM)).toBe(true);
   });
 
   it("preserves four official paper boundaries, choice numbers, and keys through shuffle", async () => {
-    const pool = await getQuestionsForExam(EXAM);
+    const pool = (await getQuestionsForExam(EXAM)).filter(is2026Paper);
     expect(defaultPracticeSession(EXAM)).toBe("houki");
     expect(parsePracticeSession("kogaku")).toBe("kogaku");
     expect(usesNumberedChoices(EXAM)).toBe(true);
@@ -60,7 +62,7 @@ describe("aviation special 48 product integration", () => {
   });
 
   it("resolves 48 canonical page routes and 48 search facet hits", async () => {
-    const pool = await getQuestionsForExam(EXAM);
+    const pool = (await getQuestionsForExam(EXAM)).filter(is2026Paper);
     const paths = pool.map(questionPagePath);
     expect(new Set(paths).size).toBe(48);
     for (const [index, url] of paths.entries()) {
@@ -72,19 +74,20 @@ describe("aviation special 48 product integration", () => {
         session: q.session, qNumber: q.qNumber });
       expect(findQuestionByRoute(pool, parts)?.id).toBe(q.id);
     }
-    const result = await searchQuestions({ exam: EXAM, limit: 1 });
+    const result = await searchQuestions({ exam: EXAM, year: 2026, limit: 1 });
     expect(result.total).toBe(48);
     expect(result.facets.exam[EXAM]).toBe(48);
     expect(result.hits[0]?.exam).toBe(EXAM);
   });
 
   it("keeps source attribution, original figure URLs and non-IPA JSON-LD for all records", async () => {
-    const pool = await getQuestionsForExam(EXAM);
+    const pool = (await getQuestionsForExam(EXAM)).filter(is2026Paper);
     let figures = 0;
     for (const q of pool) {
       expect(q.license).toBe("NICHIMU-educational-reuse");
-      expect(q.sourcePdfUrl).toMatch(/^https:\/\/www\.nichimu\.or\.jp\//);
-      expect(q.sourceAnswerUrl).toMatch(/^https:\/\/www\.nichimu\.or\.jp\//);
+      const edition = `2026-${q.season === "february" ? "02" : "06"}`;
+      expectNichimuArchiveUrl(q.sourcePdfUrl, q.exam, edition);
+      expectNichimuArchiveUrl(q.sourceAnswerUrl, q.exam, edition);
       expect(q.sourceAttribution).toContain("日本無線協会");
       if (q.session === "houki") expect(q.lawReferenceDate).toMatch(/^2026-(02|06)-01$/);
       if (q.hasImage) {

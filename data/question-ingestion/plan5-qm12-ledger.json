@@ -1,0 +1,308 @@
+{
+  "lane": "qm-12",
+  "branch": "cx/kako-5y12-20261118",
+  "baseMain": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "previousLedger": "data/question-ingestion/plan5-ql12-ledger.json",
+  "checkedAt": "2026-11-18",
+  "newQuestionCount": 0,
+  "importedQuestionCount": 0,
+  "snapshots": {
+    "main": {
+      "ref": "origin/main",
+      "commit": "9e3182117ce198aee83addcf405afd2316567fcd"
+    },
+    "primary": {
+      "ref": "cx/kako-5y12-20261118",
+      "commit": "a28f9ad847f6743575804cfdcab0dc4edbb691f9"
+    },
+    "helper12": {
+      "ref": "cx/kako-5yh12-20261118",
+      "commit": "5d21003f90fad3ee167fc1103ab9960b79dad368"
+    },
+    "specified": {
+      "ref": "cx/kako-explain3-20261117",
+      "commit": "03b7a5f895cf2f528a669cc3c3a033df5200ab57"
+    },
+    "helper3": {
+      "ref": "cx/kako-5yh3-20261118",
+      "commit": "52d385b19f2cc4860f62255caf2ad4f72808ab89"
+    }
+  },
+  "entries": [
+    {
+      "jobId": "PLAN5-012",
+      "index": 11,
+      "status": "primary-complete",
+      "source": "primary",
+      "evidenceLedger": "data/question-ingestion/plan5-qb12-ledger.json",
+      "dataPath": "data/questions/sc/official-2021-autumn-pm1-qb12.json"
+    },
+    {
+      "jobId": "PLAN5-026",
+      "index": 25,
+      "status": "primary-complete",
+      "source": "primary",
+      "evidenceLedger": "data/question-ingestion/plan5-qb12-ledger.json",
+      "dataPath": "data/questions/sa/official-2025-spring-pm1-qb12.json"
+    },
+    {
+      "jobId": "PLAN5-040",
+      "index": 39,
+      "status": "primary-complete",
+      "source": "primary",
+      "evidenceLedger": "data/question-ingestion/plan5-qb12-ledger.json",
+      "dataPath": "data/questions/ap/official-2023-autumn-pm-qb12.json"
+    },
+    {
+      "jobId": "PLAN5-054",
+      "index": 53,
+      "status": "primary-complete",
+      "source": "primary",
+      "evidenceLedger": "data/question-ingestion/plan5-qb12-ledger.json",
+      "dataPath": "data/questions/st/official-2021-spring-pm1-qb12.json"
+    },
+    {
+      "jobId": "PLAN5-068",
+      "index": 67,
+      "status": "primary-complete",
+      "source": "primary",
+      "evidenceLedger": "data/question-ingestion/plan5-qb12-ledger.json",
+      "dataPath": "data/questions/sm/official-2024-spring-pm1-qb12.json"
+    },
+    {
+      "jobId": "PLAN5-082",
+      "index": 81,
+      "status": "primary-complete",
+      "source": "primary",
+      "evidenceLedger": "data/question-ingestion/plan5-qb12-ledger.json",
+      "dataPath": "data/questions/pm/official-2024-autumn-pm2-qb12.json"
+    },
+    {
+      "jobId": "PLAN5-096",
+      "index": 95,
+      "status": "primary-complete",
+      "source": "primary",
+      "evidenceLedger": "data/question-ingestion/plan5-qb12-ledger.json",
+      "dataPath": "data/questions/db/official-2022-autumn-pm2-qb12.json"
+    },
+    {
+      "jobId": "PLAN5-110",
+      "index": 109,
+      "status": "primary-complete",
+      "source": "primary",
+      "evidenceLedger": "data/question-ingestion/plan5-qc12-ledger.json",
+      "dataPath": "data/questions/ip/official-2026-cbt-am-qc12.json"
+    },
+    {
+      "jobId": "PLAN5-124",
+      "index": 123,
+      "status": "official-scoring-verified",
+      "source": "primary",
+      "evidenceLedger": "data/question-ingestion/plan5-qc12-ledger.json"
+    },
+    {
+      "jobId": "PLAN5-138",
+      "index": 137,
+      "status": "primary-complete",
+      "source": "primary",
+      "evidenceLedger": "data/question-ingestion/plan5-qd12-ledger.json",
+      "dataPath": "data/questions/shika-ishi/official-2022-a-qd12.json"
+    },
+    {
+      "jobId": "PLAN5-152",
+      "index": 151,
+      "status": "primary-complete",
+      "source": "primary",
+      "evidenceLedger": "data/question-ingestion/plan5-qd12-ledger.json",
+      "dataPath": "data/questions/hokenshi/official-2023-am-qd12.json"
+    },
+    {
+      "jobId": "PLAN5-166",
+      "index": 165,
+      "status": "official-scoring-verified",
+      "source": "primary",
+      "evidenceLedger": "data/question-ingestion/plan5-qd12-ledger.json"
+    },
+    {
+      "jobId": "PLAN5-180",
+      "index": 179,
+      "status": "primary-complete",
+      "source": "primary",
+      "evidenceLedger": "data/question-ingestion/plan5-qe12-ledger.json",
+      "manifest": "data/questions/rigaku-ryohoshi/2023-pm-official-sources.json",
+      "reviewLedger": "data/question-ingestion/plan5-ql12-ledger.json"
+    },
+    {
+      "jobId": "PLAN5-194",
+      "index": 193,
+      "status": "primary-complete",
+      "source": "primary",
+      "evidenceLedger": "data/question-ingestion/plan5-qe12-ledger.json",
+      "manifest": "data/questions/shino-kunrenshi/2026-pm-branch-sources.json",
+      "reviewLedger": "data/question-ingestion/plan5-ql12-ledger.json"
+    },
+    {
+      "jobId": "PLAN5-208",
+      "index": 207,
+      "status": "primary-complete",
+      "source": "primary",
+      "evidenceLedger": "data/question-ingestion/plan5-qe12-ledger.json",
+      "manifest": "data/questions/yakuzaishi/2026-day2-3-sources.json",
+      "reviewLedger": "data/question-ingestion/plan5-ql12-ledger.json"
+    },
+    {
+      "jobId": "PLAN5-222",
+      "index": 221,
+      "status": "primary-complete",
+      "source": "primary",
+      "evidenceLedger": "data/question-ingestion/plan5-qe12-ledger.json",
+      "manifest": "data/questions/yakuzaishi/2023-day1-2-sources.json",
+      "reviewLedger": "data/question-ingestion/plan5-ql12-ledger.json"
+    },
+    {
+      "jobId": "PLAN5-236",
+      "index": 235,
+      "status": "primary-complete",
+      "source": "primary",
+      "evidenceLedger": "data/question-ingestion/plan5-qe12-ledger.json",
+      "manifest": "data/questions/rinsho-kogishi/38-pm-plan5-sources.json",
+      "reviewLedger": "data/question-ingestion/plan5-ql12-ledger.json"
+    },
+    {
+      "jobId": "PLAN5-250",
+      "index": 249,
+      "status": "primary-complete",
+      "source": "primary",
+      "evidenceLedger": "data/question-ingestion/plan5-qf12-ledger.json",
+      "manifest": "data/questions/ahaki/ahaki-hari-kyu-2024-pm-sources.json",
+      "reviewLedger": "data/question-ingestion/plan5-ql12-ledger.json"
+    },
+    {
+      "jobId": "PLAN5-264",
+      "index": 263,
+      "status": "primary-complete",
+      "source": "primary",
+      "evidenceLedger": "data/question-ingestion/plan5-qf12-ledger.json",
+      "manifest": "data/questions/shinrishi/2024-pm-sources.json"
+    },
+    {
+      "jobId": "PLAN5-278",
+      "index": 277,
+      "status": "primary-complete",
+      "source": "primary",
+      "evidenceLedger": "data/question-ingestion/plan5-qj12-ledger.json",
+      "manifest": "data/questions/gyosei/2021-sources.json"
+    },
+    {
+      "jobId": "PLAN5-292",
+      "index": 291,
+      "status": "primary-complete",
+      "source": "primary",
+      "evidenceLedger": "data/question-ingestion/plan5-qj12-ledger.json",
+      "manifest": "data/questions/denken3/2022-lower-power-sources.json"
+    },
+    {
+      "jobId": "PLAN5-306",
+      "index": 305,
+      "status": "primary-complete",
+      "source": "primary",
+      "evidenceLedger": "data/question-ingestion/plan5-qk12-ledger.json",
+      "dataset": "data/questions/denko1/reviewed/20250401-q01-50.json"
+    },
+    {
+      "jobId": "PLAN5-320",
+      "index": 319,
+      "status": "primary-complete",
+      "source": "primary",
+      "evidenceLedger": "data/question-ingestion/plan5-qk12-ledger.json",
+      "dataset": "data/questions/kenchikushi1/2022-gakka-i-ii.json"
+    },
+    {
+      "jobId": "PLAN5-334",
+      "index": 333,
+      "status": "helper-complete",
+      "source": "helper12",
+      "evidenceLedger": "data/question-ingestion/plan5-yc12-ledger.json",
+      "integrationLedger": "data/question-ingestion/plan5-ye12-ledger.json"
+    },
+    {
+      "jobId": "PLAN5-348",
+      "index": 347,
+      "status": "existing-branch",
+      "source": "specified",
+      "evidenceLedger": "data/question-ingestion/plan5-ye12-ledger.json",
+      "evidenceCommit": "5d21003f90fad3ee167fc1103ab9960b79dad368",
+      "dataset": "data/questions/denken2/2024-power.json",
+      "originalQuestionCount": 7,
+      "answerSlots": 35
+    },
+    {
+      "jobId": "PLAN5-362",
+      "index": 361,
+      "status": "helper-complete",
+      "source": "helper12",
+      "evidenceLedger": "data/question-ingestion/plan5-yb12-ledger.json"
+    },
+    {
+      "jobId": "PLAN5-376",
+      "index": 375,
+      "status": "existing-branch-corrected",
+      "source": "helper3",
+      "evidenceLedger": "docs/replenish/plan5-ye3-ledger.json",
+      "dataset": "data/questions/denken1/native-2022-law.json",
+      "originalQuestionCount": 6,
+      "answerSlots": 36,
+      "correctionCommit": "df80d7944fc3fbfc2824f4e1aef43162eadb7ab1"
+    },
+    {
+      "jobId": "PLAN5-390",
+      "index": 389,
+      "status": "helper-complete",
+      "source": "helper12",
+      "evidenceLedger": "data/question-ingestion/plan5-yb12-ledger.json",
+      "reviewLedger": "data/question-ingestion/plan5-yd12-ledger.json",
+      "integrationLedger": "data/question-ingestion/plan5-ye12-ledger.json"
+    },
+    {
+      "jobId": "PLAN5-404",
+      "index": 403,
+      "status": "helper-complete",
+      "source": "helper12",
+      "evidenceLedger": "data/question-ingestion/plan5-yb12-ledger.json",
+      "reviewLedger": "data/question-ingestion/plan5-yd12-ledger.json"
+    },
+    {
+      "jobId": "PLAN5-418",
+      "index": 417,
+      "status": "helper-complete",
+      "source": "helper12",
+      "evidenceLedger": "data/question-ingestion/plan5-ya12-ledger.json",
+      "dataPath": "data/questions/fp1/applied-2024-may.json",
+      "reviewLedger": "data/question-ingestion/plan5-yd12-ledger.json"
+    },
+    {
+      "jobId": "PLAN5-432",
+      "index": 431,
+      "status": "existing-main",
+      "source": "main",
+      "evidenceLedger": "data/question-ingestion/plan5-qe12-ledger.json",
+      "evidenceCommit": "a28f9ad847f6743575804cfdcab0dc4edbb691f9",
+      "dataset": "data/questions/batch1/kyusui.json",
+      "originalQuestionCount": 40,
+      "scoredQuestionCount": 39,
+      "allCorrectQuestionNumbers": [
+        18
+      ],
+      "officialScoringRecord": "data/questions/batch1/excluded.json"
+    },
+    {
+      "jobId": "PLAN5-446",
+      "index": 445,
+      "status": "helper-complete",
+      "source": "helper12",
+      "evidenceLedger": "data/question-ingestion/plan5-ya12-ledger.json",
+      "dataPath": "data/questions/sekou-kenchiku2/2023-early.json",
+      "reviewLedger": "data/question-ingestion/plan5-yd12-ledger.json"
+    }
+  ]
+}

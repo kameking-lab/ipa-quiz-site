@@ -17,14 +17,14 @@ describe("mock query and return context", () => {
     render(<MockExamLanding examFromQuery={exam} />);
     expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("未対応");
     expect(screen.queryByRole("button", { name: "模試を開始する" })).not.toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "資格を選ぶ" })).toHaveAttribute("href", "/#choose-qualification");
+    expect(screen.getByRole("link", { name: "資格を選ぶ" })).toHaveAttribute("href", "/search");
   });
   it.each(Object.keys(MOCK_EXAM_CONFIGS) as MockExamCode[])("%s uses its own timing and return destination", (exam) => {
     const config = MOCK_EXAM_CONFIGS[exam];
     render(<MockExamLanding examFromQuery={exam} returnTo={`/${exam}/2024-cbt`} />);
     expect(screen.getByRole("heading", { level: 2, name: config.label })).toBeInTheDocument();
     expect(screen.getByText(`${config.questions}問`)).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "← 試験ページに戻る" })).toHaveAttribute("href", `/${exam}/2024-cbt`);
+    expect(screen.getByRole("navigation", { name: /パンくず/ }).querySelector("a")).toHaveAttribute("href", `/${exam}/2024-cbt`);
   });
   it("updates query context on client navigation, including an unsupported detour", () => {
     const view = render(<MockExamLanding examFromQuery="ap" />);
@@ -35,7 +35,7 @@ describe("mock query and return context", () => {
   });
   it.each(["https://example.com", "//example.com", "/\\example.com", "/quiz?exam=ap"])("rejects unsafe or looping returnTo %s", (returnTo) => {
     render(<MockExamLanding examFromQuery="ip" returnTo={returnTo} />);
-    expect(screen.getByRole("link", { name: "← 試験ページに戻る" })).toHaveAttribute("href", "/ip");
+    expect(screen.getByRole("navigation", { name: /パンくず/ }).querySelector("a")).toHaveAttribute("href", "/ip");
   });
   it("keeps the existing explicit AP default when no exam was specified", () => {
     render(<MockExamLanding />);

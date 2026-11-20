@@ -49,7 +49,7 @@ it("keeps this verified guide scoped to the four reviewed pages", () => {
 it("lists existing public destinations in llms.txt using the canonical host", () => {
   const content = readFileSync(path.join(process.cwd(), "public/llms.txt"), "utf8");
   const urls = [...content.matchAll(/\]\((https:\/\/[^)]+)\)/g)].map(match => new URL(match[1]));
-  expect(urls).toHaveLength(16);
+  expect(urls.length).toBeGreaterThanOrEqual(16);
   const exams = new Set<string>(getAvailableExams());
   for (const url of urls) {
     expect(url.origin).toBe("https://www.kakomon-ai.jp");

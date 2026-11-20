@@ -1,0 +1,502 @@
+{
+  "jobId": "PLAN5-174",
+  "index": 173,
+  "exam": "rigaku-ryohoshi",
+  "year": 2026,
+  "round": 61,
+  "session": "pm",
+  "status": "completed",
+  "officialQuestionCount": 100,
+  "existingQuestionCount": 74,
+  "importedQuestionCount": 12,
+  "newQuestionCount": 14,
+  "importedChoiceExplanationCount": 60,
+  "newChoiceExplanationCount": 70,
+  "sources": [
+    {
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08b_01.pdf",
+      "sha256": "3b9293fdaa366011c232f607e0b98d74d1a1f993814c0033c9c1fbc0c31dcaf3",
+      "pages": 52
+    },
+    {
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08b_02.pdf",
+      "sha256": "ec4ab7f44cfe372911dd57fbdf2523cf302b5ca97a03d6d312629984eca96c44",
+      "pages": 12
+    },
+    {
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+      "sha256": "932e4c26a12b67a8b4cc745abfc6ab2fe191069a7e58bf472d2f0ba73da75904",
+      "pages": 1
+    }
+  ],
+  "receipts": [
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q1",
+      "qNumber": 1,
+      "physicalPage": 7,
+      "officialAnswerColumns": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "originalTextSha256": "d5b650ab933232a52954cf8126a1b03556850a9b143f2e7ffcbe5ed90abd2153"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q2",
+      "qNumber": 2,
+      "sourceCommit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "sourcePath": "data/questions/rigaku-ryohoshi/2026-am-q9-pm-q2-q6-q8-q9-reviewed.json",
+      "officialAnswerColumns": [
+        "5"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q3",
+      "qNumber": 3,
+      "physicalPage": 9,
+      "officialAnswerColumns": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "originalTextSha256": "e7860baa5a97850309b9e6cba4d569edd5fbd8743eda095199161e460da83133"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q4",
+      "qNumber": 4,
+      "sourceCommit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "sourcePath": "data/questions/rigaku-ryohoshi/2025-2026-primary-next5-20261013.json",
+      "officialAnswerColumns": [
+        "4"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q5",
+      "qNumber": 5,
+      "physicalPage": 11,
+      "officialAnswerColumns": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "originalTextSha256": "a5cc533e69d75f388105a78038cf25bc4eab4798d00c8802e364d0f7ca269bfb"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q6",
+      "qNumber": 6,
+      "sourceCommit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "sourcePath": "data/questions/rigaku-ryohoshi/2026-am-q9-pm-q2-q6-q8-q9-reviewed.json",
+      "officialAnswerColumns": [
+        "1"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q7",
+      "qNumber": 7,
+      "physicalPage": 12,
+      "officialAnswerColumns": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "originalTextSha256": "990cc0b3b50d8ed0be7d7681321789d800d33a75667b7ef00e8bc7dcaffa6718"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q8",
+      "qNumber": 8,
+      "sourceCommit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "sourcePath": "data/questions/rigaku-ryohoshi/2026-am-q9-pm-q2-q6-q8-q9-reviewed.json",
+      "officialAnswerColumns": [
+        "3"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q9",
+      "qNumber": 9,
+      "sourceCommit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "sourcePath": "data/questions/rigaku-ryohoshi/2026-am-q9-pm-q2-q6-q8-q9-reviewed.json",
+      "officialAnswerColumns": [
+        "1"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q10",
+      "qNumber": 10,
+      "physicalPage": 14,
+      "officialAnswerColumns": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "originalTextSha256": "3e5b4c29ab1ea348aeeb09d65cf7b7575706eda7f2555f2fc851173b8358493c"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q12",
+      "qNumber": 12,
+      "physicalPage": 15,
+      "officialAnswerColumns": [
+        "34"
+      ],
+      "requiredSelections": 2,
+      "originalTextSha256": "35ce1bcb676716fa655631e0298074ffd187494c43935c634ef1df3f57ba4906"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q15",
+      "qNumber": 15,
+      "sourceCommit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "sourcePath": "data/questions/rigaku-ryohoshi/2025-2026-primary-next5-20261013.json",
+      "officialAnswerColumns": [
+        "1"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q21",
+      "qNumber": 21,
+      "physicalPage": 20,
+      "officialAnswerColumns": [
+        "15"
+      ],
+      "requiredSelections": 2,
+      "originalTextSha256": "915a71f2c698523657f93dd8fe67459d9cedc5abd7d57dd86e8dd5ec8f5c1baa"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q22",
+      "qNumber": 22,
+      "physicalPage": 20,
+      "officialAnswerColumns": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "originalTextSha256": "e69b440807544e01b786d1c42d87d2d72b2ea9600d8ee9d8f7bbd69664072a78"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q23",
+      "qNumber": 23,
+      "physicalPage": 21,
+      "officialAnswerColumns": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "originalTextSha256": "52f3aa0b452dc1a3356c2dc1adfbfb34bbb43f270f1408fa3237c92f4840849a"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q25",
+      "qNumber": 25,
+      "physicalPage": 21,
+      "officialAnswerColumns": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "originalTextSha256": "15d483770eab5b70a49c5d9afc7302cf4cfe01b874a800aa9cdc1cf356737ade"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q26",
+      "qNumber": 26,
+      "sourceCommit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "sourcePath": "data/questions/rigaku-ryohoshi/2026-saved-adoption8.json",
+      "officialAnswerColumns": [
+        "5"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q30",
+      "qNumber": 30,
+      "sourceCommit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "sourcePath": "data/questions/rigaku-ryohoshi/2026-clinical-key3-ready.json",
+      "officialAnswerColumns": [
+        "4",
+        "5"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q33",
+      "qNumber": 33,
+      "physicalPage": 24,
+      "officialAnswerColumns": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "originalTextSha256": "e9cf3a44b73593bffda162cc54528839fdb275bb3d9f34417136ce9ecd1ce953"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q34",
+      "qNumber": 34,
+      "sourceCommit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "sourcePath": "data/questions/rigaku-ryohoshi/2025-2026-primary-next5-20261013.json",
+      "officialAnswerColumns": [
+        "5"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q35",
+      "qNumber": 35,
+      "physicalPage": 25,
+      "officialAnswerColumns": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "originalTextSha256": "afb64c6d07f20e5a8fc6b3331c66101cc828edf75429a3bbe347816f81c9523e"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q36",
+      "qNumber": 36,
+      "physicalPage": 26,
+      "officialAnswerColumns": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "originalTextSha256": "b3ea984239e9ee2ece8dd4e3c227e62e87d9f839be5771551db4259efe8f2f6c"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q46",
+      "qNumber": 46,
+      "physicalPage": 29,
+      "officialAnswerColumns": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "originalTextSha256": "2466be20cf35498c9a294b57ad13a4393f72f883083b4e7dfc8fd8946760921a"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q57",
+      "qNumber": 57,
+      "sourceCommit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "sourcePath": "data/questions/rigaku-ryohoshi/clinical-key4-20261013.json",
+      "officialAnswerColumns": [
+        "1",
+        "4"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q68",
+      "qNumber": 68,
+      "sourceCommit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "sourcePath": "data/questions/rigaku-ryohoshi/2026-pm-q68-finite.json",
+      "officialAnswerColumns": [
+        "2",
+        "4"
+      ],
+      "requiredSelections": 1
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q75",
+      "qNumber": 75,
+      "sourceCommit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "sourcePath": "data/questions/rigaku-ryohoshi/2026-clinical-key3-ready.json",
+      "officialAnswerColumns": [
+        "2",
+        "3"
+      ],
+      "requiredSelections": 1
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/questions/rigaku-ryohoshi/61-pm-q001.png",
+      "pdf": "tp260424-08b_01.pdf",
+      "physicalPage": 7,
+      "rect": [
+        271,
+        162,
+        369,
+        444
+      ],
+      "scale": 2.0,
+      "sha256": "b3e0096d26cf18019be4f6c2560efdc36601c59d5b66e5315351417023cec395"
+    },
+    {
+      "path": "public/questions/rigaku-ryohoshi/61-pm-q003-choice-1.png",
+      "pdf": "tp260424-08b_01.pdf",
+      "physicalPage": 9,
+      "rect": [
+        110.43478260869566,
+        232.17391304347828,
+        313.04347826086956,
+        365.21739130434787
+      ],
+      "scale": 2.0,
+      "sha256": "5c049e6df02dd09e94b1751fa3a17dffec4301a0b6186936245fd81c664b56c2"
+    },
+    {
+      "path": "public/questions/rigaku-ryohoshi/61-pm-q003-choice-2.png",
+      "pdf": "tp260424-08b_01.pdf",
+      "physicalPage": 9,
+      "rect": [
+        358.26086956521743,
+        182.60869565217394,
+        532.1739130434783,
+        365.21739130434787
+      ],
+      "scale": 2.0,
+      "sha256": "83b8243a3b18ab2e21408f06a452a998ea9166c9a02a0fa5966b3faf6d363220"
+    },
+    {
+      "path": "public/questions/rigaku-ryohoshi/61-pm-q003-choice-3.png",
+      "pdf": "tp260424-08b_01.pdf",
+      "physicalPage": 9,
+      "rect": [
+        153.0434782608696,
+        393.0434782608696,
+        252.17391304347828,
+        553.0434782608696
+      ],
+      "scale": 2.0,
+      "sha256": "3be081ada5f64727824054452860670b8ff4ff1dbc25e4b8283b7fe60013d8bd"
+    },
+    {
+      "path": "public/questions/rigaku-ryohoshi/61-pm-q003-choice-4.png",
+      "pdf": "tp260424-08b_01.pdf",
+      "physicalPage": 9,
+      "rect": [
+        373.0434782608696,
+        423.47826086956525,
+        521.7391304347826,
+        553.0434782608696
+      ],
+      "scale": 2.0,
+      "sha256": "9d9f29a5b859a577340a2c150fb914eaf8f0c2a47d13157c40a834d4ed4076b9"
+    },
+    {
+      "path": "public/questions/rigaku-ryohoshi/61-pm-q003-choice-5.png",
+      "pdf": "tp260424-08b_01.pdf",
+      "physicalPage": 9,
+      "rect": [
+        126.08695652173914,
+        584.3478260869566,
+        301.7391304347826,
+        763.4782608695652
+      ],
+      "scale": 2.0,
+      "sha256": "cb90114c9679bb14bbe510235d0b097e3012c6ea0e8c95e809148d0677c1ed4e"
+    },
+    {
+      "path": "public/images/questions/rigaku-ryohoshi/2026-pm-q4-question-57c1b8632a77.png",
+      "sourceCommit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "sha256": "57c1b8632a77bff23907279afdba6bbccb844e474da4161584285ac995386db4"
+    },
+    {
+      "path": "public/questions/rigaku-ryohoshi/61-pm-q005-choice-1.png",
+      "pdf": "tp260424-08b_01.pdf",
+      "physicalPage": 11,
+      "rect": [
+        118.2608695652174,
+        211.30434782608697,
+        281.7391304347826,
+        423.47826086956525
+      ],
+      "scale": 2.0,
+      "sha256": "3ded09be5e2a20145dcb711c23e7ef589fcea139bc1cff0fa1fbadd4e66defa4"
+    },
+    {
+      "path": "public/questions/rigaku-ryohoshi/61-pm-q005-choice-2.png",
+      "pdf": "tp260424-08b_01.pdf",
+      "physicalPage": 11,
+      "rect": [
+        318.26086956521743,
+        268.69565217391306,
+        554.7826086956522,
+        424.34782608695656
+      ],
+      "scale": 2.0,
+      "sha256": "b612d5959e8c7a5220244bc20146ecc38574f308b346885b5746435486031d31"
+    },
+    {
+      "path": "public/questions/rigaku-ryohoshi/61-pm-q005-choice-3.png",
+      "pdf": "tp260424-08b_01.pdf",
+      "physicalPage": 11,
+      "rect": [
+        91.30434782608697,
+        463.47826086956525,
+        312.1739130434783,
+        589.5652173913044
+      ],
+      "scale": 2.0,
+      "sha256": "955483332cda4c54009b286b4197774f8a5d6e4a4e2258ab0c4e478ea4df30c9"
+    },
+    {
+      "path": "public/questions/rigaku-ryohoshi/61-pm-q005-choice-4.png",
+      "pdf": "tp260424-08b_01.pdf",
+      "physicalPage": 11,
+      "rect": [
+        315.6521739130435,
+        470.4347826086957,
+        556.5217391304349,
+        582.608695652174
+      ],
+      "scale": 2.0,
+      "sha256": "5e1c2ca812d3643c8fbe94f70f94d8f44d4403a7335d943a1d08babd7869cae2"
+    },
+    {
+      "path": "public/questions/rigaku-ryohoshi/61-pm-q005-choice-5.png",
+      "pdf": "tp260424-08b_01.pdf",
+      "physicalPage": 11,
+      "rect": [
+        91.30434782608697,
+        616.5217391304349,
+        306.95652173913044,
+        755.6521739130435
+      ],
+      "scale": 2.0,
+      "sha256": "fb5533a6bbe4d28e5b20afc7a947ecface604b4cae57be42b9f252cb7529c28e"
+    },
+    {
+      "path": "public/questions/rigaku-ryohoshi/61-pm-q007-book.png",
+      "pdf": "tp260424-08b_02.pdf",
+      "physicalPage": 5,
+      "rect": [
+        105,
+        79,
+        532,
+        377
+      ],
+      "scale": 2.0,
+      "sha256": "1ab9d2c96997005f14ecba20ba2e11ba67e379fc8b12ec948527b11cb1a7adf9"
+    },
+    {
+      "path": "public/questions/rigaku-ryohoshi/61-pm-q010-book.png",
+      "pdf": "tp260424-08b_02.pdf",
+      "physicalPage": 7,
+      "rect": [
+        221,
+        79,
+        464,
+        652
+      ],
+      "scale": 2.0,
+      "sha256": "7c6fbbbcf560c3c73293df82d797ae471a1f0d0e40d86f4ae897658c61a911ef"
+    },
+    {
+      "path": "public/questions/rigaku-ryohoshi/61-pm-q012.png",
+      "pdf": "tp260424-08b_01.pdf",
+      "physicalPage": 15,
+      "rect": [
+        145,
+        143,
+        502,
+        400
+      ],
+      "scale": 2.0,
+      "sha256": "ac64224dee10cced7356c2369d1eb6345106f44fdfdd4150c7cf8ae0b550ea0f"
+    },
+    {
+      "path": "public/images/questions/rigaku-ryohoshi/2026-pm-q15-question-48680fa19236.png",
+      "sourceCommit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "sha256": "48680fa19236192c5aa80bf974e1c422b6d5eb4040f0c76cf0818bf421af41c2"
+    },
+    {
+      "path": "public/images/questions/rigaku-ryohoshi/2026-question-pm-p22-173b5987b6b0.png",
+      "sourceCommit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "sha256": "173b5987b6b06a8b8e25582f45ad969ef1f566b6d9ee2784a1b2e82352df9dbc"
+    },
+    {
+      "path": "public/images/questions/rigaku-ryohoshi/2026-pm-q34-question-f1de004de9fd.png",
+      "sourceCommit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "sha256": "f1de004de9fd1ed4345ce03395f012bdc96299ad73db94b3886f5a86aba8bdf1"
+    }
+  ]
+}

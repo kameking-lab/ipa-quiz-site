@@ -66,9 +66,7 @@ function staticHeaderHrefs(): string[] {
 describe("SiteHeader static internal links resolve to real routes", () => {
   it("extracts the header's hardcoded internal links (sanity)", () => {
     const hrefs = staticHeaderHrefs();
-    // 最低でもルート + 主要ハブが含まれているはず（抽出ロジックの自己点検）。
-    expect(hrefs).toContain("/");
-    expect(hrefs.length).toBeGreaterThanOrEqual(8);
+    expect(hrefs.sort()).toEqual(["/", "/me", "/search"]);
   });
 
   it("every static header href maps to an existing app route (no 404 in global nav)", () => {

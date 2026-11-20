@@ -1,0 +1,143 @@
+[
+  {
+    "id": "nw-2018a-pm1-q1",
+    "exam": "nw",
+    "year": 2018,
+    "season": "autumn",
+    "session": "pm1",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "ネットワーク設計",
+    "topicTags": [
+      "SaaSの導入"
+    ],
+    "difficulty": 5,
+    "question": "問1 SaaSの導入",
+    "answer": "問１\n                       出題趣旨\n  近年，社内グループウェアをクラウド上のSaaS に移行する事例が増えてきている。それに伴い，ネットワ\nークトラフィックの流れに大きな影響が生じ，ネットワーク構成の変更をしなければならなくなることがあ\nる。特に，グループウェアの膨大なセッション数と増加するインターネットトラフィックをさばくためのプロ\nキシサーバやファイアウォール構成は，検討が必要なポイントとなる。\n  また，機器設定の集中管理のためにSDN（Software-Defined Networking）技術を導入する事例も増加傾向に\nある。\n  本問では，SaaS を利用する場合に密接に関連するネットワークやセキュリティの知識及びSDN のIPsec\n VPN への応用であるSD-WAN についての知識を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1) ア フォワード\n       イ リバース\n         (2) 利用者ID\n 設問２(1) メソッド名 CONNECT メソッド\n        対策    HTTPS 以外のポートのCONNECT を拒否する。\n         (2) ウ プロキシサーバのルート証明書\n 設問３(1) エ コントロール\n         (2) ネクストホップがSD-WAN ルータとなるデフォルトルート\n         (3) オ SD-WAN コントローラ\n         (4) G 社SaaS へのHTTPS 通信\n         (5) ① ・社内PC からG 社SaaS へのアクセスがプロキシサーバを経由しなくな\n         るから\n       ② ・出張先のPC からG 社SaaS へのアクセスが記録されるから",
+    "modelAnswer": "問１\n                       出題趣旨\n  近年，社内グループウェアをクラウド上のSaaS に移行する事例が増えてきている。それに伴い，ネットワ\nークトラフィックの流れに大きな影響が生じ，ネットワーク構成の変更をしなければならなくなることがあ\nる。特に，グループウェアの膨大なセッション数と増加するインターネットトラフィックをさばくためのプロ\nキシサーバやファイアウォール構成は，検討が必要なポイントとなる。\n  また，機器設定の集中管理のためにSDN（Software-Defined Networking）技術を導入する事例も増加傾向に\nある。\n  本問では，SaaS を利用する場合に密接に関連するネットワークやセキュリティの知識及びSDN のIPsec\n VPN への応用であるSD-WAN についての知識を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1) ア フォワード\n       イ リバース\n         (2) 利用者ID\n 設問２(1) メソッド名 CONNECT メソッド\n        対策    HTTPS 以外のポートのCONNECT を拒否する。\n         (2) ウ プロキシサーバのルート証明書\n 設問３(1) エ コントロール\n         (2) ネクストホップがSD-WAN ルータとなるデフォルトルート\n         (3) オ SD-WAN コントローラ\n         (4) G 社SaaS へのHTTPS 通信\n         (5) ① ・社内PC からG 社SaaS へのアクセスがプロキシサーバを経由しなくな\n         るから\n       ② ・出張先のPC からG 社SaaS へのアクセスが記録されるから",
+    "explanation": "通信経路が変わる前後で中継機器と認証の境界を確認する。SD-WANの制御とデータ転送を分け、アクセスログの取得元を説明する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/nw/2018-autumn-pm1/page-02.webp",
+      "/questions/ipa/nw/2018-autumn-pm1/page-03.webp",
+      "/questions/ipa/nw/2018-autumn-pm1/page-04.webp",
+      "/questions/ipa/nw/2018-autumn-pm1/page-05.webp",
+      "/questions/ipa/nw/2018-autumn-pm1/page-06.webp"
+    ],
+    "imageAltTexts": [
+      "ネットワークスペシャリスト試験 2018年度秋期 午後I 問1 本文・設問（公式問題PDF 2ページ）",
+      "ネットワークスペシャリスト試験 2018年度秋期 午後I 問1 本文・設問（公式問題PDF 3ページ）",
+      "ネットワークスペシャリスト試験 2018年度秋期 午後I 問1 本文・設問（公式問題PDF 4ページ）",
+      "ネットワークスペシャリスト試験 2018年度秋期 午後I 問1 本文・設問（公式問題PDF 5ページ）",
+      "ネットワークスペシャリスト試験 2018年度秋期 午後I 問1 本文・設問（公式問題PDF 6ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/nw/2018-autumn-pm1/answer-q01-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "ネットワークスペシャリスト試験 2018年度秋期 午後I 問1 公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_nw_pm1_qs.pdf#page=2",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_nw_pm1_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "sourceAttribution": "出典：IPA ネットワークスペシャリスト試験 2018年度秋期 午後I 問1。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "nw-2018a-pm1-q2",
+    "exam": "nw",
+    "year": 2018,
+    "season": "autumn",
+    "session": "pm1",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "ネットワーク監視",
+    "topicTags": [
+      "ネットワーク監視の改善"
+    ],
+    "difficulty": 5,
+    "question": "問2 ネットワーク監視の改善",
+    "answer": "問２\n                       出題趣旨\n 企業ネットワークを運営する際には，要件に合わせて設計構築するだけではなく，業務が滞りなく実施でき\nるよう，適切に運用管理を行う必要がある。運用中においては，当初想定しえなかった問題に遭遇し，改善を\n求められることもある。\n  本問では，ある企業ネットワークを想定し，VRRP（Virtual Router Redundancy Protocol）やSTP（Spanning\n Tree Protocol）といった冗長化に用いられる基本的な技術の理解，ICMP やSYSLOG，SNMP（Simple Network\n Management Protocol）といった監視に利用される基本的な技術の理解，及び，ネットワーク監視の問題に対し\nてどのように考え，改善できるか，について問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１  ア ICMP\n       イ  IP アドレス\n       ウ UDP\n       エ コミュニティ\n 設問２(1) デフォルトゲートウェイ\n         (2) VRRP アドバタイズメント\n         (3) VLAN100，VLAN200，VLAN300\n 設問３(1) p2\n         (2) スパニングツリーが再構築中だったから\n 設問４(1) SNMP エージェント  コアSW1 又は コアSW2 又は フロアSW1 又は\n                  フロアSW2 又は フロアSW3 又は フロアSW4\n                又は サーバSW\n             SNMP マネージャ   監視サーバ\n         (2) ポーリング  5 分ごとに状態を取得するので多くの場合異常検知が遅れる。\n      トラップ  到達確認がないのでメッセージが失われる可能性がある。\n         (3) スパニングツリーが再構築するまでインフォームの再送信を繰り返す。",
+    "modelAnswer": "問２\n                       出題趣旨\n 企業ネットワークを運営する際には，要件に合わせて設計構築するだけではなく，業務が滞りなく実施でき\nるよう，適切に運用管理を行う必要がある。運用中においては，当初想定しえなかった問題に遭遇し，改善を\n求められることもある。\n  本問では，ある企業ネットワークを想定し，VRRP（Virtual Router Redundancy Protocol）やSTP（Spanning\n Tree Protocol）といった冗長化に用いられる基本的な技術の理解，ICMP やSYSLOG，SNMP（Simple Network\n Management Protocol）といった監視に利用される基本的な技術の理解，及び，ネットワーク監視の問題に対し\nてどのように考え，改善できるか，について問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１  ア ICMP\n       イ  IP アドレス\n       ウ UDP\n       エ コミュニティ\n 設問２(1) デフォルトゲートウェイ\n         (2) VRRP アドバタイズメント\n         (3) VLAN100，VLAN200，VLAN300\n 設問３(1) p2\n         (2) スパニングツリーが再構築中だったから\n 設問４(1) SNMP エージェント  コアSW1 又は コアSW2 又は フロアSW1 又は\n                  フロアSW2 又は フロアSW3 又は フロアSW4\n                又は サーバSW\n             SNMP マネージャ   監視サーバ\n         (2) ポーリング  5 分ごとに状態を取得するので多くの場合異常検知が遅れる。\n      トラップ  到達確認がないのでメッセージが失われる可能性がある。\n         (3) スパニングツリーが再構築するまでインフォームの再送信を繰り返す。",
+    "explanation": "ping、SYSLOG、SNMPで把握できる情報を整理する。障害時は物理リンク、STPのポート状態、監視通知の順に追う。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/nw/2018-autumn-pm1/page-07.webp",
+      "/questions/ipa/nw/2018-autumn-pm1/page-08.webp",
+      "/questions/ipa/nw/2018-autumn-pm1/page-09.webp",
+      "/questions/ipa/nw/2018-autumn-pm1/page-10.webp",
+      "/questions/ipa/nw/2018-autumn-pm1/page-11.webp"
+    ],
+    "imageAltTexts": [
+      "ネットワークスペシャリスト試験 2018年度秋期 午後I 問2 本文・設問（公式問題PDF 7ページ）",
+      "ネットワークスペシャリスト試験 2018年度秋期 午後I 問2 本文・設問（公式問題PDF 8ページ）",
+      "ネットワークスペシャリスト試験 2018年度秋期 午後I 問2 本文・設問（公式問題PDF 9ページ）",
+      "ネットワークスペシャリスト試験 2018年度秋期 午後I 問2 本文・設問（公式問題PDF 10ページ）",
+      "ネットワークスペシャリスト試験 2018年度秋期 午後I 問2 本文・設問（公式問題PDF 11ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/nw/2018-autumn-pm1/answer-q02-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "ネットワークスペシャリスト試験 2018年度秋期 午後I 問2 公式解答例（公式PDF 2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_nw_pm1_qs.pdf#page=7",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_nw_pm1_ans.pdf#page=2",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "sourceAttribution": "出典：IPA ネットワークスペシャリスト試験 2018年度秋期 午後I 問2。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "nw-2018a-pm1-q3",
+    "exam": "nw",
+    "year": 2018,
+    "season": "autumn",
+    "session": "pm1",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "WAN",
+    "topicTags": [
+      "企業内ネットワーク再構築"
+    ],
+    "difficulty": 5,
+    "question": "問3 企業内ネットワーク再構築",
+    "answer": "問３\n                       出題趣旨\n 企業内ネットワークにおいて，複数の拠点間を接続する方法には様々な方法があるが，効率性や安定性や運\n用容易性，その他の様々な要件を考慮しながら，利用可能な回線サービスとネットワーク技術を組み合わせ\nて，最適な拠点間接続構成をとることが求められている。そうした中，特定のWAN サービスを利用しなが\nら，別のWAN サービスをバックアップ回線として利用することで，信頼性の高いネットワークを構築するこ\nとが，一般的に行われている。\n  本問では，専用線を基本的に利用している企業内ネットワークから，IP-VPN とインターネットVPN の両方\n式を活用した企業内ネットワークへの再構築を通じて，複数回線サービス利用の信頼性の高いネットワークを\n構築する能力を問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１  ア ラベル\n       イ PE ルータ\n       ウ ネットワーク\n       エ  IP-VPN\n       オ インターネットVPN\n 設問２(1) MPLS\n         (2) 利用者ごとのトラフィックを区別するため\n 設問３(1) OSPF のマルチキャスト通信を通すため\n         (2) ほかの拠点への経路情報\n         (3) BGP4 から得られた経路を優先する。\n 設問４(1) 新拠点追加のときに全拠点の設定変更が必要になるから\n         (2) 大阪支店のFW2 のグローバルIP アドレス\n         (3) 機器 FW2，FW3\n      設定  OSPF のプライオリティを0 に設定する。",
+    "modelAnswer": "問３\n                       出題趣旨\n 企業内ネットワークにおいて，複数の拠点間を接続する方法には様々な方法があるが，効率性や安定性や運\n用容易性，その他の様々な要件を考慮しながら，利用可能な回線サービスとネットワーク技術を組み合わせ\nて，最適な拠点間接続構成をとることが求められている。そうした中，特定のWAN サービスを利用しなが\nら，別のWAN サービスをバックアップ回線として利用することで，信頼性の高いネットワークを構築するこ\nとが，一般的に行われている。\n  本問では，専用線を基本的に利用している企業内ネットワークから，IP-VPN とインターネットVPN の両方\n式を活用した企業内ネットワークへの再構築を通じて，複数回線サービス利用の信頼性の高いネットワークを\n構築する能力を問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１  ア ラベル\n       イ PE ルータ\n       ウ ネットワーク\n       エ  IP-VPN\n       オ インターネットVPN\n 設問２(1) MPLS\n         (2) 利用者ごとのトラフィックを区別するため\n 設問３(1) OSPF のマルチキャスト通信を通すため\n         (2) ほかの拠点への経路情報\n         (3) BGP4 から得られた経路を優先する。\n 設問４(1) 新拠点追加のときに全拠点の設定変更が必要になるから\n         (2) 大阪支店のFW2 のグローバルIP アドレス\n         (3) 機器 FW2，FW3\n      設定  OSPF のプライオリティを0 に設定する。",
+    "explanation": "IP-VPNとインターネットVPNの経路を平常時と障害時で分ける。拠点を追加するときに増えるトンネル設定と見直せる構成を確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/nw/2018-autumn-pm1/page-12.webp",
+      "/questions/ipa/nw/2018-autumn-pm1/page-13.webp",
+      "/questions/ipa/nw/2018-autumn-pm1/page-14.webp",
+      "/questions/ipa/nw/2018-autumn-pm1/page-15.webp",
+      "/questions/ipa/nw/2018-autumn-pm1/page-16.webp"
+    ],
+    "imageAltTexts": [
+      "ネットワークスペシャリスト試験 2018年度秋期 午後I 問3 本文・設問（公式問題PDF 12ページ）",
+      "ネットワークスペシャリスト試験 2018年度秋期 午後I 問3 本文・設問（公式問題PDF 13ページ）",
+      "ネットワークスペシャリスト試験 2018年度秋期 午後I 問3 本文・設問（公式問題PDF 14ページ）",
+      "ネットワークスペシャリスト試験 2018年度秋期 午後I 問3 本文・設問（公式問題PDF 15ページ）",
+      "ネットワークスペシャリスト試験 2018年度秋期 午後I 問3 本文・設問（公式問題PDF 16ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/nw/2018-autumn-pm1/answer-q03-p03.webp"
+    ],
+    "answerImageAltTexts": [
+      "ネットワークスペシャリスト試験 2018年度秋期 午後I 問3 公式解答例（公式PDF 3ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_nw_pm1_qs.pdf#page=12",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_nw_pm1_ans.pdf#page=3",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "sourceAttribution": "出典：IPA ネットワークスペシャリスト試験 2018年度秋期 午後I 問3。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  }
+]

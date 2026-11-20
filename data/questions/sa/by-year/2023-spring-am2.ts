@@ -24,6 +24,7 @@ export const SA_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "アシュアランスケースは、システムやソフトウェアが特定の品質目標を達成しているという主張（アシュアランス）を、証拠と論理的な推論に基づいて裏付ける文書です。これにより、関係者に対して品質目標が達成できることを論理的に説明し、信頼性を高めることを目的とします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -47,7 +48,14 @@ export const SA_QUESTIONS_2023_SPRING_AM2: Question[] = [
       "エ": "親DFDのプロセス1への入力がプロセス1-1に入り、プロセス1-1からプロセス1-2とプロセス1-3へデータが流れ、プロセス1-2からプロセス1-3へデータが流れ、プロセス1-2から親DFDのプロセス1からの出力が一つ出て、プロセス1-3から親DFDのプロセス1からの出力がもう一つ出ているDFD。"
     },
     "answer": "イ",
-    "explanation": "DFD（データフロー図）における階層化は、上位レベルのプロセスをより詳細な下位レベルのプロセスに分割する手法です。このとき、上位レベルのプロセスへの入力データフローと、上位レベルのプロセスからの出力データフローは、下位レベルのプロセス全体への入出力として保持されなければなりません。これを「親子関係の整合性」といいます。\n\nイは、親DFDのプロセス1への入力が、分割された子プロセスである1-1と1-2の両方に入っており、1-1と1-2から1-3へデータが流れることで、最終的に1-3から親DFDのプロセス1からの出力が出ている構造を示しています。これは、元のプロセス1への入力が子プロセス全体に分配され、子プロセス群での処理を経て、元のプロセス1からの出力が生成されるという、親子関係の整合性を満たしています。\n\nアは、親DFDのプロセス1への入力がプロセス1-1のみに入っており、1-1から1-2, 1-3へ、そして1-2から1-3へとデータが流れる構造になっていますが、元のプロセス1への入力が一部の子プロセスにしか到達しておらず、整合性が取れていません。ウは、親DFDのプロセス1への入力が1-1と1-3に入っており、1-1から1-2へ、1-2から1-3へと流れていますが、入力が1-1と1-3に分かれており、親子関係の整合性に疑問があります。エは、プロセス1-2から親DFDのプロセス1からの出力が一つ、プロセス1-3からもう一つ出力が出ていると記述されており、元のプロセス1の出力が複数の子プロセスから分割されて出力されることになり、整合性が失われています。",
+    "explanation": "親プロセス1の境界を横切る矢印は入力2本、出力2本です。イでは対応する矢印を残し、各子プロセスにも入力と出力があります。外部との入出力を保ちつつ、内部でデータを渡す関係を追加しています。",
+    "choiceExplanations": {
+      "ア": "プロセス1に入る外部からの矢印は2本ですが、図の子プロセス群に入る矢印は1本しかありません。分割しても外部との入出力は保ちます。",
+      "イ": "子プロセス群への外部入力が1-1と1-2に各1本あり、外部出力も1-1と1-3から各1本あります。親の入出力を保った分割です。",
+      "ウ": "外部入力は2本ともありますが、外部への出力が1-3からの1本しかありません。1-2にも入力だけがあり、出力が描かれていません。",
+      "エ": "外部との矢印は入力も出力も2本ずつありますが、1-2に入力がありません。1-2が出力するデータの入力元が示されていません。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +80,7 @@ export const SA_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "SysML（Systems Modeling Language）のパラメトリック図は、モデル要素間の物理的特性や性能に関する制約条件を数式などで記述するために使用されます。これにより、SoS（System of Systems）などの複雑なシステムの非機能要件や性能特性を定量的に分析し、システムの整合性を検証できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +105,7 @@ export const SA_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "MVC（Model-View-Controller）パターンは、アプリケーションをデータ（Model）、表示（View）、制御（Controller）の三つの要素に分離します。この分離により、ヒューマンインタフェースを担当するViewと、ビジネスロジックを担当するModelの間の相互依存が弱まり、それぞれの要素を独立して修正したり再利用したりしやすくなります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +130,7 @@ export const SA_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "オーバーライドは、スーパークラスで定義されたメソッドと全く同じシグネチャを持つメソッドを、サブクラスで再定義する（上書きする）ことです。JavaサーブレットのdoGetやdoPostメソッドは、HttpServletクラスで定義されたメソッドを、開発者が具体的なアプリケーションの処理内容に置き換える典型的なオーバーライドの例です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +155,7 @@ export const SA_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "デザインパターンは、ソフトウェア設計において共通して発生する問題に対する、再利用可能で実証済みの解決策をパターンとして分類・体系化したものです。これにより、再利用性や柔軟性の高いプログラムを効率的に設計することができ、GoF（Gang of Four）パターンがその代表例として知られています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +180,7 @@ export const SA_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "チューリングテストは、人工知能が人間のような知能を持っているかを判断するための実験方法です。判定者が、人工知能と人間との区別がつかないほど自然な対話ができれば、その人工知能はテストに合格したとみなされます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +205,7 @@ export const SA_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "JIS X 25010:2013における「機能適合性」は、製品やシステムが、明示された状況下で使用される際に、明示的ニーズ及び暗黙のニーズを満足させる機能を提供する度合いを指します。これは、システムの機能がユーザーの要求にどれだけ合致しているかを示す重要な品質特性です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -215,7 +229,14 @@ export const SA_QUESTIONS_2023_SPRING_AM2: Question[] = [
       "エ": "初期状態から状態1へ遷移し、トリガ1で状態2へ入る。状態2内部で、状態3からトリガ2で状態4へ遷移する経路と、状態5からトリガ3で状態6へ遷移する経路が並列的に存在するが、初期状態への分岐や領域区切りが明確でない図。"
     },
     "answer": "ア",
-    "explanation": "UML 2.0のステートマシン図では、状態遷移はイベント（トリガ）によって引き起こされます。選択肢アは、初期状態から状態1へ遷移し、トリガ1で状態2へ入るという基本的な遷移を示し、さらに状態2から独立した経路として状態4および状態6への遷移が定義され、最終状態へ至るという、ステートマシン図の記法に合致しています。状態2内部の独立した経路は、UML 2.0における並列実行や複合状態の表現とは異なり、単純な状態遷移の集合として解釈できます。\n\n選択肢イは、状態2内部で複数のサブ状態へ「並列的に入る」と記述されており、これはUML 2.0の並行領域（Fork/Join）の記法に該当する可能性がありますが、問題文の「独立した経路」という表現とは異なります。選択肢ウは、状態2が「水平線で区切られた2つの直交領域」を持つと記述しており、これはUML 2.0の並行領域（Orthogonal Region）の記法に明確に合致しますが、問題文で「独立した経路」という表現が使われていることから、より単純な構造であるアが適切と考えられます。選択肢エは、並列経路が存在するものの、「初期状態への分岐や領域区切りが明確でない」とあり、UML 2.0の記法に準拠していない可能性が高いです。",
+    "explanation": "直交する領域は破線で区切り、各領域に初期擬状態を一つずつ置きます。初期擬状態から出る遷移にトリガは付けません。状態1から状態2へ入る遷移にトリガ1を付け、状態2に入ると上段では状態3、下段では状態5から始まるアが適切です。",
+    "choiceExplanations": {
+      "ア": "状態2の二つの領域を破線で分け、それぞれに初期擬状態からの遷移があります。トリガ1は状態2に入る遷移に付いています。",
+      "イ": "トリガ1の位置は適切ですが、状態2の内部を領域に分ける破線がありません。一つの領域に二つの初期擬状態がある形になります。",
+      "ウ": "領域は破線で分かれていますが、初期擬状態から出る遷移にトリガ1が付いています。トリガ1を置くのは状態2に入る遷移です。",
+      "エ": "初期擬状態から出る遷移にトリガ1が付いています。さらに複合状態2の中が領域に分かれておらず、初期擬状態も二つあります。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +261,7 @@ export const SA_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ペアプログラミングは、アジャイル開発手法の一つで、2人のプログラマが1台のPCを共有して共同でプログラミングを行う技法です。一人がコードを記述する「ドライバ」となり、もう一人がそのコードをレビューし、設計や戦略について助言する「ナビゲータ」となることで、品質向上や知識共有を図ります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +286,7 @@ export const SA_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ソフトウェア受入れテストは、JIS X 0160:2021において、提供されるソフトウェアシステムが利害関係者要件に合致し、利用に適していることを顧客とともに確信するに至るためのテストと定義されています。このテストは、顧客がシステムを受領するかどうかを最終的に判断するために行われます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +311,7 @@ export const SA_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "スプリントレトロスペクティブは、スクラムのスプリントの終わりに行われるイベントで、スクラムチームが直前のスプリントを振り返り、プロセスや関係性、ツールなどについて改善点を見つけ出すことを目的とします。これにより、継続的な改善を促進し、次スプリント以降の作業の質を高めます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +336,7 @@ export const SA_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "まず、見積作成と提案書作成それぞれの時間単価を算出します。見積作成の総時間(150h)で総人件費(60万円)を割ると4000円/h、提案書作成の総時間(450h)で総人件費(360万円)を割ると8000円/hです。製品Xの削減時間は見積作成が50hの20%で10h、提案書作成も50hの20%で10hです。したがって、削減効果は見積作成で10h×4000円/h=4万円、提案書作成で10h×8000円/h=8万円となり、合計で12万円となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +361,7 @@ export const SA_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "WTO政府調達協定は、政府機関などによる物品・サービスの調達において、締約国に対する市場開放を促進し、国際的な競争の機会を増大させることを目的とした国際協定です。また、苦情申立てや紛争解決に関する実効的な手続も定めています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +386,7 @@ export const SA_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "実費償還契約（コストプラス契約）は、ベンダーが委託業務の遂行に要した費用（実費）の全てを、発注者がベンダーに支払う契約形態です。これに加えて、ベンダーの役務や技術に対する報酬（利益）も支払われることが一般的です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +411,7 @@ export const SA_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "パーソナルデータをスコアリングするサービスは、対象者の許諾の下で収集・提供された個人データをAIが分析し、その人の信用度やリスクなどを数値化（スコア化）して提供するものです。このスコアは、個人への融資条件の決定や、その他の信用判断に利用されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +436,7 @@ export const SA_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "AES（Advanced Encryption Standard）は、暗号化と復号に同じ鍵（共通鍵）を使用する共通鍵暗号方式の代表的なアルゴリズムです。一方、ElGamal暗号、RSA、楕円曲線暗号は、暗号化と復号に異なる鍵（公開鍵と秘密鍵）を使用する公開鍵暗号方式に分類されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +461,7 @@ export const SA_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "TPM（Trusted Platform Module）は、PCなどのハードウェアに組み込まれるセキュリティチップで、暗号化のための鍵をTPM内部で生成し、安全に保管する機能を提供します。これにより、鍵の漏洩リスクを低減し、プラットフォームのセキュリティを強化します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +486,7 @@ export const SA_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ベイジアンフィルターは、ベイズの定理を応用した迷惑メール検知手法です。利用者が「迷惑メール」と「正規のメール」を振り分けた履歴から、メール内の単語の出現頻度などを統計的に学習し、新たなメールが迷惑メールである確率を算出して判定します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +511,7 @@ export const SA_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "デジタル署名は、送信者の秘密鍵（署名生成鍵X）で文書を署名し、受信者が送信者の公開鍵（署名検証鍵Y）を使って検証します。これにより、受信者Bは、文書が送信者Aによって作成されたこと（認証）と、文書が受信までに改ざんされていないこと（完全性）を確認できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +536,7 @@ export const SA_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ハーバードアーキテクチャは、CPUにおいてプログラム命令とデータをそれぞれ独立したバスと記憶領域に分離するアーキテクチャです。これにより、命令の読み出しとデータのアクセスを同時に行うことが可能となり、CPUの処理効率が向上し、プログラムの実行時間を短縮できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +561,7 @@ export const SA_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "RPC（Remote Procedure Call）は、異なるプロセスやネットワーク上のコンピュータに存在する関数やプロシージャを、あたかもローカルの関数であるかのように呼び出すための技術です。このゲームの仕様のように、クライアントがサーバ上の関数を呼び出して処理を実行し、結果を受け取るという要件に最適です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +586,7 @@ export const SA_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "クラウドサービス派生データとは、利用者がクラウドサービスを利用する過程で、その利用履歴やパフォーマンスデータとして自動的に生成される情報のことを指します。利用者が直接入力したデータではなく、利用状況から「派生」して得られる情報であるため、利用時間や作業内容が記録されたログデータがこれに該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +611,7 @@ export const SA_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "DBMSにおいてトランザクションがコミットされたと見なされるのは、その変更が永続的に記録されたことが保証された時点です。ログバッファはメインメモリ上にありシステム障害で失われる可能性がありますが、ログファイル（ディスクなどの不揮発性ストレージ）にコミット情報が書き込まれることで永続性が保証されます。これにより、システム障害が発生してもログファイルからトランザクションの回復が可能となるため、この時点をもってコミット処理が完了したと判断されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +636,7 @@ export const SA_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "スイッチングハブ（レイヤー2スイッチ）は、MACアドレスに基づいたフレーム転送を行うデータリンク層（レイヤー2）のネットワーク機器です。ブリッジも同じくデータリンク層で動作し、MACアドレスを利用してフレームをフィルタリング・転送することで、複数のLANセグメントを接続する機能を持っています。現代のスイッチングハブは多ポートの高性能なブリッジと見なせるため、機能的にもプロトコル階層的にも同等です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sa_am2_qs.pdf",
     "license": "IPA-public"

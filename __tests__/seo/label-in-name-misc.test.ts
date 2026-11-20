@@ -6,15 +6,14 @@ import { join } from "node:path";
 // ユーザーのため、interactive control の aria-label は可視ラベルを含む必要がある。
 // 過去に可視テキストを欠いていた2箇所の回帰を防ぐ（source-read ガード）。
 describe("Label in Name (WCAG 2.5.3) — bookmarks / mock-exam", () => {
-  it("ブックマークの「この問題を解く」リンクの aria-label が可視テキストを含む", () => {
+  it("ブックマークの問題文をそのままリンク名にする", () => {
     const source = readFileSync(
       join(process.cwd(), "app/bookmarks/page.tsx"),
       "utf8",
     );
     // 可視テキスト
-    expect(source).toContain("この問題を解く");
-    // aria-label が可視テキストを先頭に含む
-    expect(source).toMatch(/aria-label=\{`この問題を解く（/);
+    expect(source).toContain("entry.questionSnippet");
+    expect(source).toContain("href={questionUrl(entry)}");
   });
 
   it("模試結果の「苦手分野を集中練習」リンクの aria-label が可視テキストを含む", () => {
@@ -38,12 +37,12 @@ describe("Label in Name (WCAG 2.5.3) — bookmarks / mock-exam", () => {
     expect(source).not.toContain("twitter.com/intent");
   });
 
-  it("クイズ結果のLINEリンクの aria-label が可視テキストを含む", () => {
+  it("クイズ結果から外部共有操作を外す", () => {
     const source = readFileSync(
       join(process.cwd(), "components/quiz/QuizPlayer.tsx"),
       "utf8",
     );
-    expect(source).toContain('aria-label="LINEで結果をシェア（');
+    expect(source).not.toContain('LINEで結果をシェア');
     expect(source).not.toContain("xUrl");
   });
 });

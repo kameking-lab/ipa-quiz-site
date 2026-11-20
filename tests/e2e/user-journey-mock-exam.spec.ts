@@ -23,11 +23,11 @@ test.describe("mock exam: HTTP & structure", () => {
     expect(res.status()).toBe(200);
   });
 
-  test("/mock-exam has 模試モード heading", async ({ page }) => {
+  test("/mock-exam has 模試 heading", async ({ page }) => {
     await page.goto("/mock-exam");
     const h1 = page.getByRole("heading", { level: 1 });
     await expect(h1).toBeVisible();
-    await expect(h1).toContainText("模試モード");
+    await expect(h1).toHaveText("模試");
   });
 
   test("/mock-exam page contains exam selection UI", async ({ page }) => {

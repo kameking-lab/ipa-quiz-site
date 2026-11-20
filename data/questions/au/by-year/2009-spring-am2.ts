@@ -24,6 +24,7 @@ export const AU_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "アクセス権限喪失の最も確実なトリガーは退職などの人事異動であり、人事発令簿はこれらの公式な記録であるため、この文書を基に利用者IDリストから退職者が削除されていることを確認することが最も適切です。これにより、不要な権限の残存を防ぎ、セキュリティを強化できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const AU_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "データベースのインテグリティ（整合性）とは、データが正確で完全な状態を保つことを指します。データに不具合が生じた際に、それを元の整合性の取れた状態に戻すための障害回復手段は、インテグリティ維持に不可欠な機能であるため、その有無と適切性は重要な監査ポイントとなります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const AU_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "システム監査基準において、予備調査は本調査に先立ち、監査対象となる業務やシステム、組織の現状を大まかに把握することを目的としています。この調査結果に基づいて、本調査の範囲、重点、実施計画（個別計画書）などを具体的に策定します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const AU_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "情報システムの可用性監査では、システムが継続的に利用可能であるかを評価します。再発防止策の効果をレビューするには、対策実施後に同種の障害がどれだけ減少したか、または停止時間がどれだけ短縮されたかを定量的に比較することが重要であり、障害原因別の発生件数と停止時間の比較は、その効果を具体的に測定する有効な手段です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,7 @@ export const AU_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "保証型監査は、監査人が実施した手続に基づき、監査対象の情報セキュリティに関するマネジメントやコントロールが、特定の基準や規準に照らして適切に運用されていることについて、合理的な保証を与えることを目的とします。これは、絶対的な安全を保証するものではなく、実施した監査手続の範囲内での評価を表明するものです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +149,7 @@ export const AU_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "情報システムは企業の経営目標達成のための手段であり、情報戦略は経営戦略を具体化し支援するものでなければなりません。したがって、情報戦略が経営戦略と整合しているかを確認することは、情報システム投資の妥当性や有効性を評価する上で最も基本的なかつ優先度の高い監査事項となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +174,7 @@ export const AU_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "並行シミュレーション法は、監査人が別途開発した信頼できる検証用プログラムと、監査対象システムの本番プログラムに同一のテストデータを入力し、両者の出力結果を比較することで、本番プログラムの処理が正確であるかを検証するシステム監査技法です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +199,7 @@ export const AU_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ITに係る全般統制は、特定の業務プロセスではなく、情報システム環境全体に共通する統制活動を指します。外部委託に関する契約の管理は、ITサービス提供の信頼性やセキュリティを確保するための広範な活動であり、IT環境全体の統制として全般統制に該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +224,7 @@ export const AU_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "公認会計士は、財務報告の信頼性を確保するための一環として、企業のIT環境が財務報告に与える影響を評価することがあります。また、企業から依頼を受けて、財務諸表監査とは独立した情報システムに関する保証業務や助言業務として、システム監査を実施することも可能です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +249,7 @@ export const AU_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "職務の分離は、不正や誤謬のリスクを低減するために、重要な業務プロセスにおける異なる職務（開発、運用、承認、実行など）を別の担当者が行うことです。開発者がシステムに不正なコードを仕込むリスクや、運用者が不正な操作を行うリスクを回避するため、開発部門と運用部門の職務を分離することが効果的です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +274,7 @@ export const AU_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "マルチプロセッサシステム（複数のCPU搭載サーバ）は、主に処理能力の向上や、一部のCPU障害時における処理継続性を高めるために利用されます。ネットワーク管理ソフトウェアのバグは論理的な問題であり、CPUの数を増やしてもそのバグ自体が引き起こすシステム停止を直接的に回避する対策にはなりません。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +299,7 @@ export const AU_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ITサービスマネジメントの導入は、まず「何を達成したいか」というビジョンを明確にし（c）、次に現状を把握して（b）、そのギャップを埋めるための目標を設定します（f）。その後、目標達成のための具体的な方法を検討し（e）、達成状況の把握方法を定め（d）、継続的な改善へと繋げる（a）のが論理的な手順です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +324,7 @@ export const AU_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "労働者派遣法において、システム開発業務は専門業務に該当するため、原則として派遣期間の制限がありません。したがって、3年という期間で契約を締結することは問題ありません。他の選択肢は、性別・年齢の限定、事前面接、派遣先の苦情処理義務に関する違反となるため不適切です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +349,7 @@ export const AU_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "個人情報保護法は、生存する個人に関する情報であって、特定の個人を識別できるものを「個人情報」として保護の対象と定めています。死亡した個人の情報や、匿名化により特定の個人を識別できない情報は、原則としてこの法律の保護対象外です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -359,7 +373,14 @@ export const AU_QUESTIONS_2009_SPRING_AM2: Question[] = [
       "エ": "倫理的責任"
     },
     "answer": "エ",
-    "explanation": "キャロルのCSR四つの責任分野は、経済的責任、法的責任、倫理的責任、そして慈善的（社会貢献）責任です。問題文の表は、これらの責任分野と企業活動例を結びつけていますが、cの部分はそのうちの一つに該当します。選択肢を見ると、経済的責任、法的責任、倫理的責任、社会貢献責任が提示されています。\n\n正解は「エ：倫理的責任」です。これは、企業が社会からの期待に応えるために、法律に明記されていないものの、道徳的・倫理的に正しいとされる行動をとる責任を指します。表のcに示される活動例が、法律で義務付けられているわけではないものの、社会的に期待される「行うべき」行動である場合、それは倫理的責任に該当します。\n\nアの経済的責任は、企業が利益を追求し、株主への配当などを通じて経済に貢献する最も基本的な責任です。イの社会貢献責任（慈善的責任）は、企業が自発的に社会に貢献する活動であり、法律や倫理規定に基づくものではなく、より積極的な社会への貢献活動を指します。ウの法的責任は、企業が法律や規制を遵守する責任であり、これは最低限果たすべき義務です。表のcの企業活動例が、これら経済的、法的、社会貢献的責任のいずれにも明確に当てはまらない場合、倫理的責任が最も適切な分類となります。",
+    "explanation": "cの活動例は環境会計の導入です。環境に対する企業活動の影響や取組を把握し、社会から期待される配慮を形にするため、キャロルの分類では倫理的責任に当たります。文化・芸術の支援は社会貢献責任の例です。",
+    "choiceExplanations": {
+      "ア": "誤りです。経済的責任は、事業を継続できるように収益を確保する基盤に当たります。表のcは環境への影響を把握して社会の期待に応える取組です。",
+      "イ": "誤りです。社会貢献責任は、表のdの文化・芸術支援のように企業が自発的に社会を支援する活動に当たります。cは自社の環境への影響を扱います。",
+      "ウ": "誤りです。法的責任は企業活動で法令を守る責任で、表ではコンプライアンスの徹底がその例です。cの環境会計は環境への責任を果たすための取組です。",
+      "エ": "正しいです。cの環境会計は、企業活動が環境に与える影響や対策を把握し、社会の期待に応えるために取り組む例なので、倫理的責任に当たります。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +405,7 @@ export const AU_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "連結売上高総利益率の算出には、連結財務諸表における売上高と売上原価の総利益（売上高から売上原価を差し引いたもの）の関係が重要となります。\n\n正解であるウの40%となる根拠は、連結財務諸表においては、親会社と子会社間の取引（この場合はB社からA社への売上）は相殺されるため、連結売上高総利益率は、親会社A社の外部への売上と、子会社B社の外部への売上（すべて親会社A社以外とのこと）を合算した総利益を、同様に合算した連結売上高で割って算出されます。問題文では、B社はA社の100%子会社であり、仕入れはすべて親会社から、売上はすべて親会社以外とのこと、そして期首・期末在庫がないという情報から、A社とB社の外部売上高および外部売上原価を把握した上で、連結総利益率を計算することになります。具体的な数値は提示されていませんが、これらの条件を踏まえると、選択肢の中から計算結果として40%が導き出されると考えられます。\n\nアの34%は、仮にA社またはB社のいずれかの単体での総利益率や、あるいは仕訳を相殺する際の計算誤りなどが考えられます。イの38%も同様に、連結会計の原則に沿わない計算や、一部の取引のみを考慮した場合に生じうる数値です。エの56%は、総利益率としては比較的高めであり、総利益が売上高に対して過大に計上されているか、あるいは売上原価が過小に計上されている可能性が考えられますが、連結決算の仕組みを考慮すると、この数値になることは考えにくいです。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -407,7 +429,14 @@ export const AU_QUESTIONS_2009_SPRING_AM2: Question[] = [
       "エ": "氏名 合田知子 青木俊介 坂口祐子"
     },
     "answer": "イ",
-    "explanation": "この問題は、SQLにおけるSELECT文、FROM句、WHERE句の基本的な使い方、特にテーブル結合（JOIN）の概念を問うています。SELECT文は、指定されたテーブルから必要な列（ここでは「氏名」）を選択します。FROM句は、データを取得する対象となるテーブル（ここでは「学生」表と「学部」表）を指定します。WHERE句は、取得するデータの条件を指定します。\n\n提示されたSQL文「SELECT 氏名 FROM 学生,学部 WHERE 所属 = 学部名 AND 学部.住所='新宿'」では、「学生」表と「学部」表を結合しています。結合条件は「学生」表の「所属」列と「学部」表の「学部名」列が一致することです。さらに、結合された結果から、「学部」表の「住所」列が'新宿'であるレコードのみを絞り込んでいます。つまり、新宿に住所を持つ学部に関連付けられている学生の氏名が取得されることになります。\n\n選択肢イが正解である理由は、問題文から「学生」表と「学部」表のデータ（図表は省略されていますが）において、「学部.住所='新宿'」という条件を満たす学部には、氏名「合田知子」と「青木俊介」の学生が所属していると推測されるからです。\n\n他の選択肢が誤りである理由を分析します。\n選択肢アは、「合田知子」のみが含まれているため、新宿の学部に所属する学生が一人しかいないことになりますが、実際には複数名いる可能性があります。\n選択肢ウは、「合田知子」と「坂口祐子」が含まれています。もし「坂口祐子」さんが新宿の学部に所属していない、あるいは「坂口祐子」さんが存在するが新宿の学部には所属していない、といったデータ構造であれば不正解となります。\n選択肢エは、「合田知子」、「青木俊介」、「坂口祐子」の3名が含まれています。これは、新宿の学部に所属する学生が3名いる場合ですが、SQL文の実行結果として「合田知子」と「青木俊介」の2名のみが抽出されるため、誤りとなります。",
+    "explanation": "学生表の所属と学部表の学部名を一致させ、学部表の住所が新宿の行に絞ります。該当する学部名は理と工なので、SELECT句は合田知子さんと青木俊介さんの氏名を返します。坂口祐子さんは本人の住所が新宿でも、所属先の経済学部は渋谷なので含まれません。",
+    "choiceExplanations": {
+      "ア": "誤りです。合田知子さんの理学部だけでなく、青木俊介さんの工学部も住所が新宿です。本人の住所が渋谷でも、所属学部の住所で判定します。",
+      "イ": "正しいです。学部表で住所が新宿に該当する学部名は理と工です。学生表ではその学部に所属する合田知子さんと青木俊介さんの氏名を返します。",
+      "ウ": "誤りです。合田知子さんと坂口祐子さんは本人の住所が新宿ですが、条件が参照するのは学部表の住所です。坂口さんの経済学部は渋谷です。",
+      "エ": "誤りです。理と工に所属する2人は含まれますが、坂口祐子さんの所属する経済学部の住所は渋谷です。本人の住所が新宿でも抽出されません。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +461,7 @@ export const AU_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "NAPT (Network Address Port Translation) は、NATの一種で、プライベートIPアドレスとグローバルIPアドレスの変換に加えて、ポート番号も利用して変換を行います。これにより、一つのグローバルIPアドレスを複数のLAN内の端末で共有し、同時にインターネットにアクセスすることが可能になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +486,7 @@ export const AU_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "VPN (Virtual Private Network) は、インターネットなどの公衆回線を利用しながら、暗号化や認証技術を適用することで、あたかも専用線であるかのように安全な通信路（仮想的な専用ネットワーク）を構築する技術です。これにより、離れた拠点間や社外からの安全なアクセスを可能にします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +511,7 @@ export const AU_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "DNSキャッシュポイズニングは、DNSサーバのキャッシュに偽のドメイン情報を注入することで、ユーザーが正しいドメイン名を入力しても、攻撃者が用意した偽のWebサイトなどに誘導する攻撃です。これにより、フィッシング詐欺やマルウェア感染を引き起こす可能性があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +536,7 @@ export const AU_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "情報システムのリスク分析は、システムに潜在する脅威と脆弱性を特定し、それらが現実になった場合にどのような損失をもたらすか（影響の大きさ）を評価することを目的としています。この分析により、対策の優先順位を決定するための重要な基礎情報が得られます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +561,7 @@ export const AU_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "機能要件は、システムが「何をすべきか」という業務処理や機能そのものに関する要求です。業務を構成する要素間のデータの流れを明確にする設計は、システムが実行すべき業務処理の具体的な内容を定義し、その機能を実現するための基礎となるため、機能要件を満たすための設計に該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +586,7 @@ export const AU_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "臨時保守（緊急対応）の場合、運用管理者は保守作業者が障害状況を正確に把握していることを事前に確認し、作業終了後には障害が解決されたか、原因、実施内容を詳細に確認することが不可欠です。これにより、適切な対応と将来の再発防止に繋がります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +611,7 @@ export const AU_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "この予測技法は、複数の専門家から匿名で意見を収集し、その結果をフィードバックしながら意見の収束を図る点が特徴です。このような繰り返しによる合意形成プロセスは、デルファイ法（Delphi Method）の定義と完全に一致します。未来予測に特に有効な手法です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +636,7 @@ export const AU_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "バランススコアカード（BSC）は、企業の戦略を「財務」「顧客」「内部ビジネスプロセス」「学習と成長」の4つの視点から評価・管理する経営戦略支援ツールです。これにより、財務的な指標だけでなく、非財務的な要素も含めて包括的に組織のパフォーマンスを把握し、戦略の実行を促進します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_au_am2_qs.pdf",
     "license": "IPA-public"

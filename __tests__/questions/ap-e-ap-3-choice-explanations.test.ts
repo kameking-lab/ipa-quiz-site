@@ -18,7 +18,9 @@ describe("AP e-ap-3 choice explanations", () => {
       applyIpaCorrections("ap", AP_BY_YEAR_QUESTIONS),
     );
     expect(Object.keys(overlay)).toHaveLength(47);
-    expect(AP_QUESTIONS).toHaveLength(before.length);
+    const originalIds = new Set(before.map(q => q.id));
+    const publishedOriginals = AP_QUESTIONS.filter(q => originalIds.has(q.id));
+    expect(publishedOriginals).toHaveLength(before.length);
     const loaded = new Map(AP_QUESTIONS.map(question => [question.id, question]));
     for (const oldQuestion of before) {
       const question = loaded.get(oldQuestion.id)!;

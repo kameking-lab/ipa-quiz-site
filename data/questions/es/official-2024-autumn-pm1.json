@@ -1,0 +1,118 @@
+[
+  {
+    "id": "es-2024a-pm1-q1",
+    "exam": "es",
+    "session": "pm1",
+    "year": 2024,
+    "season": "autumn",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "組込みシステム",
+    "topicTags": [
+      "eVTOL",
+      "センサー",
+      "安全性設計"
+    ],
+    "difficulty": 4,
+    "question": "問1 空飛ぶクルマの旅客輸送システムに関する次の記述を読んで，設問に答えよ。",
+    "answer": "令和６年度 秋期 エンベデッドシステムスペシャリスト試験 解答例\n\n午後Ⅰ試験\n\n問１\n\n                       出題趣旨\n 輸送業界では，交通渋滞，運転手不足を解消するため，ドローン技術及び情報通信技術を用いた空飛ぶクル\nマの実現が求められている。今後の市場規模拡大をにらみ，各国で様々なタイプの空飛ぶクルマの開発が進行\nしている。\n 本問では，空飛ぶクルマの旅客輸送システムを題材として，システムの要件を検討する能力，安全性を設計\nする能力，要求及び仕様に応じてセンサーを活用する能力，制御の要件を検討する能力，追加機能を検討する\n能力を問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１(1) ・運航管理システムは，ヘリコプターなどの飛行計画をもっていないから\n        ・運航管理システムは，eVTOL 以外の飛行計画をもっていないから\n        (2)  a 離着陸場情報\n              b 機体情報\n        (3) eVTOL の飛行計画と飛行情報\n        (4) 825\n 設問２(1) VPS とIMU による水平面上での回転量の積分誤差を補正するため\n        (2) ・IMU からローターユニットまでのデータ経路について遅延時間を最短にした\n       いから\n          ・CAN バスやほかのユニットの異常時に影響を受けにくいので安全であるから\n        (3)  c  114\n              d  136\n              e   4\n              f   14\n 設問３(1) (a) 新たな飛行計画を自動管制システムに送信し続けるおそれがあるから\n             (b) 他のeVTOL やヘリコプターとの位置関係の変化による，接近や衝突を避けるため\n             (c)  g 緊急離着陸場に着陸させるための飛行計画\n                  h 待機しているほかのeVTOL がバッテリー残量不足状態に連鎖的に陥る事象\n        (2)  危険  自動操縦中に飛行障害物と衝突する危険\n       緊急対応 手動操縦で緊急離着陸場へ着陸させる。\n\n\n\n\n\n                                                1/2\n\n                                                                            ©2024 独立行政法人情報処理推進機構",
+    "modelAnswer": "",
+    "scoringCriteria": "設問1〜3の全小問を照合する。825と各単位、a〜h、114・136・4・14、安全性の理由、危険と緊急対応の対応関係を確認する。",
+    "explanation": "運航管理と自動管制がそれぞれ把握する飛行計画の範囲を確認し、安全な運航のために共有すべき情報を整理する。姿勢制御では、VPSとIMUによる回転量の積分誤差を補正することと、IMUからローターユニットへの経路を短くして遅延・異常の影響を抑えることを分けて説明する。バッテリー容量と飛行可能距離の計算は、問題文で与えられた飛行条件を同じ基準へそろえて行う。緊急時の設計では、他機との位置関係だけでなく、待機中の機体が連鎖的に残量不足へ陥る影響も確認する。周辺監視の情報が届かない場合の危険と、そのときの手動操縦による対応を一対で示す。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_es_pm1_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_es_pm1_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/es/2024-autumn-pm1/question-p03.webp",
+      "/images/questions/es/2024-autumn-pm1/question-p04.webp",
+      "/images/questions/es/2024-autumn-pm1/question-p05.webp",
+      "/images/questions/es/2024-autumn-pm1/question-p06.webp",
+      "/images/questions/es/2024-autumn-pm1/question-p07.webp",
+      "/images/questions/es/2024-autumn-pm1/question-p08.webp",
+      "/images/questions/es/2024-autumn-pm1/question-p09.webp",
+      "/images/questions/es/2024-autumn-pm1/question-p10.webp",
+      "/images/questions/es/2024-autumn-pm1/question-p11.webp",
+      "/images/questions/es/2024-autumn-pm1/question-p12.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2024年秋 午後I 問1：公式問題冊子3ページ（本文・図表・設問）",
+      "エンベデッドシステムスペシャリスト 2024年秋 午後I 問1：公式問題冊子4ページ（本文・図表・設問）",
+      "エンベデッドシステムスペシャリスト 2024年秋 午後I 問1：公式問題冊子5ページ（本文・図表・設問）",
+      "エンベデッドシステムスペシャリスト 2024年秋 午後I 問1：公式問題冊子6ページ（本文・図表・設問）",
+      "エンベデッドシステムスペシャリスト 2024年秋 午後I 問1：公式問題冊子7ページ（本文・図表・設問）",
+      "エンベデッドシステムスペシャリスト 2024年秋 午後I 問1：公式問題冊子8ページ（本文・図表・設問）",
+      "エンベデッドシステムスペシャリスト 2024年秋 午後I 問1：公式問題冊子9ページ（本文・図表・設問）",
+      "エンベデッドシステムスペシャリスト 2024年秋 午後I 問1：公式問題冊子10ページ（本文・図表・設問）",
+      "エンベデッドシステムスペシャリスト 2024年秋 午後I 問1：公式問題冊子11ページ（本文・図表・設問）",
+      "エンベデッドシステムスペシャリスト 2024年秋 午後I 問1：公式問題冊子12ページ（本文・図表・設問）"
+    ],
+    "answerImageUrls": [
+      "/images/questions/es/2024-autumn-pm1/answer-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問1：1ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_es_pm1_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_es_pm1_ans.pdf",
+    "sourceAttribution": "出典：IPA（独立行政法人情報処理推進機構） 2024年度秋期 エンベデッドシステムスペシャリスト 午後I 問1",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "officialQuestionLabel": "問1"
+  },
+  {
+    "id": "es-2024a-pm1-q2",
+    "exam": "es",
+    "session": "pm1",
+    "year": 2024,
+    "season": "autumn",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "組込みシステム",
+    "topicTags": [
+      "リアルタイムOS",
+      "タスク設計",
+      "機能追加"
+    ],
+    "difficulty": 4,
+    "question": "問2 害獣監視システムに関する次の記述を読んで，設問に答えよ。",
+    "answer": "問２\n\n                       出題趣旨\n 近年，過疎化などによる耕作放棄地の増加や狩猟者の高年齢化による減少などによって，害獣被害の増加が\n社会問題となっている。\n 本問では，害獣被害を抑制するためのシステムを題材として，要求仕様の理解力，要求仕様に基づいてリア\nルタイムOS を使用して最適に設計する能力，及び機能追加を検討する能力を問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１(1) 21.0\n         (2) 一定時間以上捕獲ユニット内にいるかを判定する。\n         (3)  f 通電制御指示\n              g 威嚇実行指示\n              h 柵接触検知通知\n              i 通電制御指示\n 設問２(1) (a)  a 害獣ID ごとに害獣タスクを生成・起動\n             (b) ① 害獣情報が通知されなくなった。\n         ② 捕獲の発生を通知してきた。\n         (2) (a)  b エリア間の害獣移動の発生\n                  c 害獣がいるエリア\n                  d 害獣の獣種及び大きさ\n             (b) 害獣がある位置に一定時間留まったことを判断するため\n             (c) エリア境界線位置\n         (3) (a)  e メインタスク，威嚇電撃タスク\n             (b) 柵接触検知通知\n 設問３(1)  k 不審者を監視対象の害獣\n         (2) 不審者も識別できる学習済みモデルデータ\n         (3)  j 獣種が不審者の害獣情報\n         (4) ① 全ての害獣タスクから通電禁止依頼を受けていない。\n       ② 一つ以上の害獣タスクから通電の開始の通電制御依頼がある。\n\n\n\n\n\n                                                2/2\n\n                                                                            ©2024 独立行政法人情報処理推進機構",
+    "modelAnswer": "",
+    "scoringCriteria": "21.0と単位、a〜kのタスク・メッセージ、タスクの終了条件、不審者の識別モデル、通電開始の二つの条件を照合する。各通知の送信元・宛先も原本の表で確認する。",
+    "explanation": "監視対象ごとの状態と、システム全体の通電判断を分けて追う。害獣IDごとにタスクを生成し、情報通知がなくなった場合や捕獲が発生した場合の終了条件を確認する。エリア間の移動、現在エリア、獣種・大きさ、滞留時間の判定に必要な位置情報を、それぞれのタスクでどう扱うかを整理する。不審者監視の追加では、識別モデルと通知情報の変更に加え、通電の安全条件も見直す。通電開始には、一つ以上の開始依頼があるだけでなく、全タスクから通電禁止依頼を受けていないことが必要になる。複数対象からの要求をどのように集約するかが設計の要点である。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_es_pm1_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_es_pm1_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/es/2024-autumn-pm1/question-p14.webp",
+      "/images/questions/es/2024-autumn-pm1/question-p15.webp",
+      "/images/questions/es/2024-autumn-pm1/question-p16.webp",
+      "/images/questions/es/2024-autumn-pm1/question-p17.webp",
+      "/images/questions/es/2024-autumn-pm1/question-p18.webp",
+      "/images/questions/es/2024-autumn-pm1/question-p19.webp",
+      "/images/questions/es/2024-autumn-pm1/question-p20.webp",
+      "/images/questions/es/2024-autumn-pm1/question-p21.webp",
+      "/images/questions/es/2024-autumn-pm1/question-p22.webp",
+      "/images/questions/es/2024-autumn-pm1/question-p23.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2024年秋 午後I 問2：公式問題冊子14ページ（本文・図表・設問）",
+      "エンベデッドシステムスペシャリスト 2024年秋 午後I 問2：公式問題冊子15ページ（本文・図表・設問）",
+      "エンベデッドシステムスペシャリスト 2024年秋 午後I 問2：公式問題冊子16ページ（本文・図表・設問）",
+      "エンベデッドシステムスペシャリスト 2024年秋 午後I 問2：公式問題冊子17ページ（本文・図表・設問）",
+      "エンベデッドシステムスペシャリスト 2024年秋 午後I 問2：公式問題冊子18ページ（本文・図表・設問）",
+      "エンベデッドシステムスペシャリスト 2024年秋 午後I 問2：公式問題冊子19ページ（本文・図表・設問）",
+      "エンベデッドシステムスペシャリスト 2024年秋 午後I 問2：公式問題冊子20ページ（本文・図表・設問）",
+      "エンベデッドシステムスペシャリスト 2024年秋 午後I 問2：公式問題冊子21ページ（本文・図表・設問）",
+      "エンベデッドシステムスペシャリスト 2024年秋 午後I 問2：公式問題冊子22ページ（本文・図表・設問）",
+      "エンベデッドシステムスペシャリスト 2024年秋 午後I 問2：公式問題冊子23ページ（本文・図表・設問）"
+    ],
+    "answerImageUrls": [
+      "/images/questions/es/2024-autumn-pm1/answer-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問2：2ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_es_pm1_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_es_pm1_ans.pdf",
+    "sourceAttribution": "出典：IPA（独立行政法人情報処理推進機構） 2024年度秋期 エンベデッドシステムスペシャリスト 午後I 問2",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "officialQuestionLabel": "問2"
+  }
+]

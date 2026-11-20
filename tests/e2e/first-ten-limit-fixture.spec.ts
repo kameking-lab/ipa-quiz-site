@@ -39,11 +39,10 @@ test("quota UI fixture: ten uninterrupted answers, then free exits before the op
   await expect(page.getByRole("heading", { name: "今日の無料10問はここまで" })).toBeVisible();
   expect(granted.size).toBe(10);
   expect(await page.evaluate(() => JSON.parse(localStorage.getItem("ipa-quiz:history:v1")!).entries.length)).toBe(10);
-  const plan = page.getByRole("link", { name: "7日間無料で試す", exact: true });
+  const plan = page.getByRole("link", { name: "月額プランに申し込む", exact: true });
   await expect(plan).toHaveAttribute("href", /returnTo=/);
-  await expect(page.getByText("明日また10問", { exact: true })).toBeVisible();
+  await expect(page.getByText("月額プランは演習回数無制限。", { exact: true })).toBeVisible();
   await expect(page.getByRole("dialog")).toHaveCount(0);
-  const mascot = page.locator('section[aria-labelledby="practice-limit-title"] img');
-  await expect.poll(() => mascot.evaluate(el => (el as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+  await expect(page.locator('section[aria-labelledby="practice-limit-title"] [data-monthly-plan]')).toHaveCount(1);
   await testInfo.attach("quota-wall-mobile", { body: await page.screenshot({ fullPage: true }), contentType: "image/png" });
 });

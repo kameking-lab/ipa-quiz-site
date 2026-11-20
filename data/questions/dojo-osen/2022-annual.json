@@ -1,0 +1,208 @@
+[
+  {
+    "id": "dojo-osen-2022-am-q1",
+    "exam": "dojo-osen",
+    "year": 2022,
+    "season": "annual",
+    "session": "am",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "調査",
+    "topicTags": [
+      "調査"
+    ],
+    "difficulty": 3,
+    "question": "法の第二種特定有害物質に関する次のA〜Eについて、不適当なものの組み合わせはどれか。\nA 鉛は、水道の配管やハンダ用の合金として過去に多く使用されていた。\nB 六価クロムは、自然界に広く安定して存在する三価クロムを焼成して生成され、めっきの原料として用いられてきた。\nC 水銀は、常温で液体の金属元素であり、小規模の銅採掘鉱山ではアマルガム法に用いられてきた。\nD ふっ素は、海水に比較的高濃度に含まれることがある。また、虫歯予防にも使用されることがある。\nE カドミウムは、電池の材料に使用されており、鉱山開発等の影響により水稲への育成障害が広く認められたため、農用地土壌汚染防止法の特定有害物質でもある。",
+    "choices": {
+      "ア": "A、E",
+      "イ": "B、C",
+      "ウ": "B、D",
+      "エ": "C、D",
+      "オ": "C、E"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "小規模の採掘で知られる水銀アマルガム法は金の回収に使われる。カドミウムを農用地の特定有害物質とする理由を水稲の生育障害に求める説明も不適当である。",
+    "choiceExplanations": {
+      "ア": "Aの鉛の用途は適当なので、不適当な記述の組み合わせに入らない。",
+      "イ": "水銀を金の精製に用いるアマルガム法を銅採掘の方法とするCは不適当だが、六価クロムの製造・用途に触れたBは適当である。",
+      "ウ": "六価クロムはめっきなどに用いられ、ふっ素は海水中にも存在する。BとDは不適当な記述ではない。",
+      "エ": "Cは銅採掘とする点が誤りだが、ふっ素が海水中に存在し、むし歯予防に使われるというDは適当である。",
+      "オ": "Cのアマルガム法は主に金採掘で知られる。Eのカドミウムは米への蓄積に伴う健康影響が問題であり、水稲の生育障害を理由とする点が不適当である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.env.go.jp/content/000086863.pdf#page=2",
+    "sourceAnswerUrl": "https://www.env.go.jp/content/000086861.pdf",
+    "sourceAttribution": "出典：環境省 令和4年度土壌汚染調査技術管理者試験 調査 問1。解説は過去問AI作成。",
+    "license": "INT7-owner-decision",
+    "lawReferenceDate": "2022-09-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dojo-osen-2022-am-q2",
+    "exam": "dojo-osen",
+    "year": 2022,
+    "season": "annual",
+    "session": "am",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "調査",
+    "topicTags": [
+      "調査"
+    ],
+    "difficulty": 3,
+    "question": "下記の帯水層における地下水の1年間の移動距離として次に掲げるもののうち、正しいものはどれか。\n\n透水係数：3×10⁻⁵ m/秒\n動水勾配：1/200\n間隙率：0.3\n有効間隙率：0.2\n\nなお、1年は3×10⁷秒とする。",
+    "choices": {
+      "ア": "0.9 m",
+      "イ": "1.4 m",
+      "ウ": "9.0 m",
+      "エ": "15 m",
+      "オ": "23 m"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "ダルシー流速は3×10⁻⁵×(1/200) m/sである。これを有効間隙率0.2で割り、3×10⁷秒を掛けると22.5 mとなり、選択肢の23 mに対応する。",
+    "choiceExplanations": {
+      "ア": "動水勾配から得る年4.5 mに有効間隙率0.2を掛けると0.9 mになるが、流速への換算では0.2で割る。",
+      "イ": "全間隙率0.3を年4.5 mに掛けた場合に近い。実際に水が流れる割合の0.2で除算する。",
+      "ウ": "9.0 mは、透水係数と勾配から求めた年4.5 mを有効間隙率0.2で割った値とは一致しない。",
+      "エ": "全間隙率0.3で4.5 mを割ると15 mだが、問題で与えられた有効間隙率0.2を使う。",
+      "オ": "年当たりのダルシー流速4.5 mを有効間隙率0.2で割って22.5 mとなるので、丸めた23 mが正しい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.env.go.jp/content/000086863.pdf#page=2",
+    "sourceAnswerUrl": "https://www.env.go.jp/content/000086861.pdf",
+    "sourceAttribution": "出典：環境省 令和4年度土壌汚染調査技術管理者試験 調査 問2。解説は過去問AI作成。",
+    "license": "INT7-owner-decision",
+    "lawReferenceDate": "2022-09-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dojo-osen-2022-am-q3",
+    "exam": "dojo-osen",
+    "year": 2022,
+    "season": "annual",
+    "session": "am",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "調査",
+    "topicTags": [
+      "調査"
+    ],
+    "difficulty": 3,
+    "question": "次に掲げる 5 つの物質を分子量の小さい順に並べたとき、小さいものから 2 番目になる物質はどれか。\nなお、元素の原子量は、C:12、H: 1 、Cl:35.5 とする。",
+    "choices": {
+      "ア": "クロロホルム",
+      "イ": "四塩化炭素",
+      "ウ": "1,1,1-トリクロロエタン",
+      "エ": "トリクロロエチレン",
+      "オ": "ベンゼン"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "ベンゼンは78、クロロホルムは119.5であり、残りはいずれも130を超えるため、2番目に小さいのはクロロホルムである。",
+    "choiceExplanations": {
+      "ア": "CHCl₃の分子量は12+1+3×35.5=119.5で、ベンゼンに次ぐ小ささである。",
+      "イ": "CCl₄は12+4×35.5=154で、この5物質の中で最も大きい。",
+      "ウ": "C₂H₃Cl₃の分子量は133.5で、クロロホルムやトリクロロエチレンより大きい。",
+      "エ": "C₂HCl₃の分子量は131.5であり、ベンゼンとクロロホルムの次に小さい。",
+      "オ": "C₆H₆の分子量は78であり、5物質の中で最も小さい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.env.go.jp/content/000086863.pdf#page=3",
+    "sourceAnswerUrl": "https://www.env.go.jp/content/000086861.pdf",
+    "sourceAttribution": "出典：環境省 令和4年度土壌汚染調査技術管理者試験 調査 問3。解説は過去問AI作成。",
+    "license": "INT7-owner-decision",
+    "lawReferenceDate": "2022-09-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dojo-osen-2022-am-q4",
+    "exam": "dojo-osen",
+    "year": 2022,
+    "season": "annual",
+    "session": "am",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "調査",
+    "topicTags": [
+      "調査"
+    ],
+    "difficulty": 3,
+    "question": "土壌・地下水汚染物質に関する次の記述のうち、もっとも不適当なものはどれか。",
+    "choices": {
+      "ア": "有機りん化合物であるパラチオンは、かつて殺虫剤(農薬)として用いられていたが、哺乳類・鳥類・昆虫等に対して非常に毒性が高い。",
+      "イ": "硝酸性窒素は、肥料の過剰施肥や家畜排せつ物の不適正処理等が原因で地下水汚染を発生することがあるが、地下水内では比較的移動性が低いため、汚染範囲は比較的狭い範囲である場合が多い。",
+      "ウ": "有機ふっ素化合物であるペルフルオロオクタンスルホン酸(PFOS)及びペルフルオロオクタン酸(PFOA)は、無色の液体で、水や油をはじく等の独特の性質を持ち、撥水剤、表面処理剤、消火剤等に用いられてきた。",
+      "エ": "ポリ塩化ビフェニル(PCB)は、無色透明で化学的に安定で、耐熱性、絶縁性等優れた性質を持つため、かつて変圧器やコンデンサ・安定器等に用いられていた。",
+      "オ": "1,4-ジオキサンは、常温で無色透明の液体で、水とも油とも混和する性質から、有機化合物を製造する際の反応溶剤や、合成皮革や塗料等の溶剤に用いられる。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "硝酸性窒素は土壌粒子に強く吸着しにくく、地下水に乗って移動しやすい。比較的移動性が低く汚染範囲が狭いとする点が不適当である。",
+    "choiceExplanations": {
+      "ア": "パラチオンは過去に農薬として用いられた有機リン剤で、強い毒性を持つ。",
+      "イ": "過剰施肥などは地下水汚染の要因となるが、硝酸イオンは土壌に吸着されにくく、地下水中を広く移動しうる。",
+      "ウ": "PFOSやPFOAに代表される有機ふっ素化合物には、水や油をはじく性質を利用した用途がある。純物質の状態と、使用時の製剤の状態は区別して読む。",
+      "エ": "PCBは熱に強く絶縁性が高いため、変圧器などの電気機器に用いられた。",
+      "オ": "1,4-ジオキサンは水や多くの有機溶剤と混ざりやすく、溶媒として使われてきた。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.env.go.jp/content/000086863.pdf#page=3",
+    "sourceAnswerUrl": "https://www.env.go.jp/content/000086861.pdf",
+    "sourceAttribution": "出典：環境省 令和4年度土壌汚染調査技術管理者試験 調査 問4。解説は過去問AI作成。",
+    "license": "INT7-owner-decision",
+    "lawReferenceDate": "2022-09-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dojo-osen-2022-am-q5",
+    "exam": "dojo-osen",
+    "year": 2022,
+    "season": "annual",
+    "session": "am",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "調査",
+    "topicTags": [
+      "調査"
+    ],
+    "difficulty": 3,
+    "question": "下の図に示すように、X事業所とY事業所を跨ぎ範囲1及び範囲2で土地の形質の変更を行う予定であり、X事業所のみに有害物質使用特定施設が現存している。次に示すA〜Dのうち、範囲1及び範囲2の面積の条件に対応する法第 4 条第 1 項の土地の形質の変更の届出の対象となる土地の範囲として、適当なものの組み合わせはどれか。\nなお、X事業所及びY事業所は、法第 3 条第 1 項ただし書の確認による調査義務の一時的免除を受けていない土地である。",
+    "choices": {
+      "ア": "A、B",
+      "イ": "A、C、D",
+      "ウ": "B、C",
+      "エ": "B、C、D",
+      "オ": "C、D"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "有害物質使用特定施設が現存する敷地側は900 m²、一般には一体の形質変更が3,000 m²以上かを確認する。Bは①、Cは①と②が対象となる。",
+    "choiceExplanations": {
+      "ア": "Aは①が900 m²に満たず、合計も3,000 m²未満なので、①と②が対象になるという判定が誤っている。",
+      "イ": "Aはどちらの面積条件も満たさず、Dも合計3,000 m²以上なのに②だけを対象とする点が誤っている。",
+      "ウ": "Bは①が900 m²以上で①が対象になる。Cは一体で3,000 m²以上なので①と②が対象になる。",
+      "エ": "Dは一体で3,000 m²以上になるため、②だけを対象にするという判定を加えることはできない。",
+      "オ": "Cは一体で3,000 m²以上のため正しいが、Dも一体の形質変更として扱うので②だけを対象とする記述が誤っている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/dojo-osen/2022/am-q5.png"
+    ],
+    "imageAltTexts": [
+      "事業所X、Yをまたぐ形質変更の範囲と、設例A〜Dの面積および届出対象を示す図表。"
+    ],
+    "sourcePdfUrl": "https://www.env.go.jp/content/000086863.pdf#page=4",
+    "sourceAnswerUrl": "https://www.env.go.jp/content/000086861.pdf",
+    "sourceAttribution": "出典：環境省 令和4年度土壌汚染調査技術管理者試験 調査 問5。図は公式PDFから切り出し。解説は過去問AI作成。",
+    "license": "INT7-owner-decision",
+    "lawReferenceDate": "2022-09-01",
+    "lastUpdated": "2026-11-19"
+  }
+]

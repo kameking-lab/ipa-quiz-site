@@ -24,6 +24,7 @@ export const ES_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "パイプラインでI個の命令を実行する場合、最初の命令が完了するまでにパイプラインの深さDにピッチPを乗じた時間(D×P)がかかります。その後、残りの(I-1)個の命令は1ピッチPごとに完了するため、(I-1)×Pの時間が追加でかかります。これらの合計は、(D×P) + ((I-1)×P) = (D+I-1)×Pとなります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const ES_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "投機実行（Speculative Execution）は、分岐命令の結果が確定する前に、予測された分岐先の命令を事前に実行する技法です。これにより、分岐によるパイプラインの停止時間を削減し、プロセッサの性能を向上させます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const ES_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "FeRAM（強誘電体メモリ）は、不揮発性でありながらDRAM並みの高速な書き換えとSRAM並みの低消費電力を実現します。また、フラッシュメモリと比較して書き換え可能回数が多く、バイト単位での高速な書き換えが可能です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const ES_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ハプティックデバイスは、触覚フィードバックを提供する装置であり、ユーザーに力、振動、動きなどの物理的な感覚を伝えます。これにより、仮想環境での操作や遠隔操作において、より直感的で現実感のあるインタラクションを可能にします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,7 @@ export const ES_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "端末からの送信時間は(400バイト×8ビット/バイト) / (1×10^6 ビット/秒×0.8) = 4ミリ秒、ホストからの返信時間は(600バイト×8ビット/バイト) / (1×10^6 ビット/秒×0.8) = 6ミリ秒です。これらの送信時間とホストコンピュータの処理時間40ミリ秒を合計すると、4 + 40 + 6 = 50ミリ秒となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +149,13 @@ export const ES_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "正解はウです。（出典: IPA エンベデッドシステムスペシャリスト試験 令和7年度秋期 午前II 問6）",
+    "choiceExplanations": {
+      "ア": "誤りです。処理AはまだXがセマフォiもoも取得していない段階です。Yは先にo、次にiを確保できるため、Xが資源を解放するのを待つことはありません。",
+      "イ": "正しいです。Xがiだけを持つ間にYがoを取得すると、YはXのiを待ちます。Xは再開してもYのoを待つため、互いに資源を解放できません。",
+      "ウ": "誤りです。処理CまでにXはiとoの両方を取得しています。Yは最初のoの取得で待つため、再開したXは資源を追加取得せずに処理を進められます。",
+      "エ": "誤りです。処理Dは入出力の後ですが、Xはまだiとoを保持しています。Yがoの取得で待っている間にXが再開し、両方を順に解放できます。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +180,7 @@ export const ES_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "仮想アドレス空間の大きさ2^Lバイトをページサイズ2^Nバイトで割ると、ページ数は2^(L-N)個となります。ページテーブルは各ページに対応するエントリを持ち、各エントリの大きさは2^Eバイトであるため、ページテーブルに必要な領域の大きさは2^(L-N) × 2^E = 2^(L-N+E)バイトとなります。したがって、xはL-N+Eです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +205,7 @@ export const ES_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "Yocto Projectは、Linux Foundationが推進するオープンソースプロジェクトで、組込みLinuxシステム用のカスタムディストリビューションを構築するためのフレームワークとツールを提供します。これにより、様々なハードウェアアーキテクチャに対応した組込みシステムを効率的に開発できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +230,7 @@ export const ES_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "DRAM（Dynamic RAM）のメモリセルは、SRAM（Static RAM）と比較して構成が単純であり、一般的に1つのトランジスタと1つのキャパシタで構成されます。このため、集積度が高く、ビットあたりの製造コストが安いため、大容量のメモリに適しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +255,7 @@ export const ES_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "正解はアです。（出典: IPA エンベデッドシステムスペシャリスト試験 令和7年度秋期 午前II 問10）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +280,7 @@ export const ES_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "正解はイです。（出典: IPA エンベデッドシステムスペシャリスト試験 令和7年度秋期 午前II 問11）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +305,7 @@ export const ES_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "JIS Z 8521:2020におけるユーザエクスペリエンス（UX）の定義は、製品、システム、またはサービスの利用に関連して、あるいはその利用を予期して生じる利用者の知覚と反応のすべてを指します。これには、利用前、利用中、利用後の感情、信念、好み、知覚、身体的および心理的反応、行動、達成が含まれます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +330,7 @@ export const ES_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ネットワーク192.168.128.0/24を4つのサブネットに分割する場合、ホスト部から2ビットをサブネット部に割り当てる必要があります。これにより、各サブネットのホスト部は32-24-2 = 6ビットとなり、各サブネットで使用できるIPアドレスは2^6-2 = 62個です。したがって、4つのサブネット全体で機器に付与できるIPアドレスの総数は62個 × 4サブネット = 248個となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +355,7 @@ export const ES_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "サイドチャネル攻撃は、暗号処理中に暗号装置から漏洩する物理的な情報（消費電力、電磁波、処理時間など）を測定・解析することで、内部の秘密情報（暗号鍵など）を推定する攻撃手法です。消費電力の測定はその代表的な例です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +380,7 @@ export const ES_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "正解はウです。（出典: IPA エンベデッドシステムスペシャリスト試験 令和7年度秋期 午前II 問15）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +405,7 @@ export const ES_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "DNSSECでは、権威DNSサーバ（C）がDNS応答にデジタル署名を付加して送信し、DNSキャッシュサーバ（A）がそのデジタル署名を公開鍵（DNS鍵）を用いて検証します。これにより、DNSキャッシュサーバAはDNS応答の真正性（偽装されていないこと）と完全性（改ざんされていないこと）を確認します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +430,7 @@ export const ES_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "メモリ安全性（Memory Safety）とは、プログラムがバッファオーバーフローやメモリリーク、不正なポインタ操作などの誤ったメモリアクセスを行わないようにすることです。メモリ保護機能を備えたプログラミング言語を使用することで、これらの潜在的なセキュリティ上の脆弱性を回避し、システムの安定性と安全性を高めることができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +455,7 @@ export const ES_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ソフトウェアプロダクトライン開発は、特定の製品群（プロダクトライン）に共通するソフトウェア資産（コアアセット）を構築し、それを再利用することで、複数の製品を効率的かつ高品質に開発する手法です。ビジネスプランに基づき、共通の設計や実装を最大限に活用し、開発コストと期間の削減を目指します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +480,7 @@ export const ES_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "STAMP/STPA（System-Theoretic Accident Model and Processes / System-Theoretic Process Analysis）は、システム全体を制御構造と捉え、構成要素間の想定されていない相互作用や誤った安全制御が事故を引き起こすという考え方に基づいた安全性解析手法です。複雑なシステムにおける予期せぬ相互作用による事故原因の特定に特に有効です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +505,7 @@ export const ES_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ドメインエンジニアリングは、特定のアプリケーション領域（ドメイン）において、共通の業務知識、再利用可能なソフトウェア部品、ツールなどを体系的に整備する活動です。これにより、そのドメイン内のソフトウェア開発の効率と品質を向上させ、新しいシステム構築を促進します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +530,7 @@ export const ES_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "LSI設計を自社で行い、製造を外部に委託する企業をファブレスメーカーと呼びます。このファブレスメーカーからLSIの製造工程のみを受託する専門企業がファウンドリー（半導体受託製造）です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +555,7 @@ export const ES_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "SCM（サプライチェーンマネジメント）は、製品の企画・開発から原材料調達、生産、物流、販売、消費に至るまでの一連のプロセスを企業間連携を含めて統合的に管理する手法です。これにより、全体の最適化を図り、リードタイム短縮や在庫コスト削減、顧客満足度向上などを実現します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +580,7 @@ export const ES_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "技術経営における「死の谷」とは、基礎研究や応用研究の成果が、実際の製品開発や事業化へと進む過程で直面する、資金調達や体制構築の困難を指す概念です。先進的な技術があっても、市場投入や事業として成功させるためのギャップを埋めることが難しい状況を表します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +605,7 @@ export const ES_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "耐タンパ性とは、IoT機器の内部構造や動作状態が、不正な解析や改ざん（タンパリング）によって秘密情報が漏洩したり、システムが侵害されたりすることを困難にする設計・実装の度合いを指します。物理的な防御や回路の難読化などにより、機器内部へのアクセスや解析を阻止する機構を指します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +630,7 @@ export const ES_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "問題文は、現実の航空機エンジンから収集したデータを基に仮想空間にそのモデルを構築し、シミュレーションによって消耗状況などを予測する技術が説明されています。この現実世界の物理的な対象を仮想空間で忠実に再現する概念は「デジタルツイン」と呼ばれます。デジタルツインは、IoT技術を活用してリアルタイムでデータを反映し、分析や予測に利用されるため、本記述に最も合致します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_es_am2_qs.pdf",
     "license": "IPA-public"

@@ -6,7 +6,7 @@ vi.mock("@/lib/ai/provider", async () => ({...await vi.importActual("@/lib/ai/pr
 vi.mock("@/lib/ai/cost-guard", async () => ({...await vi.importActual("@/lib/ai/cost-guard"), checkMonthlyCostCap: async () => ({allowed: true}), recordAiCost: stubs.cost}));
 vi.mock("@/lib/notify/ops-alert", () => ({buildGradingFallbackAlert: () => "metadata only", notifyOpsInBackground: stubs.notify}));
 vi.mock("@/lib/monitoring/sentry", () => ({captureException: vi.fn()}));
-import { POST as essay } from "@/app/api/essay-grade/route";
+import { POST as essay } from "@/lib/essay/legacy-grade";
 import { POST as scoring } from "@/app/api/scoring/route";
 const essayBody = {questionId: "au-2024a-pm2-q1", industry: "it", answers: {ア: "無意味".repeat(250), イ: "無意味".repeat(400), ウ: "無意味".repeat(250)}};
 const afternoonBody = {questionId: "ap-2024h-pm-q1", answers: [{label: "設問1", text: "無意味".repeat(20)}]};

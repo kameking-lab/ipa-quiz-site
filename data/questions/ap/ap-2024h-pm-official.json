@@ -1,0 +1,507 @@
+[
+  {
+    "id": "ap-2024h-pm-q1",
+    "exam": "ap",
+    "year": 2024,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "情報セキュリティ",
+    "topicTags": [
+      "ゼロトラスト",
+      "リモートワーク",
+      "多要素認証"
+    ],
+    "difficulty": 4,
+    "question": "リモート環境の構築について、公式問題の設問1〜4に答えよ。",
+    "answer": "設問1 イ\n設問2 (1) a：ゼロトラスト\n(2) セキュリティパッチ提供の調査及び適用の判断\n設問3 (1) ・URLフィルタリング\n・業務上不要なサイトへの接続禁止\n(2) セキュリティインシデントの発生を迅速に検知するため\n(3) ア，ウ\n設問4 (1) ア\n(2) b：多要素認証 又は 2要素認証（多段階認証 又は 2段階認証も可）",
+    "modelAnswer": "設問1 イ\n\n設問2 (1) a：ゼロトラスト\n\n(2) セキュリティパッチ提供の調査及び適用の判断\n\n設問3 (1) ・URLフィルタリング\n\n・業務上不要なサイトへの接続禁止\n\n(2) セキュリティインシデントの発生を迅速に検知するため\n\n(3) ア，ウ\n\n設問4 (1) ア\n\n(2) b：多要素認証 又は 2要素認証（多段階認証 又は 2段階認証も可）",
+    "explanation": "境界型防御では社内と社外を分けて保護するが、クラウドやリモート接続では通信元が社内かどうかだけで安全性を判断できない。設問2はゼロトラストの考え方と、機器のパッチ管理で運用者に残る作業を対応付ける。設問3は、接続先の制限とインシデントを早期に見つける監視の役割を分けて考える。設問4の認証強化では、パスワードだけに依存せず追加の認証を行う。公式解答例では多要素・2要素に加え、多段階・2段階という記述も可としている。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/question-assets/qb-11/ap-2024h-pm/p05.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p06.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p07.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p08.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p09.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p10.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p11.webp"
+    ],
+    "imageAltTexts": [
+      "2024年午後 問1の公式本文・図表・設問（原本5ページ）",
+      "2024年午後 問1の公式本文・図表・設問（原本6ページ）",
+      "2024年午後 問1の公式本文・図表・設問（原本7ページ）",
+      "2024年午後 問1の公式本文・図表・設問（原本8ページ）",
+      "2024年午後 問1の公式本文・図表・設問（原本9ページ）",
+      "2024年午後 問1の公式本文・図表・設問（原本10ページ）",
+      "2024年午後 問1の公式本文・図表・設問（原本11ページ）"
+    ],
+    "answerImageUrls": [
+      "/question-assets/qb-11/ap-2024h-pm/answer-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問1（原本 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "ap-2024h-pm-q2",
+    "exam": "ap",
+    "year": 2024,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "経営戦略",
+    "topicTags": [
+      "環境分析",
+      "物流",
+      "事業計画"
+    ],
+    "difficulty": 4,
+    "question": "物流事業者の事業計画について、公式問題の設問1〜3に答えよ。",
+    "answer": "設問1 (1) a：労働基準法，b：価格，c：代替\n(2) d：ウ\n(3) マクロ的視点\n(4) 内部環境分析\n設問2 (1) エ\n(2) 顧客の事業に関するテキストデータを分析の対象とする。\n設問3 (1) 好立地にある営業所と倉庫\n(2) 一括委託することでコア業務に集中したいという要望",
+    "modelAnswer": "設問1 (1) a：労働基準法，b：価格，c：代替\n\n(2) d：ウ\n\n(3) マクロ的視点\n\n(4) 内部環境分析\n\n設問2 (1) エ\n\n(2) 顧客の事業に関するテキストデータを分析の対象とする。\n\n設問3 (1) 好立地にある営業所と倉庫\n\n(2) 一括委託することでコア業務に集中したいという要望",
+    "explanation": "自社の運送業務だけを見るのではなく、顧客が何を一括して任せたいのかを分析する。設問1は外部のマクロ環境、競争環境、自社の内部環境を切り分ける問題で、法律・価格・代替手段はそれぞれ異なる観点に属する。設問2は分析手法の名称だけでなく、顧客の事業に関するテキストを実際の分析対象にする点が要点。設問3では営業所や倉庫の立地という自社の強みを、顧客がコア業務に集中したいという要望と結び付け、新しいサービスの根拠にする。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/question-assets/qb-11/ap-2024h-pm/p13.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p14.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p15.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p16.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p17.webp"
+    ],
+    "imageAltTexts": [
+      "2024年午後 問2の公式本文・図表・設問（原本13ページ）",
+      "2024年午後 問2の公式本文・図表・設問（原本14ページ）",
+      "2024年午後 問2の公式本文・図表・設問（原本15ページ）",
+      "2024年午後 問2の公式本文・図表・設問（原本16ページ）",
+      "2024年午後 問2の公式本文・図表・設問（原本17ページ）"
+    ],
+    "answerImageUrls": [
+      "/question-assets/qb-11/ap-2024h-pm/answer-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問2（原本 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "ap-2024h-pm-q3",
+    "exam": "ap",
+    "year": 2024,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "アルゴリズム",
+    "topicTags": [
+      "ダイクストラ法",
+      "最短経路",
+      "計算量"
+    ],
+    "difficulty": 4,
+    "question": "最短経路探索について、公式問題の設問1〜4に答えよ。",
+    "answer": "設問1 ア：17\n設問2 イ：dist[k]がminDistより小さい\nウ：dist[k]\nエ：dist[curNode] ＋ edge[curNode, k]\n設問3 (1) 代入文：viaNode[k] ← curNode\nオ：25\n(2) カ：ア\n設問4 (1) キ：更新起点ノード\n(2) ク：N2",
+    "modelAnswer": "設問1 ア：17\n\n設問2 イ：dist[k]がminDistより小さい\n\nウ：dist[k]\n\nエ：dist[curNode] ＋ edge[curNode, k]\n\n設問3 (1) 代入文：viaNode[k] ← curNode\n\nオ：25\n\n(2) カ：ア\n\n設問4 (1) キ：更新起点ノード\n\n(2) ク：N2",
+    "explanation": "ダイクストラ法では、未確定の頂点の中から暫定距離が最小の頂点を選び、その頂点を経由する距離で隣接頂点の値を更新する。設問2の候補距離は、起点までのdist[curNode]に辺の重みedge[curNode, k]を加えたものになる。設問3では距離が短くなった時点でviaNode[k]に直前の頂点を保存し、後で経路を復元できるようにする。設問4は距離の値だけでなく、どの頂点を更新の起点としているかを表の各段階で追う。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/question-assets/qb-11/ap-2024h-pm/p19.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p20.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p21.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p22.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p23.webp"
+    ],
+    "imageAltTexts": [
+      "2024年午後 問3の公式本文・図表・設問（原本19ページ）",
+      "2024年午後 問3の公式本文・図表・設問（原本20ページ）",
+      "2024年午後 問3の公式本文・図表・設問（原本21ページ）",
+      "2024年午後 問3の公式本文・図表・設問（原本22ページ）",
+      "2024年午後 問3の公式本文・図表・設問（原本23ページ）"
+    ],
+    "answerImageUrls": [
+      "/question-assets/qb-11/ap-2024h-pm/answer-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問3（原本 2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "ap-2024h-pm-q4",
+    "exam": "ap",
+    "year": 2024,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "システムアーキテクチャ",
+    "topicTags": [
+      "BFF",
+      "Web API",
+      "レスポンス"
+    ],
+    "difficulty": 4,
+    "question": "CRMシステムの改修について、公式問題の設問1〜5に答えよ。",
+    "answer": "設問1 イ，エ\n設問2 (1) ウ\n(2) 日誌の繰返しデータ\n設問3 ①応答データの加工処理をサーバ側で行うから\n②応答データの転送量が削減されるから\n設問4 a：200，b：550\n設問5 Web APIを介してCRMシステム以外の社内システムとも連携する拡張性",
+    "modelAnswer": "設問1 イ，エ\n\n設問2 (1) ウ\n\n(2) 日誌の繰返しデータ\n\n設問3 ①応答データの加工処理をサーバ側で行うから\n\n②応答データの転送量が削減されるから\n\n設問4 a：200，b：550\n\n設問5 Web APIを介してCRMシステム以外の社内システムとも連携する拡張性",
+    "explanation": "端末ごとに必要な応答をフロントエンド専用サーバで整える構成を考える。設問2は繰返し部分を含むデータ構造を図と対応付ける。設問3では、加工をサーバに移すことで端末側の処理を減らす効果と、必要なデータだけを返して転送量を減らす効果を分けて説明する。設問4の時間は処理時間と通信時間を問題の条件に沿って積み上げ、同時処理できる箇所の扱いに注意する。設問5は目先の高速化に加え、Web API経由で他の社内システムへ連携先を広げられる点を述べる。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/question-assets/qb-11/ap-2024h-pm/p25.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p26.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p27.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p28.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p29.webp"
+    ],
+    "imageAltTexts": [
+      "2024年午後 問4の公式本文・図表・設問（原本25ページ）",
+      "2024年午後 問4の公式本文・図表・設問（原本26ページ）",
+      "2024年午後 問4の公式本文・図表・設問（原本27ページ）",
+      "2024年午後 問4の公式本文・図表・設問（原本28ページ）",
+      "2024年午後 問4の公式本文・図表・設問（原本29ページ）"
+    ],
+    "answerImageUrls": [
+      "/question-assets/qb-11/ap-2024h-pm/answer-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問4（原本 2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "ap-2024h-pm-q5",
+    "exam": "ap",
+    "year": 2024,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 5,
+    "type": "descriptive",
+    "category": "ネットワーク",
+    "topicTags": [
+      "IoT",
+      "MQTT",
+      "クラウド",
+      "ファイアウォール"
+    ],
+    "difficulty": 4,
+    "question": "クラウドサービスを活用した情報提供システムについて、公式問題の設問1〜3に答えよ。",
+    "answer": "設問1 (1) 300\n(2) MQTT\n設問2 (1) a：200.a.b.13，b：200.c.d.101，c：TCP/443\n(2) 4，7\n設問3 (1) d：FW\n(2) e：ウ，f：ア\n(3) エ",
+    "modelAnswer": "設問1 (1) 300\n\n(2) MQTT\n\n設問2 (1) a：200.a.b.13，b：200.c.d.101，c：TCP/443\n\n(2) 4，7\n\n設問3 (1) d：FW\n\n(2) e：ウ，f：ア\n\n(3) エ",
+    "explanation": "IoT機器から集めるデータ量と送信間隔を基に通信量を見積もり、用途に適した通信方式を選ぶ。MQTTはメッセージの配信を扱うプロトコルで、設問1では通信量の計算と区別して答える。設問2の許可ルールは、通信の送信元・宛先とTCP/443を一組にして確認する。アドレスの似た機器を取り違えず、図の通信方向を追う。設問3は遅延の原因となっているFWと対策の対応を問う。単に全体を増強するのでなく、どこで処理が滞っているかを条件から特定する。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/question-assets/qb-11/ap-2024h-pm/p31.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p32.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p33.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p34.webp"
+    ],
+    "imageAltTexts": [
+      "2024年午後 問5の公式本文・図表・設問（原本31ページ）",
+      "2024年午後 問5の公式本文・図表・設問（原本32ページ）",
+      "2024年午後 問5の公式本文・図表・設問（原本33ページ）",
+      "2024年午後 問5の公式本文・図表・設問（原本34ページ）"
+    ],
+    "answerImageUrls": [
+      "/question-assets/qb-11/ap-2024h-pm/answer-p03.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問5（原本 3ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "ap-2024h-pm-q6",
+    "exam": "ap",
+    "year": 2024,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 6,
+    "type": "descriptive",
+    "category": "データベース",
+    "topicTags": [
+      "マルチテナント",
+      "SQL",
+      "スキーマ"
+    ],
+    "difficulty": 4,
+    "question": "人事評価システムのマルチテナント化について、公式問題の設問1〜4に答えよ。",
+    "answer": "設問1 (1) a：→\n(2) b：BETWEEN :年度開始日 AND :年度終了日\nc：ORDER BY\n(3) d：EMP.部署番号 = DEP.部署番号\n設問2 漏れる情報を会社単位に制限できる。\n設問3 e：C001.国民の祝日，f：PUB.国民の祝日\n設問4 (1) g：会社，h：スキーマ名\n(2) 退職分析\n(3) 退職表を共有用スキーマに配置する。",
+    "modelAnswer": "設問1 (1) a：→\n\n(2) b：BETWEEN :年度開始日 AND :年度終了日\n\nc：ORDER BY\n\n(3) d：EMP.部署番号 = DEP.部署番号\n\n設問2 漏れる情報を会社単位に制限できる。\n\n設問3 e：C001.国民の祝日，f：PUB.国民の祝日\n\n設問4 (1) g：会社，h：スキーマ名\n\n(2) 退職分析\n\n(3) 退職表を共有用スキーマに配置する。",
+    "explanation": "設問1はE-R図の関連と、年度の範囲指定、並び順、部署番号による結合をそれぞれ確認する。BETWEENでは開始日と終了日を含む範囲になる。設問2は会社ごとにスキーマを分けることで、情報漏えいが起きたときの範囲を会社単位に限定できる点を述べる。設問3では会社固有のスキーマとPUBの共有スキーマを明示して区別する。設問4は会社とスキーマの対応を管理する仕組み、退職データを横断して分析する機能、共有用の表配置を結び付ける。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/question-assets/qb-11/ap-2024h-pm/p35.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p36.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p37.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p38.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p39.webp"
+    ],
+    "imageAltTexts": [
+      "2024年午後 問6の公式本文・図表・設問（原本35ページ）",
+      "2024年午後 問6の公式本文・図表・設問（原本36ページ）",
+      "2024年午後 問6の公式本文・図表・設問（原本37ページ）",
+      "2024年午後 問6の公式本文・図表・設問（原本38ページ）",
+      "2024年午後 問6の公式本文・図表・設問（原本39ページ）"
+    ],
+    "answerImageUrls": [
+      "/question-assets/qb-11/ap-2024h-pm/answer-p03.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問6（原本 3ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "ap-2024h-pm-q7",
+    "exam": "ap",
+    "year": 2024,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 7,
+    "type": "descriptive",
+    "category": "組込みシステム",
+    "topicTags": [
+      "リアルタイムOS",
+      "状態遷移",
+      "タスク"
+    ],
+    "difficulty": 4,
+    "question": "業務用ホットコーヒーマシンについて、公式問題の設問1〜3に答えよ。",
+    "answer": "設問1 (1) a：ドアをロック\n(2) 320\n設問2 (1) カップ判定中にドアが開けられたことを検出したいから\n(2) コーヒーの分量\n(3) ドア開：タ，ドア閉：カ\n設問3 (1) “確認”，“抽出完了”\n(2) b：判定結果",
+    "modelAnswer": "設問1 (1) a：ドアをロック\n\n(2) 320\n\n設問2 (1) カップ判定中にドアが開けられたことを検出したいから\n\n(2) コーヒーの分量\n\n(3) ドア開：タ，ドア閉：カ\n\n設問3 (1) “確認”，“抽出完了”\n\n(2) b：判定結果",
+    "explanation": "熱いコーヒーを扱うため、単に抽出の順序を満たすだけでなく、ドアの開閉とカップの判定を安全条件として扱う。設問1はロック処理のタイミングと数値条件を仕様から追う。設問2ではカップを調べている途中にもドアが開く可能性があり、その変化を検出する必要がある。ドア開・ドア閉の状態で対応する処理を逆にしない。設問3はタスク間で渡すイベント名とデータを区別し、確認・抽出完了というイベントと、判定結果という内容を対応付ける。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/question-assets/qb-11/ap-2024h-pm/p41.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p42.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p43.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p44.webp"
+    ],
+    "imageAltTexts": [
+      "2024年午後 問7の公式本文・図表・設問（原本41ページ）",
+      "2024年午後 問7の公式本文・図表・設問（原本42ページ）",
+      "2024年午後 問7の公式本文・図表・設問（原本43ページ）",
+      "2024年午後 問7の公式本文・図表・設問（原本44ページ）"
+    ],
+    "answerImageUrls": [
+      "/question-assets/qb-11/ap-2024h-pm/answer-p04.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問7（原本 4ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "ap-2024h-pm-q8",
+    "exam": "ap",
+    "year": 2024,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 8,
+    "type": "descriptive",
+    "category": "ソフトウェア設計",
+    "topicTags": [
+      "Observer",
+      "UML",
+      "クラス設計"
+    ],
+    "difficulty": 4,
+    "question": "販売情報を可視化するダッシュボードについて、公式問題の設問1〜6に答えよ。",
+    "answer": "設問1 a：継承\n設問2 b：0..*\nc：白抜き三角形の矢印（公式解答例の図を参照）\n設問3 販売実績Subject，販売明細Subject\n設問4 d：抽象，e：棒グラフView\n設問5 引数に絞込条件クラスのオブジェクトを追加する。\n設問6 f：複数のSubjectオブジェクトに登録される",
+    "modelAnswer": "設問1 a：継承\n\n設問2 b：0..*\n\nc：白抜き三角形の矢印（公式解答例の図を参照）\n\n設問3 販売実績Subject，販売明細Subject\n\n設問4 d：抽象，e：棒グラフView\n\n設問5 引数に絞込条件クラスのオブジェクトを追加する。\n\n設問6 f：複数のSubjectオブジェクトに登録される",
+    "explanation": "Observerパターンでは、データを保持するSubjectと、変更を受け取って表示を更新する側を分ける。設問1・2は継承の表記と、登録先が0個以上あり得る多重度を確認する。矢印の形と向きは公式解答例の図で照合する。設問3は必要な販売データを管理するSubjectを選ぶ。設問4は共通の振舞いを抽象化し、棒グラフの表示を具体的なクラスへ対応付ける。設問5の絞込条件はオブジェクトとして引数に追加する。設問6では一つの表示が複数のSubjectに登録される関係に注目する。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/question-assets/qb-11/ap-2024h-pm/p45.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p46.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p47.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p48.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p49.webp"
+    ],
+    "imageAltTexts": [
+      "2024年午後 問8の公式本文・図表・設問（原本45ページ）",
+      "2024年午後 問8の公式本文・図表・設問（原本46ページ）",
+      "2024年午後 問8の公式本文・図表・設問（原本47ページ）",
+      "2024年午後 問8の公式本文・図表・設問（原本48ページ）",
+      "2024年午後 問8の公式本文・図表・設問（原本49ページ）"
+    ],
+    "answerImageUrls": [
+      "/question-assets/qb-11/ap-2024h-pm/answer-p04.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問8（原本 4ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "ap-2024h-pm-q9",
+    "exam": "ap",
+    "year": 2024,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 9,
+    "type": "descriptive",
+    "category": "プロジェクトマネジメント",
+    "topicTags": [
+      "PoC",
+      "スコープ",
+      "農業DX"
+    ],
+    "difficulty": 4,
+    "question": "農業DXのプロジェクトについて、公式問題の設問1〜2に答えよ。",
+    "answer": "設問1 (1) 本サービスの実現に不確かな要素が多いから\n(2) a：守秘契約\n設問2 (1) 農家がガイド機能を活用できるようになる支援\n(2) ・Kセンサーの種類を増やすとデータ連携機能の開発規模が増えること\n・W社側の作業スコープの変更はA社側の作業スコープに影響すること\n(3) b：コスト，c：スケジュール（順不同）\n(4) イ\n(5) いちごを収穫するまで導入効果を評価できないから",
+    "modelAnswer": "設問1 (1) 本サービスの実現に不確かな要素が多いから\n\n(2) a：守秘契約\n\n設問2 (1) 農家がガイド機能を活用できるようになる支援\n\n(2) ・Kセンサーの種類を増やすとデータ連携機能の開発規模が増えること\n\n・W社側の作業スコープの変更はA社側の作業スコープに影響すること\n\n(3) b：コスト，c：スケジュール（順不同）\n\n(4) イ\n\n(5) いちごを収穫するまで導入効果を評価できないから",
+    "explanation": "設問1のPoCは実現性に不確かな点が多い段階で検証するために行う。検証で扱う情報に対する守秘契約も必要になる。設問2は機能を作る作業だけでなく、農家が使えるようになる支援まで目的と結び付ける。センサーの追加は一方の会社だけの変更で済まず、データ連携の開発規模に波及するため、コストとスケジュールへの影響を確認する。効果の評価時期には収穫までの期間という事業上の条件があり、システム稼働だけで導入効果を確定できるとは限らない。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/question-assets/qb-11/ap-2024h-pm/p51.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p52.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p53.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p54.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p55.webp"
+    ],
+    "imageAltTexts": [
+      "2024年午後 問9の公式本文・図表・設問（原本51ページ）",
+      "2024年午後 問9の公式本文・図表・設問（原本52ページ）",
+      "2024年午後 問9の公式本文・図表・設問（原本53ページ）",
+      "2024年午後 問9の公式本文・図表・設問（原本54ページ）",
+      "2024年午後 問9の公式本文・図表・設問（原本55ページ）"
+    ],
+    "answerImageUrls": [
+      "/question-assets/qb-11/ap-2024h-pm/answer-p05.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問9（原本 5ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "ap-2024h-pm-q10",
+    "exam": "ap",
+    "year": 2024,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 10,
+    "type": "descriptive",
+    "category": "サービスマネジメント",
+    "topicTags": [
+      "サービスデスク",
+      "展開管理",
+      "テレワーク"
+    ],
+    "difficulty": 4,
+    "question": "テレワーク環境下での新サービス導入について、公式問題の設問1〜3に答えよ。",
+    "answer": "設問1 a：イ\n設問2 (1) b：・収束した状態になる\n・サービスデスクだけでできる\n・定常状態に落ち着く\n(2) 営業員による問合せ先の判断が不要になること\n(3) c：・初期サポート内容の引継ぎが完了している\n・初期サポート窓口での対応内容の確認が完了している\n(4) 問題：電話によるサポートは時間が掛かること\n解決方法：3\n設問3 OSパッチの適用のタイミングをコントロールできるから",
+    "modelAnswer": "設問1 a：イ\n\n設問2 (1) b：・収束した状態になる\n\n・サービスデスクだけでできる\n\n・定常状態に落ち着く\n\n(2) 営業員による問合せ先の判断が不要になること\n\n(3) c：・初期サポート内容の引継ぎが完了している\n\n・初期サポート窓口での対応内容の確認が完了している\n\n(4) 問題：電話によるサポートは時間が掛かること\n\n解決方法：3\n\n設問3 OSパッチの適用のタイミングをコントロールできるから",
+    "explanation": "設問2では、新サービス導入直後の特別なサポートと、安定後にサービスデスクが担う通常運用を分ける。窓口を一本化すると、営業員が問合せ先を判断する負担を減らせるが、初期サポートで得た対応内容の引継ぎが前提になる。電話対応に時間が掛かるという問題には、表の解決方法を具体的に対応付ける。設問3は、OSパッチをいつ適用するかを管理できる構成にすることで、展開や業務への影響を調整できる点を述べる。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/question-assets/qb-11/ap-2024h-pm/p57.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p58.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p59.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p60.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p61.webp"
+    ],
+    "imageAltTexts": [
+      "2024年午後 問10の公式本文・図表・設問（原本57ページ）",
+      "2024年午後 問10の公式本文・図表・設問（原本58ページ）",
+      "2024年午後 問10の公式本文・図表・設問（原本59ページ）",
+      "2024年午後 問10の公式本文・図表・設問（原本60ページ）",
+      "2024年午後 問10の公式本文・図表・設問（原本61ページ）"
+    ],
+    "answerImageUrls": [
+      "/question-assets/qb-11/ap-2024h-pm/answer-p05.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問10（原本 5ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "ap-2024h-pm-q11",
+    "exam": "ap",
+    "year": 2024,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 11,
+    "type": "descriptive",
+    "category": "システム監査",
+    "topicTags": [
+      "支払管理",
+      "内部統制",
+      "データ整合性"
+    ],
+    "difficulty": 4,
+    "question": "支払管理システムについて、公式問題の設問1〜4に答えよ。",
+    "answer": "設問1 a：業務パッケージ選定\nb：リスク委員会の承認\nc：保留ファイル\nd：一定額を超過する場合\n設問2 e：証ひょう類に不備がないかのチェック\n設問3 f：3\n設問4 g：調達用支払先\nh：減額の支払申請入力",
+    "modelAnswer": "設問1 a：業務パッケージ選定\n\nb：リスク委員会の承認\n\nc：保留ファイル\n\nd：一定額を超過する場合\n\n設問2 e：証ひょう類に不備がないかのチェック\n\n設問3 f：3\n\n設問4 g：調達用支払先\n\nh：減額の支払申請入力",
+    "explanation": "業務パッケージの機能だけで統制が完結するとは限らない。設問1ではパッケージ選定の段階、承認者、保留データ、金額による条件を業務の流れに対応付ける。設問2は手作業で残る証ひょうの不備チェックを特定する。設問3は表の監査上の確認項目を選ぶ。設問4では、連携するデータの対象となる支払先を正しく選び、減額が必要なときも支払申請入力へ反映する。システムの登録内容と実際の支払根拠を一致させることが、データの一貫性を確保する要点になる。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/question-assets/qb-11/ap-2024h-pm/p63.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p64.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p65.webp",
+      "/question-assets/qb-11/ap-2024h-pm/p66.webp"
+    ],
+    "imageAltTexts": [
+      "2024年午後 問11の公式本文・図表・設問（原本63ページ）",
+      "2024年午後 問11の公式本文・図表・設問（原本64ページ）",
+      "2024年午後 問11の公式本文・図表・設問（原本65ページ）",
+      "2024年午後 問11の公式本文・図表・設問（原本66ページ）"
+    ],
+    "answerImageUrls": [
+      "/question-assets/qb-11/ap-2024h-pm/answer-p06.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問11（原本 6ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  }
+]

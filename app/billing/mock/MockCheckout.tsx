@@ -14,5 +14,5 @@ export function MockCheckout({ order }: { order: string }) {
     finally { setBusy(false); }
   }
   return <><p>架空の決済です。カード情報を入力しないでください。</p><div className="flex flex-wrap gap-3">{[["paid", "支払成功をテスト"], ["failed", "支払失敗をテスト"], ["refunded", "返金をテスト"]].map(([outcome, label]) => <button disabled={busy} className="min-h-11 rounded border p-3" key={outcome} onClick={() => simulate(outcome)}>{label}</button>)}</div>
-    <Link className="block underline" href={`/billing/cancel?order=${encodeURIComponent(order)}`}>取り消して条件に戻る</Link><p role="status">{message}</p></>;
+    <Link className="inline-flex min-h-11 items-center underline underline-offset-4" href={`/billing/cancel?order=${encodeURIComponent(order)}`}>取り消して条件に戻る</Link><p role="status">{message}</p></>;
 }

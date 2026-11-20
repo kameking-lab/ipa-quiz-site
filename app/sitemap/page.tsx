@@ -7,6 +7,8 @@ import { getAllBlogSlugs, getBlogPostBySlug } from "@/data/blog";
 import { getExamQuestionCount } from "@/lib/constants/exam-question-counts";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { QUALIFICATION_HUBS, qualificationHubPath } from "@/lib/exam-qualification-hubs";
+import { getPublishedQualificationGroups } from "@/lib/qualifications/published-groups";
+import { qualificationGroupLabel, qualificationGroupPath } from "@/lib/qualifications/groups";
 import type { ExamCode } from "@/lib/questions/types";
 import { examLabel } from "@/lib/utils";
 
@@ -102,7 +104,7 @@ export default function HtmlSitemapPage() {
             { href: "/quiz/stream", label: "ストリーム学習" },
             { href: "/study-plan", label: "学習スケジュール" },
             { href: "/challenge", label: "今日の1問" },
-            { href: "/essay", label: "AI 論述添削" },
+            { href: "/essay", label: "IPA 論文対策" },
             { href: "/stats", label: "公開ダッシュボード" },
             { href: "/blog", label: "ブログ一覧" },
             { href: "/recommended-books", label: "おすすめ書籍" },
@@ -121,12 +123,24 @@ export default function HtmlSitemapPage() {
             <li key={p.href}>
               <Link
                 href={p.href}
+                prefetch={false}
                 className="text-sky-600 hover:underline dark:text-sky-400"
               >
                 {p.label}
               </Link>
             </li>
           ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="qualification-groups" className="mb-10">
+        <h2 id="qualification-groups" className="mb-3 text-lg font-bold text-foreground">地域・部門別の資格</h2>
+        <ul className="grid gap-2 text-sm sm:grid-cols-2">
+          {getPublishedQualificationGroups().map(({ group, children }) => <li key={group.slug}>
+            <Link href={qualificationGroupPath(group.slug)} prefetch={false} className="text-sky-600 hover:underline dark:text-sky-400">
+              {qualificationGroupLabel(group, children.length)}
+            </Link>
+          </li>)}
         </ul>
       </section>
 
@@ -137,6 +151,7 @@ export default function HtmlSitemapPage() {
             <li key={hub.slug}>
               <Link
                 href={qualificationHubPath(hub.slug)}
+                prefetch={false}
                 className="block rounded-xl border border-border px-3 py-2 text-sky-600 hover:border-sky-300 hover:underline dark:text-sky-400"
               >
                 {hub.name}の過去問
@@ -157,6 +172,7 @@ export default function HtmlSitemapPage() {
               <div className="mb-2 flex items-center justify-between">
                 <Link
                   href={`/${code}`}
+                  prefetch={false}
                   className="text-base font-semibold text-foreground hover:text-sky-600 hover:underline dark:hover:text-sky-400"
                 >
                   {examLabel(code)}
@@ -169,6 +185,7 @@ export default function HtmlSitemapPage() {
                 <li>
                   <Link
                     href={`/quiz?mode=random&exam=${code}`}
+                    prefetch={false}
                     className="text-sky-600 hover:underline dark:text-sky-400"
                   >
                     ランダム出題
@@ -177,6 +194,7 @@ export default function HtmlSitemapPage() {
                 <li>
                   <Link
                     href={`/${code}#years`}
+                    prefetch={false}
                     className="text-sky-600 hover:underline dark:text-sky-400"
                   >
                     年度別一覧
@@ -185,6 +203,7 @@ export default function HtmlSitemapPage() {
                 <li>
                   <Link
                     href={`/${code}#topics`}
+                    prefetch={false}
                     className="text-sky-600 hover:underline dark:text-sky-400"
                   >
                     分野別一覧
@@ -193,6 +212,7 @@ export default function HtmlSitemapPage() {
                 <li>
                   <Link
                     href={`/recommended-books/${code}`}
+                    prefetch={false}
                     className="text-sky-600 hover:underline dark:text-sky-400"
                   >
                     おすすめ書籍
@@ -212,6 +232,7 @@ export default function HtmlSitemapPage() {
               <li key={p.slug}>
                 <Link
                   href={`/blog/${p.slug}`}
+                  prefetch={false}
                   className="block py-1 text-sky-600 hover:underline dark:text-sky-400"
                 >
                   {p.title}
@@ -225,7 +246,7 @@ export default function HtmlSitemapPage() {
       <section aria-label="追加情報" className="mb-2">
         <p className="text-xs text-muted-foreground">
           各問題ページへの完全な URL リストは {" "}
-          <Link href="/sitemap.xml" className="underline hover:text-foreground">
+          <Link href="/sitemap.xml" prefetch={false} className="underline hover:text-foreground">
             XML サイトマップ
           </Link>
           {" "} を参照してください。

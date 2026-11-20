@@ -34,6 +34,15 @@ it("requests fresh provider authentication for account deletion without changing
   expect(new URL(url.searchParams.get("callbackUrl")!,SITE).searchParams.get("reauth")).toBe("1");
   expect(JSON.parse(m.set.mock.calls[0][0].value).returnTo).toBe("/account/delete");
 });
+it("opens account switching in the system browser and returns to native membership", async () => {
+  const { beginLogin } = await import("../src/login");
+  await beginLogin(SITE, "/quiz#app-settings", "switch-account");
+  const url = new URL(m.open.mock.calls[0][0].url);
+  expect(url.pathname).toBe("/auth/signin");
+  expect(url.searchParams.get("switchAccount")).toBe("1");
+  expect(new URL(url.searchParams.get("callbackUrl")!, SITE).pathname).toBe("/api/mobile/auth/complete");
+  expect(JSON.parse(m.set.mock.calls[0][0].value).returnTo).toBe("/quiz#app-settings");
+});
 const code = "c".repeat(43), state = "s".repeat(43);
 async function pendingLogin(get: ReturnType<typeof vi.fn>) {
   get.mockResolvedValue({ value: JSON.stringify({ verifier: "v".repeat(43), state, returnTo: "/ap#app-settings", createdAt: Date.now() }) });

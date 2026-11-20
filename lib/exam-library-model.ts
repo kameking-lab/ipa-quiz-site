@@ -1,3 +1,4 @@
+import officialArchivePapers from "@/data/exam-library/official-archive-papers.json";
 /**
  * 公表試験問題ライブラリの型・検証・採点（純粋関数のみ）。
  *
@@ -69,6 +70,7 @@ export interface ExamChoiceExplanation {
 }
 
 export interface ExamQuestion {
+  officialAllCandidatesCorrect?: true;
   referenceOnly?: boolean;
   referenceNotice?: string;
   officialKey?: number;
@@ -189,12 +191,15 @@ export function parseExamCatalogEntry(value: unknown): ExamCatalogEntry | null {
   if (typeof checkedAt !== "string" || !isValidMonthOrDay(checkedAt, "exam")) return null;
   const sourceMode = value.sourceMode ?? "official-pdf";
   if (sourceMode !== "official-pdf" && sourceMode !== "official-archive-copy") return null;
-  // 公開コピーは出典監査済みの2021年度と配布元・パスだけを許可する。
-  if (sourceMode === "official-archive-copy" && (
-    !/^cskohyo-CS202119\d{2}$/u.test(id) ||
-    typeof value.archiveSourceUrl !== "string" ||
-    !/^https:\/\/osh-lab\.com\/wp-content\/uploads\/2022\/06\/[a-f0-9]{32}\.pdf$/u.test(value.archiveSourceUrl)
-  )) return null;
+  if (sourceMode === "official-archive-copy") {
+    const archive = officialArchivePapers[id as keyof typeof officialArchivePapers];
+    const isPinnedArchive = archive && archive.archiveSourceUrl === value.archiveSourceUrl
+      && archive.pdfUrl === pdfUrl && archive.pdfSha256 === value.pdfSha256;
+    const isReviewedConsultantCopy = /^cskohyo-CS202119\d{2}$/u.test(id)
+      && typeof value.archiveSourceUrl === "string"
+      && /^https:\/\/osh-lab\.com\/wp-content\/uploads\/2022\/06\/[a-f0-9]{32}\.pdf$/u.test(value.archiveSourceUrl);
+    if (!isPinnedArchive && !isReviewedConsultantCopy) return null;
+  }
 
   const entry: ExamCatalogEntry = {
     id,
@@ -276,6 +281,9 @@ export function parseExamQuestion(value: unknown, examId: string): ExamQuestion 
     choiceCount: authority === "descriptive" ? 0 : choiceCount,
     answerAuthority: authority,
   };
+  if (authority === "unconfirmed" && choiceCount === 5 && value.officialAllCandidatesCorrect === true) {
+    question.officialAllCandidatesCorrect = true;
+  }
   if (isNonNegativeInteger(value.sourceQuestionNumber) && value.sourceQuestionNumber > 0) {
     question.sourceQuestionNumber = value.sourceQuestionNumber;
   }
@@ -367,6 +375,7 @@ export function boilerAnswerPage(examId: string, questionNumber: number): number
   const pages: Record<string, readonly number[]> = {
     "lckohyo-LC20260401-2": [32,33,34,34,34,34,35,35,36,36,36,36,37,38,39,39,39,39,40,40,41,41,41,41],
     "lckohyo-LC20251101": [30,31,32,32,32,32,33,34,35,35,35,35,36,37,38,38,38,38,39,39,40,40,40,40],
+    "lckohyo-LC20241101": [34,35,36,36,36,36,37,38,39,39,39,39,40,41,42,42,42,42,43,44,45,45,45,45],
   };
   return pages[examId]?.[questionNumber - 1];
 }

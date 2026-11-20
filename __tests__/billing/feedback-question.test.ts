@@ -1,6 +1,8 @@
 import { beforeEach, expect, it, vi } from "vitest";
 import { BillingError } from "@/lib/billing/domain";
 const m = vi.hoisted(() => ({ user: null as string | null, paid: false, monthly: false, guest: "browser", grant: vi.fn(), bonus: vi.fn(), guestGrant: vi.fn(), claim: vi.fn() }));
+const measurement = vi.hoisted(() => vi.fn(async () => false));
+vi.mock("@/lib/billing/conversion", () => ({ recordConversion: measurement, conversionChannel: () => "web" }));
 vi.mock("@/lib/questions/pool-server", () => ({ findQuestionById: async (id: string) => ({ id }) }));
 vi.mock("@/lib/questions/filter", () => ({ isPracticeReadyQuestion: () => true, shuffleChoices: (q: unknown) => q }));
 vi.mock("@/lib/billing/config", () => ({ billingConfig: () => ({ mode: "mock", freeDaily: 10 }), gateReady: () => true }));
@@ -37,6 +39,7 @@ it("uses the bonus after the monthly free quota and keeps paid monthly access in
   m.monthly = true; m.user = "alice";
   expect((await POST(req())).status).toBe(200);
   expect(m.bonus).toHaveBeenCalledTimes(1);
+  expect(measurement).toHaveBeenCalledWith("feedback_used", "web", "user:alice", expect.any(Number));
   m.bonus.mockClear(); m.paid = true; m.grant.mockResolvedValue({ kind: "pass", remaining: null });
   expect((await POST(req())).status).toBe(200);
   expect(m.bonus).not.toHaveBeenCalled();

@@ -123,8 +123,8 @@ async function fetchApiUsageSummary(): Promise<ApiUsageSummary> {
       byEndpoint: {
         copilot: { last1h: 0, last24h: 0 },
         "essay-grade": { last1h: 0, last24h: 0 },
-        "generate-question": { last1h: 0, last24h: 0 },
         scoring: { last1h: 0, last24h: 0 },
+        "weakness-advice": { last1h: 0, last24h: 0 },
       },
       topIps: [],
       estimatedCostJpy: { last1h: 0, last24h: 0 },

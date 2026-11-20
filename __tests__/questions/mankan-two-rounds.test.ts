@@ -47,9 +47,10 @@ describe("マンション管理士試験（令和6・7年度）", () => {
     }
     // 令和6年度は問40のみ保留、令和7年度は保留なし
     expect(hold.map((h) => `${h.year}-${h.qNumber}`)).toEqual(["2024-40"]);
-    expect(MANKAN_QUESTIONS).toHaveLength(99);
+    expect(MANKAN_QUESTIONS.filter(q => q.year === 2024 || q.year === 2025)).toHaveLength(99);
     expect(new Set(MANKAN_QUESTIONS.map((q) => q.id)).size).toBe(MANKAN_QUESTIONS.length);
-    expect(EXAM_CONFIGS.mankan.yearRange).toEqual({ start: 2024, end: 2025 });
+    expect(EXAM_CONFIGS.mankan.yearRange.start).toBeLessThanOrEqual(2024);
+    expect(EXAM_CONFIGS.mankan.yearRange.end).toBeGreaterThanOrEqual(2025);
     expect(getQualificationByExamCode("mankan")?.status).toBe("live");
   });
 

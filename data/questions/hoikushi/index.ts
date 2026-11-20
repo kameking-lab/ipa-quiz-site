@@ -20,6 +20,8 @@ type HoikushiSourceQuestion = {
   partialHold?: boolean;
   partialHoldReason?: string | null;
   reviewStatus: string;
+  imageUrl?: string;
+  imageAltText?: string;
 };
 
 type HoikushiSourceSubject = {
@@ -68,7 +70,9 @@ function toQuestion(item: HoikushiSourceQuestion, subjectSlug: string, subject: 
     explanation: `${correctExplanations.join(" ")}${lawNotice}`,
     choiceExplanations: Object.fromEntries(keys.map((key, index) => [key, item.choiceExplanations[index]]).filter(([, v]) => v !== undefined)),
     explanationCoverage: "full",
-    hasImage: false,
+    hasImage: Boolean(item.imageUrl),
+    imageUrls: item.imageUrl ? [item.imageUrl] : undefined,
+    imageAltTexts: item.imageAltText ? [item.imageAltText] : undefined,
     sourcePdfUrl: subject.sourcePdfUrl,
     sourceAnswerUrl: subject.sourceAnswerUrl,
     sourceAttribution: `出典：一般社団法人全国保育士養成協議会 ${data.examLabel} 筆記試験「${subject.subjectName}」問${item.number}。${HOIKUSHI_INDEPENDENCE_NOTICE}`,

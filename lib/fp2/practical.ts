@@ -2,10 +2,11 @@ import extracted from "@/data/questions/fp2/practical-2024-2025.json";
 import figures from "@/data/questions/fp2/practical-figures-2024-2025.json";
 import explanations from "@/data/questions/fp2/practical-explanations-2024-2025.json";
 import sharedCases from "@/data/questions/fp2/practical-shared-context-2024-2025.json";
+import historical2023September from "@/data/questions/fp2/practical-202309.json";
 
 export interface PracticalSolution {
   explanation: string;
-  choiceExplanations: Record<string, string>;
+  choiceExplanations: Partial<Record<string, string>>;
   governmentReferenceUrls: string[];
   needsReview: boolean;
 }
@@ -29,6 +30,7 @@ export interface PracticalQuestion {
   body: string;
   modelAnswer: string;
   sourcePage: number;
+  sourcePdfUrl?: string;
   sourcePageContainsRaster: boolean;
   panels: PracticalPanel[];
   solution?: PracticalSolution;
@@ -36,12 +38,15 @@ export interface PracticalQuestion {
 }
 
 type RawEdition = { lawReferenceDate: string; questions: Omit<PracticalQuestion, "panels">[] };
+type PracticalEdition = { label: string; lawReferenceDate: string; questions: PracticalQuestion[] };
+type HistoricalEdition = PracticalEdition & { sourceUrls: { question: string; answer: string } };
 const DATA = extracted as Record<string, RawEdition>;
 const FIGURES = figures as Record<string, Record<string, PracticalPanel[]>>;
 const SOLUTIONS = explanations as Record<string, Record<string, PracticalSolution>>;
 const SHARED_CASES = sharedCases as Record<string, Record<string, PracticalSharedContext>>;
+const HISTORICAL_EDITIONS: Partial<Record<string, HistoricalEdition>> = { "202309": historical2023September };
 
-export const FP2_PRACTICAL_EDITIONS = ["202405", "202409", "202501", "202505", "202605"] as const;
+export const FP2_PRACTICAL_EDITIONS = ["202309", "202405", "202409", "202501", "202505", "202605"] as const;
 
 export function practicalEditionLabel(edition: string): string {
   const labels: Record<string, string> = {
@@ -51,10 +56,12 @@ export function practicalEditionLabel(edition: string): string {
     "202505": "2025年5月公表",
     "202605": "2026年5月公表",
   };
-  return labels[edition] ?? edition;
+  return HISTORICAL_EDITIONS[edition]?.label ?? labels[edition] ?? edition;
 }
 
-export function getPracticalEdition(edition: string): { label: string; lawReferenceDate: string; questions: PracticalQuestion[] } | null {
+export function getPracticalEdition(edition: string): PracticalEdition | null {
+  const historical = HISTORICAL_EDITIONS[edition];
+  if (historical) return historical;
   const data = DATA[edition];
   const panels = FIGURES[edition];
   if (!data || !panels || !FP2_PRACTICAL_EDITIONS.some((value) => value === edition)) return null;
@@ -67,6 +74,8 @@ export function getPracticalEdition(edition: string): { label: string; lawRefere
 }
 
 export function practicalSourceUrls(edition: string): { question: string; answer: string } {
+  const historical = HISTORICAL_EDITIONS[edition];
+  if (historical) return historical.sourceUrls;
   const root = "https://www.jafp.or.jp/exam/mohan/files";
   return { question: `${root}/j2_${edition}_q.pdf`, answer: `${root}/j2_${edition}_a.pdf` };
 }

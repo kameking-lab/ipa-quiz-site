@@ -1,11 +1,13 @@
 "use client";
 
-import { requestAiConsent } from "@/lib/ai/consent";
+import { recordLearningAction } from "@/lib/study-plan/pace-storage";
+import { readSettings } from "@/lib/storage/settings";
+import { AiProcessingNotice } from "@/components/ai/AiProcessingNotice";
 
 import * as React from "react";
 import dynamic from "next/dynamic";
 import {
-  Sparkles,
+  MessageCircle,
   Send,
   Loader2,
   Square,
@@ -13,19 +15,9 @@ import {
   ChevronDown,
   RefreshCw,
   WifiOff,
-  Copy,
-  Check,
-  Download,
-  Share2,
-  Link,
-  Mic,
-  MicOff,
-  MoreVertical,
   Search,
 } from "lucide-react";
 import type { Question } from "@/lib/questions/types";
-import { getChoiceKeys } from "@/lib/questions/answers";
-import { choiceDisplayLabel } from "@/lib/questions/display";
 import { Button } from "@/components/ui/button";
 import { setCopilotPanelOpen } from "@/lib/copilot/visibility";
 import { FOCUSABLE_SELECTOR, trapTabTarget } from "@/lib/a11y/focus-trap";
@@ -39,17 +31,9 @@ const Markdown = dynamic(
     ),
   },
 );
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 import {
   QUICK_ACTIONS,
-  RESPONSE_LENGTH_LABEL,
   type QuickActionId,
   type LearnerProfile,
   type ResponseLength,
@@ -67,15 +51,11 @@ import { stripCitationFooter } from "@/lib/copilot/citations";
 import { RelatedQuestionsSection } from "@/components/copilot/RelatedQuestions";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { buildLearnerProfileFromHistory } from "@/lib/ai/learner-profile-client";
-import { downloadMarkdown } from "@/lib/chat/export-markdown";
 import { useChatSession } from "@/hooks/useChatSession";
-import type { ChatSession, SharePayload } from "@/lib/chat/types";
-import { examLabel, formatYearSeason } from "@/lib/utils";
 import { posthogCapture } from "@/lib/posthog";
 import { AiAccessNotice, useAiAccessNotice } from "@/components/ai/AiAccessNotice";
 import { aiPolicyDenialMessage } from "@/lib/ai/access-client";
 import { copilotRestriction, type CopilotRestriction } from "./restriction-copy";
-import { usePinnedQuickActions } from "@/lib/copilot/pinned-actions";
 
 interface Message {
   role: "user" | "assistant";
@@ -125,54 +105,6 @@ interface Props {
   focusRequest?: { sequence: number; prompt?: string };
 }
 
-const WRONG_ONLY: QuickActionId = "why-wrong";
-
-// Number of quick actions shown by default before the "+他N個を見る" toggle.
-// Six matches the plan recommendation: enough headroom for the most-used
-// affordances without crowding the panel with the full 12-action list.
-const QUICK_ACTION_COLLAPSED_COUNT = 4;
-
-interface SpeechRecognitionInstance {
-  lang: string;
-  continuous: boolean;
-  interimResults: boolean;
-  onresult: ((ev: { results: ArrayLike<ArrayLike<{ transcript: string }>> }) => void) | null;
-  onerror: ((ev: { error?: string }) => void) | null;
-  onend: (() => void) | null;
-  start(): void;
-  stop(): void;
-}
-
-interface WindowWithSpeech extends Window {
-  SpeechRecognition?: new () => SpeechRecognitionInstance;
-  webkitSpeechRecognition?: new () => SpeechRecognitionInstance;
-}
-
-function getSpeechRecognitionCtor(): (new () => SpeechRecognitionInstance) | null {
-  if (typeof window === "undefined") return null;
-  const w = window as WindowWithSpeech;
-  return w.SpeechRecognition ?? w.webkitSpeechRecognition ?? null;
-}
-
-function buildShareUrl(question: Question, messages: Message[]): string {
-  const payload: SharePayload = {
-    v: 1,
-    exam: question.exam,
-    year: question.year,
-    season: question.season,
-    q: question.qNumber,
-    qText: question.question.slice(0, 600),
-    cat: question.category,
-    msgs: messages.map((m) => ({
-      r: m.role === "user" ? "u" : "a",
-      c: m.content,
-      qa: m.quickAction,
-    })),
-  };
-  const encoded = btoa(encodeURIComponent(JSON.stringify(payload)));
-  return `${window.location.origin}/chat/share?d=${encoded}`;
-}
-
 export function CopilotPanel({
   question,
   selectedChoice,
@@ -196,35 +128,7 @@ export function CopilotPanel({
     type: "server_error" | "network_error" | "timeout";
     retryFn: () => void;
   } | null>(null);
-  const [copiedIdx, setCopiedIdx] = React.useState<number | null>(null);
-  const [copiedAll, setCopiedAll] = React.useState(false);
-  const [quickActionsExpanded, setQuickActionsExpanded] = React.useState(false);
-  const [actionsOpen, setActionsOpen] = React.useState(false);
-  const actionsRef = React.useRef<HTMLDivElement | null>(null);
-
-  React.useEffect(() => {
-    if (!actionsOpen) return;
-    const onDocClick = (e: MouseEvent) => {
-      if (!actionsRef.current?.contains(e.target as Node)) setActionsOpen(false);
-    };
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setActionsOpen(false);
-    };
-    document.addEventListener("mousedown", onDocClick);
-    document.addEventListener("keydown", onKey);
-    return () => {
-      document.removeEventListener("mousedown", onDocClick);
-      document.removeEventListener("keydown", onKey);
-    };
-  }, [actionsOpen]);
-  const [copiedShareUrl, setCopiedShareUrl] = React.useState(false);
-  const [shareOpen, setShareOpen] = React.useState(false);
-  const [shareUrl, setShareUrl] = React.useState("");
-  const [toast, setToast] = React.useState<string | null>(null);
   const [profile, setProfile] = React.useState<LearnerProfile | undefined>(undefined);
-  const [voiceState, setVoiceState] = React.useState<
-    "idle" | "listening" | "unsupported" | "denied"
-  >("idle");
   const [responseLength, setResponseLength] = React.useState<ResponseLength>("medium");
 
   const scrollRef = React.useRef<HTMLDivElement>(null);
@@ -233,18 +137,9 @@ export function CopilotPanel({
   // (question-change, unmount). Only user stops should annotate the partial
   // message with a "(停止しました)" marker; system aborts should be silent.
   const userStoppedRef = React.useRef(false);
-  const recognitionRef = React.useRef<SpeechRecognitionInstance | null>(null);
   const lastSendArgsRef = React.useRef<{ text: string; quickAction?: QuickActionId } | null>(null);
   const sendRef = React.useRef<(text: string, quickAction?: QuickActionId) => void>(() => {});
-  const toastTimerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  const { sessionId, createdAt } = useChatSession(question, messages);
-
-  const showToast = React.useCallback((msg: string) => {
-    if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
-    setToast(msg);
-    toastTimerRef.current = setTimeout(() => setToast(null), 2200);
-  }, []);
+  useChatSession(question, messages);
 
   React.useEffect(() => {
     const update = () => setOnline(navigator.onLine !== false);
@@ -278,10 +173,6 @@ export function CopilotPanel({
     setErrorState(null);
     setRestriction(null);
     setStreamStatus("idle");
-    setCopiedIdx(null);
-    setCopiedAll(false);
-    setShareOpen(false);
-    setToast(null);
     setProfile(buildLearnerProfileFromHistory());
   }, [question.id, initialPrompt]);
 
@@ -295,12 +186,8 @@ export function CopilotPanel({
     inputRef.current?.scrollIntoView({ block: "nearest" });
   }, [requestSequence, requestedPrompt]);
 
-  // Detect Web Speech API availability once
   React.useEffect(() => {
     if (typeof window === "undefined") return;
-    const Ctor = getSpeechRecognitionCtor();
-     
-    if (!Ctor) setVoiceState("unsupported");
     try {
       const stored = window.localStorage.getItem(LS_KEYS.copilotResponseLength);
       if (stored === "short" || stored === "medium" || stored === "long") {
@@ -311,35 +198,10 @@ export function CopilotPanel({
     }
   }, []);
 
-  const handleLengthChange = React.useCallback((next: ResponseLength) => {
-    setResponseLength(next);
-    try {
-      window.localStorage.setItem(LS_KEYS.copilotResponseLength, next);
-    } catch {
-      // ignore
-    }
-  }, []);
-
-  // Stop any active recognition on unmount
-  React.useEffect(() => {
-    return () => {
-      try {
-        recognitionRef.current?.stop();
-      } catch {
-        // ignore
-      }
-    };
-  }, []);
-
   React.useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages, streaming]);
 
-  React.useEffect(() => {
-    return () => {
-      if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
-    };
-  }, []);
 
   const send = React.useCallback(
     async (text: string, quickAction?: QuickActionId) => {
@@ -350,7 +212,6 @@ export function CopilotPanel({
       }
       const trimmed = text.trim();
       if (!trimmed && !quickAction) return;
-      if (!requestAiConsent()) return;
 
       setErrorState(null);
       setRestriction(null);
@@ -516,6 +377,10 @@ export function CopilotPanel({
           });
         }
 
+        if (acc.trim() && !isTimeout && !isServerError && readSettings().recordHistory) {
+          recordLearningAction({ id: crypto.randomUUID(), kind: "ai-question", questionId: question.id,
+            exam: question.exam, at: Date.now() });
+        }
         posthogCapture("copilot_response_received", {
           questionId: question?.id,
           exam: question?.exam,
@@ -602,173 +467,6 @@ export function CopilotPanel({
     abortRef.current?.abort();
   }, [streaming]);
 
-  const toggleVoice = React.useCallback(() => {
-    if (voiceState === "unsupported") return;
-    if (voiceState === "listening") {
-      try {
-        recognitionRef.current?.stop();
-      } catch {
-        // ignore
-      }
-      return;
-    }
-    const Ctor = getSpeechRecognitionCtor();
-    if (!Ctor) {
-      setVoiceState("unsupported");
-      return;
-    }
-    try {
-      const rec = new Ctor();
-      rec.lang = "ja-JP";
-      rec.continuous = false;
-      rec.interimResults = true;
-      rec.onresult = (ev) => {
-        let finalText = "";
-        for (let i = 0; i < ev.results.length; i++) {
-          const alt = ev.results[i][0];
-          if (alt) finalText += alt.transcript;
-        }
-        if (finalText.trim()) {
-          setInput((prev) => (prev ? `${prev} ${finalText}` : finalText));
-        }
-      };
-      rec.onerror = (ev) => {
-        if (ev.error === "not-allowed" || ev.error === "service-not-allowed") {
-          setVoiceState("denied");
-        } else {
-          setVoiceState("idle");
-        }
-      };
-      rec.onend = () => {
-        setVoiceState((s) => (s === "denied" || s === "unsupported" ? s : "idle"));
-        recognitionRef.current = null;
-      };
-      recognitionRef.current = rec;
-      rec.start();
-      setVoiceState("listening");
-    } catch {
-      setVoiceState("idle");
-    }
-  }, [voiceState]);
-
-  const handleCopyMessage = React.useCallback(
-    async (idx: number, content: string) => {
-      try {
-        await navigator.clipboard.writeText(content);
-        setCopiedIdx(idx);
-        showToast("コピーしました");
-        setTimeout(() => setCopiedIdx(null), 2000);
-      } catch {
-        showToast("コピーに失敗しました");
-      }
-    },
-    [showToast],
-  );
-
-  const handleCopyAll = React.useCallback(async () => {
-    if (messages.length === 0) return;
-    const text = messages
-      .map((m) => `${m.role === "user" ? "あなた" : "過去問AI"}: ${m.content}`)
-      .join("\n\n");
-    try {
-      await navigator.clipboard.writeText(text);
-      setCopiedAll(true);
-      showToast("全体をコピーしました");
-      setTimeout(() => setCopiedAll(false), 2000);
-    } catch {
-      showToast("コピーに失敗しました");
-    }
-  }, [messages, showToast]);
-
-  const handleOpenShare = React.useCallback(() => {
-    const url = buildShareUrl(question, messages);
-    setShareUrl(url);
-    setShareOpen(true);
-  }, [question, messages]);
-
-  const handleCopyShareUrl = React.useCallback(async () => {
-    try {
-      await navigator.clipboard.writeText(shareUrl);
-      setCopiedShareUrl(true);
-      showToast("URLをコピーしました");
-      setTimeout(() => setCopiedShareUrl(false), 2000);
-    } catch {
-      showToast("コピーに失敗しました");
-    }
-  }, [shareUrl, showToast]);
-
-  const handleDownloadMd = React.useCallback(() => {
-    const session: ChatSession = {
-      id: sessionId,
-      questionId: question.id,
-      examCode: question.exam,
-      year: question.year,
-      season: question.season,
-      qNumber: question.qNumber,
-      questionText: question.question,
-      questionCategory: question.category,
-      messages: messages.map((m) => ({
-        role: m.role,
-        content: m.content,
-        quickAction: m.quickAction,
-        createdAt: new Date().toISOString(),
-      })),
-      createdAt,
-      updatedAt: new Date().toISOString(),
-    };
-    downloadMarkdown(session, question);
-    showToast("ダウンロードを開始しました");
-  }, [question, messages, sessionId, createdAt, showToast]);
-
-  // Pins saved earlier still decide the order; the per-chip pin toggles were removed as clutter.
-  const { pinned } = usePinnedQuickActions();
-
-  const baseQuickActionIds: QuickActionId[] = [
-    "term",
-    "simplify",
-    "detailed",
-    "example",
-    "mnemonic",
-    "socratic",
-    "prerequisite",
-    "analyze-a",
-    "analyze-i",
-    "analyze-u",
-    "analyze-e",
-  ];
-  // Final order: pinned first (in pin order), then why-wrong if active and
-  // not already pinned, then the remaining base actions skipping anything
-  // already placed.
-  const quickActionIds: QuickActionId[] = [];
-  const seen = new Set<QuickActionId>();
-  for (const id of pinned) {
-    // Do not surface retired generation actions or unrecognized stored pins.
-    if (!Object.hasOwn(QUICK_ACTIONS, id)) continue;
-    if (!seen.has(id)) {
-      quickActionIds.push(id);
-      seen.add(id);
-    }
-  }
-  if (isCorrect === false && !seen.has(WRONG_ONLY)) {
-    quickActionIds.push(WRONG_ONLY);
-    seen.add(WRONG_ONLY);
-  }
-  for (const id of baseQuickActionIds) {
-    if (!seen.has(id)) {
-      quickActionIds.push(id);
-      seen.add(id);
-    }
-  }
-  const visibleQuickActionIds = quickActionsExpanded
-    ? quickActionIds
-    : quickActionIds.slice(0, QUICK_ACTION_COLLAPSED_COUNT);
-  const hiddenQuickActionCount = Math.max(
-    quickActionIds.length - QUICK_ACTION_COLLAPSED_COUNT,
-    0,
-  );
-
-  const hasMessages = messages.length > 0;
-
   const inputForm = (
     <>
       {!online && (
@@ -782,7 +480,7 @@ export function CopilotPanel({
           <a href="/contact" target="_blank" rel="noopener noreferrer" className="inline-block min-h-11 py-2 underline">問い合わせ</a>
         </aside>
       )}
-      <AiAccessNotice message={aiAccessMessage} />
+      <AiAccessNotice message={aiAccessMessage} continuationLinks={false} />
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -803,46 +501,9 @@ export function CopilotPanel({
           }}
           rows={2}
           aria-label="AIへの質問を入力（Enter で送信、Shift+Enter で改行）"
-          placeholder={
-            voiceState === "listening"
-              ? "話してください…"
-              : "AIに質問…"
-          }
-          className="min-w-0 min-h-[44px] flex-1 resize-none rounded-xl border border-zinc-300 bg-white px-3 py-2 text-base placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-sky-500 dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600 sm:text-sm"
+          placeholder="AIに質問…"
+          className="min-w-0 min-h-[44px] flex-1 resize-none rounded-xl border border-input bg-card px-3 py-2 text-base placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring sm:text-sm"
         />
-        {voiceState !== "unsupported" && (
-          <Button
-            type="button"
-            variant={voiceState === "listening" ? "primary" : "ghost"}
-            size="icon"
-            onClick={toggleVoice}
-            disabled={streaming || voiceState === "denied"}
-            aria-label={
-              voiceState === "listening"
-                ? "音声入力を停止"
-                : voiceState === "denied"
-                  ? "マイクが拒否されました"
-                  : "音声入力を開始"
-            }
-            title={
-              voiceState === "denied"
-                ? "ブラウザのマイク権限を許可してください"
-                : voiceState === "listening"
-                  ? "停止"
-                  : "音声で質問"
-            }
-            className={cn(
-              voiceState === "listening" && "animate-pulse",
-              voiceState === "denied" && "opacity-50",
-            )}
-          >
-            {voiceState === "denied" ? (
-              <MicOff className="h-4 w-4" />
-            ) : (
-              <Mic className="h-4 w-4" />
-            )}
-          </Button>
-        )}
         {streaming ? (
           // While streaming, the primary action swaps to "Stop". The user can
           // cancel a long answer without losing what's been streamed so far.
@@ -853,12 +514,12 @@ export function CopilotPanel({
             onClick={handleStop}
             aria-label="生成を停止"
             title="生成を停止"
-            className="bg-red-600 hover:bg-red-700 focus-visible:ring-red-500"
+            className="bg-red-600 hover:bg-red-700 focus-visible:ring-red-500 min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
           >
             <Square className="h-4 w-4 fill-current" />
           </Button>
         ) : (
-          <Button
+          <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
             type="submit"
             variant="primary"
             size="icon"
@@ -869,156 +530,29 @@ export function CopilotPanel({
           </Button>
         )}
       </form>
+      <div className="px-3 pb-2"><AiProcessingNotice /></div>
     </>
   );
 
   return (
-    <div className={cn("flex min-w-0 w-full flex-col bg-white dark:bg-zinc-950", !inline && "h-full", className)}>
+    <div className={cn("flex min-w-0 w-full flex-col bg-card", !inline && "h-full", className)}>
       {/* Header */}
       <div className="flex flex-wrap items-center justify-between gap-2 border-b border-zinc-200 px-4 py-3 dark:border-zinc-800">
         <div className="flex items-center gap-2">
-          <Sparkles className="h-4 w-4 text-sky-600 dark:text-sky-400" />
-          <span className="text-sm font-semibold">{inline ? "この問題をAIに質問" : "AI コパイロット"}</span>
-          <span className="ml-2 rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-medium text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300" title="短時間の連続利用などには適正利用制限があります">
-            無料で質問
-          </span>
+          <MessageCircle className="h-4 w-4 text-sky-600 dark:text-sky-400" />
+          <span className="text-sm font-semibold">この問題をAIに質問</span>
         </div>
         <div className="flex items-center gap-1">
-          {hasMessages && (
-            <div ref={actionsRef} className="relative">
-              <button
-                onClick={() => setActionsOpen((v) => !v)}
-                title="その他の操作"
-                className="flex h-9 w-9 items-center justify-center rounded-lg text-zinc-400 transition-colors hover:bg-zinc-100 hover:text-zinc-700 dark:hover:bg-zinc-800 dark:hover:text-zinc-200"
-                aria-label="その他の操作"
-                aria-expanded={actionsOpen}
-                aria-controls="copilot-actions-popup"
-              >
-                <MoreVertical className="h-4 w-4" />
-              </button>
-              {actionsOpen && (
-                <div
-                  id="copilot-actions-popup"
-                  role="group"
-                  className="absolute right-0 top-full z-50 mt-1 w-44 overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-lg dark:border-zinc-800 dark:bg-zinc-950"
-                  aria-label="その他の操作"
-                >
-                  <button
-                    onClick={() => {
-                      setActionsOpen(false);
-                      handleCopyAll();
-                    }}
-                    className="flex w-full min-h-[44px] items-center gap-2 px-3 py-2.5 text-left text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-200 dark:hover:bg-zinc-800"
-                  >
-                    {copiedAll ? (
-                      <Check className="h-4 w-4 text-emerald-500" aria-hidden="true" />
-                    ) : (
-                      <Copy className="h-4 w-4" aria-hidden="true" />
-                    )}
-                    全体コピー
-                  </button>
-                  <button
-                    onClick={() => {
-                      setActionsOpen(false);
-                      handleOpenShare();
-                    }}
-                    className="flex w-full min-h-[44px] items-center gap-2 px-3 py-2.5 text-left text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-200 dark:hover:bg-zinc-800"
-                  >
-                    <Share2 className="h-4 w-4" aria-hidden="true" />
-                    共有
-                  </button>
-                  <button
-                    onClick={() => {
-                      setActionsOpen(false);
-                      handleDownloadMd();
-                    }}
-                    className="flex w-full min-h-[44px] items-center gap-2 px-3 py-2.5 text-left text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-200 dark:hover:bg-zinc-800"
-                  >
-                    <Download className="h-4 w-4" aria-hidden="true" />
-                    Markdown DL
-                  </button>
-                </div>
-              )}
-            </div>
-          )}
           {headerRight}
           {onClose && (
-            <Button variant="ghost" size="icon" onClick={onClose} aria-label="閉じる">
+            <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" variant="ghost" size="icon" onClick={onClose} aria-label="閉じる">
               <X className="h-4 w-4" />
             </Button>
           )}
         </div>
       </div>
 
-      {/* Response length toggle */}
-      <div className="border-b border-zinc-200 px-3 pt-2.5 pb-2 dark:border-zinc-800">
-        <div className="flex items-center gap-2">
-          <div
-            role="group"
-            aria-label="回答の長さ（目安）"
-            className="inline-flex overflow-hidden rounded-full border border-zinc-300 dark:border-zinc-700"
-          >
-            {(["short", "medium", "long"] as const).map((len) => (
-              <button
-                key={len}
-                type="button"
-                onClick={() => handleLengthChange(len)}
-                aria-pressed={responseLength === len}
-                className={cn(
-                  "px-2.5 py-0.5 text-[11px] font-medium transition-colors",
-                  responseLength === len
-                    ? "bg-sky-600 text-white"
-                    : "bg-white text-zinc-600 hover:bg-zinc-100 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800",
-                )}
-              >
-                {RESPONSE_LENGTH_LABEL[len]}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {inline && inputForm}
-
-      {/* Quick actions */}
-      <div className="border-b border-zinc-200 p-3 dark:border-zinc-800">
-        <>
-            <div
-              id="copilot-quickactions-list"
-              className="flex flex-wrap gap-2"
-            >
-              {visibleQuickActionIds.map((id) => (
-                <button
-                  key={id}
-                  type="button"
-                  onClick={() => send("", id)}
-                  disabled={streaming || !online}
-                  className={cn(
-                    "min-h-11 rounded-full border px-4 py-2 text-sm transition-colors disabled:opacity-50",
-                    id === WRONG_ONLY
-                      ? "border-red-300 bg-red-50 text-red-700 hover:bg-red-100 dark:border-red-900/60 dark:bg-red-950/40 dark:text-red-200"
-                      : "border-zinc-300 bg-white text-zinc-700 hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800",
-                  )}
-                >
-                  {QUICK_ACTIONS[id].label}
-                </button>
-              ))}
-            </div>
-            {hiddenQuickActionCount > 0 && (
-              <button
-                type="button"
-                onClick={() => setQuickActionsExpanded((v) => !v)}
-                aria-expanded={quickActionsExpanded}
-                aria-controls="copilot-quickactions-list"
-                className="mt-2 inline-flex min-h-11 items-center gap-1 rounded-full border border-zinc-300 bg-white px-3 py-2 text-xs font-medium text-zinc-600 hover:bg-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800"
-              >
-                {quickActionsExpanded
-                  ? "閉じる"
-                  : "他を見る"}
-              </button>
-            )}
-        </>
-      </div>
 
       {/* Messages */}
       <div
@@ -1038,20 +572,6 @@ export function CopilotPanel({
                 : "mr-2 bg-zinc-50 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100",
             )}
           >
-            {m.role === "assistant" && (
-              <button
-                onClick={() => handleCopyMessage(i, m.content)}
-                className="absolute right-2 top-2 rounded-md p-1 text-zinc-300 transition-colors hover:bg-zinc-200 hover:text-zinc-600 sm:opacity-0 sm:group-hover/message:opacity-100 dark:text-zinc-600 dark:hover:bg-zinc-700 dark:hover:text-zinc-300"
-                aria-label="このメッセージをコピー"
-                title="コピー"
-              >
-                {copiedIdx === i ? (
-                  <Check className="h-3.5 w-3.5 text-emerald-500" />
-                ) : (
-                  <Copy className="h-3.5 w-3.5" />
-                )}
-              </button>
-            )}
             {m.role === "assistant" ? (
               <>
                 {m.content.length === 0 ? (
@@ -1167,99 +687,23 @@ export function CopilotPanel({
         </div>
       )}
 
-      {/* Cross-check against the site's per-choice explanations */}
-      {messages.some((m) => m.role === "assistant") && selectedChoice && question.type !== "ordering" && question.choices && question.choiceExplanations && (
-        <div className="mx-3 mb-2 rounded-xl border border-zinc-200 bg-zinc-50 p-3 text-sm leading-7 text-zinc-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200">
-            <details>
-              <summary className="cursor-pointer font-medium underline underline-offset-2">サイト掲載の選択肢別解説と照合</summary>
-              <ul className="mt-1 space-y-1 pl-3">
-                {getChoiceKeys(question.choices)
-                  .filter((key) => selectedChoice.split("・").includes(key) ||
-                    (Array.isArray(question.answer) ? question.answer : [question.answer]).includes(key))
-                  .map((key) => question.choiceExplanations?.[key] && (
-                    <li key={key}>
-                      {choiceDisplayLabel(question.exam, key)}: {question.choiceExplanations[key]}
-                    </li>
-                  ))}
-              </ul>
-              {(question.sourceAnswerUrl || question.sourcePdfUrl) && (
-                <a href={question.sourceAnswerUrl || question.sourcePdfUrl} target="_blank" rel="noopener noreferrer" className="mt-1 inline-block underline underline-offset-2">
-                  問題データの出典PDFを開く
-                </a>
-              )}
-            </details>
-        </div>
-      )}
-
       {!inline && inputForm}
 
-      {/* Share modal */}
-      <Dialog open={shareOpen} onOpenChange={setShareOpen}>
-        <DialogContent className="max-w-md">
-          <DialogHeader>
-            <DialogTitle>会話を共有</DialogTitle>
-            <DialogDescription>
-              {examLabel(question.exam)} {formatYearSeason(question.year, question.season)} 問{question.qNumber} の会話を共有します。
-            </DialogDescription>
-          </DialogHeader>
-          <div className="space-y-3">
-            <div className="flex gap-2">
-              <input
-                value={shareUrl}
-                readOnly
-                className="min-w-0 flex-1 rounded-xl border border-zinc-200 bg-zinc-50 px-3 py-2 text-xs text-zinc-600 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400"
-                aria-label="共有URL"
-              />
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={handleCopyShareUrl}
-                className="shrink-0"
-                aria-label="URLをコピー"
-              >
-                {copiedShareUrl ? (
-                  <Check className="h-4 w-4 text-emerald-500" />
-                ) : (
-                  <Link className="h-4 w-4" />
-                )}
-                <span className="ml-1">{copiedShareUrl ? "コピー済み" : "コピー"}</span>
-              </Button>
-            </div>
-            <p className="text-[10px] text-zinc-400 dark:text-zinc-500">
-              ※ URLには会話の内容が含まれます。個人情報は入力しないようにしてください。
-            </p>
-          </div>
-        </DialogContent>
-      </Dialog>
-
-      {/* Toast — role="status" ensures SR announcement on appearance */}
-      <div
-        role="status"
-        aria-live="polite"
-        aria-atomic="true"
-        className="pointer-events-none fixed bottom-4 right-4 z-[200]"
-      >
-        {toast && (
-          <div className="flex items-center gap-2 rounded-xl bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white shadow-xl dark:bg-zinc-100 dark:text-zinc-900">
-            <Check className="h-4 w-4 shrink-0 text-emerald-400 dark:text-emerald-600" aria-hidden="true" />
-            {toast}
-          </div>
-        )}
-      </div>
     </div>
   );
 }
 
 /** One persistent editor for both wide and narrow question screens. */
-export function CopilotInline(props: Omit<Props, "onClose" | "inline" | "initialPrompt">) {
+export function CopilotInline({ active = true, ...props }: Omit<Props, "onClose" | "inline" | "initialPrompt"> & { active?: boolean }) {
   React.useEffect(() => {
+    if (!active) return;
     setCopilotPanelOpen(true);
     return () => setCopilotPanelOpen(false);
-  }, []);
+  }, [active]);
   return (
     <section
       aria-label="この問題についてAIに質問"
-      className="min-w-0 scroll-mt-24 overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800"
+      className="min-w-0 scroll-mt-24 overflow-hidden rounded-2xl border border-border"
       onTouchStart={(event) => event.stopPropagation()}
       onTouchEnd={(event) => event.stopPropagation()}
     >
@@ -1345,7 +789,7 @@ export function CopilotMobileSheet({
           onClick={() => setOpen(true)}
           className="my-4 inline-flex min-h-11 items-center gap-2 rounded-full border border-primary/30 bg-card px-5 py-3 text-sm font-semibold text-primary hover:bg-primary-soft sm:hidden"
         >
-          <Sparkles className="h-4 w-4" />
+          <MessageCircle className="h-4 w-4" />
           AIに聞く
         </button>
       )}
@@ -1477,7 +921,7 @@ export function CopilotDesktopFloating({
           aria-expanded={open}
           className="bottom-safe fixed right-6 z-40 hidden h-14 items-center gap-2 rounded-full bg-sky-600 pl-4 pr-5 text-sm font-semibold text-white shadow-xl transition hover:bg-sky-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:inline-flex"
         >
-          <Sparkles className="h-4 w-4" aria-hidden="true" />
+          <MessageCircle className="h-4 w-4" aria-hidden="true" />
           AIに聞く
         </button>
       )}

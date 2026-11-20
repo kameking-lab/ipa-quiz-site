@@ -21,6 +21,20 @@ beforeEach(() => {
   mocks.auth.mockResolvedValue({ user: { id: "authenticated-A" } });
   for (const model of [mocks.history, mocks.bookmarks, mocks.tags, mocks.plans]) model.findMany.mockResolvedValue([]);
 });
+describe("study plan format compatibility", () => {
+  it.each([false, true])("only returns tagged pace/activity rows to a supporting client (%s)", async includePace => {
+    const row = { createdAt: new Date(1000), updatedAt: new Date(2000), progress: null };
+    mocks.plans.findMany.mockResolvedValue([
+      { ...row, id: "legacy", payload: { daily: [] } },
+      { ...row, id: "pace", payload: { kind: "exam-pace-v1" } },
+      { ...row, id: "activity", payload: { kind: "study-activity-v1" } },
+    ]);
+    const response = await plans(request({ entries: [], expectedUserId: "authenticated-A", ...(includePace ? { includePace } : {}) }));
+    const body = await response.json();
+    expect(body.entries.map((entry: { id: string }) => entry.id)).toEqual(includePace ? ["legacy", "pace", "activity"] : ["legacy"]);
+    expect(body.total).toBe(includePace ? 3 : 1);
+  });
+});
 afterEach(() => vi.unstubAllEnvs());
 const request = (body: unknown) => new Request("https://unit.invalid/sync", {
   method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body),

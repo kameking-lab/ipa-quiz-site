@@ -1,4 +1,4 @@
-import type { Question, QuestionPart, Season, Session, ExamCode } from "@/lib/questions/types";
+import { QUESTION_SEASONS, type Question, type QuestionPart, type Season, type Session, type ExamCode } from "@/lib/questions/types";
 import { canonicalExamCode } from "@/lib/questions/exam-aliases";
 
 export interface QuestionRouteParams {
@@ -16,9 +16,13 @@ export function questionNumberSegment(qNumber: number, part?: QuestionPart): str
 
 /** 枝番(a)/(b)と、数字の枝番で解答欄を分ける資格。 */
 const PART_EXAMS: Record<"letter" | "blank", readonly string[]> = {
-  letter: ["denken3", "maritime4", "aviation-comm", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1"],
+  letter: ["denken3", "maritime4", "aviation-comm", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1",
+    "katei-shokumotsu", "shobo-setsubishi-kou3", "shobo-setsubishi-kou5", "shobo-setsubishi-otsu4"],
   blank: ["denken2", "denken1", "chusho-kigyo-shindanshi", "shiho-tanto", "yobi-tanto", "tsukanshi",
-    "unko-kanrisha-kamotsu", "unko-kanrisha-ryokaku", "shobo-setsubishi-kou1", "shobo-setsubishi-kou4", "shobo-setsubishi-otsu6"],
+    "unko-kanrisha-kamotsu", "unko-kanrisha-ryokaku", "shobo-setsubishi-kou1", "shobo-setsubishi-kou4", "shobo-setsubishi-otsu6",
+    "dekyo-charge-1", "dekyo-charge-3", "dekyo-charge-5", "dekyo-digital2", "zensho-eco-79",
+    "katei-hifuku", "katei-shokumotsu", "shobo-setsubishi-kou2", "shobo-setsubishi-kou3", "shobo-setsubishi-kou5", "zenkou-pc",
+  "kyoin-gunma",],
 };
 
 export function parseQuestionNumberSegment(exam: string, qnum: string): { qNumber: number; part?: QuestionPart } | null {
@@ -34,6 +38,14 @@ export function questionPagePath(q: Pick<Question, "exam" | "year" | "season" | 
   return `/q/${canonicalExamCode(q.exam)}/${q.year}-${q.season}/${q.session}/${questionNumberSegment(q.qNumber, q.part)}`;
 }
 
+const questionSeasons: ReadonlySet<string> = new Set(QUESTION_SEASONS);
+
+export function parseQuestionYearSeason(slug: string): { year: number; season: Season } | null {
+  const match = /^(\d{4})-([a-z0-9]+)$/.exec(slug);
+  if (!match || !questionSeasons.has(match[2])) return null;
+  return { year: Number(match[1]), season: match[2] as Season };
+}
+
 export function parseQuestionRoute(params: QuestionRouteParams): {
   exam: ExamCode;
   year: number;
@@ -42,10 +54,8 @@ export function parseQuestionRoute(params: QuestionRouteParams): {
   qNumber: number;
   part?: QuestionPart;
 } | null {
-  const match = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october|late|annual|july|primary|kansai|february|june|august|march|round1|round2)$/.exec(params.yearSeason);
-  if (!match) return null;
-  const year = Number(match[1]);
-  const season = match[2] as Season;
+  const yearSeason = parseQuestionYearSeason(params.yearSeason);
+  if (!yearSeason) return null;
 
   const segment = parseQuestionNumberSegment(params.exam, params.qnum);
   if (!segment) return null;
@@ -53,8 +63,7 @@ export function parseQuestionRoute(params: QuestionRouteParams): {
 
   return {
     exam: canonicalExamCode(params.exam as ExamCode),
-    year,
-    season,
+    ...yearSeason,
     session: params.section as Session,
     qNumber,
     ...(part ? { part } : {}),

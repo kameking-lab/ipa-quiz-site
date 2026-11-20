@@ -1,23 +1,67 @@
 import type { Question } from "@/lib/questions/types";
+
+
+import raw2023 from "./2023-annual.json";
+
+
+import kanri2022 from "./2022-annual.json";
+
+import { KANRI_2021_QUESTIONS } from "./2021-annual";
+
+
 import { KANRI_2024_QUESTIONS } from "./2024-annual";
+
+
 import { KANRI_BATCH_02 } from "./2025-batch-02";
+
+
 import { KANRI_BATCH_03 } from "./2025-batch-03";
+
+
 import { KANRI_BATCH_04 } from "./2025-batch-04";
+
+
 import { KANRI_BATCH_05 } from "./2025-batch-05";
+
+
 import { KANRI_BATCH_06 } from "./2025-batch-06";
+
+
 import { KANRI_BATCH_07 } from "./2025-batch-07";
+
+
 import { KANRI_BATCH_08 } from "./2025-batch-08";
+
+
 import { KANRI_BATCH_09 } from "./2025-batch-09";
+
+
 import { KANRI_BATCH_10 } from "./2025-batch-10";
+
+
 import { KANRI_COMMON_PROPERTY_QUESTIONS } from "./2025-common-property";
+
+
 import { KANRI_CONDOMINIUM_CASE_QUESTIONS } from "./2025-condominium-cases";
+
+
 import { KANRI_CONCRETE_MAINTENANCE_QUESTIONS } from "./2025-concrete-maintenance";
+
+
 import { KANRI_POLICY_GUIDELINE_QUESTIONS } from "./2025-policy-guideline";
+
+
 import { KANRI_REPAIR_GUIDELINE_QUESTIONS } from "./2025-repair-guideline";
 
 const sourcePdfUrl = "https://www.kanrikyo.or.jp/kanri/mondaiseikai/pdf/r07.pdf";
+
+
 const civilCodeUrl = "https://laws.e-gov.go.jp/law/129AC0000000089?occasion_date=20250401";
+
+
 const standardContractUrl = "https://www.mlit.go.jp/tochi_fudousan_kensetsugyo/const/content/001630188.pdf";
+
+
 const unfinishedBuildingPrecedentUrl = "https://www.courts.go.jp/assets/hanrei/hanrei-pdf-6997.pdf";
 
 /** 2025年の公式50問から、原文・正答・全肢の根拠を確認した設問のみ公開。 */
@@ -134,5 +178,7 @@ const KANRI_PILOT_QUESTIONS: Question[] = [
   },
 ];
 
-export const KANRI_QUESTIONS: Question[] = [...KANRI_2024_QUESTIONS, ...KANRI_PILOT_QUESTIONS, ...KANRI_BATCH_02, ...KANRI_BATCH_03, ...KANRI_BATCH_04, ...KANRI_BATCH_05, ...KANRI_BATCH_06, ...KANRI_BATCH_07, ...KANRI_BATCH_08, ...KANRI_BATCH_09, ...KANRI_BATCH_10, ...KANRI_REPAIR_GUIDELINE_QUESTIONS, ...KANRI_POLICY_GUIDELINE_QUESTIONS, ...KANRI_COMMON_PROPERTY_QUESTIONS, ...KANRI_CONDOMINIUM_CASE_QUESTIONS, ...KANRI_CONCRETE_MAINTENANCE_QUESTIONS]
+const KANRI_2023_QUESTIONS = raw2023 as Question[];
+
+export const KANRI_QUESTIONS: Question[] = [...KANRI_2023_QUESTIONS, ...kanri2022 as Question[], ...KANRI_2021_QUESTIONS, ...KANRI_2024_QUESTIONS, ...KANRI_PILOT_QUESTIONS, ...KANRI_BATCH_02, ...KANRI_BATCH_03, ...KANRI_BATCH_04, ...KANRI_BATCH_05, ...KANRI_BATCH_06, ...KANRI_BATCH_07, ...KANRI_BATCH_08, ...KANRI_BATCH_09, ...KANRI_BATCH_10, ...KANRI_REPAIR_GUIDELINE_QUESTIONS, ...KANRI_POLICY_GUIDELINE_QUESTIONS, ...KANRI_COMMON_PROPERTY_QUESTIONS, ...KANRI_CONDOMINIUM_CASE_QUESTIONS, ...KANRI_CONCRETE_MAINTENANCE_QUESTIONS]
   .sort((a, b) => a.year - b.year || a.qNumber - b.qNumber);

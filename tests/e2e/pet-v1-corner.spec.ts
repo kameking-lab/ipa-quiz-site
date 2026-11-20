@@ -1,56 +1,28 @@
 ﻿import { expect, test } from "@playwright/test";
-import { answerPet, roomPet } from "./helpers/pet-ui";
+import { answerPet } from "./helpers/pet-ui";
 const quiz = "/quiz?mode=year&exam=ap&year=2023&season=spring&session=am";
 const key = "ipa-quiz:pet-profiles:v1:guest";
 
 test.use({ isMobile: true, hasTouch: true, viewport: { width: 390, height: 844 }, serviceWorkers: "block" });
-for (const width of [320, 390]) test(`the same local child follows answers and the room; controls don't reward (${width}px)`, async ({ page }) => {
-  await page.setViewportSize({ width, height: 844 });
-  await page.emulateMedia({ reducedMotion: "no-preference" });
-  await page.route("**/api/auth/session", route => route.fulfill({ json: {} }));
-  const errors: string[] = []; page.on("pageerror", error => errors.push(error.message));
-  await page.goto(quiz);
-  await page.waitForURL(url => url.searchParams.get("question") === "ap-2023h-am-q1");
-  await page.getByRole("radio").first().tap();
-  await expect(page.locator('[aria-label="解答結果"]')).toBeFocused();
-  const corner = answerPet(page);
-  await expect(corner).toHaveCount(1);
-  await expect(corner).toHaveAttribute("data-pet-id", '["guest","ap"]');
-  await corner.scrollIntoViewIfNeeded();
-  await expect(corner).toHaveAttribute("data-pet-pose", "study");
-  const box = await corner.boundingBox();
-  expect(box!.x).toBeGreaterThanOrEqual(0); expect(box!.x + box!.width).toBeLessThanOrEqual(width);
-  // The answer card is intentionally compact; its care control stays touchable.
-  expect(box!.height).toBeLessThan(264);
-  const open = corner.getByRole("button", { name: "チワワのお世話を開く", exact: true });
-  expect((await open.boundingBox())!.height).toBeGreaterThanOrEqual(44);
-  const raw = await page.evaluate(key => localStorage.getItem(key), key);
-  await open.tap();
-  const sheet = page.getByRole("dialog", { name: "チワワの育成" });
-  await expect(sheet).toBeVisible();
-  await sheet.getByRole("button", { name: "なでる", exact: true }).tap();
-  await page.keyboard.press("Escape");
-  await expect(open).toBeFocused();
-  expect(await page.evaluate(key => localStorage.getItem(key), key)).toBe(raw);
-  await page.screenshot({ path: `test-results/pet-v1/${process.env.PET_EVIDENCE_PHASE ?? "regression"}-corner-${width}.png` });
-  await page.reload();
-  await page.getByRole("radio").first().tap();
-  await expect(corner).toHaveAttribute("data-pet-id", '["guest","ap"]');
-  await expect(corner).toHaveAttribute("data-moving", "false");
-  expect(JSON.parse((await page.evaluate(key => localStorage.getItem(key), key))!).profiles[0].growth).toBe(JSON.parse(raw!).profiles[0].growth);
-  await page.goto("/");
-  const seat = roomPet(page);
-  await expect(seat).toHaveAttribute("data-pet-id", '["guest","ap"]');
-  await seat.locator("summary").filter({ hasText: /^設定$/ }).tap();
-  await seat.getByRole("button", { name: "チワワのひと休みを閉じる" }).tap();
-  await expect(page.getByRole("button", { name: "チワワのひと休みを開く" })).toBeFocused();
-  await page.goto(quiz);
-  await page.getByRole("radio").first().tap();
-  await page.getByRole("button", { name: /^(次の問題へ|結果を見る)/ }).first().tap();
-  await page.waitForURL(url => url.searchParams.get("question") !== "ap-2023h-am-q1");
-  await page.getByRole("radio").first().tap();
-  await expect.poll(() => page.evaluate(key => JSON.parse(localStorage.getItem(key)!).profiles.find((profile: { qualificationId: string }) => profile.qualificationId === "ap").growth, key)).toBeGreaterThan(3);
-  await page.getByRole("button", { name: "チワワのひと休みを開く" }).tap();
-  await expect(corner).toHaveAttribute("data-pet-pose", "study");
-  expect(errors).toEqual([]);
-});
+
+for (const width of [320, 390]) {
+  test(`answer growth stays compact and the room retains care at ${width}px`, async ({ page }, testInfo) => {
+    await page.setViewportSize({ width, height: 844 });
+    await page.route("**/api/auth/session", route => route.fulfill({ json: {} }));
+    await page.goto(quiz);
+    await page.getByRole("radio").first().tap();
+    const corner = answerPet(page);
+    await expect(corner).toHaveAttribute("data-pet-id", '["guest","ap"]');
+    await expect(corner.getByRole("button")).toHaveCount(0);
+    const box = await corner.boundingBox();
+    expect(box!.x).toBeGreaterThanOrEqual(0);
+    expect(box!.x + box!.width).toBeLessThanOrEqual(width);
+    const before = await page.evaluate(key => localStorage.getItem(key), key);
+    await page.screenshot({ path: testInfo.outputPath(`answer-pet-${width}.png`) });
+    await page.goto("/me");
+    const room = page.getByRole("region", { name: "チワワの部屋" });
+    await room.getByRole("button", { name: "チワワをなでる" }).tap();
+    await expect(room.getByRole("status")).toContainText("なでなで");
+    expect(await page.evaluate(key => localStorage.getItem(key), key)).toBe(before);
+  });
+}

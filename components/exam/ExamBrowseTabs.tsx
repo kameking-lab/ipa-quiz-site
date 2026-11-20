@@ -1,9 +1,5 @@
-"use client";
-
-import * as React from "react";
 import Link from "next/link";
-import { Calendar, ChevronRight, Tags, Trophy } from "lucide-react";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { ChevronRight } from "lucide-react";
 import type { ExamCode } from "@/lib/questions/types";
 import { isMockExamCode } from "@/lib/mock-exam/config";
 
@@ -26,57 +22,14 @@ interface Props {
   categories: CategoryItem[];
 }
 
-// Sitemap deep-links to /<exam>#years and /<exam>#topics. The tab values are
-// singular (year/topic), so map the plural anchor hashes onto the right tab.
-const HASH_TO_TAB: Record<string, string> = {
-  years: "year",
-  topics: "topic",
-  mock: "mock",
-};
-
-const MOCK_PRESETS = [
-  { label: "本番想定 模試", desc: "実試験と同じ問題数・制限時間で受験", href: (e: string) => `/mock-exam?exam=${e}` },
-  { label: "ランダム短時間演習", desc: "スキマ時間で 80 問までランダム", href: (e: string) => `/quiz?mode=random&exam=${e}` },
-  { label: "復習モード", desc: "間違えた問題と☆付き問題を優先出題", href: (e: string) => `/quiz?mode=review&exam=${e}` },
-  { label: "未回答モード", desc: "まだ解いていない問題だけ出題", href: (e: string) => `/quiz?mode=unanswered&exam=${e}` },
-] as const;
-
 function YearLink({ exam, item: g }: { exam: ExamCode; item: YearItem }) {
-  return <li><Link href={`/${exam}/${g.key}`} className="group flex min-h-16 items-center justify-between gap-3 rounded-xl border border-border bg-card p-3.5 text-sm transition hover:border-primary/40 hover:shadow-sm"><span className="min-w-0 font-medium">{g.label}{g.coverage && <span className="mt-1 block text-xs font-normal text-muted-foreground">{g.coverage}</span>}{g.missingSpecialist && <span className="mt-1 block text-xs font-normal text-amber-700 dark:text-amber-300">午前IIは未収録</span>}</span><span className="flex shrink-0 items-center gap-2 text-xs text-muted-foreground"><span className="rounded-full bg-muted px-2 py-0.5 font-semibold">{g.count}問</span><ChevronRight aria-hidden="true" className="h-4 w-4" /></span></Link></li>;
+  return <li><Link prefetch={false} href={`/${exam}/${g.key}`} className="group flex min-h-16 items-center justify-between gap-3 rounded-xl border border-border bg-card p-3.5 text-sm transition hover:border-primary/40 hover:shadow-sm"><span className="min-w-0 font-medium">{g.label}{g.coverage && <span className="mt-1 block text-xs font-normal text-muted-foreground">{g.coverage}</span>}{g.missingSpecialist && <span className="mt-1 block text-xs font-normal text-amber-700 dark:text-amber-300">午前IIは未収録</span>}</span><span className="flex shrink-0 items-center gap-2 text-xs text-muted-foreground"><span className="rounded-full bg-muted px-2 py-0.5 font-semibold">{g.count}問</span><ChevronRight aria-hidden="true" className="h-4 w-4" /></span></Link></li>;
 }
 
 export function ExamBrowseTabs({ exam, years, categories }: Props) {
-  const [tab, setTab] = React.useState<string>("year");
-  const supportsMockExam = isMockExamCode(exam);
-
-  React.useEffect(() => {
-    const apply = () => {
-      const next = HASH_TO_TAB[window.location.hash.replace("#", "")];
-      if (next) setTab(next);
-    };
-    apply();
-    window.addEventListener("hashchange", apply);
-    return () => window.removeEventListener("hashchange", apply);
-  }, []);
-
   return (
-    <Tabs value={tab} onValueChange={setTab}>
-      <TabsList className="mb-4 w-full">
-        <TabsTrigger value="year" className="min-h-11 flex-1">
-          <Calendar className="mr-1 h-3.5 w-3.5 inline" />
-          年度別
-        </TabsTrigger>
-        <TabsTrigger value="topic" className="min-h-11 flex-1">
-          <Tags className="mr-1 h-3.5 w-3.5 inline" />
-          分野別
-        </TabsTrigger>
-        <TabsTrigger value="mock" className="min-h-11 flex-1">
-          <Trophy className="mr-1 h-3.5 w-3.5 inline" />
-          {!supportsMockExam || exam === "sg" ? "演習" : "模試"}
-        </TabsTrigger>
-      </TabsList>
-
-      <TabsContent value="year">
+    <div className="space-y-4">
+      <section id="years" aria-label="年度別の過去問" className="scroll-mt-20">
         {years.length === 0 ? (
           <p className="rounded-2xl border border-border bg-card p-5 text-sm text-muted-foreground">
             年度データがまだ登録されていません。
@@ -87,9 +40,9 @@ export function ExamBrowseTabs({ exam, years, categories }: Props) {
             {years.length > 4 && <details className="group mt-3 rounded-xl border border-border"><summary className="flex min-h-12 cursor-pointer items-center justify-between px-4 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">以前の年度・回も見る（残り{years.length - 4}件）<ChevronRight aria-hidden="true" className="h-4 w-4 transition group-open:rotate-90" /></summary><ul className="grid gap-2 p-3 pt-0 sm:grid-cols-2">{years.slice(4).map((item) => <YearLink key={item.key} item={item} exam={exam} />)}</ul></details>}
           </div>
         )}
-      </TabsContent>
-
-      <TabsContent value="topic">
+      </section>
+      <details id="topics" className="scroll-mt-20 rounded-xl border border-border px-3">
+        <summary className="min-h-11 cursor-pointer py-3 text-sm font-medium">分野別の過去問</summary>
         {categories.length === 0 ? (
           <p className="rounded-2xl border border-border bg-card p-5 text-sm text-muted-foreground">
             分野データがまだ登録されていません。
@@ -100,10 +53,11 @@ export function ExamBrowseTabs({ exam, years, categories }: Props) {
               <li key={c.category}>
                 <Link
                   href={`/${exam}/topic/${encodeURIComponent(c.category)}`}
-                  className="group flex items-center justify-between rounded-xl border border-border bg-card p-3.5 text-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+                  prefetch={false}
+                  className="group flex min-h-16 items-center justify-between gap-3 rounded-xl border border-border bg-card p-3.5 text-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
                 >
-                  <span className="font-medium text-foreground">{c.category}</span>
-                  <span className="flex items-center gap-2 text-xs text-muted-foreground">
+                  <span className="min-w-0 break-words font-medium text-foreground">{c.category}</span>
+                  <span className="flex shrink-0 items-center gap-2 text-xs text-muted-foreground">
                     <span className="rounded-full bg-muted px-2 py-0.5 font-semibold">
                       {c.count}問
                     </span>
@@ -114,26 +68,13 @@ export function ExamBrowseTabs({ exam, years, categories }: Props) {
             ))}
           </ul>
         )}
-      </TabsContent>
-
-      <TabsContent value="mock">
-        <ul className="grid gap-2 sm:grid-cols-2">
-          {(supportsMockExam ? MOCK_PRESETS : MOCK_PRESETS.slice(1)).map((m) => (
-            <li key={m.label}>
-              <Link
-                href={m.href(exam)}
-                className="group flex items-center justify-between rounded-xl border border-border bg-card p-3.5 text-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
-              >
-                <span>
-                  <span className="block font-medium text-foreground">{exam === "sg" && m.label === "本番想定 模試" ? "科目A 演習" : m.label}</span>
-                  <span className="block text-xs text-muted-foreground">{exam === "sg" && m.label === "本番想定 模試" ? "収録済みの科目Aを制限時間付きで演習（科目Bを含みません）" : !supportsMockExam && m.label === "ランダム短時間演習" ? "収録済みの問題をランダムに解く" : m.desc}</span>
-                </span>
-                <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </TabsContent>
-    </Tabs>
+      </details>
+      {isMockExamCode(exam) && (
+        <details id="mock" className="scroll-mt-20 rounded-xl border border-border px-3">
+          <summary className="min-h-11 cursor-pointer py-3 text-sm font-medium">模試</summary>
+          <Link href={'/mock-exam?exam=' + exam} className="inline-flex min-h-11 items-center underline">{exam === "sg" ? "科目A 演習" : "本番想定 模試"}</Link>
+        </details>
+      )}
+    </div>
   );
 }

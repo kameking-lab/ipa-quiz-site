@@ -1,4 +1,3 @@
-import { Lightbulb, Layers, BookOpen, ChevronDown } from "lucide-react";
 import { QuestionBody } from "./QuestionBody";
 
 type Layer = {
@@ -126,7 +125,7 @@ function LayerBody({
     <div
       className={`selectable-content text-sm leading-[1.85] sm:text-[15px] ${textClass}`}
     >
-      <QuestionBody text={body} />
+      <QuestionBody text={body} linkReferences />
     </div>
   );
 }
@@ -153,54 +152,24 @@ export function ExplanationLayers({ explanation }: { explanation: string }) {
     <div className="flex flex-col gap-3">
       {layers.map((layer, idx) => {
         const tone = TONE_STYLES[layer.tone];
-        // Layer 1 (結論) stays always open with no toggle — it is the
-        // headline of the answer. Layer 2 / 3 wrap their body in a
-        // <details open> so the LAYERs ship server-rendered for SEO and
-        // power-users can collapse them once they have read past.
-        const collapsible = idx > 0;
         return (
           <article
             key={idx}
             className={`relative overflow-hidden rounded-2xl border p-4 sm:p-5 ${tone.wrap}`}
           >
-            {collapsible ? (
-              <details open className="group/layer">
-                <summary className="mb-2.5 flex cursor-pointer list-none items-center justify-between gap-2 [&::-webkit-details-marker]:hidden">
-                  <div className="flex items-center gap-2">
-                    <span
-                      className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-semibold tracking-wide ${tone.chip}`}
-                    >
-                      {layer.icon}
-                      {layer.label}
-                    </span>
-                  </div>
-                  <span className="inline-flex items-center gap-1 text-[10px] font-medium text-muted-foreground">
-                    <ChevronDown
-                      className="h-3.5 w-3.5 transition group-open/layer:rotate-180"
-                      aria-hidden="true"
-                    />
-                    <span className="group-open/layer:hidden">展開</span>
-                    <span className="hidden group-open/layer:inline">閉じる</span>
-                  </span>
-                </summary>
-                <LayerBody body={layer.body} textClass={tone.text} />
-              </details>
-            ) : (
-              <>
-                <header className="mb-2.5 flex items-center gap-2">
-                  <span
-                    className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-semibold tracking-wide ${tone.chip}`}
-                  >
-                    {layer.icon}
-                    {layer.label}
-                  </span>
-                </header>
-                <LayerBody body={layer.body} textClass={tone.text} />
-              </>
-            )}
+            <h3 className="mb-2.5 flex items-center gap-2">
+              <span
+                className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-semibold tracking-wide ${tone.chip}`}
+              >
+                {layer.icon}
+                {layer.label}
+              </span>
+            </h3>
+            <LayerBody body={layer.body} textClass={tone.text} />
           </article>
         );
       })}
     </div>
   );
 }
+import { BookOpen, Layers, Lightbulb } from "lucide-react";

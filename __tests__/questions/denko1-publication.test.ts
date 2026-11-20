@@ -23,15 +23,16 @@ const OFFICIAL_2025_LOWER = "ニニハハイイハロロロ" + "ロロニイイ�
 const TO_SITE: Record<string, string> = { イ: "ア", ロ: "イ", ハ: "ウ", ニ: "エ" };
 const FIRST = DENKO1_QUESTIONS.filter((q) => q.year === 2026 && q.season === "first");
 const SECOND = DENKO1_QUESTIONS.filter((q) => q.year === 2025 && q.season === "second");
+const reviewedPapers = [...FIRST, ...SECOND];
 
 describe("第一種電気工事士 令和8年度上期学科(出題例)", () => {
-  it("is live and publishes two complete 50-question papers", () => {
+  it("keeps both complete 50-question papers in the expanded live registry", () => {
     expect(getQualificationByExamCode("denko1")?.status).toBe("live");
-    expect(DENKO1_QUESTIONS).toHaveLength(100);
+    expect(DENKO1_QUESTIONS).toHaveLength(700);
     expect(FIRST.map((q) => q.qNumber)).toEqual(Array.from({ length: 50 }, (_, index) => index + 1));
     expect(SECOND.map((q) => q.qNumber)).toEqual(Array.from({ length: 50 }, (_, index) => index + 1));
-    expect(new Set(DENKO1_QUESTIONS.map((q) => q.id)).size).toBe(100);
-    expect(QUESTIONS_BY_EXAM.denko1).toHaveLength(100);
+    expect(new Set(DENKO1_QUESTIONS.map((q) => q.id)).size).toBe(700);
+    expect(QUESTIONS_BY_EXAM.denko1).toEqual(DENKO1_QUESTIONS);
     expect(ALL_QUIZ_EXAM_CODES).toContain("denko1");
     expect(ALL_EXAM_CODES).not.toContain("denko1");
     expect(EXAM_CONFIGS.denko1.sessions[0]?.expectedQuestions).toBe(50);
@@ -42,7 +43,7 @@ describe("第一種電気工事士 令和8年度上期学科(出題例)", () => 
     expect(SECOND.map((q) => q.answer).join("")).toBe([...OFFICIAL_2025_LOWER].map((kana) => TO_SITE[kana]).join(""));
   });
 
-  it.each(DENKO1_QUESTIONS)("$id has four choices, four reasons, attribution and rendered figures", (q) => {
+  it.each(reviewedPapers)("$id has four choices, four reasons, attribution and rendered figures", (q) => {
     expect(getChoiceKeys(q.choices)).toEqual(["ア", "イ", "ウ", "エ"]);
     expect(Object.keys(q.choiceExplanations ?? {}).sort()).toEqual(["ア", "イ", "ウ", "エ"]);
     expect(Object.values(q.choiceExplanations ?? {}).every((reason) => reason.trim().length > 10)).toBe(true);
@@ -58,11 +59,11 @@ describe("第一種電気工事士 令和8年度上期学科(出題例)", () => 
   });
 
   it("covers the wiring-diagram questions with the shared official diagrams", () => {
-    for (const q of DENKO1_QUESTIONS.filter((item) => item.qNumber >= 30 && item.qNumber <= 34)) {
+    for (const q of reviewedPapers.filter((item) => item.qNumber >= 30 && item.qNumber <= 34)) {
       const suffix = q.year === 2025 ? "2025-second" : "2026-first";
       expect(q.imageUrls).toContain(`/images/denko1/${suffix}/facility-plan.png`);
     }
-    for (const q of DENKO1_QUESTIONS.filter((item) => item.qNumber >= 41)) {
+    for (const q of reviewedPapers.filter((item) => item.qNumber >= 41)) {
       const suffix = q.year === 2025 ? "2025-second" : "2026-first";
       expect(q.imageUrls).toContain(`/images/denko1/${suffix}/single-line.png`);
     }
@@ -81,7 +82,7 @@ describe("第一種電気工事士 令和8年度上期学科(出題例)", () => 
 
   it("offers the 2025 lower and 2026 upper papers as separate year links", () => {
     const years = groupByYearSeason(DENKO1_QUESTIONS);
-    expect(years.map(({ key, count }) => [key, count])).toEqual([
+    expect(years.filter(({ key }) => ["2026-first", "2025-second"].includes(key)).map(({ key, count }) => [key, count])).toEqual([
       ["2026-first", 50],
       ["2025-second", 50],
     ]);
@@ -115,15 +116,15 @@ describe("第一種電気工事士 令和8年度上期学科(出題例)", () => 
     for (const reason of Object.values(q.choiceExplanations ?? {})) {
       expect(context).toContain(reason);
     }
-    render(createElement(ExplanationCard, { question: q, selected: "イ", isCorrect: false, starred: false,
-      onToggleStar: () => {}, onNext: () => {}, onAskAI: () => {} }));
+    render(createElement(ExplanationCard, { question: q, selected: "イ", isCorrect: false,
+      onNext: () => {}, }));
     expect(screen.getByRole("region", { name: "不正解の解説" })).toBeTruthy();
     expect(screen.getByRole("region", { name: "不正解の解説" }).textContent).toContain(q.choiceExplanations?.イ);
-    expect(screen.getByText("選択肢ごとの解説")).toBeTruthy();
+    expect(screen.getByRole("region", { name: "選択肢ごとの解説" })).toBeTruthy();
   });
 
   it("names the examination center as author without a reuse-terms link in JSON-LD", () => {
-    const q = DENKO1_QUESTIONS[0]!;
+    const q = FIRST[0]!;
     const graph = buildQuestionJsonLd({
       question: q,
       pageUrlAbs: `https://www.kakomon-ai.jp/q/${q.id}`,

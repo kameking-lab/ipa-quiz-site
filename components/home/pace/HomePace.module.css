@@ -1,0 +1,53 @@
+.content { padding: 16px 18px; }
+.qualification {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  min-height: 44px;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.qualification > span { min-width: 0; text-wrap: pretty; }
+.search:focus-within { outline: 2px solid var(--primary); outline-offset: 3px; }
+.search input::-webkit-search-cancel-button { cursor: pointer; min-width: 28px; min-height: 28px; }
+.result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 48px;
+  padding-block: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+.result > span:first-child { min-width: 0; overflow-wrap: anywhere; }
+.result:hover { color: var(--primary); }
+.countdown {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.countdown > span {
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.sheet > button:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  top: 12px;
+  right: 12px;
+}
+@media (min-width: 640px) { .content { padding: 18px 24px; } }

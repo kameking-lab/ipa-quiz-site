@@ -17,7 +17,9 @@ describe("AP e-ap-2 choice explanations", () => {
       (questions, previous) => applyChoiceExplanationOverlay(questions, previous),
       applyIpaCorrections("ap", AP_BY_YEAR_QUESTIONS),
     );
-    expect(AP_QUESTIONS).toHaveLength(before.length);
+    const originalIds = new Set(before.map(q => q.id));
+    const publishedOriginals = AP_QUESTIONS.filter(q => originalIds.has(q.id));
+    expect(publishedOriginals).toHaveLength(before.length);
     const loaded = new Map(AP_QUESTIONS.map(q => [q.id, q]));
     for (const oldQuestion of before) {
       const question = loaded.get(oldQuestion.id)!;

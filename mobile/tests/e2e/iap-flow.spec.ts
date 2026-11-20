@@ -7,7 +7,7 @@ import type {MobileEntitlement} from "../../shared/contracts";
 // and, for the iPhone check, with playwright.webkit.config.ts (iPhone 15 Pro,
 // 59px status bar / Dynamic Island inset).
 const ORIGIN="https://www.kakomon-ai.jp";
-interface Server { user: string|null; entitledAfterPurchase: boolean; requests: string[]; failAfterPurchase?: boolean }
+interface Server { user: string|null; entitledAfterPurchase: boolean; requests: string[]; failAfterPurchase?: boolean; purchaseError?: string }
 const free=(user:string|null):MobileEntitlement=>({userId:user,appUserId:user?"kakomon_opaque":null,entitled:false,source:"free",expiresAt:null,checkedAt:new Date().toISOString(),lease:null});
 async function serve(context:BrowserContext,page:Page,server:Server){
   await context.route("**/*",async route=>{
@@ -22,6 +22,13 @@ async function serve(context:BrowserContext,page:Page,server:Server){
       await route.fulfill({json:{entitlement,configuration:{sdkKey:"appl_mock_public_key",productId:"mock.monthly",offeringId:"main",entitlement:"kakomon_pro",expectedPriceYen:980,leasePublicKey:""}}});return;
     }
     if(url.pathname==="/api/mobile/catalog"){await route.fulfill({json:{exams:[]}});return;}
+    if(url.pathname==="/api/mobile/purchase-check"){
+      if (route.request().method() === "PATCH") {
+        const { action } = route.request().postDataJSON();
+        await route.fulfill({ json: action === "status" ? { managed: false, pending: null } : { state: null } });
+      } else await route.fulfill(server.purchaseError?{status:409,json:{error:server.purchaseError}}:{json:{allowed:true}});
+      return;
+    }
     if(url.pathname.startsWith("/api/")){await route.fulfill({status:503,json:{error:"mock_offline"}});return;}
     const path=fileURLToPath(new URL(`../../dist${url.pathname==="/"?"/index.html":url.pathname}`,import.meta.url));
     try {await stat(path);await route.fulfill({path});}catch{await route.abort();}
@@ -35,12 +42,24 @@ async function open(page:Page,scenario:Parameters<Window["mobileTest"]["mockStor
     window.mobileTest.mockStore(scenario);window.mobileTest.showMembership();
   },scenario);
 }
+for(const [code,provider] of [["duplicate_purchase_google","Google"],["duplicate_purchase_apple","Apple"]]) {
+  test(`another ${provider} account already paid: shows the login method and never opens StoreKit`,async({page,context})=>{
+    const server:Server={user:"free-user",entitledAfterPurchase:false,requests:[],purchaseError:code};await serve(context,page,server);
+    await open(page,"success");
+    await expect(page.getByText(/購入したときと同じ方法/)).toHaveCount(0);
+    await page.getByRole("button",{name:"¥980 / 月で登録",exact:true}).click();
+    await expect(page.getByRole("status")).toContainText(`このメールアドレスの別のアカウント（${provider}）で購入済みです。そちらでログインしてください。`);
+    expect((await page.evaluate(()=>window.mobileTest.storeCalls())).purchases).toBe(0);
+    expect(server.requests).toContain("/api/mobile/purchase-check");
+    await expect(page.getByText("購入内容をサーバーで確認中です。",{exact:false})).toHaveCount(0);
+  });
+}
 test("signed out: price is visible, 登録 opens sign-in, and the purchase continues by itself after returning",async({page,context},info)=>{
   const server:Server={user:null,entitledAfterPurchase:true,requests:[]};await serve(context,page,server);
   await open(page,"success");
   const buy=page.getByRole("button",{name:"¥980 / 月で登録",exact:true});
   await expect(buy).toBeEnabled();
-  await expect(page.getByText("登録ボタンを押すとログイン画面が開き",{exact:false})).toBeVisible();
+  await expect(page.getByText(/購入時にApple IDに請求/)).toBeVisible();
   await page.screenshot({path:info.outputPath("1-signed-out-price.png")});
   await buy.click();
   await expect(page.getByRole("status")).toContainText("ログインが終わると、そのまま購入画面に進みます。");
@@ -74,7 +93,7 @@ test("signed in without a pending intent: nothing is bought automatically",async
   await expect(page.getByRole("button",{name:"¥980 / 月で登録",exact:true})).toBeEnabled();
   expect((await page.evaluate(()=>window.mobileTest.storeCalls())).purchases).toBe(0);
 });
-test("products that App Store does not return: the reason and code stay on screen after other actions",async({page,context},info)=>{
+test("products that App Store does not return: the reason and code stay on screen until retry",async({page,context},info)=>{
   const server:Server={user:"u",entitledAfterPurchase:false,requests:[]};await serve(context,page,server);
   await open(page,"no-products");
   const alert=page.getByRole("alert");
@@ -82,10 +101,6 @@ test("products that App Store does not return: the reason and code stay on scree
   await expect(alert).toContainText("None of the products registered");
   await expect(page.getByRole("button",{name:/月で登録/})).toHaveCount(0);
   await page.screenshot({path:info.outputPath("3-no-products.png")});
-  // Another action sets its own notice; the store reason must not be overwritten.
-  await page.getByRole("button",{name:"AI送信の許可を取り消す"}).click();
-  await expect(page.getByRole("status").first()).toContainText("AI送信の許可を取り消しました");
-  await expect(alert).toContainText("コード 23 CONFIGURATION_ERROR");
   // Fixing the store side and retrying brings the price back without restarting.
   await page.evaluate(()=>window.mobileTest.mockStore("success"));
   await page.getByRole("button",{name:"商品情報を再読み込み"}).click();

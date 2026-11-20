@@ -6,6 +6,7 @@ import pm from "@/docs/evidence/shino-sagyo-pm01-20-ready-20261010/INTEGRATION.j
 
 import ot13 from "@/docs/evidence/sagyo-ot13-recovered-20261011/INTEGRATION.json";
 import go34 from "@/data/questions/shino-kunrenshi/saved-go34-20261011.json";
+import { reviewedOtIds, reviewedVisionIds } from "../fixtures/rehabilitation-reviewed-ids";
 
 const restoredIds = new Set([...OT61_PM_REMAINING14_QUESTIONS.map(q => q.id), ...ot13.newIds, ...go34.map(question => question.id)]);
 
@@ -42,7 +43,7 @@ describe("作業療法士・視能訓練士 午後1〜20の局所追加", () => 
     expect(pm.readyProvenance).toHaveLength(34);
     expect(pm.heldDrafts).toHaveLength(4);
     expect(pm.excludedBeforeDraft).toHaveLength(42);
-    const all = [...SAGYO_RYOHOSHI_QUESTIONS, ...SHINO_KUNRENSHI_QUESTIONS];
+    const all = [...SAGYO_RYOHOSHI_QUESTIONS.filter(q => reviewedOtIds.has(q.id)), ...SHINO_KUNRENSHI_QUESTIONS.filter(q => reviewedVisionIds.has(q.id))];
     expect(all).toHaveLength(544);
     for (const record of [...pm.heldDrafts, ...pm.excludedBeforeDraft]) {
       const match = record.identity.match(/^(.+)-(\d+)-pm-(\d+)$/)!;

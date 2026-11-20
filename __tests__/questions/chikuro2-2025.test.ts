@@ -104,7 +104,7 @@ describe("築炉技能士2級 築炉作業 2025年度前期", () => {
     const q = questions[41];
     const resource = buildQuestionJsonLd({ question: q, pageUrlAbs: `https://www.kakomon-ai.jp${questionPagePath(q)}`, title: "築炉技能士2級 B群17" })["@graph"][0];
     if (!("hasPart" in resource) || !("acceptedAnswer" in resource.hasPart)) throw new Error("Missing accepted answer");
-    expect(resource.hasPart.author.name).toBe("中央職業能力開発協会");
+    expect(resource.hasPart.author?.name).toBe("中央職業能力開発協会");
     expect(resource.hasPart.acceptedAnswer).toMatchObject({ text: "ハ: 230mm×114mm×65mm" });
   });
 });

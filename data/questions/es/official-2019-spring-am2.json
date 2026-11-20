@@ -1,0 +1,877 @@
+[
+  {
+    "id": "es-2019h-am2-q1",
+    "exam": "es",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 1,
+    "category": "エンベデッドシステムスペシャリスト",
+    "topicTags": [
+      "パワーゲーティング"
+    ],
+    "difficulty": 4,
+    "explanation": "使っていない回路ブロックの電源供給を遮断して電力を減らす。クロックだけを止める方法と区別する。",
+    "sourceAttribution": "出典：IPA 2019年度春期 エンベデッドシステムスペシャリスト試験 午前II 問1",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問1 パワーゲーティング",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "ウ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2019-spring-am2/q01.webp"
+    ],
+    "imageAltTexts": [
+      "問1の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_qs.pdf#page=4",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_ans.pdf"
+  },
+  {
+    "id": "es-2019h-am2-q2",
+    "exam": "es",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 2,
+    "category": "エンベデッドシステムスペシャリスト",
+    "topicTags": [
+      "MLCフラッシュメモリ"
+    ],
+    "difficulty": 4,
+    "explanation": "一つのセルに複数の状態を持たせて複数ビットを記録する。セル当たりの記憶容量を増やせる。",
+    "sourceAttribution": "出典：IPA 2019年度春期 エンベデッドシステムスペシャリスト試験 午前II 問2",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問2 MLCフラッシュメモリ",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "ウ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2019-spring-am2/q02.webp"
+    ],
+    "imageAltTexts": [
+      "問2の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_qs.pdf#page=4",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_ans.pdf"
+  },
+  {
+    "id": "es-2019h-am2-q3",
+    "exam": "es",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 3,
+    "category": "エンベデッドシステムスペシャリスト",
+    "topicTags": [
+      "メモリインタリーブ"
+    ],
+    "difficulty": 4,
+    "explanation": "連続アドレスを複数のメモリバンクに分散させる。バンクを切り替えながらアクセスして連続転送の速度を上げる。",
+    "sourceAttribution": "出典：IPA 2019年度春期 エンベデッドシステムスペシャリスト試験 午前II 問3",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問3 メモリインタリーブ",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "イ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2019-spring-am2/q03.webp"
+    ],
+    "imageAltTexts": [
+      "問3の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_qs.pdf#page=4",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_ans.pdf"
+  },
+  {
+    "id": "es-2019h-am2-q4",
+    "exam": "es",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 4,
+    "category": "エンベデッドシステムスペシャリスト",
+    "topicTags": [
+      "磁気ディスクの平均待ち時間"
+    ],
+    "difficulty": 4,
+    "explanation": "1回転は60÷4200秒。その半分の約7.14ミリ秒を平均回転待ち時間として、位置決めの5ミリ秒に加える。",
+    "sourceAttribution": "出典：IPA 2019年度春期 エンベデッドシステムスペシャリスト試験 午前II 問4",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問4 磁気ディスクの平均待ち時間",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "ウ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2019-spring-am2/q04.webp"
+    ],
+    "imageAltTexts": [
+      "問4の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_qs.pdf#page=5",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_ans.pdf"
+  },
+  {
+    "id": "es-2019h-am2-q5",
+    "exam": "es",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 5,
+    "category": "エンベデッドシステムスペシャリスト",
+    "topicTags": [
+      "圧縮したプログラムの読込み"
+    ],
+    "difficulty": 4,
+    "explanation": "圧縮後は6 MB。転送は6÷20＝0.3秒で、展開は6×0.03＝0.18秒。両処理は重ならないので0.48秒になる。",
+    "sourceAttribution": "出典：IPA 2019年度春期 エンベデッドシステムスペシャリスト試験 午前II 問5",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問5 圧縮したプログラムの読込み",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "ア",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2019-spring-am2/q05.webp"
+    ],
+    "imageAltTexts": [
+      "問5の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_qs.pdf#page=5",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_ans.pdf"
+  },
+  {
+    "id": "es-2019h-am2-q6",
+    "exam": "es",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 6,
+    "category": "エンベデッドシステムスペシャリスト",
+    "topicTags": [
+      "故障発生率と残存台数"
+    ],
+    "difficulty": 4,
+    "explanation": "経過時間を秒にそろえて故障発生率と掛け、無故障で残る割合を指数分布で求めて当初台数に適用する。",
+    "sourceAttribution": "出典：IPA 2019年度春期 エンベデッドシステムスペシャリスト試験 午前II 問6",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問6 故障発生率と残存台数",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "ア",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2019-spring-am2/q06.webp"
+    ],
+    "imageAltTexts": [
+      "問6の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_qs.pdf#page=6",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_ans.pdf"
+  },
+  {
+    "id": "es-2019h-am2-q7",
+    "exam": "es",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 7,
+    "category": "エンベデッドシステムスペシャリスト",
+    "topicTags": [
+      "RTOSの優先度逆転"
+    ],
+    "difficulty": 4,
+    "explanation": "低優先度タスクが資源を保持していると、その資源を待つ高優先度タスクが実行できなくなる場合がある。",
+    "sourceAttribution": "出典：IPA 2019年度春期 エンベデッドシステムスペシャリスト試験 午前II 問7",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問7 RTOSの優先度逆転",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "イ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2019-spring-am2/q07.webp"
+    ],
+    "imageAltTexts": [
+      "問7の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_qs.pdf#page=7",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_ans.pdf"
+  },
+  {
+    "id": "es-2019h-am2-q8",
+    "exam": "es",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 8,
+    "category": "エンベデッドシステムスペシャリスト",
+    "topicTags": [
+      "セマフォのP操作とV操作"
+    ],
+    "difficulty": 4,
+    "explanation": "P操作は資源を取得してカウントを減らす。V操作は資源を返し、必要に応じて待機中のタスクを再開させる。",
+    "sourceAttribution": "出典：IPA 2019年度春期 エンベデッドシステムスペシャリスト試験 午前II 問8",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問8 セマフォのP操作とV操作",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "イ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2019-spring-am2/q08.webp"
+    ],
+    "imageAltTexts": [
+      "問8の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_qs.pdf#page=7",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_ans.pdf"
+  },
+  {
+    "id": "es-2019h-am2-q9",
+    "exam": "es",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 9,
+    "category": "エンベデッドシステムスペシャリスト",
+    "topicTags": [
+      "ページサイズと使用効率"
+    ],
+    "difficulty": 4,
+    "explanation": "プログラムがページの半分にも満たないなら、割り当て済みページ内の空きが多い。ページサイズと内部断片化の関係を見る。",
+    "sourceAttribution": "出典：IPA 2019年度春期 エンベデッドシステムスペシャリスト試験 午前II 問9",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問9 ページサイズと使用効率",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "ウ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2019-spring-am2/q09.webp"
+    ],
+    "imageAltTexts": [
+      "問9の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_qs.pdf#page=8",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_ans.pdf"
+  },
+  {
+    "id": "es-2019h-am2-q10",
+    "exam": "es",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 10,
+    "category": "エンベデッドシステムスペシャリスト",
+    "topicTags": [
+      "ページ置換えのLRU方式"
+    ],
+    "difficulty": 4,
+    "explanation": "最後に参照した時点が最も古いページを選んで置き換える。主記憶に入った時点が最も前のページとは限らない。",
+    "sourceAttribution": "出典：IPA 2019年度春期 エンベデッドシステムスペシャリスト試験 午前II 問10",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問10 ページ置換えのLRU方式",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "エ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2019-spring-am2/q10.webp"
+    ],
+    "imageAltTexts": [
+      "問10の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_qs.pdf#page=8",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_ans.pdf"
+  },
+  {
+    "id": "es-2019h-am2-q11",
+    "exam": "es",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 11,
+    "category": "エンベデッドシステムスペシャリスト",
+    "topicTags": [
+      "コンパイラによる最適化"
+    ],
+    "difficulty": 4,
+    "explanation": "処理結果を保ったまま、繰返し実行される部分や無駄な評価を減らす。選択肢ごとに変換前後の動作を確かめる。",
+    "sourceAttribution": "出典：IPA 2019年度春期 エンベデッドシステムスペシャリスト試験 午前II 問11",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問11 コンパイラによる最適化",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "イ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2019-spring-am2/q11.webp"
+    ],
+    "imageAltTexts": [
+      "問11の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_qs.pdf#page=8",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_ans.pdf"
+  },
+  {
+    "id": "es-2019h-am2-q12",
+    "exam": "es",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 12,
+    "category": "エンベデッドシステムスペシャリスト",
+    "topicTags": [
+      "DRAMのリフレッシュ"
+    ],
+    "difficulty": 4,
+    "explanation": "行アドレスと列アドレスを分けて考える。リフレッシュで対象になる行の数と一巡に使える時間から頻度を求める。",
+    "sourceAttribution": "出典：IPA 2019年度春期 エンベデッドシステムスペシャリスト試験 午前II 問12",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問12 DRAMのリフレッシュ",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "ウ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2019-spring-am2/q12.webp"
+    ],
+    "imageAltTexts": [
+      "問12の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_qs.pdf#page=9",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_ans.pdf"
+  },
+  {
+    "id": "es-2019h-am2-q13",
+    "exam": "es",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 13,
+    "category": "エンベデッドシステムスペシャリスト",
+    "topicTags": [
+      "SoCに用いるIPコア"
+    ],
+    "difficulty": 4,
+    "explanation": "機能単位で設計を再利用する。論理合成が可能な記述と、配置配線など物理設計まで決まったデータを区別する。",
+    "sourceAttribution": "出典：IPA 2019年度春期 エンベデッドシステムスペシャリスト試験 午前II 問13",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問13 SoCに用いるIPコア",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "エ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2019-spring-am2/q13.webp"
+    ],
+    "imageAltTexts": [
+      "問13の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_qs.pdf#page=9",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_ans.pdf"
+  },
+  {
+    "id": "es-2019h-am2-q14",
+    "exam": "es",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 14,
+    "category": "エンベデッドシステムスペシャリスト",
+    "topicTags": [
+      "SRAM型FPGA"
+    ],
+    "difficulty": 4,
+    "explanation": "構成情報をSRAMに保持するため書換えが可能。揮発性なので電源投入後に構成情報を読み込ませる。",
+    "sourceAttribution": "出典：IPA 2019年度春期 エンベデッドシステムスペシャリスト試験 午前II 問14",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問14 SRAM型FPGA",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "ア",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2019-spring-am2/q14.webp"
+    ],
+    "imageAltTexts": [
+      "問14の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_qs.pdf#page=9",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_ans.pdf"
+  },
+  {
+    "id": "es-2019h-am2-q15",
+    "exam": "es",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 15,
+    "category": "エンベデッドシステムスペシャリスト",
+    "topicTags": [
+      "インターバルタイマ"
+    ],
+    "difficulty": 4,
+    "explanation": "入力クロックを分周した後の周期を確認する。目標時間をその周期で割り、カウンタの設定値に変換する。",
+    "sourceAttribution": "出典：IPA 2019年度春期 エンベデッドシステムスペシャリスト試験 午前II 問15",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問15 インターバルタイマ",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "エ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2019-spring-am2/q15.webp"
+    ],
+    "imageAltTexts": [
+      "問15の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_qs.pdf#page=10",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_ans.pdf"
+  },
+  {
+    "id": "es-2019h-am2-q16",
+    "exam": "es",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 16,
+    "category": "エンベデッドシステムスペシャリスト",
+    "topicTags": [
+      "TTLのAND回路"
+    ],
+    "difficulty": 4,
+    "explanation": "入力を増やしても、すべての入力が高レベルのときに出力が高レベルになる条件を保つ必要がある。",
+    "sourceAttribution": "出典：IPA 2019年度春期 エンベデッドシステムスペシャリスト試験 午前II 問16",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問16 TTLのAND回路",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "ウ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2019-spring-am2/q16.webp"
+    ],
+    "imageAltTexts": [
+      "問16の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_qs.pdf#page=10",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_ans.pdf"
+  },
+  {
+    "id": "es-2019h-am2-q17",
+    "exam": "es",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 17,
+    "category": "エンベデッドシステムスペシャリスト",
+    "topicTags": [
+      "FTPの接続"
+    ],
+    "difficulty": 4,
+    "explanation": "データ転送用の接続に加えて制御用の接続がある。データを送っている間も別の制御用接続でコマンドを送れる。",
+    "sourceAttribution": "出典：IPA 2019年度春期 エンベデッドシステムスペシャリスト試験 午前II 問17",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問17 FTPの接続",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "イ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2019-spring-am2/q17.webp"
+    ],
+    "imageAltTexts": [
+      "問17の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_qs.pdf#page=11",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_ans.pdf"
+  },
+  {
+    "id": "es-2019h-am2-q18",
+    "exam": "es",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 18,
+    "category": "エンベデッドシステムスペシャリスト",
+    "topicTags": [
+      "共通鍵の総数"
+    ],
+    "difficulty": 4,
+    "explanation": "1組につき1本の鍵を使う。送受信の順は区別しないので、100×99÷2＝4950本になる。",
+    "sourceAttribution": "出典：IPA 2019年度春期 エンベデッドシステムスペシャリスト試験 午前II 問18",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問18 共通鍵の総数",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "イ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2019-spring-am2/q18.webp"
+    ],
+    "imageAltTexts": [
+      "問18の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_qs.pdf#page=11",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_ans.pdf"
+  },
+  {
+    "id": "es-2019h-am2-q19",
+    "exam": "es",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 19,
+    "category": "エンベデッドシステムスペシャリスト",
+    "topicTags": [
+      "SAML"
+    ],
+    "difficulty": 4,
+    "explanation": "認証に関する情報を組織やサービス間でやり取りするXMLベースの規格。複数サービスのシングルサインオンに使われる。",
+    "sourceAttribution": "出典：IPA 2019年度春期 エンベデッドシステムスペシャリスト試験 午前II 問19",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問19 SAML",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "イ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2019-spring-am2/q19.webp"
+    ],
+    "imageAltTexts": [
+      "問19の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_qs.pdf#page=11",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_ans.pdf"
+  },
+  {
+    "id": "es-2019h-am2-q20",
+    "exam": "es",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 20,
+    "category": "エンベデッドシステムスペシャリスト",
+    "topicTags": [
+      "組込みシステムの設計"
+    ],
+    "difficulty": 4,
+    "explanation": "原本の条件に従い、処理に必要な資源と利用可能な資源を照合し、要件に合う構成を選ぶ。",
+    "sourceAttribution": "出典：IPA 2019年度春期 エンベデッドシステムスペシャリスト試験 午前II 問20",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問20 組込みシステムの設計",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "エ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2019-spring-am2/q20.webp"
+    ],
+    "imageAltTexts": [
+      "問20の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_qs.pdf#page=12",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_ans.pdf"
+  },
+  {
+    "id": "es-2019h-am2-q21",
+    "exam": "es",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 21,
+    "category": "エンベデッドシステムスペシャリスト",
+    "topicTags": [
+      "Cプログラムのスタック容量"
+    ],
+    "difficulty": 4,
+    "explanation": "同時に積まれる呼出しの経路でフレームの大きさを足す。経路を比較して、最も大きくなる場合を調べる。",
+    "sourceAttribution": "出典：IPA 2019年度春期 エンベデッドシステムスペシャリスト試験 午前II 問21",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問21 Cプログラムのスタック容量",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "ウ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2019-spring-am2/q21.webp"
+    ],
+    "imageAltTexts": [
+      "問21の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_qs.pdf#page=12",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_ans.pdf"
+  },
+  {
+    "id": "es-2019h-am2-q22",
+    "exam": "es",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 22,
+    "category": "エンベデッドシステムスペシャリスト",
+    "topicTags": [
+      "未完成の周辺ハードウェアを用いる開発"
+    ],
+    "difficulty": 4,
+    "explanation": "対象機器の動作を代替する環境を使えば、実機がそろう前でもソフトウェアの動作を確かめられる。",
+    "sourceAttribution": "出典：IPA 2019年度春期 エンベデッドシステムスペシャリスト試験 午前II 問22",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問22 未完成の周辺ハードウェアを用いる開発",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "エ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2019-spring-am2/q22.webp"
+    ],
+    "imageAltTexts": [
+      "問22の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_qs.pdf#page=12",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_ans.pdf"
+  },
+  {
+    "id": "es-2019h-am2-q23",
+    "exam": "es",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 23,
+    "category": "エンベデッドシステムスペシャリスト",
+    "topicTags": [
+      "ファジング"
+    ],
+    "difficulty": 4,
+    "explanation": "さまざまな入力を与え、クラッシュや例外などの予期しない挙動が出るかを観察するテスト手法。",
+    "sourceAttribution": "出典：IPA 2019年度春期 エンベデッドシステムスペシャリスト試験 午前II 問23",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問23 ファジング",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "ア",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2019-spring-am2/q23.webp"
+    ],
+    "imageAltTexts": [
+      "問23の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_qs.pdf#page=13",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_ans.pdf"
+  },
+  {
+    "id": "es-2019h-am2-q24",
+    "exam": "es",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 24,
+    "category": "エンベデッドシステムスペシャリスト",
+    "topicTags": [
+      "組込み製品の開発管理"
+    ],
+    "difficulty": 4,
+    "explanation": "設問が指定する対象と工程を確認し、各記述の行動や目的がその条件に合うかを比較する。",
+    "sourceAttribution": "出典：IPA 2019年度春期 エンベデッドシステムスペシャリスト試験 午前II 問24",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問24 組込み製品の開発管理",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "ア",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2019-spring-am2/q24.webp"
+    ],
+    "imageAltTexts": [
+      "問24の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_qs.pdf#page=13",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_ans.pdf"
+  },
+  {
+    "id": "es-2019h-am2-q25",
+    "exam": "es",
+    "year": 2019,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 25,
+    "category": "エンベデッドシステムスペシャリスト",
+    "topicTags": [
+      "特許の専用実施権"
+    ],
+    "difficulty": 4,
+    "explanation": "権利の設定された範囲を確認し、誰がどの製品について実施できるかを関係者ごとに整理する。",
+    "sourceAttribution": "出典：IPA 2019年度春期 エンベデッドシステムスペシャリスト試験 午前II 問25",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "question": "問25 特許の専用実施権",
+    "choices": {
+      "ア": "原本の選択肢 ア",
+      "イ": "原本の選択肢 イ",
+      "ウ": "原本の選択肢 ウ",
+      "エ": "原本の選択肢 エ"
+    },
+    "answer": "ア",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2019-spring-am2/q25.webp"
+    ],
+    "imageAltTexts": [
+      "問25の公式問題文と選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_qs.pdf#page=13",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_es_am2_ans.pdf"
+  }
+]

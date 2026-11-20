@@ -2,6 +2,70 @@ import { Purchases, PURCHASES_ERROR_CODE, type PurchasesPackage } from "@revenue
 import { Capacitor } from "@capacitor/core";
 import { Preferences } from "@capacitor/preferences";
 import type { MobileConfiguration, MobileEntitlement } from "../shared/contracts";
+import { PURCHASE_MESSAGES, purchaseNeedsSignIn } from "@/lib/billing/purchase-messages";
+import type { AppStorePurchaseHold, AppStoreRecovery } from "@/lib/billing/subscription/domain";
+
+const purchaseCheckUrl = "https://www.kakomon-ai.jp/api/mobile/purchase-check";
+export interface PurchaseReservation { id: string; expiresAt: string; requiresStart?: true }
+type PurchaseRecovery = AppStoreRecovery | { reservationId: string; action: "retry-approval" };
+
+function patchPurchaseCheck(body: PurchaseRecovery | { action: "status"; userId: string }, transport: typeof fetch) {
+  return transport(purchaseCheckUrl, {
+    method: "PATCH", credentials: "include", signal: AbortSignal.timeout(15000),
+    headers: { "Content-Type": "application/json" }, body: JSON.stringify(body),
+  });
+}
+
+function purchaseCheckError(code = "") {
+  return new StoreError(PURCHASE_MESSAGES[code] ?? PURCHASE_MESSAGES.purchase_check_unavailable,
+    purchaseNeedsSignIn(code) ? "purchase_signin" : code === "web_subscription_exists" ? code : "purchase_check");
+}
+
+/** Prepare a reservation before presenting StoreKit. */
+export async function checkNativePurchase(transport: typeof fetch = fetch, attemptId?: string): Promise<PurchaseReservation | null> {
+  try {
+    const response = await transport(purchaseCheckUrl, { method: "POST", credentials: "include", signal: AbortSignal.timeout(60000),
+      ...(attemptId ? { headers: { "Content-Type": "application/json" }, body: JSON.stringify({ attemptId, confirmStoreKit: true }) } : {}) });
+    const body = await response.json().catch(()=>null) as { allowed?: boolean; error?: string; reservation?: PurchaseReservation } | null;
+    if (!response.ok || body?.allowed !== true) throw purchaseCheckError(typeof body?.error === "string" ? body.error : "");
+    return body.reservation ?? null;
+  } catch (error) {
+    throw error instanceof StoreError ? error : purchaseCheckError();
+  }
+}
+export async function startNativePurchase(reservationId: string, transport: typeof fetch = fetch) {
+  const response = await transport(purchaseCheckUrl, {
+    method: "PATCH", credentials: "include", signal: AbortSignal.timeout(15000),
+    headers: { "Content-Type": "application/json" }, body: JSON.stringify({ reservationId, action: "start" }),
+  }).catch(() => null);
+  const body = await response?.json().catch(() => null) as { started?: boolean; error?: string } | null | undefined;
+  if (!response?.ok || body?.started !== true) throw purchaseCheckError(typeof body?.error === "string" ? body.error : "");
+}
+export async function recoverNativePurchase(recovery: PurchaseRecovery, transport: typeof fetch = fetch) {
+  const response = await patchPurchaseCheck(recovery, transport);
+  if (!response.ok) throw new Error("purchase_recovery_failed");
+  const { state } = await response.json() as { state: unknown };
+  if (state !== null && state !== "active" && state !== "processing") throw new Error("invalid_purchase_state");
+  return state;
+}
+export async function readNativePurchaseHold(userId: string, transport: typeof fetch = fetch) {
+  const response = await patchPurchaseCheck({ action: "status", userId }, transport);
+  if (!response.ok) throw new Error("purchase_status_failed");
+  const { managed, pending } = await response.json() as { managed?: unknown; pending?: unknown };
+  if (typeof managed !== "boolean" || (pending !== null && pending !== "processing" &&
+    !(pending && typeof pending === "object" && "approval" in pending && pending.approval && typeof pending.approval === "object"
+      && "reservationId" in pending.approval && typeof pending.approval.reservationId === "string"))) {
+    throw new Error("invalid_purchase_status");
+  }
+  return { managed, pending: pending as AppStorePurchaseHold };
+}
+export async function releaseNativePurchase(reservationId: string, transport: typeof fetch = fetch) {
+  const response = await transport(purchaseCheckUrl, {
+    method: "DELETE", credentials: "include", signal: AbortSignal.timeout(15000),
+    headers: { "Content-Type": "application/json" }, body: JSON.stringify({ reservationId }),
+  });
+  if (!response.ok) throw new Error("purchase_release_failed");
+}
 export function purchaseError(error:unknown) {
   const code=error&&typeof error==="object"&&"code"in error?String(error.code):"";
   const cancelled=code===PURCHASES_ERROR_CODE.PURCHASE_CANCELLED_ERROR || !!(error&&typeof error==="object"&&"userCancelled"in error&&error.userCancelled);
@@ -52,7 +116,8 @@ export function describeStoreError(error: unknown, step: string): string {
 export async function nativePublicSdkKey(fallback: string): Promise<string> {
   return (Capacitor.isNativePlatform() ? (await Preferences.get({ key: "kakomon:rc-ios-public-key" })).value : null) || fallback;
 }
-type Sdk = Pick<typeof Purchases, "isConfigured" | "isAnonymous" | "configure" | "logIn" | "logOut" | "getOfferings" | "purchasePackage" | "restorePurchases">;
+type Sdk = Pick<typeof Purchases, "isConfigured" | "isAnonymous" | "configure" | "logIn" | "logOut" | "getOfferings"
+  | "purchasePackage" | "restorePurchases" | "syncPurchases" | "getCustomerInfo">;
 export class Membership {
   // One SDK identity change at a time: a second configure() racing a logIn()
   // would silently replace the signed-in RevenueCat user.
@@ -118,6 +183,22 @@ export class Membership {
     await this.connect(c, access);
     try { await this.sdk.restorePurchases(); }
     catch (error) { throw new StoreError(describeStoreError(error, "購入を復元できませんでした"), "restore"); }
+  }
+  hasActiveAppStorePurchase(c: MobileConfiguration, access: MobileEntitlement): Promise<boolean> {
+    const task = this.connecting.then(async () => {
+      await this.connectNow(c, access);
+      try {
+        // Sync completed StoreKit transactions before the separate server check.
+        await this.sdk.syncPurchases();
+        const { customerInfo } = await this.sdk.getCustomerInfo();
+        return customerInfo.activeSubscriptions.includes(c.productId)
+          || customerInfo.entitlements.active[c.entitlement]?.productIdentifier === c.productId;
+      } catch (error) {
+        throw new StoreError(describeStoreError(error, "App Storeの購入を確認できませんでした"), "purchase_check");
+      }
+    });
+    this.connecting = task.catch(() => {});
+    return task;
   }
   disconnect(): Promise<void> {
     const task = this.connecting.then(async () => {

@@ -15,19 +15,20 @@ import type { ExamCode } from "@/lib/questions/types";
 
 describe("LQ5 accepted packets in the public registries", () => {
   it("serves exactly 53+53 beauty originals while all four recorded holds stay absent", async () => {
-    const questions = await getQuestionsForExam("biyoshi");
+    const published = await getQuestionsForExam("biyoshi");
+    const questions = published.filter(q => q.year === 2026);
     expect(questions).toEqual(BIYOSHI_QUESTIONS);
     expect(questions).toHaveLength(106);
     expect(filterQuestions(questions, { mode: "random", exam: "biyoshi" })).toHaveLength(106);
     for (const season of ["first", "second"]) expect(questions.filter(q => q.season === season)).toHaveLength(53);
-    for (const hold of holds.filter(h => h.id.startsWith("biyoshi"))) expect(questions.some(q => q.id === hold.id)).toBe(false);
+    for (const hold of holds.filter(h => h.id.startsWith("biyoshi"))) expect(published.some(q => q.id === hold.id)).toBe(false);
     expect(questionSourceEdition(questions[0])).toContain("第53回");
     expect(questionSourceEdition(questions.find(q => q.season === "second")!)).toContain("第54回");
     // Authored explanations use official numeric labels, including question 1's (2).
     for (const q of questions) expect(shuffleChoices(q)).toBe(q);
   });
   it.each([["kikenbutsu-otsu1", OT1], ["kikenbutsu-otsu2", OT2], ["kikenbutsu-otsu6", OT6]] as const)("%s keeps excerpt identity, five official keys and all accepted reasons", async (exam, expected) => {
-    const qs = await getQuestionsForExam(exam);
+    const qs = (await getQuestionsForExam(exam)).filter(q => q.year === 2026 && q.publicationVersion === "2026-06");
     expect(qs).toEqual(expected);
     expect(qs.map(q => q.qNumber)).toEqual(Array.from({length:10}, (_,i) => i+26));
     expect(filterQuestions(qs, {mode:"random", exam})).toHaveLength(10);

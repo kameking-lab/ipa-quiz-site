@@ -24,7 +24,7 @@ beforeEach(() => {
 afterEach(() => { vi.unstubAllEnvs(); vi.restoreAllMocks(); vi.resetModules(); });
 describe("failed grading still persists the whole unknown generation budget", () => {
   it.each(["scoring", "essay-grade"] as const)("%s records cost exactly once before returning an error", async route => {
-    const { POST } = route === "scoring" ? await import("@/app/api/scoring/route") : await import("@/app/api/essay-grade/route");
+    const { POST } = route === "scoring" ? await import("@/app/api/scoring/route") : await import("@/lib/essay/legacy-grade");
     const body = route === "scoring"
       ? { questionId: "ap-2024h-pm-q1", answers: [{ label: "設問1", text: "テスト解答" }] }
       : { questionId: "au-2024a-pm2-q1", industry: "it", answers: { ア: "あ".repeat(800), イ: "い".repeat(800), ウ: "う".repeat(800) } };

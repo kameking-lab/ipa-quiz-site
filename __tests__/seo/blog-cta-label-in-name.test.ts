@@ -9,7 +9,7 @@ import BlogPostPage from "@/app/blog/[slug]/page";
 // 可視テキストを欠いていた回帰を防ぐ（source-read ガード）。
 describe("ブログ CTA — Label in Name (WCAG 2.5.3)", () => {
   it.each([
-    ["sc-digital-signature-key-reading", "この試験を演習する"],
+    ["sc-digital-signature-key-reading", "この資格の過去問を解く"],
     ["khk-hei-kagaku-free-question-selection", "受験区分・科目を選ぶ"],
   ])("%s の CTA の名前が可視ラベルを含む", async (slug, label) => {
     const page = await BlogPostPage({ params: Promise.resolve({ slug }) });

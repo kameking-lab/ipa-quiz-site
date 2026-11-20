@@ -9,8 +9,10 @@ test("purchase offer is one button with one line of terms, and the full conditio
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/billing");
   const offer = page.locator('section[aria-labelledby="monthly-price"]');
-  await expect(offer.getByText(/月額980円（税込）・毎月自動更新・いつでも解約可（期間末まで利用可）・日割返金なし/)).toBeVisible();
-  await expect(offer.getByText(/ご請求があれば遅滞なく開示します/)).toBeVisible();
+  await expect(offer).toContainText("月額980円（税込）");
+  await expect(offer.getByText(/毎月自動更新/)).toBeVisible();
+  await expect(offer.getByRole("link", { name: "利用規約" })).toHaveAttribute("href", "/terms");
+  await expect(offer.getByRole("link", { name: "プライバシーポリシー" })).toHaveAttribute("href", "/privacy");
   await expect(offer.getByText(/返信を受けて内容を確認してから|申込前に返信/)).toHaveCount(0);
   const terms = offer.getByRole("link", { name: "条件・特商法表示" });
   await expect(terms).toHaveAttribute("href", "/billing/terms");
@@ -19,6 +21,7 @@ test("purchase offer is one button with one line of terms, and the full conditio
   await expect(page.getByRole("heading", { name: /特定商取引法に基づく表示/ })).toBeVisible();
   await expect(page.getByText(/法令上の権利は制限しません/)).toBeVisible();
   await expect(page.getByText(/日割返金はありません/)).toBeVisible();
+  await expect(page.getByText(/ご請求があれば遅滞なく開示します/)).toBeVisible();
 });
 
 test("difficulty FAQ does not assert unverified scoring sources", async ({ page }) => {

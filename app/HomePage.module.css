@@ -1,0 +1,11 @@
+.home { padding-top: 4px; }
+:global(#main-content):has(.home) { padding-bottom: 0; }
+.shortcuts {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 8px;
+  margin-block: 12px 8px;
+}
+.shortcuts:has(> .directory[open]) { grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 640px) { .home { padding-top: 16px; } }

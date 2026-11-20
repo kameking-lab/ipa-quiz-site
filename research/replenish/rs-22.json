@@ -1,0 +1,159 @@
+{
+  "lane": "rs-22",
+  "checkedAt": "2026-11-17",
+  "assignment": {
+    "basis": "rs-4〜19が実補充した資格を除き、rs-3 PLAN3の原順位で再採番。未着手の割当候補まで除くと空集合になるため、先行班の解釈を継続。",
+    "excludedQualifications": [
+      "mankan",
+      "kaikeishi",
+      "fp1",
+      "denken1",
+      "kanteishi",
+      "chusho-secondary",
+      "gyosei",
+      "chosashi",
+      "sharoushi",
+      "tsukanshi",
+      "takken",
+      "caremanager",
+      "kenchikushi2",
+      "kenchiku-setsubishi",
+      "mokuzo-kenchikushi"
+    ],
+    "remainingOrdered": [
+      "benrishi",
+      "shihoshoshi",
+      "denken2",
+      "gas-kou",
+      "zoen1",
+      "keiryoshi-nodo",
+      "kenchikushi1",
+      "rinsho-kensagishi",
+      "kanri-eiyoshi"
+    ],
+    "assigned": [
+      "denken2",
+      "kenchikushi1"
+    ]
+  },
+  "rows": [
+    {
+      "key": "denken2|2024|primary",
+      "qualificationCode": "denken2",
+      "qualification": "第二種電気主任技術者",
+      "year": 2024,
+      "sitting": "primary",
+      "subject": "power",
+      "status": "ブランチ／PR に有り",
+      "branch": "cx/kako-restock-g19-20261117",
+      "lane": "rs-22",
+      "originalQuestionCount": 7,
+      "questionCount": 35,
+      "officialAnswerCount": 35,
+      "remainingInSubject": 0,
+      "remainingOriginalsInSitting": 23,
+      "questionIds": [
+        "denken2-2024-power-q01-1",
+        "denken2-2024-power-q01-2",
+        "denken2-2024-power-q01-3",
+        "denken2-2024-power-q01-4",
+        "denken2-2024-power-q01-5",
+        "denken2-2024-power-q02-1",
+        "denken2-2024-power-q02-2",
+        "denken2-2024-power-q02-3",
+        "denken2-2024-power-q02-4",
+        "denken2-2024-power-q02-5",
+        "denken2-2024-power-q03-1",
+        "denken2-2024-power-q03-2",
+        "denken2-2024-power-q03-3",
+        "denken2-2024-power-q03-4",
+        "denken2-2024-power-q03-5",
+        "denken2-2024-power-q04-1",
+        "denken2-2024-power-q04-2",
+        "denken2-2024-power-q04-3",
+        "denken2-2024-power-q04-4",
+        "denken2-2024-power-q04-5",
+        "denken2-2024-power-q05-1",
+        "denken2-2024-power-q05-2",
+        "denken2-2024-power-q05-3",
+        "denken2-2024-power-q05-4",
+        "denken2-2024-power-q05-5",
+        "denken2-2024-power-q06-1",
+        "denken2-2024-power-q06-2",
+        "denken2-2024-power-q06-3",
+        "denken2-2024-power-q06-4",
+        "denken2-2024-power-q06-5",
+        "denken2-2024-power-q07-1",
+        "denken2-2024-power-q07-2",
+        "denken2-2024-power-q07-3",
+        "denken2-2024-power-q07-4",
+        "denken2-2024-power-q07-5"
+      ],
+      "paths": [
+        "data/questions/denken2/2024-power.json",
+        "data/questions/denken2/2024-power-sources.json",
+        "data/questions/denken2/index.ts"
+      ],
+      "officialSourceUrls": [
+        "https://www.shiken.or.jp/chief/upload/20240818_ch_second_q02.pdf",
+        "https://www.shiken.or.jp/chief/upload/20240818_ch_second_a01.pdf"
+      ],
+      "notes": [
+        "一次試験の電力のみ全7原問・35空欄。理論8・機械8・法規7の計23原問は未追加。",
+        "公式本文と正答を保持。原文のガス火炉は解説で一言注記。",
+        "push・PR・公開なし。"
+      ]
+    },
+    {
+      "key": "kenchikushi1|2024|annual",
+      "qualificationCode": "kenchikushi1",
+      "qualification": "一級建築士（学科）",
+      "year": 2024,
+      "sitting": "annual",
+      "subject": "keikaku",
+      "status": "ブランチ／PR に有り",
+      "branch": "cx/kako-restock-g19-20261117",
+      "lane": "rs-22",
+      "originalQuestionCount": 8,
+      "questionCount": 8,
+      "officialAnswerCount": 8,
+      "remainingInSubject": 12,
+      "remainingOriginalsInSitting": 117,
+      "selectedQuestionNumbers": [
+        4,
+        5,
+        6,
+        7,
+        13,
+        14,
+        15,
+        16
+      ],
+      "questionIds": [
+        "kenchikushi1-2024-annual-keikaku-q4",
+        "kenchikushi1-2024-annual-keikaku-q5",
+        "kenchikushi1-2024-annual-keikaku-q6",
+        "kenchikushi1-2024-annual-keikaku-q7",
+        "kenchikushi1-2024-annual-keikaku-q13",
+        "kenchikushi1-2024-annual-keikaku-q14",
+        "kenchikushi1-2024-annual-keikaku-q15",
+        "kenchikushi1-2024-annual-keikaku-q16"
+      ],
+      "paths": [
+        "data/questions/kenchikushi1/2024-keikaku-selected.json",
+        "data/questions/kenchikushi1/2024-keikaku-sources.json",
+        "data/questions/kenchikushi1/index.ts"
+      ],
+      "officialSourceUrls": [
+        "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2024-1st-gakka1_2.pdf",
+        "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2024-1st-gokakukijun.pdf"
+      ],
+      "notes": [
+        "計画No.4〜7・13〜16の8問のみ。計画は残り12問、他4科目105問。",
+        "法令基準日は表紙で確認した2024-01-01。",
+        "既存249演習問と250原問の元データは保持。",
+        "push・PR・公開なし。"
+      ]
+    }
+  ]
+}

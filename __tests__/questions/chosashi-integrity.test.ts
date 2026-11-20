@@ -8,10 +8,13 @@ import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { choiceDisplayLabel } from "@/lib/questions/display";
 import { buildQuestionJsonLd } from "@/lib/seo/question-jsonld";
 
+const isReviewedEdition = (q: (typeof CHOSASHI_QUESTIONS)[number]) => q.year === 2024 || q.year === 2025;
+const reviewed = CHOSASHI_QUESTIONS.filter(isReviewedEdition);
+
 describe("土地家屋調査士・公式原問の完備", () => {
-  it("最新2回の午前11・午後22を原問で数え、択一60・記述6を重複させない", () => {
-    expect(CHOSASHI_QUESTIONS).toHaveLength(66);
-    const identities = CHOSASHI_QUESTIONS.map(q => `${q.year}/${q.session}/${q.qNumber}`);
+  it("2024・2025年の午前11・午後22を原問で数え、択一60・記述6を重複させない", () => {
+    expect(reviewed).toHaveLength(66);
+    const identities = reviewed.map(q => `${q.year}/${q.session}/${q.qNumber}`);
     expect(new Set(identities).size).toBe(66);
     for (const year of [2024, 2025]) {
       for (const [session, total] of [["am", 11], ["pm", 22]] as const) {
@@ -19,8 +22,8 @@ describe("土地家屋調査士・公式原問の完備", () => {
         expect(pool.map(q => q.qNumber).sort((a,b) => a-b)).toEqual(Array.from({length:total},(_,i) => i+1));
       }
     }
-    expect(CHOSASHI_QUESTIONS.filter(q => q.type === "multiple-choice")).toHaveLength(60);
-    expect(CHOSASHI_QUESTIONS.filter(q => q.type === "descriptive")).toHaveLength(6);
+    expect(reviewed.filter(q => q.type === "multiple-choice")).toHaveLength(60);
+    expect(reviewed.filter(q => q.type === "descriptive")).toHaveLength(6);
   });
 
   it("五択300肢に具体解説を持ち、公式番号を表示・正答へ一対一で対応する", () => {
@@ -56,7 +59,7 @@ describe("土地家屋調査士・公式原問の完備", () => {
   it("IPA向けのPDF取込対象から分離し、公開ローダーと午前・午後の設定が一致する", async () => {
     expect(ALL_EXAM_CODES).not.toContain("chosashi");
     expect(EXAM_CONFIGS.chosashi.sessions.map(s => s.expectedQuestions)).toEqual([11,22]);
-    expect((await getQuestionsForExam("chosashi")).map(q => q.id)).toEqual(CHOSASHI_QUESTIONS.map(q => q.id));
+    expect((await getQuestionsForExam("chosashi")).filter(isReviewedEdition)).toEqual(reviewed);
   });
 
   it("記述の構造化データは法務省を出題者、独自解答をsuggestedAnswerとする", () => {

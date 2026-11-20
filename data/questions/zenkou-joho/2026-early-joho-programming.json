@@ -1,0 +1,167 @@
+[
+  {
+    "id": "zenkou-joho-2026-early-joho-programming-q01-01",
+    "exam": "zenkou-joho",
+    "session": "joho-programming",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "1級・プログラミングの基礎知識",
+    "topicTags": [
+      "1級・プログラミングの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "次の流れ図は2分探索法のアルゴリズムを表している。①〜⑤の空欄を埋めて、流れ図を完成させなさい。",
+    "answer": "① LOW\n② HIGH\n③ MID\n④ LOW\n⑤ HIGH",
+    "explanation": "LOWとHIGHが探索範囲の下限・上限で、中央の添字がMID。中央と探索値を比較し、探索値が大きければLOWを、小さければHIGHを更新する。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問1",
+    "sourceExamSession": "第76回 1級・プログラミングの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=30",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=59",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 1級・プログラミングの基礎知識 大問1。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/76-joho-programming-p30-01.webp"
+    ],
+    "imageAltTexts": [
+      "大問1の原文と流れ図またはプログラム。"
+    ],
+    "modelAnswer": "① LOW\n② HIGH\n③ MID\n④ LOW\n⑤ HIGH",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  },
+  {
+    "id": "zenkou-joho-2026-early-joho-programming-q02-02",
+    "exam": "zenkou-joho",
+    "session": "joho-programming",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "1級・プログラミングの基礎知識",
+    "topicTags": [
+      "1級・プログラミングの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "次の流れ図は、2つの既約分数を入力し、分母の最大公約数を求めて通分するものである。①〜⑤の空欄を埋めて、流れ図を完成させなさい。",
+    "answer": "① a×c\n② a\n③ ＝\n④ p－q\n⑤ q－p",
+    "explanation": "分母a、cの積を最大公約数で割るとLCMになる。互除法を引き算で行う関数は、pとqが等しくなるまで大きい方から小さい方を引く。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問2",
+    "sourceExamSession": "第76回 1級・プログラミングの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=31",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=59",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 1級・プログラミングの基礎知識 大問2。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/76-joho-programming-p31-02.webp"
+    ],
+    "imageAltTexts": [
+      "大問2の原文と流れ図またはプログラム。"
+    ],
+    "modelAnswer": "① a×c\n② a\n③ ＝\n④ p－q\n⑤ q－p",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  },
+  {
+    "id": "zenkou-joho-2026-early-joho-programming-q03-03",
+    "exam": "zenkou-joho",
+    "session": "joho-programming",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "1級・プログラミングの基礎知識",
+    "topicTags": [
+      "1級・プログラミングの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "奇数nを入力したとき、n次の魔方陣を作成する。①〜⑤の空欄を埋めて、流れ図を完成させなさい。",
+    "answer": "① y＋1\n② x＋1\n③ y－1\n④ n\n⑤ 1",
+    "explanation": "通常は右上へ進み、右端を超えたら列1、上端を超えたら行nへ戻る。次に入れる値をnで割った余りが1のときは、右上ではなく現在位置の1行下へ進む。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問3",
+    "sourceExamSession": "第76回 1級・プログラミングの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=32",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=59",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 1級・プログラミングの基礎知識 大問3。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/76-joho-programming-p32-03.webp"
+    ],
+    "imageAltTexts": [
+      "大問3の原文と流れ図またはプログラム。"
+    ],
+    "modelAnswer": "① y＋1\n② x＋1\n③ y－1\n④ n\n⑤ 1",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  },
+  {
+    "id": "zenkou-joho-2026-early-joho-programming-q04-04",
+    "exam": "zenkou-joho",
+    "session": "joho-programming",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "1級・プログラミングの基礎知識",
+    "topicTags": [
+      "1級・プログラミングの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "シンプソン法を利用して定積分の近似値を求める。①〜⑤の空欄を埋めて、プログラムを完成させなさい。",
+    "answer": "① kubun\n② menseki\n③ break\n④ kubun\n⑤ menseki",
+    "explanation": "区間を2n個に分け、刻み幅は1.0をkubunで割って求める。分割数0でbreakし、各区間の加重和をmensekiに足し込む。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問4",
+    "sourceExamSession": "第76回 1級・プログラミングの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=33",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=59",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 1級・プログラミングの基礎知識 大問4。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/76-joho-programming-p33-04.webp"
+    ],
+    "imageAltTexts": [
+      "大問4の原文と流れ図またはプログラム。"
+    ],
+    "modelAnswer": "① kubun\n② menseki\n③ break\n④ kubun\n⑤ menseki",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  },
+  {
+    "id": "zenkou-joho-2026-early-joho-programming-q05-05",
+    "exam": "zenkou-joho",
+    "session": "joho-programming",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 5,
+    "type": "descriptive",
+    "category": "1級・プログラミングの基礎知識",
+    "topicTags": [
+      "1級・プログラミングの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "与えられた文字列の文字数を求め、小文字を大文字に変換して表示する。①〜⑤の空欄を埋めて、プログラムを完成させなさい。",
+    "answer": "① mojisu(moji)\n② *m\n③ i\n④ char\n⑤ m++",
+    "explanation": "mojisuはポインタで終端文字まで走査し、カウントiを返す。変換関数はcharへのポインタで1文字ずつ小文字を大文字に変え、m++で次に進む。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問5",
+    "sourceExamSession": "第76回 1級・プログラミングの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=34",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=59",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 1級・プログラミングの基礎知識 大問5。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/76-joho-programming-p34-05.webp"
+    ],
+    "imageAltTexts": [
+      "大問5の原文と流れ図またはプログラム。"
+    ],
+    "modelAnswer": "① mojisu(moji)\n② *m\n③ i\n④ char\n⑤ m++",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  }
+]

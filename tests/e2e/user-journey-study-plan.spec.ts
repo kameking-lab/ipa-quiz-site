@@ -1,128 +1,41 @@
 import { test, expect } from "@playwright/test";
-
-const BASE_URL = process.env.E2E_BASE_URL ?? "http://127.0.0.1:3000";
-
-const PLAN_ID = "test-plan-001";
-
-const MOCK_PLAN = {
-  id: PLAN_ID,
-  createdAt: new Date().toISOString(),
-  input: {
-    exam: "ap",
-    examDate: "2026-10-01",
-    level: "beginner",
-    dailyMinutes: 30,
-  },
-  summary: {
-    daysRemaining: 90,
-  },
-  daily: [
-    { tasks: [{ key: "ap-week1-day1-task1" }, { key: "ap-week1-day1-task2" }] },
-  ],
-};
-
-const MOCK_PLANS_VALUE = JSON.stringify([MOCK_PLAN]);
-
-test.describe("study plan: HTTP & structure", () => {
-  test("GET /study-plan returns 200", async ({ request }) => {
-    const res = await request.get("/study-plan");
-    expect(res.status()).toBe(200);
-  });
-
-  test("/study-plan has 自動学習スケジュール作成 heading", async ({ page }) => {
-    await page.goto("/study-plan");
-    const h1 = page.getByRole("heading", { level: 1 });
-    await expect(h1).toBeVisible();
-    await expect(h1).toContainText("自動学習スケジュール作成");
-  });
-
-  test("/study-plan shows new-plan creation section", async ({ page }) => {
-    await page.goto("/study-plan");
-    const newPlanSection = page.locator("[aria-labelledby='new-plan']");
-    await expect(newPlanSection).toBeVisible();
-  });
-
-  test("/study-plan shows new-plan section (always rendered)", async ({ page }) => {
-    await page.goto("/study-plan");
-    // The new-plan section is always present (not conditional on localStorage)
-    const newPlanSection = page.locator("[aria-labelledby='new-plan']");
-    await expect(newPlanSection).toBeVisible({ timeout: 15000 });
-  });
-
-  test("the planner uses a study period and sends exam dates to Tsugino", async ({ page }) => {
-    await page.goto("/study-plan");
-    await page.getByRole("button", { name: /次へ/ }).click();
-    await expect(page.getByRole("combobox", { name: "学習期間" })).toBeVisible();
-    await expect(page.getByRole("link", { name: "次の資格", exact: true })).toHaveAttribute("href", /tsugino-shikaku\.jp\/shikaku\/ap/);
-    await expect(page.locator("input[type=date]")).toHaveCount(0);
-  });
+import { createPacePlan } from "../../lib/study-plan/pace";
+import { LS_KEYS } from "../../lib/storage/keys";
+test.beforeEach(async ({ page }) => {
+  await page.route("**/api/exam-schedule/**", route => route.fulfill({ status: 503, json: { error: "unavailable" } }));
 });
-
-test.describe("study plan: result page", () => {
-  test("GET /study-plan/result/nonexistent returns 200 or 404", async ({ request }) => {
-    const res = await request.get("/study-plan/result/nonexistent-id");
-    // Either 200 (shows not-found UI) or 404 are valid
-    expect([200, 404]).toContain(res.status());
-  });
-
-  test("/study-plan/result/[id] renders when plan in localStorage", async ({ browser }) => {
-    const context = await browser.newContext({
-      baseURL: BASE_URL,
-      storageState: {
-        cookies: [],
-        origins: [
-          {
-            origin: BASE_URL,
-            localStorage: [
-              { name: "ipa-quiz:study-plans:v1", value: MOCK_PLANS_VALUE },
-            ],
-          },
-        ],
-      },
-    });
-    const page = await context.newPage();
-    await page.goto(`/study-plan/result/${PLAN_ID}`);
-    // Page should load without crashing
-    const content = await page.content();
-    expect(content).toMatch(/学習|スケジュール|プラン/);
-    await context.close();
-  });
+test("GET /study-plan returns 200", async ({ request }) => {
+  expect((await request.get("/study-plan")).status()).toBe(200);
 });
-
-test.describe("study plan: empty state", () => {
-  test("/study-plan with no plans shows creation form", async ({ page }) => {
-    await page.addInitScript(() => {
-      localStorage.removeItem("ipa-quiz:study-plans:v1");
-    });
-    await page.goto("/study-plan");
-    // Should show the new plan creation section
-    const newPlanSection = page.locator("[aria-labelledby='new-plan']");
-    await expect(newPlanSection).toBeVisible();
-  });
+test("study plan opens the date-based creation sheet", async ({ page }) => {
+  await page.goto("/study-plan");
+  const sheet = page.getByRole("region", { name: "学習計画を作成" });
+  await expect(sheet).toBeVisible();
+  await expect(sheet.getByRole("combobox", { name: "受ける資格" })).toBeVisible();
+  await expect(sheet.getByLabel("受験日", { exact: true })).toBeVisible();
+  await expect(sheet.getByRole("button", { name: "この回で作成" })).toBeDisabled();
 });
-
-test.describe("study plan: existing plans in localStorage", () => {
-  test("/study-plan shows stored plan with delete button", async ({ page }) => {
-    // addInitScript runs before any page script, so localStorage is populated
-    // before React initializes and the StudyPlanLanding useEffect reads it.
-    await page.addInitScript((value) => {
-      localStorage.setItem("ipa-quiz:study-plans:v1", value);
-    }, MOCK_PLANS_VALUE);
-    await page.goto("/study-plan");
-    await page.waitForLoadState("networkidle");
-
-    const deleteBtn = page.locator("[aria-label='削除']");
-    await expect(deleteBtn).toBeVisible({ timeout: 15000 });
-  });
-
-  test("/study-plan shows link to plan result from stored plan", async ({ page }) => {
-    await page.addInitScript((value) => {
-      localStorage.setItem("ipa-quiz:study-plans:v1", value);
-    }, MOCK_PLANS_VALUE);
-    await page.goto("/study-plan");
-    await page.waitForLoadState("networkidle");
-
-    const planLink = page.locator(`a[href*='/study-plan/result/']`);
-    await expect(planLink).toBeVisible({ timeout: 15000 });
-  });
+test("a stored pace plan remains visible when the creation sheet closes", async ({ page }) => {
+  const now = new Date();
+  const today = new Date(now.getTime()+9*3600000).toISOString().slice(0,10);
+  const next = new Date(now.getTime()+30*86400000).toISOString().slice(0,10);
+  const plan = createPacePlan({ id: "saved-pace", exam: "ip", examDate: next, sessionId: null, startDate: today }, [{ id: "ip-2011a-am-q1", exam: "ip", year: 2011 }], now.toISOString());
+  await page.addInitScript(({ key, plan }) => localStorage.setItem(key, JSON.stringify([plan])), { key: LS_KEYS.pacePlans, plan });
+  await page.goto("/study-plan");
+  await page.goto("/");
+  await expect(page.getByRole("link", { name: /今日の問題を解く/ })).toBeVisible();
+  await page.getByRole("button", { name: /^学習計画の詳細/ }).click();
+  await page.locator("summary").filter({ hasText: "申し込み・計画の変更" }).click();
+  await expect(page.getByRole("button", { name: "計画を削除" })).toBeVisible();
+});
+test("legacy result pages remain reachable without rewriting their saved payload", async ({ page }) => {
+  const legacy = [{ id: "legacy-test", createdAt: new Date().toISOString(), input: { exam: "ap", dailyMinutes: 30 }, summary: { daysRemaining: 90 }, daily: [] }];
+  await page.addInitScript(({ key, legacy }) => localStorage.setItem(key, JSON.stringify(legacy)), { key: LS_KEYS.studyPlans, legacy });
+  await page.goto("/study-plan");
+  expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), LS_KEYS.studyPlans)).toEqual(legacy);
+  await page.goto("/study-plan/result/legacy-test");
+  await expect(page.locator("main")).toContainText(/学習|スケジュール|プラン/);
+});
+test("missing legacy result fails safely", async ({ request }) => {
+  expect([200,404]).toContain((await request.get("/study-plan/result/nonexistent-id")).status());
 });

@@ -1,0 +1,2573 @@
+{
+  "lane": "qf-10",
+  "branch": "cx/kako-5y10-20261118",
+  "checkedAt": "2026-11-18",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "rows": [
+    {
+      "jobId": "PLAN5-192",
+      "index": 191,
+      "exam": "sagyo-ryohoshi",
+      "officialYear": 2022,
+      "storedYear": 2022,
+      "officialRound": 57,
+      "session": "pm",
+      "status": "補充完了",
+      "expectedQuestionCount": 100,
+      "previousQuestionCount": 0,
+      "addedQuestionCount": 100,
+      "practiceQuestionCount": 97,
+      "choiceCount": 500,
+      "reusedCommonQuestionCount": 48,
+      "reusedCommonSourceCommit": "b6a6d21d7",
+      "remainingQuestionNumbers": [],
+      "sourcePage": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-08_09.html",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-09b_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-09seitou.pdf",
+      "sourceAppendixUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-09b_02.pdf",
+      "sourceSha256": {
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-08_09.html": "6cd78c9539ec9ccc4371f7e7994db4b8e6f323ae4ab1842e0c03fc8947e4b59a",
+        "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken08_09/about.html": "42fa06280f2e5c4fcebabef5af197ad269237dfea2eab34856526ead9a5e510c",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-09b_01.pdf": "acd45dd39e86141811f699340cb9b066b6bc18813d52ee73f289f5e6ad40f7d3",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-09seitou.pdf": "51dc5ddfc625b2b163d0031034b7ae89a022822eb7c58fbbef5dd8a70f9e00ca",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-09b_02.pdf": "6ef2c0298a7deafc66d25cb9feeb2b7b94b53e7195229b6455c709613c0c4dac",
+        "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken08_09/dl/OT_PM2.pdf": "6e3a9032787a89121ca0865106436ccc6e69f7fe7e873751aad07457425edd82",
+        "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken08_09/dl/OT_PM25.pdf": "b4f380f5e3496e659384ac73954ac60c6ac4445ed1611314ed2a143fc25acacc",
+        "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken08_09/dl/kyoutu_PM68.pdf": "29c76dbbd72e7037dd588a9352594c2ed920bfb46b5ee01cd17255c906ca5c73",
+        "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken08_09/dl/kyoutu_PM99.pdf": "afba3cec579a2e6c8afc33d6cfa4559fd9979a518524061a5454ac8e74224c09"
+      },
+      "dataPath": "data/questions/sagyo-ryohoshi/2022-annual-pm.json",
+      "questionIds": [
+        "sagyo-ryohoshi-2022-annual-pm-q1",
+        "sagyo-ryohoshi-2022-annual-pm-q2",
+        "sagyo-ryohoshi-2022-annual-pm-q3",
+        "sagyo-ryohoshi-2022-annual-pm-q4",
+        "sagyo-ryohoshi-2022-annual-pm-q5",
+        "sagyo-ryohoshi-2022-annual-pm-q6",
+        "sagyo-ryohoshi-2022-annual-pm-q7",
+        "sagyo-ryohoshi-2022-annual-pm-q8",
+        "sagyo-ryohoshi-2022-annual-pm-q9",
+        "sagyo-ryohoshi-2022-annual-pm-q10",
+        "sagyo-ryohoshi-2022-annual-pm-q11",
+        "sagyo-ryohoshi-2022-annual-pm-q12",
+        "sagyo-ryohoshi-2022-annual-pm-q13",
+        "sagyo-ryohoshi-2022-annual-pm-q14",
+        "sagyo-ryohoshi-2022-annual-pm-q15",
+        "sagyo-ryohoshi-2022-annual-pm-q16",
+        "sagyo-ryohoshi-2022-annual-pm-q17",
+        "sagyo-ryohoshi-2022-annual-pm-q18",
+        "sagyo-ryohoshi-2022-annual-pm-q19",
+        "sagyo-ryohoshi-2022-annual-pm-q20",
+        "sagyo-ryohoshi-2022-annual-pm-q21",
+        "sagyo-ryohoshi-2022-annual-pm-q22",
+        "sagyo-ryohoshi-2022-annual-pm-q23",
+        "sagyo-ryohoshi-2022-annual-pm-q24",
+        "sagyo-ryohoshi-2022-annual-pm-q25",
+        "sagyo-ryohoshi-2022-annual-pm-q26",
+        "sagyo-ryohoshi-2022-annual-pm-q27",
+        "sagyo-ryohoshi-2022-annual-pm-q28",
+        "sagyo-ryohoshi-2022-annual-pm-q29",
+        "sagyo-ryohoshi-2022-annual-pm-q30",
+        "sagyo-ryohoshi-2022-annual-pm-q31",
+        "sagyo-ryohoshi-2022-annual-pm-q32",
+        "sagyo-ryohoshi-2022-annual-pm-q33",
+        "sagyo-ryohoshi-2022-annual-pm-q34",
+        "sagyo-ryohoshi-2022-annual-pm-q35",
+        "sagyo-ryohoshi-2022-annual-pm-q36",
+        "sagyo-ryohoshi-2022-annual-pm-q37",
+        "sagyo-ryohoshi-2022-annual-pm-q38",
+        "sagyo-ryohoshi-2022-annual-pm-q39",
+        "sagyo-ryohoshi-2022-annual-pm-q40",
+        "sagyo-ryohoshi-2022-annual-pm-q41",
+        "sagyo-ryohoshi-2022-annual-pm-q42",
+        "sagyo-ryohoshi-2022-annual-pm-q43",
+        "sagyo-ryohoshi-2022-annual-pm-q44",
+        "sagyo-ryohoshi-2022-annual-pm-q45",
+        "sagyo-ryohoshi-2022-annual-pm-q46",
+        "sagyo-ryohoshi-2022-annual-pm-q47",
+        "sagyo-ryohoshi-2022-annual-pm-q48",
+        "sagyo-ryohoshi-2022-annual-pm-q49",
+        "sagyo-ryohoshi-2022-annual-pm-q50",
+        "sagyo-ryohoshi-2022-annual-pm-q51",
+        "sagyo-ryohoshi-2022-annual-pm-q52",
+        "sagyo-ryohoshi-2022-annual-pm-q53",
+        "sagyo-ryohoshi-2022-annual-pm-q54",
+        "sagyo-ryohoshi-2022-annual-pm-q55",
+        "sagyo-ryohoshi-2022-annual-pm-q56",
+        "sagyo-ryohoshi-2022-annual-pm-q57",
+        "sagyo-ryohoshi-2022-annual-pm-q58",
+        "sagyo-ryohoshi-2022-annual-pm-q59",
+        "sagyo-ryohoshi-2022-annual-pm-q60",
+        "sagyo-ryohoshi-2022-annual-pm-q61",
+        "sagyo-ryohoshi-2022-annual-pm-q62",
+        "sagyo-ryohoshi-2022-annual-pm-q63",
+        "sagyo-ryohoshi-2022-annual-pm-q64",
+        "sagyo-ryohoshi-2022-annual-pm-q65",
+        "sagyo-ryohoshi-2022-annual-pm-q66",
+        "sagyo-ryohoshi-2022-annual-pm-q67",
+        "sagyo-ryohoshi-2022-annual-pm-q68",
+        "sagyo-ryohoshi-2022-annual-pm-q69",
+        "sagyo-ryohoshi-2022-annual-pm-q70",
+        "sagyo-ryohoshi-2022-annual-pm-q71",
+        "sagyo-ryohoshi-2022-annual-pm-q72",
+        "sagyo-ryohoshi-2022-annual-pm-q73",
+        "sagyo-ryohoshi-2022-annual-pm-q74",
+        "sagyo-ryohoshi-2022-annual-pm-q75",
+        "sagyo-ryohoshi-2022-annual-pm-q76",
+        "sagyo-ryohoshi-2022-annual-pm-q77",
+        "sagyo-ryohoshi-2022-annual-pm-q78",
+        "sagyo-ryohoshi-2022-annual-pm-q79",
+        "sagyo-ryohoshi-2022-annual-pm-q80",
+        "sagyo-ryohoshi-2022-annual-pm-q81",
+        "sagyo-ryohoshi-2022-annual-pm-q82",
+        "sagyo-ryohoshi-2022-annual-pm-q83",
+        "sagyo-ryohoshi-2022-annual-pm-q84",
+        "sagyo-ryohoshi-2022-annual-pm-q85",
+        "sagyo-ryohoshi-2022-annual-pm-q86",
+        "sagyo-ryohoshi-2022-annual-pm-q87",
+        "sagyo-ryohoshi-2022-annual-pm-q88",
+        "sagyo-ryohoshi-2022-annual-pm-q89",
+        "sagyo-ryohoshi-2022-annual-pm-q90",
+        "sagyo-ryohoshi-2022-annual-pm-q91",
+        "sagyo-ryohoshi-2022-annual-pm-q92",
+        "sagyo-ryohoshi-2022-annual-pm-q93",
+        "sagyo-ryohoshi-2022-annual-pm-q94",
+        "sagyo-ryohoshi-2022-annual-pm-q95",
+        "sagyo-ryohoshi-2022-annual-pm-q96",
+        "sagyo-ryohoshi-2022-annual-pm-q97",
+        "sagyo-ryohoshi-2022-annual-pm-q98",
+        "sagyo-ryohoshi-2022-annual-pm-q99",
+        "sagyo-ryohoshi-2022-annual-pm-q100"
+      ],
+      "originalPageAndAnswer": [
+        {
+          "qNumber": 1,
+          "questionPdfPage": 7,
+          "officialAnswerCells": [
+            "34"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 2,
+          "questionPdfPage": 8,
+          "officialAnswerCells": [],
+          "appendix": {
+            "number": 1,
+            "page": 5
+          }
+        },
+        {
+          "qNumber": 3,
+          "questionPdfPage": 9,
+          "officialAnswerCells": [
+            "1"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 4,
+          "questionPdfPage": 10,
+          "officialAnswerCells": [
+            "4"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 5,
+          "questionPdfPage": 11,
+          "officialAnswerCells": [
+            "3"
+          ],
+          "appendix": {
+            "number": 2,
+            "page": 7
+          }
+        },
+        {
+          "qNumber": 6,
+          "questionPdfPage": 11,
+          "officialAnswerCells": [
+            "2"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 7,
+          "questionPdfPage": 12,
+          "officialAnswerCells": [
+            "5"
+          ],
+          "appendix": {
+            "number": 3,
+            "page": 9
+          }
+        },
+        {
+          "qNumber": 8,
+          "questionPdfPage": 13,
+          "officialAnswerCells": [
+            "13"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 9,
+          "questionPdfPage": 14,
+          "officialAnswerCells": [
+            "4"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 10,
+          "questionPdfPage": 14,
+          "officialAnswerCells": [
+            "3"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 11,
+          "questionPdfPage": 15,
+          "officialAnswerCells": [
+            "4"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 12,
+          "questionPdfPage": 15,
+          "officialAnswerCells": [
+            "3"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 13,
+          "questionPdfPage": 16,
+          "officialAnswerCells": [
+            "3"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 14,
+          "questionPdfPage": 17,
+          "officialAnswerCells": [
+            "1"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 15,
+          "questionPdfPage": 17,
+          "officialAnswerCells": [
+            "5"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 16,
+          "questionPdfPage": 18,
+          "officialAnswerCells": [
+            "1"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 17,
+          "questionPdfPage": 18,
+          "officialAnswerCells": [
+            "2"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 18,
+          "questionPdfPage": 19,
+          "officialAnswerCells": [
+            "2"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 19,
+          "questionPdfPage": 19,
+          "officialAnswerCells": [
+            "2"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 20,
+          "questionPdfPage": 20,
+          "officialAnswerCells": [
+            "2"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 21,
+          "questionPdfPage": 20,
+          "officialAnswerCells": [
+            "5"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 22,
+          "questionPdfPage": 21,
+          "officialAnswerCells": [
+            "1"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 23,
+          "questionPdfPage": 22,
+          "officialAnswerCells": [
+            "12"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 24,
+          "questionPdfPage": 22,
+          "officialAnswerCells": [
+            "4"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 25,
+          "questionPdfPage": 22,
+          "officialAnswerCells": [
+            "1",
+            "2"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 26,
+          "questionPdfPage": 23,
+          "officialAnswerCells": [
+            "25"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 27,
+          "questionPdfPage": 23,
+          "officialAnswerCells": [
+            "23"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 28,
+          "questionPdfPage": 23,
+          "officialAnswerCells": [
+            "3"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 29,
+          "questionPdfPage": 24,
+          "officialAnswerCells": [
+            "5"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 30,
+          "questionPdfPage": 24,
+          "officialAnswerCells": [
+            "3"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 31,
+          "questionPdfPage": 24,
+          "officialAnswerCells": [
+            "4"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 32,
+          "questionPdfPage": 25,
+          "officialAnswerCells": [
+            "3"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 33,
+          "questionPdfPage": 25,
+          "officialAnswerCells": [
+            "2"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 34,
+          "questionPdfPage": 25,
+          "officialAnswerCells": [
+            "25"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 35,
+          "questionPdfPage": 26,
+          "officialAnswerCells": [
+            "3"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 36,
+          "questionPdfPage": 26,
+          "officialAnswerCells": [
+            "3"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 37,
+          "questionPdfPage": 26,
+          "officialAnswerCells": [
+            "2"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 38,
+          "questionPdfPage": 27,
+          "officialAnswerCells": [
+            "5"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 39,
+          "questionPdfPage": 27,
+          "officialAnswerCells": [
+            "3"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 40,
+          "questionPdfPage": 27,
+          "officialAnswerCells": [
+            "1"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 41,
+          "questionPdfPage": 28,
+          "officialAnswerCells": [
+            "4"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 42,
+          "questionPdfPage": 28,
+          "officialAnswerCells": [
+            "2"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 43,
+          "questionPdfPage": 28,
+          "officialAnswerCells": [
+            "1"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 44,
+          "questionPdfPage": 29,
+          "officialAnswerCells": [
+            "2"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 45,
+          "questionPdfPage": 29,
+          "officialAnswerCells": [
+            "2"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 46,
+          "questionPdfPage": 29,
+          "officialAnswerCells": [
+            "5"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 47,
+          "questionPdfPage": 30,
+          "officialAnswerCells": [
+            "4"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 48,
+          "questionPdfPage": 30,
+          "officialAnswerCells": [
+            "3"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 49,
+          "questionPdfPage": 30,
+          "officialAnswerCells": [
+            "4"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 50,
+          "questionPdfPage": 31,
+          "officialAnswerCells": [
+            "4"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 51,
+          "questionPdfPage": 32,
+          "officialAnswerCells": [
+            "4"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 52,
+          "questionPdfPage": 32,
+          "officialAnswerCells": [
+            "25"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 53,
+          "questionPdfPage": 32,
+          "officialAnswerCells": [
+            "3"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 54,
+          "questionPdfPage": 33,
+          "officialAnswerCells": [
+            "15"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 55,
+          "questionPdfPage": 33,
+          "officialAnswerCells": [
+            "1"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 56,
+          "questionPdfPage": 33,
+          "officialAnswerCells": [
+            "5"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 57,
+          "questionPdfPage": 34,
+          "officialAnswerCells": [
+            "3"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 58,
+          "questionPdfPage": 34,
+          "officialAnswerCells": [
+            "5"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 59,
+          "questionPdfPage": 35,
+          "officialAnswerCells": [
+            "1"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 60,
+          "questionPdfPage": 35,
+          "officialAnswerCells": [
+            "5"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 61,
+          "questionPdfPage": 36,
+          "officialAnswerCells": [
+            "4"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 62,
+          "questionPdfPage": 36,
+          "officialAnswerCells": [
+            "2"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 63,
+          "questionPdfPage": 36,
+          "officialAnswerCells": [
+            "2"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 64,
+          "questionPdfPage": 37,
+          "officialAnswerCells": [
+            "3"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 65,
+          "questionPdfPage": 37,
+          "officialAnswerCells": [
+            "5"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 66,
+          "questionPdfPage": 37,
+          "officialAnswerCells": [
+            "1"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 67,
+          "questionPdfPage": 38,
+          "officialAnswerCells": [
+            "4"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 68,
+          "questionPdfPage": 38,
+          "officialAnswerCells": [],
+          "appendix": null
+        },
+        {
+          "qNumber": 69,
+          "questionPdfPage": 38,
+          "officialAnswerCells": [
+            "14"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 70,
+          "questionPdfPage": 39,
+          "officialAnswerCells": [
+            "34"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 71,
+          "questionPdfPage": 39,
+          "officialAnswerCells": [
+            "2"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 72,
+          "questionPdfPage": 39,
+          "officialAnswerCells": [
+            "45"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 73,
+          "questionPdfPage": 40,
+          "officialAnswerCells": [
+            "3"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 74,
+          "questionPdfPage": 40,
+          "officialAnswerCells": [
+            "1"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 75,
+          "questionPdfPage": 40,
+          "officialAnswerCells": [
+            "2"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 76,
+          "questionPdfPage": 41,
+          "officialAnswerCells": [
+            "3"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 77,
+          "questionPdfPage": 41,
+          "officialAnswerCells": [
+            "1"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 78,
+          "questionPdfPage": 41,
+          "officialAnswerCells": [
+            "2"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 79,
+          "questionPdfPage": 42,
+          "officialAnswerCells": [
+            "3"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 80,
+          "questionPdfPage": 42,
+          "officialAnswerCells": [
+            "2"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 81,
+          "questionPdfPage": 42,
+          "officialAnswerCells": [
+            "3"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 82,
+          "questionPdfPage": 43,
+          "officialAnswerCells": [
+            "4"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 83,
+          "questionPdfPage": 43,
+          "officialAnswerCells": [
+            "13"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 84,
+          "questionPdfPage": 43,
+          "officialAnswerCells": [
+            "5"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 85,
+          "questionPdfPage": 44,
+          "officialAnswerCells": [
+            "1"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 86,
+          "questionPdfPage": 44,
+          "officialAnswerCells": [
+            "4"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 87,
+          "questionPdfPage": 44,
+          "officialAnswerCells": [
+            "3"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 88,
+          "questionPdfPage": 45,
+          "officialAnswerCells": [
+            "5"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 89,
+          "questionPdfPage": 45,
+          "officialAnswerCells": [
+            "5"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 90,
+          "questionPdfPage": 45,
+          "officialAnswerCells": [
+            "4"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 91,
+          "questionPdfPage": 46,
+          "officialAnswerCells": [
+            "1"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 92,
+          "questionPdfPage": 46,
+          "officialAnswerCells": [
+            "25"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 93,
+          "questionPdfPage": 46,
+          "officialAnswerCells": [
+            "2"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 94,
+          "questionPdfPage": 47,
+          "officialAnswerCells": [
+            "3"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 95,
+          "questionPdfPage": 47,
+          "officialAnswerCells": [
+            "35"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 96,
+          "questionPdfPage": 47,
+          "officialAnswerCells": [
+            "3"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 97,
+          "questionPdfPage": 48,
+          "officialAnswerCells": [
+            "3"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 98,
+          "questionPdfPage": 48,
+          "officialAnswerCells": [
+            "5"
+          ],
+          "appendix": null
+        },
+        {
+          "qNumber": 99,
+          "questionPdfPage": 48,
+          "officialAnswerCells": [],
+          "appendix": null
+        },
+        {
+          "qNumber": 100,
+          "questionPdfPage": 49,
+          "officialAnswerCells": [
+            "12"
+          ],
+          "appendix": null
+        }
+      ],
+      "officialScoringNotices": {
+        "2": {
+          "status": "excluded",
+          "answerCells": [],
+          "noticeUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken08_09/dl/OT_PM2.pdf"
+        },
+        "25": {
+          "status": "multiple accepted answers",
+          "answerCells": [
+            "1",
+            "2"
+          ],
+          "noticeUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken08_09/dl/OT_PM25.pdf"
+        },
+        "68": {
+          "status": "excluded",
+          "answerCells": [],
+          "noticeUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken08_09/dl/kyoutu_PM68.pdf"
+        },
+        "99": {
+          "status": "excluded",
+          "answerCells": [],
+          "noticeUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken08_09/dl/kyoutu_PM99.pdf"
+        }
+      },
+      "assets": [
+        {
+          "qNumber": 1,
+          "path": "public/images/questions/sagyo-ryohoshi/57-pm/q1.webp",
+          "pdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-09b_01.pdf",
+          "page": 7,
+          "cropPoints": [
+            80,
+            130,
+            543,
+            728
+          ],
+          "sha256": "9d2c0285f25dc2038b3b1c501a8e025fa3981c54b917c72a47a73d74a0ca5a95",
+          "bytes": 45100
+        },
+        {
+          "qNumber": 2,
+          "path": "public/images/questions/sagyo-ryohoshi/57-pm/q2.webp",
+          "pdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-09b_02.pdf",
+          "page": 5,
+          "cropPoints": [
+            70,
+            90,
+            555,
+            743
+          ],
+          "sha256": "72182a1eac54169b347e582f701251505a619ec3a41a1c547fd1e15c23bca20b",
+          "bytes": 404986
+        },
+        {
+          "qNumber": 3,
+          "path": "public/images/questions/sagyo-ryohoshi/57-pm/q3.webp",
+          "pdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-09b_01.pdf",
+          "page": 9,
+          "cropPoints": [
+            98,
+            177,
+            525,
+            770
+          ],
+          "sha256": "397f2f3c620f24afa1cb35dfebf0bc4b09a7006876302320a381bc8456e1ded4",
+          "bytes": 86954
+        },
+        {
+          "qNumber": 4,
+          "path": "public/images/questions/sagyo-ryohoshi/57-pm/q4.webp",
+          "pdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-09b_01.pdf",
+          "page": 10,
+          "cropPoints": [
+            80,
+            180,
+            539,
+            393
+          ],
+          "sha256": "dc6d460696aabdda18aa57db5122fba4e669e03325d172eb8c2e951017719cfe",
+          "bytes": 29642
+        },
+        {
+          "qNumber": 5,
+          "path": "public/images/questions/sagyo-ryohoshi/57-pm/q5.webp",
+          "pdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-09b_02.pdf",
+          "page": 7,
+          "cropPoints": [
+            105,
+            90,
+            508,
+            531
+          ],
+          "sha256": "3b7c806f05afd639d52fd894a5fda9cbdb27ad33ab89c8ca962adefb0feea3cb",
+          "bytes": 423594
+        },
+        {
+          "qNumber": 7,
+          "path": "public/images/questions/sagyo-ryohoshi/57-pm/q7.webp",
+          "pdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-09b_02.pdf",
+          "page": 9,
+          "cropPoints": [
+            69,
+            91,
+            543,
+            731
+          ],
+          "sha256": "66e6596047fd6cf339de0a607cbb7fd0f4ee61363055d6ffce8b0d28736ccd7b",
+          "bytes": 838786
+        },
+        {
+          "qNumber": 8,
+          "path": "public/images/questions/sagyo-ryohoshi/57-pm/q8.webp",
+          "pdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-09b_01.pdf",
+          "page": 13,
+          "cropPoints": [
+            175,
+            177,
+            448,
+            596
+          ],
+          "sha256": "8d8743bf21008af22095a708f448ab10a1fbcbb4d54f2209fafad560f2da54f2",
+          "bytes": 57416
+        },
+        {
+          "qNumber": 13,
+          "path": "public/images/questions/sagyo-ryohoshi/57-pm/q13.webp",
+          "pdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-09b_01.pdf",
+          "page": 16,
+          "cropPoints": [
+            98,
+            150,
+            530,
+            773
+          ],
+          "sha256": "b8527e9e6c50dfc9c154fae4a710305b75661a04b9b201b95e47d70131f779c0",
+          "bytes": 96292
+        },
+        {
+          "qNumber": 22,
+          "path": "public/images/questions/sagyo-ryohoshi/57-pm/q22.webp",
+          "pdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-09b_01.pdf",
+          "page": 21,
+          "cropPoints": [
+            221,
+            103,
+            397,
+            449
+          ],
+          "sha256": "45e37be5e41fd73431824e7247d4052bb7fd9add1b27e0c8b29197e67aedd221",
+          "bytes": 22370
+        },
+        {
+          "qNumber": 59,
+          "path": "public/images/questions/sagyo-ryohoshi/57-pm/q59.webp",
+          "pdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-09b_01.pdf",
+          "page": 35,
+          "cropPoints": [
+            103,
+            134,
+            520,
+            275
+          ],
+          "sha256": "08ca2b7217a1914ba12b5cddaee5ec79338147788f9143763605f22441674e18",
+          "bytes": 21856
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-206",
+      "index": 205,
+      "exam": "yakuzaishi",
+      "officialYear": 2026,
+      "officialRound": 111,
+      "session": "day2-1",
+      "status": "補充完了",
+      "expectedQuestionCount": 50,
+      "previousQuestionCount": 18,
+      "addedQuestionCount": 32,
+      "importedQuestionCount": 31,
+      "newQuestionCount": 1,
+      "practiceQuestionCount": 49,
+      "officialAnswerNumberRange": [
+        196,
+        245
+      ],
+      "excludedQuestionNumbers": [
+        199
+      ],
+      "misparsedExampleNumber": 500,
+      "remainingQuestionNumbers": [],
+      "sourcePage": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000198929.html",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677930.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf",
+      "sourceSha256": {
+        "https://www.mhlw.go.jp/content/001677930.pdf": "336010c9a59bc17f5e6cd9ea77de16f23565145c67970c7b2f1d9fa3e2f8ea54",
+        "https://www.mhlw.go.jp/content/001677933.pdf": "bec304ce3043407fb8cdc6f6b5a0e3b6cd414119be8bc2782da0b904c602e223"
+      },
+      "sourceCommit": "1c7a3e1f3",
+      "sourcePaths": [
+        "data/questions/yakuzaishi/2025-2026-saved141.json",
+        "data/questions/yakuzaishi/2025-2026-saved171.json"
+      ],
+      "dataPath": "data/questions/yakuzaishi/2026-day2-1-qf10.json",
+      "questionIds": [
+        "yakuzaishi-2026-annual-practical-q196",
+        "yakuzaishi-2026-annual-practical-q197",
+        "yakuzaishi-2026-annual-practical-q198",
+        "yakuzaishi-2026-annual-practical-q199",
+        "yakuzaishi-2026-annual-practical-q200",
+        "yakuzaishi-2026-annual-practical-q201",
+        "yakuzaishi-2026-annual-practical-q203",
+        "yakuzaishi-2026-annual-practical-q204",
+        "yakuzaishi-2026-annual-practical-q205",
+        "yakuzaishi-2026-annual-practical-q208",
+        "yakuzaishi-2026-annual-practical-q209",
+        "yakuzaishi-2026-annual-practical-q210",
+        "yakuzaishi-2026-annual-practical-q211",
+        "yakuzaishi-2026-annual-practical-q212",
+        "yakuzaishi-2026-annual-practical-q213",
+        "yakuzaishi-2026-annual-practical-q218",
+        "yakuzaishi-2026-annual-practical-q219",
+        "yakuzaishi-2026-annual-practical-q220",
+        "yakuzaishi-2026-annual-practical-q221",
+        "yakuzaishi-2026-annual-practical-q223",
+        "yakuzaishi-2026-annual-practical-q225",
+        "yakuzaishi-2026-annual-practical-q226",
+        "yakuzaishi-2026-annual-practical-q227",
+        "yakuzaishi-2026-annual-practical-q228",
+        "yakuzaishi-2026-annual-practical-q229",
+        "yakuzaishi-2026-annual-practical-q235",
+        "yakuzaishi-2026-annual-practical-q237",
+        "yakuzaishi-2026-annual-practical-q238",
+        "yakuzaishi-2026-annual-practical-q239",
+        "yakuzaishi-2026-annual-practical-q240",
+        "yakuzaishi-2026-annual-practical-q241",
+        "yakuzaishi-2026-annual-practical-q243"
+      ],
+      "officialAnswerCells": {
+        "196": [
+          "3"
+        ],
+        "197": [
+          "1",
+          "3"
+        ],
+        "198": [
+          "1",
+          "3"
+        ],
+        "199": [],
+        "200": [
+          "3",
+          "5"
+        ],
+        "201": [
+          "3",
+          "5"
+        ],
+        "202": [
+          "1",
+          "4"
+        ],
+        "203": [
+          "1",
+          "3"
+        ],
+        "204": [
+          "1",
+          "4"
+        ],
+        "205": [
+          "2",
+          "5"
+        ],
+        "206": [
+          "2",
+          "5"
+        ],
+        "207": [
+          "2",
+          "3"
+        ],
+        "208": [
+          "2"
+        ],
+        "209": [
+          "3",
+          "4"
+        ],
+        "210": [
+          "1"
+        ],
+        "211": [
+          "1"
+        ],
+        "212": [
+          "3"
+        ],
+        "213": [
+          "5"
+        ],
+        "214": [
+          "2",
+          "3"
+        ],
+        "215": [
+          "1",
+          "4"
+        ],
+        "216": [
+          "1",
+          "3"
+        ],
+        "217": [
+          "2",
+          "4"
+        ],
+        "218": [
+          "1",
+          "4"
+        ],
+        "219": [
+          "2",
+          "5"
+        ],
+        "220": [
+          "5"
+        ],
+        "221": [
+          "5"
+        ],
+        "222": [
+          "1",
+          "4"
+        ],
+        "223": [
+          "1",
+          "5"
+        ],
+        "224": [
+          "1",
+          "5"
+        ],
+        "225": [
+          "3",
+          "4"
+        ],
+        "226": [
+          "4"
+        ],
+        "227": [
+          "2",
+          "3"
+        ],
+        "228": [
+          "5"
+        ],
+        "229": [
+          "1",
+          "4"
+        ],
+        "230": [
+          "1",
+          "5"
+        ],
+        "231": [
+          "2",
+          "4"
+        ],
+        "232": [
+          "1",
+          "5"
+        ],
+        "233": [
+          "1",
+          "5"
+        ],
+        "234": [
+          "2"
+        ],
+        "235": [
+          "5"
+        ],
+        "236": [
+          "3",
+          "5"
+        ],
+        "237": [
+          "2",
+          "3"
+        ],
+        "238": [
+          "6"
+        ],
+        "239": [
+          "1",
+          "4"
+        ],
+        "240": [
+          "3"
+        ],
+        "241": [
+          "4",
+          "5"
+        ],
+        "242": [
+          "3",
+          "5"
+        ],
+        "243": [
+          "2"
+        ],
+        "244": [
+          "3"
+        ],
+        "245": [
+          "3",
+          "5"
+        ]
+      },
+      "questionPdfPages": {
+        "196": 3,
+        "197": 4,
+        "198": 7,
+        "199": 8,
+        "200": 11,
+        "201": 11,
+        "202": 12,
+        "203": 13,
+        "204": 15,
+        "205": 15,
+        "206": 17,
+        "207": 17,
+        "208": 19,
+        "209": 20,
+        "210": 23,
+        "211": 23,
+        "212": 25,
+        "213": 25,
+        "214": 27,
+        "215": 27,
+        "216": 29,
+        "217": 29,
+        "218": 31,
+        "219": 31,
+        "220": 33,
+        "221": 33,
+        "222": 34,
+        "223": 35,
+        "224": 37,
+        "225": 37,
+        "226": 39,
+        "227": 39,
+        "228": 41,
+        "229": 41,
+        "230": 43,
+        "231": 43,
+        "232": 45,
+        "233": 45,
+        "234": 46,
+        "235": 47,
+        "236": 49,
+        "237": 49,
+        "238": 51,
+        "239": 51,
+        "240": 53,
+        "241": 53,
+        "242": 55,
+        "243": 55,
+        "244": 57,
+        "245": 57
+      },
+      "assets": [
+        {
+          "path": "public/images/questions/yakuzaishi/pharmacy-111-practical-q196-calculation-original-1.png",
+          "sha256": "a4a9708ed87575b22b27c21db772ecb1218424892a966f375e99e9e48d92cb15",
+          "bytes": 20952,
+          "qNumber": 196,
+          "sourceCommit": "1c7a3e1f3"
+        },
+        {
+          "path": "public/images/questions/yakuzaishi/pharmacy-111-practical-q204-calculation-figure-original-1.png",
+          "sha256": "f52c7383b3beeb93d646de7e671c815ac149946cbeb8103685452f7b4aad3a1e",
+          "bytes": 164285,
+          "qNumber": 204,
+          "sourceCommit": "1c7a3e1f3"
+        },
+        {
+          "path": "public/images/questions/yakuzaishi/pharmacy-111-practical-q226-calculation-original-1.png",
+          "sha256": "287a04dd548a9b26de23c8dd49fc381d505a7b7658b2da2d2ecce33734a22707",
+          "bytes": 118686,
+          "qNumber": 226,
+          "sourceCommit": "1c7a3e1f3"
+        },
+        {
+          "path": "public/images/questions/yakuzaishi/pharmacy-111-practical-q238-calculation-original-1.png",
+          "sha256": "48f8d652d244b54edb8a3087952939e7889bd15f8e662371614b9b70dafef33b",
+          "bytes": 150485,
+          "qNumber": 238,
+          "sourceCommit": "1c7a3e1f3"
+        },
+        {
+          "path": "public/images/questions/yakuzaishi/pharmacy-111-practical-q240-calculation-original-1.png",
+          "sha256": "e0b74943bc4a23c1724ce3b85b4f2398877f89cb140bb5f2c9575c6ea6d8876d",
+          "bytes": 115460,
+          "qNumber": 240,
+          "sourceCommit": "1c7a3e1f3"
+        },
+        {
+          "path": "public/images/questions/yakuzaishi/pharmacy-111-practical-q243-calculation-original-1.png",
+          "sha256": "287d832b2dfc662af1c032480ed7bf1a2479be41ad824a1758610292605ce8e4",
+          "bytes": 56581,
+          "qNumber": 243,
+          "sourceCommit": "1c7a3e1f3"
+        },
+        {
+          "path": "public/images/questions/yakuzaishi/official-question-page-c1b58c3f7678da1bd0ef.png",
+          "sha256": "c1b58c3f7678da1bd0ef80a2a29d30726a4ce3af8260f3f3cad7200488980219",
+          "bytes": 128962,
+          "qNumber": 198,
+          "sourceCommit": "1c7a3e1f3"
+        },
+        {
+          "path": "public/images/questions/yakuzaishi/official-question-page-26999b3e1e4ec82ea982.png",
+          "sha256": "26999b3e1e4ec82ea982bf3d3eb8ad297ff9c6e53837a36380ced50558ba1603",
+          "bytes": 128077,
+          "qNumber": 203,
+          "sourceCommit": "1c7a3e1f3"
+        },
+        {
+          "path": "public/images/questions/yakuzaishi/official-question-page-5d57006ec98a50919dc1.png",
+          "sha256": "5d57006ec98a50919dc18675ddea1ea93afdeaa21bed00e1c10f0612d5693f93",
+          "bytes": 116598,
+          "qNumber": 208,
+          "sourceCommit": "1c7a3e1f3"
+        },
+        {
+          "path": "public/images/questions/yakuzaishi/official-question-page-c8afb332160d2580e120.png",
+          "sha256": "c8afb332160d2580e1203bbbb3251655eaefcaaf39ed250d76710904f05d517b",
+          "bytes": 145555,
+          "qNumber": 211,
+          "sourceCommit": "1c7a3e1f3"
+        },
+        {
+          "path": "public/images/questions/yakuzaishi/official-question-page-413105c37b0602cd1a83.png",
+          "sha256": "413105c37b0602cd1a83c8d37283c19dee43e00efbde457ff7e9ebe0cbf50bb8",
+          "bytes": 96936,
+          "qNumber": 213,
+          "sourceCommit": "1c7a3e1f3"
+        },
+        {
+          "path": "public/images/questions/yakuzaishi/official-question-page-a62bec2cdcaac92d2d19.png",
+          "sha256": "a62bec2cdcaac92d2d19c94a6e1a65fd74f92816fd3d110d696d1d3edad1c70b",
+          "bytes": 93310,
+          "qNumber": 220,
+          "sourceCommit": "1c7a3e1f3"
+        },
+        {
+          "path": "public/images/questions/yakuzaishi/official-question-page-7b6591a4587e957e46f8.png",
+          "sha256": "7b6591a4587e957e46f826cbbd64e4c00cc7124b7e5323b25b28c1b11e15c038",
+          "bytes": 97783,
+          "qNumber": 223,
+          "sourceCommit": "1c7a3e1f3"
+        },
+        {
+          "path": "public/images/questions/yakuzaishi/official-question-page-3282fa4cea121c65d3d4.png",
+          "sha256": "3282fa4cea121c65d3d4893b03d8a0c1ebf4d4988def9ca0d4dc0e1bfbfb2636",
+          "bytes": 82864,
+          "qNumber": 235,
+          "sourceCommit": "1c7a3e1f3"
+        },
+        {
+          "path": "public/images/questions/yakuzaishi/official-question-page-a8aa4c1afeca09b043d9.png",
+          "sha256": "a8aa4c1afeca09b043d9d4ead9bf22327d43ddab9e74490390c7415205504f51",
+          "bytes": 63662,
+          "qNumber": 237,
+          "sourceCommit": "1c7a3e1f3"
+        },
+        {
+          "path": "public/images/questions/yakuzaishi/official-question-page-61408b35549256109547.png",
+          "sha256": "61408b355492561095472940aca96cc72ee8e8a02e7ed5e1e4e24732bc0a539a",
+          "bytes": 92374,
+          "qNumber": 241,
+          "sourceCommit": "1c7a3e1f3"
+        },
+        {
+          "path": "public/images/questions/yakuzaishi/111-day2-1/q199-diagrams.webp",
+          "qNumber": 199,
+          "pdfUrl": "https://www.mhlw.go.jp/content/001677930.pdf",
+          "page": 8,
+          "cropPoints": [
+            109.0,
+            365.0,
+            512.0,
+            551.0
+          ],
+          "sha256": "e5404e41394910903dfac26448495a3d551b64f560da82a1fc2802a608a2b802",
+          "bytes": 14450
+        },
+        {
+          "path": "public/images/questions/yakuzaishi/111-day2-1/q235-choices.webp",
+          "qNumber": 235,
+          "pdfUrl": "https://www.mhlw.go.jp/content/001677930.pdf",
+          "page": 47,
+          "cropPoints": [
+            77,
+            153,
+            468,
+            465
+          ],
+          "sha256": "13ee7f5fe466f0b9638d55f54556f91cd4a0aa1960abea7b147318606466244c",
+          "bytes": 13400
+        },
+        {
+          "path": "public/images/questions/yakuzaishi/111-day2-1/q237-choices.webp",
+          "qNumber": 237,
+          "pdfUrl": "https://www.mhlw.go.jp/content/001677930.pdf",
+          "page": 49,
+          "cropPoints": [
+            77,
+            409,
+            558,
+            628
+          ],
+          "sha256": "f5d7d43e4c890cf9524d78078975a77546b45fb2d39aed094cb363e6ed6cc811",
+          "bytes": 8816
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-220",
+      "index": 219,
+      "exam": "yakuzaishi",
+      "officialYear": 2024,
+      "officialRound": 109,
+      "session": "day2-3",
+      "status": "補充完了",
+      "expectedQuestionCount": 60,
+      "previousQuestionCount": 0,
+      "addedQuestionCount": 60,
+      "importedQuestionCount": 0,
+      "newQuestionCount": 60,
+      "practiceQuestionCount": 59,
+      "officialAnswerNumberRange": [
+        286,
+        345
+      ],
+      "excludedQuestionNumbers": [
+        330
+      ],
+      "misparsedExampleNumber": 500,
+      "remainingQuestionNumbers": [],
+      "sourcePage": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000198926.html",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/content/001226764.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001228441.pdf#page=2",
+      "sourceSha256": {
+        "https://www.mhlw.go.jp/content/001226764.pdf": "02f850bd6119a78d37890f22afc937fdd658134778943a3b728440fd972b40bd",
+        "https://www.mhlw.go.jp/content/001228441.pdf": "f613cc3892465cb6de82439286192aaf70dd1f9a5f691c58ae0e74761815eb43"
+      },
+      "dataPath": "data/questions/yakuzaishi/2024-day2-3-qf10.json",
+      "questionIds": [
+        "yakuzaishi-2024-annual-practical-q286",
+        "yakuzaishi-2024-annual-practical-q287",
+        "yakuzaishi-2024-annual-practical-q288",
+        "yakuzaishi-2024-annual-practical-q289",
+        "yakuzaishi-2024-annual-practical-q290",
+        "yakuzaishi-2024-annual-practical-q291",
+        "yakuzaishi-2024-annual-practical-q292",
+        "yakuzaishi-2024-annual-practical-q293",
+        "yakuzaishi-2024-annual-practical-q294",
+        "yakuzaishi-2024-annual-practical-q295",
+        "yakuzaishi-2024-annual-practical-q296",
+        "yakuzaishi-2024-annual-practical-q297",
+        "yakuzaishi-2024-annual-practical-q298",
+        "yakuzaishi-2024-annual-practical-q299",
+        "yakuzaishi-2024-annual-practical-q300",
+        "yakuzaishi-2024-annual-practical-q301",
+        "yakuzaishi-2024-annual-practical-q302",
+        "yakuzaishi-2024-annual-practical-q303",
+        "yakuzaishi-2024-annual-practical-q304",
+        "yakuzaishi-2024-annual-practical-q305",
+        "yakuzaishi-2024-annual-practical-q306",
+        "yakuzaishi-2024-annual-practical-q307",
+        "yakuzaishi-2024-annual-practical-q308",
+        "yakuzaishi-2024-annual-practical-q309",
+        "yakuzaishi-2024-annual-practical-q310",
+        "yakuzaishi-2024-annual-practical-q311",
+        "yakuzaishi-2024-annual-practical-q312",
+        "yakuzaishi-2024-annual-practical-q313",
+        "yakuzaishi-2024-annual-practical-q314",
+        "yakuzaishi-2024-annual-practical-q315",
+        "yakuzaishi-2024-annual-practical-q316",
+        "yakuzaishi-2024-annual-practical-q317",
+        "yakuzaishi-2024-annual-practical-q318",
+        "yakuzaishi-2024-annual-practical-q319",
+        "yakuzaishi-2024-annual-practical-q320",
+        "yakuzaishi-2024-annual-practical-q321",
+        "yakuzaishi-2024-annual-practical-q322",
+        "yakuzaishi-2024-annual-practical-q323",
+        "yakuzaishi-2024-annual-practical-q324",
+        "yakuzaishi-2024-annual-practical-q325",
+        "yakuzaishi-2024-annual-practical-q326",
+        "yakuzaishi-2024-annual-practical-q327",
+        "yakuzaishi-2024-annual-practical-q328",
+        "yakuzaishi-2024-annual-practical-q329",
+        "yakuzaishi-2024-annual-practical-q330",
+        "yakuzaishi-2024-annual-practical-q331",
+        "yakuzaishi-2024-annual-practical-q332",
+        "yakuzaishi-2024-annual-practical-q333",
+        "yakuzaishi-2024-annual-practical-q334",
+        "yakuzaishi-2024-annual-practical-q335",
+        "yakuzaishi-2024-annual-practical-q336",
+        "yakuzaishi-2024-annual-practical-q337",
+        "yakuzaishi-2024-annual-practical-q338",
+        "yakuzaishi-2024-annual-practical-q339",
+        "yakuzaishi-2024-annual-practical-q340",
+        "yakuzaishi-2024-annual-practical-q341",
+        "yakuzaishi-2024-annual-practical-q342",
+        "yakuzaishi-2024-annual-practical-q343",
+        "yakuzaishi-2024-annual-practical-q344",
+        "yakuzaishi-2024-annual-practical-q345"
+      ],
+      "officialAnswerCells": {
+        "286": [
+          "1",
+          "3"
+        ],
+        "287": [
+          "3",
+          "5"
+        ],
+        "288": [
+          "2",
+          "5"
+        ],
+        "289": [
+          "1",
+          "2"
+        ],
+        "290": [
+          "2",
+          "5"
+        ],
+        "291": [
+          "1",
+          "2"
+        ],
+        "292": [
+          "1",
+          "4"
+        ],
+        "293": [
+          "2",
+          "4"
+        ],
+        "294": [
+          "1",
+          "2"
+        ],
+        "295": [
+          "2",
+          "3"
+        ],
+        "296": [
+          "3",
+          "4"
+        ],
+        "297": [
+          "1",
+          "5"
+        ],
+        "298": [
+          "2",
+          "5"
+        ],
+        "299": [
+          "2",
+          "5"
+        ],
+        "300": [
+          "1",
+          "5"
+        ],
+        "301": [
+          "5"
+        ],
+        "302": [
+          "4"
+        ],
+        "303": [
+          "1",
+          "4"
+        ],
+        "304": [
+          "1",
+          "4"
+        ],
+        "305": [
+          "1",
+          "3",
+          "5"
+        ],
+        "306": [
+          "1",
+          "5"
+        ],
+        "307": [
+          "3"
+        ],
+        "308": [
+          "3"
+        ],
+        "309": [
+          "2",
+          "5"
+        ],
+        "310": [
+          "1",
+          "5"
+        ],
+        "311": [
+          "1",
+          "4"
+        ],
+        "312": [
+          "4",
+          "5"
+        ],
+        "313": [
+          "2",
+          "3"
+        ],
+        "314": [
+          "1",
+          "5"
+        ],
+        "315": [
+          "3"
+        ],
+        "316": [
+          "1",
+          "4"
+        ],
+        "317": [
+          "3",
+          "5"
+        ],
+        "318": [
+          "3",
+          "4"
+        ],
+        "319": [
+          "4",
+          "5"
+        ],
+        "320": [
+          "1",
+          "2"
+        ],
+        "321": [
+          "2",
+          "4"
+        ],
+        "322": [
+          "1",
+          "5"
+        ],
+        "323": [
+          "4",
+          "5"
+        ],
+        "324": [
+          "3"
+        ],
+        "325": [
+          "2",
+          "5"
+        ],
+        "326": [
+          "1"
+        ],
+        "327": [
+          "4"
+        ],
+        "328": [
+          "2",
+          "4"
+        ],
+        "329": [
+          "1",
+          "5"
+        ],
+        "330": [],
+        "331": [
+          "3",
+          "4"
+        ],
+        "332": [
+          "2",
+          "4"
+        ],
+        "333": [
+          "4"
+        ],
+        "334": [
+          "4",
+          "5"
+        ],
+        "335": [
+          "1"
+        ],
+        "336": [
+          "2"
+        ],
+        "337": [
+          "1",
+          "5"
+        ],
+        "338": [
+          "2",
+          "4"
+        ],
+        "339": [
+          "4",
+          "5"
+        ],
+        "340": [
+          "2"
+        ],
+        "341": [
+          "2",
+          "3"
+        ],
+        "342": [
+          "2",
+          "4"
+        ],
+        "343": [
+          "1",
+          "3"
+        ],
+        "344": [
+          "3",
+          "5"
+        ],
+        "345": [
+          "2"
+        ]
+      },
+      "questionPdfPages": {
+        "286": 3,
+        "287": 3,
+        "288": 5,
+        "289": 5,
+        "290": 7,
+        "291": 7,
+        "292": 9,
+        "293": 9,
+        "294": 11,
+        "295": 11,
+        "296": 13,
+        "297": 13,
+        "298": 15,
+        "299": 15,
+        "300": 16,
+        "301": 17,
+        "302": 19,
+        "303": 19,
+        "304": 21,
+        "305": 21,
+        "306": 22,
+        "307": 23,
+        "308": 25,
+        "309": 25,
+        "310": 27,
+        "311": 27,
+        "312": 29,
+        "313": 29,
+        "314": 31,
+        "315": 31,
+        "316": 32,
+        "317": 33,
+        "318": 34,
+        "319": 35,
+        "320": 37,
+        "321": 37,
+        "322": 38,
+        "323": 39,
+        "324": 41,
+        "325": 41,
+        "326": 42,
+        "327": 43,
+        "328": 44,
+        "329": 46,
+        "330": 48,
+        "331": 50,
+        "332": 51,
+        "333": 52,
+        "334": 54,
+        "335": 56,
+        "336": 58,
+        "337": 58,
+        "338": 59,
+        "339": 60,
+        "340": 61,
+        "341": 62,
+        "342": 63,
+        "343": 64,
+        "344": 66,
+        "345": 68
+      },
+      "assets": [
+        {
+          "path": "public/images/questions/yakuzaishi/109-day2-3/q307.webp",
+          "qNumber": 307,
+          "page": 23,
+          "cropPoints": [
+            84,
+            184,
+            532,
+            584
+          ],
+          "sha256": "795b4b189d30b5f8e4c423769f1fcd573aa40e216f98a61f29794e9f69d77bcf"
+        },
+        {
+          "path": "public/images/questions/yakuzaishi/109-day2-3/q319.webp",
+          "qNumber": 319,
+          "page": 35,
+          "cropPoints": [
+            84,
+            205,
+            308,
+            426
+          ],
+          "sha256": "e7a4a79e00d8ac32ca88843fbe44e749ea4a785a0bc84d51e6f7375d52b0923c"
+        },
+        {
+          "path": "public/images/questions/yakuzaishi/109-day2-3/q326.webp",
+          "qNumber": 326,
+          "page": 42,
+          "cropPoints": [
+            85,
+            458,
+            535,
+            754
+          ],
+          "sha256": "e303d581895d592445216868586d17add2d6f7fd1e4de3c1b6ad8c1b99a76bba"
+        },
+        {
+          "path": "public/images/questions/yakuzaishi/109-day2-3/q330.webp",
+          "qNumber": 330,
+          "page": 48,
+          "cropPoints": [
+            85,
+            414,
+            519,
+            702
+          ],
+          "sha256": "a2e700ea8e7cf1bf9e9afc671bac6f9e5d64d23ba5ccfab017ec2a46c176377d"
+        }
+      ],
+      "officialScoringNotes": {
+        "305": {
+          "requiredSelections": 2,
+          "acceptedChoices": [
+            1,
+            3,
+            5
+          ],
+          "sourceUrl": "https://www.mhlw.go.jp/content/001228457.pdf#page=6"
+        },
+        "330": {
+          "kind": "excluded",
+          "sourceUrl": "https://www.mhlw.go.jp/content/001228457.pdf#page=8",
+          "note": "公式訂正の左縦軸はmEq/L。"
+        }
+      }
+    },
+    {
+      "jobId": "PLAN5-234",
+      "index": 233,
+      "exam": "rinsho-kogishi",
+      "officialYear": 2026,
+      "officialRound": 39,
+      "session": "pm",
+      "status": "補充完了",
+      "expectedQuestionCount": 90,
+      "previousQuestionCount": 60,
+      "addedQuestionCount": 30,
+      "importedQuestionCount": 28,
+      "newQuestionCount": 2,
+      "practiceQuestionCount": 90,
+      "officialAnswerNumberRange": [
+        1,
+        90
+      ],
+      "remainingQuestionNumbers": [],
+      "sourcePage": "https://www.jaame.or.jp/ce/past-test.html",
+      "sourcePdfUrl": "https://www.jaame.or.jp/ce/pdf/39pm.pdf",
+      "sourceAnswerUrl": "https://www.jaame.or.jp/ce/pdf/39ans.pdf",
+      "sourceSha256": {
+        "https://www.jaame.or.jp/ce/pdf/39pm.pdf": "399bb83e9a2c0e8901174ef591c907442002fbc8a1293ed138e09c2eae826686",
+        "https://www.jaame.or.jp/ce/pdf/39ans.pdf": "50f786847e25a248f56ea6a91c6ef8c6da20f747aea0268857d71cb600aee911"
+      },
+      "sourceCommits": [
+        "2cd980e37c48d088a5d9a00168a7724e03173d32",
+        "7dab5fb0c77b70d69feb4829f79a74d4523315b9"
+      ],
+      "dataPath": "data/questions/rinsho-kogishi/2025-annual-pm-qf10.json",
+      "questionIds": [
+        "rinsho-kogishi-2025-annual-pm-q11",
+        "rinsho-kogishi-2025-annual-pm-q27",
+        "rinsho-kogishi-2025-annual-pm-q28",
+        "rinsho-kogishi-2025-annual-pm-q31",
+        "rinsho-kogishi-2025-annual-pm-q38",
+        "rinsho-kogishi-2025-annual-pm-q39",
+        "rinsho-kogishi-2025-annual-pm-q40",
+        "rinsho-kogishi-2025-annual-pm-q41",
+        "rinsho-kogishi-2025-annual-pm-q44",
+        "rinsho-kogishi-2025-annual-pm-q46",
+        "rinsho-kogishi-2025-annual-pm-q47",
+        "rinsho-kogishi-2025-annual-pm-q48",
+        "rinsho-kogishi-2025-annual-pm-q49",
+        "rinsho-kogishi-2025-annual-pm-q50",
+        "rinsho-kogishi-2025-annual-pm-q53",
+        "rinsho-kogishi-2025-annual-pm-q54",
+        "rinsho-kogishi-2025-annual-pm-q55",
+        "rinsho-kogishi-2025-annual-pm-q56",
+        "rinsho-kogishi-2025-annual-pm-q58",
+        "rinsho-kogishi-2025-annual-pm-q59",
+        "rinsho-kogishi-2025-annual-pm-q63",
+        "rinsho-kogishi-2025-annual-pm-q75",
+        "rinsho-kogishi-2025-annual-pm-q76",
+        "rinsho-kogishi-2025-annual-pm-q79",
+        "rinsho-kogishi-2025-annual-pm-q80",
+        "rinsho-kogishi-2025-annual-pm-q81",
+        "rinsho-kogishi-2025-annual-pm-q82",
+        "rinsho-kogishi-2025-annual-pm-q86",
+        "rinsho-kogishi-2025-annual-pm-q88",
+        "rinsho-kogishi-2025-annual-pm-q90"
+      ],
+      "questionPdfPages": {
+        "1": 2,
+        "2": 2,
+        "3": 2,
+        "4": 3,
+        "5": 3,
+        "6": 3,
+        "7": 4,
+        "8": 4,
+        "9": 4,
+        "10": 5,
+        "11": 5,
+        "12": 5,
+        "13": 6,
+        "14": 6,
+        "15": 6,
+        "16": 7,
+        "17": 7,
+        "18": 7,
+        "19": 8,
+        "20": 8,
+        "21": 8,
+        "22": 9,
+        "23": 9,
+        "24": 9,
+        "25": 10,
+        "26": 10,
+        "27": 10,
+        "28": 11,
+        "29": 11,
+        "30": 11,
+        "31": 12,
+        "32": 12,
+        "33": 12,
+        "34": 13,
+        "35": 13,
+        "36": 13,
+        "37": 14,
+        "38": 14,
+        "39": 14,
+        "40": 15,
+        "41": 15,
+        "42": 15,
+        "43": 16,
+        "44": 16,
+        "45": 16,
+        "46": 17,
+        "47": 18,
+        "48": 18,
+        "49": 19,
+        "50": 20,
+        "51": 21,
+        "52": 21,
+        "53": 22,
+        "54": 23,
+        "55": 23,
+        "56": 24,
+        "57": 24,
+        "58": 25,
+        "59": 25,
+        "60": 26,
+        "61": 26,
+        "62": 26,
+        "63": 27,
+        "64": 27,
+        "65": 27,
+        "66": 28,
+        "67": 28,
+        "68": 28,
+        "69": 29,
+        "70": 29,
+        "71": 29,
+        "72": 30,
+        "73": 30,
+        "74": 30,
+        "75": 31,
+        "76": 31,
+        "77": 32,
+        "78": 32,
+        "79": 32,
+        "80": 33,
+        "81": 33,
+        "82": 34,
+        "83": 34,
+        "84": 34,
+        "85": 35,
+        "86": 35,
+        "87": 35,
+        "88": 36,
+        "89": 36,
+        "90": 36
+      },
+      "officialAnswerCells": {
+        "1": [
+          "1"
+        ],
+        "2": [
+          "5"
+        ],
+        "3": [
+          "3"
+        ],
+        "4": [
+          "1"
+        ],
+        "5": [
+          "3"
+        ],
+        "6": [
+          "3"
+        ],
+        "7": [
+          "1"
+        ],
+        "8": [
+          "5"
+        ],
+        "9": [
+          "5"
+        ],
+        "10": [
+          "4"
+        ],
+        "11": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "12": [
+          "2"
+        ],
+        "13": [
+          "3"
+        ],
+        "14": [
+          "5"
+        ],
+        "15": [
+          "4"
+        ],
+        "16": [
+          "2"
+        ],
+        "17": [
+          "2"
+        ],
+        "18": [
+          "3"
+        ],
+        "19": [
+          "4"
+        ],
+        "20": [
+          "2"
+        ],
+        "21": [
+          "4"
+        ],
+        "22": [
+          "3"
+        ],
+        "23": [
+          "1"
+        ],
+        "24": [
+          "4"
+        ],
+        "25": [
+          "4"
+        ],
+        "26": [
+          "1"
+        ],
+        "27": [
+          "2"
+        ],
+        "28": [
+          "1"
+        ],
+        "29": [
+          "2"
+        ],
+        "30": [
+          "1"
+        ],
+        "31": [
+          "3"
+        ],
+        "32": [
+          "4"
+        ],
+        "33": [
+          "2"
+        ],
+        "34": [
+          "3"
+        ],
+        "35": [
+          "1"
+        ],
+        "36": [
+          "1"
+        ],
+        "37": [
+          "4"
+        ],
+        "38": [
+          "3"
+        ],
+        "39": [
+          "3"
+        ],
+        "40": [
+          "5"
+        ],
+        "41": [
+          "1"
+        ],
+        "42": [
+          "4"
+        ],
+        "43": [
+          "3"
+        ],
+        "44": [
+          "3",
+          "4"
+        ],
+        "45": [
+          "5"
+        ],
+        "46": [
+          "4"
+        ],
+        "47": [
+          "3"
+        ],
+        "48": [
+          "5"
+        ],
+        "49": [
+          "2"
+        ],
+        "50": [
+          "4"
+        ],
+        "51": [
+          "5"
+        ],
+        "52": [
+          "4"
+        ],
+        "53": [
+          "2"
+        ],
+        "54": [
+          "5"
+        ],
+        "55": [
+          "1"
+        ],
+        "56": [
+          "4"
+        ],
+        "57": [
+          "4"
+        ],
+        "58": [
+          "1"
+        ],
+        "59": [
+          "3"
+        ],
+        "60": [
+          "3"
+        ],
+        "61": [
+          "2"
+        ],
+        "62": [
+          "1"
+        ],
+        "63": [
+          "3"
+        ],
+        "64": [
+          "1"
+        ],
+        "65": [
+          "4"
+        ],
+        "66": [
+          "5"
+        ],
+        "67": [
+          "5"
+        ],
+        "68": [
+          "3"
+        ],
+        "69": [
+          "3"
+        ],
+        "70": [
+          "2"
+        ],
+        "71": [
+          "2"
+        ],
+        "72": [
+          "3"
+        ],
+        "73": [
+          "3"
+        ],
+        "74": [
+          "5"
+        ],
+        "75": [
+          "4"
+        ],
+        "76": [
+          "2"
+        ],
+        "77": [
+          "1"
+        ],
+        "78": [
+          "2"
+        ],
+        "79": [
+          "3"
+        ],
+        "80": [
+          "1"
+        ],
+        "81": [
+          "5"
+        ],
+        "82": [
+          "2"
+        ],
+        "83": [
+          "3"
+        ],
+        "84": [
+          "3"
+        ],
+        "85": [
+          "5"
+        ],
+        "86": [
+          "1"
+        ],
+        "87": [
+          "2"
+        ],
+        "88": [
+          "5"
+        ],
+        "89": [
+          "4"
+        ],
+        "90": [
+          "5"
+        ]
+      },
+      "assets": [
+        {
+          "path": "public/questions/rinsho-kogishi/phase16/rinsho-kogishi-2025-annual-pm-q46-original.png",
+          "sourceCommit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "page": 17,
+          "qNumber": 46,
+          "sha256": "64d635f0570f3d270c89e96742c566fa67025d5b1b28fde3f0ba299eeeb4bea8"
+        },
+        {
+          "path": "public/questions/rinsho-kogishi/round39-pm-q48-original-figure.png",
+          "sourceCommit": "7dab5fb0c77b70d69feb4829f79a74d4523315b9",
+          "page": 18,
+          "qNumber": 48,
+          "sha256": "9bf2fd63859961aae871b6714c2a62225078c03db5749bbcc1be6b028f0fb64a"
+        },
+        {
+          "path": "public/questions/rinsho-kogishi/phase16/rinsho-kogishi-2025-annual-pm-q49-original.png",
+          "sourceCommit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "page": 19,
+          "qNumber": 49,
+          "sha256": "f0187f2fc296959a83182638384fb1af8f0cb6e1ebdd2d17226d87d3590af5b1"
+        },
+        {
+          "path": "public/questions/rinsho-kogishi/phase16/rinsho-kogishi-2025-annual-pm-q50-original.png",
+          "sourceCommit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "page": 20,
+          "qNumber": 50,
+          "sha256": "57f8d9aec130c2caba3b11fe6d0314ecfa29eb3177bc3d68dd0d8308d2bf4a9d"
+        },
+        {
+          "path": "public/questions/rinsho-kogishi/phase16/rinsho-kogishi-2025-annual-pm-q53-original.png",
+          "sourceCommit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "page": 22,
+          "qNumber": 53,
+          "sha256": "d3d01a1a7b726084a5a55f1edd7df1a398e001b7cbb138055f6853b7bbe693c3"
+        },
+        {
+          "path": "public/questions/rinsho-kogishi/phase16/rinsho-kogishi-2025-annual-pm-q55-original.png",
+          "sourceCommit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "page": 23,
+          "qNumber": 55,
+          "sha256": "05023ef6125caebea2f7a4f83dafe9686cc047e9af3da75c79fe565626cf225d"
+        },
+        {
+          "path": "public/questions/rinsho-kogishi/phase16/rinsho-kogishi-2025-annual-pm-q56-original.png",
+          "sourceCommit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "page": 24,
+          "qNumber": 56,
+          "sha256": "c378e6128f9e48bfd3993a809d2c83c70992f1eb7770cddd150f7b1e79b32e89"
+        },
+        {
+          "path": "public/questions/rinsho-kogishi/phase16/rinsho-kogishi-2025-annual-pm-q59-original.png",
+          "sourceCommit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "page": 25,
+          "qNumber": 59,
+          "sha256": "6dcbf405b7fcfd32ac45599c45976faca156d0429983ef2f9befc835ec3da5e2"
+        },
+        {
+          "path": "public/questions/rinsho-kogishi/phase16/rinsho-kogishi-2025-annual-pm-q76-original.png",
+          "sourceCommit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "page": 31,
+          "qNumber": 76,
+          "sha256": "fe1e36d3ad6f189d3bab97e54080724d9edf048b2cced8fd36fb41f88d9c828f"
+        },
+        {
+          "path": "public/questions/rinsho-kogishi/phase16/rinsho-kogishi-2025-annual-pm-q80-original.png",
+          "sourceCommit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "page": 33,
+          "qNumber": 80,
+          "sha256": "b1828bee2f7cade6141cc11185b20a25f9f515831b08e855bcc6b62c792b1694"
+        },
+        {
+          "path": "public/questions/rinsho-kogishi/phase16/rinsho-kogishi-2025-annual-pm-q86-original.png",
+          "sourceCommit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "page": 35,
+          "qNumber": 86,
+          "sha256": "075952d6881d156ae0ca48cc72ca16a8b31bad37bbac67789380036b50784f75"
+        },
+        {
+          "path": "public/images/questions/rinsho-kogishi/39-pm/q88.webp",
+          "page": 36,
+          "cropPoints": [
+            104,
+            99,
+            418,
+            215
+          ],
+          "qNumber": 88,
+          "sha256": "9882b05a426b28bda61918622e8accfca19b595eea7e274072212a47500f1973"
+        }
+      ],
+      "officialScoringNotes": {
+        "11": {
+          "requiredSelections": 1,
+          "acceptedChoices": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "sourceUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken17/dl/PM11.pdf"
+        },
+        "44": {
+          "requiredSelections": 1,
+          "acceptedChoices": [
+            3,
+            4
+          ],
+          "sourceUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken17/dl/PM44.pdf"
+        }
+      }
+    }
+  ]
+}

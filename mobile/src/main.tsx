@@ -32,7 +32,7 @@ const MaterialReader=lazy(()=>import("./MaterialReader"));
 const EXAMS=catalog.exams as CatalogEntry[];
 /** Shown first so the most common qualifications need no search. */
 const POPULAR=["ip","fe","sg","ap","takken","fp3","denken3","denko2"];
-const ONLINE_MENU:Array<[string,string]>=[["/modes/year","年度別"],["/modes/topic","分野別"],["/mock-exam","模試"],["/quiz?mode=unanswered","未回答"],["/review","復習"],["/bookmarks","ブックマーク"],["/account/dashboard","学習履歴・統計"],["/quiz?mode=random&exam=ap","AIコパイロット"],["/essay","記述・論述採点"],["/settings","設定・同期"]];
+const ONLINE_MENU:Array<[string,string]>=[["/modes/year","年度別"],["/modes/topic","分野別"],["/mock-exam","模試"],["/quiz?mode=unanswered","未回答"],["/review","復習"],["/bookmarks","ブックマーク"],["/account/dashboard","学習履歴・統計"],["/quiz?mode=random&exam=ap","AIコパイロット"],["/essay","論文対策"],["/settings","設定・同期"]];
 const log=(step:string)=>(error:unknown)=>console.error(`[kakomon] ${step} failed`,error);
 const onlineHref=(e:CatalogEntry)=>e.href??(e.code.startsWith("library.")?`/e-learning/exams/${e.code.slice(8)}`:`/quiz?exam=${e.code}&mode=random`);
 const primaryButton="inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-primary px-4 text-base font-semibold text-primary-foreground disabled:opacity-50";

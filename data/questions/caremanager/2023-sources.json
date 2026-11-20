@@ -1,0 +1,472 @@
+{
+  "exam": "caremanager",
+  "year": 2023,
+  "sitting": "annual",
+  "examDate": "2023-10-08",
+  "lawSnapshotDate": "2023-10-08",
+  "lawSnapshotNote": "解説照合のため試験日に施行されていた法令版を取得した日付であり、公式の法令基準日を示すものではない。",
+  "scope": {
+    "officialQuestions": 60,
+    "selected": 24,
+    "remaining": 36,
+    "selectedNumbers": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25
+    ]
+  },
+  "documents": {
+    "questions": {
+      "url": "https://www.pref.saitama.lg.jp/documents/19829/kaigoshienr5.pdf",
+      "sha256": "23cfd463047a73b2c1fdf829d4f16d8f166110fac1616ec72d609e6f686be435",
+      "pages": 35
+    },
+    "answers": {
+      "url": "https://www.pref.chiba.lg.jp/koufuku/kaigohoken/service/documents/r5seitoubangou.pdf",
+      "sha256": "b02db53cce6432fb56fd96ae6a9f16e11c5b7c0278145e9efd0697b1690dbd51",
+      "pages": 1
+    },
+    "tokyo-questions": {
+      "url": "https://www.fukushi.metro.tokyo.lg.jp/documents/d/fukushi/r5shikenmondai",
+      "sha256": "3c237e684bad4ebbcaa208ef720ad84ad28b204af31e3dc544f5c5b5de8187bc",
+      "pages": 35
+    },
+    "tokyo-answers": {
+      "url": "https://www.fukushi.metro.tokyo.lg.jp/documents/d/fukushi/r5seitoubangou",
+      "sha256": "e1e43f45e4dbbd652270aa2afb0a943793f82c20d20220301f660741e4915618",
+      "pages": 2
+    }
+  },
+  "laws": {
+    "care": {
+      "lawTitle": "介護保険法",
+      "revision": "409AC0000000123_20230519_505AC0000000031",
+      "url": "https://laws.e-gov.go.jp/law/409AC0000000123/20230519_505AC0000000031",
+      "sha256": "612c3b253c8c4119c8c5f2e77b4cb4e0f8a305f8498fc304c179335f1268832d"
+    },
+    "care-rules": {
+      "lawTitle": "介護保険法施行規則",
+      "revision": "411M50000100036_20230401_505M60000100048",
+      "url": "https://laws.e-gov.go.jp/law/411M50000100036/20230401_505M60000100048",
+      "sha256": "97825abcacc9426c9ce2515653a85f8c356295372d66599ea253e681788c1485"
+    },
+    "care-support": {
+      "lawTitle": "指定居宅介護支援等の事業の人員及び運営に関する基準",
+      "revision": "411M50000100038_20211001_503M60000100009",
+      "url": "https://laws.e-gov.go.jp/law/411M50000100038/20211001_503M60000100009",
+      "sha256": "0af65d367ab2fc6627a3c3528225b9619dd3e12de43de7d619792d5143ab576d"
+    },
+    "care-services": {
+      "lawTitle": "指定居宅サービス等の事業の人員、設備及び運営に関する基準",
+      "revision": "411M50000100037_20210401_503M60000100009",
+      "url": "https://laws.e-gov.go.jp/law/411M50000100037/20210401_503M60000100009",
+      "sha256": "eb81f99b5874ee13166e6adced9827a00ecf965fac5616244400621bcb7c079b"
+    },
+    "social": {
+      "lawTitle": "社会福祉法",
+      "revision": "326AC0000000045_20230401_504AC0000000076",
+      "url": "https://laws.e-gov.go.jp/law/326AC0000000045/20230401_504AC0000000076",
+      "sha256": "1295dc1353f67afc1f7663bf1182bdf34b946bbcb30d714436442da71d5c7d1e"
+    },
+    "care-facilities": {
+      "lawTitle": "指定介護老人福祉施設の人員、設備及び運営に関する基準",
+      "revision": "411M50000100039_20210401_503M60000100009",
+      "url": "https://laws.e-gov.go.jp/law/411M50000100039/20210401_503M60000100009",
+      "sha256": "d84388a1a234734ccec9c8ee43e806415643e672d4fd810ddd95b5f287d2e05b"
+    },
+    "care-regional": {
+      "lawTitle": "指定地域密着型サービスの事業の人員、設備及び運営に関する基準",
+      "revision": "418M60000100034_20210826_503M60000100141",
+      "url": "https://laws.e-gov.go.jp/law/418M60000100034/20210826_503M60000100141",
+      "sha256": "6e8ae695ae46380010abb8e3f50117fe0649220020eb16fb33603dd127dbf0e9"
+    },
+    "medical-care-fund": {
+      "lawTitle": "地域における医療及び介護の総合的な確保の促進に関する法律",
+      "revision": "401AC0000000064_20230519_505AC0000000031",
+      "url": "https://laws.e-gov.go.jp/law/401AC0000000064/20230519_505AC0000000031",
+      "sha256": "1948d65c542f85c74961c1dfd97eb1b6f40aba08c0b91eaaa23805309f3aac2a"
+    }
+  },
+  "references": {
+    "regional-care-meetings": {
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/hukushi_kaigo/kaigo_koureisha/chiiki-houkatsu/dl/link3-0-02.pdf",
+      "sha256": "2364c3f6a07dbbd3ee4dbf1516581966160567f73c377c136a653639bc6ecc9c"
+    },
+    "recognition-flow": {
+      "url": "https://www.mhlw.go.jp/content/12301000/2r9852000000ok1z.pdf",
+      "sha256": "74262aac9504309ebb05112ab59249889f57b73586e4989f75490427b3c9a90f"
+    },
+    "exam-date": {
+      "url": "https://www.pref.kyoto.jp/kaigo/news/r5shikenannai.html",
+      "sha256": "5a7730bfe3523a6a97bb6e2f36cca096c9b0afec90af33133297119413f7efee"
+    },
+    "plan-forms": {
+      "url": "https://www.mhlw.go.jp/content/000764679.pdf",
+      "sha256": "7cf32b2ff5a441b1809c7f34febe6335de6348954076de2db7758f01e2716162"
+    },
+    "social-insurance": {
+      "url": "https://www.mhlw.go.jp/stf/newpage_21479.html",
+      "sha256": "0ba83550be22f303112b52e2d2bfd4ab4168c182828fbbf5d6bd739bdeb60b56"
+    }
+  },
+  "verification": {
+    "method": "WindowsローカルOCRで抽出後、原本PDFのページ画像で本文・全選択肢を目視照合。正答は公式表を行単位で別途転記し、東京都掲載の同回正答とも画像照合。",
+    "typography": "改行・空白を整理し、カンマと括弧は表示用の和文組版に統一。語句と数字は保持。",
+    "officialAnswerChanges": 0
+  },
+  "selectedQuestions": [
+    {
+      "qNumber": 2,
+      "pdfPage": 3,
+      "officialAnswerNumbers": [
+        2,
+        3,
+        5
+      ],
+      "requiredSelections": 3,
+      "normalizedTextSha256": "0cd5d0a46d32dc4938a0d4bdae8d72ceb21e39a66508bd5347a269071bbdef26",
+      "references": [
+        "social",
+        "care-services"
+      ]
+    },
+    {
+      "qNumber": 3,
+      "pdfPage": 4,
+      "officialAnswerNumbers": [
+        3,
+        5
+      ],
+      "requiredSelections": 2,
+      "normalizedTextSha256": "9f109fafae5d2d099f1abd09699700c4b13a870df58ea91724b4a943d1e80913",
+      "references": [
+        "care"
+      ]
+    },
+    {
+      "qNumber": 4,
+      "pdfPage": 4,
+      "officialAnswerNumbers": [
+        1,
+        3,
+        4
+      ],
+      "requiredSelections": 3,
+      "normalizedTextSha256": "73aba77349321121800c2810be7127a8bb9abedbd29a45151a409622113f9d30",
+      "references": [
+        "care"
+      ]
+    },
+    {
+      "qNumber": 5,
+      "pdfPage": 5,
+      "officialAnswerNumbers": [
+        1,
+        3,
+        4
+      ],
+      "requiredSelections": 3,
+      "normalizedTextSha256": "2d305cae259144b6d936357973f94b15122f95ebe945c8105dfbd0f781cff9d1",
+      "references": [
+        "care"
+      ]
+    },
+    {
+      "qNumber": 6,
+      "pdfPage": 5,
+      "officialAnswerNumbers": [
+        2,
+        4
+      ],
+      "requiredSelections": 2,
+      "normalizedTextSha256": "25e2f47ab25a7deb9822a15b5fbac236f19a023e4ce566e8435d301bfe03e4d7",
+      "references": [
+        "care-rules"
+      ]
+    },
+    {
+      "qNumber": 7,
+      "pdfPage": 6,
+      "officialAnswerNumbers": [
+        1,
+        2,
+        3
+      ],
+      "requiredSelections": 3,
+      "normalizedTextSha256": "b6d7139afc9683bd0b7914bf133932be6c6d35c0b1f25f223d3cb90d562ba818",
+      "references": [
+        "care"
+      ]
+    },
+    {
+      "qNumber": 8,
+      "pdfPage": 6,
+      "officialAnswerNumbers": [
+        1,
+        2
+      ],
+      "requiredSelections": 2,
+      "normalizedTextSha256": "942ee1ecbc79136138a57168dc251feccdc6dd7904e609841f407e51412ddd58",
+      "references": [
+        "care"
+      ]
+    },
+    {
+      "qNumber": 9,
+      "pdfPage": 7,
+      "officialAnswerNumbers": [
+        2,
+        3,
+        5
+      ],
+      "requiredSelections": 3,
+      "normalizedTextSha256": "8d5fee022d23d657e607fe3bae8ced2081b410cbb4ef58f65795c245cb66fcec",
+      "references": [
+        "care"
+      ]
+    },
+    {
+      "qNumber": 10,
+      "pdfPage": 7,
+      "officialAnswerNumbers": [
+        1,
+        4,
+        5
+      ],
+      "requiredSelections": 3,
+      "normalizedTextSha256": "9d4be87ebbc473eeaab04e80cf73c22635d622867cad5cf29d7792290c5e6e65",
+      "references": [
+        "care"
+      ]
+    },
+    {
+      "qNumber": 11,
+      "pdfPage": 8,
+      "officialAnswerNumbers": [
+        1,
+        3,
+        4
+      ],
+      "requiredSelections": 3,
+      "normalizedTextSha256": "88806a28a7018b3dfbe4d1956921d5f7ef055d89200a75a122ecc43576a16ff3",
+      "references": [
+        "medical-care-fund"
+      ]
+    },
+    {
+      "qNumber": 12,
+      "pdfPage": 8,
+      "officialAnswerNumbers": [
+        1,
+        4
+      ],
+      "requiredSelections": 2,
+      "normalizedTextSha256": "aa90f1de6331d8e89c0508433316a6f048c81d273d947597018aa651c1cb2dc7",
+      "references": [
+        "care"
+      ]
+    },
+    {
+      "qNumber": 13,
+      "pdfPage": 9,
+      "officialAnswerNumbers": [
+        3,
+        5
+      ],
+      "requiredSelections": 2,
+      "normalizedTextSha256": "827e3bb8ee2f1360a4b52cc8674be60cc74801985269316c01b86761a12e3a82",
+      "references": [
+        "care"
+      ]
+    },
+    {
+      "qNumber": 14,
+      "pdfPage": 9,
+      "officialAnswerNumbers": [
+        1,
+        2,
+        3
+      ],
+      "requiredSelections": 3,
+      "normalizedTextSha256": "fc884d37fbd1410f6d9d5886fff9fa171da03ea192f0f7433e8a5fe17a6597ea",
+      "references": [
+        "regional-care-meetings"
+      ]
+    },
+    {
+      "qNumber": 15,
+      "pdfPage": 10,
+      "officialAnswerNumbers": [
+        2,
+        4,
+        5
+      ],
+      "requiredSelections": 3,
+      "normalizedTextSha256": "9c27049d98cb28900c8c55034d891e30f03b811eb8f54df0ae8f19c430f0f93f",
+      "references": [
+        "care-rules"
+      ]
+    },
+    {
+      "qNumber": 16,
+      "pdfPage": 10,
+      "officialAnswerNumbers": [
+        4,
+        5
+      ],
+      "requiredSelections": 2,
+      "normalizedTextSha256": "7f2439a97d5b63ed851b8d9992b45a9e17ac9f60d1573aa01c6e130b799e9131",
+      "references": [
+        "care"
+      ]
+    },
+    {
+      "qNumber": 17,
+      "pdfPage": 11,
+      "officialAnswerNumbers": [
+        2,
+        4,
+        5
+      ],
+      "requiredSelections": 3,
+      "normalizedTextSha256": "82a859acb1f3d49cefb7aba230b6d4f7f540861e3be4bbc5fdbd28fbeef95a4c",
+      "references": [
+        "care"
+      ]
+    },
+    {
+      "qNumber": 18,
+      "pdfPage": 11,
+      "officialAnswerNumbers": [
+        2,
+        5
+      ],
+      "requiredSelections": 2,
+      "normalizedTextSha256": "e7b94cb5542c0d8017690941c181f2a25a42202103224c3461de80d51cfdda15",
+      "references": [
+        "care",
+        "care-rules"
+      ]
+    },
+    {
+      "qNumber": 19,
+      "pdfPage": 12,
+      "officialAnswerNumbers": [
+        1,
+        2
+      ],
+      "requiredSelections": 2,
+      "normalizedTextSha256": "0d98809fc635c04e0a2a312f7f4a2977d5e69b98214be9f4f1cf6ed37cd39417",
+      "references": [
+        "care",
+        "recognition-flow"
+      ]
+    },
+    {
+      "qNumber": 20,
+      "pdfPage": 12,
+      "officialAnswerNumbers": [
+        1,
+        2,
+        3
+      ],
+      "requiredSelections": 3,
+      "normalizedTextSha256": "8228e96fbada2298c159356e861e5287b0c76a7dbc00626182a340b05bd8e770",
+      "references": [
+        "care-support"
+      ]
+    },
+    {
+      "qNumber": 21,
+      "pdfPage": 13,
+      "officialAnswerNumbers": [
+        2,
+        3,
+        4
+      ],
+      "requiredSelections": 3,
+      "normalizedTextSha256": "f92d8716abd8f7c858769dcb00e1ea15a9e556821a12873a50e5ed8cf0e4a8ad",
+      "references": [
+        "care-support",
+        "plan-forms"
+      ]
+    },
+    {
+      "qNumber": 22,
+      "pdfPage": 13,
+      "officialAnswerNumbers": [
+        2,
+        4
+      ],
+      "requiredSelections": 2,
+      "normalizedTextSha256": "5e8832117e8dd38cc63831cbe8593b6c59abcb10349bb58207283916dd436037",
+      "references": [
+        "care-facilities"
+      ]
+    },
+    {
+      "qNumber": 23,
+      "pdfPage": 14,
+      "officialAnswerNumbers": [
+        1,
+        3,
+        5
+      ],
+      "requiredSelections": 3,
+      "normalizedTextSha256": "31918ec4ee36e904d74129c3808944cd53cfbc4774bd5ffd16f2e05b1ee00f02",
+      "references": [
+        "care-support",
+        "care-regional"
+      ]
+    },
+    {
+      "qNumber": 24,
+      "pdfPage": 14,
+      "officialAnswerNumbers": [
+        4,
+        5
+      ],
+      "requiredSelections": 2,
+      "normalizedTextSha256": "3c95aff3796f7ab5949995af7923f87ffdabcbabc1a663c6c8e465ec0de87fea",
+      "references": [
+        "care-support",
+        "regional-care-meetings"
+      ]
+    },
+    {
+      "qNumber": 25,
+      "pdfPage": 15,
+      "officialAnswerNumbers": [
+        1,
+        4,
+        5
+      ],
+      "requiredSelections": 3,
+      "normalizedTextSha256": "e496425c7ba116af508cac76457fe845cb989294a8c950e7dbc72ee134823314",
+      "references": [
+        "care-support"
+      ]
+    }
+  ]
+}

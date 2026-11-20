@@ -10,10 +10,10 @@ import { ALL_EXAM_CODES, ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
 import { choiceDisplayLabel } from "@/lib/questions/display";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { questionSourceEdition } from "@/lib/questions/source-label";
-import { examMetaDescription } from "@/lib/seo/exam-meta";
+import { examMetaDescription, getQuestionsByExamStrict } from "@/lib/seo/exam-meta";
 import { QuestionCard } from "@/components/quiz/QuestionCard";
 import QuestionPage from "@/app/q/[exam]/[yearSeason]/[section]/[qnum]/page";
-import ExamTopPage, { generateStaticParams } from "@/app/[exam]/page";
+import { generateMetadata as generateExamMetadata, generateStaticParams } from "@/app/[exam]/page";
 
 // These printed cells were independently read on the two official final-key PNGs.
 const suites = [
@@ -91,14 +91,14 @@ describe("saved lab/radiology first twenty original questions", () => {
       expect(html).toContain(edition);
       expect(html).toContain(q.sourcePdfUrl);
       expect(renderToStaticMarkup(<QuestionCard question={q} />)).toContain(edition);
-      const hub = renderToStaticMarkup(await ExamTopPage({ params: Promise.resolve({ exam: suite.exam }) }));
+      const metadata = await generateExamMetadata({ params: Promise.resolve({ exam: suite.exam }) });
+      const count = getQuestionsByExamStrict(suite.exam).length;
       const radiology = suite.exam === "shinryo-hoshasengishi";
-      expect(hub).toContain(`${(await getQuestionsForExam(suite.exam)).length}${radiology ? "問収録" : "原問を部分収録"}`);
-      expect(hub).toContain(radiology ? "公式図版省略" : "全問は未完備");
+      expect(metadata.description).toContain(`${count.toLocaleString("ja-JP")}問収録`);
       for (const mode of [undefined, "year", "topic"] as const) {
-        const description = examMetaDescription(suite.exam, 10, mode);
-        expect(description).toContain(radiology ? "10問収録" : "10原問を部分収録");
-        expect(description).toContain(radiology ? "採点除外" : "全問は未完備");
+        const description = examMetaDescription(suite.exam, count, mode);
+        expect(description).toContain(`${count.toLocaleString("ja-JP")}問収録`);
+        expect(description).toContain(radiology ? "採点除外" : "午前全100問");
         expect(description).not.toContain("全1期分");
       }
     });

@@ -1,0 +1,228 @@
+[
+  {
+    "id": "zensho-boki-2025-101-2-q1",
+    "exam": "zensho-boki",
+    "year": 2025,
+    "examDate": "2026-01-25",
+    "fiscalYear": 2025,
+    "season": "annual",
+    "session": "zensho-boki-2-commercial",
+    "qNumber": 1,
+    "officialQuestionLabel": "2級 第1問",
+    "category": "仕訳",
+    "topicTags": [
+      "2級",
+      "商業簿記",
+      "仕訳"
+    ],
+    "difficulty": 2,
+    "type": "descriptive",
+    "question": "取引a〜cについて、示された勘定科目から選んで仕訳しなさい。",
+    "answer": "| 取引 | 借方 | 貸方 |\n| --- | --- | --- |\n| a | 仕入 350,000、仮払消費税 35,000 | 買掛金 385,000 |\n| b | 備品減価償却累計額 448,000、未収金（または未収入金）162,000、固定資産売却損 90,000 | 備品 700,000 |\n| c | 当座預金 240,000 | 電子記録債権 240,000 |",
+    "modelAnswer": "| 取引 | 借方 | 貸方 |\n| --- | --- | --- |\n| a | 仕入 350,000、仮払消費税 35,000 | 買掛金 385,000 |\n| b | 備品減価償却累計額 448,000、未収金（または未収入金）162,000、固定資産売却損 90,000 | 備品 700,000 |\n| c | 当座預金 240,000 | 電子記録債権 240,000 |",
+    "officialAnswerExample": true,
+    "explanation": "aは仕入の本体価格と税額を分ける。bの備品の帳簿価額は252,000円で、売却価額との差が90,000円の損失になる。cでは振り込まれた当座預金を増やし、電子記録債権を消す。",
+    "scoringCriteria": "勘定科目、借方・貸方、金額を公式解答と照らし合わせてください。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zensho-boki/2025-101-2/q1-p02.webp"
+    ],
+    "imageAltTexts": [
+      "簿記実務検定第101回2級 第1問 問題 1ページ"
+    ],
+    "sourcePdfUrl": "https://zensho.or.jp/puf/download/exam/pastexam/2026/bk_101_2_exa.pdf",
+    "sourceAnswerUrl": "https://zensho.or.jp/puf/download/exam/pastexam/2026/bk_101_an.pdf#page=1",
+    "sourceAttribution": "出典：全国商業高等学校協会「令和7年度 第101回 簿記実務検定試験 第2級」第1問。",
+    "license": "ZENSHO-attributed"
+  },
+  {
+    "id": "zensho-boki-2025-101-2-q2",
+    "exam": "zensho-boki",
+    "year": 2025,
+    "examDate": "2026-01-25",
+    "fiscalYear": 2025,
+    "season": "annual",
+    "session": "zensho-boki-2-commercial",
+    "qNumber": 2,
+    "officialQuestionLabel": "2級 第2問",
+    "category": "資本金と支店会計",
+    "topicTags": [
+      "2級",
+      "商業簿記",
+      "資本金と支店会計"
+    ],
+    "difficulty": 2,
+    "type": "descriptive",
+    "question": "(1) 指定の勘定科目・金額を求め、(2) 本店集中計算制度に従って取引を仕訳しなさい。",
+    "answer": "**(1)** a 資本金、b 648,000円、c 58,000円。\n\n| (2) | 借方 | 貸方 |\n| --- | --- | --- |\n| a | 現金 260,000 | 本店 260,000 |\n| b | 山口支店 3,400 | 岡山支店 3,400 |",
+    "modelAnswer": "**(1)** a 資本金、b 648,000円、c 58,000円。\n\n| (2) | 借方 | 貸方 |\n| --- | --- | --- |\n| a | 現金 260,000 | 本店 260,000 |\n| b | 山口支店 3,400 | 岡山支店 3,400 |",
+    "officialAnswerExample": true,
+    "explanation": "資本金は期首350,000円に追加元入70,000円と利益230,000円を加え、引出金2,000円を引く。期首棚卸高は売上原価427,000円に期末棚卸高67,000円を戻し、純仕入高436,000円を引く。支店間取引は本店を経由して記帳する。",
+    "scoringCriteria": "勘定科目、借方・貸方、金額を公式解答と照らし合わせてください。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zensho-boki/2025-101-2/q2-p03.webp",
+      "/images/questions/zensho-boki/2025-101-2/q2-p04.webp"
+    ],
+    "imageAltTexts": [
+      "簿記実務検定第101回2級 第2問 問題 2ページ",
+      "簿記実務検定第101回2級 第2問 問題 3ページ"
+    ],
+    "sourcePdfUrl": "https://zensho.or.jp/puf/download/exam/pastexam/2026/bk_101_2_exa.pdf",
+    "sourceAnswerUrl": "https://zensho.or.jp/puf/download/exam/pastexam/2026/bk_101_an.pdf#page=1",
+    "sourceAttribution": "出典：全国商業高等学校協会「令和7年度 第101回 簿記実務検定試験 第2級」第2問。",
+    "license": "ZENSHO-attributed"
+  },
+  {
+    "id": "zensho-boki-2025-101-2-q3",
+    "exam": "zensho-boki",
+    "year": 2025,
+    "examDate": "2026-01-25",
+    "fiscalYear": 2025,
+    "season": "annual",
+    "session": "zensho-boki-2-commercial",
+    "qNumber": 3,
+    "officialQuestionLabel": "2級 第3問",
+    "category": "3伝票制",
+    "topicTags": [
+      "2級",
+      "商業簿記",
+      "3伝票制"
+    ],
+    "difficulty": 2,
+    "type": "descriptive",
+    "question": "伝票と仕訳集計表から、(1) ア〜ウの金額と、(2) 転記後の現金勘定残高を求めなさい。",
+    "answer": "**(1)** ア 483,900円、イ 368,200円、ウ 66,800円。\n\n**(2)** 87,000円。",
+    "modelAnswer": "**(1)** ア 483,900円、イ 368,200円、ウ 66,800円。\n\n**(2)** 87,000円。",
+    "officialAnswerExample": true,
+    "explanation": "(1) 未記入の取引を入金・出金・振替伝票に分け、仕訳集計表の科目ごとに同じ側の金額を集計する。(2) 現金の前日残高に借方計を加え、貸方計を差し引く。",
+    "scoringCriteria": "勘定科目、借方・貸方、金額を公式解答と照らし合わせてください。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zensho-boki/2025-101-2/q3-p05.webp"
+    ],
+    "imageAltTexts": [
+      "簿記実務検定第101回2級 第3問 問題 4ページ"
+    ],
+    "sourcePdfUrl": "https://zensho.or.jp/puf/download/exam/pastexam/2026/bk_101_2_exa.pdf",
+    "sourceAnswerUrl": "https://zensho.or.jp/puf/download/exam/pastexam/2026/bk_101_an.pdf#page=1",
+    "sourceAttribution": "出典：全国商業高等学校協会「令和7年度 第101回 簿記実務検定試験 第2級」第3問。",
+    "license": "ZENSHO-attributed"
+  },
+  {
+    "id": "zensho-boki-2025-101-2-q4",
+    "exam": "zensho-boki",
+    "year": 2025,
+    "examDate": "2026-01-25",
+    "fiscalYear": 2025,
+    "season": "annual",
+    "session": "zensho-boki-2-commercial",
+    "qNumber": 4,
+    "officialQuestionLabel": "2級 第4問",
+    "category": "総勘定元帳と補助簿",
+    "topicTags": [
+      "2級",
+      "商業簿記",
+      "総勘定元帳と補助簿"
+    ],
+    "difficulty": 2,
+    "type": "descriptive",
+    "question": "埼玉商店の取引を、総勘定元帳、現金出納帳、売上帳、商品有高帳（A品）に記入しなさい。",
+    "answer": "**(1) 総勘定元帳**\n\n| 勘定 | 借方（日付・金額） | 貸方（日付・金額） |\n| --- | --- | --- |\n| 現金 | 1/1 90,800、1/29 49,000 | 1/6 72,000、1/22 4,500 |\n| 当座預金 | 1/1 390,000、1/14 90,000、1/16 40,000 | 1/13 36,000 |\n| 売掛金 | 1/1 233,000、1/5 80,000、1/22 75,000 | 1/7 5,000、1/16 40,000、1/29 49,000 |\n| 買掛金 | 1/13 36,000 | 1/1 90,000、1/19 59,200 |\n| 売上 | 1/7 5,000 | 1/5 80,000、1/14 90,000、1/22 75,000 |\n| 仕入 | 1/6 72,000、1/19 59,200 |  |\n| 発送費 | 1/22 4,500 |  |\n\n**(2) 補助簿**\n\n- 現金出納帳は1/6 残高18,800円、1/22 14,300円、1/29 63,300円。次月繰越63,300円、収入・支出の合計各139,800円。\n- 売上帳は1/7 B品の返品5,000円、1/14 A品90,000円、1/22 A品60,000円・C品15,000円。総売上高245,000円、売上返品高5,000円、純売上高240,000円。\n- 商品有高帳（A品）は1/6 残高500個・単価178円・89,000円、1/14 残高200個・単価178円・35,600円、1/19 残高400個・単価174円・69,600円、1/22 残高200個・単価174円・34,800円。次月繰越200個・34,800円、受入・払出の合計各700個・123,000円。",
+    "modelAnswer": "**(1) 総勘定元帳**\n\n| 勘定 | 借方（日付・金額） | 貸方（日付・金額） |\n| --- | --- | --- |\n| 現金 | 1/1 90,800、1/29 49,000 | 1/6 72,000、1/22 4,500 |\n| 当座預金 | 1/1 390,000、1/14 90,000、1/16 40,000 | 1/13 36,000 |\n| 売掛金 | 1/1 233,000、1/5 80,000、1/22 75,000 | 1/7 5,000、1/16 40,000、1/29 49,000 |\n| 買掛金 | 1/13 36,000 | 1/1 90,000、1/19 59,200 |\n| 売上 | 1/7 5,000 | 1/5 80,000、1/14 90,000、1/22 75,000 |\n| 仕入 | 1/6 72,000、1/19 59,200 |  |\n| 発送費 | 1/22 4,500 |  |\n\n**(2) 補助簿**\n\n- 現金出納帳は1/6 残高18,800円、1/22 14,300円、1/29 63,300円。次月繰越63,300円、収入・支出の合計各139,800円。\n- 売上帳は1/7 B品の返品5,000円、1/14 A品90,000円、1/22 A品60,000円・C品15,000円。総売上高245,000円、売上返品高5,000円、純売上高240,000円。\n- 商品有高帳（A品）は1/6 残高500個・単価178円・89,000円、1/14 残高200個・単価178円・35,600円、1/19 残高400個・単価174円・69,600円、1/22 残高200個・単価174円・34,800円。次月繰越200個・34,800円、受入・払出の合計各700個・123,000円。",
+    "officialAnswerExample": true,
+    "explanation": "他店振出の小切手を受け取った時点では現金、直ちに当座預金へ預け入れた場合は当座預金で処理する。商品の仕入れごとに移動平均単価を更新し、払出にその単価を用いる。",
+    "scoringCriteria": "勘定科目、借方・貸方、金額を公式解答と照らし合わせてください。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zensho-boki/2025-101-2/q4-p06.webp",
+      "/images/questions/zensho-boki/2025-101-2/q4-p07.webp",
+      "/images/questions/zensho-boki/2025-101-2/q4-p12.webp",
+      "/images/questions/zensho-boki/2025-101-2/q4-p13.webp"
+    ],
+    "imageAltTexts": [
+      "簿記実務検定第101回2級 第4問 問題 5ページ",
+      "簿記実務検定第101回2級 第4問 問題 6ページ",
+      "簿記実務検定第101回2級 第4問 記入用紙",
+      "簿記実務検定第101回2級 第4問 記入用紙"
+    ],
+    "sourcePdfUrl": "https://zensho.or.jp/puf/download/exam/pastexam/2026/bk_101_2_exa.pdf",
+    "sourceAnswerUrl": "https://zensho.or.jp/puf/download/exam/pastexam/2026/bk_101_an.pdf#page=1",
+    "sourceAttribution": "出典：全国商業高等学校協会「令和7年度 第101回 簿記実務検定試験 第2級」第4問。",
+    "license": "ZENSHO-attributed"
+  },
+  {
+    "id": "zensho-boki-2025-101-2-q5",
+    "exam": "zensho-boki",
+    "year": 2025,
+    "examDate": "2026-01-25",
+    "fiscalYear": 2025,
+    "season": "annual",
+    "session": "zensho-boki-2-commercial",
+    "qNumber": 5,
+    "officialQuestionLabel": "2級 第5問",
+    "category": "決算整理と損益計算書",
+    "topicTags": [
+      "2級",
+      "商業簿記",
+      "決算整理と損益計算書"
+    ],
+    "difficulty": 2,
+    "type": "descriptive",
+    "question": "決算整理事項を反映して損益計算書を完成し、前払保険料を求めなさい。",
+    "answer": "| (1) 費用 | 金額 | 収益 | 金額 |\n| --- | ---: | --- | ---: |\n| 売上原価 | 2,015,000 | 売上高 | 3,317,000 |\n| 給料 | 285,400 | 受取地代 | 60,000 |\n| 貸倒引当金繰入 | 19,300 | 有価証券評価益 | 42,000 |\n| 減価償却費 | 191,600 |  |  |\n| 保険料 | 210,000 |  |  |\n| 通信費 | 16,800 |  |  |\n| 雑費 | 5,000 |  |  |\n| 支払利息 | 18,000 |  |  |\n| 当期純利益 | 657,900 |  |  |\n| 合計 | 3,419,000 | 合計 | 3,419,000 |\n\n**(2)** 54,000円。",
+    "modelAnswer": "| (1) 費用 | 金額 | 収益 | 金額 |\n| --- | ---: | --- | ---: |\n| 売上原価 | 2,015,000 | 売上高 | 3,317,000 |\n| 給料 | 285,400 | 受取地代 | 60,000 |\n| 貸倒引当金繰入 | 19,300 | 有価証券評価益 | 42,000 |\n| 減価償却費 | 191,600 |  |  |\n| 保険料 | 210,000 |  |  |\n| 通信費 | 16,800 |  |  |\n| 雑費 | 5,000 |  |  |\n| 支払利息 | 18,000 |  |  |\n| 当期純利益 | 657,900 |  |  |\n| 合計 | 3,419,000 | 合計 | 3,419,000 |\n\n**(2)** 54,000円。",
+    "officialAnswerExample": true,
+    "explanation": "期首棚卸153,000円に仕入1,976,000円を加え、期末棚卸114,000円を引く。前払保険料は12か月分216,000円のうち翌期に属する3か月分で、54,000円になる。",
+    "scoringCriteria": "勘定科目、借方・貸方、金額を公式解答と照らし合わせてください。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zensho-boki/2025-101-2/q5-p08.webp",
+      "/images/questions/zensho-boki/2025-101-2/q5-p14.webp"
+    ],
+    "imageAltTexts": [
+      "簿記実務検定第101回2級 第5問 問題 7ページ",
+      "簿記実務検定第101回2級 第5問 記入用紙"
+    ],
+    "sourcePdfUrl": "https://zensho.or.jp/puf/download/exam/pastexam/2026/bk_101_2_exa.pdf",
+    "sourceAnswerUrl": "https://zensho.or.jp/puf/download/exam/pastexam/2026/bk_101_an.pdf#page=2",
+    "sourceAttribution": "出典：全国商業高等学校協会「令和7年度 第101回 簿記実務検定試験 第2級」第5問。",
+    "license": "ZENSHO-attributed"
+  },
+  {
+    "id": "zensho-boki-2025-101-2-q6",
+    "exam": "zensho-boki",
+    "year": 2025,
+    "examDate": "2026-01-25",
+    "fiscalYear": 2025,
+    "season": "annual",
+    "session": "zensho-boki-2-commercial",
+    "qNumber": 6,
+    "officialQuestionLabel": "2級 第6問",
+    "category": "株式会社の取引",
+    "topicTags": [
+      "2級",
+      "商業簿記",
+      "株式会社の取引"
+    ],
+    "difficulty": 2,
+    "type": "descriptive",
+    "question": "(1) 株式の発行費用と法人税等を仕訳し、(2) 繰越利益剰余金勘定の次期繰越高を求めなさい。",
+    "answer": "| (1) | 借方 | 貸方 |\n| --- | --- | --- |\n| a | 株式交付費 89,000 | 普通預金 89,000 |\n| b | 法人税等 4,181,000 | 仮払法人税等 1,597,000、未払法人税等 2,584,000 |\n\n**(2)** 7,520,000円。",
+    "modelAnswer": "| (1) | 借方 | 貸方 |\n| --- | --- | --- |\n| a | 株式交付費 89,000 | 普通預金 89,000 |\n| b | 法人税等 4,181,000 | 仮払法人税等 1,597,000、未払法人税等 2,584,000 |\n\n**(2)** 7,520,000円。",
+    "officialAnswerExample": true,
+    "explanation": "法人税等の合計から中間納付額を控除すると未払額になる。繰越利益剰余金は期首8,200,000円から配当4,800,000円、利益準備金480,000円、別途積立金1,500,000円を引き、利益6,100,000円を足す。",
+    "scoringCriteria": "勘定科目、借方・貸方、金額を公式解答と照らし合わせてください。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zensho-boki/2025-101-2/q6-p10.webp"
+    ],
+    "imageAltTexts": [
+      "簿記実務検定第101回2級 第6問 問題 9ページ"
+    ],
+    "sourcePdfUrl": "https://zensho.or.jp/puf/download/exam/pastexam/2026/bk_101_2_exa.pdf",
+    "sourceAnswerUrl": "https://zensho.or.jp/puf/download/exam/pastexam/2026/bk_101_an.pdf#page=2",
+    "sourceAttribution": "出典：全国商業高等学校協会「令和7年度 第101回 簿記実務検定試験 第2級」第6問。",
+    "license": "ZENSHO-attributed"
+  }
+]

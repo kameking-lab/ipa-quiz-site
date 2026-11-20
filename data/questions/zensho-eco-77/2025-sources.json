@@ -1,0 +1,879 @@
+{
+  "plan4Index": 56,
+  "checkedAt": "2026-11-18",
+  "fiscalYear": 2025,
+  "examDate": "2026-02-01",
+  "round": 40,
+  "sourceIndexUrl": "https://zensho.or.jp/examination/pastexams/economics/",
+  "sourcePdfUrl": "https://zensho.or.jp/puf/download/exam/pastexam/2026/eco_40_business.pdf",
+  "sha256": "7f825cda39711a992630a1ac8a8d686efe9912f50dc6e1f9b0218ede7a9c55e3",
+  "pages": 17,
+  "questionPages": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "answerPage": 17,
+  "questionCount": 50,
+  "originalGroupCount": 13,
+  "processing": [
+    "改行・字間とルビの整形",
+    "大問を公式の解答欄50問に分割",
+    "下線の強調表示",
+    "Ａ／Ｂ／○を内部キーのサ／シ／タに対応付け、画面には公式記号を表示",
+    "語句完成の印刷済み部分を解答欄に保持",
+    "原図・原書類を切り出し、本文と重なる図表抽出テキストを画像に置換"
+  ],
+  "images": [
+    {
+      "url": "/images/questions/zensho-eco-77/2025-supply-demand.png",
+      "sha256": "6a1f91d75e55694c625e1b2a113488c44886db5f68e2ef9e6746f6efaca0c0bd"
+    },
+    {
+      "url": "/images/questions/zensho-eco-77/2025-wholesale.png",
+      "sha256": "3625d7b2ea2f36704e73eed2621649aeffeee9b8c7d7036a159f0a8fd3e41865"
+    },
+    {
+      "url": "/images/questions/zensho-eco-77/2025-order.png",
+      "sha256": "415bbb1038e8220664218285dab3cfb029b83be40c74f9ef73fd19b9b339e466"
+    },
+    {
+      "url": "/images/questions/zensho-eco-77/2025-receipt-fees.png",
+      "sha256": "c4af7edb768529e6edfab55a48b6541e91a2842a44f49b89a2a0da817163910b"
+    }
+  ],
+  "questions": [
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q1",
+      "officialQuestionLabel": "1-1",
+      "officialAnswer": "ウ",
+      "storedAnswer": "ウ",
+      "sourceBodySha256": "f727aa66c94bc8464d0e11d33904924ad1f5afa8e8a992acc277cc1f3d083e0a",
+      "sourcePassageSha256": "bd27ee4ed407df11d4a8d4ba1a2ad2e4348ab8853cf0912a69aca85663c55b8f",
+      "questionSha256": "b9c3b025c8473ed8a4162dc189df914917fada5c90f1e1a0cecace91c522c54e"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q2",
+      "officialQuestionLabel": "1-2",
+      "officialAnswer": "オ",
+      "storedAnswer": "オ",
+      "sourceBodySha256": "78bf3f6145fbb4d02239c466258e1a97f8bcf2d00d9e0de4760e74b336769e85",
+      "sourcePassageSha256": "bd27ee4ed407df11d4a8d4ba1a2ad2e4348ab8853cf0912a69aca85663c55b8f",
+      "questionSha256": "63defd8152719c34e9b4d65f5f6a083f5111111e7088ca163cd7f1d5ed68595b"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q3",
+      "officialQuestionLabel": "1-3",
+      "officialAnswer": "ア",
+      "storedAnswer": "ア",
+      "sourceBodySha256": "c11cc8b7ca254b8ae344bab230d20dea9f2a2d6380dfba0975ba8ba12a05a1ac",
+      "sourcePassageSha256": "bd27ee4ed407df11d4a8d4ba1a2ad2e4348ab8853cf0912a69aca85663c55b8f",
+      "questionSha256": "266ec7b7a02d50cfec289cf5f92d0ab0025882c75648ed6db2a79d4242d6ee2c"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q4",
+      "officialQuestionLabel": "1-4",
+      "officialAnswer": "イ",
+      "storedAnswer": "イ",
+      "sourceBodySha256": "fd8b41e4c6418f0a9d8750013f2b425398b41553c211500126eaf3c0354e94ea",
+      "sourcePassageSha256": "bd27ee4ed407df11d4a8d4ba1a2ad2e4348ab8853cf0912a69aca85663c55b8f",
+      "questionSha256": "3252ee3dd298538654c6fd377bed7625b067292c5177e54fbe84903ba38e0239"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q5",
+      "officialQuestionLabel": "1-5",
+      "officialAnswer": "エ",
+      "storedAnswer": "エ",
+      "sourceBodySha256": "3bb602f64ed61126a96c00296a496a2c0a68f625147863a1e92cf485e985e346",
+      "sourcePassageSha256": "bd27ee4ed407df11d4a8d4ba1a2ad2e4348ab8853cf0912a69aca85663c55b8f",
+      "questionSha256": "2cefac43fd354e348eb64031caa35d9e2acd258666b5d5e113e8fb7a48e8480e"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q6",
+      "officialQuestionLabel": "2-1",
+      "officialAnswer": "Ａ",
+      "storedAnswer": "サ",
+      "sourceBodySha256": "0c1f54bb1d0f606e60c5ef3e90ad23a1a7fad5914a6c07ef9ba196fd64a47d12",
+      "sourcePassageSha256": "ac98fb5cd7985849c2dd76f56bbe46fc5eabff10e7b076f2efe005fcdf8e62b3",
+      "questionSha256": "0020aaba19afbd8b4ff2bc3e08bf877e4d24307ce66c6a047d22860bd024bae7"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q7",
+      "officialQuestionLabel": "2-2",
+      "officialAnswer": "Ｂ",
+      "storedAnswer": "シ",
+      "sourceBodySha256": "68d2114935fae86e26b5e30f3a8e6342bc813876c841cf314b4e4b5082604ee8",
+      "sourcePassageSha256": "ac98fb5cd7985849c2dd76f56bbe46fc5eabff10e7b076f2efe005fcdf8e62b3",
+      "questionSha256": "1347eb061f52ef68ad740a6dbabb5f4d966e604b7313dc64e90a8f82ed54bf3a"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q8",
+      "officialQuestionLabel": "2-3",
+      "officialAnswer": "Ｂ",
+      "storedAnswer": "シ",
+      "sourceBodySha256": "33fedebf98b9459eee32af501332d13634a2885f57af6853435ae6f5f9586d1d",
+      "sourcePassageSha256": "ac98fb5cd7985849c2dd76f56bbe46fc5eabff10e7b076f2efe005fcdf8e62b3",
+      "questionSha256": "ed7848e0a023b17d6b6e38b15f03b180a97b2d496b507109a3a0bdca3c1a6bbd"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q9",
+      "officialQuestionLabel": "2-4",
+      "officialAnswer": "Ａ",
+      "storedAnswer": "サ",
+      "sourceBodySha256": "bc342a3dfe6632e29ce83eecbf016441e95f95c39818d21fc52fbc620e88f65a",
+      "sourcePassageSha256": "ac98fb5cd7985849c2dd76f56bbe46fc5eabff10e7b076f2efe005fcdf8e62b3",
+      "questionSha256": "7a95d69bc769ca507d528863ee10148b5b7325de750c49d0ce59363da5f16f3c"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q10",
+      "officialQuestionLabel": "2-5",
+      "officialAnswer": "Ａ",
+      "storedAnswer": "サ",
+      "sourceBodySha256": "aab62193d70b9ee5f6d98a27bfb0ddd7ba50f182471f221b90e875567fbb07db",
+      "sourcePassageSha256": "ac98fb5cd7985849c2dd76f56bbe46fc5eabff10e7b076f2efe005fcdf8e62b3",
+      "questionSha256": "4e048ae8d2c63f610084a9ccb9dae90c2444fd158ced2ff2f64a167a38f7ad03"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q11",
+      "officialQuestionLabel": "3-1",
+      "officialAnswer": "ウ",
+      "storedAnswer": "ウ",
+      "sourceBodySha256": "5e72f63c2b62f5a2bbbabb47f172c3089821e948f3c0c152070fc4a11b2117c9",
+      "sourcePassageSha256": "22096a3ebc960e715c2998d2ebed5f2e8e72818cd0e1b26a079fbe2e7914ea14",
+      "questionSha256": "d124f6d884a84c74d59118c1216765c708832e94f77306b40aa311aecc2bd0c3"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q12",
+      "officialQuestionLabel": "3-2",
+      "officialAnswer": "エ",
+      "storedAnswer": "エ",
+      "sourceBodySha256": "c71b109e2667abca698fbcc8be61da0679c3e26570d71bb7c799fb63582d71c9",
+      "sourcePassageSha256": "22096a3ebc960e715c2998d2ebed5f2e8e72818cd0e1b26a079fbe2e7914ea14",
+      "questionSha256": "20393dba36063b1bc4739d761e1dea1f900fb5f9e04ce2203b0c382c6cd87ec2"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q13",
+      "officialQuestionLabel": "3-3",
+      "officialAnswer": "ア",
+      "storedAnswer": "ア",
+      "sourceBodySha256": "3ccf9178a9f843c5aaa0becb268254df0f61f06221f32319ecaca065fa65bb18",
+      "sourcePassageSha256": "22096a3ebc960e715c2998d2ebed5f2e8e72818cd0e1b26a079fbe2e7914ea14",
+      "questionSha256": "683f5626b24105d791d686ee5eaf638718c76ac81c0d5b94b73298a3c37339ee"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q14",
+      "officialQuestionLabel": "3-4",
+      "officialAnswer": "イ",
+      "storedAnswer": "イ",
+      "sourceBodySha256": "ec8cb63a03b97e86e99d19f8081e109d791641569eb6607b427db8024fead3af",
+      "sourcePassageSha256": "22096a3ebc960e715c2998d2ebed5f2e8e72818cd0e1b26a079fbe2e7914ea14",
+      "questionSha256": "2a7198510ccc9e771dcebe134ba4ffb8c46f3e673e539cd36a5afead864f9fa7"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q15",
+      "officialQuestionLabel": "3-5",
+      "officialAnswer": "オ",
+      "storedAnswer": "オ",
+      "sourceBodySha256": "60f6058b59780e2f0e4cb6b2d8654c690560552760173edd5c5151b663022e81",
+      "sourcePassageSha256": "22096a3ebc960e715c2998d2ebed5f2e8e72818cd0e1b26a079fbe2e7914ea14",
+      "questionSha256": "9c60f52df47a602f0b0fb6cd60987fca66a012ee9c17e10721785ac408799ed3"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q16",
+      "officialQuestionLabel": "4-1",
+      "officialAnswer": "○",
+      "storedAnswer": "タ",
+      "sourceBodySha256": "b229329234a9f08bb27d96c16e4fe229d98fa4c949f82e511623ae4a96b1d374",
+      "sourcePassageSha256": "4e751f6697f607991a57cea44a8de32ecb6de608444f3d82307e9ae5c19d9e95",
+      "questionSha256": "2047350ba5da2514a320d8df5a0f70fffebe3e997fd48c16c3f0a4ba148c629d"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q17",
+      "officialQuestionLabel": "4-2",
+      "officialAnswer": "オ",
+      "storedAnswer": "オ",
+      "sourceBodySha256": "72730d72d703ff1e09c659a21869c58e1b085e42fecd07d117055e5b2ce8e0aa",
+      "sourcePassageSha256": "4e751f6697f607991a57cea44a8de32ecb6de608444f3d82307e9ae5c19d9e95",
+      "questionSha256": "c6056e726eb4d31886abaac29d32b9d204225e9de5864491f5617b8a34ed947f"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q18",
+      "officialQuestionLabel": "4-3",
+      "officialAnswer": "ア",
+      "storedAnswer": "ア",
+      "sourceBodySha256": "8e1082859203e3565fb783c7533e5000a2466bec60b9f0e45607363fa191b6d6",
+      "sourcePassageSha256": "4e751f6697f607991a57cea44a8de32ecb6de608444f3d82307e9ae5c19d9e95",
+      "questionSha256": "cc49a6d97224e7f864c6b1369fa5f76ad549f2b7bddc9cef8ade2c426ca88654"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q19",
+      "officialQuestionLabel": "4-4",
+      "officialAnswer": "エ",
+      "storedAnswer": "エ",
+      "sourceBodySha256": "bb8ba587416685a4099c5b176c6cda96e71f84cf3d83a3fcd8aef7ccf3fee6e5",
+      "sourcePassageSha256": "4e751f6697f607991a57cea44a8de32ecb6de608444f3d82307e9ae5c19d9e95",
+      "questionSha256": "54a7dae72390d2be22894e56ced5f7d2e778bd089b02517d4ac2ee71efe24a9a"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q20",
+      "officialQuestionLabel": "4-5",
+      "officialAnswer": "○",
+      "storedAnswer": "タ",
+      "sourceBodySha256": "ff468469ca40c32ca56cb1e1219952e4d46e66f48adcdb7822d37b60e55528b3",
+      "sourcePassageSha256": "4e751f6697f607991a57cea44a8de32ecb6de608444f3d82307e9ae5c19d9e95",
+      "questionSha256": "2e562eb5b8da9d75371f89abd36eb9ca5e9fef0ae23b5f93ed90ea8afbd4e0c1"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q21",
+      "officialQuestionLabel": "5-1",
+      "officialAnswer": "イ",
+      "storedAnswer": "イ",
+      "sourceBodySha256": "ed851f93a7eb185d9d4d35889b70a3550855ad513ebde312b67636cabb89bce5",
+      "sourcePassageSha256": "97527f16a83dad681bfc67686cf359817d8aff039e656ffef47685e7cc975915",
+      "questionSha256": "4503f9fecdab505316a02cbdc2cd65b65c4ac1177c7610401a047717f9bcec7b"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q22",
+      "officialQuestionLabel": "5-2",
+      "officialAnswer": "ア",
+      "storedAnswer": "ア",
+      "sourceBodySha256": "6baca1be3778e5925dff7be084d2d13b8af4d1bd2f1773abf199381f63524ec1",
+      "sourcePassageSha256": "97527f16a83dad681bfc67686cf359817d8aff039e656ffef47685e7cc975915",
+      "questionSha256": "c85f670c6069b5dfc1ae7ea1d2cf7bb0f54395860752b02aa0993c1559d94715"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q23",
+      "officialQuestionLabel": "5-3",
+      "officialAnswer": "ウ",
+      "storedAnswer": "ウ",
+      "sourceBodySha256": "9569b8dddce89dc8b85ec8d53e908aafa5f78ec5e3c575f2363bbfddd589ee64",
+      "sourcePassageSha256": "97527f16a83dad681bfc67686cf359817d8aff039e656ffef47685e7cc975915",
+      "questionSha256": "ebcbf8af1715ea3ab5ebdaf7d3a087484c1ca2565598ae3614ec30cb0101149c"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q24",
+      "officialQuestionLabel": "5-4",
+      "officialAnswer": "ウ",
+      "storedAnswer": "ウ",
+      "sourceBodySha256": "49b5e8ff3c91d3837e54f4194b4e0fdfedc47720da9922bc47f3d8fc70fddc9d",
+      "sourcePassageSha256": "97527f16a83dad681bfc67686cf359817d8aff039e656ffef47685e7cc975915",
+      "questionSha256": "e9f03a126d80a2f2ebaa8f0999e75e6eff84e0e6a488cd9eb2cd823240822bca"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q25",
+      "officialQuestionLabel": "5-5",
+      "officialAnswer": "ア",
+      "storedAnswer": "ア",
+      "sourceBodySha256": "2bb71280f4aeecf847f2e8ae9d949d4f49032ba1287016bc020068968a21f114",
+      "sourcePassageSha256": "97527f16a83dad681bfc67686cf359817d8aff039e656ffef47685e7cc975915",
+      "questionSha256": "b0567ebd3bfa89f15dfdbfd3f5a3b0876979e4eca1b0c360bad531a5e5e26867"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q26",
+      "officialQuestionLabel": "6-1",
+      "officialAnswer": "供給量",
+      "storedAnswer": "供給",
+      "sourceBodySha256": "c90f16457ac2ce4f4970d5914680f6490babb7a6921c4ea54856c315ed277938",
+      "sourcePassageSha256": "2ce0327d9056fe8c6aad7edae25ced9737897526f460b55764ae38778c230f0a",
+      "questionSha256": "b16db08c3a1bbed191b9db50db81747bd0bc29ab4bb2a91fd22ab2d9240e5ac8"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q27",
+      "officialQuestionLabel": "6-2",
+      "officialAnswer": "イ",
+      "storedAnswer": "イ",
+      "sourceBodySha256": "6baca1be3778e5925dff7be084d2d13b8af4d1bd2f1773abf199381f63524ec1",
+      "sourcePassageSha256": "2ce0327d9056fe8c6aad7edae25ced9737897526f460b55764ae38778c230f0a",
+      "questionSha256": "d50ca76c860aaebee05a157c0ffe4e7cb688df489348689c17d5aa80ef08ef5d"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q28",
+      "officialQuestionLabel": "7-1",
+      "officialAnswer": "ウ",
+      "storedAnswer": "ウ",
+      "sourceBodySha256": "8036077cce11441399933d4315e4f838e16ef28b3b1a69d3b3670e1fd093a49b",
+      "sourcePassageSha256": "dddd9f00e1a42adf52a5e2fb2e159d826dee8efb4a788937045049df1acd9ff4",
+      "questionSha256": "3e098f830686bbb226ab3f75bf6d4a6030060a56c97830afd36a96a6035a061f"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q29",
+      "officialQuestionLabel": "7-2",
+      "officialAnswer": "ア",
+      "storedAnswer": "ア",
+      "sourceBodySha256": "5e4c87645bb94a2c4b2fa8a03c7caf735f3c4789b16910f59acbb9b9e54079db",
+      "sourcePassageSha256": "dddd9f00e1a42adf52a5e2fb2e159d826dee8efb4a788937045049df1acd9ff4",
+      "questionSha256": "92821bd9cb979bc86cf9d1c9fbbb8a74a9c2bed3274e52aafb5d917c5e6c5bf6"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q30",
+      "officialQuestionLabel": "7-3",
+      "officialAnswer": "ビッグデータ",
+      "storedAnswer": "ビッグデータ",
+      "sourceBodySha256": "49bf67180bbc4b6aa75d11e459d05b389f219d68cbf6b5a79762586f50440285",
+      "sourcePassageSha256": "dddd9f00e1a42adf52a5e2fb2e159d826dee8efb4a788937045049df1acd9ff4",
+      "questionSha256": "969fa4f6a7add46bf7757c3f40209fb5c9a8c85f9ec05abf4e41788190b4370d"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q31",
+      "officialQuestionLabel": "8-1",
+      "officialAnswer": "フランチャイズ・チェーン",
+      "storedAnswer": "フランチャイズ",
+      "sourceBodySha256": "a41fdd27c72dd6bc58ad7cdb16dad020a1825d6ca6896bf23377655025b5783c",
+      "sourcePassageSha256": "64101dfcd80b08386b3192c67a2686a978b3b1db9d7099b3e4c45d90a0d2a2ee",
+      "questionSha256": "fc5e2d558760dae327dcf3d37cef20e9353d8bc06f04ba14ace5f915d31d4f10"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q32",
+      "officialQuestionLabel": "8-2",
+      "officialAnswer": "イ",
+      "storedAnswer": "イ",
+      "sourceBodySha256": "b1070a94110e57cc215f005c7035dca2e810831d78a3653346eb505391daab21",
+      "sourcePassageSha256": "64101dfcd80b08386b3192c67a2686a978b3b1db9d7099b3e4c45d90a0d2a2ee",
+      "questionSha256": "c1d1ca0fa966491990bdce4b28abe8615a92e10331fb58cf25096ae6bb6b68d1"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q33",
+      "officialQuestionLabel": "8-3",
+      "officialAnswer": "ア",
+      "storedAnswer": "ア",
+      "sourceBodySha256": "997f519fb4e6d7aae5705cc8260b3e8cc4209515f2452b23fce4b774268733f4",
+      "sourcePassageSha256": "64101dfcd80b08386b3192c67a2686a978b3b1db9d7099b3e4c45d90a0d2a2ee",
+      "questionSha256": "5c3ef1776e1cc9dc798183119e9c5b450da0d48dddbf1fe6aeace52db672d8ba"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q34",
+      "officialQuestionLabel": "9-1",
+      "officialAnswer": "ウ",
+      "storedAnswer": "ウ",
+      "sourceBodySha256": "ed851f93a7eb185d9d4d35889b70a3550855ad513ebde312b67636cabb89bce5",
+      "sourcePassageSha256": "63ba958e38200eff3776a5f026c0e2858ea41d873462f14758265a455436dac2",
+      "questionSha256": "47064bf7d88d0b3c4cfd16eb70ba3a6fea3f9a9e4fe44f6533e41c8355a87cb5"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q35",
+      "officialQuestionLabel": "9-2",
+      "officialAnswer": "為替業務",
+      "storedAnswer": "為替",
+      "sourceBodySha256": "fd7543ce5ccbca62572e02a91903355cae26086f44807c64d5b16d28b1658e61",
+      "sourcePassageSha256": "63ba958e38200eff3776a5f026c0e2858ea41d873462f14758265a455436dac2",
+      "questionSha256": "579361eca4761b6ca9d397617b2c48f3c030589bc69f67410a93edcdb567871d"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q36",
+      "officialQuestionLabel": "10-1",
+      "officialAnswer": "イ",
+      "storedAnswer": "イ",
+      "sourceBodySha256": "2a0106d35011c53d9a497199dd1110978eb1d145b717888c82855a8b319961a5",
+      "sourcePassageSha256": "12a46db56658b531ed8cde9cf9cb63c5a6814c18361ad0ed539b5e697a18dfd2",
+      "questionSha256": "9822439d72bb3acf05367dde86278a421135f9893752e0a1a1f255b82b6b7ad8"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q37",
+      "officialQuestionLabel": "10-2",
+      "officialAnswer": "ア",
+      "storedAnswer": "ア",
+      "sourceBodySha256": "f9f7ffed7ffe847fea6de113e82c8adf2527ed1902aba53ed87243443cd3f12f",
+      "sourcePassageSha256": "12a46db56658b531ed8cde9cf9cb63c5a6814c18361ad0ed539b5e697a18dfd2",
+      "questionSha256": "0d2be963fe968fb4ac47dfbb1bd150aa9615e8863eabac6a26e59a89b41b6c52"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q38",
+      "officialQuestionLabel": "10-3",
+      "officialAnswer": "ウ",
+      "storedAnswer": "ウ",
+      "sourceBodySha256": "df4cabb589eb1171302c1111a07a1455d3071b6da04f1c70f61c3dce0d9e6d4f",
+      "sourcePassageSha256": "12a46db56658b531ed8cde9cf9cb63c5a6814c18361ad0ed539b5e697a18dfd2",
+      "questionSha256": "0663a0d900099a8b4928c5678fedc37cf407d9aa726427d44ce0ed91a22dfec7"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q39",
+      "officialQuestionLabel": "10-4",
+      "officialAnswer": "ア",
+      "storedAnswer": "ア",
+      "sourceBodySha256": "d805a0b4abc259b1ab2558933661f1dd84ff6d3cd29b529971b946717cfb0c6b",
+      "sourcePassageSha256": "12a46db56658b531ed8cde9cf9cb63c5a6814c18361ad0ed539b5e697a18dfd2",
+      "questionSha256": "830f480e35af192902e20a95c71feda17b4ad8ee95c5d850d8e9da7b0b976832"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q40",
+      "officialQuestionLabel": "11-1",
+      "officialAnswer": "サブスクリプション",
+      "storedAnswer": "サブスクリプション",
+      "sourceBodySha256": "d32bc1092f4fe2c11b2118a8464629e009dc69d251bd41945885c945b32d8e81",
+      "sourcePassageSha256": "f36533848f8bf6d21a86ca0cb58004b922488adbce42bb75e63225bf28cba9ef",
+      "questionSha256": "d1fd7a03ae26f4202b3d9c841d2a637dd798ded856f40eb53d2be0c5a6bd2d4d"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q41",
+      "officialQuestionLabel": "11-2",
+      "officialAnswer": "ウ",
+      "storedAnswer": "ウ",
+      "sourceBodySha256": "75652b377a812b98c2a85c437638d41ae9ca487280f8fae34a07efc63cfc728b",
+      "sourcePassageSha256": "f36533848f8bf6d21a86ca0cb58004b922488adbce42bb75e63225bf28cba9ef",
+      "questionSha256": "b14872a3f3a1fe3c01cdd66375d74c950a5dda34923645a179b0209fea465269"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q42",
+      "officialQuestionLabel": "11-3",
+      "officialAnswer": "ウ",
+      "storedAnswer": "ウ",
+      "sourceBodySha256": "55c65b009370519b9e9a25feacf7c10e3f4a54c3b7fec4ec607d239e7b5186a1",
+      "sourcePassageSha256": "f36533848f8bf6d21a86ca0cb58004b922488adbce42bb75e63225bf28cba9ef",
+      "questionSha256": "ff490a82ae1fc3582875e1546acc9e6782f509ee1b8e64f00c1f609eeec305d4"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q43",
+      "officialQuestionLabel": "12-1",
+      "officialAnswer": "イ",
+      "storedAnswer": "イ",
+      "sourceBodySha256": "0e69e9c6751cd8e35af845fa3db8825a739c4badc9859b6d1e0f3690a25ffbc5",
+      "sourcePassageSha256": "86d28f8241e5e2467c4a89ac4fd0f7abefda162e1919c38f272bd9309c8f4aca",
+      "questionSha256": "6369cfa1655a103f6c4b73a09eb182a201ff2254e03c5789be5083cc85c8bba4"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q44",
+      "officialQuestionLabel": "12-2",
+      "officialAnswer": "ウ",
+      "storedAnswer": "ウ",
+      "sourceBodySha256": "5e4c87645bb94a2c4b2fa8a03c7caf735f3c4789b16910f59acbb9b9e54079db",
+      "sourcePassageSha256": "86d28f8241e5e2467c4a89ac4fd0f7abefda162e1919c38f272bd9309c8f4aca",
+      "questionSha256": "dd214a3f362a0ebccf16302315bf14d25cf7ce7740f2ca307bb883ed45dd25c5"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q45",
+      "officialQuestionLabel": "13-1",
+      "officialAnswer": "イ",
+      "storedAnswer": "イ",
+      "sourceBodySha256": "0e69e9c6751cd8e35af845fa3db8825a739c4badc9859b6d1e0f3690a25ffbc5",
+      "sourcePassageSha256": "94c6c729d7bf4acb8bcb63e4a25726858ba1c1397efc823811073a2fe9a9285a",
+      "questionSha256": "cfbf4f0709b7859bc341f969b5ada3a9c014c4defa8bf6bfab6b88c2f6d791eb"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q46",
+      "officialQuestionLabel": "13-2",
+      "officialAnswer": "ア",
+      "storedAnswer": "ア",
+      "sourceBodySha256": "5e4c87645bb94a2c4b2fa8a03c7caf735f3c4789b16910f59acbb9b9e54079db",
+      "sourcePassageSha256": "94c6c729d7bf4acb8bcb63e4a25726858ba1c1397efc823811073a2fe9a9285a",
+      "questionSha256": "b98b5488f07b0b4714256fcaae17af41ee0abb313cf9a32ef1ef46966fdd3aa3"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q47",
+      "officialQuestionLabel": "13-3",
+      "officialAnswer": "イ",
+      "storedAnswer": "イ",
+      "sourceBodySha256": "376e191157a44d590cea1597c75aab447c19cb9ac1abfe3c8e0cff45a8d6d3ab",
+      "sourcePassageSha256": "3f3f637338d2b7061dd15fca7d14abbeb9d979293ecde9cbbe0679e8f04c2397",
+      "questionSha256": "82005c188e2432af49d654a5b5f3a833e16d9e6d29c061c3bfc57a036a37f3e3"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q48",
+      "officialQuestionLabel": "13-4",
+      "officialAnswer": "イ",
+      "storedAnswer": "イ",
+      "sourceBodySha256": "1f6a306bf2fc7d545ecd71c3935cf0f7c4a2065216445069afffba5c64e145f9",
+      "sourcePassageSha256": "3f3f637338d2b7061dd15fca7d14abbeb9d979293ecde9cbbe0679e8f04c2397",
+      "questionSha256": "f9ed0d81bd576ad34a4ab30ecb31941c3d4707558a13e320e2f55929812bbd22"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q49",
+      "officialQuestionLabel": "13-5",
+      "officialAnswer": "ア",
+      "storedAnswer": "ア",
+      "sourceBodySha256": "4129a261a068fba2c115025510f8aab19bd561b98a50353303403b034d5b7e52",
+      "sourcePassageSha256": "3f3f637338d2b7061dd15fca7d14abbeb9d979293ecde9cbbe0679e8f04c2397",
+      "questionSha256": "2ec0d4929e8b28d4bce424187d96b0d971448daba57ba0e5f970dda7a56da517"
+    },
+    {
+      "id": "zensho-eco-77-2025-annual-gakka-q50",
+      "officialQuestionLabel": "13-6",
+      "officialAnswer": "ウ",
+      "storedAnswer": "ウ",
+      "sourceBodySha256": "20d363077a6436c6714c1dbff58b966cfd85be58911fdd42c0c26ccaf065b4b7",
+      "sourcePassageSha256": "3f3f637338d2b7061dd15fca7d14abbeb9d979293ecde9cbbe0679e8f04c2397",
+      "questionSha256": "519d24a2fa8da7318d998d10c524669fec2cd170dc975ddc86291bf660f2fb0d"
+    }
+  ],
+  "officialAnswerTables": [
+    {
+      "group": 1,
+      "bbox": [
+        36.85020616319444,
+        102.04612731933594,
+        228.18910217285156,
+        153.07015991210938
+      ],
+      "cells": [
+        [
+          "1",
+          "⑴",
+          "⑵",
+          "⑶",
+          "⑷",
+          "⑸"
+        ],
+        [
+          null,
+          "ウ",
+          "オ",
+          "ア",
+          "イ",
+          "エ"
+        ]
+      ]
+    },
+    {
+      "group": 2,
+      "bbox": [
+        36.85020616319444,
+        167.2430877685547,
+        228.18910217285156,
+        218.26708984375
+      ],
+      "cells": [
+        [
+          "2",
+          "⑴",
+          "⑵",
+          "⑶",
+          "⑷",
+          "⑸"
+        ],
+        [
+          null,
+          "A",
+          "B",
+          "B",
+          "A",
+          "A"
+        ]
+      ]
+    },
+    {
+      "group": 3,
+      "bbox": [
+        36.85020616319444,
+        232.4399871826172,
+        228.18910217285156,
+        283.4639892578125
+      ],
+      "cells": [
+        [
+          "3",
+          "⑴",
+          "⑵",
+          "⑶",
+          "⑷",
+          "⑸"
+        ],
+        [
+          null,
+          "ウ",
+          "エ",
+          "ア",
+          "イ",
+          "オ"
+        ]
+      ]
+    },
+    {
+      "group": 4,
+      "bbox": [
+        250.86610412597656,
+        232.4399871826172,
+        442.2051086425781,
+        283.4639892578125
+      ],
+      "cells": [
+        [
+          "4",
+          "⑴",
+          "⑵",
+          "⑶",
+          "⑷",
+          "⑸"
+        ],
+        [
+          null,
+          "○",
+          "オ",
+          "ア",
+          "エ",
+          "○"
+        ]
+      ]
+    },
+    {
+      "group": 5,
+      "bbox": [
+        36.85020616319444,
+        362.83387756347656,
+        235.27553231375558,
+        413.8580017089844
+      ],
+      "cells": [
+        [
+          "5",
+          "問１",
+          "問２",
+          "問３",
+          "問４",
+          "問５"
+        ],
+        [
+          null,
+          "イ",
+          "ア",
+          "ウ",
+          "ウ",
+          "ア"
+        ]
+      ]
+    },
+    {
+      "group": 6,
+      "bbox": [
+        257.95208740234375,
+        362.83387756347656,
+        420.94483947753906,
+        413.8580017089844
+      ],
+      "cells": [
+        [
+          "6",
+          "問１",
+          null,
+          null,
+          "問２"
+        ],
+        [
+          null,
+          "供",
+          "給",
+          "量",
+          "イ"
+        ]
+      ]
+    },
+    {
+      "group": 7,
+      "bbox": [
+        36.85020616319444,
+        428.0301208496094,
+        345.826904296875,
+        479.0543670654297
+      ],
+      "cells": [
+        [
+          "7",
+          "問１",
+          "問２",
+          "問３",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          "ウ",
+          "ア",
+          "ビ",
+          "ッ",
+          "グ",
+          "デ",
+          "ー",
+          "タ"
+        ]
+      ]
+    },
+    {
+      "group": 8,
+      "bbox": [
+        36.85020616319444,
+        493.22711181640625,
+        456.3780110677083,
+        544.2514038085938
+      ],
+      "cells": [
+        [
+          "8",
+          "問１",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "問２",
+          "問３"
+        ],
+        [
+          null,
+          "フ",
+          "ラ",
+          "ン",
+          "チ",
+          "ャ",
+          "イ",
+          "ズ",
+          "・チェーン",
+          "イ",
+          "ア"
+        ]
+      ]
+    },
+    {
+      "group": 9,
+      "bbox": [
+        36.85020616319444,
+        558.4240112304688,
+        198.4252428327288,
+        609.4481353759766
+      ],
+      "cells": [
+        [
+          "9",
+          "問１",
+          "問２",
+          null,
+          null
+        ],
+        [
+          null,
+          "ウ",
+          "為",
+          "替",
+          "業務"
+        ]
+      ]
+    },
+    {
+      "group": 10,
+      "bbox": [
+        221.1020965576172,
+        558.4240112304688,
+        382.70690155029297,
+        609.4481353759766
+      ],
+      "cells": [
+        [
+          "10",
+          "問１",
+          "問２",
+          "問３",
+          "問４"
+        ],
+        [
+          null,
+          "イ",
+          "ア",
+          "ウ",
+          "ア"
+        ]
+      ]
+    },
+    {
+      "group": 11,
+      "bbox": [
+        36.85020616319444,
+        623.6211547851562,
+        456.3780110677083,
+        674.645263671875
+      ],
+      "cells": [
+        [
+          "11",
+          "問１",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "問２",
+          "問３"
+        ],
+        [
+          null,
+          "サ",
+          "ブ",
+          "ス",
+          "ク",
+          "リ",
+          "プ",
+          "シ",
+          "ョ",
+          "ン",
+          "ウ",
+          "ウ"
+        ]
+      ]
+    },
+    {
+      "group": 12,
+      "bbox": [
+        36.85020616319444,
+        688.8180847167969,
+        123.95131960782138,
+        739.8421936035156
+      ],
+      "cells": [
+        [
+          "12",
+          "問１",
+          "問２"
+        ],
+        [
+          null,
+          "イ",
+          "ウ"
+        ]
+      ]
+    },
+    {
+      "group": 13,
+      "bbox": [
+        147.40109252929688,
+        688.8180847167969,
+        382.70690155029297,
+        739.8421936035156
+      ],
+      "cells": [
+        [
+          "13",
+          "問１",
+          "問２",
+          "問３",
+          "問４",
+          "問５",
+          "問６"
+        ],
+        [
+          null,
+          "イ",
+          "ア",
+          "イ",
+          "イ",
+          "ア",
+          "ウ"
+        ]
+      ]
+    }
+  ]
+}

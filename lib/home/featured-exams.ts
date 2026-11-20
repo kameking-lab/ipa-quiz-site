@@ -1,4 +1,5 @@
 import calendar from "./featured-calendar.generated.json";
+import { qualificationDisplayKey } from "@/lib/qualifications/groups";
 
 export interface FeaturedExamDate { date: string; endDate?: string; sourceUrl: string; note?: string }
 export interface FeaturedCalendarExam {
@@ -13,7 +14,7 @@ export const HOME_EXAM_CALENDAR: readonly FeaturedCalendarExam[] = calendar.exam
 
 /** Latest qualification first; choose up to two others by attempts (including
  * reattempts), then display those by recency. Self-contained for pre-paint sizing. */
-export function frequentExamKeys(entries: unknown, keys: readonly string[], aliases: Readonly<Record<string, string>> = {}, excludedIds: readonly string[] = []): string[] {
+export function frequentExamKeys(entries: unknown, keys: readonly string[], aliases: Readonly<Record<string, string>> = {}, excludedIds: readonly string[] = [], displayKeys: Readonly<Record<string, string>> = {}): string[] {
   if (!Array.isArray(entries)) return [];
   const longestFirst = [...keys].sort((a, b) => b.length - a.length);
   const aliasPrefixes = Object.keys(aliases).sort((a, b) => b.length - a.length);
@@ -25,8 +26,9 @@ export function frequentExamKeys(entries: unknown, keys: readonly string[], alia
     const key = alias ? aliases[alias] : automotive ? keys.find(key => key === `jidosha-${automotive[1]}`)
       : longestFirst.find(key => entry.id.startsWith(`${key}-`));
     if (!key || !keys.includes(key)) continue;
-    const previous = counts.get(key) ?? { count: 0, latest: -Infinity };
-    counts.set(key, { count: previous.count + 1, latest: Math.max(previous.latest, entry.at) });
+    const displayKey = displayKeys[key] ?? key;
+    const previous = counts.get(displayKey) ?? { count: 0, latest: -Infinity };
+    counts.set(displayKey, { count: previous.count + 1, latest: Math.max(previous.latest, entry.at) });
   }
   const byRecency = ([a, x]: [string, { latest: number }], [b, y]: [string, { latest: number }]) =>
     y.latest - x.latest || a.localeCompare(b, "en");
@@ -47,15 +49,16 @@ export function upcomingExamPicks(keys: readonly string[], excluded: readonly st
   rows: readonly FeaturedCalendarExam[] = HOME_EXAM_CALENDAR) {
   const today = japanDate(now);
   const limit = new Date(Date.parse(`${today}T00:00:00Z`) + 90 * 86400000).toISOString().slice(0, 10);
-  const available = new Set(keys.filter(key => !excluded.includes(key)));
+  const available = new Set(keys.filter(key => !excluded.includes(qualificationDisplayKey(key)) && !excluded.includes(key)));
   const nextByKey = new Map<string, { key: string; candidates: number; next?: FeaturedExamDate }>();
   for (const row of rows) {
     if (!available.has(row.key) || row.scheduleMode === "ondemand" || row.candidates === null || row.candidates <= 0) continue;
     const next = [...row.dates].filter(item => (item.endDate ?? item.date) >= today).sort((a, b) => a.date.localeCompare(b.date))[0];
-    const previous = nextByKey.get(row.key);
-    if (!previous || (next && (!previous.next || next.date < previous.next.date))) {
-      nextByKey.set(row.key, { key: row.key, candidates: row.candidates ?? 0, next });
-    }
+    const key = qualificationDisplayKey(row.key);
+    const previous = nextByKey.get(key);
+    // Several children may share the same nationwide candidate count.
+    nextByKey.set(key, { key, candidates: Math.max(previous?.candidates ?? 0, row.candidates),
+      next: next && (!previous?.next || next.date < previous.next.date) ? next : previous?.next });
   }
   const tier = (date?: string) => date ? date <= limit ? 0 : 1 : 2;
   return [...nextByKey.values()].sort((a, b) => {

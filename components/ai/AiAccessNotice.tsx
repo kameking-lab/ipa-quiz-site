@@ -16,7 +16,7 @@ export function useAiAccessNotice(contextKey: string) {
   };
 }
 
-export function AiAccessNotice({message}: {message?:string|null}) {
+export function AiAccessNotice({message, continuationLinks = true}: {message?:string|null; continuationLinks?: boolean}) {
   if (!aiAccessClaimsEnabled()) return null;
   return <aside aria-label="AIの利用条件" className="my-2 space-y-1 text-xs leading-relaxed text-zinc-600 dark:text-zinc-400">
     <details>
@@ -27,8 +27,8 @@ export function AiAccessNotice({message}: {message?:string|null}) {
     </details>
     {message ? <p role="status" aria-live="polite">{message}</p> : null}
     {hasAiQuotaContinuation(message) ? <nav aria-label="無料AI枠の上限後の選択肢" className="flex flex-wrap gap-x-4 gap-y-2">
-      <Link className="underline underline-offset-2" href="/search">無料の問題検索へ</Link>
-      <Link className="underline underline-offset-2" href="/review">保存済み履歴の復習へ</Link>
+      {continuationLinks &&       <Link className="underline underline-offset-2" href="/search">無料の問題検索へ</Link>}
+      {continuationLinks &&       <Link className="underline underline-offset-2" href="/review">保存済み履歴の復習へ</Link>}
       <Link className="underline underline-offset-2" href="/billing">有料プランの条件・受付状況を確認</Link>
     </nav> : null}
   </aside>;

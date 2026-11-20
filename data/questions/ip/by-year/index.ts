@@ -24,6 +24,7 @@ import { IP_QUESTIONS_2020_AUTUMN_AM } from "./2020-autumn-am";
 import { IP_QUESTIONS_2022_CBT_AM } from "./2022-cbt-am";
 import { IP_QUESTIONS_2023_CBT_AM } from "./2023-cbt-am";
 import { IP_QUESTIONS_2024_CBT_AM } from "./2024-cbt-am";
+import { IP_QUESTIONS_2025_CBT_AM } from "./2025-cbt-am";
 
 export const BY_YEAR_QUESTIONS: Question[] = [
   ...IP_QUESTIONS_2009_AUTUMN_AM,
@@ -50,4 +51,5 @@ export const BY_YEAR_QUESTIONS: Question[] = [
   ...IP_QUESTIONS_2022_CBT_AM,
   ...IP_QUESTIONS_2023_CBT_AM,
   ...IP_QUESTIONS_2024_CBT_AM,
+  ...IP_QUESTIONS_2025_CBT_AM,
 ];

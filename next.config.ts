@@ -125,13 +125,23 @@ const nextConfig: NextConfig = {
       "**/node_modules/@prisma/client/runtime/*.wasm-base64.js",
       "**/node_modules/@prisma/client/runtime/*.wasm-base64.mjs",
       "**/node_modules/@prisma/client/runtime/*.map",
+      // Node functions load the native library engine (.so.node); the WebAssembly
+      // engine is only for edge/driver-adapter clients and is not used here.
+      "**/node_modules/.prisma/client/query_engine_bg.wasm",
+      "**/node_modules/.prisma/client/query_engine_bg.js",
+      "**/node_modules/.prisma/client/query_engine-windows.dll.node",
     ],
+    // The exam-library copilot answers from the official paper only (no RAG), so the
+    // copilot search index and local audit logs are not needed and pushed the function
+    // past Vercel's 250MB limit (265MB) once the question corpus grew.
+    "/api/copilot/exam-library": ["./generated/copilot/**/*"],
   },
   outputFileTracingIncludes: {
     "/sw.js": ["./lib/pwa/sw.js"],
     "/*": ["./generated/question-corpus/**/*"],
     "/e-learning/exams": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json", "./data/exam-library/pe-first/*.json"],
     "/api/home/resume": ["./data/exam-library/pe-first/*.json"],
+    "/api/study-plan/catalog/*": ["./data/exam-library/papers/*.json", "./data/exam-library/pe-first/*.json", "./data/exam-library/presentation/*.json"],
     // Prebuilt copilot index, search docs and sharded questions (pnpm copilot:index:write,
     // run by pnpm build). /api/copilot reads only these in production, not data/questions.
     "/api/copilot": ["./generated/copilot/**/*"],
@@ -161,6 +171,11 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
+      { source: "/features/ai-explanation", destination: "/features/copilot", statusCode: 301 },
+      { source: "/features/essay-grading", destination: "/essay", statusCode: 301 },
+      // Retired duplicate entry points; query values are preserved by Next.
+      { source: "/account/study-plan", destination: "/study-plan", statusCode: 301 },
+      { source: "/quiz/review", destination: "/review", statusCode: 301 },
       // Consolidated account sub-pages → dashboard
       // (no query string in destination; tabs default to 'overview' and the dashboard's
       // hashchange listener handles deep linking via #tab=...)

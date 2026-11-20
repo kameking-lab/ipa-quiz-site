@@ -1,11 +1,11 @@
 import { TsuginoWelcome } from "@/components/analytics/TsuginoWelcome";
 import { referralPracticeHref } from "@/lib/questions/referral-practice";
 import { questionNumberLabel } from "@/lib/questions/display";
-import { practiceSessionLabel } from "@/lib/questions/practice-session";
+import { practiceCategoryLabel, practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChevronRight, Tags } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 import type { ExamCode } from "@/lib/questions/types";
 import { examLabel } from "@/lib/utils";
@@ -55,11 +55,12 @@ export async function generateMetadata({
   }
   const questionCount = getQuestionsByExamStrict(exam as ExamCode)
     .filter((q) => q.category === category).length;
-  const title = `${examLabel(exam as ExamCode)} ${category} 過去問・解説`;
-  const description = `${examLabel(exam as ExamCode)}試験の「${category}」分野の過去問をまとめて確認できます。AI解説付きで理解を深められます。`;
+  const categoryLabel = practiceCategoryLabel(category, exam as ExamCode);
+  const title = `${examLabel(exam as ExamCode)} ${categoryLabel} 過去問・解説`;
+  const description = `${examLabel(exam as ExamCode)}試験の「${categoryLabel}」分野の過去問をまとめて確認できます。AI解説付きで理解を深められます。`;
   const ogImageUrl = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
     type: "topic",
-    title: category,
+    title: categoryLabel,
     subtitle: `${examLabel(exam as ExamCode)} 分野別`,
   }).toString()}`;
   return {
@@ -94,6 +95,7 @@ export default async function ExamTopicPage({
     .filter((q) => q.category === category)
     .sort((a, b) => (b.year !== a.year ? b.year - a.year : a.qNumber - b.qNumber));
   if (pool.length === 0) notFound();
+  const categoryLabel = practiceCategoryLabel(category, code);
 
   const absUrl = `${SITE_BASE_URL}/${exam}/topic/${encodeURIComponent(category)}`;
 
@@ -102,7 +104,7 @@ export default async function ExamTopicPage({
     "@graph": [
       {
         "@type": "CollectionPage",
-        name: `${examLabel(code)} ${category} 過去問`,
+        name: `${examLabel(code)} ${categoryLabel} 過去問`,
         url: absUrl,
         inLanguage: "ja",
       },
@@ -116,7 +118,7 @@ export default async function ExamTopicPage({
             name: examLabel(code),
             item: `${SITE_BASE_URL}/${exam}`,
           },
-          { "@type": "ListItem", position: 3, name: category, item: absUrl },
+          { "@type": "ListItem", position: 3, name: categoryLabel, item: absUrl },
         ],
       },
     ],
@@ -135,7 +137,7 @@ export default async function ExamTopicPage({
 
       <div className="relative mx-auto w-full max-w-3xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
         <JsonLd data={jsonLd} />
-      <TsuginoWelcome href={referralPracticeHref(pool, `/${exam}/topic/${encodeURIComponent(category)}`, category)} qualification={`${examLabel(code)}・${category}`} />
+      <TsuginoWelcome href={referralPracticeHref(pool, `/${exam}/topic/${encodeURIComponent(category)}`, category)} qualification={`${examLabel(code)}・${categoryLabel}`} />
 
         <nav
           aria-label="パンくずリスト"
@@ -143,7 +145,7 @@ export default async function ExamTopicPage({
         >
           <ol className="flex flex-wrap items-center gap-1.5">
             <li>
-              <Link href="/" className="inline-block py-1.5 hover:text-foreground hover:underline">
+              <Link href="/" className="inline-flex min-h-11 min-w-11 items-center py-1.5 hover:text-foreground hover:underline">
                 ホーム
               </Link>
             </li>
@@ -151,32 +153,25 @@ export default async function ExamTopicPage({
             <li>
               <Link
                 href={`/${exam}`}
-                className="inline-block py-1.5 hover:text-foreground hover:underline"
+                className="inline-flex min-h-11 min-w-11 items-center py-1.5 hover:text-foreground hover:underline"
               >
                 {examLabel(code)}
               </Link>
             </li>
             <li aria-hidden="true">/</li>
             <li aria-current="page" className="text-foreground">
-              {category}
+              {categoryLabel}
             </li>
           </ol>
         </nav>
 
-        <header className="mb-8 animate-fade-in">
-          <Badge variant="soft" className="mb-3">
-            <Tags className="h-3 w-3" />
-            {examLabel(code)}
-          </Badge>
+        <header className="mb-6">
           <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
             {examLabel(code)}{" "}
-            <span className="bg-gradient-to-r from-primary via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
-              {category}
+            <span className="text-primary">
+              {categoryLabel}
             </span>
           </h1>
-          <p className="mt-3 text-sm text-muted-foreground">
-            分野「{category}」の過去問を一覧で確認できます。
-          </p>
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
             <Badge variant="outline">{pool.length} 問</Badge>
           </div>
@@ -185,7 +180,7 @@ export default async function ExamTopicPage({
         <section aria-label="クイズを始める" className="mb-8">
           <div className="flex flex-wrap gap-2">
             {[...new Set(pool.filter((q) => q.type === "multiple-choice").map((q) => q.session))].map((session) => (
-              <Button key={session} asChild variant="gradient" size="lg">
+              <Button className="min-h-12 min-w-11 h-auto whitespace-normal py-2.5" key={session} asChild variant="gradient" size="lg">
                 <Link href={`/quiz?mode=topic&exam=${exam}&category=${encodeURIComponent(category)}&session=${session}&returnTo=${encodeURIComponent(`/${exam}/topic/${topicSlug}`)}`}>
                   {practiceSessionLabel(session, exam as ExamCode)}・この分野を解く<ChevronRight className="h-4 w-4" />
                 </Link>
@@ -201,7 +196,7 @@ export default async function ExamTopicPage({
               <li key={q.id}>
                 <Link
                   href={questionPagePath(q)}
-                  className="group flex items-start gap-3 rounded-2xl border border-border bg-card p-4 transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+                  className="group flex items-start gap-3 rounded-2xl border border-border bg-card p-4 transition-colors hover:border-primary/40 hover:bg-muted/30"
                 >
                   <span className="flex h-8 shrink-0 items-center justify-center rounded-lg bg-primary-soft px-2.5 text-xs font-bold text-primary-soft-foreground">
                     {questionNumberLabel(q)}

@@ -35,7 +35,7 @@ it("recovers a dropped initial result focus after paint without another answer/h
 });
 it("preserves focus when the learner has already selected another action", () => {
   const { view, result, focus } = answer(); frame();
-  const action = view.getByRole("button", { name: "この問題をAIに質問" }); action.focus();
+  const action = view.getByText("AIに質問"); action.focus();
   frame(); expect(action).toHaveFocus(); expect(result).not.toHaveFocus(); expect(focus).toHaveBeenCalledTimes(1);
 });
 it("cancels a pending retry on unmount", () => {
@@ -47,7 +47,7 @@ it("retries across delayed visibility frames and stops when a learner selects an
   focus.mockImplementation(() => {});
   frame(); frame(); frame();
   expect(document.activeElement).toBe(document.body);
-  const action = view.getByRole("button", { name: "この問題をAIに質問" }); action.focus();
+  const action = view.getByText("AIに質問"); action.focus();
   const count = focus.mock.calls.length; frame(); frame();
   expect(action).toHaveFocus(); expect(focus).toHaveBeenCalledTimes(count);
   expect(result).not.toHaveFocus();

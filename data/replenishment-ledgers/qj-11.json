@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "lane": "qj-11",
+  "previousLane": "qf-11",
+  "date": "2026-11-18",
+  "assignment": "jobs array index % 14 == 10",
+  "completedJobs": [
+    {
+      "jobId": "PLAN5-374",
+      "jobIndex": 373,
+      "kind": "cross-lane",
+      "exam": "denken1",
+      "year": 2023,
+      "season": "primary",
+      "session": "riron",
+      "status": "completed",
+      "expectedOriginalQuestions": 7,
+      "existingOriginalQuestions": 0,
+      "addedRecords": 7,
+      "importedRecords": 0,
+      "newRecords": 7,
+      "remainingOriginalQuestions": 0,
+      "answerSlotCount": 35,
+      "imageAssetCount": 14,
+      "dataPath": "data/questions/denken1/native-2023-theory.json",
+      "sourceFiles": [
+        {
+          "url": "https://www.shiken.or.jp/chief/upload/20230819_ch_first_q01.pdf",
+          "file": "qf-11/374-question.pdf",
+          "sha256": "058324ab73f9f3fafa18518f0a5ecb75da0860397d07fa020c102c0af18ba223"
+        },
+        {
+          "url": "https://www.shiken.or.jp/chief/upload/20230819_ch_first_a01.pdf",
+          "file": "qf-11/374-answer.pdf",
+          "sha256": "f24a4bcb545bc0ec93e92572290146ce784d313c01b8a32667ae859713afe499"
+        }
+      ],
+      "sourceCommits": [],
+      "notes": "qf-11で原本照合に着手した補助行。令和5年度一次理論の問1〜7。問6・7は本試験で一方のみ解答。元の担当行はqf-11までと補助班で処理済み。"
+    }
+  ],
+  "inProgressJobs": [
+    {
+      "jobId": "PLAN5-332",
+      "jobIndex": 331,
+      "kind": "cross-lane",
+      "exam": "denki1",
+      "year": 2021,
+      "season": "annual",
+      "session": "gakka",
+      "status": "source-indexed",
+      "planOriginalQuestions": 14,
+      "expectedOriginalQuestions": 92,
+      "remainingOriginalQuestions": 92,
+      "questionUrl": "https://www.fcip-shiken.jp/pdf/r03_1dg_mondai.pdf",
+      "answerUrl": "https://www.fcip-shiken.jp/pdf/r03_1dg_mondai.pdf#page=44",
+      "sourcePdfSha256": "33b4467c41303619ab8f585838006567e45498bdc04127f334675b19debb0de6",
+      "notes": "公式92原問・正答92件・指定解答60問を確認。ページ索引と選択肢の未校正下書きをtools/qj-11/332-source-index.jsonに保存。サイトへの問題登録は未実施。"
+    }
+  ]
+}

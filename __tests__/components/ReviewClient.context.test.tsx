@@ -36,7 +36,7 @@ describe("scoped review preserves mixed qualification history", () => {
       expect(button.querySelector("img")).toHaveAttribute("src", figure.choiceImageUrls![key]);
     }
     fireEvent.click(screen.getByRole("button", { name: /^1 / }));
-    expect(screen.getByText("正解: 1")).toBeInTheDocument();
+    expect(screen.getByText(/正解 1$/)).toBeInTheDocument();
     expect(localStorage.getItem(LS_KEYS.history)).toBe(historyBefore);
   });
   it("filters questions, counts and next date by resolved exam metadata", async () => {
@@ -47,7 +47,7 @@ describe("scoped review preserves mixed qualification history", () => {
     const res = await POST(request({ historyIds: [ip.id], exam: "constructor", today: "2026-10-11", reviewStore: {} }));
     expect(res.status).toBe(400);
   });
-  it("scopes a /q entry, keeps its return link, and preserves history and other schedules through repeat", async () => {
+  it("scopes a /q entry, keeps its return link, and preserves history and other schedules through completion", async () => {
     const history = createHistoryStore();
     pool.forEach((q) => history.record({ id: q.id, selected: "ア", correct: false, at: 1 }));
     history.toggleStar(ap.id);
@@ -58,31 +58,33 @@ describe("scoped review preserves mixed qualification history", () => {
     render(<ReviewClient examFromQuery="ip" returnTo={returnTo} />);
     await screen.findByText(ip.question);
     expect(screen.queryByText(ap.question)).not.toBeInTheDocument();
-    expect(screen.getByRole("combobox", { name: "復習する資格" })).toHaveValue("ip");
+    expect(fetch).toHaveBeenCalledWith("/api/review/due", expect.objectContaining({
+      body: expect.stringContaining('"exam":"ip"'),
+    }));
+    fireEvent.click(screen.getByRole("button", { name: /^ア / }));
+    fireEvent.click(screen.getByRole("button", { name: "結果を見る" }));
+    expect(await screen.findByRole("region", { name: "復習結果" })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "ITパスポートに戻る" })).toHaveAttribute("href", returnTo);
-    fireEvent.click(screen.getByRole("button", { name: /ア / }));
-    fireEvent.click(screen.getByRole("button", { name: "✓ 正解した" }));
-    await screen.findByRole("button", { name: "もう一度" });
-    fireEvent.click(screen.getByRole("button", { name: "もう一度" }));
-    await screen.findByText(ip.question);
     expect(localStorage.getItem(LS_KEYS.history)).toBe(before);
     expect(JSON.parse(localStorage.getItem("ipa-quiz:review:v1")!)[ap.id]).toEqual(otherSchedule);
     expect(history.getStarredIds()).toEqual([ap.id]);
   });
   it("switches qualifications and displays a Japanese name for hyphenated codes", async () => {
     pool.forEach((q) => createHistoryStore().record({ id: q.id, selected: "ア", correct: false, at: 1 }));
-    render(<ReviewClient examFromQuery="ip" />);
-    await screen.findByText(ip.question);
-    fireEvent.change(screen.getByRole("combobox", { name: "復習する資格" }), { target: { value: "shino-kunrenshi" } });
+    render(<ReviewClient />);
+    const picker = await screen.findByRole("combobox", { name: "復習する資格" });
+    expect(picker).toHaveValue("");
+    expect(screen.getByRole("option", { name: "視能訓練士" })).toHaveValue("shino-kunrenshi");
+    fireEvent.change(picker, { target: { value: "shino-kunrenshi" } });
     await screen.findByText(shino.question);
     expect(screen.queryByText("SHINO-KUNRENSHI")).not.toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "視能訓練士に戻る" })).toHaveAttribute("href", "/shino-kunrenshi");
+    expect(screen.getByRole("combobox", { name: "復習する資格" })).toHaveValue("shino-kunrenshi");
     expect(screen.queryByText(ip.question)).not.toBeInTheDocument();
     fireEvent.change(screen.getByRole("combobox", { name: "復習する資格" }), { target: { value: "" } });
     await waitFor(() => expect(screen.getByRole("combobox")).toHaveValue(""));
     expect(createHistoryStore().getAnsweredIds()).toHaveLength(3);
   });
-  it("reveals the signed dental numeric answer, then advances and preserves history through self-assessment", async () => {
+  it("grades the signed dental numeric answers, then advances and preserves history", async () => {
     const numeric = SHIKA_ISHI_QUESTIONS.find((q) => q.id === "shika-ishi-2026-annual-mondai-c-q90");
     const following = SHIKA_ISHI_QUESTIONS.find((q) => q.id === "shika-ishi-2026-annual-mondai-d-q90");
     if (!numeric || !following) throw new Error("Missing approved dental numeric fixtures");
@@ -97,17 +99,19 @@ describe("scoped review preserves mixed qualification history", () => {
     const random = vi.spyOn(Math, "random").mockReturnValue(0.999);
     try {
       render(<ReviewClient examFromQuery="shika-ishi" />);
-      const reveal = await screen.findByRole("button", { name: "解答・解説を見る" });
-      expect(screen.queryByText(/正解: −2\.0 mm/)).not.toBeInTheDocument();
+      const first = await screen.findByRole("textbox", { name: "解答（mm）" });
+      expect(screen.queryByText(/正解 −2\.0 mm/)).not.toBeInTheDocument();
       expect(localStorage.getItem(LS_KEYS.reviewSchedule)).toContain(ap.id);
-      fireEvent.click(reveal);
-      expect(screen.getByText(/正解: −2\.0 mm/)).toBeInTheDocument();
-      fireEvent.click(screen.getByRole("button", { name: "✓ 正解した" }));
+      fireEvent.change(first, { target: { value: "2.0" } });
+      fireEvent.click(screen.getByRole("button", { name: "採点する" }));
+      expect(screen.getByText(/正解 −2\.0 mm/)).toBeInTheDocument();
+      fireEvent.click(screen.getByRole("button", { name: "次の問題へ" }));
       expect(await screen.findByText("2 / 2")).toBeInTheDocument();
-      fireEvent.click(screen.getByRole("button", { name: "解答・解説を見る" }));
-      expect(screen.getByText(/正解: 50 %/)).toBeInTheDocument();
-      fireEvent.click(screen.getByRole("button", { name: "✗ 間違えた" }));
-      expect(await screen.findByRole("button", { name: "もう一度" })).toBeInTheDocument();
+      fireEvent.change(screen.getByRole("textbox", { name: "解答（%）" }), { target: { value: "49" } });
+      fireEvent.click(screen.getByRole("button", { name: "採点する" }));
+      expect(screen.getByText(/不正解 · 正解 50 %/)).toBeInTheDocument();
+      fireEvent.click(screen.getByRole("button", { name: "結果を見る" }));
+      expect(await screen.findByRole("region", { name: "復習結果" })).toHaveTextContent("1 / 2 問正解");
       const schedules = JSON.parse(localStorage.getItem(LS_KEYS.reviewSchedule)!) as Record<string, { level: number; correctStreak: number }>;
       expect(schedules[ap.id]).toEqual(otherSchedule);
       expect(schedules[numeric.id]).toMatchObject({ level: 1, correctStreak: 1 });
@@ -126,10 +130,10 @@ describe("scoped review preserves mixed qualification history", () => {
     render(<ReviewClient examFromQuery="zoen2" />);
     const image = await screen.findByRole("img");
     expect(image).toHaveAttribute("src", figure.imageUrls[0]);
-    expect(screen.queryByText(/正解:/)).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "結果を見る" })).not.toBeInTheDocument();
     const choiceButtons = screen.getAllByRole("button");
     fireEvent.click(choiceButtons[0]!);
-    expect(screen.getByText(/正解:/)).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "結果を見る" })).toBeInTheDocument();
     expect(image).toHaveAttribute("src", figure.imageUrls[0]);
   });
 

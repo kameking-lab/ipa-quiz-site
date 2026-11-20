@@ -1,0 +1,182 @@
+[
+  {
+    "id": "denken1-2021-second-kikai-q1",
+    "exam": "denken1",
+    "year": 2021,
+    "season": "second",
+    "session": "kikai",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "機械・制御",
+    "topicTags": [
+      "突極形同期機のフェーザ図"
+    ],
+    "difficulty": 5,
+    "question": "突極形同期機のフェーザ図（機械・制御）",
+    "answer": "〔問１の標準解答〕\n\n  (1)\n\n  ①  (b)，②  (d)，③  (a)，④  (e)，⑤  (c)，\n\n                                                                                     (e)j X d I\n                                    Eq\n                                                                  (d)E\n                                                    (b)V\n                                             (a)I                         (c)j X q I\n\n\n  (2)\n  まず Eq を求める。\n    V   1.0 ， I   1.0 ，cos    0.8 ， X q   0.9 より，\n\n  フェーザ図において，\n    V cos    0.8 ， V sin    0.6 ， X q I   0.9\n                                            Xd I   2.0\n\n                                   Eq\n                                                 E\n                                    V   1.0\n                                         Xq I   0.9\n                       V cos    0.8\n\n                                      V sin    0.6\n\n  よって，\n\n                           2                    2        2              2     Eq   V cos    V sin   Xq I      0.8    0.6  0.9    1.70 p.u. ・・・（答）\n\n   次にsin   を求める。\n                                                      1.7\n\n\n\n                                        0.8                      0.9\n\n                                                        0.6\n\n                                                      - 9 -\nフェーザ図より，\n\n                  0.6  0.9     sin                   0.882 35     0.882・・・（答）\n                    1.7\n\n\n次に，E を求める。\n                                        X d I  X q I\n\n                                 Eq\n\n                                            E Eq\n\n\n\n\n\nフェーザ図より，\n\n   E Eq  Xd I  Xq I sin         2  0.9 ×0.882 35=0.970 59\n\n∴  E  0.970 59  1.7  2.6706       2.67 p.u.・・・（答）\n\n\n(3) E，V を一定とすると出力P は負荷角 に応じて変化するので，①式を で微\n\n  分して，\n\n   dP  VE        1   1     2           cos          V cos2\n   d   Xd      Xq  Xd\n\n   d P\n       0 のとき定態安定限界出力となり，そのときの負荷角が m であるので，   d\n\n  VE         1    1     2      cos m          V cos2 m  0 より，\n  X d       Xq  Xd\n\n  Xq E cos m  Xd  X q V cos2 m  X q E cos m  X d  Xq V 2cos 2 m  1   0\n\n ∴   2 X d  X q V cos 2 m  X q E cos m  X d  X q V  0\n\n   cos m≧より，0\n                                                  - 10 -\n2                2   2          Xq E   Xq E    8 X d  X q  V\n     cos m                                ························ ②\n                     4 X d  Xq V         ･･･(答)\n\n\n\n(4)\n ②式に， E  2.6706 ， V   1.0 ， Xd   2.0 ， X q   0.9 を代入すると，\n\n                                                   2              2\n            0.9×2.670 6    0.9×2.670 6    8 2  0.9     1.528 0\n   cos m                                                        0.347 27                  4× 2.0  0.9                      4.4\n                                     0.347・・・（答）",
+    "modelAnswer": "〔問１の標準解答〕\n\n  (1)\n\n  ①  (b)，②  (d)，③  (a)，④  (e)，⑤  (c)，\n\n                                                                                     (e)j X d I\n                                    Eq\n                                                                  (d)E\n                                                    (b)V\n                                             (a)I                         (c)j X q I\n\n\n  (2)\n  まず Eq を求める。\n    V   1.0 ， I   1.0 ，cos    0.8 ， X q   0.9 より，\n\n  フェーザ図において，\n    V cos    0.8 ， V sin    0.6 ， X q I   0.9\n                                            Xd I   2.0\n\n                                   Eq\n                                                 E\n                                    V   1.0\n                                         Xq I   0.9\n                       V cos    0.8\n\n                                      V sin    0.6\n\n  よって，\n\n                           2                    2        2              2     Eq   V cos    V sin   Xq I      0.8    0.6  0.9    1.70 p.u. ・・・（答）\n\n   次にsin   を求める。\n                                                      1.7\n\n\n\n                                        0.8                      0.9\n\n                                                        0.6\n\n                                                      - 9 -\nフェーザ図より，\n\n                  0.6  0.9     sin                   0.882 35     0.882・・・（答）\n                    1.7\n\n\n次に，E を求める。\n                                        X d I  X q I\n\n                                 Eq\n\n                                            E Eq\n\n\n\n\n\nフェーザ図より，\n\n   E Eq  Xd I  Xq I sin         2  0.9 ×0.882 35=0.970 59\n\n∴  E  0.970 59  1.7  2.6706       2.67 p.u.・・・（答）\n\n\n(3) E，V を一定とすると出力P は負荷角 に応じて変化するので，①式を で微\n\n  分して，\n\n   dP  VE        1   1     2           cos          V cos2\n   d   Xd      Xq  Xd\n\n   d P\n       0 のとき定態安定限界出力となり，そのときの負荷角が m であるので，   d\n\n  VE         1    1     2      cos m          V cos2 m  0 より，\n  X d       Xq  Xd\n\n  Xq E cos m  Xd  X q V cos2 m  X q E cos m  X d  Xq V 2cos 2 m  1   0\n\n ∴   2 X d  X q V cos 2 m  X q E cos m  X d  X q V  0\n\n   cos m≧より，0\n                                                  - 10 -\n2                2   2          Xq E   Xq E    8 X d  X q  V\n     cos m                                ························ ②\n                     4 X d  Xq V         ･･･(答)\n\n\n\n(4)\n ②式に， E  2.6706 ， V   1.0 ， Xd   2.0 ， X q   0.9 を代入すると，\n\n                                                   2              2\n            0.9×2.670 6    0.9×2.670 6    8 2  0.9     1.528 0\n   cos m                                                        0.347 27                  4× 2.0  0.9                      4.4\n                                     0.347・・・（答）",
+    "explanation": "直軸と横軸のリアクタンスを分け、端子電圧と電流の位相関係から内部電圧を求める。図中の各電圧の向きも照合する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken1/2021-second-machine-control/question-p03.webp",
+      "/questions/denken1/2021-second-machine-control/question-p04.webp"
+    ],
+    "imageAltTexts": [
+      "問1 公式の本文・図表・設問（PDF 3ページ）",
+      "問1 公式の本文・図表・設問（PDF 4ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken1/2021-second-machine-control/answer-q01-p09.webp",
+      "/questions/denken1/2021-second-machine-control/answer-q01-p10.webp",
+      "/questions/denken1/2021-second-machine-control/answer-q01-p11.webp"
+    ],
+    "answerImageAltTexts": [
+      "問1 公式標準解答（PDF 9ページ）",
+      "問1 公式標準解答（PDF 10ページ）",
+      "問1 公式標準解答（PDF 11ページ）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20211114_ch_first_q02.pdf#page=3",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20211114_ch_first_a01.pdf#page=9",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/first/qa/"
+    ],
+    "sourceAttribution": "出典：電気技術者試験センター「2021年度 第一種電気主任技術者 二次試験 機械・制御」問1。",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "questionNotice": "問1〜問4から2問を選択。"
+  },
+  {
+    "id": "denken1-2021-second-kikai-q2",
+    "exam": "denken1",
+    "year": 2021,
+    "season": "second",
+    "session": "kikai",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "機械・制御",
+    "topicTags": [
+      "系統連系インバータ"
+    ],
+    "difficulty": 5,
+    "question": "系統連系インバータ（機械・制御）",
+    "answer": "〔問２の標準解答〕\n\n  (1) インバータ出力電圧 Vinv ，インバータ出力電流 I inv ，交流電源電圧 lV の関係\n\n  を表すフェーザ図を示す。したがって，(a)が Vinv ，(c)が lV ，(d)が I inv であり，\n\n  残り(b)はリアクトル両端電圧 j XI inv である。\n\n\n                               Vinv\n                                                                                                                j XI inv\n\n                                                                          lV\n                                                            I inv\n\n  (2) 交流電源には力率1 で10 kW の有効電力が供給されている。したがって，イ\n  ンバータ出力電流の実効値 I inv は，\n\n           10000  10000\n         I inv                 100 A           Vl     100\n  リアクトルの電圧降下は XI inv  0.75×100  75 V であるので，インバータ出力電\n  圧 Vinv は次式で求まる。\n\n                    2           2          2      2     Vinv   Vl    XI inv     100   75   125 V・・・(答)\n\n                                                     - 11 -\nこれから，インバータの出力電圧 vinv の波高値 Vk ，PWM 制御の変調率k は次\n\n 式となる。\n   Vk   2×125  176.78 V\n      Vk   176.78     k                0.883 88      0.884 ・・・(答)\n      Ed    200\n\n 次に，インバータが出力する有効電力P は，回路の抵抗分は無視できるので，\n    P  10000 W\n\n リアクトルに供給する無効電力Q，皮相電力S は，次式となる。\n   Q   XI inv   I inv  75×100  7500 var ・・・(答)\n    S  Vinv I inv  125×100  12500 V･A ・・・(答)\n\n また，インバータは損失がないものとしているので，電池に流れる直流電流平\n 均値 I dc は，次式となる。\n\n        P   10000\n      I dc              50 A・・・(答)       Ed    200\n(3) 変調率が0≦≦の範囲でk 1       Vinv の交流電圧を出力できる最低の電池電圧 Edmin\n は，変調率k が k  1 になったときである。このときの電池電圧は小問(2)で求\n めたインバータ出力電圧波高値 Vk に等しいので，\n    Edmin   176.78                     0.883 88      88.4 ％・・・(答)\n    Ed0     200\n\n が最小値である。",
+    "modelAnswer": "〔問２の標準解答〕\n\n  (1) インバータ出力電圧 Vinv ，インバータ出力電流 I inv ，交流電源電圧 lV の関係\n\n  を表すフェーザ図を示す。したがって，(a)が Vinv ，(c)が lV ，(d)が I inv であり，\n\n  残り(b)はリアクトル両端電圧 j XI inv である。\n\n\n                               Vinv\n                                                                                                                j XI inv\n\n                                                                          lV\n                                                            I inv\n\n  (2) 交流電源には力率1 で10 kW の有効電力が供給されている。したがって，イ\n  ンバータ出力電流の実効値 I inv は，\n\n           10000  10000\n         I inv                 100 A           Vl     100\n  リアクトルの電圧降下は XI inv  0.75×100  75 V であるので，インバータ出力電\n  圧 Vinv は次式で求まる。\n\n                    2           2          2      2     Vinv   Vl    XI inv     100   75   125 V・・・(答)\n\n                                                     - 11 -\nこれから，インバータの出力電圧 vinv の波高値 Vk ，PWM 制御の変調率k は次\n\n 式となる。\n   Vk   2×125  176.78 V\n      Vk   176.78     k                0.883 88      0.884 ・・・(答)\n      Ed    200\n\n 次に，インバータが出力する有効電力P は，回路の抵抗分は無視できるので，\n    P  10000 W\n\n リアクトルに供給する無効電力Q，皮相電力S は，次式となる。\n   Q   XI inv   I inv  75×100  7500 var ・・・(答)\n    S  Vinv I inv  125×100  12500 V･A ・・・(答)\n\n また，インバータは損失がないものとしているので，電池に流れる直流電流平\n 均値 I dc は，次式となる。\n\n        P   10000\n      I dc              50 A・・・(答)       Ed    200\n(3) 変調率が0≦≦の範囲でk 1       Vinv の交流電圧を出力できる最低の電池電圧 Edmin\n は，変調率k が k  1 になったときである。このときの電池電圧は小問(2)で求\n めたインバータ出力電圧波高値 Vk に等しいので，\n    Edmin   176.78                     0.883 88      88.4 ％・・・(答)\n    Ed0     200\n\n が最小値である。",
+    "explanation": "無効電力を含む電圧・電流の関係をフェーザ図に表す。交流側の有効電力から電流を求め、連系リアクトルの電圧降下と位相を用いる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken1/2021-second-machine-control/question-p05.webp",
+      "/questions/denken1/2021-second-machine-control/question-p06.webp"
+    ],
+    "imageAltTexts": [
+      "問2 公式の本文・図表・設問（PDF 5ページ）",
+      "問2 公式の本文・図表・設問（PDF 6ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken1/2021-second-machine-control/answer-q02-p11.webp",
+      "/questions/denken1/2021-second-machine-control/answer-q02-p12.webp"
+    ],
+    "answerImageAltTexts": [
+      "問2 公式標準解答（PDF 11ページ）",
+      "問2 公式標準解答（PDF 12ページ）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20211114_ch_first_q02.pdf#page=5",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20211114_ch_first_a01.pdf#page=11",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/first/qa/"
+    ],
+    "sourceAttribution": "出典：電気技術者試験センター「2021年度 第一種電気主任技術者 二次試験 機械・制御」問2。",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "questionNotice": "問1〜問4から2問を選択。"
+  },
+  {
+    "id": "denken1-2021-second-kikai-q3",
+    "exam": "denken1",
+    "year": 2021,
+    "season": "second",
+    "session": "kikai",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "機械・制御",
+    "topicTags": [
+      "三相誘導電動機の等価回路"
+    ],
+    "difficulty": 5,
+    "question": "三相誘導電動機の等価回路（機械・制御）",
+    "answer": "〔問３の標準解答〕\n\n (1)等価回路\n\n                 1I                 1r         x    2I     2r\n\n                          0I\n    V1    g 0            0b                         1  s r2                                                                s\n\n\n\n                                                     - 12 -\n(2) 等価回路定数の導出\n【1r の導出】\n\n  測定値が直流抵抗なのか交流抵抗なのか明記されていないので，表皮効果な\n\n どを含んだ交流抵抗への換算は行わず，測定値をそのまま使用する。\n\n        t [℃]で抵抗を測定しているので基準温度T[℃]の抵抗値に換算する。与え\n\n られた式を変形すると次のようになる。\n\n     R  t  R 0  1    0  t  0\n\n                                1    0 T  0     R T  R 0  1    0 T  0           R  t\n                                 1    0  t  0\n\n  測定は端子間で行ったので，1 相あたりの抵抗値は測定値の1 となる。した\n                                                           2\n がって，基準温度T[℃]における一次抵抗値1r は次の式で表される。\n\n           1           T\n                0    R1        r1           1     2                           t\n                 0\n\n          1\n      を代入すると次のようになる。\n        0  235\n\n          235 T R1        r1             [  ]  ･･･(答)          235   t  2\n【 g 0 , 0b の導出】\n\n  定格電圧を印加した無負荷試験においては，回転子はほぼ同期速度で回転し\n ているので，滑りs=0 と考えることができる。このとき， I 2    I 0 と考えられ\n る。したがって， I 2  0 と仮定できるので，励磁回路の電流 0I のみが流れてい\n\n ると考える。\n  また，端子電圧を低下させて運転した場合，鉄損はほぼ電圧の2 乗に比例し\n\n て変化するが，機械損はほぼ同期速度で回転しているので一定であると考える\n\n\n                                                  - 13 -\nことができる。したがって，電圧ゼロに外挿して求めた Pm は機械損と考えられ\n\n るので，測定結果から差し引く必要がある。\n\n  さらに，拘束試験での電圧の測定値は端子電圧であるので，これを相電圧に\n\n 変換することが必要である。\n\n  以上の考え方を用いると，定格電圧における無負荷試験の消費電力は励磁コ\n ンダクタンス 0g の消費電力と考えることができるので，次のように 0g を求める\n ことができる。ここで，1 相分の等価回路を求めるので電力の測定値は相数（=3）\n\n で割る必要がある。\n\n         PN  Pm  PN  Pm\n        g 0            2         2   [S] ･･･(答)\n           VN      VN           3\n              3\n  この結果を使って，次のように励磁サセプタンス 0b を求めることができる。\n\n\n                     2                2\n                I N     PN  Pm     b0                          2   [S] ･･･(答)\n         VN      VN                  3            3                      3\n\n【2r ，x の導出】\n 回転子を拘束しているので，滑りs=1 であり，このとき， I 0    I 2 と考えられ\n\nる。また，拘束試験では，定格電流が流れる状態において印加する電圧は定格電\n\n圧に比べ低い値となる。そのため，励磁回路にはほとんど電流が流れないと考え\nられるので励磁コンダクタンス 0g による損失は生じない。また，拘束しているの\nで機械損 Pm は生じない。0I   0 と仮定すると，測定電流は負荷回路の電流 2I のみ\nが流れていると考えることができる。したがって，拘束試験時の回路は1r ，2r ，\n x の直列回路と考えることができる。\n\n これらを考慮すると，測定値から次の関係が得られる。\n\n      3 r1   r2  I s2  Ps\n\n\n したがって，\n\n\n                                                  - 14 -\nPs\n        r1   r2      2             3 I s\n       2r を求めるには，1r を差し引けばよいので，2r は次の式で求めることができ\n\n る。\n\n         Ps\n        r2      2   r1 [ ]･･･(答)          3 I s\n\n この結果を使ってリアクタンスを求めることができるが，拘束試験での電圧の\n\n測定値は端子電圧であるので，これを相電圧に変換することが必要である。した\n\nがって，\n\n                       2\n          Vs                                  2\n             3     Ps       x                  [ ]･･･(答)\n                  I s      3 I s2",
+    "modelAnswer": "〔問３の標準解答〕\n\n (1)等価回路\n\n                 1I                 1r         x    2I     2r\n\n                          0I\n    V1    g 0            0b                         1  s r2                                                                s\n\n\n\n                                                     - 12 -\n(2) 等価回路定数の導出\n【1r の導出】\n\n  測定値が直流抵抗なのか交流抵抗なのか明記されていないので，表皮効果な\n\n どを含んだ交流抵抗への換算は行わず，測定値をそのまま使用する。\n\n        t [℃]で抵抗を測定しているので基準温度T[℃]の抵抗値に換算する。与え\n\n られた式を変形すると次のようになる。\n\n     R  t  R 0  1    0  t  0\n\n                                1    0 T  0     R T  R 0  1    0 T  0           R  t\n                                 1    0  t  0\n\n  測定は端子間で行ったので，1 相あたりの抵抗値は測定値の1 となる。した\n                                                           2\n がって，基準温度T[℃]における一次抵抗値1r は次の式で表される。\n\n           1           T\n                0    R1        r1           1     2                           t\n                 0\n\n          1\n      を代入すると次のようになる。\n        0  235\n\n          235 T R1        r1             [  ]  ･･･(答)          235   t  2\n【 g 0 , 0b の導出】\n\n  定格電圧を印加した無負荷試験においては，回転子はほぼ同期速度で回転し\n ているので，滑りs=0 と考えることができる。このとき， I 2    I 0 と考えられ\n る。したがって， I 2  0 と仮定できるので，励磁回路の電流 0I のみが流れてい\n\n ると考える。\n  また，端子電圧を低下させて運転した場合，鉄損はほぼ電圧の2 乗に比例し\n\n て変化するが，機械損はほぼ同期速度で回転しているので一定であると考える\n\n\n                                                  - 13 -\nことができる。したがって，電圧ゼロに外挿して求めた Pm は機械損と考えられ\n\n るので，測定結果から差し引く必要がある。\n\n  さらに，拘束試験での電圧の測定値は端子電圧であるので，これを相電圧に\n\n 変換することが必要である。\n\n  以上の考え方を用いると，定格電圧における無負荷試験の消費電力は励磁コ\n ンダクタンス 0g の消費電力と考えることができるので，次のように 0g を求める\n ことができる。ここで，1 相分の等価回路を求めるので電力の測定値は相数（=3）\n\n で割る必要がある。\n\n         PN  Pm  PN  Pm\n        g 0            2         2   [S] ･･･(答)\n           VN      VN           3\n              3\n  この結果を使って，次のように励磁サセプタンス 0b を求めることができる。\n\n\n                     2                2\n                I N     PN  Pm     b0                          2   [S] ･･･(答)\n         VN      VN                  3            3                      3\n\n【2r ，x の導出】\n 回転子を拘束しているので，滑りs=1 であり，このとき， I 0    I 2 と考えられ\n\nる。また，拘束試験では，定格電流が流れる状態において印加する電圧は定格電\n\n圧に比べ低い値となる。そのため，励磁回路にはほとんど電流が流れないと考え\nられるので励磁コンダクタンス 0g による損失は生じない。また，拘束しているの\nで機械損 Pm は生じない。0I   0 と仮定すると，測定電流は負荷回路の電流 2I のみ\nが流れていると考えることができる。したがって，拘束試験時の回路は1r ，2r ，\n x の直列回路と考えることができる。\n\n これらを考慮すると，測定値から次の関係が得られる。\n\n      3 r1   r2  I s2  Ps\n\n\n したがって，\n\n\n                                                  - 14 -\nPs\n        r1   r2      2             3 I s\n       2r を求めるには，1r を差し引けばよいので，2r は次の式で求めることができ\n\n る。\n\n         Ps\n        r2      2   r1 [ ]･･･(答)          3 I s\n\n この結果を使ってリアクタンスを求めることができるが，拘束試験での電圧の\n\n測定値は端子電圧であるので，これを相電圧に変換することが必要である。した\n\nがって，\n\n                       2\n          Vs                                  2\n             3     Ps       x                  [ ]･･･(答)\n                  I s      3 I s2",
+    "explanation": "端子間抵抗の測定値を一相当たりに直し、基準温度へ換算する。無負荷試験と拘束試験の測定値を対応する等価回路定数に結び付ける。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken1/2021-second-machine-control/question-p07.webp"
+    ],
+    "imageAltTexts": [
+      "問3 公式の本文・図表・設問（PDF 7ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken1/2021-second-machine-control/answer-q03-p12.webp",
+      "/questions/denken1/2021-second-machine-control/answer-q03-p13.webp",
+      "/questions/denken1/2021-second-machine-control/answer-q03-p14.webp",
+      "/questions/denken1/2021-second-machine-control/answer-q03-p15.webp"
+    ],
+    "answerImageAltTexts": [
+      "問3 公式標準解答（PDF 12ページ）",
+      "問3 公式標準解答（PDF 13ページ）",
+      "問3 公式標準解答（PDF 14ページ）",
+      "問3 公式標準解答（PDF 15ページ）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20211114_ch_first_q02.pdf#page=7",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20211114_ch_first_a01.pdf#page=12",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/first/qa/"
+    ],
+    "sourceAttribution": "出典：電気技術者試験センター「2021年度 第一種電気主任技術者 二次試験 機械・制御」問3。",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "questionNotice": "問1〜問4から2問を選択。"
+  },
+  {
+    "id": "denken1-2021-second-kikai-q4",
+    "exam": "denken1",
+    "year": 2021,
+    "season": "second",
+    "session": "kikai",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "機械・制御",
+    "topicTags": [
+      "二次系の伝達関数と応答"
+    ],
+    "difficulty": 5,
+    "question": "二次系の伝達関数と応答（機械・制御）",
+    "answer": "〔問４の標準解答〕\n\n  (1) フィードバック結合を等価変換する。\n                   5\n                      s s  2         5          5     W  s                                  ····················· ①\n                     5       s s  2   5   s 2  2 s  5               1\n                        s s  2\n\n                                                        ･･･(答)\n\n  (2) 二次系の標準形は\n\n                      2\n                     n       ············································· ②\n           s 2  2   n s    n2\n\n  であるから，①式と②式を比較することで\n\n              2             n  5 ····················································· ③\n        2   n  2 ··················································· ④\n\n  の関係式を得る。③式，④式を解いて\n\n                      1\n             n   5 ，       ··········································· ⑤\n                       5\n\n                                                        ･･･(答)\n\n                                                     - 15 -\nとなる。\n\n(3) 制御量Y  s は次のようになる。\n\n                 1       5     Y  s W  s                ································· ⑥\n                       s   s s 2  2 s  5\n\n ⑥式は次の形に分解することができる。\n\n           5      A    Bs C\n                                ································· ⑦\n         s s 2  2 s  5    s   s 2  2 s  5\n\n ⑦式の両辺の分母を払うと\n\n       5  A  B  s 2   2 A C  s  5 A ································· ⑧\n\n となるので，係数比較法により\n\n     A  1 ， B   1 ， C   2 ····································· ⑨\n\n と求められる。\n\n よって，制御量の時間応答y  t は，\n\n                    1 1      s  2         y  t  L\n                     s   s 2  2 s  5\n\n                   1 1       s  1     1      2\n          L\n                    s          2    2  2         2    2                         s  1   2        s  1   2\n\n                                           t       1      t            1  e  cos2 t   e  sin2 t  ································ ⑩\n                        2\n\n                                                      ･･･(答)\n\n となる。\n\n(4) 小問(3)で求めた⑩式を時間微分する。\n\n       dy  t                    t                          t       1      t                       t             0  e  cos2 t  2e  sin 2 t   e  sin 2 t  e  cos2 t\n        d t                          2\n\n             5      t               e  sin2 t ··········································· ⑪\n             2\n\n ⑪式より，d y  t   0 となるのは，\n              d t\n\n        2t  n ， n   0, 1, 2, .... ······································· ⑫\n\n                                                  - 16 -\nであって， n  1 のときに最大となる。すなわち，\n        2tp\n\n               tp    ···················································· ⑬            2\n\n                                                      ･･･(答)\n\n である。\n(5) ⑩式のt に⑬式のpt を代入する。\n\n                                             tp        1      tp        y  tp   1  e  cos2 tp    e   sin2 tp                          2\n\n                         2       1             1  e    cos      sin\n                          2\n\n\n             1  e  2 ·············································· ⑭\n\n                                                      ･･･(答)\n\n\n\n\n\n                                                  - 17 -",
+    "modelAnswer": "〔問４の標準解答〕\n\n  (1) フィードバック結合を等価変換する。\n                   5\n                      s s  2         5          5     W  s                                  ····················· ①\n                     5       s s  2   5   s 2  2 s  5               1\n                        s s  2\n\n                                                        ･･･(答)\n\n  (2) 二次系の標準形は\n\n                      2\n                     n       ············································· ②\n           s 2  2   n s    n2\n\n  であるから，①式と②式を比較することで\n\n              2             n  5 ····················································· ③\n        2   n  2 ··················································· ④\n\n  の関係式を得る。③式，④式を解いて\n\n                      1\n             n   5 ，       ··········································· ⑤\n                       5\n\n                                                        ･･･(答)\n\n                                                     - 15 -\nとなる。\n\n(3) 制御量Y  s は次のようになる。\n\n                 1       5     Y  s W  s                ································· ⑥\n                       s   s s 2  2 s  5\n\n ⑥式は次の形に分解することができる。\n\n           5      A    Bs C\n                                ································· ⑦\n         s s 2  2 s  5    s   s 2  2 s  5\n\n ⑦式の両辺の分母を払うと\n\n       5  A  B  s 2   2 A C  s  5 A ································· ⑧\n\n となるので，係数比較法により\n\n     A  1 ， B   1 ， C   2 ····································· ⑨\n\n と求められる。\n\n よって，制御量の時間応答y  t は，\n\n                    1 1      s  2         y  t  L\n                     s   s 2  2 s  5\n\n                   1 1       s  1     1      2\n          L\n                    s          2    2  2         2    2                         s  1   2        s  1   2\n\n                                           t       1      t            1  e  cos2 t   e  sin2 t  ································ ⑩\n                        2\n\n                                                      ･･･(答)\n\n となる。\n\n(4) 小問(3)で求めた⑩式を時間微分する。\n\n       dy  t                    t                          t       1      t                       t             0  e  cos2 t  2e  sin 2 t   e  sin 2 t  e  cos2 t\n        d t                          2\n\n             5      t               e  sin2 t ··········································· ⑪\n             2\n\n ⑪式より，d y  t   0 となるのは，\n              d t\n\n        2t  n ， n   0, 1, 2, .... ······································· ⑫\n\n                                                  - 16 -\nであって， n  1 のときに最大となる。すなわち，\n        2tp\n\n               tp    ···················································· ⑬            2\n\n                                                      ･･･(答)\n\n である。\n(5) ⑩式のt に⑬式のpt を代入する。\n\n                                             tp        1      tp        y  tp   1  e  cos2 tp    e   sin2 tp                          2\n\n                         2       1             1  e    cos      sin\n                          2\n\n\n             1  e  2 ·············································· ⑭\n\n                                                      ･･･(答)\n\n\n\n\n\n                                                  - 17 -",
+    "explanation": "フィードバック結合を閉ループの伝達関数に変換する。二次系の標準形に係数を対応させ、単位ステップ入力に対する応答を求める。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken1/2021-second-machine-control/question-p08.webp"
+    ],
+    "imageAltTexts": [
+      "問4 公式の本文・図表・設問（PDF 8ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken1/2021-second-machine-control/answer-q04-p15.webp",
+      "/questions/denken1/2021-second-machine-control/answer-q04-p16.webp",
+      "/questions/denken1/2021-second-machine-control/answer-q04-p17.webp"
+    ],
+    "answerImageAltTexts": [
+      "問4 公式標準解答（PDF 15ページ）",
+      "問4 公式標準解答（PDF 16ページ）",
+      "問4 公式標準解答（PDF 17ページ）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20211114_ch_first_q02.pdf#page=8",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20211114_ch_first_a01.pdf#page=15",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/first/qa/"
+    ],
+    "sourceAttribution": "出典：電気技術者試験センター「2021年度 第一種電気主任技術者 二次試験 機械・制御」問4。",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "questionNotice": "問1〜問4から2問を選択。"
+  }
+]

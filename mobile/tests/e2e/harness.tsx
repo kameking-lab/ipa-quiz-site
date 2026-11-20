@@ -1,6 +1,5 @@
 import { AuthorizedContent } from "../../shared/AuthorizedContent";
 import { AccountDeletionClient } from "../../../app/account/delete/AccountDeletionClient";
-import { requestAiConsent } from "../../../lib/ai/consent";
 import {createRoot} from "react-dom/client";
 import {downloads} from "../../src/downloads";
 import {NativeTools} from "../../src/NativeTools";
@@ -25,7 +24,7 @@ window.paperTest={
   purgeCache:async()=>{await Filesystem.rmdir({directory:Directory.Cache,path:"images",recursive:true}).catch(()=>{});localStorage.removeItem("CapacitorStorage.kakomon:image-cache:v1");},
   showDeletion:()=>createRoot(document.getElementById("root")!).render(<DeleteAccountPage/>),
 };
-declare global { interface Window {mobileTest:{showContent:()=>void;showDeletion:()=>void;aiConsent:()=>boolean;seed:(questions:Array<{id:string}>,entry:CatalogEntry,access:MobileEntitlement)=>Promise<void>;invalidate:()=>Promise<void>;showMembership:()=>void;showOnlinePage:(question:Question)=>void;mockStore:(scenario:StoreScenario)=>void;storeCalls:()=>{purchases:number;restores:number;signIns:string[];identities:string[]};showQualification:(scenario:"saved"|"cancelled"|"unconfirmed"|"app-installed")=>void;qualificationCalls:()=>{universal:string[];browser:string[];editors:number;fetches:number}}} }
+declare global { interface Window {mobileTest:{showContent:()=>void;showDeletion:()=>void;seed:(questions:Array<{id:string}>,entry:CatalogEntry,access:MobileEntitlement)=>Promise<void>;invalidate:()=>Promise<void>;showMembership:()=>void;showOnlinePage:(question:Question)=>void;mockStore:(scenario:StoreScenario)=>void;storeCalls:()=>{purchases:number;restores:number;signIns:string[];identities:string[]};showQualification:(scenario:"saved"|"cancelled"|"unconfirmed"|"app-installed")=>void;qualificationCalls:()=>{universal:string[];browser:string[];editors:number;fetches:number}}} }
 const calls={purchases:0,restores:0,signIns:[] as string[],identities:[] as string[]};
 let storeScenario:StoreScenario="no-restorable-purchase",offerings=0;
 function mockStore(scenario:StoreScenario) {
@@ -67,6 +66,6 @@ function showQualification(scenario:"saved"|"cancelled"|"unconfirmed"|"app-insta
   const browser={open:async({url}:{url:string})=>{qualificationCalls.browser.push(url);}} as unknown as Parameters<typeof openQualificationUrl>[2];
   createRoot(document.getElementById("root")!).render(<QualificationActions target={target} service={{fetch:request,add:(event,t)=>addQualificationEvent(event,t,request,native),open:url=>openQualificationUrl(url,native,browser),source:async url=>{qualificationCalls.browser.push(url);}}}/>);
 }
-window.mobileTest={showContent:()=>createRoot(document.getElementById("root")!).render(<AuthorizedContent items={Array.from({length:11},(_,i)=>({id:`mock-${i+1}`,title:`??${i+1}`}))}/>),showDeletion:()=>createRoot(document.getElementById("root")!).render(<AccountDeletionClient/>),aiConsent:requestAiConsent,async seed(questions,entry,access){await downloads.updateRights(access,config.leasePublicKey);await downloads.download(entry.code,async()=>Response.json({entry,questions,nextOffset:null,entitlement:access}),()=>{},new AbortController().signal);},invalidate:()=>downloads.invalidate(),showMembership:()=>createRoot(document.getElementById("root")!).render(<NativeTools membershipOnly membership={membership} signIn={signIn}/>),
+window.mobileTest={showContent:()=>createRoot(document.getElementById("root")!).render(<AuthorizedContent items={Array.from({length:11},(_,i)=>({id:`mock-${i+1}`,title:`??${i+1}`}))}/>),showDeletion:()=>createRoot(document.getElementById("root")!).render(<AccountDeletionClient/>),async seed(questions,entry,access){await downloads.updateRights(access,config.leasePublicKey);await downloads.download(entry.code,async()=>Response.json({entry,questions,nextOffset:null,entitlement:access}),()=>{},new AbortController().signal);},invalidate:()=>downloads.invalidate(),showMembership:()=>createRoot(document.getElementById("root")!).render(<NativeTools membershipOnly membership={membership} signIn={signIn}/>),
   // An online page as NativeAppHost renders it: native tools, the sticky site header, then the shared quiz.
   showOnlinePage:question=>{document.documentElement.classList.add("native-app");createRoot(document.getElementById("root")!).render(<><NativeTools membership={membership} signIn={signIn}/><header className="sticky top-0 z-40 flex h-14 items-center border-b border-border bg-background px-4 font-bold">過去問AI（サイトのヘッダー）</header><QuizPlayer question={question} index={0} total={1} mode="random" exam={question.exam} onNext={()=>{}}/></>);},mockStore,storeCalls:()=>({...calls}),showQualification,qualificationCalls:()=>({...qualificationCalls})};

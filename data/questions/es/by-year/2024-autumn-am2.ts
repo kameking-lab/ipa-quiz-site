@@ -24,6 +24,7 @@ export const ES_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ARMアーキテクチャの特権レベル（EL0～EL3）では、ELの数字が大きいほど高い特権を持ちます。EL3は最も特権が高く、システムの基盤となるファームウェアやセキュアモニタが配置されます。EL2はハイパーバイザー、EL1はOSカーネル、EL0は最も低い特権レベルでユーザーアプリケーションが実行される階層です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const ES_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "NVMe (Non-Volatile Memory Express) は、SSDの高速性能を最大限に引き出すために開発されたストレージ通信プロトコルです。ハードウェアインターフェースとしてPCI Express (PCIe) を採用しており、従来のSATA/AHCIインターフェースに比べて高い並列性と低遅延を実現し、データ転送速度を向上させています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const ES_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "キャッシュシステム全体のヒット率は、L1キャッシュでのヒットと、L1キャッシュでミスしたがL2キャッシュでヒットした場合の合計で求められます。L1キャッシュのヒット率が0.95なので、L1ミス率は0.05です。L1ミスが発生した場合にL2キャッシュでヒットする確率は0.05 × 0.6 = 0.03となるため、全体のヒット率は0.95 + 0.03 = 0.98となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const ES_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "正解はウです。（出典: IPA エンベデッドシステムスペシャリスト試験 令和6年度秋期 午前II 問4）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,7 @@ export const ES_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "アベイラビリティ（稼働率）は、MTBF（平均故障間隔）をMTBFとMTTR（平均修復時間）の合計で割った値で計算されます。MTBFとMTTRがそれぞれ1.5倍になった場合、分子も分母も同じ比率で増加するため、その比率は変化しません。したがって、アベイラビリティは変わらないことになります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +149,7 @@ export const ES_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ディスパッチャは、OSのスケジューラによって次に実行されるべきプロセスが選択された後、そのプロセスにCPUの制御を渡す役割を担います。具体的には、主記憶に保存されている選択されたプロセスの情報をCPUにロードし、そのプロセスを実際に起動して実行を開始させます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +174,7 @@ export const ES_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "可変区画方式における最適適合アルゴリズムは、メモリ割り当て要求に対して、要求されたサイズ以上の未使用領域の中から、最もサイズが小さい領域を選択して割り当てる手法です。これにより、未使用領域を可能な限り大きく残し、将来の大きな割り当て要求に応えやすくすることで、メモリの断片化を抑制することを目指します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +199,7 @@ export const ES_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "索引方式（Indexed Allocation）は、ファイルを構成するすべてのブロックの位置情報を、ファイルごとに用意された「索引ブロック」に集中して記録するディスク領域管理方式です。ディレクトリにはファイル名とその索引ブロックのアドレスが記録され、索引ブロックを読み込むことでファイル全体に効率的にアクセスできます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +224,13 @@ export const ES_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "正解はイです。（出典: IPA エンベデッドシステムスペシャリスト試験 令和6年度秋期 午前II 問9）",
+    "choiceExplanations": {
+      "ア": "誤りです。これはAとBの論理積の表ですが、実際の回路ではAが反転してからバッファを制御します。A＝1、B＝1でもCは0です。",
+      "イ": "正しいです。A＝0ならバッファが有効になってC＝Bです。A＝1なら出力が高インピーダンスとなり、抵抗がCを0に引き下げます。",
+      "ウ": "誤りです。この表ではAが1ならBに関係なくCが1になります。Aが1のときバッファは高インピーダンスで、Cは抵抗によって0になります。",
+      "エ": "誤りです。この表ではA＝1、B＝0でCが1になります。Bは反転せず、A＝1ではバッファが無効なので、この組合せのCは0です。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +255,7 @@ export const ES_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "メモリアクセスにかかる時間は、MPUの基本アクセスに必要なクロック数とWAITクロック数の合計を、クロック周波数で割ることで算出できます。各選択肢の計算結果を比較すると、アは0.5μs、イは0.5μs、ウは0.48μs、エは0.4375μsとなります。この中で最もアクセス時間が短いのはエであり、これが最も速い組み合わせとなります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +280,7 @@ export const ES_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "正解はアです。（出典: IPA エンベデッドシステムスペシャリスト試験 令和6年度秋期 午前II 問11）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +305,7 @@ export const ES_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ヒューリスティック法は、ユーザビリティの専門家が経験則（ヒューリスティック）に基づいてシステムを評価する手法です。この評価プロセスにおいて、専門家は利用者の実際のシステム操作を観察したり、利用者からの意見やフィードバックを参考にしたりすることで、より実践的な問題点を発見し、システムの有効性、効率、利用者の満足度を評価する場合があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +330,7 @@ export const ES_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "TCP（Transmission Control Protocol）は、OSI基本参照モデルのネットワーク層に位置するプロトコルであるとされています。これは、IPプロトコルと密接に連携しながら、データの分割、経路選択、再構築を行い、エンドツーエンドのデータ転送の基盤を担う重要な役割を果たします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +355,7 @@ export const ES_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "サイドチャネル攻撃は、暗号処理を実行している物理デバイスから漏洩する副次的な情報（サイドチャネル）を分析することで、秘密情報を推測する手法です。具体的には、デバイスの消費電力の変動、処理にかかる時間、放出される電磁波、エラーメッセージなどが利用され、暗号鍵などの機密情報を解読しようとします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +380,7 @@ export const ES_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "楕円曲線暗号（ECC）は公開鍵暗号方式の一種であり、RSA暗号と比較して短い鍵長で同等の安全性を確保できる特徴を持っています。特に、WebサイトのセキュリティプロトコルであるTLS（Transport Layer Security）においても、鍵交換やデジタル署名メカニズムに広く利用されています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +405,7 @@ export const ES_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "NTP増幅型DDoS攻撃は、NTPサーバのmonlist機能が悪用され、少量のクエリに対して大量の応答を生成させ、これを攻撃対象に送りつけることで行われます。この攻撃を防ぐためには、NTPサーバの設定を変更し、このmonlist機能を無効化することが、サーバが踏み台として利用されることを防止する直接的な対策となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +430,7 @@ export const ES_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ペトリネットモデルは、並行性、同期、資源共有といった概念を表現するのに適した要求モデルです。トークン（資源）の流れとプレイス（状態）、トランジション（事象や処理）を用いて、複数の並列に生起する事象間の同期や競合を視覚的かつ厳密に記述できるため、複雑なシステムの動作解析に有効です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +455,7 @@ export const ES_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "オシロスコープは、電気信号の電圧波形を時間軸でリアルタイムに表示する測定器です。これにより、信号の立ち上がり・立ち下がり時間、パルス幅、ジッタなどのタイミング特性や、リアルタイムでの信号の振る舞いを視覚的に確認できるため、組み込みシステムのデバッグにおいてタイミング検証やリアルタイム性の評価に非常に有効です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +480,7 @@ export const ES_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "FMEA（Failure Mode and Effects Analysis：故障モード影響解析）は、システムや製品の設計段階において、個々の構成要素に起こり得る潜在的な故障モードを事前に特定し、それがシステム全体にどのような影響を与えるかを分析・評価する手法です。この分析を通じて、故障の発生を未然に防ぎ、製品の信頼性向上に貢献します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +505,7 @@ export const ES_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "特許の専用実施権が設定登録されると、その権利を許諾した特許権者（A社）であっても、設定された範囲内では当該特許を実施する権利を失うことになります。これにより、専用実施権者（B社）はその範囲において独占的に特許を実施できる地位が法的に保証され、特許権者自身もその範囲内での実施が制限されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +530,7 @@ export const ES_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "AGPLv3（Affero General Public License v3）は、ネットワークサービスとしてソフトウェアを利用した場合でも、そのソフトウェアの改変版のソースコードを開示する義務を課す特徴的なライセンスです。したがって、サーバアプリケーションでAGPLv3ライセンスのソフトウェアを改変して使用する場合、そのサーバ側のソースコードを開示する必要があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +555,7 @@ export const ES_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "M.E. ポーターが提唱した三つの基本戦略の一つである集中戦略は、特定の顧客層（市場セグメント）、特定の地域市場、特定の流通チャネルなどに経営資源を集中させることで競争優位を確立する戦略です。これにより、限定されたニッチ市場において、他社にはない特化したサービスや製品を提供することを目指します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +580,7 @@ export const ES_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "プロダクトライン開発は、共通のアーキテクチャやコンポーネント、開発プロセスといった資産を複数の類似製品で再利用することを前提とする開発手法です。このアプローチにより、開発コストの削減、開発期間の短縮、そして再利用される共通資産の品質が安定しているため、製品全体の品質向上という利点が得られます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +605,7 @@ export const ES_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "IMU (Inertial Measurement Unit) は、加速度センサーやジャイロセンサー（角速度センサー）などを統合したもので、物体の動きや姿勢を検出するのに用いられます。ドローンの姿勢を制御するためには、機体がどの方向にどれくらいの速度で動いているか、どのくらいの速さで回転しているかを正確に把握する必要があり、これには加速度と角速度の測定が不可欠です。したがって、ドローンの姿勢制御における加速度、角速度の測定はIMUの最も代表的な応用事例の一つです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +630,7 @@ export const ES_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "PLM (Product Lifecycle Management) は、製品の企画、設計、製造、販売、廃棄・リサイクルといった製品の全ライフサイクルにわたるあらゆる情報を一元的に管理するシステムです。これにより、製品開発プロセスの効率化、設計作業の迅速化、コスト削減、そして市場投入までの時間短縮を目指し、企業の競争力強化に貢献します。設計図や部品表などのデータを全工程で共有し活用する目的は、まさにPLMの中心的役割に合致します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_es_am2_qs.pdf",
     "license": "IPA-public"

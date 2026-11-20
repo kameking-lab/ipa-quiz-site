@@ -1,0 +1,533 @@
+{
+  "rows": [
+    {
+      "jobId": "PLAN5-357",
+      "status": "completed",
+      "officialQuestionCount": 7,
+      "answerSlots": 35,
+      "questionUrl": "https://www.shiken.or.jp/chief/upload/20220820_ch_second_q04.pdf",
+      "answerUrl": "https://www.shiken.or.jp/chief/upload/20220820_ch_second_a01.pdf",
+      "pdfSha256": {
+        "PLAN5-357-questions.pdf": "7bce2d61cb20305658cd4af336ab1272acd807fa0091efd7953393c99c7a34f3",
+        "PLAN5-357-answers.pdf": "80aac761e77ba76cc31f010e474741589b5637d7523e811ba33ae4954369bddf"
+      },
+      "questions": {
+        "1": {
+          "questionPage": 4,
+          "officialChoiceLabels": [
+            "リ",
+            "ホ",
+            "ヲ",
+            "ニ",
+            "ル"
+          ]
+        },
+        "2": {
+          "questionPage": 6,
+          "officialChoiceLabels": [
+            "カ",
+            "ロ",
+            "リ",
+            "ヘ",
+            "ワ"
+          ]
+        },
+        "3": {
+          "questionPage": 7,
+          "officialChoiceLabels": [
+            "ハ",
+            "カ",
+            "ヨ",
+            "ヌ",
+            "ロ"
+          ]
+        },
+        "4": {
+          "questionPage": 8,
+          "officialChoiceLabels": [
+            "カ",
+            "ヌ",
+            "ヲ",
+            "リ",
+            "イ"
+          ]
+        },
+        "5": {
+          "questionPage": 9,
+          "officialChoiceLabels": [
+            "ホ",
+            "ヌ",
+            "ヨ",
+            "リ",
+            "イ"
+          ]
+        },
+        "6": {
+          "questionPage": 10,
+          "officialChoiceLabels": [
+            "ト",
+            "ハ",
+            "ル",
+            "ロ",
+            "ホ"
+          ]
+        },
+        "7": {
+          "questionPage": 12,
+          "officialChoiceLabels": [
+            "ホ",
+            "ヌ",
+            "ト",
+            "ロ",
+            "ヘ"
+          ]
+        }
+      },
+      "lane": "yb-7",
+      "branch": "cx/kako-5yh7-20261118",
+      "key": "denken2|2022|primary|houki|20220820_ch_second_q04.pdf",
+      "newQuestionCount": 7,
+      "questionIds": [
+        "denken2-2022-primary-law-q01",
+        "denken2-2022-primary-law-q02",
+        "denken2-2022-primary-law-q03",
+        "denken2-2022-primary-law-q04",
+        "denken2-2022-primary-law-q05",
+        "denken2-2022-primary-law-q06",
+        "denken2-2022-primary-law-q07"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 4,
+          "url": "/images/denken2/2022-native/law-q01-p04.jpg",
+          "sha256": "949fa5ed9e260603b7f5e461b0e7b47f23f6fd3c580e91b38eaf1d1d9b7ad7b0"
+        },
+        {
+          "physicalPage": 5,
+          "url": "/images/denken2/2022-native/law-q01-p05.jpg",
+          "sha256": "b9d8281a4e0050d73a061cc29b6ed1d3f2e4bb85436b4c0606c023296fa32a2d"
+        },
+        {
+          "physicalPage": 6,
+          "url": "/images/denken2/2022-native/law-q02-p06.jpg",
+          "sha256": "a6d72343a142ca5bc823cce9ff62d5991defc76c39daa3ef3659ad1a93c52a08"
+        },
+        {
+          "physicalPage": 7,
+          "url": "/images/denken2/2022-native/law-q03-p07.jpg",
+          "sha256": "52f3cdb20ded03c2202e8bb48dd858d5058d07963e90d29a7e42d4f0845b5f16"
+        },
+        {
+          "physicalPage": 8,
+          "url": "/images/denken2/2022-native/law-q04-p08.jpg",
+          "sha256": "7ab624430920f0ffb3a97878a10f9bdfb8f56c961198570d34bb4c365b5458ea"
+        },
+        {
+          "physicalPage": 9,
+          "url": "/images/denken2/2022-native/law-q05-p09.jpg",
+          "sha256": "291b0d40a899d0f77cd20eaca2b8a14b624d82de7746e2c59a92955f2b801648"
+        },
+        {
+          "physicalPage": 10,
+          "url": "/images/denken2/2022-native/law-q06-p10.jpg",
+          "sha256": "c393da8e00e8e5e71572b471c67577f9b2485181655ad556cccb25cf6b9ed103"
+        },
+        {
+          "physicalPage": 11,
+          "url": "/images/denken2/2022-native/law-q06-p11.jpg",
+          "sha256": "936e50f0a61cfe06354bcc562c87551de8c7e2719eaf48faa40559d18f92aa16"
+        },
+        {
+          "physicalPage": 12,
+          "url": "/images/denken2/2022-native/law-q07-p12.jpg",
+          "sha256": "945ae7c6ec3a82d1e4e3d1a0d014ae8477e684bcacff355fcecb359249a95514"
+        }
+      ],
+      "lawReferenceDate": "2022-04-01",
+      "explanationSources": [
+        {
+          "questions": [
+            1
+          ],
+          "urls": [
+            "https://www.meti.go.jp/shingikai/sankoshin/hoan_shohi/denryoku_anzen/hoan_seido/pdf/001_05_01.pdf",
+            "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/seido.pdf"
+          ]
+        },
+        {
+          "questions": [
+            2
+          ],
+          "urls": [
+            "https://laws.e-gov.go.jp/api/2/law_data/409M50000400052?asof=2022-04-01",
+            "https://www.safety-chubu.meti.go.jp/denryoku/pcb/index.html"
+          ]
+        },
+        {
+          "questions": [
+            3,
+            5,
+            6
+          ],
+          "urls": [
+            "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20220331-4.pdf",
+            "https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishaku.pdf"
+          ]
+        },
+        {
+          "questions": [
+            7
+          ],
+          "urls": [
+            "https://www.occto.or.jp/assets/soukaihoka/rijikai/2022/files/rijikai_350_gjiroku_2.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-343",
+      "status": "completed",
+      "lane": "yb-7",
+      "branch": "cx/kako-5yh7-20261118",
+      "key": "kanri|2021|annual|gakka|r03.pdf",
+      "newQuestionCount": 50,
+      "questionIds": [
+        "kanri-2021-annual-gakka-q1",
+        "kanri-2021-annual-gakka-q2",
+        "kanri-2021-annual-gakka-q3",
+        "kanri-2021-annual-gakka-q4",
+        "kanri-2021-annual-gakka-q5",
+        "kanri-2021-annual-gakka-q6",
+        "kanri-2021-annual-gakka-q7",
+        "kanri-2021-annual-gakka-q8",
+        "kanri-2021-annual-gakka-q9",
+        "kanri-2021-annual-gakka-q10",
+        "kanri-2021-annual-gakka-q11",
+        "kanri-2021-annual-gakka-q12",
+        "kanri-2021-annual-gakka-q13",
+        "kanri-2021-annual-gakka-q14",
+        "kanri-2021-annual-gakka-q15",
+        "kanri-2021-annual-gakka-q16",
+        "kanri-2021-annual-gakka-q17",
+        "kanri-2021-annual-gakka-q18",
+        "kanri-2021-annual-gakka-q19",
+        "kanri-2021-annual-gakka-q20",
+        "kanri-2021-annual-gakka-q21",
+        "kanri-2021-annual-gakka-q22",
+        "kanri-2021-annual-gakka-q23",
+        "kanri-2021-annual-gakka-q24",
+        "kanri-2021-annual-gakka-q25",
+        "kanri-2021-annual-gakka-q26",
+        "kanri-2021-annual-gakka-q27",
+        "kanri-2021-annual-gakka-q28",
+        "kanri-2021-annual-gakka-q29",
+        "kanri-2021-annual-gakka-q30",
+        "kanri-2021-annual-gakka-q31",
+        "kanri-2021-annual-gakka-q32",
+        "kanri-2021-annual-gakka-q33",
+        "kanri-2021-annual-gakka-q34",
+        "kanri-2021-annual-gakka-q35",
+        "kanri-2021-annual-gakka-q36",
+        "kanri-2021-annual-gakka-q37",
+        "kanri-2021-annual-gakka-q38",
+        "kanri-2021-annual-gakka-q39",
+        "kanri-2021-annual-gakka-q40",
+        "kanri-2021-annual-gakka-q41",
+        "kanri-2021-annual-gakka-q42",
+        "kanri-2021-annual-gakka-q43",
+        "kanri-2021-annual-gakka-q44",
+        "kanri-2021-annual-gakka-q45",
+        "kanri-2021-annual-gakka-q46",
+        "kanri-2021-annual-gakka-q47",
+        "kanri-2021-annual-gakka-q48",
+        "kanri-2021-annual-gakka-q49",
+        "kanri-2021-annual-gakka-q50"
+      ],
+      "officialQuestionCount": 50,
+      "officialAnswerCount": 50,
+      "choiceExplanationCount": 200,
+      "questionUrl": "https://www.kanrikyo.or.jp/kanri/mondaiseikai/pdf/r03.pdf",
+      "answerUrl": "https://www.kanrikyo.or.jp/kanri/mondaiseikai/pdf/r03.pdf",
+      "sourcePdfSha256": "3c2e83efb34685861046c0373dc42b03bbd0dce10696719737b3fd49a3283a12",
+      "lawReferenceDate": "2021-04-01",
+      "questions": [
+        {
+          "number": 1,
+          "physicalPage": 3,
+          "officialAnswerNumber": 1
+        },
+        {
+          "number": 2,
+          "physicalPage": 4,
+          "officialAnswerNumber": 3
+        },
+        {
+          "number": 3,
+          "physicalPage": 4,
+          "officialAnswerNumber": 4
+        },
+        {
+          "number": 4,
+          "physicalPage": 5,
+          "officialAnswerNumber": 3
+        },
+        {
+          "number": 5,
+          "physicalPage": 5,
+          "officialAnswerNumber": 4
+        },
+        {
+          "number": 6,
+          "physicalPage": 6,
+          "officialAnswerNumber": 1
+        },
+        {
+          "number": 7,
+          "physicalPage": 7,
+          "officialAnswerNumber": 2
+        },
+        {
+          "number": 8,
+          "physicalPage": 8,
+          "officialAnswerNumber": 2
+        },
+        {
+          "number": 9,
+          "physicalPage": 8,
+          "officialAnswerNumber": 1
+        },
+        {
+          "number": 10,
+          "physicalPage": 9,
+          "officialAnswerNumber": 2
+        },
+        {
+          "number": 11,
+          "physicalPage": 9,
+          "officialAnswerNumber": 1
+        },
+        {
+          "number": 12,
+          "physicalPage": 10,
+          "officialAnswerNumber": 2
+        },
+        {
+          "number": 13,
+          "physicalPage": 10,
+          "officialAnswerNumber": 4
+        },
+        {
+          "number": 14,
+          "physicalPage": 11,
+          "officialAnswerNumber": 1
+        },
+        {
+          "number": 15,
+          "physicalPage": 12,
+          "officialAnswerNumber": 1
+        },
+        {
+          "number": 16,
+          "physicalPage": 14,
+          "officialAnswerNumber": 1
+        },
+        {
+          "number": 17,
+          "physicalPage": 15,
+          "officialAnswerNumber": 3
+        },
+        {
+          "number": 18,
+          "physicalPage": 15,
+          "officialAnswerNumber": 4
+        },
+        {
+          "number": 19,
+          "physicalPage": 16,
+          "officialAnswerNumber": 3
+        },
+        {
+          "number": 20,
+          "physicalPage": 16,
+          "officialAnswerNumber": 1
+        },
+        {
+          "number": 21,
+          "physicalPage": 17,
+          "officialAnswerNumber": 3
+        },
+        {
+          "number": 22,
+          "physicalPage": 17,
+          "officialAnswerNumber": 2
+        },
+        {
+          "number": 23,
+          "physicalPage": 18,
+          "officialAnswerNumber": 4
+        },
+        {
+          "number": 24,
+          "physicalPage": 18,
+          "officialAnswerNumber": 3
+        },
+        {
+          "number": 25,
+          "physicalPage": 19,
+          "officialAnswerNumber": 2
+        },
+        {
+          "number": 26,
+          "physicalPage": 19,
+          "officialAnswerNumber": 4
+        },
+        {
+          "number": 27,
+          "physicalPage": 20,
+          "officialAnswerNumber": 4
+        },
+        {
+          "number": 28,
+          "physicalPage": 20,
+          "officialAnswerNumber": 2
+        },
+        {
+          "number": 29,
+          "physicalPage": 21,
+          "officialAnswerNumber": 2
+        },
+        {
+          "number": 30,
+          "physicalPage": 21,
+          "officialAnswerNumber": 2
+        },
+        {
+          "number": 31,
+          "physicalPage": 22,
+          "officialAnswerNumber": 3
+        },
+        {
+          "number": 32,
+          "physicalPage": 22,
+          "officialAnswerNumber": 1
+        },
+        {
+          "number": 33,
+          "physicalPage": 23,
+          "officialAnswerNumber": 2
+        },
+        {
+          "number": 34,
+          "physicalPage": 24,
+          "officialAnswerNumber": 4
+        },
+        {
+          "number": 35,
+          "physicalPage": 24,
+          "officialAnswerNumber": 3
+        },
+        {
+          "number": 36,
+          "physicalPage": 25,
+          "officialAnswerNumber": 2
+        },
+        {
+          "number": 37,
+          "physicalPage": 26,
+          "officialAnswerNumber": 3
+        },
+        {
+          "number": 38,
+          "physicalPage": 26,
+          "officialAnswerNumber": 2
+        },
+        {
+          "number": 39,
+          "physicalPage": 27,
+          "officialAnswerNumber": 2
+        },
+        {
+          "number": 40,
+          "physicalPage": 28,
+          "officialAnswerNumber": 2
+        },
+        {
+          "number": 41,
+          "physicalPage": 28,
+          "officialAnswerNumber": 3
+        },
+        {
+          "number": 42,
+          "physicalPage": 29,
+          "officialAnswerNumber": 1
+        },
+        {
+          "number": 43,
+          "physicalPage": 29,
+          "officialAnswerNumber": 2
+        },
+        {
+          "number": 44,
+          "physicalPage": 30,
+          "officialAnswerNumber": 1
+        },
+        {
+          "number": 45,
+          "physicalPage": 31,
+          "officialAnswerNumber": 1
+        },
+        {
+          "number": 46,
+          "physicalPage": 31,
+          "officialAnswerNumber": 2
+        },
+        {
+          "number": 47,
+          "physicalPage": 32,
+          "officialAnswerNumber": 3
+        },
+        {
+          "number": 48,
+          "physicalPage": 33,
+          "officialAnswerNumber": 4
+        },
+        {
+          "number": 49,
+          "physicalPage": 34,
+          "officialAnswerNumber": 3
+        },
+        {
+          "number": 50,
+          "physicalPage": 35,
+          "officialAnswerNumber": 3
+        }
+      ],
+      "sourceImages": [
+        {
+          "question": 14,
+          "physicalPage": 11,
+          "url": "/questions/kanri/2021-annual/q14-p11.jpg",
+          "sha256": "59f2db0947622bfb68674c5cecc1a5bfbcabec6f7d0d211873fe6a3c7aca1144"
+        },
+        {
+          "question": 15,
+          "physicalPage": 12,
+          "url": "/questions/kanri/2021-annual/q15-p12.jpg",
+          "sha256": "42e6705c7dcc29d0b9408ca93f0c022de2559bc208f4ea8af9ac44ff3614efe2"
+        },
+        {
+          "question": 15,
+          "physicalPage": 13,
+          "url": "/questions/kanri/2021-annual/q15-p13.jpg",
+          "sha256": "8adc69925c32ca177899071bfacd4fd1ddc6859413a37885420cfc47728af3d3"
+        },
+        {
+          "question": 16,
+          "physicalPage": 14,
+          "url": "/questions/kanri/2021-annual/q16-p14.jpg",
+          "sha256": "6db57f855675aea1d609441a3b838e72c76da6418633602f83254a650a412eea"
+        }
+      ]
+    }
+  ]
+}

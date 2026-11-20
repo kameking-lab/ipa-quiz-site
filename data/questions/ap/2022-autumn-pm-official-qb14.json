@@ -1,0 +1,502 @@
+[
+  {
+    "id": "ap-2022a-pm-q1",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2022,
+    "season": "autumn",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "情報セキュリティ",
+    "topicTags": [
+      "マルウェア",
+      "EDR",
+      "インシデント対応"
+    ],
+    "difficulty": 5,
+    "question": "問1　マルウェアへの感染対策\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n 設問１(1)  a ア\n              b ケ\n              c ク\n         (2) ア\n 設問２(1) 稼働中のホストのIP アドレス\n         (2) ウ\n         (3) ア\n 設問３(1) ICMP エコー要求パケットの連続した送信\n         (2) マルウェアに感染したPC を隔離する。\n         (3) EDR が保存するログの分析",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n 設問１(1)  a ア\n              b ケ\n              c ク\n         (2) ア\n 設問２(1) 稼働中のホストのIP アドレス\n         (2) ウ\n         (3) ア\n 設問３(1) ICMP エコー要求パケットの連続した送信\n         (2) マルウェアに感染したPC を隔離する。\n         (3) EDR が保存するログの分析\n```",
+    "explanation": "侵入を防ぐ対策と、侵入後の探索や感染拡大を検知する対策を分けます。ICMPエコー要求の連続送信は、稼働しているホストを調べる動作と結び付きます。感染の疑いがあるPCはネットワークから隔離し、EDRに保存されたログで侵入後の活動を調べます。単に不審なファイルを削除するのではなく、通信の観測、端末の隔離、過去ログの分析を一連の対応として整理すると、各設問の目的がつながります。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-4.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-5.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-6.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-7.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-8.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2022年秋 午後 問1 本文・図表・設問 原本4ページ",
+      "応用情報技術者 2022年秋 午後 問1 本文・図表・設問 原本5ページ",
+      "応用情報技術者 2022年秋 午後 問1 本文・図表・設問 原本6ページ",
+      "応用情報技術者 2022年秋 午後 問1 本文・図表・設問 原本7ページ",
+      "応用情報技術者 2022年秋 午後 問1 本文・図表・設問 原本8ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/answer-q1-1.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問1 原本1ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2022年度 秋期 応用情報技術者試験 午後」問1。"
+  },
+  {
+    "id": "ap-2022a-pm-q2",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2022,
+    "season": "autumn",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "経営戦略",
+    "topicTags": [
+      "SWOT分析",
+      "新規事業",
+      "財務計画"
+    ],
+    "difficulty": 5,
+    "question": "問2　教育サービス業の新規事業開発\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n 設問１(1)  強み  業界に先駆けた教育コンテンツの整備力\n        機会  リスキリングのニーズの高まり\n         (2) イ\n 設問２(1) 大手製造業の同業他社へ展開するため\n         (2)  a ウ\n 設問３(1)  b カ\n              c イ\n         (2)  d サブスクリプション\n 設問４(1) ・新規事業のミッションを遂行すること\n       ・競争優位性のある教育SaaS の提供\n         (2)  e  40\n              f  80",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n 設問１(1)  強み  業界に先駆けた教育コンテンツの整備力\n        機会  リスキリングのニーズの高まり\n         (2) イ\n 設問２(1) 大手製造業の同業他社へ展開するため\n         (2)  a ウ\n 設問３(1)  b カ\n              c イ\n         (2)  d サブスクリプション\n 設問４(1) ・新規事業のミッションを遂行すること\n       ・競争優位性のある教育SaaS の提供\n         (2)  e  40\n              f  80\n```",
+    "explanation": "SWOTでは自社に備わる能力を強み、外部環境の追い風を機会として分けます。本問では教育コンテンツを整備できる力とリスキリング需要を混同しないことが大切です。先行顧客への提供経験を同業他社へ展開する筋道を確認し、継続課金のサービスモデルと財務計画を対応付けます。数値の空欄は表の収益・費用の条件から求め、事業のミッションと利益確保の両方を満たしているか確認します。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-10.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-11.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-12.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-13.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-14.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2022年秋 午後 問2 本文・図表・設問 原本10ページ",
+      "応用情報技術者 2022年秋 午後 問2 本文・図表・設問 原本11ページ",
+      "応用情報技術者 2022年秋 午後 問2 本文・図表・設問 原本12ページ",
+      "応用情報技術者 2022年秋 午後 問2 本文・図表・設問 原本13ページ",
+      "応用情報技術者 2022年秋 午後 問2 本文・図表・設問 原本14ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/answer-q2-1.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問2 原本1ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2022年度 秋期 応用情報技術者試験 午後」問2。"
+  },
+  {
+    "id": "ap-2022a-pm-q3",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2022,
+    "season": "autumn",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "アルゴリズム",
+    "topicTags": [
+      "再帰",
+      "探索",
+      "スタック"
+    ],
+    "difficulty": 5,
+    "question": "問3　迷路の探索処理\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n 設問１(1) 3\n         (2) ア  2\n  設問２  イ  paths[sol_num][k]\n       ウ  stack_top - 1\n       エ  maze[x][y]\n  設問３  オ  sol_num\n 設問４(1) カ 5，3\n         (2) キ  22\n       ク  3",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n 設問１(1) 3\n         (2) ア  2\n  設問２  イ  paths[sol_num][k]\n       ウ  stack_top - 1\n       エ  maze[x][y]\n  設問３  オ  sol_num\n 設問４(1) カ 5，3\n         (2) キ  22\n       ク  3\n```",
+    "explanation": "再帰呼出しの前後で、探索位置、訪問状態、スタックの先頭位置がどう変わるかを表にして追います。経路を保存するときは現在の探索用スタックと、解として確定した経路の配列を区別します。戻り処理でスタック位置を一つ戻すことが、別経路を探索する準備になります。添字の順序や解の個数を表す変数の役割を確認し、指定された迷路で実際に経路をたどれば、空欄と実行結果を同じ考え方で求められます。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-16.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-17.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-18.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-19.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2022年秋 午後 問3 本文・図表・設問 原本16ページ",
+      "応用情報技術者 2022年秋 午後 問3 本文・図表・設問 原本17ページ",
+      "応用情報技術者 2022年秋 午後 問3 本文・図表・設問 原本18ページ",
+      "応用情報技術者 2022年秋 午後 問3 本文・図表・設問 原本19ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/answer-q3-2.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問3 原本2ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2022年度 秋期 応用情報技術者試験 午後」問3。"
+  },
+  {
+    "id": "ap-2022a-pm-q4",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2022,
+    "season": "autumn",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "システム構成",
+    "topicTags": [
+      "コンテナ",
+      "開発環境",
+      "イメージ"
+    ],
+    "difficulty": 5,
+    "question": "問4　コンテナ型仮想化技術を用いた開発環境\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n 設問１(1)  a ウ\n                                           順不同\n              b エ\n              c イ\n         (2) エ\n 設問２(1) 開発期間中に頻繁に更新されるから\n         (2)  d  10.1.2\n              e  15.3.3\n 設問３(1) イ\n         (2)  f  /app/FuncX/test/test.txt\n         (3) img-dev_dec",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n 設問１(1)  a ウ\n                                           順不同\n              b エ\n              c イ\n         (2) エ\n 設問２(1) 開発期間中に頻繁に更新されるから\n         (2)  d  10.1.2\n              e  15.3.3\n 設問３(1) イ\n         (2)  f  /app/FuncX/test/test.txt\n         (3) img-dev_dec\n```",
+    "explanation": "コンテナのイメージに含まれる内容と、実行時にマウントするファイルを分けて考えます。開発中に頻繁に変更する内容は、更新のたびにイメージを作り直す方式との違いが論点になります。ファイルの参照先はホスト側のパスをそのまま答えず、コンテナ内のマウント先からたどります。構成表のバージョンと作成するイメージ名を対応付け、どの開発環境でどの内容が使われるかを順に確認します。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-20.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-21.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-22.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-23.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-24.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2022年秋 午後 問4 本文・図表・設問 原本20ページ",
+      "応用情報技術者 2022年秋 午後 問4 本文・図表・設問 原本21ページ",
+      "応用情報技術者 2022年秋 午後 問4 本文・図表・設問 原本22ページ",
+      "応用情報技術者 2022年秋 午後 問4 本文・図表・設問 原本23ページ",
+      "応用情報技術者 2022年秋 午後 問4 本文・図表・設問 原本24ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/answer-q4-2.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問4 原本2ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2022年度 秋期 応用情報技術者試験 午後」問4。"
+  },
+  {
+    "id": "ap-2022a-pm-q5",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2022,
+    "season": "autumn",
+    "qNumber": 5,
+    "type": "descriptive",
+    "category": "ネットワーク",
+    "topicTags": [
+      "VPN",
+      "多要素認証",
+      "帯域設計"
+    ],
+    "difficulty": 5,
+    "question": "問5　テレワーク環境への移行\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n  設問１     a カ\n              b イ\n              c ウ\n 設問２(1) Web サーバ，本社VPN サーバ\n         (2)  d ワンタイムパスワード\n         (3)  e 認証サーバ\n 設問３(1) イ\n         (2)  f  1.6\n              g  192\n         (3) Web 会議サービス，本社VPN サーバ",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n  設問１     a カ\n              b イ\n              c ウ\n 設問２(1) Web サーバ，本社VPN サーバ\n         (2)  d ワンタイムパスワード\n         (3)  e 認証サーバ\n 設問３(1) イ\n         (2)  f  1.6\n              g  192\n         (3) Web 会議サービス，本社VPN サーバ\n```",
+    "explanation": "外部から到達させるWebサーバやVPNサーバと、社内の認証処理を分けて読みます。ワンタイムパスワードを使う認証では、VPNの接続先だけでなく認証サーバとの役割分担も確認します。Web会議の導入による影響は、利用人数、通信量、既存の回線やVPNの経路を基に見積もります。計算した通信量だけで終わらず、どのサービスと機器に負荷が集中するかまで対応付けることが、障害時の切分けにつながります。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-26.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-27.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-28.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-29.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-30.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2022年秋 午後 問5 本文・図表・設問 原本26ページ",
+      "応用情報技術者 2022年秋 午後 問5 本文・図表・設問 原本27ページ",
+      "応用情報技術者 2022年秋 午後 問5 本文・図表・設問 原本28ページ",
+      "応用情報技術者 2022年秋 午後 問5 本文・図表・設問 原本29ページ",
+      "応用情報技術者 2022年秋 午後 問5 本文・図表・設問 原本30ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/answer-q5-3.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問5 原本3ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2022年度 秋期 応用情報技術者試験 午後」問5。"
+  },
+  {
+    "id": "ap-2022a-pm-q6",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2022,
+    "season": "autumn",
+    "qNumber": 6,
+    "type": "descriptive",
+    "category": "データベース",
+    "topicTags": [
+      "E-R図",
+      "SQL",
+      "整合性制約"
+    ],
+    "difficulty": 5,
+    "question": "問6　スマートデバイス管理システムのデータベース設計\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n  設問１     a 年月\n              b ↑\n              c 従業員ID\n                                           順不同\n              d 情報端末ID\n\n              e ↓\n              f\n\n  設問２  オ\n  設問３     j  SELECT (契約ID, 暗証番号)\n              k  CHAR(4) DEFAULT '1234' NOT NULL\n              l  PRIMARY KEY\n              m  FOREIGN KEY",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n  設問１     a 年月\n              b ↑\n              c 従業員ID\n                                           順不同\n              d 情報端末ID\n\n              e ↓\n              f\n\n  設問２  オ\n  設問３     j  SELECT (契約ID, 暗証番号)\n              k  CHAR(4) DEFAULT '1234' NOT NULL\n              l  PRIMARY KEY\n              m  FOREIGN KEY\n```",
+    "explanation": "従業員、情報端末、契約などの管理対象を分け、業務で一意に決まる組合せから主キーと関連を判断します。E-R図の矢印は線の向きだけを暗記せず、どちら側の一つの値に対して複数の記録が対応するかを本文で確かめます。SQLでは参照を許可する列、固定長文字列の既定値とNOT NULL、主キー制約と外部キー制約を別々に確認します。公式解答の図形部分も、原本の解答画像で対応関係を確認できます。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-32.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-33.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-34.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-35.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-36.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2022年秋 午後 問6 本文・図表・設問 原本32ページ",
+      "応用情報技術者 2022年秋 午後 問6 本文・図表・設問 原本33ページ",
+      "応用情報技術者 2022年秋 午後 問6 本文・図表・設問 原本34ページ",
+      "応用情報技術者 2022年秋 午後 問6 本文・図表・設問 原本35ページ",
+      "応用情報技術者 2022年秋 午後 問6 本文・図表・設問 原本36ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/answer-q6-3.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問6 原本3ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2022年度 秋期 応用情報技術者試験 午後」問6。"
+  },
+  {
+    "id": "ap-2022a-pm-q7",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2022,
+    "season": "autumn",
+    "qNumber": 7,
+    "type": "descriptive",
+    "category": "組込みシステム",
+    "topicTags": [
+      "タスク",
+      "センサー",
+      "状態遷移"
+    ],
+    "difficulty": 5,
+    "question": "問7　傘シェアリングシステム\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n 設問１(1) (a) ノイズなどによる誤動作を防ぐため\n             (b) 40\n         (2) 100,000\n 設問２(1)  a メイン\n              b 管理サーバ\n         (2)  c ア\n              d エ\n 設問３(1)  e ロック解除完了\n              f センサーで検知\n              g ロックを掛け\n              h 完了\n         (2) 管理情報を更新し，管理サーバへ送信する。",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n 設問１(1) (a) ノイズなどによる誤動作を防ぐため\n             (b) 40\n         (2) 100,000\n 設問２(1)  a メイン\n              b 管理サーバ\n         (2)  c ア\n              d エ\n 設問３(1)  e ロック解除完了\n              f センサーで検知\n              g ロックを掛け\n              h 完了\n         (2) 管理情報を更新し，管理サーバへ送信する。\n```",
+    "explanation": "センサーの検知、ロックの操作、サーバへの通知を別の処理として追い、どの完了を待って次へ進むかを確認します。入力を一定時間確認する処理はノイズなどによる誤動作を防ぐためのもので、周期や回数は本文の時間条件から求めます。状態の更新はロック解除を指示した時点で完了とせず、検知や完了通知を受けて行います。管理情報の更新とサーバへの送信を組にして考えると、装置とサーバの状態を整合させられます。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-38.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-39.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-40.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-41.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2022年秋 午後 問7 本文・図表・設問 原本38ページ",
+      "応用情報技術者 2022年秋 午後 問7 本文・図表・設問 原本39ページ",
+      "応用情報技術者 2022年秋 午後 問7 本文・図表・設問 原本40ページ",
+      "応用情報技術者 2022年秋 午後 問7 本文・図表・設問 原本41ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/answer-q7-4.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問7 原本4ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2022年度 秋期 応用情報技術者試験 午後」問7。"
+  },
+  {
+    "id": "ap-2022a-pm-q8",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2022,
+    "season": "autumn",
+    "qNumber": 8,
+    "type": "descriptive",
+    "category": "ソフトウェア開発管理",
+    "topicTags": [
+      "レビュー",
+      "品質管理",
+      "欠陥分析"
+    ],
+    "difficulty": 5,
+    "question": "問8　設計レビューの実施\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n 設問１(1) 下線① ウ\n       下線② ア\n         (2)  a モデレーター\n         (3)  b 二次欠陥\n  設問２  別グループのリーダー\n 設問３(1) ・ツールの利用で抽出可能だから\n      ・設計途中のレビューで排除されているから\n         (2)  c オ\n         (3) 集合ミーティングでは欠陥の指摘だけ行う。",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n 設問１(1) 下線① ウ\n       下線② ア\n         (2)  a モデレーター\n         (3)  b 二次欠陥\n  設問２  別グループのリーダー\n 設問３(1) ・ツールの利用で抽出可能だから\n      ・設計途中のレビューで排除されているから\n         (2)  c オ\n         (3) 集合ミーティングでは欠陥の指摘だけ行う。\n```",
+    "explanation": "設計レビューでは、欠陥を見付ける活動と、修正方法を詳しく議論する活動を分けます。集合ミーティングで欠陥の指摘に集中すれば、参加者全員の時間を必要以上に使わずに確認を進められます。進行役の役割、別グループの視点を取り入れる理由、修正に伴って生まれる二次欠陥を整理します。指摘件数の多寡だけでは品質を判断できないため、ツールや設計途中の確認で既に除かれた欠陥も考慮して評価します。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-42.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-43.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-44.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-45.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-46.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2022年秋 午後 問8 本文・図表・設問 原本42ページ",
+      "応用情報技術者 2022年秋 午後 問8 本文・図表・設問 原本43ページ",
+      "応用情報技術者 2022年秋 午後 問8 本文・図表・設問 原本44ページ",
+      "応用情報技術者 2022年秋 午後 問8 本文・図表・設問 原本45ページ",
+      "応用情報技術者 2022年秋 午後 問8 本文・図表・設問 原本46ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/answer-q8-4.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問8 原本4ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2022年度 秋期 応用情報技術者試験 午後」問8。"
+  },
+  {
+    "id": "ap-2022a-pm-q9",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2022,
+    "season": "autumn",
+    "qNumber": 9,
+    "type": "descriptive",
+    "category": "プロジェクトマネジメント",
+    "topicTags": [
+      "リスク分析",
+      "RBS",
+      "期待値"
+    ],
+    "difficulty": 5,
+    "question": "問9　プロジェクトのリスクマネジメント\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n  設問１     a  RBS\n 設問２(1) AI に知見のあるT 社が参画していないから\n         (2)  b ウ\n 設問３(1)  c 遅延なし\n         (2) 項番   2\n       期待値  80\n  設問４  プロジェクトの進捗に従ってリスクの特定を継続して行う。",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n  設問１     a  RBS\n 設問２(1) AI に知見のあるT 社が参画していないから\n         (2)  b ウ\n 設問３(1)  c 遅延なし\n         (2) 項番   2\n       期待値  80\n  設問４  プロジェクトの進捗に従ってリスクの特定を継続して行う。\n```",
+    "explanation": "リスクは分類した一覧から特定し、対応案は分岐ごとの確率と影響額を使って比較します。デシジョンツリーでは各経路の値に発生確率を掛け、同じ対応案の経路を合計して期待値を求めます。専門知識を持つ会社が検討に参加しているかも、見積りや評価の妥当性を左右します。一度決めた一覧を固定するのではなく、プロジェクトの進行で分かった条件を反映し、リスクの特定を継続する点が重要です。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-48.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-49.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-50.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-51.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-52.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2022年秋 午後 問9 本文・図表・設問 原本48ページ",
+      "応用情報技術者 2022年秋 午後 問9 本文・図表・設問 原本49ページ",
+      "応用情報技術者 2022年秋 午後 問9 本文・図表・設問 原本50ページ",
+      "応用情報技術者 2022年秋 午後 問9 本文・図表・設問 原本51ページ",
+      "応用情報技術者 2022年秋 午後 問9 本文・図表・設問 原本52ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/answer-q9-5.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問9 原本5ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2022年度 秋期 応用情報技術者試験 午後」問9。"
+  },
+  {
+    "id": "ap-2022a-pm-q10",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2022,
+    "season": "autumn",
+    "qNumber": 10,
+    "type": "descriptive",
+    "category": "サービスマネジメント",
+    "topicTags": [
+      "変更管理",
+      "作業工数",
+      "運用費用"
+    ],
+    "difficulty": 5,
+    "question": "問10　サービス変更の計画\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n  設問１  売掛金の回収率を高める。\n  設問２        a     6\n       作業内容 業務変更のための業務設計\n 設問３(1)  b  1.1\n              c  46.2\n              d  11.0\n         (2) 項番   2\n       内容 運用費用の予算を超過する。\n       根拠   1 か月当たりの平均作業工数の増加が10％超となる。",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n  設問１  売掛金の回収率を高める。\n  設問２        a     6\n       作業内容 業務変更のための業務設計\n 設問３(1)  b  1.1\n              c  46.2\n              d  11.0\n         (2) 項番   2\n       内容 運用費用の予算を超過する。\n       根拠   1 か月当たりの平均作業工数の増加が10％超となる。\n```",
+    "explanation": "サービスの変更はシステムの改修だけでなく、業務設計、運用手順、担当者の作業量まで影響します。変更前後の件数や一件当たりの時間から工数を算出し、月間の平均作業工数と運用費用の予算を比較します。本問では平均工数の増加が10％を超えることが、予算超過を判断する根拠になります。売掛金の回収率を高めるという業務目的と、変更を維持する運用負荷を一緒に確認します。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-54.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-55.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-56.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-57.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-58.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2022年秋 午後 問10 本文・図表・設問 原本54ページ",
+      "応用情報技術者 2022年秋 午後 問10 本文・図表・設問 原本55ページ",
+      "応用情報技術者 2022年秋 午後 問10 本文・図表・設問 原本56ページ",
+      "応用情報技術者 2022年秋 午後 問10 本文・図表・設問 原本57ページ",
+      "応用情報技術者 2022年秋 午後 問10 本文・図表・設問 原本58ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/answer-q10-5.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問10 原本5ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2022年度 秋期 応用情報技術者試験 午後」問10。"
+  },
+  {
+    "id": "ap-2022a-pm-q11",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2022,
+    "season": "autumn",
+    "qNumber": 11,
+    "type": "descriptive",
+    "category": "システム監査",
+    "topicTags": [
+      "テレワーク",
+      "監査証跡",
+      "是正管理"
+    ],
+    "difficulty": 5,
+    "question": "問11　テレワーク環境の監査\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n  設問１     a 従業員の異動，退職などの状況\n                                           順不同\n              b 終了届の記載内容\n  設問２     c セキュリティ点検を適切に実施\n  設問３     d 貸与PC の紛失日\n                                           順不同\n              e システム部への届出日\n  設問４     f リスク評価\n              g  Web 会議システム\n  設問５     h 不備事項の是正状況をモニタリング",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n  設問１     a 従業員の異動，退職などの状況\n                                           順不同\n              b 終了届の記載内容\n  設問２     c セキュリティ点検を適切に実施\n  設問３     d 貸与PC の紛失日\n                                           順不同\n              e システム部への届出日\n  設問４     f リスク評価\n              g  Web 会議システム\n  設問５     h 不備事項の是正状況をモニタリング\n```",
+    "explanation": "点検表に回答があることだけでは、セキュリティ管理が有効に働いたとはいえません。従業員の異動・退職や利用終了届と突き合わせ、利用権限や端末の管理が実態に合っているか確認します。紛失した日と届出日を比較すれば、報告の遅れを確認できます。また、点検で分かった不備は記録して終わらせず、リスク評価に基づく対応と是正状況のモニタリングまで追う必要があります。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-60.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-61.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-62.webp",
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/question-63.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2022年秋 午後 問11 本文・図表・設問 原本60ページ",
+      "応用情報技術者 2022年秋 午後 問11 本文・図表・設問 原本61ページ",
+      "応用情報技術者 2022年秋 午後 問11 本文・図表・設問 原本62ページ",
+      "応用情報技術者 2022年秋 午後 問11 本文・図表・設問 原本63ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb14/ap/2022-autumn-pm/answer-q11-6.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問11 原本6ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_ap_pm_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2022年度 秋期 応用情報技術者試験 午後」問11。"
+  }
+]

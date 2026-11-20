@@ -1,0 +1,949 @@
+{
+  "schemaVersion": 1,
+  "lane": "qb-12",
+  "checkedAt": "2026-11-18",
+  "branch": "cx/kako-5y12-20261118",
+  "baselineCommit": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "duplicateAudit": {
+    "refsChecked": 92,
+    "changedBlobsChecked": 584,
+    "ledger": "research/replenish/ledger.json",
+    "result": "担当IPA午後7行の同回・区分に既存原稿なし。年度単位の台帳収録は午前と区別。"
+  },
+  "rows": [
+    {
+      "jobId": "PLAN5-012",
+      "planIndex": 11,
+      "key": "sc|2021|autumn|pm1|2021r03a_sc_pm1_qs.pdf",
+      "status": "収録完了",
+      "recordCount": 3,
+      "officialLargeQuestionCount": 3,
+      "baselineLoadedRecordCount": 0,
+      "baselineBranchAvailableNumbers": [],
+      "sources": [
+        {
+          "jobId": "PLAN5-012",
+          "kind": "questions",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000apad-att/2021r03a_sc_pm1_qs.pdf",
+          "sha256": "49f32dca983774caa3a6145c31bdc86b304eb70ed9e55b7090ccd35460b624cd",
+          "pages": 21
+        },
+        {
+          "jobId": "PLAN5-012",
+          "kind": "answers",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000apad-att/2021r03a_sc_pm1_ans.pdf",
+          "sha256": "1eca65ff2166a14064261153e4b4a77d4328d387ec1a1dac35c06be9a15be2de",
+          "pages": 2
+        }
+      ],
+      "dataPath": "data/questions/sc/official-2021-autumn-pm1-qb12.json",
+      "records": [
+        {
+          "id": "sc-2021a-pm1-q1",
+          "qNumber": 1,
+          "questionPdfPages": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "answerPdfPages": [
+            1
+          ],
+          "answerImageCrops": [
+            [
+              0.0,
+              94.00482940673828,
+              595.2760009765625,
+              412.0848083496094
+            ]
+          ],
+          "answerTextSha256": "b6b8e3a74597e0764909a67b1a329f002ae7043bcda69e2ddfeec925ceaaeb19"
+        },
+        {
+          "id": "sc-2021a-pm1-q2",
+          "qNumber": 2,
+          "questionPdfPages": [
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            2
+          ],
+          "answerPdfPages": [
+            1
+          ],
+          "answerImageCrops": [
+            [
+              0.0,
+              413.0848083496094,
+              595.2760009765625,
+              781.8900146484375
+            ]
+          ],
+          "answerTextSha256": "51c8e3e0d2f020ef8c81dc9d59303271f7202ae73f30f2f67e23e0b1c490df43"
+        },
+        {
+          "id": "sc-2021a-pm1-q3",
+          "qNumber": 3,
+          "questionPdfPages": [
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "answerPdfPages": [
+            2
+          ],
+          "answerImageCrops": [
+            [
+              0.0,
+              48.0448112487793,
+              595.2760009765625,
+              781.8900146484375
+            ]
+          ],
+          "answerTextSha256": "4ee11eb322f903e54d0f49e27b220705aecd04968e76839c58900dac2ad09627"
+        }
+      ],
+      "notes": [
+        "公式本文・設問・図表はページ画像で保持。公式解答例（PMは出題趣旨）は設問ごとに画像と抽出テキストで保持。",
+        "共通の記述表示対応はcx/kako-5y1-20261118およびcx/kako-5y2-20261118から必要ファイルのみ再利用。"
+      ]
+    },
+    {
+      "jobId": "PLAN5-026",
+      "planIndex": 25,
+      "key": "sa|2025|spring|pm1|2025r07h_sa_pm1_qs.pdf",
+      "status": "収録完了",
+      "recordCount": 3,
+      "officialLargeQuestionCount": 3,
+      "baselineLoadedRecordCount": 0,
+      "baselineBranchAvailableNumbers": [],
+      "sources": [
+        {
+          "jobId": "PLAN5-026",
+          "kind": "questions",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_sa_pm1_qs.pdf",
+          "sha256": "9fd9e8bb078a6f7503406efcd02c7f92c233c48863dc57c123f03dbbeddeec11",
+          "pages": 20
+        },
+        {
+          "jobId": "PLAN5-026",
+          "kind": "answers",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_sa_pm1_ans.pdf",
+          "sha256": "17a5e6a4fa9e87eccedef545b1afaa35ff81c4a8a34bb2cc1ece62c357488a0b",
+          "pages": 2
+        }
+      ],
+      "dataPath": "data/questions/sa/official-2025-spring-pm1-qb12.json",
+      "records": [
+        {
+          "id": "sa-2025h-pm1-q1",
+          "qNumber": 1,
+          "questionPdfPages": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "answerPdfPages": [
+            1
+          ],
+          "answerImageCrops": [
+            [
+              0.0,
+              94.00482940673828,
+              595.2760009765625,
+              427.5648193359375
+            ]
+          ],
+          "answerTextSha256": "3669774f2bbdd099dc38aad8db2493216ba7236a3f8dcf42aade7e334b542606"
+        },
+        {
+          "id": "sa-2025h-pm1-q2",
+          "qNumber": 2,
+          "questionPdfPages": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "answerPdfPages": [
+            1
+          ],
+          "answerImageCrops": [
+            [
+              0.0,
+              428.5648193359375,
+              595.2760009765625,
+              781.8900146484375
+            ]
+          ],
+          "answerTextSha256": "3b76d29bf59f375446455563933202c731708ab975631df496d3269f56cb6553"
+        },
+        {
+          "id": "sa-2025h-pm1-q3",
+          "qNumber": 3,
+          "questionPdfPages": [
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "answerPdfPages": [
+            2
+          ],
+          "answerImageCrops": [
+            [
+              0.0,
+              48.0448112487793,
+              595.2760009765625,
+              781.8900146484375
+            ]
+          ],
+          "answerTextSha256": "f75bcd6264567838dddcc9b8700a9208998ef9ca0d60a7a8eab46137c7a27671"
+        }
+      ],
+      "notes": [
+        "公式本文・設問・図表はページ画像で保持。公式解答例（PMは出題趣旨）は設問ごとに画像と抽出テキストで保持。",
+        "共通の記述表示対応はcx/kako-5y1-20261118およびcx/kako-5y2-20261118から必要ファイルのみ再利用。"
+      ]
+    },
+    {
+      "jobId": "PLAN5-040",
+      "planIndex": 39,
+      "key": "ap|2023|autumn|pm|2023r05a_ap_pm_qs.pdf",
+      "status": "収録完了",
+      "recordCount": 11,
+      "officialLargeQuestionCount": 11,
+      "baselineLoadedRecordCount": 0,
+      "baselineBranchAvailableNumbers": [],
+      "sources": [
+        {
+          "jobId": "PLAN5-040",
+          "kind": "questions",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_pm_qs.pdf",
+          "sha256": "4f2b3aceff152364a41e9550d669196a2ff00f398573f6ea6b9e4dbd0ae1ae69",
+          "pages": 64
+        },
+        {
+          "jobId": "PLAN5-040",
+          "kind": "answers",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_pm_ans.pdf",
+          "sha256": "36ed6bedd545f68d1eb72e996b53a0510da0c27a40df0b0d5ba4596bfbd652e0",
+          "pages": 6
+        }
+      ],
+      "dataPath": "data/questions/ap/official-2023-autumn-pm-qb12.json",
+      "records": [
+        {
+          "id": "ap-2023a-pm-q1",
+          "qNumber": 1,
+          "questionPdfPages": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "answerPdfPages": [
+            1
+          ],
+          "answerImageCrops": [
+            [
+              0.0,
+              102.04480743408203,
+              595.2760009765625,
+              378.72479248046875
+            ]
+          ],
+          "answerTextSha256": "65551bed8204262794c5e24cf2f693106151b60e0b84cb3a17aafa39ada10714"
+        },
+        {
+          "id": "ap-2023a-pm-q2",
+          "qNumber": 2,
+          "questionPdfPages": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "answerPdfPages": [
+            1
+          ],
+          "answerImageCrops": [
+            [
+              0.0,
+              379.72479248046875,
+              595.2760009765625,
+              781.8900146484375
+            ]
+          ],
+          "answerTextSha256": "7ea10de137abb1d161550386ec66825a591e1cef31d7c2ca994e5ef8c09e0225"
+        },
+        {
+          "id": "ap-2023a-pm-q3",
+          "qNumber": 3,
+          "questionPdfPages": [
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "answerPdfPages": [
+            2
+          ],
+          "answerImageCrops": [
+            [
+              0.0,
+              48.0448112487793,
+              595.2760009765625,
+              370.5648193359375
+            ]
+          ],
+          "answerTextSha256": "39fd37068fc5955167b8cd2a4c5853a06fd5d2625c443a8019ba0226d4bed66b"
+        },
+        {
+          "id": "ap-2023a-pm-q4",
+          "qNumber": 4,
+          "questionPdfPages": [
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "answerPdfPages": [
+            2
+          ],
+          "answerImageCrops": [
+            [
+              0.0,
+              371.5648193359375,
+              595.2760009765625,
+              781.8900146484375
+            ]
+          ],
+          "answerTextSha256": "0d090b1a27a12f14992c8f60f3aea82bff9b19af3739931c28f66d39150d77e9"
+        },
+        {
+          "id": "ap-2023a-pm-q5",
+          "qNumber": 5,
+          "questionPdfPages": [
+            26,
+            27,
+            28,
+            29
+          ],
+          "answerPdfPages": [
+            3
+          ],
+          "answerImageCrops": [
+            [
+              0.0,
+              48.0448112487793,
+              595.2760009765625,
+              324.72479248046875
+            ]
+          ],
+          "answerTextSha256": "a454241b0f9fb642970f1bd06371e1ee9f4ea927fb6f5e79e584012a985a3035"
+        },
+        {
+          "id": "ap-2023a-pm-q6",
+          "qNumber": 6,
+          "questionPdfPages": [
+            30,
+            31,
+            32,
+            33,
+            34
+          ],
+          "answerPdfPages": [
+            3
+          ],
+          "answerImageCrops": [
+            [
+              0.0,
+              325.72479248046875,
+              595.2760009765625,
+              781.8900146484375
+            ]
+          ],
+          "answerTextSha256": "13b9f2af762c092f39676a84cacbbd2051decaa7d0da365cce1b5d1a0c86ba50"
+        },
+        {
+          "id": "ap-2023a-pm-q7",
+          "qNumber": 7,
+          "questionPdfPages": [
+            36,
+            37,
+            38,
+            39,
+            40
+          ],
+          "answerPdfPages": [
+            4
+          ],
+          "answerImageCrops": [
+            [
+              0.0,
+              48.0448112487793,
+              595.2760009765625,
+              280.8048095703125
+            ]
+          ],
+          "answerTextSha256": "fd0ce347d6aaa9c848539ad9958541d2d8d4ccc67db74618c25ce14cdecef382"
+        },
+        {
+          "id": "ap-2023a-pm-q8",
+          "qNumber": 8,
+          "questionPdfPages": [
+            42,
+            43,
+            44,
+            45
+          ],
+          "answerPdfPages": [
+            4
+          ],
+          "answerImageCrops": [
+            [
+              0.0,
+              281.8048095703125,
+              595.2760009765625,
+              781.8900146484375
+            ]
+          ],
+          "answerTextSha256": "72c6d6e3bcd83f53e0f0d25b58c42e4c7928198fbda7c1b9460591768209f176"
+        },
+        {
+          "id": "ap-2023a-pm-q9",
+          "qNumber": 9,
+          "questionPdfPages": [
+            46,
+            47,
+            48,
+            49
+          ],
+          "answerPdfPages": [
+            5
+          ],
+          "answerImageCrops": [
+            [
+              0.0,
+              48.0448112487793,
+              595.2760009765625,
+              351.60479736328125
+            ]
+          ],
+          "answerTextSha256": "2283d95141adbdb063a0f4c4233207becd34ca043171acebfa68a143bcc6424b"
+        },
+        {
+          "id": "ap-2023a-pm-q10",
+          "qNumber": 10,
+          "questionPdfPages": [
+            50,
+            51,
+            52,
+            53,
+            54
+          ],
+          "answerPdfPages": [
+            5
+          ],
+          "answerImageCrops": [
+            [
+              0.0,
+              352.60479736328125,
+              595.2760009765625,
+              781.8900146484375
+            ]
+          ],
+          "answerTextSha256": "79ac6356b49e274042c9c09a2b3017370c8d6bd28d13542104302f9a5b3f850f"
+        },
+        {
+          "id": "ap-2023a-pm-q11",
+          "qNumber": 11,
+          "questionPdfPages": [
+            56,
+            57,
+            58,
+            59
+          ],
+          "answerPdfPages": [
+            6
+          ],
+          "answerImageCrops": [
+            [
+              0.0,
+              48.0448112487793,
+              595.2760009765625,
+              781.8900146484375
+            ]
+          ],
+          "answerTextSha256": "561bac293652f6e8b0e2f31d8a4c16d1e838bc1ea9920790fc5d68e1f8f6657f"
+        }
+      ],
+      "notes": [
+        "公式本文・設問・図表はページ画像で保持。公式解答例（PMは出題趣旨）は設問ごとに画像と抽出テキストで保持。",
+        "共通の記述表示対応はcx/kako-5y1-20261118およびcx/kako-5y2-20261118から必要ファイルのみ再利用。"
+      ]
+    },
+    {
+      "jobId": "PLAN5-054",
+      "planIndex": 53,
+      "key": "st|2021|spring|pm1|2021r03h_st_pm1_qs.pdf",
+      "status": "収録完了",
+      "recordCount": 4,
+      "officialLargeQuestionCount": 4,
+      "baselineLoadedRecordCount": 0,
+      "baselineBranchAvailableNumbers": [],
+      "sources": [
+        {
+          "jobId": "PLAN5-054",
+          "kind": "questions",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_st_pm1_qs.pdf",
+          "sha256": "8e176e7ad82fb0c80a3e829bb130576637c2f4213bdfa97a4eca09a7b1a4ab75",
+          "pages": 20
+        },
+        {
+          "jobId": "PLAN5-054",
+          "kind": "answers",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_st_pm1_ans.pdf",
+          "sha256": "69ed47345512889e1fe42de84b3dd6ebeab2b1dc8f62d210c42bab4583664f67",
+          "pages": 2
+        }
+      ],
+      "dataPath": "data/questions/st/official-2021-spring-pm1-qb12.json",
+      "records": [
+        {
+          "id": "st-2021h-pm1-q1",
+          "qNumber": 1,
+          "questionPdfPages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "answerPdfPages": [
+            1
+          ],
+          "answerImageCrops": [
+            [
+              0.0,
+              94.12482452392578,
+              595.2760009765625,
+              381.72479248046875
+            ]
+          ],
+          "answerTextSha256": "11c75cd1fe91a5380cb5cfc2eafdeebe7bfdc02e65e8192c6a441e0c2c472590"
+        },
+        {
+          "id": "st-2021h-pm1-q2",
+          "qNumber": 2,
+          "questionPdfPages": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "answerPdfPages": [
+            1
+          ],
+          "answerImageCrops": [
+            [
+              0.0,
+              382.72479248046875,
+              595.2760009765625,
+              781.8900146484375
+            ]
+          ],
+          "answerTextSha256": "0847e1f5ab63ba63a2c1bc732d9f070a8ac8082f9cd8890ac8f81e3e2000426c"
+        },
+        {
+          "id": "st-2021h-pm1-q3",
+          "qNumber": 3,
+          "questionPdfPages": [
+            10,
+            11,
+            12,
+            13
+          ],
+          "answerPdfPages": [
+            2
+          ],
+          "answerImageCrops": [
+            [
+              0.0,
+              48.1648063659668,
+              595.2760009765625,
+              335.7648010253906
+            ]
+          ],
+          "answerTextSha256": "1ce9f6cd2983d5157e9dce1f800207ee5b19babee2f504ceb147d50fd4267791"
+        },
+        {
+          "id": "st-2021h-pm1-q4",
+          "qNumber": 4,
+          "questionPdfPages": [
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "answerPdfPages": [
+            2
+          ],
+          "answerImageCrops": [
+            [
+              0.0,
+              336.7648010253906,
+              595.2760009765625,
+              781.8900146484375
+            ]
+          ],
+          "answerTextSha256": "bc2f3a7a991b242f7af30c463c59f2e8bd07c4b03d1879966257914812136708"
+        }
+      ],
+      "notes": [
+        "公式本文・設問・図表はページ画像で保持。公式解答例（PMは出題趣旨）は設問ごとに画像と抽出テキストで保持。",
+        "共通の記述表示対応はcx/kako-5y1-20261118およびcx/kako-5y2-20261118から必要ファイルのみ再利用。"
+      ]
+    },
+    {
+      "jobId": "PLAN5-068",
+      "planIndex": 67,
+      "key": "sm|2024|spring|pm1|2024r06h_sm_pm1_qs.pdf",
+      "status": "収録完了",
+      "recordCount": 3,
+      "officialLargeQuestionCount": 3,
+      "baselineLoadedRecordCount": 0,
+      "baselineBranchAvailableNumbers": [],
+      "sources": [
+        {
+          "jobId": "PLAN5-068",
+          "kind": "questions",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sm_pm1_qs.pdf",
+          "sha256": "0dd02272ae2554a51831132401ee4df0b35e598d013f089b707290a2c1222427",
+          "pages": 20
+        },
+        {
+          "jobId": "PLAN5-068",
+          "kind": "answers",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sm_pm1_ans.pdf",
+          "sha256": "a5458799a47d7478f6147b2cc6311801bef4cf8b1f4f22794952aa4186c61913",
+          "pages": 2
+        }
+      ],
+      "dataPath": "data/questions/sm/official-2024-spring-pm1-qb12.json",
+      "records": [
+        {
+          "id": "sm-2024h-pm1-q1",
+          "qNumber": 1,
+          "questionPdfPages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "answerPdfPages": [
+            1
+          ],
+          "answerImageCrops": [
+            [
+              0.0,
+              94.02459716796875,
+              595.219970703125,
+              368.66461181640625
+            ]
+          ],
+          "answerTextSha256": "d89130461c1ed89b7558cf196955e64b2118434cc179cca2853bf3a14afc70bc"
+        },
+        {
+          "id": "sm-2024h-pm1-q2",
+          "qNumber": 2,
+          "questionPdfPages": [
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "answerPdfPages": [
+            1
+          ],
+          "answerImageCrops": [
+            [
+              0.0,
+              369.66461181640625,
+              595.219970703125,
+              782.0
+            ]
+          ],
+          "answerTextSha256": "c69f8ea3b5bf662e5da3259d6f48ab69dea950fe7b05ba402ee1c4d96731ea4c"
+        },
+        {
+          "id": "sm-2024h-pm1-q3",
+          "qNumber": 3,
+          "questionPdfPages": [
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "answerPdfPages": [
+            2
+          ],
+          "answerImageCrops": [
+            [
+              0.0,
+              48.074649810791016,
+              595.219970703125,
+              782.0
+            ]
+          ],
+          "answerTextSha256": "0070d0713e67c2d189f82a7d1c944bf05edc89c829a3aae07216c6694f217330"
+        }
+      ],
+      "notes": [
+        "公式本文・設問・図表はページ画像で保持。公式解答例（PMは出題趣旨）は設問ごとに画像と抽出テキストで保持。",
+        "共通の記述表示対応はcx/kako-5y1-20261118およびcx/kako-5y2-20261118から必要ファイルのみ再利用。"
+      ]
+    },
+    {
+      "jobId": "PLAN5-082",
+      "planIndex": 81,
+      "key": "pm|2024|autumn|pm2|2024r06a_pm_pm2_qs.pdf",
+      "status": "収録完了",
+      "recordCount": 2,
+      "officialLargeQuestionCount": 2,
+      "baselineLoadedRecordCount": 0,
+      "baselineBranchAvailableNumbers": [],
+      "sources": [
+        {
+          "jobId": "PLAN5-082",
+          "kind": "questions",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_pm_pm2_qs.pdf",
+          "sha256": "4b93f48798edca6661b8c3b1afafa9c779a1a31ccb2ba92918782d969af8558e",
+          "pages": 8
+        },
+        {
+          "jobId": "PLAN5-082",
+          "kind": "answers",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_pm_pm2_ans.pdf",
+          "sha256": "82b7ee84045f5397ca7530edec6799862a25dd09aa4d7cbee7e1d8d399cb86a5",
+          "pages": 1
+        }
+      ],
+      "dataPath": "data/questions/pm/official-2024-autumn-pm2-qb12.json",
+      "records": [
+        {
+          "id": "pm-2024a-pm2-q1",
+          "qNumber": 1,
+          "questionPdfPages": [
+            3,
+            4
+          ],
+          "answerPdfPages": [
+            1
+          ],
+          "answerImageCrops": [
+            [
+              0.0,
+              102.04480743408203,
+              595.2760009765625,
+              251.88482666015625
+            ]
+          ],
+          "answerTextSha256": "f89e322ea98ea7ec0dc85280f253aa199216fad6b1c4730c99228736f79747ae"
+        },
+        {
+          "id": "pm-2024a-pm2-q2",
+          "qNumber": 2,
+          "questionPdfPages": [
+            3,
+            6
+          ],
+          "answerPdfPages": [
+            1
+          ],
+          "answerImageCrops": [
+            [
+              0.0,
+              252.88482666015625,
+              595.2760009765625,
+              781.8900146484375
+            ]
+          ],
+          "answerTextSha256": "b7722d25d3d5435dfdae45bb968f534fc964570aa737a828570b72859d1f0c90"
+        }
+      ],
+      "notes": [
+        "公式本文・設問・図表はページ画像で保持。公式解答例（PMは出題趣旨）は設問ごとに画像と抽出テキストで保持。",
+        "共通の記述表示対応はcx/kako-5y1-20261118およびcx/kako-5y2-20261118から必要ファイルのみ再利用。"
+      ]
+    },
+    {
+      "jobId": "PLAN5-096",
+      "planIndex": 95,
+      "key": "db|2022|autumn|pm2|2022r04a_db_pm2_qs.pdf",
+      "status": "収録完了",
+      "recordCount": 2,
+      "officialLargeQuestionCount": 2,
+      "baselineLoadedRecordCount": 0,
+      "baselineBranchAvailableNumbers": [],
+      "sources": [
+        {
+          "jobId": "PLAN5-096",
+          "kind": "questions",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_db_pm2_qs.pdf",
+          "sha256": "d66e5c7685b1fcbfdbe9e0fba581c09e7aeee745929124945b64ffa885b90cd9",
+          "pages": 36
+        },
+        {
+          "jobId": "PLAN5-096",
+          "kind": "answers",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_db_pm2_ans.pdf",
+          "sha256": "1820f65117b0a738b35736049111ffe4b9f20181bd4fcb99e64a7868c599a4a1",
+          "pages": 4
+        }
+      ],
+      "dataPath": "data/questions/db/official-2022-autumn-pm2-qb12.json",
+      "records": [
+        {
+          "id": "db-2022a-pm2-q1",
+          "qNumber": 1,
+          "questionPdfPages": [
+            3,
+            4,
+            5,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "answerPdfPages": [
+            1,
+            2
+          ],
+          "answerImageCrops": [
+            [
+              0.0,
+              93.88483428955078,
+              595.2760009765625,
+              781.8900146484375
+            ],
+            [
+              0.0,
+              20.0,
+              595.2760009765625,
+              781.8900146484375
+            ]
+          ],
+          "answerTextSha256": "2318d4a6592d5ba67319a6fcfe090fc5e437c8f2accc58c73b1341d475d60b96"
+        },
+        {
+          "id": "db-2022a-pm2-q2",
+          "qNumber": 2,
+          "questionPdfPages": [
+            3,
+            4,
+            5,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ],
+          "answerPdfPages": [
+            3,
+            4
+          ],
+          "answerImageCrops": [
+            [
+              0.0,
+              47.9248161315918,
+              595.2760009765625,
+              781.8900146484375
+            ],
+            [
+              0.0,
+              20.0,
+              595.2760009765625,
+              781.8900146484375
+            ]
+          ],
+          "answerTextSha256": "796d4d3ce1a01da7ab2e1de2bf06bfc0eafd46277560f67f83a993741688389d"
+        }
+      ],
+      "notes": [
+        "公式本文・設問・図表はページ画像で保持。公式解答例（PMは出題趣旨）は設問ごとに画像と抽出テキストで保持。",
+        "共通の記述表示対応はcx/kako-5y1-20261118およびcx/kako-5y2-20261118から必要ファイルのみ再利用。"
+      ]
+    }
+  ],
+  "remainingJobIds": [
+    "PLAN5-110",
+    "PLAN5-124",
+    "PLAN5-138",
+    "PLAN5-152",
+    "PLAN5-166",
+    "PLAN5-180",
+    "PLAN5-194",
+    "PLAN5-208",
+    "PLAN5-222",
+    "PLAN5-236",
+    "PLAN5-250",
+    "PLAN5-264",
+    "PLAN5-278",
+    "PLAN5-292",
+    "PLAN5-306",
+    "PLAN5-320",
+    "PLAN5-334",
+    "PLAN5-348",
+    "PLAN5-362",
+    "PLAN5-376",
+    "PLAN5-390",
+    "PLAN5-404",
+    "PLAN5-418",
+    "PLAN5-432",
+    "PLAN5-446"
+  ]
+}

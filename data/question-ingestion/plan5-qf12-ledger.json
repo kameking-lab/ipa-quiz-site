@@ -1,0 +1,62 @@
+{
+  "lane": "qf-12",
+  "branch": "cx/kako-5y12-20261118",
+  "baseMain": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "previousLedger": "data/question-ingestion/plan5-qe12-ledger.json",
+  "entries": [
+    {
+      "jobId": "PLAN5-250",
+      "index": 249,
+      "exam": "ahaki-hari-kyu",
+      "officialYear": 2024,
+      "session": "pm",
+      "status": "completed",
+      "officialQuestionCount": 90,
+      "scoredQuestionCount": 90,
+      "addedNewQuestions": 90,
+      "importedQuestions": 0,
+      "existingQuestions": 0,
+      "officialQuestionRange": [91, 180],
+      "officialAlternativeAnswers": { "157": [2, 4] },
+      "manifest": "data/questions/ahaki/ahaki-hari-kyu-2024-pm-sources.json"
+    },
+    {
+      "jobId": "PLAN5-264",
+      "index": 263,
+      "exam": "shinrishi",
+      "officialYear": 2024,
+      "session": "pm",
+      "status": "completed",
+      "officialQuestionCount": 77,
+      "scoredQuestionCount": 77,
+      "addedNewQuestions": 77,
+      "importedQuestions": 0,
+      "existingQuestions": 0,
+      "officialQuestionRange": [78, 154],
+      "officialMultipleSelectionQuestions": [129, 130, 131, 132, 133, 134, 135, 152, 153, 154],
+      "manifest": "data/questions/shinrishi/2024-pm-sources.json"
+    },
+    {
+      "jobId": "PLAN5-418",
+      "index": 417,
+      "exam": "fp1",
+      "officialYear": 2024,
+      "session": "gakka-oyo",
+      "status": "skipped-helper-completed",
+      "existingBranch": "cx/kako-5yh12-20261118",
+      "existingCommit": "198ca3af8",
+      "scoredQuestionCount": 15
+    },
+    {
+      "jobId": "PLAN5-446",
+      "index": 445,
+      "exam": "sekou-kenchiku2",
+      "officialYear": 2023,
+      "session": "gakka",
+      "status": "skipped-helper-completed",
+      "existingBranch": "cx/kako-5yh12-20261118",
+      "existingCommit": "f9e0ac4f9",
+      "scoredQuestionCount": 50
+    }
+  ]
+}

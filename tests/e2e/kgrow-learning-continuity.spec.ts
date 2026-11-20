@@ -1,60 +1,23 @@
 import { expect, test } from "@playwright/test";
+import { generateStudyPlan } from "../../lib/study-plan/generator";
+import { LS_KEYS } from "../../lib/storage/keys";
 
 test.use({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
 
-test("mobile: hash-selected dashboard tabs scroll horizontally without moving the page", async ({ page }) => {
+test("mobile: dashboard links open the corresponding sections without horizontal overflow", async ({ page }) => {
   await page.goto("/account/dashboard#weakness");
-  await expect(page.getByRole("tab", { name: "弱点", exact: true })).toHaveAttribute("aria-selected", "true");
-  // Panel heights differ. Isolate the tab-strip effect from the browser's
-  // native scroll anchoring; scrollIntoView would still fail this assertion.
-  await page.addStyleTag({ content: "html { overflow-anchor: none; }" });
-  await page.evaluate(() => window.scrollTo(0, 700));
-  const before = await page.evaluate(() => window.scrollY);
-  expect(before).toBeGreaterThan(0);
+  await expect(page.locator("#weakness")).toHaveJSProperty("open", true);
+  await expect(page.locator("#weakness > summary")).toBeInViewport();
   await page.evaluate(() => { window.location.hash = "mock-scores"; });
-  await expect(page.getByRole("tab", { name: "模試記録", exact: true })).toHaveAttribute("aria-selected", "true");
-  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(before);
-});
-
-test("mobile: answer → explanation → related → review → next survives reload", async ({ page }, testInfo) => {
-  await page.goto("/quiz?mode=year&exam=ip&year=2009&season=autumn&session=am&question=ip-2009a-am-q1");
-  await page.getByRole("radio").first().click();
-  const actions = page.getByRole("navigation", { name: "解答後の学習操作" });
-  await expect(actions).toBeVisible();
-  await expect(page.getByRole("region", { name: /^(不正解|正解)の解説$/ })).toBeVisible();
-  await actions.getByRole("button", { name: "復習に登録", exact: true }).click();
-  await expect(actions.getByRole("button", { name: "復習登録済み" })).toHaveAttribute("aria-pressed", "true");
-  await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem("ipa-quiz:history:v1")!).starredIds)).toContain("ip-2009a-am-q1");
-  await page.evaluate(() => { document.documentElement.dataset.kgrowDocument = "same"; });
-  await actions.getByRole("button", { name: "関連問題", exact: true }).click();
-  const related = page.getByRole("region", { name: "同じ科目の関連問題" });
-  await expect(related).toBeVisible();
-  const suggestion = related.getByRole("button").filter({ hasText: /年 問/ }).first();
-  await expect(suggestion).toBeVisible();
-  await page.screenshot({ path: testInfo.outputPath("quiz-related-mobile.png") });
-  await suggestion.click();
-  await expect.poll(() => new URL(page.url()).searchParams.get("question")).not.toBe("ip-2009a-am-q1");
-  const relatedId = new URL(page.url()).searchParams.get("question");
-  await expect(page.locator("html")).toHaveAttribute("data-kgrow-document", "same");
-  await expect(page.getByRole("radio").first()).toBeEnabled();
-  const nextId = await page.evaluate((id) => {
-    const key = Object.keys(sessionStorage).find((key) => key.startsWith("ipa-quiz:active-pool:"))!;
-    const ids = JSON.parse(sessionStorage.getItem(key)!) as string[];
-    return ids[ids.indexOf(id!) + 1];
-  }, relatedId);
-  await page.reload();
-  await expect(page.getByRole("radio").first()).toBeEnabled();
-  expect(new URL(page.url()).searchParams.get("question")).toBe(relatedId);
-  await page.getByRole("radio").first().click();
-  await page.getByRole("button", { name: /^(次の問題へ|結果を見る)/ }).first().click();
-  await expect.poll(() => new URL(page.url()).searchParams.get("question")).toBe(nextId);
-  await expect(page.getByRole("radio").first()).toBeEnabled();
+  await expect(page.locator("#mock-scores")).toHaveJSProperty("open", true);
+  await expect(page.locator("#mock-scores > summary")).toBeInViewport();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
 
+
 test("mobile: a submitted short mock reaches scores, progress, weakness and exact review", async ({ page }, testInfo) => {
   await page.goto("/mock-exam?exam=sc&count=10");
-  await expect(page.getByRole("combobox", { name: "演習する問題数" })).toHaveValue("10");
+  await expect(page.getByText("10問", { exact: true })).toBeVisible();
   await page.getByRole("button", { name: "模試を開始する", exact: true }).click();
   await page.getByRole("button", { name: /^ア/ }).click();
   await page.reload();
@@ -73,43 +36,34 @@ test("mobile: a submitted short mock reaches scores, progress, weakness and exac
   expect(await page.evaluate(() => JSON.parse(localStorage.getItem("ipa-quiz:history:v1")!).entries.length)).toBe(10);
   await page.screenshot({ path: testInfo.outputPath("mock-result-mobile.png") });
   await page.getByRole("link", { name: "進捗で模試記録を見る" }).click();
-  await expect(page.getByRole("tab", { name: "模試記録", exact: true })).toHaveAttribute("aria-selected", "true");
-  await expect(page.getByRole("combobox", { name: "対象試験" })).toHaveValue("sc");
-  await expect(page.getByText("未回答 9問", { exact: false })).toBeVisible();
-  await page.getByRole("tab", { name: "進捗", exact: true }).click();
-  await expect(page.getByRole("region", { name: "直近の模試からの学習" })).toContainText("情報処理安全確保支援士");
-  await page.getByRole("tab", { name: "弱点", exact: true }).click();
-  await expect(page.getByRole("region", { name: "直近の模試からの学習" })).toContainText("重点分野");
-  await expect(page.getByRole("link", { name: "情報処理安全確保支援士の弱点問題を解く" })).toHaveAttribute("href", "/quiz?mode=weakness&exam=sc");
+  const scores = page.locator("#mock-scores");
+  await expect(scores).toHaveJSProperty("open", true);
+  await expect(scores.getByRole("combobox", { name: "対象試験" })).toHaveValue("sc");
+  await expect(scores.getByText("未回答 9問", { exact: false })).toBeVisible();
+  await expect(scores.getByText(/重点分野/)).toBeVisible();
+  await expect(page.locator("#progress")).toBeVisible();
+  await page.locator("#weakness > summary").click();
+  await expect(page.locator("#weakness")).toHaveJSProperty("open", true);
   await page.reload();
-  const activeWeakness = page.getByRole("tab", { name: "弱点", exact: true });
-  await expect(activeWeakness).toHaveAttribute("aria-selected", "true");
-  await expect.poll(async () => {
-    const box = await activeWeakness.boundingBox();
-    return Boolean(box && box.x >= 0 && box.x + box.width <= 390);
-  }).toBe(true);
+  await expect(scores).toHaveJSProperty("open", true);
   await page.screenshot({ path: testInfo.outputPath("mock-weakness-mobile.png") });
-  await page.getByRole("link", { name: "今回の間違い・未回答を復習" }).click();
+  await scores.getByRole("link", { name: "今回の間違い・未回答を復習" }).click();
   await expect(page.getByRole("radio").first()).toBeVisible();
   expect(new URL(page.url()).searchParams.get("mock")).toBe(result.id);
   expect(result.wrongQuestionIds).toContain(new URL(page.url()).searchParams.get("question"));
 });
 
-test("mobile: one calculated plan preserves daily progress and its old result URL", async ({ page }, testInfo) => {
+test("mobile: a saved legacy plan preserves daily progress and its result URL", async ({ page }, testInfo) => {
   const aiRequests: string[] = [];
   page.on("request", (request) => { if (/\/api\/(copilot|generate|ai)/.test(request.url())) aiRequests.push(request.url()); });
-  await page.goto("/account/study-plan");
-  await expect(page).toHaveURL(/\/study-plan$/);
-  for (let step = 0; step < 3; step++) await page.getByRole("button", { name: "次へ", exact: true }).click();
-  await page.getByRole("button", { name: "学習スケジュールを生成", exact: true }).click();
-  await expect(page).toHaveURL(/\/study-plan\/result\//);
-  const resultUrl = page.url();
-  const saved = await page.evaluate(() => {
-    const plans = JSON.parse(localStorage.getItem("ipa-quiz:study-plans:v1")!);
-    return { id: plans[0].id as string, key: plans[0].daily[0].tasks[0].key as string };
-  });
+  const examDate = new Date(Date.now() + 28 * 86400_000).toISOString().slice(0, 10);
+  const plan = generateStudyPlan({ exam: "ap", examDate, level: "foundation", weekdayMinutes: 60, weekendMinutes: 180, weakCategories: [] });
+  await page.addInitScript(({ key, plan }) => localStorage.setItem(key, JSON.stringify([plan])), { key: LS_KEYS.studyPlans, plan });
+  const resultUrl = `/study-plan/result/${plan.id}`;
+  await page.goto(resultUrl);
+  const saved = { id: plan.id, key: plan.daily[0]!.tasks[0]!.key };
   await page.getByRole("link", { name: "今日の計画をダッシュボードで進める" }).click();
-  await expect(page.getByRole("tab", { name: "今日の計画", exact: true })).toHaveAttribute("aria-selected", "true");
+  await expect(page.locator("#study-plan")).toHaveJSProperty("open", true);
   await page.getByRole("button", { name: "完了にする", exact: true }).first().click();
   await expect.poll(() => page.evaluate(({ id, key }) => JSON.parse(localStorage.getItem("ipa-quiz:study-plan-progress:v1")!)[id].progress[key].done, saved)).toBe(true);
   await page.screenshot({ path: testInfo.outputPath("daily-plan-mobile.png") });

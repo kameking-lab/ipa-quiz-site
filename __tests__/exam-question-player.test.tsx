@@ -1,8 +1,12 @@
 import { act, fireEvent, render, screen, within } from "@testing-library/react";
-import { beforeEach, describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
+const conversion = vi.hoisted(() => vi.fn());
+vi.mock("@/lib/billing/conversion-client", () => ({ sendConversion: conversion }));
 import type { ExamQuestion } from "@/lib/exam-library-model";
 import { examProgressKey } from "@/lib/exam-library-progress";
 import { ExamQuestionPlayer } from "@/components/exam-library/exam-question-player";
+import { getPaceAttempts } from "@/lib/study-plan/pace-storage";
+import { LS_KEYS } from "@/lib/storage/keys";
 
 const EXAM_ID = "lckohyo-TEST01";
 const PDF_URL = "https://www.exam.or.jp/wp-content/uploads/2026/04/TEST01.pdf";
@@ -50,16 +54,41 @@ function next() {
 
 describe("ExamQuestionPlayer", () => {
   beforeEach(() => {
+    conversion.mockClear();
     window.localStorage.clear();
     window.sessionStorage.clear();
+  });
+
+  it("records the official result for a fresh pace session without replacing ordinary paper progress", () => {
+    const ordinary = renderPlayer(); answer(2); ordinary.unmount();
+    const savedTab = sessionStorage.getItem(LS_KEYS.examLibrarySessionPrefix + EXAM_ID);
+    const completed = vi.fn();
+    render(<ExamQuestionPlayer examId={EXAM_ID} examTitle="テスト" pdfUrl={PDF_URL} indexUrl="https://www.exam.or.jp/" questions={[questions[0]]} paceSession={{ exam: "eisei1", onComplete: completed }} />);
+    expect(screen.getByRole("radio", { name: /^選択肢 3:/ })).toBeEnabled();
+    answer(3);
+    expect(getPaceAttempts().at(-1)).toMatchObject({ id: questions[0].id, correct: true });
+    expect(sessionStorage.getItem(LS_KEYS.examLibrarySessionPrefix + EXAM_ID)).toBe(savedTab);
+    next(); expect(completed).toHaveBeenCalledOnce();
   });
 
   it("shows local explanations and official sources without article CTAs after answering", () => {
     const { container } = renderPlayer();
     answer(3);
+    expect(conversion).toHaveBeenCalledExactlyOnceWith("guest_answered");
     expect(screen.getByText("問1の解説本文")).toBeInTheDocument();
     expect(container.querySelector('a[href^="https://note.com/"]')).toBeNull();
     expect(container.querySelector('a[href*="tsugino-shikaku.jp/articles"]')).toBeNull();
+  });
+  it("does not count opening a model answer as solving, but counts a submitted descriptive draft", () => {
+    const item = question(4, { correctChoice: null, choiceCount: 0, answerAuthority: "descriptive" });
+    const view = renderPlayer([item]);
+    fireEvent.click(screen.getByRole("button", { name: "模範解答を見る" }));
+    expect(conversion).not.toHaveBeenCalled();
+    view.unmount();
+    renderPlayer([question(5, { correctChoice: null, choiceCount: 0, answerAuthority: "descriptive" })]);
+    fireEvent.change(screen.getByLabelText("解答メモ（下書き・任意）"), { target: { value: "自分で考えた解答" } });
+    fireEvent.click(screen.getByRole("button", { name: "模範解答を見る" }));
+    expect(conversion).toHaveBeenCalledExactlyOnceWith("guest_answered");
   });
 
   it("offers contextual AI questions only after the answer is revealed", () => {

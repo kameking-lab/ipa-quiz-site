@@ -32,9 +32,9 @@ describe("home metadata — SERP snippet quality", () => {
     expect(desc.length).toBeLessThanOrEqual(158);
   });
 
-  it("leads with the core value proposition (free + AI explanation)", () => {
+  it("describes free practice and explanations", () => {
     expect(desc).toMatch(/無料/);
-    expect(desc).toMatch(/AI/);
+    expect(desc).toMatch(/解説/);
   });
 
   it("syncs og:description and twitter:description with the meta description", () => {

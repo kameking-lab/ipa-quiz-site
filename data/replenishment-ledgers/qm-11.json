@@ -1,0 +1,179 @@
+{
+  "step": "qm-11",
+  "branch": "cx/kako-5y11-20261118",
+  "baseCommit": "bcc90952b",
+  "assignedJobsCompleted": 32,
+  "newRecords": 0,
+  "reviewedJobs": [
+    {
+      "jobId": "PLAN5-193",
+      "key": "shino-kunrenshi|2026|annual|am|tp260424-10a_01.pdf",
+      "status": "reviewed-existing-records",
+      "dataPath": "data/questions/shino-kunrenshi/2026-am-branch-completion.json",
+      "newRecords": 0,
+      "updatedRecords": 4,
+      "questionNumbers": [
+        31,
+        67,
+        72,
+        74
+      ],
+      "checkedOfficialAnswers": 15,
+      "sourceFiles": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-10a_01.pdf",
+          "sha256": "609eaf93da2da4158e9e86022571d8910ed3c8bbf6d5226106dfc58fc5a99efe"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-10seitou.pdf",
+          "sha256": "2b6b4cc8a51cfd601d1ef4897c61c3947233ab94505f029922b94ec25d8b2583"
+        }
+      ],
+      "notes": "問31・67・72・74の上下の弧を公式原図と同じ向きで転記。"
+    },
+    {
+      "jobId": "PLAN5-207",
+      "key": "yakuzaishi|2026|annual|day2-2|001677931.pdf",
+      "status": "reviewed-existing-records",
+      "dataPath": "data/questions/yakuzaishi/2026-day2-2-official.json",
+      "newRecords": 0,
+      "updatedRecords": 12,
+      "questionNumbers": [
+        258,
+        259,
+        260,
+        261,
+        262,
+        263,
+        264,
+        265,
+        281,
+        283,
+        284,
+        285
+      ],
+      "checkedOfficialAnswers": 35,
+      "sourceFiles": [
+        {
+          "url": "https://www.mhlw.go.jp/content/001677931.pdf",
+          "sha256": "ec1c95ebbec110d62564bf57ec6171eb0b56e16c3fa07f38ac83a8ceb48797b9"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/001677933.pdf",
+          "sha256": "bec304ce3043407fb8cdc6f6b5a0e3b6cd414119be8bc2782da0b904c602e223"
+        }
+      ],
+      "notes": "問258〜263の共通症例、問264・265の投与条件、問281・283〜285の図説明を紙面と照合。"
+    },
+    {
+      "jobId": "PLAN5-221",
+      "key": "yakuzaishi|2023|annual|day1-1|001074628.pdf",
+      "status": "reviewed-existing-records",
+      "dataPath": "data/questions/yakuzaishi/2023-required-official.json",
+      "newRecords": 0,
+      "updatedRecords": 1,
+      "questionNumbers": [
+        27
+      ],
+      "checkedOfficialAnswers": 90,
+      "sourceFiles": [
+        {
+          "url": "https://www.mhlw.go.jp/content/001074628.pdf",
+          "sha256": "8253cd58e1fe33ec1912db5700484099e0c7fcad2e3c18fb817def9e26d0a1d8"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/001074906.pdf",
+          "sha256": "e109e2c7f187e29763d798d024a68bd246bc12f58ee986224637b442b6746761"
+        }
+      ],
+      "notes": "問27の投与量の単位とニコチン受容体の添字を公式紙面に合わせる。"
+    },
+    {
+      "jobId": "PLAN5-235",
+      "key": "rinsho-kogishi|2025|annual|am|38am.pdf",
+      "status": "reviewed-existing-records",
+      "dataPath": "data/questions/rinsho-kogishi/2024-round38-am-official.json",
+      "newRecords": 0,
+      "updatedRecords": 2,
+      "questionNumbers": [
+        70,
+        83
+      ],
+      "checkedOfficialAnswers": 34,
+      "sourceFiles": [
+        {
+          "url": "https://www.jaame.or.jp/ce/pdf/38am.pdf",
+          "sha256": "611f81acc2a9dc5c583d796a81f78b0a231868c691e074b4d6535a4e4eee5d6f"
+        },
+        {
+          "url": "https://www.jaame.or.jp/ce/pdf/38ans.pdf",
+          "sha256": "5788e8880822daeb235ae1707fbf1744138ce1038e31f8f7f89cdcb5b23606ee"
+        }
+      ],
+      "notes": "問70の選択肢を図に見える特徴で説明。問83の本文に重複していた選択肢を整理。"
+    },
+    {
+      "jobId": "PLAN5-305",
+      "key": "denko1|2026|second|gakka|20261004_co_first_q01.pdf",
+      "status": "reviewed-existing-records",
+      "dataPath": "data/questions/denko1/reviewed/20261004-q01-50.json",
+      "newRecords": 0,
+      "updatedRecords": 16,
+      "questionNumbers": [
+        6,
+        30,
+        31,
+        32,
+        33,
+        34,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50
+      ],
+      "checkedOfficialAnswers": 50,
+      "sourceFiles": [
+        {
+          "url": "https://www.shiken.or.jp/construction/upload/20261004_co_first_q01.pdf",
+          "sha256": "278ed5f5c2464f29c939e52579a7e32a44804e685acf0c30eb003697c1277c97"
+        },
+        {
+          "url": "https://www.shiken.or.jp/construction/upload/20261004_co_first_a01.pdf",
+          "sha256": "d66f03c7eaa12af1a6929a85c71a90ac294dbb3ab6b3a990afbaa0468a6bb869"
+        }
+      ],
+      "notes": "問6・30〜34・41〜50の回路図と注記を代替テキストに反映。問41の結線図の選択肢を明確化。"
+    },
+    {
+      "jobId": "PLAN5-319",
+      "key": "kenchikushi1|2023|annual|gakka-4_5|1k-2023-1st-gakka4_5.pdf",
+      "status": "reviewed-existing-records",
+      "dataPath": "data/questions/kenchikushi1/2023-kouzo-sekou.json",
+      "newRecords": 0,
+      "updatedRecords": 3,
+      "questionNumbers": [
+        5,
+        6,
+        18
+      ],
+      "checkedOfficialAnswers": 55,
+      "sourceFiles": [
+        {
+          "url": "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2023-1st-gakka4_5.pdf",
+          "sha256": "f355b696c8721563908f44c417d9949a68630c512bfbe095881b4627f6918e65"
+        },
+        {
+          "url": "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2023-1st-gokakukijun.pdf",
+          "sha256": "abb629cb2d44f29ae608ac6f68eddaa3e862c84fdb55eeef426c797d3e2c24f8"
+        }
+      ],
+      "notes": "学科Ⅳ問5・6・18の支持条件、接合部、履歴ループを公式図と照合して記述。"
+    }
+  ]
+}

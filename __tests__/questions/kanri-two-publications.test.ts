@@ -9,7 +9,7 @@ const officialAnswers2024 = "1,4|3|4|4|1|2|2|4|1|4|4|3|1|2|2|1|4|4|2|4|4|4|1|3|3
 
 describe("管理業務主任者の2年度の公開準備", () => {
   it("2024年度と2025年度の各50問を別回として収録する", () => {
-    expect(KANRI_QUESTIONS).toHaveLength(100);
+    expect(new Set(KANRI_QUESTIONS.map(question => question.id)).size).toBe(KANRI_QUESTIONS.length);
     for (const year of [2024, 2025]) {
       const paper = KANRI_QUESTIONS.filter((question) => question.year === year);
       expect(paper, `${year}`).toHaveLength(50);

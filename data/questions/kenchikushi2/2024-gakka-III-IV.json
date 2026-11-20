@@ -1,0 +1,2355 @@
+[
+  {
+    "id": "kenchikushi2-2024-annual-III-q1",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-III",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "断面二次モーメント",
+    "topicTags": [
+      "断面二次モーメント"
+    ],
+    "difficulty": 3,
+    "question": "図のような形状の断面A〜断面Dの断面二次モーメントに関する次の記述のうち、最も不適当なものはどれか。ただし、X軸及びY軸まわりの断面二次モーメントをそれぞれI_X、I_Yとする。",
+    "choices": {
+      "ア": "断面AのI_Yは、断面AのI_Xの0.5倍よりも小さい。",
+      "イ": "断面BのI_Xは、断面AのI_Xと等しい。",
+      "ウ": "断面CのI_Xは、断面AのI_Xと等しい。",
+      "エ": "断面CのI_Yは、断面AのI_Xと等しくない。",
+      "オ": "断面DのI_Xは、断面AのI_Xの8倍と等しい。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "断面Dは断面Aの全寸法を2倍にした相似形である。面積要素とX軸からの距離の二乗がそれぞれ4倍になるため、I_Xは16倍となる。",
+    "choiceExplanations": {
+      "ア": "AのI_Yは約172万 mm⁴、I_Xは492万 mm⁴。I_YはI_Xの半分より小さい。",
+      "イ": "BとAはX軸から同じ高さにある材料の幅が等しいため、I_Xも等しい。",
+      "ウ": "CはAのウェブを同じ高さで横に移した断面で、X軸からの距離は変わらない。",
+      "エ": "Cの図示Y軸まわりの値は428万 mm⁴で、AのI_Xの492万 mm⁴とは異なる。",
+      "オ": "長さの4乗で変化する断面二次モーメントの倍率は2⁴＝16。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=2",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅲ（建築構造） 問1",
+    "sourcePage": 2,
+    "sourcePrintedPage": "構造 1",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "isCalculation": true,
+    "imageUrls": [
+      "/questions/kenchikushi2/2024/iii-01.webp"
+    ],
+    "imageAltTexts": [
+      "断面A・B・Cの外形は100 mm角。Aは上下のフランジ各10 mm、中央のウェブ幅20 mm。Bは厚さ10 mmの角形中空断面。Cは上下のフランジ各10 mm、左側のウェブ幅20 mm。断面Dは200 mm角のI形でフランジ各20 mm、中央のウェブ幅40 mm。X軸とY軸は外形中央を通る。"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-III-q2",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-III",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "梁の曲げ応力度",
+    "topicTags": [
+      "梁の曲げ応力度"
+    ],
+    "difficulty": 3,
+    "question": "図のような等分布荷重を受ける幅300 mmの矩形断面の単純梁において、A点の最大曲げ応力度が10 N/mm²となるときの梁のせいの値として、最も近いものは、次のうちどれか。ただし、部材の断面は一様とし、自重は無視するものとする。",
+    "choices": {
+      "ア": "210 mm",
+      "イ": "300 mm",
+      "ウ": "420 mm",
+      "エ": "600 mm",
+      "オ": "840 mm"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "中央Aの最大曲げモーメントはwL²/8＝45,000,000 N·mm。断面係数Z＝300h²/6と曲げ応力度M/Z＝10 N/mm²を用いると、梁せいhは300 mmとなる。",
+    "choiceExplanations": {
+      "ア": "せいを210 mmとすると断面係数が足りず、曲げ応力度は10 N/mm²を超える。",
+      "イ": "せい300 mmのときZ＝4,500,000 mm³となり、指定の応力度を満たす。",
+      "ウ": "せい420 mmでは断面係数が必要値を上回り、応力度は10 N/mm²未満になる。",
+      "エ": "せい600 mmは求めるせいの2倍で、同じ幅なら断面係数が4倍になる。",
+      "オ": "せい840 mmでは断面係数が大きくなり、指定よりも応力度が小さい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=3",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅲ（建築構造） 問2",
+    "sourcePage": 3,
+    "sourcePrintedPage": "構造 2",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "isCalculation": true,
+    "imageUrls": [
+      "/questions/kenchikushi2/2024/iii-02.webp"
+    ],
+    "imageAltTexts": [
+      "全長6,000 mmの単純梁に10 N/mmの等分布荷重が作用する。A点は左右の支点から3,000 mmずつの中央。"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-III-q3",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-III",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "単純梁の応力",
+    "topicTags": [
+      "単純梁の応力"
+    ],
+    "difficulty": 3,
+    "question": "図−1のような荷重を受ける単純梁において、曲げモーメント図が図−2となる場合、C−D間のせん断力の大きさとして、正しいものは、次のうちどれか。",
+    "choices": {
+      "ア": "0 kN",
+      "イ": "5 kN",
+      "ウ": "30 kN",
+      "エ": "45 kN",
+      "オ": "90 kN"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "C・D間には分布荷重がなく、せん断力は一定である。曲げモーメント図の勾配を取ると、大きさは(105−75)/6＝5 kNとなる。",
+    "choiceExplanations": {
+      "ア": "せん断力がゼロならモーメント図は水平になるが、CとDの値は異なる。",
+      "イ": "30 kN·mのモーメント差を6 mで割ると5 kNになる。",
+      "ウ": "30はモーメント差の数値で、単位はkN·m。区間長で割ってせん断力に直す。",
+      "エ": "せん断力はモーメント図の勾配から求めるため、端点のモーメントの平均は使わない。",
+      "オ": "C・D間で生じるモーメント差と区間長に対応するのは5 kN。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=3",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅲ（建築構造） 問3",
+    "sourcePage": 3,
+    "sourcePrintedPage": "構造 2",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "isCalculation": true,
+    "imageUrls": [
+      "/questions/kenchikushi2/2024/iii-03.webp"
+    ],
+    "imageAltTexts": [
+      "図1：単純梁ABの全長は12 m。C点はAから3 m、D点はCから6 m。下向きの集中荷重PがC、2PがDに作用する。図2：曲げモーメントはCで75 kN·m、Dで105 kN·m。"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-III-q4",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-III",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "静定ラーメン",
+    "topicTags": [
+      "静定ラーメン"
+    ],
+    "difficulty": 3,
+    "question": "図のような外力を受ける静定ラーメンにおいて、D点の曲げモーメントが0となる鉛直荷重Pの値として、正しいものは、次のうちどれか。ただし、鉛直荷重Pの向きは、下向きを「＋」、上向きを「−」とする。",
+    "choices": {
+      "ア": "−2 kN",
+      "イ": "−1 kN",
+      "ウ": "0 kN",
+      "エ": "＋1 kN",
+      "オ": "＋2 kN"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "Bの水平荷重とFの水平反力は同じ高さで打ち消し合う。鉛直反力はAとFでP/2ずつとなる。Dの左側でモーメントを釣り合わせると、2×1＝2×(P/2)から下向きのP＝2 kNを得る。",
+    "choiceExplanations": {
+      "ア": "Pが上向きだと、Aの鉛直反力によるDまわりのモーメントはBの荷重によるものと同じ向きになる。",
+      "イ": "上向き1 kNも反力によるモーメントがBの荷重を打ち消す向きにならない。",
+      "ウ": "Pがゼロなら、Bの水平荷重による2 kN·mが残る。",
+      "エ": "下向き1 kNでは、Aの反力による1 kN·mだけでは水平荷重による2 kN·mを打ち消せない。",
+      "オ": "Aの反力が上向き1 kNとなり、Dまでの腕2 mでBからの2 kN·mを打ち消す。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=4",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅲ（建築構造） 問4",
+    "sourcePage": 4,
+    "sourcePrintedPage": "構造 3",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "isCalculation": true,
+    "imageUrls": [
+      "/questions/kenchikushi2/2024/iii-04.webp"
+    ],
+    "imageAltTexts": [
+      "ラーメンの左下Aはローラー、右下Fはピン。水平の1 kNが左柱のBから右向きに作用する。BとFは同じ高さで梁より2 m下。梁の中央Dに下向きPが作用し、Dから左右の柱まで2 mずつ。"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-III-q5",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-III",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "静定トラス",
+    "topicTags": [
+      "静定トラス"
+    ],
+    "difficulty": 3,
+    "question": "図のような外力を受ける静定トラスにおいて、部材A、B、Cに生じる軸方向力の組合せとして、正しいものは、次のうちどれか。ただし、軸方向力は、引張力を「＋」、圧縮力を「−」とする。",
+    "choices": {
+      "ア": "−6 kN／＋√3 kN／−3 kN",
+      "イ": "−6 kN／＋3√3 kN／＋3 kN",
+      "ウ": "＋6 kN／−3√3 kN／0 kN",
+      "エ": "＋6 kN／−√3 kN／0 kN",
+      "オ": "＋6 kN／＋3√3 kN／0 kN"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "左端節点で斜材Aは水平となす角が30°。下向き荷重3 kNを支えるのでAは引張り6 kN、水平成分を打ち消すBは圧縮3√3 kN。下中央節点は水平の2材以外にCだけが接続し、節点荷重がないのでCはゼロ。",
+    "choiceExplanations": {
+      "ア": "左端節点には上向き成分が必要で、斜材Aは圧縮ではなく引張りとなる。",
+      "イ": "Aは引張りで、節点に荷重のないCに3 kNは生じない。",
+      "ウ": "左端・下中央の節点の釣合いから、A＝＋6、B＝−3√3、C＝0 kNとなる。",
+      "エ": "Aの水平成分は6cos30°＝3√3 kN。Bはその大きさで圧縮となる。",
+      "オ": "Bが引張りだと、AとBの水平成分がどちらも右向きになってしまう。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=4",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅲ（建築構造） 問5",
+    "sourcePage": 4,
+    "sourcePrintedPage": "構造 3",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "isCalculation": true,
+    "imageUrls": [
+      "/questions/kenchikushi2/2024/iii-05.webp"
+    ],
+    "imageAltTexts": [
+      "トラス左端の下節点から右上へ斜材A、右へ水平材Bが伸びる。中央の上下節点を部材Cが鉛直につなぐ。左端下節点と中央上節点に下向きの各3 kNが作用する。節点間隔は水平2√3 m、鉛直2 m。表にはA、B、Cの軸力の組合せが5組ある。"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-III-q6",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-III",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "弾性座屈",
+    "topicTags": [
+      "弾性座屈"
+    ],
+    "difficulty": 3,
+    "question": "図のような材の長さ、材端又は材の中央の支持条件が異なる柱A、B、Cの弾性座屈荷重をそれぞれP_A、P_B、P_Cとしたとき、それらの大小関係として、正しいものは、次のうちどれか。ただし、全ての柱の材質及び断面形状は同じものとする。",
+    "choices": {
+      "ア": "P_A ＞ P_B ＞ P_C",
+      "イ": "P_A ＝ P_C ＞ P_B",
+      "ウ": "P_B ＞ P_A ＝ P_C",
+      "エ": "P_C ＞ P_A ＝ P_B",
+      "オ": "P_C ＞ P_B ＞ P_A"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "材質と断面が同じなので、オイラー座屈荷重は座屈長さの二乗に反比例する。Aは2l、Bは約1.4l、Cは中央拘束によりlとなり、P_C＞P_B＞P_A。",
+    "choiceExplanations": {
+      "ア": "Aは一端自由で座屈長さが最も長く、荷重が最も小さい。",
+      "イ": "AとCでは座屈長さが2lとlで異なり、座屈荷重は等しくない。",
+      "ウ": "中央を拘束したCの座屈長さがBより短いため、Cの荷重がBを上回る。",
+      "エ": "固定・ピンのBの座屈長さは固定・自由のAより短いため、両者の荷重は異なる。",
+      "オ": "座屈長さが短いC、B、Aの順で大きな荷重に耐える。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=5",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅲ（建築構造） 問6",
+    "sourcePage": 5,
+    "sourcePrintedPage": "構造 4",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "isCalculation": true,
+    "imageUrls": [
+      "/questions/kenchikushi2/2024/iii-06.webp"
+    ],
+    "imageAltTexts": [
+      "柱Aは長さlで一端自由・他端固定。柱Bは長さ2lで一端ピン・他端固定。柱Cは長さ2lで両端ピン、中央に水平方向を拘束するローラー支点を設ける。"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-III-q7",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-III",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "category": "荷重・外力",
+    "topicTags": [
+      "荷重・外力"
+    ],
+    "difficulty": 3,
+    "question": "構造計算における荷重及び外力に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "百貨店における床の単位面積当たりの積載荷重の大小関係は、一般に、「売場」＜「売場に連絡する廊下」である。",
+      "イ": "屋根の積雪荷重は、屋根に雪止めがある場合を除き、その勾配が45度を超える場合においては、零とすることができる。",
+      "ウ": "風圧力の計算に用いるガスト影響係数Gfは、同じ地上高さの場合、一般に、地表面粗度区分がⅡよりⅢのほうが大きくなる。",
+      "エ": "建築物の屋根版に作用する風圧力と、屋根葺き材に作用する風圧力とは、それぞれ個別に計算する。",
+      "オ": "沖積粘性土の下層面が地盤面下15 m以下である地域については、一般に、杭周面の「負の摩擦力」の検討を行う必要がある。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "建築基準法施行令第86条では、雪止めのない屋根で積雪荷重をゼロとできる勾配は60度を超える場合。45度を超えるだけでは足りない。",
+    "choiceExplanations": {
+      "ア": "売場に接続する廊下は多くの人が集中し得るため、床の計算では売場より大きい積載荷重を用いる。",
+      "イ": "雪止めがなくても勾配が60度以下なら、勾配に応じた屋根形状係数を用いる。",
+      "ウ": "同じ高さで比較すると、粗度区分Ⅲのガスト影響係数がⅡより大きい。",
+      "エ": "屋根版の構造計算と葺き材の耐風計算では対象が異なり、それぞれの風圧力を確認する。",
+      "オ": "軟弱層が沈下すると、周囲の地盤から杭へ下向きの摩擦力が加わることがある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=5",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅲ（建築構造） 問7",
+    "sourcePage": 5,
+    "sourcePrintedPage": "構造 4",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325CO0000000338?occasion_date=20241015",
+      "https://www.mlit.go.jp/notice/noticedata/sgml/098/81000075/81000075.html"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-III-q8",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-III",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "設計用地震力",
+    "topicTags": [
+      "設計用地震力"
+    ],
+    "difficulty": 3,
+    "question": "構造計算における設計用地震力に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "振動特性係数Rtの算出のための地盤種別について、建築物の基礎底部の直下の地盤の大部分が、腐植土や泥土等で構成された沖積層で、その深さがおおむね30 m以上である場合、第三種地盤とする。",
+      "イ": "建築物の設計用一次固有周期（単位s）は、鉄骨造の場合、一般に、建築物の高さ（単位m）に0.03 を乗じて算出する。",
+      "ウ": "振動特性係数Rtは、同一の地盤種別の場合、一般に、建築物の設計用一次固有周期が長くなるほど大きくなる。",
+      "エ": "許容応力度等計算において、地盤が著しく軟弱な区域として指定された区域内における木造の建築物の標準せん断力係数Coは、原則として、0.3 以上とする。",
+      "オ": "建築物の地上部分の各階における地震層せん断力係数Ciは、一般に、上階になるほど大きくなる。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "Rtは地盤種別ごとの特性周期までは一定で、それより周期が長くなると低下する。一次固有周期が長いほどRtが大きくなるという説明は不適当。",
+    "choiceExplanations": {
+      "ア": "厚い腐植土・泥土などからなる軟弱な沖積層は、第三種地盤の判定に使われる。",
+      "イ": "鉄骨造の設計用一次固有周期は、高さhに対し一般に0.03hで求める。",
+      "ウ": "同一地盤でもRtが周期とともに増えるわけではなく、一定範囲を超えると小さくなる。",
+      "エ": "指定された著しく軟弱な地盤上の木造建築物では、設問の計算で標準せん断力係数を0.3以上とする。",
+      "オ": "地震層せん断力係数の高さ方向の分布を表すA_iは、一般に上階ほど大きい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=6",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅲ（建築構造） 問8",
+    "sourcePage": 6,
+    "sourcePrintedPage": "構造 5",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325CO0000000338?occasion_date=20241015",
+      "https://www.mlit.go.jp/notice/noticedata/sgml/099/81000085/81000085.html"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-III-q9",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-III",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "地盤・基礎",
+    "topicTags": [
+      "地盤・基礎"
+    ],
+    "difficulty": 3,
+    "question": "地盤及び基礎構造に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "基礎形式の設定に当たっては、地盤工学的問題を基礎形式で対応する場合、基礎形式は1 つに限定せず複数の選択肢を考慮する。",
+      "イ": "基礎梁の剛性を大きくすることは、一般に、不同沈下の影響を減少させるために有効である。",
+      "ウ": "液状化とは、振動・衝撃等による間隙水圧の上昇によって、水で飽和した粘性土が、せん断抵抗を失う現象である。",
+      "エ": "PHC杭とは、遠心力成形された中空円筒形をした工場生産の高強度コンクリート杭である。",
+      "オ": "直接基礎の鉛直支持力の算定方法には、原地盤の地盤定数を推定して支持力式を用いる方法、平板載荷試験による方法等がある。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "液状化の典型は、水で飽和した緩い砂質地盤である。振動で間隙水圧が高まり、砂粒子間の有効応力が下がることでせん断抵抗を失う。",
+    "choiceExplanations": {
+      "ア": "地盤条件に対して、複数の基礎形式を比較して適した形式を選ぶ。",
+      "イ": "連結する基礎梁の剛性が高いと、基礎相互の変位差を抑えやすい。",
+      "ウ": "現象の説明は概ね合っているが、粘性土とした点が不適当。",
+      "エ": "PHC杭は、遠心成形による中空のプレストレスト高強度コンクリート杭である。",
+      "オ": "地盤定数を用いた支持力式や、平板載荷試験による評価が使われる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=6",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅲ（建築構造） 問9",
+    "sourcePage": 6,
+    "sourcePrintedPage": "構造 5",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "kenchikushi2-2024-annual-III-q10",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-III",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "木造用語",
+    "topicTags": [
+      "木造用語"
+    ],
+    "difficulty": 3,
+    "question": "木造建築物の用語とその説明との組合せとして、最も不適当なものは、次のうちどれか。",
+    "choices": {
+      "ア": "散りじゃくり ― 塗壁と周囲の木部との接触部分において、塗壁の乾燥・収縮により、隙間ができるのを防ぐ目的で設ける溝",
+      "イ": "方づえ ― 鉛直構面の柱と横架材の交点の入隅部分において、柱と横架材を斜めに結んで隅を固める部材",
+      "ウ": "召合せ ― 同一平面内にある「引分け戸や両開き戸の出会う部分」や「引違い戸の重なり合う部分」",
+      "エ": "胴縁 ― 天井材を止め付けるための下地部材",
+      "オ": "登り淀 ― 切妻屋根のけらば部分において、屋根勾配に沿って軒先から棟まで傾斜している部材"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "胴縁は柱や間柱に取り付け、壁の仕上げを受ける下地部材である。天井材を取り付ける下地は野縁と呼び、下地の位置と役割が異なる。",
+    "choiceExplanations": {
+      "ア": "木部との境に溝を設け、塗壁が乾燥収縮する境目を納める。",
+      "イ": "方づえは柱と梁などを斜めにつなぎ、隅を固める。",
+      "ウ": "建具同士の出会う部分や重なり合う部分を召合せという。",
+      "エ": "天井の下地を胴縁とした点が不適当。",
+      "オ": "登り淀は切妻屋根のけらばに沿う納まりの部材である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=7",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅲ（建築構造） 問10",
+    "sourcePage": 7,
+    "sourcePrintedPage": "構造 6",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "kenchikushi2-2024-annual-III-q11",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-III",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "木質接合",
+    "topicTags": [
+      "木質接合"
+    ],
+    "difficulty": 3,
+    "question": "木質構造の接合に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "木材の比重は、一般に、接合部の接合耐力に影響を与える。",
+      "イ": "追掛け大栓継ぎは、断面が大きい梁・桁などの横架材を、材軸方向に継ぐ場合に用いられる。",
+      "ウ": "接合部の木材の含水状態が、使用環境条件下において、接合具に錆を生じさせるおそれのある場合には、耐用年数に応じた防錆処理を施す。",
+      "エ": "ボルト接合においては、一般に、接合部が降伏する前に、木材に割裂、せん断、引張り等による脆性的な破壊が生じないようにする。",
+      "オ": "木ねじ接合部は、ねじ部の存在により、一般に、釘接合部に比べて変形性能が大きい。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "釘接合は釘の曲げ降伏や木材のめり込みによって変形を受け持つ。ねじ山があるという理由で、木ねじ接合の変形性能が一般に釘接合より大きいとはいえない。",
+    "choiceExplanations": {
+      "ア": "木材の密度などは、接合具まわりのめり込み抵抗や引抜き抵抗に影響する。",
+      "イ": "追掛け大栓継ぎは、大きな横架材を長手方向につなぐ継手である。",
+      "ウ": "使用中の含水状態から錆のおそれを評価し、必要な防錆性能を確保する。",
+      "エ": "木材が先に割れて耐力を失うと接合具の変形を利用できないため、脆性破壊を避ける。",
+      "オ": "ねじ山による引抜き抵抗と、接合部全体の変形性能は区別して考える。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=7",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅲ（建築構造） 問11",
+    "sourcePage": 7,
+    "sourcePrintedPage": "構造 6",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "kenchikushi2-2024-annual-III-q12",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-III",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "枠組壁工法",
+    "topicTags": [
+      "枠組壁工法"
+    ],
+    "difficulty": 3,
+    "question": "枠組壁工法による2階建ての住宅に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "耐力壁線に設ける開口部の幅は4 m以下とし、かつ、その開口部の幅の合計はその耐力壁線の長さの3/4以下とする。",
+      "イ": "耐力壁線相互の距離は、12 m以下とする。",
+      "ウ": "外壁の耐力壁線相互の交差部の一方には、一般に、長さ90 cm以上の耐力壁を設ける。",
+      "エ": "耐力壁の壁材としてせっこうボードを張り付けるための釘には、一般に、CN50 を使用する。",
+      "オ": "耐力壁の隅角部を構成する隅柱は、一般に、3本以上のたて枠で構成する。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "せっこうボードを耐力壁の面材に用いる場合は、その面材に対応するくぎやビスの仕様で留め付ける。構造用面材などに使うCN50を一般の指定とした点が誤り。",
+    "choiceExplanations": {
+      "ア": "各開口の幅と、耐力壁線全体に占める開口の合計幅をそれぞれ制限する。",
+      "イ": "耐力壁線間を制限することで、床や屋根を介して水平力を壁へ伝えやすくする。",
+      "ウ": "交差部に所定の長さの耐力壁を設け、外周の隅角部で水平力を受ける。",
+      "エ": "同じ耐力壁でも、必要なくぎの種類・留付け仕様は面材によって異なる。",
+      "オ": "複数のたて枠を組み合わせ、耐力壁の隣り合う面材を隅角部で支える。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=8",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅲ（建築構造） 問12",
+    "sourcePage": 8,
+    "sourcePrintedPage": "構造 7",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "kenchikushi2-2024-annual-III-q13",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-III",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "補強ブロック造",
+    "topicTags": [
+      "補強ブロック造"
+    ],
+    "difficulty": 3,
+    "question": "平家建ての補強コンクリートブロック造の建築物に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "軒の高さは、4.0 m以下とする。",
+      "イ": "補強ブロック組積体の許容圧縮応力度の大きさは、Ａ種＜Ｂ種＜Ｃ種である。",
+      "ウ": "壁厚150 mmの耐力壁の縦筋は、壁体内で重ね継ぎしてはならない。",
+      "エ": "壁量は、150 mm/m 2以上とする。",
+      "オ": "両側に開口部のある耐力壁の長さ（実長）は、450 mm以上、かつ、耐力壁の有効高さの25 ％以上とする。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "両側に開口部がある耐力壁の実長には、壁の有効高さに応じた下限と、実長そのものの下限がある。450 mm以上とした記述では実長を過小にできてしまう。",
+    "choiceExplanations": {
+      "ア": "補強コンクリートブロック造では軒の高さが仕様規定の対象になる。",
+      "イ": "Ａ種、Ｂ種、Ｃ種の順に補強ブロック組積体の許容圧縮応力度が大きい。",
+      "ウ": "150 mm厚の耐力壁では、壁体内で縦筋を重ね継ぎする方法は用いない。",
+      "エ": "必要壁量は床面積当たりの耐力壁の長さで表す。",
+      "オ": "有効高さに対する条件に加え、実長についても下限を満たす必要がある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=8",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅲ（建築構造） 問13",
+    "sourcePage": 8,
+    "sourcePrintedPage": "構造 7",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325CO0000000338?occasion_date=20241015",
+      "https://www.mlit.go.jp/notice/noticedata/sgml/099/81000086/81000086.html"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-III-q14",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-III",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "RC構造",
+    "topicTags": [
+      "RC構造"
+    ],
+    "difficulty": 3,
+    "question": "鉄筋コンクリート構造に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "コンクリートの曲げひび割れ幅は、一般に、鉄筋応力が一定であれば、コンクリートのかぶり厚が厚いほど、また、鉄筋径が太いほど大きくなる。",
+      "イ": "あばら筋は、一般に、梁の「ひび割れの伸展の防止」や「せん断終局強度及び靱性の確保」に有効である。",
+      "ウ": "耐震壁の壁板のせん断補強筋比は、直交する各方向に関して、それぞれ0.25 ％以上とする。",
+      "エ": "柱は、一般に、負担している軸方向圧縮力が大きくなると、靱性が大きくなる。",
+      "オ": "耐震壁周辺のスラブや吹抜け部周囲のスラブなどは、地震時の面内せん断力が伝達可能なスラブ厚とする。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "柱の軸圧縮力が大きいほどコンクリートの圧壊が先行しやすく、一般に変形能力は低下する。軸圧縮力の増加で靱性が大きくなるという記述は不適当。",
+    "choiceExplanations": {
+      "ア": "鉄筋応力を一定にして比べると、かぶりが厚い場合や鉄筋径が大きい場合に曲げひび割れ幅が大きくなりやすい。",
+      "イ": "あばら筋は斜めのひび割れを横切ってせん断力を受け持ち、急激な耐力低下を抑える。",
+      "ウ": "壁板のせん断補強筋は、直交する縦・横の両方向で確保する。",
+      "エ": "軸圧縮力が大きい柱では、コンクリートの圧壊により変形の余裕が小さくなる。",
+      "オ": "吹抜けがある場合も、床スラブが地震力を耐震要素に伝えられる厚さを確保する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=8",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅲ（建築構造） 問14",
+    "sourcePage": 8,
+    "sourcePrintedPage": "構造 7",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "kenchikushi2-2024-annual-III-q15",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-III",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "柱のせん断補強",
+    "topicTags": [
+      "柱のせん断補強"
+    ],
+    "difficulty": 3,
+    "question": "図のように配筋された柱のせん断補強筋比p_wを求める式として、正しいものは、次のうちどれか。ただし、地震力は、図に示す方向とする。",
+    "choices": {
+      "ア": "p_w＝2a_w/(D_X s)",
+      "イ": "p_w＝2a_w/(D_Y s)",
+      "ウ": "p_w＝3a_w/(D_X s)",
+      "エ": "p_w＝3a_w/(D_Y s)",
+      "オ": "p_w＝3a_t/(D_X D_Y)"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "地震力と平行なせん断補強筋の脚は外周の2本なので、断面積の合計は2a_w。地震力に直交する柱幅D_Yと補強筋の間隔sで割り、p_w＝2a_w/(D_Y s)となる。",
+    "choiceExplanations": {
+      "ア": "有効な脚は2本。柱幅は地震力に平行なD_XではなくD_Yを用いる。",
+      "イ": "地震力に平行な2本のせん断補強筋と、直交する柱幅を用いた式である。",
+      "ウ": "図の中子筋は地震力に直交しており、平行な脚として加えない。",
+      "エ": "柱幅は正しいが、中子筋を数えると分子が過大になる。",
+      "オ": "a_tは主筋の断面積なので、この方向のせん断補強筋量の計算には使わない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=9",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅲ（建築構造） 問15",
+    "sourcePage": 9,
+    "sourcePrintedPage": "構造 8",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "isCalculation": true,
+    "imageUrls": [
+      "/questions/kenchikushi2/2024/iii-15.webp"
+    ],
+    "imageAltTexts": [
+      "柱配筋の立面図と断面図。断面の幅は水平方向D_X、鉛直方向D_Yで、地震力は右向き。せん断補強筋は断面の外周と中央の鉛直方向にあり、その間隔はs。a_tは主筋1本の断面積、a_wはせん断補強筋1本の断面積。"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-III-q16",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-III",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "category": "鉄骨構造",
+    "topicTags": [
+      "鉄骨構造"
+    ],
+    "difficulty": 3,
+    "question": "鉄骨構造に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "許容圧縮応力度の算定は、細長比によって規定されており、幅厚比にはよらない。",
+      "イ": "曲げを受ける角形鋼管は、横座屈を考慮する必要はない。",
+      "ウ": "埋込み形式の柱脚において、埋込み深さは、柱の見付け幅のうち大きいほうの柱幅とすることができる。",
+      "エ": "構造用鋼材の短期許容応力度は、圧縮、引張り、曲げ、せん断の長期許容応力度のそれぞれの数値の1.5倍である。",
+      "オ": "十分な量のスチフナーを設けることで、ウェブの局部座屈を防止することができる。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "埋込み柱脚は、曲げモーメントを基礎側の支圧などで伝えるため、柱幅の1倍を埋込み深さとする記述では不足する。",
+    "choiceExplanations": {
+      "ア": "許容圧縮応力度は部材の座屈を想定して細長比から求める。板要素の幅厚比は局部座屈の検討に用いる。",
+      "イ": "閉断面の角形鋼管はねじれ剛性が大きく、曲げ材の横座屈を考慮する必要がない。",
+      "ウ": "柱幅に等しい深さでは、埋込み柱脚に必要な定着と曲げ抵抗を確保する条件を満たさない。",
+      "エ": "問題で扱う構造用鋼材では、短期の許容値は対応する長期の許容値を1.5倍した値となる。",
+      "オ": "スチフナーはウェブの変形を拘束し、局部座屈の防止に役立つ。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=9",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅲ（建築構造） 問16",
+    "sourcePage": 9,
+    "sourcePrintedPage": "構造 8",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/jutakukentiku/build/content/001879919.pdf"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-III-q17",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-III",
+    "qNumber": 17,
+    "type": "multiple-choice",
+    "category": "鉄骨接合",
+    "topicTags": [
+      "鉄骨接合"
+    ],
+    "difficulty": 3,
+    "question": "鉄骨構造の接合に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "隅肉溶接の有効長さは、まわし溶接を含めた溶接の全長として算出する。",
+      "イ": "柱梁接合部において、スカラップは、応力集中により部材の破断の原因となることがあるので、スカラップを設けない方法もある。",
+      "ウ": "高力ボルト摩擦接合のせん断耐力は、ボルト締付け力と摩擦面の状態によるすべり係数によって決まる。",
+      "エ": "高力ボルト摩擦接合において、摩擦面のすべり係数など表面条件が同じ場合、二面摩擦の許容せん断力は、一面摩擦の許容せん断力の2倍とする。",
+      "オ": "高力ボルトの接合において、ボルト孔の中心間の距離は、公称軸径の2.5倍以上とする。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "隅肉溶接の有効長さは、必要なのど厚を確保できる範囲で評価する。まわし溶接を含む全長をそのまま有効長さにはできない。",
+    "choiceExplanations": {
+      "ア": "溶接端部など、のど厚が有効に働かない部分まで一律に算入しない。",
+      "イ": "スカラップ端は応力が集中する場合があるため、ノンスカラップ工法も用いられる。",
+      "ウ": "ボルト軸力による面圧と接合面のすべり係数が摩擦による耐力を決める。",
+      "エ": "同じ条件の摩擦面が2面あれば、1面の場合の2倍のせん断力を負担できる。",
+      "オ": "ボルト孔が近すぎると母材が弱くなるため、孔の中心間に所定の間隔を確保する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=10",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅲ（建築構造） 問17",
+    "sourcePage": 10,
+    "sourcePrintedPage": "構造 9",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "kenchikushi2-2024-annual-III-q18",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-III",
+    "qNumber": 18,
+    "type": "multiple-choice",
+    "category": "耐震計画",
+    "topicTags": [
+      "耐震計画"
+    ],
+    "difficulty": 3,
+    "question": "建築物の耐震設計、構造計画等に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "建築物の耐震設計は、稀に生じる（中程度の）地震動に対して損傷による性能の低下を生じないことを確かめる一次設計と、極めて稀に生じる（最大級の）地震動に対して崩壊・倒壊等しないことを確かめる二次設計から構成される。",
+      "イ": "鉄筋コンクリート造の建築物では、一般に、躯体にひび割れが発生するほど固有周期が長くなる。",
+      "ウ": "建築物の各階で重心と剛心の位置が一致しているが、剛性率が0.6 未満の階がある場合には、地震時にねじれ振動が生じて損傷を受けやすい。",
+      "エ": "鉄骨造の建築物について、極めて稀に発生する地震に対しては、一般に、鋼材が塑性域に入ることを許容しながら、保有耐力を発揮するまで接合部が破断しないことを確認する。",
+      "オ": "木造軸組構法において、床組における床の面内の強度・剛性を高めるには、厚物の構造用合板を張るなどの方法がある。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "重心と剛心のずれは偏心率の問題で、ねじれを生じさせる。剛性率は各階の相対的な剛性を表し、剛性の小さい階では層間変形が集中する。",
+    "choiceExplanations": {
+      "ア": "一次設計は通常想定する地震での損傷抑制、二次設計は最大級の地震での崩壊防止を扱う。",
+      "イ": "ひび割れで躯体の有効剛性が低下すると、振動しやすくなり固有周期は長くなる。",
+      "ウ": "剛性率が小さい階に集中するのは層間変形。ねじれは重心と剛心の偏りと関係する。",
+      "エ": "鋼材の塑性変形を利用する設計では、必要な保有耐力に達する前の接合部破断を防ぐ。",
+      "オ": "厚い構造用合板を適切に留め付けると、床面内のせん断力を伝える性能が高まる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=10",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅲ（建築構造） 問18",
+    "sourcePage": 10,
+    "sourcePrintedPage": "構造 9",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/sogoseisaku/inter/keizai/gijyutu/pdf/risk_judge_j4.pdf"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-III-q19",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-III",
+    "qNumber": 19,
+    "type": "multiple-choice",
+    "category": "耐震診断・改修",
+    "topicTags": [
+      "耐震診断・改修"
+    ],
+    "difficulty": 3,
+    "question": "建築物の耐震診断、耐震補強等に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "既存の鉄筋コンクリート造の建築物の耐震診断における第2 次診断法は、主として梁降伏型となる建築物の耐震性能を評価するための手法である。",
+      "イ": "既存の補強コンクリートブロック塀の耐震診断において、横筋や縦筋の状況等を確認し、「壁本体」の一体性だけでなく、「壁本体と控壁との間」や「壁と基礎との間」の一体性についても評価する。",
+      "ウ": "既存の木造住宅の耐震補強において、上下階の耐力壁や隅柱の位置を一致させたり、ピロティ部分の補強を行ったりすることは、建築物の一体性を確保するのに有効である。",
+      "エ": "既存建築物の耐震補強において、部材の補強だけでは目標とする耐震性能を確保できない場合には、免震構造の採用や地震荷重を減らす方法等も有効である。",
+      "オ": "あと施工アンカーを用いた補強壁の増設工事において、新設するコンクリートの割裂を防止するために、アンカー筋の周辺にスパイラル筋等を設けることが有効である。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "既存RC造の第2次診断では柱や壁の耐力・変形性能を中心に評価する。梁降伏型で梁の影響を評価する場合は、第3次診断が対応する。",
+    "choiceExplanations": {
+      "ア": "?2?????????????????????????????3????????",
+      "イ": "ブロック塀の安全性には、壁本体と控壁・基礎との一体性が必要である。",
+      "ウ": "上下階で耐力壁や隅柱の位置をそろえると力を伝えやすくなり、弱いピロティの補強も全体の一体性に役立つ。",
+      "エ": "部材を強くする以外に、免震や重量の低減などで作用する地震力を減らす方法がある。",
+      "オ": "アンカーまわりをスパイラル筋で拘束すると、新設コンクリートの割裂を抑えられる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=11",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅲ（建築構造） 問19",
+    "sourcePage": 11,
+    "sourcePrintedPage": "構造 10",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "kenchikushi2-2024-annual-III-q20",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-III",
+    "qNumber": 20,
+    "type": "multiple-choice",
+    "category": "木材・木質材料",
+    "topicTags": [
+      "木材・木質材料"
+    ],
+    "difficulty": 3,
+    "question": "建築材料として使用される木材及び木質材料に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "含水率が繊維飽和点以上の木材では、膨張・収縮が起こりにくい。",
+      "イ": "木材の腐朽菌は、水分、温度、酸素及び養分の全ての条件がそろったときに繁殖する。",
+      "ウ": "雨にさらされる下見板や雨戸に木材を用いる場合において、表側が木裏となるように使用する。",
+      "エ": "大断面の木材の炭化速度は、標準的な火災のもとでは、毎分0.6～0.7 mm程度である。",
+      "オ": "耐腐朽性及び耐蟻性が高い木材として、アカマツ、クロマツ、ベイツガ等がある。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "耐腐朽性や耐蟻性は樹種や心材・辺材で異なる。アカマツ、クロマツ、ベイツガを一律に耐腐朽性も耐蟻性も高い樹種とすることはできない。",
+    "choiceExplanations": {
+      "ア": "繊維飽和点を超えた分の水は主に自由水で、増減しても寸法が変化しにくい。",
+      "イ": "腐朽菌が活動するには、水分、適当な温度、酸素、木材などの養分が必要になる。",
+      "ウ": "雨にさらされる下見板などでは、反りによる端部の浮きを抑えるように木裏を外側に使う。",
+      "エ": "大断面材では表層が炭化し、内部への熱の進行が緩やかになる。",
+      "オ": "天然の耐久性を検討する際には、使用部位と樹種、心材・辺材の区別が必要である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=11",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅲ（建築構造） 問20",
+    "sourcePage": 11,
+    "sourcePrintedPage": "構造 10",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "kenchikushi2-2024-annual-III-q21",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-III",
+    "qNumber": 21,
+    "type": "multiple-choice",
+    "category": "コンクリートの性質",
+    "topicTags": [
+      "コンクリートの性質"
+    ],
+    "difficulty": 3,
+    "question": "コンクリートに関する用語とその説明との組合せとして、最も不適当なものは、次のうちどれか。",
+    "choices": {
+      "ア": "ブリーディング ― コンクリートを打ち込んだ直後から、練混ぜ水の一部が分離して、コンクリートの上面に上昇する現象",
+      "イ": "エフロレッセンス（白華） ― コンクリート中の炭酸カルシウムなどがコンクリートの表面に析出した、白色の物質",
+      "ウ": "中性化 ― 骨材がセメントペースト中に含まれるアルカリ成分と化学反応を起こし、水分を吸収して膨張することによって、コンクリートにひび割れを生じさせる現象",
+      "エ": "クリープ ― 一定の外力が継続して作用したときに、時間の経過とともにひずみが増大する現象",
+      "オ": "プラスティック収縮ひび割れ ― コンクリートが固まる前に、コンクリートの表面が急激に乾燥することによってひび割れが生じる現象"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "選択肢3の記述はアルカリシリカ反応の説明。中性化は、二酸化炭素などの作用によりコンクリートのアルカリ性が低下する現象である。",
+    "choiceExplanations": {
+      "ア": "打込み後、固体粒子の沈降などにより上面へ水が浮く。",
+      "イ": "コンクリートから出た成分が表面で白く析出する現象が白華である。",
+      "ウ": "反応性のある骨材とアルカリ成分の反応による膨張は、中性化と機構が異なる。",
+      "エ": "同じ荷重が続いても、ひずみは時間とともに増加する。",
+      "オ": "硬化前に表面からの水分蒸発が激しいと、表層の収縮によってひび割れる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=12",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅲ（建築構造） 問21",
+    "sourcePage": 12,
+    "sourcePrintedPage": "構造 11",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "kenchikushi2-2024-annual-III-q22",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-III",
+    "qNumber": 22,
+    "type": "multiple-choice",
+    "category": "コンクリート材料",
+    "topicTags": [
+      "コンクリート材料"
+    ],
+    "difficulty": 3,
+    "question": "コンクリートの材料に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "フライアッシュを使用することにより、フレッシュコンクリートのワーカビリティーを良好にすることができる。",
+      "イ": "コンクリートの水素イオン濃度（pH）は、12～13 程度のアルカリ性を示すので、鉄筋の腐食を抑制する効果がある。",
+      "ウ": "骨材の粒径は、均一であるより、小さな粒径から大きな粒径までが混ざり合っているほうが望ましい。",
+      "エ": "高炉セメントＢ種を用いたコンクリートは、圧縮強度が同程度の普通ポルトランドセメントを用いたコンクリートに比べて、湿潤養生期間を短くすることができる。",
+      "オ": "高性能AE減水剤の使用により、単位水量を低減させるとともに、優れたスランプ保持性能を発揮させることができる。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "高炉セメントB種は、普通ポルトランドセメントより初期の強度発現が遅い傾向がある。同程度の圧縮強度を理由に、湿潤養生期間を短縮することはできない。",
+    "choiceExplanations": {
+      "ア": "フライアッシュの細かな粒子には、練混ぜたコンクリートの流動性を改善する効果がある。",
+      "イ": "強アルカリ環境では鉄筋表面に不動態皮膜が形成され、腐食しにくくなる。",
+      "ウ": "大小の粒を適切に組み合わせると骨材間の空隙を抑えやすい。",
+      "エ": "湿潤養生の必要期間は、セメント種別と強度発現の違いを考慮する。",
+      "オ": "高性能AE減水剤を用いると、施工に必要な流動性を保ちつつ単位水量を減らせる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=12",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅲ（建築構造） 問22",
+    "sourcePage": 12,
+    "sourcePrintedPage": "構造 11",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/gobuild/content/001879204.pdf"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-III-q23",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-III",
+    "qNumber": 23,
+    "type": "multiple-choice",
+    "category": "鋼材",
+    "topicTags": [
+      "鋼材"
+    ],
+    "difficulty": 3,
+    "question": "鋼材に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "鋼材は、一般に、炭素含有量が多くなると、溶接性が向上する。",
+      "イ": "軟鋼は、炭素量が約0.15～0.3 ％の炭素鋼であり、建築用の構造用鋼材として用いられる。",
+      "ウ": "常温において、SN400 材のヤング係数とSN490 材のヤング係数は、同じである。",
+      "エ": "鋼材の引張強さは、一般に、温度が200～300 ℃程度で最大となり、それ以上の温度になると急激に低下する。",
+      "オ": "鋼材の密度は、コンクリートや木材よりも大きい。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "炭素量を増すと鋼は硬くなる一方、溶接熱の影響を受けた部分が硬化し、割れを生じやすくなる。炭素量が多いほど一般に溶接性は低下する。",
+    "choiceExplanations": {
+      "ア": "炭素量が増すことで硬化しやすくなるため、溶接性が上がるとはいえない。",
+      "イ": "軟鋼は比較的炭素量が少なく、加工・溶接がしやすいため構造用に使われる。",
+      "ウ": "鋼種によって基準強度は異なるが、SN400とSN490のヤング係数は同じ値で扱う。",
+      "エ": "鋼の引張強さは加熱に対して単調に変化せず、特定温度域で上がった後、高温で低下する。",
+      "オ": "同じ体積で比べると、鋼材の質量はコンクリートや木材より大きい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=13",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅲ（建築構造） 問23",
+    "sourcePage": 13,
+    "sourcePrintedPage": "構造 12",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "kenchikushi2-2024-annual-III-q24",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-III",
+    "qNumber": 24,
+    "type": "multiple-choice",
+    "category": "石材・左官材料",
+    "topicTags": [
+      "石材・左官材料"
+    ],
+    "difficulty": 3,
+    "question": "建築材料に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "珪藻土を素材とした左官材料は、一般に、軽量で耐火性及び断熱性に優れている。",
+      "イ": "テラゾブロックは、壁や床などの内装材として用いられる。",
+      "ウ": "粘板岩（天然スレート）は、容易に層状に割裂できるので、屋根材などに用いられる。",
+      "エ": "花こう岩は、高温でも火害を受けにくいので、耐火被覆材として用いられる。",
+      "オ": "安山岩は、板状で硬いので、外構の床材などに用いられる。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "花こう岩は、鉱物の熱膨張の差によって高温時に割れや剥落を生じやすい。高温に強いことを理由に耐火被覆材とする記述は不適当。",
+    "choiceExplanations": {
+      "ア": "珪藻土の多孔質な構造は、材料の軽さや断熱性につながる。",
+      "イ": "テラゾは石粒を含む人造石で、研磨した表面を壁や床の仕上げなどに使う。",
+      "ウ": "天然スレートは層に沿って薄板に割れる性質を屋根材に利用する。",
+      "エ": "加熱で損傷しやすい石材を、耐火被覆に適するとは評価できない。",
+      "オ": "硬い安山岩は、外構舗装などに用いられる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=13",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅲ（建築構造） 問24",
+    "sourcePage": 13,
+    "sourcePrintedPage": "構造 12",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "kenchikushi2-2024-annual-III-q25",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-III",
+    "qNumber": 25,
+    "type": "multiple-choice",
+    "category": "建築材料",
+    "topicTags": [
+      "建築材料"
+    ],
+    "difficulty": 3,
+    "question": "建築材料に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "酢酸ビニル樹脂系接着剤は、耐水性、耐熱性に優れているので、屋外における使用に適している。",
+      "イ": "けい酸カルシウム板は、不燃材料であり、断熱性が高いので、防火構造や耐火構造の天井・壁に使用される。",
+      "ウ": "シアノアクリレート系接着剤は、被着体表面の微量の水分と接触して瞬間的に硬化するので、迅速な作業が求められる場合に用いられる。",
+      "エ": "ステンレスシートは、屋根や庇の防水層に用いられる。",
+      "オ": "押出成形セメント板は、中空のパネルであり、断熱性や遮音性に優れているので、外壁等に使用される。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "一般的な酢酸ビニル樹脂系の木工用接着剤は、屋内の木材接着などに向く。水や熱の影響を受けるため、屋外一般に適するという記述は不適当。",
+    "choiceExplanations": {
+      "ア": "水がかかる部位や高温部では、使用条件に適した耐水・耐熱性能の接着剤を選ぶ。",
+      "イ": "不燃性や断熱性を利用して、防火・耐火のための壁や天井の構成材として用いる。",
+      "ウ": "被着体表面の微量の水分で硬化反応が進み、短時間で接着できる。",
+      "エ": "ステンレスシートは、耐食性を活かして屋根や庇の防水層に用いられる。",
+      "オ": "中空断面の成形セメント板は、外壁などのパネルに使われる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=13",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅲ（建築構造） 問25",
+    "sourcePage": 13,
+    "sourcePrintedPage": "構造 12",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "kenchikushi2-2024-annual-IV-q1",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-IV",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "施工計画",
+    "topicTags": [
+      "施工計画"
+    ],
+    "difficulty": 3,
+    "question": "施工計画に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "設計図書に指定がない工事の施工方法については、必要に応じて、監理者と施工者とが協議のうえ、施工者の責任において決定した。",
+      "イ": "総合施工計画書には、設計図書において指定された仮設物を除き、施工計画に関する事項を記載した。",
+      "ウ": "工種別施工計画書における品質管理計画には、品質管理組織及び品質管理実施方法についても記載した。",
+      "エ": "施工管理には、その任務に必要な能力、資格を有する管理者を選定し、監理者に報告した。",
+      "オ": "施工図・見本等については、施工者が監理者と協議したうえで作成し、監理者の承認を得た。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "総合施工計画書は、工事全体の進め方を整理する書類である。設計図書で指定された仮設物も、工程や安全管理に関係するので計画に含める。",
+    "choiceExplanations": {
+      "ア": "図書に施工方法の指定がなければ、必要な協議を経て施工者が責任を持って決める。",
+      "イ": "指定された仮設物がある場合は、施工者が任意に定める仮設と合わせて全体計画で扱う。",
+      "ウ": "検査などの実施方法や担当者を工種ごとに定めると、品質管理の手順を共有できる。",
+      "エ": "施工管理を担う人員の能力と資格を確認し、監理者に伝える。",
+      "オ": "施工図や見本は、図書の要求と現場での納まりを事前に確認するために使う。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=14",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅳ（建築施工） 問1",
+    "sourcePage": 14,
+    "sourcePrintedPage": "施工 13",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/gobuild/content/001879204.pdf"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-IV-q2",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-IV",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "申請・届出",
+    "topicTags": [
+      "申請・届出"
+    ],
+    "difficulty": 3,
+    "question": "建築工事に関する申請・届出・報告とその申請者・届出者及び提出先の組合せとして、最も不適当なものは、次のうちどれか。",
+    "choices": {
+      "ア": "道路占用許可申請／施工者／道路管理者",
+      "イ": "クレーン設置届／事業者／労働基準監督署長",
+      "ウ": "安全管理者選任報告／事業者／労働基準監督署長",
+      "エ": "危険物貯蔵所設置許可申請／設置者／消防署長",
+      "オ": "建築工事届／建築主／都道府県知事"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "危険物貯蔵所の設置について、消防法第11条の許可権者は区分に応じた市町村長等である。提出先を一律に消防署長とした組合せが不適当。",
+    "choiceExplanations": {
+      "ア": "工事用の足場などで道路を占用する場合は、道路管理者の許可を受ける。",
+      "イ": "クレーン設置届は事業者が所轄の労働基準監督署長に提出する。",
+      "ウ": "安全管理者を選任した事業者は、所轄の労働基準監督署長に選任を報告する。",
+      "エ": "消防署の窓口で取り扱う場合でも、消防法上の許可権者は施設の区分・所在地によって決まる。",
+      "オ": "建築工事届は建築主が都道府県知事に届け出る書類である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=14",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅳ（建築施工） 問2",
+    "sourcePage": 14,
+    "sourcePrintedPage": "施工 13",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/document?lawid=323AC1000000186_20240401_505AC0000000058",
+      "https://laws.e-gov.go.jp/law/334CO0000000306?occasion_date=20240111"
+    ],
+    "imageUrls": [
+      "/questions/kenchikushi2/2024/iv-02.webp"
+    ],
+    "imageAltTexts": [
+      "各選択肢を申請・届出・報告、申請者・届出者、提出先の3列で示した表。表の各行と選択肢は同じ順序。"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-IV-q3",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-IV",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "工事監理",
+    "topicTags": [
+      "工事監理"
+    ],
+    "difficulty": 3,
+    "question": "建築士法の規定に基づく「建築士事務所の開設者がその業務に関して請求することのできる報酬の基準」において、建築士が行う工事監理に関する標準業務及びその他の標準業務として、最も不適当なものは、次のうちどれか。",
+    "choices": {
+      "ア": "工事監理報告書等の提出",
+      "イ": "請負代金内訳書の検討及び報告",
+      "ウ": "工程表の作成及び提出",
+      "エ": "工事が設計図書の内容に適合しない疑いがある場合の破壊検査",
+      "オ": "工事請負契約の目的物の引渡しの立会い"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "工程表を作成して提出するのは施工者の側である。監理業務では提出された工程表を検討し、必要な報告を行う。",
+    "choiceExplanations": {
+      "ア": "工事監理の結果は、監理報告書などにまとめて建築主に提出する。",
+      "イ": "施工者から提出された請負代金内訳書の内容を検討し、建築主に報告する。",
+      "ウ": "提出済みの工程表を検討・報告する業務と、工程表そのものを作成・提出する業務を区別する。",
+      "エ": "工事が設計図書に適合しない疑いを調べる手段の一つとして、必要に応じて破壊検査を行う。",
+      "オ": "工事目的物の引渡しへの立会いは、工事監理に関するその他の標準業務に含まれる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=15",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅳ（建築施工） 問3",
+    "sourcePage": 15,
+    "sourcePrintedPage": "施工 14",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/common/001269165.pdf"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-IV-q4",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-IV",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "建設廃棄物",
+    "topicTags": [
+      "建設廃棄物"
+    ],
+    "difficulty": 3,
+    "question": "建築等の工事現場から排出される廃棄物に関する次の記述のうち、「廃棄物の処理及び清掃に関する法律」に照らして、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "建築物の新築工事に伴って生じた壁紙くずは、産業廃棄物に該当する。",
+      "イ": "建築物の新築工事に伴って生じた木くずは、産業廃棄物に該当する。",
+      "ウ": "建築物の新築工事に伴って生じたせっこうボードの残材は、産業廃棄物に該当する。",
+      "エ": "建築物の解体工事に伴って搬出された石綿を含むけい酸カルシウム板は、特別管理産業廃棄物に該当する。",
+      "オ": "地業工事に伴って生じた廃ベントナイト泥水を含む汚泥は、特別管理産業廃棄物に該当する。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "地業工事で生じた廃ベントナイト泥水は建設汚泥に当たり、設問の条件だけで特別管理産業廃棄物とはならない。公式正答は5。なお、選択肢4の板は種類で扱いが異なり、第1種の成形板は石綿含有産業廃棄物、第2種の耐火被覆板は廃石綿等に該当する。",
+    "choiceExplanations": {
+      "ア": "建築物の新築工事に伴う壁紙くずは、工事から排出される紙くずとして扱う。",
+      "イ": "建築工事に伴う木くずは、建設業の事業活動に伴う産業廃棄物である。",
+      "ウ": "せっこうボードの残材も建設工事から生じる産業廃棄物であり、他の資材と分別する。",
+      "エ": "石綿含有けい酸カルシウム板は第1種と第2種で廃棄物区分が異なる。特別管理に当たるのは廃石綿等の区分である。",
+      "オ": "泥水を使用したことだけでは特別管理の要件を満たさず、通常の建設汚泥として区分する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=15",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅳ（建築施工） 問4",
+    "sourcePage": 15,
+    "sourcePrintedPage": "施工 14",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.env.go.jp/hourei/11/000101.html",
+      "https://www.env.go.jp/content/900534248.pdf"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-IV-q5",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-IV",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "仮設足場",
+    "topicTags": [
+      "仮設足場"
+    ],
+    "difficulty": 3,
+    "question": "仮設工事に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "高さが12 mのくさび緊結式足場における壁つなぎの間隔を、垂直方向、水平方向ともに5.5 mとした。",
+      "イ": "鉄骨造2階建ての建築物の工事において、高さが3.0 mの仮囲いを設けた。",
+      "ウ": "工事用シートの取付けにおいて、足場に水平材を垂直方向5.5 m以下ごとに設け、隙間やたるみがないように緊結材を使用して足場に緊結した。",
+      "エ": "高さが12 mの枠組足場における壁つなぎの間隔を、垂直方向9 m、水平方向8 mとした。",
+      "オ": "高さが9 mの登り桟橋において、高さが4.5 mの位置に踊場を設けた。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "くさび緊結式足場について、設問では単管足場の壁つなぎ間隔を用いる。垂直方向の上限は5 mであり、垂直・水平とも5.5 mとした点が不適当。",
+    "choiceExplanations": {
+      "ア": "??5.5 m????5 m???????5.5 m?????????",
+      "イ": "工事現場の仮囲いは通行人等を工事区域から隔てる。3.0 mは鋼構造の現場に求める高さを満たす。",
+      "ウ": "シートは足場の水平材に隙間やたるみが残らないように取り付ける。",
+      "エ": "枠組足場では壁つなぎの垂直方向と水平方向に異なる上限があり、9 mと8 mはそれぞれの上限である。",
+      "オ": "この登り桟橋では踊場を設け、各区間の高低差が長くなりすぎないようにしている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=15",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅳ（建築施工） 問5",
+    "sourcePage": 15,
+    "sourcePrintedPage": "施工 14",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/web/t_doc?dataId=00tc8166&dataType=1&pageNo=1"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-IV-q6",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-IV",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "木造基礎",
+    "topicTags": [
+      "木造基礎"
+    ],
+    "difficulty": 3,
+    "question": "木造住宅の基礎工事等に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "土間コンクリートは、厚さ120 mmとし、断面の中心部に、鉄線の径が4.0 mmで網目寸法が150 mm×150 mmのワイヤーメッシュを配した。",
+      "イ": "布基礎の床下防湿措置において、床下地面全面に厚さ0.1 mmの住宅用プラスチック系防湿フィルムを、重ね幅150 mmとして敷き詰めた。",
+      "ウ": "断熱材がある土間スラブにおいて、防湿層は、土間スラブと断熱材の間に設けた。",
+      "エ": "べた基礎において、地面から基礎の立上り部分の上端までの高さを、450 mmとした。",
+      "オ": "アンカーボルトの埋込み位置は、耐力壁両端の柱の下部、隅角部及び土台の継手・仕口位置付近とし、その他の部分は間隔を2.0 mとした。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "断熱材のある土間スラブに防湿層を設ける場合は、断熱材の直下に敷く。スラブと断熱材の間では、下方からの湿気が先に断熱材に達する。",
+    "choiceExplanations": {
+      "ア": "ワイヤーメッシュを土間コンクリート断面の中央付近に配置し、ひび割れを抑える。",
+      "イ": "防湿フィルムは床下地面を覆い、継ぎ目を重ねて湿気が通りやすい隙間をなくす。",
+      "ウ": "防湿層を断熱材より地盤側に設ける点を確認する。",
+      "エ": "立上りを地面から確保し、土台を地表面から離す。",
+      "オ": "強い力が作用する耐力壁の端部などと、一般部の両方にアンカーボルトを配置する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=16",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅳ（建築施工） 問6",
+    "sourcePage": 16,
+    "sourcePrintedPage": "施工 15",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/gobuild/content/001879204.pdf"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-IV-q7",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-IV",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "category": "土工事",
+    "topicTags": [
+      "土工事"
+    ],
+    "difficulty": 3,
+    "question": "土工事に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "締固め密度を高めるため、埋戻しに用いる土の最適な含水比を事前に調べた。",
+      "イ": "埋戻し及び盛土には、土質による沈み代を見込んで余盛りを行った。",
+      "ウ": "締固めは、川砂及び透水性のよい山砂を用いたので、水締めとした。",
+      "エ": "土工事において、掘削機械が置かれている地面よりも高い位置の土砂の掘削に、パワーショベルを使用した。",
+      "オ": "山砂、川砂及び海砂のうち、埋戻し土には最も適した川砂を用いた。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "埋戻しには、締固めやすい良質な山砂などを用いる。川砂も条件によって使えるが、粒度や施工条件を比べずに川砂を最適とする記述は不適当。",
+    "choiceExplanations": {
+      "ア": "締固め試験で土の最適含水比を把握し、締固めに適した水分状態を見極める。",
+      "イ": "土が後で沈下する分を見込み、目標面より高めに施工する場合がある。",
+      "ウ": "透水性のよい砂なら、水締めで水が抜けながら粒子が詰まる。",
+      "エ": "パワーショベルの上向き掘削は、機械の位置より上方の土砂の掘削に適する。",
+      "オ": "埋戻し材の適否は産地の名称だけで決まらず、粒度や含水状態、締固め方法などで判断する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=16",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅳ（建築施工） 問7",
+    "sourcePage": 16,
+    "sourcePrintedPage": "施工 15",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/gobuild/content/001879204.pdf"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-IV-q8",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-IV",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "鉄筋加工・圧接",
+    "topicTags": [
+      "鉄筋加工・圧接"
+    ],
+    "difficulty": 3,
+    "question": "鉄筋工事に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "手動ガス圧接継手において、外観検査の結果、圧接部に明らかな折れ曲がりが生じたことによって不合格となった圧接部を、再加熱により修正した。",
+      "イ": "柱主筋のガス圧接継手の位置については、特記がなかったので、隣り合う主筋で同じ位置とならないように400 mmずらした。",
+      "ウ": "鉄筋の加工寸法の検査は、加工鉄筋の搬入時に、加工種別ごとに最初の一組についてスケールなどによる測定を行った。",
+      "エ": "D19 の異形鉄筋の端部に設ける90度フックにおいて、折り曲げ内法直径を70 mmとした。",
+      "オ": "柱主筋の台直しが必要となったので、常温で折り曲げ加工を行った。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "D19の異形鉄筋を90度に曲げる場合、例えばSD295・SD345の折曲げ内法直径は4d以上が必要。70 mmはD19の4倍を下回る。",
+    "choiceExplanations": {
+      "ア": "曲がりだけで不合格となったガス圧接部は、再加熱による修正の対象となる。",
+      "イ": "隣接する柱筋の継手をずらし、同じ断面に継手が集まらないようにする。",
+      "ウ": "加工種別ごとに、最初の組の寸法を測定して加工精度を確認する。",
+      "エ": "曲げ部の内側の直径も鉄筋径に対応した寸法を確保する必要がある。",
+      "オ": "主筋の位置を調整する台直しは、常温で所定の加工条件に従う。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=16",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅳ（建築施工） 問8",
+    "sourcePage": 16,
+    "sourcePrintedPage": "施工 15",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/gobuild/content/001879204.pdf"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-IV-q9",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-IV",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "鉄筋施工・検査",
+    "topicTags": [
+      "鉄筋施工・検査"
+    ],
+    "difficulty": 3,
+    "question": "鉄筋工事に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "あばら筋の加工寸法の検査において、特記がなかったので、加工後の外側寸法の許容差を±5 mmの範囲内とした。",
+      "イ": "土に接する普通コンクリートを用いた基礎部分の鉄筋の最小かぶり厚さを、特記がなかったので、50 mmとした。",
+      "ウ": "粗骨材の最大寸法が20 mmの普通コンクリートを用いたので、柱の主筋D19 の鉄筋相互のあきを30 mmとした。",
+      "エ": "鉄筋の重ね継手において、鉄筋径が異なる異形鉄筋相互の継手の長さは、細いほうの鉄筋径を基準として算出した。",
+      "オ": "手動ガス圧接継手の超音波探傷試験の結果、不合格となったロットについては、試験されていない残り全数に対して超音波探傷試験を行い、不良圧接部の選別を行った。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "直接土に接する基礎の鉄筋の最小かぶり厚さは60 mmとする。50 mmでは、基礎を土から保護するためのかぶりを満たさない。",
+    "choiceExplanations": {
+      "ア": "あばら筋の加工精度は外側寸法で確認し、設問の±5 mmを許容差とする。",
+      "イ": "基礎のかぶり厚さは、土に接する一般部の数値と区別する。",
+      "ウ": "30 mmなら、D19の径に基づく条件、粗骨材寸法の1.25倍、25 mmという条件を満たす。",
+      "エ": "異径の鉄筋同士の重ね継手では、細い側の径に基づいて長さを算定する。",
+      "オ": "抜取試験に不合格のロットは未検査の残りを全数検査し、不良継手を選別する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=17",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅳ（建築施工） 問9",
+    "sourcePage": 17,
+    "sourcePrintedPage": "施工 16",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325CO0000000338?occasion_date=20241015",
+      "https://www.mlit.go.jp/gobuild/content/001879204.pdf"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-IV-q10",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-IV",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "型枠工事",
+    "topicTags": [
+      "型枠工事"
+    ],
+    "difficulty": 3,
+    "question": "型枠工事に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "普通ポルトランドセメントを用いたコンクリートの打込み後、5日間の平均気温が20 ℃以上であったので、圧縮強度試験を行わずに柱及び壁のせき板を取り外した。",
+      "イ": "床型枠用鋼製デッキプレート（フラットデッキ）は、衝撃に弱く、変形しやすいので、敷設時にはめ込みにくい等の手戻りが生じないように、養生方法、揚重方法等に配慮した。",
+      "ウ": "スリーブの取付けにおいては、コンクリート打込み時にスリーブが移動しないように、型枠に堅固に留め付けた。",
+      "エ": "支柱として用いるパイプサポートの高さが3.6 mであったので、水平つなぎを高さ2.1 mの位置とし、二方向に設けるとともに、水平つなぎの変位を防止した。",
+      "オ": "型枠の強度及び剛性の計算は、打込み時の振動・衝撃を考慮したコンクリート施工時の「鉛直荷重」、「水平荷重」及び「コンクリートの側圧」について行った。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "高さ3.6 mのパイプサポートでは、高さ2 m以内ごとに水平つなぎを二方向に設ける。二方向のつなぎでも、高さ2.1 mの位置では間隔が上限を超える。",
+    "choiceExplanations": {
+      "ア": "せき板を取り外せる時期は、部位、セメントの種類、打込み後の平均気温などで判定する。",
+      "イ": "フラットデッキは変形すると組みにくいため、搬入・揚重・敷設時に衝撃や曲がりを抑える。",
+      "ウ": "スリーブを固定して、コンクリート打込み後の開口位置が図面とずれないようにする。",
+      "エ": "二方向への設置と変位防止に加え、つなぎの高さ方向の間隔も制限を満たす必要がある。",
+      "オ": "型枠の検討には、作業中の鉛直・水平荷重と打込みコンクリートから受ける側圧を含める。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=17",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅳ（建築施工） 問10",
+    "sourcePage": 17,
+    "sourcePrintedPage": "施工 16",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=10",
+      "https://www.mlit.go.jp/gobuild/content/001879204.pdf"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-IV-q11",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-IV",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "コンクリート施工",
+    "topicTags": [
+      "コンクリート施工"
+    ],
+    "difficulty": 3,
+    "question": "コンクリート工事に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "軽量コンクリートに用いる人工軽量骨材については、運搬によるスランプの低下や圧送による圧力吸水が生じないように、あらかじめ十分に吸水させたものを用いた。",
+      "イ": "内部振動機によるコンクリートの締固めは、コールドジョイントを防止するために、内部振動機の先端が、先に打ち込まれたコンクリート層へ入るようにほぼ鉛直に挿入した。",
+      "ウ": "初期養生期間におけるコンクリートの最低温度については、コンクリートのいずれの部分についても、2 ℃以下とならないようにした。",
+      "エ": "片持ち形式のバルコニーにおいて、跳出し部を支持する構造体部分の強度が十分に発現した後に、跳出し部のコンクリートの打込みを行った。",
+      "オ": "構造体強度補正値は、特記がなかったので、セメントの種類及びコンクリートの打込みから材齢28日までの期間の予想平均気温に応じて定めた。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "片持ちバルコニーの付根には曲げモーメントやせん断力が集中する。支持する構造体と跳出し部は一体として打ち込み、打継ぎを設けて付根を弱点にしない。",
+    "choiceExplanations": {
+      "ア": "人工軽量骨材を事前に吸水させ、運搬・圧送中の吸水によるスランプ低下を抑える。",
+      "イ": "先に打ち込んだ層まで振動機を入れると、上下のコンクリートを一体化しやすい。",
+      "ウ": "初期養生中の温度を確保し、まだ強度が低いコンクリートの凍結を防ぐ。",
+      "エ": "支持部の硬化後に跳出し部を打つと、力が集中する付根に打継ぎができる。",
+      "オ": "構造体強度補正値は、使用するセメントと打込み後の予想平均気温を考慮して決める。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=18",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅳ（建築施工） 問11",
+    "sourcePage": 18,
+    "sourcePrintedPage": "施工 17",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/gobuild/content/001879204.pdf"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-IV-q12",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-IV",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "高力ボルト・鉄骨建方",
+    "topicTags": [
+      "高力ボルト・鉄骨建方"
+    ],
+    "difficulty": 3,
+    "question": "鉄骨工事に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "トルシア形高力ボルトの締付け後の目視検査において、共回りや軸回りの有無については、一次締め後に付したマークのずれにより判定した。",
+      "イ": "ベースプレートとアンカーボルトとの緊結を確実に行うため、ナットは二重とし、ナット上部にアンカーボルトのねじ山が3山以上出るようにした。",
+      "ウ": "トルシア形高力ボルトの締付け作業において、締付け後のボルトの余長は、ナット面から突き出た長さが、ねじ山が1 ～6山の範囲であることを確認した。",
+      "エ": "高力ボルト摩擦接合部の摩擦面には、締付けに先立ち防錆塗装を行った。",
+      "オ": "柱の溶接継手におけるエレクションピースに使用する仮ボルトは、高力ボルトを使用して全数締め付けた。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "摩擦接合のせん断力は、ボルトで締め付けた板どうしの摩擦で伝える。設問のように防錆塗装を施すと必要なすべり係数を確保できない。",
+    "choiceExplanations": {
+      "ア": "一次締め後のマーキングの相対的なずれで、ボルトとナットが一緒に回っていないかを確認する。",
+      "イ": "アンカーボルトは二重ナットで締結し、上には十分なねじの余長を残す。",
+      "ウ": "締付け後のトルシア形高力ボルトでは、ナット面から出たねじ山の数を確認する。",
+      "エ": "摩擦面は、所定のすべり耐力が得られる処理とし、一般の防錆塗装は施さない。",
+      "オ": "現場溶接接合のエレクションピースには、高力ボルトを仮ボルトとして使用し、全数を締め付ける。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=18",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅳ（建築施工） 問12",
+    "sourcePage": 18,
+    "sourcePrintedPage": "施工 17",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/gobuild/content/001879204.pdf"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-IV-q13",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-IV",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "スタッド・溶接",
+    "topicTags": [
+      "スタッド・溶接"
+    ],
+    "difficulty": 3,
+    "question": "鉄骨工事に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "スタッド溶接の溶接面に著しい錆が付着していたので、スタッド軸径の1.5倍の範囲の錆をグラインダーで除去し、溶接を行った。",
+      "イ": "スタッド溶接後の打撃曲げ試験において15度まで曲げたスタッドのうち、欠陥のないものについては、そのまま使用した。",
+      "ウ": "溶接部に割れがあったので、溶接金属を全長にわたって除去し、再溶接を行った。",
+      "エ": "溶接部にブローホールがあったので、不良部分を除去した後、再溶接を行った。",
+      "オ": "不合格溶接部の手溶接による補修作業は、径が4 mmの溶接棒を用いて行った。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "スタッド溶接を妨げる著しい錆などは、公共建築工事標準仕様書ではスタッド軸径の2倍以上の範囲を清掃する。1.5倍では必要な範囲を満たさない。",
+    "choiceExplanations": {
+      "ア": "軸径の1.5倍だけを清掃すると、溶接面の十分な清掃範囲を確保できない。",
+      "イ": "所定の角度まで曲げる検査に合格したスタッドは、そのまま使用できる。",
+      "ウ": "割れがある場合は、欠陥の残りを防ぐために溶接金属を全長にわたり除去して再溶接する。",
+      "エ": "ブローホールのある部分は、欠陥を除去してから再溶接する。",
+      "オ": "補修箇所に適した径の溶接棒を用い、手溶接で補修する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=18",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅳ（建築施工） 問13",
+    "sourcePage": 18,
+    "sourcePrintedPage": "施工 17",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/gobuild/content/001879204.pdf"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-IV-q14",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-IV",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "補強ブロック造工事",
+    "topicTags": [
+      "補強ブロック造工事"
+    ],
+    "difficulty": 3,
+    "question": "補強コンクリートブロック造工事に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "吸水率の高いブロックを使用するブロック積みに先立ち、モルタルと接するブロック面に適度な水湿しを行った。",
+      "イ": "ブロック積みは、水糸にならって隅角部より各段ごとに順次水平に施工した。",
+      "ウ": "目地モルタルの硬化に先立ち、目地掘りし、表面の清掃を行ったうえで、化粧目地仕上げは、目地モルタルの硬化後に行った。",
+      "エ": "圧縮強さの区分がC（16）のブロック積みにおいて、目地幅が10 mmの目地用モルタルの調合は、特記がなかったので、容積比でセメント1 に対して砂2.5 とした。",
+      "オ": "耐力壁の縦筋は、ブロックの空洞内で重ね継手とした。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "耐力壁の縦筋を、ブロックの空洞の中で重ね継ぎする方法は不適当。縦筋の連続性を確保できる納まりにする。",
+    "choiceExplanations": {
+      "ア": "吸水率の高いブロックには適度な水湿しを行い、目地モルタルの水分を急に吸わせない。",
+      "イ": "隅角から段ごとに積み、水糸を基準に通りや水平を確認する。",
+      "ウ": "化粧目地は、硬化前に目地掘りと清掃を済ませ、硬化後に仕上げる。",
+      "エ": "ブロックの強さ区分と目地幅に応じて、目地用モルタルの調合を選ぶ。",
+      "オ": "空洞内での重ね継手ではなく、壁体で定められた縦筋の接合・定着方法による。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=19",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅳ（建築施工） 問14",
+    "sourcePage": 19,
+    "sourcePrintedPage": "施工 18",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/gobuild/content/001879204.pdf"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-IV-q15",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-IV",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "木工事・床組",
+    "topicTags": [
+      "木工事・床組"
+    ],
+    "difficulty": 3,
+    "question": "木工事に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "大壁造の面材耐力壁は、厚さ12 mmの構造用合板を用い、N50 の釘を150 mm間隔で留め付けた。",
+      "イ": "床板張りにおいて、本ざねじゃくりの縁甲板を根太に直接張り付けるに当たり、継手位置を受材心で乱とした。",
+      "ウ": "建入れ直し後の建方精度の誤差において、特記がなかったので、垂直、水平ともに1/1,000以下を許容した。",
+      "エ": "外気に通じる小屋裏の外壁部分については、天井面に断熱材を施工したので、断熱構造としなかった。",
+      "オ": "根太を用いない床組（梁等の間隔が910 mm）であったので、床下地板として厚さ18 mmの構造用合板を用いた。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "根太を省略すると床下地板が梁の間を直接またぐ。梁間隔910 mmの条件に対し、選択肢の厚さ18 mmでは不足する。",
+    "choiceExplanations": {
+      "ア": "面材耐力壁では、合板の厚さ・くぎの種類・留付け間隔の組合せが耐力を決める。",
+      "イ": "縁甲板の継手は受材の中央で受け、継手が同じ位置に連続しないようにする。",
+      "ウ": "建入れ直しをした後に垂直・水平を確認し、許容範囲内に収める。",
+      "エ": "天井で断熱する構成では、外気に通じる小屋裏は断熱層の外側となる。",
+      "オ": "根太を使わない床では、梁間を直接支える面材に必要な曲げ剛性を確保する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=19",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅳ（建築施工） 問15",
+    "sourcePage": 19,
+    "sourcePrintedPage": "施工 18",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/gobuild/content/001879388.pdf"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-IV-q16",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-IV",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "category": "木工事・継手",
+    "topicTags": [
+      "木工事・継手"
+    ],
+    "difficulty": 3,
+    "question": "木工事に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "木造2階建ての住宅の通し柱である隅柱に、断面寸法が135 mm×135 mmのヒノキの製材を用いた。",
+      "イ": "管柱と胴差との仕口は、長ほぞ差し込み栓打ちとした。",
+      "ウ": "筋かいと間柱が取合う部分については、間柱を筋かいの厚さだけ欠き取り、釘打ちとした。",
+      "エ": "土台に使用する木材については、継伸しの都合上、やむを得ず長さ600 mmの短材を使用した。",
+      "オ": "鴨居は、木表に溝を付けて使用した。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "土台は柱からの力を基礎へ伝える横架材で、短材の使用はできるだけ避ける。継ぎ伸ばしが必要でも、600 mmの短材を使うとした点が不適当。",
+    "choiceExplanations": {
+      "ア": "通し柱として働く隅柱には、階をまたぐ柱に必要な断面を確保する。",
+      "イ": "管柱と胴差は長いほぞを差し、込み栓で抜けを抑える納まりにできる。",
+      "ウ": "筋かいの断面を欠き取らず、交差する間柱の側を加工して納める。",
+      "エ": "土台の短材は、継手を設ける位置や端部の拘束に必要な長さを確保できるかが重要となる。",
+      "オ": "鴨居は、建具を滑らせる溝を木表側に設けて使う。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=19",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅳ（建築施工） 問16",
+    "sourcePage": 19,
+    "sourcePrintedPage": "施工 18",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/gobuild/content/001879388.pdf"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-IV-q17",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-IV",
+    "qNumber": 17,
+    "type": "multiple-choice",
+    "category": "防水工事",
+    "topicTags": [
+      "防水工事"
+    ],
+    "difficulty": 3,
+    "question": "防水工事に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "アスファルト防水工事の屋根保護防水断熱工法に用いる断熱材は、押出法ポリスチレンフォーム断熱材（スキン層付き）を使用した。",
+      "イ": "アスファルト防水工事において、平場の保護コンクリートに、周辺の立上り部の仕上り面から0.6 m程度の位置と、中間部では縦横3.0 m程度の間隔に伸縮調整目地を割り付けた。",
+      "ウ": "合成高分子系ルーフィングシート防水工事において、ALCパネル下地に機械的固定工法を適用した。",
+      "エ": "塗膜防水工事において、下地が十分に乾燥した後、清掃を行い、プライマーを当日の施工範囲にむらなく塗布した。",
+      "オ": "シーリング工事において、バックアップ材にはシーリング材と接着しないものを使用した。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "公共建築工事標準仕様書では、合成高分子系ルーフィングシート防水をALCパネル下地に施工する場合、機械的固定工法を適用しない。",
+    "choiceExplanations": {
+      "ア": "屋根保護防水断熱工法では、防水層の上に置く断熱材に吸水しにくい押出法ポリスチレンフォームを使う。",
+      "イ": "周辺と平場の伸縮調整目地は、保護コンクリートの伸縮を逃がすために割り付ける。",
+      "ウ": "シート防水の工法選定には下地の種類も関係し、ALCにこの固定方法は使わない。",
+      "エ": "塗膜防水では下地の乾燥と清掃を済ませてから、当日施工する範囲にプライマーを塗る。",
+      "オ": "目地底に接着させないバックアップ材で、シーリング材の二面接着を確保する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=20",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅳ（建築施工） 問17",
+    "sourcePage": 20,
+    "sourcePrintedPage": "施工 19",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/gobuild/content/001879204.pdf"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-IV-q18",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-IV",
+    "qNumber": 18,
+    "type": "multiple-choice",
+    "category": "左官・タイル・石工事",
+    "topicTags": [
+      "左官・タイル・石工事"
+    ],
+    "difficulty": 3,
+    "question": "左官工事、タイル工事及び石工事に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "外壁モルタル塗り工事において、下塗りの塗付け後、14日以上放置してひび割れを十分に発生させてから、次の塗付けを行った。",
+      "イ": "密着張りのタイル工事において、タイル張付け後、24 時間以上経過したのち、張付けモルタルの硬化を見計らって、目地詰めを行った。",
+      "ウ": "有機質系接着剤による外装タイル張り工事において、下地が乾燥していたので、接着剤を塗布する前に水湿しを行った。",
+      "エ": "石工事において、躯体コンクリートの水平打継ぎ部、異種下地の取合い部等には、1枚の石材がまたがらないように割り付けた。",
+      "オ": "外壁湿式工法の石張り工事において、引金物用の穴を石材の上端の横目地合端の2箇所に、両端から100 mm程度の位置に設けた。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "有機質系接着剤で外装タイルを張るときは、十分に乾燥した下地を用いる。モルタル張りの場合と違い、接着剤を塗る直前に水湿しは行わない。",
+    "choiceExplanations": {
+      "ア": "下塗りを十分に乾燥させ、収縮によるひび割れが先に出るようにしてから次を塗る。",
+      "イ": "目地詰めはタイルが動かないよう、張付けモルタルが硬化してから行う。",
+      "ウ": "水湿しを加えると、指定の接着剤が必要とする乾燥した下地条件を満たさなくなる。",
+      "エ": "下地の継ぎ目を石がまたがない割付けにすると、下地の動きによる石材の割れを抑えやすい。",
+      "オ": "湿式石張りでは、横目地に隠れる位置の穴に引金物を掛けて石材を固定する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=20",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅳ（建築施工） 問18",
+    "sourcePage": 20,
+    "sourcePrintedPage": "施工 19",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/gobuild/content/001879204.pdf"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-IV-q19",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-IV",
+    "qNumber": 19,
+    "type": "multiple-choice",
+    "category": "塗装工事",
+    "topicTags": [
+      "塗装工事"
+    ],
+    "difficulty": 3,
+    "question": "塗装工事に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "屋外のセメントモルタル面の素地ごしらえにおいて、合成樹脂エマルションパテを使用した。",
+      "イ": "屋内のセメントモルタル面のアクリル樹脂系非水分散形塗料塗りにおいて、下塗りには、シーラーではなく、上塗りと同一材料を使用した。",
+      "ウ": "屋外の鉄鋼面は、合成樹脂調合ペイント塗りとした。",
+      "エ": "屋内の木部のクリヤラッカー塗りの中塗りには、サンジングシーラーを使用した。",
+      "オ": "夏期におけるコンクリート面への塗装に当たり、コンクリート素地の材齢による乾燥期間の目安を3 週間とした。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "屋外のセメントモルタル面には、屋外での耐水性を考慮した下地調整材を用いる。屋内用の合成樹脂エマルションパテを外部で使用する点が不適当。",
+    "choiceExplanations": {
+      "ア": "雨や湿気にさらされる屋外では、下地調整材も屋外用の仕様に適合させる。",
+      "イ": "この塗装の屋内モルタル面では、上塗りと同一材料を下塗りに用いる仕様がある。",
+      "ウ": "鉄鋼面は適切な素地ごしらえと錆止めの上に、合成樹脂調合ペイントを塗る。",
+      "エ": "サンジングシーラーは、中塗りで木部の表面を整え、研磨して平滑に仕上げるために使う。",
+      "オ": "コンクリート素地は、塗装の前に材齢と乾燥状態を確認する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=20",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅳ（建築施工） 問19",
+    "sourcePage": 20,
+    "sourcePrintedPage": "施工 19",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/gobuild/content/001879204.pdf"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-IV-q20",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-IV",
+    "qNumber": 20,
+    "type": "multiple-choice",
+    "category": "建具・ガラス・内装",
+    "topicTags": [
+      "建具・ガラス・内装"
+    ],
+    "difficulty": 3,
+    "question": "建具工事、ガラス工事及び内装工事に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "アルミニウム製建具のコンクリート躯体への取付けにおいて、建具側のアンカーとあらかじめコンクリートに埋め込んだ溶接下地金物とを溶接により固定した。",
+      "イ": "外部に面する網入り板ガラスの小口処理については、下辺小口及び縦小口下端から1/4の高さまで、防錆テープによる防錆処理を行った。",
+      "ウ": "グリッパー工法によるカーペット敷きにおいて、上敷きの敷詰めは、隙間及び不陸をなくすように伸縮用工具で幅300 mmにつき200 N程度の張力をかけて伸張し、グリッパーに固定した。",
+      "エ": "間仕切壁の特殊加工化粧合板の張付けについては、接着剤を併用した沈めねじ留めとし、ねじ穴は表面仕上げ材と同色のパテ詰めとした。",
+      "オ": "コンクリート下地にせっこうボードを直張りするに当たって、せっこう系直張り用接着材の間隔は、各ボードの周辺部で350 mmとした。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "せっこうボードを直張りする場合、接着材はボードの周辺を中間部より密に配置する。標準仕様書の周辺部の間隔は150〜200 mmであり、350 mmは広すぎる。",
+    "choiceExplanations": {
+      "ア": "埋込み金物と建具側アンカーを溶接すると、建具をコンクリート躯体に固定できる。",
+      "イ": "網入り板ガラスは水の影響を受けやすい下辺小口や縦小口の下部の金属線を防錆する。",
+      "ウ": "グリッパー工法は、敷物に適切な張りを与えてしわや隙間を防ぎ、縁を固定する。",
+      "エ": "沈めねじで固定し、同色パテで埋めて表面のねじ穴を目立たなくする。",
+      "オ": "ボード端部の浮きや反りを防ぐには、周辺部に接着材を細かい間隔で配置する必要がある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=21",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅳ（建築施工） 問20",
+    "sourcePage": 21,
+    "sourcePrintedPage": "施工 20",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/gobuild/content/001879204.pdf"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-IV-q21",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-IV",
+    "qNumber": 21,
+    "type": "multiple-choice",
+    "category": "住宅設備",
+    "topicTags": [
+      "住宅設備"
+    ],
+    "difficulty": 3,
+    "question": "木造住宅における設備工事に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "給水管と排水管とを平行に地中に埋設するに当たり、両配管の水平間隔を500 mm以上とし、給水管が排水管の上方となるように埋設した。",
+      "イ": "給水横走り管は、上向き給水管方式を採用したので、先下がりの均一な勾配で配管した。",
+      "ウ": "呼び径25 mmの屋内給水管の防露・保温材には、特記がなかったので、厚さ20 mmの保温筒を使用した。",
+      "エ": "ユニットバスの設置に当たって、下地枠の取付けに並行して、端末設備配管を行った。",
+      "オ": "LPガス（液化石油ガス）のガス漏れ警報設備の検知部は、ガス燃焼器から水平距離4 m以内、かつ、その上端が床面から上方0.3 m以内の位置となるように取り付けた。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "上向き給水方式の給水横走り管は、先上がりの均一な勾配とする。先下がりとした点が、方式と勾配の組合せとして不適当。",
+    "choiceExplanations": {
+      "ア": "給水管は排水管から離し、給水管を上側に配置して汚染の可能性を減らす。",
+      "イ": "給水管の系統が上向きなので、それに応じて横走り管も先上がりとする。",
+      "ウ": "保温筒は、管径と用途に応じた厚さを選び、結露や熱の出入りを抑える。",
+      "エ": "ユニットバスは、設置後に隠れる端末配管を下地枠の施工と調整して進める。",
+      "オ": "空気より重いLPガスは床近くにたまりやすいため、検知部を低い位置に設ける。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=21",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅳ（建築施工） 問21",
+    "sourcePage": 21,
+    "sourcePrintedPage": "施工 20",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "kenchikushi2-2024-annual-IV-q22",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-IV",
+    "qNumber": 22,
+    "type": "multiple-choice",
+    "category": "改修工事",
+    "topicTags": [
+      "改修工事"
+    ],
+    "difficulty": 3,
+    "question": "改修工事に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "防水改修工事において、既存の伸縮目地部分に充塡するシーリング材には、ポリウレタン系シーリング材を使用した。",
+      "イ": "コンクリート打放し仕上げの外壁改修工事において、0.5 mmのひび割れは、特記がなかったので、自動式低圧エポキシ樹脂注入工法により改修した。",
+      "ウ": "モルタル面の下地調整は、仕上塗材の下塗り材が合成樹脂エマルションシーラーと同様な目的で使用されるため、合成樹脂エマルションシーラーを省略して下塗り材を塗り付けた。",
+      "エ": "建具改修工事のかぶせ工法において、既存枠が鋼製であったので、新規建具の建込み前に既存枠の錆を除去し、錆止め塗装を施した。",
+      "オ": "内装改修工事において、軽量鉄骨天井下地の、野縁と野縁受けの留付けクリップのつめは、向きを同一方向に揃えて留め付けた。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "軽量鉄骨天井下地の野縁を野縁受けに留め付けるクリップは、つめの向きを交互にする。同じ方向に揃えると、片側のみに留付けが偏る。",
+    "choiceExplanations": {
+      "ア": "既存の伸縮目地は、変位に追従するシーリング材で充塡する。",
+      "イ": "幅のあるコンクリートのひび割れは、樹脂を低圧で注入して内部を充塡する工法を選べる。",
+      "ウ": "下塗り材がシーラーの機能を兼ねる仕様なら、所定の下塗りを行う。",
+      "エ": "鋼製の既存枠は、錆を除去し錆止めを施してから新しい建具を取り付ける。",
+      "オ": "クリップのつめは同一方向に揃えず、向きを交互にして留め付ける。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=22",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅳ（建築施工） 問22",
+    "sourcePage": 22,
+    "sourcePrintedPage": "施工 21",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/gobuild/content/001879204.pdf"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-IV-q23",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-IV",
+    "qNumber": 23,
+    "type": "multiple-choice",
+    "category": "施工機械・工法",
+    "topicTags": [
+      "施工機械・工法"
+    ],
+    "difficulty": 3,
+    "question": "建築工事に用いられる器具・機械及び工法に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "鉄骨工事において、建入れ直しにターンバックルを使用した。",
+      "イ": "木工事において、木材の表面を平滑に仕上げるために、ルーターを使用した。",
+      "ウ": "内装工事において、高い天井の作業にローリングタワーを使用した。",
+      "エ": "山留め工事において、切りばり支柱が不要な地盤アンカー工法を採用した。",
+      "オ": "防水工事において、改質アスファルトシートの張付けにトーチ工法を採用した。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "木材表面を平滑に仕上げるには、かんななどを用いる。ルーターの主な用途は、刃の形状を利用した溝掘りや面取り、成形である。",
+    "choiceExplanations": {
+      "ア": "ターンバックルで張力を調整して、鉄骨の建入れを直す。",
+      "イ": "???????????????????????????????????????",
+      "ウ": "ローリングタワーは、内部で場所を移しながら高所作業を行うための移動式足場である。",
+      "エ": "地盤アンカーは背面地盤に反力を取り、掘削内に切りばりを設けず山留めを支持できる。",
+      "オ": "トーチ工法は、加熱して改質アスファルトシートを下地などに張り付ける。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=22",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅳ（建築施工） 問23",
+    "sourcePage": 22,
+    "sourcePrintedPage": "施工 21",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/gobuild/content/001879204.pdf"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-IV-q24",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-IV",
+    "qNumber": 24,
+    "type": "multiple-choice",
+    "category": "建築積算",
+    "topicTags": [
+      "建築積算"
+    ],
+    "difficulty": 3,
+    "question": "建築積算に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "直接工事費は、材料費、直接仮設費、労務費等のほかに専門工事業者の経費を含む費用とする。",
+      "イ": "共通仮設費は、各工事種目に共通の仮設に要する費用とする。",
+      "ウ": "工事原価は、直接工事費と共通仮設費とを合わせたものである。",
+      "エ": "一般管理費等は、工事施工に当たる受注者の継続運営に必要な費用であり、一般管理費と付加利益等からなる。",
+      "オ": "消費税等相当額は、工事価格に消費税及び地方消費税相当分からなる税率を乗じて算定する。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "直接工事費と共通仮設費を足した金額は純工事費。工事原価を求めるには、その純工事費に現場管理費を加える。",
+    "choiceExplanations": {
+      "ア": "直接工事費には工種別の材料費・労務費・直接仮設費のほか、専門工事業者の経費などが含まれる。",
+      "イ": "共通仮設費は、複数の工事種目に共通する仮設施設などの費用である。",
+      "ウ": "直接工事費と共通仮設費だけでは現場管理にかかる費用が計上されていない。",
+      "エ": "一般管理費等には受注者の本支店などの運営費と付加利益などを含む。",
+      "オ": "消費税等相当額は、工事価格に消費税・地方消費税分の税率を乗じて求める。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=22",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅳ（建築施工） 問24",
+    "sourcePage": 22,
+    "sourcePrintedPage": "施工 21",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/gobuild/content/001891153.pdf"
+    ]
+  },
+  {
+    "id": "kenchikushi2-2024-annual-IV-q25",
+    "exam": "kenchikushi2",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka-IV",
+    "qNumber": 25,
+    "type": "multiple-choice",
+    "category": "請負契約約款",
+    "topicTags": [
+      "請負契約約款"
+    ],
+    "difficulty": 3,
+    "question": "中央建設業審議会「民間建設工事標準請負契約約款（甲）」（令和4年9月改正）上、監理者が行う業務に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "監理業務の担当者の氏名及び担当業務を受注者に通知する。",
+      "イ": "設計内容を伝えるため受注者と打ち合わせ、適宜、工事を円滑に遂行するため、必要な時期に説明用図書を受注者に交付する。",
+      "ウ": "受注者が契約に定められた指示、検査、試験、立会い、確認、審査、承認、助言、協議等を求めたときは、速やかにこれに応じる。",
+      "エ": "受注者の提出する出来高払又は完成払の請求書を技術的に審査する。",
+      "オ": "設計図書等の内容を把握し、設計図書等に明らかな矛盾、誤謬、脱漏、不適切な納まり等を発見した場合は、受注者に通知する。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "令和4年9月改正の民間建設工事標準請負契約約款（甲）では、監理業務の担当者の氏名と担当業務を受注者に通知するのは発注者である。",
+    "choiceExplanations": {
+      "ア": "担当者を受注者に知らせる義務は発注者にある。",
+      "イ": "監理者は設計意図を伝えるために受注者と協議し、必要な説明用図書を交付する。",
+      "ウ": "受注者から契約に定める検査、承認等を求められたときは、監理者が速やかに対応する。",
+      "エ": "監理者は出来高払・完成払の請求書について技術的な内容を審査する。",
+      "オ": "図書の矛盾や脱漏、不適切な納まりなどを見つけたときは、監理者が受注者に知らせる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf#page=23",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和6年二級建築士試験 学科Ⅳ（建築施工） 問25",
+    "sourcePage": 23,
+    "sourcePrintedPage": "施工 22",
+    "lawReferenceDate": "2024-01-01",
+    "license": "INT7-owner-decision",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000092.html",
+      "https://www.mlit.go.jp/totikensangyo/const/content/001499457.pdf"
+    ]
+  }
+]

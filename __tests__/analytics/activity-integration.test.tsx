@@ -56,6 +56,19 @@ function request(body: unknown, extra: Record<string, string> = {}) {
 }
 
 describe("local event → HTTP KV → admin aggregate → rendered dashboard", () => {
+  it("retains every event while reusing a confirmed daily TTL and refreshing it after five minutes", async () => {
+    const events = [{ event: "page_view" as const, qualification: "sc", page: "question" as const }];
+    expect(await recordActivity(events, NOW.getTime())).toBe(true);
+    expect(await recordActivity(events, NOW.getTime())).toBe(true);
+    expect(commands.filter(command => command[0] === "HINCRBY")).toHaveLength(2);
+    expect(commands.filter(command => command[0] === "EXPIRE")).toHaveLength(1);
+    vi.setSystemTime(new Date(NOW.getTime() + 5 * 60_000));
+    expect(await recordActivity(events, NOW.getTime())).toBe(true);
+    expect(commands.filter(command => command[0] === "EXPIRE")).toHaveLength(2);
+    expect((await readActivity("2026-11-11", "2026-11-11")).rows).toEqual([
+      expect.objectContaining({ event: "page_view", qualification: "sc", count: 3 }),
+    ]);
+  });
   it("waits for the KV response before acknowledging the event", async () => {
     let release!: (response: Response) => void;
     let started!: () => void;

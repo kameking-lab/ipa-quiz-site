@@ -6,6 +6,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { KishoStudyReader } from '@/components/kisho/KishoStudyReader';
 import { KISHO_QUESTIONS } from '@/data/questions/kisho';
 import { KISHO_STUDY_QUESTIONS, KISHO_STUDY_ASSETS } from '@/lib/kisho-study';
+import originalReader from '@/data/questions/kisho/study-data.json';
 import { getQuestionsForExam } from '@/lib/questions/get-questions';
 import { QUESTIONS_BY_EXAM } from '@/data/questions';
 import { shuffleChoices } from '@/lib/questions/filter';
@@ -23,8 +24,10 @@ describe('気象予報士の通常学習導線', () => {
     expect(container.querySelector('main')).toHaveAttribute('data-study-ready', 'false');
   });
   it('通常レジストリと遅延取得が同じ60学科問を返し、公式肢順を維持する', async () => {
-    expect(await getQuestionsForExam('kisho')).toEqual(KISHO_QUESTIONS);
-    expect(QUESTIONS_BY_EXAM.kisho).toEqual(KISHO_QUESTIONS);
+    const current = await getQuestionsForExam('kisho');
+    expect(QUESTIONS_BY_EXAM.kisho).toEqual(current);
+    const initialIds = new Set(KISHO_QUESTIONS.map(q => q.id));
+    expect(current.filter(q => initialIds.has(q.id))).toEqual(KISHO_QUESTIONS);
     expect(KISHO_QUESTIONS).toHaveLength(60);
     for (const q of KISHO_QUESTIONS) {
       expect(shuffleChoices(q)).toEqual(q);
@@ -38,9 +41,12 @@ describe('気象予報士の通常学習導線', () => {
     expect(questionSourceEdition(KISHO_QUESTIONS[0])).toContain('第65回');
   });
   it('130公開画像の実体・ハッシュと全78問・237欄の参照が一致する', () => {
-    expect(KISHO_STUDY_ASSETS.size).toBe(130);
-    expect(KISHO_STUDY_QUESTIONS).toHaveLength(78);
-    expect(KISHO_STUDY_QUESTIONS.reduce((n, q) => n + q.fields.length, 0)).toBe(237);
+    expect(originalReader.assets).toHaveLength(130);
+    for (const asset of originalReader.assets) expect(KISHO_STUDY_ASSETS.get(asset.assetId)).toEqual(asset);
+    const originalIds = new Set(originalReader.questions.map(q => q.raw.id));
+    const reviewed = KISHO_STUDY_QUESTIONS.filter(q => originalIds.has(q.raw.id));
+    expect(reviewed).toHaveLength(78);
+    expect(reviewed.reduce((n, q) => n + q.fields.length, 0)).toBe(237);
     expect(JSON.stringify(KISHO_STUDY_QUESTIONS)).not.toMatch(/\b[A-Z]:[\\/]|file:\/\//i);
     for (const asset of KISHO_STUDY_ASSETS.values()) {
       const bytes = fs.readFileSync(`public${asset.preparedPath}`);

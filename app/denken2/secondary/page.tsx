@@ -1,12 +1,13 @@
+import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SECONDARY_QUESTIONS, SECONDARY_SUBJECT_NAMES, secondaryQuestionPath } from "@/lib/denken2/secondary";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalSocialMetadata({
   title: "電験二種 二次試験の過去問｜2025・2024年度 全20原問と解説",
   description: "2025・2024年度の電力・管理各6問、機械・制御各4問を収録。公式の図と数式、全小問の標準解答と学習用解説を読み、記述式の解答を練習できます。",
   alternates: { canonical: "/denken2/secondary" },
-};
+});
 
 export default function Page() {
   return <main className="mx-auto max-w-5xl px-4 py-8 sm:py-12">

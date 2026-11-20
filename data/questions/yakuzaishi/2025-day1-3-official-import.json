@@ -1,0 +1,394 @@
+[
+  {
+    "id": "yakuzaishi-2025-annual-theory-q151",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 151,
+    "officialAnswerNumber": "1,2",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "細胞内情報伝達系に関する記述として、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "ドパミンD2 受容体が刺激されると、Gi タンパク質を介してアデニル酸シクラーゼ活性が抑制される。",
+      "イ": "グルタミン酸NMDA 受容体が刺激されると、Ca2+ の細胞膜透過性が亢進される。",
+      "ウ": "γ-アミノ酪酸GABAB 受容体が刺激されると、Cl- の細胞膜透過性が亢進される。",
+      "エ": "グルカゴン受容体が刺激されると、受容体型チロシンキナーゼが活性化される。",
+      "オ": "インスリン受容体が刺激されると、膜結合型グアニル酸シクラーゼが活性化される。"
+    },
+    "answer": [
+      "ア",
+      "イ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "正解は1と2です。D2受容体はGi共役型で、アデニル酸シクラーゼを抑制してcAMPを減少させます。NMDA受容体はリガンド依存性イオンチャネルで、刺激によりCa2+(とNa+)の透過性が高まります。",
+    "choiceExplanations": {
+      "ア": "正しい。D2受容体はGiタンパク質と共役し、アデニル酸シクラーゼ活性を抑制します。",
+      "イ": "正しい。NMDA受容体はCa2+透過性の高いイオンチャネル型受容体で、刺激されるとCa2+の透過性が亢進します。",
+      "ウ": "誤り。GABAB受容体はGi/Go共役型で、主にK+チャネルの開口やCa2+チャネルの抑制を起こします。Cl-の透過性を亢進するのはイオンチャネル型のGABAA受容体です。",
+      "エ": "誤り。グルカゴン受容体はGs共役型で、アデニル酸シクラーゼを活性化してcAMPを増加させます。受容体型チロシンキナーゼではありません。",
+      "オ": "誤り。インスリン受容体は受容体型チロシンキナーゼです。膜結合型グアニル酸シクラーゼは、ナトリウム利尿ペプチド受容体などの機構です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455159.pdf#page=2",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題）問151（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q171",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 171,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "ある薬物のアルブミンへの結合定数は10（μmol/L）^-1、結合部位数は2 である。この薬物のアルブミン結合に関する両逆数プロットを点線で表し、また、この薬物のアルブミンへの結合が別の薬物の共存により競合的に阻害された場合を実線で表すとき、正しい図はどれか。1つ選べ。\nただし、図中のr はアルブミン1 分子当たりに結合している薬物の分子数を、[Df] は非結合形薬物濃度を示す。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5",
+      "カ": "6"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "両逆数プロットの式は 1/r＝1/n＋(1/(n·K))×(1/[Df]) である。n＝2、K＝10 (μmol/L)^-1 なので、縦軸切片（1/n）＝0.5、傾き＝1/(2×10)＝0.05、横軸切片＝－K＝－10 となる。点線は縦軸の0.5と横軸の－10を通る直線である。競合阻害では、結合部位数 n は変わらないので縦軸切片は0.5のままで、見かけの結合定数 K が小さくなる。そのため傾きは大きくなり、横軸切片は－10より0側（－10より大きい値）へ移る。これを満たすのは図1である。",
+    "choiceExplanations": {
+      "ア": "正しい。縦軸切片が点線と同じ0.5で、実線の傾きが大きく、横軸切片が－10より0に近い。競合阻害の特徴に一致する。",
+      "イ": "縦軸切片が0.5から約2へ上がり、横軸切片は－10のままである。これは見かけの結合部位数が減って結合定数が変わらないパターン（非競合阻害型）であり誤り。",
+      "ウ": "縦軸切片が約2.5に上がっており、傾きは点線とほぼ同じである。競合阻害のパターンではなく誤り。",
+      "エ": "縦軸切片が約2で、n＝2から求められる0.5と一致しない。点線自体が誤りである。",
+      "オ": "点線の縦軸切片が約2で、n＝2から求められる0.5と一致しない。点線自体が誤りである。",
+      "カ": "点線の縦軸切片が約2で、n＝2から求められる0.5と一致しない。実線も平行移動型であり誤り。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455159.pdf#page=18",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問171（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q171-graph-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 一般問題（薬学理論問題） 問171の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q175",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 175,
+    "officialAnswerNumber": "1,3",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "体内動態が線形1-コンパートメントモデルに従い、生物学的半減期が1.4時間である薬物を、3種類の剤形で同用量を経口投与したとき、下表に示す血中濃度時間曲線下面積（AUC）と一次モーメント時間曲線下面積（AUMC）が得られた。この結果に関する記述として、正しいのはどれか。2つ選べ。\nただし、絶対的バイオアベイラビリティはいずれも100％とし、ln 2 = 0.693とする。",
+    "choices": {
+      "ア": "最高血中濃度が最も大きいのは経口液剤である。",
+      "イ": "投与量を増やすと平均滞留時間は長くなる。",
+      "ウ": "経口液剤を経口投与したときの平均吸収時間は約1.0 hである。",
+      "エ": "散剤の平均溶出時間は約0.5 hである。",
+      "オ": "錠剤の平均崩壊時間は約1.5 hである。"
+    },
+    "answer": [
+      "ア",
+      "ウ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "MRT = AUMC/AUC より、経口液剤 3.0 h、散剤 4.5 h、錠剤 5.0 h。1-コンパートメントモデルの消失の平均滞留時間は 1/kel = t1/2/ln2 = 1.4/0.693 ≈ 2.0 h。平均吸収時間 MAT = MRT(経口) − 1/kel なので、経口液剤は 3.0−2.0 = 1.0 h、散剤は 2.5 h、錠剤は 3.0 h。AUCが同じで吸収が最も速い（MATが最小の）経口液剤が最高血中濃度も最大となる。正解は1と3。",
+    "choiceExplanations": {
+      "ア": "正しい。AUCは全剤形で同じ（吸収量が同じ）で、MATは経口液剤（1.0 h）が最小、つまり吸収が最も速いので、最高血中濃度は最大になる。",
+      "イ": "誤り。線形モデルでは平均滞留時間は投与量に依存せず一定であり、投与量を増やしても長くならない。",
+      "ウ": "正しい。MRT 3.0 h から 1/kel ≈ 2.0 h を引くと MAT ≈ 1.0 h となる。",
+      "エ": "誤り。散剤のMATは 4.5−2.0 = 2.5 h。溶出時間は散剤と経口液剤のMATの差で 2.5−1.0 = 1.5 h であり、0.5 hではない。",
+      "オ": "誤り。錠剤のMATは 3.0 h、散剤との差で求めた崩壊時間は 3.0−2.5 = 0.5 hであり、1.5 hではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455159.pdf#page=20",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問175（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q175-model-original.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 一般問題（薬学理論問題） 問175の原図"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q177",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 177,
+    "officialAnswerNumber": "2,5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "テオフィリン無水物（分子量180）の結晶、非晶質、及び両者の混合物について、下図のA～Cに示す水蒸気吸着等温線が得られた。この結果に関する記述のうち、正しいのはどれか。2つ選べ。\nただし、結晶は吸湿せず、非晶質は相対湿度80％以上ですべて水和物に転移するものとする。",
+    "choices": {
+      "ア": "Aは、100％の結晶である。",
+      "イ": "Bは、質量比で40％の結晶と60％の非晶質の混合物である。",
+      "ウ": "Cは、質量比で60％の結晶と40％の非晶質の混合物である。",
+      "エ": "テオフィリンの無水物は吸湿して二水和物となる。",
+      "オ": "相対湿度50％で保存したBは、質量比で1％の吸着水を含む。"
+    },
+    "answer": [
+      "イ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "結晶は吸湿しないので、Cは全域で質量変化0％の100％結晶。非晶質は80％以上ですべて水和物になるので、100％非晶質のAの質量増加が約10％である。これは無水物180に水1分子（18）が付加した一水和物の 18/180 = 10％に一致する（二水和物なら20％）。Bの増加は約6％で、非晶質の割合は 6/10 = 60％、結晶は40％。相対湿度50％のBの質量変化は図から約1％で、これは吸着水の質量比に相当する。正解は2と5。",
+    "choiceExplanations": {
+      "ア": "誤り。Aは80％以上で約10％増加しており、吸湿する非晶質100％である。",
+      "イ": "正しい。Bの増加約6％はAの10％の60％にあたり、非晶質60％、結晶40％の混合物である。",
+      "ウ": "誤り。Cは全く吸湿せず、100％結晶である。",
+      "エ": "誤り。100％非晶質の増加約10％は 18/180 に相当し、一水和物となる（二水和物なら約20％増加）。",
+      "オ": "正しい。図から相対湿度50％でのBの質量変化は約1％であり、吸着水は質量比で約1％である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455159.pdf#page=22",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問177（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q177-physical-formulation-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 一般問題（薬学理論問題） 問177の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q178",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 178,
+    "officialAnswerNumber": "1,3",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "図中の直線は、3種の薬物A、B、Cがそれぞれ溶解補助剤Xと可溶性複合体AX、BX、CXを形成し、溶解度が増大する様子を示している。\n以下の記述のうち、正しいのはどれか。2つ選べ。\nなお、いずれの場合も安定度定数Kは次式で表される。\nK =［可溶性複合体］/（［薬物］・［X］）\nただし、［　］は濃度を示す。",
+    "choices": {
+      "ア": "溶解補助剤を添加しないとき、薬物の溶解度の大小関係は、A = C > Bである。",
+      "イ": "可溶性複合体AXと可溶性複合体BXの安定度定数は等しい。",
+      "ウ": "可溶性複合体AXの安定度定数は、可溶性複合体CXの安定度定数より大きい。",
+      "エ": "可溶性複合体BXの安定度定数は、可溶性複合体CXの安定度定数より小さい。",
+      "オ": "Kの値が小さいほど、薬物とXは安定な可溶性複合体を形成する。"
+    },
+    "answer": [
+      "ア",
+      "ウ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "X無添加時の溶解度は直線の切片で、AとCが同じ高さでBはそれより低いので A = C > B。溶解度直線（AL型）の傾き = K S0/(1+K S0) （S0は無添加時溶解度）で、傾きが大きいほどK S0が大きい。AとCはS0が等しく、Aの傾きが大きいのでKはA > C。Bは切片が低い（S0が小さい）うえ傾きがCより大きいので、K S0がCより大きく、S0が小さいことからKはCよりはっきり大きい。したがって正解は1と3。",
+    "choiceExplanations": {
+      "ア": "正しい。切片はA、Cが同じで、Bはそれより低い。",
+      "イ": "誤り。AとBの直線は平行で傾きmが同じだが、切片S0はBの方が低い。K = m/[S0(1−m)]より、S0B < S0A なので KB > KA となり、Kが等しいとはいえない。",
+      "ウ": "正しい。AとCは同じS0でAの傾きが大きいので、KはAの方が大きい。",
+      "エ": "誤り。BはCより傾きが大きく、かつS0が小さい。K = 傾き/(S0(1−傾き)) より、BXのKはCXより大きい。",
+      "オ": "誤り。Kは複合体の生成しやすさを表す定数で、値が大きいほど安定な複合体を形成する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455159.pdf#page=23",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問178（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q178-physical-formulation-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 一般問題（薬学理論問題） 問178の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q181",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 181,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "下図はロータリー打錠機による打錠工程を模式的に示したものである。工程Ａはどれか。1つ選べ。",
+    "choices": {
+      "ア": "臼への充填",
+      "イ": "予備圧縮",
+      "ウ": "重量調節",
+      "エ": "圧縮成形",
+      "オ": "錠剤放出"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "図では、ホッパー下で臼に原料粉体が充填され、その後、秤重レールの位置で下杵の高さが調節され、臼内の粉体量(錠剤質量)が決まります。工程Ａは秤重レールの範囲にあたるため「重量調節」です。その後、上杵・下杵がロールで挟まれて圧縮成形され、最後に下杵が上がって錠剤が放出され、スクレーパーで錠剤出口へ送られます。",
+    "choiceExplanations": {
+      "ア": "臼への充填は、ホッパー直下で粉体が臼に入る最初の段階です。Ａの範囲(秤重レール部)ではないので誤りです。",
+      "イ": "予備圧縮は、本圧縮の前に行う軽い圧縮です。Ａは秤重レールで下杵の位置を調節する部分で、圧縮ロールの位置ではないので誤りです。",
+      "ウ": "正しい。Ａは秤重レール部で、下杵の位置を調節して臼内の粉体量(錠剤質量)を決める重量調節の工程です。",
+      "エ": "圧縮成形は、図右寄りの上下の圧縮ロールで杵が挟まれる工程です。Ａではないので誤りです。",
+      "オ": "錠剤放出は、図右端で下杵が押し上げられ錠剤が臼から出てスクレーパーで排出される工程です。Ａではないので誤りです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455159.pdf#page=25",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問181（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q181-physical-formulation-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 一般問題（薬学理論問題） 問181の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q182",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 182,
+    "officialAnswerNumber": "2,3",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "粘膜に適用する製剤に関する記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "バッカル錠は、咀嚼により、有効成分を放出する口腔用錠剤である。",
+      "イ": "点鼻粉末剤には、通例、密閉容器が用いられる。",
+      "ウ": "点眼剤の非水性溶剤には、通例、植物油が用いられる。",
+      "エ": "眼軟膏剤に含まれる粒子の最大粒子径は、通例、150 μm 以下である。",
+      "オ": "坐剤の油脂性基剤として、マクロゴールが用いられる。"
+    },
+    "answer": [
+      "イ",
+      "ウ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "点鼻粉末剤には通例、密閉容器が用いられ、点眼剤の非水性溶剤には通例、植物油が用いられます。したがって2と3が正解です。",
+    "choiceExplanations": {
+      "ア": "バッカル錠は、臼歯と頬の間に挟み、口腔粘膜から有効成分を吸収させる錠剤です。咀嚼して放出させるものではないので誤りです。",
+      "イ": "正しい。点鼻粉末剤には通例、密閉容器が用いられます。",
+      "ウ": "正しい。点眼剤の非水性溶剤には通例、植物油(ゴマ油など)が用いられます。",
+      "エ": "眼軟膏剤は、粒子が眼を傷つけないよう、含まれる粒子の最大粒子径は通例75 μm以下とされています。150 μm以下ではないので誤りです。",
+      "オ": "マクロゴールは水溶性基剤です。坐剤の油脂性基剤にはカカオ脂や半合成油脂などが用いられるので誤りです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455159.pdf#page=25",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問182（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q192",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 192,
+    "officialAnswerNumber": "2,5",
+    "type": "multiple-choice",
+    "category": "薬学理論問題",
+    "topicTags": [
+      "薬学理論問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "生薬とその主な副作用の組合せのうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "カンゾウ―高カリウム血症",
+      "イ": "ダイオウ―下痢",
+      "ウ": "オウゴン―腸間膜静脈硬化症",
+      "エ": "サンシシ―胆汁うっ滞",
+      "オ": "マオウ―動悸"
+    },
+    "answer": [
+      "イ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "ダイオウはアントラキノン系の瀉下成分を含み、下痢が主な副作用です。マオウはエフェドリン類を含み、交感神経刺激作用により動悸などが起こります。正解は2と5です。",
+    "choiceExplanations": {
+      "ア": "誤り。カンゾウの副作用は偽アルドステロン症で、低カリウム血症をきたします。高カリウム血症ではありません。",
+      "イ": "正しい。ダイオウは下痢を起こします。",
+      "ウ": "誤り。腸間膜静脈硬化症はサンシシを含む漢方薬の長期服用で報告されています。オウゴンの副作用として知られるのは間質性肺炎や肝機能障害です。",
+      "エ": "誤り。サンシシの副作用として知られるのは腸間膜静脈硬化症です。胆汁うっ滞の組合せは誤りです。",
+      "オ": "正しい。マオウは動悸、頻脈、血圧上昇などを起こします。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455159.pdf#page=30",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」薬学理論問題 問192（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q192-finite-saved-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 薬学理論問題 問192の原表"
+    ]
+  }
+]

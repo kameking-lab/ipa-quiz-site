@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/badge";
 import { FEATURE_LANDING_PAGES } from "@/data/features";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 
-const FEATURES_TITLE = "機能特集 — AIコパイロット・午後採点・模試モード";
+const FEATURES_TITLE = "機能特集 — 質問・論述の見直し・模試";
 const FEATURES_DESCRIPTION =
   "過去問の解説、業種別の練習答案、論述の見直し、模試、学習計画の使い方を紹介します。AIの提供状態と利用条件は各機能の画面で確認できます。";
 
@@ -17,7 +17,7 @@ const FEATURES_DESCRIPTION =
 const FEATURES_OG_URL = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
   type: "feature",
   title: "機能特集",
-  body: "AIコパイロット・午後採点・模試・学習計画など独自機能を一望。",
+  body: "問題への質問・論述の見直し・模試・学習計画の使い方。",
 }).toString()}`;
 
 export const metadata: Metadata = {
@@ -74,15 +74,11 @@ export default function FeaturesIndexPage() {
       </nav>
 
       <header className="mb-8">
-        <Badge variant="soft" className="mb-3">
-          <Sparkles className="h-3 w-3" />
-          差別化機能
-        </Badge>
         <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
           学習機能
         </h1>
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-          演習・復習・AI学習支援の使い方。
+          演習・復習・学習計画の使い方。
         </p>
       </header>
 

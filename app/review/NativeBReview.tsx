@@ -9,16 +9,17 @@ import { createHistoryStore } from "@/lib/storage/history";
 import { readSettings } from "@/lib/storage/settings";
 import { writeLastQuestion } from "@/lib/storage/last-question";
 import { recordStudyOnDate } from "@/lib/motivation/heatmap";
+import { reportStudyAnswer } from "@/lib/study-presence-client";
 
 /** Review shares the normal five-slot grader and explanation components. */
 export function NativeBReview({ question, onNext }: { question: Question; onNext: (correct: boolean) => void }) {
   const [result, setResult] = useState<NativeBGrade>();
   const [selected, setSelected] = useState<string>();
-  const [starred, setStarred] = useState(() => createHistoryStore().isStarred(question.id));
   const answer = (selections: NativeBSelections) => {
     if (result || !question.nativeB) return;
     const grade = gradeNativeB(question.nativeB, selections);
     const serialized = serializeNativeBSelections(question.nativeB, selections);
+    reportStudyAnswer(question.exam);
     setResult(grade);
     setSelected(serialized);
     try {
@@ -30,7 +31,6 @@ export function NativeBReview({ question, onNext }: { question: Question; onNext
   if (!question.nativeB) return null;
   return result
     ? <ExplanationCard question={question} nativeBResult={result} selected={selected} isCorrect={result.isCorrect}
-        starred={starred} onToggleStar={() => setStarred(createHistoryStore().toggleStar(question.id))}
-        onNext={() => onNext(result.isCorrect)} onAskAI={() => undefined} />
+        onNext={() => onNext(result.isCorrect)} />
     : <NativeBAnswerInput data={question.nativeB} displayedImageUrls={question.imageUrls} disabled={false} onAnswer={answer} />;
 }

@@ -6,16 +6,17 @@ import paper2025Pm from "./2025-pm.json";
 import paper2026Am1 from "./2026-am1.json";
 import paper2026Am2 from "./2026-am2.json";
 import paper2026Pm from "./2026-pm.json";
+import paper2024Am1 from "./2024-am1.json";
 
 // Originals include documented source corrections. Only the study export is public.
 // Q18 remains private until its official-answer/legal interpretation conflict is resolved.
-const materials = [paper2025Am1, paper2025Am2, paper2025Pm, paper2026Am1, paper2026Am2, paper2026Pm].flatMap(readKenchikuSavedSource);
-if (materials.length !== 210 || new Set(materials.map((q) => q.id)).size !== 210) {
+const materials = [paper2025Am1, paper2025Am2, paper2025Pm, paper2026Am1, paper2026Am2, paper2026Pm, paper2024Am1].flatMap(readKenchikuSavedSource);
+if (materials.length !== 237 || new Set(materials.map((q) => q.id)).size !== 237) {
   throw new Error("kenchiku-setsubishi material count or IDs mismatch");
 }
 const special = materials.filter((q) => q.assessmentMode === "reference-only");
 if (special.length !== 1 || special[0].id !== "kenchiku-setsubishi-2026-annual-am2-q18" ||
-    materials.filter((q) => q.assessmentMode !== "reference-only").length !== 209) {
+    materials.filter((q) => q.assessmentMode !== "reference-only").length !== 236) {
   throw new Error("kenchiku-setsubishi reference-only boundary mismatch");
 }
 export const KENCHIKU_SETSUBISHI_QUESTIONS: Question[] = materials;

@@ -21,18 +21,23 @@ import { PetStageProgress } from "./PetStageProgress";
 
 const STAGE_NAMES = { puppy: "こいぬ", partner: "学習の相棒", expert: "専門家" } as const;
 
-export default function PetCareSheet({ document: doc, qualificationId, initialAppearanceOpen = false, allowMotion = true, onClose, returnFocus, onPose }: {
+export default function PetCareSheet({ document: doc, qualificationId, initialAppearanceOpen = false, initialSettingsOpen = false, motionPaused, onMotionChange, allowMotion = true, onClose, returnFocus, onPose, appearanceAction }: {
   document: PetProfileDocument | null; qualificationId?: string; onClose(): void;
   initialAppearanceOpen?: boolean;
+  initialSettingsOpen?: boolean;
+  motionPaused?: boolean;
+  onMotionChange?(paused: boolean): void;
   allowMotion?: boolean;
+  appearanceAction?: () => void;
   returnFocus(): void; onPose(pose: PetPose, caption: string, qualificationId: string): void;
 }) {
   const [selected, setSelected] = useState(qualificationId), [busy, setBusy] = useState(false), [message, setMessage] = useState("");
+  const [settingsMode, setSettingsMode] = useState(initialSettingsOpen);
   const [pending, setPending] = useState<{ raw: string; expected: PetProfileDocument; pets: number } | null>(null);
   const [savedPrevious, setSavedPrevious] = useState(false), [confirmed, setConfirmed] = useState(false);
   const [pose, setPose] = useState<PetPose>("study"), [hearts, setHearts] = useState(0);
   const [lookChosen, setLookChosen] = useState(false), [preparing, setPreparing] = useState(false);
-  const [sections, setSections] = useState({ appearance: initialAppearanceOpen, paths: false, memories: false, settings: false });
+  const [sections, setSections] = useState({ appearance: initialAppearanceOpen, paths: false, memories: false, settings: initialSettingsOpen });
   const toggleSection = (section: keyof typeof sections, open: boolean) => setSections(current => current[section] === open ? current : { ...current, [section]: open });
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const greetingTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -85,15 +90,16 @@ export default function PetCareSheet({ document: doc, qualificationId, initialAp
   } : null;
   return <Dialog open onOpenChange={open => { if (!open && !busy) onClose(); }}>
     <DialogContent className={styles.sheet} onOpenAutoFocus={event => { event.preventDefault(); heading.current?.focus({ preventScroll: true }); }} onCloseAutoFocus={event => { event.preventDefault(); returnFocus(); }}>
-      <DialogTitle ref={heading} tabIndex={-1}>チワワの育成</DialogTitle>
-      <DialogDescription>問題を解くほど育ちます。</DialogDescription>
+      <DialogTitle ref={heading} tabIndex={-1}>{settingsMode ? "チワワの設定" : "チワワの育成"}</DialogTitle>
+      <DialogDescription className={settingsMode ? "sr-only" : undefined}>{settingsMode ? "名前・動き・バックアップ" : "問題を解くほど育ちます。"}</DialogDescription>
       <div role="status" className={styles.message}>{message}</div>
+      {appearanceAction && <button type="button" className={styles.done} onClick={appearanceAction}>着がえ</button>}
       {!doc ? <p>読み込み中…</p> : <>
         {doc.profiles.length > 1 || (selected && !profile && doc.profiles.length > 0) ? <label>資格<select value={profile?.qualificationId ?? ""} disabled={busy} onChange={event => { if (timer.current) clearTimeout(timer.current); if (greetingTimer.current) clearTimeout(greetingTimer.current); setPreparing(false); setLookChosen(true); setSelected(event.target.value); setPose("study"); setHearts(0); onPose("study", "", event.target.value); setMessage(""); setSections({ appearance: false, paths: false, memories: false, settings: false }); }}>
           {!profile ? <option value="">資格を選んでください</option> : null}
           {doc.profiles.map(item => <option key={item.petId} value={item.qualificationId}>{examLabel(item.qualificationId)}</option>)}
         </select></label> : null}
-        {profile && progress && pathGoals ? <>
+        {!settingsMode && (profile && progress && pathGoals ? <>
           <div className={styles.hero} data-pet-pose={pose} data-greeting-step={preparing && allowMotion ? "looking-up" : "greeting"}>
             <div className={styles.heroArt}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -148,8 +154,9 @@ export default function PetCareSheet({ document: doc, qualificationId, initialAp
             <time>{new Intl.DateTimeFormat("ja", { timeZone: doc.timeZone, month: "numeric", day: "numeric" }).format(memory.at)}</time>{memory.title}
           </li>)}</ol> : null}
           </details>
-        </> : <><p className={styles.empty}>1問解くと、この資格の子に会えます。</p><button type="button" className={styles.done} disabled={busy} onClick={onClose}>学習へ戻る</button></>}
+        </> : <><p className={styles.empty}>1問解くと、この資格の子に会えます。</p><button type="button" className={styles.done} disabled={busy} onClick={onClose}>学習へ戻る</button></>)}
         <details open={sections.settings} onToggle={event => toggleSection("settings", event.currentTarget.open)}><summary>設定</summary>
+          {onMotionChange ? <label className={styles.check}><input type="checkbox" checked={!motionPaused} onChange={event => onMotionChange(!event.target.checked)} />動き</label> : null}
           {profile ? <><form key={`${profile.petId}:${profile.name}`} className={styles.nameForm} onSubmit={event => { event.preventDefault(); const data = new FormData(event.currentTarget);
             const result = normalizePetName(String(data.get("petName") ?? ""));
             if (!result.ok) { setMessage(result.error); return; }
@@ -175,6 +182,7 @@ export default function PetCareSheet({ document: doc, qualificationId, initialAp
             <div className={styles.careRow}><button type="button" disabled={busy || !savedPrevious || !confirmed} onClick={() => void act(async () => { await restoreCurrentPetBackup(pending.expected, pending.raw); setPending(null); setMessage("復元しました。"); })}>確認したデータを復元</button>
               <button type="button" disabled={busy} onClick={() => setPending(null)}>復元をやめる</button></div></div> : null}
         </section></details>
+        {settingsMode ? <button type="button" className={styles.done} onClick={() => setSettingsMode(false)}>育成の記録</button> : null}
       </>}
     </DialogContent>
   </Dialog>;

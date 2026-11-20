@@ -1,15 +1,48 @@
 // @vitest-environment node
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { journeyBody, readJourney, recordJourney } from "@/lib/billing/journey";
+import { journeyBody, readJourney } from "@/lib/billing/journey";
+let recordJourney: typeof import("@/lib/billing/journey").recordJourney;
 const row = { day: "2026-11-11", qualification: "ap", page: "quiz" as const, offer: "none" as const, stage: "learning" as const, answers: 10, outcome: "unconfirmed" as const, delta: 1 as const };
 const now = Date.parse("2026-11-11T03:00:00Z");
 const fetcher = vi.fn();
-beforeEach(() => {
+beforeEach(async () => {
+  vi.resetModules(); recordJourney = (await import("@/lib/billing/journey")).recordJourney;
   vi.stubEnv("KV_REST_API_URL", "https://fixture.invalid"); vi.stubEnv("KV_REST_API_TOKEN", "public-test-token");
   fetcher.mockReset(); vi.stubGlobal("fetch", fetcher);
 });
 afterEach(() => { vi.unstubAllEnvs(); vi.unstubAllGlobals(); });
 describe("anonymous aggregate storage", () => {
+  it("keeps every aggregate update while reusing confirmed retention for five minutes", async () => {
+    const clock = vi.spyOn(Date, "now").mockReturnValue(now);
+    fetcher.mockImplementation(async () => Response.json([{ result: 1 }]));
+    const body = { changes: [row] };
+    expect(await recordJourney(body, now)).toBe(true);
+    expect(await recordJourney(body, now)).toBe(true);
+    let commands = fetcher.mock.calls.map(call => JSON.parse(call[1].body) as string[][]);
+    expect(commands[0][0].at(-1)).toBe(String(95 * 86400));
+    expect(commands[1][0].at(-1)).toBe("0");
+    expect(commands[0][0].slice(0, -1)).toEqual(commands[1][0].slice(0, -1));
+    clock.mockReturnValue(now + 5 * 60_000);
+    expect(await recordJourney(body, now)).toBe(true);
+    commands = fetcher.mock.calls.map(call => JSON.parse(call[1].body) as string[][]);
+    expect(commands[2][0].at(-1)).toBe(String(95 * 86400));
+    clock.mockRestore();
+  });
+  it("never suppresses expiry before a concurrent write is confirmed, or after a failed update", async () => {
+    const waiting: ((response: Response) => void)[] = [];
+    fetcher.mockImplementation(() => new Promise<Response>(resolve => waiting.push(resolve)));
+    const first = recordJourney({ changes: [row] }, now);
+    const second = recordJourney({ changes: [row] }, now);
+    for (const call of fetcher.mock.calls) expect(JSON.parse(call[1].body)[0].at(-1)).toBe(String(95 * 86400));
+    waiting[0](Response.json([{ error: "fixture failure" }]));
+    waiting[1](Response.json([{ error: "fixture failure" }]));
+    expect(await first).toBe(false);
+    expect(await second).toBe(false);
+    const third = recordJourney({ changes: [row] }, now);
+    expect(JSON.parse(fetcher.mock.calls[2][1].body)[0].at(-1)).toBe(String(95 * 86400));
+    waiting[2](Response.json([{ result: 1 }]));
+    expect(await third).toBe(true);
+  });
   it("accepts only bounded, enumerated aggregate dimensions", () => {
     expect(journeyBody.safeParse({ changes: [row] }).success).toBe(true);
     for (const change of [{ ...row, email: "private" }, { ...row, qualification: "private" }, { ...row, page: "/q/ap" }, { ...row, answers: -1 }, { ...row, delta: 4 }]) {

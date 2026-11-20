@@ -4,7 +4,7 @@ import { useState } from "react";
 import type { Question } from "@/lib/questions/types";
 import { Button } from "@/components/ui/button";
 import { Markdown } from "@/components/ui/markdown";
-import { questionReferenceLabel } from "@/lib/questions/reference-label";
+import { AiTransparencyDisclaimer } from "./AiTransparencyDisclaimer";
 import { QuestionFigures } from "./QuestionFigures";
 
 interface Props {
@@ -71,18 +71,7 @@ export function DescriptiveAnswerCard({
           </fieldset>
         )}
       </details>
-      <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
-        <a href={question.sourcePdfUrl} target="_blank" rel="noopener noreferrer" className="min-h-11 py-3 underline">
-          {khk ? "高圧ガス保安協会の公式問題PDF" : official ? "センターの公式問題PDF" : ministry ? "法務省の公式問題PDF" : "実施団体の公式問題PDF"}
-        </a>
-        {(official || khk || question.exam === "sokuryoshi") && question.sourceAnswerUrl && <a href={question.sourceAnswerUrl} target="_blank" rel="noopener noreferrer" className="min-h-11 py-3 underline">{khk ? "高圧ガス保安協会の公式解答例PDF" : "公式正解例の出典"}</a>}
-        {(question.officialReferenceUrls ?? []).map((url) => (
-          <a key={url} href={url} target="_blank" rel="noopener noreferrer" className="min-h-11 py-3 underline">
-            {questionReferenceLabel(question, url)}
-          </a>
-        ))}
-      </div>
-      {question.sourceAttribution && <p className="text-xs text-muted-foreground">{question.sourceAttribution}</p>}
+      <AiTransparencyDisclaimer question={question} />
       {onNext && <Button onClick={onNext} className="min-h-11">{nextLabel}</Button>}
     </section>
   );

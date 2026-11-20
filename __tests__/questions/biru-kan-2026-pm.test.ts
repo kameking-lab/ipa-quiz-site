@@ -60,7 +60,8 @@ describe("2026 biru-kan afternoon source corpus", () => {
       expect(pool.filter(q => ids.has(q.id))).toHaveLength(90);
       expect(pool.filter(q => q.year === 2026)).toHaveLength(180);
       expect(pool.every(q => q.publicAllowed !== false && !q.needsReview)).toBe(true);
-      expect(pool).toHaveLength(540);
+      expect(pool.filter(q => [2024, 2025, 2026].includes(q.year))).toHaveLength(540);
+      expect(new Set(pool.map(q => q.id)).size).toBe(pool.length);
     }
   });
 });

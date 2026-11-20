@@ -20,6 +20,7 @@ export async function postSync<T>(
   endpoint: string,
   entries: T[],
   context: SyncContext,
+  options: { includePace?: boolean } = {},
 ): Promise<{ status: SyncStatus; entries: T[] }> {
   try {
     if (!ownsSyncContext(context)) return { status: { state: "deferred", reason: "account_changed" }, entries };
@@ -27,7 +28,7 @@ export async function postSync<T>(
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "same-origin",
-      body: JSON.stringify({ entries, expectedUserId: context.userId }),
+      body: JSON.stringify({ ...options, entries, expectedUserId: context.userId }),
     });
     if (res.status === 401) return { status: { state: "unauthenticated" }, entries };
     if (res.status === 503) return { status: { state: "unavailable" }, entries };

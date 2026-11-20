@@ -1,0 +1,441 @@
+[
+  {
+    "id": "kogai-06-2026-annual-gakka-q1",
+    "exam": "kogai-06",
+    "session": "gakka",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "排煙拡散",
+    "topicTags": [
+      "大規模大気特論",
+      "排煙拡散"
+    ],
+    "difficulty": 3,
+    "question": "排煙拡散に関する記述として，誤っているものはどれか。",
+    "choices": {
+      "ア": "高さの異なる2 本の煙突で，他の条件がすべて同じ場合，高い煙突より低い煙突からの最大着地濃度のほうが必ず高くなる。",
+      "イ": "風以外の条件がすべて同じであっても，強風時より弱風時の最大着地濃度のほうが必ず高くなるとは限らない。",
+      "ウ": "乱流拡散係数は放出後の経過時間等によって変化するが，分子拡散係数より大きい値をとる。",
+      "エ": "煙突頂部におけるダウンウォッシュ現象を避けるには，吐出速度を風速の1.5 倍以上とするのがよいと言われている。",
+      "オ": "乱流拡散の継続性を表す時間パラメータは，一般に，鉛直方向のほうが，水平方向よりも長い。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "正解は（5）。鉛直方向の乱流の持続時間を水平方向より長いとした点が誤り。鉛直方向と水平方向の持続時間の関係を取り違えている。",
+    "choiceExplanations": {
+      "ア": "煙突を高くすると煙が着地するまでに拡散する範囲が広がるため、同条件では低い煙突の最大着地濃度が高くなる。",
+      "イ": "風速は希釈だけでなく煙の上昇や拡散にも関係するため、弱風ほど最大着地濃度が必ず高いとはいえない。",
+      "ウ": "大気中では大小の渦による混合が分子の運動だけによる混合より強く、乱流拡散係数は分子拡散係数より大きい。",
+      "エ": "吐出速度を周囲の風速より十分大きくし、煙が煙突頂部の後流へ巻き込まれるのを避ける考え方である。",
+      "オ": "鉛直方向の乱流の持続時間を水平方向より長いとした点が誤り。鉛直方向と水平方向の持続時間の関係を取り違えている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R08_06.pdf",
+    "sourceAnswerUrl": "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR08.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会「2026（令和8）年度公害防止管理者等国家試験 大規模大気特論」問1。",
+    "lawReferenceDate": "2026-04-01",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "kogai-06-2026-annual-gakka-q2",
+    "exam": "kogai-06",
+    "session": "gakka",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "大気安定度",
+    "topicTags": [
+      "大規模大気特論",
+      "大気安定度"
+    ],
+    "difficulty": 3,
+    "question": "低層大気の気温の鉛直勾配と熱的な安定度に関する記述として，誤っているものはどれか。",
+    "choices": {
+      "ア": "空気塊が断熱的に上昇するとき，膨張に伴って温度が低下する。",
+      "イ": "乾燥空気の場合，気塊が断熱的にdz だけ上昇したときの温度変化の割合：| dT/dz |は9.8 ℃/km となる。",
+      "ウ": "平均的な気温の鉛直勾配（減率）は約6 ℃/km となっている。",
+      "エ": "温位とは，上空の気塊を断熱的に地面付近（1000 hPa 面）に移動したときの温度である。",
+      "オ": "鉛直方向に一定の温位をもつ大気層は熱的に安定である。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "正解は（5）。温位が鉛直方向に一定なら、断熱的に上下させた空気塊の温位と周囲の温位が等しくなるので中立である。安定ではない。",
+    "choiceExplanations": {
+      "ア": "上昇する空気塊は周囲の気圧低下に伴って膨張し、外部に仕事をするため、熱の出入りがなくても冷える。",
+      "イ": "乾燥断熱減率の約9.8 ℃/kmを表しており、周囲の大気の平均的な気温減率とは区別する。",
+      "ウ": "平均的な気温減率は、乾燥断熱減率より小さい約6 ℃/kmとして扱う。",
+      "エ": "温位は、空気塊を基準気圧1000 hPaまで断熱的に移したときの温度であり、異なる高さの空気塊を比較できる。",
+      "オ": "温位が鉛直方向に一定なら、断熱的に上下させた空気塊の温位と周囲の温位が等しくなるので中立である。安定ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R08_06.pdf",
+    "sourceAnswerUrl": "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR08.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会「2026（令和8）年度公害防止管理者等国家試験 大規模大気特論」問2。",
+    "lawReferenceDate": "2026-04-01",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "kogai-06-2026-annual-gakka-q3",
+    "exam": "kogai-06",
+    "session": "gakka",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "風速分布",
+    "topicTags": [
+      "大規模大気特論",
+      "風速分布"
+    ],
+    "difficulty": 3,
+    "question": "風速の鉛直分布は，以下のべき乗則を用いて，近似的に表すことができる。\n\nu(z)＝u(z₁) × (z/z₁)^p\n\nここで，u(z)は高度zにおける風速，u(z₁)は高度z₁における風速，pはべき数で，大気の熱的安定度によって変わる。\n本曇の夜間に，東京の市街地において高度10 mで計測した風速が1.5 m/sであった場合，同じ地点における高度100 mの風速（m/s）はおおよそいくらか。ただし，pの値は下表に従うものとする。\n\n| 安定度 | 強不安定 | 並不安定 | 弱不安定 | 中立 | 弱安定 | 並安定 |\n| --- | --- | --- | --- | --- | --- | --- |\n| 都市のp | 0.15 | 0.15 | 0.20 | 0.25 | 0.40 | 0.60 |\n| 郊外のp | 0.07 | 0.07 | 0.10 | 0.15 | 0.35 | 0.55 |\n\nなお，10^0.07＝1.2，10^0.10＝1.3，10^0.15＝1.4，10^0.20＝1.6，10^0.25＝1.8，10^0.35＝2.2，10^0.40＝2.5，10^0.55＝3.5，10^0.60＝4.0とする。",
+    "choices": {
+      "ア": "2.1",
+      "イ": "2.7",
+      "ウ": "3.3",
+      "エ": "3.8",
+      "オ": "6.0"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "正解は（2）。本曇の夜間は中立とし、都市のp＝0.25を用いる。1.5×(100/10)^0.25＝1.5×1.8＝2.7 m/sとなる。",
+    "choiceExplanations": {
+      "ア": "2.1 m/sは都市ではなく郊外の中立時のp＝0.15を使った1.5×1.4の値である。",
+      "イ": "本曇の夜間は中立とし、都市のp＝0.25を用いる。1.5×(100/10)^0.25＝1.5×1.8＝2.7 m/sとなる。",
+      "ウ": "3.3 m/sは1.5×2.2で、郊外の弱安定時のp＝0.35を用いた値であり、都市・中立という条件と合わない。",
+      "エ": "3.8 m/sに近い値はp＝0.40の1.5×2.5＝3.75で得られるが、これは都市の弱安定に対応する。",
+      "オ": "6.0 m/sは都市の並安定時のp＝0.60を用いた1.5×4.0であり、本問の中立条件ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R08_06.pdf",
+    "sourceAnswerUrl": "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR08.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会「2026（令和8）年度公害防止管理者等国家試験 大規模大気特論」問3。",
+    "lawReferenceDate": "2026-04-01",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "isCalculation": true
+  },
+  {
+    "id": "kogai-06-2026-annual-gakka-q4",
+    "exam": "kogai-06",
+    "session": "gakka",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "大気境界層",
+    "topicTags": [
+      "大規模大気特論",
+      "大気境界層"
+    ],
+    "difficulty": 3,
+    "question": "大気境界層及び関連する現象に関する記述として，正しいものはどれか。",
+    "choices": {
+      "ア": "ヒートアイランド現象による，郊外と比較した都市の高温化は，夏季に顕著である。",
+      "イ": "晴天日の混合層は日の出とともに成長を開始し，太陽が南中する頃に最も厚くなる。",
+      "ウ": "海岸から発達する内部境界層は，陸上の活発な熱対流によってのみ形成される。",
+      "エ": "海陸風は，季節風の弱まる夏季にのみ見られる現象である。",
+      "オ": "地表面の放射冷却によって形成される逆転層は普通，200 m 以下の厚さである。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "正解は（5）。地表面の放射冷却による逆転層は地表近くにできる比較的薄い層で、本問では通常200 m以下という記述が正しい。",
+    "choiceExplanations": {
+      "ア": "都市の高温化が夏季に顕著だとする記述は適切でない。季節や時刻によって都市と郊外の温度差は変わる。",
+      "イ": "混合層は地表面の加熱を受けて発達する。最大となる時刻を太陽の南中時に固定するのは適切でない。",
+      "ウ": "内部境界層は、海面から陸面への移行に伴う地表面条件の変化でも生じる。活発な熱対流だけに限定できない。",
+      "エ": "海陸風の要因は陸と海の加熱・冷却の違いであり、発生する季節を夏だけに限定するのは誤り。",
+      "オ": "地表面の放射冷却による逆転層は地表近くにできる比較的薄い層で、本問では通常200 m以下という記述が正しい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R08_06.pdf",
+    "sourceAnswerUrl": "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR08.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会「2026（令和8）年度公害防止管理者等国家試験 大規模大気特論」問4。",
+    "lawReferenceDate": "2026-04-01",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "kogai-06-2026-annual-gakka-q5",
+    "exam": "kogai-06",
+    "session": "gakka",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "排煙拡散",
+    "topicTags": [
+      "大規模大気特論",
+      "排煙拡散"
+    ],
+    "difficulty": 3,
+    "question": "孤立した高煙突の風下1 kmの上空の最大濃度が0.25 ppmであった。日射が強まり，安定度がCからBに変わったときの最大濃度（ppm）として，最も近いものはどれか。\n\nただし，地表面での煙の反射はなく，煙流中心軸上の濃度はC＝Q/(2πuσyσz)と表されるものとする。ここで，Qは煙源の排出量，uは風速，σyとσzは下図に示す拡散幅（A〜Fは安定度）である。",
+    "choices": {
+      "ア": "0.06",
+      "イ": "0.10",
+      "ウ": "0.18",
+      "エ": "0.36",
+      "オ": "0.63"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "正解は（2）。風下1 kmでは図から安定度Cのσy≈100 m・σz≈60 m、Bのσy≈150 m・σz≈100 mと読む。Qとuが同じなので、0.25×(100×60)/(150×100)≈0.10 ppmとなる。",
+    "choiceExplanations": {
+      "ア": "0.06 ppmは濃度を約4分の1にした値だが、図から読むσyとσzの積の増加はそこまで大きくない。",
+      "イ": "風下1 kmでは図から安定度Cのσy≈100 m・σz≈60 m、Bのσy≈150 m・σz≈100 mと読む。Qとuが同じなので、0.25×(100×60)/(150×100)≈0.10 ppmとなる。",
+      "ウ": "0.18 ppmでは拡散幅の積の増大を十分に反映していない。横方向と鉛直方向の両方の幅の比を掛ける。",
+      "エ": "安定度がCからBへ変わると拡散幅が増えるので、同じ排出量・風速なら濃度は低下する。0.36 ppmのような増加はしない。",
+      "オ": "0.63 ppmは拡散幅の積の比を逆に掛けた場合に近い値である。濃度はσyσzに反比例する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R08_06.pdf",
+    "sourceAnswerUrl": "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR08.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会「2026（令和8）年度公害防止管理者等国家試験 大規模大気特論」問5。",
+    "lawReferenceDate": "2026-04-01",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "isCalculation": true,
+    "imageUrls": [
+      "/images/questions/kogai-06/2026-q5.png"
+    ],
+    "imageAltTexts": [
+      "安定度A〜F別に風下距離と水平拡散幅σy・鉛直拡散幅σzの関係を示した両対数グラフ。"
+    ]
+  },
+  {
+    "id": "kogai-06-2026-annual-gakka-q6",
+    "exam": "kogai-06",
+    "session": "gakka",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "大気環境シミュレーション",
+    "topicTags": [
+      "大規模大気特論",
+      "大気環境シミュレーション"
+    ],
+    "difficulty": 3,
+    "question": "大気環境シミュレーションモデルに関する記述として，誤っているものはどれか。",
+    "choices": {
+      "ア": "流跡線モデルと格子モデルでは，一般に流跡線モデルのほうが計算量が少なくなる。",
+      "イ": "光化学大気汚染を対象とする場合には，パフモデルと格子モデルを組み合わせる方法が用いられることがある。",
+      "ウ": "酸性雨の要因となる酸性の微粒子は沈着速度が大きいため，数十km ～百km スケールでのモデル化が必要である。",
+      "エ": "複雑地形上の流れにおいては，大気が不安定であるほど，地形を乗り越えやすくなる。",
+      "オ": "建屋による乱れ域や逆流域に煙が巻き込まれるダウンドラフトと，煙突頂部で起こるダウンウォッシュとは，明確に区別できない場合もある。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "正解は（3）。微粒子の沈着速度が大きいため対象を数十〜百kmに限定する、という説明が誤り。酸性物質の輸送を扱う際は広い領域からの影響にも注意する。",
+    "choiceExplanations": {
+      "ア": "流跡線モデルは移動する空気塊を追うため、空間全体を格子で解くモデルに比べ、一般に計算量を抑えられる。",
+      "イ": "パフで表す移流・拡散と、格子で扱う大気場や反応を組み合わせる方法がある。両者は排他的なモデルではない。",
+      "ウ": "微粒子の沈着速度が大きいため対象を数十〜百kmに限定する、という説明が誤り。酸性物質の輸送を扱う際は広い領域からの影響にも注意する。",
+      "エ": "不安定な大気では空気塊の鉛直運動が起こりやすく、地形に沿って上昇しやすくなる。",
+      "オ": "建屋後流への巻込みと煙突頂部での巻込みは発生位置が異なるが、実際の流れでは影響が重なることがある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R08_06.pdf",
+    "sourceAnswerUrl": "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR08.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会「2026（令和8）年度公害防止管理者等国家試験 大規模大気特論」問6。",
+    "lawReferenceDate": "2026-04-01",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "kogai-06-2026-annual-gakka-q7",
+    "exam": "kogai-06",
+    "session": "gakka",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "category": "燃料品質",
+    "topicTags": [
+      "大規模大気特論",
+      "燃料品質"
+    ],
+    "difficulty": 3,
+    "question": "石油製品の品質改善による大気汚染防止対策に関する記述として，誤っているものはどれか。",
+    "choices": {
+      "ア": "揮発油等の品質の確保等に関する法律（品確法）では，ガソリンだけでなく重油に関する規格も定められている。",
+      "イ": "品確法におけるガソリンに対する強制規格で，鉛の規格値は「検出されないこと」である。",
+      "ウ": "品確法におけるガソリン中のベンゼン含有率の規格値は「0.1 体積％以下」である。",
+      "エ": "サルファーフリーガソリンは，自動車からのNOx 排出量低減を可能とする。",
+      "オ": "二酸化炭素削減対策としてバイオマス燃料の導入が検討され，品確法が改正された。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "正解は（3）。ガソリンのベンゼン含有率の強制規格は1体積％以下である。0.1体積％以下という数値は規格と一致しない。",
+    "choiceExplanations": {
+      "ア": "品確法の強制規格はガソリン以外にも設けられており、重油も対象である。",
+      "イ": "資源エネルギー庁のガソリン強制規格では、鉛は『検出されないこと』とされている。",
+      "ウ": "ガソリンのベンゼン含有率の強制規格は1体積％以下である。0.1体積％以下という数値は規格と一致しない。",
+      "エ": "燃料の低硫黄化は自動車の排出ガス浄化技術を機能させるうえで役立ち、NOx排出削減にもつながる。",
+      "オ": "バイオ混合燃料の品質確保に対応した制度が品確法に設けられている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R08_06.pdf",
+    "sourceAnswerUrl": "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR08.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会「2026（令和8）年度公害防止管理者等国家試験 大規模大気特論」問7。",
+    "lawReferenceDate": "2026-04-01",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false,
+    "officialReferenceUrls": [
+      "https://www.enecho.meti.go.jp/category/resources_and_fuel/distribution/hinnkakuhou/"
+    ]
+  },
+  {
+    "id": "kogai-06-2026-annual-gakka-q8",
+    "exam": "kogai-06",
+    "session": "gakka",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "排煙処理",
+    "topicTags": [
+      "大規模大気特論",
+      "排煙処理"
+    ],
+    "difficulty": 3,
+    "question": "大規模設備における大気汚染物質排出防止対策に関する記述として，誤っているものはどれか。",
+    "choices": {
+      "ア": "製油所では，クラウス法と呼ばれるプロセスで，硫化水素から硫黄を回収している。",
+      "イ": "石炭火力発電設備における脱硫方式として，炭酸カルシウムを使用する湿式石灰石こう法が一般的である。",
+      "ウ": "石炭火力発電設備の排煙処理システムでは，一般に脱硫装置は脱硝装置より上流に設置される。",
+      "エ": "都市ごみ中の紙類を焼却するとSOx が発生する。",
+      "オ": "鉄鋼プロセスにおいて，アンモニア硫安法により，コークス炉ガスのアンモニアも除去できる。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "正解は（3）。一般的な石炭火力の排ガス処理では脱硝が上流、湿式脱硫が下流となる。両装置の位置関係を逆にした記述である。",
+    "choiceExplanations": {
+      "ア": "クラウス法は、硫化水素を含むガスから硫黄を回収する処理であり、製油所の硫黄対策に用いられる。",
+      "イ": "湿式石灰石こう法では、石灰石の炭酸カルシウムを用いて排ガス中の硫黄酸化物を除去し、石こうとして回収する。",
+      "ウ": "一般的な石炭火力の排ガス処理では脱硝が上流、湿式脱硫が下流となる。両装置の位置関係を逆にした記述である。",
+      "エ": "都市ごみ中の紙類にも硫黄分に由来するSOxの発生があり、紙類だからSOxを生じないとはいえない。",
+      "オ": "アンモニア硫安法は、コークス炉ガス中のアンモニアを硫安として回収・除去する処理である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R08_06.pdf",
+    "sourceAnswerUrl": "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR08.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会「2026（令和8）年度公害防止管理者等国家試験 大規模大気特論」問8。",
+    "lawReferenceDate": "2026-04-01",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "kogai-06-2026-annual-gakka-q9",
+    "exam": "kogai-06",
+    "session": "gakka",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "セメント産業",
+    "topicTags": [
+      "大規模大気特論",
+      "セメント産業"
+    ],
+    "difficulty": 3,
+    "question": "セメント産業の大気汚染防止対策等に関する記述として，誤っているものはどれか。",
+    "choices": {
+      "ア": "セメント原料ダストの電気抵抗率は，電気集じん装置の集じん効率に大きな影響を与える。",
+      "イ": "二酸化硫黄はセメント原料中の固体酸と反応して除去される。",
+      "ウ": "セメントキルン排ガス中のNOx を抑制するための燃焼管理が行われている。",
+      "エ": "排煙脱硝プロセスを導入している工場では，一般的に乾式の無触媒還元法が用いられている。",
+      "オ": "セメント製造の熱エネルギー源の一部として廃タイヤが使用されている。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "正解は（2）。二酸化硫黄を除去するセメント原料側の成分を『固体酸』とした点が誤り。酸性ガスであるSO2の除去には原料中の塩基性成分との反応を考える。",
+    "choiceExplanations": {
+      "ア": "電気集じんでは粒子の帯電と電荷の移動が関係するため、原料ダストの電気抵抗率が集じん効率に影響する。",
+      "イ": "二酸化硫黄を除去するセメント原料側の成分を『固体酸』とした点が誤り。酸性ガスであるSO2の除去には原料中の塩基性成分との反応を考える。",
+      "ウ": "燃焼条件を管理してNOxの発生を抑えることは、セメントキルンの排出対策の一つである。",
+      "エ": "セメント工場では、排ガスに還元剤を加える乾式の無触媒還元法が脱硝に用いられる。",
+      "オ": "廃タイヤを熱エネルギー源の一部として利用することがあり、燃料としての活用も行われている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R08_06.pdf",
+    "sourceAnswerUrl": "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR08.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会「2026（令和8）年度公害防止管理者等国家試験 大規模大気特論」問9。",
+    "lawReferenceDate": "2026-04-01",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  },
+  {
+    "id": "kogai-06-2026-annual-gakka-q10",
+    "exam": "kogai-06",
+    "session": "gakka",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "鉄鋼プロセス",
+    "topicTags": [
+      "大規模大気特論",
+      "鉄鋼プロセス"
+    ],
+    "difficulty": 3,
+    "question": "我が国の鉄鋼プロセスにおける大気汚染防止対策に関する記述として，誤っているものはどれか。",
+    "choices": {
+      "ア": "使用する原料及び燃料の低硫黄化が進められてきた。",
+      "イ": "燃焼改善や排熱有効利用は，SOx 排出量削減にも寄与する。",
+      "ウ": "SOx の主な発生源は焼結炉，加熱炉，ボイラーであり，そのうち焼結炉からの発生量が最も多い。",
+      "エ": "焼結炉排ガスの脱硫方式としては，湿式脱硫法が主流だったが，近年は乾式脱硫法も導入されている。",
+      "オ": "焼結炉排ガスの集じんでは，従来からバグフィルターが主流である。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "正解は（5）。焼結炉の集じんが従来からバグフィルター中心だったという記述が誤り。従来の主要な方式と、後から導入された方式を区別する。",
+    "choiceExplanations": {
+      "ア": "投入する原料や燃料の硫黄分を減らせば、プロセスから発生するSOxの削減につながる。",
+      "イ": "燃焼効率の改善や排熱利用で必要な燃料量を減らすことは、燃料由来のSOxの削減にも役立つ。",
+      "ウ": "本問の鉄鋼プロセスでは、焼結炉がSOxの主要な発生源として挙げられている。",
+      "エ": "焼結炉の脱硫には湿式が用いられてきた一方、乾式の脱硫法も導入されている。",
+      "オ": "焼結炉の集じんが従来からバグフィルター中心だったという記述が誤り。従来の主要な方式と、後から導入された方式を区別する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R08_06.pdf",
+    "sourceAnswerUrl": "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR08.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会「2026（令和8）年度公害防止管理者等国家試験 大規模大気特論」問10。",
+    "lawReferenceDate": "2026-04-01",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-18",
+    "isCalculation": false
+  }
+]

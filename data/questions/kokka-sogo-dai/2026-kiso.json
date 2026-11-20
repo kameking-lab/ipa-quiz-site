@@ -1,0 +1,525 @@
+[
+  {
+    "id": "kokka-sogo-dai-2026-annual-kiso-q17",
+    "exam": "kokka-sogo-dai",
+    "year": 2026,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 17,
+    "subject": "基礎能力試験",
+    "type": "multiple-choice",
+    "category": "判断推理",
+    "topicTags": [
+      "判断推理",
+      "基礎能力試験"
+    ],
+    "difficulty": 3,
+    "question": "一辺6の正方形の右上から一辺2の正方形を除いた図形を、指定の条件で切り離して正方形に組み替えられる切り方はどれか。",
+    "choices": {
+      "ア": "図1の切り方",
+      "イ": "図2の切り方",
+      "ウ": "図3の切り方",
+      "エ": "図4の切り方",
+      "オ": "図5の切り方"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "残りの面積は32なので、作る正方形は一辺4√2、周長16√2。図4は長さ4√2の点線2本を切り、その両側を新しい周に使える。",
+    "choiceExplanations": {
+      "ア": "点線の合計は9√2で、切り口の両側を合わせると必要な周長を超える。",
+      "イ": "点線の合計は7√2で、切り口の両側を合わせても必要な周長に届かない。",
+      "ウ": "長い点線は6√2だが、短い点線は√2しかない。",
+      "エ": "点線の合計は8√2で、作る正方形の周長に一致する。",
+      "オ": "点線の合計は7√2で、切り口だけでは周長が足りない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/kokka-sogo-dai/2026-kiso/q17-1.webp"
+    ],
+    "imageAltTexts": [
+      "正方形から角を切り取った元の図形、切り方の条件と五つの切り方"
+    ],
+    "sourcePdfUrl": "https://www.jinji.go.jp/content/000018339.pdf",
+    "sourceAnswerUrl": "https://www.jinji.go.jp/content/000018339.pdf#page=40",
+    "license": "JINJI-attributed",
+    "sourceAttribution": "出典：人事院「2026年度 総合職試験（大卒程度試験）教養区分以外 基礎能力試験」No. 17。"
+  },
+  {
+    "id": "kokka-sogo-dai-2026-annual-kiso-q21",
+    "exam": "kokka-sogo-dai",
+    "year": 2026,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 21,
+    "subject": "基礎能力試験",
+    "type": "multiple-choice",
+    "category": "数的推理",
+    "topicTags": [
+      "数的推理",
+      "基礎能力試験"
+    ],
+    "difficulty": 3,
+    "question": "図のように正方形のタイルA、B、Cを並べ、計880枚で正方形を作るとき、タイルCは何枚か。",
+    "choices": {
+      "ア": "152枚",
+      "イ": "156枚",
+      "ウ": "160枚",
+      "エ": "164枚",
+      "オ": "168枚"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "中心のタイルAが一辺n枚なら、タイルBは6n＋4枚、Cは6n＋12枚。n²＋12n＋16＝880を満たすnは24なので、Cは156枚。",
+    "choiceExplanations": {
+      "ア": "外周Cの枚数は6n＋12の形になり、152はその形にならない。",
+      "イ": "n＝24ならAが576枚、Bが148枚、Cが156枚で、合計880枚になる。",
+      "ウ": "160は6n＋12の形にならない。",
+      "エ": "164は6n＋12の形にならない。",
+      "オ": "168ならn＝26で、全体は1,004枚になる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/kokka-sogo-dai/2026-kiso/q21-1.webp"
+    ],
+    "imageAltTexts": [
+      "問題文、タイルA・B・Cの寸法と三種類を並べる例"
+    ],
+    "sourcePdfUrl": "https://www.jinji.go.jp/content/000018339.pdf",
+    "sourceAnswerUrl": "https://www.jinji.go.jp/content/000018339.pdf#page=40",
+    "license": "JINJI-attributed",
+    "sourceAttribution": "出典：人事院「2026年度 総合職試験（大卒程度試験）教養区分以外 基礎能力試験」No. 21。"
+  },
+  {
+    "id": "kokka-sogo-dai-2026-annual-kiso-q22",
+    "exam": "kokka-sogo-dai",
+    "year": 2026,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 22,
+    "subject": "基礎能力試験",
+    "type": "multiple-choice",
+    "category": "資料解釈",
+    "topicTags": [
+      "資料解釈",
+      "基礎能力試験"
+    ],
+    "difficulty": 3,
+    "question": "2020〜2024年のリフォーム施工件数と売上高を表から読み取る。確実にいえるのはどれか。",
+    "choices": {
+      "ア": "2020〜2024年において、施工件数に占める戸建ての割合が最も低いのは、2022年である。",
+      "イ": "2023年における施工件数をリフォーム箇所別、住居形態別でみると、対前年増加率が最も高いのは、浴室リフォーム（戸建て）である。",
+      "ウ": "2020〜2024年において、売上高に占めるマンションの割合は、一貫して低下している。",
+      "エ": "2021〜2024年において、浴室リフォームの売上高の対前年増加率が最も高いのは、2023年である。",
+      "オ": "2024年におけるキッチンリフォーム（戸建て）の売上単価は、同年における浴室リフォーム（戸建て）の売上単価の1.5倍以上である。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "浴室の売上高は2022年2,766百万円から2023年2,998百万円へ約8.4％増えた。2021年は減少し、2022年と2024年の伸びは8.4％未満である。",
+    "choiceExplanations": {
+      "ア": "戸建て件数の割合は2021年が約48.7％、2022年が約49.9％である。",
+      "イ": "キッチンの戸建てが972件から1,109件へ増え、浴室の戸建てより増加率が高い。",
+      "ウ": "マンションの割合は2020年約49.2％から2021年約49.8％へ上がる。",
+      "エ": "各年の浴室売上高を前年で割って比較すると2023年が最大。",
+      "オ": "単価はそれぞれ1,862÷1,212と1,894÷1,590で、比は約1.29倍。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/kokka-sogo-dai/2026-kiso/q22-1.webp"
+    ],
+    "imageAltTexts": [
+      "問題文と施工件数・売上高の集計表"
+    ],
+    "sourcePdfUrl": "https://www.jinji.go.jp/content/000018339.pdf",
+    "sourceAnswerUrl": "https://www.jinji.go.jp/content/000018339.pdf#page=40",
+    "license": "JINJI-attributed",
+    "sourceAttribution": "出典：人事院「2026年度 総合職試験（大卒程度試験）教養区分以外 基礎能力試験」No. 22。"
+  },
+  {
+    "id": "kokka-sogo-dai-2026-annual-kiso-q23",
+    "exam": "kokka-sogo-dai",
+    "year": 2026,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 23,
+    "subject": "基礎能力試験",
+    "type": "multiple-choice",
+    "category": "資料解釈",
+    "topicTags": [
+      "資料解釈",
+      "基礎能力試験"
+    ],
+    "difficulty": 3,
+    "question": "新車と中古車の月ごとの登録台数の対前月伸び率を図から読み取り、確実にいえる記述を選ぶ。",
+    "choices": {
+      "ア": "3月の中古車登録台数は、1月のそれの2倍以上である。",
+      "イ": "4月の中古車登録台数は、9月のそれを上回っている。",
+      "ウ": "9月の新車登録台数は、同月の中古車登録台数の2倍以上である。",
+      "エ": "10月の新車登録台数は、6月のそれを下回っている。",
+      "オ": "10〜12月の3か月についてみると、中古車登録台数は、毎月同じ台数ずつ増加している。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "中古車の4月から9月までの台数の変化は、5〜9月の倍率を掛けると約0.91倍。したがって9月は4月より少ない。",
+    "choiceExplanations": {
+      "ア": "中古車は2月約23％増、3月約37％増なので、1月から3月までで約1.69倍。",
+      "イ": "中古車の4月の台数を基準とし、5月から9月まで順に伸び率を掛けると9月の方が少ない。",
+      "ウ": "新車と中古車それぞれの伸び率だけでは、両者の台数の比を求められない。",
+      "エ": "新車の7〜10月の倍率を掛けると1を上回る。",
+      "オ": "一定なのは増加率であり、台数の増分は基準の台数が増えるにつれ大きくなる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/kokka-sogo-dai/2026-kiso/q23-1.webp"
+    ],
+    "imageAltTexts": [
+      "問題文と月別の新車・中古車登録台数の対前月伸び率の折れ線グラフ"
+    ],
+    "sourcePdfUrl": "https://www.jinji.go.jp/content/000018339.pdf",
+    "sourceAnswerUrl": "https://www.jinji.go.jp/content/000018339.pdf#page=40",
+    "license": "JINJI-attributed",
+    "sourceAttribution": "出典：人事院「2026年度 総合職試験（大卒程度試験）教養区分以外 基礎能力試験」No. 23。"
+  },
+  {
+    "id": "kokka-sogo-dai-2026-annual-kiso-q24",
+    "exam": "kokka-sogo-dai",
+    "year": 2026,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 24,
+    "subject": "基礎能力試験",
+    "type": "multiple-choice",
+    "category": "資料解釈",
+    "topicTags": [
+      "資料解釈",
+      "基礎能力試験"
+    ],
+    "difficulty": 3,
+    "question": "売上高と従業員数の推移、部門別の比率の図表から確実にいえる記述を選ぶ。",
+    "choices": {
+      "ア": "2020〜2024年の間で、全部門合計でみた従業員一人当たりの売上高が最も小さいのは2024年である。",
+      "イ": "2021〜2024年の間で、部門別にみた売上高の対前年増加率は、2021年のC部門が最大である。",
+      "ウ": "2020〜2024年の間で、D部門の売上高が最大の年は2020年である。",
+      "エ": "2020〜2024年の間で、全ての部門で従業員数は一貫して増加している。",
+      "オ": "2020〜2024年の間で、B部門の従業員一人当たりの売上高は一貫して増加している。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "C部門の売上高は2020年の6兆円×12.5％から2021年の7兆円×17.7％へ約65％増えた。他部門・他年の増加率はこの値を下回る。",
+    "choiceExplanations": {
+      "ア": "2020年の6÷4.5は2024年の8.5÷6より小さい。",
+      "イ": "各年の全社売上高に部門別割合を掛けてから、前年比を比べると2021年のC部門が最大になる。",
+      "ウ": "D部門は2023年に約1.77兆円で、2020年の約1.67兆円を上回る。",
+      "エ": "A部門は2020年の4.5×34.9％から2021年の4×25.0％に減る。",
+      "オ": "B部門は2023年から2024年にかけて一人当たり売上高が下がる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/kokka-sogo-dai/2026-kiso/q24-1.webp"
+    ],
+    "imageAltTexts": [
+      "問題文と売上高・人数のグラフ、部門別の売上高と従業員数の割合表"
+    ],
+    "sourcePdfUrl": "https://www.jinji.go.jp/content/000018339.pdf",
+    "sourceAnswerUrl": "https://www.jinji.go.jp/content/000018339.pdf#page=40",
+    "license": "JINJI-attributed",
+    "sourceAttribution": "出典：人事院「2026年度 総合職試験（大卒程度試験）教養区分以外 基礎能力試験」No. 24。"
+  },
+  {
+    "id": "kokka-sogo-dai-2026-annual-kiso-q25",
+    "exam": "kokka-sogo-dai",
+    "year": 2026,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 25,
+    "subject": "基礎能力試験",
+    "type": "multiple-choice",
+    "category": "時事",
+    "topicTags": [
+      "時事",
+      "基礎能力試験"
+    ],
+    "difficulty": 3,
+    "question": "近年の自然環境やそれをめぐる動きなどに関する記述として最も妥当なのはどれか。",
+    "choices": {
+      "ア": "H-IIA最終号機と万有引力",
+      "イ": "線状降水帯と水蒸気観測",
+      "ウ": "トカラ列島の地震と緊急地震速報",
+      "エ": "除去土壌とX線",
+      "オ": "プラスチック汚染と原料"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "JAXAによると、H-IIAの最終号機は2025年6月にいぶきGWを打ち上げた。万有引力の大きさは質量の積に比例し、距離の二乗に反比例する。",
+    "choiceExplanations": {
+      "ア": "打ち上げの記述と、万有引力の距離への依存関係が正しい。",
+      "イ": "帯状に連なる降水域と、その原因の一つになり得る梅雨前線を区別する。",
+      "ウ": "地震速報で最初に観測する波の種類に注目する。",
+      "エ": "X線と赤外線を、電磁波の波長順に並べて比べる。",
+      "オ": "石油の分留で得られる各成分のうち、どの留分がプラスチックの原料になるかを確認する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/kokka-sogo-dai/2026-kiso/q25-1.webp"
+    ],
+    "imageAltTexts": [
+      "自然環境についての問題文と選択肢の全文"
+    ],
+    "sourcePdfUrl": "https://www.jinji.go.jp/content/000018339.pdf",
+    "sourceAnswerUrl": "https://www.jinji.go.jp/content/000018339.pdf#page=40",
+    "license": "JINJI-attributed",
+    "sourceAttribution": "出典：人事院「2026年度 総合職試験（大卒程度試験）教養区分以外 基礎能力試験」No. 25。",
+    "officialReferenceUrls": [
+      "https://www.satnavi.jaxa.jp/ja/news/2025/07/25/11226/index.html"
+    ]
+  },
+  {
+    "id": "kokka-sogo-dai-2026-annual-kiso-q26",
+    "exam": "kokka-sogo-dai",
+    "year": 2026,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 26,
+    "subject": "基礎能力試験",
+    "type": "multiple-choice",
+    "category": "時事",
+    "topicTags": [
+      "時事",
+      "基礎能力試験"
+    ],
+    "difficulty": 3,
+    "question": "宗教や習俗をめぐる近年の動きなどに関する記述として最も妥当なのはどれか。",
+    "choices": {
+      "ア": "シリアの政権交代とイスラーム",
+      "イ": "レオ14世の選出とキリスト教",
+      "ウ": "インドの国勢調査とカースト",
+      "エ": "ダライ・ラマ14世とチベット仏教",
+      "オ": "比叡山の集いと仏教"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "バチカンの略歴によると、レオ14世は2025年5月のコンクラーベで選ばれた初の米国出身教皇である。",
+    "choiceExplanations": {
+      "ア": "組織の位置付けと宗教用語の説明を分けて確認する。",
+      "イ": "選出時期、出身国、カトリック教会における地位が一致する。",
+      "ウ": "現代の国勢調査の扱いと、カーストの成立に関する説明を切り分けて確認する。",
+      "エ": "転生制度の存廃について表明された内容に注目する。",
+      "オ": "延暦寺での行事の開催歴と、親鸞の思想の記述を分けて確認する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/kokka-sogo-dai/2026-kiso/q26-1.webp"
+    ],
+    "imageAltTexts": [
+      "宗教・習俗についての問題文と選択肢の全文"
+    ],
+    "sourcePdfUrl": "https://www.jinji.go.jp/content/000018339.pdf",
+    "sourceAnswerUrl": "https://www.jinji.go.jp/content/000018339.pdf#page=40",
+    "license": "JINJI-attributed",
+    "sourceAttribution": "出典：人事院「2026年度 総合職試験（大卒程度試験）教養区分以外 基礎能力試験」No. 26。",
+    "officialReferenceUrls": [
+      "https://www.vatican.va/content/leo-xiv/en/biography/documents/biografia_leone-xiv.html"
+    ]
+  },
+  {
+    "id": "kokka-sogo-dai-2026-annual-kiso-q27",
+    "exam": "kokka-sogo-dai",
+    "year": 2026,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 27,
+    "subject": "基礎能力試験",
+    "type": "multiple-choice",
+    "category": "時事",
+    "topicTags": [
+      "時事",
+      "基礎能力試験"
+    ],
+    "difficulty": 3,
+    "question": "近年の地域紛争や安全保障などに関する記述として最も妥当なのはどれか。",
+    "choices": {
+      "ア": "カシミール地方とインド・パキスタン",
+      "イ": "カンボジア・タイ国境とASEAN",
+      "ウ": "NATOと防衛支出",
+      "エ": "米国の軍事パレードと湾岸戦争",
+      "オ": "豪州の護衛艦採用とAPEC"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "外務省の資料で、2025年4月のカシミールでの銃撃事件をきっかけに印パ両軍が衝突し、同年5月10日に停戦に合意したことを確認できる。",
+    "choiceExplanations": {
+      "ア": "銃撃事件後の軍事衝突と停戦の経緯が外務省資料と一致する。",
+      "イ": "停戦を仲介した国と、ASEAN発足時の加盟国を分けて確認する。",
+      "ウ": "防衛支出割合の分母と、NATOとワルシャワ条約機構が設立された順を確認する。",
+      "エ": "クウェートに侵攻した国名と、日本の活動時期を切り分ける。",
+      "オ": "APECの参加国を確かめ、米国が含まれるかを確認する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/kokka-sogo-dai/2026-kiso/q27-1.webp"
+    ],
+    "imageAltTexts": [
+      "地域紛争・安全保障についての問題文と選択肢の全文"
+    ],
+    "sourcePdfUrl": "https://www.jinji.go.jp/content/000018339.pdf",
+    "sourceAnswerUrl": "https://www.jinji.go.jp/content/000018339.pdf#page=40",
+    "license": "JINJI-attributed",
+    "sourceAttribution": "出典：人事院「2026年度 総合職試験（大卒程度試験）教養区分以外 基礎能力試験」No. 27。",
+    "officialReferenceUrls": [
+      "https://www.anzen.mofa.go.jp/info/pchazardspecificinfo_2026T037.html"
+    ]
+  },
+  {
+    "id": "kokka-sogo-dai-2026-annual-kiso-q28",
+    "exam": "kokka-sogo-dai",
+    "year": 2026,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 28,
+    "subject": "基礎能力試験",
+    "type": "multiple-choice",
+    "category": "時事",
+    "topicTags": [
+      "時事",
+      "基礎能力試験"
+    ],
+    "difficulty": 3,
+    "question": "近年の我が国の政府の動きに関する記述として最も妥当なのはどれか。",
+    "choices": {
+      "ア": "国際卓越研究大学",
+      "イ": "取調べの録音・録画と裁判員裁判",
+      "ウ": "放課後児童クラブとこども家庭庁",
+      "エ": "地域別最低賃金",
+      "オ": "ローマ字のつづり方"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "厚生労働省が公表した令和7年度の地域別最低賃金答申では、最低額が1,023円、全国加重平均の引上げ幅が過去最大の66円だった。",
+    "choiceExplanations": {
+      "ア": "第1期で認定された大学数に着目する。",
+      "イ": "裁判員裁判の対象と録音・録画の義務の範囲を切り分ける。",
+      "ウ": "放課後児童クラブの待機児童数の推移と、こども家庭庁の所管を分けて確認する。",
+      "エ": "改定答申の全国加重平均の引上げ幅と、全都道府県の最低額が一致する。",
+      "オ": "表記のよりどころを示す告示が、既存の地名表記に及ぼす効果に注意する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/kokka-sogo-dai/2026-kiso/q28-1.webp"
+    ],
+    "imageAltTexts": [
+      "政府の動きについての問題文と選択肢の全文"
+    ],
+    "sourcePdfUrl": "https://www.jinji.go.jp/content/000018339.pdf",
+    "sourceAnswerUrl": "https://www.jinji.go.jp/content/000018339.pdf#page=40",
+    "license": "JINJI-attributed",
+    "sourceAttribution": "出典：人事院「2026年度 総合職試験（大卒程度試験）教養区分以外 基礎能力試験」No. 28。",
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/stf/newpage_63030.html"
+    ]
+  },
+  {
+    "id": "kokka-sogo-dai-2026-annual-kiso-q29",
+    "exam": "kokka-sogo-dai",
+    "year": 2026,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 29,
+    "subject": "基礎能力試験",
+    "type": "multiple-choice",
+    "category": "時事",
+    "topicTags": [
+      "時事",
+      "基礎能力試験"
+    ],
+    "difficulty": 3,
+    "question": "我が国をめぐる最近の動きなどに関する記述として最も妥当なのはどれか。",
+    "choices": {
+      "ア": "琵琶湖疏水施設と太陽の塔",
+      "イ": "USスチール買収と八幡製鉄所",
+      "ウ": "職場の熱中症対策",
+      "エ": "戦後80年と追悼式",
+      "オ": "道路整備と公債"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "令和7年6月施行の改正労働安全衛生規則では、一定の作業について熱中症の報告体制、重篤化を防ぐ手順、関係作業者への周知が事業者に求められた。",
+    "choiceExplanations": {
+      "ア": "施設が造られた時期と、太陽の塔が建てられた万博の年を分けて確認する。",
+      "イ": "買収後の持株比率と、黄金株による権限を分けて確認する。",
+      "ウ": "熱中症対策に関する三つの義務が、厚生労働省の施行通知の内容と一致する。",
+      "エ": "追悼式の主催者と、戦没者数の桁を確認する。",
+      "オ": "道路整備計画で示された内容と、建設公債・特例公債の発行経緯を区別する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/kokka-sogo-dai/2026-kiso/q29-1.webp"
+    ],
+    "imageAltTexts": [
+      "最近の日本についての問題文と選択肢の全文"
+    ],
+    "sourcePdfUrl": "https://www.jinji.go.jp/content/000018339.pdf",
+    "sourceAnswerUrl": "https://www.jinji.go.jp/content/000018339.pdf#page=40",
+    "license": "JINJI-attributed",
+    "sourceAttribution": "出典：人事院「2026年度 総合職試験（大卒程度試験）教養区分以外 基礎能力試験」No. 29。",
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/web/t_doc?dataId=00tc9174&dataType=1&pageNo=1"
+    ]
+  },
+  {
+    "id": "kokka-sogo-dai-2026-annual-kiso-q30",
+    "exam": "kokka-sogo-dai",
+    "year": 2026,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 30,
+    "subject": "基礎能力試験",
+    "type": "multiple-choice",
+    "category": "情報",
+    "topicTags": [
+      "情報",
+      "基礎能力試験"
+    ],
+    "difficulty": 3,
+    "question": "図の数の配列を表計算ソフトで表示するとき、計算式ア・イ・ウの組合せはどれか。",
+    "choices": {
+      "ア": "ア：FACT(A2)/FACT(B2)　イ：IF(A2＝B2, A2＋1, A2)　ウ：IF(A2＝B2, 1, B2＋1)",
+      "イ": "ア：FACT(A2−1)/FACT(B2−1)　イ：IF(A2＜B2, A2＋1, A2)　ウ：IF(A2＞B2, 1, B2＋1)",
+      "ウ": "ア：FACT(A2−1)/FACT(B2−1)　イ：IF(A2＝B2, A2, A2＋1)　ウ：IF(A2＝B2, B2, B2＋1)",
+      "エ": "ア：FACT(A2−1)/FACT(B2−1)/FACT(A2−B2)　イ：IF(A2≠B2, 1, A2＋1)　ウ：IF(A2＞B2, 1, B2＋1)",
+      "オ": "ア：FACT(A2−1)/FACT(B2−1)/FACT(A2−B2)　イ：IF(A2＝B2, A2＋1, A2)　ウ：IF(A2＝B2, 1, B2＋1)"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "m段n番は(m−1)!÷[(n−1)!(m−n)!]。現在の段と番が等しいとき、次行は段を1増やし、番を1に戻す。",
+    "choiceExplanations": {
+      "ア": "アでは階乗の引数を1つ減らす必要があり、(段−番)!でも割る。",
+      "イ": "イの判定条件では、番が段に到達したときに段が進まない。",
+      "ウ": "段を進める条件の真偽が逆で、アの分母も一つ不足する。",
+      "エ": "イ・ウともに、段と番が等しいときの更新を表せない。",
+      "オ": "アで組合せを計算し、イ・ウで各段の最後から次段の先頭へ移れる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/kokka-sogo-dai/2026-kiso/q30-1.webp",
+      "/images/questions/kokka-sogo-dai/2026-kiso/q30-2.webp"
+    ],
+    "imageAltTexts": [
+      "表計算の手順と段ごとの数の配列",
+      "表計算の結果の例と使用する用語及び関数の説明"
+    ],
+    "sourcePdfUrl": "https://www.jinji.go.jp/content/000018339.pdf",
+    "sourceAnswerUrl": "https://www.jinji.go.jp/content/000018339.pdf#page=40",
+    "license": "JINJI-attributed",
+    "sourceAttribution": "出典：人事院「2026年度 総合職試験（大卒程度試験）教養区分以外 基礎能力試験」No. 30。"
+  }
+]

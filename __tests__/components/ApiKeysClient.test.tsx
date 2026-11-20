@@ -28,7 +28,7 @@ describe("ApiKeysClient — コピー成功の SR 通知", () => {
 
     // キーを 1 件発行してからコピー
     fireEvent.click(screen.getByRole("button", { name: /発行する/ }));
-    fireEvent.click(screen.getByRole("button", { name: /^コピー$/ }));
+    fireEvent.click(screen.getByRole("button", { name: "「API Key 1」をコピー" }));
 
     await waitFor(() => {
       expect(screen.getByRole("status")).toHaveTextContent("API キーをコピーしました");

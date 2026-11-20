@@ -1,3 +1,4 @@
+import { expectPublishedKhk2026 } from "../fixtures/khk-2026-publication";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
@@ -49,17 +50,19 @@ describe("2026 KHK hei-special private source corpus", () => {
     }
   });
 
-  it("keeps staged occurrences and source images out of all serving pools", async () => {
+  it("publishes the reviewed originals and approved assets while retaining the staging snapshot", async () => {
     const ids = new Set(KHK_2026_HEI_SPECIAL_STAGING.map(q => q.id));
     expect(manifest.publicAllowed).toBe(false);
     expect(KHK_2026_HEI_SPECIAL_STAGING.every(q => q.publicAllowed === false)).toBe(true);
-    for (const pool of [ready, publicQuestions, QUESTIONS_BY_EXAM["khk-kagaku"], await getQuestionsForExam("khk-kagaku")]) {
-      expect(pool!.some(q => ids.has(q.id))).toBe(false);
+    for (const pool of [ready, publicQuestions]) {
+      expect(pool.some(q => ids.has(q.id))).toBe(false);
     }
+    expectPublishedKhk2026(KHK_2026_HEI_SPECIAL_STAGING, QUESTIONS_BY_EXAM["khk-kagaku"] ?? []);
+    expectPublishedKhk2026(KHK_2026_HEI_SPECIAL_STAGING, await getQuestionsForExam("khk-kagaku"));
     const loader = readFileSync(resolve("data/questions/khk-kagaku/assets.server.ts"), "utf8");
     for (const asset of review.assets) {
-      expect(imageAllowlist).not.toContain(asset.file);
-      expect(loader).not.toContain(asset.file.split("/").at(-1));
+      expect(imageAllowlist).toContain(asset.file);
+      expect(loader).toContain(asset.file.split("/").at(-1));
     }
   });
 

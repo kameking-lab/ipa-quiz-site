@@ -2,10 +2,13 @@ import { createHmac } from "node:crypto";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { monthlyStripeFixture } from "./monthly-stripe-fixture";
 import { firstTouch } from "@/lib/analytics/first-touch";
+vi.mock("@/lib/billing/duplicate-purchase-runtime", () => ({ assertNoDuplicatePurchase: async () => {} }));
 const wiring = vi.hoisted(() => ({ runtime: null as unknown, user: "alice", email: undefined as string | undefined }));
 const record = vi.hoisted(() => vi.fn<(...args: unknown[]) => Promise<boolean>>(async () => true));
 const saveSource = vi.hoisted(() => vi.fn(async () => {}));
 const readSource = vi.hoisted(() => vi.fn<(...args: unknown[]) => Promise<unknown>>(async () => null));
+const conversion = vi.hoisted(() => ({ record: vi.fn<(...args: unknown[]) => Promise<boolean>>(async () => false), save: vi.fn<(...args: unknown[]) => Promise<void>>(async () => {}), channel: vi.fn<(...args: unknown[]) => Promise<string>>(async () => "web") }));
+vi.mock("@/lib/billing/conversion", () => ({ recordConversion: conversion.record, saveConversionChannel: conversion.save, readConversionChannel: conversion.channel, conversionChannel: (r: Request) => r.headers.get("X-Kakomon-Native") === "ios" ? "ios" : "web" }));
 vi.mock("@/lib/billing/funnel", () => ({ recordFunnel: record, saveOrderAttribution: saveSource, readOrderAttribution: readSource }));
 vi.mock("@/lib/billing/checkout-email", () => ({ checkoutEmail: async () => wiring.email }));
 vi.mock("@/lib/billing/subscription/runtime", () => ({ monthlyRuntime: () => wiring.runtime }));
@@ -26,6 +29,7 @@ function signed(event: unknown) {
 }
 const post = (body: unknown) => new Request("http://localhost:3338/api/billing/checkout", { method: "POST", headers: { origin: "http://localhost:3338" }, body: JSON.stringify(body) });
 beforeEach(() => {
+  conversion.record.mockClear(); conversion.save.mockClear(); conversion.channel.mockClear();
   record.mockClear(); saveSource.mockClear(); readSource.mockReset().mockResolvedValue(null); wiring.user = "alice"; wiring.email = undefined;
   vi.stubGlobal("fetch", () => { throw new Error("External fetch forbidden"); });
   for (const [key, value] of Object.entries({ BILLING_PRODUCT: "subscription", BILLING_WEBHOOK_MODE: "stripe-test", BILLING_SOURCE_INSTANCE: "monthly-fixture", BILLING_ORIGIN: "http://localhost:3338", BILLING_STRIPE_TEST_WEBHOOK_SECRET: secret })) vi.stubEnv(key, value);
@@ -40,6 +44,7 @@ describe("server-confirmed funnel steps", () => {
     ["work-environment-measurement-expert-first_kakomon_my_next_steps_sagyo-kankyo-sokuteishi", "work-environment-measurement-expert-first.my_next_steps.source-1"],
   ])("links real sender label %s through the checkout and verified webhook", async (raw, content) => {
     const f = await monthlyStripeFixture(); wiring.runtime = f;
+    f.session.status = "open";
     localStorage.clear();
     window.history.replaceState({}, "", `/?utm_source=tsugino_shikaku&utm_content=${encodeURIComponent(raw)}`);
     const touch = { utm_source: "tsugino_shikaku", utm_content: content };
@@ -52,6 +57,7 @@ describe("server-confirmed funnel steps", () => {
     expect(saveSource).toHaveBeenCalledWith(result.orderId, touch);
     expect(record).toHaveBeenCalledWith("checkout_started", "user:alice", expect.any(Number), touch);
     readSource.mockResolvedValueOnce(touch);
+    f.session.status = "complete";
     const completed = { id: "evt_source_done", type: "checkout.session.completed", livemode: false, data: { object: { ...f.session, status: "complete", mode: "subscription", client_reference_id: result.orderId } } };
     expect((await webhook(signed(completed))).status).toBe(200);
     expect(readSource).toHaveBeenCalledWith(result.orderId);
@@ -59,12 +65,32 @@ describe("server-confirmed funnel steps", () => {
   });
   it("counts checkout_started per signed-in user only after a Checkout session exists", async () => {
     const f = await monthlyStripeFixture(); wiring.runtime = f;
+    f.session.status = "open";
     const response = await checkout(post({ terms: monthlyTerms(f.config) }));
     expect(response.status).toBe(200);
     expect(record).toHaveBeenCalledWith("checkout_started", "user:alice");
+    // The fixture already created its pending session: retrieving its URL is not a creation.
+    expect(conversion.record).not.toHaveBeenCalled();
     record.mockClear();
     expect((await checkout(post({ terms: "0".repeat(64) }))).status).not.toBe(200);
     expect(record).not.toHaveBeenCalled();
+  });
+  it("counts a newly created session after commit and leaves Checkout usable when measurement fails", async () => {
+    const f = await monthlyStripeFixture(); wiring.runtime = f; f.visible(false);
+    f.session.status = "open";
+    await f.store.transaction("alice", f.config.mode, f.config.sourceInstance, async account => {
+      const prior = account.signups[f.result.orderId];
+      Object.assign(prior, { state: "failed", sessionId: null, url: null });
+    });
+    const response = await checkout(post({ terms: monthlyTerms(f.config) }));
+    expect(response.status).toBe(200);
+    const { orderId } = await response.json();
+    expect(orderId).not.toBe(f.result.orderId);
+    expect((await f.service.status("alice", orderId)).purchase?.status).toBe("pending");
+    expect(conversion.record).toHaveBeenCalledExactlyOnceWith("checkout_created", "web", orderId);
+    expect(conversion.save).toHaveBeenCalledWith(orderId, "web");
+    expect((await checkout(post({ terms: monthlyTerms(f.config) }))).status).toBe(200);
+    expect(conversion.record).toHaveBeenCalledTimes(1);
   });
   it("counts checkout_completed once per Stripe session from the verified webhook, not for other events", async () => {
     const f = await monthlyStripeFixture(); wiring.runtime = f;
@@ -73,6 +99,19 @@ describe("server-confirmed funnel steps", () => {
     const completed = { id: "evt_session_done", type: "checkout.session.completed", livemode: false, data: { object: { ...f.session, id: f.session.id, status: "complete", mode: "subscription" } } };
     expect((await webhook(signed(completed))).status).toBe(200);
     expect(record).toHaveBeenCalledWith("checkout_completed", `session:${f.session.id}`);
+  });
+  it("measures paid subscription sessions only after webhook fulfillment, including async success and original event day", async () => {
+    const f = await monthlyStripeFixture(); wiring.runtime = f;
+    const created = Math.floor(Date.now() / 1000) - 86400;
+    for (const [index, type] of ["checkout.session.completed", "checkout.session.async_payment_succeeded"].entries()) {
+      const event = { id: `evt_paid_${index}`, type, created, livemode: false, data: { object: { ...f.session, status: "complete", mode: "subscription", payment_status: "paid", client_reference_id: "order_fixture" } } };
+      expect((await webhook(signed(event))).status).toBe(200);
+      expect(conversion.record).toHaveBeenLastCalledWith("payment_completed", "web", f.session.id, created * 1000);
+    }
+    conversion.record.mockClear();
+    const unpaid = { id: "evt_unpaid", type: "checkout.session.completed", livemode: false, data: { object: { ...f.session, status: "complete", mode: "subscription", payment_status: "unpaid" } } };
+    expect((await webhook(signed(unpaid))).status).toBe(200);
+    expect(conversion.record).not.toHaveBeenCalled();
   });
 });
 
@@ -122,5 +161,33 @@ describe("Stripe Checkout stays minimal", () => {
     expect(posts).toHaveLength(1);
     status = "complete";
     await expect(f.provider.expireCheckout("cs_test_old")).rejects.toMatchObject({ code: "subscription_exists" });
+  });
+  it("reads a Checkout whose creation response was lost and verifies the saved signup binding", async () => {
+    const f = await monthlyStripeFixture();
+    const signup = f.store.accounts.get("stripe-test:alice")!.signups[f.result.orderId];
+    await expect(f.provider.checkoutSession("cus_monthly", signup)).resolves.toEqual({ id: f.session.id, status: "complete", subscriptionId: f.session.subscription });
+    const original = vi.mocked(f.fetcher).getMockImplementation()!;
+    vi.mocked(f.fetcher).mockImplementation((input, options) => {
+      const url = new URL(String(input));
+      if (url.pathname !== "/v1/checkout/sessions") return original(input, options);
+      expect(url.searchParams.get("customer")).toBe("cus_monthly");
+      return Promise.resolve(Response.json({ data: [f.session], has_more: false }));
+    });
+    const lost = { ...signup, sessionId: null, url: null };
+    await expect(f.provider.checkoutSession("cus_monthly", lost)).resolves.toEqual({ id: f.session.id, status: "complete", subscriptionId: f.session.subscription });
+    f.session.metadata.terms_hash = "changed";
+    await expect(f.provider.checkoutSession("cus_monthly", lost)).rejects.toThrow();
+  });
+  it("does not treat a concurrent Checkout completion as a cancellation", async () => {
+    const f = await monthlyStripeFixture();
+    const original = vi.mocked(f.fetcher).getMockImplementation()!;
+    f.session.status = "open";
+    vi.mocked(f.fetcher).mockImplementation((input, options) => {
+      if (!String(input).endsWith("/expire")) return original(input, options);
+      f.session.status = "complete";
+      return Promise.resolve(new Response(null, { status: 400 }));
+    });
+    await expect(f.service.cancelCheckout("alice", f.result.orderId, f.provider)).rejects.toMatchObject({ code: "subscription_exists" });
+    expect((await f.service.status("alice", f.result.orderId)).purchase?.status).toBe("pending");
   });
 });

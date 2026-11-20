@@ -5,10 +5,8 @@ import { EXAM_CATALOG } from "@/lib/exam-library-catalog";
 import { parseExamChoiceExplanation } from "@/lib/exam-library-choice-explanations";
 import { requiredStructuredChoiceQuestionIds } from "@/lib/exam-library-coverage";
 import { listAvailableExamIds, loadExamPaper } from "@/lib/exam-library-papers";
-import { isScorableQuestion } from "@/lib/exam-library-model";
+import { gradeExamAnswer, isScorableQuestion } from "@/lib/exam-library-model";
 import explanations from "@/data/exam-library/explanations.json";
-import peContinuation from "@/reports/LQ3B-20261104/adoption-manifest.json";
-import peLq3d from "@/reports/LQ3D-20261104/adoption-manifest.json";
 
 const isReviewedOctoberImport = (id: string) => /^lckohyo-LC202621(?:0[23679]|1[01279])-q\d+$/.test(id);
 
@@ -26,9 +24,21 @@ describe("official exam library integration", () => {
       .filter((question) => authoredIds.has(question.id) && !isReviewedOctoberImport(question.id))
       .map((question) => [question.id, question.correctChoice, question.answerAuthority])
       .sort((left, right) => String(left[0]).localeCompare(String(right[0])));
-    // 既存の択一式に加え、労働安全・労働衛生コンサルタント5年分の記述式84問も原本照合。
+    // コンサルタントの記述式84問、特級ボイラーの記述・複数選択16問、全員正解扱いの1問も含める。
     expect(createHash("sha256").update(JSON.stringify(answerSnapshot)).digest("hex"))
-      .toBe("091d1189ae5dcb5bd02077a23580b8c1c94b9c6b59483b2033ce316f0e2f758c");
+      .toBe("76f0daaa0708b4132a76aaae60eab4758999dedb5174b0fc8e7e800b634527e0");
+  });
+
+  it("keeps the 2022 metals question 1 available without grading any of its options", () => {
+    const paper = loadExamPaper("emkohyo-EM20221808")!;
+    expect(paper.map((q) => q.sourceQuestionNumber)).toEqual(Array.from({ length: 20 }, (_, i) => i + 1));
+    const first = paper[0]!;
+    expect(first).toMatchObject({
+      sourcePages: [2], choiceCount: 5, correctChoice: null, officialAllCandidatesCorrect: true,
+    });
+    expect(first.explanation).toContain("受験者全員を正解");
+    for (const option of [1, 2, 3, 4, 5]) expect(gradeExamAnswer(first, option)).toBe("unscored");
+    expect(paper.slice(1).map((q) => q.correctChoice)).toEqual([1, 2, 2, 2, 2, 3, 3, 2, 1, 4, 3, 2, 5, 4, 2, 3, 1, 4, 4]);
   });
 
   it("loads every catalog paper from the site's data root without inventing answer keys", () => {
@@ -50,13 +60,10 @@ describe("official exam library integration", () => {
     const surveySnapshot = answerSnapshot.filter(([id]) => String(id).startsWith("private-gsi-survey-assistant-20261021-"));
     const peIds = new Set(EXAM_CATALOG.filter(entry => entry.group === "pe-first").flatMap(entry => (loadExamPaper(entry.id) ?? []).map(question => question.id)));
     const peSnapshot = answerSnapshot.filter(([id]) => peIds.has(String(id)));
-    const existingSnapshot = answerSnapshot.filter(([id]) => !String(id).startsWith("private-gsi-survey-assistant-20261021-") && !peIds.has(String(id)) && !isReviewedOctoberImport(String(id)));
-    expect(answerSnapshot).toHaveLength(3153 + (peContinuation.length + peLq3d.length) * 35);
-    expect(peSnapshot).toHaveLength(594 + (peContinuation.length + peLq3d.length) * 35);
-    // Preserve the previous 2,154 official keys independently of the new reviewed packet.
-    expect(existingSnapshot).toHaveLength(2154);
-    expect(createHash("sha256").update(JSON.stringify(existingSnapshot)).digest("hex"))
-      .toBe("19ccb2b8b929d92f89d11f9ee3e5707123e92a2ed478dc9d761ddad8b8c8736d");
+    expect(answerSnapshot).toHaveLength(5598);
+    expect(createHash("sha256").update(JSON.stringify(answerSnapshot)).digest("hex"))
+      .toBe("8ef01d1a490868ce59f8afb0d5b964d2a15bd40ebbce3a72ad29d58193dd66b6");
+    expect(peSnapshot).toHaveLength(2222);
     // Bound to the existing packet's 55 officialKey values; 2026 No.12 stays unscored.
     expect(surveySnapshot).toHaveLength(55);
     expect(createHash("sha256").update(JSON.stringify(surveySnapshot)).digest("hex"))

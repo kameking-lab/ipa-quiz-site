@@ -16,5 +16,5 @@ export function ManageSubscriptionButton({label="契約管理・解約・支払�
       setBusy(false);
     } catch (e) { setBusy(false); setError(e instanceof Error ? e.message : "契約管理を開けませんでした。"); }
   }
-  return <div><button className="min-h-11 rounded-lg border px-4" disabled={busy} onClick={manage}>{busy ? "確認中…" : label}</button>{error && <p role="alert">{error}</p>}</div>;
+  return <div><button className="min-h-12 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-50" disabled={busy} onClick={manage}>{busy ? "確認中…" : label}</button>{error && <p role="alert" className="mt-3 text-sm leading-relaxed text-destructive">{error}</p>}</div>;
 }

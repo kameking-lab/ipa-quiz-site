@@ -16,6 +16,8 @@ export type SsscSourceItem = {
   summary: string;
   choiceExplanations: string[];
   lawSensitive: boolean;
+  officialReferenceUrls?: string[];
+  lastUpdated?: string;
 };
 
 export type SsscSource = {
@@ -79,8 +81,9 @@ export function toSsscQuestion(
     hasImage: false,
     sourcePdfUrl: pdf.url,
     sourceAnswerUrl: edition.answerUrl,
+    officialReferenceUrls: item.officialReferenceUrls,
     sourceAttribution: `出典：公益財団法人社会福祉振興・試験センター ${edition.title} ${SESSION_LABEL[item.session]} 問題${item.number}。${SSSC_INDEPENDENCE_NOTICE}`,
     license: "SSSC-reuse",
-    lastUpdated: edition.lastUpdated ?? "2026-09-26",
+    lastUpdated: item.lastUpdated ?? edition.lastUpdated ?? "2026-09-26",
   };
 }

@@ -1,3 +1,4 @@
+import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import { TsuginoWelcome } from "@/components/analytics/TsuginoWelcome";
 import { referralPracticeHref } from "@/lib/questions/referral-practice";
 import type { Metadata } from "next";
@@ -6,13 +7,13 @@ import { ArrowRight, BookOpenCheck } from "lucide-react";
 import { DENKEN3_QUESTIONS } from "@/data/questions/denken3";
 import { ExamYearArchiveLinks } from "@/components/seo/ExamYearArchiveLinks";
 import type { Session } from "@/lib/questions/types";
-import { DENKEN3_NATIVE_SUBJECTS, DENKEN3_NEW_ORIGINAL_COUNT, DENKEN3_PUBLISHED_ORIGINAL_COUNT, denken3NativeSubjectPath } from "@/lib/denken3/native";
+import { DENKEN3_NATIVE_QUESTIONS, DENKEN3_NATIVE_SUBJECTS, DENKEN3_PUBLISHED_ORIGINAL_COUNT, denken3NativeSittingLabel, denken3NativeSubjectPath } from "@/lib/denken3/native";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalSocialMetadata({
   title: "電験三種 過去問｜理論・電力・機械・法規",
-  description: "電験三種の確認済み325原問を収録。2026年度上期の理論・電力・機械・法規と2025年度下期の理論・電力・機械・法規は、原本画像と5肢の解説を原問単位で確認できます。",
+  description: `電験三種の${DENKEN3_PUBLISHED_ORIGINAL_COUNT}原問を収録。理論・電力・機械・法規の過去問を、年度と科目から選べます。`,
   alternates: { canonical: "/denken3" },
-};
+});
 
 const SUBJECTS: { session: Session; name: string; description: string }[] = [
   { session: "riron", name: "理論", description: "電気・電子の基礎と計測" },
@@ -48,7 +49,7 @@ export default async function Denken3Page({ searchParams }: { searchParams: Prom
       </div>
       <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">電験三種の過去問</h1>
       <p className="mt-3 max-w-2xl leading-relaxed text-muted-foreground">
-        2024・2025年度の従来演習320回答単位（264原問）を保持し、確認済みの原問を61題追加しました。現在、固有{DENKEN3_PUBLISHED_ORIGINAL_COUNT}原問を収録しています。従来演習の全肢解説319回答単位と、公式正答・一般解説1回答単位も利用できます。
+        理論・電力・機械・法規の過去問を{DENKEN3_PUBLISHED_ORIGINAL_COUNT}原問収録しています。
       </p>
 
       <section aria-label="年度と期を選ぶ" className="mt-7 rounded-2xl border border-border bg-card p-4 sm:p-5">
@@ -93,9 +94,9 @@ export default async function Denken3Page({ searchParams }: { searchParams: Prom
       </section>
       <section aria-labelledby="denken3-native" className="mt-9">
         <h2 id="denken3-native" className="text-xl font-bold">原本画像付きの原問演習</h2>
-        <p className="mt-2 text-sm leading-7 text-muted-foreground">確認済み121原問・148回答欄を原問単位で掲載。旧演習と重なる2025年度下期の理論18原問・機械18原問・電力16原問・法規8原問を除いた純増は{DENKEN3_NEW_ORIGINAL_COUNT}原問です。両期の理論・機械Q17・Q18は、各科目で本試験では一方だけ解答します。未確認の問題と二次試験は掲載していません。</p>
+        <p className="mt-2 text-sm leading-7 text-muted-foreground">{DENKEN3_NATIVE_QUESTIONS.length}原問・{DENKEN3_NATIVE_QUESTIONS.reduce((sum, q) => sum + q.slots.length, 0)}回答欄を原本画像とともに収録しています。</p>
         <div className="mt-4 grid gap-3 sm:grid-cols-2">{DENKEN3_NATIVE_SUBJECTS.map(part => {
-          const label = part.sitting === "2026-upper" ? "2026年度上期" : "2025年度下期";
+          const label = denken3NativeSittingLabel(part.sitting);
           const name = part.subject === "theory" ? "理論" : part.subject === "power" ? "電力" : part.subject === "machine" ? "機械" : "法規";
           return <Link key={`${part.sitting}-${part.subject}`} href={denken3NativeSubjectPath(part.sitting, part.subject)}
             className="rounded-2xl border border-border bg-card p-5 text-primary underline focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/40">

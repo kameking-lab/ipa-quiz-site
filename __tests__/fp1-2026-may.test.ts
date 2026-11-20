@@ -40,7 +40,8 @@ describe("FP1 2026 May academic pilot", () => {
   });
 
   it("renders the supplied coefficient table as a real table", () => {
-    const blocks = parseQuestionBlocks(FP1_QUESTIONS[0]!.question);
+    const question = FP1_QUESTIONS.find(q => q.id === "fp1-2026-may-gakka-q1")!;
+    const blocks = parseQuestionBlocks(question.question);
     const table = blocks.find((block) => block.kind === "table");
     expect(table).toBeDefined();
     if (table?.kind === "table") {
@@ -48,6 +49,6 @@ describe("FP1 2026 May academic pilot", () => {
       expect(table.rows).toHaveLength(3);
       expect(table.rows[2]?.[5]).toBe("14.8775");
     }
-    expect(FP1_QUESTIONS[0]!.explanation).toContain("1,906.37578万円");
+    expect(question.explanation).toContain("1,906.37578万円");
   });
 });

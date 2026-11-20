@@ -40,7 +40,7 @@ test.describe("prune batch A", () => {
       localStorage.setItem("ipa-quiz:character-enabled:v1", "true");
     });
     await page.goto("/settings#character");
-    await expect(page.getByRole("heading", { name: "設定とプリファレンス" })).toBeVisible();
+    await expect(page.getByRole("heading", { level: 1, name: "設定", exact: true })).toBeVisible();
     await expect(page.getByRole("radiogroup", { name: "AI キャラクター選択" })).toHaveCount(0);
     await expect(page.getByRole("link", { name: "AIキャラ", exact: true })).toHaveCount(0);
     expect(await page.evaluate(() => localStorage.getItem("ipa-quiz:character:v1"))).toBe("zan");
@@ -53,8 +53,10 @@ test.describe("prune batch A", () => {
       ] }));
     });
     await page.goto("/ranking");
-    await expect(page.getByRole("tab", { name: "模試記録", exact: true })).toHaveAttribute("aria-selected", "true");
-    await expect(page.getByText("80%", { exact: true }).first()).toBeVisible();
+    await expect(page).toHaveURL("/account/dashboard#mock-scores");
+    const scores = page.locator("details#mock-scores");
+    await expect(scores).toHaveJSProperty("open", true);
+    await expect(scores.getByText("80%", { exact: true }).first()).toBeVisible();
     await expect(page.getByText(/仮の分布|分布デモ/)).toHaveCount(0);
   });
 

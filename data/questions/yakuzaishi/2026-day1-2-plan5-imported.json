@@ -1,0 +1,876 @@
+[
+  {
+    "id": "yakuzaishi-2026-annual-theory-q91",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 91,
+    "officialAnswerNumber": "3,4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "ファンデルワールスの状態方程式（1）は、理想気体の状態方程式を実在気体について補正した式の1つである。理想気体とファンデルワールスの状態方程式に関する記述として正しいのはどれか。２つ選べ。\n（p + an²/V²）（V − nb）= nRT　　（1）\np：圧力、V：体積、n：物質量（mol）、R：気体定数、T：絶対温度",
+    "choices": {
+      "ア": "理想気体では、気体分子間の相互作用の大きさを正の一定の値と仮定している。",
+      "イ": "a は気体分子の衝突頻度を表す。",
+      "ウ": "b は気体分子1 mol がもつ排除体積を表す。",
+      "エ": "p + an²/V² は、気体分子間の相互作用を考慮して補正した圧力である。",
+      "オ": "（V − nb）は、気体分子間の相互作用を考慮して補正した体積である。"
+    },
+    "answer": [
+      "ウ",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "ファンデルワールス式は、理想気体の式 pV = nRT に対し、圧力項を分子間引力で、体積項を分子自身の大きさ（排除体積）で補正した式である。したがって、b が1 mol あたりの排除体積であること（3）と、p + an²/V² が分子間相互作用を考慮した補正圧力であること（4）が正しい。",
+    "choiceExplanations": {
+      "ア": "誤り。理想気体は分子間相互作用がなく、分子自身の体積もないと仮定する。相互作用を正の一定値とするという記述は当てはまらない。",
+      "イ": "誤り。a は分子間引力の大きさを表す定数であり、衝突頻度ではない。",
+      "ウ": "正しい。b は分子1 mol がもつ排除体積（分子自身の大きさによって他の分子が入れない体積）を表す。",
+      "エ": "正しい。実在気体では分子間引力のため、測定される圧力 p は理想的な圧力より小さくなる。そのため an²/V² を加えて補正した圧力として扱う。",
+      "オ": "誤り。V − nb は、分子自身の大きさ（排除体積）を除いた、分子が自由に動ける体積への補正である。分子間相互作用を考慮した補正ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf#page=2",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題）問91（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q95",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 95,
+    "officialAnswerNumber": "2,5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "日本薬局方赤外吸収スペクトル測定法に関する記述として、正しいのはどれか。２つ選べ。",
+    "choices": {
+      "ア": "赤外線の波長領域は、紫外線と可視光線の間にある。",
+      "イ": "赤外線の波数 4000 cm⁻¹ を波長に換算すると、2.5 μm である。",
+      "ウ": "赤外吸収は、振動によって分子の分極率が変化するときに観測される。",
+      "エ": "赤外吸収スペクトルの指紋領域は特性吸収帯より高波数側にある。",
+      "オ": "固体だけではなく、液体や気体の試料でも赤外吸収スペクトルを測定できる。"
+    },
+    "answer": [
+      "イ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "波数 4000 cm⁻¹ は波長 1/4000 cm = 2.5×10⁻⁴ cm = 2.5 μm に相当する（2）。また、赤外吸収スペクトルは固体のほか、液体や気体の試料でも測定できる（5）。",
+    "choiceExplanations": {
+      "ア": "誤り。赤外線は可視光線よりも長波長側にあり、紫外線と可視光線の間にはない。",
+      "イ": "正しい。波長 = 1/波数 = 1/(4000 cm⁻¹) = 2.5×10⁻⁴ cm = 2.5 μm である。",
+      "ウ": "誤り。赤外吸収が観測されるのは、振動によって双極子モーメントが変化するときである。分極率が変化する振動はラマン散乱で観測される。",
+      "エ": "誤り。指紋領域（約1500〜400 cm⁻¹）は、特性吸収帯（約4000〜1500 cm⁻¹）より低波数側にある。",
+      "オ": "正しい。固体は臭化カリウム錠剤法などで、液体は液膜法などで、気体はガスセルで測定できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf#page=3",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題）問95（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q96",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 96,
+    "officialAnswerNumber": "1,2",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "この定量法に関する記述として正しいのはどれか。２つ選べ。",
+    "choices": {
+      "ア": "日本薬局方において、下線部アの標準液の標定に用いられる標準試薬と 0.5 mol/L 塩酸の標定に用いられる標準試薬は同じである。",
+      "イ": "下線部イでは、本品の量が異なっても第一中和点となる pH の値は変化しない。",
+      "ウ": "0.5 mol/L 硫酸の代わりに 0.5 mol/L 硫酸とファクターが同じ 0.5 mol/L 塩酸を用いても、滴定量は下線部ウの液量と変わらない。",
+      "エ": "下線部エは、メチルオレンジのほとんどが化学構造ｂからａに変化した結果である。",
+      "オ": "空欄 オ に入れるべき数字は、80.00 である。"
+    },
+    "answer": [
+      "ア",
+      "イ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "第一中和点（イ）は、NaOH が中和され Na2CO3 が NaHCO3 になった時点である。この溶液は炭酸水素ナトリウム水溶液であり、pH は約8.3で、量にほとんど依存しない。0.5 mol/L 硫酸と 0.5 mol/L 塩酸はいずれも炭酸ナトリウム（標準試薬）で標定する。",
+    "choiceExplanations": {
+      "ア": "正しい。0.5 mol/L 硫酸も 0.5 mol/L 塩酸も、標準試薬の炭酸ナトリウムで標定する。",
+      "イ": "正しい。第一中和点の溶液は NaHCO3 の両性物質の溶液で、pH は (pKa1 + pKa2)/2 に近い値となり、試料量が変わっても変化しない。",
+      "ウ": "誤り。0.5 mol/L 硫酸は H⁺ を 1 mol/L 供給するが、0.5 mol/L 塩酸は 0.5 mol/L である。同じ酸の物質量に必要な液量は塩酸のほうが約2倍になるため、滴定量は変わる。",
+      "エ": "誤り。メチルオレンジは、塩基性側ではアゾ型（a、黄色）、酸性側ではキノイド型（b、赤色）である。第二中和点での淡赤色は、aからbへ変化した結果であり、記述は逆である。",
+      "オ": "誤り。0.5 mol/L 硫酸 1 mL は H⁺ 1 mmol に相当し、NaOH（1価）1 mmol = 40.00 mg に当たる。80.00 は 1 mol/L 硫酸 1 mL に相当する値であり、正しくは 40.00 である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf#page=5",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問96（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q096-physical-formulation-1.png",
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q096-physical-formulation-2.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問96の原図1",
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問96の原図2"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q97",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 97,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "問 96-97　次の記述は、日本薬局方水酸化ナトリウムの定量に関するものである。この水酸化ナトリウム（NaOH：40.00）は不純物として炭酸ナトリウム（Na2CO3：105.99）のみを含むものとし、下線部イ及びエの時点をそれぞれ第一中和点、第二中和点とする。\n本品約 1.5 g を精密に量り、新たに煮沸して冷却した水 40 mL を加えて溶かし、15 ℃ に冷却した後、フェノールフタレイン試液 2 滴を加え、ア0.5 mol/L 硫酸で滴定し、イ液の赤色が消えたときの 0.5 mol/L 硫酸の量をウA（mL）とする。さらにこの液にメチルオレンジ試液 2 滴を加え、再び 0.5 mol/L 硫酸で滴定し、エ液が持続する淡赤色を呈したときの 0.5 mol/L 硫酸の量を B（mL）とする。（A－B）mL から水酸化ナトリウム（NaOH）の量を計算する。\n0.5 mol/L 硫酸 1 mL ＝ [オ] mg NaOH\n\n前問の定量法において、本品 1.5000 g を量り、0.5 mol/L 硫酸（f = 1.000）で滴定したところ、B = 0.25 mL であった。本品中の不純物である炭酸ナトリウムの含量として最も近いのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "0.9％",
+      "イ": "1.8％",
+      "ウ": "2.5％",
+      "エ": "3.6％",
+      "オ": "5.0％"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "【計算手順】第一中和点（フェノールフタレイン）までに、NaOH の全量が中和され、Na2CO3 は NaHCO3 になる。第二中和点（メチルオレンジ）までの B mL は、NaHCO3 + H+ → H2CO3 の反応にだけ使われる。したがって B は Na2CO3 の量だけを反映する。\n1) 0.5 mol/L 硫酸 0.25 mL の H+ は 0.5 × 2 × 0.25 = 0.25 mmol。\n2) NaHCO3 は H+ と 1:1 で反応する。よって Na2CO3 は 0.25 mmol。\n3) Na2CO3 の質量は 0.25 mmol × 105.99 mg/mmol ≒ 26.5 mg。\n4) 含量は 26.5 mg ÷ 1500.0 mg × 100 ≒ 1.77％ ≒ 1.8％。\nよって 2 が最も近い。",
+    "choiceExplanations": {
+      "ア": "誤り。0.9％は硫酸1 molから生じるH+を1 molとして、酸の当量を半分に見積もったときの値に近い。硫酸は2価の酸なので、Bの滴定で使うH+は0.25 mmolであり、炭酸ナトリウムは0.25 mmolとなる。",
+      "イ": "正しい。H+ 0.25 mmol = Na2CO3 0.25 mmol = 26.5 mg で、1500 mg に対して約 1.77％、すなわち 1.8％となる。",
+      "ウ": "2.5％は 37.5 mg 前後に相当し、上記の計算値 26.5 mg と合わない。誤り。",
+      "エ": "誤り。3.6％は正しい計算値の約2倍である。B区間で使われるH+ 1 molはHCO3− 1 molに対応するため、炭酸ナトリウムの物質量をさらに2倍にすることはできない。",
+      "オ": "5.0％は約 75 mg に相当し、計算値と大きく異なる。誤り。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf#page=5",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問97（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q98",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 98,
+    "officialAnswerNumber": "1,5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "1 mol の金属イオン M と n mol の配位子 L は次のように反応して錯体 MLn を生成する。最終反応生成物の MLn は L と反応しないものとし、また、K は逐次安定度定数を表すものとすると、この錯体生成反応に関する記述として、正しいのはどれか。2つ選べ。ただし、M、L 及び ML のモル濃度はそれぞれ［M］、［L］及び［ML］と表すものとする。\nM ＋ L ⇄(K1) ML\nML ＋ L ⇄(K2) ML2\n…\nMLn－1 ＋ L ⇄(Kn) MLn",
+    "choices": {
+      "ア": "M と L との間で形成される配位結合は、共有結合の一種である。",
+      "イ": "K1 は、K1 ＝ ［M］［L］／［ML］ によって表される。",
+      "ウ": "全安定度定数 βn は、βn ＝ K1 ＋ K2 ＋ … ＋ Kn によって表される。",
+      "エ": "M はルイス塩基、L はルイス酸である。",
+      "オ": "最終反応生成物の MLn は、L が単座配位子であるより、多座配位子である方が錯体としての安定度が高い。"
+    },
+    "answer": [
+      "ア",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "配位結合は、一方の原子が結合電子対を両方とも提供する共有結合である。また、多座配位子はキレート効果により錯体を安定化する。したがって 1 と 5 が正しい。",
+    "choiceExplanations": {
+      "ア": "正しい。配位結合は、配位子の非共有電子対を金属イオンと共有する結合で、共有結合の一種である。",
+      "イ": "誤り。K1 は生成物を分子、反応物を分母にして K1 ＝［ML］／（［M］［L］）と表す。問題文の式は分子と分母が逆である。",
+      "ウ": "誤り。全安定度定数は各逐次安定度定数の積で、βn ＝ K1 × K2 × … × Kn である。和ではない。",
+      "エ": "誤り。電子対を受け取る金属イオン M がルイス酸、電子対を供与する配位子 L がルイス塩基である。記述は逆になっている。",
+      "オ": "正しい。多座配位子は 1 分子で複数の位置から配位してキレート環を作る。このキレート効果（エントロピー的に有利）により、単座配位子の場合より安定度が高くなる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf#page=6",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題）問98（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q101",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 101,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "インドールのモノ臭素化反応において、主生成物Ａが得られる過程で生じるカチオン中間体として、適切なのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "インドールの求電子置換は、ピロール環の C3 位で起こる。Br+ が C3 に付加すると、正電荷は C2 に生じ、窒素原子の非共有電子対で安定化される（イミニウム型の共鳴構造をとれる）。原本の画像では、選択肢2が C3 に Br をもち C2 に + をもつ構造であり、これが適切である。",
+    "choiceExplanations": {
+      "ア": "C2 に Br が付き C3 に + がある構造で、C2 付加に相当する。C3 の正電荷は窒素の非共有電子対と直接共役できず、安定でないため不適切。",
+      "イ": "C3 に Br が付き C2 に + がある構造で、窒素の非共有電子対で安定化される。主生成物（3-ブロモインドール）へ至る中間体として適切。",
+      "ウ": "ベンゼン環との縮合位（C3a）に Br が付く構造で、通常の主経路ではない。ピロール環の C3 付加より安定性が劣るため不適切。",
+      "エ": "ベンゼン環側の位置に Br が付く構造である。インドールではピロール環のほうが反応性が高く、主生成物の中間体とならないため不適切。",
+      "オ": "ベンゼン環側の別の位置に Br が付く構造である。ピロール環の C3 付加が優先するため、主生成物の中間体として不適切。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf#page=8",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問101（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q101-organic-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問101の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q102",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 102,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "求核アシル置換反応の反応性が最も低いのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "求核アシル置換の反応性は、脱離基の脱離しやすさ（脱離基の共役酸の酸性度が強いほど反応しやすい）で決まる。酸塩化物 ＞ 酸無水物 ＞ 活性エステル類 ＞ エステルの順になる。原本の画像では、選択肢4がエチルエステルで脱離基がエトキシドであり、最も脱離しにくく反応性が最も低い。",
+    "choiceExplanations": {
+      "ア": "O-アシルイソ尿素（DCC で活性化したカルボン酸）で、脱離基がジシクロヘキシル尿素となるため非常に反応性が高い。最も低くない。",
+      "イ": "酸無水物で、脱離基はカルボキシラート。反応性が高く、最も低くない。",
+      "ウ": "フェニルエステルで、脱離基のフェノキシドはエトキシドより安定（フェノールのほうが強い酸）。エチルエステルより反応性が高い。",
+      "エ": "エチルエステルで、脱離基のエトキシドは強塩基で脱離しにくい。5 つの中で反応性が最も低い。",
+      "オ": "酸塩化物で、塩化物イオンが優れた脱離基となる。反応性は最も高く、最も低くない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf#page=9",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問102（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q102-organic-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問102の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q103",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 103,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "次の反応式のうち、実際に反応が進行し、主生成物の構造が正しく示されているのはどれか。１つ選べ。ただし、各反応はそれぞれ適切な溶媒を用いて行ったものとする。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "反応が実際に進行し、かつ立体化学を含めた主生成物が正しく描かれているのは 2 である。第二級臭化アルキルにヨウ化物イオン（良好な求核剤）を作用させると SN2 反応が進行し、背面攻撃により立体配置が反転する。原料では Br が楔形結合、生成物では I が破線結合で描かれており、反転が正しく表現されている。",
+    "choiceExplanations": {
+      "ア": "第三級臭化アルキルを水で処理する反応は SN1 型で進行する。中間体は平面状のカルボカチオンであり、水は両面から攻撃するので、主生成物はほぼラセミ体になる。図は立体配置が保持された単一のエナンチオマーとして描かれているため、誤り。",
+      "イ": "正しい。第二級ハロゲン化アルキルとヨウ化物イオンの SN2 反応で、立体配置が反転した生成物（Br が楔形→I が破線）が描かれている。",
+      "ウ": "第三級ハロゲン化アルキルに強塩基・強求核剤であるメトキシドを作用させると、SN2 は立体障害のため起こらず、E2 脱離が優先する。主生成物は 2-メチルプロペンであり、エーテルは主生成物ではないため誤り。",
+      "エ": "第一級臭化アルキルに弱い求核剤であるメタノールを作用させても、SN2 は極めて遅く、SN1 も第一級では起こらない。実際にはほとんど進行しないため誤り。",
+      "オ": "第二級臭化アルキルに嵩高い強塩基 tert-ブトキシドを作用させると、置換ではなく E2 脱離が主となる。主生成物はプロペンであり、エーテルは主生成物ではないため誤り。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf#page=10",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問103（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q103-organic-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問103の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q104",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 104,
+    "officialAnswerNumber": "2,4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "化合物Ａを原料とし、得られる主生成物がラセミ体となる反応はどれか。２つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": [
+      "イ",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "Ａは四置換アルケンで、反応後に 2 つの不斉炭素ができる場合がある。ここで鍵となるのは付加の立体化学である。シン付加で 2 つの不斉炭素が生じた生成物のうち、分子内に対称面を持つ（メソ体）ものはラセミ体にならない。一方、キラルな生成物がアルケンの両面から等確率で生成すれば、ラセミ体となる。ヒドロホウ素化・酸化（2）はシン付加で、1,2-ジメチルシクロペンタノールを与える。この生成物は対称面を持たないキラル分子で、アルケンの上面・下面からの付加により両エナンチオマーが等量生じるのでラセミ体になる。Br2 付加（4）はアンチ付加で、trans-1,2-ジブロモ-1,2-ジメチルシクロペンタンを与える。これもキラルで、両面からの付加によりラセミ体となる。",
+    "choiceExplanations": {
+      "ア": "接触水素化はシン付加で、cis-1,2-ジメチルシクロペンタンを与える。この生成物は対称面を持つメソ体で、光学活性がなくラセミ体でもないので誤り。",
+      "イ": "正しい。ヒドロホウ素化・酸化は H と OH がシン付加し、2 つの不斉炭素を持つキラルなアルコールが生じる。アルケンの両面から等確率で反応するため、一対のエナンチオマーが等量でき、ラセミ体となる。",
+      "ウ": "m-CPBA によるエポキシ化はシン付加で、cis のエポキシドを与える。この生成物は対称面を持つメソ体であり、ラセミ体ではないので誤り。",
+      "エ": "正しい。Br2 付加はブロモニウムイオンを経るアンチ付加で、trans-ジブロミドを与える。この生成物はキラルで、両面からの付加により両エナンチオマーが等量生成し、ラセミ体となる。",
+      "オ": "OsO4 によるジヒドロキシ化はシン付加で、cis-1,2-ジメチルシクロペンタン-1,2-ジオールを与える。この生成物は対称面を持つメソ体であり、ラセミ体ではないので誤り。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf#page=11",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問104（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q104-organic-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問104の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q107",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 107,
+    "officialAnswerNumber": "1,4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "ASTはアミノ基転移反応を触媒する酵素である。活性中心のリシン残基側鎖アミノ基は、補酵素ピリドキサール 5′-リン酸（P5P）の4位のアルデヒド基と共有結合し、P5P-AST 複合体（ア）を形成する。\n　以下の図は、アによるアミノ酸Ａからα-ケト酸Ｆへの反応を示す。各反応の説明として正しいのはどれか。２つ選べ。",
+    "choices": {
+      "ア": "アからＢへの反応は、付加脱離反応である。",
+      "イ": "ＣからＤへの反応で、リシン残基側鎖のイの部分は塩基として作用する。",
+      "ウ": "Ｆが生成する反応において、Ｘは過酸化水素である。",
+      "エ": "ＡがL-アスパラギン酸の場合、生成するＦはオキサロ酢酸である。",
+      "オ": "Ｅは、以下に示すピリドキシン 5′-リン酸である。"
+    },
+    "answer": [
+      "ア",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "アでは、リシン側鎖がピリドキサールのアルデヒド炭素とイミンを形成している。アからＢの反応は、アミノ酸Ａのアミノ基がこのイミン炭素に付加し、リシンのアミノ基が脱離して、Ａとのイミンに置き換わる反応である。したがって付加脱離反応であり、1 は正しい。ＡがL-アスパラギン酸の場合、R は CH2CO2⁻ となる。生成するα-ケト酸Ｆは、O=C(CH2CO2⁻)CO2⁻、すなわちオキサロ酢酸であり、4 も正しい。",
+    "choiceExplanations": {
+      "ア": "正しい。ＡのアミノN がイミン炭素に付加し、リシンのアミノ基が脱離する。付加と脱離が連続して起こるので付加脱離反応である。",
+      "イ": "ＣからＤでは、イの H はプロトン化したリシンのアンモニウム（NH3⁺）の水素で、中間体にプロトンとして渡される。したがってイの部分は塩基ではなく酸として作用する。誤り。",
+      "ウ": "ＤからＥ＋Ｆの反応は、イミンの加水分解である。X は水（H2O）で、過酸化水素ではない。誤り。",
+      "エ": "正しい。L-アスパラギン酸のアミノ基が転移すると、α-ケト酸であるオキサロ酢酸が生成する。",
+      "オ": "Ｄのイミンが加水分解されると、4位が CH2NH2 のピリドキサミン 5′-リン酸が生じる。図の 4位が CH2OH の構造はピリドキシン 5′-リン酸であり、Ｅとは異なるため誤り。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf#page=14",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問107（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q107-biological-science-1.png",
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q107-biological-science-2.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問107の原図1",
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問107の原図2"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q108",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 108,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "塩素 Cl2 と光を用いて（R）-2-クロロブタンの塩素化を行ったところ、水素の1つが塩素に置換した生成物が数種類生じた。その1つが化合物Ａであり、1H NMR を測定したところ、化学シフト（ppm，基準物質はテトラメチルシラン）、分裂パターン（多重度）及びプロトン数について、以下のピークが観測された。化合物Ａの化学構造として、最も適切なのはどれか。１つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "NMR のデータを整理する。1.6 ppm の二重線（3H）は、隣に 1 つの H を持つ CH3 であり、CH3-CH(Cl)- の部分構造を示す。4.3 ppm の六重線（1H）は、CH3（3H）と CH2（2H）の合計 5 個の H と隣り合う CHCl で、CH3-CHCl-CH2- に相当する。3.7 ppm の三重線（2H）は、隣に CH2（2H）が 1 つあり、Cl の影響で低磁場に現れる CH2Cl である。2.1 ppm の四重線（2H）は、CHCl（1H）と CH2Cl（2H）の合計 3 個の H と結合した CH2 である。以上から、CH3-CHCl-CH2-CH2Cl、すなわち 1,3-ジクロロブタンで、5 が該当する。なお、不斉炭素（原料のC2、生成物のC3）は反応しておらず、立体配置が保たれる点も 5 の図と矛盾しない。",
+    "choiceExplanations": {
+      "ア": "1,2-ジクロロブタンでは、CH3 は CH2 と隣り合うので三重線（3H）となる。1.6 ppm の二重線（3H）は説明できない。誤り。",
+      "イ": "2,2-ジクロロブタンでは、2 つの Cl が結合した炭素には H がなく、隣の CH3 は一重線になる。また CHCl に相当する 1H のシグナルがない。誤り。",
+      "ウ": "2,3-ジクロロブタンは分子が対称であり、CH3 が 6H の二重線、CHCl が 2H の多重線の 2 種類のシグナルしか出ない。観測された 4 種類のシグナルと一致しない。誤り。",
+      "エ": "3 と同じ 2,3-ジクロロブタン（立体異性体）であり、シグナルは 2 種類のみで、観測された 4 種類と一致しない。誤り。",
+      "オ": "正しい。CH3（1.6 ppm, d, 3H）、CH2（2.1 ppm, q, 2H）、CH2Cl（3.7 ppm, t, 2H）、CHCl（4.3 ppm, 六重線, 1H）の分裂パターンとプロトン数をすべて満たす。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf#page=16",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問108（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q108-biological-science-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問108の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q110",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 110,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "ある生薬末を光学顕微鏡で観察したところ、右写真のような管状の組織（矢印）が見られた。また、木部繊維の破片が多数含まれていた。なお、この生薬末は１種類の生薬を粉砕したものである。この生薬末として考えられるのはどれか。１つ選べ。",
+    "choices": {
+      "ア": "シャクヤク末",
+      "イ": "ブクリョウ末",
+      "ウ": "リュウコツ末",
+      "エ": "アロエ末",
+      "オ": "ケイヒ末"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "写真には、らせん状や網目状の肥厚をもつ管状の組織（導管）が写っています。木部繊維の破片も多数含まれるため、根の木部組織をもつ生薬が考えられます。選択肢の中ではシャクヤク末が該当します。他の選択肢は、組織の構成から木部の導管と木部繊維が特徴とはならない生薬です。",
+    "choiceExplanations": {
+      "ア": "正しい。シャクヤクは根の生薬で、導管と木部繊維の破片が見られます。写真の所見と合います。",
+      "イ": "誤り。ブクリョウは菌核で、菌糸や粘液状の塊が主体です。導管や木部繊維は見られません。",
+      "ウ": "誤り。リュウコツは大型哺乳動物の化石化した骨で、無機質の破片が主体です。管状の導管や木部繊維は見られません。",
+      "エ": "誤り。アロエは葉の汁液を乾燥させたもので、不定形の塊状物からなります。導管や木部繊維の破片が目立つ生薬ではありません。",
+      "オ": "誤り。ケイヒは樹皮で、石細胞や師部繊維などが特徴です。木部繊維の破片が多数見られる、という条件に合いません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf#page=18",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問110（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q110-calculation-figure-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問110の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q113",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 113,
+    "officialAnswerNumber": "1,3",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "血糖値を変動させるホルモンの「名称 ― 産生器官 ― 血糖値の変動」の組合せとして、正しいのはどれか。２つ選べ。",
+    "choices": {
+      "ア": "アドレナリン ― 副腎 ― 上昇",
+      "イ": "インクレチン ― 膵臓 ― 上昇",
+      "ウ": "インスリン ― 膵臓 ― 低下",
+      "エ": "グルカゴン ― 副腎 ― 上昇",
+      "オ": "コルチゾール ― 副腎 ― 低下"
+    },
+    "answer": [
+      "ア",
+      "ウ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "アドレナリンは副腎髄質から分泌され、血糖値を上昇させます。インスリンは膵臓のβ細胞から分泌され、血糖値を低下させます。よって1と3が正解です。",
+    "choiceExplanations": {
+      "ア": "正しい。アドレナリンは副腎髄質のホルモンで、グリコーゲン分解などにより血糖値を上昇させます。",
+      "イ": "誤り。インクレチン（GLP-1、GIPなど）は消化管で産生されます。インスリン分泌を促進して血糖値を低下させる方向に働きます。",
+      "ウ": "正しい。インスリンは膵臓のランゲルハンス島β細胞で産生され、血糖値を低下させます。",
+      "エ": "誤り。グルカゴンは血糖値を上昇させますが、産生器官は副腎ではなく膵臓（α細胞）です。",
+      "オ": "誤り。コルチゾールは副腎皮質で産生されますが、糖新生を促進して血糖値を上昇させます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf#page=19",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問113（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q113-biological-science-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問113の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q114",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 114,
+    "officialAnswerNumber": "1,5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "抗原Ｘに結合する単クローン由来のヒト免疫グロブリン（IgG1）は、２本の重鎖（H鎖）と２本の軽鎖（L鎖）からなり、図１に示すように、２本の重鎖間と重鎖・軽鎖間に４つのジスルフィド結合を含み、分子量がほぼ同じ12個の構造単位で構成される。また、IgG1全体の分子量は約150 kDaである。\nこのIgG1分子を界面活性剤であるドデシル硫酸ナトリウムの存在下で熱変性させ、ポリアクリルアミドゲル電気泳動を行い、タンパク質に結合する色素（クマシーブリリアントブルー）で染色した。ジスルフィド結合を還元する2-メルカプトエタノールを加えて熱変性を行った場合と、加えないで熱変性を行った場合では、図２に示すように、泳動結果に違いがあった。ただし、バンド２とバンド３に含まれる分子数の比は１：１であった。\n以下の記述のうち、正しいのはどれか。２つ選べ。",
+    "choices": {
+      "ア": "2-メルカプトエタノールを加えて熱変性を行ったのは、実験２である。",
+      "イ": "バンド１から抽出したタンパク質は、電気泳動前のIgG1よりも強く抗原Ｘに結合することができる。",
+      "ウ": "バンド２、バンド３の分子量は、それぞれ100 kDa、50 kDaと見積もられる。",
+      "エ": "バンド３のタンパク質は、熱変性によって切断された重鎖の断片である。",
+      "オ": "バンド２とバンド３のタンパク質は、いずれも抗原結合部位を含む。"
+    },
+    "answer": [
+      "ア",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "実験１は、IgG1全体（約150 kDa）に相当する位置にバンドが1本だけ出ているため、還元剤なしです。実験２は2本のバンドに分かれているため、還元剤ありで、ジスルフィド結合が切れた結果です。IgG1は12個の構造単位からなり、重鎖は4個、軽鎖は2個です。1単位を約12.5 kDaとすると、重鎖は約50 kDa、軽鎖は約25 kDaです。バンド２は重鎖、バンド３は軽鎖で、分子数の比が1：1であることとも合います。重鎖も軽鎖も可変領域をもつので、いずれも抗原結合部位を含みます。よって1と5が正解です。",
+    "choiceExplanations": {
+      "ア": "正しい。ジスルフィド結合を還元すると、重鎖と軽鎖に分かれます。実験２は低分子量側に2本のバンドが出ているため、還元剤を加えた実験です。",
+      "イ": "誤り。SDSと熱で変性したタンパク質は立体構造を失っています。結合能が増すことはなく、むしろ低下します。",
+      "ウ": "誤り。バンド２は重鎖（約50 kDa）、バンド３は軽鎖（約25 kDa）と見積もられます。100 kDa、50 kDaではありません。",
+      "エ": "誤り。バンド３は、重鎖が切断された断片ではなく、軽鎖です。還元によって切れたのはジスルフィド結合です。",
+      "オ": "正しい。重鎖の可変領域と軽鎖の可変領域がともに抗原結合部位を形成するので、バンド２（重鎖）とバンド３（軽鎖）はいずれも抗原結合部位を含みます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf#page=20",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問114（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q114-biological-science-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問114の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q115",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 115,
+    "officialAnswerNumber": "1,4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "酵素Ａと酵素Ｂは、骨格筋又は肝臓に含まれる解糖系の酵素で、グルコースからグルコース 6-リン酸を生成する反応を触媒する。グルコース濃度に対する酵素Ａと酵素Ｂの相対酵素活性は、下図のようになる。相対酵素活性は、反応初速度 V0 を最大反応速度 Vmax で除した値である。\n以下の記述のうち、正しいのはどれか。２つ選べ。",
+    "choices": {
+      "ア": "酵素Ａは、基質であるグルコースとの親和性が酵素Ｂより低い。",
+      "イ": "グルコース濃度が5 mmol/L から 10 mmol/L に増加すると、酵素Ｂの反応初速度は約2 倍になる。",
+      "ウ": "酵素Ａは、グルコース-6-ホスファターゼである。",
+      "エ": "酵素Ｂが触媒する反応は、グルコース 6-リン酸の濃度が上昇すると抑制される。",
+      "オ": "酵素Ａは、主に骨格筋に含まれる。"
+    },
+    "answer": [
+      "ア",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "図では、酵素Ｂは低いグルコース濃度で急速に飽和し、酵素Ａはシグモイド状でゆっくり上昇します。したがって酵素Ａは見かけのKmが大きく、グルコースとの親和性が低い酵素です。解糖系の最初の反応を触媒する酵素には、ヘキソキナーゼとグルコキナーゼがあります。酵素Ｂは親和性が高いヘキソキナーゼ型で、生成物であるグルコース6-リン酸により阻害されます。酵素Ａは親和性が低いグルコキナーゼ型で、主に肝臓に含まれます。",
+    "choiceExplanations": {
+      "ア": "正しい。酵素Ａは高濃度のグルコースでようやく活性が上がるので、Kmが大きく親和性は酵素Ｂより低いと読み取れます。",
+      "イ": "誤り。図の酵素Ｂは5 mmol/Lですでに約0.95で、10 mmol/Lでもほぼ同じ値です。ほぼ飽和しているので、初速度は2倍になりません。",
+      "ウ": "誤り。酵素Ａはグルコースからグルコース6-リン酸を生成する反応を触媒します。グルコース-6-ホスファターゼは逆方向の加水分解反応を行う酵素なので、該当しません。",
+      "エ": "正しい。酵素Ｂはヘキソキナーゼ型の酵素で、生成物のグルコース6-リン酸によるフィードバック阻害を受けます。",
+      "オ": "誤り。酵素Ａはグルコキナーゼ型で、主に肝臓に含まれます。主に骨格筋に含まれるのは酵素Ｂ型のヘキソキナーゼです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf#page=21",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問115（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q115-graph-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問115の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q120",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 120,
+    "officialAnswerNumber": "2,4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "下の模式図に示すように、Gq タンパク質共役型受容体が外部シグナルを受けた結果、エフェクター酵素①が活性化され、ホスファチジルイノシトール 4，5-二リン酸から2 種類のセカンドメッセンジャー②、③が生成する。セカンドメッセンジャー②は脂溶性分子であり、プロテインキナーゼ C の活性化に関わる。この細胞内情報伝達経路に関する説明として、正しいのはどれか。２つ選べ。",
+    "choices": {
+      "ア": "Gq タンパク質は、ATP を加水分解する。",
+      "イ": "エフェクター酵素①は、ホスホリパーゼ C である。",
+      "ウ": "セカンドメッセンジャー②は、アラキドン酸である。",
+      "エ": "セカンドメッセンジャー③は、小胞体から Ca2＋ を放出させる。",
+      "オ": "プロテインキナーゼ C は、基質タンパク質のチロシン残基をリン酸化する。"
+    },
+    "answer": [
+      "イ",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "Gq共役型受容体は、ホスホリパーゼCを活性化します。ホスホリパーゼCはPIP2をジアシルグリセロール（②）とイノシトール1,4,5-トリスリン酸（③）に分解します。③は小胞体のIP3受容体に作用し、Ca2+を放出させます。",
+    "choiceExplanations": {
+      "ア": "誤り。Gタンパク質はGTPを結合し、GTPを加水分解します。ATPは加水分解しません。",
+      "イ": "正しい。Gqが活性化するエフェクター酵素①はホスホリパーゼCです。",
+      "ウ": "誤り。PIP2から生じる脂溶性のセカンドメッセンジャー②はジアシルグリセロールです。アラキドン酸ではありません。",
+      "エ": "正しい。③はIP3で、小胞体からのCa2+放出を引き起こします。",
+      "オ": "誤り。プロテインキナーゼCはセリン・トレオニンキナーゼで、セリン残基やトレオニン残基をリン酸化します。チロシン残基ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf#page=24",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問120（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q120-biological-science-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問120の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q135",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 135,
+    "officialAnswerNumber": "4,5",
+    "type": "multiple-choice",
+    "category": "薬学理論問題",
+    "topicTags": [
+      "薬学理論問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "電離放射線及び放射性同位体に関する記述として、正しいのはどれか。２つ選べ。",
+    "choices": {
+      "ア": "32P 及び 90Sr は、甲状腺に集積しやすい。",
+      "イ": "大気中に存在する 222Rn による生体影響は、ほとんど外部被曝によるものである。",
+      "ウ": "神経組織、筋肉組織及び皮膚のうち、電離放射線による感受性が最も高いのは、神経組織である。",
+      "エ": "晩発性障害は、低放射線量や長期間被曝した場合や顕著な急性障害が見られなかった場合でも発症することがある。",
+      "オ": "食品中の放射性物質については、放射性セシウムの基準値が設定されている。"
+    },
+    "answer": [
+      "エ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "公式の正答は4と5です。晩発性障害は急性障害がなくても起こることがあります。食品中の放射性セシウムには基準値が設けられています。",
+    "choiceExplanations": {
+      "ア": "誤り。甲状腺に集積しやすいのはヨウ素です。32Pと90Srは主に骨に集積します。",
+      "イ": "誤り。222Rnの生体影響は、主に吸入による内部被曝(肺への影響)です。",
+      "ウ": "誤り。一般に神経組織や筋肉組織は放射線感受性が低い組織です。3つの中で神経組織が最も高いとはいえません。",
+      "エ": "正しい。がんや白内障などの晩発性障害は、低線量や長期被曝、また顕著な急性障害がなかった場合でも発症することがあります。",
+      "オ": "正しい。食品中の放射性物質には、放射性セシウムの基準値が設定されています。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf#page=36",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」薬学理論問題 問135（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q138",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 138,
+    "officialAnswerNumber": "2,5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "表は、ある大気汚染物質の 2010～2020 年度における年平均濃度と環境基準達成率を示している。大気汚染物質Ａ及びＢに関する記述として、正しいのはどれか。２つ選べ。",
+    "choices": {
+      "ア": "Ａ及びＢは、いずれも一次生成物質である。",
+      "イ": "Ａは、光化学スモッグの原因となる酸化性物質の総称で、組成の大部分はオゾンである。",
+      "ウ": "Ａの発生状況を把握するために、メタンが常時測定されている。",
+      "エ": "Ｂは、粒子状物質のうち空気動力学径が 10 μm 以下のものと定義されている。",
+      "オ": "Ａ及びＢを低減するために、固定発生源からの揮発性有機化合物の排出基準が設定されている。"
+    },
+    "answer": [
+      "イ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "公式の正答は2と5です。表では、Aは単位がppmで達成率がほぼ0%です。Bは単位がμg/m3で、達成率が年々上がっています。これらの数値からAは光化学オキシダント、BはPM2.5と読めます。AとBはどちらも二次生成の寄与が大きく、前駆物質であるVOCの排出抑制が低減策になります。",
+    "choiceExplanations": {
+      "ア": "誤り。光化学オキシダントとPM2.5は、いずれも二次生成の寄与が大きく、一次生成物質のみとはいえません。",
+      "イ": "正しい。Aは光化学オキシダントです。光化学スモッグの原因となる酸化性物質の総称で、大部分はオゾンです。",
+      "ウ": "誤り。Aの発生状況の把握には、前駆物質である非メタン炭化水素や窒素酸化物を測定します。メタンを測定する目的ではありません。",
+      "エ": "誤り。BはPM2.5で、空気動力学径が2.5 μm以下の粒子です。10 μm以下はSPMです。",
+      "オ": "正しい。VOCはAとBの前駆物質です。固定発生源からのVOC排出基準の設定は低減策として行われています。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf#page=38",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問138（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q138-environmental-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問138の原図1"
+    ]
+  }
+]

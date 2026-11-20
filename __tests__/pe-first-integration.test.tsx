@@ -30,13 +30,17 @@ describe("LQ3 existing manuscript adoption", () => {
   });
   it("preserves all 17 accepted sets and adds only complete continuation papers", () => {
     const continuationCount = continuationManifest.length + lq3dManifest.length;
-    expect(PE_FIRST_CATALOG).toHaveLength(17 + continuationCount);
-    expect(PE_FIRST_CATALOG.reduce((sum, entry) => sum + entry.questionCount!, 0)).toBe(595 + 35 * continuationCount);
-    expect(PE_FIRST_CATALOG.reduce((sum, entry) => sum + entry.scoredCount!, 0)).toBe(594 + 35 * continuationCount);
+    const reviewedIds = new Set([...manifest, ...continuationManifest, ...lq3dManifest].map(pin => pin.paperId));
+    expect(reviewedIds.size).toBe(17 + continuationCount);
+    const reviewed = PE_FIRST_CATALOG.filter(entry => reviewedIds.has(entry.id));
+    expect(reviewed).toHaveLength(reviewedIds.size);
+    expect(reviewed.reduce((sum, entry) => sum + entry.questionCount!, 0)).toBe(595 + 35 * continuationCount);
+    expect(reviewed.reduce((sum, entry) => sum + entry.scoredCount!, 0)).toBe(594 + 35 * continuationCount);
     for (const entry of PE_FIRST_CATALOG) {
       expect(findExamEntry(entry.id)).toEqual(entry);
       expect(listAvailableExamIds()).toContain(entry.id);
       expect(loadExamPaper(entry.id)).toBe(loadPeFirstPaper(entry.id));
+      expect(loadExamPaper(entry.id)).toHaveLength(entry.questionCount!);
       expect(loadExamPaper(entry.id)!.filter(isScorableQuestion)).toHaveLength(entry.scoredCount!);
     }
     expect(loadPeFirstPaper("../../package")).toBeNull();

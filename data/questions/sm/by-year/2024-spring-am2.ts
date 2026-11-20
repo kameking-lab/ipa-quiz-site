@@ -24,6 +24,7 @@ export const SM_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "JIS Q 20000-1:2020の「7.2 力量」の要求事項は、SMS及びサービスのパフォーマンスに影響を与える業務を行う人々が、適切な教育、訓練又は経験に基づいて「力量を備えている」ことを確実にするよう求めています。「意図した結果を達成するために、知識及び技能を適用する能力」は、まさにこの「力量」の定義に合致します。したがって、選択肢エがこの要求事項に直接対応する適切な説明です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const SM_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "サービス継続計画は、災害や重大なサービス停止発生時に事業を継続するための手順を定めるものです。これには、サービス中断時の緊急対応だけでなく、平常業務の状態へ安全かつ効率的に戻るための手順も不可欠です。選択肢エの「平常業務の状態に復帰するための手順」は、サービス継続の最終段階であり、計画に含められるべき重要な事項です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const SM_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "事業関係管理は、サービス提供者と顧客、利用者、その他の利害関係者との間に良好な関係を確立し、維持することを目的とします。この活動の核心は、利害関係者を特定し、彼らのニーズや期待を理解し、効果的なコミュニケーションチャネルを確立することにあります。選択肢イは、この事業関係管理の主要な活動を適切に説明しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const SM_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ITIL4において、サービスの可用性を測る指標の一つにMTRS（Mean Time To Restore Service: 平均サービス復旧時間）があります。これは、障害が発生してからサービスが完全に復旧するまでの平均時間を指し、サービスの回復の速さを直接的に示します。MTBFは故障発生の間隔を示し、回復の速さとは異なります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,7 @@ export const SM_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "JIS Q 20000-1:2020の「9.2 内部監査」の要求事項には、各監査について「監査の基準及び監査範囲を明確にする」ことが明記されています。これは、内部監査を計画し、その有効性を確保する上で不可欠な要素です。他の選択肢は、監査の独立性や計画的な実施という観点から不適切です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -143,7 +148,14 @@ export const SM_QUESTIONS_2024_SPRING_AM2: Question[] = [
       "エ": "99.63"
     },
     "answer": "ウ",
-    "explanation": "ITサービスのサービス可用性は、計画された停止時間と計画外の停止時間を考慮した総提供可能時間に対する、実際のサービス提供時間の割合で定義されます。計算式は以下の通りです。\n\nサービス可用性 (%) = (総提供可能時間 - 計画外停止時間) / 総提供可能時間 × 100\n\nこの問題では、4月1日から6月30日までの期間が対象です。この期間は3ヶ月であり、1ヶ月を30日、1日を24時間とすると、総提供可能時間は 3ヶ月 × 30日/月 × 24時間/日 = 2160時間 となります。システムバージョンアップ作業に伴う停止時間は計画停止時間として合意されており、サービス可用性の計算では考慮されません。したがって、サービス可用性を算出するには、計画外の停止時間のみを把握する必要があります。\n\n提示された選択肢を見てみると、ア（95.52%）とイ（95.70%）は5%前後の停止を許容する数値であり、ウ（99.52%）とエ（99.63%）は1%未満の停止で非常に高い可用性を示しています。通常、ITサービスの可用性目標は高い値が設定されるため、95%台は目標未達となる可能性が高いと考えられます。\n\nアは、計画外停止時間が許容範囲を超えていることを示唆しており、可用性が不十分であるため不適切です。イも同様に、計画外停止時間が比較的多く、可用性目標を達成していない数値であるため誤りです。ウとエは高い可用性を示しており、どちらが正解かは具体的な停止時間の情報（図表に示される）から判断されます。ここで、問題文で「システムバージョンアップ作業に伴う停止時間は、計画停止時間として顧客との間で合意されている」と明記されていることから、この計画停止時間は計算から除外されることが重要です。計画外停止時間のみを考慮した結果、99.52%という高い可用性が算出されると考えられます。\n\nエは99.63%であり、ウよりもわずかに高い可用性を示しますが、具体的な停止時間の内訳によります。しかし、一般的に99.5%以上の可用性が求められるサービスにおいて、1%未満の計画外停止という要件を満たし、かつ選択肢として提示されていることから、ウが最も妥当な結果となります。",
+    "explanation": "4月から6月までの91日間は2,184時間です。顧客と合意した計画停止84時間を除くと、可用性の計算対象は2,100時間です。故障による停止10時間を引いて、2,090÷2,100×100＝99.523…％となります。小数第3位を四捨五入すると99.52％なのでウです。",
+    "choiceExplanations": {
+      "ア": "誤りです。95.52％は分母から計画停止84時間を除きながら、故障と合わせた94時間を分子で引いた場合の値です。計画停止を二重に差し引いています。",
+      "イ": "誤りです。95.70％は91日間の2,184時間に計画停止84時間も含めて停止94時間を数えた値です。顧客と合意した計画停止分は評価対象から除きます。",
+      "ウ": "正しいです。91日間の2,184時間から計画停止84時間を除くと2,100時間です。故障で止まった10時間を除いた稼働時間は2,090時間なので、99.52％です。",
+      "エ": "誤りです。故障で止まった時間は6月26日の10時から20時までの10時間で、合意したサービス時間は2,100時間です。この比率では99.63％になりません。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +180,7 @@ export const SM_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "TCO（Total Cost of Ownership：総所有費用）とは、IT資産やシステムの取得費用だけでなく、導入後の運用、保守、管理、廃棄など、ライフサイクル全体で発生するすべてのコストを合計したものです。単なる初期費用だけでなく、見えにくい隠れたコストも含む包括的な費用概念です。選択肢イがTCOのこの定義に最も合致します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +205,7 @@ export const SM_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "WFM（Work Force Management）システムは、主にコンタクトセンターやサービスデスクにおいて、過去の問い合わせ実績などに基づいて将来の業務量を予測し、それに対応するための最適な人員配置や勤務スケジュールを計画・管理するシステムです。これにより、適切なリソースを確保し、顧客対応品質を維持しつつコストを最適化することが可能になります。選択肢ウはWFMシステムの主要な目的を適切に説明しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +230,7 @@ export const SM_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "サーバ仮想化技術の大きな利点の一つは、物理リソースの効率的な利用です。ライブマイグレーション機能を利用すれば、稼働中の仮想サーバを停止させることなく別の物理サーバへ移動できるため、夜間などの負荷が低い時間帯に物理サーバの稼働台数を集約し、不要な物理サーバの電源を落とすことで、サービスを継続したまま消費電力を削減できます。選択肢ウはこの利点を明確に示しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +255,7 @@ export const SM_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "災害対策の復旧サイトには、コールドサイト、ウォームサイト、ホットサイトがあります。ウォームサイトとは、必要な設備やハードウェアは設置済みで、本番環境とほぼ同じシステムが非稼働状態で待機しており、災害時にシステムを稼働させて復旧する拠点です。ホットサイトより復旧に時間はかかりますが、コールドサイトよりは迅速です。選択肢ウの説明がウォームサイトに該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +280,7 @@ export const SM_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "データ管理者（DA）は、組織全体のデータ資産の管理と標準化、データモデルの設計（主に論理設計）、データ辞書の作成など、データそのものの意味的側面や構造の管理を担います。一方、データベース管理者（DBA）はデータベースの物理的な設計、構築、運用、保守、パフォーマンスチューニングなどを担当します。したがって、システム開発の設計工程で論理データベース設計を行い、データ項目を管理して標準化する役割はDAの適切な役割です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +305,7 @@ export const SM_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "PUE（Power Usage Effectiveness）は、データセンター全体のエネルギー効率を示す指標で、データセンターの総消費電力をIT機器の総消費電力で割ることで算出されます。この値が1に近いほど、エネルギー効率が高いことを意味します。選択肢エの「データセンターの総消費電力 ÷ IT機器の総消費電力」が正しい計算式です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +330,7 @@ export const SM_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "伝熱負荷とは、建物の壁、屋根、床などを介して外部から室内に熱が伝わることによる冷房負荷です。この負荷を軽減するためには、建物の外皮性能を高め、熱が伝わりにくくする対策が最も効果的です。したがって、選択肢エの「屋根や壁面に断熱加工を施す」ことが伝熱負荷の軽減策として最も適切です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +355,7 @@ export const SM_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "経済産業省が策定する「システム監査基準」は、システム監査が効果的かつ効率的に行われるために、システム監査のあるべき体制、監査計画、実施方法、報告など、監査プロセス全体の基本的な枠組みと規範を示したものです。これは監査を実施する側が遵守すべき基準として機能します。選択肢アは、このシステム監査基準の目的と内容を適切に説明しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +380,7 @@ export const SM_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "コードサイニング証明書は、ソフトウェアの発行元（開発元）が正当であることと、そのソフトウェアが発行後に改ざんされていないことを保証するために使用されるデジタル証明書です。これにより、ユーザーは信頼できるソースからソフトウェアをインストールしていることを確認できます。選択肢ウがこの用途に該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +405,7 @@ export const SM_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "JIS Q 27000:2019における「リスク評価（Risk evaluation）」の定義は、「リスク及び/又はその大きさが受容可能か又は許容可能かを決定するために、リスク分析の結果をリスク基準と比較するプロセス」とされています。選択肢ウはこの定義と完全に一致します。他の選択肢は、それぞれの用語の定義として不適切です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +430,7 @@ export const SM_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "IoT推進コンソーシアムなどの「IoTセキュリティガイドライン(Ver 1.0)」の「要点17. 出荷・リリース後も安全安心な状態を維持する」では、IoT機器やシステムのライフサイクルを通してセキュリティを確保するための対策が求められています。その具体例として、脆弱性対応や機能改善のためのアップデート機能の提供とその適切な運用が挙げられています。選択肢イは、このアップデートに関する対策を適切に示しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +455,7 @@ export const SM_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ステークホルダ登録簿は、プロジェクトやサービスに関わる利害関係者を特定し、そのニーズ、期待、影響度などを記録する重要な文書です。プロジェクトの進行や環境の変化に伴い、ステークホルダの状況も変化するため、登録簿の内容は継続的に見直し、更新していく必要があります。選択肢ウは、この継続的な更新の重要性を適切に説明しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -455,7 +479,14 @@ export const SM_QUESTIONS_2024_SPRING_AM2: Question[] = [
       "エ": "4"
     },
     "answer": "ア",
-    "explanation": "作業Fの総余裕日数が減少する日数を求める問題です。総余裕日数とは、先行作業が予定通り完了した場合に、プロジェクト全体の完了日を遅らせることなく、当該作業が遅延できる日数です。\n\n正解はアの1日です。クリティカルパスはプロジェクト全体の完了日を決定する一連の作業であり、このパス上の作業には余裕日数がありません。当初、クリティカルパスはA, D, I, Jでした。作業Dが2日、作業Jが1日短縮されることにより、クリティカルパスが変更される可能性があります。しかし、問題文からは作業Fがクリティカルパス上に移動したとは明記されていません。\n\nここで重要なのは、作業Fの総余裕日数が減少するのは、Fのクリティカルパス上の位置が変わった場合、あるいはFの先行作業の遅延がFの余裕日数に影響を与えた場合です。一般的に、アローダイアグラムにおいて、ある作業の総余裕日数は、その作業の完了予定日と、その作業が先行する「次」の作業の早期開始可能日（ES: Early Start）との差から算出されます。\n\n作業Dの短縮により、Dの後に続く作業の早期開始日（ES）が早まる可能性があります。同様に、作業Jの短縮も、Jの後に続く作業の早期開始日（ES）に影響を与え得ます。これらの影響が作業Fの早期開始日（ES）や、Fが先行する作業の早期完了日（EF: Early Finish）に波及し、最終的に作業Fの総余裕日数に影響を与えます。\n\n選択肢イの2日、ウの3日、エの4日は、作業DとJの短縮日数を合計した日数や、それ以上の数値であり、作業Fの総余裕日数の減少としては過大であると考えられます。通常、クリティカルパス上の作業の短縮が、クリティカルパス上にない作業の総余裕日数に直接的に影響する場合、その影響はクリティカルパスの再構成や、それに伴う早期開始日の変動として現れます。作業Dの2日短縮とJの1日短縮の合計3日という単純な計算で余裕日数が減るわけではなく、アローダイアグラムにおける作業間の依存関係と所要時間によって決まります。\n\n作業Fの総余裕日数が1日減少するということは、DやJの短縮によって、Fの早期開始日（ES）が1日早まる、あるいはFの早期完了日（EF）が1日遅れてもプロジェクト全体の完了日に影響が出なくなる、といった状況が考えられます。この問題では、作業Dの2日短縮と作業Jの1日短縮が、作業Fの総余裕日数に及ぼす影響を考慮する必要があります。もし、作業Dの短縮が作業Fの早期開始日（ES）を1日早め、かつ作業Jの短縮も同様に影響を与えた結果、作業Fの総余裕日数が1日減少すると解釈するのが最も妥当です。\n\n具体的には、Dの短縮がFのESを早め、Jの短縮がFのEFを遅らせる、といった複合的な影響により、総余裕日数が1日減ると考えられます。",
+    "explanation": "変更前の全体日数はA→D→I→Jの17日で、Fを通るB→F→Jは13日なので余裕は4日です。Dを2日、Jを1日短縮すると、B→E→I→Jの15日が最長です。B→F→JはJの短縮により12日となるので、変更後のFの余裕は3日です。減少は4−3＝1日です。",
+    "choiceExplanations": {
+      "ア": "正しいです。短縮前のFの余裕は17−（3＋6＋4）＝4日です。短縮後はB→E→I→Jが15日で最長となり、Fの余裕は15−（3＋6＋3）＝3日になるので1日減ります。",
+      "イ": "誤りです。全体の所要日数は17日から15日へ2日短縮されますが、Fの後続作業Jも1日短縮されます。したがって、Fの総余裕日数が減るのは差の1日です。",
+      "ウ": "誤りです。DとJの短縮日数を足した3日は、従来の最長経路A→D→I→Jの短縮分です。変更後はB→E→I→Jが最長となるので、Fの余裕は3日減りません。",
+      "エ": "誤りです。4日は変更前のFの総余裕日数です。変更後もB→F→Jは12日で、全体の15日まで3日の余裕が残るため、減少は1日です。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +511,7 @@ export const SM_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ソフトウェアの保守性は、システムが変更や修正、機能追加などを行いやすいかを示す品質特性です。保守性を定量的に評価する指標としては、一つの修正にかかる平均時間や労力が用いられます。選択肢イの「(修正時間の合計)÷(修正件数)」は、平均修正時間を表しており、この値が小さいほど保守性が高いと判断できます。これはソフトウェアの保守性の評価指標として適切です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +536,7 @@ export const SM_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "NICチーミング（またはリンクアグリゲーション）とは、複数の物理的なNICを論理的に束ねて一つのNICとして扱う技術です。これにより、複数のNIC間でトラフィックを分散させることで帯域幅を拡大し（負荷分散、帯域の有効活用）、また、いずれかのNICに障害が発生しても通信を継続できる冗長性（耐障害性の向上）を実現します。選択肢エがこのNICチーミングの目的と機能を正確に説明しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +561,7 @@ export const SM_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "クライアントサーバシステムの3層アーキテクチャとは、システムの機能を「プレゼンテーション層（ユーザーインターフェース）」、「ファンクション層（ビジネスロジック）」、「データ層（データ管理）」の3つの独立した論理的な層に分離した設計です。各層は独立性が高いため、異なるOSやプラットフォームで動作させることも可能です。選択肢イは、この3層アーキテクチャの構成と特性を適切に説明しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +586,7 @@ export const SM_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "JupyterLabは、Webブラウザ上で動作する対話型の開発環境であり、データ分析、機械学習、科学計算などに広く利用されます。コードの実行、データの可視化、ドキュメントの作成などを一つのプラットフォームで統合的に行えるため、分析作業の効率化に貢献します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +611,7 @@ export const SM_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "WebDAV（Web-based Distributed Authoring and Versioning）は、HTTPプロトコルを拡張し、Webサーバ上のファイルやフォルダの操作（作成、変更、削除など）を可能にする仕組みです。これにより、Webサーバを通常のファイルサーバのように利用して、インターネット経由でのファイル共有や共同作業を実現します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +636,7 @@ export const SM_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "NFT（Non-Fungible Token）は、ブロックチェーン技術を利用して、デジタルデータに代替不可能な唯一性を付与する仕組みです。これにより、デジタルアートやゲームアイテムなどの所有権を明確にし、その希少性や価値を保証することが可能になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sm_am2_qs.pdf",
     "license": "IPA-public"

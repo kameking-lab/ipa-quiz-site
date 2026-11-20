@@ -11,4 +11,4 @@ function resolveBaseUrl(): string {
 export const SITE_BASE_URL = resolveBaseUrl();
 
 export const SITE_NAME = "過去問AI";
-export const SITE_TAGLINE = "AIネイティブ過去問学習";
+export const SITE_TAGLINE = "資格の過去問演習";

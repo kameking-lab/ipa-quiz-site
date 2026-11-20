@@ -1,5 +1,9 @@
 "use client";
 import Link from "next/link";
+import { useQuestionActivity } from "@/lib/study-plan/use-question-activity";
+import { recordReview } from "@/lib/learning/spaced-repetition";
+import { readSettings } from "@/lib/storage/settings";
+import { SignedOutOnly, useAccountStatus } from "@/components/account/AccountNavigation";
 import { useNativeQuestionGrant, NativeAccessState } from "@/mobile/shared/NativeQuestionGate";
 
 import {
@@ -23,6 +27,8 @@ import {
 import { isExamReferenceOnly, excludeSurveyAssistantReferenceAnswers } from "@/lib/exam-library/survey-assistant-reference-policy";
 import { SurveyAssistantReferencePanel } from "@/components/exam-library/survey-assistant-reference-panel";
 import { posthogCapture } from "@/lib/posthog";
+import { sendConversion } from "@/lib/billing/conversion-client";
+import { reportStudyAnswer } from "@/lib/study-presence-client";
 import { observeJourney } from "@/lib/billing/journey-client";
 import { findExamEntry } from "@/lib/exam-library-catalog";
 import { qualificationHubForEntry } from "@/lib/exam-qualification-hubs";
@@ -43,6 +49,7 @@ import { ExamLibraryCopilot } from "@/components/exam-library/exam-copilot";
 import { ExamDeviceSavePanel } from "@/components/exam-library/exam-device-save-panel";
 import {
   boilerAnswerPage,
+  gradeExamAnswer,
   isScorableQuestion,
   officialPdfPageUrl,
   type ExamQuestion,
@@ -75,6 +82,7 @@ interface ExamQuestionPlayerProps {
   questionIndex?: readonly PaperQuestionIndex[];
   resolveQuestion?: (id: string, signal: AbortSignal) => Promise<ExamQuestion>;
   resolveResults?: (answers: {id:string;choice:number|null;proof?:string}[], signal:AbortSignal) => Promise<{id:string;choice:number|null;result:"correct"|"incorrect"|"unscored"}[]>;
+  paceSession?: { exam: string; onComplete: () => void };
 }
 
 type AnswerStatus = ReturnType<typeof answerResult> | "pending";
@@ -120,6 +128,7 @@ function authorityBadge(question: ExamQuestion): string {
   if (isExamReferenceOnly(question)) return "参照専用・採点対象外";
   if (isScorableQuestion(question)) return "公式正答で採点";
   if (question.answerAuthority === "descriptive") return "記述・自己確認";
+  if (question.officialAllCandidatesCorrect) return "採点なし（公式は全員正解）";
   return "採点なし（公式正答未登録）";
 }
 
@@ -149,12 +158,14 @@ export function ExamQuestionPlayer({
   questionIndex,
   resolveQuestion,
   resolveResults,
+  paceSession,
 }: ExamQuestionPlayerProps) {
   // The paper's complete ID set owns progress; granted bodies are a separate cache.
   const [granted, setGranted] = useState<Record<string, ExamQuestion>>({});
   const grantedRef = useRef(granted);
   const contentGeneration = useRef(0);
   const [contentError, setContentError] = useState("");
+  const accountStatus = useAccountStatus(!!contentError);
   const [contentAttempt, setContentAttempt] = useState(0);
   const [reviewResults, setReviewResults] = useState<Record<string, {choice:number|null;result:"correct"|"incorrect"|"unscored"}>>({});
   const [reviewError, setReviewError] = useState("");
@@ -222,6 +233,8 @@ export function ExamQuestionPlayer({
       player: "exam_library", year: entry?.date.slice(0, 4), hubSlug, total: practiceQuestions.length });
   }, [current, referenceOnly, view, examId, hubSlug, practiceQuestions.length]);
   const submitted = !referenceOnly && Boolean(currentAnswer?.submitted);
+  const { recordAnswer: recordPaceAnswer, recordExplanation: recordPaceExplanation, endRef: paceEndRef } = useQuestionActivity(
+    paceSession && current && (!resolveQuestion || granted[current.id]) ? { id: current.id, exam: paceSession.exam, type: "multiple-choice" } : null, submitted);
   const status: AnswerStatus = current ? answerResult(current, currentAnswer) : "unanswered";
   const resultFor = useCallback((question: ExamQuestion, source = answers): AnswerStatus => {
     const answer = source[question.id];
@@ -289,6 +302,7 @@ export function ExamQuestionPlayer({
     if (tabRestoredRef.current) return;
     tabRestoredRef.current = true;
     setTabRestoreReady(true);
+    if (paceSession) return;
     const disk = getBrowserStorage();
     const diskProgress = disk ? parseExamProgress(readExamProgressRaw(disk, examId), examId, questions) : null;
     const progress = readExamTabProgress(examId, questions) ?? (initialView === "summary" ? diskProgress : null);
@@ -299,13 +313,14 @@ export function ExamQuestionPlayer({
     const lastIndex = allIds.indexOf(initialQuestionId ?? progress.lastQuestionId ?? "");
     setIndex(Math.max(0, lastIndex));
     setRestoreHandled(true);
-  }, [allIds, examId, initialQuestionId, initialView, questions]);
+  }, [allIds, examId, initialQuestionId, initialView, questions, paceSession]);
 
   /** 状態更新と（オン時のみ）端末保存を同時に行う */
   const commit = useCallback(
     (next: ExamSessionAnswers, lastQuestionId: string | null) => {
       next = excludeSurveyAssistantReferenceAnswers(next);
       setAnswers(next);
+      if (paceSession) return;
       const nextSummary = summaryFor(next);
       writeExamTabProgress(createExamProgress(examId, next, lastQuestionId), questions, examTitle, nextSummary);
       if (!saveEnabled) return;
@@ -318,7 +333,7 @@ export function ExamQuestionPlayer({
         setSaveStatus("端末への保存に失敗したため、保存をオフにしました。回答はこの画面では続けられます。");
       }
     },
-    [examId, examTitle, questions, saveEnabled, summaryFor],
+    [examId, examTitle, questions, saveEnabled, summaryFor, paceSession],
   );
 
   const showQuestion = useCallback(
@@ -347,9 +362,11 @@ export function ExamQuestionPlayer({
   }, []);
 
   const moveNext = useCallback(() => {
-    if (index >= roundIds.length - 1) showSummary();
+    recordPaceExplanation();
+    if (index >= roundIds.length - 1 && paceSession) paceSession.onComplete();
+    else if (index >= roundIds.length - 1) showSummary();
     else goTo(index + 1);
-  }, [goTo, index, roundIds.length, showSummary]);
+  }, [goTo, index, roundIds.length, showSummary, paceSession, recordPaceExplanation]);
 
   const selectChoice = useCallback(
     (choice: number) => {
@@ -357,15 +374,21 @@ export function ExamQuestionPlayer({
       const entry = findExamEntry(examId);
       recordStudyReward({ scope: `library:${examId}`, questionId: current.id, exam: entry ? `library:${entry.subject}` : "unknown", label: entry?.subject ?? "学習のひと休み" });
       setDraftChoice(choice);
+      if (paceSession && isScorableQuestion(current) && readSettings().recordHistory) {
+        const correct = gradeExamAnswer(current, choice) === "correct";
+        recordPaceAnswer(correct); recordReview(current.id, correct);
+      }
       commit({
         ...answers,
         [current.id]: { choice, memo: currentAnswer?.memo ?? "", submitted: true, reviewProof: (current as ExamQuestion & {reviewProof?:string}).reviewProof },
       }, current.id);
+      reportStudyAnswer(paceSession?.exam ?? hubSlug);
       posthogCapture("exam_library_answered", { examId, hubSlug: hubSlug ?? undefined });
+      sendConversion("guest_answered");
       observeJourney({ qualification: hubSlug ?? undefined, answer: true });
       focusLater(feedbackRef);
     },
-    [answers, commit, current, currentAnswer?.memo, examId, hubSlug, submitted, contentPending],
+    [answers, commit, current, currentAnswer?.memo, examId, hubSlug, submitted, contentPending, paceSession, recordPaceAnswer],
   );
 
   const submitAnswer = useCallback(() => {
@@ -376,6 +399,10 @@ export function ExamQuestionPlayer({
     }
     // Opening a model answer is not an answered question. Reward choices only.
     if (current.choiceCount > 0) {
+      if (paceSession && isScorableQuestion(current) && readSettings().recordHistory) {
+        const correct = gradeExamAnswer(current, draftChoice) === "correct";
+        recordPaceAnswer(correct); recordReview(current.id, correct);
+      }
       const entry = findExamEntry(examId);
       recordStudyReward({ scope: `library:${examId}`, questionId: current.id, exam: entry ? `library:${entry.subject}` : "unknown", label: entry?.subject ?? "学習のひと休み" });
     }
@@ -392,9 +419,13 @@ export function ExamQuestionPlayer({
       current.id,
     );
     posthogCapture("exam_library_answered", { examId, hubSlug: hubSlug ?? undefined });
+    if (current.choiceCount > 0 || currentAnswer?.memo?.trim()) {
+      reportStudyAnswer(paceSession?.exam ?? hubSlug);
+      sendConversion("guest_answered");
+    }
     observeJourney({ qualification: hubSlug ?? undefined, answer: true });
     focusLater(feedbackRef);
-  }, [answers, commit, current, currentAnswer?.memo, draftChoice, examId, hubSlug, submitted, contentPending]);
+  }, [answers, commit, current, currentAnswer?.memo, draftChoice, examId, hubSlug, submitted, contentPending, paceSession, recordPaceAnswer]);
 
   const retryCurrent = useCallback(() => {
     if (!current || isExamReferenceOnly(current)) return;
@@ -539,8 +570,8 @@ export function ExamQuestionPlayer({
 
   if (!nativePermission.allowed) return <NativeAccessState permission={nativePermission}/>;
   if (contentPending) return <section className="space-y-4" aria-live="polite">
-    {contentError ? <p role="alert">{contentError === "daily_limit" ? "本日の無料10問を使い切りました。日本時間0時に更新されます。" : contentError === "sign_in_required" ? "無料枠を端末間で共有するためログインが必要です。" : contentError}</p> : <p role="status">利用枠と回答済みの問題を確認しています…</p>}
-    {contentError && <><button type="button" onClick={()=>setContentAttempt(n=>n+1)}>再確認</button><p><a href={`/auth/signin?callbackUrl=${encodeURIComponent(`/e-learning/exams/${examId}?question=${currentId ?? ""}`)}`}>ログイン・本人確認</a> · <Link href="/billing">有料会員・購入復元</Link></p></>}
+    {contentError ? <p role="alert">{contentError === "daily_limit" ? "本日の無料10問を使い切りました。日本時間0時に更新されます。" : contentError === "sign_in_required" ? accountStatus === "unauthenticated" ? "無料枠を端末間で共有するためログインが必要です。" : "利用状態を確認できません。もう一度お試しください。" : contentError}</p> : <p role="status">利用枠と回答済みの問題を確認しています…</p>}
+    {contentError && <><button type="button" onClick={()=>setContentAttempt(n=>n+1)}>再確認</button><p><SignedOutOnly><a href={`/auth/signin?callbackUrl=${encodeURIComponent(`/e-learning/exams/${examId}?question=${currentId ?? ""}`)}`}>ログイン・本人確認</a> · </SignedOutOnly><Link href="/billing">有料会員・購入復元</Link></p></>}
     <nav className="flex flex-wrap gap-4"><button type="button" disabled={index<=0} onClick={()=>goTo(index-1)}>前の問題</button><button type="button" disabled={index>=roundIds.length-1} onClick={()=>goTo(index+1)}>次の問題</button><button type="button" onClick={showSummary}>結果を見る</button></nav>
   </section>;
   if (questions.length === 0) return null;
@@ -834,7 +865,7 @@ export function ExamQuestionPlayer({
                       {scorable ? ` ／ 公式正答 ${choiceText(current.correctChoice)}` : ""}
                     </p>
                   ) : null}
-                  {!scorable ? (
+                  {!scorable && !current.officialAllCandidatesCorrect ? (
                     <p className="mt-1">
                       {current.answerAuthority === "descriptive"
                         ? "記述式のため、このサイトでは正誤を判定しません。"
@@ -893,6 +924,7 @@ export function ExamQuestionPlayer({
                   </div>
                 </div>
 
+                {paceSession && <span ref={paceEndRef} aria-hidden="true" />}
                 <ExamLibraryCopilot
                   key={current.id}
                   examId={examId}

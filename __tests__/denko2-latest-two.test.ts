@@ -38,7 +38,7 @@ describe("第二種電気工事士の最新2回", () => {
     expect(new Set(DENKO2_QUESTIONS.map((q) => q.id)).size).toBe(DENKO2_QUESTIONS.length);
   });
   it("makes all 50 source-checked questions available after resolving the Q47 photo count", () => {
-    expect(DENKO2_QUESTIONS).toHaveLength(250);
+    expect(DENKO2_QUESTIONS).toHaveLength(650);
     expect(DENKO2_2026_QUESTIONS.filter((q) => q.needsReview)).toHaveLength(0);
     expect(DENKO2_2026_QUESTIONS.filter(isPracticeReadyQuestion)).toHaveLength(50);
     expect(filterQuestions(DENKO2_QUESTIONS, { mode: "year", exam: "denko2", year: 2026, season: "first", session: "gakka" })).toHaveLength(50);

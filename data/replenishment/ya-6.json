@@ -1,0 +1,57 @@
+{
+  "lane": "ya-6",
+  "branch": "cx/kako-5yh6-20261118",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "assignment": "zero-based jobs index % 14 == 5, descending",
+  "completed": [
+    {
+      "jobId": "PLAN5-440",
+      "index": 439,
+      "exam": "kyusui",
+      "year": 2021,
+      "season": "annual",
+      "session": "gakka-1",
+      "status": "completed",
+      "action": "不足分だけ新規補充",
+      "originalQuestions": 40,
+      "choiceExplanations": 191,
+      "path": "data/questions/kyusui/2021-annual-gakka1.json",
+      "sourceEvidencePath": "docs/question-sources/ya-6-kyusui-2021-gakka1.json",
+      "sourcePdfUrl": "https://www.kyuukou.or.jp/shiken/file-r03/file-r03_gakka-01.pdf",
+      "sourceAnswerUrl": "https://www.kyuukou.or.jp/shiken/file-r03/file-r03_seitou-num.pdf"
+    },
+    {
+      "jobId": "PLAN5-412",
+      "index": 411,
+      "exam": "fp1",
+      "year": 2025,
+      "season": "january",
+      "session": "gakka-oyo",
+      "status": "completed",
+      "action": "不足分だけ新規補充",
+      "originalQuestions": 15,
+      "officialAnswerFields": 62,
+      "sharedCases": 5,
+      "originalFigures": 2,
+      "path": "data/questions/fp1/applied-2025-january.json",
+      "sourceEvidencePath": "docs/question-sources/ya-6-fp1-2025-january.json",
+      "sourcePdfUrl": "https://products.kinzai.or.jp/wp-content/uploads/2026/11/fp01_g_oyo_202501.pdf",
+      "sourceAnswerUrl": "https://products.kinzai.or.jp/wp-content/uploads/2026/11/fp01_g_202501.pdf"
+    }
+  ],
+  "deferred": [
+    {
+      "jobId": "PLAN5-426",
+      "index": 425,
+      "exam": "hoikushi",
+      "year": 2026,
+      "season": "late",
+      "session": "kodomo-katei-fukushi",
+      "status": "official-answer-pending",
+      "stagedQuestions": 20,
+      "path": "data/qualification-staging/hoikushi-2026-late/questions.json",
+      "sourcePage": "https://www.hoyokyo.or.jp/exam/pasttest/08-2.html",
+      "officialAnswerPublicationScheduledAt": "2026-11-30T10:00:00+09:00"
+    }
+  ]
+}

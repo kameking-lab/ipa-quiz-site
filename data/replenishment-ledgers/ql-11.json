@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "lane": "ql-11",
+  "date": "2026-11-18",
+  "baseline": "c66bd98a5",
+  "reviewCorrections": [
+    {
+      "jobId": "PLAN5-333",
+      "exam": "kenchikushi2",
+      "year": 2024,
+      "season": "annual",
+      "session": "gakka-II",
+      "dataPath": "data/questions/kenchikushi2/2024-gakka-II.json",
+      "questionUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka1_2.pdf",
+      "answerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+      "figureDescriptions": [
+        { "qNumber": 5, "pdfPage": 13 },
+        { "qNumber": 14, "pdfPage": 18 },
+        { "qNumber": 15, "pdfPage": 19 },
+        { "qNumber": 16, "pdfPage": 20 },
+        { "qNumber": 17, "pdfPage": 21 }
+      ],
+      "transcription": [
+        { "qNumber": 24, "pdfPage": 25, "choice": "オ", "detail": "瑕疵の途中の空白を除去" }
+      ],
+      "officialAnswersVerified": { "gakka-I": 25, "gakka-II": 25 },
+      "originalFiguresVerified": 5,
+      "addedRecords": 0
+    }
+  ]
+}

@@ -24,6 +24,7 @@ export const PM_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "JIS Q 21500:2018によると、プロジェクトマネジメントオフィス（PMO）は、組織のプロジェクトマネジメントに関する標準化、教育訓練、ツールの提供、プロジェクトの監視などの役割を担います。これらの役割は、プロジェクトスポンサ、プロジェクトマネージャ、プロジェクトマネジメントチームとは異なる、組織横断的な支援機能です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,13 @@ export const PM_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "RACIチャートにおける「説明責任（Accountable）」とは、タスクの完了を最終的に保証し、承認する責任を負う人物を指します。この「説明責任」を持つ人物は、通常、そのタスクにおいて一人だけが指定されます。問題文の表（図表は参照しない）で「設計アクティビティ」の欄において「説明責任（A）」を持つ要員が野村であることが示されていると判断できます。\n\n選択肢アの阿部は、設計アクティビティにおいて「説明責任」ではなく、例えば「実行責任（Responsible）」や「相談先（Consulted）」といった別の役割を担っているため不適切です。選択肢イの伊藤と佐藤は、もし両者とも「説明責任」を負うとされている場合、RACIチャートの原則に反するため不適切であり、通常は一人に集約されます。選択肢ウの鈴木と田中も同様に、複数名が「説明責任」を担うことはRACIチャートの定義上、一般的ではありません。",
+    "choiceExplanations": {
+      "ア": "設計の行で阿部に付いているRは実行責任です。設計の作業を担当する役割と、成果について最終的な説明を担う役割を区別します。",
+      "イ": "設計の行で伊藤と佐藤に付いているのはIです。活動の結果などの報告を受ける要員で、設計の説明責任者には当たりません。",
+      "ウ": "設計の行で鈴木と田中に付いているCは相談先を表します。助言を求められる役割で、成果について最終的な説明を担う要員はAです。",
+      "エ": "RACIのAは説明責任を表します。設計の行でAが付いているのは野村で、設計の成果について説明する責任を持ちます。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +80,7 @@ export const PM_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "PMBOKガイド第6版によれば、組織のプロセス資産（OPA）は、プロジェクトの実行に影響を与える組織固有のプロセス、手続き、計画、実績データなどを指します。課題と欠陥のマネジメント上の手続きは、組織が持つ標準的な運用プロセスの一つとしてこれに分類されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -95,7 +104,14 @@ export const PM_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
       "エ": "13"
     },
     "answer": "ウ",
-    "explanation": "この問題は、プロジェクトのクリティカルパスを特定し、プロジェクト全体の最小所要日数を算出するものです。PDM（プレシデンスダイアグラム法）は、アクティビティ間の依存関係を視覚的に表現する手法です。FS - nは先行アクティビティの終了よりn日早く後続アクティビティを開始できることを、FS + nは先行アクティビティの終了よりn日遅れて後続アクティビティを開始できることを意味します。\n\nプロジェクトの最小所要日数は、すべてのパスの中で最も長い所要日数を辿るクリティカルパスによって決まります。図表がないため具体的なパスの特定はできませんが、各アクティビティの先行・後続関係とリード・ラグタイム（FS - n、FS + n）を考慮して、各パスの終了日を計算し、その最大値がプロジェクトの最小所要日数となります。\n\n選択肢ア、イ、エは、クリティカルパス以外のパスの所要日数であったり、リード・ラグタイムの解釈を誤ったりした場合に算出される可能性のある日数です。例えば、FS - n の意味を誤って解釈すると、実際よりも短く見積もってしまうことがあります。また、FS + n のラグタイムを考慮しない、または過大に評価すると、本来のクリティカルパスではないパスを誤ってクリティカルパスと判断してしまう可能性があります。正解であるウは、これらのリード・ラグタイムを正確に反映し、最も遅い終了日を決定するクリティカルパスの所要日数を正しく示しています。",
+    "explanation": "開始を0日目とすると、Aは2日目、Bは5日目に完了します。CはFS－2により3日目に開始して7日目に完了し、DはFS＋2により4日目に開始して8日目に完了します。EはCとDの両方を待つので8日目に開始し、12日目に終わります。",
+    "choiceExplanations": {
+      "ア": "Dの待ち時間2日を省くと、A→D→Eは2＋4＋4＝10日になります。実際にはDをAの終了2日後まで始められません。",
+      "イ": "Cの終了は7日目で、そこからEを始めると11日目です。ただしEは8日目に終わるDの完了も待ちます。",
+      "ウ": "CはBの終了2日前の3日目に始まって7日目に終わり、Dは4日目に始まって8日目に終わります。Eは8日目から4日かかります。",
+      "エ": "BからCへのリードを省くとA→B→C→Eの13日になります。CはBの終了より2日早く始められ、Eを待たせるのはDです。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +136,7 @@ export const PM_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ガントチャートは、縦軸に作業項目、横軸に時間をとって棒グラフで表現される工程管理図表です。作業計画に対する実績の進捗状況を時間軸で視覚的に把握するのに適しており、個人やグループの進捗管理によく利用されますが、作業間の相互関係（依存関係）を詳細に表現することには向いていません。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +161,7 @@ export const PM_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "クラッシングとは、プロジェクトのスケジュールを短縮するために、クリティカルパス上の活動に追加の資源を投入する手法です。クリティカルパス上のアクティビティが遅れた際に、そこに人的資源を追加して作業を加速させるのは、クラッシングの典型的な例です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +186,7 @@ export const PM_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "クリティカルチェーン法（CCPM）は、プロジェクトの不確実性や資源の制約を考慮し、クリティカルチェーン上に複数のバッファ（合流バッファ、プロジェクトバッファなど）を設けることで、プロジェクト全体のリスクを吸収し、納期達成を目指すスケジュール管理手法です。これにより、作業者が心理的な余裕を持って作業に集中しやすくなります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +211,7 @@ export const PM_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "本問題の正解はウ:450万円とされていますが、提示された条件と一般的なプロジェクト管理の計算ロジックに基づくと、この金額を導出することは困難です。8月初めからの減員（4人×2ヶ月=8人月）と、7月後半の引継ぎ期間の元のメンバの開発停止（10人×0.5ヶ月=5人月）を補うには、合計13人月が必要です。これを8月・9月の2ヶ月間で補うには5人の増員メンバが必要となり、その人件費増加は5人×2.5ヶ月×100万円/人月=1250万円となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +236,7 @@ export const PM_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "COSMIC法（Common Software Measurement International Consortium）は、ソフトウェアの機能規模見積り手法の一つで、利用者機能要件と機能プロセスに着目します。データ移動をエントリ、エグジット、読込み、書込みの4種類に分類し、それぞれの個数に単位規模を乗じて機能プロセスの規模を算出します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +261,7 @@ export const PM_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "JIS Q 21500:2018によれば、リスクの特定とリスクの評価は、プロジェクトのリスクを識別し、その特性を理解するためのプロセスであり、これらはプロジェクト全体の計画を策定する「計画」プロセス群に属します。計画プロセス群では、リスクマネジメント計画の策定、リスクの特定、評価、対応計画の策定などが行われます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +286,13 @@ export const PM_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "感度分析の結果を視覚化する際に、各リスク要因がプロジェクトの目標（例えば、コストやスケジュール）に与える影響の大きさを、影響度の大きい順に棒グラフで示し、その形が竜巻に似ていることからトルネード図と呼ばれます。これは、どのリスクが最も影響が大きいかを特定するのに役立ちます。\n\nアの確率分布は、ある事象が発生する可能性を数値で表したもので、図形が竜巻の形をしているわけではありません。イのデシジョンツリーダイアグラムは、意思決定における選択肢とその結果を樹状図で表すもので、感度分析の結果を直接示すものではありません。エのリスクブレークダウンストラクチャは、リスクを階層構造に分解したもので、分析結果の視覚化とは異なります。",
+    "choiceExplanations": {
+      "ア": "確率分布は結果の値ごとの確率を表します。図の横棒は各リスクが結果をどの程度増減させるかを示しており、確率は表していません。",
+      "イ": "デシジョンツリーは意思決定の選択肢やその後の事象を枝分かれで表します。図ではリスクごとの影響幅を横棒で比較しています。",
+      "ウ": "プラスとマイナスの影響範囲をリスクごとに横棒で描き、影響が大きい順に並べています。この感度分析の表示がトルネード図です。",
+      "エ": "リスクブレークダウンストラクチャはリスクを要因などに沿って階層化したものです。図には分類階層がなく、影響の大小が示されています。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +317,7 @@ export const PM_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "傾向分析は、時間の経過に伴うプロジェクトのパフォーマンスデータ（コスト、スケジュール、品質など）の変動を継続的に監視し、そのパターンや方向性を分析する技法です。これにより、将来のパフォーマンスを予測し、問題発生の兆候を早期に特定することができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +342,7 @@ export const PM_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "イが正解となるのは、PCのレンタル期間を正確に算出した結果、総レンタル費用が470千円となるためです。\n\nPCのレンタル期間は、開発要員が使用する期間に加えて、セットアップ期間（2週間）とデータ消去期間（1週間）を考慮する必要があります。調達の条件(3)より、これらの期間はレンタル期間に含まれます。開発要員は月末日に離任しますが、PCはデータ消去に1週間を要するため、その期間もレンタルを継続する必要があります。また、開発要員は月初日に着任し、月末日に離任するという条件(5)と、PC1台あたりの月額料金が5千円(2)であることから、各月のPC必要台数とレンタル期間を正確に計算することが重要です。\n\nアは、セットアップやデータ消去期間を考慮せず、単に開発要員数×月数×5千円で計算した場合の金額であり、調達の条件(3)を満たしていません。ウは、データ消去期間を過剰に含めるなど、レンタル期間の計算に誤りがある可能性が考えられます。エは、同様にレンタル期間の計算誤りや、PCの必要台数の数え間違いなどが原因で、正しい総費用から乖離していると考えられます。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +367,7 @@ export const PM_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "JIS Q 21500:2018におけるプロセス「コミュニケーションのマネジメント」の目的は、プロジェクトのステークホルダのコミュニケーションニーズを確実に満たし、コミュニケーションに関連する課題が発生した際に、それらを効果的に解決することです。これにより、適切なタイミングで適切な情報が適切な相手に提供されることを保証します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +392,7 @@ export const PM_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "オブジェクト指向開発におけるロバストネス分析は、ユースケースを実現するために必要なクラスを抽出・分類し、それらの相互関係を定義する設計分析手法です。ユースケースから抽出したクラスを、バウンダリクラス（システムと外部の境界）、コントロールクラス（ロジック）、エンティティクラス（データ）の3つに分類し、図として表現します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +417,7 @@ export const PM_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "リーンソフトウェア開発は、製造業の「リーン生産方式」の考え方をソフトウェア開発に適用したアジャイル開発のアプローチです。この開発手法は、「ムダをなくす」「品質を作り込む」「知識を創造する」「決定を遅らせる」「高速にデリバリーする」「人を尊重する」「全体を最適化する」といった七つの原則を重視し、効率的で価値の高いソフトウェア開発を目指します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +442,7 @@ export const PM_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "マッシュアップは、ウェブ上に公開されている複数の異なるサービスやデータ（例：地図サービス、写真共有サービスなど）を組み合わせて、新たな独自のサービスを構築する技術やアプリケーションのことです。これにより、既存のリソースを再利用し、迅速に新しい価値を提供できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -431,7 +466,14 @@ export const PM_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
       "エ": "案4"
     },
     "answer": "ウ",
-    "explanation": "ウが正解です。総合評価点は、効果の総評価点からリスクの総評価点を差し引いて算出されます。効果及びリスクは5段階評価され、それぞれの重要度に応じて重み付けされて総評価点が計算されます。\n\nアは、計算の結果、総合評価点が最も高くないため不適切です。イも同様に、計算の結果、総合評価点が最も高くないため不適切です。エは、提示された計算方法に基づくと、総合評価点が最も高くないため不適切です。ウの案3は、提示された計算式に各案の評価と重み付けを適用した結果、他の案よりも総合評価点が最も高くなります。",
+    "explanation": "各項目を採点結果と重みの積で評価します。効果の加重合計からリスクの加重合計を引くと、案1は31－28＝3点、案2は36－35＝1点、案3は30－23＝7点、案4は30－43＝－13点です。案3が最高点です。",
+    "choiceExplanations": {
+      "ア": "案1は作業コスト削減の効果が大きく、効果の加重合計は31点です。リスクの28点を引くと3点で、案3の7点を下回ります。",
+      "イ": "案2の効果は36点と最大ですが、スケジュールリスクだけで4×8＝32点です。技術リスクも引くと1点になります。",
+      "ウ": "案3の効果は2×3＋2×2＋5×4＝30点、リスクは5×3＋1×8＝23点です。差の7点が4案で最も高い値です。",
+      "エ": "案4はスケジュールリスクが5×8＝40点です。技術リスクを合わせた43点を効果の30点から引くと－13点です。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +498,7 @@ export const PM_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "フェールソフトとは、システムに障害が発生した場合でも、完全に機能を停止するのではなく、一部の機能を縮退させたり、性能を低下させたりしながらも、運用を継続できるようにする設計思想です。ハードウェアの障害時に、パフォーマンスは低下するものの、システム構成を縮小して運転を続けられるようにするのは、このフェールソフトの考え方を適用した例です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +523,7 @@ export const PM_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "UXデザイン（ユーザーエクスペリエンスデザイン）は、システムや製品を利用する際に、ユーザーが得る体験全般を重視した設計思想です。単に機能性や操作性だけでなく、快適さ、安心感、楽しさ、感動といった感情的な価値や体験の質を高めることを目指します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +548,7 @@ export const PM_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "就業規則に業務上の秘密漏えい禁止の一般的な規定がある場合でも、特定の担当従業員の職務内容に応じて、取り扱う秘密の内容を具体的に特定し、個別の合意を締結することは、秘密保護をより強固にするための適切な行為です。これは労働契約自由の原則に反せず、従業員の同意を前提とします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +573,7 @@ export const PM_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ホイッスルブローイング（内部告発）とは、組織内部の従業員が、所属組織が法令や社会的規範に違反する行為を行っていることを、上司や外部の第三者機関（監督官庁、報道機関など）に知らしめる行為を指します。これは組織の不正を正し、社会的な健全性を保つための重要な手段とされています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +598,7 @@ export const PM_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "AES（Advanced Encryption Standard）は、共通鍵暗号方式の代表的なアルゴリズムです。共通鍵暗号方式では、暗号化と復号に同じ鍵を使用します。ElGamal暗号、RSA、楕円曲線暗号は、すべて異なる鍵で暗号化と復号を行う公開鍵暗号方式に分類されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +623,7 @@ export const PM_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "テンペスト攻撃は、ディスプレイやケーブルなどから漏洩する微弱な電磁波を傍受し、そこに含まれる情報を解析して表示内容などを盗み出すサイバー攻撃の一種です。この攻撃に対する対策としては、電磁波の漏洩を物理的に遮断するシールドや、電磁波を相殺するノイズ発生装置の導入などがあります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +648,7 @@ export const PM_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "DNSSEC（Domain Name System Security Extensions）は、DNSサーバーから受け取るリソースレコード（ドメイン名とIPアドレスの対応情報など）の正当性と完全性を検証するための技術です。ディジタル署名を利用してDNS応答の改ざんやなりすましを防ぎ、DNSのセキュリティを強化します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_pm_am2_qs.pdf",
     "license": "IPA-public"

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import {
   RefreshCw,
-  Sparkles,
+  Shuffle,
   Target,
   Trophy,
   Zap,
@@ -29,7 +29,7 @@ const TABS: {
   {
     key: "random",
     label: "通常クイズ",
-    icon: <Sparkles className="h-3.5 w-3.5" />,
+    icon: <Shuffle className="h-3.5 w-3.5" />,
     href: (e) => `/quiz?mode=random&exam=${e}`,
   },
   {

@@ -65,14 +65,13 @@ describe("QuizPlayer numeric original", () => {
     expect(createHistoryStore().getAllEntries()).toHaveLength(1);
   });
 
-  it("uses the completion screen after grading the final numeric original and permits rereading it", () => {
+  it("uses the completion screen after grading the final numeric original with one navigation action", () => {
     render(<QuizPlayer question={question} index={0} total={1} mode="year" onNext={vi.fn()} />);
     fireEvent.change(screen.getByRole("textbox", { name: "解答（滴/分）" }), { target: { value: "42" } });
     fireEvent.click(screen.getByRole("button", { name: "採点する" }));
     fireEvent.click(screen.getByRole("button", { name: "結果を見る" }));
     expect(screen.getByRole("heading", { name: "クイズ完了！" })).toBeTruthy();
-    fireEvent.click(screen.getByRole("button", { name: "最後の問題をAIに質問" }));
-    expect(screen.getByRole("region", { name: "正解の解説" })).toHaveTextContent(question.explanation);
+    expect(screen.queryByRole("button", { name: "最後の問題をAIに質問" })).toBeNull();
     expect(createHistoryStore().getAllEntries()).toHaveLength(1);
   });
 

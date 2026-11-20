@@ -47,10 +47,17 @@ export const AP_QUESTIONS_2019_AUTUMN: Question[] = [
       "エ": "S-(A∩B)"
     },
     "answer": "ア",
-    "explanation": "A∩BはAとBの共通部分を表します。選択肢アのA-Bは、AからBを除いた差集合であり、A∩Bとは一般的に等しくありません。しかし、A-(A-B)であればA∩Bに等しいため、問題文の選択肢に誤記があり、A-(A-B)が意図されている可能性があります。",
+    "explanation": "原本で問うのはAの補集合とBの補集合の積集合です。Aの補集合からBに属する要素を取り除けば、AにもBにも属さない要素だけが残ります。これが原本のアです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_2/2019h01a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "原本のアはAの補集合からBを除く式です。Aに属さない要素の中からBに属する要素を引くと、AにもBにも属さない要素だけが残ります。",
+      "イ": "原本のイはAに属さないかBに属さない要素を集めています。AとBの積集合と重ならないので、それを引いてもAだけに属する要素が残ります。",
+      "ウ": "S－AとS－Bの和集合では、A又はBの少なくとも一方に属さない要素を集めます。両方に属さない要素だけを求めるには積集合を取ります。",
+      "エ": "SからA∩Bを引くと、Aだけに属する要素やBだけに属する要素も残ります。本問ではAとBのどちらにも属さない要素だけを残します。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2019a-am-q3",

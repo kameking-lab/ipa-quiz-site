@@ -40,7 +40,7 @@ for (const mode of ["binary", "shared-bank"] as const) describe(`native ${mode}`
     expect(screen.getAllByRole("combobox").every((select) => (select as HTMLSelectElement).value === "")).toBe(true);
     expect(screen.queryByText(/正答枠数/)).not.toBeInTheDocument();
   });
-  it("individual page grades partial slots once and its reader path does not record", () => {
+  it("individual page grades partial slots once and reading without answering does not record", () => {
     const question = nativeBQuestion(mode);
     const props = { question, questionId: question.id, answerKey: question.answer, exam: question.exam, year: question.year, season: question.season, session: question.session, qNumber: question.qNumber };
     const page = render(<QuestionAnswerCard {...props} />);
@@ -50,7 +50,9 @@ for (const mode of ["binary", "shared-bank"] as const) describe(`native ${mode}`
     expect(createHistoryStore().getAllEntries()).toMatchObject([{ correct: false, nativeBResult: { correctSlots: 1, isCorrect: false } }]);
     page.unmount(); localStorage.clear(); render(<QuestionAnswerCard {...props} />);
     fireEvent.click(screen.getByRole("button", { name: "採点せずに答えだけ見る" }));
-    expect(screen.getByText("各枠の正答と解説")).toBeInTheDocument(); expect(createHistoryStore().getAllEntries()).toHaveLength(0);
+    expect(screen.getByText("各枠の正答と解説")).toBeVisible();
+    expect(screen.queryByText(/正答枠数/)).toBeNull();
+    expect(createHistoryStore().getAllEntries()).toHaveLength(0);
   });
   it("stream retains partial results in its previous-original review", () => {
     vi.useFakeTimers(); const question = nativeBQuestion(mode);

@@ -1,0 +1,172 @@
+[
+  {
+    "id": "db-2018h-pm1-q1",
+    "exam": "db",
+    "session": "pm1",
+    "year": 2018,
+    "season": "spring",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "データベース設計",
+    "topicTags": [
+      "データベース設計"
+    ],
+    "difficulty": 4,
+    "question": "問1　データベース設計",
+    "answer": "設問 \n解答例・解答の要点 \n備考 \n設問１ (1) a 組織区分 \n \n \n \nb SC 組織コード \n \n \n \nc 営業所組織コード \n \n \n \nd 営業所組織コード \n \n \n \ne 顧客コード \n順不同 \n \n \nf 地域コード \n \n \ng 社員番号 \n順不同 \n \n \nh 営業所組織コード \n \n \ni 顧客コード \n \n \nj 見積番号 \n \n \n \nk 顧客コード \n \n \n(2) \n受注明細内訳\n受注明細\n受注\n見積明細\n見積\n設置事業所\n顧客\n地域\n営業所\nサービスセンタ\n営業担当者\n組織\nセット製品構成\n商品\n\n設問２ (1) \n属性名 \n \n \n \n \n \nエンティティ \nタイプ名 \n商\n品\n名\n \n商\n品\n区\n分\n \n製\n品\n区\n分\n \nオ\nプ\nシ\nョ\nン\n区\n分\n \n単\n体\nセ\nッ\nト\n製\n品\n区\n分\n \nシ\nリ\nー\nズ\nコ\nー\nド\n \n製\n品\nサ\nイ\nズ\n \n標\n準\n設\n置\n時\n間\n \n設\n置\nサ\nー\nビ\nス\n商\n品\nコ\nー\nド\n \nセ\nッ\nト\n製\n品\n本\n体\n製\n品\n商\n品\nコ\nー\nド\n \n商品 \n○ \n○ \n \n \n \n \n \n \n \n \n製品 \n \n \n \n \n○ \n \n \n \n○ \n \n設置サービス \n \n \n \n \n \n \n \n○ \n \n \n本体製品 \n \n \n \n \n \n○ \n \n \n \n \nオプション製品 \n \n \n \n○ \n \n \n \n \n \n \nセット製品 \n \n \n \n \n \n \n \n \n \n○ \n単体製品 \n \n \n○ \n \n \n \n○ \n \n \n \n \n \n \n(2) \nセット製品構成\n本体製品\nセット製品\nオプション製品\n単体製品\n製品\n商品\n設置サービス\n \n \n設問３ (1) \n関係 \nスキーマ \n出荷指示（出荷指示番号，出荷指示年月日） \n \n関係名 \n受注明細 \n \n属性名 \n出荷指示番号 \n \n(2) ① \n② \n・セット製品の場合 \n・設置サービスの場合",
+    "modelAnswer": "設問 \n解答例・解答の要点 \n備考 \n設問１ (1) a 組織区分 \n \n \n \nb SC 組織コード \n \n \n \nc 営業所組織コード \n \n \n \nd 営業所組織コード \n \n \n \ne 顧客コード \n順不同 \n \n \nf 地域コード \n \n \ng 社員番号 \n順不同 \n \n \nh 営業所組織コード \n \n \ni 顧客コード \n \n \nj 見積番号 \n \n \n \nk 顧客コード \n \n \n(2) \n受注明細内訳\n受注明細\n受注\n見積明細\n見積\n設置事業所\n顧客\n地域\n営業所\nサービスセンタ\n営業担当者\n組織\nセット製品構成\n商品\n\n設問２ (1) \n属性名 \n \n \n \n \n \nエンティティ \nタイプ名 \n商\n品\n名\n \n商\n品\n区\n分\n \n製\n品\n区\n分\n \nオ\nプ\nシ\nョ\nン\n区\n分\n \n単\n体\nセ\nッ\nト\n製\n品\n区\n分\n \nシ\nリ\nー\nズ\nコ\nー\nド\n \n製\n品\nサ\nイ\nズ\n \n標\n準\n設\n置\n時\n間\n \n設\n置\nサ\nー\nビ\nス\n商\n品\nコ\nー\nド\n \nセ\nッ\nト\n製\n品\n本\n体\n製\n品\n商\n品\nコ\nー\nド\n \n商品 \n○ \n○ \n \n \n \n \n \n \n \n \n製品 \n \n \n \n \n○ \n \n \n \n○ \n \n設置サービス \n \n \n \n \n \n \n \n○ \n \n \n本体製品 \n \n \n \n \n \n○ \n \n \n \n \nオプション製品 \n \n \n \n○ \n \n \n \n \n \n \nセット製品 \n \n \n \n \n \n \n \n \n \n○ \n単体製品 \n \n \n○ \n \n \n \n○ \n \n \n \n \n \n \n(2) \nセット製品構成\n本体製品\nセット製品\nオプション製品\n単体製品\n製品\n商品\n設置サービス\n \n \n設問３ (1) \n関係 \nスキーマ \n出荷指示（出荷指示番号，出荷指示年月日） \n \n関係名 \n受注明細 \n \n属性名 \n出荷指示番号 \n \n(2) ① \n② \n・セット製品の場合 \n・設置サービスの場合",
+    "explanation": "受注・出荷に使うエンティティの関連を確かめ、出荷指示追加で必要となる変更を整理する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2018-spring-pm1/page-03.webp",
+      "/questions/ipa/db/2018-spring-pm1/page-04.webp",
+      "/questions/ipa/db/2018-spring-pm1/page-05.webp",
+      "/questions/ipa/db/2018-spring-pm1/page-06.webp",
+      "/questions/ipa/db/2018-spring-pm1/page-07.webp",
+      "/questions/ipa/db/2018-spring-pm1/page-08.webp",
+      "/questions/ipa/db/2018-spring-pm1/page-09.webp",
+      "/questions/ipa/db/2018-spring-pm1/page-10.webp",
+      "/questions/ipa/db/2018-spring-pm1/page-11.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 午後I 問1の本文・図表・設問（公式問題冊子 3ページ）",
+      "データベーススペシャリスト 午後I 問1の本文・図表・設問（公式問題冊子 4ページ）",
+      "データベーススペシャリスト 午後I 問1の本文・図表・設問（公式問題冊子 5ページ）",
+      "データベーススペシャリスト 午後I 問1の本文・図表・設問（公式問題冊子 6ページ）",
+      "データベーススペシャリスト 午後I 問1の本文・図表・設問（公式問題冊子 7ページ）",
+      "データベーススペシャリスト 午後I 問1の本文・図表・設問（公式問題冊子 8ページ）",
+      "データベーススペシャリスト 午後I 問1の本文・図表・設問（公式問題冊子 9ページ）",
+      "データベーススペシャリスト 午後I 問1の本文・図表・設問（公式問題冊子 10ページ）",
+      "データベーススペシャリスト 午後I 問1の本文・図表・設問（公式問題冊子 11ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/db/2018-spring-pm1/answer-q01-p01.webp",
+      "/questions/ipa/db/2018-spring-pm1/answer-q01-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "データベーススペシャリスト 午後I 問1の公式解答例（1ページ）",
+      "データベーススペシャリスト 午後I 問1の公式解答例（2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_pm1_qs.pdf#page=6",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_pm1_ans.pdf#page=1",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2018年度春期 データベーススペシャリスト 午後I 問1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2018h-pm1-q2",
+    "exam": "db",
+    "session": "pm1",
+    "year": 2018,
+    "season": "spring",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "参照整合性",
+    "topicTags": [
+      "データベースでの制約の実装"
+    ],
+    "difficulty": 4,
+    "question": "問2　データベースでの制約の実装",
+    "answer": "設問 \n解答例・解答の要点 \n備考 \n設問１ (1) a '1' \n \n \n \nb 21 \n \n \n \nc CURRENT_DATE \n \n \n(2) d 従業員.部署コード \n \n \n \ne DISTINCT \n \n \n \nf ORDER BY \n \n設問２ (1) (a) \n結果 \n正常終了・エラー \n \n \n \n \n理由 \n（なし） \n \n \n \n(b) \n結果 \n正常終了・エラー \n \n \n \n \n理由 \n“部署”テーブルの管理者従業員コードの参照制約に違反するから \n \n \n(2) \nテーブル名 \n従業員家族 \n \n \n \n実行タイミング 削除の後 \n \n \n \n処理内容 \n削除した行を別テーブルに挿入する。 \n \n設問３ (1) \n契機 \n① \n \n \n \n不具合 削除された部署に所属している従業員が，“従業員”テーブルから削除さ\nれる。 \n \n \n(2) ［ ③ ］→ ② →［ ⑤ ］→ ④ →［ ① ］→ ⑥ \n \n \n(3) (a) 更新によって無くなった部署コードが，“従業員”テーブルの“部署コード”\nに存在しないことを確認する。 \n \n \n \n(b) “従業員”テーブルの“部署コード”に索引がなく，全行を参照しなけ\nればならないから",
+    "modelAnswer": "設問 \n解答例・解答の要点 \n備考 \n設問１ (1) a '1' \n \n \n \nb 21 \n \n \n \nc CURRENT_DATE \n \n \n(2) d 従業員.部署コード \n \n \n \ne DISTINCT \n \n \n \nf ORDER BY \n \n設問２ (1) (a) \n結果 \n正常終了・エラー \n \n \n \n \n理由 \n（なし） \n \n \n \n(b) \n結果 \n正常終了・エラー \n \n \n \n \n理由 \n“部署”テーブルの管理者従業員コードの参照制約に違反するから \n \n \n(2) \nテーブル名 \n従業員家族 \n \n \n \n実行タイミング 削除の後 \n \n \n \n処理内容 \n削除した行を別テーブルに挿入する。 \n \n設問３ (1) \n契機 \n① \n \n \n \n不具合 削除された部署に所属している従業員が，“従業員”テーブルから削除さ\nれる。 \n \n \n(2) ［ ③ ］→ ② →［ ⑤ ］→ ④ →［ ① ］→ ⑥ \n \n \n(3) (a) 更新によって無くなった部署コードが，“従業員”テーブルの“部署コード”\nに存在しないことを確認する。 \n \n \n \n(b) “従業員”テーブルの“部署コード”に索引がなく，全行を参照しなけ\nればならないから",
+    "explanation": "人事データの参照先をたどり、更新や削除で整合性を失うケースを制約でどう扱うか考える。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2018-spring-pm1/page-03.webp",
+      "/questions/ipa/db/2018-spring-pm1/page-04.webp",
+      "/questions/ipa/db/2018-spring-pm1/page-05.webp",
+      "/questions/ipa/db/2018-spring-pm1/page-12.webp",
+      "/questions/ipa/db/2018-spring-pm1/page-13.webp",
+      "/questions/ipa/db/2018-spring-pm1/page-14.webp",
+      "/questions/ipa/db/2018-spring-pm1/page-15.webp",
+      "/questions/ipa/db/2018-spring-pm1/page-16.webp",
+      "/questions/ipa/db/2018-spring-pm1/page-17.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 午後I 問2の本文・図表・設問（公式問題冊子 3ページ）",
+      "データベーススペシャリスト 午後I 問2の本文・図表・設問（公式問題冊子 4ページ）",
+      "データベーススペシャリスト 午後I 問2の本文・図表・設問（公式問題冊子 5ページ）",
+      "データベーススペシャリスト 午後I 問2の本文・図表・設問（公式問題冊子 12ページ）",
+      "データベーススペシャリスト 午後I 問2の本文・図表・設問（公式問題冊子 13ページ）",
+      "データベーススペシャリスト 午後I 問2の本文・図表・設問（公式問題冊子 14ページ）",
+      "データベーススペシャリスト 午後I 問2の本文・図表・設問（公式問題冊子 15ページ）",
+      "データベーススペシャリスト 午後I 問2の本文・図表・設問（公式問題冊子 16ページ）",
+      "データベーススペシャリスト 午後I 問2の本文・図表・設問（公式問題冊子 17ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/db/2018-spring-pm1/answer-q02-p03.webp"
+    ],
+    "answerImageAltTexts": [
+      "データベーススペシャリスト 午後I 問2の公式解答例（3ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_pm1_qs.pdf#page=12",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_pm1_ans.pdf#page=3",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2018年度春期 データベーススペシャリスト 午後I 問2",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2018h-pm1-q3",
+    "exam": "db",
+    "session": "pm1",
+    "year": 2018,
+    "season": "spring",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "物理データベース設計",
+    "topicTags": [
+      "物理データベースの設計及び実装"
+    ],
+    "difficulty": 4,
+    "question": "問3　物理データベースの設計及び実装",
+    "answer": "設問 \n解答例・解答の要点 \n備考 \n設問１ (1) \n店舗 \n施設ID，内線番号 \n \n \n \n精算 \nなし \n \n \n(2) a 年齢 < 12 \n \n \n \nb 年齢区分 = '2' \n順不同 \n \n \nc 年齢 BETWEEN 12 AND 59 \n \n \nd 年齢 >= 60 \n \n \n(3) ① 非ユニーク索引 \n \n \n \n② 同じ券番号の行が精算時にまとめて追加されるから \n \n \n(4) ア 最大行長 \n \n \n \nイ 有効ページ長 \n \n \n \nウ 平均行長 \n \n \n \nエ 見積行数 \n \n \n \nオ ページ当たりの平均行数 \n \n \n \nカ ページ長 \n順不同 \n \n \nキ 必要ページ数 \n \n(5) ク 必要ページ数 \n \n \n \nケ 探索行数 \n \n \n \nコ ページ当たりの平均行数 \n \n設問２ (1) \nW3 \n直前の作業ID W1 \n \n \n \n直後の作業ID W7 \n \n \n \nW9 \n直前の作業ID W1 \n \n \n \n直後の作業ID W10 \n \n \n(2) \nDML \nDML2，DML3 \n \n \n \n理由 \n作業W7 直後のテーブルは空だと判断されて表探索に決められるから \n \n \n(3) あ W10",
+    "modelAnswer": "設問 \n解答例・解答の要点 \n備考 \n設問１ (1) \n店舗 \n施設ID，内線番号 \n \n \n \n精算 \nなし \n \n \n(2) a 年齢 < 12 \n \n \n \nb 年齢区分 = '2' \n順不同 \n \n \nc 年齢 BETWEEN 12 AND 59 \n \n \nd 年齢 >= 60 \n \n \n(3) ① 非ユニーク索引 \n \n \n \n② 同じ券番号の行が精算時にまとめて追加されるから \n \n \n(4) ア 最大行長 \n \n \n \nイ 有効ページ長 \n \n \n \nウ 平均行長 \n \n \n \nエ 見積行数 \n \n \n \nオ ページ当たりの平均行数 \n \n \n \nカ ページ長 \n順不同 \n \n \nキ 必要ページ数 \n \n(5) ク 必要ページ数 \n \n \n \nケ 探索行数 \n \n \n \nコ ページ当たりの平均行数 \n \n設問２ (1) \nW3 \n直前の作業ID W1 \n \n \n \n直後の作業ID W7 \n \n \n \nW9 \n直前の作業ID W1 \n \n \n \n直後の作業ID W10 \n \n \n(2) \nDML \nDML2，DML3 \n \n \n \n理由 \n作業W7 直後のテーブルは空だと判断されて表探索に決められるから \n \n \n(3) あ W10",
+    "explanation": "処理を行う順序とそれぞれが参照・更新するデータを整理し、物理設計の制約に照らして判断する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2018-spring-pm1/page-03.webp",
+      "/questions/ipa/db/2018-spring-pm1/page-04.webp",
+      "/questions/ipa/db/2018-spring-pm1/page-05.webp",
+      "/questions/ipa/db/2018-spring-pm1/page-18.webp",
+      "/questions/ipa/db/2018-spring-pm1/page-19.webp",
+      "/questions/ipa/db/2018-spring-pm1/page-20.webp",
+      "/questions/ipa/db/2018-spring-pm1/page-21.webp",
+      "/questions/ipa/db/2018-spring-pm1/page-22.webp",
+      "/questions/ipa/db/2018-spring-pm1/page-23.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 午後I 問3の本文・図表・設問（公式問題冊子 3ページ）",
+      "データベーススペシャリスト 午後I 問3の本文・図表・設問（公式問題冊子 4ページ）",
+      "データベーススペシャリスト 午後I 問3の本文・図表・設問（公式問題冊子 5ページ）",
+      "データベーススペシャリスト 午後I 問3の本文・図表・設問（公式問題冊子 18ページ）",
+      "データベーススペシャリスト 午後I 問3の本文・図表・設問（公式問題冊子 19ページ）",
+      "データベーススペシャリスト 午後I 問3の本文・図表・設問（公式問題冊子 20ページ）",
+      "データベーススペシャリスト 午後I 問3の本文・図表・設問（公式問題冊子 21ページ）",
+      "データベーススペシャリスト 午後I 問3の本文・図表・設問（公式問題冊子 22ページ）",
+      "データベーススペシャリスト 午後I 問3の本文・図表・設問（公式問題冊子 23ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/db/2018-spring-pm1/answer-q03-p04.webp"
+    ],
+    "answerImageAltTexts": [
+      "データベーススペシャリスト 午後I 問3の公式解答例（4ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_pm1_qs.pdf#page=18",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_pm1_ans.pdf#page=4",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2018年度春期 データベーススペシャリスト 午後I 問3",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  }
+]

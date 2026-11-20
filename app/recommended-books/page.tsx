@@ -37,12 +37,12 @@ const BOOKS_OG_URL = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
 export const metadata: Metadata = {
   title: "IPA試験 おすすめ問題集・参考書",
   description:
-    "ITパスポートから高度試験まで、IPA情報処理技術者試験13区分の定番問題集・参考書をAIが厳選。書籍と過去問AIの組み合わせ学習で合格まで最短距離。",
+    "ITパスポートから高度試験まで、IPA情報処理技術者試験13区分の定番問題集・参考書を紹介。書籍と過去問AIの組み合わせ学習で合格まで最短距離。",
   alternates: { canonical: "/recommended-books" },
   openGraph: {
     title: "IPA試験 おすすめ問題集・参考書 | 過去問AI",
     description:
-      "IPA情報処理技術者試験13区分の定番問題集を試験別にまとめた、AI推薦の参考書ガイド。",
+      "IPA情報処理技術者試験13区分の定番問題集を試験別にまとめた、参考書ガイド。",
     type: "website",
     url: `${SITE_BASE_URL}/recommended-books`,
     images: [{ url: BOOKS_OG_URL, width: 1200, height: 630, alt: "IPA試験 おすすめ問題集・参考書" }],
@@ -119,7 +119,6 @@ export default function RecommendedBooksIndexPage() {
         <div className="mt-3 flex flex-wrap gap-2 text-xs">
           <Badge variant="success">13試験区分対応</Badge>
           <Badge variant="outline">入門〜上級まで段階別</Badge>
-          <Badge variant="outline">AI解説と併用推奨</Badge>
         </div>
       </section>
 

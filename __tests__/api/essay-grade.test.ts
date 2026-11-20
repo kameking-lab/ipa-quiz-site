@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeAll } from "vitest";
-import { POST } from "@/app/api/essay-grade/route";
+import { POST } from "@/lib/essay/legacy-grade";
 
 beforeAll(() => {
   delete process.env.GEMINI_API_KEY;

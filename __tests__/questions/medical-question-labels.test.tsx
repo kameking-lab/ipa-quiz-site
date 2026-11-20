@@ -1,7 +1,7 @@
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 import QuestionPage from "@/app/q/[exam]/[yearSeason]/[section]/[qnum]/page";
-import ExamTopPage from "@/app/[exam]/page";
+import ExamTopPage, { generateMetadata } from "@/app/[exam]/page";
 import { QuestionCard } from "@/components/quiz/QuestionCard";
 import { HOKENSHI_QUESTIONS } from "@/data/questions/hokenshi";
 import { getQuestionsByExamStrict } from "@/lib/seo/exam-meta";
@@ -15,41 +15,35 @@ describe("medical question and quiz display names", () => {
     const doc = new DOMParser().parseFromString(renderToStaticMarkup(page), "text/html");
     expect(doc.querySelector('nav[aria-label="パンくずリスト"] a[href="/hokenshi"]')?.textContent).toBe("保健師");
     expect(doc.querySelector("header h1")?.textContent).toContain("保健師");
-    expect([...doc.querySelectorAll("header span")].some(badge => badge.textContent === "保健師")).toBe(true);
     expect(renderToStaticMarkup(<QuestionCard question={question} />)).toContain("保健師");
   });
 
   it.each([
-    ["sagyo-ryohoshi", 324],
-    ["shino-kunrenshi", 220],
-  ] as const)("describes the registered partial AM and PM coverage for %s", (exam, count) => {
-    expect(getQuestionsByExamStrict(exam)).toHaveLength(count);
-    const summary = getQualificationByExamCode(exam)!.reuseSummary;
-    expect(summary).toContain(`午前・午後から、原文・正答・全肢解説を確認した${count}問を部分収録`);
-    expect(summary).toContain("最新2回の午前と午後全体は未完備です");
+    "sagyo-ryohoshi", "shino-kunrenshi",
+  ] as const)("describes the current registered AM and PM coverage for %s", async exam => {
+    const pool = getQuestionsByExamStrict(exam);
+    expect(new Set(pool.map(q => q.session))).toEqual(new Set(["am", "pm"]));
+    const page = await ExamTopPage({ params: Promise.resolve({ exam }) });
+    const doc = new DOMParser().parseFromString(renderToStaticMarkup(page), "text/html");
+    expect(doc.body.textContent).toContain(`${pool.length}原問を部分収録`);
   });
 
   it.each([
     ["hokenshi", "保健師"],
-  ] as const)("shows %s partial coverage in the hub body using the live count", async (exam, label) => {
+  ] as const)("shows the current %s count and confirmed recent coverage", async (exam, label) => {
     const count = getQuestionsByExamStrict(exam).length;
-    const page = await ExamTopPage({ params: Promise.resolve({ exam }) });
-    const doc = new DOMParser().parseFromString(renderToStaticMarkup(page), "text/html");
-    const summary = doc.querySelector("header > p")?.textContent ?? "";
-    expect(summary).toContain(`${label}国家試験`);
-    expect(summary).toContain(`${count}問を部分収録`);
-    expect(summary).toContain("未収録");
+    const metadata = await generateMetadata({ params: Promise.resolve({ exam }) });
+    expect(metadata.title).toContain(label);
+    expect(metadata.description).toContain(`${count.toLocaleString("ja-JP")}問収録`);
+    expect(getQualificationByExamCode(exam)?.reuseSummary).toContain("第112・111回の午前・午後を各110問、計220問収録");
   });
 
   it("describes both complete scored midwife rounds and the official exclusion", async () => {
     const questions = getQuestionsByExamStrict("josanshi");
-    expect(questions).toHaveLength(249);
-    const page = await ExamTopPage({ params: Promise.resolve({ exam: "josanshi" }) });
-    const doc = new DOMParser().parseFromString(renderToStaticMarkup(page), "text/html");
-    const summary = doc.querySelector("header > p")?.textContent ?? "";
-    expect(summary).toContain("助産師国家試験");
-    expect(summary).toContain("計249問を部分収録");
-    expect(summary).toContain("第107～105回の午前各10問");
+    expect(questions.filter(q => q.year === 2024 || q.year === 2025)).toHaveLength(219);
+    expect(questions.some(q => q.year === 2025 && q.session === "pm" && q.qNumber === 31)).toBe(false);
+    const summary = getQualificationByExamCode("josanshi")!.reuseSummary;
+    expect(summary).toContain("採点対象219問");
     expect(summary).toContain("午後問31");
     expect(summary).toContain("採点対象から除外");
   });

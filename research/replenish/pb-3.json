@@ -1,0 +1,242 @@
+{
+  "lane": "pb-3",
+  "date": "2026-11-18",
+  "branch": "cx/kako-pa3-20261118",
+  "allocation": "zero-based index % 14 == 2（前回pa-3と同じ）",
+  "previousProgressPath": "research/replenish/pa-3.json",
+  "mergedBranchCount": 37,
+  "newQualificationCount": 1,
+  "addedQuestionCount": 100,
+  "choiceExplanationCount": 252,
+  "entries": [
+    {
+      "index": 58,
+      "order": 59,
+      "candidateId": "zensho-eco-78",
+      "name": "商業経済検定・マーケティング",
+      "examCode": "zensho-marketing",
+      "targetYears": [
+        2025,
+        2024
+      ],
+      "status": "ブランチに収録済み（未公開）",
+      "addedQuestionCount": 100,
+      "multipleChoiceQuestionCount": 84,
+      "descriptiveQuestionCount": 16,
+      "choiceExplanationCount": 252,
+      "officialFigureCount": 3,
+      "questionPaths": [
+        "data/questions/zensho-marketing/2024-annual.json",
+        "data/questions/zensho-marketing/2025-annual.json"
+      ],
+      "sourcePaths": [
+        "data/questions/zensho-marketing/2024-sources.json",
+        "data/questions/zensho-marketing/2025-sources.json"
+      ],
+      "officialIndexUrl": "https://zensho.or.jp/examination/pastexams/economics/",
+      "notes": "第39回＝2024年度（2025-02-02実施）、第40回＝2025年度（2026-02-01実施）。各50問。用語記入は公式模範解答・別解と照合する既存の記述形式で保持し、自動採点には含めない。",
+      "duplicateChecks": {
+        "production": "トップHTTP200に資格コードへのリンクなし。tools/pb-3/production-check.jsonに受領記録。",
+        "branches": "指定37ブランチをgit mergeし全てAlready up to date。全ローカル履歴に同資格の収録なし。別科目ビジネスマネジメントの既存作業は再生成しない。",
+        "ledger": "実行フォルダと本ブランチのledgerに同候補の着手・収録記録なし。"
+      }
+    }
+  ],
+  "remainingEntries": [
+    {
+      "index": 72,
+      "order": 73,
+      "candidateId": "javada-112b79b9a18a",
+      "name": "かわらぶき(かわらぶき作業)1級（学科）",
+      "targetYears": [
+        2025,
+        2024
+      ],
+      "status": "公式原本4点取得済み・本文転記未着手",
+      "addedQuestionCount": 0,
+      "notes": "両年度とも問題9ページは文字層のない画像PDF。表紙で1級かわらぶき・各50問（A群25・B群25）を確認。正解表は文字層あり。二重転記と原本照合は次回。"
+    },
+    {
+      "index": 86,
+      "order": 87,
+      "candidateId": "javada-b442b8272d8d",
+      "name": "コンクリート圧送施工(コンクリート圧送工事作業)2級（学科）",
+      "targetYears": [
+        2025,
+        2024
+      ],
+      "status": "今回未着手",
+      "addedQuestionCount": 0
+    },
+    {
+      "index": 100,
+      "order": 101,
+      "candidateId": "bridal-1",
+      "name": "ブライダルコーディネート技能検定1級（学科）",
+      "targetYears": [
+        2025
+      ],
+      "status": "今回未着手",
+      "addedQuestionCount": 0
+    },
+    {
+      "index": 114,
+      "order": 115,
+      "candidateId": "javada-dac00be35e88",
+      "name": "寝具製作(寝具製作作業)2級（学科）",
+      "targetYears": [
+        2025,
+        2024
+      ],
+      "status": "今回未着手",
+      "addedQuestionCount": 0
+    },
+    {
+      "index": 128,
+      "order": 129,
+      "candidateId": "kitsuke-2",
+      "name": "着付け技能検定2級（学科）",
+      "targetYears": [
+        2026,
+        2025
+      ],
+      "status": "今回未着手",
+      "addedQuestionCount": 0
+    },
+    {
+      "index": 142,
+      "order": 143,
+      "candidateId": "javada-04481ed6bab1",
+      "name": "金型製作(プレス金型製作作業)2級（学科）",
+      "targetYears": [
+        2025,
+        2024
+      ],
+      "status": "今回未着手",
+      "addedQuestionCount": 0
+    },
+    {
+      "index": 156,
+      "order": 157,
+      "candidateId": "javada-aa43a2dff1e2",
+      "name": "鍛造(プレス型鍛造作業)2級（学科）",
+      "targetYears": [
+        2025,
+        2024
+      ],
+      "status": "今回未着手",
+      "addedQuestionCount": 0
+    },
+    {
+      "index": 170,
+      "order": 171,
+      "candidateId": "javada-2febd507e380",
+      "name": "仕上げ(治工具仕上げ作業)2級（学科）",
+      "targetYears": [
+        2025,
+        2024
+      ],
+      "status": "今回未着手",
+      "addedQuestionCount": 0
+    },
+    {
+      "index": 184,
+      "order": 185,
+      "candidateId": "javada-1cb6fd8cd2b3",
+      "name": "塗装(木工塗装作業)2級（学科）",
+      "targetYears": [
+        2025,
+        2024
+      ],
+      "status": "今回未着手",
+      "addedQuestionCount": 0
+    },
+    {
+      "index": 198,
+      "order": 199,
+      "candidateId": "javada-ae3a7a92dfa6",
+      "name": "工場板金(打出し板金作業)2級（学科）",
+      "targetYears": [
+        2025,
+        2024
+      ],
+      "status": "今回未着手",
+      "addedQuestionCount": 0
+    },
+    {
+      "index": 212,
+      "order": 213,
+      "candidateId": "javada-3870385b7d36",
+      "name": "機械加工(マシニングセンタ作業)3級（学科）",
+      "targetYears": [
+        2025,
+        2024
+      ],
+      "status": "今回未着手",
+      "addedQuestionCount": 0
+    },
+    {
+      "index": 226,
+      "order": 227,
+      "candidateId": "javada-1e061f9541f8",
+      "name": "機械加工(数値制御旋盤作業)3級（学科）",
+      "targetYears": [
+        2025,
+        2024
+      ],
+      "status": "今回未着手",
+      "addedQuestionCount": 0
+    },
+    {
+      "index": 240,
+      "order": 241,
+      "candidateId": "javada-a9c0a8523b00",
+      "name": "菓子製造(和菓子製造作業)1級（学科）",
+      "targetYears": [
+        2025,
+        2024
+      ],
+      "status": "今回未着手",
+      "addedQuestionCount": 0
+    },
+    {
+      "index": 254,
+      "order": 255,
+      "candidateId": "javada-a045da7bd719",
+      "name": "鉄道車両製造・整備(鉄道車両現図作業)1級（学科）",
+      "targetYears": [
+        2025,
+        2024
+      ],
+      "status": "今回未着手",
+      "addedQuestionCount": 0
+    },
+    {
+      "index": 268,
+      "order": 269,
+      "candidateId": "javada-4d166297349c",
+      "name": "防水施工(シーリング防水工事作業)2級（学科）",
+      "targetYears": [
+        2025,
+        2024
+      ],
+      "status": "今回未着手",
+      "addedQuestionCount": 0
+    },
+    {
+      "index": 282,
+      "order": 283,
+      "candidateId": "javada-f10d3ecc2ab3",
+      "name": "電気機器組立て(配電盤・制御盤組立て作業)2級（学科）",
+      "targetYears": [
+        2025,
+        2024
+      ],
+      "status": "今回未着手",
+      "addedQuestionCount": 0
+    }
+  ],
+  "nextCandidateIndex": 72,
+  "nextCandidateId": "javada-112b79b9a18a",
+  "nextCandidateEvidence": "C:/Users/kanet/20260522/codex-run-20261110/tools/pb-3/next-candidate-sources.json"
+}

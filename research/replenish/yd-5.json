@@ -1,0 +1,36 @@
+{
+  "lane": "yd-5",
+  "plan": "plan5.json",
+  "assignment": "5班の残りを末尾から照合し、第14班を補助",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "checkedAt": "2026-11-18",
+  "rows": [
+    {
+      "jobId": "PLAN5-294",
+      "index": 293,
+      "exam": "denken3",
+      "year": 2022,
+      "season": "second",
+      "session": "kikai",
+      "status": "completed-local",
+      "countUnit": "原問",
+      "examDate": "2023-03-26",
+      "officialQuestionCount": 18,
+      "mainQuestionCountBefore": 0,
+      "importedQuestionCount": 0,
+      "newQuestionCount": 18,
+      "answerFieldCount": 22,
+      "questionNumbers": "1–18",
+      "sourcePageCount": 22,
+      "dataPaths": [
+        "data/questions/denken3/native-2022-lower-machine.json"
+      ],
+      "sourceIndexUrl": "https://www.shiken.or.jp/chief/third/qa/",
+      "questionUrl": "https://www.shiken.or.jp/chief/upload/20230326_ch_third_q03.pdf",
+      "questionSha256": "75e4ce661a68f4e40ec2df9b23945917901a3b48af5db9ebc82af5dca560de70",
+      "answerUrl": "https://www.shiken.or.jp/chief/upload/20230326_ch_third_a01.pdf",
+      "answerSha256": "ef0b5bafa8d031f9a77747c948e1c9a3550db38de432283a705de69931b443aa",
+      "notes": "全22解答欄を公式表の機械列と照合。問17・18から1問を選択する方式を保持。"
+    }
+  ]
+}

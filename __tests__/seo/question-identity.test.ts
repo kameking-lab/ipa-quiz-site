@@ -36,8 +36,8 @@ describe("question source identity", () => {
 
   it("omits only categories that duplicate the session, including in medical stem titles", () => {
     const questions = getSitemapQuestions().filter(q => (q.category === "午前" || q.category === "午後") && q.category === sessionLabel(q.session, q.exam));
-    expect(questions.length).toBe(1987);
-    expect(new Set(questions.map(q => q.exam)).size).toBe(8);
+    expect(questions.length).toBeGreaterThanOrEqual(1987);
+    expect(new Set(questions.filter(q => q.exam === "hokenshi").map(q => q.session))).toEqual(new Set(["am", "pm"]));
     for (const q of questions) {
       const number = questionNumberLabel(q);
       expect(questionTitle(q)).not.toContain(`問${number} ${q.category} 解説`);

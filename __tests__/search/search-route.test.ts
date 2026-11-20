@@ -52,8 +52,8 @@ describe("GET /api/search/questions — 正常系 (200) とレスポンス形状
     expect(body.hits.every((q: { exam: string; session: string }) => q.exam === exam && q.session === session)).toBe(true);
   });
   it.each([
-    ["biyoshi", 106], ["tsushin2", 129],
-    ["kikenbutsu-otsu1", 10], ["kikenbutsu-otsu2", 10], ["kikenbutsu-otsu6", 10],
+    ["biyoshi", 545], ["tsushin2", 194],
+    ["kikenbutsu-otsu1", 11], ["kikenbutsu-otsu2", 10], ["kikenbutsu-otsu6", 10],
   ])("%s searches the accepted pool and excludes recorded holds", async (exam, total) => {
     const res = await GET(get(`?exam=${exam}&limit=60`));
     expect(res.status).toBe(200);

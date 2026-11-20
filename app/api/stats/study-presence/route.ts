@@ -1,16 +1,24 @@
 import { NextResponse } from "next/server";
-import { readStudyPresence, recordStudyPresence, recordLegacyStudyPresence } from "@/lib/study-presence-store";
-import { canonicalPresenceExam, isPresenceBot, PRESENCE_IDLE_MS, PRESENCE_POLL_MS } from "@/lib/study-presence";
-import { unavailablePresence } from "@/lib/study-presence-contract";
+import { z } from "zod";
+import { readStudyPresence, recordStudyPresence } from "@/lib/study-presence-store";
+import { canonicalPresenceExam, isPresenceBot, PRESENCE_IDLE_MS, PRESENCE_POLL_MS, PRESENCE_VISITOR_ID, PRESENCE_WINDOW_MS } from "@/lib/study-presence";
+import { unavailablePresence, type PresenceResponse } from "@/lib/study-presence-contract";
 import { createPresenceService } from "@/lib/study-presence-service";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 const headers = { "Cache-Control": "no-store" };
-const service = createPresenceService({ read: readStudyPresence, record: recordStudyPresence, legacy: recordLegacyStudyPresence });
+const service = createPresenceService({ read: readStudyPresence, record: recordStudyPresence });
 const unavailable = (status: number) => NextResponse.json(unavailablePresence("disabled", PRESENCE_POLL_MS), { status, headers });
-function respond(result: Awaited<ReturnType<typeof service.read>> | { count: number }) {
-  if ("status" in result && result.status === "unavailable") return NextResponse.json(result,
+const visitor = {
+  visitorId: z.string().regex(PRESENCE_VISITOR_ID).toLowerCase(),
+  previousVisitorId: z.string().regex(PRESENCE_VISITOR_ID).toLowerCase().optional(),
+};
+const answer = z.object({ ...visitor, exam: z.string(), answeredAgoMs: z.int().min(0).lt(PRESENCE_WINDOW_MS) }).strict();
+const heartbeat = z.object({ ...visitor, exam: z.string().optional(), idleMs: z.int().min(0).lt(PRESENCE_IDLE_MS) }).strict();
+
+function respond(result: PresenceResponse) {
+  if (result.status === "unavailable") return NextResponse.json(result,
     { status: 503, headers: { ...headers, "Retry-After": String(result.retryAfterSeconds) } });
   return NextResponse.json(result, { headers });
 }
@@ -28,27 +36,28 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
+  const receivedAt = Date.now();
   if (request.headers.get("origin") !== new URL(request.url).origin ||
       request.headers.get("sec-fetch-site") === "cross-site" ||
       isPresenceBot(request.headers.get("user-agent") ?? "")) return unavailable(403);
   if (!request.headers.get("content-type")?.startsWith("application/json")) return unavailable(415);
   const body = await request.text();
   if (body.length > 256) return unavailable(400);
-  let visitorId: unknown;
-  let idleMs: unknown;
-  let exam: unknown;
-  let previousVisitorId: unknown;
-  try { ({ visitorId, idleMs, exam, previousVisitorId } = JSON.parse(body)); } catch { return unavailable(400); }
-  if (typeof idleMs !== "number" || !Number.isInteger(idleMs) || idleMs < 0 || idleMs >= PRESENCE_IDLE_MS ||
-      typeof visitorId !== "string" || !/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(visitorId)) return unavailable(400);
-  // Only an absent field is the legacy format; explicit null/unknown values remain invalid.
-  if (exam !== undefined && (typeof exam !== "string" || !canonicalPresenceExam(exam))) return unavailable(400);
-  if (previousVisitorId !== undefined && (typeof previousVisitorId !== "string" ||
-      !/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(previousVisitorId) || previousVisitorId === visitorId)) return unavailable(400);
+  let payload: unknown;
+  try { payload = JSON.parse(body); } catch { return unavailable(400); }
+  const submitted = answer.safeParse(payload);
+  const parsed = submitted.success ? submitted : heartbeat.safeParse(payload);
+  if (!parsed.success) return unavailable(400);
+  const { visitorId, previousVisitorId, exam } = parsed.data;
+  const canonical = exam === undefined ? null : canonicalPresenceExam(exam);
+  if ((exam !== undefined && !canonical) || previousVisitorId === visitorId) return unavailable(400);
   if (!measurementEnabled(request)) return unavailable(503);
-  if (exam === undefined) {
-    // Old clients consume only count: include active unqualified browsers without guessing their exam.
-    return respond(await service.legacy(visitorId, idleMs, previousVisitorId as string | undefined));
+  if (submitted.success && canonical) {
+    const failure = await service.record(visitorId, receivedAt - submitted.data.answeredAgoMs, canonical, previousVisitorId);
+    return failure ? respond(failure) : new Response(null, { status: 204, headers });
   }
-  return respond(await service.record(visitorId, idleMs, canonicalPresenceExam(exam as string)!, previousVisitorId as string | undefined));
+  // Old tabs can still read the count, but their page-open heartbeat never updates it.
+  const result = await service.read();
+  if (exam === undefined && result.status === "measured") return NextResponse.json({ count: result.count }, { headers });
+  return respond(result);
 }

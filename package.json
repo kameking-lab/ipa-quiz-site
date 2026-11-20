@@ -21,7 +21,7 @@
     "fetch:pdfs": "tsx scripts/fetch-ipa-pdfs.ts",
     "generate:ap": "tsx --env-file=.env.local scripts/generate-ap-all.ts",
     "parse:pdfs": "tsx --env-file=.env.local scripts/parse-pdf-to-json.ts",
-    "validate:questions": "tsx scripts/validate-questions.ts",
+    "validate:questions": "tsx --tsconfig scripts/tsconfig.question-corpus.json scripts/validate-questions.ts",
     "validate:asins": "tsx scripts/validate-asins.ts",
     "verify:cost-alert": "tsx scripts/verify-cost-alert.ts",
     "tag:topics": "tsx scripts/topic-tagger.ts",
@@ -82,6 +82,7 @@
     "zod": "4.6.7"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.5.16",
     "@playwright/test": "^1.60.0",
     "@tailwindcss/postcss": "^4.3.0",
     "@testing-library/jest-dom": "^6.9.1",

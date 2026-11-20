@@ -1,0 +1,233 @@
+{
+  "exam": "sa",
+  "year": 2016,
+  "season": "autumn",
+  "session": "am2",
+  "checkedAt": "2026-11-17",
+  "officialIndexUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html",
+  "files": {
+    "qs": {
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_sa_am2_qs.pdf",
+      "sha256": "b7395e54f06492e37082ec2030e75a00a687450883436d7e9086fb1a14fc5ec2"
+    },
+    "ans": {
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_sa_am2_ans.pdf",
+      "sha256": "85f3b779d40773ab18b1a00072e94209b2342795095a4affd5cb5f7b30ac0c36"
+    }
+  },
+  "questionCount": 25,
+  "remainingInSession": 0,
+  "officialAnswers": "ウエエウイイアエウイイウエイウエエエエアエエイアア",
+  "verification": "公式問題冊子の全問題ページを画像で読み，本文・選択肢を転記。別の公式解答PDFをpdftotextで抽出して25件照合。本文ハッシュ・原本ページ・原図の切出し座標を記録。",
+  "duplicateCheck": "共有台帳2026-11-11のSA 2016行はspring am1のみ。yr-1と指定10ブランチ取り込み後，追加前のgit log --all -- data/questions/sa/by-year/2016-autumn-am2.tsに履歴なし。",
+  "questions": [
+    {
+      "qNumber": 1,
+      "answer": "ウ",
+      "printedPage": 3,
+      "normalizedTextSha256": "5c2f6cf7f916820599a77ec0e9389f8630654d90ee029062e1003a92d9c6f52e"
+    },
+    {
+      "qNumber": 2,
+      "answer": "エ",
+      "printedPage": 3,
+      "normalizedTextSha256": "897cc01a0f985693df1a41d0fcdbfe31a04440c8d4277942077c101f758fa29f"
+    },
+    {
+      "qNumber": 3,
+      "answer": "エ",
+      "printedPage": 3,
+      "normalizedTextSha256": "8b778e43e3b4a5f119ce8b6b3bf9578a47a8e88a85c0a8c7bc672db33fa2aef7"
+    },
+    {
+      "qNumber": 4,
+      "answer": "ウ",
+      "printedPage": 4,
+      "normalizedTextSha256": "9cd282e6b4306b15d45ed539bf1d44585f462966193ba22f9c70f4230e188bef"
+    },
+    {
+      "qNumber": 5,
+      "answer": "イ",
+      "printedPage": 4,
+      "normalizedTextSha256": "8beaab69ed7a0fb1af41e05b3e6230eb1ef305b0a80a2e8f18f0afd9df4cac31"
+    },
+    {
+      "qNumber": 6,
+      "answer": "イ",
+      "printedPage": 5,
+      "normalizedTextSha256": "c4fad17e0dc62b4b722ccf1a3b9c90eb3886e1c24b6b54694cc5bf50e51f0bdd",
+      "figure": {
+        "path": "/images/questions/sa/2016-autumn-am2-q6.png",
+        "sha256": "4752c4750b2afb7f6b5ace96918a0e3da0a3e8030e904f5ba435df51ed1b319a",
+        "page": 5,
+        "cropPdfPoints": [
+          75,
+          136,
+          483,
+          320
+        ]
+      }
+    },
+    {
+      "qNumber": 7,
+      "answer": "ア",
+      "printedPage": 5,
+      "normalizedTextSha256": "96e0553af3df71fd8491ee67875ff39bc7a2879342afd35c6a3fc3f2dfe627ae"
+    },
+    {
+      "qNumber": 8,
+      "answer": "エ",
+      "printedPage": 6,
+      "normalizedTextSha256": "25ee3c5b51d6220c1d8fabe06d520a69ec73117d544ea9de44fd11317382ca54"
+    },
+    {
+      "qNumber": 9,
+      "answer": "ウ",
+      "printedPage": 6,
+      "normalizedTextSha256": "6a4f4fd55169e3814304198d93c55bac42e46ae5350c932a1b96cdb52e5d84ea"
+    },
+    {
+      "qNumber": 10,
+      "answer": "イ",
+      "printedPage": 6,
+      "normalizedTextSha256": "3f29d54c01e2ac749d37bdbbb2e01117694cf99e9230c101343d3de549d1ed28"
+    },
+    {
+      "qNumber": 11,
+      "answer": "イ",
+      "printedPage": 7,
+      "normalizedTextSha256": "c2da8019571f619ea36c564e710b52431a2f4cc1ad9f864649ef45260c4f1bf5"
+    },
+    {
+      "qNumber": 12,
+      "answer": "ウ",
+      "printedPage": 7,
+      "normalizedTextSha256": "7b670b54a01110a983bfd324e32c16218e03128b34042eb89aacc064946f565a"
+    },
+    {
+      "qNumber": 13,
+      "answer": "エ",
+      "printedPage": 8,
+      "normalizedTextSha256": "bf90b57a245c4e91220858277adde03761fd33ca4baebd04f91d220f695b1873"
+    },
+    {
+      "qNumber": 14,
+      "answer": "イ",
+      "printedPage": 8,
+      "normalizedTextSha256": "08ceccd691bc3c8be09442c89a8e816602c8ec2a2dee57d8308fae3356a86d11"
+    },
+    {
+      "qNumber": 15,
+      "answer": "ウ",
+      "printedPage": 8,
+      "normalizedTextSha256": "0dd4d619589d8b530eb4d4dc2ddfbde43355c401a48e3a4a08335f2355a1ddb3",
+      "referenceUrls": [
+        "https://www.env.go.jp/content/000040689.pdf",
+        "https://laws.e-gov.go.jp/law/412AC1000000100"
+      ]
+    },
+    {
+      "qNumber": 16,
+      "answer": "エ",
+      "printedPage": 9,
+      "normalizedTextSha256": "ba938bad641d525effb22f2a5174ac8647b5f454344d4bbca6a7d33b74653a7a",
+      "figure": {
+        "path": "/images/questions/sa/2016-autumn-am2-q16.png",
+        "sha256": "7de7831f6663dc554fa6fbc5643d0f731918608cb3aab96dc461a30f66ddd542",
+        "page": 9,
+        "cropPdfPoints": [
+          64,
+          121,
+          460,
+          246
+        ]
+      }
+    },
+    {
+      "qNumber": 17,
+      "answer": "エ",
+      "printedPage": 9,
+      "normalizedTextSha256": "33f8d3a65659d56f844eb5a169a68f493063d4e059b202ad828ecc1c61b848cd"
+    },
+    {
+      "qNumber": 18,
+      "answer": "エ",
+      "printedPage": 10,
+      "normalizedTextSha256": "09bbae0a3d30edb17e0cd99211b3dd3664314add7f29c061572678936c962518"
+    },
+    {
+      "qNumber": 19,
+      "answer": "エ",
+      "printedPage": 10,
+      "normalizedTextSha256": "e5e1c9af66e82ab328f1fa4627b5bd790be0c17f974e89cbd2851e824edf3b88"
+    },
+    {
+      "qNumber": 20,
+      "answer": "ア",
+      "printedPage": 11,
+      "normalizedTextSha256": "1703a7423c05787eb6212a0a6a851b173010a3d5fd658a4dc940a8e58e22ad37",
+      "figure": {
+        "path": "/images/questions/sa/2016-autumn-am2-q20.png",
+        "sha256": "629d585020b1d44ea65f714579d2ec34ba7f563f9e0f3f00f2ef953983f75357",
+        "page": 11,
+        "cropPdfPoints": [
+          174,
+          161,
+          350,
+          300
+        ]
+      }
+    },
+    {
+      "qNumber": 21,
+      "answer": "エ",
+      "printedPage": 11,
+      "normalizedTextSha256": "fa9e5492745efa4c76a88dba10beae1a7fc8f565c98c2f8ebe13ec0d2bbf0a7b"
+    },
+    {
+      "qNumber": 22,
+      "answer": "エ",
+      "printedPage": 12,
+      "normalizedTextSha256": "a4d86cc54335a8403c00ad4a26c5cdf4489a1be06bf27ea226fd2666aa406df2"
+    },
+    {
+      "qNumber": 23,
+      "answer": "イ",
+      "printedPage": 12,
+      "normalizedTextSha256": "2ab9577420d5bfd996bc863c24d2f29526c86c7081ff29b0beb207fbb1d42ad2"
+    },
+    {
+      "qNumber": 24,
+      "answer": "ア",
+      "printedPage": 12,
+      "normalizedTextSha256": "022cfbd700dffbdd7bae38c9bd3d07d760f15abb93408c7b94413d95ad7e08e0",
+      "referenceUrls": [
+        "https://www.ipa.go.jp/security/vuln/websecurity/sql.html"
+      ]
+    },
+    {
+      "qNumber": 25,
+      "answer": "ア",
+      "printedPage": 13,
+      "normalizedTextSha256": "4f9b3f5008b5d94abecef789610191692c66ae92649dd04631144d9c5c231b71"
+    }
+  ],
+  "independentChecks": {
+    "officialAnswers": "pdfplumberで公式解答25件を読み取り，pdftotextによる生成結果と一致",
+    "calculationQuestion11": "埋込み全数・検出済み埋込み数・検出済み元エラー数の3800通りを有理数演算で検算し，公式の式が未検出の元エラー数に一致",
+    "figureReview": "構造化設計・モデル契約の工程範囲・故障率グラフの原図3点を全域目視確認",
+    "question20": "時刻0付近の累積故障率の傾きがほぼ0から増えることを原図で確認。原図の時刻t・累積故障率1の目盛を保持。"
+  },
+  "referenceChecks": [
+    {
+      "qNumber": 15,
+      "url": "https://www.env.go.jp/content/000040689.pdf",
+      "location": "PDF8ページ（本文4ページ）環境物品等の定義，原材料・部品／製品／役務の3分類"
+    },
+    {
+      "qNumber": 24,
+      "url": "https://www.ipa.go.jp/security/vuln/websecurity/sql.html",
+      "location": "根本的解決1-(i)-a，静的プレースホルダでSQLを準備してから値をバインドする説明"
+    }
+  ]
+}

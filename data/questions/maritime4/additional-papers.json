@@ -1,0 +1,2860 @@
+[
+  {
+    "id": "radio21-maritime-comm4-2025-08-kogaku-a01",
+    "exam": "maritime4",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 1,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "並列共振回路の容量リアクタンスと枝電流",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-kogaku-a01.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 無線工学 A-1 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 無線工学 A-1（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      1
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 1,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf#page=1",
+        "pdfSha256": "d070314bd02a5d6987121411c1fc9705041d58dc93062f9fe96ea6f04a780bf8"
+      }
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "X_C＝X_L＝5 kΩで、容量枝電流は100 V÷5 kΩ＝20 mAとなる。共振時に電源から流れるのは抵抗枝の電流5 mAである。",
+    "choiceExplanations": {
+      "ア": "共振時はX_CがX_Lと等しく5 kΩとなり、2 kΩではリアクタンスの枝電流が打ち消し合わない。",
+      "イ": "5 mAは電源電流だが、共振条件からX_Cは5 kΩ、容量枝の電流は20 mAになる。",
+      "ウ": "電流の値は合うが、容量枝電流20 mAと電源電圧100 VからX_Cは5 kΩになる。",
+      "エ": "X_C＝X_L＝5 kΩで、容量枝電流は100 V÷5 kΩ＝20 mAとなる。共振時に電源から流れるのは抵抗枝の電流5 mAである。",
+      "オ": "X_Cは合うが、容量枝は20 mAで、電源電流は抵抗枝に流れる5 mAになる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-kogaku-a02",
+    "exam": "maritime4",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 2,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "交流の有効電力と力率から負荷電流を求める",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-kogaku-a02.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 無線工学 A-2 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 無線工学 A-2（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      1
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 1,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf#page=1",
+        "pdfSha256": "d070314bd02a5d6987121411c1fc9705041d58dc93062f9fe96ea6f04a780bf8"
+      }
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "P＝VI cos θより、I＝300 W÷(100 V×0.6)＝5.0 Aとなる。",
+    "choiceExplanations": {
+      "ア": "P＝VI cos θより、I＝300 W÷(100 V×0.6)＝5.0 Aとなる。",
+      "イ": "4.5 Aを代入すると有効電力は270 Wであり、負荷が消費する300 Wに達しない。",
+      "ウ": "4.0 Aのとき有効電力は100×4.0×0.6＝240 Wとなる。",
+      "エ": "3.5 Aでは皮相電力350 VA、有効電力210 Wで、条件の300 Wを満たさない。",
+      "オ": "2.5 Aでは有効電力が150 Wになり、設問の半分にしかならない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-kogaku-a03",
+    "exam": "maritime4",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 3,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "バイポーラトランジスタの電流増幅率",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-kogaku-a03.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 無線工学 A-3 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 無線工学 A-3（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      1
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 1,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf#page=1",
+        "pdfSha256": "d070314bd02a5d6987121411c1fc9705041d58dc93062f9fe96ea6f04a780bf8"
+      }
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "I_B＝I_E−I_Cをβ＝I_C/I_Bに代入すると、β＝α/(1−α)となる。分母の符号が異なる。",
+    "choiceExplanations": {
+      "ア": "I_E＝I_C＋I_Bなので、通常の増幅動作ではI_CはI_Eより小さく、比αは1未満となる。",
+      "イ": "ベース接地ではエミッタが入力、コレクタが出力に対応し、電流増幅率αはI_C/I_Eである。",
+      "ウ": "トランジスタに流れ込むI_CとI_Bの和がI_Eであり、式を変形するとI_C＝I_E−I_Bとなる。",
+      "エ": "エミッタ接地ではベース電流を入力とし、コレクタ電流との比I_C/I_Bがβになる。",
+      "オ": "I_B＝I_E−I_Cをβ＝I_C/I_Bに代入すると、β＝α/(1−α)となる。分母の符号が異なる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-kogaku-a04",
+    "exam": "maritime4",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 4,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "理想演算増幅器の入力・出力インピーダンスと増幅度",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-kogaku-a04.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 無線工学 A-4 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 無線工学 A-4（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      1
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 1,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf#page=1",
+        "pdfSha256": "d070314bd02a5d6987121411c1fc9705041d58dc93062f9fe96ea6f04a780bf8"
+      }
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "入力電流は零、負荷で出力電圧は変わらず、微小な差動入力を増幅する極限として開ループ増幅度は無限大になる。",
+    "choiceExplanations": {
+      "ア": "入力インピーダンスは無限大だが、出力インピーダンスを零、開ループ増幅度を無限大とする。",
+      "イ": "入力インピーダンスと開ループ増幅度は無限大だが、出力は電圧源として出力インピーダンスを零とする。",
+      "ウ": "入力電流は零、負荷で出力電圧は変わらず、微小な差動入力を増幅する極限として開ループ増幅度は無限大になる。",
+      "エ": "出力インピーダンスと増幅度は合うが、入力電流が流れない理想モデルでは入力インピーダンスは無限大である。",
+      "オ": "理想オペアンプの入力インピーダンスと開ループ増幅度は無限大、出力インピーダンスは零なので三つとも異なる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-kogaku-a05",
+    "exam": "maritime4",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 5,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "DSB（A3E）送信機の搬送波系統と音声系統",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-kogaku-a05.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 無線工学 A-5 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 無線工学 A-5（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      2
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf#page=2",
+        "pdfSha256": "d070314bd02a5d6987121411c1fc9705041d58dc93062f9fe96ea6f04a780bf8"
+      }
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "緩衝増幅器は発振器を後段から分離し、ひずみの少ないA級を用いる。音声を変調に必要な大きさにするのは変調増幅器である。",
+    "choiceExplanations": {
+      "ア": "発振器への負荷変動を抑えるのは緩衝増幅器であり、中間周波増幅器ではない。",
+      "イ": "搬送波を受ける初段は緩衝増幅器で、音声信号の経路には変調増幅器を置く。",
+      "ウ": "緩衝増幅器は発振器を後段から分離し、ひずみの少ないA級を用いる。音声を変調に必要な大きさにするのは変調増幅器である。",
+      "エ": "AとBは合うが、Cは音声信号から変調度を確保する変調増幅器である。",
+      "オ": "緩衝増幅器には波形のひずみを抑えられるA級を用いるため、C級とする点が合わない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-kogaku-a06",
+    "exam": "maritime4",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 6,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "周波数変調の占有周波数帯幅",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-kogaku-a06.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 無線工学 A-6 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 無線工学 A-6（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      2
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf#page=2",
+        "pdfSha256": "d070314bd02a5d6987121411c1fc9705041d58dc93062f9fe96ea6f04a780bf8"
+      }
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "カーソンの近似では周波数偏移Δfと最高信号周波数f_Sを加え、搬送波の上下を含めて2(Δf＋f_S)となる。",
+    "choiceExplanations": {
+      "ア": "帯幅は最大周波数偏移から信号の最高周波数を引くのではなく、足した値を使う。",
+      "イ": "Δf＋f_Sはカーソンの近似による片側の幅で、搬送波の上下を含む帯幅はその2倍になる。",
+      "ウ": "式の係数2は両側分を表すが、括弧内はΔfからf_Sを引くのではなく、両者の和になる。",
+      "エ": "カーソンの近似では周波数偏移Δfと最高信号周波数f_Sを加え、搬送波の上下を含めて2(Δf＋f_S)となる。",
+      "オ": "搬送波周波数f_Cは帯域の中心位置を決める。帯幅の式に加えるのは信号の最高周波数f_Sである。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-kogaku-a07",
+    "exam": "maritime4",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 7,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "スーパヘテロダイン受信機の高周波増幅器",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-kogaku-a07.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 無線工学 A-7 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 無線工学 A-7（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      2
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf#page=2",
+        "pdfSha256": "d070314bd02a5d6987121411c1fc9705041d58dc93062f9fe96ea6f04a780bf8"
+      }
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "希望周波数に近い妨害の選別は主に中間周波増幅段のフィルタが担う。高周波増幅器を設ける主な目的には当たらない。",
+    "choiceExplanations": {
+      "ア": "前段の同調回路で影像周波数を減衰させると、周波数変換器での影像混信を減らせる。",
+      "イ": "希望周波数に近い妨害の選別は主に中間周波増幅段のフィルタが担う。高周波増幅器を設ける主な目的には当たらない。",
+      "ウ": "受信機前段で低雑音に増幅すると、後段の回路が加える雑音の影響を相対的に抑えられる。",
+      "エ": "高周波増幅段がアンテナと混合器を隔てることで、局部発振器の信号がアンテナ側に漏れるのを抑えられる。",
+      "オ": "弱い信号を混合器の前で増幅することで、受信機が小さい入力を受信できるようになる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-kogaku-a08",
+    "exam": "maritime4",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 8,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "SSB（J3E）通信とDSB（A3E）通信の比較",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-kogaku-a08.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 無線工学 A-8 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 無線工学 A-8（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      2
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf#page=2",
+        "pdfSha256": "d070314bd02a5d6987121411c1fc9705041d58dc93062f9fe96ea6f04a780bf8"
+      }
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "SSBは搬送波と一方の側波帯を抑えるので必要な送信電力が小さく、帯幅は約半分で、選択性フェージングの影響も小さい。",
+    "choiceExplanations": {
+      "ア": "SSBは搬送波と一方の側波帯を抑えるので必要な送信電力が小さく、帯幅は約半分で、選択性フェージングの影響も小さい。",
+      "イ": "側波帯の片側を送るため帯幅は約半分であり、4分の1にはならない。",
+      "ウ": "送信電力と帯幅の比較は合うが、SSBは両側波帯の差に起因する選択性フェージングの影響を受けにくい。",
+      "エ": "不要な側波帯と搬送波を送信しないため電力は小さくて済み、帯幅もDSBの約2分の1である。",
+      "オ": "帯幅とフェージングの比較は合うが、SSBは同条件で必要な送信電力が小さくて済む。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-kogaku-a09",
+    "exam": "maritime4",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 9,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "ASK・FSK・PSK・QAMの変調方式",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-kogaku-a09.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 無線工学 A-9 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 無線工学 A-9（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      2
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf#page=2",
+        "pdfSha256": "d070314bd02a5d6987121411c1fc9705041d58dc93062f9fe96ea6f04a780bf8"
+      }
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "QAMは二つの直交成分を組み合わせ、振幅と位相を変化させる。周波数を変えるという説明が誤りである。",
+    "choiceExplanations": {
+      "ア": "ASKではデジタル情報に対応する複数の振幅に搬送波を切り替える。",
+      "イ": "FSKではデジタル情報に対応する離散的な周波数に搬送波を切り替える。",
+      "ウ": "PSKはデータを搬送波の位相に対応させる位相偏移変調である。",
+      "エ": "BPSKはPSKの一種で二つの位相状態を使い、1シンボルで1ビットを表せる。",
+      "オ": "QAMは二つの直交成分を組み合わせ、振幅と位相を変化させる。周波数を変えるという説明が誤りである。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-kogaku-a10",
+    "exam": "maritime4",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 10,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "アンテナと給電線の整合・定在波・バラン",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-kogaku-a10.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 無線工学 A-10 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 無線工学 A-10（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      3
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 3,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf#page=3",
+        "pdfSha256": "d070314bd02a5d6987121411c1fc9705041d58dc93062f9fe96ea6f04a780bf8"
+      }
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "アンテナの入力と給電線の特性インピーダンスを整合する。不整合で定在波が生じ、平衡・不平衡の変換にはバランを用いる。",
+    "choiceExplanations": {
+      "ア": "アンテナの入力と給電線の特性インピーダンスを整合する。不整合で定在波が生じ、平衡・不平衡の変換にはバランを用いる。",
+      "イ": "AとBは合うが、サーキュレータは信号を端子間で一定方向に伝える装置で、平衡・不平衡の変換器はバランである。",
+      "ウ": "不整合では反射波が発生し、進行波と重なって給電線に定在波が生じる。",
+      "エ": "整合に用いる給電線側の値は特性インピーダンスであり、線路の損失抵抗そのものではない。",
+      "オ": "給電線の特性インピーダンスを用い、不整合では定在波が生じる。平衡・不平衡の変換器はバランである。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-kogaku-a11",
+    "exam": "maritime4",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 11,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "船舶用パルスレーダーの受信回路",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-kogaku-a11.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 無線工学 A-11 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 無線工学 A-11（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      3
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 3,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf#page=3",
+        "pdfSha256": "d070314bd02a5d6987121411c1fc9705041d58dc93062f9fe96ea6f04a780bf8"
+      }
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "FTCは雨雪による幅の広い反射を抑え、STCは近距離の海面反射を抑える。IAGCは連続する強い反射に対応して中間周波増幅器の利得を調整する。",
+    "choiceExplanations": {
+      "ア": "雨雪の反射を抑えるのはFTCで、近距離の海面反射を抑えるのはSTCである。",
+      "イ": "STCとFTCの割り当てが逆である。FTCが雨雪、STCが近距離の海面反射の低減を担う。",
+      "ウ": "FTCは雨雪による幅の広い反射を抑え、STCは近距離の海面反射を抑える。IAGCは連続する強い反射に対応して中間周波増幅器の利得を調整する。",
+      "エ": "AはFTCで合うが、海面反射にはSTCを使い、強い反射に対する利得制御にはIAGCを使う。",
+      "オ": "STCは海面反射に対応するが、雨雪にはFTC、連続する強い反射の利得制御にはIAGCを使う。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-kogaku-a12",
+    "exam": "maritime4",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 12,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "整流電源における変圧・整流・平滑",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-kogaku-a12.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 無線工学 A-12 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 無線工学 A-12（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      3
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 3,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf#page=3",
+        "pdfSha256": "d070314bd02a5d6987121411c1fc9705041d58dc93062f9fe96ea6f04a780bf8"
+      }
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "Ⅰの変圧器で電圧を変え、Ⅱのダイオードで整流し、Ⅲのチョークコイルとコンデンサで平滑する。",
+    "choiceExplanations": {
+      "ア": "整流を行うⅡは合うが、入力の交流を変圧するのはⅠ、出力を平滑するのはⅢである。",
+      "イ": "Ⅰの変圧器で電圧を変え、Ⅱのダイオードで整流し、Ⅲのチョークコイルとコンデンサで平滑する。",
+      "ウ": "Ⅲは整流後の脈動を抑える回路であり、電流の方向をそろえる整流回路はⅡである。",
+      "エ": "Ⅰは交流電圧を変換する変圧器なので、電流の向きをそろえる機能には当たらない。",
+      "オ": "Ⅰは変圧、Ⅲは平滑、Ⅱは整流なので、AからCまでの割り当てが一致しない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-kogaku-a13",
+    "exam": "maritime4",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 13,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "電圧計・電流計の内部抵抗と測定範囲",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-kogaku-a13.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 無線工学 A-13 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 無線工学 A-13（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      3
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 3,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf#page=3",
+        "pdfSha256": "d070314bd02a5d6987121411c1fc9705041d58dc93062f9fe96ea6f04a780bf8"
+      }
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "電圧計と直列に倍率器を入れると同じ計器電流でより高い電圧を測定でき、測定範囲が拡大する。",
+    "choiceExplanations": {
+      "ア": "電圧計の抵抗が小さいと測定点から余分な電流が流れ、回路に影響する。内部抵抗は大きいほどよい。",
+      "イ": "電流計は直列に入れるため、内部抵抗が大きいと余分な電圧降下を生じる。小さい内部抵抗が望ましい。",
+      "ウ": "交流は波形を示す記号、直流は実線などで示す記号を用いる。図1と図2の割り当ては設問の説明と逆である。",
+      "エ": "分流器は測定電流の一部を迂回させるため、電流計と並列に接続する。",
+      "オ": "電圧計と直列に倍率器を入れると同じ計器電流でより高い電圧を測定でき、測定範囲が拡大する。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-kogaku-b01",
+    "exam": "maritime4",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 1,
+    "part": "b",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "SSB（J3E）受信機に用いる回路",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-kogaku-b01.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 無線工学 B-1 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 無線工学 B-1（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      4
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 4,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf#page=4",
+        "pdfSha256": "d070314bd02a5d6987121411c1fc9705041d58dc93062f9fe96ea6f04a780bf8"
+      }
+    ],
+    "type": "native-b",
+    "explanation": "ア：IDCは送信用音声の振幅を制限する回路であり、SSBの受信復調に用いる回路ではない。\n\nイ：クラリファイヤは局部発振周波数などを微調整し、受信したSSB音声の音程を合わせる。\n\nウ：プレエンファシスは主にFM送信で高域を強調する処理で、SSB受信機の回路には該当しない。\n\nエ：周波数混合器は受信信号を中間周波に変換するため、SSBを受信する回路にも使われる。\n\nオ：周波数弁別器は周波数偏移を信号に戻すFM用であり、SSBでは局部搬送波と混合して音声を復調する。",
+    "nativeB": {
+      "officialLabel": "B-1",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      },
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1"
+        },
+        {
+          "id": "2",
+          "label": "2"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "2",
+          "explanation": "IDCは送信用音声の振幅を制限する回路であり、SSBの受信復調に用いる回路ではない。",
+          "candidateExplanations": {
+            "1": "1を選ぶと、この項目の該当・非該当が逆になる。IDCは送信用音声の振幅を制限する回路であり、SSBの受信復調に用いる回路ではない。",
+            "2": "IDCは送信用音声の振幅を制限する回路であり、SSBの受信復調に用いる回路ではない。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "1",
+          "explanation": "クラリファイヤは局部発振周波数などを微調整し、受信したSSB音声の音程を合わせる。",
+          "candidateExplanations": {
+            "1": "クラリファイヤは局部発振周波数などを微調整し、受信したSSB音声の音程を合わせる。",
+            "2": "2を選ぶと、この項目の該当・非該当が逆になる。クラリファイヤは局部発振周波数などを微調整し、受信したSSB音声の音程を合わせる。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "2",
+          "explanation": "プレエンファシスは主にFM送信で高域を強調する処理で、SSB受信機の回路には該当しない。",
+          "candidateExplanations": {
+            "1": "1を選ぶと、この項目の該当・非該当が逆になる。プレエンファシスは主にFM送信で高域を強調する処理で、SSB受信機の回路には該当しない。",
+            "2": "プレエンファシスは主にFM送信で高域を強調する処理で、SSB受信機の回路には該当しない。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "1",
+          "explanation": "周波数混合器は受信信号を中間周波に変換するため、SSBを受信する回路にも使われる。",
+          "candidateExplanations": {
+            "1": "周波数混合器は受信信号を中間周波に変換するため、SSBを受信する回路にも使われる。",
+            "2": "2を選ぶと、この項目の該当・非該当が逆になる。周波数混合器は受信信号を中間周波に変換するため、SSBを受信する回路にも使われる。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "2",
+          "explanation": "周波数弁別器は周波数偏移を信号に戻すFM用であり、SSBでは局部搬送波と混合して音声を復調する。",
+          "candidateExplanations": {
+            "1": "1を選ぶと、この項目の該当・非該当が逆になる。周波数弁別器は周波数偏移を信号に戻すFM用であり、SSBでは局部搬送波と混合して音声を復調する。",
+            "2": "周波数弁別器は周波数偏移を信号に戻すFM用であり、SSBでは局部搬送波と混合して音声を復調する。"
+          }
+        }
+      ]
+    },
+    "answer": ""
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-kogaku-b02",
+    "exam": "maritime4",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 2,
+    "part": "b",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "電離層波の臨界周波数・MUF・LUF・FOT",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-kogaku-b02.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 無線工学 B-2 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 無線工学 B-2（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      4
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 4,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf#page=4",
+        "pdfSha256": "d070314bd02a5d6987121411c1fc9705041d58dc93062f9fe96ea6f04a780bf8"
+      }
+    ],
+    "type": "native-b",
+    "explanation": "ア：垂直入射で戻ってくる最高周波数が臨界周波数である。\n\nイ：斜め入射で電離層に戻される最高使用可能周波数は、垂直入射の臨界周波数より高くなる。\n\nウ：固定した周波数ではなく、伝搬経路や入射角に応じてMUFは変わる。\n\nエ：低周波側では電離層の吸収が強まり、減衰は減少せず増加する。\n\nオ：FOTには伝搬条件の変動を見込んで、一般にMUFの約85％を選ぶ。",
+    "nativeB": {
+      "officialLabel": "B-2",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      },
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1",
+          "explanation": "垂直入射で戻ってくる最高周波数が臨界周波数である。"
+        },
+        {
+          "id": "2",
+          "label": "2",
+          "explanation": "斜め入射で電離層に戻される最高使用可能周波数は、垂直入射の臨界周波数より高くなる。"
+        },
+        {
+          "id": "3",
+          "label": "3",
+          "explanation": "入射角は送受信点の間隔に関係するので、MUFも距離によって変わる。"
+        },
+        {
+          "id": "4",
+          "label": "4",
+          "explanation": "LUFより低くなると電離層での吸収が増し、伝搬波の減衰が大きくなる。"
+        },
+        {
+          "id": "5",
+          "label": "5",
+          "explanation": "FOTには伝搬条件の変動を見込んで、一般にMUFの約85％を選ぶ。"
+        },
+        {
+          "id": "6",
+          "label": "6",
+          "explanation": "臨界周波数を定義する入射方向は水平から45度ではなく、電離層へ垂直な方向である。"
+        },
+        {
+          "id": "7",
+          "label": "7",
+          "explanation": "通常の斜め入射のMUFは、同じ電離層の垂直入射での臨界周波数より高い。"
+        },
+        {
+          "id": "8",
+          "label": "8",
+          "explanation": "固定した周波数ではなく、伝搬経路や入射角に応じてMUFは変わる。"
+        },
+        {
+          "id": "9",
+          "label": "9",
+          "explanation": "低周波側では電離層の吸収が強まり、減衰は減少せず増加する。"
+        },
+        {
+          "id": "10",
+          "label": "10",
+          "explanation": "FOTを決める代表的な割合はMUFの約85％であり、半分ではない。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "垂直入射で戻ってくる最高周波数が臨界周波数である。"
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "斜め入射で電離層に戻される最高使用可能周波数は、垂直入射の臨界周波数より高くなる。"
+        },
+        {
+          "label": "ウ",
+          "answer": "8",
+          "explanation": "固定した周波数ではなく、伝搬経路や入射角に応じてMUFは変わる。"
+        },
+        {
+          "label": "エ",
+          "answer": "9",
+          "explanation": "低周波側では電離層の吸収が強まり、減衰は減少せず増加する。"
+        },
+        {
+          "label": "オ",
+          "answer": "5",
+          "explanation": "FOTには伝搬条件の変動を見込んで、一般にMUFの約85％を選ぶ。"
+        }
+      ]
+    },
+    "answer": ""
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-kogaku-b03",
+    "exam": "maritime4",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 3,
+    "part": "b",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "GPSの衛星軌道と測位の仕組み",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-kogaku-b03.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 無線工学 B-3 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 無線工学 B-3（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      4
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 4,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf#page=4",
+        "pdfSha256": "d070314bd02a5d6987121411c1fc9705041d58dc93062f9fe96ea6f04a780bf8"
+      }
+    ],
+    "type": "native-b",
+    "explanation": "ア：GPSの衛星群は高度約2万kmの六つの軌道面に配置される。\n\nイ：GPS衛星の軌道周期は約12時間で、地上から見るとほぼ1日で2周する。\n\nウ：GPSのL帯信号はUHF（極超短波）帯の範囲に入る。\n\nエ：三次元の位置と受信機時計のずれという四つの未知量を求めるため、通常4個以上の衛星を使う。\n\nオ：測位では衛星信号の送信時刻を使って伝搬時間を推定し、衛星までの距離を求める。",
+    "nativeB": {
+      "officialLabel": "B-3",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      },
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1",
+          "explanation": "GPSの標準的な衛星配置は六つの軌道面から成り、五つの軌道面ではない。"
+        },
+        {
+          "id": "2",
+          "label": "2",
+          "explanation": "GPS衛星の軌道周期は約12時間で、地上から見るとほぼ1日で2周する。"
+        },
+        {
+          "id": "3",
+          "label": "3",
+          "explanation": "GPSの測位信号は1 GHz台のUHFの周波数で、VHFの帯域より高い。"
+        },
+        {
+          "id": "4",
+          "label": "4",
+          "explanation": "三次元座標と受信機の時計誤差を同時に求めるには、衛星2個の観測では足りない。"
+        },
+        {
+          "id": "5",
+          "label": "5",
+          "explanation": "測位では衛星信号の送信時刻を使って伝搬時間を推定し、衛星までの距離を求める。"
+        },
+        {
+          "id": "6",
+          "label": "6",
+          "explanation": "GPSの衛星群は高度約2万kmの六つの軌道面に配置される。"
+        },
+        {
+          "id": "7",
+          "label": "7",
+          "explanation": "約24時間は地球の自転周期に近いが、GPS衛星の公転はその半分程度である。"
+        },
+        {
+          "id": "8",
+          "label": "8",
+          "explanation": "GPSのL帯信号はUHF（極超短波）帯の範囲に入る。"
+        },
+        {
+          "id": "9",
+          "label": "9",
+          "explanation": "三次元の位置と受信機時計のずれという四つの未知量を求めるため、通常4個以上の衛星を使う。"
+        },
+        {
+          "id": "10",
+          "label": "10",
+          "explanation": "GPSの位置計算に使うのは衛星信号の時刻と軌道の情報で、単独の測位に姿勢情報は要らない。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "6",
+          "explanation": "GPSの衛星群は高度約2万kmの六つの軌道面に配置される。"
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "GPS衛星の軌道周期は約12時間で、地上から見るとほぼ1日で2周する。"
+        },
+        {
+          "label": "ウ",
+          "answer": "8",
+          "explanation": "GPSのL帯信号はUHF（極超短波）帯の範囲に入る。"
+        },
+        {
+          "label": "エ",
+          "answer": "9",
+          "explanation": "三次元の位置と受信機時計のずれという四つの未知量を求めるため、通常4個以上の衛星を使う。"
+        },
+        {
+          "label": "オ",
+          "answer": "5",
+          "explanation": "測位では衛星信号の送信時刻を使って伝搬時間を推定し、衛星までの距離を求める。"
+        }
+      ]
+    },
+    "answer": ""
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-kogaku-b04",
+    "exam": "maritime4",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 4,
+    "part": "b",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "半波長ダイポールアンテナの利得・実効長・指向性",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-kogaku-b04.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 無線工学 B-4 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 無線工学 B-4（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      4
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 4,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf#page=4",
+        "pdfSha256": "d070314bd02a5d6987121411c1fc9705041d58dc93062f9fe96ea6f04a780bf8"
+      }
+    ],
+    "type": "native-b",
+    "explanation": "ア：波の速度は波長と周波数の積なので、λ＝c/fである。\n\nイ：放射の強い方向における利得を比較すると、ダイポールの利得は等方性アンテナより大きい。\n\nウ：給電点電流を基準に正弦状の電流分布を積分すると、半波長ダイポールの実効長はλ/πになる。\n\nエ：図2の(b)では中央が最大、両端が零に近く、基本波の半波長ダイポールの電流分布を表している。\n\nオ：アンテナの軸に直角の方向へ強く放射し、軸方向は零になるため、図3の(d)に対応する。",
+    "nativeB": {
+      "officialLabel": "B-4",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      },
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1",
+          "explanation": "波の速度は波長と周波数の積なので、λ＝c/fである。"
+        },
+        {
+          "id": "2",
+          "label": "2",
+          "explanation": "半波長ダイポールは全方向に同じ強さで放射せず、最大方向の利得は等方性アンテナより高くなる。"
+        },
+        {
+          "id": "3",
+          "label": "3",
+          "explanation": "半波長ダイポールの実効長は、電流分布を給電点の電流に換算するとλ/πとなる。"
+        },
+        {
+          "id": "4",
+          "label": "4",
+          "explanation": "図2の(b)では中央が最大、両端が零に近く、基本波の半波長ダイポールの電流分布を表している。"
+        },
+        {
+          "id": "5",
+          "label": "5",
+          "explanation": "アンテナの軸に直角の方向へ強く放射し、軸方向は零になるため、図3の(d)に対応する。"
+        },
+        {
+          "id": "6",
+          "label": "6",
+          "explanation": "2c/fは波長の2倍になり、λそのものはc/fである。"
+        },
+        {
+          "id": "7",
+          "label": "7",
+          "explanation": "放射の強い方向における利得を比較すると、ダイポールの利得は等方性アンテナより大きい。"
+        },
+        {
+          "id": "8",
+          "label": "8",
+          "explanation": "給電点電流を基準に正弦状の電流分布を積分すると、半波長ダイポールの実効長はλ/πになる。"
+        },
+        {
+          "id": "9",
+          "label": "9",
+          "explanation": "図2の(a)では給電点の中心が最大となる基本波の電流分布と一致しない。"
+        },
+        {
+          "id": "10",
+          "label": "10",
+          "explanation": "図3の(c)のようにアンテナ軸方向に主な放射がある形は、半波長ダイポールの指向特性とは異なる。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "波の速度は波長と周波数の積なので、λ＝c/fである。"
+        },
+        {
+          "label": "イ",
+          "answer": "7",
+          "explanation": "放射の強い方向における利得を比較すると、ダイポールの利得は等方性アンテナより大きい。"
+        },
+        {
+          "label": "ウ",
+          "answer": "8",
+          "explanation": "給電点電流を基準に正弦状の電流分布を積分すると、半波長ダイポールの実効長はλ/πになる。"
+        },
+        {
+          "label": "エ",
+          "answer": "4",
+          "explanation": "図2の(b)では中央が最大、両端が零に近く、基本波の半波長ダイポールの電流分布を表している。"
+        },
+        {
+          "label": "オ",
+          "answer": "5",
+          "explanation": "アンテナの軸に直角の方向へ強く放射し、軸方向は零になるため、図3の(d)に対応する。"
+        }
+      ]
+    },
+    "answer": ""
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-kogaku-b05",
+    "exam": "maritime4",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 5,
+    "part": "b",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "VHF帯の海上伝搬と見通し外での受信",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-kogaku-b05.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 無線工学 B-5 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 無線工学 B-5（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      5
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 5,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-kogaku.pdf#page=5",
+        "pdfSha256": "d070314bd02a5d6987121411c1fc9705041d58dc93062f9fe96ea6f04a780bf8"
+      }
+    ],
+    "type": "native-b",
+    "explanation": "ア：見通し内の受信波は、送信点から直接届く波と海面で反射した波を合成したものになる。\n\nイ：直接波と反射波の位相が反対だと互いに打ち消す方向に重なり、電界強度が下がる。\n\nウ：標準大気での屈折により、電波の見通し距離は幾何学的な見通し距離より長くなる。\n\nエ：電波が障害物の縁から陰に回り込む現象を回折といい、その波を回折波と呼ぶ。\n\nオ：夏季に突発的にできるスポラジックE層は、条件によってVHFを反射して遠距離まで伝える。",
+    "nativeB": {
+      "officialLabel": "B-5",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      },
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1",
+          "explanation": "見通し内の受信波は、送信点から直接届く波と海面で反射した波を合成したものになる。"
+        },
+        {
+          "id": "2",
+          "label": "2",
+          "explanation": "直接波と反射波の位相が反対だと互いに打ち消す方向に重なり、電界強度が下がる。"
+        },
+        {
+          "id": "3",
+          "label": "3",
+          "explanation": "標準大気では高さによる屈折率の違いで電波がわずかに地表側へ曲がり、幾何学的な見通しを超えて伝搬する。"
+        },
+        {
+          "id": "4",
+          "label": "4",
+          "explanation": "定在波は逆向きの波が重なって作る振幅分布で、障害物の陰に回り込む波は回折波である。"
+        },
+        {
+          "id": "5",
+          "label": "5",
+          "explanation": "夏季に突発的にできるスポラジックE層は、条件によってVHFを反射して遠距離まで伝える。"
+        },
+        {
+          "id": "6",
+          "label": "6",
+          "explanation": "通常の見通し内のVHF海上伝搬では、受信波を主に直接波と海面反射波で考える。"
+        },
+        {
+          "id": "7",
+          "label": "7",
+          "explanation": "同相なら直接波と反射波は強め合う。位相が逆の場合に合成電界が弱まる。"
+        },
+        {
+          "id": "8",
+          "label": "8",
+          "explanation": "標準大気での屈折により、電波の見通し距離は幾何学的な見通し距離より長くなる。"
+        },
+        {
+          "id": "9",
+          "label": "9",
+          "explanation": "電波が障害物の縁から陰に回り込む現象を回折といい、その波を回折波と呼ぶ。"
+        },
+        {
+          "id": "10",
+          "label": "10",
+          "explanation": "D層は主に低い周波数域での吸収に関係し、VHFで突発的な遠距離伝搬を生じさせるのはスポラジックE層である。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "見通し内の受信波は、送信点から直接届く波と海面で反射した波を合成したものになる。"
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "直接波と反射波の位相が反対だと互いに打ち消す方向に重なり、電界強度が下がる。"
+        },
+        {
+          "label": "ウ",
+          "answer": "8",
+          "explanation": "標準大気での屈折により、電波の見通し距離は幾何学的な見通し距離より長くなる。"
+        },
+        {
+          "label": "エ",
+          "answer": "9",
+          "explanation": "電波が障害物の縁から陰に回り込む現象を回折といい、その波を回折波と呼ぶ。"
+        },
+        {
+          "label": "オ",
+          "answer": "5",
+          "explanation": "夏季に突発的にできるスポラジックE層は、条件によってVHFを反射して遠距離まで伝える。"
+        }
+      ]
+    },
+    "answer": ""
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-hoki-a01",
+    "exam": "maritime4",
+    "session": "houki",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 1,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "無線局の廃止の届出・免許状の返納・失効後の措置",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-hoki-a01.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 法規 A-1 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 法規 A-1（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      1
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 1,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf#page=1",
+        "pdfSha256": "bfda393e636d2860b7b97e959b1a8c9bd606b7e08eb7d281876161abd4a4964a"
+      }
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "廃止は総務大臣に届け出る。失効後1箇月以内に免許状を返納し、遅滞なく空中線を撤去するなど電波の発射を防ぐ。",
+    "choiceExplanations": {
+      "ア": "廃止は総務大臣に届け出る。失効後1箇月以内に免許状を返納し、遅滞なく空中線を撤去するなど電波の発射を防ぐ。",
+      "イ": "廃止には申請ではなく届出を行い、免許状の返納期限は失効後1箇月以内である。",
+      "ウ": "廃止の届出は正しいが、免許状返納は1箇月以内で、法律に挙げられる発射防止措置は空中線の撤去である。",
+      "エ": "返納期限は合うが、廃止は届出を行い、発射防止措置は空中線の撤去などと定められている。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-hoki-a02",
+    "exam": "maritime4",
+    "session": "houki",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 2,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "主任無線従事者の初回講習と再講習",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-hoki-a02.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 法規 A-2 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 法規 A-2（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      1
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 1,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf#page=1",
+        "pdfSha256": "bfda393e636d2860b7b97e959b1a8c9bd606b7e08eb7d281876161abd4a4964a"
+      }
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "選任日から6箇月以内に無線設備の操作の監督に関する講習を受け、その後も前回受講日から5年以内に受講する。",
+    "choiceExplanations": {
+      "ア": "講習の対象は無線設備の操作の監督で、初回は選任日から6箇月以内となる。",
+      "イ": "講習の内容は合うが、初回は6箇月以内、以後は受講日から5年以内である。",
+      "ウ": "選任日から6箇月以内に無線設備の操作の監督に関する講習を受け、その後も前回受講日から5年以内に受講する。",
+      "エ": "初回の期限は合う。講習の対象は操作の監督で、以後5年以内に講習を受ける。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-hoki-a03",
+    "exam": "maritime4",
+    "session": "houki",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 3,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "入港中でも船舶局を運用できる条件",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-hoki-a03.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 法規 A-3 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 法規 A-3（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      1
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 1,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf#page=1",
+        "pdfSha256": "bfda393e636d2860b7b97e959b1a8c9bd606b7e08eb7d281876161abd4a4964a"
+      }
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "気象照会や時刻照合のために中短波帯で海岸局と通信することは、入港中の運用を認める条件に当たらない。",
+    "choiceExplanations": {
+      "ア": "陸上との連絡に無線以外の手段がなく、急を要する通報を海岸局へ送る場合は運用できる。",
+      "イ": "気象照会や時刻照合のために中短波帯で海岸局と通信することは、入港中の運用を認める条件に当たらない。",
+      "ウ": "総務大臣などが行う無線局の検査のために必要なときは入港中でも運用できる。",
+      "エ": "定められた周波数帯で港務用無線局と港内交通に関する通信をする場合は運用できる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-hoki-a04",
+    "exam": "maritime4",
+    "session": "houki",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 4,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "無線局の運用条件と免許状に記載された事項の例外",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-hoki-a04.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 法規 A-4 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 法規 A-4（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      2
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf#page=2",
+        "pdfSha256": "bfda393e636d2860b7b97e959b1a8c9bd606b7e08eb7d281876161abd4a4964a"
+      }
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "免許状記載の設置場所、識別信号、型式、周波数に関する例外はこの肢のように緊急・安全通信まで一律には広がらず、空中線電力は別に定められている。",
+    "choiceExplanations": {
+      "ア": "他の無線局や指定受信設備への妨害を避けるのが原則で、遭難通信など所定の通信には例外がある。",
+      "イ": "目的・相手方・通信事項の範囲を守るのが原則で、遭難通信や放送の受信等は所定の例外に当たる。",
+      "ウ": "免許状記載の設置場所、識別信号、型式、周波数に関する例外はこの肢のように緊急・安全通信まで一律には広がらず、空中線電力は別に定められている。",
+      "エ": "機器の試験・調整時には、不要な電波の発射を抑えるためなるべく擬似空中線回路を使う。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-hoki-a05",
+    "exam": "maritime4",
+    "session": "houki",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 5,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "無線通信の秘密の保護と業務上の秘密漏えい",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-hoki-a05.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 法規 A-5 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 法規 A-5（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      2
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf#page=2",
+        "pdfSha256": "bfda393e636d2860b7b97e959b1a8c9bd606b7e08eb7d281876161abd4a4964a"
+      }
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "特定の相手方向けの通信を傍受して漏らし又は窃用する行為を禁じ、無線通信業務従事者の業務上の漏えいなどには重い刑を定めている。",
+    "choiceExplanations": {
+      "ア": "特定の相手方に対する通信が対象だが、第59条の規定は傍受した通信の存在・内容の漏えい又は窃用を禁じる。",
+      "イ": "周波数の限定で保護対象を定義しておらず、傍受だけを第59条の禁止行為としているわけでもない。",
+      "ウ": "行為の説明は合うが、保護の対象は特定の相手方に対して行われる通信で、加重規定の対象は無線通信の業務従事者である。",
+      "エ": "特定の相手方向けの通信を傍受して漏らし又は窃用する行為を禁じ、無線通信業務従事者の業務上の漏えいなどには重い刑を定めている。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-hoki-a06",
+    "exam": "maritime4",
+    "session": "houki",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 6,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "無線局運用規則に定める一般通信の原則",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-hoki-a06.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 法規 A-6 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 法規 A-6（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      2
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf#page=2",
+        "pdfSha256": "bfda393e636d2860b7b97e959b1a8c9bd606b7e08eb7d281876161abd4a4964a"
+      }
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "第10条は必要のない通信の禁止、簡潔な用語、自局の識別信号などを定めるが、一般通信で暗語を一律に禁じる規定ではない。",
+    "choiceExplanations": {
+      "ア": "第10条は必要のない通信の禁止、簡潔な用語、自局の識別信号などを定めるが、一般通信で暗語を一律に禁じる規定ではない。",
+      "イ": "必要のない無線通信の禁止は、限られた周波数を有効に使い混信を避けるための第10条の原則である。",
+      "ウ": "通信時間を必要以上に延ばさないよう、通信に用いる語句はできる限り簡潔にする。",
+      "エ": "通信の発信元を識別できるよう、自局の識別信号を付して出所を明らかにする。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-hoki-a07",
+    "exam": "maritime4",
+    "session": "houki",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 7,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "呼出先と呼出局が不確実な場合の無線電話の応答",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-hoki-a07.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 法規 A-7 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 法規 A-7（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      3
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 3,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf#page=3",
+        "pdfSha256": "bfda393e636d2860b7b97e959b1a8c9bd606b7e08eb7d281876161abd4a4964a"
+      }
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "呼出しが自局宛てと分かり、相手の名称だけが不確実なら「誰かこちらを呼びましたか」として直ちに応答する。",
+    "choiceExplanations": {
+      "ア": "呼出しが自局宛てかどうかが不確実な場合は、確実になるまで応答しない。",
+      "イ": "自局宛てであることが確実なら、呼出局名が分からなくても無線電話では所定の文言で直ちに応答する。",
+      "ウ": "「各局」は特定の呼出局名が分からない場合に応答事項を代替する文言には当たらない。",
+      "エ": "呼出しが自局宛てと分かり、相手の名称だけが不確実なら「誰かこちらを呼びましたか」として直ちに応答する。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-hoki-a08",
+    "exam": "maritime4",
+    "session": "houki",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 8,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "海上移動業務の呼出し前の聴守・反復・混信時の中止",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-hoki-a08.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 法規 A-8 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 法規 A-8（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      3
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 3,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf#page=3",
+        "pdfSha256": "bfda393e636d2860b7b97e959b1a8c9bd606b7e08eb7d281876161abd4a4964a"
+      }
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "発射周波数と必要な周波数を聴守し、呼出しの反復は2分間隔とする。混信の通知を受けた場合は直ちに呼出しを中止する。",
+    "choiceExplanations": {
+      "ア": "聴守するのは発射周波数に加え必要な周波数であり、呼出し反復には2分間の間隔を置く。",
+      "イ": "聴守する周波数の範囲は合うが、反復間隔は2分で、混信を通知された場合は呼出しを直ちに中止する。",
+      "ウ": "発射周波数と必要な周波数を聴守し、呼出しの反復は2分間隔とする。混信の通知を受けた場合は直ちに呼出しを中止する。",
+      "エ": "反復間隔は合うが、必要な他の周波数も聴守し、混信の通知を受けた場合は呼出しを止める。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-hoki-a09",
+    "exam": "maritime4",
+    "session": "houki",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 9,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "無線電話の遭難通報を送る時期・冒頭語・識別事項",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-hoki-a09.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 法規 A-9 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 法規 A-9（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      3
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 3,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf#page=3",
+        "pdfSha256": "bfda393e636d2860b7b97e959b1a8c9bd606b7e08eb7d281876161abd4a4964a"
+      }
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "遭難呼出しに続けて速やかに、「メーデー」又は「遭難」と、遭難船舶・航空機の名称又は識別などを順に送る。",
+    "choiceExplanations": {
+      "ア": "送信時期は合うが、呼称は「メーデー」又は「遭難」で、続くのは遭難した船舶・航空機の名称又は識別である。",
+      "イ": "遭難呼出しに続けて速やかに、「メーデー」又は「遭難」と、遭難船舶・航空機の名称又は識別などを順に送る。",
+      "ウ": "応答を待つ必要はなく、冒頭の用語は「ディストレス」ではなく「メーデー」又は「遭難」である。",
+      "エ": "「メーデー」は合うが、呼出しの応答を待たずに送り、所有者ではなく遭難した船舶・航空機を識別する情報を送る。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-hoki-a10",
+    "exam": "maritime4",
+    "session": "houki",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 10,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "通常のデジタル選択呼出しに対する船舶局の応答",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-hoki-a10.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 法規 A-10 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 法規 A-10（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      4
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 4,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf#page=4",
+        "pdfSha256": "bfda393e636d2860b7b97e959b1a8c9bd606b7e08eb7d281876161abd4a4964a"
+      }
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "船舶局は5分以内に応答する。先頭は呼出しの種類で、指定された周波数で受信できない場合は希望する代替周波数等を明示する。",
+    "choiceExplanations": {
+      "ア": "船舶局の応答は10分以内ではなく5分以内で、応答事項の先頭は呼出しの種類である。",
+      "イ": "先頭で呼出しの種類を示す点は合うが、船舶局の応答期限は5分以内で、周波数が合わなければ希望する代替を示す。",
+      "ウ": "5分以内は正しいが、応答の先頭は呼出しの種類であり、受信できない周波数が指定されたときは希望する代替を示す。",
+      "エ": "船舶局は5分以内に応答する。先頭は呼出しの種類で、指定された周波数で受信できない場合は希望する代替周波数等を明示する。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-hoki-a11",
+    "exam": "maritime4",
+    "session": "houki",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 11,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "電波法が定める遭難通信の事由",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-hoki-a11.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 法規 A-11 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 法規 A-11（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      4
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 4,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf#page=4",
+        "pdfSha256": "bfda393e636d2860b7b97e959b1a8c9bd606b7e08eb7d281876161abd4a4964a"
+      }
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "遭難通信は、船舶又は航空機が重大かつ急迫の危険に現に陥った場合に行う。",
+    "choiceExplanations": {
+      "ア": "遭難通信は、船舶又は航空機が重大かつ急迫の危険に現に陥った場合に行う。",
+      "イ": "現に陥った場合は遭難通信だが、危険に陥るおそれだけの段階まで含めた定義ではない。",
+      "ウ": "船舶や航空機の航行に対する重大な危険を予防するための通信は、安全通信の目的に当たる。",
+      "エ": "重大かつ急迫の危険に陥るおそれなど緊急事態に関する通信は、緊急通信に当たる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-hoki-a12",
+    "exam": "maritime4",
+    "session": "houki",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 12,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "船舶局が安全信号や安全通信を受信した場合の措置",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-hoki-a12.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 法規 A-12 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 法規 A-12（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      4
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 4,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf#page=4",
+        "pdfSha256": "bfda393e636d2860b7b97e959b1a8c9bd606b7e08eb7d281876161abd4a4964a"
+      }
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "他の船舶局からの安全通報をすべての船舶局に一律に中継する義務はなく、設問の条文が定める受信措置とは異なる。",
+    "choiceExplanations": {
+      "ア": "遭難通信又は緊急通信を行う場合を除き、安全通信に混信を与える通信を中止し、直ちに受信する。",
+      "イ": "他の船舶局からの安全通報をすべての船舶局に一律に中継する義務はなく、設問の条文が定める受信措置とは異なる。",
+      "ウ": "安全通信が自局と無関係であることを確認できるまで、船舶局はその通信を受信する。",
+      "エ": "受信した安全通信が航行判断に関わる場合など、必要に応じてその要旨を船舶の責任者に通知する。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-hoki-a13",
+    "exam": "maritime4",
+    "session": "houki",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 13,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "電波法違反時に命じられる運用停止と運用条件の制限",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-hoki-a13.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 法規 A-13 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 法規 A-13（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      5
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 5,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf#page=5",
+        "pdfSha256": "bfda393e636d2860b7b97e959b1a8c9bd606b7e08eb7d281876161abd4a4964a"
+      }
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "第76条第1項の制限対象は運用許容時間、周波数又は空中線電力であり、通信の相手方や通信事項は挙げられていない。",
+    "choiceExplanations": {
+      "ア": "第76条第1項の制限対象は運用許容時間、周波数又は空中線電力であり、通信の相手方や通信事項は挙げられていない。",
+      "イ": "違反があった場合、総務大臣は3月以内の期間を定め、無線局の運用停止を命じることができる。",
+      "ウ": "無線局を運用できる時間帯などの運用許容時間は、期間を定めて制限できる。",
+      "エ": "違反時に行える制限の対象として周波数と空中線電力の双方が挙げられている。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-hoki-a14",
+    "exam": "maritime4",
+    "session": "houki",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 14,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "無線局の検査後に指示を受けて講じた措置の報告",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-hoki-a14.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 法規 A-14 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 法規 A-14（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      5
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 5,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf#page=5",
+        "pdfSha256": "bfda393e636d2860b7b97e959b1a8c9bd606b7e08eb7d281876161abd4a4964a"
+      }
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "検査結果について指示を受けて相当な措置を講じたとき、免許人等は速やかにその措置の内容を報告する。",
+    "choiceExplanations": {
+      "ア": "第39条で規定されるのは検査結果についての指示である。措置後には内容を報告する。",
+      "イ": "指示は正しいが、第39条が求めるのは相当な措置の内容の報告であり、再検査を受けることまでは定めていない。",
+      "ウ": "報告は必要だが、選択肢の「措置命令」ではなく、検査結果について受けた「指示」が前提になる。",
+      "エ": "検査結果について指示を受けて相当な措置を講じたとき、免許人等は速やかにその措置の内容を報告する。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-hoki-b01",
+    "exam": "maritime4",
+    "session": "houki",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 1,
+    "part": "b",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "無線局の予備免許時に指定する事項",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-hoki-b01.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 法規 B-1 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 法規 B-1（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      5
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 5,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf#page=5",
+        "pdfSha256": "bfda393e636d2860b7b97e959b1a8c9bd606b7e08eb7d281876161abd4a4964a"
+      }
+    ],
+    "type": "native-b",
+    "explanation": "ア：通信の相手方と通信事項は、電波法第8条で予備免許時に指定する事項には含まれない。\n\nイ：いつまでに設備の工事を終えるかを示す工事落成の期限は、予備免許で指定する事項である。\n\nウ：電波の型式と周波数は、無線設備を整備する前の予備免許段階で指定される。\n\nエ：免許の有効期間は最終的な免許に関する事項であり、第8条に列挙された予備免許時の指定事項にはない。\n\nオ：呼出符号や呼出名称など、自局の識別に用いる識別信号は予備免許時に指定される。",
+    "nativeB": {
+      "officialLabel": "B-1",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      },
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1"
+        },
+        {
+          "id": "2",
+          "label": "2"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "2",
+          "explanation": "通信の相手方と通信事項は、電波法第8条で予備免許時に指定する事項には含まれない。",
+          "candidateExplanations": {
+            "1": "1を選ぶと、この項目の該当・非該当が逆になる。通信の相手方と通信事項は、電波法第8条で予備免許時に指定する事項には含まれない。",
+            "2": "通信の相手方と通信事項は、電波法第8条で予備免許時に指定する事項には含まれない。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "1",
+          "explanation": "いつまでに設備の工事を終えるかを示す工事落成の期限は、予備免許で指定する事項である。",
+          "candidateExplanations": {
+            "1": "いつまでに設備の工事を終えるかを示す工事落成の期限は、予備免許で指定する事項である。",
+            "2": "2を選ぶと、この項目の該当・非該当が逆になる。いつまでに設備の工事を終えるかを示す工事落成の期限は、予備免許で指定する事項である。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "1",
+          "explanation": "電波の型式と周波数は、無線設備を整備する前の予備免許段階で指定される。",
+          "candidateExplanations": {
+            "1": "電波の型式と周波数は、無線設備を整備する前の予備免許段階で指定される。",
+            "2": "2を選ぶと、この項目の該当・非該当が逆になる。電波の型式と周波数は、無線設備を整備する前の予備免許段階で指定される。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "2",
+          "explanation": "免許の有効期間は最終的な免許に関する事項であり、第8条に列挙された予備免許時の指定事項にはない。",
+          "candidateExplanations": {
+            "1": "1を選ぶと、この項目の該当・非該当が逆になる。免許の有効期間は最終的な免許に関する事項であり、第8条に列挙された予備免許時の指定事項にはない。",
+            "2": "免許の有効期間は最終的な免許に関する事項であり、第8条に列挙された予備免許時の指定事項にはない。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "1",
+          "explanation": "呼出符号や呼出名称など、自局の識別に用いる識別信号は予備免許時に指定される。",
+          "candidateExplanations": {
+            "1": "呼出符号や呼出名称など、自局の識別に用いる識別信号は予備免許時に指定される。",
+            "2": "2を選ぶと、この項目の該当・非該当が逆になる。呼出符号や呼出名称など、自局の識別に用いる識別信号は予備免許時に指定される。"
+          }
+        }
+      ]
+    },
+    "answer": ""
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-hoki-b02",
+    "exam": "maritime4",
+    "session": "houki",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 2,
+    "part": "b",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "義務船舶局における遭難自動通報設備の機器",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-hoki-b02.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 法規 B-2 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 法規 B-2（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      5
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 5,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf#page=5",
+        "pdfSha256": "bfda393e636d2860b7b97e959b1a8c9bd606b7e08eb7d281876161abd4a4964a"
+      }
+    ],
+    "type": "native-b",
+    "explanation": "ア：双方向無線電話は現場連絡などに使う無線設備で、条文の「遭難自動通報設備の機器」には当たらない。\n\nイ：超短波帯デジタル選択呼出専用受信機は遭難呼出しなどの聴守に使う受信設備であり、遭難自動通報設備とは区別される。\n\nウ：衛星非常用位置指示無線標識は衛星を介して遭難の情報を通報する機器であり、この区分に該当する。\n\nエ：捜索救助用レーダートランスポンダは捜索レーダーの信号に応答し、施行規則の遭難自動通報設備の機器に含まれる。\n\nオ：船舶自動識別装置は表示や航行安全のために識別・位置等の情報を交換する装置で、この区分には該当しない。",
+    "nativeB": {
+      "officialLabel": "B-2",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      },
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1"
+        },
+        {
+          "id": "2",
+          "label": "2"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "2",
+          "explanation": "双方向無線電話は現場連絡などに使う無線設備で、条文の「遭難自動通報設備の機器」には当たらない。",
+          "candidateExplanations": {
+            "1": "1を選ぶと、この項目の該当・非該当が逆になる。双方向無線電話は現場連絡などに使う無線設備で、条文の「遭難自動通報設備の機器」には当たらない。",
+            "2": "双方向無線電話は現場連絡などに使う無線設備で、条文の「遭難自動通報設備の機器」には当たらない。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "超短波帯デジタル選択呼出専用受信機は遭難呼出しなどの聴守に使う受信設備であり、遭難自動通報設備とは区別される。",
+          "candidateExplanations": {
+            "1": "1を選ぶと、この項目の該当・非該当が逆になる。超短波帯デジタル選択呼出専用受信機は遭難呼出しなどの聴守に使う受信設備であり、遭難自動通報設備とは区別される。",
+            "2": "超短波帯デジタル選択呼出専用受信機は遭難呼出しなどの聴守に使う受信設備であり、遭難自動通報設備とは区別される。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "1",
+          "explanation": "衛星非常用位置指示無線標識は衛星を介して遭難の情報を通報する機器であり、この区分に該当する。",
+          "candidateExplanations": {
+            "1": "衛星非常用位置指示無線標識は衛星を介して遭難の情報を通報する機器であり、この区分に該当する。",
+            "2": "2を選ぶと、この項目の該当・非該当が逆になる。衛星非常用位置指示無線標識は衛星を介して遭難の情報を通報する機器であり、この区分に該当する。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "1",
+          "explanation": "捜索救助用レーダートランスポンダは捜索レーダーの信号に応答し、施行規則の遭難自動通報設備の機器に含まれる。",
+          "candidateExplanations": {
+            "1": "捜索救助用レーダートランスポンダは捜索レーダーの信号に応答し、施行規則の遭難自動通報設備の機器に含まれる。",
+            "2": "2を選ぶと、この項目の該当・非該当が逆になる。捜索救助用レーダートランスポンダは捜索レーダーの信号に応答し、施行規則の遭難自動通報設備の機器に含まれる。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "2",
+          "explanation": "船舶自動識別装置は表示や航行安全のために識別・位置等の情報を交換する装置で、この区分には該当しない。",
+          "candidateExplanations": {
+            "1": "1を選ぶと、この項目の該当・非該当が逆になる。船舶自動識別装置は表示や航行安全のために識別・位置等の情報を交換する装置で、この区分には該当しない。",
+            "2": "船舶自動識別装置は表示や航行安全のために識別・位置等の情報を交換する装置で、この区分には該当しない。"
+          }
+        }
+      ]
+    },
+    "answer": ""
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-hoki-b03",
+    "exam": "maritime4",
+    "session": "houki",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 3,
+    "part": "b",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "船舶局の運用範囲・海岸局からの妨害除去要求・指示",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-hoki-b03.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 法規 B-3 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 法規 B-3（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      6
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 6,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf#page=6",
+        "pdfSha256": "bfda393e636d2860b7b97e959b1a8c9bd606b7e08eb7d281876161abd4a4964a"
+      }
+    ],
+    "type": "native-b",
+    "explanation": "ア：電波法第62条は船舶局の運用をその船舶の航行中に限るのを原則としている。\n\nイ：受信装置だけの運用は、船舶の航行中に限るという原則の例外に挙げられている。\n\nウ：海岸局は妨害している船舶局に、妨害を除去するため必要な措置を執るよう求めることができる。\n\nエ：通信の順序や時刻などについて指示を受けたときに従う義務は、通信相手が海岸局である場合に生じる。\n\nオ：海岸局と通信するときに指示に従う事項には、使用電波の型式又は周波数が含まれる。",
+    "nativeB": {
+      "officialLabel": "B-3",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      },
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1",
+          "explanation": "原則は「航行中」で、航行の準備中まで当然に含める規定にはなっていない。"
+        },
+        {
+          "id": "2",
+          "label": "2",
+          "explanation": "電波法第62条は船舶局の運用をその船舶の航行中に限るのを原則としている。"
+        },
+        {
+          "id": "3",
+          "label": "3",
+          "explanation": "原則の例外となるのは受信装置のみの運用であり、送信装置のみを運用する場合ではない。"
+        },
+        {
+          "id": "4",
+          "label": "4",
+          "explanation": "受信装置だけの運用は、船舶の航行中に限るという原則の例外に挙げられている。"
+        },
+        {
+          "id": "5",
+          "label": "5",
+          "explanation": "海岸局は妨害している船舶局に、妨害を除去するため必要な措置を執るよう求めることができる。"
+        },
+        {
+          "id": "6",
+          "label": "6",
+          "explanation": "海岸局はこの場合、必要な措置を求める立場であり、第62条は発射を停止する命令権を規定していない。"
+        },
+        {
+          "id": "7",
+          "label": "7",
+          "explanation": "通信の順序や時刻などについて指示を受けたときに従う義務は、通信相手が海岸局である場合に生じる。"
+        },
+        {
+          "id": "8",
+          "label": "8",
+          "explanation": "他の船舶局も含めると範囲が広過ぎる。第62条第3項で指示をする局は海岸局である。"
+        },
+        {
+          "id": "9",
+          "label": "9",
+          "explanation": "空中線電力はこの項に列挙される指示事項に含まれず、使用電波の型式又は周波数が挙げられている。"
+        },
+        {
+          "id": "10",
+          "label": "10",
+          "explanation": "海岸局と通信するときに指示に従う事項には、使用電波の型式又は周波数が含まれる。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "2",
+          "explanation": "電波法第62条は船舶局の運用をその船舶の航行中に限るのを原則としている。"
+        },
+        {
+          "label": "イ",
+          "answer": "4",
+          "explanation": "受信装置だけの運用は、船舶の航行中に限るという原則の例外に挙げられている。"
+        },
+        {
+          "label": "ウ",
+          "answer": "5",
+          "explanation": "海岸局は妨害している船舶局に、妨害を除去するため必要な措置を執るよう求めることができる。"
+        },
+        {
+          "label": "エ",
+          "answer": "7",
+          "explanation": "通信の順序や時刻などについて指示を受けたときに従う義務は、通信相手が海岸局である場合に生じる。"
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "海岸局と通信するときに指示に従う事項には、使用電波の型式又は周波数が含まれる。"
+        }
+      ]
+    },
+    "answer": ""
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-hoki-b04",
+    "exam": "maritime4",
+    "session": "houki",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 4,
+    "part": "b",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "遭難通信の優先・救助の通信・妨害防止と罰則",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-hoki-b04.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 法規 B-4 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 法規 B-4（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      6
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 6,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf#page=6",
+        "pdfSha256": "bfda393e636d2860b7b97e959b1a8c9bd606b7e08eb7d281876161abd4a4964a"
+      }
+    ],
+    "type": "native-b",
+    "explanation": "ア：遭難通信は他の一切の無線通信に優先し、該当する無線局は直ちに応答する。\n\nイ：救助に適した位置にある無線局へ通報するなど、遭難した船舶や航空機を救助するための措置を執る。\n\nウ：通報などを通じて救助に必要な通信のため最善の措置を取ることが、同項で求められている。\n\nエ：遭難信号を受けた無線局は、遭難通信を妨害するおそれのある電波の発射を直ちに中止する。\n\nオ：同項に従わず遭難通信の取扱いをしなかった場合などの罰則は、無線通信の業務に従事する者が対象である。",
+    "nativeB": {
+      "officialLabel": "B-4",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      },
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1",
+          "explanation": "遭難通信は他の一切の無線通信に優先し、該当する無線局は直ちに応答する。"
+        },
+        {
+          "id": "2",
+          "label": "2",
+          "explanation": "現に通信中であることは遭難通信への応答を遅らせる理由にならず、遭難通信を優先する。"
+        },
+        {
+          "id": "3",
+          "label": "3",
+          "explanation": "救助に適した位置にある無線局へ通報するなど、遭難した船舶や航空機を救助するための措置を執る。"
+        },
+        {
+          "id": "4",
+          "label": "4",
+          "explanation": "救助のための通報先として条文が挙げるのは最も便宜な位置にある無線局であり、全局への一律通報ではない。"
+        },
+        {
+          "id": "5",
+          "label": "5",
+          "explanation": "第66条第1項は救助の通信について最善の措置を求めており、「遭難通信の宰領」は空欄に当てはまらない。"
+        },
+        {
+          "id": "6",
+          "label": "6",
+          "explanation": "通報などを通じて救助に必要な通信のため最善の措置を取ることが、同項で求められている。"
+        },
+        {
+          "id": "7",
+          "label": "7",
+          "explanation": "中止対象はすべての電波の発射ではなく、遭難通信を妨げるおそれのある発射である。"
+        },
+        {
+          "id": "8",
+          "label": "8",
+          "explanation": "遭難信号を受けた無線局は、遭難通信を妨害するおそれのある電波の発射を直ちに中止する。"
+        },
+        {
+          "id": "9",
+          "label": "9",
+          "explanation": "同項に従わず遭難通信の取扱いをしなかった場合などの罰則は、無線通信の業務に従事する者が対象である。"
+        },
+        {
+          "id": "10",
+          "label": "10",
+          "explanation": "免許人一般をこの罰則の主体とするのではなく、無線通信の業務に従事する者を対象にしている。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "遭難通信は他の一切の無線通信に優先し、該当する無線局は直ちに応答する。"
+        },
+        {
+          "label": "イ",
+          "answer": "3",
+          "explanation": "救助に適した位置にある無線局へ通報するなど、遭難した船舶や航空機を救助するための措置を執る。"
+        },
+        {
+          "label": "ウ",
+          "answer": "6",
+          "explanation": "通報などを通じて救助に必要な通信のため最善の措置を取ることが、同項で求められている。"
+        },
+        {
+          "label": "エ",
+          "answer": "8",
+          "explanation": "遭難信号を受けた無線局は、遭難通信を妨害するおそれのある電波の発射を直ちに中止する。"
+        },
+        {
+          "label": "オ",
+          "answer": "9",
+          "explanation": "同項に従わず遭難通信の取扱いをしなかった場合などの罰則は、無線通信の業務に従事する者が対象である。"
+        }
+      ]
+    },
+    "answer": ""
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-hoki-b05",
+    "exam": "maritime4",
+    "session": "houki",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 5,
+    "part": "b",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "総務大臣が職員を派遣して無線局を検査できる事由",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-hoki-b05.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 法規 B-5 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 法規 B-5（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      6
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 6,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf#page=6",
+        "pdfSha256": "bfda393e636d2860b7b97e959b1a8c9bd606b7e08eb7d281876161abd4a4964a"
+      }
+    ],
+    "type": "native-b",
+    "explanation": "ア：発射した電波の質が所定の基準に適合せず、臨時に発射停止を命じた場合には検査の対象となる。\n\nイ：電波利用料の督促後の不納付には別の手続があり、第73条の派遣検査を行う事由には挙げられていない。\n\nウ：船舶の主たる停泊港の変更届があっただけでは、この条文の派遣検査の事由には当たらない。\n\nエ：無線局を載せた船舶や航空機が外国へ出港しようとする場合、職員を派遣して無線設備等を検査させることができる。\n\nオ：技術基準への不適合を認め、修理など必要な措置を命じたときは職員を派遣して検査させることができる。",
+    "nativeB": {
+      "officialLabel": "B-5",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      },
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1"
+        },
+        {
+          "id": "2",
+          "label": "2"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "発射した電波の質が所定の基準に適合せず、臨時に発射停止を命じた場合には検査の対象となる。",
+          "candidateExplanations": {
+            "1": "発射した電波の質が所定の基準に適合せず、臨時に発射停止を命じた場合には検査の対象となる。",
+            "2": "2を選ぶと、この項目の該当・非該当が逆になる。発射した電波の質が所定の基準に適合せず、臨時に発射停止を命じた場合には検査の対象となる。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "電波利用料の督促後の不納付には別の手続があり、第73条の派遣検査を行う事由には挙げられていない。",
+          "candidateExplanations": {
+            "1": "1を選ぶと、この項目の該当・非該当が逆になる。電波利用料の督促後の不納付には別の手続があり、第73条の派遣検査を行う事由には挙げられていない。",
+            "2": "電波利用料の督促後の不納付には別の手続があり、第73条の派遣検査を行う事由には挙げられていない。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "2",
+          "explanation": "船舶の主たる停泊港の変更届があっただけでは、この条文の派遣検査の事由には当たらない。",
+          "candidateExplanations": {
+            "1": "1を選ぶと、この項目の該当・非該当が逆になる。船舶の主たる停泊港の変更届があっただけでは、この条文の派遣検査の事由には当たらない。",
+            "2": "船舶の主たる停泊港の変更届があっただけでは、この条文の派遣検査の事由には当たらない。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "1",
+          "explanation": "無線局を載せた船舶や航空機が外国へ出港しようとする場合、職員を派遣して無線設備等を検査させることができる。",
+          "candidateExplanations": {
+            "1": "無線局を載せた船舶や航空機が外国へ出港しようとする場合、職員を派遣して無線設備等を検査させることができる。",
+            "2": "2を選ぶと、この項目の該当・非該当が逆になる。無線局を載せた船舶や航空機が外国へ出港しようとする場合、職員を派遣して無線設備等を検査させることができる。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "1",
+          "explanation": "技術基準への不適合を認め、修理など必要な措置を命じたときは職員を派遣して検査させることができる。",
+          "candidateExplanations": {
+            "1": "技術基準への不適合を認め、修理など必要な措置を命じたときは職員を派遣して検査させることができる。",
+            "2": "2を選ぶと、この項目の該当・非該当が逆になる。技術基準への不適合を認め、修理など必要な措置を命じたときは職員を派遣して検査させることができる。"
+          }
+        }
+      ]
+    },
+    "answer": ""
+  },
+  {
+    "id": "radio21-maritime-comm4-2025-08-hoki-b06",
+    "exam": "maritime4",
+    "session": "houki",
+    "year": 2025,
+    "season": "august",
+    "qNumber": 6,
+    "part": "b",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第四級海上無線通信士",
+      "2025-08期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "国際航海・国際通信を行わない義務船舶局の備付書類",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime4/2025/2025-08-hoki-b06.png"
+    ],
+    "imageAltTexts": [
+      "2025年8月期 第四級海上無線通信士 法規 B-6 原問題（本文と選択肢）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第四級海上無線通信士 2025年8月期 法規 B-6（問題・正答）。原問題画像は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "sourcePages": [
+      7
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 7,
+        "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kaijyo-tu-4-hoki.pdf#page=7",
+        "pdfSha256": "bfda393e636d2860b7b97e959b1a8c9bd606b7e08eb7d281876161abd4a4964a"
+      }
+    ],
+    "type": "native-b",
+    "explanation": "ア：免許状は、義務船舶局において無線局の免許内容を示す書類として備え付ける。\n\nイ：海上移動業務等の便覧は設問が除外する国際航海や国際通信を行う局に関する書類で、この範囲の局には求められない。\n\nウ：無線局の免許の申請書に付けた添付書類の写しは、設備や申請の内容を確認するため備え付ける。\n\nエ：無線従事者の選任や解任の状況を確認できるよう、選解任届の写しを備え付ける。\n\nオ：海岸局及び特別業務の局の局名録は、設問のように国際航海や国際通信を行わない局には求められない。",
+    "nativeB": {
+      "officialLabel": "B-6",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      },
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1"
+        },
+        {
+          "id": "2",
+          "label": "2"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "免許状は、義務船舶局において無線局の免許内容を示す書類として備え付ける。",
+          "candidateExplanations": {
+            "1": "免許状は、義務船舶局において無線局の免許内容を示す書類として備え付ける。",
+            "2": "2を選ぶと、この項目の該当・非該当が逆になる。免許状は、義務船舶局において無線局の免許内容を示す書類として備え付ける。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "海上移動業務等の便覧は設問が除外する国際航海や国際通信を行う局に関する書類で、この範囲の局には求められない。",
+          "candidateExplanations": {
+            "1": "1を選ぶと、この項目の該当・非該当が逆になる。海上移動業務等の便覧は設問が除外する国際航海や国際通信を行う局に関する書類で、この範囲の局には求められない。",
+            "2": "海上移動業務等の便覧は設問が除外する国際航海や国際通信を行う局に関する書類で、この範囲の局には求められない。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "1",
+          "explanation": "無線局の免許の申請書に付けた添付書類の写しは、設備や申請の内容を確認するため備え付ける。",
+          "candidateExplanations": {
+            "1": "無線局の免許の申請書に付けた添付書類の写しは、設備や申請の内容を確認するため備え付ける。",
+            "2": "2を選ぶと、この項目の該当・非該当が逆になる。無線局の免許の申請書に付けた添付書類の写しは、設備や申請の内容を確認するため備え付ける。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "1",
+          "explanation": "無線従事者の選任や解任の状況を確認できるよう、選解任届の写しを備え付ける。",
+          "candidateExplanations": {
+            "1": "無線従事者の選任や解任の状況を確認できるよう、選解任届の写しを備え付ける。",
+            "2": "2を選ぶと、この項目の該当・非該当が逆になる。無線従事者の選任や解任の状況を確認できるよう、選解任届の写しを備え付ける。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "2",
+          "explanation": "海岸局及び特別業務の局の局名録は、設問のように国際航海や国際通信を行わない局には求められない。",
+          "candidateExplanations": {
+            "1": "1を選ぶと、この項目の該当・非該当が逆になる。海岸局及び特別業務の局の局名録は、設問のように国際航海や国際通信を行わない局には求められない。",
+            "2": "海岸局及び特別業務の局の局名録は、設問のように国際航海や国際通信を行わない局には求められない。"
+          }
+        }
+      ]
+    },
+    "answer": ""
+  }
+]

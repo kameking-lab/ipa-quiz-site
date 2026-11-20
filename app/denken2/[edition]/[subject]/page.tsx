@@ -1,8 +1,9 @@
+import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
-  NATIVE_EDITIONS, NATIVE_QUESTIONS, getNativeSubjectQuestions, nativeQuestionPath, nativeSubjectPath,
+  NATIVE_QUESTIONS, getNativeSubjectQuestions, nativeQuestionPath, nativeSubjectPath,
   type NativeSubject,
 } from "@/lib/denken2/native";
 
@@ -13,7 +14,7 @@ type Props = { params: Promise<{ edition: string; subject: string }> };
 const subjectLabel = (subject: NativeSubject) => ({ theory: "理論", power: "電力", machine: "機械", law: "法規" })[subject];
 function resolve(edition: string, subject: string): { year: number; subject: NativeSubject } | null {
   const year = Number(edition.slice(0, 4));
-  if (edition !== `${year}-primary` || !NATIVE_EDITIONS.some(item => item.year === year)) return null;
+  if (edition !== `${year}-primary`) return null;
   if (subject !== "theory" && subject !== "power" && subject !== "machine" && subject !== "law") return null;
   if (!getNativeSubjectQuestions(year, subject).length) return null;
   return { year, subject };
@@ -21,11 +22,11 @@ function resolve(edition: string, subject: string): { year: number; subject: Nat
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const parsed = resolve((await params).edition, (await params).subject);
   const questions = parsed ? getNativeSubjectQuestions(parsed.year, parsed.subject) : [];
-  return parsed ? {
+  return parsed ? withCanonicalSocialMetadata({
     title: `電験二種 ${parsed.year}年度 一次試験 ${subjectLabel(parsed.subject)} 過去問${questions.length}原問`,
     description: `公式問題の${subjectLabel(parsed.subject)}${questions.length}原問を掲載。公式正答、全欄解説、原本の図と解答群を確認できます。`,
     alternates: { canonical: nativeSubjectPath(parsed.year, parsed.subject) },
-  } : { title: "問題が見つかりません", robots: { index: false } };
+  }) : { title: "問題が見つかりません", robots: { index: false } };
 }
 export default async function Page({ params }: Props) {
   const parsed = resolve((await params).edition, (await params).subject);

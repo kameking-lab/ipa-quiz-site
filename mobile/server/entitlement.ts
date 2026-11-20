@@ -4,7 +4,7 @@ import { billingRuntime } from "@/lib/billing/runtime";
 import { monthlySelected } from "@/lib/billing/subscription/config";
 import { monthlyRuntime } from "@/lib/billing/subscription/runtime";
 import { mobileConfig } from "./config";
-import { ensureRevenueCatAccount, revenueCatAccess } from "./revenuecat";
+import { ensureRevenueCatAccount, refreshRevenueCat, revenueCatAccess } from "./revenuecat";
 import type { MobileEntitlement } from "../shared/contracts";
 
 export async function webEntitlement(userId: string) {
@@ -51,6 +51,9 @@ export async function mobileEntitlement(userId: string | null, fresh = false): P
     if (!result.entitled) {
       const rc = await revenueCatAccess(userId, fresh);
       if (rc?.expiresAt) Object.assign(result, { entitled: true, source: "app-store", expiresAt: rc.expiresAt.toISOString() });
+    } else if (fresh) {
+      // A native purchase or restore can discover an overlap while Web access is active.
+      await refreshRevenueCat(a.appUserId).catch(() => console.warn("revenuecat_refresh_unavailable"));
     }
   }
   if (result.entitled && result.expiresAt && c.leasePrivateKey) {

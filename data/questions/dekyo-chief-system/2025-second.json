@@ -1,0 +1,1022 @@
+[
+  {
+    "id": "dekyo-chief-system-2025-second-gakka-q1",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "電気・電子回路",
+    "topicTags": [
+      "電気通信システム",
+      "環状鉄心に巻いたコイルの相互インダクタンス"
+    ],
+    "difficulty": 3,
+    "question": "透磁率がμ［H/m］、磁路の平均の長さがℓ［m］、断面積がA［m²］の環状鉄心に巻数がそれぞれN₁、N₂の二つのコイルが巻かれているとき、相互インダクタンスMは、［　］Hである。ただし、漏れ磁束は無視するものとする。",
+    "choices": {
+      "ア": "μN₁N₂/(Aℓ)",
+      "イ": "AN₁N₂/(μℓ)",
+      "ウ": "μAN₁N₂/ℓ",
+      "エ": "μN₁²N₂²/(Aℓ)",
+      "オ": "μAN₁²N₂²/ℓ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "第1コイルの電流I₁による磁界はH＝N₁I₁/ℓ、磁束はΦ＝μAN₁I₁/ℓである。漏れがないので第2コイルの鎖交磁束はN₂Φとなる。相互インダクタンスM＝N₂Φ/I₁より、μAN₁N₂/ℓを得る。巻数は各コイルについて1乗ずつ現れる。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf#page=2)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2025-second-q01.png"
+    ],
+    "imageAltTexts": [
+      "問１ 透磁率がμ Ｈ／ｍ、磁路の平均の長さが ｍ、断面積がＡｍ ２ の環状鉄心に巻数がそれぞ\n\n  れＮ １ 、Ｎ ２ の二つのコイルが巻かれているとき、相互インダクタンスＭは、     Ｈであ\n\n  る。ただし、漏れ磁束は無視するものとする。\n\n\n              μＮ １ Ｎ ２     ＡＮ １ Ｎ ２    μＡＮ １ Ｎ ２\n             ①         ②        ③\n                Ａ         μ\n              μＮ １ ２ Ｎ ２ ２    μＡＮ １ ２ Ｎ ２ ２\n             ④         ⑤\n                 Ａ"
+    ],
+    "originalContent": {
+      "body": "問１ 透磁率がμ Ｈ／ｍ、磁路の平均の長さが ｍ、断面積がＡｍ ２ の環状鉄心に巻数がそれぞ\n\n  れＮ １ 、Ｎ ２ の二つのコイルが巻かれているとき、相互インダクタンスＭは、     Ｈであ\n\n  る。ただし、漏れ磁束は無視するものとする。\n\n\n              μＮ １ Ｎ ２     ＡＮ １ Ｎ ２    μＡＮ １ Ｎ ２\n             ①         ②        ③\n                Ａ         μ\n              μＮ １ ２ Ｎ ２ ２    μＡＮ １ ２ Ｎ ２ ２\n             ④         ⑤\n                 Ａ"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": true,
+    "choiceExplanations": {
+      "ア": "鉄心の断面積は磁束を増やす側に働き、式の分母に置かない。",
+      "イ": "磁束は透磁率μに比例するので、μを分母に置く式は一致しない。",
+      "ウ": "第1コイルの電流I₁による磁界はH＝N₁I₁/ℓ、磁束はΦ＝μAN₁I₁/ℓである。漏れがないので第2コイルの鎖交磁束はN₂Φとなる。相互インダクタンスM＝N₂Φ/I₁より、μAN₁N₂/ℓを得る。巻数は各コイルについて1乗ずつ現れる。",
+      "エ": "相互インダクタンスは各コイルの巻数に1乗ずつ比例し、N₁²N₂²には比例しない。",
+      "オ": "断面積の位置は合うが、二つの巻数をそれぞれ2乗している点が異なる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2025-second-gakka-q2",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "電気・電子回路",
+    "topicTags": [
+      "電気通信システム",
+      "不平衡ブリッジ回路の印加電圧"
+    ],
+    "difficulty": 3,
+    "question": "図に示す不平衡ブリッジ回路において、回路に流れる全電流が6Aであるとき、端子A-B間に加えた交流電圧は［　］Vである。",
+    "choices": {
+      "ア": "10",
+      "イ": "12",
+      "ウ": "14",
+      "エ": "18",
+      "オ": "22"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "端子間を12 Vと仮定すると、上側中点は9 V、下側中点は7.5 Vとなり、節点の電流収支を満たす。Aから上枝へ3 A、下枝へ3 Aが流れ、合計6 Aとなるため条件と一致する。中央の2 Ωには0.75 Aが流れる不平衡状態なので、その枝を無視した単純な直並列計算はできない。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf#page=2)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2025-second-q02.png"
+    ],
+    "imageAltTexts": [
+      "問２ 図に示す不平衡ブリッジ回路において、回路に流れる全電流が６Ａであるとき、端子Ａ－Ｂ間\n\n  に加えた交流電圧は     Ｖである。\n\n\n           ① １０  ② １２  ③ １４  ④ １８  ⑤ ２２\n\n\n                １Ω      ４Ω\n\n\n          ６Ａ\n           Ａ            ２Ω          Ｂ\n\n                   １.５Ω     ２Ω"
+    ],
+    "originalContent": {
+      "body": "問２ 図に示す不平衡ブリッジ回路において、回路に流れる全電流が６Ａであるとき、端子Ａ－Ｂ間\n\n  に加えた交流電圧は     Ｖである。\n\n\n           ① １０  ② １２  ③ １４  ④ １８  ⑤ ２２\n\n\n                １Ω      ４Ω\n\n\n          ６Ａ\n           Ａ            ２Ω          Ｂ\n\n                   １.５Ω     ２Ω"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": true,
+    "choiceExplanations": {
+      "ア": "合成抵抗は2 Ωとなるので、6 Aに対する印加電圧は10 Vにはならない。",
+      "イ": "端子間を12 Vと仮定すると、上側中点は9 V、下側中点は7.5 Vとなり、節点の電流収支を満たす。Aから上枝へ3 A、下枝へ3 Aが流れ、合計6 Aとなるため条件と一致する。中央の2 Ωには0.75 Aが流れる不平衡状態なので、その枝を無視した単純な直並列計算はできない。",
+      "ウ": "14 Vを加えると全電流は7 Aとなり、指定の6 Aを超える。",
+      "エ": "18 Vを加えると全電流は9 Aとなり、指定の条件に一致しない。",
+      "オ": "22 Vを加えると全電流は11 Aとなり、指定の条件に一致しない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2025-second-gakka-q3",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "電気・電子回路",
+    "topicTags": [
+      "電気通信システム",
+      "ダイオードとトランジスタの論理回路"
+    ],
+    "difficulty": 3,
+    "question": "図に示す論理回路を入出力とも正論理で使用するとき、この回路は［　］回路として動作する。",
+    "choices": {
+      "ア": "AND",
+      "イ": "NAND",
+      "ウ": "OR",
+      "エ": "NOR",
+      "オ": "XOR"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "どちらかの入力が0なら、対応するダイオードがベース側の電圧を低く抑え、トランジスタはオフ、出力は高くなる。両入力が1のときにベース電流が流れてトランジスタがオンとなり、出力が低くなる。この真理値表はANDの反転、すなわちNANDである。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf#page=2)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2025-second-q03.png"
+    ],
+    "imageAltTexts": [
+      "問３ 図に示す論理回路を入出力とも正論理で使用するとき、この回路は     回路として動作す\n\n  る。\n\n\n        ① ＡＮＤ  ② ＮＡＮＤ  ③ ＯＲ  ④ ＮＯＲ  ⑤ ＸＯＲ\n\n\n                    Ｄ 1               出力\n               入力１\n                                 Ｒ 2\n               入力２       Ｒ 1\n                    Ｄ 2                                    ＶB          ＶC"
+    ],
+    "originalContent": {
+      "body": "問３ 図に示す論理回路を入出力とも正論理で使用するとき、この回路は     回路として動作す\n\n  る。\n\n\n        ① ＡＮＤ  ② ＮＡＮＤ  ③ ＯＲ  ④ ＮＯＲ  ⑤ ＸＯＲ\n\n\n                    Ｄ 1               出力\n               入力１\n                                 Ｒ 2\n               入力２       Ｒ 1\n                    Ｄ 2                                    ＶB          ＶC"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "両入力が1のとき、トランジスタの出力側は0となるのでANDとは反転関係にある。",
+      "イ": "どちらかの入力が0なら、対応するダイオードがベース側の電圧を低く抑え、トランジスタはオフ、出力は高くなる。両入力が1のときにベース電流が流れてトランジスタがオンとなり、出力が低くなる。この真理値表はANDの反転、すなわちNANDである。",
+      "ウ": "ORなら片方が1のとき出力1となるが、図の回路は両方が1の場合だけ出力0となる。",
+      "エ": "NORなら両入力0でのみ出力1となる。図の出力1の条件とは一致しない。",
+      "オ": "XORなら両入力0と両入力1のどちらも出力0だが、この回路の両入力0では出力1となる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2025-second-gakka-q4",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "電気・電子回路",
+    "topicTags": [
+      "電気通信システム",
+      "論理回路をベン図で表す"
+    ],
+    "difficulty": 3,
+    "question": "図に示す論理回路において、入力a、入力b及び入力cの論理レベルをそれぞれA、B及びCとし、出力xの論理レベルをXとするとき、Xをベン図の斜線部分で表示すると［　］となる。ただし、ベン図において、A、B及びCは、それぞれ円の内部を表すものとする。",
+    "choices": {
+      "ア": "ベン図①",
+      "イ": "ベン図②",
+      "ウ": "ベン図③",
+      "エ": "ベン図④",
+      "オ": "ベン図⑤"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "最初のORからA＋Bが得られ、Cを反転した信号とORを取るのでA＋B＋¬Cとなる。最後にCとのANDを取るため、X＝C・(A＋B＋¬C)＝C・(A＋B)。したがってCの内部で、AまたはBにも含まれる部分を塗る⑤が一致する。三つすべての共通部分だけには限定しない。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf#page=3)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2025-second-q04.png"
+    ],
+    "imageAltTexts": [
+      "問４ 図に示す論理回路において、入力ａ、入力ｂ及び入力ｃの論理レベルをそれぞれＡ、Ｂ及びＣと\n\n  し、出力ｘの論理レベルをＸとするとき、Ｘをベン図の斜線部分で表示すると     となる。\n\n  ただし、ベン図において、Ａ、Ｂ及びＣは、それぞれ円の内部を表すものとする。\n\n\n        ①        ②        ③        ④        ⑤\n\n\n        Ａ        Ａ        Ａ        Ａ        Ａ\n\n\n       Ｂ  Ｃ     Ｂ  Ｃ     Ｂ  Ｃ     Ｂ  Ｃ     Ｂ  Ｃ\n\n\n\n\n            入力ａ\n            入力ｂ\n\n\n\n            入力ｃ                       出力ｘ"
+    ],
+    "originalContent": {
+      "body": "問４ 図に示す論理回路において、入力ａ、入力ｂ及び入力ｃの論理レベルをそれぞれＡ、Ｂ及びＣと\n\n  し、出力ｘの論理レベルをＸとするとき、Ｘをベン図の斜線部分で表示すると     となる。\n\n  ただし、ベン図において、Ａ、Ｂ及びＣは、それぞれ円の内部を表すものとする。\n\n\n        ①        ②        ③        ④        ⑤\n\n\n        Ａ        Ａ        Ａ        Ａ        Ａ\n\n\n       Ｂ  Ｃ     Ｂ  Ｃ     Ｂ  Ｃ     Ｂ  Ｃ     Ｂ  Ｃ\n\n\n\n\n            入力ａ\n            入力ｂ\n\n\n\n            入力ｃ                       出力ｘ"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "Cの外側の単独部分も塗られているが、最後のANDによって出力1はCの内部に限られる。",
+      "イ": "CとA・Bの共通部分のうち中央の三者共通部分が抜けており、C(A＋B)とは一致しない。",
+      "ウ": "この斜線はAとBの重なりでCの外側となり、最後にCとANDを取る条件に合わない。",
+      "エ": "三者共通部分だけでは、CとAのみ・CとBのみの共通部分が含まれない。",
+      "オ": "最初のORからA＋Bが得られ、Cを反転した信号とORを取るのでA＋B＋¬Cとなる。最後にCとのANDを取るため、X＝C・(A＋B＋¬C)＝C・(A＋B)。したがってCの内部で、AまたはBにも含まれる部分を塗る⑤が一致する。三つすべての共通部分だけには限定しない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2025-second-gakka-q5",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "電気・電子回路",
+    "topicTags": [
+      "電気通信システム",
+      "データ伝送ブロックの同期"
+    ],
+    "difficulty": 3,
+    "question": "データ伝送における同期方式には、特定のビットパターンとして01111110を送信データの前後に付加することによって、送信側と受信側の間で伝送ブロックの開始と終了の同期をとる［　］同期がある。",
+    "choices": {
+      "ア": "フラグ",
+      "イ": "クロック",
+      "ウ": "スタッフ",
+      "エ": "調歩",
+      "オ": "SYN"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "01111110はブロックの境界を示すフラグのビット列であり、その前後の目印で同期を取る方式をフラグ同期という。クロック同期はビットのタイミングを合わせるもの、調歩同期はスタート・ストップビットで文字単位の同期を取るものなので、設問のブロック境界とは異なる。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf#page=3)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2025-second-q05.png"
+    ],
+    "imageAltTexts": [
+      "問５ データ伝送における同期方式には、特定のビットパターンとして０１１１１１１０を送信データ\n\n  の前後に付加することによって、送信側と受信側の間で伝送ブロックの開始と終了の同期をとる\n\n       同期がある。\n\n\n       ① フラグ  ② クロック  ③ スタッフ  ④ 調 歩  ⑤ ＳＹＮ"
+    ],
+    "originalContent": {
+      "body": "問５ データ伝送における同期方式には、特定のビットパターンとして０１１１１１１０を送信データ\n\n  の前後に付加することによって、送信側と受信側の間で伝送ブロックの開始と終了の同期をとる\n\n       同期がある。\n\n\n       ① フラグ  ② クロック  ③ スタッフ  ④ 調 歩  ⑤ ＳＹＮ"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "01111110はブロックの境界を示すフラグのビット列であり、その前後の目印で同期を取る方式をフラグ同期という。クロック同期はビットのタイミングを合わせるもの、調歩同期はスタート・ストップビットで文字単位の同期を取るものなので、設問のブロック境界とは異なる。",
+      "イ": "クロック同期はビットのタイミングを合わせるもので、ブロックの前後を示す目印の名称ではない。",
+      "ウ": "設問で境界として使っている01111110のビット列はフラグである。",
+      "エ": "調歩同期はスタート・ストップビットを用いる方式で、設問のブロック境界とは異なる。",
+      "オ": "ここで使う境界のビット列はSYNではなく、01111110のフラグである。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2025-second-gakka-q6",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "電気・電子回路",
+    "topicTags": [
+      "電気通信システム",
+      "多重範囲電流計の分流抵抗"
+    ],
+    "difficulty": 3,
+    "question": "図に示す回路において、定格電流(最大目盛値)1mA、内部抵抗9.9Ω の電流計Aを用いて、定格電流10mA及び100mAの多重範囲電流計とする場合、分流回路の抵抗R 1 及びR 2 の組合せは、［　］である。",
+    "choices": {
+      "ア": "R₁＝0.11 Ω、R₂＝0.99 Ω",
+      "イ": "R₁＝0.99 Ω、R₂＝0.11 Ω",
+      "ウ": "R₁＝0.99 Ω、R₂＝0.09 Ω",
+      "エ": "R₁＝0.09 Ω、R₂＝0.81 Ω",
+      "オ": "R₁＝0.11 Ω、R₂＝8.99 Ω"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "10 mA端子では電流計に1 mA、R₁＋R₂に9 mAが流れるので、R₁＋R₂＝9.9/9＝1.1 Ω。100 mA端子ではR₁に99 mA、電流計とR₂の枝に1 mAが流れ、99R₁＝9.9＋R₂となる。連立するとR₁＝0.11 Ω、R₂＝0.99 Ωを得る。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf#page=3)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2025-second-q06.png"
+    ],
+    "imageAltTexts": [
+      "問６ 図に示す回路において、定格電流(最大目盛値)１mＡ、内部抵抗９.９Ω の電流計Ａを用いて、\n\n  定格電流１０mＡ及び１００mＡの多重範囲電流計とする場合、分流回路の抵抗Ｒ １ 及びＲ ２ の\n\n  組合せは、     である。\n\n\n    ① Ｒ １ ＝０.１１Ω 、Ｒ ２ ＝０.９９Ω   ② Ｒ １ ＝０.９９Ω 、Ｒ ２ ＝０.１１Ω\n\n    ③ Ｒ １ ＝０.９９Ω 、Ｒ ２ ＝０.０９Ω   ④ Ｒ １ ＝０.０９Ω 、Ｒ ２ ＝０.８１Ω\n\n    ⑤ Ｒ １ ＝０.１１Ω 、Ｒ ２ ＝８.９９Ω\n\n\n\n\n                    １００mＡ   １０mＡ\n\n                     Ｒ １     Ｒ ２\n\n\n\n\n                         Ａ\n\n                  定格電流１mＡ\n\n                   内部抵抗９.９Ω"
+    ],
+    "originalContent": {
+      "body": "問６ 図に示す回路において、定格電流(最大目盛値)１mＡ、内部抵抗９.９Ω の電流計Ａを用いて、\n\n  定格電流１０mＡ及び１００mＡの多重範囲電流計とする場合、分流回路の抵抗Ｒ １ 及びＲ ２ の\n\n  組合せは、     である。\n\n\n    ① Ｒ １ ＝０.１１Ω 、Ｒ ２ ＝０.９９Ω   ② Ｒ １ ＝０.９９Ω 、Ｒ ２ ＝０.１１Ω\n\n    ③ Ｒ １ ＝０.９９Ω 、Ｒ ２ ＝０.０９Ω   ④ Ｒ １ ＝０.０９Ω 、Ｒ ２ ＝０.８１Ω\n\n    ⑤ Ｒ １ ＝０.１１Ω 、Ｒ ２ ＝８.９９Ω\n\n\n\n\n                    １００mＡ   １０mＡ\n\n                     Ｒ １     Ｒ ２\n\n\n\n\n                         Ａ\n\n                  定格電流１mＡ\n\n                   内部抵抗９.９Ω"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": true,
+    "choiceExplanations": {
+      "ア": "10 mA端子では電流計に1 mA、R₁＋R₂に9 mAが流れるので、R₁＋R₂＝9.9/9＝1.1 Ω。100 mA端子ではR₁に99 mA、電流計とR₂の枝に1 mAが流れ、99R₁＝9.9＋R₂となる。連立するとR₁＝0.11 Ω、R₂＝0.99 Ωを得る。",
+      "イ": "R₁とR₂が逆である。100 mA端子では小さい方のR₁に99 mAが流れる。",
+      "ウ": "10 mA端子で必要なR₁＋R₂は1.1 Ωだが、この組合せは1.08 Ωとなる。",
+      "エ": "R₁＋R₂が0.9 Ωとなり、電流計と分流側の電圧が一致しない。",
+      "オ": "R₁＋R₂が9.1 Ωとなり、10 mAの範囲で必要な1.1 Ωと一致しない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2025-second-gakka-q7",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "category": "伝送方式",
+    "topicTags": [
+      "電気通信システム",
+      "帯域幅と通信容量の関係"
+    ],
+    "difficulty": 3,
+    "question": "伝送帯域幅とデータ伝送速度の関係を表す法則は、一般に、［　］の定理といわれ、信号電力、雑音電力及び使用する通信路の周波数帯域幅が決まると、その通信路で送れる最大伝送速度(通信容量)が計算できる。",
+    "choices": {
+      "ア": "テブナン",
+      "イ": "クーロン",
+      "ウ": "ホール",
+      "エ": "ベルヌーイ",
+      "オ": "シャノン"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "帯域幅Bと信号対雑音電力比S/Nから通信容量をC＝B log₂(1＋S/N)と表すのがシャノンの定理である。S/Nは式に代入するときはデシベル値ではなく電力比にする。テブナンは回路の等価化、クーロンは電荷間の力などを扱うもので、この関係を表さない。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf#page=3)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2025-second-q07.png"
+    ],
+    "imageAltTexts": [
+      "問７ 伝送帯域幅とデータ伝送速度の関係を表す法則は、一般に、     の定理といわれ、信号電力、\n\n  雑音電力及び使用する通信路の周波数帯域幅が決まると、その通信路で送れる最大伝送速度(通信\n\n  容量)が計算できる。\n\n\n      ① テブナン  ② クーロン  ③ ホール  ④ ベルヌーイ  ⑤ シャノン"
+    ],
+    "originalContent": {
+      "body": "問７ 伝送帯域幅とデータ伝送速度の関係を表す法則は、一般に、     の定理といわれ、信号電力、\n\n  雑音電力及び使用する通信路の周波数帯域幅が決まると、その通信路で送れる最大伝送速度(通信\n\n  容量)が計算できる。\n\n\n      ① テブナン  ② クーロン  ③ ホール  ④ ベルヌーイ  ⑤ シャノン"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "テブナンの定理は回路の等価化を扱い、帯域幅と雑音から通信容量を求める定理ではない。",
+      "イ": "電荷に関するクーロンの法則とは、扱う量も対象も異なる。",
+      "ウ": "信号電力・雑音電力・帯域幅による通信容量を表す定理の名称ではない。",
+      "エ": "ベルヌーイではなく、C＝B log₂(1＋S/N)のシャノンの定理を使う。",
+      "オ": "帯域幅Bと信号対雑音電力比S/Nから通信容量をC＝B log₂(1＋S/N)と表すのがシャノンの定理である。S/Nは式に代入するときはデシベル値ではなく電力比にする。テブナンは回路の等価化、クーロンは電荷間の力などを扱うもので、この関係を表さない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2025-second-gakka-q8",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "伝送方式",
+    "topicTags": [
+      "電気通信システム",
+      "変成器によるインピーダンス整合"
+    ],
+    "difficulty": 3,
+    "question": "図において、通信線路1の特性インピーダンスが540 Ω、通信線路2の特性インピーダンスが960 Ωのとき、巻線比(n₁：n₂)が［　］の変成器を使うと線路の接続点における反射損失はゼロとなる。ただし、変成器は理想的なものとする。",
+    "choices": {
+      "ア": "2：3",
+      "イ": "3：4",
+      "ウ": "4：3",
+      "エ": "4：5",
+      "オ": "5：4"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "理想変成器では、一次側から見た二次側インピーダンスは巻数比の2乗倍となる。整合には(n₁/n₂)²＝540/960＝9/16が必要なので、巻数比は3：4。抵抗値の比9：16をそのまま巻数比にしないことがポイントである。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf#page=4)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2025-second-q08.png"
+    ],
+    "imageAltTexts": [
+      "問８ 図において、通信線路１の特性インピーダンスが５４０Ω 、通信線路２の特性インピーダンス\n\n  が９６０Ω のとき、巻線比(ｎ：ｎ)が１    ２      の変成器を使うと線路の接続点における反\n\n  射損失はゼロとなる。ただし、変成器は理想的なものとする。\n\n\n        ① ２：３  ② ３：４  ③ ４：３  ④ ４：５  ⑤ ５：４\n\n\n                         変成器\n\n                通信線路１          通信線路２\n              ５４０Ω          ９６０ Ω\n\n                         巻線比\n                           ｎ１ｎ： ２"
+    ],
+    "originalContent": {
+      "body": "問８ 図において、通信線路１の特性インピーダンスが５４０Ω 、通信線路２の特性インピーダンス\n\n  が９６０Ω のとき、巻線比(ｎ：ｎ)が１    ２      の変成器を使うと線路の接続点における反\n\n  射損失はゼロとなる。ただし、変成器は理想的なものとする。\n\n\n        ① ２：３  ② ３：４  ③ ４：３  ④ ４：５  ⑤ ５：４\n\n\n                         変成器\n\n                通信線路１          通信線路２\n              ５４０Ω          ９６０ Ω\n\n                         巻線比\n                           ｎ１ｎ： ２"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": true,
+    "choiceExplanations": {
+      "ア": "2：3の2乗比は4：9となり、インピーダンス比540：960＝9：16に一致しない。",
+      "イ": "理想変成器では、一次側から見た二次側インピーダンスは巻数比の2乗倍となる。整合には(n₁/n₂)²＝540/960＝9/16が必要なので、巻数比は3：4。抵抗値の比9：16をそのまま巻数比にしないことがポイントである。",
+      "ウ": "一次・二次の巻数比が逆である。540 Ω側の巻数を小さくする。",
+      "エ": "4：5の2乗比16：25は、求める9：16と一致しない。",
+      "オ": "5：4は540 Ω側の巻数が多くなり、必要な3：4の向きとも一致しない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2025-second-gakka-q9",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "伝送方式",
+    "topicTags": [
+      "電気通信システム",
+      "標本化で得られるパルス信号"
+    ],
+    "difficulty": 3,
+    "question": "アナログ信号をデジタル信号に変換して伝送するデジタル伝送方式において、アナログ信号を標本化することにより得られる［　］信号は、アナログ信号波形の大きさをパルスの振幅で表している。",
+    "choices": {
+      "ア": "PCM",
+      "イ": "PWM",
+      "ウ": "PPM",
+      "エ": "PAM",
+      "オ": "PNM"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "PAMはPulse Amplitude Modulationで、パルスの振幅に元のアナログ信号の大きさを対応させる。標本化した値は振幅方向にはまだ連続値で、これを量子化・符号化するとPCMになる。PWMは幅、PPMは位置を変えるため、振幅で大きさを表すという条件に一致しない。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf#page=4)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2025-second-q09.png"
+    ],
+    "imageAltTexts": [
+      "問９ アナログ信号をデジタル信号に変換して伝送するデジタル伝送方式において、アナログ信号を\n\n  標本化することにより得られる     信号は、アナログ信号波形の大きさをパルスの振幅で表\n\n  している。\n\n\n        ① ＰＣＭ  ② ＰＷＭ  ③ ＰＰＭ  ④ ＰＡＭ  ⑤ ＰＮＭ"
+    ],
+    "originalContent": {
+      "body": "問９ アナログ信号をデジタル信号に変換して伝送するデジタル伝送方式において、アナログ信号を\n\n  標本化することにより得られる     信号は、アナログ信号波形の大きさをパルスの振幅で表\n\n  している。\n\n\n        ① ＰＣＭ  ② ＰＷＭ  ③ ＰＰＭ  ④ ＰＡＭ  ⑤ ＰＮＭ"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "PCMは標本値を量子化して符号化したものを指し、振幅の連続値を持つPAMとは区別する。",
+      "イ": "PWMでは情報をパルス幅に対応させる。設問は振幅に対応させている。",
+      "ウ": "PPMではパルスの位置を変えるので、設問の振幅による表現とは異なる。",
+      "エ": "PAMはPulse Amplitude Modulationで、パルスの振幅に元のアナログ信号の大きさを対応させる。標本化した値は振幅方向にはまだ連続値で、これを量子化・符号化するとPCMになる。PWMは幅、PPMは位置を変えるため、振幅で大きさを表すという条件に一致しない。",
+      "オ": "設問の標本化後の振幅による信号の名称はPAMである。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2025-second-gakka-q10",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "交換・IPネットワーク",
+    "topicTags": [
+      "電気通信システム",
+      "音声パケットの転送順位"
+    ],
+    "difficulty": 3,
+    "question": "ルータにおいて、音声品質を確保するためにキューにパケットの転送順位を付け、音声パケットを高い順位のキューに入れ、低い順位のキューのパケットよりも先に転送する処理は、一般に、［　］制御といわれる。",
+    "choices": {
+      "ア": "帯域",
+      "イ": "ウィンドウ",
+      "ウ": "優先",
+      "エ": "経路",
+      "オ": "フロー"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "音声を高い順位のキューへ入れて他のパケットより先に処理するのは優先制御である。音声は遅延の影響を受けやすいため、転送の順番を変えることが要点。帯域の上限を決める制御や、宛先へ向かう経路の選択とは、制御している対象が異なる。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf#page=4)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2025-second-q10.png"
+    ],
+    "imageAltTexts": [
+      "問10 ルータにおいて、音声品質を確保するためにキューにパケットの転送順位を付け、音声パケット\n\n  を高い順位のキューに入れ、低い順位のキューのパケットよりも先に転送する処理は、一般に、\n\n       制御といわれる。\n\n\n       ① 帯 域  ② ウィンドウ  ③ 優 先  ④ 経 路  ⑤ フロー"
+    ],
+    "originalContent": {
+      "body": "問10 ルータにおいて、音声品質を確保するためにキューにパケットの転送順位を付け、音声パケット\n\n  を高い順位のキューに入れ、低い順位のキューのパケットよりも先に転送する処理は、一般に、\n\n       制御といわれる。\n\n\n       ① 帯 域  ② ウィンドウ  ③ 優 先  ④ 経 路  ⑤ フロー"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "設問は利用できる帯域量そのものではなく、キューの転送順位を扱っている。",
+      "イ": "ウィンドウの大きさではなく、音声を先に転送する順位付けを述べている。",
+      "ウ": "音声を高い順位のキューへ入れて他のパケットより先に処理するのは優先制御である。音声は遅延の影響を受けやすいため、転送の順番を変えることが要点。帯域の上限を決める制御や、宛先へ向かう経路の選択とは、制御している対象が異なる。",
+      "エ": "経路の選択ではなく、既にある転送キューからどれを先に送るかの処理である。",
+      "オ": "送受信の量を調整するフロー制御と、音声を先に送る優先制御を区別する。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2025-second-gakka-q11",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "交換・IPネットワーク",
+    "topicTags": [
+      "電気通信システム",
+      "呼量と平均回線保留時間"
+    ],
+    "difficulty": 3,
+    "question": "ある回線群において、T分間の呼量と呼数を調査したところ、運んだ呼量は ac アーランで、運んだ呼数がC呼であった。この回線群の運んだ呼の平均回線保留時間は、［　］秒である。",
+    "choices": {
+      "ア": "a꜀C×60×60/T",
+      "イ": "a꜀T/(C×60)",
+      "ウ": "a꜀T/C",
+      "エ": "a꜀T×60×60/C",
+      "オ": "a꜀T×60/C"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "運んだ呼量a꜀は、延べ保留時間を調査時間で割った値である。調査時間T分を60T秒へ直すと、延べ保留時間はa꜀×60T秒。これを呼数Cで割るので、1呼当たりの平均回線保留時間はa꜀T×60/C秒となる。分と秒の換算を最後までそろえる。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf#page=4)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2025-second-q11.png"
+    ],
+    "imageAltTexts": [
+      "問11 ある回線群において、Ｔ分間の呼量と呼数を調査したところ、運んだ呼量は ａｃ アーランで、運\n\n  んだ呼数がＣ呼であった。この回線群の運んだ呼の平均回線保留時間は、     秒である。\n\n\n             ａ ｃ Ｃ×６０×６０     ａ ｃ Ｔ     ａ ｃ Ｔ\n            ①             ②        ③\n                   Ｔ        Ｃ×６０      Ｃ\n\n             ａ ｃ Ｔ×６０×６０     ａ ｃ Ｔ×６０\n            ④             ⑤\n                   Ｃ            Ｃ"
+    ],
+    "originalContent": {
+      "body": "問11 ある回線群において、Ｔ分間の呼量と呼数を調査したところ、運んだ呼量は ａｃ アーランで、運\n\n  んだ呼数がＣ呼であった。この回線群の運んだ呼の平均回線保留時間は、     秒である。\n\n\n             ａ ｃ Ｃ×６０×６０     ａ ｃ Ｔ     ａ ｃ Ｔ\n            ①             ②        ③\n                   Ｔ        Ｃ×６０      Ｃ\n\n             ａ ｃ Ｔ×６０×６０     ａ ｃ Ｔ×６０\n            ④             ⑤\n                   Ｃ            Ｃ"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": true,
+    "choiceExplanations": {
+      "ア": "平均時間は延べ保留時間を呼数Cで割るので、Cを分子に置くこの式は一致しない。",
+      "イ": "T分を秒に直す際は60を掛ける。60で割る式では単位換算が逆になる。",
+      "ウ": "この式の時間単位は分のままであり、秒を求めるには60を掛ける。",
+      "エ": "分を秒へ直す倍率は60であり、60を2回掛ける必要はない。",
+      "オ": "運んだ呼量a꜀は、延べ保留時間を調査時間で割った値である。調査時間T分を60T秒へ直すと、延べ保留時間はa꜀×60T秒。これを呼数Cで割るので、1呼当たりの平均回線保留時間はa꜀T×60/C秒となる。分と秒の換算を最後までそろえる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2025-second-gakka-q12",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "交換・IPネットワーク",
+    "topicTags": [
+      "電気通信システム",
+      "事業者ネットワーク間の接続点"
+    ],
+    "difficulty": 3,
+    "question": "異なる電気通信事業者のネットワーク相互を接続するための接続点は、一般に、［　］といわれる。",
+    "choices": {
+      "ア": "POI",
+      "イ": "AP",
+      "ウ": "UNI",
+      "エ": "SNI",
+      "オ": "GK"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "POIはPoint of Interfaceで、異なる電気通信事業者のネットワークを相互接続する接続点を指す。UNIは利用者側、SNIはサービスノード側のインターフェースに関する用語。どことどこの境界を指すのかを、利用者・事業者・サービスノードの立場で区別する。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf#page=4)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2025-second-q12.png"
+    ],
+    "imageAltTexts": [
+      "問12 異なる電気通信事業者のネットワーク相互を接続するための接続点は、一般に、     とい\n\n  われる。\n\n\n         ① ＰＯＩ  ② ＡＰ  ③ ＵＮＩ  ④ ＳＮＩ  ⑤ ＧＫ"
+    ],
+    "originalContent": {
+      "body": "問12 異なる電気通信事業者のネットワーク相互を接続するための接続点は、一般に、     とい\n\n  われる。\n\n\n         ① ＰＯＩ  ② ＡＰ  ③ ＵＮＩ  ④ ＳＮＩ  ⑤ ＧＫ"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "POIはPoint of Interfaceで、異なる電気通信事業者のネットワークを相互接続する接続点を指す。UNIは利用者側、SNIはサービスノード側のインターフェースに関する用語。どことどこの境界を指すのかを、利用者・事業者・サービスノードの立場で区別する。",
+      "イ": "設問は無線の接続拠点ではなく、異なる事業者の網をつなぐ境界を尋ねている。",
+      "ウ": "UNIは利用者側のインターフェースであり、事業者網どうしの接続点とは区別する。",
+      "エ": "SNIはサービスノード側のインターフェースであり、ここで問う接続点の名称ではない。",
+      "オ": "設問は呼制御などの機能名ではなく、ネットワークを相互接続する地点の名称を問う。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2025-second-gakka-q13",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "交換・IPネットワーク",
+    "topicTags": [
+      "電気通信システム",
+      "ワイヤレス固定電話の利用網"
+    ],
+    "difficulty": 3,
+    "question": "メタルケーブルでの固定電話サービスの提供・維持が著しく不経済となるエリアにおいて提供される電話サービスとしてメタルケーブルの代わりに［　］を利用する形態のものは、ワイヤレス固定電話といわれる。",
+    "choices": {
+      "ア": "デジタル簡易無線",
+      "イ": "携帯電話網",
+      "ウ": "MCA無線",
+      "エ": "衛星通信回線",
+      "オ": "FWA"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "設問のワイヤレス固定電話は、メタルケーブルで固定電話を維持する代わりに携帯電話網を利用する形態を指す。固定電話サービスとしての提供と、アクセス区間に使う通信網を分けて考える。名称にワイヤレスが含まれていても、列挙されたすべての無線方式が該当するわけではない。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf#page=4)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2025-second-q13.png"
+    ],
+    "imageAltTexts": [
+      "問13 メタルケーブルでの固定電話サービスの提供・維持が著しく不経済となるエリアにおいて提供さ\n\n  れる電話サービスとしてメタルケーブルの代わりに     を利用する形態のものは、ワイヤレス\n\n  固定電話といわれる。\n\n\n           ① デジタル簡易無線  ② 携帯電話網  ③ ＭＣＡ無線\n\n           ④ 衛星通信回線     ⑤ ＦＷＡ"
+    ],
+    "originalContent": {
+      "body": "問13 メタルケーブルでの固定電話サービスの提供・維持が著しく不経済となるエリアにおいて提供さ\n\n  れる電話サービスとしてメタルケーブルの代わりに     を利用する形態のものは、ワイヤレス\n\n  固定電話といわれる。\n\n\n           ① デジタル簡易無線  ② 携帯電話網  ③ ＭＣＡ無線\n\n           ④ 衛星通信回線     ⑤ ＦＷＡ"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "設問のワイヤレス固定電話で利用する網は、デジタル簡易無線ではなく携帯電話網である。",
+      "イ": "設問のワイヤレス固定電話は、メタルケーブルで固定電話を維持する代わりに携帯電話網を利用する形態を指す。固定電話サービスとしての提供と、アクセス区間に使う通信網を分けて考える。名称にワイヤレスが含まれていても、列挙されたすべての無線方式が該当するわけではない。",
+      "ウ": "MCA無線ではなく、既存の携帯電話網をアクセスに用いる形態を述べている。",
+      "エ": "衛星通信回線を使う方式ではなく、携帯電話網への置換えを述べた設問である。",
+      "オ": "無線固定アクセス一般の用語と、携帯電話網を利用する設問のサービスを区別する。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2025-second-gakka-q14",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "交換・IPネットワーク",
+    "topicTags": [
+      "電気通信システム",
+      "020番号帯の用途"
+    ],
+    "difficulty": 3,
+    "question": "電気通信番号制度にて定められた電気通信番号種別のうち、データ伝送携帯電話番号(020番号帯で0200及び0204番号帯を除く11桁の番号、並びに0200番号帯で14桁の番号)は、IoT機器の普及に伴い創設された［　］等専用番号として用いられている。",
+    "choices": {
+      "ア": "LNP",
+      "イ": "MNP",
+      "ウ": "MVNO",
+      "エ": "APN",
+      "オ": "M2M"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "M2MはMachine to Machineで、機器どうしのデータ通信を表す。設問が示すデータ伝送携帯電話番号は、IoT機器などの機器間通信に対応する専用番号の文脈である。LNP・MNPは番号ポータビリティ、MVNOは事業形態、APNは接続先の識別名である。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf#page=5)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2025-second-q14.png"
+    ],
+    "imageAltTexts": [
+      "問14 電気通信番号制度にて定められた電気通信番号種別のうち、データ伝送携帯電話番号(０２０番号\n\n  帯で０２００及び０２０４番号帯を除く１１桁の番号、並びに０２００番号帯で１４桁の番号)は、\n\n  ＩｏＴ機器の普及に伴い創設された     等専用番号として用いられている。\n\n\n        ① ＬＮＰ  ② ＭＮＰ  ③ ＭＶＮＯ  ④ ＡＰＮ  ⑤ Ｍ２Ｍ"
+    ],
+    "originalContent": {
+      "body": "問14 電気通信番号制度にて定められた電気通信番号種別のうち、データ伝送携帯電話番号(０２０番号\n\n  帯で０２００及び０２０４番号帯を除く１１桁の番号、並びに０２００番号帯で１４桁の番号)は、\n\n  ＩｏＴ機器の普及に伴い創設された     等専用番号として用いられている。\n\n\n        ① ＬＮＰ  ② ＭＮＰ  ③ ＭＶＮＯ  ④ ＡＰＮ  ⑤ Ｍ２Ｍ"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "LNPは固定電話の番号ポータビリティに関する用語で、機器間通信の名称ではない。",
+      "イ": "MNPは携帯電話の番号ポータビリティに関する用語である。",
+      "ウ": "MVNOは通信サービスの事業形態に関する名称で、機器間通信の用途を表すものではない。",
+      "エ": "APNはデータ通信の接続先を指定する名前で、020番号の専用用途の名称ではない。",
+      "オ": "M2MはMachine to Machineで、機器どうしのデータ通信を表す。設問が示すデータ伝送携帯電話番号は、IoT機器などの機器間通信に対応する専用番号の文脈である。LNP・MNPは番号ポータビリティ、MVNOは事業形態、APNは接続先の識別名である。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2025-second-gakka-q15",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "交換・IPネットワーク",
+    "topicTags": [
+      "電気通信システム",
+      "耐干渉性を確保する伝送方式"
+    ],
+    "difficulty": 3,
+    "question": "無線LANの伝送方式には、小出力電力で耐干渉性や秘匿性を確保するため、衛星通信でも利用されている［　］方式を用いたものがある。",
+    "choices": {
+      "ア": "ベースバンド",
+      "イ": "周波数変調",
+      "ウ": "振幅変調",
+      "エ": "スペクトル拡散",
+      "オ": "多値変調"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "スペクトル拡散は、情報信号を広い帯域へ拡散して伝送し、受信側で対応する処理を行う方式である。特定の狭い帯域の妨害に影響されにくいことや、信号を取り出すために拡散の条件を知る必要があることが、設問の耐干渉性・秘匿性と対応する。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf#page=5)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2025-second-q15.png"
+    ],
+    "imageAltTexts": [
+      "問15 無線ＬＡＮの伝送方式には、小出力電力で耐干渉性や秘匿性を確保するため、衛星通信でも利用\n\n  されている     方式を用いたものがある。\n\n\n            ① ベースバンド   ② 周波数変調  ③ 振幅変調\n\n            ④ スペクトル拡散  ⑤ 多値変調"
+    ],
+    "originalContent": {
+      "body": "問15 無線ＬＡＮの伝送方式には、小出力電力で耐干渉性や秘匿性を確保するため、衛星通信でも利用\n\n  されている     方式を用いたものがある。\n\n\n            ① ベースバンド   ② 周波数変調  ③ 振幅変調\n\n            ④ スペクトル拡散  ⑤ 多値変調"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "搬送波を使わない伝送という区別であり、設問の広い帯域へ信号を拡散する方式とは異なる。",
+      "イ": "周波数を変える変調だけを指す用語で、設問で求める拡散方式の名称ではない。",
+      "ウ": "振幅を変える方式であり、設問にあるスペクトル拡散を指すものではない。",
+      "エ": "スペクトル拡散は、情報信号を広い帯域へ拡散して伝送し、受信側で対応する処理を行う方式である。特定の狭い帯域の妨害に影響されにくいことや、信号を取り出すために拡散の条件を知る必要があることが、設問の耐干渉性・秘匿性と対応する。",
+      "オ": "信号の状態数を増やすことと、スペクトルを拡散することは異なる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2025-second-gakka-q16",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "category": "交換・IPネットワーク",
+    "topicTags": [
+      "電気通信システム",
+      "サーバを借用する運用形態"
+    ],
+    "difficulty": 3,
+    "question": "セキュリティの確保などを目的に、情報通信事業者が設置し、提供しているサーバの一部又は全部を借用して自社の情報システムを運用する形態は、一般に、［　］といわれる。",
+    "choices": {
+      "ア": "ホスティング",
+      "イ": "ハウジング",
+      "ウ": "ロードバランシング",
+      "エ": "アライアンス",
+      "オ": "システムインテグレーション"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "事業者が所有・設置するサーバの一部または全部を借りるのがホスティングである。利用者が用意した機器を事業者の施設へ持ち込んで設置するのはハウジング。サーバそのものを誰が用意するかで区別すると、設問の「提供しているサーバを借用」に対応する。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf#page=5)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2025-second-q16.png"
+    ],
+    "imageAltTexts": [
+      "問16 セキュリティの確保などを目的に、情報通信事業者が設置し、提供しているサーバの一部又は全\n\n  部を借用して自社の情報システムを運用する形態は、一般に、     といわれる。\n\n\n          ① ホスティング  ② ハウジング  ③ ロードバランシング\n\n          ④ アライアンス  ⑤ システムインテグレーション"
+    ],
+    "originalContent": {
+      "body": "問16 セキュリティの確保などを目的に、情報通信事業者が設置し、提供しているサーバの一部又は全\n\n  部を借用して自社の情報システムを運用する形態は、一般に、     といわれる。\n\n\n          ① ホスティング  ② ハウジング  ③ ロードバランシング\n\n          ④ アライアンス  ⑤ システムインテグレーション"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "事業者が所有・設置するサーバの一部または全部を借りるのがホスティングである。利用者が用意した機器を事業者の施設へ持ち込んで設置するのはハウジング。サーバそのものを誰が用意するかで区別すると、設問の「提供しているサーバを借用」に対応する。",
+      "イ": "ハウジングは利用者の機器を施設に置く形態で、事業者のサーバを借りる条件と異なる。",
+      "ウ": "ロードバランシングは負荷を分散する処理であり、サーバを借用する運用形態の名称ではない。",
+      "エ": "事業者間などの提携を表す用語で、ここで問うサーバの提供形態ではない。",
+      "オ": "システムの構築・統合一般と、サーバを借りるホスティングという形態を区別する。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2025-second-gakka-q17",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 17,
+    "type": "multiple-choice",
+    "category": "無線・光通信・電源",
+    "topicTags": [
+      "電気通信システム",
+      "開口面アンテナの利得と波長"
+    ],
+    "difficulty": 3,
+    "question": "開口面アンテナにおいて、アンテナの開口面積をS、電波の波長をλとすると、Sが一定の条件では、アンテナの利得は［　］。",
+    "choices": {
+      "ア": "λに比例",
+      "イ": "λ²に比例",
+      "ウ": "λに反比例",
+      "エ": "λ²に反比例",
+      "オ": "λの影響を受けない"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "開口面アンテナの利得は、開口効率を一定とすればG＝4πηS/λ²で表せる。開口面積Sが一定なら波長の2乗に反比例し、波長が短いほど利得は大きくなる。面積と波長の両方を同時に変える場合とは条件を分けて考える。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf#page=5)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2025-second-q17.png"
+    ],
+    "imageAltTexts": [
+      "問17 開口面アンテナにおいて、アンテナの開口面積をＳ、電波の波長をλとすると、Ｓが一定の条件\n\n  では、アンテナの利得は      。\n\n\n       ① λに比例する       ② λの２乗に比例する  ③ λに反比例する\n\n       ④ λの２乗に反比例する  ⑤ λの影響を受けない"
+    ],
+    "originalContent": {
+      "body": "問17 開口面アンテナにおいて、アンテナの開口面積をＳ、電波の波長をλとすると、Ｓが一定の条件\n\n  では、アンテナの利得は      。\n\n\n       ① λに比例する       ② λの２乗に比例する  ③ λに反比例する\n\n       ④ λの２乗に反比例する  ⑤ λの影響を受けない"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "開口面積一定ならGは1/λ²に比例する。λが長いほど増えるという関係ではない。",
+      "イ": "波長の2乗は分子ではなく分母に入る。",
+      "ウ": "反比例するのはλそのものではなく、λの2乗である。",
+      "エ": "開口面アンテナの利得は、開口効率を一定とすればG＝4πηS/λ²で表せる。開口面積Sが一定なら波長の2乗に反比例し、波長が短いほど利得は大きくなる。面積と波長の両方を同時に変える場合とは条件を分けて考える。",
+      "オ": "G＝4πηS/λ²なので、開口面積が一定でも波長の影響は受ける。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2025-second-gakka-q18",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 18,
+    "type": "multiple-choice",
+    "category": "無線・光通信・電源",
+    "topicTags": [
+      "電気通信システム",
+      "GE-PONで伝送時間を測る処理"
+    ],
+    "difficulty": 3,
+    "question": "GE-PONシステムにおけるOLTでは、複数のONUからの上り信号が衝突するのを防ぐため、OLTと各ONUとの間の伝送時間をあらかじめ測定する［　］といわれる処理を行っている。",
+    "choices": {
+      "ア": "スクリーニング",
+      "イ": "フィルタリング",
+      "ウ": "レンジング",
+      "エ": "チャーピング",
+      "オ": "リンクアグリゲーション"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "レンジングはOLTと各ONUの間の伝送時間を測り、上り信号の送信タイミングを調整するための処理である。ONUごとに距離が違うため、単に同じ時刻を指定するだけではOLTへの到着時刻がずれる。遅延を補正して共有区間での衝突を防ぐ。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf#page=5)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2025-second-q18.png"
+    ],
+    "imageAltTexts": [
+      "問18 ＧＥ－ＰＯＮシステムにおけるＯＬＴでは、複数のＯＮＵからの上り信号が衝突するのを防ぐた\n\n  め、ＯＬＴと各ＯＮＵとの間の伝送時間をあらかじめ測定する     といわれる処理を行って\n\n  いる。\n\n\n          ① スクリーニング  ② フィルタリング  ③ レンジング\n\n          ④ チャーピング   ⑤ リンクアグリゲーション"
+    ],
+    "originalContent": {
+      "body": "問18 ＧＥ－ＰＯＮシステムにおけるＯＬＴでは、複数のＯＮＵからの上り信号が衝突するのを防ぐた\n\n  め、ＯＬＴと各ＯＮＵとの間の伝送時間をあらかじめ測定する     といわれる処理を行って\n\n  いる。\n\n\n          ① スクリーニング  ② フィルタリング  ③ レンジング\n\n          ④ チャーピング   ⑤ リンクアグリゲーション"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "設問は情報の選別ではなく、ONUごとの伝送時間を測るレンジングを述べている。",
+      "イ": "フィルタリングは条件で情報を選ぶ処理であり、伝送時間の測定ではない。",
+      "ウ": "レンジングはOLTと各ONUの間の伝送時間を測り、上り信号の送信タイミングを調整するための処理である。ONUごとに距離が違うため、単に同じ時刻を指定するだけではOLTへの到着時刻がずれる。遅延を補正して共有区間での衝突を防ぐ。",
+      "エ": "設問は光の周波数変化ではなく、上りの到着時刻を合わせるための測定を尋ねている。",
+      "オ": "複数リンクを束ねる処理ではなく、ONUまでの距離の差に対応する時間測定である。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2025-second-gakka-q19",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 19,
+    "type": "multiple-choice",
+    "category": "無線・光通信・電源",
+    "topicTags": [
+      "電気通信システム",
+      "三相Y結線の線間電圧"
+    ],
+    "difficulty": 3,
+    "question": "三相変圧器の結線方法には、Y結線と△結線がある。このうち、Y結線の巻線の1相当たりの電圧が各相とも同じ電圧のとき、線間電圧は相電圧の［　］倍である。",
+    "choices": {
+      "ア": "1/3",
+      "イ": "1/2",
+      "ウ": "1/√3",
+      "エ": "1/√2",
+      "オ": "√3"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "Y結線では各相の電圧が120度ずつずれる。線間電圧は二つの相電圧のベクトル差であり、相電圧をEとすると大きさは√(E²＋E²−2E²cos120°)＝√3 Eとなる。単なる算術差や2倍ではなく、位相差を含む合成で求める。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf#page=5)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2025-second-q19.png"
+    ],
+    "imageAltTexts": [
+      "問19 三相変圧器の結線方法には、 結線と△結線がある。このうち、 結線の巻線の１相当たりの電\n\n  圧が各相とも同じ電圧のとき、線間電圧は相電圧の     倍である。\n\n\n             １      １      １       １\n          ①      ②      ③       ④       ⑤ √３\n             ３      ２     √３     √２"
+    ],
+    "originalContent": {
+      "body": "問19 三相変圧器の結線方法には、 結線と△結線がある。このうち、 結線の巻線の１相当たりの電\n\n  圧が各相とも同じ電圧のとき、線間電圧は相電圧の     倍である。\n\n\n             １      １      １       １\n          ①      ②      ③       ④       ⑤ √３\n             ３      ２     √３     √２"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": true,
+    "choiceExplanations": {
+      "ア": "Y結線では線間電圧は相電圧より大きくなり、1/3にはならない。",
+      "イ": "二つの相電圧のベクトル差で求めるので、単純に半分にはならない。",
+      "ウ": "1/√3は線間電圧から相電圧を求めるときの倍率で、設問では逆向きである。",
+      "エ": "実効値と最大値の換算と、三相の線間・相電圧の関係を混同しない。",
+      "オ": "Y結線では各相の電圧が120度ずつずれる。線間電圧は二つの相電圧のベクトル差であり、相電圧をEとすると大きさは√(E²＋E²−2E²cos120°)＝√3 Eとなる。単なる算術差や2倍ではなく、位相差を含む合成で求める。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2025-second-gakka-q20",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "qNumber": 20,
+    "type": "multiple-choice",
+    "category": "無線・光通信・電源",
+    "topicTags": [
+      "電気通信システム",
+      "EDFAによる光増幅"
+    ],
+    "difficulty": 3,
+    "question": "光通信システムに用いられるエルビウム添加光ファイバ増幅器(EDFA)は、コアにエルビウムを添加した光ファイバ内に所要の波長の励起光を入射することにより発生する［　］を利用して光信号を増幅するものである。",
+    "choices": {
+      "ア": "自然放出",
+      "イ": "誘導ラマン散乱",
+      "ウ": "レイリー散乱",
+      "エ": "誘導放出",
+      "オ": "誘導ブリルアン散乱"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "励起光によってエルビウムのエネルギー状態を変え、通過する信号光に対応した光を誘導放出させて増幅する。EDFAで用いるのはこの誘導放出である。自然放出は信号光によってそろえて放出させる過程ではなく、ラマン散乱などを使う他の増幅方式とも区別する。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf#page=5)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2025-second-q20.png"
+    ],
+    "imageAltTexts": [
+      "問20 光通信システムに用いられるエルビウム添加光ファイバ増幅器(ＥＤＦＡ)は、コアにエルビウム\n\n  を添加した光ファイバ内に所要の波長の励起光を入射することにより発生する     を利用し\n\n  て光信号を増幅するものである。\n\n\n            ① 自然放出  ② 誘導ラマン散乱  ③ レイリー散乱\n\n            ④ 誘導放出  ⑤ 誘導ブリルアン散乱"
+    ],
+    "originalContent": {
+      "body": "問20 光通信システムに用いられるエルビウム添加光ファイバ増幅器(ＥＤＦＡ)は、コアにエルビウム\n\n  を添加した光ファイバ内に所要の波長の励起光を入射することにより発生する     を利用し\n\n  て光信号を増幅するものである。\n\n\n            ① 自然放出  ② 誘導ラマン散乱  ③ レイリー散乱\n\n            ④ 誘導放出  ⑤ 誘導ブリルアン散乱"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files254369794678102bc.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2543/files25436979477583245.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "自然放出ではなく、入力信号光による誘導放出を利用して信号を増幅する。",
+      "イ": "設問で使うエルビウム添加ファイバの増幅は、誘導ラマン散乱を利用する方式ではない。",
+      "ウ": "レイリー散乱ではなく、励起したエルビウムの誘導放出に対応する。",
+      "エ": "励起光によってエルビウムのエネルギー状態を変え、通過する信号光に対応した光を誘導放出させて増幅する。EDFAで用いるのはこの誘導放出である。自然放出は信号光によってそろえて放出させる過程ではなく、ラマン散乱などを使う他の増幅方式とも区別する。",
+      "オ": "設問は誘導ブリルアン散乱ではなく、エルビウムによる誘導放出を利用している。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  }
+]

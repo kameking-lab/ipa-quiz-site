@@ -24,8 +24,8 @@ describe("記述問題の操作", () => {
     const onNext = vi.fn();
     const { container } = render(<QuizPlayer question={question} index={0} total={2} mode="random" onNext={onNext} />);
     if (question.exam === "khk-reito-1") {
-      expect(screen.getByRole("link", { name: "高圧ガス保安協会の公式問題PDF" }).getAttribute("href")).toBe(question.sourcePdfUrl);
-      expect(screen.getByRole("link", { name: "高圧ガス保安協会の公式解答例PDF" }).getAttribute("href")).toBe(question.sourceAnswerUrl);
+      expect(screen.getByRole("link", { name: /公式問題PDF/ }).getAttribute("href")).toBe(question.sourcePdfUrl);
+      expect(screen.queryByRole("link", { name: /公式解答例PDF/ })).toBeNull();
       expect(screen.queryByText(/法務省/)).toBeNull();
     }
     const details = container.querySelector("details")!;

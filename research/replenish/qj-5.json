@@ -1,0 +1,46 @@
+{
+  "lane": "qj-5",
+  "continues": "qf-5",
+  "plan": "plan5.json",
+  "assignment": "zero-based index % 14 == 4",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "checkedAt": "2026-11-18",
+  "rows": [
+    {
+      "jobId": "PLAN5-243",
+      "index": 242,
+      "exam": "judo-seifukushi",
+      "edition": 32,
+      "year": 2024,
+      "examDate": "2024-03-03",
+      "yearSeason": "2023-annual",
+      "session": "am",
+      "status": "completed-local",
+      "officialQuestionCount": 128,
+      "scoredQuestionCount": 128,
+      "newQuestionCount": 128,
+      "addedChoiceExplanationCount": 512,
+      "addedImageCount": 4,
+      "requiredSelectionsByQuestion": { "115": 2 },
+      "sourceManifest": "data/questions/judo-seifukushi/2023-annual-am-sources.json"
+    },
+    {
+      "jobId": "PLAN5-257",
+      "index": 256,
+      "exam": "ahaki-anma",
+      "edition": 32,
+      "year": 2024,
+      "examDate": "2024-02-24",
+      "yearSeason": "2024-annual",
+      "session": "am",
+      "status": "completed-local",
+      "officialQuestionCount": 80,
+      "scoredQuestionCount": 80,
+      "newQuestionCount": 80,
+      "addedChoiceExplanationCount": 320,
+      "addedImageCount": 0,
+      "officialAlternativeAnswers": { "4": ["1", "2", "3", "4"], "52": ["2", "3"] },
+      "sourceManifest": "data/questions/ahaki/ahaki-anma-2024-am-sources.json"
+    }
+  ]
+}

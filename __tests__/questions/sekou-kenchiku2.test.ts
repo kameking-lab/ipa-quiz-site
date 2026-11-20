@@ -1,7 +1,7 @@
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { SEKOU_KENCHIKU2_QUESTIONS as questions } from "@/data/questions/sekou-kenchiku2";
+import { SEKOU_KENCHIKU2_QUESTIONS as publicQuestions } from "@/data/questions/sekou-kenchiku2";
 import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { ALL_EXAM_CODES, ALL_QUIZ_EXAM_CODES, EXAM_CONFIGS } from "@/lib/exam-config";
 import { getQuestionsForExam, getRegisteredExamCodes } from "@/lib/questions/get-questions";
@@ -9,14 +9,17 @@ import { isExamPublished, getQualificationByExamCode } from "@/lib/qualification
 import { shuffleChoices } from "@/lib/questions/filter";
 import { hasUnrenderableContent } from "@/lib/questions/content-quality";
 
-// Transcribed separately from the rendered official answer tables (R8 p26 / R7 p25).
+// The independently transcribed answer keys cover 2026 前期 (p26) and 2025 後期 (p25).
+const questions = publicQuestions.filter((q) =>
+  (q.year === 2026 && q.season === "early") || (q.year === 2025 && q.season === "late"),
+);
 const officialKeys: Record<number, number[]> = {
   2026: [1,3,2,4, 4,3,4,4,3,4,1,2,3,2, 3,4,1, 2,1,2,3,1,3,4,1,3,2, 2,4,3,3,2,4,2,3,1,4, 5,2,3,5,5, 1,4,3,3,3,2,4,2],
   2025: [3,2,1,4, 2,1,1,4,2,2,1,2,2,3, 4,3,1, 4,1,2,4,3,4,2,1,3,4, 2,1,3,4,1,4,4,4,3,3, 4,1,3,1,1, 3,3,3,1,3,4,2,1],
 };
 const keys = ["ア", "イ", "ウ", "エ", "オ"];
 
-describe("2級建築施工管理第一次検定 official latest two sittings", () => {
+describe("2級建築施工管理第一次検定 2026 前期 and 2025 後期", () => {
   it("contains each of the 50 printed questions in both sittings, including optional questions", () => {
     expect(questions).toHaveLength(100);
     expect(new Set(questions.map(q => q.id)).size).toBe(100);
@@ -75,12 +78,20 @@ describe("2級建築施工管理第一次検定 official latest two sittings", (
     expect(shuffled.choiceExplanations![shuffled.answer as keyof typeof shuffled.choiceExplanations]).toBe(q.choiceExplanations!.オ);
   });
 
-  it("batch1公開後: keeps both public registries, lazy loading and qualification listings closed before release", async () => {
+  it("publishes the two source-checked papers in both registries and the lazy loader", async () => {
     expect(getQualificationByExamCode("sekou-kenchiku2")?.status).toBe("live");
     expect(isExamPublished("sekou-kenchiku2")).toBe(true);
-    expect(QUESTIONS_BY_EXAM["sekou-kenchiku2"]).toBeDefined();
-    expect(ALL_QUESTIONS.some(q => q.exam === "sekou-kenchiku2")).toBe(true);
-    expect((await getQuestionsForExam("sekou-kenchiku2")).length).toBeGreaterThan(0);
+    const registries = [
+      QUESTIONS_BY_EXAM["sekou-kenchiku2"] ?? [],
+      ALL_QUESTIONS.filter((q) => q.exam === "sekou-kenchiku2"),
+      await getQuestionsForExam("sekou-kenchiku2"),
+    ];
+    for (const registry of registries) {
+      const byId = new Map(registry.map((q) => [q.id, q]));
+      for (const question of questions) {
+        expect(byId.get(question.id), question.id).toEqual(question);
+      }
+    }
     expect(getRegisteredExamCodes()).toContain("sekou-kenchiku2");
     expect(ALL_QUIZ_EXAM_CODES).toContain("sekou-kenchiku2");
     expect(ALL_EXAM_CODES).not.toContain("sekou-kenchiku2");

@@ -78,46 +78,10 @@ it("restores a saved closed preference without taking focus from learning", () =
   expect(learning).toHaveFocus();
   expect(localStorage.getItem(petProfileStorageKey("guest"))).toBe("unchanged-profile");
 });
-it("consumes a fresh stage CTA on opening and never promotes a chosen puppy again", () => {
-  const view = render(<LearningPetCorner qualificationId="ap" questionId="ap-q1" />);
-  document.profiles[0].unlockedStages.push("partner");
-  document.profiles[0].unlockedPaths.push("exploration");
-  document.profiles[0].memories.push({ kind: "stage", stage: "partner", occurredAt: Date.now() }, { kind: "path", path: "exploration", occurredAt: Date.now() });
-  act(() => notify(fresh()));
-  expect(screen.getByRole("button", { name: "相棒の姿を見る" })).toBeEnabled();
-  expect(view.container.querySelector('[aria-live="polite"]')).toHaveTextContent("相棒の姿が選べるよ");
-  expect(screen.queryByText("+3 ♥+1")).toBeNull();
-  fireEvent.click(screen.getByRole("button", { name: "相棒の姿を見る" }));
-  expect(screen.getByTestId("care-sheet")).toHaveAttribute("data-appearance-open", "true");
-  fireEvent.click(screen.getByRole("button", { name: "シートを閉じる" }));
-  expect(screen.queryByRole("button", { name: "相棒の姿を見る" })).toBeNull();
-  expect(screen.queryByText("相棒まで あと0問")).toBeNull();
-  fireEvent.click(screen.getByRole("button", { name: /育成を見る.*姿2種類/ }));
-  expect(screen.getByTestId("care-sheet")).toHaveAttribute("data-appearance-open", "false");
-});
-it("keeps an unread appearance across questions and reloads without replaying celebrations", () => {
-  const view = render(<LearningPetCorner qualificationId="ap" questionId="ap-q1" />);
-  document.profiles[0].unlockedStages.push("partner"); document.profiles[0].memories.push({ kind: "stage", stage: "partner", occurredAt: Date.now() });
-  act(() => notify(fresh()));
-  view.rerender(<LearningPetCorner qualificationId="ap" questionId="ap-q2" />);
-  expect(screen.getByRole("button", { name: "相棒の姿を見る" })).toBeEnabled();
-  expect(view.container.querySelector('[aria-live="polite"]')).toBeEmptyDOMElement();
-  // Two saved events can share the same millisecond. An older memory is not a new unlock.
-  act(() => notify(fresh({ questionId: "ap-q2", eventId: "two" })));
-  expect(screen.getByRole("button", { name: "相棒の姿を見る" })).toBeEnabled();
-  expect(view.container.querySelector('[aria-live="polite"]')).toBeEmptyDOMElement();
-  document.profiles[0].unlockedStages.push("expert"); document.profiles[0].memories.push({ kind: "stage", stage: "expert", occurredAt: Date.now() });
-  act(() => notify(fresh({ questionId: "ap-q2", eventId: "three" })));
-  expect(screen.getByRole("button", { name: "専門家の姿を見る" })).toBeEnabled();
-  fireEvent.click(screen.getByRole("button", { name: "チワワのひと休みを閉じる" }));
-  fireEvent.click(screen.getByRole("button", { name: "チワワのひと休みを開く" }));
-  expect(screen.getByRole("button", { name: "専門家の姿を見る" })).toBeEnabled();
-  fireEvent.click(screen.getByRole("button", { name: "専門家の姿を見る" }));
-  fireEvent.click(screen.getByRole("button", { name: "シートを閉じる" }));
-  view.unmount();
-  const reloaded = render(<LearningPetCorner qualificationId="ap" questionId="ap-q2" />);
-  expect(screen.queryByRole("button", { name: "専門家の姿を見る" })).toBeNull();
-  expect(reloaded.container.querySelector('[aria-live="polite"]')).toBeEmptyDOMElement();
+it("announces growth without showing a care action in the answer", () => {
+  const view = render(<LearningPetCorner qualificationId="fe" questionId="fe-question" compact />);
+  expect(view.container.querySelector("[data-pet-compact=true]")).toBeInTheDocument();
+  expect(screen.queryByRole("button", { name: /の姿を見る|チワワのお世話を開く/ })).toBeNull();
 });
 it("stops gestures and removes transient feedback while the page is hidden, without replay on return", () => {
   const view = render(<LearningPetCorner qualificationId="ap" questionId="ap-q1" />);
@@ -133,13 +97,4 @@ it("stops gestures and removes transient feedback while the page is hidden, with
     expect(view.container.querySelector("section")).toHaveAttribute("data-pet-pose", "study");
     expect(screen.queryByText("+3 ♥+1")).toBeNull();
   } finally { Reflect.deleteProperty(window.document, "hidden"); }
-});
-it("keeps the appearance-only sheet and its return-focus target mounted after acknowledgement", () => {
-  document.profiles[0].unlockedStages.push("partner");
-  document.profiles[0].memories.push({ kind: "stage", stage: "partner", occurredAt: Date.now() });
-  render(<LearningPetCorner qualificationId="ap" questionId="ap-q2" compact appearanceOnly />);
-  fireEvent.click(screen.getByRole("button", { name: "相棒の姿を見る" }));
-  expect(screen.getByTestId("care-sheet")).toBeInTheDocument();
-  fireEvent.click(screen.getByRole("button", { name: "シートを閉じる" }));
-  expect(screen.getByRole("button", { name: "チワワのお世話を開く" })).toBeEnabled();
 });

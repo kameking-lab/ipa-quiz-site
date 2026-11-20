@@ -3,7 +3,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { WifiOff, BookmarkCheck, History, Sparkles } from "lucide-react";
+import { WifiOff, BookmarkCheck, History } from "lucide-react";
 import { createHistoryStore } from "@/lib/storage/history";
 import { readLastQuestion } from "@/lib/storage/last-question";
 
@@ -13,7 +13,13 @@ export interface OfflineQuestionLink {
   label: string;
 }
 
-export function OfflineHome({catalog=[]}:{catalog?:OfflineQuestionLink[]}) {
+export interface OfflineCatalogGroup {
+  label: string;
+  /** [id, href, qNumber] */
+  items: [string, string, string][];
+}
+
+export function OfflineHome({catalog=[]}:{catalog?:OfflineCatalogGroup[]}) {
   const [online, setOnline] = React.useState<boolean>(true);
   const [bookmarked, setBookmarked] = React.useState<OfflineQuestionLink[]>([]);
   const [recent, setRecent] = React.useState<OfflineQuestionLink[]>([]);
@@ -27,7 +33,10 @@ export function OfflineHome({catalog=[]}:{catalog?:OfflineQuestionLink[]}) {
     window.addEventListener("offline", off);
 
     const store = createHistoryStore();
-    const byId = new Map(catalog.map((q) => [q.id, q]));
+    const byId = new Map<string, OfflineQuestionLink>();
+    for (const group of catalog) {
+      for (const [id, href, qNumber] of group.items) byId.set(id, { id, href, label: `${group.label} 問${qNumber}` });
+    }
 
     const starredIds = store.getStarredIds();
     setBookmarked(
@@ -93,7 +102,6 @@ export function OfflineHome({catalog=[]}:{catalog?:OfflineQuestionLink[]}) {
             id="offline-resume-heading"
             className="mb-2 inline-flex items-center gap-2 text-sm font-semibold text-zinc-900 dark:text-zinc-50"
           >
-            <Sparkles className="h-4 w-4" aria-hidden="true" />
             続きから
           </h2>
           <Link

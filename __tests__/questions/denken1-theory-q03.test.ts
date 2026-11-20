@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
-import { DENKEN1_QUESTIONS } from "@/data/questions/denken1";
+import { DENKEN1_PRIMARY_QUESTIONS as DENKEN1_QUESTIONS } from "@/data/questions/denken1";
 import launch from "@/data/questions/denken1/launch.json";
 import theory2 from "@/data/questions/denken1/theory-aq02.json";
 import { questionPagePath } from "@/lib/seo/question-url";

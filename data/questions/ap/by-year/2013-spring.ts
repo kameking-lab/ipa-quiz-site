@@ -1802,7 +1802,14 @@ export const AP_QUESTIONS_2013_SPRING: Question[] = [
     "explanation": "正解はエです。（出典: IPA 応用情報技術者試験 2013年度春期 午前 問75）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002e6g-att/2013h25h_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "設問では三つの投資計画から一つに決めます。二つの案を確率で選ぶ混合戦略では、何を最適とみなすかで結論が変わります。",
+      "イ": "純粋戦略は一つの案を選ぶことを表し、それだけで最適な案は決まりません。積極的投資の最悪の利益は50万円です。",
+      "ウ": "マクシマックス原理では各案の最大利益を比較します。最大は積極的投資の500万円なので、継続的投資の300万円ではありません。",
+      "エ": "三つの案の最小利益は、積極的が50万円、継続的が100万円、消極的が200万円です。この最小値が最大の消極的投資を選びます。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2013h-am-q76",

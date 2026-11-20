@@ -1,0 +1,627 @@
+{
+  "year": 2021,
+  "season": "primary",
+  "examDate": "2021-08-21",
+  "sourceIndexUrl": "https://www.shiken.or.jp/chief/second/qa/",
+  "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20210821_ch_second_a01.pdf",
+  "sourceAnswerPdfSha256": "595888e2402a71ab1055f07b5a3f3b8a0e9f89917058c9d12a1cc0e7730c047c",
+  "sourcePacketSha256": "caff77a3ff08c001e9d123a3d9b9d87651ebb0ba989abe97f54dc91a955fc77f",
+  "questions": [
+    {
+      "id": "denken2-2021-primary-theory-q01",
+      "year": 2021,
+      "season": "primary",
+      "examDate": "2021-08-21",
+      "subject": "theory",
+      "number": 1,
+      "topic": "二層誘電体の平行平板コンデンサ",
+      "questionText": "次の文章は，平行平板コンデンサに関する記述である。文中の〔空欄〕に当てはまる最も適切なものを解答群の中から選べ。\n\n図のように，平行平板コンデンサの極板間に二種類の誘電体1，誘電体2が挿入されている。各誘電体の誘電率は ε₁，ε₂ であり，厚さはともに d である。極板の面積は S であり，端効果は無視できるものとする。\n\nコンデンサの極板間には直流電圧が印加されており，各極板に単位面積あたり ±σ の電荷が図に示すように現れている。このときの誘電体1中の電束密度の大きさは (1)，電界の大きさは (2) と表される。同様に誘電体2中の電界の大きさを求めると，コンデンサの極板間に印加された電圧は (3) と表すことができる。\n\nコンデンサ全体に蓄えられた電界のエネルギーは (4) と表される。誘電体1の領域に蓄えられた電界のエネルギーが誘電体2の領域に蓄えられた電界のエネルギーよりも大きい場合，誘電率 ε₁ と ε₂ の間には (5) の関係が成立する。",
+      "choiceGroups": {
+        "イ": "ε₁σ/(ε₁＋ε₂)",
+        "ロ": "(ε₁＋ε₂)σd/(ε₁ε₂)",
+        "ハ": "σ/ε₁",
+        "ニ": "ε₁＞ε₂",
+        "ホ": "ε₁ε₂＝0",
+        "ヘ": "ε₁＜ε₂",
+        "ト": "σ/(ε₁＋ε₂)",
+        "チ": "(ε₁＋ε₂)σ²S/(2d)",
+        "リ": "ε₁ε₂σd/(ε₁＋ε₂)",
+        "ヌ": "(ε₁＋ε₂)σ²dS/(2ε₁ε₂)",
+        "ル": "2σ",
+        "ヲ": "(ε₁＋ε₂)σ/d",
+        "ワ": "ε₁ε₂σ²dS/[2(ε₁＋ε₂)]",
+        "カ": "σ",
+        "ヨ": "ε₁σ"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "カ",
+          "explanation": "自由電荷が決める電束密度は σ です。",
+          "derivation": "自由電荷がない誘電体間の境界では、法線方向の電束密度が連続する。極板の自由電荷密度が σ なので、両層の電束密度の大きさは D＝σ。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ハ",
+          "explanation": "誘電体1の電界は σ/ε₁ です。",
+          "derivation": "誘電体内では D＝εE。誘電体1では ε＝ε₁、D＝σ なので E₁＝σ/ε₁。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ロ",
+          "explanation": "全電圧は2層の電位差の和です。",
+          "derivation": "層ごとの電位差を足す。V＝E₁d＋E₂d＝σd(1/ε₁＋1/ε₂)＝(ε₁＋ε₂)σd/(ε₁ε₂)。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "ヌ",
+          "explanation": "全エネルギーは電荷と電圧の積の半分です。",
+          "derivation": "蓄えられたエネルギーは W＝QV/2。Q＝σS と(3)の V を掛けて半分にすると、W＝(ε₁＋ε₂)σ²dS/(2ε₁ε₂)。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ヘ",
+          "explanation": "この条件で誘電体1のエネルギーが大きければ ε₁＜ε₂ です。",
+          "derivation": "層ごとのエネルギーは σ²Sd/(2ε)。σ、S、d が共通なので、誘電体1のエネルギーが大きければ ε₁＜ε₂。"
+        }
+      ],
+      "figures": [
+        "面積 S の2枚の極板間に、厚さ d の誘電体1、誘電体2が重なる。上側の極板に ＋σ、下側に −σ が示されている。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 4,
+          "url": "/images/denken2/2021-native/theory-p04.jpg",
+          "sha256": "4ba70ca5688f84358a78c639623ba5b1a940011ae707241f6c74b1dbefe91c45"
+        },
+        {
+          "physicalPage": 5,
+          "url": "/images/denken2/2021-native/theory-p05.jpg",
+          "sha256": "e417050aea4f541d4a387392dbf395663a92a214015b2042f201e53bc0b8c960"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20210821_ch_second_q01.pdf",
+      "sourcePdfSha256": "8cb6dc40bfe04ad1789b0f2a598ba4f086ce425fa0e6ff6c9df8c237c3a86230",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken2-2021-primary-theory-q02",
+      "year": 2021,
+      "season": "primary",
+      "examDate": "2021-08-21",
+      "subject": "theory",
+      "number": 2,
+      "topic": "強磁性体のヒステリシス損",
+      "questionText": "次の文章は，強磁性体の磁気特性に関する記述である。文中の〔空欄〕に当てはまる最も適切なものを解答群の中から選べ。なお，ここでは，強磁性体に流れる渦電流は無視する。\n\n強磁性体に一様な交番磁界を印加すると，強磁性体内の磁束密度 B [T] は磁界 H [A/m] に比例せず，定常状態において図に示すような (1) の軌跡を描く。これをヒステリシスループと呼ぶ。図中の Bᵣ [T] と H꜀ [A/m] は，それぞれ (2) と保磁力と呼ばれる。強磁性体を永久磁石として用いる場合，(3) 材料が望ましい。\n\nこの特性により生じる損失をヒステリシス損と呼び，それは印加する交番磁界の (4) に比例する。ヒステリシスループで囲まれた部分の面積 S [J/m³] は，交番磁界1周期における強磁性体内で消費される単位体積当たりのエネルギーを表す。ここで，体積 1.5×10⁻³ m³ の強磁性体に60 Hzの一様な交番磁界を与えたところ，S＝5.0×10² J/m³ であったとする。このときのヒステリシス損は (5) Wである。",
+      "choiceGroups": {
+        "イ": "減磁力",
+        "ロ": "時計回り",
+        "ハ": "反時計回り",
+        "ニ": "Bᵣ が大きく H꜀ が小さい",
+        "ホ": "90",
+        "ヘ": "周波数の2乗",
+        "ト": "最大磁束密度",
+        "チ": "周波数",
+        "リ": "6",
+        "ヌ": "Bᵣ と H꜀ の両方が大きい",
+        "ル": "0.75",
+        "ヲ": "周波数の1.6乗",
+        "ワ": "Bᵣ が小さく H꜀ が大きい",
+        "カ": "45",
+        "ヨ": "残留磁束密度"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ハ",
+          "explanation": "図のヒステリシスループは反時計回りです。",
+          "derivation": "正側の磁界を減らしても B は残る。ループの上側は右から左へ、下側は左から右へ進み、図の反時計回りに対応する。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ヨ",
+          "explanation": "Bᵣ は残留磁束密度です。",
+          "derivation": "Bᵣ は H＝0 に戻したときに残る B の値で、残留磁束密度と呼ぶ。H꜀ は B をゼロに戻すために要る逆向き磁界の大きさ。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ヌ",
+          "explanation": "永久磁石には Bᵣ と H꜀ がともに大きい材料が向いています。",
+          "derivation": "大きな Bᵣ は磁界を取り除いた後の磁束を確保する。大きな H꜀ は逆向き磁界への耐性を与えるので、永久磁石には両方が大きい材料が向く。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "チ",
+          "explanation": "ループの面積を一定とすると、損失は周波数に比例します。",
+          "derivation": "同じループの面積に対し、1秒当たりの消費エネルギーは1周期当たりの消費エネルギーに周波数を掛けた値になる。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "カ",
+          "explanation": "ヒステリシス損は45 Wです。",
+          "derivation": "1周期当たりの全エネルギーは 5.0×10²×1.5×10⁻³＝0.75 J。60周期/秒なので 0.75×60＝45 W。"
+        }
+      ],
+      "figures": [
+        "横軸は磁界 H、縦軸は磁束密度 B。ループは縦軸の Bᵣ と横軸の −H꜀ を通る。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 6,
+          "url": "/images/denken2/2021-native/theory-p06.jpg",
+          "sha256": "1a479ffec37b82dcc0eec70396c8786dc12cb5906cda48267fd3d2dfab6c9fb1"
+        },
+        {
+          "physicalPage": 7,
+          "url": "/images/denken2/2021-native/theory-p07.jpg",
+          "sha256": "0b1a36341a2860ddd4194902fbabb5a06107164838caa8b795b49427fc9855e8"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20210821_ch_second_q01.pdf",
+      "sourcePdfSha256": "8cb6dc40bfe04ad1789b0f2a598ba4f086ce425fa0e6ff6c9df8c237c3a86230",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken2-2021-primary-theory-q03",
+      "year": 2021,
+      "season": "primary",
+      "examDate": "2021-08-21",
+      "subject": "theory",
+      "number": 3,
+      "topic": "重ね合わせによる直流回路の計算",
+      "questionText": "次の文章は，直流回路に関する記述である。文中の〔空欄〕に当てはまる最も適切なものを解答群の中から選べ。\n\n図の直流回路において，重ね合わせの理を用いて抵抗 R₅ を流れる電流 I について解析する。ただし，抵抗 R₅ に流れる電流の正方向を図中の節点 P から Q の向きとする。\n\n重ね合わせの理は，(1) 回路において成立する定理である。図の回路において，電圧源を残して電流源を取り除いた回路を考え，抵抗 R₅ に流れる電流 Iₐ を求めれば，Iₐ＝(2) A となる。このとき，電流源は (3) 除去されている。\n\n次に，図の回路において，電流源を残して電圧源を取り除いた回路を考え，抵抗 R₅ に流れる電流 Iᵦ を求めた上で，電流 Iₐ と Iᵦ を重ね合わせれば，抵抗 R₅ に流れる電流は I＝(4) A と求められる。\n\nまた，図の回路において，電圧源の電圧を (5) V とすれば，抵抗 R₅ に流れる電流は I＝0 A となる。",
+      "choiceGroups": {
+        "イ": "短絡",
+        "ロ": "−1",
+        "ハ": "8",
+        "ニ": "6",
+        "ホ": "線形",
+        "ヘ": "−2",
+        "ト": "1",
+        "チ": "2",
+        "リ": "能動",
+        "ヌ": "非線形",
+        "ル": "接地",
+        "ヲ": "−3",
+        "ワ": "開放",
+        "カ": "3",
+        "ヨ": "4"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ホ",
+          "explanation": "重ね合わせの理は線形回路で成り立ちます。",
+          "derivation": "電流や電圧の応答が入力に対して線形なら、各独立電源を単独で動作させた応答を足し合わせられる。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "チ",
+          "explanation": "電圧源だけによる R₅ の電流は2 Aです。",
+          "derivation": "電流源を開放すると R₂＋R₄＝2 Ω と R₅＝2 Ω が並列。合成1 Ω と R₃＝2 Ω で12 Vを分けると P は4 V、Iₐ＝4/2＝2 A。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ワ",
+          "explanation": "理想電流源を無効にした枝は開放します。",
+          "derivation": "独立電流源を取り除くときは供給電流をゼロとする。電流ゼロの枝は開放と等価になる。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "ト",
+          "explanation": "両電源による電流を符号付きで足すと1 Aです。",
+          "derivation": "電圧源を短絡すると P 側の R₃∥R₅＝1 Ω。左側節点の電圧は −6×(1∥2)＝−4 V、P は−2 Vなので Iᵦ＝−1 A。Iₐ＝2 Aと足すと1 A。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ニ",
+          "explanation": "両電源の寄与が相殺されるのは6 Vです。",
+          "derivation": "電圧源の寄与は V に比例し、12 Vで2 Aなので V/6 A。Iᵦ＝−1 A と打ち消し合うのは V＝6 V。"
+        }
+      ],
+      "figures": [
+        "下側の共通節点は Q。上側の節点 P から Q へ R₅＝2 Ω を流れる向きが電流 I の正方向。左枝に下向きの6 A電流源、右枝に上側が正の12 V電圧源がある。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 8,
+          "url": "/images/denken2/2021-native/theory-p08.jpg",
+          "sha256": "27fa9317e354f6f93e9c44a1f5d9808bba380bdfd30aee1cd236fd61ff7f5212"
+        },
+        {
+          "physicalPage": 9,
+          "url": "/images/denken2/2021-native/theory-p09.jpg",
+          "sha256": "491d1eda577232e74d6ba7f45c384f58743676392b7db6289e877a2f013ef4f6"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20210821_ch_second_q01.pdf",
+      "sourcePdfSha256": "8cb6dc40bfe04ad1789b0f2a598ba4f086ce425fa0e6ff6c9df8c237c3a86230",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken2-2021-primary-theory-q04",
+      "year": 2021,
+      "season": "primary",
+      "examDate": "2021-08-21",
+      "subject": "theory",
+      "number": 4,
+      "topic": "並列LCの共振と有効電力",
+      "questionText": "次の文章は，正弦波交流電源に接続された回路に関する記述である。文中の〔空欄〕に当てはまる最も適切なものを解答群の中から選べ。\n\n図の回路において，電源から見た回路の合成リアクタンスを X と置く。ただし，正弦波交流電源の角周波数は ω とする。\n\n(a) |İ_L|＝|İ_C| が成立するのは ω＝(1) のときである。ω が (1) のときの回路の合成インピーダンス R＋jX 及び電流 İ_R を計算すると，|V̇_R|＝(2) となる。\n\n(b) 1/(jωC)＝R/j，jωL＝jR/2 のときは，jX＝(3) であり，電流 İ_R は İ_R＝(4) となる。İ_R が (4) のときの回路が消費する有効電力は (5) となる。",
+      "choiceGroups": {
+        "イ": "jR",
+        "ロ": "√(LC)",
+        "ハ": "0",
+        "ニ": "|Ė|²/(2R)",
+        "ホ": "jR/2",
+        "ヘ": "|Ė|²/(3R)",
+        "ト": "|Ė|",
+        "チ": "Ėe^(−jπ/3)/(√3 R)",
+        "リ": "Ėe^(−jπ/4)/(√2 R)",
+        "ヌ": "|Ė|²/(5R)",
+        "ル": "Ėe^(−jπ/6)/(√5 R)",
+        "ヲ": "1/√(LC)",
+        "ワ": "1/(LC)",
+        "カ": "|Ė|/2",
+        "ヨ": "j2R"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ヲ",
+          "explanation": "並列共振の角周波数は 1/√(LC) です。",
+          "derivation": "並列枝の電圧は共通。容量性サセプタンス ωC と誘導性サセプタンスの大きさ 1/(ωL) が等しいとき ω＝1/√(LC)。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ハ",
+          "explanation": "共振時の抵抗 R の端子電圧は0です。",
+          "derivation": "共振時には L と C の枝電流が同じ大きさで逆相となる。外部を流れる電流が0なので、直列抵抗 R の電圧降下も0。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "イ",
+          "explanation": "指定条件で並列部のインピーダンスは jR です。",
+          "derivation": "並列合成は積を和で割る。(-jR)(jR/2)/(-jR＋jR/2)＝jR。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "リ",
+          "explanation": "電流は電源電圧より位相が π/4 遅れます。",
+          "derivation": "電源から見た全インピーダンスは R＋jR＝√2 R e^(jπ/4)。Ė をこれで割ると Ėe^(−jπ/4)/(√2 R)。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ニ",
+          "explanation": "有効電力は |Ė|²/(2R) です。",
+          "derivation": "有効電力は抵抗で消費される。|İ_R|²R＝(|Ė|/(√2 R))²R＝|Ė|²/(2R)。"
+        }
+      ],
+      "figures": [
+        "抵抗 R の先にコンデンサ C とコイル L が並列につながる。破線内の並列部のインピーダンスを jX とする。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 10,
+          "url": "/images/denken2/2021-native/theory-p10.jpg",
+          "sha256": "ab4dbbbdc16b72479a2dc02e03e65b0c052b374ec00aab4a3c94d8681e7fc6a8"
+        },
+        {
+          "physicalPage": 11,
+          "url": "/images/denken2/2021-native/theory-p11.jpg",
+          "sha256": "7f39067cc97ee173d16185d8c23c3c8c5f85b227763eae4f96f075fa1a0e7dec"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20210821_ch_second_q01.pdf",
+      "sourcePdfSha256": "8cb6dc40bfe04ad1789b0f2a598ba4f086ce425fa0e6ff6c9df8c237c3a86230",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken2-2021-primary-theory-q05",
+      "year": 2021,
+      "season": "primary",
+      "examDate": "2021-08-21",
+      "subject": "theory",
+      "number": 5,
+      "topic": "RLC直列回路の過渡現象とエネルギー",
+      "questionText": "次の文章は，電気回路の過渡現象に関する記述である。文中の〔空欄〕に当てはまる最も適切なものを解答群の中から選べ。\n\n図に示す直流電圧源 E に接続された RLC 回路のスイッチ SW を a 側に接続し，回路が定常状態に達したあと，時刻 t＝0 でスイッチ SW を b 側に接続した。t≧0 での回路方程式は，\nL di(t)/dt＋Ri(t)＋v(t)＝0 …①\nとなる。ここで，①式において，t＝0 のとき v(t)＝(1)，i(t)＝(2) である。したがって，①式において，t＝0 のとき di(t)/dt＝(3) であることが分かる。①式の両辺に i(t) を掛けて t＝0 から t＝∞ まで積分すると，\n∫₀^∞ Ri(t)² dt＝−∫₀^∞ L[di(t)/dt] i(t) dt−∫₀^∞ v(t)i(t) dt …②\nとなる。②式に図の回路の v(t) と i(t) の関係式 (4) を代入すると，積分の結果は次のようになる。\n∫₀^∞ Ri(t)² dt＝−(L/2)[i(∞)²−i(0)²]−(C/2)[v(∞)²−v(0)²]\n\nしたがって，i(∞) 及び v(∞) の値に注意すると，∫₀^∞ Ri(t)² dt＝(5) を得る。",
+      "choiceGroups": {
+        "イ": "E/2",
+        "ロ": "−CE/L",
+        "ハ": "i(t)＝C dv(t)/dt",
+        "ニ": "E/R",
+        "ホ": "E",
+        "ヘ": "v(t)＝C di(t)/dt",
+        "ト": "CE²/2",
+        "チ": "RE/L",
+        "リ": "v(t)＝L di(t)/dt",
+        "ヌ": "−E/L",
+        "ル": "0",
+        "ヲ": "CE²−LE²/(2R²)",
+        "ワ": "LE²/(2R²)",
+        "カ": "−E",
+        "ヨ": "−E/R"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ホ",
+          "explanation": "切替直後のコンデンサ電圧は E です。",
+          "derivation": "切替前は直流定常状態でコンデンサに電流が流れず、抵抗の電圧降下はない。コンデンサ電圧は切替え直後も連続して E。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ル",
+          "explanation": "切替直後のコイル電流は0です。",
+          "derivation": "切替前、充電が終わったコンデンサには直流が流れず i＝0。インダクタの電流 i は切替え直後も連続する。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ヌ",
+          "explanation": "切替直後の電流の傾きは −E/L です。",
+          "derivation": "t＝0 では Ri(0)＝0、v(0)＝E。回路式に入れると L di(0)/dt＝−E なので傾きは −E/L。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "ハ",
+          "explanation": "コンデンサ電流は C に電圧の時間変化率を掛けた値です。",
+          "derivation": "正極側に流れ込む向きの電流は電荷の時間変化率。q＝Cv から i(t)＝C dv(t)/dt。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ト",
+          "explanation": "抵抗で消費されるエネルギーは CE²/2 です。",
+          "derivation": "十分時間が経つと i(∞)＝v(∞)＝0。初期には i(0)＝0、v(0)＝E なので、抵抗の総損失は初期の電界エネルギー CE²/2。"
+        }
+      ],
+      "figures": [
+        "スイッチ SW の a 側は直流電源 E、b 側は下側の共通線につながる。コイル L と抵抗 R、コンデンサ C は直列で、i(t) は抵抗から C へ流れる向き、v(t) は C の上側を正とする。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 12,
+          "url": "/images/denken2/2021-native/theory-p12.jpg",
+          "sha256": "5af89fe173264435fb6c9bb38c19b0bbaa8d158f6ed10dd796192ea234aaebc4"
+        },
+        {
+          "physicalPage": 13,
+          "url": "/images/denken2/2021-native/theory-p13.jpg",
+          "sha256": "a12e7ea9cffc5889d0dc225585273ef34ab1b00179dd5016e11b05fe3e10b412"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20210821_ch_second_q01.pdf",
+      "sourcePdfSha256": "8cb6dc40bfe04ad1789b0f2a598ba4f086ce425fa0e6ff6c9df8c237c3a86230",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken2-2021-primary-theory-q06",
+      "year": 2021,
+      "season": "primary",
+      "examDate": "2021-08-21",
+      "subject": "theory",
+      "number": 6,
+      "topic": "静電界での電子の偏向",
+      "questionText": "次の文章は，静電界による電子の運動に関する記述である。文中の〔空欄〕に当てはまる最も適切なものを解答群の中から選べ。\n\n図のように，真空中を電子（質量 m，電荷量 −e，e＞0）が x 軸上を x＜0 の領域から一定速度 vₓ₀（＞0）で運動している。領域0≦x≦aには，図に示すように y 軸の負の方向に一様な電界 E（＞0）がかかっており，それ以外の領域では電界がないものとする。電子の x 座標が x＝0 から x＝a に達するまでにかかる時間は (1) である。領域0≦x≦aでは，電子は電界から力 F＝(2) を受けて y 方向に偏向する。運動の第2法則から y 方向の運動方程式は m dvᵧ/dt＝(2) と表される。ただし，vᵧ は速度の y 方向成分を表す。微分方程式を解くことにより，電子の x 座標が x＝a に達したときの vᵧ は (3) となり，そのときの電子の y 座標は (4) となる。領域 x＞a では，電子の運動は x，y 方向共に等速度運動となることから，電子が x＝L（＞a）に達した際の y 座標を d とすると，d＝(5) となる。",
+      "choiceGroups": {
+        "イ": "(eE/m)(a/vₓ₀)²",
+        "ロ": "eEa(2L−a)/(2mvₓ₀²)",
+        "ハ": "eEa/(mvₓ₀)",
+        "ニ": "eEa(L−a)/(2mvₓ₀²)",
+        "ホ": "m(L−a)/(eEvₓ₀)",
+        "ヘ": "eE",
+        "ト": "(eE/m)(vₓ₀/a)",
+        "チ": "eE/m",
+        "リ": "a/vₓ₀",
+        "ヌ": "L/vₓ₀",
+        "ル": "(eE/(2m))(a/vₓ₀)²",
+        "ヲ": "eEa(2L−a)/(mvₓ₀²)",
+        "ワ": "aE",
+        "カ": "(L−a)/vₓ₀",
+        "ヨ": "(eE/(2m))(L/vₓ₀)²"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "リ",
+          "explanation": "電界のある領域を通過する時間は a/vₓ₀ です。",
+          "derivation": "力の x 成分はなく、速度 vₓ₀ が保たれる。x 方向に距離 a を進む時間は a/vₓ₀。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ヘ",
+          "explanation": "電子に働く y 方向の力は ＋eE です。",
+          "derivation": "電子の電荷は −e、電界の y 成分は −E。その積は正の eE となり、電子は上向きに力を受ける。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ハ",
+          "explanation": "電界の端での y 方向の速度は eEa/(mvₓ₀) です。",
+          "derivation": "y 方向は加速度 eE/m の等加速度運動で初速が0。時間 a/vₓ₀ の後の速度は eEa/(mvₓ₀)。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "ル",
+          "explanation": "x＝a までの偏向は (eE/2m)(a/vₓ₀)² です。",
+          "derivation": "y 方向の初速は0なので、変位は加速度と時間の二乗の積の半分。(eE/(2m))(a/vₓ₀)²。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ロ",
+          "explanation": "偏向距離 d は電界の内外での y 方向の変位の和です。",
+          "derivation": "電界を出る時の変位に、その後の等速運動での変位 vᵧ(L−a)/vₓ₀ を足す。整理すると eEa(2L−a)/(2mvₓ₀²)。"
+        }
+      ],
+      "figures": [
+        "電子は x 軸に沿って右向きに入射する。0≦x≦a の範囲で電界 E は下向きで、x＝L における x 軸からの高さが d。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 14,
+          "url": "/images/denken2/2021-native/theory-p14.jpg",
+          "sha256": "4b78ebb885f5db1dbc654da2b200edc8f3d6d6d860582f2eb25bc6e51c33389a"
+        },
+        {
+          "physicalPage": 15,
+          "url": "/images/denken2/2021-native/theory-p15.jpg",
+          "sha256": "4728e64db1f6e6cf5116b11ac0306c40130ed632e9c77510489c8a316ae69f99"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20210821_ch_second_q01.pdf",
+      "sourcePdfSha256": "8cb6dc40bfe04ad1789b0f2a598ba4f086ce425fa0e6ff6c9df8c237c3a86230",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken2-2021-primary-theory-q07",
+      "year": 2021,
+      "season": "primary",
+      "examDate": "2021-08-21",
+      "subject": "theory",
+      "number": 7,
+      "topic": "LEDの直列・並列点灯回路",
+      "questionText": "次の文章は，発光ダイオード（LED）の点灯回路に関する記述である。文中の〔空欄〕に当てはまる最も適切なものを解答群の中から選べ。ただし，LED の明るさは LED を流れる電流に比例するものとする。\n\n点灯時の LED の順方向電圧 V_D はほぼ一定値となる。このため点灯時の LED の解析は，LED を図1のように大きさ V_D の直流電圧源で置き換えて考えると簡略化できる。\nまず，図2の回路を用いて LED を点灯させた。LED に直列に接続する抵抗 R の役割は (1) である。LED を流れる電流は LED を直流電圧源 V_D に置き換えることで (2) と求められる。\n\n次に，2個の LED を点灯させるために図3及び図4の回路を作製した。このとき図3及び図4で用いた全ての LED の特性は等しく，V_D は全て2 Vとする。図3の V_in が5 Vであるとき図3の LED を流れる電流を50 mAとするためには図3の抵抗 R を (3) Ωとすればよい。図3と図4の抵抗 R を (3) Ωとし，図3と図4の全ての LED の明るさが等しくなるように図4の V_in を調整した。このとき図4の回路の消費電力は (4) mWである。\n\n図3及び図4の2個の LED のうち片方の LED が破損し断線したときにも，もう一方の LED が点灯し続けるのは (5) である。",
+      "choiceGroups": {
+        "イ": "300",
+        "ロ": "500",
+        "ハ": "LEDの破損防止",
+        "ニ": "250",
+        "ホ": "図3",
+        "ヘ": "60",
+        "ト": "20",
+        "チ": "(V_in＋V_D)/R",
+        "リ": "図3と図4の両方",
+        "ヌ": "50",
+        "ル": "LEDの保温",
+        "ヲ": "LEDの明るさの向上",
+        "ワ": "V_in/R",
+        "カ": "図4",
+        "ヨ": "(V_in−V_D)/R"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ハ",
+          "explanation": "直列抵抗は過電流から LED を守ります。",
+          "derivation": "直列抵抗は、LED の順方向電圧を超える分の電圧を受け持ち、過電流による LED の破損を防ぐ。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ヨ",
+          "explanation": "抵抗にかかる電圧は V_in−V_D です。",
+          "derivation": "図2で抵抗の両端電圧は V_in−V_D なので、オームの法則によって I＝(V_in−V_D)/R。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ト",
+          "explanation": "図3で50 mAを流すために必要な抵抗は20 Ωです。",
+          "derivation": "図3では2個の LED が直列で合計4 Vを受け持つ。抵抗の電圧は1 Vなので R＝1/0.050＝20 Ω。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "イ",
+          "explanation": "図4の消費電力は300 mWです。",
+          "derivation": "図4の各枝を50 mAにするには、枝の抵抗の1 VとLEDの2 Vを足して電源を3 Vにする。2枝で100 mAとなり、P＝3×0.100＝0.300 W。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "カ",
+          "explanation": "一方の LED が断線してももう一方が点灯するのは図4です。",
+          "derivation": "図4では枝どうしが並列なので、一方の枝が開放されても他方の枝は閉回路を保つ。図3の直列回路はどちらかが開くと電流が止まる。"
+        }
+      ],
+      "figures": [
+        "図1は LED の電圧源モデル。図2は抵抗と LED の直列回路。図3は LED 2個と抵抗の直列回路、図4は LED と抵抗を1個ずつ含む2本の並列枝。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 16,
+          "url": "/images/denken2/2021-native/theory-p16.jpg",
+          "sha256": "a5667fae01f43a7da8a59259a6e33983b73c442a5221d173b0877fbd57059b06"
+        },
+        {
+          "physicalPage": 17,
+          "url": "/images/denken2/2021-native/theory-p17.jpg",
+          "sha256": "ae318227fe02b8b1e6f621a228b2e72adab43b7f44dcf185ba6d4aa9c6c147a7"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20210821_ch_second_q01.pdf",
+      "sourcePdfSha256": "8cb6dc40bfe04ad1789b0f2a598ba4f086ce425fa0e6ff6c9df8c237c3a86230",
+      "alternateQuestionRule": "問７及び問８のどちらかを選んで解答すること。両方解答すると採点されません。"
+    },
+    {
+      "id": "denken2-2021-primary-theory-q08",
+      "year": 2021,
+      "season": "primary",
+      "examDate": "2021-08-21",
+      "subject": "theory",
+      "number": 8,
+      "topic": "交流ブリッジによる静電容量と誘電正接",
+      "questionText": "次の文章は，交流ブリッジによるコンデンサの測定に関する記述である。文中の〔空欄〕に当てはまる最も適切なものを解答群の中から選べ。\n\n図の破線で囲んだ部分は測定対象のコンデンサで，その等価回路は静電容量 C₁ と抵抗 R₁ の直列回路である。図の R₂，R₃ 及び R₄ は既知の抵抗，C₂ は既知の静電容量，D は検出器である。また，交流電源の電圧を Ė，その角周波数を ω とする。\n\n今，検出器の指示が零となりブリッジが平衡したとすると，次式が成り立つ。\n(1)\n上式から，R₁＝(2)，C₁＝(3) が求められる。\n電圧 Ė_R，電圧 Ė_C 及び電流 İ をフェーザ図で表すと (4) となる。\nフェーザ図に記した δ の正接である tan δ＝(5) は誘電正接と呼ばれ，コンデンサの性能を表す指標の一つである。なお，理想的なコンデンサの誘電正接は零となる。",
+      "choiceGroups": {
+        "イ": "R₄/(R₂R₃)",
+        "ロ": "ωC₂R₃",
+        "ハ": "C₂R₂/R₄",
+        "ニ": "R₃R₄/R₂",
+        "ホ": "R₃/(ωC₂)",
+        "ヘ": "C₂R₄/R₂",
+        "ト": "R₂R₃/R₄",
+        "チ": "1/(ωC₂R₃)",
+        "リ": "R₂/(C₂R₄)",
+        "ヌ": "(R₁＋1/(jωC₁))R₄＝(R₃＋1/(jωC₂))R₂",
+        "ル": "R₁＋R₂＋1/(jωC₁)＝R₃＋R₄＋1/(jωC₂)",
+        "ヲ": "(R₁＋1/(jωC₁))R₂＝(R₃＋1/(jωC₂))R₄",
+        "ワ": "原本フェーザ図（ワ）",
+        "カ": "原本フェーザ図（カ）",
+        "ヨ": "原本フェーザ図（ヨ）"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ヌ",
+          "explanation": "ブリッジの平衡条件は向かい合う枝のインピーダンスの積が等しいことです。",
+          "derivation": "検出器に電流が流れない平衡時には、上下の中点電位が等しい。左上の枝を Z₁、左下を Z₃ として分圧比を等置し、Z₁R₄＝Z₃R₂ を得る。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ト",
+          "explanation": "実部を比較すると R₁＝R₂R₃/R₄ です。",
+          "derivation": "平衡式の実部は R₁R₄＝R₃R₂。R₄ で割ると R₁＝R₂R₃/R₄。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ヘ",
+          "explanation": "虚部を比較すると C₁＝C₂R₄/R₂ です。",
+          "derivation": "平衡式の虚部は R₄/(ωC₁)＝R₂/(ωC₂)。整理すると C₁＝C₂R₄/R₂。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "カ",
+          "explanation": "抵抗電圧と電流の向きが同じになる図はカです。",
+          "derivation": "抵抗電圧 Ė_R は電流と同相で、容量電圧 Ė_C は電流より90°遅れる。この向きに対応するのは図（カ）。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ロ",
+          "explanation": "誘電正接は ωC₂R₃ です。",
+          "derivation": "図の直角三角形から tan δ＝|Ė_R|/|Ė_C|＝ωC₁R₁。平衡式で ωC₁R₁＝ω(C₂R₄/R₂)(R₂R₃/R₄)＝ωC₂R₃。"
+        }
+      ],
+      "figures": [
+        "ブリッジの左上の枝は R₁ と C₁ の直列、右上は R₂、左下は R₃、右下は R₄ と C₂ の直列。フェーザ図の選択肢 ワ・カ・ヨ は公式PDF p.19 にある。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 18,
+          "url": "/images/denken2/2021-native/theory-p18.jpg",
+          "sha256": "de462bbbff4f24a58ebe55431201876dadb5ca74db56adf6dc82b0394702cc36"
+        },
+        {
+          "physicalPage": 19,
+          "url": "/images/denken2/2021-native/theory-p19.jpg",
+          "sha256": "cf771b64350562e206534e3bc9060e8b191eeba495b7b9c0223f86cc87ec9a99"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20210821_ch_second_q01.pdf",
+      "sourcePdfSha256": "8cb6dc40bfe04ad1789b0f2a598ba4f086ce425fa0e6ff6c9df8c237c3a86230",
+      "alternateQuestionRule": "問７及び問８のどちらかを選んで解答すること。両方解答すると採点されません。"
+    }
+  ]
+}

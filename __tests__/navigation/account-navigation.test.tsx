@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { AccountNavigationProvider } from "@/components/account/AccountNavigation";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -18,36 +18,29 @@ vi.mock("@/components/pwa/MobileInstallControl", () => ({ MobileInstallControl: 
 beforeEach(() => { state.account = { id: "local-test" }; localStorage.clear(); });
 afterEach(cleanup);
 
-it("keeps the bottom menu off the logout confirmation", () => {
-  state.pathname = "/auth/signout";
+it.each(["/auth/signout", "/auth/signin", "/auth/verify-request", "/account/delete"])("keeps the bottom menu off %s", pathname => {
+  state.pathname = pathname;
   render(<AccountNavigationProvider><MobileBottomNav /></AccountNavigationProvider>);
   expect(screen.queryByRole("navigation", { name: "モバイル底タブ" })).not.toBeInTheDocument();
 });
 
-it.each(["/", "/search", "/e-learning/exams", "/quiz", "/q/ip/2024-cbt/am/q12"])("opens the account from %s with two taps", async pathname => {
+it.each(["/search", "/e-learning/exams", "/quiz", "/q/ip/2024-cbt/am/q12"])("links the header menu to the personal page from %s", pathname => {
   state.pathname = pathname;
-  render(<AccountNavigationProvider><SiteHeader /></AccountNavigationProvider>);
-  fireEvent.click(screen.getByRole("button", { name: "メニューを開く" }));
-  const link = screen.getByRole("dialog").querySelector('a[href="/account"]');
-  expect(link).toHaveTextContent("アカウント");
-  document.addEventListener("click", event => event.preventDefault(), { once: true });
-  fireEvent.click(link!);
-  expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+  render(<SiteHeader />);
+  expect(screen.getByRole("link", { name: "メニュー" })).toHaveAttribute("href", "/me");
+  expect(screen.queryByRole("button", { name: "メニューを開く" })).toBeNull();
 });
 
-it.each(["/", "/search", "/e-learning/exams"])("offers login to a guest from %s", pathname => {
-  state.pathname = pathname; state.account = null;
-  render(<AccountNavigationProvider><SiteHeader /></AccountNavigationProvider>);
-  fireEvent.click(screen.getByRole("button", { name: "メニューを開く" }));
-  expect(screen.getByRole("dialog").querySelector('a[href="/auth/signin?callbackUrl=/account"]')).toHaveTextContent("ログイン");
-  expect(screen.getByRole("dialog").querySelector('a[href="/account"]')).toBeNull();
-});
-
-it.each(["/", "/search", "/e-learning/exams"])("also exposes account in the bottom menu on %s", pathname => {
+it.each(["/", "/search", "/e-learning/exams"])("opens the personal page from the three bottom tabs on %s", pathname => {
   state.pathname = pathname;
   render(<AccountNavigationProvider><MobileBottomNav /></AccountNavigationProvider>);
-  fireEvent.click(screen.getByRole("button", { name: "メニューを開く" }));
-  expect(screen.getByRole("link", { name: "アカウント" })).toHaveAttribute("href", "/account");
+  expect(screen.getByRole("link", { name: "メニュー" })).toHaveAttribute("href", "/me");
+  expect(screen.getByRole("navigation", { name: "モバイル底タブ" }).querySelectorAll("a")).toHaveLength(3);
+});
+it("opens the personal page from the home menu", () => {
+  state.pathname = "/";
+  render(<AccountNavigationProvider><SiteHeader /></AccountNavigationProvider>);
+  expect(screen.getByRole("link", { name: "メニュー" })).toHaveAttribute("href", "/me");
 });
 
 it.each([true, false])("has one settings row (signed in: %s)", signedIn => {

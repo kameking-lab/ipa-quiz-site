@@ -1,0 +1,107 @@
+{
+  "lane": "rs-23",
+  "branch": "cx/kako-restock-g20-20261117",
+  "candidateRule": "先行班と同じく、PLAN3原順位からrs-4〜19が実補充した資格を除外。未処理の割当だけでは除外せず再採番し、4番目から4つおきを担当。",
+  "remainingCandidates": [
+    {
+      "position": 1,
+      "exam": "benrishi",
+      "assigned": false
+    },
+    {
+      "position": 2,
+      "exam": "shihoshoshi",
+      "assigned": false
+    },
+    {
+      "position": 3,
+      "exam": "denken2",
+      "assigned": false
+    },
+    {
+      "position": 4,
+      "exam": "gas-kou",
+      "assigned": true
+    },
+    {
+      "position": 5,
+      "exam": "zoen1",
+      "assigned": false
+    },
+    {
+      "position": 6,
+      "exam": "keiryoshi-nodo",
+      "assigned": false
+    },
+    {
+      "position": 7,
+      "exam": "kenchikushi1",
+      "assigned": false
+    },
+    {
+      "position": 8,
+      "exam": "rinsho-kensagishi",
+      "assigned": true
+    },
+    {
+      "position": 9,
+      "exam": "kanri-eiyoshi",
+      "assigned": false
+    }
+  ],
+  "gasStatus": "2024年公式PDFの小文字r6・大文字R6とも404。本文未取得のため追加しない。",
+  "clinicalTarget": "2024年第70回午前の未収録回を対象。共有台帳のrows・branchInventory対象パスとGit全参照に2024年度原稿なし。",
+  "referenceWorktree": "指定wt-cx-krefは存在せず、使用していない。",
+  "additions": [
+    {
+      "key": "rinsho-kensagishi|2024|annual|am",
+      "year": 2024,
+      "session": "am",
+      "questionCount": 30,
+      "choiceExplanationCount": 150,
+      "status": "ローカルブランチに収録済み・push/公開なし",
+      "questionIds": [
+        "rinsho-kensagishi-2024-annual-am-q1",
+        "rinsho-kensagishi-2024-annual-am-q2",
+        "rinsho-kensagishi-2024-annual-am-q3",
+        "rinsho-kensagishi-2024-annual-am-q4",
+        "rinsho-kensagishi-2024-annual-am-q7",
+        "rinsho-kensagishi-2024-annual-am-q8",
+        "rinsho-kensagishi-2024-annual-am-q11",
+        "rinsho-kensagishi-2024-annual-am-q13",
+        "rinsho-kensagishi-2024-annual-am-q14",
+        "rinsho-kensagishi-2024-annual-am-q15",
+        "rinsho-kensagishi-2024-annual-am-q16",
+        "rinsho-kensagishi-2024-annual-am-q19",
+        "rinsho-kensagishi-2024-annual-am-q21",
+        "rinsho-kensagishi-2024-annual-am-q23",
+        "rinsho-kensagishi-2024-annual-am-q24",
+        "rinsho-kensagishi-2024-annual-am-q28",
+        "rinsho-kensagishi-2024-annual-am-q29",
+        "rinsho-kensagishi-2024-annual-am-q38",
+        "rinsho-kensagishi-2024-annual-am-q39",
+        "rinsho-kensagishi-2024-annual-am-q40",
+        "rinsho-kensagishi-2024-annual-am-q41",
+        "rinsho-kensagishi-2024-annual-am-q42",
+        "rinsho-kensagishi-2024-annual-am-q43",
+        "rinsho-kensagishi-2024-annual-am-q44",
+        "rinsho-kensagishi-2024-annual-am-q45",
+        "rinsho-kensagishi-2024-annual-am-q51",
+        "rinsho-kensagishi-2024-annual-am-q52",
+        "rinsho-kensagishi-2024-annual-am-q54",
+        "rinsho-kensagishi-2024-annual-am-q56",
+        "rinsho-kensagishi-2024-annual-am-q57"
+      ],
+      "morningRemaining": 70,
+      "afternoonRemaining": 100,
+      "sourceManifest": "data/questions/rinsho-kensagishi/2024-am-sources.json",
+      "officialSourceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-07.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp240424-07a_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp240424-07seitou.pdf"
+      ]
+    }
+  ],
+  "integrationSnapshotCount": 32,
+  "integrationBaseline": "7e4e081bb3d03983bcbb35b1e8f377fe3b038ae6"
+}

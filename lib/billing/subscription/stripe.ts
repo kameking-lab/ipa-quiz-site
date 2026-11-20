@@ -3,7 +3,8 @@ import { createHash } from "node:crypto";
 import { z } from "zod";
 import { BillingError } from "../domain";
 import { refundState } from "../finance";
-import type { ContractStatus, Invoice, MonthlyConfig, MonthlyProvider, Observation, Payment, Signup, Target } from "./domain";
+import { examDateBeforeEnd, examDateLabel, nextJstDate } from "../exam-end";
+import { stripeMinimumYenCharge, terminal, type EndingChange, type Invoice, type MemberEnding, type MonthlyConfig, type MonthlyProvider, type Observation, type Payment, type Signup, type Target } from "./domain";
 
 const id = z.string().regex(/^[a-z]+_[A-Za-z0-9_]+$/);
 const money = z.number().int().nonnegative();
@@ -15,14 +16,16 @@ const sessionTotals = { automatic_tax: automaticTaxOff, currency: z.literal("jpy
   amount_subtotal: money, amount_total: money,
   total_details: z.object({ amount_tax: z.literal(0), amount_discount: z.literal(0), amount_shipping: z.literal(0) }) };
 const ref = z.union([id, z.object({ id })]).transform(v => typeof v === "string" ? v : v.id);
-const metadata = z.object({ signup_id: z.string().uuid(), source_instance: z.string(), terms_hash: z.string().length(64) });
+const metadata = z.object({ signup_id: z.string().uuid(), source_instance: z.string(), terms_hash: z.string().length(64), exam_end_at: z.string().regex(/^\d{1,12}$/).optional(),
+  member_ending: z.string().regex(/^(?:renew|cancel:\d{1,12}|exam:\d{1,12}:\d{1,12})$/).optional() });
 const priceSchema = z.object({ id, livemode: z.boolean(), currency: z.literal("jpy"), unit_amount: money,
   recurring: z.object({ interval: z.literal("month"), interval_count: z.literal(1), usage_type: z.literal("licensed") }),
   billing_scheme: z.literal("per_unit"), tax_behavior: z.enum(["inclusive", "unspecified"]) });
 const subscriptionSchema = z.object({ id, livemode: z.boolean(), customer: ref, metadata, default_payment_method: ref.nullable().optional(),
   automatic_tax: automaticTaxOff, default_tax_rates: nullableNoTaxEntries.optional(),
   status: z.enum(["incomplete", "incomplete_expired", "trialing", "active", "past_due", "unpaid", "canceled", "paused"]),
-  cancel_at_period_end: z.boolean(), cancel_at: seconds.nullable().optional(), latest_invoice: ref.nullable(), trial_end: seconds.nullable().optional(),
+  cancel_at_period_end: z.boolean(), cancel_at: seconds.nullable().optional(), ended_at: seconds.nullable().optional(), latest_invoice: ref.nullable(), trial_end: seconds.nullable().optional(),
+  billing_cycle_anchor: seconds.optional(),
   collection_method: z.literal("charge_automatically"), pause_collection: z.unknown().nullable().optional(),
   items: z.object({ has_more: z.literal(false), data: z.array(z.object({ id, quantity: z.literal(1), price: priceSchema, tax_rates: nullableNoTaxEntries,
     current_period_start: seconds, current_period_end: seconds })).length(1) }) });
@@ -30,28 +33,35 @@ const sessionSchema = z.object({ id, livemode: z.boolean(), mode: z.literal("sub
   metadata, client_reference_id: z.string().uuid(), status: z.enum(["open", "complete", "expired"]), subscription: ref.nullable() });
 const invoiceSchema = z.object({ id, livemode: z.boolean(), customer: ref, currency: z.literal("jpy"), total: money,
   automatic_tax: automaticTaxOff, default_tax_rates: noTaxEntries, total_taxes: nullableNoTaxEntries,
-  amount_paid: money, amount_due: money, amount_remaining: money, starting_balance: z.literal(0),
+  amount_paid: money, amount_due: money, amount_remaining: money, starting_balance: z.number().int(),
+  ending_balance: z.number().int().nullable().optional(),
   collection_method: z.literal("charge_automatically"), billing_reason: z.enum(["subscription_create", "subscription_cycle"]),
   status: z.enum(["draft", "open", "paid", "uncollectible", "void"]),
   discounts: z.array(z.unknown()).max(0), pre_payment_credit_notes_amount: z.literal(0), post_payment_credit_notes_amount: z.literal(0),
+  status_transitions: z.object({ finalized_at: seconds.nullable() }).optional(),
   parent: z.object({ type: z.literal("subscription_details"), subscription_details: z.object({ subscription: ref }) }) });
 const lineSchema = z.object({ id, amount: money, currency: z.literal("jpy"), quantity: z.literal(1), taxes: nullableNoTaxEntries,
   period: z.object({ start: seconds, end: seconds }),
   pricing: z.object({ type: z.literal("price_details"), price_details: z.object({ price: ref }) }),
-  parent: z.object({ type: z.literal("subscription_item_details"), subscription_item_details: z.object({ subscription: ref, proration: z.literal(false) }) }) });
+  parent: z.object({ type: z.literal("subscription_item_details"), subscription_item_details: z.object({ subscription: ref, proration: z.boolean() }) }) });
 const paymentSchema = z.object({ id, livemode: z.boolean(), customer: ref, status: z.literal("succeeded"), amount: money, amount_received: money, currency: z.literal("jpy") });
 const allocationSchema = z.object({ id, livemode: z.boolean(), invoice: ref, amount_paid: money, currency: z.literal("jpy"), status: z.literal("paid"),
   payment: z.object({ type: z.literal("payment_intent"), payment_intent: ref }) });
+const customerBalanceSchema = z.object({ id, livemode: z.boolean(), balance: z.number().int(), currency: z.literal("jpy").nullable() });
+const balanceTransactionSchema = z.object({ id, livemode: z.boolean(), customer: ref, invoice: ref.nullable(),
+  amount: z.number().int(), ending_balance: z.number().int().optional(), created: seconds, currency: z.literal("jpy"), type: z.string(),
+  metadata: z.record(z.string(), z.string()).nullable().optional() });
 
-/** Fixed-price, one-item monthly subscription adapter. Only the first-contract free trial is supported; other credits/trials/proration fail closed. */
+/** Fixed-price, one-item monthly subscription adapter. Only the first-contract free trial is supported. */
 export class StripeMonthlyProvider implements MonthlyProvider {
-  constructor(private c: MonthlyConfig, private key: string, private fetcher: typeof fetch = fetch) {
+  constructor(private c: MonthlyConfig, private key: string, private fetcher: typeof fetch = fetch, private deadline?: AbortSignal) {
     if (!(c.mode === "stripe-live" ? /^rk_live_/ : /^rk_test_/).test(key)) throw new BillingError("payment_mode_key_mismatch", 503);
   }
   private mode(obj: { livemode: boolean }) { if (obj.livemode !== (this.c.mode === "stripe-live")) throw new BillingError("payment_mode_mismatch", 400); }
-  private async api(path: string, body?: Record<string, string>, key?: string): Promise<unknown> {
-    const r = await this.fetcher(`https://api.stripe.com/v1/${path}`, { method: body ? "POST" : "GET", cache: "no-store",
-      signal: AbortSignal.timeout(15000), body: body ? new URLSearchParams(body) : undefined,
+  private async api(path: string, body?: Record<string, string>, key?: string, method = body ? "POST" : "GET"): Promise<unknown> {
+    const timeout = AbortSignal.timeout(15000);
+    const r = await this.fetcher(`https://api.stripe.com/v1/${path}`, { method, cache: "no-store",
+      signal: this.deadline ? AbortSignal.any([timeout, this.deadline]) : timeout, body: body ? new URLSearchParams(body) : undefined,
       headers: { Authorization: `Bearer ${this.key}`, "Stripe-Version": "2026-09-30.endive",
         ...(body ? { "Content-Type": "application/x-www-form-urlencoded" } : {}), ...(key ? { "Idempotency-Key": key } : {}) } });
     if (!r.ok) throw new BillingError("payment_provider_unavailable", 503);
@@ -83,6 +93,22 @@ export class StripeMonthlyProvider implements MonthlyProvider {
     // Also detect contracts created outside this server, or a successful Checkout whose response/event was lost.
     const existing = await this.list("subscriptions", { customer: customerId, status: "all" });
     if (existing.some(raw => { const s = z.object({ status: z.string() }).parse(raw); return !["canceled", "incomplete_expired"].includes(s.status); })) throw new BillingError("subscription_exists");
+    if (existing.length) {
+      // A draft final invoice can still add a debit even if today's balance is zero.
+      const previous = z.object({ latest_invoice: ref.nullable().optional(),
+        metadata: z.object({ source_instance: z.string().optional(), exam_end_at: z.string().optional() }).optional() });
+      for (const raw of existing) {
+        const prior = previous.parse(raw);
+        if (prior.metadata?.source_instance !== this.c.sourceInstance || !prior.metadata.exam_end_at || !prior.latest_invoice) continue;
+        const invoice = await this.invoice(prior.latest_invoice);
+        if (invoice.customer !== customerId) throw new BillingError("invoice_owner_mismatch", 503);
+        if (["draft", "open", "uncollectible"].includes(invoice.status) && invoice.total > 0 && invoice.total < stripeMinimumYenCharge)
+          throw new BillingError("exam_writeoff_pending", 503);
+      }
+      // Stripe applies debits to the next invoice. Customer credits can reduce
+      // the payment without changing the configured monthly price.
+      if (await this.customerBalance(customerId) > 0) throw new BillingError("customer_balance_due", 503);
+    }
     // First contract only: any earlier subscription at Stripe (even canceled) means no trial.
     const trialDays = signup.trialDays && signup.trialDays === this.c.trialDays && !existing.length ? signup.trialDays : 0;
     const suffix = [...createHash("sha256").update(signup.id).digest().subarray(0, 8)].map(v => String.fromCharCode(97 + v % 26)).join("");
@@ -95,15 +121,45 @@ export class StripeMonthlyProvider implements MonthlyProvider {
         ? `初回${trialDays}日間無料。無料期間が終わる日に月額${signup.amount}円（税込）を請求し、以後毎月自動更新。無料期間中に契約管理から解約すれば請求はありません。以前に無料期間を使ったカードでは無料期間はなく、すぐに請求します。${this.c.seller.refund} [利用条件](${this.c.origin}/billing/terms)`
         : `月額${signup.amount}円（税込）・毎月自動更新・いつでも解約可（期間末まで利用可）。${this.c.seller.refund} [利用条件](${this.c.origin}/billing/terms)` };
     if (trialDays) body["subscription_data[trial_period_days]"] = String(trialDays);
+    const examEnd = signup.examEndAt === undefined ? undefined : String(signup.examEndAt);
+    if (signup.examEndAt !== undefined) {
+      const date = examDateBeforeEnd(signup.examEndAt);
+      const deadline = `${examDateLabel(date)}まで利用可（${examDateLabel(nextJstDate(date))} 0時に自動終了・日本時間）。`;
+      const created = Math.floor(Date.parse(signup.createdAt) / 1000);
+      const firstCharge = signup.examEndAt <= created + trialDays * 86400 ? "無料期間内に終了する場合は請求なし。" : "無料期間の終了日に初回請求。";
+      body["custom_text[submit][message]"] = `${deadline}${trialDays
+        ? `初回${trialDays}日間無料。${firstCharge}以前に無料期間を使ったカードではすぐに${signup.amount}円（税込）を請求します。`
+        : `初回は${signup.amount}円（税込）を今すぐ請求します。`} 終了まで月額${signup.amount}円（税込）。${this.c.seller.refund} [利用条件](${this.c.origin}/billing/terms)`;
+      body.expires_at = String(Math.min(signup.examEndAt, created + 23 * 3600));
+    }
     for (const prefix of ["metadata", "subscription_data[metadata]"]) {
       body[`${prefix}[signup_id]`] = signup.id; body[`${prefix}[source_instance]`] = this.c.sourceInstance; body[`${prefix}[terms_hash]`] = signup.terms;
+      if (examEnd) body[`${prefix}[exam_end_at]`] = examEnd;
     }
     const result = sessionSchema.extend({ url: z.string().url() }).parse(await this.api("checkout/sessions", body, `${this.c.sourceInstance}:signup:${signup.id}`)); this.mode(result);
     if (result.customer !== customerId || result.client_reference_id !== signup.id || result.metadata.signup_id !== signup.id
-      || result.metadata.source_instance !== this.c.sourceInstance || result.metadata.terms_hash !== signup.terms
+      || result.metadata.source_instance !== this.c.sourceInstance || result.metadata.terms_hash !== signup.terms || result.metadata.exam_end_at !== examEnd
       || ![signup.amount, ...(trialDays ? [0] : [])].includes(result.amount_total) || result.amount_subtotal !== result.amount_total) throw new BillingError("checkout_total_or_owner_mismatch", 503);
     if (!result.id.startsWith(this.c.mode === "stripe-live" ? "cs_live_" : "cs_test_") || new URL(result.url).origin !== "https://checkout.stripe.com") throw new BillingError("invalid_checkout_url", 503);
     return { id: result.id, url: result.url };
+  }
+  async checkoutSession(customerId: string, signup: Signup) {
+    const schema = z.object({
+      id, livemode: z.boolean(), mode: z.literal("subscription"), customer: z.literal(customerId),
+      client_reference_id: z.literal(signup.id), metadata: z.object({
+        signup_id: z.literal(signup.id), source_instance: z.literal(this.c.sourceInstance), terms_hash: z.literal(signup.terms),
+      }),
+      status: z.enum(["open", "complete", "expired"]), subscription: ref.nullable().optional(),
+    });
+    const sessions = signup.sessionId
+      ? [await this.api(`checkout/sessions/${encodeURIComponent(signup.sessionId)}`)]
+      : (await this.list("checkout/sessions", { customer: customerId, "created[gte]": String(Math.floor(Date.parse(signup.createdAt) / 1000)) }))
+        .filter(raw => z.object({ client_reference_id: z.literal(signup.id) }).safeParse(raw).success);
+    if (!sessions.length) return null;
+    if (sessions.length !== 1) throw new BillingError("checkout_conflict", 503);
+    const session = schema.parse(sessions[0]); this.mode(session);
+    if (signup.sessionId && session.id !== signup.sessionId) throw new BillingError("checkout_owner_mismatch", 503);
+    return { id: session.id, status: session.status, ...(session.subscription ? { subscriptionId: session.subscription } : {}) };
   }
   async expireCheckout(sessionId: string) {
     const path = `checkout/sessions/${encodeURIComponent(sessionId)}`;
@@ -111,7 +167,17 @@ export class StripeMonthlyProvider implements MonthlyProvider {
     const current = state.parse(await this.api(path)); this.mode(current);
     if (current.id !== sessionId) throw new BillingError("checkout_owner_mismatch", 503);
     if (current.status === "complete") throw new BillingError("subscription_exists");
-    if (current.status === "open") { const closed = state.parse(await this.api(`${path}/expire`, {})); this.mode(closed); if (closed.status !== "expired") throw new BillingError("subscription_exists"); }
+    if (current.status === "open") {
+      try {
+        const closed = state.parse(await this.api(`${path}/expire`, {})); this.mode(closed);
+        if (closed.id !== sessionId || closed.status !== "expired") throw new BillingError("checkout_conflict", 503);
+      } catch (error) {
+        // The session can complete or expire at Stripe after our initial read.
+        const latest = state.parse(await this.api(path)); this.mode(latest);
+        if (latest.id !== sessionId || latest.status === "open") throw error;
+        if (latest.status === "complete") throw new BillingError("subscription_exists");
+      }
+    }
   }
   async portal(customerId: string, configurationId: string) {
     await this.checkPortalConfiguration(configurationId);
@@ -134,10 +200,11 @@ export class StripeMonthlyProvider implements MonthlyProvider {
     const sub = subscriptionSchema.parse(await this.api(`subscriptions/${encodeURIComponent(subId)}`)); this.mode(sub); this.mode(sub.items.data[0].price);
     if (sub.id !== subId || sub.metadata.source_instance !== this.c.sourceInstance || sub.pause_collection) throw new BillingError("unsupported_subscription", 503);
     if (sub.trial_end) {
-      // Only the first-contract trial: it ends exactly at the trial period's end and is never longer than offered.
       const item = sub.items.data[0];
-      // Either the period is the trial itself (trialing, or ended/canceled during it), or the trial lies before the period.
-      const trialPeriod = item.current_period_end === sub.trial_end && item.current_period_end - item.current_period_start <= this.c.trialDays * 86400 + 3600;
+      const examEnd = confirmedExamEnd(sub);
+      const shortened = examEnd === item.current_period_end && item.current_period_end < sub.trial_end;
+      const trialPeriod = (item.current_period_end === sub.trial_end || shortened)
+        && sub.trial_end > item.current_period_start && sub.trial_end - item.current_period_start <= this.c.trialDays * 86400 + 3600;
       const ok = this.c.trialDays > 0 && (sub.status === "trialing" ? trialPeriod : trialPeriod || sub.trial_end <= item.current_period_start);
       if (!ok) throw new BillingError("unsupported_subscription", 503);
     }
@@ -245,6 +312,7 @@ export class StripeMonthlyProvider implements MonthlyProvider {
   async observe(target: Target): Promise<Observation> {
     const result: Observation = { contracts: [], invoices: [], payments: [] }, invoiceIds = new Set(target.invoiceIds);
     const subscriptionIds = new Set(target.subscriptionIds);
+    const examEnds = new Map<string, number>();
     if (target.unallocatedRefund) {
       if (target.subscriptionIds.length || target.invoiceIds.length || target.sessionId || target.risk?.kind !== "refund" || !target.risk.signed)
         throw new BillingError("unverified_refund_target", 503);
@@ -260,33 +328,90 @@ export class StripeMonthlyProvider implements MonthlyProvider {
     for (const subId of subscriptionIds) {
       const s = await this.subscription(subId), item = s.items.data[0];
       if (s.customer !== target.customerId || item.current_period_start >= item.current_period_end) throw new BillingError("subscription_mismatch", 503);
-      // Portal may express period-end cancellation with cancel_at alone. Our
-      // contract supports period-end cancellation, not arbitrary dated endings.
-      // Compare provider timestamps, never the host clock (Test Clocks differ).
-      if (s.cancel_at != null && s.cancel_at !== item.current_period_end && !["canceled", "incomplete_expired"].includes(s.status))
+      const ending = memberEnding(s);
+      const examEnd = ending ? undefined : confirmedExamEnd(s);
+      // An already-issued, shortened invoice stays valid after its original exam date is edited.
+      const invoiceExamEnd = examEnd ?? (ending && Number(s.metadata.exam_end_at));
+      if (invoiceExamEnd) examEnds.set(s.id, invoiceExamEnd);
+      if (s.cancel_at != null && s.cancel_at !== item.current_period_end && !examEnd && ending?.kind !== "exam" && !terminal(s.status))
         throw new BillingError("unsupported_subscription_cancellation", 503);
       result.contracts.push({ id: s.id, customerId: s.customer, signupId: s.metadata.signup_id, priceId: item.price.id, amount: item.price.unit_amount,
-        status: s.status as ContractStatus, periodStart: item.current_period_start, periodEnd: item.current_period_end,
-        cancelAtPeriodEnd: s.cancel_at_period_end || s.cancel_at === item.current_period_end,
+        status: s.status, periodStart: item.current_period_start, periodEnd: item.current_period_end,
+        cancelAtPeriodEnd: s.cancel_at_period_end || ending?.kind !== "exam" && s.cancel_at === item.current_period_end,
+        ...(examEnd ? { examCancelAt: examEnd } : {}),
+        ...(ending ? { memberEnding: ending } : {}),
         sourceInstance: s.metadata.source_instance, terms: s.metadata.terms_hash,
         ...(s.status === "trialing" ? { trialCard: await this.cardHash(s.default_payment_method ?? null) } : {}),
         ...(s.default_tax_rates === undefined ? { subscriptionTaxState: "unknown" as const } : {}) });
       if (s.latest_invoice) invoiceIds.add(s.latest_invoice);
     }
     const observedPayments = new Map<string, Payment>();
+    let ledger: ReturnType<StripeMonthlyProvider["balanceLedger"]> | undefined;
+    const balanceLedger = () => ledger ??= this.balanceLedger(target.customerId);
     for (const invoiceId of invoiceIds) {
       const i = await this.invoice(invoiceId), subId = i.parent.subscription_details.subscription;
       if (i.customer !== target.customerId || !subscriptionIds.has(subId)) throw new BillingError("invoice_owner_mismatch", 503);
       // The zero-yen invoice that opens a trial is not a payment and grants nothing; trial access comes from the contract.
-      if (this.c.trialDays > 0 && i.billing_reason === "subscription_create" && i.total === 0 && i.amount_due === 0 && i.amount_paid === 0) continue;
+      if (this.c.trialDays > 0 && i.billing_reason === "subscription_create" && i.total === 0 && i.starting_balance === 0 && i.amount_due === 0 && i.amount_paid === 0) continue;
       const lines = (await this.list(`invoices/${encodeURIComponent(i.id)}/lines`, {})).map(l => lineSchema.parse(l));
       if (lines.length !== 1 || lines[0].parent.subscription_item_details.subscription !== subId || lines[0].amount !== i.total
-        || i.amount_due !== i.total || i.total < 1) throw new BillingError("unsupported_invoice", 503);
+        || i.total < 1) throw new BillingError("unsupported_invoice", 503);
       const line = lines[0];
       const invoice: Invoice = { id: i.id, customerId: i.customer, subscriptionId: subId, priceId: line.pricing.price_details.price,
         periodStart: line.period.start, periodEnd: line.period.end, amount: i.total, paid: i.status === "paid", payments: [] };
+      if (i.billing_reason === "subscription_cycle" && line.period.end === examEnds.get(subId)) invoice.examFinalCycle = true;
+      if (line.parent.subscription_item_details.proration && !invoice.examFinalCycle)
+        throw new BillingError("unsupported_invoice", 503);
+      const due = Math.max(0, i.total + i.starting_balance);
+      if (invoice.examFinalCycle && i.total < stripeMinimumYenCharge && i.starting_balance <= 0 && !i.amount_paid) {
+        if (invoice.paid) {
+          if (i.amount_remaining !== 0 || (i.amount_due !== 0 && i.amount_due !== due) || i.ending_balance !== i.starting_balance + i.total)
+            throw new BillingError("unverified_invoice_balance", 503);
+          invoice.examWriteOff = true;
+        } else if (i.status === "void") invoice.examWaived = true;
+        result.invoices.push(invoice);
+        continue;
+      }
+      if (i.starting_balance > 0) {
+        const history = await balanceLedger();
+        const applied = history.findIndex(entry => entry.invoice === i.id && entry.type === "applied_to_invoice");
+        const balanceApplication = history[applied];
+        const finalizedAt = i.status_transitions?.finalized_at;
+        // Some invoices account for a debit through their starting balance. Use
+        // the balance at finalization only when there is no invoice-linked application.
+        const lastAtFinalization = applied === -1 && invoice.paid && i.ending_balance === 0 && finalizedAt
+          ? history.find(entry => entry.created <= finalizedAt) : undefined;
+        const prior = balanceApplication?.amount === -i.starting_balance && balanceApplication.ending_balance === 0 ? history[applied + 1]
+          : lastAtFinalization && finalizedAt && lastAtFinalization.created < finalizedAt ? lastAtFinalization : undefined;
+        if (i.starting_balance >= stripeMinimumYenCharge || !prior?.invoice || prior.invoice === i.id
+          || prior.type !== "invoice_too_small" || prior.amount !== i.starting_balance || prior.ending_balance !== i.starting_balance)
+          throw new BillingError("unsupported_invoice_balance", 503);
+        invoice.carryover = { transactionId: prior.id, amount: prior.amount };
+        // Reconcile both invoices even when the renewal webhook arrives first.
+        invoiceIds.add(prior.invoice);
+      }
+      if (invoice.paid && i.starting_balance < 0 && due > 0 && due < stripeMinimumYenCharge && i.amount_paid === 0) {
+        if ((i.amount_due !== 0 && i.amount_due !== due) || i.amount_remaining !== 0 || i.ending_balance !== due)
+          throw new BillingError("unverified_invoice_balance", 503);
+        const credit = i.total - due;
+        const entries = (await balanceLedger()).filter(entry => entry.invoice === i.id);
+        const applied = entries.filter(entry => entry.type === "applied_to_invoice");
+        const deferred = entries.filter(entry => entry.type === "invoice_too_small");
+        if (applied.length !== 1 || applied[0].amount !== credit || applied[0].ending_balance !== 0
+          || deferred.length !== 1 || deferred[0].amount !== due || deferred[0].ending_balance !== due
+          || entries.some(entry => entry.type === "unapplied_from_invoice"))
+          throw new BillingError("unverified_invoice_balance", 503);
+        invoice.customerCredit = credit;
+        invoice.deferredDebit = { transactionId: deferred[0].id, amount: due };
+        result.invoices.push(invoice);
+        continue;
+      }
+      if (i.amount_due !== due) throw new BillingError("unsupported_invoice", 503);
       if (invoice.paid) {
-        if (i.amount_paid !== i.total || i.amount_remaining !== 0) throw new BillingError("unsupported_invoice_payment", 503);
+        if (i.amount_paid !== due || i.amount_remaining !== 0
+          || i.starting_balance !== 0 && i.ending_balance !== Math.min(0, i.starting_balance + i.total))
+          throw new BillingError("unsupported_invoice_payment", 503);
+        if (due < i.total) invoice.customerCredit = i.total - due;
         const allocations = (await this.list("invoice_payments", { invoice: i.id, status: "paid" })).map(v => allocationSchema.parse(v));
         for (const a of allocations) {
           this.mode(a); if (a.invoice !== i.id || a.amount_paid < 1) throw new BillingError("invoice_payment_mismatch", 503);
@@ -299,7 +424,7 @@ export class StripeMonthlyProvider implements MonthlyProvider {
           if (a.amount_paid > payment.amount) throw new BillingError("invoice_allocation_overflow", 503);
           invoice.payments.push({ id: a.id, paymentId: piId, amount: a.amount_paid });
         }
-        if (invoice.payments.reduce((n, p) => n + p.amount, 0) !== invoice.amount) throw new BillingError("unverified_invoice_payment", 503);
+        if (invoice.payments.reduce((n, p) => n + p.amount, 0) !== due) throw new BillingError("unverified_invoice_payment", 503);
       }
       result.invoices.push(invoice);
     }
@@ -309,6 +434,75 @@ export class StripeMonthlyProvider implements MonthlyProvider {
       observedPayments.set(target.risk.paymentId, await this.payment(target.risk.paymentId, target.customerId, target.risk));
     }
     result.payments = [...observedPayments.values()]; return result;
+  }
+  private async balanceLedger(customerId: string) {
+    const entries = await this.list(`customers/${encodeURIComponent(customerId)}/balance_transactions`, {});
+    return entries.map(raw => {
+      const entry = balanceTransactionSchema.parse(raw);
+      this.mode(entry);
+      if (entry.customer !== customerId) throw new BillingError("customer_mismatch", 503);
+      return entry;
+    });
+  }
+  private async customerBalance(customerId: string) {
+    const customer = customerBalanceSchema.parse(await this.api(`customers/${encodeURIComponent(customerId)}`));
+    this.mode(customer);
+    if (customer.id !== customerId || customer.currency !== "jpy" && customer.balance !== 0)
+      throw new BillingError("customer_mismatch", 503);
+    return customer.balance;
+  }
+  async clearSmallExamBalance(customerId: string, invoice: Invoice) {
+    const path = `invoices/${encodeURIComponent(invoice.id)}`;
+    const key = `${this.c.sourceInstance}:exam-writeoff:${invoice.id}`;
+    const validate = (value: z.infer<typeof invoiceSchema>) => {
+      this.mode(value);
+      if (!invoice.examFinalCycle || value.id !== invoice.id || value.customer !== customerId
+        || value.parent.subscription_details.subscription !== invoice.subscriptionId || value.billing_reason !== "subscription_cycle"
+        || value.total !== invoice.amount || value.total < 1 || value.total >= stripeMinimumYenCharge || value.amount_paid > 0)
+        throw new BillingError("exam_writeoff_conflict", 503);
+      return value;
+    };
+    let current = validate(await this.invoice(invoice.id));
+    if (current.status === "draft") {
+      try {
+        current = validate(invoiceSchema.parse(await this.api(`${path}/finalize`, { auto_advance: "false" }, `${key}:finalize`)));
+      } catch (error) {
+        current = validate(await this.invoice(invoice.id));
+        if (current.status === "draft") throw error;
+      }
+    }
+    if (current.status === "open" || current.status === "uncollectible") {
+      try {
+        current = validate(invoiceSchema.parse(await this.api(`${path}/void`, {}, `${key}:void`)));
+      } catch (error) {
+        current = validate(await this.invoice(invoice.id));
+        if (current.status === "open" || current.status === "uncollectible") throw error;
+      }
+    }
+    if (current.status === "void") return;
+    if (current.status !== "paid" || current.starting_balance > 0 || current.amount_remaining !== 0
+      || current.ending_balance !== current.starting_balance + current.total)
+      throw new BillingError("exam_writeoff_conflict", 503);
+    const ledgerPath = `customers/${encodeURIComponent(customerId)}/balance_transactions`;
+    const matches = (entry: z.infer<typeof balanceTransactionSchema>) => {
+      this.mode(entry);
+      return entry.customer === customerId && entry.type === "adjustment" && entry.amount === -invoice.amount
+        && entry.metadata?.exam_invoice === invoice.id && entry.metadata?.source_instance === this.c.sourceInstance;
+    };
+    const ledger = await this.balanceLedger(customerId);
+    if (ledger.some(matches)) return;
+    const credit = Math.min(-current.starting_balance, current.total);
+    const debit = current.total - credit;
+    const verified = (type: string, amount: number) => !amount || ledger.some(entry => {
+      this.mode(entry);
+      return entry.customer === customerId && entry.invoice === invoice.id && entry.type === type && entry.amount === amount;
+    });
+    if (!verified("invoice_too_small", debit) || !verified("applied_to_invoice", credit))
+      throw new BillingError("unverified_invoice_balance", 503);
+    const adjustment = balanceTransactionSchema.parse(await this.api(ledgerPath, {
+      amount: String(-invoice.amount), currency: "jpy", "metadata[exam_invoice]": invoice.id, "metadata[source_instance]": this.c.sourceInstance,
+    }, `${key}:adjustment`));
+    if (!matches(adjustment)) throw new BillingError("exam_writeoff_conflict", 503);
   }
   /** Irreversible per-card key for the one-trial-per-card rule; the raw fingerprint is never stored. */
   private async cardHash(paymentMethodId: string | null) {
@@ -328,4 +522,149 @@ export class StripeMonthlyProvider implements MonthlyProvider {
       { cancel_at_period_end: "true", proration_behavior: "none" }, `${this.c.sourceInstance}:risk:${eventId}:${subscriptionId}`)); this.mode(s);
     if (s.id !== subscriptionId) throw new BillingError("subscription_mismatch", 503);
   }
+  async stopAppStoreOverlapRenewal(subscriptionId: string, customerId: string, signup: Signup) {
+    const current = await this.ownedSubscription(subscriptionId, customerId, signup);
+    const periodEnd = current.items.data[0].current_period_end;
+    if (terminal(current.status)) return null;
+    const ending = memberEnding(current);
+    if (ending?.kind === "cancel" && ending.at === periodEnd) return periodEnd;
+    if (current.cancel_at_period_end || (current.cancel_at != null && current.cancel_at <= periodEnd)) return null;
+    const path = `subscriptions/${encodeURIComponent(subscriptionId)}`;
+    const marker = `cancel:${periodEnd}`;
+    const updated = subscriptionSchema.parse(await this.api(path,
+      { cancel_at: String(periodEnd), "metadata[member_ending]": marker,
+        proration_behavior: "none", "billing_cycle_anchor[type]": "unchanged" },
+      `${this.c.sourceInstance}:app-store-overlap:${subscriptionId}:${signup.appStoreOverlap?.renewalAttempt ?? 0}:${periodEnd}`));
+    this.mode(updated);
+    if (updated.id !== subscriptionId || updated.cancel_at !== periodEnd || updated.metadata.member_ending !== marker)
+      throw new BillingError("subscription_ending_unconfirmed", 503);
+    return periodEnd;
+  }
+  async scheduleExamEnd(subscriptionId: string, customerId: string, signup: Signup, now: number) {
+    const current = await this.ownedSubscription(subscriptionId, customerId, signup);
+    const examEnd = signup.examEndAt;
+    if (examEnd === undefined) throw new BillingError("subscription_owner_mismatch", 503);
+    if (current.metadata.member_ending) return "superseded";
+    if (terminal(current.status)) return "ended";
+    const path = `subscriptions/${encodeURIComponent(subscriptionId)}`;
+    if (examEnd <= now) {
+      await this.endWithoutInvoice(subscriptionId, customerId, signup);
+      return "ended";
+    }
+    if (current.cancel_at === examEnd) return "scheduled";
+    if (current.cancel_at != null || current.cancel_at_period_end || !["active", "trialing", "past_due"].includes(current.status)) return "conflict";
+    const updated = z.object({ id, livemode: z.boolean(), cancel_at: z.literal(examEnd) }).parse(await this.api(
+      path, { cancel_at: String(examEnd), proration_behavior: "none" },
+      `${this.c.sourceInstance}:exam-end:${signup.id}`,
+    ));
+    this.mode(updated);
+    if (updated.id !== subscriptionId) throw new BillingError("subscription_mismatch", 503);
+    return "scheduled";
+  }
+
+  private async ownedSubscription(subscriptionId: string, customerId: string, signup: Signup) {
+    const current = await this.subscription(subscriptionId);
+    const { price } = current.items.data[0];
+    const originalExamEnd = signup.examEndAt === undefined ? undefined : String(signup.examEndAt);
+    if (current.customer !== customerId || current.metadata.signup_id !== signup.id
+      || current.metadata.terms_hash !== signup.terms || current.metadata.exam_end_at !== originalExamEnd
+      || price.id !== signup.priceId || price.unit_amount !== signup.amount)
+      throw new BillingError("subscription_owner_mismatch", 503);
+    return current;
+  }
+
+  async changeEnding(subscriptionId: string, customerId: string, signup: Signup, change: EndingChange, now: number,
+    beforeExtension?: () => Promise<void>) {
+    const current = await this.ownedSubscription(subscriptionId, customerId, signup);
+    const { current_period_end: periodEnd } = current.items.data[0];
+    if (!["active", "trialing", "past_due"].includes(current.status) || periodEnd <= now)
+      throw new BillingError("subscription_ending_conflict", 409);
+    const ending = memberEnding(current);
+    const legacyExamEnd = current.metadata.member_ending ? undefined : confirmedExamEnd(current);
+    const periodEndCancel = current.cancel_at_period_end || (current.cancel_at === periodEnd && !legacyExamEnd && ending?.kind !== "exam");
+    if (periodEndCancel) {
+      if (change.kind === "cancel") return;
+      throw new BillingError("subscription_ending_conflict", 409);
+    }
+    if (current.cancel_at != null && !legacyExamEnd && ending?.kind !== "exam")
+      throw new BillingError("subscription_ending_conflict", 409);
+    const pendingExamEnd = !ending && !signup.examEndApplied ? signup.examEndAt : undefined;
+    const oldExamEnd = ending?.kind === "exam" ? ending.at : legacyExamEnd ?? pendingExamEnd;
+    if (oldExamEnd !== undefined && oldExamEnd <= now) throw new BillingError("subscription_ending_conflict", 409);
+    if (change.kind === "exam" && change.at <= now) throw new BillingError("invalid_exam_date", 400);
+    if (change.kind === "exam" && change.at === oldExamEnd || change.kind === "renew" && oldExamEnd === undefined && signup.examEndAt === undefined) return;
+
+    // Arm Stripe at a full renewal boundary. The exam-end job stops access on
+    // the requested day, with this boundary as a backstop against another charge.
+    const stopAt = change.kind === "exam" ? examRenewalBoundary(current, change.at, legacyExamEnd) :
+      change.kind === "cancel" ? periodEnd : null;
+    const marker = change.kind === "exam" ? `exam:${change.at}:${stopAt}` :
+      change.kind === "cancel" ? `cancel:${stopAt}` : "renew";
+    if (current.metadata.member_ending === marker && (current.cancel_at ?? null) === stopAt) return;
+    const requestedEnd = change.kind === "exam" ? change.at : stopAt ?? Infinity;
+    if (oldExamEnd !== undefined && requestedEnd > oldExamEnd) await beforeExtension?.();
+    const body: Record<string, string> = { "metadata[member_ending]": marker, proration_behavior: "none", "billing_cycle_anchor[type]": "unchanged" };
+    if ((current.cancel_at ?? null) !== stopAt) body.cancel_at = stopAt === null ? "" : String(stopAt);
+    const updated = subscriptionSchema.parse(await this.api(`subscriptions/${encodeURIComponent(subscriptionId)}`, body));
+    this.mode(updated);
+    if (updated.id !== subscriptionId || updated.metadata.member_ending !== marker || (updated.cancel_at ?? null) !== stopAt)
+      throw new BillingError("subscription_ending_unconfirmed", 503);
+  }
+
+  async endMemberExam(subscriptionId: string, customerId: string, signup: Signup, now: number) {
+    const current = await this.ownedSubscription(subscriptionId, customerId, signup);
+    const ending = memberEnding(current);
+    if (!terminal(current.status) && ending?.kind === "exam" && ending.at <= now && !current.cancel_at_period_end)
+      await this.endWithoutInvoice(subscriptionId, customerId, signup);
+  }
+
+  private async endWithoutInvoice(subscriptionId: string, customerId: string, signup: Signup) {
+    try {
+      const path = `subscriptions/${encodeURIComponent(subscriptionId)}?invoice_now=false&prorate=false`;
+      const closed = z.object({ id, livemode: z.boolean(), status: z.literal("canceled") }).parse(await this.api(path, undefined, undefined, "DELETE"));
+      this.mode(closed);
+      if (closed.id !== subscriptionId) throw new BillingError("subscription_mismatch", 503);
+    } catch (error) {
+      // Stripe can reach the backstop at the same time as this job.
+      if ((await this.ownedSubscription(subscriptionId, customerId, signup)).status !== "canceled") throw error;
+    }
+  }
+}
+
+type StripeSubscription = z.infer<typeof subscriptionSchema>;
+
+function memberEnding(subscription: StripeSubscription): MemberEnding | undefined {
+  if (!subscription.metadata.member_ending) return;
+  const [kind, rawDate, rawRenewal] = subscription.metadata.member_ending.split(":");
+  const at = Number(rawDate), renewalEnd = Number(rawRenewal);
+  if (kind === "exam" && (subscription.cancel_at === renewalEnd || terminal(subscription.status))) return { kind, at, renewalEnd };
+  if (kind === "cancel" && (subscription.cancel_at === at || terminal(subscription.status))) return { kind, at };
+  // A Stripe Portal change can withdraw or override a stored reservation.
+  return { kind: "renew" };
+}
+
+function examRenewalBoundary(subscription: StripeSubscription, endAt: number, legacyExamEnd?: number) {
+  const item = subscription.items.data[0];
+  const periodEnd = item.current_period_end;
+  if (subscription.status === "trialing" && subscription.trial_end && endAt <= subscription.trial_end) return subscription.trial_end;
+  const anchor = subscription.billing_cycle_anchor;
+  if (!anchor) throw new BillingError("subscription_ending_unconfirmed", 503);
+  if (endAt <= periodEnd && periodEnd !== legacyExamEnd && subscription.status !== "trialing") return periodEnd;
+
+  const from = new Date(anchor * 1000);
+  const target = new Date(Math.max(endAt, periodEnd) * 1000);
+  const boundary = (nextMonth: number) => {
+    const date = new Date(from);
+    const month = target.getUTCMonth() + nextMonth;
+    const lastDay = new Date(Date.UTC(target.getUTCFullYear(), month + 1, 0)).getUTCDate();
+    date.setUTCFullYear(target.getUTCFullYear(), month, Math.min(from.getUTCDate(), lastDay));
+    return date.getTime() / 1000;
+  };
+  return boundary(0) >= target.getTime() / 1000 ? boundary(0) : boundary(1);
+}
+
+function confirmedExamEnd(subscription: z.infer<typeof subscriptionSchema>): number | undefined {
+  const scheduled = Number(subscription.metadata.exam_end_at);
+  if (scheduled && (subscription.cancel_at === scheduled || subscription.status === "canceled" && subscription.ended_at != null
+    && (subscription.ended_at === scheduled || subscription.ended_at > scheduled && subscription.items.data[0].current_period_end === scheduled))) return scheduled;
 }

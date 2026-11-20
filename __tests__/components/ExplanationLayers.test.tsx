@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { expect, it } from "vitest";
 import { ExplanationLayers, ExplanationStructureLabel } from "@/components/quiz/ExplanationLayers";
 
@@ -36,7 +36,7 @@ it("renders the restored AP2016 explanation as its two complete paragraphs", () 
   expect(screen.getByText("結論 → 詳細 の 2 層構成")).toBeInTheDocument();
   expect(screen.queryByText("補足")).not.toBeInTheDocument();
   expect(container.querySelectorAll("article")).toHaveLength(2);
-  expect(container.querySelectorAll("details")).toHaveLength(1);
+  expect(container.querySelectorAll("details")).toHaveLength(0);
   expect([...container.querySelectorAll(".selectable-content")].map(body => body.textContent))
     .toEqual(q.explanation.split("\n\n"));
   expect(container.textContent).toContain("(¬A)・X");
@@ -53,10 +53,8 @@ it("retains three sections and readable bodies when the source has three paragra
   expect(screen.getByText("補足")).toBeInTheDocument();
   expect(container.querySelectorAll("article")).toHaveLength(3);
   const details = container.querySelectorAll("details");
-  expect(details).toHaveLength(2);
-  expect([...details].every(detail => detail.open)).toBe(true);
+  expect(details).toHaveLength(0);
   expect([...container.querySelectorAll(".selectable-content")].map(body => body.textContent)).toEqual(paragraphs);
-  fireEvent.click(details[0].querySelector("summary")!);
   expect(container.textContent).toContain(paragraphs[1]);
 });
 

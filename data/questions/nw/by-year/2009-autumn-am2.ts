@@ -24,6 +24,7 @@ export const NW_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "総データ量は1,000バイト/件 × 1,000件 = 1,000,000バイト = 8,000,000ビットです。LANの実際の伝送速度は100Mビット/秒 × 50% = 50Mビット/秒 = 50,000,000ビット/秒です。したがって、伝送時間は8,000,000ビット / 50,000,000ビット/秒 = 0.16秒となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const NW_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ブリッジはデータリンク層で動作し、ブロードキャストフレームはすべてのセグメントに転送します。一方、衝突発生時に生じる不完全フレーム（コリジョンフラグメント）は不正なデータであり、ブリッジはこれらを中継しません。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const NW_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "CSMA (Carrier Sense Multiple Access) 方式は、送信前に伝送路が空いているかどうかをキャリアセンス（搬送波検出）によって確認し、空いていれば送信を開始する方式です。これにより、伝送路の使用状況を検出して送信を制御します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -95,7 +98,14 @@ export const NW_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
       "エ": "x: 50, y: 50"
     },
     "answer": "イ",
-    "explanation": "OSPFでは、リンクのコストは帯域幅の逆数に比例して設定されることが一般的であり、コストが小さいほど優先されます。問題文の意図は、拠点1と拠点3間の通信をWAN1経由（コストx）、拠点2と拠点3間の通信をWAN2経由（コストy）で、それぞれ優先的にルーティングさせたいということです。OSPFのルーティングアルゴリズムは、宛先までの合計コストが最も小さい経路を選択します。\n\n正解のイ（x: 30, y: 30）は、WAN1とWAN2のコストを同等にし、かつ、他の選択肢と比較して、特定の経路への過度な優遇や排除を避けるバランスの取れた設定であると考えられます。OSPFは、コストが小さい経路を優先しますが、xとyが大きすぎると、他の経路が選ばれてしまう可能性があり、小さすぎると、本来避けたい経路が選ばれるリスクがあります。\n\nア（x: 20, y: 20）は、WAN1とWAN2のコストが低いですが、この値だけでは、他の経路との相対的な比較が不明なため、必ずしも意図した経路が選択されるとは限りません。\nウ（x: 40, y: 40）およびエ（x: 50, y: 50）は、WAN1とWAN2のコストが高く設定されています。OSPFではコストが低い経路を優先するため、これらの設定では、意図したWAN1やWAN2を経由せず、よりコストの低い別の経路が選択されてしまう可能性が高くなります。例えば、図中の数字が示す他の経路のコストよりもこれらの値が高ければ、WAN1やWAN2は迂回されます。",
+    "explanation": "経路のコストは各リンクの和です。拠点1からWAN1経由で拠点3までは30＋100＋30＋10＝170、拠点2からは50＋100＋30＋10＝190です。WAN2経由はどちらの拠点からも40＋100＋min（x, y）＋10です。これが170より大きく190より小さくなる組合せはx＝y＝30です。",
+    "choiceExplanations": {
+      "ア": "20では拠点1から拠点3へWAN2を経由するコストが170より小さい160になります。拠点1がWAN1を使う条件を満たせません。",
+      "イ": "30なら拠点1の最小コストはWAN1が170、WAN2が180です。拠点2ではWAN1が190、WAN2が180なので指定どおりに分かれます。",
+      "ウ": "40では拠点2から拠点3への最小コストがどちらのWANでも190になります。コストが同じなのでWAN2に限定できません。",
+      "エ": "50では拠点2から拠点3への最小コストがWAN1で190、WAN2で200です。拠点2もコストの小さいWAN1を経由します。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +130,7 @@ export const NW_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "アドミッション制御は、通信を開始する前にネットワークに対して帯域などのリソースを要求し、その確保状況に応じて通信の可否や品質を制御する方式です。これにより、ネットワークが過負荷になることを防ぎ、QoSを維持します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +155,13 @@ export const NW_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "マルチホーミング環境における負荷分散装置の役割を理解することが重要です。\n\n正解はイです。負荷分散装置は、クライアントからのパケットを受信した際、そのパケットの宛先IPアドレスは変更せずに、宛先MACアドレスを、負荷分散装置が選択した接続先サーバへの経路を担当するルータ（ルータ1またはルータ2）のMACアドレスに置き換えます。これにより、パケットは正しく適切なルータへ転送され、最終的に接続先サーバに到達します。これは、ローカルエリアネットワーク（LAN）内での通信において、MACアドレスが次のホップ（経路上の機器）を指定する役割を担うためです。\n\nアは不適切です。宛先MACアドレスを接続先サーバのMACアドレスに置き換えてしまうと、負荷分散装置から直接サーバへの通信となってしまい、ルータを経由するというマルチホーミングの構成が機能しなくなります。\n\nウは不適切です。宛先MACアドレスをそのままにするということは、負荷分散装置がローカルネットワーク外の宛先MACアドレスを持つパケットを処理しようとしていることを意味し、IPルーティングの仕組みに反します。\n\nエも不適切です。宛先IPアドレスをルータのIPアドレスに置き換えると、負荷分散装置が宛先IPアドレスを偽装（スプーフィング：IPアドレスを偽る不正な通信）していることになり、本来の接続先サーバへの到達ができなくなります。",
+    "choiceExplanations": {
+      "ア": "接続先サーバは異なるネットワーク上にあるため、サーバのMACアドレスをこの区間の宛先にしても、選んだルータに転送できません。",
+      "イ": "最終宛先のIPアドレスを維持しつつ、次に渡すルータのMACアドレスをフレームの宛先に設定すれば、選んだISP側へ転送できます。",
+      "ウ": "接続先ルータを宛先IPアドレスにすると、最終的な宛先がサーバを示さなくなります。経由先の選択はこの区間の宛先MACに反映します。",
+      "エ": "ルータ1や2のIPアドレスをパケットの宛先にすると、ルータ自体が最終宛先になってしまいます。変更するのはフレームの宛先MACです。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +186,7 @@ export const NW_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ARP (Address Resolution Protocol) は、TCP/IPネットワークにおいて、IPアドレスから対応するMACアドレス（物理アドレス）を解決するために使用されるプロトコルです。送信元は宛先のIPアドレスを知っていてもMACアドレスを知らない場合にARP要求をブロードキャストで送信し、対応するMACアドレスを取得します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +211,7 @@ export const NW_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "DHCP (Dynamic Host Configuration Protocol) はブロードキャスト通信を利用してIPアドレスを割り当てますが、ルータはデフォルトでブロードキャストフレームを転送しません。そのため、DHCPサーバとクライアントが異なるサブネットに存在する場合、ルータにDHCPリレーエージェントを設定してブロードキャストを中継させる必要があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -215,7 +235,14 @@ export const NW_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
       "エ": "リソースレコードには、ドメイン、ホスト、ネームサーバなどに関する情報が保持されており, DNS サーバの構築時に登録され、更新することができない。"
     },
     "answer": "ア",
-    "explanation": "DNS (Domain Name System) は階層構造を持っており、DNSサーバは自身が管理していないドメインの名前解決要求を受けた場合、上位のDNSサーバに対して問い合わせを転送することで名前解決を行います。この階層的な問い合わせにより、インターネット全体で効率的な名前解決を実現しています。",
+    "explanation": "IPAの公表解答はアです。DNSは階層的な名前空間を使い、キャッシュに必要な情報がない場合、再帰リゾルバは上位の権威サーバから委任情報を取得して、目的のゾーンの権威サーバまでたどります。",
+    "choiceExplanations": {
+      "ア": "DNSの名前空間は階層構造です。解決に必要な情報が手元にない場合、再帰リゾルバはルートなどから委任をたどって該当する権威サーバに問い合わせます。",
+      "イ": "セカンダリは、対象ゾーンのデータをゾーン転送で複製して提供します。問い合わせの分散や冗長化に使えますが、内容を別に持つ仕組みではありません。",
+      "ウ": "リゾルバは問い合わせを送って名前解決を行う側です。管理するゾーンのデータを根拠に応答するのは、そのゾーンの権威サーバです。",
+      "エ": "リソースレコードにはアドレスや委任などの情報が入ります。ホストの追加やアドレス変更に合わせて、ゾーンのレコードを更新できます。"
+    },
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +267,7 @@ export const NW_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "HTTPのGETメソッドは、リソースの取得を要求するもので、安全かつ冪等であるべきとされ、HTTPの仕様で必須の実装とされています。一方、POSTメソッドはサーバにデータを送信し、サーバ側の状態を変更する可能性のある操作に使われ、GETほど厳密な実装必須要件はありません。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +292,7 @@ export const NW_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "RARP (Reverse Address Resolution Protocol) は、MACアドレスから対応するIPアドレスを取得するためのデータリンク層のプロトコルです。ディスクレスワークステーションのように、電源オン時にIPアドレスを保持できない装置が、自身のMACアドレスを用いてRARPサーバに問い合わせ、IPアドレスを取得するために利用されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +317,7 @@ export const NW_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "WebDAV (Web-based Distributed Authoring and Versioning) は、HTTPプロトコルを拡張し、Webサーバ上のファイルをクライアントから直接操作（作成、編集、削除、プロパティ管理など）することを可能にするプロトコルです。これにより、Webコンテンツのアップロードや更新が容易になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +342,7 @@ export const NW_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "サブネットマスク255.255.255.224を2進数で表すと、第4オクテットは11100000となります。IPアドレス212.62.31.90の第4オクテット90を2進数で表すと01011010です。サブネットマスクの1の部分がネットワーク部、0の部分がホスト部を示すため、ホスト部は下位5ビットの11010となります。11010を10進数に変換すると26となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +367,7 @@ export const NW_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "与えられた4つのネットワークアドレスの第3オクテットを2進数で表すと、32(00100000), 33(00100001), 34(00100010), 35(00100011)です。共通する上位6ビットは001000であり、これに0を埋めるとネットワーク番号192.168.32.0となります。上位22ビット（8+8+6）がネットワーク部となるため、サブネットマスクは/22、すなわち255.255.252.0となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +392,7 @@ export const NW_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ウィンドウによるフロー制御は、受信側が受信可能なデータ量を示す「ウィンドウサイズ」を用いて、送信側が複数のデータを連続して送信することを可能にする方式です。受信側からの応答確認（ACK）があったブロック数だけウィンドウをずらすことで、効率的なデータ伝送を実現します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +417,7 @@ export const NW_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "VRRP (Virtual Router Redundancy Protocol) は、LAN上に複数のルータが存在する場合に、それらを仮想的に1台のルータとして動作させることで、デフォルトゲートウェイの冗長性を実現するプロトコルです。これにより、特定のルータが故障しても通信が継続されるようになります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +442,7 @@ export const NW_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "リバースプロキシは、インターネットからのクライアント要求を一旦受け取り、それを内部ネットワークのWebサーバに転送（中継）し、Webサーバからの応答をクライアントに返送する仕組みです。負荷分散やセキュリティ強化の目的で利用されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +467,7 @@ export const NW_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "チャレンジレスポンス方式は、認証サーバがクライアントに対してランダムなデータ（チャレンジ）を送信し、クライアントがそのチャレンジと自身の秘密鍵（パスワードなど）を用いて演算した結果（レスポンス）をサーバに返送することで認証を行う方式です。これにより、パスワード自体をネットワーク上に流すことなく認証が可能です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +492,7 @@ export const NW_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "DNSキャッシュポイズニングは、DNSサーバのキャッシュに偽のドメイン名とIPアドレスの情報を注入する攻撃です。これにより、社内利用者がインターネット上の特定のWebサーバにアクセスしようとした際、誤ったIPアドレスが返され、攻撃者が用意した偽のWebサーバに誘導される可能性があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +517,7 @@ export const NW_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "パケットフィルタリング型ファイアウォールは、IPアドレス、ポート番号、プロトコルなどの情報に基づいて、特定の通信の通過を許可または拒否します。これにより、外部に公開していないサービス（特定のポート番号を使用するサービス）への不正なアクセスを、そのポート番号の通信をブロックすることで防ぐことができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +542,7 @@ export const NW_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "認証VLANは、IEEE 802.1Xなどの認証プロトコルを利用して、接続を試みる端末の認証が成功した場合にのみ、レイヤ2スイッチや無線LANアクセスポイントがVLANへの接続を許可する仕組みです。これにより、不正な端末がネットワークに接続することを防ぎ、セキュリティを強化します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +567,7 @@ export const NW_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "シリアルATA (SATA) は、コンピュータ内部のストレージデバイス（ハードディスクドライブやSSD、光学ドライブなど）をマザーボードに接続するためのシリアルインターフェース規格です。高速なデータ転送速度が特徴であり、PCの主要な高速周辺機器接続に用いられます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +592,7 @@ export const NW_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "シンクライアントシステムでは、クライアント端末にデータやアプリケーションを保存せず、全てサーバ側で集中管理します。これにより、情報漏洩のリスクを低減し、不正アクセスやマルウェア感染からの防御を強化できるため、セキュリティが向上します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +617,7 @@ export const NW_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ブラックボックステストは、システムの内部構造を考慮せず、機能仕様に基づいてテストを行います。同値クラス分割や限界値分析は、機能仕様書から有効な入力値の範囲や境界条件を抽出し、網羅的かつ効率的にテストデータを作成するのに最適な手法です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +642,7 @@ export const NW_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "特許出願前に技術内容が公知になると、新規性が失われ特許取得が困難になります。顧客と守秘義務契約を締結した上での説明は、公知行為とはみなされないため、新規性が維持されます。そのため、製品発表前であれば特許権を取得できる可能性が高いです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_nw_am2_qs.pdf",
     "license": "IPA-public"

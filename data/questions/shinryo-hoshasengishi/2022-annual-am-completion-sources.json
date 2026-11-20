@@ -1,0 +1,1763 @@
+{
+  "jobId": "PLAN5-147",
+  "officialYear": 2022,
+  "edition": 74,
+  "session": "am",
+  "status": "complete",
+  "expectedCount": 100,
+  "existingCount": 10,
+  "addedCount": 90,
+  "practiceCount": 97,
+  "referenceOnlyCount": 3,
+  "referenceOnlyQuestionNumbers": [
+    3,
+    40,
+    69
+  ],
+  "alternativeAnswerQuestionNumbers": [
+    13
+  ],
+  "sourcePage": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-06.html",
+  "checkedAt": "2026-11-18",
+  "sources": [
+    {
+      "kind": "qs",
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-06a_01.pdf",
+      "bytes": 1131318,
+      "pages": 48,
+      "sha256": "9148493e4f32d29ea507ccecfe8921b2fbdfa8a005d84dca96b8bda3441ad54b"
+    },
+    {
+      "kind": "ans",
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-06seitou.pdf",
+      "bytes": 17997,
+      "pages": 1,
+      "sha256": "21147c5c4badfff161433aa4399da958ac28bf31cbde3e9128839cc05bc3d379"
+    },
+    {
+      "kind": "fig",
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-06a_02.pdf",
+      "bytes": 60714603,
+      "pages": 24,
+      "sha256": "19608228d862584e6d936a64499df6590c8cf697b833047674f43faf09a31e94"
+    },
+    {
+      "qNumber": 3,
+      "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken06/dl/AM03.pdf",
+      "bytes": 33658,
+      "sha256": "aca2eceb2964f719a9ba6618e1be759cc0d8498d719ae90d0bc5d387828567d8"
+    },
+    {
+      "qNumber": 13,
+      "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken06/dl/AM13.pdf",
+      "bytes": 43290,
+      "sha256": "88948d85eb8e9c68534792e8a9ec6c25334254a095f26468973905317f2746b1"
+    },
+    {
+      "qNumber": 40,
+      "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken06/dl/AM40.pdf",
+      "bytes": 35483,
+      "sha256": "12bb8036151519665fc567e4e62632cc0f92646b12c5959c559f3b06c339f1e7"
+    },
+    {
+      "qNumber": 69,
+      "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken06/dl/AM69.pdf",
+      "bytes": 39555,
+      "sha256": "c394cb496bc00416ece275055182ee722520a5ce854bc70480ed90e59d7e81a7"
+    }
+  ],
+  "receipts": [
+    {
+      "qNumber": 1,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q1",
+      "page": 5,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        232.70071411132812
+      ],
+      "officialAnswer": "4",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 2,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q2",
+      "page": 5,
+      "clip": [
+        70.0,
+        235.70071411132812,
+        490.0,
+        391.4412841796875
+      ],
+      "officialAnswer": "4",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 3,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q3",
+      "page": 5,
+      "clip": [
+        70.0,
+        394.4412841796875,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "",
+      "requiredSelections": 0
+    },
+    {
+      "qNumber": 4,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q4",
+      "page": 6,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        232.70138549804688
+      ],
+      "officialAnswer": "4",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 5,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q5",
+      "page": 6,
+      "clip": [
+        70.0,
+        235.70138549804688,
+        490.0,
+        391.442138671875
+      ],
+      "officialAnswer": "12",
+      "requiredSelections": 2
+    },
+    {
+      "qNumber": 6,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q6",
+      "page": 6,
+      "clip": [
+        70.0,
+        394.442138671875,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "2",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 7,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q7",
+      "page": 7,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        232.70138549804688
+      ],
+      "officialAnswer": "4",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 8,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q8",
+      "page": 7,
+      "clip": [
+        70.0,
+        235.70138549804688,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "5",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 9,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q9",
+      "page": 8,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "2",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 10,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q10",
+      "page": 9,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        252.54391479492188
+      ],
+      "officialAnswer": "3",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 11,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q11",
+      "page": 9,
+      "clip": [
+        70.0,
+        255.54391479492188,
+        490.0,
+        431.12725830078125
+      ],
+      "officialAnswer": "3",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 12,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q12",
+      "page": 9,
+      "clip": [
+        70.0,
+        434.12725830078125,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "3",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 13,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q13",
+      "page": 10,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        252.54330444335938
+      ],
+      "officialAnswer": "12",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 14,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q14",
+      "page": 10,
+      "clip": [
+        70.0,
+        255.54330444335938,
+        490.0,
+        411.2840576171875
+      ],
+      "officialAnswer": "4",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 15,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q15",
+      "page": 10,
+      "clip": [
+        70.0,
+        414.2840576171875,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "4",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 16,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q16",
+      "page": 11,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        312.0707702636719
+      ],
+      "officialAnswer": "24",
+      "requiredSelections": 2
+    },
+    {
+      "qNumber": 17,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q17",
+      "page": 11,
+      "clip": [
+        70.0,
+        315.0707702636719,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "2",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 18,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q18",
+      "page": 12,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        232.70138549804688
+      ],
+      "officialAnswer": "2",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 19,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q19",
+      "page": 12,
+      "clip": [
+        70.0,
+        235.70138549804688,
+        490.0,
+        391.442138671875
+      ],
+      "officialAnswer": "24",
+      "requiredSelections": 2
+    },
+    {
+      "qNumber": 20,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q20",
+      "page": 12,
+      "clip": [
+        70.0,
+        394.442138671875,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "12",
+      "requiredSelections": 2
+    },
+    {
+      "qNumber": 21,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q21",
+      "page": 13,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        312.0707702636719
+      ],
+      "officialAnswer": "5",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 22,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q22",
+      "page": 13,
+      "clip": [
+        70.0,
+        315.0707702636719,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "3",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 23,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q23",
+      "page": 14,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        312.0707702636719
+      ],
+      "officialAnswer": "4",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 24,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q24",
+      "page": 14,
+      "clip": [
+        70.0,
+        315.0707702636719,
+        490.0,
+        470.8115234375
+      ],
+      "officialAnswer": "2",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 25,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q25",
+      "page": 14,
+      "clip": [
+        70.0,
+        473.8115234375,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "5",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 26,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q26",
+      "page": 15,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        232.70071411132812
+      ],
+      "officialAnswer": "2",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 27,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q27",
+      "page": 15,
+      "clip": [
+        70.0,
+        235.70071411132812,
+        490.0,
+        391.44146728515625
+      ],
+      "officialAnswer": "5",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 28,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q28",
+      "page": 15,
+      "clip": [
+        70.0,
+        394.44146728515625,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "4",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 29,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q29",
+      "page": 16,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        312.0707702636719
+      ],
+      "officialAnswer": "5",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 30,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q30",
+      "page": 16,
+      "clip": [
+        70.0,
+        315.0707702636719,
+        490.0,
+        470.81146240234375
+      ],
+      "officialAnswer": "5",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 31,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q31",
+      "page": 16,
+      "clip": [
+        70.0,
+        473.81146240234375,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "5",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 32,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q32",
+      "page": 17,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        232.70101928710938
+      ],
+      "officialAnswer": "5",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 33,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q33",
+      "page": 17,
+      "clip": [
+        70.0,
+        235.70101928710938,
+        490.0,
+        391.4417724609375
+      ],
+      "officialAnswer": "4",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 34,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q34",
+      "page": 17,
+      "clip": [
+        70.0,
+        394.4417724609375,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "1",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 35,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q35",
+      "page": 18,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        232.70138549804688
+      ],
+      "officialAnswer": "4",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 36,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q36",
+      "page": 18,
+      "clip": [
+        70.0,
+        235.70138549804688,
+        490.0,
+        411.28472900390625
+      ],
+      "officialAnswer": "5",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 37,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q37",
+      "page": 18,
+      "clip": [
+        70.0,
+        414.28472900390625,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "5",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 38,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q38",
+      "page": 19,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        232.70138549804688
+      ],
+      "officialAnswer": "2",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 39,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q39",
+      "page": 19,
+      "clip": [
+        70.0,
+        235.70138549804688,
+        490.0,
+        391.44146728515625
+      ],
+      "officialAnswer": "1",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 40,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q40",
+      "page": 19,
+      "clip": [
+        70.0,
+        394.44146728515625,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "",
+      "requiredSelections": 0
+    },
+    {
+      "qNumber": 41,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q41",
+      "page": 20,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        232.70138549804688
+      ],
+      "officialAnswer": "2",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 42,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q42",
+      "page": 20,
+      "clip": [
+        70.0,
+        235.70138549804688,
+        490.0,
+        391.442138671875
+      ],
+      "officialAnswer": "4",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 43,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q43",
+      "page": 20,
+      "clip": [
+        70.0,
+        394.442138671875,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "2",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 44,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q44",
+      "page": 21,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        252.54391479492188
+      ],
+      "officialAnswer": "4",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 45,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q45",
+      "page": 21,
+      "clip": [
+        70.0,
+        255.54391479492188,
+        490.0,
+        411.28466796875
+      ],
+      "officialAnswer": "25",
+      "requiredSelections": 2
+    },
+    {
+      "qNumber": 46,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q46",
+      "page": 21,
+      "clip": [
+        70.0,
+        414.28466796875,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "1",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 47,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q47",
+      "page": 22,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        391.44146728515625
+      ],
+      "officialAnswer": "4",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 48,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q48",
+      "page": 22,
+      "clip": [
+        70.0,
+        394.44146728515625,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "4",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 49,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q49",
+      "page": 23,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        232.70138549804688
+      ],
+      "officialAnswer": "2",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 50,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q50",
+      "page": 23,
+      "clip": [
+        70.0,
+        235.70138549804688,
+        490.0,
+        391.442138671875
+      ],
+      "officialAnswer": "1",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 51,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q51",
+      "page": 23,
+      "clip": [
+        70.0,
+        394.442138671875,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "1",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 52,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q52",
+      "page": 24,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        232.70138549804688
+      ],
+      "officialAnswer": "4",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 53,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q53",
+      "page": 24,
+      "clip": [
+        70.0,
+        235.70138549804688,
+        490.0,
+        391.442138671875
+      ],
+      "officialAnswer": "2",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 54,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q54",
+      "page": 24,
+      "clip": [
+        70.0,
+        394.442138671875,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "4",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 55,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q55",
+      "page": 25,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        232.70138549804688
+      ],
+      "officialAnswer": "3",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 56,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q56",
+      "page": 25,
+      "clip": [
+        70.0,
+        235.70138549804688,
+        490.0,
+        391.442138671875
+      ],
+      "officialAnswer": "3",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 57,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q57",
+      "page": 25,
+      "clip": [
+        70.0,
+        394.442138671875,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "3",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 58,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q58",
+      "page": 26,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        232.70138549804688
+      ],
+      "officialAnswer": "2",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 59,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q59",
+      "page": 26,
+      "clip": [
+        70.0,
+        235.70138549804688,
+        490.0,
+        391.442138671875
+      ],
+      "officialAnswer": "5",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 60,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q60",
+      "page": 26,
+      "clip": [
+        70.0,
+        394.442138671875,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "2",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 61,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q61",
+      "page": 27,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        232.70138549804688
+      ],
+      "officialAnswer": "5",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 62,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q62",
+      "page": 27,
+      "clip": [
+        70.0,
+        235.70138549804688,
+        490.0,
+        411.28472900390625
+      ],
+      "officialAnswer": "5",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 63,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q63",
+      "page": 27,
+      "clip": [
+        70.0,
+        414.28472900390625,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "4",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 64,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q64",
+      "page": 28,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        232.70138549804688
+      ],
+      "officialAnswer": "24",
+      "requiredSelections": 2
+    },
+    {
+      "qNumber": 65,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q65",
+      "page": 28,
+      "clip": [
+        70.0,
+        235.70138549804688,
+        490.0,
+        391.442138671875
+      ],
+      "officialAnswer": "5",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 66,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q66",
+      "page": 28,
+      "clip": [
+        70.0,
+        394.442138671875,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "5",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 67,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q67",
+      "page": 29,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        232.70138549804688
+      ],
+      "officialAnswer": "3",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 68,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q68",
+      "page": 29,
+      "clip": [
+        70.0,
+        235.70138549804688,
+        490.0,
+        391.44110107421875
+      ],
+      "officialAnswer": "2",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 69,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q69",
+      "page": 29,
+      "clip": [
+        70.0,
+        394.44110107421875,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "※",
+      "requiredSelections": 0
+    },
+    {
+      "qNumber": 70,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q70",
+      "page": 30,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        272.3864440917969
+      ],
+      "officialAnswer": "3",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 71,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q71",
+      "page": 30,
+      "clip": [
+        70.0,
+        275.3864440917969,
+        490.0,
+        431.1263427734375
+      ],
+      "officialAnswer": "25",
+      "requiredSelections": 2
+    },
+    {
+      "qNumber": 72,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q72",
+      "page": 30,
+      "clip": [
+        70.0,
+        434.1263427734375,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "2",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 73,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q73",
+      "page": 31,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        252.54330444335938
+      ],
+      "officialAnswer": "1",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 74,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q74",
+      "page": 31,
+      "clip": [
+        70.0,
+        255.54330444335938,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "5",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 75,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q75",
+      "page": 32,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "1",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 76,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q76",
+      "page": 33,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        450.96893310546875
+      ],
+      "officialAnswer": "2",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 77,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q77",
+      "page": 33,
+      "clip": [
+        70.0,
+        453.96893310546875,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "3",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 78,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q78",
+      "page": 34,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        232.70138549804688
+      ],
+      "officialAnswer": "5",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 79,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q79",
+      "page": 34,
+      "clip": [
+        70.0,
+        235.70138549804688,
+        490.0,
+        411.2835693359375
+      ],
+      "officialAnswer": "1",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 80,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q80",
+      "page": 34,
+      "clip": [
+        70.0,
+        414.2835693359375,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "1",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 81,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q81",
+      "page": 35,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        232.70071411132812
+      ],
+      "officialAnswer": "12",
+      "requiredSelections": 2
+    },
+    {
+      "qNumber": 82,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q82",
+      "page": 35,
+      "clip": [
+        70.0,
+        235.70071411132812,
+        490.0,
+        450.9683837890625
+      ],
+      "officialAnswer": "1",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 83,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q83",
+      "page": 35,
+      "clip": [
+        70.0,
+        453.9683837890625,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "5",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 84,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q84",
+      "page": 36,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        312.0707702636719
+      ],
+      "officialAnswer": "5",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 85,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q85",
+      "page": 36,
+      "clip": [
+        70.0,
+        315.0707702636719,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "1",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 86,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q86",
+      "page": 37,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        232.70138549804688
+      ],
+      "officialAnswer": "4",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 87,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q87",
+      "page": 37,
+      "clip": [
+        70.0,
+        235.70138549804688,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "1",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 88,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q88",
+      "page": 38,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        312.0707702636719
+      ],
+      "officialAnswer": "1",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 89,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q89",
+      "page": 38,
+      "clip": [
+        70.0,
+        315.0707702636719,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "3",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 90,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q90",
+      "page": 39,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        232.70071411132812
+      ],
+      "officialAnswer": "4",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 91,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q91",
+      "page": 39,
+      "clip": [
+        70.0,
+        235.70071411132812,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "4",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 92,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q92",
+      "page": 40,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        312.0707702636719
+      ],
+      "officialAnswer": "3",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 93,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q93",
+      "page": 40,
+      "clip": [
+        70.0,
+        315.0707702636719,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "5",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 94,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q94",
+      "page": 41,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        272.3865661621094
+      ],
+      "officialAnswer": "4",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 95,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q95",
+      "page": 41,
+      "clip": [
+        70.0,
+        275.3865661621094,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "4",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 96,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q96",
+      "page": 42,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        232.70138549804688
+      ],
+      "officialAnswer": "5",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 97,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q97",
+      "page": 42,
+      "clip": [
+        70.0,
+        235.70138549804688,
+        490.0,
+        391.442138671875
+      ],
+      "officialAnswer": "5",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 98,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q98",
+      "page": 42,
+      "clip": [
+        70.0,
+        394.442138671875,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "2",
+      "requiredSelections": 1
+    },
+    {
+      "qNumber": 99,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q99",
+      "page": 43,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        232.70071411132812
+      ],
+      "officialAnswer": "15",
+      "requiredSelections": 2
+    },
+    {
+      "qNumber": 100,
+      "id": "shinryo-hoshasengishi-2022-annual-am-q100",
+      "page": 43,
+      "clip": [
+        70.0,
+        235.70071411132812,
+        490.0,
+        660.0
+      ],
+      "officialAnswer": "13",
+      "requiredSelections": 2
+    }
+  ],
+  "figures": [
+    {
+      "qNumber": 15,
+      "kind": "fig",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-06a_02.pdf",
+      "page": 5,
+      "clip": [
+        70,
+        80,
+        465,
+        625
+      ],
+      "rotationClockwise": 90,
+      "path": "/questions/shinryo-hoshasengishi/2022-am-q15-fig.webp",
+      "alt": "MRCP像。胆管と膵管の各位置にア〜オのラベルが付いている。",
+      "width": 1090,
+      "height": 790,
+      "sha256": "675e98ed810ba84cc9b1b7ebefe7b9dc0489c994a1a85d6dc15620cdf53fbf67"
+    },
+    {
+      "qNumber": 16,
+      "kind": "fig",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-06a_02.pdf",
+      "page": 6,
+      "clip": [
+        70,
+        80,
+        465,
+        625
+      ],
+      "rotationClockwise": 90,
+      "path": "/questions/shinryo-hoshasengishi/2022-am-q16-fig.webp",
+      "alt": "乳腺腫瘤の超音波像。皮膚面、腫瘤内のエコー、撮影位置の模式図を含む。",
+      "width": 1090,
+      "height": 790,
+      "sha256": "ae8b544af0762b4891df2e3ab17e18de2accca846fa00d036ade376c11852059"
+    },
+    {
+      "qNumber": 17,
+      "kind": "fig",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-06a_02.pdf",
+      "page": 7,
+      "clip": [
+        70,
+        80,
+        465,
+        625
+      ],
+      "rotationClockwise": 90,
+      "path": "/questions/shinryo-hoshasengishi/2022-am-q17-fig.webp",
+      "alt": "右側腹部の超音波像。囊胞の辺縁から深部へ向かう低エコー帯に矢印が付いている。",
+      "width": 1090,
+      "height": 790,
+      "sha256": "ded31f9ff77dd1f0d2d251f8b3eb5f90bae4e77138e16f07258c0e409ba33233"
+    },
+    {
+      "qNumber": 21,
+      "kind": "fig",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-06a_02.pdf",
+      "page": 8,
+      "clip": [
+        70,
+        80,
+        465,
+        625
+      ],
+      "rotationClockwise": 90,
+      "path": "/questions/shinryo-hoshasengishi/2022-am-q21-fig.webp",
+      "alt": "腹部MR像。腹部中央の高信号の乱れを3本の矢印で示す。",
+      "width": 1090,
+      "height": 790,
+      "sha256": "e8dbda28edd81be5c13d54c1480ade30eda9d779b9d0ce971878d519e39a23cf"
+    },
+    {
+      "qNumber": 22,
+      "kind": "fig",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-06a_02.pdf",
+      "page": 9,
+      "clip": [
+        70,
+        80,
+        465,
+        625
+      ],
+      "rotationClockwise": 90,
+      "path": "/questions/shinryo-hoshasengishi/2022-am-q22-fig.webp",
+      "alt": "頭部MR正中矢状断像。脳室付近の構造をア〜オの5本の矢印で示す。",
+      "width": 1090,
+      "height": 790,
+      "sha256": "1b17941e75f6808b1bdea0b149167493469bf23118383be73a8f042058d7cdc7"
+    },
+    {
+      "qNumber": 23,
+      "kind": "fig",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-06a_02.pdf",
+      "page": 10,
+      "clip": [
+        70,
+        80,
+        465,
+        625
+      ],
+      "rotationClockwise": 90,
+      "path": "/questions/shinryo-hoshasengishi/2022-am-q23-fig.webp",
+      "alt": "胆囊の超音波像。胆囊内に表示されたエコーに矢印が付いている。",
+      "width": 1090,
+      "height": 790,
+      "sha256": "3829f6ed8f3a133f3758024759af55087b4adf483accd22ab9c935bb6baa96b1"
+    },
+    {
+      "qNumber": 29,
+      "kind": "fig",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-06a_02.pdf",
+      "page": 11,
+      "clip": [
+        70,
+        80,
+        465,
+        625
+      ],
+      "rotationClockwise": 0,
+      "path": "/questions/shinryo-hoshasengishi/2022-am-q29-fig.webp",
+      "alt": "放射性医薬品投与3時間後の前面像と後面像。頭部から脊髄に沿う分布を示す。",
+      "width": 790,
+      "height": 1090,
+      "sha256": "7aa9c1cbfee565d781f4ef421fd29bb1dcf8391c3e7dd832b7204834ef6d0a1d"
+    },
+    {
+      "qNumber": 84,
+      "kind": "fig",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-06a_02.pdf",
+      "page": 12,
+      "clip": [
+        70,
+        80,
+        465,
+        625
+      ],
+      "rotationClockwise": 90,
+      "path": "/questions/shinryo-hoshasengishi/2022-am-q84-fig.webp",
+      "alt": "左肘関節側面X線写真。骨の各部分にア〜オの5本の矢印が付いている。",
+      "width": 1090,
+      "height": 790,
+      "sha256": "310f0bb127f1608b74fc40707b59aa2036ef0396aa296433854bc56fd7ba1113"
+    },
+    {
+      "qNumber": 85,
+      "kind": "fig",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-06a_02.pdf",
+      "page": 13,
+      "clip": [
+        70,
+        80,
+        465,
+        625
+      ],
+      "rotationClockwise": 0,
+      "path": "/questions/shinryo-hoshasengishi/2022-am-q85-fig.webp",
+      "alt": "胸部X線写真。肺野、胸郭、横隔膜の全体を示す。",
+      "width": 790,
+      "height": 1090,
+      "sha256": "6c5d8fb011667f84d2bd1524e6df12f2639f21b2b585398b13ccf9959c9467d9"
+    },
+    {
+      "qNumber": 87,
+      "kind": "fig",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-06a_02.pdf",
+      "page": 14,
+      "clip": [
+        70,
+        80,
+        465,
+        625
+      ],
+      "rotationClockwise": 90,
+      "path": "/questions/shinryo-hoshasengishi/2022-am-q87-fig.webp",
+      "alt": "腹部血管造影写真。腹腔動脈から分かれる血管の一つに矢印が付いている。",
+      "width": 1090,
+      "height": 790,
+      "sha256": "84a1a0e2d17fd2e1d0aae0009fadcac8ee98ede52e703cd48855da638321e00e"
+    },
+    {
+      "qNumber": 88,
+      "kind": "fig",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-06a_02.pdf",
+      "page": 15,
+      "clip": [
+        70,
+        80,
+        465,
+        625
+      ],
+      "rotationClockwise": 90,
+      "path": "/questions/shinryo-hoshasengishi/2022-am-q88-fig.webp",
+      "alt": "足部のX線撮影体位を示す2枚の写真。中心X線の入射方向と40度の角度を示す。",
+      "width": 1090,
+      "height": 790,
+      "sha256": "c971fbd88ef35c5ae9aa0a533ceab644eb07ed12420cce8b037c299dd4e0371d"
+    },
+    {
+      "qNumber": 89,
+      "kind": "fig",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-06a_02.pdf",
+      "page": 16,
+      "clip": [
+        70,
+        80,
+        465,
+        625
+      ],
+      "rotationClockwise": 90,
+      "path": "/questions/shinryo-hoshasengishi/2022-am-q89-fig.webp",
+      "alt": "腹部ダイナミックCTの4画像。A〜Dのラベルを付け、血管と実質の造影の違いを示す。",
+      "width": 1090,
+      "height": 790,
+      "sha256": "099006158bce09f9b7e9cfa00c8e8d8c0f2b778e1f71f58825c199f4309f3c43"
+    },
+    {
+      "qNumber": 91,
+      "kind": "fig",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-06a_02.pdf",
+      "page": 17,
+      "clip": [
+        70,
+        80,
+        465,
+        625
+      ],
+      "rotationClockwise": 90,
+      "path": "/questions/shinryo-hoshasengishi/2022-am-q91-fig.webp",
+      "alt": "骨盤部の造影X線写真。骨盤内の袋状の構造が造影されている。",
+      "width": 1090,
+      "height": 790,
+      "sha256": "e1f5160c08c7917e46234d7526e22f102e8681e9b7f506c710cdfa2927379e54"
+    },
+    {
+      "qNumber": 92,
+      "kind": "fig",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-06a_02.pdf",
+      "page": 18,
+      "clip": [
+        70,
+        80,
+        465,
+        625
+      ],
+      "rotationClockwise": 90,
+      "path": "/questions/shinryo-hoshasengishi/2022-am-q92-fig.webp",
+      "alt": "頭部単純CT像。脳内の高吸収域に矢印が付いている。",
+      "width": 1090,
+      "height": 790,
+      "sha256": "aaf718dc05116c42c6978c4e3002bfb506da87b73ff297ee59037e5e45e1f1a8"
+    },
+    {
+      "qNumber": 9,
+      "kind": "qs",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-06a_01.pdf",
+      "page": 8,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        660.0
+      ],
+      "rotationClockwise": 0,
+      "path": "/questions/shinryo-hoshasengishi/2022-am-q9-qs.webp",
+      "alt": "焦点位置a・b、点T、受像器と、投影像A・Bの幾何学関係を示す図。",
+      "width": 840,
+      "height": 1167,
+      "sha256": "7c2f8b6aaf0616ef4b9bec62e017843f756765b62c68a13a303f6d7f2d20a807"
+    },
+    {
+      "qNumber": 47,
+      "kind": "qs",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-06a_01.pdf",
+      "page": 22,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        391.44146728515625
+      ],
+      "rotationClockwise": 0,
+      "path": "/questions/shinryo-hoshasengishi/2022-am-q47-qs.webp",
+      "alt": "コンピュータの基本構成図。a〜cと入出力装置を、データ・命令の実線と制御信号の点線で結ぶ。",
+      "width": 840,
+      "height": 630,
+      "sha256": "19237b6fb91ddf71bf39ceb68c6b5fa4518e664b6e8c0c58947c73c128974409"
+    },
+    {
+      "qNumber": 74,
+      "kind": "qs",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-06a_01.pdf",
+      "page": 31,
+      "clip": [
+        70.0,
+        255.54330444335938,
+        490.0,
+        660.0
+      ],
+      "rotationClockwise": 0,
+      "path": "/questions/shinryo-hoshasengishi/2022-am-q74-qs.webp",
+      "alt": "ラーモア周波数の候補式5つ。γ、磁束密度B₀、2πの分子と分母の配置を示す。",
+      "width": 840,
+      "height": 809,
+      "sha256": "ebc4473d8444dff76ac202143ecbd2b2d320da9d247117cdc3f52164825f2b59"
+    },
+    {
+      "qNumber": 75,
+      "kind": "qs",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-06a_01.pdf",
+      "page": 32,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        660.0
+      ],
+      "rotationClockwise": 0,
+      "path": "/questions/shinryo-hoshasengishi/2022-am-q75-qs.webp",
+      "alt": "10 Ωの抵抗回路と、最大値100 V、位相の目印π/6を示した正弦波電圧、および5つの候補式。",
+      "width": 840,
+      "height": 1167,
+      "sha256": "41b472060701dc5057bf54a12a01f11d1de87246d34575523c5ae898ac67913b"
+    },
+    {
+      "qNumber": 76,
+      "kind": "qs",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-06a_01.pdf",
+      "page": 33,
+      "clip": [
+        70.0,
+        76.96060180664062,
+        490.0,
+        450.96893310546875
+      ],
+      "rotationClockwise": 0,
+      "path": "/questions/shinryo-hoshasengishi/2022-am-q76-qs.webp",
+      "alt": "10 V電源に、10 Ω抵抗2本の直列回路と30 μF・20 μFの直列回路を並列接続した図。中点にaとbを示す。",
+      "width": 840,
+      "height": 749,
+      "sha256": "33a72b9a1515aadf407214fe6ad6fdd5c80cb42a55a6e7392d9ab2bfec696a27"
+    },
+    {
+      "qNumber": 82,
+      "kind": "qs",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-06a_01.pdf",
+      "page": 35,
+      "clip": [
+        70.0,
+        235.70071411132812,
+        490.0,
+        450.9683837890625
+      ],
+      "rotationClockwise": 0,
+      "path": "/questions/shinryo-hoshasengishi/2022-am-q82-qs.webp",
+      "alt": "温度T、圧力Pと基準値を用いる温度気圧補正係数の候補式5つ。",
+      "width": 840,
+      "height": 431,
+      "sha256": "25f085afec4fe4bd16e526dfbf7d5d4b5c5d7e0f63a1a23bbd7f3358320057b6"
+    },
+    {
+      "qNumber": 95,
+      "kind": "qs",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-06a_01.pdf",
+      "page": 41,
+      "clip": [
+        70.0,
+        275.3865661621094,
+        490.0,
+        660.0
+      ],
+      "rotationClockwise": 0,
+      "path": "/questions/shinryo-hoshasengishi/2022-am-q95-qs.webp",
+      "alt": "検出器A〜EのMTFとウィナースペクトルを空間周波数ごとに示した2つのグラフ。",
+      "width": 840,
+      "height": 770,
+      "sha256": "825d414f0bd2a91e391af70c3be572abf071e889eb7fbc7c731c84dfec2fecbc"
+    }
+  ],
+  "existingFullRecordHashes": {
+    "shinryo-hoshasengishi-2022-annual-am-q1": "46427961459ae81fabca20801176538390a9ef7a55e5114d00f289518d787e96",
+    "shinryo-hoshasengishi-2022-annual-am-q4": "f09da1010c4b6f9500c29a559732a3ea0032164597034086d0335dc46e5f204d",
+    "shinryo-hoshasengishi-2022-annual-am-q6": "7516123669d66d97fab0bd68d89cf54c37e11615ab520ed72be4998eed9ed559",
+    "shinryo-hoshasengishi-2022-annual-am-q7": "2015e0795bb777f8d6f349e54dcad2cec6485ac42f47a15109f75075df2b7f8d",
+    "shinryo-hoshasengishi-2022-annual-am-q8": "5b33a3b5566d4dc6c00e6950b6420ca0f66955dd782fbdfc59a954aeee4fa66c",
+    "shinryo-hoshasengishi-2022-annual-am-q10": "4ff4973173d315869df6814389a686a6847bf155ebb43605b6115496ad8e8b4c",
+    "shinryo-hoshasengishi-2022-annual-am-q12": "2d3754174089db25767fb69a045f5a34d73642718f19a496f43f27592708b374",
+    "shinryo-hoshasengishi-2022-annual-am-q14": "380b843763f375f16453032eef225873127702767ec7baee2301deeea437ff7f",
+    "shinryo-hoshasengishi-2022-annual-am-q18": "9ed241fb6cfb3a46872e2a8b72756b8a5228163dda84ab2a625afbb22faa03f6",
+    "shinryo-hoshasengishi-2022-annual-am-q24": "23c2704a1914f649b63e57e2486524f0b680b13d0e0f5cb6b3278784c1189de9"
+  }
+}

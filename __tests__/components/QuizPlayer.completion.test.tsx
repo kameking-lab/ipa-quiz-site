@@ -29,29 +29,23 @@ describe("QuizPlayer completion", () => {
     expect(push).not.toHaveBeenCalled();
   });
 
-  it("keeps the last question available for AI follow-up and links to the matching schedule and learning hub", () => {
+  it("keeps the matching schedule in a closed detail", () => {
     render(<QuizPlayer question={question} index={0} total={1} mode="random" onNext={vi.fn()} />);
     fireEvent.click(screen.getByRole("radio", { name: /^選択肢 イ:/ }));
     fireEvent.click(screen.getByRole("button", { name: "結果を見る" }));
 
-    expect(screen.getByRole("link", { name: /試験日・申込締切を次の資格で確認/ }).getAttribute("href"))
+    expect(document.querySelector("details a")!.getAttribute("href"))
       .toBe("https://tsugino-shikaku.jp/shikaku/ap");
-    expect(screen.getByRole("link", { name: /対応する学習・教材を次の資格で選ぶ/ }).getAttribute("href"))
-      .toBe("https://tsugino-shikaku.jp/learn/ap");
 
-    fireEvent.click(screen.getByRole("button", { name: "最後の問題をAIに質問" }));
-    expect(screen.getByRole("region", { name: "正解の解説" })).toBeTruthy();
-    expect(screen.getByRole("button", { name: "この問題をAIに質問" })).toBeTruthy();
+    expect(screen.queryByRole("button", { name: "最後の問題をAIに質問" })).toBeNull();
   });
 
-  it("links caregiver exam results to the matching schedule and learning hub", () => {
+  it("links caregiver exam results to the matching schedule", () => {
     render(<QuizPlayer question={{ ...question, id: "kaigo-2024-annual-gakka-q1", exam: "kaigo", session: "gakka", season: "annual" }} index={0} total={1} mode="random" onNext={vi.fn()} />);
     fireEvent.click(screen.getByRole("radio", { name: /^選択肢 2:/ }));
     fireEvent.click(screen.getByRole("button", { name: "結果を見る" }));
 
-    expect(screen.getByRole("link", { name: /試験日・申込締切を次の資格で確認/ }).getAttribute("href"))
+    expect(document.querySelector("details a")!.getAttribute("href"))
       .toBe("https://tsugino-shikaku.jp/shikaku/care-worker");
-    expect(screen.getByRole("link", { name: /対応する学習・教材を次の資格で選ぶ/ }).getAttribute("href"))
-      .toBe("https://tsugino-shikaku.jp/learn/care-worker");
   });
 });

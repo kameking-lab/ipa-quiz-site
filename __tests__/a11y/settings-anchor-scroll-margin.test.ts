@@ -18,12 +18,10 @@ describe("/settings セクションアンカー — sticky header 下に隠れ�
     expect(source).toMatch(/className="mb-3 flex scroll-mt-20 items-center gap-3" id=\{id\}/);
   });
 
-  it("セクション内ナビの各リンク先 id が実在のセクションとして定義されている", () => {
-    // SECTIONS の各 id（href="#${s.id}" のリンク先）が <SectionTitle id="..."> で実在すること
+  it("既存の設定セクションにリンクできる", () => {
     const sectionIds = [
       "appearance",
       "character",
-      "quiz-options",
       "notifications",
       "exam-schedule",
       "history",

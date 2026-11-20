@@ -1,0 +1,357 @@
+{
+  "jobId": "PLAN5-204",
+  "exam": "yakuzaishi",
+  "year": 2026,
+  "edition": 111,
+  "officialSession": "day1-2",
+  "quizSession": "theory",
+  "sourcePage": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000198929.html",
+  "sourceFiles": [
+    {
+      "url": "https://www.mhlw.go.jp/content/001677928.pdf",
+      "sha256": "99a306a86908f562aa6de378a78b8f920c9d41bf9feb419db6a60340f5b6af56",
+      "physicalPages": 44
+    },
+    {
+      "url": "https://www.mhlw.go.jp/content/001677933.pdf",
+      "sha256": "bec304ce3043407fb8cdc6f6b5a0e3b6cd414119be8bc2782da0b904c602e223",
+      "physicalPages": 2
+    },
+    {
+      "url": "https://www.mhlw.go.jp/content/001677936.pdf",
+      "sha256": "9904ca761ac1e0569eea6d62fb50a6a89d106cc5cf0fa8767de4155586cd5b4f",
+      "physicalPages": 1
+    }
+  ],
+  "officialPrintedQuestionCount": 60,
+  "practiceQuestionCount": 59,
+  "existingPracticeQuestionCount": 41,
+  "addedPracticeQuestionCount": 18,
+  "officiallyExcludedQuestions": [
+    {
+      "qNumber": 92,
+      "officialAnswer": "解なし",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf#page=2",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+      "officialErrataUrl": "https://www.mhlw.go.jp/content/001677936.pdf",
+      "question": "平衡状態にある次の化学反応に関する記述として、正しいのはどれか。２つ選べ。\nただし、ΔfH°は標準生成エンタルピー、（g）は気体状態、（s）は固体状態を表す。\nNH₃（g）＋HCl（g）⇄NH₄Cl（s）　ΔfH°＝−176.2 kJ/mol",
+      "choices": [
+        "この反応はエントロピー駆動の反応である。",
+        "縦軸に平衡定数の対数を、横軸に絶対温度をとると右上がりの直線となる。",
+        "圧力を上げると平衡は右に傾く。",
+        "温度を上げると平衡は右に傾く。",
+        "アンモニアを加えると平衡は右に傾く。"
+      ],
+      "errata": "標準生成エンタルピーΔfH°の印刷を、標準反応エンタルピーΔrH°に訂正。公式最終正答は「解なし」。"
+    }
+  ],
+  "nonQuestionNumbers": [
+    {
+      "qNumber": 500,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf#page=1",
+      "reason": "表紙の解答記入例。"
+    }
+  ],
+  "sourceCommit": "2a34c6ffc4e2b826dcabb96c05deadf36622330a",
+  "sourceFile": "data/questions/yakuzaishi/2025-2026-saved141.json",
+  "sourceBlobSha256": "3369f2a02861ef2ffca07b0fa4a37902bbe928d1b791d2c05095f25066eebf02",
+  "receipts": [
+    {
+      "id": "yakuzaishi-2026-annual-theory-q91",
+      "qNumber": 91,
+      "physicalPage": 2,
+      "officialAnswer": [
+        "3",
+        "4"
+      ],
+      "questionSha256": "37d0a90b4159f9b097bbe993b4e90a4e276d09b0eea8fc2778245164b31631e1",
+      "imageUrls": []
+    },
+    {
+      "id": "yakuzaishi-2026-annual-theory-q95",
+      "qNumber": 95,
+      "physicalPage": 3,
+      "officialAnswer": [
+        "2",
+        "5"
+      ],
+      "questionSha256": "1ab084061c35909954f17f42a6814711e5f9b24229773bc3960dbabc543d73ce",
+      "imageUrls": []
+    },
+    {
+      "id": "yakuzaishi-2026-annual-theory-q96",
+      "qNumber": 96,
+      "physicalPage": 5,
+      "officialAnswer": [
+        "1",
+        "2"
+      ],
+      "questionSha256": "ad443b555d6ee273fc847a3cc1ab1fff5c5bcddb14ee153e3cd5ef4a7cec69e8",
+      "imageUrls": [
+        "/images/questions/yakuzaishi/pharmacy-111-theory-q096-physical-formulation-1.png",
+        "/images/questions/yakuzaishi/pharmacy-111-theory-q096-physical-formulation-2.png"
+      ]
+    },
+    {
+      "id": "yakuzaishi-2026-annual-theory-q97",
+      "qNumber": 97,
+      "physicalPage": 5,
+      "officialAnswer": [
+        "2"
+      ],
+      "questionSha256": "b2c4720c9e2ab464e36c0c0e49c96b2fe95491111fbcaad61f596c134f76d177",
+      "imageUrls": []
+    },
+    {
+      "id": "yakuzaishi-2026-annual-theory-q98",
+      "qNumber": 98,
+      "physicalPage": 6,
+      "officialAnswer": [
+        "1",
+        "5"
+      ],
+      "questionSha256": "87841e4151b4172d1c6e385257a1815257d23e14b13a793a4b4566a285cd5612",
+      "imageUrls": []
+    },
+    {
+      "id": "yakuzaishi-2026-annual-theory-q101",
+      "qNumber": 101,
+      "physicalPage": 8,
+      "officialAnswer": [
+        "2"
+      ],
+      "questionSha256": "4c14804df2117c8e7c9a5d55e95e8022fbdbcbb154a210b7235ff8d6c6f9ccf2",
+      "imageUrls": [
+        "/images/questions/yakuzaishi/pharmacy-111-theory-q101-organic-original-1.png"
+      ]
+    },
+    {
+      "id": "yakuzaishi-2026-annual-theory-q102",
+      "qNumber": 102,
+      "physicalPage": 9,
+      "officialAnswer": [
+        "4"
+      ],
+      "questionSha256": "5c513582166709b45eb80394855477adb1267b90f48f011d85d6ffad2d3ee2fb",
+      "imageUrls": [
+        "/images/questions/yakuzaishi/pharmacy-111-theory-q102-organic-original-1.png"
+      ]
+    },
+    {
+      "id": "yakuzaishi-2026-annual-theory-q103",
+      "qNumber": 103,
+      "physicalPage": 10,
+      "officialAnswer": [
+        "2"
+      ],
+      "questionSha256": "12a7cb6e314e3bd44386c7a4d952d441e4add8c59cb88696d72cfc802b1f0654",
+      "imageUrls": [
+        "/images/questions/yakuzaishi/pharmacy-111-theory-q103-organic-original-1.png"
+      ]
+    },
+    {
+      "id": "yakuzaishi-2026-annual-theory-q104",
+      "qNumber": 104,
+      "physicalPage": 11,
+      "officialAnswer": [
+        "2",
+        "4"
+      ],
+      "questionSha256": "80e33d1eed9f70ef47a647409fae3e43df9e5e14548e83c4cd0c8968349f7219",
+      "imageUrls": [
+        "/images/questions/yakuzaishi/pharmacy-111-theory-q104-organic-original-1.png"
+      ]
+    },
+    {
+      "id": "yakuzaishi-2026-annual-theory-q107",
+      "qNumber": 107,
+      "physicalPage": 14,
+      "officialAnswer": [
+        "1",
+        "4"
+      ],
+      "questionSha256": "f7bc3084c7b8818928d74a67632581d4ef96165edf0a190eba23a35800b8c62a",
+      "imageUrls": [
+        "/images/questions/yakuzaishi/pharmacy-111-theory-q107-biological-science-1.png",
+        "/images/questions/yakuzaishi/pharmacy-111-theory-q107-biological-science-2.png"
+      ]
+    },
+    {
+      "id": "yakuzaishi-2026-annual-theory-q108",
+      "qNumber": 108,
+      "physicalPage": 16,
+      "officialAnswer": [
+        "5"
+      ],
+      "questionSha256": "bee8641717835c9059928db508e80745e0f51a755deb9411f1ac716f7b6112c5",
+      "imageUrls": [
+        "/images/questions/yakuzaishi/pharmacy-111-theory-q108-biological-science-1.png"
+      ]
+    },
+    {
+      "id": "yakuzaishi-2026-annual-theory-q110",
+      "qNumber": 110,
+      "physicalPage": 18,
+      "officialAnswer": [
+        "1"
+      ],
+      "questionSha256": "04efb29a25e3da8ea105ccf7a56577269a6097e82e310df00b848f4eaddb817f",
+      "imageUrls": [
+        "/images/questions/yakuzaishi/pharmacy-111-theory-q110-calculation-figure-original-1.png"
+      ]
+    },
+    {
+      "id": "yakuzaishi-2026-annual-theory-q113",
+      "qNumber": 113,
+      "physicalPage": 19,
+      "officialAnswer": [
+        "1",
+        "3"
+      ],
+      "questionSha256": "c5941d1b6deed7cccb41303f12e50625063bf3f3a7c9f4e283e8aa9b2dd9ddbc",
+      "imageUrls": [
+        "/images/questions/yakuzaishi/pharmacy-111-theory-q113-biological-science-1.png"
+      ]
+    },
+    {
+      "id": "yakuzaishi-2026-annual-theory-q114",
+      "qNumber": 114,
+      "physicalPage": 20,
+      "officialAnswer": [
+        "1",
+        "5"
+      ],
+      "questionSha256": "7c5c320a012198dce6f1dff63ced8b3047845737c806a524195138f27414d908",
+      "imageUrls": [
+        "/images/questions/yakuzaishi/pharmacy-111-theory-q114-biological-science-1.png"
+      ]
+    },
+    {
+      "id": "yakuzaishi-2026-annual-theory-q115",
+      "qNumber": 115,
+      "physicalPage": 21,
+      "officialAnswer": [
+        "1",
+        "4"
+      ],
+      "questionSha256": "af9eccf2a15fb513d764d8e8a3f19e09fbb349921e6c0fdbc8f69bfc2347b0f8",
+      "imageUrls": [
+        "/images/questions/yakuzaishi/pharmacy-111-theory-q115-graph-original-1.png"
+      ]
+    },
+    {
+      "id": "yakuzaishi-2026-annual-theory-q120",
+      "qNumber": 120,
+      "physicalPage": 24,
+      "officialAnswer": [
+        "2",
+        "4"
+      ],
+      "questionSha256": "e20152d94c2b0a393a343144d30b5634a119fe567e90212343b1d3e480260338",
+      "imageUrls": [
+        "/images/questions/yakuzaishi/pharmacy-111-theory-q120-biological-science-1.png"
+      ]
+    },
+    {
+      "id": "yakuzaishi-2026-annual-theory-q135",
+      "qNumber": 135,
+      "physicalPage": 36,
+      "officialAnswer": [
+        "4",
+        "5"
+      ],
+      "questionSha256": "333f5cda5d5ce75499d2d7efca18a6e226d2228ec54d9d6925400e56e2ad1a01",
+      "imageUrls": []
+    },
+    {
+      "id": "yakuzaishi-2026-annual-theory-q138",
+      "qNumber": 138,
+      "physicalPage": 38,
+      "officialAnswer": [
+        "2",
+        "5"
+      ],
+      "questionSha256": "54bc99257e3da2497ecf85c7b5b778d25b5166b4232aefe0491f47e797d604fd",
+      "imageUrls": [
+        "/images/questions/yakuzaishi/pharmacy-111-theory-q138-environmental-original-1.png"
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "path": "/images/questions/yakuzaishi/pharmacy-111-theory-q096-physical-formulation-1.png",
+      "sha256": "3a9444fef76e164344483179bb95c5290c07a73df2877bd1449656776611f091",
+      "bytes": 122722
+    },
+    {
+      "path": "/images/questions/yakuzaishi/pharmacy-111-theory-q096-physical-formulation-2.png",
+      "sha256": "d8acf705489ab66337f3a6defb4c8b037f4202f4d856802d801b240b310523b5",
+      "bytes": 9399
+    },
+    {
+      "path": "/images/questions/yakuzaishi/pharmacy-111-theory-q101-organic-original-1.png",
+      "sha256": "08b2a3af15f24b579ea72a8e0ebb4bc36a310f529cf159fb55dc4a9e799fc59a",
+      "bytes": 19635
+    },
+    {
+      "path": "/images/questions/yakuzaishi/pharmacy-111-theory-q102-organic-original-1.png",
+      "sha256": "a9929844ba796903561007bf7f7845de563faf122aa7c5cecef8a78b63324e7c",
+      "bytes": 17884
+    },
+    {
+      "path": "/images/questions/yakuzaishi/pharmacy-111-theory-q103-organic-original-1.png",
+      "sha256": "d950703c3c9d61bb1a0928da7f3244b02cd3c8988ef8e079aeb08de59c17af9a",
+      "bytes": 29525
+    },
+    {
+      "path": "/images/questions/yakuzaishi/pharmacy-111-theory-q104-organic-original-1.png",
+      "sha256": "5efd5210eaef262c622e123ca521bd348158e7bd3c580c76510e4e7f872a371d",
+      "bytes": 21277
+    },
+    {
+      "path": "/images/questions/yakuzaishi/pharmacy-111-theory-q107-biological-science-1.png",
+      "sha256": "f5c9064030f483c12a617a9eb0c4d7cac57d131efdff711b5b865c7f4aa9fcf5",
+      "bytes": 96493
+    },
+    {
+      "path": "/images/questions/yakuzaishi/pharmacy-111-theory-q107-biological-science-2.png",
+      "sha256": "b9e9fad5ae58b2fa1b027a1b8abeaaa0fa0d6edab9141e28f60982a295879c45",
+      "bytes": 5780
+    },
+    {
+      "path": "/images/questions/yakuzaishi/pharmacy-111-theory-q108-biological-science-1.png",
+      "sha256": "043151548723aebecd5d55947b5a3a3c18ede97b837a26bf97341c1cabd762e3",
+      "bytes": 38591
+    },
+    {
+      "path": "/images/questions/yakuzaishi/pharmacy-111-theory-q110-calculation-figure-original-1.png",
+      "sha256": "d1379cadb200560f3be1625ecf47b0b18768ba35a356b3a47100efe7a4c675b1",
+      "bytes": 123109
+    },
+    {
+      "path": "/images/questions/yakuzaishi/pharmacy-111-theory-q113-biological-science-1.png",
+      "sha256": "1eeb007921025488218c357dbe5acfa719e550da259fd4d3dac27b11319ba7ca",
+      "bytes": 27875
+    },
+    {
+      "path": "/images/questions/yakuzaishi/pharmacy-111-theory-q114-biological-science-1.png",
+      "sha256": "25bb070495049218ec1823a8d2afca197e9e2621d31829c3864c89367dd0a018",
+      "bytes": 40679
+    },
+    {
+      "path": "/images/questions/yakuzaishi/pharmacy-111-theory-q115-graph-original-1.png",
+      "sha256": "e1ec8a885dd6882d6aac719eed98286298f38f9c07a80d5281d6061feb4da911",
+      "bytes": 29196
+    },
+    {
+      "path": "/images/questions/yakuzaishi/pharmacy-111-theory-q120-biological-science-1.png",
+      "sha256": "47d70c7cea4a233da2016c56243901ba7a3f718e713f69a53d97fd28160d97da",
+      "bytes": 37050
+    },
+    {
+      "path": "/images/questions/yakuzaishi/pharmacy-111-theory-q138-environmental-original-1.png",
+      "sha256": "9b77a214535220339ecc018782e3d8a66c5fdf151497b97cc41d0ae9bde04220",
+      "bytes": 84472
+    }
+  ]
+}

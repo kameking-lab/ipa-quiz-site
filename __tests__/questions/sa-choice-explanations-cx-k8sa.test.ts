@@ -17,7 +17,8 @@ describe("SA 午前IIの選択肢解説", () => {
       "sa-2023h-am2-q2", "sa-2023h-am2-q9",
       "sa-2025h-am2-q8",
     ];
-    const questions = SA_QUESTIONS.filter(question => question.session === "am2");
+    const reviewedIds = new Set([...Object.keys(overlay), ...skippedIds]);
+    const questions = SA_QUESTIONS.filter(q => q.session === "am2" && reviewedIds.has(q.id));
     expect(questions).toHaveLength(200);
     expect(Object.keys(overlay)).toHaveLength(182);
     expect(questions.filter(question => !(question.id in overlay)).map(question => question.id).sort())
@@ -36,7 +37,8 @@ describe("SA 午前IIの選択肢解説", () => {
       delete copy.choiceExplanations;
       return copy;
     });
-    expect(withoutReasons(SA_QUESTIONS)).toEqual(withoutReasons(originals));
+    const originalIds = new Set(originals.map(q => q.id));
+    expect(withoutReasons(SA_QUESTIONS.filter(q => originalIds.has(q.id)))).toEqual(withoutReasons(originals));
   });
 
   it("対象の全四肢に60〜180字の異なる理由を付け、正答と正誤を一致させる", () => {

@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "lane": "rs-6",
+  "checkedAt": "2026-11-17",
+  "baselineCommit": "41bef5e2c",
+  "baseLedger": "C:/Users/kanet/20260522/codex-run-20261110/research/replenish/ledger.json",
+  "upsertRows": [
+    {
+      "key": "gyosei|2023|annual",
+      "qualificationCode": "gyosei",
+      "qualification": "行政書士",
+      "year": 2023,
+      "sitting": "annual",
+      "status": "ブランチ／PR に有り",
+      "mainQuestionCount": 0,
+      "questionCount": 20,
+      "officialPublishedQuestionCount": 54,
+      "originalExamQuestionCount": 60,
+      "missingPublishedCount": 34,
+      "remainingPublishedQuestionNumbers": [
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        17,
+        18,
+        19,
+        20,
+        21,
+        25,
+        28,
+        29,
+        34,
+        35,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        57
+      ],
+      "duplicateWarning": false,
+      "questionIds": [
+        "gyosei-2023-annual-gakka-q11",
+        "gyosei-2023-annual-gakka-q12",
+        "gyosei-2023-annual-gakka-q13",
+        "gyosei-2023-annual-gakka-q14",
+        "gyosei-2023-annual-gakka-q15",
+        "gyosei-2023-annual-gakka-q16",
+        "gyosei-2023-annual-gakka-q22",
+        "gyosei-2023-annual-gakka-q23",
+        "gyosei-2023-annual-gakka-q24",
+        "gyosei-2023-annual-gakka-q26",
+        "gyosei-2023-annual-gakka-q27",
+        "gyosei-2023-annual-gakka-q30",
+        "gyosei-2023-annual-gakka-q31",
+        "gyosei-2023-annual-gakka-q32",
+        "gyosei-2023-annual-gakka-q33",
+        "gyosei-2023-annual-gakka-q36",
+        "gyosei-2023-annual-gakka-q37",
+        "gyosei-2023-annual-gakka-q38",
+        "gyosei-2023-annual-gakka-q39",
+        "gyosei-2023-annual-gakka-q40"
+      ],
+      "sessionCounts": {
+        "gakka": 20
+      },
+      "categoryCounts": {
+        "行政法": 10,
+        "民法": 5,
+        "商法・会社法": 5
+      },
+      "officialSourceUrls": [
+        "https://www.gyosei-shiken.or.jp/pdf/r5_mondai.pdf",
+        "https://www.gyosei-shiken.or.jp/doc/exam/r5ans.html",
+        "https://gyosei-shiken.or.jp/pdf/r5sample.pdf"
+      ],
+      "occurrences": [
+        {
+          "kind": "branch",
+          "name": "cx/kako-restock-g3-20261117",
+          "updatedAt": "2026-11-17",
+          "questionCount": 20,
+          "paths": [
+            "data/questions/gyosei/2023-annual.json",
+            "data/questions/gyosei/2023-sources.json",
+            "data/questions/gyosei/index.ts"
+          ],
+          "countBasis": "公式本文20問・全100選択肢・正答20件を二つのPDF抽出器と公式HTMLで照合。独自の全肢解説100件・組合せ記述解説19件。"
+        }
+      ],
+      "notes": [
+        "既存2024・2025年度112問は不変。2023年度は20問の部分収録。",
+        "本番反映は未確認。mainQuestionCount=0は今回の追加分の基点ブランチ時点。"
+      ]
+    }
+  ],
+  "unconfirmed": [
+    {
+      "qualificationCode": "benrishi",
+      "year": 2024,
+      "sitting": "annual",
+      "officialPageUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/2024tanto.html",
+      "questionPdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2024tanto/question.pdf",
+      "status": "本文未取得。公式への通常GET・Web取得はHTTP403。問題の追加0件。着手済みとして確保しない。"
+    }
+  ]
+}

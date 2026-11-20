@@ -21,7 +21,7 @@ describe("observed learning records, not derived pass probabilities",()=>{
   expect(screen.queryByText(/予測合格率|計測中|合格圏/)).toBeNull();expect(localStorage.getItem(LS_KEYS.history)).toBe(before);
  });
  it("progress displays actual ratios even below ten samples, sorting by answer count",async()=>{
-  const before=seed();render(<DashboardProgress/>);await screen.findByText("試験別 記録の正答率（13区分）");
+  const before=seed();render(<DashboardProgress/>);await screen.findByText("試験別 記録の正答率");
   const rows=screen.getAllByRole("link");expect(rows[0]).toHaveAttribute("href","/quiz?mode=random&exam=ap");
   expect(within(rows[0]).getByText("50%")).toBeInTheDocument();expect(rows[0]).toHaveTextContent("10問 解答済");
   expect(rows[1]).toHaveTextContent("100%");expect(rows[1]).toHaveTextContent("2問 解答済");
@@ -30,8 +30,19 @@ describe("observed learning records, not derived pass probabilities",()=>{
  it("empty overview shows no measured percentage",async()=>{
   render(<DashboardOverview/>);await screen.findByText("記録の正答率");expect(screen.getByText("まだ回答記録がありません")).toBeInTheDocument();expect(screen.getByText("—")).toBeInTheDocument();
  });
- it("unanswered exam rows use a dash",async()=>{
-  render(<DashboardProgress/>);await screen.findByText("試験別 記録の正答率（13区分）");
-  for(const row of screen.getAllByRole("link")){expect(row).toHaveTextContent("0問 解答済");expect(within(row).getByText("—")).toBeInTheDocument();}
+ it("empty progress avoids thirteen unanswered links and a measured percentage",async()=>{
+  render(<DashboardProgress/>);await screen.findByText("まだ学習履歴がありません。問題を解くと表示されます。");
+  expect(screen.queryByRole("link")).toBeNull();expect(screen.queryByText("0%")).toBeNull();
+ });
+ it("keeps an existing overview record distinct from missing question metadata",async()=>{
+  const before=seed();vi.stubGlobal("fetch",vi.fn().mockResolvedValue(Response.json({meta:[]})));
+  render(<DashboardOverview/>);await screen.findByText("正答率を読み込めませんでした");
+  expect(screen.queryByText("まだ回答記録がありません")).toBeNull();expect(localStorage.getItem(LS_KEYS.history)).toBe(before);
+ });
+ it("keeps totals when category metadata fails without showing an empty-history state",async()=>{
+  const before=seed();vi.stubGlobal("fetch",vi.fn().mockResolvedValue(Response.json({meta:[]})));
+  render(<DashboardProgress/>);await screen.findByText("分野別の記録を読み込めませんでした。");
+  expect(screen.getByText("12")).toBeInTheDocument();expect(screen.queryByText("まだ学習履歴がありません。問題を解くと表示されます。")).toBeNull();
+  expect(screen.queryByRole("link")).toBeNull();expect(localStorage.getItem(LS_KEYS.history)).toBe(before);
  });
 });

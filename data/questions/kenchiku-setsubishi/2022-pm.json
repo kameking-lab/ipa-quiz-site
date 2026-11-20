@@ -1,0 +1,2586 @@
+[
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q1",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 1,
+    "subject": "建築設備",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "湿り空気"
+    ],
+    "difficulty": 2,
+    "question": "湿り空気に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "飽和度とは、同じ温度における｢飽和空気の絶対湿度｣に対する｢湿り空気の絶対湿度｣の割合を百分率で表したものである。",
+      "イ": "絶対湿度とは、｢湿り空気の質量｣に対する｢湿り空気中の水蒸気の質量｣の割合のことである。",
+      "ウ": "湿り空気は、シリカゲルを用いて減湿すると、乾球温度及び湿球温度が上昇する。",
+      "エ": "湿り空気は、常に乾いた伝熱面と接触させて加熱すると、加熱後の湿り空気の相対湿度が低下する。"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=3",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.1。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "飽和度は、対象空気の絶対湿度を同じ温度における飽和空気の絶対湿度で割った割合です。",
+      "イ": "空調計算での絶対湿度は、湿り空気に含まれる水蒸気の質量を乾き空気の質量で割ります。水蒸気を含む空気全体を分母とした点が不適当です。",
+      "ウ": "シリカゲルが水蒸気を吸着する際に熱を放出します。設問の吸着減湿では、この熱によって空気の温度が上がります。",
+      "エ": "乾いた面で加熱すると水蒸気量は増えず、温度上昇によって飽和水蒸気量は増えるので、相対湿度が低下します。"
+    },
+    "explanation": "空調計算での絶対湿度は、湿り空気に含まれる水蒸気の質量を乾き空気の質量で割ります。水蒸気を含む空気全体を分母とした点が不適当です。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q2",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 2,
+    "subject": "建築設備",
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "空調設計"
+    ],
+    "difficulty": 2,
+    "question": "空調設備の設計に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "１台の空調機で多数室へ給気する場合、各室への風量は、一般に、空調機の全風量を各室の全熱負荷に応じて比例配分する。",
+      "イ": "ペリメータゾーンの奥行きは、一般に、外壁の中心線から３～５ｍ程度とする。",
+      "ウ": "屋上植栽には、保水、断熱、日射の焼け込み低減等の効果がある。",
+      "エ": "内部負荷の大きい建築物においては、断熱性能を向上させると、年間熱負荷の増加を招くことがある。"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=3",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.2。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "同じ給気温度から供給する場合、各室で必要な風量は室の顕熱負荷と給気との温度差から求めます。潜熱を含む全熱負荷で一律に比例配分する説明は不適当です。",
+      "イ": "窓や外壁を通じた外気及び日射の影響を受ける領域を区別し、奥行きは外壁からおおむね3～5 mを目安とします。",
+      "ウ": "植栽層が雨水を保持し、蒸散や遮蔽で屋上の温度上昇を抑えるほか、屋根を通る熱流も減らします。",
+      "エ": "内部で生じる熱が多い建物では、断熱強化で冬や中間期の放熱が減り、年間の冷房負荷が増える場合があります。"
+    },
+    "explanation": "同じ給気温度から供給する場合、各室で必要な風量は室の顕熱負荷と給気との温度差から求めます。潜熱を含む全熱負荷で一律に比例配分する説明は不適当です。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q3",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 3,
+    "subject": "建築設備",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "エネルギー利用"
+    ],
+    "difficulty": 2,
+    "question": "エネルギーの有効利用に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "排熱を回収利用するガスエンジンヒートポンプは、冬期の暖房時のエネルギー利用効率が高い。",
+      "イ": "ごみ焼却施設からの排熱は、一般に、100 ℃前後又はそれ以上であり、地域冷暖房の熱源や吸収冷凍機の駆動用エネルギーに利用できる。",
+      "ウ": "海水は、一般に、大気に比べて、年間を通して温度の変動幅が小さいので、ヒートポンプの熱源として効率的に利用できる。",
+      "エ": "ガスタービンコージェネレーションシステムの排熱回収源は、排ガスであり、主に温水の形で利用される。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=3",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.3。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "ガスエンジンの排熱を暖房に有効利用できるので、冷媒回路で得る暖房能力にその分を加えられます。",
+      "イ": "焼却で得られる高温の排熱は、温水や蒸気などとして回収し、地域暖房や吸収冷凍機の駆動に利用できます。",
+      "ウ": "海水は大気より年間の温度変化が小さいことが多く、冷暖房期の熱源と放熱先として効率的に利用できます。",
+      "エ": "ガスタービンでは高温の排ガスを排熱ボイラーに導いて回収するのが一般的で、主に蒸気が得られます。"
+    },
+    "explanation": "ガスタービンでは高温の排ガスを排熱ボイラーに導いて回収するのが一般的で、主に蒸気が得られます。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q4",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 4,
+    "subject": "建築設備",
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "空調方式"
+    ],
+    "difficulty": 2,
+    "question": "空調方式に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "蒸気暖房は、一般に、温水暖房に比べて、負荷変動に対する制御を行いやすい。",
+      "イ": "ペリメータファンコイルユニット方式を用いる場合は、一般に、スキンロード（外皮負荷）をファンコイルユニットに分担させ、外気負荷と室内負荷を別の空調機に分担させる。",
+      "ウ": "外気処理空調機とターミナル空調機を組み合わせた方式においては、一般に、ターミナル空調機を空調対象室の直近に配置する。",
+      "エ": "放射空調方式は、吹出し気流によるドラフトや騒音が生じない方式である。"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=4",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.4。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "蒸気は凝縮するときに高温の潜熱を急速に放出する一方、負荷に応じきめ細かく暖房能力を調節するには温水方式が適しています。",
+      "イ": "ペリメータのファンコイルで窓や外壁からの負荷を処理し、別系統の空調機で換気や室内発熱などの負荷を処理できます。",
+      "ウ": "対象室近くのターミナル空調機で各室の負荷に応じて調節し、別の外気処理空調機から処理した外気を供給します。",
+      "エ": "放射パネル等は主に表面からの熱放射で冷暖房するので、放射設備自体は吹出し風によるドラフトや騒音を生じません。"
+    },
+    "explanation": "蒸気は凝縮するときに高温の潜熱を急速に放出する一方、負荷に応じきめ細かく暖房能力を調節するには温水方式が適しています。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q5",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 5,
+    "subject": "建築設備",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "蒸気加湿"
+    ],
+    "difficulty": 2,
+    "question": "イ～ホの条件によって計算した蒸気加湿装置の加湿量として、最も適当なものは、次のうちどれか。\n条件\nイ．加湿蒸気の比エンタルピー：2,700 kJ／ kg\nロ．入口空気と出口空気との比エンタルピー差：13.5 kJ／ kg （DA）\nハ．送風量：1,000 m³／ h\nニ．空気の密度：1.2 kg／ m³\nホ．この装置からの空気の漏れは、ないものとする。",
+    "choices": {
+      "ア": "4.2 kg／ h",
+      "イ": "5.0 kg／ h",
+      "ウ": "6.0 kg／ h",
+      "エ": "7.2 kg／ h"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=4",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.5。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "送風量に密度を掛けて質量流量に変換し、空気の比エンタルピー上昇を蒸気の熱量に換算します。4.2 kg/hでは示された熱量を供給できません。",
+      "イ": "5.0 kg/hは空気密度を1.0 kg/m³として計算した値です。設問では1.2 kg/m³を用います。",
+      "ウ": "空気質量流量は1,000×1.2＝1,200 kg/hです。必要な蒸気の量は1,200×13.5÷2,700＝6.0 kg/hとなります。",
+      "エ": "空気密度1.2 kg/m³を送風量に一度だけ掛けます。7.2 kg/hは密度を重複して掛けた値です。"
+    },
+    "explanation": "空気質量流量は1,000×1.2＝1,200 kg/hです。必要な蒸気の量は1,200×13.5÷2,700＝6.0 kg/hとなります。",
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "isCalculation": true
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q6",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 6,
+    "subject": "建築設備",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "冷房送風量"
+    ],
+    "difficulty": 2,
+    "question": "全空気方式の空調設備における冷房時の送風量の算出に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "壁体の貫流熱負荷は、送風量の算出に関係する。",
+      "イ": "ガラス窓透過日射熱負荷は、送風量の算出に関係する。",
+      "ウ": "照明負荷は、送風量の算出に関係しない。",
+      "エ": "外気負荷は、送風量の算出に関係しない。"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=4",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.6。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "壁体を通って室内に伝わる顕熱を給気で除去するので、送風量の計算に含めます。",
+      "イ": "窓ガラスを透過した日射は室の顕熱負荷となり、必要な送風量に影響します。",
+      "ウ": "照明からの放熱は室内の顕熱負荷です。その熱を除去するには、所定の給気温度差に応じた風量が必要です。",
+      "エ": "外気の処理は冷却コイルなどの負荷を増やします。設問の送風量は室を冷やすための顕熱負荷から算出します。"
+    },
+    "explanation": "照明からの放熱は室内の顕熱負荷です。その熱を除去するには、所定の給気温度差に応じた風量が必要です。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q7",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 7,
+    "subject": "建築設備",
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "冷温水配管"
+    ],
+    "difficulty": 2,
+    "question": "空調設備の水配管システムに関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "リバースリターン方式は、ダイレクトリターン方式に比べて、配管スペースの縮小に有効である。",
+      "イ": "ダイヤフラム型密閉式膨張タンクは、開放式膨張タンクに比べて、タンクの容量が同じ場合、容積が大きくなる。",
+      "ウ": "ダイヤフラム型密閉式膨張タンクの容量は、冷温水の有効膨張量、タンクの最低必要圧力及びタンクの最高使用圧力によって求められる。",
+      "エ": "遠心ポンプの軸動力は、水動力をポンプ効率で除することによって求められる。"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=5",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.7。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "リバースリターンは各端末の往復配管長をそろえて流量を均等にしやすい一方、戻り配管が長くなるため、配管スペースは一般に増えます。",
+      "イ": "密閉式では隔膜の反対側に圧縮される気体の空間を持たせます。扱う水の膨張量が同じなら、その空間を含めて容積が大きくなります。",
+      "ウ": "使用圧力の上下限を満たしつつ水の膨張を受け入れる必要があるため、有効膨張量と最低・最高圧力を基に容積を決めます。",
+      "エ": "水に与える仕事率が水動力です。機械内部の損失も考えると、軸には水動力を効率で割った動力が必要です。"
+    },
+    "explanation": "リバースリターンは各端末の往復配管長をそろえて流量を均等にしやすい一方、戻り配管が長くなるため、配管スペースは一般に増えます。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q8",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 8,
+    "subject": "建築設備",
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "ダクト"
+    ],
+    "difficulty": 2,
+    "question": "ダクト系統に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "ダクトの圧力損失は、風量が一定の場合、ダクト内を流れる空気の温度が低下するほど小さくなる。",
+      "イ": "ダクト直管部の摩擦損失は、風速の２乗に比例する。",
+      "ウ": "ダクトは、静圧によって、低圧ダクト、高圧１ダクト及び高圧２ダクトに分類されている。",
+      "エ": "送風機に接続するダクトの形状が、その送風機の運転性能に与える影響は、吐出し側より吸込み側のほうが大きい。"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=5",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.8。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "体積風量を一定にすると空気の温度が低いほど密度が高くなり、同じ風速でも動圧が増します。これに伴って圧力損失も大きくなります。",
+      "イ": "断面と空気の密度が同じなら、直管摩擦による圧力損失は風速の2乗で増加します。",
+      "ウ": "ダクトの板厚・補強などは使用時の静圧の区分に応じて選定します。区分には低圧、高圧1及び高圧2があります。",
+      "エ": "吸込み側の曲がりなどによって入口流れが偏ると、羽根車への流入条件が乱れ、送風機の能力を大きく低下させることがあります。"
+    },
+    "explanation": "体積風量を一定にすると空気の温度が低いほど密度が高くなり、同じ風速でも動圧が増します。これに伴って圧力損失も大きくなります。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q9",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 9,
+    "subject": "建築設備",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "ダクトの圧力"
+    ],
+    "difficulty": 2,
+    "question": "図のようなダクト系統において、図中a～dの各位置における全圧及び動圧が表に示す値であるときの送風機静圧として、最も適当なものは、次のうちどれか。ただし、空気は定常状態で流れるものとし、空気の密度は 1.2 kg／ m³ とする。",
+    "choices": {
+      "ア": "180 Pa",
+      "イ": "200 Pa",
+      "ウ": "220 Pa",
+      "エ": "240 Pa"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=5",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.9。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "送風機直後のcの全圧は180 Paです。送風機の静圧を求めるには吸込み側の全圧と吐出し側の動圧も使います。",
+      "イ": "全圧の上昇はcとbの差で180−(−60)＝240 Paです。吐出し動圧40 Paを差し引くと送風機静圧は200 Paです。",
+      "ウ": "送風機静圧を求める際に差し引くのは吸込み動圧20 Paではなく、吐出し側cの動圧40 Paです。",
+      "エ": "240 Paは送風機全圧です。その中から吐出し側の速度に相当する動圧を除くと、送風機静圧になります。"
+    },
+    "explanation": "全圧の上昇はcとbの差で180−(−60)＝240 Paです。吐出し動圧40 Paを差し引くと送風機静圧は200 Paです。",
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/kenchiku-setsubishi/2022-annual/pm-q9.png"
+    ],
+    "imageAltTexts": [
+      "ダクト内の測定点4か所と全圧・動圧の表"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q10",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 10,
+    "subject": "建築設備",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "粉じん収支"
+    ],
+    "difficulty": 2,
+    "question": "図のような粉じん発生のある居室に設けた換気設備において、イ～トの条件によって計算したエアフィルターの粉じん捕集率として、最も適当なものは、次のうちどれか。\n条件\nイ．外気取入れ量：500 m³／ h\nロ．排気量：500 m³／ h\nハ．外気の粉じん濃度：0.10 mg／ m³\nニ．室内空気の粉じん濃度：0.15 mg／ m³\nホ．室内の粉じん発生量：60 mg／ h\nヘ．室内の粉じんは、一様に分布するものとする。\nト．ダクト系及び室内からの空気の漏れは、ないものとする。",
+    "choices": {
+      "ア": "0.3",
+      "イ": "0.4",
+      "ウ": "0.5",
+      "エ": "0.7"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=6",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.10。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "0.3はフィルターを通過する粉じんの割合です。捕集率は1から通過割合を引いて求めます。",
+      "イ": "捕集率0.4では外気から50×0.6＝30 mg/hが室に入り、室内発生分60 mg/hを加えると排出量75 mg/hと釣り合いません。",
+      "ウ": "捕集率0.5では外気から25 mg/hが通過し、室で発生する60 mg/hを加えて85 mg/hとなり、排出量75 mg/hを上回ります。",
+      "エ": "排出は500×0.15＝75 mg/hで、室内発生60 mg/hを引いた15 mg/hがフィルターを通過します。導入前の50 mg/hから捕集率は1−15÷50＝0.7です。"
+    },
+    "explanation": "排出は500×0.15＝75 mg/hで、室内発生60 mg/hを引いた15 mg/hがフィルターを通過します。導入前の50 mg/hから捕集率は1−15÷50＝0.7です。",
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/kenchiku-setsubishi/2022-annual/pm-q10.png"
+    ],
+    "imageAltTexts": [
+      "給排気ファンとエアフィルター、室内の粉じん源を示す模式図"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q11",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 11,
+    "subject": "建築設備",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "自動制御"
+    ],
+    "difficulty": 2,
+    "question": "空調設備の自動制御に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "三方弁を用いた定流量方式は、負荷機器への送水量は変化するが、配管系全体の循環水量は変化しない。",
+      "イ": "二方弁を用いた変流量方式は、ポンプの台数制御や回転数制御によって、ポンプの搬送動力を削減できる。",
+      "ウ": "外気冷房制御は、室内空気と外気との比エンタルピー差等によって、外気ダンパーの開度制御や送風機の回転数制御を行うものである。",
+      "エ": "CO2 濃度制御は、給気ダクトに設けたCO2 濃度センサーによって、外気ダンパーの開度制御や送風機の回転数制御を行うものである。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=6",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.11。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "三方弁で負荷機器へ送る流量とバイパス流量の配分を変えます。両者の合計となる循環水量は一定です。",
+      "イ": "負荷が減って二方弁が閉じると循環水量が減ります。ポンプの台数や速度を下げることで搬送動力を減らせます。",
+      "ウ": "外気のほうが室内空気より冷房に利用しやすいと判断した場合、ダンパー開度や送風量を調整して取り入れ量を増やします。",
+      "エ": "在室者から発生するCO₂を把握するには、室内や還気ダクトで濃度を測定します。給気ダクトでは室内の実際の濃度を検出できません。"
+    },
+    "explanation": "在室者から発生するCO₂を把握するには、室内や還気ダクトで濃度を測定します。給気ダクトでは室内の実際の濃度を検出できません。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q12",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 12,
+    "subject": "建築設備",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "機械排煙"
+    ],
+    "difficulty": 2,
+    "question": "機械排煙設備に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "火災温度が上昇した場合、防火区画を貫通する排煙ダクトは、一般に、温度ヒューズの溶融温度が 280 ℃の防火ダンパーによって閉鎖させる。",
+      "イ": "特別避難階段の付室のための排煙機の排煙風量は、２ m³／ s以上とする。",
+      "ウ": "排煙ダクトは、隠蔽部分以外の部分に設ける場合であっても、可燃材料と 15 cm以上の離隔距離が確保できない場合には、ロックウール等を用いて断熱措置を施す。",
+      "エ": "防煙区画の排煙風量は、床面積１ m²当たり１ m³／ min以上とする。"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=7",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.12。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "排煙中には高温の煙が通るので、一般の換気用より溶融温度が高い280℃の防火ダンパーを用います。さらに温度が上がると区画貫通部を閉鎖します。",
+      "イ": "特別避難階段の付室の機械排煙設備では、設問の排煙機の風量は4 m³/s以上が必要です。2 m³/sでは不足します。",
+      "ウ": "可燃材料がダクトから受ける熱を抑えるため、離隔を取れない場合は不燃性の断熱材を用います。",
+      "エ": "防煙区画の面積に応じて必要な排煙量を確保し、床面積1 m²当たり毎分1 m³以上を基準とします。"
+    },
+    "explanation": "特別避難階段の付室の機械排煙設備では、設問の排煙機の風量は4 m³/s以上が必要です。2 m³/sでは不足します。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q13",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 13,
+    "subject": "建築設備",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "熱交換器"
+    ],
+    "difficulty": 2,
+    "question": "熱交換器に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "プレート式熱交換器は、小温度差の熱交換に適している。",
+      "イ": "蒸気対温水の熱交換器には、多管式、貯湯槽式、プレート式等が用いられる。",
+      "ウ": "冷水コイルの必要列数は、コイルの正面面積に反比例し、空気と冷水の対数平均温度差に比例する。",
+      "エ": "回転型全熱交換器は、吸湿性のあるハニカムローターを回転させて、排気と外気の間で熱交換を行うものである。"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=7",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.13。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "薄いプレートと狭い流路で熱を効率よく伝えられるため、温度差が小さい場合でも熱交換に用いることができます。",
+      "イ": "蒸気の凝縮熱を温水側へ渡す装置には、管群、貯湯槽内の伝熱面、プレートなどを用いる方式があります。",
+      "ウ": "伝熱量は伝熱面積と対数平均温度差の積に比例します。必要な能力を固定すると、正面面積や温度差が大きいほど必要列数は少なくなります。",
+      "エ": "吸湿性を持つローターが排気側と外気側を交互に通過して、温度差に加えて水分も交換します。"
+    },
+    "explanation": "伝熱量は伝熱面積と対数平均温度差の積に比例します。必要な能力を固定すると、正面面積や温度差が大きいほど必要列数は少なくなります。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q14",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 14,
+    "subject": "建築設備",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "パッケージ空調機"
+    ],
+    "difficulty": 2,
+    "question": "パッケージ型空調機に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "パッケージ型空調機に用いられているHFC冷媒は、地球温暖化係数が高い。",
+      "イ": "屋内機の選定に当たっては、屋内機の吸込み空気温度に応じて、冷暖房能力を補正する必要がある。",
+      "ウ": "冷房能力は、空調機の使用可能な範囲において、屋外機と屋内機との高低差による影響を受けない。",
+      "エ": "ガスエンジンヒートポンプパッケージ型空調機は、エンジンの回転で圧縮機を駆動する。"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=7",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.14。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "一般的なHFC冷媒には、大気に漏れたときの地球温暖化係数が高いものが多くあります。",
+      "イ": "室内機の入口空気温度などが標準条件から外れると熱交換量が変わるため、メーカーの特性に従い能力を補正します。",
+      "ウ": "許容配管条件の範囲でも、機器間の高低差や配管長によって圧力損失などが変わり、冷房能力に補正が必要になる場合があります。",
+      "エ": "ガスエンジン式では、燃料を使うエンジンで冷媒圧縮機を駆動します。電動モータで圧縮機を駆動する方式と区別されます。"
+    },
+    "explanation": "許容配管条件の範囲でも、機器間の高低差や配管長によって圧力損失などが変わり、冷房能力に補正が必要になる場合があります。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q15",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 15,
+    "subject": "建築設備",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "冷却塔"
+    ],
+    "difficulty": 2,
+    "question": "冷却塔に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "密閉式冷却塔は、管内の冷却水が管壁を介しての間接冷却となるので、冷却水の水質管理が容易である。",
+      "イ": "吸収冷凍機用の冷却塔は、一般に、圧縮冷凍機用の冷却塔に比べて、冷凍機の単位冷凍能力当たりの冷却水量が少ない。",
+      "ウ": "冷却塔の白煙防止の方法には、冷却塔の充塡材を出た後の高温・高湿の空気を加熱する方法がある。",
+      "エ": "フリークーリングとは、冷凍機の圧縮機を停止させ、冷却水を冷熱源として利用する方法である。"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=7",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.15。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "冷却水が循環する回路が閉じており、散布水や外気と直接接しないので、冷却水自体への不純物の混入を抑えられます。",
+      "イ": "吸収冷凍機は冷房で運んだ熱に加え、駆動のために投入した熱も排出します。同じ冷凍能力なら冷却水量は圧縮式より多くなる傾向があります。",
+      "ウ": "出口空気を加熱すると、温度が上がって相対湿度が下がります。外気と混ざったときの水蒸気の凝結を防ぎやすくなります。",
+      "エ": "外気条件が十分低ければ、冷却塔等で得る冷水を熱交換して冷房に利用できます。圧縮機を停止しても冷熱を供給できます。"
+    },
+    "explanation": "吸収冷凍機は冷房で運んだ熱に加え、駆動のために投入した熱も排出します。同じ冷凍能力なら冷却水量は圧縮式より多くなる傾向があります。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q16",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 16,
+    "subject": "建築設備",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "管内流れ"
+    ],
+    "difficulty": 2,
+    "question": "流体に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "ベルヌーイの定理とは、非圧縮性・非粘性流体の定常流において、圧力ヘッド、速度ヘッド及び位置ヘッドの総和が一定であることを示すものである。",
+      "イ": "サージングとは、流体の流れ場における流速の増加や渦の形成等によって、気泡が発生する現象のことである。",
+      "ウ": "レイノルズ数は、平均流速、管内径及び動粘度によって算出できる。",
+      "エ": "給水栓を急閉止したときに生じるウォーターハンマーによる水撃圧の大きさは、水の密度、給水栓閉止前の流速及び圧力波の伝搬速度によって算出できる。"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=8",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.16。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "理想流体の定常流では、流線上で圧力、流速、高さに対応する単位重量当たりのエネルギーの合計が一定です。",
+      "イ": "局所的に圧力が低下して液体中に気泡が生じるのはキャビテーションです。サージングは流量や圧力が周期的に大きく変動する現象です。",
+      "ウ": "管内流のレイノルズ数は平均流速と管内径の積を動粘度で割って求めます。",
+      "エ": "急閉止による水撃圧は、水の密度、閉止で失われる流速及び圧力波の伝搬速度の積で表せます。"
+    },
+    "explanation": "局所的に圧力が低下して液体中に気泡が生じるのはキャビテーションです。サージングは流量や圧力が周期的に大きく変動する現象です。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q17",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 17,
+    "subject": "建築設備",
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "給排水の省エネ"
+    ],
+    "difficulty": 2,
+    "question": "ホテルにおける省資源・省エネルギーを考慮した給排水衛生設備の計画に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "給水設備において、上水使用量の削減のために、排水再利用水を便器洗浄水及び開放式冷却塔の補給水に利用した。",
+      "イ": "給湯設備において、エネルギー使用量の削減のために、強制循環式の太陽熱給湯システムを給湯ボイラーと組み合わせて採用した。",
+      "ウ": "給湯設備において、ステンレス鋼板製の密閉式貯湯槽については、熱損失の抑制のために、脚部にも断熱工事を行った。",
+      "エ": "衛生器具設備において、節水のために、便所に節水便器、自動水栓及び擬音装置を設置した。"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=8",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.17。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "便器洗浄水には再利用水を利用できます。開放式冷却塔の補給水には蒸発や飛散を伴うため、衛生確保のため所定の水質の水を使います。",
+      "イ": "太陽熱で予熱し、不足するときだけボイラーで加熱する組合せなら、給湯に使う燃料を減らせます。",
+      "ウ": "貯湯槽の脚は周囲へ熱を伝える経路になるため、設計条件に応じて脚部も断熱します。",
+      "エ": "節水型便器や自動水栓に加え、音を隠す目的で水を流す回数を減らせる擬音装置も節水につながります。"
+    },
+    "explanation": "便器洗浄水には再利用水を利用できます。開放式冷却塔の補給水には蒸発や飛散を伴うため、衛生確保のため所定の水質の水を使います。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q18",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 18,
+    "subject": "建築設備",
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "集合住宅の設備"
+    ],
+    "difficulty": 2,
+    "question": "集合住宅における給排水衛生設備の計画に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "設計用給水量は、居住者１人１日当たり 100 Ｌとした。",
+      "イ": "給水系統は、給水圧力を 350 kPa以下に抑えるようにゾーニングを行った。",
+      "ウ": "排水槽の有効容量は、排水槽へ流入する最大排水流量（Ｌ／ min）の 60 分間分の容量とした。",
+      "エ": "屋内消火栓は、広範囲型の２号消火栓とし、階ごとに、その階の各部分から一のホース接続口までの水平距離が 25 ｍ以下となるように設けた。"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=8",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.18。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "集合住宅の給水量は飲用に加えて風呂、洗濯、台所、便器などの生活用水を含めて計画します。100 L/人・日は設問で想定する通常の設計量として少な過ぎます。",
+      "イ": "階の高低差で下層の給水圧が上がり過ぎないように系統を分け、最大350 kPa程度に抑える計画ができます。",
+      "ウ": "排水槽の有効容量を最大排水流量の60分間分とすることで、流入変動に対応しつつ排水ポンプで排出する余裕を確保します。",
+      "エ": "広範囲型2号消火栓の水平到達範囲は25 mです。その範囲で各階を覆うように配置します。"
+    },
+    "explanation": "集合住宅の給水量は飲用に加えて風呂、洗濯、台所、便器などの生活用水を含めて計画します。100 L/人・日は設問で想定する通常の設計量として少な過ぎます。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q19",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 19,
+    "subject": "建築設備",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "ポンプ揚程"
+    ],
+    "difficulty": 2,
+    "question": "図のようなポンプ直送方式の給水設備において、イ～チの条件によって計算した給水ポンプの最低必要な揚程として、最も適当なものは、次のうちどれか。\n条件\nイ．配管の摩擦損失：0.5 kPa／ m\nロ．ガス給湯機の必要圧力：80 kPa\nハ．シャワーの必要圧力：80 kPa\nニ．継手、弁類の相当管長は、実管長の 100 ％とする。\nホ．受水槽の水位は、給水ポンプの中心から上方２ｍの位置で常時一定とする。\nヘ．給水ポンプの余裕率は、考慮しないものとする。\nト．ガス給湯機からの給湯配管は、考慮しないものとする。\nチ．重力加速度は、 10 m／ s² とする。",
+    "choices": {
+      "ア": "27 m",
+      "イ": "28 m",
+      "ウ": "29 m",
+      "エ": "30 m"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=9",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.19。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "27 mは最上段のシャワー側の経路で求めた揚程に相当します。ポンプは各経路を満たす必要があり、給湯機側の必要揚程がさらに大きくなります。",
+      "イ": "給湯機側は水位差15 m、必要圧力80 kPaで8 mです。実管長48 mに同じ相当管長を加えた摩擦損失48 kPaは4.8 mなので、必要揚程は27.8 mで、選択肢では28 mです。",
+      "ウ": "給湯機側の損失を含めた必要揚程は27.8 mです。設問では余裕率を加えません。",
+      "エ": "シャワー側の必要圧力は別の給水経路の条件です。給湯機側の算定に重ねて加える必要はなく、最大値は約28 mです。"
+    },
+    "explanation": "給湯機側は水位差15 m、必要圧力80 kPaで8 mです。実管長48 mに同じ相当管長を加えた摩擦損失48 kPaは4.8 mなので、必要揚程は27.8 mで、選択肢では28 mです。",
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/kenchiku-setsubishi/2022-annual/pm-q19.png"
+    ],
+    "imageAltTexts": [
+      "受水槽とポンプからシャワー、ガス給湯機までの配管長と高さを示す図"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q20",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 20,
+    "subject": "建築設備",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "給水設備"
+    ],
+    "difficulty": 2,
+    "question": "給水設備に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "水道事業の用に供する水道及び専用水道以外の水道であって、水道事業の用に供する水道から供給を受ける水のみを水源とする受水槽で、有効容量が 10 m³を超えるものは、｢簡易専用水道｣に該当する。",
+      "イ": "一般水栓における流動時の最低必要圧力は、一般に、30 kPaである。",
+      "ウ": "パネル型のFRP製受水槽の大きさ及び形状は、強度上の問題等がない限り、最小モジュール寸法 500 mmを基本にして自由に選択できる。",
+      "エ": "揚水ポンプの揚水量をもとに高置水槽の有効容量を算定する場合において、揚水ポンプの最短運転時間は、一般に、45 分程度とする。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=10",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.20。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "水道事業の水のみを水源とし、受水槽の有効容量が10 m³を超える所定の設備は、簡易専用水道として管理します。",
+      "イ": "一般水栓は、水が流れているときでも所定の流量を得られるように、最低必要圧力として30 kPa程度を見込みます。",
+      "ウ": "規格寸法のパネルを組み合わせる方式なので、強度や施工条件を確認した上で、500 mmを基本とする寸法で形状や容量を計画できます。",
+      "エ": "最短運転時間は揚水ポンプの短時間での起動・停止を防ぐために設定し、一般に10分程度を目安にします。45分はこの算定に使う標準的な最短時間として長過ぎます。"
+    },
+    "explanation": "最短運転時間は揚水ポンプの短時間での起動・停止を防ぐために設定し、一般に10分程度を目安にします。45分はこの算定に使う標準的な最短時間として長過ぎます。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q21",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 21,
+    "subject": "建築設備",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "給湯設備"
+    ],
+    "difficulty": 2,
+    "question": "給湯設備に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "レジオネラ属菌の繁殖・感染を防止するためには、｢給湯中の塩素濃度を高く維持する｣、｢給湯温度を 55 ℃以上に保つ｣、｢エアロゾルの発生を抑える｣等の対策が有効である。",
+      "イ": "給湯管に使用する管の線膨張係数は、銅管よりポリブテン管のほうが大きい。",
+      "ウ": "一管式の局所式給湯設備において、配管計画は、配管内の湯の滞留時間（配管内保有水量／流水量）が 30 秒以下となることを目安として行うことが望ましい。",
+      "エ": "循環式の中央式給湯設備において、配管内の気泡を排除するためには、上向き供給方式より下向き供給方式のほうが適している。"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=10",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.21。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "温度・消毒の管理と、菌を含む飛沫が生じないような対策を組み合わせることで、レジオネラ属菌の繁殖や吸入による感染を抑えます。",
+      "イ": "樹脂製のポリブテン管は温度変化で伸び縮みしやすく、銅管より線膨張係数が大きいため、配管の伸縮への配慮が必要です。",
+      "ウ": "局所式の一管式は給湯器を水栓の近くに配置し、配管内の滞留時間を短くします。配管内の滞留は10秒以下を目安に抑え、給湯待ち時間を短くします。",
+      "エ": "下向き供給方式では高所で空気を集めて排気でき、配管内の気泡を除去しやすくなります。"
+    },
+    "explanation": "局所式の一管式は給湯器を水栓の近くに配置し、配管内の滞留時間を短くします。配管内の滞留は10秒以下を目安に抑え、給湯待ち時間を短くします。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q22",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 22,
+    "subject": "建築設備",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "排水通気"
+    ],
+    "difficulty": 2,
+    "question": "排水通気設備の計画に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "管径 65 mmの通気管の大気開口部が凍結によって閉塞されるおそれがあったので、通気管の管径は、貫通する屋根の内面から建築物の内側方向に 300 mm離れた位置で、75 mmに拡径した。",
+      "イ": "屋根に開口する通気管の大気開口部の位置は、屋根から 200 mm立ち上げた位置とした。",
+      "ウ": "ボイラーに設ける管径 40 mmの間接排水管の排水口空間は、100 mmとした。",
+      "エ": "掃除流しに設ける排水トラップの口径は、50 mmとした。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=10",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.22。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "寒冷地では外気に近い通気管の口径を75 mm以上に広げて凍結閉塞を防ぎます。拡径位置を屋根の内側に取る方法は適切です。",
+      "イ": "通気管の開口は、雨水等が浸入しないよう屋根面から所定の高さ以上立ち上げます。設問の200 mmはこの条件に適合します。",
+      "ウ": "設備への汚水の逆流を避けるため、間接排水管の吐出口とあふれ縁の間に空間を取ります。40 mmの管に排水口空間100 mmを設ける計画は適切です。",
+      "エ": "掃除流しに用いる排水トラップの最小口径は65 mmです。50 mmでは排水能力が不足します。"
+    },
+    "explanation": "掃除流しに用いる排水トラップの最小口径は65 mmです。50 mmでは排水能力が不足します。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q23",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 23,
+    "subject": "建築設備",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "雨水排水管"
+    ],
+    "difficulty": 2,
+    "question": "図のような建築物の雨水排水管の系統において、表１及び表２をもとに、イ～ヘの条件によって計算した図中ⓐ及びⓑの箇所の最小管径（mm）の組合せとして、最も適当なものは、次のうちどれか。\n条件\nイ．最大雨量は、 150 mm／ hとする。\nロ．各ルーフドレンが受け持つ雨水の集水面積は、破線で仕切った部分の面積とする。\nハ．各屋根面の勾配は、矢印で示すとおり、ルーフドレンに向かって下り勾配とする。\nニ．壁面に吹き付ける雨水は、壁面下部の屋根面の雨水に合流するものとする。\nホ．図に示す４か所のルーフドレン以外からの雨水の流入は、考慮しないものとする。\nヘ．表１及び表２は、雨量 100 mm／ hの場合の値を示す。",
+    "choices": {
+      "ア": "ⓐ 100 mm、ⓑ 150 mm",
+      "イ": "ⓐ 100 mm、ⓑ 200 mm",
+      "ウ": "ⓐ 125 mm、ⓑ 150 mm",
+      "エ": "ⓐ 125 mm、ⓑ 200 mm"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=11",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.23。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "立て管の100 mmは合っています。横主管150 mmの許容面積637 m²は、雨量換算後の702 m²より小さくなります。",
+      "イ": "ⓐは上下の屋根180 m²と壁の半分80 m²で、100 mm/hに換算すると390 m²なので、立て管は100 mmです。ⓑは全体の468 m²を702 m²に換算すると150 mmでは不足するため、200 mmです。",
+      "ウ": "立て管では許容面積425 m²の100 mmで390 m²を満たします。横主管は150 mmの許容面積637 m²では不足します。",
+      "エ": "横主管の200 mmは正しいです。立て管で対象とするのは片側のルーフドレン系統であり、100 mmの許容面積内です。"
+    },
+    "explanation": "ⓐは上下の屋根180 m²と壁の半分80 m²で、100 mm/hに換算すると390 m²なので、立て管は100 mmです。ⓑは全体の468 m²を702 m²に換算すると150 mmでは不足するため、200 mmです。",
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/kenchiku-setsubishi/2022-annual/pm-q23.png"
+    ],
+    "imageAltTexts": [
+      "雨水の集水区画、排水立て管と横主管及び管径別の許容屋根面積"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q24",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 24,
+    "subject": "建築設備",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "排水処理"
+    ],
+    "difficulty": 2,
+    "question": "共同住宅・喫茶店・マーケットからなる複合用途建築物において、BOD除去率が 90 ％の合併処理浄化槽を設けた場合の放流水のBODとして、最も適当なものは、次のうちどれか。ただし、各建築物用途の｢床面積｣、｢排水量｣及び｢排水のBOD｣は、表に示すとおりとする。",
+    "choices": {
+      "ア": "17 mg／ L",
+      "イ": "18 mg／ L",
+      "ウ": "19 mg／ L",
+      "エ": "20 mg／ L"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=12",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.24。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "BODは用途ごとの排水量で重み付けして混合濃度を求めます。除去後は約18 mg/Lで、17 mg/Lではありません。",
+      "イ": "排水量の合計は44,500 L/日、BOD量は8,025,000 mg/日です。混合時のBODは約180.3 mg/Lで、90％除去後は約18 mg/Lです。",
+      "ウ": "90％除去後のBOD量802,500 mg/日を総排水量で割ると約18.0 mg/Lです。19 mg/Lにはなりません。",
+      "エ": "20 mg/Lは共同住宅の200 mg/Lだけをもとに除去した場合の値です。ほかの用途の排水も含めると混合濃度は低くなります。"
+    },
+    "explanation": "排水量の合計は44,500 L/日、BOD量は8,025,000 mg/日です。混合時のBODは約180.3 mg/Lで、90％除去後は約18 mg/Lです。",
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/kenchiku-setsubishi/2022-annual/pm-q24.png"
+    ],
+    "imageAltTexts": [
+      "共同住宅・喫茶店・マーケットの床面積、排水量と排水のBODの表"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q25",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 25,
+    "subject": "建築設備",
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "雑用水"
+    ],
+    "difficulty": 2,
+    "question": "排水再利用設備及び雨水利用設備に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "排水再利用水及び雨水利用水の水質基準においては、共に濁度の値が定められている。",
+      "イ": "排水再利用設備において、膜分離活性汚泥処理装置を用いた標準処理フローは、厨房排水や便器洗浄排水を含んだ原水にも適用でき、浮遊物質をほとんど含まない処理水を得ることができる。",
+      "ウ": "雨水貯留槽の満水対策として、雨水集水管に設けた分岐管によって雨水を屋外の排水系統ますへ排出する場合には、雨水集水管に、電動遮断弁及び手動遮断弁を設ける。",
+      "エ": "建築物の地下ピットを利用した雨水貯留槽において、地中梁で多槽に仕切られる場合は、死水域をつくらないように、連通管等の位置を決定する。"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=12",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.25。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "濁度の数値基準が適用されるかどうかは利用用途によって異なります。全ての排水再利用水と雨水利用水に一律に定められているという説明は不適当です。",
+      "イ": "膜が浮遊物質や活性汚泥を分離するため、有機物の多い排水を処理し、浮遊物質の少ない水を得られます。",
+      "ウ": "満水時に雨水を屋外の排水系統に逃がす枝管を設ける場合、操作のための電動遮断弁と保守・非常操作用の手動遮断弁を設けます。",
+      "エ": "水槽内部で一部の水が動かないと水質が低下しやすくなります。仕切られた部分の連通管を配置して流れを確保します。"
+    },
+    "explanation": "濁度の数値基準が適用されるかどうかは利用用途によって異なります。全ての排水再利用水と雨水利用水に一律に定められているという説明は不適当です。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q26",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 26,
+    "subject": "建築設備",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "浴場循環ろ過"
+    ],
+    "difficulty": 2,
+    "question": "浴場循環ろ過設備に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "ろ過器の能力は、一般に、浴槽水が１時間に２～３回程度循環するものとする。",
+      "イ": "循環ポンプの揚程は、一般に、｢ろ過器、熱交換器、集毛器及び循環配管における摩擦損失水頭｣と｢浴槽吐出し口における吐出し水頭｣を合計したものとする。",
+      "ウ": "浴槽水の消毒は、一般に、塩素系薬剤をろ過器の直前に注入して行う。",
+      "エ": "ろ過器には、一般に、生物浄化式ろ過器又はカートリッジ式ろ過器を用いる。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=12",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.26。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "浴槽水中の汚れが増え続けないよう、浴槽容量に対して1時間に2～3回程度循環できるろ過能力とします。",
+      "イ": "循環路の機器・配管で水頭が失われるので、これらの損失と浴槽への吐出し口に必要な水頭を合計します。",
+      "ウ": "ろ過器を含む循環系統にも消毒薬を作用させるため、通常はろ過器の上流で塩素系薬剤を注入します。",
+      "エ": "浴場の循環ろ過では、ろ材で不純物を取り除く砂ろ過方式やカートリッジ方式などを用います。生物浄化式を一般的なろ過器の一つとする記述は不適当です。"
+    },
+    "explanation": "浴場の循環ろ過では、ろ材で不純物を取り除く砂ろ過方式やカートリッジ方式などを用います。生物浄化式を一般的なろ過器の一つとする記述は不適当です。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q27",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 27,
+    "subject": "建築設備",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "消防用設備"
+    ],
+    "difficulty": 2,
+    "question": "消防用設備等の計画に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "11 階以上の部分に設ける連結送水管の放水用器具を格納した箱は、一の直通階段について階数３以内ごとに、一の放水口から歩行距離５ｍ以内で消防隊が有効に消火活動を行うことができる位置に設けた。",
+      "イ": "乾式の流水検知装置を設けたスプリンクラー設備は、スプリンクラーヘッドが開放した場合に１分以内に当該スプリンクラーヘッドから放水できるものとした。",
+      "ウ": "各階の屋内消火栓（広範囲型の２号消火栓）の最大設置個数が２であったので、屋内消火栓設備のポンプの吐出量は、140 L／ minとした。",
+      "エ": "二酸化炭素を放射する全域放出方式の不活性ガス消火設備には、起動装置の作動から放出弁の開放までの時間が 20 秒以上となる遅延装置を設けた。"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=13",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.27。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "放水用器具は直通階段ごとに所定の間隔で設け、放水口から5 m以内の位置で消防隊が取り出せるようにします。",
+      "イ": "乾式ではヘッドが開放した後に水が配管を充水して放水します。設問の設備は1分以内に放水できる必要があります。",
+      "ウ": "広範囲型2号消火栓のポンプ吐出量は1個当たり80 L/min以上です。2個では160 L/min以上が必要になります。",
+      "エ": "全域へ二酸化炭素を放出する場合は、放出前に退避するための時間が必要です。起動から放出まで20秒以上の遅延を設けます。"
+    },
+    "explanation": "広範囲型2号消火栓のポンプ吐出量は1個当たり80 L/min以上です。2個では160 L/min以上が必要になります。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q28",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 28,
+    "subject": "建築設備",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "都市ガス"
+    ],
+    "difficulty": 2,
+    "question": "ガスに関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "都市ガスの種類は、ウォッベ指数と燃焼速度の値によって区分されている。",
+      "イ": "都市ガスの分類において、中圧のガスとは、ガスによる圧力が 0.1 MPa以上１ MPa未満のガスのことである。",
+      "ウ": "都市ガス用のガス漏れ警報器における検査合格の認証表示の有効期間は、７年である。",
+      "エ": "ガスこんろの上部に換気上有効な排気フードを設ける場合、火源から排気フードの下端までの高さは、原則として、100 cm以下とする。"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=13",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.28。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "都市ガスの種類を区分するとき、燃焼時の発熱特性を示すウォッベ指数と火炎の伝わる速さを示す燃焼速度を使います。",
+      "イ": "中圧は0.1 MPa以上1 MPa未満です。中圧の中でさらに区分を設ける場合もあります。",
+      "ウ": "都市ガス用ガス漏れ警報器の検査合格認証の有効期間は通常5年です。7年とした記述が不適当です。",
+      "エ": "こんろの排気フードは燃焼排気を捕集するため、原則として火源からフード下端までを100 cm以下にします。"
+    },
+    "explanation": "都市ガス用ガス漏れ警報器の検査合格認証の有効期間は通常5年です。7年とした記述が不適当です。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q29",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 29,
+    "subject": "建築設備",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "衛生器具"
+    ],
+    "difficulty": 2,
+    "question": "衛生器具設備に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "大便器における洗浄弁式は、給水管を直接便器に接続して給水するので、連続して頻繁に使用される場合に適している。",
+      "イ": "大便器における専用洗浄弁式は、専用の給水装置を使用し、水道の給水圧力、加圧装置等によって給水する方式であり、内部に負圧破壊装置を具備する必要がある。",
+      "ウ": "壁掛け型小便器において、床面から小便受け口までの高さが 350 mm以下の場合は、子供等にも使える小便器として、床置き型小便器と同等であるとみなすことができる。",
+      "エ": "貯湯式の温水洗浄便座における貯湯タンクの容量は、一般に、３ L程度である。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=13",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.29。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "洗浄弁式は配管から直接給水し、洗浄のたびに貯水タンクが満水になるのを待たずに使えます。頻繁に使う便所に適しています。",
+      "イ": "洗浄弁の内部に負圧破壊装置を備え、給水側に負圧が生じても便器側の汚水が逆流しないようにします。",
+      "ウ": "受け口を床から350 mm以下に設ける壁掛け小便器は、小さな子どもにも届きやすく、床置き型と同等の利用高さとみなせます。",
+      "エ": "貯湯式の温水洗浄便座は、洗浄に使う湯を小容量のタンクに蓄えます。一般的な機種は約1 L前後で、3 L程度とする説明は過大です。"
+    },
+    "explanation": "貯湯式の温水洗浄便座は、洗浄に使う湯を小容量のタンクに蓄えます。一般的な機種は約1 L前後で、3 L程度とする説明は過大です。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q30",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 30,
+    "subject": "建築設備",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "給排水配管"
+    ],
+    "difficulty": 2,
+    "question": "給排水衛生設備の機器・材料に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "水道用硬質塩化ビニルライニング鋼管のうち、SGP－VDは、管の内外面に硬質ポリ塩化ビニルを被覆したものである。",
+      "イ": "水道用耐熱性硬質塩化ビニルライニング鋼管における湯の連続使用許容温度は、85 ℃以下である。",
+      "ウ": "配管用管及び水道用銅管の肉厚の数値の大小関係は、呼び径が同じ場合、Kタイプ＜ Lタイプ＜ Mタイプである。",
+      "エ": "弁を中間開度にして流量調整を行う場合には、玉形弁とバタフライ弁は適しており、仕切弁とボール弁は適していない。"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=14",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.30。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "SGP-VDは鋼管の内面と外面の両方を硬質塩化ビニルで被覆した管で、管の内外からの腐食を抑えます。",
+      "イ": "耐熱性硬質塩化ビニルをライニングした鋼管では、湯の温度を連続使用できる範囲に保ちます。85℃以下が設問で示す限度です。",
+      "ウ": "同じ呼び径ならKタイプが最も肉厚で、Lタイプ、Mタイプの順に薄くなります。設問は大小関係を逆にしています。",
+      "エ": "玉形弁やバタフライ弁は開度で流量を調整できます。標準の仕切弁やボール弁は主に全開と全閉の切替えに用います。"
+    },
+    "explanation": "同じ呼び径ならKタイプが最も肉厚で、Lタイプ、Mタイプの順に薄くなります。設問は大小関係を逆にしています。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q31",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 31,
+    "subject": "建築設備",
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "電気基礎"
+    ],
+    "difficulty": 2,
+    "question": "電気用語に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "フレミングの左手の法則によれば、左手の親指、人さし指、中指を互いに直角に開いて、親指を運動の方向、人さし指を磁力線の方向に合わせた場合、中指が誘導起電力の方向になる。",
+      "イ": "キルヒホッフの第二法則によれば、回路中の任意の閉回路において、その一周の中に含まれる起電力の和と電圧降下の和とは等しくなる。",
+      "ウ": "電位差は、回路の２点における電位の差であり、電圧ともいう。",
+      "エ": "誘導性リアクタンスは、交流回路において、電流の位相を電圧の位相よりも遅らせる要素である。"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=14",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.31。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "運動する導体で生じる誘導起電力の向きはフレミングの右手の法則で求めます。左手の法則は電流の流れる導体が磁界中で受ける力の向きに使います。",
+      "イ": "閉回路を一周すると電位は元の値に戻ります。したがって起電力の総和と電圧降下の総和が等しくなります。",
+      "ウ": "電荷を一方の点からもう一方へ移すときの単位電荷当たりの仕事に対応し、二点間の電位差を電圧と呼びます。",
+      "エ": "理想インダクタでは電流が電圧より遅れ、誘導性リアクタンスによって交流電流が制限されます。"
+    },
+    "explanation": "運動する導体で生じる誘導起電力の向きはフレミングの右手の法則で求めます。左手の法則は電流の流れる導体が磁界中で受ける力の向きに使います。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q32",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 32,
+    "subject": "建築設備",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "配線用図記号"
+    ],
+    "difficulty": 2,
+    "question": "構内電気設備の配線用図記号（JIS C 0303：2000）に定める名称とその図記号との組合せとして、最も不適当なものは、次のうちどれか。",
+    "choices": {
+      "ア": "発電機と図の1の記号",
+      "イ": "引掛シーリング（丸）と図の2の記号",
+      "ウ": "警報ベルと図の3の記号",
+      "エ": "配電盤と図の4の記号"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=14",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.32。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "図の円にGを記した図記号は発電機です。",
+      "イ": "図の円形の記号は、照明器具を天井で着脱する丸形引掛シーリングに対応します。",
+      "ウ": "図の円にBを記した図記号は、音で警報を伝える警報ベルに対応します。",
+      "エ": "図の長方形を斜めに分けて一方を塗った記号は分電盤に対応します。配電盤とした組合せは不適当です。"
+    },
+    "explanation": "図の長方形を斜めに分けて一方を塗った記号は分電盤に対応します。配電盤とした組合せは不適当です。",
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/kenchiku-setsubishi/2022-annual/pm-q32.png"
+    ],
+    "imageAltTexts": [
+      "発電機、引掛シーリング、警報ベル、配電盤を候補とした配線用図記号の表"
+    ]
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q33",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 33,
+    "subject": "建築設備",
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "ブリッジ回路"
+    ],
+    "difficulty": 2,
+    "question": "図のようなブリッジ回路において、平衡条件にあるときの抵抗R （Ω）に流れる電流I （A）として、最も適当なものは、次のうちどれか。",
+    "choices": {
+      "ア": "３ A",
+      "イ": "４ A",
+      "ウ": "５ A",
+      "エ": "９ A"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=15",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.33。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "ブリッジ平衡ではR/5＝9/3なのでR＝15 Ωです。電源60 Vにこの抵抗と5 Ωが直列でつながるため、I＝60÷20＝3 Aです。",
+      "イ": "4 Aは60 VをRの15 Ωだけで割った値です。上側の枝には5 Ωも直列に入っています。",
+      "ウ": "5 Aは下側の9 Ωと3 Ωを通る枝の電流です。問われているRは上側の枝にあります。",
+      "エ": "Rを通る電流は上側の枝に流れる電流です。平衡時のRと5 Ωの合計は20 Ωで、60 Vから求めると3 Aです。"
+    },
+    "explanation": "ブリッジ平衡ではR/5＝9/3なのでR＝15 Ωです。電源60 Vにこの抵抗と5 Ωが直列でつながるため、I＝60÷20＝3 Aです。",
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/kenchiku-setsubishi/2022-annual/pm-q33.png"
+    ],
+    "imageAltTexts": [
+      "60 Vの電源に接続した抵抗4本と検流計で構成するブリッジ回路"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q34",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 34,
+    "subject": "建築設備",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "電気設備計画"
+    ],
+    "difficulty": 2,
+    "question": "電気設備の計画に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "使用電圧 400 Vの一般動力幹線には、漏電遮断器を施設した。",
+      "イ": "ガスタービン発電装置の冷却方式には、空気冷却方式を用いた。",
+      "ウ": "出力 3.7 kWの水中ポンプの電動機の保護には、過負荷・欠相保護継電器（２ E）を用いた。",
+      "エ": "漏電遮断器で保護されている回路とそれ以外の回路における接地線及び接地極を共用したので、接地抵抗値は、２ Ω以下となるようにした。"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=15",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.34。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "400 Vの動力幹線では漏電時に電路を遮断する保護装置を設ける計画が適切です。",
+      "イ": "ガスタービン発電装置では空気で熱を運び、機関や装置の温度上昇を抑える方式を採用できます。",
+      "ウ": "水中ポンプの三相電動機では過負荷・欠相だけでなく、逆相で逆回転することも防げる3Eの保護を用います。",
+      "エ": "漏電保護付きの回路とその他の回路で接地線・接地極を共用する場合、接地による電位の上昇を抑えるため、設問では2 Ω以下とします。"
+    },
+    "explanation": "水中ポンプの三相電動機では過負荷・欠相だけでなく、逆相で逆回転することも防げる3Eの保護を用います。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q35",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 35,
+    "subject": "建築設備",
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "電気設備計画"
+    ],
+    "difficulty": 2,
+    "question": "電気設備の計画に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "自動火災報知設備において、受信機には、防火・排煙設備連動制御器の機能を備える必要があったので、GP型受信機を用いた。",
+      "イ": "テレビ共同受信設備において、地上波デジタルとBSの混合については、アンテナマストと増幅器が近接していたので、混合器を省略し、増幅器で行った。",
+      "ウ": "監視カメラ設備において、ネットワーク伝送方式のカメラへの配線には、UTPケーブルを用いた。",
+      "エ": "電気時計設備において、親時計の時刻補正には、FMラジオ方式の時刻同期装置を用いた。"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=15",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.35。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "GP型はガス漏れ火災警報設備の機能を組み合わせた受信機です。防火・排煙設備の連動制御が必要なら、その機能を備える複合受信機等を選びます。",
+      "イ": "アンテナと増幅器が近く、増幅器に混合機能があれば、別置きの混合器を省いて増幅器で地上波とBSの信号をまとめられます。",
+      "ウ": "ネットワーク伝送方式のカメラには、一般のLANと同じくUTPなどの平衡対ケーブルを使えます。",
+      "エ": "親時計はFMラジオから受信する時報等が利用できる時刻同期装置を使用して時刻を補正できます。"
+    },
+    "explanation": "GP型はガス漏れ火災警報設備の機能を組み合わせた受信機です。防火・排煙設備の連動制御が必要なら、その機能を備える複合受信機等を選びます。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q36",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 36,
+    "subject": "建築設備",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "高圧受変電"
+    ],
+    "difficulty": 2,
+    "question": "高圧受変電設備の計画に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "需要家側からの高調波電流の流出を抑制するために、直列リアクトル付進相コンデンサの設置位置は、受電用変圧器の高圧側よりも効果が大きい低圧側とした。",
+      "イ": "主遮断装置は、一般送配電事業者の配電用変電所の過電流保護装置との動作協調を図った。",
+      "ウ": "一般送配電事業者との保安上の責任分界点となる柱上には、絶縁油を使用した高圧交流負荷開閉器を施設した。",
+      "エ": "受電設備容量が 300 kVA以下であったので、主遮断装置を｢高圧限流ヒューズ・高圧交流負荷開閉器（PF・ S形）｣としたキュービクル式高圧受電設備を設置した。"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=16",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.36。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "直列リアクトル付き進相コンデンサを受電用変圧器の負荷側へ置くことで、負荷が発生する高調波を抑え、系統への流出を減らします。",
+      "イ": "需要家の保護装置が先に動作するなど、事故の影響が必要な範囲にとどまるよう上位の保護装置との協調を確認します。",
+      "ウ": "責任分界点の柱上には、一般に柱上用の高圧気中負荷開閉器などを用います。絶縁油を用いた開閉器を通常の構成とする記述は不適当です。",
+      "エ": "受電設備容量が300 kVA以下の場合、短絡を保護する限流ヒューズと開閉器を組み合わせるPF・S形を使用できます。"
+    },
+    "explanation": "責任分界点の柱上には、一般に柱上用の高圧気中負荷開閉器などを用います。絶縁油を用いた開閉器を通常の構成とする記述は不適当です。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q37",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 37,
+    "subject": "建築設備",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "設備不平衡率"
+    ],
+    "difficulty": 2,
+    "question": "図のような高圧受電の三相３線式の回路における設備不平衡率として、最も適当なものは、次のうちどれか。",
+    "choices": {
+      "ア": "10 %",
+      "イ": "20 %",
+      "ウ": "25 %",
+      "エ": "30 %"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=16",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.37。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "三相変圧器の容量を加えて相当容量を求めます。設備不平衡率は単相設備の最大相と最小相の100 kVAの差を比較するため、10％ではありません。",
+      "イ": "単相容量の最大と最小の差は150−50＝100 kVAです。総容量1,500 kVAを3で割った500 kVAを分母にすると20％になります。",
+      "ウ": "設備不平衡率の分母は三相容量1,200 kVAと単相容量300 kVAの合計の1/3です。単相分も合算すると25％ではなく20％です。",
+      "エ": "30％は設計上の制限として使われる値で、この図の容量から算出した値は20％です。"
+    },
+    "explanation": "単相容量の最大と最小の差は150−50＝100 kVAです。総容量1,500 kVAを3で割った500 kVAを分母にすると20％になります。",
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/kenchiku-setsubishi/2022-annual/pm-q37.png"
+    ],
+    "imageAltTexts": [
+      "R・S・T相に接続した単相変圧器3台と三相変圧器3台の結線と容量"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q38",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 38,
+    "subject": "建築設備",
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "発電方式"
+    ],
+    "difficulty": 2,
+    "question": "発電方式に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "太陽光発電、風力発電及び原子力発電は、再生可能エネルギー源を用いた発電方式に該当する。",
+      "イ": "太陽光発電は、太陽電池セルの光起電力効果を利用し、光のエネルギーを電気エネルギーに変換するものである。",
+      "ウ": "廃棄物発電は、ごみ焼却熱を利用して蒸気を発生させ、蒸気タービンで発電機を動かすことによって、熱エネルギーを電気エネルギーに変換するものである。",
+      "エ": "燃料電池は、アノードに水素、カソードに酸素を通すことによって、化学エネルギーを電気エネルギーに変換するものである。"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=16",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.38。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "太陽光と風力は再生可能エネルギーですが、原子力発電で用いるウラン等は有限の資源です。三つを一律に再生可能とする記述は不適当です。",
+      "イ": "半導体に光が当たって生じる光起電力を利用し、入射した光のエネルギーを電力に変換します。",
+      "ウ": "焼却熱で蒸気を発生させ、その蒸気でタービンと発電機を回すことで、廃棄物の熱を利用できます。",
+      "エ": "燃料電池ではアノード側の水素とカソード側の酸素が電気化学的に反応します。電子を外部回路に流して電力を得ます。"
+    },
+    "explanation": "太陽光と風力は再生可能エネルギーですが、原子力発電で用いるウラン等は有限の資源です。三つを一律に再生可能とする記述は不適当です。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q39",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 39,
+    "subject": "建築設備",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "コージェネレーション"
+    ],
+    "difficulty": 2,
+    "question": "コージェネレーションシステムに関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "コージェネレーションシステムを商用電源と連系する場合は、供給信頼度、電力品質等の面でほかの電力需要家に悪影響を及ぼさないように、一般送配電事業者と協議を行う必要がある。",
+      "イ": "総合効率は、原動機がガスエンジンであっても、ガスタービンであっても、一般に、80 ％程度である。",
+      "ウ": "原動機の熱電比は、ディーゼルエンジンよりガスタービンのほうが小さい。",
+      "エ": "電主熱従運転方式において、熱負荷が少ない場合は、余剰排熱を冷却設備によって放熱させる。"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=17",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.39。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "系統連系によって逆潮流や電圧変動などが起こり得るため、系統への影響と保護の条件を一般送配電事業者と協議します。",
+      "イ": "発電で使い切れない熱を回収することで、電力と熱を合わせた総合効率はガスエンジンでもガスタービンでも80％程度になる場合があります。",
+      "ウ": "ガスタービンは高温排ガスから回収できる熱が電力に比べて多く、一般にディーゼルエンジンより熱電比は大きくなります。",
+      "エ": "電力需要に合わせて発電する方式では、同時に生じる熱が熱需要を上回ることがあります。その余剰分は冷却設備で放熱します。"
+    },
+    "explanation": "ガスタービンは高温排ガスから回収できる熱が電力に比べて多く、一般にディーゼルエンジンより熱電比は大きくなります。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q40",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 40,
+    "subject": "建築設備",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "照明器具"
+    ],
+    "difficulty": 2,
+    "question": "特殊環境用照明器具に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "低温用照明器具は、光源を低温に強いLEDとすることによって、周囲温度によらず、瞬時に 100 %の明るさに点灯できる。",
+      "イ": "クリーンルーム用照明器具は、室内の清浄度を保つために、静電気によってほこりを付着させやすい構造としている。",
+      "ウ": "防食照明器具は、器具本体にガラス繊維強化ポリエステル等、カバーにアクリル樹脂等が用いられ、腐食性ガス等の発生しやすい環境において使用される。",
+      "エ": "防爆照明器具は、｢電気機械器具防爆構造規格｣のものが用いられ、ガス蒸気危険場所又は粉じん危険場所において使用される。"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=17",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.40。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "LEDは低温でも放電状態の安定を待つ工程がなく、低温用に設計した器具では点灯直後から明るさを得られます。",
+      "イ": "クリーンルーム用照明には、ほこりが付着・発生しにくく、清掃しやすい構造が求められます。設問は逆の構造を示しています。",
+      "ウ": "腐食性ガスのある環境では、ガラス繊維で補強した樹脂やアクリルのように、使用環境に適合する耐食材料を使います。",
+      "エ": "爆発性のガス・蒸気や粉じんが存在する場所では、点火源にならないよう、危険区分に適合する防爆構造の器具を用います。"
+    },
+    "explanation": "クリーンルーム用照明には、ほこりが付着・発生しにくく、清掃しやすい構造が求められます。設問は逆の構造を示しています。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q41",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 41,
+    "subject": "建築設備",
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "水平面照度"
+    ],
+    "difficulty": 2,
+    "question": "図のような天井面のA点に点光源を設けた場合、イ及びロの条件によって計算した床面のB点の水平面照度E_hとして、最も適当なものは、次のうちどれか。\n条件\nイ．点光源のB点方向の光度I （θ）：3,000 cd\nロ．床面、天井面等からの反射は、ないものとする。",
+    "choices": {
+      "ア": "96 lx",
+      "イ": "150 lx",
+      "ウ": "360 lx",
+      "エ": "480 lx"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=17",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.41。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "AからBまでの距離は√(4²＋3²)＝5 mで、入射角の余弦は4/5です。水平面照度は3,000÷5²×4/5＝96 lxです。",
+      "イ": "斜距離5 mで受ける光を水平面に換算する必要があります。光線と床の法線との角度による余弦を掛けると96 lxです。",
+      "ウ": "距離を二乗して光度を割り、さらに入射方向の傾きを補正します。点Bで有効な距離は高さ4 mだけではなく5 mです。",
+      "エ": "480 lxは距離の二乗による減衰を正しく適用していません。3,000 cdを25 m²で割ってから余弦0.8を掛けます。"
+    },
+    "explanation": "AからBまでの距離は√(4²＋3²)＝5 mで、入射角の余弦は4/5です。水平面照度は3,000÷5²×4/5＝96 lxです。",
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/kenchiku-setsubishi/2022-annual/pm-q41.png"
+    ],
+    "imageAltTexts": [
+      "高さ4 mで水平距離3 m離れた点光源と床面の位置関係"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q42",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 42,
+    "subject": "建築設備",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "電動機"
+    ],
+    "difficulty": 2,
+    "question": "電動機に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "スターデルタ始動方式は、一次巻線がデルタ結線の電動機を、始動時にスター結線にし、加速完了後にデルタ結線に戻す方式である。",
+      "イ": "全電圧始動（直入れ始動）方式は、スターデルタ始動方式に比べて、始動電流及び始動トルクが小さくなる。",
+      "ウ": "電動機の分岐回路に設ける過電流遮断器は、主として分岐回路の電線の短絡保護のための装置であり、電動機の過負荷保護を目的としたものではない。",
+      "エ": "定格出力が 3.7 kWを超える三相誘導電動機にスターデルタ始動器を使用する場合、始動器と電動機間の電線は、その許容電流が、当該電動機分岐回路の配線の許容電流の 60 %以上のものとする。"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=18",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.42。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "始動時にスター結線とすることで各巻線にかかる電圧を下げ、加速後はデルタ結線に切り替えて定格電圧で運転します。",
+      "イ": "直入れでは巻線に初めから全電圧を加えます。スターデルタ方式に比べて始動電流と始動トルクは大きくなります。",
+      "ウ": "分岐回路の遮断器は短絡時に配線を保護します。電動機の過負荷には別途、適切な過負荷保護を設けます。",
+      "エ": "スターデルタ始動器から電動機の各巻線に至る配線では、巻線電流を考慮した断面積を選びます。設問の条件下の許容電流は分岐線の60％以上です。"
+    },
+    "explanation": "直入れでは巻線に初めから全電圧を加えます。スターデルタ方式に比べて始動電流と始動トルクは大きくなります。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q43",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 43,
+    "subject": "建築設備",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "電動機"
+    ],
+    "difficulty": 2,
+    "question": "電動機に用いられるインバータに関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "インバータを用いると、低速でトルクが出にくくなる。",
+      "イ": "インバータを用いると、始動電流が小さくなる。",
+      "ウ": "インバータを用いると、電動機の小形化が可能となる。",
+      "エ": "インバータを用いると、一般に、ノイズの発生を抑制できる。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=18",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.43。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "一般的な電圧・周波数制御では低速における電圧降下の影響が相対的に大きくなり、十分なトルクを得にくい場合があります。",
+      "イ": "周波数と電圧を制御して低速から始動でき、直入れ始動に比べて始動電流を抑えられます。",
+      "ウ": "負荷特性に合わせた速度で動かす設計ができるため、用途や設計によって電動機を小形化できる場合があります。",
+      "エ": "インバータは高速で電流をスイッチングするため、電磁ノイズや高調波を発生させることがあります。ノイズを抑えるには配線やフィルタなどの対策が必要です。"
+    },
+    "explanation": "インバータは高速で電流をスイッチングするため、電磁ノイズや高調波を発生させることがあります。ノイズを抑えるには配線やフィルタなどの対策が必要です。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q44",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 44,
+    "subject": "建築設備",
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "自動火災報知"
+    ],
+    "difficulty": 2,
+    "question": "自動火災報知設備に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "煙感知器（２種）は、廊下にあっては、歩行距離 50 mにつき１個設けた。",
+      "イ": "地区音響装置は、各階ごとに、その階の各部分から一の地区音響装置までの水平距離が 25 m 以下となるように設けた。",
+      "ウ": "P型受信機方式としたので、受信機－発信機－感知器間の配線には、一般配線を用いた。",
+      "エ": "一の警戒区域の面積は、600 m²以下となるようにした。"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=18",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.44。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "廊下における2種の煙感知器は、歩行距離30 mにつき1個以上が基準です。50 mごとの設置では不足します。",
+      "イ": "防火対象物の各部分から地区音響装置までの水平距離が25 m以下になるように配置し、警報が各所に届くようにします。",
+      "ウ": "P型受信機方式の設問の区間には、耐火・耐熱配線を求められる区間と区別して、基準を満たす一般配線を用いることができます。",
+      "エ": "自動火災報知設備では感知した場所を特定できるよう、一つの警戒区域を原則600 m²以下に分けます。"
+    },
+    "explanation": "廊下における2種の煙感知器は、歩行距離30 mにつき1個以上が基準です。50 mごとの設置では不足します。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q45",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 45,
+    "subject": "建築設備",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "防災設備"
+    ],
+    "difficulty": 2,
+    "question": "防災設備に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "無線通信補助設備の無線機を接続する端子は、地上で消防隊が有効に活動できる場所及び防災センターに設けた。",
+      "イ": "階段に設ける非常放送設備のスピーカーは、Ｌ級のものとし、垂直距離 20 mにつき１個設けた。",
+      "ウ": "天井の高さが 10 mの体育館に設ける自動火災報知設備の感知器は、光電式分離型感知器（２種）とした。",
+      "エ": "自動火災報知設備において、P型１級受信機の主音響装置の定格電圧における音圧は、無響室で音響装置の中心から前方１ｍ離れた地点で測定した値が、85 dB以上となるようにした。"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=19",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.45。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "地上の消防活動場所や防災センターで消防用無線機を接続できるようにすることで、電波が届きにくい屋内との連絡を確保します。",
+      "イ": "階段の非常放送用L級スピーカーは、一般に垂直距離15 mにつき1個以上となるように設けます。20 mごとでは不足します。",
+      "ウ": "光電式分離型は向かい合う送光部と受光部の間の煙による減光を検出し、高い天井の体育館などにも配置できます。",
+      "エ": "P型1級受信機の主音響装置には所定の音圧が求められます。設問の条件で85 dB以上を確保する計画は適切です。"
+    },
+    "explanation": "階段の非常放送用L級スピーカーは、一般に垂直距離15 mにつき1個以上となるように設けます。20 mごとでは不足します。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q46",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 46,
+    "subject": "建築設備",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "LAN設備"
+    ],
+    "difficulty": 2,
+    "question": "LAN設備に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "カテゴリー５ eのUTPケーブルは、伝送速度 1 Gbpsの伝送を行うことができる。",
+      "イ": "UTPケーブルは、ノイズへの耐性を向上させるために、シールドを施したものである。",
+      "ウ": "IPアドレスの数は、IPv４が２の 32 乗個、IPv６が２の 128 乗個である。",
+      "エ": "無線LANの暗号化方式は、WEP方式よりWPA２方式のほうが、暗号強度が強い。"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=19",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.46。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "Cat 5eのUTPケーブルは、規定の接続条件を満たせば1000BASE-Tによる1 Gbps伝送に利用できます。",
+      "イ": "UTPはシールドのないより対線です。導体をより合わせることでノイズの影響を減らし、シールドを備える方式はSTPなどに当たります。",
+      "ウ": "IPv4アドレスは32ビット、IPv6アドレスは128ビットなので、ビットの全組合せの数はそれぞれ2の32乗と2の128乗です。",
+      "エ": "WPA2ではWEPより強い暗号化を使用できます。設問は方式間の暗号強度の比較です。"
+    },
+    "explanation": "UTPはシールドのないより対線です。導体をより合わせることでノイズの影響を減らし、シールドを備える方式はSTPなどに当たります。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q47",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 47,
+    "subject": "建築設備",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "セキュリティ設備"
+    ],
+    "difficulty": 2,
+    "question": "建築物に設けるセキュリティシステムに関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "侵入者を検知するために扉・窓等に取り付ける開閉検出用の機器には、マグネットスイッチ、リミットスイッチ、振動スイッチ等がある。",
+      "イ": "侵入者を検知するために室内空間を警戒する機器には、超音波探知器、熱線感知器等がある。",
+      "ウ": "ネットワークカメラシステムは、インターネット・ＬＡＮ環境における利用を前提とし、双方向の通信・制御が可能である。",
+      "エ": "IDカード認証は、一般に、生体認証に比べて、高いセキュリティ性を備えている。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=19",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.47。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "扉や窓の動きに伴う接点の変化や振動を検出して、その開放や侵入に関連する異常を知らせる機器です。",
+      "イ": "超音波の反射や人体からの赤外線などの変化を検出して、屋内空間への立入りを検知します。",
+      "ウ": "ネットワークに接続したカメラは映像を送るほか、機種に応じて遠隔操作や音声の双方向通信を行えます。",
+      "エ": "カードだけの認証ではカードが貸与・盗用された場合に本人かを確認できません。一般に生体認証は、利用者自身の特徴で本人確認を行います。"
+    },
+    "explanation": "カードだけの認証ではカードが貸与・盗用された場合に本人かを確認できません。一般に生体認証は、利用者自身の特徴で本人確認を行います。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q48",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 48,
+    "subject": "建築設備",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "雷保護"
+    ],
+    "difficulty": 2,
+    "question": "建築物等の雷保護（JIS A 4201：2003）に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "建築物等の屋根構造材の金属製部分（トラス、相互接続した鉄筋等）は、“構造体利用”受雷部構成部材であるとみることができる。",
+      "イ": "被保護物から独立しない雷保護システムにおいて、壁が不燃性材料からなる場合、引下げ導線は、壁の表面又は内部に施設することができる。",
+      "ウ": "受雷部の材料には、導電性及び耐食性が十分であれば、アルミニウムを使用することができる。",
+      "エ": "受雷部システムの配置において、保護レベルがⅣの場合、保護角法による保護角は、地表面から受雷部の上端までの高さが 60 mまでは、その高さが高くなるほど大きくなる。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=20",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.48。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "鉄骨や接続された鉄筋など、導電性と連続性などの条件を満たす部材は、受雷部の一部として利用できます。",
+      "イ": "不燃性の壁であれば、引下げ導線を壁面や内部に設けても雷電流による熱が壁を着火させるおそれを抑えられます。",
+      "ウ": "導電性と設置場所での耐食性などを満たす場合、アルミニウムも受雷部の材料として利用できます。",
+      "エ": "保護レベルを同じにして受雷部を高くすると、規格の表に示す保護角は一般に小さくなります。高さとともに大きくなるという記述が不適当です。"
+    },
+    "explanation": "保護レベルを同じにして受雷部を高くすると、規格の表に示す保護角は一般に小さくなります。高さとともに大きくなるという記述が不適当です。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q49",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 49,
+    "subject": "建築設備",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "接地工事"
+    ],
+    "difficulty": 2,
+    "question": "電気設備の接地工事に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "C種接地工事において、地絡遮断装置を設けなかったので、接地抵抗値は、10 Ω以下となるようにした。",
+      "イ": "D種接地工事において、地絡遮断装置を設けなかったので、接地抵抗値は、100 Ω以下となるようにした。",
+      "ウ": "ライティングダクト工事において、合成樹脂で金属製部分を被覆したダクトを使用したので、 D種接地工事を省略した。",
+      "エ": "使用電圧 300 Vの金属管工事において、金属管の長さが 10 mで、施設場所が乾燥した場所であったので、D種接地工事を省略した。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=20",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.49。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "地絡時の早期遮断による緩和を適用しないC種接地工事では、接地抵抗値を10 Ω以下とします。",
+      "イ": "所定の遮断装置による緩和を適用しないD種接地工事では、接地抵抗値を100 Ω以下とします。",
+      "ウ": "金属部分を絶縁性の合成樹脂で被覆した所定のライティングダクトでは、金属部が外から触れられず、D種接地の省略が認められます。",
+      "エ": "短い金属管の接地を省略できる条件には、管の長さや対地電圧、設置場所等の制限があります。設問の長さ10 mでは省略できません。"
+    },
+    "explanation": "短い金属管の接地を省略できる条件には、管の長さや対地電圧、設置場所等の制限があります。設問の長さ10 mでは省略できません。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q50",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 50,
+    "subject": "建築設備",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "低圧配線"
+    ],
+    "difficulty": 2,
+    "question": "低圧配線に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "電気使用場所内に設けた変圧器から電気を供給するに当たって、低圧配線中の電圧降下は、供給変圧器の二次側端子から最遠端の負荷に至る電線のこう長が 120 mを超え 200 m以下の場合には、標準電圧の６ %以下にできる。",
+      "イ": "住宅の屋内電路の対地電圧は、原則として、300 V以下とする。",
+      "ウ": "がいし引き工事により施設する 600 Ｖビニル絶縁電線は、使用電圧が 300 Vを超える場合、弱電流電線等又は水管等との離隔距離を 10 cm以上とする。",
+      "エ": "フロアダクト工事は、乾燥した露出場所には施設できない。"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=20",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.50。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "需要場所の変圧器から長い配線で供給する場合、配線長に応じた電圧降下の制限値を用います。設問の120 m超200 m以下の範囲では6％以下とできます。",
+      "イ": "住宅の屋内電路は、原則として対地電圧150 V以下です。300 Vを原則とする説明は誤りです。",
+      "ウ": "300 Vを超えるがいし引き工事では、弱電流電線や配管等との間隔を確保して、接触や誘導などの影響を防止します。設問の離隔は10 cm以上です。",
+      "エ": "フロアダクトは床面に組み込んで施設する方式です。露出した場所には適用できません。"
+    },
+    "explanation": "住宅の屋内電路は、原則として対地電圧150 V以下です。300 Vを原則とする説明は誤りです。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q51",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 51,
+    "subject": "建築設備",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "電圧降下"
+    ],
+    "difficulty": 2,
+    "question": "単相２線式 200 Vの回路において、長さ 20 m、導体の断面積８ mm² のCVケーブルを屋内配線とし、この端末に定格電圧 200 V、定格電流 20 A、力率 100 %の負荷を接続する計画を行った。この計画の一部を変更する場合の電圧降下に関する次の記述のうち、最も適当なものはどれか。",
+    "choices": {
+      "ア": "長さを 50 m、導体の断面積を 14 mm² にすると、電圧降下は約 0.7 倍になる。",
+      "イ": "長さを 10 m、導体の断面積を 5.5 mm² にすると、電圧降下は約 1.38 倍になる。",
+      "ウ": "定格電流を 30 A、長さを 50 mにすると、電圧降下は約 3.75 倍になる。",
+      "エ": "定格電流を 10 A、導体の断面積を 5.5 mm² にすると、電圧降下は約 0.34 倍になる。"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=21",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.51。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "長さが50/20倍、断面積による抵抗が8/14倍になるので、電圧降下は約1.43倍です。0.7倍にはなりません。",
+      "イ": "長さが10/20倍、断面積による抵抗が8/5.5倍になるので、電圧降下は約0.73倍です。",
+      "ウ": "電圧降下は電流と配線長に比例します。断面積はそのままなので、(30/20)×(50/20)＝3.75倍です。",
+      "エ": "電流が10/20倍になり、断面積の減少は抵抗を8/5.5倍にします。電圧降下はその積の約0.73倍です。"
+    },
+    "explanation": "電圧降下は電流と配線長に比例します。断面積はそのままなので、(30/20)×(50/20)＝3.75倍です。",
+    "explanationCoverage": "full",
+    "needsReview": false,
+    "isCalculation": true
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q52",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 52,
+    "subject": "建築設備",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "受変電設備"
+    ],
+    "difficulty": 2,
+    "question": "受変電設備に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "変圧器には、油入変圧器、モールド変圧器、H種乾式変圧器、SF6 ガス絶縁変圧器等がある。",
+      "イ": "進相コンデンサに施設される直列リアクトルは、コンデンサ投入時の突入電流を抑制できる。",
+      "ウ": "過電流継電器の動作特性には、過負荷電流に対しての瞬時特性と短絡電流に対しての反限時特性がある。",
+      "エ": "避雷器は、雷等に起因する異常電圧による電流を大地へ流すことによって、電気設備の絶縁を保護するものである。"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=21",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.52。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "変圧器には、油で冷却・絶縁する形式や樹脂で固めるモールド形、乾式、ガス絶縁など、絶縁・冷却方法に応じた種類があります。",
+      "イ": "コンデンサを投入すると短時間に大きな電流が流れます。直列リアクトルのインダクタンスがその急変を抑えます。",
+      "ウ": "過負荷では一定時間をおいて遮断する反限時特性を用います。大きな短絡電流では速やかに遮断する瞬時特性が必要です。",
+      "エ": "通常は電流をほとんど流さず、大きなサージ電圧が来たときに電流を大地へ流して保護対象の絶縁にかかる電圧を抑えます。"
+    },
+    "explanation": "過負荷では一定時間をおいて遮断する反限時特性を用います。大きな短絡電流では速やかに遮断する瞬時特性が必要です。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q53",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 53,
+    "subject": "建築設備",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "配線材料"
+    ],
+    "difficulty": 2,
+    "question": "電気設備の機器・材料に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "ねじなし電線管は、薄鋼電線管に比べて、外径が同じ場合、肉厚が薄いので切断・曲げ等の加工性がよい。",
+      "イ": "耐熱ケーブルは、導体と絶縁物の間に耐熱層を施したものであり、非常放送、非常ベル起動装置等の弱電回路に用いられる。",
+      "ウ": "通信用構内ケーブルは、CATV、地上波デジタル、衛星放送等のTV受信用に用いられる。",
+      "エ": "プラグインバスダクトは、設けられたスリットによって、ダクトの途中から負荷への分岐ができる。"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=21",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.53。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "外径が同じ薄鋼電線管と比べて、ねじ切りを要しない形式では肉厚を薄くできるため、加工や接続の作業性を高められます。",
+      "イ": "耐熱ケーブルは火災時にも一定時間伝送回路を維持できるよう、適切な耐熱構造を持たせ、非常放送などの回路で用います。",
+      "ウ": "CATV、地上デジタル放送や衛星放送の伝送には、所定の特性インピーダンスを持つテレビ受信用の同軸ケーブルを用います。",
+      "エ": "プラグインバスダクトは差込口から分岐機器を接続し、幹線の途中で負荷へ分岐できます。"
+    },
+    "explanation": "CATV、地上デジタル放送や衛星放送の伝送には、所定の特性インピーダンスを持つテレビ受信用の同軸ケーブルを用います。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q54",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 54,
+    "subject": "建築設備",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "昇降機"
+    ],
+    "difficulty": 2,
+    "question": "非常用エレベーターに関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "一次消防運転においては、籠内からのみ運転の操作ができる。",
+      "イ": "二次消防運転においては、一次消防運転中に、籠の戸を開いたまま運転できる。",
+      "ウ": "非常用エレベーターを２基設ける場合は、１か所に集中して配置することが望ましい。",
+      "エ": "非常用エレベーターの最大定員は、17 人以上とする。"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=21",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.54。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "一次消防運転で消防隊が操作する場合は、通常の乗り場の呼びを切り離し、籠内から運転を操作します。",
+      "イ": "二次消防運転では、消防隊の判断で籠の戸を開いたまま運転させる機能を使用できます。",
+      "ウ": "非常用エレベーターを複数設ける場合には、一部が火災の影響を受けてもほかを使えるよう、避難・消火上有効な間隔を保ちます。",
+      "エ": "人員と消防用機材を載せられるよう、所定の積載量を持ち、最大定員は17人以上とします。"
+    },
+    "explanation": "非常用エレベーターを複数設ける場合には、一部が火災の影響を受けてもほかを使えるよう、避難・消火上有効な間隔を保ちます。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q55",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 55,
+    "subject": "建築設備",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "申請と届出"
+    ],
+    "difficulty": 2,
+    "question": "建築設備の申請・届出書類に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "冷凍能力が 20 法定冷凍トン、冷媒が高圧で不活性なフルオロカーボンである遠心冷凍機を設置する場合は、｢高圧ガス製造事業届書｣を提出する必要がある。",
+      "イ": "同一の構内において、小出力発電設備が設置されていない一般用電気工作物に、電圧 200 V、出力 10 kWの太陽電池発電設備を設置する場合は、｢保安規程届出書｣を提出する必要がある。",
+      "ウ": "燃料の燃焼能力が重油換算 50 L／ hのガスタービンを原動機とした常用発電設備を設置する場合は、電気事業法に基づく｢工事計画届出書｣を提出する必要がある。",
+      "エ": "バーナーの燃料の燃焼能力が重油換算 50 L／ hの炉筒煙管ボイラーを設置する場合は、大気汚染防止法に基づく｢ばい煙発生施設設置届出書｣を提出する必要がある。"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=22",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.55。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "法定冷凍能力と冷媒の種類で許可・届出の適用が変わります。設問の不活性フルオロカーボンを用いた20法定冷凍トンの設備は届出の対象です。",
+      "イ": "試験年時点の制度では、この電圧・出力の太陽光設備は小出力発電設備です。一般用電気工作物の範囲にとどまるため、事業用設備の保安規程届出は不要です。",
+      "ウ": "常用発電用のガスタービンは、電気事業法の所定の工事計画の届出の対象となります。",
+      "エ": "一定の燃焼能力を持つボイラーはばい煙発生施設です。燃料の燃焼能力が重油換算で毎時50 Lである設問の設備は設置届の対象です。"
+    },
+    "explanation": "試験年時点の制度では、この電圧・出力の太陽光設備は小出力発電設備です。一般用電気工作物の範囲にとどまるため、事業用設備の保安規程届出は不要です。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q56",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 56,
+    "subject": "建築設備",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "空調配管"
+    ],
+    "difficulty": 2,
+    "question": "空調設備の配管工事に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "空調機のドレン配管に設けるトラップの封水深さは、運転時の空調機内と室内との差圧を考慮して決定する。",
+      "イ": "HFCを冷媒として用いる場合、冷媒用銅管のろう付け接合時には、窒素置換による管内部の酸化防止対策が必要である。",
+      "ウ": "蒸気配管の主管から分岐管を取り出す場合は、３個以上のエルボを使用して、配管の伸縮を吸収できるようにする必要がある。",
+      "エ": "冷温水配管に設ける自動空気抜き弁は、配管系の最上部で、かつ、負圧になる部分に設ける。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=22",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.56。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "空調機内が負圧の場合などは、差圧を上回る封水がないと空気を吸い込み、排水が妨げられます。運転時の差圧に応じて深さを決めます。",
+      "イ": "加熱した銅管の内面に酸化物が生じて冷媒回路を汚染しないよう、管内に窒素を通しながらろう付けします。",
+      "ウ": "蒸気管は運転時に大きく伸縮します。複数のエルボで配管に曲がりを設けると、分岐部分で伸縮を吸収できます。",
+      "エ": "空気抜き弁は気泡が集まる高所で、運転時にも正圧となる位置に設けます。負圧になると弁から外部の空気を吸い込むおそれがあります。"
+    },
+    "explanation": "空気抜き弁は気泡が集まる高所で、運転時にも正圧となる位置に設けます。負圧になると弁から外部の空気を吸い込むおそれがあります。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q57",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 57,
+    "subject": "建築設備",
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "給排水配管"
+    ],
+    "difficulty": 2,
+    "question": "給排水衛生設備の配管工事に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "水道用硬質塩化ビニルライニング鋼管の切断には、バンドソー（帯のこ盤）ではなく、高速砥石切断機（高速カッター）を用いた。",
+      "イ": "免震構造の建築物において、免震層を通過する給湯配管には、ゴム製変位吸収管継手ではなく、ステンレス製変位吸収管継手を用いた。",
+      "ウ": "鉄筋コンクリート造の建築物において、地上部分の外壁を貫通して土中に埋設される配管には、マクロセル腐食の発生を防止するために、配管が土中に埋設される手前に、絶縁継手を設けた。",
+      "エ": "冬期における硬質ポリ塩化ビニル管の接合においては、ソルベントクラッキングを防止するために、夏期のときよりも、接着剤使用後の管内の通風を多く行った。"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=22",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.57。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "高速砥石で切断すると摩擦熱で鋼管内面の塩化ビニルを傷めるおそれがあります。バンドソーなど熱の影響が小さい方法で切断します。",
+      "イ": "免震層をまたぐ給湯管は大きな相対変位を吸収できる必要があります。加えて給湯温度に対応するステンレス製の変位吸収継手を使います。",
+      "ウ": "コンクリート側と土中側の金属が電気的につながると、環境の差で腐食電池を形成することがあります。土に入る手前で絶縁します。",
+      "エ": "冬は接着剤の溶剤が揮発しにくく、管内に残りやすくなります。十分に通風し、溶剤によるひび割れを防ぎます。"
+    },
+    "explanation": "高速砥石で切断すると摩擦熱で鋼管内面の塩化ビニルを傷めるおそれがあります。バンドソーなど熱の影響が小さい方法で切断します。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q58",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 58,
+    "subject": "建築設備",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "電気設備工事"
+    ],
+    "difficulty": 2,
+    "question": "電気設備工事に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "金属ダクトを壁に取り付けるに当たって、支持点間の距離は、３ mとした。",
+      "イ": "高圧計器用変成器の二次側電路には、D種接地工事を施した。",
+      "ウ": "A種接地工事の接地極を鉄柱その他の金属体と近接していない場所に埋設するに当たって、埋設深さは、75 cmとした。",
+      "エ": "使用電圧 400 Vの低圧分岐回路の電路と大地との間の絶縁抵抗値は、0.2 MΩとした。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=23",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.58。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "金属ダクトを壁に取り付ける場合、脱落や変形を防げる間隔で支持します。設問の支持間隔3 mは許容範囲に入ります。",
+      "イ": "高圧の計器用変成器の二次側電路は、一次側からの異常電圧に備えて所定のD種接地工事を施します。",
+      "ウ": "A種接地極を設問の条件で埋設する場合、地下75 cm以上の深さに設けます。",
+      "エ": "使用電圧が300 Vを超える低圧電路では、大地との間の絶縁抵抗は0.4 MΩ以上が基準です。0.2 MΩでは不足します。"
+    },
+    "explanation": "使用電圧が300 Vを超える低圧電路では、大地との間の絶縁抵抗は0.4 MΩ以上が基準です。0.2 MΩでは不足します。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q59",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 59,
+    "subject": "建築設備",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "維持管理"
+    ],
+    "difficulty": 2,
+    "question": "建築設備工事の維持管理等に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "ライフサイクルコストは、企画設計費、建設費、運用管理費、解体費等によって構成される。",
+      "イ": "改良保全は、故障が起こりにくい設備への改善、又は性能向上を目的とした保全活動であり、設備の構成要素・部品の材質や使用の改善等が該当する。",
+      "ウ": "法定耐用年数とは、税法で定められた耐用年数のことであり、減価償却の基本となる数値である。",
+      "エ": "平均故障寿命とは、修理しながら使用するシステム・機器・部品等における故障発生から次の故障発生までの動作時間の平均値のことである。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=23",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.59。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "建物の企画・設計から完成後の運用と保全、最終的な解体まで、各段階にかかる費用を含めて評価します。",
+      "イ": "故障しやすい部品の材質や構成を改めるなど、故障の低減や設備性能の向上を目的に改善する活動です。",
+      "ウ": "法定耐用年数は資産の種類に応じて税法上定め、減価償却費を計算する期間として用います。",
+      "エ": "修理可能なシステムで故障から次の故障までの稼働時間を平均した指標は平均故障間隔です。平均故障寿命は修理しない機器などの故障までの時間を扱います。"
+    },
+    "explanation": "修理可能なシステムで故障から次の故障までの稼働時間を平均した指標は平均故障間隔です。平均故障寿命は修理しない機器などの故障までの時間を扱います。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "kenchiku-setsubishi-2022-annual-pm-q60",
+    "exam": "kenchiku-setsubishi",
+    "session": "pm",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "annual",
+    "qNumber": 60,
+    "subject": "建築設備",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "建築設備",
+    "topicTags": [
+      "工事積算"
+    ],
+    "difficulty": 2,
+    "question": "建築設備工事の積算に関する次の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "一般管理費等は、工事施工に当たる受注者の継続運営に必要な費用であり、一般管理費と付加利益等からなる。",
+      "イ": "現場管理費は、工事施工に当たり、工事現場を管理運営するために必要な費用であり、共通仮設費も含まれる。",
+      "ウ": "共通仮設費には、環境安全費及び動力用水光熱費も含まれる。",
+      "エ": "直接工事費の算定において、｢材料価格等に個別の数量を乗じて算定する方法｣又は｢単位施工当たりの単価に数量を乗じて算定する方法」によりがたい場合は、施工に必要となる全ての費用を｢一式｣として算定する。"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-mondai2.pdf#page=23",
+    "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2022-1st-kijyun.pdf",
+    "sourceAttribution": "出典：公益財団法人建築技術教育普及センター 令和4年建築設備士第一次試験・建築設備 No.60。解説は過去問AI作成。",
+    "license": "JAEIC-permission-required",
+    "lawReferenceDate": "2022-01-01",
+    "lastUpdated": "2026-11-19",
+    "choiceExplanations": {
+      "ア": "一般管理費等は、企業の事業全体の運営と継続に必要な費用を含みます。会社としてかかる一般管理費と付加利益などが該当します。",
+      "イ": "現場管理費は工事現場の管理運営に必要な費用です。共通仮設費は共通仮設に要する別の費目として扱います。",
+      "ウ": "工事全体に共通して必要な仮設設備や安全対策に加え、工事に使う電力・水などの光熱費も共通仮設費に計上します。",
+      "エ": "明細ごとや施工単位ごとに数量で積み上げられない部分では、必要な費用をまとめて一式として算定します。"
+    },
+    "explanation": "現場管理費は工事現場の管理運営に必要な費用です。共通仮設費は共通仮設に要する別の費目として扱います。",
+    "explanationCoverage": "full",
+    "needsReview": false
+  }
+]

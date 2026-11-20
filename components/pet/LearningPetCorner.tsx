@@ -116,7 +116,7 @@ export function LearningPetCorner({ qualificationId, questionId, suppliedView, i
     (closed ? reopenButton.current : roomSeat ? settingsSummary.current : closeButton.current)?.focus({ preventScroll: true });
   }, [closed, roomSeat]);
   if (appearanceOnly && !newStage && !noticeOpened) return null;
-  if (closed) return <button type="button" ref={reopenButton} className={styles.button} onClick={() => preferences(false, paused)}>チワワのひと休みを開く</button>;
+  if (closed) return compact ? null : <button type="button" ref={reopenButton} className={styles.button} onClick={() => preferences(false, paused)}>チワワのひと休みを開く</button>;
   const stage = profile?.selectedStage ?? "puppy";
   const shownPose = pose === "study" ? idlePose : pose;
   const src = newStage && shownPose === "study" ? petArtFor(selectedQualification ?? null, newStage, "correct") : petPortraitFor(selectedQualification ?? (roomSeat && view.status === "ready" ? "ip" : null), stage, shownPose);
@@ -127,13 +127,13 @@ export function LearningPetCorner({ qualificationId, questionId, suppliedView, i
   const openCare = () => { stop(); setNoticeOpened(true); setOpenAppearance(newStage !== null); appearance.acknowledge(); setUnlockStage(null); setPop(null); setCaption(null); setDetailsOwner(view.document!.ownerScope); };
   const studyHref = `/quiz?mode=random&exam=${encodeURIComponent(selectedQualification ?? "ip")}`;
   return <section ref={panel} className={`${styles.panel} ${compact ? styles.compact : ""} ${roomSeat ? styles.roomSeat : ""}`} aria-labelledby={title} data-pet-id={profile?.petId ?? ""} data-pet-pose={pose} data-moving={moving} data-pet-compact={compact}>
-    {compact ? <button type="button" ref={detailsButton} className={styles.answerPet} disabled={view.status !== "ready" || !profile} onClick={openCare} aria-label={newStage ? `${PET_STAGE_LABELS[newStage]}の姿を見る` : "チワワのお世話を開く"}>
+    {compact ? <div className={styles.answerPet}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={image} alt="" width={64} height={64} className={moving ? styles.gesture : undefined} onError={() => setFailed(image)} />
       <span className={styles.answerCopy}><strong id={title}>{profile?.name ?? "チワワ"}</strong><span>{newStage ? `${PET_STAGE_LABELS[newStage]}の姿が選べるよ` : caption ?? idleCaption ?? IDLE_CAPTION}</span>
         {remaining !== null ? <span>相棒まで あと{remaining}問<meter aria-label="相棒までの進捗" min={0} max={5} value={5 - remaining} className={styles.progress} /></span> : <><strong>{nextAction?.memory.earned?.detail}</strong><span>{nextAction?.label}</span><small><PetStageProgress progress={nextAction?.stageProgress ?? null} /></small></>}
-      </span><span className={styles.answerOpen}>{newStage ? "新しい姿" : "お世話"} ›</span>
-    </button> : <>
+      </span>
+    </div> : <>
     <header className={styles.header}>
       {selectedQualification ? <PetNameTitle id={title} qualificationLabel={examLabel(selectedQualification)} name={profile?.name}
         document={view.status === "ready" && profile ? view.document ?? null : null} qualificationId={profile?.qualificationId} />

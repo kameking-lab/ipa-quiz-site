@@ -1,0 +1,148 @@
+{
+  "jobId": "PLAN5-104",
+  "index": 103,
+  "expectedOriginalQuestions": 3,
+  "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_es_pm2_qs.pdf",
+  "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_es_pm2_ans.pdf",
+  "sources": [
+    {
+      "jobId": "PLAN5-104",
+      "kind": "qs",
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_es_pm2_qs.pdf",
+      "file": "2023r05a_es_pm2_qs.pdf",
+      "sha256": "2147bfaf28447f06ade7676e4f7c720debefa9b181327025232f8fd99b137252",
+      "pages": 12
+    },
+    {
+      "jobId": "PLAN5-104",
+      "kind": "ans",
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_es_pm2_ans.pdf",
+      "file": "2023r05a_es_pm2_ans.pdf",
+      "sha256": "00bdc02fa9c324098f6fe31dcad75c9b0aab547611bf9402f2692869f9001d7e",
+      "pages": 1
+    }
+  ],
+  "questions": [
+    {
+      "id": "es-2023a-pm2-q1",
+      "qNumber": 1,
+      "questionPages": [
+        2,
+        4,
+        5
+      ],
+      "answerPages": [
+        1
+      ]
+    },
+    {
+      "id": "es-2023a-pm2-q2",
+      "qNumber": 2,
+      "questionPages": [
+        2,
+        6,
+        7
+      ],
+      "answerPages": [
+        1
+      ]
+    },
+    {
+      "id": "es-2023a-pm2-q3",
+      "qNumber": 3,
+      "questionPages": [
+        2,
+        8,
+        9
+      ],
+      "answerPages": [
+        1
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "kind": "question",
+      "page": 2,
+      "url": "/questions/ipa-official/es/2023-autumn-pm2/p02.webp",
+      "sha256": "001f6eb02f63b0f4e5c4da469e353f9651ec7bc31dbe9bde6e6a5098072aeff5",
+      "width": 1032,
+      "height": 1458
+    },
+    {
+      "kind": "question",
+      "page": 4,
+      "url": "/questions/ipa-official/es/2023-autumn-pm2/p04.webp",
+      "sha256": "8b1c3b225eb50e1873f9a1ed8a446004b7f604dd8a3ee1934755ba0fda68d98d",
+      "width": 1032,
+      "height": 1458
+    },
+    {
+      "kind": "question",
+      "page": 5,
+      "url": "/questions/ipa-official/es/2023-autumn-pm2/p05.webp",
+      "sha256": "cf206fd1b06d8003f2004b7e1875f15d98867e5c5f8d23de0f4afd6e98657cf5",
+      "width": 1032,
+      "height": 1458
+    },
+    {
+      "kind": "answer",
+      "qNumber": 1,
+      "page": 1,
+      "url": "/questions/ipa-official/es/2023-autumn-pm2/q1-answer-p1.webp",
+      "sha256": "467aa3ab49c2fac28de0a821f66e52acb4102335cd157f6e3c2009eada7ab355",
+      "width": 1091,
+      "height": 290
+    },
+    {
+      "kind": "question",
+      "page": 6,
+      "url": "/questions/ipa-official/es/2023-autumn-pm2/p06.webp",
+      "sha256": "19b716d789fe1584224da6c953a6ab70d2c19a2774a28dba38c310d8b5e17a2b",
+      "width": 1032,
+      "height": 1458
+    },
+    {
+      "kind": "question",
+      "page": 7,
+      "url": "/questions/ipa-official/es/2023-autumn-pm2/p07.webp",
+      "sha256": "01dac7462cf8dcd98c9df218bf75b5d1c31f02685782bc010c33a46e19a8bad7",
+      "width": 1032,
+      "height": 1458
+    },
+    {
+      "kind": "answer",
+      "qNumber": 2,
+      "page": 1,
+      "url": "/questions/ipa-official/es/2023-autumn-pm2/q2-answer-p1.webp",
+      "sha256": "4df12467d3da8292c3db4cf3fcb242242b0295182208a3af2a0be43a3d54f246",
+      "width": 1091,
+      "height": 263
+    },
+    {
+      "kind": "question",
+      "page": 8,
+      "url": "/questions/ipa-official/es/2023-autumn-pm2/p08.webp",
+      "sha256": "611f4d24706be82160c947ef9854fb7b8949a8974a397a73f957980d8ff0dfd3",
+      "width": 1032,
+      "height": 1458
+    },
+    {
+      "kind": "question",
+      "page": 9,
+      "url": "/questions/ipa-official/es/2023-autumn-pm2/p09.webp",
+      "sha256": "64b63fdfc704be45005bcc04efa4e6e6e20b9612aac9fe9d0d4679b39dc4479b",
+      "width": 1032,
+      "height": 1458
+    },
+    {
+      "kind": "answer",
+      "qNumber": 3,
+      "page": 1,
+      "url": "/questions/ipa-official/es/2023-autumn-pm2/q3-answer-p1.webp",
+      "sha256": "c0a93de69cb28ad48cae54100787f0d75ed2722cfcedfe9010f48f1756af1ec5",
+      "width": 1091,
+      "height": 781
+    }
+  ]
+}
