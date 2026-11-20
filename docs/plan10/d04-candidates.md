@@ -79,6 +79,7 @@
 | 2025 | 一般職（大卒程度・物理区分） 専門試験（多肢選択式） | 36 | [問題冊子・末尾の正答番号表（42ページ）](https://www.jinji.go.jp/content/000016353.pdf) |
 | 2025 | 一般職（大卒程度・化学区分） 専門試験（多肢選択式） | 35 | [問題冊子・末尾の正答番号表（30ページ）](https://www.jinji.go.jp/content/000016355.pdf) |
 | 2025 | 一般職（大卒程度・農学区分） 専門試験（多肢選択式） | 39 | [問題冊子・末尾の正答番号表（31ページ）](https://www.jinji.go.jp/content/000016357.pdf) |
+| 2025 | 一般職（大卒程度・農業農村工学区分） 専門試験（多肢選択式） | 39 | [問題冊子・末尾の正答番号表（42ページ）](https://www.jinji.go.jp/content/000016359.pdf) |
 | 2025 | 一般職（大卒程度・林学区分） 専門試験（多肢選択式） | 40 | [問題冊子・末尾の正答番号表（42ページ）](https://www.jinji.go.jp/content/000016361.pdf) |
 | 2025 | 法務省専門職員（人間科学） 専門試験・矯正心理専門職の必須問題19問、共通問題37問 | 56 | [問題冊子・末尾の正答番号表（63ページ）](https://www.jinji.go.jp/content/000016232.pdf) |
 | 2025 | 国税専門官（国税専門B） 専門試験（多肢選択式） | 42 | [問題冊子・末尾の正答番号表（55ページ）](https://www.jinji.go.jp/content/000016239.pdf) |
@@ -271,3 +272,5 @@
 2025年度の化学区分はNo. 10～44を収録した。No. 1～9はデジタル・電気・電子区分のNo. 1、2、6、7、8、15、17、14、18と同内容・同正答である。No. 28、33の構造式は選択肢ごとに公式冊子から添付した。 [化学](https://www.jinji.go.jp/content/000016355.pdf) [デジタル・電気・電子](https://www.jinji.go.jp/content/000016345.pdf)
 
 2025年度の農学区分は光合成の本文が公式PDFに掲載されていないNo. 33を除く39問を収録した。No. 3、4、9、19、20には原表、写真、模式図を添付した。No. 39は農業農村工学区分No. 40との共通問題のため、農学区分にまとめた。 [農学](https://www.jinji.go.jp/content/000016357.pdf) [農業農村工学](https://www.jinji.go.jp/content/000016359.pdf)
+
+2025年度の農業農村工学区分は農学区分No. 39と共通するNo. 40を除く39問を収録した。構造力学、水理学、工程計画など13問の図表は公式冊子から添付した。排水計画と農道の解説は、農林水産省の土地改良事業計画設計基準も参照した。 [農業農村工学](https://www.jinji.go.jp/content/000016359.pdf) [排水の技術書](https://www.maff.go.jp/j/council/seisaku/nousin/seibibukai/gijutu_syoiinkai/attach/pdf/siryou-12.pdf) [農道の基準](https://www.maff.go.jp/j/nousin/noukan/tyotei/kizyun/noudou.html)
