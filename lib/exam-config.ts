@@ -1995,8 +1995,8 @@ caremanager: {
 "kaijo-hoan-gakko": {
     code: "kaijo-hoan-gakko", nameFull: "海上保安学校学生採用試験", urlSlug: "kaijo-hoan-gakko", level: "specialist",
     sessions: [
-        { session: "kiso-special", urlSlug: "kiso-special", expectedQuestions: 40, label: "基礎能力試験（特別）", categories: ["判断推理", "数的推理", "資料解釈", "数学", "物理", "化学", "生物", "地学", "世界史", "日本史", "地理", "国語", "英語", "政治", "経済", "倫理"] },
-    ], seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
+        { session: "kiso-special", urlSlug: "kiso-special", expectedQuestions: 40, label: "基礎能力試験（特別）", categories: ["文章理解", "判断推理", "数的推理", "資料解釈", "数学", "物理", "化学", "生物", "地学", "世界史", "日本史", "地理", "国語", "英語", "政治", "経済", "倫理", "情報"] },
+    ], seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
 },
 "kouku-kanseikan": {
     code: "kouku-kanseikan", nameFull: "航空管制官採用試験", urlSlug: "kouku-kanseikan", level: "specialist",

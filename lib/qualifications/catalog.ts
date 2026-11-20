@@ -1784,7 +1784,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_31.html",
     officialReuseTermsUrl: "https://www.jinji.go.jp/shinsei/notice.html",
     status: "live",
-    reuseSummary: "2026年度特別試験の基礎能力試験の公開問題33問を、公式正答・全肢解説付きで収録。",
+    reuseSummary: "2025・2026年度特別試験の基礎能力試験の公開問題73問を、公式正答・全肢解説付きで収録。",
     attributionTemplate: "出典：人事院「海上保安学校学生採用試験 基礎能力試験」。解説は過去問AIの独自作成。",
     remainingWork: ["通常試験と過年度の追加"],
   },
