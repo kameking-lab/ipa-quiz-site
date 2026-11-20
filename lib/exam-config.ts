@@ -1123,7 +1123,7 @@ kangoshi: {
         { session: "kogai-air-water-air-technology", urlSlug: "kogai-air-water-air-technology", expectedQuestions: 20, label: "大気関係技術特論", categories: ["大気関係技術特論"] },
         { session: "kogai-air-water-water-technology", urlSlug: "kogai-air-water-water-technology", expectedQuestions: 20, label: "水質関係技術特論", categories: ["水質関係技術特論"] },
     ],
-    seasons: ["annual"], yearRange: { start: 2023, end: 2026 },
+    seasons: ["annual"], yearRange: { start: 2022, end: 2026 },
 },
 "gas-kou": {
     code: "gas-kou", nameFull: "ガス主任技術者試験（甲種）", urlSlug: "gas-kou", level: "advanced",
