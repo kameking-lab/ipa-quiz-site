@@ -1784,7 +1784,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_31.html",
     officialReuseTermsUrl: "https://www.jinji.go.jp/shinsei/notice.html",
     status: "live",
-    reuseSummary: "2024～2026年度特別試験および2024・2025年度通常試験の基礎能力試験の公開問題193問と、2025年度の管制課程・航空課程・海洋科学課程に共通する学科試験（数学・英語）26問と、2024年度の各課程共通の学科試験（数学）13問を、公式正答・全肢解説付きで収録。",
+    reuseSummary: "2024～2026年度特別試験および2024・2025年度通常試験の基礎能力試験の公開問題193問と、2024・2025年度の管制課程・航空課程・海洋科学課程に共通する学科試験（数学・英語）50問を、公式正答・全肢解説付きで収録。",
     attributionTemplate: "出典：人事院「海上保安学校学生採用試験 基礎能力試験」。解説は過去問AIの独自作成。",
     remainingWork: ["過年度の基礎能力試験と学科試験の追加"],
   },
