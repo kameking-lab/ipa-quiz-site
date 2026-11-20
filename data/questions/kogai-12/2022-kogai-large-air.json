@@ -1,0 +1,418 @@
+[
+  {
+    "id": "kogai-12-2022-annual-kogai-large-air-q1",
+    "exam": "kogai-12",
+    "session": "kogai-large-air",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 1,
+    "examDate": "2022-10-02",
+    "subject": "大規模大気特論",
+    "type": "multiple-choice",
+    "category": "大規模大気特論",
+    "topicTags": [
+      "温位と大気の安定度"
+    ],
+    "difficulty": 2,
+    "question": "低層大気の熱的な性質に関する記述として、誤っているものはどれか。",
+    "choices": {
+      "ア": "温位は、気塊を断熱的に1000 hPa の状態に移したときの温度変化幅で定義される。",
+      "イ": "断熱的に気塊の高度を変化させるとき、乾燥空気では100 m 上昇すると温度が0.98 ℃下がる。",
+      "ウ": "高さ100 m ごとに温度が0.98 ℃下がる温度勾配（絶対値）を、乾燥断熱減率という。",
+      "エ": "高さ100 m ごとに温度が0.6 ℃下がる大気層は熱的に安定である。",
+      "オ": "高さ100 m ごとに温位が0.1 ℃下がる大気層は熱的に不安定である。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "温位は気塊を断熱的に基準気圧1000 hPaに移したときの温度そのものである。移動前後の温度差ではない。",
+    "choiceExplanations": {
+      "ア": "温位は気塊を断熱的に基準気圧1000 hPaに移したときの温度そのものである。移動前後の温度差ではない。",
+      "イ": "乾燥した気塊を断熱的に持ち上げると気圧の低下に伴って膨張し、100 mにつき約0.98 ℃冷える。",
+      "ウ": "乾燥気塊を断熱的に上昇させたときの、単位高度差当たりの温度低下を乾燥断熱減率という。",
+      "エ": "周囲の気温の低下が乾燥断熱減率より小さいと、持ち上げられた乾燥気塊は周囲より低温になり、元の高度へ戻ろうとする。",
+      "オ": "温位が高度とともに低下する層では、下の気塊を断熱的に上げると周囲より高温になりやすく、鉛直対流が起こりやすい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724175649id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R04_06.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724172205id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR04.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2022（令和4）年度公害防止管理者等国家試験 大規模大気特論 問1（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-12-2022-annual-kogai-large-air-q2",
+    "exam": "kogai-12",
+    "session": "kogai-large-air",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 2,
+    "examDate": "2022-10-02",
+    "subject": "大規模大気特論",
+    "type": "multiple-choice",
+    "category": "大規模大気特論",
+    "topicTags": [
+      "風速のべき乗則"
+    ],
+    "difficulty": 2,
+    "question": "風速の鉛直分布は、以下のべき乗則を用いて、近似的に表すことができる。\n\nu(z) ＝ u(z₁)(z/z₁)ᵖ\n\nここで、u（z）は高度z における風速（m/s）、u（z₁）は高度z₁ における風速（m/s）、p はべき数で、大気の熱的安定度によって変わる。\n\n本曇の日中に、東京の市街地において高度10 m で計測した風速が2 m/s であった場合、同じ地点における高度100 m の風速（m/s）はおよそいくらか。ただし、pの値は下表に従うものとする。\n\n| 安定度 | 強不安定 | 並不安定 | 弱不安定 | 中立 | 弱安定 | 並安定 |\n| --- | ---: | ---: | ---: | ---: | ---: | ---: |\n| 都市のp | 0.15 | 0.15 | 0.20 | 0.25 | 0.40 | 0.60 |\n| 郊外のp | 0.07 | 0.07 | 0.10 | 0.15 | 0.35 | 0.55 |\n\nなお、10⁰·⁰⁷＝1.2、10⁰·¹⁰＝1.3、10⁰·¹⁵＝1.4、10⁰·²⁰＝1.6、10⁰·²⁵＝1.8、10⁰·³⁵＝2.2、10⁰·⁴⁰＝2.5、10⁰·⁵⁵＝3.5、10⁰·⁶⁰＝4.0とする。",
+    "choices": {
+      "ア": "2.4",
+      "イ": "2.8",
+      "ウ": "3.2",
+      "エ": "3.6",
+      "オ": "5.0"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "本曇りの日中では大気を中立とみなし、市街地のp＝0.25を用いる。2×(100/10)⁰·²⁵≒3.6 m/sとなる。",
+    "choiceExplanations": {
+      "ア": "2.4 m/sは高度比10と指数0.07を使った値である。完全に曇った市街地を中立として求める指数は0.25である。",
+      "イ": "約2.8 m/sは指数0.15を使う場合の値であり、これは表の郊外の中立に対応する。",
+      "ウ": "3.2 m/sは市街地の弱不安定の指数0.20で計算した値である。設問の本曇りは中立として扱う。",
+      "エ": "本曇りの日中では大気を中立とみなし、市街地のp＝0.25を用いる。2×(100/10)⁰·²⁵≒3.6 m/sとなる。",
+      "オ": "5.0 m/sはp＝0.40とした場合で、市街地の弱安定に対応する。設問の本曇りではp＝0.25を用いる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724175649id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R04_06.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724172205id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR04.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2022（令和4）年度公害防止管理者等国家試験 大規模大気特論 問2（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-12-2022-annual-kogai-large-air-q3",
+    "exam": "kogai-12",
+    "session": "kogai-large-air",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 3,
+    "examDate": "2022-10-02",
+    "subject": "大規模大気特論",
+    "type": "multiple-choice",
+    "category": "大規模大気特論",
+    "topicTags": [
+      "煙の水平方向の拡散幅"
+    ],
+    "difficulty": 2,
+    "question": "水平方向の煙の拡散幅に関する記述中、ア～ウの空欄の中に挿入すべき語句の組合せとして、正しいものはどれか。\n\n風向の時間変化や［ア］は水平方向の煙の拡散幅を増大させ、その拡散幅は［イ］とともに大きくなる。これらは時間スケールの大きな乱流の一種であるが、総観的な気圧配置や風上の［ウ］に起因する場合がある。\n\nア — イ — ウ",
+    "choices": {
+      "ア": "風速の乱れ — 平均化時間 — 海面や湖面の存在",
+      "イ": "風速の乱れ — 変動周期 — 雷雨などの局地現象",
+      "ウ": "気流の波動 — 気温の低下 — 山岳などの地形",
+      "エ": "気流の蛇行 — 平均化時間 — 山岳などの地形",
+      "オ": "気流の蛇行 — 気温の低下 — 海面や湖面の存在"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "風向変化や蛇行があると、平均化時間を長く取るほど様々な煙の位置を含み、見掛けの幅が広がる。気圧配置や風上の山岳地形はそのような気流の変動を起こすことがある。",
+    "choiceExplanations": {
+      "ア": "平均化時間が長いほど広がる点は合うが、風向変化とともに挙げられるのは気流の蛇行である。原因として山岳などの地形が挙げられる。",
+      "イ": "広がりの指標として用いる時間は観測の平均化時間であり、変動周期そのものではない。蛇行や風向の変動には周辺の地形などが関わる。",
+      "ウ": "風上の山岳地形は合うが、気流の蛇行と平均化時間の組合せで水平方向の拡散幅の変化を説明する。",
+      "エ": "風向変化や蛇行があると、平均化時間を長く取るほど様々な煙の位置を含み、見掛けの幅が広がる。気圧配置や風上の山岳地形はそのような気流の変動を起こすことがある。",
+      "オ": "蛇行は合うが、水平方向の拡散幅を広げるのは観測の平均化時間の増大である。原因の例は風上の山岳などの地形である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724175649id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R04_06.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724172205id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR04.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2022（令和4）年度公害防止管理者等国家試験 大規模大気特論 問3（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-12-2022-annual-kogai-large-air-q4",
+    "exam": "kogai-12",
+    "session": "kogai-large-air",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 4,
+    "examDate": "2022-10-02",
+    "subject": "大規模大気特論",
+    "type": "multiple-choice",
+    "category": "大規模大気特論",
+    "topicTags": [
+      "プルームの上昇高さ"
+    ],
+    "difficulty": 2,
+    "question": "煙突から排出される煙の上昇、及び上昇高さの計算式に関する記述として、誤っているものはどれか。",
+    "choices": {
+      "ア": "ダウンウォッシュを起こさずに大気中に排出された煙は、運動量と浮力の効果で上昇しながら、風に流されつつ拡散する。",
+      "イ": "大容量火力発電所から排出された煙は、風下距離1 ～2 km まで上昇し続けることが、観測により確認されている。",
+      "ウ": "モーゼスとカーソンの式及びコンカウの式では、大気安定度の影響が考慮されている。",
+      "エ": "ボサンケらの式は、式の煩雑さの反面、精度がよくないことが知られている。",
+      "オ": "無風時を対象としたブリッグスの式では、大気の温位勾配に応じて上昇高さが変化する。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "モーゼス・カーソンの式で用いる係数は大気安定度に応じて変わる。コンカウの式にも大気の安定度の影響が組み込まれている。",
+    "choiceExplanations": {
+      "ア": "十分な排出速度で煙が上方へ出ると、初期の運動量と周囲より軽いことによる浮力で上昇し、風下へ運ばれながら拡散する。",
+      "イ": "大容量発電所の排ガスは浮力が大きいため、実際の観測では風下1～2 km付近まで上昇を続ける例がある。",
+      "ウ": "モーゼス・カーソンの式で用いる係数は大気安定度に応じて変わる。コンカウの式にも大気の安定度の影響が組み込まれている。",
+      "エ": "ボサンケらの式は、計算式が複雑ではあるものの精度がよいとされる。精度がよくないとする記述は誤りである。",
+      "オ": "ブリッグスの無風時の式では、周囲の大気の温位勾配が浮力による上昇を抑える度合いに関係する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724175649id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R04_06.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724172205id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR04.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2022（令和4）年度公害防止管理者等国家試験 大規模大気特論 問4（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-12-2022-annual-kogai-large-air-q5",
+    "exam": "kogai-12",
+    "session": "kogai-large-air",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 5,
+    "examDate": "2022-10-02",
+    "subject": "大規模大気特論",
+    "type": "multiple-choice",
+    "category": "大規模大気特論",
+    "topicTags": [
+      "正規化着地濃度のグラフの読み取り"
+    ],
+    "difficulty": 2,
+    "question": "下図は安定度がD の場合の、パスキルの拡散幅に基づく正規化着地濃度の変化を示したものである。排出量Q = 3.6 m³/h、有効煙突高さHₑ = 20 m、風速u = 3 m/sのとき、最大着地濃度（ppm）に最も近いものはどれか。",
+    "choices": {
+      "ア": "0.1",
+      "イ": "0.7",
+      "ウ": "1",
+      "エ": "3.5",
+      "オ": "7"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "図のHₑ＝20 mの曲線の最高値は約3×10⁻⁴ m⁻²である。Q＝3.6 m³/h＝0.001 m³/sを用いるとC＝(3×10⁻⁴)×0.001/3≒10⁻⁷となり、0.1 ppmに当たる。",
+    "choiceExplanations": {
+      "ア": "図のHₑ＝20 mの曲線の最高値は約3×10⁻⁴ m⁻²である。Q＝3.6 m³/h＝0.001 m³/sを用いるとC＝(3×10⁻⁴)×0.001/3≒10⁻⁷となり、0.1 ppmに当たる。",
+      "イ": "0.7 ppmになるには正規化濃度Cu/Qが約2.1×10⁻³ m⁻²必要であり、20 mの曲線の最大値より大きい。",
+      "ウ": "1 ppmに相当する正規化濃度は3×10⁻³ m⁻²であり、20 mの曲線の最大値の約10倍である。",
+      "エ": "3.5 ppmに相当する正規化濃度は約1.05×10⁻² m⁻²であり、20 mの曲線の最大値よりはるかに大きい。",
+      "オ": "風速と排出量を換算して図の正規化濃度から求めると、最大は0.1 ppm程度である。7 ppmにはならない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724175649id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R04_06.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724172205id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR04.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2022（令和4）年度公害防止管理者等国家試験 大規模大気特論 問5（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/images/questions/kogai-12/2022-large-air-q5.png"
+    ],
+    "imageAltTexts": [
+      "大気安定度Dの着地濃度グラフ。縦軸は正規化濃度Cu/Q、横軸は風下距離で、ともに対数目盛。煙突高さ0、20、50、100、200、300 mの曲線を示す。"
+    ]
+  },
+  {
+    "id": "kogai-12-2022-annual-kogai-large-air-q6",
+    "exam": "kogai-12",
+    "session": "kogai-large-air",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 6,
+    "examDate": "2022-10-02",
+    "subject": "大規模大気特論",
+    "type": "multiple-choice",
+    "category": "大規模大気特論",
+    "topicTags": [
+      "解析解と数値解による拡散モデル"
+    ],
+    "difficulty": 2,
+    "question": "大気汚染の予測手法としての拡散モデルに関する記述として、誤っているものはどれか。",
+    "choices": {
+      "ア": "拡散は微分方程式で表され、その解法により解析解モデルと数値解モデルに分類できる。",
+      "イ": "解析解モデルは、拡散係数や風向・風速が一定などの条件のもとで数学的に得られる解を利用する。",
+      "ウ": "解析解モデルの一種として流跡線モデルがある。",
+      "エ": "代表的な数値解モデルとして格子モデルがあるが、計算量は非常に大きくなる。",
+      "オ": "格子モデルでは、格子間隔より小さいスケールの濃度変化を表現できない。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "流跡線モデルは移動する気塊や粒子の軌跡を追って汚染物質の輸送を計算する数値的なモデルである。解析解モデルの一種とする記述は誤りである。",
+    "choiceExplanations": {
+      "ア": "拡散方程式の解を解析的な式として求めるモデルと、計算機で数値的に求めるモデルに分類できる。",
+      "イ": "一定の風向・風速や拡散係数などの仮定のもとでは、拡散方程式を数学的に解いて濃度の式を得る方法がある。",
+      "ウ": "流跡線モデルは移動する気塊や粒子の軌跡を追って汚染物質の輸送を計算する数値的なモデルである。解析解モデルの一種とする記述は誤りである。",
+      "エ": "格子モデルでは各格子セルで風や拡散、反応を時間ごとに計算するため、細かい格子で広範囲を扱うと計算量が増大する。",
+      "オ": "各格子内の代表濃度を求めるため、格子間隔より細かい濃度の変化は直接には表せない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724175649id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R04_06.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724172205id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR04.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2022（令和4）年度公害防止管理者等国家試験 大規模大気特論 問6（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-12-2022-annual-kogai-large-air-q7",
+    "exam": "kogai-12",
+    "session": "kogai-large-air",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 7,
+    "examDate": "2022-10-02",
+    "subject": "大規模大気特論",
+    "type": "multiple-choice",
+    "category": "大規模大気特論",
+    "topicTags": [
+      "製油所の硫黄回収"
+    ],
+    "difficulty": 2,
+    "question": "製油所の大気汚染対策に関する記述中、下線を付した箇所のうち、誤っているものはどれか。\n\n水素化脱硫反応に伴い副生する酸性ガスに含まれる（1）硫化水素は、化学吸収プロセスで（2）アルカリ性溶液に吸収され、（3）再生塔で吸収液から分離される。分離された（1）硫化水素は（4）クラウス法により（5）硫酸として回収される。",
+    "choices": {
+      "ア": "硫化水素",
+      "イ": "アルカリ性溶液",
+      "ウ": "再生塔",
+      "エ": "クラウス法",
+      "オ": "硫酸"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "クラウス法で回収するのは単体の硫黄である。硫酸として回収するという記述は誤りである。",
+    "choiceExplanations": {
+      "ア": "水素化脱硫で石油中の有機硫黄を除くと硫化水素が副生する。吸収設備などで硫化水素を回収・処理する。",
+      "イ": "酸性ガス中の硫化水素はアルカリ性の吸収液に選択的に取り込める。",
+      "ウ": "再生塔で取り込んだ酸性ガスを溶液から分離すると、吸収液を吸収塔に戻して再利用できる。",
+      "エ": "クラウス法は、分離された硫化水素に含まれる硫黄を工業的に回収する方法である。",
+      "オ": "クラウス法で回収するのは単体の硫黄である。硫酸として回収するという記述は誤りである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724175649id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R04_06.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724172205id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR04.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2022（令和4）年度公害防止管理者等国家試験 大規模大気特論 問7（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-12-2022-annual-kogai-large-air-q8",
+    "exam": "kogai-12",
+    "session": "kogai-large-air",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 8,
+    "examDate": "2022-10-02",
+    "subject": "大規模大気特論",
+    "type": "multiple-choice",
+    "category": "大規模大気特論",
+    "topicTags": [
+      "石炭火力の排煙処理設備の順序"
+    ],
+    "difficulty": 2,
+    "question": "石炭火力発電設備の排煙処理システムの記述として、誤っているものはどれか。",
+    "choices": {
+      "ア": "電気集じん装置は、圧力損失が小さく、動力費が小さいことにより、大規模な発電設備の集じん装置に用いられる。",
+      "イ": "ばいじんの処理は、単に電気集じん装置だけで処理するのではなく、後段の脱硫装置の除じん機能との組合せによるシステムで処理するように配慮されている。",
+      "ウ": "煙突からの白煙対策のため排ガスを再加熱する目的で、その熱源として排ガス自身の熱を利用すべく熱交換器が設置されている。",
+      "エ": "低低温形電気集じん装置方式を用いた高性能排煙処理システムでは、ガス‒ガスヒーター（GGH）の熱回収部が電気集じん装置の後に設置される。",
+      "オ": "一部の流動層ボイラーや微粉炭焚きボイラーでは、活性炭による吸着を利用した脱硫脱硝法も実用化されている。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "低低温形では先に熱回収部で排ガスを冷却し、それから電気集じん装置に入れて捕集しやすくする。熱回収部を集じん装置の後ろに置くという記述は逆である。",
+    "choiceExplanations": {
+      "ア": "大型電気集じん装置は通風抵抗が比較的小さく、大風量でも動力費を抑えやすい。",
+      "イ": "電気集じんで残った粒子を後段の湿式脱硫装置でも一部捕集できるため、設備全体で排出を低減する。",
+      "ウ": "熱回収型のガスヒーターでは、上流排ガスの熱を利用し、脱硫後の冷えた排ガスを再加熱して白煙を抑える。",
+      "エ": "低低温形では先に熱回収部で排ガスを冷却し、それから電気集じん装置に入れて捕集しやすくする。熱回収部を集じん装置の後ろに置くという記述は逆である。",
+      "オ": "活性炭や活性コークスで脱硫と脱硝を組み合わせる方法も、一部の石炭燃焼設備で実用化されている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724175649id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R04_06.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724172205id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR04.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2022（令和4）年度公害防止管理者等国家試験 大規模大気特論 問8（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-12-2022-annual-kogai-large-air-q9",
+    "exam": "kogai-12",
+    "session": "kogai-large-air",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 9,
+    "examDate": "2022-10-02",
+    "subject": "大規模大気特論",
+    "type": "multiple-choice",
+    "category": "大規模大気特論",
+    "topicTags": [
+      "大規模設備の硫黄酸化物対策"
+    ],
+    "difficulty": 2,
+    "question": "大規模設備のSOₓ 対策に関する記述として、誤っているものはどれか。",
+    "choices": {
+      "ア": "重油焚き火力発電所においては、SO₃ ガス対策として、アンモニア（NH₃）ガスを煙道内に注入する方法が用いられる。",
+      "イ": "石炭火力発電所の脱硫装置には、主に安価な炭酸カルシウム（石灰石）を使用する湿式石灰石こう法が一般的である。",
+      "ウ": "セメント製造プロセスでは、主に活性炭を用いる乾式吸着プロセスが用いられる。",
+      "エ": "ゴミ焼却設備では、SOₓ をアルカリ剤と反応させて除去する。",
+      "オ": "鉄鋼プロセスの焼結炉排ガスの脱硫方式として、近年は活性炭や活性コークスを用いた乾式脱硫法の導入例もある。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "セメント工程では石灰石などアルカリ性の原料が硫黄酸化物を取り込む。活性炭を使う乾式吸着が主方式という記述は誤りである。",
+    "choiceExplanations": {
+      "ア": "重油焚きの排ガス中のSO₃を処理する方法として、煙道内にアンモニアを加えて捕集しやすい塩にする方法がある。",
+      "イ": "石炭火力では石灰石スラリーで硫黄酸化物を吸収し、石こうとして回収する湿式石灰石こう法が一般的である。",
+      "ウ": "セメント工程では石灰石などアルカリ性の原料が硫黄酸化物を取り込む。活性炭を使う乾式吸着が主方式という記述は誤りである。",
+      "エ": "ごみ焼却排ガスにアルカリ剤を接触させ、硫黄酸化物を塩として取り除く方法が使われる。",
+      "オ": "焼結炉排ガスでは、活性炭や活性コークスを用いる乾式脱硫設備の導入例がある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724175649id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R04_06.pdf#page=7",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724172205id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR04.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2022（令和4）年度公害防止管理者等国家試験 大規模大気特論 問9（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-12-2022-annual-kogai-large-air-q10",
+    "exam": "kogai-12",
+    "session": "kogai-large-air",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 10,
+    "examDate": "2022-10-02",
+    "subject": "大規模大気特論",
+    "type": "multiple-choice",
+    "category": "大規模大気特論",
+    "topicTags": [
+      "セメント産業の排ガス管理"
+    ],
+    "difficulty": 2,
+    "question": "セメント産業の大気汚染防止対策に関する記述として、正しいものはどれか。",
+    "choices": {
+      "ア": "セメント製造工程内には発じん対策は不要である。",
+      "イ": "電気集じん装置における集じん効率は、セメント原料ダストの電気抵抗率とは無関係である。",
+      "ウ": "排煙脱硝プロセスを導入している工場では、一般的に乾式の触媒還元法が用いられている。",
+      "エ": "セメントキルン排ガス中のNOₓ を抑制するため、燃焼管理が行われている。",
+      "オ": "ダイオキシン発生の原因となる廃プラスチックを、セメントの熱エネルギー源として使用してはならない。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "キルンの燃焼条件を管理し、温度や酸素濃度などの調節によってNOₓの生成を抑える対策が行われる。",
+    "choiceExplanations": {
+      "ア": "原料の粉砕、輸送、焼成では粉じんが発生し得るため、発じんの抑制や集じんが行われる。",
+      "イ": "電気集じんではダストの見掛け電気抵抗率によって再飛散や逆電離が生じることがあり、集じん性能が影響を受ける。",
+      "ウ": "セメントキルンで排煙脱硝を行う場合には、触媒を用いない還元法などが使われる。一般的な方式を乾式の触媒還元法に限るのは適切でない。",
+      "エ": "キルンの燃焼条件を管理し、温度や酸素濃度などの調節によってNOₓの生成を抑える対策が行われる。",
+      "オ": "廃プラスチックを代替熱源とする例はあり、適切な燃焼や排ガスの管理を前提に利用される。一律に使用禁止とする記述は誤りである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724175649id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R04_06.pdf#page=7",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724172205id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR04.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2022（令和4）年度公害防止管理者等国家試験 大規模大気特論 問10（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  }
+]
