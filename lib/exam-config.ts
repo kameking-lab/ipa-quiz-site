@@ -1101,6 +1101,11 @@ kangoshi: {
     seasons: ["annual"],
     yearRange: { start: 2025, end: 2026 },
 },
+"kogai-12": {
+    code: "kogai-12", nameFull: "公害防止管理者等国家試験", urlSlug: "kogai-12", level: "specialist",
+    sessions: [{ session: "kogai-general", urlSlug: "kogai-general", expectedQuestions: 15, label: "公害総論", categories: ["公害総論"] }],
+    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+},
 "gas-kou": {
     code: "gas-kou", nameFull: "ガス主任技術者試験（甲種）", urlSlug: "gas-kou", level: "advanced",
     sessions: [

@@ -221,6 +221,7 @@ import { DENKO1_QUESTIONS } from "./denko1";
 import { CIVIL2_QUESTIONS } from "./civil2";
 import { KANKOJI2_QUESTIONS } from "./kankoji2";
 import { ZOEN2_QUESTIONS } from "./zoen2";
+import { KOGAI_QUESTIONS } from "./kogai-12";
 import { ZOEN1_QUESTIONS } from "./zoen1";
 import { TSUSHIN2_QUESTIONS } from "./tsushin2";
 import { TSUSHIN1_QUESTIONS } from "./tsushin1";
@@ -563,6 +564,7 @@ takken: TAKKEN_QUESTIONS,
 ...(isExamPublished("shino-kunrenshi") ? { "shino-kunrenshi": SHINO_KUNRENSHI_QUESTIONS } : {}),
 ...(isExamPublished("rinsho-kogishi") ? { "rinsho-kogishi": RINSHO_KOGISHI_QUESTIONS } : {}),
 ...(isExamPublished("judo-seifukushi") ? { "judo-seifukushi": JUDO_SEIFUKUSHI_QUESTIONS } : {}),
+...(isExamPublished("kogai-12") ? { "kogai-12": KOGAI_QUESTIONS } : {}),
 ...(isExamPublished("gas-kou") ? { "gas-kou": GAS_KOU_QUESTIONS } : {}),
 ...(isExamPublished("gas-otsu") ? { "gas-otsu": GAS_OTSU_QUESTIONS } : {}),
 ...(isExamPublished("gas-hei") ? { "gas-hei": GAS_HEI_QUESTIONS } : {}),

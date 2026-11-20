@@ -1112,6 +1112,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["次回公表分の追加", "公式訂正・診療指針改訂の継続確認"],
 },
   {
+    slug: "kogai-12", examCode: "kogai-12", shortName: "公害防止管理者", fullName: "公害防止管理者等国家試験",
+    domain: "safety", administrator: "一般社団法人産業環境管理協会",
+    officialQuestionsUrl: "https://www.jemai.or.jp/polconman/examination/past.html",
+    officialReuseTermsUrl: "https://www.jemai.or.jp/polconman/examination/past.html",
+    status: "live",
+    reuseSummary: "公式の問題・正答と、全選択肢の独自解説を収録。",
+    attributionTemplate: "出典：一般社団法人産業環境管理協会 公害防止管理者等国家試験（年度・科目・問番号）",
+    remainingWork: [],
+  },
+  {
     slug: "gas-kou", examCode: "gas-kou", shortName: "ガス主任技術者 甲種", fullName: "ガス主任技術者試験（甲種）",
     domain: "safety", administrator: "一般財団法人日本ガス機器検査協会",
     officialQuestionsUrl: "https://www.jia-page.or.jp/exam/examination/answer/",

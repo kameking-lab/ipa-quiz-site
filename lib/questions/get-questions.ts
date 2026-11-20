@@ -196,6 +196,7 @@ josanshi: async () => isExamPublished("josanshi") ? (await import("@/data/questi
 "shino-kunrenshi": async () => isExamPublished("shino-kunrenshi") ? (await import("@/data/questions/shino-kunrenshi")).SHINO_KUNRENSHI_QUESTIONS : [],
 "rinsho-kogishi": async () => isExamPublished("rinsho-kogishi") ? (await import("@/data/questions/rinsho-kogishi")).RINSHO_KOGISHI_QUESTIONS : [],
 "judo-seifukushi": async () => isExamPublished("judo-seifukushi") ? (await import("@/data/questions/judo-seifukushi")).JUDO_SEIFUKUSHI_QUESTIONS : [],
+"kogai-12": async () => isExamPublished("kogai-12") ? (await import("@/data/questions/kogai-12")).KOGAI_QUESTIONS : [],
 "gas-kou": async () => isExamPublished("gas-kou") ? (await import("@/data/questions/gas/kou")).GAS_KOU_QUESTIONS : [],
 "gas-otsu": async () => isExamPublished("gas-otsu") ? (await import("@/data/questions/gas/otsu")).GAS_OTSU_QUESTIONS : [],
 "gas-hei": async () => isExamPublished("gas-hei") ? (await import("@/data/questions/gas/hei")).GAS_HEI_QUESTIONS : [],

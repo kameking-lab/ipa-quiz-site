@@ -262,6 +262,7 @@ export const EXAM_LABELS: Record<string, string> = {
     "shino-kunrenshi": "視能訓練士",
     "rinsho-kogishi": "臨床工学技士",
     "judo-seifukushi": "柔道整復師",
+    "kogai-12": "公害防止管理者",
     "gas-kou": "ガス主任技術者 甲種",
     "gas-otsu": "ガス主任技術者 乙種",
     "gas-hei": "ガス主任技術者 丙種",
