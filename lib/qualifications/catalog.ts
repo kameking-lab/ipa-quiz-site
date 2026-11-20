@@ -831,7 +831,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     administrator: "愛知県・静岡県・岐阜県・石川県",
     officialQuestionsUrl: "https://www.pref.aichi.jp/soshiki/iyaku/0000061464.html",
     status: "live",
-    reuseSummary: "令和8年度の東海・北陸共通問題を、公式正答と全選択肢の解説付きで演習できます。",
+    reuseSummary: "令和7・8年度の東海・北陸共通問題を、公式正答と全選択肢の解説付きで演習できます。",
     attributionTemplate: "出典：愛知県 令和○年度登録販売者試験（前半／後半）問○",
     remainingWork: [],
   },
