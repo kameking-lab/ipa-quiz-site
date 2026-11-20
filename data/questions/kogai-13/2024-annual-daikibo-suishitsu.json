@@ -1,0 +1,482 @@
+[
+  {
+    "id": "kogai-13-2024-annual-daikibo-suishitsu-q01",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "daikibo-suishitsu",
+    "qNumber": 1,
+    "officialAnswerNumber": 5,
+    "type": "multiple-choice",
+    "subject": "大規模水質特論",
+    "category": "大規模水質特論",
+    "topicTags": [
+      "閉鎖性海域におけるCODの起源"
+    ],
+    "difficulty": 2,
+    "question": "問1　閉鎖性海域におけるCODの起源。掲載の公式問題画像の問1を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "COD は水系に存在する有機物汚染の指標として採用され,水域類型別に COD の環境基準が設定されている。",
+      "イ": "水質環境基準を満たすため,東京湾,伊勢湾及び瀬戸内海については,総量規制が導入されている。",
+      "ウ": "COD の起源は,工場や河川から流入した外部負荷と,当該水域で生産された内部生産に大別できる。",
+      "エ": "植物プランクトンの成長による COD の内部生産は,夏季に表層で活発になる。",
+      "オ": "一般に COD の外部負荷は内部生産より十分大きいため,COD の空間分布は外部負荷の物理拡散モデルにより表現することができる。"
+    },
+    "answer": "オ",
+    "explanation": "閉鎖性海域では、栄養塩を取り込んだ植物プランクトンなどによるCODの内部生産も大きくなる。外部負荷の拡散だけでは濃度分布を表せない。",
+    "choiceExplanations": {
+      "ア": "CODは水域の有機汚濁の指標の一つで、海域では利用目的などに応じた類型別基準が定められている。",
+      "イ": "東京湾、伊勢湾、瀬戸内海は汚濁負荷の総量規制の対象である。",
+      "ウ": "流入水が運ぶ有機物と、水域内で新たに生成される有機物の両方がCODに寄与する。",
+      "エ": "光を利用できる表層では植物プランクトンが増殖し、夏季に内部生産が大きくなりやすい。",
+      "オ": "内部生産を十分小さいとはみなせないので、物理的な拡散に加えて生物生産もモデルに含める必要がある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/daikibo-suishitsu-p03.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 大規模水質特論 公式問題冊子PDF 3ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214051045id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_10.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 大規模水質特論 問1（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-daikibo-suishitsu-q02",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "daikibo-suishitsu",
+    "qNumber": 2,
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "subject": "大規模水質特論",
+    "category": "大規模水質特論",
+    "topicTags": [
+      "海洋生態系モデルの入力と換算"
+    ],
+    "difficulty": 2,
+    "question": "問2　海洋生態系モデルの入力と換算。掲載の公式問題画像の問2を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "海底堆積物から溶出する栄養塩の負荷について,湾内各地で観測されたデー タを基にして,スプライン法を用いてモデルの各格子点での値を推定した。",
+      "イ": "外洋からの栄養塩の負荷量を観測から求めた。",
+      "ウ": "観測で得られたデトリタス濃度とクロロフィル濃度の相関から,植物プランクトンの炭素現存量を求めた。",
+      "エ": "動物プランクトンの長さや幅の計測から体積を求め,炭素生物量に換算した。",
+      "オ": "植物プランクトンの炭素と窒素,りんの比としてレッドフィールド比を用いた。"
+    },
+    "answer": "ウ",
+    "explanation": "植物プランクトンの炭素量への換算には、クロロフィルと植物プランクトンの炭素量との関係が必要である。デトリタスは主に生物の死骸や残渣であり、現存量とは区別する。",
+    "choiceExplanations": {
+      "ア": "観測点が限られる場合、湾内の観測値をスプライン法などで補間し、計算格子の値を推定できる。",
+      "イ": "外海と湾の間での栄養塩の出入りは、観測された水質や流れなどから見積もる。",
+      "ウ": "デトリタス量には生きた植物プランクトン以外が含まれるので、これとクロロフィルの相関だけでは植物プランクトンの炭素量を得られない。",
+      "エ": "個体の寸法から体積を推定し、体積と炭素量の換算関係を用いることができる。",
+      "オ": "レッドフィールド比は、植物プランクトンなどの炭素・窒素・りんの比の近似として用いられる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/daikibo-suishitsu-p03.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 大規模水質特論 公式問題冊子PDF 3ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214051045id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_10.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 大規模水質特論 問2（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-daikibo-suishitsu-q03",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "daikibo-suishitsu",
+    "qNumber": 3,
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "subject": "大規模水質特論",
+    "category": "大規模水質特論",
+    "topicTags": [
+      "海水の溶存酸素を消費する過程"
+    ],
+    "difficulty": 2,
+    "question": "問3　海水の溶存酸素を消費する過程。掲載の公式問題画像の問3を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "硝酸体窒素の酸化によって消費される。",
+      "イ": "溶存体有機物の分解無機化によって消費される。",
+      "ウ": "植物プランクトンの呼吸によって消費される。",
+      "エ": "懸濁体有機物の分解無機化によって消費される。",
+      "オ": "アンモニア体窒素の酸化によって消費される。"
+    },
+    "answer": "ア",
+    "explanation": "硝酸体窒素は通常の硝化の最終生成物で、さらに酸化されて酸素を消費する過程には当たらない。",
+    "choiceExplanations": {
+      "ア": "硝酸イオンの窒素は高い酸化状態にあり、硝化で酸素を消費するのはアンモニアや亜硝酸の酸化である。",
+      "イ": "溶存有機物が好気的に分解され、無機化されるときに酸素が消費される。",
+      "ウ": "植物プランクトンは光合成で酸素を作る一方、呼吸では酸素を消費する。",
+      "エ": "懸濁粒子状の有機物も、微生物による好気的分解・無機化で酸素を消費する。",
+      "オ": "アンモニアの硝化は酸化反応であり、溶存酸素が必要である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/daikibo-suishitsu-p04.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 大規模水質特論 公式問題冊子PDF 4ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214051045id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_10.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 大規模水質特論 問3（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-daikibo-suishitsu-q04",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "daikibo-suishitsu",
+    "qNumber": 4,
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "subject": "大規模水質特論",
+    "category": "大規模水質特論",
+    "topicTags": [
+      "栄養塩・光制限を含む比増殖速度"
+    ],
+    "difficulty": 2,
+    "question": "問4　栄養塩・光制限を含む比増殖速度。掲載の公式問題画像の問4を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "0.12",
+      "イ": "0.24",
+      "ウ": "0.32",
+      "エ": "0.48",
+      "オ": "0.64"
+    },
+    "answer": "イ",
+    "explanation": "窒素制限係数は1/2、りんは2/3である。最小の窒素制限を用い、0.60×0.80×0.50=0.24 d⁻¹と求める。",
+    "choiceExplanations": {
+      "ア": "0.12は光と窒素制限を適用した結果の半分である。窒素とりんの両者を掛けてさらに下げる方式ではない。",
+      "イ": "最小律によって制限係数0.50を採用し、最大比増殖速度と光の係数を掛けて0.24とする。",
+      "ウ": "0.32はりんの2/3を使った値である。実際には係数が小さい窒素が律速となる。",
+      "エ": "0.48は光による制限だけを適用した値である。栄養塩の律速係数も掛ける必要がある。",
+      "オ": "比増殖速度は制限のない最大値0.60 d⁻¹を超えないので、0.64は不適切である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/daikibo-suishitsu-p04.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 大規模水質特論 公式問題冊子PDF 4ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214051045id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_10.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 大規模水質特論 問4（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-daikibo-suishitsu-q05",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "daikibo-suishitsu",
+    "qNumber": 5,
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "subject": "大規模水質特論",
+    "category": "大規模水質特論",
+    "topicTags": [
+      "開放循環冷却系の補給水量"
+    ],
+    "difficulty": 2,
+    "question": "問5　開放循環冷却系の補給水量。掲載の公式問題画像の問5を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "1.7",
+      "イ": "1.8",
+      "ウ": "1.9",
+      "エ": "2.0",
+      "オ": "2.1"
+    },
+    "answer": "イ",
+    "explanation": "濃縮倍数3では、蒸発水量1.2％が飛散とブローの合計の2倍になる。飛散とブローの合計は0.6％なので、補給は1.8％である。",
+    "choiceExplanations": {
+      "ア": "1.7％では蒸発分を引いた飛散・ブローの合計が0.5％となり、濃縮倍数は3を超える。",
+      "イ": "溶質を出す水量が0.6％、蒸発が1.2％なので、合計の補給水量は1.8％となる。",
+      "ウ": "1.9％だと溶質を出す水量が0.7％となり、濃縮倍数は3より低い。",
+      "エ": "補給水は蒸発、飛散、ブローに等しい。飛散とブローの合計は0.8％でなく0.6％である。",
+      "オ": "蒸発1.2％に加えて飛散0.3％とブロー0.3％を補う。2.1％とするとブローを大きく見積もる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/daikibo-suishitsu-p04.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 大規模水質特論 公式問題冊子PDF 4ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214051045id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_10.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 大規模水質特論 問5（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-daikibo-suishitsu-q06",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "daikibo-suishitsu",
+    "qNumber": 6,
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "subject": "大規模水質特論",
+    "category": "大規模水質特論",
+    "topicTags": [
+      "産業用水の循環・再生利用"
+    ],
+    "difficulty": 2,
+    "question": "問6　産業用水の循環・再生利用。掲載の公式問題画像の問6を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "現在実施されている再生利用は,局部的再生利用がほとんどで,地域的再生利用は一般的ではない。",
+      "イ": "ワンパスで捨てられている間接冷却水があれば,まずは冷却塔による循環利用を検討する。",
+      "ウ": "再利用の工程中で水に含まれる無機塩類や溶解性有機物を除去する手段として,活性炭吸着,イオン交換,膜分離などがある。",
+      "エ": "鉄鋼業における圧延戻水は,活性汚泥法による処理工程を経た後,冷却塔で水温を低下させ,再利用される。",
+      "オ": "半導体製造工場では,超純水によるウエハ洗浄工程からの排水は再利用される。"
+    },
+    "answer": "エ",
+    "explanation": "圧延戻水にはスケールや油分が含まれる。通常は沈殿やろ過などの物理化学的処理を行って循環させ、活性汚泥処理を経るとする記述が誤りである。",
+    "choiceExplanations": {
+      "ア": "再利用は個別の設備や工程などで行う局部的利用が多く、工場間の地域的再利用は一般的とはいえない。",
+      "イ": "間接冷却の排水は被冷却物と直接接触しないので、冷却塔で温度を下げて循環することを検討できる。",
+      "ウ": "溶解性の成分に応じて、吸着、イオン交換、膜分離などを選ぶ。",
+      "エ": "圧延戻水ではスケールや油などを取り除くことが中心であり、活性汚泥法が一般的とする記述は合わない。",
+      "オ": "ウエハの超純水洗浄後の排水は、汚れの度合いに応じて処理し再利用できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/daikibo-suishitsu-p05.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 大規模水質特論 公式問題冊子PDF 5ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214051045id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_10.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 大規模水質特論 問6（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-daikibo-suishitsu-q07",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "daikibo-suishitsu",
+    "qNumber": 7,
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "subject": "大規模水質特論",
+    "category": "大規模水質特論",
+    "topicTags": [
+      "コークス炉ガス精製排水の処理"
+    ],
+    "difficulty": 2,
+    "question": "問7　コークス炉ガス精製排水の処理。掲載の公式問題画像の問7を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "コークス炉ガス精製排水は,コークス炉ガスに水を噴霧する際に発生する凝縮水で,安水と呼ばれる。",
+      "イ": "蒸気ストリッピング処理により,亜硝酸やシアンを除去した後で,活性汚泥法などにより生物処理するのが一般的である。",
+      "ウ": "高分子の油分は,コークス粒を充塡したコークフィルターで除去するが,これは,コークスの多孔質である特性を生かしたものである。",
+      "エ": "活性汚泥処理では,フェノールを主成分とした BOD 物質と,残存するアンモニア,シアン,チオシアンなどを除去する。",
+      "オ": "凝集沈殿では,生物処理水の SS 及び残留する COD,色度成分,りんなどを凝集剤によって凝集し,沈降分離する。"
+    },
+    "answer": "イ",
+    "explanation": "蒸気ストリッピングでは主に揮発性のアンモニアなどを除く。亜硝酸の除去を目的とするとした記述が誤りである。",
+    "choiceExplanations": {
+      "ア": "コークス炉ガスの冷却・精製で生じる水にアンモニアが含まれ、安水と呼ばれる。",
+      "イ": "亜硝酸はイオンとして水に残りやすい。蒸気で気相へ移す処理では、主にアンモニアなどを除く。",
+      "ウ": "多孔質のコークスを通すと油分を捕捉でき、後段の処理を助ける。",
+      "エ": "生物処理ではフェノールなどの分解性有機物に加え、残留する窒素やシアン系成分などを減らす。",
+      "オ": "生物処理後に凝集沈殿を設けると、残存する懸濁物や色度成分、りんなどを除去できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/daikibo-suishitsu-p05.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 大規模水質特論 公式問題冊子PDF 5ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214051045id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_10.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 大規模水質特論 問7（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-daikibo-suishitsu-q08",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "daikibo-suishitsu",
+    "qNumber": 8,
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "subject": "大規模水質特論",
+    "category": "大規模水質特論",
+    "topicTags": [
+      "製油所の排水と冷却水の再利用"
+    ],
+    "difficulty": 2,
+    "question": "問8　製油所の排水と冷却水の再利用。掲載の公式問題画像の問8を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "プロセス排水を排水ストリッパーで処理した塔底水は,原油脱塩装置や水素化処理装置に送り再利用する。",
+      "イ": "総量規制に対応するため,排水の最終出口であるガードベースンには,pH 計,COD 計,流量計を設置する。",
+      "ウ": "海水を冷却水として使用した場合,急速ろ過及び活性炭処理を行ったうえで, 循環使用する。",
+      "エ": "冷却水で冷却・凝縮するクーラーの代わりに,空気で冷却・凝縮するエアフィンクーラーを使用する。",
+      "オ": "発電機に使用されているスチームの凝縮水を回収して再利用する。"
+    },
+    "answer": "ウ",
+    "explanation": "海水を使う冷却系で、急速ろ過や活性炭処理をしてから循環利用する方式が一般的とする説明は不適切である。一般に海水の取放水による一過式を用いる。",
+    "choiceExplanations": {
+      "ア": "ストリッパーの塔底から出る処理水は、用途に必要な水質を満たせば原油脱塩などに再利用できる。",
+      "イ": "最終排出口の水質と流量を計測することは、排出負荷量の把握や総量規制への対応に必要である。",
+      "ウ": "ろ過や活性炭処理は懸濁物や有機成分を除く工程であり、海水冷却水を循環させる一般的な構成という説明は合わない。",
+      "エ": "空冷を用いると、水冷設備に必要な冷却水量を減らせる。",
+      "オ": "凝縮した蒸気を回収すれば、水と蒸気の生成に必要な熱の再利用につながる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/daikibo-suishitsu-p06.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 大規模水質特論 公式問題冊子PDF 6ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214051045id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_10.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 大規模水質特論 問8（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-daikibo-suishitsu-q09",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "daikibo-suishitsu",
+    "qNumber": 9,
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "subject": "大規模水質特論",
+    "category": "大規模水質特論",
+    "topicTags": [
+      "クラフト蒸解と黒液の回収"
+    ],
+    "difficulty": 2,
+    "question": "問9　クラフト蒸解と黒液の回収。掲載の公式問題画像の問9を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "蒸解工程では,木材チップに硫酸ナトリウムと塩化ナトリウムの混合溶液を加え,蒸解釜で加圧下で加熱し,リグニンを分解・可溶化する。",
+      "イ": "蒸解工程の後の洗浄工程では,パルプ繊維から分離されたリグニンなどを含む液が生じ,黒液と呼ばれる。",
+      "ウ": "黒液には可溶化したリグニンとヘミセルロース,さらに,蒸解に用いたナトリウムと硫黄が含まれる。",
+      "エ": "黒液は濃縮された後,回収ボイラーで燃焼される。このとき,液中の有機物が燃焼するので,エネルギーを生み出すことができる。",
+      "オ": "回収ボイラーで黒液を燃焼すると,炉底部から溶融した無機物が回収される。 無機物は再生工程で蒸解薬品に再生される。"
+    },
+    "answer": "ア",
+    "explanation": "クラフト蒸解に用いる白液の主成分は水酸化ナトリウムと硫化ナトリウムである。硫酸ナトリウムと塩化ナトリウムの組合せは誤りである。",
+    "choiceExplanations": {
+      "ア": "リグニンを溶かす蒸解液は、通常は白液の水酸化ナトリウムと硫化ナトリウムを用いる。",
+      "イ": "蒸解後のパルプを洗浄すると、溶けたリグニンなどを含む黒液を分離できる。",
+      "ウ": "黒液には木材から溶け出した有機成分と、蒸解薬品由来のナトリウム・硫黄が含まれる。",
+      "エ": "濃縮した黒液の有機成分を回収ボイラーで燃やして、蒸気などのエネルギーを得られる。",
+      "オ": "燃焼後に炉底の溶融塩を回収し、再生して蒸解薬品として循環使用する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/daikibo-suishitsu-p06.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 大規模水質特論 公式問題冊子PDF 6ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214051045id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_10.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 大規模水質特論 問9（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-daikibo-suishitsu-q10",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "daikibo-suishitsu",
+    "qNumber": 10,
+    "officialAnswerNumber": 5,
+    "type": "multiple-choice",
+    "subject": "大規模水質特論",
+    "category": "大規模水質特論",
+    "topicTags": [
+      "製紙工場の節水と排水処理"
+    ],
+    "difficulty": 2,
+    "question": "問10　製紙工場の節水と排水処理。掲載の公式問題画像の問10を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "パルプ製造工程における節水対策は,黒液濃縮工程から発生する凝縮水の利用などによって洗浄工程での洗浄水をいかに減らすかが重要である。",
+      "イ": "白水回収装置では,微細な気泡を発生させて,その気泡に白水中の微細繊維と塡料を付着させることによって浮上させて分離する。",
+      "ウ": "排水処理工程では,栄養源である窒素,りんを添加する。",
+      "エ": "活性汚泥処理水は,さらに凝集沈殿処理を経た後に放流される。",
+      "オ": "排水処理工程において脱水された汚泥は,漂白工程を経た後に白水回収装置で回収された原料とともに再び抄紙原料として再利用される。"
+    },
+    "answer": "オ",
+    "explanation": "白水の回収で分離した繊維などは抄紙原料として使える。排水処理で発生する脱水汚泥まで漂白後に抄紙原料へ戻すとする記述が誤りである。",
+    "choiceExplanations": {
+      "ア": "濃縮から生じる凝縮水を洗浄に使えれば、洗浄工程に入れる新しい水の量を減らせる。",
+      "イ": "微細気泡に繊維や塡料を付着させて浮上分離し、白水から回収できる。",
+      "ウ": "製紙排水を生物処理するとき、微生物に必要な窒素・りんを不足に応じて補う。",
+      "エ": "生物処理水を凝集沈殿などで仕上げることにより、放流前に懸濁物や残留成分を減らす。",
+      "オ": "白水から回収する製紙用繊維と排水処理の余剰汚泥は別の流れである。脱水汚泥を白水回収の原料と一緒に抄紙へ戻す一般的な工程はない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/daikibo-suishitsu-p07.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 大規模水質特論 公式問題冊子PDF 7ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214051045id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_10.pdf#page=7",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 大規模水質特論 問10（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  }
+]
