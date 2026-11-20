@@ -1,4 +1,5 @@
 import type { ChoiceKey, Question, Season } from "@/lib/questions/types";
+import source2024Late from "./2024-late.json";
 import source2025 from "./2025-late.json";
 import source2026 from "./2026-early.json";
 
@@ -72,12 +73,15 @@ function toQuestions(source: Kankoji2Source): Question[] {
       sourceAttribution: `出典：一般財団法人全国建設研修センター ${source.edition} No.${item.number}。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。`,
       officialReferenceUrls: item.officialReferenceUrls ?? [],
       license: "JCTC-authorized-reuse",
-      lastUpdated: "2026-09-26",
+      lastUpdated: source.year < 2025 ? "2026-11-20" : "2026-09-26",
     };
   });
 }
 
-/** 令和8年度前期・令和7年度後期の第一次検定とも全52問を公開。 */
 export const KANKOJI2_2026_QUESTIONS = toQuestions(source2026 as Kankoji2Source);
 export const KANKOJI2_2025_QUESTIONS = toQuestions(source2025 as Kankoji2Source);
-export const KANKOJI2_QUESTIONS: Question[] = [...KANKOJI2_2026_QUESTIONS, ...KANKOJI2_2025_QUESTIONS];
+export const KANKOJI2_QUESTIONS: Question[] = [
+  ...KANKOJI2_2026_QUESTIONS,
+  ...KANKOJI2_2025_QUESTIONS,
+  ...toQuestions(source2024Late as Kankoji2Source),
+];
