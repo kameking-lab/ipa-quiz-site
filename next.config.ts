@@ -122,6 +122,9 @@ const nextConfig: NextConfig = {
   outputFileTracingExcludes: {
     "/*": [
       "./private-assets/**/*",
+      // Committed reports (~14MB) are traced into every function through the local
+      // cost log path in lib/ai/cost-tracker.ts; functions never read them.
+      "./logs/**/*",
       "**/node_modules/@prisma/client/runtime/*.wasm-base64.js",
       "**/node_modules/@prisma/client/runtime/*.wasm-base64.mjs",
       "**/node_modules/@prisma/client/runtime/*.map",
