@@ -1779,6 +1779,15 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["1級・電気系・設備診断作業の追加"],
 },
   {
+    slug: "kokka-keikensha", examCode: "kokka-keikensha", shortName: "国家公務員経験者採用", fullName: "国家公務員経験者採用試験",
+    domain: "legal", administrator: "人事院",
+    officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_50.html",
+    officialReuseTermsUrl: "https://www.jinji.go.jp/shinsei/notice.html",
+    status: "live",
+    reuseSummary: "2025年度の経験者採用試験の共通基礎能力試験から13問を公式正答・全肢解説付きで収録。",
+    attributionTemplate: "出典：人事院「経験者採用試験 基礎能力試験」。解説は過去問AIの独自作成。",
+  },
+  {
     slug: "keimukan", examCode: "keimukan", shortName: "刑務官", fullName: "刑務官採用試験",
     domain: "legal", administrator: "人事院",
     officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_26.html",

@@ -1,0 +1,5 @@
+import { KOKKA_KEIKENSHA_2025_KISO } from "./2025-kiso";
+
+export const KOKKA_KEIKENSHA_QUESTIONS = [
+  ...KOKKA_KEIKENSHA_2025_KISO,
+];

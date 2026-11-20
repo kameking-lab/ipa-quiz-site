@@ -340,6 +340,7 @@ import { TETSUDO_SHARYO2_QUESTIONS } from "./tetsudo-sharyo2";
 
 
 import { KIKAI_HOZEN_QUESTIONS } from "./kikai-hozen";
+import { KOKKA_KEIKENSHA_QUESTIONS } from "./kokka-keikensha";
 import { KEIMUKAN_QUESTIONS } from "./keimukan";
 import { KAIJO_HOAN_GAKKO_QUESTIONS } from "./kaijo-hoan-gakko";
 import { KOUKU_KANSEIKAN_QUESTIONS } from "./kouku-kanseikan";
@@ -722,6 +723,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("kikai-hozen") ? { "kikai-hozen": KIKAI_HOZEN_QUESTIONS } : {}),
 ...(isExamPublished("tobi2") ? { "tobi2": TOBI2_QUESTIONS } : {}),
 
+...(isExamPublished("kokka-keikensha") ? { "kokka-keikensha": KOKKA_KEIKENSHA_QUESTIONS } : {}),
 ...(isExamPublished("keimukan") ? { "keimukan": KEIMUKAN_QUESTIONS } : {}),
 ...(isExamPublished("kaijo-hoan-gakko") ? { "kaijo-hoan-gakko": KAIJO_HOAN_GAKKO_QUESTIONS } : {}),
 ...(isExamPublished("kouku-kanseikan") ? { "kouku-kanseikan": KOUKU_KANSEIKAN_QUESTIONS } : {}),
