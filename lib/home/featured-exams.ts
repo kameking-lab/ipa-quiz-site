@@ -25,10 +25,18 @@ export function historyExamLookup(keys: readonly string[], aliases: Readonly<Rec
 }
 
 /** Latest qualification first; choose up to two others by attempts (including
- * reattempts), then display those by recency. Self-contained for pre-paint sizing. */
+ * reattempts), then display those by recency. */
 export function frequentExamKeys(entries: unknown, keys: readonly string[], aliases: Readonly<Record<string, string>> = {}, excludedIds: readonly string[] = [], displayKeys: Readonly<Record<string, string>> = {}): string[] {
+  return rankFrequentExams(entries, historyExamLookup(keys, aliases), excludedIds, displayKeys);
+}
+
+function rankFrequentExams(
+  entries: unknown,
+  examFor: (id: string) => string | undefined,
+  excludedIds: readonly string[],
+  displayKeys: Readonly<Record<string, string>>,
+): string[] {
   if (!Array.isArray(entries)) return [];
-  const examFor = historyExamLookup(keys, aliases);
   const counts = new Map<string, { count: number; latest: number }>();
   for (const entry of entries) {
     if (!entry || typeof entry.id !== "string" || !Number.isFinite(entry.at) || excludedIds.includes(entry.id)) continue;
@@ -45,6 +53,26 @@ export function frequentExamKeys(entries: unknown, keys: readonly string[], alia
   const [latest, ...others] = recent;
   const frequent = others.sort(([a, x], [b, y]) => y.count - x.count || byRecency([a, x], [b, y])).slice(0, 2);
   return [latest, ...frequent.sort(byRecency)].map(([key]) => key);
+}
+
+/** Keep the lookup and ranking self-contained when the browser runs the inline script. */
+export function personalExamReservationScript(
+  id: string,
+  historyKey: string,
+  keys: readonly string[],
+  aliases: Readonly<Record<string, string>>,
+  excludedIds: readonly string[],
+  displayKeys: Readonly<Record<string, string>>,
+): string {
+  const args = JSON.stringify([id, historyKey, keys, aliases, excludedIds, displayKeys]).replaceAll("<", "\\u003c");
+  return `try {
+    const [id, historyKey, keys, aliases, excludedIds, displayKeys] = ${args};
+    const row = document.getElementById(id);
+    const history = JSON.parse(localStorage.getItem(historyKey) || "null");
+    const examFor = (${historyExamLookup.toString()})(keys, aliases);
+    const personal = (${rankFrequentExams.toString()})(history?.entries, examFor, excludedIds, displayKeys);
+    row.dataset.personal = String(personal.length > 0);
+  } catch {}`;
 }
 
 export function japanDate(now: Date): string {
