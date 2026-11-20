@@ -46,6 +46,7 @@
 | 沖縄県 | 2026 | 第1次 一般教養・教職教養（午前の部） | 44 | [問題](https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/040/383/r8am.pdf)・[正答・配点](https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/040/383/r8-2syuuseiseitouhaiten.pdf) |
 | 沖縄県 | 2026 | 第1次 一般教養・教職教養（午後の部） | 45 | [問題](https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/040/383/r8pm.pdf)・[正答・配点](https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/040/383/r8-2syuuseiseitouhaiten.pdf) |
 | 沖縄県 | 2025 | 第1次 一般教養・教職教養（午前の部） | 45 | [問題](https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/035/299/r7am1.pdf)・[正答・配点](https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/035/299/r7seitouhaiten.pdf) |
+| 沖縄県 | 2025 | 第1次 一般教養・教職教養（午後の部） | 45 | [問題](https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/035/299/r7pm1.pdf)・[正答・配点](https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/035/299/r7seitouhaiten.pdf) |
 | 高知県 | 2025 | 第1次 教職・一般教養 | 39 | [問題](https://www.pref.kochi.lg.jp/doc/2019112600143/file_contents/file_2025112631592_1.pdf)・[正答](https://www.pref.kochi.lg.jp/doc/2019112600143/file_contents/file_2025112631592_2.pdf) |
 | 島根県 | 2026 | 一般選考 教職教養 | 15 | [問題](https://www.pref.shimane.lg.jp/admin/syokuin/saiyou/saiyou_info_tchr/kakomondai.data/1kyousyoku.pdf)・[解答例](https://www.pref.shimane.lg.jp/admin/syokuin/saiyou/saiyou_info_tchr/kakomondai.data/1kyousyokukyouyou.pdf) |
 | 島根県 | 2025 | 一般選考 教職教養 | 15 | [問題](https://www.pref.shimane.lg.jp/admin/syokuin/saiyou/saiyou_info_tchr/kakomondai.data/01-1kyousyoku_Q.pdf)・[解答例](https://www.pref.shimane.lg.jp/admin/syokuin/saiyou/saiyou_info_tchr/kakomondai.data/01-2_R8kyousyoku_A.pdf) |
@@ -62,7 +63,7 @@
 | 自治体 | 実施年度と区分 | 確認状況 |
 | --- | --- | --- |
 | 広島県・広島市 | 2023 教職教養、2023～2026 教科・校種専門 | 公式の問題・採点基準を掲載。2022年度の問題・正答の組は未取得。 [2026年度](https://www.pref.hiroshima.lg.jp/site/04file/r09shikenmondai1ji.html)・[2023年度](https://www.pref.hiroshima.lg.jp/site/04file/r06shikenmondai1ji.html) |
-| 沖縄県 | 2022～2024 一般教養・教職教養（午前・午後）、2025 同（午後） | 問題と正答・配点を取得済み。専門教科の問題は行政情報センターで閲覧。 [2025年度](https://www.pref.okinawa.jp/kyoiku/edu/1008490/1008535/1008540/1033085/1035299.html) |
+| 沖縄県 | 2022～2024 一般教養・教職教養（午前・午後） | 問題と正答・配点を取得済み。専門教科の問題は行政情報センターで閲覧。 [2024年度](https://www.pref.okinawa.jp/kyoiku/edu/1008490/1008535/1008540/1029359/1029994.html) |
 | 高知県 | 2023～2024 教職・一般教養、2023～2025 専門教科 | 問題と正答の公開先を確認済み。2026年度の問題・正答の組は公式一覧で未確認。 [問題と解答の一覧](https://www.pref.kochi.lg.jp/doc/2026012700071/) |
 | 島根県 | 2024 教職教養、2024～2026 専門教科 | 問題と解答例の公開先を確認済み。小学校専門には選択式と記述式が混在する。 [問題と解答例の一覧](https://www.pref.shimane.lg.jp/admin/syokuin/saiyou/saiyou_info_tchr/kakomondai.html) |
 | 長崎県 | 2023～2024 教職・一般教養、2024～2026 専門教科・科目 | 問題と解答例の公開先を確認済み。 [2026～2024年度](https://www.pref.nagasaki.jp/doc/52353.html)・[2023年度 教職・一般教養](https://www.pref.nagasaki.jp/uploads/2023/07/1690353939.pdf) |
