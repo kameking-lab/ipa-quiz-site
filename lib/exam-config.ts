@@ -872,7 +872,7 @@ tohan: {
         ],
     }],
     seasons: ["annual"],
-    yearRange: { start: 2025, end: 2026 },
+    yearRange: { start: 2024, end: 2026 },
 },
 "tohan-kyushu-okinawa": {
     code: "tohan-kyushu-okinawa",

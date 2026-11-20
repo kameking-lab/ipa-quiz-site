@@ -844,7 +844,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     administrator: "群馬県・栃木県・新潟県",
     officialQuestionsUrl: "https://www.pref.gunma.jp/page/3061.html",
     status: "live",
-    reuseSummary: "令和7・8年度の北関東・甲信越共通問題を、公式正答と全選択肢の解説付きで演習できます。",
+    reuseSummary: "令和6〜8年度の北関東・甲信越共通問題を、公式正答と全選択肢の解説付きで演習できます。",
     attributionTemplate: "出典：群馬県 令和○年度登録販売者試験（第一部／第二部）問○",
     remainingWork: [],
   },
