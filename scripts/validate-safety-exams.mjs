@@ -31,7 +31,7 @@ for (const paper of catalog) {
     paper.sourceMode === 'official-pdf' || paper.sourceMode === 'official-archive-copy',
     `Unexpected source mode: ${paper.id}`,
   );
-  if (paper.sourceMode === 'official-archive-copy') {
+  if (paper.sourceMode === 'official-archive-copy' && paper.group === 'cskohyo') {
     check(/^cskohyo-CS202119\d{2}$/u.test(paper.id), `Archive copy outside reviewed 2021 consultant set: ${paper.id}`);
     check(
       typeof paper.archiveSourceUrl === 'string' &&
@@ -42,6 +42,18 @@ for (const paper of catalog) {
       paper.officialArchiveManifestUrl ===
         'https://web.archive.org/web/20220528065047id_/https://www.exam.or.jp/exmn/csv/cspdf.csv',
       `Missing official archive manifest: ${paper.id}`,
+    );
+  } else if (paper.sourceMode === 'official-archive-copy') {
+    const archivedPdfUrl = /^https:\/\/web\.archive\.org\/web\/\d{14}id_\/(https:\/\/www\.exam\.or\.jp\/wp-content\/uploads\/20\d{2}\/\d{2}\/LC\d{8}(?:-\d+)?\.pdf)$/u.exec(paper.archiveSourceUrl)?.[1];
+    check(
+      paper.group === 'lckohyo' && archivedPdfUrl === paper.pdfUrl
+        && paper.id === `lckohyo-${paper.pdfUrl.split('/').at(-1)?.replace(/\.pdf$/u, '')}`,
+      `Missing archived official license PDF: ${paper.id}`,
+    );
+    check(
+      paper.indexUrl === 'https://www.exam.or.jp/lckohyo/'
+        && /^https:\/\/web\.archive\.org\/web\/\d{14}id_\/https:\/\/www\.exam\.or\.jp\/lckohyo\/$/u.test(paper.officialArchiveManifestUrl),
+      `Missing official license index capture: ${paper.id}`,
     );
   }
   check(['reference', 'official-choice'].includes(paper.answerMode), `Unexpected answer mode: ${paper.id}`);

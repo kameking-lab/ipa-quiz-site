@@ -37209,5 +37209,905 @@
         "url": "https://laws.e-gov.go.jp/law/347M50002000032"
       }
     ]
+  },
+  "lckohyo-LC20242112-q1": {
+    "sourceHash": "fa3cd05c886ed7ee18d952133684271d57a9dd6e5a9e2a55811359b6623fedfb",
+    "correctChoice": 5,
+    "summary": "圧力調整器は用いるガス専用のものを選び、酸素側では特に油脂の付着を防ぐ。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "酸素に触れる継手の油脂は発火のおそれがあるため、口金を清掃して油脂類を付けない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "一般に、取り違えを防ぐため、調整器のガス側取付金具は酸素用が右ねじ、可燃性ガス用が左ねじである。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "供給口や安全弁の吹出口を容器の肩に向けると、異常な放出が容器に当たるおそれがある。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "ＬＰガスと溶解アセチレンではガスの性質や設計条件が違うので、専用の調整器を使う。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "作業途中の出口圧力の変更では、先に吹管のバルブを閉じ、圧力調整器の調整ハンドルを使用する。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      },
+      {
+        "title": "厚生労働省 安全データシート アセチレン",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-86-2.html"
+      },
+      {
+        "title": "厚生労働省 安全データシート 酸素",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7782-44-7.html"
+      }
+    ]
+  },
+  "lckohyo-LC20242112-q2": {
+    "sourceHash": "56580391f5b649b0f5e86a70598ba942665f487b6b2c088f55d7139e6a29aad9",
+    "correctChoice": 3,
+    "summary": "燃料ガス容器の固定、集合装置のガスを供給する状態と停止する状態を区別する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "Ａはガス容器を固定し連結管への無理な力を避けるのは適切である。Ａは不適切な記述に含めない、Ｄを含める必要がある。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "Ａはガス容器を固定し連結管への無理な力を避けるのは適切である。Ａは不適切な記述に含めない、Ｂ・Ｃを含める必要がある。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "接続直後に片側の容器すべての弁を開けて一斉に放出する記述が適切でない。このためＢ・Ｃ・Ｄが不適切な記述に当たる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "Ｃは高圧ストップ弁を閉じると供給側が遮断され、二次側へ継続して送れない。Ｃを含める必要がある。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "Ｂは接続直後に片側の容器すべての弁を開けて一斉に放出する記述が適切でない。Ｂを含める必要がある。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      },
+      {
+        "title": "厚生労働省 安全データシート アセチレン",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-86-2.html"
+      },
+      {
+        "title": "厚生労働省 安全データシート 酸素",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7782-44-7.html"
+      }
+    ]
+  },
+  "lckohyo-LC20242112-q3": {
+    "sourceHash": "64fd95a2fd770483b81f90c2c48ee249ef812c4efc945695e90178bc7dd335df",
+    "correctChoice": 3,
+    "summary": "Ｂ形溶接器の吸込み確認、空吹き、漏れ点検および点火の順を整理する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "Ｂはホース取付後は、点火前にガスを通して内部の残留ガスなどを除く空吹きを行う。Ｂは不適切な記述に含めない、Ｄを含める必要がある。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "Ｄは酸素バルブも先に開いて一般のライターで点火する手順は適切でない。Ｄを含める必要がある。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "吸込みは酸素の供給で生じるので、燃料ガスを送って酸素入口で確認する記述は誤りである。このためＡ・Ｃ・Ｄが不適切な記述に当たる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "Ｂはホース取付後は、点火前にガスを通して内部の残留ガスなどを除く空吹きを行う。Ｂは不適切な記述に含めない、Ａ・Ｃを含める必要がある。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "Ａは吸込みは酸素の供給で生じるので、燃料ガスを送って酸素入口で確認する記述は誤りである。Ａを含める必要がある。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      },
+      {
+        "title": "厚生労働省 安全データシート アセチレン",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-86-2.html"
+      },
+      {
+        "title": "厚生労働省 安全データシート 酸素",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7782-44-7.html"
+      }
+    ]
+  },
+  "lckohyo-LC20242112-q4": {
+    "sourceHash": "b6a90b3319636a05706bd87f6d5afd8746599645a172d55da5af044acb516206",
+    "correctChoice": 3,
+    "summary": "逆火は火炎がガスの流れに逆らって吹管側へ入り込む現象で、火口や流量の異常に注意する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "火口とトーチヘッドの接合部が密着しないと、混合ガスの漏れや燃焼の異常につながる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "火口が材料に触れて塞がると、混合ガスが流れにくくなり、火炎が火口内へ入る原因になる。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "この設問の逆火の原因に当たるのは燃料ガスの供給不足などであり、酸素の低圧だけは該当しない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "燃料ガスの供給量が不足すると混合ガスの流出が弱くなり、火炎が上流へ進みやすくなる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "燃料ガスのホース内に酸素や空気が残っていると、火炎が入り込んだ際に内部で燃焼し得る。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      },
+      {
+        "title": "厚生労働省 安全データシート アセチレン",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-86-2.html"
+      },
+      {
+        "title": "厚生労働省 安全データシート 酸素",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7782-44-7.html"
+      }
+    ]
+  },
+  "lckohyo-LC20242112-q5": {
+    "sourceHash": "80834a1ba65d5376d36077c6d59997dc83840b33349a85ea173dc9a7af539aa3",
+    "correctChoice": 3,
+    "summary": "ガス切断では、見えない所へ飛ぶ火花や、装置に残った可燃物が火災を引き起こす。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "Ａは狭い隙間から火花が裏側に飛び、可燃物に着火することもあるので飛散防止が必要である。Ａは不適切な記述に含めない、Ｂを含める必要がある。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "Ａは狭い隙間から火花が裏側に飛び、可燃物に着火することもあるので飛散防止が必要である。Ａ・Ｄは不適切な記述に含めない、Ｂ・Ｃを含める必要がある。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "引火点の高い油でも加熱されれば危険であり、床に染み込んだ油も着火し得る。また、酸類と鉄の反応で注意すべき可燃性ガスは水素であり、硫化水素を前提にしている点が誤りである。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "Ｄは残留可燃物の着火防止として不活性ガスによる置換があるが、酸欠の防止措置も必要である。Ｄは不適切な記述に含めない、Ｃを含める必要がある。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "Ｄは残留可燃物の着火防止として不活性ガスによる置換があるが、酸欠の防止措置も必要である。Ｄは不適切な記述に含めない、Ｂを含める必要がある。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      },
+      {
+        "title": "厚生労働省 安全データシート アセチレン",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-86-2.html"
+      },
+      {
+        "title": "厚生労働省 安全データシート 酸素",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7782-44-7.html"
+      }
+    ]
+  },
+  "lckohyo-LC20242112-q6": {
+    "sourceHash": "8fa7b9c225cc1bd5bb20a108feb4ad2bc0ca4baeb33b75c6b8435cb8e63fe13a",
+    "correctChoice": 4,
+    "summary": "ガス集合装置への該当性は、連結本数、ガスの種類と容器の合計内容積で判定する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "Ａは９本で、溶解アセチレンの合計内容積は369リットルとなり、400リットルに届かない。Ａは該当する構成に含めない、Ｄを含める必要がある。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "Ａは９本で、溶解アセチレンの合計内容積は369リットルとなり、400リットルに届かない。Ａ・Ｃは該当する構成に含めない、Ｂ・Ｄを含める必要がある。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "Ｃは８本で、水素の合計内容積は373.6リットルとなり、400リットルに届かない。Ｃは該当する構成に含めない、Ｄを含める必要がある。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "可燃性ガスを入れた容器を10本連結しており、合計内容積によらず該当する。また、９本でも、プロパンの合計内容積は1062リットルとなり、1000リットル以上の基準を満たす。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "Ｃは８本で、水素の合計内容積は373.6リットルとなり、400リットルに届かない。Ｃは該当する構成に含めない、Ｂを含める必要がある。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生法",
+        "url": "https://laws.e-gov.go.jp/law/347AC0000000057"
+      },
+      {
+        "title": "労働安全衛生法施行令",
+        "url": "https://laws.e-gov.go.jp/law/347CO0000000318"
+      },
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      }
+    ]
+  },
+  "lckohyo-LC20242112-q7": {
+    "sourceHash": "da9d7975816efa5431fc1e80a62d327328b36e3317cd4233c41d213a0140e46c",
+    "correctChoice": 5,
+    "summary": "免許証の再交付・書替えと、取消しなどの処分に伴う返還先を区別する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "Ａは免許業務に現に就いている人が免許証を滅失したときは、規則により再交付を受ける。Ａ・Ｃは規定に合わない記述に含めない、Ｂ・Ｄを含める必要がある。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "Ａは免許業務に現に就いている人が免許証を滅失したときは、規則により再交付を受ける。Ａは規定に合わない記述に含めない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "Ｃは重大な過失による免許業務の重大事故は、免許の取消し又は効力の一時停止の対象になり得る。Ｃは規定に合わない記述に含めない、Ｄを含める必要がある。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "Ｃは重大な過失による免許業務の重大事故は、免許の取消し又は効力の一時停止の対象になり得る。Ｃは規定に合わない記述に含めない。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "転職による事業場や住所の変更は、規則が免許証の書替えを求める事由に挙げていない。また、取消処分を受けたときの返還先は都道府県労働局長であり、労働基準監督署長ではない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生法",
+        "url": "https://laws.e-gov.go.jp/law/347AC0000000057"
+      },
+      {
+        "title": "労働安全衛生法施行令",
+        "url": "https://laws.e-gov.go.jp/law/347CO0000000318"
+      },
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      }
+    ]
+  },
+  "lckohyo-LC20242112-q8": {
+    "sourceHash": "8b34e8e66568377c5257264bfb6629882e19a232ad6bb6a41ec0bceb9f3a26ba",
+    "correctChoice": 3,
+    "summary": "換気不十分な場所での火気作業では、供給系の漏れと酸素富化を防ぐための措置が定められている。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "労働安全衛生規則第262条では、損傷や摩耗で漏えいするおそれのないホースと吹管を求める。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "供給を始める前に、ホースの出口は放出しないようにした吹管や確実な止め栓で閉じておく。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "同条が中断時に求めるのは供給元の閉止に加えてホースを取り外すか通風のよい場所に移す措置である。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "ホースの接続部はバンドやクリップなどの締付具を使い、漏れや外れを防ぐよう固定する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "溶断で吹管から余分な酸素が出ると火傷の危険があるため、同条は十分な換気を求める。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生法",
+        "url": "https://laws.e-gov.go.jp/law/347AC0000000057"
+      },
+      {
+        "title": "労働安全衛生法施行令",
+        "url": "https://laws.e-gov.go.jp/law/347CO0000000318"
+      },
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      }
+    ]
+  },
+  "lckohyo-LC20242112-q9": {
+    "sourceHash": "c1fa7a0e638176254142d5d877af76b76b57dba502c412b9905a1f970718ac15",
+    "correctChoice": 4,
+    "summary": "常設のガス装置室には、設置場所・建材と漏えいガスを滞留させない構造の規定がある。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "屋根と天井には軽い不燃性の材料を使うことが求められるため、難燃性という条件だけでは足りない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "ガス装置室の壁に対する規則上の要件は不燃性の材料であり、難燃性の材料では基準を満たさない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "火気を使用する設備からガス集合装置を離す距離は５メートル以上であり、３メートルではない。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "移動して使用するものを除いて、ガス集合装置は専用のガス装置室に設けることが求められる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "室内のガス濃度が上昇するのを防ぐため、漏えいしたガスが装置室内に滞留しない構造とする。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生法",
+        "url": "https://laws.e-gov.go.jp/law/347AC0000000057"
+      },
+      {
+        "title": "労働安全衛生法施行令",
+        "url": "https://laws.e-gov.go.jp/law/347CO0000000318"
+      },
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      }
+    ]
+  },
+  "lckohyo-LC20242112-q10": {
+    "sourceHash": "6db8e73405ea4d011babaf3afa5beb784ccf72dba5728c1a8532d967978cb322",
+    "correctChoice": 2,
+    "summary": "労働安全衛生規則第313条の掲示、立入制限、配管の表示と消火設備の要件を確認する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "Ｄは導管は酸素用とガス用の混同を防ぐ必要があり、アセチレン用とガス用ではない。Ｄを含める必要がある。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "火気などを禁じて掲示するのは装置から５メートル以内であり、３メートル以内ではない。このためＡ・Ｂ・Ｄが規定に合わない記述に当たる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "Ｃはバルブやコックの操作要領および点検要領は装置室の見やすい箇所に掲示する。Ｃは規定に合わない記述に含めない、Ａ・Ｄを含める必要がある。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "Ａは火気などを禁じて掲示するのは装置から５メートル以内であり、３メートル以内ではない。Ａを含める必要がある。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "Ｃはバルブやコックの操作要領および点検要領は装置室の見やすい箇所に掲示する。Ｃ・Ｅは規定に合わない記述に含めない、Ａ・Ｂ・Ｄを含める必要がある。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生法",
+        "url": "https://laws.e-gov.go.jp/law/347AC0000000057"
+      },
+      {
+        "title": "労働安全衛生法施行令",
+        "url": "https://laws.e-gov.go.jp/law/347CO0000000318"
+      },
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      }
+    ]
+  },
+  "lckohyo-LC20242112-q11": {
+    "sourceHash": "8989fc4405734926cd2546df81154611b19417487be28501b51f391e88740692",
+    "correctChoice": 4,
+    "summary": "溶断用ホースと金属配管の役割や色分けを確認し、燃料ガスと酸素を識別する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "導管は、燃料ガスや酸素を容器などの供給源から作業に使う吹管まで送るために設ける管である。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "吹管は作業中に手で動かすので、調整器や配管ヘッダーから先は通常、柔軟な溶断用ゴムホースを使う。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "酸素配管の材料はガスの圧力に応じて選び、高圧側には銅管やステンレス鋼管が使用される。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "溶断用ゴムホースでは一般にアセチレン用は赤、酸素用は青であり、容器の塗色と区別する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "内径が細い導管ではガス流の圧力損失が大きくなり、吹管に必要な流量を送れないことがある。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      },
+      {
+        "title": "厚生労働省 安全データシート アセチレン",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-86-2.html"
+      },
+      {
+        "title": "厚生労働省 安全データシート 酸素",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7782-44-7.html"
+      }
+    ]
+  },
+  "lckohyo-LC20242112-q12": {
+    "sourceHash": "ed8f46282ce0c9dd6a942d018f5a63ab1aea463a213fb0f4494520b337138baf",
+    "correctChoice": 3,
+    "summary": "供給量に応じた集合方式と、減圧部・継手・安全器の役割を区別する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "Ｂはマニホールド方式の減圧部では調整器の両側に高圧側と低圧側の弁が設けられる。Ｂは不適切な記述に含めない、Ｅを含める必要がある。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "Ｄは継手からの漏えいを防止するために、溶接やガスケットで連結部の気密を確保する。Ｄは不適切な記述に含めない、Ｅを含める必要がある。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "複数本を枠にまとめたカードル方式は、酸素や水素などの高圧ガスにも用いられる。また、安全器は圧力調整器より吹管側の導管に設け、下流側からの逆火が上流に達するのを防ぐ。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "Ｂはマニホールド方式の減圧部では調整器の両側に高圧側と低圧側の弁が設けられる。Ｂ・Ｃは不適切な記述に含めない、Ａ・Ｅを含める必要がある。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "Ｃは消費量の多い所では、超低温液化ガス容器を複数接続して給ガス容量を確保することがある。Ｃ・Ｄは不適切な記述に含めない、Ａ・Ｅを含める必要がある。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      },
+      {
+        "title": "厚生労働省 安全データシート アセチレン",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-86-2.html"
+      },
+      {
+        "title": "厚生労働省 安全データシート 酸素",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7782-44-7.html"
+      }
+    ]
+  },
+  "lckohyo-LC20242112-q13": {
+    "sourceHash": "488834c6ee7479f6405d0bbaccff35c12ed269f18b9df8997b9056a93be3e4d3",
+    "correctChoice": 5,
+    "summary": "水封式と乾式の安全器は火炎を止める仕組みが異なり、据付方向と点検方法も異なる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "Ａは焼結金属の隙間は火炎の阻止と流量の双方に関係するので、燃料ガスの種類・流量に合うものを選ぶ。Ａ・Ｂは不適切な記述に含めない、Ｃ・Ｅを含める必要がある。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "Ａは焼結金属の隙間は火炎の阻止と流量の双方に関係するので、燃料ガスの種類・流量に合うものを選ぶ。Ａ・Ｄは不適切な記述に含めない、Ｃ・Ｅを含める必要がある。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "Ｂは乾式安全器には、逆火の阻止、逆火時の遮断、酸素の逆流防止などの機能が求められる。Ｂは不適切な記述に含めない、Ｅを含める必要がある。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "Ｂは乾式安全器には、逆火の阻止、逆火時の遮断、酸素の逆流防止などの機能が求められる。Ｂ・Ｄは不適切な記述に含めない、Ｃ・Ｅを含める必要がある。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "水封式安全器は水位によって機能するため、水平に寝かせる形ではなく所定の向きに据え付ける。また、乾式安全器は使用者が定期的に分解するものではなく、製品の定める点検方法に従う。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      },
+      {
+        "title": "厚生労働省 安全データシート アセチレン",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-86-2.html"
+      },
+      {
+        "title": "厚生労働省 安全データシート 酸素",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7782-44-7.html"
+      }
+    ]
+  },
+  "lckohyo-LC20242112-q14": {
+    "sourceHash": "31f58b9a94e35c13cfe9d988810cfbd5673d3ff06db56133425c8f26c2272636",
+    "correctChoice": 5,
+    "summary": "溶接器の型式上の特徴と、手動切断器で予熱炎用と切断用に分かれる酸素の経路を確認する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "ミキサ内の針弁で酸素流量を調節する構造は、設問でいうＡ形溶接器の特徴には当たらない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "１時間当たりのアセチレン消費量を火口番号で表す方式は、設問でいうＡ形の特徴ではない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "ガスを混合する構造は型式により異なり、この設問のＡ形とＢ形では火口の軽重の記述が逆である。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "中圧用と低圧用は所定の燃料供給条件で使うもので、中圧用を低圧アセチレンに用いるという記述は誤りである。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "切断器内では酸素が二手に分かれ、一方が予熱炎を、他方が金属を切断する酸素流を受け持つ。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      },
+      {
+        "title": "厚生労働省 安全データシート アセチレン",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-86-2.html"
+      },
+      {
+        "title": "厚生労働省 安全データシート 酸素",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7782-44-7.html"
+      }
+    ]
+  },
+  "lckohyo-LC20242112-q15": {
+    "sourceHash": "4c90090c335e5389be0ffa1ab9dd3e005f6f47e101a1e1f8faf67c990d2118f9",
+    "correctChoice": 5,
+    "summary": "圧力調整器の接続方式、調整機構とガスごとの圧力計の構成を区別する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "Ａはアセチレン用の調整器を容器に固定するために、鉄枠や馬などと呼ばれる取付金具が使われる。Ａ・Ｂは不適切な記述に含めない、Ｄを含める必要がある。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "Ａはアセチレン用の調整器を容器に固定するために、鉄枠や馬などと呼ばれる取付金具が使われる。Ａは不適切な記述に含めない、Ｃを含める必要がある。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "Ｂは調整器はばねの力と膜にかかるガス圧力のつり合いを変化させて出口側圧力を調整する。Ｂ・Ｅは不適切な記述に含めない、Ｃ・Ｄを含める必要がある。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "Ｂは調整器はばねの力と膜にかかるガス圧力のつり合いを変化させて出口側圧力を調整する。Ｂは不適切な記述に含めない。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "酸素用の取付部のねじは右ねじであり、めねじを左ねじとする説明が誤りである。また、ＬＰガス用調整器は高圧側・低圧側の圧力計の２個を常に備える標準構成ではない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "労働安全衛生規則",
+        "url": "https://laws.e-gov.go.jp/law/347M50002000032"
+      },
+      {
+        "title": "厚生労働省 安全データシート アセチレン",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-86-2.html"
+      },
+      {
+        "title": "厚生労働省 安全データシート 酸素",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7782-44-7.html"
+      }
+    ]
+  },
+  "lckohyo-LC20242112-q16": {
+    "sourceHash": "8bf2c47757d5a4ec69eff77358ba316b7a6c60d1901709e748a34b47d29568e9",
+    "correctChoice": 5,
+    "summary": "溶剤に溶解したアセチレンの性質と、容器使用時に守る圧力・温度の条件を確認する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "溶解アセチレンの容器は、アセチレンを溶かした溶剤を多孔質物の中に保持する構造である。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "温度が上がるとアセトンへの溶解度が下がるため、気相に移るアセチレンが増えて容器内圧力が高くなる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "ＤＭＦはアセトンよりアセチレンの溶解性に優れる一方、人体への有害性がより高い溶剤である。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "アセチレン７kgは約269molで、この温度・圧力では１mol当たり約22.4リットルとなる。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "5.2ＭPaを15℃での一般的な充塡後の圧力とする説明は誤りであり、容器や規程の指定に従う。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "容器保安規則",
+        "url": "https://laws.e-gov.go.jp/law/341M50000400050"
+      },
+      {
+        "title": "厚生労働省 安全データシート アセチレン",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-86-2.html"
+      }
+    ]
+  },
+  "lckohyo-LC20242112-q17": {
+    "sourceHash": "377d7ea519095d0eb8b1df6a7dd085d4ccda0dcd81b2d67d44928dfa90543f3e",
+    "correctChoice": 4,
+    "summary": "燃料ガスの漏えいを検知する仕組みと、ガスの燃焼範囲、材料への影響、液化の性質を整理する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "Ａは純粋なアセチレンは無色無臭で、大量に漏れれば空気中の酸素を追い出して窒息のおそれがある。Ａ・Ｃは不適切な記述に含めない、Ｄ・Ｅを含める必要がある。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "Ａは純粋なアセチレンは無色無臭で、大量に漏れれば空気中の酸素を追い出して窒息のおそれがある。Ａは不適切な記述に含めない、Ｂ・Ｅを含める必要がある。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "Ｃは普通の燃料用ＬＰガスは、漏えいに気付きやすいように付臭している。Ｃは不適切な記述に含めない、Ｅを含める必要がある。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "空気との混合物で比較すると、水素の爆発範囲がアセチレンよりも広いとする説明は逆である。このためＢ・Ｄ・Ｅが不適切な記述に当たる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "Ｃは普通の燃料用ＬＰガスは、漏えいに気付きやすいように付臭している。Ｃは不適切な記述に含めない、Ｂ・Ｄを含める必要がある。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 安全データシート アセチレン",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-86-2.html"
+      },
+      {
+        "title": "厚生労働省 安全データシート プロパン",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-98-6.html"
+      }
+    ]
+  },
+  "lckohyo-LC20242112-q18": {
+    "sourceHash": "2f58e11da123ab557268302453fc32c482ca09d02c8183d1f2d9be2257007f2f",
+    "correctChoice": 5,
+    "summary": "火炎の伝わり方によって燃焼を分類し、気体と粉じんの着火の危険性を確認する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "Ａは燃焼は可燃物が酸素と反応し、熱や光を発生させる現象で、気体だけに限られない。Ａ・Ｃは不適切な記述に含めない、Ｄ・Ｅを含める必要がある。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "Ａは燃焼は可燃物が酸素と反応し、熱や光を発生させる現象で、気体だけに限られない。Ａは不適切な記述に含めない、Ｅを含める必要がある。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "Ｂは爆ごうでは衝撃波を伴う燃焼波が音速を超えて伝わり、通常の火炎伝ぱと区別される。Ｂ・Ｃは不適切な記述に含めない、Ｄを含める必要がある。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "Ｂは爆ごうでは衝撃波を伴う燃焼波が音速を超えて伝わり、通常の火炎伝ぱと区別される。Ｂは不適切な記述に含めない、Ｅを含める必要がある。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "燃料と酸化剤をあらかじめ混ぜた燃焼の火炎は予混合火炎であり、拡散火炎とは異なる。また、水素は炭素を含まないものの火炎を作って燃え、火炎が見えにくい場合がある。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 安全データシート アセチレン",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-86-2.html"
+      },
+      {
+        "title": "厚生労働省 安全データシート 酸素",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7782-44-7.html"
+      }
+    ]
+  },
+  "lckohyo-LC20242112-q19": {
+    "sourceHash": "17dcf7716737d94f868d4c27a1c4146f1e23c630b24cf448d91ea818497800e6",
+    "correctChoice": 5,
+    "summary": "酸素の組成・供給と、酸素富化が可燃物の燃焼に与える影響を整理する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "Ａは乾燥空気の体積のおおよそ21％は酸素であり、最も割合が多い成分は窒素である。Ａは不適切な記述に含めない、Ｅを含める必要がある。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "Ａは乾燥空気の体積のおおよそ21％は酸素であり、最も割合が多い成分は窒素である。Ａ・Ｄは不適切な記述に含めない、Ｃ・Ｅを含める必要がある。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "Ｂは空気から酸素を得る工業的方法には、液化空気の分離や吸着による窒素の分離がある。Ｂは不適切な記述に含めない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "Ｂは空気から酸素を得る工業的方法には、液化空気の分離や吸着による窒素の分離がある。Ｂ・Ｄは不適切な記述に含めない、Ｃ・Ｅを含める必要がある。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "メタンの爆発上限界は、空気と混合した場合より酸素と混合した場合のほうが高くなる。また、溶接用の高圧酸素容器に対して、30℃で５ＭPaを一律の基準圧力とする記述は誤りである。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 安全データシート 酸素",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7782-44-7.html"
+      },
+      {
+        "title": "容器保安規則",
+        "url": "https://laws.e-gov.go.jp/law/341M50000400050"
+      }
+    ]
+  },
+  "lckohyo-LC20242112-q20": {
+    "sourceHash": "786a85ce782f5d8eb582d6ea5b099e3c09ecb33f732a48f8f5db6d438363c3bf",
+    "correctChoice": 3,
+    "summary": "ガス容器の過圧防止器具、容器の構造と塗色、容器に表示する情報を区別する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "Ａは破裂板式安全弁は容器の過圧を防ぐ器具で、耐圧試験圧力より十分低い圧力で作動する。Ａは不適切な記述に含めない、Ｂ・Ｅを含める必要がある。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "Ａは破裂板式安全弁は容器の過圧を防ぐ器具で、耐圧試験圧力より十分低い圧力で作動する。Ａ・Ｄは不適切な記述に含めない、Ｂ・Ｃ・Ｅを含める必要がある。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "ＬＰガス用溶接容器には耐圧試験が必要であり、一般的な試験圧力を2.0ＭPaとする記述は誤りである。このためＢ・Ｃ・Ｅが不適切な記述に当たる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "Ｄは継目なし容器は溶接継目を作らず、鋼材の鍛造や継目なし鋼管の端部の成形などで作られる。Ｄは不適切な記述に含めない、Ｃ・Ｅを含める必要がある。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "ＢはＬＰガス用溶接容器には耐圧試験が必要であり、一般的な試験圧力を2.0ＭPaとする記述は誤りである。Ｂを含める必要がある。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "容器保安規則",
+        "url": "https://laws.e-gov.go.jp/law/341M50000400050"
+      },
+      {
+        "title": "厚生労働省 安全データシート 酸素",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7782-44-7.html"
+      }
+    ]
   }
 }

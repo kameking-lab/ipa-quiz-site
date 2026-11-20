@@ -6,7 +6,7 @@ import { EXAM_CATALOG } from "@/lib/exam-library-catalog";
 import { examSourcePdfUrl, parseExamCatalogEntry } from "@/lib/exam-library-model";
 import { loadExamPaper } from "@/lib/exam-library-papers";
 
-const archiveEntries = catalog.filter((entry) => entry.sourceMode === "official-archive-copy");
+const archiveEntries = catalog.filter((entry) => entry.group === "cskohyo" && entry.sourceMode === "official-archive-copy");
 
 beforeEach(() => {
   window.localStorage.clear();

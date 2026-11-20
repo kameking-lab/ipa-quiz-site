@@ -68,6 +68,13 @@ describe("exam-library catalog contract", () => {
     expect(parsed[0].indexUrl).toBe(baseEntry.indexUrl);
   });
 
+  it("accepts a dated capture of the exact license exam PDF", () => {
+    const archiveSourceUrl = `https://web.archive.org/web/20260423133051id_/${baseEntry.pdfUrl}`;
+    const archived = { ...baseEntry, sourceMode: "official-archive-copy", archiveSourceUrl };
+    expect(parseExamCatalogEntry(archived)?.archiveSourceUrl).toBe(archiveSourceUrl);
+    expect(parseExamCatalogEntry({ ...archived, archiveSourceUrl: archiveSourceUrl.replace("02-1", "03-1") })).toBeNull();
+  });
+
   it("formats dates with their meaning", () => {
     expect(formatExamDate("2026-04")).toBe("2026年4月");
     expect(formatExamDate("2026-08-19")).toBe("2026年8月19日");
