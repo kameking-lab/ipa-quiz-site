@@ -121,6 +121,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     code: "kouku-kanseikan", nameFull: "航空管制官採用試験", urlSlug: "kouku-kanseikan", level: "specialist",
     sessions: [
       { session: "kiso", urlSlug: "kiso", expectedQuestions: 30, label: "基礎能力試験", categories: ["文章理解", "判断推理", "数的推理", "資料解釈", "時事・一般知識"] },
+      { session: "tekisei-i", urlSlug: "tekisei-i", expectedQuestions: 60, label: "適性試験Ⅰ", categories: ["記憶検査", "空間関係・点の投影", "空間関係・面の回転"] },
       { session: "eigo-hikki", urlSlug: "eigo-hikki", expectedQuestions: 30, label: "外国語試験（多肢選択式）", categories: ["英文読解", "段落整序", "語法・文法", "和文英訳", "発音・アクセント"] },
     ],
     seasons: ["annual"], yearRange: { start: 2025, end: 2025 },
