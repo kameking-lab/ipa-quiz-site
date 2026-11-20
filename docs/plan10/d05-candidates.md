@@ -53,3 +53,29 @@
 - 長野県、沖縄県、群馬県は表にある年度分を取得した。過年度に使われていた長野県の2024・2025年度、沖縄県の2023・2024年度、群馬県の2023年度のPDFリンクは確認時に404を返した。 [長野県](https://www.pref.nagano.lg.jp/shokusei/sangyo/shiken/chorishi/ch_kakomon.html)・[沖縄県](https://www.pref.okinawa.jp/kurashikankyo/shoku/1004023/1027370/1027372.html)・[群馬県](https://www.pref.gunma.jp/site/shokunoanzen/8244.html)
 - 愛媛県は2022〜2025年度の県実施分を公開。2026年度は調理技術技能センターの共通試験に移行した。 [愛媛県の試験案内](https://www.pref.ehime.jp/page/55585.html)
 - 奈良県は2025年度から関西広域連合の試験を実施。2024年度の県独自試験のPDFリンクは問題・正答とも取得時に403を返した。 [2024年度問題](https://www.pref.nara.jp/secure/313671/R6cyori.pdf)・[2024年度正答](https://www.pref.nara.jp/secure/313671/R6cyorikai.pdf)・[厚生労働省 令和6年度実績](https://www.mhlw.go.jp/content/10900000/001516201.pdf)
+
+## 収録状況
+
+26回、計1,552問。
+
+| 実施主体 | 年度別の収録数 | 合計 |
+| --- | --- | ---: |
+| 調理技術技能センター共通 | 2025年度 60問、2024年度 59問、2023年度 59問 | 178問 |
+| 関西広域連合 | 2026年度 60問、2025年度 60問、2024年度 59問、2023年度 60問、2022年度 60問 | 299問 |
+| 神奈川県 | 2026年度 60問、2025年度 60問、2024年度第2回 60問、2024年度第1回 60問 | 240問 |
+| 北海道 | 2026年度 60問、2025年度 60問、2024年度 58問、2023年度 60問、2022年度 59問 | 297問 |
+| 静岡県 | 2025年度 60問、2024年度 59問、2023年度 60問 | 179問 |
+| 長野県 | 2026年度 60問 | 60問 |
+| 栃木県 | 2026年度 59問、2025年度 60問、2024年度 60問、2023年度 60問、2022年度 60問 | 299問 |
+
+公式に全員正解とされたため、次の設問を練習問題の収録から除いた。
+
+- [調理技術技能センター共通 2024年度 問57](https://www.pref.gifu.lg.jp/uploaded/attachment/425084.pdf)
+- [調理技術技能センター共通 2023年度 問14](https://www.pref.gifu.lg.jp/uploaded/attachment/378710.pdf)
+- [関西広域連合 2024年度 問26](https://www.kouiki-kansai.jp/material/files/group/12/futekisetu2024.pdf)
+- [北海道 2024年度 問7・問51](https://www.pref.hokkaido.lg.jp/fs/1/2/9/6/0/3/3/3/_/03%20R6%20%E8%A7%A3%E7%AD%94.pdf)
+- [北海道 2022年度 問24](https://www.pref.hokkaido.lg.jp/fs/1/2/9/6/0/3/4/0/_/%E4%BB%A4%E5%92%8C4%E5%B9%B4%E5%BA%A6%20%E5%8C%97%E6%B5%B7%E9%81%93%E8%AA%BF%E7%90%86%E5%B8%AB%E8%A9%A6%E9%A8%93%E8%A7%A3%E7%AD%94.pdf)
+- [静岡県 2024年度 問54](https://www.pref.shizuoka.jp/_res/projects/default_project/_page_/001/024/968/r6chorishishikenkaito.pdf)
+- [栃木県 2026年度 問1](https://www.pref.tochigi.lg.jp/e07/documents/r8chouri_kaitou.pdf)
+
+公式の問題・正答を取得済みで未収録の回は、沖縄県（2026年度、2025年度）、群馬県（2026年度、2025年度、2024年度）、愛媛県（2025年度、2024年度、2023年度、2022年度）。
