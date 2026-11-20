@@ -8,7 +8,7 @@
 | --- | --- | --- | ---: | --- |
 | 関西広域連合（滋賀・京都・大阪・兵庫・奈良・和歌山・徳島） | 登録販売者試験 | 4〜8（収録済み） | 9,244 | [過去問題と解答](https://www.kouiki-kansai.jp/koikirengo/jisijimu/shikakumenkyo/touroku/7607.html)、[令和8年度結果・確定正答](https://www.kouiki-kansai.jp/koikirengo/jisijimu/shikakumenkyo/info/8259.html) |
 | 東京都 | 東京都登録販売者試験 | 4〜8（収録済み） | 4,186 | [8](https://www.hokeniryo.metro.tokyo.lg.jp/anzen/iyaku/tourokushiken/r8shiken)、[7](https://www.hokeniryo.metro.tokyo.lg.jp/anzen/iyaku/tourokushiken/r7shiken)、[6](https://www.hokeniryo.metro.tokyo.lg.jp/anzen/iyaku/tourokushiken/r6shiken)、[5](https://www.hokeniryo.metro.tokyo.lg.jp/anzen/iyaku/tourokushiken/r5shiken)、[4](https://www.hokeniryo.metro.tokyo.lg.jp/anzen/iyaku/tourokushiken/r4shiken) |
-| 九州・沖縄（福岡県・沖縄県など） | 登録販売者試験 | 7（収録）・6・5・4 | 4,138＋887（2県） | [福岡県の過去の試験](https://www.pref.fukuoka.lg.jp/contents/kakotorokuhanbaisyasiken.html)、[沖縄県の令和7年度の問題・正答](https://www.pref.okinawa.lg.jp/iryokenko/iryo/1005251/1005261/1005265/1034565/index.html) |
+| 九州・沖縄（福岡県・沖縄県など） | 登録販売者試験 | 7・6（収録）・5・4 | 4,138＋887（2県） | [福岡県の過去の試験](https://www.pref.fukuoka.lg.jp/contents/kakotorokuhanbaisyasiken.html)、[沖縄県の令和7年度の問題・正答](https://www.pref.okinawa.lg.jp/iryokenko/iryo/1005251/1005261/1005265/1034565/index.html) |
 | 東海・北陸（愛知県・静岡県・岐阜県・石川県など） | 登録販売者試験 | 8・7（収録）・6・5・4 | 3,472＋1,956＋1,007＋804（4県） | [愛知県の過去問題](https://www.pref.aichi.jp/soshiki/iyaku/0000061464.html)、[静岡県の試験資料](https://www.pref.shizuoka.jp/kenkofukushi/eiseiyakuji/yakuji/1003165/1025394.html)、[岐阜県の過去問題](https://www.pref.gifu.lg.jp/page/2017.html)、[石川県の令和8年度正答](https://www.pref.ishikawa.lg.jp/yakuji/topic/shiken/documents/r8kaitou.pdf) |
 | 神奈川県 | 神奈川県登録販売者試験 | 7・8は東京都と共通。4〜6は照合対象 | 3,152 | [試験問題と解答](https://www.pref.kanagawa.jp/docs/n3x/yakumu/shiken/touhan/gaiyou.html#monndai) |
 | 千葉県 | 千葉県医薬品登録販売者試験 | 7・8は東京都と共通。5・6は照合対象 | 3,127 | [試験案内](https://www.pref.chiba.lg.jp/yakumu/hanbaishashiken/top.html)、[令和8年度の問題と正答](https://www.pref.chiba.lg.jp/yakumu/hanbaishashiken/8hanbaishakekka.html)、[令和7年度の問題と正答](https://www.pref.chiba.lg.jp/yakumu/hanbaishashiken/7hanbaishakekka.html) |
@@ -20,7 +20,7 @@
 
 同一問題を複数の実施機関が公表している場合は、本文・選択肢・正答の同一性を照合して代表原本を使う。愛知県・静岡県・岐阜県・石川県の令和8年度は共通問題として1回分を収録した。千葉県・神奈川県・埼玉県の令和7・8年度は、公開原本の本文・選択肢・正答が東京都の手元補充分と共通のため対象外。福岡県の令和8年度試験は12月20日実施予定。沖縄県の令和8年度試験と、延期された福井県の令和8年度試験も12月20日実施予定。[福岡県の令和8年度試験案内](https://www.pref.fukuoka.lg.jp/contents/r08tourokuhanbaisyashiken.html)・[沖縄県の令和8年度試験案内](https://www.pref.okinawa.lg.jp/iryokenko/iryo/1005251/1005261/1005265/1039700/index.html)・[福井県の延期後の試験案内](https://www.pref.fukui.lg.jp/doc/iei/yakumu/shikenr8.html)
 
-解説には各年度の試験問題作成時点の手引きを用いる。[厚生労働省の手引き](https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000082537.html)
+解説には各年度の試験問題作成時点の手引きを用いる。[最新版](https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000082537.html)・[厚生労働省の年度別手引き](https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000045312/index_00001.html)
 
 ## 収録実績
 
@@ -33,3 +33,4 @@
 - 令和7年度 北関東・甲信越 登録販売者試験（2025年8月28日実施）120問。群馬県と栃木県の本文・選択肢・正答の一致を確認。[第一部PDF](https://www.pref.gunma.jp/uploaded/attachment/674838.pdf)・[第二部PDF](https://www.pref.gunma.jp/uploaded/attachment/674839.pdf)・[正答PDF](https://www.pref.gunma.jp/uploaded/attachment/674840.pdf)
 - 令和7年度 北海道・東北 登録販売者試験（2025年8月27日実施）120問。北海道と宮城県の問題・正答を照合。午後問58の終わり括弧の差を除き、本文と選択肢は共通。[北海道の過去問題](https://www.pref.hokkaido.lg.jp/hf/iyk/iry/yakuji/tourokuhannbaishashikenmondai.html)・[宮城県の問題と正答](https://www.pref.miyagi.jp/soshiki/yakumu/kakomon.html)
 - 令和7年度 中国・四国 登録販売者試験（2025年10月21日実施）120問。香川県と山口県の本文・選択肢・正答が一致し、毒薬・劇薬及び成分表は原本に沿って整形した。[午前PDF](https://www.pref.kagawa.lg.jp/documents/57776/r7touhanshikenam.pdf)・[午後PDF](https://www.pref.kagawa.lg.jp/documents/57776/r7touhanshikenpm.pdf)・[正答PDF](https://www.pref.kagawa.lg.jp/documents/57776/r7seitou.pdf)
+- 令和6年度 九州・沖縄 登録販売者試験（2024年12月15日実施）120問。福岡県と沖縄県の本文・選択肢・正答の一致を確認。問44・69は公式発表に従って全員加点の参考問題とし、通常の演習対象は118問。[福岡県の問題・正答・採点の取扱い](https://www.pref.fukuoka.lg.jp/contents/r06tourokuhanbaisyashikenmondai.html)・[沖縄県の問題・正答・採点の取扱い](https://www.pref.okinawa.lg.jp/iryokenko/iryo/1005251/1005261/1005265/1032213.html)
