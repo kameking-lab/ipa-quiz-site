@@ -2020,7 +2020,7 @@ caremanager: {
 "rodo-kijun-kantokukan": {
     code: "rodo-kijun-kantokukan", nameFull: "労働基準監督官採用試験", urlSlug: "rodo-kijun-kantokukan", level: "advanced",
     sessions: [
-        { session: "special-a", urlSlug: "special-a", expectedQuestions: 48, label: "労働基準監督A 専門試験（多肢選択式）", categories: ["労働法", "労働安全衛生", "労災保険", "労働経済", "憲法", "行政法", "民法", "刑法", "経済学", "経済事情", "社会保障", "社会学"] },
+        { session: "special-a", urlSlug: "special-a", expectedQuestions: 48, label: "労働基準監督A 専門試験（多肢選択式）", categories: ["労働法", "労働安全衛生", "労災保険", "労働経済", "憲法", "行政法", "刑法", "経済学", "経済事情", "社会保障", "社会学"] },
     ], seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
 },
 "kokka-ippan-dai": {
