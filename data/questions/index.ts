@@ -313,6 +313,7 @@ import { CHORI_KANAGAWA_QUESTIONS } from "./chori-kanagawa";
 import { CHORI_HOKKAIDO_QUESTIONS } from "./chori-hokkaido";
 import { CHORI_SHIZUOKA_QUESTIONS } from "./chori-shizuoka";
 import { CHORI_NAGANO_QUESTIONS } from "./chori-nagano";
+import { CHORI_TOCHIGI_QUESTIONS } from "./chori-tochigi";
 import { YAMAGUCHI_CHORI_QUESTIONS } from "./yamaguchi-chori";
 import { YAMAGUCHI_SEIKA_QUESTIONS } from "./yamaguchi-seika";
 import { YAMAGUCHI_FUGU_QUESTIONS } from "./yamaguchi-fugu";
@@ -614,6 +615,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("chori-hokkaido") ? { "chori-hokkaido": CHORI_HOKKAIDO_QUESTIONS } : {}),
 ...(isExamPublished("chori-shizuoka") ? { "chori-shizuoka": CHORI_SHIZUOKA_QUESTIONS } : {}),
 ...(isExamPublished("chori-nagano") ? { "chori-nagano": CHORI_NAGANO_QUESTIONS } : {}),
+...(isExamPublished("chori-tochigi") ? { "chori-tochigi": CHORI_TOCHIGI_QUESTIONS } : {}),
 ...(isExamPublished("yamaguchi-chori") ? { "yamaguchi-chori": YAMAGUCHI_CHORI_QUESTIONS } : {}),
 ...(isExamPublished("yamaguchi-seika") ? { "yamaguchi-seika": YAMAGUCHI_SEIKA_QUESTIONS } : {}),
 ...(isExamPublished("yamaguchi-fugu") ? { "yamaguchi-fugu": YAMAGUCHI_FUGU_QUESTIONS } : {}),
