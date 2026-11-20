@@ -1,4 +1,5 @@
 import type { Question } from "@/lib/questions/types";
+import round1_2022 from "./2022-round1-gakka.json";
 import round2_2022 from "./2022-round2-gakka.json";
 import round1_2023 from "./2023-round1-gakka.json";
 import round2_2023 from "./2023-round2-gakka.json";
@@ -15,4 +16,5 @@ export const CFP_REALESTATE_QUESTIONS = [
   ...round2_2023,
   ...round1_2023,
   ...round2_2022,
+  ...round1_2022,
 ] as Question[];
