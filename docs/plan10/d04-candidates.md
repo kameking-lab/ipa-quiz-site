@@ -98,6 +98,7 @@
 | 2024 | 一般職（大卒程度・行政区分） 専門試験（多肢選択式） | 78 | [問題冊子・末尾の正答番号表（89ページ）](https://www.jinji.go.jp/content/000010273.pdf) |
 | 2024 | 財務専門官 専門試験（多肢選択式） | 11 | [問題冊子・末尾の正答番号表（84ページ）](https://www.jinji.go.jp/content/000007522.pdf) |
 | 2024 | 労働基準監督官（労働基準監督A） 専門試験（多肢選択式） | 26 | [問題冊子・末尾の正答番号表（50ページ）](https://www.jinji.go.jp/content/000007529.pdf) |
+| 2024 | 労働基準監督官（労働基準監督B） 専門試験（多肢選択式） | 19 | [問題冊子・末尾の正答番号表（35ページ）](https://www.jinji.go.jp/content/000007531.pdf) |
 | 2024 | 刑務官 基礎能力試験 | 38 | [問題冊子・末尾の正答番号表（32ページ）](https://www.jinji.go.jp/content/000002475.pdf) |
 | 2024 | 航空管制官 外国語試験（多肢選択式） | 27 | [問題冊子・末尾の正答番号表（35ページ）](https://www.jinji.go.jp/content/000007534.pdf) |
 | 2024 | 航空管制官 適性試験Ⅰ | 60 | [問題冊子・記憶図・末尾の正答番号表（15ページ）](https://www.jinji.go.jp/content/000007533.pdf) |
@@ -139,6 +140,8 @@
 2025年度の労働基準監督Bは必須4問と選択14問を収録し、No. 5、21、23・24、27、30、34～36の図表を冊子から添付した。No. 1～4は労働基準監督AのNo. 8～10、12、No. 10～15、17～20、22、25・26、28・29、31、37～44は国税専門Bの収録問題と一致する。 [労働基準監督B](https://www.jinji.go.jp/content/000016388.pdf) [労働基準監督A](https://www.jinji.go.jp/content/000016387.pdf) [国税専門B](https://www.jinji.go.jp/content/000016239.pdf)
 
 2024年度の労働基準監督Aは必須12問と選択14問を収録した。No. 13～25、30、32・33、35、37、39、41、47・48は、財務専門官または手元補充の国税専門A・Bと重複している。 [労働基準監督A](https://www.jinji.go.jp/content/000007529.pdf) [財務専門官](https://www.jinji.go.jp/content/000007522.pdf) [国税専門A](https://www.jinji.go.jp/content/000007524.pdf) [国税専門B](https://www.jinji.go.jp/content/000007526.pdf)
+
+2024年度の労働基準監督Bは必須4問と選択15問を収録し、No. 20・21、23、25・26、31、34～36の図を冊子から添付した。No. 1～4は労働基準監督AのNo. 8～11、No. 10・11、13・14、16～19、22、24、27～29、32・33、37～44は手元補充の国税専門Bの収録問題と重複している。2024～2026年度の専門試験（記述式）については公式の正答が公開されていない。 [労働基準監督B](https://www.jinji.go.jp/content/000007531.pdf) [労働基準監督A](https://www.jinji.go.jp/content/000007529.pdf) [国税専門B](https://www.jinji.go.jp/content/000007526.pdf) [労働基準監督官の公開一覧](https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_23.html)
 
 労働統計と経済動向の解説は、問題冊子が指定する各省の資料の対象年と照合した。 [労働経済の分析](https://www.mhlw.go.jp/stf/wp/hakusyo/roudou/25/25-1.html) [年次経済財政報告](https://www5.cao.go.jp/j-j/wp/wp-je25/index_pdf.html) [通商白書](https://www.meti.go.jp/report/tsuhaku2025/2025honbun/index.html) [こども白書](https://www.cfa.go.jp/resources/white-paper/r07)
 
