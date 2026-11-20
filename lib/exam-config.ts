@@ -2000,7 +2000,7 @@ caremanager: {
         { session: "gakka-sugaku", urlSlug: "gakka-sugaku", expectedQuestions: 13, label: "管制課程 学科試験（数学）", categories: ["数学"] },
         { session: "gakka-eigo", urlSlug: "gakka-eigo", expectedQuestions: 13, label: "管制課程 学科試験（英語）", categories: ["発音・アクセント", "語彙・熟語", "文法", "長文読解", "会話文"] },
         { session: "gakka-butsuri", urlSlug: "gakka-butsuri", expectedQuestions: 13, label: "海洋科学課程 学科試験（物理）", categories: ["物理"] },
-    ], seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
+    ], seasons: ["annual"], yearRange: { start: 2023, end: 2026 },
 },
 "kouku-kanseikan": {
     code: "kouku-kanseikan", nameFull: "航空管制官採用試験", urlSlug: "kouku-kanseikan", level: "specialist",
