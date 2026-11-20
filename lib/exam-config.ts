@@ -935,7 +935,7 @@ tohan: {
         ],
     }],
     seasons: ["annual"],
-    yearRange: { start: 2025, end: 2026 },
+    yearRange: { start: 2024, end: 2026 },
 },
 kanri: {
     code: "kanri",
