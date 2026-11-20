@@ -29,6 +29,29 @@ describe("QuizClient authorization boundary", () => {
     expect(new URL(location.href).searchParams.get("question")).toBe("q1");
     expect(fetcher.mock.calls.filter(([url])=>url==="/api/billing/question")).toHaveLength(3);
   });
+  it("rechecks when entitlement changes during the transition to the limit screen", async () => {
+    let paid = false;
+    const fetcher = vi.fn(async (url: string, options?: RequestInit) => {
+      if (url !== "/api/billing/question") return Response.json({ id: "q2" });
+      const { id } = JSON.parse(options!.body as string);
+      if (id === "q1") return Response.json({ question: { id }, access: { ...access, remaining: 0 } });
+      if (paid) return Response.json({ question: { id }, access: { ...access, kind: "pass", remaining: null } });
+      return Response.json({ error: "daily_limit", access: { ...access, remaining: 0 } }, { status: 429 });
+    });
+    vi.stubGlobal("fetch", fetcher);
+    vi.mocked(HTMLElement.prototype.scrollIntoView).mockImplementation(function (this: HTMLElement) {
+      if (paid || this.getAttribute("aria-label") !== "本日の無料演習の終了") return;
+      paid = true;
+      window.dispatchEvent(new Event("mobile:entitlement-changed"));
+    });
+    render(<QuizClient billingGateEnabled poolIds={["q1", "q2"]} mode="year" backHref="/" />);
+    await screen.findByText("q1");
+    fireEvent.click(screen.getByText("next"));
+    await screen.findByText("q2");
+    expect(fetcher.mock.calls.filter(([url]) => url === "/api/billing/question")
+      .map(([, options]) => JSON.parse(options!.body as string).id)).toEqual(["q1", "q2", "q2"]);
+    expect(new URL(location.href).searchParams.get("question")).toBe("q2");
+  });
   it("off ignores malformed billing settings and keeps question GET/cache independent of billing", async () => {
     const c = billingConfig({ BILLING_MODE: "off", BILLING_ORIGIN: "%%%", BILLING_PRICE_YEN: "broken", BILLING_TRANSITION_STARTS_AT: "bad" });
     const fetcher = vi.fn(async (url: string) => {
