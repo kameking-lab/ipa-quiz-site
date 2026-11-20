@@ -2064,6 +2064,7 @@ caremanager: {
         { session: "senmon-kenchiku", urlSlug: "senmon-kenchiku", expectedQuestions: 33, label: "専門試験（建築区分）", categories: ["建築構造", "建築材料", "建築施工", "建築環境", "建築設備", "建築計画", "建築法規"] },
         { session: "senmon-kikai", urlSlug: "senmon-kikai", expectedQuestions: 40, label: "専門試験（機械区分）", categories: ["材料力学", "機械力学", "流体力学", "熱力学", "機械設計", "機械材料", "機械工作"] },
         { session: "senmon-doboku", urlSlug: "senmon-doboku", expectedQuestions: 40, label: "専門試験（土木区分）", categories: ["構造力学", "水理学", "土質力学", "測量", "コンクリート", "都市計画", "道路工学", "河川工学", "環境工学"] },
+        { session: "senmon-butsuri", urlSlug: "senmon-butsuri", expectedQuestions: 50, label: "専門試験（物理区分）", categories: ["数学", "力学", "流体力学", "波動", "熱力学", "電磁気学", "統計力学", "量子力学", "相対論", "原子核物理", "気象学", "海洋学", "地球物理"] },
     ], seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
 },
 "kokka-ippan-kou": {
