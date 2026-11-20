@@ -10,6 +10,7 @@ export const REFERENCE_ONLY_QUESTION_IDS: ReadonlySet<string> = new Set([
   "tohan-kyushu-okinawa-2025-annual-gakka-q35",
   "tohan-kyushu-okinawa-2024-annual-gakka-q44",
   "tohan-kyushu-okinawa-2024-annual-gakka-q69",
+  "tohan-tokai-hokuriku-2023-annual-gakka-q24",
 ]);
 
 export function isReferenceOnlyQuestionId(id: unknown): boolean {
