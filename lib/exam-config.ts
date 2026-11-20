@@ -142,6 +142,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     code: "kyoin-hiroshima", nameFull: "広島県・広島市公立学校教員採用候補者選考試験", urlSlug: "kyoin-hiroshima", level: "advanced",
     sessions: [
       { session: "kyotsu", urlSlug: "kyotsu", expectedQuestions: 22, label: "第1次選考 教職教養", categories: ["教育法規", "教育課程", "教育心理", "学習評価", "特別支援教育", "学校保健", "生徒指導"] },
+      { session: "senmon", urlSlug: "senmon", expectedQuestions: 59, label: "教科専門（小学校・小学部）", categories: ["小学校専門・国語", "小学校専門・社会", "小学校専門・算数", "小学校専門・理科", "小学校専門・生活", "小学校専門・音楽", "小学校専門・図画工作", "小学校専門・家庭", "小学校専門・体育", "小学校専門・外国語"] },
       { session: "kyoshoku-sho", urlSlug: "kyoshoku-sho", expectedQuestions: 19, label: "教職教養（小学校・養護・栄養）", categories: ["教育法規", "教育課程", "教育心理", "教育原理", "特別支援教育", "学校保健", "生徒指導"] },
       { session: "kyoshoku-chuko", urlSlug: "kyoshoku-chuko", expectedQuestions: 19, label: "教職教養（中学校・高等学校）", categories: ["教育法規", "教育課程", "教育心理", "教育原理", "特別支援教育", "学校保健", "生徒指導"] },
     ],

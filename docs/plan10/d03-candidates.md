@@ -40,6 +40,7 @@
 | 自治体 | 試験実施年度 | 区分 | 収録数 | 公式原本 |
 | --- | --- | --- | ---: | --- |
 | 広島県・広島市 | 2026 | 第1次 教職に関する専門教育科目 | 22 | [問題](https://www.pref.hiroshima.lg.jp/uploaded/attachment/676989.pdf)・[採点基準](https://www.pref.hiroshima.lg.jp/uploaded/attachment/676991.pdf) |
+| 広島県・広島市 | 2026 | 第1次 教科に関する専門教育科目（小学校・小学部） | 53 | [問題](https://www.pref.hiroshima.lg.jp/uploaded/attachment/676990.pdf)・[採点基準](https://www.pref.hiroshima.lg.jp/uploaded/attachment/677016.pdf) |
 | 広島県・広島市 | 2025 | 第1次 教職に関する専門教育科目 | 17 | [問題](https://www.pref.hiroshima.lg.jp/uploaded/attachment/632142.pdf)・[採点基準](https://www.pref.hiroshima.lg.jp/uploaded/attachment/632145.pdf) |
 | 広島県・広島市 | 2024 | 第1次 教職に関する専門教育科目（小学校・養護・栄養） | 19 | [問題](https://www.pref.hiroshima.lg.jp/uploaded/attachment/586552.pdf)・[採点基準](https://www.pref.hiroshima.lg.jp/uploaded/attachment/586593.pdf) |
 | 広島県・広島市 | 2024 | 第1次 教職に関する専門教育科目（中学校・高等学校） | 19 | [問題](https://www.pref.hiroshima.lg.jp/uploaded/attachment/586555.pdf)・[採点基準](https://www.pref.hiroshima.lg.jp/uploaded/attachment/586594.pdf) |
@@ -55,6 +56,7 @@
 
 収録数は、空欄の枝問を含む公式の解答欄単位。一部の問題文は、解答に必要な条件を残して短く整えた。
 
+- 広島県・広島市の2026年度小学校専門では、国語の解答番号1～6に必要な文章が公開版に掲載されていないため、該当の6問を除外した。 [問題](https://www.pref.hiroshima.lg.jp/uploaded/attachment/676990.pdf)
 - 広島県・広島市の2025年度教職教養では、解答番号11の図、12～14の共通本文が公開版に掲載されていないため、該当の4問を除外した。 [問題](https://www.pref.hiroshima.lg.jp/uploaded/attachment/632142.pdf)
 - 高知県の2025年度教職・一般教養では、問15の引用文が公開版にないため、該当の1問を除外した。 [問題](https://www.pref.kochi.lg.jp/doc/2019112600143/file_contents/file_2025112631592_1.pdf)
 
@@ -62,7 +64,7 @@
 
 | 自治体 | 実施年度と区分 | 確認状況 |
 | --- | --- | --- |
-| 広島県・広島市 | 2023 教職教養、2023～2026 教科・校種専門 | 公式の問題・採点基準を掲載。2022年度の問題・正答の組は未取得。 [2026年度](https://www.pref.hiroshima.lg.jp/site/04file/r09shikenmondai1ji.html)・[2023年度](https://www.pref.hiroshima.lg.jp/site/04file/r06shikenmondai1ji.html) |
+| 広島県・広島市 | 2023 教職教養、2023～2026 教科・校種専門の未収録区分 | 公式の問題・採点基準を掲載。2022年度の問題・正答の組は未取得。 [2026年度](https://www.pref.hiroshima.lg.jp/site/04file/r09shikenmondai1ji.html)・[2023年度](https://www.pref.hiroshima.lg.jp/site/04file/r06shikenmondai1ji.html) |
 | 沖縄県 | 2022～2024 一般教養・教職教養（午前・午後） | 問題と正答・配点を取得済み。専門教科の問題は行政情報センターで閲覧。 [2024年度](https://www.pref.okinawa.jp/kyoiku/edu/1008490/1008535/1008540/1029359/1029994.html) |
 | 高知県 | 2023～2024 教職・一般教養、2023～2025 専門教科 | 問題と正答の公開先を確認済み。2026年度の問題・正答の組は公式一覧で未確認。 [問題と解答の一覧](https://www.pref.kochi.lg.jp/doc/2026012700071/) |
 | 島根県 | 2024 教職教養、2024～2026 専門教科 | 問題と解答例の公開先を確認済み。小学校専門には選択式と記述式が混在する。 [問題と解答例の一覧](https://www.pref.shimane.lg.jp/admin/syokuin/saiyou/saiyou_info_tchr/kakomondai.html) |
