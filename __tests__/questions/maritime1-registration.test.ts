@@ -12,7 +12,7 @@ import { GET } from "@/app/api/search/questions/route";
 describe("maritime1 accepted local registration", () => {
   it("retains exact sitting and official answer-cell counts", () => {
     const periods = [[2026, "march"], [2026, "september"], [2025, "september"]] as const;
-    expect(MARITIME1_ALL_QUESTIONS).toHaveLength(95 * periods.length);
+    expect(MARITIME1_ALL_QUESTIONS).toHaveLength(95 * periods.length + 45);
     expect(MARITIME1_QUESTIONS).toHaveLength(MARITIME1_ALL_QUESTIONS.length);
     expect(new Set(MARITIME1_ALL_QUESTIONS.map((q) => q.id)).size).toBe(MARITIME1_ALL_QUESTIONS.length);
     expect(MARITIME1_QUESTIONS.every((q) => q.needsReview === false)).toBe(true);
@@ -23,18 +23,22 @@ describe("maritime1 accepted local registration", () => {
         expect(sitting.filter((q) => q.session === session), `${season}/${session}`).toHaveLength(count);
       }
     }
-    expect(MARITIME1_QUESTIONS.reduce((n, q) => n + (q.nativeB?.slots.length ?? 1), 0)).toBe(175 * periods.length);
+    const september2022 = MARITIME1_QUESTIONS.filter((q) => q.year === 2022 && q.season === "september");
+    expect(september2022).toHaveLength(45);
+    expect(september2022.filter((q) => q.session === "hoki")).toHaveLength(20);
+    expect(september2022.filter((q) => q.session === "kogaku-a")).toHaveLength(25);
+    expect(MARITIME1_QUESTIONS.reduce((n, q) => n + (q.nativeB?.slots.length ?? 1), 0)).toBe(175 * periods.length + 85);
   });
 
   it("preserves original figures and exact five-slot native B scoring", () => {
     const urls = MARITIME1_QUESTIONS.flatMap((q) => q.imageUrls ?? []);
-    expect(urls).toHaveLength(247);
+    expect(urls).toHaveLength(260);
     for (const url of urls) {
-      expect(url, url).toMatch(/^\/questions\/maritime1\/202[56]\//);
+      expect(url, url).toMatch(/^\/questions\/maritime1\/202[256]\//);
       expect(existsSync(join(process.cwd(), "public", url.slice(1))), url).toBe(true);
     }
     const native = MARITIME1_QUESTIONS.filter((q) => q.nativeB);
-    expect(native).toHaveLength(60);
+    expect(native).toHaveLength(70);
     for (const q of native) {
       const data = q.nativeB!;
       expect(data.slots).toHaveLength(5);
