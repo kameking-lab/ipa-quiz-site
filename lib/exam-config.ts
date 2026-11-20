@@ -2054,6 +2054,7 @@ caremanager: {
         { session: "senmon-houritsu", urlSlug: "senmon-houritsu", expectedQuestions: 49, label: "専門試験（法律区分）", categories: ["憲法", "行政法", "民法", "商法・会社法", "刑法", "労働法", "国際法", "経済学", "財政学"] },
         { session: "senmon-keizai", urlSlug: "senmon-keizai", expectedQuestions: 46, label: "専門試験（経済区分）", categories: ["ミクロ経済学", "マクロ経済学", "経済事情", "統計学", "経済史", "国際経済学", "経営学"] },
         { session: "senmon-seiji", urlSlug: "senmon-seiji", expectedQuestions: 105, label: "専門試験（政治・国際・人文区分）", categories: ["政治学", "国際関係", "行政学", "国際法", "倫理・思想", "歴史", "文学・芸術", "人文地理・文化人類学", "心理学", "教育学", "社会学"] },
+        { session: "senmon-ningenkagaku", urlSlug: "senmon-ningenkagaku", expectedQuestions: 105, label: "専門試験（人間科学区分）", categories: ["心理学", "教育学", "社会福祉学", "社会学"] },
         { session: "senmon-digital", urlSlug: "senmon-digital", expectedQuestions: 63, label: "専門試験（デジタル区分）", categories: ["基礎数学", "情報基礎", "情報と社会", "計算機科学", "情報工学（ハードウェア）", "情報工学（ソフトウェア）", "情報技術", "線形代数", "解析", "確率・統計", "数学モデル", "オペレーションズ・リサーチ", "経営工学", "制御工学", "電磁気学", "電気工学", "電子工学", "通信工学"] },
     ], seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
 },
