@@ -6,6 +6,7 @@ import { RikuTech2CylinderGuide } from "./RikuTech2CylinderGuide";
 import { isReferenceOnlyQuestionId } from "@/lib/questions/assessment";
 
 import * as React from "react";
+import { Check, X } from "lucide-react";
 import { usePetLearning } from "@/components/pet/usePetLearning";
 import { LearningPetCorner } from "@/components/pet/LearningPetCorner";
 import type { PetLearningSubmission } from "@/lib/pet/client/learning-submission-contracts";
@@ -235,15 +236,15 @@ function ScoredQuestionAnswerCard({
     : formatAcceptedAnswers(answerKey);
 
   return (
-    <div data-study-presence-exam={exam} className="space-y-4">
+    <div data-study-presence-exam={exam} data-question-answered={answered || undefined} className="space-y-3">
       {question?.acceptedAnswerCombinations && !revealed && (
-        <Button disabled={picked.length < 1 || picked.length > requiredSelections}
+        <Button className="min-h-12" disabled={picked.length < 1 || picked.length > requiredSelections}
           onClick={() => { setRevealed(true); recordOutcome(formatSelection(picked), isCompleteSelectionCorrect(answerKey, picked, requiredSelections, question.acceptedAnswerCombinations), { kind: "multiple-choice", selected: [...picked] }); }}>
           回答を確定
         </Button>
       )}
       {multiSelect && !revealed && (
-        <p className="rounded-xl border border-amber-300/60 bg-amber-50 px-3 py-2 text-sm font-semibold text-amber-900 dark:border-amber-700/50 dark:bg-amber-950/40 dark:text-amber-100" data-testid="multi-select-hint">
+        <p className="rounded-lg bg-warning-soft px-3 py-2 text-sm font-semibold text-warning-soft-foreground" data-testid="multi-select-hint">
           {selectionInstruction(answerKey, requiredSelections)}（選択中 {picked.length}/{requiredSelections}）
         </p>
       )}
@@ -257,7 +258,7 @@ function ScoredQuestionAnswerCard({
         role={multiSelect ? "group" : "radiogroup"}
         data-shortcuts-ready={shortcutsReady}
         aria-label={multiSelect ? `選択肢（${requiredSelections}つ選ぶ。数字キー1〜9・0・Enter/スペースで選択・解除）` : "選択肢（矢印キーで移動、数字キー1〜9・0・Enter/スペースで選択）"}
-        className="flex flex-col gap-2.5"
+        className="flex flex-col gap-2"
       >
         {keys.map((key, idx) => (
           <ChoiceButton
@@ -274,6 +275,7 @@ function ScoredQuestionAnswerCard({
             onClick={() => onSelect(key)}
             shortcutIndex={idx < 10 ? (idx + 1) % 10 : null}
             multiSelect={multiSelect}
+            paper
             {...roving.getRadioProps(idx)}
           />
         ))}
@@ -293,32 +295,33 @@ function ScoredQuestionAnswerCard({
       </div>
 
       {!revealed ? (
-        <button type="button" onClick={revealOnly} className="inline-flex min-h-11 items-center text-sm font-medium text-muted-foreground underline decoration-border underline-offset-4 hover:text-foreground">
+        <button type="button" onClick={revealOnly} className="study-link">
           採点せずに答えだけ見る
         </button>
       ) : (
-        <div
+        <div role="group" aria-label={answered ? "採点結果" : "正答"}
           className={
             !answered || isCorrect
-              ? "rounded-2xl border border-emerald-300/60 bg-emerald-50 p-4 dark:border-emerald-700/50 dark:bg-emerald-950/40"
-              : "rounded-2xl border border-red-300/60 bg-red-50 p-4 dark:border-red-700/50 dark:bg-red-950/40"
+              ? "rounded-lg bg-success-soft p-4 text-success-soft-foreground"
+              : "rounded-lg bg-danger-soft p-4 text-danger-soft-foreground"
           }
         >
-          <div className="text-sm font-bold">
+          <div className="text-base leading-[1.7] font-bold">
             {!answered ? (
-              <span className="text-emerald-800 dark:text-emerald-200">正解は {answerLabel}</span>
-            ) : isCorrect ? (
-              <>
-                <span className="text-emerald-800 dark:text-emerald-200">正解！</span>
-                {usesNumberedChoices(exam) && <span className="ml-2 text-emerald-800 dark:text-emerald-200">正答は {answerLabel}</span>}
-              </>
+              <span>正解は {answerLabel}</span>
             ) : (
-              <span className="text-red-800 dark:text-red-200">不正解 — 正解は {answerLabel}</span>
+              <div className="flex flex-wrap items-baseline gap-x-3">
+                <span className="inline-flex items-center gap-1.5">
+                  {isCorrect ? <Check aria-hidden="true" className="size-5" /> : <X aria-hidden="true" className="size-5" />}
+                  {isCorrect ? "正解" : "不正解"}
+                </span>
+                <span>公式正答 {answerLabel}</span>
+              </div>
             )}
             {answerText && (answerText.includes("\n") ? (
               <div className="mt-2 min-w-0 font-normal text-foreground"><QuestionBody text={answerText} /></div>
             ) : (
-              <span className="ml-1 font-normal text-foreground">：{answerText}</span>
+              <p className="mt-1 font-normal text-foreground">{answerText}</p>
             ))}
           </div>
           {question ? <div className="mt-3"><LearningPetCorner qualificationId={question.exam} questionId={question.id} compact /></div> : null}
@@ -326,14 +329,15 @@ function ScoredQuestionAnswerCard({
       )}
       {revealed && <RikuTech2CylinderGuide questionId={questionId} revealed={revealed} />}
       {explanation}
+      {source}
       {question && !native && (
         <QuestionAiFollowup
+          paper
           question={question}
           selectedChoice={answered ? (ordering ? orderedSelected?.join("→") : numeric ? numericSelected : multiSelect ? formatSelection(picked) : selected) : undefined}
           isCorrect={answered ? isCorrect : undefined}
         />
       )}
-      {source}
     </div>
   );
 }
