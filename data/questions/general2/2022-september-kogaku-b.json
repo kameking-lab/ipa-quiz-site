@@ -1,0 +1,1565 @@
+[
+  {
+    "id": "general2-2022-september-kogaku-b-a01",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kogaku-b",
+    "qNumber": 1,
+    "officialQuestionLabel": "A−1",
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "平面波の電界・磁界と伝搬方向",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−1　平面波の電界・磁界と伝搬方向。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "平面波の等位相面は伝搬方向に垂直。電界と磁界は同位相で、EとHの外積の方向にエネルギーが進む。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kogaku-b-p01.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学B 公式問題冊子PDF 1ページの問A−1。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202412id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202409id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学B A−1（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "直角、同位相、右ねじ",
+      "イ": "直角、逆位相、左ねじ",
+      "ウ": "平行、逆位相、右ねじ",
+      "エ": "平行、同位相、左ねじ"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "choiceExplanations": {
+      "ア": "横断面の一様性、同位相、外積の右ねじの向きが対応する。",
+      "イ": "面の向きは正しいが、電界と磁界は同位相で、進む向きには右ねじを用いる。",
+      "ウ": "外積の向きは正しい。伝搬方向と直角な面で一様かつ同位相である。",
+      "エ": "同位相は正しいが、面は進行方向に垂直で、進行方向は右ねじに対応する。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kogaku-b-a02",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kogaku-b",
+    "qNumber": 2,
+    "officialQuestionLabel": "A−2",
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "半波長ダイポールの遠方電界",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−2　半波長ダイポールの遠方電界。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "最大放射方向の遠方電界はE＝60πIle/(λd)。le＝λ/πを代入すると60×5/30000＝0.01 V/m。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kogaku-b-p01.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学B 公式問題冊子PDF 1ページの問A−2。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202412id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202409id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学B A−2（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "40 mV/m",
+      "イ": "30 mV/m",
+      "ウ": "20 mV/m",
+      "エ": "10 mV/m"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "choiceExplanations": {
+      "ア": "与条件では最大方向でも40 mV/mの4分の1である。",
+      "イ": "アンテナの実効長を用いた自由空間伝搬の計算では30 mV/mにならない。",
+      "ウ": "同じ電流なら20 mV/mとなる距離は15 kmである。",
+      "エ": "0.01 V/mをミリボルト毎メートルで表した値である。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kogaku-b-a03",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kogaku-b",
+    "qNumber": 3,
+    "officialQuestionLabel": "A−3",
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "指向性利得と相対利得",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−3　指向性利得と相対利得。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "損失がなければ利得と指向性は、等方性を基準にそろえると一致する。半波長ダイポール基準の相対利得とは基準が違う。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kogaku-b-p01.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学B 公式問題冊子PDF 1ページの問A−3。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202412id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202409id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学B A−3（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "利得で放射・受信能力を表す",
+      "イ": "相対利得は半波長ダイポール基準",
+      "ウ": "無損失アンテナの相対利得と指向性利得は等しい",
+      "エ": "微小ダイポールの利得は半波長ダイポールより小さい"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "choiceExplanations": {
+      "ア": "利得は送受信能力や指向性の評価に用いられる。",
+      "イ": "相対利得の基準とする半波長ダイポールは絶対利得約1.64を持つ。",
+      "ウ": "損失ゼロで等しくなるのは絶対利得と指向性である。",
+      "エ": "微小ダイポールの絶対利得は約1.5、半波長ダイポールは約1.64である。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kogaku-b-a04",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kogaku-b",
+    "qNumber": 4,
+    "officialQuestionLabel": "A−4",
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "ループアンテナの誘起電圧",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−4　ループアンテナの誘起電圧。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "1.5 MHzで波長は200 m。実効高2π×10×0.2/200に電界とcos 60°を掛けると約12.6 μV。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kogaku-b-p01.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学B 公式問題冊子PDF 1ページの問A−4。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202412id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202409id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学B A−4（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "13 μV",
+      "イ": "19 μV",
+      "ウ": "26 μV",
+      "エ": "35 μV"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "choiceExplanations": {
+      "ア": "角度補正で最大誘起電圧の半分になり、約13 μVである。",
+      "イ": "ループ面との角度60°に対する係数はcos 60°＝0.5であり、19 μVほどにはならない。",
+      "ウ": "26 μVに近いのは、到来方向がループ面に沿い角度補正がない場合である。",
+      "エ": "最大でも約25 μVとなるので35 μVにはならない。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kogaku-b-a05",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kogaku-b",
+    "qNumber": 5,
+    "officialQuestionLabel": "A−5",
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "給電線の反射係数と負荷抵抗",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−5　給電線の反射係数と負荷抵抗。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "R＞50 Ωなので反射係数は正で、(R−50)/(R＋50)＝0.4。R＝50×1.4/0.6≒117 Ω。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kogaku-b-p01.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学B 公式問題冊子PDF 1ページの問A−5。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202412id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202409id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学B A−5（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "55 Ω",
+      "イ": "75 Ω",
+      "ウ": "117 Ω",
+      "エ": "140 Ω"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "choiceExplanations": {
+      "ア": "55 Ωなら反射係数は5/105で約0.048。",
+      "イ": "75 Ωでの反射係数は25/125＝0.2になる。",
+      "ウ": "反射係数0.4の式を解いた抵抗値に最も近い。",
+      "エ": "140 Ωでの反射係数は90/190≒0.47となる。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kogaku-b-a06",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kogaku-b",
+    "qNumber": 6,
+    "officialQuestionLabel": "A−6",
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "給電線の反射と定在波",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−6　給電線の反射と定在波。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "負荷抵抗が線路の特性インピーダンスと等しいと反射係数はゼロになる。反射波が生じるとした選択肢が誤り。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kogaku-b-p02.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学B 公式問題冊子PDF 2ページの問A−6。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202412id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202409id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学B A−6（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "特性インピーダンスは長さに依存しない",
+      "イ": "終端短絡で定在波が生じる",
+      "ウ": "電圧定在波の最大点では電流定在波が最小",
+      "エ": "整合した負荷で反射波が生じる"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "choiceExplanations": {
+      "ア": "一様な給電線の特性インピーダンスは単位長さ当たりの電気定数によって決まる。",
+      "イ": "短絡終端で反射し、入射波との重なりで定在波ができる。",
+      "ウ": "無損失線路の電圧と電流の定在波は腹と節で位置がずれる。",
+      "エ": "整合時には反射がないため、定在波比は1になる。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kogaku-b-a07",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kogaku-b",
+    "qNumber": 7,
+    "officialQuestionLabel": "A−7",
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "整合トランスの巻数比",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−7　整合トランスの巻数比。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "巻数比1:nのトランスで二次側の300 Ωは一次側から300/n² Ωに見える。75 Ωと等しくするにはn＝2。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kogaku-b-p02.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学B 公式問題冊子PDF 2ページの問A−7。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202412id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202409id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学B A−7（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "4",
+      "イ": "3",
+      "ウ": "2",
+      "エ": "1"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "choiceExplanations": {
+      "ア": "n＝4なら一次側から18.75 Ωに見える。",
+      "イ": "n＝3なら約33 Ωに変換される。",
+      "ウ": "抵抗比300/75＝4の平方根が巻数比になる。",
+      "エ": "n＝1ではインピーダンスが変換されず、300 Ωのままである。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kogaku-b-a08",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kogaku-b",
+    "qNumber": 8,
+    "officialQuestionLabel": "A−8",
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "船舶用スロットアレーとアンテナ利得",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−8　船舶用スロットアレーとアンテナ利得。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "ホーンは主にマイクロ波帯で用いられる。半波長ダイポールの利得2.15 dBiは倍率で約1.64で、この船舶用スロットアレーは短辺壁にスロットを設ける。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kogaku-b-p02.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学B 公式問題冊子PDF 2ページの問A−8。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202412id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202409id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学B A−8（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "SHF、2.15、長辺壁",
+      "イ": "SHF、1.64、短辺壁",
+      "ウ": "VHF、2.15、長辺壁",
+      "エ": "VHF、1.64、短辺壁"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "choiceExplanations": {
+      "ア": "ホーンの帯域は合うが、2.15は対数表示で、船舶レーダー用のスロットは短辺壁が該当する。",
+      "イ": "ホーンの使用帯域、利得の真数、スロットの位置が対応する。",
+      "ウ": "ホーンの帯域と利得の単位が違い、設問のスロットを設けるのは短辺壁。",
+      "エ": "利得とスロット位置は合うが、ホーンの主な使用帯域はSHFである。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kogaku-b-a09",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kogaku-b",
+    "qNumber": 9,
+    "officialQuestionLabel": "A−9",
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "八木・宇田アンテナの素子長",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−9　八木・宇田アンテナの素子長。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "100 MHzで波長は約3 m。放射器は約半波長で、反射器を少し長く、導波器を少し短くして指向性を作る。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kogaku-b-p02.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学B 公式問題冊子PDF 2ページの問A−9。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202412id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202409id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学B A−9（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1.5 m、短く、長い",
+      "イ": "1.5 m、長く、短い",
+      "ウ": "0.5 m、短く、長い",
+      "エ": "0.5 m、長く、短い"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "choiceExplanations": {
+      "ア": "放射器長は合うが、反射器と導波器の長短関係が逆である。",
+      "イ": "放射器の長さ約1.5 mを基準に、後方の反射器を長く、前方の導波器を短くする。",
+      "ウ": "0.5 mは約1/6波長で、反射器と導波器の長さ関係も逆である。",
+      "エ": "素子の長短関係は合うが、放射器は0.5 mではなく約1.5 m。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kogaku-b-a10",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kogaku-b",
+    "qNumber": 10,
+    "officialQuestionLabel": "A−10",
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "ブラウンアンテナの地線と入力抵抗",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−10　ブラウンアンテナの地線と入力抵抗。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "水平の地線と垂直素子からなる1/4波長の構成は、半波長ダイポールの約半分の放射抵抗を持つ。約73 Ωとする記述が誤り。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kogaku-b-p02.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学B 公式問題冊子PDF 2ページの問A−10。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202412id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202409id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学B A−10（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "地線は外部導体に接続",
+      "イ": "放射素子と地線が直角なら入力は約73 Ω",
+      "ウ": "地線長は約1/4波長",
+      "エ": "垂直放射素子なら水平面内で全方向性"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "choiceExplanations": {
+      "ア": "地線は外部導体につながり、放射素子は中心導体につながる。",
+      "イ": "直角の地線では入力抵抗は約36 Ωで、73 Ωは半波長ダイポールの値に近い。",
+      "ウ": "垂直素子と地線は約1/4波長を目安とする。",
+      "エ": "垂直素子を中心に対称に構成すると水平面内でおおむね無指向性になる。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kogaku-b-a11",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kogaku-b",
+    "qNumber": 11,
+    "officialQuestionLabel": "A−11",
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "開放・短絡測定から求める特性インピーダンス",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−11　開放・短絡測定から求める特性インピーダンス。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "無損失線路では短絡入力がjZ₀tan βl、開放入力が−jZ₀cot βl。積はZ₀²となり、正の平方根でZ₀が求まる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kogaku-b-p03.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学B 公式問題冊子PDF 3ページの問A−11。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202412id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202409id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学B A−11（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "2(Zop＋Zsh)",
+      "イ": "(Zop＋Zsh)/2",
+      "ウ": "Zop＋Zsh",
+      "エ": "√(ZopZsh)"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "choiceExplanations": {
+      "ア": "開放と短絡の測定値は和を取っても長さ依存が消えない。",
+      "イ": "算術平均ではtanとcotの依存を打ち消せない。",
+      "ウ": "二つは長さに応じた別々のリアクタンスであり、和は線路の特性インピーダンスではない。",
+      "エ": "相補的な二つの測定値の積から長さに依存しないZ₀が得られる。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kogaku-b-a12",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kogaku-b",
+    "qNumber": 12,
+    "officialQuestionLabel": "A−12",
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "マイクロ波アンテナ利得の比較測定",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−12　マイクロ波アンテナ利得の比較測定。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "一定強度の電波を受け、二つのアンテナの受信電力を同条件で比べる。受信電力のdB差に、通常用いる角すいホーンの既知利得を足す。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kogaku-b-p03.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学B 公式問題冊子PDF 3ページの問A−12。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202412id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202409id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学B A−12（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "強度、Pm＋Ps、微小ダイポール",
+      "イ": "強度、Pm−Ps、角すいホーン",
+      "ウ": "位相、Pm＋Ps、角すいホーン",
+      "エ": "位相、Pm−Ps、微小ダイポール"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "choiceExplanations": {
+      "ア": "強度は合うが、dBm同士では差を取り、この帯域の標準アンテナは角すいホーンが使われる。",
+      "イ": "一定強度、電力差、既知利得を持つ角すいホーンの組合せである。",
+      "ウ": "角すいホーンは合うが、等しくするのは試験波の強度で、受信電力は差を見る。",
+      "エ": "受信電力の差は合うものの、試験波は強度を保ち、基準は通常角すいホーン。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kogaku-b-a13",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kogaku-b",
+    "qNumber": 13,
+    "officialQuestionLabel": "A−13",
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "接地アンテナの放射電力と効率",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−13　接地アンテナの放射電力と効率。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "放射電力はI²Rr＝2.5²×36＝225 W。放射効率は放射抵抗を実効抵抗で割った36/41≒88%。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kogaku-b-p03.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学B 公式問題冊子PDF 3ページの問A−13。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202412id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202409id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学B A−13（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "45 W、65%",
+      "イ": "81 W、65%",
+      "ウ": "125 W、88%",
+      "エ": "225 W、88%"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "choiceExplanations": {
+      "ア": "45 Wも65%も指定された電流と抵抗から得られない。",
+      "イ": "81 Wは放射抵抗36 Ωで1.5 Aの場合に当たり、今回は2.5 Aである。",
+      "ウ": "効率は合うが、放射電力は電流の二乗に36 Ωを掛けた225 W。",
+      "エ": "放射抵抗で計算した電力と、入力抵抗に対する放射抵抗の割合が一致する。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kogaku-b-a14",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kogaku-b",
+    "qNumber": 14,
+    "officialQuestionLabel": "A−14",
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "地上波の構成と地表波の減衰",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−14　地上波の構成と地表波の減衰。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "見通し内の地上波には直接波、大地反射波、地表波がある。地表波は長波長かつ高導電率の地面で減衰が小さくなる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kogaku-b-p03.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学B 公式問題冊子PDF 3ページの問A−14。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202412id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202409id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学B A−14（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "見通し距離外、長い、大きい",
+      "イ": "見通し距離外、短い、小さい",
+      "ウ": "見通し距離内、短い、小さい",
+      "エ": "見通し距離内、長い、大きい"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "choiceExplanations": {
+      "ア": "波長と導電率は合うが、直接波も受ける条件は見通し距離内である。",
+      "イ": "見通し外には直接波が届かず、地表波が遠くへ届くのは長い波長・高い導電率の条件である。",
+      "ウ": "見通し内の指定は合うが、短波長や低導電率では通常、地表波の減衰が大きくなる。",
+      "エ": "地上波の三成分を受けられる条件と、地表波の損失傾向を正しく示す。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kogaku-b-a15",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kogaku-b",
+    "qNumber": 15,
+    "officialQuestionLabel": "A−15",
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "マイクロ波の干渉性・ダクト形フェージング",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−15　マイクロ波の干渉性・ダクト形フェージング。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "反射係数が大きいほど直接波との干渉による増減が大きい。対流圏の気温・湿度の逆転層で屈折率分布が変化し、ダクトが生じる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kogaku-b-p03.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学B 公式問題冊子PDF 3ページの問A−15。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202412id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202409id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学B A−15（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "大きい、対流圏、ダクト形",
+      "イ": "大きい、電離圏、回折性K形",
+      "ウ": "小さい、電離圏、ダクト形",
+      "エ": "小さい、対流圏、回折性K形"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "choiceExplanations": {
+      "ア": "強い反射による干渉の変動と、対流圏ダクトの発生条件を示す。",
+      "イ": "反射係数の傾向は合うが、逆転層によるダクトは対流圏で発生する。",
+      "ウ": "ダクト形は合うが、場所は対流圏であり、反射が強いほど干渉による増減は大きくなる。",
+      "エ": "対流圏は合うが、逆転層はダクト形の条件であり、干渉の変化も大きい反射係数に対応する。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kogaku-b-a16",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kogaku-b",
+    "qNumber": 16,
+    "officialQuestionLabel": "A−16",
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "電離層反射の入射角と臨界周波数",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−16　電離層反射の入射角と臨界周波数。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "反射点の真下まで水平400 km、高さ300 kmで斜辺500 kmとなる。cosθ＝300/500＝0.6なのでfc＝8×0.6＝4.8 MHz。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kogaku-b-p04.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学B 公式問題冊子PDF 4ページの問A−16。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202412id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202409id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学B A−16（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "6.0 MHz",
+      "イ": "5.4 MHz",
+      "ウ": "4.8 MHz",
+      "エ": "3.2 MHz"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "choiceExplanations": {
+      "ア": "6.0 MHzでも通信条件を満たすが、必要な最低値より高い。",
+      "イ": "5.4 MHzも最低となる式の結果4.8 MHzを超える。",
+      "ウ": "指定の伝搬距離と反射高度から求まるcosθを8 MHzに掛けた値である。",
+      "エ": "fc＝3.2 MHzならMUFは約5.33 MHzにとどまる。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kogaku-b-a17",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kogaku-b",
+    "qNumber": 17,
+    "officialQuestionLabel": "A−17",
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "アンテナの実効長・実効高の関係",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−17　アンテナの実効長・実効高の関係。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "同じ波長と参照方向では実効長は放射抵抗と利得の積の平方根に比例する。半波長ダイポールの実効長は四分の一波長垂直接地アンテナの実効高より大きい。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kogaku-b-p04.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学B 公式問題冊子PDF 4ページの問A−17。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202412id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202409id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学B A−17（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "小さい、短い、小さい",
+      "イ": "小さい、長い、大きい",
+      "ウ": "大きい、短い、大きい",
+      "エ": "大きい、長い、小さい"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "choiceExplanations": {
+      "ア": "放射抵抗が小さい場合は短くなるが、利得や半波長ダイポールとの比較は逆である。",
+      "イ": "半波長ダイポールとの比較は正しいが、利得が高いほど長く、放射抵抗が小さいほど短い。",
+      "ウ": "高い利得、低い放射抵抗、半波長と四分の一波長の比較がいずれも対応する。",
+      "エ": "利得が大きいほど長い点は合うが、放射抵抗とアンテナ形式の比較が違う。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kogaku-b-a18",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kogaku-b",
+    "qNumber": 18,
+    "officialQuestionLabel": "A−18",
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "同軸ケーブルと平行二線の比較",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−18　同軸ケーブルと平行二線の比較。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "内外導体を誘電体で隔て、外部導体で電磁界を遮へいする。一般的な同軸の特性インピーダンスは平行二線より小さい。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kogaku-b-p04.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学B 公式問題冊子PDF 4ページの問A−18。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202412id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202409id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学B A−18（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "磁性体、大きい、少なく",
+      "イ": "誘電体、大きい、多く",
+      "ウ": "磁性体、小さい、多く",
+      "エ": "誘電体、小さい、少なく"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "choiceExplanations": {
+      "ア": "放射の少なさは合うが、内外導体間は誘電体であり、一般に特性インピーダンスは小さい。",
+      "イ": "誘電体は合うものの、平行二線よりインピーダンスは通常低く外部放射も少ない。",
+      "ウ": "インピーダンスの大小は合う。磁性体に限定されず、外部への放射も少ない。",
+      "エ": "誘電体による絶縁、インピーダンスの比較、外部導体による遮へいが対応する。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kogaku-b-a19",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kogaku-b",
+    "qNumber": 19,
+    "officialQuestionLabel": "A−19",
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "ILSのローカライザ・グライドパス・マーカ",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−19　ILSのローカライザ・グライドパス・マーカ。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "水平方向のローカライザ、降下路のグライドパス、通過地点のマーカには、それぞれ異なる放射パターンのアンテナを用いる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kogaku-b-p04.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学B 公式問題冊子PDF 4ページの問A−19。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202412id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202409id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学B A−19（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "対数周期ダイポール、ロンビック、微小ループ",
+      "イ": "対数周期ダイポール、コーナレフレクタ、水平ダイポール",
+      "ウ": "ディスコーン、コーナレフレクタ、微小ループ",
+      "エ": "ディスコーン、ロンビック、水平ダイポール"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "choiceExplanations": {
+      "ア": "最初の対数周期ダイポールは合うが、残りの用途に対応するアンテナが違う。",
+      "イ": "対数周期ダイポール、コーナレフレクタ、水平ダイポールがそれぞれの用途に対応する。",
+      "ウ": "グライドパスのコーナレフレクタは合うが、水平方向の誘導と上向き放射のアンテナが違う。",
+      "エ": "マーカの水平ダイポールは合うが、ローカライザとグライドパスの指定が違う。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kogaku-b-a20",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kogaku-b",
+    "qNumber": 20,
+    "officialQuestionLabel": "A−20",
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "短波電離層伝搬の吸収と周波数",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−20　短波電離層伝搬の吸収と周波数。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "第一種減衰は電離層を通り抜ける際の吸収で、その大きさはおおむね周波数の二乗に反比例する。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kogaku-b-p05.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学B 公式問題冊子PDF 5ページの問A−20。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202412id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202409id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学B A−20（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "第一種はD層またはE層を通過するとき",
+      "イ": "第一種は周波数に反比例",
+      "ウ": "第二種はE層またはF層で反射するとき",
+      "エ": "第二種は周波数が高いほど大きい"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "choiceExplanations": {
+      "ア": "第一種減衰にはD層やE層を通過するときの吸収が含まれる。",
+      "イ": "周波数1乗ではなく、おおむね二乗に反比例する。",
+      "ウ": "第二種減衰は反射点近くで吸収されることにより生じる。",
+      "エ": "第二種減衰は一般に高い周波数側で大きくなる。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kogaku-b-b01",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kogaku-b",
+    "qNumber": 1,
+    "officialQuestionLabel": "B−1",
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "受信アンテナの有能電力",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "B−1　受信アンテナの有能電力。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "アンテナを開放電圧V、内部抵抗rの等価回路で表す。負荷R＝rのとき受信機への電力が最大になる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kogaku-b-p05.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学B 公式問題冊子PDF 5ページの問B−1。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202412id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202409id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学B B−1（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "native-b",
+    "part": "b",
+    "answer": "",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "受信有能",
+          "explanation": "「有能」は取り出せる最大の電力に使う名称である。"
+        },
+        {
+          "id": "2",
+          "label": "V/(2R)",
+          "explanation": "整合時には合成抵抗2Rとなるが、一般の接続条件ではr＋Rを用いる。"
+        },
+        {
+          "id": "3",
+          "label": "[V/(r＋R)]²R",
+          "explanation": "受信機側の抵抗で消費される電力を表す式である。"
+        },
+        {
+          "id": "4",
+          "label": "2r",
+          "explanation": "負荷を内部抵抗の2倍にすると最大電力条件から外れる。"
+        },
+        {
+          "id": "5",
+          "label": "V²/(2R)",
+          "explanation": "整合時は電圧が半分となり、その二乗による分母は4Rになる。"
+        },
+        {
+          "id": "6",
+          "label": "受信開放",
+          "explanation": "負荷を取り外したときに測る受信端子電圧である。"
+        },
+        {
+          "id": "7",
+          "label": "V/(r＋R)",
+          "explanation": "アンテナ側抵抗と受信機抵抗を合計した回路電流である。"
+        },
+        {
+          "id": "8",
+          "label": "[V/(r＋R)]²r",
+          "explanation": "この式はアンテナの内部抵抗rの損失を表す。"
+        },
+        {
+          "id": "9",
+          "label": "r",
+          "explanation": "受信機から見て抵抗整合となる負荷抵抗である。"
+        },
+        {
+          "id": "10",
+          "label": "V²/(4R)",
+          "explanation": "整合負荷から取り出せる最大受信電力を示す。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "6",
+          "explanation": "受信機をつながないときの端子電圧は受信開放電圧である。"
+        },
+        {
+          "label": "イ",
+          "answer": "7",
+          "explanation": "直列のrとRに電圧Vがかかるので、電流はVを合成抵抗で割った値となる。"
+        },
+        {
+          "label": "ウ",
+          "answer": "3",
+          "explanation": "受信機内の消費電力は、共通電流の二乗に受信機側Rを掛ける。"
+        },
+        {
+          "label": "エ",
+          "answer": "9",
+          "explanation": "最大電力の条件は純抵抗の整合R＝rである。"
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "整合時、受信機にVの半分が加わるのでP＝(V/2)²/Rとなる。"
+        }
+      ],
+      "officialLabel": "B−1",
+      "bankImageUrls": [
+        "/questions/general2/2022/2022-09-kogaku-b-p05.png"
+      ],
+      "bankImageAltTexts": [
+        "第二級総合無線通信士 2022年9月期 無線工学B 公式問題冊子PDF 5ページの問B−1。"
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表に従い、各解答欄を1点とする。"
+      }
+    }
+  },
+  {
+    "id": "general2-2022-september-kogaku-b-b02",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kogaku-b",
+    "qNumber": 2,
+    "officialQuestionLabel": "B−2",
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "E面分岐とH面分岐の伝搬",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "B−2　E面分岐とH面分岐の伝搬。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "分岐側から入力すると、H面分岐は同相に、E面分岐は逆相に電力を分ける。両者をマジックTに組み合わせる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kogaku-b-p05.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学B 公式問題冊子PDF 5ページの問B−2。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202412id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202409id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学B B−2（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "native-b",
+    "part": "b",
+    "answer": "",
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "正しい"
+        },
+        {
+          "id": "2",
+          "label": "誤り"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "H面は磁界が含まれる面で、図1の分岐の向きに対応する。",
+          "candidateExplanations": {
+            "1": "H面は磁界が含まれる面で、図1の分岐の向きに対応する。",
+            "2": "H面は磁界が含まれる面で、図1の分岐の向きに対応する。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "1",
+          "explanation": "E面は電界が含まれる面であり、図2に対応する。",
+          "candidateExplanations": {
+            "1": "E面は電界が含まれる面であり、図2に対応する。",
+            "2": "E面は電界が含まれる面であり、図2に対応する。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "2",
+          "explanation": "H面分岐では両端が同じ振幅かつ同じ位相になる。",
+          "candidateExplanations": {
+            "1": "H面分岐では両端が同じ振幅かつ同じ位相になる。",
+            "2": "H面分岐では両端が同じ振幅かつ同じ位相になる。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "1",
+          "explanation": "E面分岐では両端の波の振幅が等しく、位相は反対になる。",
+          "candidateExplanations": {
+            "1": "E面分岐では両端の波の振幅が等しく、位相は反対になる。",
+            "2": "E面分岐では両端の波の振幅が等しく、位相は反対になる。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "1",
+          "explanation": "マジックTではH面側を和、E面側を差のポートとして使う。",
+          "candidateExplanations": {
+            "1": "マジックTではH面側を和、E面側を差のポートとして使う。",
+            "2": "マジックTではH面側を和、E面側を差のポートとして使う。"
+          }
+        }
+      ],
+      "officialLabel": "B−2",
+      "bankImageUrls": [
+        "/questions/general2/2022/2022-09-kogaku-b-p05.png"
+      ],
+      "bankImageAltTexts": [
+        "第二級総合無線通信士 2022年9月期 無線工学B 公式問題冊子PDF 5ページの問B−2。"
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表に従い、各解答欄を1点とする。"
+      }
+    }
+  },
+  {
+    "id": "general2-2022-september-kogaku-b-b03",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kogaku-b",
+    "qNumber": 3,
+    "officialQuestionLabel": "B−3",
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "ホーンアンテナの開口と利得",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "B−3　ホーンアンテナの開口と利得。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "導波管の口を徐々に広げ、自由空間との不整合による反射を減らす。開き角一定なら長いホーンは開口が大きく、指向性が鋭くなる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kogaku-b-p06.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学B 公式問題冊子PDF 6ページの問B−3。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202412id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202409id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学B B−3（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "native-b",
+    "part": "b",
+    "answer": "",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "透過を少なく",
+          "explanation": "透過を少なくすると効率よく放射する目的と逆になる。"
+        },
+        {
+          "id": "2",
+          "label": "扇形",
+          "explanation": "方形導波管の一組の壁を開いた構造の名称である。"
+        },
+        {
+          "id": "3",
+          "label": "円すい",
+          "explanation": "円形導波管を円すい形に広げる場合に使う。"
+        },
+        {
+          "id": "4",
+          "label": "狭く",
+          "explanation": "放射が狭い角度に集中する傾向を示す。"
+        },
+        {
+          "id": "5",
+          "label": "増加",
+          "explanation": "開き角一定で長くなると通常は利得が上がる。"
+        },
+        {
+          "id": "6",
+          "label": "反射を少なく",
+          "explanation": "開口で波が戻らないようインピーダンスを徐々に変える。"
+        },
+        {
+          "id": "7",
+          "label": "方形",
+          "explanation": "角すいホーンのほかに扇形ホーンがある。"
+        },
+        {
+          "id": "8",
+          "label": "円柱",
+          "explanation": "円柱状では断面積が一定で、先端を広げた形状にならない。"
+        },
+        {
+          "id": "9",
+          "label": "広く",
+          "explanation": "条件の範囲ではビームの広がりが小さくなる。"
+        },
+        {
+          "id": "10",
+          "label": "減少",
+          "explanation": "開口の拡大による利得の変化は増加方向である。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "6",
+          "explanation": "導波管から自由空間へ波が移るときの反射を抑える。"
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "方形導波管を一方向に広げ、扇形ホーンを構成できる。"
+        },
+        {
+          "label": "ウ",
+          "answer": "3",
+          "explanation": "円形断面を徐々に広げると円すいホーンとなる。"
+        },
+        {
+          "label": "エ",
+          "answer": "4",
+          "explanation": "開口面を大きくすると主ビームの半値幅が狭くなる。"
+        },
+        {
+          "label": "オ",
+          "answer": "5",
+          "explanation": "開口が大きくなり、特定方向に放射を集めやすくなる。"
+        }
+      ],
+      "officialLabel": "B−3",
+      "bankImageUrls": [
+        "/questions/general2/2022/2022-09-kogaku-b-p06.png"
+      ],
+      "bankImageAltTexts": [
+        "第二級総合無線通信士 2022年9月期 無線工学B 公式問題冊子PDF 6ページの問B−3。"
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表に従い、各解答欄を1点とする。"
+      }
+    }
+  },
+  {
+    "id": "general2-2022-september-kogaku-b-b04",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kogaku-b",
+    "qNumber": 4,
+    "officialQuestionLabel": "B−4",
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "送信時の電界から測る接地アンテナ実効高",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "B−4　送信時の電界から測る接地アンテナ実効高。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "完全導体面上のアンテナの放射電界は基部電流と実効高の積に比例する。距離dで電界を測り、その関係をheについて解く。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kogaku-b-p06.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学B 公式問題冊子PDF 6ページの問B−4。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202412id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202409id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学B B−4（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "native-b",
+    "part": "b",
+    "answer": "",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "比例",
+          "explanation": "電界または誘起電圧が実効高に比例することを利用する。"
+        },
+        {
+          "id": "2",
+          "label": "頂部",
+          "explanation": "給電点でない頂部の電流は、この式のI₀に当たらない。"
+        },
+        {
+          "id": "3",
+          "label": "無線方位測定器",
+          "explanation": "方位を測る装置は電界強度の絶対値を測る用途とは異なる。"
+        },
+        {
+          "id": "4",
+          "label": "I₀he",
+          "explanation": "実効高と基部電流を掛けて送信時の電界を求める。"
+        },
+        {
+          "id": "5",
+          "label": "120πI₀/(λdE)",
+          "explanation": "正しい実効高の式の逆数であり、長さの次元にもならない。"
+        },
+        {
+          "id": "6",
+          "label": "反比例",
+          "explanation": "実効高が大きいほど同じ電流による放射電界も強くなる。"
+        },
+        {
+          "id": "7",
+          "label": "基部",
+          "explanation": "垂直接地アンテナの下部の給電点で測る。"
+        },
+        {
+          "id": "8",
+          "label": "電界強度測定器",
+          "explanation": "距離dでの伝搬電界を測定する装置である。"
+        },
+        {
+          "id": "9",
+          "label": "I₀/he",
+          "explanation": "実効高を分母に入れると、比例関係に反する。"
+        },
+        {
+          "id": "10",
+          "label": "λdE/(120πI₀)",
+          "explanation": "測った電界Eと基部電流I₀から実効高に換算する式である。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "送信の放射電界も受信の誘起電圧も、他の条件が一定なら実効高に比例する。"
+        },
+        {
+          "label": "イ",
+          "answer": "7",
+          "explanation": "接地アンテナの電流I₀は給電点である基部の電流を使う。"
+        },
+        {
+          "label": "ウ",
+          "answer": "8",
+          "explanation": "距離dにおける電場の振幅を測れる計器を使う。"
+        },
+        {
+          "label": "エ",
+          "answer": "4",
+          "explanation": "E＝120πI₀he/(λd)で、電流と実効高の積が分子に入る。"
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "元の等式の両辺にλd/(120πI₀)を掛けた式である。"
+        }
+      ],
+      "officialLabel": "B−4",
+      "bankImageUrls": [
+        "/questions/general2/2022/2022-09-kogaku-b-p06.png"
+      ],
+      "bankImageAltTexts": [
+        "第二級総合無線通信士 2022年9月期 無線工学B 公式問題冊子PDF 6ページの問B−4。"
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表に従い、各解答欄を1点とする。"
+      }
+    }
+  },
+  {
+    "id": "general2-2022-september-kogaku-b-b05",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kogaku-b",
+    "qNumber": 5,
+    "officialQuestionLabel": "B−5",
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "スポラジックE層の発生条件",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "B−5　スポラジックE層の発生条件。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "スポラジックE層はE領域付近に一時的にできる高電子密度の薄層である。日本では夏の昼に多く、通常届かないVHFの遠距離伝搬を引き起こす場合がある。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kogaku-b-p06.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学B 公式問題冊子PDF 6ページの問B−5。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202412id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202409id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学B B−5（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "native-b",
+    "part": "b",
+    "answer": "",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "大きい",
+          "explanation": "周囲より電子密度が大きいので、通常より高い周波数も反射し得る。"
+        },
+        {
+          "id": "2",
+          "label": "夏季昼間",
+          "explanation": "日本で発生の多い時期と時間帯に対応する。"
+        },
+        {
+          "id": "3",
+          "label": "小さい",
+          "explanation": "周囲より電子密度が小さいとする説明は高密度層の性質と逆である。"
+        },
+        {
+          "id": "4",
+          "label": "D層と同じ",
+          "explanation": "D層は一般にE層より低い位置にある。"
+        },
+        {
+          "id": "5",
+          "label": "超短波（VHF）帯",
+          "explanation": "異常伝搬でFM放送等に影響し得る周波数帯である。"
+        },
+        {
+          "id": "6",
+          "label": "冬季夜間",
+          "explanation": "発生が特に多いのは冬の夜より夏の昼である。"
+        },
+        {
+          "id": "7",
+          "label": "マイクロ波（SHF）帯",
+          "explanation": "ここで問題とする反射の帯域はSHFより低いVHFである。"
+        },
+        {
+          "id": "8",
+          "label": "100",
+          "explanation": "スポラジックEによく見られる高度の概数である。"
+        },
+        {
+          "id": "9",
+          "label": "E層と同じ",
+          "explanation": "名前のとおり、主に電離層のE領域にできる。"
+        },
+        {
+          "id": "10",
+          "label": "400",
+          "explanation": "400 kmはF領域側の高度であり、スポラジックEの代表値ではない。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "5",
+          "explanation": "通常は電離層を通るVHF波が反射される場合がある。"
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "日本では夏季の昼間に発生が多い。"
+        },
+        {
+          "label": "ウ",
+          "answer": "1",
+          "explanation": "周りより電子密度が大きい領域が層として働く。"
+        },
+        {
+          "label": "エ",
+          "answer": "9",
+          "explanation": "スポラジックE層は通常のE層と同程度の高度にできる。"
+        },
+        {
+          "label": "オ",
+          "answer": "8",
+          "explanation": "E領域に対応する高度は約100 kmである。"
+        }
+      ],
+      "officialLabel": "B−5",
+      "bankImageUrls": [
+        "/questions/general2/2022/2022-09-kogaku-b-p06.png"
+      ],
+      "bankImageAltTexts": [
+        "第二級総合無線通信士 2022年9月期 無線工学B 公式問題冊子PDF 6ページの問B−5。"
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表に従い、各解答欄を1点とする。"
+      }
+    }
+  }
+]
