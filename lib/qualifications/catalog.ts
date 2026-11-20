@@ -1889,7 +1889,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_16.html",
     officialReuseTermsUrl: "https://www.jinji.go.jp/shinsei/notice.html",
     status: "live",
-    reuseSummary: "2023～2025年度の基礎能力試験113問、事務区分の適性試験360問、2025年度の専門試験（技術・農業土木・林業）179問を、公式正答・全肢解説付きで収録。",
+    reuseSummary: "2023～2025年度の基礎能力試験113問、事務区分の適性試験360問、2024・2025年度の専門試験279問（技術、2025年度の農業土木・林業）を、公式正答・全肢解説付きで収録。",
     attributionTemplate: "出典：人事院「一般職試験（高卒者試験）」。解説は過去問AIの独自作成。",
     remainingWork: ["2024・2023年度の技術・農業土木・林業の専門試験の補充"],
   },
