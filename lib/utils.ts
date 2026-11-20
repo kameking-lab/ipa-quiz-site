@@ -369,6 +369,7 @@ export const EXAM_LABELS: Record<string, string> = {
 
 
     "kikai-hozen": "機械保全技能士 2級",
+    "keimukan": "刑務官",
     "kaijo-hoan-gakko": "海上保安学校学生",
     "kouku-kanseikan": "航空管制官",
     "zaimu-senmonkan": "財務専門官",

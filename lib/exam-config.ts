@@ -1992,6 +1992,12 @@ caremanager: {
 
 
 
+"keimukan": {
+    code: "keimukan", nameFull: "刑務官採用試験", urlSlug: "keimukan", level: "basic",
+    sessions: [
+        { session: "kiso", urlSlug: "kiso", expectedQuestions: 40, label: "基礎能力試験", categories: ["文章理解", "判断推理", "数的推理", "資料解釈", "自然科学", "人文科学", "国語", "英語", "社会科学", "情報"] },
+    ], seasons: ["annual"], yearRange: { start: 2025, end: 2025 },
+},
 "kaijo-hoan-gakko": {
     code: "kaijo-hoan-gakko", nameFull: "海上保安学校学生採用試験", urlSlug: "kaijo-hoan-gakko", level: "specialist",
     sessions: [

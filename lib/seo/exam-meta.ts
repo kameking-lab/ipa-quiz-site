@@ -818,6 +818,7 @@ const EXAM_FULL_NAMES: Record<ExamCode, string> = {
 
 
 
+    "keimukan": "刑務官採用試験",
     "kaijo-hoan-gakko": "海上保安学校学生採用試験",
     "kouku-kanseikan": "航空管制官採用試験",
     "zaimu-senmonkan": "財務専門官採用試験",
@@ -1199,6 +1200,7 @@ const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number)
 
 
 
+    "keimukan": (c, y) => `刑務官採用試験の基礎能力試験を${y}年度分・計${c}問収録。公式正答と全肢解説で学べます。`,
     "kaijo-hoan-gakko": (c, y) => `海上保安学校学生採用試験の基礎能力試験・学科試験を${y}年度分・計${c}問収録。公式正答と全肢解説付き。`,
     "kouku-kanseikan": (c, y) => `航空管制官採用試験の適性試験Ⅰ・外国語試験の公開問題を${y}年度分・計${c}問収録。公式正答と全肢解説付き。`,
     "zaimu-senmonkan": (c, y) => `財務専門官採用試験の専門試験（多肢選択式）を${y}年度分・計${c}問収録。人事院の公式正答と全肢解説付き。`,
