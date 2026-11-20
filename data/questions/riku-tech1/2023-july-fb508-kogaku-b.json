@@ -1,0 +1,1706 @@
+[
+  {
+    "id": "riku-tech1-2023-july-fb508-kogaku-b-q101",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2023,
+    "season": "july",
+    "qNumber": 101,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "マクスウェル方程式からの波動方程式の導出"
+    ],
+    "difficulty": 3,
+    "question": "マクスウェル方程式からの波動方程式の導出。公式原問のA-1に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2023-july-fb508-kogaku-b-q101-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-1の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b.pdf#page=1",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialQuestionLabel": "A-1",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-1（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "回転、∇×、∇·、jωμ(σ+jωε)",
+      "イ": "回転、∇·、∇²、jωμ(σ+jωε)",
+      "ウ": "回転、∇×、∇²、−jωμ(σ+jωε)",
+      "エ": "発散、∇×、∇·、−jωμ(σ+jωε)",
+      "オ": "発散、∇·、∇²、jωμ(σ+jωε)"
+    },
+    "choiceExplanations": {
+      "ア": "二重の回転にはラプラシアン∇²が現れ、発散∇·だけではベクトルの波動方程式にならない。",
+      "イ": "回転をもう一度かける演算子は∇×であり、∇·ではない。",
+      "ウ": "両辺に回転∇×を作用させ、左辺の∇(∇·E)−∇²Eで∇·E=0とする。右辺へ∇×Hを代入して整理するとγ²=−jωμ(σ+jωε)となる。",
+      "エ": "演算記号∇×は回転であり、発散ではない。電界に作用する空間微分は∇²になる。",
+      "オ": "発散を取ると回転場の発散が0になるだけで、必要な電界のラプラシアンを得られない。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "両辺に回転∇×を作用させ、左辺の∇(∇·E)−∇²Eで∇·E=0とする。右辺へ∇×Hを代入して整理するとγ²=−jωμ(σ+jωε)となる。"
+  },
+  {
+    "id": "riku-tech1-2023-july-fb508-kogaku-b-q102",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2023,
+    "season": "july",
+    "qNumber": 102,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "微小ダイポールと半波長ダイポールの遠方界指向性"
+    ],
+    "difficulty": 3,
+    "question": "微小ダイポールと半波長ダイポールの遠方界指向性。公式原問のA-2に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2023-july-fb508-kogaku-b-q102-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-2の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b.pdf#page=1",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialQuestionLabel": "A-2",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-2（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "反比例する、cos θ、cos[(π/2)sin θ]/sin θ",
+      "イ": "反比例する、sin θ、cos[(π/2)sin θ]/sin θ",
+      "ウ": "関係しない、cos θ、cos[(π/2)sin θ]/sin θ",
+      "エ": "関係しない、cos θ、cos[(π/2)cos θ]/sin θ",
+      "オ": "関係しない、sin θ、cos[(π/2)cos θ]/sin θ"
+    },
+    "choiceExplanations": {
+      "ア": "素子軸θ=0では放射がゼロになるため、微小ダイポールの角度特性はcos θではない。",
+      "イ": "微小ダイポールのsin θは合うが、半波長ダイポールの分子にはcos θが入る。",
+      "ウ": "遠方界の指向性関数自体は距離に依存しないが、微小ダイポールは軸上で零となるsin θである。",
+      "エ": "半波長ダイポールの式は合うが、微小ダイポールの最大方向は軸と直角であり、cos θではない。",
+      "オ": "遠方界の角度特性D(θ)は距離によらない。微小ダイポールはsin θ、半波長ダイポールはcos[(π/2)cos θ]/sin θである。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "遠方界の角度特性D(θ)は距離によらない。微小ダイポールはsin θ、半波長ダイポールはcos[(π/2)cos θ]/sin θである。"
+  },
+  {
+    "id": "riku-tech1-2023-july-fb508-kogaku-b-q103",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2023,
+    "season": "july",
+    "qNumber": 103,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "相対利得10 dBのアンテナの実効面積"
+    ],
+    "difficulty": 3,
+    "question": "相対利得10 dBのアンテナの実効面積。公式原問のA-3に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2023-july-fb508-kogaku-b-q103-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-3の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b.pdf#page=1",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialQuestionLabel": "A-3",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-3（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "1.3 m²",
+      "イ": "2.2 m²",
+      "ウ": "3.4 m²",
+      "エ": "4.7 m²",
+      "オ": "6.9 m²"
+    },
+    "choiceExplanations": {
+      "ア": "半波長ダイポールの絶対利得は約1.64なので、相対利得10 dBを含む絶対利得は16.4となる。波長1 mよりAₑ=16.4/(4π)≒1.3 m²である。",
+      "イ": "波長は1 mなので、実効面積2.2 m²では必要な絶対利得16.4を上回る。",
+      "ウ": "相対利得10 dBを真数10に直し、基準ダイポールの絶対利得1.64を掛ける。",
+      "エ": "実効面積の換算では受信利得とλ²を4πで割るため、4.7 m²までは大きくならない。",
+      "オ": "相対利得だけからこの大きさにはならず、無損失半波長ダイポール基準から等方性基準へ直して求める。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "半波長ダイポールの絶対利得は約1.64なので、相対利得10 dBを含む絶対利得は16.4となる。波長1 mよりAₑ=16.4/(4π)≒1.3 m²である。"
+  },
+  {
+    "id": "riku-tech1-2023-july-fb508-kogaku-b-q104",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2023,
+    "season": "july",
+    "qNumber": 104,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "直線・楕円・円偏波の電界成分と軸比（誤りを選択）"
+    ],
+    "difficulty": 3,
+    "question": "直線・楕円・円偏波の電界成分と軸比（誤りを選択）。公式原問のA-4に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2023-july-fb508-kogaku-b-q104-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-4の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b.pdf#page=1",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialQuestionLabel": "A-4",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-4（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "電界が大地に垂直な直線偏波は垂直偏波である。",
+      "イ": "電界が大地に平行な直線偏波は水平偏波である。",
+      "ウ": "直交成分の位相差がπ/2で振幅が異なると楕円偏波である。",
+      "エ": "直交成分の位相差が0またはπなら直線偏波である。",
+      "オ": "軸比が∞に近いほど円偏波、1に近いほど直線偏波になる。"
+    },
+    "choiceExplanations": {
+      "ア": "正しい。垂直・水平の呼称は伝搬方向ではなく電界の向きで決まる。",
+      "イ": "正しい。電界の振動方向が大地に平行であれば水平直線偏波である。",
+      "ウ": "正しい。直交成分が四分の一周期ずれ、振幅が等しくない場合は電界の先端が楕円を描く。",
+      "エ": "正しい。二成分は同相または逆相であり、合成電界の向きは時間で回転しない。",
+      "オ": "誤り。軸比1は長軸と短軸が同じ円偏波である。軸比が非常に大きいと短軸が相対的に消え、直線偏波に近づく。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "誤り。軸比1は長軸と短軸が同じ円偏波である。軸比が非常に大きいと短軸が相対的に消え、直線偏波に近づく。"
+  },
+  {
+    "id": "riku-tech1-2023-july-fb508-kogaku-b-q105",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2023,
+    "season": "july",
+    "qNumber": 105,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "逆L形アンテナの垂直部の電流分布から求める実効高"
+    ],
+    "difficulty": 3,
+    "question": "逆L形アンテナの垂直部の電流分布から求める実効高。公式原問のA-5に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2023-july-fb508-kogaku-b-q105-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-5の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b.pdf#page=2",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialQuestionLabel": "A-5",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-5（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "λ/(4π)",
+      "イ": "λ/(2√2π)",
+      "ウ": "λ/(2π)",
+      "エ": "√3λ/(√2π)",
+      "オ": "√3λ/(4π)"
+    },
+    "choiceExplanations": {
+      "ア": "垂直部でI(z)=I₀cos(2πz/λ)となる。給電電流で割ってz=0からλ/12まで積分すると(λ/2π)sin(π/6)=λ/(4π)である。",
+      "イ": "この値は垂直部の電流分布の積分でsin(π/6)=1/2となることを反映しない。",
+      "ウ": "λ/(2π)は積分の係数であり、垂直部の長さで決まるsin(π/6)を掛ける必要がある。",
+      "エ": "水平部の長さを垂直部の積分範囲に含めない。垂直偏波に寄与する垂直部の範囲はλ/12である。",
+      "オ": "垂直部の上端でのcos(π/6)ではなく、電流を積分したsin(π/6)を使う。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "垂直部でI(z)=I₀cos(2πz/λ)となる。給電電流で割ってz=0からλ/12まで積分すると(λ/2π)sin(π/6)=λ/(4π)である。"
+  },
+  {
+    "id": "riku-tech1-2023-july-fb508-kogaku-b-q106",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2023,
+    "season": "july",
+    "qNumber": 106,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "短絡した平行二線給電線と等価なコイルのインダクタンス"
+    ],
+    "difficulty": 3,
+    "question": "短絡した平行二線給電線と等価なコイルのインダクタンス。公式原問のA-6に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2023-july-fb508-kogaku-b-q106-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-6の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b.pdf#page=2",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialQuestionLabel": "A-6",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-6（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "19.6 μH",
+      "イ": "15.2 μH",
+      "ウ": "9.6 μH",
+      "エ": "5.9 μH",
+      "オ": "2.5 μH"
+    },
+    "choiceExplanations": {
+      "ア": "線路は波長15 mに対して長さ1.25 mなので、リアクタンスの式にはtan(π/6)を使う。19.6 μHではリアクタンスが大きすぎる。",
+      "イ": "20 MHzで15.2 μHのリアクタンスは約1,910 Ωであり、線路の特性インピーダンス約553 Ωよりも大きい。",
+      "ウ": "短絡線路の電気長がπ/6では、リアクタンスは特性インピーダンスより小さくなる。",
+      "エ": "特性インピーダンスを線路の入力リアクタンスと同一視せず、電気長に応じたtan(π/6)を掛ける。",
+      "オ": "特性インピーダンスは120 ln(2D/d)≒553 Ωで、入力リアクタンスは553 tan(2π×1.25/15)≒319 Ωである。これを2π×20 MHzで割ると約2.5 μHとなる。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "特性インピーダンスは120 ln(2D/d)≒553 Ωで、入力リアクタンスは553 tan(2π×1.25/15)≒319 Ωである。これを2π×20 MHzで割ると約2.5 μHとなる。"
+  },
+  {
+    "id": "riku-tech1-2023-july-fb508-kogaku-b-q107",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2023,
+    "season": "july",
+    "qNumber": 107,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "同軸線路と平行平板線路の整合条件から求めるd/W"
+    ],
+    "difficulty": 3,
+    "question": "同軸線路と平行平板線路の整合条件から求めるd/W。公式原問のA-7に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2023-july-fb508-kogaku-b-q107-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-7の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b.pdf#page=2",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialQuestionLabel": "A-7",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-7（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "0.22",
+      "イ": "0.26",
+      "ウ": "0.29",
+      "エ": "0.32",
+      "オ": "0.35"
+    },
+    "choiceExplanations": {
+      "ア": "内外導体の径比6に対し、自然対数ln 6は約1.79である。2πで割った値は0.22より大きい。",
+      "イ": "同軸線路のインピーダンスは径比の自然対数に比例し、径比に与えられた6を使うと0.26を上回る。",
+      "ウ": "同軸の特性インピーダンスは(Z₀/2π√εᵣ)ln(b/a)である。平板線路の式と等置するとd/W=ln 6/(2π)≒0.29となる。",
+      "エ": "径比6での対数は、0.32に対応する値よりやや小さい。",
+      "オ": "誘電率の項は共通なので消える。線路形状だけで決まり、0.35にはならない。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "同軸の特性インピーダンスは(Z₀/2π√εᵣ)ln(b/a)である。平板線路の式と等置するとd/W=ln 6/(2π)≒0.29となる。"
+  },
+  {
+    "id": "riku-tech1-2023-july-fb508-kogaku-b-q108",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2023,
+    "season": "july",
+    "qNumber": 108,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "方形導波管の遮断波長・管内波長・速度"
+    ],
+    "difficulty": 3,
+    "question": "方形導波管の遮断波長・管内波長・速度。公式原問のA-8に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2023-july-fb508-kogaku-b-q108-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-8の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b.pdf#page=2",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialQuestionLabel": "A-8",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-8（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "1/√[(m/2a)²+(n/2b)²]、2a、λ/√[1−(λ/2b)²]、速い",
+      "イ": "1/√[(m/2a)²+(n/2b)²]、2b、λ/√[1−(λ/2a)²]、速い",
+      "ウ": "1/√[(m/2a)²+(n/2b)²]、2a、λ/√[1−(λ/2a)²]、遅い",
+      "エ": "1/√[(n/2a)²+(m/2b)²]、2b、λ/√[1−(λ/2b)²]、速い",
+      "オ": "1/√[(n/2a)²+(m/2b)²]、2b、λ/√[1−(λ/2a)²]、遅い"
+    },
+    "choiceExplanations": {
+      "ア": "TE₁₀の管内波長は遮断波長2aで決まり、2bは使わない。導波管内では群速度が位相速度より小さい。",
+      "イ": "m=1、n=0を式に入れると遮断波長は2aである。速度の大小も逆である。",
+      "ウ": "幅a方向のモード番号mと高さb方向のnから遮断波長を求め、TE₁₀では2aを管内波長式へ入れる。位相速度が自由空間の速さを上回り、群速度は下回る。",
+      "エ": "mとnに対応する管の寸法を入れ替えている。TE₁₀の遮断波長は広い方のaで決まる。",
+      "オ": "群速度の関係は合うが、モード番号と寸法の対応が逆であり、TE₁₀の遮断波長は2aとなる。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "幅a方向のモード番号mと高さb方向のnから遮断波長を求め、TE₁₀では2aを管内波長式へ入れる。位相速度が自由空間の速さを上回り、群速度は下回る。"
+  },
+  {
+    "id": "riku-tech1-2023-july-fb508-kogaku-b-q109",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2023,
+    "season": "july",
+    "qNumber": 109,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "ベーテ孔方向性結合器における電界・磁界結合"
+    ],
+    "difficulty": 3,
+    "question": "ベーテ孔方向性結合器における電界・磁界結合。公式原問のA-9に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2023-july-fb508-kogaku-b-q109-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-9の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b.pdf#page=3",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      3
+    ],
+    "officialQuestionLabel": "A-9",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-9（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "電界結合、磁界結合、sin θ、比例する",
+      "イ": "電界結合、磁界結合、cos θ、比例する",
+      "ウ": "電界結合、磁界結合、cos θ、無関係である",
+      "エ": "磁界結合、電界結合、sin θ、無関係である",
+      "オ": "磁界結合、電界結合、cos θ、比例する"
+    },
+    "choiceExplanations": {
+      "ア": "結合の種類は順に合うが、磁界の結合は交差角の余弦にほぼ比例する。",
+      "イ": "交差角依存性は正しいが、方向選別度はこの構造ではほぼ周波数に依存しない。",
+      "ウ": "電界結合は両方向に対称で、磁界結合の大きさはcos θで変わる。両者の干渉による方向選別度はほぼ周波数によらない。",
+      "エ": "両方向に対称に伝わるのは電界結合成分である。角度で調整するのは磁界結合である。",
+      "オ": "余弦の関係は磁界結合側に当たるが、対称に進む成分と方向性を与える成分の対応が逆である。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "電界結合は両方向に対称で、磁界結合の大きさはcos θで変わる。両者の干渉による方向選別度はほぼ周波数によらない。"
+  },
+  {
+    "id": "riku-tech1-2023-july-fb508-kogaku-b-q110",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2023,
+    "season": "july",
+    "qNumber": 110,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "アレー・レフレクタ・折返しアンテナの特徴"
+    ],
+    "difficulty": 3,
+    "question": "アレー・レフレクタ・折返しアンテナの特徴。公式原問のA-10に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2023-july-fb508-kogaku-b-q110-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-10の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b.pdf#page=3",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      3
+    ],
+    "officialQuestionLabel": "A-10",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-10（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "コーリニアアレーの隣接素子は同振幅・逆位相で励振する。",
+      "イ": "60°コーナレフレクタは励振素子と5個の影像の合成として求める。",
+      "ウ": "対数周期ダイポールアレーは半波長ダイポールより狭帯域である。",
+      "エ": "等径二線式折返しダイポールの受信開放電圧は通常のダイポールと同じである。",
+      "オ": "ブラウンアンテナの放射素子と地線はともに約λ/2である。"
+    },
+    "choiceExplanations": {
+      "ア": "垂直に並べた各素子から水平方向へ同相で放射するように励振する。",
+      "イ": "60°の角を鏡映で埋めると360°/60°=6区画になる。実素子以外の5区画に影像があり、計6波を合成する。",
+      "ウ": "異なる長さの複数素子を使い、周波数に応じて主に動作する素子が変わるため広帯域になる。",
+      "エ": "折返しダイポールは同径二線式で給電端の開放電圧が通常の約2倍になる。",
+      "オ": "ブラウンアンテナの垂直素子や地線は典型的に約λ/4であり、どちらもλ/2とはしない。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "60°の角を鏡映で埋めると360°/60°=6区画になる。実素子以外の5区画に影像があり、計6波を合成する。"
+  },
+  {
+    "id": "riku-tech1-2023-july-fb508-kogaku-b-q111",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2023,
+    "season": "july",
+    "qNumber": 111,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "三線式折返しダイポールの受信実効長"
+    ],
+    "difficulty": 3,
+    "question": "三線式折返しダイポールの受信実効長。公式原問のA-11に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2023-july-fb508-kogaku-b-q111-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-11の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b.pdf#page=3",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      3
+    ],
+    "officialQuestionLabel": "A-11",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-11（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "76 cm",
+      "イ": "96 cm",
+      "ウ": "115 cm",
+      "エ": "155 cm",
+      "オ": "191 cm"
+    },
+    "choiceExplanations": {
+      "ア": "150 MHzの波長は2 mであり、通常の半波長ダイポールの実効長は約64 cmである。三線式ではその3倍になる。",
+      "イ": "外形の長さλ/2と受信端の実効長は異なる。",
+      "ウ": "3本の同じ素子に電流が分かれることを考慮した実効長より短い。",
+      "エ": "二線式に近い値にとどまり、3本が近接して等しく作用する条件の実効長に合わない。",
+      "オ": "半波長ダイポールの実効長はλ/πであり、等径三線式では3λ/πとなる。λ=2 mなので約1.91 mである。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "半波長ダイポールの実効長はλ/πであり、等径三線式では3λ/πとなる。λ=2 mなので約1.91 mである。"
+  },
+  {
+    "id": "riku-tech1-2023-july-fb508-kogaku-b-q112",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2023,
+    "season": "july",
+    "qNumber": 112,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "交互に傾けたスロットアレーから放射される偏波"
+    ],
+    "difficulty": 3,
+    "question": "交互に傾けたスロットアレーから放射される偏波。公式原問のA-12に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2023-july-fb508-kogaku-b-q112-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-12の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b.pdf#page=3",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      3
+    ],
+    "officialQuestionLabel": "A-12",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-12（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "垂直、λg/4、y成分、水平偏波",
+      "イ": "垂直、λg/4、z成分、垂直偏波",
+      "ウ": "平行、λg/2、y成分、水平偏波",
+      "エ": "平行、λg/2、z成分、水平偏波",
+      "オ": "垂直、λg/2、z成分、垂直偏波"
+    },
+    "choiceExplanations": {
+      "ア": "管壁の電流はz軸に平行で、反転は180°の位相差に当たるλg/2で起こる。",
+      "イ": "隣接スロット間隔はλg/2である。打ち消されるz成分は鉛直側なので、残る偏波は水平になる。",
+      "ウ": "電流の向きと反転間隔は合うが、打ち消されるのはz側の成分である。",
+      "エ": "管壁の電流はz方向で、隣り合うλg/2の間に位相が反転する。交互に傾けるとz成分が相殺され、y成分が合成されて水平偏波になる。",
+      "オ": "反転間隔と消える成分は合うが、水平なy成分が残るので垂直偏波ではない。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "管壁の電流はz方向で、隣り合うλg/2の間に位相が反転する。交互に傾けるとz成分が相殺され、y成分が合成されて水平偏波になる。"
+  },
+  {
+    "id": "riku-tech1-2023-july-fb508-kogaku-b-q113",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2023,
+    "season": "july",
+    "qNumber": 113,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "等位相面を作る誘電体レンズの形状式"
+    ],
+    "difficulty": 3,
+    "question": "等位相面を作る誘電体レンズの形状式。公式原問のA-13に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2023-july-fb508-kogaku-b-q113-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-13の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b.pdf#page=4",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      4
+    ],
+    "officialQuestionLabel": "A-13",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-13（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "(r cos θ−l)/vᴅ、v₀/vᴅ、(n+1)l/(n cos θ−1)",
+      "イ": "(r cos θ+l)/vᴅ、vᴅ/v₀、(n+1)l/(n−cos θ)",
+      "ウ": "(r cos θ−l)/vᴅ、vᴅ/v₀、(n−1)l/(n−cos θ)",
+      "エ": "(r cos θ+l)/vᴅ、v₀/vᴅ、(n+1)l/(n cos θ−1)",
+      "オ": "(r cos θ−l)/vᴅ、v₀/vᴅ、(n−1)l/(n cos θ−1)"
+    },
+    "choiceExplanations": {
+      "ア": "誘電体中の厚さと屈折率は合うが、両経路の伝搬時間を等置すると分子は(n−1)lとなる。",
+      "イ": "厚みは軸方向の投影からlを引いて得る。屈折率は速度の比v₀/vᴅである。",
+      "ウ": "誘電体の厚みの項は合うが、屈折率は真空中の速さを媒質中の速さで割る。",
+      "エ": "平面側から中心面までの誘電体の厚みに軸方向距離lを足すのではなく差を取る。",
+      "オ": "誘電体の厚みはr cos θ−l、屈折率はv₀/vᴅである。時間の等式に代入するとr=l+n(r cos θ−l)となり、これを解いた式になる。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "誘電体の厚みはr cos θ−l、屈折率はv₀/vᴅである。時間の等式に代入するとr=l+n(r cos θ−l)となり、これを解いた式になる。"
+  },
+  {
+    "id": "riku-tech1-2023-july-fb508-kogaku-b-q114",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2023,
+    "season": "july",
+    "qNumber": 114,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "大地反射と直接波が遠方側で強め合う距離"
+    ],
+    "difficulty": 3,
+    "question": "大地反射と直接波が遠方側で強め合う距離。公式原問のA-14に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2023-july-fb508-kogaku-b-q114-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-14の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b.pdf#page=4",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      4
+    ],
+    "officialQuestionLabel": "A-14",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-14（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "5 km",
+      "イ": "8 km",
+      "ウ": "12 km",
+      "エ": "15 km",
+      "オ": "20 km"
+    },
+    "choiceExplanations": {
+      "ア": "5 kmでは経路差が約2.0 mとなり、反射位相を打ち消す最初の条件λ/2=1.25 mに一致しない。",
+      "イ": "波長は2.5 mで、経路差は遠方で約2×200×25/dである。大地でπ反転するので、経路差λ/2=1.25 mで強め合い、d約8 kmを得る。",
+      "ウ": "12 kmでは経路差が約0.83 mに下がり、図の極大条件λ/2を満たさない。",
+      "エ": "経路差を1.25 mとするには分母の距離を15 kmより短くする。",
+      "オ": "20 kmでは経路差が約0.5 mと小さく、反射の位相反転を十分補わない。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "波長は2.5 mで、経路差は遠方で約2×200×25/dである。大地でπ反転するので、経路差λ/2=1.25 mで強め合い、d約8 kmを得る。"
+  },
+  {
+    "id": "riku-tech1-2023-july-fb508-kogaku-b-q115",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2023,
+    "season": "july",
+    "qNumber": 115,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "平行偏波の反射がゼロになる入射角"
+    ],
+    "difficulty": 3,
+    "question": "平行偏波の反射がゼロになる入射角。公式原問のA-15に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2023-july-fb508-kogaku-b-q115-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-15の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b.pdf#page=4",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      4
+    ],
+    "officialQuestionLabel": "A-15",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-15（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "tan i、ブルースター角、90°",
+      "イ": "tan i、グレージング角、120°",
+      "ウ": "cot i、ブルースター角、120°",
+      "エ": "cot i、グレージング角、90°",
+      "オ": "cot i、ブルースター角、90°"
+    },
+    "choiceExplanations": {
+      "ア": "平行偏波の反射が消える条件は屈折率n=tan iであり、この入射角がブルースター角である。入射角と屈折角の和は90°となる。",
+      "イ": "n=tan iは合うが、グレージング角は面と波のなす角に関する呼称である。ブルースター条件の和は90°である。",
+      "ウ": "角の名称は合うが、nはcot iではなくtan iとなる。",
+      "エ": "入射波と反射波の関係から求める角の名称はブルースター角であり、屈折率も余接ではない。",
+      "オ": "角の名称と角度和は合うが、屈折率は入射角の正接である。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "平行偏波の反射が消える条件は屈折率n=tan iであり、この入射角がブルースター角である。入射角と屈折角の和は90°となる。"
+  },
+  {
+    "id": "riku-tech1-2023-july-fb508-kogaku-b-q116",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2023,
+    "season": "july",
+    "qNumber": 116,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "等価地球半径を使ったVHFアンテナの見通し距離"
+    ],
+    "difficulty": 3,
+    "question": "等価地球半径を使ったVHFアンテナの見通し距離。公式原問のA-16に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2023-july-fb508-kogaku-b-q116-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-16の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b.pdf#page=5",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      5
+    ],
+    "officialQuestionLabel": "A-16",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-16（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "sin θ、d/(kR)、√(2kRh)",
+      "イ": "sin θ、d/(2kR)、√(kRh/2)",
+      "ウ": "cos θ、d/(2kR)、√(2kRh)",
+      "エ": "cos θ、d/(kR)、√(2kRh)",
+      "オ": "cos θ、d/(2kR)、√(kRh/2)"
+    },
+    "choiceExplanations": {
+      "ア": "弧長と距離の式は合うが、接線に直交する半径kRはθの隣辺なのでcos θで求める。",
+      "イ": "三角形では余弦を使い、弧長は等価半径kRにθを掛ける。",
+      "ウ": "余弦と近似距離は合うが、弧長を角に直す分母は直径2kRではなく半径kRである。",
+      "エ": "直角三角形からcos θ=kR/(kR+h)、弧長からθ=d/(kR)である。小角近似1−cos θ≃θ²/2を用いるとd≃√(2kRh)となる。",
+      "オ": "余弦は合うが、弧長式に余分な2が入っている。小角近似で求める距離は選択肢の2倍となる。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "直角三角形からcos θ=kR/(kR+h)、弧長からθ=d/(kR)である。小角近似1−cos θ≃θ²/2を用いるとd≃√(2kRh)となる。"
+  },
+  {
+    "id": "riku-tech1-2023-july-fb508-kogaku-b-q117",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2023,
+    "season": "july",
+    "qNumber": 117,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "対流圏で起きる三種類のフェージングの要因"
+    ],
+    "difficulty": 3,
+    "question": "対流圏で起きる三種類のフェージングの要因。公式原問のA-17に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2023-july-fb508-kogaku-b-q117-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-17の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b.pdf#page=5",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      5
+    ],
+    "officialQuestionLabel": "A-17",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-17（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "大気の屈折率、散乱波、大きく",
+      "イ": "太陽フレア、大地反射波、小さく",
+      "ウ": "大気の屈折率、大地反射波、小さく",
+      "エ": "大気の屈折率、大地反射波、大きく",
+      "オ": "太陽フレア、散乱波、小さく"
+    },
+    "choiceExplanations": {
+      "ア": "対流圏の屈折率の変動は合うが、干渉性k形の相手は大地反射波である。",
+      "イ": "対流圏シンチレーションは大気の屈折率の乱れによって生じる。kが小さいと大地の膨らみが相対的に大きくなり回折損は増えやすい。",
+      "ウ": "最初の二つは合うが、kが大きくなる方が大地とのクリアランスが増し、回折損は小さくなる。",
+      "エ": "大気の屈折率のゆらぎがシンチレーションを引き起こし、干渉性k形では大地反射波が直接波に重なる。kが大きいと等価地球が平坦に近く見え、回折損が減る。",
+      "オ": "太陽活動による電離圏の変化と対流圏のゆらぎを混同している。干渉性k形の代表は大地反射による干渉である。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "大気の屈折率のゆらぎがシンチレーションを引き起こし、干渉性k形では大地反射波が直接波に重なる。kが大きいと等価地球が平坦に近く見え、回折損が減る。"
+  },
+  {
+    "id": "riku-tech1-2023-july-fb508-kogaku-b-q118",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2023,
+    "season": "july",
+    "qNumber": 118,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "アンテナ近傍界の円筒面・平面走査と適したビーム"
+    ],
+    "difficulty": 3,
+    "question": "アンテナ近傍界の円筒面・平面走査と適したビーム。公式原問のA-18に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2023-july-fb508-kogaku-b-q118-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-18の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b.pdf#page=5",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      5
+    ],
+    "officialQuestionLabel": "A-18",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-18（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "左右、ファンビーム、ペンシルビーム",
+      "イ": "上下、ファンビーム、ペンシルビーム",
+      "ウ": "左右、ファンビーム、無指向性",
+      "エ": "左右、ペンシルビーム、無指向性",
+      "オ": "上下、ペンシルビーム、ファンビーム"
+    },
+    "choiceExplanations": {
+      "ア": "測定に適したビームは合うが、回転で方位を変え、プローブは筒の軸に沿って上下に動かす。",
+      "イ": "円筒面走査はアンテナの軸回りの回転とプローブの上下移動を組み合わせ、ファンビームに適する。平面走査は前方への指向性が鋭いペンシルビームに適する。",
+      "ウ": "円筒を埋めるには軸に沿って上下に測る。単一の前方平面は全方向を測る無指向性アンテナには適さない。",
+      "エ": "円筒面走査のプローブは上下方向であり、平面走査は指向性の鋭いアンテナに用いられる。",
+      "オ": "上下方向は合うが、方位方向に広いファンビームには円筒面、前方に絞られたペンシルビームには平面が向く。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "円筒面走査はアンテナの軸回りの回転とプローブの上下移動を組み合わせ、ファンビームに適する。平面走査は前方への指向性が鋭いペンシルビームに適する。"
+  },
+  {
+    "id": "riku-tech1-2023-july-fb508-kogaku-b-q119",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2023,
+    "season": "july",
+    "qNumber": 119,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "開放と短絡の測定から求める無損失給電線の特性インピーダンス"
+    ],
+    "difficulty": 3,
+    "question": "開放と短絡の測定から求める無損失給電線の特性インピーダンス。公式原問のA-19に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2023-july-fb508-kogaku-b-q119-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-19の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b.pdf#page=6",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      6
+    ],
+    "officialQuestionLabel": "A-19",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-19（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "20 Ω",
+      "イ": "35 Ω",
+      "ウ": "50 Ω",
+      "エ": "60 Ω",
+      "オ": "75 Ω"
+    },
+    "choiceExplanations": {
+      "ア": "開放と短絡の測定値の積は3,600 Ω²であり、20 Ωを二乗した値より大きい。",
+      "イ": "開放時と短絡時ではcotとtanが打ち消し合うため、絶対値の積の平方根を使う。",
+      "ウ": "特性インピーダンスの二乗が測定値の積3,600 Ω²になるので50 Ωでは小さい。",
+      "エ": "開放入力Zₒ=−jZ₀cot βl、短絡入力Zₛ=jZ₀tan βlである。積がZ₀²になるので√(120×30)=60 Ωである。",
+      "オ": "75 Ωを二乗すると測定値の積3600 Ω²を上回る。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "開放入力Zₒ=−jZ₀cot βl、短絡入力Zₛ=jZ₀tan βlである。積がZ₀²になるので√(120×30)=60 Ωである。"
+  },
+  {
+    "id": "riku-tech1-2023-july-fb508-kogaku-b-q120",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2023,
+    "season": "july",
+    "qNumber": 120,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "Y係数法による受信機とアンテナ系の雑音温度の計算"
+    ],
+    "difficulty": 3,
+    "question": "Y係数法による受信機とアンテナ系の雑音温度の計算。公式原問のA-20に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2023-july-fb508-kogaku-b-q120-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-20の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b.pdf#page=6",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      6
+    ],
+    "officialQuestionLabel": "A-20",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B A-20（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "(T₀−Tᵣ)/(Tₙ−Tᵣ)、(T₀−Y₁Tₙ)/(Y₁+1)、(Tₙ−Tᵣ)/Y₂+Tᵣ",
+      "イ": "(T₀−Tᵣ)/(Tₙ−Tᵣ)、(T₀−Y₁Tₙ)/(1−Y₁)、(Tₙ+Tᵣ)/Y₂−Tᵣ",
+      "ウ": "(T₀−Tᵣ)/(Tₙ−Tᵣ)、(T₀−Y₁Tₙ)/(Y₁−1)、(Tₙ−Tᵣ)/Y₂−Tᵣ",
+      "エ": "(T₀+Tᵣ)/(Tₙ+Tᵣ)、(T₀−Y₁Tₙ)/(Y₁+1)、(Tₙ+Tᵣ)/Y₂−Tᵣ",
+      "オ": "(T₀+Tᵣ)/(Tₙ+Tᵣ)、(T₀−Y₁Tₙ)/(Y₁−1)、(Tₙ+Tᵣ)/Y₂−Tᵣ"
+    },
+    "choiceExplanations": {
+      "ア": "受信機自身の等価雑音温度は入力源の雑音温度に加える。雑音の比で減算する式は使わない。",
+      "イ": "アンテナ系の温度式Cは合うが、最初の比では加算を用い、それを解く分母はY₁−1である。",
+      "ウ": "Tᵣは入力で加わる温度なので、Y₁やTₐの分子のTᵣを引かない。",
+      "エ": "AとCは合うが、Y₁の式を解くと受信機温度に掛かる係数はY₁−1になる。",
+      "オ": "Y₁では雑音源温度にTᵣを加えて比を取るので、(Y₁−1)Tᵣ=T₀−Y₁Tₙとなる。Y₂の式からはTₐ=(Tₙ+Tᵣ)/Y₂−Tᵣである。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "Y₁では雑音源温度にTᵣを加えて比を取るので、(Y₁−1)Tᵣ=T₀−Y₁Tₙとなる。Y₂の式からはTₐ=(Tₙ+Tᵣ)/Y₂−Tᵣである。"
+  },
+  {
+    "id": "riku-tech1-2023-july-fb508-kogaku-b-q121",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2023,
+    "season": "july",
+    "qNumber": 121,
+    "type": "native-b",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "アンテナの実効長・利得・実効面積"
+    ],
+    "difficulty": 3,
+    "question": "アンテナの実効長・利得・実効面積。公式原問のB-1に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2023-july-fb508-kogaku-b-q121-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B B-1の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b.pdf#page=6",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      6
+    ],
+    "officialQuestionLabel": "B-1",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B B-1（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "nativeB": {
+      "mode": "binary",
+      "officialLabel": "B-1",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "正しい"
+        },
+        {
+          "id": "2",
+          "label": "誤っている"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "アの実効長と電流分布の積分",
+          "answer": "1",
+          "explanation": "正しい。このモデルでの実効長は、線上電流を積分して給電点の電流で割ると求められる。",
+          "candidateExplanations": {
+            "1": "正しい。このモデルでの実効長は、線上電流を積分して給電点の電流で割ると求められる。",
+            "2": "このモデルでの実効長は、線上電流を積分して給電点の電流で割ると求められる。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "イの相対利得と指向性利得の関係",
+          "answer": "2",
+          "explanation": "誤っている。半波長ダイポールを基準とした利得は等方性基準に直す必要があり、無損失でも指向性利得と数値は同じではない。",
+          "candidateExplanations": {
+            "2": "誤っている。半波長ダイポールを基準とした利得は等方性基準に直す必要があり、無損失でも指向性利得と数値は同じではない。",
+            "1": "半波長ダイポールを基準とした利得は等方性基準に直す必要があり、無損失でも指向性利得と数値は同じではない。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "ウの不整合時の動作利得",
+          "answer": "2",
+          "explanation": "誤っている。入力反射による減少の係数は1−反射係数の絶対値の二乗である。提示された反射損Mを用いるなら動作利得はG/Mである。",
+          "candidateExplanations": {
+            "2": "誤っている。入力反射による減少の係数は1−反射係数の絶対値の二乗である。提示された反射損Mを用いるなら動作利得はG/Mである。",
+            "1": "入力反射による減少の係数は1−反射係数の絶対値の二乗である。提示された反射損Mを用いるなら動作利得はG/Mである。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "エの自由空間利得と実効長の比例関係",
+          "answer": "2",
+          "explanation": "誤っている。利得には実効長の二乗や給電抵抗、波長が関係し、実効長だけに比例するわけではない。",
+          "candidateExplanations": {
+            "2": "誤っている。利得には実効長の二乗や給電抵抗、波長が関係し、実効長だけに比例するわけではない。",
+            "1": "利得には実効長の二乗や給電抵抗、波長が関係し、実効長だけに比例するわけではない。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "オの一様な理想開口実効面積",
+          "answer": "1",
+          "explanation": "正しい。一様な位相と振幅を持つ理想開口は開口効率が1であり、実効面積は幾何学的開口面積に等しい。",
+          "candidateExplanations": {
+            "1": "正しい。一様な位相と振幅を持つ理想開口は開口効率が1であり、実効面積は幾何学的開口面積に等しい。",
+            "2": "一様な位相と振幅を持つ理想開口は開口効率が1であり、実効面積は幾何学的開口面積に等しい。"
+          }
+        }
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    },
+    "explanation": "正しい。このモデルでの実効長は、線上電流を積分して給電点の電流で割ると求められる。\n誤っている。半波長ダイポールを基準とした利得は等方性基準に直す必要があり、無損失でも指向性利得と数値は同じではない。\n誤っている。入力反射による減少の係数は1−反射係数の絶対値の二乗である。提示された反射損Mを用いるなら動作利得はG/Mである。\n誤っている。利得には実効長の二乗や給電抵抗、波長が関係し、実効長だけに比例するわけではない。\n正しい。一様な位相と振幅を持つ理想開口は開口効率が1であり、実効面積は幾何学的開口面積に等しい。"
+  },
+  {
+    "id": "riku-tech1-2023-july-fb508-kogaku-b-q122",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2023,
+    "season": "july",
+    "qNumber": 122,
+    "type": "native-b",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "同軸線路と導波管に現れる伝送モード"
+    ],
+    "difficulty": 3,
+    "question": "同軸線路と導波管に現れる伝送モード。公式原問のB-2に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2023-july-fb508-kogaku-b-q122-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B B-2の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b.pdf#page=6",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      6
+    ],
+    "officialQuestionLabel": "B-2",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B B-2（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "nativeB": {
+      "mode": "binary",
+      "officialLabel": "B-2",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "正しい"
+        },
+        {
+          "id": "2",
+          "label": "誤っている"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "アの方形導波管のTEM",
+          "answer": "2",
+          "explanation": "誤っている。中空の単導体導波管では横断面に二導体の電位差がなく、TEMモードは伝搬しない。",
+          "candidateExplanations": {
+            "2": "誤っている。中空の単導体導波管では横断面に二導体の電位差がなく、TEMモードは伝搬しない。",
+            "1": "中空の単導体導波管では横断面に二導体の電位差がなく、TEMモードは伝搬しない。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "イのTEとHの表記",
+          "answer": "1",
+          "explanation": "正しい。TEでは伝搬軸方向に磁界成分を持つため、Hモードという記法も使われる。",
+          "candidateExplanations": {
+            "1": "正しい。TEでは伝搬軸方向に磁界成分を持つため、Hモードという記法も使われる。",
+            "2": "TEでは伝搬軸方向に磁界成分を持つため、Hモードという記法も使われる。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "ウのTMの零次数",
+          "answer": "2",
+          "explanation": "誤っている。TMでは縦電界が境界でゼロとなり、mかnを0にすると縦電界全体がゼロになるためモードが成立しない。",
+          "candidateExplanations": {
+            "2": "誤っている。TMでは縦電界が境界でゼロとなり、mかnを0にすると縦電界全体がゼロになるためモードが成立しない。",
+            "1": "TMでは縦電界が境界でゼロとなり、mかnを0にすると縦電界全体がゼロになるためモードが成立しない。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "エの円形導波管の基本モード",
+          "answer": "1",
+          "explanation": "正しい。円形導波管では遮断周波数が最も低いTE₁₁が支配的な基本モードである。",
+          "candidateExplanations": {
+            "1": "正しい。円形導波管では遮断周波数が最も低いTE₁₁が支配的な基本モードである。",
+            "2": "円形導波管では遮断周波数が最も低いTE₁₁が支配的な基本モードである。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "オの同軸線路で一般に使われるモード",
+          "answer": "1",
+          "explanation": "正しい。同軸線路で通常使うのはTEMモードであり、不要な高次モードを励振する周波数域は避ける。",
+          "candidateExplanations": {
+            "1": "正しい。同軸線路で通常使うのはTEMモードであり、不要な高次モードを励振する周波数域は避ける。",
+            "2": "同軸線路で通常使うのはTEMモードであり、不要な高次モードを励振する周波数域は避ける。"
+          }
+        }
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    },
+    "explanation": "誤っている。中空の単導体導波管では横断面に二導体の電位差がなく、TEMモードは伝搬しない。\n正しい。TEでは伝搬軸方向に磁界成分を持つため、Hモードという記法も使われる。\n誤っている。TMでは縦電界が境界でゼロとなり、mかnを0にすると縦電界全体がゼロになるためモードが成立しない。\n正しい。円形導波管では遮断周波数が最も低いTE₁₁が支配的な基本モードである。\n正しい。同軸線路で通常使うのはTEMモードであり、不要な高次モードを励振する周波数域は避ける。"
+  },
+  {
+    "id": "riku-tech1-2023-july-fb508-kogaku-b-q123",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2023,
+    "season": "july",
+    "qNumber": 123,
+    "type": "native-b",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "軸方向に放射するヘリカルアンテナの構造と特性"
+    ],
+    "difficulty": 3,
+    "question": "軸方向に放射するヘリカルアンテナの構造と特性。公式原問のB-3に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2023-july-fb508-kogaku-b-q123-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B B-3の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b.pdf#page=7",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      7
+    ],
+    "officialQuestionLabel": "B-3",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B B-3（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "nativeB": {
+      "mode": "shared-bank",
+      "officialLabel": "B-3",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1/4波長"
+        },
+        {
+          "id": "2",
+          "label": "サイドファイヤ"
+        },
+        {
+          "id": "3",
+          "label": "円"
+        },
+        {
+          "id": "4",
+          "label": "少なく"
+        },
+        {
+          "id": "5",
+          "label": "狭くなる"
+        },
+        {
+          "id": "6",
+          "label": "1波長"
+        },
+        {
+          "id": "7",
+          "label": "エンドファイヤ"
+        },
+        {
+          "id": "8",
+          "label": "直線"
+        },
+        {
+          "id": "9",
+          "label": "多く"
+        },
+        {
+          "id": "10",
+          "label": "広くなる"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "7",
+          "explanation": "図は軸上の方向に強く放射するので、エンドファイヤ型である。",
+          "candidateExplanations": {
+            "1": "軸方向進行波を作るための1巻きの長さとしては短い。空欄アに当てはまるのは「エンドファイヤ」である。",
+            "2": "主な放射が軸と直角な方向に出る場合の呼称である。空欄アに当てはまるのは「エンドファイヤ」である。",
+            "3": "回転して円を描く偏波である。空欄アに当てはまるのは「エンドファイヤ」である。",
+            "4": "開口長が減って主ビームが広くなる方向である。空欄アに当てはまるのは「エンドファイヤ」である。",
+            "5": "入力インピーダンスが安定する効果とは方向が逆である。空欄アに当てはまるのは「エンドファイヤ」である。",
+            "6": "軸モードで進行波になる代表的な円周の長さである。空欄アに当てはまるのは「エンドファイヤ」である。",
+            "7": "図は軸上の方向に強く放射するので、エンドファイヤ型である。",
+            "8": "電界方向が固定される偏波である。空欄アに当てはまるのは「エンドファイヤ」である。",
+            "9": "軸方向の長さが増し、狭い主ビームを作りやすい。空欄アに当てはまるのは「エンドファイヤ」である。",
+            "10": "長いヘリックスの安定した入力特性に対応する。空欄アに当てはまるのは「エンドファイヤ」である。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "6",
+          "explanation": "1巻きのおおよその円周長を波長に近づけると、軸方向への放射を作る進行波が成立する。",
+          "candidateExplanations": {
+            "1": "軸方向進行波を作るための1巻きの長さとしては短い。空欄イに当てはまるのは「1波長」である。",
+            "2": "主な放射が軸と直角な方向に出る場合の呼称である。空欄イに当てはまるのは「1波長」である。",
+            "3": "回転して円を描く偏波である。空欄イに当てはまるのは「1波長」である。",
+            "4": "開口長が減って主ビームが広くなる方向である。空欄イに当てはまるのは「1波長」である。",
+            "5": "入力インピーダンスが安定する効果とは方向が逆である。空欄イに当てはまるのは「1波長」である。",
+            "6": "1巻きのおおよその円周長を波長に近づけると、軸方向への放射を作る進行波が成立する。",
+            "7": "主放射がアンテナの軸方向に向かう形式である。空欄イに当てはまるのは「1波長」である。",
+            "8": "電界方向が固定される偏波である。空欄イに当てはまるのは「1波長」である。",
+            "9": "軸方向の長さが増し、狭い主ビームを作りやすい。空欄イに当てはまるのは「1波長」である。",
+            "10": "長いヘリックスの安定した入力特性に対応する。空欄イに当てはまるのは「1波長」である。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "3",
+          "explanation": "1巻きが約1波長の軸モードでは、軸方向にほぼ円偏波が放射される。",
+          "candidateExplanations": {
+            "1": "軸方向進行波を作るための1巻きの長さとしては短い。空欄ウに当てはまるのは「円」である。",
+            "2": "主な放射が軸と直角な方向に出る場合の呼称である。空欄ウに当てはまるのは「円」である。",
+            "3": "1巻きが約1波長の軸モードでは、軸方向にほぼ円偏波が放射される。",
+            "4": "開口長が減って主ビームが広くなる方向である。空欄ウに当てはまるのは「円」である。",
+            "5": "入力インピーダンスが安定する効果とは方向が逆である。空欄ウに当てはまるのは「円」である。",
+            "6": "軸モードで進行波になる代表的な円周の長さである。空欄ウに当てはまるのは「円」である。",
+            "7": "主放射がアンテナの軸方向に向かう形式である。空欄ウに当てはまるのは「円」である。",
+            "8": "電界方向が固定される偏波である。空欄ウに当てはまるのは「円」である。",
+            "9": "軸方向の長さが増し、狭い主ビームを作りやすい。空欄ウに当てはまるのは「円」である。",
+            "10": "長いヘリックスの安定した入力特性に対応する。空欄ウに当てはまるのは「円」である。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "9",
+          "explanation": "巻数を多くすると軸方向の有効な放射領域が長くなり、半値角が小さくなる。",
+          "candidateExplanations": {
+            "1": "軸方向進行波を作るための1巻きの長さとしては短い。空欄エに当てはまるのは「多く」である。",
+            "2": "主な放射が軸と直角な方向に出る場合の呼称である。空欄エに当てはまるのは「多く」である。",
+            "3": "回転して円を描く偏波である。空欄エに当てはまるのは「多く」である。",
+            "4": "開口長が減って主ビームが広くなる方向である。空欄エに当てはまるのは「多く」である。",
+            "5": "入力インピーダンスが安定する効果とは方向が逆である。空欄エに当てはまるのは「多く」である。",
+            "6": "軸モードで進行波になる代表的な円周の長さである。空欄エに当てはまるのは「多く」である。",
+            "7": "主放射がアンテナの軸方向に向かう形式である。空欄エに当てはまるのは「多く」である。",
+            "8": "電界方向が固定される偏波である。空欄エに当てはまるのは「多く」である。",
+            "9": "巻数を多くすると軸方向の有効な放射領域が長くなり、半値角が小さくなる。",
+            "10": "長いヘリックスの安定した入力特性に対応する。空欄エに当てはまるのは「多く」である。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "全長が十分長いと入力インピーダンスの周波数依存性が小さくなり、利用できる帯域が広くなる。",
+          "candidateExplanations": {
+            "1": "軸方向進行波を作るための1巻きの長さとしては短い。空欄オに当てはまるのは「広くなる」である。",
+            "2": "主な放射が軸と直角な方向に出る場合の呼称である。空欄オに当てはまるのは「広くなる」である。",
+            "3": "回転して円を描く偏波である。空欄オに当てはまるのは「広くなる」である。",
+            "4": "開口長が減って主ビームが広くなる方向である。空欄オに当てはまるのは「広くなる」である。",
+            "5": "入力インピーダンスが安定する効果とは方向が逆である。空欄オに当てはまるのは「広くなる」である。",
+            "6": "軸モードで進行波になる代表的な円周の長さである。空欄オに当てはまるのは「広くなる」である。",
+            "7": "主放射がアンテナの軸方向に向かう形式である。空欄オに当てはまるのは「広くなる」である。",
+            "8": "電界方向が固定される偏波である。空欄オに当てはまるのは「広くなる」である。",
+            "9": "軸方向の長さが増し、狭い主ビームを作りやすい。空欄オに当てはまるのは「広くなる」である。",
+            "10": "全長が十分長いと入力インピーダンスの周波数依存性が小さくなり、利用できる帯域が広くなる。"
+          }
+        }
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    },
+    "explanation": "図は軸上の方向に強く放射するので、エンドファイヤ型である。\n1巻きのおおよその円周長を波長に近づけると、軸方向への放射を作る進行波が成立する。\n1巻きが約1波長の軸モードでは、軸方向にほぼ円偏波が放射される。\n巻数を多くすると軸方向の有効な放射領域が長くなり、半値角が小さくなる。\n全長が十分長いと入力インピーダンスの周波数依存性が小さくなり、利用できる帯域が広くなる。"
+  },
+  {
+    "id": "riku-tech1-2023-july-fb508-kogaku-b-q124",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2023,
+    "season": "july",
+    "qNumber": 124,
+    "type": "native-b",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "SHF・EHF帯の大気吸収と降雨による減衰"
+    ],
+    "difficulty": 3,
+    "question": "SHF・EHF帯の大気吸収と降雨による減衰。公式原問のB-4に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2023-july-fb508-kogaku-b-q124-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B B-4の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b.pdf#page=7",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      7
+    ],
+    "officialQuestionLabel": "B-4",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B B-4（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "nativeB": {
+      "mode": "shared-bank",
+      "officialLabel": "B-4",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "60 GHz"
+        },
+        {
+          "id": "2",
+          "label": "増加"
+        },
+        {
+          "id": "3",
+          "label": "散乱"
+        },
+        {
+          "id": "4",
+          "label": "球状の"
+        },
+        {
+          "id": "5",
+          "label": "雨滴"
+        },
+        {
+          "id": "6",
+          "label": "22 GHz"
+        },
+        {
+          "id": "7",
+          "label": "減少"
+        },
+        {
+          "id": "8",
+          "label": "回折"
+        },
+        {
+          "id": "9",
+          "label": "扁平な"
+        },
+        {
+          "id": "10",
+          "label": "霧の粒子"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "6",
+          "explanation": "水蒸気には約22.2 GHzの強い吸収線があり、約60 GHzの吸収帯では酸素が重要である。",
+          "candidateExplanations": {
+            "1": "酸素分子の吸収が強い周波数域に当たる。空欄アに当てはまるのは「22 GHz」である。",
+            "2": "微小な水滴による損失は通常、高周波の方が大きくなる。空欄アに当てはまるのは「22 GHz」である。",
+            "3": "粒子が電波を別方向へ再放射する現象である。空欄アに当てはまるのは「22 GHz」である。",
+            "4": "球形では偏波方向ごとの形状差が小さい。空欄アに当てはまるのは「22 GHz」である。",
+            "5": "ビームが交差する場所で散乱を生じさせるものの例である。空欄アに当てはまるのは「22 GHz」である。",
+            "6": "水蒸気には約22.2 GHzの強い吸収線があり、約60 GHzの吸収帯では酸素が重要である。",
+            "7": "周波数低下に伴う微小水滴の吸収の傾向である。空欄アに当てはまるのは「22 GHz」である。",
+            "8": "波が障害物の陰へ回り込む現象である。空欄アに当てはまるのは「22 GHz」である。",
+            "9": "大粒の雨滴に生じる偏平形状は偏波によって伝搬を異ならせる。空欄アに当てはまるのは「22 GHz」である。",
+            "10": "微小な霧滴は設問の雨によるビーム間散乱を代表する粒子ではない。空欄アに当てはまるのは「22 GHz」である。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "7",
+          "explanation": "水滴が波長より小さいと主に吸収で減衰し、周波数が低い方が減衰は小さくなる。",
+          "candidateExplanations": {
+            "1": "酸素分子の吸収が強い周波数域に当たる。空欄イに当てはまるのは「減少」である。",
+            "2": "微小な水滴による損失は通常、高周波の方が大きくなる。空欄イに当てはまるのは「減少」である。",
+            "3": "粒子が電波を別方向へ再放射する現象である。空欄イに当てはまるのは「減少」である。",
+            "4": "球形では偏波方向ごとの形状差が小さい。空欄イに当てはまるのは「減少」である。",
+            "5": "ビームが交差する場所で散乱を生じさせるものの例である。空欄イに当てはまるのは「減少」である。",
+            "6": "水蒸気の代表的な吸収線付近である。空欄イに当てはまるのは「減少」である。",
+            "7": "水滴が波長より小さいと主に吸収で減衰し、周波数が低い方が減衰は小さくなる。",
+            "8": "波が障害物の陰へ回り込む現象である。空欄イに当てはまるのは「減少」である。",
+            "9": "大粒の雨滴に生じる偏平形状は偏波によって伝搬を異ならせる。空欄イに当てはまるのは「減少」である。",
+            "10": "微小な霧滴は設問の雨によるビーム間散乱を代表する粒子ではない。空欄イに当てはまるのは「減少」である。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "3",
+          "explanation": "雨滴は電波を吸収するとともに別の方向へ散乱するため、もとの伝搬方向の電力が減る。",
+          "candidateExplanations": {
+            "1": "酸素分子の吸収が強い周波数域に当たる。空欄ウに当てはまるのは「散乱」である。",
+            "2": "微小な水滴による損失は通常、高周波の方が大きくなる。空欄ウに当てはまるのは「散乱」である。",
+            "3": "雨滴は電波を吸収するとともに別の方向へ散乱するため、もとの伝搬方向の電力が減る。",
+            "4": "球形では偏波方向ごとの形状差が小さい。空欄ウに当てはまるのは「散乱」である。",
+            "5": "ビームが交差する場所で散乱を生じさせるものの例である。空欄ウに当てはまるのは「散乱」である。",
+            "6": "水蒸気の代表的な吸収線付近である。空欄ウに当てはまるのは「散乱」である。",
+            "7": "周波数低下に伴う微小水滴の吸収の傾向である。空欄ウに当てはまるのは「散乱」である。",
+            "8": "波が障害物の陰へ回り込む現象である。空欄ウに当てはまるのは「散乱」である。",
+            "9": "大粒の雨滴に生じる偏平形状は偏波によって伝搬を異ならせる。空欄ウに当てはまるのは「散乱」である。",
+            "10": "微小な霧滴は設問の雨によるビーム間散乱を代表する粒子ではない。空欄ウに当てはまるのは「散乱」である。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "5",
+          "explanation": "交差域の雨滴が一方のビームの電波をもう一方への方向に散乱して干渉を生じ得る。",
+          "candidateExplanations": {
+            "1": "酸素分子の吸収が強い周波数域に当たる。空欄エに当てはまるのは「雨滴」である。",
+            "2": "微小な水滴による損失は通常、高周波の方が大きくなる。空欄エに当てはまるのは「雨滴」である。",
+            "3": "粒子が電波を別方向へ再放射する現象である。空欄エに当てはまるのは「雨滴」である。",
+            "4": "球形では偏波方向ごとの形状差が小さい。空欄エに当てはまるのは「雨滴」である。",
+            "5": "交差域の雨滴が一方のビームの電波をもう一方への方向に散乱して干渉を生じ得る。",
+            "6": "水蒸気の代表的な吸収線付近である。空欄エに当てはまるのは「雨滴」である。",
+            "7": "周波数低下に伴う微小水滴の吸収の傾向である。空欄エに当てはまるのは「雨滴」である。",
+            "8": "波が障害物の陰へ回り込む現象である。空欄エに当てはまるのは「雨滴」である。",
+            "9": "大粒の雨滴に生じる偏平形状は偏波によって伝搬を異ならせる。空欄エに当てはまるのは「雨滴」である。",
+            "10": "微小な霧滴は設問の雨によるビーム間散乱を代表する粒子ではない。空欄エに当てはまるのは「雨滴」である。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "9",
+          "explanation": "扁平な雨滴は水平成分と垂直成分に異なる減衰や位相変化を与えるため、交差偏波識別度を下げる。",
+          "candidateExplanations": {
+            "1": "酸素分子の吸収が強い周波数域に当たる。空欄オに当てはまるのは「扁平な」である。",
+            "2": "微小な水滴による損失は通常、高周波の方が大きくなる。空欄オに当てはまるのは「扁平な」である。",
+            "3": "粒子が電波を別方向へ再放射する現象である。空欄オに当てはまるのは「扁平な」である。",
+            "4": "球形では偏波方向ごとの形状差が小さい。空欄オに当てはまるのは「扁平な」である。",
+            "5": "ビームが交差する場所で散乱を生じさせるものの例である。空欄オに当てはまるのは「扁平な」である。",
+            "6": "水蒸気の代表的な吸収線付近である。空欄オに当てはまるのは「扁平な」である。",
+            "7": "周波数低下に伴う微小水滴の吸収の傾向である。空欄オに当てはまるのは「扁平な」である。",
+            "8": "波が障害物の陰へ回り込む現象である。空欄オに当てはまるのは「扁平な」である。",
+            "9": "扁平な雨滴は水平成分と垂直成分に異なる減衰や位相変化を与えるため、交差偏波識別度を下げる。",
+            "10": "微小な霧滴は設問の雨によるビーム間散乱を代表する粒子ではない。空欄オに当てはまるのは「扁平な」である。"
+          }
+        }
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    },
+    "explanation": "水蒸気には約22.2 GHzの強い吸収線があり、約60 GHzの吸収帯では酸素が重要である。\n水滴が波長より小さいと主に吸収で減衰し、周波数が低い方が減衰は小さくなる。\n雨滴は電波を吸収するとともに別の方向へ散乱するため、もとの伝搬方向の電力が減る。\n交差域の雨滴が一方のビームの電波をもう一方への方向に散乱して干渉を生じ得る。\n扁平な雨滴は水平成分と垂直成分に異なる減衰や位相変化を与えるため、交差偏波識別度を下げる。"
+  },
+  {
+    "id": "riku-tech1-2023-july-fb508-kogaku-b-q125",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2023,
+    "season": "july",
+    "qNumber": 125,
+    "type": "native-b",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "マイクロ波アンテナの利得・円偏波・遠方界の測定"
+    ],
+    "difficulty": 3,
+    "question": "マイクロ波アンテナの利得・円偏波・遠方界の測定。公式原問のB-5に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2023-july-fb508-kogaku-b-q125-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B B-5の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b.pdf#page=7",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/6/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      7
+    ],
+    "officialQuestionLabel": "B-5",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2023年7月期 FB508 無線工学B B-5（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "nativeB": {
+      "mode": "binary",
+      "officialLabel": "B-5",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "正しい"
+        },
+        {
+          "id": "2",
+          "label": "誤っている"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "アの測定項目",
+          "answer": "1",
+          "explanation": "正しい。入力インピーダンス、利得、指向性、偏波はアンテナの代表的な測定項目である。",
+          "candidateExplanations": {
+            "1": "正しい。入力インピーダンス、利得、指向性、偏波はアンテナの代表的な測定項目である。",
+            "2": "入力インピーダンス、利得、指向性、偏波はアンテナの代表的な測定項目である。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "イの三アンテナ法",
+          "answer": "1",
+          "explanation": "正しい。三つの組合せで各アンテナ対の利得積を測定し、独立な三式からそれぞれの利得を求められる。",
+          "candidateExplanations": {
+            "1": "正しい。三つの組合せで各アンテナ対の利得積を測定し、独立な三式からそれぞれの利得を求められる。",
+            "2": "三つの組合せで各アンテナ対の利得積を測定し、独立な三式からそれぞれの利得を求められる。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "ウの円偏波を測定する送信アンテナ",
+          "answer": "1",
+          "explanation": "正しい。測定用の直線偏波を回転させれば、受信電力の最大と最小の比から軸比を評価することもできる。",
+          "candidateExplanations": {
+            "1": "正しい。測定用の直線偏波を回転させれば、受信電力の最大と最小の比から軸比を評価することもできる。",
+            "2": "測定用の直線偏波を回転させれば、受信電力の最大と最小の比から軸比を評価することもできる。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "エの測定に必要な最小距離",
+          "answer": "2",
+          "explanation": "誤っている。遠方界の距離条件の目安は2D²/λであり、開口面の寸法と使用波長の両方に依存する。",
+          "candidateExplanations": {
+            "2": "誤っている。遠方界の距離条件の目安は2D²/λであり、開口面の寸法と使用波長の両方に依存する。",
+            "1": "遠方界の距離条件の目安は2D²/λであり、開口面の寸法と使用波長の両方に依存する。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "オの縮尺模型の測定周波数",
+          "answer": "2",
+          "explanation": "誤っている。寸法を縮めても波長に対する比を保つには、波長も同じ比で短くする。測定周波数は元より高くする。",
+          "candidateExplanations": {
+            "2": "誤っている。寸法を縮めても波長に対する比を保つには、波長も同じ比で短くする。測定周波数は元より高くする。",
+            "1": "寸法を縮めても波長に対する比を保つには、波長も同じ比で短くする。測定周波数は元より高くする。"
+          }
+        }
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    },
+    "explanation": "正しい。入力インピーダンス、利得、指向性、偏波はアンテナの代表的な測定項目である。\n正しい。三つの組合せで各アンテナ対の利得積を測定し、独立な三式からそれぞれの利得を求められる。\n正しい。測定用の直線偏波を回転させれば、受信電力の最大と最小の比から軸比を評価することもできる。\n誤っている。遠方界の距離条件の目安は2D²/λであり、開口面の寸法と使用波長の両方に依存する。\n誤っている。寸法を縮めても波長に対する比を保つには、波長も同じ比で短くする。測定周波数は元より高くする。"
+  }
+]
