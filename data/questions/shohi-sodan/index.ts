@@ -1,5 +1,6 @@
 import { convertLq9 } from "../lq9-staging";
 import y2023 from "./2023.json";
+import y2022 from "./2022.json";
 import y2025 from "./2025.json";
 import y2024 from "./2024.json";
 
@@ -8,4 +9,5 @@ export const SHOHI_SODAN_QUESTIONS = [
   ...convertLq9(y2025, "shohi-sodan"),
   ...convertLq9(y2024, "shohi-sodan"),
   ...convertLq9(y2023, "shohi-sodan"),
+  ...convertLq9(y2022, "shohi-sodan"),
 ];

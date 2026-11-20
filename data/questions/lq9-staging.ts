@@ -5,10 +5,11 @@ export interface StagingSource {
     officialAnswerNumber: number; officialQuestionNumber?: number; subQuestion?: number;
     explanation: string; choiceExplanations: string[]; imageUrl?: string; imageAltText?: string; needsReview?: boolean; reviewReason?: string; officialReferenceUrls?: string[] }[];
 }
-const keys: ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
+const keys: ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ", "サ", "シ", "ス", "セ", "ソ"];
 export function convertLq9(source: StagingSource, exam: "shohi-sodan" | "reform-mgr"): Question[] {
+  const maxChoices = exam === "shohi-sodan" ? keys.length : 4;
   return source.questions.map(q => {
-    if (q.choices.length !== q.choiceExplanations.length || q.choices.length < 2 || q.choices.length > 4 ||
+    if (q.choices.length !== q.choiceExplanations.length || q.choices.length < 2 || q.choices.length > maxChoices ||
         !Number.isInteger(q.officialAnswerNumber) || q.officialAnswerNumber < 1 || q.officialAnswerNumber > q.choices.length) {
       throw new Error(`Invalid ${exam} ${source.year} q${q.number}`);
     }

@@ -7,6 +7,7 @@ import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { SHOHI_SODAN_QUESTIONS } from "@/data/questions/shohi-sodan";
 import { REFORM_MGR_QUESTIONS } from "@/data/questions/reform-mgr";
+import s22 from "@/data/questions/shohi-sodan/2022.json";
 import s23 from "@/data/questions/shohi-sodan/2023.json";
 import s24 from "@/data/questions/shohi-sodan/2024.json";
 import s25 from "@/data/questions/shohi-sodan/2025.json";
@@ -22,10 +23,11 @@ import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 const all = [...SHOHI_SODAN_QUESTIONS, ...REFORM_MGR_QUESTIONS];
 describe("LQ9 private qualification staging", () => {
   it("retains every printed subquestion and matches the separately extracted official answer tables", () => {
-    expect(all).toHaveLength(580);
-    expect(new Set(all.map(q => q.id)).size).toBe(580);
-    for (const source of [s23, s24, s25]) {
-      expect(source.questions).toHaveLength(160);
+    expect(all).toHaveLength(760);
+    expect(new Set(all.map(q => q.id)).size).toBe(760);
+    for (const source of [s22, s23, s24, s25]) {
+      const expectedCount = source.year === 2022 ? 180 : 160;
+      expect(source.questions).toHaveLength(expectedCount);
       const table = skeys[String(source.year) as keyof typeof skeys] as Record<string, string[]>;
       const positions: string[] = [];
       for (const q of source.questions) {
@@ -38,7 +40,7 @@ describe("LQ9 private qualification staging", () => {
         expect(q.officialAnswerNumber).toBe(expected);
         positions.push(`${q.officialQuestionNumber}-${q.subQuestion}`);
       }
-      expect(new Set(positions).size).toBe(160);
+      expect(new Set(positions).size).toBe(expectedCount);
       expect(new Set(source.questions.map(q => q.officialQuestionNumber)).size).toBe(20);
     }
     for (const source of [r25, r26]) {

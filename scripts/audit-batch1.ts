@@ -45,7 +45,7 @@ export async function auditBatch1() {
     if (rejected.length) writeFileSync(`reports/int1b-20261104/rejected-${code}.json`, JSON.stringify(rejected.map(q => ({ id: q.id, native: nativeBQuestionIssue(q), numeric: numericQuestionIssue(q), unrenderable: hasUnrenderableContent(q), needsReview: q.needsReview })), null, 2));
   }
   for (const [code, source] of Object.entries(BATCH1_QUESTIONS)) {
-    if (rows.find(row => row.code === code)?.practiceCount !== source!.length) failures.push(`${code}: projected manuscript count differs from practice`);
+    if (rows.find(row => row.code === code)?.practiceCount !== source!.filter(isPracticeReadyQuestion).length) failures.push(`${code}: projected manuscript count differs from practice`);
   }
   const pe = PE_FIRST_CATALOG.map(entry => {
     const questions = loadPeFirstPaper(entry.id);
