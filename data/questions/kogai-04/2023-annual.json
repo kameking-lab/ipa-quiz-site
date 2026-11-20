@@ -540,6 +540,53 @@
     "lawReferenceDate": "2023-04-01"
   },
   {
+    "id": "kogai-04-2023-annual-gakka-q13",
+    "exam": "kogai-04",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "examDate": "2023-10-01",
+    "season": "annual",
+    "qNumber": 13,
+    "subject": "ばいじん・粉じん特論",
+    "officialAnswerNumber": null,
+    "type": "multiple-choice",
+    "category": "ばいじん・粉じん特論",
+    "topicTags": [
+      "ばいじん・粉じん特論"
+    ],
+    "difficulty": 3,
+    "question": "温度147 ℃，流速10.0 m/sで流れるガスの，ピトー管による動圧測定値（kPa）はおよそいくらか。なお，ピトー管係数は0.96，大気圧は101.0 kPa，静圧（ゲージ圧）は2.5 kPa，標準状態のガス密度は1.30 kg/m³とする。",
+    "choices": {
+      "ア": "24.1",
+      "イ": "28.4",
+      "ウ": "46.8",
+      "エ": "111",
+      "オ": "183"
+    },
+    "answer": [],
+    "explanation": "公式正解表では全員加点です。温度と絶対圧力から求めたガス密度を約0.86 kg/m³とすると、動圧は約46.8 Pa（約0.0468 kPa）で、問題文の単位kPaで一致する肢はありません。",
+    "choiceExplanations": {
+      "ア": "24.1 kPaは24,100 Paです。設例から求まる動圧は約46.8 Paなので一致しません。",
+      "イ": "28.4 kPaは28,400 Paです。密度とピトー管係数を補正した設例の動圧とは異なります。",
+      "ウ": "46.8という数値は単位をPaとしたときの概算値です。問題文で指定されたkPaでは約0.0468になります。",
+      "エ": "111 kPaは111,000 Paとなり、設例の流速と密度から求める動圧の値を大きく超えます。",
+      "オ": "183 kPaは183,000 Paです。設例の動圧を表す値ではなく、公式の採点は全員加点です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724192222id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_04.pdf#page=8",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2023年度公害防止管理者等国家試験「ばいじん・粉じん特論」。公式原本の改行・空白を整形し、選択肢番号1〜5をア〜オへ置換。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-19",
+    "lawReferenceDate": "2023-04-01",
+    "officialScoring": {
+      "kind": "credit-for-all",
+      "reason": "公式正解表で問13を全員加点とする扱いが示されている。"
+    }
+  },
+  {
     "id": "kogai-04-2023-annual-gakka-q14",
     "exam": "kogai-04",
     "session": "gakka",
