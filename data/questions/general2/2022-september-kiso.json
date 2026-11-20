@@ -1,0 +1,1565 @@
+[
+  {
+    "id": "general2-2022-september-kiso-a01",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kiso",
+    "qNumber": 1,
+    "officialQuestionLabel": "A−1",
+    "subject": "無線工学の基礎",
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "一様な電界の力と電位差",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−1　一様な電界の力と電位差。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "電界は単位電荷に働く力であり、電位差は電界を距離に沿って積分して得る。よって力の大きさはQE、電位差はEr。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kiso-p01.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学の基礎 公式問題冊子PDF 1ページの問A−1。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202328id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202325id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学の基礎 A−1（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "QE、Er²",
+      "イ": "QE、Er",
+      "ウ": "QE²、Er²",
+      "エ": "QE²、Er"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "choiceExplanations": {
+      "ア": "力は合うが、一定電界の電位差は距離rの1乗に比例する。",
+      "イ": "力は電界に電荷を掛け、電位差は電界に距離を掛ける。",
+      "ウ": "Eの二乗も距離の二乗も使わない。",
+      "エ": "電位差は合うが、力は電界に比例しQE²にはならない。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kiso-a02",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kiso",
+    "qNumber": 2,
+    "officialQuestionLabel": "A−2",
+    "subject": "無線工学の基礎",
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "円形コイルの中心の磁界",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−2　円形コイルの中心の磁界。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "円形コイルの中心でH＝NI/(2r)。I＝(2×0.1×4)/4＝0.2 A。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kiso-p01.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学の基礎 公式問題冊子PDF 1ページの問A−2。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202328id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202325id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学の基礎 A−2（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "0.2π A",
+      "イ": "0.4π A",
+      "ウ": "0.2 A",
+      "エ": "0.4 A"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "choiceExplanations": {
+      "ア": "円周2πrをそのまま分母にする無限長直線導線の式は適用しない。",
+      "イ": "中心磁界に円周を代入する計算では条件を満たさない。",
+      "ウ": "N＝4、r＝0.1 mを代入するとH＝20Iとなり、I＝0.2 Aである。",
+      "エ": "0.4 Aを流すと中心で8 A/mとなり、指定値の2倍になる。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kiso-a03",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kiso",
+    "qNumber": 3,
+    "officialQuestionLabel": "A−3",
+    "subject": "無線工学の基礎",
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "直列コンデンサに蓄えられる電荷",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−3　直列コンデンサに蓄えられる電荷。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "合成容量は1/(1/2＋1/4＋1/8)＝8/7 μF。全コンデンサの電荷は28×8/7＝32 μC、C2の電圧は32/4＝8 V。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kiso-p01.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学の基礎 公式問題冊子PDF 1ページの問A−3。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202328id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202325id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学の基礎 A−3（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "16 μC、4 V",
+      "イ": "16 μC、8 V",
+      "ウ": "32 μC、4 V",
+      "エ": "32 μC、8 V"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "choiceExplanations": {
+      "ア": "16 μCならC2は4 Vだが、回路の合成容量と電源からは32 μCになる。",
+      "イ": "電圧8 Vは正しいが、4 μFでその電圧なら電荷が32 μCになる。",
+      "ウ": "電荷は合うものの、電圧4 VはC3の値である。",
+      "エ": "各素子に共通の32 μCをC2＝4 μFで割った電圧は8 Vである。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kiso-a04",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kiso",
+    "qNumber": 4,
+    "officialQuestionLabel": "A−4",
+    "subject": "無線工学の基礎",
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "円柱導体の抵抗と寸法",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−4　円柱導体の抵抗と寸法。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "抵抗はρl/(πd²/4)。抵抗率と長さを同時に3倍にし、直径を固定すると抵抗は9RMになる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kiso-p01.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学の基礎 公式問題冊子PDF 1ページの問A−4。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202328id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202325id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学の基礎 A−4（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "抵抗率3倍・直径3倍でRM/3",
+      "イ": "抵抗率3倍・長さ3倍でRM",
+      "ウ": "長さ2倍で2RM",
+      "エ": "直径4倍・長さ4倍でRM/4"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "choiceExplanations": {
+      "ア": "断面積は9倍、抵抗率は3倍なので、抵抗は3/9倍になる。",
+      "イ": "抵抗率と長さはともに分子にあり、同時に3倍なら9倍になる。",
+      "ウ": "長さだけを2倍にすれば抵抗も2倍になる。",
+      "エ": "断面積16倍に対し長さは4倍なので、元の1/4の抵抗になる。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kiso-a05",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kiso",
+    "qNumber": 5,
+    "officialQuestionLabel": "A−5",
+    "subject": "無線工学の基礎",
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "並列抵抗の分流",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−5　並列抵抗の分流。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "3枝のコンダクタンスの比は1/10:1/20:1/20＝2:1:1。R1には電源電流の半分が流れる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kiso-p02.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学の基礎 公式問題冊子PDF 2ページの問A−5。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202328id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202325id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学の基礎 A−5（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "I₀/2",
+      "イ": "2I₀/3",
+      "ウ": "3I₀/4",
+      "エ": "4I₀/5"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "choiceExplanations": {
+      "ア": "R2とR3の並列合成は10 Ωであり、R1と等しいので電流を半分ずつ分ける。",
+      "イ": "20 Ωの枝が一つだけなら2/3になるが、図にはその枝が二つある。",
+      "ウ": "R1のコンダクタンスは全体の3/4でなく1/2である。",
+      "エ": "他の二枝を合わせたコンダクタンスはR1と同じなので、4/5にはならない。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kiso-a06",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kiso",
+    "qNumber": 6,
+    "officialQuestionLabel": "A−6",
+    "subject": "無線工学の基礎",
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "RLC並列回路の共振と位相",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−6　RLC並列回路の共振と位相。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "アドミタンスの虚部はωC−1/(ωL)。共振未満で負なので電流は遅れ、共振時は虚部が0なので同相になる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kiso-p02.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学の基礎 公式問題冊子PDF 2ページの問A−6。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202328id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202325id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学の基礎 A−6（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "遅れて、π/2",
+      "イ": "遅れて、0",
+      "ウ": "進んで、π/2",
+      "エ": "進んで、0"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "choiceExplanations": {
+      "ア": "共振未満で遅れる点は正しい。共振ではL・C枝が相殺されπ/2にはならない。",
+      "イ": "低周波側ではインダクタ枝が容量枝を上回り、共振時には抵抗枝だけが電源電流に残る。",
+      "ウ": "進みは容量枝が勝る高周波側で起こる。共振時の位相差はゼロ。",
+      "エ": "共振時は合うが、共振未満は電流が遅れる。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kiso-a07",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kiso",
+    "qNumber": 7,
+    "officialQuestionLabel": "A−7",
+    "subject": "無線工学の基礎",
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "RC直列回路の有効電力と力率",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−7　RC直列回路の有効電力と力率。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "消費電力は抵抗のI²R。力率はインピーダンスの実部Rを絶対値√(R²＋(1/(ωC))²)で割る。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kiso-p02.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学の基礎 公式問題冊子PDF 2ページの問A−7。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202328id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202325id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学の基礎 A−7（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "I²ωC、1",
+      "イ": "I²R、1",
+      "ウ": "I²ωC、R",
+      "エ": "I²R、R"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "choiceExplanations": {
+      "ア": "理想コンデンサは平均電力を消費せず、力率式の分子にはRが入る。",
+      "イ": "電力は合うが、力率の分子は1でなく実部R。",
+      "ウ": "力率の分子は合うが、有効電力の係数はωCでなくRである。",
+      "エ": "抵抗の電力消費とインピーダンスの実部の割合を用いている。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kiso-a08",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kiso",
+    "qNumber": 8,
+    "officialQuestionLabel": "A−8",
+    "subject": "無線工学の基礎",
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "リアクタンス特性と直列・並列共振",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−8　リアクタンス特性と直列・並列共振。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "低周波で大きな負のリアクタンスとなる直列Cと、有限の角周波数で極を持つ並列LCの組合せである。高周波では容量性で0に近づく。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kiso-p02.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学の基礎 公式問題冊子PDF 2ページの問A−8。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202328id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202325id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学の基礎 A−8（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "L1・C1の直列",
+      "イ": "L1・C1の並列",
+      "ウ": "C1とL1・C2の並列部を直列接続",
+      "エ": "L1とL2・C1の並列部を直列接続"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "choiceExplanations": {
+      "ア": "直列LCでは有限の周波数でリアクタンスが0となるが、そこで無限大にはならない。",
+      "イ": "並列LCには極があるが、低周波ではインダクタ側が支配して0の正側へ向かう。",
+      "ウ": "C1が低周波の大きな負の値を作り、並列のL1・C2が有限周波数で極を作る。",
+      "エ": "並列枝の極はあるが、直列インダクタでは低周波が負にならず、高周波では正に増える。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kiso-a09",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kiso",
+    "qNumber": 9,
+    "officialQuestionLabel": "A−9",
+    "subject": "無線工学の基礎",
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "真性シリコンの抵抗率",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−9　真性シリコンの抵抗率。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "真性Siは銀より高抵抗。温度を上げて熱励起キャリアを増やす場合も、5価不純物を入れて電子を増やす場合も、一般に抵抗率は下がる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kiso-p03.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学の基礎 公式問題冊子PDF 3ページの問A−9。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202328id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202325id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学の基礎 A−9（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "大きい、小さく、小さく",
+      "イ": "大きい、大きく、大きく",
+      "ウ": "小さい、小さく、大きく",
+      "エ": "小さい、大きく、小さく"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "choiceExplanations": {
+      "ア": "銀との比較と、温度上昇・ドナー添加による抵抗率の低下が一致する。",
+      "イ": "銀との比較は合うが、キャリアの増加で抵抗率は下がる。",
+      "ウ": "温度の効果は合うが、銀より高抵抗で、5価の添加でも抵抗率は下がる。",
+      "エ": "ドナー添加の効果は合うが、銀との比較と温度上昇の効果は逆である。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kiso-a10",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kiso",
+    "qNumber": 10,
+    "officialQuestionLabel": "A−10",
+    "subject": "無線工学の基礎",
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "Nチャネル接合形FETのバイアス",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−10　Nチャネル接合形FETのバイアス。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "図ではドレインとソースがN形の領域につながる。Nチャネルでは通常ドレインをソースより正電位にする。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kiso-p03.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学の基礎 公式問題冊子PDF 3ページの問A−10。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202328id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202325id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学の基礎 A−10（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "Pチャネル、D正・S負",
+      "イ": "Pチャネル、D負・S正",
+      "ウ": "Nチャネル、D正・S負",
+      "エ": "Nチャネル、D負・S正"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "choiceExplanations": {
+      "ア": "電圧はNチャネル用に合うが、図の電流路はN形である。",
+      "イ": "Pチャネルに対する極性で、図の接合形FETに当てはまらない。",
+      "ウ": "N形のチャネルを流れる電子を正電位のドレイン側に引く組合せである。",
+      "エ": "チャネル種は正しいが、ドレインとソースの極性が逆である。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kiso-a11",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kiso",
+    "qNumber": 11,
+    "officialQuestionLabel": "A−11",
+    "subject": "無線工学の基礎",
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "トランジスタ特性図から読む電流増幅率",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−11　トランジスタ特性図から読む電流増幅率。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "VCE＝6 Vを固定し、コレクタ電流ICの変化をベース電流の変化で割る。グラフではIBの5 μA差に対し約1 mA差になる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kiso-p03.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学の基礎 公式問題冊子PDF 3ページの問A−11。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202328id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202325id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学の基礎 A−11（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "200",
+      "イ": "150",
+      "ウ": "120",
+      "エ": "100"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "choiceExplanations": {
+      "ア": "0.001 Aを0.000005 Aで割ると200となる。",
+      "イ": "150なら隣の曲線までの差は約0.75 mAであり、図の約1 mAより小さい。",
+      "ウ": "120なら0.6 mAの差になるが、対象点の曲線間隔は約1 mA。",
+      "エ": "100では5 μAの差に対して0.5 mAしか変化しない。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kiso-a12",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kiso",
+    "qNumber": 12,
+    "officialQuestionLabel": "A−12",
+    "subject": "無線工学の基礎",
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "バラクタとツェナーダイオード",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−12　バラクタとツェナーダイオード。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "バラクタは逆バイアスで接合容量を変える。ツェナーは逆方向降伏域で端子電圧をほぼ一定に保つ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kiso-p03.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学の基礎 公式問題冊子PDF 3ページの問A−12。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202328id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202325id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学の基礎 A−12（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "バラクタは可変容量として同調・共振回路に用いる",
+      "イ": "バラクタは逆方向電圧で用いる",
+      "ウ": "ツェナーは安定化電源等に用いる",
+      "エ": "ツェナーは順方向電圧で用いる"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "choiceExplanations": {
+      "ア": "バラクタの接合容量を電圧で変化させ、同調周波数を制御できる。",
+      "イ": "逆バイアスによって空乏層の幅と容量を変える。",
+      "ウ": "逆方向の降伏電圧を基準にして電源電圧の安定化に用いる。",
+      "エ": "定電圧素子として使う場合は逆方向の降伏特性を利用する。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kiso-a13",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kiso",
+    "qNumber": 13,
+    "officialQuestionLabel": "A−13",
+    "subject": "無線工学の基礎",
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "FET増幅回路の電圧増幅度",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−13　FET増幅回路の電圧増幅度。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "交流負荷はR1とRLの並列で2.5 kΩ。rDを無限大として電圧増幅度の大きさはgm×2500＝50。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kiso-p04.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学の基礎 公式問題冊子PDF 4ページの問A−13。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202328id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202325id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学の基礎 A−13（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "10",
+      "イ": "20",
+      "ウ": "30",
+      "エ": "50"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "choiceExplanations": {
+      "ア": "10に対応する実効負荷は500 Ωで、図の並列値と異なる。",
+      "イ": "20なら1 kΩが必要だが、与えられた二抵抗の並列は2.5 kΩである。",
+      "ウ": "30に対応する負荷は1.5 kΩであり、図の負荷と異なる。",
+      "エ": "0.02 Sと2500 Ωの積が50になる。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kiso-a14",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kiso",
+    "qNumber": 14,
+    "officialQuestionLabel": "A−14",
+    "subject": "無線工学の基礎",
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "反転演算増幅器の入力抵抗",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−14　反転演算増幅器の入力抵抗。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "46 dBは電圧比10^(46/20)≒200。反転増幅器では絶対値がRF/R1なので、R1＝200 kΩ/200＝1 kΩ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kiso-p04.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学の基礎 公式問題冊子PDF 4ページの問A−14。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202328id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202325id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学の基礎 A−14（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1 kΩ",
+      "イ": "2 kΩ",
+      "ウ": "4 kΩ",
+      "エ": "8 kΩ"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "choiceExplanations": {
+      "ア": "比200に対応する入力抵抗で、20 log₁₀(200)≒46 dBになる。",
+      "イ": "R1＝2 kΩで電圧比100、すなわち40 dBになる。",
+      "ウ": "入力抵抗4 kΩでは電圧比50の約34 dBになる。",
+      "エ": "8 kΩでは電圧比25であり、46 dBに届かない。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kiso-a15",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kiso",
+    "qNumber": 15,
+    "officialQuestionLabel": "A−15",
+    "subject": "無線工学の基礎",
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "RC移相形発振回路",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−15　RC移相形発振回路。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "反転増幅段は位相をπだけ変え、RC帰還網はさらにπの位相差を作る。RC時定数を増やすとその条件が成立する周波数は下がる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kiso-p04.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学の基礎 公式問題冊子PDF 4ページの問A−15。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202328id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202325id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学の基礎 A−15（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "π/2、低く",
+      "イ": "π/2、高く",
+      "ウ": "π、低く",
+      "エ": "π、高く"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "choiceExplanations": {
+      "ア": "周波数の変化は正しいが、増幅段の入出力間はπの位相差である。",
+      "イ": "位相差はπであり、時定数を増やすと周波数は低下する。",
+      "ウ": "増幅段の反転と、RC時定数に対する周波数の逆比例に対応する。",
+      "エ": "位相差は正しいが、RCが大きいほど発振周波数は低くなる。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kiso-a16",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kiso",
+    "qNumber": 16,
+    "officialQuestionLabel": "A−16",
+    "subject": "無線工学の基礎",
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "倍電圧整流回路の出力",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−16　倍電圧整流回路の出力。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "入力の波高値は100√2 V。理想ダイオードを用いた倍電圧整流では、一方の半周期に蓄えた波高値が入力に加わり、出力はその2倍になる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kiso-p04.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学の基礎 公式問題冊子PDF 4ページの問A−16。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202328id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202325id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学の基礎 A−16（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "200 V",
+      "イ": "200√2 V",
+      "ウ": "100 V",
+      "エ": "100√2 V"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "choiceExplanations": {
+      "ア": "入力の実効値を2倍しており、コンデンサに充電される波高値を使っていない。",
+      "イ": "最大値100√2 Vの2倍となる。",
+      "ウ": "100 Vは入力の実効値であり、倍電圧回路の直流出力とは異なる。",
+      "エ": "100√2 Vは入力の波高値で、倍電圧ではこれを2倍する。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kiso-a17",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kiso",
+    "qNumber": 17,
+    "officialQuestionLabel": "A−17",
+    "subject": "無線工学の基礎",
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "整流形交流電圧計の指示",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−17　整流形交流電圧計の指示。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "整流波の平均に応答する可動コイル形計器を用いる。通常の目盛は正弦波の実効値を直接読めるよう校正されている。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kiso-p04.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学の基礎 公式問題冊子PDF 4ページの問A−17。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202328id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202325id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学の基礎 A−17（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "誘導形、平均値",
+      "イ": "誘導形、実効値",
+      "ウ": "永久磁石可動コイル形、平均値",
+      "エ": "永久磁石可動コイル形、実効値"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "choiceExplanations": {
+      "ア": "整流した電流は直流用の可動コイル形に加え、正弦波の交流実効値に換算して目盛る。",
+      "イ": "目盛は正しいが、整流後に用いるのは誘導形でなく永久磁石可動コイル形である。",
+      "ウ": "計器の方式は正しい。整流平均に応答しても目盛は正弦波の実効値である。",
+      "エ": "可動コイル形と実効値目盛の組合せが該当する。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kiso-a18",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kiso",
+    "qNumber": 18,
+    "officialQuestionLabel": "A−18",
+    "subject": "無線工学の基礎",
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "精度階級から求める電圧の範囲",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−18　精度階級から求める電圧の範囲。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "階級指数1.5は最大目盛値300 Vを基準にした百分率である。最大許容誤差は300×0.015＝4.5 V。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kiso-p05.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学の基礎 公式問題冊子PDF 5ページの問A−18。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202328id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202325id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学の基礎 A−18（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "200±5.0 V",
+      "イ": "200±4.5 V",
+      "ウ": "200±3.0 V",
+      "エ": "200±1.5 V"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "choiceExplanations": {
+      "ア": "最大目盛に0.015を掛けると5.0 Vではなく4.5 Vになる。",
+      "イ": "指示値200 Vを中心に最大4.5 Vの誤差範囲を取る。",
+      "ウ": "3.0 Vは指示値200 Vを基準にしており、精度階級の基準と異なる。",
+      "エ": "階級指数をそのままVで表した値であり、誤差は全目盛値を使って換算する。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kiso-a19",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kiso",
+    "qNumber": 19,
+    "officialQuestionLabel": "A−19",
+    "subject": "無線工学の基礎",
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "交流ブリッジが平衡する組合せ",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−19　交流ブリッジが平衡する組合せ。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "平衡では向かい合う二枝のインピーダンスの積が互いに等しい。インダクタとコンデンサの積は正の実数になり、抵抗二つの積と一致し得る。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kiso-p05.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学の基礎 公式問題冊子PDF 5ページの問A−19。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202328id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202325id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学の基礎 A−19（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "図1、対辺にL1とC1",
+      "イ": "図2、L1とC1が隣接",
+      "ウ": "図3、対辺にL1とL2",
+      "エ": "図4、枝にL1・R1・C1・C2"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "choiceExplanations": {
+      "ア": "jωL1と1/(jωC1)の積はL1/C1で、R1R2と同じ正の実数。",
+      "イ": "片方の対辺積が正の虚数、もう片方が負の虚数になる。",
+      "ウ": "インダクタ二つの積は負の実数で、抵抗の積は正である。",
+      "エ": "L1とC1の積は実数だが、R1とC2の積は虚数になり、一致しない。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kiso-a20",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kiso",
+    "qNumber": 20,
+    "officialQuestionLabel": "A−20",
+    "subject": "無線工学の基礎",
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "回路の開放電圧と内部抵抗",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−20　回路の開放電圧と内部抵抗。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "開放端子電圧40 Vを等価電源とする。電流計接続時の合成抵抗は40/0.4＝100 Ωで、20 Ωを引くと内部抵抗は80 Ω。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kiso-p05.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学の基礎 公式問題冊子PDF 5ページの問A−20。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202328id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202325id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学の基礎 A−20（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "160 Ω",
+      "イ": "120 Ω",
+      "ウ": "80 Ω",
+      "エ": "40 Ω"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "choiceExplanations": {
+      "ア": "内部抵抗160 Ωなら電流は40/180 Aとなり、0.4 Aに達しない。",
+      "イ": "120 Ωなら合計140 Ωで0.4 Aより小さい。",
+      "ウ": "内部80 Ωと外部20 Ωの和に40 Vを加えると0.4 Aになる。",
+      "エ": "内部40 Ωなら合成60 Ωで約0.67 Aとなる。"
+    }
+  },
+  {
+    "id": "general2-2022-september-kiso-b01",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kiso",
+    "qNumber": 1,
+    "officialQuestionLabel": "B−1",
+    "subject": "無線工学の基礎",
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "直線導体の運動と電磁誘導",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "B−1　直線導体の運動と電磁誘導。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "磁界を横切る速度成分v sin θにより導体に起電力が生じる。直角時の方向はフレミングの右手の法則で求め、発電機に利用する。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kiso-p05.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学の基礎 公式問題冊子PDF 5ページの問B−1。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202328id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202325id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学の基礎 B−1（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "native-b",
+    "part": "b",
+    "answer": "",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "静電",
+          "explanation": "静電誘導は電界による電荷分布の変化を指す。"
+        },
+        {
+          "id": "2",
+          "label": "Blv sin θ",
+          "explanation": "速度の磁界に直交する成分を用いた式である。"
+        },
+        {
+          "id": "3",
+          "label": "左手の法則",
+          "explanation": "左手は磁界中で電流に働く力の向きを与える。"
+        },
+        {
+          "id": "4",
+          "label": "中指",
+          "explanation": "右手の親指と人差指で運動と磁界を指し、中指で起電力を読む。"
+        },
+        {
+          "id": "5",
+          "label": "発電機",
+          "explanation": "回転によって導体が磁束を横切ると、電気を取り出せる。"
+        },
+        {
+          "id": "6",
+          "label": "電磁",
+          "explanation": "運動による起電力を含む現象の名称である。"
+        },
+        {
+          "id": "7",
+          "label": "Blv tan θ",
+          "explanation": "直角で有限の最大値を取るため、tan θを用いる式は当てはまらない。"
+        },
+        {
+          "id": "8",
+          "label": "右手の法則",
+          "explanation": "磁界・運動・起電力の方向を互いに直角の指で表す。"
+        },
+        {
+          "id": "9",
+          "label": "人差指",
+          "explanation": "人差指が示すのは磁界の方向である。"
+        },
+        {
+          "id": "10",
+          "label": "電動機",
+          "explanation": "電動機は電流から力を得る動作が主であり、設問は運動起電力を出力に使う例を尋ねている。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "6",
+          "explanation": "磁界内の運動で起電力を得る現象は電磁誘導という。"
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "磁界に直交する速度成分はv sin θなので、起電力はBlv sin θ。"
+        },
+        {
+          "label": "ウ",
+          "answer": "8",
+          "explanation": "運動から起電力の向きを得る発電機の法則は右手を使う。"
+        },
+        {
+          "label": "エ",
+          "answer": "4",
+          "explanation": "中指が誘導される起電力の方向を示す。"
+        },
+        {
+          "label": "オ",
+          "answer": "5",
+          "explanation": "導体の運動を電気エネルギーに変える発電機が利用する。"
+        }
+      ],
+      "officialLabel": "B−1",
+      "bankImageUrls": [
+        "/questions/general2/2022/2022-09-kiso-p05.png"
+      ],
+      "bankImageAltTexts": [
+        "第二級総合無線通信士 2022年9月期 無線工学の基礎 公式問題冊子PDF 5ページの問B−1。"
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表に従い、各解答欄を1点とする。"
+      }
+    }
+  },
+  {
+    "id": "general2-2022-september-kiso-b02",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kiso",
+    "qNumber": 2,
+    "officialQuestionLabel": "B−2",
+    "subject": "無線工学の基礎",
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "RLC直列回路の共振条件",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "B−2　RLC直列回路の共振条件。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "直列リアクタンスはωL−1/(ωC)。共振でその差が0となり、LとCの両端電圧は打ち消し合う。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kiso-p06.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学の基礎 公式問題冊子PDF 6ページの問B−2。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202328id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202325id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学の基礎 B−2（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "native-b",
+    "part": "b",
+    "answer": "",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "進んで",
+          "explanation": "進みは直列回路の共振より下の領域で生じる。"
+        },
+        {
+          "id": "2",
+          "label": "小さい",
+          "explanation": "共振未満では1/(ωC)がωLを上回る。"
+        },
+        {
+          "id": "3",
+          "label": "V/2",
+          "explanation": "電源電圧の半分になるような分割は共振条件から生じない。"
+        },
+        {
+          "id": "4",
+          "label": "0",
+          "explanation": "LとCの直列の合計電圧である。"
+        },
+        {
+          "id": "5",
+          "label": "1/(LC)",
+          "explanation": "1/(LC)は角周波数の二乗であり、角周波数そのものではない。"
+        },
+        {
+          "id": "6",
+          "label": "遅れて",
+          "explanation": "共振より高いときの誘導性負荷の位相である。"
+        },
+        {
+          "id": "7",
+          "label": "大きい",
+          "explanation": "C側のリアクタンスの絶対値が大きいとき、C側の電圧も大きい。"
+        },
+        {
+          "id": "8",
+          "label": "V",
+          "explanation": "LとCの合計電圧がゼロなので、抵抗両端が電源電圧になる。"
+        },
+        {
+          "id": "9",
+          "label": "2V",
+          "explanation": "共振時の抵抗電圧は電源電圧と等しく、2倍にはならない。"
+        },
+        {
+          "id": "10",
+          "label": "1/√(LC)",
+          "explanation": "誘導性と容量性のリアクタンスの絶対値が等しくなる角周波数である。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "6",
+          "explanation": "共振より上では誘導リアクタンスが大きく、電流は電圧より遅れる。"
+        },
+        {
+          "label": "イ",
+          "answer": "7",
+          "explanation": "共振より下で容量リアクタンスが大きいので、同じ電流でCの電圧が大きい。"
+        },
+        {
+          "label": "ウ",
+          "answer": "8",
+          "explanation": "共振時には電源電圧に等しい電圧が抵抗にかかる。"
+        },
+        {
+          "label": "エ",
+          "answer": "4",
+          "explanation": "LとCの電圧の大きさが等しく逆相なので、合成は0 Vとなる。"
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "ωL＝1/(ωC)を解くとω₀＝1/√(LC)。"
+        }
+      ],
+      "officialLabel": "B−2",
+      "bankImageUrls": [
+        "/questions/general2/2022/2022-09-kiso-p06.png"
+      ],
+      "bankImageAltTexts": [
+        "第二級総合無線通信士 2022年9月期 無線工学の基礎 公式問題冊子PDF 6ページの問B−2。"
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表に従い、各解答欄を1点とする。"
+      }
+    }
+  },
+  {
+    "id": "general2-2022-september-kiso-b03",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kiso",
+    "qNumber": 3,
+    "officialQuestionLabel": "B−3",
+    "subject": "無線工学の基礎",
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "マグネトロンの構造と用途",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "B−3　マグネトロンの構造と用途。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "磁界と電界を用いて空洞共振器にマイクロ波を発振させる。らせんによる増幅を行う進行波管とは構造と用途が異なる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kiso-p06.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学の基礎 公式問題冊子PDF 6ページの問B−3。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202328id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202325id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学の基礎 B−3（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "native-b",
+    "part": "b",
+    "answer": "",
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "正しい"
+        },
+        {
+          "id": "2",
+          "label": "誤り"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "陽極と陰極の二つを持ち、制御グリッドはない。",
+          "candidateExplanations": {
+            "1": "陽極と陰極の二つを持ち、制御グリッドはない。",
+            "2": "陽極と陰極の二つを持ち、制御グリッドはない。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "1",
+          "explanation": "電子を加速するため、陽極・陰極間に直流電圧を加える。",
+          "candidateExplanations": {
+            "1": "電子を加速するため、陽極・陰極間に直流電圧を加える。",
+            "2": "電子を加速するため、陽極・陰極間に直流電圧を加える。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "1",
+          "explanation": "陰極軸と平行な強い直流磁界が電子の軌道を曲げる。",
+          "candidateExplanations": {
+            "1": "陰極軸と平行な強い直流磁界が電子の軌道を曲げる。",
+            "2": "陰極軸と平行な強い直流磁界が電子の軌道を曲げる。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "2",
+          "explanation": "aは空洞共振器で、増幅周波数ではなくマイクロ波の発振周波数を決める要素である。",
+          "candidateExplanations": {
+            "1": "aは空洞共振器で、増幅周波数ではなくマイクロ波の発振周波数を決める要素である。",
+            "2": "aは空洞共振器で、増幅周波数ではなくマイクロ波の発振周波数を決める要素である。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "2",
+          "explanation": "マグネトロンは主に発振に用いる。衛星中継などで用いる電力増幅管には進行波管がある。",
+          "candidateExplanations": {
+            "1": "マグネトロンは主に発振に用いる。衛星中継などで用いる電力増幅管には進行波管がある。",
+            "2": "マグネトロンは主に発振に用いる。衛星中継などで用いる電力増幅管には進行波管がある。"
+          }
+        }
+      ],
+      "officialLabel": "B−3",
+      "bankImageUrls": [
+        "/questions/general2/2022/2022-09-kiso-p06.png"
+      ],
+      "bankImageAltTexts": [
+        "第二級総合無線通信士 2022年9月期 無線工学の基礎 公式問題冊子PDF 6ページの問B−3。"
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表に従い、各解答欄を1点とする。"
+      }
+    }
+  },
+  {
+    "id": "general2-2022-september-kiso-b04",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kiso",
+    "qNumber": 4,
+    "officialQuestionLabel": "B−4",
+    "subject": "無線工学の基礎",
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "NOT・AND・ORによる排他的論理和",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "B−4　NOT・AND・ORによる排他的論理和。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "NOT、二つのAND、ORを順に追うと、片方の入力だけが1の場合に出力が1になる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kiso-p06.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学の基礎 公式問題冊子PDF 6ページの問B−4。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202328id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202325id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学の基礎 B−4（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "native-b",
+    "part": "b",
+    "answer": "",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "¬A",
+          "explanation": "入力Aを反転した中間信号である。"
+        },
+        {
+          "id": "2",
+          "label": "A·¬B",
+          "explanation": "下側ANDの出力に対応する。"
+        },
+        {
+          "id": "3",
+          "label": "¬A·B＋A·¬B",
+          "explanation": "上段と下段の積項を足した最終出力である。"
+        },
+        {
+          "id": "4",
+          "label": "0",
+          "explanation": "AとBが異なる場合にも0とする値は、図の論理機能に一致しない。"
+        },
+        {
+          "id": "5",
+          "label": "否定論理和",
+          "explanation": "否定論理和はNORで、どちらの入力も0のときだけ1になる。"
+        },
+        {
+          "id": "6",
+          "label": "A",
+          "explanation": "Aそのものは上側NOTの手前にある。"
+        },
+        {
+          "id": "7",
+          "label": "¬A·B",
+          "explanation": "上側ANDの出力を表す式である。"
+        },
+        {
+          "id": "8",
+          "label": "¬A·¬B＋A·B",
+          "explanation": "入力が等しいときに1になる排他的論理和の反転である。"
+        },
+        {
+          "id": "9",
+          "label": "1",
+          "explanation": "A＝1、B＝0の出力に当たる。"
+        },
+        {
+          "id": "10",
+          "label": "排他的論理和",
+          "explanation": "二入力が異なるときにだけ1となる回路名である。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "出力①はAをNOTに通した信号である。"
+        },
+        {
+          "label": "イ",
+          "answer": "7",
+          "explanation": "上側ANDに入るのは反転後のAとBである。"
+        },
+        {
+          "label": "ウ",
+          "answer": "3",
+          "explanation": "二つのANDの出力をORに入力する。"
+        },
+        {
+          "label": "エ",
+          "answer": "9",
+          "explanation": "A＝1かつB＝0では下段から1が出るため、全体の出力は1になる。"
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "入力が異なるときだけ真となる機能は排他的論理和である。"
+        }
+      ],
+      "officialLabel": "B−4",
+      "bankImageUrls": [
+        "/questions/general2/2022/2022-09-kiso-p06.png"
+      ],
+      "bankImageAltTexts": [
+        "第二級総合無線通信士 2022年9月期 無線工学の基礎 公式問題冊子PDF 6ページの問B−4。"
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表に従い、各解答欄を1点とする。"
+      }
+    }
+  },
+  {
+    "id": "general2-2022-september-kiso-b05",
+    "exam": "general2",
+    "year": 2022,
+    "season": "september",
+    "session": "kiso",
+    "qNumber": 5,
+    "officialQuestionLabel": "B−5",
+    "subject": "無線工学の基礎",
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "電気磁気量のSI単位",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "B−5　電気磁気量のSI単位。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "オームの法則と電力の定義からΩ・V・Wを換算できる。インダクタンスは鎖交磁束と電流、磁束密度は磁束と面積の比に対応する。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2022/2022-09-kiso-p06.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2022年9月期 無線工学の基礎 公式問題冊子PDF 6ページの問B−5。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230610202328id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610202325id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和4年9月期 無線工学の基礎 B−5（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "native-b",
+    "part": "b",
+    "answer": "",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "V/A",
+          "explanation": "抵抗をオームの法則で表した単位である。"
+        },
+        {
+          "id": "2",
+          "label": "W/A",
+          "explanation": "電圧を電力と電流で表した単位である。"
+        },
+        {
+          "id": "3",
+          "label": "J·s",
+          "explanation": "時間を掛けると単位は作用の次元となり、エネルギーを時間で割る電力と異なる。"
+        },
+        {
+          "id": "4",
+          "label": "Ω·m",
+          "explanation": "Ω·mは抵抗率の単位である。"
+        },
+        {
+          "id": "5",
+          "label": "Wb/m²",
+          "explanation": "テスラの組立単位である。"
+        },
+        {
+          "id": "6",
+          "label": "V·s",
+          "explanation": "電圧と時間の積はウェーバに等しく、磁束の単位である。"
+        },
+        {
+          "id": "7",
+          "label": "A/W",
+          "explanation": "電圧Vの逆数の次元になる。"
+        },
+        {
+          "id": "8",
+          "label": "J/s",
+          "explanation": "秒速に換算したエネルギーを表し、ワットに等しい。"
+        },
+        {
+          "id": "9",
+          "label": "Wb/A",
+          "explanation": "ヘンリーを磁束と電流の単位で表したものである。"
+        },
+        {
+          "id": "10",
+          "label": "N·m",
+          "explanation": "力と距離の積で、エネルギーやトルクに用いる次元である。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "Ωは電圧を電流で割ったV/Aである。"
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "P＝VIをVについて解くとW/Aになる。"
+        },
+        {
+          "label": "ウ",
+          "answer": "8",
+          "explanation": "電力は単位時間に当たるエネルギーで、J/s。"
+        },
+        {
+          "label": "エ",
+          "answer": "9",
+          "explanation": "鎖交磁束を電流で割った量なのでH＝Wb/A。"
+        },
+        {
+          "label": "オ",
+          "answer": "5",
+          "explanation": "磁束密度は単位面積あたりの磁束で、T＝Wb/m²。"
+        }
+      ],
+      "officialLabel": "B−5",
+      "bankImageUrls": [
+        "/questions/general2/2022/2022-09-kiso-p06.png"
+      ],
+      "bankImageAltTexts": [
+        "第二級総合無線通信士 2022年9月期 無線工学の基礎 公式問題冊子PDF 6ページの問B−5。"
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表に従い、各解答欄を1点とする。"
+      }
+    }
+  }
+]
