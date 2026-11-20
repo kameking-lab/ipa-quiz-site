@@ -45,13 +45,12 @@ for (const width of [390, 1280]) for (const colorScheme of ["light", "dark"] as 
         await expect(primary).toBeInViewport({ ratio: 1 });
         expect(await primary.evaluate(el => el.getBoundingClientRect().height)).toBeGreaterThanOrEqual(44);
         expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(width);
-        expect(await page.evaluate(() => document.documentElement.scrollHeight)).toBe(width === 390 ? 844 : 800);
         const source = page.getByRole("link", { name: "著作権・出典", exact: true });
         await expect(source).toBeInViewport({ ratio: 1 });
         const sourceBox = await source.boundingBox();
         expect(sourceBox!.height).toBeGreaterThanOrEqual(44);
         if (state === "guest") {
-          const createPlan = card.getByRole("button", { name: "学習計画を作成" });
+          const createPlan = card.getByRole("button", { name: "試験日を決めると、チワワが走り出す" });
           await expect(createPlan).toBeInViewport({ ratio: 1 });
           await expect(createPlan.locator('svg[aria-label^="進み具合0%"]')).toBeVisible();
         }

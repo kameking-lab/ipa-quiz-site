@@ -14,6 +14,7 @@ const domains: HomeDirectoryDomain[] = [{
   featured: [
     { key: "ip", name: "ITパスポート", href: "/ip", questionCount: 1, periodLabel: "1回分" },
     { key: "fe", name: "基本情報技術者", href: "/fe", questionCount: 1, periodLabel: "1回分" },
+    { key: "eisei", name: "衛生管理者", href: "/e-learning/exams/qualifications/eisei", questionCount: 1, periodLabel: "1回分", historyPrefixes: ["eisei-paper-"] },
   ],
 }];
 const catalog = [{ id: "ip-2024h-am-q1", exam: "ip", year: 2024, season: "spring" as const, session: "am" as const, qNumber: 1 }];
@@ -24,7 +25,7 @@ beforeEach(() => {
     : url.includes("catalog") ? { questions: catalog } : url.includes("resume") ? { exam: "ip", name: "ITパスポート", href: "/ip", caption: "問1" }
       : { entitled: false })));
 });
-afterEach(() => { cleanup(); localStorage.clear(); vi.unstubAllGlobals(); });
+afterEach(() => { cleanup(); localStorage.clear(); sessionStorage.clear(); vi.unstubAllGlobals(); });
 
 describe("home plan entry", () => {
   it("finds IT Passport by nickname and keeps its existing destination", async () => {
@@ -42,7 +43,7 @@ describe("home plan entry", () => {
     render(<HomePace domains={[regional]} planExamKeys={["ip", "chori-hokkaido", "chori-gunma"]} />);
     fireEvent.change(screen.getByRole("searchbox", { name: "資格名・略称で検索" }), { target: { value: "北海道" } });
     expect(screen.getByRole("link", { name: "調理師試験（都道府県別 2）" })).toHaveAttribute("href", "/qualifications/chori");
-    fireEvent.click(screen.getByRole("button", { name: "学習計画を作成" }));
+    fireEvent.click(screen.getByRole("button", { name: "試験日を決めると、チワワが走り出す" }));
     fireEvent.change(screen.getByLabelText("受ける資格"), { target: { value: "group:chori" } });
     expect(screen.queryByLabelText("受験日")).not.toBeInTheDocument();
     const child = screen.getByLabelText("地域");
@@ -58,17 +59,36 @@ describe("home plan entry", () => {
   it.each([false, true])("opens creation from the home screen with prior study (%s)", async (returning) => {
     if (returning) localStorage.setItem(LS_KEYS.lastQuestion, JSON.stringify({ ...catalog[0], answeredAt: 1 }));
     render(<HomePace domains={domains} planExamKeys={["ip", "fe"]} />);
-    if (returning) expect(await screen.findByRole("link", { name: /続きを解く/ })).toBeVisible();
-    else expect(screen.getByRole("searchbox", { name: "資格名・略称で検索" })).toBeVisible();
-    fireEvent.click(screen.getByRole("button", { name: "学習計画を作成" }));
+    if (returning) {
+      expect(await screen.findByRole("link", { name: /続きを解く/ })).toBeVisible();
+      expect(screen.queryByRole("heading", { name: "最近解いた資格" })).not.toBeInTheDocument();
+      expect(screen.queryByRole("heading", { name: "試験が近い資格" })).not.toBeInTheDocument();
+    }
+    expect(screen.getByRole("searchbox", { name: "資格名・略称で検索" })).toHaveAttribute("placeholder", returning ? "ほかの資格をさがす" : "受ける資格は？");
+    expect(screen.getByRole("img", { name: "進み具合0%、試験日未設定" })).toBeVisible();
+    fireEvent.click(screen.getByRole("button", { name: returning ? "試験日を決める" : "試験日を決めると、チワワが走り出す" }));
     expect(screen.getByRole("dialog", { name: "学習計画を作成" })).toBeVisible();
     expect(await screen.findByLabelText("受験日")).toBeVisible();
+  });
+
+  it("includes an answered library paper under its qualification and omits the current one", async () => {
+    localStorage.setItem(LS_KEYS.lastQuestion, JSON.stringify({ ...catalog[0], answeredAt: Date.parse("2026-11-20T09:00:00+09:00") }));
+    sessionStorage.setItem(`${LS_KEYS.examLibrarySessionPrefix}eisei-paper`, JSON.stringify({ summary: {
+      examId: "eisei-paper", examTitle: "公表問題", lastQuestionId: "eisei-paper-q1", updatedAt: "2026-11-19T12:00:00+09:00",
+      answered: 1, total: 1, correct: 1, incorrect: 0, unscored: 0, scorable: 1,
+    } }));
+    render(<HomePace domains={domains} planExamKeys={["ip", "fe", "eisei"]} />);
+    expect(await screen.findByRole("list", { name: "最近解いた資格" })).toBeVisible();
+    expect(screen.getByRole("link", { name: /^衛生管理者/ })).toHaveAttribute("href", "/e-learning/exams/qualifications/eisei");
+    expect(screen.getAllByRole("listitem")).toHaveLength(1);
   });
 
   it.each([["合格", "passed"], ["不合格", "failed"], ["受けなかった", "absent"]] as const)("saves %s and offers the next step", async (label, result) => {
     savePacePlan(plan());
     render(<HomePace domains={domains} planExamKeys={["ip", "fe"]} />);
     for (const name of ["合格", "不合格", "受けなかった"]) expect(screen.getByRole("button", { name })).toBeVisible();
+    expect(screen.queryByRole("searchbox")).not.toBeInTheDocument();
+    expect(screen.queryByRole("img", { name: /^進み具合/ })).not.toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: label }));
     expect(listPacePlans()[0].result).toBe(result);
     if (result === "passed") {

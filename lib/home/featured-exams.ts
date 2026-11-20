@@ -12,20 +12,28 @@ export interface FeaturedCalendarExam {
 }
 export const HOME_EXAM_CALENDAR: readonly FeaturedCalendarExam[] = calendar.exams;
 
+export function historyExamLookup(keys: readonly string[], aliases: Readonly<Record<string, string>>) {
+  const longestFirst = [...keys].sort((a, b) => b.length - a.length);
+  const aliasPrefixes = Object.keys(aliases).sort((a, b) => b.length - a.length);
+  return (id: string) => {
+    const alias = aliasPrefixes.find(prefix => id.startsWith(prefix));
+    if (alias) return keys.includes(aliases[alias]) ? aliases[alias] : undefined;
+    const automotive = /^jidosha-20\d{2}-(?:first|second)-(.+)-q\d+$/.exec(id);
+    return automotive ? keys.find(key => key === `jidosha-${automotive[1]}`)
+      : longestFirst.find(key => id.startsWith(`${key}-`));
+  };
+}
+
 /** Latest qualification first; choose up to two others by attempts (including
  * reattempts), then display those by recency. Self-contained for pre-paint sizing. */
 export function frequentExamKeys(entries: unknown, keys: readonly string[], aliases: Readonly<Record<string, string>> = {}, excludedIds: readonly string[] = [], displayKeys: Readonly<Record<string, string>> = {}): string[] {
   if (!Array.isArray(entries)) return [];
-  const longestFirst = [...keys].sort((a, b) => b.length - a.length);
-  const aliasPrefixes = Object.keys(aliases).sort((a, b) => b.length - a.length);
+  const examFor = historyExamLookup(keys, aliases);
   const counts = new Map<string, { count: number; latest: number }>();
   for (const entry of entries) {
     if (!entry || typeof entry.id !== "string" || !Number.isFinite(entry.at) || excludedIds.includes(entry.id)) continue;
-    const automotive = /^jidosha-20\d{2}-(?:first|second)-(.+)-q\d+$/.exec(entry.id);
-    const alias = aliasPrefixes.find(prefix => entry.id.startsWith(prefix));
-    const key = alias ? aliases[alias] : automotive ? keys.find(key => key === `jidosha-${automotive[1]}`)
-      : longestFirst.find(key => entry.id.startsWith(`${key}-`));
-    if (!key || !keys.includes(key)) continue;
+    const key = examFor(entry.id);
+    if (!key) continue;
     const displayKey = displayKeys[key] ?? key;
     const previous = counts.get(displayKey) ?? { count: 0, latest: -Infinity };
     counts.set(displayKey, { count: previous.count + 1, latest: Math.max(previous.latest, entry.at) });

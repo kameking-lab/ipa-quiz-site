@@ -7,8 +7,7 @@ const bottomNav = "nav[aria-label='モバイル底タブ']";
 const surfaces = [
   {
     path: "/",
-    // The exam-schedule links are the final CTA on the home page.
-    selector: "main a[href='/study-room']",
+    selector: "#home-qualification-directory > summary",
   },
   {
     path: "/ipa",
