@@ -1,4 +1,5 @@
 import type { Question } from "@/lib/questions/types";
+import line2023First from "./2023-first-line.json";
 import line2023Second from "./2023-second-line.json";
 import line2024First from "./2024-first-line.json";
 import line2024Second from "./2024-second-line.json";
@@ -31,4 +32,5 @@ export const DEKYO_CHIEF_2_QUESTIONS: Question[] = [
   ...system2023First as Question[],
   ...law2023First as Question[],
   ...transmission2023First as Question[],
+  ...line2023First as Question[],
 ];
