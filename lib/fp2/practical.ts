@@ -7,6 +7,7 @@ import historical2022September from "@/data/questions/fp2/practical-202209.json"
 import historical2023January from "@/data/questions/fp2/practical-202301.json";
 import historical2023May from "@/data/questions/fp2/practical-202305.json";
 import historical2023September from "@/data/questions/fp2/practical-202309.json";
+import historical2024January from "@/data/questions/fp2/practical-202401.json";
 
 export interface PracticalSolution {
   explanation: string;
@@ -54,9 +55,10 @@ const HISTORICAL_EDITIONS: Partial<Record<string, HistoricalEdition>> = {
   "202301": historical2023January,
   "202305": historical2023May,
   "202309": historical2023September,
+  "202401": historical2024January,
 };
 
-export const FP2_PRACTICAL_EDITIONS = ["202205", "202209", "202301", "202305", "202309", "202405", "202409", "202501", "202505", "202605"] as const;
+export const FP2_PRACTICAL_EDITIONS = ["202205", "202209", "202301", "202305", "202309", "202401", "202405", "202409", "202501", "202505", "202605"] as const;
 
 export function practicalEditionLabel(edition: string): string {
   const labels: Record<string, string> = {
