@@ -14,6 +14,7 @@ import general2025SepTiri from "./2025-09-tiri";
 import general2025SepKogakuB from "./2025-09-kogaku-b";
 import general2025SepHoki from "./2025-09-hoki";
 import general2025SepKiso from "./2025-09-kiso";
+import general2025SepKogakuA from "./2025-09-kogaku-a";
 import { normalizeQuestionData } from "@/lib/questions/native-b";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 
@@ -31,7 +32,7 @@ const CONTENT_HOLD_IDS = new Set([
   "radio21-general1-2026-09-tiri-q06",
 ]);
 
-export const GENERAL1_ALL_QUESTIONS = [...data, ...writtenEnglish2023March, ...oralEnglish2023March, ...engineeringA2023March, ...oralEnglish2022March, ...geography2022March, ...law2022March, ...engineeringA2022March, ...foundation2022March, ...engineeringB2022March, ...writtenEnglish2025September, ...oralEnglish2025September, ...general2025SepTiri, ...general2025SepKogakuB, ...general2025SepHoki, ...general2025SepKiso].map(normalizeQuestionData);
+export const GENERAL1_ALL_QUESTIONS = [...data, ...writtenEnglish2023March, ...oralEnglish2023March, ...engineeringA2023March, ...oralEnglish2022March, ...geography2022March, ...law2022March, ...engineeringA2022March, ...foundation2022March, ...engineeringB2022March, ...writtenEnglish2025September, ...oralEnglish2025September, ...general2025SepTiri, ...general2025SepKogakuB, ...general2025SepHoki, ...general2025SepKiso, ...general2025SepKogakuA].map(normalizeQuestionData);
 export const GENERAL1_QUESTIONS = GENERAL1_ALL_QUESTIONS.filter(
   (q) => isPracticeReadyQuestion(q) && !CONTENT_HOLD_IDS.has(q.id),
 );
