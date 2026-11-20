@@ -86,11 +86,11 @@ for (const width of [390, 1280]) {
       await fixtures(page); await page.goto("/");
       await expect(page.locator('[data-home-state="new"]')).toBeVisible();
       await expect(page.getByRole("heading", { name: "今日も、ひと問ずつ。" })).toBeVisible();
-      await expect(page.locator("main li")).toHaveCount(3);
+      await expect(page.locator("#home-qualification-results li")).toHaveCount(3);
       await layout(page); await screenshot(page, "05-new", width);
       if (width === 390) await expect(page.getByRole("navigation", { name: "モバイル底タブ" }).getByRole("link")).toHaveCount(3);
       await page.getByRole("searchbox", { name: "資格名・略称で検索" }).fill("ITパスポート");
-      await expect(page.locator("main li")).toHaveCount(1);
+      await expect(page.locator("#home-qualification-results li")).toHaveCount(1);
       await page.getByRole("button", { name: "学習計画を作成", exact: true }).click();
       await expect(page.getByRole("dialog", { name: "学習計画を作成" })).toBeVisible();
     });
