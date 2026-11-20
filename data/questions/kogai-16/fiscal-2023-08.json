@@ -1,0 +1,1075 @@
+[
+  {
+    "id": "kogai-16-2023-08-q1",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 86,
+    "officialQuestionLabel": "汚水処理特論 問1",
+    "subject": "汚水処理特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "汚水処理特論",
+    "topicTags": [
+      "汚水処理特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "図に示すようなn 段の向流多段洗浄においては，下に示す理論式が成り立つ。\nan　r －1\na0 ＝\nr n ＋1－1\nただし，a0：洗浄前製品中に含まれる不純物質量\nan：第n 段の洗浄槽を出る製品中の不純物質量\nr：洗浄水量V と製品が各段で持ち出す水量v の比（r ＝V/v）\n今，r が50 である洗浄工程において，製品中に含まれる不純物質量を洗浄前の1/10000 以下に減らしたいとき，向流多段洗浄の段数を最低いくつにすればよいか。以下の選択肢から適切なものを選びなさい。",
+    "choices": {
+      "ア": "2 段",
+      "イ": "3 段",
+      "ウ": "4 段",
+      "エ": "5 段",
+      "オ": "10 段"
+    },
+    "answer": "イ",
+    "explanation": "3段なら49/(50⁴−1)≒7.84×10⁻⁶となり、2段では基準を満たさないため最小である。",
+    "choiceExplanations": {
+      "ア": "2段なら残留比は49/(50³−1)≒3.92×10⁻⁴となり、1/10000を上回る。",
+      "イ": "3段なら49/(50⁴−1)≒7.84×10⁻⁶となり、2段では基準を満たさないため最小である。",
+      "ウ": "4段でも1/10000以下にできるが、その条件はすでに3段で達成する。",
+      "エ": "5段まで増やせば比はさらに小さくなるが、目標を満たす最小の段数は3段である。",
+      "オ": "10段は目標に必要な段数を大幅に上回る。2段と3段で式の値を比較すれば足りる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724172954id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_08.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 汚水処理特論 問1（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized",
+    "imageUrls": [
+      "/images/questions/kogai-16/2023/08/q1-1.webp"
+    ],
+    "imageAltTexts": [
+      "汚水処理特論 問1の公式問題"
+    ]
+  },
+  {
+    "id": "kogai-16-2023-08-q2",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 87,
+    "officialQuestionLabel": "汚水処理特論 問2",
+    "subject": "汚水処理特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "汚水処理特論",
+    "topicTags": [
+      "汚水処理特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "横流式沈殿池に1 日当たり600 m3 の排水（沈降速度1 cm/分の粒子が懸濁）が流入している。粒子除去率70 ％を得るための面積（m2）として，最も近いものはどれか。ただし，池内に乱れや短絡がなく，水の流れは平行であり，かつ粒子は沈降の過程で沈降速度が変わることがないとする。",
+    "choices": {
+      "ア": "24",
+      "イ": "26",
+      "ウ": "29",
+      "エ": "34",
+      "オ": "38"
+    },
+    "answer": "ウ",
+    "explanation": "沈降速度を14.4 m/日に換算し、面積を0.70×600/14.4と求めると29.2 m²となる。",
+    "choiceExplanations": {
+      "ア": "沈降速度は14.4 m/日であり、面積24 m²なら理想除去率は14.4×24/600≒58％である。",
+      "イ": "26 m²では理想除去率が14.4×26/600≒62％であり、70％に届かない。",
+      "ウ": "沈降速度を14.4 m/日に換算し、面積を0.70×600/14.4と求めると29.2 m²となる。",
+      "エ": "34 m²では14.4×34/600≒82％を除去する条件となり、70％に対応する面積より大きい。",
+      "オ": "38 m²では理想除去率は約91％である。問われた70％に最も近い面積ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724172954id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_08.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 汚水処理特論 問2（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  },
+  {
+    "id": "kogai-16-2023-08-q3",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 88,
+    "officialQuestionLabel": "汚水処理特論 問3",
+    "subject": "汚水処理特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "汚水処理特論",
+    "topicTags": [
+      "汚水処理特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "清澄ろ過に関する記述として，誤っているものはどれか。",
+    "choices": {
+      "ア": "天然産のろ材としては，アンスラサイト，砂などがある。",
+      "イ": "砂ろ過においては，懸濁物質はろ材間の空隙に捕捉されるが，捕捉可能な粒子の大きさはろ材空隙の大きさ程度以上である。",
+      "ウ": "重力式砂ろ過機では，ろ過池の上部が開かれているので池内の様子が観察でき，保守や管理が容易である。",
+      "エ": "上水道のろ過機に使われるろ材としての砂は有効径0.5 ～0.7 mm 程度のものが望ましいとされている。",
+      "オ": "繊維質のろ材を用いたろ過機もあり，アクリル系の繊維を捲　縮　加工したろ材はその一つである。"
+    },
+    "answer": "イ",
+    "explanation": "ろ材表面での付着なども作用するため、空隙より小さい粒子も捕捉される。粒子の大きさを空隙以上に限定するのは誤りである。",
+    "choiceExplanations": {
+      "ア": "アンスラサイトや砂は、粒状の天然ろ材として清澄ろ過に用いられる。",
+      "イ": "ろ材表面での付着なども作用するため、空隙より小さい粒子も捕捉される。粒子の大きさを空隙以上に限定するのは誤りである。",
+      "ウ": "開放式の重力ろ過池では、上部からろ材の状態や洗浄の様子を観察できる。",
+      "エ": "上水道用の砂ろ材には、設問に示された0.5～0.7 mm程度の有効径が用いられる。",
+      "オ": "捲縮加工した繊維を使うろ材は、繊維間で浮遊物を捕捉できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724172954id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_08.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 汚水処理特論 問3（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  },
+  {
+    "id": "kogai-16-2023-08-q4",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 89,
+    "officialQuestionLabel": "汚水処理特論 問4",
+    "subject": "汚水処理特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "汚水処理特論",
+    "topicTags": [
+      "汚水処理特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "粒状層を通って水が流れるときのろ過抵抗を表す式としては，コゼニー－カルマンの式があるが，その式の中で，清浄ろ層のろ過抵抗と正比例の関係にある要素として，誤っているものはどれか。",
+    "choices": {
+      "ア": "ろ過速度",
+      "イ": "ろ材層の厚さ",
+      "ウ": "水の粘性係数",
+      "エ": "ろ材粒子径",
+      "オ": "空隙率関数 (1−ε)²/ε³（ε：ろ層の空隙率）"
+    },
+    "answer": "エ",
+    "explanation": "粒子径は式の分母に2乗で現れる。粒径が大きいほど圧力損失は小さくなる。",
+    "choiceExplanations": {
+      "ア": "清浄なろ層の層流条件では、圧力損失はろ過速度に比例する。",
+      "イ": "ろ材層が厚いほど通水経路が長くなるため、圧力損失は層厚に比例する。",
+      "ウ": "水の内部摩擦の影響を表すため、式の圧力損失は粘性係数に比例する。",
+      "エ": "粒子径は式の分母に2乗で現れる。粒径が大きいほど圧力損失は小さくなる。",
+      "オ": "空隙率をεとすると圧力損失は(1−ε)²/ε³に比例する。空隙が減ると抵抗は増す。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724172954id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_08.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 汚水処理特論 問4（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  },
+  {
+    "id": "kogai-16-2023-08-q5",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 90,
+    "officialQuestionLabel": "汚水処理特論 問5",
+    "subject": "汚水処理特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "汚水処理特論",
+    "topicTags": [
+      "汚水処理特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "酸化還元電位を定義する次のネルンストの式の空欄ア～エのうち，組合せとして正しいものはどれか。\n\nE = ア + (イ × T)/(n × ウ) × ln(エ)\n\nE：酸化還元電位，E₀：標準酸化還元電位，R：気体定数，F：ファラデー定数，T：絶対温度，n：移動する電子のモル数，［Ox］：酸化剤の活量（濃度），［Red］：還元剤の活量（濃度）",
+    "choices": {
+      "ア": "E₀，R，F，［Ox］/［Red］",
+      "イ": "E₀，F，R，［Ox］/［Red］",
+      "ウ": "E₀，F，R，［Red］/［Ox］",
+      "エ": "R，E₀，F，［Ox］/［Red］",
+      "オ": "R，E₀，F，［Red］/［Ox］"
+    },
+    "answer": "ア",
+    "explanation": "E＝E₀＋RT/(nF)×ln([Ox]/[Red])である。標準電位に、酸化形と還元形の活量比による補正を加える。",
+    "choiceExplanations": {
+      "ア": "E＝E₀＋RT/(nF)×ln([Ox]/[Red])である。標準電位に、酸化形と還元形の活量比による補正を加える。",
+      "イ": "活量比は合うが、分子の定数はR、分母の定数はFであり、両者が逆になっている。",
+      "ウ": "係数のRとFの位置が逆で、正の係数で表したときの活量比も酸化形が分子である。",
+      "エ": "活量比は合うが、加える基準は標準電位E₀である。対数に掛かる係数の分子にはRが入る。",
+      "オ": "基準の項は気体定数ではなく標準電位である。正の係数で表すなら、活量比は酸化形を還元形で割る。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724172954id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_08.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 汚水処理特論 問5（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized",
+    "imageUrls": [
+      "/images/questions/kogai-16/2023/08/q5-1.webp"
+    ],
+    "imageAltTexts": [
+      "汚水処理特論 問5の公式問題"
+    ]
+  },
+  {
+    "id": "kogai-16-2023-08-q6",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 91,
+    "officialQuestionLabel": "汚水処理特論 問6",
+    "subject": "汚水処理特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "汚水処理特論",
+    "topicTags": [
+      "汚水処理特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "活性炭吸着に関する記述として，不適切なものはどれか。",
+    "choices": {
+      "ア": "活性炭は，木材や石炭などの原料を高温下で炭化及び賦活化し，多孔質構造を形成させたものである。",
+      "イ": "活性炭は，高い比表面積を持ち，高い吸着能を有する。",
+      "ウ": "活性炭は，その粒子径により粉末炭（1 mm 程度以下）と粒状炭（1 mm 程度以上）に分類される。",
+      "エ": "活性炭の賦活化には，高温の水蒸気と反応させる水蒸気賦活化法などが用いられる。",
+      "オ": "活性炭は，一般に，疎水性の強い物質ほど吸着しやすい。"
+    },
+    "answer": "ウ",
+    "explanation": "粉末炭と粒状炭の区分は1 mmを境とするものではない。粉末炭は一般に1 mmよりはるかに小さな粒子である。",
+    "choiceExplanations": {
+      "ア": "木材や石炭などを炭化し、賦活で細孔を発達させると吸着材として使えるようになる。",
+      "イ": "発達した細孔が大きな比表面積をもたらし、多くの物質を吸着できる。",
+      "ウ": "粉末炭と粒状炭の区分は1 mmを境とするものではない。粉末炭は一般に1 mmよりはるかに小さな粒子である。",
+      "エ": "水蒸気賦活法では高温で水蒸気との反応を利用して炭素の細孔を発達させる。",
+      "オ": "疎水性有機物は水相より活性炭表面に移りやすく、一般に吸着されやすい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724172954id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_08.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 汚水処理特論 問6（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  },
+  {
+    "id": "kogai-16-2023-08-q7",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 92,
+    "officialQuestionLabel": "汚水処理特論 問7",
+    "subject": "汚水処理特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "汚水処理特論",
+    "topicTags": [
+      "汚水処理特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "イオン交換に関する記述として，誤っているものはどれか。",
+    "choices": {
+      "ア": "樹脂母体に結合している活性基がカルボキシ基（カルボキシル基）のものは強酸性陽イオン交換樹脂である。",
+      "イ": "キレート樹脂は，微量の重金属を選択的に吸着するものである。",
+      "ウ": "硬度成分で飽和した樹脂の再生に，塩化ナトリウム水溶液を用いることがある。",
+      "エ": "通常，イオン交換の対象となる原水は，イオン濃度が1000 mg/L 程度以下のものであり，高濃度のものは逆浸透法などを検討するほうがよい。",
+      "オ": "イオン交換処理においては，通常，通水速度は見掛けの接触時間の逆数を意味する空間速度で表示される。"
+    },
+    "answer": "ア",
+    "explanation": "カルボキシ基は弱酸性の交換基である。強酸性陽イオン交換樹脂の代表的な交換基はスルホン酸基である。",
+    "choiceExplanations": {
+      "ア": "カルボキシ基は弱酸性の交換基である。強酸性陽イオン交換樹脂の代表的な交換基はスルホン酸基である。",
+      "イ": "キレート樹脂には特定の金属イオンと結合する官能基があり、微量重金属の選択除去に適する。",
+      "ウ": "ナトリウム形の軟化用樹脂は、食塩水でカルシウムやマグネシウムを追い出して再生できる。",
+      "エ": "原水のイオン濃度が高いと交換容量を早く消費するため、逆浸透なども選択肢になる。",
+      "オ": "空間速度は単位時間の流量を樹脂層の見掛け体積で割った値で、見掛けの接触時間の逆数に当たる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724172954id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_08.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 汚水処理特論 問7（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  },
+  {
+    "id": "kogai-16-2023-08-q8",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 93,
+    "officialQuestionLabel": "汚水処理特論 問8",
+    "subject": "汚水処理特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "汚水処理特論",
+    "topicTags": [
+      "汚水処理特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "膜分離法に関する記述として，正しいものはどれか。",
+    "choices": {
+      "ア": "逆浸透法では，通常，対象とする原水の浸透圧の30 ％～50 ％程度の圧力を加える。",
+      "イ": "スパイラル型の膜モジュールは，NF 膜や逆浸透膜に用いられる。",
+      "ウ": "全量ろ過式は，排水処理や海水淡水化に用いられることが多い。",
+      "エ": "次亜塩素酸ナトリウムを用いる薬液洗浄は，金属酸化物を対象として行われる。",
+      "オ": "電気透析法は，水溶性電解質ではない有機物の除去に用いられる。"
+    },
+    "answer": "イ",
+    "explanation": "スパイラル型は膜を集水管に巻き付けて膜面積を確保し、ナノろ過膜や逆浸透膜に使われる。",
+    "choiceExplanations": {
+      "ア": "逆浸透では濃厚側に浸透圧差を超える圧力をかけ、水を希薄側へ透過させる。",
+      "イ": "スパイラル型は膜を集水管に巻き付けて膜面積を確保し、ナノろ過膜や逆浸透膜に使われる。",
+      "ウ": "排水処理や海水淡水化では、膜面に沿って流すクロスフロー式がよく使われる。",
+      "エ": "次亜塩素酸ナトリウムは有機物や微生物由来の汚れの洗浄に用いられ、金属酸化物には酸洗浄などを検討する。",
+      "オ": "電気透析は電場で移動するイオンをイオン交換膜で分けるため、非電解質の有機物を主対象としない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724172954id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_08.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 汚水処理特論 問8（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  },
+  {
+    "id": "kogai-16-2023-08-q9",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 94,
+    "officialQuestionLabel": "汚水処理特論 問9",
+    "subject": "汚水処理特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "汚水処理特論",
+    "topicTags": [
+      "汚水処理特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "脱水機に関する記述として，誤っているものはどれか。",
+    "choices": {
+      "ア": "フィルタープレス脱水機では，ろ過機の各ろ過室に汚泥を押し込み，圧搾脱水した後に各ろ過板を外してケーキを排出する。",
+      "イ": "ベルトプレス脱水機は，遠心脱水機に比べ運転騒音が小さく動力が小さい。",
+      "ウ": "スクリュープレス脱水機は，スクリューの回転によってスラッジを次第に狭隙部へ送り込み，そのときに発生する圧搾圧力によって圧搾脱水する。",
+      "エ": "遠心脱水機では，供給汚泥中の砂やきょう雑物等は脱水機の摩耗を促進したり，閉塞を起こすので，事前に砂を除去し，きょう雑物を破砕する。",
+      "オ": "回転加圧脱水機では，高速度で回転する2 枚の金属円盤フィルターの間に汚泥を供給し，回転によって生じる遠心力によって脱水する。"
+    },
+    "answer": "オ",
+    "explanation": "回転加圧式は低速回転するろ過部に汚泥を圧送し、圧力で脱水する。高速回転で遠心分離する方式の説明ではない。",
+    "choiceExplanations": {
+      "ア": "フィルタープレスではろ板の間のろ室に汚泥を圧入し、脱水後にろ板を開いてケーキを排出する。",
+      "イ": "ベルトプレスは低速のベルトやロールで圧搾するため、遠心式より騒音と動力を抑えやすい。",
+      "ウ": "スクリューで汚泥を狭い方へ押し込むと圧力が増し、ろ液が排出される。",
+      "エ": "砂は高速回転部を摩耗させ、夾雑物は閉塞を起こすため、前処理で除去や破砕を行う。",
+      "オ": "回転加圧式は低速回転するろ過部に汚泥を圧送し、圧力で脱水する。高速回転で遠心分離する方式の説明ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724172954id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_08.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 汚水処理特論 問9（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  },
+  {
+    "id": "kogai-16-2023-08-q10",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 95,
+    "officialQuestionLabel": "汚水処理特論 問10",
+    "subject": "汚水処理特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "汚水処理特論",
+    "topicTags": [
+      "汚水処理特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "汚泥焼却に関する記述として，誤っているものはどれか。",
+    "choices": {
+      "ア": "有機質の汚泥は焼却によって著しく減量する。",
+      "イ": "ダイオキシン類の発生を抑制するため，適正な燃焼温度管理（850 ℃程度）などに留意する必要がある。",
+      "ウ": "流動焼却炉では，横型の回転する筒形の炉の中に砂などの流動媒体を入れて流動化させ，この流動層内に汚泥を供給して燃焼させる。",
+      "エ": "流動焼却炉では排ガスは高温となるので，臭気成分は熱によって分解される。",
+      "オ": "階段式ストーカー炉では，脱水汚泥の攪拌作用がないため，高含水率汚泥に対しては，予備乾燥が必要となる。"
+    },
+    "answer": "ウ",
+    "explanation": "流動焼却炉では上向きの空気流で砂を流動化する。横型の筒を回転させるという説明は回転炉の構造を混同している。",
+    "choiceExplanations": {
+      "ア": "有機質は燃焼して主に気体へ移り、残るのは灰分などであるため、汚泥の量が減る。",
+      "イ": "温度を適正に管理して不完全燃焼を抑えることは、ダイオキシン類の排出抑制につながる。",
+      "ウ": "流動焼却炉では上向きの空気流で砂を流動化する。横型の筒を回転させるという説明は回転炉の構造を混同している。",
+      "エ": "燃焼時に十分な温度と滞留時間を確保すれば、排ガス中の臭気成分を熱分解できる。",
+      "オ": "高含水の汚泥はそのままでは着火や燃焼維持が難しく、攪拌されない炉では予備乾燥が必要になる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724172954id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_08.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 汚水処理特論 問10（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  },
+  {
+    "id": "kogai-16-2023-08-q11",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 96,
+    "officialQuestionLabel": "汚水処理特論 問11",
+    "subject": "汚水処理特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "汚水処理特論",
+    "topicTags": [
+      "汚水処理特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "下図に示すような標準活性汚泥法で以下の条件で処理している。汚泥滞留時間を10 日で運転するための余剰汚泥引き抜き量（m3/日）はいくらか。\n運転条件流入水量：200 m3/日曝　気　槽容積：50 m3\n曝気槽MLSS：2000 mg/L\n返送汚泥率：0.5\n沈殿池と配管内の汚泥量：40 kg\n処理水SS：5 mg/L",
+    "choices": {
+      "ア": "0.8",
+      "イ": "1.0",
+      "ウ": "1.6",
+      "エ": "2.2",
+      "オ": "2.8"
+    },
+    "answer": "エ",
+    "explanation": "系内140 kgを10日で割り、処理水に出る約1 kg/日を引くと余剰汚泥は約13 kg/日である。図の固形分収支で求めた濃度約6 kg/m³で割ると2.2 m³/日となる。",
+    "choiceExplanations": {
+      "ア": "曝気槽100 kgと沈殿池・配管40 kgを合わせると、1日当たりの系外流出固形分は14 kg必要である。0.8 m³/日では不足する。",
+      "イ": "返送汚泥濃度は約6 kg/m³、処理水からの流出は約1 kg/日である。1.0 m³/日では計約7 kg/日しか除去できない。",
+      "ウ": "1.6 m³/日の引抜きでは固形分除去は約9.6 kg/日となる。処理水分を加えても14 kg/日に達しない。",
+      "エ": "系内140 kgを10日で割り、処理水に出る約1 kg/日を引くと余剰汚泥は約13 kg/日である。図の固形分収支で求めた濃度約6 kg/m³で割ると2.2 m³/日となる。",
+      "オ": "2.8 m³/日を約6 kg/m³で引き抜くと、処理水分と合わせて約18 kg/日となり、滞留時間は10日より短くなる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724172954id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_08.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 汚水処理特論 問11（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized",
+    "imageUrls": [
+      "/images/questions/kogai-16/2023/08/q11-1.webp"
+    ],
+    "imageAltTexts": [
+      "汚水処理特論 問11の公式問題"
+    ]
+  },
+  {
+    "id": "kogai-16-2023-08-q12",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 97,
+    "officialQuestionLabel": "汚水処理特論 問12",
+    "subject": "汚水処理特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "汚水処理特論",
+    "topicTags": [
+      "汚水処理特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "BOD 300 mg/L，流量100 m3/日の汚水を曝気槽容量50 m3，MLSS 濃度\n2000 mg/L，BOD 除去率95 ％で処理している活性汚泥処理施設がある。この施設の1 日当たりの必要酸素量（kg/日）として最も近い値はどれか。ただし，必要酸素量は次式により求めるものとして，a′ は0.5，b′ は0.1 とする。\nX ＝a′Lr ＋b′Sa\nここで，X は必要酸素量（kg/日），Lr は除去BOD 量（kg BOD/日），Sa は曝気槽内汚泥量（kg MLSS），a′ は除去BOD のうち，エネルギー獲得のために利用される酸素の割合，b′ は汚泥の内生呼吸に利用される酸素の割合（1 /日）である。",
+    "choices": {
+      "ア": "19",
+      "イ": "24",
+      "ウ": "29",
+      "エ": "34",
+      "オ": "39"
+    },
+    "answer": "イ",
+    "explanation": "除去BOD量は28.5 kg/日、槽内汚泥量は100 kgである。0.5×28.5＋0.1×100＝24.25 kg/日となる。",
+    "choiceExplanations": {
+      "ア": "槽内汚泥量は100 kgなので、内生呼吸だけで10 kg/日必要である。除去BODに伴う14.25 kg/日を加えると19より大きい。",
+      "イ": "除去BOD量は28.5 kg/日、槽内汚泥量は100 kgである。0.5×28.5＋0.1×100＝24.25 kg/日となる。",
+      "ウ": "BOD除去量の半分と、汚泥量に係数0.1を掛けた量を足す。計24.25 kg/日で、29より小さい。",
+      "エ": "34 kg/日は内生呼吸の10 kg/日を差し引いても24 kg/日を要する計算であり、設問のBOD除去分14.25 kg/日と合わない。",
+      "オ": "39 kg/日は除去BOD量に換算係数を掛けない場合に近い。式では除去量の0.5倍だけを用いる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724172954id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_08.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 汚水処理特論 問12（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  },
+  {
+    "id": "kogai-16-2023-08-q13",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 98,
+    "officialQuestionLabel": "汚水処理特論 問13",
+    "subject": "汚水処理特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "汚水処理特論",
+    "topicTags": [
+      "汚水処理特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "下記の排水を活性汚泥法により処理するとき，不足しているりんをりん酸溶液で補給するとすれば，その必要量（kg/日）はいくらか。ただし，りん酸溶液のりん含有率は20 ％（質量パーセント濃度）とし，活性汚泥法の栄養必要条件は，質量比でBOD：N：P ＝100：5：1 とする。\n排水量　1000 m3/日\nBOD 濃度　400 mg/L\n全窒素（N）濃度　20 mg/L\n全りん（P）濃度　2 mg/L",
+    "choices": {
+      "ア": "2",
+      "イ": "4",
+      "ウ": "6",
+      "エ": "8",
+      "オ": "10"
+    },
+    "answer": "オ",
+    "explanation": "BOD 400 kg/日にはりん4 kg/日が必要で、流入は2 kg/日である。不足分2 kg/日を含有率0.20で割ると溶液は10 kg/日となる。",
+    "choiceExplanations": {
+      "ア": "不足のりんは2 kg/日だが、これは溶液の量ではなく、溶液に含ませる純りんの量である。",
+      "イ": "必要なりんの濃度は4 mg/L、現在は2 mg/Lである。差を水量と溶液の含有率で換算する必要がある。",
+      "ウ": "溶液6 kg/日が供給するりんは1.2 kg/日であり、不足量2 kg/日に足りない。",
+      "エ": "溶液8 kg/日から供給されるりんは1.6 kg/日であり、残り0.4 kg/日が不足する。",
+      "オ": "BOD 400 kg/日にはりん4 kg/日が必要で、流入は2 kg/日である。不足分2 kg/日を含有率0.20で割ると溶液は10 kg/日となる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724172954id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_08.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 汚水処理特論 問13（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  },
+  {
+    "id": "kogai-16-2023-08-q14",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 99,
+    "officialQuestionLabel": "汚水処理特論 問14",
+    "subject": "汚水処理特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "汚水処理特論",
+    "topicTags": [
+      "汚水処理特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "好気ろ床法に関する記述として，誤っているものはどれか。",
+    "choices": {
+      "ア": "固体表面に付着した微生物を用いて処理を行う方式であり，生物膜法に分類される。",
+      "イ": "下向流式では，支持体を充塡したろ床の上部から排水を流入させ，ろ床下部から空気を吹き込む。",
+      "ウ": "ろ材間を排水が通過する間に，ろ材表面に増殖した微生物による酸化分解と\nSS の捕捉が同時に行われる。",
+      "エ": "処理時間に伴って，捕捉されたSS などによるろ床の閉塞が進行するため，\n一般に空気と処理水を用いた逆洗を行う。",
+      "オ": "増殖速度の遅い硝化細菌などはほとんど保持できない。"
+    },
+    "answer": "オ",
+    "explanation": "ろ材に付着した菌は系外へ流失しにくい。増殖の遅い硝化細菌も保持して硝化に利用できる。",
+    "choiceExplanations": {
+      "ア": "ろ材などの固体表面に微生物を付着させて利用するため、生物膜法に分類される。",
+      "イ": "下向流式では排水が上から下へ、下部から吹き込む空気が下から上へ向かう。",
+      "ウ": "ろ材表面の微生物が有機物などを酸化しながら、ろ材層が懸濁物も捕捉する。",
+      "エ": "捕捉したSSや増殖した生物膜で圧力損失が増すため、通常は処理水と空気で逆洗する。",
+      "オ": "ろ材に付着した菌は系外へ流失しにくい。増殖の遅い硝化細菌も保持して硝化に利用できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724172954id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_08.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 汚水処理特論 問14（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  },
+  {
+    "id": "kogai-16-2023-08-q15",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 100,
+    "officialQuestionLabel": "汚水処理特論 問15",
+    "subject": "汚水処理特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "汚水処理特論",
+    "topicTags": [
+      "汚水処理特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "メタン発酵によるでんぷんからのガス発生量を求める次式において，\nに入るア～ウの数値の組合せとして，正しいものはどれか。\nC6H10O5 ＋　ア　H2O　イ　CH4 ＋　ウ　CO2\nア　　　イ　　　ウ",
+    "choices": {
+      "ア": "1 　　　3 　　　3",
+      "イ": "1 　　　4 　　　2",
+      "ウ": "2 　　　2 　　　4",
+      "エ": "3 　　　1 　　　4",
+      "オ": "3 　　　2 　　　4"
+    },
+    "answer": "ア",
+    "explanation": "C₆H₁₀O₅＋H₂O→3CH₄＋3CO₂では、炭素6、水素12、酸素6で両辺がつり合う。",
+    "choiceExplanations": {
+      "ア": "C₆H₁₀O₅＋H₂O→3CH₄＋3CO₂では、炭素6、水素12、酸素6で両辺がつり合う。",
+      "イ": "水1分子を加えると反応物側の水素は12個である。メタン4分子では生成物側の水素が16個になる。",
+      "ウ": "メタン2分子と二酸化炭素4分子では生成物側の酸素は8個である。水を2分子加えた反応物側では7個しかない。",
+      "エ": "メタン1分子と二酸化炭素4分子では炭素は5個であり、反応物側のでんぷん単位の炭素6個とつり合わない。",
+      "オ": "水3分子を加えると反応物側は水素16個となるが、メタン2分子では生成物側は水素8個である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724172954id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_08.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 汚水処理特論 問15（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized",
+    "imageUrls": [
+      "/images/questions/kogai-16/2023/08/q15-1.webp"
+    ],
+    "imageAltTexts": [
+      "汚水処理特論 問15の公式問題"
+    ]
+  },
+  {
+    "id": "kogai-16-2023-08-q16",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 101,
+    "officialQuestionLabel": "汚水処理特論 問16",
+    "subject": "汚水処理特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "汚水処理特論",
+    "topicTags": [
+      "汚水処理特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "硝化脱窒素法における硝化工程に関する記述として，誤っているものはどれか。",
+    "choices": {
+      "ア": "好気条件下でアンモニア態窒素を微生物処理により亜硝酸態あるいは硝酸態窒素まで酸化する工程のことである。",
+      "イ": "関与する微生物は，アンモニア態窒素や亜硝酸態窒素の酸化によりエネルギーを獲得し，有機化合物を利用して増殖する従属栄養細菌である。",
+      "ウ": "関与する微生物として，アンモニア態窒素の酸化を担うNitrosomonas\nsp. や亜硝酸態窒素の酸化を担うNitrobacter sp. が知られている。",
+      "エ": "アンモニア態窒素を硝酸態窒素に酸化する際は次式に従うことから，窒素\n1 g 当りおよそ4.6 g の酸素を必要とする。\nNH4＋＋2O2 ＝NO3－＋H2O ＋2H＋",
+      "オ": "アンモニア態窒素を亜硝酸態窒素に酸化する際にはH＋が生成されるので，\npH の過剰な低下を防ぐため，アルカリの添加が必要となる場合がある。"
+    },
+    "answer": "イ",
+    "explanation": "代表的な硝化細菌は還元型の無機窒素を酸化し、二酸化炭素などの無機炭素を利用する化学合成独立栄養細菌である。",
+    "choiceExplanations": {
+      "ア": "硝化は、好気条件でアンモニア態窒素を亜硝酸態や硝酸態へ酸化する微生物反応である。",
+      "イ": "代表的な硝化細菌は還元型の無機窒素を酸化し、二酸化炭素などの無機炭素を利用する化学合成独立栄養細菌である。",
+      "ウ": "Nitrosomonas属はアンモニアの酸化、Nitrobacter属は亜硝酸の酸化を担う代表例である。",
+      "エ": "窒素1 mol当たり酸素2 molを消費するため、質量比は64/14≒4.57になる。",
+      "オ": "酸化に伴い水素イオンが生じるので、原水のアルカリ度が不足する場合は運転中に補うことがある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724172954id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_08.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 汚水処理特論 問16（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  },
+  {
+    "id": "kogai-16-2023-08-q17",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 102,
+    "officialQuestionLabel": "汚水処理特論 問17",
+    "subject": "汚水処理特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "汚水処理特論",
+    "topicTags": [
+      "汚水処理特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "生物的脱りん法の原理に関する記述として，誤っているものはどれか。",
+    "choices": {
+      "ア": "前段の嫌気槽と後段の好気槽を経て，りんを高濃度に蓄積した活性汚泥を余剰汚泥として系外に取り除くことで行われる。",
+      "イ": "嫌気状態では，細胞中のポリりん酸が加水分解されて正りん酸として混合液中に放出される。",
+      "ウ": "嫌気状態では，蓄積したPHB（ポリ- β -ヒドロキシ酪酸）などの有機物を用いた細胞増殖が行われる。",
+      "エ": "好気状態では，正りん酸を混合液中から摂取し，ポリりん酸として再蓄積する。",
+      "オ": "好気状態では，嫌気状態での放出量以上にりんを蓄積するため，活性汚泥のりん含有量が増大する。"
+    },
+    "answer": "ウ",
+    "explanation": "嫌気段階では取り込んだ有機物をPHBなどとして蓄える。蓄えを消費して細胞が増殖するのは主として後段の好気段階である。",
+    "choiceExplanations": {
+      "ア": "りんを多く蓄えた菌体を余剰汚泥として引き抜くことで、水からりんを除去する。",
+      "イ": "嫌気条件ではポリりん酸の加水分解でエネルギーを得る過程で、正りん酸を放出する。",
+      "ウ": "嫌気段階では取り込んだ有機物をPHBなどとして蓄える。蓄えを消費して細胞が増殖するのは主として後段の好気段階である。",
+      "エ": "好気段階では蓄えた有機物を使って活動し、混合液から取り込んだりんをポリりん酸として蓄積する。",
+      "オ": "好気条件でのりん取り込みが嫌気条件での放出を上回るため、活性汚泥のりん含有率が高まる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724172954id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_08.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 汚水処理特論 問17（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  },
+  {
+    "id": "kogai-16-2023-08-q18",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 103,
+    "officialQuestionLabel": "汚水処理特論 問18",
+    "subject": "汚水処理特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "汚水処理特論",
+    "topicTags": [
+      "汚水処理特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "加圧浮上装置の維持管理において，調整又は監視する項目として，該当しないものはどれか。",
+    "choices": {
+      "ア": "加圧水ポンプの流量と圧力",
+      "イ": "溶解させる空気中の酸素濃度",
+      "ウ": "空気溶解槽内の気液界面の高さ",
+      "エ": "加圧水の吹き出し状態及び微細気泡の発生状況",
+      "オ": "フロックへの気泡の付着状態及び浮上性スカムの安定性"
+    },
+    "answer": "イ",
+    "explanation": "溶かした空気から生じる気泡によって浮上させる装置であり、通常は空気中の酸素濃度を調整する工程ではない。",
+    "choiceExplanations": {
+      "ア": "数多くの微細気泡を得るには、加圧水の供給流量と溶解に必要な圧力を管理する。",
+      "イ": "溶かした空気から生じる気泡によって浮上させる装置であり、通常は空気中の酸素濃度を調整する工程ではない。",
+      "ウ": "空気溶解槽の界面の位置を監視すれば、水と空気の供給の不均衡を把握できる。",
+      "エ": "減圧した加圧水から微細気泡を安定して発生させるため、吹き出しの状態を確認する。",
+      "オ": "フロックに気泡が付着して安定したスカムを形成するかが、処理の状態を判断する指標となる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724172954id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_08.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 汚水処理特論 問18（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  },
+  {
+    "id": "kogai-16-2023-08-q19",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 104,
+    "officialQuestionLabel": "汚水処理特論 問19",
+    "subject": "汚水処理特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "汚水処理特論",
+    "topicTags": [
+      "汚水処理特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "清澄ろ過装置及びその維持管理に関する記述として，不適切なものはどれか。",
+    "choices": {
+      "ア": "排水処理の分野でろ過装置が使用されるのは，放流水質の規制強化に伴う高度処理の必要性や再利用を目的とする場合などである。",
+      "イ": "ろ過によって除去される浮遊物質は，凝集沈殿処理後のフロックや生物処理後の微生物フロックが主なものである。",
+      "ウ": "高濃度の浮遊物質を含む排水をろ過すると，短時間でろ層が閉塞するため，\n凝集沈殿などの前処理により浮遊物質濃度を下げておく必要がある。",
+      "エ": "ろ材が相互に固着して形成されるマッドボールは，ろ層の逆転や混合を引き起こし，ろ過機能に悪影響を与えるので，洗浄を十分にしてその形成を防止する必要がある。",
+      "オ": "洗浄に使用する洗浄水には，水道水を使用する。"
+    },
+    "answer": "オ",
+    "explanation": "洗浄水には、通常はろ過した処理水などを利用できる。一律に水道水を使用するという記述は不適切である。",
+    "choiceExplanations": {
+      "ア": "清澄ろ過を追加すると低濃度の懸濁物を除去でき、放流基準の達成や処理水の再利用に役立つ。",
+      "イ": "沈殿工程で残った凝集フロックや、生物処理後の微生物フロックが主な捕捉対象になる。",
+      "ウ": "浮遊物質が多いままろ過すると損失水頭が急増するため、通常は凝集沈殿などで負荷を下げる。",
+      "エ": "マッドボールができるとろ層が不均一になり、ろ過の障害となるので、適切な逆洗などで形成を抑える。",
+      "オ": "洗浄水には、通常はろ過した処理水などを利用できる。一律に水道水を使用するという記述は不適切である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724172954id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_08.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 汚水処理特論 問19（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  },
+  {
+    "id": "kogai-16-2023-08-q20",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 105,
+    "officialQuestionLabel": "汚水処理特論 問20",
+    "subject": "汚水処理特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "汚水処理特論",
+    "topicTags": [
+      "汚水処理特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "分析方法に関する記述として，誤っているものはどれか。",
+    "choices": {
+      "ア": "吸光光度法は，試料溶液，あるいはそれに適切な発色試薬を加えて発色させた溶液などの吸光度を測定して，その濃度を求める方法である。",
+      "イ": "フレーム原子吸光法は，バーナーを用いてフレームをつくり，そこに試料溶液を噴霧して原子蒸気を生成させ，その中に中空陰極ランプなどからの光を透過させ，そのときの吸光度を測定する方法である。",
+      "ウ": "ICP 発光分光分析装置のプラズマは完全に電離しているので，完全電離プラズマという。",
+      "エ": "イオン電極は，溶液中の特定イオンの量（活量）に応答して電位を発生する電極である。",
+      "オ": "流れ分析法は，ポンプを利用して水試料，試薬を細管中に流し，反応操作などを行った後，検出部で分析成分を検出して定量する方法である。"
+    },
+    "answer": "ウ",
+    "explanation": "ICPで用いられるアルゴンプラズマでは、中性の原子も存在する。完全電離ではなく、弱電離プラズマである。",
+    "choiceExplanations": {
+      "ア": "測定対象の物質自身、または発色させた化合物の吸光度を測って、濃度を求める。",
+      "イ": "フレームで試料を原子化し、元素固有の波長の光がどれだけ吸収されるかを測る。",
+      "ウ": "ICPで用いられるアルゴンプラズマでは、中性の原子も存在する。完全電離ではなく、弱電離プラズマである。",
+      "エ": "イオン選択性電極の電位は、測定対象とするイオンの活量に応じて変化する。",
+      "オ": "試料や試薬を細管に送って反応させ、下流の検出器で測る工程を連続化した方法である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724172954id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_08.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 汚水処理特論 問20（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  },
+  {
+    "id": "kogai-16-2023-08-q21",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 106,
+    "officialQuestionLabel": "汚水処理特論 問21",
+    "subject": "汚水処理特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "汚水処理特論",
+    "topicTags": [
+      "汚水処理特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "pH 計のスパン校正に関する記述中，アとイの　の中に挿入すべき語句の組合せとして，最も適切なものはどれか。\n試料のpH 値が7 以下の場合は，検出部を　ア　あるいはしゅう酸塩pH\n標準液に浸し，pH 指示値がこれらの標準液の温度に対応するpH 値になるように調節する。7 を超える場合は，ほう酸塩pH 標準液あるいは　イ　を用いて同様に調節する。\nア　イ",
+    "choices": {
+      "ア": "炭酸塩pH 標準液　りん酸塩pH 標準液",
+      "イ": "フタル酸塩pH 標準液　炭酸塩pH 標準液",
+      "ウ": "りん酸塩pH 標準液　炭酸塩pH 標準液",
+      "エ": "フタル酸塩pH 標準液　りん酸塩pH 標準液",
+      "オ": "りん酸塩pH 標準液　フタル酸塩pH 標準液"
+    },
+    "answer": [
+      "イ",
+      "エ"
+    ],
+    "explanation": "アのフタル酸塩は酸性側で、イの炭酸塩はアルカリ性側である。公式訂正で正解として認められた組合せの一つである。 アにフタル酸塩を用い、イにはpH約7.5のりん酸塩標準液を用いることができる。公式訂正ではこの組合せも認められた。",
+    "choiceExplanations": {
+      "ア": "炭酸塩pH標準液はアルカリ性側に用いる。pH 7以下の側のアに入れるのは適切でない。",
+      "イ": "アのフタル酸塩は酸性側で、イの炭酸塩はアルカリ性側である。公式訂正で正解として認められた組合せの一つである。",
+      "ウ": "イの炭酸塩はアルカリ性側に使えるが、アとして意図された酸性側の標準液はフタル酸塩である。",
+      "エ": "アにフタル酸塩を用い、イにはpH約7.5のりん酸塩標準液を用いることができる。公式訂正ではこの組合せも認められた。",
+      "オ": "フタル酸塩は酸性側の校正に使う。pH 7を超える試料のイに置く組合せは誤りである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724172954id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_08.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 汚水処理特論 問21（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized",
+    "officialReferenceUrls": [
+      "https://www.jemai.or.jp/polconman/examination/d3ldbs0000000ya9-att/2023(R05)_08_Q21.pdf"
+    ],
+    "imageUrls": [
+      "/images/questions/kogai-16/2023/08/q21-1.webp"
+    ],
+    "imageAltTexts": [
+      "汚水処理特論 問21の公式問題"
+    ]
+  },
+  {
+    "id": "kogai-16-2023-08-q22",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 107,
+    "officialQuestionLabel": "汚水処理特論 問22",
+    "subject": "汚水処理特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "汚水処理特論",
+    "topicTags": [
+      "汚水処理特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "BOD 試験における溶存酸素の定量に関する記述として，誤っているものはどれか。",
+    "choices": {
+      "ア": "よう素滴定法は，溶存酸素の標準的な定量法であるが，酸化性及び還元性物質，懸濁物，着色物質の影響を受けやすい欠点がある。",
+      "イ": "よう素滴定法では，試料に硫酸マンガン（Ⅱ）溶液とアルカリ性よう化カリウム－アジ化ナトリウム溶液を加え，溶存酸素との反応により水酸化マンガン\n（Ⅲ）を生成させる。",
+      "ウ": "ミラー変法は，アルカリ性で，酒石酸塩の存在下で試料中の溶存酸素が鉄\n（Ⅱ）を酸化し，鉄（Ⅲ）とする反応を利用する方法である。",
+      "エ": "隔膜電極法には，ガルバニ電池方式と非分散型赤外線方式とがある。",
+      "オ": "光学式センサ法では，蛍光物質やりん光物質などが塗布されたセンサキャップ，励起光源，光検出部等から構成されている光学式センサを試料に浸して溶存酸素濃度を測定する。"
+    },
+    "answer": "エ",
+    "explanation": "隔膜電極法の代表はガルバニ電池方式とポーラログラフ方式である。非分散型赤外線方式はその電極方式に当たらない。",
+    "choiceExplanations": {
+      "ア": "よう素滴定では酸素に対応して生じたよう素を定量する。酸化還元性の共存物質や着色などが妨害することがある。",
+      "イ": "アルカリ性下でマンガンの沈殿が溶存酸素で酸化され、設問のように三価の水酸化物を生じる。",
+      "ウ": "ミラー変法は、アルカリ性かつ酒石酸塩の存在下で溶存酸素により鉄(II)が酸化されることを利用する。",
+      "エ": "隔膜電極法の代表はガルバニ電池方式とポーラログラフ方式である。非分散型赤外線方式はその電極方式に当たらない。",
+      "オ": "光学式では励起された発光物質の発光が酸素で消光されることを利用し、溶存酸素を測定する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724172954id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_08.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 汚水処理特論 問22（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  },
+  {
+    "id": "kogai-16-2023-08-q23",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 108,
+    "officialQuestionLabel": "汚水処理特論 問23",
+    "subject": "汚水処理特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "汚水処理特論",
+    "topicTags": [
+      "汚水処理特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "ノルマルヘキサン抽出物質及びその試験に関する記述中，下線を付した箇所のうち，誤っているものはどれか。\n\n公式問題の画像を見て、該当する番号を選んでください。",
+    "choices": {
+      "ア": "公式問題の図（1）",
+      "イ": "公式問題の図（2）",
+      "ウ": "公式問題の図（3）",
+      "エ": "公式問題の図（4）",
+      "オ": "公式問題の図（5）"
+    },
+    "answer": "ア",
+    "explanation": "ノルマルヘキサン抽出の前処理は試料を酸性側に調整する。設問のpH 8以上にするという箇所が誤りである。",
+    "choiceExplanations": {
+      "ア": "ノルマルヘキサン抽出の前処理は試料を酸性側に調整する。設問のpH 8以上にするという箇所が誤りである。",
+      "イ": "抽出後に溶媒のノルマルヘキサンを約80 ℃で除き、残留した物質を測定する。",
+      "ウ": "約80 ℃で30分間乾燥させ、溶媒を除いた後も残る物質を定量する方法である。",
+      "エ": "動植物油脂類はヘキサンに抽出され、所定の条件で残留する主要な測定対象である。",
+      "オ": "グリースなどの鉱物油類も、ヘキサンに抽出され所定条件下で揮散しなければ測定値に含まれる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724172954id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_08.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 汚水処理特論 問23（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized",
+    "imageUrls": [
+      "/images/questions/kogai-16/2023/08/q23-1.webp"
+    ],
+    "imageAltTexts": [
+      "汚水処理特論 問23の公式問題"
+    ]
+  },
+  {
+    "id": "kogai-16-2023-08-q24",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 109,
+    "officialQuestionLabel": "汚水処理特論 問24",
+    "subject": "汚水処理特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "汚水処理特論",
+    "topicTags": [
+      "汚水処理特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "全窒素の測定に関する記述中，下線を付した箇所のうち，誤っているものはどれか。\n\n公式問題の画像を見て、該当する番号を選んでください。",
+    "choices": {
+      "ア": "公式問題の図（1）",
+      "イ": "公式問題の図（2）",
+      "ウ": "公式問題の図（3）",
+      "エ": "公式問題の図（4）",
+      "オ": "公式問題の図（5）"
+    },
+    "answer": "オ",
+    "explanation": "酸化分解で窒素化合物を硝酸イオンに変換し、紫外吸収を測る。アンモニウムイオンとする箇所が誤りである。",
+    "choiceExplanations": {
+      "ア": "総和法では、亜硝酸イオンと硝酸イオンに対応する窒素量を試料の一方で測定する。",
+      "イ": "もう一方の試料でアンモニア態と有機態の窒素を求めて、他方で測定した無機態の窒素量を足す。",
+      "ウ": "紫外線吸光光度法ではアルカリ性ペルオキソ二硫酸塩によって窒素化合物を酸化分解する。",
+      "エ": "120 ℃で30分加熱して酸化を進めるのが設問に示す前処理条件である。",
+      "オ": "酸化分解で窒素化合物を硝酸イオンに変換し、紫外吸収を測る。アンモニウムイオンとする箇所が誤りである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724172954id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_08.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 汚水処理特論 問24（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized",
+    "imageUrls": [
+      "/images/questions/kogai-16/2023/08/q24-1.webp"
+    ],
+    "imageAltTexts": [
+      "汚水処理特論 問24の公式問題"
+    ]
+  },
+  {
+    "id": "kogai-16-2023-08-q25",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 110,
+    "officialQuestionLabel": "汚水処理特論 問25",
+    "subject": "汚水処理特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "汚水処理特論",
+    "topicTags": [
+      "汚水処理特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "濁度計に関する記述として，誤っているものはどれか。",
+    "choices": {
+      "ア": "透過光方式では，試料槽の一方から光を入射させ，その反対側で，試料中の懸濁物によって減衰した光を測定する。",
+      "イ": "散乱光方式では，試料槽の一方から光を入射させ，試料中の懸濁物による散乱光を測定する。",
+      "ウ": "散乱光・透過光方式は，透過光方式に比べ試料の着色，気泡，窓の汚れによる影響が大きい。",
+      "エ": "表面散乱光方式は，試料をオーバーフローさせながら連続測定できる。",
+      "オ": "積分球方式では，積分球を用いて試料中の懸濁物による散乱光と透過光を測定し，その比から濁度を求める。"
+    },
+    "answer": "ウ",
+    "explanation": "散乱光と透過光を組み合わせると着色や窓の汚れなどによる光量変化の影響を補正しやすい。影響が大きくなるという記述は誤りである。",
+    "choiceExplanations": {
+      "ア": "透過光方式は光源の反対側で透過光を受け、粒子による光の減衰を検出する。",
+      "イ": "散乱光方式は入射光に対して所定の角度で、試料中の粒子が散乱した光を受ける。",
+      "ウ": "散乱光と透過光を組み合わせると着色や窓の汚れなどによる光量変化の影響を補正しやすい。影響が大きくなるという記述は誤りである。",
+      "エ": "表面散乱光方式では、オーバーフローで水面を保ちながら、散乱光を連続して測定できる。",
+      "オ": "積分球で広い方向の散乱光を集め、透過光との比を用いて濁度を定量する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724172954id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_08.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 汚水処理特論 問25（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  }
+]
