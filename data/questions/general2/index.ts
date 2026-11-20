@@ -1,3 +1,4 @@
+import kiso2023 from "./2023-march-kiso.json";
 import kogaku_b2025 from "./2025-september-kogaku-b.json";
 import kogaku_a2025 from "./2025-september-kogaku-a.json";
 import kiso2025 from "./2025-september-kiso.json";
@@ -10,5 +11,5 @@ import { normalizeQuestionData } from "@/lib/questions/native-b";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 
 /** Private candidate only; root owns catalog/runtime and public authorization. */
-export const GENERAL2_ALL_QUESTIONS = [...data, ...tiri2025, ...englishWritten2025, ...englishConversation2025, ...hoki2025, ...kiso2025, ...kogaku_a2025, ...kogaku_b2025].map(normalizeQuestionData);
+export const GENERAL2_ALL_QUESTIONS = [...data, ...tiri2025, ...englishWritten2025, ...englishConversation2025, ...hoki2025, ...kiso2025, ...kogaku_a2025, ...kogaku_b2025, ...kiso2023].map(normalizeQuestionData);
 export const GENERAL2_QUESTIONS = GENERAL2_ALL_QUESTIONS.filter(isPracticeReadyQuestion);

@@ -1248,7 +1248,7 @@ kangoshi: {
         { session: "eigo-hikki", urlSlug: "eigo-hikki", expectedQuestions: 24, label: "英語（筆記）", categories: ["英語"] },
         { session: "eigo-kaiwa", urlSlug: "eigo-kaiwa", expectedQuestions: 7, label: "英会話（公式設問文）", categories: ["英語"] },
     ],
-    seasons: ["march", "september"], yearRange: { start: 2025, end: 2026 },
+    seasons: ["march", "september"], yearRange: { start: 2023, end: 2026 },
 },
 "general3": {
     code: "general3", nameFull: "第三級総合無線通信士試験", urlSlug: "general3", level: "specialist",
