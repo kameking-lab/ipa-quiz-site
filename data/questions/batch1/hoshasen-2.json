@@ -33660,5 +33660,1007 @@
     "license": "NUSTEC-owner-authorized",
     "needsReview": false,
     "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "hoshasen-2-2022-kagaku-q1",
+    "exam": "hoshasen-2",
+    "year": 2022,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 111,
+    "officialQuestionLabel": "1（化学）",
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "¹³⁴Csと¹³⁷Csの1年後の放射能比"
+    ],
+    "difficulty": 3,
+    "question": "問1　¹³⁴Csと¹³⁷Csの1年後の放射能比。掲載の公式問題画像の問1を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "0.1",
+      "イ": "0.2",
+      "ウ": "0.4",
+      "エ": "0.7",
+      "オ": "0.9"
+    },
+    "answer": "エ",
+    "explanation": "初期の比は1である。1年後は2^(−1/2)/2^(−1/30)＝約0.724となる。",
+    "choiceExplanations": {
+      "ア": "0.1は¹³⁴Csがほぼ3半減期以上減衰するような比で、1年間の条件では小さすぎる。",
+      "イ": "0.2も1年間で予想される約0.72より小さい。¹³⁴Csの半減期は2年である。",
+      "ウ": "0.4では初期の等しい¹³⁴Csの放射能が半分以下になったことになるが、1年は半減期より短い。",
+      "エ": "¹³⁴Csと¹³⁷Csの1年の減衰率をそれぞれ求めて割ると約0.724で、0.7に最も近い。",
+      "オ": "0.9は¹³⁴Csの1年の減衰を過小に見積もる。半減期の半分では¹³⁴Csは初期の約0.71になる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/hoshasen/2022/2-butsurikagakuseibutsu-p10.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 第二種放射線取扱主任者 化学 公式問題冊子PDF 10ページ。"
+    ],
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2_butsurikagakuseibutsu.pdf#page=10",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和4年度 第2種放射線取扱主任者試験 1（化学）（問題・正答）。問題は公式PDFの画像を使用。解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "hoshasen-2-2022-kagaku-q2",
+    "exam": "hoshasen-2",
+    "year": 2022,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 112,
+    "officialQuestionLabel": "2（化学）",
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "逐次壊変の永続平衡とミルキング"
+    ],
+    "difficulty": 3,
+    "question": "問2　逐次壊変の永続平衡とミルキング。掲載の公式問題画像の問2を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "AB",
+      "イ": "AC",
+      "ウ": "BC",
+      "エ": "BD",
+      "オ": "CD"
+    },
+    "answer": "エ",
+    "explanation": "親核種の半減期が娘核種に比べ非常に長い場合は永続平衡が成立する。娘核種を選択的に取り出す操作をミルキングと呼ぶ。",
+    "choiceExplanations": {
+      "ア": "A：過渡平衡に至っても親Aは自身の半減期で減衰し、娘Bの放射能が親の減少に追従する。正しい記述のDも含める必要がある。",
+      "イ": "A：過渡平衡に至っても親Aは自身の半減期で減衰し、娘Bの放射能が親の減少に追従する、C：永続平衡で近くなるのは放射能であって原子数ではない。正しい記述のB、Dも含める必要がある。",
+      "ウ": "C：永続平衡で近くなるのは放射能であって原子数ではない。正しい記述のDも含める必要がある。",
+      "エ": "B：親Aが娘Bよりはるかに長寿命なら、娘が生成され続け、両者は永続平衡に達する、D：親核種を含む系から生成した娘核種を分離・採取することをミルキングという。",
+      "オ": "C：永続平衡で近くなるのは放射能であって原子数ではない。正しい記述のBも含める必要がある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/hoshasen/2022/2-butsurikagakuseibutsu-p10.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 第二種放射線取扱主任者 化学 公式問題冊子PDF 10ページ。"
+    ],
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2_butsurikagakuseibutsu.pdf#page=10",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和4年度 第2種放射線取扱主任者試験 2（化学）（問題・正答）。問題は公式PDFの画像を使用。解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "hoshasen-2-2022-kagaku-q3",
+    "exam": "hoshasen-2",
+    "year": 2022,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 113,
+    "officialQuestionLabel": "3（化学）",
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "安定同位体がない元素"
+    ],
+    "difficulty": 3,
+    "question": "問3　安定同位体がない元素。掲載の公式問題画像の問3を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "Mo／Ba／Ra",
+      "イ": "Pm／Sm／Tl",
+      "ウ": "Tc／Pm／Ra",
+      "エ": "Be／Y／Tc",
+      "オ": "Sc／Ba／Po"
+    },
+    "answer": "ウ",
+    "explanation": "テクネチウムTc、プロメチウムPm、ラジウムRaには、いずれも安定同位体が存在しない。",
+    "choiceExplanations": {
+      "ア": "Raには安定同位体がないが、MoとBaには例えば⁹⁸Moと¹³⁸Baがある。",
+      "イ": "Pmには安定同位体がないが、SmとTlには安定な核種がある。",
+      "ウ": "Tc、Pm、Raはいずれも放射性の同位体しか持たない。",
+      "エ": "Tcには安定同位体がないが、⁹Be及び⁸⁹Yは安定である。",
+      "オ": "Poに安定同位体はないが、⁴⁵Sc及び¹³⁸Baは安定である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/hoshasen/2022/2-butsurikagakuseibutsu-p10.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 第二種放射線取扱主任者 化学 公式問題冊子PDF 10ページ。"
+    ],
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2_butsurikagakuseibutsu.pdf#page=10",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和4年度 第2種放射線取扱主任者試験 3（化学）（問題・正答）。問題は公式PDFの画像を使用。解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "hoshasen-2-2022-kagaku-q4",
+    "exam": "hoshasen-2",
+    "year": 2022,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 114,
+    "officialQuestionLabel": "4（化学）",
+    "officialAnswerNumber": 5,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "中性子源として利用される核種"
+    ],
+    "difficulty": 3,
+    "question": "問4　中性子源として利用される核種。掲載の公式問題画像の問4を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "AB",
+      "イ": "AC",
+      "ウ": "BD",
+      "エ": "CE",
+      "オ": "DE"
+    },
+    "answer": "オ",
+    "explanation": "²⁴¹Am–Beと²⁵²Cfは中性子源として利用される。前者は原子核反応、後者は自発核分裂で中性子を生じる。",
+    "choiceExplanations": {
+      "ア": "A：⁸⁵Krは気体のβ線源などに使われ、中性子源には当てはまらない、B：⁹⁹Moは⁹⁹ᵐTcを供給する親核種などに用いられ、設問の中性子源には該当しない。正しい記述のD、Eも含める必要がある。",
+      "イ": "A：⁸⁵Krは気体のβ線源などに使われ、中性子源には当てはまらない、C：¹³⁷Csは壊変に伴うγ線を利用する線源で、中性子源ではない。正しい記述のD、Eも含める必要がある。",
+      "ウ": "B：⁹⁹Moは⁹⁹ᵐTcを供給する親核種などに用いられ、設問の中性子源には該当しない。正しい記述のEも含める必要がある。",
+      "エ": "C：¹³⁷Csは壊変に伴うγ線を利用する線源で、中性子源ではない。正しい記述のDも含める必要がある。",
+      "オ": "D：²⁴¹Am–Beはα粒子とBeの反応で中性子が生じる線源である、E：²⁵²Cfは自発核分裂の際に中性子を放出するため、中性子源に使われる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/hoshasen/2022/2-butsurikagakuseibutsu-p11.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 第二種放射線取扱主任者 化学 公式問題冊子PDF 11ページ。"
+    ],
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2_butsurikagakuseibutsu.pdf#page=11",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和4年度 第2種放射線取扱主任者試験 4（化学）（問題・正答）。問題は公式PDFの画像を使用。解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "hoshasen-2-2022-kagaku-q5",
+    "exam": "hoshasen-2",
+    "year": 2022,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 115,
+    "officialQuestionLabel": "5（化学）",
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "実用放射性核種の半減期の並び"
+    ],
+    "difficulty": 3,
+    "question": "問5　実用放射性核種の半減期の並び。掲載の公式問題画像の問5を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "⁸⁵Kr＜⁹⁰Sr＜⁶³Ni＜²⁴¹Am",
+      "イ": "¹⁹²Ir＜⁸⁵Kr＜²⁴¹Am＜⁹⁰Sr",
+      "ウ": "⁶³Ni＜⁹⁰Sr＜⁸⁵Kr＜¹⁹²Ir",
+      "エ": "⁶³Ni＜⁸⁵Kr＜²⁴¹Am＜¹⁹²Ir",
+      "オ": "¹⁹²Ir＜⁶³Ni＜⁹⁰Sr＜²⁴¹Am"
+    },
+    "answer": "ア",
+    "explanation": "約10.7年の⁸⁵Kr、約28.8年の⁹⁰Sr、約100年の⁶³Ni、約432年の²⁴¹Amの順は短い方から長い方に並ぶ。",
+    "choiceExplanations": {
+      "ア": "⁸⁵Krは約10.7年、⁹⁰Srは約28.8年、⁶³Niは約100年、²⁴¹Amは約432年で並びが合う。",
+      "イ": "²⁴¹Amの半減期は約432年で、約28.8年の⁹⁰Srより長い。",
+      "ウ": "¹⁹²Irは約74日でこの組の中で最短であり、最後ではない。",
+      "エ": "⁶³Niの約100年は⁸⁵Krの約10.7年より長い。¹⁹²Irも約74日と短いので最後には置けない。",
+      "オ": "¹⁹²Irが最初で²⁴¹Amが最後なのは合うが、⁶³Niは⁹⁰Srより長寿命である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/hoshasen/2022/2-butsurikagakuseibutsu-p11.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 第二種放射線取扱主任者 化学 公式問題冊子PDF 11ページ。"
+    ],
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2_butsurikagakuseibutsu.pdf#page=11",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和4年度 第2種放射線取扱主任者試験 5（化学）（問題・正答）。問題は公式PDFの画像を使用。解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "hoshasen-2-2022-kagaku-q6",
+    "exam": "hoshasen-2",
+    "year": 2022,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 116,
+    "officialQuestionLabel": "6（化学）",
+    "officialAnswerNumber": 5,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "α線を放出するウラン・トリウム・ラドン"
+    ],
+    "difficulty": 3,
+    "question": "問6　α線を放出するウラン・トリウム・ラドン。掲載の公式問題画像の問6を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "ABC",
+      "イ": "ABD",
+      "ウ": "ACD",
+      "エ": "BCD",
+      "オ": "ABCD"
+    },
+    "answer": "オ",
+    "explanation": "²³⁸U、²³⁵U、²³²Th、²²⁰Rnはいずれもα壊変する。",
+    "choiceExplanations": {
+      "ア": "正しい記述のDも含める必要がある。",
+      "イ": "正しい記述のCも含める必要がある。",
+      "ウ": "正しい記述のBも含める必要がある。",
+      "エ": "正しい記述のAも含める必要がある。",
+      "オ": "A：²³⁸Uはα粒子を放出して²³⁴Thを生じる、B：²³⁵Uのα壊変で²³¹Thが生じる、C：²³²Thはトリウム系列の親核種で、α壊変で²²⁸Raになる、D：²²⁰Rnはラドンの同位体で、α壊変して²¹⁶Poになる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/hoshasen/2022/2-butsurikagakuseibutsu-p11.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 第二種放射線取扱主任者 化学 公式問題冊子PDF 11ページ。"
+    ],
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2_butsurikagakuseibutsu.pdf#page=11",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和4年度 第2種放射線取扱主任者試験 6（化学）（問題・正答）。問題は公式PDFの画像を使用。解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "hoshasen-2-2022-kagaku-q7",
+    "exam": "hoshasen-2",
+    "year": 2022,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 117,
+    "officialQuestionLabel": "7（化学）",
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "牛乳のカリウムから⁴⁰K放射能を求める"
+    ],
+    "difficulty": 3,
+    "question": "問7　牛乳のカリウムから⁴⁰K放射能を求める。掲載の公式問題画像の問7を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "12",
+      "イ": "48",
+      "ウ": "140",
+      "エ": "550",
+      "オ": "1,200"
+    },
+    "answer": "イ",
+    "explanation": "⁴⁰Kの原子数は(1.5/39)×6.0×10²³×0.00012≒2.77×10¹⁸である。これに壊変定数ln2/(4.0×10¹⁶ s)を掛けると約48 Bqになる。",
+    "choiceExplanations": {
+      "ア": "12 Bqは1.5 g中の天然カリウムと0.012%の存在度から求める約48 Bqの約1/4である。",
+      "イ": "質量から全カリウムの原子数を求め、その0.012%に壊変定数を掛けると48 Bqになる。",
+      "ウ": "140 Bqは質量・存在度・半減期から計算した放射能の約3倍である。",
+      "エ": "550 Bqは約48 Bqより一桁大きく、与えられた少量の⁴⁰Kに対応しない。",
+      "オ": "1,200 Bqに必要な⁴⁰K原子数は約6.9×10¹⁹個で、計算した約2.8×10¹⁸個を大きく超える。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/hoshasen/2022/2-butsurikagakuseibutsu-p11.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 第二種放射線取扱主任者 化学 公式問題冊子PDF 11ページ。"
+    ],
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2_butsurikagakuseibutsu.pdf#page=11",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和4年度 第2種放射線取扱主任者試験 7（化学）（問題・正答）。問題は公式PDFの画像を使用。解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "hoshasen-2-2022-kagaku-q8",
+    "exam": "hoshasen-2",
+    "year": 2022,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 118,
+    "officialQuestionLabel": "8（化学）",
+    "officialAnswerNumber": 5,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "壊変での運動量保存と娘核の反跳"
+    ],
+    "difficulty": 3,
+    "question": "問8　壊変での運動量保存と娘核の反跳。掲載の公式問題画像の問8を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "ACD",
+      "イ": "AB",
+      "ウ": "BC",
+      "エ": "D",
+      "オ": "ABCD"
+    },
+    "answer": "オ",
+    "explanation": "α壊変、β⁻壊変、β⁺壊変、自発核分裂のいずれも、生成した原子核は運動量保存に従って運動エネルギーを得る。",
+    "choiceExplanations": {
+      "ア": "正しい記述のBも含める必要がある。",
+      "イ": "正しい記述のC、Dも含める必要がある。",
+      "ウ": "正しい記述のA、Dも含める必要がある。",
+      "エ": "正しい記述のA、B、Cも含める必要がある。",
+      "オ": "A：α粒子と反対側に娘核が反跳するので、娘核も運動エネルギーを得る、B：β⁻と反ニュートリノの運動量を補うように娘核は反跳する、C：陽電子とニュートリノが運動量を持ち去るため、娘核も反跳エネルギーを得る、D：自発核分裂では生じた分裂片が運動エネルギーを持って離れる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/hoshasen/2022/2-butsurikagakuseibutsu-p12.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 第二種放射線取扱主任者 化学 公式問題冊子PDF 12ページ。"
+    ],
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2_butsurikagakuseibutsu.pdf#page=12",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和4年度 第2種放射線取扱主任者試験 8（化学）（問題・正答）。問題は公式PDFの画像を使用。解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "hoshasen-2-2022-kagaku-q9",
+    "exam": "hoshasen-2",
+    "year": 2022,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 119,
+    "officialQuestionLabel": "9（化学）",
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "放射線機器の用途・線源・検出器"
+    ],
+    "difficulty": 3,
+    "question": "問9　放射線機器の用途・線源・検出器。掲載の公式問題画像の問9を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "ACD",
+      "イ": "AB",
+      "ウ": "AC",
+      "エ": "BD",
+      "オ": "BCD"
+    },
+    "answer": "イ",
+    "explanation": "¹⁴⁷Pmのβ線と電離箱による厚さ計、⁶⁰Coのγ線とNaI(Tl)検出器による密度計の組合せが適切である。",
+    "choiceExplanations": {
+      "ア": "C：中性子水分計では水素で減速された中性子を³He比例計数管で数える、D：硫黄計で²⁴¹Amの光子を用いる場合には透過や特性X線を測る。正しい記述のBも含める必要がある。",
+      "イ": "A：¹⁴⁷Pmのβ線の透過量は紙などの厚さに依存し、電離箱で測定できる、B：⁶⁰Coのγ線の透過減弱は物質の密度に依存し、NaI(Tl)でγ線を検出できる。",
+      "ウ": "C：中性子水分計では水素で減速された中性子を³He比例計数管で数える。正しい記述のBも含める必要がある。",
+      "エ": "D：硫黄計で²⁴¹Amの光子を用いる場合には透過や特性X線を測る。正しい記述のAも含める必要がある。",
+      "オ": "C：中性子水分計では水素で減速された中性子を³He比例計数管で数える、D：硫黄計で²⁴¹Amの光子を用いる場合には透過や特性X線を測る。正しい記述のAも含める必要がある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/hoshasen/2022/2-butsurikagakuseibutsu-p12.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 第二種放射線取扱主任者 化学 公式問題冊子PDF 12ページ。"
+    ],
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2_butsurikagakuseibutsu.pdf#page=12",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和4年度 第2種放射線取扱主任者試験 9（化学）（問題・正答）。問題は公式PDFの画像を使用。解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "hoshasen-2-2022-kagaku-q10",
+    "exam": "hoshasen-2",
+    "year": 2022,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 120,
+    "officialQuestionLabel": "10（化学）",
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "放射線化学でのラジカル・スパー・G値"
+    ],
+    "difficulty": 3,
+    "question": "問10　放射線化学でのラジカル・スパー・G値。掲載の公式問題画像の問10を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "AB",
+      "イ": "AC",
+      "ウ": "AD",
+      "エ": "BD",
+      "オ": "CD"
+    },
+    "answer": "ア",
+    "explanation": "不対電子を持つ活性種をフリーラジカルと呼ぶ。高LETほど飛跡に沿って生じるスパーの間隔は短くなる。",
+    "choiceExplanations": {
+      "ア": "A：不対電子を一個以上持つ化学種はラジカルに分類される、B：高LETでは単位飛程当たりのエネルギー付与が多く、飛跡上の局所的な電離・励起の集団が密にできる。",
+      "イ": "C：水和電子は電子を相手に与えるため強い還元剤として働く。正しい記述のBも含める必要がある。",
+      "ウ": "D：吸収エネルギー当たりの化学反応収率であるG値は、光子による照射にも定義できる。正しい記述のBも含める必要がある。",
+      "エ": "D：吸収エネルギー当たりの化学反応収率であるG値は、光子による照射にも定義できる。正しい記述のAも含める必要がある。",
+      "オ": "C：水和電子は電子を相手に与えるため強い還元剤として働く、D：吸収エネルギー当たりの化学反応収率であるG値は、光子による照射にも定義できる。正しい記述のA、Bも含める必要がある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/hoshasen/2022/2-butsurikagakuseibutsu-p12.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 第二種放射線取扱主任者 化学 公式問題冊子PDF 12ページ。"
+    ],
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2_butsurikagakuseibutsu.pdf#page=12",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和4年度 第2種放射線取扱主任者試験 10（化学）（問題・正答）。問題は公式PDFの画像を使用。解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "hoshasen-2-2022-kagaku-q11-slot-A",
+    "exam": "hoshasen-2",
+    "year": 2022,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 11,
+    "officialQuestionLabel": "11（化学・解答欄A）",
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "放射性炭素年代測定の半減期"
+    ],
+    "difficulty": 3,
+    "question": "問11　放射性炭素年代測定の半減期。掲載の公式問題画像を読み、解答欄［A］に入る選択肢を解答群から選んでください。",
+    "choices": {
+      "ア": "12.3年",
+      "イ": "100年",
+      "ウ": "250年",
+      "エ": "5,700年",
+      "オ": "¹¹C",
+      "カ": "¹²C",
+      "キ": "¹⁵C",
+      "ク": "¹⁶C"
+    },
+    "answer": "エ",
+    "explanation": "年代測定で用いる¹⁴Cの半減期は約5,700年である。",
+    "choiceExplanations": {
+      "ア": "12.3年は³Hの半減期に近く、¹⁴Cの半減期よりはるかに短い。 年代測定で用いる¹⁴Cの半減期は約5,700年である。",
+      "イ": "100年は¹⁴Cの半減期より短い。¹⁴Cは数千年規模の年代測定に使われる。 年代測定で用いる¹⁴Cの半減期は約5,700年である。",
+      "ウ": "250年も¹⁴Cの半減期より短く、提示された年代測定の前提には合わない。 年代測定で用いる¹⁴Cの半減期は約5,700年である。",
+      "エ": "年代測定で用いる¹⁴Cの半減期は約5,700年である。",
+      "オ": "¹¹Cは半減期約20分の放射性同位体で、天然の炭素の主成分ではない。 年代測定で用いる¹⁴Cの半減期は約5,700年である。",
+      "カ": "¹²Cは安定同位体で、天然炭素の同位体存在度が最も高い。 年代測定で用いる¹⁴Cの半減期は約5,700年である。",
+      "キ": "¹⁵Cは短寿命の放射性核種で、天然炭素で最も多い同位体ではない。 年代測定で用いる¹⁴Cの半減期は約5,700年である。",
+      "ク": "¹⁶Cは短寿命であり、地球上で炭素同位体比の基準になる安定同位体は¹²Cである。 年代測定で用いる¹⁴Cの半減期は約5,700年である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/hoshasen/2022/2-butsurikagakuseibutsu-p13.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 第二種放射線取扱主任者 化学 公式問題冊子PDF 13ページ。"
+    ],
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2_butsurikagakuseibutsu.pdf#page=13",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和4年度 第2種放射線取扱主任者試験 11（化学・解答欄A）（問題・正答）。問題は公式PDFの画像を使用。解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "hoshasen-2-2022-kagaku-q11-slot-B",
+    "exam": "hoshasen-2",
+    "year": 2022,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 12,
+    "officialQuestionLabel": "11（化学・解答欄B）",
+    "officialAnswerNumber": 6,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "天然炭素で最も多い同位体"
+    ],
+    "difficulty": 3,
+    "question": "問11　天然炭素で最も多い同位体。掲載の公式問題画像を読み、解答欄［B］に入る選択肢を解答群から選んでください。",
+    "choices": {
+      "ア": "12.3年",
+      "イ": "100年",
+      "ウ": "250年",
+      "エ": "5,700年",
+      "オ": "¹¹C",
+      "カ": "¹²C",
+      "キ": "¹⁵C",
+      "ク": "¹⁶C"
+    },
+    "answer": "カ",
+    "explanation": "天然炭素の大部分は安定同位体¹²Cであり、¹⁴C/¹²C比を年代測定に利用する。",
+    "choiceExplanations": {
+      "ア": "12.3年は³Hの半減期に近く、¹⁴Cの半減期よりはるかに短い。 天然炭素の大部分は安定同位体¹²Cであり、¹⁴C/¹²C比を年代測定に利用する。",
+      "イ": "100年は¹⁴Cの半減期より短い。¹⁴Cは数千年規模の年代測定に使われる。 天然炭素の大部分は安定同位体¹²Cであり、¹⁴C/¹²C比を年代測定に利用する。",
+      "ウ": "250年も¹⁴Cの半減期より短く、提示された年代測定の前提には合わない。 天然炭素の大部分は安定同位体¹²Cであり、¹⁴C/¹²C比を年代測定に利用する。",
+      "エ": "¹⁴Cの半減期は約5,730年であり、選択肢では5,700年に当たる。 天然炭素の大部分は安定同位体¹²Cであり、¹⁴C/¹²C比を年代測定に利用する。",
+      "オ": "¹¹Cは半減期約20分の放射性同位体で、天然の炭素の主成分ではない。 天然炭素の大部分は安定同位体¹²Cであり、¹⁴C/¹²C比を年代測定に利用する。",
+      "カ": "天然炭素の大部分は安定同位体¹²Cであり、¹⁴C/¹²C比を年代測定に利用する。",
+      "キ": "¹⁵Cは短寿命の放射性核種で、天然炭素で最も多い同位体ではない。 天然炭素の大部分は安定同位体¹²Cであり、¹⁴C/¹²C比を年代測定に利用する。",
+      "ク": "¹⁶Cは短寿命であり、地球上で炭素同位体比の基準になる安定同位体は¹²Cである。 天然炭素の大部分は安定同位体¹²Cであり、¹⁴C/¹²C比を年代測定に利用する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/hoshasen/2022/2-butsurikagakuseibutsu-p13.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 第二種放射線取扱主任者 化学 公式問題冊子PDF 13ページ。"
+    ],
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2_butsurikagakuseibutsu.pdf#page=13",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和4年度 第2種放射線取扱主任者試験 11（化学・解答欄B）（問題・正答）。問題は公式PDFの画像を使用。解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "hoshasen-2-2022-kagaku-q11-slot-C",
+    "exam": "hoshasen-2",
+    "year": 2022,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 13,
+    "officialQuestionLabel": "11（化学・解答欄C）",
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "大気の¹⁴C生成を引き起こす入射放射線"
+    ],
+    "difficulty": 3,
+    "question": "問11　大気の¹⁴C生成を引き起こす入射放射線。掲載の公式問題画像を読み、解答欄［C］に入る選択肢を解答群から選んでください。",
+    "choices": {
+      "ア": "一次宇宙線",
+      "イ": "電子",
+      "ウ": "非電離放射線",
+      "エ": "ミュー粒子",
+      "オ": "光子",
+      "カ": "中性子"
+    },
+    "answer": "ア",
+    "explanation": "宇宙から入射する一次宇宙線が大気上層の原子核と反応して二次粒子を作る。",
+    "choiceExplanations": {
+      "ア": "宇宙から入射する一次宇宙線が大気上層の原子核と反応して二次粒子を作る。",
+      "イ": "電子は二次宇宙線の一部に含まれるが、¹⁴Nに入射して¹⁴Cを作る主な粒子は中性子である。 宇宙から入射する一次宇宙線が大気上層の原子核と反応して二次粒子を作る。",
+      "ウ": "非電離放射線は大気中の原子核でこの二次粒子を生成する一次宇宙線を表さない。 宇宙から入射する一次宇宙線が大気上層の原子核と反応して二次粒子を作る。",
+      "エ": "ミュー粒子も大気で生じる二次宇宙線の一つだが、¹⁴Cの生成を担う主な反応には中性子が関わる。 宇宙から入射する一次宇宙線が大気上層の原子核と反応して二次粒子を作る。",
+      "オ": "光子は核反応を起こし得るが、設問の¹⁴Cの主な大気生成経路では窒素に中性子が入射する。 宇宙から入射する一次宇宙線が大気上層の原子核と反応して二次粒子を作る。",
+      "カ": "中性子は宇宙線と大気の相互作用で生じ、¹⁴Nとの(n,p)反応で¹⁴Cを作る。 宇宙から入射する一次宇宙線が大気上層の原子核と反応して二次粒子を作る。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/hoshasen/2022/2-butsurikagakuseibutsu-p13.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 第二種放射線取扱主任者 化学 公式問題冊子PDF 13ページ。"
+    ],
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2_butsurikagakuseibutsu.pdf#page=13",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和4年度 第2種放射線取扱主任者試験 11（化学・解答欄C）（問題・正答）。問題は公式PDFの画像を使用。解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "hoshasen-2-2022-kagaku-q11-slot-D",
+    "exam": "hoshasen-2",
+    "year": 2022,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 14,
+    "officialQuestionLabel": "11（化学・解答欄D）",
+    "officialAnswerNumber": 6,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "大気中で¹⁴C生成に関わる二次粒子"
+    ],
+    "difficulty": 3,
+    "question": "問11　大気中で¹⁴C生成に関わる二次粒子。掲載の公式問題画像を読み、解答欄［D］に入る選択肢を解答群から選んでください。",
+    "choices": {
+      "ア": "一次宇宙線",
+      "イ": "電子",
+      "ウ": "非電離放射線",
+      "エ": "ミュー粒子",
+      "オ": "光子",
+      "カ": "中性子"
+    },
+    "answer": "カ",
+    "explanation": "宇宙線で生じた中性子が¹⁴Nと反応し、陽子を放出して¹⁴Cを作る。",
+    "choiceExplanations": {
+      "ア": "一次宇宙線は大気上層の原子核と相互作用し、二次粒子を生成する。 宇宙線で生じた中性子が¹⁴Nと反応し、陽子を放出して¹⁴Cを作る。",
+      "イ": "電子は二次宇宙線の一部に含まれるが、¹⁴Nに入射して¹⁴Cを作る主な粒子は中性子である。 宇宙線で生じた中性子が¹⁴Nと反応し、陽子を放出して¹⁴Cを作る。",
+      "ウ": "非電離放射線は大気中の原子核でこの二次粒子を生成する一次宇宙線を表さない。 宇宙線で生じた中性子が¹⁴Nと反応し、陽子を放出して¹⁴Cを作る。",
+      "エ": "ミュー粒子も大気で生じる二次宇宙線の一つだが、¹⁴Cの生成を担う主な反応には中性子が関わる。 宇宙線で生じた中性子が¹⁴Nと反応し、陽子を放出して¹⁴Cを作る。",
+      "オ": "光子は核反応を起こし得るが、設問の¹⁴Cの主な大気生成経路では窒素に中性子が入射する。 宇宙線で生じた中性子が¹⁴Nと反応し、陽子を放出して¹⁴Cを作る。",
+      "カ": "宇宙線で生じた中性子が¹⁴Nと反応し、陽子を放出して¹⁴Cを作る。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/hoshasen/2022/2-butsurikagakuseibutsu-p13.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 第二種放射線取扱主任者 化学 公式問題冊子PDF 13ページ。"
+    ],
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2_butsurikagakuseibutsu.pdf#page=13",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和4年度 第2種放射線取扱主任者試験 11（化学・解答欄D）（問題・正答）。問題は公式PDFの画像を使用。解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "hoshasen-2-2022-kagaku-q11-slot-E",
+    "exam": "hoshasen-2",
+    "year": 2022,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 15,
+    "officialQuestionLabel": "11（化学・解答欄E）",
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "¹⁴Cの大気生成の標的と娘核種"
+    ],
+    "difficulty": 3,
+    "question": "問11　¹⁴Cの大気生成の標的と娘核種。掲載の公式問題画像を読み、解答欄［E］に入る選択肢を解答群から選んでください。",
+    "choices": {
+      "ア": "¹⁴N",
+      "イ": "¹⁵N",
+      "ウ": "¹⁶O",
+      "エ": "¹⁸O",
+      "オ": "α壊変",
+      "カ": "β⁺壊変",
+      "キ": "β⁻壊変",
+      "ク": "EC壊変"
+    },
+    "answer": "ア",
+    "explanation": "¹⁴Cは大気の¹⁴Nの中性子反応で作られ、壊変後は質量数を保ったまま原子番号が7の¹⁴Nへ戻る。",
+    "choiceExplanations": {
+      "ア": "¹⁴Cは大気の¹⁴Nの中性子反応で作られ、壊変後は質量数を保ったまま原子番号が7の¹⁴Nへ戻る。",
+      "イ": "¹⁵Nは質量数15であり、¹⁴Cのβ壊変では質量数14が保たれる。 ¹⁴Cは大気の¹⁴Nの中性子反応で作られ、壊変後は質量数を保ったまま原子番号が7の¹⁴Nへ戻る。",
+      "ウ": "¹⁶Oは質量数・原子番号とも¹⁴Cのβ壊変の生成核と異なる。 ¹⁴Cは大気の¹⁴Nの中性子反応で作られ、壊変後は質量数を保ったまま原子番号が7の¹⁴Nへ戻る。",
+      "エ": "¹⁸Oは酸素の安定同位体だが、¹⁴Cからの壊変によってできる核種ではない。 ¹⁴Cは大気の¹⁴Nの中性子反応で作られ、壊変後は質量数を保ったまま原子番号が7の¹⁴Nへ戻る。",
+      "オ": "α壊変なら質量数が4減るが、¹⁴Cは質量数14の¹⁴Nになる。 ¹⁴Cは大気の¹⁴Nの中性子反応で作られ、壊変後は質量数を保ったまま原子番号が7の¹⁴Nへ戻る。",
+      "カ": "β⁺壊変では原子番号が1減る。炭素が窒素へ変わるには原子番号が1増える必要がある。 ¹⁴Cは大気の¹⁴Nの中性子反応で作られ、壊変後は質量数を保ったまま原子番号が7の¹⁴Nへ戻る。",
+      "キ": "β⁻壊変では原子番号が1増えるので、¹⁴Cから¹⁴Nが生じる。 ¹⁴Cは大気の¹⁴Nの中性子反応で作られ、壊変後は質量数を保ったまま原子番号が7の¹⁴Nへ戻る。",
+      "ク": "電子捕獲では原子番号が1減り、¹⁴Cから¹⁴Nへ移る反応とは逆である。 ¹⁴Cは大気の¹⁴Nの中性子反応で作られ、壊変後は質量数を保ったまま原子番号が7の¹⁴Nへ戻る。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/hoshasen/2022/2-butsurikagakuseibutsu-p13.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 第二種放射線取扱主任者 化学 公式問題冊子PDF 13ページ。"
+    ],
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2_butsurikagakuseibutsu.pdf#page=13",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和4年度 第2種放射線取扱主任者試験 11（化学・解答欄E）（問題・正答）。問題は公式PDFの画像を使用。解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "hoshasen-2-2022-kagaku-q11-slot-F",
+    "exam": "hoshasen-2",
+    "year": 2022,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 16,
+    "officialQuestionLabel": "11（化学・解答欄F）",
+    "officialAnswerNumber": 7,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "放射性炭素の壊変様式"
+    ],
+    "difficulty": 3,
+    "question": "問11　放射性炭素の壊変様式。掲載の公式問題画像を読み、解答欄［F］に入る選択肢を解答群から選んでください。",
+    "choices": {
+      "ア": "¹⁴N",
+      "イ": "¹⁵N",
+      "ウ": "¹⁶O",
+      "エ": "¹⁸O",
+      "オ": "α壊変",
+      "カ": "β⁺壊変",
+      "キ": "β⁻壊変",
+      "ク": "EC壊変"
+    },
+    "answer": "キ",
+    "explanation": "¹⁴Cはβ⁻壊変で中性子が陽子に変わり、¹⁴Nを生じる。",
+    "choiceExplanations": {
+      "ア": "¹⁴Nは大気中の主な窒素同位体で、¹⁴Cの生成の標的になるほか¹⁴Cの娘核種でもある。 ¹⁴Cはβ⁻壊変で中性子が陽子に変わり、¹⁴Nを生じる。",
+      "イ": "¹⁵Nは質量数15であり、¹⁴Cのβ壊変では質量数14が保たれる。 ¹⁴Cはβ⁻壊変で中性子が陽子に変わり、¹⁴Nを生じる。",
+      "ウ": "¹⁶Oは質量数・原子番号とも¹⁴Cのβ壊変の生成核と異なる。 ¹⁴Cはβ⁻壊変で中性子が陽子に変わり、¹⁴Nを生じる。",
+      "エ": "¹⁸Oは酸素の安定同位体だが、¹⁴Cからの壊変によってできる核種ではない。 ¹⁴Cはβ⁻壊変で中性子が陽子に変わり、¹⁴Nを生じる。",
+      "オ": "α壊変なら質量数が4減るが、¹⁴Cは質量数14の¹⁴Nになる。 ¹⁴Cはβ⁻壊変で中性子が陽子に変わり、¹⁴Nを生じる。",
+      "カ": "β⁺壊変では原子番号が1減る。炭素が窒素へ変わるには原子番号が1増える必要がある。 ¹⁴Cはβ⁻壊変で中性子が陽子に変わり、¹⁴Nを生じる。",
+      "キ": "¹⁴Cはβ⁻壊変で中性子が陽子に変わり、¹⁴Nを生じる。",
+      "ク": "電子捕獲では原子番号が1減り、¹⁴Cから¹⁴Nへ移る反応とは逆である。 ¹⁴Cはβ⁻壊変で中性子が陽子に変わり、¹⁴Nを生じる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/hoshasen/2022/2-butsurikagakuseibutsu-p13.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 第二種放射線取扱主任者 化学 公式問題冊子PDF 13ページ。"
+    ],
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2_butsurikagakuseibutsu.pdf#page=13",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和4年度 第2種放射線取扱主任者試験 11（化学・解答欄F）（問題・正答）。問題は公式PDFの画像を使用。解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "hoshasen-2-2022-kagaku-q11-slot-G",
+    "exam": "hoshasen-2",
+    "year": 2022,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 17,
+    "officialQuestionLabel": "11（化学・解答欄G）",
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "放射性炭素が植物に取り込まれる形"
+    ],
+    "difficulty": 3,
+    "question": "問11　放射性炭素が植物に取り込まれる形。掲載の公式問題画像を読み、解答欄［G］に入る選択肢を解答群から選んでください。",
+    "choices": {
+      "ア": "CO",
+      "イ": "CO₂",
+      "ウ": "CH₄",
+      "エ": "C₃O₂",
+      "オ": "C₅O₂"
+    },
+    "answer": "イ",
+    "explanation": "大気中で酸化された¹⁴CはCO₂の炭素に含まれ、植物は光合成でこれを取り込む。",
+    "choiceExplanations": {
+      "ア": "COは炭素の完全酸化の生成物ではなく、植物の通常の光合成の炭素源はCO₂である。 大気中で酸化された¹⁴CはCO₂の炭素に含まれ、植物は光合成でこれを取り込む。",
+      "イ": "大気中で酸化された¹⁴CはCO₂の炭素に含まれ、植物は光合成でこれを取り込む。",
+      "ウ": "CH₄は炭素を含む還元的な化合物で、設問の酸化の主な生成物ではない。 大気中で酸化された¹⁴CはCO₂の炭素に含まれ、植物は光合成でこれを取り込む。",
+      "エ": "C₃O₂は光合成で主に取り込まれる大気中の炭素化合物ではない。 大気中で酸化された¹⁴CはCO₂の炭素に含まれ、植物は光合成でこれを取り込む。",
+      "オ": "C₅O₂はこの炭素循環で酸化後の¹⁴Cを運ぶ代表的な化合物ではない。 大気中で酸化された¹⁴CはCO₂の炭素に含まれ、植物は光合成でこれを取り込む。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/hoshasen/2022/2-butsurikagakuseibutsu-p13.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 第二種放射線取扱主任者 化学 公式問題冊子PDF 13ページ。"
+    ],
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2_butsurikagakuseibutsu.pdf#page=13",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和4年度 第2種放射線取扱主任者試験 11（化学・解答欄G）（問題・正答）。問題は公式PDFの画像を使用。解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "hoshasen-2-2022-kagaku-q11-slot-H",
+    "exam": "hoshasen-2",
+    "year": 2022,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 18,
+    "officialQuestionLabel": "11（化学・解答欄H）",
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "20世紀半ばの大気の放射性炭素の増加"
+    ],
+    "difficulty": 3,
+    "question": "問11　20世紀半ばの大気の放射性炭素の増加。掲載の公式問題画像を読み、解答欄［H］に入る選択肢を解答群から選んでください。",
+    "choices": {
+      "ア": "大気圏内核実験",
+      "イ": "原子力発電所の新設と稼働",
+      "ウ": "急激な石油系燃料消費"
+    },
+    "answer": "ア",
+    "explanation": "大気圏内核実験で生じた中性子が大気中の¹⁴Nと反応し、¹⁴Cを増加させた。",
+    "choiceExplanations": {
+      "ア": "大気圏内核実験で生じた中性子が大気中の¹⁴Nと反応し、¹⁴Cを増加させた。",
+      "イ": "原子力発電所の運転では¹⁴Cが生じ得るが、設問の時期の世界的な急増の主な原因は大気圏内核実験である。 大気圏内核実験で生じた中性子が大気中の¹⁴Nと反応し、¹⁴Cを増加させた。",
+      "ウ": "古い化石燃料には¹⁴Cがほとんど残っていない。燃焼はむしろ大気中の¹⁴C比を希釈する方向に働く。 大気圏内核実験で生じた中性子が大気中の¹⁴Nと反応し、¹⁴Cを増加させた。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/hoshasen/2022/2-butsurikagakuseibutsu-p13.png",
+      "/questions/hoshasen/2022/2-butsurikagakuseibutsu-p14.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 第二種放射線取扱主任者 化学 公式問題冊子PDF 13ページ。",
+      "令和4年度 第二種放射線取扱主任者 化学 公式問題冊子PDF 14ページ。"
+    ],
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2_butsurikagakuseibutsu.pdf#page=13",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和4年度 第2種放射線取扱主任者試験 11（化学・解答欄H）（問題・正答）。問題は公式PDFの画像を使用。解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "hoshasen-2-2022-kagaku-q11-slot-I",
+    "exam": "hoshasen-2",
+    "year": 2022,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 19,
+    "officialQuestionLabel": "11（化学・解答欄I）",
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "放射性炭素のβ線を利用する測定法"
+    ],
+    "difficulty": 3,
+    "question": "問11　放射性炭素のβ線を利用する測定法。掲載の公式問題画像を読み、解答欄［I］に入る選択肢を解答群から選んでください。",
+    "choices": {
+      "ア": "Ge半導体検出器",
+      "イ": "プラスチックシンチレーション検出器",
+      "ウ": "Si表面障壁型検出器",
+      "エ": "液体シンチレーションカウンタ",
+      "オ": "放射能",
+      "カ": "中性子数",
+      "キ": "電子数",
+      "ク": "原子数"
+    },
+    "answer": "エ",
+    "explanation": "低エネルギーβ線を効率よく計数する方法の一つは液体シンチレーションカウンタでの測定である。",
+    "choiceExplanations": {
+      "ア": "Ge半導体検出器はγ線の分光に適し、試料中の¹⁴Cの低エネルギーβ線の代表的な計数方法とは異なる。 低エネルギーβ線を効率よく計数する方法の一つは液体シンチレーションカウンタでの測定である。",
+      "イ": "プラスチックシンチレーション検出器でもβ線を検出できるが、試料を混ぜて効率を上げる液体シンチレーション法が代表的である。 低エネルギーβ線を効率よく計数する方法の一つは液体シンチレーションカウンタでの測定である。",
+      "ウ": "Si表面障壁型検出器は荷電粒子分光などに用いる。設問で挙げる¹⁴C放射能の代表的な測定装置は液体シンチレーションカウンタである。 低エネルギーβ線を効率よく計数する方法の一つは液体シンチレーションカウンタでの測定である。",
+      "エ": "低エネルギーβ線を効率よく計数する方法の一つは液体シンチレーションカウンタでの測定である。",
+      "オ": "放射能を測る方法では壊変を待って数える。加速器質量分析ではイオン化した同位体を数える。 低エネルギーβ線を効率よく計数する方法の一つは液体シンチレーションカウンタでの測定である。",
+      "カ": "中性子数で核種を定義できるが、加速器質量分析が試料について求めるのは¹⁴C原子数や同位体比である。 低エネルギーβ線を効率よく計数する方法の一つは液体シンチレーションカウンタでの測定である。",
+      "キ": "電子数だけでは同じ炭素の同位体を区別できず、微量の¹⁴Cを定量できない。 低エネルギーβ線を効率よく計数する方法の一つは液体シンチレーションカウンタでの測定である。",
+      "ク": "加速器質量分析は質量等で選別した¹⁴Cイオンを直接数えて原子数や同位体比を求める。 低エネルギーβ線を効率よく計数する方法の一つは液体シンチレーションカウンタでの測定である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/hoshasen/2022/2-butsurikagakuseibutsu-p13.png",
+      "/questions/hoshasen/2022/2-butsurikagakuseibutsu-p14.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 第二種放射線取扱主任者 化学 公式問題冊子PDF 13ページ。",
+      "令和4年度 第二種放射線取扱主任者 化学 公式問題冊子PDF 14ページ。"
+    ],
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2_butsurikagakuseibutsu.pdf#page=13",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和4年度 第2種放射線取扱主任者試験 11（化学・解答欄I）（問題・正答）。問題は公式PDFの画像を使用。解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "hoshasen-2-2022-kagaku-q11-slot-J",
+    "exam": "hoshasen-2",
+    "year": 2022,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 20,
+    "officialQuestionLabel": "11（化学・解答欄J）",
+    "officialAnswerNumber": 8,
+    "type": "multiple-choice",
+    "subject": "化学",
+    "category": "化学",
+    "topicTags": [
+      "加速器質量分析で数えるもの"
+    ],
+    "difficulty": 3,
+    "question": "問11　加速器質量分析で数えるもの。掲載の公式問題画像を読み、解答欄［J］に入る選択肢を解答群から選んでください。",
+    "choices": {
+      "ア": "Ge半導体検出器",
+      "イ": "プラスチックシンチレーション検出器",
+      "ウ": "Si表面障壁型検出器",
+      "エ": "液体シンチレーションカウンタ",
+      "オ": "放射能",
+      "カ": "中性子数",
+      "キ": "電子数",
+      "ク": "原子数"
+    },
+    "answer": "ク",
+    "explanation": "加速器質量分析では放射壊変の回数を待たず、¹⁴C原子に由来するイオンを直接数えられるので、少ない試料で測定できる。",
+    "choiceExplanations": {
+      "ア": "Ge半導体検出器はγ線の分光に適し、試料中の¹⁴Cの低エネルギーβ線の代表的な計数方法とは異なる。 加速器質量分析では放射壊変の回数を待たず、¹⁴C原子に由来するイオンを直接数えられるので、少ない試料で測定できる。",
+      "イ": "プラスチックシンチレーション検出器でもβ線を検出できるが、試料を混ぜて効率を上げる液体シンチレーション法が代表的である。 加速器質量分析では放射壊変の回数を待たず、¹⁴C原子に由来するイオンを直接数えられるので、少ない試料で測定できる。",
+      "ウ": "Si表面障壁型検出器は荷電粒子分光などに用いる。設問で挙げる¹⁴C放射能の代表的な測定装置は液体シンチレーションカウンタである。 加速器質量分析では放射壊変の回数を待たず、¹⁴C原子に由来するイオンを直接数えられるので、少ない試料で測定できる。",
+      "エ": "試料の炭素を含む液体とシンチレータを混ぜ、¹⁴Cのβ線による発光を計数する。 加速器質量分析では放射壊変の回数を待たず、¹⁴C原子に由来するイオンを直接数えられるので、少ない試料で測定できる。",
+      "オ": "放射能を測る方法では壊変を待って数える。加速器質量分析ではイオン化した同位体を数える。 加速器質量分析では放射壊変の回数を待たず、¹⁴C原子に由来するイオンを直接数えられるので、少ない試料で測定できる。",
+      "カ": "中性子数で核種を定義できるが、加速器質量分析が試料について求めるのは¹⁴C原子数や同位体比である。 加速器質量分析では放射壊変の回数を待たず、¹⁴C原子に由来するイオンを直接数えられるので、少ない試料で測定できる。",
+      "キ": "電子数だけでは同じ炭素の同位体を区別できず、微量の¹⁴Cを定量できない。 加速器質量分析では放射壊変の回数を待たず、¹⁴C原子に由来するイオンを直接数えられるので、少ない試料で測定できる。",
+      "ク": "加速器質量分析では放射壊変の回数を待たず、¹⁴C原子に由来するイオンを直接数えられるので、少ない試料で測定できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/hoshasen/2022/2-butsurikagakuseibutsu-p13.png",
+      "/questions/hoshasen/2022/2-butsurikagakuseibutsu-p14.png"
+    ],
+    "imageAltTexts": [
+      "令和4年度 第二種放射線取扱主任者 化学 公式問題冊子PDF 13ページ。",
+      "令和4年度 第二種放射線取扱主任者 化学 公式問題冊子PDF 14ページ。"
+    ],
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2_butsurikagakuseibutsu.pdf#page=13",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R04_2seitou.pdf#page=3",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和4年度 第2種放射線取扱主任者試験 11（化学・解答欄J）（問題・正答）。問題は公式PDFの画像を使用。解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
   }
 ]
