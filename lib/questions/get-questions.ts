@@ -245,6 +245,7 @@ kankoji1: async () => isExamPublished("kankoji1") ? (await import("@/data/questi
 "chori-okinawa": async () => isExamPublished("chori-okinawa") ? (await import("@/data/questions/chori-okinawa")).CHORI_OKINAWA_QUESTIONS : [],
 "chori-gunma": async () => isExamPublished("chori-gunma") ? (await import("@/data/questions/chori-gunma")).CHORI_GUNMA_QUESTIONS : [],
 "chori-ehime": async () => isExamPublished("chori-ehime") ? (await import("@/data/questions/chori-ehime")).CHORI_EHIME_QUESTIONS : [],
+"chori-nara": async () => isExamPublished("chori-nara") ? (await import("@/data/questions/chori-nara")).CHORI_NARA_QUESTIONS : [],
 "yamaguchi-chori": async () => isExamPublished("yamaguchi-chori") ? (await import("@/data/questions/yamaguchi-chori")).YAMAGUCHI_CHORI_QUESTIONS : [],
 "yamaguchi-seika": async () => isExamPublished("yamaguchi-seika") ? (await import("@/data/questions/yamaguchi-seika")).YAMAGUCHI_SEIKA_QUESTIONS : [],
 "yamaguchi-fugu": async () => isExamPublished("yamaguchi-fugu") ? (await import("@/data/questions/yamaguchi-fugu")).YAMAGUCHI_FUGU_QUESTIONS : [],

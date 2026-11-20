@@ -309,6 +309,7 @@ export const EXAM_LABELS: Record<string, string> = {
     "chori-okinawa": "調理師試験（沖縄県）",
     "chori-gunma": "調理師試験（群馬県）",
     "chori-ehime": "調理師試験（愛媛県）",
+    "chori-nara": "調理師試験（奈良県）",
     "yamaguchi-chori": "調理師",
     "yamaguchi-seika": "製菓衛生師",
     "yamaguchi-fugu": "ふぐ処理師（学科）",

@@ -317,6 +317,7 @@ import { CHORI_TOCHIGI_QUESTIONS } from "./chori-tochigi";
 import { CHORI_OKINAWA_QUESTIONS } from "./chori-okinawa";
 import { CHORI_GUNMA_QUESTIONS } from "./chori-gunma";
 import { CHORI_EHIME_QUESTIONS } from "./chori-ehime";
+import { CHORI_NARA_QUESTIONS } from "./chori-nara";
 import { YAMAGUCHI_CHORI_QUESTIONS } from "./yamaguchi-chori";
 import { YAMAGUCHI_SEIKA_QUESTIONS } from "./yamaguchi-seika";
 import { YAMAGUCHI_FUGU_QUESTIONS } from "./yamaguchi-fugu";
@@ -622,6 +623,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("chori-okinawa") ? { "chori-okinawa": CHORI_OKINAWA_QUESTIONS } : {}),
 ...(isExamPublished("chori-gunma") ? { "chori-gunma": CHORI_GUNMA_QUESTIONS } : {}),
 ...(isExamPublished("chori-ehime") ? { "chori-ehime": CHORI_EHIME_QUESTIONS } : {}),
+...(isExamPublished("chori-nara") ? { "chori-nara": CHORI_NARA_QUESTIONS } : {}),
 ...(isExamPublished("yamaguchi-chori") ? { "yamaguchi-chori": YAMAGUCHI_CHORI_QUESTIONS } : {}),
 ...(isExamPublished("yamaguchi-seika") ? { "yamaguchi-seika": YAMAGUCHI_SEIKA_QUESTIONS } : {}),
 ...(isExamPublished("yamaguchi-fugu") ? { "yamaguchi-fugu": YAMAGUCHI_FUGU_QUESTIONS } : {}),
