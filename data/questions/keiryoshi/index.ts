@@ -17,6 +17,11 @@ import kanri75 from "./2024-kanri.json";
 import ichiki75 from "./2024-ichiki.json";
 import keishitsu75 from "./2024-keishitsu.json";
 
+import kanbutsu74 from "./2023-kanbutsu.json";
+import kanon74 from "./2023-kanon.json";
+import houki74 from "./2023-houki.json";
+import kanri74 from "./2023-kanri.json";
+
 export type KeiryoshiExam = "keiryoshi" | "keiryoshi-nodo" | "keiryoshi-soon";
 type SourceQuestion = Omit<Question, "id" | "exam">;
 
@@ -33,9 +38,16 @@ export const KEIRYOSHI_SUBJECTS = {
   "keiryoshi-soon": ["環物", "環音", "法規", "管理"],
 } as const satisfies Record<KeiryoshiExam, readonly string[]>;
 
+const KEIRYOSHI_SOON_PRIOR_QUESTIONS = [
+  ...kanbutsu74, ...kanon74, ...houki74, ...kanri74,
+] as SourceQuestion[];
+
 export function getKeiryoshiCandidates(exam: KeiryoshiExam): Question[] {
+  const sourceQuestions = exam === "keiryoshi-soon"
+    ? [...KEIRYOSHI_SOURCE_QUESTIONS, ...KEIRYOSHI_SOON_PRIOR_QUESTIONS]
+    : KEIRYOSHI_SOURCE_QUESTIONS;
   return KEIRYOSHI_SUBJECTS[exam].flatMap(subject =>
-    KEIRYOSHI_SOURCE_QUESTIONS.filter(q => q.subject === subject).map(q => ({
+    sourceQuestions.filter(q => q.subject === subject).map(q => ({
       ...q,
       id: `${exam}-${q.year}-${q.season}-${q.session}-q${q.qNumber}`,
       exam,

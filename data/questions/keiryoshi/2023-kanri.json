@@ -1,0 +1,1064 @@
+[
+  {
+    "session": "measurement-management",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 1,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第74回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "計測管理に関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "計測管理とは、計測の目的を効率的に達成するため、計測の活動全体を体系的に管理することである。",
+      "イ": "計測の目的に応じて測定対象量や測定システムの選定を行うことは、計測管理の重要な役割である。",
+      "ウ": "計測管理では、必要に応じて測定におけるトレーサビリティの確保を計画することが重要である。",
+      "エ": "測定結果が計測の目的を満たしているかどうかを評価する際に、測定の不確かさを考慮することが重要である。",
+      "オ": "計測管理は、品質管理・安全管理・環境管理などとは関連しないため、他部門とは連携せず、独立して活動を行う必要がある。"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "測定結果は品質・安全・環境等の管理に使われるため、計測管理では利用部門と連携する必要がある。",
+    "choiceExplanations": {
+      "ア": "計測管理は測定器の管理だけでなく、計測活動全体を整理して計測の目的を達成する取組である。",
+      "イ": "目的に照らして何をどの方法・装置で測るかを決めることは、計測管理の重要な役割である。",
+      "ウ": "参照基準と結び付いた結果が必要な場合、校正等によってトレーサビリティを確保するための計画を立てる。",
+      "エ": "測定結果が目的に使えるかは、不確かさも踏まえて評価する。",
+      "オ": "測定結果は品質・安全・環境等の管理に使われるため、計測管理では利用部門と連携する必要がある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416171730id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R05kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416171535id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R05_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第74回計量士国家試験 管理 問1（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "5",
+    "examDate": "2023-12-10"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 2,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第74回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "製造工程の計測管理に関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "製造工程における測定には、工程を流れる製品の特性を対象に行う測定や、工程の設定条件・環境条件を対象に行う測定、さらに最終段階で不適合品を見つける検査のための測定などがある。",
+      "イ": "製造工程の制御のために行われる測定のばらつきは、その工程で製造される製品のばらつきに影響を与えない。",
+      "ウ": "製造工程で使用する測定器を選択する場合、製造する製品の許容差も考慮する。",
+      "エ": "製造工程で使用する測定器の校正周期は、測定器の仕様、使用環境、測定頻度なども考慮して設定する。",
+      "オ": "製品特性の設計値からのずれにより生じる経済損失（社会的損失）を損失関数として評価し、それを用いて計測管理の方式を改善するという考え方がある。"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "測定値のばらつきが制御操作に反映されると、操作の結果として製品の特性値にもばらつきが生じ得る。",
+    "choiceExplanations": {
+      "ア": "工程中や最終検査だけでなく、設備条件や作業環境も測定の対象になる。",
+      "イ": "測定値のばらつきが制御操作に反映されると、操作の結果として製品の特性値にもばらつきが生じ得る。",
+      "ウ": "測定結果で許容差内かを判定できるよう、製品の許容差に対して十分な精度の測定器を選ぶ。",
+      "エ": "校正周期は測定器の経時変化に加え、使い方や環境・頻度を考慮して決める。",
+      "オ": "目標値からのずれによる損失を関数で評価すると、計測管理を改善する効果も比較できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416171730id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R05kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416171535id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R05_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第74回計量士国家試験 管理 問2（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "2",
+    "examDate": "2023-12-10"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 3,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第74回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "測定の信頼性確保のために行われる「校正」、「検証」及び「妥当性確認」の定義に関する次の記述の空欄（ア）～（ウ）に入る語句の組合せとして正しいものを、下の中から一つ選べ。\n\n「JIS Z 8103 計測用語」において、（ア）は「指定の条件下において、第一段階で、測定標準によって提供される不確かさを伴う量の値とそれに対応する指示値との不確かさを伴う関係を確立し、第二段階で、この情報を用いて指示値から測定結果を得るための関係を確立する操作」と定義されている。一方、（イ）は「与えられたアイテムが指定された要求事項を満たしているという客観的証拠の提示」と定義されている。また、（ウ）は「指定された要求事項が意図した用途に十分であることの（イ）」と定義されている。",
+    "choices": {
+      "ア": "校正 ／ 検証 ／ 妥当性確認",
+      "イ": "検証 ／ 校正 ／ 妥当性確認",
+      "ウ": "校正 ／ 妥当性確認 ／ 検証",
+      "エ": "検証 ／ 妥当性確認 ／ 校正",
+      "オ": "妥当性確認 ／ 検証 ／ 校正"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "標準と指示値を関係付けるのが校正、要求を満たす証拠の提示が検証である。用途に対する要求事項の十分性を調べるのが妥当性確認である。",
+    "choiceExplanations": {
+      "ア": "標準と指示値を関係付けるのが校正、要求を満たす証拠の提示が検証である。用途に対する要求事項の十分性を調べるのが妥当性確認である。",
+      "イ": "標準と指示値の関係を求める（ア）は検証ではなく校正である。（イ）で行うのが要求事項への適合の検証である。",
+      "ウ": "（イ）は指定要求への適合を示す検証、（ウ）は意図された用途との関係を扱う妥当性確認である。",
+      "エ": "（ア）は計測結果と参照値を対応付ける校正に当たり、（ウ）の用途に関する判断は校正に該当しない。",
+      "オ": "妥当性確認は用途に対する要求事項の十分性の検証であり、（ア）ではなく（ウ）に入る。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416171730id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R05kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416171535id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R05_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第74回計量士国家試験 管理 問3（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "1",
+    "examDate": "2023-12-10"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 4,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第74回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "次の表は、国際単位系（SI）で用いられるSI接頭語から幾つかを抜粋し、名称、記号及び乗数を示したものである。表の（ア）～（ウ）に入る名称（記号）の組合せとして正しいものを、下の中から一つ選べ。",
+    "choices": {
+      "ア": "テラ（T） ／ マイクロ（μ） ／ ピコ（p）",
+      "イ": "ギガ（G） ／ ナノ（n） ／ フェムト（f）",
+      "ウ": "テラ（T） ／ ナノ（n） ／ ピコ（p）",
+      "エ": "テラ（T） ／ マイクロ（μ） ／ フェムト（f）",
+      "オ": "ギガ（G） ／ マイクロ（μ） ／ ピコ（p）"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "10¹²はテラ（T）、10⁻⁶はマイクロ（μ）、10⁻¹²はピコ（p）である。",
+    "choiceExplanations": {
+      "ア": "10¹²はテラ（T）、10⁻⁶はマイクロ（μ）、10⁻¹²はピコ（p）である。",
+      "イ": "ギガは10⁹、ナノは10⁻⁹、フェムトは10⁻¹⁵で、いずれも表の該当欄に合わない。",
+      "ウ": "ナノは10⁻⁹を表すので、10⁻⁶の（イ）にはマイクロを入れる。",
+      "エ": "フェムトは10⁻¹⁵であり、（ウ）の10⁻¹²はピコである。",
+      "オ": "10¹²はテラであり、ギガは10⁹である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416171730id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R05kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416171535id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R05_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第74回計量士国家試験 管理 問4（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "1",
+    "examDate": "2023-12-10",
+    "imageUrls": [
+      "/images/questions/keiryoshi/2023/kanri-q4.png"
+    ],
+    "imageAltTexts": [
+      "SI接頭語の名称・記号と乗数の表。（ア）10¹²、（イ）10⁻⁶、（ウ）10⁻¹²の接頭語が空欄"
+    ]
+  },
+  {
+    "session": "measurement-management",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 5,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第74回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "測定の不確かさ評価に関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "測定誤差は、一般に誤差の性質に応じて偶然誤差と系統誤差に分類できるが、測定の不確かさは評価方法に応じてタイプ A 評価とタイプ B 評価に分類されている。",
+      "イ": "不確かさのタイプ A 評価とは、一連の測定値の統計的解析による評価である。",
+      "ウ": "不確かさのタイプ B 評価とは、統計的解析によらず、文献・仕様書・校正証明書などの外部情報や測定者の知識・経験などに基づいて行う評価である。",
+      "エ": "測定対象量が複数の入力量の関数として得られる場合は、各入力量の標準不確かさを評価し、これらを不確かさの伝ぱ則を用いて合成することにより、測定対象量の不確かさを求める。",
+      "オ": "不確かさの伝ぱ則は、タイプ A 評価で得られた不確かさの合成にのみ用いられ、タイプ B 評価で得られた不確かさの合成には適用されない。"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "伝ぱ則は各成分がタイプAとBのどちらで評価されたかを問わず適用できる。",
+    "choiceExplanations": {
+      "ア": "誤差はその性質で、タイプA・Bは不確かさ成分を評価する方法で分ける。",
+      "イ": "タイプAでは繰返し測定の結果などに統計的解析を適用する。",
+      "ウ": "仕様書や校正証明書など、繰返し測定の統計解析以外の情報に基づく評価がタイプBである。",
+      "エ": "測定値が複数の入力量に依存する場合、モデルと各入力量の不確かさを用いて合成標準不確かさを求める。",
+      "オ": "伝ぱ則は各成分がタイプAとBのどちらで評価されたかを問わず適用できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416171730id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R05kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416171535id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R05_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第74回計量士国家試験 管理 問5（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "5",
+    "examDate": "2023-12-10"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 6,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第74回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "ある測定対象量 y は、二つの入力量 xᵢ（i＝1, 2）から、次の測定モデルにより計算される。\n\ny＝ax₁＋bx₂\n\nただし、a、b は定数である。この測定モデルに基づき、不確かさの伝ぱ則により y の合成標準不確かさ u꜀(y) を求めたい。u꜀(y) の計算式として正しいものを、次の中から一つ選べ。ここで、u(xᵢ) は xᵢ の標準不確かさであり、x₁ と x₂ の間に相関はないものとする。",
+    "choices": {
+      "ア": "u꜀(y)＝u(x₁)＋u(x₂)",
+      "イ": "u꜀(y)＝a u(x₁)＋b u(x₂)",
+      "ウ": "u꜀(y)＝√[u(x₁)²＋u(x₂)²]",
+      "エ": "u꜀(y)＝√[a²u(x₁)²＋b²u(x₂)²]",
+      "オ": "u꜀(y)＝y√[(u(x₁)/x₁)²＋(u(x₂)/x₂)²]"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "偏微分から感度係数はaとbである。相関がないため、au(x₁)とbu(x₂)を二乗して足し、その平方根を取る。",
+    "choiceExplanations": {
+      "ア": "標準不確かさの算術和では独立な成分の合成を表せず、感度係数も反映していない。",
+      "イ": "各成分に感度係数を掛ける点は必要だが、独立な成分なら二乗して合計した後に平方根を取る。",
+      "ウ": "二乗和の平方根を取るのは正しいが、aとbの感度係数が反映されていない。",
+      "エ": "偏微分から感度係数はaとbである。相関がないため、au(x₁)とbu(x₂)を二乗して足し、その平方根を取る。",
+      "オ": "この相対不確かさの式は、積などの特定のモデルで用いる形であり、設問の和のモデルには当てはまらない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416171730id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R05kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416171535id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R05_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第74回計量士国家試験 管理 問6（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "4",
+    "examDate": "2023-12-10",
+    "isCalculation": true
+  },
+  {
+    "session": "measurement-management",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 7,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第74回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "正規分布の性質についての次の記述の中から、誤っているものを一つ選べ。ただし、μ は平均、σ は標準偏差、exp( ) は指数関数 （自然対数の底 e のべき乗を表す関数）である。",
+    "choices": {
+      "ア": "xを確率変数として、正規分布は以下の確率密度関数 f(x) で表される。\n\nf(x)＝1/(σ√(2π)) × exp[−(x−μ)²/(2σ²)]",
+      "イ": "μが0、σが1の正規分布を、標準正規分布という。",
+      "ウ": "正規分布はμを中心に左右対称の分布をしている。",
+      "エ": "正規分布において確率変数 x の値が μ−σ≦x≦μ＋σ の範囲に存在する確率は、約95％である。",
+      "オ": "一般に、繰返し測定における測定値の標本平均の確率分布は、繰返し数を増加させるに従い、中心極限定理によって正規分布に近づく。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "μ±σの範囲に入る確率は約68.3％である。約95％に対応する範囲は平均からおよそ±1.96σ以内である。",
+    "choiceExplanations": {
+      "ア": "密度は平均μとの差を標準偏差σで規格化したガウス関数で、全範囲の積分が1となる係数1/(σ√(2π))を持つ。",
+      "イ": "平均0、標準偏差1の正規分布を標準正規分布と呼ぶ。",
+      "ウ": "確率密度は平均からの距離の二乗に依存するため、平均の左右で対称になる。",
+      "エ": "μ±σの範囲に入る確率は約68.3％である。約95％に対応する範囲は平均からおよそ±1.96σ以内である。",
+      "オ": "独立で同分布、有限分散などの条件の下で、標本平均を標準化した分布は標本数とともに正規分布に近づく。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416171730id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R05kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416171535id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R05_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第74回計量士国家試験 管理 問7（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "4",
+    "examDate": "2023-12-10"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 8,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第74回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "ある測定で得られたデータ群の平均は 10、分散は 5 であった。このデータ群に含まれる個々のデータを 2 倍してから 5 を引くという変換をしたデータ群の平均と分散の値について、正しい組合せを次の中から一つ選べ。",
+    "choices": {
+      "ア": "平均15、分散5",
+      "イ": "平均15、分散20",
+      "ウ": "平均10、分散10",
+      "エ": "平均5、分散5",
+      "オ": "平均15、分散0"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "平均は2×10−5＝15である。分散は定数の減算で変わらず、尺度2の二乗を掛けて4×5＝20となる。",
+    "choiceExplanations": {
+      "ア": "2倍の変換は平均のほか分散にも影響し、分散は5のままではなく4倍になる。",
+      "イ": "平均は2×10−5＝15である。分散は定数の減算で変わらず、尺度2の二乗を掛けて4×5＝20となる。",
+      "ウ": "全ての値が2倍された後に5引かれるので平均は10のままではなく、分散の倍率も2倍ではない。",
+      "エ": "定数を5引く前に2倍され、平均は2×10−5となる。",
+      "オ": "5の減算で分散を0にはできず、2倍した値の分散は元の4倍になる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416171730id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R05kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416171535id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R05_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第74回計量士国家試験 管理 問8（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "2",
+    "examDate": "2023-12-10",
+    "isCalculation": true
+  },
+  {
+    "session": "measurement-management",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 9,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第74回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "ある濃度に調製された溶液を瓶に小分けした。小分けした瓶から10本サンプリングし、それぞれの瓶に充填されている溶液に対し繰返し2回の濃度測定を行った。得られた測定データの分散分析表を次に示す。このとき、瓶間の濃度の違いを示す母分散の推定値を求める式として正しいものを、下の中から一つ選べ。",
+    "choices": {
+      "ア": "Vₐ",
+      "イ": "Vₑ",
+      "ウ": "Vₐ/Vₑ",
+      "エ": "Vₐ/10",
+      "オ": "(Vₐ−Vₑ)/2"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "Vₐの期待値はσₑ²＋2σₐ²で、Vₑの期待値はσₑ²である。両平均平方の差を2で割ってσₐ²を推定する。",
+    "choiceExplanations": {
+      "ア": "瓶間の平均平方には、測定の繰返しに由来する分散も含まれる。",
+      "イ": "Vₑは繰返しの母分散を推定する量で、瓶間の違いの成分ではない。",
+      "ウ": "平均平方の比は分散分析で検定統計量に使えるが、瓶間の母分散の推定式は分散同士の差を使う。",
+      "エ": "瓶数10で割るのではなく、繰返し分散の成分を引いた上で瓶当たりの繰返し回数2で割る。",
+      "オ": "Vₐの期待値はσₑ²＋2σₐ²で、Vₑの期待値はσₑ²である。両平均平方の差を2で割ってσₐ²を推定する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416171730id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R05kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416171535id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R05_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第74回計量士国家試験 管理 問9（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "5",
+    "examDate": "2023-12-10",
+    "imageUrls": [
+      "/images/questions/keiryoshi/2023/kanri-q9.png"
+    ],
+    "imageAltTexts": [
+      "瓶間・繰返し・合計の分散分析表。瓶間と繰返しの平均平方はVₐとVₑで、それぞれの期待値はσₑ²＋2σₐ²とσₑ²"
+    ],
+    "isCalculation": true
+  },
+  {
+    "session": "measurement-management",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 10,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第74回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "回帰分析についての下の記述の中から、誤っているものを一つ選べ。\nただし、本問でいう直線回帰分析は、回帰式 y＝α＋βx を想定し、最小二乗法により次のパラメータが求められるものとする。\n\n切片の推定値：α̂＝ȳ−β̂x̄\n傾きの推定値：β̂＝Σ[(xᵢ−x̄)(yᵢ−ȳ)]/Σ[(xᵢ−x̄)²]\n\nここに、（xᵢ, yᵢ）は直線回帰分析に用いたデータ（i＝1, 2, …, n）、x̄、ȳ は x、y それぞれのデータの平均である。",
+    "choices": {
+      "ア": "直線回帰分析を行うと、切片と傾きの推定値が得られるが、あくまでも推定値であり、推定された切片と傾きは誤差を持つ。",
+      "イ": "直線回帰分析を行うと、推定された直線は必ず（x̄, ȳ）を通る。",
+      "ウ": "直線回帰分析では、一般に、傾きの推定値 β̂ が変動したときそれに応じて切片の推定値 α̂ も変動するため、α̂ と β̂ の間には相関が存在する。",
+      "エ": "直線回帰分析における残差分散の自由度は、回帰分析に用いたデータ点数を n として、n−1 となる。",
+      "オ": "直線回帰分析よりも高次の多項式回帰分析を行う際、多項式の次数を高くすれば当てはまりは良くなるが、高くし過ぎると推定した関数が非現実的なものになる場合がある。"
+    },
+    "answer": [
+      "ア",
+      "イ",
+      "ウ",
+      "エ",
+      "オ"
+    ],
+    "requiredSelections": 1,
+    "explanation": "この設問は、出題不備のため、経済産業省の公式訂正により全員正解とされた。演習ではどの選択肢を選んでも正解となる。",
+    "choiceExplanations": {
+      "ア": "切片と傾きは標本データで推定するため、真の値との間に推定誤差が生じる。出題不備の公式訂正により、この肢を選んでも正解として扱う。",
+      "イ": "切片を含む最小二乗回帰直線は標本平均の点（x̄, ȳ）を通る。公式訂正で全員を正解とする。",
+      "ウ": "切片には傾きの推定値が含まれるが、x̄＝0ならこの関係から相関が生じない。公式訂正で全員を正解とする。",
+      "エ": "切片と傾きの二つを推定するので、残差の自由度はn−2である。公式訂正では全員を正解として扱う。",
+      "オ": "高次の多項式では標本誤差にも追従する過学習が起こり得る。公式訂正でこの肢も正解として扱う。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416171730id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R05kanri.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c231211aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第74回計量士国家試験 管理 問10（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "全員正解",
+    "examDate": "2023-12-10",
+    "questionNotice": "公式訂正により全員正解です。演習では1〜5のどれを選んでも正解とします。"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 11,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第74回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "測定標準に関する次の記述の空欄（ア）～（ウ）に入る語句の組合せとして正しいものを、下の中から一つ選べ。\n\n測定標準は、「JIS Z 8103 計測用語」において「何らかの参照基準として用いる、表記された（ア）及びその（イ）をもつ、ある与えられた量の定義を現示したもの」と定義されている。この定義どおり、測定標準は、他の同種の量に対して測定値及び（イ）を確定し、それによって、他の測定標準、測定器又は測定システムの校正を通して、トレーサビリティを確立する際の参照基準としてしばしば用いられる。ここで、“量の定義の現示”は、測定システム、実量器又は（ウ）によって与えることができる。",
+    "choices": {
+      "ア": "量の値 ／ 不確かさ ／ 標準物質",
+      "イ": "量の種類 ／ 誤差 ／ 物理法則",
+      "ウ": "量の値 ／ 不確かさ ／ 物理法則",
+      "エ": "量の種類 ／ 不確かさ ／ 標準物質",
+      "オ": "量の種類 ／ 誤差 ／ 標準物質"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "測定標準は参照基準となる量の値と不確かさを持つ。現示の例には測定システム、実量器、標準物質がある。",
+    "choiceExplanations": {
+      "ア": "測定標準は参照基準となる量の値と不確かさを持つ。現示の例には測定システム、実量器、標準物質がある。",
+      "イ": "校正で基準として用いるのは量の種類ではなく表記された量の値である。また、誤差ではなく不確かさを付して示す。",
+      "ウ": "（ア）と（イ）は合うが、測定システム等と並ぶ現示の例は標準物質である。",
+      "エ": "測定標準は量がどの種類に属するかを示すだけでなく、その値を不確かさとともに示す。",
+      "オ": "測定標準の定義が要求するのは量の値及びその不確かさであり、量の種類と誤差ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416171730id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R05kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416171535id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R05_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第74回計量士国家試験 管理 問11（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "1",
+    "examDate": "2023-12-10"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 12,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第74回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "トレーサビリティは、「JIS Z 8103 計測用語」において「個々の校正が不確かさに寄与する、切れ目なく連鎖した、文書化された校正を通して、測定結果を参照基準に関係付けることができる測定結果の性質」と定義されている。トレーサビリティに関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "参照基準の代表的なものとして国家標準がある。",
+      "イ": "国際単位系（SI）における測定単位の定義を参照基準とするトレーサビリティを、SIへのトレーサビリティということがある。",
+      "ウ": "トレーサビリティが成立するには、参照基準から最終の測定システムまでの校正の段階的な連鎖である校正階層が確立している必要がある。",
+      "エ": "参照基準から最終の測定システムに到る校正の段階的な連鎖に沿って、校正の不確かさは必然的に増加する。",
+      "オ": "測定結果のトレーサビリティが確保されていることは、与えられた測定の目的に対して、測定結果の不確かさが十分に小さいことを保証する。"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "トレーサビリティは結果が参照基準に結び付く性質である。結果の不確かさが個々の目的に十分小さいかは別途評価する。",
+    "choiceExplanations": {
+      "ア": "国家標準は、校正の連鎖で参照基準となり得る代表例である。",
+      "イ": "測定結果が国際単位系の単位の定義につながっていることを、SIへの計量トレーサビリティという。",
+      "ウ": "参照基準まで文書化された校正を切れ目なくたどることができる必要がある。",
+      "エ": "校正の段階ごとの不確かさが測定結果の不確かさに寄与するため、連鎖に沿って不確かさが積み上がる。",
+      "オ": "トレーサビリティは結果が参照基準に結び付く性質である。結果の不確かさが個々の目的に十分小さいかは別途評価する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416171730id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R05kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416171535id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R05_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第74回計量士国家試験 管理 問12（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "5",
+    "examDate": "2023-12-10"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 13,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第74回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "「JIS Z 9090 測定−校正方式通則」に基づいた校正の種類に関する次の記述の中から、誤っているものを一つ選べ。ただし、測定器の読みを y、標準の値を M、感度係数を β とする。また、以下における想定関係式とは、y と M の間に成立すると想定した関係式を意味する。",
+    "choices": {
+      "ア": "零点校正とは、零点の読み y₀ を用いて定点の校正を行うことであり、想定関係式は、y＝y₀＋M である。",
+      "イ": "基準点校正とは、基準点 M₀ の読み y₀ を用いて定点の校正を行うことであり、想定関係式は、y＝y₀＋(M−M₀) である。",
+      "ウ": "零点比例式校正とは、任意の点（その読みを y₀ とする）を零点として、傾斜の校正を行うことであり、想定関係式は、y＝y₀＋βM である。",
+      "エ": "基準点比例式校正とは、基準点 M₀ の読み y₀ を用いて定点の校正を行った後、傾斜の校正を行うことであり、想定関係式は、y＝y₀＋β(M−M₀) である。",
+      "オ": "一次式校正とは、読みの平均値 ȳ 及び標準の値の平均値 M̄ を用いて、定点の校正及び傾斜の校正を同時に行うことであり、想定関係式は、y＝ȳ＋β(M−M̄) である。"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "零点比例式校正のy₀は標準値M＝0の読みである。任意の標準値M₀を基準にする場合はM−M₀を用いる。",
+    "choiceExplanations": {
+      "ア": "零点の標準値M＝0に対する読みをy₀とし、傾き1の関係で零点のずれを扱う。",
+      "イ": "基準点M₀での読みをy₀とし、基準点との差M−M₀をそこに加える形である。",
+      "ウ": "零点比例式校正のy₀は標準値M＝0の読みである。任意の標準値M₀を基準にする場合はM−M₀を用いる。",
+      "エ": "基準点M₀での読みy₀を定めた後、その点からの変化に感度係数βを求める。",
+      "オ": "一次式校正では定点と傾斜をともに求める。平均値を基準に書けばy＝ȳ＋β(M−M̄)と表せる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416171730id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R05kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416171535id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R05_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第74回計量士国家試験 管理 問13（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "3",
+    "examDate": "2023-12-10"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 14,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第74回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "「JIS Z 8103 計測用語」に基づく校正又は測定に関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "校正では、最終的に、実際の測定のときに得られる測定システムの指示値から測定対象の量の値を示す測定結果を得るための関係を求める。",
+      "イ": "校正において、指示値から測定結果を得るための関係を表す情報は、測定標準によって提供される量の値とそれに対応する指示値との関係から得ることができる。",
+      "ウ": "校正は、表明（ statement ）、校正関数、校正線図、校正曲線又は校正表の形で表すことがある。",
+      "エ": "測定において、ある目的に対して不確かさが無視できると考えられる場合は、測定結果を単一の測定値として表現することがある。",
+      "オ": "“自己校正（self-calibration）”と呼ばれる測定システムの調整（adjustment）は、校正の一種である。"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "装置を調整する自己校正と、標準の値と指示値等の関係を求める操作としての校正は異なる。",
+    "choiceExplanations": {
+      "ア": "校正で確立した関係を用いることで、指示値に対応する測定結果を求められる。",
+      "イ": "測定標準の値と装置の指示の対応が、実測した指示値を測定結果に結び付ける基礎になる。",
+      "ウ": "校正結果を示す方法には校正関数、曲線、表などがある。",
+      "エ": "利用目的に対して不確かさが無視できる場合は、測定結果を単一の値として表示することがある。",
+      "オ": "装置を調整する自己校正と、標準の値と指示値等の関係を求める操作としての校正は異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416171730id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R05kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416171535id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R05_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第74回計量士国家試験 管理 問14（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "5",
+    "examDate": "2023-12-10"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 15,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第74回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "測定の優劣を評価するために利用できる指標の一つに、測定のSN比がある。測定対象量の真値（信号因子）Mと測定器の指示値 y に比例式の関係を想定するとき、感度係数（傾き）を β、想定した直線からの指示値のずれの分散（誤差分散）をσ²とすると、SN比 η は、\n\nη＝β²/σ²＝(Sᵦ−Vₑ)/(rVₑ)\n\nで求めることができる。ここで、r は有効除数、Sᵦ は回帰による平方和、Vₑ は誤差分散の推定値を表している。\n信号因子 M の各水準 Mᵢ（i＝1, 2, …, m）を、誤差因子 N の各水準 Nⱼ（j＝1, 2, …, n）の条件下で測定器に入力したとき、測定器の出力（指示値）yᵢⱼ を表のように得た。この場合の有効除数 r を求める式として正しいものを、下の中から一つ選べ。",
+    "choices": {
+      "ア": "r＝Σᵢ₌₁ᵐ Mᵢ⁴",
+      "イ": "r＝nΣᵢ₌₁ᵐ Mᵢ²",
+      "ウ": "r＝Σᵢ₌₁ᵐ Mᵢ",
+      "エ": "r＝nΣᵢ₌₁ᵐ Mᵢ",
+      "オ": "r＝n Mₘ"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "各信号水準Mᵢについてn個の測定値があるので、回帰の有効除数はMᵢの二乗和のn倍となる。",
+    "choiceExplanations": {
+      "ア": "信号因子の四乗和ではなく、回帰で信号因子の二乗和を使う。また、誤差因子の各水準で同じ計測を繰り返している。",
+      "イ": "各信号水準Mᵢについてn個の測定値があるので、回帰の有効除数はMᵢの二乗和のn倍となる。",
+      "ウ": "比例式の回帰では信号因子を単に加算せず、その二乗和を用いる。",
+      "エ": "繰返し数nを考慮する点はよいが、足すべきものは信号因子の値そのものではなくその二乗である。",
+      "オ": "最後の信号水準だけでなく、全ての水準の二乗和にnを掛ける。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416171730id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R05kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416171535id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R05_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第74回計量士国家試験 管理 問15（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "2",
+    "examDate": "2023-12-10",
+    "imageUrls": [
+      "/images/questions/keiryoshi/2023/kanri-q15.png"
+    ],
+    "imageAltTexts": [
+      "信号因子Mのm水準と誤差因子Nのn水準を組み合わせた、測定器の出力yᵢⱼの表"
+    ],
+    "isCalculation": true
+  },
+  {
+    "session": "measurement-management",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 16,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第74回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "圧力 P の大きさを電圧 V に変換して出力する圧力センサーにおいて、P と V の関係は次の式で表せるとする。\n\nV＝βP＋ε\n\nここで、β は入力 P に対する出力 V の感度係数、ε は出力 V に含まれる誤差を表し、ε の標準偏差は σᵥ であるとする。β と σᵥ の大きさは、圧力センサーの種類によって変わり得る。このような圧力センサーが A、B、C の三種類あり、それぞれの β と σᵥ の値は次の通りであった。\n\nセンサーA：β＝1 mV/Pa、σᵥ＝10 mV\nセンサーB：β＝4 mV/Pa、σᵥ＝10 mV\nセンサーC：β＝4 mV/Pa、σᵥ＝20 mV\n\nセンサー A、B、C それぞれに対する測定のSN比 η(A)、η(B)、η(C) の大小関係として正しいものを、次の中から一つ選べ。",
+    "choices": {
+      "ア": "η ( A ) < η( B ) < η( C )",
+      "イ": "η( A ) < η ( C ) < η ( B )",
+      "ウ": "η( B ) < η( A ) < η( C )",
+      "エ": "η( B ) < η( C ) < η( A )",
+      "オ": "η( C ) < η ( B ) < η( A )"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "η＝β²/σᵥ²を使うと、Aは0.01、Bは0.16、Cは0.04である。A、C、Bの順に大きくなる。",
+    "choiceExplanations": {
+      "ア": "BはCと同じ感度で標準偏差が小さいので、BのSN比がCより大きい。",
+      "イ": "η＝β²/σᵥ²を使うと、Aは0.01、Bは0.16、Cは0.04である。A、C、Bの順に大きくなる。",
+      "ウ": "BはAと同じ標準偏差で感度が4倍なので、SN比はAより大きい。",
+      "エ": "CはAより標準偏差が2倍だが感度は4倍なので、SN比はAの4倍になる。",
+      "オ": "Aは最も小さいSN比であり、CとBのどちらもAを上回る。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416171730id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R05kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416171535id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R05_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第74回計量士国家試験 管理 問16（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "2",
+    "examDate": "2023-12-10",
+    "isCalculation": true
+  },
+  {
+    "session": "measurement-management",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 17,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第74回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "ある一次遅れ系の単位ステップ応答 y＝1−exp(−t/τ) を下図に示す。下図にある空欄（ア）～（ウ）に入る式の組合せとして正しいものを、下の中から一つ選べ。\nただし、t は時間、y は系の応答、a は応答 y の t＝0 における接線の傾き、τ は時定数、exp( ) は指数関数（自然対数の底 e のべき乗を表す関数）である。",
+    "choices": {
+      "ア": "a＝τ、y＝1、t＝1/τ",
+      "イ": "a＝1/τ、y＝1、t＝τ",
+      "ウ": "a＝1/τ、y＝1/τ、t＝1",
+      "エ": "a＝τ、y＝τ²、t＝τ",
+      "オ": "a＝τ、y＝τ、t＝1"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "初期傾きは1/τ、t→∞での定常値は1である。初期接線t/τが高さ1に達するのはt＝τである。",
+    "choiceExplanations": {
+      "ア": "応答の時間微分をt＝0で評価すると1/τであり、接線の傾きはτではない。",
+      "イ": "初期傾きは1/τ、t→∞での定常値は1である。初期接線t/τが高さ1に達するのはt＝τである。",
+      "ウ": "定常値は1であり、1/τは初期接線の傾きを表す。また初期接線が定常値に届く時刻はτである。",
+      "エ": "τは時間の単位を持つ時定数で、応答の定常値は入力の単位ステップと同じ1である。",
+      "オ": "時定数は一般に1とは限らず、接線が高さ1に達する時刻はτである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416171730id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R05kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416171535id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R05_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第74回計量士国家試験 管理 問17（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "2",
+    "examDate": "2023-12-10",
+    "imageUrls": [
+      "/images/questions/keiryoshi/2023/kanri-q17.png"
+    ],
+    "imageAltTexts": [
+      "時間tに対する一次遅れ系のステップ応答、初期接線と定常値を示したグラフ"
+    ],
+    "isCalculation": true
+  },
+  {
+    "session": "measurement-management",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 18,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第74回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "数値の有効数字に関する次の記述のうち、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "数値を表す数字のうちで、位取りを表すだけの数字 0 を除いた、意味のある数字を有効数字という。",
+      "イ": "有効数字を考慮して数値を丸める一般的な方法として四捨五入がある。",
+      "ウ": "二つの数値について乗算、除算を行った結果の有効数字の桁数は、二つの数値のうち有効数字の桁数が少ない数値の有効数字の桁数と同じにする。",
+      "エ": "二つの数値について加算、減算を行った結果の有効数字の桁数は、二つの数値のうち絶対値が大きい数値の有効数字の桁数と同じにする。",
+      "オ": "円周率 π の有効数字は無限桁であるとみなしてよい。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "加減算の丸めは有効数字の数や絶対値ではなく、最も粗い入力値の最終桁の位に合わせる。",
+    "choiceExplanations": {
+      "ア": "有効数字は測定値等の精度に意味を持つ数字であり、先頭の位取りだけの0は含めない。",
+      "イ": "四捨五入は、指定桁より下位を丸める方法の一つである。",
+      "ウ": "乗除算の概算では、有効数字の最も少ない入力値の桁数を結果の目安とする。",
+      "エ": "加減算の丸めは有効数字の数や絶対値ではなく、最も粗い入力値の最終桁の位に合わせる。",
+      "オ": "円周率は測定値と異なり数学的に定まる定数である。使用桁数は必要精度に合わせることができる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416171730id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R05kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416171535id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R05_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第74回計量士国家試験 管理 問18（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "4",
+    "examDate": "2023-12-10"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 19,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第74回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "測定や計測管理の実務ではコンピュータが広く用いられるようになり、ネットワークを介した利用も増えている。コンピュータやデータ管理システムを使用する際の情報セキュリティにおける留意点に関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "メンテナンス性向上のために、システム構成図を作成しておき、誰でも閲覧できるよう外部へ公開する。",
+      "イ": "コンピュータやデータ管理システムへアクセス可能な人を限定するとともに、離職者のアクセス権を削除するなど、アクセス権を都度及び定期的に見直す。",
+      "ウ": "外部ネットワークに接続している場合、データの窃取 （せっしゅ）や改ざんのリスクがあるため、セキュリティ面の強化を施す。",
+      "エ": "データは無形であるが、国・地域を越えた送信においては輸出管理の対象となる場合があり、行政当局より規制を受ける可能性がある。",
+      "オ": "情報漏洩やウイルス感染などの有事に備え、初動対応を示したガイドラインを策定し関係者に周知しておく。"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "保守に必要な構成図は、職務上必要な担当者に限定して管理する。外部への一律公開は情報管理上適切でない。",
+    "choiceExplanations": {
+      "ア": "保守に必要な構成図は、職務上必要な担当者に限定して管理する。外部への一律公開は情報管理上適切でない。",
+      "イ": "最小限のアクセス権を付与し、異動・退職時や定期的な確認で不要な権限を削除する。",
+      "ウ": "外部に接続したシステムではデータ保護と認証、アクセス管理などを講じる必要がある。",
+      "エ": "形のない技術データであっても、国境を越える提供が輸出管理の対象となる場合がある。",
+      "オ": "事故対応を平時から文書化して担当者に周知すれば、発生時に迅速に対応しやすい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416171730id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R05kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416171535id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R05_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第74回計量士国家試験 管理 問19（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "1",
+    "examDate": "2023-12-10"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 20,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第74回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "製品の信頼性を確認するために行う試験に関し、次の （ ア）〜（ エ）は、耐久性試験、限界試験、環境試験及び加速試験のいずれかを説明したものである。試験の種類と説明の組合せとして、正しいものを下の中から一つ選べ。 （ ア）ストレス要因を持続的または反復的に加え、時間の経過による性能への影響度合いを確認する試験 （ イ）温度、湿度、振動、衝撃、外気及び電磁気などの外的な要因が及ぼす性能への影響度合いを確認する試験 （ ウ）物理的な破壊や機能停止など、与えられた性能が発揮できなくなる水準を確認する試験 （ エ）試験時間の短縮を目的に、あらかじめ設定された環境・動作仕様よりも厳しい条件下で行う試験 （ア） （イ） （ウ） （エ）",
+    "choices": {
+      "ア": "耐久性試験 ／ 加速試験 ／ 環境試験 ／ 限界試験",
+      "イ": "耐久性試験 ／ 環境試験 ／ 限界試験 ／ 加速試験",
+      "ウ": "限界試験 ／ 加速試験 ／ 耐久性試験 ／ 環境試験",
+      "エ": "限界試験 ／ 環境試験 ／ 耐久性試験 ／ 加速試験",
+      "オ": "加速試験 ／ 耐久性試験 ／ 限界試験 ／ 環境試験"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "（ア）は負荷を繰り返す耐久性試験、（イ）は外的要因による環境試験である。（ウ）は故障水準を求める限界試験、（エ）は試験時間を短縮する加速試験である。",
+    "choiceExplanations": {
+      "ア": "（イ）は外的要因の影響を見る環境試験であり、（エ）が時間を短縮する加速試験である。",
+      "イ": "（ア）は負荷を繰り返す耐久性試験、（イ）は外的要因による環境試験である。（ウ）は故障水準を求める限界試験、（エ）は試験時間を短縮する加速試験である。",
+      "ウ": "（ア）は故障の限界を求める試験ではなく、負荷を継続したときの性能変化を確認する耐久性試験である。",
+      "エ": "（ア）は耐久性試験、（ウ）は機能を維持できない限界水準を求める限界試験であり、この組合せでは入れ替わっている。",
+      "オ": "（ア）は時間短縮のための過大負荷を前提とせず、（エ）の厳しい環境設定による試験が加速試験である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416171730id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R05kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416171535id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R05_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第74回計量士国家試験 管理 問20（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "2",
+    "examDate": "2023-12-10"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 21,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第74回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "次の文章は、品質管理活動で使用されるある図について記述したものである。この文章が表す図の名称として正しいものを、下の中から一つ選べ。ある製品の製造工程において、ある期間内で発生した不適合品を対象に、その不適合の理由を分類して、横軸を不適合の理由、縦軸を不適合品数とし、不適合品数の多い順に棒グラフで表した。さらに、不適合の理由ごとの不適合品数の割合を不適合品数の多い理由から順に累積した累積百分率として求め、それを折れ線グラフとして棒グラフの上に追記した。この図を用いることで、優先的に対策すべき不適合の理由を特定し、その対策をとったときの効果を推測することができる。",
+    "choices": {
+      "ア": "ヒストグラム",
+      "イ": "特性要因図",
+      "ウ": "パレート図",
+      "エ": "散布図",
+      "オ": "管理図"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "原因を件数の多い順に棒グラフにし、累積百分率を折れ線で重ねる図はパレート図である。",
+    "choiceExplanations": {
+      "ア": "ヒストグラムは測定値の区間ごとの度数を並べ、連続した数値の分布を表す。",
+      "イ": "特性要因図は結果と考えられる原因を枝分かれした図に整理する。",
+      "ウ": "原因を件数の多い順に棒グラフにし、累積百分率を折れ線で重ねる図はパレート図である。",
+      "エ": "散布図は二つの特性の組を点で表し、両者の関係を見る。",
+      "オ": "管理図は工程の特性値を時系列で打点し、安定状態からの変化を検出する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416171730id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R05kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416171535id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R05_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第74回計量士国家試験 管理 問21（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "3",
+    "examDate": "2023-12-10"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 22,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第74回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "製造工程で行われる製品の検査に関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "検査の目的、製品の仕様及び工程能力などを考慮して必要な検査項目を決めることが重要である。",
+      "イ": "全数検査か抜取検査かの検査方式の選択においては、検査が製品に及ぼす影響や検査コストを考慮することが必要である。",
+      "ウ": "抜取検査において、合格と判定されたロットに含まれるすべての製品は、不適合品でないことが保証される。",
+      "エ": "検査手順の標準化は、検査者によって検査結果が異なるという事象の発生を減らすために有効である。",
+      "オ": "製品の検査を行っても、検査前の製品のばらつきを小さくすることはできない。"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "抜取検査では標本の結果からロットの合否を判断する。合格ロットの全品が適合していることまでは確認していない。",
+    "choiceExplanations": {
+      "ア": "目的や工程能力を把握すると、どの特性をどの水準で検査すべきか判断できる。",
+      "イ": "検査が破壊を伴うか、費用や時間がどれだけ必要かなどは検査方式の選択に影響する。",
+      "ウ": "抜取検査では標本の結果からロットの合否を判断する。合格ロットの全品が適合していることまでは確認していない。",
+      "エ": "検査方法や判定の手順を標準化すれば、検査者による結果の差を減らしやすい。",
+      "オ": "検査は適合・不適合を判定する工程であり、既に生じた製品特性のばらつきを直接変えることはできない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416171730id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R05kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416171535id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R05_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第74回計量士国家試験 管理 問22（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "3",
+    "examDate": "2023-12-10"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 23,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第74回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "製品の特性値 y が、製品設計において設定した設計値 m からずれたこと （目標値）による社会的損失を定量的に表す指標として、品質工学の損失関数がある。損失関数 L( y ) の表式として正しいものを、次の中から一つ選べ。ただし、k は正の定数である。",
+    "choices": {
+      "ア": "L(y)＝ky−m",
+      "イ": "L(y)＝ky＋m",
+      "ウ": "L(y)＝k(y−m)",
+      "エ": "L(y)＝k(y−m)²",
+      "オ": "L(y)＝k/(y−m)²"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "品質工学の望目特性の損失関数はk(y−m)²で、目標から上側・下側に同じ量だけずれれば同じ損失となる。",
+    "choiceExplanations": {
+      "ア": "ky−mはy＝mで必ず0にならず、目標値からのずれを対称的に評価できない。",
+      "イ": "ky＋mは、yとmのずれが小さいときに損失が最小になる関数ではない。",
+      "ウ": "k(y−m)ではy＜mのとき損失が負になる。",
+      "エ": "品質工学の望目特性の損失関数はk(y−m)²で、目標から上側・下側に同じ量だけずれれば同じ損失となる。",
+      "オ": "逆二乗ではy＝mで定義できず、目標に一致したとき損失を0とする性質に反する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416171730id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R05kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416171535id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R05_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第74回計量士国家試験 管理 問23（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "4",
+    "examDate": "2023-12-10"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 24,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第74回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "製造工程の管理と改善に関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "工程の改善にあたっては、工程能力や不適合品の発生頻度などの現状を把握して対策を講じ、対策後は一定期間、工程状態の安定性や改善の効果を確認する必要がある。",
+      "イ": "製造工程における検査では、製品を測定・試験し、判定基準に基づいて個々の製品の適合・不適合又は製品群としてのロットの合格・不合格の判定を行う。",
+      "ウ": "X̄管理図には、製品特性の目標値を示す中心線とその上下に管理限界線が引かれる。管理限界線には製品の規格限界を使用しなければならない。",
+      "エ": "管理図上の管理限界線から特性値の打点が外れたり、打点の位置が連続して一方向に上昇したりするなど時間経過に対する特異な変化の傾向が認められるような場合には、そのような現象が発生する原因を調査することが必要である。",
+      "オ": "工程能力指数 Cp は、製品を製造する工程の能力を評価する指標であり、規格幅と製造された製品特性のばらつきの比から求められる。"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "管理限界線は工程の平均やばらつきなどから統計的に決める。製品の許容差を示す規格限界とは求め方も目的も異なる。",
+    "choiceExplanations": {
+      "ア": "改善策の前に現状を把握し、実施後にも工程が安定して効果が続いているか確認することが必要である。",
+      "イ": "検査では測定・試験の結果に基づき、個別の適合又は抜取検査でのロット合否を決める。",
+      "ウ": "管理限界線は工程の平均やばらつきなどから統計的に決める。製品の許容差を示す規格限界とは求め方も目的も異なる。",
+      "エ": "限界を越える打点や一方向の連続変化は、工程に特別な変化が起きた可能性を示す。",
+      "オ": "工程能力指数Cₚでは製品規格の幅を、工程で生じる製品特性のばらつきの幅で割る。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416171730id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R05kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416171535id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R05_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第74回計量士国家試験 管理 問24（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "3",
+    "examDate": "2023-12-10"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 25,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第74回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "標準化に関する次の（ア）～（ウ）の記述の正誤の組合せとして正しいものを、下の中から一つ選べ。\n\n（ア）JISと通称されている規格は、2019年に日本工業規格から日本産業規格へと名称が改められた。日本産業規格は強制規格であり、日本産業規格に適合しない製品の製造・販売・使用や適合しない方法の使用は禁止されている。\n\n（イ）貿易の技術的障害に関する協定（TBT協定）において、工業製品等の各国の規格が不必要な貿易障害とならないよう、国際規格を基礎とした日本産業規格等の国内規格の策定の原則が規定されている。\n\n（ウ）産業標準化法は、国際標準の制定への協力により国際標準化を促進すること等によって、鉱工業品の品質の改善や公共の福祉の増進等に寄与することを目的とする。",
+    "choices": {
+      "ア": "正 ／ 正 ／ 誤",
+      "イ": "正 ／ 誤 ／ 誤",
+      "ウ": "正 ／ 誤 ／ 正",
+      "エ": "誤 ／ 誤 ／ 正",
+      "オ": "誤 ／ 正 ／ 正"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "JISは原則任意であるため（ア）は誤りである。TBT協定の標準化の原則と産業標準化法の目的についての（イ）、（ウ）は正しい。",
+    "choiceExplanations": {
+      "ア": "工業規格から産業規格への名称変更はあったが、JISは原則として任意規格であり（ア）は誤りである。（ウ）も法の目的に沿う。",
+      "イ": "JISが原則として任意規格であるため（ア）は誤りである。TBT協定は国際規格を基礎とした国内規格の策定を求めるので（イ）は正しい。",
+      "ウ": "（ア）は誤りで、TBT協定が不必要な貿易障害の防止を図るとした（イ）は正しい。",
+      "エ": "（ア）と（ウ）の判断は合うが、国際規格を基礎とする原則を述べた（イ）も正しい。",
+      "オ": "JISは原則任意であるため（ア）は誤りである。TBT協定の標準化の原則と産業標準化法の目的についての（イ）、（ウ）は正しい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416171730id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R05kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416171535id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R05_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第74回計量士国家試験 管理 問25（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "5",
+    "examDate": "2023-12-10"
+  }
+]
