@@ -126,6 +126,10 @@ const nextConfig: NextConfig = {
       "**/node_modules/@prisma/client/runtime/*.wasm-base64.mjs",
       "**/node_modules/@prisma/client/runtime/*.map",
     ],
+    // The exam-library copilot answers from the official paper only (no RAG), so the
+    // copilot search index and local audit logs are not needed and pushed the function
+    // past Vercel's 250MB limit (265MB) once the question corpus grew.
+    "/api/copilot/exam-library": ["./generated/copilot/**/*", "./logs/**/*"],
   },
   outputFileTracingIncludes: {
     "/sw.js": ["./lib/pwa/sw.js"],
