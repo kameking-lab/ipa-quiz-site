@@ -1,0 +1,1529 @@
+[
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q01",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 1,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "直接FM送信機"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-1",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20230610201308id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201303id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/maritime2/2022-september-kogaku-a/q01.png"
+    ],
+    "imageAltTexts": [
+      "直接FM送信機の変調信号入力、空欄A・B、周波数同期の帰還回路"
+    ],
+    "type": "multiple-choice",
+    "question": "図の直接周波数変調方式のFM(F3E)送信機で、空欄AとBに入る字句の正しい組合せを選べ。",
+    "choices": {
+      "ア": "A：ディエンファシス回路　B：高周波発振器",
+      "イ": "A：ディエンファシス回路　B：励振増幅器",
+      "ウ": "A：プレエンファシス回路　B：励振増幅器",
+      "エ": "A：プレエンファシス回路　B：高周波発振器"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "送信側で変調信号の高域を強調し、VCOからの高周波信号を励振増幅器で増幅して電力増幅器へ渡す。",
+    "choiceExplanations": {
+      "ア": "ディエンファシスは受信側の補正であり、図のBは電力増幅器を駆動する増幅段である。",
+      "イ": "Bは合うが、送信側で変調前の高域を強調するAにはプレエンファシスを用いる。",
+      "ウ": "送信側で変調信号の高域を強調し、VCOからの高周波信号を励振増幅器で増幅して電力増幅器へ渡す。",
+      "エ": "Aは正しいが、高周波信号の発生には既にVCOがあり、その後のBには励振増幅器が入る。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q02",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 2,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "AM変調度"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-2",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20230610201308id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201303id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/maritime2/2022-september-kogaku-a/q02.png"
+    ],
+    "imageAltTexts": [
+      "AM波の搬送波振幅Eと、包絡線の最大振幅A"
+    ],
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "図の単一正弦波で変調したAM(A3E)波について、搬送波振幅をE、変調度を60%としたときに包絡線の最大振幅Aを表す式を選べ。",
+    "choices": {
+      "ア": "1.5E V",
+      "イ": "1.6E V",
+      "ウ": "1.7E V",
+      "エ": "1.8E V"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "最大包絡線振幅は搬送波振幅とその60%の増分の和なので、E+0.6Eである。",
+    "choiceExplanations": {
+      "ア": "搬送波振幅に0.5Eを足す式なので、変調度50%に対応する。",
+      "イ": "最大包絡線振幅は搬送波振幅とその60%の増分の和なので、E+0.6Eである。",
+      "ウ": "1.7Eは振幅の増分0.7Eを意味し、変調度70%に対応する。",
+      "エ": "振幅が1.8Eとなるのは変調度80%の場合である。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q03",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 3,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "FMの周波数偏移"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-3",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20230610201308id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201303id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "周波数変調器に振幅1 Vの単一正弦波を入力すると、周波数偏移はD Hzであった。周波数を同じに保ち振幅を4 Vにすると、周波数偏移はいくらか。",
+    "choices": {
+      "ア": "D Hz",
+      "イ": "2D Hz",
+      "ウ": "3D Hz",
+      "エ": "4D Hz"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "変調信号の振幅を4倍にしたので、周波数偏移は4Dとなる。",
+    "choiceExplanations": {
+      "ア": "FMで周波数偏移は変調信号の振幅に比例するので、振幅を変えれば偏移も変わる。",
+      "イ": "偏移が2倍となるのは変調信号の振幅を2倍にした場合である。",
+      "ウ": "入力は1 Vから4 Vへ4倍に増えるため、偏移も4倍になる。",
+      "エ": "変調信号の振幅を4倍にしたので、周波数偏移は4Dとなる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q04",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 4,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "PLL"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-4",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20230610201308id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201303id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/maritime2/2022-september-kogaku-a/q04.png"
+    ],
+    "imageAltTexts": [
+      "水晶発振器と二つの分周器を用いるPLLシンセサイザ"
+    ],
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "図のPLL周波数シンセサイザで、水晶発振器10 MHz、固定分周比N₁=5、可変分周比N₂=200とする。PLLがロックしているときの出力周波数f₀を求めよ。",
+    "choices": {
+      "ア": "60 MHz",
+      "イ": "120 MHz",
+      "ウ": "150 MHz",
+      "エ": "400 MHz"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "固定側は10/5=2 MHzである。ロック時は可変側も同じなので、f₀=2×200=400 MHzとなる。",
+    "choiceExplanations": {
+      "ア": "60 MHzを200分周すると0.3 MHzとなり、固定側の2 MHzと一致しない。",
+      "イ": "120 MHzを200分周した0.6 MHzは、水晶発振器を5分周した2 MHzより低い。",
+      "ウ": "150 MHzを200分周した0.75 MHzは、ロック時に必要な2 MHzと一致しない。",
+      "エ": "固定側は10/5=2 MHzである。ロック時は可変側も同じなので、f₀=2×200=400 MHzとなる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q05",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 5,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "リング復調回路"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-5",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20230610201308id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201303id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/maritime2/2022-september-kogaku-a/q05.png"
+    ],
+    "imageAltTexts": [
+      "4個のダイオードを用いたリング復調回路"
+    ],
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "図の理想的なリング復調回路には、入力と基準搬送波の周波数の［A］が出力に現れる。SSB入力が455 kHz、基準搬送波が453.5 kHzのとき、出力の周波数成分は［B］である。",
+    "choices": {
+      "ア": "A：和及び差の成分　B：1.5 kHz及び908.5 kHz",
+      "イ": "A：和及び差の2倍の成分　B：2 kHz及び1,817 kHz",
+      "ウ": "A：差の2倍の成分　B：2 kHz",
+      "エ": "A：差の成分のみ　B：1.5 kHz"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "乗算による混合で差の1.5 kHzと和の908.5 kHzの両方が生じる。",
+    "choiceExplanations": {
+      "ア": "乗算による混合で差の1.5 kHzと和の908.5 kHzの両方が生じる。",
+      "イ": "出力の基本的な混合成分は和と差そのものであり、それぞれを2倍するのではない。",
+      "ウ": "差は1.5 kHzであり、混合器出力には和の周波数も生じる。",
+      "エ": "差の周波数は正しいが、フィルタをかける前の出力には和の周波数も含まれる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q06",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 6,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "FMの復調"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-6",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20230610201308id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201303id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "周波数変調(F3E)波とその復調について、誤っているものを選べ。",
+    "choices": {
+      "ア": "F3E波の復調器は、入力信号の周波数の変化を振幅の変化に置き換えるものである。",
+      "イ": "F3E波の復調器には、周波数弁別器やPLLを用いた検波器などがある。",
+      "ウ": "F3E波は、変調信号に応じて周波数が変化する。",
+      "エ": "復調器の前に置く振幅制限器は、通信路の雑音やフェージングによる周波数変動を除去するために設ける。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "振幅制限器が抑えるのは不要な振幅変動であり、信号を伝える周波数変動は復調器へ渡す。",
+    "choiceExplanations": {
+      "ア": "FMの情報は周波数偏移に載るため、復調器は偏移を出力電圧の変化に変換する。",
+      "イ": "弁別器の電圧特性やPLLの追従に必要な制御電圧を利用して復調できる。",
+      "ウ": "FMでは変調信号の瞬時値に応じて搬送波の瞬時周波数が変わる。",
+      "エ": "振幅制限器が抑えるのは不要な振幅変動であり、信号を伝える周波数変動は復調器へ渡す。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q07",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 7,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "雑音制限感度"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-7",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20230610201308id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201303id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "スーパヘテロダイン受信機の雑音制限感度は、所定の信号対雑音比で所定の出力を得るために必要な［A］の入力電圧で表す。総合利得と初段利得が十分大きいときは［B］の雑音指数でほぼ決まり、中間周波段の帯域を広げると［C］なる。",
+    "choices": {
+      "ア": "A：最小　B：中間周波増幅段　C：良く",
+      "イ": "A：最大　B：初段　C：良く",
+      "ウ": "A：最小　B：初段　C：悪く",
+      "エ": "A：最大　B：中間周波増幅段　C：悪く"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "初段で十分に増幅すれば後段の追加雑音の影響は小さい。中間周波段の帯域を広げると通過雑音が増え、所定のS/Nには大きい入力が必要となる。",
+    "choiceExplanations": {
+      "ア": "最小の入力で表すが、初段の雑音指数が支配的であり、帯域を広げると雑音が増える。",
+      "イ": "初段は正しいが、感度は必要最小の入力で表し、帯域が広いと感度が悪化する。",
+      "ウ": "初段で十分に増幅すれば後段の追加雑音の影響は小さい。中間周波段の帯域を広げると通過雑音が増え、所定のS/Nには大きい入力が必要となる。",
+      "エ": "帯域を広げた場合の変化は合うが、入力の最小値と初段の雑音指数を用いる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q08",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 8,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "SSBとAMの受信機"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-8",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20230610201308id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201303id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "SSB(J3E)受信機とAM(A3E)受信機の特徴として、誤っているものを選べ。",
+    "choices": {
+      "ア": "SSB受信機には、抑圧された搬送波に相当する周波数と受信機の局部発振周波数との相対関係を調整するクラリファイアがある。",
+      "イ": "SSB受信機で復調するには、局部発振器で作った搬送波相当の周波数成分をスピーチクリッパに加える。",
+      "ウ": "AM受信機には、受信波の振幅の変化を検出して音声信号を取り出す直線検波回路などがある。",
+      "エ": "AM受信機には、受信入力が変動しても出力レベルをほぼ一定に保つAGC回路がある。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "搬送波相当の信号は復調器に加える。スピーチクリッパは主に送信側で音声レベルを処理する回路である。",
+    "choiceExplanations": {
+      "ア": "局部発振器の周波数を細かく調整し、受信した音声の周波数ずれを補える。",
+      "イ": "搬送波相当の信号は復調器に加える。スピーチクリッパは主に送信側で音声レベルを処理する回路である。",
+      "ウ": "直線検波でAM波の包絡線を取り出すことができる。",
+      "エ": "AGCは受信信号が強くなると増幅段の利得を下げ、出力の変動を抑える。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q09",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 9,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "船舶用パルスレーダー"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-9",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20230610201308id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201303id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/maritime2/2022-september-kogaku-a/q09.png"
+    ],
+    "imageAltTexts": [
+      "サーキュレータの端子a・b・cとパルスレーダーの送受信系統"
+    ],
+    "type": "multiple-choice",
+    "question": "図の船舶用パルスレーダーについて、よく用いられるアンテナは［A］である。アンテナから端子aに入った信号の電力は主に［B］へ、端子bに入った信号の電力は主に［C］へ伝わる。",
+    "choices": {
+      "ア": "A：フェイズドアレイ　B：端子c　C：端子a",
+      "イ": "A：フェイズドアレイ　B：端子b　C：端子c",
+      "ウ": "A：スロットアレイ　B：端子c　C：端子a",
+      "エ": "A：スロットアレイ　B：端子b　C：端子c"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "スロットアレイがよく用いられ、サーキュレータは送信をbからaへ、受信をaからcへ分ける。",
+    "choiceExplanations": {
+      "ア": "端子の伝送方向は合うが、この方式の船舶用レーダーではスロットアレイが多く用いられる。",
+      "イ": "図ではアンテナから来る信号は受信機側のcへ、発振器からの信号はアンテナ側のaへ進む。",
+      "ウ": "スロットアレイがよく用いられ、サーキュレータは送信をbからaへ、受信をaからcへ分ける。",
+      "エ": "アンテナの種類は合うが、サーキュレータで受信波はaからcへ進み、bの送信波はaへ進む。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q10",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 10,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "レーダーの往復時間"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-10",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20230610201308id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201303id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "船舶用パルスレーダーと物標の間が1,500 mのとき、送信から反射波の受信までにかかる時間を求めよ。電波の伝搬速度は3×10⁸ m/sとする。",
+    "choices": {
+      "ア": "10 μs",
+      "イ": "20 μs",
+      "ウ": "30 μs",
+      "エ": "40 μs"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "送信と受信を合わせた伝搬距離は3,000 mなので、3×10⁸ m/sで割ると10 μsである。",
+    "choiceExplanations": {
+      "ア": "送信と受信を合わせた伝搬距離は3,000 mなので、3×10⁸ m/sで割ると10 μsである。",
+      "イ": "20 μsの往復距離は6,000 mで、片道では3,000 mとなる。",
+      "ウ": "30 μsの往復距離は9,000 mで、設問の物標の3倍の距離に相当する。",
+      "エ": "40 μsでは電波は往復12,000 m進み、片道1,500 mの条件とは一致しない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q11",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 11,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "GPS衛星"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-11",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20230610201308id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201303id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "GPS衛星について、誤っているものを選べ。",
+    "choices": {
+      "ア": "GPS衛星は2.5 GHz帯などの周波数の電波を送信している。",
+      "イ": "GPS衛星が地球を一周する時間は約12時間である。",
+      "ウ": "三次元測位には位置3成分と受信機の時計誤差が未知なので、少なくとも4個の衛星の電波が必要である。",
+      "エ": "GPS衛星には原子時計が搭載されている。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "GPSの測位信号はL帯で、代表的なL1は1.57542 GHzである。2.5 GHz帯ではない。",
+    "choiceExplanations": {
+      "ア": "GPSの測位信号はL帯で、代表的なL1は1.57542 GHzである。2.5 GHz帯ではない。",
+      "イ": "GPS衛星の軌道周期は約11時間58分であり、約12時間である。",
+      "ウ": "四つの未知数を決めるために、独立な擬似距離の測定が少なくとも四つ必要になる。",
+      "エ": "GPSでは送信時刻の誤差を小さくするため、衛星に原子時計を搭載する。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q12",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 12,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "標本化定理"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-12",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20230610201308id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201303id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "音声を8 kHzで標本化するとき、原理的に再現可能な音声周波数の上限を選べ。",
+    "choices": {
+      "ア": "1 kHz",
+      "イ": "2 kHz",
+      "ウ": "3 kHz",
+      "エ": "4 kHz"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "標本化周波数の半分がナイキスト周波数なので、8 kHzでは4 kHzが理論上の境界になる。",
+    "choiceExplanations": {
+      "ア": "1 kHzは8 kHz標本化で表せる範囲に入るが、理論上の上限より低い。",
+      "イ": "理論上の上限は標本化周波数の1/4ではなく1/2である。",
+      "ウ": "3 kHzも再現可能な範囲に入るが、限界はさらに高い4 kHzである。",
+      "エ": "標本化周波数の半分がナイキスト周波数なので、8 kHzでは4 kHzが理論上の境界になる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q13",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 13,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "ブリッジ整流"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-13",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20230610201308id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201303id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/maritime2/2022-september-kogaku-a/q13.png"
+    ],
+    "imageAltTexts": [
+      "二次側とダイオードD₁〜D₄を接続したブリッジ形整流回路"
+    ],
+    "type": "multiple-choice",
+    "question": "図の単相ブリッジ整流回路は［A］回路である。D₁が導通しているときD₂は［B］であり、変圧器二次側を流れる電流は［C］ごとに向きが逆になる。",
+    "choices": {
+      "ア": "A：全波整流　B：導通(ON)　C：1/2周期",
+      "イ": "A：全波整流　B：非導通(OFF)　C：1/2周期",
+      "ウ": "A：半波整流　B：導通(ON)　C：1周期",
+      "エ": "A：半波整流　B：非導通(OFF)　C：1周期"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "入力の正負両半周期を同じ出力極性にする全波整流である。二次側の向きは半周期ごとに変わり、D₁とD₂は交互に導通する。",
+    "choiceExplanations": {
+      "ア": "全波整流と半周期は正しいが、D₁が導通する半周期ではD₂は逆バイアスになる。",
+      "イ": "入力の正負両半周期を同じ出力極性にする全波整流である。二次側の向きは半周期ごとに変わり、D₁とD₂は交互に導通する。",
+      "ウ": "4個のダイオードのブリッジで両半周期を整流し、一方の半周期にD₁とD₂が同時に導通するわけではない。",
+      "エ": "D₂が非導通である点は正しいが、整流は全波で、二次電流は半周期で向きを変える。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q14",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 14,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "蓄電池の直列接続"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-14",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20230610201308id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201303id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "12 V・30 Ahの蓄電池2個と24 V・15 Ahの蓄電池1個を直列につないだ場合の、合成電圧と合成容量の組合せを選べ。",
+    "choices": {
+      "ア": "A：24 V　B：30 Ah",
+      "イ": "A：48 V　B：15 Ah",
+      "ウ": "A：48 V　B：30 Ah",
+      "エ": "A：48 V　B：75 Ah"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "電圧は12+12+24=48 Vである。各電池に同じ電流が流れるため、容量は最小の15 Ahで決まる。",
+    "choiceExplanations": {
+      "ア": "24 Vは12 Vの2個だけの和である。全て直列にすると48 Vとなり、容量は最小の15 Ahに制限される。",
+      "イ": "電圧は12+12+24=48 Vである。各電池に同じ電流が流れるため、容量は最小の15 Ahで決まる。",
+      "ウ": "電圧は正しいが、15 Ahの電池から30 Ahは取り出せない。",
+      "エ": "直列接続で足し合わせるのは電圧であり、容量を30+30+15とはできない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q15",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 15,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "標準信号発生器"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-15",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20230610201308id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201303id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/maritime2/2022-september-kogaku-a/q15.png"
+    ],
+    "imageAltTexts": [
+      "信号源電圧v₁と50 Ωの内部抵抗および50 Ωの負荷"
+    ],
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "図の内部抵抗50 Ωの標準信号発生器から、負荷抵抗50 Ωに20 mWを供給するときの信号源電圧v₁を求めよ。",
+    "choices": {
+      "ア": "1 V",
+      "イ": "2 V",
+      "ウ": "3 V",
+      "エ": "4 V"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "負荷電圧は √(0.020×50)=1 V である。内部抵抗も50 Ωなので電圧を等分し、信号源電圧は2 Vになる。",
+    "choiceExplanations": {
+      "ア": "1 Vは負荷の実効電圧であり、同じ値の内部抵抗に生じる電圧降下も足す必要がある。",
+      "イ": "負荷電圧は √(0.020×50)=1 V である。内部抵抗も50 Ωなので電圧を等分し、信号源電圧は2 Vになる。",
+      "ウ": "信号源が3 Vだと負荷には1.5 Vがかかり、電力は45 mWになる。",
+      "エ": "信号源が4 Vだと負荷電圧は2 Vで、負荷電力は80 mWとなる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q16",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 16,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "スペクトルアナライザ"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-16",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20230610201308id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201303id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "スーパヘテロダイン方式のアナログ型スペクトルアナライザについて、誤っているものを選べ。",
+    "choices": {
+      "ア": "入力信号の位相成分ごとの振幅を観測できる。",
+      "イ": "表示器の横軸は周波数、縦軸は振幅を表す。",
+      "ウ": "オシロスコープより感度が良く、より弱いレベルの信号を測定できる。",
+      "エ": "分解能帯域幅を変えて測定できる。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "一般的な掃引型の装置は周波数ごとのレベルを表示し、位相成分ごとの振幅を表示する構成ではない。",
+    "choiceExplanations": {
+      "ア": "一般的な掃引型の装置は周波数ごとのレベルを表示し、位相成分ごとの振幅を表示する構成ではない。",
+      "イ": "横方向に掃引周波数を、縦方向にその周波数での信号レベルを表示する。",
+      "ウ": "狭い分解能帯域幅で雑音を抑えることで、微弱な周波数成分を測定しやすい。",
+      "エ": "中間周波フィルタの帯域幅を調整して、周波数の分解能や雑音床を変えられる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q17",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 17,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "AM同期検波"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-17",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20230610201308id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201303id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "受信したAM(A3E)波の搬送波と同じ［A］と位相の再生搬送波を作り、変調波と［B］を行う。出力から［C］で信号波成分を取り出す。",
+    "choices": {
+      "ア": "A：振幅　B：掛け算　C：高域フィルタ(HPF)",
+      "イ": "A：振幅　B：加算　C：低域フィルタ(LPF)",
+      "ウ": "A：周波数　B：掛け算　C：低域フィルタ(LPF)",
+      "エ": "A：周波数　B：加算　C：高域フィルタ(HPF)"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "再生搬送波は周波数と位相を合わせ、変調波に乗算する。低域フィルタが高周波成分を除き、元の信号を取り出す。",
+    "choiceExplanations": {
+      "ア": "掛け算する点は合うが、必要なのは搬送波との周波数と位相の一致であり、復調信号は低域にある。",
+      "イ": "低域フィルタは正しいが、再生搬送波を変調波に乗算して低周波の成分を得る。",
+      "ウ": "再生搬送波は周波数と位相を合わせ、変調波に乗算する。低域フィルタが高周波成分を除き、元の信号を取り出す。",
+      "エ": "搬送波の周波数を合わせる点は合うが、同期検波では乗算後の低域成分を取り出す。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q18",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 18,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "SINAD"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-18",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20230610201308id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201303id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/maritime2/2022-september-kogaku-a/q18.png"
+    ],
+    "imageAltTexts": [
+      "低周波発振器、FM送信機、擬似負荷、復調器と歪率雑音計の接続"
+    ],
+    "type": "multiple-choice",
+    "question": "図のFM(F3E)送信機で総合歪と雑音を測るとき、変調信号は1,000 Hzの［A］を用い、周波数偏移を許容値の70%に設定する。SINAD=10 log₁₀((S+N+D)/(N+D)) dBにおいてSは［B］、Nは雑音、Dは［C］成分である。",
+    "choices": {
+      "ア": "A：矩形波　B：信号　C：歪",
+      "イ": "A：矩形波　B：歪　C：信号",
+      "ウ": "A：正弦波　B：歪　C：信号",
+      "エ": "A：正弦波　B：信号　C：歪"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "1 kHzの正弦波を用いる。Sが信号、Nが雑音、Dが歪で、SINADはそれらの総和と雑音・歪の和の比を表す。",
+    "choiceExplanations": {
+      "ア": "SとDの意味は正しいが、測定には基準となる単一周波数の正弦波を入力する。",
+      "イ": "測定信号は正弦波であり、Sが信号、Dが歪を表す。",
+      "ウ": "入力波形は合うが、式のSとDの意味が逆である。",
+      "エ": "1 kHzの正弦波を用いる。Sが信号、Nが雑音、Dが歪で、SINADはそれらの総和と雑音・歪の和の比を表す。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q19",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 19,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "衛星EPIRB"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-19",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20230610201308id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201303id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "衛星EPIRBの位置は衛星で受信した電波の［A］偏移の情報などで決められる。いったん動作しても手動で停止［B］。捜索救助航空機は121.5 MHzの信号を受信し、標識［C］を検出できる。",
+    "choices": {
+      "ア": "A：振幅　B：できない　C：までの距離",
+      "イ": "A：振幅　B：できる　C：までの距離",
+      "ウ": "A：ドプラ　B：できる　C：の方位",
+      "エ": "A：ドプラ　B：できない　C：の方位"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "衛星の移動で生じるドプラ偏移などから位置を推定できる。手動停止が可能で、121.5 MHzは現場での方位の探知に用いる。",
+    "choiceExplanations": {
+      "ア": "衛星で位置を求めるために使うのは周波数のドプラ偏移であり、航空機のホーミング信号は方位の検出に使う。",
+      "イ": "手動で停止できる点は合うが、位置推定に用いる偏移と121.5 MHzの用途が異なる。",
+      "ウ": "衛星の移動で生じるドプラ偏移などから位置を推定できる。手動停止が可能で、121.5 MHzは現場での方位の探知に用いる。",
+      "エ": "ドプラ偏移と方位探知は合うが、動作中でも手動による停止が可能である。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q20",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 20,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "レーダーの最小探知距離"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-20",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20230610201308id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201303id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/maritime2/2022-september-kogaku-a/q20.png"
+    ],
+    "imageAltTexts": [
+      "アンテナのビーム下端と海面に囲まれる死角および水平の最小探知距離"
+    ],
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "図の船舶用レーダーの垂直ビーム幅がθ rad、海面からアンテナまでの高さがh mのとき、死角による最小探知距離Rminの式を選べ。",
+    "choices": {
+      "ア": "h/sin(θ/2)",
+      "イ": "h/tan(θ/2)",
+      "ウ": "h tan(θ/2)",
+      "エ": "h sinθ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "図の直角三角形で、tan(θ/2)=h/Rmin である。従ってRmin=h/tan(θ/2)となる。",
+    "choiceExplanations": {
+      "ア": "正弦から得られるのはビーム下端に沿った斜め距離であり、海面上の水平距離ではない。",
+      "イ": "図の直角三角形で、tan(θ/2)=h/Rmin である。従ってRmin=h/tan(θ/2)となる。",
+      "ウ": "水平距離は高さを正接で割って求めるので、正接を掛ける式ではない。",
+      "エ": "死角の境界には中心線との角度θ/2を使い、海面方向の距離には正接を用いる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q21",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 21,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "捜索救助用レーダートランスポンダ"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "B-1",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20230610201308id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201303id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "native-b",
+    "question": "捜索救助用レーダートランスポンダ（SART）について、各空欄に入る候補を選べ。",
+    "explanation": "船舶や航空機に広く用いられるX帯レーダーに応答するため、9 GHz帯を使う。\n\n電源を入れた直後は送信し続けるのではなく、捜索側のレーダー信号を受信できる状態になる。\n\n捜索側のレーダーで受信できるように、受けたレーダー波と同じ周波数帯に応答を出す。\n\n待機中にレーダー波を受けた場合に送るのが応答信号である。\n\n応答はレーダー画面で一列の輝点として現れ、方向や距離の手掛かりになる。",
+    "explanationCoverage": "full",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "6",
+          "explanation": "SARTが応答するX帯の周波数は約9 GHzである。"
+        },
+        {
+          "id": "2",
+          "label": "待ち受け受信を",
+          "explanation": "電源投入後は、捜索側のレーダーパルスを受け取るまで待機する。"
+        },
+        {
+          "id": "3",
+          "label": "異なる",
+          "explanation": "応答を捜索側のレーダーで表示できるように、同じ周波数帯で送り返す。"
+        },
+        {
+          "id": "4",
+          "label": "応答信号",
+          "explanation": "レーダー波を受けたSARTが自動で送り返す信号である。"
+        },
+        {
+          "id": "5",
+          "label": "輝点列",
+          "explanation": "捜索側レーダーではSARTの応答が一列の明るい点として表示される。"
+        },
+        {
+          "id": "6",
+          "label": "9",
+          "explanation": "捜索救助用レーダートランスポンダは9 GHz帯のレーダーに対して動作する。"
+        },
+        {
+          "id": "7",
+          "label": "送信を",
+          "explanation": "スイッチを入れた直後は待ち受け受信で、レーダー波を受けると送信する。"
+        },
+        {
+          "id": "8",
+          "label": "同じ",
+          "explanation": "応答は検出したレーダー波と同じ9 GHz帯に出す。"
+        },
+        {
+          "id": "9",
+          "label": "無変調信号",
+          "explanation": "SARTは単なる無変調の連続波ではなく、レーダーに特徴的な輝点列を生じる応答信号を送る。"
+        },
+        {
+          "id": "10",
+          "label": "数値",
+          "explanation": "SART位置の手掛かりはレーダー上の輝点列であり、SARTが距離を数値として送るのではない。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "SARTが使用する周波数帯は［ア］GHz帯である。",
+          "answer": "6",
+          "explanation": "船舶や航空機に広く用いられるX帯レーダーに応答するため、9 GHz帯を使う。",
+          "candidateExplanations": {
+            "6": "船舶や航空機に広く用いられるX帯レーダーに応答するため、9 GHz帯を使う。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "スイッチをONにすると、［イ］開始する。",
+          "answer": "2",
+          "explanation": "電源を入れた直後は送信し続けるのではなく、捜索側のレーダー信号を受信できる状態になる。",
+          "candidateExplanations": {
+            "2": "電源を入れた直後は送信し続けるのではなく、捜索側のレーダー信号を受信できる状態になる。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "捜索側のレーダーの電波を受信すると、自動的に［ウ］周波数帯の［エ］を送り返す。",
+          "answer": "8",
+          "explanation": "捜索側のレーダーで受信できるように、受けたレーダー波と同じ周波数帯に応答を出す。",
+          "candidateExplanations": {
+            "8": "捜索側のレーダーで受信できるように、受けたレーダー波と同じ周波数帯に応答を出す。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "捜索側のレーダーの電波を受信すると、自動的に同じ周波数帯の［エ］を送り返す。",
+          "answer": "4",
+          "explanation": "待機中にレーダー波を受けた場合に送るのが応答信号である。",
+          "candidateExplanations": {
+            "4": "待機中にレーダー波を受けた場合に送るのが応答信号である。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "捜索側のレーダー画面に表示される［オ］から、SARTまでの距離と方位が分かる。",
+          "answer": "5",
+          "explanation": "応答はレーダー画面で一列の輝点として現れ、方向や距離の手掛かりになる。",
+          "candidateExplanations": {
+            "5": "応答はレーダー画面で一列の輝点として現れ、方向や距離の手掛かりになる。"
+          }
+        }
+      ],
+      "officialLabel": "B-1"
+    }
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q22",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 22,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "インマルサット"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "B-2",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20230610201308id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201303id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "native-b",
+    "question": "試験で扱うインマルサットシステムについて、各記述が正しいか答えよ。",
+    "explanation": "インマルサットCは文字やデータの蓄積転送を扱い、音声電話には対応しない。\n\n極軌道を周回する衛星ではなく、地上から同じ方向に見える静止衛星を用いる。\n\n海岸地球局の送受信の周波数帯を逆にしている。\n\n船舶側はL帯を利用し、上りが1.6 GHz帯、下りが1.5 GHz帯になる。\n\nEGCでは、陸側から選択した対象向けに海上安全情報などの文字メッセージを一斉伝送できる。",
+    "explanationCoverage": "full",
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "正しい"
+        },
+        {
+          "id": "2",
+          "label": "誤っている"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "インマルサットC型無線設備は、音声通話ができない。",
+          "answer": "1",
+          "explanation": "インマルサットCは文字やデータの蓄積転送を扱い、音声電話には対応しない。",
+          "candidateExplanations": {
+            "1": "インマルサットCは文字やデータの蓄積転送を扱い、音声電話には対応しない。",
+            "2": "音声をリアルタイムに送る端末ではなく、データ通信向けの設備である。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "インマルサット衛星は、極軌道衛星である。",
+          "answer": "2",
+          "explanation": "極軌道を周回する衛星ではなく、地上から同じ方向に見える静止衛星を用いる。",
+          "candidateExplanations": {
+            "1": "インマルサットの設問で扱う衛星は地球の赤道上空に位置する静止衛星である。",
+            "2": "極軌道を周回する衛星ではなく、地上から同じ方向に見える静止衛星を用いる。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "海岸地球局は、衛星に向けて4 GHz帯を送信し、衛星から6 GHz帯を受信する。",
+          "answer": "2",
+          "explanation": "海岸地球局の送受信の周波数帯を逆にしている。",
+          "candidateExplanations": {
+            "1": "海岸地球局から衛星への上りは6 GHz帯で、衛星から同局への下りは4 GHz帯である。",
+            "2": "海岸地球局の送受信の周波数帯を逆にしている。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "船舶地球局は、衛星に向けて1.6 GHz帯を送信し、衛星から1.5 GHz帯を受信する。",
+          "answer": "1",
+          "explanation": "船舶側はL帯を利用し、上りが1.6 GHz帯、下りが1.5 GHz帯になる。",
+          "candidateExplanations": {
+            "1": "船舶側はL帯を利用し、上りが1.6 GHz帯、下りが1.5 GHz帯になる。",
+            "2": "船舶局の送信と受信の周波数帯はそれぞれ1.6 GHz帯と1.5 GHz帯である。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "高機能グループ呼出（EGC）は、海岸地球局から衛星を介し、特定の船舶、グループ、海域、全船舶などを対象に海上安全情報などをテレックスで伝送する。",
+          "answer": "1",
+          "explanation": "EGCでは、陸側から選択した対象向けに海上安全情報などの文字メッセージを一斉伝送できる。",
+          "candidateExplanations": {
+            "1": "EGCでは、陸側から選択した対象向けに海上安全情報などの文字メッセージを一斉伝送できる。",
+            "2": "船側の対応受信機で、対象海域やグループに向けて衛星経由で配信された情報を受信する。"
+          }
+        }
+      ],
+      "officialLabel": "B-2"
+    }
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q23",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 23,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "影像周波数"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "B-3",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20230610201308id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201303id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "native-b",
+    "question": "スーパヘテロダイン受信機の影像周波数妨害について、空欄に当てはまる候補を選べ。",
+    "explanation": "受信周波数が局部発振より高いので、二つの周波数の差fR−fLOが中間周波数になる。\n\n到来波fUは局部発振より下側なので、fLO−fUもfIFに等しい。\n\n受信周波数と局部発振周波数の差を作るのは周波数変換部である。\n\n希望波と影像波の局部発振からの距離が同じなので、どちらも同じ中間周波数になる。\n\n局部発振より高い側に影像が来るので、差はfU−fLOとなる。",
+    "explanationCoverage": "full",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "fR−fLO",
+          "explanation": "希望波が局部発振より高い場合の中間周波数を表す。"
+        },
+        {
+          "id": "2",
+          "label": "fU−fLO",
+          "explanation": "局部発振より上側にある影像と、局部発振との差を表す。"
+        },
+        {
+          "id": "3",
+          "label": "2fLO−fU",
+          "explanation": "影像が変換される周波数には、局部発振を2倍した値ではなく差の絶対値を用いる。"
+        },
+        {
+          "id": "4",
+          "label": "周波数変換",
+          "explanation": "混合器で入力と局部発振を混合し、差の周波数を得る操作である。"
+        },
+        {
+          "id": "5",
+          "label": "局部発振周波数に",
+          "explanation": "変換後は局部発振周波数そのものではなく、混合で生じた中間周波数になる。"
+        },
+        {
+          "id": "6",
+          "label": "fLO−fR",
+          "explanation": "希望波が局部発振より低い場合にはこの差が正になるが、低い側に局発を置く場合には逆の差を取る。"
+        },
+        {
+          "id": "7",
+          "label": "fU−2fLO",
+          "explanation": "影像妨害の条件は、入力が局部発振から中間周波数だけ離れることである。"
+        },
+        {
+          "id": "8",
+          "label": "fLO−fU",
+          "explanation": "下側にある影像周波数と局部発振との差である。"
+        },
+        {
+          "id": "9",
+          "label": "中間周波増幅",
+          "explanation": "中間周波増幅段では変換された信号を増幅し、影像の周波数変換そのものは混合器で起きる。"
+        },
+        {
+          "id": "10",
+          "label": "中間周波数に",
+          "explanation": "影像波は希望波と同じ中間周波数に変換されるため、中間周波段では区別できない。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "局部発振周波数fLOが受信周波数fRより中間周波数fIFだけ低ければ、fIF=［ア］となる。",
+          "answer": "1",
+          "explanation": "受信周波数が局部発振より高いので、二つの周波数の差fR−fLOが中間周波数になる。",
+          "candidateExplanations": {
+            "1": "受信周波数が局部発振より高いので、二つの周波数の差fR−fLOが中間周波数になる。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "局部発振周波数fLOよりfIFだけ低い到来波fU=fR−2fIFがあると、［イ］=fIFとなる。",
+          "answer": "8",
+          "explanation": "到来波fUは局部発振より下側なので、fLO−fUもfIFに等しい。",
+          "candidateExplanations": {
+            "8": "到来波fUは局部発振より下側なので、fLO−fUもfIFに等しい。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "受信機の［ウ］部で、影像周波数の信号を所定の周波数へ変換してしまう。",
+          "answer": "4",
+          "explanation": "受信周波数と局部発振周波数の差を作るのは周波数変換部である。",
+          "candidateExplanations": {
+            "4": "受信周波数と局部発振周波数の差を作るのは周波数変換部である。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "周波数変換部で影像周波数fUも［エ］変換される。",
+          "answer": "10",
+          "explanation": "希望波と影像波の局部発振からの距離が同じなので、どちらも同じ中間周波数になる。",
+          "candidateExplanations": {
+            "10": "希望波と影像波の局部発振からの距離が同じなので、どちらも同じ中間周波数になる。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "局部発振周波数fLOがfRよりfIFだけ高い場合、上側の到来波fU=fR+2fIFに対し、［オ］=fIFとなる。",
+          "answer": "2",
+          "explanation": "局部発振より高い側に影像が来るので、差はfU−fLOとなる。",
+          "candidateExplanations": {
+            "2": "局部発振より高い側に影像が来るので、差はfU−fLOとなる。"
+          }
+        }
+      ],
+      "officialLabel": "B-3"
+    }
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q24",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 24,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "SSB受信機の感度抑圧"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "B-4",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20230610201308id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201303id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/maritime2/2022-september-kogaku-a/q24.png"
+    ],
+    "imageAltTexts": [
+      "二つの標準信号発生器を合成器経由でSSB受信機に接続した測定系統"
+    ],
+    "type": "native-b",
+    "question": "図のSSB(J3E)受信機の感度抑圧効果の測定について答えよ。希望波用SG1と妨害波用SG2を使用する。",
+    "explanation": "妨害のない基準出力を合わせる段階では、妨害波用のSG2をOFFにする。\n\n周波数の離隔は、希望波SG1の試験周波数f₀を基準とする。\n\n妨害波を強くするほど感度抑圧が現れるので、その出力電圧を増加させる。\n\n希望波を固定し、妨害波を発生させるSG2を希望波より上側へ移す。\n\n基準値以上の妨害波が入るまで希望波が3 dB低下しない受信機は、規定の感度抑圧基準を満たす。",
+    "explanationCoverage": "full",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "断(OFF)",
+          "explanation": "妨害波を入れず、希望波だけで基準となる出力を調整する。"
+        },
+        {
+          "id": "2",
+          "label": "f₀",
+          "explanation": "妨害波を希望波の上下に置く基準は、希望波の試験周波数f₀である。"
+        },
+        {
+          "id": "3",
+          "label": "増加",
+          "explanation": "妨害を増やして出力が所定の3 dBだけ下がる点を測る。"
+        },
+        {
+          "id": "4",
+          "label": "SG1",
+          "explanation": "SG1は希望波の発生器なので、上下に周波数を動かす妨害波側の発生器ではない。"
+        },
+        {
+          "id": "5",
+          "label": "以下である",
+          "explanation": "10 mVより弱い妨害波で3 dBも出力が下がれば、耐性の基準を満たさない。"
+        },
+        {
+          "id": "6",
+          "label": "接(ON)",
+          "explanation": "試験条件の基準設定時には妨害波を止めておき、後からSG2を動かす。"
+        },
+        {
+          "id": "7",
+          "label": "2f₀",
+          "explanation": "妨害を与える周波数は、希望波f₀の近くに、規定の離隔で置く。"
+        },
+        {
+          "id": "8",
+          "label": "減少",
+          "explanation": "3 dB低下に至るまで段階的に強めるので、妨害波を減らす操作ではない。"
+        },
+        {
+          "id": "9",
+          "label": "SG2",
+          "explanation": "上側と下側の両離隔で動かすのは妨害波の発生器である。"
+        },
+        {
+          "id": "10",
+          "label": "以上である",
+          "explanation": "3 dB抑圧させるために必要な妨害入力は、規定の10 mV以上でなければならない。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "初めにSG2は［ア］とし、SG1の試験周波数f₀や受信機を調整する。復調出力周波数は1,500 Hz、受信機入力電圧は10 μV、音量は定格出力の半分に合わせる。",
+          "answer": "1",
+          "explanation": "妨害のない基準出力を合わせる段階では、妨害波用のSG2をOFFにする。",
+          "candidateExplanations": {
+            "1": "妨害のない基準出力を合わせる段階では、妨害波用のSG2をOFFにする。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "SG2を操作して、その周波数を［イ］から規定の周波数だけ低くし、無変調の妨害波を加える。",
+          "answer": "2",
+          "explanation": "周波数の離隔は、希望波SG1の試験周波数f₀を基準とする。",
+          "candidateExplanations": {
+            "2": "周波数の離隔は、希望波SG1の試験周波数f₀を基準とする。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "妨害波の出力電圧を［ウ］させ、受信機出力が定格出力の1/2より3 dB低下したときの受信機入力電圧を求める。",
+          "answer": "3",
+          "explanation": "妨害波を強くするほど感度抑圧が現れるので、その出力電圧を増加させる。",
+          "candidateExplanations": {
+            "3": "妨害波を強くするほど感度抑圧が現れるので、その出力電圧を増加させる。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "次に［エ］の周波数をf₀より規定の周波数だけ高くして、同様の測定を行う。",
+          "answer": "9",
+          "explanation": "希望波を固定し、妨害波を発生させるSG2を希望波より上側へ移す。",
+          "candidateExplanations": {
+            "9": "希望波を固定し、妨害波を発生させるSG2を希望波より上側へ移す。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "両側の測定で得られる3 dB抑圧時の妨害入力電圧が10 mV［オ］ことを確認する。",
+          "answer": "10",
+          "explanation": "基準値以上の妨害波が入るまで希望波が3 dB低下しない受信機は、規定の感度抑圧基準を満たす。",
+          "candidateExplanations": {
+            "10": "基準値以上の妨害波が入るまで希望波が3 dB低下しない受信機は、規定の感度抑圧基準を満たす。"
+          }
+        }
+      ],
+      "officialLabel": "B-4"
+    }
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q25",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 25,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "デジタルオシロスコープ"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "B-5",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://web.archive.org/web/20230610201308id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610201303id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "native-b",
+    "question": "デジタルオシロスコープについて、各空欄に当てはまる候補を選べ。",
+    "explanation": "入力のアナログ波形を記録するには、まずA-D変換器で量子化する。\n\n各標本を数字で扱える離散的なデジタル値に変える。\n\n波形の標本を保存して後から読み出すのはメモリ回路である。\n\n取り込みの基準時刻を定めるパルスは、トリガ回路で作る。\n\n繰り返さない現象も記録できるので、後から同じ波形を表示できる。",
+    "explanationCoverage": "full",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "デジタル",
+          "explanation": "増幅したアナログ信号を、標本ごとにデジタル値へ変えて記録する。"
+        },
+        {
+          "id": "2",
+          "label": "A-D変換器",
+          "explanation": "アナログ信号をサンプリングし、デジタル値に変換する回路である。"
+        },
+        {
+          "id": "3",
+          "label": "ミキサ回路",
+          "explanation": "複数の信号の周波数を混合する回路で、波形データの量子化や保存を担当しない。"
+        },
+        {
+          "id": "4",
+          "label": "局部発振回路",
+          "explanation": "周波数変換などに用いる信号源であり、取り込み時点を決めるのはトリガ回路である。"
+        },
+        {
+          "id": "5",
+          "label": "単発現象",
+          "explanation": "記録機能により、1回しか生じなかった現象も読み出して表示できる。"
+        },
+        {
+          "id": "6",
+          "label": "アナログ",
+          "explanation": "入力がアナログであっても、記録される各標本はデジタル値である。"
+        },
+        {
+          "id": "7",
+          "label": "D-A変換器",
+          "explanation": "デジタルをアナログに戻す回路であり、ここでの入力変換とは逆である。"
+        },
+        {
+          "id": "8",
+          "label": "メモリ回路",
+          "explanation": "標本値を順に蓄え、表示のために読み出す回路である。"
+        },
+        {
+          "id": "9",
+          "label": "トリガ回路",
+          "explanation": "入力が設定された条件を満たしたとき、波形取り込みの基準を作る。"
+        },
+        {
+          "id": "10",
+          "label": "連続現象",
+          "explanation": "連続現象も観測できるが、設問はストレージ機能で1回限りの過渡現象を静止表示できることを問うている。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "入力信号は垂直軸増幅器で増幅した後、［ア］に加える。",
+          "answer": "2",
+          "explanation": "入力のアナログ波形を記録するには、まずA-D変換器で量子化する。",
+          "candidateExplanations": {
+            "2": "入力のアナログ波形を記録するには、まずA-D変換器で量子化する。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "観測する信号は、サンプリング周期ごとに［イ］値に変換する。",
+          "answer": "1",
+          "explanation": "各標本を数字で扱える離散的なデジタル値に変える。",
+          "candidateExplanations": {
+            "1": "各標本を数字で扱える離散的なデジタル値に変える。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "変換した値は逐次［ウ］に記憶し、後で読み出して表示する。",
+          "answer": "8",
+          "explanation": "波形の標本を保存して後から読み出すのはメモリ回路である。",
+          "candidateExplanations": {
+            "8": "波形の標本を保存して後から読み出すのはメモリ回路である。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "入力信号は［エ］にも加え、トリガパルスを発生させる。",
+          "answer": "9",
+          "explanation": "取り込みの基準時刻を定めるパルスは、トリガ回路で作る。",
+          "candidateExplanations": {
+            "9": "取り込みの基準時刻を定めるパルスは、トリガ回路で作る。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "記憶したデータを繰り返し読み出せば、過渡現象などの［オ］を静止波形として表示できる。",
+          "answer": "5",
+          "explanation": "繰り返さない現象も記録できるので、後から同じ波形を表示できる。",
+          "candidateExplanations": {
+            "5": "繰り返さない現象も記録できるので、後から同じ波形を表示できる。"
+          }
+        }
+      ],
+      "officialLabel": "B-5"
+    }
+  }
+]
