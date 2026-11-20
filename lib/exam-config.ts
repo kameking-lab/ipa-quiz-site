@@ -1108,6 +1108,8 @@ kangoshi: {
         { session: "kogai-air-basics", urlSlug: "kogai-air-basics", expectedQuestions: 10, label: "大気概論", categories: ["大気概論"] },
         { session: "kogai-air-technology", urlSlug: "kogai-air-technology", expectedQuestions: 15, label: "大気特論", categories: ["大気特論"] },
         { session: "kogai-dust", urlSlug: "kogai-dust", expectedQuestions: 15, label: "ばいじん・粉じん特論", categories: ["ばいじん・粉じん特論"] },
+        { session: "kogai-air-hazardous", urlSlug: "kogai-air-hazardous", expectedQuestions: 10, label: "大気有害物質特論", categories: ["大気有害物質特論"] },
+        { session: "kogai-large-air", urlSlug: "kogai-large-air", expectedQuestions: 10, label: "大規模大気特論", categories: ["大規模大気特論"] },
     ],
     seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
 },
