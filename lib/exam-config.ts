@@ -2056,6 +2056,7 @@ caremanager: {
         { session: "senmon-seiji", urlSlug: "senmon-seiji", expectedQuestions: 105, label: "専門試験（政治・国際・人文区分）", categories: ["政治学", "国際関係", "行政学", "国際法", "倫理・思想", "歴史", "文学・芸術", "人文地理・文化人類学", "心理学", "教育学", "社会学"] },
         { session: "senmon-ningenkagaku", urlSlug: "senmon-ningenkagaku", expectedQuestions: 105, label: "専門試験（人間科学区分）", categories: ["心理学", "教育学", "社会福祉学", "社会学"] },
         { session: "senmon-kogaku", urlSlug: "senmon-kogaku", expectedQuestions: 155, label: "専門試験（工学区分）", categories: ["工学に関する基礎", "技術論", "基礎化学", "工学基礎実験", "情報基礎", "電磁気学", "電気工学", "材料力学［機械系］", "流体力学［機械系］", "構造力学（土木）・土木材料・土木施工", "土質力学・水理学", "環境工学（土木）・衛生工学", "構造力学（建築）", "建築構造・建築材料・建築施工", "計測工学・制御工学", "電子工学", "通信工学", "機械力学", "熱力学・熱機関［機械系］", "土木計画", "建築計画・建築法規・建築設備", "建築史・都市計画", "材料工学（材料科学）", "材料工学（金属材料・無機材料）", "原子力工学（原子核・放射線）", "原子力工学（原子炉・核燃料サイクル）", "船舶海洋工学（流体）", "船舶海洋工学（構造）"] },
+        { session: "senmon-suri-butsuri-chikyu", urlSlug: "senmon-suri-butsuri-chikyu", expectedQuestions: 115, label: "専門試験（数理科学・物理・地球科学区分）", categories: ["基礎数学・情報数学", "地球科学", "代数", "集合・位相", "幾何", "解析", "確率・統計", "情報理論", "計算機数学", "数値計算", "離散数学", "物理数学", "古典物理学", "現代物理学", "地球物理学", "地質学"] },
         { session: "senmon-digital", urlSlug: "senmon-digital", expectedQuestions: 63, label: "専門試験（デジタル区分）", categories: ["基礎数学", "情報基礎", "情報と社会", "計算機科学", "情報工学（ハードウェア）", "情報工学（ソフトウェア）", "情報技術", "線形代数", "解析", "確率・統計", "数学モデル", "オペレーションズ・リサーチ", "経営工学", "制御工学", "電磁気学", "電気工学", "電子工学", "通信工学"] },
     ], seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
 },
