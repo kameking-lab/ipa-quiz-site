@@ -1,0 +1,412 @@
+[
+  {
+    "id": "kogai-12-2023-annual-kogai-general-dust-q1",
+    "exam": "kogai-12",
+    "session": "kogai-general-dust",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 1,
+    "examDate": "2023-10-01",
+    "subject": "ばいじん・粉じん一般特論",
+    "type": "multiple-choice",
+    "category": "ばいじん・粉じん一般特論",
+    "topicTags": [
+      "球形粒子の空気力学的粒子径"
+    ],
+    "difficulty": 2,
+    "question": "密度3000 kg/m³、粒子径5.8 μm の球形粒子の空気力学的粒子径（μm）は、およそいくらか。",
+    "choices": {
+      "ア": "1.9",
+      "イ": "3.3",
+      "ウ": "10",
+      "エ": "17",
+      "オ": "52"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "基準密度は1000 kg/m³であり、空気力学的粒子径は5.8×√(3000/1000)≒10 μmである。",
+    "choiceExplanations": {
+      "ア": "密度3000 kg/m³の粒子は基準密度の粒子より沈降しやすいので、空気力学的粒子径は実際の5.8 μmより大きくなる。",
+      "イ": "5.8 μmを√3で割ると約3.3 μmになるが、球形粒子の換算では密度比の平方根を掛ける。",
+      "ウ": "基準密度は1000 kg/m³であり、空気力学的粒子径は5.8×√(3000/1000)≒10 μmである。",
+      "エ": "5.8 μmに密度比3をそのまま掛けると約17 μmになる。沈降速度は粒子径の二乗に関係するため、径の換算には密度比の平方根を使う。",
+      "オ": "密度による換算係数は√3≒1.73であり、52 μmに相当する約9倍にはならない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724185428id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_13.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2023（令和5）年度公害防止管理者等国家試験 ばいじん・粉じん一般特論 問1（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-12-2023-annual-kogai-general-dust-q2",
+    "exam": "kogai-12",
+    "session": "kogai-general-dust",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 2,
+    "examDate": "2023-10-01",
+    "subject": "ばいじん・粉じん一般特論",
+    "type": "multiple-choice",
+    "category": "ばいじん・粉じん一般特論",
+    "topicTags": [
+      "送風機の相似則"
+    ],
+    "difficulty": 2,
+    "question": "集じん装置に付帯する送風機の風量制御法の一つに回転数の変更がある。送風機の回転数を1.3 倍にしたとき、軸動力（kW）当たりの風量（m³/s）はおよそ何倍になるか。",
+    "choices": {
+      "ア": "0.59",
+      "イ": "0.77",
+      "ウ": "1.0",
+      "エ": "1.3",
+      "オ": "1.7"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "風量は回転数に比例し、軸動力は回転数の三乗に比例する。軸動力当たりの風量は回転数の二乗に反比例し、1/1.3²≒0.59倍となる。",
+    "choiceExplanations": {
+      "ア": "風量は回転数に比例し、軸動力は回転数の三乗に比例する。軸動力当たりの風量は回転数の二乗に反比例し、1/1.3²≒0.59倍となる。",
+      "イ": "0.77倍は回転数の逆数であり、軸動力当たりの風量の比にはその二乗が必要である。",
+      "ウ": "風量と軸動力は回転数への依存の度合いが異なるため、両者の比は一定ではない。",
+      "エ": "1.3倍は風量だけを比較した値である。軸動力は1.3³倍に増えるため、軸動力当たりの風量は低下する。",
+      "オ": "1.7倍は回転数比の二乗に近いが、風量を軸動力で割った比は二乗に反比例する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724185428id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_13.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2023（令和5）年度公害防止管理者等国家試験 ばいじん・粉じん一般特論 問2（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-12-2023-annual-kogai-general-dust-q3",
+    "exam": "kogai-12",
+    "session": "kogai-general-dust",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 3,
+    "examDate": "2023-10-01",
+    "subject": "ばいじん・粉じん一般特論",
+    "type": "multiple-choice",
+    "category": "ばいじん・粉じん一般特論",
+    "topicTags": [
+      "断面濃度が均一な集じん装置"
+    ],
+    "difficulty": 2,
+    "question": "装置内の気流が乱流で、流れ方向の断面でダスト濃度が均一である流通形式集じん装置の集じん率η を表す式として、正しいものはどれか。\n\nただし、Q は処理ガス量、A は装置の全集じん面積、w は粒子の分離速度である。",
+    "choices": {
+      "ア": "η ＝ 1 − exp(−Q/(wA))",
+      "イ": "η ＝ 1 − exp(−wA/Q)",
+      "ウ": "η ＝ wA/Q",
+      "エ": "η ＝ Q/(wA)",
+      "オ": "η ＝ 1/(1＋Q/(wA))"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "断面濃度が均一なら、粒子の除去量はその場所に残る粒子濃度に比例する。これを積分すると残留率はexp(−wA/Q)、集じん率はその補数になる。",
+    "choiceExplanations": {
+      "ア": "捕集の機会は分離速度wや集じん面積Aを増やすと増える。Q/(wA)を指数に入れると、この関係が逆になる。",
+      "イ": "断面濃度が均一なら、粒子の除去量はその場所に残る粒子濃度に比例する。これを積分すると残留率はexp(−wA/Q)、集じん率はその補数になる。",
+      "ウ": "wA/QはwA/Qが十分小さいときの一次近似に当たる。一般の条件では指数関数を用いる。",
+      "エ": "Q/(wA)は処理流量が増えるほど大きくなり、集じん性能を表す式としては適切でない。",
+      "オ": "この形は処理条件による変化の傾向は似ているが、断面濃度が均一という条件から得られる残留率は指数関数である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724185428id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_13.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2023（令和5）年度公害防止管理者等国家試験 ばいじん・粉じん一般特論 問3（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-12-2023-annual-kogai-general-dust-q4",
+    "exam": "kogai-12",
+    "session": "kogai-general-dust",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 4,
+    "examDate": "2023-10-01",
+    "subject": "ばいじん・粉じん一般特論",
+    "type": "multiple-choice",
+    "category": "ばいじん・粉じん一般特論",
+    "topicTags": [
+      "重力沈降室の分離限界"
+    ],
+    "difficulty": 2,
+    "question": "重力沈降室の100 ％分離限界粒子径を表す以下の式中の記号に関する説明として、誤っているものはどれか。なお、g は重力加速度である。\n\ndₚ₁₀₀ ＝ √(18μHu/(ρₚgL))",
+    "choices": {
+      "ア": "μ はガスの粘度である。",
+      "イ": "H は沈降室高さである。",
+      "ウ": "u は気流の水平方向速度である。",
+      "エ": "ρₚ は粒子の密度である。",
+      "オ": "L は装置の入口幅である。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "Lは気流が水平方向に進む沈降室の長さである。入口幅ではなく、uと合わせて滞留時間を決める。",
+    "choiceExplanations": {
+      "ア": "μはガスの粘度であり、同じ粒子径では粘度が大きくなると粒子の沈降が妨げられる。",
+      "イ": "Hは沈降室の高さであり、粒子が出口までの間に沈むべき距離の上限を表す。",
+      "ウ": "uは水平方向のガス流速であり、装置内に粒子がとどまる時間はL/uで求める。",
+      "エ": "ρₚは粒子密度であり、粒子が重いほど同じ径での沈降速度は大きくなる。",
+      "オ": "Lは気流が水平方向に進む沈降室の長さである。入口幅ではなく、uと合わせて滞留時間を決める。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724185428id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_13.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2023（令和5）年度公害防止管理者等国家試験 ばいじん・粉じん一般特論 問4（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-12-2023-annual-kogai-general-dust-q5",
+    "exam": "kogai-12",
+    "session": "kogai-general-dust",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 5,
+    "examDate": "2023-10-01",
+    "subject": "ばいじん・粉じん一般特論",
+    "type": "multiple-choice",
+    "category": "ばいじん・粉じん一般特論",
+    "topicTags": [
+      "サイクロンの分離と圧力損失"
+    ],
+    "difficulty": 2,
+    "question": "サイクロンの性能に関する記述として、誤っているものはどれか。",
+    "choices": {
+      "ア": "一般に、入口ガス速度が大きいほど、分離限界粒子径は小さくなる。",
+      "イ": "サイクロン外筒半径が小さいほど、分離限界粒子径は小さくなる。",
+      "ウ": "幾何学的に相似のサイクロンでは、入口ガス速度が同じ場合、小さなサイズのサイクロンの方が圧力損失は大きくなる。",
+      "エ": "ダスト濃度が増加すると、圧力損失は減少する傾向がある。",
+      "オ": "サイクロンの閉塞は、円錐部下部のダスト排出口付近、又は円筒内壁で生じやすい。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "幾何学的に相似で入口速度も同じなら、圧力損失は主に速度圧と形状に依存する。小さい装置ほど圧力損失が大きいという一般則はない。",
+    "choiceExplanations": {
+      "ア": "入口ガス速度を上げると旋回による遠心作用が強くなるため、一般に分離できる粒子径は小さくなる。",
+      "イ": "外筒半径が小さいほど同じ旋回速度での遠心加速度が大きくなり、細かい粒子を分離しやすい。",
+      "ウ": "幾何学的に相似で入口速度も同じなら、圧力損失は主に速度圧と形状に依存する。小さい装置ほど圧力損失が大きいという一般則はない。",
+      "エ": "ダスト濃度が上がると旋回流への粒子の影響が増し、圧力損失が低下する傾向が見られる。",
+      "オ": "捕集したダストが集まる排出口付近やダストが付着する内壁では、堆積による閉塞が生じやすい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724185428id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_13.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2023（令和5）年度公害防止管理者等国家試験 ばいじん・粉じん一般特論 問5（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-12-2023-annual-kogai-general-dust-q6",
+    "exam": "kogai-12",
+    "session": "kogai-general-dust",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 6,
+    "examDate": "2023-10-01",
+    "subject": "ばいじん・粉じん一般特論",
+    "type": "multiple-choice",
+    "category": "ばいじん・粉じん一般特論",
+    "topicTags": [
+      "洗浄集じん装置の分離粒子径"
+    ],
+    "difficulty": 2,
+    "question": "洗浄集じん装置において、50 ％分離粒子径が最も大きいものはどれか。",
+    "choices": {
+      "ア": "充塡塔",
+      "イ": "スプレー塔",
+      "ウ": "タイゼンワッシャー",
+      "エ": "サイクロンスクラバー",
+      "オ": "ジェットスクラバー"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "スプレー塔は液滴を噴霧して粒子を捕集する単純な方式であり、比較した装置の中では50％分離粒子径が最も大きい。",
+    "choiceExplanations": {
+      "ア": "充塡塔は充塡物の表面で気液を接触させるので、単純なスプレー塔より小さい粒子も捕集しやすい。",
+      "イ": "スプレー塔は液滴を噴霧して粒子を捕集する単純な方式であり、比較した装置の中では50％分離粒子径が最も大きい。",
+      "ウ": "タイゼンワッシャーは回転部などで気液の接触を強め、スプレー塔より微細な粒子を捕集できる。",
+      "エ": "サイクロンスクラバーは液滴への捕集と旋回流による分離を組み合わせるため、スプレー塔より小さな粒子に対応できる。",
+      "オ": "ジェットスクラバーは液の噴流で気液を接触させる方式であり、50％分離粒子径がスプレー塔より大きい方式ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724185428id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_13.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2023（令和5）年度公害防止管理者等国家試験 ばいじん・粉じん一般特論 問6（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-12-2023-annual-kogai-general-dust-q7",
+    "exam": "kogai-12",
+    "session": "kogai-general-dust",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 7,
+    "examDate": "2023-10-01",
+    "subject": "ばいじん・粉じん一般特論",
+    "type": "multiple-choice",
+    "category": "ばいじん・粉じん一般特論",
+    "topicTags": [
+      "散水による堆積場の粉じん対策"
+    ],
+    "difficulty": 2,
+    "question": "堆積場の粉じん対策としての散水に関する記述として、誤っているものはどれか。",
+    "choices": {
+      "ア": "野積みされた堆積物に散水された水は、表面より10 ～20 cm 程度に浸透する。",
+      "イ": "付着水分が質量の5 ％を超えると飛散しやすさは1/2 になることが報告されている。",
+      "ウ": "付着水分が質量の9 ％程度で飛散しやすさは約1/100 になることが報告されている。",
+      "エ": "スプリンクラーは堆積量の少ない場合に用いられる。",
+      "オ": "スプレーガンの口径は20 ～30 mm で、散水量は500 ～1500 L/min である。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "付着水分が増えると飛散は抑えられるが、9％付近で飛散しやすさが約100分の1まで低下するという数値は報告と一致しない。",
+    "choiceExplanations": {
+      "ア": "表層から10～20 cm程度まで水が浸透し、土粒子などの付着力を高めて風による飛散を抑える。",
+      "イ": "散水で粒子が湿ると飛散しにくくなり、付着水分が5％を超えると飛散しやすさが約半分になるとの報告がある。",
+      "ウ": "付着水分が増えると飛散は抑えられるが、9％付近で飛散しやすさが約100分の1まで低下するという数値は報告と一致しない。",
+      "エ": "散水範囲が比較的小さい堆積場では、スプリンクラーによる散水が用いられる。",
+      "オ": "大きな堆積場では口径の大きいスプレーガンが用いられ、設問の口径と散水量はその装置の代表的な範囲に当たる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724185428id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_13.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2023（令和5）年度公害防止管理者等国家試験 ばいじん・粉じん一般特論 問7（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-12-2023-annual-kogai-general-dust-q8",
+    "exam": "kogai-12",
+    "session": "kogai-general-dust",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 8,
+    "examDate": "2023-10-01",
+    "subject": "ばいじん・粉じん一般特論",
+    "type": "multiple-choice",
+    "category": "ばいじん・粉じん一般特論",
+    "topicTags": [
+      "デービスの式のストークス数"
+    ],
+    "difficulty": 2,
+    "question": "非等速吸引時のダスト濃度測定誤差を推定するデービスの式で用いられるストークス数（Stk）に関する記述として、誤っているものはどれか。",
+    "choices": {
+      "ア": "ダストの粒子径の2 乗に比例する。",
+      "イ": "ガスの粘度に反比例する。",
+      "ウ": "ダストの密度に比例する。",
+      "エ": "吸引ノズルの半径に反比例する。",
+      "オ": "測定点のガス流速に反比例する。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "測定点のガス流速が上がるほど流れの変化に追従する時間が短くなる。式ではストークス数は流速に比例する。",
+    "choiceExplanations": {
+      "ア": "粒子径が大きいほど流れの変化に追従しにくくなり、ストークス数は粒子径の二乗に比例する。",
+      "イ": "気体の粘度が大きいと粒子が流れに追従しやすくなるため、ストークス数は粘度に反比例する。",
+      "ウ": "同じ径でも粒子密度が大きいほど慣性が大きく、ストークス数も大きくなる。",
+      "エ": "ノズル半径は流れの代表長さとなり、ストークス数の分母に入る。",
+      "オ": "測定点のガス流速が上がるほど流れの変化に追従する時間が短くなる。式ではストークス数は流速に比例する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724185428id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_13.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2023（令和5）年度公害防止管理者等国家試験 ばいじん・粉じん一般特論 問8（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-12-2023-annual-kogai-general-dust-q9",
+    "exam": "kogai-12",
+    "session": "kogai-general-dust",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 9,
+    "examDate": "2023-10-01",
+    "subject": "ばいじん・粉じん一般特論",
+    "type": "multiple-choice",
+    "category": "ばいじん・粉じん一般特論",
+    "topicTags": [
+      "排ガス中のダスト測定点"
+    ],
+    "difficulty": 2,
+    "question": "ダスト濃度測定における測定位置、測定点の選定方法として、誤っているものはどれか。",
+    "choices": {
+      "ア": "できるだけ長い直管部を選び、なるべく垂直よりも水平の管がよい。",
+      "イ": "ガス流速が5 m/s 以上の場所が望ましい。",
+      "ウ": "極端な絞りや曲管部から少なくとも直径又は角形ダクトの縦寸法の1.5 倍以上離れた位置を選ぶ。",
+      "エ": "JIS では、断面積0.25 m² 以下の小規模ダクトの場合、断面中心の一点を測定点としてよい。",
+      "オ": "JIS では、測定断面において、流速の分布が比較的対称とみなすことができた場合には、水平ダクトでは、垂直の対称軸に対して片側をとり、測定点数を1/2 に減らしてもよい。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "できるだけ長い直管部を選ぶ点は合うが、粒子が下部に偏りにくい垂直管が望ましい。水平管を優先するという記述は誤りである。",
+    "choiceExplanations": {
+      "ア": "できるだけ長い直管部を選ぶ点は合うが、粒子が下部に偏りにくい垂直管が望ましい。水平管を優先するという記述は誤りである。",
+      "イ": "十分な流速がある区間を選ぶことで、測定断面での流速の把握と等速吸引がしやすくなる。",
+      "ウ": "絞りや曲がり部の近くでは流れが乱れるため、断面の寸法に応じて離れた位置を選ぶ。",
+      "エ": "JISでは対象とする小規模ダクトで、断面の中心を測定点とする簡略化が認められている。",
+      "オ": "水平ダクトで流速分布が鉛直の対称軸に対して十分に対称なら、片側の測定点で代表させることができる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724185428id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_13.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2023（令和5）年度公害防止管理者等国家試験 ばいじん・粉じん一般特論 問9（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-12-2023-annual-kogai-general-dust-q10",
+    "exam": "kogai-12",
+    "session": "kogai-general-dust",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 10,
+    "examDate": "2023-10-01",
+    "subject": "ばいじん・粉じん一般特論",
+    "type": "multiple-choice",
+    "category": "ばいじん・粉じん一般特論",
+    "topicTags": [
+      "排ガスの水分測定に使う吸湿剤"
+    ],
+    "difficulty": 2,
+    "question": "JIS によるダスト濃度測定に伴う水分量の測定において、二酸化炭素を含むガスに適用できる吸湿剤はどれか。",
+    "choices": {
+      "ア": "酸化バリウム",
+      "イ": "酸化カルシウム",
+      "ウ": "シリカゲル",
+      "エ": "無水塩化カルシウム",
+      "オ": "酸化アルミニウム"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "JISの吸湿法では無水塩化カルシウムが吸収した水分を質量増加から求める。この設問の二酸化炭素を含むガスに使用できる。",
+    "choiceExplanations": {
+      "ア": "酸化バリウムは塩基性酸化物で、二酸化炭素とも反応して質量が変化するため適さない。",
+      "イ": "酸化カルシウムは二酸化炭素と反応して炭酸カルシウムを生じるため、質量増加を水分だけに帰せない。",
+      "ウ": "シリカゲルは乾燥剤として使われることがあるが、設問の二酸化炭素を含む排ガスの水分測定にJISが定める吸湿剤は無水塩化カルシウムである。",
+      "エ": "JISの吸湿法では無水塩化カルシウムが吸収した水分を質量増加から求める。この設問の二酸化炭素を含むガスに使用できる。",
+      "オ": "酸化アルミニウムには吸着性をもつ形態があるが、JISのこの測定で指定される無水塩化カルシウムには該当しない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724185428id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_13.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2023（令和5）年度公害防止管理者等国家試験 ばいじん・粉じん一般特論 問10（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  }
+]
