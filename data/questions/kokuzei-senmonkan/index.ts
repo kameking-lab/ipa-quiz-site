@@ -1,0 +1,5 @@
+import { KOKUZEI_2025_SPECIAL_B_QUESTIONS } from "./2025-special-b";
+
+export const KOKUZEI_SENMONKAN_QUESTIONS = [
+  ...KOKUZEI_2025_SPECIAL_B_QUESTIONS,
+];

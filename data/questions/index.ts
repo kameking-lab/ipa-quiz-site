@@ -345,6 +345,7 @@ import { ZAIMU_SENMONKAN_QUESTIONS } from "./zaimu-senmonkan";
 import { SHOKUHIN_EISEI_KANSHIIN_QUESTIONS } from "./shokuhin-eisei-kanshiin";
 import { HOMUSHO_SENMONSHOKUIN_QUESTIONS } from "./homusho-senmonshokuin";
 import { RODO_KIJUN_KANTOKUKAN_QUESTIONS } from "./rodo-kijun-kantokukan";
+import { KOKUZEI_SENMONKAN_QUESTIONS } from "./kokuzei-senmonkan";
 import { KOKKA_SOGO_KYOYO_QUESTIONS } from "./kokka-sogo-kyoyo";
 import { KOKKA_IPPAN_DAI_QUESTIONS } from "./kokka-ippan-dai";
 import { KOKKA_IPPAN_KOU_QUESTIONS } from "./kokka-ippan-kou";
@@ -723,6 +724,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("shokuhin-eisei-kanshiin") ? { "shokuhin-eisei-kanshiin": SHOKUHIN_EISEI_KANSHIIN_QUESTIONS } : {}),
 ...(isExamPublished("homusho-senmonshokuin") ? { "homusho-senmonshokuin": HOMUSHO_SENMONSHOKUIN_QUESTIONS } : {}),
 ...(isExamPublished("rodo-kijun-kantokukan") ? { "rodo-kijun-kantokukan": RODO_KIJUN_KANTOKUKAN_QUESTIONS } : {}),
+...(isExamPublished("kokuzei-senmonkan") ? { "kokuzei-senmonkan": KOKUZEI_SENMONKAN_QUESTIONS } : {}),
 ...(isExamPublished("kokka-sogo-kyoyo") ? { "kokka-sogo-kyoyo": KOKKA_SOGO_KYOYO_QUESTIONS } : {}),
 ...(isExamPublished("kokka-ippan-dai") ? { "kokka-ippan-dai": KOKKA_IPPAN_DAI_QUESTIONS } : {}),
 ...(isExamPublished("kokka-ippan-kou") ? { "kokka-ippan-kou": KOKKA_IPPAN_KOU_QUESTIONS } : {}),

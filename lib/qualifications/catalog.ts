@@ -1828,6 +1828,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["2025・2024年度の専門Aと各年度の専門Bの補充"],
   },
   {
+    slug: "kokuzei-senmonkan", examCode: "kokuzei-senmonkan", shortName: "国税専門官", fullName: "国税専門官採用試験",
+    domain: "legal", administrator: "人事院",
+    officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_21.html",
+    officialReuseTermsUrl: "https://www.jinji.go.jp/shinsei/notice.html",
+    status: "live",
+    reuseSummary: "2025年度の国税専門Bの専門試験（多肢選択式）42問を、公式正答・全肢解説付きで収録。",
+    attributionTemplate: "出典：人事院「国税専門官採用試験」。解説は過去問AIの独自作成。",
+    remainingWork: [],
+  },
+  {
     slug: "kokka-sogo-kyoyo", examCode: "kokka-sogo-kyoyo", shortName: "国家総合職（教養区分）", fullName: "国家公務員採用総合職試験（大卒程度試験・教養区分）",
     domain: "legal", administrator: "人事院",
     officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_14.html",
