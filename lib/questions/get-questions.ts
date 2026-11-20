@@ -177,6 +177,7 @@ seishin: async () => isExamPublished("seishin") ? (await import("@/data/question
 tohan: async () => isExamPublished("tohan") ? (await import("@/data/questions/tohan")).TOHAN_QUESTIONS : [],
 "tohan-tokai-hokuriku": async () => isExamPublished("tohan-tokai-hokuriku") ? (await import("@/data/questions/tohan-tokai-hokuriku")).TOHAN_TOKAI_HOKURIKU_QUESTIONS : [],
 "tohan-kitakanto-koshinetsu": async () => isExamPublished("tohan-kitakanto-koshinetsu") ? (await import("@/data/questions/tohan-kitakanto-koshinetsu")).TOHAN_KITAKANTO_KOSHINETSU_QUESTIONS : [],
+"tohan-kyushu-okinawa": async () => isExamPublished("tohan-kyushu-okinawa") ? (await import("@/data/questions/tohan-kyushu-okinawa")).TOHAN_KYUSHU_OKINAWA_QUESTIONS : [],
 "tohan-chugoku-shikoku": async () => isExamPublished("tohan-chugoku-shikoku") ? (await import("@/data/questions/tohan-chugoku-shikoku")).TOHAN_CHUGOKU_SHIKOKU_QUESTIONS : [],
 "tohan-hokkaido-tohoku": async () => isExamPublished("tohan-hokkaido-tohoku") ? (await import("@/data/questions/tohan-hokkaido-tohoku")).TOHAN_HOKKAIDO_TOHOKU_QUESTIONS : [],
 kanri: async () => isExamPublished("kanri") ? (await import("@/data/questions/kanri")).KANRI_QUESTIONS : [],

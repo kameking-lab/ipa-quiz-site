@@ -245,6 +245,7 @@ export const EXAM_LABELS: Record<string, string> = {
     tohan: "登録販売者",
     "tohan-tokai-hokuriku": "登録販売者（東海・北陸）",
     "tohan-kitakanto-koshinetsu": "登録販売者（北関東・甲信越）",
+    "tohan-kyushu-okinawa": "登録販売者（九州・沖縄）",
     "tohan-chugoku-shikoku": "登録販売者（中国・四国）",
     "tohan-hokkaido-tohoku": "登録販売者（北海道・東北）",
     kanri: "管理業務主任者",

@@ -231,6 +231,7 @@ import { SEISHIN_QUESTIONS } from "./seishin";
 import { TOHAN_QUESTIONS } from "./tohan";
 import { TOHAN_TOKAI_HOKURIKU_QUESTIONS } from "./tohan-tokai-hokuriku";
 import { TOHAN_KITAKANTO_KOSHINETSU_QUESTIONS } from "./tohan-kitakanto-koshinetsu";
+import { TOHAN_KYUSHU_OKINAWA_QUESTIONS } from "./tohan-kyushu-okinawa";
 import { TOHAN_CHUGOKU_SHIKOKU_QUESTIONS } from "./tohan-chugoku-shikoku";
 import { TOHAN_HOKKAIDO_TOHOKU_QUESTIONS } from "./tohan-hokkaido-tohoku";
 import { KANRI_QUESTIONS } from "./kanri";
@@ -548,6 +549,7 @@ takken: TAKKEN_QUESTIONS,
 ...(isExamPublished("tohan") ? { tohan: TOHAN_QUESTIONS } : {}),
 ...(isExamPublished("tohan-tokai-hokuriku") ? { "tohan-tokai-hokuriku": TOHAN_TOKAI_HOKURIKU_QUESTIONS } : {}),
 ...(isExamPublished("tohan-kitakanto-koshinetsu") ? { "tohan-kitakanto-koshinetsu": TOHAN_KITAKANTO_KOSHINETSU_QUESTIONS } : {}),
+...(isExamPublished("tohan-kyushu-okinawa") ? { "tohan-kyushu-okinawa": TOHAN_KYUSHU_OKINAWA_QUESTIONS } : {}),
 ...(isExamPublished("tohan-chugoku-shikoku") ? { "tohan-chugoku-shikoku": TOHAN_CHUGOKU_SHIKOKU_QUESTIONS } : {}),
 ...(isExamPublished("tohan-hokkaido-tohoku") ? { "tohan-hokkaido-tohoku": TOHAN_HOKKAIDO_TOHOKU_QUESTIONS } : {}),
 ...(isExamPublished("kanri") ? { kanri: KANRI_QUESTIONS } : {}),
