@@ -1,4 +1,5 @@
 import { KOKKA_SOGO_DAI_2024_KISO } from "./2024-kiso";
+import { KOKKA_SOGO_DAI_2025_SENMON_HOURITSU } from "./2025-senmon-houritsu";
 import { KOKKA_SOGO_DAI_2026_SENMON_HOURITSU } from "./2026-senmon-houritsu";
 import { KOKKA_SOGO_DAI_2026_SENMON_KEIZAI } from "./2026-senmon-keizai";
 import { KOKKA_SOGO_DAI_2026_SENMON_SEIJI } from "./2026-senmon-seiji";
@@ -7,5 +8,6 @@ export const KOKKA_SOGO_DAI_QUESTIONS = [
   ...KOKKA_SOGO_DAI_2026_SENMON_HOURITSU,
   ...KOKKA_SOGO_DAI_2026_SENMON_KEIZAI,
   ...KOKKA_SOGO_DAI_2026_SENMON_SEIJI,
+  ...KOKKA_SOGO_DAI_2025_SENMON_HOURITSU,
   ...KOKKA_SOGO_DAI_2024_KISO,
 ];
