@@ -16,5 +16,6 @@ import dioxinBasics2025 from "./2025-kogai-dioxin-basics.json";
 import dioxinTechnology2025 from "./2025-kogai-dioxin-technology.json";
 import airWaterBasics2025 from "./2025-kogai-air-water-basics.json";
 import airWaterAirTechnology2025 from "./2025-kogai-air-water-air-technology.json";
+import airWaterWaterTechnology2025 from "./2025-kogai-air-water-water-technology.json";
 
-export const KOGAI_QUESTIONS: Question[] = [...general2025, ...airBasics2025, ...airTechnology2025, ...dust2025, ...airHazardous2025, ...largeAir2025, ...waterBasics2025, ...wastewater2025, ...waterHazardous2025, ...largeWater2025, ...noiseVibration2025, ...noiseTechnology2025, ...generalDust2025, ...dioxinBasics2025, ...dioxinTechnology2025, ...airWaterBasics2025, ...airWaterAirTechnology2025] as Question[];
+export const KOGAI_QUESTIONS: Question[] = [...general2025, ...airBasics2025, ...airTechnology2025, ...dust2025, ...airHazardous2025, ...largeAir2025, ...waterBasics2025, ...wastewater2025, ...waterHazardous2025, ...largeWater2025, ...noiseVibration2025, ...noiseTechnology2025, ...generalDust2025, ...dioxinBasics2025, ...dioxinTechnology2025, ...airWaterBasics2025, ...airWaterAirTechnology2025, ...airWaterWaterTechnology2025] as Question[];
