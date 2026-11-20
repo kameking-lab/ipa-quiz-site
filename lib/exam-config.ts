@@ -685,7 +685,7 @@ zoen1: {
         { session: "mondai-b", urlSlug: "mondai-b", expectedQuestions: 29, label: "第一次検定 問題B", categories: ["施工管理法"] },
     ],
     seasons: ["september"],
-    yearRange: { start: 2026, end: 2026 },
+    yearRange: { start: 2024, end: 2026 },
 },
 tsushin2: {
     code: "tsushin2",

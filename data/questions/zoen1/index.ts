@@ -1,4 +1,5 @@
 import type { ChoiceKey, Question, Session } from "@/lib/questions/types";
+import source2024 from "./2024-september.json";
 import sourceJson from "./2026-september.json";
 import supplementJson from "./2026-september-supplement5.json";
 import supplement6Json from "./2026-september-supplement6.json";
@@ -37,7 +38,7 @@ type Paper = {
 
 type Source = {
   exam: "zoen1";
-  year: 2026;
+  year: number;
   season: "september";
   allQuestionsRequired: true;
   appliedMultipleAnswerRange: { paper: "mondai-b"; from: 24; to: 29 };
@@ -63,11 +64,11 @@ function toQuestions(source: Source, lastUpdated = "2026-09-27"): Question[] {
       ) throw new Error(`Invalid zoen1 ${paper.paper} No.${item.number}`);
       const answer = answerKeys.length === 1 ? answerKeys[0]! : answerKeys as ChoiceKey[];
       return {
-        id: `zoen1-2026-september-${paper.session}-q${item.number}`,
+        id: `zoen1-${source.year}-${source.season}-${paper.session}-q${item.number}`,
         exam: "zoen1",
         session: paper.session as Session,
-        year: 2026,
-        season: "september",
+        year: source.year,
+        season: source.season,
         qNumber: item.number,
         type: "multiple-choice",
         category: item.category,
@@ -85,7 +86,7 @@ function toQuestions(source: Source, lastUpdated = "2026-09-27"): Question[] {
         ...(item.imageUrls?.length ? { imageUrls: item.imageUrls, imageAltTexts: item.imageAltTexts } : {}),
         sourcePdfUrl: paper.questionUrl,
         sourceAnswerUrl: source.answerUrl,
-        sourceAttribution: `出典：一般財団法人全国建設研修センター 令和8年度1級造園施工管理技術検定 第一次検定 試験問題${paper.paper} No.${item.number}。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。`,
+        sourceAttribution: `出典：一般財団法人全国建設研修センター 令和${source.year - 2018}年度1級造園施工管理技術検定 第一次検定 試験問題${paper.paper} No.${item.number}。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。`,
         officialReferenceUrls: item.officialReferenceUrls ?? [],
         license: "JCTC-authorized-reuse",
         lastUpdated,
@@ -94,7 +95,6 @@ function toQuestions(source: Source, lastUpdated = "2026-09-27"): Question[] {
   });
 }
 
-/** 令和8年度第一次検定。公式の全65問（問題A36問・問題B29問）を収録。 */
 export const ZOEN1_QUESTIONS = [
   ...toQuestions(sourceJson as Source),
   ...toQuestions(supplementJson as Source, "2026-10-11"),
@@ -104,7 +104,8 @@ export const ZOEN1_QUESTIONS = [
   ...toQuestions(supplement9Json as Source, "2026-10-11"),
   ...toQuestions(supplement10Json as Source, "2026-10-11"),
   ...toQuestions(supplement11Json as Source, "2026-11-06"),
-].sort((a, b) => a.session.localeCompare(b.session) || a.qNumber - b.qNumber);
+  ...toQuestions(source2024 as Source, "2026-11-20"),
+].sort((a, b) => b.year - a.year || a.session.localeCompare(b.session) || a.qNumber - b.qNumber);
 
 if (new Set(ZOEN1_QUESTIONS.map((question) => question.id)).size !== ZOEN1_QUESTIONS.length) {
   throw new Error("Duplicate zoen1 question IDs");

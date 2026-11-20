@@ -1,7 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { ZOEN1_QUESTIONS } from "@/data/questions/zoen1";
+import { ZOEN1_QUESTIONS as allQuestions } from "@/data/questions/zoen1";
 import source from "@/data/questions/zoen1/2026-september.json";
 import { defaultPracticeSession } from "@/lib/questions/practice-session";
+
+const ZOEN1_QUESTIONS = allQuestions.filter((question) => question.year === source.year);
 
 describe("1級造園 令和8年度第一次検定", () => {
   it("問題A/Bの公式全問必須条件と収録範囲を区別する", () => {

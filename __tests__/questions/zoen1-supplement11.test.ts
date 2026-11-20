@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { ZOEN1_QUESTIONS } from "@/data/questions/zoen1";
+import { ZOEN1_QUESTIONS as allQuestions } from "@/data/questions/zoen1";
 import supplement from "@/data/questions/zoen1/2026-september-supplement11.json";
+
+const ZOEN1_QUESTIONS = allQuestions.filter((question) => question.year === supplement.year);
 
 const KEYS = ["ア", "イ", "ウ", "エ"] as const;
 const toKeys = (numbers: readonly number[]) => numbers.map((n) => KEYS[n - 1]);
