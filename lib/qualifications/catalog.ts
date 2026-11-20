@@ -1838,6 +1838,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
   },
   {
+    slug: "kokka-sogo-dai", examCode: "kokka-sogo-dai", shortName: "国家総合職（大卒程度）", fullName: "国家公務員採用総合職試験（大卒程度・教養区分以外）",
+    domain: "legal", administrator: "人事院",
+    officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_13.html",
+    officialReuseTermsUrl: "https://www.jinji.go.jp/shinsei/notice.html",
+    status: "live",
+    reuseSummary: "2024年度の院卒者試験・大卒程度試験に共通する基礎能力試験30問を、公式正答・全肢解説付きで収録。",
+    attributionTemplate: "出典：人事院「総合職試験（院卒者試験・大卒程度試験） 基礎能力試験」。解説は過去問AIの独自作成。",
+    remainingWork: ["未収録の試験区分の補充"],
+  },
+  {
     slug: "kokka-sogo-kyoyo", examCode: "kokka-sogo-kyoyo", shortName: "国家総合職（教養区分）", fullName: "国家公務員採用総合職試験（大卒程度試験・教養区分）",
     domain: "legal", administrator: "人事院",
     officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_14.html",

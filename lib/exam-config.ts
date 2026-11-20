@@ -2029,6 +2029,12 @@ caremanager: {
         { session: "special-b", urlSlug: "special-b", expectedQuestions: 58, label: "専門B（多肢選択式）", categories: ["基礎数学", "数学", "情報技術", "統計学", "物理", "化学"] },
     ], seasons: ["annual"], yearRange: { start: 2025, end: 2025 },
 },
+"kokka-sogo-dai": {
+    code: "kokka-sogo-dai", nameFull: "国家公務員採用総合職試験（大卒程度・教養区分以外）", urlSlug: "kokka-sogo-dai", level: "advanced",
+    sessions: [
+        { session: "kiso", urlSlug: "kiso", expectedQuestions: 30, label: "基礎能力試験", categories: ["文章理解", "判断推理", "数的推理", "資料解釈", "時事", "情報"] },
+    ], seasons: ["annual"], yearRange: { start: 2024, end: 2024 },
+},
 "kokka-sogo-kyoyo": {
     code: "kokka-sogo-kyoyo", nameFull: "国家公務員採用総合職試験（大卒程度試験・教養区分）", urlSlug: "kokka-sogo-kyoyo", level: "specialist",
     sessions: [

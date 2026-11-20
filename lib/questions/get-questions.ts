@@ -370,6 +370,7 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 "homusho-senmonshokuin": async () => isExamPublished("homusho-senmonshokuin") ? (await import("@/data/questions/homusho-senmonshokuin")).HOMUSHO_SENMONSHOKUIN_QUESTIONS : [],
 "rodo-kijun-kantokukan": async () => isExamPublished("rodo-kijun-kantokukan") ? (await import("@/data/questions/rodo-kijun-kantokukan")).RODO_KIJUN_KANTOKUKAN_QUESTIONS : [],
 "kokuzei-senmonkan": async () => isExamPublished("kokuzei-senmonkan") ? (await import("@/data/questions/kokuzei-senmonkan")).KOKUZEI_SENMONKAN_QUESTIONS : [],
+"kokka-sogo-dai": async () => isExamPublished("kokka-sogo-dai") ? (await import("@/data/questions/kokka-sogo-dai")).KOKKA_SOGO_DAI_QUESTIONS : [],
 "kokka-sogo-kyoyo": async () => isExamPublished("kokka-sogo-kyoyo") ? (await import("@/data/questions/kokka-sogo-kyoyo")).KOKKA_SOGO_KYOYO_QUESTIONS : [],
 "kokka-ippan-dai": async () => isExamPublished("kokka-ippan-dai") ? (await import("@/data/questions/kokka-ippan-dai")).KOKKA_IPPAN_DAI_QUESTIONS : [],
 "kokka-ippan-kou": async () => isExamPublished("kokka-ippan-kou") ? (await import("@/data/questions/kokka-ippan-kou")).KOKKA_IPPAN_KOU_QUESTIONS : [],

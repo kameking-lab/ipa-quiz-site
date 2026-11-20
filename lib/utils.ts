@@ -375,6 +375,7 @@ export const EXAM_LABELS: Record<string, string> = {
     "homusho-senmonshokuin": "法務省専門職員（人間科学）",
     "rodo-kijun-kantokukan": "労働基準監督官",
     "kokuzei-senmonkan": "国税専門官",
+    "kokka-sogo-dai": "国家総合職（大卒程度）",
     "kokka-sogo-kyoyo": "国家総合職（教養区分）",
     "kokka-ippan-dai": "国家一般職（大卒程度）",
     "kokka-ippan-kou": "国家一般職（高卒者）",
