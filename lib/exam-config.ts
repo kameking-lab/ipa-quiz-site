@@ -1480,7 +1480,7 @@ shuwa: {
 },
 "dekyo-chief-2": {
     code: "dekyo-chief-2", nameFull: "電気通信主任技術者", urlSlug: "dekyo-chief-2", level: "specialist",
-    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 20, label: "電気通信システム", categories: ["電気回路", "伝送技術", "通信網"] }],
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 49, label: "電気通信システム・法規", categories: ["電気回路", "伝送技術", "通信網", "法規"] }],
     seasons: ["second"], yearRange: { start: 2024, end: 2024 },
 },
 "kogai-taiki-yugai": {
