@@ -2084,6 +2084,7 @@ caremanager: {
         { session: "tekisei", urlSlug: "tekisei", expectedQuestions: 120, label: "適性試験（事務区分）", categories: ["演算記号", "分類表", "正本と副本の照合", "表の計算", "記号・英字の変換", "二つの表の照合", "集計表の計算", "文字の置き換え", "表の照合"] },
         { session: "senmon-gijutsu", urlSlug: "senmon-gijutsu", expectedQuestions: 100, label: "専門試験（技術区分）", categories: ["数学", "物理", "情報", "電気回路", "電子工学", "電気機器", "電力", "電気通信", "機械材料", "機械工作", "生産管理", "機械力学", "材料力学", "機械設計", "流体力学", "熱力学", "電磁気", "構造力学", "水理学", "土質力学", "測量", "コンクリート", "耐震工学", "基礎工学", "施工管理", "道路工学", "河川工学", "都市計画", "建築構造", "建築材料", "建築施工", "建築環境", "建築設備", "建築計画", "建築法規"] },
         { session: "senmon-noson", urlSlug: "senmon-noson", expectedQuestions: 40, label: "専門試験（農業土木区分）", categories: ["構造力学", "材料力学", "水理学", "土質力学", "農地保全", "農地整備", "農村整備", "農村環境", "基礎工学", "コンクリート", "施工管理", "農業水利", "農業排水", "測量", "情報", "土壌肥料", "作物学", "農業気象", "農業政策"] },
+        { session: "senmon-ringaku", urlSlug: "senmon-ringaku", expectedQuestions: 40, label: "専門試験（林業区分）", categories: ["森林政策", "森林計測", "林業経営", "森林生態", "治山", "森林土木", "林業機械", "素材生産", "造林", "森林土壌", "森林保護", "測量", "木材利用", "特用林産"] },
     ], seasons: ["annual"], yearRange: { start: 2023, end: 2025 },
 },
 tsukanshi: {
