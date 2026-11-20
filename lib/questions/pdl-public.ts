@@ -1,4 +1,5 @@
 import manifest from "@/data/questions/pdl-reviewed-manifest.json";
+import { officialScoringIssue } from "./official-scoring";
 import type { ChoiceKey, Question } from "./types";
 
 // Scope is pinned to the individually screened sources and assets. A catalog
@@ -13,6 +14,7 @@ export function normalizePublicPdlQuestion(raw: unknown): Question {
   const source = q.sourcePresentation;
   const keys = Object.keys(q.choices ?? {});
   const imageUrls = q.imageUrls ?? [];
+  const invalidAnswer = q.officialScoring ? officialScoringIssue(q) : !keys.includes(String(q.answer));
   if (!receipt || !["kanteishi", "kaikeishi"].includes(q.exam)
     || receipt.exam !== q.exam || q.needsReview !== false
     || receipt.license !== q.license
@@ -32,7 +34,7 @@ export function normalizePublicPdlQuestion(raw: unknown): Question {
       || !q.choices?.[key as ChoiceKey]?.trim()
       || !q.originalContent?.choices?.[key as ChoiceKey]?.trim()
       || !q.choiceExplanations?.[key as ChoiceKey]?.trim())
-    || !keys.includes(String(q.answer))) {
+    || invalidAnswer) {
     throw new Error(`Unreviewed PDL material: ${q.id ?? "unknown"}`);
   }
   if (q.id === "kanteishi-2025-gyosei-q19"
