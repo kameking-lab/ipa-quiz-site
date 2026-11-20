@@ -114,6 +114,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     sessions: [
       { session: "ippan", urlSlug: "ippan", expectedQuestions: 15, label: "公害総論", categories: ["公害総論"] },
       { session: "taiki-gairon", urlSlug: "taiki-gairon", expectedQuestions: 10, label: "大気概論", categories: ["大気概論"] },
+      { session: "taiki-tokuron", urlSlug: "taiki-tokuron", expectedQuestions: 15, label: "大気特論", categories: ["大気特論"] },
       { session: "suishitsu-gairon", urlSlug: "suishitsu-gairon", expectedQuestions: 10, label: "水質概論", categories: ["水質概論"] },
     ],
     seasons: ["annual"], yearRange: { start: 2022, end: 2026 },
