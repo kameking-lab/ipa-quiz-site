@@ -13,7 +13,13 @@ export interface OfflineQuestionLink {
   label: string;
 }
 
-export function OfflineHome({catalog=[]}:{catalog?:OfflineQuestionLink[]}) {
+export interface OfflineCatalogGroup {
+  label: string;
+  /** [id, href, qNumber] */
+  items: [string, string, string][];
+}
+
+export function OfflineHome({catalog=[]}:{catalog?:OfflineCatalogGroup[]}) {
   const [online, setOnline] = React.useState<boolean>(true);
   const [bookmarked, setBookmarked] = React.useState<OfflineQuestionLink[]>([]);
   const [recent, setRecent] = React.useState<OfflineQuestionLink[]>([]);
@@ -27,7 +33,10 @@ export function OfflineHome({catalog=[]}:{catalog?:OfflineQuestionLink[]}) {
     window.addEventListener("offline", off);
 
     const store = createHistoryStore();
-    const byId = new Map(catalog.map((q) => [q.id, q]));
+    const byId = new Map<string, OfflineQuestionLink>();
+    for (const group of catalog) {
+      for (const [id, href, qNumber] of group.items) byId.set(id, { id, href, label: `${group.label} 問${qNumber}` });
+    }
 
     const starredIds = store.getStarredIds();
     setBookmarked(
