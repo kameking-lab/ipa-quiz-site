@@ -117,6 +117,13 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     ],
     seasons: ["annual"], yearRange: { start: 2022, end: 2026 },
   },
+  "kouku-kanseikan": {
+    code: "kouku-kanseikan", nameFull: "航空管制官採用試験", urlSlug: "kouku-kanseikan", level: "specialist",
+    sessions: [
+      { session: "eigo-hikki", urlSlug: "eigo-hikki", expectedQuestions: 30, label: "外国語試験（多肢選択式）", categories: ["英文読解", "段落整序", "語法・文法", "和文英訳", "発音・アクセント"] },
+    ],
+    seasons: ["annual"], yearRange: { start: 2025, end: 2025 },
+  },
   "zensho-bc": {
     code: "zensho-bc", nameFull: "全商ビジネスコミュニケーション検定試験", urlSlug: "zensho-bc", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "筆記", categories: ["ビジネスマナー", "コミュニケーション", "接客の事例", "ビジネス全般"] }],

@@ -1393,6 +1393,15 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
   },
   {
+    slug: "kouku-kanseikan", examCode: "kouku-kanseikan", shortName: "航空管制官", fullName: "航空管制官採用試験",
+    domain: "safety", administrator: "人事院", status: "live",
+    officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_24.html",
+    officialReuseTermsUrl: "https://www.jinji.go.jp/riyoukiyaku.html",
+    reuseSummary: "公式問題冊子で原文を確認できる問題と正答番号表を収録。解説は過去問AIの独自作成。",
+    attributionTemplate: "出典：人事院 航空管制官採用試験の公式問題及び正答番号表。",
+    remainingWork: [],
+  },
+  {
     slug: "zensho-bc", examCode: "zensho-bc", shortName: "全商ビジネスコミュニケーション検定",
     fullName: "全商ビジネスコミュニケーション検定試験", domain: "personal-services",
     administrator: "公益財団法人全国商業高等学校協会", status: "live",
