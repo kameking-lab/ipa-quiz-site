@@ -32,17 +32,22 @@ for (const paper of catalog) {
     `Unexpected source mode: ${paper.id}`,
   );
   if (paper.sourceMode === 'official-archive-copy') {
-    check(/^cskohyo-CS202119\d{2}$/u.test(paper.id), `Archive copy outside reviewed 2021 consultant set: ${paper.id}`);
+    const archiveUrl = paper.archiveSourceUrl;
+    const consultant = /^cskohyo-CS202119\d{2}$/u.test(paper.id);
+    const publishedPaper = /^lckohyo-LC2024[12]1(?:05|17)$/u.test(paper.id);
+    check(consultant || publishedPaper, `Archive copy outside reviewed sets: ${paper.id}`);
     check(
-      typeof paper.archiveSourceUrl === 'string' &&
-        /^https:\/\/osh-lab\.com\/wp-content\/uploads\/2022\/06\/[a-f0-9]{32}\.pdf$/u.test(paper.archiveSourceUrl),
+      typeof archiveUrl === 'string' && (consultant
+        ? /^https:\/\/osh-lab\.com\/wp-content\/uploads\/2022\/06\/[a-f0-9]{32}\.pdf$/u.test(archiveUrl)
+        : /^https:\/\/web\.archive\.org\/web\/\d{14}id_\/https:\/\/www\.exam\.or\.jp\/wp-content\/uploads\/2024\/(?:08|12)\/LC2024[12]1(?:05|17)\.pdf$/u.test(archiveUrl)
+          && archiveUrl.endsWith(`/${paper.pdfUrl}`)
+          && paper.pdfUrl?.endsWith(`/${paper.id.slice('lckohyo-'.length)}.pdf`)),
       `Missing reviewed archive source: ${paper.id}`,
     );
-    check(
-      paper.officialArchiveManifestUrl ===
-        'https://web.archive.org/web/20220528065047id_/https://www.exam.or.jp/exmn/csv/cspdf.csv',
-      `Missing official archive manifest: ${paper.id}`,
-    );
+    const manifestUrl = consultant
+      ? 'https://web.archive.org/web/20220528065047id_/https://www.exam.or.jp/exmn/csv/cspdf.csv'
+      : 'https://web.archive.org/web/20250119073601id_/https://www.exam.or.jp/lckohyo/';
+    check(paper.officialArchiveManifestUrl === manifestUrl, `Missing official archive manifest: ${paper.id}`);
   }
   check(['reference', 'official-choice'].includes(paper.answerMode), `Unexpected answer mode: ${paper.id}`);
   for (const key of ['pdfUrl', 'indexUrl']) {

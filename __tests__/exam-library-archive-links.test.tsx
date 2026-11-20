@@ -6,7 +6,7 @@ import { EXAM_CATALOG } from "@/lib/exam-library-catalog";
 import { examSourcePdfUrl, parseExamCatalogEntry } from "@/lib/exam-library-model";
 import { loadExamPaper } from "@/lib/exam-library-papers";
 
-const archiveEntries = catalog.filter((entry) => entry.sourceMode === "official-archive-copy");
+const archiveEntries = catalog.filter((entry) => entry.group === "cskohyo" && entry.sourceMode === "official-archive-copy");
 
 beforeEach(() => {
   window.localStorage.clear();
@@ -40,6 +40,17 @@ describe("archived consultant PDF links", () => {
     expect(screen.getByRole("link", { name: /公表PDFの保存コピーで問1を確認/ }))
       .toHaveAttribute("href", `${raw.archiveSourceUrl}${page ? `#page=${page}` : ""}`);
     expect(document.querySelector(`a[href^="${raw.pdfUrl}"]`)).toBeNull();
+  });
+
+  it("uses the archived 2024 publication and verifies the original path", () => {
+    const paper = catalog.find((entry) => entry.id === "lckohyo-LC20242117")!;
+    const entry = EXAM_CATALOG.find((candidate) => candidate.id === paper.id)!;
+    expect(entry.pdfUrl).toBe(paper.pdfUrl);
+    expect(examSourcePdfUrl(entry)).toBe(paper.archiveSourceUrl);
+    expect(parseExamCatalogEntry({
+      ...paper,
+      archiveSourceUrl: paper.archiveSourceUrl!.replace("LC20242117.pdf", "LC20242105.pdf"),
+    })).toBeNull();
   });
 
   it("keeps current official sources on their official PDF", () => {
