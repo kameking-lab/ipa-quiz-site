@@ -2052,6 +2052,7 @@ caremanager: {
         { session: "senmon", urlSlug: "senmon", expectedQuestions: 80, label: "専門試験（行政区分）", categories: ["政治学", "行政学", "憲法", "行政法", "民法（総則・物権）", "民法（債権・親族・相続）", "ミクロ経済学", "マクロ経済学", "財政学・経済事情", "経営学", "国際関係", "社会学", "心理学", "教育学", "英語（基礎）", "英語（一般）"] },
         { session: "senmon-digital", urlSlug: "senmon-digital", expectedQuestions: 44, label: "専門試験（デジタル・電気・電子区分）", categories: ["数学", "物理", "情報工学", "電気回路", "電子工学"] },
         { session: "senmon-kenchiku", urlSlug: "senmon-kenchiku", expectedQuestions: 33, label: "専門試験（建築区分）", categories: ["建築構造", "建築材料", "建築施工", "建築環境", "建築設備", "建築計画", "建築法規"] },
+        { session: "senmon-kikai", urlSlug: "senmon-kikai", expectedQuestions: 40, label: "専門試験（機械区分）", categories: ["材料力学", "機械力学", "流体力学", "熱力学", "機械設計", "機械材料", "機械工作"] },
     ], seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
 },
 "kokka-ippan-kou": {
