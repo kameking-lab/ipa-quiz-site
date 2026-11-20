@@ -113,6 +113,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     code: "kogai-13", nameFull: "公害防止管理者", urlSlug: "kogai-13", level: "specialist",
     sessions: [
       { session: "ippan", urlSlug: "ippan", expectedQuestions: 15, label: "公害総論", categories: ["公害総論"] },
+      { session: "soon-shindo-tokuron", urlSlug: "soon-shindo-tokuron", expectedQuestions: 30, label: "騒音・振動特論", categories: ["騒音・振動特論"] },
       { session: "taiki-gijutsu", urlSlug: "taiki-gijutsu", expectedQuestions: 20, label: "大気関係技術特論", categories: ["大気関係技術特論"] },
       { session: "suishitsu-gijutsu", urlSlug: "suishitsu-gijutsu", expectedQuestions: 20, label: "水質関係技術特論", categories: ["水質関係技術特論"] },
       { session: "dioxin-gairon", urlSlug: "dioxin-gairon", expectedQuestions: 15, label: "ダイオキシン類概論", categories: ["ダイオキシン類概論"] },
