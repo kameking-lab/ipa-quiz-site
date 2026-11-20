@@ -11,6 +11,7 @@ import { KOKKA_IPPAN_KOU_2024_TEKISEI } from "./2024-tekisei";
 import { KOKKA_IPPAN_KOU_2023_KISO } from "./2023-kiso";
 import { KOKKA_IPPAN_KOU_2023_SENMON_GIJUTSU } from "./2023-senmon-gijutsu";
 import { KOKKA_IPPAN_KOU_2023_SENMON_NOSON } from "./2023-senmon-noson";
+import { KOKKA_IPPAN_KOU_2023_SENMON_RINGAKU } from "./2023-senmon-ringaku";
 import { KOKKA_IPPAN_KOU_2023_TEKISEI } from "./2023-tekisei";
 
 export const KOKKA_IPPAN_KOU_QUESTIONS = [
@@ -27,5 +28,6 @@ export const KOKKA_IPPAN_KOU_QUESTIONS = [
   ...KOKKA_IPPAN_KOU_2023_KISO,
   ...KOKKA_IPPAN_KOU_2023_SENMON_GIJUTSU,
   ...KOKKA_IPPAN_KOU_2023_SENMON_NOSON,
+  ...KOKKA_IPPAN_KOU_2023_SENMON_RINGAKU,
   ...KOKKA_IPPAN_KOU_2023_TEKISEI,
 ];
