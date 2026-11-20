@@ -86,14 +86,19 @@ export function QuizClient({
   const [access, setAccess] = React.useState<PracticeAccess | null>(null);
   const [invalidQuestionId, setInvalidQuestionId] = React.useState(false);
   const [retryCount, setRetryCount] = React.useState(0);
+  const requiresGrant = nativeClient() || billingGateEnabled && mode !== "review";
+  const activeRequest = React.useRef<AbortController | null>(null);
+  const retryQuestion = React.useCallback(() => {
+    activeRequest.current?.abort();
+    setAccess(null);
+    setRetryCount(count => count + 1);
+  }, []);
   React.useLayoutEffect(() => {
-    // The limit screen unmounts QuizPlayer and its native gate. Recheck the
-    // same question when membership changes, including as the limit takes focus.
-    if (accessError !== "daily_limit") return;
-    const recheck = () => setRetryCount(n => n + 1);
-    window.addEventListener("mobile:entitlement-changed", recheck);
-    return () => window.removeEventListener("mobile:entitlement-changed", recheck);
-  }, [accessError]);
+    // One subscription covers the question, its in-flight grant and the limit screen.
+    if (!requiresGrant) return;
+    window.addEventListener("mobile:entitlement-changed", retryQuestion);
+    return () => window.removeEventListener("mobile:entitlement-changed", retryQuestion);
+  }, [requiresGrant, retryQuestion]);
   const transitionHost = React.useRef<HTMLDivElement>(null);
   const navigating = React.useRef(false);
   const reportedLimits = React.useRef(new Set<string>());
@@ -193,21 +198,20 @@ export function QuizClient({
     url.searchParams.set("question", currentId);
     window.history.replaceState(null, "", url);
 
-    let cancelled = false;
     const controller = new AbortController();
+    activeRequest.current = controller;
     const shuffle = mode === "random";
 
     const loadInto = async (id: string, setActive: boolean) => {
       // Gate off keeps the existing GET/cache path independent of the billing API.
       // Gate on rechecks active questions, since prefetched content is not entitlement.
-      const requiresGrant = nativeClient() || billingGateEnabled && mode !== "review";
       if ((!setActive || !requiresGrant) && cache.current.has(id)) {
-        if (setActive && !cancelled) setCurrent(cache.current.get(id)!);
+        if (setActive && !controller.signal.aborted) setCurrent(cache.current.get(id)!);
         return;
       }
       try {
         const result = await fetchQuestion(id, shuffle, setActive && requiresGrant, controller.signal);
-        if (cancelled) return;
+        if (controller.signal.aborted) return;
         if (setActive && result.access?.feedbackBonus?.newlyUsed) posthogCapture("practice_feedback_bonus_used", { remaining: result.access.feedbackBonus.remaining });
         cache.current.set(id, result.question);
         if (setActive) {
@@ -218,7 +222,7 @@ export function QuizClient({
           setAccess(result.access); setLoadError(false); setAccessError(null);
         }
       } catch (error) {
-        if (setActive && !cancelled) {
+        if (setActive && !controller.signal.aborted) {
           showBeforeGrant.current = false;
           setCurrent(null);
           setLoadError(true);
@@ -236,25 +240,24 @@ export function QuizClient({
     if (nextId) void loadInto(nextId, false);
 
     return () => {
-      cancelled = true;
       controller.abort();
+      activeRequest.current = null;
     };
-  }, [sessionIds, index, mode, retryCount, billingGateEnabled]);
+  }, [sessionIds, index, mode, retryCount, requiresGrant]);
 
   const handleNext = React.useCallback(() => {
     if (navigating.current) return;
     navigating.current = true;
     transitionHost.current?.scrollIntoView({ block: "start", behavior: "instant" });
     const nextId = sessionIds?.[index + 1];
-    const gated = nativeClient() || billingGateEnabled && mode !== "review";
     // Gated sessions used to blank the screen ("次の問題を読み込んでいます") for every
     // question while the grant round-trip ran. When the last grant proves the
     // next one is allowed, show the prefetched question at once.
-    setCurrent(!gated || showBeforeGrant.current ? cache.current.get(nextId ?? "") ?? null : null);
+    setCurrent(!requiresGrant || showBeforeGrant.current ? cache.current.get(nextId ?? "") ?? null : null);
     setAccess(null);
     setLoadError(false);
     setIndex((i) => i + 1);
-  }, [sessionIds, index, billingGateEnabled, mode]);
+  }, [sessionIds, index, requiresGrant]);
 
   if (!sessionIds) {
     return (
@@ -278,7 +281,7 @@ export function QuizClient({
     const loginHref = `/auth/signin?callbackUrl=${encodeURIComponent(window.location.pathname + window.location.search)}`;
     if (accessError === "daily_limit") {
       return <div ref={transitionHost} tabIndex={-1} aria-label="本日の無料演習の終了" className="min-h-[100dvh] scroll-mt-24 outline-none">
-        <PracticeDailyLimit reset={reset} resumeHref={window.location.pathname + window.location.search} backHref={backHref} freeDaily={access?.freeDaily} onUnlocked={() => setRetryCount(n => n + 1)} />
+        <PracticeDailyLimit reset={reset} resumeHref={window.location.pathname + window.location.search} backHref={backHref} freeDaily={access?.freeDaily} onUnlocked={retryQuestion} />
       </div>;
     }
     const message = accessError === "daily_limit"
@@ -301,7 +304,7 @@ export function QuizClient({
         <Link href="/billing" className="underline">無料試用・料金と利用条件</Link>
       </nav>
       <div className="flex flex-wrap justify-center gap-3">
-        {accessError !== "daily_limit" ? <button type="button" onClick={() => setRetryCount((count) => count + 1)} className="min-h-11 rounded-xl bg-primary px-5 py-2 font-semibold text-primary-foreground">再読み込み</button> : null}
+        {accessError !== "daily_limit" ? <button type="button" onClick={retryQuestion} className="min-h-11 rounded-xl bg-primary px-5 py-2 font-semibold text-primary-foreground">再読み込み</button> : null}
         <Link href={backHref} className="inline-flex min-h-11 items-center rounded-xl border border-border px-5 py-2 font-semibold">科目選択へ戻る</Link>
       </div>
     </div>;
@@ -312,6 +315,8 @@ export function QuizClient({
       {access?.feedbackBonus && <p role="status" className="mx-auto max-w-4xl px-4 py-3 text-sm">意見による追加10問を利用中です。追加枠は残り{access.feedbackBonus.remaining}問です。</p>}
       <QuizPlayer
       quiet
+      managesPracticeGrant
+      answerPending={requiresGrant && !access}
       question={current}
       index={index}
       total={sessionIds.length}

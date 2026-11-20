@@ -71,6 +71,8 @@ interface Props {
   exam?: string;
   onNext: () => void;
   quiet?: boolean;
+  managesPracticeGrant?: boolean;
+  answerPending?: boolean;
 }
 
 
@@ -78,7 +80,8 @@ export function QuizPlayer(props: Props) {
   if (isReferenceOnlyQuestionId(props.question?.id)) {
     return <p role="note">この問題は参照専用です。採点・学習記録・報酬の対象には含まれません。</p>;
   }
-  return <NativeQuestionGate id={props.question?.id}><ScoredQuizPlayer {...props} /></NativeQuestionGate>;
+  const player = <ScoredQuizPlayer {...props} />;
+  return props.managesPracticeGrant ? player : <NativeQuestionGate id={props.question?.id}>{player}</NativeQuestionGate>;
 }
 
 function ScoredQuizPlayer({
@@ -91,6 +94,7 @@ function ScoredQuizPlayer({
   exam = "ap",
   onNext,
   quiet = false,
+  answerPending = false,
 }: Props) {
   const pet = usePetLearning();
   const router = useRouter();
@@ -102,7 +106,19 @@ function ScoredQuizPlayer({
   const [orderedSelected, setOrderedSelected] = React.useState<ChoiceKey[] | undefined>(undefined);
   const [nativeBResult, setNativeBResult] = React.useState<NativeBGrade | undefined>();
   const [revealed, setRevealed] = React.useState(false);
-  const answerFinalized = React.useRef(false);
+  const questionId = question?.id;
+  const [attempt, setAttempt] = React.useState(() => ({ questionId, index }));
+  const finalizedAttempt = React.useRef<typeof attempt | null>(null);
+  if (attempt.questionId !== questionId || attempt.index !== index) {
+    // Reset before the next question commits, keeping session statistics alive.
+    setAttempt({ questionId, index });
+    setNativeBResult(undefined);
+    setSelected(undefined);
+    setPicked([]);
+    setNumericSelected(undefined);
+    setOrderedSelected(undefined);
+    setRevealed(false);
+  }
   const { recordAnswer: recordActivityAnswer, recordExplanation, endRef: explanationEndRef } = useQuestionActivity(question, revealed);
   const [preparedExplanationId, setPreparedExplanationId] = React.useState<string | null>(null);
   const [completed, setCompleted] = React.useState(false);
@@ -124,6 +140,8 @@ function ScoredQuizPlayer({
 
   React.useEffect(() => {
     if (!revealed) return;
+    const result = answerResultRef.current;
+    if (!result) return;
     let frame = 0, attempts = 0;
     // Touch/reduced-motion can ignore the first focus while a prepared result
     // becomes visible. Retry after paint only if focus was lost to the body;
@@ -131,11 +149,16 @@ function ScoredQuizPlayer({
     // Chromium may keep the formerly invisible result hidden for another
     // style/transition frame in reduced motion. Retry for a bounded interval.
     const recover = () => {
-      if (document.activeElement !== document.body) return;
-      answerResultRef.current?.focus({ preventScroll: true });
+      if (!result.isConnected || document.activeElement !== document.body) return;
+      result.focus({ preventScroll: true });
       if (document.activeElement === document.body && ++attempts < 8) frame = requestAnimationFrame(recover);
     };
-    frame = requestAnimationFrame(() => { frame = requestAnimationFrame(recover); });
+    frame = requestAnimationFrame(() => {
+      if (!result.isConnected) return;
+      result.focus({ preventScroll: true });
+      result.scrollIntoView({ block: "start", behavior: "instant" });
+      frame = requestAnimationFrame(recover);
+    });
     return () => cancelAnimationFrame(frame);
   }, [revealed, question?.id]);
 
@@ -156,17 +179,6 @@ function ScoredQuizPlayer({
     return () => clearInterval(id);
   }, [completed]);
 
-  const questionId = question?.id;
-  React.useEffect(() => {
-    answerFinalized.current = false;
-    setNativeBResult(undefined);
-    setSelected(undefined);
-    setPicked([]);
-    setNumericSelected(undefined);
-    setOrderedSelected(undefined);
-    setRevealed(false);
-  }, [questionId, index]);
-
   // Arrow-key roving for the answer radiogroup (focus-only; Enter/Space/click
   // commits via ChoiceButton's native activation). Called unconditionally before
   // the early returns below to respect the rules of hooks.
@@ -178,6 +190,7 @@ function ScoredQuizPlayer({
   );
 
   const goNext = React.useCallback(() => {
+    if (answerPending) return;
     recordExplanation();
     if (index + 1 >= total) {
       setCompleted(true);
@@ -185,19 +198,15 @@ function ScoredQuizPlayer({
       return;
     }
     onNext();
-  }, [index, total, onNext, recordExplanation]);
+  }, [answerPending, index, total, onNext, recordExplanation]);
 
   const commitAnswer = React.useCallback(
     (selection: string, correct: boolean, petAnswer: Extract<PetLearningSubmission, { source: "question" }>["answer"], nativeBResult?: NativeBGrade) => {
-      if (!question || isReferenceOnlyQuestionId(question.id) || answerFinalized.current) return;
+      if (!question || answerPending || finalizedAttempt.current === attempt) return;
       // Click, shortcut and form events can share the same ungraded render.
-      answerFinalized.current = true;
+      finalizedAttempt.current = attempt;
       setRevealed(true);
       recordActivityAnswer(correct);
-      requestAnimationFrame(() => {
-        answerResultRef.current?.focus({ preventScroll: true });
-        answerResultRef.current?.scrollIntoView({ block: "start", behavior: "instant" });
-      });
       posthogCapture("question_answered", {
         questionId: question.id,
         exam: question.exam,
@@ -241,20 +250,20 @@ function ScoredQuizPlayer({
         setBurst({ level, nonce: Date.now() });
       }
     },
-    [question, history, combo, pendingAchievement, pet, recordActivityAnswer],
+    [question, answerPending, attempt, history, combo, pendingAchievement, pet, recordActivityAnswer],
   );
 
   const onNativeBAnswer = React.useCallback((selections: NativeBSelections) => {
-    if (!question?.nativeB || isReferenceOnlyQuestionId(question.id) || question.type !== "native-b" || answerFinalized.current) return;
+    if (!question?.nativeB || question.type !== "native-b" || answerPending || finalizedAttempt.current === attempt) return;
     const result = gradeNativeB(question.nativeB, selections);
     setNativeBResult(result);
     const selectedSlots = Object.fromEntries(Object.entries(selections).filter((entry): entry is [string, string] => typeof entry[1] === "string"));
     commitAnswer(serializeNativeBSelections(question.nativeB, selections), result.isCorrect, { kind: "native-b", selections: selectedSlots }, result);
-  }, [question, commitAnswer]);
+  }, [question, answerPending, attempt, commitAnswer]);
 
   const onSelect = React.useCallback(
     (key: ChoiceKey) => {
-      if (!question || isReferenceOnlyQuestionId(question.id) || answerFinalized.current || question.type === "ordering") return;
+      if (!question || answerPending || finalizedAttempt.current === attempt || question.type === "ordering") return;
       const required = requiredSelectionCount(question);
       if (question.acceptedAnswerCombinations && !picked.includes(key) && picked.length >= required) return;
       if (required > 1) {
@@ -266,24 +275,24 @@ function ScoredQuizPlayer({
       setSelected(key);
       commitAnswer(key, isAcceptedAnswer(question.answer, key), { kind: "multiple-choice", selected: [key] });
     },
-    [question, picked, commitAnswer],
+    [question, answerPending, attempt, picked, commitAnswer],
   );
 
   const onNumericAnswer = React.useCallback((value: string) => {
-    if (!question || isReferenceOnlyQuestionId(question.id) || question.type !== "numeric" || answerFinalized.current) return;
+    if (question?.type !== "numeric" || answerPending || finalizedAttempt.current === attempt) return;
     setNumericSelected(value);
     commitAnswer(value, isNumericAnswerCorrect(question, value), { kind: "numeric", value });
-  }, [question, commitAnswer]);
+  }, [question, answerPending, attempt, commitAnswer]);
 
   const onOrderingAnswer = React.useCallback((value: ChoiceKey[]) => {
-    if (!question || isReferenceOnlyQuestionId(question.id) || question.type !== "ordering" || answerFinalized.current) return;
+    if (question?.type !== "ordering" || answerPending || finalizedAttempt.current === attempt) return;
     setOrderedSelected(value);
     commitAnswer(value.join("→"), isOrderingAnswerCorrect(question, value), { kind: "ordering", selected: [...value] });
-  }, [question, commitAnswer]);
+  }, [question, answerPending, attempt, commitAnswer]);
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      if (!question || isReferenceOnlyQuestionId(question.id) || isSelfReviewedDescriptiveQuestion(question)) return;
+      if (!question || answerPending || isSelfReviewedDescriptiveQuestion(question)) return;
       if (e.isComposing || e.keyCode === 229) return;
       if (e.target instanceof HTMLElement) {
         if (e.target.isContentEditable || e.target.closest('[contenteditable]:not([contenteditable="false"]), [role="textbox"], [role="combobox"]')) return;
@@ -322,7 +331,7 @@ function ScoredQuizPlayer({
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [question, revealed, onSelect, goNext, showKeyboardHelp]);
+  }, [question, answerPending, revealed, onSelect, goNext, showKeyboardHelp]);
 
   const touchStart = React.useRef<{ x: number; y: number } | null>(null);
   const onTouchStart = (e: React.TouchEvent) => {
@@ -395,13 +404,13 @@ function ScoredQuizPlayer({
         <div ref={questionStartRef} tabIndex={-1} className="scroll-mt-24 outline-none">
           <QuestionCard question={question} progress={{ current: index, total }} />
         </div>
-        <DescriptiveAnswerCard
+        {!answerPending && <DescriptiveAnswerCard
           key={question.id}
           question={question}
           onReveal={setRevealed}
           onNext={goNext}
           nextLabel={index + 1 >= total ? "結果を見る" : "次の問題へ"}
-        />
+        />}
       </main>
     );
   }
@@ -490,7 +499,7 @@ function ScoredQuizPlayer({
             />
 
             {question.acceptedAnswerCombinations && !revealed && (
-              <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" disabled={picked.length < 1 || picked.length > requiredSelections}
+              <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" disabled={answerPending || picked.length < 1 || picked.length > requiredSelections}
                 onClick={() => commitAnswer(formatSelection(picked), isCompleteSelectionCorrect(question.answer, picked, requiredSelections, question.acceptedAnswerCombinations), { kind: "multiple-choice", selected: [...picked] })}>
                 回答を確定
               </Button>
@@ -501,11 +510,11 @@ function ScoredQuizPlayer({
               </p>
             )}
             {native ? (
-              <NativeBAnswerInput key={question.id} data={question.nativeB!} displayedImageUrls={question.imageUrls} disabled={revealed} onAnswer={onNativeBAnswer} />
+              <NativeBAnswerInput key={question.id} data={question.nativeB!} displayedImageUrls={question.imageUrls} disabled={revealed || answerPending} onAnswer={onNativeBAnswer} />
             ) : ordering ? (
-              <OrderingAnswerInput key={question.id} question={question} disabled={revealed} onAnswer={onOrderingAnswer} />
+              <OrderingAnswerInput key={question.id} question={question} disabled={revealed || answerPending} onAnswer={onOrderingAnswer} />
             ) : numeric ? (
-              <NumericAnswerInput key={question.id} unit={question.numericAnswer!.unit} specification={question.numericAnswer} disabled={revealed} onAnswer={onNumericAnswer} />
+              <NumericAnswerInput key={question.id} unit={question.numericAnswer!.unit} specification={question.numericAnswer} disabled={revealed || answerPending} onAnswer={onNumericAnswer} />
             ) : <div
               role={multiSelect ? "group" : "radiogroup"}
               aria-label={multiSelect ? `選択肢（${requiredSelections}つ選ぶ。数字キー1〜9・0・Enter/スペースで選択・解除）` : "選択肢（矢印キーで移動、数字キー1〜9・0・Enter/スペースで選択）"}
@@ -523,7 +532,7 @@ function ScoredQuizPlayer({
                     revealed={revealed}
                     selected={multiSelect ? picked.includes(key) : selected === key}
                     correct={isAcceptedAnswer(question.answer, key)}
-                    disabled={revealed}
+                    disabled={revealed || answerPending}
                     onClick={() => onSelect(key)}
                     shortcutIndex={idx < 10 ? (idx + 1) % 10 : null}
                     multiSelect={multiSelect}

@@ -52,6 +52,26 @@ describe("QuizClient authorization boundary", () => {
       .map(([, options]) => JSON.parse(options!.body as string).id)).toEqual(["q1", "q2", "q2"]);
     expect(new URL(location.href).searchParams.get("question")).toBe("q2");
   });
+  it("rechecks once when entitlement changes before the pending grant returns a denial", async () => {
+    let denyPrevious!: (response: Response) => void;
+    const previousGrant = new Promise<Response>(resolve => { denyPrevious = resolve; });
+    const post = vi.fn()
+      .mockReturnValueOnce(previousGrant)
+      .mockResolvedValue(Response.json({ question: { id: "q1" }, access: { ...access, kind: "pass", remaining: null } }));
+    vi.stubGlobal("fetch", vi.fn((url: string, options?: RequestInit) => {
+      if (url !== "/api/billing/question") return Promise.resolve(Response.json({}));
+      return post(JSON.parse(options!.body as string).id);
+    }));
+    render(<QuizClient billingGateEnabled poolIds={["q1"]} mode="year" backHref="/" />);
+    await waitFor(() => expect(post.mock.calls).toEqual([["q1"]]));
+
+    act(() => { window.dispatchEvent(new Event("mobile:entitlement-changed")); });
+    await act(async () => { denyPrevious(Response.json({ error: "daily_limit", access: { ...access, remaining: 0 } }, { status: 429 })); });
+
+    expect(await screen.findByText("q1")).toBeInTheDocument();
+    expect(screen.queryByText("今日の無料10問はここまで")).toBeNull();
+    expect(post.mock.calls).toEqual([["q1"], ["q1"]]);
+  });
   it("off ignores malformed billing settings and keeps question GET/cache independent of billing", async () => {
     const c = billingConfig({ BILLING_MODE: "off", BILLING_ORIGIN: "%%%", BILLING_PRICE_YEN: "broken", BILLING_TRANSITION_STARTS_AT: "bad" });
     const fetcher = vi.fn(async (url: string) => {
