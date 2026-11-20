@@ -2041,7 +2041,7 @@ caremanager: {
     sessions: [
         { session: "kiso-ii", urlSlug: "kiso-ii", expectedQuestions: 30, label: "基礎能力試験Ⅱ部", categories: ["時事", "数学", "物理", "化学", "生物", "地学", "倫理", "文学", "日本史", "世界史", "地理", "政治", "経済", "情報"] },
         { session: "kiso-i", urlSlug: "kiso-i", expectedQuestions: 24, label: "基礎能力試験Ⅰ部", categories: ["文章理解", "判断推理", "数的推理", "資料解釈"] },
-    ], seasons: ["spring", "autumn"], yearRange: { start: 2024, end: 2026 },
+    ], seasons: ["spring", "autumn"], yearRange: { start: 2023, end: 2026 },
 },
 "kokka-ippan-dai": {
     code: "kokka-ippan-dai", nameFull: "国家公務員採用一般職試験（大卒程度試験）", urlSlug: "kokka-ippan-dai", level: "specialist",
