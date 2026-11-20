@@ -311,19 +311,16 @@ body {
   font-feature-settings: "cv11", "ss01";
 }
 
-* {
-  border-color: var(--border);
-}
+/* Keep the defaults below Tailwind's semantic border and focus utilities. */
+@layer base {
+  * {
+    border-color: var(--border);
+  }
 
-/* ---------------------------------------------------------------------------
-   Focus ring — WCAG 2.1 AAA fallback
-   Components that add Tailwind `focus-visible:ring-*` classes win on
-   specificity. Elements without explicit focus styles still get a visible
-   ring via this :where() rule (zero specificity).
-   --------------------------------------------------------------------------- */
-:where(button, a, [role="button"], [role="link"], input, textarea, select, summary, [tabindex]:not([tabindex="-1"])):focus-visible {
-  outline: 3px solid var(--ring);
-  outline-offset: 2px;
+  :where(button, a, [role="button"], [role="link"], input, textarea, select, summary, [tabindex]:not([tabindex="-1"])):focus-visible {
+    outline: 3px solid var(--ring);
+    outline-offset: 2px;
+  }
 }
 
 /* High-contrast / forced-colors mode */

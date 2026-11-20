@@ -44,6 +44,12 @@ for (const width of [390, 1280]) for (const colorScheme of ["light", "dark"] as 
           : card.getByRole("link", { name: "今日の問題を解く" });
         await expect(primary).toBeInViewport({ ratio: 1 });
         expect(await primary.evaluate(el => el.getBoundingClientRect().height)).toBeGreaterThanOrEqual(44);
+        const input = card.getByRole("searchbox", { name: "資格名・略称で検索" });
+        const field = input.locator("..");
+        await expect(field).toHaveCSS("border-top-color", colorScheme === "dark" ? "rgb(146, 146, 125)" : "rgb(128, 119, 99)");
+        await input.focus();
+        await expect(field).toHaveCSS("outline-width", "2px");
+        await input.blur();
         expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(width);
         const source = page.getByRole("link", { name: "著作権・出典", exact: true });
         await expect(source).toBeInViewport({ ratio: 1 });
