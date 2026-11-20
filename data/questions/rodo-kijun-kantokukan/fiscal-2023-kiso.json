@@ -1,0 +1,1427 @@
+[
+  {
+    "id": "rodo-kijun-kantokukan-2023-kiso-q12",
+    "exam": "rodo-kijun-kantokukan",
+    "year": 2023,
+    "season": "annual",
+    "session": "kiso",
+    "examDate": "2023-06-04",
+    "lawReferenceDate": "2023-04-01",
+    "qNumber": 12,
+    "officialQuestionLabel": "No. 12",
+    "subject": "基礎能力試験（多肢選択式）",
+    "category": "判断推理",
+    "topicTags": [
+      "判断推理",
+      "基礎能力"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "祭りがある民族には文字か楽器がある。この条件から「祭りがある民族に伝統がある」と証明するため、どの条件があればよいか。",
+    "choices": {
+      "ア": "原本の選択肢 1",
+      "イ": "原本の選択肢 2",
+      "ウ": "原本の選択肢 3",
+      "エ": "原本の選択肢 4",
+      "オ": "原本の選択肢 5"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "伝統がなければ文字も楽器もない、という文の対偶は「文字又は楽器があれば伝統がある」である。祭りから文字又は楽器、そこから伝統と結論できる。",
+    "choiceExplanations": {
+      "ア": "文字も楽器もない民族に伝統がないとしても、文字か楽器のある民族に伝統があるかは分からない。",
+      "イ": "この文は「祭りがあれば文字又は楽器がある」の対偶であり、既知の条件と等価である。伝統との関係を追加していない。",
+      "ウ": "文字と楽器の両方が必要だとすると、祭りがあって片方だけ持つ場合を扱えない。",
+      "エ": "伝統がなければ文字も楽器もない、という文の対偶は「文字又は楽器があれば伝統がある」である。祭りから文字又は楽器、そこから伝統と結論できる。",
+      "オ": "対偶を取ると「文字と楽器が両方あれば伝統がある」となる。祭りがある場合にどちらか一方しかない民族は除けない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso12-1.webp"
+    ],
+    "imageAltTexts": [
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 12の原本"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf#page=43",
+    "sourceAttribution": "出典：人事院 2023年度労働基準監督官採用試験 基礎能力試験（多肢選択式） No. 12。解説は過去問AI作成。",
+    "license": "JINJI-owner-authorized"
+  },
+  {
+    "id": "rodo-kijun-kantokukan-2023-kiso-q13",
+    "exam": "rodo-kijun-kantokukan",
+    "year": 2023,
+    "season": "annual",
+    "session": "kiso",
+    "examDate": "2023-06-04",
+    "lawReferenceDate": "2023-04-01",
+    "qNumber": 13,
+    "officialQuestionLabel": "No. 13",
+    "subject": "基礎能力試験（多肢選択式）",
+    "category": "判断推理",
+    "topicTags": [
+      "判断推理",
+      "基礎能力"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "8枚のピザを各自がサイコロで出た目の枚数ずつ取る。3人目が取り終えたとき、過不足なくなくなる出目は何通りか。",
+    "choices": {
+      "ア": "18通り",
+      "イ": "21通り",
+      "ウ": "24通り",
+      "エ": "27通り",
+      "オ": "30通り"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "三人の出目をa、b、cとし、それぞれから1を引くと三つの非負整数の和は5になる。各値は5以下なので上限条件も満たし、場合の数は7個から仕切り2個を選ぶ21通りである。",
+    "choiceExplanations": {
+      "ア": "順番が決まった1～6の出目の三つ組で合計8を作る。最小が1なので、非負の三数の和が5となる場合を数える必要がある。",
+      "イ": "三人の出目をa、b、cとし、それぞれから1を引くと三つの非負整数の和は5になる。各値は5以下なので上限条件も満たし、場合の数は7個から仕切り2個を選ぶ21通りである。",
+      "ウ": "最初の出目を1から6まで増やすと、残り二人の組数は6、5、4、3、2、1となる。合計は24ではない。",
+      "エ": "各出目から1を引いた後に配る値は8ではなく5である。非負整数の三分割のうち順番を区別すると21通りになる。",
+      "オ": "二人目までに8枚を取り切る場合は、三人目の出目が正であるため含められない。三つの出目が全て正で合計8になるものに限る。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso13-1.webp"
+    ],
+    "imageAltTexts": [
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 13の原本"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf#page=43",
+    "sourceAttribution": "出典：人事院 2023年度労働基準監督官採用試験 基礎能力試験（多肢選択式） No. 13。解説は過去問AI作成。",
+    "license": "JINJI-owner-authorized"
+  },
+  {
+    "id": "rodo-kijun-kantokukan-2023-kiso-q14",
+    "exam": "rodo-kijun-kantokukan",
+    "year": 2023,
+    "season": "annual",
+    "session": "kiso",
+    "examDate": "2023-06-04",
+    "lawReferenceDate": "2023-04-01",
+    "qNumber": 14,
+    "officialQuestionLabel": "No. 14",
+    "subject": "基礎能力試験（多肢選択式）",
+    "category": "判断推理",
+    "topicTags": [
+      "判断推理",
+      "基礎能力"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "6人が3つの公園のいずれかを訪れたとき、見た花と公園の条件から確実にいえることはどれか。",
+    "choices": {
+      "ア": "原本の選択肢 1",
+      "イ": "原本の選択肢 2",
+      "ウ": "原本の選択肢 3",
+      "エ": "原本の選択肢 4",
+      "オ": "原本の選択肢 5"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "CはチューリップのないZ公園に行く。条件を満たすZの組合せは、ツツジ・ポピーにシバザクラ又はマーガレットを加えた二通りである。",
+    "choiceExplanations": {
+      "ア": "Bはチューリップを見ており、X公園に行った2人にも、チューリップを見なかったCにも該当しない。Bが行くY公園の花の組合せにはツツジが入らない。",
+      "イ": "CはチューリップのないZ公園に行く。条件を満たすZの組合せは、ツツジ・ポピーにシバザクラ又はマーガレットを加えた二通りである。",
+      "ウ": "X公園の花がチューリップとシバザクラである場合も条件を満たす。その場合にEはシバザクラを見る。",
+      "エ": "A、B、Fは同じY公園に行き、その花にはポピーが含まれる。Fがポピーを見なかったとする記述は成り立たない。",
+      "オ": "X、Y、Zの候補を絞るとツツジはZ公園だけにあり、Zへ行くのはCだけである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso14-1.webp"
+    ],
+    "imageAltTexts": [
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 14の原本"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf#page=43",
+    "sourceAttribution": "出典：人事院 2023年度労働基準監督官採用試験 基礎能力試験（多肢選択式） No. 14。解説は過去問AI作成。",
+    "license": "JINJI-owner-authorized"
+  },
+  {
+    "id": "rodo-kijun-kantokukan-2023-kiso-q15",
+    "exam": "rodo-kijun-kantokukan",
+    "year": 2023,
+    "season": "annual",
+    "session": "kiso",
+    "examDate": "2023-06-04",
+    "lawReferenceDate": "2023-04-01",
+    "qNumber": 15,
+    "officialQuestionLabel": "No. 15",
+    "subject": "基礎能力試験（多肢選択式）",
+    "category": "判断推理",
+    "topicTags": [
+      "判断推理",
+      "基礎能力"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "6部屋の学生寮で、2022年度から2023年度に1人が新たに入寮し、一部の専攻者が移動した。条件から確実にいえることはどれか。",
+    "choices": {
+      "ア": "原本の選択肢 1",
+      "イ": "原本の選択肢 2",
+      "ウ": "原本の選択肢 3",
+      "エ": "原本の選択肢 4",
+      "オ": "原本の選択肢 5"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "2022年度は指揮がB、ヴァイオリンがE、空室はD又はFとなる。2023年度はトランペット、フルート、ヴァイオリンが南側を占めるので、北側中央のBはヴァイオリンの向かいなので、声楽と指揮のいずれかが入り、もう一方はその隣になる。",
+    "choiceExplanations": {
+      "ア": "ヴァイオリンが空室の隣で南側、フルートが空室の向かいで指揮の隣になる組合せでは、2022年度の空室はD又はFである。",
+      "イ": "ヴァイオリンは移動しないが、指揮が移動する配置もある。その場合、移動しなかったのはヴァイオリンの1名である。",
+      "ウ": "2022年度は指揮がB、ヴァイオリンがE、空室はD又はFとなる。2023年度はトランペット、フルート、ヴァイオリンが南側を占めるので、北側中央のBはヴァイオリンの向かいなので、声楽と指揮のいずれかが入り、もう一方はその隣になる。",
+      "エ": "フルートがA、指揮がB、トランペットがCの2022年度配置が可能である。この場合、トランペットはCからFに移る。",
+      "オ": "トランペットとフルートは2023年度に南側のDとFに入り、ヴァイオリンはEに残る。チェロは北側となる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso15-1.webp"
+    ],
+    "imageAltTexts": [
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 15の原本"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf#page=43",
+    "sourceAttribution": "出典：人事院 2023年度労働基準監督官採用試験 基礎能力試験（多肢選択式） No. 15。解説は過去問AI作成。",
+    "license": "JINJI-owner-authorized"
+  },
+  {
+    "id": "rodo-kijun-kantokukan-2023-kiso-q16",
+    "exam": "rodo-kijun-kantokukan",
+    "year": 2023,
+    "season": "annual",
+    "session": "kiso",
+    "examDate": "2023-06-04",
+    "lawReferenceDate": "2023-04-01",
+    "qNumber": 16,
+    "officialQuestionLabel": "No. 16",
+    "subject": "基礎能力試験（多肢選択式）",
+    "category": "判断推理",
+    "topicTags": [
+      "判断推理",
+      "基礎能力"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "A、B、C、Dの4人が3回プレゼントを交換し、BとCは最後に自分の品を持っていた。各回に参加した人について確実にいえることはどれか。",
+    "choices": {
+      "ア": "原本の選択肢 1",
+      "イ": "原本の選択肢 2",
+      "ウ": "原本の選択肢 3",
+      "エ": "原本の選択肢 4",
+      "オ": "原本の選択肢 5"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "成立する順はAとD、BとC、CとBである。後の2回が同じ組の交換になるのでBとCには元の品が戻る。",
+    "choiceExplanations": {
+      "ア": "最初にAとCを交換すると、3回の終了時にBとCの両方に自分の品を戻す条件を満たせない。成立する1回目はAとDである。",
+      "イ": "BとCが両方とも元の品を持つため、各回の相手候補を追うと1回目はAとDの組だけが成立する。",
+      "ウ": "2回目にBとDが交換すると、Bの品を3回目のCを含む交換だけでBに戻しつつCの品も戻すことはできない。",
+      "エ": "成立する順はAとD、BとC、CとBである。後の2回が同じ組の交換になるのでBとCには元の品が戻る。",
+      "オ": "交換を3回するとAとDの品は入れ替わったままになる。Dは1回目の交換に参加する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso16-1.webp"
+    ],
+    "imageAltTexts": [
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 16の原本"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf#page=43",
+    "sourceAttribution": "出典：人事院 2023年度労働基準監督官採用試験 基礎能力試験（多肢選択式） No. 16。解説は過去問AI作成。",
+    "license": "JINJI-owner-authorized"
+  },
+  {
+    "id": "rodo-kijun-kantokukan-2023-kiso-q17",
+    "exam": "rodo-kijun-kantokukan",
+    "year": 2023,
+    "season": "annual",
+    "session": "kiso",
+    "examDate": "2023-06-04",
+    "lawReferenceDate": "2023-04-01",
+    "qNumber": 17,
+    "officialQuestionLabel": "No. 17",
+    "subject": "基礎能力試験（多肢選択式）",
+    "category": "判断推理",
+    "topicTags": [
+      "判断推理",
+      "基礎能力"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "原本のフローチャートでA＝52、B＝39とすると、結果Rはいくつか。",
+    "choices": {
+      "ア": "13",
+      "イ": "15",
+      "ウ": "17",
+      "エ": "19",
+      "オ": "21"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "最初にX＝39、Y＝52となるよう交換し、52を39で割った余り13を次のXにする。次に39を13で割ると余りが0になり、R＝13で終了する。",
+    "choiceExplanations": {
+      "ア": "最初にX＝39、Y＝52となるよう交換し、52を39で割った余り13を次のXにする。次に39を13で割ると余りが0になり、R＝13で終了する。",
+      "イ": "このフローチャートで求まるのは二数の最大公約数である。15は52も39も割り切れない。",
+      "ウ": "初回の割算で得られる余りは52−39＝13である。次の割算で余り0となるので、その時点のXは17にならない。",
+      "エ": "入替え後に計算するのはYをXで割った余りである。52と39の差13が39を割り切るため、19まで値が増えることはない。",
+      "オ": "余り0で返すのはその直前の除数である。39÷13で終了するため、返る数は21ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso17-1.webp"
+    ],
+    "imageAltTexts": [
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 17の原本"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf#page=43",
+    "sourceAttribution": "出典：人事院 2023年度労働基準監督官採用試験 基礎能力試験（多肢選択式） No. 17。解説は過去問AI作成。",
+    "license": "JINJI-owner-authorized"
+  },
+  {
+    "id": "rodo-kijun-kantokukan-2023-kiso-q18",
+    "exam": "rodo-kijun-kantokukan",
+    "year": 2023,
+    "season": "annual",
+    "session": "kiso",
+    "examDate": "2023-06-04",
+    "lawReferenceDate": "2023-04-01",
+    "qNumber": 18,
+    "officialQuestionLabel": "No. 18",
+    "subject": "基礎能力試験（多肢選択式）",
+    "category": "判断推理",
+    "topicTags": [
+      "判断推理",
+      "基礎能力"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "1時間に1回転する円板上で、点Pが直径AB上をAからBまで1時間で等速に進む。上から見た点Pの軌跡はどれか。",
+    "choices": {
+      "ア": "原本の選択肢 1",
+      "イ": "原本の選択肢 2",
+      "ウ": "原本の選択肢 3",
+      "エ": "原本の選択肢 4",
+      "オ": "原本の選択肢 5"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "0～30分では半径が小さくなり、30～60分では反対側の半径が大きくなる。15分と45分では同じ方向の半径上の同一点に来るので、中心を通って左側にループを描く。",
+    "choiceExplanations": {
+      "ア": "出発から半時間後に点Pは中心を通るが、その前後の軌跡は同じ線の往復ではない。円板は中心を通過する間も回転する。",
+      "イ": "点Pが中心に近づく間も遠ざかる間も回転が続く。中心の前後で曲線がどうつながるかは、固定された半径上だけの動きからは求められない。",
+      "ウ": "上から見た点Pは、前半と後半ともAとBを結ぶ直線の同じ側を動く。中心の反対側にループはできない。",
+      "エ": "出発から半時間で点Pは必ず中心Oを通る。その前後は直径がさらに回転するので、中心を横切る単純なS字にはならない。",
+      "オ": "0～30分では半径が小さくなり、30～60分では反対側の半径が大きくなる。15分と45分では同じ方向の半径上の同一点に来るので、中心を通って左側にループを描く。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso18-1.webp"
+    ],
+    "imageAltTexts": [
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 18の原本"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf#page=43",
+    "sourceAttribution": "出典：人事院 2023年度労働基準監督官採用試験 基礎能力試験（多肢選択式） No. 18。解説は過去問AI作成。",
+    "license": "JINJI-owner-authorized"
+  },
+  {
+    "id": "rodo-kijun-kantokukan-2023-kiso-q19",
+    "exam": "rodo-kijun-kantokukan",
+    "year": 2023,
+    "season": "annual",
+    "session": "kiso",
+    "examDate": "2023-06-04",
+    "lawReferenceDate": "2023-04-01",
+    "qNumber": 19,
+    "officialQuestionLabel": "No. 19",
+    "subject": "基礎能力試験（多肢選択式）",
+    "category": "判断推理",
+    "topicTags": [
+      "判断推理",
+      "基礎能力"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "向かい合う目の和が7のサイコロ6個を図のように並べる。指定の上面を守り、接する面どうしの目を異ならせるとき、接する10面の目の和は最大でいくつか。",
+    "choices": {
+      "ア": "50",
+      "イ": "51",
+      "ウ": "52",
+      "エ": "53",
+      "オ": "54"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "A～Fの接する面の目の合計の上限は順に6、9、10、10、9、6で、合計50である。接触面の組を(6,5)、(4,6)、(4,6)、(4,5)、(4,6)となるように置けば各組の目が異なり、上限を達成できる。",
+    "choiceExplanations": {
+      "ア": "A～Fの接する面の目の合計の上限は順に6、9、10、10、9、6で、合計50である。接触面の組を(6,5)、(4,6)、(4,6)、(4,5)、(4,6)となるように置けば各組の目が異なり、上限を達成できる。",
+      "イ": "端のAとFはそれぞれ接触面1枚で最大6、内側のB～Eは2枚ずつである。上面の目と反対面を除くと、全てを合わせても50を超えない。",
+      "ウ": "BとEは上面が6又は1なので、側面には2、3、4、5しか現れない。接触面2枚の和はどちらも最大9である。",
+      "エ": "CとDの側面は1、3、4、6であり、両方の最大の面を使っても各10である。他の4個の上限を加えると50になる。",
+      "オ": "互いに接する面の目を自由に大きくできるわけではない。上面が指定され、向かい合う面の和が7であるという制約を適用すると上限は50である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso19-1.webp"
+    ],
+    "imageAltTexts": [
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 19の原本"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf#page=43",
+    "sourceAttribution": "出典：人事院 2023年度労働基準監督官採用試験 基礎能力試験（多肢選択式） No. 19。解説は過去問AI作成。",
+    "license": "JINJI-owner-authorized"
+  },
+  {
+    "id": "rodo-kijun-kantokukan-2023-kiso-q20",
+    "exam": "rodo-kijun-kantokukan",
+    "year": 2023,
+    "season": "annual",
+    "session": "kiso",
+    "examDate": "2023-06-04",
+    "lawReferenceDate": "2023-04-01",
+    "qNumber": 20,
+    "officialQuestionLabel": "No. 20",
+    "subject": "基礎能力試験（多肢選択式）",
+    "category": "数的推理",
+    "topicTags": [
+      "数的推理",
+      "基礎能力"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "Aの袋からBの袋へ缶飲料を無作為に3本移し、Bから2本取り出す。2本が同じ種類である確率はどれか。",
+    "choices": {
+      "ア": "1/15",
+      "イ": "2/15",
+      "ウ": "1/5",
+      "エ": "4/15",
+      "オ": "1/3"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "移すコーヒーが1、2、3本の確率はそれぞれ3/10、6/10、1/10で、そのとき同種2本の組は7、5、5通りである。各場合の組数を全21通りで割って重み付きで足すと4/15になる。",
+    "choiceExplanations": {
+      "ア": "最初にAから移す組合せを全て考える必要がある。Bに元からあるりんごジュースと紅茶だけでも同種2本の組ができる。",
+      "イ": "Aからコーヒーを2本移す確率は6/10であり、この場合もそれ以外の場合もBから同種2本を引く可能性がある。Bでの組合せを移し方ごとに足し合わせる。",
+      "ウ": "Bの中の同種2本の組合せはAから入れた本数によって異なる。コーヒーを1本移した場合はりんごジュースが4本となるので、同種2本の組は7通りである。",
+      "エ": "移すコーヒーが1、2、3本の確率はそれぞれ3/10、6/10、1/10で、そのとき同種2本の組は7、5、5通りである。各場合の組数を全21通りで割って重み付きで足すと4/15になる。",
+      "オ": "同種の組が7/21になるのは移したコーヒーが1本の場合だけである。2本又は3本の場合は5/21なので、全体では1/3より小さい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso20-1.webp"
+    ],
+    "imageAltTexts": [
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 20の原本"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf#page=43",
+    "sourceAttribution": "出典：人事院 2023年度労働基準監督官採用試験 基礎能力試験（多肢選択式） No. 20。解説は過去問AI作成。",
+    "license": "JINJI-owner-authorized"
+  },
+  {
+    "id": "rodo-kijun-kantokukan-2023-kiso-q21",
+    "exam": "rodo-kijun-kantokukan",
+    "year": 2023,
+    "season": "annual",
+    "session": "kiso",
+    "examDate": "2023-06-04",
+    "lawReferenceDate": "2023-04-01",
+    "qNumber": 21,
+    "officialQuestionLabel": "No. 21",
+    "subject": "基礎能力試験（多肢選択式）",
+    "category": "数的推理",
+    "topicTags": [
+      "数的推理",
+      "基礎能力"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "3つの路線のバスが7時ちょうどの次に13時25分に同時発車した。各運転間隔は30分未満の異なる正の整数分であるとき、最長と最短の差は何分か。",
+    "choices": {
+      "ア": "6分",
+      "イ": "7分",
+      "ウ": "8分",
+      "エ": "9分",
+      "オ": "10分"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "7時から13時25分までの385分が三つの間隔の最小公倍数であり、385＝5×7×11である。30未満の異なる約数は1、5、7、11で、5、7、11を全て使うので差は6分となる。",
+    "choiceExplanations": {
+      "ア": "7時から13時25分までの385分が三つの間隔の最小公倍数であり、385＝5×7×11である。30未満の異なる約数は1、5、7、11で、5、7、11を全て使うので差は6分となる。",
+      "イ": "11分が最長だが、最短は4分ではない。4は385を割り切らない。",
+      "ウ": "11分のほかに、385の素因数5と7を両方使う間隔が必要である。3分や8分など385の約数でない間隔は設定できない。",
+      "エ": "全路線は385分後にちょうど発車するので、運転間隔は385を割り切る必要がある。使える値のうち2分は含まれない。",
+      "オ": "1分を最短とするには残り2本だけで5、7、11の因子を全て含める必要がある。30未満にこれらの積を含む間隔がないため成立しない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso21-1.webp"
+    ],
+    "imageAltTexts": [
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 21の原本"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf#page=43",
+    "sourceAttribution": "出典：人事院 2023年度労働基準監督官採用試験 基礎能力試験（多肢選択式） No. 21。解説は過去問AI作成。",
+    "license": "JINJI-owner-authorized"
+  },
+  {
+    "id": "rodo-kijun-kantokukan-2023-kiso-q22",
+    "exam": "rodo-kijun-kantokukan",
+    "year": 2023,
+    "season": "annual",
+    "session": "kiso",
+    "examDate": "2023-06-04",
+    "lawReferenceDate": "2023-04-01",
+    "qNumber": 22,
+    "officialQuestionLabel": "No. 22",
+    "subject": "基礎能力試験（多肢選択式）",
+    "category": "数的推理",
+    "topicTags": [
+      "数的推理",
+      "基礎能力"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "式典の座席を1列12席から7席に変更した。社員番号順の着席条件から、社員Aの番号の一の位はどれか。",
+    "choices": {
+      "ア": "0",
+      "イ": "2",
+      "ウ": "4",
+      "エ": "6",
+      "オ": "8"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "社員番号を両方の配置で表すと12(r−1)＋2k＝7(r＋1)＋kになる。1≦k≦6を満たす整数解はr＝3、k＝4なので、社員番号32の一の位は2である。",
+    "choiceExplanations": {
+      "ア": "当初がr列目、左から2k番目なら、実際はr＋2列目、左からk番目である。この関係を社員番号に直すとk＝19−5rとなり、下一桁は0にはならない。",
+      "イ": "社員番号を両方の配置で表すと12(r−1)＋2k＝7(r＋1)＋kになる。1≦k≦6を満たす整数解はr＝3、k＝4なので、社員番号32の一の位は2である。",
+      "ウ": "当初の列の左から2k番目は12以下なので、kは6以下である。この範囲で条件を満たす社員番号は32であり、4ではない。",
+      "エ": "列の移動は2列なので、新しい配置の前にある行はr＋1列である。二つの社員番号を揃えると実際の位置は5列目の4番目になる。",
+      "オ": "当初の位置は3列目の左から8番目である。前の2列24人と8を足すと32になる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso22-1.webp"
+    ],
+    "imageAltTexts": [
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 22の原本"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf#page=43",
+    "sourceAttribution": "出典：人事院 2023年度労働基準監督官採用試験 基礎能力試験（多肢選択式） No. 22。解説は過去問AI作成。",
+    "license": "JINJI-owner-authorized"
+  },
+  {
+    "id": "rodo-kijun-kantokukan-2023-kiso-q23",
+    "exam": "rodo-kijun-kantokukan",
+    "year": 2023,
+    "season": "annual",
+    "session": "kiso",
+    "examDate": "2023-06-04",
+    "lawReferenceDate": "2023-04-01",
+    "qNumber": 23,
+    "officialQuestionLabel": "No. 23",
+    "subject": "基礎能力試験（多肢選択式）",
+    "category": "数的推理",
+    "topicTags": [
+      "数的推理",
+      "基礎能力"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "A、B、Cのアパートの家賃が、A＝B＋C/3、B＝C＋A/3、C＝20,000円＋B/3を満たすとき、Aの家賃はいくらか。",
+    "choices": {
+      "ア": "78,000円",
+      "イ": "84,000円",
+      "ウ": "90,000円",
+      "エ": "96,000円",
+      "オ": "102,000円"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "A＝B＋C/3とB＝C＋A/3からA＝2C、B＝5C/3である。C＝20000＋B/3に入れるとC＝45000円となり、Aは90000円である。",
+    "choiceExplanations": {
+      "ア": "A、B、Cの三条件はA＝B＋C/3、B＝C＋A/3、C＝20000＋B/3である。Aを78000円とすると連立する三式を同時に満たさない。",
+      "イ": "AとBの二つの式からA＝2Cが得られる。Aが84000円だとC＝42000円となるが、BをCの式に入れると一致しない。",
+      "ウ": "A＝B＋C/3とB＝C＋A/3からA＝2C、B＝5C/3である。C＝20000＋B/3に入れるとC＝45000円となり、Aは90000円である。",
+      "エ": "Aが96000円ならC＝48000円、B＝80000円である。しかし20000＋80000/3は48000円にならない。",
+      "オ": "AとCの比は2対1なので、A＝102000円ならC＝51000円である。B＝85000円を三つ目の式に代入するとCに一致しない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso23-1.webp"
+    ],
+    "imageAltTexts": [
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 23の原本"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf#page=43",
+    "sourceAttribution": "出典：人事院 2023年度労働基準監督官採用試験 基礎能力試験（多肢選択式） No. 23。解説は過去問AI作成。",
+    "license": "JINJI-owner-authorized"
+  },
+  {
+    "id": "rodo-kijun-kantokukan-2023-kiso-q24",
+    "exam": "rodo-kijun-kantokukan",
+    "year": 2023,
+    "season": "annual",
+    "session": "kiso",
+    "examDate": "2023-06-04",
+    "lawReferenceDate": "2023-04-01",
+    "qNumber": 24,
+    "officialQuestionLabel": "No. 24",
+    "subject": "基礎能力試験（多肢選択式）",
+    "category": "数的推理",
+    "topicTags": [
+      "数的推理",
+      "基礎能力"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "AB＝1500 m、∠ABP＝45°、∠BAP＝105°で、地点Aから山頂Pを見た仰角が30°である。標高差PHはいくらか。",
+    "choices": {
+      "ア": "500√3 m",
+      "イ": "750√2 m",
+      "ウ": "750√3 m",
+      "エ": "750√6 m",
+      "オ": "1,000√2 m"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "正弦定理からAP＝1500 sin45°/sin30°＝1500√2 mである。仰角が30°なのでPH＝AP sin30°＝750√2 mとなる。",
+    "choiceExplanations": {
+      "ア": "三角形ABPの角Pは30°なので、AB＝1500 mから正弦定理でAPを求める。標高差はAPの半分であり、500√3 mにはならない。",
+      "イ": "正弦定理からAP＝1500 sin45°/sin30°＝1500√2 mである。仰角が30°なのでPH＝AP sin30°＝750√2 mとなる。",
+      "ウ": "辺APに向かい合う角はBの45°である。Aの105°や60°の値で辺の比を計算するものではない。",
+      "エ": "標高差を求めるときはAPに仰角30°の正弦を掛ける。水平距離AHに用いる余弦を掛けると別の値になる。",
+      "オ": "ABに対するAPの比はsin45°/sin30°＝√2である。そのAPを仰角30°で鉛直方向へ射影すると750√2 mとなる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso24-1.webp"
+    ],
+    "imageAltTexts": [
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 24の原本"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf#page=43",
+    "sourceAttribution": "出典：人事院 2023年度労働基準監督官採用試験 基礎能力試験（多肢選択式） No. 24。解説は過去問AI作成。",
+    "license": "JINJI-owner-authorized"
+  },
+  {
+    "id": "rodo-kijun-kantokukan-2023-kiso-q25",
+    "exam": "rodo-kijun-kantokukan",
+    "year": 2023,
+    "season": "annual",
+    "session": "kiso",
+    "examDate": "2023-06-04",
+    "lawReferenceDate": "2023-04-01",
+    "qNumber": 25,
+    "officialQuestionLabel": "No. 25",
+    "subject": "基礎能力試験（多肢選択式）",
+    "category": "資料解釈",
+    "topicTags": [
+      "資料解釈",
+      "基礎能力"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "16か国の教育支出総額と生徒一人当たり教育支出の指数を示した図から、確実にいえることはどれか。",
+    "choices": {
+      "ア": "原本の選択肢 1",
+      "イ": "原本の選択肢 2",
+      "ウ": "原本の選択肢 3",
+      "エ": "原本の選択肢 4",
+      "オ": "原本の選択肢 5"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "L国の生徒数の比はおおむね130/170であり、M国は90/95である。L国の比の方が小さいので、L国の減少割合が大きい。",
+    "choiceExplanations": {
+      "ア": "生徒数の指数は教育支出総額の指数を一人当たりの指数で割って求める。棒が点より低い国の方が多く、生徒数が減った国の方が多い。",
+      "イ": "L国の生徒数の比はおおむね130/170であり、M国は90/95である。L国の比の方が小さいので、L国の減少割合が大きい。",
+      "ウ": "教育支出総額は棒グラフで示されており、M国は指数100を下回る。全ての国で増加したとはいえない。",
+      "エ": "A国は総額の指数と一人当たりの指数が近い。両者の比を取った生徒数は2005年の1.3倍に達しない。",
+      "オ": "点の値は各国の2005年を100とした指数である。基準年の一人当たり支出額が不明なので、2016年の実額を国間で比較できない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso25-1.webp"
+    ],
+    "imageAltTexts": [
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 25の原本"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf#page=43",
+    "sourceAttribution": "出典：人事院 2023年度労働基準監督官採用試験 基礎能力試験（多肢選択式） No. 25。解説は過去問AI作成。",
+    "license": "JINJI-owner-authorized"
+  },
+  {
+    "id": "rodo-kijun-kantokukan-2023-kiso-q26",
+    "exam": "rodo-kijun-kantokukan",
+    "year": 2023,
+    "season": "annual",
+    "session": "kiso",
+    "examDate": "2023-06-04",
+    "lawReferenceDate": "2023-04-01",
+    "qNumber": 26,
+    "officialQuestionLabel": "No. 26",
+    "subject": "基礎能力試験（多肢選択式）",
+    "category": "資料解釈",
+    "topicTags": [
+      "資料解釈",
+      "基礎能力"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "20歳以上を対象にした睡眠の質の調査結果を、男女別・年齢階級別に示した表から、確実にいえることはどれか。",
+    "choices": {
+      "ア": "原本の選択肢 1",
+      "イ": "原本の選択肢 2",
+      "ウ": "原本の選択肢 3",
+      "エ": "原本の選択肢 4",
+      "オ": "原本の選択肢 5"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "40～49歳の男性の人数は427×32.6％で約139人である。30～39歳の女性は298×43.0％で約128人なので、男性の人数が上回る。",
+    "choiceExplanations": {
+      "ア": "70歳以上で寝付きに時間がかかった男性は789×11.2％で約88人、女性は958×21.7％で約208人である。男性は女性の半数に達しない。",
+      "イ": "睡眠時間不足の20歳以上男性は2667×17.3％で約461人、女性は3035×19.8％で約601人である。男性の方が少ない。",
+      "ウ": "表にあるのは各項目の回答割合である。複数回答でき、二つの項目を同時に選んだ人の数は表から判定できない。",
+      "エ": "40～49歳の男性の人数は427×32.6％で約139人である。30～39歳の女性は298×43.0％で約128人なので、男性の人数が上回る。",
+      "オ": "対象の男性二階級と女性二階級について各人数に割合を掛けて合計すると約462人である。600人を超えない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso26-1.webp",
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso26-2.webp"
+    ],
+    "imageAltTexts": [
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 26の原本（1ページ目）",
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 26の原本（2ページ目）"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf#page=43",
+    "sourceAttribution": "出典：人事院 2023年度労働基準監督官採用試験 基礎能力試験（多肢選択式） No. 26。解説は過去問AI作成。",
+    "license": "JINJI-owner-authorized"
+  },
+  {
+    "id": "rodo-kijun-kantokukan-2023-kiso-q27",
+    "exam": "rodo-kijun-kantokukan",
+    "year": 2023,
+    "season": "annual",
+    "session": "kiso",
+    "examDate": "2023-06-04",
+    "lawReferenceDate": "2023-04-01",
+    "qNumber": 27,
+    "officialQuestionLabel": "No. 27",
+    "subject": "基礎能力試験（多肢選択式）",
+    "category": "資料解釈",
+    "topicTags": [
+      "資料解釈",
+      "基礎能力"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "ある国の図書館・博物館の施設数、職員数、利用者数を示した表と図から、確実にいえることはどれか。",
+    "choices": {
+      "ア": "原本の選択肢 1",
+      "イ": "原本の選択肢 2",
+      "ウ": "原本の選択肢 3",
+      "エ": "原本の選択肢 4",
+      "オ": "原本の選択肢 5"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "美術館以外は65％、美術館は35％なので、差は博物館の総利用者数の30％である。2017年は約1.7億人で、差は約5100万人と4000万人を上回る。",
+    "choiceExplanations": {
+      "ア": "例えば1999年の美術館は987/4248、2002年は1034/4491、2005年は1087/4705である。いずれも20％を超えており、該当が2回だけではない。",
+      "イ": "図書館職員は24844人から41336人に増えている。これは約66％の増加であり、両者とも50％以下という記述は誤りである。",
+      "ウ": "博物館の施設数は1999年の4248館から2002年の4491館へ増えた。一方、その年の利用者数はグラフで前回を下回る。",
+      "エ": "2017年の図書館に着目すると、1施設当たり41336÷3360で約12.3人である。全てが10人未満という記述は誤りである。",
+      "オ": "美術館以外は65％、美術館は35％なので、差は博物館の総利用者数の30％である。2017年は約1.7億人で、差は約5100万人と4000万人を上回る。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso27-1.webp",
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso27-2.webp"
+    ],
+    "imageAltTexts": [
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 27の原本（1ページ目）",
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 27の原本（2ページ目）"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf#page=43",
+    "sourceAttribution": "出典：人事院 2023年度労働基準監督官採用試験 基礎能力試験（多肢選択式） No. 27。解説は過去問AI作成。",
+    "license": "JINJI-owner-authorized"
+  },
+  {
+    "id": "rodo-kijun-kantokukan-2023-kiso-q28",
+    "exam": "rodo-kijun-kantokukan",
+    "year": 2023,
+    "season": "annual",
+    "session": "kiso",
+    "examDate": "2023-06-04",
+    "lawReferenceDate": "2023-04-01",
+    "qNumber": 28,
+    "officialQuestionLabel": "No. 28",
+    "subject": "基礎能力試験（多肢選択式）",
+    "category": "時事",
+    "topicTags": [
+      "時事",
+      "基礎能力"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "環境問題等に関する記述として最も妥当なのはどれか。",
+    "choices": {
+      "ア": "原本の選択肢 1",
+      "イ": "原本の選択肢 2",
+      "ウ": "原本の選択肢 3",
+      "エ": "原本の選択肢 4",
+      "オ": "原本の選択肢 5"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "日本は2030年度の温室効果ガスを2013年度比で46％減らす目標を表明した。排出量は2014年度から2020年度にかけて減少が続き、2021年度の発電量に占める再生可能エネルギーは約2割だった。",
+    "choiceExplanations": {
+      "ア": "COPは気候変動枠組条約の締約国の会議である。COP26のグラスゴー気候合意は1.5℃に抑える努力を追求し、COP27で記述のガソリン車販売禁止に合意した事実はない。",
+      "イ": "日本は2030年度の温室効果ガスを2013年度比で46％減らす目標を表明した。排出量は2014年度から2020年度にかけて減少が続き、2021年度の発電量に占める再生可能エネルギーは約2割だった。",
+      "ウ": "グリーン成長戦略は脱炭素化に向けた産業政策である。2025年度までの全石炭火力発電廃止や一律のLNG火力への置換えを定めたものではない。",
+      "エ": "容器包装リサイクル法は1990年代に制定・施行された。2022年はプラスチック資源循環促進法の施行であり、使い捨て製品の提供が一律禁止されたわけではない。",
+      "オ": "食品ロス削減を進めるのは食品ロス削減推進法などである。食べられる規格外品等を福祉施設などに提供する取組はフードバンクである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso28-1.webp"
+    ],
+    "imageAltTexts": [
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 28の原本"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf#page=43",
+    "sourceAttribution": "出典：人事院 2023年度労働基準監督官採用試験 基礎能力試験（多肢選択式） No. 28。解説は過去問AI作成。",
+    "license": "JINJI-owner-authorized"
+  },
+  {
+    "id": "rodo-kijun-kantokukan-2023-kiso-q29",
+    "exam": "rodo-kijun-kantokukan",
+    "year": 2023,
+    "season": "annual",
+    "session": "kiso",
+    "examDate": "2023-06-04",
+    "lawReferenceDate": "2023-04-01",
+    "qNumber": 29,
+    "officialQuestionLabel": "No. 29",
+    "subject": "基礎能力試験（多肢選択式）",
+    "category": "時事",
+    "topicTags": [
+      "時事",
+      "基礎能力"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "我が国の人口や高齢化等に関する記述として最も妥当なのはどれか。",
+    "choices": {
+      "ア": "原本の選択肢 1",
+      "イ": "原本の選択肢 2",
+      "ウ": "原本の選択肢 3",
+      "エ": "原本の選択肢 4",
+      "オ": "原本の選択肢 5"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "2020年の高齢化率は約28.6％で、25％を超えている。地域おこし協力隊では都市地域等から移住した人が地域協力活動を行い、定住・定着を図る。",
+    "choiceExplanations": {
+      "ア": "2020年の高齢化率は約28.6％で、25％を超えている。地域おこし協力隊では都市地域等から移住した人が地域協力活動を行い、定住・定着を図る。",
+      "イ": "2021年の出生数は約81万人で70万人を下回っていない。この年に総人口は減少した。",
+      "ウ": "農地面積は縮小しているが、2022年に1990年代の半分以下になっていない。2020年から増加傾向へ転じたという説明も合わない。",
+      "エ": "2018年の空き家率は13.6％である。特定空家等は倒壊の危険など管理状態に着目した区分であり、相続人がいないことが定義ではない。",
+      "オ": "デジタル田園都市国家構想は、デジタル技術を活用して地域課題を解決する構想である。メタバースは仮想空間を指し、脳波でロボットを操作する技術を意味しない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso29-1.webp"
+    ],
+    "imageAltTexts": [
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 29の原本"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf#page=43",
+    "sourceAttribution": "出典：人事院 2023年度労働基準監督官採用試験 基礎能力試験（多肢選択式） No. 29。解説は過去問AI作成。",
+    "license": "JINJI-owner-authorized"
+  },
+  {
+    "id": "rodo-kijun-kantokukan-2023-kiso-q30",
+    "exam": "rodo-kijun-kantokukan",
+    "year": 2023,
+    "season": "annual",
+    "session": "kiso",
+    "examDate": "2023-06-04",
+    "lawReferenceDate": "2023-04-01",
+    "qNumber": 30,
+    "officialQuestionLabel": "No. 30",
+    "subject": "基礎能力試験（多肢選択式）",
+    "category": "時事",
+    "topicTags": [
+      "時事",
+      "基礎能力"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "世界の都市等に関する記述として最も妥当なのはどれか。",
+    "choices": {
+      "ア": "原本の選択肢 1",
+      "イ": "原本の選択肢 2",
+      "ウ": "原本の選択肢 3",
+      "エ": "原本の選択肢 4",
+      "オ": "原本の選択肢 5"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "2022年に日本政府はキーウ、チョルノービリなどのウクライナ語に基づく呼称へ変更した。グルジアからジョージアへの表記変更は2015年に行われた。",
+    "choiceExplanations": {
+      "ア": "ドーハはアラビア半島東部のペルシャ湾岸にある。カタールではイスラム教が国教であり、キリスト教徒が多数とする説明は誤りである。",
+      "イ": "イエスの生誕地とされるのはベツレヘムで、ムハンマドのヒジュラの行き先はメディナである。米国は2018年にエルサレムへ大使館を移している。",
+      "ウ": "スイスの主要言語にはドイツ語、フランス語、イタリア語、ロマンシュ語があり、連邦の首都機能はベルンにある。ジュネーブにWHO本部がある点だけでは記述全体は正しくならない。",
+      "エ": "2022年に日本政府はキーウ、チョルノービリなどのウクライナ語に基づく呼称へ変更した。グルジアからジョージアへの表記変更は2015年に行われた。",
+      "オ": "アンコールワットはカンボジアにあり、新首都ヌサンタラはバリ島ではなくカリマンタン島に計画された。バリのG20会議にはロシアも参加した。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso30-1.webp"
+    ],
+    "imageAltTexts": [
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 30の原本"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf#page=43",
+    "sourceAttribution": "出典：人事院 2023年度労働基準監督官採用試験 基礎能力試験（多肢選択式） No. 30。解説は過去問AI作成。",
+    "license": "JINJI-owner-authorized"
+  },
+  {
+    "id": "rodo-kijun-kantokukan-2023-kiso-q31",
+    "exam": "rodo-kijun-kantokukan",
+    "year": 2023,
+    "season": "annual",
+    "session": "kiso",
+    "examDate": "2023-06-04",
+    "lawReferenceDate": "2023-04-01",
+    "qNumber": 31,
+    "officialQuestionLabel": "No. 31",
+    "subject": "基礎能力試験（多肢選択式）",
+    "category": "一般知識",
+    "topicTags": [
+      "一般知識",
+      "基礎能力"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "振り子のおもりの運動で一定に保たれる量、糸が釘に引っ掛かった場合の最高点、糸が切れた場合の最高点の組合せはどれか。",
+    "choices": {
+      "ア": "運動エネルギー、Hより高く、Hと同じ高さに",
+      "イ": "運動エネルギー、Hと同じ高さに、Hより低く",
+      "ウ": "力学的エネルギー、Hより高く、Hと同じ高さに",
+      "エ": "力学的エネルギー、Hと同じ高さに、Hと同じ高さに",
+      "オ": "力学的エネルギー、Hと同じ高さに、Hより低く"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "張力は変位に垂直で仕事をせず、重力は保存力なので力学的エネルギーは一定である。釘に掛かる場合は最高点がh、糸が切れる場合は最高点にも水平の運動エネルギーが残るのでhより低い。",
+    "choiceExplanations": {
+      "ア": "糸の張力は仕事をしないが、重力は小球の運動エネルギーを増減させる。一定なのは運動エネルギーだけではなく、位置エネルギーを含む力学的エネルギーである。",
+      "イ": "釘に掛かった後の高さと糸が切れた後の高さは記述のとおりである。ただし、一定に保たれる量は力学的エネルギーである。",
+      "ウ": "糸が釘に掛かっても張力は仕事をしない。小球が再び静止する最高点では、最初より高い位置エネルギーを得られない。",
+      "エ": "釘に掛かったときの最高点はもとの高さhである。糸が切れると最高点でも水平速度が残るため、hまで戻れない。",
+      "オ": "張力は変位に垂直で仕事をせず、重力は保存力なので力学的エネルギーは一定である。釘に掛かる場合は最高点がh、糸が切れる場合は最高点にも水平の運動エネルギーが残るのでhより低い。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso31-1.webp"
+    ],
+    "imageAltTexts": [
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 31の原本"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf#page=43",
+    "sourceAttribution": "出典：人事院 2023年度労働基準監督官採用試験 基礎能力試験（多肢選択式） No. 31。解説は過去問AI作成。",
+    "license": "JINJI-owner-authorized"
+  },
+  {
+    "id": "rodo-kijun-kantokukan-2023-kiso-q32",
+    "exam": "rodo-kijun-kantokukan",
+    "year": 2023,
+    "season": "annual",
+    "session": "kiso",
+    "examDate": "2023-06-04",
+    "lawReferenceDate": "2023-04-01",
+    "qNumber": 32,
+    "officialQuestionLabel": "No. 32",
+    "subject": "基礎能力試験（多肢選択式）",
+    "category": "一般知識",
+    "topicTags": [
+      "一般知識",
+      "基礎能力"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "原子や分子に関する記述として最も妥当なのはどれか。",
+    "choices": {
+      "ア": "原本の選択肢 1",
+      "イ": "原本の選択肢 2",
+      "ウ": "原本の選択肢 3",
+      "エ": "原本の選択肢 4",
+      "オ": "原本の選択肢 5"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "原子は原子核と電子で構成される。陽子数が等しく中性子数が異なる同じ元素の原子を互いに同位体といい、重水素や炭素14が例となる。",
+    "choiceExplanations": {
+      "ア": "原子は原子核と電子で構成される。陽子数が等しく中性子数が異なる同じ元素の原子を互いに同位体といい、重水素や炭素14が例となる。",
+      "イ": "ハロゲンは周期表の17族で、フッ素や塩素などが該当する。リチウムは1族、ネオンは18族である。",
+      "ウ": "第5周期にもヨウ素などの非金属元素が含まれる。アルカリ土類金属は周期ではなく主に2族の分類である。",
+      "エ": "電子を放出すると陽イオンになる。塩素は典型的にはCl⁻、カリウムはK⁺となる。",
+      "オ": "原子が電子対を共有して分子を作るのは共有結合である。窒素分子の結合は二重ではなく三重結合である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso32-1.webp"
+    ],
+    "imageAltTexts": [
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 32の原本"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf#page=43",
+    "sourceAttribution": "出典：人事院 2023年度労働基準監督官採用試験 基礎能力試験（多肢選択式） No. 32。解説は過去問AI作成。",
+    "license": "JINJI-owner-authorized"
+  },
+  {
+    "id": "rodo-kijun-kantokukan-2023-kiso-q33",
+    "exam": "rodo-kijun-kantokukan",
+    "year": 2023,
+    "season": "annual",
+    "session": "kiso",
+    "examDate": "2023-06-04",
+    "lawReferenceDate": "2023-04-01",
+    "qNumber": 33,
+    "officialQuestionLabel": "No. 33",
+    "subject": "基礎能力試験（多肢選択式）",
+    "category": "一般知識",
+    "topicTags": [
+      "一般知識",
+      "基礎能力"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "気象に関する記述として最も妥当なのはどれか。",
+    "choices": {
+      "ア": "原本の選択肢 1",
+      "イ": "原本の選択肢 2",
+      "ウ": "原本の選択肢 3",
+      "エ": "原本の選択肢 4",
+      "オ": "原本の選択肢 5"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "梅雨前線に太平洋高気圧の縁を回る暖かく湿った空気が流れ込むと、前線付近で上昇気流や積乱雲が発達し、大雨や集中豪雨となる場合がある。",
+    "choiceExplanations": {
+      "ア": "梅雨前線に太平洋高気圧の縁を回る暖かく湿った空気が流れ込むと、前線付近で上昇気流や積乱雲が発達し、大雨や集中豪雨となる場合がある。",
+      "イ": "エルニーニョは赤道太平洋中・東部の海面水温が平年より高くなる現象である。低くなるのはラニーニャである。",
+      "ウ": "台風は強い熱帯低気圧である。北半球では下層の空気が反時計回りに流入し、目の付近では風が弱い。",
+      "エ": "フェーンでは山の風下で下降した空気が乾燥し、高温になる。風下で雨を降らせることを指すものではない。",
+      "オ": "日本の冬の典型的な気圧配置は西高東低である。北西季節風は日本海を渡る際に水蒸気を得て、日本海側に雪をもたらす。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso33-1.webp"
+    ],
+    "imageAltTexts": [
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 33の原本"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf#page=43",
+    "sourceAttribution": "出典：人事院 2023年度労働基準監督官採用試験 基礎能力試験（多肢選択式） No. 33。解説は過去問AI作成。",
+    "license": "JINJI-owner-authorized"
+  },
+  {
+    "id": "rodo-kijun-kantokukan-2023-kiso-q34",
+    "exam": "rodo-kijun-kantokukan",
+    "year": 2023,
+    "season": "annual",
+    "session": "kiso",
+    "examDate": "2023-06-04",
+    "lawReferenceDate": "2023-04-01",
+    "qNumber": 34,
+    "officialQuestionLabel": "No. 34",
+    "subject": "基礎能力試験（多肢選択式）",
+    "category": "一般知識",
+    "topicTags": [
+      "一般知識",
+      "基礎能力"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "江戸時代の我が国の対外関係に関する記述として最も妥当なのはどれか。",
+    "choices": {
+      "ア": "原本の選択肢 1",
+      "イ": "原本の選択肢 2",
+      "ウ": "原本の選択肢 3",
+      "エ": "原本の選択肢 4",
+      "オ": "原本の選択肢 5"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "幕府が諸藩に攘夷を命じた後、長州藩は下関海峡を通る外国船を砲撃した。翌年、英・仏・米・蘭の連合艦隊が下関を攻撃した。",
+    "choiceExplanations": {
+      "ア": "オランダとは平戸から出島へ商館を移した後も貿易が続いた。イギリス商館は経営上の事情などで撤退し、両国とも旧教国として追放されたわけではない。",
+      "イ": "モリソン号は異国船打払令の下で砲撃を受けた。その後、アヘン戦争の情報などを受けて薪水給与令が出され、方針が緩和された。",
+      "ウ": "井伊直弼は孝明天皇の勅許を得ずに日米修好通商条約の調印を進めた。安政の五か国条約の相手にはオランダが入り、スペインは含まれない。",
+      "エ": "幕府が諸藩に攘夷を命じた後、長州藩は下関海峡を通る外国船を砲撃した。翌年、英・仏・米・蘭の連合艦隊が下関を攻撃した。",
+      "オ": "薩英戦争後、薩摩はイギリスと接近した。幕府が軍制改革などで援助や指導を求めた相手はフランスである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso34-1.webp"
+    ],
+    "imageAltTexts": [
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 34の原本"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf#page=43",
+    "sourceAttribution": "出典：人事院 2023年度労働基準監督官採用試験 基礎能力試験（多肢選択式） No. 34。解説は過去問AI作成。",
+    "license": "JINJI-owner-authorized"
+  },
+  {
+    "id": "rodo-kijun-kantokukan-2023-kiso-q35",
+    "exam": "rodo-kijun-kantokukan",
+    "year": 2023,
+    "season": "annual",
+    "session": "kiso",
+    "examDate": "2023-06-04",
+    "lawReferenceDate": "2023-04-01",
+    "qNumber": 35,
+    "officialQuestionLabel": "No. 35",
+    "subject": "基礎能力試験（多肢選択式）",
+    "category": "一般知識",
+    "topicTags": [
+      "一般知識",
+      "基礎能力"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "アメリカ合衆国の独立に関する記述として最も妥当なのはどれか。",
+    "choices": {
+      "ア": "原本の選択肢 1",
+      "イ": "原本の選択肢 2",
+      "ウ": "原本の選択肢 3",
+      "エ": "原本の選択肢 4",
+      "オ": "原本の選択肢 5"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "1783年のパリ条約で独立が承認され、1787年の憲法制定会議は連邦憲法を採択した。憲法には人民主権、三権分立、州と連邦政府の権限配分が反映されている。",
+    "choiceExplanations": {
+      "ア": "奴隷制のプランテーションが発達したのは主に南部である。南北戦争は独立後の19世紀に起きた。",
+      "イ": "アメリカ独立戦争と独立宣言はフランス革命に先行する。植民地側の反発が強まった背景には、イギリスが植民地に課した税があった。",
+      "ウ": "植民地軍の総司令官はワシントンで、ジェファソンは独立宣言の起草に関わった。採択された宣言に奴隷解放は明記されていない。",
+      "エ": "フランスとスペインは対英戦に参加したが、ロシアは武装中立同盟を主導した。オランダはイギリスと戦争になり、記述どおりにイギリスを支援したわけではない。",
+      "オ": "1783年のパリ条約で独立が承認され、1787年の憲法制定会議は連邦憲法を採択した。憲法には人民主権、三権分立、州と連邦政府の権限配分が反映されている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso35-1.webp"
+    ],
+    "imageAltTexts": [
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 35の原本"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf#page=43",
+    "sourceAttribution": "出典：人事院 2023年度労働基準監督官採用試験 基礎能力試験（多肢選択式） No. 35。解説は過去問AI作成。",
+    "license": "JINJI-owner-authorized"
+  },
+  {
+    "id": "rodo-kijun-kantokukan-2023-kiso-q36",
+    "exam": "rodo-kijun-kantokukan",
+    "year": 2023,
+    "season": "annual",
+    "session": "kiso",
+    "examDate": "2023-06-04",
+    "lawReferenceDate": "2023-04-01",
+    "qNumber": 36,
+    "officialQuestionLabel": "No. 36",
+    "subject": "基礎能力試験（多肢選択式）",
+    "category": "一般知識",
+    "topicTags": [
+      "一般知識",
+      "基礎能力"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "地形の成り立ちや特徴に関する記述として最も妥当なのはどれか。",
+    "choices": {
+      "ア": "原本の選択肢 1",
+      "イ": "原本の選択肢 2",
+      "ウ": "原本の選択肢 3",
+      "エ": "原本の選択肢 4",
+      "オ": "原本の選択肢 5"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "弱酸性の雨水や地下水が石灰岩の炭酸カルシウムを溶かすことで、カルスト地形が発達する。鍾乳洞やタワーカルストはその代表例である。",
+    "choiceExplanations": {
+      "ア": "火山活動や地殻変動は内的営力である。風化・侵食・運搬・堆積は外的営力に当たる。",
+      "イ": "扇央は水が浸透しやすいので、水田より畑や果樹園などに使われやすい。扇端では浸透した水が湧き出すことがある。",
+      "ウ": "山地を流れた氷河の侵食がU字谷を作り、そこに海水が入った地形はフィヨルドである。ラグーンは砂州などで外海から隔てられた水域を指す。",
+      "エ": "リアス海岸は海水面の上昇や地盤の沈降で谷が海に沈んでできる。細く入り組んだ湾では津波の高さが増すことがある。",
+      "オ": "弱酸性の雨水や地下水が石灰岩の炭酸カルシウムを溶かすことで、カルスト地形が発達する。鍾乳洞やタワーカルストはその代表例である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso36-1.webp"
+    ],
+    "imageAltTexts": [
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 36の原本"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf#page=43",
+    "sourceAttribution": "出典：人事院 2023年度労働基準監督官採用試験 基礎能力試験（多肢選択式） No. 36。解説は過去問AI作成。",
+    "license": "JINJI-owner-authorized"
+  },
+  {
+    "id": "rodo-kijun-kantokukan-2023-kiso-q37",
+    "exam": "rodo-kijun-kantokukan",
+    "year": 2023,
+    "season": "annual",
+    "session": "kiso",
+    "examDate": "2023-06-04",
+    "lawReferenceDate": "2023-04-01",
+    "qNumber": 37,
+    "officialQuestionLabel": "No. 37",
+    "subject": "基礎能力試験（多肢選択式）",
+    "category": "一般知識",
+    "topicTags": [
+      "一般知識",
+      "基礎能力"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "中国の思想家に関する記述として最も妥当なのはどれか。",
+    "choices": {
+      "ア": "原本の選択肢 1",
+      "イ": "原本の選択肢 2",
+      "ウ": "原本の選択肢 3",
+      "エ": "原本の選択肢 4",
+      "オ": "原本の選択肢 5"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "韓非子は道徳的な教化よりも、法律と厳格な賞罰による統治を重視した。秦は始皇帝の下で法家の思想を統治に採り入れた。",
+    "choiceExplanations": {
+      "ア": "朱子は人間の本性に理が備わるとする性即理を説いた。心即理と知行合一は王陽明の考えである。",
+      "イ": "韓非子は道徳的な教化よりも、法律と厳格な賞罰による統治を重視した。秦は始皇帝の下で法家の思想を統治に採り入れた。",
+      "ウ": "孔子は仁や礼を重んじたが、「大道廃れて仁義あり」や無為自然は老子・道家の思想である。",
+      "エ": "四端と性善説を説いたのは孟子である。荀子は性悪説に立ち、礼や教育によって人間を導くことを説いた。",
+      "オ": "墨子の兼愛は身内に限らず、分け隔てなく人を愛することである。攻撃的な戦争に反対する非攻も唱えた。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso37-1.webp"
+    ],
+    "imageAltTexts": [
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 37の原本"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf#page=43",
+    "sourceAttribution": "出典：人事院 2023年度労働基準監督官採用試験 基礎能力試験（多肢選択式） No. 37。解説は過去問AI作成。",
+    "license": "JINJI-owner-authorized"
+  },
+  {
+    "id": "rodo-kijun-kantokukan-2023-kiso-q38",
+    "exam": "rodo-kijun-kantokukan",
+    "year": 2023,
+    "season": "annual",
+    "session": "kiso",
+    "examDate": "2023-06-04",
+    "lawReferenceDate": "2023-04-01",
+    "qNumber": 38,
+    "officialQuestionLabel": "No. 38",
+    "subject": "基礎能力試験（多肢選択式）",
+    "category": "一般知識",
+    "topicTags": [
+      "一般知識",
+      "基礎能力"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "我が国の国会及び国会議員に関する記述として最も妥当なのはどれか。",
+    "choices": {
+      "ア": "原本の選択肢 1",
+      "イ": "原本の選択肢 2",
+      "ウ": "原本の選択肢 3",
+      "エ": "原本の選択肢 4",
+      "オ": "原本の選択肢 5"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "憲法44条は議員や選挙人の資格について、列挙された理由での差別を禁じる。公職選挙法では被選挙権の年齢を衆議院25歳、参議院30歳以上としている。",
+    "choiceExplanations": {
+      "ア": "憲法41条は国会を国権の最高機関、唯一の立法機関と定める。ただし、三権分立の下で内閣や裁判所への一般的な指揮命令権はない。",
+      "イ": "両議院の議員は全国民を代表する。国会議員を選挙区の有権者が直接解職するリコール制度は設けられていない。",
+      "ウ": "憲法44条は議員や選挙人の資格について、列挙された理由での差別を禁じる。公職選挙法では被選挙権の年齢を衆議院25歳、参議院30歳以上としている。",
+      "エ": "衆議院議員の任期が途中で終わるのは衆議院の解散の場合である。参議院議員の任期は6年で、3年ごとに半数が改選される。",
+      "オ": "大臣と国会議員の兼務は可能である。一方、地方公共団体の長は国会議員を兼ねることができない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso38-1.webp"
+    ],
+    "imageAltTexts": [
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 38の原本"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf#page=43",
+    "sourceAttribution": "出典：人事院 2023年度労働基準監督官採用試験 基礎能力試験（多肢選択式） No. 38。解説は過去問AI作成。",
+    "license": "JINJI-owner-authorized"
+  },
+  {
+    "id": "rodo-kijun-kantokukan-2023-kiso-q39",
+    "exam": "rodo-kijun-kantokukan",
+    "year": 2023,
+    "season": "annual",
+    "session": "kiso",
+    "examDate": "2023-06-04",
+    "lawReferenceDate": "2023-04-01",
+    "qNumber": 39,
+    "officialQuestionLabel": "No. 39",
+    "subject": "基礎能力試験（多肢選択式）",
+    "category": "一般知識",
+    "topicTags": [
+      "一般知識",
+      "基礎能力"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "財の人気が高まり、原材料価格が上昇したとき、図の需要曲線と供給曲線はどう動き、価格はどう変化するか。",
+    "choices": {
+      "ア": "原本の選択肢 1",
+      "イ": "原本の選択肢 2",
+      "ウ": "原本の選択肢 3",
+      "エ": "原本の選択肢 4",
+      "オ": "原本の選択肢 5"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "右下がりの需要Bは人気の高まりで右上へ、右上がりの供給Aは原材料費の上昇で左上へ動く。どちらの変化も均衡価格を上昇させる。",
+    "choiceExplanations": {
+      "ア": "右上がりのAが供給、右下がりのBが需要である。人気の高まりが動かすのは供給曲線Aではなく需要曲線Bである。",
+      "イ": "原材料価格の上昇は供給曲線Aを左上に移す。需要曲線Bを動かす要因は財の人気が高まったことである。",
+      "ウ": "人気の高まりで需要Bが右上に移る点は正しい。原材料価格上昇は供給量を減らすため、供給Aは右下ではなく左上に移る。",
+      "エ": "原材料費の上昇で供給Aが左上に移る点は正しい。人気が高まると需要Bは左下ではなく右上へ移る。",
+      "オ": "右下がりの需要Bは人気の高まりで右上へ、右上がりの供給Aは原材料費の上昇で左上へ動く。どちらの変化も均衡価格を上昇させる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso39-1.webp"
+    ],
+    "imageAltTexts": [
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 39の原本"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf#page=43",
+    "sourceAttribution": "出典：人事院 2023年度労働基準監督官採用試験 基礎能力試験（多肢選択式） No. 39。解説は過去問AI作成。",
+    "license": "JINJI-owner-authorized"
+  },
+  {
+    "id": "rodo-kijun-kantokukan-2023-kiso-q40",
+    "exam": "rodo-kijun-kantokukan",
+    "year": 2023,
+    "season": "annual",
+    "session": "kiso",
+    "examDate": "2023-06-04",
+    "lawReferenceDate": "2023-04-01",
+    "qNumber": 40,
+    "officialQuestionLabel": "No. 40",
+    "subject": "基礎能力試験（多肢選択式）",
+    "category": "一般知識",
+    "topicTags": [
+      "一般知識",
+      "基礎能力"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "高度情報化社会に関する記述として最も妥当なのはどれか。",
+    "choices": {
+      "ア": "原本の選択肢 1",
+      "イ": "原本の選択肢 2",
+      "ウ": "原本の選択肢 3",
+      "エ": "原本の選択肢 4",
+      "オ": "原本の選択肢 5"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "メディア・リテラシーには、情報源を選び、内容や根拠を批判的に吟味する力が含まれる。情報社会では情報通信技術を利用する際の情報倫理も重要である。",
+    "choiceExplanations": {
+      "ア": "メディア・リテラシーには、情報源を選び、内容や根拠を批判的に吟味する力が含まれる。情報社会では情報通信技術を利用する際の情報倫理も重要である。",
+      "イ": "肖像権は産業財産権に含まれない。映像や音楽の複製等に適用されるのは著作権法の規定で、特許権の問題ではない。",
+      "ウ": "デジタル・デバイドは国と国の間に限らず、国内でも年齢、地域、所得等によって生じる。電子政府が発達しても、全ての利用格差がなくなるわけではない。",
+      "エ": "SOHOは小規模な事務所や自宅を拠点とする働き方を指す。ネットワーク越しにサーバーやソフトウェアを使う仕組みはクラウドであり、仮想現実とは異なる。",
+      "オ": "インターネット上での売買は電子商取引で、企業間はB to B、消費者間はC to Cである。サブスクリプションは継続利用に対する課金方式を指す。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/rodo-kijun-kantokukan/2023/kiso40-1.webp"
+    ],
+    "imageAltTexts": [
+      "人事院の2023年度基礎能力試験（多肢選択式） No. 40の原本"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241125061927id_/https://www.jinji.go.jp/content/900035931.pdf#page=43",
+    "sourceAttribution": "出典：人事院 2023年度労働基準監督官採用試験 基礎能力試験（多肢選択式） No. 40。解説は過去問AI作成。",
+    "license": "JINJI-owner-authorized"
+  }
+]
