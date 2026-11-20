@@ -3,6 +3,7 @@ import { YAMAGUCHI_SEIKA_QUESTIONS } from "@/data/questions/yamaguchi-seika";
 import { YAMAGUCHI_FUGU_QUESTIONS } from "@/data/questions/yamaguchi-fugu";
 import groups2024 from "@/data/questions/yamaguchi-fugu/2024-original-groups.json";
 import groups2023 from "@/data/questions/yamaguchi-fugu/2023-original-groups.json";
+import groups2022 from "@/data/questions/yamaguchi-fugu/2022-original-groups.json";
 import groups2025 from "@/data/questions/yamaguchi-fugu/2025-original-groups.json";
 import groups2026 from "@/data/questions/yamaguchi-fugu/2026-original-groups.json";
 import { existsSync } from "node:fs";
@@ -82,15 +83,16 @@ describe("ふぐ処理師: 原大問を保持した解答欄別演習", () => {
   const answers: Record<number, string> = {
     2024: "キイコカオアコケエウ○×○××××○××オエウキカ○××○○○×○○○××○○×××○○×○×××○エウオアイ××○○×オイアキエコシク×○×○××○○××○×○ウキエオクイ○○××○○○○イエオカウ",
     2023: "キイコアカ○○×○×ア○×○○キカウオケ○×○×○イカオエコ×○×○○イウオアエ○○×××○○××○×○○○×ウイエオア××××○イエオウカキ×○○○×○××○×××○××○×○××イアウアイコクウキ",
+    2022: "コクウキオキイアエ×○×○×ウアアオウク×○×○○カクエコイイオアウエ○○○××オイエアウ×○○×××○○×○オアエイウ×○○×○××○○×○×○○○アオカアカウオイアエ○○○○××○×××エケアクイ",
     2025: "コアクカキキコイクエ××○○○○×○○×○○○×○イキオエウイウアオエ×○○×○×○×○○××○×○ウアエオイウイエオア×○×○キオエアカイクウ×○○○×○○××○×××○×○×○○×○○○×○×○○",
     2026: "キイコカオキイコアカ××○○○イ×○×○キカクオケキカオエコ×○××○○○×○×○○×○×××××○オウエアイエアウオイ××○○○○ウカアイク××○○×○××○○×○○×○×○×エウオイカア×○×○○",
   };
-  for (const year of [2023, 2024, 2025, 2026]) it(`${year}: 100欄の正答・全語群解説と原大問`, () => {
+  for (const year of [2022, 2023, 2024, 2025, 2026]) it(`${year}: 100欄の正答・全語群解説と原大問`, () => {
     const qs = YAMAGUCHI_FUGU_QUESTIONS.filter(q => q.year === year);
     expect(qs).toHaveLength(100);
     expect(qs.map(q => q.qNumber)).toEqual(Array.from({ length: 100 }, (_, i) => i + 1));
     expect(qs.map(q => q.officialAnswerNumber).join("")).toBe(answers[year]);
-    const groups = year === 2023 ? groups2023 : year === 2024 ? groups2024 : year === 2025 ? groups2025 : groups2026;
+    const groups = year === 2022 ? groups2022 : year === 2023 ? groups2023 : year === 2024 ? groups2024 : year === 2025 ? groups2025 : groups2026;
     expect(groups).toHaveLength(year === 2022 ? 21 : year === 2024 || year === 2025 ? 18 : 19);
     expect(groups.flatMap(g => g.slots)).toEqual(qs.map(q => q.qNumber));
     for (const q of qs) {
