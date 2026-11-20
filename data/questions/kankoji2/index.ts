@@ -1,4 +1,5 @@
 import type { ChoiceKey, Question, Season } from "@/lib/questions/types";
+import source2022Late from "./2022-late.json";
 import source2023Early from "./2023-early.json";
 import source2023Late from "./2023-late.json";
 import source2024Early from "./2024-early.json";
@@ -90,4 +91,5 @@ export const KANKOJI2_QUESTIONS: Question[] = [
   ...toQuestions(source2024Early as Kankoji2Source),
   ...toQuestions(source2023Late as Kankoji2Source),
   ...toQuestions(source2023Early as Kankoji2Source),
+  ...toQuestions(source2022Late as Kankoji2Source),
 ];

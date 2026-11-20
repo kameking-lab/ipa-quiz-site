@@ -658,7 +658,7 @@ kankoji2: {
             categories: ["一般基礎（必須）", "空調・衛生設備（選択）", "設備機器・材料（必須）", "施工管理法（選択）", "法規（選択）", "施工管理法・基礎的な能力（必須）"],
         }],
     seasons: ["early", "late"],
-    yearRange: { start: 2023, end: 2026 },
+    yearRange: { start: 2022, end: 2026 },
 },
 zoen2: {
     code: "zoen2",
