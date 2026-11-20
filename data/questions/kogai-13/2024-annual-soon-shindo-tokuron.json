@@ -1,0 +1,1442 @@
+[
+  {
+    "id": "kogai-13-2024-annual-soon-shindo-tokuron-q01",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "soon-shindo-tokuron",
+    "qNumber": 1,
+    "officialAnswerNumber": 5,
+    "type": "multiple-choice",
+    "subject": "騒音・振動特論",
+    "category": "騒音・振動特論",
+    "topicTags": [
+      "工場の騒音診断と調査手順"
+    ],
+    "difficulty": 2,
+    "question": "問1　工場の騒音診断と調査手順。掲載の公式問題画像の問1を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "騒音状況の確認では,どこで,どのような音が,どの程度問題になっているのかを明らかにする。",
+      "イ": "騒音放射源の確認において,最も大きな騒音が放射されている部分,箇所を明らかにする。",
+      "ウ": "騒音問題に関連する機械装置の概略及び機械系の概略機能,問題となっている地点付近と機械装置の位置関係などを把握する。",
+      "エ": "騒音源の調査では,問題となっている地点における代表点に騒音計,分析器, レベルレコーダなどをセットして,できる限り個々の音源の状態を変えて測定し,各音源の影響の程度を量的に把握する。",
+      "オ": "騒音診断のための測定方法は日本産業規格によって定められており,その方法に従って測定することが騒音対策のために不可欠である。"
+    },
+    "answer": "オ",
+    "explanation": "騒音診断は原因を突き止めて対策を選ぶために行い、対象設備や現場に応じて測定方法を決める。一律に特定のJISの方法で測る必要があるとはいえない。",
+    "choiceExplanations": {
+      "ア": "問題の地点と音の特徴や大きさを把握すると、調査対象と対策に必要な低減量を絞り込める。",
+      "イ": "機械全体を一つの音源とみなす前に、放射の大きい部分を特定すれば、対策を施す箇所が明確になる。",
+      "ウ": "設備の働きや受音点との位置関係を確認すると、発生時期や経路を予測し、測定点を選べる。",
+      "エ": "個々の音源の運転条件を変え、代表点で騒音の変化を測れば、各音源の寄与を分離しやすくなる。",
+      "オ": "環境騒音などの測定規格はあるが、原因調査の方法は対象に応じて選ぶ。騒音診断に一律のJIS測定方法が不可欠とする記述が誤りである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/soon-shindo-tokuron-p03.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 騒音・振動特論 公式問題冊子PDF 3ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214040752id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_12.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 騒音・振動特論 問1（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-soon-shindo-tokuron-q02",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "soon-shindo-tokuron",
+    "qNumber": 2,
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "subject": "騒音・振動特論",
+    "category": "騒音・振動特論",
+    "topicTags": [
+      "内張り吸音ダクトの伝達損失"
+    ],
+    "difficulty": 2,
+    "question": "問2　内張り吸音ダクトの伝達損失。掲載の公式問題画像の問2を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "0.45",
+      "イ": "0.50",
+      "ウ": "0.55",
+      "エ": "0.60",
+      "オ": "0.65"
+    },
+    "answer": "ウ",
+    "explanation": "周長U＝2.4 m、断面積S＝0.35 m²、長さl＝1.6 m。内張り吸音ダクトの近似式TL＝1.05(U/S)lα¹·⁴から、吸音率αは約0.55となる。",
+    "choiceExplanations": {
+      "ア": "吸音率0.45を近似式に代入すると伝達損失は約3.8 dBであり、5 dBに届かない。",
+      "イ": "吸音率0.50では11.52×0.50¹·⁴≒4.4 dBとなる。",
+      "ウ": "式の係数は1.05×(2.4/0.35)×1.6＝11.52。5 dBを得る吸音率は(5/11.52)^(1/1.4)≒0.55である。",
+      "エ": "吸音率0.60では近似式から約5.6 dBとなり、5 dBに必要な吸音率より大きい。",
+      "オ": "0.65では約6.3 dBの伝達損失になる。必要な吸音率は0.65より小さい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/soon-shindo-tokuron-p03.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 騒音・振動特論 公式問題冊子PDF 3ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214040752id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_12.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 騒音・振動特論 問2（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-soon-shindo-tokuron-q03",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "soon-shindo-tokuron",
+    "qNumber": 3,
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "subject": "騒音・振動特論",
+    "category": "騒音・振動特論",
+    "topicTags": [
+      "矩形面音源の近距離減衰"
+    ],
+    "difficulty": 2,
+    "question": "問3　矩形面音源の近距離減衰。掲載の公式問題画像の問3を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "2",
+      "イ": "4",
+      "ウ": "6",
+      "エ": "8",
+      "オ": "10"
+    },
+    "answer": "ア",
+    "explanation": "矩形面音源を面に垂直な方向から見る場合、距離減衰を0 dBと近似するのは短辺長aをπで割った距離までである。6.3/π≒2 m。",
+    "choiceExplanations": {
+      "ア": "短辺6.3 mからa/πを求めると約2 m。ここまでは面音源として大きさがほぼ変わらないと近似する。",
+      "イ": "約4 mは長辺12.6 mをπで割った距離である。0 dBの近距離範囲には短辺を用いる。",
+      "ウ": "約6 mは短辺そのものに近いが、境界の目安は短辺の長さをπで割った値である。",
+      "エ": "8 mは長辺をπで割った約4 mも超えており、0 dBとみなす近距離範囲ではない。",
+      "オ": "10 mでは矩形面の近距離範囲の目安約2 mを大幅に超えている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/soon-shindo-tokuron-p03.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 騒音・振動特論 公式問題冊子PDF 3ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214040752id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_12.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 騒音・振動特論 問3（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-soon-shindo-tokuron-q04",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "soon-shindo-tokuron",
+    "qNumber": 4,
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "subject": "騒音・振動特論",
+    "category": "騒音・振動特論",
+    "topicTags": [
+      "障壁の回折減衰とフレネル数"
+    ],
+    "difficulty": 2,
+    "question": "問4　障壁の回折減衰とフレネル数。掲載の公式問題画像の問4を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "A",
+      "イ": "B",
+      "ウ": "C",
+      "エ": "D",
+      "オ": "E"
+    },
+    "answer": "イ",
+    "explanation": "直接距離はどの受音点でも2 mで、障壁頂点までの距離も2 mなので、回折経路の行路差は頂点から受音点までの距離に等しい。周波数が2倍なら同じ減衰を得る行路差は半分の1 mで、Bに該当する。",
+    "choiceExplanations": {
+      "ア": "Aの行路差は0.5 mで、800 Hzでも400 HzでのDよりフレネル数が小さく、減衰量が不足する。",
+      "イ": "Bの行路差は1 mで、Dの2 mの半分である。800 Hzでは波長も半分になるのでフレネル数が同じになり、同じ減衰が得られる。",
+      "ウ": "Cの行路差は1.5 mであり、周波数を2倍にすると元のDよりフレネル数が1.5倍になる。",
+      "エ": "Dでは行路差が同じまま波長が半分になるため、減衰がより大きくなり、72 dBより低くなる。",
+      "オ": "Eの行路差は3 mと大きく、周波数が2倍のときのフレネル数は元のDの3倍になる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/soon-shindo-tokuron-p04.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 騒音・振動特論 公式問題冊子PDF 4ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214040752id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_12.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 騒音・振動特論 問4（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-soon-shindo-tokuron-q05",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "soon-shindo-tokuron",
+    "qNumber": 5,
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "subject": "騒音・振動特論",
+    "category": "騒音・振動特論",
+    "topicTags": [
+      "遮音塀の回折減衰と周波数"
+    ],
+    "difficulty": 2,
+    "question": "問5　遮音塀の回折減衰と周波数。掲載の公式問題画像の問5を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "12",
+      "イ": "15",
+      "ウ": "18",
+      "エ": "21",
+      "オ": "24"
+    },
+    "answer": "ウ",
+    "explanation": "行路差が一定なら、周波数を680 Hzから340 Hzに半分にするとフレネル数も半分となる。21 dBを得る範囲の回折減衰はおおむねフレネル数の対数で変化し、約3 dB減って18 dBとなる。",
+    "choiceExplanations": {
+      "ア": "12 dBは元より9 dBも小さい。対数近似で9 dBの差に相当するフレネル数の変化はおおむね8分の1である。",
+      "イ": "15 dBは元より6 dB小さく、近似ではフレネル数が約4分の1になる変化に相当する。",
+      "ウ": "行路差は変わらず、波長が2倍になるのでフレネル数は半分。減衰量の変化は約10 log₁₀(1/2)＝−3 dBとなる。",
+      "エ": "同じ形状でも周波数を下げると波長が長くなり、塀を回折しやすくなる。同じ21 dBの減衰は得られない。",
+      "オ": "24 dBは元より3 dB大きい。フレネル数が増える方向の変化だが、設問の周波数低下ではフレネル数は下がる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/soon-shindo-tokuron-p04.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 騒音・振動特論 公式問題冊子PDF 4ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214040752id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_12.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 騒音・振動特論 問5（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-soon-shindo-tokuron-q06",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "soon-shindo-tokuron",
+    "qNumber": 6,
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "subject": "騒音・振動特論",
+    "category": "騒音・振動特論",
+    "topicTags": [
+      "音エネルギーの反射・吸音・透過"
+    ],
+    "difficulty": 2,
+    "question": "問6　音エネルギーの反射・吸音・透過。掲載の公式問題画像の問6を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "反射率Rは、吸音率αの逆数で表される。",
+      "イ": "開放された大きな窓は,τ= 1 とみなすことができる。",
+      "ウ": "開放された大きな窓は,α = 1 とみなすことができる。",
+      "エ": "入射音のエネルギーの 1/4 を透過させる壁は,τ= 0.25 である。",
+      "オ": "入射音のエネルギーの 1/4 を反射させる壁は,α = 0.75 である。"
+    },
+    "answer": "ア",
+    "explanation": "吸音率αは入射エネルギーのうち反射されない割合で、反射率Rと合わせて1になる。R＝1−αであり、逆数ではない。",
+    "choiceExplanations": {
+      "ア": "反射率は吸音率の補数である。逆数とすると、例えば吸音率0.5で反射率2となり、エネルギーの割合として成立しない。",
+      "イ": "開口面に入った音のほとんどは反対側へ透過するため、大きな開放窓は透過率1と近似できる。",
+      "ウ": "開放窓から入射した音は元の空間へほとんど反射しないため、入射側から見た吸音率は1とみなせる。",
+      "エ": "透過率は入射エネルギーに対する透過エネルギーの割合なので、1/4は0.25である。",
+      "オ": "反射率が0.25なら、反射されない割合は1−0.25＝0.75となる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/soon-shindo-tokuron-p05.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 騒音・振動特論 公式問題冊子PDF 5ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214040752id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_12.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 騒音・振動特論 問6（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-soon-shindo-tokuron-q07",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "soon-shindo-tokuron",
+    "qNumber": 7,
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "subject": "騒音・振動特論",
+    "category": "騒音・振動特論",
+    "topicTags": [
+      "穴あき板吸音構造の共鳴周波数"
+    ],
+    "difficulty": 2,
+    "question": "問7　穴あき板吸音構造の共鳴周波数。掲載の公式問題画像の問7を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "f₀＝c/(2π)√(P/[(t＋0.8ϕ)L])",
+      "イ": "f₀＝c/(2π)√(P/[(t＋0.8L)ϕ])",
+      "ウ": "f₀＝c/(2π)√(P/[0.8(t＋ϕ)L])",
+      "エ": "f₀＝c/(2π)√(L/[(t＋0.8ϕ)P])",
+      "オ": "f₀＝c/(2π)√(P/[(ϕ＋0.8t)L])"
+    },
+    "answer": "ア",
+    "explanation": "穴の空気を振動する質量、背後の空気層をばねとみなす。開口率P、背後空気層の厚さL、端補正込みの穴の有効長t＋0.8ϕから、f₀＝c/(2π)√(P/[(t＋0.8ϕ)L])となる。",
+    "choiceExplanations": {
+      "ア": "穴の端補正0.8ϕを板厚tに加え、その有効長と空気層の深さLで開口率Pを割った式が適切である。",
+      "イ": "0.8を掛ける長さは背後空気層の厚さLではなく穴径ϕである。分母には有効穴長とLの積が入る。",
+      "ウ": "板厚tは全体が有効な穴長に入る。0.8を掛けるのは端補正を求める穴径ϕの部分だけである。",
+      "エ": "開口率を上げると共鳴周波数が高くなるので、開口率は平方根内の分子に入る。",
+      "オ": "穴の有効長は板厚tに穴径に比例する端補正を足した値である。穴径に板厚の0.8倍を加えた値ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/soon-shindo-tokuron-p05.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 騒音・振動特論 公式問題冊子PDF 5ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214040752id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_12.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 騒音・振動特論 問7（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-soon-shindo-tokuron-q08",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "soon-shindo-tokuron",
+    "qNumber": 8,
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "subject": "騒音・振動特論",
+    "category": "騒音・振動特論",
+    "topicTags": [
+      "音響透過損失の透過率依存性"
+    ],
+    "difficulty": 2,
+    "question": "問8　音響透過損失の透過率依存性。掲載の公式問題画像の問8を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "音響透過損失は,透過率に比例する。",
+      "イ": "遮音材料の遮音性能は,音響透過損失の周波数特性で表される。",
+      "ウ": "音響透過損失の測定方法は,日本産業規格で規定されている。",
+      "エ": "騒音防止設計での実用計算式には,拡散音場で求められた音響透過損失の周波数特性が一般に使用される。",
+      "オ": "音響透過損失の周波数特性は,遮音機構の種類によって変化する。"
+    },
+    "answer": "ア",
+    "explanation": "音響透過損失はTL＝10 log₁₀(1/τ)であり、透過率τが小さいほど大きい。透過率に比例する関係ではない。",
+    "choiceExplanations": {
+      "ア": "透過率τが1/10なら10 dB、1/100なら20 dBとなる。透過率が小さくなるほど透過損失は大きくなる。",
+      "イ": "同じ材料でも周波数によって透過のしやすさが異なるため、透過損失を周波数帯ごとに示す。",
+      "ウ": "建築部材などの音響透過損失は、規格に定められた方法で測定し、遮音性能を比較できる。",
+      "エ": "拡散音場で測定された値は複数の方向からの入射を代表するため、実用上の騒音防止設計に用いられる。",
+      "オ": "単板の質量、二重壁の共鳴など、音の通過を抑える構造によって透過損失の周波数特性は異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/soon-shindo-tokuron-p06.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 騒音・振動特論 公式問題冊子PDF 6ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214040752id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_12.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 騒音・振動特論 問8（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-soon-shindo-tokuron-q09",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "soon-shindo-tokuron",
+    "qNumber": 9,
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "subject": "騒音・振動特論",
+    "category": "騒音・振動特論",
+    "topicTags": [
+      "機械の増設と防音壁に必要な厚さ"
+    ],
+    "difficulty": 2,
+    "question": "問9　機械の増設と防音壁に必要な厚さ。掲載の公式問題画像の問9を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "1.0",
+      "イ": "1.5",
+      "ウ": "2.0",
+      "エ": "2.5",
+      "オ": "3.0"
+    },
+    "answer": "イ",
+    "explanation": "機械が2台から8台になり、音響パワーは4倍で約6 dB増える。受音室での増加を3 dB以内とするには壁の透過損失を約3 dB増やすので、厚さ比は10^(3/18)≒1.47となる。",
+    "choiceExplanations": {
+      "ア": "厚さを変えないと透過損失も変わらず、機械の増加による約6 dBがそのまま受音側に現れる。",
+      "イ": "同じ材料なら面密度は厚さに比例するので、1.5倍では透過損失が18 log₁₀(1.5)≒3.17 dB増え、約6 dBの増加を3 dB以内にできる。",
+      "ウ": "2倍なら約5.4 dBの透過損失の追加になる。必要な約3 dBを超えるので最小に近い倍率ではない。",
+      "エ": "2.5倍では透過損失が約7.2 dBも増える。台数による増加を3 dB以内にするには1.5倍程度で足りる。",
+      "オ": "3倍なら透過損失は約8.6 dB増えるが、必要な増加は約3 dBである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/soon-shindo-tokuron-p07.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 騒音・振動特論 公式問題冊子PDF 7ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214040752id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_12.pdf#page=7",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 騒音・振動特論 問9（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-soon-shindo-tokuron-q10",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "soon-shindo-tokuron",
+    "qNumber": 10,
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "subject": "騒音・振動特論",
+    "category": "騒音・振動特論",
+    "topicTags": [
+      "騒音計の時間重み付け特性"
+    ],
+    "difficulty": 2,
+    "question": "問10　騒音計の時間重み付け特性。掲載の公式問題画像の問10を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "JIS C 1516:2020 では,電磁環境に対する性能を規定している。",
+      "イ": "騒音計のマイクロホンは,圧力形の全指向性マイクロホンである。",
+      "ウ": "周波数重み付け演算部は,音の大きさに関する聴覚の補正を与える A 特性を備えている。",
+      "エ": "時間重み付け特性 F の平均化時定数は 1 秒である。",
+      "オ": "検定の有効期間は 5 年間である。"
+    },
+    "answer": "エ",
+    "explanation": "騒音計の時間重み付け特性F（Fast）の時定数は0.125 s、S（Slow）は1 sである。",
+    "choiceExplanations": {
+      "ア": "電波などに対して表示値が許容範囲に収まるよう、JISは電磁環境への適合性を規定する。",
+      "イ": "音圧を測るための騒音計には、原理的に全指向性の圧力形マイクロホンを使用する。",
+      "ウ": "A特性は周波数による耳の感度差を測定値へ反映させる周波数重み付けである。",
+      "エ": "F特性は速い変動を追うため0.125 sを用い、1 sはS特性の時定数である。",
+      "オ": "取引・証明用の騒音計の検定の有効期間は5年で、継続して用いる場合は再検定を受ける。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/soon-shindo-tokuron-p08.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 騒音・振動特論 公式問題冊子PDF 8ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214040752id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_12.pdf#page=8",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 騒音・振動特論 問10（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-soon-shindo-tokuron-q11",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "soon-shindo-tokuron",
+    "qNumber": 11,
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "subject": "騒音・振動特論",
+    "category": "騒音・振動特論",
+    "topicTags": [
+      "1/3オクターブバンドの中心周波数"
+    ],
+    "difficulty": 2,
+    "question": "問11　1/3オクターブバンドの中心周波数。掲載の公式問題画像の問11を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "180／315／630",
+      "イ": "180／320／640",
+      "ウ": "200／315／630",
+      "エ": "200／320／640",
+      "オ": "220／320／640"
+    },
+    "answer": "ウ",
+    "explanation": "標準の中心周波数は160、200、250、315、400、500、630、800 Hzの順。隣接する帯域は約1.26倍の比で並ぶ。",
+    "choiceExplanations": {
+      "ア": "315と630 Hzは合うが、160 Hzの一つ上の標準中心周波数は180 Hzではなく200 Hzである。",
+      "イ": "160 Hzの次は200 Hzで、250 Hzの次と500 Hzの次はそれぞれ315 Hzと630 Hzになる。",
+      "ウ": "中心周波数は約1.26倍ずつ増える標準系列で、空欄の200、315、630 Hzに一致する。",
+      "エ": "200 Hzは合うが、他の二つを320 Hz、640 Hzとするのは1/3オクターブバンドの標準表記と一致しない。",
+      "オ": "160 Hzと250 Hzの間は220 Hzではなく200 Hzである。次の空欄も315と630 Hzを用いる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/soon-shindo-tokuron-p08.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 騒音・振動特論 公式問題冊子PDF 8ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214040752id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_12.pdf#page=8",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 騒音・振動特論 問11（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-soon-shindo-tokuron-q12",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "soon-shindo-tokuron",
+    "qNumber": 12,
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "subject": "騒音・振動特論",
+    "category": "騒音・振動特論",
+    "topicTags": [
+      "環境騒音の観測時間と実測時間"
+    ],
+    "difficulty": 2,
+    "question": "問12　環境騒音の観測時間と実測時間。掲載の公式問題画像の問12を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "騒音暴露レベルは,ある時間について,変動する騒音の騒音レベルをエネルギー的な平均値として表した量である。",
+      "イ": "等価騒音レベルは,ある時間について,変動する騒音のエネルギー的な総量を評価するための量である。",
+      "ウ": "時間帯補正等価騒音レベルは,昼間と夜間の時間帯別に,騒音の影響に関する重み付けをして評価した 1 日にわたる等価騒音レベルである。",
+      "エ": "実測時間は,観測時間のうち,実際に騒音を測定する時間である。",
+      "オ": "残留騒音は,ある一つの特定騒音に着目した場合,それ以外の全ての騒音である。"
+    },
+    "answer": "エ",
+    "explanation": "JIS Z 8731にいう実測時間は観測時間のうち、実際に騒音を測定している時間である。",
+    "choiceExplanations": {
+      "ア": "騒音暴露レベルは対象時間の騒音エネルギーの総量を基準時間1秒に規準化して表す。時間内のエネルギー平均は等価騒音レベルである。",
+      "イ": "等価騒音レベルは測定対象時間内のエネルギー平均であり、総量を表す騒音暴露レベルと異なる。",
+      "ウ": "時間帯補正等価騒音レベルは規定された時間帯に応じて補正する概念であり、昼間と夜間に限って必ず1日を評価する定義ではない。",
+      "エ": "観測する時間の全部について連続測定するとは限らない。観測時間内で実際に測定した時間が実測時間である。",
+      "オ": "特定騒音を除いた場合に残るすべての騒音は暗騒音に相当する。残留騒音はすべての特定騒音を取り除いた後に残る騒音を指す。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/soon-shindo-tokuron-p09.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 騒音・振動特論 公式問題冊子PDF 9ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214040752id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_12.pdf#page=9",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 騒音・振動特論 問12（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-soon-shindo-tokuron-q13",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "soon-shindo-tokuron",
+    "qNumber": 13,
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "subject": "騒音・振動特論",
+    "category": "騒音・振動特論",
+    "topicTags": [
+      "合成騒音レベルから機械別の寄与を計算"
+    ],
+    "difficulty": 2,
+    "question": "問13　合成騒音レベルから機械別の寄与を計算。掲載の公式問題画像の問13を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "3",
+      "イ": "5",
+      "ウ": "7",
+      "エ": "9",
+      "オ": "11"
+    },
+    "answer": "ウ",
+    "explanation": "合成値からAのエネルギーを引くとBは約80.03 dB。対策後のAが70 dBで、合計75 dBにできるBの上限は約73.35 dBなので、整数のdBでは少なくとも7 dB下げる。",
+    "choiceExplanations": {
+      "ア": "3 dBだけ下げてもB単独で約77 dBになり、合計の目標75 dBを超える。",
+      "イ": "5 dBの低減でB単独は約75 dBになるが、70 dBのAの寄与を加えると合計が75 dBを超える。",
+      "ウ": "必要な差は80.03−73.35≒6.68 dB。整数で示した選択肢のうち、最低限満たすのは7 dBである。",
+      "エ": "9 dB下げても目標は満たすが、約6.68 dB下げれば足りるので、最小の値ではない。",
+      "オ": "11 dBは7 dBより大きく、必要以上に機械Bの低減量を見込んでいる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/soon-shindo-tokuron-p09.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 騒音・振動特論 公式問題冊子PDF 9ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214040752id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_12.pdf#page=9",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 騒音・振動特論 問13（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-soon-shindo-tokuron-q14",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "soon-shindo-tokuron",
+    "qNumber": 14,
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "subject": "騒音・振動特論",
+    "category": "騒音・振動特論",
+    "topicTags": [
+      "時間率騒音レベルの記号と超過割合"
+    ],
+    "difficulty": 2,
+    "question": "問14　時間率騒音レベルの記号と超過割合。掲載の公式問題画像の問14を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "L_A5／5／N／L_AN,F,T",
+      "イ": "L_A5／5／(100−N)／L_AN,F,T",
+      "ウ": "L_A5／5／N／L_Aeq,T",
+      "エ": "L_A95／95／(100−N)／L_AN,F,T",
+      "オ": "L_A95／95／N／L_Aeq,T"
+    },
+    "answer": "イ",
+    "explanation": "90%レンジの上端は上から5%に当たり、L_A5と表す。小さい値から積算したときの累積割合100−N%に当たる、N%時間率騒音レベルはL_AN,F,Tと表す。",
+    "choiceExplanations": {
+      "ア": "L_A5と5%は正しいが、L_AN,F,Tは下から数える累積割合がN%でなく100−N%のところに当たる。",
+      "イ": "L_A5はそのレベル以上の値が5%ある境界。一般のL_AN,F,Tは上からN%なので、累積度数分布で下から100−N%に当たる。",
+      "ウ": "L_Aeq,Tは時間平均を示す等価騒音レベルの記号である。時間率騒音レベルの記号とは異なる。",
+      "エ": "100−N%は合うが、L_A95は上から95%に当たり、90%レンジの下端である。",
+      "オ": "L_A95を上端とする点が誤りである。JISの時間率騒音レベルは等価騒音レベルL_Aeq,Tと異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/soon-shindo-tokuron-p10.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 騒音・振動特論 公式問題冊子PDF 10ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214040752id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_12.pdf#page=10",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 騒音・振動特論 問14（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-soon-shindo-tokuron-q15",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "soon-shindo-tokuron",
+    "qNumber": 15,
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "subject": "騒音・振動特論",
+    "category": "騒音・振動特論",
+    "topicTags": [
+      "複数時間帯の24時間等価騒音レベル"
+    ],
+    "difficulty": 2,
+    "question": "問15　複数時間帯の24時間等価騒音レベル。掲載の公式問題画像の問15を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "51",
+      "イ": "54",
+      "ウ": "57",
+      "エ": "60",
+      "オ": "63"
+    },
+    "answer": "ウ",
+    "explanation": "周波数補正済みの各レベルを10^(L/10)に直し、それぞれ4、3、10、7時間分を積算し24時間で割る。常用対数を取って10倍すると約57.0 dB。",
+    "choiceExplanations": {
+      "ア": "51 dBはエネルギーの大きい60 dBの時間帯の寄与を十分に反映しない。10時間の60 dBだけでも24時間平均に約56.2 dB寄与する。",
+      "イ": "54 dBは各時間帯のdB値を時間で重み付けして算術平均したときの値に近いが、等価騒音レベルはエネルギーで平均する。",
+      "ウ": "4×10⁴·⁴＋10×10⁵·³＋10×10⁶を24で割り、10 log₁₀を取ると約57 dBである。",
+      "エ": "60 dBは最も大きい時間帯の値である。残りの14時間はこれを下回るため、24時間平均は60 dBより小さい。",
+      "オ": "63 dBは観測された各時間帯の最大値を超える。時間で重み付けした平均は最大値を上回らない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/soon-shindo-tokuron-p11.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 騒音・振動特論 公式問題冊子PDF 11ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214040752id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_12.pdf#page=11",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 騒音・振動特論 問15（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-soon-shindo-tokuron-q16",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "soon-shindo-tokuron",
+    "qNumber": 16,
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "subject": "騒音・振動特論",
+    "category": "騒音・振動特論",
+    "topicTags": [
+      "オクターブバンド分析からA特性騒音レベルを求める"
+    ],
+    "difficulty": 2,
+    "question": "問16　オクターブバンド分析からA特性騒音レベルを求める。掲載の公式問題画像の問16を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "2",
+      "イ": "5",
+      "ウ": "8",
+      "エ": "11",
+      "オ": "14"
+    },
+    "answer": "ウ",
+    "explanation": "各帯域の音圧レベルにA特性補正値を足してからエネルギー合成する。対策前は約76.7 dB、後は約68.9 dBとなり、差は約8 dB。",
+    "choiceExplanations": {
+      "ア": "2 dBは63 Hzの帯域だけの変化である。A特性で大きく寄与する中域を含めすべてのバンドを合成する。",
+      "イ": "5 dBは例えば250 Hz帯の低減量であり、各帯域をA特性で補正して合成した全体差より小さい。",
+      "ウ": "低周波数側を含めてA特性補正を施し、各帯域のエネルギーを足すと約76.7 dBから約68.9 dBとなる。",
+      "エ": "11 dBは両者の合成値の差より大きい。大幅に低減した帯域もあるが、対策後の低減量は帯域ごとの寄与で決まる。",
+      "オ": "14 dBは4000 Hzの低減量だが、他の帯域の寄与があるので全体では約8 dBにとどまる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/soon-shindo-tokuron-p11.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 騒音・振動特論 公式問題冊子PDF 11ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214040752id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_12.pdf#page=11",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 騒音・振動特論 問16（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-soon-shindo-tokuron-q17",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "soon-shindo-tokuron",
+    "qNumber": 17,
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "subject": "騒音・振動特論",
+    "category": "騒音・振動特論",
+    "topicTags": [
+      "振動防止対策の選択"
+    ],
+    "difficulty": 2,
+    "question": "問17　振動防止対策の選択。掲載の公式問題画像の問17を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "機械の保守や改善で加振力を小さくする。",
+      "イ": "工場機械での振動対策として,弾性支持を用いる。",
+      "ウ": "振動源対策として,動吸振器を用いる。",
+      "エ": "簡便かつ効果が大きい対策として,溝や地中塀を設ける。",
+      "オ": "機械基礎の重量を増やす。"
+    },
+    "answer": "エ",
+    "explanation": "地中に溝や壁を設ける対策は振動の伝搬を遮る手段だが、振動の波長に対して十分な寸法を要する。簡便で大きな効果が得られると一般化はできない。",
+    "choiceExplanations": {
+      "ア": "回転体のバランス調整や締結部の保守で加振力を小さくできれば、振動源に近い段階で振動を減らせる。",
+      "イ": "適切な柔らかさのばねなどで機械を支持し、設置面側へ伝わる振動を減らす方法がある。",
+      "ウ": "動吸振器は付加した質量とばねに振動を受け持たせ、特定周波数での発生源の応答を抑える。",
+      "エ": "溝や地中塀は深さや長さを必要とし、地盤条件や波長によって効果が変わるため、一般に簡便とはいえない。",
+      "オ": "基礎質量を増やして同じ加振力に対する加速度を抑えるなど、基礎の設計を通じて振動を減らせる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/soon-shindo-tokuron-p11.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 騒音・振動特論 公式問題冊子PDF 11ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214040752id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_12.pdf#page=11",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 騒音・振動特論 問17（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-soon-shindo-tokuron-q18",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "soon-shindo-tokuron",
+    "qNumber": 18,
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "subject": "騒音・振動特論",
+    "category": "騒音・振動特論",
+    "topicTags": [
+      "減衰比と共振の鋭さ"
+    ],
+    "difficulty": 2,
+    "question": "問18　減衰比と共振の鋭さ。掲載の公式問題画像の問18を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "0.04",
+      "イ": "0.1",
+      "ウ": "5",
+      "エ": "10",
+      "オ": "25"
+    },
+    "answer": "ウ",
+    "explanation": "共振の鋭さQ＝1/(2ζ)なので、Qを1/5とするには減衰比ζを5倍にする。質量とばね定数をそのままにする場合、減衰比はダンパーの減衰係数に比例する。",
+    "choiceExplanations": {
+      "ア": "減衰係数を0.04倍にすると減衰比が小さくなり、式ではQが25倍となる。",
+      "イ": "減衰係数を0.1倍にするとQは10倍になるので、共振を鈍くする条件と逆になる。",
+      "ウ": "質量とばね定数が一定なら、減衰係数を5倍にするとζが5倍、Qが1/5になる。",
+      "エ": "10倍の減衰係数ではQは1/10となり、設問で求める5分の1よりも小さくなる。",
+      "オ": "25倍ではQは1/25となる。Qの変化は減衰係数の2乗ではなく、1乗の逆数に比例する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/soon-shindo-tokuron-p12.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 騒音・振動特論 公式問題冊子PDF 12ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214040752id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_12.pdf#page=12",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 騒音・振動特論 問18（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-soon-shindo-tokuron-q19",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "soon-shindo-tokuron",
+    "qNumber": 19,
+    "officialAnswerNumber": 5,
+    "type": "multiple-choice",
+    "subject": "騒音・振動特論",
+    "category": "騒音・振動特論",
+    "topicTags": [
+      "振動伝達率を下げるばね定数"
+    ],
+    "difficulty": 2,
+    "question": "問19　振動伝達率を下げるばね定数。掲載の公式問題画像の問19を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "0.1",
+      "イ": "0.2",
+      "ウ": "0.3",
+      "エ": "0.4",
+      "オ": "0.5"
+    },
+    "answer": "オ",
+    "explanation": "無減衰で振動数比rが1より大きいとき伝達率は1/(r²−1)。伝達率0.5でr²＝3、目標0.2でr²＝6なので、r²に反比例するばね定数を1/2にする。",
+    "choiceExplanations": {
+      "ア": "ばね定数を0.1倍にするとr²は30となり、伝達率は約0.034まで下がる。",
+      "イ": "0.2倍ではr²＝15、伝達率は約0.071であり、目標の0.2より小さい。",
+      "ウ": "0.3倍ではr²＝10となり、伝達率が約0.11まで下がる。",
+      "エ": "0.4倍ではr²＝7.5、伝達率は約0.154で、設定したい値0.2より小さい。",
+      "オ": "ばね定数0.5倍でr²が3から6に倍増する。伝達率は1/(6−1)＝0.2となる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/soon-shindo-tokuron-p12.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 騒音・振動特論 公式問題冊子PDF 12ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214040752id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_12.pdf#page=12",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 騒音・振動特論 問19（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-soon-shindo-tokuron-q20",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "soon-shindo-tokuron",
+    "qNumber": 20,
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "subject": "騒音・振動特論",
+    "category": "騒音・振動特論",
+    "topicTags": [
+      "レイリー波の距離減衰と振動感覚補正"
+    ],
+    "difficulty": 2,
+    "question": "問20　レイリー波の距離減衰と振動感覚補正。掲載の公式問題画像の問20を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "49",
+      "イ": "51",
+      "ウ": "53",
+      "エ": "55",
+      "オ": "57"
+    },
+    "answer": "エ",
+    "explanation": "幾何減衰は10 log₁₀(20/2.5)≒9.0 dB、内部減衰は8.686×0.01×17.5≒1.5 dB。さらに750回転/分に対応する12.5 Hzの鉛直感覚補正を適用すると、振動レベルは約55 dBとなる。",
+    "choiceExplanations": {
+      "ア": "約49 dBは、球面に広がる実体波のように距離比に20 log₁₀を使った場合に近い。レイリー波の幾何減衰には10 log₁₀を使う。",
+      "イ": "51 dBは、距離と内部減衰を引いた加速度レベル約59.5 dBから8.5 dB程度引いた値である。12.5 Hzの鉛直補正はそれほど大きくない。",
+      "ウ": "53 dBは、より周波数の高い16 Hz付近の補正を適用した場合に近い。加振振動数は750÷60＝12.5 Hzである。",
+      "エ": "距離減衰と内部減衰を引くと約59.5 dBとなり、12.5 Hzの鉛直方向の感覚補正を加えると約55 dBである。",
+      "オ": "57 dBでは感覚補正が約2.5 dBになるが、12.5 Hzの鉛直方向の補正はそれより低い値である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/soon-shindo-tokuron-p12.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 騒音・振動特論 公式問題冊子PDF 12ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214040752id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_12.pdf#page=12",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 騒音・振動特論 問20（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-soon-shindo-tokuron-q21",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "soon-shindo-tokuron",
+    "qNumber": 21,
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "subject": "騒音・振動特論",
+    "category": "騒音・振動特論",
+    "topicTags": [
+      "表面波の幾何減衰と地盤の内部減衰"
+    ],
+    "difficulty": 2,
+    "question": "問21　表面波の幾何減衰と地盤の内部減衰。掲載の公式問題画像の問21を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "0.1",
+      "イ": "0.2",
+      "ウ": "0.3",
+      "エ": "0.4",
+      "オ": "0.5"
+    },
+    "answer": "イ",
+    "explanation": "距離の比は60/15＝4なので、表面波の幾何減衰は10 log₁₀4≒6.0 dB。観測された差15 dBからこれを引き、45 mで割ると約0.20 dB/m。",
+    "choiceExplanations": {
+      "ア": "0.1 dB/mなら45 mで4.5 dBの内部減衰が加わり、全体で約10.5 dBにしかならない。",
+      "イ": "幾何減衰は約6 dBなので、残る約9 dBが45 mの地盤の内部減衰である。1 m当たり約0.2 dBとなる。",
+      "ウ": "0.3 dB/mでは内部減衰だけで13.5 dBとなる。幾何減衰を加えた合計は実測の15 dBを超える。",
+      "エ": "0.4 dB/mでは内部減衰だけで18 dBとなり、実測の全減衰15 dBより大きい。",
+      "オ": "0.5 dB/mでは45 mで22.5 dBも減衰するため、幾何減衰を分ける前の実測値より大きすぎる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/soon-shindo-tokuron-p12.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 騒音・振動特論 公式問題冊子PDF 12ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214040752id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_12.pdf#page=12",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 騒音・振動特論 問21（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-soon-shindo-tokuron-q22",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "soon-shindo-tokuron",
+    "qNumber": 22,
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "subject": "騒音・振動特論",
+    "category": "騒音・振動特論",
+    "topicTags": [
+      "防振ゴムの特性と使用環境"
+    ],
+    "difficulty": 2,
+    "question": "問22　防振ゴムの特性と使用環境。掲載の公式問題画像の問22を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "形状の選択が比較的自由である。",
+      "イ": "高周波振動の絶縁にも有効である。",
+      "ウ": "1 個の防振ゴムで 3 方向のばね定数を選択できる。",
+      "エ": "耐熱性,耐寒性,耐候性などに優れ,あらゆる環境で使用することができる。",
+      "オ": "設計に際しては,動的ばね定数を考慮する必要がある。"
+    },
+    "answer": "エ",
+    "explanation": "防振ゴムは材質によって耐熱性、耐寒性、耐候性が異なる。温度や薬品、屋外での劣化などを考慮して選定する必要がある。",
+    "choiceExplanations": {
+      "ア": "ゴムは成形しやすく、取付条件や求める弾性に合わせて形状を選べる。",
+      "イ": "金属ばねなどと比べて材料自体に減衰があり、高周波の振動を伝えにくくする用途にも使える。",
+      "ウ": "ゴム部材の形状や取付方向によって圧縮と剪断の剛性を使い分け、方向別のばね定数を設定できる。",
+      "エ": "低温では硬化、高温では劣化が進むなど、環境によって性能が変化する。どの環境でも使用できるとはいえない。",
+      "オ": "ゴムの弾性は振動数や変形量に応じて変わる。振動を扱う設計では動的ばね定数を考慮する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/soon-shindo-tokuron-p13.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 騒音・振動特論 公式問題冊子PDF 13ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214040752id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_12.pdf#page=13",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 騒音・振動特論 問22（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-soon-shindo-tokuron-q23",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "soon-shindo-tokuron",
+    "qNumber": 23,
+    "officialAnswerNumber": 5,
+    "type": "multiple-choice",
+    "subject": "騒音・振動特論",
+    "category": "騒音・振動特論",
+    "topicTags": [
+      "金属ばねの種類と振動方向"
+    ],
+    "difficulty": 2,
+    "question": "問23　金属ばねの種類と振動方向。掲載の公式問題画像の問23を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "防振装置として使用されている重ね板ばね,コイルばね,皿ばねは, 3 種類とも固有振動数 1 〜 10 Hz 程度の範囲で設計することが可能である。",
+      "イ": "重ね板ばねは,板間の相対運動で減衰を得るため,高周波振動の絶縁性が悪い。",
+      "ウ": "重ね板ばねは,動的ばね定数の振幅依存性が大きい。",
+      "エ": "コイルばねの水平方向のばね定数と軸方向のばね定数の比は,通常 0.7 〜 1 の範囲にある。",
+      "オ": "皿ばねは,上下方向以外にもばね作用を有する。"
+    },
+    "answer": "オ",
+    "explanation": "皿ばねは円すい状の板を軸方向に変形させて使う。防振ばねとして上下方向以外にもばね作用を有するとする記述が不適切である。",
+    "choiceExplanations": {
+      "ア": "荷重と寸法に合わせてばねの形状や組合せを選ぶと、各種の金属ばねで低い固有振動数を得る設計が可能である。",
+      "イ": "重ね板ばねは板の間の摩擦で減衰を得るが、板が一体のように動く小振幅条件などでは高周波振動が伝わりやすい。",
+      "ウ": "板の間が滑るか固着するかは振幅によって変わる。そのため重ね板ばねの動的ばね定数は振幅に依存しやすい。",
+      "エ": "通常の防振用コイルばねには、水平方向ばね定数が軸方向に対して0.7〜1程度のものが用いられる。",
+      "オ": "皿ばねは円すいの高さが変わる軸方向でばね作用を利用するもので、多方向の弾性支持を目的とするばねではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/soon-shindo-tokuron-p13.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 騒音・振動特論 公式問題冊子PDF 13ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214040752id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_12.pdf#page=13",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 騒音・振動特論 問23（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-soon-shindo-tokuron-q24",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "soon-shindo-tokuron",
+    "qNumber": 24,
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "subject": "騒音・振動特論",
+    "category": "騒音・振動特論",
+    "topicTags": [
+      "振動苦情の調査と測定"
+    ],
+    "difficulty": 2,
+    "question": "問24　振動苦情の調査と測定。掲載の公式問題画像の問24を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "振動発生源の性質,振動の発生状況等の調査を行う。",
+      "イ": "振動源情報として加振力を直接測定することが必須である。",
+      "ウ": "規制基準と比較するために,振動レベルの測定を行う。",
+      "エ": "測定点を適切に配置することで,振動の距離減衰や発生源周辺の振動分布を知ることができる。",
+      "オ": "対策の実施後には,結果を確認するための振動レベルの測定を行う。"
+    },
+    "answer": "イ",
+    "explanation": "苦情調査では発生源の運転状況や振動の分布を把握し、必要な地点で振動レベルを測る。加振力を直接測ることは必須ではない。",
+    "choiceExplanations": {
+      "ア": "設備の種類や稼働時間と苦情の時刻を照らし合わせると、振動源を特定しやすくなる。",
+      "イ": "加振力の直接測定が難しくても、稼働条件の変更や発生源と受振点の測定により影響を調べられる。",
+      "ウ": "規制基準は所定の地点での振動レベルで評価するため、測定値を基準と比較する。",
+      "エ": "発生源からの距離や方向を変えて測ると、振動の伝搬経路や減衰の傾向を確認できる。",
+      "オ": "同じ条件で対策前後の測定値を比較することにより、対策がどれだけ効いたかを確認できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/soon-shindo-tokuron-p13.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 騒音・振動特論 公式問題冊子PDF 13ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214040752id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_12.pdf#page=13",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 騒音・振動特論 問24（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-soon-shindo-tokuron-q25",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "soon-shindo-tokuron",
+    "qNumber": 25,
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "subject": "騒音・振動特論",
+    "category": "騒音・振動特論",
+    "topicTags": [
+      "圧電形振動ピックアップの原理"
+    ],
+    "difficulty": 2,
+    "question": "問25　圧電形振動ピックアップの原理。掲載の公式問題画像の問25を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "振動体の加速度に反比例する電圧を得るように設計されている。",
+      "イ": "外力によって圧電物質内にひずみが生じると電荷を発生する性質を利用している。",
+      "ウ": "振動レベル計の振動ピックアップに用いられている。",
+      "エ": "主な構造として,圧縮形と剪断形がある。",
+      "オ": "平たんな特性で測定される振動数の上限は,振動ピックアップの固有振動数によって制限される。"
+    },
+    "answer": "ア",
+    "explanation": "圧電素子に加速度に比例する慣性力が加わり、それに対応する電荷が生じる。出力電圧が加速度に反比例するという記述が誤り。",
+    "choiceExplanations": {
+      "ア": "振動で生じる力は内部のおもりの質量と加速度の積である。通常の測定範囲ではこれに比例する電荷や電圧が得られる。",
+      "イ": "圧電材料に外力を加えると、ひずみが生じて電荷が現れる圧電効果を利用する。",
+      "ウ": "振動レベル計では地面などの加速度を電気信号に変える用途で圧電形のピックアップが使われる。",
+      "エ": "圧電素子に圧縮力を加える構造や、剪断力を加える構造がある。",
+      "オ": "取付系やピックアップの共振に近づくと応答が増大するので、固有振動数より十分低い帯域を平たんな測定範囲とする。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/soon-shindo-tokuron-p14.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 騒音・振動特論 公式問題冊子PDF 14ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214040752id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_12.pdf#page=14",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 騒音・振動特論 問25（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-soon-shindo-tokuron-q26",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "soon-shindo-tokuron",
+    "qNumber": 26,
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "subject": "騒音・振動特論",
+    "category": "騒音・振動特論",
+    "topicTags": [
+      "振動計とピックアップの取扱い"
+    ],
+    "difficulty": 2,
+    "question": "問26　振動計とピックアップの取扱い。掲載の公式問題画像の問26を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "振動ピックアップは衝撃に弱いため,床に落としたり,物にぶつけたりしないこと。",
+      "イ": "低周波大振幅の振動を測定する場合には,振動ピックアップのケーブルを固定しないこと。",
+      "ウ": "測定前に振動計の電源電圧が適正であるかどうかをチェックすること。",
+      "エ": "電池の交換は,電源スイッチを「OFF」にして行うこと。",
+      "オ": "振動計を保管する場所は,高温多湿を避けること。"
+    },
+    "answer": "イ",
+    "explanation": "低周波・大振幅の振動を測るときは、ケーブルの動きによる余分な振動やノイズを避けるため、ケーブルを適切に固定する。",
+    "choiceExplanations": {
+      "ア": "落下や衝突はセンサに大きな瞬間加速度を与え、素子や接続部を傷めるため避ける。",
+      "イ": "自由に動くケーブルは測定条件によって揺れや張力をピックアップに伝える。大振幅を測る際はこの影響を避けるよう固定する。",
+      "ウ": "電源電圧が不足すると指示が不安定になることがあるため、測定前に電圧を確認する。",
+      "エ": "通電したまま電源を交換すると誤動作などを起こし得るため、スイッチを切って電池を交換する。",
+      "オ": "高温多湿は電子部品や絶縁状態の劣化につながるので、保管する場所の温湿度に注意する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/soon-shindo-tokuron-p14.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 騒音・振動特論 公式問題冊子PDF 14ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214040752id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_12.pdf#page=14",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 騒音・振動特論 問26（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-soon-shindo-tokuron-q27",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "soon-shindo-tokuron",
+    "qNumber": 27,
+    "officialAnswerNumber": 5,
+    "type": "multiple-choice",
+    "subject": "騒音・振動特論",
+    "category": "騒音・振動特論",
+    "topicTags": [
+      "校正用振動台から求める振動レベル計の器差"
+    ],
+    "difficulty": 2,
+    "question": "問27　校正用振動台から求める振動レベル計の器差。掲載の公式問題画像の問27を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "‐2",
+      "イ": "‐1",
+      "ウ": "0",
+      "エ": "1",
+      "オ": "2"
+    },
+    "answer": "オ",
+    "explanation": "全変位振幅20 µmは片振幅10 µm。加速度実効値は(2π×16)²×10⁻⁵/√2≒0.0715 m/s²で約77.1 dB、16 Hzの鉛直補正後は約71 dB。指示値73 dBから引くと器差は約＋2 dB。",
+    "choiceExplanations": {
+      "ア": "器差は指示値から基準値を引く。基準となる約71 dBより73 dBの指示値が高いので、符号は正になる。",
+      "イ": "器差−1 dBとするには基準値が74 dBになる必要があるが、振動台の条件と感覚補正からは約71 dBとなる。",
+      "ウ": "器差0 dBになるには基準値が指示値73 dBと同じでなければならない。加速度の周波数補正後の基準値は約71 dBである。",
+      "エ": "指示が73 dBで器差が＋1 dBなら基準は72 dBだが、計算で得られる値は約71 dBになる。",
+      "オ": "変位から求める加速度レベルは約77 dB、16 Hzの鉛直補正は約−6 dBで、基準値約71 dBに対し指示は約2 dB高い。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/soon-shindo-tokuron-p14.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 騒音・振動特論 公式問題冊子PDF 14ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214040752id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_12.pdf#page=14",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 騒音・振動特論 問27（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-soon-shindo-tokuron-q28",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "soon-shindo-tokuron",
+    "qNumber": 28,
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "subject": "騒音・振動特論",
+    "category": "騒音・振動特論",
+    "topicTags": [
+      "振動規制法の振動レベルの決定"
+    ],
+    "difficulty": 2,
+    "question": "問28　振動規制法の振動レベルの決定。掲載の公式問題画像の問28を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "送風機などのように,振動レベルの変動が小さい場合,振動レベルは振動レベル計の指示値とする。",
+      "イ": "プレス機などのように,周期的にレベルが変動をする場合の振動レベルは, その変動ごとの振動レベル計の指示値の最大値の平均値とする。",
+      "ウ": "剪断機などのように,間欠的にレベルが変動する場合,振動レベルはその変動ごとの振動レベル計の指示値の最大値の平均値とする。",
+      "エ": "同時に稼働する複数のブレーカーのように,振動レベル計の指示値が不規則かつ大幅に変動する場合,振動レベルは時間平均振動レベルとする。",
+      "オ": "道路交通振動のような振動レベル計の指示値が不規則かつ大幅に変動する場合,振動レベルは原則として 80 パーセントレンジの上端の数値とする。"
+    },
+    "answer": "エ",
+    "explanation": "指示値が不規則かつ大幅に変動する場合は、原則として測定値の80%レンジの上端値を採用する。時間平均振動レベルで置き換えることはできない。",
+    "choiceExplanations": {
+      "ア": "変動が小さければ指示がその状態の振動レベルを代表できるので、振動レベル計の指示値を採用する。",
+      "イ": "周期的に変動する振動では、周期ごとに指示の最大値を求め、得られた最大値を平均する。",
+      "ウ": "間欠的に振動が発生する場合も、一回ごとの最大値を集めて平均する。",
+      "エ": "不規則で変動が大きいブレーカーの場合は、指示の分布の80%レンジ上端で評価する。時間平均を使うとする記述が誤りである。",
+      "オ": "道路交通振動のような大幅な不規則変動について、80%レンジの上端を用いる。上から10%に当たる値である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/soon-shindo-tokuron-p15.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 騒音・振動特論 公式問題冊子PDF 15ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214040752id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_12.pdf#page=15",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 騒音・振動特論 問28（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-soon-shindo-tokuron-q29",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "soon-shindo-tokuron",
+    "qNumber": 29,
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "subject": "騒音・振動特論",
+    "category": "騒音・振動特論",
+    "topicTags": [
+      "バンド別加速度レベルから鉛直振動レベルを合成"
+    ],
+    "difficulty": 2,
+    "question": "問29　バンド別加速度レベルから鉛直振動レベルを合成。掲載の公式問題画像の問29を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "2",
+      "イ": "4",
+      "ウ": "6",
+      "エ": "8",
+      "オ": "10"
+    },
+    "answer": "ウ",
+    "explanation": "各周波数帯の振動加速度レベルに鉛直方向の振動感覚補正を加え、エネルギーを足す。対策前は約68 dB、対策後は約62 dBで、差は約6 dB。",
+    "choiceExplanations": {
+      "ア": "2 dBでは主要な8 Hz帯が67 dBから60 dBに下がった寄与を十分に反映できない。",
+      "イ": "4 dBは16 Hz帯だけの低減量。各帯域を鉛直方向の補正後に合成すると差は約6 dBになる。",
+      "ウ": "8 Hzにはほぼ補正がなく、16 Hzには約−6 dBの補正が入る。これを含めて全帯域を合成すると約68 dBから約62 dBへ下がる。",
+      "エ": "8 dBは合成後の差より大きい。主な帯域の8 Hzは7 dB、16 Hzは4 dBの低減であり、両者のエネルギーを合成する必要がある。",
+      "オ": "10 dBは63 Hz帯だけの減少量であり、その帯域は鉛直感覚補正で寄与が小さくなるため、全体の差にはならない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/soon-shindo-tokuron-p15.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 騒音・振動特論 公式問題冊子PDF 15ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214040752id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_12.pdf#page=15",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 騒音・振動特論 問29（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-soon-shindo-tokuron-q30",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "soon-shindo-tokuron",
+    "qNumber": 30,
+    "officialAnswerNumber": 5,
+    "type": "multiple-choice",
+    "subject": "騒音・振動特論",
+    "category": "騒音・振動特論",
+    "topicTags": [
+      "振動レベルの80%レンジ"
+    ],
+    "difficulty": 2,
+    "question": "問30　振動レベルの80%レンジ。掲載の公式問題画像の問30を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "1",
+      "イ": "3",
+      "ウ": "5",
+      "エ": "7",
+      "オ": "9"
+    },
+    "answer": "オ",
+    "explanation": "100個の測定値を低い順に累積すると、10%点は51 dB、90%点は60 dBの階級に入る。この二つの値の差は約9 dB。",
+    "choiceExplanations": {
+      "ア": "1 dBは表の階級間隔である。80%レンジは10%点と90%点を求め、その差を取る。",
+      "イ": "3 dBでは10%点の51 dBから54 dBまでしか含まず、54 dBまでの累積度数は40個である。",
+      "ウ": "51 dBから5 dB上の56 dBまでの累積度数は63個で、まだ90%点に達していない。",
+      "エ": "51 dBから7 dB上の58 dBでは、累積度数は81個で90%点に届かない。",
+      "オ": "50 dBまでの累積度数は7個、51 dBまでなら14個。59 dBまでの88個を60 dBまでで96個になるので、端の値は51 dBと60 dBである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/soon-shindo-tokuron-p16.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 騒音・振動特論 公式問題冊子PDF 16ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214040752id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_12.pdf#page=16",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 騒音・振動特論 問30（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  }
+]
