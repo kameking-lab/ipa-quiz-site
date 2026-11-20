@@ -2015,6 +2015,7 @@ caremanager: {
     code: "homusho-senmonshokuin", nameFull: "法務省専門職員（人間科学）採用試験", urlSlug: "homusho-senmonshokuin", level: "advanced",
     sessions: [
         { session: "psychology", urlSlug: "psychology", expectedQuestions: 20, label: "専門試験（矯正心理専門職の必須問題）", categories: ["認知心理学", "学習心理学", "感情心理学", "人格心理学", "心理検査", "発達心理学", "社会心理学", "臨床心理学", "心理統計"] },
+        { session: "senmon", urlSlug: "senmon", expectedQuestions: 40, label: "専門試験（法務教官・保護観察官・矯正心理専門職の共通問題）", categories: ["心理学", "教育学", "社会福祉", "社会学"] },
     ], seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
 },
 "rodo-kijun-kantokukan": {
