@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { HomePace } from "@/components/home/pace/HomePace";
 import type { HomeDirectoryDomain } from "@/lib/home/home-directory";
@@ -81,6 +81,16 @@ describe("home plan entry", () => {
     expect(await screen.findByRole("list", { name: "最近解いた資格" })).toBeVisible();
     expect(screen.getByRole("link", { name: /^衛生管理者/ })).toHaveAttribute("href", "/e-learning/exams/qualifications/eisei");
     expect(screen.getAllByRole("listitem")).toHaveLength(1);
+  });
+
+  it("stays on the first-visit screen when saved coordinates do not resolve and there are no answers", async () => {
+    localStorage.setItem(LS_KEYS.lastQuestion, JSON.stringify({ ...catalog[0], qNumber: 999, answeredAt: 1 }));
+    vi.stubGlobal("fetch", vi.fn(async (url: string) => url.includes("/api/home/resume?")
+      ? Response.json(null, { status: 404 }) : Response.json({ entitled: false })));
+    render(<HomePace domains={domains} planExamKeys={["ip", "fe"]} />);
+    await waitFor(() => expect(fetch).toHaveBeenCalledWith(expect.stringContaining("qNumber=999"), expect.anything()));
+    expect(screen.getByPlaceholderText("受ける資格は？")).toBeEnabled();
+    expect(screen.queryByRole("link", { name: /続きを解く/ })).not.toBeInTheDocument();
   });
 
   it.each([["合格", "passed"], ["不合格", "failed"], ["受けなかった", "absent"]] as const)("saves %s and offers the next step", async (label, result) => {

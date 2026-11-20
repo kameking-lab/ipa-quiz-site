@@ -116,7 +116,7 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false }: {
   const warning = plan && !plan.result && (pace?.daysRemaining === null || (pace?.daysRemaining ?? -1) >= 0) ? deadlineWarning(plan, today) : null;
   const item = items.find(i => i.key === plan?.exam);
   const resume = resolvedResume?.query === resumeQuery ? resolvedResume?.entry : undefined;
-  const previousExam = study?.exam ?? resume?.exam;
+  const previousExam = resume ? study?.exam ?? resume.exam : study?.recent[0]?.[0];
   const previousItem = items.find(i => i.key === previousExam);
   const returning = Boolean(resume || previousItem);
   const firstVisit = !plan && !returning;
@@ -188,11 +188,11 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false }: {
         <p className="text-xs text-muted-foreground">おかえりなさい</p>
         <h1 className="mt-1 text-base font-bold">{resume?.name ?? previousItem?.name}</h1>
         <div className="mt-1 flex flex-wrap items-baseline gap-x-3 text-xs text-muted-foreground">
-          {(resume?.caption || study?.caption) && <p>前回 {resume?.caption ?? study?.caption}</p>}
+          {resume?.caption && <p>前回 {resume.caption}</p>}
           <p>今日 {completedToday}問</p>
         </div>
         <StartTrack runArt={qualificationRunArt(previousExam ?? "", previousDomain?.id)} />
-        <Button asChild size="xl" className="mt-2 w-full"><Link href={resume?.href ?? study?.fallbackHref ?? previousItem?.href ?? "/search"}>続きを解く <span aria-hidden="true">→</span></Link></Button>
+        <Button asChild size="xl" className="mt-2 w-full"><Link href={resume?.href ?? previousItem?.href ?? "/search"}>続きを解く <span aria-hidden="true">→</span></Link></Button>
         <button type="button" className="mx-auto flex min-h-11 items-center px-2 text-sm text-primary underline underline-offset-4" aria-haspopup="dialog" onClick={() => setSheet("create")}>試験日を決める</button>
       </div> : (
         <div className="flex items-center justify-between gap-4 pt-3">

@@ -39,8 +39,11 @@ test("real saved question and wrong answers stay within the selected exam", asyn
 
 test("invalid saved coordinates produce no invented progress", async ({ page }) => {
   await page.addInitScript(() => localStorage.setItem("ipa-quiz:last-question:v1", JSON.stringify({ exam: "ip", year: 2099, season: "autumn", session: "am", qNumber: 999, answeredAt: Date.now() })));
+  const resume = page.waitForResponse(response => response.url().includes("/api/home/resume?"));
   await page.goto("/");
-  await expect(page.locator(".study-resume")).toHaveCount(0);
+  expect((await resume).status()).toBe(404);
+  await expect(page.locator('[data-home-state="new"]')).toBeVisible();
+  await expect(page.getByPlaceholder("受ける資格は？")).toBeEnabled();
   await expect(page.getByRole("link", { name: /続きを解く/ })).toHaveCount(0);
 });
 
