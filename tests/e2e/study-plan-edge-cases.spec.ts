@@ -135,7 +135,7 @@ test("iOS WebView safe areas keep the create sheet and date field usable", async
   });
   await page.route("**/api/exam-schedule/ip", r => r.fulfill({ json: { exam: "ip", source: "manual", sessions: [] } }));
   await page.goto("/");
-  await page.getByRole("button", { name: "学習計画を作成", exact: true }).click();
+  await page.getByRole("button", { name: /^(学習計画を作成|試験日を決める)$/ }).first().click();
   await page.getByRole("combobox", { name: "受ける資格" }).selectOption("ip");
   const input = page.getByLabel("受験日", { exact: true });
   await expect(input).toBeVisible();
