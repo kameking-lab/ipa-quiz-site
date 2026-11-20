@@ -1,0 +1,642 @@
+[
+  {
+    "id": "kogai-12-2023-annual-kogai-dust-q1",
+    "exam": "kogai-12",
+    "session": "kogai-dust",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 1,
+    "examDate": "2023-10-01",
+    "subject": "ばいじん・粉じん特論",
+    "type": "multiple-choice",
+    "category": "ばいじん・粉じん特論",
+    "topicTags": [
+      "直並列の総合集じん率"
+    ],
+    "difficulty": 2,
+    "question": "含じんガスを分割（流量比F₁：F₂ ＝1：2）した後、同じ性能の集じん装置3 基を図のように配置して集じんし、再びガスを合一したところ、総合集じん率が93.0 ％になった。集じん装置単体の集じん率は何％か。ただし、集じん率は集じん装置の設置位置によらず同一であるものとし、また、排ガスの分割によりばいじんも流量比に応じて分割されるものとする。",
+    "choices": {
+      "ア": "82",
+      "イ": "84",
+      "ウ": "86",
+      "エ": "88",
+      "オ": "90"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "単体の未捕集率をxとすると、合流後の未捕集率は(x²＋2x)/3＝0.07である。正の解はx＝0.10なので、集じん率は90％である。",
+    "choiceExplanations": {
+      "ア": "単体が82％なら、流量2の単段側で18％が未捕集となり、合流後の総合集じん率は93％に達しない。",
+      "イ": "総合未捕集率は、流量1の二段側と流量2の一段側に分けて計算する。",
+      "ウ": "単体の未捕集率0.14を二段側では二乗し、一段側の値と流量比で加重すると、合計は0.07より大きい。",
+      "エ": "単体の未捕集率が0.12の場合、全体の未捕集率は(0.12²＋2×0.12)/3で約0.085となる。",
+      "オ": "単体の未捕集率をxとすると、合流後の未捕集率は(x²＋2x)/3＝0.07である。正の解はx＝0.10なので、集じん率は90％である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724192222id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_04.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2023（令和5）年度公害防止管理者等国家試験 ばいじん・粉じん特論 問1（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/images/questions/kogai-12/2023-dust-q1.png"
+    ],
+    "imageAltTexts": [
+      "含じんガスを二つに分け、流量F₁の側は二つの集じん装置を直列で通り、F₂の側は一つを通る。合流後の総合集じん率は93.0％。"
+    ]
+  },
+  {
+    "id": "kogai-12-2023-annual-kogai-dust-q2",
+    "exam": "kogai-12",
+    "session": "kogai-dust",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 2,
+    "examDate": "2023-10-01",
+    "subject": "ばいじん・粉じん特論",
+    "type": "multiple-choice",
+    "category": "ばいじん・粉じん特論",
+    "topicTags": [
+      "粒子径別集じん率の加重平均"
+    ],
+    "difficulty": 2,
+    "question": "図に示す部分集じん率をもつ集じん装置で、4 種類の粒子径の粒子を表に示す割合で混合したダストを含む排ガスを処理した。全集じん率（％）が最も高くなるダストはどれか。\n\n| ダスト | 2.5 μm | 5.0 μm | 10 μm | 20 μm |\n| --- | ---: | ---: | ---: | ---: |\n| A | 40 | 30 | 20 | 10 |\n| B | 10 | 80 | 10 | 0 |\n| C | 25 | 25 | 25 | 25 |\n| D | 0 | 0 | 80 | 20 |\n| E | 0 | 30 | 30 | 40 |\n\n数値は粒子の質量割合（％）。",
+    "choices": {
+      "ア": "ダストA",
+      "イ": "ダストB",
+      "ウ": "ダストC",
+      "エ": "ダストD",
+      "オ": "ダストE"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "Dは集じん率92.6％の10 μm粒子が80％、98.4％の20 μm粒子が20％である。加重平均は約93.8％で最も高い。",
+    "choiceExplanations": {
+      "ア": "5 μm以下の割合が70％と大きく、粒径別集じん率の質量加重平均は約75.4％になる。",
+      "イ": "5 μmの粒子が80％を占め、この径での捕集率は76.4％である。全体を加重平均しても約76.4％である。",
+      "ウ": "各粒径の質量割合が25％なので、図の四つの集じん率の単純平均で約81.9％となる。",
+      "エ": "Dは集じん率92.6％の10 μm粒子が80％、98.4％の20 μm粒子が20％である。加重平均は約93.8％で最も高い。",
+      "オ": "20 μmの粒子が40％あるが、捕集率の低い5 μm粒子も30％あるため、Dより全体の集じん率が低い。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724192222id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_04.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2023（令和5）年度公害防止管理者等国家試験 ばいじん・粉じん特論 問2（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/images/questions/kogai-12/2023-dust-q2.png"
+    ],
+    "imageAltTexts": [
+      "粒子径と部分集じん率のグラフ。粒子径2.5、5.0、10、20 μmに対する集じん率はそれぞれ60.2、76.4、92.6、98.4％。"
+    ]
+  },
+  {
+    "id": "kogai-12-2023-annual-kogai-dust-q3",
+    "exam": "kogai-12",
+    "session": "kogai-dust",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 3,
+    "examDate": "2023-10-01",
+    "subject": "ばいじん・粉じん特論",
+    "type": "multiple-choice",
+    "category": "ばいじん・粉じん特論",
+    "topicTags": [
+      "抵抗力と粒子の移動速度"
+    ],
+    "difficulty": 2,
+    "question": "流通形式集じん装置において、ガスの流れが層流であるとき、粒子の移動速度v を表す式として、正しいものはどれか。ただし、F_D はガスの抵抗力、μ はガス粘度、dₚ は粒子径、Cₘ はカニンガムの補正係数である。",
+    "choices": {
+      "ア": "v＝CₘdₚF_D/(3πμ)",
+      "イ": "v＝Cₘdₚ/(3πμF_D)",
+      "ウ": "v＝CₘF_D/(3πμdₚ)",
+      "エ": "v＝3πCₘF_D/(μdₚ)",
+      "オ": "v＝dₚF_D/(3πCₘμ)"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "補正したストークス抵抗はF_D＝3πμdₚv/Cₘとなる。速度について解くとv＝CₘF_D/(3πμdₚ)である。",
+    "choiceExplanations": {
+      "ア": "ストークス抵抗は粒子径に比例するため、同じ力では粒子径が大きいほど移動速度が小さくなる。",
+      "イ": "同じ粒子径の粒子に働く力が大きいほど速度は上がるため、抵抗力を分母に置く式は誤りである。",
+      "ウ": "補正したストークス抵抗はF_D＝3πμdₚv/Cₘとなる。速度について解くとv＝CₘF_D/(3πμdₚ)である。",
+      "エ": "抵抗式に掛かっている係数3πは、速度について解くと分母に入る。",
+      "オ": "粒子径が大きくなるほど抵抗が増すため、粒子径は分母に入る。カニンガム補正係数は分子に入る。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724192222id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_04.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2023（令和5）年度公害防止管理者等国家試験 ばいじん・粉じん特論 問3（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-12-2023-annual-kogai-dust-q4",
+    "exam": "kogai-12",
+    "session": "kogai-dust",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 4,
+    "examDate": "2023-10-01",
+    "subject": "ばいじん・粉じん特論",
+    "type": "multiple-choice",
+    "category": "ばいじん・粉じん特論",
+    "topicTags": [
+      "ダスト層の通気抵抗"
+    ],
+    "difficulty": 2,
+    "question": "バグフィルターで集じんする際、ダスト層の圧力損失がコゼニー・カルマンの式に従う場合の特性として、誤っているものはどれか。",
+    "choices": {
+      "ア": "ダストの比表面積径が大きくなると、圧力損失は大きくなる。",
+      "イ": "ダスト層の厚さが大きくなると、圧力損失は大きくなる。",
+      "ウ": "ダスト層の空隙率が大きくなると、圧力損失は小さくなる。",
+      "エ": "ダストの密度が大きくなると、圧力損失は小さくなる。",
+      "オ": "ガスの粘度が大きくなると、圧力損失は大きくなる。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "同じ空隙率などで比較すると、コゼニー–カルマン式の通気抵抗は比表面積径の二乗に反比例する。粒子が大きいほど圧力損失は小さくなる。",
+    "choiceExplanations": {
+      "ア": "同じ空隙率などで比較すると、コゼニー–カルマン式の通気抵抗は比表面積径の二乗に反比例する。粒子が大きいほど圧力損失は小さくなる。",
+      "イ": "気体が通るダスト層が厚いほど、通過時の抵抗が大きくなる。",
+      "ウ": "空隙率が大きいとガスの通り道が広くなり、同じ条件での圧力損失は小さくなる。",
+      "エ": "質量負荷が同じなら、粒子密度が大きいダストの層は薄くなるため、圧力損失が小さくなる。",
+      "オ": "気体の粘度が大きいほど層内を通るときの粘性抵抗が増し、圧力損失が大きくなる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724192222id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_04.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2023（令和5）年度公害防止管理者等国家試験 ばいじん・粉じん特論 問4（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-12-2023-annual-kogai-dust-q5",
+    "exam": "kogai-12",
+    "session": "kogai-dust",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 5,
+    "examDate": "2023-10-01",
+    "subject": "ばいじん・粉じん特論",
+    "type": "multiple-choice",
+    "category": "ばいじん・粉じん特論",
+    "topicTags": [
+      "無次元数と粒子径の関係"
+    ],
+    "difficulty": 2,
+    "question": "集じんに関連する無次元数の組合せのうち、どちらもダストの粒子径の2 乗に比例する組合せはどれか。",
+    "choices": {
+      "ア": "レイノルズ数と遮りパラメータ",
+      "イ": "レイノルズ数と重力パラメータ",
+      "ウ": "遮りパラメータとストークス数",
+      "エ": "重力パラメータと遮りパラメータ",
+      "オ": "重力パラメータとストークス数"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "重力パラメーターは終末沈降速度、ストークス数は粒子の慣性による応答時間に対応する。どちらもストークス領域では粒子径の二乗に比例する。",
+    "choiceExplanations": {
+      "ア": "レイノルズ数と遮りパラメーターは代表長さを一次で含み、この組合せは粒子径の二乗に比例しない。",
+      "イ": "粒子沈降速度を含む重力パラメーターは粒子径の二乗に比例するが、レイノルズ数は該当しない。",
+      "ウ": "ストークス数は粒子径の二乗に比例するが、遮りパラメーターは粒子径と捕集体寸法の比である。",
+      "エ": "重力パラメーターだけが粒子径の二乗に比例し、遮りパラメーターは粒子径に一次で比例する。",
+      "オ": "重力パラメーターは終末沈降速度、ストークス数は粒子の慣性による応答時間に対応する。どちらもストークス領域では粒子径の二乗に比例する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724192222id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_04.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2023（令和5）年度公害防止管理者等国家試験 ばいじん・粉じん特論 問5（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-12-2023-annual-kogai-dust-q6",
+    "exam": "kogai-12",
+    "session": "kogai-dust",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 6,
+    "examDate": "2023-10-01",
+    "subject": "ばいじん・粉じん特論",
+    "type": "multiple-choice",
+    "category": "ばいじん・粉じん特論",
+    "topicTags": [
+      "加圧水式の洗浄集じん装置"
+    ],
+    "difficulty": 2,
+    "question": "加圧水式洗浄集じん装置に分類されないものはどれか。",
+    "choices": {
+      "ア": "ジェットスクラバー",
+      "イ": "流動層スクラバー",
+      "ウ": "スプレー塔",
+      "エ": "ベンチュリスクラバー",
+      "オ": "サイクロンスクラバー"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "流動層スクラバーでは、上昇ガス流で接触材などを動かして捕集する。加圧水を主体とする形式には分類されない。",
+    "choiceExplanations": {
+      "ア": "ジェットスクラバーは噴射する水の流れでガスを引き込みながら接触させる。",
+      "イ": "流動層スクラバーでは、上昇ガス流で接触材などを動かして捕集する。加圧水を主体とする形式には分類されない。",
+      "ウ": "スプレー塔はノズルなどから加圧した洗浄液を噴霧し、ガスに接触させる。",
+      "エ": "ベンチュリスクラバーは液を高速ガス流と接触させて液滴をつくり、ダストを捕集する。",
+      "オ": "サイクロンスクラバーは旋回するガスと噴霧した水を接触させ、粒子を除く方式である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724192222id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_04.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2023（令和5）年度公害防止管理者等国家試験 ばいじん・粉じん特論 問6（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-12-2023-annual-kogai-dust-q7",
+    "exam": "kogai-12",
+    "session": "kogai-dust",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 7,
+    "examDate": "2023-10-01",
+    "subject": "ばいじん・粉じん特論",
+    "type": "multiple-choice",
+    "category": "ばいじん・粉じん特論",
+    "topicTags": [
+      "ろ布の表面加工法と目的"
+    ],
+    "difficulty": 2,
+    "question": "ろ布の表面加工法の目的を示す表において、ア～ウの空欄の中に挿入すべき語句の組合せとして、正しいものはどれか。\n\n| 加工法 | 捕集性 | 剥離性 | 耐食性 | 撥水・撥油性 |\n| --- | :---: | :---: | :---: | :---: |\n| ア | ○ | ○ |  | △ |\n| イ |  | △ | ○ | ○ |\n| ウ | ○ | ○ |  |  |\n\n○：主な目的　△：副次的に生じる効果\n\nア — イ — ウ",
+    "choices": {
+      "ア": "コーティング加工 — 膜加工 — ディッピング加工",
+      "イ": "膜加工 — 平滑加工 — コーティング加工",
+      "ウ": "ディッピング加工 — コーティング加工 — 平滑加工",
+      "エ": "コーティング加工 — ディッピング加工 — 膜加工",
+      "オ": "ディッピング加工 — コーティング加工 — 膜加工"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "アのコーティング加工は主に捕集性と剥離性、イのディッピング加工は耐食性と撥水・撥油性、ウの膜加工は捕集性と剥離性の改善に対応する。",
+    "choiceExplanations": {
+      "ア": "耐食性や撥水・撥油を主目的とするイはディッピング加工であり、膜加工は捕集性・剥離性の改善に用いる。",
+      "イ": "膜加工は捕集性などに対応するが、イの耐食性や撥水・撥油性は平滑加工の主目的ではない。",
+      "ウ": "ディッピング加工は薬液への浸漬によって耐食性や撥水・撥油性を高めるので、アではなくイに当たる。",
+      "エ": "アのコーティング加工は主に捕集性と剥離性、イのディッピング加工は耐食性と撥水・撥油性、ウの膜加工は捕集性と剥離性の改善に対応する。",
+      "オ": "ウの膜加工は合うが、アがコーティング加工、イがディッピング加工であり、前二つが逆である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724192222id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_04.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2023（令和5）年度公害防止管理者等国家試験 ばいじん・粉じん特論 問7（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-12-2023-annual-kogai-dust-q8",
+    "exam": "kogai-12",
+    "session": "kogai-dust",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 8,
+    "examDate": "2023-10-01",
+    "subject": "ばいじん・粉じん特論",
+    "type": "multiple-choice",
+    "category": "ばいじん・粉じん特論",
+    "topicTags": [
+      "ろ布の構造・耐熱性・耐酸性"
+    ],
+    "difficulty": 2,
+    "question": "バグフィルター用のろ布に関する記述として、誤っているものはどれか。",
+    "choices": {
+      "ア": "織布の空隙率は、不織布のそれより小さい。",
+      "イ": "長繊維製のものは、短繊維製のものより付着性ダストの剥離性がよい。",
+      "ウ": "未使用フィルターの部分集じん率は、運転時の払い落とし直後のフィルターのそれより低い。",
+      "エ": "常用耐熱温度は、パイレン製よりアクリル製が高い。",
+      "オ": "耐酸性は、アクリル製よりナイロン製が高い。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "ナイロンは酸の影響を受けやすく、アクリルより耐酸性が高いという記述は逆である。",
+    "choiceExplanations": {
+      "ア": "織布は糸を織った構造で、典型的には繊維を絡めた不織布より空隙率が小さい。",
+      "イ": "長繊維のろ布は表面に出る毛羽が比較的少なく、付着したダストを落としやすい。",
+      "ウ": "払い落とし後にもダスト層の一部が残って捕集に寄与し、未使用の状態より集じん率が高くなる。",
+      "エ": "アクリル製のろ布はパイレン製のろ布より高い常用温度に耐えられる。",
+      "オ": "ナイロンは酸の影響を受けやすく、アクリルより耐酸性が高いという記述は逆である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724192222id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_04.pdf#page=7",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2023（令和5）年度公害防止管理者等国家試験 ばいじん・粉じん特論 問8（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-12-2023-annual-kogai-dust-q9",
+    "exam": "kogai-12",
+    "session": "kogai-dust",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 9,
+    "examDate": "2023-10-01",
+    "subject": "ばいじん・粉じん特論",
+    "type": "multiple-choice",
+    "category": "ばいじん・粉じん特論",
+    "topicTags": [
+      "ろ布の払い落とし方式"
+    ],
+    "difficulty": 2,
+    "question": "バグフィルターにおけるダストの払い落としに関する記述として、誤っているものはどれか。",
+    "choices": {
+      "ア": "一般に払い落とし直後の集じん率は、直前のそれに比べて低い。",
+      "イ": "連続式払い落とし方式では、ダストの清浄ガス中への逸出が起きることがある。",
+      "ウ": "パルスジェット形払い落とし方式は、内面ろ過式に用いられる。",
+      "エ": "振動形払い落とし装置では、振動数が大きいと微細ダストの剥離に逆効果となることがある。",
+      "オ": "逆圧方式は、剥離性のよいダストに用いられる。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "一般的なパルスジェット方式は外面ろ過式で、ろ布の内側から短時間圧縮空気を吹き込む。",
+    "choiceExplanations": {
+      "ア": "運転中に形成したダスト層は捕集にも寄与するため、払い落とし直後には集じん率が下がる場合がある。",
+      "イ": "ガスを流したまま払い落とすと、粒子の一部が清浄側まで通過することがある。",
+      "ウ": "一般的なパルスジェット方式は外面ろ過式で、ろ布の内側から短時間圧縮空気を吹き込む。",
+      "エ": "振動の速さなどが適切でないと、振動で落ちにくい微細ダストの剥離には不利になる場合がある。",
+      "オ": "逆圧でろ布を変形させる方式は、比較的剥がれやすいダストの清掃に使われる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724192222id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_04.pdf#page=7",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2023（令和5）年度公害防止管理者等国家試験 ばいじん・粉じん特論 問9（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-12-2023-annual-kogai-dust-q10",
+    "exam": "kogai-12",
+    "session": "kogai-dust",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 10,
+    "examDate": "2023-10-01",
+    "subject": "ばいじん・粉じん特論",
+    "type": "multiple-choice",
+    "category": "ばいじん・粉じん特論",
+    "topicTags": [
+      "電気集じん装置の逆電離"
+    ],
+    "difficulty": 2,
+    "question": "電気集じん装置の逆電離現象に関する記述として、誤っているものはどれか。",
+    "choices": {
+      "ア": "ダスト層の見掛け電気抵抗率が10⁹ Ω・m 以上と非常に高い場合に発生する。",
+      "イ": "定格電流付近における運転では、電圧値が正常時に比べて高くなる。",
+      "ウ": "電流－電圧特性にヒステリシスを生じる。",
+      "エ": "間欠荷電は、現象の改善に効果がある。",
+      "オ": "電極上の固定ダスト層を除去すると起きにくくなる。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "逆電離では電流が増えやすくなり、同じ運転電流に対する電圧は正常時より低くなる。",
+    "choiceExplanations": {
+      "ア": "抵抗率がきわめて高いダスト層に電荷がたまると、層内で絶縁破壊が起きて逆電離が生じる。",
+      "イ": "逆電離では電流が増えやすくなり、同じ運転電流に対する電圧は正常時より低くなる。",
+      "ウ": "電圧を上げる過程と下げる過程で放電状態が異なり、電流・電圧の関係に履歴が出ることがある。",
+      "エ": "荷電を間欠的に行うと堆積層に電荷がたまるのを抑えやすく、逆電離対策になる。",
+      "オ": "逆電離が起こる厚いダスト層を集じん極から除くと、層内の電位差が小さくなり発生しにくい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724192222id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_04.pdf#page=7",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2023（令和5）年度公害防止管理者等国家試験 ばいじん・粉じん特論 問10（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-12-2023-annual-kogai-dust-q11",
+    "exam": "kogai-12",
+    "session": "kogai-dust",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 11,
+    "examDate": "2023-10-01",
+    "subject": "ばいじん・粉じん特論",
+    "type": "multiple-choice",
+    "category": "ばいじん・粉じん特論",
+    "topicTags": [
+      "顕微鏡での石綿繊維数の計数"
+    ],
+    "difficulty": 2,
+    "question": "石綿繊維数の判定方法に関する記述として、誤っているものはどれか。ただし、判定は「アスベストモニタリングマニュアル（第4.2 版）」及び「作業環境測定ガイドブック1 鉱物性粉じん・石綿」の規定に従うものとする。",
+    "choices": {
+      "ア": "単繊維が曲がっている場合には、繊維の直線部分を目安にして曲がっている部分に沿って真の長さを推定して判定する。",
+      "イ": "枝分かれした繊維の場合には、一つの繊維から枝分かれした部分を含む全体を1 本と数える。",
+      "ウ": "数本の繊維が交差している場合には、交差しているそれぞれの繊維を1 本と数える。",
+      "エ": "繊維がからまって正確に数を読みとることができない場合には、まとめて1本と数える。",
+      "オ": "粒子が付着している繊維の場合は、粒子を無視して計数する。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "繊維が絡んで計数できない場合、マニュアルではその繊維を数えない。全体を一律に1本とする記述は誤りである。",
+    "choiceExplanations": {
+      "ア": "曲がった繊維は端点間の距離だけでなく、繊維に沿った真の長さを推定して判定する。",
+      "イ": "一つの繊維から枝分かれする場合は枝を別の繊維とせず、全体を1本と数える。",
+      "ウ": "繊維が交差していても個々の繊維を区別できるときは、1本ずつ数える。",
+      "エ": "繊維が絡んで計数できない場合、マニュアルではその繊維を数えない。全体を一律に1本とする記述は誤りである。",
+      "オ": "繊維に付着した粒子そのものは計数に含めず、繊維としての条件を満たすかを判断する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724192222id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_04.pdf#page=8",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2023（令和5）年度公害防止管理者等国家試験 ばいじん・粉じん特論 問11（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "officialReferenceUrls": [
+      "https://www.env.go.jp/content/000329963.pdf"
+    ]
+  },
+  {
+    "id": "kogai-12-2023-annual-kogai-dust-q12",
+    "exam": "kogai-12",
+    "session": "kogai-dust",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 12,
+    "examDate": "2023-10-01",
+    "subject": "ばいじん・粉じん特論",
+    "type": "multiple-choice",
+    "category": "ばいじん・粉じん特論",
+    "topicTags": [
+      "石綿濃度の計算"
+    ],
+    "difficulty": 2,
+    "question": "平成元年環境庁告示第93 号に基づいて石綿濃度の測定を行い、以下の条件で53 本の石綿繊維が計数された。このときの石綿濃度（本/L）は、およそいくらか。\n捕集用ろ紙の有効ろ過面の面積：962 mm²\n顕微鏡の視野の面積　　　　　：0.07065 mm²\n計数を行った視野の数　　　　：100 視野\n採気量　　　　　　　　　　　：2400 L",
+    "choices": {
+      "ア": "0.09",
+      "イ": "0.33",
+      "ウ": "1.6",
+      "エ": "3.0",
+      "オ": "19"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "観察面積は100×0.07065＝7.065 mm²なので、ろ紙全面では53×962/7.065本と推定できる。2400 Lで割ると約3.0本/Lである。",
+    "choiceExplanations": {
+      "ア": "観察範囲だけでなく、捕集用ろ紙の面積全体に換算した繊維数を用いる必要がある。",
+      "イ": "顕微鏡で観察した範囲は100×0.07065 mm²であり、ろ紙全体の962 mm²に換算すると値が大きくなる。",
+      "ウ": "繊維数53本について、ろ紙の全面積と観察した面積の比で補正し、捕集した空気量2400 Lで割る。",
+      "エ": "観察面積は100×0.07065＝7.065 mm²なので、ろ紙全面では53×962/7.065本と推定できる。2400 Lで割ると約3.0本/Lである。",
+      "オ": "面積換算後の繊維数を、所定の採気量2400 Lで割ると約3本/Lとなる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724192222id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_04.pdf#page=8",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2023（令和5）年度公害防止管理者等国家試験 ばいじん・粉じん特論 問12（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "officialReferenceUrls": [
+      "https://www.env.go.jp/content/000329963.pdf"
+    ]
+  },
+  {
+    "id": "kogai-12-2023-annual-kogai-dust-q13",
+    "exam": "kogai-12",
+    "session": "kogai-dust",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 13,
+    "examDate": "2023-10-01",
+    "subject": "ばいじん・粉じん特論",
+    "type": "multiple-choice",
+    "category": "ばいじん・粉じん特論",
+    "topicTags": [
+      "ピトー管の動圧と公式訂正"
+    ],
+    "difficulty": 2,
+    "question": "温度147 ℃、流速10.0 m/s で流れるガスの、ピトー管による動圧測定値（kPa）はおよそいくらか。なお、ピトー管係数は0.96、大気圧は101.0 kPa、静圧（ゲージ圧）は2.5 kPa、標準状態のガス密度は1.30 kg/m³ とする。",
+    "choices": {
+      "ア": "24.1",
+      "イ": "28.4",
+      "ウ": "46.8",
+      "エ": "111",
+      "オ": "183"
+    },
+    "answer": [],
+    "officialAnswerNumber": null,
+    "explanation": "公式訂正では、動圧の単位をkPaとした出題の誤りにより、この設問ですべての解答を正解とした。",
+    "choiceExplanations": {
+      "ア": "絶対圧103.5 kPaとガスの絶対温度から実際の密度を求め、ピトー管の係数も使う。単位の誤りにより、公式にはこの選択肢も正解となった。",
+      "イ": "係数0.96を補正に用いると、計算値は約46.8 Paである。設問の単位が誤っていたため、公式にはこの選択肢も正解となった。",
+      "ウ": "動圧は0.5×実際のガス密度×(10.0/0.96)²で約46.8 Paである。設問のkPaは単位誤りで、公式訂正ではすべての解答が正解となった。",
+      "エ": "標準状態と実際の温度・圧力の違いを補正して計算する必要がある。公式には単位の誤りを受け、選択した番号を問わず正解となった。",
+      "オ": "ガスの密度を実際の条件に換算して計算すると約46.8 Paである。公式では単位誤りがあり、この選択肢も正解として扱う。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724192222id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_04.pdf#page=8",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2023（令和5）年度公害防止管理者等国家試験 ばいじん・粉じん特論 問13（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "officialReferenceUrls": [
+      "https://www.jemai.or.jp/polconman/examination/d3ldbs0000000ya9-att/2023(R05)_04_Q13.pdf"
+    ],
+    "officialScoring": {
+      "kind": "credit-for-all",
+      "reason": "公式訂正では、動圧の単位をkPaとした出題の誤りにより、この設問ですべての解答を正解とした。"
+    }
+  },
+  {
+    "id": "kogai-12-2023-annual-kogai-dust-q14",
+    "exam": "kogai-12",
+    "session": "kogai-dust",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 14,
+    "examDate": "2023-10-01",
+    "subject": "ばいじん・粉じん特論",
+    "type": "multiple-choice",
+    "category": "ばいじん・粉じん特論",
+    "topicTags": [
+      "硫酸ミストを含む排ガスのろ紙"
+    ],
+    "difficulty": 2,
+    "question": "JIS による排ガス中ダスト試料の採取に関する記述中、ア、イの空欄の中に挿入すべきろ紙の種類の組合せとして、正しいものはどれか。\n\nJIS では、「排ガス中に硫酸ミストなどを含み、測定値に影響を及ぼすおそれがある場合は、これらとの反応を起こさない［ア］、又は硫酸で処理した［イ］を用い、試料を採取したろ紙は250 ℃程度で約2 時間加熱し、デシケーター中で室温まで冷却した後、ひょう量する。」とされている。\n\nア — イ",
+    "choices": {
+      "ア": "ふっ素樹脂ろ紙 — シリカ繊維ろ紙",
+      "イ": "ふっ素樹脂ろ紙 — メンブレンろ紙",
+      "ウ": "ふっ素樹脂ろ紙 — ガラス繊維ろ紙",
+      "エ": "メンブレンろ紙 — ガラス繊維ろ紙",
+      "オ": "メンブレンろ紙 — シリカ繊維ろ紙"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "JISの設問が引用する規定では、反応しにくいふっ素樹脂ろ紙、又は硫酸処理したシリカ繊維ろ紙を用いる。",
+    "choiceExplanations": {
+      "ア": "JISの設問が引用する規定では、反応しにくいふっ素樹脂ろ紙、又は硫酸処理したシリカ繊維ろ紙を用いる。",
+      "イ": "ふっ素樹脂ろ紙はアに合うが、硫酸で前処理するイはシリカ繊維ろ紙である。",
+      "ウ": "アはふっ素樹脂ろ紙で合うが、加熱処理を伴う設問のイはシリカ繊維ろ紙に当たる。",
+      "エ": "規定の組合せでは、アがふっ素樹脂ろ紙、イが硫酸処理したシリカ繊維ろ紙である。",
+      "オ": "イはシリカ繊維ろ紙で合っているが、アにはふっ素樹脂ろ紙が指定されている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724192222id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_04.pdf#page=9",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2023（令和5）年度公害防止管理者等国家試験 ばいじん・粉じん特論 問14（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-12-2023-annual-kogai-dust-q15",
+    "exam": "kogai-12",
+    "session": "kogai-dust",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 15,
+    "examDate": "2023-10-01",
+    "subject": "ばいじん・粉じん特論",
+    "type": "multiple-choice",
+    "category": "ばいじん・粉じん特論",
+    "topicTags": [
+      "円形ろ紙による排ガスダスト採取"
+    ],
+    "difficulty": 2,
+    "question": "JIS による、温度80 ℃の排ガス中ダスト濃度測定のための試料採取で、円形ろ紙を用いる場合の記述として、誤っているものはどれか。",
+    "choices": {
+      "ア": "有効直径30 mm 以上のものを用いる。",
+      "イ": "ろ紙はあらかじめ105 ～110 ℃で、十分乾燥する。",
+      "ウ": "ろ紙を通るガス流速が1 m/s 以上になるように、吸引ノズル口径及びろ紙の寸法を選ぶ。",
+      "エ": "吸引ガス量は、ろ紙の捕集面積1 cm² あたりのダスト捕集量が0.5 mg 程度になるように設定する。",
+      "オ": "ひょう量用の天びんは、感量0.1 mg 以下のものを用いる。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "ろ紙の通過流速は高くしすぎないようにする。JISの要件に対し、1 m/s以上になるよう選ぶという記述は逆である。",
+    "choiceExplanations": {
+      "ア": "円形ろ紙の有効直径は、採取に用いる面積を確保するため30 mm以上とする。",
+      "イ": "採取前のろ紙は規定の温度で乾燥させ、水分によるひょう量の変化を抑える。",
+      "ウ": "ろ紙の通過流速は高くしすぎないようにする。JISの要件に対し、1 m/s以上になるよう選ぶという記述は逆である。",
+      "エ": "ろ紙上にひょう量できる量のダストを捕集するため、捕集面積当たりの捕集量を目安に吸引ガス量を決める。",
+      "オ": "ろ紙の質量の差からダスト量を求めるため、感量0.1 mg以下の天びんを用いる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724192222id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_04.pdf#page=9",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 2023（令和5）年度公害防止管理者等国家試験 ばいじん・粉じん特論 問15（問題・正答）。改行と解答番号を表示用に整形し、解説を作成。",
+    "license": "JEMAI-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  }
+]
