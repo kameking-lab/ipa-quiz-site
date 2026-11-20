@@ -37,13 +37,13 @@ describe("electrical exam metadata matches the published papers", () => {
 
   it("retains both Denko1 launch papers and reports the complete public scope in social metadata", async () => {
     const pool = getQuestionsByExamStrict("denko1");
-    const papers = new Map<string, number>();
-    for (const q of pool) {
+    const academicPapers = new Map<string, number>();
+    for (const q of pool.filter((question) => question.session !== "practical")) {
       const key = `${q.year}/${q.season}`;
-      papers.set(key, (papers.get(key) ?? 0) + 1);
+      academicPapers.set(key, (academicPapers.get(key) ?? 0) + 1);
     }
-    expect(papers.get("2026/first")).toBe(50);
-    expect(papers.get("2025/second")).toBe(50);
+    expect(academicPapers.get("2026/first")).toBe(50);
+    expect(academicPapers.get("2025/second")).toBe(50);
 
     const metadata = await generateMetadata({ params: Promise.resolve({ exam: "denko1" }) });
     const description = String(metadata.description);
