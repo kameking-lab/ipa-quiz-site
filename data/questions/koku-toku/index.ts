@@ -9,10 +9,13 @@ import archive2023FebruaryHouki from "./2023-february-houki.json";
 import archive2023FebruaryKogaku from "./2023-february-kogaku.json";
 import archive2022OctoberHouki from "./2022-october-houki.json";
 import archive2022OctoberKogaku from "./2022-october-kogaku.json";
+import archive2022JuneHouki from "./2022-june-houki.json";
+import archive2022JuneKogaku from "./2022-june-kogaku.json";
 
 export const KOKU_TOKU_QUESTIONS: Question[] = [
   ...februaryHouki, ...februaryKogaku, ...juneHouki, ...juneKogaku,
   ...octoberHouki, ...octoberKogaku,
   ...archive2023FebruaryHouki, ...archive2023FebruaryKogaku,
   ...archive2022OctoberHouki, ...archive2022OctoberKogaku,
+  ...archive2022JuneHouki, ...archive2022JuneKogaku,
 ] as Question[];
