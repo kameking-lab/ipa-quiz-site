@@ -1,0 +1,886 @@
+[
+  {
+    "id": "dekyo-chief-2-2023-second-gakka-q1",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "second",
+    "qNumber": 1,
+    "sourceExamSession": "第2回",
+    "officialQuestionLabel": "問1",
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "電気回路",
+    "topicTags": [
+      "コンデンサ"
+    ],
+    "difficulty": 2,
+    "question": "1 μFのコンデンサを1 Vで充電し、4 μFのコンデンサを4 Vで充電して並列に接続したとき、この二つのコンデンサに蓄えられる総合のエネルギーは、何Jか。ただし、充電後の二つのコンデンサは極性を一致させて接続する。",
+    "choices": {
+      "ア": "28.9×10⁻⁶",
+      "イ": "32.5×10⁻⁶",
+      "ウ": "57.8×10⁻⁶",
+      "エ": "6.5×10⁻⁵",
+      "オ": "1.7×10⁻⁴"
+    },
+    "answer": "ア",
+    "explanation": "総電荷は17 μC、合成容量は5 μFなので、接続後の電圧は3.4 Vです。エネルギーは½×5×10⁻⁶×3.4²＝28.9×10⁻⁶ Jです。",
+    "choiceExplanations": {
+      "ア": "総電荷は17 μC、合成容量は5 μFなので、接続後の電圧は3.4 Vです。エネルギーは½×5×10⁻⁶×3.4²＝28.9×10⁻⁶ Jです。",
+      "イ": "これは接続前に各コンデンサが蓄えているエネルギーの和です。接続後は電荷が再配分されて電圧が3.4 Vになります。",
+      "ウ": "これは5 μFと3.4 VからCV²を求めた値です。蓄積エネルギーの式には½が入ります。",
+      "エ": "これは充電直後のエネルギーの和の2倍です。接続後のエネルギーは共通電圧3.4 Vを用いて求めます。",
+      "オ": "17は総電荷をμCで表した値です。エネルギーは電荷17 μCと共通電圧3.4 Vの積の半分です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b985c15a2d8.pdf#page=2",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b98675861d2.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和5年度第2回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-chief-2-2023-second-gakka-q2",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "second",
+    "qNumber": 2,
+    "sourceExamSession": "第2回",
+    "officialQuestionLabel": "問2",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "電気回路",
+    "topicTags": [
+      "交流電力"
+    ],
+    "difficulty": 2,
+    "question": "図に示す抵抗RとインダクタンスLの直列回路に交流100 Vを加えたとき、回路に2 Aの交流電流が流れた。この回路の力率を0.8とすると、無効電力は何varか。",
+    "choices": {
+      "ア": "60",
+      "イ": "80",
+      "ウ": "120",
+      "エ": "160",
+      "オ": "200"
+    },
+    "answer": "ウ",
+    "explanation": "cos φ＝0.8からsin φ＝√(1−0.8²)＝0.6です。無効電力はVI sin φ＝100×2×0.6＝120 varです。",
+    "choiceExplanations": {
+      "ア": "60は100 Vに無効分の比0.6を掛けた電圧の値です。無効電力はさらに全電流2 Aを掛けて求めます。",
+      "イ": "80は電源電圧に力率0.8を掛けた値です。無効電力には力率から求めたsin φを用います。",
+      "ウ": "cos φ＝0.8からsin φ＝√(1−0.8²)＝0.6です。無効電力はVI sin φ＝100×2×0.6＝120 varです。",
+      "エ": "160 Wは皮相電力200 VAに力率0.8を掛けた有効電力です。",
+      "オ": "100 V×2 A＝200 VAは皮相電力です。無効電力はこのうち位相差による成分です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b985c15a2d8.pdf#page=2",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b98675861d2.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和5年度第2回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/dekyo-chief-2/2023-second/system-q2.png"
+    ],
+    "imageAltTexts": [
+      "抵抗RとインダクタンスLの直列回路。端子電圧100 V、電流2 A"
+    ]
+  },
+  {
+    "id": "dekyo-chief-2-2023-second-gakka-q3",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "second",
+    "qNumber": 3,
+    "sourceExamSession": "第2回",
+    "officialQuestionLabel": "問3",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "電気回路",
+    "topicTags": [
+      "発振回路"
+    ],
+    "difficulty": 2,
+    "question": "図に示す帰還増幅回路において、増幅回路の入力をVᵢ、帰還回路の出力をV𝒻とする。この回路が発振するためには、VᵢとV𝒻が［空欄］であること及び増幅回路の増幅度Aと帰還回路の帰還率βとの積Aβで表されるループゲインが1より大きいことの二つの条件を満たす必要がある。",
+    "choices": {
+      "ア": "マイナス",
+      "イ": "プラス",
+      "ウ": "同相",
+      "エ": "逆相",
+      "オ": "同電位"
+    },
+    "answer": "ウ",
+    "explanation": "入力と同相の帰還信号は入力を強めます。ループゲインが1を超えると、発振の立ち上がりが可能になります。",
+    "choiceExplanations": {
+      "ア": "電圧の正負は交流の周期内で変わります。発振のためには帰還信号が入力と同じ位相で加わる必要があります。",
+      "イ": "加算点の記号は帰還信号の加え方を示します。回路全体で必要なのはVᵢとV𝒻の位相が一致することです。",
+      "ウ": "入力と同相の帰還信号は入力を強めます。ループゲインが1を超えると、発振の立ち上がりが可能になります。",
+      "エ": "逆相では加算点で入力を弱める負帰還となり、発振を成長させる条件を満たしません。",
+      "オ": "入力と帰還出力の瞬時電圧や振幅が等しいことは条件ではありません。位相の一致が必要です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b985c15a2d8.pdf#page=2",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b98675861d2.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和5年度第2回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/dekyo-chief-2/2023-second/system-q3.png"
+    ],
+    "imageAltTexts": [
+      "増幅回路Aの出力の一部を帰還回路βに通して入力に加える回路"
+    ]
+  },
+  {
+    "id": "dekyo-chief-2-2023-second-gakka-q4",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "second",
+    "qNumber": 4,
+    "sourceExamSession": "第2回",
+    "officialQuestionLabel": "問4",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "電気回路",
+    "topicTags": [
+      "論理和"
+    ],
+    "difficulty": 2,
+    "question": "図に示す論理回路を入出力とも正論理で使用するとき、真理値表中の出力論理レベルW、X、Y、Zは、それぞれどれか。",
+    "choices": {
+      "ア": "0、0、0、1",
+      "イ": "0、1、1、1",
+      "ウ": "1、0、0、1",
+      "エ": "1、1、1、0",
+      "オ": "1、0、0、0"
+    },
+    "answer": "エ",
+    "explanation": "入力a、bの少なくとも一方が1なら対応するトランジスタが導通します。両方が0のときだけR₃で出力が0になります。",
+    "choiceExplanations": {
+      "ア": "この組合せはNORの出力です。図では両入力が0のときにR₃が出力を0に引き下げます。",
+      "イ": "この組合せはNANDの出力です。図では両方のトランジスタが導通する場合も、出力は1になります。",
+      "ウ": "この組合せはXNORの出力です。片方の入力だけが1でも、対応するトランジスタの導通で出力が1になります。",
+      "エ": "入力a、bの少なくとも一方が1なら対応するトランジスタが導通します。両方が0のときだけR₃で出力が0になります。",
+      "オ": "この組合せはANDの出力です。図のトランジスタはどちらか一方の導通でも出力を1にできます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b985c15a2d8.pdf#page=3",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b98675861d2.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和5年度第2回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/dekyo-chief-2/2023-second/system-q4.png"
+    ],
+    "imageAltTexts": [
+      "トランジスタによる論理回路。真理値表の入力a、bは11、10、01、00の順"
+    ]
+  },
+  {
+    "id": "dekyo-chief-2-2023-second-gakka-q5",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "second",
+    "qNumber": 5,
+    "sourceExamSession": "第2回",
+    "officialQuestionLabel": "問5",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "通信網",
+    "topicTags": [
+      "無線LAN"
+    ],
+    "difficulty": 2,
+    "question": "無線LANシステムで用いられるネットワーク構成において、［空欄］によるネットワークは、基地局（アクセスポイント）を必要とせず、端末局のみで構成される。",
+    "choices": {
+      "ア": "インフラストラクチャモード",
+      "イ": "アソシエーション",
+      "ウ": "リピータ接続",
+      "エ": "ルータモード",
+      "オ": "アドホックモード"
+    },
+    "answer": "オ",
+    "explanation": "端末局同士が直接無線で通信する構成なので、アクセスポイントは不要です。",
+    "choiceExplanations": {
+      "ア": "端末局がアクセスポイントを経由して通信する構成です。",
+      "イ": "無線LAN端末をアクセスポイントへ関連付ける手続を指し、端末局だけで構成するモードの名称ではありません。",
+      "ウ": "中継機で既存のネットワークの到達範囲を広げる接続です。",
+      "エ": "異なるネットワーク間でパケットを転送する機器の動作モードです。",
+      "オ": "端末局同士が直接無線で通信する構成なので、アクセスポイントは不要です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b985c15a2d8.pdf#page=3",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b98675861d2.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和5年度第2回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-chief-2-2023-second-gakka-q6",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "second",
+    "qNumber": 6,
+    "sourceExamSession": "第2回",
+    "officialQuestionLabel": "問6",
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "電気回路",
+    "topicTags": [
+      "ブリッジ回路"
+    ],
+    "difficulty": 2,
+    "question": "図に示す検出器Dが接続されたブリッジ回路において、Rₐが1,000 Ω、Rᵦが10 Ω、R꜀が2 Ω、C꜀が1 μFのときブリッジ回路は平衡している。このときのCₓは何μFか。",
+    "choices": {
+      "ア": "0.01",
+      "イ": "0.02",
+      "ウ": "5",
+      "エ": "10",
+      "オ": "20"
+    },
+    "answer": "ア",
+    "explanation": "平衡条件はZₓ/Z꜀＝Rₐ/Rᵦです。容量リアクタンスは容量の逆数に比例するので、Cₓ＝1×10/1,000＝0.01 μFです。",
+    "choiceExplanations": {
+      "ア": "平衡条件はZₓ/Z꜀＝Rₐ/Rᵦです。容量リアクタンスは容量の逆数に比例するので、Cₓ＝1×10/1,000＝0.01 μFです。",
+      "イ": "抵抗R꜀の数値2は実部の平衡条件に用います。容量は虚部の関係Cₓ＝C꜀Rᵦ/Rₐから求めます。",
+      "ウ": "5はRᵦ/R꜀の数値に当たります。ブリッジの腕の比はRₐ/Rᵦであり、容量比はその逆になります。",
+      "エ": "10 ΩはRᵦの抵抗値です。これをRₐで割った0.01をC꜀に掛けて容量を求めます。",
+      "オ": "抵抗RᵦとR꜀の値を掛けても容量は得られません。平衡時にはCₓ/C꜀＝Rᵦ/Rₐです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b985c15a2d8.pdf#page=3",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b98675861d2.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和5年度第2回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/dekyo-chief-2/2023-second/system-q6.png"
+    ],
+    "imageAltTexts": [
+      "左側に抵抗RAとRB、右側にRXとCXおよびRCとCCを接続したブリッジ回路"
+    ]
+  },
+  {
+    "id": "dekyo-chief-2-2023-second-gakka-q7",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "second",
+    "qNumber": 7,
+    "sourceExamSession": "第2回",
+    "officialQuestionLabel": "問7",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "伝送技術",
+    "topicTags": [
+      "伝送線路"
+    ],
+    "difficulty": 2,
+    "question": "一様なメタリック線路の減衰定数は線路の一次定数から導かれ、［空欄］によりその値が変化する。",
+    "choices": {
+      "ア": "信号の位相",
+      "イ": "信号の周波数",
+      "ウ": "減衰ひずみ",
+      "エ": "負荷インピーダンス",
+      "オ": "信号の振幅"
+    },
+    "answer": "イ",
+    "explanation": "伝搬定数は√((R＋jωL)(G＋jωC))です。その実部である減衰定数は周波数に依存します。",
+    "choiceExplanations": {
+      "ア": "入力信号の初期位相を変えても、同じ周波数での線路の減衰定数は変わりません。",
+      "イ": "伝搬定数は√((R＋jωL)(G＋jωC))です。その実部である減衰定数は周波数に依存します。",
+      "ウ": "減衰ひずみは成分ごとに減衰量が変わることで生じる波形変化です。",
+      "エ": "負荷の不整合は反射の原因になります。線路そのものの減衰定数は分布定数と周波数で決まります。",
+      "オ": "線形な伝送線路では入力振幅を変えても、単位長さ当たりの減衰の比率は変化しません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b985c15a2d8.pdf#page=3",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b98675861d2.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和5年度第2回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-chief-2-2023-second-gakka-q8",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "second",
+    "qNumber": 8,
+    "sourceExamSession": "第2回",
+    "officialQuestionLabel": "問8",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "伝送技術",
+    "topicTags": [
+      "電力レベル"
+    ],
+    "difficulty": 2,
+    "question": "アナログ方式の多重伝送路において、1回線当たりの平均電力が−20 dBmで互いに相関のない信号を1,000回線伝送しているとき、その電力和は何dBmか。",
+    "choices": {
+      "ア": "−20",
+      "イ": "−10",
+      "ウ": "0",
+      "エ": "10",
+      "オ": "20"
+    },
+    "answer": "エ",
+    "explanation": "1回線は10⁻² mWです。1,000回線の電力和は10 mWなので、10 log₁₀(10)＝10 dBmです。",
+    "choiceExplanations": {
+      "ア": "−20 dBmは1回線分です。互いに無相関なら1,000回線の平均電力を足します。",
+      "イ": "−10 dBmは1回線分の10倍です。設問で加算する回線数は1,000です。",
+      "ウ": "0 dBmは1 mWで、0.01 mWの信号100回線分に当たります。",
+      "エ": "1回線は10⁻² mWです。1,000回線の電力和は10 mWなので、10 log₁₀(10)＝10 dBmです。",
+      "オ": "20 dBmは100 mWです。設問の1,000回線の電力和は10 mWになります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b985c15a2d8.pdf#page=4",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b98675861d2.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和5年度第2回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-chief-2-2023-second-gakka-q9",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "second",
+    "qNumber": 9,
+    "sourceExamSession": "第2回",
+    "officialQuestionLabel": "問9",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "伝送技術",
+    "topicTags": [
+      "伝送路符号"
+    ],
+    "difficulty": 2,
+    "question": "デジタル信号を送受信するための伝送路符号化方式において、符号化後に高レベルと低レベルなど二つの信号レベルだけをとる2値符号には、どの符号があるか。",
+    "choices": {
+      "ア": "AMI",
+      "イ": "PR-4",
+      "ウ": "NRZI",
+      "エ": "MLT-3",
+      "オ": "PAM-5"
+    },
+    "answer": "ウ",
+    "explanation": "NRZIは二つのレベルを使い、ビットをレベルの反転の有無で表します。",
+    "choiceExplanations": {
+      "ア": "AMIは0と、交互に現れる正負パルスを使う3値符号です。",
+      "イ": "PR-4では記号間の相関を制御し、受信側で扱う応答には正・零・負のレベルが現れます。",
+      "ウ": "NRZIは二つのレベルを使い、ビットをレベルの反転の有無で表します。",
+      "エ": "名称のとおり3レベルを使って信号の遷移を表現します。",
+      "オ": "PAM-5は振幅が5段階あり、レベル数が2より多くなります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b985c15a2d8.pdf#page=4",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b98675861d2.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和5年度第2回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-chief-2-2023-second-gakka-q10",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "second",
+    "qNumber": 10,
+    "sourceExamSession": "第2回",
+    "officialQuestionLabel": "問10",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "通信網",
+    "topicTags": [
+      "QoS"
+    ],
+    "difficulty": 2,
+    "question": "ルータにおいて、音声品質を確保するためにキューにパケットの転送順位を付け、音声パケットを高い順位のキューに入れ、低い順位のキューのパケットよりも先に転送する処理は、一般に何制御といわれるか。",
+    "choices": {
+      "ア": "帯域",
+      "イ": "ウインドウ",
+      "ウ": "接続",
+      "エ": "優先",
+      "オ": "フロー"
+    },
+    "answer": "エ",
+    "explanation": "優先度を付け、高い優先度のキューを先に処理すると音声の待ち時間を短くできます。",
+    "choiceExplanations": {
+      "ア": "帯域制御は流量の割当てや上限などを調整します。設問では転送の順番を調整します。",
+      "イ": "ウインドウ制御は未確認のまま送信できるデータ量やフレーム数を制御します。",
+      "ウ": "接続制御は通信の接続を設定・解除する処理などを指します。",
+      "エ": "優先度を付け、高い優先度のキューを先に処理すると音声の待ち時間を短くできます。",
+      "オ": "フロー制御は受信側の処理能力を超えないように、送信側が流す量を調整します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b985c15a2d8.pdf#page=4",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b98675861d2.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和5年度第2回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-chief-2-2023-second-gakka-q11",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "second",
+    "qNumber": 11,
+    "sourceExamSession": "第2回",
+    "officialQuestionLabel": "問11",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "通信網",
+    "topicTags": [
+      "呼量"
+    ],
+    "difficulty": 2,
+    "question": "ある回線群において、T分間の呼量と呼数を調査したところ、運んだ呼量はa꜀アーランで、運んだ呼数がC呼であった。この回線群の運んだ呼の平均回線保留時間は何秒か。",
+    "choices": {
+      "ア": "a꜀T/C",
+      "イ": "a꜀C×60×60/T",
+      "ウ": "a꜀T×60/C",
+      "エ": "a꜀T/(C×60)",
+      "オ": "a꜀T×60×60/C"
+    },
+    "answer": "ウ",
+    "explanation": "運んだ全呼の保留時間の合計はa꜀T分です。C呼で割った平均値に60を掛けて秒に直します。",
+    "choiceExplanations": {
+      "ア": "この式で求まる平均保留時間の単位は分です。秒への換算には60を掛けます。",
+      "イ": "平均保留時間を得るには合計保留時間a꜀Tを呼数Cで割ります。呼数を掛ける式ではありません。",
+      "ウ": "運んだ全呼の保留時間の合計はa꜀T分です。C呼で割った平均値に60を掛けて秒に直します。",
+      "エ": "分から秒に直す際には60で割らず、60を掛けます。",
+      "オ": "観測時間Tは分で与えられているので、秒への換算係数は60を1回だけ掛けます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b985c15a2d8.pdf#page=4",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b98675861d2.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和5年度第2回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-chief-2-2023-second-gakka-q12",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "second",
+    "qNumber": 12,
+    "sourceExamSession": "第2回",
+    "officialQuestionLabel": "問12",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "通信網",
+    "topicTags": [
+      "クラウドサービス"
+    ],
+    "difficulty": 2,
+    "question": "インターネットなどのネットワークを介してユーザにコンピューティングサービスを提供する形態であるクラウドコンピューティングにおいて、コンピュータ資源としてサーバなどのインフラ機能のみを提供するサービスは、何といわれるか。",
+    "choices": {
+      "ア": "PaaS",
+      "イ": "GRRF",
+      "ウ": "IaaS",
+      "エ": "ZigBee",
+      "オ": "SaaS"
+    },
+    "answer": "ウ",
+    "explanation": "IaaSはサーバ、ストレージ、ネットワークなどのインフラ機能を利用者に提供します。",
+    "choiceExplanations": {
+      "ア": "PaaSはアプリケーションを開発・実行するプラットフォームを提供します。",
+      "イ": "GRRFはクラウドのサービスモデルを示す用語ではありません。インフラ機能のみの提供を表す用語はIaaSです。",
+      "ウ": "IaaSはサーバ、ストレージ、ネットワークなどのインフラ機能を利用者に提供します。",
+      "エ": "低消費電力の短距離無線ネットワークの規格です。",
+      "オ": "SaaSでは利用者が完成したアプリケーションをサービスとして使います。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b985c15a2d8.pdf#page=4",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b98675861d2.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和5年度第2回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-chief-2-2023-second-gakka-q13",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "second",
+    "qNumber": 13,
+    "sourceExamSession": "第2回",
+    "officialQuestionLabel": "問13",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "通信網",
+    "topicTags": [
+      "ネットワークトポロジ"
+    ],
+    "difficulty": 2,
+    "question": "ネットワークトポロジにおいて、全てのノード間を直接リンクで結ぶ形態である［空欄］型ネットワークは、トラヒックの多い基幹ネットワークに適用され、ノード数がNの場合、必要なリンク数はN(N−1)/2となる。",
+    "choices": {
+      "ア": "ループ",
+      "イ": "ツリー",
+      "ウ": "バス",
+      "エ": "スター",
+      "オ": "メッシュ"
+    },
+    "answer": "オ",
+    "explanation": "フルメッシュでは全てのノード対を直接結びます。リンク数はN個から2個を選ぶ組合せの数に等しくなります。",
+    "choiceExplanations": {
+      "ア": "ノードを環状に接続する構成では、通常は隣接するノードだけが直接つながります。",
+      "イ": "木構造では親子関係で接続します。N個のノードを結ぶ辺はN−1本です。",
+      "ウ": "各ノードが共通の伝送路に接続する構成です。",
+      "エ": "中心ノードと周辺ノードを結び、周辺ノード同士は中心を経由します。",
+      "オ": "フルメッシュでは全てのノード対を直接結びます。リンク数はN個から2個を選ぶ組合せの数に等しくなります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b985c15a2d8.pdf#page=4",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b98675861d2.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和5年度第2回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-chief-2-2023-second-gakka-q14",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "second",
+    "qNumber": 14,
+    "sourceExamSession": "第2回",
+    "officialQuestionLabel": "問14",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "通信網",
+    "topicTags": [
+      "電話番号"
+    ],
+    "difficulty": 2,
+    "question": "電気通信番号を使用したIP電話サービスには、050番号が付与されるものや、何番号が付与されるものがあるか。",
+    "choices": {
+      "ア": "0AB0",
+      "イ": "1XY",
+      "ウ": "00XY",
+      "エ": "0AB〜J",
+      "オ": "#ABCD"
+    },
+    "answer": "エ",
+    "explanation": "固定電話の10桁の番号形式で、要件を満たす固定系のIP電話サービスにも付与されます。",
+    "choiceExplanations": {
+      "ア": "0AB0には0120や0570などのサービス番号が含まれ、設問が求める地域別の固定電話番号の形式とは異なります。",
+      "イ": "110や119のような3桁の特番の形式です。",
+      "ウ": "電気通信事業者を識別する事業者識別番号の形式です。",
+      "エ": "固定電話の10桁の番号形式で、要件を満たす固定系のIP電話サービスにも付与されます。",
+      "オ": "#で始まる短縮ダイヤル用の番号形式です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b985c15a2d8.pdf#page=4",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b98675861d2.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和5年度第2回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-chief-2-2023-second-gakka-q15",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "second",
+    "qNumber": 15,
+    "sourceExamSession": "第2回",
+    "officialQuestionLabel": "問15",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "通信網",
+    "topicTags": [
+      "CSMA/CD"
+    ],
+    "difficulty": 2,
+    "question": "LANのアクセス制御方式の一つであるCSMA/CDでは、伝送媒体へ複数のアクセスが発生してデータが衝突した場合、LANに接続されている各リンクセグメントに何が送出されるか。",
+    "choices": {
+      "ア": "空きセル",
+      "イ": "ジャム信号",
+      "ウ": "チェックサムの結果",
+      "エ": "コールプログレス信号",
+      "オ": "エコービット"
+    },
+    "answer": "イ",
+    "explanation": "衝突を検知した装置はジャム信号を送り、同じ衝突ドメインの他の装置にも衝突を認識させます。",
+    "choiceExplanations": {
+      "ア": "空きセルはATMなどでデータがない区間を埋める際に使います。",
+      "イ": "衝突を検知した装置はジャム信号を送り、同じ衝突ドメインの他の装置にも衝突を認識させます。",
+      "ウ": "チェックサムはデータが転送中に変化したかを確認するための値です。衝突を通知する信号ではありません。",
+      "エ": "発信音や呼出音など、電話の接続状態を知らせる信号を指します。",
+      "オ": "衝突の検出後に規定されている送出信号はジャム信号です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b985c15a2d8.pdf#page=5",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b98675861d2.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和5年度第2回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-chief-2-2023-second-gakka-q16",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "second",
+    "qNumber": 16,
+    "sourceExamSession": "第2回",
+    "officialQuestionLabel": "問16",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "伝送技術",
+    "topicTags": [
+      "データ信号速度"
+    ],
+    "difficulty": 2,
+    "question": "データ通信において、伝送路上を1秒間に伝送できるビット数は、何といわれるか。ただし、単位にはbit/sが用いられる。",
+    "choices": {
+      "ア": "処理速度",
+      "イ": "データ信号速度",
+      "ウ": "変調速度",
+      "エ": "量子化ビット数",
+      "オ": "シンボルレート"
+    },
+    "answer": "イ",
+    "explanation": "データ信号速度は1秒間に伝送されるビット数で、bit/sで表します。",
+    "choiceExplanations": {
+      "ア": "装置がデータや命令を処理する速さを広く指します。設問は伝送路を通るビットの毎秒数を問うています。",
+      "イ": "データ信号速度は1秒間に伝送されるビット数で、bit/sで表します。",
+      "ウ": "毎秒何個の信号要素を送るかを表します。多値変調では1個の要素が複数ビットを表せます。",
+      "エ": "量子化して標本1個を表現するためのビット数です。伝送時間当たりの値ではありません。",
+      "オ": "1秒当たりのシンボル数です。1シンボルが伝えるビット数を掛けるとビットレートを求められます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b985c15a2d8.pdf#page=5",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b98675861d2.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和5年度第2回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-chief-2-2023-second-gakka-q17",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "second",
+    "qNumber": 17,
+    "sourceExamSession": "第2回",
+    "officialQuestionLabel": "問17",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "伝送技術",
+    "topicTags": [
+      "八木・宇田アンテナ"
+    ],
+    "difficulty": 2,
+    "question": "3素子八木・宇田アンテナの各素子は、電波が放射される方向から見て、どの順に配置されているか。",
+    "choices": {
+      "ア": "放射器→導波器→反射器",
+      "イ": "導波器→反射器→放射器",
+      "ウ": "反射器→導波器→放射器",
+      "エ": "放射器→反射器→導波器",
+      "オ": "導波器→放射器→反射器"
+    },
+    "answer": "オ",
+    "explanation": "前方に導波器、中央に給電する放射器、後方に反射器を配置して前方の放射を強めます。",
+    "choiceExplanations": {
+      "ア": "放射器は中央で給電し、導波器が放射方向の先頭に来ます。",
+      "イ": "導波器が前に来る点は合いますが、反射器は放射器より後ろに置きます。",
+      "ウ": "反射器側の放射を抑え、導波器側に主放射を向けます。",
+      "エ": "放射器は前後に置く導波器と反射器の間にあります。",
+      "オ": "前方に導波器、中央に給電する放射器、後方に反射器を配置して前方の放射を強めます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b985c15a2d8.pdf#page=5",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b98675861d2.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和5年度第2回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-chief-2-2023-second-gakka-q18",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "second",
+    "qNumber": 18,
+    "sourceExamSession": "第2回",
+    "officialQuestionLabel": "問18",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "伝送技術",
+    "topicTags": [
+      "光ファイバ"
+    ],
+    "difficulty": 2,
+    "question": "光ファイバでは、中心部のコアと外周部のクラッドの屈折率の差により、光がコア内を全反射しながら伝搬する。この屈折率の差は、製造段階において、主材料である石英ガラスなどに添加する何の種類や量により調整されるか。",
+    "choices": {
+      "ア": "プリフォーム",
+      "イ": "ドーパント",
+      "ウ": "ライニング剤",
+      "エ": "OH基",
+      "オ": "フェルール"
+    },
+    "answer": "イ",
+    "explanation": "コアやクラッドの石英にドーパントを添加し、その種類と濃度で屈折率を調節します。",
+    "choiceExplanations": {
+      "ア": "プリフォームは加熱して光ファイバに線引きするガラス母材です。添加物の総称ではありません。",
+      "イ": "コアやクラッドの石英にドーパントを添加し、その種類と濃度で屈折率を調節します。",
+      "ウ": "ライニングは内面などを被覆する処理です。屈折率差を調節する材料はドーパントと呼びます。",
+      "エ": "石英中のOH基は特定波長の光吸収などに影響を与えます。屈折率調節用の添加物の総称ではありません。",
+      "オ": "コネクタ内で光ファイバの先端を保持して位置を合わせる部品です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b985c15a2d8.pdf#page=5",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b98675861d2.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和5年度第2回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-chief-2-2023-second-gakka-q19",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "second",
+    "qNumber": 19,
+    "sourceExamSession": "第2回",
+    "officialQuestionLabel": "問19",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "電気回路",
+    "topicTags": [
+      "発電設備"
+    ],
+    "difficulty": 2,
+    "question": "電力需要の変動に対応し、商用受電電力の低減と電気料金の削減を目的に、受電電力が契約電力を超えないように常用発電設備を運転する方式は、何方式といわれるか。",
+    "choices": {
+      "ア": "電力貯蔵",
+      "イ": "ピークカット運転",
+      "ウ": "デマンド制御",
+      "エ": "逆潮流制御",
+      "オ": "ベースロード運転"
+    },
+    "answer": "イ",
+    "explanation": "需要の大きい時間帯に発電して商用電力への依存を抑え、受電ピークを契約電力以下に保つ運転方式です。",
+    "choiceExplanations": {
+      "ア": "電力貯蔵は蓄電池などにエネルギーをためて後で使う方法です。",
+      "イ": "需要の大きい時間帯に発電して商用電力への依存を抑え、受電ピークを契約電力以下に保つ運転方式です。",
+      "ウ": "受電電力の需要を監視し、負荷の調整などで上限を抑える制御を広く指します。設問は常用発電設備の運転方式を問うています。",
+      "エ": "自家発電電力が系統へ流れ出ることを調整する制御です。",
+      "オ": "継続的な基礎需要を発電設備でまかなう運転です。負荷のピークに合わせた発電とは目的が異なります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b985c15a2d8.pdf#page=5",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b98675861d2.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和5年度第2回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-chief-2-2023-second-gakka-q20",
+    "exam": "dekyo-chief-2",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "second",
+    "qNumber": 20,
+    "sourceExamSession": "第2回",
+    "officialQuestionLabel": "問20",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "伝送技術",
+    "topicTags": [
+      "光ドロップケーブル"
+    ],
+    "difficulty": 2,
+    "question": "ユーザ宅への引込みに使用するドロップ光ファイバケーブルのどの構成要素に、落雷などによるサージ電流がケーブルを介して宅内へ侵入することを防止するため、一般にFRPが用いられるか。",
+    "choices": {
+      "ア": "止水テープ",
+      "イ": "ケーブル外被",
+      "ウ": "テンションメンバ",
+      "エ": "スロットロッド",
+      "オ": "光ファイバテープ心線被覆"
+    },
+    "answer": "ウ",
+    "explanation": "テンションメンバを非導電性のFRPにすると、引張強度を確保しながらサージ電流の経路となる金属部材を省けます。",
+    "choiceExplanations": {
+      "ア": "止水テープは水がケーブル内に浸入・進行するのを抑えます。",
+      "イ": "外被はケーブルの内部を外力や環境から保護します。非導電性FRPで置き換える対象は張力を支える部材です。",
+      "ウ": "テンションメンバを非導電性のFRPにすると、引張強度を確保しながらサージ電流の経路となる金属部材を省けます。",
+      "エ": "溝を設けて光ファイバ心線を収容する構造部品です。設問のFRPはドロップケーブルを補強する役割を持ちます。",
+      "オ": "複数の光心線を一体化して保護する被覆です。ケーブルの張力を受けるテンションメンバとは役割が異なります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b985c15a2d8.pdf#page=5",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2467/files246765b98675861d2.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 令和5年度第2回電気通信主任技術者試験。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  }
+]
