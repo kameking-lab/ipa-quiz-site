@@ -1885,7 +1885,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.pref.nagano.lg.jp/kyoiku/gimukyo/jukense/r7senkou.html",
     officialReuseTermsUrl: "https://www.pref.nagano.lg.jp/koho/kensei/koho/homepage/riyo.html",
     status: "live",
-    reuseSummary: "令和9年度採用（2026年度実施）の教職教養を小・中・義務・特支15問、高校10問収録。令和7年度採用（2024年度実施）の高校一般教養30問も収録。令和9年度小・中・義務・特支の第13問は県教委の訂正により全員正答。",
+    reuseSummary: "令和9年度採用（2026年度実施）の教職教養を小・中・義務・特支15問、高校10問、小学校専門教科を26解答単位収録。令和7年度採用（2024年度実施）の高校一般教養30問も収録。令和9年度小・中・義務・特支の第13問は県教委の訂正により全員正答。",
     attributionTemplate: "出典：長野県教育委員会 長野県公立学校教員採用選考。解説は過去問AIの独自作成。",
     remainingWork: [],
   },
