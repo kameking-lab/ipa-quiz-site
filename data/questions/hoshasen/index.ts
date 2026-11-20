@@ -13,6 +13,7 @@ import second2026 from "./2026-2.json";
 import first2025 from "./2025-1.json";
 import firstLaw2024 from "./2024-1-hourei.json";
 import firstPhysics2024 from "./2024-1-butsuri.json";
+import firstChemistry2024 from "./2024-1-kagaku.json";
 import firstBiology2024 from "./2024-1-seibutsu.json";
 import second2025 from "./2025-2.json";
 import chemistry2026 from "./2026-2-kagaku.json";
@@ -87,4 +88,4 @@ export const HoshasenStagedQuestionSchema = z.union([SingleSchema, MultiSchema])
 export type HoshasenStagedQuestion = z.infer<typeof HoshasenStagedQuestionSchema>;
 export const HOSHASEN_STAGED_QUESTIONS: HoshasenStagedQuestion[] = z
   .array(HoshasenStagedQuestionSchema)
-  .parse([...first2026, ...second2026, ...first2025, ...second2025, ...chemistry2026, ...chemistry2025, ...biology2026, ...biology2025, ...practical2026, ...practical2025, ...firstChemistry2026, ...firstBiology2026, ...firstBiology2025, ...firstChemistry2025, ...secondLaw2026, ...secondLaw2025, ...firstLaw2026, ...firstLaw2025, ...firstLaw2024, ...firstPhysics2024, ...firstBiology2024, ...multi]);
+  .parse([...first2026, ...second2026, ...first2025, ...second2025, ...chemistry2026, ...chemistry2025, ...biology2026, ...biology2025, ...practical2026, ...practical2025, ...firstChemistry2026, ...firstBiology2026, ...firstBiology2025, ...firstChemistry2025, ...secondLaw2026, ...secondLaw2025, ...firstLaw2026, ...firstLaw2025, ...firstLaw2024, ...firstPhysics2024, ...firstBiology2024, ...firstChemistry2024, ...multi]);
