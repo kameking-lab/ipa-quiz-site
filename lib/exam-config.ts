@@ -1111,6 +1111,7 @@ kangoshi: {
         { session: "kogai-air-hazardous", urlSlug: "kogai-air-hazardous", expectedQuestions: 10, label: "大気有害物質特論", categories: ["大気有害物質特論"] },
         { session: "kogai-large-air", urlSlug: "kogai-large-air", expectedQuestions: 10, label: "大規模大気特論", categories: ["大規模大気特論"] },
         { session: "kogai-water-basics", urlSlug: "kogai-water-basics", expectedQuestions: 10, label: "水質概論", categories: ["水質概論"] },
+        { session: "kogai-wastewater", urlSlug: "kogai-wastewater", expectedQuestions: 25, label: "汚水処理特論", categories: ["汚水処理特論"] },
     ],
     seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
 },
