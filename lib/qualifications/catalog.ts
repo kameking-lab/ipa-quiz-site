@@ -1813,7 +1813,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_19.html",
     officialReuseTermsUrl: "https://www.jinji.go.jp/shinsei/notice.html",
     status: "live",
-    reuseSummary: "2026年度の専門試験から、矯正心理専門職の必須問題19問と、法務教官・保護観察官・矯正心理専門職の共通問題39問を収録。",
+    reuseSummary: "2026年度の専門試験から、矯正心理専門職の必須問題19問と、法務教官・保護観察官・矯正心理専門職の共通問題36問を収録。",
     attributionTemplate: "出典：人事院「法務省専門職員（人間科学）採用試験 専門試験（多肢選択式）」。解説は過去問AIの独自作成。",
     remainingWork: ["2025・2024年度の専門択一の補充"],
   },
