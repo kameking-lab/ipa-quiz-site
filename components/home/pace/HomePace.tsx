@@ -22,7 +22,7 @@ import { searchQualifications } from "@/lib/qualifications/search";
 import { groupQualifications, qualificationGroupLabel } from "@/lib/qualifications/groups";
 import { PRICE_PAGE_LINK } from "@/lib/billing/price-page-link";
 import { PlanCreateSheet } from "./PlanCreateSheet";
-import { PaceTrack } from "./PaceTrack";
+import { PaceTrack, StartTrack } from "./PaceTrack";
 import { StudyRoomLine } from "./StudyRoomLine";
 import styles from "./HomePace.module.css";
 
@@ -198,7 +198,7 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false }: {
         })}</ul>
         {term && matched.length > 0 && <p role="status" className="sr-only">検索結果 {matched.length}件</p>}
         {term && !matched.length && <p role="status" className="py-4 text-sm text-muted-foreground">該当する資格が見つかりませんでした。</p>}
-        <button type="button" disabled={!ready} aria-haspopup="dialog" className="mx-auto mt-2 flex min-h-11 items-center px-2 text-sm font-medium text-primary underline underline-offset-4 disabled:opacity-50" onClick={() => setSheet("create")}>学習計画を作成</button>
+        <button type="button" disabled={!ready} aria-haspopup="dialog" aria-label="学習計画を作成" className="mt-4 block w-full rounded-2xl border border-border bg-card px-3 pb-3 pt-2 text-center disabled:opacity-50" onClick={() => setSheet("create")}><StartTrack runArt={qualificationRunArt(initialExam)} /><span className="text-xs text-muted-foreground">試験日を決めると、チワワが走り出します</span><span className="mt-1 flex min-h-11 items-center justify-center text-sm font-medium text-primary underline underline-offset-4">学習計画を作成</span></button>
         <p className="mt-3 text-center text-xs leading-relaxed text-muted-foreground">{domains.reduce((n, d) => n + d.qualificationCount, 0)}資格・{domains.reduce((n, d) => n + d.totalQuestions, 0).toLocaleString("ja-JP")}問・ログインなしで1日10問まで無料</p>
       </div>}
     </section>
