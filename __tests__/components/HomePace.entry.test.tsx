@@ -8,7 +8,6 @@ import { listPacePlans, savePacePlan } from "@/lib/study-plan/pace-storage";
 
 const router = vi.hoisted(() => ({ replace: vi.fn(), push: vi.fn() }));
 vi.mock("next/navigation", () => ({ useRouter: () => router }));
-vi.mock("@/components/home/pace/StudyRoomLine", () => ({ StudyRoomLine: () => null }));
 
 const domains: HomeDirectoryDomain[] = [{
   id: "it", title: "IT", lead: "", allHref: "/ipa", allLabel: "すべて", compact: [], totalQuestions: 2, qualificationCount: 2,

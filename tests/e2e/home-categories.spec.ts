@@ -31,11 +31,18 @@ for (const width of [390, 1280]) {
     await page.goto("/search");
     await expect(page.getByRole("heading", { name: "さがす", exact: true })).toBeVisible();
     const directory = page.locator("#home-directory-title");
-    await expect(directory.locator("details")).toHaveCount(9);
+    await expect(directory.locator('details[id^="domain-"]')).toHaveCount(9);
     await expect(directory.locator("details[open]")).toHaveCount(0);
     for (const href of ["/ip", "/sg", "/fe", "/ap", "/au", "/fp3", "/fp2", "/takken", "/denken3", "/denken2", "/denko2", "/denko1", "/civil1", "/civil2", "/kankoji2", "/zoen2", "/tsushin2", "/kaigo", "/shakai", "/seishin", "/tohan", "/e-learning/exams/qualifications/dai-1-shu-eisei-kanrisha", "/ipa", "/e-learning/exams", "/qualifications"]) {
       await expect(directory.locator(`a[href="${href}"]`).first(), href).toBeAttached();
     }
+    const welfare = directory.locator("#domain-welfare");
+    await welfare.locator(":scope > summary").click();
+    await expect(welfare.locator('a[href="/qualifications/tohan"]')).toBeVisible();
+    const regionalExam = welfare.locator('a[href="/tohan"]');
+    await expect(regionalExam).not.toBeVisible();
+    await welfare.locator('summary[aria-label^="登録販売者試験"]').click();
+    await expect(regionalExam).toBeVisible();
     await expect(page.locator('#domain-it a[href="/ip"]')).not.toBeVisible();
     await page.locator("#domain-it > summary").click();
     await expect(page.locator('#domain-it a[href="/ip"]')).toBeVisible();

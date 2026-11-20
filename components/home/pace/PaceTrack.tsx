@@ -112,11 +112,12 @@ export function PaceTrack({ plan, runArt, percent, target }: { plan: PacePlan; r
 /** The track before a plan exists: the chihuahua waits at the start line. */
 export function StartTrack({ runArt }: { runArt: string }) {
   const fillRef = useRef<SVGLineElement>(null);
-  return <svg viewBox="0 -19 320 131" className="mx-auto h-[131px] w-full max-w-[420px] overflow-visible" role="img" aria-label="進み具合0%、試験日を決めると進み具合を表示します">
-    <line x1="30" y1="79" x2="290" y2="79" strokeWidth="8" strokeLinecap="round" className="stroke-progress-track" />
+  return <svg viewBox="0 8 180 94" className="mx-auto h-auto w-full max-w-[144px]" role="img" aria-label="進み具合0%、試験日を決めると進み具合を表示します">
+    <line x1={START_X} y1="79" x2="155" y2="79" strokeWidth="8" strokeLinecap="round" className="stroke-progress-track" />
     <line ref={fillRef} x1={START_X} y1="79" x2={START_X} y2="79" strokeWidth="8" strokeLinecap="round" className="stroke-primary" />
     <RunningChihuahua src={runArt} percent={0} fillRef={fillRef} />
-    <text x="30" y="94" fontSize="10" className="fill-muted-foreground">スタート</text><text x="290" y="94" textAnchor="end" fontSize="10" className="fill-muted-foreground">試験日</text>
-    <path d="M296 99V85c4-3 8 3 12 0v8c-4 3-8-3-12 0" fill="none" strokeWidth="1.5" className="stroke-primary" />
+    <text x={START_X} y="95" fontSize="14" className="fill-muted-foreground">スタート</text>
+    <text x="155" y="95" textAnchor="end" fontSize="14" className="fill-muted-foreground">試験日</text>
+    <path d="M161 99V85c4-3 8 3 12 0v8c-4 3-8-3-12 0" fill="none" strokeWidth="1.5" className="stroke-primary" />
   </svg>;
 }

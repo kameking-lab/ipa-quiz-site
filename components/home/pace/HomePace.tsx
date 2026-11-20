@@ -23,7 +23,6 @@ import { groupQualifications, qualificationGroupLabel } from "@/lib/qualificatio
 import { PRICE_PAGE_LINK } from "@/lib/billing/price-page-link";
 import { PlanCreateSheet } from "./PlanCreateSheet";
 import { PaceTrack, StartTrack } from "./PaceTrack";
-import { StudyRoomLine } from "./StudyRoomLine";
 import styles from "./HomePace.module.css";
 
 interface Resume { exam: string; name: string; href: string; caption: string }
@@ -184,26 +183,31 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false }: {
         </div>
         <Button asChild size="xl" className="w-full"><Link href={resume?.href ?? items.find(i => i.key === recent)?.href ?? "/search"}>続きを解く <span aria-hidden="true">→</span></Link></Button>
         <Button variant="outline" className="mt-2 min-h-11 w-full border-primary bg-card text-primary" aria-haspopup="dialog" onClick={() => setSheet("create")}>学習計画を作成</Button>
-      </div> : <div className="pt-5">
+      </div> : <div className="pt-3">
         <div className="flex items-center justify-between gap-4">
           <h1 aria-label="今日も、ひと問ずつ。" className="font-display text-[28px] font-bold leading-snug sm:text-4xl">今日も、<br />ひと問ずつ。</h1>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/mascot/chihuahua-guide.webp" alt="" width={88} height={88} className="size-[88px] object-contain sm:size-24" />
+          <img src="/mascot/chihuahua-guide.webp" alt="" width={80} height={80} className="size-20 object-contain sm:size-[88px]" />
         </div>
-        <label className={`${styles.search} mt-4 flex min-h-[54px] items-center gap-3 rounded-xl border border-input bg-card px-4`}><Search aria-hidden="true" className="size-5 shrink-0 text-muted-foreground" /><input id="qualification-search" aria-label="資格名・略称で検索" aria-controls="home-qualification-results" disabled={!ready} type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder="受ける資格は？" className="w-full min-w-0 bg-transparent py-3 text-base outline-none" /></label>
-        <h2 id="home-results-title" className="mb-2 mt-4 text-xs text-muted-foreground">{term ? "検索結果" : "試験が近い資格"}</h2>
+        <label className={`${styles.search} mt-3 flex min-h-[54px] items-center gap-3 rounded-xl border border-input bg-card px-4`}><Search aria-hidden="true" className="size-5 shrink-0 text-muted-foreground" /><input id="qualification-search" aria-label="資格名・略称で検索" aria-controls="home-qualification-results" disabled={!ready} type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder="受ける資格は？" className="w-full min-w-0 bg-transparent py-3 text-base outline-none" /></label>
+        <h2 id="home-results-title" className="mb-2 mt-3 text-xs text-muted-foreground">{term ? "検索結果" : "試験が近い資格"}</h2>
         <ul id="home-qualification-results" aria-labelledby="home-results-title" className="space-y-1.5">{matched.map(i => {
           const date = picks.find(pick => pick.key === i.key)?.next;
           return <li key={i.key}><Link href={i.href} className={`${styles.result} rounded-lg border border-border bg-card px-3`}><span>{i.name}</span><span className="flex shrink-0 items-center gap-1 text-xs text-muted-foreground">{date && <time dateTime={date.date}>{i.children ? "直近 " : ""}{shortDate(date.date)}{date.endDate ? `〜${shortDate(date.endDate)}` : ""}{date.note ? `（${date.note}）` : ""}</time>}<ChevronRight aria-hidden="true" className="size-4" /></span></Link></li>;
         })}</ul>
         {term && matched.length > 0 && <p role="status" className="sr-only">検索結果 {matched.length}件</p>}
         {term && !matched.length && <p role="status" className="py-4 text-sm text-muted-foreground">該当する資格が見つかりませんでした。</p>}
-        <button type="button" disabled={!ready} aria-haspopup="dialog" aria-label="学習計画を作成" className="mt-4 block w-full rounded-2xl border border-border bg-card px-3 pb-3 pt-2 text-center disabled:opacity-50" onClick={() => setSheet("create")}><StartTrack runArt={qualificationRunArt(initialExam)} /><span className="text-xs text-muted-foreground">試験日を決めると、チワワが走り出します</span><span className="mt-1 flex min-h-11 items-center justify-center text-sm font-medium text-primary underline underline-offset-4">学習計画を作成</span></button>
+        <button type="button" disabled={!ready} aria-haspopup="dialog" aria-labelledby="home-create-plan" aria-describedby="home-start-track-description" className="mt-2 grid min-h-11 w-full grid-cols-[minmax(0,2fr)_minmax(0,3fr)] items-center gap-2 rounded-2xl border border-border bg-card px-3 py-1.5 text-left hover:bg-muted disabled:opacity-50" onClick={() => setSheet("create")}>
+          <StartTrack runArt={qualificationRunArt(initialExam)} />
+          <span className="flex flex-col gap-1">
+            <span id="home-create-plan" className="text-sm font-medium text-primary underline underline-offset-4">学習計画を作成</span>
+            <span id="home-start-track-description" className="text-xs text-muted-foreground">試験日を決めると、チワワが走り出します</span>
+          </span>
+        </button>
         <p className="mt-3 text-center text-xs leading-relaxed text-muted-foreground">{domains.reduce((n, d) => n + d.qualificationCount, 0)}資格・{domains.reduce((n, d) => n + d.totalQuestions, 0).toLocaleString("ja-JP")}問・ログインなしで1日10問まで無料</p>
       </div>}
     </section>
     {error && <p role="alert" className="mt-3 text-sm text-destructive">{error}</p>}
-    <StudyRoomLine />
     <PlanCreateSheet open={sheet === "create"} onOpenChange={open => setSheet(open ? "create" : null)} items={planItems} initialExam={initialExam} onCreated={id => { setActive(id); refresh(); }} />
     <Sheet open={sheet === "switch"} onOpenChange={open => setSheet(open ? "switch" : null)}><SheetContent side="bottom" aria-describedby={undefined} className={`${styles.sheet} mx-auto max-h-[min(85dvh,calc(100dvh-var(--safe-top)-1rem))] max-w-[640px] overflow-y-auto pb-[max(1.5rem,var(--safe-bottom))]`}><SheetHeader><SheetTitle>受ける資格</SheetTitle></SheetHeader><div className="mt-5 space-y-2">
       {groupQualifications(plans, p => p.exam).map(row => {

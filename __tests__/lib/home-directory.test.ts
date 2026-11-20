@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
 import { createElement } from "react";
 import { HomeDirectory } from "@/components/home/landing/HomeDirectory";
+import { QualificationDirectory } from "@/components/home/pace/QualificationDirectory";
 import { EXAM_QUESTION_COUNTS } from "@/lib/constants/exam-question-counts";
 import { getHomeDirectory } from "@/lib/home/home-directory";
 import { groupHomeDirectory } from "@/lib/home/grouped-directory";
@@ -171,6 +172,24 @@ describe("home directory", () => {
     const expected = { "information-technology": "it", business: "money", finance: "money", accounting: "money", "real-estate": "real-estate", legal: "legal", construction: "construction", electrical: "electrical", safety: "safety", welfare: "welfare", pharmacy: "welfare", "personal-services": "welfare", automotive: "automotive" };
     for (const entry of QUALIFICATION_CATALOG.filter(entry => entry.status === "live" && entry.examCode && !["eisei1", "eisei2"].includes(entry.examCode))) {
       expect(findDomain(entry.examCode!), entry.examCode).toBe(expected[entry.domain]);
+    }
+  });
+
+  it("renders links for all qualifications and their sections in the shared directory HTML", () => {
+    const grouped = groupHomeDirectory(domains);
+    const html = renderToStaticMarkup(createElement(QualificationDirectory, { domains: grouped }));
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    expect(doc.querySelectorAll('details[id^="domain-"]')).toHaveLength(grouped.length);
+    expect(doc.querySelectorAll("details[open]")).toHaveLength(0);
+    const links = new Map([...doc.querySelectorAll("a[href]")].map(link => [link.getAttribute("href"), link]));
+    for (const { href } of all) expect(links.has(href), href).toBe(true);
+    for (const { href, children } of grouped.flatMap(domain => [...domain.featured, ...domain.compact])) {
+      if (!children) continue;
+      const parent = doc.querySelectorAll(`a[href="${href}"]`);
+      expect(parent, href).toHaveLength(1);
+      for (const child of children) {
+        expect(links.get(child.href)?.closest("details")?.parentElement, child.href).toBe(parent[0].parentElement);
+      }
     }
   });
 });

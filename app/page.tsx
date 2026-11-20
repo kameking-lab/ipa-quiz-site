@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { HomePace } from "@/components/home/pace/HomePace";
+import { QualificationDirectory } from "@/components/home/pace/QualificationDirectory";
+import { StudyRoomLine } from "@/components/home/pace/StudyRoomLine";
 import { planCatalogKeys } from "@/lib/study-plan/catalog-keys";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getHomeDirectory } from "@/lib/home/home-directory";
+import { groupHomeDirectory } from "@/lib/home/grouped-directory";
 import { buildOrgNode, buildWebsiteNode } from "@/lib/seo/structured-data";
 import styles from "./HomePage.module.css";
 
@@ -22,6 +25,15 @@ export default function HomePage() {
     <main className={`${styles.home} mx-auto w-full max-w-[640px] flex-1 px-4 sm:px-6`}>
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [buildWebsiteNode(description), buildOrgNode()] }} />
       <HomePace domains={domains} planExamKeys={planCatalogKeys()} />
+      <div className={styles.shortcuts}>
+        <StudyRoomLine />
+        <details id="home-qualification-directory" className={styles.directory}>
+          <summary className="min-h-14 cursor-pointer rounded-xl border border-border bg-card px-3 py-4 text-sm hover:bg-muted">資格・区分一覧</summary>
+          <div className="mt-2">
+            <QualificationDirectory domains={groupHomeDirectory(domains)} />
+          </div>
+        </details>
+      </div>
     </main>
   );
 }

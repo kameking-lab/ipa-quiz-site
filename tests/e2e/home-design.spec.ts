@@ -42,13 +42,19 @@ for (const width of [390, 1280]) for (const colorScheme of ["light", "dark"] as 
         await expect(card).toHaveAttribute("aria-busy", "false");
         const primary = state === "guest" ? card.getByRole("searchbox", { name: "資格名・略称で検索" })
           : card.getByRole("link", { name: "今日の問題を解く" });
-        await expect(primary).toBeVisible();
+        await expect(primary).toBeInViewport({ ratio: 1 });
         expect(await primary.evaluate(el => el.getBoundingClientRect().height)).toBeGreaterThanOrEqual(44);
         expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(width);
         expect(await page.evaluate(() => document.documentElement.scrollHeight)).toBe(width === 390 ? 844 : 800);
         const source = page.getByRole("link", { name: "著作権・出典", exact: true });
+        await expect(source).toBeInViewport({ ratio: 1 });
         const sourceBox = await source.boundingBox();
         expect(sourceBox!.height).toBeGreaterThanOrEqual(44);
+        if (state === "guest") {
+          const createPlan = card.getByRole("button", { name: "学習計画を作成" });
+          await expect(createPlan).toBeInViewport({ ratio: 1 });
+          await expect(createPlan.locator('svg[aria-label^="進み具合0%"]')).toBeVisible();
+        }
         const nav = page.getByRole("navigation", { name: "モバイル底タブ" });
         if (width === 390) {
           await expect(nav.getByRole("link")).toHaveCount(3);
