@@ -122,13 +122,6 @@ const nextConfig: NextConfig = {
   outputFileTracingExcludes: {
     "/*": [
       "./private-assets/**/*",
-      // Committed reports (~14MB) are traced into every function through the local
-      // cost log path in lib/ai/cost-tracker.ts; functions never read them.
-      "./logs/**/*",
-      // TypeScript declaration files are never loaded at runtime.
-      "**/node_modules/**/*.d.ts",
-      "**/node_modules/**/*.d.mts",
-      "**/node_modules/**/*.d.cts",
       "**/node_modules/@prisma/client/runtime/*.wasm-base64.js",
       "**/node_modules/@prisma/client/runtime/*.wasm-base64.mjs",
       "**/node_modules/@prisma/client/runtime/*.map",
@@ -141,7 +134,7 @@ const nextConfig: NextConfig = {
     // The exam-library copilot answers from the official paper only (no RAG), so the
     // copilot search index and local audit logs are not needed and pushed the function
     // past Vercel's 250MB limit (265MB) once the question corpus grew.
-    "/api/copilot/exam-library": ["./generated/copilot/**/*", "./logs/**/*"],
+    "/api/copilot/exam-library": ["./generated/copilot/**/*"],
   },
   outputFileTracingIncludes: {
     "/sw.js": ["./lib/pwa/sw.js"],
