@@ -883,7 +883,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     administrator: "北海道・宮城県",
     officialQuestionsUrl: "https://www.pref.hokkaido.lg.jp/hf/iyk/iry/yakuji/tourokuhannbaishashikenmondai.html",
     status: "live",
-    reuseSummary: "令和6〜8年度の北海道・東北共通問題を、公式正答と全選択肢の解説付きで演習できます。",
+    reuseSummary: "令和5〜8年度の北海道・東北共通問題を、公式正答と全選択肢の解説付きで演習できます。",
     attributionTemplate: "出典：北海道 令和○年度登録販売者試験（午前／午後）問○",
     remainingWork: [],
   },
