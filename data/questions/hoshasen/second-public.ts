@@ -14,5 +14,6 @@ import practice2023 from "./2023-2-jitsumu-public.json";
 import physics2022 from "./2022-2-butsuri-public.json";
 import chemistry2022 from "./2022-2-kagaku-public.json";
 import biology2022 from "./2022-2-seibutsu-public.json";
+import practice2022 from "./2022-2-jitsumu-public.json";
 
-export const HOSHASEN_SECOND_QUESTIONS = [...previous, ...physics2024, ...chemistry2024, ...biology2024, ...practice2024, ...physics2023, ...chemistry2023, ...biology2023, ...practice2023, ...physics2022, ...chemistry2022, ...biology2022, ...law2024, ...law2023, ...law2022] as Question[];
+export const HOSHASEN_SECOND_QUESTIONS = [...previous, ...physics2024, ...chemistry2024, ...biology2024, ...practice2024, ...physics2023, ...chemistry2023, ...biology2023, ...practice2023, ...physics2022, ...chemistry2022, ...biology2022, ...practice2022, ...law2024, ...law2023, ...law2022] as Question[];
