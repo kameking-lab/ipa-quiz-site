@@ -136,7 +136,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       { session: "am", urlSlug: "am", expectedQuestions: 44, label: "一般教養・教職教養（午前の部）", categories: ["国語", "英語", "地理歴史", "公民", "沖縄の歴史・文化", "理科", "算数・数学", "教育法規", "教育課程", "特別支援教育", "沖縄の教育施策", "教育史", "教育心理", "生徒指導"] },
       { session: "pm", urlSlug: "pm", expectedQuestions: 45, label: "一般教養・教職教養（午後の部）", categories: ["国語", "英語", "地理歴史", "公民", "沖縄の歴史・文化", "理科", "算数・数学", "教育法規", "教育課程", "特別支援教育", "沖縄の教育施策", "教育史", "教育心理", "生徒指導"] },
     ],
-    seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
+    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
   },
   "kyoin-hiroshima": {
     code: "kyoin-hiroshima", nameFull: "広島県・広島市公立学校教員採用候補者選考試験", urlSlug: "kyoin-hiroshima", level: "advanced",
