@@ -1879,7 +1879,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_15.html",
     officialReuseTermsUrl: "https://www.jinji.go.jp/shinsei/notice.html",
     status: "live",
-    reuseSummary: "2024年度の基礎能力試験29問、2025・2026年度の教養区分の課題対応能力試験240問、2024～2026年度の行政区分226問、2024～2026年度の技術系専門試験778問を、公式正答・全肢解説付きで収録。",
+    reuseSummary: "2024年度の基礎能力試験29問、2025・2026年度の教養区分の課題対応能力試験240問、2024～2026年度の行政区分226問、2024～2026年度の技術系専門試験816問を、公式正答・全肢解説付きで収録。",
     attributionTemplate: "出典：人事院「一般職試験（大卒程度試験）」。解説は過去問AIの独自作成。",
     remainingWork: ["未収録の専門試験等の補充"],
   },
