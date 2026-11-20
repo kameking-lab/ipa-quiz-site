@@ -1,0 +1,1773 @@
+[
+  {
+    "id": "riku-tech1-2025-july-kogaku-b-q01",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "正弦定常状態のマクスウェル方程式"
+    ],
+    "difficulty": 3,
+    "question": "正弦定常状態のマクスウェル方程式。公式原問のA-1に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2025-july-kogaku-b-q01-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2025年7月 無線工学B A-1の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b.pdf#page=1",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialQuestionLabel": "A-1",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2025年7月 無線工学B A-1（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "∇·／(σ＋jωε)H／jωμE",
+      "イ": "∇·／(σ−jωε)H／jωμE",
+      "ウ": "∇×／(σ＋jωε)H／−jωμE",
+      "エ": "∇×／(σ−jωε)E／jωμH",
+      "オ": "∇×／(σ＋jωε)E／−jωμH"
+    },
+    "choiceExplanations": {
+      "ア": "ここで成り立つのは電界・磁界の回転を結ぶ式である。発散を取った式ではない。",
+      "イ": "e^(jωt)の時間微分はjω倍になる。発散を使い、変位電流項を負号とした式は合わない。",
+      "ウ": "演算子は回転で合うが、磁界の回転は伝導電流と変位電流の和なので電界Eに比例する。",
+      "エ": "ファラデーの法則では電界の回転は磁束密度の時間変化の負である。正の符号ではない。",
+      "オ": "∇×H＝σE＋ε∂E/∂t、∇×E＝−μ∂H/∂tである。e^(jωt)を代入し時間微分をjω倍に置き換える。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "∇×H＝σE＋ε∂E/∂t、∇×E＝−μ∂H/∂tである。e^(jωt)を代入し時間微分をjω倍に置き換える。"
+  },
+  {
+    "id": "riku-tech1-2025-july-kogaku-b-q02",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "微小ダイポールの放射抵抗"
+    ],
+    "difficulty": 3,
+    "question": "微小ダイポールの放射抵抗。公式原問のA-2に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2025-july-kogaku-b-q02-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2025年7月 無線工学B A-2の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b.pdf#page=1",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialQuestionLabel": "A-2",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2025年7月 無線工学B A-2（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "Pᵣ/I²／π²I²l²/λ²／π²l²/λ²",
+      "イ": "Pᵣ/I²／80π²I²l²/λ²／80π²l²/λ²",
+      "ウ": "Pᵣ/(120πI²)／π²I²l²/λ²／π²l²/λ²",
+      "エ": "Pᵣ/(120πI²)／160π²I²l²/λ²／160π²l²/λ²",
+      "オ": "Pᵣ/(120πI²)／80π²I²l²/λ²／80π²l²/λ²"
+    },
+    "choiceExplanations": {
+      "ア": "放射抵抗の定義は合うが、微小ダイポールの球面積分から得る係数はπ²ではなく80π²である。",
+      "イ": "Pᵣ＝RᵣI²と定義する。遠方界の電力束密度を球面で積分するとPᵣ＝80π²I²(l/λ)²となる。",
+      "ウ": "120π Ωは自由空間で電界から電力束密度を計算する際に用いる。放射抵抗の定義に再び掛ける係数ではない。",
+      "エ": "遠方界を用いると設問の電流の表し方では放射抵抗は80π²(l/λ)²となり、160π²はこの値の2倍である。",
+      "オ": "電力と放射抵抗の結果は合うが、最初の定義の式では電力をI²で割るだけでよい。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "Pᵣ＝RᵣI²と定義する。遠方界の電力束密度を球面で積分するとPᵣ＝80π²I²(l/λ)²となる。"
+  },
+  {
+    "id": "riku-tech1-2025-july-kogaku-b-q03",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "自由空間の電力束密度と受信電力"
+    ],
+    "difficulty": 3,
+    "question": "自由空間の電力束密度と受信電力。公式原問のA-3に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2025-july-kogaku-b-q03-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2025年7月 無線工学B A-3の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b.pdf#page=1",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialQuestionLabel": "A-3",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2025年7月 無線工学B A-3（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "4.0×10⁻⁶ W",
+      "イ": "9.4×10⁻⁶ W",
+      "ウ": "3.8×10⁻⁵ W",
+      "エ": "9.8×10⁻⁵ W",
+      "オ": "4.0×10⁻⁴ W"
+    },
+    "choiceExplanations": {
+      "ア": "利得40 dBは10⁴、距離は2×10⁴ mである。PₜGₜ/(4πr²)に実効面積2 m²を掛けると約4.0×10⁻⁶ Wになる。",
+      "イ": "球面の面積4πr²で放射の広がりを考慮すると、受信点の電力束密度は約2.0×10⁻⁶ W/m²である。",
+      "ウ": "実効面積2 m²を掛けても3.8×10⁻⁵ Wにはならない。距離はkmからmに直し、二乗して球面積に入れる。",
+      "エ": "受信電力は送信電力に利得の真数を掛け、球面に広がった割合を求めてから実効面積を掛けた値である。",
+      "オ": "4.0×10⁻⁴ Wは距離を1/10とした場合に近い。距離20 kmにおける電力はその約1/100である。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "利得40 dBは10⁴、距離は2×10⁴ mである。PₜGₜ/(4πr²)に実効面積2 m²を掛けると約4.0×10⁻⁶ Wになる。"
+  },
+  {
+    "id": "riku-tech1-2025-july-kogaku-b-q04",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "絶対利得・相対利得・動作利得"
+    ],
+    "difficulty": 3,
+    "question": "絶対利得・相対利得・動作利得。公式原問のA-4に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2025-july-kogaku-b-q04-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2025年7月 無線工学B A-4の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b.pdf#page=2",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialQuestionLabel": "A-4",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2025年7月 無線工学B A-4（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "絶対利得は相対利得より2.15 dB小さい",
+      "イ": "等方性アンテナの相対利得は約0.6",
+      "ウ": "動作利得は利得Gを反射損Mで割る",
+      "エ": "放射効率1なら絶対利得は指向性利得と等しい",
+      "オ": "微小ダイポールの相対利得は半波長ダイポールより0.39 dB小さい"
+    },
+    "choiceExplanations": {
+      "ア": "半波長ダイポールの絶対利得が約2.15 dBiであるため、絶対利得は相対利得に2.15 dBを足した値になり、小さくはならない。",
+      "イ": "等方性の絶対利得は1、半波長ダイポールは約1.64なので、相対利得は1/1.64で約0.61となる。",
+      "ウ": "整合時の利得Gに、不整合で負荷に届く電力の割合1−反射係数の絶対値の二乗を掛けた値が動作利得となる。",
+      "エ": "絶対利得は放射効率と指向性利得の積であり、放射効率が1なら値は指向性利得と等しくなる。",
+      "オ": "微小ダイポールの指向性利得は1.5、半波長では約1.64であり、比較した差は約0.39 dBになる。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "半波長ダイポールの絶対利得が約2.15 dBiであるため、絶対利得は相対利得に2.15 dBを足した値になり、小さくはならない。"
+  },
+  {
+    "id": "riku-tech1-2025-july-kogaku-b-q05",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "円形パラボラの開口利得"
+    ],
+    "difficulty": 3,
+    "question": "円形パラボラの開口利得。公式原問のA-5に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2025-july-kogaku-b-q05-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2025年7月 無線工学B A-5の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b.pdf#page=2",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialQuestionLabel": "A-5",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2025年7月 無線工学B A-5（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "26 dB",
+      "イ": "33 dB",
+      "ウ": "38 dB",
+      "エ": "43 dB",
+      "オ": "48 dB"
+    },
+    "choiceExplanations": {
+      "ア": "波長は0.02 mで開口径は100波長に当たる。開口効率を掛けても26 dBより大きな利得を得る。",
+      "イ": "開口利得は開口径と波長の比の二乗に比例する。径と波長の比を一乗として扱うと過小になる。",
+      "ウ": "G＝0.6(πD/λ)²でD/λ＝100である。真数は約6×10⁴となり、そのデシベル値は38 dBより大きい。",
+      "エ": "πの因子を二乗した分と開口効率0.6の両方を含めると、デシベル値は約48 dBになる。",
+      "オ": "λ＝c/f＝0.02 mであり、G＝0.6(π×100)²となる。問題の対数近似で10 log₁₀Gは約48 dBである。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "λ＝c/f＝0.02 mであり、G＝0.6(π×100)²となる。問題の対数近似で10 log₁₀Gは約48 dBである。"
+  },
+  {
+    "id": "riku-tech1-2025-july-kogaku-b-q06",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "定在波比と電圧波節点のインピーダンス"
+    ],
+    "difficulty": 3,
+    "question": "定在波比と電圧波節点のインピーダンス。公式原問のA-6に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2025-july-kogaku-b-q06-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2025年7月 無線工学B A-6の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b.pdf#page=2",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialQuestionLabel": "A-6",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2025年7月 無線工学B A-6（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "40 Ω",
+      "イ": "50 Ω",
+      "ウ": "60 Ω",
+      "エ": "75 Ω",
+      "オ": "100 Ω"
+    },
+    "choiceExplanations": {
+      "ア": "電圧の最小点では電流が最大となり、無損失線路のインピーダンスはZ₀/VSWR＝50/1.25＝40 Ωとなる。",
+      "イ": "特性インピーダンス50 Ωは定在波がないときの値である。定在波比1.25の電圧最小点ではこれより小さい。",
+      "ウ": "節点では電圧が最小なので、特性インピーダンスに定在波比を掛ける側の値にはならない。",
+      "エ": "50 Ωに対し75 Ωは波節点の値として大きすぎる。ここでは50 Ωを1.25で割る。",
+      "オ": "節点でのインピーダンスは定在波が立つと特性インピーダンスより下がる。2倍の100 Ωにはならない。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "電圧の最小点では電流が最大となり、無損失線路のインピーダンスはZ₀/VSWR＝50/1.25＝40 Ωとなる。"
+  },
+  {
+    "id": "riku-tech1-2025-july-kogaku-b-q07",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "方形導波管の遮断波長と群速度"
+    ],
+    "difficulty": 3,
+    "question": "方形導波管の遮断波長と群速度。公式原問のA-7に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2025-july-kogaku-b-q07-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2025年7月 無線工学B A-7の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b.pdf#page=2",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialQuestionLabel": "A-7",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2025年7月 無線工学B A-7（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "一般遮断式／2a／λ/√(1−(λ/2a)²)／遅い",
+      "イ": "一般遮断式／2b／λ/√(1−(λ/2a)²)／速い",
+      "ウ": "一般遮断式／2a／λ/√(1−(λ/2b)²)／速い",
+      "エ": "mとnを交換した式／2b／λ/√(1−(λ/2b)²)／速い",
+      "オ": "mとnを交換した式／2b／λ/√(1−(λ/2a)²)／遅い"
+    },
+    "choiceExplanations": {
+      "ア": "幅と高さのモード番号の二乗和から遮断波長を求める。TE₁₀では2aになり、群速度は位相速度より遅くなる。",
+      "イ": "TE₁₀は幅a方向に半波長分が入るモードなので遮断波長は2aであり、2bではない。",
+      "ウ": "管内波長の式にはこのモードの遮断波長2aを使う。さらに群速度は位相速度より遅い。",
+      "エ": "用いるmは幅方向、nは高さ方向である。両者を交換すると、基本モードの遮断波長を2bと取り違える。",
+      "オ": "群速度の大小は合うが、TE₁₀の遮断波長が関わるのは幅aである。一般式でmを高さに割り当てない。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "幅と高さのモード番号の二乗和から遮断波長を求める。TE₁₀では2aになり、群速度は位相速度より遅くなる。"
+  },
+  {
+    "id": "riku-tech1-2025-july-kogaku-b-q08",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "4分の1波長線路による整合"
+    ],
+    "difficulty": 3,
+    "question": "4分の1波長線路による整合。公式原問のA-8に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2025-july-kogaku-b-q08-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2025年7月 無線工学B A-8の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b.pdf#page=2",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialQuestionLabel": "A-8",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2025年7月 無線工学B A-8（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "√(RZᵢ)／λ/2＋nλ/4",
+      "イ": "√(RZᵢ)／λ/4＋nλ/2",
+      "ウ": "√(RZᵢ/2)／λ/8＋nλ/4",
+      "エ": "√(RZᵢ/2)／λ/4＋nλ/2",
+      "オ": "√(RZᵢ/2)／λ/2＋nλ/4"
+    },
+    "choiceExplanations": {
+      "ア": "特性インピーダンスの幾何平均は合うが、この長さには負荷抵抗をそのまま再現するλ/2も含まれ、常に整合しない。",
+      "イ": "λ/4＋nλ/2ではインピーダンスがZ₀²/Rに変換される。これをZᵢと等しくするのでZ₀＝√(RZᵢ)となる。",
+      "ウ": "この長さは正接が無限大となる奇数倍の1/4波長ではなく、与えられた異なる実抵抗同士を変換する条件と合わない。",
+      "エ": "長さの条件は正しいが、Z₀²をRZᵢ/2にすると入力側がZᵢ/2となり、整合しない。",
+      "オ": "変換に必要な長さは奇数倍の1/4波長であり、特性インピーダンスもRZᵢそのものを平方根に取る。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "λ/4＋nλ/2ではインピーダンスがZ₀²/Rに変換される。これをZᵢと等しくするのでZ₀＝√(RZᵢ)となる。"
+  },
+  {
+    "id": "riku-tech1-2025-july-kogaku-b-q09",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "送信アンテナ共用装置"
+    ],
+    "difficulty": 3,
+    "question": "送信アンテナ共用装置。公式原問のA-9に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2025-july-kogaku-b-q09-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2025年7月 無線工学B A-9の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b.pdf#page=3",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      3
+    ],
+    "officialQuestionLabel": "A-9",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2025年7月 無線工学B A-9（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "過変調／耐電力／1/4",
+      "イ": "過変調／結合減衰量／1/3",
+      "ウ": "相互変調／結合減衰量／1/3",
+      "エ": "相互変調／耐電力／1/3",
+      "オ": "相互変調／結合減衰量／1/4"
+    },
+    "choiceExplanations": {
+      "ア": "線路長の1/4は合うが、異なる送信波の回り込みで防ぐのは過変調ではなく相互変調である。",
+      "イ": "送信機間の結合減衰は必要だが、短絡端を開放相当に変換するには1/3波長でなく1/4波長の奇数倍を用いる。",
+      "ウ": "相互変調と結合減衰量は合う。短絡端を見掛け上の開放端とするには、1/4波長の奇数倍を選ぶ。",
+      "エ": "耐電力は部品が扱える電力の上限である。ここで必要なのは送信機間に信号が結合しにくいことを示す結合減衰量である。",
+      "オ": "相互変調を防ぐには送信機間の結合減衰量を十分に取る。短絡一端の1/4波長の奇数倍の枝は分岐点から開放に見える。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "相互変調を防ぐには送信機間の結合減衰量を十分に取る。短絡一端の1/4波長の奇数倍の枝は分岐点から開放に見える。"
+  },
+  {
+    "id": "riku-tech1-2025-july-kogaku-b-q10",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "角すいホーンの開口効率と利得"
+    ],
+    "difficulty": 3,
+    "question": "角すいホーンの開口効率と利得。公式原問のA-10に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2025-july-kogaku-b-q10-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2025年7月 無線工学B A-10の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b.pdf#page=3",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      3
+    ],
+    "officialQuestionLabel": "A-10",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2025年7月 無線工学B A-10（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "10 dB",
+      "イ": "20 dB",
+      "ウ": "30 dB",
+      "エ": "40 dB",
+      "オ": "50 dB"
+    },
+    "choiceExplanations": {
+      "ア": "実効面積は0.14×0.24×0.75×0.80＝0.02016 m²である。波長0.05 mを使うと利得は10 dBより大きい。",
+      "イ": "G＝4πAₑ/λ²にAₑ＝0.02016 m²、λ＝0.05 mを代入すると約101であり、約20 dBとなる。",
+      "ウ": "開口の縦と横を掛けた0.0336 m²に両面の効率を掛けてから利得を求める。正しい真数は約100であり約1,000ではない。",
+      "エ": "40 dBは利得が約10⁴に相当する。このホーンの実効面積と波長を使うと利得は約10²にとどまる。",
+      "オ": "開口利得の真数をデシベルにするときは10 log₁₀を用いる。示された開口寸法では50 dBにはならない。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "G＝4πAₑ/λ²にAₑ＝0.02016 m²、λ＝0.05 mを代入すると約101であり、約20 dBとなる。"
+  },
+  {
+    "id": "riku-tech1-2025-july-kogaku-b-q11",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "コーナレフレクタの像と指向性"
+    ],
+    "difficulty": 3,
+    "question": "コーナレフレクタの像と指向性。公式原問のA-11に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2025-july-kogaku-b-q11-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2025年7月 無線工学B A-11の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b.pdf#page=3",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      3
+    ],
+    "officialQuestionLabel": "A-11",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2025年7月 無線工学B A-11（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "4／6／8／3λ/2／λ",
+      "イ": "4／6／8／λ／3λ/2",
+      "ウ": "3／5／9／3λ/2／λ",
+      "エ": "3／6／9／λ／3λ/2",
+      "オ": "3／5／9／λ／3λ/2"
+    },
+    "choiceExplanations": {
+      "ア": "影像を含む個数は合うが、正面の零点が出る距離がλであり、主ビームが鋭くなってサイドローブを生じる距離は3λ/2である。",
+      "イ": "実際の素子を含めた数は開き角90°、60°、45°で4、6、8である。90°でd＝λでは正面が零になり、d＝3λ/2ではサイドローブを生じる。",
+      "ウ": "90°の3個、60°の5個は像だけの個数である。設問は実際の半波長ダイポールも含めた数を問う。",
+      "エ": "距離の組合せは合うが、90°では実在する1本と3本の像で4本、45°では1本と7本の像で8本となる。",
+      "オ": "合計個数は360°を開き角で割った値であり、90°、60°、45°で4、6、8になる。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "実際の素子を含めた数は開き角90°、60°、45°で4、6、8である。90°でd＝λでは正面が零になり、d＝3λ/2ではサイドローブを生じる。"
+  },
+  {
+    "id": "riku-tech1-2025-july-kogaku-b-q12",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "空港監視レーダーアンテナの指向性"
+    ],
+    "difficulty": 3,
+    "question": "空港監視レーダーアンテナの指向性。公式原問のA-12に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2025-july-kogaku-b-q12-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2025年7月 無線工学B A-12の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b.pdf#page=4",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      4
+    ],
+    "officialQuestionLabel": "A-12",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2025年7月 無線工学B A-12（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "セカント二乗／距離に反比例／狭い",
+      "イ": "セカント二乗／距離によらずほぼ一定／狭い",
+      "ウ": "セカント二乗／距離に反比例／広い",
+      "エ": "コセカント二乗／距離によらずほぼ一定／狭い",
+      "オ": "コセカント二乗／距離に反比例／広い"
+    },
+    "choiceExplanations": {
+      "ア": "垂直方向では仰角に対するコセカント二乗特性を用いる。距離への単純な反比例を示す特性ではない。",
+      "イ": "等高度の目標の反射を距離によらずほぼ一定にする狙いは合うが、その垂直指向性の名称がセカントではない。",
+      "ウ": "水平ビームは方位を判別するため狭くする。垂直方向もセカント二乗ではなくコセカント二乗である。",
+      "エ": "垂直面はコセカント二乗特性で、等高度の航空機からの反射強度を距離によらずほぼ一定にする。水平ビームは狭い。",
+      "オ": "垂直面の特性は合うが、距離に反比例させることを狙った特性ではなく、水平面内のビームも狭い。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "垂直面はコセカント二乗特性で、等高度の航空機からの反射強度を距離によらずほぼ一定にする。水平ビームは狭い。"
+  },
+  {
+    "id": "riku-tech1-2025-july-kogaku-b-q13",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "誘電体レンズのゾーニング"
+    ],
+    "difficulty": 3,
+    "question": "誘電体レンズのゾーニング。公式原問のA-13に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2025-july-kogaku-b-q13-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2025年7月 無線工学B A-13の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b.pdf#page=4",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      4
+    ],
+    "officialQuestionLabel": "A-13",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2025年7月 無線工学B A-13（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "m＋1/2／λ/λ′／λ/(n−1)",
+      "イ": "m＋1/2／λ′/λ／nλ/(1−n)",
+      "ウ": "m＋1／λ/λ′／λ/(n−1)",
+      "エ": "m＋1／λ′/λ／nλ/(1−n)",
+      "オ": "m＋1／λ′/λ／nλ/(n−1)"
+    },
+    "choiceExplanations": {
+      "ア": "半波長分だけを加えると位相がπずれ、出口でも同相になるという条件を満たさない。",
+      "イ": "屈折率は誘電体中で波長が短くなる比なのでλ/λ′である。半波長の追加も位相条件と異なる。",
+      "ウ": "空気中と誘電体中の波の数の差を1とすると、z/λ′−z/λ＝1である。n＝λ/λ′なのでz＝λ/(n−1)となる。",
+      "エ": "誘電体中の短い波長を分母に置いて屈折率を求める。逆の比では、この厚さの式の分母も正しくならない。",
+      "オ": "追加する波の数は1で合うが、nはλ/λ′である。厚さの分子に余分なnは掛からない。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "空気中と誘電体中の波の数の差を1とすると、z/λ′−z/λ＝1である。n＝λ/λ′なのでz＝λ/(n−1)となる。"
+  },
+  {
+    "id": "riku-tech1-2025-july-kogaku-b-q14",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "電離圏シンチレーションの特徴"
+    ],
+    "difficulty": 3,
+    "question": "電離圏シンチレーションの特徴。公式原問のA-14に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2025-july-kogaku-b-q14-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2025年7月 無線工学B A-14の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b.pdf#page=4",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      4
+    ],
+    "officialQuestionLabel": "A-14",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2025年7月 無線工学B A-14（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "3乗／夏至と冬至／赤道地帯",
+      "イ": "3乗／夏至と冬至／中緯度地域",
+      "ウ": "1.5乗／春分と秋分／赤道地帯",
+      "エ": "1.5乗／春分と秋分／中緯度地域",
+      "オ": "1.5乗／夏至と冬至／中緯度地域"
+    },
+    "choiceExplanations": {
+      "ア": "赤道地帯で多い点は合うが、変動の深さは概ね周波数の1.5乗に反比例し、春分と秋分の頃に大きい。",
+      "イ": "変動の強い代表的な地域は夜間にF層の不規則性が発達する赤道地帯である。季節も夏至・冬至ではない。",
+      "ウ": "シンチレーションの深さはおおむね周波数の1.5乗に反比例し、春分・秋分頃に大きい。夜間の赤道付近で多く生じる。",
+      "エ": "周波数の指数と季節は合うが、F層のゆらぎが夜間発達して多く発生するのは赤道地帯である。",
+      "オ": "周波数依存性は合うが、顕著になる季節は春分・秋分頃で、地域は赤道地帯とするのが適切である。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "シンチレーションの深さはおおむね周波数の1.5乗に反比例し、春分・秋分頃に大きい。夜間の赤道付近で多く生じる。"
+  },
+  {
+    "id": "riku-tech1-2025-july-kogaku-b-q15",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "等価地球半径係数とk形フェージング"
+    ],
+    "difficulty": 3,
+    "question": "等価地球半径係数とk形フェージング。公式原問のA-15に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2025-july-kogaku-b-q15-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2025年7月 無線工学B A-15の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b.pdf#page=4",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      4
+    ],
+    "officialQuestionLabel": "A-15",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2025年7月 無線工学B A-15（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "係数kが時間変化して大地や海面の影響が変わる",
+      "イ": "クリアランス不足でkが小さいと回折損が増える",
+      "ウ": "回折形の周期は干渉形より短い",
+      "エ": "直接波と反射波の干渉状態が変わる",
+      "オ": "大地反射での電界変動は海面反射より小さい"
+    },
+    "choiceExplanations": {
+      "ア": "大気の屈折率勾配が変わると等価地球半径係数が変動し、電波経路から見た大地や海面の影響が変わる。",
+      "イ": "kが小さくなると見通し経路と地形との余裕が減り、障害部分で回折損失が大きくなる。",
+      "ウ": "回折形は地形とのクリアランスがゆっくり変わる際に現れ、一般に干渉形に比べ周期は長い。短いとする記述が誤りである。",
+      "エ": "kの変動で大地・海面反射波の経路長が変化すると、直接波との位相差が変わり、合成電界が変動する。",
+      "オ": "海面は一般に反射波が強くなりやすく、直接波と重ねたときの振幅変動も大きくなりやすい。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "回折形は地形とのクリアランスがゆっくり変わる際に現れ、一般に干渉形に比べ周期は長い。短いとする記述が誤りである。"
+  },
+  {
+    "id": "riku-tech1-2025-july-kogaku-b-q16",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "奥村・秦式の伝搬損推定"
+    ],
+    "difficulty": 3,
+    "question": "奥村・秦式の伝搬損推定。公式原問のA-16に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2025-july-kogaku-b-q16-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2025年7月 無線工学B A-16の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b.pdf#page=5",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      5
+    ],
+    "officialQuestionLabel": "A-16",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2025年7月 無線工学B A-16（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "移動局アンテナ高／1.5～2乗／100 m／600～800 m",
+      "イ": "移動局アンテナ高／3～3.5乗／20 m／300～400 m",
+      "ウ": "移動局アンテナ高／1.5～2乗／20 m／600～800 m",
+      "エ": "建物高／1.5～2乗／20 m／300～400 m",
+      "オ": "建物高／3～3.5乗／100 m／600～800 m"
+    },
+    "choiceExplanations": {
+      "ア": "用いる高さは移動局アンテナ高で合うが、都市部の距離減衰の指数や想定する起伏の目安が異なる。",
+      "イ": "基地局と移動局のアンテナ高を用いる。都市部では距離のおおむね3～3.5乗に従い、準平滑地形は起伏約20 m以下、開放地の目安は前方300～400 mである。",
+      "ウ": "移動局アンテナ高と準平滑地形の目安は合う。都市部の減衰は自由空間の二乗則より強く、距離指数を1.5～2とはしない。",
+      "エ": "個々の建物高をそのまま入れる式でなく、基地局と移動局のアンテナ高および地域分類を用いる。",
+      "オ": "都市部の距離指数だけは合うが、移動局アンテナ高を使う。また想定する起伏と開放地を判断する距離の値が異なる。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "基地局と移動局のアンテナ高を用いる。都市部では距離のおおむね3～3.5乗に従い、準平滑地形は起伏約20 m以下、開放地の目安は前方300～400 mである。"
+  },
+  {
+    "id": "riku-tech1-2025-july-kogaku-b-q17",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 17,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "静止衛星回線の送信アンテナ利得"
+    ],
+    "difficulty": 3,
+    "question": "静止衛星回線の送信アンテナ利得。公式原問のA-17に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2025-july-kogaku-b-q17-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2025年7月 無線工学B A-17の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b.pdf#page=5",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      5
+    ],
+    "officialQuestionLabel": "A-17",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2025年7月 無線工学B A-17（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "60 dB",
+      "イ": "65 dB",
+      "ウ": "70 dB",
+      "エ": "75 dB",
+      "オ": "80 dB"
+    },
+    "choiceExplanations": {
+      "ア": "自由空間損失は約203.6 dB、送信300 Wは約24.8 dBWである。−90＝24.8＋Gₜ＋30−203.6を解くとGₜは約59 dBである。",
+      "イ": "65 dBとすると、同じ条件の回線で入力は約−84 dBWまで上がる。設問の−90 dBWには利得が大きすぎる。",
+      "ウ": "10 GHzでは波長0.03 m、距離36,000 kmでは自由空間損失は約204 dBである。70 dBはこの損失と受信入力から求めた値より大きい。",
+      "エ": "受信側アンテナの30 dBも回線利得に加わる。送信側だけですべての損失を埋めるものではない。",
+      "オ": "損失は4πr/λを20 log₁₀で表す。送信電力と受信アンテナ利得を考慮すると、送信アンテナに80 dBまでは要らない。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "自由空間損失は約203.6 dB、送信300 Wは約24.8 dBWである。−90＝24.8＋Gₜ＋30−203.6を解くとGₜは約59 dBである。"
+  },
+  {
+    "id": "riku-tech1-2025-july-kogaku-b-q18",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 18,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "アンテナ利得測定での大地反射対策"
+    ],
+    "difficulty": 3,
+    "question": "アンテナ利得測定での大地反射対策。公式原問のA-18に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2025-july-kogaku-b-q18-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2025年7月 無線工学B A-18の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b.pdf#page=5",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      5
+    ],
+    "officialQuestionLabel": "A-18",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2025年7月 無線工学B A-18（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "丸み／低い／導電率",
+      "イ": "丸み／高い／反射係数",
+      "ウ": "丸み／高い／導電率",
+      "エ": "凹凸／高い／反射係数",
+      "オ": "凹凸／低い／導電率"
+    },
+    "choiceExplanations": {
+      "ア": "大地から十分離れた測定路を確保するにはアンテナを高く置く。反射波の補正には大地の反射係数を求める。",
+      "イ": "アンテナを高くしハイトパターンから反射係数を求める点は合う。エッジでは凹凸を設けて回折波の影響を抑える。",
+      "ウ": "高い位置は合うが、直接波と反射波の干渉の観測から補正に用いる量は反射係数である。",
+      "エ": "エッジに凹凸を設け、アンテナを高い位置に置く。ハイトパターンから反射係数を求めると測定に対する反射波の影響を計算できる。",
+      "オ": "エッジに凹凸を設ける点だけは合う。アンテナを低く置くと地面の影響を受け、補正に使う量も導電率ではない。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "エッジに凹凸を設け、アンテナを高い位置に置く。ハイトパターンから反射係数を求めると測定に対する反射波の影響を計算できる。"
+  },
+  {
+    "id": "riku-tech1-2025-july-kogaku-b-q19",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 19,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "電波吸収体の入射角と周波数特性"
+    ],
+    "difficulty": 3,
+    "question": "電波吸収体の入射角と周波数特性。公式原問のA-19に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2025-july-kogaku-b-q19-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2025年7月 無線工学B A-19の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b.pdf#page=5",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      5
+    ],
+    "officialQuestionLabel": "A-19",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2025年7月 無線工学B A-19（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "導電性・誘電性・磁性材料を利用する",
+      "イ": "垂直入射で良好なら全入射角度で良好",
+      "ウ": "あらゆる偏波に一様な特性を持たせるのは難しい",
+      "エ": "くさび形や多層構造で広帯域化できる",
+      "オ": "誘電材と磁性材の組合せで広帯域化できる"
+    },
+    "choiceExplanations": {
+      "ア": "電波の電気エネルギーや磁気エネルギーを損失で吸収させるため、導電性、誘電性、磁性を利用する材料が用いられる。",
+      "イ": "反射の大きさは界面の入射角や偏波にも依存する。垂直入射でよく吸収しても斜入射まで同じ特性になる保証はない。",
+      "ウ": "入射面に対して電界の向きが異なると界面での反射や透過も異なるため、全偏波で同じ特性に調整しにくい。",
+      "エ": "吸収特性の異なる材料を積み重ねたり、形状により入射面からの特性の変化を緩やかにしたりすると、広い帯域で反射を抑えられる。",
+      "オ": "誘電損失と磁気損失の異なる周波数依存性を組み合わせることで、一方だけを用いる場合より広い周波数範囲に対応できる。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "反射の大きさは界面の入射角や偏波にも依存する。垂直入射でよく吸収しても斜入射まで同じ特性になる保証はない。"
+  },
+  {
+    "id": "riku-tech1-2025-july-kogaku-b-q20",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 20,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "開口アンテナ利得測定の最小距離"
+    ],
+    "difficulty": 3,
+    "question": "開口アンテナ利得測定の最小距離。公式原問のA-20に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2025-july-kogaku-b-q20-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2025年7月 無線工学B A-20の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b.pdf#page=6",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      6
+    ],
+    "officialQuestionLabel": "A-20",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2025年7月 無線工学B A-20（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "choices": {
+      "ア": "(D₁＋D₂)²/(4R₁)／λ/16／(D₁＋D₂)²/(2λ)",
+      "イ": "(D₁＋D₂)²/(8R₁)／λ/4／(D₁＋D₂)²/(4λ)",
+      "ウ": "(D₁＋D₂)²/(8R₁)／λ/16／2(D₁＋D₂)²/λ",
+      "エ": "(D₁＋D₂)²/(4R₁)／λ/16／2(D₁＋D₂)²/λ",
+      "オ": "(D₁＋D₂)²/(4R₁)／λ/4／(D₁＋D₂)²/(2λ)"
+    },
+    "choiceExplanations": {
+      "ア": "横方向のずれは直径の合計の半分である。平方根を一次近似すると通路差の分母は4R₁ではなく8R₁になる。",
+      "イ": "通路差の近似は合うが、2%の利得誤差に対する上限はλ/16である。λ/4では位相差が大きすぎる。",
+      "ウ": "開口端のずれ(D₁＋D₂)/2を用いて平方根を展開すると通路差は(D₁＋D₂)²/(8R₁)である。これをλ/16以下にすると最小距離が得られる。",
+      "エ": "通路差の上限と最小距離は合うが、平方根の展開で生じる係数1/2と横ずれの半径を反映すると通路差の分母は8R₁である。",
+      "オ": "通路差と許容差がともに異なる。近似通路差の分母には8R₁が、許容差にはλ/16が入る。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "開口端のずれ(D₁＋D₂)/2を用いて平方根を展開すると通路差は(D₁＋D₂)²/(8R₁)である。これをλ/16以下にすると最小距離が得られる。"
+  },
+  {
+    "id": "riku-tech1-2025-july-kogaku-b-q21",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 21,
+    "type": "native-b",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "パラボラアンテナが平面波を作る原理"
+    ],
+    "difficulty": 3,
+    "question": "パラボラアンテナが平面波を作る原理。公式原問のB-1に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2025-july-kogaku-b-q21-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2025年7月 無線工学B B-1の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b.pdf#page=6",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      6
+    ],
+    "officialQuestionLabel": "B-1",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2025年7月 無線工学B B-1（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "nativeB": {
+      "mode": "shared-bank",
+      "officialLabel": "B-1",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "FP"
+        },
+        {
+          "id": "2",
+          "label": "QS"
+        },
+        {
+          "id": "3",
+          "label": "反射点"
+        },
+        {
+          "id": "4",
+          "label": "同位相"
+        },
+        {
+          "id": "5",
+          "label": "1＋sin θ"
+        },
+        {
+          "id": "6",
+          "label": "2FP"
+        },
+        {
+          "id": "7",
+          "label": "2PQ"
+        },
+        {
+          "id": "8",
+          "label": "波源"
+        },
+        {
+          "id": "9",
+          "label": "逆位相"
+        },
+        {
+          "id": "10",
+          "label": "1＋cos θ"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "放物面の定義により、点Pから焦点Fまでの距離と、点Pから準線gまでの距離は等しい。",
+          "candidateExplanations": {
+            "1": "放物面の定義により、点Pから焦点Fまでの距離と、点Pから準線gまでの距離は等しい。",
+            "2": "平行な準線gとh線の間の距離であり、Pの位置に依存しない。空欄アに当てはまるのは「FP」である。",
+            "3": "Pは個々の反射点だが、平面G全体は見掛け上平面波を発する側となる。空欄アに当てはまるのは「FP」である。",
+            "4": "共通の平面に達した電波の通路長が等しい場合の位相関係である。空欄アに当てはまるのは「FP」である。",
+            "5": "PSは中心軸方向への射影なので、FPに掛かるのは余弦である。空欄アに当てはまるのは「FP」である。",
+            "6": "放物線の定義では焦点までの距離と準線までの距離が等しく、2倍ではない。空欄アに当てはまるのは「FP」である。",
+            "7": "Pからの二つの線分の長さの和を取り、一律にPQを2倍にはしない。空欄アに当てはまるのは「FP」である。",
+            "8": "平面波がこの平面から出たように扱えるという意味での見掛けの出発面である。空欄アに当てはまるのは「FP」である。",
+            "9": "逆位相になるには通路差が半波長の奇数倍必要だが、ここでの通路差はない。空欄アに当てはまるのは「FP」である。",
+            "10": "Pからh線への軸方向の距離が焦点とPとの距離の余弦成分であることを表す。空欄アに当てはまるのは「FP」である。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "FP＝PQなのでFP＋PS＝PQ＋PS＝QSとなる。二平面の間隔のため反射位置によらず一定である。",
+          "candidateExplanations": {
+            "1": "放物線上の点Pから焦点までの距離であり、準線までの垂直距離PQと等しい。空欄イに当てはまるのは「QS」である。",
+            "2": "FP＝PQなのでFP＋PS＝PQ＋PS＝QSとなる。二平面の間隔のため反射位置によらず一定である。",
+            "3": "Pは個々の反射点だが、平面G全体は見掛け上平面波を発する側となる。空欄イに当てはまるのは「QS」である。",
+            "4": "共通の平面に達した電波の通路長が等しい場合の位相関係である。空欄イに当てはまるのは「QS」である。",
+            "5": "PSは中心軸方向への射影なので、FPに掛かるのは余弦である。空欄イに当てはまるのは「QS」である。",
+            "6": "放物線の定義では焦点までの距離と準線までの距離が等しく、2倍ではない。空欄イに当てはまるのは「QS」である。",
+            "7": "Pからの二つの線分の長さの和を取り、一律にPQを2倍にはしない。空欄イに当てはまるのは「QS」である。",
+            "8": "平面波がこの平面から出たように扱えるという意味での見掛けの出発面である。空欄イに当てはまるのは「QS」である。",
+            "9": "逆位相になるには通路差が半波長の奇数倍必要だが、ここでの通路差はない。空欄イに当てはまるのは「QS」である。",
+            "10": "Pからh線への軸方向の距離が焦点とPとの距離の余弦成分であることを表す。空欄イに当てはまるのは「QS」である。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "8",
+          "explanation": "反射後の波は、通路長をそろえた平面Gから放射されたように振る舞うので、Gが見掛け上の波源となる。",
+          "candidateExplanations": {
+            "1": "放物線上の点Pから焦点までの距離であり、準線までの垂直距離PQと等しい。空欄ウに当てはまるのは「波源」である。",
+            "2": "平行な準線gとh線の間の距離であり、Pの位置に依存しない。空欄ウに当てはまるのは「波源」である。",
+            "3": "Pは個々の反射点だが、平面G全体は見掛け上平面波を発する側となる。空欄ウに当てはまるのは「波源」である。",
+            "4": "共通の平面に達した電波の通路長が等しい場合の位相関係である。空欄ウに当てはまるのは「波源」である。",
+            "5": "PSは中心軸方向への射影なので、FPに掛かるのは余弦である。空欄ウに当てはまるのは「波源」である。",
+            "6": "放物線の定義では焦点までの距離と準線までの距離が等しく、2倍ではない。空欄ウに当てはまるのは「波源」である。",
+            "7": "Pからの二つの線分の長さの和を取り、一律にPQを2倍にはしない。空欄ウに当てはまるのは「波源」である。",
+            "8": "反射後の波は、通路長をそろえた平面Gから放射されたように振る舞うので、Gが見掛け上の波源となる。",
+            "9": "逆位相になるには通路差が半波長の奇数倍必要だが、ここでの通路差はない。空欄ウに当てはまるのは「波源」である。",
+            "10": "Pからh線への軸方向の距離が焦点とPとの距離の余弦成分であることを表す。空欄ウに当てはまるのは「波源」である。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "4",
+          "explanation": "焦点から反射を経て平面Hに至る通路長は全て同じであり、Hに到達した波は互いに同位相である。",
+          "candidateExplanations": {
+            "1": "放物線上の点Pから焦点までの距離であり、準線までの垂直距離PQと等しい。空欄エに当てはまるのは「同位相」である。",
+            "2": "平行な準線gとh線の間の距離であり、Pの位置に依存しない。空欄エに当てはまるのは「同位相」である。",
+            "3": "Pは個々の反射点だが、平面G全体は見掛け上平面波を発する側となる。空欄エに当てはまるのは「同位相」である。",
+            "4": "焦点から反射を経て平面Hに至る通路長は全て同じであり、Hに到達した波は互いに同位相である。",
+            "5": "PSは中心軸方向への射影なので、FPに掛かるのは余弦である。空欄エに当てはまるのは「同位相」である。",
+            "6": "放物線の定義では焦点までの距離と準線までの距離が等しく、2倍ではない。空欄エに当てはまるのは「同位相」である。",
+            "7": "Pからの二つの線分の長さの和を取り、一律にPQを2倍にはしない。空欄エに当てはまるのは「同位相」である。",
+            "8": "平面波がこの平面から出たように扱えるという意味での見掛けの出発面である。空欄エに当てはまるのは「同位相」である。",
+            "9": "逆位相になるには通路差が半波長の奇数倍必要だが、ここでの通路差はない。空欄エに当てはまるのは「同位相」である。",
+            "10": "Pからh線への軸方向の距離が焦点とPとの距離の余弦成分であることを表す。空欄エに当てはまるのは「同位相」である。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "PS＝FP cos θであるため、FP＋PS＝FP(1＋cos θ)になる。軸上の経路と比べて2lに等しい。",
+          "candidateExplanations": {
+            "1": "放物線上の点Pから焦点までの距離であり、準線までの垂直距離PQと等しい。空欄オに当てはまるのは「1＋cos θ」である。",
+            "2": "平行な準線gとh線の間の距離であり、Pの位置に依存しない。空欄オに当てはまるのは「1＋cos θ」である。",
+            "3": "Pは個々の反射点だが、平面G全体は見掛け上平面波を発する側となる。空欄オに当てはまるのは「1＋cos θ」である。",
+            "4": "共通の平面に達した電波の通路長が等しい場合の位相関係である。空欄オに当てはまるのは「1＋cos θ」である。",
+            "5": "PSは中心軸方向への射影なので、FPに掛かるのは余弦である。空欄オに当てはまるのは「1＋cos θ」である。",
+            "6": "放物線の定義では焦点までの距離と準線までの距離が等しく、2倍ではない。空欄オに当てはまるのは「1＋cos θ」である。",
+            "7": "Pからの二つの線分の長さの和を取り、一律にPQを2倍にはしない。空欄オに当てはまるのは「1＋cos θ」である。",
+            "8": "平面波がこの平面から出たように扱えるという意味での見掛けの出発面である。空欄オに当てはまるのは「1＋cos θ」である。",
+            "9": "逆位相になるには通路差が半波長の奇数倍必要だが、ここでの通路差はない。空欄オに当てはまるのは「1＋cos θ」である。",
+            "10": "PS＝FP cos θであるため、FP＋PS＝FP(1＋cos θ)になる。軸上の経路と比べて2lに等しい。"
+          }
+        }
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    },
+    "explanation": "放物面の定義により、点Pから焦点Fまでの距離と、点Pから準線gまでの距離は等しい。\nFP＝PQなのでFP＋PS＝PQ＋PS＝QSとなる。二平面の間隔のため反射位置によらず一定である。\n反射後の波は、通路長をそろえた平面Gから放射されたように振る舞うので、Gが見掛け上の波源となる。\n焦点から反射を経て平面Hに至る通路長は全て同じであり、Hに到達した波は互いに同位相である。\nPS＝FP cos θであるため、FP＋PS＝FP(1＋cos θ)になる。軸上の経路と比べて2lに等しい。"
+  },
+  {
+    "id": "riku-tech1-2025-july-kogaku-b-q22",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 22,
+    "type": "native-b",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "TEM波の伝搬と固有インピーダンス"
+    ],
+    "difficulty": 3,
+    "question": "TEM波の伝搬と固有インピーダンス。公式原問のB-2に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2025-july-kogaku-b-q22-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2025年7月 無線工学B B-2の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b.pdf#page=6",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      6
+    ],
+    "officialQuestionLabel": "B-2",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2025年7月 無線工学B B-2（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "nativeB": {
+      "mode": "binary",
+      "officialLabel": "B-2",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "正しい"
+        },
+        {
+          "id": "2",
+          "label": "誤っている"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "伝搬方向には電界も磁界も成分を持たない",
+          "answer": "1",
+          "explanation": "正しい。TEMは横電磁波であり、電界も磁界も進行方向と直角に向いている。",
+          "candidateExplanations": {
+            "1": "正しい。TEMは横電磁波であり、電界も磁界も進行方向と直角に向いている。",
+            "2": "TEMは横電磁波であり、電界も磁界も進行方向と直角に向いている。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "伝搬方向に直角な面内で電界と磁界は同相",
+          "answer": "1",
+          "explanation": "正しい。均質な無損失媒質を進むTEM波では、磁界が電界の回転方向と対応し、波の振動は同相になる。",
+          "candidateExplanations": {
+            "1": "正しい。均質な無損失媒質を進むTEM波では、磁界が電界の回転方向と対応し、波の振動は同相になる。",
+            "2": "均質な無損失媒質を進むTEM波では、磁界が電界の回転方向と対応し、波の振動は同相になる。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "単一の導体で囲まれた導波管を伝搬できない",
+          "answer": "1",
+          "explanation": "正しい。空洞型の単一導体の導波管では、境界条件上TEMモードは成立しない。一般にTEまたはTMモードを用いる。",
+          "candidateExplanations": {
+            "1": "正しい。空洞型の単一導体の導波管では、境界条件上TEMモードは成立しない。一般にTEまたはTMモードを用いる。",
+            "2": "空洞型の単一導体の導波管では、境界条件上TEMモードは成立しない。一般にTEまたはTMモードを用いる。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "平行二線式給電線を伝搬できない",
+          "answer": "2",
+          "explanation": "誤っている。平行二線は互いに異なる電位を持つ二つの導体を備えており、導体間に横電界を持つTEM波が伝搬できる。",
+          "candidateExplanations": {
+            "2": "誤っている。平行二線は互いに異なる電位を持つ二つの導体を備えており、導体間に横電界を持つTEM波が伝搬できる。",
+            "1": "平行二線は互いに異なる電位を持つ二つの導体を備えており、導体間に横電界を持つTEM波が伝搬できる。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "真空の固有インピーダンスは約120π Ω",
+          "answer": "1",
+          "explanation": "正しい。真空では波のインピーダンスは√(μ₀/ε₀)であり、約377 Ω、すなわち約120π Ωである。",
+          "candidateExplanations": {
+            "1": "正しい。真空では波のインピーダンスは√(μ₀/ε₀)であり、約377 Ω、すなわち約120π Ωである。",
+            "2": "真空では波のインピーダンスは√(μ₀/ε₀)であり、約377 Ω、すなわち約120π Ωである。"
+          }
+        }
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    },
+    "explanation": "正しい。TEMは横電磁波であり、電界も磁界も進行方向と直角に向いている。\n正しい。均質な無損失媒質を進むTEM波では、磁界が電界の回転方向と対応し、波の振動は同相になる。\n正しい。空洞型の単一導体の導波管では、境界条件上TEMモードは成立しない。一般にTEまたはTMモードを用いる。\n誤っている。平行二線は互いに異なる電位を持つ二つの導体を備えており、導体間に横電界を持つTEM波が伝搬できる。\n正しい。真空では波のインピーダンスは√(μ₀/ε₀)であり、約377 Ω、すなわち約120π Ωである。"
+  },
+  {
+    "id": "riku-tech1-2025-july-kogaku-b-q23",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 23,
+    "type": "native-b",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "スロットアレーアンテナの偏波"
+    ],
+    "difficulty": 3,
+    "question": "スロットアレーアンテナの偏波。公式原問のB-3に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2025-july-kogaku-b-q23-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2025年7月 無線工学B B-3の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b.pdf#page=7",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      7
+    ],
+    "officialQuestionLabel": "B-3",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2025年7月 無線工学B B-3（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "nativeB": {
+      "mode": "shared-bank",
+      "officialLabel": "B-3",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "平行"
+        },
+        {
+          "id": "2",
+          "label": "1/2"
+        },
+        {
+          "id": "3",
+          "label": "電界"
+        },
+        {
+          "id": "4",
+          "label": "y成分"
+        },
+        {
+          "id": "5",
+          "label": "水平偏波となる"
+        },
+        {
+          "id": "6",
+          "label": "垂直"
+        },
+        {
+          "id": "7",
+          "label": "1/4"
+        },
+        {
+          "id": "8",
+          "label": "磁界"
+        },
+        {
+          "id": "9",
+          "label": "z成分"
+        },
+        {
+          "id": "10",
+          "label": "垂直偏波となる"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "yz面に平行な管壁上でスロットが遮る電流はz軸に平行である。",
+          "candidateExplanations": {
+            "1": "yz面に平行な管壁上でスロットが遮る電流はz軸に平行である。",
+            "2": "進行波で電界の符号が反転する位相差πに対応する波長の割合である。空欄アに当てはまるのは「平行」である。",
+            "3": "電波の偏波の向きは電界の向きであり、スロットから放射する電界はスロットに直角である。空欄アに当てはまるのは「平行」である。",
+            "4": "隣接スロットで同方向を向くため、打ち消される成分ではなく互いに加わる側である。空欄アに当てはまるのは「平行」である。",
+            "5": "加算して残るのは大地に平行な向きの電界である。空欄アに当てはまるのは「平行」である。",
+            "6": "図の配置で管壁の電流はz軸に沿うため、垂直とするのは異なる。空欄アに当てはまるのは「平行」である。",
+            "7": "1/4波長は位相90°分であり、符号が反転する180°分ではない。空欄アに当てはまるのは「平行」である。",
+            "8": "磁界は電界と直角の関係にあり、スロットに垂直な電界が偏波を定める。空欄アに当てはまるのは「平行」である。",
+            "9": "隣接スロットの傾きと電流の向きの両方が反転するため、反対方向になり相殺する成分である。空欄アに当てはまるのは「平行」である。",
+            "10": "z方向の電界は相殺され、地面と平行な電界が残るため垂直偏波にはならない。空欄アに当てはまるのは「平行」である。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "管内波長の半分では位相差がπになり、電界と対応する電流の向きが反転する。",
+          "candidateExplanations": {
+            "1": "電流の軸に対する方向についての正答であり、管壁上でz軸に沿って電流が流れる。空欄イに当てはまるのは「1/2」である。",
+            "2": "管内波長の半分では位相差がπになり、電界と対応する電流の向きが反転する。",
+            "3": "電波の偏波の向きは電界の向きであり、スロットから放射する電界はスロットに直角である。空欄イに当てはまるのは「1/2」である。",
+            "4": "隣接スロットで同方向を向くため、打ち消される成分ではなく互いに加わる側である。空欄イに当てはまるのは「1/2」である。",
+            "5": "加算して残るのは大地に平行な向きの電界である。空欄イに当てはまるのは「1/2」である。",
+            "6": "図の配置で管壁の電流はz軸に沿うため、垂直とするのは異なる。空欄イに当てはまるのは「1/2」である。",
+            "7": "1/4波長は位相90°分であり、符号が反転する180°分ではない。空欄イに当てはまるのは「1/2」である。",
+            "8": "磁界は電界と直角の関係にあり、スロットに垂直な電界が偏波を定める。空欄イに当てはまるのは「1/2」である。",
+            "9": "隣接スロットの傾きと電流の向きの両方が反転するため、反対方向になり相殺する成分である。空欄イに当てはまるのは「1/2」である。",
+            "10": "z方向の電界は相殺され、地面と平行な電界が残るため垂直偏波にはならない。空欄イに当てはまるのは「1/2」である。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "3",
+          "explanation": "スロットから放射する電波の電界はスロットの長手方向と直角をなす。",
+          "candidateExplanations": {
+            "1": "電流の軸に対する方向についての正答であり、管壁上でz軸に沿って電流が流れる。空欄ウに当てはまるのは「電界」である。",
+            "2": "進行波で電界の符号が反転する位相差πに対応する波長の割合である。空欄ウに当てはまるのは「電界」である。",
+            "3": "スロットから放射する電波の電界はスロットの長手方向と直角をなす。",
+            "4": "隣接スロットで同方向を向くため、打ち消される成分ではなく互いに加わる側である。空欄ウに当てはまるのは「電界」である。",
+            "5": "加算して残るのは大地に平行な向きの電界である。空欄ウに当てはまるのは「電界」である。",
+            "6": "図の配置で管壁の電流はz軸に沿うため、垂直とするのは異なる。空欄ウに当てはまるのは「電界」である。",
+            "7": "1/4波長は位相90°分であり、符号が反転する180°分ではない。空欄ウに当てはまるのは「電界」である。",
+            "8": "磁界は電界と直角の関係にあり、スロットに垂直な電界が偏波を定める。空欄ウに当てはまるのは「電界」である。",
+            "9": "隣接スロットの傾きと電流の向きの両方が反転するため、反対方向になり相殺する成分である。空欄ウに当てはまるのは「電界」である。",
+            "10": "z方向の電界は相殺され、地面と平行な電界が残るため垂直偏波にはならない。空欄ウに当てはまるのは「電界」である。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "9",
+          "explanation": "間隔が半波長でスロットの傾きも交互に逆なので、隣接スロットのz成分は逆向きとなり打ち消し合う。",
+          "candidateExplanations": {
+            "1": "電流の軸に対する方向についての正答であり、管壁上でz軸に沿って電流が流れる。空欄エに当てはまるのは「z成分」である。",
+            "2": "進行波で電界の符号が反転する位相差πに対応する波長の割合である。空欄エに当てはまるのは「z成分」である。",
+            "3": "電波の偏波の向きは電界の向きであり、スロットから放射する電界はスロットに直角である。空欄エに当てはまるのは「z成分」である。",
+            "4": "隣接スロットで同方向を向くため、打ち消される成分ではなく互いに加わる側である。空欄エに当てはまるのは「z成分」である。",
+            "5": "加算して残るのは大地に平行な向きの電界である。空欄エに当てはまるのは「z成分」である。",
+            "6": "図の配置で管壁の電流はz軸に沿うため、垂直とするのは異なる。空欄エに当てはまるのは「z成分」である。",
+            "7": "1/4波長は位相90°分であり、符号が反転する180°分ではない。空欄エに当てはまるのは「z成分」である。",
+            "8": "磁界は電界と直角の関係にあり、スロットに垂直な電界が偏波を定める。空欄エに当てはまるのは「z成分」である。",
+            "9": "間隔が半波長でスロットの傾きも交互に逆なので、隣接スロットのz成分は逆向きとなり打ち消し合う。",
+            "10": "z方向の電界は相殺され、地面と平行な電界が残るため垂直偏波にはならない。空欄エに当てはまるのは「z成分」である。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "5",
+          "explanation": "残ったy成分は大地に平行なxy面内にあり、合成した電界は水平偏波になる。",
+          "candidateExplanations": {
+            "1": "電流の軸に対する方向についての正答であり、管壁上でz軸に沿って電流が流れる。空欄オに当てはまるのは「水平偏波となる」である。",
+            "2": "進行波で電界の符号が反転する位相差πに対応する波長の割合である。空欄オに当てはまるのは「水平偏波となる」である。",
+            "3": "電波の偏波の向きは電界の向きであり、スロットから放射する電界はスロットに直角である。空欄オに当てはまるのは「水平偏波となる」である。",
+            "4": "隣接スロットで同方向を向くため、打ち消される成分ではなく互いに加わる側である。空欄オに当てはまるのは「水平偏波となる」である。",
+            "5": "残ったy成分は大地に平行なxy面内にあり、合成した電界は水平偏波になる。",
+            "6": "図の配置で管壁の電流はz軸に沿うため、垂直とするのは異なる。空欄オに当てはまるのは「水平偏波となる」である。",
+            "7": "1/4波長は位相90°分であり、符号が反転する180°分ではない。空欄オに当てはまるのは「水平偏波となる」である。",
+            "8": "磁界は電界と直角の関係にあり、スロットに垂直な電界が偏波を定める。空欄オに当てはまるのは「水平偏波となる」である。",
+            "9": "隣接スロットの傾きと電流の向きの両方が反転するため、反対方向になり相殺する成分である。空欄オに当てはまるのは「水平偏波となる」である。",
+            "10": "z方向の電界は相殺され、地面と平行な電界が残るため垂直偏波にはならない。空欄オに当てはまるのは「水平偏波となる」である。"
+          }
+        }
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    },
+    "explanation": "yz面に平行な管壁上でスロットが遮る電流はz軸に平行である。\n管内波長の半分では位相差がπになり、電界と対応する電流の向きが反転する。\nスロットから放射する電波の電界はスロットの長手方向と直角をなす。\n間隔が半波長でスロットの傾きも交互に逆なので、隣接スロットのz成分は逆向きとなり打ち消し合う。\n残ったy成分は大地に平行なxy面内にあり、合成した電界は水平偏波になる。"
+  },
+  {
+    "id": "riku-tech1-2025-july-kogaku-b-q24",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 24,
+    "type": "native-b",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "中波・短波の地表波と電離層伝搬"
+    ],
+    "difficulty": 3,
+    "question": "中波・短波の地表波と電離層伝搬。公式原問のB-4に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2025-july-kogaku-b-q24-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2025年7月 無線工学B B-4の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b.pdf#page=7",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      7
+    ],
+    "officialQuestionLabel": "B-4",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2025年7月 無線工学B B-4（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "nativeB": {
+      "mode": "binary",
+      "officialLabel": "B-4",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "正しい"
+        },
+        {
+          "id": "2",
+          "label": "誤っている"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "中波のE層反射波は夜間に遠くまで伝搬する",
+          "answer": "1",
+          "explanation": "正しい。昼間はD層による吸収が大きい。夜間にその影響が弱まるとE層などを介する中波が遠くまで届くことがある。",
+          "candidateExplanations": {
+            "1": "正しい。昼間はD層による吸収が大きい。夜間にその影響が弱まるとE層などを介する中波が遠くまで届くことがある。",
+            "2": "昼間はD層による吸収が大きい。夜間にその影響が弱まるとE層などを介する中波が遠くまで届くことがある。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "中波地表波は水平偏波の方が伝搬損が大きい",
+          "answer": "1",
+          "explanation": "正しい。水平電界は導電性のある地表で減衰しやすいので、地表波の伝搬には一般に垂直偏波が向いている。",
+          "candidateExplanations": {
+            "1": "正しい。水平電界は導電性のある地表で減衰しやすいので、地表波の伝搬には一般に垂直偏波が向いている。",
+            "2": "水平電界は導電性のある地表で減衰しやすいので、地表波の伝搬には一般に垂直偏波が向いている。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "中波地表波は海上より陸上で遠方まで伝搬する",
+          "answer": "2",
+          "explanation": "誤っている。海水は一般に陸地より導電率が高く、地表波の損失が小さい。このため同じ条件なら海上の方が遠くまで届きやすい。",
+          "candidateExplanations": {
+            "2": "誤っている。海水は一般に陸地より導電率が高く、地表波の損失が小さい。このため同じ条件なら海上の方が遠くまで届きやすい。",
+            "1": "海水は一般に陸地より導電率が高く、地表波の損失が小さい。このため同じ条件なら海上の方が遠くまで届きやすい。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "短波の伝搬特性は時間帯や周波数で大きく変わる",
+          "answer": "1",
+          "explanation": "正しい。電離層の電子密度は昼夜で変わり、反射や通過の条件も周波数で違うので、短波の到達距離や強度は変動する。",
+          "candidateExplanations": {
+            "1": "正しい。電離層の電子密度は昼夜で変わり、反射や通過の条件も周波数で違うので、短波の到達距離や強度は変動する。",
+            "2": "電離層の電子密度は昼夜で変わり、反射や通過の条件も周波数で違うので、短波の到達距離や強度は変動する。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "短波は磁気嵐やデリンジャー現象の影響を受けやすい",
+          "answer": "1",
+          "explanation": "正しい。電離層を経由する短波通信は、磁気嵐が起こした電子密度の変動や、デリンジャー現象で増えた吸収の影響を受ける。",
+          "candidateExplanations": {
+            "1": "正しい。電離層を経由する短波通信は、磁気嵐が起こした電子密度の変動や、デリンジャー現象で増えた吸収の影響を受ける。",
+            "2": "電離層を経由する短波通信は、磁気嵐が起こした電子密度の変動や、デリンジャー現象で増えた吸収の影響を受ける。"
+          }
+        }
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    },
+    "explanation": "正しい。昼間はD層による吸収が大きい。夜間にその影響が弱まるとE層などを介する中波が遠くまで届くことがある。\n正しい。水平電界は導電性のある地表で減衰しやすいので、地表波の伝搬には一般に垂直偏波が向いている。\n誤っている。海水は一般に陸地より導電率が高く、地表波の損失が小さい。このため同じ条件なら海上の方が遠くまで届きやすい。\n正しい。電離層の電子密度は昼夜で変わり、反射や通過の条件も周波数で違うので、短波の到達距離や強度は変動する。\n正しい。電離層を経由する短波通信は、磁気嵐が起こした電子密度の変動や、デリンジャー現象で増えた吸収の影響を受ける。"
+  },
+  {
+    "id": "riku-tech1-2025-july-kogaku-b-q25",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 25,
+    "type": "native-b",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "二つの同一アンテナを用いた利得測定"
+    ],
+    "difficulty": 3,
+    "question": "二つの同一アンテナを用いた利得測定。公式原問のB-5に答えよ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/riku-tech1/riku-tech1-2025-july-kogaku-b-q25-official.png"
+    ],
+    "imageAltTexts": [
+      "第一級陸上無線技術士試験 2025年7月 無線工学B B-5の公式問題と解答群"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b.pdf#page=7",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourcePages": [
+      7
+    ],
+    "officialQuestionLabel": "B-5",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2025年7月 無線工学B B-5（問題・正答）。解説と原図の切出しは過去問AIが作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "publicAllowed": true,
+    "nativeB": {
+      "mode": "shared-bank",
+      "officialLabel": "B-5",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "PₜGₜ/(2πd²)"
+        },
+        {
+          "id": "2",
+          "label": "(λ/(4πd))²GₜGᵣPₜ"
+        },
+        {
+          "id": "3",
+          "label": "λ²Gᵣ/(2π)"
+        },
+        {
+          "id": "4",
+          "label": "(4πd/λ)√(Pₜ/Pᵣ)"
+        },
+        {
+          "id": "5",
+          "label": "最大"
+        },
+        {
+          "id": "6",
+          "label": "PₜGₜ/(4πd²)"
+        },
+        {
+          "id": "7",
+          "label": "(λ/(2πd))²GₜGᵣPₜ"
+        },
+        {
+          "id": "8",
+          "label": "λ²Gᵣ/(4π)"
+        },
+        {
+          "id": "9",
+          "label": "(4πd/λ)√(Pᵣ/Pₜ)"
+        },
+        {
+          "id": "10",
+          "label": "最小"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "5",
+          "explanation": "同じ偏波にそろえたうえで各アンテナの主ビームを対向させると、受信電力が最大になる。",
+          "candidateExplanations": {
+            "1": "自由空間で放射が広がる面積は球面4πd²として扱う。空欄アに当てはまるのは「最大」である。",
+            "2": "送信利得による電力束密度と受信側の実効面積を掛けた受信電力に等しい。空欄アに当てはまるのは「最大」である。",
+            "3": "実効面積と利得の換算係数は波長の二乗を4πで割った値である。空欄アに当てはまるのは「最大」である。",
+            "4": "受信電力を送信電力で割ってから平方根を取るので、その比の向きが逆である。空欄アに当てはまるのは「最大」である。",
+            "5": "同じ偏波にそろえたうえで各アンテナの主ビームを対向させると、受信電力が最大になる。",
+            "6": "送信アンテナの向きの利得を掛け、球面での広がりを考慮した受信点の電力束密度である。空欄アに当てはまるのは「最大」である。",
+            "7": "分母が2πdでは自由空間の電力束密度と実効面積から得る式より4倍大きくなる。空欄アに当てはまるのは「最大」である。",
+            "8": "受信アンテナの利得を波長の二乗で面積に換算した値である。空欄アに当てはまるのは「最大」である。",
+            "9": "両アンテナの利得が同じとして伝送電力の比から一つの利得を取り出した形である。空欄アに当てはまるのは「最大」である。",
+            "10": "最小の受信電力になる位置では、主ビームに対する利得を求める測定条件を満たさない。空欄アに当てはまるのは「最大」である。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "6",
+          "explanation": "送信電力に利得を掛けて、受信点の距離dを半径とする球面積4πd²で割り、電力束密度を得る。",
+          "candidateExplanations": {
+            "1": "自由空間で放射が広がる面積は球面4πd²として扱う。空欄イに当てはまるのは「PₜGₜ/(4πd²)」である。",
+            "2": "送信利得による電力束密度と受信側の実効面積を掛けた受信電力に等しい。空欄イに当てはまるのは「PₜGₜ/(4πd²)」である。",
+            "3": "実効面積と利得の換算係数は波長の二乗を4πで割った値である。空欄イに当てはまるのは「PₜGₜ/(4πd²)」である。",
+            "4": "受信電力を送信電力で割ってから平方根を取るので、その比の向きが逆である。空欄イに当てはまるのは「PₜGₜ/(4πd²)」である。",
+            "5": "アンテナ双方の主ビームを合わせたときの受信電力の状態である。空欄イに当てはまるのは「PₜGₜ/(4πd²)」である。",
+            "6": "送信電力に利得を掛けて、受信点の距離dを半径とする球面積4πd²で割り、電力束密度を得る。",
+            "7": "分母が2πdでは自由空間の電力束密度と実効面積から得る式より4倍大きくなる。空欄イに当てはまるのは「PₜGₜ/(4πd²)」である。",
+            "8": "受信アンテナの利得を波長の二乗で面積に換算した値である。空欄イに当てはまるのは「PₜGₜ/(4πd²)」である。",
+            "9": "両アンテナの利得が同じとして伝送電力の比から一つの利得を取り出した形である。空欄イに当てはまるのは「PₜGₜ/(4πd²)」である。",
+            "10": "最小の受信電力になる位置では、主ビームに対する利得を求める測定条件を満たさない。空欄イに当てはまるのは「PₜGₜ/(4πd²)」である。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "8",
+          "explanation": "受信アンテナの実効面積は利得Gᵣにλ²/(4π)を掛けると求まる。",
+          "candidateExplanations": {
+            "1": "自由空間で放射が広がる面積は球面4πd²として扱う。空欄ウに当てはまるのは「λ²Gᵣ/(4π)」である。",
+            "2": "送信利得による電力束密度と受信側の実効面積を掛けた受信電力に等しい。空欄ウに当てはまるのは「λ²Gᵣ/(4π)」である。",
+            "3": "実効面積と利得の換算係数は波長の二乗を4πで割った値である。空欄ウに当てはまるのは「λ²Gᵣ/(4π)」である。",
+            "4": "受信電力を送信電力で割ってから平方根を取るので、その比の向きが逆である。空欄ウに当てはまるのは「λ²Gᵣ/(4π)」である。",
+            "5": "アンテナ双方の主ビームを合わせたときの受信電力の状態である。空欄ウに当てはまるのは「λ²Gᵣ/(4π)」である。",
+            "6": "送信アンテナの向きの利得を掛け、球面での広がりを考慮した受信点の電力束密度である。空欄ウに当てはまるのは「λ²Gᵣ/(4π)」である。",
+            "7": "分母が2πdでは自由空間の電力束密度と実効面積から得る式より4倍大きくなる。空欄ウに当てはまるのは「λ²Gᵣ/(4π)」である。",
+            "8": "受信アンテナの実効面積は利得Gᵣにλ²/(4π)を掛けると求まる。",
+            "9": "両アンテナの利得が同じとして伝送電力の比から一つの利得を取り出した形である。空欄ウに当てはまるのは「λ²Gᵣ/(4π)」である。",
+            "10": "最小の受信電力になる位置では、主ビームに対する利得を求める測定条件を満たさない。空欄ウに当てはまるのは「λ²Gᵣ/(4π)」である。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "2",
+          "explanation": "pにAₑを掛けると、受信電力は(λ/(4πd))²GₜGᵣPₜとなる。",
+          "candidateExplanations": {
+            "1": "自由空間で放射が広がる面積は球面4πd²として扱う。空欄エに当てはまるのは「(λ/(4πd))²GₜGᵣPₜ」である。",
+            "2": "pにAₑを掛けると、受信電力は(λ/(4πd))²GₜGᵣPₜとなる。",
+            "3": "実効面積と利得の換算係数は波長の二乗を4πで割った値である。空欄エに当てはまるのは「(λ/(4πd))²GₜGᵣPₜ」である。",
+            "4": "受信電力を送信電力で割ってから平方根を取るので、その比の向きが逆である。空欄エに当てはまるのは「(λ/(4πd))²GₜGᵣPₜ」である。",
+            "5": "アンテナ双方の主ビームを合わせたときの受信電力の状態である。空欄エに当てはまるのは「(λ/(4πd))²GₜGᵣPₜ」である。",
+            "6": "送信アンテナの向きの利得を掛け、球面での広がりを考慮した受信点の電力束密度である。空欄エに当てはまるのは「(λ/(4πd))²GₜGᵣPₜ」である。",
+            "7": "分母が2πdでは自由空間の電力束密度と実効面積から得る式より4倍大きくなる。空欄エに当てはまるのは「(λ/(4πd))²GₜGᵣPₜ」である。",
+            "8": "受信アンテナの利得を波長の二乗で面積に換算した値である。空欄エに当てはまるのは「(λ/(4πd))²GₜGᵣPₜ」である。",
+            "9": "両アンテナの利得が同じとして伝送電力の比から一つの利得を取り出した形である。空欄エに当てはまるのは「(λ/(4πd))²GₜGᵣPₜ」である。",
+            "10": "最小の受信電力になる位置では、主ビームに対する利得を求める測定条件を満たさない。空欄エに当てはまるのは「(λ/(4πd))²GₜGᵣPₜ」である。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "9",
+          "explanation": "Gₜ＝Gᵣ＝Gを代入すると電力比は(λ/(4πd))²G²である。平方根を取ってG＝(4πd/λ)√(Pᵣ/Pₜ)となる。",
+          "candidateExplanations": {
+            "1": "自由空間で放射が広がる面積は球面4πd²として扱う。空欄オに当てはまるのは「(4πd/λ)√(Pᵣ/Pₜ)」である。",
+            "2": "送信利得による電力束密度と受信側の実効面積を掛けた受信電力に等しい。空欄オに当てはまるのは「(4πd/λ)√(Pᵣ/Pₜ)」である。",
+            "3": "実効面積と利得の換算係数は波長の二乗を4πで割った値である。空欄オに当てはまるのは「(4πd/λ)√(Pᵣ/Pₜ)」である。",
+            "4": "受信電力を送信電力で割ってから平方根を取るので、その比の向きが逆である。空欄オに当てはまるのは「(4πd/λ)√(Pᵣ/Pₜ)」である。",
+            "5": "アンテナ双方の主ビームを合わせたときの受信電力の状態である。空欄オに当てはまるのは「(4πd/λ)√(Pᵣ/Pₜ)」である。",
+            "6": "送信アンテナの向きの利得を掛け、球面での広がりを考慮した受信点の電力束密度である。空欄オに当てはまるのは「(4πd/λ)√(Pᵣ/Pₜ)」である。",
+            "7": "分母が2πdでは自由空間の電力束密度と実効面積から得る式より4倍大きくなる。空欄オに当てはまるのは「(4πd/λ)√(Pᵣ/Pₜ)」である。",
+            "8": "受信アンテナの利得を波長の二乗で面積に換算した値である。空欄オに当てはまるのは「(4πd/λ)√(Pᵣ/Pₜ)」である。",
+            "9": "Gₜ＝Gᵣ＝Gを代入すると電力比は(λ/(4πd))²G²である。平方根を取ってG＝(4πd/λ)√(Pᵣ/Pₜ)となる。",
+            "10": "最小の受信電力になる位置では、主ビームに対する利得を求める測定条件を満たさない。空欄オに当てはまるのは「(4πd/λ)√(Pᵣ/Pₜ)」である。"
+          }
+        }
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    },
+    "explanation": "同じ偏波にそろえたうえで各アンテナの主ビームを対向させると、受信電力が最大になる。\n送信電力に利得を掛けて、受信点の距離dを半径とする球面積4πd²で割り、電力束密度を得る。\n受信アンテナの実効面積は利得Gᵣにλ²/(4π)を掛けると求まる。\npにAₑを掛けると、受信電力は(λ/(4πd))²GₜGᵣPₜとなる。\nGₜ＝Gᵣ＝Gを代入すると電力比は(λ/(4πd))²G²である。平方根を取ってG＝(4πd/λ)√(Pᵣ/Pₜ)となる。"
+  }
+]
