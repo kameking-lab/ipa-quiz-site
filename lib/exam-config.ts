@@ -522,7 +522,7 @@ fp2: {
     level: "advanced",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "不動産運用設計", categories: ["不動産運用設計"] }],
     seasons: ["round1", "round2"],
-    yearRange: { start: 2023, end: 2025 },
+    yearRange: { start: 2022, end: 2025 },
 },
 "kogai-taiki-tokuron": {
     code: "kogai-taiki-tokuron",
