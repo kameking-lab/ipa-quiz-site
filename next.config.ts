@@ -125,6 +125,11 @@ const nextConfig: NextConfig = {
       "**/node_modules/@prisma/client/runtime/*.wasm-base64.js",
       "**/node_modules/@prisma/client/runtime/*.wasm-base64.mjs",
       "**/node_modules/@prisma/client/runtime/*.map",
+      // Node functions load the native library engine (.so.node); the WebAssembly
+      // engine is only for edge/driver-adapter clients and is not used here.
+      "**/node_modules/.prisma/client/query_engine_bg.wasm",
+      "**/node_modules/.prisma/client/query_engine_bg.js",
+      "**/node_modules/.prisma/client/query_engine-windows.dll.node",
     ],
     // The exam-library copilot answers from the official paper only (no RAG), so the
     // copilot search index and local audit logs are not needed and pushed the function
