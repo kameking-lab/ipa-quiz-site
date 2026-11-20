@@ -140,19 +140,33 @@ test("legacy v6 worker updates at the original URL and reopening standalone show
   deployment = "legacy";
   await page.goto(origin);
   await controlled(page);
-  await page.goto(`${origin}/q/ip/legacy-visited`);
-  await page.goto(origin);
+  const visited = `${origin}/q/ip/legacy-visited`;
+  await page.goto(visited);
+  await expect.poll(() => page.evaluate(async (url) => !!await caches.match(url), visited)).toBe(true);
   deployment = "build-2";
   // Browser-native update request is outside the old SW fetch handler. This
   // intentionally uses the old registration, with no new client code required.
-  await page.evaluate(async () => { await (await navigator.serviceWorker.getRegistration())!.update(); });
-  await activeVersion(page, "build-2");
+  const update = await page.evaluate(async () => {
+    const registration = (await navigator.serviceWorker.getRegistration())!;
+    const legacyWorker = registration.active;
+    await registration.update();
+    const worker = registration.installing ?? registration.waiting ?? registration.active;
+    if (!worker || worker === legacyWorker) return null;
+    if (worker.state === "installing") {
+      await new Promise<void>(resolve => worker.addEventListener("statechange", () => resolve(), { once: true }));
+    }
+    return { url: worker.scriptURL, state: worker.state };
+  });
+  expect(update?.url).toBe(`${origin}/sw.js`);
+  expect(["installed", "activating", "activated"]).toContain(update?.state);
+  // Closing standalone releases the old client so a waiting update can activate.
   await page.close();
   const reopened = await context.newPage();
   await reopened.goto(origin);
   await expect(reopened.locator("h1")).toHaveText("build-2");
+  await activeVersion(reopened, "build-2");
   networkDown = true;
-  await reopened.goto(`${origin}/q/ip/legacy-visited`);
+  await reopened.goto(visited);
   await expect(reopened.locator("h1")).toHaveText("legacy");
 });
 

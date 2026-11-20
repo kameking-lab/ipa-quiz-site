@@ -48,7 +48,7 @@ test.describe("mock exam: HTTP & structure", () => {
 
 test.describe("mock exam: API", () => {
   test("GET /api/mock-exam/ap returns 200 or correct error", async ({ request }) => {
-    const res = await request.get("/api/mock-exam/ap");
+    const res = await request.get("/api/mock-exam/ap", { maxRetries: 1 });
     // 200 with questions, or 404 if not enough questions available
     expect([200, 404]).toContain(res.status());
   });
