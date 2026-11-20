@@ -1,0 +1,1735 @@
+[
+  {
+    "id": "radio21-riku-tech2-2025-07-kiso-q01",
+    "exam": "riku-tech2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 1,
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎",
+      "一様電界中の電子"
+    ],
+    "difficulty": 3,
+    "question": "図のように初め静止した電子に一様な電界Eが作用する。電荷の大きさe、質量m、経過時間tとし、加速度の大きさA、速さB、移動距離Cを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第二級陸上無線技術士 2025年7月期 無線工学の基礎 A-1（問題・正答、試験問題記号 707）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/riku-tech2/2025-07-kiso-q01-p01.png"
+    ],
+    "imageAltTexts": [
+      "第二級陸上無線技術士 無線工学の基礎 2025年7月期 A-1 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "eE²/m／eEt/m／eE²t²/(4m)",
+      "イ": "eE²/m／eE²t²/m／eE²t²/(4m)",
+      "ウ": "eE/m／eEt/m／eEt²/(2m)",
+      "エ": "eE/m／eE²t²/m／eEt²/(2m)",
+      "オ": "eE/m／eEt/m／eE²t²/(4m)"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "力の大きさeEを質量で割ると加速度が得られる。初速度は零なので速さは加速度のt倍、距離は加速度のt²/2倍である。",
+    "choiceExplanations": {
+      "ア": "電界から受ける力はEに比例するため、加速度にE²を含める式は誤りである。",
+      "イ": "力はeEなので加速度はeE/mであり、速さの時間依存性はtに比例する。",
+      "ウ": "力の大きさeEを質量で割ると加速度が得られる。初速度は零なので速さは加速度のt倍、距離は加速度のt²/2倍である。",
+      "エ": "加速度と距離は合うが、速さは加速度と経過時間の積eEt/mである。",
+      "オ": "加速度と速さは合うが、距離はeEt²/(2m)である。"
+    }
+  },
+  {
+    "id": "radio21-riku-tech2-2025-07-kiso-q02",
+    "exam": "riku-tech2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 2,
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎",
+      "平行導線間の電磁力"
+    ],
+    "difficulty": 3,
+    "question": "空気中でr m離れた二本の無限長の直線導線に同じ向きの直流Iを流す。透磁率4π×10⁻⁷ H/mの場合に、一方の導線1 m当たりに働く力の大きさ（×10⁻⁷ N/m）と方向を選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第二級陸上無線技術士 2025年7月期 無線工学の基礎 A-2（問題・正答、試験問題記号 707）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/riku-tech2/2025-07-kiso-q02-p01.png"
+    ],
+    "imageAltTexts": [
+      "第二級陸上無線技術士 無線工学の基礎 2025年7月期 A-2 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "2I²/r／反発",
+      "イ": "2I²/r／吸引",
+      "ウ": "I²/(πr)／反発",
+      "エ": "I²/(2πr)／吸引",
+      "オ": "I²/(2πr)／反発"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "片方の導線がもう片方に作る磁束密度はμ₀I/(2πr)である。これにIを掛け、同方向の電流同士が引き合う向きを選ぶ。",
+    "choiceExplanations": {
+      "ア": "μ₀I²/(2πr)から得る大きさは合うが、同方向の電流が流れる導線同士は引き合う。",
+      "イ": "片方の導線がもう片方に作る磁束密度はμ₀I/(2πr)である。これにIを掛け、同方向の電流同士が引き合う向きを選ぶ。",
+      "ウ": "力は反発ではなく吸引であり、透磁率の係数4πを代入すると力の係数は2I²/rとなる。",
+      "エ": "吸引は合うが、4π×10⁻⁷を含む透磁率を代入したあとの係数は2I²/rである。",
+      "オ": "同方向の電流同士なので引力であり、1 m当たりの大きさにも透磁率を含める。"
+    }
+  },
+  {
+    "id": "radio21-riku-tech2-2025-07-kiso-q03",
+    "exam": "riku-tech2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 3,
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎",
+      "巻数と直列合成インダクタンス"
+    ],
+    "difficulty": 3,
+    "question": "同じ環状鉄心に漏れ磁束なく巻いた二つのコイルAとBを図のように接続する。Aの自己インダクタンス16 mH、Bの巻数がAの半分のとき、端子ac間のインダクタンスを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第二級陸上無線技術士 2025年7月期 無線工学の基礎 A-3（問題・正答、試験問題記号 707）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/riku-tech2/2025-07-kiso-q03-p01.png"
+    ],
+    "imageAltTexts": [
+      "第二級陸上無線技術士 無線工学の基礎 2025年7月期 A-3 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "9 mH",
+      "イ": "12 mH",
+      "ウ": "18 mH",
+      "エ": "36 mH",
+      "オ": "64 mH"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "加極性なので合計の巻数はAの1.5倍である。インダクタンスは巻数の二乗に比例するので16×1.5²＝36 mHである。",
+    "choiceExplanations": {
+      "ア": "Bの巻数はAの半分であり、図では両者の磁束が加わるため、巻数は減らず合計で1.5倍になる。",
+      "イ": "磁束が加わる接続では、合成インダクタンスはA単体の16 mHより大きくなる。",
+      "ウ": "漏れ磁束がない場合は単に個々のインダクタンスを足すのではなく、同じ鉄心での相互誘導を含める。",
+      "エ": "加極性なので合計の巻数はAの1.5倍である。インダクタンスは巻数の二乗に比例するので16×1.5²＝36 mHである。",
+      "オ": "64 mHは総巻数がAの2倍なら得られるが、Bの巻数はAの半分である。"
+    }
+  },
+  {
+    "id": "radio21-riku-tech2-2025-07-kiso-q04",
+    "exam": "riku-tech2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 4,
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎",
+      "直列コンデンサの分圧"
+    ],
+    "difficulty": 3,
+    "question": "図で直列接続したC₁＝8 μF、C₂＝4 μFについて、C₁に蓄えられた電荷が16×10⁻⁵ Cのときの電源電圧を選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第二級陸上無線技術士 2025年7月期 無線工学の基礎 A-4（問題・正答、試験問題記号 707）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/riku-tech2/2025-07-kiso-q04-p02.png"
+    ],
+    "imageAltTexts": [
+      "第二級陸上無線技術士 無線工学の基礎 2025年7月期 A-4 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "60 V",
+      "イ": "50 V",
+      "ウ": "40 V",
+      "エ": "30 V",
+      "オ": "20 V"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "直列の両コンデンサが持つ電荷は等しい。電圧はそれぞれQ/C₁＝20 V、Q/C₂＝40 Vであり、和は60 Vである。",
+    "choiceExplanations": {
+      "ア": "直列の両コンデンサが持つ電荷は等しい。電圧はそれぞれQ/C₁＝20 V、Q/C₂＝40 Vであり、和は60 Vである。",
+      "イ": "各容量に同じ電荷があるので、二つの電圧は20 Vと40 Vになり、合計は50 Vを越える。",
+      "ウ": "40 Vは小さい方の容量C₂の端子電圧であり、電源電圧にはC₁の20 Vを足す。",
+      "エ": "合成容量は8×4/(8＋4) μFであり、電荷をこの値で割ると30 Vより大きい。",
+      "オ": "20 VはC₁だけの電圧で、もう一つの直列コンデンサにも電圧がかかる。"
+    }
+  },
+  {
+    "id": "radio21-riku-tech2-2025-07-kiso-q05",
+    "exam": "riku-tech2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 5,
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎",
+      "対称な抵抗回路"
+    ],
+    "difficulty": 3,
+    "question": "図のすべての抵抗Rが150 Ωのとき、端子ab間の合成抵抗を選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第二級陸上無線技術士 2025年7月期 無線工学の基礎 A-5（問題・正答、試験問題記号 707）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/riku-tech2/2025-07-kiso-q05-p02.png"
+    ],
+    "imageAltTexts": [
+      "第二級陸上無線技術士 無線工学の基礎 2025年7月期 A-5 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "75 Ω",
+      "イ": "100 Ω",
+      "ウ": "150 Ω",
+      "エ": "200 Ω",
+      "オ": "300 Ω"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "上下対称なので上下の対応点は等電位になり、縦抵抗には電流が流れない。4Rの二つの経路が並列になって2R＝300 Ωとなる。",
+    "choiceExplanations": {
+      "ア": "75 Ωは横の一段分の並列抵抗であり、図では同等の段が四つ直列になる。",
+      "イ": "上下に対応する点は等電位で縦の抵抗には電流が流れず、横の直列経路の抵抗は各600 Ωになる。",
+      "ウ": "端子間の上側・下側経路はそれぞれ四抵抗が直列であり、並列合成しても一つの抵抗より大きい。",
+      "エ": "縦の各抵抗には電流が流れないので、各段75 Ωを四段加えて求める。",
+      "オ": "上下対称なので上下の対応点は等電位になり、縦抵抗には電流が流れない。4Rの二つの経路が並列になって2R＝300 Ωとなる。"
+    }
+  },
+  {
+    "id": "radio21-riku-tech2-2025-07-kiso-q06",
+    "exam": "riku-tech2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 6,
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎",
+      "正弦波電圧の位相合成"
+    ],
+    "difficulty": 3,
+    "question": "vₐ＝80√2 sin(120πt)、vᵦ＝60√2 sin(120πt＋π/2)の和v꜀について、周波数A、実効値B、vₐとの位相差をarctan Cと表すCを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第二級陸上無線技術士 2025年7月期 無線工学の基礎 A-6（問題・正答、試験問題記号 707）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/riku-tech2/2025-07-kiso-q06-p02.png"
+    ],
+    "imageAltTexts": [
+      "第二級陸上無線技術士 無線工学の基礎 2025年7月期 A-6 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "120 Hz／100 V／0.5",
+      "イ": "120 Hz／141 V／0.5",
+      "ウ": "120 Hz／141 V／0.75",
+      "エ": "60 Hz／100 V／0.75",
+      "オ": "60 Hz／141 V／0.75"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "角周波数を2πで割ると60 Hzになる。直交する二つの実効値のベクトル和は100 Vで、位相差の正接は0.75になる。",
+    "choiceExplanations": {
+      "ア": "実効値は合うが、角周波数120π rad/sは60 Hzに相当し、位相差の正接は60/80になる。",
+      "イ": "実効値は直交成分80 Vと60 Vを合成した100 Vである。周波数及び位相差の正接も異なる。",
+      "ウ": "位相差の正接は合うが、周波数は120π/(2π)＝60 Hz、実効値は100 Vである。",
+      "エ": "角周波数を2πで割ると60 Hzになる。直交する二つの実効値のベクトル和は100 Vで、位相差の正接は0.75になる。",
+      "オ": "周波数と位相差は合うが、141 Vは実効値100 Vに√2を掛けた波高値に当たる。"
+    }
+  },
+  {
+    "id": "radio21-riku-tech2-2025-07-kiso-q07",
+    "exam": "riku-tech2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 7,
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎",
+      "並列負荷の皮相電力"
+    ],
+    "difficulty": 3,
+    "question": "有効電力400 W、力率0.8の誘導性負荷と、有効電力200 W、力率1の負荷を図のように交流100 Vの電源に並列に接続した。全体の皮相電力を選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第二級陸上無線技術士 2025年7月期 無線工学の基礎 A-7（問題・正答、試験問題記号 707）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/riku-tech2/2025-07-kiso-q07-p02.png"
+    ],
+    "imageAltTexts": [
+      "第二級陸上無線技術士 無線工学の基礎 2025年7月期 A-7 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "200√2 VA",
+      "イ": "300√3 VA",
+      "ウ": "300√5 VA",
+      "エ": "600√3 VA",
+      "オ": "600√5 VA"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "誘導性負荷の皮相電力は400/0.8＝500 VAなので無効電力は300 varである。有効電力の合計600 Wと直交合成すると300√5 VAになる。",
+    "choiceExplanations": {
+      "ア": "全体の有効電力だけで600 Wあり、皮相電力はこれ以上なので200√2 VAでは小さい。",
+      "イ": "300√3 VAは全体の有効電力600 Wを下回るので、全体の皮相電力にはならない。",
+      "ウ": "誘導性負荷の皮相電力は400/0.8＝500 VAなので無効電力は300 varである。有効電力の合計600 Wと直交合成すると300√5 VAになる。",
+      "エ": "個々の負荷の皮相電力の和500＋200＝700 VAよりも大きい値は、この二負荷のベクトル合成では得られない。",
+      "オ": "全体の皮相電力は有効電力600 Wと無効電力300 varの二乗和の平方根なので、この値の半分になる。"
+    }
+  },
+  {
+    "id": "radio21-riku-tech2-2025-07-kiso-q08",
+    "exam": "riku-tech2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 8,
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎",
+      "共振を利用した直列容量の測定"
+    ],
+    "difficulty": 3,
+    "question": "図の回路でSWがOFFのときCᵥ＝200 pFで共振した。SWをONにしてCᵥ＝150 pFにすると同じ周波数で共振したとき、未知容量Cₓを求めよ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第二級陸上無線技術士 2025年7月期 無線工学の基礎 A-8（問題・正答、試験問題記号 707）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/riku-tech2/2025-07-kiso-q08-p02.png"
+    ],
+    "imageAltTexts": [
+      "第二級陸上無線技術士 無線工学の基礎 2025年7月期 A-8 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "600 pF",
+      "イ": "500 pF",
+      "ウ": "400 pF",
+      "エ": "300 pF",
+      "オ": "200 pF"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "OFFではCᵥとCₓが直列、ONではCₓが短絡される。両方で合成容量が等しいので1/150＝1/200＋1/Cₓとなり、Cₓ＝600 pFである。",
+    "choiceExplanations": {
+      "ア": "OFFではCᵥとCₓが直列、ONではCₓが短絡される。両方で合成容量が等しいので1/150＝1/200＋1/Cₓとなり、Cₓ＝600 pFである。",
+      "イ": "500 pFならOFF時の合成容量は約143 pFであり、150 pFにならない。",
+      "ウ": "400 pFを200 pFに直列につなぐと合成は約133 pFとなり、共振条件が変わる。",
+      "エ": "300 pFと200 pFの直列合成容量は120 pFであり、ON時の150 pFに満たない。",
+      "オ": "同じ200 pF二つを直列にすると100 pFとなり、必要な150 pFとは異なる。"
+    }
+  },
+  {
+    "id": "radio21-riku-tech2-2025-07-kiso-q09",
+    "exam": "riku-tech2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 9,
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎",
+      "半導体素子の図記号"
+    ],
+    "difficulty": 3,
+    "question": "図の半導体素子名と図記号の組合せで誤っているものを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第二級陸上無線技術士 2025年7月期 無線工学の基礎 A-9（問題・正答、試験問題記号 707）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/riku-tech2/2025-07-kiso-q09-p03.png"
+    ],
+    "imageAltTexts": [
+      "第二級陸上無線技術士 無線工学の基礎 2025年7月期 A-9 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1 PNPトランジスタ",
+      "イ": "2 Pチャネル接合形電界効果トランジスタ",
+      "ウ": "3 発光ダイオード",
+      "エ": "4 Pゲート逆阻止3端子サイリスタ",
+      "オ": "5 Nチャネル絶縁ゲート形エンハンスメント形電界効果トランジスタ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "ゲートの矢印がチャネルへ向かう図はNチャネル接合形を表し、Pチャネルの場合は反対向きである。",
+    "choiceExplanations": {
+      "ア": "エミッタの矢印がベースの方を向いているため、PNPトランジスタの図記号である。",
+      "イ": "ゲートの矢印がチャネルへ向かう図はNチャネル接合形を表し、Pチャネルの場合は反対向きである。",
+      "ウ": "ダイオードから外へ向かう二本の矢印が発光を表している。",
+      "エ": "ダイオード状の構造にカソード側へつながるゲート端子があるサイリスタの記号である。",
+      "オ": "ゲートの絶縁、途切れたチャネル表示及び内部の矢印がこの形式に対応する。"
+    }
+  },
+  {
+    "id": "radio21-riku-tech2-2025-07-kiso-q10",
+    "exam": "riku-tech2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 10,
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎",
+      "トランジスタの電流増幅率"
+    ],
+    "difficulty": 3,
+    "question": "図のトランジスタのエミッタ電流Iₑ、コレクタ電流I꜀及びベース電流Iʙから、ベース接地電流増幅率αの式A、エミッタ接地電流増幅率βの式B、αによるβの式Cを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第二級陸上無線技術士 2025年7月期 無線工学の基礎 A-10（問題・正答、試験問題記号 707）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/riku-tech2/2025-07-kiso-q10-p03.png"
+    ],
+    "imageAltTexts": [
+      "第二級陸上無線技術士 無線工学の基礎 2025年7月期 A-10 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "Iₑ/I꜀／I꜀/Iʙ／α/(1−α)",
+      "イ": "Iₑ/I꜀／Iʙ/I꜀／α/(1＋α)",
+      "ウ": "I꜀/Iₑ／Iʙ/I꜀／α/(1−α)",
+      "エ": "I꜀/Iₑ／I꜀/Iʙ／α/(1−α)",
+      "オ": "I꜀/Iₑ／I꜀/Iʙ／α/(1＋α)"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "コレクタが出力で、入力はベース接地ではエミッタ、エミッタ接地ではベースである。Iʙ＝Iₑ−I꜀によりβ＝α/(1−α)となる。",
+    "choiceExplanations": {
+      "ア": "BとCは合うが、ベース接地では入力はエミッタで出力はコレクタなのでα＝I꜀/Iₑになる。",
+      "イ": "電流増幅率は入力を出力で割るのではなく、出力電流を入力電流で割る。Cではαを1−αで割る。",
+      "ウ": "AとCは合うが、βはコレクタ電流をベース電流で割る。",
+      "エ": "コレクタが出力で、入力はベース接地ではエミッタ、エミッタ接地ではベースである。Iʙ＝Iₑ−I꜀によりβ＝α/(1−α)となる。",
+      "オ": "AとBは合うが、ベース電流はエミッタ電流とコレクタ電流の差なのでCの分母は1−αである。"
+    }
+  },
+  {
+    "id": "radio21-riku-tech2-2025-07-kiso-q11",
+    "exam": "riku-tech2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 11,
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎",
+      "FETの相互コンダクタンス"
+    ],
+    "difficulty": 3,
+    "question": "図と表のFETでドレイン・ソース間電圧を12 Vに固定した。ドレイン電流9 mA付近での相互コンダクタンスを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第二級陸上無線技術士 2025年7月期 無線工学の基礎 A-11（問題・正答、試験問題記号 707）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/riku-tech2/2025-07-kiso-q11-p03.png"
+    ],
+    "imageAltTexts": [
+      "第二級陸上無線技術士 無線工学の基礎 2025年7月期 A-11 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "10 mS",
+      "イ": "20 mS",
+      "ウ": "30 mS",
+      "エ": "60 mS",
+      "オ": "90 mS"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "ドレイン電圧を一定としたとき、表では−0.4 Vから−0.2 Vにするとドレイン電流が6 mA増える。その比は6 mA/0.2 V＝30 mSである。",
+    "choiceExplanations": {
+      "ア": "9 mA付近の電流の変化は0.1 V当たり3 mAであり、10 mSに当たる1 mAより大きい。",
+      "イ": "相互コンダクタンスは局所的な電流の差をゲート電圧差で割るため、3 mA/0.1 V＝30 mSである。",
+      "ウ": "ドレイン電圧を一定としたとき、表では−0.4 Vから−0.2 Vにするとドレイン電流が6 mA増える。その比は6 mA/0.2 V＝30 mSである。",
+      "エ": "両側のデータを使うなら電圧の差も両端の0.2 Vであり、0.1 Vで割ると倍に見積もることになる。",
+      "オ": "90 mSなら0.1 Vで9 mA変わることになるが、表での変化は3 mAである。"
+    }
+  },
+  {
+    "id": "radio21-riku-tech2-2025-07-kiso-q12",
+    "exam": "riku-tech2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 12,
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎",
+      "進行波管の構成"
+    ],
+    "difficulty": 3,
+    "question": "図のマイクロ波進行波管で、コイルが電子流に与える作用A、らせんがマイクロ波の位相速度に与える作用B、広帯域の信号に対する作用Cを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第二級陸上無線技術士 2025年7月期 無線工学の基礎 A-12（問題・正答、試験問題記号 707）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/riku-tech2/2025-07-kiso-q12-p03.png"
+    ],
+    "imageAltTexts": [
+      "第二級陸上無線技術士 無線工学の基礎 2025年7月期 A-12 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "発散／速く／検波",
+      "イ": "発散／遅く／増幅",
+      "ウ": "集束／速く／増幅",
+      "エ": "集束／速く／検波",
+      "オ": "集束／遅く／増幅"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "コイルの磁界は電子流を集束し、らせんにより波の軸方向の位相速度を下げる。狭帯域の同調回路を使わず広帯域の増幅ができる。",
+    "choiceExplanations": {
+      "ア": "コイルは電子流を集束させ、らせんを使って波の軸方向の位相速度を遅くする。進行波管はマイクロ波の増幅に用いる。",
+      "イ": "遅波と増幅は合うが、電子はコイルの磁界でビーム状に集束される。",
+      "ウ": "AとCは合うが、らせんは波の位相速度を電子流と相互作用しやすいよう遅くする。",
+      "エ": "コイルは集束に用いるが、らせんは波の位相速度を遅くし、装置は広帯域増幅に用いる。",
+      "オ": "コイルの磁界は電子流を集束し、らせんにより波の軸方向の位相速度を下げる。狭帯域の同調回路を使わず広帯域の増幅ができる。"
+    }
+  },
+  {
+    "id": "radio21-riku-tech2-2025-07-kiso-q13",
+    "exam": "riku-tech2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 13,
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎",
+      "ダイオードのクリップ回路"
+    ],
+    "difficulty": 3,
+    "question": "図1の抵抗、理想ダイオードと2 V電源の回路の動作について、誤っているものを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第二級陸上無線技術士 2025年7月期 無線工学の基礎 A-13（問題・正答、試験問題記号 707）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/riku-tech2/2025-07-kiso-q13-p04.png"
+    ],
+    "imageAltTexts": [
+      "第二級陸上無線技術士 無線工学の基礎 2025年7月期 A-13 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "クランプ回路と呼ぶ。",
+      "イ": "入力vₐᵦが0 Vのとき出力v꜀ᴅは0 Vである。",
+      "ウ": "入力が−3 Vのとき出力は−3 Vである。",
+      "エ": "入力が3 Vのとき出力は2 Vである。",
+      "オ": "入力が4 sin(ωt) Vのとき出力波形は図2になる。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "出力の2 Vを超える部分だけを切り取るクリップ回路である。波形全体の直流レベルをシフトするクランプ回路とは動作が異なる。",
+    "choiceExplanations": {
+      "ア": "出力の2 Vを超える部分だけを切り取るクリップ回路である。波形全体の直流レベルをシフトするクランプ回路とは動作が異なる。",
+      "イ": "0 Vは制限の基準2 Vより低いためダイオードが導通せず、出力は0 Vである。",
+      "ウ": "入力が負のときダイオードは逆方向であり、理想条件では出力は入力と同じ−3 Vとなる。",
+      "エ": "3 Vではダイオードが導通し、出力は基準電圧の2 Vに制限される。",
+      "オ": "上側の2 Vを超える部分だけ平坦になり、負側などの部分は入力波形を保つ。"
+    }
+  },
+  {
+    "id": "radio21-riku-tech2-2025-07-kiso-q14",
+    "exam": "riku-tech2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 14,
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎",
+      "PLLを用いた発振回路"
+    ],
+    "difficulty": 3,
+    "question": "図のPLL発振回路で、水晶基準波と分周波を比較するブロックA、低域フィルタの出力で制御するブロックB、10 MHzを基準に150 MHzを出力するときの分周器のNを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第二級陸上無線技術士 2025年7月期 無線工学の基礎 A-14（問題・正答、試験問題記号 707）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/riku-tech2/2025-07-kiso-q14-p04.png"
+    ],
+    "imageAltTexts": [
+      "第二級陸上無線技術士 無線工学の基礎 2025年7月期 A-14 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "平衡変調器／高周波増幅器／10",
+      "イ": "平衡変調器／高周波増幅器／15",
+      "ウ": "位相比較器／高周波増幅器／30",
+      "エ": "位相比較器／電圧制御発振器／10",
+      "オ": "位相比較器／電圧制御発振器／15"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "位相比較器と低域フィルタの出力で電圧制御発振器を同期させる。帰還値が150/N＝10 MHzとなるのでNは15である。",
+    "choiceExplanations": {
+      "ア": "基準と帰還の位相を比較し、その出力で電圧制御発振器を調整する。分周数も出力と基準の比15である。",
+      "イ": "分周数15は合うが、Aは位相比較器、Bは電圧制御発振器である。",
+      "ウ": "位相比較器は正しいが、Bでは入力信号を増幅するのではなく、制御電圧に応じた周波数で発振する。",
+      "エ": "AとBは正しいが、150 MHzを10で割ると15 MHzであり、基準の10 MHzと一致しない。",
+      "オ": "位相比較器と低域フィルタの出力で電圧制御発振器を同期させる。帰還値が150/N＝10 MHzとなるのでNは15である。"
+    }
+  },
+  {
+    "id": "radio21-riku-tech2-2025-07-kiso-q15",
+    "exam": "riku-tech2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 15,
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎",
+      "Tフリップフロップによるカウンタ"
+    ],
+    "difficulty": 3,
+    "question": "図のTフリップフロップとANDのカウンタで、SWがOFFのとき2パルス入力後のQ₀、Q₁、Q₂（A）、SWがONのときリセット直前のQ₀、Q₁、Q₂（B）、そのときの計数の進数Cを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第二級陸上無線技術士 2025年7月期 無線工学の基礎 A-15（問題・正答、試験問題記号 707）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/riku-tech2/2025-07-kiso-q15-p04.png"
+    ],
+    "imageAltTexts": [
+      "第二級陸上無線技術士 無線工学の基礎 2025年7月期 A-15 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "0,0,1／1,0,1／5進",
+      "イ": "0,0,1／0,1,1／6進",
+      "ウ": "0,1,0／0,1,1／5進",
+      "エ": "0,1,0／0,1,1／6進",
+      "オ": "1,1,0／1,0,1／7進"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "Q₀が最下位で、2パルス後はQ₁だけが1になる。Q₁とQ₂が1になって6を示す時点でリセットするので6進である。",
+    "choiceExplanations": {
+      "ア": "2パルス後には下位から0,1,0になり、図のANDはQ₁とQ₂が共に1となる6パルス目にリセットする。",
+      "イ": "リセット条件と進数は正しいが、2パルス後に1となるのはQ₁である。",
+      "ウ": "2パルス後の状態もリセット状態も合うが、0,1,1は上位から読むと110で十進の6なので6進である。",
+      "エ": "Q₀が最下位で、2パルス後はQ₁だけが1になる。Q₁とQ₂が1になって6を示す時点でリセットするので6進である。",
+      "オ": "Q₀とQ₁が1になるのは3パルスのときであり、リセットに使うのはQ₁とQ₂である。"
+    }
+  },
+  {
+    "id": "radio21-riku-tech2-2025-07-kiso-q16",
+    "exam": "riku-tech2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 16,
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎",
+      "定電圧ダイオード"
+    ],
+    "difficulty": 3,
+    "question": "図の12 V電源、直列抵抗100 Ω、理想ツェナー電圧9 Vの回路で、負荷500 Ωと100 Ωに対する各負荷電圧を選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第二級陸上無線技術士 2025年7月期 無線工学の基礎 A-16（問題・正答、試験問題記号 707）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/riku-tech2/2025-07-kiso-q16-p04.png"
+    ],
+    "imageAltTexts": [
+      "第二級陸上無線技術士 無線工学の基礎 2025年7月期 A-16 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "9 V／3 V",
+      "イ": "9 V／6 V",
+      "ウ": "9 V／9 V",
+      "エ": "12 V／6 V",
+      "オ": "12 V／9 V"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "500 Ωではツェナーなしの分圧が10 Vとなるので9 Vに制限される。100 Ωでは分圧が6 Vで、ツェナーは導通しない。",
+    "choiceExplanations": {
+      "ア": "500 Ωではツェナーによって9 Vに制限されるが、100 Ωでは同じ値の抵抗で分圧するので6 Vとなる。",
+      "イ": "500 Ωではツェナーなしの分圧が10 Vとなるので9 Vに制限される。100 Ωでは分圧が6 Vで、ツェナーは導通しない。",
+      "ウ": "500 Ωでは9 Vで合うが、100 Ωでは分圧が6 Vに下がってツェナーの降伏電圧に達しない。",
+      "エ": "100 Ωでの6 Vは正しいが、500 Ωではツェナーが動作し、負荷電圧は9 Vである。",
+      "オ": "500 Ωでは9 Vに制限される。100 Ωではツェナーが働かなくても電源電圧の半分の6 Vが得られる。"
+    }
+  },
+  {
+    "id": "radio21-riku-tech2-2025-07-kiso-q17",
+    "exam": "riku-tech2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 17,
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎",
+      "直列に接続した電圧計"
+    ],
+    "difficulty": 3,
+    "question": "最大目盛100 V・内部抵抗100 kΩのV₁と、最大目盛300 V・内部抵抗150 kΩのV₂を直列につないだとき、指示の和で測れる最大電圧を選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第二級陸上無線技術士 2025年7月期 無線工学の基礎 A-17（問題・正答、試験問題記号 707）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/riku-tech2/2025-07-kiso-q17-p05.png"
+    ],
+    "imageAltTexts": [
+      "第二級陸上無線技術士 無線工学の基礎 2025年7月期 A-17 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "100 V",
+      "イ": "175 V",
+      "ウ": "250 V",
+      "エ": "350 V",
+      "オ": "400 V"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "V₁の許容電流は1 mA、V₂は2 mAなので直列では1 mAが上限である。内部抵抗の合計250 kΩにこの電流を流すと250 Vになる。",
+    "choiceExplanations": {
+      "ア": "V₁の最大目盛の100 Vであっても、直列のV₂にも同じ電流による電圧が加わる。",
+      "イ": "V₁の最大目盛時の1 mAに対しV₂の電圧は150 Vとなるため、合計は175 Vより高い。",
+      "ウ": "V₁の許容電流は1 mA、V₂は2 mAなので直列では1 mAが上限である。内部抵抗の合計250 kΩにこの電流を流すと250 Vになる。",
+      "エ": "350 Vを250 kΩに加えると1.4 mAとなり、V₁の最大目盛を超える。",
+      "オ": "二つの最大目盛をそのまま足すと、同じ電流が流れるのに両方が同時に最大目盛になると誤って仮定することになる。"
+    }
+  },
+  {
+    "id": "radio21-riku-tech2-2025-07-kiso-q18",
+    "exam": "riku-tech2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 18,
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎",
+      "電圧計の負荷効果"
+    ],
+    "difficulty": 3,
+    "question": "図の接続で電流計が未知抵抗Rₓと電圧計の合計電流を指示する。Rₓ≤20 kΩ、RₓをV/Iで見積もる相対誤差を5％以下とするための電圧計の内部抵抗Rᵥの最小値を選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第二級陸上無線技術士 2025年7月期 無線工学の基礎 A-18（問題・正答、試験問題記号 707）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/riku-tech2/2025-07-kiso-q18-p05.png"
+    ],
+    "imageAltTexts": [
+      "第二級陸上無線技術士 無線工学の基礎 2025年7月期 A-18 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "600 kΩ",
+      "イ": "580 kΩ",
+      "ウ": "480 kΩ",
+      "エ": "420 kΩ",
+      "オ": "380 kΩ"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "見掛けの抵抗はRₓ∥Rᵥなので、誤差率はRₓ/(Rₓ＋Rᵥ)である。最大のRₓ＝20 kΩに対し20/(20＋Rᵥ)≤0.05を解くとRᵥ≥380 kΩになる。",
+    "choiceExplanations": {
+      "ア": "600 kΩも誤差条件を満たすが、Rᵥ＝380 kΩが最小値である。",
+      "イ": "580 kΩで得られる最大誤差は約3.33％で、必要な5％の条件より厳しい。",
+      "ウ": "480 kΩなら最大誤差は4％になり、条件を満たす最小値より大きい。",
+      "エ": "420 kΩでは最大誤差は約4.55％だが、380 kΩで既に5％の条件を満たす。",
+      "オ": "見掛けの抵抗はRₓ∥Rᵥなので、誤差率はRₓ/(Rₓ＋Rᵥ)である。最大のRₓ＝20 kΩに対し20/(20＋Rᵥ)≤0.05を解くとRᵥ≥380 kΩになる。"
+    }
+  },
+  {
+    "id": "radio21-riku-tech2-2025-07-kiso-q19",
+    "exam": "riku-tech2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 19,
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎",
+      "コールラウシュブリッジ"
+    ],
+    "difficulty": 3,
+    "question": "図のコールラウシュブリッジで同じ形状と量の基準電解液と被測定電解液を測る。基準抵抗率ρₐ、すべり抵抗線全体R₀、Xからの平衡位置の抵抗RₐとRᵦを用いた未知抵抗率ρᵦの式を選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第二級陸上無線技術士 2025年7月期 無線工学の基礎 A-19（問題・正答、試験問題記号 707）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/riku-tech2/2025-07-kiso-q19-p05.png"
+    ],
+    "imageAltTexts": [
+      "第二級陸上無線技術士 無線工学の基礎 2025年7月期 A-19 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "Rᵦ(R₀−Rₐ)ρₐ/[Rₐ(R₀−Rᵦ)]",
+      "イ": "Rₐ(R₀−Rᵦ)ρₐ/[Rᵦ(R₀−Rₐ)]",
+      "ウ": "(R₀−Rᵦ)ρₐ/(R₀−Rₐ)",
+      "エ": "Rₐρₐ/Rᵦ",
+      "オ": "Rᵦρₐ/Rₐ"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "形状が同じなら抵抗率の比は電解液の抵抗比になる。各ケースの平衡では電解液の抵抗はR×Rₓ/(R₀−Rₓ)に相当するため、二式の比を取るとこの式になる。",
+    "choiceExplanations": {
+      "ア": "形状が同じなら抵抗率の比は電解液の抵抗比になる。各ケースの平衡では電解液の抵抗はR×Rₓ/(R₀−Rₓ)に相当するため、二式の比を取るとこの式になる。",
+      "イ": "基準と被測定の平衡比を逆に取る式であり、求めるのは被測定の抵抗を基準の抵抗で割った比である。",
+      "ウ": "すべり抵抗のうちY側だけの比では足りず、各ケースでX側とY側の両方を用いる。",
+      "エ": "全抵抗から引いた残りの区間を含めず、さらに基準と被測定の比の向きが逆である。",
+      "オ": "Rᵦ/Rₐだけでなく、二つの場合の残りの区間R₀−Rₐ、R₀−Rᵦを使う必要がある。"
+    }
+  },
+  {
+    "id": "radio21-riku-tech2-2025-07-kiso-q20",
+    "exam": "riku-tech2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 20,
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎",
+      "リサジュー図の位相差測定"
+    ],
+    "difficulty": 3,
+    "question": "図のオシロスコープにvₓ＝Vₘsin(ωt)とvᵧ＝Vₘsin(ωt＋θ)を加える。図のaをvᵧの最大値A、bをvₓ＝0におけるVₘ×Bとし、位相差θの式Cを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第二級陸上無線技術士 2025年7月期 無線工学の基礎 A-20（問題・正答、試験問題記号 707）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/riku-tech2/2025-07-kiso-q20-p05.png"
+    ],
+    "imageAltTexts": [
+      "第二級陸上無線技術士 無線工学の基礎 2025年7月期 A-20 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "2Vₘ／sinθ／arctan(b/a)",
+      "イ": "Vₘ／sinθ／arcsin(b/a)",
+      "ウ": "2Vₘ／1／arcsin(b/a)",
+      "エ": "Vₘ／1／arctan(b/a)",
+      "オ": "Vₘ／1／arcsin(b/a)"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "aは垂直電圧の振幅Vₘであり、vₓ＝0における図の垂直切片bはVₘsinθである。この比からθ＝arcsin(b/a)を求める。",
+    "choiceExplanations": {
+      "ア": "bの関係は合うが、aは振幅Vₘである。b/aが位相差の正弦なので、逆正接でなく逆正弦を使う。",
+      "イ": "aは垂直電圧の振幅Vₘであり、vₓ＝0における図の垂直切片bはVₘsinθである。この比からθ＝arcsin(b/a)を求める。",
+      "ウ": "Cは合うが、aは振幅Vₘであり、bは常にVₘと等しいわけではない。",
+      "エ": "aには正しい値を用いているが、b＝Vₘsinθの関係から位相差は逆正弦を使う。",
+      "オ": "AとCは適切だが、bはVₘそのものではなく位相差の正弦を掛けた値である。"
+    }
+  },
+  {
+    "id": "radio21-riku-tech2-2025-07-kiso-q21",
+    "exam": "riku-tech2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 21,
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎",
+      "磁界中の導体に働く電磁力"
+    ],
+    "difficulty": 3,
+    "question": "磁束密度Bの一様な磁界に、長さlで直流Iが流れる直線導体を直角に置いた場合について空欄を埋めよ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第二級陸上無線技術士 2025年7月期 無線工学の基礎 B-1（問題・正答、試験問題記号 707）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/riku-tech2/2025-07-kiso-q21-p06.png"
+    ],
+    "imageAltTexts": [
+      "第二級陸上無線技術士 無線工学の基礎 2025年7月期 B-1 公式原問題"
+    ],
+    "type": "native-b",
+    "explanation": "磁界の中で電流を流した導体が受ける力を電磁力と呼ぶ。\n\n磁界と導体が直角なので、磁束密度、電流及び導体の長さの積BIlとなる。\n\n電流を加えた導体に働く力にはフレミングの左手の法則を使う。\n\n左手の人差し指を磁界、中指を電流の向きに合わせると、親指が力の向きになる。\n\n電動機は磁界と電流が作る力を利用して回転子を動かす。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "誘導起電力",
+          "explanation": "磁束変化などで生じる電圧を指す。"
+        },
+        {
+          "id": "2",
+          "label": "BI²l",
+          "explanation": "電流を余分に一度掛けており電磁力の式と異なる。"
+        },
+        {
+          "id": "3",
+          "label": "左手",
+          "explanation": "磁界中の電流に働く力の向きを求めるときに使う。"
+        },
+        {
+          "id": "4",
+          "label": "中指",
+          "explanation": "左手の法則では電流に対応する。"
+        },
+        {
+          "id": "5",
+          "label": "電動機",
+          "explanation": "電気エネルギーを機械的な運動に変える。"
+        },
+        {
+          "id": "6",
+          "label": "電磁力",
+          "explanation": "磁界中の電流が受ける力を指す。"
+        },
+        {
+          "id": "7",
+          "label": "BIl",
+          "explanation": "直角の場合の電磁力の式である。"
+        },
+        {
+          "id": "8",
+          "label": "右手",
+          "explanation": "発電の誘導起電力の向きを定める場合に使う。"
+        },
+        {
+          "id": "9",
+          "label": "親指",
+          "explanation": "フレミングの左手の法則では力の向きを示す。"
+        },
+        {
+          "id": "10",
+          "label": "発電機",
+          "explanation": "機械的な運動から電気を得る装置である。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "導体に働く力Fの名称を選べ。",
+          "answer": "6",
+          "explanation": "磁界の中で電流を流した導体が受ける力を電磁力と呼ぶ。",
+          "candidateExplanations": {
+            "1": "磁束変化などで生じる電圧を指す。磁界の中で電流を流した導体が受ける力を電磁力と呼ぶ。",
+            "2": "電流を余分に一度掛けており電磁力の式と異なる。磁界の中で電流を流した導体が受ける力を電磁力と呼ぶ。",
+            "3": "磁界中の電流に働く力の向きを求めるときに使う。磁界の中で電流を流した導体が受ける力を電磁力と呼ぶ。",
+            "4": "左手の法則では電流に対応する。磁界の中で電流を流した導体が受ける力を電磁力と呼ぶ。",
+            "5": "電気エネルギーを機械的な運動に変える。磁界の中で電流を流した導体が受ける力を電磁力と呼ぶ。",
+            "6": "磁界の中で電流を流した導体が受ける力を電磁力と呼ぶ。",
+            "7": "直角の場合の電磁力の式である。磁界の中で電流を流した導体が受ける力を電磁力と呼ぶ。",
+            "8": "発電の誘導起電力の向きを定める場合に使う。磁界の中で電流を流した導体が受ける力を電磁力と呼ぶ。",
+            "9": "フレミングの左手の法則では力の向きを示す。磁界の中で電流を流した導体が受ける力を電磁力と呼ぶ。",
+            "10": "機械的な運動から電気を得る装置である。磁界の中で電流を流した導体が受ける力を電磁力と呼ぶ。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "導体が受ける力の大きさFの式を選べ。",
+          "answer": "7",
+          "explanation": "磁界と導体が直角なので、磁束密度、電流及び導体の長さの積BIlとなる。",
+          "candidateExplanations": {
+            "1": "磁束変化などで生じる電圧を指す。磁界と導体が直角なので、磁束密度、電流及び導体の長さの積BIlとなる。",
+            "2": "電流を余分に一度掛けており電磁力の式と異なる。磁界と導体が直角なので、磁束密度、電流及び導体の長さの積BIlとなる。",
+            "3": "磁界中の電流に働く力の向きを求めるときに使う。磁界と導体が直角なので、磁束密度、電流及び導体の長さの積BIlとなる。",
+            "4": "左手の法則では電流に対応する。磁界と導体が直角なので、磁束密度、電流及び導体の長さの積BIlとなる。",
+            "5": "電気エネルギーを機械的な運動に変える。磁界と導体が直角なので、磁束密度、電流及び導体の長さの積BIlとなる。",
+            "6": "磁界中の電流が受ける力を指す。磁界と導体が直角なので、磁束密度、電流及び導体の長さの積BIlとなる。",
+            "7": "磁界と導体が直角なので、磁束密度、電流及び導体の長さの積BIlとなる。",
+            "8": "発電の誘導起電力の向きを定める場合に使う。磁界と導体が直角なので、磁束密度、電流及び導体の長さの積BIlとなる。",
+            "9": "フレミングの左手の法則では力の向きを示す。磁界と導体が直角なので、磁束密度、電流及び導体の長さの積BIlとなる。",
+            "10": "機械的な運動から電気を得る装置である。磁界と導体が直角なので、磁束密度、電流及び導体の長さの積BIlとなる。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "磁界、電流及び力の向きを関係付けるフレミングの法則を選べ。",
+          "answer": "3",
+          "explanation": "電流を加えた導体に働く力にはフレミングの左手の法則を使う。",
+          "candidateExplanations": {
+            "1": "磁束変化などで生じる電圧を指す。電流を加えた導体に働く力にはフレミングの左手の法則を使う。",
+            "2": "電流を余分に一度掛けており電磁力の式と異なる。電流を加えた導体に働く力にはフレミングの左手の法則を使う。",
+            "3": "電流を加えた導体に働く力にはフレミングの左手の法則を使う。",
+            "4": "左手の法則では電流に対応する。電流を加えた導体に働く力にはフレミングの左手の法則を使う。",
+            "5": "電気エネルギーを機械的な運動に変える。電流を加えた導体に働く力にはフレミングの左手の法則を使う。",
+            "6": "磁界中の電流が受ける力を指す。電流を加えた導体に働く力にはフレミングの左手の法則を使う。",
+            "7": "直角の場合の電磁力の式である。電流を加えた導体に働く力にはフレミングの左手の法則を使う。",
+            "8": "発電の誘導起電力の向きを定める場合に使う。電流を加えた導体に働く力にはフレミングの左手の法則を使う。",
+            "9": "フレミングの左手の法則では力の向きを示す。電流を加えた導体に働く力にはフレミングの左手の法則を使う。",
+            "10": "機械的な運動から電気を得る装置である。電流を加えた導体に働く力にはフレミングの左手の法則を使う。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "磁界と電流の方向に対応する指を向けたとき、力を指す指を選べ。",
+          "answer": "9",
+          "explanation": "左手の人差し指を磁界、中指を電流の向きに合わせると、親指が力の向きになる。",
+          "candidateExplanations": {
+            "1": "磁束変化などで生じる電圧を指す。左手の人差し指を磁界、中指を電流の向きに合わせると、親指が力の向きになる。",
+            "2": "電流を余分に一度掛けており電磁力の式と異なる。左手の人差し指を磁界、中指を電流の向きに合わせると、親指が力の向きになる。",
+            "3": "磁界中の電流に働く力の向きを求めるときに使う。左手の人差し指を磁界、中指を電流の向きに合わせると、親指が力の向きになる。",
+            "4": "左手の法則では電流に対応する。左手の人差し指を磁界、中指を電流の向きに合わせると、親指が力の向きになる。",
+            "5": "電気エネルギーを機械的な運動に変える。左手の人差し指を磁界、中指を電流の向きに合わせると、親指が力の向きになる。",
+            "6": "磁界中の電流が受ける力を指す。左手の人差し指を磁界、中指を電流の向きに合わせると、親指が力の向きになる。",
+            "7": "直角の場合の電磁力の式である。左手の人差し指を磁界、中指を電流の向きに合わせると、親指が力の向きになる。",
+            "8": "発電の誘導起電力の向きを定める場合に使う。左手の人差し指を磁界、中指を電流の向きに合わせると、親指が力の向きになる。",
+            "9": "左手の人差し指を磁界、中指を電流の向きに合わせると、親指が力の向きになる。",
+            "10": "機械的な運動から電気を得る装置である。左手の人差し指を磁界、中指を電流の向きに合わせると、親指が力の向きになる。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "この力を利用して機械的な出力を得る機器を選べ。",
+          "answer": "5",
+          "explanation": "電動機は磁界と電流が作る力を利用して回転子を動かす。",
+          "candidateExplanations": {
+            "1": "磁束変化などで生じる電圧を指す。電動機は磁界と電流が作る力を利用して回転子を動かす。",
+            "2": "電流を余分に一度掛けており電磁力の式と異なる。電動機は磁界と電流が作る力を利用して回転子を動かす。",
+            "3": "磁界中の電流に働く力の向きを求めるときに使う。電動機は磁界と電流が作る力を利用して回転子を動かす。",
+            "4": "左手の法則では電流に対応する。電動機は磁界と電流が作る力を利用して回転子を動かす。",
+            "5": "電動機は磁界と電流が作る力を利用して回転子を動かす。",
+            "6": "磁界中の電流が受ける力を指す。電動機は磁界と電流が作る力を利用して回転子を動かす。",
+            "7": "直角の場合の電磁力の式である。電動機は磁界と電流が作る力を利用して回転子を動かす。",
+            "8": "発電の誘導起電力の向きを定める場合に使う。電動機は磁界と電流が作る力を利用して回転子を動かす。",
+            "9": "フレミングの左手の法則では力の向きを示す。電動機は磁界と電流が作る力を利用して回転子を動かす。",
+            "10": "機械的な運動から電気を得る装置である。電動機は磁界と電流が作る力を利用して回転子を動かす。"
+          }
+        }
+      ],
+      "officialLabel": "B-1",
+      "bankImageUrls": [
+        "/questions/riku-tech2/2025-07-kiso-q21-p06.png"
+      ],
+      "bankImageAltTexts": [
+        "第二級陸上無線技術士 無線工学の基礎 2025年7月期 B-1 公式原問題"
+      ]
+    }
+  },
+  {
+    "id": "radio21-riku-tech2-2025-07-kiso-q22",
+    "exam": "riku-tech2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 22,
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎",
+      "RC回路の充電と放電"
+    ],
+    "difficulty": 3,
+    "question": "図のRC回路で初めCは未充電とし、スイッチをaに入れて十分待った後にbに切り替える。充電と放電に関する空欄を埋めよ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第二級陸上無線技術士 2025年7月期 無線工学の基礎 B-2（問題・正答、試験問題記号 707）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/riku-tech2/2025-07-kiso-q22-p06.png"
+    ],
+    "imageAltTexts": [
+      "第二級陸上無線技術士 無線工学の基礎 2025年7月期 B-2 公式原問題"
+    ],
+    "type": "native-b",
+    "explanation": "Cの初期電圧は0なので、直流電源の電圧VがR₁にかかり、電流はV/R₁となる。\n\n充電が終わるとR₁に流れる電流が零になるので、Cの端子電圧は電源電圧Vに等しい。\n\n充電済みのCは切替直後も電圧Vを保つので、放電電流の大きさはV/R₂である。\n\n放電電流は指数関数的に減少し、1時定数の後は初期値の1/e≒0.37倍になる。\n\n電源と切り離されたCが十分に放電するとCとR₂の電圧は零に近づく。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "V/R₁",
+          "explanation": "充電開始時の抵抗の電圧をその抵抗値で割った電流である。"
+        },
+        {
+          "id": "2",
+          "label": "V/2",
+          "explanation": "電源電圧の半分である。"
+        },
+        {
+          "id": "3",
+          "label": "V/R₂",
+          "explanation": "切替直後のコンデンサの電圧を放電抵抗で割った電流である。"
+        },
+        {
+          "id": "4",
+          "label": "0.63V/R₂",
+          "explanation": "1時定数後に減った分の割合を放電初期電流に掛けた値である。"
+        },
+        {
+          "id": "5",
+          "label": "0",
+          "explanation": "十分に放電した状態の電圧である。"
+        },
+        {
+          "id": "6",
+          "label": "V/(R₁＋R₂)",
+          "explanation": "二つの抵抗が直列の場合の電流である。"
+        },
+        {
+          "id": "7",
+          "label": "V",
+          "explanation": "電源の電圧である。"
+        },
+        {
+          "id": "8",
+          "label": "(R₁/R₂)V",
+          "explanation": "抵抗比を電源電圧に掛けておりこの回路の定常電圧の式ではない。"
+        },
+        {
+          "id": "9",
+          "label": "0.37V/R₂",
+          "explanation": "放電初期の約37％に相当する電流である。"
+        },
+        {
+          "id": "10",
+          "label": "(R₂/R₁)V",
+          "explanation": "電源電圧に抵抗比を掛けた量である。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "スイッチをaに入れた直後のR₁の電流の大きさを選べ。",
+          "answer": "1",
+          "explanation": "Cの初期電圧は0なので、直流電源の電圧VがR₁にかかり、電流はV/R₁となる。",
+          "candidateExplanations": {
+            "1": "Cの初期電圧は0なので、直流電源の電圧VがR₁にかかり、電流はV/R₁となる。",
+            "2": "電源電圧の半分である。Cの初期電圧は0なので、直流電源の電圧VがR₁にかかり、電流はV/R₁となる。",
+            "3": "切替直後のコンデンサの電圧を放電抵抗で割った電流である。Cの初期電圧は0なので、直流電源の電圧VがR₁にかかり、電流はV/R₁となる。",
+            "4": "1時定数後に減った分の割合を放電初期電流に掛けた値である。Cの初期電圧は0なので、直流電源の電圧VがR₁にかかり、電流はV/R₁となる。",
+            "5": "十分に放電した状態の電圧である。Cの初期電圧は0なので、直流電源の電圧VがR₁にかかり、電流はV/R₁となる。",
+            "6": "二つの抵抗が直列の場合の電流である。Cの初期電圧は0なので、直流電源の電圧VがR₁にかかり、電流はV/R₁となる。",
+            "7": "電源の電圧である。Cの初期電圧は0なので、直流電源の電圧VがR₁にかかり、電流はV/R₁となる。",
+            "8": "抵抗比を電源電圧に掛けておりこの回路の定常電圧の式ではない。Cの初期電圧は0なので、直流電源の電圧VがR₁にかかり、電流はV/R₁となる。",
+            "9": "放電初期の約37％に相当する電流である。Cの初期電圧は0なので、直流電源の電圧VがR₁にかかり、電流はV/R₁となる。",
+            "10": "電源電圧に抵抗比を掛けた量である。Cの初期電圧は0なので、直流電源の電圧VがR₁にかかり、電流はV/R₁となる。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "aに入れて十分に時間が経過したときのコンデンサの端子電圧を選べ。",
+          "answer": "7",
+          "explanation": "充電が終わるとR₁に流れる電流が零になるので、Cの端子電圧は電源電圧Vに等しい。",
+          "candidateExplanations": {
+            "1": "充電開始時の抵抗の電圧をその抵抗値で割った電流である。充電が終わるとR₁に流れる電流が零になるので、Cの端子電圧は電源電圧Vに等しい。",
+            "2": "電源電圧の半分である。充電が終わるとR₁に流れる電流が零になるので、Cの端子電圧は電源電圧Vに等しい。",
+            "3": "切替直後のコンデンサの電圧を放電抵抗で割った電流である。充電が終わるとR₁に流れる電流が零になるので、Cの端子電圧は電源電圧Vに等しい。",
+            "4": "1時定数後に減った分の割合を放電初期電流に掛けた値である。充電が終わるとR₁に流れる電流が零になるので、Cの端子電圧は電源電圧Vに等しい。",
+            "5": "十分に放電した状態の電圧である。充電が終わるとR₁に流れる電流が零になるので、Cの端子電圧は電源電圧Vに等しい。",
+            "6": "二つの抵抗が直列の場合の電流である。充電が終わるとR₁に流れる電流が零になるので、Cの端子電圧は電源電圧Vに等しい。",
+            "7": "充電が終わるとR₁に流れる電流が零になるので、Cの端子電圧は電源電圧Vに等しい。",
+            "8": "抵抗比を電源電圧に掛けておりこの回路の定常電圧の式ではない。充電が終わるとR₁に流れる電流が零になるので、Cの端子電圧は電源電圧Vに等しい。",
+            "9": "放電初期の約37％に相当する電流である。充電が終わるとR₁に流れる電流が零になるので、Cの端子電圧は電源電圧Vに等しい。",
+            "10": "電源電圧に抵抗比を掛けた量である。充電が終わるとR₁に流れる電流が零になるので、Cの端子電圧は電源電圧Vに等しい。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "bに切り替えた直後のR₂の電流の大きさを選べ。",
+          "answer": "3",
+          "explanation": "充電済みのCは切替直後も電圧Vを保つので、放電電流の大きさはV/R₂である。",
+          "candidateExplanations": {
+            "1": "充電開始時の抵抗の電圧をその抵抗値で割った電流である。充電済みのCは切替直後も電圧Vを保つので、放電電流の大きさはV/R₂である。",
+            "2": "電源電圧の半分である。充電済みのCは切替直後も電圧Vを保つので、放電電流の大きさはV/R₂である。",
+            "3": "充電済みのCは切替直後も電圧Vを保つので、放電電流の大きさはV/R₂である。",
+            "4": "1時定数後に減った分の割合を放電初期電流に掛けた値である。充電済みのCは切替直後も電圧Vを保つので、放電電流の大きさはV/R₂である。",
+            "5": "十分に放電した状態の電圧である。充電済みのCは切替直後も電圧Vを保つので、放電電流の大きさはV/R₂である。",
+            "6": "二つの抵抗が直列の場合の電流である。充電済みのCは切替直後も電圧Vを保つので、放電電流の大きさはV/R₂である。",
+            "7": "電源の電圧である。充電済みのCは切替直後も電圧Vを保つので、放電電流の大きさはV/R₂である。",
+            "8": "抵抗比を電源電圧に掛けておりこの回路の定常電圧の式ではない。充電済みのCは切替直後も電圧Vを保つので、放電電流の大きさはV/R₂である。",
+            "9": "放電初期の約37％に相当する電流である。充電済みのCは切替直後も電圧Vを保つので、放電電流の大きさはV/R₂である。",
+            "10": "電源電圧に抵抗比を掛けた量である。充電済みのCは切替直後も電圧Vを保つので、放電電流の大きさはV/R₂である。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "bに切り替えてから時定数CR₂だけ経過したときのR₂の電流を選べ。",
+          "answer": "9",
+          "explanation": "放電電流は指数関数的に減少し、1時定数の後は初期値の1/e≒0.37倍になる。",
+          "candidateExplanations": {
+            "1": "充電開始時の抵抗の電圧をその抵抗値で割った電流である。放電電流は指数関数的に減少し、1時定数の後は初期値の1/e≒0.37倍になる。",
+            "2": "電源電圧の半分である。放電電流は指数関数的に減少し、1時定数の後は初期値の1/e≒0.37倍になる。",
+            "3": "切替直後のコンデンサの電圧を放電抵抗で割った電流である。放電電流は指数関数的に減少し、1時定数の後は初期値の1/e≒0.37倍になる。",
+            "4": "1時定数後に減った分の割合を放電初期電流に掛けた値である。放電電流は指数関数的に減少し、1時定数の後は初期値の1/e≒0.37倍になる。",
+            "5": "十分に放電した状態の電圧である。放電電流は指数関数的に減少し、1時定数の後は初期値の1/e≒0.37倍になる。",
+            "6": "二つの抵抗が直列の場合の電流である。放電電流は指数関数的に減少し、1時定数の後は初期値の1/e≒0.37倍になる。",
+            "7": "電源の電圧である。放電電流は指数関数的に減少し、1時定数の後は初期値の1/e≒0.37倍になる。",
+            "8": "抵抗比を電源電圧に掛けておりこの回路の定常電圧の式ではない。放電電流は指数関数的に減少し、1時定数の後は初期値の1/e≒0.37倍になる。",
+            "9": "放電電流は指数関数的に減少し、1時定数の後は初期値の1/e≒0.37倍になる。",
+            "10": "電源電圧に抵抗比を掛けた量である。放電電流は指数関数的に減少し、1時定数の後は初期値の1/e≒0.37倍になる。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "bに切り替えて十分に時間が経過したときのR₂の端子電圧を選べ。",
+          "answer": "5",
+          "explanation": "電源と切り離されたCが十分に放電するとCとR₂の電圧は零に近づく。",
+          "candidateExplanations": {
+            "1": "充電開始時の抵抗の電圧をその抵抗値で割った電流である。電源と切り離されたCが十分に放電するとCとR₂の電圧は零に近づく。",
+            "2": "電源電圧の半分である。電源と切り離されたCが十分に放電するとCとR₂の電圧は零に近づく。",
+            "3": "切替直後のコンデンサの電圧を放電抵抗で割った電流である。電源と切り離されたCが十分に放電するとCとR₂の電圧は零に近づく。",
+            "4": "1時定数後に減った分の割合を放電初期電流に掛けた値である。電源と切り離されたCが十分に放電するとCとR₂の電圧は零に近づく。",
+            "5": "電源と切り離されたCが十分に放電するとCとR₂の電圧は零に近づく。",
+            "6": "二つの抵抗が直列の場合の電流である。電源と切り離されたCが十分に放電するとCとR₂の電圧は零に近づく。",
+            "7": "電源の電圧である。電源と切り離されたCが十分に放電するとCとR₂の電圧は零に近づく。",
+            "8": "抵抗比を電源電圧に掛けておりこの回路の定常電圧の式ではない。電源と切り離されたCが十分に放電するとCとR₂の電圧は零に近づく。",
+            "9": "放電初期の約37％に相当する電流である。電源と切り離されたCが十分に放電するとCとR₂の電圧は零に近づく。",
+            "10": "電源電圧に抵抗比を掛けた量である。電源と切り離されたCが十分に放電するとCとR₂の電圧は零に近づく。"
+          }
+        }
+      ],
+      "officialLabel": "B-2",
+      "bankImageUrls": [
+        "/questions/riku-tech2/2025-07-kiso-q22-p06.png"
+      ],
+      "bankImageAltTexts": [
+        "第二級陸上無線技術士 無線工学の基礎 2025年7月期 B-2 公式原問題"
+      ]
+    }
+  },
+  {
+    "id": "radio21-riku-tech2-2025-07-kiso-q23",
+    "exam": "riku-tech2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 23,
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎",
+      "電子素子の用途"
+    ],
+    "difficulty": 3,
+    "question": "電子素子について、用途に合う素子の名称で各空欄を埋めよ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第二級陸上無線技術士 2025年7月期 無線工学の基礎 B-3（問題・正答、試験問題記号 707）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/riku-tech2/2025-07-kiso-q23-p06.png"
+    ],
+    "imageAltTexts": [
+      "第二級陸上無線技術士 無線工学の基礎 2025年7月期 B-3 公式原問題"
+    ],
+    "type": "native-b",
+    "explanation": "フォトダイオードは入射光によって電流が発生するため受光素子に用いる。\n\nバラクタダイオードでは逆バイアスで空乏層の幅が変わり、接合の静電容量が変化する。\n\nホール素子は電流の方向と交差する磁界を横方向に生じる電圧として検出する。\n\nサーミスタは温度変化によって抵抗値が変わるため、電力で生じた温度変化を検出できる。\n\nツェナーダイオードは逆方向の降伏電圧を利用し、電流が変化してもほぼ一定の電圧を得る。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "フォトダイオード",
+          "explanation": "光を受けて電流を生む素子である。"
+        },
+        {
+          "id": "2",
+          "label": "アバランシダイオード",
+          "explanation": "なだれ降伏の特性を利用するダイオードである。"
+        },
+        {
+          "id": "3",
+          "label": "ホール素子",
+          "explanation": "磁束に応じたホール電圧を得る素子である。"
+        },
+        {
+          "id": "4",
+          "label": "サーミスタ",
+          "explanation": "温度で抵抗が変化する素子である。"
+        },
+        {
+          "id": "5",
+          "label": "バリスタ",
+          "explanation": "電圧により抵抗が非線形に変わる素子である。"
+        },
+        {
+          "id": "6",
+          "label": "発光ダイオード",
+          "explanation": "順電流により光を放出する素子である。"
+        },
+        {
+          "id": "7",
+          "label": "バラクタダイオード",
+          "explanation": "逆バイアス電圧で静電容量が変わる素子である。"
+        },
+        {
+          "id": "8",
+          "label": "サイリスタ",
+          "explanation": "ゲートなどで主回路の導通を制御する素子である。"
+        },
+        {
+          "id": "9",
+          "label": "ストレインゲージ",
+          "explanation": "ひずみによる抵抗変化を測る素子である。"
+        },
+        {
+          "id": "10",
+          "label": "ツェナーダイオード",
+          "explanation": "逆方向の所定電圧を電圧基準に使う素子である。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "光感知器などで光を受けて電気信号に変換する素子を選べ。",
+          "answer": "1",
+          "explanation": "フォトダイオードは入射光によって電流が発生するため受光素子に用いる。",
+          "candidateExplanations": {
+            "1": "フォトダイオードは入射光によって電流が発生するため受光素子に用いる。",
+            "2": "なだれ降伏の特性を利用するダイオードである。フォトダイオードは入射光によって電流が発生するため受光素子に用いる。",
+            "3": "磁束に応じたホール電圧を得る素子である。フォトダイオードは入射光によって電流が発生するため受光素子に用いる。",
+            "4": "温度で抵抗が変化する素子である。フォトダイオードは入射光によって電流が発生するため受光素子に用いる。",
+            "5": "電圧により抵抗が非線形に変わる素子である。フォトダイオードは入射光によって電流が発生するため受光素子に用いる。",
+            "6": "順電流により光を放出する素子である。フォトダイオードは入射光によって電流が発生するため受光素子に用いる。",
+            "7": "逆バイアス電圧で静電容量が変わる素子である。フォトダイオードは入射光によって電流が発生するため受光素子に用いる。",
+            "8": "ゲートなどで主回路の導通を制御する素子である。フォトダイオードは入射光によって電流が発生するため受光素子に用いる。",
+            "9": "ひずみによる抵抗変化を測る素子である。フォトダイオードは入射光によって電流が発生するため受光素子に用いる。",
+            "10": "逆方向の所定電圧を電圧基準に使う素子である。フォトダイオードは入射光によって電流が発生するため受光素子に用いる。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "同調回路などで電圧によって静電容量を変えられる素子を選べ。",
+          "answer": "7",
+          "explanation": "バラクタダイオードでは逆バイアスで空乏層の幅が変わり、接合の静電容量が変化する。",
+          "candidateExplanations": {
+            "1": "光を受けて電流を生む素子である。バラクタダイオードでは逆バイアスで空乏層の幅が変わり、接合の静電容量が変化する。",
+            "2": "なだれ降伏の特性を利用するダイオードである。バラクタダイオードでは逆バイアスで空乏層の幅が変わり、接合の静電容量が変化する。",
+            "3": "磁束に応じたホール電圧を得る素子である。バラクタダイオードでは逆バイアスで空乏層の幅が変わり、接合の静電容量が変化する。",
+            "4": "温度で抵抗が変化する素子である。バラクタダイオードでは逆バイアスで空乏層の幅が変わり、接合の静電容量が変化する。",
+            "5": "電圧により抵抗が非線形に変わる素子である。バラクタダイオードでは逆バイアスで空乏層の幅が変わり、接合の静電容量が変化する。",
+            "6": "順電流により光を放出する素子である。バラクタダイオードでは逆バイアスで空乏層の幅が変わり、接合の静電容量が変化する。",
+            "7": "バラクタダイオードでは逆バイアスで空乏層の幅が変わり、接合の静電容量が変化する。",
+            "8": "ゲートなどで主回路の導通を制御する素子である。バラクタダイオードでは逆バイアスで空乏層の幅が変わり、接合の静電容量が変化する。",
+            "9": "ひずみによる抵抗変化を測る素子である。バラクタダイオードでは逆バイアスで空乏層の幅が変わり、接合の静電容量が変化する。",
+            "10": "逆方向の所定電圧を電圧基準に使う素子である。バラクタダイオードでは逆バイアスで空乏層の幅が変わり、接合の静電容量が変化する。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "磁束計などで磁気を検出する素子を選べ。",
+          "answer": "3",
+          "explanation": "ホール素子は電流の方向と交差する磁界を横方向に生じる電圧として検出する。",
+          "candidateExplanations": {
+            "1": "光を受けて電流を生む素子である。ホール素子は電流の方向と交差する磁界を横方向に生じる電圧として検出する。",
+            "2": "なだれ降伏の特性を利用するダイオードである。ホール素子は電流の方向と交差する磁界を横方向に生じる電圧として検出する。",
+            "3": "ホール素子は電流の方向と交差する磁界を横方向に生じる電圧として検出する。",
+            "4": "温度で抵抗が変化する素子である。ホール素子は電流の方向と交差する磁界を横方向に生じる電圧として検出する。",
+            "5": "電圧により抵抗が非線形に変わる素子である。ホール素子は電流の方向と交差する磁界を横方向に生じる電圧として検出する。",
+            "6": "順電流により光を放出する素子である。ホール素子は電流の方向と交差する磁界を横方向に生じる電圧として検出する。",
+            "7": "逆バイアス電圧で静電容量が変わる素子である。ホール素子は電流の方向と交差する磁界を横方向に生じる電圧として検出する。",
+            "8": "ゲートなどで主回路の導通を制御する素子である。ホール素子は電流の方向と交差する磁界を横方向に生じる電圧として検出する。",
+            "9": "ひずみによる抵抗変化を測る素子である。ホール素子は電流の方向と交差する磁界を横方向に生じる電圧として検出する。",
+            "10": "逆方向の所定電圧を電圧基準に使う素子である。ホール素子は電流の方向と交差する磁界を横方向に生じる電圧として検出する。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "ボロメータ電力計で白金線などと同様に、加熱による抵抗変化を検出する素子を選べ。",
+          "answer": "4",
+          "explanation": "サーミスタは温度変化によって抵抗値が変わるため、電力で生じた温度変化を検出できる。",
+          "candidateExplanations": {
+            "1": "光を受けて電流を生む素子である。サーミスタは温度変化によって抵抗値が変わるため、電力で生じた温度変化を検出できる。",
+            "2": "なだれ降伏の特性を利用するダイオードである。サーミスタは温度変化によって抵抗値が変わるため、電力で生じた温度変化を検出できる。",
+            "3": "磁束に応じたホール電圧を得る素子である。サーミスタは温度変化によって抵抗値が変わるため、電力で生じた温度変化を検出できる。",
+            "4": "サーミスタは温度変化によって抵抗値が変わるため、電力で生じた温度変化を検出できる。",
+            "5": "電圧により抵抗が非線形に変わる素子である。サーミスタは温度変化によって抵抗値が変わるため、電力で生じた温度変化を検出できる。",
+            "6": "順電流により光を放出する素子である。サーミスタは温度変化によって抵抗値が変わるため、電力で生じた温度変化を検出できる。",
+            "7": "逆バイアス電圧で静電容量が変わる素子である。サーミスタは温度変化によって抵抗値が変わるため、電力で生じた温度変化を検出できる。",
+            "8": "ゲートなどで主回路の導通を制御する素子である。サーミスタは温度変化によって抵抗値が変わるため、電力で生じた温度変化を検出できる。",
+            "9": "ひずみによる抵抗変化を測る素子である。サーミスタは温度変化によって抵抗値が変わるため、電力で生じた温度変化を検出できる。",
+            "10": "逆方向の所定電圧を電圧基準に使う素子である。サーミスタは温度変化によって抵抗値が変わるため、電力で生じた温度変化を検出できる。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "定電圧電源などで基準電圧を得る素子を選べ。",
+          "answer": "10",
+          "explanation": "ツェナーダイオードは逆方向の降伏電圧を利用し、電流が変化してもほぼ一定の電圧を得る。",
+          "candidateExplanations": {
+            "1": "光を受けて電流を生む素子である。ツェナーダイオードは逆方向の降伏電圧を利用し、電流が変化してもほぼ一定の電圧を得る。",
+            "2": "なだれ降伏の特性を利用するダイオードである。ツェナーダイオードは逆方向の降伏電圧を利用し、電流が変化してもほぼ一定の電圧を得る。",
+            "3": "磁束に応じたホール電圧を得る素子である。ツェナーダイオードは逆方向の降伏電圧を利用し、電流が変化してもほぼ一定の電圧を得る。",
+            "4": "温度で抵抗が変化する素子である。ツェナーダイオードは逆方向の降伏電圧を利用し、電流が変化してもほぼ一定の電圧を得る。",
+            "5": "電圧により抵抗が非線形に変わる素子である。ツェナーダイオードは逆方向の降伏電圧を利用し、電流が変化してもほぼ一定の電圧を得る。",
+            "6": "順電流により光を放出する素子である。ツェナーダイオードは逆方向の降伏電圧を利用し、電流が変化してもほぼ一定の電圧を得る。",
+            "7": "逆バイアス電圧で静電容量が変わる素子である。ツェナーダイオードは逆方向の降伏電圧を利用し、電流が変化してもほぼ一定の電圧を得る。",
+            "8": "ゲートなどで主回路の導通を制御する素子である。ツェナーダイオードは逆方向の降伏電圧を利用し、電流が変化してもほぼ一定の電圧を得る。",
+            "9": "ひずみによる抵抗変化を測る素子である。ツェナーダイオードは逆方向の降伏電圧を利用し、電流が変化してもほぼ一定の電圧を得る。",
+            "10": "ツェナーダイオードは逆方向の降伏電圧を利用し、電流が変化してもほぼ一定の電圧を得る。"
+          }
+        }
+      ],
+      "officialLabel": "B-3",
+      "bankImageUrls": [
+        "/questions/riku-tech2/2025-07-kiso-q23-p06.png"
+      ],
+      "bankImageAltTexts": [
+        "第二級陸上無線技術士 無線工学の基礎 2025年7月期 B-3 公式原問題"
+      ]
+    }
+  },
+  {
+    "id": "radio21-riku-tech2-2025-07-kiso-q24",
+    "exam": "riku-tech2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 24,
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎",
+      "ウィーンブリッジ発振回路"
+    ],
+    "difficulty": 3,
+    "question": "図の理想演算増幅器によるブリッジ形CR発振回路について、抵抗R、容量C、角周波数ω、直列インピーダンスZₛ、並列インピーダンスZₚを使って各空欄を埋めよ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第二級陸上無線技術士 2025年7月期 無線工学の基礎 B-4（問題・正答、試験問題記号 707）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/riku-tech2/2025-07-kiso-q24-p07.png"
+    ],
+    "imageAltTexts": [
+      "第二級陸上無線技術士 無線工学の基礎 2025年7月期 B-4 公式原問題"
+    ],
+    "type": "native-b",
+    "explanation": "コンデンサのインピーダンスは、アドミタンスjωCの逆数である。\n\n並列枝の電圧はVₒZₚ/(Zₛ＋Zₚ)なので、入出力を逆に取った比は1＋Zₛ/Zₚである。\n\nZₛとZₚの式を代入して展開すると、虚数項はj(ωCR−1/(ωCR))である。\n\n正帰還で発振を続けるには帰還信号が元の信号と同位相になり、虚数項が零になる。\n\n1/(ωCR)−ωCR＝0からω＝1/(CR)となる。これを2πで割って周波数fを得る。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1/(jωC)",
+          "explanation": "コンデンサのインピーダンスである。"
+        },
+        {
+          "id": "2",
+          "label": "Zₛ＋Zₚ",
+          "explanation": "二つのインピーダンスを直列にしたときの合成値である。"
+        },
+        {
+          "id": "3",
+          "label": "1/(ωCR)−2ωCR",
+          "explanation": "虚数項のωCRに余分な係数を含む。"
+        },
+        {
+          "id": "4",
+          "label": "同位相",
+          "explanation": "位相差がない状態である。"
+        },
+        {
+          "id": "5",
+          "label": "1/(2π√6 CR)",
+          "explanation": "虚数項を零にする角周波数から得る式に余分な係数を含む。"
+        },
+        {
+          "id": "6",
+          "label": "jωCR",
+          "explanation": "インピーダンスと抵抗の積の関係からはこの形にならない。"
+        },
+        {
+          "id": "7",
+          "label": "Zₛ/Zₚ",
+          "explanation": "直列側を分子とするインピーダンスの比である。"
+        },
+        {
+          "id": "8",
+          "label": "1/(ωCR)−ωCR",
+          "explanation": "周波数の正比例項と反比例項の差である。"
+        },
+        {
+          "id": "9",
+          "label": "逆位相",
+          "explanation": "位相差がπの状態である。"
+        },
+        {
+          "id": "10",
+          "label": "1/(2πCR)",
+          "explanation": "位相条件を満たす角周波数をHzに直した式である。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "直列インピーダンスZₛ＝R＋アに入るコンデンサの項を選べ。",
+          "answer": "1",
+          "explanation": "コンデンサのインピーダンスは、アドミタンスjωCの逆数である。",
+          "candidateExplanations": {
+            "1": "コンデンサのインピーダンスは、アドミタンスjωCの逆数である。",
+            "2": "二つのインピーダンスを直列にしたときの合成値である。コンデンサのインピーダンスは、アドミタンスjωCの逆数である。",
+            "3": "虚数項のωCRに余分な係数を含む。コンデンサのインピーダンスは、アドミタンスjωCの逆数である。",
+            "4": "位相差がない状態である。コンデンサのインピーダンスは、アドミタンスjωCの逆数である。",
+            "5": "虚数項を零にする角周波数から得る式に余分な係数を含む。コンデンサのインピーダンスは、アドミタンスjωCの逆数である。",
+            "6": "インピーダンスと抵抗の積の関係からはこの形にならない。コンデンサのインピーダンスは、アドミタンスjωCの逆数である。",
+            "7": "直列側を分子とするインピーダンスの比である。コンデンサのインピーダンスは、アドミタンスjωCの逆数である。",
+            "8": "周波数の正比例項と反比例項の差である。コンデンサのインピーダンスは、アドミタンスjωCの逆数である。",
+            "9": "位相差がπの状態である。コンデンサのインピーダンスは、アドミタンスjωCの逆数である。",
+            "10": "位相条件を満たす角周波数をHzに直した式である。コンデンサのインピーダンスは、アドミタンスjωCの逆数である。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "分圧回路の出力をVᵢ、入力をVₒとしたとき、Vₒ/Vᵢ＝1＋イを満たす項を選べ。",
+          "answer": "7",
+          "explanation": "並列枝の電圧はVₒZₚ/(Zₛ＋Zₚ)なので、入出力を逆に取った比は1＋Zₛ/Zₚである。",
+          "candidateExplanations": {
+            "1": "コンデンサのインピーダンスである。並列枝の電圧はVₒZₚ/(Zₛ＋Zₚ)なので、入出力を逆に取った比は1＋Zₛ/Zₚである。",
+            "2": "二つのインピーダンスを直列にしたときの合成値である。並列枝の電圧はVₒZₚ/(Zₛ＋Zₚ)なので、入出力を逆に取った比は1＋Zₛ/Zₚである。",
+            "3": "虚数項のωCRに余分な係数を含む。並列枝の電圧はVₒZₚ/(Zₛ＋Zₚ)なので、入出力を逆に取った比は1＋Zₛ/Zₚである。",
+            "4": "位相差がない状態である。並列枝の電圧はVₒZₚ/(Zₛ＋Zₚ)なので、入出力を逆に取った比は1＋Zₛ/Zₚである。",
+            "5": "虚数項を零にする角周波数から得る式に余分な係数を含む。並列枝の電圧はVₒZₚ/(Zₛ＋Zₚ)なので、入出力を逆に取った比は1＋Zₛ/Zₚである。",
+            "6": "インピーダンスと抵抗の積の関係からはこの形にならない。並列枝の電圧はVₒZₚ/(Zₛ＋Zₚ)なので、入出力を逆に取った比は1＋Zₛ/Zₚである。",
+            "7": "並列枝の電圧はVₒZₚ/(Zₛ＋Zₚ)なので、入出力を逆に取った比は1＋Zₛ/Zₚである。",
+            "8": "周波数の正比例項と反比例項の差である。並列枝の電圧はVₒZₚ/(Zₛ＋Zₚ)なので、入出力を逆に取った比は1＋Zₛ/Zₚである。",
+            "9": "位相差がπの状態である。並列枝の電圧はVₒZₚ/(Zₛ＋Zₚ)なので、入出力を逆に取った比は1＋Zₛ/Zₚである。",
+            "10": "位相条件を満たす角周波数をHzに直した式である。並列枝の電圧はVₒZₚ/(Zₛ＋Zₚ)なので、入出力を逆に取った比は1＋Zₛ/Zₚである。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "Vₒ/Vᵢ＝3−j×ウとなるときの虚数項の係数を選べ。",
+          "answer": "8",
+          "explanation": "ZₛとZₚの式を代入して展開すると、虚数項はj(ωCR−1/(ωCR))である。",
+          "candidateExplanations": {
+            "1": "コンデンサのインピーダンスである。ZₛとZₚの式を代入して展開すると、虚数項はj(ωCR−1/(ωCR))である。",
+            "2": "二つのインピーダンスを直列にしたときの合成値である。ZₛとZₚの式を代入して展開すると、虚数項はj(ωCR−1/(ωCR))である。",
+            "3": "虚数項のωCRに余分な係数を含む。ZₛとZₚの式を代入して展開すると、虚数項はj(ωCR−1/(ωCR))である。",
+            "4": "位相差がない状態である。ZₛとZₚの式を代入して展開すると、虚数項はj(ωCR−1/(ωCR))である。",
+            "5": "虚数項を零にする角周波数から得る式に余分な係数を含む。ZₛとZₚの式を代入して展開すると、虚数項はj(ωCR−1/(ωCR))である。",
+            "6": "インピーダンスと抵抗の積の関係からはこの形にならない。ZₛとZₚの式を代入して展開すると、虚数項はj(ωCR−1/(ωCR))である。",
+            "7": "直列側を分子とするインピーダンスの比である。ZₛとZₚの式を代入して展開すると、虚数項はj(ωCR−1/(ωCR))である。",
+            "8": "ZₛとZₚの式を代入して展開すると、虚数項はj(ωCR−1/(ωCR))である。",
+            "9": "位相差がπの状態である。ZₛとZₚの式を代入して展開すると、虚数項はj(ωCR−1/(ωCR))である。",
+            "10": "位相条件を満たす角周波数をHzに直した式である。ZₛとZₚの式を代入して展開すると、虚数項はj(ωCR−1/(ωCR))である。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "この回路が発振しているときのVₒとVᵢの位相関係を選べ。",
+          "answer": "4",
+          "explanation": "正帰還で発振を続けるには帰還信号が元の信号と同位相になり、虚数項が零になる。",
+          "candidateExplanations": {
+            "1": "コンデンサのインピーダンスである。正帰還で発振を続けるには帰還信号が元の信号と同位相になり、虚数項が零になる。",
+            "2": "二つのインピーダンスを直列にしたときの合成値である。正帰還で発振を続けるには帰還信号が元の信号と同位相になり、虚数項が零になる。",
+            "3": "虚数項のωCRに余分な係数を含む。正帰還で発振を続けるには帰還信号が元の信号と同位相になり、虚数項が零になる。",
+            "4": "正帰還で発振を続けるには帰還信号が元の信号と同位相になり、虚数項が零になる。",
+            "5": "虚数項を零にする角周波数から得る式に余分な係数を含む。正帰還で発振を続けるには帰還信号が元の信号と同位相になり、虚数項が零になる。",
+            "6": "インピーダンスと抵抗の積の関係からはこの形にならない。正帰還で発振を続けるには帰還信号が元の信号と同位相になり、虚数項が零になる。",
+            "7": "直列側を分子とするインピーダンスの比である。正帰還で発振を続けるには帰還信号が元の信号と同位相になり、虚数項が零になる。",
+            "8": "周波数の正比例項と反比例項の差である。正帰還で発振を続けるには帰還信号が元の信号と同位相になり、虚数項が零になる。",
+            "9": "位相差がπの状態である。正帰還で発振を続けるには帰還信号が元の信号と同位相になり、虚数項が零になる。",
+            "10": "位相条件を満たす角周波数をHzに直した式である。正帰還で発振を続けるには帰還信号が元の信号と同位相になり、虚数項が零になる。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "発振周波数fを選べ。",
+          "answer": "10",
+          "explanation": "1/(ωCR)−ωCR＝0からω＝1/(CR)となる。これを2πで割って周波数fを得る。",
+          "candidateExplanations": {
+            "1": "1/(ωCR)−ωCR＝0からω＝1/(CR)となる。これを2πで割って周波数fを得る。",
+            "2": "1/(ωCR)−ωCR＝0からω＝1/(CR)となる。これを2πで割って周波数fを得る。",
+            "3": "1/(ωCR)−ωCR＝0からω＝1/(CR)となる。これを2πで割って周波数fを得る。",
+            "4": "1/(ωCR)−ωCR＝0からω＝1/(CR)となる。これを2πで割って周波数fを得る。",
+            "5": "1/(ωCR)−ωCR＝0からω＝1/(CR)となる。これを2πで割って周波数fを得る。",
+            "6": "1/(ωCR)−ωCR＝0からω＝1/(CR)となる。これを2πで割って周波数fを得る。",
+            "7": "1/(ωCR)−ωCR＝0からω＝1/(CR)となる。これを2πで割って周波数fを得る。",
+            "8": "1/(ωCR)−ωCR＝0からω＝1/(CR)となる。これを2πで割って周波数fを得る。",
+            "9": "1/(ωCR)−ωCR＝0からω＝1/(CR)となる。これを2πで割って周波数fを得る。",
+            "10": "1/(ωCR)−ωCR＝0からω＝1/(CR)となる。これを2πで割って周波数fを得る。"
+          }
+        }
+      ],
+      "officialLabel": "B-4",
+      "bankImageUrls": [
+        "/questions/riku-tech2/2025-07-kiso-q24-p07.png"
+      ],
+      "bankImageAltTexts": [
+        "第二級陸上無線技術士 無線工学の基礎 2025年7月期 B-4 公式原問題"
+      ]
+    }
+  },
+  {
+    "id": "radio21-riku-tech2-2025-07-kiso-q25",
+    "exam": "riku-tech2",
+    "session": "kiso",
+    "year": 2025,
+    "season": "july",
+    "qNumber": 25,
+    "category": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎",
+      "永久磁石可動コイル形計器"
+    ],
+    "difficulty": 3,
+    "question": "図の永久磁石可動コイル形計器の一般的特徴について、各記述の正誤を答えよ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/riku-gi-2-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第二級陸上無線技術士 2025年7月期 無線工学の基礎 B-5（問題・正答、試験問題記号 707）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/riku-tech2/2025-07-kiso-q25-p07.png"
+    ],
+    "imageAltTexts": [
+      "第二級陸上無線技術士 無線工学の基礎 2025年7月期 B-5 公式原問題"
+    ],
+    "type": "native-b",
+    "explanation": "磁界の中で電流を流すコイルに力が働き、その力が回転軸のまわりの駆動トルクを生む。\n\n渦巻ばねの復元トルクが駆動トルクと釣り合う角度まで指針が動く。\n\n導体の枠が磁界を横切ると渦電流が流れ、その磁気作用が動きを妨げて指針を速く落ち着かせる。\n\n分流器や直列抵抗器は直流の測定範囲を変える。交流はトルクの向きが交互に変わるので、単に抵抗を接続するだけでは測定できない。\n\n駆動トルクが電流に比例し、ばねの制御トルクが回転角に比例するため、基本の目盛は等間隔になる。",
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "正しい"
+        },
+        {
+          "id": "2",
+          "label": "誤っている"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "永久磁石の磁界と可動コイルに流れる測定電流の間に生じる電磁力によって駆動トルクが生じる。",
+          "answer": "1",
+          "explanation": "磁界の中で電流を流すコイルに力が働き、その力が回転軸のまわりの駆動トルクを生む。",
+          "candidateExplanations": {
+            "1": "磁界の中で電流を流すコイルに力が働き、その力が回転軸のまわりの駆動トルクを生む。",
+            "2": "この記述は妥当である。磁界の中で電流を流すコイルに力が働き、その力が回転軸のまわりの駆動トルクを生む。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "制御トルクは駆動トルクと逆向きで、渦巻ばねの弾性力により生じる。",
+          "answer": "1",
+          "explanation": "渦巻ばねの復元トルクが駆動トルクと釣り合う角度まで指針が動く。",
+          "candidateExplanations": {
+            "1": "渦巻ばねの復元トルクが駆動トルクと釣り合う角度まで指針が動く。",
+            "2": "この記述は妥当である。渦巻ばねの復元トルクが駆動トルクと釣り合う角度まで指針が動く。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "制動装置は指針の振動を抑え、アルミ枠が回転することで生じる渦電流による制動力を利用する。",
+          "answer": "1",
+          "explanation": "導体の枠が磁界を横切ると渦電流が流れ、その磁気作用が動きを妨げて指針を速く落ち着かせる。",
+          "candidateExplanations": {
+            "1": "導体の枠が磁界を横切ると渦電流が流れ、その磁気作用が動きを妨げて指針を速く落ち着かせる。",
+            "2": "この記述は妥当である。導体の枠が磁界を横切ると渦電流が流れ、その磁気作用が動きを妨げて指針を速く落ち着かせる。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "分流器や直列抵抗器を接続すると、直流電流、直流電圧及び交流電流が測定できる。",
+          "answer": "2",
+          "explanation": "分流器や直列抵抗器は直流の測定範囲を変える。交流はトルクの向きが交互に変わるので、単に抵抗を接続するだけでは測定できない。",
+          "candidateExplanations": {
+            "1": "この記述には誤りがある。分流器や直列抵抗器は直流の測定範囲を変える。交流はトルクの向きが交互に変わるので、単に抵抗を接続するだけでは測定できない。",
+            "2": "分流器や直列抵抗器は直流の測定範囲を変える。交流はトルクの向きが交互に変わるので、単に抵抗を接続するだけでは測定できない。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "目盛は対数目盛となる。",
+          "answer": "2",
+          "explanation": "駆動トルクが電流に比例し、ばねの制御トルクが回転角に比例するため、基本の目盛は等間隔になる。",
+          "candidateExplanations": {
+            "1": "この記述には誤りがある。駆動トルクが電流に比例し、ばねの制御トルクが回転角に比例するため、基本の目盛は等間隔になる。",
+            "2": "駆動トルクが電流に比例し、ばねの制御トルクが回転角に比例するため、基本の目盛は等間隔になる。"
+          }
+        }
+      ],
+      "officialLabel": "B-5",
+      "bankImageUrls": [
+        "/questions/riku-tech2/2025-07-kiso-q25-p07.png"
+      ],
+      "bankImageAltTexts": [
+        "第二級陸上無線技術士 無線工学の基礎 2025年7月期 B-5 公式原問題"
+      ]
+    }
+  }
+]
