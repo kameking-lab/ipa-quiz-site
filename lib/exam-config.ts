@@ -592,6 +592,13 @@ fp1: {
             expectedQuestions: 50,
             label: "学科・基礎編",
             categories: ["ライフプランニングと資金計画", "リスク管理", "金融資産運用", "タックスプランニング", "不動産", "相続・事業承継"],
+        },
+        {
+            session: "practical",
+            urlSlug: "practical",
+            expectedQuestions: 20,
+            label: "実技・資産設計提案業務",
+            categories: ["ライフプランニングと資金計画", "リスク管理", "金融資産運用", "タックスプランニング", "不動産", "相続・事業承継", "職業倫理"],
         }],
     seasons: ["may", "september", "january"],
     yearRange: { start: 2022, end: 2026 },
