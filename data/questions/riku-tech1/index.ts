@@ -1,3 +1,4 @@
+import jul2025KogakuA from './2025-july-kogaku-a.json';
 import jul2025Kiso from './2025-july-kiso.json';
 import jul2025Houki from './2025-july-houki.json';
 import janHouki from './2026-january-houki.json';
@@ -20,5 +21,6 @@ export const RIKU_TECH1_QUESTIONS = [
   ...julKogakuA,
   ...julKogakuB,
   ...jul2025Houki,
+  ...jul2025KogakuA,
   ...jul2025Kiso,
 ].map(normalizeQuestionData);
