@@ -1539,7 +1539,7 @@ shinrishi: {
         { session: "hoan", urlSlug: "hoan", expectedQuestions: 15, label: "保安管理技術", categories: ["保安管理技術"] },
         { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 5, label: "学識", categories: ["学識"] },
     ],
-    seasons: ["annual"], yearRange: { start: 2024, end: 2025 },
+    seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
 },
 "sekou-kenchiku2": {
     code: "sekou-kenchiku2",
