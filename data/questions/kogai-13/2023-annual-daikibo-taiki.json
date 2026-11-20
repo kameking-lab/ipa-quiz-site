@@ -1,0 +1,482 @@
+[
+  {
+    "id": "kogai-13-2023-annual-daikibo-taiki-q01",
+    "exam": "kogai-13",
+    "year": 2023,
+    "season": "annual",
+    "examDate": "2023-10-01",
+    "session": "daikibo-taiki",
+    "qNumber": 1,
+    "officialAnswerNumber": 5,
+    "type": "multiple-choice",
+    "subject": "大規模大気特論",
+    "category": "大規模大気特論",
+    "topicTags": [
+      "煙突と建物によるダウンウォッシュ"
+    ],
+    "difficulty": 2,
+    "question": "問1　煙突と建物によるダウンウォッシュ。掲載の公式問題画像の問1を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "煙が煙突の背後や,付近の建造物によって発生する渦に巻き込まれ,下降する現象である。",
+      "イ": "発生した場合,非発生時に比べ着地濃度が高くなる。",
+      "ウ": "発生の有無は,煙の吐出速度や排出口高さの風速の影響を受ける。",
+      "エ": "周囲の建造物の影響を避けるには,煙突高さがその 2.5 倍以上あることが望ましい。",
+      "オ": "煙突や付近の建造物による発生の有無の判定に関しては,ブリッグスによる簡易推定法がある。"
+    },
+    "answer": "オ",
+    "explanation": "ブリッグスの簡易な条件は、煙突自体の後流の影響を煙の吐出速度と風速の比から評価する。建造物による影響も同じ速度比だけで判定できるわけではない。",
+    "choiceExplanations": {
+      "ア": "煙突や建物の風下で生じる渦に煙が巻き込まれて地表側へ運ばれる現象がダウンウォッシュである。",
+      "イ": "煙が高い位置で十分に拡散する前に地表に近づくので、発生時は近傍で着地濃度が上がる場合がある。",
+      "ウ": "周囲の風速に比べて吐出速度が遅いと、煙が煙突の後流に巻き込まれやすくなる。",
+      "エ": "煙突の高さを建物に対して十分に確保する。建物の高さの約2.5倍は、その影響を避ける目安に使われる。",
+      "オ": "煙突後流の簡易推定と、建物の寸法や煙突との位置関係を考慮する建物後流の評価は区別する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2023/daikibo-taiki-p03.png"
+    ],
+    "imageAltTexts": [
+      "令和5年度 公害防止管理者 大規模大気特論 公式問題冊子PDF 3ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724182526id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_06.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和5年度 公害防止管理者等国家試験 大規模大気特論 問1（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2023-annual-daikibo-taiki-q02",
+    "exam": "kogai-13",
+    "year": 2023,
+    "season": "annual",
+    "examDate": "2023-10-01",
+    "session": "daikibo-taiki",
+    "qNumber": 2,
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "subject": "大規模大気特論",
+    "category": "大規模大気特論",
+    "topicTags": [
+      "中立境界層における乱流と風速分布"
+    ],
+    "difficulty": 2,
+    "question": "問2　中立境界層における乱流と風速分布。掲載の公式問題画像の問2を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "安定／風速／対数",
+      "イ": "安定／温度／指数",
+      "ウ": "中立／風速／対数",
+      "エ": "中立／温度／対数",
+      "オ": "中立／風速／指数"
+    },
+    "answer": "ウ",
+    "explanation": "一面に雲があると日射加熱や夜間冷却が弱まり、大気の安定度は中立に近づく。乱流は主に風速勾配で生じ、鉛直の風速は対数則やべき乗則で表せる。",
+    "choiceExplanations": {
+      "ア": "風速勾配と対数則は合うが、全面が曇って地表の加熱・冷却が弱まると安定でなく中立に近づく。",
+      "イ": "雲が日中の加熱や夜間の冷却を弱めるので、中立に近づき、温度勾配より風速勾配による機械的乱流が重要となる。",
+      "ウ": "中立境界層では地表摩擦に伴う風速の鉛直差が乱流を作る。風速分布は対数則などで近似できる。",
+      "エ": "中立では浮力による乱流生成の効果が小さいため、温度勾配ではなく風速の鉛直勾配が乱流の主な原因である。",
+      "オ": "中立と風速勾配は合うが、べき乗則とともに用いられるのは対数分布則である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2023/daikibo-taiki-p03.png"
+    ],
+    "imageAltTexts": [
+      "令和5年度 公害防止管理者 大規模大気特論 公式問題冊子PDF 3ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724182526id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_06.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和5年度 公害防止管理者等国家試験 大規模大気特論 問2（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2023-annual-daikibo-taiki-q03",
+    "exam": "kogai-13",
+    "year": 2023,
+    "season": "annual",
+    "examDate": "2023-10-01",
+    "session": "daikibo-taiki",
+    "qNumber": 3,
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "subject": "大規模大気特論",
+    "category": "大規模大気特論",
+    "topicTags": [
+      "安定層と放射性逆転層の成因"
+    ],
+    "difficulty": 2,
+    "question": "問3　安定層と放射性逆転層の成因。掲載の公式問題画像の問3を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "晴れた微風の夜間,大気層の放射冷却により放射性逆転層が発生する。",
+      "イ": "逆転層中は強い安定状態になっていて,拡散速度は遅い。",
+      "ウ": "放射性逆転層の厚さは,普通は 200 m 以下である。",
+      "エ": "谷間や盆地に冷気がたまった場合などに発生するのを地形性逆転層という。",
+      "オ": "滑らかで冷たい海上を吹いてくる風は安定層を形成していて,乱れが小さい。"
+    },
+    "answer": "ア",
+    "explanation": "放射性逆転層は地表が放射で冷え、接する空気から冷えていくことで生じる。出発点を大気層そのものの放射冷却とした記述が誤り。",
+    "choiceExplanations": {
+      "ア": "晴天で風の弱い夜に冷えるのはまず地表面である。その冷却が接する大気に伝わり、上ほど気温が高い層ができる。",
+      "イ": "逆転層内で空気塊を上下に移動させると元の位置に戻ろうとするため、鉛直方向の混合や拡散が弱くなる。",
+      "ウ": "地面の冷却に起因する逆転なので、通常は地表からおおむね200 m以下の浅い層として現れる。",
+      "エ": "盆地や谷で冷たく密度の高い空気が下部にたまると、地形の影響で逆転層ができる。",
+      "オ": "冷たい海面に接して大気の下層が冷えると安定になりやすい。滑らかな海面では地表摩擦による乱れも小さい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2023/daikibo-taiki-p04.png"
+    ],
+    "imageAltTexts": [
+      "令和5年度 公害防止管理者 大規模大気特論 公式問題冊子PDF 4ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724182526id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_06.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和5年度 公害防止管理者等国家試験 大規模大気特論 問3（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2023-annual-daikibo-taiki-q04",
+    "exam": "kogai-13",
+    "year": 2023,
+    "season": "annual",
+    "examDate": "2023-10-01",
+    "session": "daikibo-taiki",
+    "qNumber": 4,
+    "officialAnswerNumber": 5,
+    "type": "multiple-choice",
+    "subject": "大規模大気特論",
+    "category": "大規模大気特論",
+    "topicTags": [
+      "正規形プルーム中心軸の濃度"
+    ],
+    "difficulty": 2,
+    "question": "問4　正規形プルーム中心軸の濃度。掲載の公式問題画像の問4を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "(1/AB) Q/(2πuHₑ²)",
+      "イ": "(B/A) 2Q/(πuHₑ²ᵖ)",
+      "ウ": "(B/A) 2Q/(πux²ᵖ)",
+      "エ": "(1/AB) Q/(2πux²)",
+      "オ": "(1/AB) Q/(2πux²ᵖ)"
+    },
+    "answer": "オ",
+    "explanation": "中心軸では横・鉛直方向のガウス関数の指数が0になる。反射項がなければ濃度はQ/(2πuσᵧσ_z)で、拡散幅の積ABx²ᵖを代入する。",
+    "choiceExplanations": {
+      "ア": "中心軸は有効煙突高さに位置するが、濃度の分母を決めるのは煙の広がりである。Hₑ²ではなくx²ᵖに依存する。",
+      "イ": "煙突高さは中心軸の位置を決める。中心軸での濃度の分母にはAとBの積、及び風下距離xの2p乗が入る。",
+      "ウ": "拡散幅の片方を他方で割るのではなく、横と縦の拡散幅の積で濃度が薄まる。係数はB/Aではなく1/(AB)を含む。",
+      "エ": "x²になるのはp＝1の場合だけである。設問では両方向ともxᵖに比例するため、その積はx²ᵖである。",
+      "オ": "横風と鉛直の拡散幅はそれぞれAxᵖとBxᵖ。これらをQ/(2πuσᵧσ_z)へ代入した式に一致する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2023/daikibo-taiki-p04.png"
+    ],
+    "imageAltTexts": [
+      "令和5年度 公害防止管理者 大規模大気特論 公式問題冊子PDF 4ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724182526id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_06.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和5年度 公害防止管理者等国家試験 大規模大気特論 問4（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2023-annual-daikibo-taiki-q05",
+    "exam": "kogai-13",
+    "year": 2023,
+    "season": "annual",
+    "examDate": "2023-10-01",
+    "session": "daikibo-taiki",
+    "qNumber": 5,
+    "officialAnswerNumber": 5,
+    "type": "multiple-choice",
+    "subject": "大規模大気特論",
+    "category": "大規模大気特論",
+    "topicTags": [
+      "大気拡散予測モデルの適用範囲"
+    ],
+    "difficulty": 2,
+    "question": "問5　大気拡散予測モデルの適用範囲。掲載の公式問題画像の問5を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "AERMOD は,大気境界層内の乱流構造に基づく拡散の概念を組み込んだモデルであり,地表煙源と高煙源の両方に対応している。",
+      "イ": "METI-LIS は,地物の影響を受ける低煙源を対象としたモデルである。",
+      "ウ": "OCD は,海上及び沿岸地域に適用できる正規形プルームモデルである。",
+      "エ": "CTDMPLUS は,複雑地形上における点発生源からの大気拡散を対象としたプルームモデルである。",
+      "オ": "Lyons and Cole のモデルは,ヒュミゲーション時の拡散予測のための三次元数値解モデルである。"
+    },
+    "answer": "オ",
+    "explanation": "LyonsとColeによる沿岸ヒュミゲーションのモデルは、ガウス型プルームを基にしたモデルである。三次元数値解モデルに分類する記述が誤り。",
+    "choiceExplanations": {
+      "ア": "AERMODは大気境界層の乱流や安定度を考慮するモデルで、地上近くの発生源と高い煙源を扱える。",
+      "イ": "METI-LISは周辺建物などによる後流の影響を受ける、低い位置の発生源を評価する目的に使う。",
+      "ウ": "OCDは海上や沿岸での大気拡散を扱い、海面から陸地へ移るときの境界層の変化などを考慮する。",
+      "エ": "CTDMPLUSは山や丘などの複雑な地形が点源からの煙の拡散に与える影響を扱う。",
+      "オ": "沿岸ヒュミゲーションにガウス型プルームを適用したモデルであり、三次元の流体方程式を数値的に解く方式とは区別する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2023/daikibo-taiki-p05.png"
+    ],
+    "imageAltTexts": [
+      "令和5年度 公害防止管理者 大規模大気特論 公式問題冊子PDF 5ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724182526id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_06.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和5年度 公害防止管理者等国家試験 大規模大気特論 問5（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2023-annual-daikibo-taiki-q06",
+    "exam": "kogai-13",
+    "year": 2023,
+    "season": "annual",
+    "examDate": "2023-10-01",
+    "session": "daikibo-taiki",
+    "qNumber": 6,
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "subject": "大規模大気特論",
+    "category": "大規模大気特論",
+    "topicTags": [
+      "汚染物質と環境濃度の予測手法"
+    ],
+    "difficulty": 2,
+    "question": "問6　汚染物質と環境濃度の予測手法。掲載の公式問題画像の問6を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "工業地区の主要煙突から排出される SO2 の,周辺地域における年平均濃度分布予測は,一般に正規形プルーム・パフモデルによる。",
+      "イ": "郊外の平坦地域を通過する主要バイパス道路による粉じんの影響予測に,指数近似モデルを利用する。",
+      "ウ": "工場建屋の高さに近い排気ダクトなどから排出される有害大気汚染物質の, 敷地境界や近傍における濃度計算に,ダウンウォッシュ算定機能がある ISC などを利用する。",
+      "エ": "光化学大気汚染の,日々の気象条件により発生する最高濃度レベルの算定には,数値解モデルを用いる。",
+      "オ": "ビルの多い市街地や複雑地形中に排出される煙の濃度分布予測では,風洞模型実験の実施が有効である。"
+    },
+    "answer": "イ",
+    "explanation": "道路に沿って放出される粉じんの影響には、道路を線状の発生源として扱い、移流・拡散や沈降を考慮する。設問の単純な指数近似モデルの適用が不適切である。",
+    "choiceExplanations": {
+      "ア": "多数の気象条件について、有風時のプルームと弱風・無風時のパフを用いることで、煙突からの排出が年平均濃度へ与える寄与を求められる。",
+      "イ": "道路からの粉じんは交通や風の条件で広がり、粒径に応じて沈降もする。指数近似モデルをそのまま当てるという説明が適切でない。",
+      "ウ": "建物の後流に煙が巻き込まれると濃度が高まることがある。低い排気口の近傍には、建物後流を扱えるモデルが必要になる。",
+      "エ": "光化学汚染は日射、風、化学反応に依存するため、これらの時間変化を扱える数値モデルを用いる。",
+      "オ": "気流が複雑な市街地や山地では、地形や建物を再現した風洞実験で流れと拡散を確認できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2023/daikibo-taiki-p05.png"
+    ],
+    "imageAltTexts": [
+      "令和5年度 公害防止管理者 大規模大気特論 公式問題冊子PDF 5ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724182526id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_06.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和5年度 公害防止管理者等国家試験 大規模大気特論 問6（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2023-annual-daikibo-taiki-q07",
+    "exam": "kogai-13",
+    "year": 2023,
+    "season": "annual",
+    "examDate": "2023-10-01",
+    "session": "daikibo-taiki",
+    "qNumber": 7,
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "subject": "大規模大気特論",
+    "category": "大規模大気特論",
+    "topicTags": [
+      "石炭火力の低低温形電気集じん"
+    ],
+    "difficulty": 2,
+    "question": "問7　石炭火力の低低温形電気集じん。掲載の公式問題画像の問7を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "10~20／脱硫装置／熱回収部",
+      "イ": "10~20／脱硫装置／再加熱部",
+      "ウ": "1~ 2／脱硫装置／熱回収部",
+      "エ": "1~ 2／脱硝装置／再加熱部",
+      "オ": "1~ 2／脱硝装置／熱回収部"
+    },
+    "answer": "ア",
+    "explanation": "ボイラー出口のばいじんは一般に10〜20 g/m³N程度。従来は脱硫装置の前にあったGGHの熱回収部を電気集じん装置の前へ置き、ガス温度を下げて捕集性を高める。",
+    "choiceExplanations": {
+      "ア": "ばいじん濃度の目安は10〜20 g/m³Nで、脱硫前の熱回収部を集じん機の前へ移すことでガスを低温化する。",
+      "イ": "移すのは排ガスを冷却する熱回収部であり、処理後の排ガスを暖め直す再加熱部ではない。",
+      "ウ": "脱硫装置と熱回収部は合うが、ボイラー出口のばいじんは一般に1〜2 g/m³Nより高い。",
+      "エ": "ばいじん濃度の桁が小さい。また、低低温化には再加熱部でなく熱回収部を使う。",
+      "オ": "熱回収部は合うが、従来配置でその後にあったのは脱硫装置である。ボイラー出口濃度も10〜20 g/m³N程度となる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2023/daikibo-taiki-p06.png"
+    ],
+    "imageAltTexts": [
+      "令和5年度 公害防止管理者 大規模大気特論 公式問題冊子PDF 6ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724182526id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_06.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和5年度 公害防止管理者等国家試験 大規模大気特論 問7（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2023-annual-daikibo-taiki-q08",
+    "exam": "kogai-13",
+    "year": 2023,
+    "season": "annual",
+    "examDate": "2023-10-01",
+    "session": "daikibo-taiki",
+    "qNumber": 8,
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "subject": "大規模大気特論",
+    "category": "大規模大気特論",
+    "topicTags": [
+      "重質油火力の排ガスからSO₃を除く方法"
+    ],
+    "difficulty": 2,
+    "question": "問8　重質油火力の排ガスからSO₃を除く方法。掲載の公式問題画像の問8を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "酸性硫酸アンモニウム／固形化／2 以上",
+      "イ": "酸性硫酸アンモニウム／液化／1",
+      "ウ": "酸性硫酸アンモニウム／液化／2 以上",
+      "エ": "硫酸アンモニウム／固形化／2 以上",
+      "オ": "硫酸アンモニウム／液化／1"
+    },
+    "answer": "エ",
+    "explanation": "アンモニアによりSO₃を硫酸アンモニウムの固形物にして電気集じんで捕捉する。硫酸根1 molにアンモニウムイオン2 molが対応するので、アンモニアのモル比は2以上とする。",
+    "choiceExplanations": {
+      "ア": "固体として捕捉する点とモル比は合うが、生成物は酸性硫酸アンモニウムではなく硫酸アンモニウムである。",
+      "イ": "酸性硫酸アンモニウムを作るモル比1では酸性塩が残る。設問は硫酸アンモニウムを固形化して回収する方式である。",
+      "ウ": "モル比2以上を与えて硫酸アンモニウムとし、固形分として捕集するので、酸性塩の液化という組合せは合わない。",
+      "エ": "アンモニアを2 mol以上供給して酸性塩の生成を避け、固形化した硫酸アンモニウムを電気集じん装置で捕らえる。",
+      "オ": "硫酸アンモニウムを得るにはモル比1では足りない。回収は液化ではなく固形物の捕集による。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2023/daikibo-taiki-p07.png"
+    ],
+    "imageAltTexts": [
+      "令和5年度 公害防止管理者 大規模大気特論 公式問題冊子PDF 7ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724182526id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_06.pdf#page=7",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和5年度 公害防止管理者等国家試験 大規模大気特論 問8（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2023-annual-daikibo-taiki-q09",
+    "exam": "kogai-13",
+    "year": 2023,
+    "season": "annual",
+    "examDate": "2023-10-01",
+    "session": "daikibo-taiki",
+    "qNumber": 9,
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "subject": "大規模大気特論",
+    "category": "大規模大気特論",
+    "topicTags": [
+      "ごみ焼却設備の脱硝原理"
+    ],
+    "difficulty": 2,
+    "question": "問9　ごみ焼却設備の脱硝原理。掲載の公式問題画像の問9を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "無触媒脱硝法は,脱硝剤を焼却炉内の高温ゾーンに噴霧して NOx を選択還元する方法である。",
+      "イ": "触媒脱硝法は,無触媒脱硝法と同じ NOx 除去原理であるが,触媒を使用して低温領域で脱硝する方法である。",
+      "ウ": "活性コークス法は,NOx を活性コークスで吸着除去する方法である。",
+      "エ": "脱硝バグフィルター法は,ろ布に脱硝機能を持たせ,排ガス中に注入した NH3 とフィルター中の触媒で NOx を除去する方法である。",
+      "オ": "燃焼制御による NOx の発生量の低減は,主として炉内における自己脱硝作用によるものである。"
+    },
+    "answer": "ウ",
+    "explanation": "活性コークスを用いる脱硝では、その触媒作用でNOₓをアンモニアにより還元する。NOₓを単に吸着するという記述が誤り。",
+    "choiceExplanations": {
+      "ア": "触媒を使わずに反応を進めるため、炉内の適切な高温域に脱硝剤を供給してNOₓを還元する。",
+      "イ": "触媒は還元反応を進めやすくするため、無触媒法より低い温度でもNOₓを還元できる。",
+      "ウ": "活性コークスはアンモニアによるNOₓの還元を促進する。NOₓ除去を吸着だけで説明するのは不適切である。",
+      "エ": "触媒機能を持つろ布を用いると、粉じんをろ過しながら、アンモニアでNOₓを還元できる。",
+      "オ": "燃焼条件を制御して炉内に還元性の領域を作ると、発生したNOₓが炉内で還元される作用を利用できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2023/daikibo-taiki-p07.png"
+    ],
+    "imageAltTexts": [
+      "令和5年度 公害防止管理者 大規模大気特論 公式問題冊子PDF 7ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724182526id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_06.pdf#page=7",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和5年度 公害防止管理者等国家試験 大規模大気特論 問9（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2023-annual-daikibo-taiki-q10",
+    "exam": "kogai-13",
+    "year": 2023,
+    "season": "annual",
+    "examDate": "2023-10-01",
+    "session": "daikibo-taiki",
+    "qNumber": 10,
+    "officialAnswerNumber": 5,
+    "type": "multiple-choice",
+    "subject": "大規模大気特論",
+    "category": "大規模大気特論",
+    "topicTags": [
+      "鉄鋼業のNOₓ生成抑制と排ガス脱硝"
+    ],
+    "difficulty": 2,
+    "question": "問10　鉄鋼業のNOₓ生成抑制と排ガス脱硝。掲載の公式問題画像の問10を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "燃料転換",
+      "イ": "燃料脱窒",
+      "ウ": "運転条件変更",
+      "エ": "燃焼装置の改造",
+      "オ": "接触還元法"
+    },
+    "answer": "オ",
+    "explanation": "接触還元法は、燃焼の後で排ガスに含まれるNOₓを触媒を使って還元する。燃焼時の生成そのものを抑える方法とは工程が異なる。",
+    "choiceExplanations": {
+      "ア": "窒素分の少ない燃料への転換などにより、燃焼中に生成するフューエルNOₓを減らせる。",
+      "イ": "燃料から窒素化合物をあらかじめ取り除くと、燃焼時にNOₓへ転換される窒素が減る。",
+      "ウ": "空気供給量や燃焼温度などを調整し、燃焼域でNOₓが生じにくい状態にする対策である。",
+      "エ": "低NOₓバーナーなどに改造すると、酸素濃度や高温域での滞留などを変えて生成を抑えられる。",
+      "オ": "触媒により既に生じたNOₓを後段で窒素などへ還元する。生成の抑制には分類されない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2023/daikibo-taiki-p08.png"
+    ],
+    "imageAltTexts": [
+      "令和5年度 公害防止管理者 大規模大気特論 公式問題冊子PDF 8ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724182526id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_06.pdf#page=8",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和5年度 公害防止管理者等国家試験 大規模大気特論 問10（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  }
+]
