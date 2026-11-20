@@ -1905,7 +1905,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.city.kobe.lg.jp/a55153/shise/shokuinsaiyou/kyouiku/kyosaikako.html",
     officialReuseTermsUrl: "https://www.city.kobe.lg.jp/a57337/homepage/rule.html",
     status: "live",
-    reuseSummary: "2025～2027年度採用（2024～2026年度実施）の教職・一般教養140問を公式問題・正答と全肢の独自解説で収録。設問に必要な資料が公表されていない10問は除外。",
+    reuseSummary: "2023・2025～2027年度採用（2022・2024～2026年度実施）の教職・一般教養184問を公式問題・正答と全肢の独自解説で収録。2023年度採用の問16は市教委の訂正により全員正答。",
     attributionTemplate: "出典：神戸市教育委員会 神戸市立学校園教員採用選考試験。解説は過去問AIの独自作成。",
     remainingWork: [],
   },
