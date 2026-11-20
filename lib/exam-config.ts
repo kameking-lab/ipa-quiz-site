@@ -1572,7 +1572,7 @@ kankoji1: {
 "chori-nagano": {
     code: "chori-nagano", nameFull: "調理師試験（長野県）", urlSlug: "chori-nagano", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 60, label: "学科", categories: ["公衆衛生学", "食品学", "栄養学", "食品衛生学", "調理理論", "食文化概論"] }],
-    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+    seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
 },
 "chori-tochigi": {
     code: "chori-tochigi", nameFull: "調理師試験（栃木県）", urlSlug: "chori-tochigi", level: "basic",
