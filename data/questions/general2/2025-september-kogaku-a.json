@@ -1,0 +1,1565 @@
+[
+  {
+    "id": "general2-2025-september-kogaku-a-a01",
+    "exam": "general2",
+    "year": 2025,
+    "season": "september",
+    "session": "kogaku-a",
+    "qNumber": 1,
+    "officialQuestionLabel": "A−1",
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "リング変調器の動作",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−1　リング変調器の動作。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "搬送波の極性に応じて二組のダイオードが交互に信号波を通す。bがaより高い半周期の導通組を取り違えた記述が誤り。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2025/2025-09-kogaku-a-p01.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2025年9月期 無線工学A 公式問題冊子PDF 1ページの問A−1。"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a.pdf#page=1",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和7年9月期 無線工学A A−1（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "bの電位がaより高いときD1とD4が導通",
+      "イ": "信号波だけでは出力はゼロ",
+      "ウ": "搬送波だけでは出力はゼロ",
+      "エ": "両入力で搬送波抑圧両側波帯が出力"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "choiceExplanations": {
+      "ア": "この搬送波極性ではD1とD4は順方向の組にならない。",
+      "イ": "搬送波がなければ理想回路で信号波を切り替える導通経路が形成されず、出力はゼロとなる。",
+      "ウ": "平衡した変成器では搬送波による成分が打ち消し合う。",
+      "エ": "信号波の極性を搬送波で交互に反転させると、搬送波の上下に側波帯が生じる。"
+    }
+  },
+  {
+    "id": "general2-2025-september-kogaku-a-a02",
+    "exam": "general2",
+    "year": 2025,
+    "season": "september",
+    "session": "kogaku-a",
+    "qNumber": 2,
+    "officialQuestionLabel": "A−2",
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "占有周波数帯幅を広げる要因",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−2　占有周波数帯幅を広げる要因。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "出力電力だけを下げても通常は占有周波数帯幅が広がらない。過変調、過大な周波数偏移、異常発振では帯域外成分が増え得る。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2025/2025-09-kogaku-a-p01.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2025年9月期 無線工学A 公式問題冊子PDF 1ページの問A−2。"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a.pdf#page=1",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和7年9月期 無線工学A A−2（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "送信機の出力電力を下げる",
+      "イ": "AM波の過変調",
+      "ウ": "FM変調信号の振幅過大",
+      "エ": "送信機の寄生振動"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "choiceExplanations": {
+      "ア": "適正動作下で電力を下げるとスペクトルのレベルが下がり、帯幅を広げる原因にはならない。",
+      "イ": "過変調とそれに伴う非線形なひずみは不要な周波数成分を生じ得る。",
+      "ウ": "信号振幅が大きくなるとFMの最大周波数偏移が増える。",
+      "エ": "異常な発振で本来の変調スペクトル以外の成分が生じ得る。"
+    }
+  },
+  {
+    "id": "general2-2025-september-kogaku-a-a03",
+    "exam": "general2",
+    "year": 2025,
+    "season": "september",
+    "session": "kogaku-a",
+    "qNumber": 3,
+    "officialQuestionLabel": "A−3",
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "SSB送信の周波数",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−3　SSB送信の周波数。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "抑圧搬送波周波数は1786.4−1.4＝1785.0 kHz。条件は上側波帯に対応するため、0.350 kHzと2.700 kHzをそれぞれ加える。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2025/2025-09-kogaku-a-p01.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2025年9月期 無線工学A 公式問題冊子PDF 1ページの問A−3。"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a.pdf#page=1",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和7年9月期 無線工学A A−3（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1784.3 kHz、1779.6 kHz",
+      "イ": "1784.65 kHz、1782.3 kHz",
+      "ウ": "1785.35 kHz、1787.7 kHz",
+      "エ": "1785.7 kHz、1790.4 kHz"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "choiceExplanations": {
+      "ア": "搬送波より低く、指定条件の上側波帯に該当しない。",
+      "イ": "搬送波から変調周波数を引いた下側波帯の組合せである。",
+      "ウ": "1785.0＋0.350と1785.0＋2.700を計算した値である。",
+      "エ": "この周波数の間隔は4.7 kHzであり、変調信号の周波数差2.35 kHzと合わない。"
+    }
+  },
+  {
+    "id": "general2-2025-september-kogaku-a-a04",
+    "exam": "general2",
+    "year": 2025,
+    "season": "september",
+    "session": "kogaku-a",
+    "qNumber": 4,
+    "officialQuestionLabel": "A−4",
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "周波数変調の変調指数と電力",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−4　周波数変調の変調指数と電力。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "FMでは搬送波の瞬時周波数が変わり、変調指数は最大周波数偏移/変調周波数である。理想FMの振幅は一定で全電力も一定である。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2025/2025-09-kogaku-a-p01.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2025年9月期 無線工学A 公式問題冊子PDF 1ページの問A−4。"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a.pdf#page=1",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和7年9月期 無線工学A A−4（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "瞬時電圧、周波数、する",
+      "イ": "瞬時電圧、振幅、しない",
+      "ウ": "瞬時周波数、振幅、する",
+      "エ": "瞬時周波数、周波数、しない"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "choiceExplanations": {
+      "ア": "変調指数の分母は正しいが、FMで変えるのは瞬時周波数であり全電力は一定。",
+      "イ": "電力は一定だが、瞬時周波数が変わり、変調指数の分母には周波数が入る。",
+      "ウ": "瞬時周波数は正しい一方、分母は変調周波数で、全電力は変化しない。",
+      "エ": "周波数変調の定義、変調指数、一定包絡線の三点が一致する。"
+    }
+  },
+  {
+    "id": "general2-2025-september-kogaku-a-a05",
+    "exam": "general2",
+    "year": 2025,
+    "season": "september",
+    "session": "kogaku-a",
+    "qNumber": 5,
+    "officialQuestionLabel": "A−5",
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "PLL周波数シンセサイザ",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−5　PLL周波数シンセサイザ。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "ロック時は10 MHz/20＝fO/300。よって出力は0.5×300＝150 MHz。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2025/2025-09-kogaku-a-p01.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2025年9月期 無線工学A 公式問題冊子PDF 1ページの問A−5。"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a.pdf#page=1",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和7年9月期 無線工学A A−5（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "60 MHz",
+      "イ": "120 MHz",
+      "ウ": "150 MHz",
+      "エ": "400 MHz"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "choiceExplanations": {
+      "ア": "60 MHzを300で分周すると0.2 MHzとなり、基準の0.5 MHzに合わない。",
+      "イ": "120 MHzを分周した比較入力は0.4 MHzである。",
+      "ウ": "基準側と帰還側とも比較器に0.5 MHzを入力する。",
+      "エ": "400 MHzを分周した値は約1.33 MHzである。"
+    }
+  },
+  {
+    "id": "general2-2025-september-kogaku-a-a06",
+    "exam": "general2",
+    "year": 2025,
+    "season": "september",
+    "session": "kogaku-a",
+    "qNumber": 6,
+    "officialQuestionLabel": "A−6",
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "SSB・AM受信機の検波回路",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−6　SSB・AM受信機の検波回路。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "スピーチクリッパは音声の振幅を制限する回路。SSB復調時の搬送波再挿入には局部発振器を用いる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2025/2025-09-kogaku-a-p02.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2025年9月期 無線工学A 公式問題冊子PDF 2ページの問A−6。"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a.pdf#page=2",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和7年9月期 無線工学A A−6（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "SSB受信機でスピーチクリッパが周波数関係を調整",
+      "イ": "SSB検波で搬送波相当の局部信号を加える",
+      "ウ": "AM受信機は直線検波などで音声を取り出す",
+      "エ": "AM受信機はAGCで出力レベル変動を抑える"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "choiceExplanations": {
+      "ア": "クリッパは音声ピークを抑えるために用いられ、再挿入搬送波の周波数を調整する回路ではない。",
+      "イ": "SSBの抑圧搬送波を補う局部信号が積検波に必要となる。",
+      "ウ": "AMの包絡線には変調信号が含まれ、適切な検波回路で取り出せる。",
+      "エ": "AGCが高周波段や中間周波段の利得を制御し、入力変動の影響を抑える。"
+    }
+  },
+  {
+    "id": "general2-2025-september-kogaku-a-a07",
+    "exam": "general2",
+    "year": 2025,
+    "season": "september",
+    "session": "kogaku-a",
+    "qNumber": 7,
+    "officialQuestionLabel": "A−7",
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "スーパーへテロダイン受信機の影像周波数",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−7　スーパーへテロダイン受信機の影像周波数。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "局発は5000＋455＝5455 kHz。局発を挟んで反対側にも同じ差周波数があるため、影像は5455＋455＝5910 kHz。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2025/2025-09-kogaku-a-p02.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2025年9月期 無線工学A 公式問題冊子PDF 2ページの問A−7。"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a.pdf#page=2",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和7年9月期 無線工学A A−7（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "4090 kHz",
+      "イ": "4545 kHz",
+      "ウ": "5455 kHz",
+      "エ": "5910 kHz"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "choiceExplanations": {
+      "ア": "受信周波数から中間周波数の2倍を引いた値は下側局発の場合に対応する。",
+      "イ": "4545 kHzは下側局発の周波数に当たる。",
+      "ウ": "5455 kHzは指定された上側局発そのもの。",
+      "エ": "局発より455 kHz上で、目的波と同じ中間周波数になる。"
+    }
+  },
+  {
+    "id": "general2-2025-september-kogaku-a-a08",
+    "exam": "general2",
+    "year": 2025,
+    "season": "september",
+    "session": "kogaku-a",
+    "qNumber": 8,
+    "officialQuestionLabel": "A−8",
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "多段受信機の電圧利得",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−8　多段受信機の電圧利得。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "各段の利得をdBで加算して20＋5＋50−5＋50＝120 dB。電圧の倍率は10^(120/20)＝10⁶。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2025/2025-09-kogaku-a-p02.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2025年9月期 無線工学A 公式問題冊子PDF 2ページの問A−8。"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a.pdf#page=2",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和7年9月期 無線工学A A−8（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "10⁵",
+      "イ": "10⁶",
+      "ウ": "10⁷",
+      "エ": "10⁸"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "choiceExplanations": {
+      "ア": "電圧利得10⁵は100 dBに相当する。",
+      "イ": "120 dBを20で割った指数6に対応する。",
+      "ウ": "10⁷は140 dBに相当し、高周波増幅段の利得分ほど大きい。",
+      "エ": "10⁸は160 dBの電圧利得であり、各段の和を超える。"
+    }
+  },
+  {
+    "id": "general2-2025-september-kogaku-a-a09",
+    "exam": "general2",
+    "year": 2025,
+    "season": "september",
+    "session": "kogaku-a",
+    "qNumber": 9,
+    "officialQuestionLabel": "A−9",
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "パルスレーダーの距離分解能",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−9　パルスレーダーの距離分解能。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "同一方向の物標は反射波の到着時刻の差で区別する。送信パルスを短くすると二つの反射が時間的に重なりにくくなる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2025/2025-09-kogaku-a-p02.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2025年9月期 無線工学A 公式問題冊子PDF 2ページの問A−9。"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a.pdf#page=2",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和7年9月期 無線工学A A−9（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "同一方位、ビーム幅",
+      "イ": "同一方位、パルス幅",
+      "ウ": "異なる方位、パルス幅",
+      "エ": "異なる方位、ビーム幅"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "choiceExplanations": {
+      "ア": "物標は同一方位だが、ビーム幅は主として方位分解能に関係する。",
+      "イ": "同一方位で反射時刻を区別し、短パルスにより必要な最小距離差を小さくする。",
+      "ウ": "パルス幅は合うが、距離分解能では同一方位の物標を想定する。",
+      "エ": "異方位の物標とビーム幅の関係は方位分解能についての説明に当たる。"
+    }
+  },
+  {
+    "id": "general2-2025-september-kogaku-a-a10",
+    "exam": "general2",
+    "year": 2025,
+    "season": "september",
+    "session": "kogaku-a",
+    "qNumber": 10,
+    "officialQuestionLabel": "A−10",
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "GPS衛星の測位と公転周期",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−10　GPS衛星の測位と公転周期。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "位置3成分と受信機時刻のずれを同時に求めるため、少なくとも衛星4個が必要。GPS衛星の公転周期は約12時間。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2025/2025-09-kogaku-a-p02.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2025年9月期 無線工学A 公式問題冊子PDF 2ページの問A−10。"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a.pdf#page=2",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和7年9月期 無線工学A A−10（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "2個、12時間",
+      "イ": "2個、24時間",
+      "ウ": "4個、24時間",
+      "エ": "4個、12時間"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "choiceExplanations": {
+      "ア": "12時間は合っているが、測距情報2個では未知数4個を決められない。",
+      "イ": "必要な衛星数は4個、公転周期は約12時間である。",
+      "ウ": "衛星数は正しい。24時間は地球の自転周期に近く、GPS衛星は一日でほぼ2周する。",
+      "エ": "4本の擬似距離式で未知数を解き、衛星は約12時間で一周する。"
+    }
+  },
+  {
+    "id": "general2-2025-september-kogaku-a-a11",
+    "exam": "general2",
+    "year": 2025,
+    "season": "september",
+    "session": "kogaku-a",
+    "qNumber": 11,
+    "officialQuestionLabel": "A−11",
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "デジタル選択呼出しの遭難警報",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−11　デジタル選択呼出しの遭難警報。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "DSCの遭難警報は受信可能な範囲の局全体に注意を促すために送られる。特定局だけを呼ぶ選択呼出しと区別する。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2025/2025-09-kogaku-a-p02.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2025年9月期 無線工学A 公式問題冊子PDF 2ページの問A−11。"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a.pdf#page=2",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和7年9月期 無線工学A A−11（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "特定の船舶局・海岸局に限定して行う",
+      "イ": "操作で遭難警報を5回連続で自動送信",
+      "ウ": "MF・HF・VHFを使用",
+      "エ": "MF・HFの速度は100 bps"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "choiceExplanations": {
+      "ア": "遭難警報は伝搬範囲の全局宛てであり、特定局を宛先に限定しない。",
+      "イ": "MF/HFで行う単一周波数の遭難呼出しでは、同じ周波数で連続5回の呼出し系列が用いられる。",
+      "ウ": "海上通信ではMF、HF、VHFの各帯域にDSC周波数が定められている。",
+      "エ": "MFとHFのDSCは100 bit/sの伝送速度を用いる。"
+    }
+  },
+  {
+    "id": "general2-2025-september-kogaku-a-a12",
+    "exam": "general2",
+    "year": 2025,
+    "season": "september",
+    "session": "kogaku-a",
+    "qNumber": 12,
+    "officialQuestionLabel": "A−12",
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "パリティ付き文字列の伝送速度",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−12　パリティ付き文字列の伝送速度。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "1文字に8ビットを要し、毎分36000文字は毎秒600文字。必要速度は600×8＝4800 bpsである。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2025/2025-09-kogaku-a-p02.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2025年9月期 無線工学A 公式問題冊子PDF 2ページの問A−12。"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a.pdf#page=2",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和7年9月期 無線工学A A−12（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "9600 bps",
+      "イ": "4800 bps",
+      "ウ": "3200 bps",
+      "エ": "2400 bps"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "choiceExplanations": {
+      "ア": "伝送は可能だが必要最小速度の2倍である。",
+      "イ": "ビット8個を使う文字を毎秒600個送るのにちょうど足りる。",
+      "ウ": "3200 bpsでは毎秒400文字までとなる。",
+      "エ": "2400 bpsでは毎秒300文字にとどまる。"
+    }
+  },
+  {
+    "id": "general2-2025-september-kogaku-a-a13",
+    "exam": "general2",
+    "year": 2025,
+    "season": "september",
+    "session": "kogaku-a",
+    "qNumber": 13,
+    "officialQuestionLabel": "A−13",
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "ブリッジ整流回路の導通",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−13　ブリッジ整流回路の導通。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "四つのダイオードのうち対角の二つが各半周期で導通し、負荷には同じ方向へ電流が流れる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2025/2025-09-kogaku-a-p03.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2025年9月期 無線工学A 公式問題冊子PDF 3ページの問A−13。"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a.pdf#page=3",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和7年9月期 無線工学A A−13（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "全波整流、導通、1/2周期",
+      "イ": "全波整流、非導通、1/2周期",
+      "ウ": "半波整流、導通、1周期",
+      "エ": "半波整流、非導通、1周期"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "choiceExplanations": {
+      "ア": "D1とD3は対角の対になり、入力極性が反転する半周期ごとに対が切り替わる。",
+      "イ": "整流方式と二次側電流の切替間隔は合っているが、D1の導通時にはD3も導通する。",
+      "ウ": "D1とD3は同時に導通するが、両半周期を使う全波整流である。",
+      "エ": "全波整流で、D1とD3は同時に導通し、二次電流の向きは半周期ごとに変わる。"
+    }
+  },
+  {
+    "id": "general2-2025-september-kogaku-a-a14",
+    "exam": "general2",
+    "year": 2025,
+    "season": "september",
+    "session": "kogaku-a",
+    "qNumber": 14,
+    "officialQuestionLabel": "A−14",
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "蓄電池の直列接続",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−14　蓄電池の直列接続。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "直列では起電力が加算され、各電池に同じ電流が流れる。6＋6＋12＝24 Vで、容量は100 Ah。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2025/2025-09-kogaku-a-p03.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2025年9月期 無線工学A 公式問題冊子PDF 3ページの問A−14。"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a.pdf#page=3",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和7年9月期 無線工学A A−14（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "12 V、200 Ah",
+      "イ": "12 V、100 Ah",
+      "ウ": "24 V、100 Ah",
+      "エ": "24 V、200 Ah"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "choiceExplanations": {
+      "ア": "6 Vの電池二つに加えて12 Vの電池も直列であり、容量は加算しない。",
+      "イ": "容量は100 Ahでよいが、全電圧は三つの和になる。",
+      "ウ": "三つの電池が共通の電流を流し、電圧だけが加算される。",
+      "エ": "24 Vは正しいが、直列に接続した100 Ahの電池の容量は100 Ahである。"
+    }
+  },
+  {
+    "id": "general2-2025-september-kogaku-a-a15",
+    "exam": "general2",
+    "year": 2025,
+    "season": "september",
+    "session": "kogaku-a",
+    "qNumber": 15,
+    "officialQuestionLabel": "A−15",
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "デジタルオシロスコープの標本化",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−15　デジタルオシロスコープの標本化。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "入力のアナログ電圧をA-D変換して記憶する。標本化周波数の半分が理論上の境界で、デジタル記録は波形解析に利用できる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2025/2025-09-kogaku-a-p03.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2025年9月期 無線工学A 公式問題冊子PDF 3ページの問A−15。"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a.pdf#page=3",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和7年9月期 無線工学A A−15（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "A-D変換、1/2、できる",
+      "イ": "A-D変換、2倍、できない",
+      "ウ": "D-A変換、2倍、できる",
+      "エ": "D-A変換、1/2、できない"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "choiceExplanations": {
+      "ア": "変換方向、ナイキスト限界、記録後のデータ処理が一致する。",
+      "イ": "A-D変換は正しいが、標本化周波数の2倍まで直接観測することはできない。",
+      "ウ": "波形解析は可能だが、入力はA-D変換し、上限は半分である。",
+      "エ": "上限は合っているが、変換方向はA-Dで、データ処理も行える。"
+    }
+  },
+  {
+    "id": "general2-2025-september-kogaku-a-a16",
+    "exam": "general2",
+    "year": 2025,
+    "season": "september",
+    "session": "kogaku-a",
+    "qNumber": 16,
+    "officialQuestionLabel": "A−16",
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "整合負荷と信号源電圧",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−16　整合負荷と信号源電圧。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "負荷50 Ωで80 mWを得る両端電圧は√(0.08×50)＝2 V。内部抵抗にも同じ電圧がかかるため信号源電圧は4 Vになる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2025/2025-09-kogaku-a-p03.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2025年9月期 無線工学A 公式問題冊子PDF 3ページの問A−16。"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a.pdf#page=3",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和7年9月期 無線工学A A−16（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1 V",
+      "イ": "2 V",
+      "ウ": "3 V",
+      "エ": "4 V"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "choiceExplanations": {
+      "ア": "負荷の電圧は0.5 Vとなり、電力は5 mW。",
+      "イ": "2 Vは負荷両端に必要な値であり、信号源電圧としては半分である。",
+      "ウ": "負荷両端は1.5 Vとなり、45 mWしか供給できない。",
+      "エ": "信号源の4 Vを等しい二抵抗で分圧し、負荷に2 Vをかけられる。"
+    }
+  },
+  {
+    "id": "general2-2025-september-kogaku-a-a17",
+    "exam": "general2",
+    "year": 2025,
+    "season": "september",
+    "session": "kogaku-a",
+    "qNumber": 17,
+    "officialQuestionLabel": "A−17",
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "AMの同期検波",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−17　AMの同期検波。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "搬送波に周波数・位相を合わせた基準信号を受信波に乗じる。その積から低域フィルタでベースバンドを取り出す。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2025/2025-09-kogaku-a-p03.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2025年9月期 無線工学A 公式問題冊子PDF 3ページの問A−17。"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a.pdf#page=3",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和7年9月期 無線工学A A−17（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "周波数、加算、高域フィルタ",
+      "イ": "周波数、乗算、低域フィルタ",
+      "ウ": "振幅、乗算、高域フィルタ",
+      "エ": "振幅、加算、低域フィルタ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "choiceExplanations": {
+      "ア": "基準信号の周波数は合わせるが、加算では周波数変換が生じない。",
+      "イ": "乗算で差周波数側に現れた変調信号を低域側で選ぶ。",
+      "ウ": "乗算は合うが、合わせるのは周波数と位相であり、信号成分は低域から得る。",
+      "エ": "低域フィルタは合うが、振幅の一致と単なる加算では同期検波にならない。"
+    }
+  },
+  {
+    "id": "general2-2025-september-kogaku-a-a18",
+    "exam": "general2",
+    "year": 2025,
+    "season": "september",
+    "session": "kogaku-a",
+    "qNumber": 18,
+    "officialQuestionLabel": "A−18",
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "信号点配置と位相偏移変調",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−18　信号点配置と位相偏移変調。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "Aは同相軸上の互いに反対向きの2点。Bは大きさが等しく位相が互いに90度ずつ違う4点を用いる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2025/2025-09-kogaku-a-p04.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2025年9月期 無線工学A 公式問題冊子PDF 4ページの問A−18。"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a.pdf#page=4",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和7年9月期 無線工学A A−18（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "FSK、ASK",
+      "イ": "FSK、BPSK",
+      "ウ": "BPSK、QPSK",
+      "エ": "BPSK、ASK"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "choiceExplanations": {
+      "ア": "A・Bとも信号点の位相で符号を区別している。",
+      "イ": "Aは周波数を切り替える方式ではなく、Bには二つでなく四つの信号点がある。",
+      "ウ": "2相のAがBPSK、4相のBがQPSKである。",
+      "エ": "AはBPSKである。Bの点の原点からの距離は同じであり、振幅を変えるASKに当たらない。"
+    }
+  },
+  {
+    "id": "general2-2025-september-kogaku-a-a19",
+    "exam": "general2",
+    "year": 2025,
+    "season": "september",
+    "session": "kogaku-a",
+    "qNumber": 19,
+    "officialQuestionLabel": "A−19",
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "静止衛星通信の特徴",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−19　静止衛星通信の特徴。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "一基で広い照射範囲を持ち、その範囲内の複数地点に同時に同じ情報を配信できる。地上局間距離に対して伝送条件の変化は小さい。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2025/2025-09-kogaku-a-p04.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2025年9月期 無線工学A 公式問題冊子PDF 4ページの問A−19。"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a.pdf#page=4",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和7年9月期 無線工学A A−19（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "局地性、単向通信、低い",
+      "イ": "局地性、同報通信、高い",
+      "ウ": "広域性、同報通信、低い",
+      "エ": "広域性、単向通信、高い"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "choiceExplanations": {
+      "ア": "距離依存性は低いが、広域性と同報通信が文中の説明に対応する。",
+      "イ": "同報通信は合う。カバー範囲は広く、地球局間距離への依存性は低い。",
+      "ウ": "広域に同じ内容を届けやすく、衛星経由なので地球局間距離への依存も小さい。",
+      "エ": "広域性は合うが、多地点で受ける通信は同報で、距離依存性は低い。"
+    }
+  },
+  {
+    "id": "general2-2025-september-kogaku-a-a20",
+    "exam": "general2",
+    "year": 2025,
+    "season": "september",
+    "session": "kogaku-a",
+    "qNumber": 20,
+    "officialQuestionLabel": "A−20",
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "受信機の1信号・2信号選択度",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "A−20　受信機の1信号・2信号選択度。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "1信号選択度には近接周波数選択度が含まれる。強い妨害波が非直線動作を引き起こすときは2信号で相互変調や混変調を調べる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2025/2025-09-kogaku-a-p04.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2025年9月期 無線工学A 公式問題冊子PDF 4ページの問A−20。"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a.pdf#page=4",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和7年9月期 無線工学A A−20（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "感度抑圧効果、非直線、混変調特性",
+      "イ": "感度抑圧効果、直線、感度",
+      "ウ": "近接周波数選択度、直線、感度",
+      "エ": "近接周波数選択度、非直線、混変調特性"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "choiceExplanations": {
+      "ア": "非直線と混変調は合うが、感度抑圧は強い妨害信号を加える評価項目である。",
+      "イ": "感度抑圧は1信号の項目ではなく、2信号測定では妨害波による非直線効果を扱う。",
+      "ウ": "近接周波数選択度は合うが、2信号選択度は非直線動作における妨害分離能力も含む。",
+      "エ": "1信号時の帯域選択と、妨害入力による非直線特性を適切に区別している。"
+    }
+  },
+  {
+    "id": "general2-2025-september-kogaku-a-b01",
+    "exam": "general2",
+    "year": 2025,
+    "season": "september",
+    "session": "kogaku-a",
+    "qNumber": 1,
+    "officialQuestionLabel": "B−1",
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "船舶用レーダーの偽像",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "B−1　船舶用レーダーの偽像。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "偽像の方位・距離・強度は、サイドローブや反射経路により決まる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2025/2025-09-kogaku-a-p04.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2025年9月期 無線工学A 公式問題冊子PDF 4ページの問B−1。"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a.pdf#page=4",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和7年9月期 無線工学A B−1（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "native-b",
+    "part": "b",
+    "answer": "",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "低い",
+          "explanation": "主ビームによる反射より低いレベルが一般的である。"
+        },
+        {
+          "id": "2",
+          "label": "高い",
+          "explanation": "主ビームよりサイドローブの利得が高いという前提は通常成り立たない。"
+        },
+        {
+          "id": "3",
+          "label": "逆",
+          "explanation": "往復反射は物標と反対方向から戻るわけではない。"
+        },
+        {
+          "id": "4",
+          "label": "同じ",
+          "explanation": "多重反射像は同じ方位に、遅れて現れる。"
+        },
+        {
+          "id": "5",
+          "label": "物標",
+          "explanation": "実際の物標の方位は、二次反射像の見掛けの方位とずれる場合がある。"
+        },
+        {
+          "id": "6",
+          "label": "下げる（悪くする）",
+          "explanation": "感度を下げて弱い反射を表示しないようにできる。"
+        },
+        {
+          "id": "7",
+          "label": "上げる（良くする）",
+          "explanation": "感度を上げると弱い反射も拾いやすい。"
+        },
+        {
+          "id": "8",
+          "label": "弱く",
+          "explanation": "反射経路の損失により、通常は回数とともに弱まる。"
+        },
+        {
+          "id": "9",
+          "label": "強く",
+          "explanation": "各往復で損失が加わるので強くはならない。"
+        },
+        {
+          "id": "10",
+          "label": "自船の反射物体",
+          "explanation": "マストなど最後に反射した自船上の物体の方向から波が届く。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "サイドローブはメインローブより利得が低く、反射波も通常は弱い。"
+        },
+        {
+          "label": "イ",
+          "answer": "6",
+          "explanation": "弱い偽像は受信感度を適切に下げると表示されにくい。"
+        },
+        {
+          "label": "ウ",
+          "answer": "4",
+          "explanation": "自船と物標の間を繰り返す反射は実像と同じ方位で戻る。"
+        },
+        {
+          "label": "エ",
+          "answer": "8",
+          "explanation": "反射が増えると減衰が積み重なり、偽像は弱くなる。"
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "自船上の物体で最後に反射するので、その物体の方位に現れる。"
+        }
+      ],
+      "officialLabel": "B−1",
+      "bankImageUrls": [
+        "/questions/general2/2025/2025-09-kogaku-a-p04.png"
+      ],
+      "bankImageAltTexts": [
+        "第二級総合無線通信士 2025年9月期 無線工学A 公式問題冊子PDF 4ページの問B−1。"
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表に従い、各解答欄を1点とする。"
+      }
+    }
+  },
+  {
+    "id": "general2-2025-september-kogaku-a-b02",
+    "exam": "general2",
+    "year": 2025,
+    "season": "september",
+    "session": "kogaku-a",
+    "qNumber": 2,
+    "officialQuestionLabel": "B−2",
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "捜索救助用SARTの動作",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "B−2　捜索救助用SARTの動作。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "レーダーSARTは9 GHz帯のレーダーを待ち受け、検出すると周波数掃引した応答を送る。捜索側画面と遭難者側の表示・音で接近を確認できる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2025/2025-09-kogaku-a-p05.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2025年9月期 無線工学A 公式問題冊子PDF 5ページの問B−2。"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a.pdf#page=5",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和7年9月期 無線工学A B−2（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "native-b",
+    "part": "b",
+    "answer": "",
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "正しい"
+        },
+        {
+          "id": "2",
+          "label": "誤り"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "海上の捜索に使うXバンド、約9 GHz帯のレーダーに応答する。",
+          "candidateExplanations": {
+            "1": "海上の捜索に使うXバンド、約9 GHz帯のレーダーに応答する。",
+            "2": "海上の捜索に使うXバンド、約9 GHz帯のレーダーに応答する。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "1",
+          "explanation": "電源投入後は待受けとなり、捜索側のレーダーパルスの受信を待つ。",
+          "candidateExplanations": {
+            "1": "電源投入後は待受けとなり、捜索側のレーダーパルスの受信を待つ。",
+            "2": "電源投入後は待受けとなり、捜索側のレーダーパルスの受信を待つ。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "2",
+          "explanation": "応答は周波数を掃引する信号であり、一定周波数の無変調波ではない。",
+          "candidateExplanations": {
+            "1": "応答は周波数を掃引する信号であり、一定周波数の無変調波ではない。",
+            "2": "応答は周波数を掃引する信号であり、一定周波数の無変調波ではない。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "2",
+          "explanation": "応答はレーダーの画面で方位にも対応し、距離だけを知る装置ではない。",
+          "candidateExplanations": {
+            "1": "応答はレーダーの画面で方位にも対応し、距離だけを知る装置ではない。",
+            "2": "応答はレーダーの画面で方位にも対応し、距離だけを知る装置ではない。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "1",
+          "explanation": "レーダー照射の検出を光や間欠音で通知する機構がある。",
+          "candidateExplanations": {
+            "1": "レーダー照射の検出を光や間欠音で通知する機構がある。",
+            "2": "レーダー照射の検出を光や間欠音で通知する機構がある。"
+          }
+        }
+      ],
+      "officialLabel": "B−2",
+      "bankImageUrls": [
+        "/questions/general2/2025/2025-09-kogaku-a-p05.png"
+      ],
+      "bankImageAltTexts": [
+        "第二級総合無線通信士 2025年9月期 無線工学A 公式問題冊子PDF 5ページの問B−2。"
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表に従い、各解答欄を1点とする。"
+      }
+    }
+  },
+  {
+    "id": "general2-2025-september-kogaku-a-b03",
+    "exam": "general2",
+    "year": 2025,
+    "season": "september",
+    "session": "kogaku-a",
+    "qNumber": 3,
+    "officialQuestionLabel": "B−3",
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "FM受信機の振幅制限とスケルチ",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "B−3　FM受信機の振幅制限とスケルチ。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "復調前の振幅制限でFM波の振幅変動を抑え、スケルチでは弱い入力のとき音声出力をミュートする。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2025/2025-09-kogaku-a-p05.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2025年9月期 無線工学A 公式問題冊子PDF 5ページの問B−3。"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a.pdf#page=5",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和7年9月期 無線工学A B−3（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "native-b",
+    "part": "b",
+    "answer": "",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "伝搬途中",
+          "explanation": "無線経路で加わった雑音は振幅変動を生じさせる。"
+        },
+        {
+          "id": "2",
+          "label": "後",
+          "explanation": "復調後の制限では、すでに音声に入った妨害を同じ方法で除けない。"
+        },
+        {
+          "id": "3",
+          "label": "以上",
+          "explanation": "頭打ち動作のためには一定以上の入力が必要となる。"
+        },
+        {
+          "id": "4",
+          "label": "高く",
+          "explanation": "入力が所定値より高いなら通常は復調音を通す。"
+        },
+        {
+          "id": "5",
+          "label": "高周波",
+          "explanation": "利用者が聞く音声出力を止めるため、低周波段を制御する。"
+        },
+        {
+          "id": "6",
+          "label": "受信機",
+          "explanation": "受信機内部にも雑音源はあるが、設問は伝搬中に受ける振幅変動を扱う。"
+        },
+        {
+          "id": "7",
+          "label": "前",
+          "explanation": "復調前にFM波の包絡線をそろえる。"
+        },
+        {
+          "id": "8",
+          "label": "未満",
+          "explanation": "制限レベルに達していない入力では頭打ち効果を得にくい。"
+        },
+        {
+          "id": "9",
+          "label": "低く",
+          "explanation": "受信が弱いときは復調雑音が目立つため音声経路を抑える。"
+        },
+        {
+          "id": "10",
+          "label": "低周波",
+          "explanation": "音声の低周波増幅経路をミュートする。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "伝搬に伴う妨害や雑音でFM波の振幅が変動する。"
+        },
+        {
+          "label": "イ",
+          "answer": "7",
+          "explanation": "復調の前に振幅変動を除くと音声に現れにくい。"
+        },
+        {
+          "label": "ウ",
+          "answer": "3",
+          "explanation": "入力がしきい値に達すると制限器が動作し、振幅を一定に保つ。"
+        },
+        {
+          "label": "エ",
+          "answer": "9",
+          "explanation": "所定レベルを下回った場合にスケルチが閉じる。"
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "低周波増幅器側を止めて雑音をスピーカーに出さない。"
+        }
+      ],
+      "officialLabel": "B−3",
+      "bankImageUrls": [
+        "/questions/general2/2025/2025-09-kogaku-a-p05.png"
+      ],
+      "bankImageAltTexts": [
+        "第二級総合無線通信士 2025年9月期 無線工学A 公式問題冊子PDF 5ページの問B−3。"
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表に従い、各解答欄を1点とする。"
+      }
+    }
+  },
+  {
+    "id": "general2-2025-september-kogaku-a-b04",
+    "exam": "general2",
+    "year": 2025,
+    "season": "september",
+    "session": "kogaku-a",
+    "qNumber": 4,
+    "officialQuestionLabel": "B−4",
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "オシロスコープによるAM変調度測定",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "B−4　オシロスコープによるAM変調度測定。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "正弦波で変調し、送信機出力の包絡線をオシロスコープで観察する。包絡線の最大値と最小値の差を和で割ると変調度が得られる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2025/2025-09-kogaku-a-p05.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2025年9月期 無線工学A 公式問題冊子PDF 5ページの問B−4。"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a.pdf#page=5",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和7年9月期 無線工学A B−4（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "native-b",
+    "part": "b",
+    "answer": "",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "周波数及びレベル",
+          "explanation": "試験用低周波信号の条件は周波数と入力レベルである。"
+        },
+        {
+          "id": "2",
+          "label": "正弦",
+          "explanation": "包絡線を測る規定の変調入力は正弦波である。"
+        },
+        {
+          "id": "3",
+          "label": "共振周波数を調整",
+          "explanation": "横軸の時間掃引を調整する測定であり、同調回路の共振点を探す操作ではない。"
+        },
+        {
+          "id": "4",
+          "label": "水平軸",
+          "explanation": "図の水平軸は時間目盛であって電圧入力の軸ではない。"
+        },
+        {
+          "id": "5",
+          "label": "(a−b)/(a＋b)",
+          "explanation": "a＝bの無変調で0となり、b＝0で100%になる。"
+        },
+        {
+          "id": "6",
+          "label": "位相及びレベル",
+          "explanation": "基準に対する入力位相を設定する手順ではない。"
+        },
+        {
+          "id": "7",
+          "label": "のこぎり",
+          "explanation": "のこぎり波はオシロスコープの掃引に用い得るが、この試験の変調波ではない。"
+        },
+        {
+          "id": "8",
+          "label": "掃引周波数を調整",
+          "explanation": "観測する包絡線に合う時間軸を設定し、同期を取る。"
+        },
+        {
+          "id": "9",
+          "label": "垂直軸",
+          "explanation": "観測信号電圧を加える軸である。"
+        },
+        {
+          "id": "10",
+          "label": "b/a",
+          "explanation": "無変調の場合にb/a＝1となってしまい、変調度0を表さない。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "2",
+          "explanation": "規定の低周波正弦波を変調信号とする。"
+        },
+        {
+          "label": "イ",
+          "answer": "1",
+          "explanation": "試験信号の周波数と入力レベルを所定値に設定する。"
+        },
+        {
+          "label": "ウ",
+          "answer": "9",
+          "explanation": "送信機出力を縦方向の電圧として観察する。"
+        },
+        {
+          "label": "エ",
+          "answer": "8",
+          "explanation": "横軸の掃引を調整し、観測波形が静止するよう同期させる。"
+        },
+        {
+          "label": "オ",
+          "answer": "5",
+          "explanation": "aとbの差は変調による振幅変化に、和は搬送波振幅に比例する。"
+        }
+      ],
+      "officialLabel": "B−4",
+      "bankImageUrls": [
+        "/questions/general2/2025/2025-09-kogaku-a-p05.png"
+      ],
+      "bankImageAltTexts": [
+        "第二級総合無線通信士 2025年9月期 無線工学A 公式問題冊子PDF 5ページの問B−4。"
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表に従い、各解答欄を1点とする。"
+      }
+    }
+  },
+  {
+    "id": "general2-2025-september-kogaku-a-b05",
+    "exam": "general2",
+    "year": 2025,
+    "season": "september",
+    "session": "kogaku-a",
+    "qNumber": 5,
+    "officialQuestionLabel": "B−5",
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "標準信号発生器の構成と条件",
+      "第二級総合無線通信士"
+    ],
+    "difficulty": 3,
+    "question": "B−5　標準信号発生器の構成と条件。掲載の公式問題画像を読み、該当する選択肢を選んでください。",
+    "explanation": "試験用の既知の変調信号を得る標準信号発生器には、周波数・出力の可変性、一定の出力インピーダンス、低い不要波が求められる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/general2/2025/2025-09-kogaku-a-p05.png"
+    ],
+    "imageAltTexts": [
+      "第二級総合無線通信士 2025年9月期 無線工学A 公式問題冊子PDF 5ページの問B−5。"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a.pdf#page=5",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級総合無線通信士 令和7年9月期 無線工学A B−5（問題・正答）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "native-b",
+    "part": "b",
+    "answer": "",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "変調器",
+          "explanation": "発振した試験信号に必要な変調を加える回路である。"
+        },
+        {
+          "id": "2",
+          "label": "入力端子以外",
+          "explanation": "遮へいは規定の出力端子以外から漏れる信号を抑える。"
+        },
+        {
+          "id": "3",
+          "label": "できない",
+          "explanation": "試験する周波数やレベルを変更できることが必要となる。"
+        },
+        {
+          "id": "4",
+          "label": "出力インピーダンス",
+          "explanation": "標準信号源から負荷へ供給する信号を決める端子特性である。"
+        },
+        {
+          "id": "5",
+          "label": "高い",
+          "explanation": "スプリアスは低いほど信号純度が良い。"
+        },
+        {
+          "id": "6",
+          "label": "復調器",
+          "explanation": "復調器は受信信号から情報を取り出すもので、発生器の基本構成では変調器を使う。"
+        },
+        {
+          "id": "7",
+          "label": "出力端子以外",
+          "explanation": "意図しない放射や漏れを防ぎ、信号を所定の端子から出す。"
+        },
+        {
+          "id": "8",
+          "label": "できる",
+          "explanation": "試験条件を設定するため、周波数と出力を可変とする。"
+        },
+        {
+          "id": "9",
+          "label": "入力インピーダンス",
+          "explanation": "負荷を駆動する側の特性を規定するので出力インピーダンスが対象である。"
+        },
+        {
+          "id": "10",
+          "label": "低い",
+          "explanation": "不要な周波数成分が小さいと受信機の特性を正確に測定できる。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "試験対象に供給する波を必要に応じて変調できる。"
+        },
+        {
+          "label": "イ",
+          "answer": "7",
+          "explanation": "出力端子からだけ所定の信号を得られるよう、発振器などの漏えいを抑える。"
+        },
+        {
+          "label": "ウ",
+          "answer": "8",
+          "explanation": "周波数と信号レベルは正確かつ安定に変えられる必要がある。"
+        },
+        {
+          "label": "エ",
+          "answer": "4",
+          "explanation": "受信機と接続したときの出力条件を定めるため、出力インピーダンスが既知で一定である。"
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "信号に混入する不要な成分を抑えるため、スプリアスは低くする。"
+        }
+      ],
+      "officialLabel": "B−5",
+      "bankImageUrls": [
+        "/questions/general2/2025/2025-09-kogaku-a-p05.png"
+      ],
+      "bankImageAltTexts": [
+        "第二級総合無線通信士 2025年9月期 無線工学A 公式問題冊子PDF 5ページの問B−5。"
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表に従い、各解答欄を1点とする。"
+      }
+    }
+  }
+]
