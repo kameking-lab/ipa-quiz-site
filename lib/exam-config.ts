@@ -2039,7 +2039,7 @@ caremanager: {
     sessions: [
         { session: "special-a", urlSlug: "special-a", expectedQuestions: 48, label: "労働基準監督A 専門試験（多肢選択式）", categories: ["労働法", "労働安全衛生", "労災保険", "労働経済", "憲法", "行政法", "刑法", "経済学", "経済事情", "社会保障", "社会学"] },
         { session: "special-b", urlSlug: "special-b", expectedQuestions: 46, label: "労働基準監督B 専門試験（多肢選択式）", categories: ["労働安全衛生", "基礎数学", "物理", "化学"] },
-    ], seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
+    ], seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
 },
 "kokuzei-senmonkan": {
     code: "kokuzei-senmonkan", nameFull: "国税専門官採用試験", urlSlug: "kokuzei-senmonkan", level: "specialist",
