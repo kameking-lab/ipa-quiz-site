@@ -594,6 +594,13 @@ fp1: {
             categories: ["ライフプランニングと資金計画", "リスク管理", "金融資産運用", "タックスプランニング", "不動産", "相続・事業承継"],
         },
         {
+            session: "gakka-II",
+            urlSlug: "gakka-ii",
+            expectedQuestions: 15,
+            label: "学科・応用編",
+            categories: ["ライフプランニングと資金計画", "金融資産運用", "タックスプランニング", "不動産", "相続・事業承継"],
+        },
+        {
             session: "practical",
             urlSlug: "practical",
             expectedQuestions: 20,

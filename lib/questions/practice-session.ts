@@ -52,7 +52,7 @@ export function practiceSessionLabel(session: Session, exam?: ExamCode): string 
     if (session === "am2") return "建築法規";
     if (session === "pm") return "建築設備";
   }
-  if (exam === "fp1" && session === "practical") return "実技・資産設計提案業務";
+  if (exam === "fp1") return EXAM_CONFIGS[exam].sessions.find(item => item.session === session)?.label ?? session;
   if (exam === "chizai2" && session === "practical") return "実技";
   if (exam === "kisho" && session === "ippan") return "学科一般";
   if (exam === "kisho" && session === "senmon") return "学科専門";
