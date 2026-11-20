@@ -1117,7 +1117,7 @@ kangoshi: {
         { session: "gas-basic", urlSlug: "gas-basic", expectedQuestions: 15, label: "基礎", categories: ["基礎"] },
         { session: "gas-technology", urlSlug: "gas-technology", expectedQuestions: 27, label: "ガス技術", categories: ["製造", "供給", "消費"] },
     ],
-    seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
+    seasons: ["annual"], yearRange: { start: 2023, end: 2026 },
 },
 "gas-hei": {
     code: "gas-hei", nameFull: "ガス主任技術者試験（丙種）", urlSlug: "gas-hei", level: "advanced",
