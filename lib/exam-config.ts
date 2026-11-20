@@ -2021,7 +2021,8 @@ caremanager: {
     code: "kokka-ippan-dai", nameFull: "国家公務員採用一般職試験（大卒程度試験）", urlSlug: "kokka-ippan-dai", level: "specialist",
     sessions: [
         { session: "kadai-taiou", urlSlug: "kadai-taiou", expectedQuestions: 120, label: "課題対応能力試験（教養区分）", categories: ["演算記号", "文字の置き換え", "表による分類", "表の計算", "表の照合"] },
-    ], seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+        { session: "kiso", urlSlug: "kiso", expectedQuestions: 30, label: "基礎能力試験", categories: ["文章理解", "判断推理", "数的推理", "資料解釈", "時事", "情報"] },
+    ], seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
 },
 "kokka-ippan-kou": {
     code: "kokka-ippan-kou", nameFull: "国家公務員採用一般職試験（高卒者試験）", urlSlug: "kokka-ippan-kou", level: "basic",
