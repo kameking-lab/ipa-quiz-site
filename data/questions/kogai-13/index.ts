@@ -1,4 +1,5 @@
 import type { Question } from "@/lib/questions/types";
+import airTech2023 from "./2023-annual-taiki-gijutsu.json";
 import dioxinTech2023 from "./2023-annual-dioxin-tokuron.json";
 import waterTreatment2023 from "./2023-annual-osui-tokuron.json";
 import noiseTech2023 from "./2023-annual-soon-shindo-tokuron.json";
@@ -106,5 +107,6 @@ export const KOGAI_13_QUESTIONS: Question[] = [
   ...dioxinFund2023,
   ...dioxinTech2023,
   ...airWater2023,
+  ...airTech2023,
   ...general2022,
 ] as Question[];
