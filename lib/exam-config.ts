@@ -1117,6 +1117,7 @@ kangoshi: {
         { session: "kogai-noise-vibration", urlSlug: "kogai-noise-vibration", expectedQuestions: 25, label: "騒音・振動概論", categories: ["騒音・振動概論"] },
         { session: "kogai-noise-technology", urlSlug: "kogai-noise-technology", expectedQuestions: 30, label: "騒音・振動特論", categories: ["騒音・振動特論"] },
         { session: "kogai-general-dust", urlSlug: "kogai-general-dust", expectedQuestions: 10, label: "ばいじん・粉じん一般特論", categories: ["ばいじん・粉じん一般特論"] },
+        { session: "kogai-dioxin-basics", urlSlug: "kogai-dioxin-basics", expectedQuestions: 15, label: "ダイオキシン類概論", categories: ["ダイオキシン類概論"] },
     ],
     seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
 },
