@@ -7,6 +7,14 @@ it("keeps measured zero and preserves server timestamps", () => {
   expect(presenceViewState(zero, true, null, now)).toEqual({ mode: "measured", snapshot: zero, previous: null });
   expect(parseMeasuredPresence(measured, now + 30_000)).toEqual(measured);
 });
+it("keeps old responses readable and validates and sorts the optional daily counts", () => {
+  const today = { count: 12, activeCount: 3, exams: [
+    { exam: "civil2", count: 2, activeCount: 1 }, { exam: "civil1", count: 10, activeCount: 2 },
+  ] };
+  expect(parseMeasuredPresence({ ...measured, today }, now)?.today).toEqual({ ...today, exams: [...today.exams].reverse() });
+  expect(parseMeasuredPresence({ ...measured, today: { ...today, activeCount: 12 } }, now)).toEqual(measured);
+  expect(parseMeasuredPresence({ ...measured, today: { count: 2, activeCount: 3, exams: [{ exam: "civil2", count: 2, activeCount: 3 }] } }, now)).toEqual(measured);
+});
 it.each([
   { count: 2, exams: [{ exam: "fe", count: 2 }] },
   { ...measured, measuredAt: undefined }, { ...measured, measuredAt: "invalid" },

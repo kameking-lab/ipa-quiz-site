@@ -1,9 +1,9 @@
 import "server-only";
-import { PRESENCE_POLL_MS, type StudyPresenceSnapshot } from "@/lib/study-presence";
+import { PRESENCE_POLL_MS, type StudyPresenceSnapshot, type StudyPresenceToday } from "@/lib/study-presence";
 import { measuredPresence, presenceRetryDelay, unavailablePresence, type MeasuredPresence, type PresenceResponse } from "@/lib/study-presence-contract";
 
 interface PresenceStore {
-  read: (measuredAt: number) => Promise<{ snapshot: StudyPresenceSnapshot; expiresAt?: number }>;
+  read: (measuredAt: number) => Promise<{ snapshot: StudyPresenceSnapshot; today?: StudyPresenceToday; expiresAt?: number }>;
   record: (id: string, answeredAt: number, exam: string, previousId?: string) => Promise<void>;
 }
 
@@ -37,8 +37,8 @@ export function createPresenceService(store: PresenceStore, now: () => number = 
   async function measure(): Promise<MeasuredPresence> {
     const measuredAt = now();
     const version = generation;
-    const { snapshot, expiresAt } = await store.read(measuredAt);
-    const result = measuredPresence(snapshot, measuredAt, expiresAt);
+    const { snapshot, today, expiresAt } = await store.read(measuredAt);
+    const result = measuredPresence(snapshot, measuredAt, expiresAt, today);
     // An older in-flight success cannot erase a failure or overwrite a newer snapshot.
     if (version === generation && (!cached || Date.parse(cached.measuredAt) <= measuredAt)) cached = result;
     return result;

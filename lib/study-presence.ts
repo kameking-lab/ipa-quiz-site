@@ -28,6 +28,8 @@ export function presenceExamName(exam: string): string | undefined { return name
 
 export interface StudyPresenceCount { exam: string; count: number }
 export interface StudyPresenceSnapshot { count: number; exams: StudyPresenceCount[] }
+export interface StudyPresenceTodayCount extends StudyPresenceCount { activeCount: number }
+export interface StudyPresenceToday extends StudyPresenceSnapshot { activeCount: number; exams: StudyPresenceTodayCount[] }
 
 export function parseStudyPresence(value: unknown): StudyPresenceSnapshot | null {
   if (!value || typeof value !== "object") return null;
@@ -46,6 +48,21 @@ export function parseStudyPresence(value: unknown): StudyPresenceSnapshot | null
   if (exams.reduce((total, row) => total + row.count, 0) !== data.count) return null;
   exams.sort((a, b) => b.count - a.count || a.exam.localeCompare(b.exam, "en"));
   return { count: data.count as number, exams };
+}
+
+export function parseStudyPresenceToday(value: unknown): StudyPresenceToday | null {
+  const snapshot = parseStudyPresence(value);
+  if (!snapshot) return null;
+  const data = value as StudyPresenceToday;
+  const activeByExam = new Map<string, number>();
+  let activeCount = 0;
+  for (const row of data.exams) {
+    if (!Number.isSafeInteger(row.activeCount) || row.activeCount < 0 || row.activeCount > row.count) return null;
+    activeByExam.set(row.exam, row.activeCount);
+    activeCount += row.activeCount;
+  }
+  if (activeCount !== data.activeCount) return null;
+  return { count: snapshot.count, activeCount, exams: snapshot.exams.map(row => ({ ...row, activeCount: activeByExam.get(row.exam)! })) };
 }
 
 export function isActiveStudyTab(visible: boolean, lastActivity: number, now: number) {
