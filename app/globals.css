@@ -109,6 +109,9 @@
   --color-warning-soft-foreground: var(--warning-soft-foreground);
   --color-success-soft: var(--success-soft);
   --color-success-soft-foreground: var(--success-soft-foreground);
+  --color-danger-soft: var(--danger-soft);
+  --color-danger-soft-foreground: var(--danger-soft-foreground);
+  --color-shu: var(--shu);
   --color-progress-track: var(--progress-track);
   --color-activity-1: var(--activity-1);
   --color-activity-2: var(--activity-2);
@@ -119,6 +122,7 @@
 
   /* Borders */
   --color-border: var(--border);
+  --color-hairline: var(--hairline);
   --color-input: var(--input);
   --color-ring: var(--ring);
 
@@ -153,11 +157,35 @@
   --font-display: "Noto Serif JP Display", "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
 }
 
+@utility study-column {
+  @apply mx-auto w-full max-w-[640px] px-4 sm:px-6;
+}
+
+@utility study-surface {
+  @apply rounded-lg border border-hairline bg-card p-4;
+}
+
+@utility study-row {
+  @apply flex min-h-12 items-center justify-between gap-3 py-2 text-base leading-[1.7];
+}
+
+@utility study-focus {
+  @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring;
+}
+
+@utility study-primary {
+  @apply study-focus inline-flex min-h-12 w-full items-center justify-between gap-2 rounded-xl bg-primary px-4 py-2 text-left text-base font-semibold text-primary-foreground hover:bg-primary-hover;
+}
+
+@utility study-link {
+  @apply study-focus inline-flex min-h-11 items-center text-sm text-primary underline underline-offset-4;
+}
+
 /* ---------------------------------------------------------------------------
    Light theme
    --------------------------------------------------------------------------- */
 :root {
-  --background: #f4eee2;
+  --background: #f7f2e8;
   --foreground: #1f2421;
 
   --card: #fffcf6;
@@ -189,6 +217,9 @@
   --warning-soft-foreground: #8a4108;
   --success-soft: #ddeee3;
   --success-soft-foreground: #1c5434;
+  --danger-soft: #f8e2dc;
+  --danger-soft-foreground: #8c2a1c;
+  --shu: #b4472a;
   --progress-track: #ede4d3;
   --activity-1: #d6e6d8;
   --activity-2: #aac9ae;
@@ -198,7 +229,8 @@
   --room-floor: #d9c3a0;
 
   --border: #e4daca;
-  --input: #a59e8c;
+  --hairline: rgb(31 36 33 / .10);
+  --input: #807763;
   --ring: #54735d;
 
   --radius: 0.875rem;
@@ -240,6 +272,9 @@
   --warning-soft-foreground: #f7c999;
   --success-soft: #263f30;
   --success-soft-foreground: #bde3c5;
+  --danger-soft: #46241e;
+  --danger-soft-foreground: #f2b6a6;
+  --shu: #e8916f;
   --progress-track: #484839;
   --activity-1: #364a38;
   --activity-2: #4f6951;
@@ -249,7 +284,8 @@
   --room-floor: #4a4131;
 
   --border: #49473a;
-  --input: #767461;
+  --hairline: rgb(246 239 225 / .13);
+  --input: #92927d;
   --ring: #a8c7ab;
 }
 

@@ -97,10 +97,12 @@ describe("home plan entry", () => {
     savePacePlan(plan());
     render(<HomePace domains={domains} planExamKeys={["ip", "fe"]} />);
     for (const name of ["合格", "不合格", "受けなかった"]) expect(screen.getByRole("button", { name })).toBeVisible();
-    expect(screen.queryByRole("searchbox")).not.toBeInTheDocument();
-    expect(screen.queryByRole("img", { name: /^進み具合/ })).not.toBeInTheDocument();
+    expect(screen.getByRole("searchbox")).toBeVisible();
+    expect(screen.getByRole("img", { name: "進み具合0%、試験終了" })).toBeVisible();
     fireEvent.click(screen.getByRole("button", { name: label }));
     expect(listPacePlans()[0].result).toBe(result);
+    expect(screen.getByRole("searchbox")).toBeVisible();
+    expect(screen.getByRole("img", { name: "進み具合0%、試験終了" })).toBeVisible();
     if (result === "passed") {
       expect(screen.getByRole("link", { name: "次は 基本情報技術者へ" })).toHaveAttribute("href", "/fe");
     } else {

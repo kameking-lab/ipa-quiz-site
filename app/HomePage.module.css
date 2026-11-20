@@ -1,4 +1,4 @@
-.home { padding-top: 4px; }
+.home { padding-top: 12px; }
 :global(#main-content):has(.home) { padding-bottom: 0; }
 .shortcuts {
   display: grid;
@@ -8,4 +8,5 @@
   margin-block: 12px 8px;
 }
 .shortcuts:has(> .directory[open]) { grid-template-columns: minmax(0, 1fr); }
+.shortcuts { border-top: 1px solid var(--hairline); }
 @media (min-width: 640px) { .home { padding-top: 16px; } }

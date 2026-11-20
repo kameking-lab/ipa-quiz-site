@@ -2,8 +2,9 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ChevronDown, ChevronRight, Search, X } from "lucide-react";
+import { ArrowRight, ChevronDown, ChevronRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { StudySearchField } from "@/components/ui/StudySearchField";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import type { HomeDirectoryDomain } from "@/lib/home/home-directory";
 import { groupHomeDirectoryItems } from "@/lib/home/grouped-directory";
@@ -14,7 +15,7 @@ import { paceAttempts, loadPlanCatalog } from "@/lib/study-plan/client";
 import { historyExamLookup, japanDate, upcomingExamPicks } from "@/lib/home/featured-exams";
 import { readHomeStudy, relativeStudyDate } from "@/lib/home/recent-study";
 import { LS_KEYS } from "@/lib/storage/keys";
-import { qualificationRunArt, qualificationStudyArt } from "@/lib/home/study-room";
+import { qualificationRunArt } from "@/lib/home/study-room";
 import { passingLineForExam } from "@/lib/study-plan/policy";
 import { qualificationIdsForExam } from "@/lib/study-plan/schedule";
 import { searchQualifications } from "@/lib/qualifications/search";
@@ -147,83 +148,76 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false }: {
   return <>
     <section id="today" aria-label="今日の学習" aria-busy={!ready} data-home-state={!ready ? "loading" : postExam ? "post-exam" : plan ? "planned" : returning ? "returning" : "new"}>
       {plan && pace ? (
-        <div className={`${styles.content} overflow-hidden rounded-2xl border border-border bg-card`}>
-          <div className="flex items-center justify-between gap-2">
-            <button className={styles.qualification} onClick={() => setSheet("switch")} aria-label="資格を切り替える" aria-describedby="home-qualification" aria-haspopup="dialog" aria-expanded={sheet === "switch"}><span id="home-qualification">{item?.name ?? plan.exam}</span><ChevronDown aria-hidden="true" className="size-4 shrink-0 text-muted-foreground" /></button>
-            {plan.examDate && <span className="shrink-0 text-xs text-muted-foreground"><time dateTime={plan.examDate}>{shortDate(plan.examDate)}</time> 受験</span>}
+        <div className="study-surface">
+          <div className="flex items-start justify-between gap-2">
+            <button className={`${styles.qualification} study-focus`} onClick={() => setSheet("switch")} aria-label="資格を切り替える" aria-describedby="home-qualification" aria-haspopup="dialog" aria-expanded={sheet === "switch"}><span id="home-qualification">{item?.name ?? plan.exam}</span><ChevronDown aria-hidden="true" className="size-4 shrink-0 text-muted-foreground" /></button>
+            {plan.examDate && <span className="shrink-0 pt-3 text-[13px] text-muted-foreground tabular-nums"><time dateTime={plan.examDate}>{shortDate(plan.examDate)}</time> 受験</span>}
           </div>
-          {plan.registration && <p className="text-xs text-muted-foreground">{plan.registration.label}</p>}
-          {postExam ? <div className="py-6 text-center">
-            {!plan.result ? <>
-              <h1 className="text-xl font-bold">試験、おつかれさまでした</h1>
-              <div className="mt-6 grid grid-cols-3 gap-2">
-                {([['passed', '合格'], ['failed', '不合格'], ['absent', '受けなかった']] as const).map(([result, label]) => (
-                  <Button key={result} variant={result === "passed" ? "default" : "outline"} className="min-h-12 px-1" onClick={() => updatePlan({ result })}>{label}</Button>
-                ))}
-              </div>
-            </> : plan.result === "passed" ? <>
-              <span className="text-4xl" aria-hidden="true">🎉</span>
-              <h1 className="mt-3 text-2xl font-bold">合格おめでとう！</h1>
-              <PaceDog exam={plan.exam} />
-              <Link className="mt-4 inline-flex min-h-11 items-center underline" href={nextExam?.href ?? "/search"}>
+          {plan.registration && <p className="text-[13px] text-muted-foreground">{plan.registration.label}</p>}
+          {postExam ? <>
+            <h1 className="mt-2 text-2xl leading-tight font-bold">試験、おつかれさまでした</h1>
+            <PaceTrack plan={plan} runArt={qualificationRunArt(plan.exam, planDomain?.id)} percent={pace.percent} target={null} finished />
+            {!plan.result ? <div aria-label="結果を記録" role="group" className="mt-2 grid grid-cols-3 gap-2">
+              {([["passed", "合格"], ["failed", "不合格"], ["absent", "受けなかった"]] as const).map(([result, label]) => (
+                <Button key={result} variant="outline" className="min-h-12 border-input bg-card px-1" onClick={() => updatePlan({ result })}>{label}</Button>
+              ))}
+            </div> : plan.result === "passed" ? <div className="mt-2 border-t border-hairline pt-2">
+              <h2 className="text-xl font-bold">合格おめでとう！</h2>
+              <Link className="study-link" href={nextExam?.href ?? "/search"}>
                 {nextExam ? `次は ${nextExam.name}へ` : "次の資格を選ぶ"}
               </Link>
-            </> : <Button className="min-h-12 w-full" aria-haspopup="dialog" onClick={() => setSheet("create")}>学習計画を作成</Button>}
-          </div> : <>
-            <h1 className={`${styles.countdown} font-display`} aria-label={pace.daysRemaining === null ? "受験日未設定" : undefined}>試験まで <span>{pace.daysRemaining ?? "—"}</span> 日</h1>
+            </div> : <button type="button" className="study-primary mt-2" aria-haspopup="dialog" onClick={() => setSheet("create")}>学習計画を作成 <ArrowRight aria-hidden="true" className="size-5 shrink-0" /></button>}
+          </> : <>
+            <h1 className={styles.countdown} aria-label={pace.daysRemaining === null ? "受験日未設定" : undefined}>試験まで <span className="font-display font-semibold tabular-nums">{pace.daysRemaining ?? "—"}</span> 日</h1>
             <PaceTrack plan={plan} runArt={qualificationRunArt(plan.exam, planDomain?.id)} percent={pace.percent} target={pace.idealPercent} />
-            <div className="mt-2 flex items-center justify-between gap-2">
-              <p className={`rounded-full px-3 py-1 text-sm font-bold ${pace.judgment === "behind" ? "bg-warning-soft text-warning-soft-foreground" : pace.judgment === "unscheduled" ? "bg-muted text-muted-foreground" : "bg-success-soft text-success-soft-foreground"}`}>{pace.judgment === "ahead" ? "いいペース" : pace.judgment === "behind" ? "少し遅れ" : pace.judgment === "unscheduled" ? "日程未設定" : "予定どおり"}</p>
-              <p className="text-xs text-muted-foreground">今日 {completedToday}問</p>
+            <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[13px] text-muted-foreground tabular-nums">
+              <p className={`rounded-full px-2.5 py-1 font-bold ${pace.judgment === "behind" ? "bg-warning-soft text-warning-soft-foreground" : pace.judgment === "unscheduled" ? "bg-muted text-muted-foreground" : "bg-success-soft text-success-soft-foreground"}`}>{pace.judgment === "ahead" ? "いいペース" : pace.judgment === "behind" ? "少し遅れ" : pace.judgment === "unscheduled" ? "日程未設定" : "予定どおり"}</p>
+              <p>今日 {completedToday}問</p>
+              {pace.requiredQuestionsPerDay !== null && <p>{pace.requiredQuestionsPerDay === 0 ? "すべての問題を仕上げました" : <>1日 <strong className="font-display text-base font-semibold text-foreground">{pace.requiredQuestionsPerDay}</strong> 問</>}</p>}
             </div>
-            {pace.requiredQuestionsPerDay !== null && <p className="mt-3 text-sm">{pace.requiredQuestionsPerDay === 0 ? "すべての問題を仕上げました" : <>1日 <strong className="font-display text-xl font-bold tabular-nums">{pace.requiredQuestionsPerDay}</strong> 問</>}</p>}
-            <Button asChild size="xl" className="mt-3 w-full"><Link href={`/quiz/today?plan=${encodeURIComponent(plan.id)}`}>今日の問題を解く <span aria-hidden="true">→</span></Link></Button>
-            {offerVisibleOn === today && paid === false && pace.judgment === "behind" && (pace.requiredQuestionsPerDay ?? 0) > 10 && <div className="mt-3 flex items-center gap-2 border-t border-border pt-1 text-xs"><Link href={PRICE_PAGE_LINK.href} className="flex min-h-11 flex-1 items-center leading-relaxed text-primary underline-offset-4 hover:underline">1日{pace.requiredQuestionsPerDay}問必要です。月額プランなら回数無制限で追いつけます</Link><button aria-label="月額プランの案内を閉じる" className="flex min-h-11 min-w-11 items-center justify-center rounded-lg text-muted-foreground hover:bg-muted" onClick={() => { storeOffer({ ...readOffer(), dismissedOn: today }); setOfferVisibleOn(""); }}><X className="size-4" /></button></div>}
+            <Link className="study-primary mt-2" href={`/quiz/today?plan=${encodeURIComponent(plan.id)}`}>今日の問題を解く <ArrowRight aria-hidden="true" className="size-5 shrink-0" /></Link>
+            {offerVisibleOn === today && paid === false && pace.judgment === "behind" && (pace.requiredQuestionsPerDay ?? 0) > 10 && <div className="mt-2 flex items-center gap-2 border-t border-hairline pt-1"><Link href={PRICE_PAGE_LINK.href} className="study-link flex-1 text-[13px] leading-[1.7]">1日{pace.requiredQuestionsPerDay}問必要です。月額プランなら回数無制限で追いつけます</Link><button aria-label="月額プランの案内を閉じる" className="study-focus flex min-h-11 min-w-11 items-center justify-center rounded-lg text-muted-foreground hover:bg-muted" onClick={() => { storeOffer({ ...readOffer(), dismissedOn: today }); setOfferVisibleOn(""); }}><X className="size-4" /></button></div>}
           </>}
-          <button type="button" onClick={() => setSheet("detail")} className="min-h-11 text-sm underline underline-offset-4">
+          <button type="button" onClick={() => setSheet("detail")} className="study-link">
             学習計画の詳細{warning ? '（申込締切 ' + (plan.registration?.deadline ? shortDate(plan.registration.deadline) : '') + '）' : ''}
           </button>
         </div>
-      ) : returning ? <div className={`${styles.content} rounded-2xl border border-border bg-card`}>
-        <p className="text-xs text-muted-foreground">おかえりなさい</p>
-        <h1 className="mt-1 text-base font-bold">{resume?.name ?? previousItem?.name}</h1>
-        <div className="mt-1 flex flex-wrap items-baseline gap-x-3 text-xs text-muted-foreground">
+      ) : returning ? <div className="study-surface">
+        <p className="text-[13px] text-muted-foreground">おかえりなさい</p>
+        <h1 className="mt-1 text-[26px] leading-tight font-bold wrap-anywhere">{resume?.name ?? previousItem?.name}</h1>
+        <div className="mt-2 flex flex-wrap items-baseline gap-x-3 text-[13px] text-muted-foreground tabular-nums">
           {resume?.caption && <p>前回 {resume.caption}</p>}
           <p>今日 {completedToday}問</p>
         </div>
         <StartTrack runArt={qualificationRunArt(previousExam ?? "", previousDomain?.id)} />
-        <Button asChild size="xl" className="mt-2 w-full"><Link href={resume?.href ?? previousItem?.href ?? "/search"}>続きを解く <span aria-hidden="true">→</span></Link></Button>
-        <button type="button" className="mx-auto flex min-h-11 items-center px-2 text-sm text-primary underline underline-offset-4" aria-haspopup="dialog" onClick={() => setSheet("create")}>試験日を決める</button>
+        <Link className="study-primary mt-2" href={resume?.href ?? previousItem?.href ?? "/search"}>続きを解く <ArrowRight aria-hidden="true" className="size-5 shrink-0" /></Link>
+        <button type="button" className="study-link" aria-haspopup="dialog" onClick={() => setSheet("create")}>試験日を決める</button>
       </div> : (
-        <div className="flex items-center justify-between gap-4 pt-3">
-          <h1 aria-label="今日も、ひと問ずつ。" className="font-display text-[28px] font-bold leading-snug sm:text-4xl">今日も、<br />ひと問ずつ。</h1>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/mascot/chihuahua-guide.webp" alt="" width={80} height={80} className="size-20 object-contain sm:size-[88px]" />
-        </div>
+        <h1 aria-label="今日も、ひと問ずつ。" className="font-display text-[28px] leading-tight font-semibold tabular-nums">今日も、<br />ひと問ずつ。</h1>
       )}
-      {!postExam && <label className={`${styles.search} mt-3 flex min-h-[54px] items-center gap-3 rounded-xl border border-input bg-card px-4`}><Search aria-hidden="true" className="size-5 shrink-0 text-muted-foreground" /><input id="qualification-search" aria-label="資格名・略称で検索" aria-controls={term || firstVisit ? "home-qualification-results" : undefined} disabled={!ready} type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder={firstVisit ? "受ける資格は？" : "ほかの資格をさがす"} className="w-full min-w-0 bg-transparent py-3 text-base outline-none" /></label>}
-      {!postExam && (term || firstVisit) && <>
-        <h2 id="home-results-title" className="mb-2 mt-3 text-xs text-muted-foreground">{term ? "検索結果" : "試験が近い資格"}</h2>
-        <ul id="home-qualification-results" aria-labelledby="home-results-title" className="space-y-1.5">{matched.map(i => {
+      <div className="mt-3"><StudySearchField compact={!firstVisit} id="qualification-search" aria-label="資格名・略称で検索" aria-controls={term || firstVisit ? "home-qualification-results" : undefined} disabled={!ready} value={query} onChange={e => setQuery(e.target.value)} placeholder={firstVisit ? "受ける資格は？" : "ほかの資格をさがす"} /></div>
+      {(term || firstVisit) && <>
+        <h2 id="home-results-title" className="mt-3 text-[13px] font-semibold text-muted-foreground">{term ? "検索結果" : "試験が近い資格"}</h2>
+        <ul id="home-qualification-results" aria-labelledby="home-results-title" className="divide-y divide-hairline">{matched.map(i => {
           const date = picks.find(pick => pick.key === i.key)?.next;
-          return <li key={i.key}><Link href={i.href} className={`${styles.result} rounded-lg border border-border bg-card px-3`}><span>{i.name}</span><span className="flex shrink-0 items-center gap-1 text-xs text-muted-foreground">{date && <time dateTime={date.date}>{i.children ? "直近 " : ""}{shortDate(date.date)}{date.endDate ? `〜${shortDate(date.endDate)}` : ""}{date.note ? `（${date.note}）` : ""}</time>}<ChevronRight aria-hidden="true" className="size-4" /></span></Link></li>;
+          return <li key={i.key}><Link href={i.href} className="study-row study-focus hover:text-primary"><span className="min-w-0 wrap-anywhere">{i.name}</span><span className="flex max-w-[45%] items-center gap-1 text-right text-[13px] text-muted-foreground tabular-nums">{date && <time dateTime={date.date}>{i.children ? "直近 " : ""}{shortDate(date.date)}{date.endDate ? `〜${shortDate(date.endDate)}` : ""}{date.note ? `（${date.note}）` : ""}</time>}<ChevronRight aria-hidden="true" className="size-4 shrink-0" /></span></Link></li>;
         })}</ul>
         {term && matched.length > 0 && <p role="status" className="sr-only">検索結果 {matched.length}件</p>}
         {term && !matched.length && <p role="status" className="py-4 text-sm text-muted-foreground">該当する資格が見つかりませんでした。</p>}
       </>}
       {firstVisit && <>
-        <button type="button" disabled={!ready} aria-haspopup="dialog" aria-labelledby="home-start-track-description" className="mt-2 block w-full rounded-2xl border border-dashed border-input bg-card px-3 py-1.5 hover:bg-muted disabled:opacity-50" onClick={() => setSheet("create")}>
+        <button type="button" disabled={!ready} aria-haspopup="dialog" aria-labelledby="home-start-track-description" className="study-focus mt-2 block w-full rounded-lg border border-dashed border-input bg-card px-3 py-2 hover:bg-muted disabled:opacity-50" onClick={() => setSheet("create")}>
           <StartTrack runArt={qualificationRunArt(initialExam)} />
-          <span id="home-start-track-description" className="block text-xs text-primary">試験日を決めると、チワワが走り出す</span>
+          <span id="home-start-track-description" className="block text-[13px] text-primary underline underline-offset-4">試験日を決めると、チワワが走り出す</span>
         </button>
-        <p className="mt-3 text-center text-xs leading-relaxed text-muted-foreground">{domains.reduce((n, d) => n + d.qualificationCount, 0)}資格・{domains.reduce((n, d) => n + d.totalQuestions, 0).toLocaleString("ja-JP")}問・ログインなしで1日10問まで無料</p>
+        <p className="mt-2 text-center text-[13px] leading-[1.7] text-muted-foreground tabular-nums">{domains.reduce((n, d) => n + d.qualificationCount, 0)}資格・{domains.reduce((n, d) => n + d.totalQuestions, 0).toLocaleString("ja-JP")}問・ログインなしで1日10問まで無料</p>
       </>}
-      {recentItems.length > 0 && <>
-        <h2 id="home-recent-title" className="mb-2 mt-3 text-xs text-muted-foreground">最近解いた資格</h2>
-        <ul aria-labelledby="home-recent-title" className="space-y-1.5">
+      {!term && recentItems.length > 0 && <>
+        <h2 id="home-recent-title" className="mt-3 text-[13px] font-semibold text-muted-foreground">最近解いた資格</h2>
+        <ul aria-labelledby="home-recent-title" className="divide-y divide-hairline">
           {recentItems.map(({ item, at }) => <li key={item.key}>
-            <Link href={item.href} className={`${styles.result} rounded-lg border border-border bg-card px-3`}>
-              <span>{item.name}</span><span className="flex shrink-0 items-center gap-1 text-xs text-muted-foreground">{relativeStudyDate(at, today)}<ChevronRight aria-hidden="true" className="size-4" /></span>
+            <Link href={item.href} className="study-row study-focus hover:text-primary">
+              <span className="min-w-0 wrap-anywhere">{item.name}</span><span className="flex shrink-0 items-center gap-1 text-[13px] text-muted-foreground tabular-nums">{relativeStudyDate(at, today)}<ChevronRight aria-hidden="true" className="size-4" /></span>
             </Link>
           </li>)}
         </ul>
@@ -243,8 +237,4 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false }: {
       <Button variant="outline" asChild className="min-h-12 w-full"><Link href="/me#study-progress">学習計画</Link></Button></div></SheetContent></Sheet>
     <Sheet open={sheet === "detail"} onOpenChange={open => { if (!open) setSheet(null); }}><SheetContent side="bottom" aria-describedby={undefined} className={`${styles.sheet} mx-auto max-h-[min(85dvh,calc(100dvh-var(--safe-top)-1rem))] max-w-[640px] overflow-y-auto pb-[max(1.5rem,var(--safe-bottom))]`}><SheetHeader><SheetTitle>学習計画</SheetTitle></SheetHeader>{plan && <div className="mt-5 space-y-4 text-sm"><p className="font-semibold">{item?.name ?? plan.exam}　{plan.registration?.label}</p><dl className="space-y-3">{[["申込開始", plan.registration?.start], ["申込締切", plan.registration?.deadline], ["試験日", plan.examDate], ["合格発表", plan.registration?.resultDate]].map(([label, value]) => <div key={label} className="flex justify-between gap-3"><dt className="text-muted-foreground">{label}</dt><dd>{value ?? "未発表"}{plan.registration?.estimated && label?.startsWith("申込") ? "（予定）" : ""}</dd></div>)}</dl>{plan.registration?.sourceUrl && <a href={plan.registration.sourceUrl} target="_blank" rel="noopener noreferrer" className="block min-h-11 py-3 underline">申込ページを開く（公式） ↗</a>}<details><summary className="min-h-11 cursor-pointer py-3 font-medium">申し込み・計画の変更</summary>{!plan.registered && <Button className="min-h-12 w-full" onClick={() => updatePlan({ registered: true })}>申込済みにする</Button>}<a href={`https://tsugino-shikaku.jp/${qualificationIdsForExam(plan.exam)[0] ? `shikaku/${qualificationIdsForExam(plan.exam)[0]}` : "calendar"}`} target="_blank" rel="noopener noreferrer" className="block py-3 underline">日程を次の資格で見る ↗</a><p>今日 {completedToday}問 · {Math.round(pace?.percent ?? 0)}%</p>{passingLineForExam(plan.exam).sourceUrl && <a className="block underline" href={passingLineForExam(plan.exam).sourceUrl!} target="_blank" rel="noopener noreferrer">合格基準（公式）</a>}{passingLineForExam(plan.exam).conditions && <p className="text-xs text-muted-foreground">{passingLineForExam(plan.exam).conditions}</p>}<Link className="block py-3 underline" href="/me">学習の記録</Link><Button variant="outline" className="min-h-12 w-full" onClick={() => setSheet("create")}>受ける回を変更</Button><button className="min-h-11 w-full text-destructive" onClick={() => { if (deletePacePlan(plan.id)) { setActive(""); setSheet(null); refresh(); } else setError("削除できませんでした。"); }}>計画を削除</button></details></div>}</SheetContent></Sheet>
   </>;
-}
-function PaceDog({ exam }: { exam: string }) {
-  // eslint-disable-next-line @next/next/no-img-element
-  return <img src={qualificationStudyArt(exam)} onError={e => { if (!e.currentTarget.src.endsWith("/mascot/chihuahua-study.webp")) e.currentTarget.src = "/mascot/chihuahua-study.webp"; }} alt="チワワ" width={80} height={80} className="mx-auto size-20 object-contain motion-safe:animate-[bounce_2s_infinite]" />;
 }

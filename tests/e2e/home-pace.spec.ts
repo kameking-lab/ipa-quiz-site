@@ -112,6 +112,7 @@ for (const width of [390, 1280]) {
       if (width === 390) await expectHomeNavGap(page);
       await search.fill("あいぱす");
       await expect(page.locator("#home-qualification-results").getByRole("link")).toHaveAttribute("href", "/ip");
+      await expect(rows).toHaveCount(0);
     });
     test("④ create: choose day, save, return to pace card", async ({ page }) => {
       await fixtures(page, undefined, 0, true); await page.goto("/");
@@ -145,10 +146,13 @@ for (const width of [390, 1280]) {
       await expect(page.getByRole("dialog", { name: "学習計画を作成" })).toBeVisible();
     });
     test("post-exam: one-tap result and one next qualification", async ({ page }) => {
-      await fixtures(page, { ...fixturePlan(), examDate: "2026-11-16" }); await page.goto("/");
+      await fixtures(page, { ...fixturePlan(), examDate: "2026-11-16" }, 62); await page.goto("/");
       await expect(page.locator('[data-home-state="post-exam"]')).toBeVisible();
-      await expect(page.getByRole("searchbox")).toHaveCount(0);
-      await expect(page.getByRole("img", { name: /^進み具合/ })).toHaveCount(0);
+      const search = page.getByRole("searchbox");
+      const track = page.getByRole("img", { name: "進み具合31%、試験終了" });
+      await expect(search).toHaveCount(1);
+      await expect(track).toHaveCount(1);
+      await expect(track.getByText("今日の目標")).toHaveCount(0);
       for (const label of ["合格", "不合格", "受けなかった"]) {
         await expect(page.getByRole("button", { name: label, exact: true })).toBeVisible();
       }
@@ -157,6 +161,8 @@ for (const width of [390, 1280]) {
       await page.getByRole("button", { name: "合格", exact: true }).click();
       await expect(page.getByRole("heading", { name: "合格おめでとう！" })).toBeVisible();
       await expect(page.locator("main").getByRole("link", { name: /次は/ })).toHaveCount(1);
+      await expect(search).toHaveCount(1);
+      await expect(track).toHaveCount(1);
     });
     test("today uses real questions in review/resume order and survives reload", async ({ page, request }) => {
       const response = await request.get("/api/study-plan/catalog/ip");
