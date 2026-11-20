@@ -584,8 +584,8 @@ fp1: {
             label: "学科・基礎編",
             categories: ["ライフプランニングと資金計画", "リスク管理", "金融資産運用", "タックスプランニング", "不動産", "相続・事業承継"],
         }],
-    seasons: ["may", "september"],
-    yearRange: { start: 2026, end: 2026 },
+    seasons: ["may", "september", "january"],
+    yearRange: { start: 2022, end: 2026 },
 },
 fp3: {
     code: "fp3",
