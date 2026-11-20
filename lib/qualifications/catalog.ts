@@ -1858,7 +1858,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_13.html",
     officialReuseTermsUrl: "https://www.jinji.go.jp/shinsei/notice.html",
     status: "live",
-    reuseSummary: "2024年度の院卒者・大卒程度共通の基礎能力30問、2025～2026年度の専門試験・法律各49問、2026年度の経済34問、政治・国際・人文65問、院卒者・大卒程度共通のデジタル63問、人間科学78問、工学127問、数理科学・物理・地球科学87問、化学・生物・薬学94問、農業科学・水産134問、農業農村工学71問を、公式正答・全肢解説付きで収録。",
+    reuseSummary: "2024年度の院卒者・大卒程度共通の基礎能力30問、2025～2026年度の専門試験・法律各49問、2026年度の経済34問、政治・国際・人文65問、院卒者・大卒程度共通のデジタル63問、人間科学78問、工学127問、数理科学・物理・地球科学87問、化学・生物・薬学94問、農業科学・水産134問、農業農村工学71問、森林・自然環境117問を、公式正答・全肢解説付きで収録。",
     attributionTemplate: "出典：人事院「国家公務員採用総合職試験」。解説は過去問AIの独自作成。",
     remainingWork: ["未収録の試験区分の補充"],
   },
