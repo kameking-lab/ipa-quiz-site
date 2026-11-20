@@ -1476,7 +1476,7 @@ shuwa: {
 "cfp-souzoku": {
     code: "cfp-souzoku", nameFull: "CFP®資格審査試験 相続・事業承継設計", urlSlug: "cfp-souzoku", level: "advanced",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "相続・事業承継設計", categories: ["相続・事業承継設計"] }],
-    seasons: ["first", "second"], yearRange: { start: 2024, end: 2025 },
+    seasons: ["first", "second"], yearRange: { start: 2023, end: 2025 },
 },
 "dekyo-chief-2": {
     code: "dekyo-chief-2", nameFull: "電気通信主任技術者", urlSlug: "dekyo-chief-2", level: "specialist",
