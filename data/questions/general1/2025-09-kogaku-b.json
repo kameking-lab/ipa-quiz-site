@@ -1,0 +1,1653 @@
+[
+  {
+    "id": "radio21-general1-2025-09-kogaku-b-q01",
+    "exam": "general1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 1,
+    "category": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "真空中の平面波"
+    ],
+    "difficulty": 3,
+    "question": "真空中を伝わる平面波の一般的な特徴として、誤っているものを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2025年9月期 無線工学B A-1（問題・正答、試験問題記号 709）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2025-09-kogaku-b-q01-p01.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学B 2025年9月期 A-1 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "電界と磁界の大きさはそれぞれ進行方向に垂直な平面内で一様である。",
+      "イ": "電界と磁界はともに進行方向に垂直で、互いに平行である。",
+      "ウ": "電界と磁界は同位相である。",
+      "エ": "電界と磁界の大きさの比は一定である。",
+      "オ": "伝搬速度は真空の誘電率と透磁率によって決まる。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "電界と磁界はともに進行方向に垂直で、互いにも垂直である。",
+    "choiceExplanations": {
+      "ア": "一様な平面波では、進行方向に垂直な同じ波面上で電界も磁界も一様である。",
+      "イ": "電界と磁界はともに進行方向に垂直で、互いにも垂直である。",
+      "ウ": "真空中の進行平面波では、電界と磁界の時間的な位相は一致する。",
+      "エ": "電界と磁界の強さの比は真空の固有インピーダンスに等しい。",
+      "オ": "真空中の伝搬速度は真空の誘電率ε₀と透磁率μ₀から1/√(ε₀μ₀)で求まる。"
+    }
+  },
+  {
+    "id": "radio21-general1-2025-09-kogaku-b-q02",
+    "exam": "general1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 2,
+    "category": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "開口効率"
+    ],
+    "difficulty": 3,
+    "question": "周波数10 GHz、開口面積10 m²のパラボラアンテナの絶対利得が真数で100,000のとき、開口効率に最も近い値を選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2025年9月期 無線工学B A-2（問題・正答、試験問題記号 709）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2025-09-kogaku-b-q02-p01.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学B 2025年9月期 A-2 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "0.5",
+      "イ": "0.6",
+      "ウ": "0.7",
+      "エ": "0.8",
+      "オ": "0.9"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "η＝Gλ²/(4πA)＝100,000×0.03²/(4π×10)≈0.716である。",
+    "choiceExplanations": {
+      "ア": "波長0.03 mを使った理想利得は約140,000であり、実測値はその半分より大きい。",
+      "イ": "効率0.6なら利得は約84,000となり、測定値を下回る。",
+      "ウ": "η＝Gλ²/(4πA)＝100,000×0.03²/(4π×10)≈0.716である。",
+      "エ": "効率0.8なら利得は約112,000となり、測定値を上回る。",
+      "オ": "効率0.9なら利得は約126,000となり、測定値より大きい。"
+    }
+  },
+  {
+    "id": "radio21-general1-2025-09-kogaku-b-q03",
+    "exam": "general1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 3,
+    "category": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "アンテナの実効面積"
+    ],
+    "difficulty": 3,
+    "question": "絶対利得G＝Sₑ/Sₛの関係を使う。微小ダイポールの実効面積A、同アンテナの絶対利得の真数B、等方性アンテナの実効面積Cの組を選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2025年9月期 無線工学B A-3（問題・正答、試験問題記号 709）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2025-09-kogaku-b-q03-p01.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学B 2025年9月期 A-3 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "3λ²/(4π)／1.5／λ²/(2π)",
+      "イ": "3λ²/(4π)／1.0／λ²/(4π)",
+      "ウ": "3λ²/(8π)／1.5／λ²/(2π)",
+      "エ": "3λ²/(8π)／1.5／λ²/(4π)",
+      "オ": "3λ²/(8π)／1.0／λ²/(2π)"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "微小ダイポールの利得の真数は1.5である。実効面積3λ²/(8π)を1.5で割ると、等方性アンテナの実効面積はλ²/(4π)となる。",
+    "choiceExplanations": {
+      "ア": "利得は1.5だが、微小ダイポールと等方性アンテナの両実効面積を2倍にしている。",
+      "イ": "等方性アンテナの面積は合うが、微小ダイポールの利得は1.5で、その面積は等方性の1.5倍になる。",
+      "ウ": "微小ダイポールの面積と利得は合うが、両者の商はλ²/(4π)になる。",
+      "エ": "微小ダイポールの利得の真数は1.5である。実効面積3λ²/(8π)を1.5で割ると、等方性アンテナの実効面積はλ²/(4π)となる。",
+      "オ": "微小ダイポールの面積は合うが、その利得は1.5であり、等方性の実効面積はλ²/(4π)である。"
+    }
+  },
+  {
+    "id": "radio21-general1-2025-09-kogaku-b-q04",
+    "exam": "general1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 4,
+    "category": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "アンテナの放射電界"
+    ],
+    "difficulty": 3,
+    "question": "半波長ダイポール基準の相対利得が6 dBのアンテナに100 Wを加える。自由空間の最大放射方向15 kmにおける電界強度を選べ。アンテナに損失はなく、log₁₀2＝0.3とする。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2025年9月期 無線工学B A-4（問題・正答、試験問題記号 709）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2025-09-kogaku-b-q04-p01.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学B 2025年9月期 A-4 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1.5 mV/m",
+      "イ": "3.0 mV/m",
+      "ウ": "5.2 mV/m",
+      "エ": "9.3 mV/m",
+      "オ": "11.4 mV/m"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "絶対利得の真数は約4×1.64であり、電界強度は√(30×100×6.56)/15,000≈0.00935 V/mになる。",
+    "choiceExplanations": {
+      "ア": "利得1の等方性アンテナでも、この入力と距離なら約3.65 mV/mになる。",
+      "イ": "この値は利得1のアンテナでの約3.65 mV/mよりも小さい。",
+      "ウ": "半波長ダイポール基準の6 dBを真数約4にし、等方性基準へ換算するためさらに1.64を掛ける。",
+      "エ": "絶対利得の真数は約4×1.64であり、電界強度は√(30×100×6.56)/15,000≈0.00935 V/mになる。",
+      "オ": "基準アンテナの補正は電力利得を1.64倍にするため、電界の式では√1.64倍となる。"
+    }
+  },
+  {
+    "id": "radio21-general1-2025-09-kogaku-b-q05",
+    "exam": "general1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 5,
+    "category": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "四分の一波長線路"
+    ],
+    "difficulty": 3,
+    "question": "特性インピーダンス75 Ω、長さ1.25波長の無損失給電線を90 Ωの純抵抗で終端する。入力インピーダンスに最も近い値を選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2025年9月期 無線工学B A-5（問題・正答、試験問題記号 709）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2025-09-kogaku-b-q05-p01.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学B 2025年9月期 A-5 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "52 Ω",
+      "イ": "63 Ω",
+      "ウ": "85 Ω",
+      "エ": "106 Ω",
+      "オ": "125 Ω"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "無損失線路の入力インピーダンスは半波長ごとに繰り返す。四分の一波長相当なのでZᵢ＝75²/90＝62.5 Ωとなる。",
+    "choiceExplanations": {
+      "ア": "四分の一波長相当の線路では75²/90で、52 Ωより大きい。",
+      "イ": "無損失線路の入力インピーダンスは半波長ごとに繰り返す。四分の一波長相当なのでZᵢ＝75²/90＝62.5 Ωとなる。",
+      "ウ": "負荷の90 Ωに近いが、この長さでは四分の一波長のインピーダンス変換を受ける。",
+      "エ": "負荷と特性インピーダンスの役割を逆にして90²/75を求めても、入力インピーダンスの式にならない。",
+      "オ": "この負荷は75 Ωより大きいため、四分の一波長変換後の値は75 Ωより小さくなる。"
+    }
+  },
+  {
+    "id": "radio21-general1-2025-09-kogaku-b-q06",
+    "exam": "general1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 6,
+    "category": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "方形導波管と同軸線の結合"
+    ],
+    "difficulty": 3,
+    "question": "図の方形導波管のH面中央に同軸ケーブルからプローブを挿入する。励振モードA、短絡端からの距離を管内波長で表す比B、広帯域整合に向くプローブの太さCを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2025年9月期 無線工学B A-6（問題・正答、試験問題記号 709）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2025-09-kogaku-b-q06-p02.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学B 2025年9月期 A-6 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "TE₁₁／1/4／太く",
+      "イ": "TE₁₁／1/2／細く",
+      "ウ": "TE₁₀／1/2／細く",
+      "エ": "TE₁₀／1/4／細く",
+      "オ": "TE₁₀／1/4／太く"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "方形導波管の基本モードTE₁₀を励振し、短絡端から約1/4管内波長の腹付近に置く。太いプローブは広い帯域で整合を取りやすい。",
+    "choiceExplanations": {
+      "ア": "距離と太さは合うが、この配置で励振する基本モードはTE₁₀である。",
+      "イ": "この配置ではTE₁₀を励振する。短絡端から約1/4波長の位置に、広帯域整合用の太いプローブを置く。",
+      "ウ": "モードは合うが、短絡端から1/2波長の位置は電界の節に近い。",
+      "エ": "モードと距離は合うが、広帯域に整合させるにはプローブを太くする。",
+      "オ": "方形導波管の基本モードTE₁₀を励振し、短絡端から約1/4管内波長の腹付近に置く。太いプローブは広い帯域で整合を取りやすい。"
+    }
+  },
+  {
+    "id": "radio21-general1-2025-09-kogaku-b-q07",
+    "exam": "general1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 7,
+    "category": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "不整合損"
+    ],
+    "difficulty": 3,
+    "question": "無損失給電線上で電圧反射係数の大きさが1/3のとき、不整合損Mの真数に最も近いものを選べ。定在波比をSとし、M＝(1＋S)²/(4S)とする。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2025年9月期 無線工学B A-7（問題・正答、試験問題記号 709）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2025-09-kogaku-b-q07-p02.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学B 2025年9月期 A-7 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1.13",
+      "イ": "1.40",
+      "ウ": "1.65",
+      "エ": "1.83",
+      "オ": "1.95"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "S＝(1＋1/3)/(1−1/3)＝2となる。指定の式に代入するとM＝9/8＝1.125である。",
+    "choiceExplanations": {
+      "ア": "S＝(1＋1/3)/(1−1/3)＝2となる。指定の式に代入するとM＝9/8＝1.125である。",
+      "イ": "反射する電力の割合は1/3の二乗であるから、送られる電力は8/9であり、その逆数は1.40に達しない。",
+      "ウ": "電圧反射係数と電力反射係数は区別する。電力の反射割合1/9に対応する損失は約1.13である。",
+      "エ": "定在波比2を式に入れると分子が9、分母が8になる。",
+      "オ": "定在波比そのものは2だが、不整合損の真数は指定の式で1.125となる。"
+    }
+  },
+  {
+    "id": "radio21-general1-2025-09-kogaku-b-q08",
+    "exam": "general1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 8,
+    "category": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "ブラウンアンテナ"
+    ],
+    "difficulty": 3,
+    "question": "図のブラウンアンテナの一般的な特徴として、誤っているものを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2025年9月期 無線工学B A-8（問題・正答、試験問題記号 709）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2025-09-kogaku-b-q08-p02.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学B 2025年9月期 A-8 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "放射素子と4本の地線の長さはいずれも約1/2波長である。",
+      "イ": "地線は同軸ケーブルの外部導体に接続される。",
+      "ウ": "地線は同軸ケーブルの外導体の外面に漏れ電流が流れ出すのを抑える。",
+      "エ": "入力インピーダンスは地線の取付け角度で変わる。",
+      "オ": "放射素子を垂直に置くと水平面内は全方向性になる。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "この形式では放射素子も地線も通常は約1/4波長である。",
+    "choiceExplanations": {
+      "ア": "この形式では放射素子も地線も通常は約1/4波長である。",
+      "イ": "放射素子につながる同軸の内部導体に対し、地線は外部導体側に接続する。",
+      "ウ": "地線を対称に配置すると、同軸外導体の外側に流れる不要な電流を抑えられる。",
+      "エ": "地線を下向きに傾けるなど角度を変えると、給電点のインピーダンスが変わる。",
+      "オ": "垂直な放射素子と対称な地線により、水平面の各方向にほぼ均等に放射する。"
+    }
+  },
+  {
+    "id": "radio21-general1-2025-09-kogaku-b-q09",
+    "exam": "general1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 9,
+    "category": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "エンドファイヤヘリカルアンテナ"
+    ],
+    "difficulty": 3,
+    "question": "1巻の長さが約1波長で、大きな金属反射板を持つヘリカルアンテナについて、ピッチ約1/4波長での放射方向A、15巻程度での利得B、指向性Cの組を選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2025年9月期 無線工学B A-9（問題・正答、試験問題記号 709）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2025-09-kogaku-b-q09-p02.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学B 2025年9月期 A-9 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "中心軸と直角／10 dB／単一指向性",
+      "イ": "中心軸と直角／20 dB／双方向性",
+      "ウ": "中心軸と直角／20 dB／単一指向性",
+      "エ": "中心軸／20 dB／双方向性",
+      "オ": "中心軸／10 dB／単一指向性"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "約1波長の周長と約1/4波長のピッチは軸方向モードに対応する。大きな反射板が後方放射を抑え、設問の利得の目安は10 dBである。",
+    "choiceExplanations": {
+      "ア": "単一指向性と利得の目安は合うが、標準的な軸方向モードでは中心軸に沿って主に放射する。",
+      "イ": "周長約1波長のこの形式では軸方向に放射し、反射板の前方に主ビームができる。",
+      "ウ": "反射板による単一指向性は合うが、主放射は中心軸と平行な方向に現れる。",
+      "エ": "中心軸に沿う点は合うが、十分大きい反射板があるので対称な双方向の放射にはならない。",
+      "オ": "約1波長の周長と約1/4波長のピッチは軸方向モードに対応する。大きな反射板が後方放射を抑え、設問の利得の目安は10 dBである。"
+    }
+  },
+  {
+    "id": "radio21-general1-2025-09-kogaku-b-q10",
+    "exam": "general1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 10,
+    "category": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "三線式折返しダイポール"
+    ],
+    "difficulty": 3,
+    "question": "同じ素材と寸法の3素子を平行かつ近接配置した三線式折返し半波長ダイポールに0.1 Aを給電する。損失がない場合の放射電力を選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2025年9月期 無線工学B A-10（問題・正答、試験問題記号 709）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2025-09-kogaku-b-q10-p02.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学B 2025年9月期 A-10 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1.9 W",
+      "イ": "2.6 W",
+      "ウ": "3.8 W",
+      "エ": "5.6 W",
+      "オ": "6.6 W"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "同等の素子3本の電流が放射に寄与するため、給電点での放射抵抗は約3²×73 Ωである。放射電力は0.1²×657＝6.57 Wとなる。",
+    "choiceExplanations": {
+      "ア": "電流の寄与が3本分加わり、給電点から見た放射抵抗は通常の半波長ダイポールの9倍になる。",
+      "イ": "三線式での変換比は線数の二乗で9倍になる。",
+      "ウ": "給電点の放射抵抗は約657 Ωで、0.1 Aでこの値より大きい電力を放射する。",
+      "エ": "放射電力は0.1²×9×73で求めるため、約6.6 Wとなる。",
+      "オ": "同等の素子3本の電流が放射に寄与するため、給電点での放射抵抗は約3²×73 Ωである。放射電力は0.1²×657＝6.57 Wとなる。"
+    }
+  },
+  {
+    "id": "radio21-general1-2025-09-kogaku-b-q11",
+    "exam": "general1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 11,
+    "category": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "放射効率と導体抵抗"
+    ],
+    "difficulty": 3,
+    "question": "放射抵抗36 Ω、接地抵抗1 Ω、放射効率90%の接地アンテナについて、入力抵抗を放射抵抗・導体抵抗・接地抵抗の和とするとき、導体抵抗を選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2025年9月期 無線工学B A-11（問題・正答、試験問題記号 709）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2025-09-kogaku-b-q11-p03.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学B 2025年9月期 A-11 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "3 Ω",
+      "イ": "4 Ω",
+      "ウ": "6 Ω",
+      "エ": "8 Ω",
+      "オ": "10 Ω"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "放射効率は放射抵抗を全抵抗で割った値で、全抵抗は36/0.9＝40 Ωである。残り40−36−1＝3 Ωが導体抵抗となる。",
+    "choiceExplanations": {
+      "ア": "放射効率は放射抵抗を全抵抗で割った値で、全抵抗は36/0.9＝40 Ωである。残り40−36−1＝3 Ωが導体抵抗となる。",
+      "イ": "4 Ωは導体抵抗と1 Ωの接地抵抗を合わせた損失抵抗に当たる。",
+      "ウ": "導体抵抗を6 Ωとすると効率は36/43で、90%を下回る。",
+      "エ": "導体抵抗を8 Ωとすると全抵抗は45 Ωとなり、放射効率は80%になる。",
+      "オ": "導体抵抗を10 Ωとすると全抵抗は47 Ωとなり、放射効率は約77%になる。"
+    }
+  },
+  {
+    "id": "radio21-general1-2025-09-kogaku-b-q12",
+    "exam": "general1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 12,
+    "category": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "屋外アンテナ測定"
+    ],
+    "difficulty": 3,
+    "question": "開口面アンテナの指向特性などを屋外で測定するときの一般的な留意事項のうち、誤っているものを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2025年9月期 無線工学B A-12（問題・正答、試験問題記号 709）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2025-09-kogaku-b-q12-p03.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学B 2025年9月期 A-12 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "建物などの反射物が少ない開けた場所を選ぶ。",
+      "イ": "大地反射への対策として、反射点に金属板や電波吸収体などの反射防止板を立てる方法がある。",
+      "ウ": "大口径アンテナでは開口面各部からの通路差と受信電界強度の両方を考慮して測定距離を選ぶ。",
+      "エ": "通路差による誤差を約2%以下にする最小測定距離は、開口径D₁・D₂と波長λから(D₁＋D₂)²/(2λ)となる。",
+      "オ": "送受信アンテナが互いに遠方界となる測定距離を選ぶ。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "最大通路差は遠距離でおよそ(D₁＋D₂)²/(8R)であり、この距離を代入するとλ/4になる。誤差を約2%以下に抑えるにはより長い距離が必要である。",
+    "choiceExplanations": {
+      "ア": "反射物の少ない場所では、直接波に混ざる不要な反射波を抑えやすい。",
+      "イ": "反射点で反射波を吸収したり、金属板の向きを調整して受信点と別の方向へ導いたりできる。",
+      "ウ": "距離が短いと開口各部との通路差が大きくなり、距離が長すぎると受信信号が弱くなる。",
+      "エ": "最大通路差は遠距離でおよそ(D₁＋D₂)²/(8R)であり、この距離を代入するとλ/4になる。誤差を約2%以下に抑えるにはより長い距離が必要である。",
+      "オ": "遠方界では波面の曲率の影響が小さくなり、角度による指向性を測りやすい。"
+    }
+  },
+  {
+    "id": "radio21-general1-2025-09-kogaku-b-q13",
+    "exam": "general1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 13,
+    "category": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "電波暗室と電波吸収体"
+    ],
+    "difficulty": 3,
+    "question": "電波暗室における被測定アンテナの位置A、誘電材料を使った吸収体に用いる粉末B、吸収体の代表的な表面形状Cを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2025年9月期 無線工学B A-13（問題・正答、試験問題記号 709）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2025-09-kogaku-b-q13-p03.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学B 2025年9月期 A-13 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "フレネルゾーン／黒鉛／くさび状・ピラミッド状",
+      "イ": "フレネルゾーン／フェライト／球状",
+      "ウ": "クワイエットゾーン／黒鉛／球状",
+      "エ": "クワイエットゾーン／黒鉛／くさび状・ピラミッド状",
+      "オ": "クワイエットゾーン／フェライト／球状"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "散乱を抑えたクワイエットゾーンで測る。黒鉛を含む誘電材料をくさび状やピラミッド状にすると、表面の反射を抑えつつ内部で吸収させられる。",
+    "choiceExplanations": {
+      "ア": "黒鉛と表面形状は合うが、散乱が規定値以下の測定領域はクワイエットゾーンという。",
+      "イ": "測定位置はクワイエットゾーンであり、誘電損を利用する代表的な材料は黒鉛を含む吸収体である。",
+      "ウ": "測定位置と粉末は合うが、くさび状・ピラミッド状は表面からの反射を抑えやすい形状である。",
+      "エ": "散乱を抑えたクワイエットゾーンで測る。黒鉛を含む誘電材料をくさび状やピラミッド状にすると、表面の反射を抑えつつ内部で吸収させられる。",
+      "オ": "測定位置は合うが、フェライトは主に磁性を利用し、設問の誘電材料には黒鉛が対応する。"
+    }
+  },
+  {
+    "id": "radio21-general1-2025-09-kogaku-b-q14",
+    "exam": "general1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 14,
+    "category": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "周波数帯ごとの伝搬"
+    ],
+    "difficulty": 3,
+    "question": "夜間の消滅で中波の減衰を小さくする電離層A、短波の電離層反射に影響する電子密度を変える要因B、超短波の主な伝搬波Cの組を選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2025年9月期 無線工学B A-14（問題・正答、試験問題記号 709）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2025-09-kogaku-b-q14-p03.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学B 2025年9月期 A-14 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "D層／季節／直接波",
+      "イ": "D層／気温／地表波",
+      "ウ": "D層／季節／地表波",
+      "エ": "F層／気温／直接波",
+      "オ": "F層／季節／地表波"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "夜は吸収を生むD層が消滅し、電子密度は季節や太陽活動で変わる。超短波では主に見通し内を進む直接波が使われる。",
+    "choiceExplanations": {
+      "ア": "夜は吸収を生むD層が消滅し、電子密度は季節や太陽活動で変わる。超短波では主に見通し内を進む直接波が使われる。",
+      "イ": "D層は合うが、電子密度の代表的な変動要因は季節で、超短波の主経路は直接波である。",
+      "ウ": "D層と季節は合うが、超短波の主経路には直接波が対応する。",
+      "エ": "夜間の中波の吸収を考えるとD層が対応する。短波伝搬を左右する電子密度には季節・時刻・太陽活動が関わる。",
+      "オ": "季節の効果はあるが、夜に消滅して中波の吸収を減らすのはD層であり、超短波では直接波が主である。"
+    }
+  },
+  {
+    "id": "radio21-general1-2025-09-kogaku-b-q15",
+    "exam": "general1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 15,
+    "category": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "大気の屈折率"
+    ],
+    "difficulty": 3,
+    "question": "気温・気圧に加えて電波に対する大気の屈折率を左右する量A、地表上1 km以下の標準大気での屈折率の高さによる変化B、逆転層での気温の高さによる変化Cを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2025年9月期 無線工学B A-15（問題・正答、試験問題記号 709）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2025-09-kogaku-b-q15-p04.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学B 2025年9月期 A-15 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "湿度／増加／上昇",
+      "イ": "湿度／減少／上昇",
+      "ウ": "風向／増加／上昇",
+      "エ": "風向／減少／下降",
+      "オ": "風向／増加／下降"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "水蒸気が屈折率に影響するため湿度が関係し、標準大気では屈折率は高度とともに減少する。逆転層では高度とともに気温が上昇する。",
+    "choiceExplanations": {
+      "ア": "湿度と逆転層の温度変化は合うが、標準大気の屈折率は高さとともに小さくなる。",
+      "イ": "水蒸気が屈折率に影響するため湿度が関係し、標準大気では屈折率は高度とともに減少する。逆転層では高度とともに気温が上昇する。",
+      "ウ": "逆転層の温度変化は合うが、屈折率に直接関係するのは水蒸気量で、標準大気では高さとともに減少する。",
+      "エ": "標準大気の屈折率は減少するが、湿度が屈折率に関係し、逆転層では温度が上昇する。",
+      "オ": "水蒸気量が屈折率に関係し、標準大気と逆転層でそれぞれ屈折率の減少と気温の上昇が対応する。"
+    }
+  },
+  {
+    "id": "radio21-general1-2025-09-kogaku-b-q16",
+    "exam": "general1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 16,
+    "category": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "MUFと臨界周波数"
+    ],
+    "difficulty": 3,
+    "question": "見掛けの高さ400 km、水平かつ均一なF層を使い、600 km離れた2地点を結ぶ最高使用可能周波数が12 MHzであるとき、臨界周波数を選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2025年9月期 無線工学B A-16（問題・正答、試験問題記号 709）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2025-09-kogaku-b-q16-p04.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学B 2025年9月期 A-16 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "9.6 MHz",
+      "イ": "12.0 MHz",
+      "ウ": "13.9 MHz",
+      "エ": "15.5 MHz",
+      "オ": "18.0 MHz"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "片道の水平距離300 kmと高さ400 kmから斜距離は500 kmで、法線との角の余弦は0.8となる。臨界周波数は12×0.8＝9.6 MHzである。",
+    "choiceExplanations": {
+      "ア": "片道の水平距離300 kmと高さ400 kmから斜距離は500 kmで、法線との角の余弦は0.8となる。臨界周波数は12×0.8＝9.6 MHzである。",
+      "イ": "この値は斜めに入射する経路の最高使用可能周波数であり、垂直入射の臨界周波数はより低い。",
+      "ウ": "斜め入射のMUFに法線からの角の余弦を掛けるため、垂直入射の臨界周波数は12 MHzを超えない。",
+      "エ": "臨界周波数を求めるときは12 MHzを0.8で割らず、0.8を掛ける。",
+      "オ": "片道の水平距離には300 kmを用い、法線からの角に対する補正で周波数は下がる。"
+    }
+  },
+  {
+    "id": "radio21-general1-2025-09-kogaku-b-q17",
+    "exam": "general1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 17,
+    "category": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "送受信アンテナの利得"
+    ],
+    "difficulty": 3,
+    "question": "受信時に被測定・基準アンテナで得る有能電力をPₐ・Pₛ、送信時に同じ遠方電界を得る両者の入力電力をPₐₜ・Pₛₜとする。受信時の利得A、送信時の利得B、半波長ダイポール基準から絶対利得への差Cを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2025年9月期 無線工学B A-17（問題・正答、試験問題記号 709）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2025-09-kogaku-b-q17-p04.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学B 2025年9月期 A-17 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "Pₛ/Pₐ／Pₐₜ/Pₛₜ／2.15 dB",
+      "イ": "Pₛ/Pₐ／Pₛₜ/Pₐₜ／1.64 dB",
+      "ウ": "Pₐ/Pₛ／Pₐₜ/Pₛₜ／2.15 dB",
+      "エ": "Pₐ/Pₛ／Pₛₜ/Pₐₜ／1.64 dB",
+      "オ": "Pₐ/Pₛ／Pₛₜ/Pₐₜ／2.15 dB"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "受信は被測定の受信電力を基準で割り、送信は同一電界に必要な基準の入力を被測定の入力で割る。半波長ダイポールの絶対利得は約2.15 dBiである。",
+    "choiceExplanations": {
+      "ア": "デシベル補正は合うが、高利得なら受信電力が増え、同じ電界に必要な送信電力が減る向きに比を取る。",
+      "イ": "送信時は合うが受信比が逆であり、1.64はダイポールの絶対利得の真数である。",
+      "ウ": "受信比とデシベル補正は合うが、高利得の被測定アンテナほど同一電界に必要な入力Pₐₜが小さい。",
+      "エ": "電力比は両方とも合うが、真数1.64をデシベルにすると約2.15 dBになる。",
+      "オ": "受信は被測定の受信電力を基準で割り、送信は同一電界に必要な基準の入力を被測定の入力で割る。半波長ダイポールの絶対利得は約2.15 dBiである。"
+    }
+  },
+  {
+    "id": "radio21-general1-2025-09-kogaku-b-q18",
+    "exam": "general1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 18,
+    "category": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "アンテナと給電線の整合"
+    ],
+    "difficulty": 3,
+    "question": "アンテナを送受で使ったときの入力インピーダンスの可逆性はA。給電線を不整合のままつなぐと接続部でBが生じ、整合をとるとCが増加する。A・B・Cの組を選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2025年9月期 無線工学B A-18（問題・正答、試験問題記号 709）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2025-09-kogaku-b-q18-p04.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学B 2025年9月期 A-18 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "成立しない／反射／動作利得",
+      "イ": "成立しない／吸収／指向性利得",
+      "ウ": "成立する／吸収／指向性利得",
+      "エ": "成立する／反射／動作利得",
+      "オ": "成立する／反射／指向性利得"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "送受で入力インピーダンスは可逆である。整合で反射電力が減り、給電側から見た動作利得が大きくなる。",
+    "choiceExplanations": {
+      "ア": "反射と動作利得は合うが、受動的なアンテナの入力インピーダンスは送受で可逆である。",
+      "イ": "可逆性が成り立ち、不整合部で反射が生じる。整合によって改善するのは動作利得である。",
+      "ウ": "可逆性は合うが、不整合部では反射が生じ、整合はその損失を減らす。",
+      "エ": "送受で入力インピーダンスは可逆である。整合で反射電力が減り、給電側から見た動作利得が大きくなる。",
+      "オ": "可逆性と反射は合うが、整合で改善するのは不整合損を含む動作利得である。"
+    }
+  },
+  {
+    "id": "radio21-general1-2025-09-kogaku-b-q19",
+    "exam": "general1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 19,
+    "category": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "反射板付き双ループアンテナ"
+    ],
+    "difficulty": 3,
+    "question": "図の反射板付き双ループアンテナで、ループ間隔約0.5波長、反射板と素子の間隔約0.25波長とする。各ループの周囲長の波長比A、放射に寄与する電流成分B、水平面内の指向性Cの組を選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2025年9月期 無線工学B A-19（問題・正答、試験問題記号 709）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2025-09-kogaku-b-q19-p05.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学B 2025年9月期 A-19 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1／垂直／単一指向性",
+      "イ": "1／垂直／双方向性",
+      "ウ": "1／水平／単一指向性",
+      "エ": "1/2／水平／双方向性",
+      "オ": "1/2／水平／単一指向性"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "各ループは一周が約1波長であり、図の配置では水平成分が放射に寄与する。反射板により前方へ主ビームが形成される。",
+    "choiceExplanations": {
+      "ア": "周囲長と指向性は合うが、図の電流のうち放射に寄与するのは水平成分である。",
+      "イ": "周囲長は合うが、同相に加わる水平成分が放射を生み、反射板の前方への単一指向性となる。",
+      "ウ": "各ループは一周が約1波長であり、図の配置では水平成分が放射に寄与する。反射板により前方へ主ビームが形成される。",
+      "エ": "水平成分は合うが、各ループの周囲長は約1波長で、水平面は単一指向性である。",
+      "オ": "水平成分と指向性は合うが、各ループの周囲長は約1波長である。"
+    }
+  },
+  {
+    "id": "radio21-general1-2025-09-kogaku-b-q20",
+    "exam": "general1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 20,
+    "category": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "電離層のF層"
+    ],
+    "difficulty": 3,
+    "question": "冬季を除く中緯度で、上空約150 km以上にあるF層がF₁・F₂に分かれる時間帯A、一つにまとまる時間帯B、両層の電子密度が大きくなる時刻の目安Cを選べ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2025年9月期 無線工学B A-20（問題・正答、試験問題記号 709）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2025-09-kogaku-b-q20-p05.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学B 2025年9月期 A-20 公式原問題"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "昼間／夜間／日出・日没",
+      "イ": "昼間／夜間／正午",
+      "ウ": "昼間／夜間／深夜",
+      "エ": "夜間／昼間／日出・日没",
+      "オ": "夜間／昼間／正午"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "昼は太陽放射の影響で層が分かれ、夜は一つにまとまる。設問の一般化では電子密度の最大は正午頃である。",
+    "choiceExplanations": {
+      "ア": "昼夜の区分は合うが、この設問での電子密度の最大の目安は日出・日没より日射が強い正午頃である。",
+      "イ": "昼は太陽放射の影響で層が分かれ、夜は一つにまとまる。設問の一般化では電子密度の最大は正午頃である。",
+      "ウ": "昼夜の区分は合うが、深夜には太陽放射による電離が弱まる。",
+      "エ": "F₁とF₂が分かれるのは日射のある昼間で、夜間には一つにまとまる。",
+      "オ": "最大の目安は合うが、F層が分かれる時間帯と一つになる時間帯が逆である。"
+    }
+  },
+  {
+    "id": "radio21-general1-2025-09-kogaku-b-q21",
+    "exam": "general1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 21,
+    "category": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "ポインチングベクトル"
+    ],
+    "difficulty": 3,
+    "question": "真空中を進む平面波について、エネルギー密度とポインチングベクトルの関係の空欄を埋めよ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2025年9月期 無線工学B B-1（問題・正答、試験問題記号 709）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2025-09-kogaku-b-q21-p05.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学B 2025年9月期 B-1 公式原問題"
+    ],
+    "type": "native-b",
+    "explanation": "線形媒質の電界のエネルギー密度は電界Eと電束密度ε₀Eの積の半分である。\n\n線形媒質の磁界のエネルギー密度は磁界Hと磁束密度μ₀Hの積の半分である。\n\n電界と磁界のエネルギー密度を足したものに速度を掛ければ、単位面積・単位時間当たりのエネルギーが得られる。\n\n電界強度を磁界強度で割ったE/HがΩの単位を持つ固有インピーダンスとなる。\n\n電力束密度の法線成分を面積で積分すると、球を横切る全放射電力が得られる。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "ε₀E²/2",
+          "explanation": "電界に蓄えられるエネルギー密度の式である。"
+        },
+        {
+          "id": "2",
+          "label": "μ₀H²/2",
+          "explanation": "磁界に蓄えられるエネルギー密度の式である。"
+        },
+        {
+          "id": "3",
+          "label": "E(Wₑ＋Wₕ)",
+          "explanation": "エネルギー密度に電界を掛けた量である。"
+        },
+        {
+          "id": "4",
+          "label": "E/H",
+          "explanation": "電界と磁界の比でΩの単位を持つ。"
+        },
+        {
+          "id": "5",
+          "label": "放射抵抗",
+          "explanation": "電力を給電電流の二乗で割った等価抵抗を表す。"
+        },
+        {
+          "id": "6",
+          "label": "2ε₀E²",
+          "explanation": "電界のエネルギー密度に対して係数が4倍になっている。"
+        },
+        {
+          "id": "7",
+          "label": "2μ₀H²",
+          "explanation": "磁界のエネルギー密度に対して係数が4倍になっている。"
+        },
+        {
+          "id": "8",
+          "label": "Wₑ＋Wₕ",
+          "explanation": "電界と磁界のエネルギー密度の和である。"
+        },
+        {
+          "id": "9",
+          "label": "H/E",
+          "explanation": "固有インピーダンスの逆数に当たる。"
+        },
+        {
+          "id": "10",
+          "label": "放射電力",
+          "explanation": "放射が運ぶエネルギーの単位時間当たりの量である。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "電界Eが単位体積中に蓄えるエネルギーWₑの式を選べ。",
+          "answer": "1",
+          "explanation": "線形媒質の電界のエネルギー密度は電界Eと電束密度ε₀Eの積の半分である。",
+          "candidateExplanations": {
+            "1": "線形媒質の電界のエネルギー密度は電界Eと電束密度ε₀Eの積の半分である。",
+            "2": "磁界に蓄えられるエネルギー密度の式である。線形媒質の電界のエネルギー密度は電界Eと電束密度ε₀Eの積の半分である。",
+            "3": "エネルギー密度に電界を掛けた量である。線形媒質の電界のエネルギー密度は電界Eと電束密度ε₀Eの積の半分である。",
+            "4": "電界と磁界の比でΩの単位を持つ。線形媒質の電界のエネルギー密度は電界Eと電束密度ε₀Eの積の半分である。",
+            "5": "電力を給電電流の二乗で割った等価抵抗を表す。線形媒質の電界のエネルギー密度は電界Eと電束密度ε₀Eの積の半分である。",
+            "6": "電界のエネルギー密度に対して係数が4倍になっている。線形媒質の電界のエネルギー密度は電界Eと電束密度ε₀Eの積の半分である。",
+            "7": "磁界のエネルギー密度に対して係数が4倍になっている。線形媒質の電界のエネルギー密度は電界Eと電束密度ε₀Eの積の半分である。",
+            "8": "電界と磁界のエネルギー密度の和である。線形媒質の電界のエネルギー密度は電界Eと電束密度ε₀Eの積の半分である。",
+            "9": "固有インピーダンスの逆数に当たる。線形媒質の電界のエネルギー密度は電界Eと電束密度ε₀Eの積の半分である。",
+            "10": "放射が運ぶエネルギーの単位時間当たりの量である。線形媒質の電界のエネルギー密度は電界Eと電束密度ε₀Eの積の半分である。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "磁界Hが単位体積中に蓄えるエネルギーWₕの式を選べ。",
+          "answer": "2",
+          "explanation": "線形媒質の磁界のエネルギー密度は磁界Hと磁束密度μ₀Hの積の半分である。",
+          "candidateExplanations": {
+            "1": "電界に蓄えられるエネルギー密度の式である。線形媒質の磁界のエネルギー密度は磁界Hと磁束密度μ₀Hの積の半分である。",
+            "2": "線形媒質の磁界のエネルギー密度は磁界Hと磁束密度μ₀Hの積の半分である。",
+            "3": "エネルギー密度に電界を掛けた量である。線形媒質の磁界のエネルギー密度は磁界Hと磁束密度μ₀Hの積の半分である。",
+            "4": "電界と磁界の比でΩの単位を持つ。線形媒質の磁界のエネルギー密度は磁界Hと磁束密度μ₀Hの積の半分である。",
+            "5": "電力を給電電流の二乗で割った等価抵抗を表す。線形媒質の磁界のエネルギー密度は磁界Hと磁束密度μ₀Hの積の半分である。",
+            "6": "電界のエネルギー密度に対して係数が4倍になっている。線形媒質の磁界のエネルギー密度は磁界Hと磁束密度μ₀Hの積の半分である。",
+            "7": "磁界のエネルギー密度に対して係数が4倍になっている。線形媒質の磁界のエネルギー密度は磁界Hと磁束密度μ₀Hの積の半分である。",
+            "8": "電界と磁界のエネルギー密度の和である。線形媒質の磁界のエネルギー密度は磁界Hと磁束密度μ₀Hの積の半分である。",
+            "9": "固有インピーダンスの逆数に当たる。線形媒質の磁界のエネルギー密度は磁界Hと磁束密度μ₀Hの積の半分である。",
+            "10": "放射が運ぶエネルギーの単位時間当たりの量である。線形媒質の磁界のエネルギー密度は磁界Hと磁束密度μ₀Hの積の半分である。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "単位面積当たりのエネルギー流を、伝搬速度cに掛ける量で表せ。",
+          "answer": "8",
+          "explanation": "電界と磁界のエネルギー密度を足したものに速度を掛ければ、単位面積・単位時間当たりのエネルギーが得られる。",
+          "candidateExplanations": {
+            "1": "電界に蓄えられるエネルギー密度の式である。電界と磁界のエネルギー密度を足したものに速度を掛ければ、単位面積・単位時間当たりのエネルギーが得られる。",
+            "2": "磁界に蓄えられるエネルギー密度の式である。電界と磁界のエネルギー密度を足したものに速度を掛ければ、単位面積・単位時間当たりのエネルギーが得られる。",
+            "3": "エネルギー密度に電界を掛けた量である。電界と磁界のエネルギー密度を足したものに速度を掛ければ、単位面積・単位時間当たりのエネルギーが得られる。",
+            "4": "電界と磁界の比でΩの単位を持つ。電界と磁界のエネルギー密度を足したものに速度を掛ければ、単位面積・単位時間当たりのエネルギーが得られる。",
+            "5": "電力を給電電流の二乗で割った等価抵抗を表す。電界と磁界のエネルギー密度を足したものに速度を掛ければ、単位面積・単位時間当たりのエネルギーが得られる。",
+            "6": "電界のエネルギー密度に対して係数が4倍になっている。電界と磁界のエネルギー密度を足したものに速度を掛ければ、単位面積・単位時間当たりのエネルギーが得られる。",
+            "7": "磁界のエネルギー密度に対して係数が4倍になっている。電界と磁界のエネルギー密度を足したものに速度を掛ければ、単位面積・単位時間当たりのエネルギーが得られる。",
+            "8": "電界と磁界のエネルギー密度を足したものに速度を掛ければ、単位面積・単位時間当たりのエネルギーが得られる。",
+            "9": "固有インピーダンスの逆数に当たる。電界と磁界のエネルギー密度を足したものに速度を掛ければ、単位面積・単位時間当たりのエネルギーが得られる。",
+            "10": "放射が運ぶエネルギーの単位時間当たりの量である。電界と磁界のエネルギー密度を足したものに速度を掛ければ、単位面積・単位時間当たりのエネルギーが得られる。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "自由空間の固有インピーダンスZを電界Eと磁界Hで表せ。",
+          "answer": "4",
+          "explanation": "電界強度を磁界強度で割ったE/HがΩの単位を持つ固有インピーダンスとなる。",
+          "candidateExplanations": {
+            "1": "電界に蓄えられるエネルギー密度の式である。電界強度を磁界強度で割ったE/HがΩの単位を持つ固有インピーダンスとなる。",
+            "2": "磁界に蓄えられるエネルギー密度の式である。電界強度を磁界強度で割ったE/HがΩの単位を持つ固有インピーダンスとなる。",
+            "3": "エネルギー密度に電界を掛けた量である。電界強度を磁界強度で割ったE/HがΩの単位を持つ固有インピーダンスとなる。",
+            "4": "電界強度を磁界強度で割ったE/HがΩの単位を持つ固有インピーダンスとなる。",
+            "5": "電力を給電電流の二乗で割った等価抵抗を表す。電界強度を磁界強度で割ったE/HがΩの単位を持つ固有インピーダンスとなる。",
+            "6": "電界のエネルギー密度に対して係数が4倍になっている。電界強度を磁界強度で割ったE/HがΩの単位を持つ固有インピーダンスとなる。",
+            "7": "磁界のエネルギー密度に対して係数が4倍になっている。電界強度を磁界強度で割ったE/HがΩの単位を持つ固有インピーダンスとなる。",
+            "8": "電界と磁界のエネルギー密度の和である。電界強度を磁界強度で割ったE/HがΩの単位を持つ固有インピーダンスとなる。",
+            "9": "固有インピーダンスの逆数に当たる。電界強度を磁界強度で割ったE/HがΩの単位を持つ固有インピーダンスとなる。",
+            "10": "放射が運ぶエネルギーの単位時間当たりの量である。電界強度を磁界強度で割ったE/HがΩの単位を持つ固有インピーダンスとなる。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "アンテナを囲む球の外側に向かうポインチングベクトルを全表面について積分して得る量を選べ。",
+          "answer": "10",
+          "explanation": "電力束密度の法線成分を面積で積分すると、球を横切る全放射電力が得られる。",
+          "candidateExplanations": {
+            "1": "電界に蓄えられるエネルギー密度の式である。電力束密度の法線成分を面積で積分すると、球を横切る全放射電力が得られる。",
+            "2": "磁界に蓄えられるエネルギー密度の式である。電力束密度の法線成分を面積で積分すると、球を横切る全放射電力が得られる。",
+            "3": "エネルギー密度に電界を掛けた量である。電力束密度の法線成分を面積で積分すると、球を横切る全放射電力が得られる。",
+            "4": "電界と磁界の比でΩの単位を持つ。電力束密度の法線成分を面積で積分すると、球を横切る全放射電力が得られる。",
+            "5": "電力を給電電流の二乗で割った等価抵抗を表す。電力束密度の法線成分を面積で積分すると、球を横切る全放射電力が得られる。",
+            "6": "電界のエネルギー密度に対して係数が4倍になっている。電力束密度の法線成分を面積で積分すると、球を横切る全放射電力が得られる。",
+            "7": "磁界のエネルギー密度に対して係数が4倍になっている。電力束密度の法線成分を面積で積分すると、球を横切る全放射電力が得られる。",
+            "8": "電界と磁界のエネルギー密度の和である。電力束密度の法線成分を面積で積分すると、球を横切る全放射電力が得られる。",
+            "9": "固有インピーダンスの逆数に当たる。電力束密度の法線成分を面積で積分すると、球を横切る全放射電力が得られる。",
+            "10": "電力束密度の法線成分を面積で積分すると、球を横切る全放射電力が得られる。"
+          }
+        }
+      ],
+      "officialLabel": "B-1",
+      "bankImageUrls": [
+        "/questions/general1/2025-09-kogaku-b-q21-p05.png"
+      ],
+      "bankImageAltTexts": [
+        "第一級総合無線通信士 無線工学B 2025年9月期 B-1 公式原問題"
+      ]
+    }
+  },
+  {
+    "id": "radio21-general1-2025-09-kogaku-b-q22",
+    "exam": "general1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 22,
+    "category": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "同軸ケーブルと導波管"
+    ],
+    "difficulty": 3,
+    "question": "同軸ケーブルと導波管の各記述が正しいか答えよ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2025年9月期 無線工学B B-2（問題・正答、試験問題記号 709）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2025-09-kogaku-b-q22-p06.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学B 2025年9月期 B-2 公式原問題"
+    ],
+    "type": "native-b",
+    "explanation": "誘電体を充填したケーブルでは誘電損が生じ、内部が空気の一般的な金属導波管では小さい。\n\n周波数が上がると表皮効果で導体損が増し、誘電体の単位長さ当たりの誘電損も大きくなる。\n\n基本TEMモードには低域の遮断周波数がなく、高域は損失や高次モードで制約される。\n\n遮断周波数を超える導波管では位相の進みが軸方向に緩やかになり、管内波長は自由空間波長より長い。\n\n遮断周波数を下回ると軸方向に進行するモードは成立せず、電界は距離とともに減衰する。",
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "正しい"
+        },
+        {
+          "id": "2",
+          "label": "誤り"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "誘電体が充填された同軸ケーブルは一般に導波管より単位長さ当たりの誘電損が大きい。",
+          "answer": "1",
+          "explanation": "誘電体を充填したケーブルでは誘電損が生じ、内部が空気の一般的な金属導波管では小さい。",
+          "candidateExplanations": {
+            "1": "誘電体を充填したケーブルでは誘電損が生じ、内部が空気の一般的な金属導波管では小さい。",
+            "2": "この記述は妥当である。誘電体を充填したケーブルでは誘電損が生じ、内部が空気の一般的な金属導波管では小さい。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "同軸ケーブルの導体損と誘電損は、高い周波数ほどいずれも増加する。",
+          "answer": "1",
+          "explanation": "周波数が上がると表皮効果で導体損が増し、誘電体の単位長さ当たりの誘電損も大きくなる。",
+          "candidateExplanations": {
+            "1": "周波数が上がると表皮効果で導体損が増し、誘電体の単位長さ当たりの誘電損も大きくなる。",
+            "2": "この記述は妥当である。周波数が上がると表皮効果で導体損が増し、誘電体の単位長さ当たりの誘電損も大きくなる。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "同軸ケーブルは高い周波数の使用制限はなく、低い周波数には制限がある。",
+          "answer": "2",
+          "explanation": "基本TEMモードには低域の遮断周波数がなく、高域は損失や高次モードで制約される。",
+          "candidateExplanations": {
+            "1": "この記述には誤りがある。基本TEMモードには低域の遮断周波数がなく、高域は損失や高次モードで制約される。",
+            "2": "基本TEMモードには低域の遮断周波数がなく、高域は損失や高次モードで制約される。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "導波管の管内波長は自由空間の波長より短い。",
+          "answer": "2",
+          "explanation": "遮断周波数を超える導波管では位相の進みが軸方向に緩やかになり、管内波長は自由空間波長より長い。",
+          "candidateExplanations": {
+            "1": "この記述には誤りがある。遮断周波数を超える導波管では位相の進みが軸方向に緩やかになり、管内波長は自由空間波長より長い。",
+            "2": "遮断周波数を超える導波管では位相の進みが軸方向に緩やかになり、管内波長は自由空間波長より長い。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "導波管は遮断周波数以下の周波数の電磁波を伝送できない。",
+          "answer": "1",
+          "explanation": "遮断周波数を下回ると軸方向に進行するモードは成立せず、電界は距離とともに減衰する。",
+          "candidateExplanations": {
+            "1": "遮断周波数を下回ると軸方向に進行するモードは成立せず、電界は距離とともに減衰する。",
+            "2": "この記述は妥当である。遮断周波数を下回ると軸方向に進行するモードは成立せず、電界は距離とともに減衰する。"
+          }
+        }
+      ],
+      "officialLabel": "B-2",
+      "bankImageUrls": [
+        "/questions/general1/2025-09-kogaku-b-q22-p06.png"
+      ],
+      "bankImageAltTexts": [
+        "第一級総合無線通信士 無線工学B 2025年9月期 B-2 公式原問題"
+      ]
+    }
+  },
+  {
+    "id": "radio21-general1-2025-09-kogaku-b-q23",
+    "exam": "general1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 23,
+    "category": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "開口面アンテナのレドーム"
+    ],
+    "difficulty": 3,
+    "question": "雨雪から開口面アンテナを守る誘電体製レドームについて、設計の空欄を埋めよ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2025年9月期 無線工学B B-3（問題・正答、試験問題記号 709）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2025-09-kogaku-b-q23-p06.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学B 2025年9月期 B-3 公式原問題"
+    ],
+    "type": "native-b",
+    "explanation": "アンテナへ入射する電波や放射した電波が通り抜けやすいように、透過率を高くする。\n\n本問では誘電率の低い材料が適する。実際の誘電損には材料の損失正接も関わる。\n\n波長より十分薄くすると、二つの境界の反射の位相差が小さく、反射の寄与が打ち消し合いやすい。\n\n奇数倍の四分の一波長は往復で半波長の奇数倍の位相差を与え、反射を小さくする設計に使える。\n\nアンテナ側へ戻る反射波は給電点から見たインピーダンスを変化させるため、反射を別方向に逃がす。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "透過率",
+          "explanation": "入射波のうち材料を通過する割合である。"
+        },
+        {
+          "id": "2",
+          "label": "高い材料",
+          "explanation": "誘電率が高い側を指す。"
+        },
+        {
+          "id": "3",
+          "label": "厚く",
+          "explanation": "波長に対して厚みが大きい条件である。"
+        },
+        {
+          "id": "4",
+          "label": "1/4又は3/4",
+          "explanation": "四分の一波長の奇数倍に当たる。"
+        },
+        {
+          "id": "5",
+          "label": "短縮率",
+          "explanation": "媒質中などでの波長が基準より短くなる割合である。"
+        },
+        {
+          "id": "6",
+          "label": "透磁率",
+          "explanation": "磁界に対する材料の応答を示す量である。"
+        },
+        {
+          "id": "7",
+          "label": "低い材料",
+          "explanation": "誘電率が低い側を指す。"
+        },
+        {
+          "id": "8",
+          "label": "薄く",
+          "explanation": "波長に比べて十分小さな厚みにする条件である。"
+        },
+        {
+          "id": "9",
+          "label": "3又は4",
+          "explanation": "波長の整数倍の厚さに当たる。"
+        },
+        {
+          "id": "10",
+          "label": "インピーダンス",
+          "explanation": "交流の電圧と電流の比を複素数で表した量である。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "損失と反射を抑えることでレドームで高くすべき電波の特性を選べ。",
+          "answer": "1",
+          "explanation": "アンテナへ入射する電波や放射した電波が通り抜けやすいように、透過率を高くする。",
+          "candidateExplanations": {
+            "1": "アンテナへ入射する電波や放射した電波が通り抜けやすいように、透過率を高くする。",
+            "2": "誘電率が高い側を指す。アンテナへ入射する電波や放射した電波が通り抜けやすいように、透過率を高くする。",
+            "3": "波長に対して厚みが大きい条件である。アンテナへ入射する電波や放射した電波が通り抜けやすいように、透過率を高くする。",
+            "4": "四分の一波長の奇数倍に当たる。アンテナへ入射する電波や放射した電波が通り抜けやすいように、透過率を高くする。",
+            "5": "媒質中などでの波長が基準より短くなる割合である。アンテナへ入射する電波や放射した電波が通り抜けやすいように、透過率を高くする。",
+            "6": "磁界に対する材料の応答を示す量である。アンテナへ入射する電波や放射した電波が通り抜けやすいように、透過率を高くする。",
+            "7": "誘電率が低い側を指す。アンテナへ入射する電波や放射した電波が通り抜けやすいように、透過率を高くする。",
+            "8": "波長に比べて十分小さな厚みにする条件である。アンテナへ入射する電波や放射した電波が通り抜けやすいように、透過率を高くする。",
+            "9": "波長の整数倍の厚さに当たる。アンテナへ入射する電波や放射した電波が通り抜けやすいように、透過率を高くする。",
+            "10": "交流の電圧と電流の比を複素数で表した量である。アンテナへ入射する電波や放射した電波が通り抜けやすいように、透過率を高くする。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "誘電損を少なくするために選ぶ誘電率の材料を答えよ。",
+          "answer": "7",
+          "explanation": "本問では誘電率の低い材料が適する。実際の誘電損には材料の損失正接も関わる。",
+          "candidateExplanations": {
+            "1": "本問では誘電率の低い材料が適する。実際の誘電損には材料の損失正接も関わる。",
+            "2": "本問では誘電率の低い材料が適する。実際の誘電損には材料の損失正接も関わる。",
+            "3": "本問では誘電率の低い材料が適する。実際の誘電損には材料の損失正接も関わる。",
+            "4": "本問では誘電率の低い材料が適する。実際の誘電損には材料の損失正接も関わる。",
+            "5": "本問では誘電率の低い材料が適する。実際の誘電損には材料の損失正接も関わる。",
+            "6": "本問では誘電率の低い材料が適する。実際の誘電損には材料の損失正接も関わる。",
+            "7": "本問では誘電率の低い材料が適する。実際の誘電損には材料の損失正接も関わる。",
+            "8": "本問では誘電率の低い材料が適する。実際の誘電損には材料の損失正接も関わる。",
+            "9": "本問では誘電率の低い材料が適する。実際の誘電損には材料の損失正接も関わる。",
+            "10": "本問では誘電率の低い材料が適する。実際の誘電損には材料の損失正接も関わる。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "電波の反射を抑えるため、誘電体の厚さを波長に比べてどうするか。",
+          "answer": "8",
+          "explanation": "波長より十分薄くすると、二つの境界の反射の位相差が小さく、反射の寄与が打ち消し合いやすい。",
+          "candidateExplanations": {
+            "1": "入射波のうち材料を通過する割合である。波長より十分薄くすると、二つの境界の反射の位相差が小さく、反射の寄与が打ち消し合いやすい。",
+            "2": "誘電率が高い側を指す。波長より十分薄くすると、二つの境界の反射の位相差が小さく、反射の寄与が打ち消し合いやすい。",
+            "3": "波長に対して厚みが大きい条件である。波長より十分薄くすると、二つの境界の反射の位相差が小さく、反射の寄与が打ち消し合いやすい。",
+            "4": "四分の一波長の奇数倍に当たる。波長より十分薄くすると、二つの境界の反射の位相差が小さく、反射の寄与が打ち消し合いやすい。",
+            "5": "媒質中などでの波長が基準より短くなる割合である。波長より十分薄くすると、二つの境界の反射の位相差が小さく、反射の寄与が打ち消し合いやすい。",
+            "6": "磁界に対する材料の応答を示す量である。波長より十分薄くすると、二つの境界の反射の位相差が小さく、反射の寄与が打ち消し合いやすい。",
+            "7": "誘電率が低い側を指す。波長より十分薄くすると、二つの境界の反射の位相差が小さく、反射の寄与が打ち消し合いやすい。",
+            "8": "波長より十分薄くすると、二つの境界の反射の位相差が小さく、反射の寄与が打ち消し合いやすい。",
+            "9": "波長の整数倍の厚さに当たる。波長より十分薄くすると、二つの境界の反射の位相差が小さく、反射の寄与が打ち消し合いやすい。",
+            "10": "交流の電圧と電流の比を複素数で表した量である。波長より十分薄くすると、二つの境界の反射の位相差が小さく、反射の寄与が打ち消し合いやすい。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "高誘電率の表皮の間に置く低誘電率コアの厚みを、コア内の波長に対する比で選べ。",
+          "answer": "4",
+          "explanation": "奇数倍の四分の一波長は往復で半波長の奇数倍の位相差を与え、反射を小さくする設計に使える。",
+          "candidateExplanations": {
+            "1": "入射波のうち材料を通過する割合である。奇数倍の四分の一波長は往復で半波長の奇数倍の位相差を与え、反射を小さくする設計に使える。",
+            "2": "誘電率が高い側を指す。奇数倍の四分の一波長は往復で半波長の奇数倍の位相差を与え、反射を小さくする設計に使える。",
+            "3": "波長に対して厚みが大きい条件である。奇数倍の四分の一波長は往復で半波長の奇数倍の位相差を与え、反射を小さくする設計に使える。",
+            "4": "奇数倍の四分の一波長は往復で半波長の奇数倍の位相差を与え、反射を小さくする設計に使える。",
+            "5": "媒質中などでの波長が基準より短くなる割合である。奇数倍の四分の一波長は往復で半波長の奇数倍の位相差を与え、反射を小さくする設計に使える。",
+            "6": "磁界に対する材料の応答を示す量である。奇数倍の四分の一波長は往復で半波長の奇数倍の位相差を与え、反射を小さくする設計に使える。",
+            "7": "誘電率が低い側を指す。奇数倍の四分の一波長は往復で半波長の奇数倍の位相差を与え、反射を小さくする設計に使える。",
+            "8": "波長に比べて十分小さな厚みにする条件である。奇数倍の四分の一波長は往復で半波長の奇数倍の位相差を与え、反射を小さくする設計に使える。",
+            "9": "波長の整数倍の厚さに当たる。奇数倍の四分の一波長は往復で半波長の奇数倍の位相差を与え、反射を小さくする設計に使える。",
+            "10": "交流の電圧と電流の比を複素数で表した量である。奇数倍の四分の一波長は往復で半波長の奇数倍の位相差を与え、反射を小さくする設計に使える。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "平面レドームを傾け、反射波が給電口に戻ることで変化する何を保つか。",
+          "answer": "10",
+          "explanation": "アンテナ側へ戻る反射波は給電点から見たインピーダンスを変化させるため、反射を別方向に逃がす。",
+          "candidateExplanations": {
+            "1": "入射波のうち材料を通過する割合である。アンテナ側へ戻る反射波は給電点から見たインピーダンスを変化させるため、反射を別方向に逃がす。",
+            "2": "誘電率が高い側を指す。アンテナ側へ戻る反射波は給電点から見たインピーダンスを変化させるため、反射を別方向に逃がす。",
+            "3": "波長に対して厚みが大きい条件である。アンテナ側へ戻る反射波は給電点から見たインピーダンスを変化させるため、反射を別方向に逃がす。",
+            "4": "四分の一波長の奇数倍に当たる。アンテナ側へ戻る反射波は給電点から見たインピーダンスを変化させるため、反射を別方向に逃がす。",
+            "5": "媒質中などでの波長が基準より短くなる割合である。アンテナ側へ戻る反射波は給電点から見たインピーダンスを変化させるため、反射を別方向に逃がす。",
+            "6": "磁界に対する材料の応答を示す量である。アンテナ側へ戻る反射波は給電点から見たインピーダンスを変化させるため、反射を別方向に逃がす。",
+            "7": "誘電率が低い側を指す。アンテナ側へ戻る反射波は給電点から見たインピーダンスを変化させるため、反射を別方向に逃がす。",
+            "8": "波長に比べて十分小さな厚みにする条件である。アンテナ側へ戻る反射波は給電点から見たインピーダンスを変化させるため、反射を別方向に逃がす。",
+            "9": "波長の整数倍の厚さに当たる。アンテナ側へ戻る反射波は給電点から見たインピーダンスを変化させるため、反射を別方向に逃がす。",
+            "10": "アンテナ側へ戻る反射波は給電点から見たインピーダンスを変化させるため、反射を別方向に逃がす。"
+          }
+        }
+      ],
+      "officialLabel": "B-3",
+      "bankImageUrls": [
+        "/questions/general1/2025-09-kogaku-b-q23-p06.png"
+      ],
+      "bankImageAltTexts": [
+        "第一級総合無線通信士 無線工学B 2025年9月期 B-3 公式原問題"
+      ]
+    }
+  },
+  {
+    "id": "radio21-general1-2025-09-kogaku-b-q24",
+    "exam": "general1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 24,
+    "category": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "給電線の特性インピーダンス測定"
+    ],
+    "difficulty": 3,
+    "question": "無損失給電線を既知の純抵抗Rで終端する。線路上の電圧最大値Vₘₐₓ、最小値Vₘᵢₙ、特性インピーダンスZ₀、電圧反射係数Γと定在波比Sについて空欄を埋めよ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2025年9月期 無線工学B B-4（問題・正答、試験問題記号 709）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2025-09-kogaku-b-q24-p06.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学B 2025年9月期 B-4 公式原問題"
+    ],
+    "type": "native-b",
+    "explanation": "最大は入射電圧に反射電圧の大きさを足し、最小は引くため、両者の比は(1＋∣Γ∣)/(1−∣Γ∣)である。\n\n終端では反射係数は負荷抵抗と特性インピーダンスの差を和で割った(R−Z₀)/(R＋Z₀)になる。\n\n定在波比の分子は大きい側なので、反射係数を代入した式では絶対値の和が分子、差が分母になる。\n\nSは1以上で、R＜Z₀の場合は絶対値を外して整理するとS＝Z₀/Rになる。\n\nZ₀＝RSであり、Sは最大電圧を最小電圧で割った比である。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "(1＋∣Γ∣)/(1−∣Γ∣)",
+          "explanation": "電圧定在波比を反射係数の絶対値から出す式である。"
+        },
+        {
+          "id": "2",
+          "label": "(R＋Z₀)/(R−Z₀)",
+          "explanation": "終端の電圧反射係数の逆数である。"
+        },
+        {
+          "id": "3",
+          "label": "(∣R＋Z₀∣＋∣R−Z₀∣)/(∣R＋Z₀∣−∣R−Z₀∣)",
+          "explanation": "反射係数をRとZ₀に置き換えた定在波比の式である。"
+        },
+        {
+          "id": "4",
+          "label": "R/Z₀",
+          "explanation": "RがZ₀より大きい場合の定在波比になる。"
+        },
+        {
+          "id": "5",
+          "label": "Vₘₐₓ/Vₘᵢₙ",
+          "explanation": "電圧測定から直接得られる定在波比である。"
+        },
+        {
+          "id": "6",
+          "label": "(1−∣Γ∣)/(1＋∣Γ∣)",
+          "explanation": "反射係数から出す定在波比の逆数である。"
+        },
+        {
+          "id": "7",
+          "label": "(R−Z₀)/(R＋Z₀)",
+          "explanation": "抵抗終端の電圧反射係数である。"
+        },
+        {
+          "id": "8",
+          "label": "(∣R＋Z₀∣−∣R−Z₀∣)/(∣R＋Z₀∣＋∣R−Z₀∣)",
+          "explanation": "RとZ₀で表した定在波比の逆数である。"
+        },
+        {
+          "id": "9",
+          "label": "Z₀/R",
+          "explanation": "Z₀がRより大きい場合の定在波比になる。"
+        },
+        {
+          "id": "10",
+          "label": "Vₘᵢₙ/Vₘₐₓ",
+          "explanation": "電圧の最大と最小の比に対する逆数である。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "S＝Vₘₐₓ/VₘᵢₙをΓの大きさで表す式を選べ。",
+          "answer": "1",
+          "explanation": "最大は入射電圧に反射電圧の大きさを足し、最小は引くため、両者の比は(1＋∣Γ∣)/(1−∣Γ∣)である。",
+          "candidateExplanations": {
+            "1": "最大は入射電圧に反射電圧の大きさを足し、最小は引くため、両者の比は(1＋∣Γ∣)/(1−∣Γ∣)である。",
+            "2": "終端の電圧反射係数の逆数である。最大は入射電圧に反射電圧の大きさを足し、最小は引くため、両者の比は(1＋∣Γ∣)/(1−∣Γ∣)である。",
+            "3": "反射係数をRとZ₀に置き換えた定在波比の式である。最大は入射電圧に反射電圧の大きさを足し、最小は引くため、両者の比は(1＋∣Γ∣)/(1−∣Γ∣)である。",
+            "4": "RがZ₀より大きい場合の定在波比になる。最大は入射電圧に反射電圧の大きさを足し、最小は引くため、両者の比は(1＋∣Γ∣)/(1−∣Γ∣)である。",
+            "5": "電圧測定から直接得られる定在波比である。最大は入射電圧に反射電圧の大きさを足し、最小は引くため、両者の比は(1＋∣Γ∣)/(1−∣Γ∣)である。",
+            "6": "反射係数から出す定在波比の逆数である。最大は入射電圧に反射電圧の大きさを足し、最小は引くため、両者の比は(1＋∣Γ∣)/(1−∣Γ∣)である。",
+            "7": "抵抗終端の電圧反射係数である。最大は入射電圧に反射電圧の大きさを足し、最小は引くため、両者の比は(1＋∣Γ∣)/(1−∣Γ∣)である。",
+            "8": "RとZ₀で表した定在波比の逆数である。最大は入射電圧に反射電圧の大きさを足し、最小は引くため、両者の比は(1＋∣Γ∣)/(1−∣Γ∣)である。",
+            "9": "Z₀がRより大きい場合の定在波比になる。最大は入射電圧に反射電圧の大きさを足し、最小は引くため、両者の比は(1＋∣Γ∣)/(1−∣Γ∣)である。",
+            "10": "電圧の最大と最小の比に対する逆数である。最大は入射電圧に反射電圧の大きさを足し、最小は引くため、両者の比は(1＋∣Γ∣)/(1−∣Γ∣)である。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "純抵抗負荷Rにおける電圧反射係数Γの式を選べ。",
+          "answer": "7",
+          "explanation": "終端では反射係数は負荷抵抗と特性インピーダンスの差を和で割った(R−Z₀)/(R＋Z₀)になる。",
+          "candidateExplanations": {
+            "1": "電圧定在波比を反射係数の絶対値から出す式である。終端では反射係数は負荷抵抗と特性インピーダンスの差を和で割った(R−Z₀)/(R＋Z₀)になる。",
+            "2": "終端の電圧反射係数の逆数である。終端では反射係数は負荷抵抗と特性インピーダンスの差を和で割った(R−Z₀)/(R＋Z₀)になる。",
+            "3": "反射係数をRとZ₀に置き換えた定在波比の式である。終端では反射係数は負荷抵抗と特性インピーダンスの差を和で割った(R−Z₀)/(R＋Z₀)になる。",
+            "4": "RがZ₀より大きい場合の定在波比になる。終端では反射係数は負荷抵抗と特性インピーダンスの差を和で割った(R−Z₀)/(R＋Z₀)になる。",
+            "5": "電圧測定から直接得られる定在波比である。終端では反射係数は負荷抵抗と特性インピーダンスの差を和で割った(R−Z₀)/(R＋Z₀)になる。",
+            "6": "反射係数から出す定在波比の逆数である。終端では反射係数は負荷抵抗と特性インピーダンスの差を和で割った(R−Z₀)/(R＋Z₀)になる。",
+            "7": "終端では反射係数は負荷抵抗と特性インピーダンスの差を和で割った(R−Z₀)/(R＋Z₀)になる。",
+            "8": "RとZ₀で表した定在波比の逆数である。終端では反射係数は負荷抵抗と特性インピーダンスの差を和で割った(R−Z₀)/(R＋Z₀)になる。",
+            "9": "Z₀がRより大きい場合の定在波比になる。終端では反射係数は負荷抵抗と特性インピーダンスの差を和で割った(R−Z₀)/(R＋Z₀)になる。",
+            "10": "電圧の最大と最小の比に対する逆数である。終端では反射係数は負荷抵抗と特性インピーダンスの差を和で割った(R−Z₀)/(R＋Z₀)になる。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "反射係数Γを消去して、定在波比SをRとZ₀で表した式を選べ。",
+          "answer": "3",
+          "explanation": "定在波比の分子は大きい側なので、反射係数を代入した式では絶対値の和が分子、差が分母になる。",
+          "candidateExplanations": {
+            "1": "電圧定在波比を反射係数の絶対値から出す式である。定在波比の分子は大きい側なので、反射係数を代入した式では絶対値の和が分子、差が分母になる。",
+            "2": "終端の電圧反射係数の逆数である。定在波比の分子は大きい側なので、反射係数を代入した式では絶対値の和が分子、差が分母になる。",
+            "3": "定在波比の分子は大きい側なので、反射係数を代入した式では絶対値の和が分子、差が分母になる。",
+            "4": "RがZ₀より大きい場合の定在波比になる。定在波比の分子は大きい側なので、反射係数を代入した式では絶対値の和が分子、差が分母になる。",
+            "5": "電圧測定から直接得られる定在波比である。定在波比の分子は大きい側なので、反射係数を代入した式では絶対値の和が分子、差が分母になる。",
+            "6": "反射係数から出す定在波比の逆数である。定在波比の分子は大きい側なので、反射係数を代入した式では絶対値の和が分子、差が分母になる。",
+            "7": "抵抗終端の電圧反射係数である。定在波比の分子は大きい側なので、反射係数を代入した式では絶対値の和が分子、差が分母になる。",
+            "8": "RとZ₀で表した定在波比の逆数である。定在波比の分子は大きい側なので、反射係数を代入した式では絶対値の和が分子、差が分母になる。",
+            "9": "Z₀がRより大きい場合の定在波比になる。定在波比の分子は大きい側なので、反射係数を代入した式では絶対値の和が分子、差が分母になる。",
+            "10": "電圧の最大と最小の比に対する逆数である。定在波比の分子は大きい側なので、反射係数を代入した式では絶対値の和が分子、差が分母になる。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "R＜Z₀のときのSを、RとZ₀の比で表せ。",
+          "answer": "9",
+          "explanation": "Sは1以上で、R＜Z₀の場合は絶対値を外して整理するとS＝Z₀/Rになる。",
+          "candidateExplanations": {
+            "1": "電圧定在波比を反射係数の絶対値から出す式である。Sは1以上で、R＜Z₀の場合は絶対値を外して整理するとS＝Z₀/Rになる。",
+            "2": "終端の電圧反射係数の逆数である。Sは1以上で、R＜Z₀の場合は絶対値を外して整理するとS＝Z₀/Rになる。",
+            "3": "反射係数をRとZ₀に置き換えた定在波比の式である。Sは1以上で、R＜Z₀の場合は絶対値を外して整理するとS＝Z₀/Rになる。",
+            "4": "RがZ₀より大きい場合の定在波比になる。Sは1以上で、R＜Z₀の場合は絶対値を外して整理するとS＝Z₀/Rになる。",
+            "5": "電圧測定から直接得られる定在波比である。Sは1以上で、R＜Z₀の場合は絶対値を外して整理するとS＝Z₀/Rになる。",
+            "6": "反射係数から出す定在波比の逆数である。Sは1以上で、R＜Z₀の場合は絶対値を外して整理するとS＝Z₀/Rになる。",
+            "7": "抵抗終端の電圧反射係数である。Sは1以上で、R＜Z₀の場合は絶対値を外して整理するとS＝Z₀/Rになる。",
+            "8": "RとZ₀で表した定在波比の逆数である。Sは1以上で、R＜Z₀の場合は絶対値を外して整理するとS＝Z₀/Rになる。",
+            "9": "Sは1以上で、R＜Z₀の場合は絶対値を外して整理するとS＝Z₀/Rになる。",
+            "10": "電圧の最大と最小の比に対する逆数である。Sは1以上で、R＜Z₀の場合は絶対値を外して整理するとS＝Z₀/Rになる。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "R＜Z₀のときZ₀＝R×オとなる。オを測定電圧の比で表せ。",
+          "answer": "5",
+          "explanation": "Z₀＝RSであり、Sは最大電圧を最小電圧で割った比である。",
+          "candidateExplanations": {
+            "1": "電圧定在波比を反射係数の絶対値から出す式である。Z₀＝RSであり、Sは最大電圧を最小電圧で割った比である。",
+            "2": "終端の電圧反射係数の逆数である。Z₀＝RSであり、Sは最大電圧を最小電圧で割った比である。",
+            "3": "反射係数をRとZ₀に置き換えた定在波比の式である。Z₀＝RSであり、Sは最大電圧を最小電圧で割った比である。",
+            "4": "RがZ₀より大きい場合の定在波比になる。Z₀＝RSであり、Sは最大電圧を最小電圧で割った比である。",
+            "5": "Z₀＝RSであり、Sは最大電圧を最小電圧で割った比である。",
+            "6": "反射係数から出す定在波比の逆数である。Z₀＝RSであり、Sは最大電圧を最小電圧で割った比である。",
+            "7": "抵抗終端の電圧反射係数である。Z₀＝RSであり、Sは最大電圧を最小電圧で割った比である。",
+            "8": "RとZ₀で表した定在波比の逆数である。Z₀＝RSであり、Sは最大電圧を最小電圧で割った比である。",
+            "9": "Z₀がRより大きい場合の定在波比になる。Z₀＝RSであり、Sは最大電圧を最小電圧で割った比である。",
+            "10": "電圧の最大と最小の比に対する逆数である。Z₀＝RSであり、Sは最大電圧を最小電圧で割った比である。"
+          }
+        }
+      ],
+      "officialLabel": "B-4",
+      "bankImageUrls": [
+        "/questions/general1/2025-09-kogaku-b-q24-p06.png"
+      ],
+      "bankImageAltTexts": [
+        "第一級総合無線通信士 無線工学B 2025年9月期 B-4 公式原問題"
+      ]
+    }
+  },
+  {
+    "id": "radio21-general1-2025-09-kogaku-b-q25",
+    "exam": "general1",
+    "session": "kogaku-b",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 25,
+    "category": "無線工学B",
+    "topicTags": [
+      "無線工学B",
+      "降水による電波の減衰"
+    ],
+    "difficulty": 3,
+    "question": "降水による電波の減衰について、各記述が正しいか答えよ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/sogo-tu-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人 日本無線協会 第一級総合無線通信士 2025年9月期 無線工学B B-5（問題・正答、試験問題記号 709）。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "imageUrls": [
+      "/questions/general1/2025-09-kogaku-b-q25-p06.png"
+    ],
+    "imageAltTexts": [
+      "第一級総合無線通信士 無線工学B 2025年9月期 B-5 公式原問題"
+    ],
+    "type": "native-b",
+    "explanation": "乾いた雪でもミリ波帯以上では粒子による散乱などが無視できなくなることがある。\n\n一般に波長が雨滴の大きさに近づく高い周波数ほど雨滴の影響が増し、20 GHz以下も一律にはならない。\n\n雨滴による吸収と別方向への散乱が重なり、受信方向の電力が低下する。\n\n周波数や偏波が同じなら、雨量の増加は経路の減衰の増加につながる。\n\n付着した水分によって吸収や散乱が生じ、とくにマイクロ波以上で影響が現れる。",
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "正しい"
+        },
+        {
+          "id": "2",
+          "label": "誤り"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "水分の少ない乾いた雪による減衰はミリ波帯以上ではほぼ無視できる。",
+          "answer": "2",
+          "explanation": "乾いた雪でもミリ波帯以上では粒子による散乱などが無視できなくなることがある。",
+          "candidateExplanations": {
+            "1": "この記述には誤りがある。乾いた雪でもミリ波帯以上では粒子による散乱などが無視できなくなることがある。",
+            "2": "乾いた雪でもミリ波帯以上では粒子による散乱などが無視できなくなることがある。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "降雨減衰は周波数が低いほど大きいが、20 GHz以下ではほぼ一定である。",
+          "answer": "2",
+          "explanation": "一般に波長が雨滴の大きさに近づく高い周波数ほど雨滴の影響が増し、20 GHz以下も一律にはならない。",
+          "candidateExplanations": {
+            "1": "この記述には誤りがある。一般に波長が雨滴の大きさに近づく高い周波数ほど雨滴の影響が増し、20 GHz以下も一律にはならない。",
+            "2": "一般に波長が雨滴の大きさに近づく高い周波数ほど雨滴の影響が増し、20 GHz以下も一律にはならない。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "降雨減衰は雨滴が電波エネルギーの一部を吸収または散乱するために起こる。",
+          "answer": "1",
+          "explanation": "雨滴による吸収と別方向への散乱が重なり、受信方向の電力が低下する。",
+          "candidateExplanations": {
+            "1": "雨滴による吸収と別方向への散乱が重なり、受信方向の電力が低下する。",
+            "2": "この記述は妥当である。雨滴による吸収と別方向への散乱が重なり、受信方向の電力が低下する。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "単位距離当たりの降雨減衰は、降雨強度が小さいほど小さい。",
+          "answer": "1",
+          "explanation": "周波数や偏波が同じなら、雨量の増加は経路の減衰の増加につながる。",
+          "candidateExplanations": {
+            "1": "周波数や偏波が同じなら、雨量の増加は経路の減衰の増加につながる。",
+            "2": "この記述は妥当である。周波数や偏波が同じなら、雨量の増加は経路の減衰の増加につながる。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "10 GHz以上では鏡面やレドームについた水滴や湿った雪が電波を減衰させる。",
+          "answer": "1",
+          "explanation": "付着した水分によって吸収や散乱が生じ、とくにマイクロ波以上で影響が現れる。",
+          "candidateExplanations": {
+            "1": "付着した水分によって吸収や散乱が生じ、とくにマイクロ波以上で影響が現れる。",
+            "2": "この記述は妥当である。付着した水分によって吸収や散乱が生じ、とくにマイクロ波以上で影響が現れる。"
+          }
+        }
+      ],
+      "officialLabel": "B-5",
+      "bankImageUrls": [
+        "/questions/general1/2025-09-kogaku-b-q25-p06.png"
+      ],
+      "bankImageAltTexts": [
+        "第一級総合無線通信士 無線工学B 2025年9月期 B-5 公式原問題"
+      ]
+    }
+  }
+]
