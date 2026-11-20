@@ -117,6 +117,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       { session: "taiki-tokuron", urlSlug: "taiki-tokuron", expectedQuestions: 15, label: "大気特論", categories: ["大気特論"] },
       { session: "suishitsu-gairon", urlSlug: "suishitsu-gairon", expectedQuestions: 10, label: "水質概論", categories: ["水質概論"] },
       { session: "osui-tokuron", urlSlug: "osui-tokuron", expectedQuestions: 25, label: "汚水処理特論", categories: ["汚水処理特論"] },
+      { session: "daikibo-suishitsu", urlSlug: "daikibo-suishitsu", expectedQuestions: 10, label: "大規模水質特論", categories: ["大規模水質特論"] },
     ],
     seasons: ["annual"], yearRange: { start: 2022, end: 2026 },
   },
