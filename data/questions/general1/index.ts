@@ -1,5 +1,6 @@
 import data from "./two-sittings.json";
 import engineeringA2023March from "./2023-03-kogaku-a.json";
+import oralEnglish2022March from "./2022-03-eigo-oral.json";
 import oralEnglish2023March from "./2023-03-eigo-oral.json";
 import writtenEnglish2023March from "./2023-03-eigo-written.json";
 import { normalizeQuestionData } from "@/lib/questions/native-b";
@@ -19,7 +20,7 @@ const CONTENT_HOLD_IDS = new Set([
   "radio21-general1-2026-09-tiri-q06",
 ]);
 
-export const GENERAL1_ALL_QUESTIONS = [...data, ...writtenEnglish2023March, ...oralEnglish2023March, ...engineeringA2023March].map(normalizeQuestionData);
+export const GENERAL1_ALL_QUESTIONS = [...data, ...writtenEnglish2023March, ...oralEnglish2023March, ...engineeringA2023March, ...oralEnglish2022March].map(normalizeQuestionData);
 export const GENERAL1_QUESTIONS = GENERAL1_ALL_QUESTIONS.filter(
   (q) => isPracticeReadyQuestion(q) && !CONTENT_HOLD_IDS.has(q.id),
 );
