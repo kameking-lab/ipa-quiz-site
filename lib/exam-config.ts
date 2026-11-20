@@ -2028,6 +2028,7 @@ caremanager: {
     sessions: [
         { session: "kadai-taiou", urlSlug: "kadai-taiou", expectedQuestions: 120, label: "課題対応能力試験（教養区分）", categories: ["演算記号", "文字の置き換え", "表による分類", "表の計算", "表の照合"] },
         { session: "kiso", urlSlug: "kiso", expectedQuestions: 30, label: "基礎能力試験", categories: ["文章理解", "判断推理", "数的推理", "資料解釈", "時事", "情報"] },
+        { session: "senmon", urlSlug: "senmon", expectedQuestions: 80, label: "専門試験（行政区分）", categories: ["政治学", "行政学", "憲法", "行政法", "民法（総則・物権）", "民法（債権・親族・相続）", "ミクロ経済学", "マクロ経済学", "財政学・経済事情", "経営学", "国際関係", "社会学", "心理学", "教育学", "英語（基礎）"] },
     ], seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
 },
 "kokka-ippan-kou": {
