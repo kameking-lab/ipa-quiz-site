@@ -823,6 +823,7 @@ const EXAM_FULL_NAMES: Record<ExamCode, string> = {
     "shokuhin-eisei-kanshiin": "食品衛生監視員採用試験",
     "homusho-senmonshokuin": "法務省専門職員（人間科学）採用試験",
     "rodo-kijun-kantokukan": "労働基準監督官採用試験",
+    "kokka-sogo-kyoyo": "国家公務員採用総合職試験（大卒程度試験・教養区分）",
     "kokka-ippan-dai": "国家公務員採用一般職試験（大卒程度試験）",
     "kokka-ippan-kou": "国家公務員採用一般職試験（高卒者試験）",
     "tsukanshi": "通関士試験"
@@ -1200,6 +1201,7 @@ const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number)
     "shokuhin-eisei-kanshiin": (c, y) => `食品衛生監視員採用試験の基礎能力試験（専門職共通）を${y}年度分・計${c}問収録。人事院の公式正答と全肢解説付き。`,
     "homusho-senmonshokuin": (c, y) => `法務省専門職員（人間科学）の専門試験（多肢選択式）を${y}年度分・計${c}問収録。人事院の公式正答と全肢解説付き。`,
     "rodo-kijun-kantokukan": (c, y) => `労働基準監督官採用試験の専門試験（多肢選択式）を${y}年度分・計${c}問収録。公式正答と全肢解説付き。`,
+    "kokka-sogo-kyoyo": (c, y) => `国家総合職（教養区分）の基礎能力試験を${y}年度分・計${c}問収録。公式正答と全肢解説付き。`,
     "kokka-ippan-dai": (c, y) => `国家一般職（大卒程度）の基礎能力試験、教養区分の課題対応能力試験、行政区分の専門試験を${y}年度分・計${c}問収録。公式正答と全肢解説付き。`,
     "kokka-ippan-kou": (c, y) => `国家一般職（高卒者）の基礎能力・適性試験を${y}年度分・計${c}問収録。人事院の公式問題・正答と全肢解説で学べます。`,
     "tsukanshi": (c) => `通関士試験の${c}。公式正答どおりに収録。`

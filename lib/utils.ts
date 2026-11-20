@@ -374,6 +374,7 @@ export const EXAM_LABELS: Record<string, string> = {
     "shokuhin-eisei-kanshiin": "食品衛生監視員",
     "homusho-senmonshokuin": "法務省専門職員（人間科学）",
     "rodo-kijun-kantokukan": "労働基準監督官",
+    "kokka-sogo-kyoyo": "国家総合職（教養区分）",
     "kokka-ippan-dai": "国家一般職（大卒程度）",
     "kokka-ippan-kou": "国家一般職（高卒者）",
     "tsukanshi": "通関士"

@@ -2023,6 +2023,12 @@ caremanager: {
         { session: "special-a", urlSlug: "special-a", expectedQuestions: 48, label: "労働基準監督A 専門試験（多肢選択式）", categories: ["労働法", "労働安全衛生", "労災保険", "労働経済", "憲法", "行政法", "刑法", "経済学", "経済事情", "社会保障", "社会学"] },
     ], seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
 },
+"kokka-sogo-kyoyo": {
+    code: "kokka-sogo-kyoyo", nameFull: "国家公務員採用総合職試験（大卒程度試験・教養区分）", urlSlug: "kokka-sogo-kyoyo", level: "specialist",
+    sessions: [
+        { session: "kiso-ii", urlSlug: "kiso-ii", expectedQuestions: 20, label: "基礎能力試験Ⅱ部", categories: ["数学", "物理", "化学", "生物", "地学", "倫理", "日本史", "世界史", "地理", "政治", "経済"] },
+    ], seasons: ["spring"], yearRange: { start: 2026, end: 2026 },
+},
 "kokka-ippan-dai": {
     code: "kokka-ippan-dai", nameFull: "国家公務員採用一般職試験（大卒程度試験）", urlSlug: "kokka-ippan-dai", level: "specialist",
     sessions: [

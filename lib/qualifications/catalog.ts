@@ -1828,6 +1828,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["2025・2024年度の専門Aと各年度の専門Bの補充"],
   },
   {
+    slug: "kokka-sogo-kyoyo", examCode: "kokka-sogo-kyoyo", shortName: "国家総合職（教養区分）", fullName: "国家公務員採用総合職試験（大卒程度試験・教養区分）",
+    domain: "legal", administrator: "人事院",
+    officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_14.html",
+    officialReuseTermsUrl: "https://www.jinji.go.jp/shinsei/notice.html",
+    status: "live",
+    reuseSummary: "2026年度春試験の基礎能力試験Ⅱ部20問を、公式正答・全肢解説付きで収録。",
+    attributionTemplate: "出典：人事院「総合職試験（大卒程度試験・教養区分）」。解説は過去問AIの独自作成。",
+    remainingWork: ["未収録年度の基礎能力試験の補充"],
+  },
+  {
     slug: "kokka-ippan-dai", examCode: "kokka-ippan-dai", shortName: "国家一般職（大卒程度）", fullName: "国家公務員採用一般職試験（大卒程度試験）",
     domain: "legal", administrator: "人事院",
     officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_15.html",

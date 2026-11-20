@@ -1,0 +1,5 @@
+import { KOKKA_SOGO_KYOYO_2026_SPRING_KISO_II } from "./2026-spring-kiso-ii";
+
+export const KOKKA_SOGO_KYOYO_QUESTIONS = [
+  ...KOKKA_SOGO_KYOYO_2026_SPRING_KISO_II,
+];
