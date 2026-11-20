@@ -1127,7 +1127,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jia-page.or.jp/exam/examination/answer/",
     officialReuseTermsUrl: "https://www.jia-page.or.jp/exam/examination/answer/",
     status: "live",
-    reuseSummary: "令和5〜8年度の法令・基礎・ガス技術から原本・正答・全肢解説を確認した問題を収録。問題と正答の出典は日本ガス機器検査協会、解説は独自作成。",
+    reuseSummary: "令和4〜8年度の法令・基礎・ガス技術から原本・正答・全肢解説を確認した問題を収録。問題と正答の出典は日本ガス機器検査協会、解説は独自作成。",
     attributionTemplate: "出典：一般財団法人日本ガス機器検査協会 ガス主任技術者試験（乙種、年度・科目・問番号）",
     remainingWork: ["法令改正に伴う解説の継続確認"],
 },
