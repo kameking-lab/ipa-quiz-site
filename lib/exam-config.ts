@@ -2026,8 +2026,8 @@ caremanager: {
 "kokka-sogo-kyoyo": {
     code: "kokka-sogo-kyoyo", nameFull: "国家公務員採用総合職試験（大卒程度試験・教養区分）", urlSlug: "kokka-sogo-kyoyo", level: "specialist",
     sessions: [
-        { session: "kiso-ii", urlSlug: "kiso-ii", expectedQuestions: 20, label: "基礎能力試験Ⅱ部", categories: ["数学", "物理", "化学", "生物", "地学", "倫理", "日本史", "世界史", "地理", "政治", "経済"] },
-    ], seasons: ["spring"], yearRange: { start: 2026, end: 2026 },
+        { session: "kiso-ii", urlSlug: "kiso-ii", expectedQuestions: 30, label: "基礎能力試験Ⅱ部", categories: ["時事", "数学", "物理", "化学", "生物", "地学", "倫理", "文学", "日本史", "世界史", "地理", "政治", "経済", "情報"] },
+    ], seasons: ["spring", "autumn"], yearRange: { start: 2025, end: 2026 },
 },
 "kokka-ippan-dai": {
     code: "kokka-ippan-dai", nameFull: "国家公務員採用一般職試験（大卒程度試験）", urlSlug: "kokka-ippan-dai", level: "specialist",
