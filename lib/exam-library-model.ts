@@ -189,12 +189,18 @@ export function parseExamCatalogEntry(value: unknown): ExamCatalogEntry | null {
   if (typeof checkedAt !== "string" || !isValidMonthOrDay(checkedAt, "exam")) return null;
   const sourceMode = value.sourceMode ?? "official-pdf";
   if (sourceMode !== "official-pdf" && sourceMode !== "official-archive-copy") return null;
-  // 公開コピーは出典監査済みの2021年度と配布元・パスだけを許可する。
-  if (sourceMode === "official-archive-copy" && (
-    !/^cskohyo-CS202119\d{2}$/u.test(id) ||
-    typeof value.archiveSourceUrl !== "string" ||
-    !/^https:\/\/osh-lab\.com\/wp-content\/uploads\/2022\/06\/[a-f0-9]{32}\.pdf$/u.test(value.archiveSourceUrl)
-  )) return null;
+  if (sourceMode === "official-archive-copy") {
+    const archiveUrl = value.archiveSourceUrl;
+    const reviewedConsultantCopy = /^cskohyo-CS202119\d{2}$/u.test(id) &&
+      typeof archiveUrl === "string" &&
+      /^https:\/\/osh-lab\.com\/wp-content\/uploads\/2022\/06\/[a-f0-9]{32}\.pdf$/u.test(archiveUrl);
+    const archivedLicensePaper = /^lckohyo-LC2024[12]11[38]$/u.test(id) &&
+      value.officialArchiveManifestUrl === "https://web.archive.org/web/20250119073601id_/https://www.exam.or.jp/lckohyo/" &&
+      typeof archiveUrl === "string" &&
+      /^https:\/\/web\.archive\.org\/web\/\d{14}id_\/https:\/\/www\.exam\.or\.jp\/wp-content\/uploads\/2024\/(08|12)\/LC2024[12]11[38]\.pdf$/u.test(archiveUrl) &&
+      archiveUrl.endsWith(`id_/${pdfUrl}`) && pdfUrl.endsWith(`/${id.slice("lckohyo-".length)}.pdf`);
+    if (!reviewedConsultantCopy && !archivedLicensePaper) return null;
+  }
 
   const entry: ExamCatalogEntry = {
     id,
