@@ -12,8 +12,8 @@ import { findQuestionByRoute, questionPagePath } from "@/lib/seo/question-url";
 const answers = "5 2 5 3 4 1 1 3 5 5 2 3 5 4 4 1 3 2 3 1 3 1 1 4 5 4 2 2 5 4 3 2 5 1 4 5 3 4 1 1 4 2 5 3 3 4,5 1 2 1 2 5 2 4 3 3 2 5 4 5 4 1 2 3 5 5 3 2 3 4 1 3 4 5 2 3 2 2 1 4 3 1 4 2 5 4 5 3 5 1 2 3 3 2 4 5 1 1 5 4 2 5 3 4 2 3 2 4 1 3 5 4 3 1 1 1 4 4 3 5 5 2 3 4 3 2".split(" ");
 
 describe("第36回介護福祉士・公開追加", () => {
-  it("公式125問・全正答と全肢解説を保持して3回分375問を公開する", () => {
-    expect(KAIGO_QUESTIONS).toHaveLength(375);
+  it("公式125問・全正答と全肢解説を保持して4回分500問を公開する", () => {
+    expect(KAIGO_QUESTIONS).toHaveLength(500);
     expect(KAIGO_2023_QUESTIONS).toHaveLength(125);
     expect(answers).toHaveLength(125);
     expect(source.answerSha256).toBe("e13163ff27fb3db632d0ba21596b0e0da49138ac0e3c12083cc829b95fc1a44b");

@@ -1,4 +1,5 @@
 import type { ChoiceKey, Question } from "@/lib/questions/types";
+import source2022 from "./2022-annual.json";
 import source2023 from "./2023-annual.json";
 import source2024 from "./2024-annual.json";
 import source2025 from "./2025-annual.json";
@@ -92,4 +93,7 @@ export const KAIGO_2025_QUESTIONS: Question[] = (source2025 as KaigoSource).ques
 /** 第36回（令和5年度）介護福祉士国家試験 全125問。 */
 export const KAIGO_2023_QUESTIONS: Question[] = (source2023 as KaigoSource).questions.map((item) => toQuestion(item, source2023 as KaigoSource));
 
-export const KAIGO_QUESTIONS: Question[] = [...KAIGO_2025_QUESTIONS, ...KAIGO_2024_QUESTIONS, ...KAIGO_2023_QUESTIONS];
+/** 第35回（令和4年度）介護福祉士国家試験 全125問。 */
+export const KAIGO_2022_QUESTIONS: Question[] = (source2022 as KaigoSource).questions.map((item) => toQuestion(item, source2022 as KaigoSource));
+
+export const KAIGO_QUESTIONS: Question[] = [...KAIGO_2025_QUESTIONS, ...KAIGO_2024_QUESTIONS, ...KAIGO_2023_QUESTIONS, ...KAIGO_2022_QUESTIONS];
