@@ -1789,6 +1789,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["外国語試験・適性試験Ⅰの過年度の補充"],
   },
   {
+    slug: "zaimu-senmonkan", examCode: "zaimu-senmonkan", shortName: "財務専門官", fullName: "財務専門官採用試験",
+    domain: "finance", administrator: "人事院",
+    officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_20.html",
+    officialReuseTermsUrl: "https://www.jinji.go.jp/shinsei/notice.html",
+    status: "live",
+    reuseSummary: "2026年度の専門試験（多肢選択式）から憲法・行政法の6問を、公式正答と全肢解説付きで収録。",
+    attributionTemplate: "出典：人事院「財務専門官採用試験 専門試験（多肢選択式）」。解説は過去問AIの独自作成。",
+    remainingWork: ["2025・2024年度の専門択一の補充"],
+  },
+  {
     slug: "shokuhin-eisei-kanshiin", examCode: "shokuhin-eisei-kanshiin", shortName: "食品衛生監視員", fullName: "食品衛生監視員採用試験",
     domain: "pharmacy", administrator: "人事院",
     officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_22.html",

@@ -819,6 +819,7 @@ const EXAM_FULL_NAMES: Record<ExamCode, string> = {
 
 
     "kouku-kanseikan": "航空管制官採用試験",
+    "zaimu-senmonkan": "財務専門官採用試験",
     "shokuhin-eisei-kanshiin": "食品衛生監視員採用試験",
     "homusho-senmonshokuin": "法務省専門職員（人間科学）採用試験",
     "rodo-kijun-kantokukan": "労働基準監督官採用試験",
@@ -1195,6 +1196,7 @@ const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number)
 
 
     "kouku-kanseikan": (c, y) => `航空管制官採用試験の適性試験Ⅰ・外国語試験の公開問題を${y}年度分・計${c}問収録。公式正答と全肢解説付き。`,
+    "zaimu-senmonkan": (c, y) => `財務専門官採用試験の専門試験（多肢選択式）を${y}年度分・計${c}問収録。人事院の公式正答と全肢解説付き。`,
     "shokuhin-eisei-kanshiin": (c, y) => `食品衛生監視員採用試験の基礎能力試験（専門職共通）を${y}年度分・計${c}問収録。人事院の公式正答と全肢解説付き。`,
     "homusho-senmonshokuin": (c, y) => `法務省専門職員（人間科学）の専門試験（多肢選択式）を${y}年度分・計${c}問収録。人事院の公式正答と全肢解説付き。`,
     "rodo-kijun-kantokukan": (c, y) => `労働基準監督官採用試験の専門試験（多肢選択式）を${y}年度分・計${c}問収録。公式正答と全肢解説付き。`,

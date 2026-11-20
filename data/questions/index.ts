@@ -341,6 +341,7 @@ import { TETSUDO_SHARYO2_QUESTIONS } from "./tetsudo-sharyo2";
 
 import { KIKAI_HOZEN_QUESTIONS } from "./kikai-hozen";
 import { KOUKU_KANSEIKAN_QUESTIONS } from "./kouku-kanseikan";
+import { ZAIMU_SENMONKAN_QUESTIONS } from "./zaimu-senmonkan";
 import { SHOKUHIN_EISEI_KANSHIIN_QUESTIONS } from "./shokuhin-eisei-kanshiin";
 import { HOMUSHO_SENMONSHOKUIN_QUESTIONS } from "./homusho-senmonshokuin";
 import { RODO_KIJUN_KANTOKUKAN_QUESTIONS } from "./rodo-kijun-kantokukan";
@@ -717,6 +718,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("tobi2") ? { "tobi2": TOBI2_QUESTIONS } : {}),
 
 ...(isExamPublished("kouku-kanseikan") ? { "kouku-kanseikan": KOUKU_KANSEIKAN_QUESTIONS } : {}),
+...(isExamPublished("zaimu-senmonkan") ? { "zaimu-senmonkan": ZAIMU_SENMONKAN_QUESTIONS } : {}),
 ...(isExamPublished("shokuhin-eisei-kanshiin") ? { "shokuhin-eisei-kanshiin": SHOKUHIN_EISEI_KANSHIIN_QUESTIONS } : {}),
 ...(isExamPublished("homusho-senmonshokuin") ? { "homusho-senmonshokuin": HOMUSHO_SENMONSHOKUIN_QUESTIONS } : {}),
 ...(isExamPublished("rodo-kijun-kantokukan") ? { "rodo-kijun-kantokukan": RODO_KIJUN_KANTOKUKAN_QUESTIONS } : {}),
