@@ -1,0 +1,2431 @@
+[
+  {
+    "id": "fp2-202401-gakka-q1",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 1,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "ライフプランニングと資金計画",
+    "topicTags": [
+      "ライフプランニングと資金計画"
+    ],
+    "difficulty": 2,
+    "question": "ファイナンシャル・プランナー（以下「ＦＰ」という）の顧客に対する行為に関する次の記述のうち、関連法規に照らし、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "社会保険労務士の登録を受けていないＦＰのＡさんは、顧客の求めに応じ、老齢基礎年金や老齢厚生年金の受給要件や請求方法を無償で説明した。",
+      "イ": "税理士の登録を受けていないＦＰのＢさんは、個人事業主である顧客からの依頼に基づき、当該顧客が提出すべき確定申告書を有償で代理作成した。",
+      "ウ": "金融商品取引業の登録を受けていないＦＰのＣさんは、顧客からｉＤｅＣｏ（確定拠出年金の個人型年金）について相談を受け、ｉＤｅＣｏの運用商品の一般的な特徴について無償で説明した。",
+      "エ": "司法書士の登録を受けていないＦＰのＤさんは、顧客から将来判断能力が不十分になった場合の財産の管理を依頼され、有償で当該顧客の任意後見受任者となった。"
+    },
+    "answer": "イ",
+    "explanation": "他人から依頼を受けて税務書類を業として作成することは、税理士などに認められた業務です。",
+    "choiceExplanations": {
+      "ア": "年金制度の一般的な説明は、社会保険労務士による申請代理や書類作成とは異なります。",
+      "イ": "他人から依頼を受けて税務書類を業として作成することは、税理士などに認められた業務です。",
+      "ウ": "iDeCoの商品の一般的特徴を説明するだけであれば、商品の販売や個別の投資助言には当たりません。",
+      "エ": "任意後見受任者には司法書士等の資格は必須ではなく、契約によって報酬を定めることもできます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q2",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 2,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "ライフプランニングと資金計画",
+    "topicTags": [
+      "ライフプランニングと資金計画"
+    ],
+    "difficulty": 2,
+    "question": "ライフプランニングにおける各種係数を用いた必要額の算出に関する次の記述の空欄（ア）、（イ）にあてはまる語句の組み合わせとして、最も適切なものはどれか。なお、算出に当たっては下記＜資料＞の係数を乗算で使用し、手数料や税金等については考慮しないものとする。\n\n・Ａさんが６０歳から６５歳になるまでの５年間、年率２％で複利運用しながら、毎年２００万円を受け取る場合、６０歳時点の元金として（ア）が必要となる。\n\n・Ｂさんが４５歳から毎年一定額を積み立てながら年率２％で複利運用し、１５年後の６０歳時に１,０００万円を準備する場合、毎年の積立金額は（イ）となる。\n\n＜資料＞年率2%の各種係数（5年、15年）\n終価係数：1.1041、1.3459\n現価係数：0.9057、0.7430\n減債基金係数：0.1922、0.0578\n資本回収係数：0.2122、0.0778\n年金終価係数：5.2040、17.2934\n年金現価係数：4.7135、12.8493\n",
+    "choices": {
+      "ア": "（ア）９,０５７,０００円（イ）５７８,０００円",
+      "イ": "（ア）９,０５７,０００円（イ）７７８,０００円",
+      "ウ": "（ア）９,４２７,０００円（イ）５７８,０００円",
+      "エ": "（ア）９,４２７,０００円（イ）７７８,０００円"
+    },
+    "answer": "ウ",
+    "explanation": "アは200万円×4.7135＝942万7,000円、イは1,000万円×0.0578＝57万8,000円です。",
+    "choiceExplanations": {
+      "ア": "アには5年の年金現価係数を用い、イには15年の減債基金係数を用います。",
+      "イ": "アは200万円×4.7135です。イも資本回収係数0.0778ではなく減債基金係数0.0578で求めます。",
+      "ウ": "アは200万円×4.7135＝942万7,000円、イは1,000万円×0.0578＝57万8,000円です。",
+      "エ": "アは942万7,000円ですが、イは将来額を作る積立てなので57万8,000円です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/fp2/202401-gakka/q2.png"
+    ],
+    "imageAltTexts": [
+      "年率2%の5年と15年の各種係数表"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "fp2-202401-gakka-q3",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 3,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "ライフプランニングと資金計画",
+    "topicTags": [
+      "ライフプランニングと資金計画"
+    ],
+    "difficulty": 2,
+    "question": "全国健康保険協会管掌健康保険（協会けんぽ）に関する次の記述のうち、最も適切なものはどれか。",
+    "choices": {
+      "ア": "一般保険料率は全国一律であるのに対し、介護保険料率は都道府県によって異なる。",
+      "イ": "被保険者の配偶者の父母が被扶養者と認定されるためには、主としてその被保険者により生計を維持され、かつ、その被保険者と同一の世帯に属していなければならない。",
+      "ウ": "退職により被保険者資格を喪失した者は、所定の要件を満たせば、最長で３年間、任意継続被保険者となることができる。",
+      "エ": "退職により被保険者資格を喪失した者が任意継続被保険者となるためには、資格喪失日の前日まで継続して１年以上の被保険者期間がなければならない。"
+    },
+    "answer": "イ",
+    "explanation": "配偶者の父母を被扶養者とするには、主として被保険者に生計を維持され、同一世帯に属する必要があります。",
+    "choiceExplanations": {
+      "ア": "一般保険料率は都道府県単位で定められ、介護保険料率は全国共通です。",
+      "イ": "配偶者の父母を被扶養者とするには、主として被保険者に生計を維持され、同一世帯に属する必要があります。",
+      "ウ": "協会けんぽの任意継続は、原則として最長2年間です。",
+      "エ": "任意継続の資格には、資格喪失日の前日まで継続して2か月以上の被保険者期間が必要です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q4",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 4,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "ライフプランニングと資金計画",
+    "topicTags": [
+      "ライフプランニングと資金計画"
+    ],
+    "difficulty": 2,
+    "question": "在職老齢年金に関する次の記述のうち、最も適切なものはどれか。",
+    "choices": {
+      "ア": "在職老齢年金の仕組みにおいて、支給停止調整額は、受給権者が６５歳未満の場合と６５歳以上の場合とでは異なっている。",
+      "イ": "在職老齢年金の仕組みにより老齢厚生年金の全部が支給停止される場合、老齢基礎年金の支給も停止される。",
+      "ウ": "６５歳以上７０歳未満の厚生年金保険の被保険者が受給している老齢厚生年金の年金額は、毎年９月１日を基準日として再計算され、その翌月から改定される。",
+      "エ": "厚生年金保険の被保険者が、７０歳で被保険者資格を喪失した後も引き続き厚生年金保険の適用事業所に在職する場合、総報酬月額相当額および基本月額の合計額にかかわらず、在職老齢年金の仕組みにより老齢厚生年金が支給停止となることはない。"
+    },
+    "answer": "ウ",
+    "explanation": "在職定時改定では毎年9月1日を基準に加入期間を反映し、10月分から年金額を改定します。",
+    "choiceExplanations": {
+      "ア": "2022年4月から65歳未満と65歳以上で同じ支給停止の基準額を用います。",
+      "イ": "支給停止の調整対象は老齢厚生年金で、老齢基礎年金は全額支給されます。",
+      "ウ": "在職定時改定では毎年9月1日を基準に加入期間を反映し、10月分から年金額を改定します。",
+      "エ": "70歳以降も適用事業所に勤務し一定の要件を満たせば、在職老齢年金の支給停止の対象となります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q5",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 5,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "ライフプランニングと資金計画",
+    "topicTags": [
+      "ライフプランニングと資金計画"
+    ],
+    "difficulty": 2,
+    "question": "公的年金制度の障害給付および遺族給付に関する次の記述のうち、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "障害等級１級または２級に該当する程度の障害の状態にある障害厚生年金の受給権者が、所定の要件を満たす配偶者を有する場合、その受給権者に支給される障害厚生年金には加給年金額が加算される。",
+      "イ": "障害厚生年金の額を計算する際に、その計算の基礎となる被保険者期間の月数が３００月に満たない場合、３００月として計算する。",
+      "ウ": "遺族基礎年金を受給することができる遺族は、国民年金の被保険者等の死亡の当時、その者によって生計を維持され、かつ、所定の要件を満たす「子のある配偶者」または「子」である。",
+      "エ": "遺族厚生年金の受給権者が、６５歳到達日に老齢厚生年金の受給権を取得した場合、６５歳以降、その者の選択によりいずれか一方の年金が支給され、他方の年金は支給停止となる。"
+    },
+    "answer": "エ",
+    "explanation": "65歳以降は自身の老齢厚生年金を優先して全額支給し、遺族厚生年金は老齢厚生年金相当額を支給停止する仕組みです。",
+    "choiceExplanations": {
+      "ア": "障害厚生年金の1級・2級で所定の要件に該当する配偶者がいる場合は、配偶者の加給年金額が加算されます。",
+      "イ": "障害厚生年金の報酬比例部分の計算では、被保険者期間が300月未満なら300月とみなします。",
+      "ウ": "遺族基礎年金は、生計維持など所定要件を満たす子のある配偶者または子が対象です。",
+      "エ": "65歳以降は自身の老齢厚生年金を優先して全額支給し、遺族厚生年金は老齢厚生年金相当額を支給停止する仕組みです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q6",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 6,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "ライフプランニングと資金計画",
+    "topicTags": [
+      "ライフプランニングと資金計画"
+    ],
+    "difficulty": 2,
+    "question": "確定拠出年金に関する次の記述のうち、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "企業型年金において、加入者が掛金を拠出することができることを規約で定める場合、加入者掛金の額は、その加入者に係る事業主掛金の額を超える額とすることができない。",
+      "イ": "企業型年金や確定給付企業年金等を実施していない一定規模以下の中小企業の事業主は、労使の合意かつ従業員の同意を基に、従業員が加入している個人型年金の加入者掛金に事業主掛金を上乗せして納付することができる。",
+      "ウ": "個人型年金に加入できるのは、国内に居住する国民年金の被保険者に限られる。",
+      "エ": "個人型年金の加入者が６０歳から老齢給付金を受給するためには、通算加入者等期間が１０年以上なければならない。"
+    },
+    "answer": "ウ",
+    "explanation": "海外居住者でも、国民年金の任意加入被保険者など所定要件に該当すれば加入できます。",
+    "choiceExplanations": {
+      "ア": "試験時点のマッチング拠出では、加入者掛金は事業主掛金を超えられません。",
+      "イ": "iDeCo＋では企業年金を実施していない所定の中小企業の事業主が、労使合意や本人同意に基づき掛金を追加拠出できます。",
+      "ウ": "海外居住者でも、国民年金の任意加入被保険者など所定要件に該当すれば加入できます。",
+      "エ": "原則60歳から受給するには通算加入者等期間が10年以上必要です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q7",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 7,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "ライフプランニングと資金計画",
+    "topicTags": [
+      "ライフプランニングと資金計画"
+    ],
+    "difficulty": 2,
+    "question": "公的年金等に係る税金に関する次の記述のうち、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "遺族基礎年金および遺族厚生年金は、所得税の課税対象とならない。",
+      "イ": "確定拠出年金の老齢給付金は、年金として受給する場合、雑所得として所得税の課税対象となる。",
+      "ウ": "老齢基礎年金および老齢厚生年金の受給者が死亡した場合、その者に支給されるべき年金給付のうち、まだ支給されていなかったもの（未支給年金）は、当該年金を受け取った遺族の一時所得として所得税の課税対象となる。",
+      "エ": "老齢基礎年金を受給権発生日から数年後に請求し、遡及してまとめて年金が支払われた場合、所得税額の計算上、その全額が、支払われた年分において収入すべき金額となる。"
+    },
+    "answer": "エ",
+    "explanation": "遡及して受け取った年金は、原則としてそれぞれ本来の支払期の属する年分の所得として扱います。",
+    "choiceExplanations": {
+      "ア": "遺族基礎年金と遺族厚生年金は、所得税が非課税です。",
+      "イ": "確定拠出年金の老齢給付を年金で受け取ると、公的年金等に係る雑所得となります。",
+      "ウ": "遺族自身が受け取る未支給年金は、遺族の一時所得に該当します。",
+      "エ": "遡及して受け取った年金は、原則としてそれぞれ本来の支払期の属する年分の所得として扱います。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q8",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 8,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "ライフプランニングと資金計画",
+    "topicTags": [
+      "ライフプランニングと資金計画"
+    ],
+    "difficulty": 2,
+    "question": "Ａ銀行の住宅ローン（変動金利型）を返済中であるＢさんの、別の金融機関の住宅ローンへの借換えに関する次の記述のうち、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "「フラット３５」や「フラット５０」などの住宅金融支援機構と民間金融機関が提携して提供する住宅ローンは、すべての商品が住宅取得時における利用に限定されているため、住宅ローンの借換先として選択することができない。",
+      "イ": "全期間固定金利型の住宅ローンに借り換えた場合、借換後の返済期間における市中金利の上昇によって返済負担が増加することはない。",
+      "ウ": "住宅ローンの借換えに際して、Ａ銀行の抵当権を抹消し、借換先の金融機関の抵当権を新たに設定する場合、登録免許税等の諸費用が必要となる。",
+      "エ": "Ａ銀行の住宅ローンの借入時と比較してＢさんの収入が減少し、年収に占める住宅ローンの返済額の割合が上昇している場合、住宅ローンの借換えができない場合がある。"
+    },
+    "answer": "ア",
+    "explanation": "フラット35には既存の住宅ローンの借換えに利用できる商品があります。",
+    "choiceExplanations": {
+      "ア": "フラット35には既存の住宅ローンの借換えに利用できる商品があります。",
+      "イ": "全期間固定金利型に借り換えると、市中金利の上昇を理由に同じ契約の返済額は増えません。",
+      "ウ": "通常は既存の抵当権の抹消と新たな抵当権の設定に、登録免許税などの費用がかかります。",
+      "エ": "借換えでも審査があり、収入減少による返済負担率の上昇で審査要件を満たさないことがあります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q9",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 9,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "ライフプランニングと資金計画",
+    "topicTags": [
+      "ライフプランニングと資金計画"
+    ],
+    "difficulty": 2,
+    "question": "下記＜Ａ社の貸借対照表＞に関する次の記述のうち、最も不適切なものはどれか。なお、Ａ社の売上高は年間７.５億円であるものとする。\n\n＜Ａ社の貸借対照表＞（百万円）\n・流動資産240（現金及び預金200、売掛金20、商品20）、固定資産360、資産計600\n・流動負債200（買掛金30、短期借入金170）、固定負債220、負債計420\n・純資産180（資本金100、利益剰余金80）、負債・純資産計600",
+    "choices": {
+      "ア": "Ａ社の自己資本比率は、３０％である。",
+      "イ": "Ａ社の流動比率は、１２０％である。",
+      "ウ": "Ａ社の総資本回転率は、０.８回である。",
+      "エ": "Ａ社の固定比率は、２００％である。"
+    },
+    "answer": "ウ",
+    "explanation": "総資本回転率は売上高7.5億円÷総資本6億円＝1.25回です。",
+    "choiceExplanations": {
+      "ア": "自己資本比率は純資産180÷総資産600×100＝30%です。",
+      "イ": "流動比率は流動資産240÷流動負債200×100＝120%です。",
+      "ウ": "総資本回転率は売上高7.5億円÷総資本6億円＝1.25回です。",
+      "エ": "固定比率は固定資産360÷自己資本180×100＝200%です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/fp2/202401-gakka/q9.png"
+    ],
+    "imageAltTexts": [
+      "A社の貸借対照表。資産、負債、純資産の金額を百万円単位で表示"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "fp2-202401-gakka-q10",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 10,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "ライフプランニングと資金計画",
+    "topicTags": [
+      "ライフプランニングと資金計画"
+    ],
+    "difficulty": 2,
+    "question": "クレジットカード会社（貸金業者）が発行するクレジットカードの一般的な利用に関する次の記述のうち、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "クレジットカードで商品を購入（ショッピング）した場合の返済方法の一つである定額リボルビング払い方式は、カード利用時に代金の支払回数を決め、利用代金をその回数で分割して支払う方法である。",
+      "イ": "クレジットカードで無担保借入（キャッシング）をする行為は、貸金業法上、総量規制の対象となる。",
+      "ウ": "クレジットカード会員規約では、クレジットカードは他人へ貸与することが禁止されており、クレジットカード会員が生計を維持している親族に対しても貸与することはできない。",
+      "エ": "クレジットカード会員の信用情報は、クレジットカード会社が加盟する指定信用情報機関により管理されており、会員は自己の信用情報について所定の手続きにより開示請求をすることができる。"
+    },
+    "answer": "ア",
+    "explanation": "定額リボ払いは残高に応じて定められた月々の金額を支払う方法です。回数を先に決める方式は分割払いです。",
+    "choiceExplanations": {
+      "ア": "定額リボ払いは残高に応じて定められた月々の金額を支払う方法です。回数を先に決める方式は分割払いです。",
+      "イ": "貸金業者によるカードのキャッシングには原則として総量規制が適用されます。",
+      "ウ": "クレジットカードは名義人本人が使うもので、家族へ貸すこともできません。",
+      "エ": "本人は、カード会社が加盟する指定信用情報機関に自分の信用情報の開示を請求できます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q11",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 11,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "リスク管理",
+    "topicTags": [
+      "リスク管理"
+    ],
+    "difficulty": 2,
+    "question": "保険法に関する次の記述のうち、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "保険金受取人の変更は、遺言によってもすることができる。",
+      "イ": "死亡保険契約の保険契約者または保険金受取人が、死亡保険金を受け取ることを目的として被保険者を故意に死亡させ、または死亡させようとした場合、保険会社は当該保険契約を解除することができる。",
+      "ウ": "死亡保険契約において、保険契約者と被保険者が離婚し、被保険者が当該保険契約に係る同意をするに当たって基礎とした事情が著しく変更した場合、被保険者は保険契約者に対して当該保険契約を解除することを請求することができる。",
+      "エ": "生命保険契約の締結に際し、保険契約者または被保険者になる者は、保険会社から告知を求められた事項以外の保険事故の発生の可能性に関する重要な事項について、自発的に判断して事実の告知をしなければならない。"
+    },
+    "answer": "エ",
+    "explanation": "告知義務は原則として保険会社が告知を求めた重要な事項について生じます。",
+    "choiceExplanations": {
+      "ア": "受取人の変更は遺言でも行えます。保険者への通知が対抗要件となります。",
+      "イ": "死亡保険金を得る目的で故意に被保険者を死亡させようとした等の場合は、重大事由による解除の対象です。",
+      "ウ": "離婚などにより契約時の同意の基礎事情が大きく変わったときは、被保険者が保険契約者に解除を請求できます。",
+      "エ": "告知義務は原則として保険会社が告知を求めた重要な事項について生じます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q12",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 12,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "リスク管理",
+    "topicTags": [
+      "リスク管理"
+    ],
+    "difficulty": 2,
+    "question": "生命保険の一般的な商品性に関する次の記述のうち、最も不適切なものはどれか。なお、特約については考慮しないものとする。",
+    "choices": {
+      "ア": "外貨建て終身保険では、死亡保険金を円貨で受け取る場合、受け取る金額は為替相場によって変動する。",
+      "イ": "変額保険（終身型）では、資産の運用実績に応じて死亡保険金額が変動するが、契約時に定めた保険金額（基本保険金額）は保証される。",
+      "ウ": "こども保険（学資保険）では、契約者（＝保険料負担者）が死亡した場合であっても、保険契約は継続し、被保険者である子の成長に合わせて祝金（学資金）等を受け取ることができる。",
+      "エ": "低解約返戻金型終身保険では、他の契約条件が同一であれば、低解約返戻金型ではない終身保険と比較して、保険料払込期間満了後も解約返戻金額が低く設定されている。"
+    },
+    "answer": "エ",
+    "explanation": "解約返戻金が低く抑えられるのは一般に所定の低解約返戻金期間で、払込期間満了後は同条件の通常型と同水準になる設計があります。",
+    "choiceExplanations": {
+      "ア": "外貨建ての死亡保険金を円換算して受け取る場合、円での手取額は換算時の為替に左右されます。",
+      "イ": "変額保険の終身型では運用実績による変動がありますが、死亡時には基本保険金額が保証されます。",
+      "ウ": "こども保険では契約者の死亡後も契約が継続し、所定時期の祝金や学資金を受け取るのが一般的です。",
+      "エ": "解約返戻金が低く抑えられるのは一般に所定の低解約返戻金期間で、払込期間満了後は同条件の通常型と同水準になる設計があります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q13",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 13,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "リスク管理",
+    "topicTags": [
+      "リスク管理"
+    ],
+    "difficulty": 2,
+    "question": "総合福祉団体定期保険および団体定期保険（Ｂグループ保険）の一般的な商品性に関する次の記述のうち、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "総合福祉団体定期保険は、企業（団体）が保険料を負担し、従業員等を被保険者とする１年更新の定期保険である。",
+      "イ": "総合福祉団体定期保険のヒューマン・ヴァリュー特約では、被保険者である従業員等が不慮の事故によって身体に障害を受けた場合や傷害の治療を目的として入院した場合に、所定の保険金が従業員等に支払われる。",
+      "ウ": "団体定期保険（Ｂグループ保険）は、従業員等が任意に加入する１年更新の定期保険であり、毎年、保険金額を所定の範囲内で見直すことができる。",
+      "エ": "団体定期保険（Ｂグループ保険）の加入に際して、医師の診査は不要である。"
+    },
+    "answer": "イ",
+    "explanation": "ヒューマン・ヴァリュー特約は死亡等による人材喪失への企業の費用に備える特約です。従業員本人の入院への給付を目的とはしません。",
+    "choiceExplanations": {
+      "ア": "総合福祉団体定期保険は企業等が保険料を負担し、従業員等の死亡などに備える1年更新の保険です。",
+      "イ": "ヒューマン・ヴァリュー特約は死亡等による人材喪失への企業の費用に備える特約です。従業員本人の入院への給付を目的とはしません。",
+      "ウ": "Bグループ保険は従業員が任意に加入する1年更新型で、更新時などに所定範囲内で保障額を見直せます。",
+      "エ": "一般に健康状態の告知により加入し、医師による診査を要しません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q14",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 14,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "リスク管理",
+    "topicTags": [
+      "リスク管理"
+    ],
+    "difficulty": 2,
+    "question": "個人年金保険の税金に関する次の記述のうち、最も適切なものはどれか。なお、いずれも契約者（＝保険料負担者）および年金受取人は同一人であり、個人であるものとする。",
+    "choices": {
+      "ア": "個人年金保険の年金に係る雑所得の金額は、その年金額から、その年金額に対応する払込保険料および公的年金等控除額を差し引いて算出する。",
+      "イ": "個人年金保険の年金に係る雑所得の金額が２５万円以上である場合、その年金の支払時に当該金額の２０.３１５％相当額が源泉徴収等される。",
+      "ウ": "個人年金保険（１０年確定年金）において、年金受取人が年金受取開始日後に将来の年金給付の総額に代えて受け取った一時金は、一時所得として所得税の課税対象となる。",
+      "エ": "個人年金保険（保証期間付終身年金）において、保証期間中に年金受取人が死亡して遺族が取得した残りの保証期間の年金受給権は、雑所得として所得税の課税対象となる。"
+    },
+    "answer": "ウ",
+    "explanation": "同一人が負担して受け取る年金で、将来の年金に代えてまとめて受け取る一時金は一時所得です。",
+    "choiceExplanations": {
+      "ア": "民間の個人年金保険の雑所得は年金額から対応する払込保険料を引きます。公的年金等控除は使いません。",
+      "イ": "源泉徴収の対象となる場合の税率は10.21%です。",
+      "ウ": "同一人が負担して受け取る年金で、将来の年金に代えてまとめて受け取る一時金は一時所得です。",
+      "エ": "死亡により遺族が取得する残りの年金受給権は、原則として相続税の対象です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=7",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q15",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 15,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "リスク管理",
+    "topicTags": [
+      "リスク管理"
+    ],
+    "difficulty": 2,
+    "question": "契約者（＝保険料負担者）を法人とする生命保険に係る保険料等の経理処理に関する次の記述のうち、最も不適切なものはどれか。なお、いずれの保険契約も保険料は年払いかつ全期払いで、２０２３年１０月に締結したものとする。",
+    "choices": {
+      "ア": "被保険者が役員、死亡保険金受取人が法人である終身保険の支払保険料は、その全額を資産に計上する。",
+      "イ": "被保険者が役員・従業員全員、死亡保険金受取人が被保険者の遺族、満期保険金受取人が法人である養老保険の支払保険料は、その全額を損金の額に算入することができる。",
+      "ウ": "被保険者が役員・従業員全員、給付金受取人が法人である医療保険について、法人が受け取った入院給付金および手術給付金は、その全額を益金の額に算入する。",
+      "エ": "被保険者が役員、死亡保険金受取人が法人で、最高解約返戻率が８０％である定期保険（保険期間３０年）の支払保険料は、保険期間の前半４割相当期間においては、その６０％相当額を資産に計上し、残額を損金の額に算入することができる。"
+    },
+    "answer": "イ",
+    "explanation": "死亡保険金受取人が遺族で満期保険金受取人が法人の養老保険では、原則として半額を資産計上し、残りを損金とします。",
+    "choiceExplanations": {
+      "ア": "法人が死亡保険金を受ける終身保険では、一般に保険料の全額を資産に計上します。",
+      "イ": "死亡保険金受取人が遺族で満期保険金受取人が法人の養老保険では、原則として半額を資産計上し、残りを損金とします。",
+      "ウ": "法人が受け取る入院給付金や手術給付金は、受取額を益金に算入します。",
+      "エ": "最高解約返戻率が70%超85%以下の場合は、原則として保険期間の前半4割の期間に支払保険料の60%を資産計上します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=7",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q16",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 16,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "リスク管理",
+    "topicTags": [
+      "リスク管理"
+    ],
+    "difficulty": 2,
+    "question": "任意加入の自動車保険の一般的な商品性に関する次の記述のうち、最も不適切なものはどれか。なお、記載のない事項については考慮しないものとする。",
+    "choices": {
+      "ア": "自動車保険のノンフリート等級別料率制度では、人身傷害保険の保険金が支払われる場合、３等級ダウン事故となる。",
+      "イ": "記名被保険者が被保険自動車を運転中に、ハンドル操作を誤って散歩をしていた同居の父に接触してケガをさせた場合、対人賠償保険の補償の対象とならない。",
+      "ウ": "台風による高潮で被保険自動車に損害が生じた場合、一般条件の車両保険の補償の対象となる。",
+      "エ": "記名被保険者が被保険自動車を運転中に対人事故を起こし、法律上の損害賠償責任を負担する場合、自動車損害賠償責任保険等により補償される部分を除いた額が、対人賠償保険の補償の対象となる。"
+    },
+    "answer": "ア",
+    "explanation": "人身傷害保険だけで保険金の支払を受ける事故は通常ノーカウント事故で、3等級ダウンの原因になりません。",
+    "choiceExplanations": {
+      "ア": "人身傷害保険だけで保険金の支払を受ける事故は通常ノーカウント事故で、3等級ダウンの原因になりません。",
+      "イ": "対人賠償では被保険者の父母などへの賠償責任は補償の対象外です。",
+      "ウ": "一般条件の車両保険では台風による高潮による損害も補償されます。",
+      "エ": "対人賠償保険は原則として自賠責保険等で支払われる額を超える部分を補償します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=7",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q17",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 17,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "リスク管理",
+    "topicTags": [
+      "リスク管理"
+    ],
+    "difficulty": 2,
+    "question": "傷害保険の一般的な商品性に関する次の記述のうち、最も不適切なものはどれか。なお、特約については考慮しないものとする。",
+    "choices": {
+      "ア": "普通傷害保険では、海外旅行中に転倒したことによるケガは補償の対象とならない。",
+      "イ": "家族傷害保険では、保険期間中に誕生した契約者（＝被保険者本人）の子は被保険者となる。",
+      "ウ": "海外旅行傷害保険では、海外旅行中に罹患したウイルス性食中毒は補償の対象となる。",
+      "エ": "国内旅行傷害保険では、国内旅行中に発生した地震および地震を原因とする津波によるケガは補償の対象とならない。"
+    },
+    "answer": "ア",
+    "explanation": "普通傷害保険は国内外の急激・偶然・外来の事故によるケガを補償し、海外旅行中の転倒も対象になります。",
+    "choiceExplanations": {
+      "ア": "普通傷害保険は国内外の急激・偶然・外来の事故によるケガを補償し、海外旅行中の転倒も対象になります。",
+      "イ": "家族傷害保険では本人と同居の親族などが補償範囲に含まれ、保険期間中に出生した本人の子も対象になります。",
+      "ウ": "海外旅行傷害保険では、所定の条件を満たす旅行中のウイルス性食中毒も対象です。",
+      "エ": "特約なしの国内旅行傷害保険では、地震やそれに伴う津波によるケガは原則として対象外です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=8",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q18",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 18,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "リスク管理",
+    "topicTags": [
+      "リスク管理"
+    ],
+    "difficulty": 2,
+    "question": "契約者（＝保険料負担者）を法人、被保険者を従業員とする損害保険に係る保険金の経理処理に関する次の記述のうち、最も適切なものはどれか。",
+    "choices": {
+      "ア": "業務中の事故によるケガが原因で入院をした従業員が、普通傷害保険の入院保険金を保険会社から直接受け取った場合、法人は当該保険金相当額を益金の額に算入する。",
+      "イ": "業務中の事故で従業員が死亡したことにより、法人が普通傷害保険の死亡保険金を受け取った場合、法人は当該保険金相当額を益金の額に算入する。",
+      "ウ": "従業員が法人の所有する自動車で対人事故を起こし、その相手方に保険会社から自動車保険の対人賠償保険の保険金が直接支払われた場合、法人は当該保険金相当額を益金の額に算入する。",
+      "エ": "従業員が法人の所有する自動車で交通事故を起こし、法人が、当該車両が全損したことにより受け取った自動車保険の車両保険の保険金で業務用機械設備を取得した場合、圧縮記帳が認められる。"
+    },
+    "answer": "イ",
+    "explanation": "法人が死亡保険金を受け取った場合、法人の益金に算入します。",
+    "choiceExplanations": {
+      "ア": "従業員が保険会社から直接受け取る入院保険金は、法人の収入ではありません。",
+      "イ": "法人が死亡保険金を受け取った場合、法人の益金に算入します。",
+      "ウ": "保険会社が被害者に直接支払った保険金は、通常、法人が受け取る益金に該当しません。",
+      "エ": "保険金による圧縮記帳は、原則として滅失資産と同一種類の代替資産の取得等が要件です。車両の代わりに業務用機械設備を取得したケースは該当しません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=8",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q19",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 19,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "リスク管理",
+    "topicTags": [
+      "リスク管理"
+    ],
+    "difficulty": 2,
+    "question": "第三分野の保険の一般的な商品性に関する次の記述のうち、最も適切なものはどれか。なお、記載のない特約については考慮しないものとする。",
+    "choices": {
+      "ア": "所得補償保険では、勤務先企業の倒産によって失業した場合、保険金は支払われない。",
+      "イ": "更新型の医療保険では、保険期間中に入院給付金を受け取った場合、保険契約を更新することができない。",
+      "ウ": "先進医療特約では、契約時点において先進医療に該当していた治療であれば、療養を受けた時点において先進医療に該当しない場合であっても、保険金の支払対象となる。",
+      "エ": "がん保険では、通常、１８０日間または６ヵ月間の免責期間が設けられている。"
+    },
+    "answer": "ア",
+    "explanation": "所得補償保険は病気やケガで就業できない場合に備えるもので、倒産による失業には給付しません。",
+    "choiceExplanations": {
+      "ア": "所得補償保険は病気やケガで就業できない場合に備えるもので、倒産による失業には給付しません。",
+      "イ": "通常の更新型医療保険は、入院給付金を受け取ったというだけで更新できなくなるわけではありません。",
+      "ウ": "先進医療の該当性は原則として実際に療養を受けた時点で判定します。",
+      "エ": "がん保険の待ち期間は、一般に契約後90日程度です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=8",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q20",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 20,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "リスク管理",
+    "topicTags": [
+      "リスク管理"
+    ],
+    "difficulty": 2,
+    "question": "損害保険を活用した事業活動のリスク管理に関する次の記述のうち、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "生活用品を製造する事業者が、製造した製品の欠陥が原因で顧客がケガをして、法律上の損害賠償責任を負担する場合に備えて、生産物賠償責任保険（ＰＬ保険）を契約した。",
+      "イ": "建設業を営む事業者が、建設中の建物が火災により損害を被る場合に備えて、建設工事保険を契約した。",
+      "ウ": "清掃業務を請け負っている事業者が、清掃業務中の事故により従業員がケガをして、法律上の損害賠償責任を負担する場合に備えて、請負業者賠償責任保険を契約した。",
+      "エ": "ボウリング場を運営する事業者が、設備の管理不備に起因する事故により顧客がケガをして、法律上の損害賠償責任を負担する場合に備えて、施設所有（管理）者賠償責任保険を契約した。"
+    },
+    "answer": "ウ",
+    "explanation": "請負業者賠償責任保険は作業等で第三者に与えた損害向けで、自社従業員の労災賠償には別の備えが必要です。",
+    "choiceExplanations": {
+      "ア": "PL保険は、製造・販売した製品の欠陥で第三者にケガをさせるなどした場合の賠償リスクに備えます。",
+      "イ": "建設工事保険は、工事中の対象物が火災などで被る損害に備えます。",
+      "ウ": "請負業者賠償責任保険は作業等で第三者に与えた損害向けで、自社従業員の労災賠償には別の備えが必要です。",
+      "エ": "施設所有・管理者賠償責任保険は、施設の不備で利用者が被った損害への賠償に備えます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=9",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q21",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 21,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "金融資産運用",
+    "topicTags": [
+      "金融資産運用"
+    ],
+    "difficulty": 2,
+    "question": "銀行等の金融機関で取り扱う預貯金の一般的な商品性に関する次の記述のうち、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "決済用預金は、「無利息」「要求払い」「決済サービスを提供できること」という３つの条件を満たした預金である。",
+      "イ": "当座預金は、株式の配当金の自動受取口座として利用することができる。",
+      "ウ": "スーパー定期預金は、預入期間が３年以上の場合、単利型と半年複利型があるが、半年複利型を利用することができるのは法人に限られる。",
+      "エ": "大口定期預金は、最低預入金額が１,０００万円に設定された固定金利型の定期預金である。"
+    },
+    "answer": "ウ",
+    "explanation": "スーパー定期の半年複利型を利用できるのは個人で、法人は単利型を利用します。",
+    "choiceExplanations": {
+      "ア": "決済用預金は無利息で随時払戻しができ、決済サービスを提供できる預金です。",
+      "イ": "当座預金は所定の口座振込の取扱いに従い、株式配当金の受取口座とすることができます。",
+      "ウ": "スーパー定期の半年複利型を利用できるのは個人で、法人は単利型を利用します。",
+      "エ": "大口定期預金は一般に1,000万円以上を対象とする固定金利の定期預金です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=9",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q22",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 22,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "金融資産運用",
+    "topicTags": [
+      "金融資産運用"
+    ],
+    "difficulty": 2,
+    "question": "公募株式投資信託の費用に関する次の記述のうち、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "購入時手数料がかからない投資信託は、一般に、ノーロード型（ノーロードファンド）と呼ばれる。",
+      "イ": "運用管理費用（信託報酬）は投資信託の銘柄ごとに定められており、一般に、インデックス型投資信託よりもアクティブ型投資信託の方が高い傾向がある。",
+      "ウ": "会計監査に必要な費用（監査報酬）や組入有価証券に係る売買委託手数料は、信託財産から支出されるため、受益者（投資家）の負担となる。",
+      "エ": "信託財産留保額は、長期に投資信託を保有する投資家との公平性を確保するための費用であり、すべての投資信託に設定されている。"
+    },
+    "answer": "エ",
+    "explanation": "信託財産留保額は残る受益者との公平性のために設けることがありますが、設定されていない商品もあります。",
+    "choiceExplanations": {
+      "ア": "ノーロード型は購入時手数料がかからない投資信託です。信託報酬などは別にかかり得ます。",
+      "イ": "アクティブ型では銘柄選定などに費用がかかるため、信託報酬は一般にインデックス型より高めです。",
+      "ウ": "監査報酬や組入証券の売買手数料は信託財産から支払われ、基準価額を通じて受益者が負担します。",
+      "エ": "信託財産留保額は残る受益者との公平性のために設けることがありますが、設定されていない商品もあります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=9",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q23",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 23,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "金融資産運用",
+    "topicTags": [
+      "金融資産運用"
+    ],
+    "difficulty": 2,
+    "question": "固定利付債券の利回り（単利・年率）に関する次の記述の空欄（ア）、（イ）にあてはまる語句の組み合わせとして、最も適切なものはどれか。なお、手数料、経過利子、税金等については考慮しないものとし、計算結果は表示単位の小数点以下第３位を四捨五入するものとする。表面利率が０.９０％、償還までの残存期間が１０年の固定利付債券を、額面１００円当たり１０３円で購入した投資家が、購入から４年後に額面１００円当たり１０２円で売却した場合の所有期間利回りは（ア）であり、償還期限まで１０年保有した場合の最終利回りよりも（イ）。",
+    "choices": {
+      "ア": "（ア）０.６３％（イ）高い",
+      "イ": "（ア）０.６３％（イ）低い",
+      "ウ": "（ア）０.５８％（イ）高い",
+      "エ": "（ア）０.５８％（イ）低い"
+    },
+    "answer": "ア",
+    "explanation": "所有期間利回りは(0.90−1÷4)÷103×100＝約0.63%です。償還まで保有する場合の約0.58%より高くなります。",
+    "choiceExplanations": {
+      "ア": "所有期間利回りは(0.90−1÷4)÷103×100＝約0.63%です。償還まで保有する場合の約0.58%より高くなります。",
+      "イ": "所有期間利回りの0.63%は合っていますが、最終利回り約0.58%より高い値です。",
+      "ウ": "0.58%は、10年間保有して100円で償還された場合の最終利回りです。",
+      "エ": "0.58%は最終利回りです。4年後に売却する場合の所有期間利回りはそれより高い約0.63%です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=10",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19",
+    "isCalculation": true
+  },
+  {
+    "id": "fp2-202401-gakka-q24",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 24,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "金融資産運用",
+    "topicTags": [
+      "金融資産運用"
+    ],
+    "difficulty": 2,
+    "question": "東京証券取引所の市場区分等に関する次の記述のうち、最も適切なものはどれか。",
+    "choices": {
+      "ア": "プライム市場の上場維持基準では、新規上場から一定期間経過後の株主数および流通株式数について、新規上場基準よりも高い数値基準が設定されている。",
+      "イ": "プライム市場の新規上場基準では、上場申請会社の直近事業年度におけるＲＯＥの数値基準について、８％以上と定められている。",
+      "ウ": "スタンダード市場の上場会社がプライム市場へ市場区分の変更を申請することはできるが、プライム市場の上場会社がスタンダード市場へ市場区分の変更を申請することはできない。",
+      "エ": "ＪＰＸ日経インデックス４００は、プライム市場、スタンダード市場、グロース市場を主市場とする普通株式の中から、ＲＯＥや営業利益等の指標等により選定された４００銘柄を対象として算出される。"
+    },
+    "answer": "エ",
+    "explanation": "JPX日経400は各市場の普通株式からROEや営業利益などを使って選定する400銘柄を対象とします。",
+    "choiceExplanations": {
+      "ア": "株主数や流通株式数について、プライム市場の維持基準が新規上場基準より高く定められているわけではありません。",
+      "イ": "プライム市場の新規上場基準に一律のROE8%以上という要件はありません。",
+      "ウ": "市場区分の変更は要件に従って申し込め、プライムからスタンダードへの変更も可能です。",
+      "エ": "JPX日経400は各市場の普通株式からROEや営業利益などを使って選定する400銘柄を対象とします。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=10",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q25",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 25,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "金融資産運用",
+    "topicTags": [
+      "金融資産運用"
+    ],
+    "difficulty": 2,
+    "question": "下記＜Ｘ社のデータ＞に基づき算出される投資指標に関する次の記述のうち、最も不適切なものはどれか。\n\n＜Ｘ社のデータ＞\n株価：４,５００円\n発行済株式数：０.８億株\n売上高：２,５００億円\n営業利益：１８０億円\n当期純利益：１２０億円\n自己資本：（＝純資産）２,０００億円\n配当金総額：３６億円",
+    "choices": {
+      "ア": "ＲＯＥは、６％である。",
+      "イ": "ＰＥＲは、２０倍である。",
+      "ウ": "ＰＢＲは、１.８倍である。",
+      "エ": "配当利回りは、１％である。"
+    },
+    "answer": "イ",
+    "explanation": "1株当たり利益は120億円÷0.8億株＝150円なので、PERは4,500÷150＝30倍です。",
+    "choiceExplanations": {
+      "ア": "ROEは当期純利益120億円÷自己資本2,000億円×100＝6%です。",
+      "イ": "1株当たり利益は120億円÷0.8億株＝150円なので、PERは4,500÷150＝30倍です。",
+      "ウ": "1株当たり純資産は2,000億円÷0.8億株＝2,500円で、PBRは4,500÷2,500＝1.8倍です。",
+      "エ": "1株当たり配当は36億円÷0.8億株＝45円で、配当利回りは45÷4,500×100＝1%です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=11",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/fp2/202401-gakka/q25.png"
+    ],
+    "imageAltTexts": [
+      "X社の株価、発行済株式数、売上高、営業利益、純利益、自己資本、配当金総額"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "fp2-202401-gakka-q26",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 26,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "金融資産運用",
+    "topicTags": [
+      "金融資産運用"
+    ],
+    "difficulty": 2,
+    "question": "オプション取引の一般的な特徴に関する次の記述のうち、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "オプション取引において、コール・オプションは「権利行使価格で買う権利」であり、プット・オプションは「権利行使価格で売る権利」である。",
+      "イ": "オプション取引のうち、満期日だけに権利行使ができるものはヨーロピアンタイプと呼ばれ、満期日までの権利行使期間中であればいつでも権利行使ができるものはアメリカンタイプと呼ばれる。",
+      "ウ": "コール・オプションおよびプット・オプションは、他の条件が同一であれば、いずれも満期までの期間が長いほど、プレミアム（オプション料）が高くなる。",
+      "エ": "プット・オプションの売り手の最大利益は無限定であるが、コール・オプションの売り手の最大利益はプレミアム（オプション料）に限定される。"
+    },
+    "answer": "エ",
+    "explanation": "プットとコールの売り手はどちらも、最大利益が受け取ったプレミアムに限られます。",
+    "choiceExplanations": {
+      "ア": "コールは買う権利、プットは売る権利です。いずれも定められた権利行使価格を使います。",
+      "イ": "ヨーロピアンタイプは満期日に、アメリカンタイプは所定の期間内に随時行使できます。",
+      "ウ": "他の条件が同じとき、満期までの期間が長いと、一般に価格の有利な変動を期待できる機会が多くなりプレミアムは高まる傾向があります。",
+      "エ": "プットとコールの売り手はどちらも、最大利益が受け取ったプレミアムに限られます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=11",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q27",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 27,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "金融資産運用",
+    "topicTags": [
+      "金融資産運用"
+    ],
+    "difficulty": 2,
+    "question": "ポートフォリオ理論に関する次の記述のうち、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "システマティック・リスクは、市場全体の変動の影響を受けるリスクであり、分散投資によっても消去しきれないリスクとされている。",
+      "イ": "ポートフォリオのリスクは、組み入れた各資産のリスクを組入比率で加重平均した値以下となる。",
+      "ウ": "異なる２資産からなるポートフォリオにおいて、２資産間の相関係数が－１である場合、ポートフォリオを組成することによる分散投資の効果（リスクの低減）は得られない。",
+      "エ": "同一期間における収益率が同じ２つのファンドをシャープ・レシオで比較する場合、収益率の標準偏差の値が小さいファンドの方が、収益率の標準偏差の値が大きいファンドよりも当該期間において効率的に運用されていたと評価することができる。"
+    },
+    "answer": "ウ",
+    "explanation": "相関係数−1では価格変動が逆方向となり、分散効果が最も大きくなります。",
+    "choiceExplanations": {
+      "ア": "市場全体の変動によるシステマティック・リスクは、銘柄を分散しても残ります。",
+      "イ": "相関係数は1以下なので、通常の買い持ちのポートフォリオの標準偏差は各標準偏差の加重平均を上回りません。",
+      "ウ": "相関係数−1では価格変動が逆方向となり、分散効果が最も大きくなります。",
+      "エ": "同じ正の超過収益を得た場合、標準偏差が小さければリスク当たりの超過収益を示すシャープ・レシオは高くなります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=12",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q28",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 28,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "金融資産運用",
+    "topicTags": [
+      "金融資産運用"
+    ],
+    "difficulty": 2,
+    "question": "上場株式等の譲渡および配当等（一定の大口株主等が受けるものを除く）に係る税金に関する次の記述のうち、最も不適切なものはどれか。なお、本問においては、ＮＩＳＡ（少額投資非課税制度）により投資収益が非課税となる口座をＮＩＳＡ口座という。",
+    "choices": {
+      "ア": "上場株式の配当に係る配当所得の金額について、総合課税を選択して所得税の確定申告をした場合、特定口座内で生じた上場株式等に係る譲渡損失の金額と損益通算することができる。",
+      "イ": "ＮＩＳＡ口座で保有する上場株式の配当金を非課税扱いにするためには、配当金の受取方法として株式数比例配分方式を選択しなければならない。",
+      "ウ": "上場株式等に係る配当所得等の金額と損益通算してもなお控除しきれない上場株式等に係る譲渡損失の金額は、所得税の確定申告をすることにより、翌年以後３年間にわたって繰り越すことができる。",
+      "エ": "ＮＩＳＡ口座で取得した上場株式等を売却したことにより生じた損失の金額については、特定口座内で保有する上場株式等の配当等に係る配当所得の金額と損益通算することができない。"
+    },
+    "answer": "ア",
+    "explanation": "上場株式の配当と上場株式等の譲渡損を通算するには、配当について申告分離課税を選ぶ必要があります。",
+    "choiceExplanations": {
+      "ア": "上場株式の配当と上場株式等の譲渡損を通算するには、配当について申告分離課税を選ぶ必要があります。",
+      "イ": "上場株式の配当をNISAで非課税にするには、証券会社で受け取る株式数比例配分方式を選択します。",
+      "ウ": "確定申告を継続することで、控除しきれない上場株式の譲渡損を翌年以後3年間繰り越せます。",
+      "エ": "NISA口座内の譲渡損は税務上ないものとされるため、課税口座の配当との損益通算はできません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=12",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q29",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 29,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "金融資産運用",
+    "topicTags": [
+      "金融資産運用"
+    ],
+    "difficulty": 2,
+    "question": "わが国における個人による金融商品取引に係るセーフティネットに関する次の記述のうち、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "日本国内に本店のある銀行の海外支店や外国銀行の在日支店に預け入れた預金は、その預金の種類にかかわらず、預金保険制度の保護の対象とならない。",
+      "イ": "日本国内に本店のある銀行の国内支店に預け入れた外貨預金は、その金額の多寡にかかわらず、預金保険制度による保護の対象とならない。",
+      "ウ": "日本国内の証券会社が破綻し、分別管理が適切に行われていなかったために、一般顧客の資産の一部または全部が返還されない事態が生じた場合、日本投資者保護基金により、補償対象債権に係る顧客資産について一般顧客１人当たり１,０００万円を上限として補償される。",
+      "エ": "日本国内の証券会社が保護預かりしている一般顧客の外国株式は、日本投資者保護基金による補償の対象とならない。"
+    },
+    "answer": "エ",
+    "explanation": "国内証券会社が預かる外国株式も補償対象顧客資産に含まれ得ます。",
+    "choiceExplanations": {
+      "ア": "国内銀行の海外支店や外国銀行の在日支店は、預金保険制度の対象金融機関に含まれません。",
+      "イ": "国内支店への預入れでも、外貨預金は預金保険制度の保護対象外です。",
+      "ウ": "証券会社の破綻時に分別管理の不備で返還できない対象顧客資産は、1人につき1,000万円を上限として補償されます。",
+      "エ": "国内証券会社が預かる外国株式も補償対象顧客資産に含まれ得ます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=13",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q30",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 30,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "金融資産運用",
+    "topicTags": [
+      "金融資産運用"
+    ],
+    "difficulty": 2,
+    "question": "物価等に関する次の記述の空欄（ア）～（ウ）に当てはまる語句の組み合わせとして、最も適切なものはどれか。\n\n・財やサービスの価格（物価）が継続的に上昇する状態をインフレーション（インフレ）という。インフレには、その発生原因に着目した分類として、好景気等を背景とした需要の増大が原因となる（ア）型や、賃金や材料費の上昇等が原因となる（イ）型などがある。\n\n・消費者物価指数（ＣＰＩ）と（ウ）は、いずれも物価変動に係る代表的な指標であるが、消費者物価指数（ＣＰＩ）がその対象に輸入品の価格を含む一方、（ウ）は、国内生産品の価格のみを対象とする点などで違いがある。なお、（ウ）は、国内要因による物価動向を反映することから、ホームメイド・インフレを示す指標と呼ばれる。",
+    "choices": {
+      "ア": "（ア）コストプッシュ（イ）ディマンドプル（ウ）企業物価指数",
+      "イ": "（ア）ディマンドプル（イ）コストプッシュ（ウ）ＧＤＰデフレーター",
+      "ウ": "（ア）コストプッシュ（イ）ディマンドプル（ウ）ＧＤＰデフレーター",
+      "エ": "（ア）ディマンドプル（イ）コストプッシュ（ウ）企業物価指数"
+    },
+    "answer": "イ",
+    "explanation": "需要起点はディマンドプル、費用起点はコストプッシュで、国内生産の価格を反映するのはGDPデフレーターです。",
+    "choiceExplanations": {
+      "ア": "需要の増大はディマンドプルで、コストの増加はコストプッシュです。",
+      "イ": "需要起点はディマンドプル、費用起点はコストプッシュで、国内生産の価格を反映するのはGDPデフレーターです。",
+      "ウ": "GDPデフレーターは合っていますが、需要と費用に対応するインフレの名称が逆です。",
+      "エ": "インフレの分類は合っていますが、輸入価格を含まず国内生産の価格を反映するのはGDPデフレーターです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=13",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q31",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 31,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "タックスプランニング",
+    "topicTags": [
+      "タックスプランニング"
+    ],
+    "difficulty": 2,
+    "question": "所得税の基本的な仕組みに関する次の記述のうち、最も適切なものはどれか。",
+    "choices": {
+      "ア": "所得税では、納税者が申告した所得金額に基づき、納付すべき税額を税務署長が決定する賦課課税方式が採用されている。",
+      "イ": "所得税の課税対象は国内において生じた所得のみであり、国外において生じた所得が課税対象となることはない。",
+      "ウ": "所得税における居住者とは、国内に住所を有し、または現在まで引き続いて１年以上居所を有する個人をいう。",
+      "エ": "所得税額の計算において課税総所得金額に乗じる税率には、課税総所得金額が大きくなるにつれて段階的に税率が高くなる超過累進税率が採用されており、その最高税率は３０％である。"
+    },
+    "answer": "ウ",
+    "explanation": "国内に住所があるか、引き続き1年以上居所がある個人は居住者です。",
+    "choiceExplanations": {
+      "ア": "所得税は原則として、納税者が所得や税額を計算して申告する申告納税方式です。",
+      "イ": "居住者の区分によっては国外所得も日本の所得税の対象となります。",
+      "ウ": "国内に住所があるか、引き続き1年以上居所がある個人は居住者です。",
+      "エ": "課税総所得金額に対して超過累進税率を用い、その最高税率は45%です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=14",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q32",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 32,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "タックスプランニング",
+    "topicTags": [
+      "タックスプランニング"
+    ],
+    "difficulty": 2,
+    "question": "所得税における各種所得に関する次の記述のうち、最も適切なものはどれか。",
+    "choices": {
+      "ア": "不動産の貸付けをしたことに伴い敷金の名目により収受した金銭の額のうち、その全部または一部について、返還を要しないことが確定した金額は、その確定した日の属する年分の不動産所得の金額の計算上、総収入金額に算入する。",
+      "イ": "老齢基礎年金の受給者の公的年金等に係る雑所得以外の所得に係る合計所得金額が１,０００万円を超える場合、雑所得の金額の計算上、老齢基礎年金に係る収入金額から公的年金等控除額は控除されない。",
+      "ウ": "退職一時金を受け取った退職者が、「退職所得の受給に関する申告書」を提出している場合、所得税および復興特別所得税として、退職一時金の支給額の２０.４２％が源泉徴収される。",
+      "エ": "為替予約を締結していない外貨定期預金を満期時に円貨で払い戻した結果生じた為替差益は、一時所得として総合課税の対象となる。"
+    },
+    "answer": "ア",
+    "explanation": "敷金のうち返還不要が確定した額は、その確定した年分の不動産所得の総収入金額に含めます。",
+    "choiceExplanations": {
+      "ア": "敷金のうち返還不要が確定した額は、その確定した年分の不動産所得の総収入金額に含めます。",
+      "イ": "公的年金等以外の所得が1,000万円を超える場合も控除は適用され、控除額が所得水準に応じて縮小します。",
+      "ウ": "申告書の提出があるときは退職所得控除等を反映して計算します。20.42%の一律の源泉徴収は申告書の提出がない場合に行われます。",
+      "エ": "外貨預金の満期時に為替予約なしで円に換えた為替差益は、一般に雑所得です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=14",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q33",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 33,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "タックスプランニング",
+    "topicTags": [
+      "タックスプランニング"
+    ],
+    "difficulty": 2,
+    "question": "所得税の損益通算に関する次の記述のうち、最も適切なものはどれか。",
+    "choices": {
+      "ア": "先物取引に係る雑所得の金額の計算上生じた損失の金額は、不動産所得の金額と損益通算することができる。",
+      "イ": "業務用車両を譲渡したことによる譲渡所得の金額の計算上生じた損失の金額は、事業所得の金額と損益通算することができる。",
+      "ウ": "不動産所得の金額の計算上生じた損失の金額のうち、不動産所得を生ずべき土地の取得に要した負債の利子の額に相当する部分の金額は、事業所得の金額と損益通算することができる。",
+      "エ": "生命保険の解約返戻金を受け取ったことによる一時所得の金額の計算上生じた損失の金額は、不動産所得の金額と損益通算することができる。"
+    },
+    "answer": "イ",
+    "explanation": "業務用車両の譲渡で生じた総合課税の譲渡所得の損失は、事業所得などと損益通算できます。",
+    "choiceExplanations": {
+      "ア": "先物取引に係る損失は申告分離課税の対象となる一定の先物取引の所得と通算でき、不動産所得とは通算できません。",
+      "イ": "業務用車両の譲渡で生じた総合課税の譲渡所得の損失は、事業所得などと損益通算できます。",
+      "ウ": "不動産所得の赤字のうち土地等の取得のための借入利子に相当する部分は、損益通算が制限されます。",
+      "エ": "一時所得の損失は、所得区分間の損益通算の対象になりません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=14",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q34",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 34,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "タックスプランニング",
+    "topicTags": [
+      "タックスプランニング"
+    ],
+    "difficulty": 2,
+    "question": "所得税における寡婦控除に関する次の記述のうち、最も不適切なものはどれか。なお、記載されたもの以外の要件はすべて満たしているものとする。",
+    "choices": {
+      "ア": "夫と死別した後に婚姻をしていない納税者は、扶養親族を有していない場合であっても、寡婦控除の適用を受けることができる。",
+      "イ": "夫と離婚した後に婚姻をしていない納税者は、納税者と事実上婚姻関係と同様の事情にあると認められる一定の者がいる場合であっても、寡婦控除の適用を受けることができる。",
+      "ウ": "納税者の合計所得金額が５００万円を超えている場合、寡婦控除の適用を受けることはできない。",
+      "エ": "寡婦控除とひとり親控除は、重複して適用を受けることができない。"
+    },
+    "answer": "イ",
+    "explanation": "事実上婚姻関係と同様の事情にある一定の者がいる場合、寡婦控除の対象になりません。",
+    "choiceExplanations": {
+      "ア": "夫と死別した場合には、ほかの要件を満たせば扶養親族がいなくても適用できます。",
+      "イ": "事実上婚姻関係と同様の事情にある一定の者がいる場合、寡婦控除の対象になりません。",
+      "ウ": "合計所得金額が500万円を超えると寡婦控除は適用できません。",
+      "エ": "寡婦の定義からひとり親に該当する者は除かれるため、両控除の併用はできません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=15",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q35",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 35,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "タックスプランニング",
+    "topicTags": [
+      "タックスプランニング"
+    ],
+    "difficulty": 2,
+    "question": "次のうち、青色申告者のみが適用を受けることができる所得税の青色申告の特典として、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "棚卸資産の評価における低価法の選択",
+      "イ": "純損失の繰戻還付",
+      "ウ": "雑損失の繰越控除",
+      "エ": "中小事業者の少額減価償却資産の取得価額の必要経費算入"
+    },
+    "answer": "ウ",
+    "explanation": "雑損失の繰越控除は、青色申告者に限らず、所定の申告を行った白色申告者でも適用できます。",
+    "choiceExplanations": {
+      "ア": "棚卸資産の低価法は、青色申告者が一定の手続により選択できます。",
+      "イ": "純損失の翌年以降への繰越しとは別に、青色申告者には一定要件で前年への繰戻還付が認められます。",
+      "ウ": "雑損失の繰越控除は、青色申告者に限らず、所定の申告を行った白色申告者でも適用できます。",
+      "エ": "一定の中小事業者の少額減価償却資産の特例は、青色申告が適用要件です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=15",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q36",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 36,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "タックスプランニング",
+    "topicTags": [
+      "タックスプランニング"
+    ],
+    "difficulty": 2,
+    "question": "法人税の仕組みに関する次の記述のうち、最も適切なものはどれか。",
+    "choices": {
+      "ア": "法人は、法人税の納税地に異動があった場合、原則として、異動前および異動後の納税地の所轄税務署長にその旨を届け出なければならない。",
+      "イ": "新設法人が設立事業年度から青色申告の適用を受けようとする場合は、設立の日から１ヵ月以内に、「青色申告の承認申請書」を納税地の所轄税務署長に提出し、その承認を受けなければならない。",
+      "ウ": "期末資本金の額等が１億円以下の一定の中小法人に対する法人税の税率は、所得金額のうち年８００万円以下の部分について軽減税率が適用される。",
+      "エ": "青色申告法人は、仕訳帳・総勘定元帳等の帳簿を備えて取引に関する事項を記録するとともに、当該帳簿を、その事業年度の確定申告書の提出期限の翌日から事業の廃止日後７年を経過するまで保存しなければならない。"
+    },
+    "answer": "ウ",
+    "explanation": "資本金等が1億円以下の一定の中小法人では、年800万円以下の所得部分に軽減税率が適用されます。",
+    "choiceExplanations": {
+      "ア": "納税地の異動は、原則として異動前の納税地を所轄する税務署長に届け出ます。",
+      "イ": "設立後3か月を経過する日と設立事業年度終了日の早い方の前日が、原則として申請期限です。",
+      "ウ": "資本金等が1億円以下の一定の中小法人では、年800万円以下の所得部分に軽減税率が適用されます。",
+      "エ": "保存期間は原則としてその事業年度の確定申告書の提出期限の翌日から7年で、廃業を起点とはしません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=15",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q37",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 37,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "タックスプランニング",
+    "topicTags": [
+      "タックスプランニング"
+    ],
+    "difficulty": 2,
+    "question": "法人税の益金に関する次の記述のうち、最も不適切なものはどれか。なお、法人は内国法人（普通法人）であるものとする。",
+    "choices": {
+      "ア": "法人が法人税の還付を受けた場合、その還付された金額は、原則として、還付加算金を除き、益金の額に算入する。",
+      "イ": "法人が個人から債務の免除を受けた場合、その免除された債務の金額は、原則として、益金の額に算入する。",
+      "ウ": "法人が個人から無償で土地の譲渡を受けた場合、その土地の時価に相当する金額は、原則として、益金の額に算入する。",
+      "エ": "法人が支払いを受けた完全支配関係のある他の法人の株式等（完全子法人株式等）に係る配当等の額は、所定の手続により、その全額が益金不算入となる。"
+    },
+    "answer": "ア",
+    "explanation": "法人税は損金に算入されないため、その還付金は原則として益金にも算入されません。還付加算金は区別します。",
+    "choiceExplanations": {
+      "ア": "法人税は損金に算入されないため、その還付金は原則として益金にも算入されません。還付加算金は区別します。",
+      "イ": "債務の免除によって得た経済的利益は、原則として債務免除益として益金に算入します。",
+      "ウ": "無償で譲り受けた土地の時価は、原則として受贈益として益金に算入します。",
+      "エ": "完全子法人株式等の配当は、所定の手続の下で全額が益金不算入になります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=16",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q38",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 38,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "タックスプランニング",
+    "topicTags": [
+      "タックスプランニング"
+    ],
+    "difficulty": 2,
+    "question": "消費税に関する次の記述のうち、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "消費税の課税事業者が行う居住の用に供する家屋の貸付けは、その貸付期間が１ヵ月以上であれば、消費税の課税取引に該当する。",
+      "イ": "簡易課税制度の適用を受けることができるのは、消費税の課税期間に係る基準期間における課税売上高が５,０００万円以下の事業者である。",
+      "ウ": "消費税の課税事業者が行う金融商品取引法に規定する有価証券の譲渡は、消費税の非課税取引に該当する。",
+      "エ": "消費税の課税事業者である法人は、原則として、消費税の確定申告書を各課税期間の末日の翌日から２ヵ月以内に、納税地の所轄税務署長に提出しなければならない。"
+    },
+    "answer": "ア",
+    "explanation": "居住用であることが明らかな住宅の貸付けは、貸付期間が1か月未満などの場合を除き非課税です。",
+    "choiceExplanations": {
+      "ア": "居住用であることが明らかな住宅の貸付けは、貸付期間が1か月未満などの場合を除き非課税です。",
+      "イ": "基準期間の課税売上高が5,000万円以下で、届出等の要件を満たせば簡易課税制度を適用できます。",
+      "ウ": "有価証券の譲渡は消費税の非課税取引です。",
+      "エ": "法人の消費税の申告期限は原則としてその課税期間末日の翌日から2か月以内です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=16",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q39",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 39,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "タックスプランニング",
+    "topicTags": [
+      "タックスプランニング"
+    ],
+    "difficulty": 2,
+    "question": "会社と役員間の取引に係る所得税・法人税に関する次の記述のうち、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "会社が役員に対して無利息で金銭の貸付けを行った場合、原則として、通常収受すべき利息に相当する金額が、会社の益金の額に算入される。",
+      "イ": "役員が会社の所有する社宅に無償で居住している場合、原則として、通常の賃貸料相当額が、その役員の給与所得の収入金額に算入される。",
+      "ウ": "会社が役員に対して支給する当該会社の株式上場に係る記念品（現物に代えて支給する金銭は含まない）であって、社会通念上記念品としてふさわしく、かつ、その価額が１万円以下のものは、役員の給与所得の収入金額に算入しない。",
+      "エ": "役員が所有する建物を適正な時価の２分の１以上かつ適正な時価未満の価額で会社に譲渡した場合、その役員は、適正な時価により当該土地を譲渡したものとして譲渡所得の計算を行う。"
+    },
+    "answer": "エ",
+    "explanation": "法人への譲渡に時価によるみなし譲渡課税が原則適用されるのは、対価が時価の2分の1未満の場合です。",
+    "choiceExplanations": {
+      "ア": "無利息の貸付けでは、通常得られる利息相当額が原則として法人の益金に算入されます。",
+      "イ": "役員への無償の社宅貸与では、原則として賃貸料相当額が給与として扱われます。",
+      "ウ": "社会通念上ふさわしい株式上場の記念品で価額が1万円以下などの要件を満たせば、給与課税しません。",
+      "エ": "法人への譲渡に時価によるみなし譲渡課税が原則適用されるのは、対価が時価の2分の1未満の場合です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=16",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q40",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 40,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "タックスプランニング",
+    "topicTags": [
+      "タックスプランニング"
+    ],
+    "difficulty": 2,
+    "question": "貸借対照表および損益計算書の一般的な特徴に関する次の記述のうち、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "貸借対照表の無形固定資産は、物理的な形態を持たない特許権や商標権等の資産の金額を表示している。",
+      "イ": "貸借対照表の固定負債は、返済期限が決算日の翌日から起算して１年以内に到来しない借入金等の負債の金額を表示している。",
+      "ウ": "損益計算書の営業利益は、売上総利益金額から販売費及び一般管理費の合計額を控除した金額を表示している。",
+      "エ": "損益計算書の税引前当期純利益は、経常利益または経常損失の金額に営業外収益・営業外費用を加算・減算した金額を表示している。"
+    },
+    "answer": "エ",
+    "explanation": "営業外損益を反映した段階は経常損益です。税引前当期純利益にはその後に特別利益・特別損失を反映します。",
+    "choiceExplanations": {
+      "ア": "特許権や商標権など形のない長期保有資産は、無形固定資産に含まれます。",
+      "イ": "通常の営業循環基準によるものを除き、決算日の翌日から1年を超えて返済期限を迎える借入金などは固定負債です。",
+      "ウ": "営業利益は売上総利益から販売費及び一般管理費を引いたものです。",
+      "エ": "営業外損益を反映した段階は経常損益です。税引前当期純利益にはその後に特別利益・特別損失を反映します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=17",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q41",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 41,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "不動産",
+    "topicTags": [
+      "不動産"
+    ],
+    "difficulty": 2,
+    "question": "土地の価格に関する次の記述のうち、最も適切なものはどれか。",
+    "choices": {
+      "ア": "地価公示の公示価格は、毎年４月１日を標準地の価格判定の基準日としている。",
+      "イ": "都道府県地価調査の標準価格は、毎年７月１日を基準地の価格判定の基準日としている。",
+      "ウ": "相続税路線価は、地価公示の公示価格の７０％を価格水準の目安としている。",
+      "エ": "固定資産税評価額は、全国の各地域を管轄する国税局長が、固定資産評価基準に基づき決定する。"
+    },
+    "answer": "イ",
+    "explanation": "都道府県地価調査は毎年7月1日時点の基準地の標準価格を判定します。",
+    "choiceExplanations": {
+      "ア": "地価公示は毎年1月1日時点の標準地の価格を判定します。",
+      "イ": "都道府県地価調査は毎年7月1日時点の基準地の標準価格を判定します。",
+      "ウ": "相続税路線価は地価公示価格の80%程度が目安です。",
+      "エ": "固定資産税評価額は原則として市町村長が固定資産評価基準に基づき決定します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=17",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q42",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 42,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "不動産",
+    "topicTags": [
+      "不動産"
+    ],
+    "difficulty": 2,
+    "question": "宅地建物取引業法に関する次の記述のうち、最も適切なものはどれか。なお、買主は宅地建物取引業者ではないものとする。",
+    "choices": {
+      "ア": "アパートやマンションの所有者が、当該建物の賃貸を自ら業として行うためには、あらかじめ宅地建物取引業の免許を取得しなければならない。",
+      "イ": "宅地建物取引業者が、自ら売主となる宅地の売買契約の締結に際して手付を受領したときは、その手付がいかなる性質のものであっても、買主が契約の履行に着手する前であれば、当該宅地建物取引業者はその手付を返還することで、契約の解除をすることができる。",
+      "ウ": "専任媒介契約を締結した宅地建物取引業者は、依頼者に対し、当該専任媒介契約に係る業務の処理状況を、５日間に１回以上報告しなければならない。",
+      "エ": "宅地建物取引業者は、自ら売主となる宅地の売買契約の締結に際して、代金の額の１０分の２を超える額の手付を受領することができない。"
+    },
+    "answer": "エ",
+    "explanation": "宅建業者が自ら売主となる場合、宅建業者でない買主から代金の20%を超える手付を受け取れません。",
+    "choiceExplanations": {
+      "ア": "自己所有の建物を自ら貸す行為に宅地建物取引業の免許は不要です。",
+      "イ": "売主が手付解除をするには、買主が履行に着手する前に手付の倍額を現実に提供する必要があります。",
+      "ウ": "専任媒介契約の業務処理状況は、少なくとも2週間に1回報告します。",
+      "エ": "宅建業者が自ら売主となる場合、宅建業者でない買主から代金の20%を超える手付を受け取れません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=17",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q43",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 43,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "不動産",
+    "topicTags": [
+      "不動産"
+    ],
+    "difficulty": 2,
+    "question": "民法および借地借家法に関する次の記述のうち、最も不適切なものはどれか。なお、本問においては、借地借家法第３８条における定期建物賃貸借契約を定期借家契約といい、それ以外の建物賃貸借契約を普通借家契約という。また、記載のない特約については考慮しないものとする。",
+    "choices": {
+      "ア": "賃借人は、建物の引渡しを受けた後の通常の使用および収益によって生じた建物の損耗ならびに経年変化については、賃貸借が終了したときに原状に復する義務を負わない。",
+      "イ": "普通借家契約において、賃借人が賃貸人の同意を得て建物に付加した造作について、賃貸借終了時、賃借人が賃貸人に、その買取りを請求しない旨の特約をした場合、その特約は無効である。",
+      "ウ": "定期借家契約を締結するときは、賃貸人は、あらかじめ、賃借人に対し、契約の更新がなく、期間満了により賃貸借が終了することについて、その旨を記載した書面を交付し、または、賃借人の承諾を得て当該書面に記載すべき事項を電磁的方法により提供して、説明しなければならない。",
+      "エ": "定期借家契約において、経済事情の変動があっても賃貸借期間中は賃料を増減額しないこととする特約をした場合、その特約は有効である。"
+    },
+    "answer": "イ",
+    "explanation": "造作買取請求権を排除する特約は有効です。",
+    "choiceExplanations": {
+      "ア": "通常損耗と経年変化は、特約がないときの原状回復義務に含まれません。",
+      "イ": "造作買取請求権を排除する特約は有効です。",
+      "ウ": "定期借家契約の締結前に、更新なしで期間満了により終了する旨を書面交付等の方法で説明します。",
+      "エ": "定期借家契約で賃料の改定に関する特約があるときは、その特約が適用されます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=18",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q44",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 44,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "不動産",
+    "topicTags": [
+      "不動産"
+    ],
+    "difficulty": 2,
+    "question": "都市計画法に関する次の記述のうち、最も適切なものはどれか。",
+    "choices": {
+      "ア": "すべての都市計画区域について、都市計画に市街化区域と市街化調整区域の区域区分を定めなければならない。",
+      "イ": "都市計画区域のうち、市街化調整区域は、おおむね１０年以内に優先的かつ計画的に市街化を図るべき区域である。",
+      "ウ": "開発許可を受けた開発区域内の土地においては、開発工事完了の公告があるまでの間は、原則として、建築物を建築することができない。",
+      "エ": "市街化調整区域内において、農業を営む者の居住の用に供する建築物の建築を目的として行う開発行為は、開発許可を受ける必要がある。"
+    },
+    "answer": "ウ",
+    "explanation": "開発許可を受けても、開発工事の完了公告までは原則として建築できません。",
+    "choiceExplanations": {
+      "ア": "すべての都市計画区域に区域区分が必須というわけではありません。",
+      "イ": "おおむね10年以内の計画的な市街化を図るのは市街化区域で、市街化調整区域は市街化を抑制します。",
+      "ウ": "開発許可を受けても、開発工事の完了公告までは原則として建築できません。",
+      "エ": "市街化調整区域で農業を営む者が居住する建築物のための開発行為は、原則として許可を要しません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=18",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q45",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 45,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "不動産",
+    "topicTags": [
+      "不動産"
+    ],
+    "difficulty": 2,
+    "question": "都市計画区域および準都市計画区域内における建築基準法の規定に関する次の記述のうち、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "建築基準法第４２条第２項により道路境界線とみなされる線と道路との間の敷地部分（セットバック部分）は、建蔽率を算定する際の敷地面積に算入することができない。",
+      "イ": "建築物の敷地が２つの異なる用途地域にわたる場合、その全部について、敷地の過半の属する用途地域の建築物の用途に関する規定が適用される。",
+      "ウ": "防火地域内にある耐火建築物は、いずれの用途地域内にある場合であっても、建蔽率の制限に関する規定の適用を受けない。",
+      "エ": "商業地域内の建築物には、北側斜線制限（北側高さ制限）は適用されない。"
+    },
+    "answer": "ウ",
+    "explanation": "防火地域内の耐火建築物等で建蔽率制限が適用されないのは、指定建蔽率が80%の地域など所定の条件を満たす場合です。",
+    "choiceExplanations": {
+      "ア": "みなし道路のセットバック部分は、建蔽率の計算に用いる敷地面積から除きます。",
+      "イ": "敷地が異なる用途地域にまたがるときは、原則として面積の過半が属する地域の用途規制を全体に適用します。",
+      "ウ": "防火地域内の耐火建築物等で建蔽率制限が適用されないのは、指定建蔽率が80%の地域など所定の条件を満たす場合です。",
+      "エ": "商業地域には北側斜線制限は適用されません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=18",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q46",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 46,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "不動産",
+    "topicTags": [
+      "不動産"
+    ],
+    "difficulty": 2,
+    "question": "建物の区分所有等に関する法律に関する次の記述のうち、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "管理者は、少なくとも毎年１回、集会を招集しなければならない。",
+      "イ": "区分所有者は、敷地利用権が数人で有する所有権である場合、規約に別段の定めがない限り、敷地利用権を専有部分と分離して処分することができない。",
+      "ウ": "共用部分に対する各区分所有者の共有持分は、各共有者が有する専有部分の床面積の割合によるものとされ、規約で別段の定めをすることはできない。",
+      "エ": "専有部分が数人の共有に属するときは、共有者は、議決権を行使すべき者１人を定めなければならない。"
+    },
+    "answer": "ウ",
+    "explanation": "共用部分の共有持分は原則として専有部分の床面積割合によりますが、規約で別段の定めを置けます。",
+    "choiceExplanations": {
+      "ア": "管理者は毎年少なくとも1回、集会を招集する義務があります。",
+      "イ": "規約で別段の定めがなければ、敷地利用権を専有部分と切り離して処分することはできません。",
+      "ウ": "共用部分の共有持分は原則として専有部分の床面積割合によりますが、規約で別段の定めを置けます。",
+      "エ": "専有部分を共有している場合は、その議決権を行使する代表者を1人定めます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=19",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q47",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 47,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "不動産",
+    "topicTags": [
+      "不動産"
+    ],
+    "difficulty": 2,
+    "question": "不動産に係る固定資産税および都市計画税に関する次の記述のうち、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "年の中途に固定資産税の課税対象となる土地または家屋が譲渡された場合、その譲受人は、原則として、その年度内の所有期間に応じた当年度分の固定資産税を納付しなければならない。",
+      "イ": "住宅用地に係る固定資産税の課税標準については、小規模住宅用地（住宅１戸当たり２００ｍ2 以下の部分）について、課税標準となるべき価格の６分の１相当額とする特例がある。",
+      "ウ": "土地および家屋に係る固定資産税の標準税率は１.４％と定められているが、各市町村はこれと異なる税率を定めることができる。",
+      "エ": "都市計画税は、都市計画区域のうち、原則として、市街化区域内に所在する土地または家屋の所有者に対して課される。"
+    },
+    "answer": "ア",
+    "explanation": "その年度の納税義務者は1月1日の所有者です。売主と買主が日割り精算しても、買主に法定の納税義務は生じません。",
+    "choiceExplanations": {
+      "ア": "その年度の納税義務者は1月1日の所有者です。売主と買主が日割り精算しても、買主に法定の納税義務は生じません。",
+      "イ": "住宅1戸当たり200 m²以下の小規模住宅用地は、固定資産税の課税標準を原則6分の1に軽減します。",
+      "ウ": "1.4%は固定資産税の標準税率で、市町村は条例で異なる税率を定められます。",
+      "エ": "都市計画税は、原則として市街化区域内の土地・家屋の所有者に課されます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=19",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q48",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 48,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "不動産",
+    "topicTags": [
+      "不動産"
+    ],
+    "difficulty": 2,
+    "question": "個人が土地を譲渡した場合の譲渡所得に関する次の記述のうち、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "土地の譲渡に係る所得については、その土地を譲渡した日の属する年の１月１日における所有期間が１０年以下の場合、短期譲渡所得に区分される。",
+      "イ": "譲渡所得の金額の計算上、譲渡した土地の取得費が不明な場合には、譲渡収入金額の５％相当額を取得費とすることができる。",
+      "ウ": "相続（限定承認に係るものを除く）により取得した土地を譲渡した場合、その土地の所有期間を判定する際の取得の時期は、被相続人の取得の時期が引き継がれる。",
+      "エ": "土地を譲渡する際に支出した仲介手数料は、譲渡所得の金額の計算上、譲渡費用に含まれる。"
+    },
+    "answer": "ア",
+    "explanation": "短期譲渡所得に区分されるのは譲渡年の1月1日時点で所有期間が5年以下の場合です。",
+    "choiceExplanations": {
+      "ア": "短期譲渡所得に区分されるのは譲渡年の1月1日時点で所有期間が5年以下の場合です。",
+      "イ": "取得費が分からないときは、譲渡収入金額の5%を概算取得費にできます。",
+      "ウ": "単純承認による相続等では、被相続人の取得時期を引き継いで所有期間を判定します。",
+      "エ": "譲渡のために直接支払った仲介手数料は譲渡費用になります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=19",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q49",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 49,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "不動産",
+    "topicTags": [
+      "不動産"
+    ],
+    "difficulty": 2,
+    "question": "不動産の譲渡に係る各種特例に関する次の記述のうち、最も適切なものはどれか。なお、記載されたもの以外の要件はすべて満たしているものとする。",
+    "choices": {
+      "ア": "自宅を譲渡して「居住用財産を譲渡した場合の３,０００万円の特別控除」の適用を受ける場合、当該自宅の所有期間は、譲渡した日の属する年の１月１日において１０年を超えていなければならない。",
+      "イ": "自宅を譲渡して「居住用財産を譲渡した場合の長期譲渡所得の課税の特例」（軽減税率の特例）の適用を受ける場合、同年に取得して入居した家屋について住宅借入金等特別控除の適用を受けることはできない。",
+      "ウ": "「居住用財産を譲渡した場合の３,０００万円の特別控除」と「居住用財産を譲渡した場合の長期譲渡所得の課税の特例」（軽減税率の特例）は、重複して適用を受けることができない。",
+      "エ": "相続により取得した土地について、「相続財産に係る譲渡所得の課税の特例」（相続税の取得費加算の特例）の適用を受けるためには、当該土地を、当該相続の開始があった日の翌日から相続税の申告期限の翌日以後１年を経過する日までの間に譲渡しなければならない。"
+    },
+    "answer": "イ",
+    "explanation": "居住用財産の譲渡に係る軽減税率を適用した年に新居に入居した場合、その新居に係る住宅ローン控除は適用できません。",
+    "choiceExplanations": {
+      "ア": "居住用財産の3,000万円特別控除に所有期間10年超の要件はありません。",
+      "イ": "居住用財産の譲渡に係る軽減税率を適用した年に新居に入居した場合、その新居に係る住宅ローン控除は適用できません。",
+      "ウ": "所定要件をそれぞれ満たせば、3,000万円特別控除と長期譲渡所得の軽減税率を併用できます。",
+      "エ": "取得費加算の譲渡期限は原則として相続税の申告期限の翌日以後3年を経過する日までです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=20",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q50",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 50,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "不動産",
+    "topicTags": [
+      "不動産"
+    ],
+    "difficulty": 2,
+    "question": "不動産の投資判断手法等に関する次の記述のうち、最も適切なものはどれか。",
+    "choices": {
+      "ア": "ＮＯＩ利回り（純利回り）は、対象不動産から得られる年間の総収入を総投資額で除して算出される利回りであり、不動産の収益性を測る指標である。",
+      "イ": "ＤＣＦ法は、連続する複数の期間に発生する総収入および復帰価格を、その発生時期に応じて現在価値に割り引き、それぞれを合計して対象不動産の収益価格を求める手法である。",
+      "ウ": "借入金併用型投資では、投資の収益率が借入金の金利を下回っている場合、レバレッジ効果により、自己資金に対する投資の収益率向上を期待することができる。",
+      "エ": "ⅠＲＲ（内部収益率）とは、投資によって得られる将来のキャッシュフローの現在価値と投資額が等しくなる割引率をいう。"
+    },
+    "answer": "エ",
+    "explanation": "IRRは、投資から生じる将来のキャッシュフローの現在価値が当初の投資額に等しくなる割引率です。",
+    "choiceExplanations": {
+      "ア": "NOI利回りの分子は賃料収入等から運営費を引いた純収益です。",
+      "イ": "DCF法は各期の純収益と処分時の復帰価格を現在価値に割り引いて合計します。",
+      "ウ": "投資収益率が借入金利を下回る場合は負のレバレッジとなり、自己資金の収益率を押し下げます。",
+      "エ": "IRRは、投資から生じる将来のキャッシュフローの現在価値が当初の投資額に等しくなる割引率です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=20",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q51",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 51,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "相続・事業承継",
+    "topicTags": [
+      "相続・事業承継"
+    ],
+    "difficulty": 2,
+    "question": "民法上の贈与に関する次の記述のうち、最も適切なものはどれか。",
+    "choices": {
+      "ア": "贈与は、当事者の一方が、ある財産を無償で相手方に与える意思表示をすることにより効力が生じ、相手方が受諾する必要はない。",
+      "イ": "定期贈与は、贈与者または受贈者のいずれか一方が生存している限り、その効力を失うことはない。",
+      "ウ": "死因贈与は、民法の遺贈に関する規定が準用されるため、書面によってしなければならない。",
+      "エ": "書面によらない贈与は、その履行の終わった部分を除き、各当事者が解除をすることができる。"
+    },
+    "answer": "エ",
+    "explanation": "書面によらない贈与は、未履行の部分について各当事者が解除できます。",
+    "choiceExplanations": {
+      "ア": "贈与は、贈与者の意思表示を受贈者が受諾することによって成立する契約です。",
+      "イ": "定期贈与は、贈与者か受贈者のどちらかが死亡すると効力を失います。",
+      "ウ": "死因贈与は契約であり、遺言の方式による書面は成立の要件ではありません。",
+      "エ": "書面によらない贈与は、未履行の部分について各当事者が解除できます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=20",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q52",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 52,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "相続・事業承継",
+    "topicTags": [
+      "相続・事業承継"
+    ],
+    "difficulty": 2,
+    "question": "みなし贈与財産等に関する次の記述のうち、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "負担付贈与があった場合において、受贈者の負担額が贈与者以外の第三者の利益に帰すときは、原則として、当該第三者が受贈者の負担額に相当する金額を贈与によって取得したこととなり、贈与税の課税対象となる。",
+      "イ": "子が父から著しく低い価額の対価で土地を譲り受けた場合には、原則として、その相続税評価額と支払った対価の額との差額を、子が父から贈与により取得したものとみなされ、贈与税の課税対象となる。",
+      "ウ": "債務者である個人が資力を喪失して債務を弁済することが困難になり、債権者である個人から当該債務の免除を受けた場合、当該免除を受けた金額のうちその債務を弁済することが困難である部分の金額は、贈与税の課税対象とならない。",
+      "エ": "離婚による財産分与により取得した財産は、その価額が婚姻中の夫婦の協力によって得た財産の額その他一切の事情を考慮して社会通念上相当な範囲内である場合、原則として、贈与税の課税対象とならない。"
+    },
+    "answer": "イ",
+    "explanation": "個人間で土地を著しく低い対価で取得した場合、通常の取引価額と支払対価の差額に基づいてみなし贈与を判定します。",
+    "choiceExplanations": {
+      "ア": "負担付贈与による受贈者の負担が第三者の利益となるときは、原則として第三者が負担額相当の贈与を受けたとみなします。",
+      "イ": "個人間で土地を著しく低い対価で取得した場合、通常の取引価額と支払対価の差額に基づいてみなし贈与を判定します。",
+      "ウ": "資力喪失で弁済が困難な部分に対する債務免除は、贈与税の課税対象外です。",
+      "エ": "離婚時の相当な範囲の財産分与は、通常、贈与税の課税対象となりません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=21",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q53",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 53,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "相続・事業承継",
+    "topicTags": [
+      "相続・事業承継"
+    ],
+    "difficulty": 2,
+    "question": "贈与税の配偶者控除（以下「本控除」という）に関する次の記述のうち、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "本控除は、贈与を受けた年の１月１日時点において婚姻期間が２０年以上である配偶者から受けた贈与でなければ、適用を受けることができない。",
+      "イ": "配偶者から受けた贈与について本控除の適用を受けたことがある場合、その後、同一の配偶者から贈与を受けても、再び本控除の適用を受けることはできない。",
+      "ウ": "本控除の適用を受けた場合、贈与税額の計算上、贈与税の課税価格から、基礎控除額のほかに最高２,０００万円を控除することができる。",
+      "エ": "本控除の適用を受け、その翌年に贈与者の相続が開始した場合、本控除の適用を受けた財産のうち、その控除額に相当する金額は、相続税の課税価格に加算されない。"
+    },
+    "answer": "ア",
+    "explanation": "婚姻期間が20年以上であるかどうかは、贈与の日の時点で判定します。",
+    "choiceExplanations": {
+      "ア": "婚姻期間が20年以上であるかどうかは、贈与の日の時点で判定します。",
+      "イ": "同じ配偶者との贈与については、配偶者控除を一生に一度しか使えません。",
+      "ウ": "配偶者控除では、贈与税の基礎控除に加えて最高2,000万円を控除できます。",
+      "エ": "控除適用財産のうち配偶者控除額に相当する部分は、原則として生前贈与の相続税への加算から除外されます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=21",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q54",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 54,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "相続・事業承継",
+    "topicTags": [
+      "相続・事業承継"
+    ],
+    "difficulty": 2,
+    "question": "民法上の相続人等に関する次の記述のうち、最も適切なものはどれか。なお、記載のない事項については考慮しないものとする。",
+    "choices": {
+      "ア": "離婚した元配偶者との間に出生した被相続人の子が当該元配偶者の親権に服している場合、その子は相続人とならない。",
+      "イ": "特別養子縁組による養子は、実方の父母および養親の相続人となる。",
+      "ウ": "被相続人の子が廃除により相続権を失った場合、その者に被相続人の直系卑属である子がいるときは、その子（被相続人の孫）は代襲相続人となる。",
+      "エ": "被相続人と婚姻の届出をしていないが、被相続人といわゆる内縁関係にあった者は、被相続人の配偶者とみなされて相続人となる。"
+    },
+    "answer": "ウ",
+    "explanation": "相続人となる子が廃除されたとき、その子である直系卑属は所定の要件の下で代襲相続できます。",
+    "choiceExplanations": {
+      "ア": "元配偶者に親権があっても、被相続人とその子の親子関係は変わらず、その子に相続権があります。",
+      "イ": "特別養子縁組では原則として実方との親族関係が終了し、養親が法的な父母となります。",
+      "ウ": "相続人となる子が廃除されたとき、その子である直系卑属は所定の要件の下で代襲相続できます。",
+      "エ": "内縁関係だけでは民法上の配偶者に当たらず、法定相続人にはなりません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=21",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q55",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 55,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "相続・事業承継",
+    "topicTags": [
+      "相続・事業承継"
+    ],
+    "difficulty": 2,
+    "question": "相続税の非課税財産に関する次の記述のうち、最も適切なものはどれか。",
+    "choices": {
+      "ア": "被相続人の死亡により、相続人が被相続人に支給されるべきであった退職手当金の支給を受けた場合、当該退職手当金の支給が被相続人の死亡後５年以内に確定したものであれば、相続人は、当該退職手当金について死亡退職金の非課税金額の規定の適用を受けることができる。",
+      "イ": "死亡退職金の非課税金額の規定による非課税限度額は、被相続人の死亡が業務上の死亡である場合、被相続人の死亡時における賞与以外の普通給与の３年分に相当する金額である。",
+      "ウ": "契約者（＝保険料負担者）および被保険者を被相続人とする生命保険契約に基づき、相続の放棄をした者が受け取った死亡保険金については、死亡保険金の非課税金額の規定は適用されない。",
+      "エ": "死亡保険金の非課税金額の規定による非課税限度額の計算上の相続人の数には、相続の放棄をした者は含まれない。"
+    },
+    "answer": "ウ",
+    "explanation": "相続放棄をした本人が受け取る死亡保険金には、相続人が受け取る死亡保険金の非課税規定を適用できません。",
+    "choiceExplanations": {
+      "ア": "みなし相続財産となる死亡退職金は、死亡後3年以内に支給が確定したものが対象です。",
+      "イ": "死亡退職金の非課税限度額は、原則として死亡原因を問わず500万円×法定相続人の数です。",
+      "ウ": "相続放棄をした本人が受け取る死亡保険金には、相続人が受け取る死亡保険金の非課税規定を適用できません。",
+      "エ": "限度額を計算する法定相続人の数は、放棄がなかったものとして数えます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=22",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q56",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 56,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "相続・事業承継",
+    "topicTags": [
+      "相続・事業承継"
+    ],
+    "difficulty": 2,
+    "question": "下記＜親族関係図＞において、Ａさんの相続が開始した場合の相続税額の計算における遺産に係る基礎控除額として、最も適切なものはどれか。なお、ＣさんはＡさんの相続開始前に死亡している。また、Ｅさんは、Ａさんの普通養子（特別養子縁組以外の縁組による養子）であり、相続の放棄をしている。\n\n＜親族関係図＞",
+    "choices": {
+      "ア": "４,２００万円",
+      "イ": "４,８００万円",
+      "ウ": "５,４００万円",
+      "エ": "６,０００万円"
+    },
+    "answer": "エ",
+    "explanation": "B・D・E・F・Gの5人を数えるため、3,000万円＋600万円×5人＝6,000万円です。",
+    "choiceExplanations": {
+      "ア": "4,200万円は法定相続人を2人とした場合の額です。先に死亡したCの子2人は代襲相続人になります。",
+      "イ": "4,800万円は3人分の基礎控除額です。この場合は代襲相続人2人と、放棄しなかったものとみなす普通養子も数えます。",
+      "ウ": "5,400万円は法定相続人を4人とした場合の額で、放棄したEを除いた計算に当たります。",
+      "エ": "B・D・E・F・Gの5人を数えるため、3,000万円＋600万円×5人＝6,000万円です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=22",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/fp2/202401-gakka/q56.png"
+    ],
+    "imageAltTexts": [
+      "Aさんと妻Bさん、実子C・Dさん、普通養子Eさん、Cさんの子F・Gさんの関係図"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "fp2-202401-gakka-q57",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 57,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "相続・事業承継",
+    "topicTags": [
+      "相続・事業承継"
+    ],
+    "difficulty": 2,
+    "question": "相続税における取引相場のない株式の評価等に関する次の記述のうち、最も適切なものはどれか。なお、評価の対象となる株式は、特定の評価会社の株式には該当しないものとする。",
+    "choices": {
+      "ア": "株式を取得した株主が同族株主に該当するかどうかは、その株主およびその同族関係者が有する議決権割合により判定する。",
+      "イ": "会社規模が小会社である会社において、中心的な同族株主が取得した株式の価額は、原則として、類似業種比準方式によって評価する。",
+      "ウ": "同族株主のいる会社において、同族株主以外の株主が取得した株式の価額は、その会社規模にかかわらず、原則として、純資産価額方式によって評価する。",
+      "エ": "配当還元方式では、株式の１株当たりの年配当金額を５％の割合で還元して元本である株式の価額を評価する。"
+    },
+    "answer": "ア",
+    "explanation": "同族株主の判定には、対象株主とその同族関係者の議決権の割合を用います。",
+    "choiceExplanations": {
+      "ア": "同族株主の判定には、対象株主とその同族関係者の議決権の割合を用います。",
+      "イ": "小会社の中心的な同族株主には、純資産価額方式を原則とする評価方法を用います。",
+      "ウ": "同族株主以外の少数株主等が取得する株式には、原則として配当還元方式を用います。",
+      "エ": "配当還元方式は、年配当金額を原則10%で還元します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=23",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q58",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 58,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "相続・事業承継",
+    "topicTags": [
+      "相続・事業承継"
+    ],
+    "difficulty": 2,
+    "question": "宅地の相続税評価額の算定方法等に関する次の記述のうち、最も適切なものはどれか。",
+    "choices": {
+      "ア": "宅地の評価方法には、路線価方式と倍率方式があり、どちらの方式を採用するかについては、納税者が任意に選択することができる。",
+      "イ": "倍率方式は、固定資産税評価額に国税局長が一定の地域ごとに定める倍率を乗じて計算した金額によって評価する方式である。",
+      "ウ": "正面と側方に路線がある宅地（角地）を路線価方式によって評価する場合、原則として、それぞれの路線価に奥行価格補正率を乗じた価額を比較し、低い方の路線価が正面路線価となる。",
+      "エ": "路線価は、路線に面する標準的な宅地の１坪当たりの価額であり、千円単位で表示される。"
+    },
+    "answer": "イ",
+    "explanation": "倍率方式では固定資産税評価額に地域ごとの評価倍率を掛けて評価します。",
+    "choiceExplanations": {
+      "ア": "評価方式は路線価の設定の有無など、宅地が所在する地域に応じて決まります。",
+      "イ": "倍率方式では固定資産税評価額に地域ごとの評価倍率を掛けて評価します。",
+      "ウ": "路線価に奥行価格補正率を掛けた価額を比べ、原則として高い方の路線を正面路線とします。",
+      "エ": "路線価は標準的な宅地の1 m²当たりの価額を千円単位で示します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=23",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q59",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 59,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "相続・事業承継",
+    "topicTags": [
+      "相続・事業承継"
+    ],
+    "difficulty": 2,
+    "question": "非上場企業の事業承継のための自社株移転等に関する次の記述のうち、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "「非上場株式等についての贈与税の納税猶予及び免除の特例」の適用を受けるためには、特例承継計画を策定し、所定の期限までに都道府県知事に提出して、その確認を受ける必要がある。",
+      "イ": "「非上場株式等についての贈与税の納税猶予及び免除の特例」と相続時精算課税は、重複して適用を受けることができない。",
+      "ウ": "経営者が保有している自社株式を後継者である子に譲渡した場合、当該株式の譲渡による所得に対して、申告分離課税により所得税および住民税が課される。",
+      "エ": "株式の発行会社が、経営者の親族以外の少数株主が保有する自社株式を買い取ることにより、当該会社の株式の分散を防止または抑制することができる。"
+    },
+    "answer": "イ",
+    "explanation": "法人版事業承継税制の特例による贈与税の納税猶予と、相続時精算課税は併用できます。",
+    "choiceExplanations": {
+      "ア": "特例の適用には、特例承継計画を期限までに都道府県に提出して確認を受けることが要件となります。",
+      "イ": "法人版事業承継税制の特例による贈与税の納税猶予と、相続時精算課税は併用できます。",
+      "ウ": "個人が株式を譲渡して得た利益には、原則として申告分離課税で所得税と住民税が課されます。",
+      "エ": "会社が自社株式を買い取ることで、少数株主へ分散している株式をまとめられます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=23",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fp2-202401-gakka-q60",
+    "exam": "fp2",
+    "session": "gakka",
+    "year": 2024,
+    "fiscalYear": 2023,
+    "season": "january",
+    "examDate": "2024-01-28",
+    "qNumber": 60,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "相続・事業承継",
+    "topicTags": [
+      "相続・事業承継"
+    ],
+    "difficulty": 2,
+    "question": "会社法に関する次の記述のうち、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "すべての株式会社は、取締役会を置かなければならない。",
+      "イ": "株式会社において株主は、その有する株式の引受価額を限度として責任を負う。",
+      "ウ": "定時株主総会は、毎事業年度終了後一定の時期に招集しなければならないが、臨時株主総会は、必要がある場合にいつでも招集することができる。",
+      "エ": "取締役は、いつでも、株主総会の決議によって解任することができる。"
+    },
+    "answer": "ア",
+    "explanation": "非公開会社など所定の場合には取締役会を置かない株式会社も認められます。",
+    "choiceExplanations": {
+      "ア": "非公開会社など所定の場合には取締役会を置かない株式会社も認められます。",
+      "イ": "株主の責任は原則として引き受けた株式の価額が限度です。",
+      "ウ": "定時株主総会は毎事業年度終了後の一定の時期に招集し、臨時株主総会は必要に応じて招集できます。",
+      "エ": "取締役は株主総会の決議によりいつでも解任できます。正当事由のない解任では損害賠償を請求されることがあります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251205014331id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_q.pdf#page=24",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251205031138id_/https://www.jafp.or.jp/exam/mohan/files/g2_202401_a.pdf",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2024年1月28日実施）の保存版を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "license": "JAFP-reuse-with-attribution",
+    "lawReferenceDate": "2023-10-01",
+    "lastUpdated": "2026-11-19"
+  }
+]

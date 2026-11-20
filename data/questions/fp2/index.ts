@@ -4,6 +4,7 @@ import academic2022September from "./academic-202209.json";
 import academic2023January from "./academic-202301.json";
 import academic2023May from "./academic-202305.json";
 import academic2023September from "./academic-202309.json";
+import academic2024January from "./academic-202401.json";
 import academic2024And2025 from "./academic-2024-2025.json";
 import academic2026May from "./academic-2026-05.json";
 
@@ -435,6 +436,7 @@ export function fp2May2026CoverageLabel(): string {
 export const FP2_QUESTIONS: Question[] = [
   ...FP2_2026_MAY_QUESTIONS,
   ...academic2024And2025 as Question[],
+  ...academic2024January as Question[],
   ...academic2023September as Question[],
   ...academic2023May as Question[],
   ...academic2023January as Question[],
