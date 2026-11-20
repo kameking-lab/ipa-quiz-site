@@ -1,4 +1,4 @@
-import fk507Kiso from './2025-july-kiso.json';
+import fk507Kiso from './2023-july-fk507-kiso.json';
 import fy507Houki from './2023-july-fy507-houki.json';
 import jul2025KogakuB from './2025-july-kogaku-b.json';
 import jul2025KogakuA from './2025-july-kogaku-a.json';
