@@ -1285,7 +1285,7 @@ kangoshi: {
         { session: "kogaku-a", urlSlug: "kogaku-a", expectedQuestions: 25, label: "無線工学A", categories: ["無線工学A"] },
         { session: "kogaku-b", urlSlug: "kogaku-b", expectedQuestions: 25, label: "無線工学B", categories: ["無線工学B"] },
     ],
-    seasons: ["january", "july"], yearRange: { start: 2026, end: 2026 },
+    seasons: ["january", "july"], yearRange: { start: 2023, end: 2026 },
 },
 "amateur2": {
     code: "amateur2", nameFull: "第二級アマチュア無線技士試験", urlSlug: "amateur2", level: "specialist",

@@ -1,4 +1,5 @@
 import data from "./two-sittings.json";
+import foundation2023July from "./2023-07-kiso.json";
 import { normalizeQuestionData } from "@/lib/questions/native-b";
 
-export const RIKU_TECH2_QUESTIONS = data.map(normalizeQuestionData);
+export const RIKU_TECH2_QUESTIONS = [...data, ...foundation2023July].map(normalizeQuestionData);
