@@ -54,7 +54,7 @@ test.describe("/q inline answer", () => {
     await radios.first().click();
 
     const result = page.getByRole("group", { name: "採点結果" });
-    await expect(result.getByText(/公式正答/)).toBeVisible();
+    await expect(result.getByText(/^(正解！|不正解 — 正解は .+)$/)).toBeVisible();
     await expect(radios.first()).toBeChecked();
     await expect(next).toHaveCSS("background-color", await page.evaluate(() =>
       document.documentElement.classList.contains("dark") ? "rgb(168, 199, 171)" : "rgb(47, 74, 58)"

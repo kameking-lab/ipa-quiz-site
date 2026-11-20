@@ -312,10 +312,14 @@ function ScoredQuestionAnswerCard({
             ) : (
               <div className="flex flex-wrap items-baseline gap-x-3">
                 <span className="inline-flex items-center gap-1.5">
-                  {isCorrect ? <Check aria-hidden="true" className="size-5" /> : <X aria-hidden="true" className="size-5" />}
-                  {isCorrect ? "正解" : "不正解"}
+                  {isCorrect ? (
+                    <Check aria-hidden="true" className="size-5 shrink-0" />
+                  ) : (
+                    <X aria-hidden="true" className="size-5 shrink-0" />
+                  )}
+                  {isCorrect ? "正解！" : `不正解 — 正解は ${answerLabel}`}
                 </span>
-                <span>公式正答 {answerLabel}</span>
+                {isCorrect && usesNumberedChoices(exam) && <span>正答は {answerLabel}</span>}
               </div>
             )}
             {answerText && (answerText.includes("\n") ? (
