@@ -8,5 +8,6 @@ import largeAir2025 from "./2025-kogai-large-air.json";
 import waterBasics2025 from "./2025-kogai-water-basics.json";
 import wastewater2025 from "./2025-kogai-wastewater.json";
 import waterHazardous2025 from "./2025-kogai-water-hazardous.json";
+import largeWater2025 from "./2025-kogai-large-water.json";
 
-export const KOGAI_QUESTIONS: Question[] = [...general2025, ...airBasics2025, ...airTechnology2025, ...dust2025, ...airHazardous2025, ...largeAir2025, ...waterBasics2025, ...wastewater2025, ...waterHazardous2025] as Question[];
+export const KOGAI_QUESTIONS: Question[] = [...general2025, ...airBasics2025, ...airTechnology2025, ...dust2025, ...airHazardous2025, ...largeAir2025, ...waterBasics2025, ...wastewater2025, ...waterHazardous2025, ...largeWater2025] as Question[];
