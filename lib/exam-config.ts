@@ -2067,6 +2067,7 @@ caremanager: {
         { session: "senmon-butsuri", urlSlug: "senmon-butsuri", expectedQuestions: 50, label: "専門試験（物理区分）", categories: ["数学", "力学", "流体力学", "波動", "熱力学", "電磁気学", "統計力学", "量子力学", "相対論", "原子核物理", "気象学", "海洋学", "地球物理"] },
         { session: "senmon-kagaku", urlSlug: "senmon-kagaku", expectedQuestions: 44, label: "専門試験（化学区分）", categories: ["物理化学", "無機化学", "分析化学", "有機化学", "高分子化学", "生化学", "化学工学"] },
         { session: "senmon-nogaku", urlSlug: "senmon-nogaku", expectedQuestions: 40, label: "専門試験（農学区分）", categories: ["作物学", "土壌肥料学", "農業政策", "農業機械", "園芸学", "育種学", "植物保護", "植物生理", "畜産学"] },
+        { session: "senmon-noson", urlSlug: "senmon-noson", expectedQuestions: 40, label: "専門試験（農業農村工学区分）", categories: ["数学", "構造力学", "材料力学", "水理学", "土壌物理", "土質力学", "測量", "農業水利", "農業排水", "水文学", "農村整備", "農村政策", "農村環境", "農業水利施設", "施工管理"] },
     ], seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
 },
 "kokka-ippan-kou": {
