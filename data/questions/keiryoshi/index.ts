@@ -21,6 +21,10 @@ import kanbutsu74 from "./2023-kanbutsu.json";
 import kanon74 from "./2023-kanon.json";
 import houki74 from "./2023-houki.json";
 import kanri74 from "./2023-kanri.json";
+import kanbutsu73 from "./2022-kanbutsu.json";
+import kanon73 from "./2022-kanon.json";
+import houki73 from "./2022-houki.json";
+import kanri73 from "./2022-kanri.json";
 
 export type KeiryoshiExam = "keiryoshi" | "keiryoshi-nodo" | "keiryoshi-soon";
 type SourceQuestion = Omit<Question, "id" | "exam">;
@@ -40,6 +44,7 @@ export const KEIRYOSHI_SUBJECTS = {
 
 const KEIRYOSHI_SOON_PRIOR_QUESTIONS = [
   ...kanbutsu74, ...kanon74, ...houki74, ...kanri74,
+  ...kanbutsu73, ...kanon73, ...houki73, ...kanri73,
 ] as SourceQuestion[];
 
 export function getKeiryoshiCandidates(exam: KeiryoshiExam): Question[] {

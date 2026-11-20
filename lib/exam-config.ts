@@ -1779,7 +1779,7 @@ kankoji1: {
         "annual"
     ],
     "yearRange": {
-        "start": 2023,
+        "start": 2022,
         "end": 2025
     }
 },

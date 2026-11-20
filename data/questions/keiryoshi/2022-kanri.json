@@ -1,0 +1,1055 @@
+[
+  {
+    "session": "measurement-management",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 1,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第73回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "製品生産のプロセスを開発段階、製造準備段階及び製造段階に分類したとき、それぞれの段階での計測管理に関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "開発段階では、製品開発を目的とした製品特性の測定において、必ずしもJIS等の規格に準拠した測定方法を使う必要はない。",
+      "イ": "製造準備段階では、製造工程で使われる測定器の保守や管理の方法を決めるだけでなく、測定担当者の教育・訓練も必要である。",
+      "ウ": "製造準備段階では、製造工程の管理や検査のために行われる測定について不確かさの大きさを予測しておくことが必要である。",
+      "エ": "製造段階では、不適合品を次工程に送らないことが重要であるため、必ず各工程の最後に、トレーサビリティが確保された測定で全数を検査する必要がある。",
+      "オ": "各段階において、新しい測定方法や測定器を導入するか否かの決定は、測定能力だけでなく導入コストや既存機器の性能などを考慮した上で判断することが重要である。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "不適合品の流出を防ぐ手段には工程管理や抜取検査もあり、全工程の末尾での全数検査は必須ではない。",
+    "choiceExplanations": {
+      "ア": "開発目的に適した測定方法を選べるため、常にJIS準拠が必要というわけではない。",
+      "イ": "測定の再現性を確保するには保守・管理方法と作業者の技能の両方が必要である。",
+      "ウ": "測定の不確かさを事前に見積もれば、工程の管理限界や検査の判定に適するか確認できる。",
+      "エ": "不適合品の流出を防ぐ手段には工程管理や抜取検査もあり、全工程の末尾での全数検査は必須ではない。",
+      "オ": "既存設備との比較や費用を含めて導入の効果を判断する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416175113id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_06kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416173608id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第73回計量士国家試験 管理 問1（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "4",
+    "examDate": "2022-12-11"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 2,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第73回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "品質や計測に関連するマネジメントシステム規格で規定している計測管理の内容に関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "「JIS Q 17025 試験所及び校正機関の能力に関する一般要求事項」では、試験所及び校正機関の能力、公平性及び一貫した運営に関する一般要求事項を規定している。",
+      "イ": "「JIS Q 9001 品質マネジメントシステム―要求事項」では、製品及びサービスが要求事項に対して適合していることを検証するために、監視又は測定を用いる場合、組織は、結果が妥当で信頼できるものであることを確実にするために必要な資源を明確にし、提供しなければならないとされている。",
+      "ウ": "「JIS Q 9001 品質マネジメントシステム―要求事項」では、測定のトレーサビリティが要求事項となっている場合、測定機器は、必ず直接的に国家計量標準によって校正を行わなければならないとされている。",
+      "エ": "「JIS Q 10012 計測マネジメントシステム―測定プロセス及び測定機器に関する要求事項」では、計量要求事項への適合性を支援し、実証するために使用する、測定プロセスの運用管理及び測定機器の計量確認に関する一般的な要求事項を規定している。",
+      "オ": "「JIS Q 10012 計測マネジメントシステム―測定プロセス及び測定機器に関する要求事項」では、計測マネジメントシステムの目的は、測定機器及び測定プロセスが、組織の製品の品質に影響を与えるような不正確な結果を出すリスクを運用管理することであるとされている。"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "校正の連鎖を通じて国内又は国際標準に結び付ければよく、国家計量標準による直接校正は必須ではない。",
+    "choiceExplanations": {
+      "ア": "JIS Q 17025は試験・校正結果の信頼性を支える能力、公平性、一貫した運営を対象とする。",
+      "イ": "JIS Q 9001は適合性の検証に使用する監視・測定に必要な資源の決定と提供を求める。",
+      "ウ": "校正の連鎖を通じて国内又は国際標準に結び付ければよく、国家計量標準による直接校正は必須ではない。",
+      "エ": "JIS Q 10012は指定された計量要求事項を満たすためのプロセス管理と機器の計量確認を扱う。",
+      "オ": "誤った測定結果が製品の品質に及ぼすリスクを管理することは計測マネジメントの目的に合致する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416175113id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_06kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416173608id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第73回計量士国家試験 管理 問2（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "3",
+    "examDate": "2022-12-11"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 3,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第73回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "「JIS Z 8103 計測用語」が定義する用語に関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "「測定のかたより」とは、測定値の母平均から真値を引いた値のことである。",
+      "イ": "「精確さ」とは、測定値と測定対象量の真値との一致の度合いのことである。",
+      "ウ": "「測定のばらつき」とは、測定者が気付かずにおかした過ちによる、ふぞろいの程度のことである。",
+      "エ": "「有効数字」とは、測定値などを表す数字のうちで、位取りを示すだけの0を除いた、意味のある数字のことである。",
+      "オ": "「繰返し性」とは、一連の測定の繰返し条件の下での測定の精密さのことである。"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "測定のばらつきは測定値の散らばりをいう。測定者の過ちに由来するものに限定されない。",
+    "choiceExplanations": {
+      "ア": "測定のかたよりは、個々の測定値ではなく反復測定の母平均と真値との差である。",
+      "イ": "精確さは測定値が測定対象量の真値にどれほど近いかを表す。",
+      "ウ": "測定のばらつきは測定値の散らばりをいう。測定者の過ちに由来するものに限定されない。",
+      "エ": "小数点以下の先頭の0など、位取りだけを表す0を除いた意味のある数字を数える。",
+      "オ": "繰返し性では、同一の手順や条件で繰返した値の一致の度合いを見る。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416175113id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_06kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416173608id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第73回計量士国家試験 管理 問3（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "3",
+    "examDate": "2022-12-11"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 4,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第73回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "国際単位系(SI)において、固有の名称を持つ組立単位の一つであるボルト(V)を SI基本単位のみで表したとき、正しいものを次の中から一つ選べ。",
+    "choices": {
+      "ア": "kg·m²·s⁻³·A⁻²",
+      "イ": "kg·m²·s⁻²",
+      "ウ": "kg·m²·s⁻³",
+      "エ": "kg·m²·s⁻²·A⁻¹",
+      "オ": "kg·m²·s⁻³·A⁻¹"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "V = W/A = J/(s·A) より、kg·m²·s⁻³·A⁻¹である。",
+    "choiceExplanations": {
+      "ア": "電圧は電力を電流で除した量なので、アンペアの指数は−1になる。",
+      "イ": "この組合せはジュールの次元である。ボルトはジュールをクーロンで割った単位である。",
+      "ウ": "この組合せはワットである。さらにアンペアで割るとボルトになる。",
+      "エ": "この組合せはJ/Aに相当する。クーロンはA·sなので、秒の指数はさらに1小さくなる。",
+      "オ": "V = W/A = J/(s·A) より、kg·m²·s⁻³·A⁻¹である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416175113id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_06kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416173608id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第73回計量士国家試験 管理 問4（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "5",
+    "examDate": "2022-12-11",
+    "isCalculation": true
+  },
+  {
+    "session": "measurement-management",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 5,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第73回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "測定の信頼性についての次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "測定を繰返し行い、その平均値を測定結果とするとき、繰返し回数が多いほど、偶然誤差による平均値のばらつきの程度は小さくなる。",
+      "イ": "「JIS Z 8103 計測用語」では、指定された条件の下で、同じ又は類似の対象について、反復測定によって得られる指示値又は測定値の間の一致の度合いを精密さとして定義している。",
+      "ウ": "測定器の精密さの指標として、指定された条件下での一連の測定値の標準偏差を用いることができる。",
+      "エ": "測定の不確かさ評価は、すべて自らが取得した一連の測定値の統計的解析に基づいて行う必要があり、第三者が取得したデータ等の外部情報は利用してはならない。",
+      "オ": "間接測定の場合、測定結果の不確かさは、測定対象量と一定の関係にある各量の測定結果の不確かさを評価し合成して求めることができる。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "統計処理によるタイプA評価のほか、校正証明書や既存データを使うタイプB評価も認められる。",
+    "choiceExplanations": {
+      "ア": "独立な反復測定の平均値の標準偏差は、単一測定の標準偏差を繰返し回数の平方根で割った値になる。",
+      "イ": "精密さは、所定の測定条件の下で反復した指示値や測定値の一致を表す。",
+      "ウ": "ばらつきが小さいほど精密なので、同じ条件で得た測定値の標準偏差を指標にできる。",
+      "エ": "統計処理によるタイプA評価のほか、校正証明書や既存データを使うタイプB評価も認められる。",
+      "オ": "入力量ごとの不確かさを、測定モデルの感度や必要に応じて相関を考慮して合成できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416175113id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_06kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416173608id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第73回計量士国家試験 管理 問5（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "4",
+    "examDate": "2022-12-11"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 6,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第73回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "測定の不確かさに関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "不確かさは、「JIS Z 8103 計測用語」では「測定値に付随する、合理的に測定対象量に結び付けられ得る値の広がりを特徴づけるパラメータ」と定義されている。",
+      "イ": "標準不確かさは、標準偏差として表した不確かさである。",
+      "ウ": "「測定における不確かさの表現のガイド(GUM) 」では、測定の不確かさを「偶然不確かさ」と「系統不確かさ」に分類している。",
+      "エ": "アナログ計器の読取りにおける人によるかたよりは、測定における不確かさの原因となる可能性がある。",
+      "オ": "合成標準不確かさは、測定モデルの入力量に付随する個々の標準不確かさを用いて得られる標準不確かさである。"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "GUMでは評価方法によるタイプA・タイプBの区分を使う。偶然・系統の区分とは対応しない。",
+    "choiceExplanations": {
+      "ア": "測定結果に伴い、測定対象量に合理的に帰属できる値の広がりを表すのが測定の不確かさである。",
+      "イ": "標準不確かさは測定不確かさを標準偏差の形で表す。",
+      "ウ": "GUMでは評価方法によるタイプA・タイプBの区分を使う。偶然・系統の区分とは対応しない。",
+      "エ": "読取りのかたよりの補正や補正し切れない成分は不確かさの要因になり得る。",
+      "オ": "合成標準不確かさは、入力量の標準不確かさを測定モデルに従って組み合わせたものである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416175113id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_06kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416173608id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第73回計量士国家試験 管理 問6（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "3",
+    "examDate": "2022-12-11"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 7,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第73回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "同一の測定対象量をn回反復測定して得たデータx₁, x₂, …, xₙを統計的に解析するときの考え方について述べた次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "測定を仮想的に無限回反復したときに得られる無限個のデータの集合を、測定値の母集団と呼ぶ。",
+      "イ": "n個のデータx₁, x₂, …, xₙは、測定値の母集団から無作為に取り出した標本とみなすことができる。",
+      "ウ": "母集団の性質を表す母平均や母分散のようなパラメータを一般に母数、標本から計算される標本平均や標本分散のような量を一般に統計量という。",
+      "エ": "次の式で計算される統計量x̄は、母平均に対する不偏推定量（かたよりのない推定量）である。x̄ = (1/n) ∑ᵢ₌₁ⁿ xᵢ",
+      "オ": "次の式で計算される統計量s²は、母分散に対する不偏推定量（かたよりのない推定量）である。s² = (1/n) ∑ᵢ₌₁ⁿ (xᵢ − x̄)²。 ただし、x̄は標本平均である。"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "標本平均を使った偏差平方和の分母は、不偏推定量を得るにはn−1とする。設問の分母nでは過小になる。",
+    "choiceExplanations": {
+      "ア": "仮に同一条件で測定を無限に繰り返したときの値の分布を母集団と考える。",
+      "イ": "独立に同一条件で測定するなら、得た値を母集団からの無作為標本として扱える。",
+      "ウ": "母数は母集団の性質を表し、統計量は観測した標本から計算される量である。",
+      "エ": "標本平均の期待値は母平均に等しいため、不偏推定量になる。",
+      "オ": "標本平均を使った偏差平方和の分母は、不偏推定量を得るにはn−1とする。設問の分母nでは過小になる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416175113id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_06kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416173608id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第73回計量士国家試験 管理 問7（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "5",
+    "examDate": "2022-12-11"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 8,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第73回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "測定データの統計処理に関する次の（ア）〜（ウ）の記述には、「測定データが正規分布に従っている」という仮定がなければ成立しないものと、仮定がなくても成立するものがある。次の各記述の成立について、この仮定が必要か不必要かを指定した下の組合せの中で、正しいものを一つ選べ。\n（ア）測定データの不偏分散の期待値は、母分散と一致する。\n（イ）標本平均を求めるための測定データ数が十分大きくなれば、測定データの標本平均の分布は中心極限定理によって正規分布に近づく。\n（ウ）F検定によって、2つの測定データ群のばらつきの間に違いがあるといえるかが判定できる。",
+    "choices": {
+      "ア": "不必要 ／ 不必要 ／ 必要",
+      "イ": "不必要 ／ 必要 ／ 不必要",
+      "ウ": "必要 ／ 不必要 ／ 不必要",
+      "エ": "必要 ／ 不必要 ／ 必要",
+      "オ": "不必要 ／ 必要 ／ 必要"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "有限分散があればアとイに正規性は不要である。通常の二標本F検定にはウの正規性が必要である。",
+    "choiceExplanations": {
+      "ア": "有限分散があればアとイに正規性は不要である。通常の二標本F検定にはウの正規性が必要である。",
+      "イ": "中心極限定理によるイは正規性を要しない。通常のF検定であるウには正規性を仮定する。",
+      "ウ": "アは有限分散をもつ無作為標本なら成り立つ。ウのF検定では正規性を仮定する。",
+      "エ": "アの不偏分散の期待値の関係は正規性に依存しない。",
+      "オ": "イは元のデータが非正規でも、定理の条件を満たし標本が十分大きければ成り立つ。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416175113id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_06kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416173608id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第73回計量士国家試験 管理 問8（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "1",
+    "examDate": "2022-12-11"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 9,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第73回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "次の図は、対をなす2変数x, yを測定したデータを散布図としてプロットした3通りのケースを示す。各ケースで求めた2変数間の標本相関係数rᵢの大小関係について正しいものを、下の中から一つ選べ。ここで、iはケース番号でi = 1, 2, 3である。",
+    "choices": {
+      "ア": "r₁ < r₂ < r₃",
+      "イ": "r₁ < r₃ < r₂",
+      "ウ": "r₂ < r₃ < r₁",
+      "エ": "r₂ < r₁ < r₃",
+      "オ": "r₃ < r₁ < r₂"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "ケース1は負、ケース3はゼロ付近、ケース2は正の強い相関である。",
+    "choiceExplanations": {
+      "ア": "ケース2は明瞭な正の相関なので、相関の弱いケース3より相関係数は大きい。",
+      "イ": "ケース1は負、ケース3はゼロ付近、ケース2は正の強い相関である。",
+      "ウ": "ケース2は上向き、ケース1は下向きに分布しているので、大小関係が逆である。",
+      "エ": "負の相関のケース1をゼロ付近のケース3より小さく置く必要がある。",
+      "オ": "ケース1は負の強い相関のため、ケース3より小さい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416175113id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_06kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416173608id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第73回計量士国家試験 管理 問9（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "2",
+    "examDate": "2022-12-11",
+    "imageUrls": [
+      "/images/questions/keiryoshi/2022/kanri-q9.png"
+    ],
+    "imageAltTexts": [
+      "ケース1〜3における2変数の散布図"
+    ]
+  },
+  {
+    "session": "measurement-management",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 10,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第73回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "実験計画法に関する次の記述の空欄(ア)ー(ウ)に入る語句の組合せとして正しいものを、下の中から一つ選べ。実験の計画においては、実験に取り上げる因子を実験結果に影響あると考えられる条件の中から選び、取り上げた因子の水準の組合せとその実験を行う順序を決める。そのとき、ランダム化(無作為化)、ブロック化(局所管理) 、実験の反復というフィッシャー の三原則を考慮する。ランダム化とは、実験を行う順序等を無作為に決めることであり、実験に取り上げていない条件が原因で生じる（ア）が、調べようとする要因効果に交絡することを防ぐことができる。ブロック化とは、実験全体を小さく区切ってその内部が比較的均一なブロックを作り、その中に実験単位を配置することである。ブロック内の実験誤差が実験全体の実験誤差より（イ）なり、調べようとする要因効果を検出しやすくなる。実験の反復とは、取り上げた因子の水準の組合せでの実験を複数回実施することであり、それは（ウ）の大きさを知るために行う。",
+    "choices": {
+      "ア": "かたより ／ 小さく ／ 実験誤差",
+      "イ": "かたより ／ 大きく ／ 実験誤差",
+      "ウ": "かたより ／ 大きく ／ 主効果",
+      "エ": "ばらつき ／ 小さく ／ 主効果",
+      "オ": "ばらつき ／ 大きく ／ 実験誤差"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "無作為化でかたよりの交絡を抑え、ブロック内の誤差を小さくし、反復で実験誤差を推定する。",
+    "choiceExplanations": {
+      "ア": "無作為化でかたよりの交絡を抑え、ブロック内の誤差を小さくし、反復で実験誤差を推定する。",
+      "イ": "ブロック内部を均質にすることで、内部の誤差は小さくなる。",
+      "ウ": "ブロック内の誤差は小さくなり、同一条件での反復は実験誤差の推定に使う。",
+      "エ": "無作為化では系統的なかたよりの交絡を抑え、反復は実験誤差の評価に使う。",
+      "オ": "無作為化が防ぐのはかたよりの交絡であり、ブロック化はブロック内誤差を小さくする。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416175113id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_06kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416173608id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第73回計量士国家試験 管理 問10（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "1",
+    "examDate": "2022-12-11"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 11,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第73回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "測定のトレーサビリティに関する次の記述の中から、正しいものを一つ選べ。",
+    "choices": {
+      "ア": "国家計量標準機関が測定標準を提供していない量に関してはトレーサビリティを確保することができない。",
+      "イ": "トレーサビリティの最上位に位置する国家計量標準機関が提供している測定標準の不確かさはゼロである。",
+      "ウ": "トレーサビリティが確保されていることの証明のためには、トレーサビリティ体系図が必須である。",
+      "エ": "測定結果のトレーサビリティは、不確かさが与えられた目的に対して十分であることを保証するものではない。",
+      "オ": "トレーサビリティはSI単位で表された測定結果でのみ確保できる。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "基準まで測定結果を関係付けられることと、不確かさが測定目的を満たすことは別に評価する。",
+    "choiceExplanations": {
+      "ア": "国家計量標準がない量でも、定められた参照基準など適切な基準への連鎖を確立できる。",
+      "イ": "最上位の標準の実現や測定にも不確かさが伴う。",
+      "ウ": "校正の連鎖を文書で示せればよく、体系図という特定の形式は必須ではない。",
+      "エ": "基準まで測定結果を関係付けられることと、不確かさが測定目的を満たすことは別に評価する。",
+      "オ": "SI以外の規約参照基準に結び付いた測定結果にもトレーサビリティを確立できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416175113id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_06kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416173608id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第73回計量士国家試験 管理 問11（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "4",
+    "examDate": "2022-12-11"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 12,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第73回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "「JIS Z 8103 計測用語」において、測定標準は「何らかの参照基準として用いる、表記された量の値及びその不確かさをもつ、ある与えられた量の定義を現示したもの。」と定義されている。測定標準に関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "量の定義の現示とは、定義された量の値を実現し示すことである。量の値は、測定システム、実量器又は標準物質によって与えることができる。",
+      "イ": "測定標準を用いたとき、その測定標準の量の値及び不確かさは測定標準の校正証明書等に書かれているものを用いなければならないので、環境の影響や経年変化を考慮してはならない。",
+      "ウ": "測定標準は、他の測定標準、測定器又は測定システムの校正を通して、トレーサビリティを確立する際の参照基準として用いることができる。",
+      "エ": "測定標準を指す用語にはいろいろあり、例えば、「標準器」は測定標準として使われる計器及び実量器を指している。実量器の例として、標準分銅やブロックゲージがある。",
+      "オ": "計量法では、法定計量分野で特定計量器の検定又は定期検査に用いる測定標準に相当するものを「基準器」と呼んでいるが、不確かさを付すことは要求していない。"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "使用時の環境や経年ドリフトが値に影響するなら、値の補正や不確かさの評価に反映する。",
+    "choiceExplanations": {
+      "ア": "標準分銅や標準物質、装置などによって量の定義を実際の値として実現できる。",
+      "イ": "使用時の環境や経年ドリフトが値に影響するなら、値の補正や不確かさの評価に反映する。",
+      "ウ": "測定標準で校正することで、対象機器の測定結果を上位の参照基準に結び付ける。",
+      "エ": "標準分銅やブロックゲージは、既知の量の値を実体で表す実量器の例である。",
+      "オ": "計量法上の基準器は検定や定期検査の基準として用いられ、ここでの定義は不確かさの付記を条件にしていない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416175113id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_06kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416173608id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第73回計量士国家試験 管理 問12（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "2",
+    "examDate": "2022-12-11"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 13,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第73回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "「JIS Z 9090 測定―校正方式通則」に基づく測定器の定期校正には、一般に点検及び(又は)修正という、役割を異にする2種類の作業が含まれる。このような測定器の校正に関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "測定器の点検では、測定標準を用いて測定器のかたよりの大きさを求め、あらかじめ定めた限界値と比較する。",
+      "イ": "測定器の修正では、測定標準を用いて、測定器の指示値から測定対象量の値を求めるための校正式を新たに求め直す。",
+      "ウ": "測定器の点検及び修正を行う校正方式では、点検の結果、測定器のかたよりの大きさが修正限界内にあれば、修正を行わず継続して測定器を使用する。修正限界を超えた場合は、修正した後に測定器を使用する。",
+      "エ": "測定器の点検だけで修正は含まない校正方式、及び修正だけで点検は含まない校正方式では、測定器のかたよりの大きさを一定限度内に抑えるという、校正の目的を達成することができない。",
+      "オ": "測定器の点検も修正も行わず、予防保全の目的で定期的に測定器の廃棄・更新を行う無校正の校正方式もある。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "点検のみでも限界超過時の交換などで管理できる。一定周期で修正する方式でもかたよりの大きさを抑え得る。",
+    "choiceExplanations": {
+      "ア": "点検では、標準との比較で得た測定器のかたよりが管理上の限界内かを確認する。",
+      "イ": "修正では標準で得たデータに基づき、指示値を測定量へ換算する校正式を求め直す。",
+      "ウ": "点検でかたよりが許容されれば継続使用し、限界を超えれば修正する方式である。",
+      "エ": "点検のみでも限界超過時の交換などで管理できる。一定周期で修正する方式でもかたよりの大きさを抑え得る。",
+      "オ": "予防保全として定期的に交換し、点検や修正を行わない運用もある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416175113id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_06kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416173608id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第73回計量士国家試験 管理 問13（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "4",
+    "examDate": "2022-12-11"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 14,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第73回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "ある力センサを繰返し2回で校正したとき、力標準機で発生した力の大きさと、その力を与えたときのセンサの出力電圧の関係は表に示すとおりであった。このセンサに未知の力を印加したところ、その出力は75.0 mVであった。このときの力の値として最も近い値を、下の中から一つ選べ。ただし、力標準機の誤差は無視でき、この力の範囲ではセンサの出力は直線性が確保されているものとする。",
+    "choices": {
+      "ア": "12.48 kN",
+      "イ": "12.98 kN",
+      "ウ": "13.62 kN",
+      "エ": "14.05 kN",
+      "オ": "17.02 kN"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "20.00 kNでの平均出力は110.1 mVなので感度は5.00 mV/kNである。10.00 + (75.0−60.1)/5.00 = 12.98 kNとなる。",
+    "choiceExplanations": {
+      "ア": "12.48 kNのときの推定出力は60.1 + 5.00×2.48 = 72.5 mVで、75.0 mVより小さい。",
+      "イ": "20.00 kNでの平均出力は110.1 mVなので感度は5.00 mV/kNである。10.00 + (75.0−60.1)/5.00 = 12.98 kNとなる。",
+      "ウ": "13.62 kNは推定出力78.2 mVに相当し、75.0 mVを上回る。",
+      "エ": "14.05 kNでは推定出力は約80.4 mVになり、設問の値を上回る。",
+      "オ": "17.02 kNでは推定出力は95.2 mVとなる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416175113id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_06kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416173608id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第73回計量士国家試験 管理 問14（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "2",
+    "examDate": "2022-12-11",
+    "imageUrls": [
+      "/images/questions/keiryoshi/2022/kanri-q14.png"
+    ],
+    "imageAltTexts": [
+      "力標準機の値とセンサの出力電圧の対応表"
+    ],
+    "isCalculation": true
+  },
+  {
+    "session": "measurement-management",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 15,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第73回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "測定のSN比に関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "測定のSN比は、測定対象量の値の変化に対し、測定器の指示値がどれほど忠実に対応するかを表す指標である。",
+      "イ": "測定のSN比を求めるとき、測定器の指示値yと測定対象量の真値Mの値の間にy = βM + eの関係式を想定することが多い。ここでβは感度を表す定数であり、eは指示値の誤差を表す。このとき測定のSN比は、eの分散をσ²として、σ²/β²で表される。",
+      "ウ": "測定のSN比を用いて2台の測定器を比較したとき、SN 比の大きい測定器の方が校正後の誤差は小さい。",
+      "エ": "測定対象量の真値Mがわからなくとも、Mの水準間の間隔や比の値がわかっていれば、SN比を比較できることがある。",
+      "オ": "検出対象の物理量は同じだが検出原理が異なる二つのセンサは、センサの出力信号となる物理量が違っていても、SN比の比較に意味がある。"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "SN比は感度の二乗を誤差分散で割ったβ²/σ²である。選択肢の式はその逆数である。",
+    "choiceExplanations": {
+      "ア": "入力の変化に対する感度が高く、出力の誤差が小さい測定器ほど、SN比が大きくなる。",
+      "イ": "SN比は感度の二乗を誤差分散で割ったβ²/σ²である。選択肢の式はその逆数である。",
+      "ウ": "SN比が大きいほど、誤差分散を感度で換算した校正後の誤差は小さい。",
+      "エ": "真値の絶対値が未知でも、水準間の対応や間隔が共通なら比較できる場合がある。",
+      "オ": "感度で誤差を測定対象量の側へ換算して比較するので、出力の物理量の違いは妨げにならない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416175113id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_06kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416173608id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第73回計量士国家試験 管理 問15（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "2",
+    "examDate": "2022-12-11"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 16,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第73回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "次の文章は、ある測定システムの測定値のばらつきを小さくするため、SN 比を用いた改善の手順を記したものである。空欄(ア)ー(エ)に入る語句の組合せとして正しいものを、下の中から一つ選べ。測定システムを構成する要素の中から、水準選択が可能な2つの因子A及びBを選定し、それぞれ3水準とした実験を行ったところ、図のような SN 比の要因効果図が得られた。 ここで、因子は互いに独立しており、交互作用は十分小さい。システムとして、測定値のばらつきが最も小さくなるのは、 SN 比が最も（ア）なる水準の組合せのときであり、因子Aは水準（イ）を、因子Bは水準（ウ）を選択する。現行のシステムは、A2とB2の組合せであり、SN 比が最大になる組合せに変更したときの改善の効果は、SN 比で表すと（エ）となる。これは、ばらつきを約半分に抑えることが期待できることを意味する。",
+    "choices": {
+      "ア": "小さく ／ A1 ／ B3 ／ 6 dB",
+      "イ": "小さく ／ A2 ／ B2 ／ 2 dB",
+      "ウ": "大きく ／ A1 ／ B3 ／ 2 dB",
+      "エ": "大きく ／ A3 ／ B1 ／ 2 dB",
+      "オ": "大きく ／ A3 ／ B1 ／ 6 dB"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "最大の組合せはA3・B1である。現行との差は(13−9) + (13−11) = 6 dBとなる。",
+    "choiceExplanations": {
+      "ア": "ばらつき低減にはSN比の最大化が必要で、A1とB3はそれぞれSN比の低い水準である。",
+      "イ": "A2・B2は現行条件である。最も小さくなる水準でも、改善案でもない。",
+      "ウ": "SN比を大きくする方向は正しいが、A1とB3は各因子の最小値の水準である。",
+      "エ": "最適水準はA3・B1だが、2 dBはBの改善分だけであり、Aの4 dBを加える。",
+      "オ": "最大の組合せはA3・B1である。現行との差は(13−9) + (13−11) = 6 dBとなる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416175113id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_06kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416173608id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第73回計量士国家試験 管理 問16（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "5",
+    "examDate": "2022-12-11",
+    "imageUrls": [
+      "/images/questions/keiryoshi/2022/kanri-q16.png"
+    ],
+    "imageAltTexts": [
+      "SN比の要因効果図"
+    ],
+    "isCalculation": true
+  },
+  {
+    "session": "measurement-management",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 17,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第73回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "製造工程で活用されている自動化と制御に関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "今日では、多くのシステムが自動化されており、例えばフィードバック制御系が自動制御の目的で利用される。",
+      "イ": "自動制御系の設計・解析には、時間の関数である信号のフーリエ変換に基づき導出される伝達関数を用いることができる。",
+      "ウ": "自動制御系の解析では、システムの静的特性だけでなく動的特性も解析の対象となる。",
+      "エ": "多くの制御要素の複合的結合により構成される制御系の解析には、伝達関数についての等価変換の手法を用いることができる。",
+      "オ": "ステップ応答法は、自動制御系の応答特性を調べるための一つの手法である。"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "通常の伝達関数は初期値をゼロとしたときの出力と入力のラプラス変換の比で定義する。",
+    "choiceExplanations": {
+      "ア": "出力の測定を入力側に戻して目標とのずれを補正するフィードバックは自動制御で広く使われる。",
+      "イ": "通常の伝達関数は初期値をゼロとしたときの出力と入力のラプラス変換の比で定義する。",
+      "ウ": "定常時の静的特性に加え、入力変化後の過渡応答などの動的特性も調べる。",
+      "エ": "直列・並列やフィードバックを等価変換すれば、ブロック線図を簡略化できる。",
+      "オ": "階段状の入力に対する出力の時間変化から、応答速度や行過ぎ量などを調べられる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416175113id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_06kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416173608id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第73回計量士国家試験 管理 問17（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "2",
+    "examDate": "2022-12-11"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 18,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第73回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "測定データの伝送と信号変換に関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "測定データの伝送には、時間経過とともに連続的に変化する波形信号を伝送するアナログ伝送と、離散的に変化する波形信号を伝送するデジタル伝送がある。",
+      "イ": "アナログ信号からあらかじめ設定した時刻ごとの値を取り出す操作を量子化という。また、連続的な信号の大きさを幾つかの区間に区分し、各区間内を同一の値とみなすことを標本化という。",
+      "ウ": "AD変換において、デジタル信号を表現する際のビット数を増やすことによって、アナログ信号の波形を近似するときの近似精度が向上する。",
+      "エ": "アナログ信号に含まれる周波数成分のうち、最も高い周波数成分の2倍を超える周波数でサンプリングすれば、変換後のデジタル信号波形から元のアナログ信号の波形を厳密に再構成できる。",
+      "オ": "アナログ信号をデジタル信号に変換する際、10ビットのAD変換器で実現可能な分解能はフルスケールの(1/2)¹⁰ = 1/1024となる。"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "時刻ごとの値を抽出するのが標本化である。振幅を有限段階に丸める処理が量子化である。",
+    "choiceExplanations": {
+      "ア": "アナログ伝送では連続量の信号を扱い、デジタル伝送では離散的な記号や値を扱う。",
+      "イ": "時刻ごとの値を抽出するのが標本化である。振幅を有限段階に丸める処理が量子化である。",
+      "ウ": "同じ入力範囲でビット数を増やすと量子化の段階数が増え、振幅近似の誤差が小さくなる。",
+      "エ": "帯域制限された信号を最高周波数の2倍を超える周波数で理想的に標本化すれば、標本化定理により元の信号を復元できる。",
+      "オ": "10ビットではコードが2¹⁰ = 1024段階あるため、分解能はフルスケールの1/1024である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416175113id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_06kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416173608id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第73回計量士国家試験 管理 問18（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "2",
+    "examDate": "2022-12-11"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 19,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第73回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "2進数と16進数に関する次の記述の空欄(ア)ー(ウ)に入る語句の組合せとして正しいものを、下の中から一つ選べ。ただし、16 進数では、10 進数の 10 から15 の数値をAからFと表すこことする。デジタルコンピュータ内では、電圧の高低など二つの物理的状態で表すことができる2進数を用いてすべてのデータを扱っている。この 2 進数 1 桁で表せる情報量の最小単位のことを（ア）という。 2 進数では数値を表記する際に多くの桁数が必要なので、人が扱う際には2進数を 16 進数に変換して表記することが多い。これは、16は2の （イ）なので、4桁の2進数を1桁の16 進数で表すことができるからである。例えば、 2進数1101を16 進数で表記するとD となり、2進数0100 1110を16 進数で表記すると （ウ）となる。",
+    "choices": {
+      "ア": "ビット ／ 累乗 ／ 4E",
+      "イ": "バイト ／ 倍数 ／ 4E",
+      "ウ": "ビット ／ 累乗 ／ 78",
+      "エ": "バイト ／ 倍数 ／ 78",
+      "オ": "ビット ／ 倍数 ／ 4E"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "2進1桁はビットであり、16 = 2⁴である。0100が4、1110がEなので4Eとなる。",
+    "choiceExplanations": {
+      "ア": "2進1桁はビットであり、16 = 2⁴である。0100が4、1110がEなので4Eとなる。",
+      "イ": "4Eは正しいが、バイトは通常8ビットであり、4桁をまとめられる理由は16 = 2⁴である。",
+      "ウ": "ビットと累乗は正しいが、0100と1110はそれぞれ4とEであり、78にはならない。",
+      "エ": "1桁はビットであり、16進数への変換結果も78ではなく4Eになる。",
+      "オ": "ビットと4Eは正しいが、4桁との対応を与えるのは単に2の倍数であることではなく16 = 2⁴であることだ。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416175113id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_06kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416173608id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第73回計量士国家試験 管理 問19（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "1",
+    "examDate": "2022-12-11",
+    "isCalculation": true
+  },
+  {
+    "session": "measurement-management",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 20,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第73回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "「JIS Z 8115 ディペンダビリティ（総合信頼性）用語」において、保全は下図のように分類されている。「時間計画保全」の説明として正しいものを、下の中から一つ選べ。",
+    "choices": {
+      "ア": "物理的状態の評価に基づく保全のことである。物理的状態の判断は、スケジュールに従って行われるオペレータによる観察や状態監視によって行われることがある。",
+      "イ": "人間の介在なしに実行される保全のことである。アイテムに対して、人が直接接近することなく実施される。",
+      "ウ": "フォールトの検出後に直ちに実行しないで、規定の保全規則に従って、その必要性を明確化した後に時期を繰り延べて実行する保全のことである。",
+      "エ": "定期保守とも呼ばれ、規定した時間計画に従って実行される保全のことである。",
+      "オ": "コンピュータプログラム等を更新するなど、保全性または他の属性を向上させるために行われるソフトウェア保全のことである。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "予定された時間間隔や時期に従って行う定期保守は時間計画保全である。",
+    "choiceExplanations": {
+      "ア": "観察や監視で得たアイテムの状態から実施を判断するのは状態基準保全である。",
+      "イ": "人が直接関わらずに実施することは自動保全の特徴である。",
+      "ウ": "故障検出後に実施を繰り延べるので、繰延事後保全を説明している。",
+      "エ": "予定された時間間隔や時期に従って行う定期保守は時間計画保全である。",
+      "オ": "プログラムを更新して保全性を高める処置はソフトウェア保全の一種であり、提示された内容は保全時期を定義していない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416175113id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_06kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416173608id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第73回計量士国家試験 管理 問20（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "4",
+    "examDate": "2022-12-11",
+    "imageUrls": [
+      "/images/questions/keiryoshi/2022/kanri-q20.png"
+    ],
+    "imageAltTexts": [
+      "保全の管理上の分類を示す樹形図"
+    ]
+  },
+  {
+    "session": "measurement-management",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 21,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第73回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "品質管理ではQC七つ道具と呼ばれる様々な手法が用いられる。このような手法の特徴について説明した次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "ヒストグラムとは、データを特性値の大きさに応じて組分けし、組分けされた各組に属するデータの個数について示した近接する長方形からなる図である。",
+      "イ": "パレート図とは、特性の項目ごとの出現頻度を表す棒グラフを出現頻度の大きい順に並べるとともに、その累積比率を表す折れ線グラフを示した図である。",
+      "ウ": "特性要因図とは、横軸に要因、縦軸に対象とする事象の特性値をプロットした図である。",
+      "エ": "散布図とは、二つの特性値が組になった複数のデータについて、一つの特性値を縦軸に、もう一つの特性値を横軸に取り、各組のデータを打点した図である。",
+      "オ": "チェックシートとは、調査などでデータを収集する際に、データの特徴をマークなどで簡単にチェックできるようにした表または図である。"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "特性要因図は結果とその原因を枝分かれで整理する。2変量の打点には散布図を用いる。",
+    "choiceExplanations": {
+      "ア": "値の範囲を階級に分け、それぞれの度数を隣接する長方形で表す。",
+      "イ": "パレート図は頻度順の棒と累積比率の折れ線で、重点項目を把握する。",
+      "ウ": "特性要因図は結果とその原因を枝分かれで整理する。2変量の打点には散布図を用いる。",
+      "エ": "散布図では各観測で得られた二つの値を座標として打ち、関係を観察する。",
+      "オ": "記入項目やマークをあらかじめ定めた表や図により、現場での集計漏れを減らせる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416175113id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_06kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416173608id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第73回計量士国家試験 管理 問21（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "3",
+    "examDate": "2022-12-11"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 22,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第73回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "製品の開発・生産プロセスで実施される検査に関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "検査とは、製造工程で実施される出荷検査だけでなく、試作品の検査や仕入れた部品の検査など、開発・調達段階でも計画・実施されるもので、品質保証活動の一部を担っている。",
+      "イ": "仕入先から材料や部品等を受け入れるときに実施する検査のことを受入検査という。",
+      "ウ": "ロット保証における抜取検査では、ロットの合否を決める判定基準を緩和するにつれ、不適合品が市場へ流出する確率が高くなる。これを消費者危険という。",
+      "エ": "ロット保証における抜取検査では、ロットの合否を決める判定基準を厳しくするにつれ、適合品が不適合品と判定され、廃棄または手直し工程に回される確率が高くなる。これを生産者危険という。",
+      "オ": "全数検査では、製造したすべての製品について、製品仕様に明記されたすべての特性を検査する。"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "全数検査の「全数」は対象製品の個数を指す。検査特性は検査の目的に合わせて設定する。",
+    "choiceExplanations": {
+      "ア": "検査は出荷時だけでなく、試作品や購入部品の確認にも用いられる。",
+      "イ": "受入検査では、外部から受け入れる材料・部品の適合性を確認する。",
+      "ウ": "消費者危険は品質の悪いロットを受け入れてしまう確率であり、基準を緩くすると大きくなる。",
+      "エ": "生産者危険は品質の良いロットを誤って不合格にする確率であり、基準を厳しくすると大きくなる。",
+      "オ": "全数検査の「全数」は対象製品の個数を指す。検査特性は検査の目的に合わせて設定する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416175113id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_06kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416173608id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第73回計量士国家試験 管理 問22（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "5",
+    "examDate": "2022-12-11"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 23,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第73回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "工程管理に関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "管理図は、管理限界こともに、連続したサンプルから計算された統計量の値を時間順などで打点した図であり、工程の維持管理を目的として用いられる。",
+      "イ": "x̄−R管理図において、検査結果の打点が管理限界から外れた場合、すみやかに製品の設計見直しを行う。",
+      "ウ": "工程における製品の検査とは、製品の測定や試験を行い、検査目的によって定めた判定基準に基づき個々の製品または製品群の合格、不合格の判定を行うことである。",
+      "エ": "工程において、製品検査に使用する測定機器の適正な点検・校正、また保守・保全ができていない場合、製品の検査結果に影響する。",
+      "オ": "工程において、規格幅に対する相対的なばらつきの大きさが小さい製品を生産できる能力を示す指標として工程能力指数がある。"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "管理限界を外れた場合にはまず工程が管理外になった原因を調べる。直ちに製品設計を見直すことは要求されない。",
+    "choiceExplanations": {
+      "ア": "工程の統計量を時間順に表示し、管理限界と比較することで工程の安定性を確認する。",
+      "イ": "管理限界を外れた場合にはまず工程が管理外になった原因を調べる。直ちに製品設計を見直すことは要求されない。",
+      "ウ": "測定や試験で得た結果を、目的ごとに定めた判定基準と照らして合否を決める。",
+      "エ": "測定器にドリフトや故障があれば測定値が変わり、製品の合否判定にも影響する。",
+      "オ": "工程能力指数は、工程のばらつきと仕様上許容される幅との関係を表す。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416175113id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_06kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416173608id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第73回計量士国家試験 管理 問23（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "2",
+    "examDate": "2022-12-11"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 24,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第73回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "一定の時間間隔ごとに製品を測定しながら生産する製造工程がある。現状では製品特性の測定を1 日に定められた回数行い、工程を管理している。次に示す工程管理における改善活動の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "工程を調べた結果、製造工程の温度変化が製品特性に影響を与えることがわかったので、製造工程の温度変化を低減させた。",
+      "イ": "工程での製品特性値の変動が大きいので、1 日に製品特性を測定する回数を増やし、その結果に基づいて工程をフィードバック制御するようにした。",
+      "ウ": "工程能力指数（Cp = Δ/6s）を計算し、指数の値が大きくなるようにΔを大きくした。ここで、Δは製品特性の規格幅、sは製品特性のばらつきの標準偏差を表す。",
+      "エ": "現行の管理幅より狭い管理幅に変更し、その管理幅より特性値が外れないように工程にフィードバック制御する工程管理方法を実施した。",
+      "オ": "製品仕様に比べて、工程で使用する測定器の値の読みとり桁数が不足気味だったので、読みとり桁数の多い測定器を導入した。"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "規格幅Δを広げれば計算上のCpは上がるが、工程の標準偏差sが改善したことにはならない。",
+    "choiceExplanations": {
+      "ア": "温度変動がばらつきの原因と分かったので、その変動を低減することが工程改善につながる。",
+      "イ": "測定間隔を短くすると変動を早く把握でき、測定結果を工程へのフィードバックに使える。",
+      "ウ": "規格幅Δを広げれば計算上のCpは上がるが、工程の標準偏差sが改善したことにはならない。",
+      "エ": "狭い管理幅に基づき特性値をフィードバック制御するのは、ばらつきを抑えるための工程管理である。",
+      "オ": "必要な桁数を読める測定器を導入すれば、仕様に対して十分な測定分解能を得られる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416175113id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_06kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416173608id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第73回計量士国家試験 管理 問24（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "3",
+    "examDate": "2022-12-11"
+  },
+  {
+    "session": "measurement-management",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 25,
+    "category": "管理",
+    "subject": "管理",
+    "topicTags": [
+      "管理",
+      "第73回"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "計測管理における社内標準化に関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "社内標準化を進めるにあたっては、目標を明確にすることが重要である。",
+      "イ": "社内標準化の目標の一つに、コスト低減がある。",
+      "ウ": "社内標準化を進めても、製品品質が向上するとは限らない。",
+      "エ": "社内標準は品質に重大な影響を及ぼすため、一旦制定したら変更してはならない。",
+      "オ": "検査における誤りを防ぐために記録様式を統一することも、社内標準化の重要な活動の一つである。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "制定した社内標準も、技術や工程の変更などに応じて見直し、必要なら改訂する。",
+    "choiceExplanations": {
+      "ア": "目標を明確にすることで、標準化の対象と達成度の評価方法を決められる。",
+      "イ": "重複手順の削減や様式の共通化によるコスト低減は標準化の目標になり得る。",
+      "ウ": "不適切な手順をそのまま標準化しても、製品品質の向上は保証されない。",
+      "エ": "制定した社内標準も、技術や工程の変更などに応じて見直し、必要なら改訂する。",
+      "オ": "記録様式を統一すると記入漏れや転記の間違いを抑えられ、検査手順の標準化に役立つ。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240416175113id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_06kanri.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240416173608id_/https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/R4_seikaibangou.pdf",
+    "sourceAttribution": "出典：経済産業省 第73回計量士国家試験 管理 問25（問題・正答）。テキスト化・数式の線形表記・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "lastUpdated": "2026-11-20",
+    "officialAnswerNumber": "4",
+    "examDate": "2022-12-11"
+  }
+]
