@@ -851,7 +851,7 @@ tohan: {
         ],
     }],
     seasons: ["annual"],
-    yearRange: { start: 2023, end: 2026 },
+    yearRange: { start: 2022, end: 2026 },
 },
 "tohan-kitakanto-koshinetsu": {
     code: "tohan-kitakanto-koshinetsu",
