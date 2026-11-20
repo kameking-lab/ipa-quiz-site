@@ -252,6 +252,14 @@
       "sha256": "2e27a790eebcd56654abff6dc28752f0028297d49db2aaad3cd50e3dc5086243",
       "pages": 22,
       "textChars": 581
+    },
+    {
+      "file": "R05_1_jitsumu.pdf",
+      "url": "https://www.nustec.or.jp/syunin/pdf/R05_1_jitsumu.pdf",
+      "bytes": 1191575,
+      "sha256": "001a9a671a0f24dab139251fe0c98c097252a1c4679a34ae220d7f6abf068751",
+      "pages": 16,
+      "textChars": 187
     }
   ],
   "latestYears": [
@@ -260,9 +268,9 @@
     2024,
     2023
   ],
-  "stagedQuestions": 668,
-  "stagedChoiceExplanations": 9198,
-  "officialPrimaryQuestions": 672,
+  "stagedQuestions": 674,
+  "stagedChoiceExplanations": 9680,
+  "officialPrimaryQuestions": 678,
   "remainingPrimaryQuestions": 4,
   "counting": "第一種は各年132原問（法令30・実務6・物理32・化学32・生物32）。第二種は各年75原問（法令30・実務12・物理11・化学11・生物11）。多肢択一式の空欄は原問と別に数えない。",
   "unavailableRounds": [],
@@ -1138,6 +1146,19 @@
         31,
         32
       ]
+    },
+    {
+      "year": 2023,
+      "grade": 1,
+      "subject": "実務",
+      "numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
     }
   ],
   "answerKeys": {
@@ -1811,7 +1832,7 @@
     ]
   },
   "transcription": "原本レンダリングで本文・全肢を目視照合。OCRは補助のみ。指数・核種・ギリシャ文字を原本から復元。組合せの空白を整理、表の列名を各肢に付記。令和8年度第一種物理学問19・令和7年度第二種実務問6の原図のみprivateなfigures/に保存。 LQ8B追加分の原図をfigures/へ保存。一部の長文は条件を保持して整理し、各sourceAttributionに明記。 LQ8D追加20原問の本文・全肢・数式・表・必要図を原本画像で照合。複数空欄は同じ原問に保持。濃度を表す［A］［B］は全角括弧で解答空欄と区別。新規原図6点をprivate figuresへ保存（表を含む原ページ画像も使用）。",
-  "errata": "令和8年度第一種生物学問2・問10Cは既存反映済み。LQ8Dでは令和8年度第一種実務問1-IIの面状試料の平行・同距離条件、問5-IIのバックグラウンドを含む計数率、令和7年度第一種実務問2-Dの解答群肢2〜7の「に」削除、同年度第一種化学問31式(5)の初期放射能Aₐ⁰への訂正を反映。化学問31-I-Fは公式指定どおりallAnswersAccepted=trueかつofficialAnswerNumber=null。 令和5年度第一種生物学の添付正誤票に従い、問31のⅠのA～C解答群から6・7を削除し、問32のⅡ・ⅢのDNA-PKcs表記を訂正。",
+  "errata": "令和8年度第一種生物学問2・問10Cは既存反映済み。LQ8Dでは令和8年度第一種実務問1-IIの面状試料の平行・同距離条件、問5-IIのバックグラウンドを含む計数率、令和7年度第一種実務問2-Dの解答群肢2〜7の「に」削除、同年度第一種化学問31式(5)の初期放射能Aₐ⁰への訂正を反映。化学問31-I-Fは公式指定どおりallAnswersAccepted=trueかつofficialAnswerNumber=null。 令和5年度第一種生物学の添付正誤票に従い、問31のⅠのA～C解答群から6・7を削除し、問32のⅡ・ⅢのDNA-PKcs表記を訂正。 令和5年度第一種実務の添付正誤票に従い、問6のⅢを「このモデルに基づき計算された値」に訂正。",
   "independentReview": "PASS for the current unpublished partial checkpoint: physics80, chemistry19 plus held1, biology20, practical20 after corrections. Executed with C:/Users/kanet/AppData/Roaming/npm/codex.cmd exec -m gpt-6-astra -s read-only. Evidence: reports/lq8-independent-review-40.md, -60.md (initial finding), -final.md (physics80 PASS), -chemistry.md, -biology.md, -practical.md (initial finding), -practical-fixed.md (139 integration PASS). Additional 2026 grade1 chemistry7 PASS: reports/lq8-independent-review-first-chemistry.md. Current total146 is reviewed. LQ8B additional biology2026 30 PASS: reports/lq8b-review-biology2026.md. LQ8B biology2025 30 plus 2026 label corrections PASS after fixes: reports/lq8b-review-biology2025.md (initial findings), reports/lq8b-review-biology-fixed.md (PASS). LQ8B chemistry2026 additional23 PASS after sulfur-gauge correction: reports/lq8b-review-chemistry2026.md (initial finding), reports/lq8b-review-chemistry2026-fixed.md (PASS). LQ8B chemistry2025 30 PASS after isotope/alt-text fixes: reports/lq8b-review-chemistry2025.md (initial findings), reports/lq8b-review-chemistry2025-fixed.md (PASS). LQ8B 2026 second-grade law30 PASS after workroom,transport and deputy-deadline fixes: reports/lq8b-review-law2026-2.md (initial findings), reports/lq8b-review-law2026-2-fixed.md (PASS). LQ8B 2025 second-grade law30 PASS: reports/lq8b-review-law2025-2.md (findings), reports/lq8b-review-law2025-2-fixed.md (PASS). LQ8B 2026 first-grade law30 PASS after transport contamination-limit correction: reports/lq8b-review-law2026-1.md (finding), reports/lq8b-review-law2026-1-fixed.md (PASS). LQ8B 2025 first-grade law30 and379 integration PASS after original-choice,quoted-condition,isotope-label,crop,monitoring-requirement and injury-condition fixes: reports/lq8b-review-law2025-1.md (full review), reports/lq8b-review-law2025-1-fixed.md (PASS), reports/lq8b-review-integration-379.md (findings), reports/lq8b-review-integration-379-fixed.md (PASS). Held chemistry q9 re-adjudicated KEEP HOLD: reports/lq8b-review-held-q9.md; this is not a completion PASS for that question. Second full30/150 law2025-1 review source quotations were corrected against original: reports/lq8b-review-law2025-1-final.md (findings including2 mistaken quotations), reports/lq8b-review-law2025-1-final-fixed.md (corrected quotations), reports/lq8b-review-law2025-1-final-corrected.md (PASS). LQ8C393-question unpublished checkpoint PASS after corrections. All14 additions,200 blanks,1635 new choice explanations were reviewed against originals. Data/assets and200 official keys verified: reports/lq8c-review-checkpoint-fixed.md; firstbio32 correction PASS: reports/lq8c-review-firstbio32-fixed.md; final documentation correction PASS: reports/lq8c-review-final-corrected.md. Earlier findings retained in reports/lq8c-review-*.md. Held q9 KEEP HOLD, not a completed question. LQ8D: all20 additions,238 blanks,2390 new choice explanations content PASS after answer-revealing alt and 伝導定数 transcription fixes. Evidence reports/lq8d-review-physics-fixed.md, reports/lq8d-review-chemistry-fixed.md, reports/lq8d-review-practical2026.md, reports/lq8d-review-practical2025.md. Initial findings retained. Held q9 rechecked KEEP HOLD: reports/lq8d-review-held.md. Final integration record: reports/lq8d-review-final.md. Final LQ8D content/integration PASS in reports/lq8d-review-final.md; sole remaining P3 missing report resolved PASS in reports/lq8d-review-final-fixed.md. Not a414-completion or held-release PASS.",
   "heldPrimaryQuestions": 1,
   "heldQuestionIds": [
@@ -2617,9 +2638,81 @@
       "M": 5,
       "N": 2,
       "O": 4
+    },
+    "hoshasen-1-2023-jitsumu-q1": {
+      "A": 4,
+      "B": 3,
+      "C": 1,
+      "D": 3,
+      "ア": 4,
+      "E": 4,
+      "イ": 4,
+      "F": 3,
+      "G": 1,
+      "ウ": 5
+    },
+    "hoshasen-1-2023-jitsumu-q2": {
+      "A": 4,
+      "B": 7,
+      "C": 11,
+      "D": 2,
+      "E": 1,
+      "F": 9,
+      "ア": 3,
+      "イ": 4,
+      "ウ": 4,
+      "エ": 2
+    },
+    "hoshasen-1-2023-jitsumu-q3": {
+      "A": 4,
+      "B": 5,
+      "ア": 6,
+      "イ": 4,
+      "ウ": 8,
+      "C": 2,
+      "D": 8,
+      "E": 5,
+      "F": 3,
+      "G": 1
+    },
+    "hoshasen-1-2023-jitsumu-q4": {
+      "ア": 5,
+      "A": 5,
+      "B": 7,
+      "C": 5,
+      "D": 2,
+      "E": 2,
+      "イ": 10,
+      "F": 5,
+      "ウ": 3,
+      "エ": 3
+    },
+    "hoshasen-1-2023-jitsumu-q5": {
+      "A": 2,
+      "B": 1,
+      "C": 6,
+      "ア": 7,
+      "イ": 12,
+      "ウ": 8,
+      "D": 3,
+      "E": 4,
+      "F": 4,
+      "G": 6
+    },
+    "hoshasen-1-2023-jitsumu-q6": {
+      "A": 2,
+      "B": 4,
+      "C": 2,
+      "D": 2,
+      "E": 4,
+      "F": 4,
+      "G": 4,
+      "H": 9,
+      "ア": 14,
+      "イ": 4
     }
   },
-  "multiPartBlanks": 676,
+  "multiPartBlanks": 736,
   "lq8d": {
     "addedPrimaryQuestions": 20,
     "addedBlanks": 238,
