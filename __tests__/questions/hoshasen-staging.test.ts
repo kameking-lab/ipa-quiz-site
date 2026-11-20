@@ -9,7 +9,7 @@ import held from "@/data/questions/hoshasen/held-2026-2-kagaku-q9.json";
 describe("hoshasen unpublished source staging", () => {
   it("batch1公開後: retains the distinct source sessions without publishing candidates", () => {
     expect(HOSHASEN_STAGED_QUESTIONS.filter(q => q.format !== "multi-part")).toHaveLength(498);
-    expect(HOSHASEN_STAGED_QUESTIONS.filter(q => q.format === "multi-part")).toHaveLength(40);
+    expect(HOSHASEN_STAGED_QUESTIONS.filter(q => q.format === "multi-part")).toHaveLength(46);
     expect(HOSHASEN_STAGED_QUESTIONS).toHaveLength(audit.stagedQuestions);
     expect(new Set(HOSHASEN_STAGED_QUESTIONS.map(q => q.id)).size).toBe(audit.stagedQuestions);
     const entry = QUALIFICATION_CATALOG.find(q => q.slug === "hoshasen");
@@ -36,7 +36,7 @@ describe("hoshasen unpublished source staging", () => {
   });
 
   it("preserves source acquisition evidence and reports incomplete coverage", () => {
-    expect(audit.files).toHaveLength(25);
+    expect(audit.files).toHaveLength(26);
     expect(audit.files.every(f => f.bytes > 0 && /^[a-f0-9]{64}$/.test(f.sha256))).toBe(true);
     expect(audit.stagedQuestions).toBe(HOSHASEN_STAGED_QUESTIONS.length);
     expect(audit.stagedChoiceExplanations).toBe(HOSHASEN_STAGED_QUESTIONS.reduce((n,q) => n+(q.format === "multi-part" ? q.blanks.reduce((m,b) => m+b.choiceExplanations.length,0) : q.choiceExplanations.length),0));
@@ -46,7 +46,7 @@ describe("hoshasen unpublished source staging", () => {
 
   it("preserves every multi-part blank and independently transcribed official key", () => {
     const multi = HOSHASEN_STAGED_QUESTIONS.filter(q => q.format === "multi-part");
-    expect(multi.reduce((n,q) => n+q.blanks.length,0)).toBe(527);
+    expect(multi.reduce((n,q) => n+q.blanks.length,0)).toBe(587);
     expect(multi.map(q => q.id).sort()).toEqual(Object.keys(audit.multiPartAnswerKeys).sort());
     for (const q of multi) {
       const expected = audit.multiPartAnswerKeys[q.id as keyof typeof audit.multiPartAnswerKeys];
@@ -66,16 +66,17 @@ describe("hoshasen unpublished source staging", () => {
     }
   });
 
-  it("covers both first-grade papers completely while counting the remaining hold once", () => {
-    for (const year of [2025, 2026]) {
+  it("covers first-grade papers and accounts for the unscored question", () => {
+    for (const year of [2024, 2025, 2026]) {
       const first = HOSHASEN_STAGED_QUESTIONS.filter(q => q.year === year && q.grade === 1);
-      expect(first).toHaveLength(132);
+      expect(first).toHaveLength(year === 2024 ? 131 : 132);
       for (const [subject, count] of [["物理学", 32], ["化学", 32], ["生物学", 32], ["法令", 30], ["実務", 6]] as const) {
-        expect(first.filter(q => q.subject === subject).map(q => q.number).sort((a,b) => a-b))
-          .toEqual(Array.from({ length: count }, (_, i) => i + 1));
+        const numbers = Array.from({ length: count }, (_, i) => i + 1)
+          .filter(number => year !== 2024 || subject !== "生物学" || number !== 17);
+        expect(first.filter(q => q.subject === subject).map(q => q.number).sort((a,b) => a-b)).toEqual(numbers);
       }
     }
-    expect(audit.stagedQuestions).toBe(538);
+    expect(audit.stagedQuestions).toBe(544);
     expect(audit.remainingPrimaryQuestions).toBe(2);
     expect(audit.heldPrimaryQuestions).toBe(1);
   });
