@@ -34,8 +34,8 @@ describe("2級管工事施工管理 第一次検定（令和8年度前期・令�
   it("公開済みの外部資格として登録される", () => {
     expect(isExamPublished("kankoji2")).toBe(true);
     expect(getRegisteredExamCodes()).toContain("kankoji2");
-    expect(KANKOJI2_QUESTIONS).toHaveLength(364);
-    expect(new Set(KANKOJI2_QUESTIONS.map((q) => q.id)).size).toBe(364);
+    expect(KANKOJI2_QUESTIONS).toHaveLength(416);
+    expect(new Set(KANKOJI2_QUESTIONS.map((q) => q.id)).size).toBe(416);
   });
 
   for (const edition of EDITIONS) {
