@@ -178,7 +178,13 @@ export function ExamQuestionPlayer({
     () => new Map(questions.map((question) => [question.id, question])),
     [questions],
   );
-  const [answers, setAnswers] = useState<ExamSessionAnswers>({});
+  const [answers, setAnswerState] = useState<ExamSessionAnswers>({});
+  const answersRef = useRef(answers);
+  const setAnswers = useCallback((next: ExamSessionAnswers) => {
+    // Input handlers can run again while the render still shows an open question.
+    answersRef.current = next;
+    setAnswerState(next);
+  }, []);
   const [roundIds, setRoundIds] = useState<string[]>(allIds);
   const [retryRound, setRetryRound] = useState(false);
   const [pendingRetries, setPendingRetries] = useState<string[]>([]);
@@ -313,7 +319,7 @@ export function ExamQuestionPlayer({
     const lastIndex = allIds.indexOf(initialQuestionId ?? progress.lastQuestionId ?? "");
     setIndex(Math.max(0, lastIndex));
     setRestoreHandled(true);
-  }, [allIds, examId, initialQuestionId, initialView, questions, paceSession]);
+  }, [allIds, examId, initialQuestionId, initialView, questions, paceSession, setAnswers]);
 
   /** 状態更新と（オン時のみ）端末保存を同時に行う */
   const commit = useCallback(
@@ -333,7 +339,7 @@ export function ExamQuestionPlayer({
         setSaveStatus("端末への保存に失敗したため、保存をオフにしました。回答はこの画面では続けられます。");
       }
     },
-    [examId, examTitle, questions, saveEnabled, summaryFor, paceSession],
+    [examId, examTitle, questions, saveEnabled, summaryFor, paceSession, setAnswers],
   );
 
   const showQuestion = useCallback(
@@ -370,7 +376,11 @@ export function ExamQuestionPlayer({
 
   const selectChoice = useCallback(
     (choice: number) => {
-      if (!current || contentPending || isExamReferenceOnly(current) || submitted || choice < 1 || choice > current.choiceCount) return;
+      if (!current || contentPending || isExamReferenceOnly(current) || answersRef.current[current.id]?.submitted || choice < 1 || choice > current.choiceCount) return;
+      commit({
+        ...answersRef.current,
+        [current.id]: { choice, memo: currentAnswer?.memo ?? "", submitted: true, reviewProof: (current as ExamQuestion & {reviewProof?:string}).reviewProof },
+      }, current.id);
       const entry = findExamEntry(examId);
       recordStudyReward({ scope: `library:${examId}`, questionId: current.id, exam: entry ? `library:${entry.subject}` : "unknown", label: entry?.subject ?? "学習のひと休み" });
       setDraftChoice(choice);
@@ -378,37 +388,24 @@ export function ExamQuestionPlayer({
         const correct = gradeExamAnswer(current, choice) === "correct";
         recordPaceAnswer(correct); recordReview(current.id, correct);
       }
-      commit({
-        ...answers,
-        [current.id]: { choice, memo: currentAnswer?.memo ?? "", submitted: true, reviewProof: (current as ExamQuestion & {reviewProof?:string}).reviewProof },
-      }, current.id);
       reportStudyAnswer(paceSession?.exam ?? hubSlug);
       posthogCapture("exam_library_answered", { examId, hubSlug: hubSlug ?? undefined });
       sendConversion("guest_answered");
       observeJourney({ qualification: hubSlug ?? undefined, answer: true });
       focusLater(feedbackRef);
     },
-    [answers, commit, current, currentAnswer?.memo, examId, hubSlug, submitted, contentPending, paceSession, recordPaceAnswer],
+    [commit, current, currentAnswer?.memo, examId, hubSlug, contentPending, paceSession, recordPaceAnswer],
   );
 
   const submitAnswer = useCallback(() => {
-    if (!current || contentPending || isExamReferenceOnly(current) || submitted) return;
+    if (!current || contentPending || isExamReferenceOnly(current) || answersRef.current[current.id]?.submitted) return;
     if (current.choiceCount > 0 && draftChoice === null) {
       firstChoiceRef.current?.focus();
       return;
     }
-    // Opening a model answer is not an answered question. Reward choices only.
-    if (current.choiceCount > 0) {
-      if (paceSession && isScorableQuestion(current) && readSettings().recordHistory) {
-        const correct = gradeExamAnswer(current, draftChoice) === "correct";
-        recordPaceAnswer(correct); recordReview(current.id, correct);
-      }
-      const entry = findExamEntry(examId);
-      recordStudyReward({ scope: `library:${examId}`, questionId: current.id, exam: entry ? `library:${entry.subject}` : "unknown", label: entry?.subject ?? "学習のひと休み" });
-    }
     commit(
       {
-        ...answers,
+        ...answersRef.current,
         [current.id]: {
           choice: current.choiceCount > 0 ? draftChoice : null,
           memo: currentAnswer?.memo ?? "",
@@ -418,6 +415,15 @@ export function ExamQuestionPlayer({
       },
       current.id,
     );
+    // Opening a model answer is not an answered question. Reward choices only.
+    if (current.choiceCount > 0) {
+      if (paceSession && isScorableQuestion(current) && readSettings().recordHistory) {
+        const correct = gradeExamAnswer(current, draftChoice) === "correct";
+        recordPaceAnswer(correct); recordReview(current.id, correct);
+      }
+      const entry = findExamEntry(examId);
+      recordStudyReward({ scope: `library:${examId}`, questionId: current.id, exam: entry ? `library:${entry.subject}` : "unknown", label: entry?.subject ?? "学習のひと休み" });
+    }
     posthogCapture("exam_library_answered", { examId, hubSlug: hubSlug ?? undefined });
     if (current.choiceCount > 0 || currentAnswer?.memo?.trim()) {
       reportStudyAnswer(paceSession?.exam ?? hubSlug);
@@ -425,7 +431,7 @@ export function ExamQuestionPlayer({
     }
     observeJourney({ qualification: hubSlug ?? undefined, answer: true });
     focusLater(feedbackRef);
-  }, [answers, commit, current, currentAnswer?.memo, draftChoice, examId, hubSlug, submitted, contentPending, paceSession, recordPaceAnswer]);
+  }, [commit, current, currentAnswer?.memo, draftChoice, examId, hubSlug, contentPending, paceSession, recordPaceAnswer]);
 
   const retryCurrent = useCallback(() => {
     if (!current || isExamReferenceOnly(current)) return;

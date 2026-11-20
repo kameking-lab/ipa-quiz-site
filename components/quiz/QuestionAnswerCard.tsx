@@ -80,7 +80,7 @@ export function QuestionAnswerCard(props: Props) {
       <p className="mt-3 font-semibold">公式正答（参照）: {props.question?.officialAnswerNumber ?? formatAcceptedAnswers(props.answerKey)}</p>
     </section>{props.explanation}{props.source}</>;
   }
-  return <NativeQuestionGate id={props.questionId}><ScoredQuestionAnswerCard {...props} /></NativeQuestionGate>;
+  return <NativeQuestionGate id={props.questionId}><ScoredQuestionAnswerCard key={props.questionId} {...props} /></NativeQuestionGate>;
 }
 
 function ScoredQuestionAnswerCard({
@@ -112,16 +112,8 @@ function ScoredQuestionAnswerCard({
   const [numericSelected, setNumericSelected] = React.useState<string | undefined>(undefined);
   const [orderedSelected, setOrderedSelected] = React.useState<ChoiceKey[] | undefined>(undefined);
   const [revealed, setRevealed] = React.useState(false);
+  const answerFinalized = React.useRef(false);
   const [shortcutsReady, setShortcutsReady] = React.useState(false);
-
-  React.useEffect(() => {
-    setNativeBResult(undefined);
-    setSelected(undefined);
-    setPicked([]);
-    setNumericSelected(undefined);
-    setOrderedSelected(undefined);
-    setRevealed(false);
-  }, [question, questionId]);
 
   const keys = React.useMemo(
     () => getChoiceKeys(choices),
@@ -132,7 +124,10 @@ function ScoredQuestionAnswerCard({
 
   const recordOutcome = React.useCallback(
     (selection: string, correct: boolean, petAnswer: Extract<PetLearningSubmission, { source: "question" }>["answer"], nativeBResult?: NativeBGrade) => {
-      if (isReferenceOnlyQuestionId(questionId) || isReferenceOnlyQuestionId(question?.id)) return;
+      if (isReferenceOnlyQuestionId(questionId) || isReferenceOnlyQuestionId(question?.id) || answerFinalized.current) return;
+      // The result is final even if another input arrives before React renders it.
+      answerFinalized.current = true;
+      setRevealed(true);
       const now = Date.now();
       // localStorage may be disabled/full; the answer UX must still work.
       try {
@@ -155,49 +150,45 @@ function ScoredQuestionAnswerCard({
   );
 
   const onNativeBAnswer = React.useCallback((selections: NativeBSelections) => {
-    if (isReferenceOnlyQuestionId(questionId) || isReferenceOnlyQuestionId(question?.id) || !question?.nativeB || !native || revealed) return;
+    if (isReferenceOnlyQuestionId(questionId) || isReferenceOnlyQuestionId(question?.id) || !question?.nativeB || !native || answerFinalized.current) return;
     const result = gradeNativeB(question.nativeB, selections);
     setNativeBResult(result);
-    setRevealed(true);
     recordOutcome(serializeNativeBSelections(question.nativeB, selections), result.isCorrect, { kind: "native-b", selections: Object.fromEntries(Object.entries(selections).filter((pair): pair is [string, string] => typeof pair[1] === "string")) }, result);
-  }, [questionId, question, native, revealed, recordOutcome]);
+  }, [questionId, question, native, recordOutcome]);
 
   const onSelect = React.useCallback(
     (key: ChoiceKey) => {
-      if (isReferenceOnlyQuestionId(questionId) || isReferenceOnlyQuestionId(question?.id) || revealed || ordering) return;
+      if (isReferenceOnlyQuestionId(questionId) || isReferenceOnlyQuestionId(question?.id) || answerFinalized.current || ordering) return;
       if (multiSelect) {
         if (question?.acceptedAnswerCombinations && !picked.includes(key) && picked.length >= requiredSelections) return;
         const next = picked.includes(key) ? picked.filter((k) => k !== key) : [...picked, key];
         setPicked(next);
         if (!question?.acceptedAnswerCombinations && next.length === requiredSelections) {
-          setRevealed(true);
           recordOutcome(formatSelection(next), isCompleteSelectionCorrect(answerKey, next, requiredSelections, question?.acceptedAnswerCombinations), { kind: "multiple-choice", selected: [...next] });
         }
         return;
       }
       setSelected(key);
-      setRevealed(true);
       recordOutcome(key, isAcceptedAnswer(answerKey, key), { kind: "multiple-choice", selected: [key] });
     },
-    [questionId, question, revealed, ordering, recordOutcome, multiSelect, picked, requiredSelections, answerKey],
+    [questionId, question, ordering, recordOutcome, multiSelect, picked, requiredSelections, answerKey],
   );
 
   const onNumericAnswer = React.useCallback((value: string) => {
-    if (isReferenceOnlyQuestionId(questionId) || !question || isReferenceOnlyQuestionId(question.id) || !numeric || revealed) return;
+    if (isReferenceOnlyQuestionId(questionId) || !question || isReferenceOnlyQuestionId(question.id) || !numeric || answerFinalized.current) return;
     setNumericSelected(value);
-    setRevealed(true);
     recordOutcome(value, isNumericAnswerCorrect(question, value), { kind: "numeric", value });
-  }, [questionId, question, numeric, revealed, recordOutcome]);
+  }, [questionId, question, numeric, recordOutcome]);
 
   const onOrderingAnswer = React.useCallback((value: ChoiceKey[]) => {
-    if (isReferenceOnlyQuestionId(questionId) || !question || isReferenceOnlyQuestionId(question.id) || !ordering || revealed) return;
+    if (isReferenceOnlyQuestionId(questionId) || !question || isReferenceOnlyQuestionId(question.id) || !ordering || answerFinalized.current) return;
     setOrderedSelected(value);
-    setRevealed(true);
     recordOutcome(value.join("→"), isOrderingAnswerCorrect(question, value), { kind: "ordering", selected: [...value] });
-  }, [questionId, question, ordering, revealed, recordOutcome]);
+  }, [questionId, question, ordering, recordOutcome]);
 
   function revealOnly() {
-    if (revealed) return;
+    if (answerFinalized.current) return;
+    answerFinalized.current = true;
     if (question) pet.reveal(question);
     setPicked([]);
     setRevealed(true);
@@ -239,7 +230,7 @@ function ScoredQuestionAnswerCard({
     <div data-study-presence-exam={exam} data-question-answered={answered || undefined} className="space-y-3">
       {question?.acceptedAnswerCombinations && !revealed && (
         <Button className="min-h-12" disabled={picked.length < 1 || picked.length > requiredSelections}
-          onClick={() => { setRevealed(true); recordOutcome(formatSelection(picked), isCompleteSelectionCorrect(answerKey, picked, requiredSelections, question.acceptedAnswerCombinations), { kind: "multiple-choice", selected: [...picked] }); }}>
+          onClick={() => recordOutcome(formatSelection(picked), isCompleteSelectionCorrect(answerKey, picked, requiredSelections, question.acceptedAnswerCombinations), { kind: "multiple-choice", selected: [...picked] })}>
           回答を確定
         </Button>
       )}
