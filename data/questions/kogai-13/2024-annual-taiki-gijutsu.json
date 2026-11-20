@@ -1,0 +1,962 @@
+[
+  {
+    "id": "kogai-13-2024-annual-taiki-gijutsu-q01",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "taiki-gijutsu",
+    "qNumber": 1,
+    "officialAnswerNumber": 5,
+    "type": "multiple-choice",
+    "subject": "大気関係技術特論",
+    "category": "大気関係技術特論",
+    "topicTags": [
+      "液体燃料の動粘度と固体燃料の発熱量"
+    ],
+    "difficulty": 2,
+    "question": "問1　液体燃料の動粘度と固体燃料の発熱量。掲載の公式問題画像の問1を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "軽油／褐炭",
+      "イ": "JIS 1 種重油／歴青炭",
+      "ウ": "JIS 1 種重油／オイルコークス",
+      "エ": "JIS 3 種重油／オイルコークス",
+      "オ": "JIS 3 種重油／褐炭"
+    },
+    "answer": "オ",
+    "explanation": "液体燃料の中で常温での動粘度が最大なのはJIS 3種重油。固体燃料の中で無水状態の発熱量が最小なのは石炭化度の低い褐炭である。",
+    "choiceExplanations": {
+      "ア": "褐炭は正しいが、軽油は重油より動粘度が低い液体燃料である。",
+      "イ": "JIS 1種重油は3種重油より動粘度が小さい。歴青炭の無水発熱量は、石炭化度の低い褐炭より大きい。",
+      "ウ": "1種重油より3種重油の方が粘度が高い。オイルコークスも、炭素分の多い燃料なので発熱量が低い方ではない。",
+      "エ": "3種重油は高い動粘度という条件に合うが、オイルコークスより褐炭の無水発熱量が小さい。",
+      "オ": "JIS 3種重油は比較した液体燃料で最も粘く、褐炭は比較した固体燃料で無水発熱量が最も小さい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/taiki-gijutsu-p03.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 大気関係技術特論 公式問題冊子PDF 3ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214035211id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_17.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 大気関係技術特論 問1（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-taiki-gijutsu-q02",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "taiki-gijutsu",
+    "qNumber": 2,
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "subject": "大気関係技術特論",
+    "category": "大気関係技術特論",
+    "topicTags": [
+      "水素と一酸化炭素の燃焼ガス組成"
+    ],
+    "difficulty": 2,
+    "question": "問2　水素と一酸化炭素の燃焼ガス組成。掲載の公式問題画像の問2を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "30",
+      "イ": "40",
+      "ウ": "50",
+      "エ": "60",
+      "オ": "70"
+    },
+    "answer": "イ",
+    "explanation": "混合ガス1 molに必要なO₂は0.5 mol、空気に伴うN₂は約1.88 mol。乾き排ガスのCO₂濃度は(1−x)/(1−x＋1.88)で、24.2%を満たす水素分率xは約0.40となる。",
+    "choiceExplanations": {
+      "ア": "水素30%ならCOが0.70 molあり、乾き排ガス中のCO₂は0.70/(0.70＋1.88)≒27.1%になる。",
+      "イ": "水素40%ならCO₂が0.60 mol生じる。量論空気由来のN₂と合わせた乾きガスで、CO₂は0.60/2.48≒24.2%になる。",
+      "ウ": "水素50%ではCO₂は0.50/(0.50＋1.88)≒21.0%で、目標値より小さい。",
+      "エ": "水素60%ならCO₂は0.40/(0.40＋1.88)≒17.5%となる。水素を増やすと炭素の供給量が減る。",
+      "オ": "水素70%ではCO₂分率は0.30/(0.30＋1.88)≒13.8%に低下する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/taiki-gijutsu-p03.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 大気関係技術特論 公式問題冊子PDF 3ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214035211id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_17.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 大気関係技術特論 問2（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-taiki-gijutsu-q03",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "taiki-gijutsu",
+    "qNumber": 3,
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "subject": "大気関係技術特論",
+    "category": "大気関係技術特論",
+    "topicTags": [
+      "燃焼室熱負荷と火格子熱負荷の単位"
+    ],
+    "difficulty": 2,
+    "question": "問3　燃焼室熱負荷と火格子熱負荷の単位。掲載の公式問題画像の問3を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "W・m-2／kg・m-2",
+      "イ": "W・m-2／kg・m-3",
+      "ウ": "W・m-3／kg・m-2・h-1",
+      "エ": "W・m-3／kg・m-2",
+      "オ": "W・m-3／kg・m-3・h-1"
+    },
+    "answer": "ウ",
+    "explanation": "燃焼室熱負荷は単位室容積当たりの熱出力でW/m³。火格子熱負荷は単位火格子面積・単位時間当たりに燃焼させる燃料量でkg/(m²・h)となる。",
+    "choiceExplanations": {
+      "ア": "燃焼室は面積でなく容積で割る。火格子に載る質量だけでは、単位時間当たりの処理燃料量を表せない。",
+      "イ": "燃焼室熱負荷の基準は室容積である。火格子の側は容積当たりの質量でなく、単位時間当たりに面積1 m²で燃やす質量で評価する。",
+      "ウ": "燃焼室のW/m³は投入熱出力を燃焼室容積で割った単位。火格子のkg/(m²・h)は面積当たりの燃料燃焼速度を表す。",
+      "エ": "燃焼室の単位は合うが、火格子熱負荷をkg/m²とすると時間当たりの燃焼量を表せない。",
+      "オ": "火格子に対する燃料燃焼量は火格子の面積で割るので、m³を含む単位ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/taiki-gijutsu-p03.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 大気関係技術特論 公式問題冊子PDF 3ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214035211id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_17.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 大気関係技術特論 問3（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-taiki-gijutsu-q04",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "taiki-gijutsu",
+    "qNumber": 4,
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "subject": "大気関係技術特論",
+    "category": "大気関係技術特論",
+    "topicTags": [
+      "石灰スラリー脱硫の吸収液pH"
+    ],
+    "difficulty": 2,
+    "question": "問4　石灰スラリー脱硫の吸収液pH。掲載の公式問題画像の問4を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "高く／低く／6 近傍",
+      "イ": "高く／高く／6 近傍",
+      "ウ": "高く／低く／4 以下",
+      "エ": "低く／高く／6 近傍",
+      "オ": "低く／低く／4 以下"
+    },
+    "answer": "エ",
+    "explanation": "吸収液のpHが低下すると、液に接する気相の平衡SO₂分圧は上昇し、吸収の駆動力が小さくなる。吸収剤の供給量を調整して通常pH 6付近に保つ。",
+    "choiceExplanations": {
+      "ア": "pHを上げて平衡分圧が下がればSO₂を吸収しやすくなる。脱硫率が下がる条件とは逆である。",
+      "イ": "pHが高くなると溶けたSO₂が亜硫酸水素イオンなどに変わりやすくなり、平衡SO₂分圧は低下する方向になる。",
+      "ウ": "SO₂の吸収を維持するためにpHを4以下にするわけではない。低いpHでは平衡分圧が上がりやすい。",
+      "エ": "pH低下、平衡分圧上昇、運転pH 6近傍という組合せにより、脱硫率低下と運転上の対応を説明できる。",
+      "オ": "pHが低下するとSO₂の平衡分圧は低くなるのではなく高くなる。pH 4以下を目安とする点も異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/taiki-gijutsu-p04.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 大気関係技術特論 公式問題冊子PDF 4ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214035211id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_17.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 大気関係技術特論 問4（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-taiki-gijutsu-q05",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "taiki-gijutsu",
+    "qNumber": 5,
+    "officialAnswerNumber": 5,
+    "type": "multiple-choice",
+    "subject": "大気関係技術特論",
+    "category": "大気関係技術特論",
+    "topicTags": [
+      "低空気比燃焼によるNOの抑制"
+    ],
+    "difficulty": 2,
+    "question": "問5　低空気比燃焼によるNOの抑制。掲載の公式問題画像の問5を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "火炎温度の低下が低 NO 化の主要な要因の一つである。",
+      "イ": "設備の改造は特に必要ない。",
+      "ウ": "空気比を下げ過ぎると,すすが発生しやすくなる。",
+      "エ": "排ガスによる顕熱損失が減少するため,省エネルギーとなる。",
+      "オ": "NO の抑制効果は,二段燃焼法より大きい。"
+    },
+    "answer": "オ",
+    "explanation": "低空気比燃焼は空気供給量の見直しで施せるが、一般に二段燃焼ほど大きなNO抑制効果は得られない。",
+    "choiceExplanations": {
+      "ア": "局所的な酸素濃度や高温域の状態を抑えることがNO低減に関係し、火炎温度の低下はその要因の一つである。",
+      "イ": "既存装置の空気量の調整で行えるため、燃焼装置を新たな方式に作り替えることは原則として要しない。",
+      "ウ": "空気を絞りすぎると酸素が不足して不完全燃焼となり、すすやCOが発生しやすくなる。",
+      "エ": "過剰空気を抑えると加熱されたまま排出されるガス量が減り、排ガスが持ち去る顕熱を減らせる。",
+      "オ": "二段燃焼は空気を段階的に供給して一次燃焼域の酸素をより強く抑える。一般に低空気比だけの燃焼よりNO抑制効果が大きい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/taiki-gijutsu-p04.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 大気関係技術特論 公式問題冊子PDF 4ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214035211id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_17.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 大気関係技術特論 問5（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-taiki-gijutsu-q06",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "taiki-gijutsu",
+    "qNumber": 6,
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "subject": "大気関係技術特論",
+    "category": "大気関係技術特論",
+    "topicTags": [
+      "アンモニア接触還元脱硝の装置構成"
+    ],
+    "difficulty": 2,
+    "question": "問6　アンモニア接触還元脱硝の装置構成。掲載の公式問題画像の問6を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "NH3 気化器",
+      "イ": "NH3 混合器",
+      "ウ": "NH3 注入ノズル",
+      "エ": "NH3 デミスター",
+      "オ": "脱硝反応器"
+    },
+    "answer": "エ",
+    "explanation": "脱硝装置はアンモニアを気化または供給し、混合後にノズルで排ガスへ注入して触媒上で反応させる。液滴を取り除くデミスターはこの構成機器に含まれない。",
+    "choiceExplanations": {
+      "ア": "液化アンモニアを供給する系では、気化器が液をガスにして注入できるようにする。",
+      "イ": "アンモニアと希釈用の空気などを混合して、排ガスに適した濃度の供給ガスにする。",
+      "ウ": "注入ノズルでアンモニアを排ガスの断面に分散させ、触媒へ向かうガスと均一に混合する。",
+      "エ": "デミスターは気流中のミストを除く装置で、アンモニア接触還元法の主要な構成機器としては用いない。",
+      "オ": "脱硝反応器では触媒上でNOₓとアンモニアを反応させ、主に窒素と水へ変える。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/taiki-gijutsu-p05.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 大気関係技術特論 公式問題冊子PDF 5ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214035211id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_17.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 大気関係技術特論 問6（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-taiki-gijutsu-q07",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "taiki-gijutsu",
+    "qNumber": 7,
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "subject": "大気関係技術特論",
+    "category": "大気関係技術特論",
+    "topicTags": [
+      "JISにおける燃料の試験方法"
+    ],
+    "difficulty": 2,
+    "question": "問7　JISにおける燃料の試験方法。掲載の公式問題画像の問7を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "気体燃料では,一般成分の分析はガスクロマトグラフ法による。",
+      "イ": "ユンカース式流水形ガス熱量計で測定される気体燃料の発熱量は,高発熱量である。",
+      "ウ": "固定タンクに貯蔵された石油製品の分析では,タンク内の上,中,下層から一次試料を採取し,これらを混合して二次試料を調製する方法がある。",
+      "エ": "石油製品中の硫黄分の測定には,化学発光法が適している。",
+      "オ": "固体燃料の発熱量測定では,木炭や練炭でも石炭と同一の方法を適用できる。"
+    },
+    "answer": "エ",
+    "explanation": "石油製品中の硫黄分には、試料に応じて蛍光X線法や燃焼後の紫外蛍光法などが用いられる。化学発光法を適切とする記述が誤り。",
+    "choiceExplanations": {
+      "ア": "ガスクロマトグラフ法は分離したガス成分をそれぞれ定量できるので、気体燃料の組成の測定に使われる。",
+      "イ": "ユンカース式流水形ガス熱量計では燃焼で生じた水蒸気の凝縮熱を含む熱量を測るため、高発熱量が求まる。",
+      "ウ": "タンク内で組成が異なる場合があるため、上・中・下層の試料を混合してタンクを代表する試料を作る。",
+      "エ": "石油中の全硫黄は硫黄の蛍光X線や、燃焼で生じたSO₂の紫外蛍光などを利用して測定する。蛍光と化学反応による発光は区別する。",
+      "オ": "石炭と同様に、木炭や練炭も試料を完全燃焼させて発熱量を測る方法を適用できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/taiki-gijutsu-p05.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 大気関係技術特論 公式問題冊子PDF 5ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214035211id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_17.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 大気関係技術特論 問7（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-taiki-gijutsu-q08",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "taiki-gijutsu",
+    "qNumber": 8,
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "subject": "大気関係技術特論",
+    "category": "大気関係技術特論",
+    "topicTags": [
+      "化学分析用排ガス採取装置の機器配置"
+    ],
+    "difficulty": 2,
+    "question": "問8　化学分析用排ガス採取装置の機器配置。掲載の公式問題画像の問8を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "乾燥管／ガスメーター／吸引ポンプ",
+      "イ": "乾燥管／吸引ポンプ／ガスメーター",
+      "ウ": "ガスメーター／乾燥管／吸引ポンプ",
+      "エ": "ガスメーター／吸引ポンプ／乾燥管",
+      "オ": "吸引ポンプ／乾燥管／ガスメーター"
+    },
+    "answer": "イ",
+    "explanation": "図の採取系では、吸収瓶の下流に乾燥管、流量調節弁の後に吸引ポンプ、最下流にガスメーターを配置する。",
+    "choiceExplanations": {
+      "ア": "乾燥管の位置は合うが、図では調節弁の直後に吸引ポンプを置き、その後で採取ガス量を量る。",
+      "イ": "吸収瓶の後に乾燥管を置いて水分を除去する。続いてポンプで吸引し、下流でガスメーターにより通過量を測定する。",
+      "ウ": "ガスメーターを乾燥管より先に置くと、乾燥後の採取ガス量を測る図の構成にならない。",
+      "エ": "乾燥管はポンプやガスメーターよりも手前に置く。最後の位置にはガスメーターが入る。",
+      "オ": "ポンプを乾燥管より先に置くのは順序が逆である。図では水分を除去してから調節弁とポンプを通す。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/taiki-gijutsu-p06.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 大気関係技術特論 公式問題冊子PDF 6ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214035211id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_17.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 大気関係技術特論 問8（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-taiki-gijutsu-q09",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "taiki-gijutsu",
+    "qNumber": 9,
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "subject": "大気関係技術特論",
+    "category": "大気関係技術特論",
+    "topicTags": [
+      "SO₂自動計測における共存ガスの影響"
+    ],
+    "difficulty": 2,
+    "question": "問9　SO₂自動計測における共存ガスの影響。掲載の公式問題画像の問9を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "紫外線蛍光方式",
+      "イ": "紫外線吸収方式",
+      "ウ": "干渉分光方式",
+      "エ": "赤外線吸収方式",
+      "オ": "溶液導電率方式"
+    },
+    "answer": "ア",
+    "explanation": "紫外線蛍光方式は、励起したSO₂が発する蛍光を選択して検出する。設問に挙げられたCO₂とNO₂の影響を無視できる方式はこれである。",
+    "choiceExplanations": {
+      "ア": "SO₂を特定波長の紫外線で励起し、発せられた蛍光を選択的に検出するため、JISの比較ではCO₂とNO₂の影響を無視できる。",
+      "イ": "紫外線吸収方式は共存するNO₂の紫外吸収が測定に重なることがあるので、両成分の影響を無視できる方式には当たらない。",
+      "ウ": "干渉分光方式はスペクトルから対象ガスを分離するが、この設問の条件では両ガスの影響を無視できる方式に該当しない。",
+      "エ": "赤外線吸収方式ではCO₂の吸収スペクトルが測定を妨げる場合があり、波長の選択や補償が必要になる。",
+      "オ": "導電率方式は吸収液のイオン濃度の変化を利用するため、SO₂以外に溶けてイオンを生じる共存成分の影響を受け得る。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/taiki-gijutsu-p06.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 大気関係技術特論 公式問題冊子PDF 6ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214035211id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_17.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 大気関係技術特論 問9（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-taiki-gijutsu-q10",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "taiki-gijutsu",
+    "qNumber": 10,
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "subject": "大気関係技術特論",
+    "category": "大気関係技術特論",
+    "topicTags": [
+      "微粉炭燃焼で生じるダストの粒子形状"
+    ],
+    "difficulty": 2,
+    "question": "問10　微粉炭燃焼で生じるダストの粒子形状。掲載の公式問題画像の問10を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "石炭中の灰分が多いほどダスト濃度は高くなる。",
+      "イ": "ダスト粒子の大きさは,ボイラー及び粉砕機の構造,石炭の種類,燃焼や操業の条件などに支配される。",
+      "ウ": "粒子径が 45 μm 以上の粒子は,きれいな球状をしている。",
+      "エ": "ダストの主成分は二酸化けい素や酸化アルミニウムである。",
+      "オ": "ダストの見掛け電気抵抗率は、およそ10⁸〜10¹¹ Ω・mの範囲にある。"
+    },
+    "answer": "ウ",
+    "explanation": "飛灰には溶融して冷却された球状粒子がある一方、45 µm以上の粗い粒子に未燃分等の不規則な粒子も含まれる。粗い粒子を一律にきれいな球状とはいえない。",
+    "choiceExplanations": {
+      "ア": "石炭の灰分が多いと、同じ量を燃やしたときに燃焼ガスに運ばれる固形の灰の量が増えやすい。",
+      "イ": "投入時の粉の粒径や炉内での溶融・燃焼の状態が異なれば、排出される粒子の粒径分布も変わる。",
+      "ウ": "粗粒には不定形の未燃炭素や鉱物粒子などが含まれる。粒径が45 µm以上ならきれいな球状になるとはいえない。",
+      "エ": "石炭に含まれる鉱物成分に由来して、飛灰には二酸化ケイ素と酸化アルミニウムが主成分として含まれる。",
+      "オ": "飛灰の見掛け電気抵抗率は、炭種やガス温度などに左右されるが、提示された10⁸〜10¹¹ Ω・m程度の範囲をとり得る。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/taiki-gijutsu-p07.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 大気関係技術特論 公式問題冊子PDF 7ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214035211id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_17.pdf#page=7",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 大気関係技術特論 問10（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-taiki-gijutsu-q11",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "taiki-gijutsu",
+    "qNumber": 11,
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "subject": "大気関係技術特論",
+    "category": "大気関係技術特論",
+    "topicTags": [
+      "圧力損失と処理ガス流量から求める動力"
+    ],
+    "difficulty": 2,
+    "question": "問11　圧力損失と処理ガス流量から求める動力。掲載の公式問題画像の問11を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "P＝2.78×10⁻⁴QΔp",
+      "イ": "P＝2.78×10⁻⁴Q²Δp",
+      "ウ": "P＝2.78×10⁻⁴QΔp²",
+      "エ": "P＝2.73×10⁻⁶QΔp",
+      "オ": "P＝2.73×10⁻⁶QΔp²"
+    },
+    "answer": "ア",
+    "explanation": "圧力損失と体積流量の積がガスへ伝える動力になる。Qをm³/hからm³/sへ換算すると、P＝QΔp/3600≒2.78×10⁻⁴ QΔp（kW）となる。",
+    "choiceExplanations": {
+      "ア": "1 kPa×1 m³/sは1 kWに等しい。毎時流量Qを3600で割れば式の係数は約2.78×10⁻⁴になる。",
+      "イ": "体積を押し出すための圧力仕事を単位時間当たりで表すので、流量は1乗でありQ²ではない。",
+      "ウ": "Δpはガス1 m³を送り出すのに必要な仕事に対応し、動力はΔpの1乗に比例する。",
+      "エ": "QΔpの形は合うが、毎時から毎秒への換算係数は2.78×10⁻⁴であり、2.73×10⁻⁶ではない。",
+      "オ": "圧力差を2乗する点と単位換算係数の両方が違う。流量と圧力差をそれぞれ1乗で掛け合わせる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/taiki-gijutsu-p07.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 大気関係技術特論 公式問題冊子PDF 7ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214035211id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_17.pdf#page=7",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 大気関係技術特論 問11（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-taiki-gijutsu-q12",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "taiki-gijutsu",
+    "qNumber": 12,
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "subject": "大気関係技術特論",
+    "category": "大気関係技術特論",
+    "topicTags": [
+      "重力集じんの100%分離限界粒子径"
+    ],
+    "difficulty": 2,
+    "question": "問12　重力集じんの100%分離限界粒子径。掲載の公式問題画像の問12を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "1/2倍",
+      "イ": "1/√2倍",
+      "ウ": "1倍",
+      "エ": "√2倍",
+      "オ": "2倍"
+    },
+    "answer": "イ",
+    "explanation": "気流方向の通過時間は奥行きが2倍、流速が半分で4倍になる。必要沈降速度は高さ2倍を時間4倍で割って半分となり、沈降速度が粒子径の2乗に比例するので限界径は1/√2倍。",
+    "choiceExplanations": {
+      "ア": "沈降速度が1/2になるが、粒子径と沈降速度は比例しない。ストークスの領域では粒子径は沈降速度の平方根に比例する。",
+      "イ": "沈降室を通過するのに4倍の時間がかかり、高さ2倍のときに必要な沈降速度は1/2となる。その平方根が粒子径の倍率である。",
+      "ウ": "高さと奥行きが同倍率でも、水平方向速度が半分になるので必要沈降速度は下がり、限界粒子径は変化する。",
+      "エ": "√2倍になるには必要沈降速度が2倍になる必要があるが、通過時間が4倍に増えるため、必要速度は半分である。",
+      "オ": "粒径が2倍なら沈降速度は4倍になる。高さと通過時間の比で求まる必要速度の変化は1/2倍である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/taiki-gijutsu-p07.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 大気関係技術特論 公式問題冊子PDF 7ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214035211id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_17.pdf#page=7",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 大気関係技術特論 問12（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-taiki-gijutsu-q13",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "taiki-gijutsu",
+    "qNumber": 13,
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "subject": "大気関係技術特論",
+    "category": "大気関係技術特論",
+    "topicTags": [
+      "乾式電気集じん装置の運転特性"
+    ],
+    "difficulty": 2,
+    "question": "問13　乾式電気集じん装置の運転特性。掲載の公式問題画像の問13を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "構造が簡単で可動部分が少なく,保守・点検が容易である。",
+      "イ": "集じん性能が,ダストの見掛け電気抵抗率に依存する。",
+      "ウ": "爆発性ガスや可燃性ダストには適していない。",
+      "エ": "高電圧を使用するため,バグフィルターに比べてランニングコストが大きい。",
+      "オ": "一般的な乾式電気集じん装置内の平均ガス流速は 0.5 〜 2 m/s 程度である。"
+    },
+    "answer": "エ",
+    "explanation": "電気集じん装置の高電圧はダストを帯電・移動させるために用い、ガス流路の圧力損失は比較的小さい。高電圧という理由でバグフィルターより運転費が高いとはいえない。",
+    "choiceExplanations": {
+      "ア": "集じんの主体は放電極と集じん極であり、大きな可動部が少ないため保守や点検が比較的容易である。",
+      "イ": "抵抗率が高すぎると逆電離、低すぎると捕集後の再飛散などが起き得るので、電気抵抗率が性能を左右する。",
+      "ウ": "高電圧放電による火花が着火源となり得るため、通常の電気集じん装置は爆発性ガスや可燃性粉じんに適さない。",
+      "エ": "ろ布を通すバグフィルターと比べ、電気集じん装置の圧力損失は小さい。高い電圧を用いることだけでは運転費が高いとはいえない。",
+      "オ": "粒子の電気的移動に使う滞留時間を確保するため、乾式装置の平均ガス流速はおおむね0.5〜2 m/sの範囲にとられる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/taiki-gijutsu-p08.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 大気関係技術特論 公式問題冊子PDF 8ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214035211id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_17.pdf#page=8",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 大気関係技術特論 問13（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-taiki-gijutsu-q14",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "taiki-gijutsu",
+    "qNumber": 14,
+    "officialAnswerNumber": 5,
+    "type": "multiple-choice",
+    "subject": "大気関係技術特論",
+    "category": "大気関係技術特論",
+    "topicTags": [
+      "石綿の規制と粉じんの捕集"
+    ],
+    "difficulty": 2,
+    "question": "問14　石綿の規制と粉じんの捕集。掲載の公式問題画像の問14を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "石綿であるクリソタイル,アモサイト,クロシドライトのいずれもが,二酸化けい素を主な成分の一つとして含んでいる。",
+      "イ": "大気汚染防止法において,石綿は「特定粉じん」として規制されている。",
+      "ウ": "2006 年の労働安全衛生法施行令の改正により,石綿及び石綿をその重量の 0.1 %を超えて含有する製剤その他の物の製造,輸入,譲渡,提供又は使用が原則禁止された。",
+      "エ": "環境省のアスベストモニタリングマニュアル(第 4.2 版)では,捕集高さは原則として地上 1.5 m 以上 2.0 m 以内とするとされている。",
+      "オ": "石綿粉じんの捕集に用いられる集じん装置は,サイクロンが圧倒的に多い。"
+    },
+    "answer": "オ",
+    "explanation": "細い石綿繊維を高効率で捕集するには、一般に高性能ろ過などを用いる。粗い粒子を慣性力で分離するサイクロンが主流とする記述が誤り。",
+    "choiceExplanations": {
+      "ア": "3種類はいずれもケイ酸塩鉱物であり、酸化物に換算した化学組成に二酸化ケイ素が主要成分として含まれる。",
+      "イ": "大気汚染防止法の特定粉じんは健康被害のおそれがある種類として政令で定められ、石綿が該当する。",
+      "ウ": "2006年の政令改正で含有重量0.1%を超えるものを含め製造等が原則禁止され、当時の適用除外品も後に対象へ加えられた。",
+      "エ": "マニュアル第4.2版は、一般環境での試料採取高さを原則として地上1.5 m以上2.0 m以内としている。",
+      "オ": "微細な繊維を確実に取り除くためには高性能フィルター等が用いられる。サイクロンが石綿集じんの大部分を占めるという記述は正しくない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/taiki-gijutsu-p08.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 大気関係技術特論 公式問題冊子PDF 8ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214035211id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_17.pdf#page=8",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 大気関係技術特論 問14（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-taiki-gijutsu-q15",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "taiki-gijutsu",
+    "qNumber": 15,
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "subject": "大気関係技術特論",
+    "category": "大気関係技術特論",
+    "topicTags": [
+      "ダクト内でのダスト採取と慣性"
+    ],
+    "difficulty": 2,
+    "question": "問15　ダクト内でのダスト採取と慣性。掲載の公式問題画像の問15を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "等速吸引流速より高い流速で吸引した場合,測定されるダスト濃度は真の濃度より小さくなる。",
+      "イ": "ダストの粒子径が小さいほど,非等速吸引時のダスト濃度の測定誤差は小さくなる。",
+      "ウ": "ガス粘度が高いほど,非等速吸引時のダスト濃度の測定誤差は小さくなる。",
+      "エ": "ダストの粒子密度が大きいほど,非等速吸引時のダスト濃度の測定誤差は小さくなる。",
+      "オ": "排ガスの流れ方向と吸引ノズルの向きに偏りがあると,等速吸引しても,測定されるダスト濃度は真の濃度よりも小さくなる。"
+    },
+    "answer": "エ",
+    "explanation": "粒子密度が大きいと慣性も大きくなり、吸引速度が気流速度と違うときに粒子が気流の曲がりに追従しにくい。測定誤差はむしろ大きくなる。",
+    "choiceExplanations": {
+      "ア": "過大吸引では周囲から余分なガスが引き込まれるが、慣性の大きい粒子は気流に追従しきれないため、測定濃度は低めになる。",
+      "イ": "小さな粒子は慣性が小さく流れの曲がりに追従しやすい。流速条件がずれたときの偏りは粗粒ほど大きい。",
+      "ウ": "ガス粘度が高いほど粒子が気流の変化に追従しやすくなり、非等速吸引による測定誤差が小さくなる。",
+      "エ": "粒子密度の増加は慣性を強める。流線の曲がりに沿わずノズルに入る粒子や外れる粒子が増え、測定誤差が大きくなる。",
+      "オ": "ノズルの向きが気流に正対していないと、吸引速度が合っていても粒子が入口を外れ、捕集量が減ることがある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/taiki-gijutsu-p09.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 大気関係技術特論 公式問題冊子PDF 9ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214035211id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_17.pdf#page=9",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 大気関係技術特論 問15（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-taiki-gijutsu-q16",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "taiki-gijutsu",
+    "qNumber": 16,
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "subject": "大気関係技術特論",
+    "category": "大気関係技術特論",
+    "topicTags": [
+      "JISによる排ガス中水分量の測定"
+    ],
+    "difficulty": 2,
+    "question": "問16　JISによる排ガス中水分量の測定。掲載の公式問題画像の問16を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "JIS には,吸湿管による方法と計算から求める方法が規定されている。",
+      "イ": "試料ガスの採取は,等速吸引により行う必要がある。",
+      "ウ": "ダクトの中心部に近い 1 点だけから試料ガスを採取してもよい。",
+      "エ": "吸湿管を用いる場合,吸湿される水分が 100 mg 〜 1 g となるように吸引ガス量を設定する。",
+      "オ": "二酸化炭素を含む排ガスに対しては,吸湿剤としてシリカゲルを使用してはならない。"
+    },
+    "answer": "イ",
+    "explanation": "水分量測定では気体の水蒸気を採取するため、粒子状ダスト採取のようにノズルで等速吸引する必要はない。",
+    "choiceExplanations": {
+      "ア": "JIS Z 8808は、吸湿管法のほか、条件を満たす場合に飽和蒸気圧から算出する方法を認めている。",
+      "イ": "等速吸引は慣性のある粒子を偏りなく採るために用いる。ガス成分である水分だけの測定にその要件はない。",
+      "ウ": "水分量の測定では、ダクトの中心部に近い1点を試料採取点にしてよい。",
+      "エ": "吸湿管の質量増加が100 mg〜1 gになるように試料量を設定し、水分量を精度よく求める。",
+      "オ": "シリカゲルは二酸化炭素も吸着し、吸湿管の質量増加が水分だけを表さなくなる。二酸化炭素を含む排ガスでは適さない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/taiki-gijutsu-p09.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 大気関係技術特論 公式問題冊子PDF 9ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214035211id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_17.pdf#page=9",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 大気関係技術特論 問16（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-taiki-gijutsu-q17",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "taiki-gijutsu",
+    "qNumber": 17,
+    "officialAnswerNumber": 5,
+    "type": "multiple-choice",
+    "subject": "大気関係技術特論",
+    "category": "大気関係技術特論",
+    "topicTags": [
+      "逆転層の成因と現れ方"
+    ],
+    "difficulty": 2,
+    "question": "問17　逆転層の成因と現れ方。掲載の公式問題画像の問17を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "放射性逆転層中の温度分布は,強い安定状態になっており,拡散速度は遅い。",
+      "イ": "前線の存在により,下層に寒気,上層に暖気がくることで逆転層が形成されることがある。",
+      "ウ": "移流性逆転が形成される場合には,霧の発生を伴うことが多い。",
+      "エ": "沈降性逆転は,昼夜区別なく出現する。",
+      "オ": "多くの地域で最も一般的に発生するのは地形性逆転である。"
+    },
+    "answer": "オ",
+    "explanation": "多くの地域で一般的な逆転は、晴天で風の弱い夜などに地表が放射冷却して起こる放射性逆転。地形性逆転は盆地など地形の影響を受けやすい場所で起きる。",
+    "choiceExplanations": {
+      "ア": "逆転層では上ほど気温が高く、鉛直方向の空気の混合が弱くなるため、汚染物質が拡散しにくい。",
+      "イ": "前線面を境にして暖気が寒気に乗り上げると、下の寒気より上の暖気が高温となり逆転ができる。",
+      "ウ": "暖湿な空気が冷えた地表などの上を移動する場合、下層が冷やされ、逆転層とともに霧が生じることがある。",
+      "エ": "高気圧内などで空気が沈降して断熱圧縮により暖まることで生じ、地表の夜間冷却を条件としない。",
+      "オ": "盆地などでは冷気の滞留による地形性逆転が起きるが、広く一般的に見られるのは地表の放射冷却に伴う逆転である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/taiki-gijutsu-p10.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 大気関係技術特論 公式問題冊子PDF 10ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214035211id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_17.pdf#page=10",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 大気関係技術特論 問17（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-taiki-gijutsu-q18",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "taiki-gijutsu",
+    "qNumber": 18,
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "subject": "大気関係技術特論",
+    "category": "大気関係技術特論",
+    "topicTags": [
+      "正規形プルーム拡散式の前提"
+    ],
+    "difficulty": 2,
+    "question": "問18　正規形プルーム拡散式の前提。掲載の公式問題画像の問18を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "拡散濃度評価領域内は平坦地が広がり,山や谷,土地の傾斜がない。",
+      "イ": "排出源からの放出強度は時間的に変化しない。",
+      "ウ": "気層の風速や気温が,時間的にも空間的にも変化しない。",
+      "エ": "風向が安定しないような低風速は対象としない。",
+      "オ": "拡散濃度評価の対象物質は空気と一体的に運動し,また大気中で生成・消滅することがない。"
+    },
+    "answer": "ウ",
+    "explanation": "定常な放出と風の下で計算するが、気温が空間的に一様であることを求めるわけではない。鉛直方向の気温分布は大気安定度と拡散幅に反映される。",
+    "choiceExplanations": {
+      "ア": "基本式は平坦な地表を想定する。地形が気流や地面との反射を変える複雑地形には追加の扱いが必要である。",
+      "イ": "定常式なので、計算時間中は排出源の放出強度が一定であると仮定する。",
+      "ウ": "気温の鉛直勾配は大気安定度を決める要因の一つである。気温や風速があらゆる場所と時間で不変という条件を置く記述は過大である。",
+      "エ": "低風速で風向が定まらない場合は定常プルームの仮定が成立しにくく、パフモデル等で扱う。",
+      "オ": "基本式の汚染物質は風で移動・拡散する受動的な成分であり、大気中での生成・分解を式に含めない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/taiki-gijutsu-p10.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 大気関係技術特論 公式問題冊子PDF 10ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214035211id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_17.pdf#page=10",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 大気関係技術特論 問18（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-taiki-gijutsu-q19",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "taiki-gijutsu",
+    "qNumber": 19,
+    "officialAnswerNumber": 5,
+    "type": "multiple-choice",
+    "subject": "大気関係技術特論",
+    "category": "大気関係技術特論",
+    "topicTags": [
+      "セメント製造工程におけるSO₂の低減"
+    ],
+    "difficulty": 2,
+    "question": "問19　セメント製造工程におけるSO₂の低減。掲載の公式問題画像の問19を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "ロータリーキルン／石灰石／80〜90",
+      "イ": "ロータリーキルン／活性炭／80〜90",
+      "ウ": "ロータリーキルン／石灰石／97〜99",
+      "エ": "プレヒーター部／活性炭／97〜99",
+      "オ": "プレヒーター部／石灰石／97〜99"
+    },
+    "answer": "オ",
+    "explanation": "プレヒーター部の400〜1000℃の温度領域で、原料中の石灰石などがSO₂を取り込み、97〜99%程度が脱硫される。",
+    "choiceExplanations": {
+      "ア": "石灰石は合うが、設問の温度域で主にSO₂を取り込むのはプレヒーター部で、割合は97〜99%程度である。",
+      "イ": "吸収に働くのはセメント原料に含まれる石灰石などである。活性炭を加える工程を指すものではない。",
+      "ウ": "石灰石と割合は合うが、設問が示す温度領域の主要な反応場所はロータリーキルンではなくプレヒーター部である。",
+      "エ": "プレヒーター部と97〜99%は合う。原料中でSO₂を取り込む物質は活性炭でなく石灰石などである。",
+      "オ": "排ガスと接触するプレヒーター部の原料にはカルシウム分があり、SO₂を反応・吸収して97〜99%程度を除去する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/taiki-gijutsu-p11.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 大気関係技術特論 公式問題冊子PDF 11ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214035211id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_17.pdf#page=11",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 大気関係技術特論 問19（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2024-annual-taiki-gijutsu-q20",
+    "exam": "kogai-13",
+    "year": 2024,
+    "season": "annual",
+    "examDate": "2024-10-06",
+    "session": "taiki-gijutsu",
+    "qNumber": 20,
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "subject": "大気関係技術特論",
+    "category": "大気関係技術特論",
+    "topicTags": [
+      "ごみ焼却における排ガスとばいじんの対策"
+    ],
+    "difficulty": 2,
+    "question": "問20　ごみ焼却における排ガスとばいじんの対策。掲載の公式問題画像の問20を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "ガス化溶融炉では,ごみを加熱して可燃性ガスとタール分及びチャー等に分解し,残渣を溶融する。",
+      "イ": "乾電池の水銀不使用化は,水銀排出量削減の一因となっている。",
+      "ウ": "ダイオキシン類発生防止等ガイドラインの制定後,ばいじんを除去する集じん設備として,電気集じん装置が主に採用されている。",
+      "エ": "ダイオキシン類を含まない有機物の焼却でも,ダイオキシン類が発生することがある。",
+      "オ": "鉛及びその化合物は,ばいじんを除去することにより排ガスから取り除かれる。"
+    },
+    "answer": "ウ",
+    "explanation": "ダイオキシン類対策が進んだ後のごみ焼却設備では、ばいじん除去にバグフィルターが主に採用されている。",
+    "choiceExplanations": {
+      "ア": "ごみをガス化して可燃性ガス、タール、チャー等を得て、残った固形分などを溶融する設備がある。",
+      "イ": "乾電池からの水銀使用をなくすことで、ごみとして焼却される電池からの水銀投入が減り、排出量の削減につながる。",
+      "ウ": "集じん設備には、排ガス中の細かい粒子や粒子に吸着したダイオキシン類を除くのに適したバグフィルターが主に使われる。",
+      "エ": "もとの可燃物に含まれなくても、燃焼ガスの冷却過程などで炭素や塩素を含む成分からダイオキシン類が生じることがある。",
+      "オ": "鉛やその化合物は排ガス中で粒子に移りやすい。ばいじんを回収することで、粒子に含まれる鉛を除去できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2024/taiki-gijutsu-p11.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 公害防止管理者 大気関係技術特論 公式問題冊子PDF 11ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20250214035211id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R06_17.pdf#page=11",
+    "sourceAnswerUrl": "https://web.archive.org/web/20241108075658id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR06.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和6年度 公害防止管理者等国家試験 大気関係技術特論 問20（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  }
+]
