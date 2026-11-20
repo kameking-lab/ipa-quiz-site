@@ -1,4 +1,5 @@
 import type { ChoiceKey, Question, Session } from "@/lib/questions/types";
+import source2022 from "./2022-september.json";
 import source2023 from "./2023-september.json";
 import source2024 from "./2024-september.json";
 import sourceJson from "./2026-september.json";
@@ -107,6 +108,7 @@ export const ZOEN1_QUESTIONS = [
   ...toQuestions(supplement11Json as Source, "2026-11-06"),
   ...toQuestions(source2024 as Source, "2026-11-20"),
   ...toQuestions(source2023 as Source, "2026-11-20"),
+  ...toQuestions(source2022 as Source, "2026-11-20"),
 ].sort((a, b) => b.year - a.year || a.session.localeCompare(b.session) || a.qNumber - b.qNumber);
 
 if (new Set(ZOEN1_QUESTIONS.map((question) => question.id)).size !== ZOEN1_QUESTIONS.length) {
