@@ -1,0 +1,2567 @@
+[
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q1",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 1,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 電気通信技術の基礎 第1問 (1)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "電気通信技術の基礎",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "図1に示す回路において、抵抗R2に4アンペアの電流が流れているとき、この回路に接続されている電池Eの電圧は、［ア］ボルトである。ただし、電池の内部抵抗は無視するものとする。",
+    "choices": {
+      "ア": "24",
+      "イ": "36",
+      "ウ": "42"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "R₂で3×4 = 12 Vかかるので、R₃には12÷2 = 6 A流れる。合計10 AがR₁に流れて30 V降下するので、電池は42 Vである。",
+    "choiceExplanations": {
+      "ア": "並列のR₂とR₃にはどちらにも12 Vかかる。直列のR₁には合計10 Aが流れるため、電池の電圧は24 Vより大きい。",
+      "イ": "R₁の電圧降下は30 Vである。これに並列部分の12 Vを加える。",
+      "ウ": "R₂で3×4 = 12 Vかかるので、R₃には12÷2 = 6 A流れる。合計10 AがR₁に流れて30 V降下するので、電池は42 Vである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/dekyo-charge-5/2022-round1-analog2-111.png"
+    ],
+    "imageAltTexts": [
+      "図1 抵抗R₂とR₃の並列部に抵抗R₁と電池Eを接続した回路"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q2",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 2,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 電気通信技術の基礎 第1問 (2)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "電気通信技術の基礎",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "図2に示す回路において、端子a-b間に45ボルトの交流電圧を加えたとき、回路に流れる電流は、［イ］アンペアである。",
+    "choices": {
+      "ア": "3",
+      "イ": "5",
+      "ウ": "9"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "リアクタンスは直列につないだコイルの12 Ωからコンデンサの3 Ωを引いて9 Ωになる。電流は45÷9 = 5 Aである。",
+    "choiceExplanations": {
+      "ア": "12 Ωと3 Ωは誘導性と容量性のため符号が反対である。3 Aを得るために両者を足し合わせる計算は誤りである。",
+      "イ": "リアクタンスは直列につないだコイルの12 Ωからコンデンサの3 Ωを引いて9 Ωになる。電流は45÷9 = 5 Aである。",
+      "ウ": "9は二つのリアクタンスを合成したインピーダンスの数値である。電流は電圧を9 Ωで割って求める。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/dekyo-charge-5/2022-round1-analog2-112.png"
+    ],
+    "imageAltTexts": [
+      "図2 リアクタンス12 Ωのコイルと3 Ωのコンデンサを直列にした回路"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q3",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 3,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 電気通信技術の基礎 第1問 (3)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "電気通信技術の基礎",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "平行電極板で構成されるコンデンサの静電容量を大きくするには、［ウ］する方法がある。",
+    "choices": {
+      "ア": "電極板の面積を小さく",
+      "イ": "電極板の間隔を広く",
+      "ウ": "電極板間に誘電率の大きな物質を挿入"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "平行板の静電容量はC = εS/dである。誘電率εが大きい物質を挿入すると容量も大きくなる。",
+    "choiceExplanations": {
+      "ア": "平行板の静電容量は面積に比例する。板を小さくすれば、他の条件が同じ場合に容量は小さくなる。",
+      "イ": "板の間隔を広げると、同じ電圧で蓄えられる電荷が減り、容量は小さくなる。",
+      "ウ": "平行板の静電容量はC = εS/dである。誘電率εが大きい物質を挿入すると容量も大きくなる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q4",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 4,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 電気通信技術の基礎 第1問 (4)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "電気通信技術の基礎",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "導線の単位長さ当たりの電気抵抗は、その導線の断面積を3倍にしたとき、［エ］倍になる。",
+    "choices": {
+      "ア": "1/9",
+      "イ": "1/3",
+      "ウ": "√3"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "単位長さ当たりの抵抗は抵抗率を断面積で割る。同じ材質で断面積を3倍にすると1/3倍になる。",
+    "choiceExplanations": {
+      "ア": "断面積の二乗に反比例するわけではない。断面積が3倍なら単位長さ当たりの抵抗は1/3倍である。",
+      "イ": "単位長さ当たりの抵抗は抵抗率を断面積で割る。同じ材質で断面積を3倍にすると1/3倍になる。",
+      "ウ": "断面積を広げると抵抗は小さくなる。平方根を掛ける式では抵抗が増えてしまう。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "isCalculation": true
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q5",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 5,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 電気通信技術の基礎 第2問 (1)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "電気通信技術の基礎",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "pn接合ダイオードに外部から逆方向電圧を加えると、p形領域の多数キャリアである正孔は電源の負極に引かれ、［ア］が広がる。",
+    "choices": {
+      "ア": "価電子帯",
+      "イ": "空乏層",
+      "ウ": "n形領域"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "逆バイアスでは多数キャリアが接合面から遠ざかる。自由なキャリアが少ない領域である空乏層が広がる。",
+    "choiceExplanations": {
+      "ア": "価電子帯は電子のエネルギー帯である。逆電圧で接合部付近の幅が変わる領域を指す語ではない。",
+      "イ": "逆バイアスでは多数キャリアが接合面から遠ざかる。自由なキャリアが少ない領域である空乏層が広がる。",
+      "ウ": "n形領域は不純物添加で形成される。逆バイアスで広がるのは接合部の空乏層である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q6",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 6,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 電気通信技術の基礎 第2問 (2)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "電気通信技術の基礎",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "半導体の電気抵抗は、一般に、半導体の温度が［イ］。",
+    "choices": {
+      "ア": "上昇すると増大する",
+      "イ": "上昇しても変化しない",
+      "ウ": "上昇すると減少する"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "一般に温度が上がると電子や正孔の数が増え、抵抗は小さくなる。",
+    "choiceExplanations": {
+      "ア": "一般的な金属の温度特性と異なり、半導体では温度上昇で伝導に寄与するキャリアが増えやすい。",
+      "イ": "温度が変わるとキャリア濃度が変わるため、一般に抵抗は一定ではない。",
+      "ウ": "一般に温度が上がると電子や正孔の数が増え、抵抗は小さくなる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q7",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 7,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 電気通信技術の基礎 第2問 (3)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "電気通信技術の基礎",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "電界効果トランジスタは、半導体の［ウ］キャリアの流れを電界によって制御する電圧制御形のトランジスタに分類される半導体素子である。",
+    "choices": {
+      "ア": "多数",
+      "イ": "少数",
+      "ウ": "真性"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "電界効果トランジスタは、電界でチャネル内の多数キャリアの流れを制御する。",
+    "choiceExplanations": {
+      "ア": "電界効果トランジスタは、電界でチャネル内の多数キャリアの流れを制御する。",
+      "イ": "少数キャリアを注入して電流を制御するバイポーラ素子とは動作原理が異なる。",
+      "ウ": "真性は不純物のない半導体などを表す語であり、電界効果で制御するキャリアの区分ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q8",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 8,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 電気通信技術の基礎 第2問 (4)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "電気通信技術の基礎",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "半導体メモリのうち、データの消去と書換えができ、電源を切ってもデータがそのまま消えずに残り、USBメモリ、SDカードなどに用いられるメモリは、［エ］である。",
+    "choices": {
+      "ア": "DRAM",
+      "イ": "ROM",
+      "ウ": "フラッシュメモリ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "フラッシュメモリは電源を切っても情報を保持し、電気的に消去・書換えできる。",
+    "choiceExplanations": {
+      "ア": "DRAMは電源を切るとデータを保持できない揮発性メモリである。",
+      "イ": "一般的なROMは記録を保持するが、USBメモリのような頻繁な消去・書換えを前提としない。",
+      "ウ": "フラッシュメモリは電源を切っても情報を保持し、電気的に消去・書換えできる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q9",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 9,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 電気通信技術の基礎 第2問 (5)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "電気通信技術の基礎",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "トランジスタ回路において、ベース電流が40マイクロアンペア、エミッタ電流が2.62ミリアンペアのとき、コレクタ電流は［オ］ミリアンペアである。",
+    "choices": {
+      "ア": "2.22",
+      "イ": "2.58",
+      "ウ": "2.66"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "エミッタ電流からベース電流を差し引く。2.62−0.040 = 2.58 mAである。",
+    "choiceExplanations": {
+      "ア": "40 µAは0.040 mAである。2.62から0.40 mAを引いた2.22 mAは単位換算が誤っている。",
+      "イ": "エミッタ電流からベース電流を差し引く。2.62−0.040 = 2.58 mAである。",
+      "ウ": "2.66 mAは両者を足した値である。エミッタ電流には既にコレクタ電流とベース電流の両方が含まれる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "isCalculation": true
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q10",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 10,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 電気通信技術の基礎 第3問 (1)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "電気通信技術の基礎",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "図1、図2及び図3に示すベン図において、A、B及びCが、それぞれの円の内部を表すとき、斜線部分を示す論理式が¬A·C + B·¬C + ¬B·Cと表すことができるベン図は、［ア］である。 ここで¬は論理否定を表す。",
+    "choices": {
+      "ア": "図1",
+      "イ": "図2",
+      "ウ": "図3"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "第1項はCのうちAの外、第2項はBのうちCの外、第3項はCのうちBの外を表す。これらを合わせた斜線は図3と一致する。",
+    "choiceExplanations": {
+      "ア": "図1には円Aだけの領域も塗られている。式のどの項にもAだけの領域は含まれない。",
+      "イ": "図2は三円全ての重なりも塗っている。式の各項には少なくとも一つ否定があるため、そこは含まない。",
+      "ウ": "第1項はCのうちAの外、第2項はBのうちCの外、第3項はCのうちBの外を表す。これらを合わせた斜線は図3と一致する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/dekyo-charge-5/2022-round1-analog2-131.png"
+    ],
+    "imageAltTexts": [
+      "図1〜3 円A、B、Cの重なりと斜線"
+    ]
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q11",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 11,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 電気通信技術の基礎 第3問 (2)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "電気通信技術の基礎",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "16進数のある数Xが次式で示されるとき、この数を2進数で表すと、［イ］になる。\n\nX = 49₁₆",
+    "choices": {
+      "ア": "110001",
+      "イ": "1001001",
+      "ウ": "10001001"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "16進の4は0100₂、9は1001₂である。つないで先頭の0を省くと1001001₂になる。",
+    "choiceExplanations": {
+      "ア": "末尾の4ビットが0001なら16進の1となる。末尾が9となる式では1001を使う。",
+      "イ": "16進の4は0100₂、9は1001₂である。つないで先頭の0を省くと1001001₂になる。",
+      "ウ": "上位4ビットが1000では、16進の最上位が8になり、4と異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "isCalculation": true
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q12",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 12,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 電気通信技術の基礎 第3問 (3)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "電気通信技術の基礎",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "図4に示す論理回路において、Mの論理素子が［ウ］であるとき、入力a及びbと出力cとの関係は、図5で示される。",
+    "choices": {
+      "ア": "図中の①の論理素子",
+      "イ": "図中の②の論理素子",
+      "ウ": "図中の③の論理素子",
+      "エ": "図中の④の論理素子"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "上側の信号は¬(a·¬b)、下側は¬(a+b)である。二つの論理積はa、bがともに0のときだけ1となるので、NANDの出力cはa+bに一致する。",
+    "choiceExplanations": {
+      "ア": "NORは中間信号の論理和を反転する。a = 0、b = 1のとき上側は1、下側は0なので、NORの出力は0になる。図のcはこの場合1である。",
+      "イ": "ORではa、bがともに0のとき二つの中間信号が1なので、cが1となる。図のcは0である。",
+      "ウ": "上側の信号は¬(a·¬b)、下側は¬(a+b)である。二つの論理積はa、bがともに0のときだけ1となるので、NANDの出力cはa+bに一致する。",
+      "エ": "ANDではa = b = 0のときcが1になる。図の出力cの否定に当たる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/dekyo-charge-5/2022-round1-analog2-133.png"
+    ],
+    "imageAltTexts": [
+      "選択肢①〜④の論理素子、図4の回路及び図5のタイミング図"
+    ]
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q13",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 13,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 電気通信技術の基礎 第3問 (4)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "電気通信技術の基礎",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "次の論理関数Xは、ブール代数の公式等を利用して変形し、簡単にすると、［エ］になる。\n\nX = (¬A+B)·(B+C) + (¬B+C)\nここで¬は論理否定を表す。",
+    "choices": {
+      "ア": "0",
+      "イ": "1",
+      "ウ": "C"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "(¬A+B)·(B+C)はB+¬A·Cであり、これに¬B+Cを足すとB+¬Bを含む。したがってX = 1である。",
+    "choiceExplanations": {
+      "ア": "B = 0、C = 0でも第2項の¬B+Cが1になる。常に0にはならない。",
+      "イ": "(¬A+B)·(B+C)はB+¬A·Cであり、これに¬B+Cを足すとB+¬Bを含む。したがってX = 1である。",
+      "ウ": "C = 0のときもXは1となる。単にCと置くと式と一致しない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "isCalculation": true
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q14",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 14,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 電気通信技術の基礎 第4問 (1)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "電気通信技術の基礎",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "図において、電気通信回線への入力電力が630ミリワット、その伝送損失が1キロメートル当たり1.5デシベル、増幅器の利得が50デシベルのとき、電力計の読みは、［ア］ミリワットである。ただし、入出力各部のインピーダンスは整合しているものとする。",
+    "choices": {
+      "ア": "6.3",
+      "イ": "63",
+      "ウ": "630"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "40 kmの回線で1.5×40 = 60 dBの損失があり、50 dBの増幅で全体では10 dB減る。電力は1/10の63 mWとなる。",
+    "choiceExplanations": {
+      "ア": "6.3 mWは入力に対して20 dB低い場合である。回線で60 dB減衰し50 dB増幅されるので、全体は10 dBだけ低下する。",
+      "イ": "40 kmの回線で1.5×40 = 60 dBの損失があり、50 dBの増幅で全体では10 dB減る。電力は1/10の63 mWとなる。",
+      "ウ": "630 mWは増幅と減衰が釣り合った場合である。実際の回線損失は増幅利得より10 dB大きい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/dekyo-charge-5/2022-round1-analog2-141.png"
+    ],
+    "imageAltTexts": [
+      "発振器、40 kmの通信回線、増幅器及び電力計"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q15",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 15,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 電気通信技術の基礎 第4問 (2)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "電気通信技術の基礎",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "電力線からの誘導作用によって通信線(平衡対ケーブル)に誘起される静電誘導電圧は、一般に、電力線の電圧に［イ］。",
+    "choices": {
+      "ア": "比例する",
+      "イ": "反比例する",
+      "ウ": "関係しない"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "ほかの条件が同じなら、容量結合による静電誘導電圧は電力線の電圧に比例する。",
+    "choiceExplanations": {
+      "ア": "ほかの条件が同じなら、容量結合による静電誘導電圧は電力線の電圧に比例する。",
+      "イ": "電力線の電圧が高いほど誘導電圧も大きくなるため、反比例しない。",
+      "ウ": "電力線と通信線の容量結合による電圧は、誘導源の電圧が変わると変化する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q16",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 16,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 電気通信技術の基礎 第4問 (3)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "電気通信技術の基礎",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "特性インピーダンスがZ0の通信線路に負荷インピーダンスZ1を接続する場合、Z1=0のとき、接続点での入射電圧波は、［ウ］全反射される。",
+    "choices": {
+      "ア": "同位相で",
+      "イ": "逆位相で",
+      "ウ": "90度位相が遅れて"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "負荷が0 Ωの短絡では接続点の電圧が0になるよう、入射波と等振幅で逆位相の反射波が生じる。",
+    "choiceExplanations": {
+      "ア": "同位相の電圧全反射は、負荷が開放のときに生じる。",
+      "イ": "負荷が0 Ωの短絡では接続点の電圧が0になるよう、入射波と等振幅で逆位相の反射波が生じる。",
+      "ウ": "負荷が短絡した場合の電圧反射係数は−1であり、90度ではなく180度の位相反転になる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q17",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 17,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 電気通信技術の基礎 第4問 (4)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "電気通信技術の基礎",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "平衡対ケーブルにおける誘導回線の信号電力をPSミリワット、被誘導回線の漏話による電力をPXミリワットとすると、漏話減衰量は、［エ］デシベルである。",
+    "choices": {
+      "ア": "10 log₁₀(P_S/P_X)",
+      "イ": "10 log₁₀(P_X/P_S)",
+      "ウ": "20 log₁₀(P_S/P_X)",
+      "エ": "20 log₁₀(P_X/P_S)"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "誘導回線の電力P_Sを漏話電力P_Xで割る。電力比の常用対数を10倍すると漏話減衰量になる。",
+    "choiceExplanations": {
+      "ア": "誘導回線の電力P_Sを漏話電力P_Xで割る。電力比の常用対数を10倍すると漏話減衰量になる。",
+      "イ": "被誘導回線で測った漏話電力を分子にすると、減衰量の符号が逆になる。",
+      "ウ": "20倍にするのは等しいインピーダンスでの電圧比などを扱うときである。設問は電力比である。",
+      "エ": "係数に20を用いており、分子と分母も逆である。電力がどれだけ小さくなったかは10 log₁₀(P_S/P_X)で表す。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q18",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 18,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 電気通信技術の基礎 第5問 (1)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "電気通信技術の基礎",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "アナログ信号の変調において、位相変調は、正弦搬送波の位相を入力信号の［ア］に応じて変化させる変調方式である。",
+    "choices": {
+      "ア": "振幅",
+      "イ": "周波数",
+      "ウ": "波長"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "位相変調では搬送波の位相偏移を入力信号の瞬時振幅に対応させる。",
+    "choiceExplanations": {
+      "ア": "位相変調では搬送波の位相偏移を入力信号の瞬時振幅に対応させる。",
+      "イ": "入力信号の周波数変化をそのまま搬送波の位相偏移に対応させるという定義ではない。",
+      "ウ": "波長は波の周期に対応する長さである。位相偏移を決めるのは入力信号の振幅である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q19",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 19,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 電気通信技術の基礎 第5問 (2)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "電気通信技術の基礎",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "標本化定理によれば、サンプリング周波数を、アナログ信号に含まれている［イ］の2倍以上にすると、元のアナログ信号の波形が復元できるとされている。",
+    "choices": {
+      "ア": "最低周波数",
+      "イ": "平均周波数",
+      "ウ": "最高周波数"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "標本化定理では、信号に含まれる最高周波数の2倍を基準とする。十分な周波数で標本化すると元の波形を復元できる。",
+    "choiceExplanations": {
+      "ア": "最低周波数だけを基準にすると、高い周波数成分の折返しを防げない。信号に含まれる最高周波数が基準となる。",
+      "イ": "平均周波数より高い成分も波形に寄与する。最高周波数に基づいて必要な標本化周波数を決める。",
+      "ウ": "標本化定理では、信号に含まれる最高周波数の2倍を基準とする。十分な周波数で標本化すると元の波形を復元できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q20",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 20,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 電気通信技術の基礎 第5問 (3)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "電気通信技術の基礎",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "デジタル信号の伝送において、送信側で伝送データのビット列中に含まれる1の数に応じた検査のためのビットを付け加えて送り、受信側で受け取ったデータのビット列中に含まれる1の数を検査し、伝送路などで生じたビット誤りの検出を行う［ウ］方式がある。",
+    "choices": {
+      "ア": "CRC",
+      "イ": "冗長度抑圧",
+      "ウ": "パリティチェック"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "パリティチェックは1の個数が偶数又は奇数になるよう検査ビットを付け、受信側でその条件を確認する。",
+    "choiceExplanations": {
+      "ア": "CRCは生成多項式で割った余りに基づく検査値を使う。1の個数の偶奇で検査する方式とは異なる。",
+      "イ": "冗長度抑圧は符号化などでデータ量を減らす。検査ビットを加えて1の個数を調べる方式ではない。",
+      "ウ": "パリティチェックは1の個数が偶数又は奇数になるよう検査ビットを付け、受信側でその条件を確認する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q21",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 21,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 電気通信技術の基礎 第5問 (4)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "電気通信技術の基礎",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "デジタルフィルタを用いてアナログ信号から特定の周波数帯域の信号を取り出す場合、フィルタの精度を上げるためには、アナログ信号をデジタル信号に変換するときに、［エ］必要がある。",
+    "choices": {
+      "ア": "リング変調器を通す",
+      "イ": "量子化ステップの幅を小さくする",
+      "ウ": "サンプリング周波数を低くする"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "量子化の幅を小さくするほど丸め誤差が小さくなり、デジタル処理に用いる値が入力信号に近くなる。",
+    "choiceExplanations": {
+      "ア": "リング変調器は信号を変調する回路であり、アナログデジタル変換の量子化精度を上げるものではない。",
+      "イ": "量子化の幅を小さくするほど丸め誤差が小さくなり、デジタル処理に用いる値が入力信号に近くなる。",
+      "ウ": "標本化周波数をむやみに下げると、高い周波数成分が折り返して信号を正しく分離できなくなる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q22",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 22,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 電気通信技術の基礎 第5問 (5)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "電気通信技術の基礎",
+    "subject": "電気通信技術の基礎",
+    "topicTags": [
+      "電気通信技術の基礎"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "光ファイバ通信における光変調方式の一つである外部変調方式では、光を透過する媒体の屈折率や吸収係数などを変化させることにより、光の属性である［オ］、周波数、位相などを変化させている。",
+    "choices": {
+      "ア": "強度",
+      "イ": "利得",
+      "ウ": "スピンの方向"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "外部変調器では光の吸収などを制御して、透過する光の強度を変えることができる。",
+    "choiceExplanations": {
+      "ア": "外部変調器では光の吸収などを制御して、透過する光の強度を変えることができる。",
+      "イ": "利得は増幅の程度を示す量である。ここで挙げる光信号の変調量は強度である。",
+      "ウ": "スピンの方向ではなく、透過光の強度、周波数又は位相などを変化させる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q23",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 23,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続のための技術及び理論 第1問 (1)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続のための技術及び理論",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "アウトパルスダイヤル式電話機において、送受話器を上げた後、0ボタンを押下した場合は、選択信号として［ア］個のダイヤルパルスが電話機から送出される。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "10"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "ダイヤルパルスでは数字0に10個のパルスを割り当てる。",
+    "choiceExplanations": {
+      "ア": "1個のパルスは数字の1に対応する。回転ダイヤルと同様に0には10個を割り当てる。",
+      "イ": "2個のパルスは数字の2を表す。0を送る場合は10個である。",
+      "ウ": "ダイヤルパルスでは数字0に10個のパルスを割り当てる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q24",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 24,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続のための技術及び理論 第1問 (2)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続のための技術及び理論",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "通話時のエコーによる影響を抑えるためのエコーキャンセラには、一般に、エコー経路の伝搬特性を推定してデジタル信号処理により疑似エコーを作り出し、その疑似エコーの位相を［イ］信号を受信信号に加えることによりエコーを相殺させる方法などが用いられている。",
+    "choices": {
+      "ア": "90度遅らせた",
+      "イ": "反転させた",
+      "ウ": "90度進めた"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "推定した疑似エコーの位相を反転し、受信信号に加えると、受信信号に含まれるエコー成分が相殺される。",
+    "choiceExplanations": {
+      "ア": "90度だけ遅らせても、同じ形で符号が反対の信号にはならず、エコーを打ち消せない。",
+      "イ": "推定した疑似エコーの位相を反転し、受信信号に加えると、受信信号に含まれるエコー成分が相殺される。",
+      "ウ": "90度進めるとエコー成分と逆位相にはならない。完全に反対に加えるには180度の反転を行う。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q25",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 25,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続のための技術及び理論 第1問 (3)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続のための技術及び理論",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "音声通信サービスにおける通話時の音声品質に関する主観評価のうち、複数の被験者に音声の品質を5段階で評価してもらい、その評点の加重平均値により品質評価する方法は、平均オピニオン評点又は［ウ］といわれる。",
+    "choices": {
+      "ア": "MOS",
+      "イ": "PESQ",
+      "ウ": "R値"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "MOSは、人が音質を段階評価した評点を平均して表す主観的な評価値である。",
+    "choiceExplanations": {
+      "ア": "MOSは、人が音質を段階評価した評点を平均して表す主観的な評価値である。",
+      "イ": "PESQは基準音声と測定音声を比較して音声品質を客観的に推定する方法である。",
+      "ウ": "R値はEモデルで回線の品質を推定する指標で、被験者の平均評点そのものではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q26",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 26,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続のための技術及び理論 第1問 (4)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続のための技術及び理論",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "グループ3(G3)ファクシミリの規格で、ITU-T勧告V.34に準拠した最高通信速度［エ］キロビット/秒のモデムを搭載するファクシミリは、一般に、スーパーG3ファクシミリといわれる。",
+    "choices": {
+      "ア": "14.4",
+      "イ": "33.6",
+      "ウ": "64.0"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "スーパーG3はV.34に準拠したモデムを搭載し、最大33.6 kbit/sで通信できる。",
+    "choiceExplanations": {
+      "ア": "14.4 kbit/sは従来のV.17などによるG3ファクシミリで使われる速度である。",
+      "イ": "スーパーG3はV.34に準拠したモデムを搭載し、最大33.6 kbit/sで通信できる。",
+      "ウ": "64 kbit/sはISDNのBチャネルなどの速度であり、V.34モデムの上限ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q27",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 27,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続のための技術及び理論 第1問 (5)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続のための技術及び理論",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "図に示す同期式変復調装置のブロック図において、受信信号に含まれている雑音などの不要信号成分を取り除くためのものは、［オ］である。",
+    "choices": {
+      "ア": "スクランブル回路",
+      "イ": "自動利得調整回路",
+      "ウ": "受信フィルタ",
+      "エ": "キャリア検出回路"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "受信フィルタで必要な信号帯域を通し、帯域外の雑音などを除く。",
+    "choiceExplanations": {
+      "ア": "スクランブル回路は送信側でデータのビットの偏りを抑える。受信信号から不要な周波数成分を除く回路ではない。",
+      "イ": "自動利得調整は受信信号のレベルに応じて利得を調整する。雑音成分を周波数で選別する役割は受信フィルタが担う。",
+      "ウ": "受信フィルタで必要な信号帯域を通し、帯域外の雑音などを除く。",
+      "エ": "キャリア検出回路は搬送波の有無を検出する。雑音を直接取り除くための回路ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/dekyo-charge-5/2022-round1-analog2-215.png"
+    ],
+    "imageAltTexts": [
+      "同期式変復調装置の受信回路・送信回路のブロック図"
+    ]
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q28",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 28,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続のための技術及び理論 第2問 (1)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続のための技術及び理論",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "ISDN基本ユーザ・網インタフェースの機能群は、NT1、NT2、TA、TE1及びTE2から構成され、［ア］は、NT2の機能を有している。",
+    "choices": {
+      "ア": "IP電話機",
+      "イ": "PBX",
+      "ウ": "スプリッタ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "PBXは利用者設備側の交換や集線を担い、ISDNの参照構成ではNT2に相当する機能を持つ。",
+    "choiceExplanations": {
+      "ア": "IP電話機は利用者側の端末の例であり、接続された複数の端末等の交換を担うNT2の例ではない。",
+      "イ": "PBXは利用者設備側の交換や集線を担い、ISDNの参照構成ではNT2に相当する機能を持つ。",
+      "ウ": "スプリッタは主に信号の分離・分岐を担う。交換を担当するNT2の機能とは異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q29",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 29,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続のための技術及び理論 第2問 (2)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続のための技術及び理論",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "ISDN基本ユーザ・網インタフェースにおける回線交換モードでは、呼制御信号の伝送に［イ］チャネルを用いる。",
+    "choices": {
+      "ア": "D",
+      "イ": "B",
+      "ウ": "H"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "回線交換の設定・解放などの呼制御信号はDチャネルで送る。",
+    "choiceExplanations": {
+      "ア": "回線交換の設定・解放などの呼制御信号はDチャネルで送る。",
+      "イ": "Bチャネルは音声・データなど利用者の通信に使う。呼制御にはDチャネルを使う。",
+      "ウ": "Hチャネルは複数のBチャネルに相当する高速の通信路などを指し、基本インタフェースの呼制御では使わない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q30",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 30,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続のための技術及び理論 第2問 (3)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続のための技術及び理論",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "ISDN基本ユーザ・網インタフェースのレイヤ1において、端末とデジタル回線終端装置間の伝送路符号は、100%パルス幅の［ウ］符号(疑似3値符号)が用いられている。",
+    "choices": {
+      "ア": "B8ZS",
+      "イ": "CMI",
+      "ウ": "AMI"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "端末とDSU間ではパルスの極性を交互にするAMI系の擬似三値符号を使い、パルス幅はビット幅の100%である。",
+    "choiceExplanations": {
+      "ア": "B8ZSは8個のゼロの連続を所定のパターンに置き換える。基本ユーザ・網インタフェースで指定される符号はAMI系である。",
+      "イ": "CMIはビット内の信号レベルの遷移を使う方式であり、ここで指定される100%パルス幅の擬似三値符号とは異なる。",
+      "ウ": "端末とDSU間ではパルスの極性を交互にするAMI系の擬似三値符号を使い、パルス幅はビット幅の100%である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q31",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 31,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続のための技術及び理論 第2問 (4)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続のための技術及び理論",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "ISDN基本ユーザ・網インタフェースにおいて、LAPDによる［エ］フレームの転送は非確認形情報転送モードで行われる。",
+    "choices": {
+      "ア": "非番号制情報(UI)",
+      "イ": "制御情報交換",
+      "ウ": "監視"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "UIフレームは非番号制情報フレームであり、受信確認を伴わない非確認形の情報転送に用いる。",
+    "choiceExplanations": {
+      "ア": "UIフレームは非番号制情報フレームであり、受信確認を伴わない非確認形の情報転送に用いる。",
+      "イ": "制御情報交換は制御情報のやりとりを指す。確認を行わず情報を運ぶためのフレーム名はUIである。",
+      "ウ": "監視フレームはデータリンクの受信状態の通知などに用いる。非確認形の利用者情報をそれで転送するわけではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q32",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 32,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続のための技術及び理論 第2問 (5)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続のための技術及び理論",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "図は、ISDN基本ユーザ・網インタフェースの回線交換呼におけるデータ転送から解放完了までの一般的な呼制御シーケンスを示したものである。図中のXは［オ］メッセージを示す。",
+    "choices": {
+      "ア": "状態問合せ",
+      "イ": "解放",
+      "ウ": "閉塞"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "呼の切断通知を受けた後、Xの解放メッセージで呼の解放を要求し、解放完了を受け取って手順を終える。",
+    "choiceExplanations": {
+      "ア": "状態問合せは呼の状態を確認するために使う。図のXは切断後、解放完了前の段階である。",
+      "イ": "呼の切断通知を受けた後、Xの解放メッセージで呼の解放を要求し、解放完了を受け取って手順を終える。",
+      "ウ": "閉塞は設備等の使用を止める制御である。図にある個々の呼の切断後の段階は解放である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/dekyo-charge-5/2022-round1-analog2-225.png"
+    ],
+    "imageAltTexts": [
+      "データ転送から解放完了までの発信端末、交換網及び着信端末のやりとり"
+    ]
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q33",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 33,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続のための技術及び理論 第3問 (1)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続のための技術及び理論",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "ISDN基本アクセスメタリック加入者線伝送方式において使用されるDSUには、加入者線の線路損失やブリッジタップによるエコーを補償するための［ア］が用いられている。",
+    "choices": {
+      "ア": "等化器",
+      "イ": "電力分離フィルタ",
+      "ウ": "端末終端回路"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "等化器は線路損失やブリッジタップなどで生じる受信波形の歪みを補償する。",
+    "choiceExplanations": {
+      "ア": "等化器は線路損失やブリッジタップなどで生じる受信波形の歪みを補償する。",
+      "イ": "電力分離フィルタは給電の成分と信号を分離する回路である。",
+      "ウ": "終端回路は線路端の条件を整えて反射を抑えるが、回線特性の補償を行う機能の名称は等化器である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q34",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 34,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続のための技術及び理論 第3問 (2)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続のための技術及び理論",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "ISDN基本ユーザ・網インタフェースの機能群に対応するISDN標準端末の一つとして、［イ］電話機がある。",
+    "choices": {
+      "ア": "IP",
+      "イ": "アナログ",
+      "ウ": "デジタル"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "ISDNのインタフェースを備えるデジタル電話機は、変換アダプターを介さず接続できる標準端末の一つである。",
+    "choiceExplanations": {
+      "ア": "IP電話機はIPネットワーク向けの端末であり、基本ユーザ・網インタフェースに直接接続するISDN標準端末を指さない。",
+      "イ": "通常のアナログ電話機はTAなどを介して接続する非ISDN端末である。",
+      "ウ": "ISDNのインタフェースを備えるデジタル電話機は、変換アダプターを介さず接続できる標準端末の一つである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q35",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 35,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続のための技術及び理論 第3問 (3)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続のための技術及び理論",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "ISDN基本ユーザ・網インタフェースにおいて使用されるTAには、Bチャネルを2本束ねて、128キロビット/秒の通信速度を［ウ］転送で実現するMP通信といわれる機能をサポートするものがある。",
+    "choices": {
+      "ア": "DMA",
+      "イ": "バルク",
+      "ウ": "インタラプト"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "MP通信では2本の64 kbit/sのBチャネルをまとめ、TAとのデータ転送にバルク転送を用いて128 kbit/sを実現する。",
+    "choiceExplanations": {
+      "ア": "DMAはプロセッサーを介さずメモリと機器の間でデータを転送する仕組みである。設問の通信で使う転送方式とは異なる。",
+      "イ": "MP通信では2本の64 kbit/sのBチャネルをまとめ、TAとのデータ転送にバルク転送を用いて128 kbit/sを実現する。",
+      "ウ": "インタラプト転送は周期的に小さなデータを扱う用途などに使われる。MP通信のデータ転送でここに入る方式はバルク転送である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q36",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 36,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続のための技術及び理論 第3問 (4)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続のための技術及び理論",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "他人のクレジットカードやキャッシュカードの磁気記録情報を不正に読み取るなどの行為は、一般に、［エ］といわれる。",
+    "choices": {
+      "ア": "スキミング",
+      "イ": "トラッシング",
+      "ウ": "フィッシング"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "クレジットカードやキャッシュカードなどの磁気記録の情報を不正に読み取る行為を、スキミングという。",
+    "choiceExplanations": {
+      "ア": "クレジットカードやキャッシュカードなどの磁気記録の情報を不正に読み取る行為を、スキミングという。",
+      "イ": "トラッシングは捨てられた書類等から情報を探す行為をいう。カードの磁気記録を不正に読み取る行為とは名称が異なる。",
+      "ウ": "フィッシングは正規の連絡や画面を装って利用者から情報をだまし取る行為である。カード現物の磁気記録を問う設問とは異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q37",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 37,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続のための技術及び理論 第3問 (5)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続のための技術及び理論",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "パーソナルコンピュータ(PC)には、一般に、電源投入直後にあらかじめ設定された［オ］パスワードを入力しなければ起動しないようにする機能があり、OSを不正に再インストールされたりPCに不正にログオンされることを防ぐ効果がある。",
+    "choices": {
+      "ア": "ワンタイム",
+      "イ": "サーバ",
+      "ウ": "BIOS"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "BIOSなどのファームウェアの起動時パスワードは、OSが立ち上がる前に入力を求める。",
+    "choiceExplanations": {
+      "ア": "ワンタイムパスワードは一回または短時間だけ使える認証情報で、起動直後に機器が照合する設定を指す語ではない。",
+      "イ": "サーバの認証と、PCがOS起動前に行う本体の認証は別である。",
+      "ウ": "BIOSなどのファームウェアの起動時パスワードは、OSが立ち上がる前に入力を求める。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q38",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 38,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続のための技術及び理論 第4問 (1)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続のための技術及び理論",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "JISC0303:2000構内電気設備の配線用図記号に規定されている電話・情報設備のうち、端子盤の図記号は、［ア］である。",
+    "choices": {
+      "ア": "図中の①の記号",
+      "イ": "図中の②の記号",
+      "ウ": "図中の③の記号"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "JIS C 0303では、横長の長方形に横線を入れた図③が端子盤を表す。",
+    "choiceExplanations": {
+      "ア": "四角の中に円を入れて下から線を引いた記号は、端子盤の長方形と横線の組合せではない。",
+      "イ": "図②には円と縦線がある。端子盤は図③のような横長の図記号で示す。",
+      "ウ": "JIS C 0303では、横長の長方形に横線を入れた図③が端子盤を表す。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/dekyo-charge-5/2022-round1-analog2-241.png"
+    ],
+    "imageAltTexts": [
+      "電話・情報設備の図記号の選択肢①〜③"
+    ]
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q39",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 39,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続のための技術及び理論 第4問 (2)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続のための技術及び理論",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "測定レンジが手動切替式のアナログ式テスタを用いて計測予測値が不明な電圧値や電流値を測定する場合、最初に、［イ］レンジで測定してから順次適切なレンジに切り替えて測定する。",
+    "choices": {
+      "ア": "最小",
+      "イ": "中間",
+      "ウ": "最大"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "過大入力を避けるため最初に最大レンジを選ぶ。指針を確認した上で、読み取りに適したレンジへ切り替える。",
+    "choiceExplanations": {
+      "ア": "予測値が不明なまま最小レンジを使うと、入力が計器の上限を超えて破損するおそれがある。",
+      "イ": "中間のレンジでも測定値が上限を超える場合がある。初めは最大レンジを使う。",
+      "ウ": "過大入力を避けるため最初に最大レンジを選ぶ。指針を確認した上で、読み取りに適したレンジへ切り替える。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q40",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 40,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続のための技術及び理論 第4問 (3)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続のための技術及び理論",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "ISDN(基本インタフェース)回線における電気通信事業者側からのメタリック平衡対ケーブルの電気的特性についての試験には、静電容量試験、外来電圧試験及び［ウ］試験があり、いずれの試験もA線-アース間、B線-アース間及びA線-B線間における測定項目がある。",
+    "choices": {
+      "ア": "心線対照",
+      "イ": "絶縁抵抗",
+      "ウ": "ループ抵抗"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "絶縁抵抗試験ではA線、B線の間や各線とアースの間に測定電圧を加え、絶縁抵抗を確認する。",
+    "choiceExplanations": {
+      "ア": "心線対照はケーブルの心線の対応を調べる。線間や対地の絶縁の良否を判定する測定とは異なる。",
+      "イ": "絶縁抵抗試験ではA線、B線の間や各線とアースの間に測定電圧を加え、絶縁抵抗を確認する。",
+      "ウ": "ループ抵抗は心線の遠端などを短絡して往復の導体抵抗を測る。各線の対地絶縁を測定する試験ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q41",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 41,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続のための技術及び理論 第4問 (4)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続のための技術及び理論",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "ISDN基本ユーザ・網インタフェースのポイント・ツー・ポイント構成において、端末設備としてグループ3(G3)ファクシミリ装置を使用する場合、G3ファクシミリ装置は、ISDN回線に接続されたDSU内蔵TAの［エ］ポートに接続すればよい。",
+    "choices": {
+      "ア": "アナログ",
+      "イ": "S/T",
+      "ウ": "RS-232C"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "G3ファクシミリの回線側はアナログ電話回線用なので、TAのアナログポートへ接続する。",
+    "choiceExplanations": {
+      "ア": "G3ファクシミリの回線側はアナログ電話回線用なので、TAのアナログポートへ接続する。",
+      "イ": "S/TはISDNに対応する端末用のデジタルインタフェースであり、G3ファクシミリはそのまま接続できない。",
+      "ウ": "RS-232Cは機器間のシリアル通信に使われる。G3ファクシミリの電話回線をつなぐポートではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q42",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 42,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続のための技術及び理論 第4問 (5)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続のための技術及び理論",
+    "subject": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "端末設備の接続のための技術及び理論"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "ISDN基本ユーザ・網インタフェースのポイント・ツー・マルチポイント構成において、［オ］との間は、4線式のバス配線で接続される。",
+    "choices": {
+      "ア": "DSUとTA",
+      "イ": "TAとアナログ電話機",
+      "ウ": "保安器とDSU"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "基本インタフェースではDSUと各TAを接続する宅内側のS/T区間に送信・受信の2対4線を使い、バス配線を行う。",
+    "choiceExplanations": {
+      "ア": "基本インタフェースではDSUと各TAを接続する宅内側のS/T区間に送信・受信の2対4線を使い、バス配線を行う。",
+      "イ": "TAとアナログ電話機はアナログ電話回線用の2線で接続する。",
+      "ウ": "保安器とDSUの間は加入者線側の区間であり、複数の端末をつなぐ宅内の4線式バスではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q43",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 43,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続に関する法規 第1問 (1)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続に関する法規",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "端末設備の接続に関する法規"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "「電気通信事業法」又は「電気通信事業法施行規則」の規定に基づいて答えなさい。\n\n電気通信事業法に規定する「検閲の禁止」、「秘密の保護」又は「利用の公平」について述べた次の文章のうち、誤っているものは、［ア］である。",
+    "choices": {
+      "ア": "電気通信事業者の取扱中に係る通信は、犯罪捜査に必要であると総務大臣が認めた場合を除き、検閲してはならない。",
+      "イ": "電気通信事業に従事する者は、在職中電気通信事業者の取扱中に係る通信に関して知り得た他人の秘密を守らなければならない。その職を退いた後においても、同様とする。",
+      "ウ": "電気通信事業者は、電気通信役務の提供について、不当な差別的取扱いをしてはならない。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "検閲を禁止する条文に、総務大臣が犯罪捜査のために認めるときという例外はない。",
+    "choiceExplanations": {
+      "ア": "検閲を禁止する条文に、総務大臣が犯罪捜査のために認めるときという例外はない。",
+      "イ": "事業に従事する者は通信取扱中に知った他人の秘密を守る義務がある。退職した後も同じである。",
+      "ウ": "電気通信事業者による役務の提供について、不当な差別的取扱いは禁止されている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-05-15"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q44",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 44,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続に関する法規 第1問 (2)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続に関する法規",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "端末設備の接続に関する法規"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "「電気通信事業法」又は「電気通信事業法施行規則」の規定に基づいて答えなさい。\n\n端末系伝送路設備とは、端末設備又は［イ］と接続される伝送路設備をいう。",
+    "choices": {
+      "ア": "電気通信回線設備",
+      "イ": "自営電気通信設備",
+      "ウ": "事業用電気通信設備"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "端末系伝送路設備は、端末設備または自営電気通信設備に接続される伝送路設備である。",
+    "choiceExplanations": {
+      "ア": "電気通信回線設備は伝送路等を含む概念で、接続先としてこの空欄で定める語ではない。",
+      "イ": "端末系伝送路設備は、端末設備または自営電気通信設備に接続される伝送路設備である。",
+      "ウ": "事業者側の設備を広く指す語であり、端末系伝送路の接続先の定義ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-05-15"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q45",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 45,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続に関する法規 第1問 (3)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続に関する法規",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "端末設備の接続に関する法規"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "「電気通信事業法」又は「電気通信事業法施行規則」の規定に基づいて答えなさい。\n\n総務大臣は、電気通信事業者が重要通信に関する事項について適切に配慮していないと認めるときは、当該電気通信事業者に対し、利用者の利益又は公共の利益を確保するために必要な限度において、［ウ］その他の措置をとるべきことを命ずることができる。",
+    "choices": {
+      "ア": "契約の内容の変更",
+      "イ": "業務の一部の停止",
+      "ウ": "業務の方法の改善"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "必要な限度で業務の方法の改善やその他の措置をとるよう命じることができる。",
+    "choiceExplanations": {
+      "ア": "重要通信への配慮を求める規定は、個別の契約内容の変更だけを命じる規定ではない。",
+      "イ": "業務の一部の停止と規定しているのではなく、業務の方法の改善を挙げている。",
+      "ウ": "必要な限度で業務の方法の改善やその他の措置をとるよう命じることができる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-05-15"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q46",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 46,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続に関する法規 第1問 (4)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続に関する法規",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "端末設備の接続に関する法規"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "「電気通信事業法」又は「電気通信事業法施行規則」の規定に基づいて答えなさい。\n\n電気通信事業法の「端末設備の接続の検査」において、電気通信事業者の電気通信回線設備と端末設備との接続の検査に従事する者は、端末設備の設置の場所に立ち入るときは、その［エ］を示す証明書を携帯し、関係人に提示しなければならないと規定されている。",
+    "choices": {
+      "ア": "身分",
+      "イ": "計画",
+      "ウ": "経歴"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "接続の検査で設置場所に立ち入る者は、身分を示す証明書を携帯し、関係人に提示する。",
+    "choiceExplanations": {
+      "ア": "接続の検査で設置場所に立ち入る者は、身分を示す証明書を携帯し、関係人に提示する。",
+      "イ": "持参して提示すべきなのは作業計画ではなく身分証明書である。",
+      "ウ": "検査者の経歴を提出する手続ではない。検査者が自分の身分を示す書類を携帯する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-05-15"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q47",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 47,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続に関する法規 第1問 (5)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続に関する法規",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "端末設備の接続に関する法規"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "「電気通信事業法」又は「電気通信事業法施行規則」の規定に基づいて答えなさい。\n\n電気通信事業法に規定する「工事担任者による工事の実施及び監督」及び「工事担任者資格者証」について述べた次の二つの文章は、［オ］。\n\nA：工事担任者は、端末設備又は自営電気通信設備を接続する工事の実施又は監督の職務を誠実に行わなければならない。\nB：工事担任者資格者証の種類及び工事担任者が行い、又は監督することができる端末設備若しくは自営電気通信設備の接続に係る工事の範囲は、総務省令で定める。",
+    "choices": {
+      "ア": "Aのみ正しい",
+      "イ": "Bのみ正しい",
+      "ウ": "AもBも正しい",
+      "エ": "AもBも正しくない"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "Aは工事担任者の誠実な職務遂行の義務を述べ、Bは資格の種類と工事の範囲を総務省令で定める規定を述べる。",
+    "choiceExplanations": {
+      "ア": "Aの誠実な職務遂行は正しい。Bの資格者証の種類及び工事範囲を省令で定める説明も正しい。",
+      "イ": "Bは正しい。接続工事の実施又は監督を誠実に行うというAも法律に定められている。",
+      "ウ": "Aは工事担任者の誠実な職務遂行の義務を述べ、Bは資格の種類と工事の範囲を総務省令で定める規定を述べる。",
+      "エ": "AもBも電気通信事業法の工事担任者に関する規定に合う。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-05-15"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q48",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 48,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続に関する法規 第2問 (1)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続に関する法規",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "端末設備の接続に関する法規"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "「工事担任者規則」、「端末機器の技術基準適合認定等に関する規則」、「有線電気通信法」、「有線電気通信設備令」又は「不正アクセス行為の禁止等に関する法律」の規定に基づいて答えなさい。\n\n工事担任者資格者証の交付を受けた者は、端末設備等の接続に関する［ア］及び技術の向上を図るように努めなければならない。",
+    "choices": {
+      "ア": "知識",
+      "イ": "経験",
+      "ウ": "能力"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "資格者証の交付を受けた者には、端末設備等の接続に関する知識と技術の向上に努めることが求められる。",
+    "choiceExplanations": {
+      "ア": "資格者証の交付を受けた者には、端末設備等の接続に関する知識と技術の向上に努めることが求められる。",
+      "イ": "経験は技能向上に役立つが、規則がここで技術と並べているのは知識である。",
+      "ウ": "一般的な能力ではなく、端末設備等の接続に関する知識を向上させることを技術の向上と併せて定めている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-05-15"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q49",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 49,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続に関する法規 第2問 (2)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続に関する法規",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "端末設備の接続に関する法規"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "「工事担任者規則」、「端末機器の技術基準適合認定等に関する規則」、「有線電気通信法」、「有線電気通信設備令」又は「不正アクセス行為の禁止等に関する法律」の規定に基づいて答えなさい。\n\n端末機器の技術基準適合認定等に関する規則に規定する、端末機器の技術基準適合認定番号について述べた次の文章のうち、誤っているものは、［イ］である。",
+    "choices": {
+      "ア": "総合デジタル通信用設備に接続される端末機器に表示される技術基準適合認定番号の最初の文字は、Cである。",
+      "イ": "専用通信回線設備に接続される端末機器に表示される技術基準適合認定番号の最初の文字は、Bである。",
+      "ウ": "インターネットプロトコル移動電話用設備に接続される端末機器に表示される技術基準適合認定番号の最初の文字は、Fである。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "専用通信回線設備に接続する端末機器には先頭文字Dを用いる。Bとする点が誤りである。",
+    "choiceExplanations": {
+      "ア": "総合デジタル通信用設備に接続する端末機器の先頭文字はCである。",
+      "イ": "専用通信回線設備に接続する端末機器には先頭文字Dを用いる。Bとする点が誤りである。",
+      "ウ": "インターネットプロトコル移動電話用設備に接続する端末機器の先頭文字はFである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-05-15"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q50",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 50,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続に関する法規 第2問 (3)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続に関する法規",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "端末設備の接続に関する法規"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "「工事担任者規則」、「端末機器の技術基準適合認定等に関する規則」、「有線電気通信法」、「有線電気通信設備令」又は「不正アクセス行為の禁止等に関する法律」の規定に基づいて答えなさい。\n\n有線電気通信法は、有線電気通信設備の設置及び使用を規律し、有線電気通信に関する［ウ］することによって、公共の福祉の増進に寄与することを目的とする。",
+    "choices": {
+      "ア": "競争を促進",
+      "イ": "規格を統一",
+      "ウ": "秩序を確立"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "設備の設置及び使用を規律し、有線電気通信に関する秩序を確立して公共の福祉の増進に寄与することが目的である。",
+    "choiceExplanations": {
+      "ア": "この法律の目的条文は有線電気通信に関する秩序の確立を掲げる。競争の促進はここに置く文言ではない。",
+      "イ": "技術基準の規定はあるが、目的条文がこの箇所に掲げるのは秩序を確立することである。",
+      "ウ": "設備の設置及び使用を規律し、有線電気通信に関する秩序を確立して公共の福祉の増進に寄与することが目的である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-05-15"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q51",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 51,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続に関する法規 第2問 (4)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続に関する法規",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "端末設備の接続に関する法規"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "「工事担任者規則」、「端末機器の技術基準適合認定等に関する規則」、「有線電気通信法」、「有線電気通信設備令」又は「不正アクセス行為の禁止等に関する法律」の規定に基づいて答えなさい。\n\n有線電気通信設備令に規定する用語について述べた次の文章のうち、正しいものは、［エ］である。",
+    "choices": {
+      "ア": "線路とは、送信の場所と受信の場所との間に設置されている電線及びこれに係る中継器その他の機器であって、これらを支持し、又は保蔵するための工作物を除いたものをいう。",
+      "イ": "支持物とは、電柱、支線、つり線その他電線又は強電流電線を支持するための工作物をいう。",
+      "ウ": "強電流電線とは、強電流電気の伝送を行うための導体をいい、絶縁物又は保護物で被覆されている場合は、これらの物を除く。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "支持物は電線又は強電流電線を支持する工作物で、電柱や支線、つり線が例として挙げられる。",
+    "choiceExplanations": {
+      "ア": "線路の定義には電線や中継器等に加え、それらを支持又は保蔵するための工作物も含まれる。",
+      "イ": "支持物は電線又は強電流電線を支持する工作物で、電柱や支線、つり線が例として挙げられる。",
+      "ウ": "強電流電線には、強電流電気の伝送を行う導体に加え、絶縁物や保護物で被覆している場合はその被覆も含める。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-05-15"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q52",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 52,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続に関する法規 第2問 (5)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続に関する法規",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "端末設備の接続に関する法規"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "「工事担任者規則」、「端末機器の技術基準適合認定等に関する規則」、「有線電気通信法」、「有線電気通信設備令」又は「不正アクセス行為の禁止等に関する法律」の規定に基づいて答えなさい。\n\n不正アクセス行為の禁止等に関する法律において、［オ］とは、電気通信回線に接続している電子計算機(以下「特定電子計算機」という。)の利用(当該電気通信回線を通じて行うものに限る。)につき当該特定電子計算機の動作を管理する者をいう。",
+    "choices": {
+      "ア": "アクセス管理者",
+      "イ": "ネットワーク管理責任者",
+      "ウ": "セキュリティ管理者"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "アクセス管理者とは、電気通信回線経由の特定電子計算機の利用について、その動作を管理する者である。",
+    "choiceExplanations": {
+      "ア": "アクセス管理者とは、電気通信回線経由の特定電子計算機の利用について、その動作を管理する者である。",
+      "イ": "ネットワーク全体を管理する一般的な役割の名称であり、この法律で定義する語ではない。",
+      "ウ": "セキュリティ管理者はより広い職責を指し得る。法律は特定電子計算機の利用・動作を管理する者をいう。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-05-15"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q53",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 53,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続に関する法規 第3問 (1)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続に関する法規",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "端末設備の接続に関する法規"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "「端末設備等規則」の規定に基づいて答えなさい。\n\nアナログ電話用設備とは、電話用設備であって、端末設備又は［ア］を接続する点においてアナログ信号を入出力とするものをいう。",
+    "choices": {
+      "ア": "自営電気通信設備",
+      "イ": "有線電気通信設備",
+      "ウ": "電気通信回線設備"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "アナログ電話用設備は、端末設備又は自営電気通信設備との接続点でアナログ信号を入出力する電話用設備である。",
+    "choiceExplanations": {
+      "ア": "アナログ電話用設備は、端末設備又は自営電気通信設備との接続点でアナログ信号を入出力する電話用設備である。",
+      "イ": "有線電気通信設備という広い区分ではなく、端末設備に並べて自営電気通信設備を挙げている。",
+      "ウ": "電気通信回線設備は電話用設備の構成側の概念である。この定義では利用者側の接続相手として自営電気通信設備を挙げる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-05-15"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q54",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 54,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続に関する法規 第3問 (2)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続に関する法規",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "端末設備の接続に関する法規"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "「端末設備等規則」の規定に基づいて答えなさい。\n\n利用者の接続する端末設備は、事業用電気通信設備との責任の分界を明確にするため、事業用電気通信設備との間に分界点を有しなければならない。分界点における接続の方式は、端末設備を［イ］ごとに事業用電気通信設備から容易に切り離せるものでなければならない。",
+    "choices": {
+      "ア": "配線設備",
+      "イ": "自営電気通信設備",
+      "ウ": "電気通信回線"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "端末設備を事業用設備から電気通信回線ごとに容易に切り離せる接続方式にする。",
+    "choiceExplanations": {
+      "ア": "配線設備を単位とする条件ではなく、電気通信回線ごとに端末を切り離せるようにする。",
+      "イ": "分界点の方式では、端末を自営電気通信設備ごとに分けることを求めていない。",
+      "ウ": "端末設備を事業用設備から電気通信回線ごとに容易に切り離せる接続方式にする。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-05-15"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q55",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 55,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続に関する法規 第3問 (3)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続に関する法規",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "端末設備の接続に関する法規"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "「端末設備等規則」の規定に基づいて答えなさい。\n\n鳴音とは、［ウ］又は音響的結合により生ずる発振状態をいう。",
+    "choices": {
+      "ア": "光学的",
+      "イ": "電気的",
+      "ウ": "機械的"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "端末設備等規則では、電気的又は音響的な結合で生じる発振状態を鳴音と定義している。",
+    "choiceExplanations": {
+      "ア": "光学的な結合はこの発振状態の定義に入らない。音響的な結合と並んで挙げられるのは電気的な結合である。",
+      "イ": "端末設備等規則では、電気的又は音響的な結合で生じる発振状態を鳴音と定義している。",
+      "ウ": "機械的な結合という文言は定義に含まれない。規則では電気的又は音響的な結合による発振を鳴音としている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-05-15"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q56",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 56,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続に関する法規 第3問 (4)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続に関する法規",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "端末設備の接続に関する法規"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "「端末設備等規則」の規定に基づいて答えなさい。\n\n「絶縁抵抗等」において、端末設備の機器は、その電源回路と筐体及びその電源回路と事業用電気通信設備との間において、使用電圧が750ボルトを超える直流及び600ボルトを超える交流の場合にあっては、その使用電圧の1.5倍の電圧を連続して［エ］分間加えたときこれに耐える絶縁耐力を有しなければならないと規定されている。",
+    "choices": {
+      "ア": "10",
+      "イ": "15",
+      "ウ": "20"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "指定の高い使用電圧の区分では、使用電圧の1.5倍を連続10分間加えても耐えられることを求める。",
+    "choiceExplanations": {
+      "ア": "指定の高い使用電圧の区分では、使用電圧の1.5倍を連続10分間加えても耐えられることを求める。",
+      "イ": "試験を15分間とする規定ではない。指定時間は連続10分間である。",
+      "ウ": "20分は規則が定める試験時間の2倍である。ここでの印加時間は10分間である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-05-15"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q57",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 57,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続に関する法規 第3問 (5)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続に関する法規",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "端末設備の接続に関する法規"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "「端末設備等規則」の規定に基づいて答えなさい。\n\n「配線設備等」において、配線設備等の電線相互間及び電線と大地間の絶縁抵抗は、直流［オ］ボルト以上の一の電圧で測定した値で1メガオーム以上であることと規定されている。",
+    "choices": {
+      "ア": "100",
+      "イ": "200",
+      "ウ": "300"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "直流200 V以上の電圧をかけて測り、絶縁抵抗が1 MΩ以上であることを確認する。",
+    "choiceExplanations": {
+      "ア": "直流100 Vでは、この規則で求める測定電圧の下限に達しない。",
+      "イ": "直流200 V以上の電圧をかけて測り、絶縁抵抗が1 MΩ以上であることを確認する。",
+      "ウ": "300 Vで測る場合も下限以上だが、条文で定める下限は300 Vではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-05-15"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q58",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 58,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続に関する法規 第4問 (1)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続に関する法規",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "端末設備の接続に関する法規"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "「端末設備等規則」の規定に基づいて答えなさい。\n\nアナログ電話端末の直流回路は、［ア］ものでなければならない。",
+    "choices": {
+      "ア": "発信を行うとき呼の設定を行うためのメッセージを送出する",
+      "イ": "応答又は通信が終了したとき呼の切断を行うためのメッセージを送出する",
+      "ウ": "発信又は応答を行うとき閉じ、通信が終了したとき開く",
+      "エ": "発信を行うとき開き、応答又は通信が終了したとき閉じる"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "発信または応答を行うときに直流回路を閉じ、通信が終わったときに開く。",
+    "choiceExplanations": {
+      "ア": "アナログ電話端末の直流回路の開閉を問うており、呼設定メッセージの送出を答える設問ではない。",
+      "イ": "通信終了時の要件は直流回路を開くことである。呼切断用メッセージの説明は該当しない。",
+      "ウ": "発信または応答を行うときに直流回路を閉じ、通信が終わったときに開く。",
+      "エ": "発信時と終了時の直流回路の開閉が逆である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-05-15"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q59",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 59,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続に関する法規 第4問 (2)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続に関する法規",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "端末設備の接続に関する法規"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "「端末設備等規則」の規定に基づいて答えなさい。\n\nアナログ電話端末の「選択信号の条件」における押しボタンダイヤル信号について述べた次の文章のうち、誤っているものは、［イ］である。",
+    "choices": {
+      "ア": "低群周波数は、600ヘルツから900ヘルツまでの範囲内における特定の四つの周波数で規定されている。",
+      "イ": "ダイヤル番号の周波数は、低群周波数のうちの一つと高群周波数のうちの一つとの組合せで規定されている。",
+      "ウ": "ミニマムポーズとは、隣接する信号間の休止時間の最小値をいう。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "低群の四つには941 Hzも含まれ、600～900 Hzでは足りない。規定を説明する範囲は600～1,000 Hzである。",
+    "choiceExplanations": {
+      "ア": "低群の四つには941 Hzも含まれ、600～900 Hzでは足りない。規定を説明する範囲は600～1,000 Hzである。",
+      "イ": "DTMFのダイヤル番号は、低群と高群の周波数を各一つ選んで組み合わせる。",
+      "ウ": "ミニマムポーズは隣り合う信号間の休止時間の最小値である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-05-15"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q60",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 60,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続に関する法規 第4問 (3)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続に関する法規",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "端末設備の接続に関する法規"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "「端末設備等規則」の規定に基づいて答えなさい。\n\n専用通信回線設備等端末は、総務大臣が別に告示する電気的条件及び［ウ］条件のいずれかの条件に適合するものでなければならない。",
+    "choices": {
+      "ア": "光学的",
+      "イ": "磁気的",
+      "ウ": "機械的"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "専用通信回線設備等端末は、告示で定める電気的条件か光学的条件のいずれかを満たす。",
+    "choiceExplanations": {
+      "ア": "専用通信回線設備等端末は、告示で定める電気的条件か光学的条件のいずれかを満たす。",
+      "イ": "磁気に関わる条件は、この規定の二つの条件の一方として定められていない。",
+      "ウ": "機械的条件ではなく、電気的または光学的条件への適合が求められる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-05-15"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q61",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 61,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続に関する法規 第4問 (4)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続に関する法規",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "端末設備の接続に関する法規"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "「端末設備等規則」の規定に基づいて答えなさい。\n\n移動電話端末の「基本的機能」について述べた次の文章のうち、誤っているものは、［エ］である。",
+    "choices": {
+      "ア": "発信を行う場合にあっては、発信を要求する信号を送出するものであること。",
+      "イ": "応答を行う場合にあっては、応答を要求する信号を送出するものであること。",
+      "ウ": "通信を終了する場合にあっては、チャネル(通話チャネル及び制御チャネルをいう。)を切断する信号を送出するものであること。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "着信に応答する場合に送るのは応答を確認する信号である。応答を要求する信号とした記述が誤りである。",
+    "choiceExplanations": {
+      "ア": "移動電話端末は発信を行う場合、発信を要求する信号を送出する。",
+      "イ": "着信に応答する場合に送るのは応答を確認する信号である。応答を要求する信号とした記述が誤りである。",
+      "ウ": "通信終了時は通話チャネル又は制御チャネルを切断する信号を送出する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-05-15"
+  },
+  {
+    "id": "dekyo-charge-5-2022-round1-dekyo-analog2-q62",
+    "exam": "dekyo-charge-5",
+    "session": "dekyo-analog2",
+    "year": 2022,
+    "season": "round1",
+    "qNumber": 62,
+    "examDate": "2022-05-15",
+    "officialQuestionLabel": "第二級アナログ通信 端末設備の接続に関する法規 第4問 (5)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "令和4年度第1回",
+    "category": "端末設備の接続に関する法規",
+    "subject": "端末設備の接続に関する法規",
+    "topicTags": [
+      "端末設備の接続に関する法規"
+    ],
+    "difficulty": 2,
+    "type": "multiple-choice",
+    "question": "「端末設備等規則」の規定に基づいて答えなさい。\n\n総合デジタル通信端末は、自動再発信を行う場合(自動再発信の回数が15回以内の場合を除く。)にあっては、その回数は最初の発信から3分間に［オ］以内でなければならない。この場合において、最初の発信から3分を超えて行われる発信は、別の発信とみなす。なお、この規定は、火災、盗難その他の非常の場合にあっては、適用しない。",
+    "choices": {
+      "ア": "1回",
+      "イ": "2回",
+      "ウ": "3回"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "条件に該当する自動再発信は最初の発信から3分間に2回以内に制限する。それ以降は別の発信とみなす。",
+    "choiceExplanations": {
+      "ア": "最初の発信から3分間に所定の再発信を制限する回数は、1回ではなく2回以内である。",
+      "イ": "条件に該当する自動再発信は最初の発信から3分間に2回以内に制限する。それ以降は別の発信とみなす。",
+      "ウ": "3回までを認める規定ではなく、対象となる自動再発信は2回以内である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8122828.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c6b8ba.pdf",
+    "sourceAttribution": "出典：日本データ通信協会 令和4年度第1回 工事担任者試験 第二級アナログ通信（問題・正答）。",
+    "license": "DEKYO-owner-authorized",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-05-15"
+  }
+]
