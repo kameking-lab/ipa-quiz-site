@@ -1,5 +1,7 @@
 import { KOKKA_KEIKENSHA_2025_KISO } from "./2025-kiso";
+import { KOKKA_KEIKENSHA_2024_KISO } from "./2024-kiso";
 
 export const KOKKA_KEIKENSHA_QUESTIONS = [
   ...KOKKA_KEIKENSHA_2025_KISO,
+  ...KOKKA_KEIKENSHA_2024_KISO,
 ];
