@@ -6,12 +6,14 @@ import general2025 from "./2025-annual-ippan.json";
 import air2025 from "./2025-annual-taiki-gairon.json";
 import airSpecialty2025 from "./2025-annual-taiki-tokuron.json";
 import water2025 from "./2025-annual-suishitsu-gairon.json";
+import waterTreatment2025 from "./2025-annual-osui-tokuron.json";
 
 export const KOGAI_13_QUESTIONS: Question[] = [
   ...general2025,
   ...air2025,
   ...airSpecialty2025,
   ...water2025,
+  ...waterTreatment2025,
   ...general2024,
   ...general2023,
   ...general2022,
