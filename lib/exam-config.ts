@@ -1182,7 +1182,7 @@ kangoshi: {
         { session: "kogaku-b", urlSlug: "kogaku-b", expectedQuestions: 25, label: "無線工学B", categories: ["無線工学B"] },
         { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["法規"] },
     ],
-    seasons: ["march", "september"], yearRange: { start: 2026, end: 2026 },
+    seasons: ["march", "september"], yearRange: { start: 2022, end: 2026 },
 },
 "maritime1": {
     code: "maritime1", nameFull: "第一級海上無線通信士試験", urlSlug: "maritime1", level: "specialist",
