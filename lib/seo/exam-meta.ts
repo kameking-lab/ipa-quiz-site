@@ -819,6 +819,7 @@ const EXAM_FULL_NAMES: Record<ExamCode, string> = {
 
 
     "kouku-kanseikan": "航空管制官採用試験",
+    "rodo-kijun-kantokukan": "労働基準監督官採用試験",
     "kokka-ippan-dai": "国家公務員採用一般職試験（大卒程度試験）",
     "kokka-ippan-kou": "国家公務員採用一般職試験（高卒者試験）",
     "tsukanshi": "通関士試験"
@@ -1192,6 +1193,7 @@ const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number)
 
 
     "kouku-kanseikan": (c, y) => `航空管制官採用試験の適性試験Ⅰ・外国語試験の公開問題を${y}年度分・計${c}問収録。公式正答と全肢解説付き。`,
+    "rodo-kijun-kantokukan": (c, y) => `労働基準監督官採用試験の専門試験（多肢選択式）を${y}年度分・計${c}問収録。公式正答と全肢解説付き。`,
     "kokka-ippan-dai": (c, y) => `国家一般職（大卒程度・教養区分）の課題対応能力試験を${y}年度分・計${c}問収録。公式正答と全肢解説付き。`,
     "kokka-ippan-kou": (c, y) => `国家一般職（高卒者）の基礎能力・適性試験を${y}年度分・計${c}問収録。人事院の公式問題・正答と全肢解説で学べます。`,
     "tsukanshi": (c) => `通関士試験の${c}。公式正答どおりに収録。`

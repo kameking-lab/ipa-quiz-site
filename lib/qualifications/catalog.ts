@@ -1789,6 +1789,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["外国語試験・適性試験Ⅰの過年度の補充"],
   },
   {
+    slug: "rodo-kijun-kantokukan", examCode: "rodo-kijun-kantokukan", shortName: "労働基準監督官", fullName: "労働基準監督官採用試験",
+    domain: "legal", administrator: "人事院",
+    officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_23.html",
+    officialReuseTermsUrl: "https://www.jinji.go.jp/shinsei/notice.html",
+    status: "live",
+    reuseSummary: "2026年度の労働基準監督A専門試験を、必須12問と選択36問、公式正答・全肢解説付きで収録。",
+    attributionTemplate: "出典：人事院「労働基準監督官採用試験 専門試験（多肢選択式）」。解説は過去問AIの独自作成。",
+    remainingWork: ["2025・2024年度の専門Aと各年度の専門Bの補充"],
+  },
+  {
     slug: "kokka-ippan-dai", examCode: "kokka-ippan-dai", shortName: "国家一般職（大卒程度）", fullName: "国家公務員採用一般職試験（大卒程度試験）",
     domain: "legal", administrator: "人事院",
     officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_15.html",
