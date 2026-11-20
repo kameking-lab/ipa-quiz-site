@@ -1853,7 +1853,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_14.html",
     officialReuseTermsUrl: "https://www.jinji.go.jp/shinsei/notice.html",
     status: "live",
-    reuseSummary: "2024年度秋試験の基礎能力試験Ⅱ部29問、2025年度秋試験のⅠ・Ⅱ部54問、2026年度春試験のⅡ部20問を、公式正答・全肢解説付きで収録。",
+    reuseSummary: "2024年度秋試験の基礎能力試験Ⅰ・Ⅱ部53問、2025年度秋試験のⅠ・Ⅱ部54問、2026年度春試験のⅡ部20問を、公式正答・全肢解説付きで収録。",
     attributionTemplate: "出典：人事院「総合職試験（大卒程度試験・教養区分）」。解説は過去問AIの独自作成。",
     remainingWork: ["未収録年度の基礎能力試験の補充"],
   },
