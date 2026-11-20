@@ -1839,9 +1839,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_23.html",
     officialReuseTermsUrl: "https://www.jinji.go.jp/shinsei/notice.html",
     status: "live",
-    reuseSummary: "2026年度の労働基準監督A・Bの専門試験60問と、2025年度の労働基準監督Aの専門試験26問を、公式正答・全肢解説付きで収録。",
+    reuseSummary: "2026年度の労働基準監督A・Bの専門試験60問と、2025年度の労働基準監督A・Bの専門試験44問を、公式正答・全肢解説付きで収録。",
     attributionTemplate: "出典：人事院「労働基準監督官採用試験 専門試験（多肢選択式）」。解説は過去問AIの独自作成。",
-    remainingWork: ["2025年度の専門Bと2024年度の専門A・Bの補充"],
+    remainingWork: ["2024年度の専門A・Bの補充"],
   },
   {
     slug: "kokuzei-senmonkan", examCode: "kokuzei-senmonkan", shortName: "国税専門官", fullName: "国税専門官採用試験",
