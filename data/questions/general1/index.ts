@@ -4,6 +4,7 @@ import oralEnglish2022March from "./2022-03-eigo-oral.json";
 import oralEnglish2023March from "./2023-03-eigo-oral.json";
 import writtenEnglish2023March from "./2023-03-eigo-written.json";
 import geography2022March from "./2022-03-tiri.json";
+import law2022March from "./2022-03-hoki.json";
 import { normalizeQuestionData } from "@/lib/questions/native-b";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 
@@ -21,7 +22,7 @@ const CONTENT_HOLD_IDS = new Set([
   "radio21-general1-2026-09-tiri-q06",
 ]);
 
-export const GENERAL1_ALL_QUESTIONS = [...data, ...writtenEnglish2023March, ...oralEnglish2023March, ...engineeringA2023March, ...oralEnglish2022March, ...geography2022March].map(normalizeQuestionData);
+export const GENERAL1_ALL_QUESTIONS = [...data, ...writtenEnglish2023March, ...oralEnglish2023March, ...engineeringA2023March, ...oralEnglish2022March, ...geography2022March, ...law2022March].map(normalizeQuestionData);
 export const GENERAL1_QUESTIONS = GENERAL1_ALL_QUESTIONS.filter(
   (q) => isPracticeReadyQuestion(q) && !CONTENT_HOLD_IDS.has(q.id),
 );
