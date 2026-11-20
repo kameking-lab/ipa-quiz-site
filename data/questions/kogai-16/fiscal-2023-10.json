@@ -1,0 +1,418 @@
+[
+  {
+    "id": "kogai-16-2023-10-q1",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 126,
+    "officialQuestionLabel": "大規模水質特論 問1",
+    "subject": "大規模水質特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "大規模水質特論",
+    "topicTags": [
+      "大規模水質特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "富栄養化が進んだ閉鎖性海域に関する記述として，誤っているものはどれか。",
+    "choices": {
+      "ア": "外洋との水の交換が悪く，河川等から流入する汚染物質が長期間滞留しやすい。",
+      "イ": "夏季の成層期に，表層では植物プランクトンの成長に適した環境条件になり，\nCOD の内部生産が活発になる。",
+      "ウ": "現在，表層の溶存酸素量が水質環境基準の生活環境項目に追加されている。",
+      "エ": "夏季の成層期に，下層に貧酸素水塊が形成されやすい。",
+      "オ": "夏季の成層期に，海底堆積物は嫌気的な環境になりやすい。"
+    },
+    "answer": "ウ",
+    "explanation": "追加されたのは底層溶存酸素量である。貧酸素の影響を受けやすい底層の生物の保全を目的とする。",
+    "choiceExplanations": {
+      "ア": "水の交換が小さい湾などでは、外部から流入した物質が海域の外へ出るまでに時間がかかる。",
+      "イ": "夏は水が成層して水面側に光が多い。植物プランクトンの増殖で有機物が作られ、CODの内部生産が活発になる。",
+      "ウ": "追加されたのは底層溶存酸素量である。貧酸素の影響を受けやすい底層の生物の保全を目的とする。",
+      "エ": "成層すると上層から下層への酸素供給が抑えられる。下層では有機物の分解に酸素が使われ、貧酸素になりやすい。",
+      "オ": "底層の酸素供給が少ないと、堆積物の表面付近でも酸素が消費されて還元的になりやすい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724180540id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_10.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 大規模水質特論 問1（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  },
+  {
+    "id": "kogai-16-2023-10-q2",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 127,
+    "officialQuestionLabel": "大規模水質特論 問2",
+    "subject": "大規模水質特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "大規模水質特論",
+    "topicTags": [
+      "大規模水質特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "沿岸海域に生態系モデルを適用して，水質濃度や生物（特に低次栄養段階の植物プランクトンや動物プランクトン）の現存量について解析する手段に関する記述として，不適切なものはどれか。",
+    "choices": {
+      "ア": "工場・事業場からの栄養塩やCOD の負荷量はL - Q 式（L ＝aQb）を用いて推定する。",
+      "イ": "生態系を構成する状態変数の時間変化は生物・化学過程を含んだ拡散方程式を使って解析する。",
+      "ウ": "拡散方程式において物理的な輸送については，流体力学計算によって得られた結果を使う。",
+      "エ": "海底堆積物からの栄養塩類の負荷量は，局所的な観測データをモデルの格子点に内挿等を行って求めることができる。",
+      "オ": "生態系モデルにおける有機物の状態変数の計算結果を使ってCOD の時間変化や空間分布を推定することができる。"
+    },
+    "answer": "ア",
+    "explanation": "L–Q式は主に河川の流量と負荷量の経験的な関係の推定に用いる。工場・事業場の排出負荷は、一般に実測濃度と排水量などから設定する。",
+    "choiceExplanations": {
+      "ア": "L–Q式は主に河川の流量と負荷量の経験的な関係の推定に用いる。工場・事業場の排出負荷は、一般に実測濃度と排水量などから設定する。",
+      "イ": "移流・拡散に、増殖や分解などによる生成・消滅項を加えた方程式で状態変数を追跡する。",
+      "ウ": "水の流速や混合による物質輸送は、海域の流動・拡散の計算結果を生態系モデルに渡して求める。",
+      "エ": "湾内の観測地点で測った溶出量をモデルの格子点へ内挿し、全域での底泥負荷を設定できる。",
+      "オ": "水中の有機物量を酸素要求量に換算すると、CODの時間変化や場所による違いを評価できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724180540id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_10.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 大規模水質特論 問2（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  },
+  {
+    "id": "kogai-16-2023-10-q3",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 128,
+    "officialQuestionLabel": "大規模水質特論 問3",
+    "subject": "大規模水質特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "大規模水質特論",
+    "topicTags": [
+      "大規模水質特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "海洋生態系モデルにおける，植物プランクトンの増殖速度の計算で用いる光の制限項LTLIM に関する記述として，不適切なものはどれか。",
+    "choices": {
+      "ア": "温度の関数であるポテンシャル比増殖速度，LTLIM 及び栄養塩制限項の3\nつの積により，比増殖速度が求まる。",
+      "イ": "LTLIM と光強度I の関係を表す式として，I の増加とともにLTLIM が最大値1 に近づく式は，強光阻害の効果が考慮されていない。",
+      "ウ": "水中での深さ方向の光強度は，ランバート－ベールの法則に従って減衰する。",
+      "エ": "光の消散係数は，対象海域水固有の消散係数と溶存有機物濃度から求めることができる。",
+      "オ": "水面の太陽光強度の日変化は，最強日射量と日の出から日の入りまでの日長を用いた経験式で近似できる。"
+    },
+    "answer": "エ",
+    "explanation": "光の消散には水固有の係数だけでなく、植物プランクトンや懸濁物による吸収・散乱が影響する。溶存有機物濃度と水固有値だけで算定する記述は不適切である。",
+    "choiceExplanations": {
+      "ア": "最大可能な増殖速度に対して、光と栄養塩の制限を表す係数を掛けることで実際のモデル増殖速度を得る。",
+      "イ": "強い光で増殖が阻害されるモデルなら、制限項は高い光強度で低下する。１に近づく単調な式にはそれがない。",
+      "ウ": "一定の消散係数の下では、光は深さに応じて指数関数的に減衰する。ランバート・ベールの関係である。",
+      "エ": "光の消散には水固有の係数だけでなく、植物プランクトンや懸濁物による吸収・散乱が影響する。溶存有機物濃度と水固有値だけで算定する記述は不適切である。",
+      "オ": "日射を日中の最大値と日長で表す日変化関数を入力に用いれば、１日内での光の変動を近似できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724180540id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_10.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 大規模水質特論 問3（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  },
+  {
+    "id": "kogai-16-2023-10-q4",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 129,
+    "officialQuestionLabel": "大規模水質特論 問4",
+    "subject": "大規模水質特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "大規模水質特論",
+    "topicTags": [
+      "大規模水質特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "海域における溶存酸素の動態と海洋生態系モデルにおける計算過程に関する記述として，正しいものはどれか。",
+    "choices": {
+      "ア": "溶存酸素の増加要因となり得るプロセスは，大気との交換のみである。",
+      "イ": "飽和酸素量は，水温と塩分から計算で求めることができる。",
+      "ウ": "大気との酸素交換量は，再曝気係数と飽和酸素量の積で求めることができる。",
+      "エ": "亜硝酸体窒素の還元により，酸素が消費される。",
+      "オ": "硝酸体窒素の酸化により，酸素が消費される。"
+    },
+    "answer": "イ",
+    "explanation": "酸素溶解度は温度と塩分に依存する。海域モデルではその値を水温・塩分から求める。",
+    "choiceExplanations": {
+      "ア": "大気から溶け込む酸素に加え、植物プランクトンなどの光合成でも溶存酸素が供給される。",
+      "イ": "酸素溶解度は温度と塩分に依存する。海域モデルではその値を水温・塩分から求める。",
+      "ウ": "交換量は、飽和濃度と実際の溶存酸素濃度の差に再曝気係数を掛ける。飽和濃度だけを掛ける式ではない。",
+      "エ": "硝化では亜硝酸が硝酸に酸化されるときに酸素が使われる。亜硝酸の還元により酸素が使われるという説明は誤りである。",
+      "オ": "硝酸は好気的硝化の最終生成物である。通常の生態系モデルでは硝酸の酸化を酸素消費項に置かない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724180540id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_10.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 大規模水質特論 問4（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  },
+  {
+    "id": "kogai-16-2023-10-q5",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 130,
+    "officialQuestionLabel": "大規模水質特論 問5",
+    "subject": "大規模水質特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "大規模水質特論",
+    "topicTags": [
+      "大規模水質特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "排水を処理して再び用水として使用する再生利用に関する記述として，不適切なものはどれか。",
+    "choices": {
+      "ア": "極めて特殊な排水は別として，排水からも良質な用水を得ることは可能であるが，再生利用するか否かは経済性の問題である。",
+      "イ": "製造工程内のある工程の排水を原水とし，これに適切な処理を施して同一工程の同一用途に再生利用する場合，局部的再生利用と呼ばれる。",
+      "ウ": "工場内の各工程から発生する水を総合した後，適切な処理を施し，処理水を使用可能な工程で再利用する場合，工場単位再生利用と呼ばれる。",
+      "エ": "工業団地などで，各工場の排水を集中した後，適切な処理を施し，再び各工場に工業用水として供給する場合，地域的再生利用と呼ばれる。",
+      "オ": "局部的再生利用，工場単位再生利用及び地域的再生利用の3 つの再生利用方式のうち，工場単位再生利用が最もよく実施されている。"
+    },
+    "answer": "オ",
+    "explanation": "比較的簡単な処理で水質を合わせやすい局部的再生利用が広く行われている。工場単位が最も一般的という説明は不適切である。",
+    "choiceExplanations": {
+      "ア": "技術的には処理を組み合わせて再利用可能な水質にできる排水が多い。採用するかは処理費や用水費などに左右される。",
+      "イ": "特定工程内で水質を整え、同じ工程で使う方法は局部的再生利用に当たる。",
+      "ウ": "工場内の排水をまとめて処理し、利用に適した各工程へ戻す方式を工場単位再生利用という。",
+      "エ": "複数工場の排水を集約して処理し、同じ地域で再配水する方式は地域的再生利用である。",
+      "オ": "比較的簡単な処理で水質を合わせやすい局部的再生利用が広く行われている。工場単位が最も一般的という説明は不適切である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724180540id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_10.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 大規模水質特論 問5（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  },
+  {
+    "id": "kogai-16-2023-10-q6",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 131,
+    "officialQuestionLabel": "大規模水質特論 問6",
+    "subject": "大規模水質特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "大規模水質特論",
+    "topicTags": [
+      "大規模水質特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "開放循環式冷却水系において，濃縮倍数が3.0 で，循環水量に対する蒸発水量\n1.0 ％，飛散水量0.2 ％で運転されている場合の循環水量に対するブロー水量（％）\nはいくらになるか。",
+    "choices": {
+      "ア": "1.5",
+      "イ": "1.0",
+      "ウ": "0.5",
+      "エ": "0.3",
+      "オ": "0.1"
+    },
+    "answer": "エ",
+    "explanation": "蒸発は溶質を伴わないので、濃縮倍数は(1.0＋0.2＋B)/(0.2＋B)である。３と置くとB＝0.3％になる。",
+    "choiceExplanations": {
+      "ア": "ブロー1.5％なら溶質を伴う流出は1.7％であり、補給2.7％に対する濃縮倍数は約1.59倍になる。",
+      "イ": "ブローが1.0％なら濃縮倍数は(1.0＋0.2＋1.0)/(0.2＋1.0)≒1.83となる。",
+      "ウ": "0.5％のブローでは、飛散を合わせた溶質流出が0.7％となる。補給水量をこの値で割ると約2.43倍である。",
+      "エ": "蒸発は溶質を伴わないので、濃縮倍数は(1.0＋0.2＋B)/(0.2＋B)である。３と置くとB＝0.3％になる。",
+      "オ": "0.1％のブローでは蒸発以外の流出が0.3％しかなく、濃縮倍数は約4.33倍となる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724180540id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_10.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 大規模水質特論 問6（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  },
+  {
+    "id": "kogai-16-2023-10-q7",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 132,
+    "officialQuestionLabel": "大規模水質特論 問7",
+    "subject": "大規模水質特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "大規模水質特論",
+    "topicTags": [
+      "大規模水質特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "製鉄所の熱間圧延工程の排水処理に関する記述として，不適切なものはどれか。",
+    "choices": {
+      "ア": "直接冷却系と間接冷却系の排水は別系統で処理し，それぞれの使用箇所に循環使用するのが一般的である。",
+      "イ": "直接冷却水中の汚濁物質は，製品表面に生成されるスケールや油脂類などである。",
+      "ウ": "直接冷却水中の油分（n-ヘキサン抽出物質）は蒸気ストリッピングによって処理する。",
+      "エ": "熱間圧延工程で循環使用する間接冷却水の排出水は，基本的には温度上昇のみで水質の悪化はないので，冷却塔による水温低下処理を行う。",
+      "オ": "仕上圧延で発生するスケールは，スケールピット及び沈殿槽を通した後に，\nろ過により処理する。"
+    },
+    "answer": "ウ",
+    "explanation": "油は油水分離や凝集などで除去する。蒸気ストリッピングは揮発性成分の除去に用いられ、スケール等と混じる油分の標準的な除去方法ではない。",
+    "choiceExplanations": {
+      "ア": "直接冷却水はスケールや油を含み、間接冷却水は主に昇温する。処理を分けて再使用するのが一般的である。",
+      "イ": "圧延材と接触する水に、はがれた酸化物スケールや機械・圧延工程の油脂などが混ざる。",
+      "ウ": "油は油水分離や凝集などで除去する。蒸気ストリッピングは揮発性成分の除去に用いられ、スケール等と混じる油分の標準的な除去方法ではない。",
+      "エ": "冷却対象と直接接触しない水は成分の変化が少ない。冷却塔で温度を下げて循環させる。",
+      "オ": "大きなスケールをピットや沈殿槽で除き、さらに残った懸濁物をろ過する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724180540id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_10.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 大規模水質特論 問7（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  },
+  {
+    "id": "kogai-16-2023-10-q8",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 133,
+    "officialQuestionLabel": "大規模水質特論 問8",
+    "subject": "大規模水質特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "大規模水質特論",
+    "topicTags": [
+      "大規模水質特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "製油所におけるプロセス排水の処理フローとして，最も適切なものはどれか。",
+    "choices": {
+      "ア": "排水ストリッパー → オイルセパレーター → 活性汚泥 → 急速ろ過 → 活性炭 → 放流",
+      "イ": "オイルセパレーター → 排水ストリッパー → 急速ろ過 → 活性汚泥 → 活性炭 → 放流",
+      "ウ": "急速ろ過 → 活性汚泥 → オイルセパレーター → 排水ストリッパー → 活性炭 → 放流",
+      "エ": "活性汚泥 → オイルセパレーター → 排水ストリッパー → 急速ろ過 → 活性炭 → 放流",
+      "オ": "活性汚泥 → 排水ストリッパー → 急速ろ過 → オイルセパレーター → 活性炭 → 放流"
+    },
+    "answer": "ア",
+    "explanation": "排水ストリッパーと油水分離装置で前処理し、活性汚泥で分解する。その後に急速ろ過と活性炭を通して放流する。",
+    "choiceExplanations": {
+      "ア": "排水ストリッパーと油水分離装置で前処理し、活性汚泥で分解する。その後に急速ろ過と活性炭を通して放流する。",
+      "イ": "急速ろ過は活性汚泥処理後に残った固形分などの仕上げ除去に用いる。生物処理の前に置く流れが合わない。",
+      "ウ": "前処理で除くべき揮発性成分や油を活性汚泥処理へ送り込む順序になる。ストリッパーと油水分離を前段に置く。",
+      "エ": "活性汚泥処理は、油や揮発性汚染物質を除いてから行う。最初に生物処理槽へ入れるのは不適切である。",
+      "オ": "油を除く装置が急速ろ過より後になっている。油水分離とストリッピングは、後続の生物処理・仕上げ処理の前に設ける。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724180540id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_10.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 大規模水質特論 問8（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized",
+    "imageUrls": [
+      "/images/questions/kogai-16/2023/10/q8-1.webp"
+    ],
+    "imageAltTexts": [
+      "大規模水質特論 問8の公式問題"
+    ]
+  },
+  {
+    "id": "kogai-16-2023-10-q9",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 134,
+    "officialQuestionLabel": "大規模水質特論 問9",
+    "subject": "大規模水質特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "大規模水質特論",
+    "topicTags": [
+      "大規模水質特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "製紙工場における排水処理工程に関する記述として，誤っているものはどれか。",
+    "choices": {
+      "ア": "処理の対象とする水質汚濁物質は，BOD あるいはCOD 成分とSS である。",
+      "イ": "排水は初沈槽において繊維分などの粗いSS を除去した後に活性汚泥曝気槽に送られる。",
+      "ウ": "活性汚泥処理では，窒素，りんを添加する。",
+      "エ": "活性汚泥処理水は，消毒剤を添加した後に凝集沈殿槽に送られる。",
+      "オ": "脱水機のろ水は排水処理工程の入口に戻す。"
+    },
+    "answer": "エ",
+    "explanation": "消毒剤は活性汚泥処理の後すぐに入れて凝集沈殿へ送るためのものではない。凝集沈殿などで処理した後に、必要に応じて消毒を行う。",
+    "choiceExplanations": {
+      "ア": "主な処理対象は溶存・懸濁有機物によるBOD、CODと、水に浮遊するSSである。",
+      "イ": "初沈槽は大きい繊維などを沈殿除去し、後段の生物処理に送る水の固形分を減らす。",
+      "ウ": "製紙排水は有機負荷に対して窒素やりんが不足しやすい。微生物の栄養として必要に応じて添加する。",
+      "エ": "消毒剤は活性汚泥処理の後すぐに入れて凝集沈殿へ送るためのものではない。凝集沈殿などで処理した後に、必要に応じて消毒を行う。",
+      "オ": "脱水時のろ液には濁りや溶存負荷が残る場合がある。処理設備の入口へ戻して処理する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724180540id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_10.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 大規模水質特論 問9（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  },
+  {
+    "id": "kogai-16-2023-10-q10",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 135,
+    "officialQuestionLabel": "大規模水質特論 問10",
+    "subject": "大規模水質特論",
+    "examDate": "2023-10-01",
+    "lawReferenceDate": "2023-04-01",
+    "category": "大規模水質特論",
+    "topicTags": [
+      "大規模水質特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "大規模食料品製造工場からの排水処理に関する記述として，誤っているものはどれか。",
+    "choices": {
+      "ア": "ビール工場において活性汚泥法の前段にUASB を導入し，二段処理を行っている例がある。",
+      "イ": "COD 総量規制対象地域にあるビール工場で下水道放流する場合には，凝集沈殿＋砂ろ過＋活性炭吸着の高度処理フローを追加する必要がある。",
+      "ウ": "UASB を導入したビール工場で，生成したメタンガスを用いて発電をする例がある。",
+      "エ": "清涼飲料水工場からの排水中の有機物のほとんどは糖質と有機酸である。",
+      "オ": "清涼飲料水工場の総合排水は水質変動が大きいため，滞留時間が長い処理方式がとられることがある。"
+    },
+    "answer": "イ",
+    "explanation": "下水道への排出には下水道側の受入基準が適用される。総量規制対象地域にあることだけでは、設問の高度処理の全段階が必要とはいえない。",
+    "choiceExplanations": {
+      "ア": "ビール製造の高い有機負荷に対して、前段のUASBと後段の好気処理を組み合わせる事例がある。",
+      "イ": "下水道への排出には下水道側の受入基準が適用される。総量規制対象地域にあることだけでは、設問の高度処理の全段階が必要とはいえない。",
+      "ウ": "UASBで有機物を分解した際のメタンを含むガスを回収し、発電などに利用する例がある。",
+      "エ": "清涼飲料製造の排水には、飲料の原料に由来する糖類と有機酸が含まれる。",
+      "オ": "製造品種や洗浄の切替えで排水水質が変動する。滞留が長い処理方式には、負荷の変動を緩和できる利点がある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20240724180540id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_10.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2023年度公害防止管理者等国家試験 大規模水質特論 問10（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  }
+]
