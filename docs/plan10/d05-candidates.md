@@ -1,6 +1,6 @@
 # PLAN10-D05 調理師試験の収録候補
 
-2026年11月20日確認。対象年度は2022〜2026年度。調理師免許の学科試験を実施機関ごとに扱い、同一の共通問題は1回だけ登録する。受験者数は令和7年度実績。センター分は同センターの当該年度の共通問題を使用した都県の合計の概数。 [厚生労働省 調理師試験実施状況](https://www.mhlw.go.jp/content/10900000/001715554.pdf)
+2026年11月20日確認。対象年度は2022〜2026年度。調理師免許の学科試験を実施機関ごとに扱い、同一の共通問題は1回だけ登録する。受験者数は令和7年度実績。センター分は同センターの共通問題を使用した都県の合計。 [厚生労働省 調理師試験実施状況](https://www.mhlw.go.jp/content/10900000/001715554.pdf)
 
 山口県は添付一覧・mainともに収録済み。C19ブランチの東京都・大阪府の教員採用試験と裁判所事務官試験は対象外。
 
@@ -8,9 +8,9 @@
 
 | 実施主体 | 受験者数 | 試験 | 年度・回 | 公式問題・正答 |
 | --- | ---: | --- | --- | --- |
-| 調理技術技能センター（東京都・愛知県・福岡県など） | 約1.2万人 | 調理師試験 | 2025 | [問題](https://chouri-ggc.or.jp/cms/wp-content/uploads/2025/11/%E3%80%90R7%E3%80%91%E8%AA%BF%E7%90%86%E5%B8%AB%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C%EF%BC%88%E6%9C%AC%E8%A9%A6%E9%A8%93%EF%BC%89.pdf)・[正答](https://chouri-ggc.or.jp/cms/wp-content/uploads/2025/11/%E3%80%90R7%E3%80%91%E8%A7%A3%E7%AD%94%E7%95%AA%E5%8F%B7%E4%B8%80%E8%A6%A7%EF%BC%88%E6%9C%AC%E8%A9%A6%E9%A8%93%EF%BC%89.pdf) |
-| 調理技術技能センター（東京都・愛知県・福岡県など） | 約1.2万人 | 調理師試験 | 2024 | [問題](https://chouri-ggc.or.jp/cms/wp-content/uploads/2024/12/%E3%80%90R6%E3%80%91%E8%AA%BF%E7%90%86%E5%B8%AB%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C%EF%BC%88%E6%9C%AC%E8%A9%A6%E9%A8%93%EF%BC%89.pdf)・[正答](https://chouri-ggc.or.jp/cms/wp-content/uploads/2024/12/%E3%80%90R6%E3%80%91%E8%A7%A3%E7%AD%94%E7%95%AA%E5%8F%B7%E4%B8%80%E8%A6%A7%EF%BC%88%E6%9C%AC%E8%A9%A6%E9%A8%93%EF%BC%89.pdf) |
-| 調理技術技能センター（東京都・愛知県・福岡県など） | 約1.2万人 | 調理師試験 | 2023 | [問題](https://chouri-ggc.or.jp/cms/wp-content/uploads/2023/12/%E3%80%90R05%E3%80%91%E8%AA%BF%E7%90%86%E5%B8%AB%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C%EF%BC%88%E6%9C%AC%E8%A9%A6%E9%A8%93%EF%BC%89.pdf)・[正答](https://chouri-ggc.or.jp/cms/wp-content/uploads/2023/12/%E3%80%90R05%E3%80%91%E8%A7%A3%E7%AD%94%E7%95%AA%E5%8F%B7%E4%B8%80%E8%A6%A7%EF%BC%88%E6%9C%AC%E8%A9%A6%E9%A8%93%EF%BC%89.pdf) |
+| 調理技術技能センター（東京都・愛知県・福岡県など） | 11,211人 | 調理師試験 | 2025 | [問題](https://www.pref.gifu.lg.jp/uploaded/attachment/476320.pdf)・[正答](https://www.pref.gifu.lg.jp/uploaded/attachment/476321.pdf) |
+| 調理技術技能センター（東京都・愛知県・福岡県など） | 11,211人 | 調理師試験 | 2024 | [問題](https://www.pref.gifu.lg.jp/uploaded/attachment/425083.pdf)・[正答](https://www.pref.gifu.lg.jp/uploaded/attachment/425084.pdf) |
+| 調理技術技能センター（東京都・愛知県・福岡県など） | 11,211人 | 調理師試験 | 2023 | [問題](https://www.pref.gifu.lg.jp/uploaded/attachment/378709.pdf)・[正答](https://www.pref.gifu.lg.jp/uploaded/attachment/378710.pdf) |
 | 関西広域連合（大阪府・兵庫県など2府5県） | 3,121人 | 調理師試験 | 2026 | [問題・正答](https://www.kouiki-kansai.jp/material/files/group/3/r8cyouri_mondai.pdf) |
 | 関西広域連合（大阪府・兵庫県など2府5県） | 3,121人 | 調理師試験 | 2025 | [問題・正答](https://www.kouiki-kansai.jp/material/files/group/12/chorishikenmondai7.pdf) |
 | 関西広域連合（大阪府・兵庫県など2府5県） | 3,121人 | 調理師試験 | 2024 | [問題・正答](https://www.kouiki-kansai.jp/material/files/group/12/chourishiken2024.pdf)・[不適切問題の扱い](https://www.kouiki-kansai.jp/material/files/group/12/futekisetu2024.pdf) |
@@ -39,10 +39,17 @@
 | 群馬県 | 263人 | 調理師試験 | 2026 | [問題](https://www.pref.gunma.jp/uploaded/attachment/716740.pdf)・[正答](https://www.pref.gunma.jp/uploaded/attachment/716743.pdf) |
 | 群馬県 | 263人 | 調理師試験 | 2025 | [問題](https://www.pref.gunma.jp/uploaded/attachment/678201.pdf)・[正答](https://www.pref.gunma.jp/uploaded/attachment/678203.pdf) |
 | 群馬県 | 263人 | 調理師試験 | 2024 | [問題](https://www.pref.gunma.jp/uploaded/attachment/678267.pdf)・[正答](https://www.pref.gunma.jp/uploaded/attachment/678265.pdf) |
+| 愛媛県 | 176人 | 調理師試験 | 2025 | [問題](https://www.pref.ehime.jp/uploaded/attachment/156910.pdf)・[正答](https://www.pref.ehime.jp/uploaded/attachment/156912.pdf) |
+| 愛媛県 | 176人 | 調理師試験 | 2024 | [問題](https://www.pref.ehime.jp/uploaded/attachment/125992.pdf)・[正答](https://www.pref.ehime.jp/uploaded/attachment/125994.pdf) |
+| 愛媛県 | 176人 | 調理師試験 | 2023 | [問題](https://www.pref.ehime.jp/uploaded/attachment/104177.pdf)・[正答](https://www.pref.ehime.jp/uploaded/attachment/104182.pdf) |
+| 愛媛県 | 176人 | 調理師試験 | 2022 | [問題](https://www.pref.ehime.jp/uploaded/attachment/104178.pdf)・[正答](https://www.pref.ehime.jp/uploaded/attachment/104183.pdf) |
 
 ## 原本の公開状況
 
 - 調理技術技能センターの公式一覧にある2023〜2025年度のPDFは取得時に403を返したため、委託元の岐阜県が公開している同センターの原本を取得した。 [岐阜県の問題・正答](https://www.pref.gifu.lg.jp/page/11051.html)
 - 調理技術技能センターの2026年度は12月18日公表予定。2022年度は現行の公表一覧に掲載なし。 [2026年度の案内](https://chouri-ggc.or.jp/chourishishiken/all_delegation/)・[過去問題](https://chouri-ggc.or.jp/chourishishiken/past_questions/)
 - 静岡県の2026年度は確認時点で原本・正答の掲載なし。2022年度も現行の公表一覧に掲載なし。 [静岡県の案内](https://www.pref.shizuoka.jp/kenkofukushi/eiseiyakuji/shokuanzen/shokushiken/1024968.html)
-- 現行掲載で確認できた範囲は神奈川県が直近4回、長野県が2026年度、沖縄県が2026・2025年度、群馬県が2026〜2024年度。旧年度の原本・正答は別途確認する。
+- 神奈川県の公式掲載は直近4回分。2022・2023年度は公式の問題・正答を揃えて取得できなかった。 [神奈川県の過去問](https://www.pref.kanagawa.jp/docs/e8z/cnt/f4501/)
+- 長野県、沖縄県、群馬県は表にある年度分を取得した。過年度に使われていた長野県の2024・2025年度、沖縄県の2023・2024年度、群馬県の2023年度のPDFリンクは確認時に404を返した。 [長野県](https://www.pref.nagano.lg.jp/shokusei/sangyo/shiken/chorishi/ch_kakomon.html)・[沖縄県](https://www.pref.okinawa.jp/kurashikankyo/shoku/1004023/1027370/1027372.html)・[群馬県](https://www.pref.gunma.jp/site/shokunoanzen/8244.html)
+- 愛媛県は2022〜2025年度の県実施分を公開。2026年度は調理技術技能センターの共通試験に移行した。 [愛媛県の試験案内](https://www.pref.ehime.jp/page/55585.html)
+- 奈良県は2025年度から関西広域連合の試験を実施。2024年度の県独自試験のPDFリンクは問題・正答とも取得時に403を返した。 [2024年度問題](https://www.pref.nara.jp/secure/313671/R6cyori.pdf)・[2024年度正答](https://www.pref.nara.jp/secure/313671/R6cyorikai.pdf)・[厚生労働省 令和6年度実績](https://www.mhlw.go.jp/content/10900000/001516201.pdf)
