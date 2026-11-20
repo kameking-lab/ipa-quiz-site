@@ -1,0 +1,482 @@
+[
+  {
+    "id": "kogai-13-2023-annual-ippan-funjin-q01",
+    "exam": "kogai-13",
+    "year": 2023,
+    "season": "annual",
+    "examDate": "2023-10-01",
+    "session": "ippan-funjin",
+    "qNumber": 1,
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "subject": "ばいじん・一般粉じん特論",
+    "category": "ばいじん・一般粉じん特論",
+    "topicTags": [
+      "空気力学的粒子径の計算"
+    ],
+    "difficulty": 2,
+    "question": "問1　空気力学的粒子径の計算。掲載の公式問題画像の問1を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "1.9",
+      "イ": "3.3",
+      "ウ": "10",
+      "エ": "17",
+      "オ": "52"
+    },
+    "answer": "ウ",
+    "explanation": "球形粒子の空気力学的粒子径は、基準密度1000 kg/m³に対する密度比の平方根を実粒径に掛ける。5.8×√3≒10 µm。",
+    "choiceExplanations": {
+      "ア": "1.9 µmは実粒径5.8 µmを密度比3で割った値に近い。密度が高い粒子の空気力学的粒子径は実粒径より大きい。",
+      "イ": "3.3 µmは√3で割った値に近い。基準密度より密度が高い場合は√3を掛ける。",
+      "ウ": "基準密度の3倍の密度を持つ球なので、空気力学的粒子径は5.8×√3≒10 µmになる。",
+      "エ": "17 µmは5.8に密度比を直接掛けた値に近い。ストークス領域の沈降速度は粒径の2乗に比例するので、密度の平方根を使う。",
+      "オ": "52 µmは密度比の2乗を掛けた値に近く、沈降速度を同じにする基準密度球の粒径としては大きすぎる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2023/ippan-funjin-p03.png"
+    ],
+    "imageAltTexts": [
+      "令和5年度 公害防止管理者 ばいじん・一般粉じん特論 公式問題冊子PDF 3ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724185428id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_13.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和5年度 公害防止管理者等国家試験 ばいじん・一般粉じん特論 問1（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2023-annual-ippan-funjin-q02",
+    "exam": "kogai-13",
+    "year": 2023,
+    "season": "annual",
+    "examDate": "2023-10-01",
+    "session": "ippan-funjin",
+    "qNumber": 2,
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "subject": "ばいじん・一般粉じん特論",
+    "category": "ばいじん・一般粉じん特論",
+    "topicTags": [
+      "送風機の回転数と単位動力当たりの風量"
+    ],
+    "difficulty": 2,
+    "question": "問2　送風機の回転数と単位動力当たりの風量。掲載の公式問題画像の問2を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "0.59",
+      "イ": "0.77",
+      "ウ": "1.0",
+      "エ": "1.3",
+      "オ": "1.7"
+    },
+    "answer": "ア",
+    "explanation": "送風機の相似則により風量は回転数の1乗、軸動力は3乗に比例する。風量/軸動力は回転数の2乗に反比例し、1/1.3²≒0.59倍になる。",
+    "choiceExplanations": {
+      "ア": "回転数1.3倍で風量は1.3倍、軸動力は1.3³倍なので、両者を割ると約0.59倍になる。",
+      "イ": "0.77倍は回転数の1乗の逆数に近い。風量/軸動力の比では2乗の逆数を使う。",
+      "ウ": "回転数に対する風量と軸動力の増え方は異なるので、単位動力当たりの風量は一定ではない。",
+      "エ": "1.3倍は風量だけの変化である。必要な軸動力の増加も含めると、単位動力当たりの風量は減る。",
+      "オ": "1.7倍は回転数比の2乗で、求める風量/軸動力の変化の逆数に近い。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2023/ippan-funjin-p03.png"
+    ],
+    "imageAltTexts": [
+      "令和5年度 公害防止管理者 ばいじん・一般粉じん特論 公式問題冊子PDF 3ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724185428id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_13.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和5年度 公害防止管理者等国家試験 ばいじん・一般粉じん特論 問2（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2023-annual-ippan-funjin-q03",
+    "exam": "kogai-13",
+    "year": 2023,
+    "season": "annual",
+    "examDate": "2023-10-01",
+    "session": "ippan-funjin",
+    "qNumber": 3,
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "subject": "ばいじん・一般粉じん特論",
+    "category": "ばいじん・一般粉じん特論",
+    "topicTags": [
+      "乱流での流通形式集じん率"
+    ],
+    "difficulty": 2,
+    "question": "問3　乱流での流通形式集じん率。掲載の公式問題画像の問3を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "η＝1−exp(−Q/(wA))",
+      "イ": "η＝1−exp(−wA/Q)",
+      "ウ": "η＝wA/Q",
+      "エ": "η＝Q/(wA)",
+      "オ": "η＝1/(1＋Q/(wA))"
+    },
+    "answer": "イ",
+    "explanation": "断面で濃度が均一なら、微小な集じん面積での粒子除去量はその場所の濃度に比例する。面積方向に積分すると通過率はexp(−wA/Q)になる。",
+    "choiceExplanations": {
+      "ア": "ガス流量Qが大きいほど、一般に通過する割合は増える。Q/(wA)を負の指数にすると、この関係が逆になる。",
+      "イ": "捕集速度wと面積Aの積を処理ガス量Qで割り、その負の指数関数を通過率とすると、集じん率は1から通過率を引いた値となる。",
+      "ウ": "wA/Qが小さいときの一次近似に近いが、この式のままでは1を超えることがあり、一般の集じん率にはならない。",
+      "エ": "ガス量Qが増すほど捕集率が増える関係は、集じん面積当たりの処理量が増えると捕集しにくくなる挙動と逆である。",
+      "オ": "面積に沿った濃度減少を積分すると指数形になる。提示された分数式も同じ極限を持つが、途中の濃度変化が異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2023/ippan-funjin-p03.png"
+    ],
+    "imageAltTexts": [
+      "令和5年度 公害防止管理者 ばいじん・一般粉じん特論 公式問題冊子PDF 3ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724185428id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_13.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和5年度 公害防止管理者等国家試験 ばいじん・一般粉じん特論 問3（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2023-annual-ippan-funjin-q04",
+    "exam": "kogai-13",
+    "year": 2023,
+    "season": "annual",
+    "examDate": "2023-10-01",
+    "session": "ippan-funjin",
+    "qNumber": 4,
+    "officialAnswerNumber": 5,
+    "type": "multiple-choice",
+    "subject": "ばいじん・一般粉じん特論",
+    "category": "ばいじん・一般粉じん特論",
+    "topicTags": [
+      "重力沈降室の100%分離限界粒子径"
+    ],
+    "difficulty": 2,
+    "question": "問4　重力沈降室の100%分離限界粒子径。掲載の公式問題画像の問4を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "μはガスの粘度である。",
+      "イ": "Hは沈降室高さである。",
+      "ウ": "uは気流の水平方向速度である。",
+      "エ": "ρₚは粒子の密度である。",
+      "オ": "Lは装置の入口幅である。"
+    },
+    "answer": "オ",
+    "explanation": "Lは気流が沈降室を通過する方向の長さである。沈降室内に留まる時間はL/uであり、入口の幅を用いるわけではない。",
+    "choiceExplanations": {
+      "ア": "μは沈降中に粒子が受ける粘性抵抗を決めるガスの粘度である。",
+      "イ": "Hは粒子が落下する必要がある高さであり、沈降室の高さを表す。",
+      "ウ": "uは水平方向の気流速度。装置内の滞留時間は水平長さLをuで割って求める。",
+      "エ": "ρₚは沈降する粒子の密度である。粒子の密度が高いほど、同じ粒径で速く沈降する。",
+      "オ": "Lは入口の幅でなく、沈降室内の流れ方向の長さを表す。距離が長いほど沈降に使える時間が増える。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2023/ippan-funjin-p04.png"
+    ],
+    "imageAltTexts": [
+      "令和5年度 公害防止管理者 ばいじん・一般粉じん特論 公式問題冊子PDF 4ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724185428id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_13.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和5年度 公害防止管理者等国家試験 ばいじん・一般粉じん特論 問4（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2023-annual-ippan-funjin-q05",
+    "exam": "kogai-13",
+    "year": 2023,
+    "season": "annual",
+    "examDate": "2023-10-01",
+    "session": "ippan-funjin",
+    "qNumber": 5,
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "subject": "ばいじん・一般粉じん特論",
+    "category": "ばいじん・一般粉じん特論",
+    "topicTags": [
+      "サイクロンの分離限界と圧力損失"
+    ],
+    "difficulty": 2,
+    "question": "問5　サイクロンの分離限界と圧力損失。掲載の公式問題画像の問5を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "一般に,入口ガス速度が大きいほど,分離限界粒子径は小さくなる。",
+      "イ": "サイクロン外筒半径が小さいほど,分離限界粒子径は小さくなる。",
+      "ウ": "幾何学的に相似のサイクロンでは,入口ガス速度が同じ場合,小さなサイズのサイクロンの方が圧力損失は大きくなる。",
+      "エ": "ダスト濃度が増加すると,圧力損失は減少する傾向がある。",
+      "オ": "サイクロンの閉塞は,円錐部下部のダスト排出口付近,又は円筒内壁で生じやすい。"
+    },
+    "answer": "ウ",
+    "explanation": "相似形で入口速度が等しいサイクロンでは、圧力損失は主に速度の動圧と形状で決まる。寸法が小さいだけで損失が増えるとはいえない。",
+    "choiceExplanations": {
+      "ア": "入口速度を上げると旋回も速くなり、粒子を外壁に分離する遠心効果が強まる。",
+      "イ": "同じ周速でも外筒半径が小さいほど遠心加速度が大きくなり、より小さい粒子を捕集できる。",
+      "ウ": "幾何形状が相似で入口速度が等しい場合、主要な圧力損失の違いを装置の大きさだけから説明できない。",
+      "エ": "高いダスト負荷は旋回するガスの挙動を変え、圧力損失を下げる傾向がある。",
+      "オ": "分離後のダストが集まる円錐部下端や、ダストが付着する円筒内壁は閉塞が起こりやすい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2023/ippan-funjin-p04.png"
+    ],
+    "imageAltTexts": [
+      "令和5年度 公害防止管理者 ばいじん・一般粉じん特論 公式問題冊子PDF 4ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724185428id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_13.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和5年度 公害防止管理者等国家試験 ばいじん・一般粉じん特論 問5（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2023-annual-ippan-funjin-q06",
+    "exam": "kogai-13",
+    "year": 2023,
+    "season": "annual",
+    "examDate": "2023-10-01",
+    "session": "ippan-funjin",
+    "qNumber": 6,
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "subject": "ばいじん・一般粉じん特論",
+    "category": "ばいじん・一般粉じん特論",
+    "topicTags": [
+      "湿式集じん装置の50%分離径"
+    ],
+    "difficulty": 2,
+    "question": "問6　湿式集じん装置の50%分離径。掲載の公式問題画像の問6を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "充塡塔",
+      "イ": "スプレー塔",
+      "ウ": "タイゼンワッシャー",
+      "エ": "サイクロンスクラバー",
+      "オ": "ジェットスクラバー"
+    },
+    "answer": "イ",
+    "explanation": "スプレー塔は気流と噴霧液滴を接触させる比較的単純な装置で、選択肢中では50%の捕集に必要な粒径が最も大きい。",
+    "choiceExplanations": {
+      "ア": "充塡塔は充塡材上に液膜を広げて気液の接触機会を増やせるため、スプレー塔より小さい粒子を捕集できる。",
+      "イ": "スプレー塔では比較的大きな液滴に粉じんを衝突させるため、微小な粒子は流れに追従して回避しやすく、50%分離径が大きい。",
+      "ウ": "タイゼンワッシャーは回転機構で液滴を細かく分散させるため、スプレー塔より小さい粒子の捕集に向く。",
+      "エ": "サイクロンスクラバーは旋回による遠心作用と洗浄液との接触を組み合わせ、より小さい粒子にも対応する。",
+      "オ": "ジェットスクラバーでは気体や液体の速度差を利用して粒子と液滴の衝突を促す。スプレー塔より50%分離径は小さい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2023/ippan-funjin-p04.png"
+    ],
+    "imageAltTexts": [
+      "令和5年度 公害防止管理者 ばいじん・一般粉じん特論 公式問題冊子PDF 4ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724185428id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_13.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和5年度 公害防止管理者等国家試験 ばいじん・一般粉じん特論 問6（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2023-annual-ippan-funjin-q07",
+    "exam": "kogai-13",
+    "year": 2023,
+    "season": "annual",
+    "examDate": "2023-10-01",
+    "session": "ippan-funjin",
+    "qNumber": 7,
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "subject": "ばいじん・一般粉じん特論",
+    "category": "ばいじん・一般粉じん特論",
+    "topicTags": [
+      "散水による堆積物の粉じん飛散抑制"
+    ],
+    "difficulty": 2,
+    "question": "問7　散水による堆積物の粉じん飛散抑制。掲載の公式問題画像の問7を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "野積みされた堆積物に散水された水は,表面より 10 〜 20 cm 程度に浸透する。",
+      "イ": "付着水分が質量の 5 %を超えると飛散しやすさは 1/2 になることが報告されている。",
+      "ウ": "付着水分が質量の 9 %程度で飛散しやすさは約 1/100 になることが報告されている。",
+      "エ": "スプリンクラーは堆積量の少ない場合に用いられる。",
+      "オ": "スプレーガンの口径は 20 〜 30 mm で,散水量は 500 〜 1500 L/min である。"
+    },
+    "answer": "ウ",
+    "explanation": "付着水分を増やすと粒子は飛散しにくくなるが、設問の9%程度で約1/100になるという数値は適切でない。飛散の程度は材料と風などにも左右される。",
+    "choiceExplanations": {
+      "ア": "散水は主として堆積物の表層を湿らせる。提示された10〜20 cm程度は野積みの堆積物への浸透の目安である。",
+      "イ": "付着水分によって粒子同士がつながり、示された条件では5%を超えると飛散しやすさが約半分になると報告されている。",
+      "ウ": "水分増加で飛散は抑制されるが、この選択肢は9%程度での抑制効果を約1/100と過大に示している。",
+      "エ": "散水範囲の比較的小さい堆積場では、スプリンクラーで必要な面積を覆える。",
+      "オ": "スプレーガンは大口径で一度に多量の水を遠くまで散布でき、大きな堆積物や広い場所に用いられる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2023/ippan-funjin-p05.png"
+    ],
+    "imageAltTexts": [
+      "令和5年度 公害防止管理者 ばいじん・一般粉じん特論 公式問題冊子PDF 5ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724185428id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_13.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和5年度 公害防止管理者等国家試験 ばいじん・一般粉じん特論 問7（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2023-annual-ippan-funjin-q08",
+    "exam": "kogai-13",
+    "year": 2023,
+    "season": "annual",
+    "examDate": "2023-10-01",
+    "session": "ippan-funjin",
+    "qNumber": 8,
+    "officialAnswerNumber": 5,
+    "type": "multiple-choice",
+    "subject": "ばいじん・一般粉じん特論",
+    "category": "ばいじん・一般粉じん特論",
+    "topicTags": [
+      "デービスの式のストークス数"
+    ],
+    "difficulty": 2,
+    "question": "問8　デービスの式のストークス数。掲載の公式問題画像の問8を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "ダストの粒子径の 2 乗に比例する。",
+      "イ": "ガスの粘度に反比例する。",
+      "ウ": "ダストの密度に比例する。",
+      "エ": "吸引ノズルの半径に反比例する。",
+      "オ": "測定点のガス流速に反比例する。"
+    },
+    "answer": "オ",
+    "explanation": "ストークス数は粒子が気流の変化に追従しにくい程度を表す。等速吸引からのずれを評価するときの式では、測定点のガス流速に比例する。",
+    "choiceExplanations": {
+      "ア": "粒子の緩和時間には粒子径の2乗が含まれ、粒子が大きいほど気流に追従しにくい。",
+      "イ": "粘度が高いと粒子が受ける粘性抵抗が大きいので、ストークス数はガスの粘度に反比例する。",
+      "ウ": "同じ寸法なら高密度粒子は慣性が大きい。緩和時間が増え、ストークス数も粒子密度に比例して増える。",
+      "エ": "ノズル半径は気流の変化を表す代表長さとして分母に入る。同じ流速ではノズルが小さいほどストークス数は大きい。",
+      "オ": "流速が上がるとノズル付近の流れが変わる時間が短くなり、粒子が追従しにくくなる。流速の1乗に比例する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2023/ippan-funjin-p05.png"
+    ],
+    "imageAltTexts": [
+      "令和5年度 公害防止管理者 ばいじん・一般粉じん特論 公式問題冊子PDF 5ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724185428id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_13.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和5年度 公害防止管理者等国家試験 ばいじん・一般粉じん特論 問8（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2023-annual-ippan-funjin-q09",
+    "exam": "kogai-13",
+    "year": 2023,
+    "season": "annual",
+    "examDate": "2023-10-01",
+    "session": "ippan-funjin",
+    "qNumber": 9,
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "subject": "ばいじん・一般粉じん特論",
+    "category": "ばいじん・一般粉じん特論",
+    "topicTags": [
+      "ダスト濃度の測定断面と測定点"
+    ],
+    "difficulty": 2,
+    "question": "問9　ダスト濃度の測定断面と測定点。掲載の公式問題画像の問9を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "できるだけ長い直管部を選び,なるべく垂直よりも水平の管がよい。",
+      "イ": "ガス流速が 5 m/s 以上の場所が望ましい。",
+      "ウ": "極端な絞りや曲管部から少なくとも直径又は角形ダクトの縦寸法の 1.5 倍以上離れた位置を選ぶ。",
+      "エ": "JIS では,断面積 0.25 m2 以下の小規模ダクトの場合,断面中心の一点を測定点としてよい。",
+      "オ": "JIS では,測定断面において,流速の分布が比較的対称とみなすことができた場合には,水平ダクトでは,垂直の対称軸に対して片側をとり,測定点数を 1/2 に減らしてもよい。"
+    },
+    "answer": "ア",
+    "explanation": "流れの乱れの少ない長い直管部を使い、条件が同じなら粒子の重力沈降による偏りが少ない鉛直ダクトを選ぶ。",
+    "choiceExplanations": {
+      "ア": "直管部を選ぶ点は適切だが、水平ダクトでは粒子が下側に偏る場合がある。可能なら鉛直ダクトを優先する。",
+      "イ": "流速5 m/s以上の位置が望ましいとされ、流れが極端に弱い位置や分布の偏った位置を避ける。",
+      "ウ": "断面が急に変わる箇所や曲管の近傍には流れの乱れがあるので、所定の直管長を確保する。",
+      "エ": "断面積0.25 m²以下の小規模ダクトについては、JIS Z 8808で断面中心の1点を測定点にできる。",
+      "オ": "水平ダクトの流速分布を鉛直軸に対して対称とみなせる場合、対称な片側で測定点数を半分にできる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2023/ippan-funjin-p06.png"
+    ],
+    "imageAltTexts": [
+      "令和5年度 公害防止管理者 ばいじん・一般粉じん特論 公式問題冊子PDF 6ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724185428id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_13.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和5年度 公害防止管理者等国家試験 ばいじん・一般粉じん特論 問9（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "kogai-13-2023-annual-ippan-funjin-q10",
+    "exam": "kogai-13",
+    "year": 2023,
+    "season": "annual",
+    "examDate": "2023-10-01",
+    "session": "ippan-funjin",
+    "qNumber": 10,
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "subject": "ばいじん・一般粉じん特論",
+    "category": "ばいじん・一般粉じん特論",
+    "topicTags": [
+      "二酸化炭素を含む排ガスの吸湿剤"
+    ],
+    "difficulty": 2,
+    "question": "問10　二酸化炭素を含む排ガスの吸湿剤。掲載の公式問題画像の問10を読み、該当する選択肢を選んでください。",
+    "choices": {
+      "ア": "酸化バリウム",
+      "イ": "酸化カルシウム",
+      "ウ": "シリカゲル",
+      "エ": "無水塩化カルシウム",
+      "オ": "酸化アルミニウム"
+    },
+    "answer": "エ",
+    "explanation": "吸湿剤には、水分を取る一方で二酸化炭素による質量増加を避けられる無水塩化カルシウムを用いる。",
+    "choiceExplanations": {
+      "ア": "酸化バリウムは二酸化炭素と反応して炭酸塩を生じ得るため、吸湿管の質量増加が水分だけを表さなくなる。",
+      "イ": "酸化カルシウムは二酸化炭素と反応して炭酸カルシウムを生じ得る。この反応も質量測定に影響する。",
+      "ウ": "シリカゲルは水分だけでなく二酸化炭素も吸着することがあり、この試料には適さない。",
+      "エ": "無水塩化カルシウムは水分を吸って質量が増える。二酸化炭素を含む排ガスの水分測定に適用できる吸湿剤である。",
+      "オ": "酸化アルミニウムは表面にガスを吸着するため、対象試料で水分のみの質量を求める設問の吸湿剤には該当しない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/kogai-13/2023/ippan-funjin-p06.png"
+    ],
+    "imageAltTexts": [
+      "令和5年度 公害防止管理者 ばいじん・一般粉じん特論 公式問題冊子PDF 6ページ。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20240724185428id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R05_13.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20240724173311id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR05_20231019.pdf",
+    "sourceAttribution": "出典：一般社団法人産業環境管理協会 令和5年度 公害防止管理者等国家試験 ばいじん・一般粉じん特論 問10（問題・正答）。公式掲載PDFのウェブアーカイブを使用。解説は過去問AIが作成。",
+    "license": "JEMAI-owner-authorized",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20"
+  }
+]
