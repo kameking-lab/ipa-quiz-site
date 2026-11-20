@@ -1,0 +1,632 @@
+[
+  {
+    "id": "koku-toku-2023-february-kogaku-q13",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 13,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "直流・交流とコンデンサ"
+    ],
+    "difficulty": 2,
+    "question": "直流と交流の電流の説明で、誤っているのはどれか。",
+    "choices": {
+      "ア": "直流は、常に流れる電流の方向が変わらない。",
+      "イ": "直流は、コンデンサによって遮断される。",
+      "ウ": "交流は、コンデンサの静電容量が大きくなるほど流れにくくなる。",
+      "エ": "交流は、時間とともに流れる電流の方向が変わる。"
+    },
+    "answer": "ウ",
+    "explanation": "容量リアクタンスは1/(2πfC)である。同じ周波数で容量が大きいほどリアクタンスは小さくなり、交流は流れやすくなる。",
+    "choiceExplanations": {
+      "ア": "定常な直流は時間が経過しても向きが反転しない。大きさが変化する脈流でも向きが一定なら直流成分を持つ。",
+      "イ": "電圧が一定になった後はコンデンサを通して直流電流が流れない。充電中には過渡的な電流が流れる。",
+      "ウ": "容量リアクタンスは1/(2πfC)である。同じ周波数で容量が大きいほどリアクタンスは小さくなり、交流は流れやすくなる。",
+      "エ": "交流では周期的に正負が変わる。典型的な正弦波の交流では電流の向きも半周期ごとに反転する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211505id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211435id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "c11873c39e8facf4f7932a97ba6bf28785b2d9ee092e4bcade12669c771669f4",
+      "answerPdfSha256": "d51a2df418c93bf2706b43db505092dd9c7f54ba2c7ba84d2d9554e76eca07d3",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 無線工学 問13。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "koku-toku-2023-february-kogaku-q14",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 14,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "NPNトランジスタの図記号"
+    ],
+    "difficulty": 2,
+    "question": "図に示すNPN 形トランジスタの図記号において、電極a の名称は、次のうちどれか。",
+    "choices": {
+      "ア": "コレクタ",
+      "イ": "ベース",
+      "ウ": "ドレイン",
+      "エ": "エミッタ"
+    },
+    "answer": "エ",
+    "explanation": "バイポーラトランジスタで矢印が付くのはエミッタである。NPNでは矢印が外向きで、図のaがこれに当たる。",
+    "choiceExplanations": {
+      "ア": "コレクタは通常矢印のない端子に対応する。図のaは外向きの矢印が付いた側である。",
+      "イ": "ベースは二本の斜めの線が接続する中央の線から引き出された端子であり、矢印のあるaとは異なる。",
+      "ウ": "ドレインは電界効果トランジスタの端子名である。このNPNバイポーラトランジスタの端子名ではない。",
+      "エ": "バイポーラトランジスタで矢印が付くのはエミッタである。NPNでは矢印が外向きで、図のaがこれに当たる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211505id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211435id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "c11873c39e8facf4f7932a97ba6bf28785b2d9ee092e4bcade12669c771669f4",
+      "answerPdfSha256": "d51a2df418c93bf2706b43db505092dd9c7f54ba2c7ba84d2d9554e76eca07d3",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 無線工学 問14。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/koku-toku/2023-february/q14-official-figure.png"
+    ],
+    "imageAltTexts": [
+      "NPN形トランジスタの図記号"
+    ]
+  },
+  {
+    "id": "koku-toku-2023-february-kogaku-q15",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 15,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "航空機の通信用ブレードアンテナ"
+    ],
+    "difficulty": 2,
+    "question": "外観が図に示すような航空機用通信アンテナの名称は、次のうちどれか。",
+    "choices": {
+      "ア": "スリーブアンテナ",
+      "イ": "ブレードアンテナ",
+      "ウ": "スロットアンテナ",
+      "エ": "ブラウンアンテナ"
+    },
+    "answer": "イ",
+    "explanation": "ブレードアンテナは機体外面に取り付ける薄い翼状・板状のアンテナで、図の外観と給電方法に一致する。",
+    "choiceExplanations": {
+      "ア": "スリーブアンテナは一般に導体を筒状に組み合わせる。図のような機体の外面に立つ板状の外観とは異なる。",
+      "イ": "ブレードアンテナは機体外面に取り付ける薄い翼状・板状のアンテナで、図の外観と給電方法に一致する。",
+      "ウ": "スロットアンテナは金属面に設けた細長い開口を利用する。図のように機体から板が立ち上がる形状ではない。",
+      "エ": "ブラウンアンテナは垂直素子と接地側の放射状の導体からなる方式であり、図の板状アンテナではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211505id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211435id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "c11873c39e8facf4f7932a97ba6bf28785b2d9ee092e4bcade12669c771669f4",
+      "answerPdfSha256": "d51a2df418c93bf2706b43db505092dd9c7f54ba2c7ba84d2d9554e76eca07d3",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 無線工学 問15。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/koku-toku/2023-february/q15-official-figure.png"
+    ],
+    "imageAltTexts": [
+      "機体上に取り付けた航空機用アンテナの外観"
+    ]
+  },
+  {
+    "id": "koku-toku-2023-february-kogaku-q16",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 16,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "パルスレーダーの距離分解能"
+    ],
+    "difficulty": 2,
+    "question": "レーダーの距離分解能を良くする方法として、正しいのは次のうちどれか。",
+    "choices": {
+      "ア": "アンテナの水平面内指向性を鋭くする。",
+      "イ": "パルス繰返し周波数を低くする。",
+      "ウ": "受信機の感度をよくする。",
+      "エ": "パルス幅を狭くする。"
+    },
+    "answer": "エ",
+    "explanation": "パルス幅が短いと隣り合う距離からの反射が時間的に重なりにくい。距離分解能の目安は光速とパルス幅の積の半分である。",
+    "choiceExplanations": {
+      "ア": "アンテナの水平指向性を鋭くすると、同方向に近い別々の方位を区別しやすくなる。距離方向の分解能を決める操作ではない。",
+      "イ": "繰返し周波数を下げると次のパルスまでの時間は長くなるが、反射波の時間幅は狭くならない。",
+      "ウ": "感度を上げると弱い反射を検出しやすくなるが、近接した距離から戻るパルスを時間的に分ける効果とは異なる。",
+      "エ": "パルス幅が短いと隣り合う距離からの反射が時間的に重なりにくい。距離分解能の目安は光速とパルス幅の積の半分である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211505id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211435id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "c11873c39e8facf4f7932a97ba6bf28785b2d9ee092e4bcade12669c771669f4",
+      "answerPdfSha256": "d51a2df418c93bf2706b43db505092dd9c7f54ba2c7ba84d2d9554e76eca07d3",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 無線工学 問16。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "koku-toku-2023-february-kogaku-q17",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 17,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "二次電池と直並列接続"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、電池について述べたものである。このうち誤っているものを下の番号から選べ。",
+    "choices": {
+      "ア": "鉛蓄電池及びリチウムイオン蓄電池は、二次電池である。",
+      "イ": "電圧の異なる電池を並列に接続することは避けなければならない。",
+      "ウ": "充放電を繰り返して使用できる電池を二次電池という。",
+      "エ": "電圧が等しく、容量が10〔Ah〕の電池を2 個直列に接続すると、合成容量は20〔Ah〕になる。"
+    },
+    "answer": "エ",
+    "explanation": "直列では同じ電流が2個に流れ、合計電圧が2倍になる。つないだ組全体のAh容量は1個分の10 Ahである。",
+    "choiceExplanations": {
+      "ア": "鉛蓄電池とリチウムイオン蓄電池は、いずれも外部から充電して繰り返し利用できる二次電池である。",
+      "イ": "電圧の異なる電池を並列に接続すると電池間に大きな電流が流れ得るため、避ける必要がある。",
+      "ウ": "放電後に充電して繰り返し使えるのが二次電池である。使い切りの一次電池とは充電可能性が異なる。",
+      "エ": "直列では同じ電流が2個に流れ、合計電圧が2倍になる。つないだ組全体のAh容量は1個分の10 Ahである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211505id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211435id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "c11873c39e8facf4f7932a97ba6bf28785b2d9ee092e4bcade12669c771669f4",
+      "answerPdfSha256": "d51a2df418c93bf2706b43db505092dd9c7f54ba2c7ba84d2d9554e76eca07d3",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 無線工学 問17。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "koku-toku-2023-february-kogaku-q18",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 18,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "直流電流計のつなぎ方"
+    ],
+    "difficulty": 2,
+    "question": "抵抗Rに流れる直流電流を測定するときの電流計Aのつなぎ方で、正しいのは次のうちどれか。",
+    "choices": {
+      "ア": "図の1",
+      "イ": "図の2",
+      "ウ": "図の3",
+      "エ": "図の4"
+    },
+    "answer": "イ",
+    "explanation": "図2は電流計と抵抗が直列であり、電源の正極側から電流計の正端子へ電流が入る。接続方法と極性がともに正しい。",
+    "choiceExplanations": {
+      "ア": "図1は電流計を抵抗と並列にしている。内部抵抗の小さい電流計では分流が大きく、抵抗の電流を正しく測れない。",
+      "イ": "図2は電流計と抵抗が直列であり、電源の正極側から電流計の正端子へ電流が入る。接続方法と極性がともに正しい。",
+      "ウ": "図3は抵抗との並列接続である。さらに電流計の極性も電源の極性に対して逆になっている。",
+      "エ": "図4は電流計を回路に直列にする点は正しいが、電流が負端子から入る向きで、電流計の極性が逆である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211505id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211435id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "c11873c39e8facf4f7932a97ba6bf28785b2d9ee092e4bcade12669c771669f4",
+      "answerPdfSha256": "d51a2df418c93bf2706b43db505092dd9c7f54ba2c7ba84d2d9554e76eca07d3",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 無線工学 問18。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/koku-toku/2023-february/q18-official-figure.png"
+    ],
+    "imageAltTexts": [
+      "電流計と抵抗の接続方法を示した四つの回路"
+    ]
+  },
+  {
+    "id": "koku-toku-2023-february-kogaku-q19",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 19,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "DSB送信機の振幅変調"
+    ],
+    "difficulty": 2,
+    "question": "DSB(A3E)送信機では、音声信号によって搬送波をどのように変化させるか。",
+    "choices": {
+      "ア": "搬送波の発射を断続させる。",
+      "イ": "振幅を変化させる。",
+      "ウ": "周波数を変化させる。",
+      "エ": "振幅と周波数をともに変化させる。"
+    },
+    "answer": "イ",
+    "explanation": "A3Eの両側波帯振幅変調では、音声信号の瞬時値に応じて搬送波の振幅を変化させる。",
+    "choiceExplanations": {
+      "ア": "搬送波の発射を音声に合わせて断続する方式ではない。音声波形の変化は連続的な振幅の変化として伝える。",
+      "イ": "A3Eの両側波帯振幅変調では、音声信号の瞬時値に応じて搬送波の振幅を変化させる。",
+      "ウ": "搬送波の周波数を音声に応じて変えるのは周波数変調である。A3Eは振幅変調を用いる。",
+      "エ": "A3Eで情報を載せるために変えるのは振幅である。周波数も同時に変える変調方式ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211505id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211435id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "c11873c39e8facf4f7932a97ba6bf28785b2d9ee092e4bcade12669c771669f4",
+      "answerPdfSha256": "d51a2df418c93bf2706b43db505092dd9c7f54ba2c7ba84d2d9554e76eca07d3",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 無線工学 問19。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "koku-toku-2023-february-kogaku-q20",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 20,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "機上気象レーダーの調整パネル"
+    ],
+    "difficulty": 2,
+    "question": "図に示す機上気象レーダーの調整器パネル面の操作に伴う機能で誤っているのはどれか。",
+    "choices": {
+      "ア": "STBY：準備が完了した状態であり、電波は発射されている。",
+      "イ": "RANGE：測定距離範囲を切り替えるために用いられ、目的に応じて適切なRANGE が選択される。",
+      "ウ": "ANT TILT：レーダーアンテナの垂直方向の角度を調整するために用いられ、上方に10度下方に15度の範囲で任意にセットできる。",
+      "エ": "GAIN：目標物の最適な影像が得られるように受信機の利得を調整する。"
+    },
+    "answer": "ア",
+    "explanation": "STBYは送信を開始できる準備状態で、この位置で電波を発射するという説明が誤りである。",
+    "choiceExplanations": {
+      "ア": "STBYは送信を開始できる準備状態で、この位置で電波を発射するという説明が誤りである。",
+      "イ": "RANGEで表示する距離範囲を切り替え、近い気象現象と遠い気象現象を目的に合わせて確認する。",
+      "ウ": "ANT TILTはアンテナの上下の向きを調節する。このパネルでは上10度から下15度の範囲が表示されている。",
+      "エ": "GAINは受信機の利得を調整し、反射の表示状態を変える。送信機の出力を変えるための調整ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211505id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211435id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "c11873c39e8facf4f7932a97ba6bf28785b2d9ee092e4bcade12669c771669f4",
+      "answerPdfSha256": "d51a2df418c93bf2706b43db505092dd9c7f54ba2c7ba84d2d9554e76eca07d3",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 無線工学 問20。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/koku-toku/2023-february/q20-official-figure.png"
+    ],
+    "imageAltTexts": [
+      "機上気象レーダーの調整パネル"
+    ]
+  },
+  {
+    "id": "koku-toku-2023-february-kogaku-q21",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 21,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "SSRモードSの選択質問"
+    ],
+    "difficulty": 2,
+    "question": "次の記述の［　］内に入れるべき字句の組合せで、正しいのはどれか。\n\nSSR モードS システムは、現在使用されているATCRBS と［A］、ICAO の国際標準方式の新しいシス\n\nテムである。この方式は、目的とする航空機にのみ［B］を指\n\n定して質問ができるため、交通量の多い空域でも目的機を見つけやすく、管制側と航空機間とでメッセージやデータ交換ができ、音声の通信量が少なくてすむ等の特徴がある。",
+    "choices": {
+      "ア": "互換性はなく／時間",
+      "イ": "互換性はなく／アドレス",
+      "ウ": "互換性があり／時間",
+      "エ": "互換性があり／アドレス"
+    },
+    "answer": "エ",
+    "explanation": "モードSはATCRBSとの互換性を備え、固有の航空機アドレスを指定することで特定機だけに質問できる。",
+    "choiceExplanations": {
+      "ア": "モードSとATCRBSには互換性がある。選択的な質問に使うのも時間ではなく航空機ごとのアドレスである。",
+      "イ": "機体ごとのアドレスを指定する点は正しいが、ATCRBSと互換性がないとする点が誤りである。",
+      "ウ": "ATCRBSとの互換性を備える点は正しい。個々の機体を選ぶために指定するのは時間ではなくアドレスである。",
+      "エ": "モードSはATCRBSとの互換性を備え、固有の航空機アドレスを指定することで特定機だけに質問できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211505id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211435id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "c11873c39e8facf4f7932a97ba6bf28785b2d9ee092e4bcade12669c771669f4",
+      "answerPdfSha256": "d51a2df418c93bf2706b43db505092dd9c7f54ba2c7ba84d2d9554e76eca07d3",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 無線工学 問21。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "koku-toku-2023-february-kogaku-q22",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 22,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "モードCの応答情報"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、ATC トランスポンダの動作について述べたものである。［　］内に入れるべき字句の組合せで、正しいのはどれか。\n\nSSR からの［A］の質問信号に対し自動的にB の情報パルスを応答信号として送信するこ\n\nとができる。",
+    "choices": {
+      "ア": "MTI／高度",
+      "イ": "MTI／速度",
+      "ウ": "モードC／高度",
+      "エ": "モードC／速度"
+    },
+    "answer": "ウ",
+    "explanation": "SSRからモードCの質問を受けると、トランスポンダは気圧高度に対応する符号を含む応答を返す。",
+    "choiceExplanations": {
+      "ア": "高度の情報は正しいが、SSRが高度を求める質問の種類はモードCである。MTIは移動目標表示の技術名である。",
+      "イ": "MTIは固定物からの反射を抑えて移動目標を表示するものであり、速度を答えるトランスポンダ質問ではない。",
+      "ウ": "SSRからモードCの質問を受けると、トランスポンダは気圧高度に対応する符号を含む応答を返す。",
+      "エ": "質問モードはモードCで合うが、応答情報は速度ではなく高度に関する符号である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211505id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211435id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "c11873c39e8facf4f7932a97ba6bf28785b2d9ee092e4bcade12669c771669f4",
+      "answerPdfSha256": "d51a2df418c93bf2706b43db505092dd9c7f54ba2c7ba84d2d9554e76eca07d3",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 無線工学 問22。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "koku-toku-2023-february-kogaku-q23",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 23,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "受信機の感度・忠実度・選択度"
+    ],
+    "difficulty": 2,
+    "question": "受信機の性能についての説明で、誤っているのは次のうちどれか。",
+    "choices": {
+      "ア": "忠実度は、受信する信号が受信機の出力側でどれだけ忠実に再現できるかの能力を表す。",
+      "イ": "感度は、どれだけ強い電波まで受信できるかの能力を表す。",
+      "ウ": "選択度は、多数の異なる周波数の電波の中から混信を受けないで、目的とする電波を選びだすことができるかの能力を表す。",
+      "エ": "安定度は、周波数及び強さが一定の電波を受信したとき、再調整をしないで、どれだけ長時間にわたって、一定の出力が得られるかの能力を表す。"
+    },
+    "answer": "イ",
+    "explanation": "感度は必要な品質で受信できる信号の最小の強さに関係する。どれだけ強い電波を受信できるかではない。",
+    "choiceExplanations": {
+      "ア": "忠実度は受信した音声などを出力側で原信号に近い形で再現できる度合いを表し、記述は正しい。",
+      "イ": "感度は必要な品質で受信できる信号の最小の強さに関係する。どれだけ強い電波を受信できるかではない。",
+      "ウ": "選択度は周波数の異なる信号の中から、目的の信号を通し妨害信号を抑える能力を表す。",
+      "エ": "入力の強さと周波数が一定であれば再調整せず一定の出力を保てる能力を安定度といい、記述は正しい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211505id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211435id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "c11873c39e8facf4f7932a97ba6bf28785b2d9ee092e4bcade12669c771669f4",
+      "answerPdfSha256": "d51a2df418c93bf2706b43db505092dd9c7f54ba2c7ba84d2d9554e76eca07d3",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 無線工学 問23。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20"
+  },
+  {
+    "id": "koku-toku-2023-february-kogaku-q24",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 24,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "DSB送信機の構成"
+    ],
+    "difficulty": 2,
+    "question": "図は、DSB(A3E)送信機の構成例を示したものである。［　］内に入れるべき名称の組合せで、正しいのは次のうちどれか。",
+    "choices": {
+      "ア": "変調器／ミクサ",
+      "イ": "変調器／電力増幅器",
+      "ウ": "IDC／ミクサ",
+      "エ": "IDC／電力増幅器"
+    },
+    "answer": "イ",
+    "explanation": "音声と搬送波から振幅変調波を作るAが変調器であり、アンテナに送る電力を高めるBが電力増幅器である。",
+    "choiceExplanations": {
+      "ア": "Aは音声と搬送波を組み合わせる変調器だが、Bは既に変調された信号を出力用に増幅する段である。",
+      "イ": "音声と搬送波から振幅変調波を作るAが変調器であり、アンテナに送る電力を高めるBが電力増幅器である。",
+      "ウ": "IDCは過変調を抑えるための回路であり、搬送波に音声の変化を載せるAの機能ではない。",
+      "エ": "Bは電力増幅器で合っているが、Aは音声と搬送波を使って変調波を作る変調器である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20230610211505id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230610211435id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "c11873c39e8facf4f7932a97ba6bf28785b2d9ee092e4bcade12669c771669f4",
+      "answerPdfSha256": "d51a2df418c93bf2706b43db505092dd9c7f54ba2c7ba84d2d9554e76eca07d3",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 無線工学 問24。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/koku-toku/2023-february/q24-official-figure.png"
+    ],
+    "imageAltTexts": [
+      "DSB送信機の構成図"
+    ]
+  }
+]
