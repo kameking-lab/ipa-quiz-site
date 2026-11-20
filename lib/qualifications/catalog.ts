@@ -1784,7 +1784,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_24.html",
     officialReuseTermsUrl: "https://www.jinji.go.jp/shinsei/notice.html",
     status: "live",
-    reuseSummary: "2026年度の適性試験Ⅰ60問と2024～2026年度の外国語試験（多肢選択式）の公開問題66問を、公式正答・全肢解説付きで収録。",
+    reuseSummary: "2024・2026年度の適性試験Ⅰ120問と2024～2026年度の外国語試験（多肢選択式）の公開問題66問を、公式正答・全肢解説付きで収録。",
     attributionTemplate: "出典：人事院「航空管制官採用試験」。解説は過去問AIの独自作成。",
     remainingWork: ["2025・2024年度の適性試験Ⅰの補充"],
   },
