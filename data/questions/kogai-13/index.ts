@@ -1,4 +1,5 @@
 import type { Question } from "@/lib/questions/types";
+import waterHazard2022 from "./2022-annual-suishitsu-yugai.json";
 import airHazard2022 from "./2022-annual-taiki-yugai.json";
 import airWater2022 from "./2022-annual-taiki-suishitsu-gairon.json";
 import generalDust2022 from "./2022-annual-ippan-funjin.json";
@@ -123,6 +124,7 @@ export const KOGAI_13_QUESTIONS: Question[] = [
   ...airLarge2022,
   ...generalDust2022,
   ...water2022,
+  ...waterHazard2022,
   ...waterLarge2022,
   ...airWater2022,
 ] as Question[];
