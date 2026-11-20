@@ -1,3 +1,4 @@
+import fk508Kiso from './2023-july-fk508-kiso.json';
 import fy508Houki from './2023-july-fy508-houki.json';
 import fb507KogakuB from './2023-july-fb507-kogaku-b.json';
 import fa507KogakuA from './2023-july-fa507-kogaku-a.json';
@@ -18,6 +19,7 @@ import julKogakuB from './2026-july-kogaku-b.json';
 import { normalizeQuestionData } from '@/lib/questions/native-b';
 
 export const RIKU_TECH1_QUESTIONS = [
+  ...fk508Kiso,
   ...fy508Houki,
   ...fb507KogakuB,
   ...fa507KogakuA,
