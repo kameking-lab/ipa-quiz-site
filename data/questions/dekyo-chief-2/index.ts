@@ -8,6 +8,7 @@ import transmission2023First from "./2023-first-transmission.json";
 import transmission2023Second from "./2023-second-transmission.json";
 import transmission2024Second from "./2024-second-transmission.json";
 import transmission2024First from "./2024-first-transmission.json";
+import law2022Second from "./2022-second-law.json";
 import law2023First from "./2023-first-law.json";
 import law2023Second from "./2023-second-law.json";
 import law2024First from "./2024-first-law.json";
@@ -35,4 +36,5 @@ export const DEKYO_CHIEF_2_QUESTIONS: Question[] = [
   ...transmission2023First as Question[],
   ...line2023First as Question[],
   ...system2022Second as Question[],
+  ...law2022Second as Question[],
 ];
