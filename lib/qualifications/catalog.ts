@@ -1794,9 +1794,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_31.html",
     officialReuseTermsUrl: "https://www.jinji.go.jp/shinsei/notice.html",
     status: "live",
-    reuseSummary: "2024～2026年度特別試験および2024・2025年度通常試験の基礎能力試験の公開問題193問と、2024・2025年度の管制課程・航空課程・海洋科学課程に共通する学科試験（数学・英語）50問、2024年度海洋科学課程の物理13問を、公式正答・全肢解説付きで収録。",
+    reuseSummary: "2023～2026年度の特別試験、2023・2024年度の通常試験の基礎能力試験221問と、2023～2025年度の学科試験（数学・英語・物理）97問を公式正答・全肢解説付きで収録。",
     attributionTemplate: "出典：人事院「海上保安学校学生採用試験 基礎能力試験」。解説は過去問AIの独自作成。",
-    remainingWork: ["過年度の基礎能力試験と学科試験の追加"],
   },
   {
     slug: "kouku-kanseikan", examCode: "kouku-kanseikan", shortName: "航空管制官", fullName: "航空管制官採用試験",
@@ -1806,7 +1805,6 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     status: "live",
     reuseSummary: "2024～2026年度の適性試験Ⅰ180問と外国語試験（多肢選択式）の公開問題66問を、公式正答・全肢解説付きで収録。",
     attributionTemplate: "出典：人事院「航空管制官採用試験」。解説は過去問AIの独自作成。",
-    remainingWork: ["2025・2024年度の適性試験Ⅰの補充"],
   },
   {
     slug: "zaimu-senmonkan", examCode: "zaimu-senmonkan", shortName: "財務専門官", fullName: "財務専門官採用試験",
@@ -1816,7 +1814,6 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     status: "live",
     reuseSummary: "2024～2026年度の専門試験（多肢選択式）のうち、憲法、行政法、経済学、社会学の計28問を公式正答・全肢解説付きで収録。",
     attributionTemplate: "出典：人事院「財務専門官採用試験 専門試験（多肢選択式）」。解説は過去問AIの独自作成。",
-    remainingWork: ["2025・2024年度の専門択一の補充"],
   },
   {
     slug: "shokuhin-eisei-kanshiin", examCode: "shokuhin-eisei-kanshiin", shortName: "食品衛生監視員", fullName: "食品衛生監視員採用試験",
@@ -1833,9 +1830,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_19.html",
     officialReuseTermsUrl: "https://www.jinji.go.jp/shinsei/notice.html",
     status: "live",
-    reuseSummary: "2026年度の専門試験から、矯正心理専門職の必須問題19問と、法務教官・保護観察官・矯正心理専門職の共通問題36問を収録。",
+    reuseSummary: "2025・2026年度の専門試験から、矯正心理専門職の必須問題38問と、法務教官・保護観察官・矯正心理専門職の共通問題73問を公式正答・全肢解説付きで収録。",
     attributionTemplate: "出典：人事院「法務省専門職員（人間科学）採用試験 専門試験（多肢選択式）」。解説は過去問AIの独自作成。",
-    remainingWork: ["2025・2024年度の専門択一の補充"],
+    remainingWork: ["2024年度の専門択一の補充"],
   },
   {
     slug: "rodo-kijun-kantokukan", examCode: "rodo-kijun-kantokukan", shortName: "労働基準監督官", fullName: "労働基準監督官採用試験",
