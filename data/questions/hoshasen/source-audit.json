@@ -236,6 +236,14 @@
       "sha256": "f74ecd1953355727babed2ffadf0780351535f0b9a222f204c054a49183291fd",
       "pages": 19,
       "textChars": 0
+    },
+    {
+      "file": "R05_1_kagaku.pdf",
+      "url": "https://www.nustec.or.jp/syunin/pdf/R05_1_kagaku.pdf",
+      "bytes": 1039030,
+      "sha256": "81f40da3e56f37b1f59c7073411bce37e4b0b55466fec3d140e215eaddf926b6",
+      "pages": 16,
+      "textChars": 0
     }
   ],
   "latestYears": [
@@ -244,10 +252,10 @@
     2024,
     2023
   ],
-  "stagedQuestions": 606,
-  "stagedChoiceExplanations": 8559,
-  "officialPrimaryQuestions": 608,
-  "remainingPrimaryQuestions": 2,
+  "stagedQuestions": 634,
+  "stagedChoiceExplanations": 8699,
+  "officialPrimaryQuestions": 638,
+  "remainingPrimaryQuestions": 4,
   "counting": "第一種は各年132原問（法令30・実務6・物理32・化学32・生物32）。第二種は各年75原問（法令30・実務12・物理11・化学11・生物11）。多肢択一式の空欄は原問と別に数えない。",
   "unavailableRounds": [],
   "omissionReason": "未収録20原問はLQ8Dで収録済み。残りは令和8年度第二種化学問9の根拠未確定による保留1原問のみ。公式の公開欠落ではない。",
@@ -1046,6 +1054,41 @@
         31,
         32
       ]
+    },
+    {
+      "year": 2023,
+      "grade": 1,
+      "subject": "化学",
+      "numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        21,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ]
     }
   ],
   "answerKeys": {
@@ -1653,6 +1696,36 @@
       1,
       2,
       2,
+      3
+    ],
+    "2023-1-kagaku": [
+      3,
+      4,
+      3,
+      2,
+      4,
+      4,
+      2,
+      1,
+      4,
+      4,
+      1,
+      2,
+      1,
+      5,
+      5,
+      5,
+      1,
+      2,
+      4,
+      2,
+      3,
+      4,
+      1,
+      4,
+      5,
+      3,
+      5,
       3
     ]
   },
@@ -2443,6 +2516,20 @@
       "reason": "公式正答表で「正答なし」と発表されたため、選択式の演習データから除外。",
       "answerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf",
       "answerPdfPage": 5
+    },
+    {
+      "id": "hoshasen-1-2023-kagaku-q20",
+      "reason": "放射性気体の発生操作を扱うため演習データへの掲載を省略。",
+      "officialAnswerNumber": 1,
+      "answerUrl": "https://www.nustec.or.jp/syunin/pdf/R05_1seitou.pdf",
+      "answerPdfPage": 4
+    },
+    {
+      "id": "hoshasen-1-2023-kagaku-q22",
+      "reason": "放射性核種の分離操作を扱うため演習データへの掲載を省略。",
+      "officialAnswerNumber": 2,
+      "answerUrl": "https://www.nustec.or.jp/syunin/pdf/R05_1seitou.pdf",
+      "answerPdfPage": 4
     }
   ]
 }
