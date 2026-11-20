@@ -2,8 +2,8 @@ import { useLayoutEffect, useRef, useState, type RefObject } from "react";
 import { passingLineForExam } from "@/lib/study-plan/policy";
 import type { PacePlan } from "@/lib/study-plan/pace";
 
-const START_X = 24;
-const TRACK_LENGTH = 272;
+const START_X = 30;
+const TRACK_LENGTH = 260;
 const FRAME_SIZE = 48;
 const BOUNCE_HEIGHT = 1.25;
 const STRIDE_MS = 320;
@@ -116,14 +116,14 @@ export function PaceTrack({ plan, runArt, percent, target, finished = false }: {
       <text x={trackX(passing.percent)} y="109" fontSize="10" textAnchor="middle" className="fill-muted-foreground">{passing.conditions?.includes("IRT") ? "基準点" : "合格ライン"}</text>
     </>}
     {!finished && targetX !== null && <g className="fill-shu">
-      <path d={`M${targetX} 4h10l-2 3 2 3h-10z`} />
+      <path data-testid="pace-target-flag" d={`M${targetX} 4h10l-2 3 2 3h-10z`} />
       <line x1={targetX} x2={targetX} y1="4" y2="73" strokeDasharray="2 3" className="stroke-shu" />
       <text x={targetX > 215 ? targetX - 5 : targetX + 14} y="11" textAnchor={targetX > 215 ? "end" : "start"} fontSize="11">今日の目標</text>
     </g>}
     <RunningChihuahua key={`${plan.id}/${runArt}`} src={runArt} percent={percent} lineY={lineY} fillRef={fillRef} stopped={finished} />
     <text x={START_X} y={lineY + 16} fontSize="11" className="fill-muted-foreground tabular-nums">{trackDate(plan.startDate)}</text>
     <text x={endX - 15} y={lineY + 16} textAnchor="end" fontSize="11" className="fill-muted-foreground tabular-nums">{plan.examDate ? trackDate(plan.examDate) : "試験日"}</text>
-    <path d={`M${endX} ${lineY}v-18h10l-2 4 2 4h-10`} fill="none" strokeWidth="1.5" className="stroke-primary" />
+    <path d={`M${endX} ${lineY + 17}v-12h10l-2 3 2 3h-10`} fill="none" strokeWidth="1.5" className="stroke-primary" />
   </svg>;
 }
 

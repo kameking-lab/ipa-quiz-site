@@ -28,7 +28,7 @@ test("a saved plan without an appointment shows no invented target or paid nudge
   await setup(page, { ...makePlan(), examDate: null });
   await page.goto("/");
   await expect(page.getByRole("img", { name: "進み具合0%、受験日未設定" })).toBeVisible();
-  await expect(page.locator("main svg path.fill-warning-soft-foreground")).toHaveCount(0);
+  await expect(page.getByTestId("pace-target-flag")).toHaveCount(0);
   await expect(page.getByText("日程未設定", { exact: true })).toBeVisible();
   await expect(page.getByRole("link", { name: /回数無制限で追いつけます/ })).toHaveCount(0);
 });
@@ -56,7 +56,7 @@ for (const [percent, target] of [[0, 0], [50, 50], [100, 100]] as const) {
     const track = page.getByRole("img", { name: `進み具合${percent}%、今日の目標${target}%` });
     await expect(track).toBeVisible();
     const geometry = await track.evaluate(el => {
-      const image = el.querySelector("image")!, flag = el.querySelector<SVGPathElement>("path.fill-warning-soft-foreground")!;
+      const image = el.querySelector("image")!, flag = el.querySelector<SVGPathElement>('[data-testid="pace-target-flag"]')!;
       const frame = image.closest("svg")!, runner = frame.closest<SVGGElement>("g")!;
       const position = runner.transform.baseVal.getItem(0).matrix;
       const viewport = runner.ownerSVGElement!.viewBox.baseVal;
