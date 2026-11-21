@@ -36,7 +36,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Timer } from "lucide-react";
 import { examLabel } from "@/lib/utils";
 import { comboLevel } from "@/lib/motivation/combo";
-import { recordSessionAnswer } from "@/lib/motivation/session";
+import { recordSessionAnswer, sessionScore } from "@/lib/motivation/session";
 import { recordStudyOnDate } from "@/lib/motivation/heatmap";
 import { useQuestionActivity } from "@/lib/study-plan/use-question-activity";
 import { posthogCapture } from "@/lib/posthog";
@@ -72,6 +72,7 @@ interface Props {
   exam?: string;
   onNext: () => void;
   onFinish?: () => void;
+  onReviewed?: (id: string, correct: boolean) => void;
   quiet?: boolean;
 }
 
@@ -93,6 +94,7 @@ function ScoredQuizPlayer({
   exam = "ap",
   onNext,
   onFinish,
+  onReviewed,
   quiet = false,
 }: Props) {
   const pet = usePetLearning();
@@ -105,13 +107,13 @@ function ScoredQuizPlayer({
   const [orderedSelected, setOrderedSelected] = React.useState<ChoiceKey[] | undefined>(undefined);
   const [nativeBResult, setNativeBResult] = React.useState<NativeBGrade | undefined>();
   const [revealed, setRevealed] = React.useState(false);
-  const answerFinalized = React.useRef(false);
+  const answerFinalized = React.useRef<boolean | null>(null);
   const { recordAnswer: recordActivityAnswer, recordExplanation, endRef: explanationEndRef } = useQuestionActivity(question, revealed);
   const [preparedExplanationId, setPreparedExplanationId] = React.useState<string | null>(null);
   const [completed, setCompleted] = React.useState(false);
   const questionStartRef = React.useRef<HTMLDivElement>(null);
   const answerResultRef = React.useRef<HTMLDivElement>(null);
-  const [stats, setStats] = React.useState({ answered: 0, correct: 0 });
+  const [stats, setStats] = React.useState(() => onFinish ? sessionScore() : { answered: 0, correct: 0 });
   const [showKeyboardHelp, setShowKeyboardHelp] = React.useState(false);
   const [elapsed, setElapsed] = React.useState(0);
   const [combo, setCombo] = React.useState(0);
@@ -161,7 +163,7 @@ function ScoredQuizPlayer({
 
   const questionId = question?.id;
   React.useEffect(() => {
-    answerFinalized.current = false;
+    answerFinalized.current = null;
     setNativeBResult(undefined);
     setSelected(undefined);
     setPicked([]);
@@ -181,6 +183,9 @@ function ScoredQuizPlayer({
   );
 
   const goNext = React.useCallback(() => {
+    if (onReviewed && question && answerFinalized.current !== null) {
+      onReviewed(question.id, answerFinalized.current);
+    }
     recordExplanation();
     if (index + 1 >= total) {
       onFinish?.();
@@ -189,13 +194,13 @@ function ScoredQuizPlayer({
       return;
     }
     onNext();
-  }, [index, total, onNext, onFinish, recordExplanation]);
+  }, [index, total, onNext, onFinish, onReviewed, question, recordExplanation]);
 
   const commitAnswer = React.useCallback(
     (selection: string, correct: boolean, petAnswer: Extract<PetLearningSubmission, { source: "question" }>["answer"], nativeBResult?: NativeBGrade) => {
-      if (!question || isReferenceOnlyQuestionId(question.id) || answerFinalized.current) return;
+      if (!question || isReferenceOnlyQuestionId(question.id) || answerFinalized.current !== null) return;
       // Click, shortcut and form events can share the same ungraded render.
-      answerFinalized.current = true;
+      answerFinalized.current = correct;
       setRevealed(true);
       const now = Date.now();
       recordActivityAnswer(correct, now);
@@ -249,7 +254,7 @@ function ScoredQuizPlayer({
   );
 
   const onNativeBAnswer = React.useCallback((selections: NativeBSelections) => {
-    if (!question?.nativeB || isReferenceOnlyQuestionId(question.id) || question.type !== "native-b" || answerFinalized.current) return;
+    if (!question?.nativeB || isReferenceOnlyQuestionId(question.id) || question.type !== "native-b" || answerFinalized.current !== null) return;
     const result = gradeNativeB(question.nativeB, selections);
     setNativeBResult(result);
     const selectedSlots = Object.fromEntries(Object.entries(selections).filter((entry): entry is [string, string] => typeof entry[1] === "string"));
@@ -258,7 +263,7 @@ function ScoredQuizPlayer({
 
   const onSelect = React.useCallback(
     (key: ChoiceKey) => {
-      if (!question || isReferenceOnlyQuestionId(question.id) || answerFinalized.current || question.type === "ordering") return;
+      if (!question || isReferenceOnlyQuestionId(question.id) || answerFinalized.current !== null || question.type === "ordering") return;
       const required = requiredSelectionCount(question);
       if (question.acceptedAnswerCombinations && !picked.includes(key) && picked.length >= required) return;
       if (required > 1) {
@@ -274,13 +279,13 @@ function ScoredQuizPlayer({
   );
 
   const onNumericAnswer = React.useCallback((value: string) => {
-    if (!question || isReferenceOnlyQuestionId(question.id) || question.type !== "numeric" || answerFinalized.current) return;
+    if (!question || isReferenceOnlyQuestionId(question.id) || question.type !== "numeric" || answerFinalized.current !== null) return;
     setNumericSelected(value);
     commitAnswer(value, isNumericAnswerCorrect(question, value), { kind: "numeric", value });
   }, [question, commitAnswer]);
 
   const onOrderingAnswer = React.useCallback((value: ChoiceKey[]) => {
-    if (!question || isReferenceOnlyQuestionId(question.id) || question.type !== "ordering" || answerFinalized.current) return;
+    if (!question || isReferenceOnlyQuestionId(question.id) || question.type !== "ordering" || answerFinalized.current !== null) return;
     setOrderedSelected(value);
     commitAnswer(value.join("→"), isOrderingAnswerCorrect(question, value), { kind: "ordering", selected: [...value] });
   }, [question, commitAnswer]);

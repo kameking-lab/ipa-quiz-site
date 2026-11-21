@@ -6,6 +6,7 @@ import { WeakMark } from "@/components/quiz/WeakMark";
 import { PracticeDailyLimit } from "@/components/quiz/PracticeTransition";
 import { PracticeRequestError } from "@/lib/billing/guest-client";
 import { readSettings } from "@/lib/storage/settings";
+import { recordSessionAnswer } from "@/lib/motivation/session";
 import { SignedOutOnly, useAccountStatus } from "@/components/account/AccountNavigation";
 import { useNativeQuestionGrant, NativeAccessState } from "@/mobile/shared/NativeQuestionGate";
 
@@ -392,12 +393,14 @@ export function ExamQuestionPlayer({
   }, [goTo, index, roundIds.length, showSummary, paceSession, recordPaceExplanation, submitted, summary.correct, summary.incorrect]);
 
   const recordScoredAnswer = useCallback((question: ExamQuestion, choice: number | null, persisted: boolean) => {
-    if (!persisted || !isScorableQuestion(question) || !readSettings().recordHistory) return;
+    if (!isScorableQuestion(question) || choice === null) return;
     const correct = gradeExamAnswer(question, choice) === "correct";
     const at = Date.now();
+    if (paceSession) recordSessionAnswer({ id: question.id, correct, at, category: examTitle });
+    if (!persisted || !readSettings().recordHistory) return;
     createHistoryStore().record({ id: question.id, selected: String(choice), correct, at });
     recordPaceAnswer(correct, at);
-  }, [recordPaceAnswer]);
+  }, [examTitle, paceSession, recordPaceAnswer]);
 
   const selectChoice = useCallback(
     (choice: number) => {

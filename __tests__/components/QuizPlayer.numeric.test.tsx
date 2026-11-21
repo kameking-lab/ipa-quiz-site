@@ -7,6 +7,7 @@ import { nurseNumericQuestion as question } from "@/__tests__/fixtures/nurse-num
 import { createHistoryStore } from "@/lib/storage/history";
 import { readLastQuestion } from "@/lib/storage/last-question";
 import { LS_KEYS } from "@/lib/storage/keys";
+import { getLearningActions } from "@/lib/study-plan/pace-storage";
 
 beforeEach(() => {
   cleanup();
@@ -43,7 +44,9 @@ describe("QuizPlayer numeric original", () => {
     expect(screen.getByRole("region", { name: "正解の解説" })).toHaveTextContent("42 滴/分");
     expect(createHistoryStore().getAllEntries()).toMatchObject([{ id: question.id, selected: "42", correct: true }]);
     expect(readLastQuestion()).toMatchObject({ exam: "kangoshi", year: 2025, qNumber: 90 });
-    expect(localStorage.getItem(LS_KEYS.spacedRepetition)).toContain(question.id);
+    expect(createHistoryStore().getWrongIds()).not.toContain(question.id);
+    expect(getLearningActions().filter(action => action.kind === "answer")).toMatchObject([{ questionId: question.id, correct: true }]);
+    expect(localStorage.getItem(LS_KEYS.spacedRepetition)).toBeNull();
     fireEvent.keyDown(input, { key: "Enter" });
     expect(onNext).not.toHaveBeenCalled();
     expect(createHistoryStore().getAllEntries()).toHaveLength(1);

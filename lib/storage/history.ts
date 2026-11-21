@@ -111,6 +111,7 @@ export function createHistoryStore(): HistoryStore {
       return [...new Set(snapshot().entries.map((e) => e.id))];
     },
     getWrongIds() {
+      if (typeof window === "undefined") return [];
       return [...latestAnswers(getPaceAttempts(snapshot().entries)).values()]
         .filter(entry => !entry.correct && !isReferenceOnlyQuestionId(entry.id)).map(entry => entry.id);
     },

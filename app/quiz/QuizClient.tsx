@@ -127,7 +127,7 @@ export function QuizClient({
   React.useEffect(() => {
 
     const url = new URL(window.location.href);
-    const signature = JSON.stringify([mode, wrongOnly, poolIds, initialQuestionId, mockResultId]);
+    const signature = JSON.stringify([mode, wrongOnly, poolIds, initialQuestionId, mockResultId, fixedBatch]);
     if (initializedPool.current === signature) return;
     initializedPool.current = signature;
     const currentId = initialQuestionId ?? url.searchParams.get("question");
@@ -138,6 +138,14 @@ export function QuizClient({
       return;
     }
     setInvalidQuestionId(false);
+    if (fixedBatch) {
+      // TodayQuiz has already validated the order and the first ungraded ID for this tab.
+      setSessionIds(poolIds);
+      setIndex(currentId ? poolIds.indexOf(currentId) : 0);
+      setLoadError(false);
+      cache.current.clear();
+      return;
+    }
     url.searchParams.delete("question");
     const sessionKey = `${LS_KEYS.activeQuizPool}${url.pathname}${url.search}`;
     let ids = mockResultId
@@ -155,7 +163,7 @@ export function QuizClient({
       const saved: unknown = JSON.parse(window.sessionStorage.getItem(sessionKey) ?? "null");
       const relatedOrder = window.sessionStorage.getItem(`${sessionKey}:related-order`);
       const available = new Set(poolIds);
-      if (!fixedBatch && currentId && Array.isArray(saved) && saved.length > 0 && saved.length <= sessionLimit &&
+      if (currentId && Array.isArray(saved) && saved.length > 0 && saved.length <= sessionLimit &&
           saved.every((id) => typeof id === "string" && available.has(id)) && new Set(saved).size === saved.length && saved.includes(currentId) &&
           // Ordinary annual sessions retain source order. An explicit related
           // selection may reorder the same complete set, and is marked separately.
@@ -179,13 +187,13 @@ export function QuizClient({
   }, [poolIds, mode, categoryById, wrongOnly, initialQuestionId, mockResultId, fixedBatch]);
 
   React.useEffect(() => {
-    if (!sessionIds?.length) return;
+    if (fixedBatch || !sessionIds?.length) return;
     const url = new URL(window.location.href);
     url.searchParams.delete("question");
     try {
       window.sessionStorage.setItem(`${LS_KEYS.activeQuizPool}${url.pathname}${url.search}`, JSON.stringify(sessionIds));
     } catch { /* Practice remains usable without session storage. */ }
-  }, [sessionIds]);
+  }, [sessionIds, fixedBatch]);
 
   // Load current + prefetch next whenever index advances.
   React.useEffect(() => {

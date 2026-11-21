@@ -145,6 +145,7 @@ async function mockQuiz(page: Page, startUsed = 0) {
 
 test("weak list has four unique rows and a score is recorded before next", async ({ page }) => {
   await boot(page, plans(), [answer(0, false), answer(1, false), answer(2, true)], [catalog[1].id, catalog[2].id, catalog[3].id]);
+  await enableGate(page);
   const grants = await mockQuiz(page);
   await page.goto("/review?mode=weak&exam=ip");
   await expect(page.getByText(/全年度　4問/)).toBeVisible();
@@ -160,8 +161,6 @@ test("weak list has four unique rows and a score is recorded before next", async
   expect(await page.evaluate(({ key, id }) => JSON.parse(localStorage.getItem(key)!).entries.filter((entry: Attempt) => entry.id === id).map((entry: Attempt) => entry.correct),
     { key: LS_KEYS.history, id: catalog[0].id })).toEqual([false, true]);
   await page.reload();
-  await page.getByRole("radio", { name: /正しい選択肢/ }).click();
-  await page.getByRole("button", { name: "次の問題へ" }).click();
   await expect(page).toHaveURL(new RegExp("question=" + catalog[1].id + "$"));
   await expect(page.getByRole("button", { name: "苦手の印を外す" })).toBeVisible();
   await page.getByRole("radio", { name: /正しい選択肢/ }).click();
@@ -169,7 +168,7 @@ test("weak list has four unique rows and a score is recorded before next", async
   await page.goto("/");
   await expect(page.getByRole("img", { name: "正解済み 3 / 12問" })).toBeVisible();
   await expect(page.getByRole("link", { name: "苦手リスト（3問）" })).toBeVisible();
-  expect(new Set(grants).size).toBeLessThanOrEqual(2);
+  expect(grants).toEqual([catalog[0].id, catalog[1].id]);
 });
 
 test("the 10th answer is normal and only the next blocked question presents equal actions", async ({ page }) => {
@@ -196,6 +195,20 @@ test("the 10th answer is normal and only the next blocked question presents equa
   await expect(page).toHaveURL(/\/$/);
 });
 
+test("scheduled review records the grade before leaving and keeps weak practice independent of the due date", async ({ page }) => {
+  await boot(page, plans(), [answer(0, false)]);
+  await page.route("**/api/review/due", route => route.fulfill({ json: {
+    questions: [question(catalog[0].id)], seenCount: 1, scheduledCount: 0, nextReviewDate: null,
+  } }));
+  await page.goto("/review?exam=ip");
+  await expect(page.getByRole("heading", { name: "今日の復習" })).toBeVisible();
+  await page.getByRole("radio", { name: /正しい選択肢/ }).click();
+  await page.goto("/review?mode=weak&exam=ip");
+  await expect(page.getByText("苦手リストは空です")).toBeVisible();
+  await page.goto("/");
+  await expect(page.getByRole("img", { name: "正解済み 1 / 12問" })).toBeVisible();
+});
+
 test("paper weak practice crosses papers once and preserves the original grant header", async ({ page }) => {
   const exam = "dai-1-shu-eisei-kanrisha";
   const papers = ["lckohyo-SAMPLE-ONE", "lckohyo-SAMPLE-TWO"].map((paperId, index) => ({
@@ -220,7 +233,8 @@ test("paper weak practice crosses papers once and preserves the original grant h
   for (const q of papers) {
     await expect(page.getByRole("heading", { name: q.paperTitle, exact: true })).toBeVisible();
     await page.getByRole("radio", { name: /^選択肢 2:/ }).click();
-    await page.getByRole("button", { name: "結果を見る", exact: true }).click();
+    if (q === papers[0]) await page.reload();
+    else await page.getByRole("button", { name: "結果を見る", exact: true }).click();
   }
   await expect(page.getByRole("heading", { name: "2問中2問正解" })).toBeVisible();
   expect(requested).toEqual(papers.map(q => q.id));

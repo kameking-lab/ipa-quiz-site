@@ -69,9 +69,12 @@ export async function POST(req: Request) {
       existing.map((r: { questionId: string; answeredAt: Date }) => `${r.questionId}\t${r.answeredAt.getTime()}`),
     );
 
-    const toInsert = incoming
-      .filter((e) => !existingSet.has(`${e.id}\t${e.at}`))
-      .map((e) => ({
+    const newEntries = new Map<string, ClientEntry>();
+    for (const entry of incoming) {
+      const key = `${entry.id}\t${entry.at}`;
+      if (!existingSet.has(key) && (!newEntries.has(key) || !entry.correct)) newEntries.set(key, entry);
+    }
+    const toInsert = [...newEntries.values()].map((e) => ({
         userId,
         questionId: e.id,
         correct: e.correct,

@@ -3,6 +3,8 @@ import { act, cleanup, fireEvent, render, screen, waitFor } from "@testing-libra
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { QuizClient } from "@/app/quiz/QuizClient";
 import { TodayQuiz } from "@/app/quiz/today/TodayQuiz";
+// Transform the real lazy paper module during test discovery, outside DOM interaction timeouts.
+import "@/app/quiz/today/TodayLibrary";
 import { QuestionAnswerCard } from "@/components/quiz/QuestionAnswerCard";
 import { QuestionPracticeGate } from "@/components/quiz/QuestionPracticeGate";
 import { StreamQuizPlayer } from "@/components/quiz/stream/StreamQuizPlayer";
@@ -143,6 +145,27 @@ describe("one graded answer per question visit", () => {
     expectHistory(single, "ア");
     expect(getLearningActions().map(action => action.questionId)).toEqual([single.id]);
     expect(grant).not.toHaveBeenCalled();
+  });
+
+  it("continues a fixed batch at the first ungraded question and restores its final score", async () => {
+    vi.useFakeTimers({ toFake: ["Date"] });
+    vi.setSystemTime(new Date("2026-11-17T12:00:00+09:00"));
+    const next = { ...single, id: "answer-once-next", qNumber: 2 };
+    const catalog = [single, next];
+    savePacePlan(createPacePlan({ id: "resume", exam: "ip", sessionId: null, examDate: "2026-11-18", startDate: "2026-11-17" }, catalog, new Date().toISOString()));
+    window.history.replaceState({}, "", "/quiz/today?plan=resume");
+    const grants = mockPractice(...catalog);
+    const open = () => render(<TodayQuiz planId="resume" billingGateEnabled />);
+    const first = open();
+    fireEvent.click((await screen.findAllByRole("radio"))[0]);
+    first.unmount();
+    const second = open();
+    fireEvent.click((await screen.findAllByRole("radio"))[1]);
+    second.unmount();
+    open();
+    expect(await screen.findByRole("heading", { name: "2問中1問正解" })).toBeVisible();
+    expect(grants.mock.calls).toEqual([[single.id], [next.id]]);
+    expect(createHistoryStore().getAllEntries().map(entry => entry.id)).toEqual([single.id, next.id]);
   });
 
   it("saves the first grade, one reward and one paper grant in today's library practice", async () => {

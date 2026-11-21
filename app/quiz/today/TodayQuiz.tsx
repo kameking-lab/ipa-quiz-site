@@ -11,6 +11,7 @@ import { createHistoryStore } from "@/lib/storage/history";
 import { japanDate } from "@/lib/home/featured-exams";
 import { Button } from "@/components/ui/button";
 import { LS_KEYS } from "@/lib/storage/keys";
+import { readSession, sessionScore, startSession } from "@/lib/motivation/session";
 
 const TodayLibrary = dynamic(() => import("./TodayLibrary").then(m => m.TodayLibrary));
 
@@ -18,11 +19,13 @@ export function TodayQuiz({ planId, weakExam, billingGateEnabled }: { planId: st
   const [batch, setBatch] = useState<{ ids: string[]; exam: string; library?: CatalogQuestion[] } | null>(null);
   const [error, setError] = useState("");
   const [revision, setRevision] = useState(0);
+  const [finished, setFinished] = useState<ReturnType<typeof sessionScore> | null>(null);
 
   useEffect(() => {
     const controller = new AbortController();
     setError("");
     setBatch(null);
+    setFinished(null);
     void (async () => {
       const plan = weakExam ? undefined : listPacePlans().find(p => p.id === planId);
       const exam = weakExam ?? plan?.exam;
@@ -41,18 +44,32 @@ export function TodayQuiz({ planId, weakExam, billingGateEnabled }: { planId: st
       const current = url.searchParams.get("question");
       const scope = JSON.stringify([exam, planId, !!weakExam, pace?.oldestYear]);
       const key = LS_KEYS.paceBatchPrefix + (weakExam ? "weak:" + exam : planId);
+      const sessionMode = JSON.stringify([today, scope]);
       let resumed = false;
       try {
         const cached = JSON.parse(sessionStorage.getItem(key) ?? "null");
-        if (current && cached?.scope === scope && cached.day === today && Array.isArray(cached.ids) && cached.ids.includes(current) &&
+        const session = readSession();
+        if (current && session?.mode === sessionMode && cached?.scope === scope && cached.day === today && Array.isArray(cached.ids) && cached.ids.includes(current) &&
             cached.ids.every((id: unknown) => typeof id === "string" && byId.has(id)) &&
-            new Set(cached.ids).size === cached.ids.length) {
+            new Set(cached.ids).size === cached.ids.length &&
+            session.answers.every((answer, index) => answer?.id === cached.ids[index] && typeof answer.correct === "boolean")) {
           ids = cached.ids;
           resumed = true;
+          const nextId = ids[session.answers.length];
+          if (!nextId) {
+            setFinished(sessionScore());
+            clearBatchQuestion();
+            return;
+          }
+          url.searchParams.set("question", nextId);
+          window.history.replaceState(window.history.state, "", url);
         }
         sessionStorage.setItem(key, JSON.stringify({ scope, day: today, ids }));
       } catch { /* The question grant still applies without session storage. */ }
-      if (current && !resumed) clearBatchQuestion();
+      if (!resumed) {
+        startSession(sessionMode);
+        if (current) clearBatchQuestion();
+      }
       setBatch({ ids, exam, library: catalog[0]?.paperId ? ids.map(id => byId.get(id)!) : undefined });
     })().catch(e => { if (!controller.signal.aborted) setError(e instanceof Error ? e.message : "問題を準備できませんでした。"); });
     return () => controller.abort();
@@ -61,6 +78,10 @@ export function TodayQuiz({ planId, weakExam, billingGateEnabled }: { planId: st
   const backHref = weakExam ? "/review?mode=weak&exam=" + encodeURIComponent(weakExam) : "/";
   const backLabel = weakExam ? "苦手リストへ" : "ホームへ";
   const title = weakExam ? "苦手演習" : "計画の問題";
+  if (finished) return <main className="mx-auto max-w-[640px] p-8 text-center">
+    <h1 className="text-xl font-bold">{finished.answered}問中{finished.correct}問正解</h1>
+    <Link className="study-link mt-4" href={backHref}>{backLabel}</Link>
+  </main>;
   if (error) return <main className="mx-auto max-w-[640px] space-y-4 p-6">
     <p role="alert">{error}</p>
     <Button variant="outline" onClick={() => setRevision(value => value + 1)}>再読み込み</Button>

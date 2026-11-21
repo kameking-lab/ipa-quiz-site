@@ -1,6 +1,7 @@
 import { act, cleanup, fireEvent, render, screen, within } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { ReviewClient } from "@/app/review/ReviewClient";
+import { DueReview } from "@/app/review/DueReview";
 import { QuizPlayer } from "@/components/quiz/QuizPlayer";
 import { createHistoryStore } from "@/lib/storage/history";
 import { toggleBookmark } from "@/lib/storage/bookmarks";
@@ -22,6 +23,24 @@ beforeEach(() => {
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
 
 describe("weak list uses the common assessed history", () => {
+  it("keeps the due-review grant path, records on grading, and reschedules only on advance", async () => {
+    const history = createHistoryStore();
+    history.record(old);
+    const legacy = { [q.id]: { nextReviewAt: "2020-01-01", level: 1, correctStreak: 1 } };
+    localStorage.setItem(LS_KEYS.reviewSchedule, JSON.stringify(legacy));
+    vi.mocked(fetch).mockImplementation(async url => String(url) === "/api/review/due"
+      ? Response.json({ questions: [q], seenCount: 1, nextReviewDate: null }) : new Response(null, { status: 204 }));
+    render(<DueReview initialExam="ip" />);
+    const key = Array.isArray(q.answer) ? q.answer[0] : q.answer;
+    fireEvent.click(await screen.findByRole("radio", { name: new RegExp("^選択肢 " + key) }));
+    expect(history.getAllEntries()).toMatchObject([old, { id: q.id, correct: true }]);
+    expect(history.getWrongIds()).not.toContain(q.id);
+    expect(JSON.parse(localStorage.getItem(LS_KEYS.reviewSchedule)!)).toEqual(legacy);
+    expect(fetch).toHaveBeenCalledWith("/api/review/due", expect.objectContaining({ method: "POST" }));
+    fireEvent.click(screen.getByRole("button", { name: "結果を見る" }));
+    expect(JSON.parse(localStorage.getItem(LS_KEYS.reviewSchedule)!)[q.id]).toMatchObject({ level: 2, correctStreak: 2 });
+    expect(history.getAllEntries()).toHaveLength(2);
+  });
   it("corrects the newest recorded grade without pressing next and updates the track", async () => {
     const history = createHistoryStore();
     history.record(old);

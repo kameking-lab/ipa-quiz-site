@@ -122,7 +122,7 @@ export function MeClient({ reportExam: requestedReportExam }: { reportExam?: str
     </dl>
     <nav aria-label="学習の進捗と復習" className="p3-review-links flex flex-wrap gap-2">
       {hasWrong && ALL_QUIZ_EXAM_CODES.some((code) => code === wrongExam) && <Link href={wrongHref} className={menuLink}>間違えた問題を復習</Link>}
-      <Link href={wrongExam ? "/review?" + new URLSearchParams({ mode: "weak", exam: wrongExam, returnTo: "/me" }) : "/review?returnTo=%2Fme"} className={menuLink}>苦手リスト</Link>
+      <Link href={"/review?" + new URLSearchParams({ mode: "weak", ...(wrongExam ? { exam: wrongExam } : {}), returnTo: "/me" })} className={menuLink}>苦手リスト</Link>
       {snapshot?.hasSafetyHistory && <Link href="/e-learning/progress" className={menuLink}>安全衛生の進捗・復習</Link>}
       <Link href={snapshot?.examDatePlans.length ? "/#today" : "/study-plan"} className={menuLink}>{snapshot?.examDatePlans.length ? "学習計画を見る" : "学習計画を作成"}</Link>
     </nav>

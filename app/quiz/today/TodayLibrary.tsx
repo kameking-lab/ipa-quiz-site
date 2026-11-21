@@ -6,6 +6,7 @@ import { ExamQuestionPlayer } from "@/components/exam-library/exam-question-play
 import { fetchPracticeQuestion } from "@/lib/billing/guest-client";
 import type { ExamQuestion } from "@/lib/exam-library-model";
 import { clearBatchQuestion, type CatalogQuestion } from "@/lib/study-plan/client";
+import { sessionScore } from "@/lib/motivation/session";
 
 export function TodayLibrary({ questions, exam, backHref, backLabel }: {
   questions: CatalogQuestion[]; exam: string; backHref: string; backLabel: string;
@@ -21,7 +22,7 @@ export function TodayLibrary({ questions, exam, backHref, backLabel }: {
   }, [questions]);
   const [resumeId] = useState(() => typeof window === "undefined" ? null : new URL(location.href).searchParams.get("question"));
   const [part, setPart] = useState(() => Math.max(0, groups.findIndex(group => group.some(q => q.id === resumeId))));
-  const [score, setScore] = useState({ answered: 0, correct: 0 });
+  const [score, setScore] = useState(sessionScore);
   const group = groups[part];
   if (!group) return <section className="p-8 text-center">
     <h2 className="text-xl font-bold">{score.answered}問中{score.correct}問正解</h2>

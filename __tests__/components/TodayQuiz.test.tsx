@@ -5,6 +5,7 @@ import { createPacePlan } from "@/lib/study-plan/pace";
 import { savePacePlan } from "@/lib/study-plan/pace-storage";
 import { createHistoryStore } from "@/lib/storage/history";
 import { LS_KEYS } from "@/lib/storage/keys";
+import { startSession, recordSessionAnswer } from "@/lib/motivation/session";
 
 const captured = vi.hoisted(() => ({ ids: [] as string[], gated: false }));
 vi.mock("@/app/quiz/QuizClient", () => ({
@@ -62,10 +63,13 @@ it("resumes the frozen list even when its current question became correct", asyn
   const scope = JSON.stringify(["ip", "", true, null]);
   const ids = [catalog[0].id, catalog[7].id, catalog[4].id];
   sessionStorage.setItem(LS_KEYS.paceBatchPrefix + "weak:ip", JSON.stringify({ scope, day: "2026-11-17", ids }));
+  startSession(JSON.stringify(["2026-11-17", scope]));
+  recordSessionAnswer({ id: ids[0], correct: true, at: now, category: "test" });
   answer(0, true); answer(7, false); answer(4, false);
   render(<TodayQuiz planId="" weakExam="ip" billingGateEnabled />);
   await screen.findByText("player");
   expect(captured.ids).toEqual(ids);
+  expect(new URL(location.href).searchParams.get("question")).toBe(ids[1]);
 });
 it("discards a resume from a different range", async () => {
   window.history.replaceState({}, "", "/quiz/today?plan=p&question=" + catalog[0].id);
