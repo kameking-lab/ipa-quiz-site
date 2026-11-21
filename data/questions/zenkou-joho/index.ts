@@ -1,4 +1,8 @@
 import type { Question } from "@/lib/questions/types";
+import round70Hardware from "./2023-early-joho-hardware.json";
+import round70Programming from "./2023-early-joho-programming.json";
+import round70Level2 from "./2023-early-joho-level2.json";
+import round70Level3 from "./2023-early-joho-level3.json";
 import round74Hardware from "./2025-early-joho-hardware.json";
 import round74Programming from "./2025-early-joho-programming.json";
 import round74Level2 from "./2025-early-joho-level2.json";
@@ -13,6 +17,7 @@ import round76Level2 from "./2026-early-joho-level2.json";
 import round76Level3 from "./2026-early-joho-level3.json";
 
 export const ZENKOU_JOHO_QUESTIONS = [
+  ...round70Hardware, ...round70Programming, ...round70Level2, ...round70Level3,
   ...round74Hardware, ...round74Programming, ...round74Level2, ...round74Level3,
   ...round75Hardware, ...round75Programming, ...round75Level2, ...round75Level3,
   ...round76Hardware, ...round76Programming, ...round76Level2, ...round76Level3,
