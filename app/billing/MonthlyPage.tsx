@@ -48,7 +48,7 @@ export function MonthlyPlanView({ canManage, hasContract, showTrial, management,
 }) {
   return <>
     <BillingPageBeacon />
-    <main aria-labelledby="monthly-price" className="p3-page p3-billing study-column space-y-4 pb-8">
+    <section aria-labelledby="monthly-price" className="p3-page p3-billing study-column space-y-4 pb-8">
       <div className="space-y-3">
         <div className="p3-landscape p3-hero p3-billing-hero">
           <div className="p3-price-sign">
@@ -70,6 +70,6 @@ export function MonthlyPlanView({ canManage, hasContract, showTrial, management,
       <div className="p3-listed px-4 py-3">
         <MonthlyConditions showTrial={!hasContract && showTrial} contract={hasContract} />
       </div>
-    </main>
+    </section>
   </>;
 }

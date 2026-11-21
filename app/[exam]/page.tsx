@@ -282,11 +282,13 @@ export default async function ExamTopPage({
 
         <header className="mb-4">
           <div className="p3-landscape p3-hero p3-exam-hero">
-            <h1 className="col-span-2 text-[25px] font-bold leading-tight tracking-tight wrap-anywhere sm:text-3xl">
-              <span className="block">{examLabel(code)}</span>{" "}
-              <span className="block text-xl">{isIpaTop(code) ? "過去問・解説" : "過去問"}</span>
-            </h1>
-            <p className="text-sm leading-relaxed text-muted-foreground">無料・登録なしで1日{PLAN_OFFER.freeDaily}問</p>
+            <div className="min-w-0 self-center">
+              <h1 className="text-[clamp(1.35rem,5.65vw,1.625rem)] font-bold leading-tight tracking-tight wrap-anywhere sm:text-3xl">
+                <span className="block text-balance">{examLabel(code)}</span>{" "}
+                <span className="block text-xl">{isIpaTop(code) ? "過去問・解説" : "過去問"}</span>
+              </h1>
+              <p className="mt-2 text-sm leading-relaxed">無料・登録なしで1日{PLAN_OFFER.freeDaily}問</p>
+            </div>
             <P3Mascot exam={code} />
           </div>
           {isExamEntryCode(code) && <FirstPracticeEntry exam={code} referralHref={referralPracticeHref(questions, "/" + exam)} qualification={examLabel(code)} />}

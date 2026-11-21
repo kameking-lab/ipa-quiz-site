@@ -37,6 +37,11 @@ function RunningChihuahua({ src, percent, lineY, fillRef, stopped }: {
     const duration = Math.min(1800, Math.max(STRIDE_MS, distance * 7));
     let request = 0;
     const draw = (value: number, lift: number, frame: number) => {
+      const anchor = value > 50 ? "end" : "start";
+      if (readout && readout.getAttribute("text-anchor") !== anchor) {
+        readout.setAttribute("text-anchor", anchor);
+        readout.setAttribute("x", String(value > 50 ? -FRAME_SIZE / 2 : FRAME_SIZE / 2));
+      }
       if (readout?.firstChild && Math.round(value) !== Math.round(progress.current)) {
         readout.firstChild.nodeValue = `${Math.round(value)}%`;
       }
@@ -74,12 +79,12 @@ function RunningChihuahua({ src, percent, lineY, fillRef, stopped }: {
     };
   }, [fillRef, imageReady, percent, stopped]);
 
-  const beside = stopped ? (percent > 50 ? -25 : 25) : 0;
+  const initialLeft = stopped && percent > 50;
   return <g ref={runner} transform={`translate(${trackX(stopped ? percent : 0)} 0)`} aria-hidden="true">
     <svg x={-FRAME_SIZE / 2} y={lineY - FRAME_SIZE + 1} width={FRAME_SIZE} height={FRAME_SIZE} className="overflow-hidden">
       <image ref={strip} href={src} width={FRAME_SIZE * 4} height={FRAME_SIZE} x="0" onLoad={() => setImageReady(true)} onError={() => setImageReady(true)} />
     </svg>
-    <text ref={label} x={beside} y={stopped ? 20 : 26} textAnchor={beside < 0 ? "end" : beside > 0 ? "start" : "middle"} fontSize="14" className="fill-primary font-display font-semibold tabular-nums">{`${stopped ? Math.round(percent) : 0}%`}</text>
+    <text ref={label} x={initialLeft ? -FRAME_SIZE / 2 : FRAME_SIZE / 2} y={lineY - 22} textAnchor={initialLeft ? "end" : "start"} fontSize="14" className="fill-current font-display font-semibold tabular-nums">{`${stopped ? Math.round(percent) : 0}%`}</text>
   </g>;
 }
 

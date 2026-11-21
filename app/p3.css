@@ -29,6 +29,7 @@ body:has(.p3-page) {
   --p3-field: #e9efda;
   --p3-accent: #f28c38;
   --p3-font: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", system-ui, sans-serif;
+  --font-display: "Noto Serif JP Display", "Hiragino Mincho ProN", "Noto Serif JP", serif;
   font-family: var(--p3-font);
 }
 
@@ -63,11 +64,10 @@ body:has(.p3-page) {
   --p3-accent: #ffb36b;
 }
 
-.p3-page {
-  --font-sans: var(--p3-font);
-  --font-display: "Noto Serif JP Display", "Hiragino Mincho ProN", "Noto Serif JP", serif;
-  color: var(--foreground);
-}
+.p3-page { color: var(--foreground); }
+/* Tailwind's inline font utilities otherwise restore the site-wide Geist stack. */
+body:has(.p3-page) .font-sans { font-family: var(--p3-font); }
+body:has(.p3-page) :is(.font-mono, code, kbd, pre, samp) { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
 
 body:has(.p3-page) .site-header,
 body:has(.p3-page) .mobile-bottom-nav {
@@ -82,6 +82,8 @@ body:has(.p3-search) .site-header {
 }
 
 body:has(.p3-page) .mobile-bottom-nav a { font-size: .75rem; }
+/* Shared controls and the footer also appear on the illustrated screens. */
+body:has(.p3-page) :is(.text-\[9px\], .text-\[10px\], .text-\[11px\]) { font-size: .75rem; }
 body:has(.p3-page) .mobile-bottom-nav a[aria-current="page"] { background: var(--primary-soft); }
 
 .p3-landscape {
@@ -234,19 +236,12 @@ body:has(.p3-page) .site-header .p3-logo-mark {
   padding-inline: 16px;
 }
 .p3-exam-hero {
-  position: relative;
-  grid-template-rows: auto minmax(44px, 1fr);
   padding-top: 14px;
   padding-bottom: 16px;
   --p3-sun-top: 46px;
   --p3-sun-right: 16px;
 }
 .p3-exam-hero .p3-mascot {
-  position: absolute;
-  z-index: -1;
-  right: 19px;
-  bottom: 3px;
-  width: clamp(80px, 27vw, 126px);
   max-height: 102px;
 }
 .p3-year-hero { min-height: 128px; }
@@ -256,8 +251,6 @@ body:has(.p3-page) .site-header .p3-logo-mark {
 }
 
 .p3-me-hero { min-height: 144px; padding-inline: 18px; }
-.p3-me-hero:has([aria-label="合格証"]) { padding-top: 33px; }
-.p3-me-hero:has([aria-label="ごはんをあげる"]) dl { align-self: start; }
 .p3-review-links a {
   padding-inline: 7px;
   border: 1px solid var(--hairline);
@@ -268,6 +261,7 @@ body:has(.p3-page) .site-header .p3-logo-mark {
 }
 .p3-calendar { background: color-mix(in srgb, var(--p3-field) 42%, var(--card)); }
 .p3-billing-hero { min-height: 188px; margin-inline: -16px; padding: 16px; }
+main:has(> .p3-billing) { padding: 0; }
 .p3-price-sign {
   justify-self: start;
   align-self: center;
