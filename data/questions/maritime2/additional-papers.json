@@ -1653,5 +1653,1867 @@
     "explanationCoverage": "full",
     "sourceArchiveUrl": "https://web.archive.org/web/20230610201210/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kiso.pdf#page=5",
     "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201207/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kiso-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q01",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 1,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "直接FM送信機"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-1",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=1",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/maritime2/2022-september-kogaku-a/q01.png"
+    ],
+    "imageAltTexts": [
+      "直接FM送信機の変調信号入力、空欄A・B、周波数同期の帰還回路"
+    ],
+    "type": "multiple-choice",
+    "question": "図の直接周波数変調方式のFM(F3E)送信機で、空欄AとBに入る字句の正しい組合せを選べ。",
+    "choices": {
+      "ア": "A：ディエンファシス回路　B：高周波発振器",
+      "イ": "A：ディエンファシス回路　B：励振増幅器",
+      "ウ": "A：プレエンファシス回路　B：励振増幅器",
+      "エ": "A：プレエンファシス回路　B：高周波発振器"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "送信側で変調信号の高域を強調し、VCOからの高周波信号を励振増幅器で増幅して電力増幅器へ渡す。",
+    "choiceExplanations": {
+      "ア": "ディエンファシスは受信側の補正であり、図のBは電力増幅器を駆動する増幅段である。",
+      "イ": "Bは合うが、送信側で変調前の高域を強調するAにはプレエンファシスを用いる。",
+      "ウ": "送信側で変調信号の高域を強調し、VCOからの高周波信号を励振増幅器で増幅して電力増幅器へ渡す。",
+      "エ": "Aは正しいが、高周波信号の発生には既にVCOがあり、その後のBには励振増幅器が入る。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201308/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=1",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201303/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q02",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 2,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "AM変調度"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-2",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=1",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/maritime2/2022-september-kogaku-a/q02.png"
+    ],
+    "imageAltTexts": [
+      "AM波の搬送波振幅Eと、包絡線の最大振幅A"
+    ],
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "図の単一正弦波で変調したAM(A3E)波について、搬送波振幅をE、変調度を60%としたときに包絡線の最大振幅Aを表す式を選べ。",
+    "choices": {
+      "ア": "1.5E V",
+      "イ": "1.6E V",
+      "ウ": "1.7E V",
+      "エ": "1.8E V"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "最大包絡線振幅は搬送波振幅とその60%の増分の和なので、E+0.6Eである。",
+    "choiceExplanations": {
+      "ア": "搬送波振幅に0.5Eを足す式なので、変調度50%に対応する。",
+      "イ": "最大包絡線振幅は搬送波振幅とその60%の増分の和なので、E+0.6Eである。",
+      "ウ": "1.7Eは振幅の増分0.7Eを意味し、変調度70%に対応する。",
+      "エ": "振幅が1.8Eとなるのは変調度80%の場合である。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201308/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=1",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201303/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q03",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 3,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "FMの周波数偏移"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-3",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=1",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "周波数変調器に振幅1 Vの単一正弦波を入力すると、周波数偏移はD Hzであった。周波数を同じに保ち振幅を4 Vにすると、周波数偏移はいくらか。",
+    "choices": {
+      "ア": "D Hz",
+      "イ": "2D Hz",
+      "ウ": "3D Hz",
+      "エ": "4D Hz"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "変調信号の振幅を4倍にしたので、周波数偏移は4Dとなる。",
+    "choiceExplanations": {
+      "ア": "FMで周波数偏移は変調信号の振幅に比例するので、振幅を変えれば偏移も変わる。",
+      "イ": "偏移が2倍となるのは変調信号の振幅を2倍にした場合である。",
+      "ウ": "入力は1 Vから4 Vへ4倍に増えるため、偏移も4倍になる。",
+      "エ": "変調信号の振幅を4倍にしたので、周波数偏移は4Dとなる。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201308/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=1",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201303/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q04",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 4,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "PLL"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-4",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=1",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/maritime2/2022-september-kogaku-a/q04.png"
+    ],
+    "imageAltTexts": [
+      "水晶発振器と二つの分周器を用いるPLLシンセサイザ"
+    ],
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "図のPLL周波数シンセサイザで、水晶発振器10 MHz、固定分周比N₁=5、可変分周比N₂=200とする。PLLがロックしているときの出力周波数f₀を求めよ。",
+    "choices": {
+      "ア": "60 MHz",
+      "イ": "120 MHz",
+      "ウ": "150 MHz",
+      "エ": "400 MHz"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "固定側は10/5=2 MHzである。ロック時は可変側も同じなので、f₀=2×200=400 MHzとなる。",
+    "choiceExplanations": {
+      "ア": "60 MHzを200分周すると0.3 MHzとなり、固定側の2 MHzと一致しない。",
+      "イ": "120 MHzを200分周した0.6 MHzは、水晶発振器を5分周した2 MHzより低い。",
+      "ウ": "150 MHzを200分周した0.75 MHzは、ロック時に必要な2 MHzと一致しない。",
+      "エ": "固定側は10/5=2 MHzである。ロック時は可変側も同じなので、f₀=2×200=400 MHzとなる。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201308/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=1",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201303/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q05",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 5,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "リング復調回路"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-5",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=1",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/maritime2/2022-september-kogaku-a/q05.png"
+    ],
+    "imageAltTexts": [
+      "4個のダイオードを用いたリング復調回路"
+    ],
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "図の理想的なリング復調回路には、入力と基準搬送波の周波数の［A］が出力に現れる。SSB入力が455 kHz、基準搬送波が453.5 kHzのとき、出力の周波数成分は［B］である。",
+    "choices": {
+      "ア": "A：和及び差の成分　B：1.5 kHz及び908.5 kHz",
+      "イ": "A：和及び差の2倍の成分　B：2 kHz及び1,817 kHz",
+      "ウ": "A：差の2倍の成分　B：2 kHz",
+      "エ": "A：差の成分のみ　B：1.5 kHz"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "乗算による混合で差の1.5 kHzと和の908.5 kHzの両方が生じる。",
+    "choiceExplanations": {
+      "ア": "乗算による混合で差の1.5 kHzと和の908.5 kHzの両方が生じる。",
+      "イ": "出力の基本的な混合成分は和と差そのものであり、それぞれを2倍するのではない。",
+      "ウ": "差は1.5 kHzであり、混合器出力には和の周波数も生じる。",
+      "エ": "差の周波数は正しいが、フィルタをかける前の出力には和の周波数も含まれる。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201308/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=1",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201303/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q06",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 6,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "FMの復調"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-6",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=2",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "周波数変調(F3E)波とその復調について、誤っているものを選べ。",
+    "choices": {
+      "ア": "F3E波の復調器は、入力信号の周波数の変化を振幅の変化に置き換えるものである。",
+      "イ": "F3E波の復調器には、周波数弁別器やPLLを用いた検波器などがある。",
+      "ウ": "F3E波は、変調信号に応じて周波数が変化する。",
+      "エ": "復調器の前に置く振幅制限器は、通信路の雑音やフェージングによる周波数変動を除去するために設ける。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "振幅制限器が抑えるのは不要な振幅変動であり、信号を伝える周波数変動は復調器へ渡す。",
+    "choiceExplanations": {
+      "ア": "FMの情報は周波数偏移に載るため、復調器は偏移を出力電圧の変化に変換する。",
+      "イ": "弁別器の電圧特性やPLLの追従に必要な制御電圧を利用して復調できる。",
+      "ウ": "FMでは変調信号の瞬時値に応じて搬送波の瞬時周波数が変わる。",
+      "エ": "振幅制限器が抑えるのは不要な振幅変動であり、信号を伝える周波数変動は復調器へ渡す。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201308/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=2",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201303/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q07",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 7,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "雑音制限感度"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-7",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=2",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "スーパヘテロダイン受信機の雑音制限感度は、所定の信号対雑音比で所定の出力を得るために必要な［A］の入力電圧で表す。総合利得と初段利得が十分大きいときは［B］の雑音指数でほぼ決まり、中間周波段の帯域を広げると［C］なる。",
+    "choices": {
+      "ア": "A：最小　B：中間周波増幅段　C：良く",
+      "イ": "A：最大　B：初段　C：良く",
+      "ウ": "A：最小　B：初段　C：悪く",
+      "エ": "A：最大　B：中間周波増幅段　C：悪く"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "初段で十分に増幅すれば後段の追加雑音の影響は小さい。中間周波段の帯域を広げると通過雑音が増え、所定のS/Nには大きい入力が必要となる。",
+    "choiceExplanations": {
+      "ア": "最小の入力で表すが、初段の雑音指数が支配的であり、帯域を広げると雑音が増える。",
+      "イ": "初段は正しいが、感度は必要最小の入力で表し、帯域が広いと感度が悪化する。",
+      "ウ": "初段で十分に増幅すれば後段の追加雑音の影響は小さい。中間周波段の帯域を広げると通過雑音が増え、所定のS/Nには大きい入力が必要となる。",
+      "エ": "帯域を広げた場合の変化は合うが、入力の最小値と初段の雑音指数を用いる。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201308/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=2",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201303/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q08",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 8,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "SSBとAMの受信機"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-8",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=2",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "SSB(J3E)受信機とAM(A3E)受信機の特徴として、誤っているものを選べ。",
+    "choices": {
+      "ア": "SSB受信機には、抑圧された搬送波に相当する周波数と受信機の局部発振周波数との相対関係を調整するクラリファイアがある。",
+      "イ": "SSB受信機で復調するには、局部発振器で作った搬送波相当の周波数成分をスピーチクリッパに加える。",
+      "ウ": "AM受信機には、受信波の振幅の変化を検出して音声信号を取り出す直線検波回路などがある。",
+      "エ": "AM受信機には、受信入力が変動しても出力レベルをほぼ一定に保つAGC回路がある。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "搬送波相当の信号は復調器に加える。スピーチクリッパは主に送信側で音声レベルを処理する回路である。",
+    "choiceExplanations": {
+      "ア": "局部発振器の周波数を細かく調整し、受信した音声の周波数ずれを補える。",
+      "イ": "搬送波相当の信号は復調器に加える。スピーチクリッパは主に送信側で音声レベルを処理する回路である。",
+      "ウ": "直線検波でAM波の包絡線を取り出すことができる。",
+      "エ": "AGCは受信信号が強くなると増幅段の利得を下げ、出力の変動を抑える。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201308/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=2",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201303/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q09",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 9,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "船舶用パルスレーダー"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-9",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=2",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/maritime2/2022-september-kogaku-a/q09.png"
+    ],
+    "imageAltTexts": [
+      "サーキュレータの端子a・b・cとパルスレーダーの送受信系統"
+    ],
+    "type": "multiple-choice",
+    "question": "図の船舶用パルスレーダーについて、よく用いられるアンテナは［A］である。アンテナから端子aに入った信号の電力は主に［B］へ、端子bに入った信号の電力は主に［C］へ伝わる。",
+    "choices": {
+      "ア": "A：フェイズドアレイ　B：端子c　C：端子a",
+      "イ": "A：フェイズドアレイ　B：端子b　C：端子c",
+      "ウ": "A：スロットアレイ　B：端子c　C：端子a",
+      "エ": "A：スロットアレイ　B：端子b　C：端子c"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "スロットアレイがよく用いられ、サーキュレータは送信をbからaへ、受信をaからcへ分ける。",
+    "choiceExplanations": {
+      "ア": "端子の伝送方向は合うが、この方式の船舶用レーダーではスロットアレイが多く用いられる。",
+      "イ": "図ではアンテナから来る信号は受信機側のcへ、発振器からの信号はアンテナ側のaへ進む。",
+      "ウ": "スロットアレイがよく用いられ、サーキュレータは送信をbからaへ、受信をaからcへ分ける。",
+      "エ": "アンテナの種類は合うが、サーキュレータで受信波はaからcへ進み、bの送信波はaへ進む。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201308/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=2",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201303/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q10",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 10,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "レーダーの往復時間"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-10",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=2",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "船舶用パルスレーダーと物標の間が1,500 mのとき、送信から反射波の受信までにかかる時間を求めよ。電波の伝搬速度は3×10⁸ m/sとする。",
+    "choices": {
+      "ア": "10 μs",
+      "イ": "20 μs",
+      "ウ": "30 μs",
+      "エ": "40 μs"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "送信と受信を合わせた伝搬距離は3,000 mなので、3×10⁸ m/sで割ると10 μsである。",
+    "choiceExplanations": {
+      "ア": "送信と受信を合わせた伝搬距離は3,000 mなので、3×10⁸ m/sで割ると10 μsである。",
+      "イ": "20 μsの往復距離は6,000 mで、片道では3,000 mとなる。",
+      "ウ": "30 μsの往復距離は9,000 mで、設問の物標の3倍の距離に相当する。",
+      "エ": "40 μsでは電波は往復12,000 m進み、片道1,500 mの条件とは一致しない。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201308/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=2",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201303/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q11",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 11,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "GPS衛星"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-11",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=2",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "GPS衛星について、誤っているものを選べ。",
+    "choices": {
+      "ア": "GPS衛星は2.5 GHz帯などの周波数の電波を送信している。",
+      "イ": "GPS衛星が地球を一周する時間は約12時間である。",
+      "ウ": "三次元測位には位置3成分と受信機の時計誤差が未知なので、少なくとも4個の衛星の電波が必要である。",
+      "エ": "GPS衛星には原子時計が搭載されている。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "GPSの測位信号はL帯で、代表的なL1は1.57542 GHzである。2.5 GHz帯ではない。",
+    "choiceExplanations": {
+      "ア": "GPSの測位信号はL帯で、代表的なL1は1.57542 GHzである。2.5 GHz帯ではない。",
+      "イ": "GPS衛星の軌道周期は約11時間58分であり、約12時間である。",
+      "ウ": "四つの未知数を決めるために、独立な擬似距離の測定が少なくとも四つ必要になる。",
+      "エ": "GPSでは送信時刻の誤差を小さくするため、衛星に原子時計を搭載する。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201308/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=2",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201303/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q12",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 12,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "標本化定理"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-12",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=3",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "音声を8 kHzで標本化するとき、原理的に再現可能な音声周波数の上限を選べ。",
+    "choices": {
+      "ア": "1 kHz",
+      "イ": "2 kHz",
+      "ウ": "3 kHz",
+      "エ": "4 kHz"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "標本化周波数の半分がナイキスト周波数なので、8 kHzでは4 kHzが理論上の境界になる。",
+    "choiceExplanations": {
+      "ア": "1 kHzは8 kHz標本化で表せる範囲に入るが、理論上の上限より低い。",
+      "イ": "理論上の上限は標本化周波数の1/4ではなく1/2である。",
+      "ウ": "3 kHzも再現可能な範囲に入るが、限界はさらに高い4 kHzである。",
+      "エ": "標本化周波数の半分がナイキスト周波数なので、8 kHzでは4 kHzが理論上の境界になる。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201308/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=3",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201303/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q13",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 13,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "ブリッジ整流"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-13",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=3",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/maritime2/2022-september-kogaku-a/q13.png"
+    ],
+    "imageAltTexts": [
+      "二次側とダイオードD₁〜D₄を接続したブリッジ形整流回路"
+    ],
+    "type": "multiple-choice",
+    "question": "図の単相ブリッジ整流回路は［A］回路である。D₁が導通しているときD₂は［B］であり、変圧器二次側を流れる電流は［C］ごとに向きが逆になる。",
+    "choices": {
+      "ア": "A：全波整流　B：導通(ON)　C：1/2周期",
+      "イ": "A：全波整流　B：非導通(OFF)　C：1/2周期",
+      "ウ": "A：半波整流　B：導通(ON)　C：1周期",
+      "エ": "A：半波整流　B：非導通(OFF)　C：1周期"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "入力の正負両半周期を同じ出力極性にする全波整流である。二次側の向きは半周期ごとに変わり、D₁とD₂は交互に導通する。",
+    "choiceExplanations": {
+      "ア": "全波整流と半周期は正しいが、D₁が導通する半周期ではD₂は逆バイアスになる。",
+      "イ": "入力の正負両半周期を同じ出力極性にする全波整流である。二次側の向きは半周期ごとに変わり、D₁とD₂は交互に導通する。",
+      "ウ": "4個のダイオードのブリッジで両半周期を整流し、一方の半周期にD₁とD₂が同時に導通するわけではない。",
+      "エ": "D₂が非導通である点は正しいが、整流は全波で、二次電流は半周期で向きを変える。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201308/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=3",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201303/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q14",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 14,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "蓄電池の直列接続"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-14",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=3",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "12 V・30 Ahの蓄電池2個と24 V・15 Ahの蓄電池1個を直列につないだ場合の、合成電圧と合成容量の組合せを選べ。",
+    "choices": {
+      "ア": "A：24 V　B：30 Ah",
+      "イ": "A：48 V　B：15 Ah",
+      "ウ": "A：48 V　B：30 Ah",
+      "エ": "A：48 V　B：75 Ah"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "電圧は12+12+24=48 Vである。各電池に同じ電流が流れるため、容量は最小の15 Ahで決まる。",
+    "choiceExplanations": {
+      "ア": "24 Vは12 Vの2個だけの和である。全て直列にすると48 Vとなり、容量は最小の15 Ahに制限される。",
+      "イ": "電圧は12+12+24=48 Vである。各電池に同じ電流が流れるため、容量は最小の15 Ahで決まる。",
+      "ウ": "電圧は正しいが、15 Ahの電池から30 Ahは取り出せない。",
+      "エ": "直列接続で足し合わせるのは電圧であり、容量を30+30+15とはできない。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201308/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=3",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201303/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q15",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 15,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "標準信号発生器"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-15",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=3",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/maritime2/2022-september-kogaku-a/q15.png"
+    ],
+    "imageAltTexts": [
+      "信号源電圧v₁と50 Ωの内部抵抗および50 Ωの負荷"
+    ],
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "図の内部抵抗50 Ωの標準信号発生器から、負荷抵抗50 Ωに20 mWを供給するときの信号源電圧v₁を求めよ。",
+    "choices": {
+      "ア": "1 V",
+      "イ": "2 V",
+      "ウ": "3 V",
+      "エ": "4 V"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "負荷電圧は √(0.020×50)=1 V である。内部抵抗も50 Ωなので電圧を等分し、信号源電圧は2 Vになる。",
+    "choiceExplanations": {
+      "ア": "1 Vは負荷の実効電圧であり、同じ値の内部抵抗に生じる電圧降下も足す必要がある。",
+      "イ": "負荷電圧は √(0.020×50)=1 V である。内部抵抗も50 Ωなので電圧を等分し、信号源電圧は2 Vになる。",
+      "ウ": "信号源が3 Vだと負荷には1.5 Vがかかり、電力は45 mWになる。",
+      "エ": "信号源が4 Vだと負荷電圧は2 Vで、負荷電力は80 mWとなる。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201308/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=3",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201303/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q16",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 16,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "スペクトルアナライザ"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-16",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=3",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "スーパヘテロダイン方式のアナログ型スペクトルアナライザについて、誤っているものを選べ。",
+    "choices": {
+      "ア": "入力信号の位相成分ごとの振幅を観測できる。",
+      "イ": "表示器の横軸は周波数、縦軸は振幅を表す。",
+      "ウ": "オシロスコープより感度が良く、より弱いレベルの信号を測定できる。",
+      "エ": "分解能帯域幅を変えて測定できる。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "一般的な掃引型の装置は周波数ごとのレベルを表示し、位相成分ごとの振幅を表示する構成ではない。",
+    "choiceExplanations": {
+      "ア": "一般的な掃引型の装置は周波数ごとのレベルを表示し、位相成分ごとの振幅を表示する構成ではない。",
+      "イ": "横方向に掃引周波数を、縦方向にその周波数での信号レベルを表示する。",
+      "ウ": "狭い分解能帯域幅で雑音を抑えることで、微弱な周波数成分を測定しやすい。",
+      "エ": "中間周波フィルタの帯域幅を調整して、周波数の分解能や雑音床を変えられる。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201308/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=3",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201303/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q17",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 17,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "AM同期検波"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-17",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=3",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "受信したAM(A3E)波の搬送波と同じ［A］と位相の再生搬送波を作り、変調波と［B］を行う。出力から［C］で信号波成分を取り出す。",
+    "choices": {
+      "ア": "A：振幅　B：掛け算　C：高域フィルタ(HPF)",
+      "イ": "A：振幅　B：加算　C：低域フィルタ(LPF)",
+      "ウ": "A：周波数　B：掛け算　C：低域フィルタ(LPF)",
+      "エ": "A：周波数　B：加算　C：高域フィルタ(HPF)"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "再生搬送波は周波数と位相を合わせ、変調波に乗算する。低域フィルタが高周波成分を除き、元の信号を取り出す。",
+    "choiceExplanations": {
+      "ア": "掛け算する点は合うが、必要なのは搬送波との周波数と位相の一致であり、復調信号は低域にある。",
+      "イ": "低域フィルタは正しいが、再生搬送波を変調波に乗算して低周波の成分を得る。",
+      "ウ": "再生搬送波は周波数と位相を合わせ、変調波に乗算する。低域フィルタが高周波成分を除き、元の信号を取り出す。",
+      "エ": "搬送波の周波数を合わせる点は合うが、同期検波では乗算後の低域成分を取り出す。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201308/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=3",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201303/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q18",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 18,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "SINAD"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-18",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=4",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/maritime2/2022-september-kogaku-a/q18.png"
+    ],
+    "imageAltTexts": [
+      "低周波発振器、FM送信機、擬似負荷、復調器と歪率雑音計の接続"
+    ],
+    "type": "multiple-choice",
+    "question": "図のFM(F3E)送信機で総合歪と雑音を測るとき、変調信号は1,000 Hzの［A］を用い、周波数偏移を許容値の70%に設定する。SINAD=10 log₁₀((S+N+D)/(N+D)) dBにおいてSは［B］、Nは雑音、Dは［C］成分である。",
+    "choices": {
+      "ア": "A：矩形波　B：信号　C：歪",
+      "イ": "A：矩形波　B：歪　C：信号",
+      "ウ": "A：正弦波　B：歪　C：信号",
+      "エ": "A：正弦波　B：信号　C：歪"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "1 kHzの正弦波を用いる。Sが信号、Nが雑音、Dが歪で、SINADはそれらの総和と雑音・歪の和の比を表す。",
+    "choiceExplanations": {
+      "ア": "SとDの意味は正しいが、測定には基準となる単一周波数の正弦波を入力する。",
+      "イ": "測定信号は正弦波であり、Sが信号、Dが歪を表す。",
+      "ウ": "入力波形は合うが、式のSとDの意味が逆である。",
+      "エ": "1 kHzの正弦波を用いる。Sが信号、Nが雑音、Dが歪で、SINADはそれらの総和と雑音・歪の和の比を表す。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201308/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=4",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201303/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q19",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 19,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "衛星EPIRB"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-19",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=4",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "衛星EPIRBの位置は衛星で受信した電波の［A］偏移の情報などで決められる。いったん動作しても手動で停止［B］。捜索救助航空機は121.5 MHzの信号を受信し、標識［C］を検出できる。",
+    "choices": {
+      "ア": "A：振幅　B：できない　C：までの距離",
+      "イ": "A：振幅　B：できる　C：までの距離",
+      "ウ": "A：ドプラ　B：できる　C：の方位",
+      "エ": "A：ドプラ　B：できない　C：の方位"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "衛星の移動で生じるドプラ偏移などから位置を推定できる。手動停止が可能で、121.5 MHzは現場での方位の探知に用いる。",
+    "choiceExplanations": {
+      "ア": "衛星で位置を求めるために使うのは周波数のドプラ偏移であり、航空機のホーミング信号は方位の検出に使う。",
+      "イ": "手動で停止できる点は合うが、位置推定に用いる偏移と121.5 MHzの用途が異なる。",
+      "ウ": "衛星の移動で生じるドプラ偏移などから位置を推定できる。手動停止が可能で、121.5 MHzは現場での方位の探知に用いる。",
+      "エ": "ドプラ偏移と方位探知は合うが、動作中でも手動による停止が可能である。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201308/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=4",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201303/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-a-q20",
+    "exam": "maritime2",
+    "session": "kogaku-a",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 20,
+    "subject": "無線工学A",
+    "category": "無線工学A",
+    "topicTags": [
+      "レーダーの最小探知距離"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-20",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=4",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学A」令和4年9月期（YA409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/maritime2/2022-september-kogaku-a/q20.png"
+    ],
+    "imageAltTexts": [
+      "アンテナのビーム下端と海面に囲まれる死角および水平の最小探知距離"
+    ],
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "図の船舶用レーダーの垂直ビーム幅がθ rad、海面からアンテナまでの高さがh mのとき、死角による最小探知距離Rminの式を選べ。",
+    "choices": {
+      "ア": "h/sin(θ/2)",
+      "イ": "h/tan(θ/2)",
+      "ウ": "h tan(θ/2)",
+      "エ": "h sinθ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "図の直角三角形で、tan(θ/2)=h/Rmin である。従ってRmin=h/tan(θ/2)となる。",
+    "choiceExplanations": {
+      "ア": "正弦から得られるのはビーム下端に沿った斜め距離であり、海面上の水平距離ではない。",
+      "イ": "図の直角三角形で、tan(θ/2)=h/Rmin である。従ってRmin=h/tan(θ/2)となる。",
+      "ウ": "水平距離は高さを正接で割って求めるので、正接を掛ける式ではない。",
+      "エ": "死角の境界には中心線との角度θ/2を使い、海面方向の距離には正接を用いる。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201308/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a.pdf#page=4",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201303/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-a-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-b-q01",
+    "exam": "maritime2",
+    "session": "kogaku-b",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 1,
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "平面波"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-1",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=1",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学B」令和4年9月期（YB409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "平面波は、伝搬方向に［A］な面の全ての点に一様な電界と磁界を持つ。電界と磁界は［B］で、電界の方向から磁界の方向に［C］を回すと、そのねじが進む方向へ伝搬する。",
+    "choices": {
+      "ア": "A：直角　B：同位相　C：右ねじ",
+      "イ": "A：直角　B：逆位相　C：左ねじ",
+      "ウ": "A：平行　B：逆位相　C：右ねじ",
+      "エ": "A：平行　B：同位相　C：左ねじ"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "波面は伝搬方向に垂直で、進行平面波の電界と磁界は同位相である。E×Hの向きが電力の伝搬方向となる。",
+    "choiceExplanations": {
+      "ア": "波面は伝搬方向に垂直で、進行平面波の電界と磁界は同位相である。E×Hの向きが電力の伝搬方向となる。",
+      "イ": "波面の向きは合うが、電界と磁界は同位相で、伝搬方向は右ねじで求める。",
+      "ウ": "伝搬方向は右ねじで合うが、一様な波面は伝搬方向に直角で、電界と磁界は同位相である。",
+      "エ": "電界と磁界は同位相だが、波面は伝搬方向に直角で、電界から磁界の順に取る右ねじが進行方向を示す。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201404/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=1",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201312/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-b-q02",
+    "exam": "maritime2",
+    "session": "kogaku-b",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 2,
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "ダイポールの電界強度"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-2",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=1",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学B」令和4年9月期（YB409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "半波長ダイポールの給電点電流が5 Aのとき、最大放射方向に30 km離れた自由空間の電界強度を求めよ。波長λに対し実効長はlₑ=λ/πである。",
+    "choices": {
+      "ア": "40 mV/m",
+      "イ": "30 mV/m",
+      "ウ": "20 mV/m",
+      "エ": "10 mV/m"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "最大電界の式 E=60πIlₑ/(λr) にlₑ=λ/πを代入する。60×5/30,000=0.010 V/mとなる。",
+    "choiceExplanations": {
+      "ア": "電界強度は60I/rとなるため、所定の電流と距離では40 mV/mの1/4になる。",
+      "イ": "電界は距離に反比例し、5 Aで30 km離れた点の値は10 mV/mとなる。",
+      "ウ": "この値には距離15 kmか電流10 Aが必要であり、設問の距離と電流では大き過ぎる。",
+      "エ": "最大電界の式 E=60πIlₑ/(λr) にlₑ=λ/πを代入する。60×5/30,000=0.010 V/mとなる。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201404/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=1",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201312/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-b-q03",
+    "exam": "maritime2",
+    "session": "kogaku-b",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 3,
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "アンテナの利得"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-3",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=1",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学B」令和4年9月期（YB409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "アンテナの利得について、誤っている記述を選べ。",
+    "choices": {
+      "ア": "アンテナの放射能力又は受信能力を表すものとして利得が使用される。",
+      "イ": "相対利得は、基準アンテナとして半波長ダイポールアンテナを用いる。",
+      "ウ": "無損失のアンテナの相対利得は、指向性利得と等しい。",
+      "エ": "微小ダイポールの利得は、半波長ダイポールの利得より小さい。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "無損失で一致するのは等方性アンテナを基準とする絶対利得と指向性利得である。",
+    "choiceExplanations": {
+      "ア": "基準となるアンテナと比べた場合の、特定方向への放射又は受信の能力を利得で表す。",
+      "イ": "半波長ダイポールを基準とする相対利得は、通常dBdで表す。",
+      "ウ": "無損失で一致するのは等方性アンテナを基準とする絶対利得と指向性利得である。",
+      "エ": "理想的な微小ダイポールの指向性利得は真数約1.5で、半波長ダイポールの約1.64より小さい。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201404/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=1",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201312/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-b-q04",
+    "exam": "maritime2",
+    "session": "kogaku-b",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 4,
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "ループアンテナの誘起電圧"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-4",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=1",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学B」令和4年9月期（YB409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "周波数1.5 MHz、電界強度400 μV/mの電波を、面積0.2 m²、10巻きのループアンテナで受信する。実効高は hₑ=2πNS/λ で、到来方向はループ面と60°をなす。誘起電圧に最も近い値を選べ。",
+    "choices": {
+      "ア": "13 μV",
+      "イ": "19 μV",
+      "ウ": "26 μV",
+      "エ": "35 μV"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "波長は200 mで、実効高は約0.0628 mである。電界に実効高とcos60°を掛けると約12.6 μVとなる。",
+    "choiceExplanations": {
+      "ア": "波長は200 mで、実効高は約0.0628 mである。電界に実効高とcos60°を掛けると約12.6 μVとなる。",
+      "イ": "面に対する角度60°では到来方向の面内成分をcos60°で計算するので、約12.6 μVとなる。",
+      "ウ": "電界と実効高をそのまま掛けるだけでは、ループ面との角度による半分の係数が抜ける。",
+      "エ": "面内方向から入ると仮定した最大の値も約25.1 μVであり、35 μVには達しない。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201404/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=1",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201312/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-b-q05",
+    "exam": "maritime2",
+    "session": "kogaku-b",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 5,
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "負荷反射係数"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-5",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=1",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学B」令和4年9月期（YB409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "特性インピーダンス50 Ωの無損失給電線の終端に純抵抗Rをつなぐと、負荷の反射係数の大きさは0.4であった。R>50 Ωとして、Rの値を選べ。",
+    "choices": {
+      "ア": "55 Ω",
+      "イ": "75 Ω",
+      "ウ": "117 Ω",
+      "エ": "140 Ω"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "R>50 Ωなので、(R−50)/(R+50)=0.4 である。解くと R=50×1.4/0.6≒116.7 Ωになる。",
+    "choiceExplanations": {
+      "ア": "反射係数は (55−50)/(55+50)≒0.048 で、0.4より小さい。",
+      "イ": "75 Ωを終端にすると反射係数は25/125=0.2になる。",
+      "ウ": "R>50 Ωなので、(R−50)/(R+50)=0.4 である。解くと R=50×1.4/0.6≒116.7 Ωになる。",
+      "エ": "140 Ωでは (140−50)/(140+50)≒0.47 となり、反射が大き過ぎる。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201404/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=1",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201312/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-b-q06",
+    "exam": "maritime2",
+    "session": "kogaku-b",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 6,
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "給電線の定在波"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-6",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=2",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学B」令和4年9月期（YB409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "無損失の給電線の電気的性質について、誤っている記述を選べ。",
+    "choices": {
+      "ア": "給電線の特性インピーダンスは、給電線の長さに関係なく一定である。",
+      "イ": "給電線の終端を短絡すると、定在波が生じる。",
+      "ウ": "電圧定在波の振幅が最大の点では、電流定在波の振幅は最小となる。",
+      "エ": "給電線と負荷が整合しているときは、反射波が生じる。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "負荷インピーダンスが特性インピーダンスと等しければ、反射係数は零となる。",
+    "choiceExplanations": {
+      "ア": "均一な給電線の特性インピーダンスは単位長さ当たりの電気定数から決まり、全長には依存しない。",
+      "イ": "短絡端で電圧波は全反射し、入射波と合成されて定在波を作る。",
+      "ウ": "進行波と反射波が電圧で強め合う位置では、電流では打ち消し合う。",
+      "エ": "負荷インピーダンスが特性インピーダンスと等しければ、反射係数は零となる。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201404/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=2",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201312/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-b-q07",
+    "exam": "maritime2",
+    "session": "kogaku-b",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 7,
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "整合トランス"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-7",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=2",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学B」令和4年9月期（YB409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/maritime2/2022-september-kogaku-b/q07.png"
+    ],
+    "imageAltTexts": [
+      "75 Ωの給電線から整合トランスを介して300 Ωのアンテナへ接続"
+    ],
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "図の巻線比1:nの整合トランスで、特性インピーダンス75 Ωの給電線と入力インピーダンス300 Ωのアンテナが整合する。nの値を選べ。",
+    "choices": {
+      "ア": "4",
+      "イ": "3",
+      "ウ": "2",
+      "エ": "1"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "インピーダンス比は巻線比の二乗なので、n²=300/75=4よりn=2である。",
+    "choiceExplanations": {
+      "ア": "巻線比が1:4ならインピーダンス比は1:16となり、図の比1:4にはならない。",
+      "イ": "巻線比1:3では二次側で9倍のインピーダンスに対応する。",
+      "ウ": "インピーダンス比は巻線比の二乗なので、n²=300/75=4よりn=2である。",
+      "エ": "同じ巻数ではインピーダンスを変換できず、インピーダンスの異なる二つの端子を整合できない。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201404/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=2",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201312/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-b-q08",
+    "exam": "maritime2",
+    "session": "kogaku-b",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 8,
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "アンテナの種類"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-8",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=2",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学B」令和4年9月期（YB409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "ホーンアンテナは主に［A］で使われる。半波長ダイポールの絶対利得の真数は約［B］である。船舶レーダー用スロットアレーは方形導波管の［C］に多数のスロットを設けて放射する。",
+    "choices": {
+      "ア": "A：SHF帯　B：2.15　C：上下面（長辺）壁",
+      "イ": "A：SHF帯　B：1.64　C：側面（短辺）壁",
+      "ウ": "A：VHF帯　B：2.15　C：上下面（長辺）壁",
+      "エ": "A：VHF帯　B：1.64　C：側面（短辺）壁"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "ホーンはマイクロ波帯に使われ、半波長ダイポールの真数利得は約1.64である。設問の船舶用アレーでは導波管の短辺側にスロットを設ける。",
+    "choiceExplanations": {
+      "ア": "ホーンの周波数帯は合うが、2.15はdBiで表した数値であり、真数は約1.64となる。",
+      "イ": "ホーンはマイクロ波帯に使われ、半波長ダイポールの真数利得は約1.64である。設問の船舶用アレーでは導波管の短辺側にスロットを設ける。",
+      "ウ": "ホーンは主にSHF帯で、半波長ダイポールの絶対利得の真数は約1.64である。",
+      "エ": "利得とスロットの位置は合うが、ホーンアンテナを主に使うのはSHF帯である。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201404/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=2",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201312/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-b-q09",
+    "exam": "maritime2",
+    "session": "kogaku-b",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 9,
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "八木・宇田アンテナ"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-9",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=2",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学B」令和4年9月期（YB409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "3素子八木・宇田アンテナを100 MHzで使うとき、放射器の長さは約［A］mである。反射器は放射器より少し［B］、導波器は放射器より少し［C］。",
+    "choices": {
+      "ア": "A：1.5　B：短く　C：長い",
+      "イ": "A：1.5　B：長く　C：短い",
+      "ウ": "A：0.5　B：短く　C：長い",
+      "エ": "A：0.5　B：長く　C：短い"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "100 MHzで波長は約3 mなので放射器は約1.5 mである。長い反射器と短い導波器で、導波器側へ指向性を持たせる。",
+    "choiceExplanations": {
+      "ア": "放射器は半波長の約1.5 mだが、反射器が長く、導波器が短い。",
+      "イ": "100 MHzで波長は約3 mなので放射器は約1.5 mである。長い反射器と短い導波器で、導波器側へ指向性を持たせる。",
+      "ウ": "放射器は約1.5 mであり、反射器と導波器の長短も逆である。",
+      "エ": "反射器と導波器の関係は正しいが、放射器の長さは波長約3 mの半分である。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201404/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=2",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201312/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-b-q10",
+    "exam": "maritime2",
+    "session": "kogaku-b",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 10,
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "ブラウンアンテナ"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-10",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=2",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学B」令和4年9月期（YB409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/maritime2/2022-september-kogaku-b/q10.png"
+    ],
+    "imageAltTexts": [
+      "垂直放射素子、地線、同軸ケーブルからなるブラウンアンテナ"
+    ],
+    "type": "multiple-choice",
+    "question": "図のブラウンアンテナについて、誤っている記述を選べ。",
+    "choices": {
+      "ア": "地線は、同軸ケーブルの外部導体に接続されている。",
+      "イ": "地線が放射素子に直角のときの入力インピーダンスは、約73 Ωである。",
+      "ウ": "地線の長さは、約1/4波長である。",
+      "エ": "放射素子が大地に垂直のとき、水平面内の指向性は全方向性である。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "地線が水平なときの入力抵抗は、半波長ダイポールの73 Ωのおよそ半分である。",
+    "choiceExplanations": {
+      "ア": "外部導体が地線側、内部導体が垂直な放射素子側につながる。",
+      "イ": "地線が水平なときの入力抵抗は、半波長ダイポールの73 Ωのおよそ半分である。",
+      "ウ": "放射素子と地線をそれぞれ約1/4波長にする構成である。",
+      "エ": "垂直な放射素子と対称な地線では、水平面でほぼ全方向に放射する。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201404/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=2",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201312/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-b-q11",
+    "exam": "maritime2",
+    "session": "kogaku-b",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 11,
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "特性インピーダンス"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-11",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=3",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学B」令和4年9月期（YB409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "長さlの無損失給電線の遠端を開放した場合と短絡した場合、入力端から見たインピーダンスがそれぞれZopとZshだった。給電線の特性インピーダンスを表す式を選べ。",
+    "choices": {
+      "ア": "2(Zop+Zsh)",
+      "イ": "(Zop+Zsh)/2",
+      "ウ": "Zop+Zsh",
+      "エ": "√(Zop Zsh)"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "開放時と短絡時では線路長に依存する因子が互いに逆数となる。積は特性インピーダンスの二乗になる。",
+    "choiceExplanations": {
+      "ア": "開放と短絡で求めた値は和ではなく積を使う。",
+      "イ": "相加平均ではなく、積の平方根を取ると線路長の影響が打ち消される。",
+      "ウ": "無損失線路の開放時と短絡時の入力インピーダンスは、積が特性インピーダンスの二乗になる。",
+      "エ": "開放時と短絡時では線路長に依存する因子が互いに逆数となる。積は特性インピーダンスの二乗になる。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201404/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=3",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201312/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-b-q12",
+    "exam": "maritime2",
+    "session": "kogaku-b",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 12,
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "アンテナ利得の比較測定"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-12",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=3",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学B」令和4年9月期（YB409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/maritime2/2022-september-kogaku-b/q12.png"
+    ],
+    "imageAltTexts": [
+      "送信アンテナからの電波を基準アンテナと被測定アンテナで受け、スイッチで切り替える測定系"
+    ],
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "図の比較法では、送信アンテナから［A］が一定の試験周波数の電波を放射し、基準アンテナと被測定アンテナを切り替える。基準利得Gs、受信電力PsとPmを用いて Gm=［B］+Gs dB となり、基準アンテナには一般に［C］を用いる。",
+    "choices": {
+      "ア": "A：強度　B：Pm+Ps　C：微小ダイポール",
+      "イ": "A：強度　B：Pm−Ps　C：角すいホーン",
+      "ウ": "A：位相　B：Pm+Ps　C：角すいホーン",
+      "エ": "A：位相　B：Pm−Ps　C：微小ダイポール"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "同じ強度の電波を受けると、デシベルで表した受信電力の差が利得の差になる。基準には特性が分かった角すいホーンを用いる。",
+    "choiceExplanations": {
+      "ア": "強度を一定にする点は合うが、受信電力の差を使い、標準利得の角すいホーンを用いる。",
+      "イ": "同じ強度の電波を受けると、デシベルで表した受信電力の差が利得の差になる。基準には特性が分かった角すいホーンを用いる。",
+      "ウ": "標準アンテナは正しいが、比較する際は電波の強度を一定にし、電力の差を取る。",
+      "エ": "電力の差を取るのは正しいが、強度を一定とし、マイクロ波の基準には角すいホーンを用いる。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201404/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=3",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201312/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-b-q13",
+    "exam": "maritime2",
+    "session": "kogaku-b",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 13,
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "接地アンテナの効率"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-13",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=3",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学B」令和4年9月期（YB409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "整合回路の損失がない1/4波長垂直接地アンテナで、アンテナ電流2.5 A、入力抵抗41 Ω、放射抵抗36 Ωである。放射電力と放射効率に最も近い組合せを選べ。",
+    "choices": {
+      "ア": "A：45 W　B：65%",
+      "イ": "A：81 W　B：65%",
+      "ウ": "A：125 W　B：88%",
+      "エ": "A：225 W　B：88%"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "放射電力は2.5²×36=225 Wである。全入力に対する放射分は36/41≒88%となる。",
+    "choiceExplanations": {
+      "ア": "放射電力は電流の二乗に36 Ωを掛ける。効率は36/41なので65%より高い。",
+      "イ": "放射電力は2.5²×36=225 Wであり、効率は放射抵抗と入力抵抗の比で求める。",
+      "ウ": "効率は合うが、放射抵抗36 Ωに2.5 Aが流れると放射電力は225 Wになる。",
+      "エ": "放射電力は2.5²×36=225 Wである。全入力に対する放射分は36/41≒88%となる。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201404/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=3",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201312/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-b-q14",
+    "exam": "maritime2",
+    "session": "kogaku-b",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 14,
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "地上波伝搬"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-14",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=3",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学B」令和4年9月期（YB409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "一般に［A］の地上波は直接波、大地反射波及び地表波で構成される。地表波は波長が［B］ほど遠くまで伝わり、大地の導電率が［C］ほど減衰が小さい。",
+    "choices": {
+      "ア": "A：見通し距離外　B：長い　C：大きい",
+      "イ": "A：見通し距離外　B：短い　C：小さい",
+      "ウ": "A：見通し距離内　B：短い　C：小さい",
+      "エ": "A：見通し距離内　B：長い　C：大きい"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "見通し内では直接波、反射波、地表波を考える。地表波は低い周波数で、高い導電率の海面などに沿って遠くまで届く。",
+    "choiceExplanations": {
+      "ア": "波長と導電率の関係は合うが、直接波と大地反射波を含むのは見通し距離内である。",
+      "イ": "直接波が届く見通し内での分類であり、地表波は低い周波数や導電率が高い地表で減衰が小さい。",
+      "ウ": "見通し距離内は合うが、波長が長く導電率が大きいほど地表波の減衰は小さい。",
+      "エ": "見通し内では直接波、反射波、地表波を考える。地表波は低い周波数で、高い導電率の海面などに沿って遠くまで届く。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201404/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=3",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201312/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-b-q15",
+    "exam": "maritime2",
+    "session": "kogaku-b",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 15,
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "SHF帯のフェージング"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-15",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=3",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学B」令和4年9月期（YB409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "干渉性のK形フェージングでは、大地の反射係数が［A］ほど直接波と大地反射波の干渉による電界変動が大きい。電波通路である［B］に気温、湿度などの逆転層が生じると［C］が発生する。",
+    "choices": {
+      "ア": "A：大きい　B：対流圏　C：ダクト形フェージング",
+      "イ": "A：大きい　B：電離圏　C：回折性のK形フェージング",
+      "ウ": "A：小さい　B：電離圏　C：ダクト形フェージング",
+      "エ": "A：小さい　B：対流圏　C：回折性のK形フェージング"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "強い反射波ほど直接波との干渉の振れ幅が大きい。対流圏の逆転層は電波を閉じ込めるダクトを作ることがある。",
+    "choiceExplanations": {
+      "ア": "強い反射波ほど直接波との干渉の振れ幅が大きい。対流圏の逆転層は電波を閉じ込めるダクトを作ることがある。",
+      "イ": "反射係数の関係は合うが、気温や湿度の逆転層は対流圏で生じ、ダクト形フェージングにつながる。",
+      "ウ": "種類は合うが、反射係数が大きい場合に変動が大きく、気象による逆転は対流圏で生じる。",
+      "エ": "対流圏は合うが、反射係数が大きいほど干渉変動が増え、逆転層はダクトの原因になる。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201404/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=3",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201312/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-b-q16",
+    "exam": "maritime2",
+    "session": "kogaku-b",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 16,
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "電離層の臨界周波数"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-16",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=4",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学B」令和4年9月期（YB409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/maritime2/2022-september-kogaku-b/q16.png"
+    ],
+    "imageAltTexts": [
+      "送信点Tと受信点Rから電離層反射点Pに至る経路、入射角と距離"
+    ],
+    "isCalculation": true,
+    "type": "multiple-choice",
+    "question": "図の電離層反射点Pの高さを300 km、送受信間を800 kmとし、大地と電離層を平行な平面とする。8 MHzの電波で通信するために必要なPでの最小臨界周波数を求めよ。MUFと臨界周波数の関係は fₘ=f꜀ secθ である。",
+    "choices": {
+      "ア": "6.0 MHz",
+      "イ": "5.4 MHz",
+      "ウ": "4.8 MHz",
+      "エ": "3.2 MHz"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "経路の片側は水平400 km、鉛直300 km、斜辺500 kmで、cosθ=0.6である。8 MHzの0.6倍は4.8 MHzとなる。",
+    "choiceExplanations": {
+      "ア": "反射点への鉛直距離300 kmと水平距離400 kmからcosθは300/500となる。",
+      "イ": "臨界周波数の最小値は8 MHzにcosθ=0.6を掛けた値である。",
+      "ウ": "経路の片側は水平400 km、鉛直300 km、斜辺500 kmで、cosθ=0.6である。8 MHzの0.6倍は4.8 MHzとなる。",
+      "エ": "反射点までの入射角の余弦は0.4ではなく、300/500=0.6になる。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201404/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=4",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201312/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-b-q17",
+    "exam": "maritime2",
+    "session": "kogaku-b",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 17,
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "放射パターン"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-17",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=4",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学B」令和4年9月期（YB409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "電力パターンは［A］の指向性を描いたものである。通常は放射パターンの［B］を真数1又は0 dBとし、直線偏波の電界ベクトルを含む面の指向性を［C］と呼ぶ。",
+    "choices": {
+      "ア": "A：耐電力　B：最小値　C：E面放射パターン",
+      "イ": "A：耐電力　B：最大値　C：H面放射パターン",
+      "ウ": "A：放射電力束密度　B：最大値　C：E面放射パターン",
+      "エ": "A：放射電力束密度　B：最小値　C：H面放射パターン"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "方向ごとの放射電力束密度を描き、最大値で正規化する。電界を含む面で切った指向性はE面パターンである。",
+    "choiceExplanations": {
+      "ア": "E面は合うが、電力パターンは放射電力束密度を用い、最大値を基準にする。",
+      "イ": "最大値での正規化は正しいが、電界ベクトルが含まれるのはE面である。",
+      "ウ": "方向ごとの放射電力束密度を描き、最大値で正規化する。電界を含む面で切った指向性はE面パターンである。",
+      "エ": "物理量は正しいが、基準は最大値で、電界ベクトルを含むのはE面である。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201404/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=4",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201312/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-b-q18",
+    "exam": "maritime2",
+    "session": "kogaku-b",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 18,
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "同軸ケーブル"
+    ],
+    "difficulty": 3,
+    "hasImage": true,
+    "officialQuestionLabel": "A-18",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=4",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学B」令和4年9月期（YB409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/maritime2/2022-september-kogaku-b/q18.png"
+    ],
+    "imageAltTexts": [
+      "同軸ケーブルの外部導体、内部導体、その間の誘電体"
+    ],
+    "type": "multiple-choice",
+    "question": "図の同軸ケーブルは［A］給電線で、外部導体と内部導体の間の誘電体の比誘電率が［B］ほど特性インピーダンスが大きい。誘電損は周波数が［C］ほど大きくなる。",
+    "choices": {
+      "ア": "A：不平衡形　B：大きい　C：低い",
+      "イ": "A：不平衡形　B：小さい　C：高い",
+      "ウ": "A：平衡形　B：大きい　C：高い",
+      "エ": "A：平衡形　B：小さい　C：低い"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "外部導体側を基準とする不平衡線路で、特性インピーダンスは比誘電率の平方根に反比例する。誘電損は一般に周波数が高いほど増える。",
+    "choiceExplanations": {
+      "ア": "不平衡形は合うが、インピーダンスは比誘電率が小さい方が大きく、誘電損は高周波で増す。",
+      "イ": "外部導体側を基準とする不平衡線路で、特性インピーダンスは比誘電率の平方根に反比例する。誘電損は一般に周波数が高いほど増える。",
+      "ウ": "誘電損の変化は合うが、同軸は不平衡形であり、比誘電率が大きいと特性インピーダンスは小さくなる。",
+      "エ": "比誘電率の関係は合うが、給電線は不平衡形で、周波数が高いほど誘電損が大きい。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201404/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=4",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201312/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-b-q19",
+    "exam": "maritime2",
+    "session": "kogaku-b",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 19,
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "船舶用レーダーのアンテナ"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-19",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=4",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学B」令和4年9月期（YB409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "水平ビーム幅を約2°と狭くすると［A］が向上する。垂直ビーム幅を約20°と広めに取るのは船体が揺れても［B］を見失わないためであり、サイドローブを抑えるのは画面の［C］を減らすためである。",
+    "choices": {
+      "ア": "A：距離分解能　B：物標　C：映像ずれ",
+      "イ": "A：距離分解能　B：真方位　C：偽像",
+      "ウ": "A：方位分解能　B：真方位　C：映像ずれ",
+      "エ": "A：方位分解能　B：物標　C：偽像"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "狭い水平ビームは方位が近い物標を分離し、垂直ビーム幅は揺れによる見失いを抑える。サイドローブを抑えると偽像も減る。",
+    "choiceExplanations": {
+      "ア": "物標を見失わない点は正しいが、水平ビームは方位分解能に関係し、サイドローブは偽像の原因となる。",
+      "イ": "偽像は正しいが、水平幅は方位分解能を決め、垂直幅は揺れで物標を失わないために確保する。",
+      "ウ": "方位分解能は合うが、揺れで失うのは物標の反射であり、サイドローブは別方向に偽像を作る。",
+      "エ": "狭い水平ビームは方位が近い物標を分離し、垂直ビーム幅は揺れによる見失いを抑える。サイドローブを抑えると偽像も減る。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201404/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=4",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201312/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf"
+  },
+  {
+    "id": "radio21-maritime2-2022-september-kogaku-b-q20",
+    "exam": "maritime2",
+    "session": "kogaku-b",
+    "year": 2022,
+    "fiscalYear": 2022,
+    "season": "september",
+    "qNumber": 20,
+    "subject": "無線工学B",
+    "category": "無線工学B",
+    "topicTags": [
+      "短波の使用周波数"
+    ],
+    "difficulty": 3,
+    "hasImage": false,
+    "officialQuestionLabel": "A-20",
+    "sourceExamSession": "令和4年9月期",
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=5",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第二級海上無線通信士「無線工学B」令和4年9月期（YB409）。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "type": "multiple-choice",
+    "question": "短波の電離層伝搬におけるMUF、LUF及びFOTについて、誤っている記述を選べ。",
+    "choices": {
+      "ア": "MUFは、通信回線で使用できる最高の周波数である。",
+      "イ": "LUFは、通信回線で使用できる最低の周波数である。",
+      "ウ": "FOTは最適使用周波数であり、MUFより15%低い。",
+      "エ": "LUFからFOTまでの周波数は、MUFからFOTまでの周波数に比べて通信不能になる確率が高い。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "FOTより上ではMUFの低下で使用できなくなることがあり、設問の大小関係は逆である。",
+    "choiceExplanations": {
+      "ア": "所定の回線で電離層を経由して通信できる周波数の上限を指す。",
+      "イ": "回線で要求される品質を満たせる下限であり、低周波側の吸収などの影響を受ける。",
+      "ウ": "安定した通信に使う目安として、FOTはMUFの約85%に設定される。",
+      "エ": "FOTより上ではMUFの低下で使用できなくなることがあり、設問の大小関係は逆である。"
+    },
+    "explanationCoverage": "full",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610201404/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b.pdf#page=5",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610201312/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-2-kogaku-b-kaito.pdf"
   }
 ]
