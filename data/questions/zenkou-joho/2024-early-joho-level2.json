@@ -1,0 +1,482 @@
+[
+  {
+    "id": "zenkou-joho-2024-early-joho-level2-q01-01",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2024,
+    "season": "early",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "2進・10進・16進の相互変換と2進数の演算を行い、①〜⑩を埋めなさい。",
+    "answer": "① 127、② 13.6875、③ DC、④ 9.E、⑤ 11 0010、⑥ 1010 0000、⑦ 11 1101、⑧ 10 0111、⑨ BCD、⑩ 5",
+    "officialAnswerNumber": "① 127、② 13.6875、③ DC、④ 9.E、⑤ 11 0010、⑥ 1010 0000、⑦ 11 1101、⑧ 10 0111、⑨ BCD、⑩ 5",
+    "explanation": "①は7ビットすべてが1で2⁷−1、②の小数部 .1011₂ は1/2＋1/8＋1/16。③は220＝13×16＋12、④は0.875×16＝14。⑤⑥は16進の各桁を4ビットへ。⑦は88−27、⑧は234÷6＝39で、2進では10 0111。⑨は十進1桁を4ビットで表すBCD。⑩は4ビットで16種類までなので5ビットが必要。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zenkou-joho/72-level2-01-p37.webp"
+    ],
+    "imageAltTexts": [
+      "大問1の問題文、設例または解答群（公式PDFの37ページ）。"
+    ],
+    "officialQuestionLabel": "大問1",
+    "examDate": "2024-06-28",
+    "sourceExamSession": "第72回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=37",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=61",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問1。",
+    "license": "ZENKOU-owner-decision",
+    "modelAnswer": "① 127、② 13.6875、③ DC、④ 9.E、⑤ 11 0010、⑥ 1010 0000、⑦ 11 1101、⑧ 10 0111、⑨ BCD、⑩ 5",
+    "scoringCriteria": "公式標準解答の各欄と照合する。",
+    "isCalculation": true
+  },
+  {
+    "id": "zenkou-joho-2024-early-joho-level2-q02-02",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2024,
+    "season": "early",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "図の論理回路の入力 X₂、X₁ を00、01、10、11と変え、出力 Y₃〜Y₀ の空欄①〜⑯を埋めなさい。",
+    "answer": "①〜④ 0001\n⑤〜⑧ 0010\n⑨〜⑫ 0100\n⑬〜⑯ 1000",
+    "officialAnswerNumber": "①〜④ 0001\n⑤〜⑧ 0010\n⑨〜⑫ 0100\n⑬〜⑯ 1000",
+    "explanation": "各ANDは X₂ と X₁ の正相または反転を一つずつ受ける。入力の2桁が表す値を k とすると Yₖ のANDにだけ1が二つそろい、他の三つは0になる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zenkou-joho/72-level2-02-p38.webp"
+    ],
+    "imageAltTexts": [
+      "大問2 問1の問題文、設例または解答群（公式PDFの38ページ）。"
+    ],
+    "officialQuestionLabel": "大問2 問1",
+    "examDate": "2024-06-28",
+    "sourceExamSession": "第72回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=38",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=61",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問2 問1。",
+    "license": "ZENKOU-owner-decision",
+    "modelAnswer": "①〜④ 0001\n⑤〜⑧ 0010\n⑨〜⑫ 0100\n⑬〜⑯ 1000",
+    "scoringCriteria": "公式標準解答の各欄と照合する。"
+  },
+  {
+    "id": "zenkou-joho-2024-early-joho-level2-q02-03",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2024,
+    "season": "early",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "図の論理回路の名称を選びなさい。",
+    "answer": "ウ",
+    "officialAnswerNumber": "ウ",
+    "explanation": "入力の2ビットを四つの組合せに区別し、該当する出力線だけを1にするため、デコーダ回路に当たる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zenkou-joho/72-level2-03-p38.webp"
+    ],
+    "imageAltTexts": [
+      "大問2 問2の問題文、設例または解答群（公式PDFの38ページ）。"
+    ],
+    "officialQuestionLabel": "大問2 問2",
+    "examDate": "2024-06-28",
+    "sourceExamSession": "第72回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=38",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=61",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問2 問2。",
+    "license": "ZENKOU-owner-decision",
+    "choices": {
+      "ア": "不一致回路",
+      "イ": "一致回路",
+      "ウ": "デコーダ回路",
+      "エ": "エンコーダ回路",
+      "オ": "半加算器",
+      "カ": "全加算器"
+    },
+    "choiceExplanations": {
+      "ア": "二つの入力が異なるときだけ1になる排他的論理和で、四つの出力線への割当ては行わない。",
+      "イ": "二つの入力が等しいかを一つの出力で示す回路で、00と11を別々の出力にしない。",
+      "ウ": "2ビットの入力から対応する1本を選び、四つの出力のうち1本だけを有効にする。",
+      "エ": "複数の入力線のうち有効なものを少数ビットの符号に直すため、図とは逆の方向である。",
+      "オ": "2ビットの一桁加算で和と桁上がりの2出力を作るが、図の4出力には対応しない。",
+      "カ": "二つのビットと下位からの桁上がりを加える回路で、図には3番目の入力がない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2024-early-joho-level2-q03-04",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2024,
+    "season": "early",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "共通クロック CK で動く3段のDフリップフロップのタイムチャートを完成させなさい。",
+    "answer": "CKの各立ち上がり直後（1〜5）\nQ₁ 01010\nQ₂ 00101\nQ₃ 00010",
+    "officialAnswerNumber": "CKの各立ち上がり直後（1〜5）\nQ₁ 01010\nQ₂ 00101\nQ₃ 00010",
+    "explanation": "立ち上がりで Q₁ に D が入り、Q₂ と Q₃ にはそれぞれ更新直前の Q₁、Q₂ が入る。D は五つの立ち上がりで0、1、0、1、0なので、Q₂ は1クロック、Q₃ は2クロック遅れる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zenkou-joho/72-level2-04-p39.webp"
+    ],
+    "imageAltTexts": [
+      "大問3 問1の問題文、設例または解答群（公式PDFの39ページ）。"
+    ],
+    "officialQuestionLabel": "大問3 問1",
+    "examDate": "2024-06-28",
+    "sourceExamSession": "第72回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=39",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=61",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問3 問1。",
+    "license": "ZENKOU-owner-decision",
+    "modelAnswer": "CKの各立ち上がり直後（1〜5）\nQ₁ 01010\nQ₂ 00101\nQ₃ 00010",
+    "scoringCriteria": "公式標準解答の各欄と照合する。",
+    "answerImageUrls": [
+      "/images/questions/zenkou-joho/72-level2-04-answer.webp"
+    ],
+    "answerImageAltTexts": [
+      "大問3 問1の公式タイムチャート。"
+    ]
+  },
+  {
+    "id": "zenkou-joho-2024-early-joho-level2-q03-05",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2024,
+    "season": "early",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "図のDフリップフロップによる回路の名称を選びなさい。",
+    "answer": "ア",
+    "officialAnswerNumber": "ア",
+    "explanation": "共通クロックのたびに入力のビット列が一段ずつ後ろに移るため、シフトレジスタである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zenkou-joho/72-level2-05-p39.webp"
+    ],
+    "imageAltTexts": [
+      "大問3 問2の問題文、設例または解答群（公式PDFの39ページ）。"
+    ],
+    "officialQuestionLabel": "大問3 問2",
+    "examDate": "2024-06-28",
+    "sourceExamSession": "第72回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=39",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=61",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問3 問2。",
+    "license": "ZENKOU-owner-decision",
+    "choices": {
+      "ア": "シフトレジスタ",
+      "イ": "マルチプレクサ",
+      "ウ": "デコーダ回路",
+      "エ": "アップカウンタ",
+      "オ": "ダウンカウンタ",
+      "カ": "D/A変換器"
+    },
+    "choiceExplanations": {
+      "ア": "前段の出力を次段のDへつなぎ、共通クロックで状態を一段ずつ移している。",
+      "イ": "複数の入力線のうち1本を選択信号で出力するが、図には選択用の入力がない。",
+      "ウ": "入力符号に応じて出力線を選ぶが、図の後段には前のクロックの値が残る。",
+      "エ": "パルスごとに二進値を加算する回路だが、図の各ビットはDの履歴で決まる。",
+      "オ": "パルスごとに二進値を減算する回路で、図は入力履歴を順送りする。",
+      "カ": "ディジタルの数からアナログ量を出す回路だが、図の出力はすべて1ビットである。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2024-early-joho-level2-q04-06",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2024,
+    "season": "early",
+    "qNumber": 6,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "五つの装置区分に関係が深い語句を解答群から選び、①〜⑤に入る記号を答えなさい。",
+    "answer": "① エ、② カ、③ ア、④ ウ、⑤ オ",
+    "officialAnswerNumber": "① エ、② カ、③ ア、④ ウ、⑤ オ",
+    "explanation": "①は原稿を読み取るOCR（エ）、②は結果を紙に出すプリンタ（カ）。③は外部媒体のDVD（ア）、④は実行中に使用するRAM（ウ）。⑤はCPU内にあるアキュムレータ（オ）。HTTP（イ）はWeb通信の規約、プロトコル（キ）は通信規約の総称、インタプリタ（ク）はプログラムを処理するソフトウェアである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zenkou-joho/72-level2-06-p40.webp"
+    ],
+    "imageAltTexts": [
+      "大問4の問題文、設例または解答群（公式PDFの40ページ）。"
+    ],
+    "officialQuestionLabel": "大問4",
+    "examDate": "2024-06-28",
+    "sourceExamSession": "第72回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=40",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=61",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問4。",
+    "license": "ZENKOU-owner-decision",
+    "modelAnswer": "① エ、② カ、③ ア、④ ウ、⑤ オ",
+    "scoringCriteria": "公式標準解答の各欄と照合する。"
+  },
+  {
+    "id": "zenkou-joho-2024-early-joho-level2-q05-07",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2024,
+    "season": "early",
+    "qNumber": 7,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "MP3、GIF、MPEG、BMP、JPEG に対応する説明を選び、①〜⑤に入る記号を答えなさい。",
+    "answer": "① エ、② オ、③ キ、④ カ、⑤ ウ",
+    "officialAnswerNumber": "① エ、② オ、③ キ、④ カ、⑤ ウ",
+    "explanation": "MP3（エ）は圧縮音声、GIF（オ）は最大256色のパレットを使える画像形式。MPEG（キ）にはDVDなどで使う動画圧縮規格がある。BMP（カ）は非圧縮の画素を格納でき、JPEG（ウ）は写真などのフルカラー画像を圧縮できる。アはPCM音声、イはMIDIなどの演奏データ、クはFM変調の説明である。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zenkou-joho/72-level2-07-p40.webp"
+    ],
+    "imageAltTexts": [
+      "大問5の問題文、設例または解答群（公式PDFの40ページ）。"
+    ],
+    "officialQuestionLabel": "大問5",
+    "examDate": "2024-06-28",
+    "sourceExamSession": "第72回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=40",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=61",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問5。",
+    "license": "ZENKOU-owner-decision",
+    "modelAnswer": "① エ、② オ、③ キ、④ カ、⑤ ウ",
+    "scoringCriteria": "公式標準解答の各欄と照合する。"
+  },
+  {
+    "id": "zenkou-joho-2024-early-joho-level2-q06-08",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2024,
+    "season": "early",
+    "qNumber": 8,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "流れ図に 3、7、2、−5、−2、1、1、−4、9、8 を順に入力したとき、出力 G、P、M を求めなさい。",
+    "answer": "① 20、② 7、③ 3",
+    "officialAnswerNumber": "① 20、② 7、③ 3",
+    "explanation": "G は正負を問わず合計する。正の七つの値は31、負の三つの値は−11なので合計20。P は D＞0 の回数で7、M はそれ以外の回数で3である。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zenkou-joho/72-level2-08-p41.webp"
+    ],
+    "imageAltTexts": [
+      "大問6の問題文、設例または解答群（公式PDFの41ページ）。"
+    ],
+    "officialQuestionLabel": "大問6",
+    "examDate": "2024-06-28",
+    "sourceExamSession": "第72回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=41",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=61",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問6。",
+    "license": "ZENKOU-owner-decision",
+    "modelAnswer": "① 20、② 7、③ 3",
+    "scoringCriteria": "公式標準解答の各欄と照合する。",
+    "isCalculation": true
+  },
+  {
+    "id": "zenkou-joho-2024-early-joho-level2-q07-09",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2024,
+    "season": "early",
+    "qNumber": 9,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "5人の3教科の成績を格納した配列 T を使い、行ごとの合計・平均を求める流れ図の①〜③を選びなさい。",
+    "answer": "① ア、② オ、③ カ",
+    "officialAnswerNumber": "① ア、② オ、③ カ",
+    "explanation": "教科は1〜3列なので①は3（ア）。4（イ）まで回すと合計欄を教科に含めてしまう。T(M,N)（ウ）は読み出す成績、T(N,M)（エ）は行列が逆。合計の書込み先は4列目の T(M,4)（オ）、平均の書込み先は5列目の T(M,5)（カ）。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zenkou-joho/72-level2-09-p42.webp"
+    ],
+    "imageAltTexts": [
+      "大問7の問題文、設例または解答群（公式PDFの42ページ）。"
+    ],
+    "officialQuestionLabel": "大問7",
+    "examDate": "2024-06-28",
+    "sourceExamSession": "第72回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=42",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=61",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問7。",
+    "license": "ZENKOU-owner-decision",
+    "modelAnswer": "① ア、② オ、③ カ",
+    "scoringCriteria": "公式標準解答の各欄と照合する。"
+  },
+  {
+    "id": "zenkou-joho-2024-early-joho-level2-q08-10",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2024,
+    "season": "early",
+    "qNumber": 10,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "JIS Full BASIC。16:9のテレビの対角線をインチで入力し、対角線・横・縦の長さをmmで表示するプログラムの①〜⑤を埋めなさい。",
+    "answer": "① D、② C、③ D、④ 終わり、⑤ END",
+    "officialAnswerNumber": "① D、② C、③ D、④ 終わり、⑤ END",
+    "explanation": "インチ値は D に読み込み、25.4倍したmm値を C に入れる。画面サイズの「インチ」の前には元の D を表示する。次の入力が0以下ならループを抜け、「終わり」を表示し END で終了する。横と縦は16:9の直角三角形と相似で求める。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zenkou-joho/72-level2-10-p43.webp"
+    ],
+    "imageAltTexts": [
+      "大問8 JIS Full BASICの問題文、設例または解答群（公式PDFの43ページ）。"
+    ],
+    "officialQuestionLabel": "大問8 JIS Full BASIC",
+    "examDate": "2024-06-28",
+    "sourceExamSession": "第72回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=43",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=61",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問8 JIS Full BASIC。",
+    "license": "ZENKOU-owner-decision",
+    "modelAnswer": "① D、② C、③ D、④ 終わり、⑤ END",
+    "scoringCriteria": "公式標準解答の各欄と照合する。"
+  },
+  {
+    "id": "zenkou-joho-2024-early-joho-level2-q09-11",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2024,
+    "season": "early",
+    "qNumber": 11,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "JIS Full BASIC。受験番号から合否を検索し、番号が登録されていないときは該当なしと表示するプログラムの①〜⑤を埋めなさい。",
+    "answer": "① =、② 該当なし、③ ELSEIF、④ 1、⑤ 不合格",
+    "officialAnswerNumber": "① =、② 該当なし、③ ELSEIF、④ 1、⑤ 不合格",
+    "explanation": "= で入力値と登録番号の等しさを判定し、一致すれば添字 j を保持して検索を抜ける。全件を通過した場合は「該当なし」とする。ELSEIF でその場合と切り分け、見つかったときに対応する合否が1なら合格、そうでなければ不合格とする。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zenkou-joho/72-level2-11-p44.webp"
+    ],
+    "imageAltTexts": [
+      "大問9 JIS Full BASICの問題文、設例または解答群（公式PDFの44ページ）。"
+    ],
+    "officialQuestionLabel": "大問9 JIS Full BASIC",
+    "examDate": "2024-06-28",
+    "sourceExamSession": "第72回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=44",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=61",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問9 JIS Full BASIC。",
+    "license": "ZENKOU-owner-decision",
+    "modelAnswer": "① =、② 該当なし、③ ELSEIF、④ 1、⑤ 不合格",
+    "scoringCriteria": "公式標準解答の各欄と照合する。"
+  },
+  {
+    "id": "zenkou-joho-2024-early-joho-level2-q08-12",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2024,
+    "season": "early",
+    "qNumber": 12,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "C言語。16:9のテレビの対角線をインチで入力し、対角線・横・縦の長さをmmで表示するプログラムの①〜⑤を埋めなさい。",
+    "answer": "① d、② c、③ d、④ 終わり、⑤ return",
+    "officialAnswerNumber": "① d、② c、③ d、④ 終わり、⑤ return",
+    "explanation": "インチ値は d に読み込み、25.4倍したmm値を c に入れる。画面サイズの「インチ」の前には元の d を表示する。次の入力が0以下ならループを抜け、「終わり」を表示し return で終了する。横と縦は16:9の直角三角形と相似で求める。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zenkou-joho/72-level2-12-p45.webp"
+    ],
+    "imageAltTexts": [
+      "大問8 C言語の問題文、設例または解答群（公式PDFの45ページ）。"
+    ],
+    "officialQuestionLabel": "大問8 C言語",
+    "examDate": "2024-06-28",
+    "sourceExamSession": "第72回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=45",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=61",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問8 C言語。",
+    "license": "ZENKOU-owner-decision",
+    "modelAnswer": "① d、② c、③ d、④ 終わり、⑤ return",
+    "scoringCriteria": "公式標準解答の各欄と照合する。"
+  },
+  {
+    "id": "zenkou-joho-2024-early-joho-level2-q09-13",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2024,
+    "season": "early",
+    "qNumber": 13,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "C言語。受験番号から合否を検索し、番号が登録されていないときは該当なしと表示するプログラムの①〜⑤を埋めなさい。",
+    "answer": "① ==、② 該当なし、③ else if、④ 1、⑤ 不合格",
+    "officialAnswerNumber": "① ==、② 該当なし、③ else if、④ 1、⑤ 不合格",
+    "explanation": "== で入力値と登録番号の等しさを判定し、一致すれば添字 j を保持して検索を抜ける。全件を通過した場合は「該当なし」とする。else if でその場合と切り分け、見つかったときに対応する合否が1なら合格、そうでなければ不合格とする。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zenkou-joho/72-level2-13-p46.webp"
+    ],
+    "imageAltTexts": [
+      "大問9 C言語の問題文、設例または解答群（公式PDFの46ページ）。"
+    ],
+    "officialQuestionLabel": "大問9 C言語",
+    "examDate": "2024-06-28",
+    "sourceExamSession": "第72回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=46",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=61",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問9 C言語。",
+    "license": "ZENKOU-owner-decision",
+    "modelAnswer": "① ==、② 該当なし、③ else if、④ 1、⑤ 不合格",
+    "scoringCriteria": "公式標準解答の各欄と照合する。"
+  }
+]

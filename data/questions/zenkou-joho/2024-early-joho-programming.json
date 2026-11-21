@@ -1,0 +1,177 @@
+[
+  {
+    "id": "zenkou-joho-2024-early-joho-programming-q01-01",
+    "exam": "zenkou-joho",
+    "session": "joho-programming",
+    "year": 2024,
+    "season": "early",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "1級・プログラミングの基礎知識",
+    "topicTags": [
+      "1級・プログラミングの基礎知識"
+    ],
+    "difficulty": 3,
+    "question": "52枚のカードを配列 t(1)〜t(52) でシャッフルする流れ図の①〜⑤を埋めなさい。",
+    "answer": "① t(k) ← k、② 52、③ t(k)、④ t(j)、⑤ temp",
+    "officialAnswerNumber": "① t(k) ← k、② 52、③ t(k)、④ t(j)、⑤ temp",
+    "explanation": "初期化で各添字をその要素に入れる。未確定区間は最初1〜52で、末尾を1位置ずつ確定させる。末尾 t(k) の元の値を temp に避け、抽選した t(j) を t(k) に入れてから temp を t(j) に戻す。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zenkou-joho/72-programming-01-p29.webp"
+    ],
+    "imageAltTexts": [
+      "大問1の問題文、設例または解答群（公式PDFの29ページ）。"
+    ],
+    "officialQuestionLabel": "大問1",
+    "examDate": "2024-06-28",
+    "sourceExamSession": "第72回 1級・プログラミングの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=29",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=60",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問1。",
+    "license": "ZENKOU-owner-decision",
+    "modelAnswer": "① t(k) ← k、② 52、③ t(k)、④ t(j)、⑤ temp",
+    "scoringCriteria": "公式標準解答の各欄と照合する。"
+  },
+  {
+    "id": "zenkou-joho-2024-early-joho-programming-q02-02",
+    "exam": "zenkou-joho",
+    "session": "joho-programming",
+    "year": 2024,
+    "season": "early",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "1級・プログラミングの基礎知識",
+    "topicTags": [
+      "1級・プログラミングの基礎知識"
+    ],
+    "difficulty": 3,
+    "question": "分数 n/m を異なる単位分数の和にする流れ図の①〜⑤を埋めなさい。",
+    "answer": "① 0、② p、③ n、④ m、⑤ p",
+    "officialAnswerNumber": "① 0、② p、③ n、④ m、⑤ p",
+    "explanation": "m が n で割り切れれば残りは単位分数になり、ループ2の終了条件は余り0。割り切れない間は、n/m 以下の最大の 1/p を選ぶため p を商＋1 とする。差 n/m−1/p＝(np−m)/(mp) の分子を n、分母を m に戻す。最後は p＝m÷n をそのまま使う。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zenkou-joho/72-programming-02-p30.webp"
+    ],
+    "imageAltTexts": [
+      "大問2の問題文、設例または解答群（公式PDFの30ページ）。"
+    ],
+    "officialQuestionLabel": "大問2",
+    "examDate": "2024-06-28",
+    "sourceExamSession": "第72回 1級・プログラミングの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=30",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=60",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問2。",
+    "license": "ZENKOU-owner-decision",
+    "modelAnswer": "① 0、② p、③ n、④ m、⑤ p",
+    "scoringCriteria": "公式標準解答の各欄と照合する。"
+  },
+  {
+    "id": "zenkou-joho-2024-early-joho-programming-q03-03",
+    "exam": "zenkou-joho",
+    "session": "joho-programming",
+    "year": 2024,
+    "season": "early",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "1級・プログラミングの基礎知識",
+    "topicTags": [
+      "1級・プログラミングの基礎知識"
+    ],
+    "difficulty": 3,
+    "question": "半球を薄い円柱に分割して球の体積を近似する流れ図の①〜⑤を埋めなさい。",
+    "answer": "① v、② PI、③ dh、④ v + vₖ、⑤ 2",
+    "officialAnswerNumber": "① v、② PI、③ dh、④ v + vₖ、⑤ 2",
+    "explanation": "合計 v を0で初期化する。各円柱の底面積は PI×rₖ²、高さは dh＝r/n。底面積に dh を掛けた vₖ を合計 v に加える。処理対象は上半分なので最後に2倍する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zenkou-joho/72-programming-03-p31.webp"
+    ],
+    "imageAltTexts": [
+      "大問3の問題文、設例または解答群（公式PDFの31ページ）。"
+    ],
+    "officialQuestionLabel": "大問3",
+    "examDate": "2024-06-28",
+    "sourceExamSession": "第72回 1級・プログラミングの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=31",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=60",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問3。",
+    "license": "ZENKOU-owner-decision",
+    "modelAnswer": "① v、② PI、③ dh、④ v + vₖ、⑤ 2",
+    "scoringCriteria": "公式標準解答の各欄と照合する。"
+  },
+  {
+    "id": "zenkou-joho-2024-early-joho-programming-q04-04",
+    "exam": "zenkou-joho",
+    "session": "joho-programming",
+    "year": 2024,
+    "season": "early",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "1級・プログラミングの基礎知識",
+    "topicTags": [
+      "1級・プログラミングの基礎知識"
+    ],
+    "difficulty": 3,
+    "question": "再帰を利用して10進の整数を2進表示するCプログラムの①〜⑤を埋めなさい。",
+    "answer": "① binary(int)、② ==、③ %、④ n/2、⑤ binary(dvi)",
+    "officialAnswerNumber": "① binary(int)、② ==、③ %、④ n/2、⑤ binary(dvi)",
+    "explanation": "binary は int を受け取って値を返さないので、戻り値の型 void の後を binary(int) とする。0との等値比較は ==。% が次の下位ビット、整数除算 n/2 が残る上位部分を作る。商 dvi を先に再帰処理し、呼び出しから戻ったら余りを表示すると上位から順に出る。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zenkou-joho/72-programming-04-p32.webp"
+    ],
+    "imageAltTexts": [
+      "大問4の問題文、設例または解答群（公式PDFの32ページ）。"
+    ],
+    "officialQuestionLabel": "大問4",
+    "examDate": "2024-06-28",
+    "sourceExamSession": "第72回 1級・プログラミングの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=32",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=60",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問4。",
+    "license": "ZENKOU-owner-decision",
+    "modelAnswer": "① binary(int)、② ==、③ %、④ n/2、⑤ binary(dvi)",
+    "scoringCriteria": "公式標準解答の各欄と照合する。"
+  },
+  {
+    "id": "zenkou-joho-2024-early-joho-programming-q05-05",
+    "exam": "zenkou-joho",
+    "session": "joho-programming",
+    "year": 2024,
+    "season": "early",
+    "qNumber": 5,
+    "type": "descriptive",
+    "category": "1級・プログラミングの基礎知識",
+    "topicTags": [
+      "1級・プログラミングの基礎知識"
+    ],
+    "difficulty": 3,
+    "question": "5×5の迷路で、北・東・西・南のキー入力に従ってスタートからゴールに進むCプログラムの①〜⑤を埋めなさい。",
+    "answer": "① 4、② y、③ e、④ -、⑤ y",
+    "officialAnswerNumber": "① 4、② y、③ e、④ -、⑤ y",
+    "explanation": "ゴールの二つの添字はともに4。配列の第1添字 y が行で、北へ進むと y が減る。東へ進めるかは構造体の e を確認する。西では横の添字 x から移動量を引き、南では縦の添字 y に移動量を足す。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zenkou-joho/72-programming-05-p33.webp",
+      "/images/questions/zenkou-joho/72-programming-05-p34.webp"
+    ],
+    "imageAltTexts": [
+      "大問5の問題文、設例または解答群（公式PDFの33ページ）。",
+      "大問5の問題文、設例または解答群（公式PDFの34ページ）。"
+    ],
+    "officialQuestionLabel": "大問5",
+    "examDate": "2024-06-28",
+    "sourceExamSession": "第72回 1級・プログラミングの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=33",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=60",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問5。",
+    "license": "ZENKOU-owner-decision",
+    "modelAnswer": "① 4、② y、③ e、④ -、⑤ y",
+    "scoringCriteria": "公式標準解答の各欄と照合する。",
+    "officialReferenceUrls": [
+      "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=34"
+    ]
+  }
+]

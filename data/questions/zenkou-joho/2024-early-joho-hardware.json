@@ -1,0 +1,346 @@
+[
+  {
+    "id": "zenkou-joho-2024-early-joho-hardware-q01-01",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2024,
+    "season": "early",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "1級・ハードウェアの基礎知識"
+    ],
+    "difficulty": 3,
+    "question": "補数、チェックディジット、シフト、浮動小数点数に関する(1)〜(5)に答えなさい。",
+    "answer": "(1) (0011 1110)₂\n(2) 6\n(3) 1111 1111\n(4) 18倍\n(5) 7F800000",
+    "officialAnswerNumber": "(1) (0011 1110)₂\n(2) 6\n(3) 1111 1111\n(4) 18倍\n(5) 7F800000",
+    "explanation": "(1) 1100 0010 を反転して 0011 1101 とし、1を加える。(2) 下位からの重み付き和は4×1＋2×2＋0×3＋2×4＝16。10で割った余りは6。(3) 各ビットを1とXORすると反転する。(4) 左へ4ビット移すと16倍、さらに元の値を2回足す。(5) 指数部8ビットだけを1にし、符号と仮数のビットを0にする。先頭から4ビットずつ区切ると16進のマスクになる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zenkou-joho/72-hardware-01-p21.webp"
+    ],
+    "imageAltTexts": [
+      "大問1の問題文、設例または解答群（公式PDFの21ページ）。"
+    ],
+    "officialQuestionLabel": "大問1",
+    "examDate": "2024-06-28",
+    "sourceExamSession": "第72回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=21",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=59",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問1。",
+    "license": "ZENKOU-owner-decision",
+    "modelAnswer": "(1) (0011 1110)₂\n(2) 6\n(3) 1111 1111\n(4) 18倍\n(5) 7F800000",
+    "scoringCriteria": "公式標準解答の各欄と照合する。",
+    "isCalculation": true
+  },
+  {
+    "id": "zenkou-joho-2024-early-joho-hardware-q02-02",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2024,
+    "season": "early",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "1級・ハードウェアの基礎知識"
+    ],
+    "difficulty": 3,
+    "question": "比較器の出力 A、B、C を示す真理値表を完成させ、解答群からゲート①②を選びなさい。",
+    "answer": "(1) A B C（上から） 000、001、011、111\n(2) ① ア、② エ",
+    "officialAnswerNumber": "(1) A B C（上から） 000、001、011、111\n(2) ① ア、② エ",
+    "explanation": "Va が基準電位 V₁、V₂、V₃ を超えるごとに C、B、A が順に1になる。アはANDで D＝B∧C に合う。エはNORで、AとBがともに0のときだけ出力する。Eでは A∧B と NOR(A,B) のORを取り、その結果にCをANDする。イはANDを反転するNAND、ウはどちらかが1なら出力するOR、オは一方だけが1のXORであり、①②を置き換えると表の出力が変わる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zenkou-joho/72-hardware-02-p22.webp"
+    ],
+    "imageAltTexts": [
+      "3個のコンパレータ、D・Eへのゲート接続、真理値表、論理ゲート5種の解答群。"
+    ],
+    "officialQuestionLabel": "大問2 問1 (1)(2)",
+    "examDate": "2024-06-28",
+    "sourceExamSession": "第72回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=22",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=59",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問2 問1 (1)(2)。",
+    "license": "ZENKOU-owner-decision",
+    "modelAnswer": "(1) A B C（上から） 000、001、011、111\n(2) ① ア、② エ",
+    "scoringCriteria": "公式標準解答の各欄と照合する。"
+  },
+  {
+    "id": "zenkou-joho-2024-early-joho-hardware-q02-03",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2024,
+    "season": "early",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "1級・ハードウェアの基礎知識"
+    ],
+    "difficulty": 3,
+    "question": "図の回路全体を表す最も適切な名称を選びなさい。",
+    "answer": "ウ",
+    "officialAnswerNumber": "ウ",
+    "explanation": "入力 Va は連続的な電圧で、D・E の2ビットに四つの範囲を割り当てている。したがって2ビットのA-Dコンバータに相当する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zenkou-joho/72-hardware-03-p22.webp"
+    ],
+    "imageAltTexts": [
+      "大問2 問1 (3)の問題文、設例または解答群（公式PDFの22ページ）。"
+    ],
+    "officialQuestionLabel": "大問2 問1 (3)",
+    "examDate": "2024-06-28",
+    "sourceExamSession": "第72回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=22",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=59",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問2 問1 (3)。",
+    "license": "ZENKOU-owner-decision",
+    "choices": {
+      "ア": "2ビットエンコーダ",
+      "イ": "4ビットエンコーダ",
+      "ウ": "2ビットA-Dコンバータ",
+      "エ": "4ビットA-Dコンバータ",
+      "オ": "2ビットD-Aコンバータ",
+      "カ": "4ビットD-Aコンバータ"
+    },
+    "choiceExplanations": {
+      "ア": "離散的な入力を2ビットの符号に直す部分に相当する。回路全体はアナログ電圧を入力する。",
+      "イ": "出力が4ビットの符号化器を指すが、この図の出力端子はDとEの二つである。",
+      "ウ": "連続的な入力電圧を三つのしきい値で四区分に分け、その結果を2ビットで出力する。",
+      "エ": "A-D変換という向きは合うが、4ビットなら16通りであり、示された出力は四通りである。",
+      "オ": "2ビットの入力をアナログ値に変える回路なので、入力と出力の向きが逆である。",
+      "カ": "4ビットの離散的な入力からアナログ値を出す回路で、ビット数と変換方向が合わない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2024-early-joho-hardware-q02-04",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2024,
+    "season": "early",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "1級・ハードウェアの基礎知識"
+    ],
+    "difficulty": 3,
+    "question": "3段のJKフリップフロップの出力 Q₀〜Q₂ のタイムチャートを完成させなさい。",
+    "answer": "CKの各立ち下がり直後（1〜10）\nQ₀ 1010101010\nQ₁ 0110011001\nQ₂ 0001111000",
+    "officialAnswerNumber": "CKの各立ち下がり直後（1〜10）\nQ₀ 1010101010\nQ₁ 0110011001\nQ₂ 0001111000",
+    "explanation": "三段とも同じクロックの立ち下がりで更新する。J＝K＝1 の段だけが反転する。各段の反転条件は Q₀ が常時、Q₁ が更新直前の Q₀＝1、Q₂ が更新直前の Q₀＝Q₁＝1。000から8通りを順に数える。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zenkou-joho/72-hardware-04-p23.webp"
+    ],
+    "imageAltTexts": [
+      "大問2 問2 (1)の問題文、設例または解答群（公式PDFの23ページ）。"
+    ],
+    "officialQuestionLabel": "大問2 問2 (1)",
+    "examDate": "2024-06-28",
+    "sourceExamSession": "第72回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=23",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=59",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問2 問2 (1)。",
+    "license": "ZENKOU-owner-decision",
+    "modelAnswer": "CKの各立ち下がり直後（1〜10）\nQ₀ 1010101010\nQ₁ 0110011001\nQ₂ 0001111000",
+    "scoringCriteria": "公式標準解答の各欄と照合する。",
+    "answerImageUrls": [
+      "/images/questions/zenkou-joho/72-hardware-04-answer.webp"
+    ],
+    "answerImageAltTexts": [
+      "大問2 問2 (1)の公式タイムチャート。"
+    ]
+  },
+  {
+    "id": "zenkou-joho-2024-early-joho-hardware-q02-05",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2024,
+    "season": "early",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "1級・ハードウェアの基礎知識"
+    ],
+    "difficulty": 3,
+    "question": "図の3段のフリップフロップ回路を表す最も適切なものを選びなさい。",
+    "answer": "イ",
+    "officialAnswerNumber": "イ",
+    "explanation": "各段のCKは共通で、下位の出力は上位段の反転条件を作る。出力は3ビットで0〜7を数えるため、同期式8進カウンタに相当する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zenkou-joho/72-hardware-05-p23.webp"
+    ],
+    "imageAltTexts": [
+      "大問2 問2 (2)の問題文、設例または解答群（公式PDFの23ページ）。"
+    ],
+    "officialQuestionLabel": "大問2 問2 (2)",
+    "examDate": "2024-06-28",
+    "sourceExamSession": "第72回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=23",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=59",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問2 問2 (2)。",
+    "license": "ZENKOU-owner-decision",
+    "choices": {
+      "ア": "ジョンソンカウンタ",
+      "イ": "同期式8進カウンタ",
+      "ウ": "非同期式8進カウンタ",
+      "エ": "リングカウンタ",
+      "オ": "エンコーダ",
+      "カ": "A-Dコンバータ"
+    },
+    "choiceExplanations": {
+      "ア": "最終段の反転出力を先頭へ戻すシフト回路だが、図は下位桁に応じて上位桁を反転する。",
+      "イ": "全段が同じクロックで変化し、3ビットの二進値が000から111まで巡回する。",
+      "ウ": "前段の出力を次段のクロックにする方式だが、図の各CKは共通の入力に接続される。",
+      "エ": "最終段の出力を初段に戻しビット列を巡回させる方式で、図の配線にその帰還がない。",
+      "オ": "入力のどの線が有効かなどを符号化する回路で、時間とともに数を数える回路ではない。",
+      "カ": "アナログ入力を離散化する回路だが、図の入力はクロックのパルスである。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2024-early-joho-hardware-q03-06",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2024,
+    "season": "early",
+    "qNumber": 6,
+    "type": "descriptive",
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "1級・ハードウェアの基礎知識"
+    ],
+    "difficulty": 3,
+    "question": "音声をディジタル化する手順について、公式の解答群から空欄①〜⑩に入る記号を選びなさい。",
+    "answer": "① エ、② ス、③ サ、④ シ、⑤ ケ、⑥ セ、⑦ タ、⑧ ソ、⑨ キ、⑩ ク",
+    "officialAnswerNumber": "① エ、② ス、③ サ、④ シ、⑤ ケ、⑥ セ、⑦ タ、⑧ ソ、⑨ キ、⑩ ク",
+    "explanation": "可聴域の上限として約20 kHz（エ）を用いる。マイクの出力は電気信号（ス）で、振幅が連続するアナログ（サ）。ディジタル（シ）にする向きがA-D（ケ）で、逆はD-A（コ）。標本化（セ）で時間を刻み、量子化（タ）で振幅を段階化し、符号化（ソ）でビット列にする。CDは毎秒44 100回（キ）、16ビットの段階数は2¹⁶＝65 536（ク）。2、4、8、32、64（ウ、イ、ア、カ、オ）はいずれの指定値にも合わない。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zenkou-joho/72-hardware-06-p24.webp"
+    ],
+    "imageAltTexts": [
+      "大問3 問1の問題文、設例または解答群（公式PDFの24ページ）。"
+    ],
+    "officialQuestionLabel": "大問3 問1",
+    "examDate": "2024-06-28",
+    "sourceExamSession": "第72回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=24",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=59",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問3 問1。",
+    "license": "ZENKOU-owner-decision",
+    "modelAnswer": "① エ、② ス、③ サ、④ シ、⑤ ケ、⑥ セ、⑦ タ、⑧ ソ、⑨ キ、⑩ ク",
+    "scoringCriteria": "公式標準解答の各欄と照合する。"
+  },
+  {
+    "id": "zenkou-joho-2024-early-joho-hardware-q03-07",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2024,
+    "season": "early",
+    "qNumber": 7,
+    "type": "descriptive",
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "1級・ハードウェアの基礎知識"
+    ],
+    "difficulty": 3,
+    "question": "稼働率が A＝83%、B＝95% の二つのシステムについて、①並列、②直列の稼働率を百分率で小数第2位まで求めなさい。",
+    "answer": "① 99.15%\n② 78.85%",
+    "officialAnswerNumber": "① 99.15%\n② 78.85%",
+    "explanation": "① 並列が止まるのは両系統が停止したとき。1−(1−0.83)(1−0.95)＝0.9915。② 直列は両方が稼働して初めて動くので、0.83×0.95＝0.7885。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zenkou-joho/72-hardware-07-p24.webp"
+    ],
+    "imageAltTexts": [
+      "大問3 問2の問題文、設例または解答群（公式PDFの24ページ）。"
+    ],
+    "officialQuestionLabel": "大問3 問2",
+    "examDate": "2024-06-28",
+    "sourceExamSession": "第72回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=24",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=59",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問3 問2。",
+    "license": "ZENKOU-owner-decision",
+    "modelAnswer": "① 99.15%\n② 78.85%",
+    "scoringCriteria": "公式標準解答の各欄と照合する。",
+    "isCalculation": true
+  },
+  {
+    "id": "zenkou-joho-2024-early-joho-hardware-q04-08",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2024,
+    "season": "early",
+    "qNumber": 8,
+    "type": "descriptive",
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "1級・ハードウェアの基礎知識"
+    ],
+    "difficulty": 3,
+    "question": "16ビット語の仮想計算機について、シフト命令とレジスタの値を追い、解答群から①〜⑩を選びなさい。",
+    "answer": "① ハ、② フ、③ ヒ、④ ノ、⑤ ト、⑥ ウ、⑦ ケ、⑧ サ、⑨ サ、⑩ イ",
+    "officialAnswerNumber": "① ハ、② フ、③ ヒ、④ ノ、⑤ ト、⑥ ウ、⑦ ケ、⑧ サ、⑨ サ、⑩ イ",
+    "explanation": "①はビットシフト（ハ）。②は符号を保つ算術シフト（フ）、③は符号位置も動かす論理シフト（ヒ）。④は正負（ノ）。加算（ヌ）・減算（ネ）は演算の名称で、シフトの名称や保つ情報ではない。⑤は−20×4＝−80（ト）、⑥は10×2＝20（ウ）、⑦は10×8＝80（ケ）。加算後と転送後はどちらも100（サ、⑧⑨）で、元の10の10倍（イ、⑩）。他の数値肢は、指定されたシフト数・符号・命令の順番を適用した結果のいずれにもならない。例えば−40は1ビット左シフト、60は20と80の差である。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zenkou-joho/72-hardware-08-p25.webp"
+    ],
+    "imageAltTexts": [
+      "大問4の問題文、設例または解答群（公式PDFの25ページ）。"
+    ],
+    "officialQuestionLabel": "大問4",
+    "examDate": "2024-06-28",
+    "sourceExamSession": "第72回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=25",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=59",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問4。",
+    "license": "ZENKOU-owner-decision",
+    "modelAnswer": "① ハ、② フ、③ ヒ、④ ノ、⑤ ト、⑥ ウ、⑦ ケ、⑧ サ、⑨ サ、⑩ イ",
+    "scoringCriteria": "公式標準解答の各欄と照合する。"
+  },
+  {
+    "id": "zenkou-joho-2024-early-joho-hardware-q05-09",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2024,
+    "season": "early",
+    "qNumber": 9,
+    "type": "descriptive",
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "1級・ハードウェアの基礎知識"
+    ],
+    "difficulty": 3,
+    "question": "OSI参照モデルの層とTCP/IP、ネットワーク接続機器に関する空欄①〜⑩の記号を答えなさい。",
+    "answer": "① ク、② ケ、③ キ、④ ア、⑤ エ、⑥ セ、⑦ シ、⑧ チ、⑨ タ、⑩ カ",
+    "officialAnswerNumber": "① ク、② ケ、③ キ、④ ア、⑤ エ、⑥ セ、⑦ シ、⑧ チ、⑨ タ、⑩ カ",
+    "explanation": "OSIのOは開放（ク）。下から物理（ケ）、データリンク（キ）、ネットワーク、トランスポート（ア）、セッション、プレゼンテーション（エ）、アプリケーション。ルータ（セ）は経路を選択し、ゲートウェイ（シ）は異種プロトコル間を変換する。リピータは信号再生、ターミナルは端末である。TCPは第4層（チ）、IPは第3層（タ）相当で、2・5・6・7（ソ、ツ、テ、ト）は両者の層番号にならない。循環（コ）はOSIのOの意味に当たらない。パケット（カ）は送信単位、プロトコルは通信規約、インターネットはネットワークの名称、コントロールは制御を意味する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/zenkou-joho/72-hardware-09-p26.webp"
+    ],
+    "imageAltTexts": [
+      "大問5の問題文、設例または解答群（公式PDFの26ページ）。"
+    ],
+    "officialQuestionLabel": "大問5",
+    "examDate": "2024-06-28",
+    "sourceExamSession": "第72回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=26",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/72joho_kekka.pdf#page=59",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問5。",
+    "license": "ZENKOU-owner-decision",
+    "modelAnswer": "① ク、② ケ、③ キ、④ ア、⑤ エ、⑥ セ、⑦ シ、⑧ チ、⑨ タ、⑩ カ",
+    "scoringCriteria": "公式標準解答の各欄と照合する。"
+  }
+]
