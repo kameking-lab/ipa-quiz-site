@@ -45,6 +45,8 @@
 .group strong { font-variant-numeric: tabular-nums; }
 .seats { display: flex; flex-wrap: wrap; align-items: end; }
 .seat { position: relative; width: clamp(26px, 7.5vw, 37px); aspect-ratio: 1; }
+.scene[data-rows="3"] .seat { width: 22px; }
+.scene[data-rows="3"] .group { padding-block: 4px; }
 .seat img { width: 100%; height: 100%; object-fit: contain; }
 .mirrored { transform: scaleX(-1); }
 .seat[data-studying-now="true"]::after {

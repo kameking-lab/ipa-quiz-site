@@ -420,7 +420,7 @@ function ScoredQuizPlayer({
   const selectionLabel = native ? nativeBResult?.slotResults.map((slot) => `${slot.label}: ${slot.selectedCandidateId ?? "未回答"}`).join(" / ") : ordering ? (orderedSelected ? formatOrderingAnswer(question.exam, orderedSelected) : undefined) : numeric ? numericSelected : multiSelect ? (picked.length > 0 ? formatSelection(picked) : undefined) : selected;
 
   return (
-    <div className="flex min-h-[calc(100dvh-3.5rem)] flex-col bg-background">
+    <div className="p3-page p3-quiz flex min-h-[calc(100dvh-3.5rem)] flex-col bg-background" data-revealed={revealed || undefined}>
       <div role="region" aria-label="クイズナビゲーション" className="sticky top-0 z-20 flex flex-col border-b border-border bg-card">
         <div className="flex items-center gap-2 px-3 py-2 sm:py-2.5">
           <Button
@@ -468,7 +468,7 @@ function ScoredQuizPlayer({
           aria-valuemin={1}
           aria-valuemax={total}
           aria-valuetext={`${index + 1}問目 / 全${total}問`}
-          className="h-1 bg-muted"
+          className="p3-quiz-progress h-2 bg-muted"
         >
           <div
             className="h-full bg-primary motion-safe:transition-all motion-safe:duration-300"
@@ -479,7 +479,7 @@ function ScoredQuizPlayer({
 
       <div className="flex flex-1">
         <main aria-label="問題と解説"
-          className="min-w-0 w-full flex-1 px-3 pb-12 pt-4 sm:px-6"
+          className="min-w-0 w-full flex-1 px-3 pb-12 pt-3 sm:px-6"
           onTouchStart={onTouchStart}
           onTouchEnd={onTouchEnd}
         >

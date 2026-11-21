@@ -48,23 +48,28 @@ export function MonthlyPlanView({ canManage, hasContract, showTrial, management,
 }) {
   return <>
     <BillingPageBeacon />
-    <section aria-labelledby="monthly-price" className="mx-auto w-full max-w-sm space-y-6 py-4 sm:py-8">
-      <div className="space-y-4">
-        <div className="flex items-center justify-between gap-3">
-          <div className="space-y-4">
-            <h1 id="monthly-price" className="text-xl font-bold">月額プラン</h1>
+    <main aria-labelledby="monthly-price" className="p3-page p3-billing study-column space-y-4 pb-8">
+      <div className="space-y-3">
+        <div className="p3-landscape p3-hero p3-billing-hero">
+          <div className="p3-price-sign">
+            <h1 id="monthly-price" className="text-lg font-bold">月額プラン</h1>
             <MonthlyPrice />
           </div>
           <MonthlyMascot />
         </div>
-        <p>無料は過去問1日{MONTHLY_PUBLIC_OFFER.freeDaily}問。月額なら過去問を回数無制限で解き、全分野の弱点から今週の復習を始められます。</p>
+        <p className="p3-billing-offer p3-listed text-sm leading-relaxed">
+          <span>無料は過去問1日{MONTHLY_PUBLIC_OFFER.freeDaily}問。</span>
+          <span>月額なら過去問を回数無制限で解き、全分野の弱点から今週の復習を始められます。</span>
+        </p>
       </div>
       {management ? <SubscriptionEnding key={management.orderId} initial={management} today={today} />
         : hasContract ? <p role="status" className="text-sm">契約済みです（支払確認中を含む）。</p>
         : salesOpen ? <MonthlyPlanLink returnTo={returnTo ?? ""} />
         : <p role="status" className="rounded-lg bg-muted px-4 py-3 text-sm">現在、新規申込を受け付けていません。</p>}
       {canManage && (management ? <ManageSubscriptionButton label="契約・お支払い" /> : <ManageSubscriptionButton />)}
-      <MonthlyConditions showTrial={!hasContract && showTrial} contract={hasContract} />
-    </section>
+      <div className="p3-listed px-4 py-3">
+        <MonthlyConditions showTrial={!hasContract && showTrial} contract={hasContract} />
+      </div>
+    </main>
   </>;
 }

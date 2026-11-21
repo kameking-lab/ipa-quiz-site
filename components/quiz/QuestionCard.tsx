@@ -1,6 +1,7 @@
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
 import { QuestionFigures } from "./QuestionFigures";
 import { hasUnrenderableContent } from "@/lib/questions/content-quality";
+import { P3Mascot } from "@/components/ui/P3Mascot";
 import { Badge } from "@/components/ui/badge";
 import type { Question } from "@/lib/questions/types";
 import { questionNumberLabel } from "@/lib/questions/display";
@@ -18,11 +19,12 @@ export function QuestionCard({
 }) {
   return (
     <div data-study-presence-exam={question.exam} className="space-y-3">
-      <div className="flex flex-wrap items-center gap-2 text-xs">
+      <div className="p3-quiz-hero p3-landscape p3-hero">
+      <div className="flex min-w-0 flex-wrap items-center gap-1.5 self-center text-xs">
         <Badge variant="outline">
           {questionSourceExam(question)} {questionSourceEdition(question)}
         </Badge>
-        <Badge variant="default">問{questionNumberLabel(question)}</Badge>
+        <strong className="basis-full font-display text-3xl leading-tight tabular-nums">問{questionNumberLabel(question)}</strong>
         {question.explanationCoverage === "official-summary" && <Badge variant="outline">公式正答と一般解説</Badge>}
         <Badge variant="default">{question.category}</Badge>
         {question.topicTags.slice(0, 3).map((t) => (
@@ -32,12 +34,14 @@ export function QuestionCard({
         ))}
         {question.isCalculation && <Badge variant="warn">計算</Badge>}
         {progress && (
-          <span className="ml-auto font-medium text-zinc-600 dark:text-zinc-300">
+          <span className="font-medium text-muted-foreground tabular-nums">
             {progress.current + 1}問目 / {progress.total}問中
           </span>
         )}
       </div>
-      <div className="selectable-content rounded-2xl border border-border bg-card p-5 text-base leading-relaxed text-card-foreground shadow-sm">
+      <P3Mascot exam={question.exam} />
+      </div>
+      <div className="selectable-content rounded-2xl border border-hairline bg-card p-3.5 text-base leading-relaxed text-card-foreground shadow-sm">
         {question.lawReferenceDate && (
           <p className="mb-3 text-sm font-medium text-muted-foreground">
             法令基準日: {question.lawReferenceDate}（この日の制度で解答）

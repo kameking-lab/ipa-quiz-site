@@ -108,20 +108,20 @@ export function PaceTrack({ plan, runArt, percent, target, finished = false }: {
     <line ref={fillRef} x1={START_X} y1={lineY} x2={trackX(finished ? percent : 0)} y2={lineY} strokeWidth="8" strokeLinecap="round" className="stroke-primary" />
     {!finished && deadline && bandEnd > bandStart && <>
       <rect x={trackX(bandStart)} y="84" width={trackX(bandEnd) - trackX(bandStart)} height="3" rx="1.5" className="fill-warning-soft-foreground" />
-      <text x={START_X} y="115" fontSize="12" className="fill-warning-soft-foreground">申込{plan.registration?.estimated ? "（予定）" : "期間"}</text>
+      <text x={START_X} y="115" fontSize="14" className="fill-warning-soft-foreground">申込{plan.registration?.estimated ? "（予定）" : "期間"}</text>
     </>}
     {!finished && !passing.isDefault && passing.sourceUrl && <>
       <line x1={trackX(passing.percent)} x2={trackX(passing.percent)} y1="69" y2="83" className="stroke-muted-foreground" />
-      <text x={trackX(passing.percent)} y="115" fontSize="12" textAnchor="middle" className="fill-muted-foreground">{passing.conditions?.includes("IRT") ? "基準点" : "合格ライン"}</text>
+      <text x={trackX(passing.percent)} y="115" fontSize="14" textAnchor="middle" className="fill-muted-foreground">{passing.conditions?.includes("IRT") ? "基準点" : "合格ライン"}</text>
     </>}
     {!finished && targetX !== null && <g className="fill-shu">
       <path data-testid="pace-target-flag" d={`M${targetX} 4h10l-2 3 2 3h-10z`} />
       <line x1={targetX} x2={targetX} y1="4" y2="73" strokeDasharray="2 3" className="stroke-shu" />
-      <text x={targetX > 215 ? targetX - 5 : targetX + 14} y="12" textAnchor={targetX > 215 ? "end" : "start"} fontSize="12">今日の目標</text>
+      <text x={targetX > 215 ? targetX - 5 : targetX + 14} y="14" textAnchor={targetX > 215 ? "end" : "start"} fontSize="14">今日の目標</text>
     </g>}
     <RunningChihuahua key={`${plan.id}/${runArt}`} src={runArt} percent={percent} lineY={lineY} fillRef={fillRef} stopped={finished} />
-    <text x={START_X} y={lineY + 18} fontSize="12" className="fill-muted-foreground tabular-nums">{trackDate(plan.startDate)}</text>
-    <text x={endX - 15} y={lineY + 18} textAnchor="end" fontSize="12" className="fill-muted-foreground tabular-nums">{plan.examDate ? trackDate(plan.examDate) : "試験日"}</text>
+    <text x={START_X} y={lineY + 18} fontSize="14" className="fill-muted-foreground tabular-nums">{trackDate(plan.startDate)}</text>
+    <text x={endX - 15} y={lineY + 18} textAnchor="end" fontSize="14" className="fill-muted-foreground tabular-nums">{plan.examDate ? trackDate(plan.examDate) : "試験日"}</text>
 
   </svg>;
 }
@@ -146,7 +146,7 @@ export function StartTrack({ runArt }: { runArt: string }) {
     <svg x={START_X - FRAME_SIZE / 2} y={lineY - FRAME_SIZE + 1} width={FRAME_SIZE} height={FRAME_SIZE} className="overflow-hidden" aria-hidden="true">
       <image href={runArt} width={FRAME_SIZE * 4} height={FRAME_SIZE} />
     </svg>
-    <text x={START_X} y="94" fontSize="12" className="fill-muted-foreground">スタート</text>
-    <text x={finish} y="94" textAnchor="end" fontSize="12" className="fill-muted-foreground">試験日？</text>
+    <text x={START_X} y="94" fontSize="14" className="fill-muted-foreground">スタート</text>
+    <text x={finish} y="94" textAnchor="end" fontSize="14" className="fill-muted-foreground">試験日？</text>
   </svg>;
 }

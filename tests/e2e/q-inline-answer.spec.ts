@@ -57,7 +57,7 @@ test.describe("/q inline answer", () => {
     await expect(result.getByText(/^(正解！|不正解 — 正解は .+)$/)).toBeVisible();
     await expect(radios.first()).toBeChecked();
     await expect(next).toHaveCSS("background-color", await page.evaluate(() =>
-      document.documentElement.classList.contains("dark") ? "rgb(168, 199, 171)" : "rgb(47, 74, 58)"
+      document.documentElement.classList.contains("dark") ? "rgb(155, 209, 173)" : "rgb(46, 107, 79)"
     ));
     await expect(inlineNext).toHaveCSS("background-color", "rgba(0, 0, 0, 0)");
     await next.click({ trial: true });

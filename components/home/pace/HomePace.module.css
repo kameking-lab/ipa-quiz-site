@@ -5,6 +5,7 @@
   --p3-sun-size: 42px;
   overflow: hidden;
 }
+.stack:is([data-home-state="planned"], [data-home-state="post-exam"]) .hero { --p3-sun-top: 49px; --p3-sun-right: 30px; }
 .hero > :not(svg) { position: relative; }
 .first { padding-bottom: 13px; }
 .room, .recent, .upcoming { margin-top: 12px; }

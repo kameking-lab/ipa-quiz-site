@@ -227,7 +227,7 @@ function ScoredQuestionAnswerCard({
     : formatAcceptedAnswers(answerKey);
 
   return (
-    <div data-study-presence-exam={exam} data-question-answered={answered || undefined} className="space-y-3">
+    <div data-study-presence-exam={exam} data-question-answered={answered || undefined} data-question-revealed={revealed || undefined} className="space-y-3">
       {question?.acceptedAnswerCombinations && !revealed && (
         <Button className="min-h-12" disabled={picked.length < 1 || picked.length > requiredSelections}
           onClick={() => recordOutcome(formatSelection(picked), isCompleteSelectionCorrect(answerKey, picked, requiredSelections, question.acceptedAnswerCombinations), { kind: "multiple-choice", selected: [...picked] })}>
@@ -291,10 +291,11 @@ function ScoredQuestionAnswerCard({
         </button>
       ) : (
         <div role="group" aria-label={answered ? "採点結果" : "正答"}
+          data-outcome={answered && !isCorrect ? "incorrect" : "correct"}
           className={
             !answered || isCorrect
-              ? "rounded-lg bg-success-soft p-4 text-success-soft-foreground"
-              : "rounded-lg bg-danger-soft p-4 text-danger-soft-foreground"
+              ? "p3-question-result p3-landscape rounded-2xl bg-success-soft px-3.5 py-3 text-success-soft-foreground"
+              : "p3-question-result p3-landscape rounded-2xl bg-danger-soft px-3.5 py-3 text-danger-soft-foreground"
           }
         >
           <div className="text-base leading-[1.7] font-bold">
@@ -302,7 +303,7 @@ function ScoredQuestionAnswerCard({
               <span>正解は {answerLabel}</span>
             ) : (
               <div className="flex flex-wrap items-baseline gap-x-3">
-                <span className="inline-flex items-center gap-1.5">
+                <span className="inline-flex items-center gap-1.5 text-xl">
                   {isCorrect ? (
                     <Check aria-hidden="true" className="size-5 shrink-0" />
                   ) : (

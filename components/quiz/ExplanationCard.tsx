@@ -1,5 +1,6 @@
 "use client";
 
+import { isAcceptedAnswer } from "@/lib/questions/answers";
 import { displayQuestionExplanation } from "@/lib/questions/explanation-display";
 
 import type { NativeBGrade } from "@/lib/questions/types";
@@ -59,10 +60,10 @@ export function ExplanationCard({
       aria-label={isCorrect ? "正解の解説" : "不正解の解説"}
       className={cn(
         "motion-safe:animate-in motion-safe:slide-in-from-bottom-4 motion-safe:duration-200",
-        "rounded-2xl border border-border bg-card p-4 sm:p-5",
+        "p3-explanation rounded-2xl border border-hairline bg-card p-4 sm:p-5",
       )}
     >
-      <div className="mb-4 flex items-start justify-between gap-3">
+      <div className="p3-question-result p3-landscape mb-4 rounded-2xl p-3" data-outcome={isCorrect ? "correct" : "incorrect"}>
         <div className="flex min-w-0 flex-wrap items-center gap-2">
           {isCorrect ? (
             <CheckCircle2
@@ -77,7 +78,7 @@ export function ExplanationCard({
           )}
           <span
             className={cn(
-              "text-sm font-semibold",
+              "text-xl font-bold",
               isCorrect
                 ? "text-emerald-900 dark:text-emerald-100"
                 : "text-red-800 dark:text-red-200",
@@ -90,6 +91,7 @@ export function ExplanationCard({
             {selected ? ` / あなた: ${formatQuestionAnswerForDisplay(question, selected)}` : ""}
           </span>
         </div>
+        <LearningPetCorner qualificationId={question.exam} questionId={question.id} compact />
       </div>
 
       {isPlaceholderExplanation(question.explanation) ? (
@@ -131,6 +133,7 @@ export function ExplanationCard({
               <div
                 key={key}
                 data-selected-choice={key === selected ? "true" : undefined}
+                data-correct-choice={isAcceptedAnswer(question.answer, key) || undefined}
                 className={cn(
                   "grid grid-cols-[1.75rem_1fr] gap-2 rounded-lg px-2 py-1",
                   key === selected && !isCorrect
@@ -147,8 +150,6 @@ export function ExplanationCard({
           </dl>
         </section>
       )}
-
-      <LearningPetCorner qualificationId={question.exam} questionId={question.id} compact />
 
       <QuestionAiFollowup key={question.id} question={question} selectedChoice={selected} isCorrect={isCorrect} />
       <AiTransparencyDisclaimer question={question} />
