@@ -90,9 +90,10 @@ describe("公開問題の品質ゲート", () => {
     expect(rules({ sourcePdfUrl })).toEqual([expected]);
   });
 
-  it("固定した試験年月のPDFや別ホスト・別フィールドのURLを許容する", () => {
+  it("固定した試験年月のPDFやクエリに保存サイト名がある別ホストを許容する", () => {
     expect(rules({ sourcePdfUrl: "https://www.kakomon-ai.jp/exam-library/nichimu/amateur1/2026-05/amateur.pdf" })).toEqual([]);
-    expect(rules({ sourcePdfUrl: "https://example.org/?name=web.archive.org", sourceAnswerUrl: "https://web.archive.org/answer.pdf" })).toEqual([]);
+    expect(rules({ sourcePdfUrl: "https://example.org/?name=web.archive.org" })).toEqual([]);
+    expect(rules({ sourceAnswerUrl: "https://web.archive.org/answer.pdf" })).toEqual(["archived-source"]);
   });
 
   it("許可リストが一致するID・ルール・値に限って例外を認める", () => {
@@ -172,6 +173,33 @@ describe("公式PDFの保存版", () => {
     expect(check({ ...archived, sourceAnswerUrl: url, sourceAnswerArchiveUrl: undefined }, [
       { ...paper, answer: { originalUrl: url, sha256 } },
     ])).toEqual([]);
+  });
+
+  it.each([
+    [capture(answer), "archived-source"],
+    [answer, "rolling-source"],
+  ])("問題が現行の固定URLでも、未照合の正答URLを拒否する (%s)", (url, rule) => {
+    expect(rules({ sourceAnswerUrl: url })).toEqual([rule]);
+  });
+
+  it("公害防止管理者の元URLは確認済みの配信ホストに限る", () => {
+    const url = "https://jemai.or.jp/paper.pdf";
+    const exam = "kogai-12";
+    const doc = { originalUrl: url, archiveUrl: capture(url), sha256 };
+    const q = { ...archived, exam, sourcePdfUrl: url, sourceArchiveUrl: capture(url),
+      sourceAnswerUrl: url, sourceAnswerArchiveUrl: capture(url) } as const;
+    expect(check(q, [{ ...paper, exam, question: doc, answer: doc }])).toEqual(["archived-source"]);
+  });
+
+  it("奈良県実施分のホストを関西広域連合への移管後に流用しない", () => {
+    const exam = "chori-nara";
+    const url = "https://www.pref.nara.jp/secure/313671/R6cyori.pdf";
+    const doc = { originalUrl: url, archiveUrl: capture(url), sha256 };
+    const q = { ...archived, exam, sourcePdfUrl: url, sourceArchiveUrl: capture(url),
+      sourceAnswerUrl: url, sourceAnswerArchiveUrl: capture(url) } as const;
+    const p = { ...paper, exam, question: doc, answer: doc };
+    expect(check({ ...q, year: 2024 }, [{ ...p, year: 2024 }])).toEqual([]);
+    expect(check({ ...q, year: 2025 }, [{ ...p, year: 2025 }])).toEqual(["archived-source"]);
   });
 
   it("公式の保存版があっても仮の本文と定型句だけの解説を拒否する", () => {
