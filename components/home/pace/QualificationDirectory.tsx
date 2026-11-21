@@ -6,6 +6,7 @@ const domainIcon = {
   it: Laptop, money: BriefcaseBusiness, "real-estate": House, legal: Scale,
   electrical: Zap, construction: Construction, safety: ShieldCheck, welfare: HeartPulse, automotive: CarFront,
 };
+const regionalGroupKinds = new Set(["都道府県別", "地域・日程別", "ブロック別", "自治体別"]);
 
 export function QualificationDirectory({ domains, challengeHref, tiles = false }: {
   domains: readonly HomeDirectoryDomain[];
@@ -14,7 +15,8 @@ export function QualificationDirectory({ domains, challengeHref, tiles = false }
 }) {
   const regionalItems = tiles ? domains.flatMap(domain => [...domain.featured, ...domain.compact]).filter(item => {
     const member = item.children?.[0];
-    return member && qualificationGroupMember(member.key)?.group.selectLabel.startsWith("地域");
+    const group = member && qualificationGroupMember(member.key)?.group;
+    return group && regionalGroupKinds.has(group.kind);
   }) : [];
   return <div className={tiles ? "p3-search-tiles" : "divide-y divide-hairline border-y border-hairline"}>{domains.map(domain => {
     const Icon = domainIcon[domain.id];
