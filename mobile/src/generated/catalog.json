@@ -2,6 +2,28 @@
   "schema": 2,
   "exams": [
     {
+      "code": "chori-nara",
+      "qualification": "chori-nara",
+      "name": "調理師試験（奈良県）",
+      "count": 58,
+      "years": [
+        2024
+      ],
+      "categories": [
+        "公衆衛生学",
+        "栄養学",
+        "調理理論",
+        "食品学",
+        "食品衛生学",
+        "食文化概論"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 123850,
+      "revision": "f6da0e5997ab839d33bb6808e24eda4eca8191c774511aca94132bb39fef2fb9"
+    },
+    {
       "code": "kaijo-hoan-gakko",
       "qualification": "kaijo-hoan-gakko",
       "name": "海上保安学校学生",
@@ -398,9 +420,13 @@
       "code": "kogai-18",
       "qualification": "kogai-18",
       "name": "公害防止管理者・水質関係技術特論",
-      "count": 20,
+      "count": 100,
       "years": [
-        2026
+        2026,
+        2025,
+        2024,
+        2023,
+        2022
       ],
       "categories": [
         "BOD",
@@ -412,6 +438,7 @@
         "工場内の排水対策",
         "循環冷却水の収支",
         "水質試料の保存",
+        "水質関係技術特論",
         "汚泥脱水",
         "沈降分離",
         "活性汚泥の負荷計算",
@@ -427,18 +454,23 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 68624,
-      "revision": "41d6c7000c45deabccbdbe79c6b1c117c4ff62a39d2df9811cb73c3162620453"
+      "bytes": 290911,
+      "revision": "f1eac4814322759feb6d239349cd11d74ef753e7b80651727660837e9ee00a77"
     },
     {
       "code": "kogai-13",
       "qualification": "kogai-13",
       "name": "公害防止管理者・ばいじん・一般粉じん特論",
-      "count": 10,
+      "count": 50,
       "years": [
-        2026
+        2026,
+        2025,
+        2024,
+        2023,
+        2022
       ],
       "categories": [
+        "ばいじん・一般粉じん特論",
         "サイクロン",
         "ダスト測定位置",
         "ダスト濃度測定",
@@ -453,8 +485,8 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 33634,
-      "revision": "55d654f080c581bf5aa78f53b0f9c1252af90a06cbc680724f6a43d7599e0b1b"
+      "bytes": 150845,
+      "revision": "0d213b767e538c62201475f5e4a8efb350575ed32c79f91c7eb3c0a3f70ea98a"
     },
     {
       "code": "concrete-assou1",
@@ -518,11 +550,16 @@
       "code": "kogai-08",
       "qualification": "kogai-08",
       "name": "公害防止管理者（汚水処理）",
-      "count": 25,
+      "count": 124,
       "years": [
-        2026
+        2026,
+        2025,
+        2024,
+        2023,
+        2022
       ],
       "categories": [
+        "汚水処理特論",
         "汚泥処理・生物処理",
         "物理化学処理",
         "運転管理・水質分析"
@@ -530,18 +567,20 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 58175,
-      "revision": "dc89f82bf5f7185cdf9fd779b16d10f60bedd05086331478330a0a2cdb3af249"
+      "bytes": 344141,
+      "revision": "9f12f5f52af16f27c4d3f6850d7a9f209bccc8e44f8cd193a22e574ee57ff0b9"
     },
     {
       "code": "kogai-04",
       "qualification": "kogai-04",
       "name": "公害防止管理者（ばいじん・粉じん）",
-      "count": 45,
+      "count": 74,
       "years": [
         2026,
         2025,
-        2024
+        2024,
+        2023,
+        2022
       ],
       "categories": [
         "ばいじん・粉じん特論",
@@ -552,8 +591,8 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 119742,
-      "revision": "376adbf9ade6858a968f5c7eaacbf078bbbf7c15a6df2f955c0ae867dc9c93cc"
+      "bytes": 200939,
+      "revision": "f2df75794ff67f76206ca27a6978979aef46fe53c55ed32ebf963eba18a700fa"
     },
     {
       "code": "kounin-geography",
@@ -729,39 +768,49 @@
       "code": "kogai-11",
       "qualification": "kogai-11",
       "name": "公害防止管理者・騒音・振動概論",
-      "count": 25,
+      "count": 125,
       "years": [
-        2026
+        2026,
+        2025,
+        2024,
+        2023,
+        2022
       ],
       "categories": [
         "振動の基礎",
         "法令・制度",
         "騒音の基礎",
-        "騒音・振動の状況"
+        "騒音・振動の状況",
+        "騒音・振動概論"
       ],
       "sessions": [
         "gakka"
       ],
-      "bytes": 79124,
-      "revision": "f3803cb564284c1d98019deaf0b8f971c59ee777bacdeb4df8662370074a42c2"
+      "bytes": 364267,
+      "revision": "cfe78187366e0c0fd078c604e07e32ce8fbf5573b8be16f0cdab609dfbb33220"
     },
     {
       "code": "kogai-14",
       "qualification": "kogai-14",
       "name": "公害防止管理者・ダイオキシン類概論",
-      "count": 15,
+      "count": 75,
       "years": [
-        2026
+        2026,
+        2025,
+        2024,
+        2023,
+        2022
       ],
       "categories": [
         "ダイオキシン類の性質・影響",
+        "ダイオキシン類概論",
         "法令・制度"
       ],
       "sessions": [
         "gakka"
       ],
-      "bytes": 48998,
-      "revision": "6290b18e5330f3fea9c3235ebb04d77af6d56f32ff3113e1c67a080fca1ae14d"
+      "bytes": 224862,
+      "revision": "bbea0885279b51c2f02029eea7f94b1ded1d5c96c58a1e540061b980689257e0"
     },
     {
       "code": "cfp-3",
@@ -835,13 +884,18 @@
       "code": "kogai-16",
       "qualification": "kogai-16",
       "name": "公害防止管理者・大気・水質概論",
-      "count": 10,
+      "count": 50,
       "years": [
-        2026
+        2026,
+        2025,
+        2024,
+        2023,
+        2022
       ],
       "categories": [
         "公害防止組織",
         "地球環境",
+        "大気・水質概論",
         "大気環境",
         "有害物質",
         "水質汚濁の歴史",
@@ -851,8 +905,8 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 32764,
-      "revision": "98263fa8efe80631ff04f2f4d04d589f7e666c3d1c82153475aa5a4457ceb890"
+      "bytes": 145748,
+      "revision": "4cb75e82c248b5fe0a266a07b96d4f58fbad4c4f56b92b4807f563b7b56ee6b0"
     },
     {
       "code": "building-cleaning2",
@@ -883,11 +937,13 @@
       "code": "kogai-taiki-yugai",
       "qualification": "kogai-taiki-yugai",
       "name": "公害防止管理者 大気有害物質特論",
-      "count": 30,
+      "count": 50,
       "years": [
         2026,
         2025,
-        2024
+        2024,
+        2023,
+        2022
       ],
       "categories": [
         "ふっ素化合物の処理",
@@ -905,8 +961,8 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 74545,
-      "revision": "ee91cddd18b50ffc57582d06f85d1025624f6a0453ee870f148aede2b4301edc"
+      "bytes": 129693,
+      "revision": "a1af96859262da9d5faa4048c28436756eabcc030b60c328c76455c2e8f67bb9"
     },
     {
       "code": "dekyo-digital2",
@@ -1179,9 +1235,13 @@
       "code": "cfp-realestate",
       "qualification": "cfp-realestate",
       "name": "CFP®不動産運用設計",
-      "count": 100,
+      "count": 449,
       "years": [
-        2026
+        2026,
+        2025,
+        2024,
+        2023,
+        2022
       ],
       "categories": [
         "不動産の価格",
@@ -1191,6 +1251,7 @@
         "不動産投資・証券化",
         "不動産統計",
         "不動産譲渡時の税",
+        "不動産運用設計",
         "共同ビル・買換え",
         "取引・住宅性能",
         "土地利用・建築規制",
@@ -1210,8 +1271,8 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 1150970,
-      "revision": "ab527935c726ebf0a9ef16c655ea8735d96767f52d72e9396d816f89b2fb0e52"
+      "bytes": 2235684,
+      "revision": "eb443bd2688d42af7e92ab45ee7b601e44286ee4495eabd25da3eb8cadfc1127"
     },
     {
       "code": "building-cleaning3",
@@ -1248,14 +1309,19 @@
       "code": "kogai-taiki-gairon",
       "qualification": "kogai-taiki-gairon",
       "name": "公害防止管理者・大気概論",
-      "count": 10,
+      "count": 50,
       "years": [
-        2026
+        2026,
+        2025,
+        2024,
+        2023,
+        2022
       ],
       "categories": [
         "健康影響",
         "公害防止組織",
         "地球温暖化",
+        "大気概論",
         "大気汚染防止法",
         "届出施設の統計",
         "有害物質・発生源",
@@ -1267,8 +1333,8 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 32055,
-      "revision": "acbe46e38a837438aa230727fbdf08b5d478d6768298f3949c0d87ba26f60c7b"
+      "bytes": 148488,
+      "revision": "1423d477ef19f6eb11d59c8fd0dc4fb06a74561aa539db1e293284bc37245b0c"
     },
     {
       "code": "eiken2",
@@ -1646,15 +1712,20 @@
       "code": "kogai-06",
       "qualification": "kogai-06",
       "name": "公害防止管理者（大規模大気特論）",
-      "count": 10,
+      "count": 50,
       "years": [
-        2026
+        2026,
+        2025,
+        2024,
+        2023,
+        2022
       ],
       "categories": [
         "セメント産業",
         "大気境界層",
         "大気安定度",
         "大気環境シミュレーション",
+        "大規模大気特論",
         "排煙処理",
         "排煙拡散",
         "燃料品質",
@@ -1664,18 +1735,23 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 25922,
-      "revision": "ccd17e1418d908416f108c99a064af81a51599d6b537243f4fd634073d2035f0"
+      "bytes": 143352,
+      "revision": "acb802f9b0163efbb251913c11d1f3394c299d40bb6f5aecc602a57061b85290"
     },
     {
       "code": "kogai-large-water",
       "qualification": "kogai-large-water",
       "name": "公害防止管理者・大規模水質特論",
-      "count": 10,
+      "count": 50,
       "years": [
-        2026
+        2026,
+        2025,
+        2024,
+        2023,
+        2022
       ],
       "categories": [
+        "大規模水質特論",
         "環境モデル",
         "産業排水処理",
         "用排水管理"
@@ -1683,8 +1759,8 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 51943,
-      "revision": "731d2fc7cb97887ea01fd561815cc915b610d71de00fc67bbb16249ee8f8088c"
+      "bytes": 173195,
+      "revision": "a0ed5c88af6b280c4aa48bcc06fa06a511cc407f26618941fa804bc61862bcac"
     },
     {
       "code": "dekyo-chief-system",
@@ -1762,34 +1838,41 @@
       "code": "rodo-kijun-kantokukan",
       "qualification": "rodo-kijun-kantokukan",
       "name": "労働基準監督官",
-      "count": 260,
+      "count": 383,
       "years": [
         2026,
         2025,
-        2024
+        2024,
+        2023
       ],
       "categories": [
+        "一般知識",
         "刑法",
         "判断推理",
         "労働安全衛生",
         "労働法",
         "労働経済",
+        "労働経済・社会保障・社会学",
         "労働統計・労使関係",
         "労災保険",
         "化学",
         "基礎数学",
         "情報",
         "憲法",
+        "憲法・行政法・財政",
         "数学",
         "数的推理",
         "文章理解",
+        "時事",
         "時事・情報",
         "時事・社会",
         "民法",
+        "民法・刑法",
         "物理",
         "社会保障",
         "社会学",
         "空間把握",
+        "経済",
         "経済事情",
         "経済学",
         "行政法",
@@ -1801,8 +1884,8 @@
         "special-a",
         "special-b"
       ],
-      "bytes": 989244,
-      "revision": "772b91bb4db15b3d105b8a7063b8ea6bce4c924dbfd6831203f0b45c5f2dd8f4"
+      "bytes": 1308020,
+      "revision": "21626497436d679d18d2ae426ff48d9865eadc858dec756649151d19b8321e9c"
     },
     {
       "code": "chizai1",
@@ -1838,19 +1921,24 @@
       "code": "kogai-09",
       "qualification": "kogai-09",
       "name": "公害防止管理者・水質有害物質特論",
-      "count": 15,
+      "count": 75,
       "years": [
-        2026
+        2026,
+        2025,
+        2024,
+        2023,
+        2022
       ],
       "categories": [
         "有害物質の処理",
+        "水質有害物質特論",
         "測定技術"
       ],
       "sessions": [
         "gakka"
       ],
-      "bytes": 60651,
-      "revision": "8d03e53d6bf4fed3451cd8046baa43beca15a12ff9b7f3ec5b3934d17861bc61"
+      "bytes": 230805,
+      "revision": "d52f23a6208b4d5a91e0710c41fe2a239f58f4a946bf1c23abe748221d74f7a9"
     },
     {
       "code": "webdesign2",
@@ -1978,15 +2066,20 @@
       "code": "kogai-07",
       "qualification": "kogai-07",
       "name": "公害防止管理者・水質概論",
-      "count": 10,
+      "count": 50,
       "years": [
-        2026
+        2026,
+        2025,
+        2024,
+        2023,
+        2022
       ],
       "categories": [
         "公害防止組織",
         "有害物質",
         "水処理",
         "水環境",
+        "水質概論",
         "水質汚濁防止法",
         "環境基準",
         "総量規制"
@@ -1994,8 +2087,8 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 30172,
-      "revision": "374a2a69c5e754e68eb55ad00df2de2956b64e920b9570ea8009653360800841"
+      "bytes": 146450,
+      "revision": "23d4975dea6897c06f81f894f0100ced1f05977320c6e00f04daac5fc20c2286"
     },
     {
       "code": "webdesign-3",
@@ -2375,9 +2468,13 @@
       "code": "kogai-12",
       "qualification": "kogai-12",
       "name": "公害防止管理者 騒音・振動特論",
-      "count": 30,
+      "count": 150,
       "years": [
-        2026
+        2026,
+        2025,
+        2024,
+        2023,
+        2022
       ],
       "categories": [
         "騒音・振動特論"
@@ -2385,17 +2482,20 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 108128,
-      "revision": "2e2052855a01554d0272c94bd91440b71a70c9e54c3accbb217df830aeb15e96"
+      "bytes": 443901,
+      "revision": "535e82a6d78febf2be4513ebfba9bf23ae9e82c0a1f99ee9c54dde02d7ec8ff2"
     },
     {
       "code": "kogai-15",
       "qualification": "kogai-15",
       "name": "公害防止管理者 ダイオキシン類特論",
-      "count": 27,
+      "count": 127,
       "years": [
         2026,
-        2023
+        2025,
+        2024,
+        2023,
+        2022
       ],
       "categories": [
         "ダイオキシン類特論",
@@ -2407,8 +2507,8 @@
         "kogai-soron",
         "osui-shori"
       ],
-      "bytes": 104549,
-      "revision": "7b939bed496090b958f1a4651df8fa41d16f1bb6b9d5e3580c6cd357d7c132a9"
+      "bytes": 396037,
+      "revision": "f48f9864958a6d3d9c6def54c8e21af3abfea891052322aa84ddf5e14dbe6615"
     },
     {
       "code": "dekyo-charge-1",
@@ -2513,9 +2613,13 @@
       "code": "cfp-souzoku",
       "qualification": "cfp-souzoku",
       "name": "CFP®・相続・事業承継設計",
-      "count": 100,
+      "count": 448,
       "years": [
-        2026
+        2026,
+        2025,
+        2024,
+        2023,
+        2022
       ],
       "categories": [
         "不動産の相続税評価",
@@ -2525,6 +2629,7 @@
         "小規模宅地等の特例",
         "成年後見",
         "生前贈与加算・相続時精算課税",
+        "相続・事業承継設計",
         "相続人・法定相続分",
         "相続登記・土地国庫帰属",
         "相続税の債務控除",
@@ -2539,18 +2644,23 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 418333,
-      "revision": "15f3cb410155bc2a589c78eeea4360df8d8b1c1e075968d47dcadd9aec1d1d77"
+      "bytes": 1430759,
+      "revision": "f8135425e1bec8ba170a4c29a39e77a09283a16295c0706fc0292f621e564959"
     },
     {
       "code": "kogai-taiki-tokuron",
       "qualification": "kogai-taiki-tokuron",
       "name": "公害防止管理者・大気特論",
-      "count": 15,
+      "count": 75,
       "years": [
-        2026
+        2026,
+        2025,
+        2024,
+        2023,
+        2022
       ],
       "categories": [
+        "大気特論",
         "排煙処理",
         "測定・分析",
         "燃料・燃焼"
@@ -2558,8 +2668,8 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 52095,
-      "revision": "4394ccfa51b274ae707245fab5757aec3e675a77e044148cf6de63d06ef4a581"
+      "bytes": 216647,
+      "revision": "ce1c51f628d04f7ad649bfabec6120ed837076abab37aedb7a0f8d2aae0c05a0"
     },
     {
       "code": "telecom-chief-denso",
@@ -3793,15 +3903,20 @@
       "code": "kogai-01",
       "qualification": "kogai-01",
       "name": "公害防止管理者 公害総論",
-      "count": 15,
+      "count": 74,
       "years": [
-        2026
+        2026,
+        2025,
+        2024,
+        2023,
+        2022
       ],
       "categories": [
         "ダイオキシン類",
         "リスクマネジメント",
         "二酸化炭素排出量",
         "公害の歴史",
+        "公害総論",
         "公害苦情件数",
         "公害関係法令",
         "公害防止管理者制度",
@@ -3817,8 +3932,8 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 35333,
-      "revision": "07cfbaf81ef84b96c28b810cb36beafc8ab67758fd3acab088e876d62adab7c9"
+      "bytes": 209142,
+      "revision": "89e4cef6549242f466af23174bd8325eb540273e79556b6449a536d8541ff635"
     },
     {
       "code": "cfp",
@@ -9063,12 +9178,13 @@
       "code": "khk-kikai-otsu",
       "qualification": "khk-kikai-otsu",
       "name": "高圧ガス製造保安責任者 乙種機械",
-      "count": 199,
+      "count": 240,
       "years": [
         2026,
         2025,
         2024,
-        2023
+        2023,
+        2022
       ],
       "categories": [
         "乙種機械 保安管理技術",
@@ -9083,8 +9199,8 @@
         "hoan",
         "gakushiki"
       ],
-      "bytes": 1094199,
-      "revision": "155f0a2f27874c18bbf38cfc3d56d3a73de545dca422c08041365abf5d6a5d8a"
+      "bytes": 1236145,
+      "revision": "c26d52dfcbddd5b9ed9587747a9b3d47eb3aaa8451173f4e372857af17c95bde"
     },
     {
       "code": "energy-kanri",
@@ -9184,9 +9300,11 @@
       "code": "riku-tech2",
       "qualification": "riku-tech2",
       "name": "第二級陸上無線技術士",
-      "count": 189,
+      "count": 379,
       "years": [
-        2026
+        2026,
+        2023,
+        2022
       ],
       "categories": [
         "法規",
@@ -9200,16 +9318,19 @@
         "kogaku-a",
         "kogaku-b"
       ],
-      "bytes": 860594,
-      "revision": "dec552e4253ab3222b562db56ad602cdd958edd14e650cf40db52602afa22e14"
+      "bytes": 1325850,
+      "revision": "d9b85f4d98ff8bf3190cbcf7ff6ab77661522146c2a09e5eb4f947989a1daba3"
     },
     {
       "code": "amateur2",
       "qualification": "amateur2",
       "name": "第二級アマチュア無線技士",
-      "count": 109,
+      "count": 373,
       "years": [
-        2026
+        2026,
+        2024,
+        2023,
+        2022
       ],
       "categories": [
         "法規",
@@ -9219,8 +9340,8 @@
         "houki",
         "kogaku"
       ],
-      "bytes": 444748,
-      "revision": "8b76375f8c7d02b75238d1b75b290f6eae1c3fc41a0c8f015c145b6cacdc3be9"
+      "bytes": 1155058,
+      "revision": "5d86eaadfe0630aa56a4e0db464578449777204306c8ade098140a6c88d20981"
     },
     {
       "code": "maritime-radar",
@@ -9245,10 +9366,12 @@
       "code": "amateur1",
       "qualification": "amateur1",
       "name": "第一級アマチュア無線技士",
-      "count": 238,
+      "count": 358,
       "years": [
         2026,
-        2025
+        2025,
+        2024,
+        2022
       ],
       "categories": [
         "法規",
@@ -9258,8 +9381,8 @@
         "kogaku",
         "houki"
       ],
-      "bytes": 862417,
-      "revision": "a29c69b9b04ad5a5302cff708ca6fac29101afdda5b1116e9c52025f949db756"
+      "bytes": 1340598,
+      "revision": "439051fd5e858f1fd1a3981d10106b39bf19f5de27d5ded5d904fc0bd965d4bc"
     },
     {
       "code": "maritime-special1",
@@ -9308,10 +9431,11 @@
       "code": "maritime1",
       "qualification": "maritime1",
       "name": "第一級海上無線通信士",
-      "count": 285,
+      "count": 330,
       "years": [
         2026,
-        2025
+        2025,
+        2022
       ],
       "categories": [
         "法規",
@@ -9325,16 +9449,17 @@
         "kogaku-a",
         "kogaku-b"
       ],
-      "bytes": 886128,
-      "revision": "0f54fb73c1e7f19d59bda7cc7892009fe1c8b898a1cecf2af320aa1d4741e68b"
+      "bytes": 1087859,
+      "revision": "01e9bc1df56935606c63dcb5d22eec5ea49510a5943250c4378d9e8fb4c314cf"
     },
     {
       "code": "maritime2",
       "qualification": "maritime2",
       "name": "第二級海上無線通信士",
-      "count": 190,
+      "count": 265,
       "years": [
-        2026
+        2026,
+        2022
       ],
       "categories": [
         "法規",
@@ -9348,58 +9473,67 @@
         "kogaku-a",
         "kiso"
       ],
-      "bytes": 773612,
-      "revision": "957d97279a829e888e6460d8ad738a789ae015713af5fa34151c0db82c354a0e"
+      "bytes": 972015,
+      "revision": "147e3ebe2419c7d9ccca905898128a1fa54bab7ef67faf9acc81579957540e20"
     },
     {
       "code": "general1",
       "qualification": "general1",
       "name": "第一級総合無線通信士",
-      "count": 270,
+      "count": 432,
       "years": [
-        2026
+        2026,
+        2023,
+        2022
       ],
       "categories": [
         "地理",
         "法規",
         "無線工学A",
         "無線工学B",
-        "無線工学の基礎"
+        "無線工学の基礎",
+        "英語"
       ],
       "sessions": [
         "kiso",
         "kogaku-a",
         "kogaku-b",
         "hoki",
-        "tiri"
+        "tiri",
+        "eigo"
       ],
-      "bytes": 639253,
-      "revision": "461013c29d7ee223a1beb14b3dee0f4da08a681c324ec13dc8ef73851966ff9d"
+      "bytes": 1027478,
+      "revision": "6b27974eef97dec647a2208995996cf21393fb3ee8063fa3f8d74379d6ab4d16"
     },
     {
       "code": "general2",
       "qualification": "general2",
       "name": "第二級総合無線通信士",
-      "count": 280,
+      "count": 475,
       "years": [
-        2026
+        2026,
+        2023,
+        2022
       ],
       "categories": [
         "地理",
         "法規",
         "無線工学A",
         "無線工学B",
-        "無線工学の基礎"
+        "無線工学の基礎",
+        "英語"
       ],
       "sessions": [
         "tiri",
         "kiso",
         "kogaku-a",
         "kogaku-b",
-        "hoki"
+        "hoki",
+        "eigo-hikki",
+        "eigo-kaiwa"
       ],
-      "bytes": 842431,
-      "revision": "d31a5d4819ae0e49fe5120f1d68ad3b497b63d2eb5111c33bb24258593060738"
+      "bytes": 1373693,
+      "revision": "627706413262201fea7646e018adad392a5d2eea9666ddb606e482f4a1a3692c"
     },
     {
       "code": "general3",
@@ -9490,9 +9624,11 @@
       "code": "riku-tech1",
       "qualification": "riku-tech1",
       "name": "第一級陸上無線技術士",
-      "count": 190,
+      "count": 510,
       "years": [
-        2026
+        2026,
+        2023,
+        2022
       ],
       "categories": [
         "法規",
@@ -9506,8 +9642,8 @@
         "kogaku-a",
         "kogaku-b"
       ],
-      "bytes": 1017935,
-      "revision": "4640f4443fa334b075ed1e644517ad971ffe5da5fa977ab91e883c7efdcbc516"
+      "bytes": 1890797,
+      "revision": "9f1647f5c9609db3637f51764a23252db8c790b89fced0c10f3174f5c16110ba"
     },
     {
       "code": "maritime4",
@@ -9551,10 +9687,12 @@
       "code": "koku-toku",
       "qualification": "koku-toku",
       "name": "航空特殊無線技士",
-      "count": 72,
+      "count": 144,
       "years": [
         2026,
-        2025
+        2025,
+        2023,
+        2022
       ],
       "categories": [
         "法規",
@@ -9564,8 +9702,8 @@
         "houki",
         "kogaku"
       ],
-      "bytes": 153384,
-      "revision": "98267e0840c739219f017ad5dece60c621a5c729bfbc5a991d5de391ff5abd34"
+      "bytes": 352694,
+      "revision": "ca3a5439f4bd3bf883907e1a0ab4279d395f9ca8015421c5e977805e35462100"
     },
     {
       "code": "land-special1",
@@ -10934,7 +11072,7 @@
       "code": "fp2",
       "qualification": "fp2",
       "name": "2級FP技能検定",
-      "count": 660,
+      "count": 720,
       "years": [
         2026,
         2025,
@@ -10961,8 +11099,8 @@
         "kinzai-chusho",
         "kinzai-seiho"
       ],
-      "bytes": 2038693,
-      "revision": "2cd140112f5c5d461bc836e889cb65a2a6a9628b218d57308ef1fd352904bd67"
+      "bytes": 2207617,
+      "revision": "d8fd9a8219964680d1f491eaec9c39104251ef074439262eafae13fb2acc39fb"
     },
     {
       "code": "fp1",
@@ -18190,11 +18328,12 @@
       "code": "chori-center",
       "qualification": "chori-center",
       "name": "調理師試験（共通問題）",
-      "count": 178,
+      "count": 236,
       "years": [
         2025,
         2024,
-        2023
+        2023,
+        2022
       ],
       "categories": [
         "公衆衛生学",
@@ -18207,18 +18346,20 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 340519,
-      "revision": "93864c2a37839d13bb6490bce43bd205a885518a6c8f4eb129b61c33cd31a4ce"
+      "bytes": 468822,
+      "revision": "1ee059982ee21753f567ebe968e4ea56809df122b02709dbec8cef822aefe530"
     },
     {
       "code": "chori-gunma",
       "qualification": "chori-gunma",
       "name": "調理師試験（群馬県）",
-      "count": 179,
+      "count": 299,
       "years": [
         2026,
         2025,
-        2024
+        2024,
+        2023,
+        2022
       ],
       "categories": [
         "公衆衛生学",
@@ -18231,8 +18372,8 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 335539,
-      "revision": "6b745cfb0ff04b7aa6a1cc56ca86bcce02234ab878e1e9e7530ba00a57e9f6b8"
+      "bytes": 593843,
+      "revision": "29cf28f8b4fe4e6a2e56e563fe854053230157b8ea1a51d322add4ac4bc2199f"
     },
     {
       "code": "chori-hokkaido",
@@ -18264,11 +18405,12 @@
       "code": "chori-kanagawa",
       "qualification": "chori-kanagawa",
       "name": "調理師試験（神奈川県）",
-      "count": 239,
+      "count": 357,
       "years": [
         2026,
         2025,
-        2024
+        2024,
+        2023
       ],
       "categories": [
         "公衆衛生学",
@@ -18281,8 +18423,8 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 451684,
-      "revision": "ae26a00b573fc0b8fbaf45c3a15d67ab6d0f4b885a9ceb11f47eb733b36e9321"
+      "bytes": 705431,
+      "revision": "6d9dba280f8766913a1ceaae0b102cd681e13e95e90375c04e6e8d19b5e5536f"
     },
     {
       "code": "chori-kansai",
@@ -18314,9 +18456,11 @@
       "code": "chori-nagano",
       "qualification": "chori-nagano",
       "name": "調理師試験（長野県）",
-      "count": 60,
+      "count": 179,
       "years": [
-        2026
+        2026,
+        2025,
+        2024
       ],
       "categories": [
         "公衆衛生学",
@@ -18329,17 +18473,18 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 127756,
-      "revision": "1730f3aceffb59df71b6cb44445b8c2a48f5e1b79cb331e1650c0dadda6cf651"
+      "bytes": 403684,
+      "revision": "2bc999e37d31cd6682da67bc649966549e95918989fb5be22f5ad828633e94d6"
     },
     {
       "code": "chori-okinawa",
       "qualification": "chori-okinawa",
       "name": "調理師試験（沖縄県）",
-      "count": 120,
+      "count": 179,
       "years": [
         2026,
-        2025
+        2025,
+        2024
       ],
       "categories": [
         "公衆衛生学",
@@ -18352,18 +18497,19 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 250296,
-      "revision": "bf967576743f0d4b623f020bbaed4d73bbf1304b9c5aa2e4074755e0948f0661"
+      "bytes": 389011,
+      "revision": "1d1c43ed5c8d277a370dbb5d08339b273117f5a7f5a15d54295519e4202d3af4"
     },
     {
       "code": "chori-shizuoka",
       "qualification": "chori-shizuoka",
       "name": "調理師試験（静岡県）",
-      "count": 179,
+      "count": 239,
       "years": [
         2025,
         2024,
-        2023
+        2023,
+        2022
       ],
       "categories": [
         "公衆衛生学",
@@ -18376,8 +18522,8 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 387730,
-      "revision": "4f022909dbf4c9c347100a1cf2b9d39d75cf91616fea43c71245e0f6ed990c3a"
+      "bytes": 536217,
+      "revision": "81d07791caf5fb4b22ae94ebc790320a3db54e56238874e31c6431e363517a7d"
     },
     {
       "code": "chori-tochigi",
