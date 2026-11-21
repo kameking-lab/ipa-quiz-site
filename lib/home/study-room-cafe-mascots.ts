@@ -4,12 +4,21 @@ import { CAFE_ART_PATH, MIN_PLAY_GROUP, type CafePoint } from "./study-room-cafe
 
 export const CAFE_POSE_PATH = "/images/home/study-room-mascots/pose";
 export const NO_CAFE_POSES: readonly string[] = [];
-const CIVIL_CAFE_POSES = [
-  "bow-east", "bow-west", "paw-east", "paw-west", "rear-angle", "rear", "sleep-belly", "sleep-side",
+const CAFE_POSE_CODES = [
+  "ap", "au", "chusho-kigyo-shindanshi", "civil1", "civil2", "db", "denken3", "denko2", "fe",
+  "field-accounting", "field-architecture", "field-civil", "field-electrical", "field-finance",
+  "field-gas-energy", "field-it-basics", "field-it-development", "field-legal", "field-mechanical",
+  "field-medical-lab", "field-nature", "field-nursing", "field-plumbing", "field-real-estate",
+  "field-safety", "field-services", "field-welfare", "fp1", "fp2", "fp3", "gyosei", "hoikushi",
+  "ip", "kaigo", "kangoshi", "kenchikushi1", "nw", "pm", "sa", "sc", "sg", "shakai",
+  "sharoushi", "sm", "st", "takken", "tohan", "yakuzaishi",
 ];
-export const CAFE_POSE_FILES: readonly string[] = ["civil1", "civil2"].flatMap(exam =>
-  CIVIL_CAFE_POSES.map(pose => `${exam}-${pose}.webp`),
-);
+export const CAFE_POSE_FILES: readonly string[] = [
+  ...CAFE_POSE_CODES.flatMap(code =>
+    ["rear", "bow", "paw", "sleep"].map(pose => `${code}-${pose}.webp`)),
+  ...["civil1", "civil2"].flatMap(code =>
+    ["rear-angle", "sleep-belly"].map(pose => `${code}-${pose}.webp`)),
+];
 
 type Pose = "study" | IdleVariant | "rear" | "rear-angle" | "bow" | "paw" | "sleep" | "sleep-belly";
 type NewPose = Extract<Pose, "rear" | "rear-angle" | "bow" | "paw" | "sleep" | "sleep-belly">;

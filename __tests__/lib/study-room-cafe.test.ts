@@ -42,13 +42,28 @@ describe("daily study-room café", () => {
     expect(average(quiet.filter(point => point.floorY < 110))).toBeLessThan(average(quiet.filter(point => point.floorY > 160)));
   });
 
-  it("uses file names from the pose directory and falls back to an uncostumed dog", () => {
-    const civil = new Set(CAFE_POSE_FILES);
-    expect([...civil].sort()).toEqual(readdirSync(`public${CAFE_POSE_PATH}`).filter(file => file.endsWith(".webp")).sort());
-    expect(cafeMascot("civil1", "paw", civil, "west")).toMatchObject({ src: expect.stringContaining("/pose/civil1-paw-west.webp"), mirrored: false });
-    expect(cafeMascot("civil2", "sleep", civil)).toMatchObject({ src: expect.stringContaining("/pose/civil2-sleep-side.webp") });
+  it("registers all four poses per outfit and selects the corresponding image in either direction", () => {
+    const files = new Set(CAFE_POSE_FILES);
+    const poses = ["rear", "bow", "paw", "sleep"] as const;
+    const codes = new Set([...files].filter(file => file.endsWith("-rear.webp")).map(file => file.slice(0, -"-rear.webp".length)));
+    expect(codes.size).toBe(48);
+    expect([...files].sort()).toEqual(readdirSync(`public${CAFE_POSE_PATH}`).filter(file => file.endsWith(".webp")).sort());
+    for (const code of codes) {
+      for (const pose of poses) {
+        const src = `${CAFE_POSE_PATH}/${code}-${pose}.webp`;
+        expect(cafeMascot(code, pose, files, "east")).toMatchObject({ src, pose, mirrored: false });
+        expect(cafeMascot(code, pose, files, "west")).toMatchObject({ src, pose, mirrored: pose === "bow" || pose === "paw" });
+      }
+    }
+  });
+
+  it("preserves the distinct civil poses and uses an uncostumed dog when no outfit is available", () => {
+    const files = new Set(CAFE_POSE_FILES);
+    expect(cafeMascot("civil1", "rear-angle", files)).toMatchObject({ src: expect.stringContaining("/pose/civil1-rear-angle.webp") });
+    expect(cafeMascot("civil2", "sleep-belly", files)).toMatchObject({ src: expect.stringContaining("/pose/civil2-sleep-belly.webp") });
+    expect(cafeMascot("fe", "sleep-belly", files)).toMatchObject({ src: expect.stringContaining("/pose/fe-sleep.webp"), pose: "sleep" });
+    expect(cafeMascot("kisho", "rear", files)).toMatchObject({ src: expect.stringContaining("/pose/field-nature-rear.webp") });
     expect(cafeMascot("fe", "rear", new Set())).toMatchObject({ src: expect.stringContaining("/generic-rear.webp") });
-    expect(cafeMascot("fe", "bow", new Set(["fe-bow.webp"]), "west")).toMatchObject({ src: expect.stringContaining("/pose/fe-bow.webp"), mirrored: true });
     expect(cafeMascot("fe", "paw", new Set(), "west")).toMatchObject({ src: expect.stringContaining("/generic-paw.webp"), mirrored: false });
   });
 
@@ -59,7 +74,7 @@ describe("daily study-room café", () => {
     const occupants = cafeOccupants(seats, points, start, files, true);
     expect(occupants.filter(seat => seat.active).map(seat => seat.mascot.pose)).toEqual(["study", "book", "study"]);
     const pair = occupants.filter(seat => seat.mascot.pose === "bow" || seat.mascot.pose === "paw");
-    expect(pair.map(seat => seat.mascot.src.split("/").at(-1))).toEqual(["civil1-bow-east.webp", "civil1-paw-west.webp"]);
+    expect(pair.map(seat => seat.mascot.src.split("/").at(-1))).toEqual(["civil1-bow.webp", "civil1-paw.webp"]);
     expect(pair[0].point.floorY).toBe(pair[1].point.floorY);
     expect(pair[0].point.x).toBeLessThan(pair[1].point.x);
     expect(new Set(occupants.map(seat => seat.point)).size).toBe(seats.length);
