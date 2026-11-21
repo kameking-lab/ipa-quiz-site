@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
-import { getSafePdfUrl } from "@/lib/exam-config";
+import { publicQuestionSource } from "@/lib/api/question-source";
 import { buildRateLimitHeaders, checkApiRateLimit } from "@/lib/api/rate-limit";
 import type { ExamCode, Question, Season } from "@/lib/questions/types";
 
@@ -117,7 +117,7 @@ function toPublic(q: Question) {
     explanation: q.explanation,
     hasImage: q.hasImage,
     imageUrls: q.imageUrls,
-    sourcePdfUrl: getSafePdfUrl(q.sourcePdfUrl),
+    ...publicQuestionSource(q),
     license: q.license,
   };
 }

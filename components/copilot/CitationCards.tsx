@@ -198,7 +198,7 @@ function CitationDetailModal({
                   className="inline-flex items-center gap-1 rounded-xl border border-zinc-300 px-3 py-2 text-xs font-medium text-zinc-700 hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-800"
                 >
                   <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-                  IPA 原典 PDF
+                  {citation.question?.archivedSource ? "公式PDF（保存版）" : "IPA 原典 PDF"}
                 </a>
               )}
             </div>
