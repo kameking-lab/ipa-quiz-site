@@ -72,6 +72,10 @@ for (const percent of [0, 50, 100]) {
     expect(geometry.inside).toBe(true);
     expect(geometry.dogInFront).toBe(true);
     expect(geometry.spriteOffset).toBe("0");
+    await page.setViewportSize({ width: 320, height: 844 });
+    const labelSizes = await track.locator("text").evaluateAll(labels => labels.map(label =>
+      parseFloat(getComputedStyle(label).fontSize) * (label as SVGTextElement).getScreenCTM()!.a));
+    expect(Math.min(...labelSizes)).toBeGreaterThanOrEqual(12);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   });
 }

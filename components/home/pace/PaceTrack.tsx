@@ -87,8 +87,8 @@ export function PaceTrack({ runArt, mastered, total, stopped = false }: {
       strokeWidth="8" strokeLinecap="round" className="stroke-primary" />
     <FinishFlag lineY={lineY} height={70} />
     <RunningChihuahua key={runArt} src={runArt} percent={percent} lineY={lineY} fillRef={fillRef} stopped={stopped} />
-    <text x={START_X} y="97" fontSize="13" className="fill-muted-foreground">0問</text>
-    <text x={trackX(100)} y="97" textAnchor="end" fontSize="13" className="fill-muted-foreground">{total}問</text>
+    <text x={START_X} y="97" fontSize="14" className="fill-muted-foreground">0問</text>
+    <text x={trackX(100)} y="97" textAnchor="end" fontSize="14" className="fill-muted-foreground">{total}問</text>
   </svg>;
 }
 
