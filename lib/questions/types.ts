@@ -83,6 +83,7 @@ export type Session = "cfp-risk" | "reading" | "writing" | "listening" | "eju-bi
   | "keisan-2"
   | "keisan-3"
   | "keisan-4"
+  | "keisan-1"
   | "joho-hardware"
   | "joho-programming"
   | "joho-level2"

@@ -30,28 +30,35 @@ export function DescriptiveAnswerCard({
   const points = rubric.reduce((sum, item, index) => sum + (checked.includes(index) ? item.points : 0), 0);
   const khk = isKhk || question.exam.startsWith("khk-reito-") || question.exam === "khk-kikai-kou";
   const official = question.exam === "gyosei";
+  const officialExample = question.modelAnswerAuthority === "official" && question.officialAnswerExample === true;
   const ministry = question.exam === "chosashi";
   const modelAnswer = (question.modelAnswer ?? String(question.answer)).replace(
     /^公式問題に基づく独自解答例（法務省の公式解答ではありません）\s*/,
     "",
   );
   return (
-    <section aria-label={official ? "記述式の公式正解例" : "記述の独自解答例"} className="space-y-4 rounded-2xl border border-border bg-card p-5">
+    <section aria-label={official ? "記述式の公式正解例" : officialExample ? "記述式の公式解答例" : "記述の独自解答例"} className="space-y-4 rounded-2xl border border-border bg-card p-5">
       <p className="text-sm font-semibold">
-        {isKhk ? "公式問題に基づく独自解答例・自己採点" : khk ? "公式解答例と照合した独自解説" : official ? "行政書士試験研究センターの公式正解例" : ministry ? "公式問題に基づく独自解答例（法務省の公式解答ではありません）" : "公式問題に基づく独自解答例"}
+        {isKhk ? "公式問題に基づく独自解答例・自己採点" : khk ? "公式解答例と照合した独自解説" : official ? "行政書士試験研究センターの公式正解例" : officialExample ? "公式解答例" : ministry ? "公式問題に基づく独自解答例（法務省の公式解答ではありません）" : "公式問題に基づく独自解答例"}
       </p>
       <p className="text-sm text-muted-foreground">
-        {official ? "答案を公式正解例と照らして自己確認してください。" : "記述・作図は答案用紙に解き、解答例の計算過程・申請内容・図面と照らして確認してください。"}
+        {official ? "答案を公式正解例と照らして自己確認してください。" : officialExample ? "答案を公式解答例と照らして自己確認してください。" : "記述・作図は答案用紙に解き、解答例の計算過程・申請内容・図面と照らして確認してください。"}
         この画面では記述答案の自動採点を行いません。
         {isKhk && "自己採点の観点・配点は独自作成で、公式の採点基準や合否判定ではありません。"}
       </p>
       <details open={defaultOpen} onToggle={(event) => onReveal?.(event.currentTarget.open)}>
-        <summary className="min-h-11 cursor-pointer py-3 font-semibold">{isKhk ? "独自解答例と自己採点基準を確認する" : official ? "公式正解例を確認する" : "独自解答例と作図例を確認する"}</summary>
+        <summary className="min-h-11 cursor-pointer py-3 font-semibold">{isKhk ? "独自解答例と自己採点基準を確認する" : official ? "公式正解例を確認する" : officialExample ? "公式解答例を確認する" : "独自解答例と作図例を確認する"}</summary>
         <Markdown>{modelAnswer}</Markdown>
         <QuestionFigures question={{ ...question, imageUrls: question.answerImageUrls, imageAltTexts: question.answerImageAltTexts }} />
+        {officialExample && onNext && (
+          <div className="mt-5 border-t border-border pt-4">
+            <h3 className="font-semibold">解説</h3>
+            <Markdown>{question.explanation}</Markdown>
+          </div>
+        )}
         {question.scoringCriteria && (
           <div className="mt-5 border-t border-border pt-4">
-            <h3 className="font-semibold">自己確認の観点（独自作成）</h3>
+            <h3 className="font-semibold">{officialExample ? "採点・自己確認の観点" : "自己確認の観点（独自作成）"}</h3>
             <Markdown>{question.scoringCriteria}</Markdown>
           </div>
         )}
