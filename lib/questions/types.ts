@@ -80,6 +80,7 @@ export type Session = "cfp-risk" | "reading" | "writing" | "listening" | "eju-bi
   | "shokumotsu-pre1"
   | "shokumotsu-old3"
   | "shokumotsu-old2"
+  | "keisan-1"
   | "keisan-2"
   | "keisan-3"
   | "keisan-4"

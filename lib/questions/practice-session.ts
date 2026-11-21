@@ -11,6 +11,7 @@ export const PRACTICE_SESSIONS: readonly Session[] = ["cfp-risk", "reading", "wr
   "shokumotsu-pre1",
   "shokumotsu-old3",
   "shokumotsu-old2",
+  "keisan-1",
   "keisan-2",
   "keisan-3",
   "keisan-4",
@@ -90,6 +91,7 @@ export const PRACTICE_SESSIONS: readonly Session[] = ["cfp-risk", "reading", "wr
 /** Specialist practice starts with the specialist paper; common AM I is explicit. */
 export function defaultPracticeSession(exam: ExamCode, year?: number): Session {
   if (exam === "literas") return "gakka";
+  if (exam === "zenkou-keisan-gijutsu") return "keisan-2";
   if (exam === "cfp") return "gakka";
   if (exam === "kokka-sogo-dai" || exam === "kokka-ippan-dai" || exam === "kokka-sogo-in") return "kiso";
   if (exam === "toukei1") return "gakka";
@@ -310,6 +312,7 @@ export function practiceSessionLabel(session: Session, exam?: ExamCode): string 
     "shokumotsu-pre1": "準1級・筆記",
     "shokumotsu-old3": "旧3級・筆記",
     "shokumotsu-old2": "旧2級・筆記",
+    "keisan-1": "1級",
     "keisan-2": "2級",
     "keisan-3": "3級",
     "keisan-4": "4級",

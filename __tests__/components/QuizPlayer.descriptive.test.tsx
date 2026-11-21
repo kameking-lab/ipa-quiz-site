@@ -5,6 +5,7 @@ import { StreamQuizPlayer } from "@/components/quiz/stream/StreamQuizPlayer";
 import { QuizPlayer } from "@/components/quiz/QuizPlayer";
 import { createHistoryStore } from "@/lib/storage/history";
 import khkData from "@/data/questions/khk-reito-1/latest-two.json";
+import keisanData from "@/data/questions/zenkou-keisan-gijutsu/round-86.json";
 import type { Question } from "@/lib/questions/types";
 
 const question: Question = {
@@ -17,6 +18,19 @@ const question: Question = {
 };
 beforeEach(() => { cleanup(); window.localStorage.clear(); createHistoryStore().reset(); });
 afterEach(() => { vi.restoreAllMocks(); vi.unstubAllGlobals(); });
+
+it("公式解答の改行を保ち、独自解説と分けて表示する", () => {
+  const officialQuestion = keisanData[0] as Question;
+  render(
+    <QuizPlayer question={officialQuestion} index={0} total={1} mode="random" onNext={() => {}} />,
+  );
+  const details = screen.getByText("公式解答と解説を確認する").closest("details")!;
+  details.open = true;
+  fireEvent(details, new Event("toggle"));
+  expect(details.querySelector("p")?.textContent).toBe(officialQuestion.modelAnswer);
+  expect(screen.getByRole("heading", { name: "独自解説" })).toBeTruthy();
+  expect(screen.getByText(officialQuestion.explanation)).toBeTruthy();
+});
 
 describe.each([question, (khkData as Question[]).find(q => q.type === "descriptive")!])("$exam の記述演習", (question) => {
 describe("記述問題の操作", () => {
