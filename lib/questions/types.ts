@@ -63,7 +63,12 @@ export type ExamCode = "eiken2" | "restaurant-2" | "kogai-17" | "dekyo-chief-3" 
   | "tohan-hokkaido-tohoku"
   | "tohan-kitakanto-koshinetsu"
   | "tohan-kyushu-okinawa"
-  | "tohan-tokai-hokuriku";
+  | "tohan-tokai-hokuriku"
+  | "kaijo-hoan-gakko"
+  | "keimukan"
+  | "kokka-sogo-kyoyo"
+  | "zaimu-senmonkan"
+  | "chori-ehime";
 
 
 export type IpaExamCode = "ip" | "sg" | "fe" | "ap" | "st" | "sa" | "pm" | "nw" | "db" | "es" | "sc" | "sm" | "au";
@@ -114,7 +119,38 @@ export type Session = "cfp-risk" | "reading" | "writing" | "listening" | "eju-bi
   | "senmon-shakai"
   | "senmon-shogakko-eigo"
   | "senmon-sugaku"
-  | "tekisei";
+  | "tekisei"
+  | "zensho-bido-jitsugi-3"
+  | "zensho-bido-sokudo-2"
+  | "zensho-bido-jitsugi-1"
+  | "zensho-bido-sokudo-1"
+  | "zensho-bido-jitsugi-2"
+  | "zensho-bido-sokudo-3"
+  | "zensho-calc-2-ordinary"
+  | "zensho-info-grade-3-practical"
+  | "zensho-info-business-2-practical"
+  | "zensho-info-business-2"
+  | "kinzai-sonpo"
+  | "kinzai-kojin"
+  | "kinzai-chusho"
+  | "kinzai-seiho"
+  | "kinzai-hoken"
+  | "gakka-butsuri"
+  | "gakka-eigo"
+  | "gakka-sugaku"
+  | "kiso-special"
+  | "senmon-butsuri"
+  | "senmon-digital"
+  | "senmon-doboku"
+  | "senmon-kagaku"
+  | "senmon-kenchiku"
+  | "senmon-kikai"
+  | "senmon-nogaku"
+  | "senmon-noson"
+  | "senmon-ringaku"
+  | "senmon-gijutsu"
+  | "kiso-i"
+  | "kiso-ii";
 
 
 export const QUESTION_SEASONS = [

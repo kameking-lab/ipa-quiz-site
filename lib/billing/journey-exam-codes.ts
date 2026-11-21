@@ -103,4 +103,5 @@ export const JOURNEY_EXAM_CODES = [
   "kyotsu-joho1", "shokuhin-eisei-kanshiin",
   "tohan-chugoku-shikoku", "tohan-hokkaido-tohoku", "tohan-kitakanto-koshinetsu",
   "tohan-kyushu-okinawa", "tohan-tokai-hokuriku",
+  "chori-ehime", "kaijo-hoan-gakko", "keimukan", "kokka-sogo-kyoyo", "zaimu-senmonkan",
 ] as const satisfies readonly ExamCode[];

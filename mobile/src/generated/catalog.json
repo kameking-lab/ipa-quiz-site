@@ -2,6 +2,167 @@
   "schema": 2,
   "exams": [
     {
+      "code": "kaijo-hoan-gakko",
+      "qualification": "kaijo-hoan-gakko",
+      "name": "海上保安学校学生",
+      "count": 318,
+      "years": [
+        2026,
+        2025,
+        2024,
+        2023
+      ],
+      "categories": [
+        "世界史",
+        "会話文",
+        "倫理",
+        "判断推理",
+        "化学",
+        "国語",
+        "地学",
+        "地理",
+        "情報",
+        "政治",
+        "数学",
+        "数的推理",
+        "文法",
+        "文章理解",
+        "日本史",
+        "物理",
+        "生物",
+        "発音・アクセント",
+        "社会",
+        "経済",
+        "英語",
+        "語彙・熟語",
+        "資料解釈",
+        "長文読解"
+      ],
+      "sessions": [
+        "gakka-butsuri",
+        "gakka-eigo",
+        "gakka-sugaku",
+        "kiso-special",
+        "kiso"
+      ],
+      "bytes": 827707,
+      "revision": "1c41237d7152d8e64f9fd01df77ae5786d45d2df6f55f599562f8bc8c90f569f"
+    },
+    {
+      "code": "keimukan",
+      "qualification": "keimukan",
+      "name": "刑務官",
+      "count": 112,
+      "years": [
+        2025,
+        2024,
+        2023
+      ],
+      "categories": [
+        "人文科学",
+        "判断推理",
+        "国語",
+        "情報",
+        "数的推理",
+        "文章理解",
+        "社会科学",
+        "自然科学",
+        "英語",
+        "資料解釈"
+      ],
+      "sessions": [
+        "kiso"
+      ],
+      "bytes": 321275,
+      "revision": "f506c2c7ca8a9fc562a378f935b66ba129144ae003bc4a7572b39aed5ea60b83"
+    },
+    {
+      "code": "kokka-sogo-kyoyo",
+      "qualification": "kokka-sogo-kyoyo",
+      "name": "国家総合職（教養区分）",
+      "count": 173,
+      "years": [
+        2026,
+        2025,
+        2024,
+        2023
+      ],
+      "categories": [
+        "世界史",
+        "倫理",
+        "判断推理",
+        "化学",
+        "地学",
+        "地理",
+        "思想",
+        "情報",
+        "政治",
+        "数学",
+        "数的推理",
+        "文学",
+        "文章理解",
+        "日本史",
+        "時事",
+        "物理",
+        "生物",
+        "経済",
+        "資料解釈"
+      ],
+      "sessions": [
+        "kiso-i",
+        "kiso-ii"
+      ],
+      "bytes": 690918,
+      "revision": "3c59e7cacc2aeddae60606c4b9ff91956af47a76694a759de9e4b9ed4c978997"
+    },
+    {
+      "code": "zaimu-senmonkan",
+      "qualification": "zaimu-senmonkan",
+      "name": "財務専門官",
+      "count": 28,
+      "years": [
+        2026,
+        2025,
+        2024
+      ],
+      "categories": [
+        "憲法",
+        "社会学",
+        "経済学",
+        "行政法"
+      ],
+      "sessions": [
+        "senmon"
+      ],
+      "bytes": 99197,
+      "revision": "d818109be6f2c3c0cb4d1a38cb73ef263586286a416af17afd6d1dc847625e5e"
+    },
+    {
+      "code": "chori-ehime",
+      "qualification": "chori-ehime",
+      "name": "調理師試験（愛媛県）",
+      "count": 240,
+      "years": [
+        2025,
+        2024,
+        2023,
+        2022
+      ],
+      "categories": [
+        "公衆衛生学",
+        "栄養学",
+        "調理理論",
+        "食品学",
+        "食品衛生学",
+        "食文化概論"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 466760,
+      "revision": "1789607f1abad1e1255b5a6fb3f2430e432264ab707294e147ec822cc3e13a79"
+    },
+    {
       "code": "zenkou-pc",
       "qualification": "zenkou-pc",
       "name": "パソコン利用技術検定",
@@ -985,9 +1146,11 @@
       "code": "kouku-kanseikan",
       "qualification": "kouku-kanseikan",
       "name": "航空管制官（基礎能力）",
-      "count": 95,
+      "count": 266,
       "years": [
-        2026
+        2026,
+        2025,
+        2024
       ],
       "categories": [
         "判断推理",
@@ -1001,15 +1164,16 @@
         "空間関係検査Ⅱ",
         "記憶検査",
         "語彙・熟語",
-        "資料解釈"
+        "資料解釈",
+        "長文読解"
       ],
       "sessions": [
         "kiso",
         "gaikokugo",
         "tekisei"
       ],
-      "bytes": 264776,
-      "revision": "46df139fad655c9ca4e5ca3418ecb9627a12aa079eab4648ee977afba9e5aeef"
+      "bytes": 666280,
+      "revision": "fe99e164ab67f9d47e73bb5af713747d5b3ea1abe7ee8edf0b396e670c53a6a0"
     },
     {
       "code": "cfp-realestate",
@@ -1349,11 +1513,13 @@
       "code": "dekyo-chief-2",
       "qualification": "dekyo-chief-2",
       "name": "電気通信主任技術者（線路）",
-      "count": 457,
+      "count": 1203,
       "years": [
         2026,
         2025,
-        2024
+        2024,
+        2023,
+        2022
       ],
       "categories": [
         "CATVのHFC方式",
@@ -1473,8 +1639,8 @@
         "senmon",
         "gakka"
       ],
-      "bytes": 2417854,
-      "revision": "e02f9a40b515d26c0cb0f2c41813caa9ef2e550563b06287d0061efd6c45639f"
+      "bytes": 5210566,
+      "revision": "61b3a79a8585eab7df3c575fe43b8814cebfe134b8431f5c3c1851eec34ffda4"
     },
     {
       "code": "kogai-06",
@@ -1596,7 +1762,7 @@
       "code": "rodo-kijun-kantokukan",
       "qualification": "rodo-kijun-kantokukan",
       "name": "労働基準監督官",
-      "count": 142,
+      "count": 260,
       "years": [
         2026,
         2025,
@@ -1611,6 +1777,7 @@
         "労働統計・労使関係",
         "労災保険",
         "化学",
+        "基礎数学",
         "情報",
         "憲法",
         "数学",
@@ -1631,10 +1798,11 @@
       "sessions": [
         "kiso",
         "senmon-b",
-        "special-a"
+        "special-a",
+        "special-b"
       ],
-      "bytes": 624349,
-      "revision": "9bc3f112b7393923aab6d1e57abff5342d62b44005fc81de2d1796d2bbf11a49"
+      "bytes": 989244,
+      "revision": "772b91bb4db15b3d105b8a7063b8ea6bce4c924dbfd6831203f0b45c5f2dd8f4"
     },
     {
       "code": "chizai1",
@@ -1860,30 +2028,186 @@
       "code": "kokka-ippan-dai",
       "qualification": "kokka-ippan-dai",
       "name": "国家一般職（大卒程度）",
-      "count": 290,
+      "count": 1361,
       "years": [
         2026,
-        2025
+        2025,
+        2024
       ],
       "categories": [
+        "かんがい",
+        "コンクリート",
+        "コンクリート工学",
+        "ディジタル回路",
+        "マクロ経済学",
+        "ミクロ経済学",
+        "上下水道",
+        "交通工学",
+        "作物学",
+        "作物生理",
+        "信号処理",
+        "分析化学",
         "判断推理",
+        "制御工学",
+        "力学",
+        "化学工学",
+        "原子核物理",
+        "原子物理",
+        "固体物理",
+        "国際関係",
+        "園芸学",
+        "土壌学",
+        "土壌物理",
+        "土壌肥料",
+        "土壌肥料学",
+        "土質力学",
+        "地球物理",
+        "地球科学",
+        "地盤・基礎",
+        "地盤工学",
+        "基礎工学",
+        "工学基礎",
+        "工業化学",
+        "建築史",
+        "建築施工",
+        "建築材料",
+        "建築構造",
+        "建築法規",
+        "建築環境",
+        "建築計画",
+        "建築設備",
+        "建設材料",
+        "弾性力学",
+        "心理学",
+        "情報",
+        "情報処理",
+        "情報工学",
+        "情報通信",
+        "憲法",
+        "振動工学",
+        "排水",
+        "政治学",
+        "教育学",
+        "数値解析",
+        "数学",
         "数的推理",
         "文字の置き換え",
         "文章理解",
+        "施工管理",
+        "昆虫学",
         "時事",
         "時事・情報",
+        "有機化学",
+        "木材加工",
+        "木材科学",
+        "材料力学",
+        "林木育種",
+        "林業作業",
+        "林業経済",
+        "林道工学",
+        "栽培学",
+        "森林保護",
+        "森林土壌",
+        "森林政策",
+        "森林水文",
+        "森林環境",
+        "森林生態",
+        "森林経理",
+        "森林計測",
+        "森林資源",
+        "植物保護",
+        "植物栄養",
+        "植物生理",
+        "植物病理",
+        "構造力学",
+        "樹木生理",
+        "機械力学",
+        "機械工作",
+        "機械材料",
+        "機械要素",
+        "機械設計",
+        "民法（債権・親族・相続）",
+        "民法（総則・物権）",
+        "気象学",
+        "水文学",
+        "水理学",
+        "水質",
+        "河川工学",
+        "治山",
+        "波動",
+        "流体力学",
+        "海洋学",
+        "海洋物理",
+        "測定",
+        "測量",
+        "港湾工学",
         "演算記号",
+        "無機化学",
+        "熱力学",
+        "物理",
+        "物理化学",
+        "環境工学",
+        "生化学",
+        "畜産学",
+        "相対論",
+        "社会学",
+        "経営学",
+        "統計力学",
+        "耐震工学",
+        "育種学",
+        "英語（一般）",
+        "英語（基礎）",
+        "行政学",
+        "行政法",
         "表による分類",
         "表の照合",
         "表の計算",
-        "資料解釈"
+        "財政学・経済事情",
+        "資料解釈",
+        "農地保全",
+        "農地整備",
+        "農村政策",
+        "農村整備",
+        "農村環境",
+        "農業制度",
+        "農業技術",
+        "農業排水",
+        "農業政策",
+        "農業施設",
+        "農業機械",
+        "農業気象",
+        "農業水利",
+        "農業水利施設",
+        "農業環境",
+        "農業経済",
+        "農道計画",
+        "造林",
+        "道路工学",
+        "都市計画",
+        "量子力学",
+        "電子工学",
+        "電気化学",
+        "電気回路",
+        "電磁気",
+        "電磁気学",
+        "高分子化学"
       ],
       "sessions": [
         "kiso",
-        "kadai-taiou"
+        "kadai-taiou",
+        "senmon-butsuri",
+        "senmon-digital",
+        "senmon-doboku",
+        "senmon-kagaku",
+        "senmon-kenchiku",
+        "senmon-kikai",
+        "senmon-nogaku",
+        "senmon-noson",
+        "senmon",
+        "senmon-ringaku"
       ],
-      "bytes": 680974,
-      "revision": "186d97b723c85119c9868155e9f8d8236e7d804e44486e539caa6b6d38a0cacd"
+      "bytes": 4152653,
+      "revision": "c6ef17036b3d717b777385d59b91c1507edd10c944375185cd21e8ac6ebeb434"
     },
     {
       "code": "kokka-sogo-in",
@@ -2699,7 +3023,7 @@
       "code": "zensho-bido",
       "qualification": "zensho-bido",
       "name": "全商ビジネス文書実務検定",
-      "count": 398,
+      "count": 414,
       "years": [
         2026,
         2025,
@@ -2709,10 +3033,18 @@
       ],
       "categories": [
         "1級 筆記",
+        "1級 速度部門",
+        "1級・ビジネス文書部門 実技",
+        "1級・速度部門",
+        "2級 ビジネス文書部門 実技",
         "2級 筆記",
+        "2級・速度部門",
+        "3級 ビジネス文書部門 実技",
         "3級 筆記",
+        "3級・ビジネス文書部門 実技",
         "ことわざと慣用句",
         "ビジネス文書の形式",
+        "ビジネス文書部門 実技",
         "入力・記憶・印刷の用語",
         "文書と表示の知識",
         "文書の種類と取り扱い",
@@ -2726,21 +3058,33 @@
         "漢字の音と訓",
         "漢字の音読み・訓読み",
         "現代仮名遣い",
+        "第75回 2級 ビジネス文書部門 実技",
+        "第76回 1級 ビジネス文書部門 実技",
+        "第76回 1級 速度部門",
+        "第76回 2級 ビジネス文書部門 実技",
+        "第76回 3級 速度部門",
         "筆記",
         "語句と表記",
         "語句の知識",
         "語句の選択",
         "身近な文書の表現",
+        "速度部門",
         "配置と入力の用語",
         "頭語と文書編集"
       ],
       "sessions": [
         "gakka-I",
         "gakka-III",
-        "gakka-II"
+        "gakka-II",
+        "zensho-bido-jitsugi-3",
+        "zensho-bido-sokudo-2",
+        "zensho-bido-jitsugi-1",
+        "zensho-bido-sokudo-1",
+        "zensho-bido-jitsugi-2",
+        "zensho-bido-sokudo-3"
       ],
-      "bytes": 803495,
-      "revision": "7c7a345189b8f3638f37142f5b6f3f5aa98530222916c2fae06387d2ad530d4a"
+      "bytes": 852940,
+      "revision": "368844f6a9f470606ac20089429c3fc619e0b18aaa24dd47ab0a38fd272ac9ba"
     },
     {
       "code": "kanken-7",
@@ -2801,7 +3145,7 @@
       "code": "zensho-info",
       "qualification": "zensho-info",
       "name": "全商情報処理検定",
-      "count": 459,
+      "count": 497,
       "years": [
         2026,
         2025,
@@ -2813,31 +3157,54 @@
         "1級 プログラミング",
         "1級ビジネス情報",
         "1級プログラミング",
+        "2級 ビジネス情報 実技",
+        "2級 ビジネス情報 筆記",
         "2級 プログラミング",
         "2級ビジネス情報",
         "2級プログラミング",
         "3級",
         "コンピュータ用語",
         "ネットワークの用語",
+        "ファイル管理と情報セキュリティ",
         "リレーショナルデータベース",
+        "リレーショナルデータベースとSQL",
         "図表・ネットワーク",
+        "売上数量表の表計算",
+        "情報処理 実技",
         "情報処理の用語",
+        "情報処理用語の対応",
         "情報技術と割合",
         "情報技術の用語",
+        "情報機器とネットワーク用語",
+        "情報機器と用語",
+        "数の表現・画像・集合演算",
+        "数値表現と情報処理",
         "月額料金計算書",
         "業務と情報の活用",
+        "流れ図",
+        "表計算",
         "表計算と分析",
         "表計算による業務処理",
         "表計算による見積もり",
+        "表計算の実技",
+        "表計算の操作と関数",
+        "表計算の関数と集計",
+        "計算式とグラフ",
+        "資料を用いた表計算",
         "通信とデータの計算"
       ],
       "sessions": [
         "gakka",
         "jken-programming",
-        "zensho-info-pro2"
+        "zensho-info-pro2",
+        "gakka-III",
+        "zensho-info-grade-3-practical",
+        "zensho-info-business-2-practical",
+        "zensho-info-business-2",
+        "practical"
       ],
-      "bytes": 1355049,
-      "revision": "f6fc00a29c48c19975f478e7012d36d8aca9ee688674a6983db8b941779f8e79"
+      "bytes": 1426160,
+      "revision": "6f91059da1abc025101ce1535c23945192377846a47277dc58929da08165bb69"
     },
     {
       "code": "kanken-2",
@@ -3107,7 +3474,7 @@
       "code": "zensho-calc",
       "qualification": "zensho-calc",
       "name": "全商ビジネス計算実務検定",
-      "count": 1750,
+      "count": 1970,
       "years": [
         2026,
         2025,
@@ -3121,12 +3488,17 @@
         "予定売価と利益額",
         "仲介手数料と手取金",
         "値引きと利益率",
+        "元利合計",
         "利息・元金",
         "割合・増減",
+        "割引",
         "半年ごとの積立金",
         "単位換算",
+        "単利",
         "単利から求める年利率",
+        "原価と利幅",
         "売価・原価・利益",
+        "外貨換算",
         "定率法の帳簿価額",
         "定額法の期首帳簿価額",
         "年賦償還表",
@@ -3134,11 +3506,15 @@
         "手形の割引料",
         "手形割引",
         "手形割引の手取金",
+        "損失率",
+        "数量と単価",
         "有価証券・手数料",
         "期首払い年金の現価",
         "株式の指値",
         "株式購入の支払総額",
+        "歩合",
         "減価償却",
+        "百分率",
         "社債の単利最終利回り",
         "積数法の利息",
         "米ガロンと円の換算",
@@ -3146,6 +3522,7 @@
         "複利の元利合計",
         "複利年金の終価",
         "見取算",
+        "諸掛込原価",
         "諸掛込原価と売価",
         "通貨換算",
         "金額・数量",
@@ -3161,10 +3538,11 @@
         "zensho-calc-grade-3-ordinary",
         "gakka-IV",
         "zensho-calc-grade-1-business",
-        "gakka-III"
+        "gakka-III",
+        "zensho-calc-2-ordinary"
       ],
-      "bytes": 2054339,
-      "revision": "b1c232f0db16c6d1193cab856eadc1f59f7e9be8837099352ec8f93b7dc6816b"
+      "bytes": 2315966,
+      "revision": "32a2d5eb2b8d12adb68fad2e245e70870e551162cbe8b94fae201e0545dc6a3e"
     },
     {
       "code": "suken",
@@ -3517,10 +3895,11 @@
       "code": "kokka-sogo-dai",
       "qualification": "kokka-sogo-dai",
       "name": "国家総合職（大卒程度）",
-      "count": 48,
+      "count": 78,
       "years": [
         2026,
-        2025
+        2025,
+        2024
       ],
       "categories": [
         "判断推理",
@@ -3533,8 +3912,8 @@
       "sessions": [
         "kiso"
       ],
-      "bytes": 114334,
-      "revision": "c6fba352bcd24771ff752c88da66c2a3b794e7a48eea0c7cbad9636c22d5d5e9"
+      "bytes": 214577,
+      "revision": "ee6042d1ceabb44d92bcc281fb788b6ddc0ab30ec2ea5d725d010e58156bd6d7"
     },
     {
       "code": "boueki-c",
@@ -3916,12 +4295,13 @@
       "code": "dekyo-charge-5",
       "qualification": "dekyo-charge-5",
       "name": "工事担任者 総合通信",
-      "count": 1245,
+      "count": 2467,
       "years": [
         2026,
         2025,
         2024,
-        2023
+        2023,
+        2022
       ],
       "categories": [
         "端末設備の接続に関する法規",
@@ -3939,14 +4319,14 @@
         "dekyo-general",
         "dekyo-digital1"
       ],
-      "bytes": 3293776,
-      "revision": "2aecac1d83e425efcb1ac84218766d132116455a84cfbb297e71776f0c035834"
+      "bytes": 6195970,
+      "revision": "ce781f6157583ecfbb382c7c3094635138fce6b794ac83979706a5e0cd0759a1"
     },
     {
       "code": "eikenp2plus",
       "qualification": "eikenp2plus",
       "name": "英検準2級プラス",
-      "count": 66,
+      "count": 99,
       "years": [
         2026,
         2025
@@ -3963,14 +4343,14 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 100662,
-      "revision": "d2c93d240c7a919fac36f5c423329c57374a38ca63d5bb977093f55ef94372a9"
+      "bytes": 181497,
+      "revision": "4733515cfbf3c430f4f56176b151007d3d8f47b95d03e6c156eee086c8367aeb"
     },
     {
       "code": "kokuzei-senmonkan",
       "qualification": "kokuzei-senmonkan",
       "name": "国税専門官採用試験",
-      "count": 260,
+      "count": 302,
       "years": [
         2026,
         2025,
@@ -4003,8 +4383,8 @@
         "special-b",
         "senmon"
       ],
-      "bytes": 403841,
-      "revision": "53a025d9bd89256c2c89d6f41de28df50433da84e370c7adc98cb23f451f4c53"
+      "bytes": 493515,
+      "revision": "30f656769dc0bd0aa47c18a2a1c54aa63f8b011341464281314c5653f2a116cf"
     },
     {
       "code": "sasshi1",
@@ -7903,7 +8283,7 @@
       "code": "mokuzo-kenchikushi",
       "qualification": "mokuzo-kenchikushi",
       "name": "木造建築士（学科）",
-      "count": 550,
+      "count": 554,
       "years": [
         2026,
         2025,
@@ -8152,6 +8532,7 @@
         "設計図書",
         "設計図書の優先順位",
         "設計等の業務報告",
+        "設計製図",
         "車椅子住宅",
         "軸組の耐力壁の仕様",
         "軸組の軸力",
@@ -8189,10 +8570,11 @@
         "gakka-I",
         "gakka-II",
         "gakka-III",
-        "gakka-IV"
+        "gakka-IV",
+        "practical"
       ],
-      "bytes": 1481522,
-      "revision": "7eb5ccf9c10cdbb8a298dbe6cb07cfc803aedd5a4ef70021ab162a3a42704110"
+      "bytes": 1493380,
+      "revision": "2846b011cc22f270bd02a8d5afcd62216011b374e9c47e3cc2896714b729f6c7"
     },
     {
       "code": "kenchikushi1",
@@ -8337,10 +8719,12 @@
       "code": "shohi-sodan",
       "qualification": "shohi-sodan",
       "name": "消費生活相談員",
-      "count": 320,
+      "count": 660,
       "years": [
         2025,
-        2024
+        2024,
+        2023,
+        2022
       ],
       "categories": [
         "消費生活相談"
@@ -8348,8 +8732,8 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 741146,
-      "revision": "9e52a977ba02f7be44c9db96b0ec2d2982897df92633917d0f9fe7090996f4d4"
+      "bytes": 1482214,
+      "revision": "99511c6fd296221e3f39d183d6ef3d82ec7c4f0f54b885e2836c921ded1c31e3"
     },
     {
       "code": "chintai",
@@ -8606,7 +8990,7 @@
       "code": "hoshasen-1",
       "qualification": "hoshasen-1",
       "name": "第一種放射線取扱主任者",
-      "count": 793,
+      "count": 1223,
       "years": [
         2026,
         2025,
@@ -8624,14 +9008,14 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 3922780,
-      "revision": "5dca5e4538916d46cdaaad550422b0b3b78624d80f1c3df93896ce60d69fe097"
+      "bytes": 5476020,
+      "revision": "376d4f392034580ca462ed6485c729990b87ddcc8588f9579eb61846bd9eb11d"
     },
     {
       "code": "hoshasen-2",
       "qualification": "hoshasen-2",
       "name": "第二種放射線取扱主任者",
-      "count": 449,
+      "count": 676,
       "years": [
         2026,
         2025,
@@ -8649,8 +9033,8 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 2092154,
-      "revision": "68417bc074b583e996ae3f17b28eaa6e965bebfdea7f132434440021e96a1d3a"
+      "bytes": 2774151,
+      "revision": "5a8b9798bf1d66e9bb3b17267e42caf14ffba6dbbd7794c818f72071818bfed6"
     },
     {
       "code": "khk-kikai-kou",
@@ -8773,12 +9157,13 @@
       "code": "kaikeishi",
       "qualification": "kaikeishi",
       "name": "公認会計士",
-      "count": 562,
+      "count": 728,
       "years": [
         2026,
         2025,
         2024,
-        2023
+        2023,
+        2022
       ],
       "categories": [
         "企業法",
@@ -8792,8 +9177,8 @@
         "zaimu",
         "kigyo"
       ],
-      "bytes": 4323286,
-      "revision": "11cf99e66e6c8681f7b40a14d235db40efbe62bef7f455d876bb2443b6b2b5d7"
+      "bytes": 5613581,
+      "revision": "9fe4dad1d5e38fbbaf1ee64bf47b57ba0c395a9a601bdbc297d4c5d1cbf794d2"
     },
     {
       "code": "riku-tech2",
@@ -10549,7 +10934,41 @@
       "code": "fp2",
       "qualification": "fp2",
       "name": "2級FP技能検定",
-      "count": 540,
+      "count": 660,
+      "years": [
+        2026,
+        2025,
+        2024,
+        2023,
+        2022
+      ],
+      "categories": [
+        "タックスプランニング",
+        "ライフプランニングと資金計画",
+        "リスク管理",
+        "不動産",
+        "中小事業主資産相談業務",
+        "個人資産相談業務",
+        "損保顧客資産相談業務",
+        "生保顧客資産相談業務",
+        "相続・事業承継",
+        "金融資産運用"
+      ],
+      "sessions": [
+        "gakka",
+        "kinzai-sonpo",
+        "kinzai-kojin",
+        "kinzai-chusho",
+        "kinzai-seiho"
+      ],
+      "bytes": 2038693,
+      "revision": "2cd140112f5c5d461bc836e889cb65a2a6a9628b218d57308ef1fd352904bd67"
+    },
+    {
+      "code": "fp1",
+      "qualification": "fp1",
+      "name": "1級FP技能検定",
+      "count": 490,
       "years": [
         2026,
         2025,
@@ -10563,43 +10982,22 @@
         "リスク管理",
         "不動産",
         "相続・事業承継",
+        "職業倫理",
         "金融資産運用"
       ],
       "sessions": [
-        "gakka"
+        "gakka",
+        "gakka-II",
+        "practical"
       ],
-      "bytes": 1529199,
-      "revision": "bbca343855b60597385deef6027c62558d43702e34dbb720a4fd3ea3b5d3ebbd"
-    },
-    {
-      "code": "fp1",
-      "qualification": "fp1",
-      "name": "1級FP技能検定",
-      "count": 400,
-      "years": [
-        2026,
-        2025,
-        2024
-      ],
-      "categories": [
-        "タックスプランニング",
-        "ライフプランニングと資金計画",
-        "リスク管理",
-        "不動産",
-        "相続・事業承継",
-        "金融資産運用"
-      ],
-      "sessions": [
-        "gakka"
-      ],
-      "bytes": 1250089,
-      "revision": "73b6be89185500e4d3418177896ce68b2a47495959f43a3a08337f42772e7075"
+      "bytes": 1500334,
+      "revision": "271fd159b9bece972de9220c9e237e34d6ac678dd6cdffeb081420dd6bc0b462"
     },
     {
       "code": "fp3",
       "qualification": "fp3",
       "name": "3級FP技能検定",
-      "count": 180,
+      "count": 239,
       "years": [
         2026,
         2025,
@@ -10610,14 +11008,18 @@
         "ライフプランニングと資金計画",
         "リスク管理",
         "不動産",
+        "保険顧客資産相談業務",
+        "個人資産相談業務",
         "相続・事業承継",
         "金融資産運用"
       ],
       "sessions": [
-        "gakka"
+        "gakka",
+        "kinzai-hoken",
+        "kinzai-kojin"
       ],
-      "bytes": 308475,
-      "revision": "969e7bccd206069e0001f4e887565325c026b14a6fda6a33fe2d31160487c1af"
+      "bytes": 531726,
+      "revision": "cc6aa05be3c76ea42e19dc6022a3a7836d5f327fb5c03cfb0ff6f1b66cc4ad26"
     },
     {
       "code": "denken3",
@@ -10809,7 +11211,7 @@
       "code": "denko1",
       "qualification": "denko1",
       "name": "第一種電気工事士",
-      "count": 700,
+      "count": 710,
       "years": [
         2026,
         2025,
@@ -10822,6 +11224,7 @@
         2016
       ],
       "categories": [
+        "技能試験",
         "筆記",
         "設備図・検査・法令",
         "配線図(制御回路)",
@@ -10833,10 +11236,11 @@
       "sessions": [
         "gakka",
         "pm",
-        "am"
+        "am",
+        "practical"
       ],
-      "bytes": 1398524,
-      "revision": "24652181f7c4a628767c5b878e5ab324439c2cc3ca9209659c8888bfce4d6eda"
+      "bytes": 1423640,
+      "revision": "6a91f1c2396eb116dbd05e432b2156839aeba22f6ea1f0103671ccaaa218cfb5"
     },
     {
       "code": "civil2",
@@ -13623,10 +14027,13 @@
       "code": "yamaguchi-fugu",
       "qualification": "yamaguchi-fugu",
       "name": "ふぐ処理師（学科）",
-      "count": 200,
+      "count": 500,
       "years": [
         2026,
-        2025
+        2025,
+        2024,
+        2023,
+        2022
       ],
       "categories": [
         "ふぐに関する知識",
@@ -13636,8 +14043,8 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 879634,
-      "revision": "0dc9109b9a08156a7f331b96ca2084950ac32b0edd6105e029d083afd1191b8f"
+      "bytes": 2197895,
+      "revision": "cf3b9655179f3a67efc0b0c556b17a3adb802acaee68135485af739becb94df2"
     },
     {
       "code": "keiryoshi",
@@ -18048,26 +18455,37 @@
       "code": "homusho-senmonshokuin",
       "qualification": "homusho-senmonshokuin",
       "name": "法務省専門職員（人間科学）",
-      "count": 19,
+      "count": 111,
       "years": [
-        2026
+        2026,
+        2025
       ],
       "categories": [
         "人格心理学",
         "学習心理学",
+        "心理アセスメント",
+        "心理学",
+        "心理学研究法",
         "心理検査",
+        "心理測定",
         "心理統計",
         "感情心理学",
+        "教育学",
         "発達心理学",
+        "社会学",
         "社会心理学",
+        "社会福祉",
+        "神経心理学",
+        "精神医学",
         "臨床心理学",
         "認知心理学"
       ],
       "sessions": [
-        "psychology"
+        "psychology",
+        "senmon"
       ],
-      "bytes": 92413,
-      "revision": "f5e1cb7422f66ae0d851bfc7787e9a10c3a004b3db8214e0b3872f4de4a4181f"
+      "bytes": 476825,
+      "revision": "487e2d0cd44a0d3cbfb4dd99c02939e72baa06754395e7ca0c5974cc8bfc3fa0"
     },
     {
       "code": "junkango-b",
@@ -18130,47 +18548,105 @@
       "code": "kokka-ippan-kou",
       "qualification": "kokka-ippan-kou",
       "name": "国家一般職（高卒者）",
-      "count": 473,
+      "count": 652,
       "years": [
         2025,
         2024,
         2023
       ],
       "categories": [
+        "コンクリート",
         "世界史",
         "二つの表の照合",
+        "作物学",
         "倫理",
         "分類表",
         "判断推理",
         "化学",
         "国語",
+        "土壌肥料",
+        "土質力学",
         "地学",
         "地理",
+        "基礎工学",
+        "建築施工",
+        "建築材料",
+        "建築構造",
+        "建築法規",
+        "建築環境",
+        "建築計画",
+        "建築設備",
         "情報",
         "政治",
         "数学",
         "数的推理",
         "文字の置き換え",
         "文章理解",
+        "施工管理",
         "日本史",
+        "木材利用",
+        "材料力学",
+        "林業機械",
+        "林業経営",
+        "森林保護",
+        "森林土壌",
+        "森林土木",
+        "森林政策",
+        "森林生態",
+        "森林計測",
+        "構造力学",
+        "機械力学",
+        "機械工作",
+        "機械材料",
+        "機械設計",
         "正本と副本の照合",
+        "水理学",
+        "河川工学",
+        "治山",
+        "流体力学",
+        "測量",
         "演算記号",
+        "熱力学",
         "物理",
+        "特用林産",
         "生物",
+        "生産管理",
+        "素材生産",
         "経済",
+        "耐震工学",
         "英語",
         "表の照合",
         "表の計算",
         "記号・英字の変換",
         "資料解釈",
-        "集計表の計算"
+        "農地保全",
+        "農地整備",
+        "農村整備",
+        "農村環境",
+        "農業排水",
+        "農業政策",
+        "農業気象",
+        "農業水利",
+        "造林",
+        "道路工学",
+        "都市計画",
+        "集計表の計算",
+        "電力",
+        "電子工学",
+        "電気回路",
+        "電気機器",
+        "電気通信",
+        "電磁気"
       ],
       "sessions": [
         "kiso",
-        "tekisei"
+        "tekisei",
+        "senmon-gijutsu",
+        "senmon-noson",
+        "senmon-ringaku"
       ],
-      "bytes": 1154030,
-      "revision": "26748a9bdbae47914d2ae2f7c3c35651d86a5e88e1780adfc3236547d6700728"
+      "bytes": 1630146,
+      "revision": "966e2d6af55ea009ab44d7fd1ef8a46b6d9f412d87ac4d5dced01b8b2281dfe6"
     },
     {
       "code": "kyoin-gifu",
@@ -18521,10 +18997,13 @@
       "code": "tohan-chugoku-shikoku",
       "qualification": "tohan-chugoku-shikoku",
       "name": "登録販売者（中国・四国）",
-      "count": 240,
+      "count": 600,
       "years": [
         2026,
-        2025
+        2025,
+        2024,
+        2023,
+        2022
       ],
       "categories": [
         "主な医薬品とその作用",
@@ -18536,17 +19015,20 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 783145,
-      "revision": "1dd7575d8de3817bef4c6bab317ff7e3fea47df17fa0d1f111a944117f4e1c0e"
+      "bytes": 1958591,
+      "revision": "225db4a3051a45c53740c6954d087f9ea140d6d5ae29afdb908cbdace30b0adf"
     },
     {
       "code": "tohan-hokkaido-tohoku",
       "qualification": "tohan-hokkaido-tohoku",
       "name": "登録販売者（北海道・東北）",
-      "count": 240,
+      "count": 600,
       "years": [
         2026,
-        2025
+        2025,
+        2024,
+        2023,
+        2022
       ],
       "categories": [
         "主な医薬品とその作用",
@@ -18558,17 +19040,20 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 749948,
-      "revision": "d3a780993468e384d53ebb3a02a6541ba28394dde46d4a0a9aeb41acd982cfae"
+      "bytes": 1985693,
+      "revision": "e25d09949bc7b8c2164ba8fa2b58f800a3c32c2d5b4d7439012594d83a3706d3"
     },
     {
       "code": "tohan-kitakanto-koshinetsu",
       "qualification": "tohan-kitakanto-koshinetsu",
       "name": "登録販売者（北関東・甲信越）",
-      "count": 240,
+      "count": 600,
       "years": [
         2026,
-        2025
+        2025,
+        2024,
+        2023,
+        2022
       ],
       "categories": [
         "主な医薬品とその作用",
@@ -18580,17 +19065,19 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 750690,
-      "revision": "eb5aec4daa42730c8738b70ae15e1039b18bf515748d87be93ece7b4ec902bc7"
+      "bytes": 1933072,
+      "revision": "772d9e9e76e7363df6971268300da5e82d25327da88ff89ddc09f695fc966639"
     },
     {
       "code": "tohan-kyushu-okinawa",
       "qualification": "tohan-kyushu-okinawa",
       "name": "登録販売者（九州・沖縄）",
-      "count": 237,
+      "count": 477,
       "years": [
         2025,
-        2024
+        2024,
+        2023,
+        2022
       ],
       "categories": [
         "主な医薬品とその作用",
@@ -18602,18 +19089,20 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 777755,
-      "revision": "2f7110a752695fe858f563f8cb952f298ec55f70338c00ebf0ccd3b98d2a79b8"
+      "bytes": 1559289,
+      "revision": "f2f34176fc41d54a89d35b368701b897b778898d2bffc0fb69327665efd6528f"
     },
     {
       "code": "tohan-tokai-hokuriku",
       "qualification": "tohan-tokai-hokuriku",
       "name": "登録販売者（東海・北陸）",
-      "count": 360,
+      "count": 599,
       "years": [
         2026,
         2025,
-        2024
+        2024,
+        2023,
+        2022
       ],
       "categories": [
         "主な医薬品とその作用",
@@ -18625,8 +19114,8 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 1150531,
-      "revision": "5871fc1c9d166a5db1d9440a14f905bca538411e564809bc7740b3d94f64e48d"
+      "bytes": 1947371,
+      "revision": "e3ced75f660ad63bd803408150f4906633ec6ae4ab3cc838f0f22b0d578c5d1d"
     },
     {
       "code": "library.lckohyo-LC20260401-2",
@@ -25702,12 +26191,12 @@
     {
       "code": "material.denko2-skill",
       "name": "電工二種 技能（自己点検）",
-      "count": 208,
+      "count": 221,
       "years": [],
       "categories": [],
       "sessions": [],
-      "bytes": 1081169,
-      "revision": "cc54dd1902badb925796d377dcf1910aa171bf64f4194d51eb53cc5d0cf4cc9a",
+      "bytes": 1148757,
+      "revision": "27f1c93c7357eec3bff4cb7d3bc1fd4436d033855d654e56fc23fd366ab5b346",
       "material": true,
       "qualification": "denko2",
       "href": "/denko2/skill/denko2-2024-07-20-skill-01"

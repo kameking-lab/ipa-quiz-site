@@ -1260,6 +1260,11 @@ import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
 import { EIKENP2PLUS_QUESTIONS } from "./eikenp2plus";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+  "kaijo-hoan-gakko": [],
+  "keimukan": [],
+  "kokka-sogo-kyoyo": [],
+  "zaimu-senmonkan": [],
+  "chori-ehime": [],
   ...(isExamPublished("zenkou-pc") ? { "zenkou-pc": ZENKOU_PC_QUESTIONS } : {}),
   ...(isExamPublished("kogai-18") ? { "kogai-18": KOGAI_18_QUESTIONS } : {}),
   ...(isExamPublished("kogai-13") ? { "kogai-13": KOGAI_13_QUESTIONS } : {}),

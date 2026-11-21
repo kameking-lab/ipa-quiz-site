@@ -14,7 +14,7 @@ export const QUALIFICATION_GROUPS: readonly QualificationGroup[] = [
     members: {
       "chori-center": "共通問題", "chori-hokkaido": "北海道", "chori-tochigi": "栃木県",
       "chori-gunma": "群馬県", "chori-kanagawa": "神奈川県", "chori-nagano": "長野県",
-      "chori-shizuoka": "静岡県", "chori-kansai": "関西広域連合", "yamaguchi-chori": "山口県",
+      "chori-shizuoka": "静岡県", "chori-kansai": "関西広域連合", "yamaguchi-chori": "山口県", "chori-ehime": "愛媛県",
       "chori-okinawa": "沖縄県",
     },
   },
@@ -48,6 +48,14 @@ export const QUALIFICATION_GROUPS: readonly QualificationGroup[] = [
       "kyoin-gunma": "群馬県", "kyoin-tokyo": "東京都", "kyoin-nagano": "長野県", "kyoin-gifu": "岐阜県",
       "kyoin-osaka": "大阪府", "kyoin-kobe": "神戸市", "kyoin-shimane": "島根県", "kyoin-hiroshima": "広島県・広島市",
       "kyoin-kochi": "高知県", "kyoin-nagasaki": "長崎県", "kyoin-okinawa": "沖縄県",
+    },
+  },
+  {
+    slug: "kokka-sogo", name: "国家公務員採用総合職試験", kind: "試験区分別", selectLabel: "試験区分",
+    members: {
+      "kokka-sogo-in": "院卒者試験",
+      "kokka-sogo-dai": "大卒程度試験（教養区分以外）",
+      "kokka-sogo-kyoyo": "大卒程度試験（教養区分）",
     },
   },
 ];
