@@ -19,6 +19,7 @@ export function HomeStudyRoom({ poseFiles = NO_CAFE_POSES }: { poseFiles?: reado
   const { snapshot, current } = useStudyRoomPresence();
   const daily = snapshot?.today;
   const attendance = daily ?? (current ? snapshot : null);
+  const firstToday = current && daily?.count === 0;
   const { day, room, occupants, hidden } = useStudyRoomCafe(attendance, current, poseFiles, HOME_ROOM_VISIBLE_LIMIT);
   const examRows = attendance?.exams ?? [];
   const visibleExams = examRows.slice(0, EXAM_CHIP_LIMIT);
@@ -31,13 +32,13 @@ export function HomeStudyRoom({ poseFiles = NO_CAFE_POSES }: { poseFiles?: reado
       <span className={styles.roomName}>{room?.name}</span>
       <ChevronRight aria-hidden="true" className={styles.arrow} />
     </div>
-    {attendance && (attendance.count > 0 || (daily && !current)) && <div className={styles.attendance}>
+    {attendance && !firstToday && <div className={styles.attendance}>
       <StudyRoomAttendance attendance={attendance} current={current} />
       {daily && !current && <time dateTime={snapshot.measuredAt} className={styles.timestamp}>{time.format(Date.parse(snapshot.measuredAt))} 時点</time>}
       {hidden > 0 && <span className={styles.overflow}>＋{number(hidden)}人</span>}
     </div>}
     <StudyRoomCafeScene day={day} occupants={occupants} home
-      emptyMessage={current && attendance?.count === 0 ? EMPTY_STUDY_ROOM_MESSAGE : undefined} />
+      emptyMessage={firstToday ? EMPTY_STUDY_ROOM_MESSAGE : undefined} />
     {visibleExams.length > 0 && <ul aria-label="自習室の資格" className={styles.groups}>
       {visibleExams.map(row => <li key={row.exam} className={styles.group}>
         <span>{presenceExamName(row.exam)}</span><strong>{number(row.count)}人</strong>

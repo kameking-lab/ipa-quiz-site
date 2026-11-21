@@ -22,9 +22,8 @@ async function show(page: Page, snapshot: StudyPresenceSnapshot) {
     }, snapshot);
     // A sample sent before hydration is ignored. Keep polling so it can be
     // delivered after subscription instead of waiting on a still-absent label.
-    const label = snapshot.count ? page.getByTestId("study-room-total") : page.getByText("まだ誰もいません。一番乗りしよう");
-    return label.textContent({ timeout: 200 }).catch(() => "");
-  }).toBe(snapshot.count ? `いま${snapshot.count}人が勉強` : "まだ誰もいません。一番乗りしよう");
+    return page.getByTestId("study-room-total").textContent({ timeout: 200 }).catch(() => "");
+  }).toBe(`いま${snapshot.count}人が勉強`);
 }
 
 for (const count of [1, 5, 12, 24, 48, 120, 130]) {

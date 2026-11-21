@@ -40,6 +40,7 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
   }, []);
 
   const attendance = snapshot?.today ?? snapshot;
+  const firstToday = current && snapshot?.today?.count === 0;
   const { day, room, count, occupants, hidden } = useStudyRoomCafe(attendance, current, poseFiles);
   const detailByKey = useMemo(() => new Map(seatDetails.map(detail => [`${detail.exam}:${detail.index}`, detail])), [seatDetails]);
   const [inspected, setInspected] = useState<string | null>(null);
@@ -59,7 +60,7 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
   const href = selectedExam && Object.hasOwn(EXAM_CONFIGS, selectedExam)
     ? `/quiz?mode=random&exam=${encodeURIComponent(selectedExam)}` : suggestion?.href ?? "/search";
   const emptyMessage = !snapshot ? "勉強中の人数を表示できません"
-    : current ? EMPTY_STUDY_ROOM_MESSAGE : "前回は勉強中の人はいませんでした";
+    : firstToday ? EMPTY_STUDY_ROOM_MESSAGE : !current ? "前回は勉強中の人はいませんでした" : undefined;
 
   function renderSeat(seat: CafeOccupant) {
     return <StudyRoomSeat name={presenceExamName(seat.exam) ?? seat.exam} index={seat.index} mascot={seat.mascot}
@@ -74,7 +75,7 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
       <Heading id="study-room-title" className="text-xl font-bold tracking-tight">チワワの自習室</Heading>
       {room && <p className="text-xs text-muted-foreground">{room.name}</p>}
     </header>
-    {attendance && (attendance.count > 0 || !current) && <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1 text-sm text-muted-foreground tabular-nums">
+    {attendance && !firstToday && <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1 text-sm text-muted-foreground tabular-nums">
       <StudyRoomAttendance attendance={attendance} current={current} className="[&>strong]:text-foreground" />
       {hidden > 0 && <span className="ml-auto font-semibold text-foreground">＋{hidden.toLocaleString("ja-JP")}人</span>}
     </div>}

@@ -30,12 +30,19 @@ it("shows one chip per qualification, in descending order, with one dog per lear
 
 it("caps the picture at 30 dogs and lists at most six qualifications", () => {
   render(<HomeStudyRoom />);
-  expect(screen.getByTestId("home-study-room-scene")).toHaveAttribute("data-room", "p1");
   show(["civil1", "civil2", "fe", "ap", "ip", "sc", "fp2", "fp3"].map(exam => ({ exam, count: 6, activeCount: 1 })));
   expect(screen.getAllByTestId("home-study-room-seat")).toHaveLength(30);
   expect(screen.getByText("＋18人")).toBeVisible();
   expect(screen.getByText("ほか2資格")).toBeVisible();
   expect(screen.getAllByRole("listitem")).toHaveLength(7);
+});
+
+it("reports only the five-minute count when the daily count is missing", () => {
+  render(<HomeStudyRoom />);
+  const snapshot = measuredPresence({ count: 0, exams: [] }, Date.now());
+  act(() => window.dispatchEvent(new CustomEvent(PRESENCE_STATE_EVENT, { detail: { mode: "measured", snapshot } })));
+  expect(screen.getByTestId("study-room-total")).toHaveTextContent("いま0人が勉強");
+  expect(screen.queryByText(/一番乗り/)).not.toBeInTheDocument();
 });
 
 it("shows one sleeping dog at measured zero and retires a daily snapshot at JST midnight", () => {

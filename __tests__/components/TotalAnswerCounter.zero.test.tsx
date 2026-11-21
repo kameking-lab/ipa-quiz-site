@@ -22,7 +22,7 @@ it("server-renders a room without fabricated learners and ignores legacy/unverif
 it("keeps a validated historical sample with its original timestamp and real zero", () => {
   vi.useFakeTimers(); render(<TotalAnswerCounter />);
   emit({ mode: "measured", snapshot: sample(0), previous: null });
-  expect(screen.getByText("まだ誰もいません。一番乗りしよう")).toBeVisible();
+  expect(screen.getByTestId("study-room-total")).toHaveTextContent("いま0人が勉強");
   const snapshot = sample(25);
   emit({ mode: "measured", snapshot, previous: null });
   expect(screen.getAllByTestId("study-room-seat")).toHaveLength(25);

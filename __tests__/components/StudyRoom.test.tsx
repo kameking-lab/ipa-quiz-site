@@ -12,6 +12,10 @@ it("keeps one decorative resting dog when zero people are measured or the count 
   expect(screen.queryByTestId("study-room-sleeper")).not.toBeInTheDocument();
 
   rerender(<StudyRoom snapshot={snapshot(0)} current suggestions={[]} />);
+  expect(screen.getByTestId("study-room-total")).toHaveTextContent("いま0人が勉強");
+  expect(screen.queryByText(/一番乗り/)).not.toBeInTheDocument();
+
+  rerender(<StudyRoom snapshot={{ ...snapshot(0), today: { count: 0, activeCount: 0, exams: [] } }} current suggestions={[]} />);
   expect(screen.getByText("まだ誰もいません。一番乗りしよう")).toBeInTheDocument();
   expect(screen.queryByTestId("study-room-total")).not.toBeInTheDocument();
   expect(scene.querySelectorAll('img[src$="/sleep-empty.webp"][alt=""]')).toHaveLength(1);
