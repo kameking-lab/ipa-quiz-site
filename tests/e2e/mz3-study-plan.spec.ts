@@ -195,3 +195,46 @@ test("the 10th answer is normal and only the next blocked question presents equa
   await page.keyboard.press("Enter");
   await expect(page).toHaveURL(/\/$/);
 });
+
+test("paper weak practice crosses papers once and preserves the original grant header", async ({ page }) => {
+  const exam = "dai-1-shu-eisei-kanrisha";
+  const papers = ["lckohyo-SAMPLE-ONE", "lckohyo-SAMPLE-TWO"].map((paperId, index) => ({
+    id: paperId + "-q1", exam, year: 2026 - index, season: "published", session: "公表試験", qNumber: 1,
+    paperId, paperTitle: "確認用の冊子 " + (index + 1), number: 1, choiceCount: 2, answerAuthority: "official", scorable: true,
+    pdfUrl: "https://example.invalid/paper.pdf", indexUrl: "https://example.invalid/papers",
+  }));
+  await boot(page, undefined, [], papers.map(q => q.id));
+  await page.route("**/api/study-plan/catalog/" + exam, route => route.fulfill({ json: { questions: papers } }));
+  const requested: string[] = [];
+  await page.route("**/api/billing/question", route => {
+    const { id } = route.request().postDataJSON() as { id: string };
+    const q = papers.find(item => item.id === id)!;
+    expect(route.request().headers()["x-kakomon-paper"]).toBe(q.paperId);
+    requested.push(id);
+    return route.fulfill({ json: {
+      question: { ...q, text: "冊子の確認問題", images: [], correctChoice: 2, explanation: "確認用の解説" },
+      access: { kind: "pass", freeDaily: 10, resetAt: "2026-11-18T00:00:00+09:00", remaining: null, retryAfter: null },
+    } });
+  });
+  await page.goto("/quiz/today?list=weak&exam=" + exam);
+  for (const q of papers) {
+    await expect(page.getByRole("heading", { name: q.paperTitle, exact: true })).toBeVisible();
+    await page.getByRole("radio", { name: /^選択肢 2:/ }).click();
+    await page.getByRole("button", { name: "結果を見る", exact: true }).click();
+  }
+  await expect(page.getByRole("heading", { name: "2問中2問正解" })).toBeVisible();
+  expect(requested).toEqual(papers.map(q => q.id));
+  expect(new URL(page.url()).searchParams.has("question")).toBe(false);
+});
+
+test("studying with no selected date before an exam has a direct edit action", async ({ page }) => {
+  await boot(page, plans([6, 0], "2026-11-18"));
+  await page.goto("/");
+  await expect(page.getByText("試験前に勉強日がありません")).toBeVisible();
+  await expect(page.getByRole("link", { name: "計画の問題を解く" })).toHaveCount(0);
+  await expect(page.getByRole("link", { name: "年度を選んで解く" })).toBeVisible();
+  await page.getByRole("button", { name: "勉強する日を変更" }).click();
+  await expect(page.getByRole("button", { name: "変更を保存" })).toBeDisabled();
+  await page.getByRole("radio", { name: "毎日" }).check();
+  await expect(page.getByRole("button", { name: "変更を保存" })).toBeEnabled();
+});

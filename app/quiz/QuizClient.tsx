@@ -14,6 +14,7 @@ import { posthogCapture } from "@/lib/posthog";
 import { nativeClient } from "@/mobile/shared/contracts";
 import { jstResetLabel } from "@/lib/billing/reset-time";
 import {shuffleChoices} from "@/lib/questions/filter";
+import { clearBatchQuestion } from "@/lib/study-plan/client";
 import { SignedOutOnly, useAccountStatus } from "@/components/account/AccountNavigation";
 
 const MAX_POOL = 80;
@@ -322,6 +323,7 @@ export function QuizClient({
       backLabel={backLabel}
       exam={exam}
       onNext={handleNext}
+      onFinish={fixedBatch ? clearBatchQuestion : undefined}
       />
     </div>
   );

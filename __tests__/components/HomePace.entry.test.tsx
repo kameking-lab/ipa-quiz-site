@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { act, cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { HomePace } from "@/components/home/pace/HomePace";
 import type { HomeDirectoryDomain } from "@/lib/home/home-directory";
@@ -69,6 +69,24 @@ describe("home plan entry", () => {
     fireEvent.click(screen.getByRole("button", { name: "学習計画を作る" }));
     expect(screen.getByRole("dialog", { name: "学習計画を作る" })).toBeVisible();
     expect(await screen.findByLabelText("受験日")).toBeVisible();
+  });
+
+  it("discards a slow catalog after switching qualifications", async () => {
+    let finishIp!: (response: Response) => void;
+    vi.stubGlobal("fetch", vi.fn(async (url: string) => {
+      if (url.endsWith("/catalog/ip")) return new Promise<Response>(resolve => { finishIp = resolve; });
+      if (url.endsWith("/catalog/fe")) return Response.json({ questions: [{ ...catalog[0], exam: "fe", year: 2025 }] });
+      if (url.includes("schedule")) return Response.json({ sessions: [] });
+      return Response.json({ entitled: true });
+    }));
+    render(<HomePace domains={domains} planExamKeys={["ip", "fe"]} />);
+    fireEvent.click(screen.getByRole("button", { name: "学習計画を作る" }));
+    await waitFor(() => expect(finishIp).toBeTypeOf("function"));
+    fireEvent.change(screen.getByRole("combobox", { name: "受ける資格" }), { target: { value: "fe" } });
+    expect(await screen.findByRole("radio", { name: "全1年分（1問）" })).toBeChecked();
+    await act(async () => finishIp(Response.json({ questions: [] })));
+    expect(screen.getByRole("radio", { name: "全1年分（1問）" })).toBeChecked();
+    expect(screen.queryByText("計画に使える問題がありません")).not.toBeInTheDocument();
   });
 
   it("includes an answered library paper under its qualification and omits the current one", async () => {

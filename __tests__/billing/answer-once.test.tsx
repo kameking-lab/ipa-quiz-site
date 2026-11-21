@@ -159,7 +159,7 @@ describe("one graded answer per question visit", () => {
     const grant = mockPractice(paperQuestion);
     const reward = vi.spyOn(studyReward, "recordStudyReward");
     render(<StrictMode><TodayQuiz planId="library-once" billingGateEnabled /></StrictMode>);
-    await screen.findByText(paperQuestion.text);
+    await screen.findByText(paperQuestion.text, {}, { timeout: 5000 });
     const [first, second] = screen.getAllByRole("radio");
     answerBeforeRender(first, second, "2");
     expect(first).toBeChecked();

@@ -46,13 +46,18 @@ for (const width of [390, 1280]) for (const colorScheme of ["light", "dark"] as 
         expect(await primary.evaluate(el => el.getBoundingClientRect().height)).toBeGreaterThanOrEqual(44);
         const input = card.getByRole("searchbox", { name: "資格名・略称で検索" });
         const field = input.locator("..");
-        await expect(field).toHaveCSS("border-top-color", colorScheme === "dark" ? "rgb(146, 146, 125)" : "rgb(128, 119, 99)");
+        // The chihuahua landscape theme defines its own light and dark input borders.
+        await expect(field).toHaveCSS("border-top-color", colorScheme === "dark" ? "rgb(99, 118, 106)" : "rgb(183, 186, 164)");
         await input.focus();
         await expect(field).toHaveCSS("outline-width", "2px");
         await input.blur();
         expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(width);
         const source = page.getByRole("link", { name: "著作権・出典", exact: true });
-        await source.scrollIntoViewIfNeeded();
+        if (width === 390 && state !== "guest") {
+          await page.evaluate(() => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "instant" }));
+        } else {
+          await source.scrollIntoViewIfNeeded();
+        }
         await expect(source).toBeInViewport({ ratio: 1 });
         const sourceBox = await source.boundingBox();
         expect(sourceBox!.height).toBeGreaterThanOrEqual(44);
@@ -108,7 +113,7 @@ test("long qualification and no appointment fit at 320px without an invented dat
 });
 
 for (const state of ["member", "paid"] as const) {
-  test(`${state}: a late plan only offers the monthly plan to a free member`, async ({ page }) => {
+  test(`${state}: the same large target is shown without a monthly offer`, async ({ page }) => {
     await fixture(page, state, { ...plan(), examDate: "2026-11-18" });
     await page.goto("/");
     await expect(page.getByText("1回の目安　138問正解")).toBeVisible();

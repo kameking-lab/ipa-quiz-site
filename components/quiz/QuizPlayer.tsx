@@ -71,6 +71,7 @@ interface Props {
   backLabel?: string;
   exam?: string;
   onNext: () => void;
+  onFinish?: () => void;
   quiet?: boolean;
 }
 
@@ -91,6 +92,7 @@ function ScoredQuizPlayer({
   backLabel = "モード選択に戻る",
   exam = "ap",
   onNext,
+  onFinish,
   quiet = false,
 }: Props) {
   const pet = usePetLearning();
@@ -181,12 +183,13 @@ function ScoredQuizPlayer({
   const goNext = React.useCallback(() => {
     recordExplanation();
     if (index + 1 >= total) {
+      onFinish?.();
       setCompleted(true);
       window.scrollTo?.({ top: 0, behavior: "instant" });
       return;
     }
     onNext();
-  }, [index, total, onNext, recordExplanation]);
+  }, [index, total, onNext, onFinish, recordExplanation]);
 
   const commitAnswer = React.useCallback(
     (selection: string, correct: boolean, petAnswer: Extract<PetLearningSubmission, { source: "question" }>["answer"], nativeBResult?: NativeBGrade) => {
@@ -373,6 +376,7 @@ function ScoredQuizPlayer({
     return (
       <QuizCompleteScreen
         stats={stats}
+        showBatchScore={!!onFinish}
         elapsed={elapsed}
         exam={exam}
         mode={mode}
@@ -433,7 +437,7 @@ function ScoredQuizPlayer({
           >
             <ArrowLeft aria-hidden="true" className="h-5 w-5" />
           </Button>
-          <div className="text-sm font-medium text-zinc-700 dark:text-zinc-300">モード: {quizModeLabel(mode)}</div>
+          {!onFinish && <div className="text-sm font-medium text-zinc-700 dark:text-zinc-300">モード: {quizModeLabel(mode)}</div>}
           <div className="ml-auto flex items-center gap-2 text-sm font-medium text-zinc-700 sm:gap-3 dark:text-zinc-300">
             {combo >= 2 && <ComboCounter combo={combo} />}
             <span
@@ -643,6 +647,7 @@ export function QuizCompleteScreen({
   onBack,
   backLabel = "モード選択に戻る",
   scheduleUrl,
+  showBatchScore = false,
 }: {
   stats: { answered: number; correct: number };
   elapsed: number;
@@ -651,6 +656,7 @@ export function QuizCompleteScreen({
   onBack: () => void;
   backLabel?: string;
   scheduleUrl?: string;
+  showBatchScore?: boolean;
 }) {
   const resultHeadingRef = React.useRef<HTMLHeadingElement>(null);
   React.useEffect(() => { resultHeadingRef.current?.focus({ preventScroll: true }); resultHeadingRef.current?.scrollIntoView?.({ block: "center", behavior: "instant" }); }, []);
@@ -673,10 +679,10 @@ export function QuizCompleteScreen({
       <div className="w-full max-w-md rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-8">
         <div className="mb-6 text-center">
           <ChihuahuaMascot pose="celebrate" size={100} className="mx-auto mb-2" />
-          <h1 ref={resultHeadingRef} tabIndex={-1} className="text-2xl font-bold text-zinc-900 outline-none dark:text-zinc-50">クイズ完了！</h1>
-          <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
+          <h1 ref={resultHeadingRef} tabIndex={-1} className="text-2xl font-bold text-zinc-900 outline-none dark:text-zinc-50">{showBatchScore ? <>{stats.answered}問中{stats.correct}問正解</> : "クイズ完了！"}</h1>
+          {!showBatchScore && <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
             {accuracy >= 80 ? "素晴らしい！" : accuracy >= 60 ? "いい調子です！" : "次は満点を狙おう！"}
-          </p>
+          </p>}
         </div>
 
         <div className="mb-6 grid grid-cols-3 gap-2 text-center sm:gap-3">

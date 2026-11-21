@@ -425,7 +425,7 @@ export function ExamQuestionPlayer({
       firstChoiceRef.current?.focus();
       return;
     }
-    commit(
+    const persisted = commit(
       {
         ...answersRef.current,
         [current.id]: {

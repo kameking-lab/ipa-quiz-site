@@ -15,7 +15,7 @@
 .navigation > summary::marker { content: ""; }
 .navigation > summary:hover { color: var(--foreground); background: var(--muted); }
 .navigation > summary:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
-:global(.site-footer):has(.navigation) { padding-top: 8px; padding-bottom: calc(var(--mobile-tab-height) + 1px + var(--safe-bottom)); }
+:global(.site-footer):has(.navigation) { padding-top: 8px; padding-bottom: calc(var(--mobile-tab-height) + var(--safe-bottom) + 0.625rem); }
 :global(.site-footer):has(.navigation) > div { max-width: 592px; }
 :global(.site-footer):has(.navigation) > div > p {
   margin-top: 0;

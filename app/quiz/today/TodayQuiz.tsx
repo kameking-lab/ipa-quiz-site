@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { QuizClient } from "../QuizClient";
 import { listPacePlans } from "@/lib/study-plan/pace-storage";
-import { loadPlanCatalog, paceAttempts, type CatalogQuestion } from "@/lib/study-plan/client";
+import { clearBatchQuestion, loadPlanCatalog, paceAttempts, type CatalogQuestion } from "@/lib/study-plan/client";
 import { calculatePace, weakQuestions } from "@/lib/study-plan/pace";
 import { createHistoryStore } from "@/lib/storage/history";
 import { japanDate } from "@/lib/home/featured-exams";
@@ -40,22 +40,19 @@ export function TodayQuiz({ planId, weakExam, billingGateEnabled }: { planId: st
       const url = new URL(location.href);
       const current = url.searchParams.get("question");
       const scope = JSON.stringify([exam, planId, !!weakExam, pace?.oldestYear]);
-      const key = LS_KEYS.paceBatchPrefix + scope;
+      const key = LS_KEYS.paceBatchPrefix + (weakExam ? "weak:" + exam : planId);
       let resumed = false;
       try {
         const cached = JSON.parse(sessionStorage.getItem(key) ?? "null");
-        if (current && cached?.day === today && Array.isArray(cached.ids) && cached.ids.includes(current) &&
+        if (current && cached?.scope === scope && cached.day === today && Array.isArray(cached.ids) && cached.ids.includes(current) &&
             cached.ids.every((id: unknown) => typeof id === "string" && byId.has(id)) &&
             new Set(cached.ids).size === cached.ids.length) {
           ids = cached.ids;
           resumed = true;
         }
-        sessionStorage.setItem(key, JSON.stringify({ day: today, ids }));
+        sessionStorage.setItem(key, JSON.stringify({ scope, day: today, ids }));
       } catch { /* The question grant still applies without session storage. */ }
-      if (current && !resumed) {
-        url.searchParams.delete("question");
-        history.replaceState(history.state, "", url);
-      }
+      if (current && !resumed) clearBatchQuestion();
       setBatch({ ids, exam, library: catalog[0]?.paperId ? ids.map(id => byId.get(id)!) : undefined });
     })().catch(e => { if (!controller.signal.aborted) setError(e instanceof Error ? e.message : "問題を準備できませんでした。"); });
     return () => controller.abort();

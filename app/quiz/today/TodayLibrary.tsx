@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
 import { ExamQuestionPlayer } from "@/components/exam-library/exam-question-player";
 import { fetchPracticeQuestion } from "@/lib/billing/guest-client";
 import type { ExamQuestion } from "@/lib/exam-library-model";
-import type { CatalogQuestion } from "@/lib/study-plan/client";
+import { clearBatchQuestion, type CatalogQuestion } from "@/lib/study-plan/client";
 
 export function TodayLibrary({ questions, exam, backHref, backLabel }: {
   questions: CatalogQuestion[]; exam: string; backHref: string; backLabel: string;
@@ -30,6 +30,7 @@ export function TodayLibrary({ questions, exam, backHref, backLabel }: {
   return <LibraryPart key={part} questions={group} exam={exam} initialId={resumeId ?? undefined}
     onComplete={(answered, correct) => {
       setScore(score => ({ answered: score.answered + answered, correct: score.correct + correct }));
+      if (part + 1 === groups.length) clearBatchQuestion();
       setPart(part + 1);
     }} />;
 }

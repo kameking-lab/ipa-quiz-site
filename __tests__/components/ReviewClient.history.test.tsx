@@ -3,6 +3,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { ReviewClient } from "@/app/review/ReviewClient";
 import { QuizPlayer } from "@/components/quiz/QuizPlayer";
 import { createHistoryStore } from "@/lib/storage/history";
+import { toggleBookmark } from "@/lib/storage/bookmarks";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { IP_QUESTIONS } from "@/data/questions/ip";
 import { calculatePace, createPacePlan } from "@/lib/study-plan/pace";
@@ -71,6 +72,18 @@ describe("weak list uses the common assessed history", () => {
     expect(screen.getAllByRole("listitem")).toHaveLength(1);
     expect(within(row).queryByText("苦手の印")).not.toBeInTheDocument();
     expect(localStorage.getItem(LS_KEYS.reviewSchedule)).toBe("invalid-json");
+  });
+
+  it("keeps a tag-only bookmark out of the list and marks local to this device", async () => {
+    toggleBookmark(q);
+    const first = render(<ReviewClient examFromQuery="ip" items={items} />);
+    await screen.findByText("苦手リストは空です");
+    act(() => { createHistoryStore().toggleStar(q.id); });
+    expect(await screen.findByText("苦手の印")).toBeVisible();
+    first.unmount();
+    localStorage.removeItem(LS_KEYS.history);
+    render(<ReviewClient examFromQuery="ip" items={items} />);
+    expect(await screen.findByText("苦手リストは空です")).toBeVisible();
   });
 
   it("shows a retry for failed requests and a real empty list after success", async () => {

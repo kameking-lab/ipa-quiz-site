@@ -51,7 +51,7 @@ export async function POST(req: Request) {
   let merged = 0;
   if (incoming.length > 0) {
     const existing = await prisma.studyPlan.findMany({
-      where: { userId },
+      where: { userId, id: { in: incoming.map(entry => entry.id) } },
       select: { id: true, updatedAt: true, payload: true },
     });
     const existingMap = new Map(

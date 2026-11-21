@@ -9,7 +9,7 @@ vi.mock("@/lib/exam-library-catalog", () => ({
     { id: "paper-two", group: "sample", subject: "kagaku", label: "秋", date: "2026-10-22" },
   ],
 }));
-vi.mock("@/lib/exam-qualification-hubs", () => ({ findQualificationHub: () => undefined }));
+vi.mock("@/lib/exam-qualification-hubs", () => ({ findQualificationHub: (exam: string) => exam === "library" ? { slug: exam } : undefined, qualificationHubMatchesEntry: () => true }));
 vi.mock("@/lib/exam-library-papers", () => ({ loadExamPaper: loadPaper }));
 
 import { GET } from "@/app/api/study-plan/catalog/[exam]/route";
@@ -18,6 +18,7 @@ const base: Question = {
   id: "ip-test", exam: "ip", year: 2026, season: "spring", session: "am", qNumber: 1,
   type: "multiple-choice", question: "確認用の問題", choices: { ア: "答え", イ: "他の選択肢" }, answer: "ア",
   explanation: "選択肢の理由を説明します。", topicTags: [], category: "テクノロジ系", difficulty: 1,
+  hasImage: false, sourcePdfUrl: "https://example.invalid/questions.pdf", license: "IPA-public",
 };
 const get = (exam: string) => GET(new Request("http://test/api/study-plan/catalog/" + exam), { params: Promise.resolve({ exam }) });
 beforeEach(() => { bank.mockReset(); loadPaper.mockReset(); });
@@ -44,11 +45,14 @@ it("keeps paper IDs addressable across sittings and excludes reference pages and
     { id: id + "-q2", choiceCount: 4, correctChoice: 2, answerAuthority: "official", number: 2, referenceOnly: true },
     { id: id + "-q3", choiceCount: 0, correctChoice: null, answerAuthority: "descriptive", number: 3 },
   ]);
-  const { questions } = await (await get("sample-kagaku")).json();
+  const { questions } = await (await get("library")).json();
   expect(questions.map((q: { id: string }) => q.id)).toEqual(["paper-two-q1", "paper-one-q1"]);
   expect(questions.every((q: { year: number }) => q.year === 2026)).toBe(true);
-  expect(questions[0]).toMatchObject({ paperId: "paper-two", exam: "sample-kagaku", qNumber: 1 });
+  expect(questions[0]).toMatchObject({ paperId: "paper-two", exam: "library", qNumber: 1 });
   expect(questions[0]).not.toHaveProperty("correctChoice");
+  expect(questions[0]).not.toHaveProperty("text");
+  const byGroup = await (await get("sample-kagaku")).json();
+  expect(byGroup.questions.map((q: { id: string }) => q.id)).toEqual(questions.map((q: { id: string }) => q.id));
 });
 
 it("distinguishes an empty available catalog from an unknown qualification", async () => {

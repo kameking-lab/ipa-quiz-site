@@ -14,3 +14,9 @@ export async function loadPlanCatalog(exam: string, signal?: AbortSignal): Promi
   if (!Array.isArray(data.questions)) throw new Error("問題を読み込めませんでした");
   return data.questions;
 }
+
+export function clearBatchQuestion() {
+  const url = new URL(location.href);
+  url.searchParams.delete("question");
+  window.history.replaceState(window.history.state, "", url);
+}

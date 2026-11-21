@@ -34,9 +34,9 @@ describe("scoped review preserves mixed qualification history", () => {
     render(<QuizPlayer question={figure} exam={figure.exam} mode="year" index={0} total={1} onNext={vi.fn()} />);
     await screen.findByText(figure.question);
     for (const [index, key] of (Object.keys(figure.choices!) as ChoiceKey[]).entries()) {
-      const button = screen.getByRole("button", { name: new RegExp(`^${index + 1} `) });
+      const button = screen.getAllByRole("radio")[index];
       expect(button).toHaveTextContent(figure.choices![key]!);
-      expect(button.querySelector("img")?.getAttribute("src")).toContain(encodeURIComponent(figure.choiceImageUrls![key]).replaceAll("%2F", "/"));
+      expect(button.querySelector("img")).toHaveAttribute("src", figure.choiceImageUrls![key]!);
     }
     fireEvent.click(screen.getAllByRole("radio")[0]);
     expect(createHistoryStore().getAllEntries()).toHaveLength(2);

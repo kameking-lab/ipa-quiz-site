@@ -104,7 +104,7 @@ function Trail({ lineY }: { lineY: number }) {
 
 function FinishFlag({ lineY }: { lineY: number }) {
   const x = trackX(100) + 11;
-  return <path aria-hidden="true" d={`M${x} ${lineY}v-28l11 4-11 5`} strokeWidth="1.5" className="p3-trail-flag" />;
+  return <path aria-hidden="true" d={`M${x} ${lineY}v-56l11 4-11 5`} strokeWidth="1.5" className="p3-trail-flag" />;
 }
 
 /** The track before a plan exists: the chihuahua waits at the start line. */

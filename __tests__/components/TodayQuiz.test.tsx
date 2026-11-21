@@ -61,7 +61,7 @@ it("resumes the frozen list even when its current question became correct", asyn
   window.history.replaceState({}, "", "/quiz/today?list=weak&exam=ip&question=" + catalog[0].id);
   const scope = JSON.stringify(["ip", "", true, null]);
   const ids = [catalog[0].id, catalog[7].id, catalog[4].id];
-  sessionStorage.setItem(LS_KEYS.paceBatchPrefix + scope, JSON.stringify({ day: "2026-11-17", ids }));
+  sessionStorage.setItem(LS_KEYS.paceBatchPrefix + "weak:ip", JSON.stringify({ scope, day: "2026-11-17", ids }));
   answer(0, true); answer(7, false); answer(4, false);
   render(<TodayQuiz planId="" weakExam="ip" billingGateEnabled />);
   await screen.findByText("player");
@@ -69,8 +69,8 @@ it("resumes the frozen list even when its current question became correct", asyn
 });
 it("discards a resume from a different range", async () => {
   window.history.replaceState({}, "", "/quiz/today?plan=p&question=" + catalog[0].id);
-  sessionStorage.setItem(LS_KEYS.paceBatchPrefix + JSON.stringify(["ip", "p", false, 2025]),
-    JSON.stringify({ day: "2026-11-17", ids: [catalog[0].id] }));
+  sessionStorage.setItem(LS_KEYS.paceBatchPrefix + "p",
+    JSON.stringify({ scope: JSON.stringify(["ip", "p", false, 2025]), day: "2026-11-17", ids: [catalog[0].id] }));
   answer(0, true);
   render(<TodayQuiz planId="p" billingGateEnabled />);
   await screen.findByText("player");

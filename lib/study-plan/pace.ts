@@ -128,7 +128,7 @@ export function calculatePace(plan: PacePlan, catalog: readonly PlanQuestion[], 
   const mastered = total - remaining;
   const exam = plan.examDate === null ? null : dayNumber(plan.examDate);
   const daysRemaining = exam === null ? null : exam - day;
-  const weekdays = plan.studyWeekdays ?? EVERY_DAY;
+  const weekdays: readonly number[] = plan.studyWeekdays ?? EVERY_DAY;
   let studyDays = 0, nextWeekday: number | null = null;
   if (daysRemaining !== null && daysRemaining > 0) {
     studyDays = Math.floor(daysRemaining / 7) * weekdays.length;
