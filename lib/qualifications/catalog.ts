@@ -1802,7 +1802,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.maff.go.jp/j/joinus/recruit/zyui/vetexam.html",
     officialReuseTermsUrl: "https://www.maff.go.jp/j/use/link.html",
     status: "live",
-    reuseSummary: "2026年度の専門試験（多肢選択式）59問を公式正答・全肢解説付きで収録。",
+    reuseSummary: "2025～2026年度の専門試験（多肢選択式）114問を公式正答・全肢解説付きで収録。",
     attributionTemplate: "出典：農林水産省「農林水産省獣医系技術職員採用試験 専門試験（多肢選択式）」。解説は過去問AIの独自作成。",
   },
   {

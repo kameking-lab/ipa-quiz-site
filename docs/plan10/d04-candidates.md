@@ -441,3 +441,5 @@
 2026年度の獣医系は専門試験の59問を収録し、原図表4点を添付した。感染症のNo. 13は公開問題データから除外した。No. 24の法令上の分類は出題の正答番号表を採用し、対象動物や別の法律で扱われる場合を解説で補足した。 [専門試験](https://www.maff.go.jp/j/joinus/recruit/zyui/attach/pdf/vetexam-37.pdf) [公式正答](https://www.maff.go.jp/j/joinus/recruit/zyui/attach/pdf/vetexam-36.pdf) [家畜伝染病予防法](https://laws.e-gov.go.jp/law/326AC1000000166)
 
 2026年度の畜産系は専門試験50問を収録し、飼料作物の作付面積の原表を添付した。家畜改良増殖目標は試験が指定する令和7年版、監視伝染病の国内発生は令和元年から6年の期間に沿って解説した。 [専門試験](https://www.maff.go.jp/j/joinus/recruit/2tikusan/attach/pdf/zooexam-26.pdf) [公式正答](https://www.maff.go.jp/j/joinus/recruit/2tikusan/attach/pdf/zooexam-28.pdf) [家畜改良増殖目標](https://www.maff.go.jp/j/press/chikusan/suisin/250411.html) [監視伝染病の発生状況](https://www.maff.go.jp/j/syouan/douei/kansi_densen/kansi_densen.html)
+
+2025年度の獣医系は専門試験55問を収録し、原図表3点を添付した。感染症・毒性に関するNo. 14・17・22・32・43は公開問題データから除外した。ウイルス科の名称や法令上の区分は出題時点に沿って解説した。 [専門試験](https://www.maff.go.jp/j/joinus/recruit/zyui/attach/pdf/vetexam-30.pdf) [公式正答](https://www.maff.go.jp/j/joinus/recruit/zyui/attach/pdf/vetexam-33.pdf)
