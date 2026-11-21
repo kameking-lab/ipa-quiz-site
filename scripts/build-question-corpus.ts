@@ -5,7 +5,7 @@ import { gunzipSync, gzipSync } from "node:zlib";
 import { serialize } from "node:v8";
 import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getAllQuestionsLazy, getQuestionsForExam, getRegisteredExamCodes } from "@/lib/questions/get-questions";
-import { openQuestionCorpus, QUESTION_CORPUS_DIR, type QuestionCorpusManifest } from "@/lib/questions/corpus-files";
+import { openQuestionCorpus, QUESTION_CORPUS_DIR, STATIC_CORPUS_FILE, type QuestionCorpusManifest } from "@/lib/questions/corpus-files";
 import type { ExamCode, Question } from "@/lib/questions/types";
 
 async function main() {
@@ -19,11 +19,11 @@ async function main() {
   const manifest: QuestionCorpusManifest = { version: 1, staticExams: {}, lazyExams: {} };
   const written = new Set<string>();
   let bytes = 0;
-  function store(questions: Question[]) {
+  function store(questions: Question[], filename?: string) {
     // Build and runtime both use Node 22. The standard V8 wire format avoids
     // allocating a corpus-sized UTF-16 JSON string on a cold server.
     const payload = serialize(questions);
-    const file = `${createHash("sha256").update(payload).digest("hex")}.v8.gz`;
+    const file = filename ?? `${createHash("sha256").update(payload).digest("hex")}.v8.gz`;
     if (!written.has(file)) {
       const compressed = gzipSync(payload, { level: 6 });
       writeFileSync(join(dir, file), compressed);
@@ -38,7 +38,7 @@ async function main() {
   for (const [exam, questions] of Object.entries(QUESTIONS_BY_EXAM)) {
     manifest.staticExams[exam as ExamCode] = store(questions);
   }
-  manifest.staticCorpus = store(ALL_QUESTIONS);
+  manifest.staticCorpus = store(ALL_QUESTIONS, STATIC_CORPUS_FILE);
   const lazy = new Map<ExamCode, Question[]>();
   for (const exam of getRegisteredExamCodes()) {
     const questions = await getQuestionsForExam(exam);

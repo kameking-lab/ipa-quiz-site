@@ -3,7 +3,7 @@
 //   manifest.json            版・コーパス指紋・件数
 //   docs.json.gz             検索文書のメタ（問題文書の本文は持たず、問題から都度組み立てる）
 //   index.bin                BM25 索引（index-artifact.ts の形式）
-//   questions/NNN.json.gz    問題本体を ID のハッシュで 256 分割したもの
+//   question-ids.json.gz     問題 ID を共通コーパスの試験別ファイル内の位置に対応づける
 //
 // 実行時に全問題データ（約 150MB の JS）を読まずに済ませるための仕組み。
 // 書き出し側（scripts/build-copilot-index.ts）が、読み戻した結果とデータ本体からの
@@ -12,7 +12,8 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { gunzipSync, gzipSync } from "node:zlib";
-import type { Question } from "@/lib/questions/types";
+import { openQuestionCorpus } from "@/lib/questions/corpus-files";
+import type { ExamCode, Question } from "@/lib/questions/types";
 import { buildQuestionDoc } from "./corpus-docs";
 import { deserializeIndex, serializeIndex } from "./index-artifact";
 import type { InvertedIndex } from "./retriever";
@@ -20,13 +21,12 @@ import type { CopilotSource } from "./source";
 import type { CorpusDoc } from "./types";
 
 export const COPILOT_PREBUILT_DIR = "generated/copilot";
-const FORMAT_VERSION = 1;
-const SHARD_COUNT = 256;
+const FORMAT_VERSION = 2;
+type QuestionIdsByExam = Partial<Record<ExamCode, string[]>>;
 
 interface Manifest {
   version: number;
   fingerprint: string;
-  shardCount: number;
   questionCount: number;
   docCount: number;
 }
@@ -42,38 +42,25 @@ interface StoredDoc {
   text?: string;
 }
 
-function shardOf(id: string): number {
-  // FNV-1a 32bit
-  let h = 0x811c9dc5;
-  for (let i = 0; i < id.length; i++) {
-    h ^= id.charCodeAt(i);
-    h = Math.imul(h, 0x01000193);
-  }
-  return (h >>> 0) % SHARD_COUNT;
-}
-
-function shardFile(dir: string, shard: number): string {
-  return join(dir, "questions", `${String(shard).padStart(3, "0")}.json.gz`);
-}
-
-/** ビルド時: 問題・文書・索引を書き出す。 */
+/** ビルド時: 問題の位置・文書・索引を書き出す。 */
 export function writePrebuiltCopilotFiles(
   rootDir: string,
-  questions: readonly Question[],
+  questionsByExam: Partial<Record<ExamCode, readonly Question[]>>,
   index: InvertedIndex,
   fingerprint: string,
 ): { bytes: number } {
   const dir = join(rootDir, COPILOT_PREBUILT_DIR);
-  mkdirSync(join(dir, "questions"), { recursive: true });
+  mkdirSync(dir, { recursive: true });
   let bytes = 0;
   const write = (file: string, data: Uint8Array | string) => {
     writeFileSync(file, data);
     bytes += typeof data === "string" ? Buffer.byteLength(data) : data.length;
   };
 
-  const shards: Record<string, Question>[] = Array.from({ length: SHARD_COUNT }, () => ({}));
-  for (const q of questions) shards[shardOf(q.id)][q.id] = q;
-  shards.forEach((shard, i) => write(shardFile(dir, i), gzipSync(JSON.stringify(shard), { level: 9 })));
+  const questionIds = Object.fromEntries(
+    Object.entries(questionsByExam).map(([exam, questions]) => [exam, questions.map(q => q.id)]),
+  ) as QuestionIdsByExam;
+  write(join(dir, "question-ids.json.gz"), gzipSync(JSON.stringify(questionIds), { level: 9 }));
 
   const docs: StoredDoc[] = index.docs.map((doc) => ({
     id: doc.id,
@@ -90,8 +77,7 @@ export function writePrebuiltCopilotFiles(
   const manifest: Manifest = {
     version: FORMAT_VERSION,
     fingerprint,
-    shardCount: SHARD_COUNT,
-    questionCount: questions.length,
+    questionCount: Object.values(questionIds).reduce((total, ids) => total + ids.length, 0),
     docCount: docs.length,
   };
   write(join(dir, "manifest.json"), JSON.stringify(manifest));
@@ -102,12 +88,12 @@ function isManifest(value: unknown): value is Manifest {
   if (typeof value !== "object" || value === null) return false;
   const v = value as Record<string, unknown>;
   return v.version === FORMAT_VERSION && typeof v.fingerprint === "string" &&
-    v.shardCount === SHARD_COUNT && Number.isInteger(v.questionCount) && Number.isInteger(v.docCount);
+    Number.isInteger(v.questionCount) && Number.isInteger(v.docCount);
 }
 
 /**
  * 書き出したファイルを開く。manifest が無い・版が違う場合は null（呼び出し側がデータ本体へ戻る）。
- * 索引・文書は index() の初回に、問題は該当シャードを初めて引いたときに読む。
+ * 索引・文書は index() の初回に、問題は該当する試験を初めて引いたときに読む。
  */
 export function openPrebuiltCopilotSource(rootDir: string = process.cwd()): CopilotSource | null {
   const dir = join(rootDir, COPILOT_PREBUILT_DIR);
@@ -122,16 +108,21 @@ export function openPrebuiltCopilotSource(rootDir: string = process.cwd()): Copi
     return null;
   }
 
-  const shards = new Map<number, Map<string, Question>>();
+  const corpus = openQuestionCorpus(rootDir);
+  const idsByExam = JSON.parse(gunzipSync(readFileSync(join(dir, "question-ids.json.gz"))).toString("utf8")) as QuestionIdsByExam;
+  const locations = new Map<string, { exam: ExamCode; offset: number }>();
+  let count = 0;
+  for (const [exam, ids] of Object.entries(idsByExam)) {
+    ids.forEach((id, offset) => locations.set(id, { exam: exam as ExamCode, offset }));
+    count += ids.length;
+  }
+  if (count !== manifest.questionCount) throw new Error("copilot prebuilt question count mismatch");
   const getQuestion = (id: string): Question | undefined => {
-    const shard = shardOf(id);
-    let entries = shards.get(shard);
-    if (!entries) {
-      const parsed = JSON.parse(gunzipSync(readFileSync(shardFile(dir, shard))).toString("utf8")) as Record<string, Question>;
-      entries = new Map(Object.entries(parsed));
-      shards.set(shard, entries);
-    }
-    return entries.get(id);
+    const location = locations.get(id);
+    if (!location) return undefined;
+    const question = corpus.staticExamFile(location.exam)[location.offset];
+    if (question?.id !== id) throw new Error("copilot prebuilt question does not match its corpus");
+    return question;
   };
 
   let index: InvertedIndex | null = null;
@@ -142,7 +133,7 @@ export function openPrebuiltCopilotSource(rootDir: string = process.cwd()): Copi
     if (stored.length !== manifest.docCount) throw new Error("copilot prebuilt docs count mismatch");
     const docs = stored.map((s) => toCorpusDoc(s, getQuestion));
     // 索引と文書は同じビルドで書かれている。指紋は両ファイルの突き合わせに使う
-    // （全文から計算し直すと全シャードを読むことになるため）。
+    // （全文から計算し直すと全試験の問題を読むことになるため）。
     const restored = deserializeIndex(readFileSync(join(dir, "index.bin")), docs, {
       fingerprint: manifest.fingerprint,
       verifyTokenization: false,
