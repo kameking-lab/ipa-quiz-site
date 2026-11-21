@@ -1802,7 +1802,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_25_00001.html",
     officialReuseTermsUrl: "https://www.jinji.go.jp/shinsei/notice.html",
     status: "live",
-    reuseSummary: "2024年度の基礎能力試験20問を公式正答・全肢解説付きで収録。",
+    reuseSummary: "2023～2024年度の基礎能力試験36問を公式正答・全肢解説付きで収録。",
     attributionTemplate: "出典：人事院「中途採用者選考（就職氷河期世代）基礎能力試験」。解説は過去問AIの独自作成。",
   },
   {
