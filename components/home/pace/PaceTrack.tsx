@@ -85,8 +85,8 @@ export function PaceTrack({ runArt, mastered, total, stopped = false }: {
     <Trail lineY={lineY} />
     <line ref={fillRef} x1={START_X} y1={lineY} x2={trackX(percent)} y2={lineY}
       strokeWidth="8" strokeLinecap="round" className="stroke-primary" />
+    <FinishFlag lineY={lineY} height={70} />
     <RunningChihuahua key={runArt} src={runArt} percent={percent} lineY={lineY} fillRef={fillRef} stopped={stopped} />
-    <FinishFlag lineY={lineY} />
     <text x={START_X} y="97" fontSize="13" className="fill-muted-foreground">0問</text>
     <text x={trackX(100)} y="97" textAnchor="end" fontSize="13" className="fill-muted-foreground">{total}問</text>
   </svg>;
@@ -102,9 +102,9 @@ function Trail({ lineY }: { lineY: number }) {
   </g>;
 }
 
-function FinishFlag({ lineY }: { lineY: number }) {
+function FinishFlag({ lineY, height = 56 }: { lineY: number; height?: number }) {
   const x = trackX(100) + 11;
-  return <path aria-hidden="true" d={`M${x} ${lineY}v-56l11 4-11 5`} strokeWidth="1.5" className="p3-trail-flag" />;
+  return <path aria-hidden="true" d={`M${x} ${lineY}v-${height}l11 4-11 5`} strokeWidth="1.5" className="p3-trail-flag" />;
 }
 
 /** The track before a plan exists: the chihuahua waits at the start line. */

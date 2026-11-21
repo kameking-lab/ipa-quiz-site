@@ -64,11 +64,13 @@ for (const percent of [0, 50, 100]) {
         flagX: Number(flag.getAttribute("d")!.match(/^M([\d.]+)/)![1]),
         inside: frameLeft >= viewport.x && frameLeft + frame.width.baseVal.value <= viewport.x + viewport.width
           && flagBox.x + flagBox.width <= viewport.x + viewport.width,
+        dogInFront: !!(flag.compareDocumentPosition(runner) & Node.DOCUMENT_POSITION_FOLLOWING),
         spriteOffset: image.getAttribute("x") };
     });
     expect(geometry.dogCenter).toBeCloseTo(39 + percent * 2.44);
     expect(geometry.flagX).toBeCloseTo(294);
     expect(geometry.inside).toBe(true);
+    expect(geometry.dogInFront).toBe(true);
     expect(geometry.spriteOffset).toBe("0");
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   });
