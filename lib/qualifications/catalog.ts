@@ -1811,7 +1811,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_33.html",
     officialReuseTermsUrl: "https://www.jinji.go.jp/shinsei/notice.html",
     status: "live",
-    reuseSummary: "2024～2025年度の学科試験を37問収録。共通の基礎能力試験は海上保安大学校学生に掲載。",
+    reuseSummary: "2023～2025年度の学科試験を50問収録。共通の基礎能力試験は海上保安大学校学生に掲載。",
     attributionTemplate: "出典：人事院「気象大学校学生採用試験」。解説は過去問AIの独自作成。",
   },
   {
