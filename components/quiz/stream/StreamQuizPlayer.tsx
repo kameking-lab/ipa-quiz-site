@@ -54,6 +54,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
   const [showSummary, setShowSummary] = React.useState(false);
   const [transitioning, setTransitioning] = React.useState<"none" | "out">("none");
   const [reviewing, setReviewing] = React.useState(false);
+  const answerFinalized = React.useRef(false);
   const advancingRef = React.useRef(false);
   const descriptiveStartRef = React.useRef<HTMLDivElement>(null);
   const questionStartRef = React.useRef<HTMLDivElement>(null);
@@ -71,6 +72,10 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
   }, [reviewing]);
 
   const question = questions[index];
+  const questionId = question?.id;
+  React.useEffect(() => {
+    answerFinalized.current = false;
+  }, [index, questionId]);
   const { recordAnswer, recordExplanation, endRef } = useQuestionActivity(question, revealed);
   const nativePermission = useNativeQuestionGrant(question?.id);
   React.useEffect(() => {
@@ -120,7 +125,8 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
   }, [questions.length, recordExplanation]);
 
   const onNativeBAnswer = React.useCallback((selections: NativeBSelections) => {
-    if (!question?.nativeB || question.type !== "native-b" || revealed) return;
+    if (!question?.nativeB || question.type !== "native-b" || answerFinalized.current) return;
+    answerFinalized.current = true;
     const result = gradeNativeB(question.nativeB, selections);
     recordAnswer(result.isCorrect);
     reportStudyAnswer(question.exam);
@@ -132,11 +138,12 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
     pet.answer(question, { kind: "native-b", selections: Object.fromEntries(Object.entries(selections).filter((pair): pair is [string, string] => typeof pair[1] === "string")) });
     if (result.isCorrect) setCombo((previous) => previous + 1);
     else setCombo(0);
-  }, [question, revealed, history, pet, recordAnswer]);
+  }, [question, history, pet, recordAnswer]);
 
   const onSelect = React.useCallback(
     (key: ChoiceKey) => {
-      if (!question || revealed || question.type === "ordering" || question.type === "numeric") return;
+      if (!question || answerFinalized.current || question.type === "ordering" || question.type === "numeric") return;
+      answerFinalized.current = true;
       const correct = isAcceptedAnswer(question.answer, key);
       recordAnswer(correct);
       reportStudyAnswer(question.exam);
@@ -161,11 +168,12 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
         setCombo(0);
       }
     },
-    [question, revealed, history, pet, recordAnswer],
+    [question, history, pet, recordAnswer],
   );
 
   const onOrderingAnswer = React.useCallback((value: ChoiceKey[]) => {
-    if (!question || question.type !== "ordering" || revealed) return;
+    if (!question || question.type !== "ordering" || answerFinalized.current) return;
+    answerFinalized.current = true;
     const correct = isOrderingAnswerCorrect(question, value);
     recordAnswer(correct);
     reportStudyAnswer(question.exam);
@@ -184,10 +192,11 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
         return next;
       });
     } else setCombo(0);
-  }, [question, revealed, history, pet, recordAnswer]);
+  }, [question, history, pet, recordAnswer]);
 
   const onNumericAnswer = React.useCallback((value: string) => {
-    if (!question || question.type !== "numeric" || revealed) return;
+    if (!question || question.type !== "numeric" || answerFinalized.current) return;
+    answerFinalized.current = true;
     const correct = isNumericAnswerCorrect(question, value);
     recordAnswer(correct);
     reportStudyAnswer(question.exam);
@@ -197,7 +206,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
     pet.answer(question, { kind: "numeric", value });
     if (correct) setCombo(previous => previous + 1);
     else setCombo(0);
-  }, [question, revealed, history, pet, recordAnswer]);
+  }, [question, history, pet, recordAnswer]);
 
   React.useEffect(() => {
     const onKey = (e: KeyboardEvent) => {

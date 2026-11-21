@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 import type { HomeDirectoryItem, HomeDomainId } from "@/lib/home/home-directory";
 import { groupHomeDirectoryItems } from "@/lib/home/grouped-directory";
 import { qualificationDisplayKey } from "@/lib/qualifications/groups";
-import { frequentExamKeys, upcomingExamPicks, type FeaturedExamDate } from "@/lib/home/featured-exams";
+import { frequentExamKeys, personalExamReservationScript, upcomingExamPicks, type FeaturedExamDate } from "@/lib/home/featured-exams";
 import { createHistoryStore } from "@/lib/storage/history";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { qualificationStudyArt } from "@/lib/home/study-room";
@@ -59,7 +59,7 @@ export function HomeFeaturedExams({ items, onChoose }: { items: readonly Qualifi
   const byKey = new Map(groupHomeDirectoryItems(items).map(item => [item.key, item]));
   // The browser reserves exactly one or two rows while parsing, before paint.
   // No personal data enters HTML, URL, API, analytics or a new storage key.
-  const reservation = `try{const e=document.getElementById(${JSON.stringify(id)});const h=JSON.parse(localStorage.getItem(${JSON.stringify(LS_KEYS.history)})||"null");e.dataset.personal=String((${frequentExamKeys.toString()})(h?.entries,${JSON.stringify(keys)},${JSON.stringify(aliases)},${JSON.stringify([...REFERENCE_ONLY_QUESTION_IDS])},${JSON.stringify(displayKeys)}).length>0)}catch{}`.replaceAll("<", "\\u003c");
+  const reservation = personalExamReservationScript(id, LS_KEYS.history, keys, aliases, [...REFERENCE_ONLY_QUESTION_IDS], displayKeys);
   return <>
     <div id={id} className="study-pickups" data-ready={snapshot !== null} data-personal={personal.length > 0} suppressHydrationWarning>
       {personal.length > 0 && <section aria-labelledby={`${id}-personal`}><h3 id={`${id}-personal`} className="study-results-label">あなたの資格</h3>

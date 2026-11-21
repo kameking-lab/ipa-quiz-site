@@ -1,7 +1,7 @@
 import { setPostHogClient } from "@/lib/posthog";
 import type { PostHog } from "posthog-js";
 import { StrictMode } from "react";
-import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { act, cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 vi.mock("next/navigation", () => ({ useRouter: () => ({ push: vi.fn(), replace: vi.fn(), prefetch: vi.fn(), back: vi.fn() }) }));
 import { QuizClient } from "@/app/quiz/QuizClient";
@@ -23,6 +23,42 @@ beforeEach(() => {
 afterEach(() => { setPostHogClient(null); cleanup(); vi.unstubAllGlobals(); vi.restoreAllMocks(); });
 
 describe("QuizClient with the real player and local learning stores", () => {
+  it("shows a prefetched question but grades it only after its grant, once and with an immediate explanation", async () => {
+    const [first, next] = FE_QUESTIONS_2009_AUTUMN_AM.slice(6, 8);
+    let confirmNext!: (response: Response) => void;
+    const nextGrant = new Promise<Response>(resolve => { confirmNext = resolve; });
+    const fetcher = vi.fn(async (url: string, options?: RequestInit) => {
+      if (url.startsWith("/api/questions/next?")) return Response.json(next);
+      if (url !== "/api/billing/question") return Response.json({});
+      const { id } = JSON.parse(options!.body as string);
+      return id === next.id ? nextGrant : Response.json({ question: first, access: baseAccess });
+    });
+    vi.stubGlobal("fetch", fetcher);
+    render(<StrictMode><QuizClient billingGateEnabled poolIds={[first.id, next.id]} mode="year" exam="fe" backHref="/fe" /></StrictMode>);
+
+    fireEvent.click((await screen.findAllByRole("radio"))[0]);
+    expect(screen.getByRole("region", { name: /^(正解|不正解)の解説$/ })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "次の問題へ" }));
+
+    const choice = screen.getAllByRole("radio")[0];
+    expect(choice).toBeDisabled();
+    fireEvent.click(choice);
+    fireEvent.keyDown(document.body, { key: "1" });
+    expect(screen.queryByRole("region", { name: /^(正解|不正解)の解説$/ })).toBeNull();
+    expect(createHistoryStore().getAllEntries().map(entry => entry.id)).toEqual([first.id]);
+
+    await act(async () => { confirmNext(Response.json({ question: next, access: baseAccess })); });
+    expect(choice).not.toBeDisabled();
+    act(() => {
+      fireEvent.click(choice);
+      fireEvent.keyDown(document.body, { key: "2" });
+    });
+    expect(screen.getByRole("region", { name: /^(正解|不正解)の解説$/ })).toBeInTheDocument();
+    expect(createHistoryStore().getAllEntries().map(entry => entry.id)).toEqual([first.id, next.id]);
+    expect(fetcher.mock.calls.filter(([url]) => url === "/api/billing/question")
+      .map(([, options]) => JSON.parse(options!.body as string).id)).toEqual([first.id, next.id]);
+  });
+
   it("answers ordinary questions across qualifications, preserves player state and storage, and offers exits at the eleventh", async () => {
     window.history.replaceState({}, "", "/quiz?mode=year&exam=fe&utm_source=tsugino_shikaku&utm_content=fe.hero");
     const capture = vi.fn(); setPostHogClient({ capture } as unknown as PostHog);

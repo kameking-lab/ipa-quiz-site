@@ -102,6 +102,7 @@ interface Props {
   headerRight?: React.ReactNode;
   className?: string;
   inline?: boolean;
+  paper?: boolean;
   focusRequest?: { sequence: number; prompt?: string };
 }
 
@@ -114,6 +115,7 @@ export function CopilotPanel({
   headerRight,
   className,
   inline = false,
+  paper = false,
   focusRequest,
 }: Props) {
   const {message: aiAccessMessage, begin: beginAiAccess, response: captureAiResponse, uncertain: markAiUncertain} = useAiAccessNotice(question.id);
@@ -486,7 +488,7 @@ export function CopilotPanel({
           e.preventDefault();
           send(input);
         }}
-        className="flex items-end gap-2 border-t border-zinc-200 p-3 dark:border-zinc-800"
+        className={cn("flex items-end gap-2 border-t py-3", paper ? "border-hairline" : "border-zinc-200 px-3 dark:border-zinc-800")}
       >
         <textarea
           ref={inputRef}
@@ -519,7 +521,7 @@ export function CopilotPanel({
             <Square className="h-4 w-4 fill-current" />
           </Button>
         ) : (
-          <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
+          <Button className={cn("min-h-11 min-w-11 h-auto whitespace-normal py-2.5", paper && "shadow-none hover:shadow-none")}
             type="submit"
             variant="primary"
             size="icon"
@@ -530,14 +532,14 @@ export function CopilotPanel({
           </Button>
         )}
       </form>
-      <div className="px-3 pb-2"><AiProcessingNotice /></div>
+      <div className={cn("pb-2", !paper && "px-3")}><AiProcessingNotice /></div>
     </>
   );
 
   return (
     <div className={cn("flex min-w-0 w-full flex-col bg-card", !inline && "h-full", className)}>
       {/* Header */}
-      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-zinc-200 px-4 py-3 dark:border-zinc-800">
+      {!paper && <div className="flex flex-wrap items-center justify-between gap-2 border-b border-zinc-200 px-4 py-3 dark:border-zinc-800">
         <div className="flex items-center gap-2">
           <MessageCircle className="h-4 w-4 text-sky-600 dark:text-sky-400" />
           <span className="text-sm font-semibold">この問題をAIに質問</span>
@@ -550,7 +552,7 @@ export function CopilotPanel({
             </Button>
           )}
         </div>
-      </div>
+      </div>}
 
       {inline && inputForm}
 
@@ -567,7 +569,8 @@ export function CopilotPanel({
             key={i}
             className={cn(
               "group/message relative mb-3 rounded-xl px-3 py-2",
-              m.role === "user"
+              paper ? (m.role === "user" ? "ml-6 bg-primary-soft text-primary-soft-foreground" : "mr-2 bg-background text-foreground")
+                : m.role === "user"
                 ? "ml-6 bg-sky-50 text-sky-900 dark:bg-sky-950/40 dark:text-sky-100"
                 : "mr-2 bg-zinc-50 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100",
             )}
@@ -703,7 +706,7 @@ export function CopilotInline({ active = true, ...props }: Omit<Props, "onClose"
   return (
     <section
       aria-label="この問題についてAIに質問"
-      className="min-w-0 scroll-mt-24 overflow-hidden rounded-2xl border border-border"
+      className={cn("min-w-0 scroll-mt-24", !props.paper && "overflow-hidden rounded-2xl border border-border")}
       onTouchStart={(event) => event.stopPropagation()}
       onTouchEnd={(event) => event.stopPropagation()}
     >

@@ -12,20 +12,36 @@ export interface FeaturedCalendarExam {
 }
 export const HOME_EXAM_CALENDAR: readonly FeaturedCalendarExam[] = calendar.exams;
 
-/** Latest qualification first; choose up to two others by attempts (including
- * reattempts), then display those by recency. Self-contained for pre-paint sizing. */
-export function frequentExamKeys(entries: unknown, keys: readonly string[], aliases: Readonly<Record<string, string>> = {}, excludedIds: readonly string[] = [], displayKeys: Readonly<Record<string, string>> = {}): string[] {
-  if (!Array.isArray(entries)) return [];
+export function historyExamLookup(keys: readonly string[], aliases: Readonly<Record<string, string>>) {
   const longestFirst = [...keys].sort((a, b) => b.length - a.length);
   const aliasPrefixes = Object.keys(aliases).sort((a, b) => b.length - a.length);
+  return (id: string) => {
+    const alias = aliasPrefixes.find(prefix => id.startsWith(prefix));
+    if (alias) return keys.includes(aliases[alias]) ? aliases[alias] : undefined;
+    const automotive = /^jidosha-20\d{2}-(?:first|second)-(.+)-q\d+$/.exec(id);
+    return automotive ? keys.find(key => key === `jidosha-${automotive[1]}`)
+      : longestFirst.find(key => id.startsWith(`${key}-`));
+  };
+}
+
+/** Latest qualification first; choose up to two others by attempts (including
+ * reattempts), then display those by recency. */
+export function frequentExamKeys(entries: unknown, keys: readonly string[], aliases: Readonly<Record<string, string>> = {}, excludedIds: readonly string[] = [], displayKeys: Readonly<Record<string, string>> = {}): string[] {
+  return rankFrequentExams(entries, historyExamLookup(keys, aliases), excludedIds, displayKeys);
+}
+
+function rankFrequentExams(
+  entries: unknown,
+  examFor: (id: string) => string | undefined,
+  excludedIds: readonly string[],
+  displayKeys: Readonly<Record<string, string>>,
+): string[] {
+  if (!Array.isArray(entries)) return [];
   const counts = new Map<string, { count: number; latest: number }>();
   for (const entry of entries) {
     if (!entry || typeof entry.id !== "string" || !Number.isFinite(entry.at) || excludedIds.includes(entry.id)) continue;
-    const automotive = /^jidosha-20\d{2}-(?:first|second)-(.+)-q\d+$/.exec(entry.id);
-    const alias = aliasPrefixes.find(prefix => entry.id.startsWith(prefix));
-    const key = alias ? aliases[alias] : automotive ? keys.find(key => key === `jidosha-${automotive[1]}`)
-      : longestFirst.find(key => entry.id.startsWith(`${key}-`));
-    if (!key || !keys.includes(key)) continue;
+    const key = examFor(entry.id);
+    if (!key) continue;
     const displayKey = displayKeys[key] ?? key;
     const previous = counts.get(displayKey) ?? { count: 0, latest: -Infinity };
     counts.set(displayKey, { count: previous.count + 1, latest: Math.max(previous.latest, entry.at) });
@@ -37,6 +53,26 @@ export function frequentExamKeys(entries: unknown, keys: readonly string[], alia
   const [latest, ...others] = recent;
   const frequent = others.sort(([a, x], [b, y]) => y.count - x.count || byRecency([a, x], [b, y])).slice(0, 2);
   return [latest, ...frequent.sort(byRecency)].map(([key]) => key);
+}
+
+/** Keep the lookup and ranking self-contained when the browser runs the inline script. */
+export function personalExamReservationScript(
+  id: string,
+  historyKey: string,
+  keys: readonly string[],
+  aliases: Readonly<Record<string, string>>,
+  excludedIds: readonly string[],
+  displayKeys: Readonly<Record<string, string>>,
+): string {
+  const args = JSON.stringify([id, historyKey, keys, aliases, excludedIds, displayKeys]).replaceAll("<", "\\u003c");
+  return `try {
+    const [id, historyKey, keys, aliases, excludedIds, displayKeys] = ${args};
+    const row = document.getElementById(id);
+    const history = JSON.parse(localStorage.getItem(historyKey) || "null");
+    const examFor = (${historyExamLookup.toString()})(keys, aliases);
+    const personal = (${rankFrequentExams.toString()})(history?.entries, examFor, excludedIds, displayKeys);
+    row.dataset.personal = String(personal.length > 0);
+  } catch {}`;
 }
 
 export function japanDate(now: Date): string {

@@ -13,8 +13,8 @@ import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import {
   AlertTriangle,
+  ArrowLeft,
   ArrowRight,
-  BookOpenCheck,
 } from "lucide-react";
 
 import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
@@ -55,6 +55,7 @@ import { AfternoonEssayHint } from "@/components/quiz/AfternoonEssayHint";
 import { KamokuBStudyHint } from "@/components/quiz/KamokuBStudyHint";
 import { CategoryStudyTip } from "@/components/quiz/CategoryStudyTip";
 import { topicTagToSlug } from "@/lib/seo/topics";
+import styles from "./QuestionPage.module.css";
 import { getQuestionCanonicalRepresentative } from "@/lib/seo/question-canonical";
 
 // Every question page renders on its first request and is then cached (ISR)
@@ -158,6 +159,8 @@ export default async function QuestionPage({
   if (!isPracticeReadyQuestion(q) && !(isReferenceOnlyQuestionId(q.id) && !q.needsReview && !hasUnrenderableContent(q))) notFound();
 
   const answerKeys = Array.isArray(q.answer) ? q.answer : [q.answer];
+  const questionNumber = `問${questionNumberLabel(q)}`;
+  const questionContext = questionHeading(q).slice(0, -questionNumber.length).trimEnd();
   const answerText = q.type === "ordering" ? undefined :
     q.choices
       ? answerKeys.map(key => q.choices?.[key as ChoiceKey]).filter(Boolean).join(" ／ ")
@@ -231,6 +234,8 @@ export default async function QuestionPage({
   const lastUpdatedISO = getRecordedLastUpdatedISO(q);
 
   const breadcrumbItems = questionBreadcrumbItems(q, requestedPageUrlAbs);
+  const nextHref = next ? questionPagePath(next) : breadcrumbItems[2].href;
+  const nextLabel = next ? "次の問題へ" : "年度の問題一覧へ戻る";
   let gateEnabled = false;
   try { gateEnabled = practiceGateEnabled(); } catch { /* Billing misconfigured: the page stays fully open. */ }
   const jsonLd = buildQuestionJsonLd({
@@ -244,20 +249,17 @@ export default async function QuestionPage({
   });
 
   const explanation = (
-    <section id="explanation" aria-label="解説" className="mt-6 scroll-mt-20">
-      <h2 className="mb-3 flex items-center gap-2.5 text-base font-bold sm:text-lg">
-        <BookOpenCheck aria-hidden="true" className="h-5 w-5 text-primary" />
-        解説
-      </h2>
+    <section id="explanation" aria-label="解説" className="mt-6 scroll-mt-20 border-t border-hairline pt-4">
+      <h2 className="mb-3 text-xl font-bold">解説</h2>
       {showRealExplanation ? (
         <>
           <ExplanationLayers explanation={displayQuestionExplanation(q.exam, q.explanation)} />
           {q.choiceExplanations && q.choices && (
-            <div className="mt-4 rounded-2xl border border-border bg-card p-4 sm:p-5">
-              <h3 className="mb-3 text-sm font-bold text-foreground">各選択肢の解説</h3>
-              <dl className="space-y-3 text-sm leading-relaxed">
+            <div className="mt-6">
+              <h3 className="mb-2 font-bold text-foreground">各選択肢の解説</h3>
+              <dl className="divide-y divide-hairline border-y border-hairline text-base leading-[1.85]">
                 {Object.entries(q.choices).map(([key, choice]) => (
-                  <div key={key} className="grid grid-cols-[2rem_1fr] gap-2">
+                  <div key={key} className={`grid grid-cols-[28px_minmax(0,1fr)] gap-2 border-l-2 py-3 pl-3 ${answerKeys.includes(key as ChoiceKey) ? "border-l-primary" : "border-l-transparent"}`}>
                     <dt className="font-bold text-primary">{choiceDisplayLabel(q.exam, key as ChoiceKey)}</dt>
                     <dd>
                       <div className="font-medium text-foreground"><QuestionBody text={choice} /></div>
@@ -272,7 +274,7 @@ export default async function QuestionPage({
           )}
         </>
       ) : (
-        <div className="flex items-start gap-2.5 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900 dark:border-amber-900/40 dark:bg-amber-950/30 dark:text-amber-200">
+        <div className="flex items-start gap-2.5 rounded-lg bg-warning-soft p-4 text-sm text-warning-soft-foreground">
           <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
           <span>
             解説は準備中です。AI コパイロットに詳しい解説を依頼してください。
@@ -295,14 +297,14 @@ export default async function QuestionPage({
       {next && (
         <link rel="next" href={`${SITE_BASE_URL}${questionPagePath(next)}`} />
       )}
-    <main data-study-presence-exam={q.exam} className="mx-auto w-full max-w-3xl px-4 py-6 sm:py-10">
+    <main data-study-presence-exam={q.exam} className={`${styles.questionPage} mx-auto w-full max-w-[44rem] px-4 pt-3 sm:pt-6`}>
       <JsonLd data={gateEnabled ? withQuotaPaywall(jsonLd) : jsonLd} />
 
       {/* Breadcrumb — no viewport prefetch: rarely clicked, and each prefetch
           downloads another page's RSC payload on every question view. */}
       <nav
         aria-label="パンくずリスト"
-        className="mb-4 text-xs text-muted-foreground"
+        className="mb-3 text-[13px] text-muted-foreground"
       >
         <ol className="flex flex-wrap items-center gap-1.5">
           <li>
@@ -349,16 +351,17 @@ export default async function QuestionPage({
 
       {/* Header */}
       <header className="mb-4">
+        <h1 className="font-semibold leading-tight text-foreground">
+          <span className="block text-[13px] text-muted-foreground">{questionContext}</span>{" "}
+          <span className="mt-1 block font-display text-[32px] font-semibold tabular-nums">{questionNumber}</span>
+        </h1>
+        <p className="mt-1 text-[13px] text-muted-foreground">{categoryLabel}</p>
         {(q.explanationCoverage === "official-summary" || q.isCalculation) && (
-          <div className="mb-3 flex flex-wrap gap-2 text-xs">
+          <div className="mt-2 flex flex-wrap gap-2 text-xs">
             {q.explanationCoverage === "official-summary" && <Badge variant="outline">公式正答と一般解説</Badge>}
             {q.isCalculation && <Badge variant="warn">計算</Badge>}
           </div>
         )}
-        <h1 className="text-balance text-2xl font-bold leading-tight tracking-tight text-foreground sm:text-3xl">
-          {questionHeading(q)}
-        </h1>
-        <p className="mt-2 text-sm font-medium text-muted-foreground">{categoryLabel}</p>
       </header>
 
       {/* Figure-bearing notice — text-only fallback hint */}
@@ -384,7 +387,7 @@ export default async function QuestionPage({
       <QuestionPracticeGate id={q.id} enabled={gateEnabled}>
       <section
         aria-label="問題文"
-        className="selectable-content rounded-2xl border border-border bg-card p-5 text-base leading-[1.85] text-card-foreground shadow-sm sm:p-6 sm:text-[17px]"
+        className="selectable-content text-base leading-[1.85] text-foreground"
       >
         {q.lawReferenceDate && (
           <p className="mb-3 text-sm font-medium text-muted-foreground">
@@ -433,19 +436,12 @@ export default async function QuestionPage({
       {!hasAnswerCard && <>{explanation}{source}</>}
       </QuestionPracticeGate>
 
-      <nav aria-label="解説のあとに学ぶ" className="my-5 print:hidden">
-        <Link
-          href={next ? questionPagePath(next) : breadcrumbItems[2].href}
-          prefetch={false}
-          className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground"
-        >
-          {next ? "次の問題へ" : "年度の問題一覧へ戻る"}
-          <ArrowRight aria-hidden="true" className="h-4 w-4" />
-        </Link>
+      <nav aria-label="解説のあとに学ぶ" className="mt-4 print:hidden">
+        <Link href={nextHref} prefetch={false} className="study-link">{nextLabel}</Link>
       </nav>
 
-      <details className="my-6 rounded-xl border border-border px-4 print:hidden">
-        <summary className="min-h-11 cursor-pointer py-3 font-semibold">関連資料</summary>
+      <details className="my-6 border-y border-hairline print:hidden">
+        <summary className="study-focus min-h-11 cursor-pointer py-3 font-semibold">関連資料</summary>
         <div className="space-y-5 pb-4 text-sm">
           <ul className="space-y-2">
             {topicPageExists && <li><Link href={'/' + q.exam + '/topic/' + encodeURIComponent(q.category)} prefetch={false} className="underline">{categoryLabel}</Link></li>}
@@ -487,6 +483,17 @@ export default async function QuestionPage({
           )}
         </div>
       </details>
+
+      <nav aria-label="問題ナビ" className={`${styles.navigation} fixed inset-x-0 bottom-0 z-30 border-t border-hairline bg-card print:hidden`}>
+        <div className="mx-auto flex w-full max-w-[44rem] items-center gap-2 px-4 py-2">
+          {prev && <Link href={questionPagePath(prev)} prefetch={false} className="study-focus flex min-h-12 min-w-12 shrink-0 items-center justify-center gap-1 rounded-xl border border-input px-2.5 text-sm hover:bg-muted">
+            <ArrowLeft aria-hidden="true" className="size-4 shrink-0" /> 前の問題へ
+          </Link>}
+          <Link href={nextHref} prefetch={false} className={`${styles.next} study-focus flex min-w-0 flex-1 items-center justify-between gap-2 px-3 py-2 text-sm font-semibold`}>
+            {nextLabel}<ArrowRight aria-hidden="true" className="size-5 shrink-0" />
+          </Link>
+        </div>
+      </nav>
 
       {/* Print-only attribution */}
       <div className="print-only hidden mt-10 border-t border-gray-300 pt-4 text-[10pt] text-gray-600">

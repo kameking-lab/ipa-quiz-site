@@ -39,16 +39,28 @@ test.describe("/q inline answer", () => {
     page,
   }) => {
     const path = singleChoicePath;
+    await page.setViewportSize({ width: 390, height: 844 });
     await page.goto(path);
 
     const urlBefore = page.url();
     const radios = page.getByRole("radio");
+    const navigation = page.getByRole("navigation", { name: "問題ナビ" });
+    const next = navigation.getByRole("link", { name: "次の問題へ" });
+    const inlineNext = page.getByRole("navigation", { name: "解説のあとに学ぶ" }).getByRole("link");
+    await expect(next).toBeInViewport({ ratio: 1 });
+    await expect(next).toHaveCSS("background-color", "rgba(0, 0, 0, 0)");
+    await expect(inlineNext).toHaveAttribute("href", (await next.getAttribute("href"))!);
     await expect(radios.first()).toBeVisible();
     await radios.first().click();
 
-    // A result banner appears (正解 / 不正解), the explanation link shows, and we
-    // did NOT navigate away.
-    await expect(page.getByText(/正解|不正解/).first()).toBeVisible();
+    const result = page.getByRole("group", { name: "採点結果" });
+    await expect(result.getByText(/^(正解！|不正解 — 正解は .+)$/)).toBeVisible();
+    await expect(radios.first()).toBeChecked();
+    await expect(next).toHaveCSS("background-color", await page.evaluate(() =>
+      document.documentElement.classList.contains("dark") ? "rgb(168, 199, 171)" : "rgb(47, 74, 58)"
+    ));
+    await expect(inlineNext).toHaveCSS("background-color", "rgba(0, 0, 0, 0)");
+    await next.click({ trial: true });
     expect(page.url()).toBe(urlBefore);
 
     // The explanation section is present on the page.
@@ -63,7 +75,7 @@ test.describe("/q inline answer", () => {
     const first = page.getByRole("radio").first();
     await first.focus();
     await page.keyboard.press("Enter");
-    await expect(page.getByText(/正解|不正解/).first()).toBeVisible();
+    await expect(page.getByRole("group", { name: "採点結果" })).toBeVisible();
   });
 
   test("a multi-select image question keeps checkboxes in SSR and requires both choices before grading", async ({ page, request }) => {

@@ -22,13 +22,13 @@ export default function HomePage() {
   const domains = getHomeDirectory();
 
   return (
-    <main className={`${styles.home} mx-auto w-full max-w-[640px] flex-1 px-4 sm:px-6`}>
+    <main className={`${styles.home} study-column flex-1`}>
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [buildWebsiteNode(description), buildOrgNode()] }} />
       <HomePace domains={domains} planExamKeys={planCatalogKeys()} />
       <div className={styles.shortcuts}>
         <StudyRoomLine />
         <details id="home-qualification-directory" className={styles.directory}>
-          <summary className="min-h-14 cursor-pointer rounded-xl border border-border bg-card px-3 py-4 text-sm hover:bg-muted">資格・区分一覧</summary>
+          <summary className="study-focus min-h-12 cursor-pointer py-3 text-sm underline underline-offset-4 hover:text-primary">資格・区分一覧</summary>
           <div className="mt-2">
             <QualificationDirectory domains={groupHomeDirectory(domains)} />
           </div>

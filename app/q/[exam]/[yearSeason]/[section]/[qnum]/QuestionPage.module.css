@@ -1,0 +1,31 @@
+.questionPage {
+  padding-bottom: calc(5rem + var(--safe-bottom));
+}
+
+:global(#main-content):has(.questionPage) + :global(.site-footer) {
+  padding-bottom: calc(5rem + var(--safe-bottom));
+}
+
+.navigation {
+  padding-bottom: var(--safe-bottom);
+}
+
+.next {
+  min-height: 48px;
+  border: 1px solid var(--input);
+  border-radius: 16px;
+}
+
+.next:hover {
+  background: var(--muted);
+}
+
+.questionPage:has([data-question-answered]) .next {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.questionPage:has([data-question-answered]) .next:hover {
+  background: var(--primary-hover);
+}

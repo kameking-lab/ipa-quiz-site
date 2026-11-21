@@ -36,10 +36,10 @@ test.describe("no FOUC on /q/*", () => {
     await page.goto(Q);
     const main = page.locator("main").first();
     await expect(main).toBeVisible();
-    // The /q main has `max-w-3xl` (48rem = 768px). If Tailwind never applied
-    // (FOUC), computed max-width would be "none".
+    // The question layout uses `max-w-[44rem]`. Without Tailwind, the
+    // computed max-width would be "none".
     const maxWidth = await main.evaluate((el) => getComputedStyle(el).maxWidth);
-    expect(maxWidth).toBe("768px");
+    expect(maxWidth).toBe("704px");
     // And at least one stylesheet is actually attached.
     const sheetCount = await page.evaluate(() => document.styleSheets.length);
     expect(sheetCount).toBeGreaterThan(0);

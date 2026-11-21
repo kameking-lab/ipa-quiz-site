@@ -594,7 +594,7 @@ function safetyItems(): HomeDirectoryItem[] {
 
       const stats = getExamPaperStats(entry.id);
 
-      return stats ? [stats] : [];
+      return stats ? [{ id: entry.id, ...stats }] : [];
 
     });
 
@@ -603,6 +603,8 @@ function safetyItems(): HomeDirectoryItem[] {
     return [{
 
       key: hub.slug,
+
+      historyPrefixes: papers.map(paper => `${paper.id}-`),
 
       href: qualificationHubPath(hub.slug),
 
@@ -624,7 +626,7 @@ function safetyItems(): HomeDirectoryItem[] {
  */
 function safetyOtherItems(): HomeDirectoryItem[] {
 
-  const bySubject = new Map<string, { group: string; questionCount: number; papers: number }>();
+  const bySubject = new Map<string, { group: string; questionCount: number; paperIds: string[] }>();
 
   for (const entry of EXAM_CATALOG) {
 
@@ -634,11 +636,11 @@ function safetyOtherItems(): HomeDirectoryItem[] {
 
     if (!stats) continue;
 
-    const current = bySubject.get(entry.subject) ?? { group: entry.group, questionCount: 0, papers: 0 };
+    const current = bySubject.get(entry.subject) ?? { group: entry.group, questionCount: 0, paperIds: [] };
 
     current.questionCount += stats.questionCount;
 
-    current.papers += 1;
+    current.paperIds.push(entry.id);
 
     bySubject.set(entry.subject, current);
 
@@ -648,13 +650,15 @@ function safetyOtherItems(): HomeDirectoryItem[] {
 
     key: `${value.group}-${subject}`,
 
+    historyPrefixes: value.paperIds.map(id => `${id}-`),
+
     href: `${EXAM_LIBRARY_PATH}?group=${value.group}&subject=${encodeURIComponent(subject)}`,
 
     name: subject,
 
     questionCount: value.questionCount,
 
-    periodLabel: `${value.papers}回分`,
+    periodLabel: `${value.paperIds.length}回分`,
 
   }));
 

@@ -29,6 +29,49 @@ describe("QuizClient authorization boundary", () => {
     expect(new URL(location.href).searchParams.get("question")).toBe("q1");
     expect(fetcher.mock.calls.filter(([url])=>url==="/api/billing/question")).toHaveLength(3);
   });
+  it("rechecks when entitlement changes during the transition to the limit screen", async () => {
+    let paid = false;
+    const fetcher = vi.fn(async (url: string, options?: RequestInit) => {
+      if (url !== "/api/billing/question") return Response.json({ id: "q2" });
+      const { id } = JSON.parse(options!.body as string);
+      if (id === "q1") return Response.json({ question: { id }, access: { ...access, remaining: 0 } });
+      if (paid) return Response.json({ question: { id }, access: { ...access, kind: "pass", remaining: null } });
+      return Response.json({ error: "daily_limit", access: { ...access, remaining: 0 } }, { status: 429 });
+    });
+    vi.stubGlobal("fetch", fetcher);
+    vi.mocked(HTMLElement.prototype.scrollIntoView).mockImplementation(function (this: HTMLElement) {
+      if (paid || this.getAttribute("aria-label") !== "本日の無料演習の終了") return;
+      paid = true;
+      window.dispatchEvent(new Event("mobile:entitlement-changed"));
+    });
+    render(<QuizClient billingGateEnabled poolIds={["q1", "q2"]} mode="year" backHref="/" />);
+    await screen.findByText("q1");
+    fireEvent.click(screen.getByText("next"));
+    await screen.findByText("q2");
+    expect(fetcher.mock.calls.filter(([url]) => url === "/api/billing/question")
+      .map(([, options]) => JSON.parse(options!.body as string).id)).toEqual(["q1", "q2", "q2"]);
+    expect(new URL(location.href).searchParams.get("question")).toBe("q2");
+  });
+  it("rechecks once when entitlement changes before the pending grant returns a denial", async () => {
+    let denyPrevious!: (response: Response) => void;
+    const previousGrant = new Promise<Response>(resolve => { denyPrevious = resolve; });
+    const post = vi.fn()
+      .mockReturnValueOnce(previousGrant)
+      .mockResolvedValue(Response.json({ question: { id: "q1" }, access: { ...access, kind: "pass", remaining: null } }));
+    vi.stubGlobal("fetch", vi.fn((url: string, options?: RequestInit) => {
+      if (url !== "/api/billing/question") return Promise.resolve(Response.json({}));
+      return post(JSON.parse(options!.body as string).id);
+    }));
+    render(<QuizClient billingGateEnabled poolIds={["q1"]} mode="year" backHref="/" />);
+    await waitFor(() => expect(post.mock.calls).toEqual([["q1"]]));
+
+    act(() => { window.dispatchEvent(new Event("mobile:entitlement-changed")); });
+    await act(async () => { denyPrevious(Response.json({ error: "daily_limit", access: { ...access, remaining: 0 } }, { status: 429 })); });
+
+    expect(await screen.findByText("q1")).toBeInTheDocument();
+    expect(screen.queryByText("今日の無料10問はここまで")).toBeNull();
+    expect(post.mock.calls).toEqual([["q1"], ["q1"]]);
+  });
   it("off ignores malformed billing settings and keeps question GET/cache independent of billing", async () => {
     const c = billingConfig({ BILLING_MODE: "off", BILLING_ORIGIN: "%%%", BILLING_PRICE_YEN: "broken", BILLING_TRANSITION_STARTS_AT: "bad" });
     const fetcher = vi.fn(async (url: string) => {

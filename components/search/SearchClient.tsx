@@ -7,10 +7,9 @@ import Link from "next/link";
 import {
   ArrowRight,
   Loader2,
-  Search as SearchIcon,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { StudySearchField } from "@/components/ui/StudySearchField";
 import { QualificationSelect } from "@/components/qualifications/QualificationSelect";
 import { examLabel, seasonLabel, formatYearSeason } from "@/lib/utils";
 import { questionPagePath } from "@/lib/seo/question-url";
@@ -281,8 +280,8 @@ export function SearchClient() {
         onClear={clearAll}
       />
 
-      <details className="rounded-xl border border-border px-3" onToggle={(event) => setFilterOpen(event.currentTarget.open)}>
-        <summary className="min-h-11 cursor-pointer py-3 text-sm font-medium">絞り込み</summary>
+      <details className="border-y border-hairline" onToggle={(event) => setFilterOpen(event.currentTarget.open)}>
+        <summary className="study-focus min-h-11 cursor-pointer py-3 text-sm font-medium">絞り込み</summary>
         <FacetPanel facets={result?.facets} query={query} onChange={updateQuery} />
       </details>
       {showResults && <ResultsPanel loading={loading || (!resultIsCurrent && !error)} error={error} result={filteredHits} tokens={tokens} />}
@@ -304,36 +303,25 @@ function SearchForm({ inputText, onInputChange, onSubmit, onClear }: SearchFormP
     <form
       role="search"
       aria-label="問題検索"
-      className="rounded-2xl border border-border bg-card p-4 shadow-sm"
       onSubmit={(e) => {
         e.preventDefault();
         onSubmit();
       }}
     >
-      <label htmlFor="search-input" className="sr-only">キーワード</label>
-      <div className="flex items-center gap-2">
-        <div className="relative min-w-0 flex-1">
-          <SearchIcon
-            className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground"
-            aria-hidden="true"
-          />
-          <input
-            id="search-input"
-            type="search"
-            inputMode="search"
-            placeholder="キーワード"
-            className="h-11 w-full rounded-xl border border-border bg-background pl-9 pr-12 text-base text-foreground sm:text-sm placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 sm:h-12 [&::-webkit-search-cancel-button]:appearance-none"
-            value={inputText}
-            onChange={(e) => onInputChange(e.target.value)}
-            enterKeyHint="search"
-          />
-        </div>
-        <div className="flex gap-2">
-          <Button type="submit" variant="primary" size="md" className="flex-1 sm:flex-none min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
-            検索
-          </Button>
-          <Button type="button" variant="ghost" size="sm" className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" onClick={onClear} aria-label="すべての条件をクリア">クリア</Button>
-        </div>
+      <StudySearchField
+        id="search-input"
+        aria-label="キーワード"
+        inputMode="search"
+        placeholder="キーワード"
+        value={inputText}
+        onChange={(e) => onInputChange(e.target.value)}
+        enterKeyHint="search"
+      />
+      <div className="mt-2 flex items-center gap-3">
+        <button type="submit" className="study-primary flex-1">
+          検索 <ArrowRight aria-hidden="true" className="size-5" />
+        </button>
+        <button type="button" className="study-link" onClick={onClear} aria-label="すべての条件をクリア">クリア</button>
       </div>
 
     </form>
@@ -347,7 +335,7 @@ interface FacetPanelProps {
 }
 
 function FacetPanel({ facets, query, onChange }: FacetPanelProps) {
-  const fieldClass = "mt-1 block min-h-11 w-full min-w-0 rounded-lg border border-border bg-background px-2 text-base text-foreground sm:text-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
+  const fieldClass = "study-focus mt-1 block min-h-11 w-full min-w-0 rounded-lg border border-input bg-background px-2 text-base text-foreground";
   const exams = EXAM_OPTIONS.filter(code => (facets?.exam[code] ?? 0) > 0 || query.exam === code || !facets)
     .map(code => ({ key: code, name: examLabel(code), count: facets?.exam[code] ?? 0 }));
   const fields = [
@@ -444,7 +432,7 @@ function ResultsPanel({ loading, error, result, tokens }: ResultsPanelProps) {
         )}
       </div>
 
-      <ul className="space-y-2">
+      <ul className="divide-y divide-hairline">
         {result.hits.map((hit) => (
           <li key={hit.id}>
             <ResultItem hit={hit} tokens={tokens} />
@@ -466,7 +454,7 @@ function ResultItem({ hit, tokens }: { hit: SearchHit; tokens: string[] }) {
   return (
     <Link
       href={href}
-      className="group block rounded-2xl border border-border bg-card p-4 transition-colors hover:border-primary/40 hover:bg-muted/30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+      className="study-focus group block py-3 hover:text-primary"
     >
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0 flex-1">

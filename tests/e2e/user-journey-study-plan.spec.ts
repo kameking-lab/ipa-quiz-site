@@ -5,7 +5,7 @@ test.beforeEach(async ({ page }) => {
   await page.route("**/api/exam-schedule/**", route => route.fulfill({ status: 503, json: { error: "unavailable" } }));
 });
 test("GET /study-plan returns 200", async ({ request }) => {
-  expect((await request.get("/study-plan")).status()).toBe(200);
+  expect((await request.get("/study-plan", { maxRetries: 1 })).status()).toBe(200);
 });
 test("study plan opens the date-based creation sheet", async ({ page }) => {
   await page.goto("/study-plan");
@@ -37,5 +37,5 @@ test("legacy result pages remain reachable without rewriting their saved payload
   await expect(page.locator("main")).toContainText(/学習|スケジュール|プラン/);
 });
 test("missing legacy result fails safely", async ({ request }) => {
-  expect([200,404]).toContain((await request.get("/study-plan/result/nonexistent-id")).status());
+  expect([200,404]).toContain((await request.get("/study-plan/result/nonexistent-id", { maxRetries: 1 })).status());
 });

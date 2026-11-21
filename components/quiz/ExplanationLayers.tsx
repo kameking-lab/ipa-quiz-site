@@ -2,9 +2,7 @@ import { QuestionBody } from "./QuestionBody";
 
 type Layer = {
   label: string;
-  icon: React.ReactNode;
   body: string;
-  tone: "primary" | "neutral" | "muted";
 };
 
 /**
@@ -26,7 +24,7 @@ function splitSingleParagraphBySentence(para: string): string[] {
 function splitLayers(explanation: string): Layer[] {
   // Do not split a code fence or a table across independently rendered layers.
   if (/^\s*(`{3,}|~{3,})/m.test(explanation) || /^\s*\|.*\|\s*$/m.test(explanation)) {
-    return [{ label: "解説", icon: <Lightbulb className="h-3.5 w-3.5" />, body: explanation, tone: "primary" }];
+    return [{ label: "解説", body: explanation }];
   }
   let paragraphs = explanation
     .split(/\n{2,}/)
@@ -44,9 +42,7 @@ function splitLayers(explanation: string): Layer[] {
       return [
         {
           label: "解説",
-          icon: <Lightbulb className="h-3.5 w-3.5" />,
           body: paragraphs[0],
-          tone: "primary",
         },
       ];
     }
@@ -56,15 +52,11 @@ function splitLayers(explanation: string): Layer[] {
     return [
       {
         label: "結論",
-        icon: <Lightbulb className="h-3.5 w-3.5" />,
         body: paragraphs[0],
-        tone: "primary",
       },
       {
         label: "詳細",
-        icon: <Layers className="h-3.5 w-3.5" />,
         body: paragraphs[1],
-        tone: "neutral",
       },
     ];
   }
@@ -77,57 +69,17 @@ function splitLayers(explanation: string): Layer[] {
   return [
     {
       label: "結論",
-      icon: <Lightbulb className="h-3.5 w-3.5" />,
       body: conclusion,
-      tone: "primary",
     },
     {
       label: "詳細",
-      icon: <Layers className="h-3.5 w-3.5" />,
       body: detail,
-      tone: "neutral",
     },
     {
       label: "補足",
-      icon: <BookOpen className="h-3.5 w-3.5" />,
       body: supplement,
-      tone: "muted",
     },
   ];
-}
-
-const TONE_STYLES: Record<Layer["tone"], { wrap: string; chip: string; text: string }> = {
-  primary: {
-    wrap: "border-primary/25 bg-gradient-to-br from-primary-soft via-card to-card",
-    chip: "bg-primary text-primary-foreground",
-    text: "text-card-foreground",
-  },
-  neutral: {
-    wrap: "border-border bg-card",
-    chip: "bg-muted text-foreground",
-    text: "text-card-foreground",
-  },
-  muted: {
-    wrap: "border-border bg-muted/40",
-    chip: "bg-background text-muted-foreground border border-border",
-    text: "text-muted-foreground",
-  },
-};
-
-function LayerBody({
-  body,
-  textClass,
-}: {
-  body: string;
-  textClass: string;
-}) {
-  return (
-    <div
-      className={`selectable-content text-sm leading-[1.85] sm:text-[15px] ${textClass}`}
-    >
-      <QuestionBody text={body} linkReferences />
-    </div>
-  );
 }
 
 /** Describe exactly the same source layers that the body renders. */
@@ -149,27 +101,15 @@ export function ExplanationLayers({ explanation }: { explanation: string }) {
   if (layers.length === 0) return null;
 
   return (
-    <div className="flex flex-col gap-3">
-      {layers.map((layer, idx) => {
-        const tone = TONE_STYLES[layer.tone];
-        return (
-          <article
-            key={idx}
-            className={`relative overflow-hidden rounded-2xl border p-4 sm:p-5 ${tone.wrap}`}
-          >
-            <h3 className="mb-2.5 flex items-center gap-2">
-              <span
-                className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-semibold tracking-wide ${tone.chip}`}
-              >
-                {layer.icon}
-                {layer.label}
-              </span>
-            </h3>
-            <LayerBody body={layer.body} textClass={tone.text} />
-          </article>
-        );
-      })}
+    <div className="divide-y divide-hairline">
+      {layers.map((layer, idx) => (
+        <article key={idx} className="py-3 first:pt-0 last:pb-0">
+          {layers.length > 1 && <h3 className="mb-2 text-sm font-bold">{layer.label}</h3>}
+          <div className="selectable-content text-base leading-[1.85]">
+            <QuestionBody text={layer.body} linkReferences />
+          </div>
+        </article>
+      ))}
     </div>
   );
 }
-import { BookOpen, Layers, Lightbulb } from "lucide-react";
