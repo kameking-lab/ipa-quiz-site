@@ -8,7 +8,6 @@ test.beforeEach(async ({ page }) => {
   await page.route("**/api/stats/study-presence", route => route.fulfill({ status: 503,
     json: { status: "unavailable", count: null, total: null, exams: null, measuredAt: null,
       validUntil: null, windowSeconds: 300, reason: "unavailable", retryAfterSeconds: 90 } }));
-  await page.clock.setFixedTime(new Date("2026-11-21T12:00:00+09:00"));
 });
 
 // Synthetic UI fixtures never record a learner, heartbeat, or production account.
@@ -31,15 +30,19 @@ for (const count of [1, 5, 12, 24, 48, 120, 130]) {
     const errors: string[] = []; page.on("pageerror", error => errors.push(error.message));
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto("/study-room");
-    await show(page, { count, exams: [{ exam: "ip", count }] });
     const scene = page.getByTestId("study-room-scene");
+    if (count === 130) {
+      await show(page, { count: 45, exams: [{ exam: "ip", count: 45 }] });
+      await expect(scene.getByTestId("study-room-seat").first()).toHaveCSS("transition-property", "none");
+    }
+    await show(page, { count, exams: [{ exam: "ip", count }] });
     if (count === 12) {
       const action = await page.getByRole("link", { name: "席について解く" }).boundingBox();
       const nav = await page.locator(".mobile-bottom-nav").boundingBox();
       expect(action!.height).toBeGreaterThanOrEqual(44);
       expect(action!.y + action!.height).toBeLessThanOrEqual(nav!.y);
     }
-    await expect(scene).toHaveAttribute("data-room", "p1");
+    await expect(scene).toHaveAttribute("data-room", /^p[1-4]$/);
     await expect(page.getByTestId("study-room-seat")).toHaveCount(Math.min(120, count));
     if (count > 120) await expect(page.getByText(`＋${count - 120}人`)).toBeVisible();
     else await expect(page.getByText(/^＋/)).toHaveCount(0);

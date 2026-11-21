@@ -23,6 +23,8 @@
   position: absolute;
   aspect-ratio: 1;
   transform: translate(-50%, -100%);
+  /* Existing seats must adopt the new layout in the same frame as arriving seats. */
+  transition-property: none;
 }
 
 .slot img {
