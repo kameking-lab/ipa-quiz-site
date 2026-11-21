@@ -1,7 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { monthlyActionClass, MonthlyConditions, MonthlyPlanLink, MonthlyPrice } from "@/components/billing/MonthlyOffer";
+import { DailyLimitActions, MonthlyConditions, MonthlyPlanLink, MonthlyPrice } from "@/components/billing/MonthlyOffer";
 import { P3Mascot } from "@/components/ui/P3Mascot";
 import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
 import { saveQuizReturn } from "@/lib/billing/quiz-return";
@@ -55,10 +54,9 @@ export function PracticeDailyLimit({ resumeHref, freeDaily, onUnlocked }: { rese
       <MonthlyPrice />
       <p>月額プランは演習回数無制限。</p>
     </div>
-    <div className="grid gap-2">
+    <DailyLimitActions>
       <MonthlyPlanLink returnTo={resumeHref} onClick={start} />
-      <Link href="/" className={monthlyActionClass + " bg-card text-foreground shadow-[inset_0_0_0_1px_var(--border)] hover:bg-muted"}>今日はここまで</Link>
-    </div>
+    </DailyLimitActions>
     <MonthlyConditions keepPracticeOpen />
     <FeedbackUnlock onUnlocked={onUnlocked ?? (() => window.location.reload())} />
   </section>;

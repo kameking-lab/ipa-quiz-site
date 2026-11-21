@@ -111,7 +111,18 @@ for (const state of ["authenticated", "loading", "unauthenticated"] as const) {
       await screen.findByRole("alert");
       expect(container.querySelector('a[href*="/auth/signin"]') !== null).toBe(guest);
       if (!guest) expect(container.textContent).not.toContain("ログイン");
-      expect(screen.getByRole("link", { name: "有料会員・購入復元" })).toBeVisible();
+      const purchase = screen.getByRole("link", { name: "有料会員・購入復元" });
+      expect(purchase).toHaveAttribute("href", "/billing");
+      const stop = screen.queryByRole("link", { name: "今日はここまで" });
+      if (error === "daily_limit") {
+        expect(screen.getByText("980")).toBeVisible();
+        expect(stop).toHaveAttribute("href", "/");
+        expect(stop?.parentElement).toBe(purchase.parentElement);
+        expect(purchase).toHaveClass("w-full", "min-h-12", "text-base");
+        expect(stop).toHaveClass("w-full", "min-h-12", "text-base");
+      } else {
+        expect(stop).toBeNull();
+      }
     });
     it.each(["sign_in_required", "daily_limit"])("guards public-paper failure: %s", async error => {
       const resolveQuestion = vi.fn(async () => { throw new Error(error); });
