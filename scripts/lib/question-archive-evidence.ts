@@ -4,7 +4,7 @@ import type { Question } from "@/lib/questions/types";
 
 const NICHIMU = ["nichimu.or.jp", "www.nichimu.or.jp"];
 const JAFP = ["jafp.or.jp", "www.jafp.or.jp"];
-const JEMAI = ["jemai.or.jp", "www.jemai.or.jp"];
+const JEMAI = ["www.jemai.or.jp"];
 
 export const OFFICIAL_ARCHIVE_HOSTS: Readonly<Record<string, readonly string[]>> = {
   amateur1: NICHIMU, amateur2: NICHIMU, general1: NICHIMU, general2: NICHIMU,
@@ -107,12 +107,24 @@ function verifiedDocument(
     (archive === undefined || matchesCapture(doc.archiveUrl, doc.originalUrl));
 }
 
+export function sourceUrlRule(value: string): "archived-source" | "rolling-source" | undefined {
+  let url: URL;
+  try { url = new URL(value); } catch { return; }
+  const host = url.hostname.toLowerCase().replace(/\.$/, "");
+  if (host === "web.archive.org") return "archived-source";
+  if (/^(?:www\.)?nichimu\.or\.jp$/.test(host) && /^\/(?:vc-files\/kshiken\/pdf|kshiken)\/siken\/\d+\//i.test(url.pathname)) {
+    return "rolling-source";
+  }
+}
+
 export function verifiedArchiveSource(
-  q: Question, evidence: ArchiveEvidence | undefined, answerUrlRule?: string,
+  q: Question, evidence: ArchiveEvidence | undefined,
 ): boolean {
   const hosts = Object.hasOwn(OFFICIAL_ARCHIVE_HOSTS, q.exam) ? OFFICIAL_ARCHIVE_HOSTS[q.exam] : undefined;
   const verified = evidence?.get(q.id);
   if (!hosts || !verified || !q.sourceArchiveUrl || !q.sourceAttribution?.trim()) return false;
+  // 奈良県の調理師試験は令和7年度から関西広域連合実施。旧県試験の出典を転用しない。
+  if (q.exam === "chori-nara" && q.year >= 2025) return false;
   const { paper, entry } = verified;
   const slots = q.type === "native-b" ? q.nativeB?.slots : undefined;
   const nativeAnswersMatch = slots && entry.nativeAnswers
@@ -126,5 +138,5 @@ export function verifiedArchiveSource(
     JSON.stringify(entry.answer) === JSON.stringify(q.answer) &&
     verifiedDocument(paper.question, q.sourcePdfUrl, q.sourceArchiveUrl, hosts) &&
     verifiedDocument(paper.answer, q.sourceAnswerUrl, q.sourceAnswerArchiveUrl, hosts) &&
-    (Boolean(q.sourceAnswerArchiveUrl) || (q.sourceAnswerUrl?.startsWith("https://") === true && !answerUrlRule));
+    (Boolean(q.sourceAnswerArchiveUrl) || (q.sourceAnswerUrl?.startsWith("https://") === true && !sourceUrlRule(q.sourceAnswerUrl)));
 }
