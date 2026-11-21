@@ -2540,7 +2540,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.katei-ed.or.jp/past.html",
     officialReuseTermsUrl: "https://www.katei-ed.or.jp/past.html",
     status: "live",
-    reuseSummary: "2025年度 第62回の2級筆記を全12大問・19演習単位で収録。公式正答と原本図表、選択肢ごとの独自解説を確認できます。",
+    reuseSummary: "現2級と、改定前の3級の筆記問題を収録。公式正答と原本図表、選択肢ごとの独自解説を確認できます。",
     remainingWork: [],
   },
   {

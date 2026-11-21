@@ -4160,7 +4160,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     sessions: [
         { session: "gakka", urlSlug: "gakka", expectedQuestions: 19, label: "被服製作技術検定 2級・筆記", categories: ["被服製作技術検定 2級・筆記"] },
     ],
-    seasons: ["annual"], yearRange: { start: 2025, end: 2025 },
+    seasons: ["annual", "first", "second"], yearRange: { start: 2021, end: 2025 },
 },
   "zenkou-joho": {
     code: "zenkou-joho", nameFull: "情報技術検定", urlSlug: "zenkou-joho", level: "basic",
