@@ -1,0 +1,27 @@
+【Codexクラウド依頼】過去問AI（このリポジトリ ipa-quiz-site）の年度補充 cov-05-katei-2023-2024。
+出発点：origin の release/kako-20261121（先端 5de1f179f 以降。cx/rel-7-rev-20261121 の内容を含む）から新しい枝 cx/kako-cov-05-katei-2023-2024-20261121 を作って始める。区切りごとにこまめにその枝へ push。main と release/* には push しない。PR は作らない。
+完了時、枝にレポート codex-reports/cov-05-katei-2023-2024.md（補充した資格・年度・問数、飛ばした回と理由、公式正答との照合表）を含めて push する。
+pnpm validate:questions の品質ゲートを1回分ごとに通してコミットする。全体の typecheck・build は不要。
+
+過去問AI 年度補充依頼案 cov-05-katei-2023-2024
+
+照合の基準は cx/rel-7-rev-20261121 の 151c61579b7e435d4faa9aa6040052731a70c2d7。対象は以下の年度・回・区分です。
+
+対象
+- 家庭科技術検定・食物調理（katei-shokumotsu） 2023年度 食物調理 現2級相当。通年合冊の対象年度の問題・解答を確認
+  問題 https://www.katei-ed.or.jp/custom_contents/cms_rwd/linkfile/R7shoku2_mondai.pdf
+  正答 https://www.katei-ed.or.jp/custom_contents/cms_rwd/linkfile/R7shoku2_kaito.pdf
+- 被服製作技術検定（katei-hifuku） 2024年度 被服製作 現2級相当。通年合冊の対象年度の問題・解答を確認
+  問題 https://www.katei-ed.or.jp/custom_contents/cms_rwd/linkfile/R7hifuku2_mondai.pdf
+  正答 https://www.katei-ed.or.jp/custom_contents/cms_rwd/linkfile/R7hifuku2_kaito.pdf
+- 被服製作技術検定（katei-hifuku） 2023年度 被服製作 現2級相当。通年合冊の対象年度の問題・解答を確認
+  問題 https://www.katei-ed.or.jp/custom_contents/cms_rwd/linkfile/R7hifuku2_mondai.pdf
+  正答 https://www.katei-ed.or.jp/custom_contents/cms_rwd/linkfile/R7hifuku2_kaito.pdf
+
+品質ゲート
+1. 出典は実施団体の公式URL、または元URLが実施団体の公式ドメインで、取得日時が固定された公式PDF保存版に限る。保存版は元URL・日時固定URL・取得日時・原本ハッシュを残す。検索結果や二次資料は根拠に使わない。
+2. 実施団体・試験名・級／科目・年度・回・頁・問番号を原本で確認する。新年度を付けるために既存の回を再登録しない。基準コミットと着手時の公開・準備データを問題ID、原本URL、年度・回・問番号、本文で照合し、既存原稿の採用を先に検討する。
+3. 問題本文、選択肢、設例、図表を公式原本と全問照合する。正答と公式の全問一致を別担当で検証する。訂正があれば公式訂正・元の表記と採点処理の根拠を記録する。選択肢や採点除外を推測で埋めない。
+4. 仮の文字・ダミー画像・定型解説は禁止。全肢を自分の言葉で解説し、当該問に固有の論点と根拠を示す。法令・規格は試験当時と現行の差分を原典で確認する。記述・実技は公式解答例と独自解説を明示する。
+5. 技能検定の小職種は対象外。原本と正答の対が取れない問題、画像や音声が欠ける問題、未確定の区分は納品対象から外し、理由とURLを報告する。実在する残りの対象を仕上げる。
+6. 成果は問題データ、図表・音声、問題と正答の出典一覧、全問照合結果、既存との重複一覧、除外・未確認一覧。検証は型チェックと対象データの検証まで。push、PR作成、mainマージ、デプロイ、課金・AI設定変更は行わない。
