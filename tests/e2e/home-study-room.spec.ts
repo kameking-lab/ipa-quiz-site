@@ -105,3 +105,26 @@ for (const state of [...homeStates, "room"] as const) {
     });
   }
 }
+
+test("long qualification names still fit the mobile home card", async ({ page }) => {
+  const exams = ["reito-seko1", "reito-seko2", "reito-seko3", "naiso-carpet1", "cfp-3", "hiseshoku-jokyo1", "ip"]
+    .map((exam, index) => ({ exam, count: 8 - index, activeCount: 1 }));
+  await setup(page, "new", exams);
+  await page.goto("/", { waitUntil: "domcontentloaded" });
+  const room = page.getByTestId("home-study-room");
+  const chips = room.getByRole("listitem");
+  await expect(chips).toHaveCount(7);
+  await expect(chips.last()).toHaveText("ほか1資格");
+  expect((await room.boundingBox())!.height).toBeLessThanOrEqual(270);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
+});
+
+test("the daily room shows 120 of 130 learners, including all three recent answers", async ({ page }) => {
+  await setup(page, "room", [{ exam: "civil1", count: 128, activeCount: 1 }, { exam: "civil2", count: 2, activeCount: 2 }]);
+  await page.goto("/study-room", { waitUntil: "domcontentloaded" });
+  const scene = page.getByTestId("study-room-scene");
+  await expect(page.getByTestId("study-room-total")).toContainText(/今日\s*130人/);
+  await expect(scene.getByTestId("study-room-seat")).toHaveCount(120);
+  await expect(scene.locator('[data-studying-now="true"]')).toHaveCount(3);
+  await expect(scene.getByText("＋10人")).toBeVisible();
+});
