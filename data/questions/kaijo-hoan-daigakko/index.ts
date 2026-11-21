@@ -1,0 +1,5 @@
+import { KAIJO_HOAN_DAIGAKKO_2025_KISO } from "./2025-kiso";
+
+export const KAIJO_HOAN_DAIGAKKO_QUESTIONS = [
+    ...KAIJO_HOAN_DAIGAKKO_2025_KISO,
+];

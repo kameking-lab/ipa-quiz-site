@@ -820,6 +820,7 @@ const EXAM_FULL_NAMES: Record<ExamCode, string> = {
 
     "kokka-keikensha": "国家公務員経験者採用試験",
     "keimukan": "刑務官採用試験",
+    "kaijo-hoan-daigakko": "海上保安大学校学生採用試験",
     "koku-hoan-daigakko": "航空保安大学校学生採用試験",
     "kaijo-hoan-gakko": "海上保安学校学生採用試験",
     "kouku-kanseikan": "航空管制官採用試験",
@@ -1204,6 +1205,7 @@ const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number)
 
     "kokka-keikensha": (c, y) => `国家公務員の経験者採用試験の基礎能力試験を${y}年度分・計${c}問収録。公式正答と全肢解説付き。`,
     "keimukan": (c, y) => `刑務官採用試験の基礎能力試験を${y}年度分・計${c}問収録。公式正答と全肢解説で学べます。`,
+    "kaijo-hoan-daigakko": (c, y) => `海上保安大学校学生採用試験の公開問題を${y}年度分・計${c}問収録。気象大学校学生との基礎能力共通問題を含む。`,
     "koku-hoan-daigakko": (c, y) => `航空保安大学校学生採用試験の公開問題を${y}年度分・計${c}問収録。公式正答と全肢解説付き。`,
     "kaijo-hoan-gakko": (c, y) => `海上保安学校学生採用試験の基礎能力試験・学科試験を${y}年度分・計${c}問収録。公式正答と全肢解説付き。`,
     "kouku-kanseikan": (c, y) => `航空管制官採用試験の適性試験Ⅰ・外国語試験の公開問題を${y}年度分・計${c}問収録。公式正答と全肢解説付き。`,
