@@ -2010,6 +2010,12 @@ caremanager: {
         { session: "senmon", urlSlug: "senmon", expectedQuestions: 60, label: "専門試験（多肢選択式）", categories: ["獣医病理学", "獣医薬理学", "獣医微生物学", "家畜衛生・感染症", "獣医免疫学", "獣医臨床学", "獣医疫学", "獣医公衆衛生学", "獣医寄生虫学", "獣医繁殖学", "獣医毒性学", "畜産学", "獣医内科学", "獣医外科学"] },
     ], seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
 },
+"maff-chikusan": {
+    code: "maff-chikusan", nameFull: "農林水産省畜産系技術職員採用試験", urlSlug: "maff-chikusan", level: "specialist",
+    sessions: [
+        { session: "senmon", urlSlug: "senmon", expectedQuestions: 50, label: "専門試験（多肢選択式）", categories: ["畜産総論", "畜産行政", "飼養管理", "畜産環境", "飼料作物", "畜産物利用", "家畜栄養", "家畜繁殖", "育種・遺伝", "家畜生理", "家畜衛生"] },
+    ], seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
+},
 "kokka-chuto-hyougaki": {
     code: "kokka-chuto-hyougaki", nameFull: "国家公務員中途採用者選考（就職氷河期世代）", urlSlug: "kokka-chuto-hyougaki", level: "basic",
     sessions: [

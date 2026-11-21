@@ -368,6 +368,7 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 "keimukan": async () => isExamPublished("keimukan") ? (await import("@/data/questions/keimukan")).KEIMUKAN_QUESTIONS : [],
 "kaijo-hoan-daigakko": async () => isExamPublished("kaijo-hoan-daigakko") ? (await import("@/data/questions/kaijo-hoan-daigakko")).KAIJO_HOAN_DAIGAKKO_QUESTIONS : [],
 "maff-jui": async () => isExamPublished("maff-jui") ? (await import("@/data/questions/maff-jui")).MAFF_JUI_QUESTIONS : [],
+"maff-chikusan": async () => isExamPublished("maff-chikusan") ? (await import("@/data/questions/maff-chikusan")).MAFF_CHIKUSAN_QUESTIONS : [],
 "kokka-chuto-hyougaki": async () => isExamPublished("kokka-chuto-hyougaki") ? (await import("@/data/questions/kokka-chuto-hyougaki")).KOKKA_CHUTO_HYOUGAKI_QUESTIONS : [],
 "kisho-daigakko": async () => isExamPublished("kisho-daigakko") ? (await import("@/data/questions/kisho-daigakko")).KISHO_DAIGAKKO_QUESTIONS : [],
 "koku-hoan-daigakko": async () => isExamPublished("koku-hoan-daigakko") ? (await import("@/data/questions/koku-hoan-daigakko")).KOKU_HOAN_DAIGAKKO_QUESTIONS : [],

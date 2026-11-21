@@ -373,6 +373,7 @@ export const EXAM_LABELS: Record<string, string> = {
     "keimukan": "刑務官",
     "kaijo-hoan-daigakko": "海上保安大学校学生",
     "maff-jui": "農林水産省 獣医系技術職",
+    "maff-chikusan": "農林水産省 畜産系技術職",
     "kokka-chuto-hyougaki": "国家公務員中途採用（就職氷河期世代）",
     "kisho-daigakko": "気象大学校学生",
     "koku-hoan-daigakko": "航空保安大学校学生",
