@@ -1,0 +1,74 @@
+.card {
+  display: grid;
+  min-width: 0;
+  gap: 7px;
+  padding: 10px;
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  background: var(--card);
+  color: var(--foreground);
+}
+
+.header, .attendance { display: flex; align-items: center; gap: 8px; }
+.header h2 { font-size: 1rem; font-weight: 700; line-height: 1.35; }
+.arrow { margin-inline-start: auto; width: 16px; height: 16px; color: var(--muted-foreground); }
+.card:hover .header h2 { color: var(--primary); text-decoration: underline; text-underline-offset: 3px; }
+.attendance { flex-wrap: wrap; color: var(--muted-foreground); font-size: .75rem; line-height: 1.25; font-variant-numeric: tabular-nums; }
+.attendance strong { color: var(--foreground); }
+.now { display: inline-flex; align-items: center; gap: 4px; }
+.now i { width: 6px; height: 6px; border-radius: 50%; background: #16825f; }
+.timestamp { margin-inline-start: auto; }
+
+.scene {
+  position: relative;
+  display: grid;
+  min-height: 116px;
+  align-items: end;
+  overflow: hidden;
+  padding: 6px 4px 3px;
+  border-radius: 10px;
+  background: #eacd9f url('/images/home/study-room-white.webp') center 34% / cover;
+}
+
+.seats { display: grid; }
+.row { display: flex; justify-content: center; gap: 1px; }
+.seat { position: relative; flex: 0 1 76px; min-width: 0; aspect-ratio: 1; }
+.scene[data-rows="2"] .seat { flex-basis: 49px; }
+.scene[data-rows="3"] .seat { flex-basis: 34px; }
+.seat img { width: 100%; height: 100%; object-fit: contain; }
+.mirrored { transform: scaleX(-1); }
+.seat[data-studying-now="true"]::after {
+  position: absolute;
+  top: 14%;
+  left: 12%;
+  width: 8px;
+  height: 8px;
+  border: 1px solid white;
+  border-radius: 50%;
+  background: #16825f;
+  box-shadow: 0 1px 2px #0003;
+  content: "";
+}
+
+.empty { display: grid; justify-items: center; padding: 1px 0 4px; }
+.empty p, .overflow { border-radius: 20px; background: var(--card); color: var(--foreground); padding: 2px 8px; font-size: .6875rem; font-weight: 600; }
+.overflow { position: absolute; top: 4px; right: 4px; font-variant-numeric: tabular-nums; }
+.scene:has(.overflow) { padding-top: 20px; }
+
+.exams { display: flex; flex-wrap: wrap; gap: 4px; }
+.exams li {
+  display: inline-flex;
+  min-width: 0;
+  max-width: 100%;
+  align-items: baseline;
+  gap: 4px;
+  border: 1px solid var(--hairline);
+  border-radius: 20px;
+  background: var(--muted);
+  padding: 1px 7px;
+  color: var(--foreground);
+  font-size: .6875rem;
+  line-height: 1.45;
+}
+.exams li span { overflow-wrap: anywhere; }
+.exams li strong { flex-shrink: 0; white-space: nowrap; font-variant-numeric: tabular-nums; }

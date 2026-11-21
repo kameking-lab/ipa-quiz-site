@@ -9,13 +9,13 @@ afterEach(() => { cleanup(); vi.useRealTimers(); vi.unstubAllGlobals(); sessionS
 it("keeps one decorative resting dog in the small room when zero people are measured or the count is unavailable", () => {
   const { rerender } = render(<StudyRoom snapshot={snapshot(60)} current suggestions={[]} />);
   const scene = screen.getByTestId("study-room-scene");
-  expect(scene.querySelector('img[src$="/curl-left.png"]')).toBeNull();
+  expect(scene.querySelector('img[src$="/generic-9.webp"]')).toBeNull();
 
   rerender(<StudyRoom snapshot={snapshot(0)} current suggestions={[]} />);
   expect(scene).toHaveAttribute("data-stage", "0");
   expect(screen.getByText("いま勉強中の人はいません")).toBeInTheDocument();
   expect(screen.getByTestId("study-room-total")).toHaveTextContent("いま0人");
-  expect(scene.querySelectorAll('img[src$="/curl-left.png"][alt=""]')).toHaveLength(1);
+  expect(scene.querySelectorAll('img[src$="/generic-9.webp"][alt=""]')).toHaveLength(1);
   expect(screen.queryAllByTestId("study-room-seat")).toHaveLength(0);
 
   rerender(<StudyRoom snapshot={snapshot(0)} suggestions={[]} />);
@@ -24,7 +24,7 @@ it("keeps one decorative resting dog in the small room when zero people are meas
   rerender(<StudyRoom snapshot={null} suggestions={[]} />);
   expect(screen.getByText("勉強中の人数を表示できません")).toBeInTheDocument();
   expect(screen.queryByTestId("study-room-total")).not.toBeInTheDocument();
-  expect(scene.querySelectorAll('img[src$="/curl-left.png"][alt=""]')).toHaveLength(1);
+  expect(scene.querySelectorAll('img[src$="/generic-9.webp"][alt=""]')).toHaveLength(1);
 });
 
 it("grows immediately, shrinks only after 60 seconds, and cancels shrinking on growth", () => {
