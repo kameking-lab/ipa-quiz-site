@@ -68,7 +68,8 @@ export type ExamCode = "eiken2" | "restaurant-2" | "kogai-17" | "dekyo-chief-3" 
   | "keimukan"
   | "kokka-sogo-kyoyo"
   | "zaimu-senmonkan"
-  | "chori-ehime";
+  | "chori-ehime"
+  | "chori-nara";
 
 
 export type IpaExamCode = "ip" | "sg" | "fe" | "ap" | "st" | "sa" | "pm" | "nw" | "db" | "es" | "sc" | "sm" | "au";

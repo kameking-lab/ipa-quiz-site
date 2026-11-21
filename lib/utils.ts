@@ -9,6 +9,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const EXAM_LABELS: Record<string, string> = {
+  "chori-nara": "調理師試験（奈良県）",
   "kaijo-hoan-gakko": "海上保安学校学生",
   "keimukan": "刑務官",
   "kokka-sogo-kyoyo": "国家総合職（教養区分）",

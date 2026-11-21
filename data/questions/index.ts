@@ -1260,6 +1260,7 @@ import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
 import { EIKENP2PLUS_QUESTIONS } from "./eikenp2plus";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+  "chori-nara": [],
   "kaijo-hoan-gakko": [],
   "keimukan": [],
   "kokka-sogo-kyoyo": [],

@@ -47,6 +47,8 @@ export interface ArchivePaperEvidence {
     part?: string;
     label: string;
     answer: Question["answer"];
+    nativeAnswers?: Record<string, string>;
+    scoring?: "credit-for-all";
   }[];
 }
 
@@ -112,7 +114,13 @@ export function verifiedArchiveSource(
   const verified = evidence?.get(q.id);
   if (!hosts || !verified || !q.sourceArchiveUrl || !q.sourceAttribution?.trim()) return false;
   const { paper, entry } = verified;
-  return paper.exam === q.exam && paper.year === q.year && paper.season === q.season &&
+  const slots = q.type === "native-b" ? q.nativeB?.slots : undefined;
+  const nativeAnswersMatch = slots && entry.nativeAnswers
+    ? Object.keys(entry.nativeAnswers).length === slots.length &&
+      slots.every(slot => entry.nativeAnswers?.[slot.label] === slot.answer)
+    : q.type !== "native-b" && entry.nativeAnswers === undefined;
+  return nativeAnswersMatch && entry.scoring === q.officialScoring?.kind &&
+    paper.exam === q.exam && paper.year === q.year && paper.season === q.season &&
     paper.session === q.session && Boolean(paper.edition.trim()) &&
     entry.number === q.qNumber && entry.part === q.part && Boolean(entry.label.trim()) &&
     JSON.stringify(entry.answer) === JSON.stringify(q.answer) &&

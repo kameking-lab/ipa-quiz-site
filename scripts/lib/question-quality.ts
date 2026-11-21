@@ -161,7 +161,7 @@ export function checkQuestionQuality(
 
   if (isTemplateOnly(q.explanation)) add("choice-template", "全体の解説が定型句だけです", ["explanation", q.explanation]);
   const sourceRule = sourceUrlRule(q.sourcePdfUrl);
-  if (q.sourceArchiveUrl !== undefined || q.sourceAnswerArchiveUrl !== undefined) {
+  if (archiveEvidence?.has(q.id) || q.sourceArchiveUrl !== undefined || q.sourceAnswerArchiveUrl !== undefined) {
     const answerRule = q.sourceAnswerUrl ? sourceUrlRule(q.sourceAnswerUrl) : undefined;
     if (!verifiedArchiveSource(q, archiveEvidence, answerRule)) {
       add(sourceRule === "rolling-source" ? sourceRule : "archived-source",

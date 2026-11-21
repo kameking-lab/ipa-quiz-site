@@ -208,11 +208,11 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
   "concrete-assou2": {"code": "concrete-assou2", "nameFull": "技能検定 2級コンクリート圧送施工（コンクリート圧送工事作業）学科試験", "urlSlug": "concrete-assou2", "level": "basic", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 50, "label": "学科（A群 真偽法・B群 多肢択一法）", "categories": ["コンクリート材料・試験", "ポンプの構造・整備", "安全衛生", "建築構造", "打込み施工", "製図", "配合計算", "配管計画・圧送性", "鉄筋・型枠", "関係法令"]}], "seasons": ["late"], "yearRange": {"start": 2024, "end": 2025}},
   "kawarabuki1": {"code": "kawarabuki1", "nameFull": "技能検定 1級かわらぶき（かわらぶき作業）学科試験", "urlSlug": "kawarabuki1", "level": "advanced", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 50, "label": "学科（A群 真偽法・B群 多肢択一法）", "categories": ["下地・下葺き", "勾配・計算", "安全衛生", "屋根材料", "屋根構造", "工具・定規", "建築構造・法規", "施工・納まり", "施工管理", "製図・縮尺"]}], "seasons": ["late"], "yearRange": {"start": 2024, "end": 2025}},
   "zensho-marketing": {"code": "zensho-marketing", "nameFull": "商業経済検定試験・マーケティング", "urlSlug": "zensho-marketing", "level": "basic", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 50, "label": "マーケティング", "categories": ["マーケティングの基礎", "市場の細分化と標的市場", "市場と消費", "マーケティング戦略", "市場調査", "消費者行動", "製品政策", "購買行動", "製品戦略", "販売計画", "仕入計画", "価格政策", "チャネル政策", "プロモーション政策", "チャネルの系列化", "広告", "デジタル広告", "販売員と接客"]}], "seasons": ["annual"], "yearRange": {"start": 2021, "end": 2025}},
-  "kogai-11": {"code": "kogai-11", "nameFull": "公害防止管理者等国家試験・騒音・振動概論", "urlSlug": "kogai-11", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 25, "label": "騒音・振動概論", "categories": ["法令・制度", "騒音・振動の状況", "騒音の基礎", "振動の基礎"]}], "seasons": ["annual"], "yearRange": {"start": 2026, "end": 2026}},
-  "kogai-14": {"code": "kogai-14", "nameFull": "公害防止管理者等国家試験・ダイオキシン類概論", "urlSlug": "kogai-14", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 15, "label": "ダイオキシン類概論", "categories": ["法令・制度", "ダイオキシン類の性質・影響"]}], "seasons": ["annual"], "yearRange": {"start": 2026, "end": 2026}},
+  "kogai-11": {"code": "kogai-11", "nameFull": "公害防止管理者等国家試験・騒音・振動概論", "urlSlug": "kogai-11", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 25, "label": "騒音・振動概論", "categories": ["法令・制度", "騒音・振動の状況", "騒音の基礎", "振動の基礎"]}], "seasons": ["annual"], "yearRange": {"start": 2022, "end": 2026}},
+  "kogai-14": {"code": "kogai-14", "nameFull": "公害防止管理者等国家試験・ダイオキシン類概論", "urlSlug": "kogai-14", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 15, "label": "ダイオキシン類概論", "categories": ["法令・制度", "ダイオキシン類の性質・影響"]}], "seasons": ["annual"], "yearRange": {"start": 2022, "end": 2026}},
   "restaurant-1": {"code": "restaurant-1", "nameFull": "レストランサービス技能検定1級（学科）", "urlSlug": "restaurant-1", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 100, "label": "学科（真偽法）", "categories": ["国際儀礼・接遇", "宴会・経営管理", "接客・料飲サービス", "設備・安全管理", "関係法規", "食品・飲料・調理", "食品衛生"]}], "seasons": ["annual"], "yearRange": {"start": 2025, "end": 2026}},
-  "cfp-souzoku": {"code": "cfp-souzoku", "nameFull": "CFP®・相続・事業承継設計", "urlSlug": "cfp-souzoku", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 50, "label": "相続・事業承継設計", "categories": ["不動産の相続税評価", "信託・配偶者居住権", "取引相場のない株式・事業承継", "国外財産・納税義務", "小規模宅地等の特例", "成年後見", "生前贈与加算・相続時精算課税", "相続人・法定相続分", "相続登記・土地国庫帰属", "相続税の債務控除", "相続税の申告・納付", "相続税の総額・税額控除", "相続税の課税財産", "贈与税", "遺留分", "遺言・遺産分割", "金融資産・その他の財産評価"]}], "seasons": ["round1", "round2"], "yearRange": {"start": 2026, "end": 2026}},
-  "kogai-taiki-tokuron": {"code": "kogai-taiki-tokuron", "nameFull": "公害防止管理者（大気特論）", "urlSlug": "kogai-taiki-tokuron", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 15, "label": "大気特論", "categories": ["燃料・燃焼", "排煙処理", "測定・分析"]}], "seasons": ["annual"], "yearRange": {"start": 2026, "end": 2026}},
+  "cfp-souzoku": {"code": "cfp-souzoku", "nameFull": "CFP®・相続・事業承継設計", "urlSlug": "cfp-souzoku", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 50, "label": "相続・事業承継設計", "categories": ["不動産の相続税評価", "信託・配偶者居住権", "取引相場のない株式・事業承継", "国外財産・納税義務", "小規模宅地等の特例", "成年後見", "生前贈与加算・相続時精算課税", "相続人・法定相続分", "相続登記・土地国庫帰属", "相続税の債務控除", "相続税の申告・納付", "相続税の総額・税額控除", "相続税の課税財産", "贈与税", "遺留分", "遺言・遺産分割", "金融資産・その他の財産評価"]}], "seasons": ["round1", "round2"], "yearRange": {"start": 2022, "end": 2026}},
+  "kogai-taiki-tokuron": {"code": "kogai-taiki-tokuron", "nameFull": "公害防止管理者（大気特論）", "urlSlug": "kogai-taiki-tokuron", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 15, "label": "大気特論", "categories": ["燃料・燃焼", "排煙処理", "測定・分析"]}], "seasons": ["annual"], "yearRange": {"start": 2022, "end": 2026}},
   "telecom-chief-denso": {"code": "telecom-chief-denso", "nameFull": "電気通信主任技術者（伝送交換設備及び設備管理）", "urlSlug": "telecom-chief-denso", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 60, "label": "伝送交換設備及び設備管理", "categories": ["光伝送"]}], "seasons": ["round1", "round2"], "yearRange": {"start": 2025, "end": 2026}},
   "kanken-j1": {
     code: "kanken-j1",
@@ -740,32 +740,32 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
   "late",], yearRange: { start: 2023, end: 2026 },
   },
   "zensho-eco-77": {"code": "zensho-eco-77", "nameFull": "商業経済検定・ビジネス基礎", "urlSlug": "zensho-eco-77", "level": "basic", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 50, "label": "ビジネス基礎", "categories": ["商品と流通", "企業と労働", "産業と流通", "経済と商品", "ビジネス計算と用語", "ビジネス・コミュニケーション", "経済と流通", "流通の役割", "小売業と商業集積", "物流と金融", "代金決済", "ビジネスの展開", "資金調達と税", "売買取引と書類", "経済と生産", "取引と決済", "ビジネスマナー", "環境と企業", "小売業", "情報通信技術", "物流", "企業活動"]}], "seasons": ["annual"], "yearRange": {"start": 2021, "end": 2025}},
-  "kogai-18": {"code": "kogai-18", "nameFull": "公害防止管理者・水質関係技術特論", "urlSlug": "kogai-18", "level": "advanced", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 20, "label": "水質関係技術特論", "categories": ["工場内の排水対策", "沈降分離", "凝集処理", "清澄ろ過", "中和・金属処理", "塩素処理", "汚泥脱水", "生物処理工程", "活性汚泥の負荷計算", "好気・嫌気処理の比較", "メタン発酵の管理", "硝化脱窒素", "貯留槽の腐食", "硝化脱窒素の維持管理", "水質試料の保存", "BOD", "浮遊物質", "生態系モデル", "循環冷却水の収支", "製油所排水"]}], "seasons": ["annual"], "yearRange": {"start": 2026, "end": 2026}},
-  "kogai-13": {"code": "kogai-13", "nameFull": "公害防止管理者・ばいじん・一般粉じん特論", "urlSlug": "kogai-13", "level": "advanced", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 10, "label": "ばいじん・一般粉じん特論", "categories": ["集じん装置の原理", "フード", "集じん性能", "サイクロン", "慣性力集じん", "バグフィルター", "粉じんの発生抑制", "ダスト測定位置", "ダスト濃度測定", "平均ダスト濃度"]}], "seasons": ["annual"], "yearRange": {"start": 2026, "end": 2026}},
+  "kogai-18": {"code": "kogai-18", "nameFull": "公害防止管理者・水質関係技術特論", "urlSlug": "kogai-18", "level": "advanced", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 20, "label": "水質関係技術特論", "categories": ["工場内の排水対策", "沈降分離", "凝集処理", "清澄ろ過", "中和・金属処理", "塩素処理", "汚泥脱水", "生物処理工程", "活性汚泥の負荷計算", "好気・嫌気処理の比較", "メタン発酵の管理", "硝化脱窒素", "貯留槽の腐食", "硝化脱窒素の維持管理", "水質試料の保存", "BOD", "浮遊物質", "生態系モデル", "循環冷却水の収支", "製油所排水"]}], "seasons": ["annual"], "yearRange": {"start": 2022, "end": 2026}},
+  "kogai-13": {"code": "kogai-13", "nameFull": "公害防止管理者・ばいじん・一般粉じん特論", "urlSlug": "kogai-13", "level": "advanced", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 10, "label": "ばいじん・一般粉じん特論", "categories": ["集じん装置の原理", "フード", "集じん性能", "サイクロン", "慣性力集じん", "バグフィルター", "粉じんの発生抑制", "ダスト測定位置", "ダスト濃度測定", "平均ダスト濃度"]}], "seasons": ["annual"], "yearRange": {"start": 2022, "end": 2026}},
   "concrete-assou1": {"code": "concrete-assou1", "nameFull": "技能検定 1級コンクリート圧送施工（コンクリート圧送工事作業）学科試験", "urlSlug": "concrete-assou1", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 50, "label": "学科（A群 真偽法・B群 多肢択一法）", "categories": ["建築構造", "コンクリート材料", "型枠・施工", "圧送機械", "環境保全", "圧送計画", "配管・圧送作業", "点検・整備", "製図", "安全衛生", "関係法規"]}], "seasons": ["late"], "yearRange": {"start": 2024, "end": 2025}},
   "zensho-eco-80": {"code": "zensho-eco-80", "nameFull": "商業経済検定・ビジネス法規", "urlSlug": "zensho-eco-80", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 50, "label": "ビジネス法規", "categories": ["法の基礎", "権利・取引", "会社・金融", "租税・企業倫理", "労働・消費者・紛争解決"]}], "seasons": ["annual"], "yearRange": {"start": 2022, "end": 2025}},
-  "kogai-08": {"code": "kogai-08", "nameFull": "公害防止管理者・汚水処理特論", "urlSlug": "kogai-08", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 25, "label": "汚水処理特論", "categories": ["物理化学処理", "汚泥処理・生物処理", "運転管理・水質分析"]}], "seasons": ["annual"], "yearRange": {"start": 2026, "end": 2026}},
-  "kogai-04": {"code": "kogai-04", "nameFull": "公害防止管理者・ばいじん・粉じん特論", "urlSlug": "kogai-04", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 15, "label": "ばいじん・粉じん特論", "categories": ["ダストの特性", "集じん装置", "石綿・測定"]}], "seasons": ["annual"], "yearRange": {"start": 2024, "end": 2026}},
+  "kogai-08": {"code": "kogai-08", "nameFull": "公害防止管理者・汚水処理特論", "urlSlug": "kogai-08", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 25, "label": "汚水処理特論", "categories": ["物理化学処理", "汚泥処理・生物処理", "運転管理・水質分析"]}], "seasons": ["annual"], "yearRange": {"start": 2022, "end": 2026}},
+  "kogai-04": {"code": "kogai-04", "nameFull": "公害防止管理者・ばいじん・粉じん特論", "urlSlug": "kogai-04", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 15, "label": "ばいじん・粉じん特論", "categories": ["ダストの特性", "集じん装置", "石綿・測定"]}], "seasons": ["annual"], "yearRange": {"start": 2022, "end": 2026}},
   "aigan-kangoshi": {"code": "aigan-kangoshi", "nameFull": "愛玩動物看護師国家試験", "urlSlug": "aigan-kangoshi", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 50, "label": "必須問題", "categories": ["基礎動物学", "動物福祉・飼養管理", "法規・職業倫理", "疾病・感染予防", "臨床動物看護"]}, {"session": "ippan", "urlSlug": "ippan", "expectedQuestions": 100, "label": "一般問題", "categories": ["基礎動物学", "動物福祉・飼養管理", "法規・職業倫理", "疾病・感染予防", "臨床動物看護"]},
   { session: "required", urlSlug: "required", expectedQuestions: 50, label: "必須問題", categories: ["必須問題"] },], "seasons": ["annual"], "yearRange": {"start": 2023, "end": 2026}},
   "technical-illustration-cad1": {"code": "technical-illustration-cad1", "nameFull": "技能検定 1級テクニカルイラストレーション（テクニカルイラストレーションCAD作業）学科試験", "urlSlug": "technical-illustration-cad1", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 50, "label": "学科", "categories": ["製図", "投影法", "製図規格", "CAD", "作図法", "幾何作図", "製図用具", "立体図", "平面図形", "機械要素", "材料", "機械材料", "電気", "スケッチ", "器工具", "機械工作"]}], "seasons": ["late"], "yearRange": {"start": 2025, "end": 2025}},
   "kawarabuki2": {"code": "kawarabuki2", "nameFull": "技能検定 2級かわらぶき（かわらぶき作業）学科試験", "urlSlug": "kawarabuki2", "level": "basic", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 50, "label": "2級学科試験", "categories": ["屋根形状", "下地・下葺き", "屋根材料", "器工具", "施工計画", "施工法", "足場", "瓦の名称・用途", "木構造", "建築法規", "製図", "安全衛生"]}], "seasons": ["late"], "yearRange": {"start": 2024, "end": 2025}},
   "zensho-eco-79": {"code": "zensho-eco-79", "nameFull": "商業経済検定・商品開発と流通", "urlSlug": "zensho-eco-79", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 50, "label": "商品開発と流通", "categories": ["商品開発と流通", "商品の概念", "商品開発の手順", "商品コンセプト", "環境分析", "商品ライフサイクル", "市場調査", "アイデア創出", "商品設計", "産業財産権", "事業計画", "デザイン思考", "ブランド・流通政策", "販売促進", "店舗・価格政策", "流通の仕組み", "パッケージ・デザイン", "店舗陳列", "持続可能な流通"]}], "seasons": ["annual"], "yearRange": {"start": 2022, "end": 2026}},
   "career-gino-1": {"code": "career-gino-1", "nameFull": "キャリアコンサルティング技能検定1級", "urlSlug": "career-gino-1", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 50, "label": "学科", "categories": ["学科", "キャリア形成・支援制度", "キャリア理論", "能力開発・労働市場", "労働法・働き方", "キャリア教育", "メンタルヘルス", "生活・就労支援", "学習・グループ支援", "スーパービジョン", "面接・支援技法", "ジョブ・カード", "アセスメント", "職業情報", "組織・環境への働きかけ", "ネットワーク・倫理"]}], "seasons": ["late"], "yearRange": {"start": 2024, "end": 2025}},
-  "kogai-12": {"code": "kogai-12", "nameFull": "公害防止管理者 騒音・振動特論", "urlSlug": "kogai-12", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 30, "label": "騒音・振動特論", "categories": ["騒音・振動特論"]}], "seasons": ["annual"], "yearRange": {"start": 2026, "end": 2026}},
+  "kogai-12": {"code": "kogai-12", "nameFull": "公害防止管理者 騒音・振動特論", "urlSlug": "kogai-12", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 30, "label": "騒音・振動特論", "categories": ["騒音・振動特論"]}], "seasons": ["annual"], "yearRange": {"start": 2022, "end": 2026}},
   "kogai-15": {"code": "kogai-15", "nameFull": "公害防止管理者 ダイオキシン類特論", "urlSlug": "kogai-15", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 25, "label": "ダイオキシン類特論", "categories": ["ダイオキシン類特論"]},
   { session: "kogai-soron", urlSlug: "kogai-soron", expectedQuestions: 15, label: "公害総論", categories: ["公害総論"] },
   { session: "baijin-funjin", urlSlug: "baijin-funjin", expectedQuestions: 15, label: "ばいじん・粉じん特論", categories: ["ばいじん・粉じん特論"] },
-  { session: "osui-shori", urlSlug: "osui-shori", expectedQuestions: 25, label: "汚水処理特論", categories: ["汚水処理特論"] },], "seasons": ["annual"], "yearRange": {"start": 2023, "end": 2026}},
+  { session: "osui-shori", urlSlug: "osui-shori", expectedQuestions: 25, label: "汚水処理特論", categories: ["汚水処理特論"] },], "seasons": ["annual"], "yearRange": {"start": 2022, "end": 2026}},
   "dekyo-charge-1": {"code": "dekyo-charge-1", "nameFull": "工事担任者 第一級アナログ通信", "urlSlug": "dekyo-charge-1", "level": "specialist", "sessions": [{"session": "kiso", "urlSlug": "kiso", "expectedQuestions": 22, "label": "電気通信技術の基礎", "categories": ["電気通信技術の基礎"]}, {"session": "kogaku", "urlSlug": "kogaku", "expectedQuestions": 25, "label": "端末設備の接続のための技術及び理論", "categories": ["端末設備の接続のための技術及び理論"]}, {"session": "houki", "urlSlug": "houki", "expectedQuestions": 25, "label": "端末設備の接続に関する法規", "categories": ["端末設備の接続に関する法規"]}], "seasons": ["round1", "round2"], "yearRange": {"start": 2025, "end": 2026}},
   "cfp-3": {"code": "cfp-3", "nameFull": "CFP® ライフプランニング・リタイアメントプランニング", "urlSlug": "cfp-3", "level": "advanced", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 50, "label": "学科", "categories": ["関連業法", "行動ファイナンス", "社会保障", "キャッシュフロー", "資金計画の係数", "住宅資金", "教育資金", "消費者金融", "労働法令", "労災保険", "雇用保険", "職業訓練", "育児介護支援", "社会保険料", "介護保険", "健康保険", "公的年金", "企業年金", "退職金・共済", "法人の資金計画", "高齢期の生活設計", "福祉制度", "子育て支援", "家計統計", "消費者保護", "社会保険の適用"]}], "seasons": ["round1", "round2"], "yearRange": {"start": 2026, "end": 2026}},
   "dekyo-charge-2": {"code": "dekyo-charge-2", "nameFull": "工事担任者 第二級アナログ通信", "urlSlug": "dekyo-charge-2", "level": "basic", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 62, "label": "学科", "categories": ["電気通信技術の基礎", "端末設備の接続のための技術及び理論", "端末設備の接続に関する法規"]},
   { session: "dekyo-digital", urlSlug: "dekyo-digital", expectedQuestions: 62, label: "第二級デジタル通信", categories: ["基礎", "技術及び理論", "法規"] },
   { session: "dekyo-analog", urlSlug: "dekyo-analog", expectedQuestions: 62, label: "第二級アナログ通信", categories: ["基礎", "技術及び理論", "法規"] },], "seasons": ["first", "second",
   "round2",], "yearRange": {"start": 2024, "end": 2026}},
-  "kogai-16": {"code": "kogai-16", "nameFull": "公害防止管理者・大気・水質概論", "urlSlug": "kogai-16", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 10, "label": "大気・水質概論", "categories": ["環境法令", "公害防止組織", "大気環境", "地球環境", "水質汚濁の歴史", "水質浄化", "有害物質"]}], "seasons": ["annual"], "yearRange": {"start": 2026, "end": 2026}},
+  "kogai-16": {"code": "kogai-16", "nameFull": "公害防止管理者・大気・水質概論", "urlSlug": "kogai-16", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 10, "label": "大気・水質概論", "categories": ["環境法令", "公害防止組織", "大気環境", "地球環境", "水質汚濁の歴史", "水質浄化", "有害物質"]}], "seasons": ["annual"], "yearRange": {"start": 2023, "end": 2026}},
   "building-cleaning2": {"code": "building-cleaning2", "nameFull": "ビルクリーニング技能検定2級（学科）", "urlSlug": "building-cleaning2", "level": "basic", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 50, "label": "学科（A群 真偽法・B群 多肢択一法）", "categories": ["汚れ・清掃方法", "建築・内外装材", "洗剤・床維持剤", "清掃機械・器具", "作業計画", "廃棄物・環境", "安全・衛生", "関係法令"]}], "seasons": ["annual"], "yearRange": {"start": 2024, "end": 2025}},
-  "kogai-taiki-yugai": {"code": "kogai-taiki-yugai", "nameFull": "公害防止管理者 大気有害物質特論", "urlSlug": "kogai-taiki-yugai", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 10, "label": "大気有害物質特論", "categories": ["鉛の製錬", "ふっ素化合物の製造", "無機塩素化合物", "吸収装置の圧力損失", "固定層吸着", "ふっ素化合物の処理", "特定物質の漏洩対策", "ふっ素化合物の分析", "塩素の分析", "カドミウム・鉛の分析"]}], "seasons": ["annual"], "yearRange": {"start": 2024, "end": 2026}},
+  "kogai-taiki-yugai": {"code": "kogai-taiki-yugai", "nameFull": "公害防止管理者 大気有害物質特論", "urlSlug": "kogai-taiki-yugai", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 10, "label": "大気有害物質特論", "categories": ["鉛の製錬", "ふっ素化合物の製造", "無機塩素化合物", "吸収装置の圧力損失", "固定層吸着", "ふっ素化合物の処理", "特定物質の漏洩対策", "ふっ素化合物の分析", "塩素の分析", "カドミウム・鉛の分析"]}], "seasons": ["annual"], "yearRange": {"start": 2023, "end": 2026}},
   "dekyo-digital2": {"code": "dekyo-digital2", "nameFull": "工事担任者 第二級デジタル通信", "urlSlug": "dekyo-digital2", "level": "specialist", "sessions": [{"session": "kiso", "urlSlug": "kiso", "expectedQuestions": 22, "label": "電気通信技術の基礎", "categories": ["並列抵抗", "交流回路", "静電容量", "直列共振", "半導体のキャリア", "ツェナーダイオード", "トランジスタ増幅", "半導体メモリ", "トランジスタの電流", "ベン図と論理式", "真理値表", "論理回路と波形", "ブール代数", "デシベルの電力計算", "ケーブルの伝送損失", "電圧反射係数", "信号対雑音比", "PWM", "ピンポン伝送", "誤り検出", "通信品質", "光の外部変調", "直並列回路の電源電圧", "LC直列回路の電流", "静電容量の定義", "RL直列回路の位相", "n形半導体", "ダイオードのリミッタ回路", "トランジスタの接地方式", "不揮発性メモリ", "ベース接地の電流増幅率", "ベン図と論理和・論理積", "2進数の論理和", "論理回路とタイムチャート", "否定を含むブール代数", "伝送損失と増幅器利得", "静電誘導", "無限長線路の入力インピーダンス", "dBmと電力", "デジタル変調方式", "PCMの伝送ビットレート", "ビット誤り率", "光受信器の雑音", "光源のスペクトル幅と分散", "直並列回路の電流", "RC並列回路の電圧", "電磁誘導とレンツの法則", "RL直列回路の電圧位相", "不純物半導体の導電率", "ダイオードの温度特性", "エミッタ接地の位相反転", "フラッシュメモリ", "トランジスタの電流関係", "三つのベン図の共通部分", "16進数から2進数への変換", "論理回路と出力波形", "ブール代数の簡単化", "回線の単位長当たり損失", "電磁結合による漏話", "インピーダンス不整合と反射", "信号対雑音比のdB換算", "アナログ位相変調", "TDMAの多元接続", "パリティチェック", "ジッタ", "光スプリッタ"]}, {"session": "riron", "urlSlug": "riron", "expectedQuestions": 20, "label": "端末設備の接続のための技術及び理論", "categories": ["GE-PON", "LPWA", "LANの接続コネクタ", "無線LANのアクセス制御", "PoE", "HDLC", "SS方式", "CATVのデータ通信", "OSI物理層", "MTU", "ポートスキャン", "無線LANのセキュリティ", "ホームゲートウェイ", "スイッチの転送方式", "レイヤ2スイッチ", "光ファイバの損失", "光コネクタ", "T568B", "ping", "屋内配線の保護", "GE-PONのOLT", "Bluetooth Class2", "SIPの標準化", "IEEE802.11acの周波数帯", "PoEの給電", "HDLCのフラグとビット透過性", "VDSLの利用配線", "HFCの伝送媒体", "OSIデータリンク層", "IPv6アドレスの表記", "キーロガー", "NAPTとIPマスカレード", "ICMPv6のメッセージ", "ストアアンドフォワード", "ルータとOSI階層", "プラスチック光ファイバの光源", "光ファイバの接続方法", "T568Bの結線", "LAN配線試験", "二重床の配線", "GE-PONの伝送速度", "LPWAの特徴", "IP電話の電話番号", "無線LANのアドホックモード", "PoEオルタナティブA", "MLT-3符号", "光アクセスのSS方式", "ADSLの伝送速度帯", "TCP/IPの階層", "IPv6マルチキャストアドレス", "ブルートフォース攻撃", "DMZ", "ICMPv6の分類", "MACアドレスの長さ", "リピータ", "光ファイバの散乱と曲げ損失", "融着接続部の補強", "1000BASE-Tの使用対", "ワイヤマップ試験", "セルラフロア"]}, {"session": "houki", "urlSlug": "houki", "expectedQuestions": 20, "label": "端末設備の接続に関する法規", "categories": ["電気通信回線設備", "電気通信事業法の目的", "電気通信の定義", "端末設備の接続検査", "工事担任者の職務", "第二級デジタル通信の工事範囲", "技術基準適合認定番号", "有線電気通信法", "有線電気通信設備令の定義", "不正アクセス禁止法の目的", "端末設備等規則の用語", "通信内容の識別禁止", "鳴音の防止", "端末機器の電気的安全", "配線設備等", "緊急通報", "押しボタンダイヤル信号", "専用通信回線設備等端末", "漏話減衰量", "IP移動電話端末の発信", "電気通信事業法の用語", "通信の秘密", "業務改善命令", "自営電気通信設備", "工事担任者資格者証", "第二級アナログ通信の工事範囲", "有線電気通信設備の届出", "有線電気通信設備令の用語", "アクセス管理者", "デジタルデータ伝送用設備", "責任の分界点", "音響衝撃の防止", "端末設備の絶縁抵抗", "無線設備の筐体", "アナログ電話端末の直流回路", "直流電圧の印加禁止", "回線間の漏話減衰量", "IP移動電話端末の自動再発信", "電気通信事業法の役務の定義", "秘密の保護と検閲の禁止", "重要通信の優先的取扱い", "自営電気通信設備の接続", "工事担任者による工事・監督", "工事担任者の工事範囲", "IP移動電話端末の認定番号", "有線電気通信法の技術基準", "強電流電線の定義", "アクセス制御機能", "分界点の接続方式", "鳴音の定義", "端末設備の絶縁耐力", "無線端末の空き状態判定", "応答未確認時の回路開放", "押しボタンダイヤルの低群周波数", "総合デジタル通信端末の条件", "移動電話端末の基本的機能", "固定電話端末の通信終了"]},
   { session: "senmon", urlSlug: "senmon", expectedQuestions: 20, label: "端末設備の接続のための技術及び理論", categories: ["端末設備の接続のための技術及び理論"] },], "seasons": ["round1", "round2",
   "first",
@@ -774,9 +774,9 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
   "kouku-kanseikan": {"code": "kouku-kanseikan", "nameFull": "航空管制官採用試験（基礎能力試験）", "urlSlug": "kouku-kanseikan", "level": "specialist", "sessions": [{"session": "kiso", "urlSlug": "kiso", "expectedQuestions": 30, "label": "基礎能力試験", "categories": ["判断推理", "数的推理", "資料解釈", "時事", "情報"]},
   { session: "gaikokugo", urlSlug: "gaikokugo", expectedQuestions: 30, label: "外国語試験（多肢選択式）", categories: ["語彙・熟語", "文法", "和文英訳", "発音・アクセント"] },
   { session: "tekisei", urlSlug: "tekisei", expectedQuestions: 60, label: "適性試験Ⅰ", categories: ["記憶検査", "空間関係検査Ⅰ", "空間関係検査Ⅱ"] },], "seasons": ["annual"], "yearRange": {"start": 2024, "end": 2026}},
-  "cfp-realestate": {"code": "cfp-realestate", "nameFull": "CFP®資格審査試験（不動産運用設計）", "urlSlug": "cfp-realestate", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 50, "label": "不動産運用設計", "categories": ["不動産の価格", "不動産取引", "不動産取得時の税", "不動産投資", "不動産投資・証券化", "不動産統計", "不動産譲渡時の税", "共同ビル・買換え", "取引・住宅性能", "土地利用・建築規制", "定期借地権", "底地・借地権の交換", "建物賃貸借・共有", "建物賃貸借・担保", "建築・開発の規制", "所有者不明土地・統計", "登記・借地・担保", "登記・共有・筆界", "等価交換・立体買換え", "賃貸経営の収支", "高齢者住宅", "高齢者住宅・サブリース"]}], "seasons": ["round1", "round2"], "yearRange": {"start": 2026, "end": 2026}},
+  "cfp-realestate": {"code": "cfp-realestate", "nameFull": "CFP®資格審査試験（不動産運用設計）", "urlSlug": "cfp-realestate", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 50, "label": "不動産運用設計", "categories": ["不動産の価格", "不動産取引", "不動産取得時の税", "不動産投資", "不動産投資・証券化", "不動産統計", "不動産譲渡時の税", "共同ビル・買換え", "取引・住宅性能", "土地利用・建築規制", "定期借地権", "底地・借地権の交換", "建物賃貸借・共有", "建物賃貸借・担保", "建築・開発の規制", "所有者不明土地・統計", "登記・借地・担保", "登記・共有・筆界", "等価交換・立体買換え", "賃貸経営の収支", "高齢者住宅", "高齢者住宅・サブリース"]}], "seasons": ["round1", "round2"], "yearRange": {"start": 2022, "end": 2026}},
   "building-cleaning3": {"code": "building-cleaning3", "nameFull": "ビルクリーニング技能士3級", "urlSlug": "building-cleaning3", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 25, "label": "学科（真偽法）", "categories": ["安全・衛生", "廃棄物・環境", "建材・洗剤", "清掃作業・接遇", "安全衛生", "建材", "建築設備", "汚れと衛生", "法令", "洗剤と薬剤", "清掃用具", "清掃管理"]}], "seasons": ["annual"], "yearRange": {"start": 2022, "end": 2025}},
-  "kogai-taiki-gairon": {"code": "kogai-taiki-gairon", "nameFull": "公害防止管理者・大気概論", "urlSlug": "kogai-taiki-gairon", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 10, "label": "大気概論", "categories": ["健康影響", "公害防止組織", "地球温暖化", "大気汚染防止法", "届出施設の統計", "有害物質・発生源", "水銀排出規制", "環境基準", "石綿", "粒子状物質"]}], "seasons": ["annual"], "yearRange": {"start": 2026, "end": 2026}},
+  "kogai-taiki-gairon": {"code": "kogai-taiki-gairon", "nameFull": "公害防止管理者・大気概論", "urlSlug": "kogai-taiki-gairon", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 10, "label": "大気概論", "categories": ["健康影響", "公害防止組織", "地球温暖化", "大気汚染防止法", "届出施設の統計", "有害物質・発生源", "水銀排出規制", "環境基準", "石綿", "粒子状物質"]}], "seasons": ["annual"], "yearRange": {"start": 2022, "end": 2026}},
   eiken2: {"code": "eiken2", "nameFull": "実用英語技能検定2級", "urlSlug": "eiken2", "level": "advanced", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 63, "label": "一次試験", "categories": ["短文の語句空所補充", "長文の語句空所補充", "長文の内容一致選択", "英文要約", "英作文", "リスニング第1部", "リスニング第2部"]}], "seasons": ["session1", "session2", "session3"], "yearRange": {"start": 2025, "end": 2026}},
   "restaurant-2": {"code": "restaurant-2", "nameFull": "レストランサービス技能検定2級（学科）", "urlSlug": "restaurant-2", "level": "advanced", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 100, "label": "学科（真偽法）", "categories": ["食品衛生", "食品・飲料・調理", "食文化・接遇儀礼", "料飲サービス", "施設・設備・安全", "関係法令", "店舗・宴会運営"]}], "seasons": ["annual"], "yearRange": {"start": 2025, "end": 2026}},
   "kogai-17": {"code": "kogai-17", "nameFull": "公害防止管理者・大気関係技術特論", "urlSlug": "kogai-17", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 20, "label": "大気関係技術特論", "categories": ["燃焼・排ガス処理", "集じん・大気拡散・工程対策"]}], "seasons": ["annual"], "yearRange": {"start": 2022, "end": 2026}},
@@ -792,26 +792,26 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
   { session: "gakka", urlSlug: "gakka", expectedQuestions: 20, label: "電気通信システム", categories: ["電気回路", "伝送技術", "通信網"] },], "seasons": ["round1", "round2",
   "second",
   "first",], "yearRange": {"start": 2022, "end": 2026}},
-  "kogai-06": {"code": "kogai-06", "nameFull": "公害防止管理者・大規模大気特論", "urlSlug": "kogai-06", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 10, "label": "大規模大気特論", "categories": ["排煙拡散", "大気安定度", "風速分布", "大気境界層", "大気環境シミュレーション", "燃料品質", "排煙処理", "セメント産業", "鉄鋼プロセス"]}], "seasons": ["annual"], "yearRange": {"start": 2026, "end": 2026}},
-  "kogai-large-water": {"code": "kogai-large-water", "nameFull": "公害防止管理者・大規模水質特論", "urlSlug": "kogai-large-water", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 10, "label": "大規模水質特論", "categories": ["環境モデル", "用排水管理", "産業排水処理"]}], "seasons": ["annual"], "yearRange": {"start": 2026, "end": 2026}},
+  "kogai-06": {"code": "kogai-06", "nameFull": "公害防止管理者・大規模大気特論", "urlSlug": "kogai-06", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 10, "label": "大規模大気特論", "categories": ["排煙拡散", "大気安定度", "風速分布", "大気境界層", "大気環境シミュレーション", "燃料品質", "排煙処理", "セメント産業", "鉄鋼プロセス"]}], "seasons": ["annual"], "yearRange": {"start": 2022, "end": 2026}},
+  "kogai-large-water": {"code": "kogai-large-water", "nameFull": "公害防止管理者・大規模水質特論", "urlSlug": "kogai-large-water", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 10, "label": "大規模水質特論", "categories": ["環境モデル", "用排水管理", "産業排水処理"]}], "seasons": ["annual"], "yearRange": {"start": 2022, "end": 2026}},
   "dekyo-chief-system": {"code": "dekyo-chief-system", "nameFull": "電気通信主任技術者・電気通信システム", "urlSlug": "dekyo-chief-system", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 20, "label": "電気通信システム", "categories": ["電気・電子回路", "伝送方式", "交換・IPネットワーク", "無線・光通信・電源"]}], "seasons": ["first", "second"], "yearRange": {"start": 2022, "end": 2026}},
   eiken5: {"code": "eiken5", "nameFull": "実用英語技能検定5級（リーディング）", "urlSlug": "eiken5", "level": "basic", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 25, "label": "リーディング", "categories": ["短文の語句空所補充", "会話文の文空所補充", "語句整序"]}], "seasons": ["round3", "round1", "round2"], "yearRange": {"start": 2025, "end": 2026}},
   "rodo-kijun-kantokukan": {"code": "rodo-kijun-kantokukan", "nameFull": "労働基準監督官採用試験（基礎能力）", "urlSlug": "rodo-kijun-kantokukan", "level": "advanced", "sessions": [{"session": "kiso", "urlSlug": "kiso", "expectedQuestions": 30, "label": "基礎能力試験", "categories": ["文章理解", "判断推理", "空間把握", "数的推理", "資料解釈", "時事・社会", "情報"]},
   { session: "senmon-b", urlSlug: "senmon-b", expectedQuestions: 46, label: "専門試験（労働基準監督Ｂ）", categories: ["労働統計・労使関係", "労働安全衛生", "数学", "物理", "情報", "化学"] },
   { session: "special-a", urlSlug: "special-a", expectedQuestions: 48, label: "労働基準監督A 専門試験（多肢選択式）", categories: ["労働法", "労働安全衛生", "労災保険", "労働経済", "憲法", "行政法", "民法", "刑法", "経済学", "経済事情", "社会保障", "社会学"] },
       { session: "special-b", urlSlug: "special-b", expectedQuestions: 46, label: "労働基準監督B 専門試験（多肢選択式）", categories: ["労働安全衛生", "基礎数学", "物理", "化学"] },
-    ], "seasons": ["annual"], "yearRange": {"start": 2024, "end": 2026}},
+    ], "seasons": ["annual"], "yearRange": {"start": 2023, "end": 2026}},
   chizai1: {"code": "chizai1", "nameFull": "知的財産管理技能検定1級（特許専門業務・実技）", "urlSlug": "chizai1", "level": "advanced", "sessions": [{"session": "practical", "urlSlug": "practical", "expectedQuestions": 5, "label": "特許専門業務・実技", "categories": ["知財経営", "国内特許出願", "外国特許出願・ＰＣＴ", "特許権の行使"]},
   { session: "gakka", urlSlug: "gakka", expectedQuestions: 45, label: "学科・特許専門業務", categories: ["知的財産管理技能検定1級 学科・特許専門業務"] },], "seasons": ["march",
   "autumn",
   "spring",
   "july",], "yearRange": {"start": 2023, "end": 2026}},
-  "kogai-09": {"code": "kogai-09", "nameFull": "公害防止管理者・水質有害物質特論", "urlSlug": "kogai-09", "level": "advanced", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 15, "label": "水質有害物質特論", "categories": ["有害物質の処理", "測定技術"]}], "seasons": ["annual"], "yearRange": {"start": 2026, "end": 2026}},
+  "kogai-09": {"code": "kogai-09", "nameFull": "公害防止管理者・水質有害物質特論", "urlSlug": "kogai-09", "level": "advanced", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 15, "label": "水質有害物質特論", "categories": ["有害物質の処理", "測定技術"]}], "seasons": ["annual"], "yearRange": {"start": 2023, "end": 2026}},
   webdesign2: {"code": "webdesign2", "nameFull": "ウェブデザイン技能検定2級（学科）", "urlSlug": "webdesign2", "level": "advanced", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 40, "label": "学科", "categories": ["HTML", "CSS", "JavaScript", "PHP", "データベース", "アクセシビリティ", "法規", "ウェブ技術・運用"]}], "seasons": ["round4", "round1", "round2"], "yearRange": {"start": 2025, "end": 2026}},
   "glass-sekou1": {"code":"glass-sekou1","nameFull":"技能検定 1級ガラス施工（ガラス工事作業）学科試験","urlSlug":"glass-sekou1","level":"advanced","sessions":[{"session":"gakka","urlSlug":"gakka","expectedQuestions":50,"label":"学科（A群 真偽法・B群 多肢択一法）","categories":["ガラス・材料","ガラス施工・加工","建具・関連材料","建築構造・製図","関係法規・安全衛生"]}],"seasons":["late"],"yearRange":{"start":2024,"end":2025}},
   "eikenp1": {"code": "eikenp1", "nameFull": "実用英語技能検定 準1級", "urlSlug": "eikenp1", "level": "advanced", "sessions": [{"session": "reading", "urlSlug": "reading", "expectedQuestions": 31, "label": "リーディング", "categories": ["語彙・熟語", "長文空所補充", "長文内容一致"]}, {"session": "listening", "urlSlug": "listening", "expectedQuestions": 29, "label": "リスニング", "categories": ["リスニングPart1", "リスニングPart2", "リスニングPart3"]}, {"session": "writing", "urlSlug": "writing", "expectedQuestions": 2, "label": "ライティング（自己確認）", "categories": ["英文要約", "英作文"]}], "seasons": ["first", "second", "january"], "yearRange": {"start": 2025, "end": 2026}},
   "zensho-eco-81": {"code":"zensho-eco-81","nameFull":"商業経済検定試験 ビジネス・マネジメント","urlSlug":"zensho-eco-81","level":"basic","sessions":[{"session":"gakka","urlSlug":"gakka","expectedQuestions":50,"label":"学科","categories":["企業と経営","経営環境","経営組織","経営戦略","企業間連携","人材マネジメント","生産マネジメント","財務マネジメント","経営資源","コーポレートガバナンス","リスクマネジメント","企業と社会","起業"]}],"seasons":["annual"],"yearRange":{"start":2022,"end":2025}},
-  "kogai-07": {"code":"kogai-07","nameFull":"公害防止管理者等国家試験・水質概論","urlSlug":"kogai-07","level":"basic","sessions":[{"session":"gakka","urlSlug":"gakka","expectedQuestions":10,"label":"学科","categories":["環境基準","水質汚濁防止法","総量規制","公害防止組織","水環境","有害物質","水処理"]}],"seasons":["annual"],"yearRange":{"start":2026,"end":2026}},
+  "kogai-07": {"code":"kogai-07","nameFull":"公害防止管理者等国家試験・水質概論","urlSlug":"kogai-07","level":"basic","sessions":[{"session":"gakka","urlSlug":"gakka","expectedQuestions":10,"label":"学科","categories":["環境基準","水質汚濁防止法","総量規制","公害防止組織","水環境","有害物質","水処理"]}],"seasons":["annual"],"yearRange":{"start":2022,"end":2026}},
   "webdesign-3": {"code":"webdesign-3","nameFull":"ウェブデザイン技能検定3級（学科）","urlSlug":"webdesign-3","level":"basic","sessions":[{"session":"gakka","urlSlug":"gakka","expectedQuestions":25,"label":"学科","categories":["HTML","法務","ネットワーク","作業環境","セキュリティ","設計","アクセシビリティ","JavaScript","CSS","運用"]}],"seasons":["february","round1","round2"],"yearRange":{"start":2025,"end":2026}},
   "kokka-ippan-dai": {"code": "kokka-ippan-dai", "nameFull": "国家公務員採用一般職試験（大卒程度試験）", "urlSlug": "kokka-ippan-dai", "level": "specialist", "sessions": [{"session": "kiso", "urlSlug": "kiso", "expectedQuestions": 30, "label": "基礎能力試験", "categories": ["判断推理", "数的推理", "資料解釈"]},
   { session: "kadai-taiou", urlSlug: "kadai-taiou", expectedQuestions: 120, label: "課題対応能力試験（教養区分）", categories: ["演算記号", "文字の置き換え", "表による分類", "表の計算", "表の照合"] },
@@ -829,7 +829,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
   "kokka-sogo-in": {"code": "kokka-sogo-in", "nameFull": "国家公務員採用総合職試験（院卒者試験）", "urlSlug": "kokka-sogo-in", "level": "specialist", "sessions": [{"session": "kiso", "urlSlug": "kiso", "expectedQuestions": 30, "label": "基礎能力試験", "categories": ["判断推理", "数的推理", "資料解釈"]}], "seasons": ["annual"], "yearRange": {"start": 2026, "end": 2026}},
   "toukei1": {"code": "toukei1", "nameFull": "統計検定1級", "urlSlug": "toukei1", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 5, "label": "統計数理（記述式）", "categories": ["推定・モデル選択", "十分統計量・漸近分布", "回帰分析・相関係数", "仮説検定・検出力", "確率分布・最尤推定"]}, {"session": "practical", "urlSlug": "practical", "expectedQuestions": 15, "label": "統計応用（記述式）", "categories": ["標本調査・層化抽出", "多変量正規分布・コレスキー分解", "因子分析・因子回転", "重回帰・残差回帰", "無作為化回答法・最尤推定", "ポアソン分布・ハードルモデル", "打切り回帰・トービットモデル", "ARCHモデル・条件付き分散", "品質管理・工程能力指数", "マルコフ連鎖・尤度比検定", "最小二乗・バイアスと分散", "順位和検定・検出力", "ポアソン・ガンマ共役モデル", "生存時間分析・競合リスク", "多重検定・FWER"]}], "seasons": ["annual"], "yearRange": {"start": 2025, "end": 2025}},
   literas: {"code": "literas", "nameFull": "Literas（リテラス）論理言語力検定", "urlSlug": "literas", "level": "basic", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 3, "label": "社会理解力の公式例題", "categories": ["2級・社会理解力", "3級・社会理解力"]}], "seasons": ["published"], "yearRange": { start: 2025, end: 2025 }},
-  "kogai-01": {"code": "kogai-01", "nameFull": "公害防止管理者 公害総論", "urlSlug": "kogai-01", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 15, "label": "公害総論", "categories": ["ダイオキシン類", "リスクマネジメント", "二酸化炭素排出量", "公害の歴史", "公害苦情件数", "公害関係法令", "公害防止管理者制度", "土壌汚染と地盤沈下", "地下水質", "有害大気汚染物質", "浮遊粒子状物質", "環境基本法", "環境基本計画", "環境基準", "産業廃棄物の再生利用"]}], "seasons": ["annual"], "yearRange": {"start": 2026, "end": 2026}},
+  "kogai-01": {"code": "kogai-01", "nameFull": "公害防止管理者 公害総論", "urlSlug": "kogai-01", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 15, "label": "公害総論", "categories": ["ダイオキシン類", "リスクマネジメント", "二酸化炭素排出量", "公害の歴史", "公害苦情件数", "公害関係法令", "公害防止管理者制度", "土壌汚染と地盤沈下", "地下水質", "有害大気汚染物質", "浮遊粒子状物質", "環境基本法", "環境基本計画", "環境基準", "産業廃棄物の再生利用"]}], "seasons": ["annual"], "yearRange": {"start": 2022, "end": 2026}},
   cfp: {code: "cfp", nameFull: "CFP®資格審査試験", urlSlug: "cfp", level: "advanced", sessions: [
       { session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "金融資産運用設計", categories: ["経済指標", "預貯金", "株式投資", "債券投資", "投資信託"] },
       { session: "cfp-risk", urlSlug: "cfp-risk", expectedQuestions: 50, label: "リスクと保険", categories: ["生命保険の制度・契約", "生命保険の税務", "生命保険の商品・給付", "相続・事業承継", "法人保険・退職金", "損害保険の制度・法律", "損害保険の商品・給付", "企業のリスク管理", "損害保険の税務"] },
@@ -1177,7 +1177,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
   "hoshasen-1": {"code":"hoshasen-1","nameFull":"第一種放射線取扱主任者","urlSlug":"hoshasen-1","level":"specialist","sessions":[{"session":"gakka","urlSlug":"gakka","expectedQuestions":269,"label":"学科","categories":["生物学","物理学","化学","実務","法令"]}],"seasons":["annual"],"yearRange":{ start: 2022, end: 2026 }},
   "hoshasen-2": {"code":"hoshasen-2","nameFull":"第二種放射線取扱主任者","urlSlug":"hoshasen-2","level":"specialist","sessions":[{"session":"gakka","urlSlug":"gakka","expectedQuestions":139,"label":"学科","categories":["生物学","化学","物理学","実務","法令"]}],"seasons":["annual"],"yearRange":{ start: 2022, end: 2026 }},
   "khk-kikai-kou": {"code":"khk-kikai-kou","nameFull":"高圧ガス製造保安責任者 甲種機械","urlSlug":"khk-kikai-kou","level":"specialist","sessions":[{"session":"hoki","urlSlug":"hoki","expectedQuestions":20,"label":"法令","categories":["法令"]},{"session":"hoan","urlSlug":"hoan","expectedQuestions":15,"label":"保安管理技術","categories":["保安管理技術"]},{"session":"gakushiki","urlSlug":"gakushiki","expectedQuestions":5,"label":"学識","categories":["学識"]}],"seasons":["annual"],"yearRange":{ start: 2024, end: 2026 }},
-  "khk-kikai-otsu": {"code":"khk-kikai-otsu","nameFull":"高圧ガス製造保安責任者 乙種機械","urlSlug":"khk-kikai-otsu","level":"specialist","sessions":[{"session":"hoki","urlSlug":"hoki","expectedQuestions":20,"label":"法令","categories":["法令"]},{"session":"hoan","urlSlug":"hoan","expectedQuestions":15,"label":"保安管理技術","categories":["保安管理技術"]},{"session":"gakushiki","urlSlug":"gakushiki","expectedQuestions":15,"label":"学識","categories":["学識"]}],"seasons":["annual"],"yearRange":{ start: 2023, end: 2026 }},
+  "khk-kikai-otsu": {"code":"khk-kikai-otsu","nameFull":"高圧ガス製造保安責任者 乙種機械","urlSlug":"khk-kikai-otsu","level":"specialist","sessions":[{"session":"hoki","urlSlug":"hoki","expectedQuestions":20,"label":"法令","categories":["法令"]},{"session":"hoan","urlSlug":"hoan","expectedQuestions":15,"label":"保安管理技術","categories":["保安管理技術"]},{"session":"gakushiki","urlSlug":"gakushiki","expectedQuestions":15,"label":"学識","categories":["学識"]}],"seasons":["annual"],"yearRange":{ start: 2022, end: 2026 }},
   "energy-kanri": {"code":"energy-kanri","nameFull":"エネルギー管理士","urlSlug":"energy-kanri","level":"specialist","sessions":[{"session":"kyotsu","urlSlug":"kyotsu","expectedQuestions":42,"label":"学科","categories":["エネルギー管理法規","エネルギー情勢・政策、エネルギー概論","エネルギー管理技術の基礎"]},{"session":"senmon","urlSlug":"senmon","expectedQuestions":371,"label":"学科","categories":["電気及び電子理論","自動制御及び情報処理","電気計測","工場配電","電気機器・変圧器","電気機器","電動力応用","電気加熱","電気化学","照明","空気調和","熱力学の基礎","流体工学の基礎","伝熱工学の基礎","燃料及び燃焼管理","燃焼計算","計測及び制御","ボイラ・蒸気輸送配管","蒸気原動機・内燃機関・ガスタービン","熱交換器・熱回収装置","冷凍・空気調和設備","工業炉・熱設備材料","蒸留・蒸発・濃縮装置、乾燥装置、乾留・ガス化装置"]}],"seasons":["annual"],"yearRange":{ start: 2025, end: 2026 }},
   kanteishi: {
 
@@ -2680,7 +2680,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
 
     ],
 
-    seasons: ["march", "september"], yearRange: { start: 2026, end: 2026 },
+    seasons: ["march", "september"], yearRange: { start: 2022, end: 2026 },
 
 },
   "maritime1": {
@@ -2699,7 +2699,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
 
     ],
 
-    seasons: ["march", "september"], yearRange: { start: 2025, end: 2026 },
+    seasons: ["march", "september"], yearRange: { start: 2022, end: 2026 },
 
 },
   "general1": {
@@ -2718,9 +2718,11 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
 
         { session: "tiri", urlSlug: "tiri", expectedQuestions: 35, label: "地理", categories: ["地理"] },
 
+
+      { session: "eigo", urlSlug: "eigo", expectedQuestions: 19, label: "英語", categories: ["英語"] },
     ],
 
-    seasons: ["march", "september"], yearRange: { start: 2026, end: 2026 },
+    seasons: ["march", "september"], yearRange: { start: 2022, end: 2026 },
 
 },
   "general2": {
@@ -2739,9 +2741,12 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
 
         { session: "tiri", urlSlug: "tiri", expectedQuestions: 40, label: "地理", categories: ["地理"] },
 
+
+      { session: "eigo-hikki", urlSlug: "eigo-hikki", expectedQuestions: 24, label: "英語（筆記）", categories: ["英語"] },
+      { session: "eigo-kaiwa", urlSlug: "eigo-kaiwa", expectedQuestions: 7, label: "英会話（公式設問文）", categories: ["英語"] },
     ],
 
-    seasons: ["march", "september"], yearRange: { start: 2026, end: 2026 },
+    seasons: ["march", "september"], yearRange: { start: 2022, end: 2026 },
 
 },
   "general3": {
@@ -2824,7 +2829,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
 
     ],
 
-    seasons: ["january", "july"], yearRange: { start: 2026, end: 2026 },
+    seasons: ["january", "july"], yearRange: { start: 2022, end: 2026 },
 
 },
   "riku-tech2": {
@@ -2843,7 +2848,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
 
     ],
 
-    seasons: ["january", "july"], yearRange: { start: 2026, end: 2026 },
+    seasons: ["january", "july"], yearRange: { start: 2022, end: 2026 },
 
 },
   "amateur2": {
@@ -2858,7 +2863,9 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
 
     ],
 
-    seasons: ["may", "august", "november"], yearRange: { start: 2026, end: 2026 },
+    seasons: ["may", "august", "november",
+      "spring",
+    ], yearRange: { start: 2022, end: 2026 },
 
 },
   "maritime-radar": {
@@ -2886,7 +2893,9 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
 
     ],
     seasons: ["may", "august", "november",
-  "late",], yearRange: { start: 2025, end: 2026 },
+  "late",
+      "early",
+    ], yearRange: { start: 2022, end: 2026 },
 },
   "maritime-special1": {
 
@@ -2963,7 +2972,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     ],
 
     seasons: ["february", "june",
-  "october",], yearRange: { start: 2025, end: 2026 },
+  "october",], yearRange: { start: 2022, end: 2026 },
 
 },
   "kai-toku2": {
@@ -4365,12 +4374,12 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
   "chori-center": {
     code: "chori-center", nameFull: "調理師試験（共通問題）", urlSlug: "chori-center", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 60, label: "学科", categories: ["公衆衛生学", "食品学", "栄養学", "食品衛生学", "調理理論", "食文化概論"] }],
-    seasons: ["annual"], yearRange: { start: 2023, end: 2025 },
+    seasons: ["annual"], yearRange: { start: 2022, end: 2025 },
 },
   "chori-gunma": {
     code: "chori-gunma", nameFull: "調理師試験（群馬県）", urlSlug: "chori-gunma", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 60, label: "学科", categories: ["公衆衛生学", "食品学", "栄養学", "食品衛生学", "調理理論", "食文化概論"] }],
-    seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
+    seasons: ["annual"], yearRange: { start: 2022, end: 2026 },
 },
   "chori-hokkaido": {
     code: "chori-hokkaido", nameFull: "調理師試験（北海道）", urlSlug: "chori-hokkaido", level: "basic",
@@ -4380,7 +4389,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
   "chori-kanagawa": {
     code: "chori-kanagawa", nameFull: "調理師試験（神奈川県）", urlSlug: "chori-kanagawa", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 60, label: "学科", categories: ["公衆衛生学", "食品学", "栄養学", "食品衛生学", "調理理論", "食文化概論"] }],
-    seasons: ["annual", "round2", "round1"], yearRange: { start: 2024, end: 2026 },
+    seasons: ["annual", "round2", "round1"], yearRange: { start: 2023, end: 2026 },
 },
   "chori-kansai": {
     code: "chori-kansai", nameFull: "調理師試験（関西広域連合）", urlSlug: "chori-kansai", level: "basic",
@@ -4395,12 +4404,12 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
   "chori-okinawa": {
     code: "chori-okinawa", nameFull: "調理師試験（沖縄県）", urlSlug: "chori-okinawa", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 60, label: "学科", categories: ["公衆衛生学", "食品学", "栄養学", "食品衛生学", "調理理論", "食文化概論"] }],
-    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+    seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
 },
   "chori-shizuoka": {
     code: "chori-shizuoka", nameFull: "調理師試験（静岡県）", urlSlug: "chori-shizuoka", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 60, label: "学科", categories: ["公衆衛生学", "食品学", "栄養学", "食品衛生学", "調理理論", "食文化概論"] }],
-    seasons: ["annual"], yearRange: { start: 2023, end: 2025 },
+    seasons: ["annual"], yearRange: { start: 2022, end: 2025 },
 },
   "chori-tochigi": {
     code: "chori-tochigi", nameFull: "調理師試験（栃木県）", urlSlug: "chori-tochigi", level: "basic",
@@ -4730,6 +4739,12 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     code: "chori-ehime", nameFull: "調理師試験（愛媛県）", urlSlug: "chori-ehime", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 60, label: "学科", categories: ["公衆衛生学", "食品学", "栄養学", "食品衛生学", "調理理論", "食文化概論"] }],
     seasons: ["annual"], yearRange: { start: 2022, end: 2025 },
+},
+
+  "chori-nara": {
+    code: "chori-nara", nameFull: "調理師試験（奈良県）", urlSlug: "chori-nara", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 60, label: "学科", categories: ["公衆衛生学", "食品学", "栄養学", "食品衛生学", "調理理論", "食文化概論"] }],
+    seasons: ["annual"], yearRange: { start: 2024, end: 2024 },
 },
 };
 

@@ -152,6 +152,13 @@ describe("公式PDFの保存版", () => {
     expect(check(q, [p])).toEqual([url === original ? "rolling-source" : "archived-source"]);
   });
 
+  it("出典台帳の登録済み問題から保存版URLが欠落した場合を拒否する", () => {
+    const url = "https://www.nichimu.or.jp/papers/2025-01.pdf";
+    const q = { ...archived, sourcePdfUrl: url, sourceArchiveUrl: undefined, sourceAnswerArchiveUrl: undefined };
+    expect(check(q, [{ ...paper, question: { originalUrl: url, archiveUrl: capture(url), sha256 } }]))
+      .toEqual(["archived-source"]);
+  });
+
   it("正答の保存版と元URLが異なる場合や、差し替え式の正答に保存版がない場合を拒否する", () => {
     const url = capture(original);
     expect(check({ ...archived, sourceAnswerArchiveUrl: url }, [{ ...paper, answer: { ...paper.answer, archiveUrl: url } }]))
