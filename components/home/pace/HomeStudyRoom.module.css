@@ -72,3 +72,17 @@
 }
 .exams li span { overflow-wrap: anywhere; }
 .exams li strong { flex-shrink: 0; white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+@media (max-width: 32rem) {
+  .card[data-long-list] { gap: 4px; padding: 7px; }
+  .card[data-long-list] .scene { min-height: 95px; }
+  .card[data-long-list] .scene[data-rows="3"] .seat { flex-basis: 26px; }
+  .card[data-long-list] .exams { gap: 1px 4px; }
+  .card[data-long-list] .exams li {
+    display: block;
+    padding: 0 3px;
+    line-height: 1.3;
+    letter-spacing: -.02em;
+  }
+  .card[data-long-list] .exams strong { margin-inline-start: 2px; }
+}

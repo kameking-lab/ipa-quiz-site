@@ -8,6 +8,8 @@ import { useStudyRoomPresence } from "../useStudyRoomPresence";
 import styles from "./HomeStudyRoom.module.css";
 
 const EXAM_CHIP_LIMIT = 6;
+// Allow for the count and chip padding when several Japanese labels occupy a narrow card.
+const COMPACT_LABEL_LENGTH = 64;
 const number = (count: number) => count.toLocaleString("ja-JP");
 const time = new Intl.DateTimeFormat("ja-JP", { timeZone: "Asia/Tokyo", hour: "numeric", minute: "2-digit", hourCycle: "h23" });
 
@@ -21,19 +23,21 @@ export function HomeStudyRoom() {
   const columns = Math.ceil(seats.length / rowCount);
   const examRows = attendance?.exams ?? [];
   const otherExams = examRows.length - EXAM_CHIP_LIMIT;
+  const chips = examRows.slice(0, EXAM_CHIP_LIMIT).map(row => ({ name: presenceExamName(row.exam)!, ...row }));
+  const longList = chips.reduce((length, chip) => length + chip.name.length, 0) > COMPACT_LABEL_LENGTH;
 
   return <Link href="/study-room" prefetch={false} data-study-presence-viewer data-testid="home-study-room"
-    aria-labelledby="home-study-room-title" className={`${styles.card} study-focus`}>
+    aria-labelledby="home-study-room-title" data-long-list={longList || undefined} className={`${styles.card} study-focus`}>
     <div className={styles.header}>
       <h2 id="home-study-room-title">チワワの自習室</h2>
+      {attendance && <p className={styles.attendance}>
+        <span>{daily ? "今日 " : "いま "}<strong>{number(attendance.count)}</strong>人</span>
+        {daily && snapshot && (current
+          ? <span className={styles.now}><i aria-hidden="true" />いま {number(daily.activeCount)}人</span>
+          : <time dateTime={snapshot.measuredAt} className={styles.timestamp}>{time.format(Date.parse(snapshot.measuredAt))} 時点</time>)}
+      </p>}
       <ChevronRight aria-hidden="true" className={styles.arrow} />
     </div>
-    {attendance && <p className={styles.attendance}>
-      <span>{daily ? "今日 " : "いま "}<strong>{number(attendance.count)}</strong>人</span>
-      {daily && snapshot && (current
-        ? <span className={styles.now}><i aria-hidden="true" />いま {number(daily.activeCount)}人</span>
-        : <time dateTime={snapshot.measuredAt} className={styles.timestamp}>{time.format(Date.parse(snapshot.measuredAt))} 時点</time>)}
-    </p>}
     <div className={styles.scene} data-testid="home-study-room-scene" data-rows={rowCount}>
       {seats.length ? <div className={styles.seats} aria-hidden="true">
         {Array.from({ length: rowCount }, (_, row) => <div key={row} className={styles.row}>
@@ -53,8 +57,8 @@ export function HomeStudyRoom() {
       {room && room.hidden > 0 && <span className={styles.overflow}>＋{number(room.hidden)}人</span>}
     </div>
     {examRows.length > 0 && <ul aria-label="自習室の資格" className={styles.exams}>
-      {examRows.slice(0, EXAM_CHIP_LIMIT).map(row => <li key={row.exam}>
-        <span>{presenceExamName(row.exam)}</span><strong>{number(row.count)}人</strong>
+      {chips.map(row => <li key={row.exam}>
+        <span>{row.name}</span><strong>{number(row.count)}人</strong>
       </li>)}
       {otherExams > 0 && <li>ほか{number(otherExams)}資格</li>}
     </ul>}
