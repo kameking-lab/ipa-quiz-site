@@ -451,3 +451,5 @@
 2024年度の畜産系は専門試験50問を収録し、都道府県別の牛の飼養頭数、家畜の繁殖、乳の成分規格の原表3点を添付した。No. 7は出題で使われた広義の脳幹の区分、No. 46は射乳と泌乳維持の関係を解説した。 [専門試験](https://www.maff.go.jp/j/joinus/recruit/2tikusan/attach/pdf/zooexam-20.pdf) [公式正答](https://www.maff.go.jp/j/joinus/recruit/2tikusan/attach/pdf/zooexam-21.pdf)
 
 2023年度の獣医系は専門試験54問を収録し、家畜の繁殖季節・発情持続時間・産子数の原表を添付した。感染症・毒性に関するNo. 13・16・19・22・24・48は公開問題データから除外した。 [専門試験](https://www.maff.go.jp/j/joinus/recruit/zyui/attach/pdf/vetexam-2.pdf) [公式正答](https://www.maff.go.jp/j/joinus/recruit/zyui/attach/pdf/vetexam-5.pdf)
+
+2023年度の畜産系は専門試験50問を収録し、家畜の飼養形態と排せつ物処理の原表を添付した。飼料自給率の目標は試験が参照する令和2年決定の計画に沿って解説した。 [専門試験](https://www.maff.go.jp/j/joinus/recruit/2tikusan/attach/pdf/zooexam-2.pdf) [公式正答](https://www.maff.go.jp/j/joinus/recruit/2tikusan/attach/pdf/zooexam-4.pdf)
