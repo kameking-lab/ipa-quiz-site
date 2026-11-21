@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { HomePace } from "@/components/home/pace/HomePace";
 import { QualificationDirectory } from "@/components/home/pace/QualificationDirectory";
-import { StudyRoomLine } from "@/components/home/pace/StudyRoomLine";
+import { HomeStudyRoom } from "@/components/home/pace/HomeStudyRoom";
 import { planCatalogKeys } from "@/lib/study-plan/catalog-keys";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getHomeDirectory } from "@/lib/home/home-directory";
@@ -26,7 +26,7 @@ export default function HomePage() {
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [buildWebsiteNode(description), buildOrgNode()] }} />
       <HomePace domains={domains} planExamKeys={planCatalogKeys()} />
       <div className={styles.shortcuts}>
-        <StudyRoomLine />
+        <HomeStudyRoom />
         <details id="home-qualification-directory" className={styles.directory}>
           <summary className="study-focus min-h-12 cursor-pointer py-3 text-sm underline underline-offset-4 hover:text-primary">資格・区分一覧</summary>
           <div className="mt-2">

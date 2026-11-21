@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react"
 import Link from "next/link";
 import { canonicalPresenceExam, presenceExamName } from "@/lib/study-presence";
 import type { MeasuredPresence } from "@/lib/study-presence-contract";
-import { measuredRoom, roomStage } from "@/lib/home/study-room";
+import { EMPTY_STUDY_ROOM_MESSAGE, measuredRoom, SLEEPING_ROOM_MASCOT } from "@/lib/home/study-room";
 import { studyRoomScene } from "@/lib/home/study-room-scenes";
 import { assignRoomPoints } from "@/lib/home/study-room-scatter";
 import { furnitureRoomMascots } from "@/lib/home/study-room-furniture";
@@ -36,11 +36,12 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
     const code = paper && (!last || Date.parse(paper.updatedAt) > last.answeredAt) ? paper.examId : last?.exam;
     setOwnExam(code ? canonicalPresenceExam(code) : null);
   }, []);
-  const measured = useMemo(() => snapshot ? measuredRoom(snapshot, snapshot.count) : null, [snapshot]);
+  const daily = snapshot?.today;
+  const measured = useMemo(() => snapshot ? measuredRoom(daily ?? snapshot) : null, [daily, snapshot]);
   const seats = useMemo(() => (measured?.seats ?? []).map(seat => ({ ...seat,
     detail: seatDetails.find(item => item.exam === seat.exam && item.index === seat.index),
   })), [measured, seatDetails]);
-  const targetStage = roomStage(snapshot?.count ?? 0);
+  const targetStage = measured?.stage ?? 0;
   const [stage, setStage] = useState(targetStage);
   const hasLearners = seats.length > 0;
   useEffect(() => {
@@ -58,12 +59,14 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
   const [motionVisible, setMotionVisible] = useState(false);
   const [visibleSeats, setVisibleSeats] = useState<Set<string>>(new Set());
   const seatKey = seats.map(seat => `${seat.exam}:${seat.index}`).join("|");
+  const activeKey = daily ? seats.filter(seat => seat.active).map(seat => `${seat.exam}:${seat.index}`).join("|") : null;
   const [placement, setPlacement] = useState<{ stage: number; keys: string; points: Map<string, number> }>({ stage: -1, keys: "", points: new Map() });
   const points = placement.stage === renderedStage && placement.keys === seatKey ? placement.points
     : assignRoomPoints(seats.map(seat => `${seat.exam}:${seat.index}`), scene.seats.length,
       placement.stage === renderedStage || (placement.stage >= 4 && renderedStage >= 4) ? placement.points : undefined);
   if (placement.stage !== renderedStage || placement.keys !== seatKey) setPlacement({ stage: renderedStage, keys: seatKey, points });
-  const mascots = useMemo(() => furnitureRoomMascots(seatKey ? seatKey.split("|") : [], points, scene.seats), [seatKey, points, scene]);
+  const mascots = useMemo(() => furnitureRoomMascots(seatKey ? seatKey.split("|") : [], points, scene.seats,
+    activeKey === null ? undefined : new Set(activeKey ? activeKey.split("|") : [])), [seatKey, activeKey, points, scene]);
   const [inspected, setInspected] = useState<string | null>(null);
   const focusedSeat = useRef<string | null>(null);
   const inspectedSeat = inspected ? seats.find(seat => `${seat.exam}:${seat.index}` === inspected) : undefined;
@@ -116,11 +119,14 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
 
   const Heading = standalone ? "h1" : "h2";
   const emptyMessage = !snapshot ? "勉強中の人数を表示できません"
-    : current ? "いま勉強中の人はいません" : "前回は勉強中の人はいませんでした";
+    : current ? daily ? EMPTY_STUDY_ROOM_MESSAGE : "いま勉強中の人はいません" : "前回は勉強中の人はいませんでした";
   return <div className="mx-auto w-full min-w-0 max-w-[800px] space-y-3 sm:space-y-4">
     <header className="flex min-w-0 items-center justify-between gap-2">
-      <Heading id="study-room-title" className="text-xl font-bold tracking-tight">自習室</Heading>
-      {snapshot && <p data-testid="study-room-total" className="whitespace-nowrap text-sm tabular-nums text-muted-foreground">{current ? "いま" : "前回"}<strong className="ml-1 text-foreground">{snapshot.count.toLocaleString("ja-JP")}</strong>人</p>}
+      <Heading id="study-room-title" className="text-xl font-bold tracking-tight">チワワの自習室</Heading>
+      {snapshot && <p data-testid="study-room-total" className="shrink-0 text-right text-sm tabular-nums text-muted-foreground">
+        {daily ? "今日" : current ? "いま" : "前回"}<strong className="ml-1 text-foreground">{(daily ?? snapshot).count.toLocaleString("ja-JP")}</strong>人
+        {daily && current && <span className="ml-2 whitespace-nowrap rounded-full bg-success-soft px-2 py-1 text-success-soft-foreground">いま {daily.activeCount.toLocaleString("ja-JP")}人</span>}
+      </p>}
     </header>
     {snapshot && <p className="text-right text-xs text-muted-foreground">{scene.name}</p>}
     <div role="region" aria-label="自習室の席" className="rounded-[20px]">
@@ -142,19 +148,19 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
         // A stable identity picks the point and visual variation; membership changes do not reflow survivors.
         const solo = seats.length === 1 && renderedStage === 0;
         const coordinates = { "--seat-x": `${solo ? 50 : point.x / scene.width * 100}%`, "--seat-y": `${solo ? 55 : point.y / sceneHeight * 100}%`, "--seat-width": `${solo ? 52 : point.width / scene.width * 100}%`, zIndex: Math.round(point.floorY) } as CSSProperties;
-        return <div key={key} data-testid="study-room-seat" data-seat-key={key} data-animate={motionVisible && visibleSeats.has(key)}
+        return <div key={key} data-testid="study-room-seat" data-seat-key={key} data-animate={motionVisible && visibleSeats.has(key) && (!daily || (current && seat.active))}
           onFocus={() => { focusedSeat.current = key; }} onBlur={() => { focusedSeat.current = null; }}
           style={coordinates}
           className="group/seat absolute left-[var(--seat-x)] top-[var(--seat-y)] aspect-square w-[var(--seat-width)] -translate-x-1/2 -translate-y-1/2 focus-within:z-[10000]!">
-          <StudyRoomSeat name={presenceExamName(seat.exam)!} index={seat.index} mascot={mascot} detail={seat.detail}
+          <StudyRoomSeat name={presenceExamName(seat.exam)!} index={seat.index} mascot={mascot} detail={seat.detail} active={Boolean(daily && current && seat.active)}
             inspected={inspected === key} onInspect={() => setInspected(current => current === key ? null : key)} />
         </div>;
       })}
       {!hasLearners && <div className="absolute inset-0 flex flex-col items-center justify-center px-3">
-        <RoomChihuahua src="/images/home/room-chihuahuas/study/curl-left.png" alt="" className="h-[53%] max-h-52 w-[42%]" />
+        <RoomChihuahua src={SLEEPING_ROOM_MASCOT} alt="" className="h-[53%] max-h-52 w-[42%]" />
         <p className="rounded-full bg-card px-4 py-2 text-center text-sm text-muted-foreground shadow-sm">{emptyMessage}</p>
       </div>}
-      {measured && measured.hidden > 0 && <span aria-label={`ほか${measured.hidden}人が勉強中`} className="absolute bottom-3 right-3 rounded-full border border-border bg-background px-3 py-1.5 text-sm font-semibold tabular-nums shadow-sm">+{measured.hidden}</span>}
+      {measured && measured.hidden > 0 && <span aria-label={`ほか${measured.hidden}人`} className="absolute bottom-3 right-3 z-[10000] rounded-full border border-border bg-background px-3 py-1.5 text-sm font-semibold tabular-nums shadow-sm">＋{measured.hidden.toLocaleString("ja-JP")}人</span>}
     </div>
     </div>
     <div aria-live="polite" className="empty:sr-only">

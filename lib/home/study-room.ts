@@ -1,21 +1,31 @@
-import { canonicalPresenceExam, type StudyPresenceSnapshot } from "@/lib/study-presence";
+import { canonicalPresenceExam, type StudyPresenceSnapshot, type StudyPresenceToday } from "@/lib/study-presence";
 import catalog from "./study-room-mascots.generated.json";
 import variety from "./study-room-variety.json";
 import type { HomeDomainId } from "./home-directory";
 
 /** Maximum illustrations, not a room capacity. */
 export const STUDY_ROOM_VISIBLE_LIMIT = 120;
+export const HOME_ROOM_VISIBLE_LIMIT = 30;
+export const SLEEPING_ROOM_MASCOT = "/images/home/study-room-mascots/generic-9.webp";
+export const EMPTY_STUDY_ROOM_MESSAGE = "まだ誰もいません。一番乗りしよう";
 export function roomStage(count: number) {
   return count >= 49 ? 3 + Math.ceil(count / 120) : count >= 25 ? 3 : count >= 13 ? 2 : count >= 6 ? 1 : 0;
 }
-export function measuredRoom(snapshot: StudyPresenceSnapshot, visibleLimit = STUDY_ROOM_VISIBLE_LIMIT) {
-  const seats: { exam: string; index: number }[] = [];
-  for (const row of snapshot.exams) {
-    const remaining = Math.min(row.count, visibleLimit - seats.length);
-    for (let i = 0; i < remaining; i++) seats.push({ exam: row.exam, index: i });
-    if (seats.length === visibleLimit) break;
+export function measuredRoom(snapshot: StudyPresenceSnapshot | StudyPresenceToday, visibleLimit = STUDY_ROOM_VISIBLE_LIMIT) {
+  const seats: { exam: string; index: number; active: boolean }[] = [];
+  const limit = Math.min(visibleLimit, STUDY_ROOM_VISIBLE_LIMIT);
+  const activeByExam = "activeCount" in snapshot ? new Map(snapshot.exams.map(row => [row.exam, row.activeCount])) : null;
+  // Fit active learners first so a busy qualification cannot hide a smaller one's current activity.
+  for (const active of [true, false]) {
+    for (const row of snapshot.exams) {
+      const activeCount = activeByExam?.get(row.exam) ?? row.count;
+      const start = active ? 0 : activeCount;
+      const end = Math.min(active ? activeCount : row.count, start + limit - seats.length);
+      for (let index = start; index < end; index++) seats.push({ exam: row.exam, index, active });
+      if (seats.length >= limit) break;
+    }
   }
-  return { seats, hidden: Math.max(0, snapshot.count - seats.length), stage: roomStage(snapshot.count) };
+  return { seats, hidden: Math.max(0, snapshot.count - seats.length), stage: roomStage(seats.length) };
 }
 
 export const MASCOT_VISIT_KEY = "study-room-mascot-visit:v1";
@@ -103,6 +113,16 @@ export function qualificationStudyArt(exam: string): string {
   const domain = (catalog.examDomains as Record<string, string>)[code];
   const pair = (catalog.exams as Record<string, Pair>)[code] ?? (catalog.domains as Record<string, Pair>)[domain];
   return pair?.study ?? "/images/home/study-room-mascots/generic-8.webp";
+}
+
+const restingPoses = ["nap", "tea", "yawn", "nap"] as const;
+export function presenceSeatMascot(exam: string, index: number, active: boolean): SeatMascot {
+  const mirrored = index % 2 === 1;
+  if (active) return { src: qualificationStudyArt(exam), state: "study", stateLabel: "勉強中", mirrored };
+  const idle = restingPoses[Math.floor(index / 2) % restingPoses.length];
+  const resting = idleArt(exam, idle) ?? idleArt(exam, "nap");
+  return resting ? { src: resting, state: "break", stateLabel: "ひと休み", mirrored }
+    : qualificationMascot(exam, { src: SLEEPING_ROOM_MASCOT, state: "break", stateLabel: "ひと休み", mirrored });
 }
 
 /** Idle moments every character can show at its desk (studying stays the default). */

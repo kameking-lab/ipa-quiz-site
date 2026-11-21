@@ -6,16 +6,17 @@ import { STUDY_ROOM_SCENES, studyRoomScene } from "@/lib/home/study-room-scenes"
 
 afterEach(() => { cleanup(); sessionStorage.clear(); localStorage.clear(); });
 
-it.each([[0, 0], [3, 0], [5, 0], [6, 1], [12, 1], [13, 2], [24, 2], [25, 3], [48, 3], [60, 4], [130, 5]])(
-  "%i learners draw exactly their chihuahuas at stage %i (including expanded halls)", (count, stage) => {
+it.each([[0, 0], [3, 0], [5, 0], [6, 1], [12, 1], [13, 2], [24, 2], [25, 3], [48, 3], [60, 4], [130, 4]])(
+  "%i learners draw up to 120 chihuahuas at stage %i", (count, stage) => {
     const snapshot = measuredPresence({ count, exams: count ? [{ exam: "fe", count }] : [] }, Date.now());
     const { container } = render(<StudyRoom snapshot={snapshot} suggestions={[]} current />);
     const scene = screen.getByTestId("study-room-scene");
     expect(scene).toHaveAttribute("data-stage", String(stage));
-    expect(screen.queryAllByTestId("study-room-seat")).toHaveLength(count);
-    expect(container.querySelectorAll(".study-mascot")).toHaveLength(count);
+    expect(screen.queryAllByTestId("study-room-seat")).toHaveLength(Math.min(120, count));
+    expect(container.querySelectorAll(".study-mascot")).toHaveLength(Math.min(120, count));
     expect(screen.getByTestId("study-room-total")).toHaveTextContent(`いま${count}人`);
-    expect(screen.queryByText(/^\+/)).not.toBeInTheDocument();
+    if (count > 120) expect(screen.getByText(`＋${count - 120}人`)).toBeInTheDocument();
+    else expect(screen.queryByText(/^＋/)).not.toBeInTheDocument();
     expect(screen.getByText(studyRoomScene(stage).name)).toBeInTheDocument();
   },
 );

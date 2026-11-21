@@ -2,11 +2,8 @@
 :global(#main-content):has(.home) { padding-bottom: 0; }
 .shortcuts {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: start;
+  grid-template-columns: minmax(0, 1fr);
   gap: 8px;
   margin-block: 12px 8px;
 }
-.shortcuts:has(> .directory[open]) { grid-template-columns: minmax(0, 1fr); }
-.shortcuts { border-top: 1px solid var(--hairline); }
 @media (min-width: 640px) { .home { padding-top: 16px; } }

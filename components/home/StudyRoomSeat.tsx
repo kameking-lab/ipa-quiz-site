@@ -14,16 +14,17 @@ export interface StudyRoomSeatDetail {
 }
 
 /** Presentation only: the anonymous presence aggregate currently has no per-learner metadata. */
-export function StudyRoomSeat({ name, index, mascot, detail, inspected, onInspect }: {
-  name: string; index: number; mascot: FurnitureMascot; detail?: StudyRoomSeatDetail;
+export function StudyRoomSeat({ name, index, mascot, detail, active = false, inspected, onInspect }: {
+  name: string; index: number; mascot: FurnitureMascot; detail?: StudyRoomSeatDetail; active?: boolean;
   inspected: boolean; onInspect: () => void;
 }) {
   const { art } = mascot;
   return <button type="button" title={name} aria-label={`${index + 1} ${name}のチワワを見る`} aria-pressed={inspected} onClick={onInspect}
-    data-premium={detail?.premium === true} data-mascot-state={mascot.state}
+    data-premium={detail?.premium === true} data-mascot-state={mascot.state} data-studying-now={active}
     className={cn("relative flex h-full w-full min-w-0 flex-col items-center justify-center rounded-full border-0 text-foreground outline-offset-[-3px] hover:bg-muted/50 focus-visible:outline-2 focus-visible:outline-primary",
       detail?.premium && "ring-1 ring-inset ring-amber-400/80")}>
     {detail?.premium && <Star aria-label="特等席" className="absolute right-1 top-1 z-10 size-3.5 fill-amber-300 text-amber-800 dark:text-amber-300" />}
+    {active && <span aria-hidden="true" className="absolute left-[12%] top-[18%] z-10 size-2 rounded-full border border-white bg-emerald-600 shadow-sm" />}
     <span className="study-mascot pointer-events-none absolute inset-0 block motion-reduce:animate-none" data-furniture-art={art.id} data-direction={art.direction}>
       {mascot.qualification ? <span className={cn("absolute inset-0 block", mascot.mirrored && "-scale-x-100")} style={{ rotate: `${mascot.turn}deg` }} data-qualification-art>
         {/* Complementary cutouts retain the qualification's original chair, clothes,

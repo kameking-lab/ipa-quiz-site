@@ -1,6 +1,7 @@
 import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, expect, it, vi } from "vitest";
 import { StudyRoom } from "@/components/home/StudyRoom";
+import { STUDY_ROOM_VISIBLE_LIMIT } from "@/lib/home/study-room";
 import { measuredPresence } from "@/lib/study-presence-contract";
 
 vi.mock("@/lib/home/study-room-mascots.generated.json", async importOriginal => ({ default: {
@@ -13,12 +14,13 @@ it.each([1, 5, 12, 24, 48, 120, 130])("seats most of %i learners at desks with t
   sessionStorage.setItem("study-room-mascot-visit:v1", "2");
   const snapshot = measuredPresence({ count, exams: [{ exam: "ip", count }] }, Date.now());
   const { container } = render(<StudyRoom snapshot={snapshot} suggestions={[]} />);
-  expect(container.querySelectorAll(".study-mascot")).toHaveLength(count);
+  const visible = Math.min(count, STUDY_ROOM_VISIBLE_LIMIT);
+  expect(container.querySelectorAll(".study-mascot")).toHaveLength(visible);
   const buttons = [...container.querySelectorAll('[data-mascot-state]')];
   const floor = buttons.filter(button => button.getAttribute('data-mascot-state') === 'away');
   const study = buttons.filter(button => button.getAttribute('data-mascot-state') === 'study');
-  expect(study.length / count).toBeGreaterThanOrEqual(.78);
-  expect(floor.length).toBeLessThanOrEqual(Math.floor(count * .1));
+  expect(study.length / visible).toBeGreaterThanOrEqual(.78);
+  expect(floor.length).toBeLessThanOrEqual(Math.floor(visible * .1));
   for (const button of buttons) {
     expect(button.querySelectorAll('.study-mascot')).toHaveLength(1);
     expect(button.querySelectorAll('[data-furniture-art]')).toHaveLength(1);
