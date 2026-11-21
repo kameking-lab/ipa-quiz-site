@@ -3819,7 +3819,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
 
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 60, label: "試験問題", categories: ["介護支援分野", "保健医療サービスの知識等", "福祉サービスの知識等"] }],
 
-    seasons: ["annual"], yearRange: { start: 2022, end: 2025 },
+    seasons: ["annual"], yearRange: { start: 2021, end: 2025 },
 
 },
   "kensetsu-kikai-seibi2": {
