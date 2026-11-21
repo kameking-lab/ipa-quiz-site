@@ -1,4 +1,4 @@
-import { parseStudyPresence, PRESENCE_POLL_MS, PRESENCE_WINDOW_MS, type StudyPresenceSnapshot } from "@/lib/study-presence";
+import { parseStudyPresence, parseStudyPresenceToday, PRESENCE_POLL_MS, PRESENCE_WINDOW_MS, type StudyPresenceSnapshot, type StudyPresenceToday } from "@/lib/study-presence";
 
 export const PRESENCE_STATE_EVENT = "study-presence-state";
 /** A newly mounted room/summary asks the existing publisher to replay its state without fetching. */
@@ -8,8 +8,9 @@ export const presenceRetryDelay = (failures: number) => PRESENCE_RETRY_MS[Math.m
 
 export interface MeasuredPresence extends StudyPresenceSnapshot {
   status: "measured";
-  /** count is retained for old clients; total is the room UI contract. */
+  /** The top-level totals and exams retain the rolling five-minute window. */
   total: number;
+  today?: StudyPresenceToday;
   measuredAt: string;
   validUntil: string;
   windowSeconds: number;
@@ -35,8 +36,8 @@ export type PresenceViewState =
 // Demo is an explicit UI-only mode. Neither API responses nor failures create it.
 export type PresenceRoomMode = PresenceViewState["mode"] | "demo";
 
-export function measuredPresence(snapshot: StudyPresenceSnapshot, measuredAt: number, expiresAt = Infinity): MeasuredPresence {
-  return { ...snapshot, status: "measured", total: snapshot.count,
+export function measuredPresence(snapshot: StudyPresenceSnapshot, measuredAt: number, expiresAt = Infinity, today?: StudyPresenceToday): MeasuredPresence {
+  return { ...snapshot, ...(today && { today }), status: "measured", total: snapshot.count,
     measuredAt: new Date(measuredAt).toISOString(), validUntil: new Date(Math.min(measuredAt + PRESENCE_POLL_MS, expiresAt)).toISOString(),
     windowSeconds: PRESENCE_WINDOW_MS / 1000 };
 }
@@ -52,7 +53,8 @@ export function parseMeasuredPresence(value: unknown, now = Date.now()): Measure
   if (!Number.isFinite(measuredAt) || !Number.isFinite(validUntil) || measuredAt > now + 5_000 ||
       validUntil <= measuredAt || validUntil - measuredAt > PRESENCE_POLL_MS) return null;
   if (new Date(measuredAt).toISOString() !== data.measuredAt || new Date(validUntil).toISOString() !== data.validUntil) return null;
-  return { ...snapshot, status: "measured", total: snapshot.count, measuredAt: data.measuredAt,
+  const today = parseStudyPresenceToday(data.today);
+  return { ...snapshot, ...(today && { today }), status: "measured", total: snapshot.count, measuredAt: data.measuredAt,
     validUntil: data.validUntil, windowSeconds: PRESENCE_WINDOW_MS / 1000 };
 }
 

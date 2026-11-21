@@ -6,6 +6,7 @@ import Link from "next/link";
 import { SourceRelationshipFooter } from "@/components/question-provenance/SourceRelationshipFooter";
 import { HomeFooterNavigation } from "@/components/HomeFooterNavigation";
 import "./globals.css";
+import "./p3.css";
 import { ThemeProvider, THEME_BOOTSTRAP_SCRIPT } from "@/components/theme-provider";
 import { SiteHeader } from "@/components/SiteHeader";
 import { AccountNavigationProvider } from "@/components/account/AccountNavigation";

@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { DailyLimitActions, MonthlyPrice, monthlyActionClass } from "@/components/billing/MonthlyOffer";
 import { SignedOutOnly, useAccountStatus } from "@/components/account/AccountNavigation";
 import { useCallback, useEffect, useState, lazy, Suspense } from "react";
 import { QuizPlayer } from "@/components/quiz/QuizPlayer";
@@ -50,7 +51,18 @@ function AuthorizedSingleContent({items,paper,material=false,initialId,pdfUrl=""
   const current=value?.id===id?value.data:null;
   return <main className="mx-auto max-w-4xl space-y-5 p-5"><h1>問題・教材の演習</h1><p>ウェブとアプリで共通の1日10問です。有料会員は無制限です。</p>
     {items.length>1&&<label>問題を選択<select value={id} onChange={e=>setId(e.target.value)}>{items.map(i=><option key={i.id} value={i.id}>{i.title}</option>)}</select></label>}
-    {error?<section role="alert"><p>{error==="daily_limit"?"本日の無料10問を使い切りました。日本時間0時に更新されます。":error==="sign_in_required"?accountStatus === "unauthenticated" ? "無料枠を端末間で共有するためログインが必要です。" : "利用状態を確認できません。もう一度お試しください。":error}</p><SignedOutOnly><a href={`/auth/signin?callbackUrl=${encodeURIComponent(typeof location==="undefined"?"/quiz?mode=random":location.pathname+location.search)}`}>ログイン・本人確認</a></SignedOutOnly><p><Link href="/billing">有料会員・購入復元</Link></p><button onClick={()=>setAttempt(n=>n+1)}>再確認</button></section>:!current?<p role="status">利用枠を確認しています…</p>:material?<Suspense fallback={<p>教材を準備しています…</p>}><MaterialReader key={id} material={current as Material}/></Suspense>:<QuizPlayer key={id} question={current as Question} index={0} total={1} mode="year" exam={(current as Question).exam} backHref="/" onNext={next}/>}
+    {error ? <section role="alert" className="space-y-3">
+      <p>{error === "daily_limit" ? "本日の無料10問を使い切りました。日本時間0時に更新されます。"
+        : error === "sign_in_required" ? accountStatus === "unauthenticated" ? "無料枠を端末間で共有するためログインが必要です。" : "利用状態を確認できません。もう一度お試しください。" : error}</p>
+      <SignedOutOnly><a href={`/auth/signin?callbackUrl=${encodeURIComponent(typeof location==="undefined"?"/quiz?mode=random":location.pathname+location.search)}`}>ログイン・本人確認</a></SignedOutOnly>
+      {error === "daily_limit" ? <>
+        <MonthlyPrice />
+        <DailyLimitActions>
+          <Link href="/billing" className={monthlyActionClass + " bg-primary text-primary-foreground hover:bg-primary/90"}>有料会員・購入復元</Link>
+        </DailyLimitActions>
+      </> : <p><Link href="/billing">有料会員・購入復元</Link></p>}
+      <button onClick={()=>setAttempt(n=>n+1)}>再確認</button>
+    </section> : !current?<p role="status">利用枠を確認しています…</p>:material?<Suspense fallback={<p>教材を準備しています…</p>}><MaterialReader key={id} material={current as Material}/></Suspense>:<QuizPlayer key={id} question={current as Question} index={0} total={1} mode="year" exam={(current as Question).exam} backHref="/" onNext={next}/>}
     {items.length>1&&<nav className="flex gap-4"><button disabled={index<=0} onClick={()=>setId(items[index-1].id)}>前の問題</button><button disabled={index+1>=items.length} onClick={next}>次の問題</button></nav>}
   </main>;
 }

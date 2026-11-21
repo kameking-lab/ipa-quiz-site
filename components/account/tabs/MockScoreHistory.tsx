@@ -13,9 +13,12 @@ import type { MockScore } from "@/lib/learning/mock-scores";
 import type { ExamCode } from "@/lib/questions/types";
 import { getMockExamHistory, type MockExamResult } from "@/lib/mock-exam/storage";
 import { mockReviewHref } from "@/lib/mock-exam/review";
+import { QualificationSelect } from "@/components/qualifications/QualificationSelect";
+
+const examOptions = ALL_QUIZ_EXAM_CODES.map(key => ({ key, name: examLabel(key) }));
 
 export function MockScoreHistory() {
-  const [exam, setExam] = React.useState<ExamCode>("ap");
+  const [exam, setExam] = React.useState<ExamCode | "">("ap");
   const [scores, setScores] = React.useState<MockScore[]>([]);
   const [results, setResults] = React.useState<MockExamResult[]>([]);
 
@@ -39,20 +42,9 @@ export function MockScoreHistory() {
         </CardHeader>
         <CardContent>
           <div className="flex flex-col gap-3 sm:flex-row">
-            <label className="flex-1">
-              <span className="text-xs text-zinc-500 dark:text-zinc-400">対象試験</span>
-              <select
-                value={exam}
-                onChange={(e) => setExam(e.target.value as ExamCode)}
-                className="mt-1 block min-h-11 w-full min-w-0 rounded-xl border border-zinc-300 bg-white px-3 py-2 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring dark:border-zinc-700 dark:bg-zinc-900"
-              >
-                {ALL_QUIZ_EXAM_CODES.map((c) => (
-                  <option key={c} value={c}>
-                    {examLabel(c)}
-                  </option>
-                ))}
-              </select>
-            </label>
+            <QualificationSelect items={examOptions} value={exam} onChange={value => setExam(value as ExamCode | "")}
+              label="対象試験" emptyLabel="資格を選ぶ" className="flex-1 text-xs text-zinc-500 dark:text-zinc-400"
+              fieldClass="mt-1 block min-h-11 w-full min-w-0 rounded-xl border border-zinc-300 bg-white px-3 py-2 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring dark:border-zinc-700 dark:bg-zinc-900" />
           </div>
         </CardContent>
       </Card>
@@ -116,10 +108,10 @@ export function MockScoreHistory() {
               })}
             </ul>
           )}
-          <details className="mt-2">
+          {exam && <details className="mt-2">
             <summary className="min-h-11 cursor-pointer py-3 text-sm">模試を始める</summary>
             <Link href={`/mock-exam?exam=${exam}`} className="inline-flex min-h-11 items-center text-sm text-primary underline">模試を受ける</Link>
-          </details>
+          </details>}
         </CardContent>
       </Card>
 

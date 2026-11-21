@@ -145,7 +145,7 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
         }
         // An assessed blank still updates existing learning history/SRS, but
         // is not an explicit complete answer for the pet. No completion bonus.
-        pet.mock(q, ans, isCorrect);
+        pet.mock(q, ans);
       }
       recordStudyOnDate();
       const answered = latestAnswers.filter((a) => a !== undefined).length;

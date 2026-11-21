@@ -10,9 +10,8 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
 export default async function SearchPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
   const params = await searchParams;
   const hasQuery = ["q", "exam", "year", "season", "category", "difficulty", "calc", "sort", "recent"].some((key) => Boolean(params[key]));
-  return <main className="study-column flex-1 py-6">
-    <h1 className="mb-4 text-2xl font-bold">さがす</h1>
-    <BrowseQualifications domains={getHomeDirectory()} />
+  return <main className="p3-page p3-search study-column flex-1 pb-6">
+    <BrowseQualifications domains={getHomeDirectory()} illustrated />
     <details open={hasQuery || undefined} className="mt-6 rounded-lg border border-hairline bg-card px-4">
       <summary className="study-focus min-h-12 cursor-pointer py-3.5 text-sm font-semibold">問題文で探す</summary>
       <div className="pb-4">

@@ -50,7 +50,7 @@ export function buildCitationMetas(
         // Gate through getSafePdfUrl so a decommissioned jitec 出典 (dead for
         // ~13k questions) degrades to the live IPA index, never a dead link in
         // a copilot citation card. Fall back to the internal /q url otherwise.
-        fullSourceUrl: q?.sourcePdfUrl ? getSafePdfUrl(q.sourcePdfUrl) : p.doc.url,
+        fullSourceUrl: q?.sourcePdfUrl ? getSafePdfUrl(q.sourceArchiveUrl ?? q.sourcePdfUrl) : p.doc.url,
         snippet: shortenSnippet(q?.explanation ?? p.doc.text),
         score: p.score,
         rerankScore: p.rerankScore,
@@ -64,6 +64,7 @@ export function buildCitationMetas(
               yearSeasonLabel: questionSourceEdition(q),
               qNumber: q.qNumber,
               category: q.category,
+              ...(q.sourceArchiveUrl && { archivedSource: true }),
             }
           : undefined,
       };

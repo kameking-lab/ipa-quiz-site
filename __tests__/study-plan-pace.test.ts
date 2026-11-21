@@ -1,127 +1,106 @@
 import { describe, expect, it } from "vitest";
-import { calculatePace, createPacePlan, dayNumber, mastery, recommendedRange, refreshThinRange, selectTodayQuestions, weekStart,
+import { calculatePace, createPacePlan, dayNumber, latestAnswers, planOldestYear, rangeOptions, weakQuestions,
   type AnswerAttempt, type PlanQuestion } from "@/lib/study-plan/pace";
 import { createActiveClock, dailyLearningPoints, japanDate, mergeLearningActions, type LearningAction } from "@/lib/study-plan/activity";
 import { passingLineForExam, planOutfitForExam, planPolicyWarnings } from "@/lib/study-plan/policy";
 
-const questions = (count: number, year = 2026): PlanQuestion[] => Array.from({ length: count }, (_, i) => ({ id: `ap-${year}-${i}`, exam: "ap", year }));
-const makePlan = (count = 100, examDate: string | null = "2026-12-01") => createPacePlan({ id: "p1", exam: "ap", sessionId: "ap-next",
-  startDate: "2026-11-01", examDate }, questions(count), "2026-11-01T00:00:00+09:00");
-const answers = (count: number, date = "2026-11-15"): AnswerAttempt[] => questions(count).map(q => ({ id: q.id, correct: true, at: Date.parse(`${date}T12:00:00+09:00`) }));
+const exam = "ap";
+const today = "2026-11-16";
+const now = Date.parse(today + "T12:00:00+09:00");
+const catalog = (count: number): PlanQuestion[] => Array.from({ length: count }, (_, i) => ({ id: "q" + i, exam, year: 2026 - i }));
+const build = (bank: PlanQuestion[], examDate: string | null = "2026-11-26", studyWeekdays?: number[], year?: number) =>
+  createPacePlan({ id: "p", exam, examDate, sessionId: null, startDate: today, studyWeekdays }, bank, new Date(now).toISOString(), year);
+const answer = (id: string, correct: boolean, at = now - 1000): AnswerAttempt => ({ id, correct, at });
 
-describe("recommended scope and immutable plan snapshots", () => {
-  it.each([0, 199, 200, 500])("includes all distinct problems for %i questions", count => {
-    const source = questions(count);
-    expect(recommendedRange([...source, ...source], "ap")).toHaveLength(count);
+describe("catalog and saved range", () => {
+  it.each([[0, [], 0], [3, [3], 3], [5, [5], 5], [8, [5, 8], 8], [10, [5, 10], 5], [12, [5, 10], 5]] as const)(
+    "offers available distinct years and the recommended selection for %i years", (count, sizes, recommended) => {
+      const options = rangeOptions(catalog(count), exam);
+      expect(options.map(option => option.count)).toEqual(sizes);
+      expect(options.find(option => option.recommended)?.count ?? 0).toBe(recommended);
+    },
+  );
+  it("counts spring and fall as one year, skips missing years and deduplicates IDs", () => {
+    const bank = [...catalog(6), { id: "fall", exam, year: 2026 }, { id: "q0", exam, year: 2026 }].filter(q => q.year !== 2025);
+    expect(rangeOptions(bank, exam)).toEqual([{ oldestYear: 2021, count: 5, total: 6, all: true, recommended: true }]);
   });
-  it("uses the newest five distinct available years above 500, never other exams", () => {
-    const bank = Array.from({ length: 8 }, (_, i) => questions(100, 2026 - i)).flat();
-    expect(recommendedRange([...bank, { id: "foreign", exam: "fe", year: 2030 }], "ap")).toHaveLength(500);
-    expect(new Set(recommendedRange(bank, "ap").map(q => q.year))).toEqual(new Set([2026, 2025, 2024, 2023, 2022]));
+  it("keeps the oldest year on weekday edits and includes additions and withdrawals immediately", () => {
+    const bank = catalog(12);
+    const initial = build(bank);
+    const next = [{ id: "new", exam, year: 2027 }, { id: "added", exam, year: 2023 },
+      { id: "outside", exam, year: 2020 }, { id: "foreign", exam: "ip", year: 2025 }, ...bank.slice(1)];
+    const edited = { ...initial, studyWeekdays: [1] };
+    expect(calculatePace(edited, next, [], today, now)).toMatchObject({ oldestYear: 2022, total: 6, studyDays: 2, target: 3 });
+    const ten = build(bank, null, [1], 2017);
+    expect(calculatePace(ten, bank, [], today, now).total).toBe(10);
+    expect(calculatePace(build(bank, null, [1], 2022), bank, [], today, now).total).toBe(5);
   });
-  it("freezes normal plans when problems are added or removed", () => {
-    const plan = makePlan(200);
-    expect(refreshThinRange(plan, questions(500), "2026-11-16")).toBe(plan);
-    expect(refreshThinRange(plan, [], "2026-11-16")).toBe(plan);
+  it("recovers old rows from matching IDs and detects missing ranges", () => {
+    const bank = catalog(6);
+    const plan = build(bank);
+    plan.range.years = [];
+    expect(planOldestYear(plan, bank)).toBe(2021);
+    expect(planOldestYear(plan, [{ id: "q0", exam: "ip", year: 2026 }])).toBeNull();
   });
-  it("expands initially thin plans once/week and grants grace through Sunday", () => {
-    const plan = makePlan(199);
-    expect(refreshThinRange(plan, questions(210), "2026-11-01")).toBe(plan);
-    const expanded = refreshThinRange(plan, questions(210), "2026-11-02");
-    expect(expanded.range.questionIds).toHaveLength(210);
-    expect(expanded.range.initialCount).toBe(199);
-    expect(expanded.range.graceUntil).toBe("2026-11-09");
-    expect(refreshThinRange(expanded, questions(220), "2026-11-08")).toBe(expanded);
-    const second = refreshThinRange(expanded, questions(220), "2026-11-09");
-    expect(second.range.questionIds).toHaveLength(220);
-    expect(plan.range.questionIds).toHaveLength(199);
-    expect(refreshThinRange(second, [], "2026-11-16").range.questionIds).toHaveLength(220);
-  });
-  it.each(["2026-02-30", "2025-02-29", "not-a-date", "2026-1-01"])("rejects invalid date %s", date => {
+  it.each(["2026-02-30", "2025-02-29", "not-a-date", "2026-1-01"])("rejects invalid dates (%s)", date => {
     expect(dayNumber(date)).toBeNull();
-    expect(() => createPacePlan({ id: "p", exam: "new", sessionId: null, startDate: date, examDate: null }, [], "2026-11-17")).toThrow();
+    expect(() => build([], date)).toThrow();
   });
-  it("handles leap dates and year-crossing Mondays", () => {
+  it("uses the JST date on a saved plan even before UTC midnight", () => {
     expect(dayNumber("2024-02-29")).not.toBeNull();
-    expect(weekStart("2027-01-03")).toBe("2026-12-28");
-  });
-  it("anchors the captured scope to creation day, independent of the plan start", () => {
-    const plan = createPacePlan({ id: "future", exam: "ap", sessionId: null, startDate: "2026-12-01", examDate: null },
-      questions(10), "2026-11-17T23:30:00Z");
+    const plan = createPacePlan({ id: "p", exam, sessionId: null, startDate: today, examDate: null }, catalog(3), "2026-11-17T23:30:00Z");
     expect(plan.range.capturedOn).toBe("2026-11-18");
-    expect(plan.range.lastExpansionWeek).toBe("2026-11-16");
-    expect(refreshThinRange(plan, questions(20), "2026-11-22")).toBe(plan);
   });
 });
 
-describe("last-answer mastery and pace", () => {
-  it("uses latest time, not array order, and removes a failed confirmation", () => {
-    const entries = [...answers(10), { ...answers(1)[0], correct: false, at: Date.parse("2026-11-16T12:00:00+09:00") }];
-    expect(mastery(makePlan().range.questionIds, entries.reverse()).mastered).toBe(9);
-    expect(mastery(["ap-2026-0", "ap-2026-0"], entries).percent).toBe(0);
+describe("one calculation for mastery, weakness and pace", () => {
+  const states = [undefined, true, false].flatMap(correct => [false, true].map(marked => ({ correct, marked })));
+  it.each(states)(
+    "latest=$correct mark=$marked", ({ correct, marked }) => {
+      const bank = catalog(1), attempts = correct === undefined ? [] : [answer("q0", correct)];
+      expect(calculatePace(build(bank), bank, attempts, today, now).mastered).toBe(correct === true ? 1 : 0);
+      expect(weakQuestions(bank, exam, attempts, marked ? ["q0"] : [], now)).toHaveLength(correct === false || marked ? 1 : 0);
+    },
+  );
+  it("handles resend, incorrect-correct-incorrect, ties, order and future answers", () => {
+    const wrong = answer("q0", false), right = answer("q0", true, now - 500);
+    const future = answer("q0", true, now + 1), wrongAgain = answer("q0", false, now - 500);
+    const bank = catalog(3), plan = build(bank);
+    expect(calculatePace(plan, bank, [wrong, right, right], today, now).mastered).toBe(1);
+    for (const attempts of [[wrong, right, wrongAgain, future], [future, wrongAgain, right, wrong]]) {
+      expect(latestAnswers(attempts, now).get("q0")).toBe(wrongAgain);
+      expect(calculatePace(plan, bank, attempts, today, now).mastered).toBe(0);
+    }
   });
-  it("does not count future records", () => {
-    expect(calculatePace(makePlan(), answers(100, "2026-12-02"), "2026-11-15").percent).toBe(0);
+  it("puts incorrect questions first, keeps order within a year, and excludes correct/out-of-range/foreign questions", () => {
+    const bank = [...catalog(12), { id: "foreign", exam: "ip", year: 2026 }, { id: "spring", exam, year: 2025 }];
+    const attempts = [answer("q0", true), answer("spring", false), answer("q4", false), answer("q8", false), answer("foreign", false)];
+    const pace = calculatePace(build(bank), bank, attempts, today, now);
+    expect(pace.remainingIds).toEqual(["spring", "q4", "q1", "q2", "q3"]);
+    expect(weakQuestions(bank, exam, attempts, [], now).map(row => row.question.id)).toEqual(["spring", "q4", "q8"]);
   });
-  it.each([[45, "on-track"], [55, "on-track"], [44, "behind"], [56, "ahead"]] as const)("judges %i%% at the exact ±5pt boundaries", (count, judgment) => {
-    const pace = calculatePace(makePlan(), answers(count), "2026-11-16");
-    expect(pace.idealPercent).toBe(50);
-    expect(pace.judgment).toBe(judgment);
+  it("counts actual weekdays and recalculates the current goal after answers and missed days", () => {
+    const bank = Array.from({ length: 120 }, (_, i) => ({ id: "q" + i, exam, year: 2026 }));
+    const plan = build(bank);
+    const first = bank.slice(0, 4).map(q => answer(q.id, true));
+    const more = bank.slice(4, 10).map(q => answer(q.id, true, now));
+    expect(calculatePace(plan, bank, first, today, now)).toMatchObject({ remaining: 116, studyDays: 10, target: 12 });
+    expect(calculatePace(plan, bank, [...first, ...more], today, now).target).toBe(11);
+    expect(calculatePace(plan, bank, first, "2026-11-18", now).target).toBe(15);
+    expect(calculatePace({ ...plan, studyWeekdays: [0, 6] }, bank, first, today, now))
+      .toMatchObject({ studyDays: 2, target: 58, nextWeekday: 6, scheduledToday: false });
+    expect(calculatePace({ ...plan, studyWeekdays: [1, 3, 5] }, bank, first, today, now))
+      .toMatchObject({ studyDays: 5, nextWeekday: 1, scheduledToday: true });
   });
-  it("starts at 0 ideal and ends at 100 on the exam day", () => {
-    expect(calculatePace(makePlan(), [], "2026-11-01").idealPercent).toBe(0);
-    const today = calculatePace(makePlan(), answers(50), "2026-12-01");
-    expect(today).toMatchObject({ idealPercent: 100, daysRemaining: 0, requiredQuestionsPerDay: 50, forecastPercent: 50 });
-  });
-  it("does not divide by zero when the start is on/after the exam", () => {
-    expect(calculatePace(makePlan(100, "2026-11-01"), [], "2026-11-01").idealPercent).toBe(100);
-    expect(calculatePace(makePlan(100, "2026-10-31"), [], "2026-11-01").requiredQuestionsPerDay).toBeNull();
-  });
-  it("keeps a past exam distinct from an actionable target", () => {
-    expect(calculatePace(makePlan(), [], "2026-12-02")).toMatchObject({ daysRemaining: -1, forecastPercent: null, requiredQuestionsPerDay: null });
-  });
-  it("supports on-demand/no schedule without inventing a date", () => {
-    expect(calculatePace(makePlan(100, null), answers(10), "2026-11-17")).toMatchObject({ percent: 10, idealPercent: null,
-      judgment: "unscheduled", forecastPercent: null, requiredQuestionsPerDay: null });
-  });
-  it("handles zero questions and all correct without Infinity/NaN", () => {
-    expect(calculatePace(makePlan(0), [], "2026-11-17")).toMatchObject({ percent: 0, total: 0, requiredQuestionsPerDay: 0, forecastPercent: null });
-    expect(calculatePace(makePlan(), answers(100), "2026-11-17")).toMatchObject({ percent: 100, requiredQuestionsPerDay: 0, forecastPercent: 100 });
-  });
-  it("predicts from net mastery gained over the last 14 calendar days", () => {
-    const pace = calculatePace(makePlan(), [...answers(10, "2026-11-01"), ...answers(24, "2026-11-17")], "2026-11-17");
-    expect(pace.gainPerDay).toBe(1);
-    expect(pace.forecastPercent).toBe(38);
-    expect(pace.requiredQuestionsPerDay).toBe(6);
-    expect(calculatePace(makePlan(), answers(5, "2026-11-01"), "2026-11-01").forecastPercent).toBeNull();
-  });
-  it("does not mark a thin-plan supplement as behind during its grace week", () => {
-    const plan = refreshThinRange(makePlan(10), questions(100), "2026-11-16");
-    expect(calculatePace(plan, [], "2026-11-22").judgment).toBe("on-track");
-    expect(calculatePace(plan, [], "2026-11-23").judgment).toBe("behind");
-  });
-});
-
-describe("today's problem composition", () => {
-  it("prioritizes due incorrect, resume, new; inserts 10% old correct questions", () => {
-    const plan = makePlan();
-    const batch = selectTodayQuestions(plan, questions(101), answers(10), 10, ["ap-2026-20"], "ap-2026-21");
-    expect(batch).toHaveLength(10);
-    expect(batch.slice(0, 2)).toEqual(["ap-2026-20", "ap-2026-21"]);
-    expect(batch.filter(id => answers(10).some(answer => answer.id === id))).toHaveLength(1);
-    expect(new Set(batch).size).toBe(10);
-  });
-  it("allows later supplements without increasing a frozen denominator", () => {
-    const plan = makePlan(200);
-    const result = selectTodayQuestions(plan, questions(201), answers(200), 10);
-    expect(result).toContain("ap-2026-200");
-    expect(plan.range.questionIds).toHaveLength(200);
-  });
-  it("supports 0 allowance, empty banks and all-correct thin banks", () => {
-    expect(selectTodayQuestions(makePlan(), questions(100), [], 0)).toEqual([]);
-    expect(selectTodayQuestions(makePlan(), [], [], 10)).toEqual([]);
-    expect(selectTodayQuestions(makePlan(3), questions(3), answers(3), 10)).toHaveLength(3);
-    expect(selectTodayQuestions(makePlan(), questions(100), [], Infinity)).toEqual([]);
+  it("handles exam eve, exam day, past exam, no date, empty scope and completion", () => {
+    const bank = catalog(3), plan = build(bank, "2026-11-17", [1]);
+    expect(calculatePace(plan, bank, [], today, now)).toMatchObject({ target: 3, studyDays: 1 });
+    expect(calculatePace(plan, bank, [], "2026-11-17", now)).toMatchObject({ target: null, daysRemaining: 0 });
+    expect(calculatePace(plan, bank, [], "2026-11-18", now)).toMatchObject({ target: null, daysRemaining: -1 });
+    expect(calculatePace({ ...plan, examDate: null }, bank, [], today, now)).toMatchObject({ target: null, daysRemaining: null });
+    expect(calculatePace(plan, [], [], today, now)).toMatchObject({ target: null, complete: false });
+    expect(calculatePace({ ...plan, examDate: null }, bank, bank.map(q => answer(q.id, true)), today, now))
+      .toMatchObject({ complete: true, remaining: 0, target: null });
   });
 });
 

@@ -85,7 +85,7 @@ export default function PrivacyPage() {
           <h1 className="text-balance text-2xl font-bold leading-snug tracking-tight text-foreground sm:text-3xl">
             プライバシーポリシー
           </h1>
-          <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年11月17日</p>
+          <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年11月21日</p>
           <p className="mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
             過去問AI（以下「本サービス」）は、ユーザーのプライバシーを尊重し、
             個人情報の適切な取り扱いに努めます。
@@ -204,12 +204,12 @@ export default function PrivacyPage() {
               PostHog は <code className="rounded bg-zinc-100 px-1 text-xs dark:bg-zinc-800">localStorage</code> に匿名 ID を保存してセッションを識別します。
             </p>
             <p>
-              現在の利用人数を表示するため、表示中のページから匿名のブラウザ識別子と最終操作からの経過時間を送信します。
-              識別子はブラウザに保存し、日ごとに更新します。サーバーはハッシュ化した識別子・最終利用時刻・学習中の資格を保持し、
-              直近5分の利用を集計します。期限を過ぎた記録は集計対象から外れます。書き込み時に、前回の清掃開始から15分以上経過していれば削除処理を試みます（書き込みがない間や処理失敗時には削除が遅れます）。
+              自習室の人数を集計するため、問題に回答すると、ブラウザは匿名の識別子と資格、回答からの経過時間を送信します。
+              識別子はブラウザに保存し、日ごとに更新します。サーバーには識別子のハッシュと最新の回答時刻・資格を保存します。
+              日本時間の午前0時以降に回答したブラウザを、最後に回答した資格ごとに集計します。このうち、直近5分に回答した人数を「いま」と表示します。
+              記録の書き込みに合わせて15分間隔で、日本時間の前日午前0時より古い記録を削除します。書き込みがない間や削除に失敗した場合は、記録が残ることがあります。
               iPhoneアプリ内ではこの計測を行いません。
               氏名・メールアドレス・回答内容はこの集計に含めません。
-              この説明はアクセス解析に関するものです。
             </p>
             <p>
               本文と出典の確認記録がある学習記事の末尾を <strong>Google AdSense</strong> の広告対象とします。確認記録のない資格トップ・記事には広告枠を表示しません。

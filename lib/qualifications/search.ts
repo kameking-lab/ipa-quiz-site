@@ -62,6 +62,7 @@ export function searchQualifications<T extends SearchableQualification>(
   const prefixes: T[] = [];
   const parts: T[] = [];
   const exact = new Set<T>();
+  const matchingCandidates = new Map<T, Map<SearchableQualification, boolean>>();
   const isShortAbbreviation = /^[a-z]{1,2}$/.test(term);
 
   for (const [item, candidate] of items.flatMap(item => [item, ...(item.children ?? [])].map(candidate => [item, candidate] as const))) {
@@ -80,17 +81,24 @@ export function searchQualifications<T extends SearchableQualification>(
 
     // Keep existing hits in their original order. A short abbreviation such as FP
     // has to match the whole alias to rank above existing substring hits like CFP.
+    let matches: T[] | undefined;
     if ((!isShortAbbreviation || !isExact) && legacyTerm && legacyText(display, surface).includes(legacyTerm)) {
-      legacy.push(item);
+      matches = legacy;
     } else if (exactName) {
-      exactNames.push(item);
+      matches = exactNames;
     } else if (exactAlias) {
-      exactAliases.push(item);
+      matches = exactAliases;
     } else if (term && !isShortAbbreviation) {
       const terms = [name, abbr, entry?.name ?? "", ...(entry?.terms ?? []), ...extraTerms];
-      if (terms.some((value) => value.startsWith(term))) prefixes.push(item);
+      if (terms.some((value) => value.startsWith(term))) matches = prefixes;
       else if (terms.some((value) => value.includes(term)) ||
-        (extraTerms.length > 0 && words.length > 1 && words.every(word => terms.some(value => value.includes(word))))) parts.push(item);
+        (extraTerms.length > 0 && words.length > 1 && words.every(word => terms.some(value => value.includes(word))))) matches = parts;
+    }
+    if (matches) {
+      matches.push(item);
+      const candidates = matchingCandidates.get(item) ?? new Map<SearchableQualification, boolean>();
+      candidates.set(candidate, isExact);
+      matchingCandidates.set(item, candidates);
     }
   }
 
@@ -98,8 +106,14 @@ export function searchQualifications<T extends SearchableQualification>(
     ? [...exactNames, ...exactAliases, ...legacy]
     : [...legacy, ...exactNames, ...exactAliases, ...prefixes, ...parts];
   const uniqueMatches = [...new Set(matches)];
-  if (surface !== "home") return uniqueMatches;
-
   // Keep the home preview compact, but show every exact candidate for a shared alias.
-  return uniqueMatches.filter((item, index) => index < 6 || exact.has(item));
+  return uniqueMatches.filter((item, index) => surface !== "home" || index < 6 || exact.has(item)).map(item => {
+    const candidates = matchingCandidates.get(item);
+    if (!candidates || candidates.has(item)) return item;
+    // An exact section name can also be a substring of its sibling (e.g. 教養区分以外).
+    const exactChildren = [...candidates].filter(([, isExact]) => isExact);
+    const child = exactChildren.length === 1 ? exactChildren[0][0]
+      : candidates.size === 1 ? candidates.keys().next().value : undefined;
+    return child ? { ...item, ...child, children: undefined } : item;
+  });
 }

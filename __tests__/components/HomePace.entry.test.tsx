@@ -1,10 +1,12 @@
-import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { act, cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { HomePace } from "@/components/home/pace/HomePace";
 import type { HomeDirectoryDomain } from "@/lib/home/home-directory";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { createPacePlan } from "@/lib/study-plan/pace";
 import { listPacePlans, savePacePlan } from "@/lib/study-plan/pace-storage";
+import { createHistoryStore } from "@/lib/storage/history";
+import { PlanCreateSheet } from "@/components/home/pace/PlanCreateSheet";
 
 const router = vi.hoisted(() => ({ replace: vi.fn(), push: vi.fn() }));
 vi.mock("next/navigation", () => ({ useRouter: () => router }));
@@ -28,6 +30,29 @@ beforeEach(() => {
 afterEach(() => { cleanup(); localStorage.clear(); sessionStorage.clear(); vi.unstubAllGlobals(); });
 
 describe("home plan entry", () => {
+  it("refreshes an open preview after grading and at JST midnight without losing the saved appointment", async () => {
+    vi.useFakeTimers({ toFake: ["Date"] });
+    try {
+      vi.setSystemTime(new Date("2026-11-17T23:59:00+09:00"));
+      const questions = Array.from({ length: 6 }, (_, i) => ({ ...catalog[0], id: "ip-" + i }));
+      const editing = { ...plan(), sessionId: "registered-session", registered: true, examDate: "2026-11-20",
+        registration: { label: "受験回", start: null, deadline: null, resultDate: null, sourceUrl: null, estimated: false } };
+      vi.mocked(fetch).mockImplementation(async url => String(url).includes("schedule") ? new Response(null, { status: 503 })
+        : Response.json(String(url).includes("catalog") ? { questions } : { entitled: false }));
+      render(<PlanCreateSheet embedded open editing={editing} initialExam="ip" items={domains[0].featured}
+        onOpenChange={() => {}} onCreated={() => {}} />);
+      expect(await screen.findByText("残り6問 ÷ 勉強日3日")).toBeVisible();
+      act(() => { createHistoryStore().record({ id: questions[0].id, at: Date.now(), correct: true, selected: "ア" }); });
+      expect(screen.getByText("残り5問 ÷ 勉強日3日")).toBeVisible();
+      vi.setSystemTime(new Date("2026-11-18T00:00:00+09:00"));
+      act(() => window.dispatchEvent(new Event("focus")));
+      expect(await screen.findByText("残り5問 ÷ 勉強日2日")).toBeVisible();
+      fireEvent.click(screen.getByRole("radio", { name: "平日だけ" }));
+      fireEvent.click(screen.getByRole("button", { name: "変更を保存" }));
+      expect(listPacePlans()[0]).toMatchObject({ id: editing.id, sessionId: editing.sessionId, registered: true,
+        registration: editing.registration, studyWeekdays: [1, 2, 3, 4, 5] });
+    } finally { vi.useRealTimers(); }
+  });
   it("finds IT Passport by nickname and keeps its existing destination", async () => {
     render(<HomePace domains={domains} planExamKeys={["ip", "fe"]} />);
     const search = await screen.findByRole("searchbox", { name: "資格名・略称で検索" });
@@ -41,9 +66,12 @@ describe("home plan entry", () => {
       { key: "chori-gunma", name: "調理師試験（群馬県）", href: "/chori-gunma", questionCount: 60, periodLabel: "1期分" },
     ] };
     render(<HomePace domains={[regional]} planExamKeys={["ip", "chori-hokkaido", "chori-gunma"]} />);
-    fireEvent.change(screen.getByRole("searchbox", { name: "資格名・略称で検索" }), { target: { value: "北海道" } });
+    const search = screen.getByRole("searchbox", { name: "資格名・略称で検索" });
+    fireEvent.change(search, { target: { value: "調理師" } });
     expect(screen.getByRole("link", { name: "調理師試験（都道府県別 2）" })).toHaveAttribute("href", "/qualifications/chori");
-    fireEvent.click(screen.getByRole("button", { name: "試験日を決めると、チワワが走り出す" }));
+    fireEvent.change(search, { target: { value: "北海道 調理師" } });
+    expect(screen.getByRole("link", { name: "調理師試験（北海道）" })).toHaveAttribute("href", "/chori-hokkaido");
+    fireEvent.click(screen.getByRole("button", { name: "学習計画を作る" }));
     fireEvent.change(screen.getByLabelText("受ける資格"), { target: { value: "group:chori" } });
     expect(screen.queryByLabelText("受験日")).not.toBeInTheDocument();
     const child = screen.getByLabelText("地域");
@@ -65,10 +93,28 @@ describe("home plan entry", () => {
       expect(screen.queryByRole("heading", { name: "試験が近い資格" })).not.toBeInTheDocument();
     }
     expect(screen.getByRole("searchbox", { name: "資格名・略称で検索" })).toHaveAttribute("placeholder", returning ? "ほかの資格をさがす" : "受ける資格は？");
-    expect(screen.getByRole("img", { name: "進み具合0%、試験日未設定" })).toBeVisible();
-    fireEvent.click(screen.getByRole("button", { name: returning ? "試験日を決める" : "試験日を決めると、チワワが走り出す" }));
-    expect(screen.getByRole("dialog", { name: "学習計画を作成" })).toBeVisible();
+    expect(screen.getByRole("img", { name: "チワワがスタートで待機中" })).toBeVisible();
+    fireEvent.click(screen.getByRole("button", { name: "学習計画を作る" }));
+    expect(screen.getByRole("dialog", { name: "学習計画を作る" })).toBeVisible();
     expect(await screen.findByLabelText("受験日")).toBeVisible();
+  });
+
+  it("discards a slow catalog after switching qualifications", async () => {
+    let finishIp!: (response: Response) => void;
+    vi.stubGlobal("fetch", vi.fn(async (url: string) => {
+      if (url.endsWith("/catalog/ip")) return new Promise<Response>(resolve => { finishIp = resolve; });
+      if (url.endsWith("/catalog/fe")) return Response.json({ questions: [{ ...catalog[0], exam: "fe", year: 2025 }] });
+      if (url.includes("schedule")) return Response.json({ sessions: [] });
+      return Response.json({ entitled: true });
+    }));
+    render(<HomePace domains={domains} planExamKeys={["ip", "fe"]} />);
+    fireEvent.click(screen.getByRole("button", { name: "学習計画を作る" }));
+    await waitFor(() => expect(finishIp).toBeTypeOf("function"));
+    fireEvent.change(screen.getByRole("combobox", { name: "受ける資格" }), { target: { value: "fe" } });
+    expect(await screen.findByRole("radio", { name: "全1年分（1問）" })).toBeChecked();
+    await act(async () => finishIp(Response.json({ questions: [] })));
+    expect(screen.getByRole("radio", { name: "全1年分（1問）" })).toBeChecked();
+    expect(screen.queryByText("計画に使える問題がありません")).not.toBeInTheDocument();
   });
 
   it("includes an answered library paper under its qualification and omits the current one", async () => {
@@ -98,15 +144,15 @@ describe("home plan entry", () => {
     render(<HomePace domains={domains} planExamKeys={["ip", "fe"]} />);
     for (const name of ["合格", "不合格", "受けなかった"]) expect(screen.getByRole("button", { name })).toBeVisible();
     expect(screen.getByRole("searchbox")).toBeVisible();
-    expect(screen.getByRole("img", { name: "進み具合0%、試験終了" })).toBeVisible();
+    expect(await screen.findByRole("img", { name: "正解済み 0 / 1問" })).toBeVisible();
     fireEvent.click(screen.getByRole("button", { name: label }));
     expect(listPacePlans()[0].result).toBe(result);
     expect(screen.getByRole("searchbox")).toBeVisible();
-    expect(screen.getByRole("img", { name: "進み具合0%、試験終了" })).toBeVisible();
+    expect(await screen.findByRole("img", { name: "正解済み 0 / 1問" })).toBeVisible();
     if (result === "passed") {
       expect(screen.getByRole("link", { name: "次は 基本情報技術者へ" })).toHaveAttribute("href", "/fe");
     } else {
-      fireEvent.click(screen.getByRole("button", { name: "学習計画を作成" }));
+      fireEvent.click(screen.getByRole("button", { name: "学習計画を作る" }));
       expect(await screen.findByLabelText("受験日")).toBeVisible();
     }
   });

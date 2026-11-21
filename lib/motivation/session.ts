@@ -64,6 +64,11 @@ export function readSession(): SessionMeta | null {
   return readMeta();
 }
 
+export function sessionScore() {
+  const answers = readSession()?.answers ?? [];
+  return { answered: answers.length, correct: answers.filter(answer => answer.correct).length };
+}
+
 export function clearSession(): void {
   if (typeof window === "undefined") return;
   try {

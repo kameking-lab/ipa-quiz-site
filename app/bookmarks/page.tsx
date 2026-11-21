@@ -1,5 +1,6 @@
 "use client";
 
+import { WeakMark } from "@/components/quiz/WeakMark";
 import * as React from "react";
 import Link from "next/link";
 import { Bookmark, X } from "lucide-react";
@@ -150,6 +151,7 @@ function BookmarkCard({ entry, onRemove }: BookmarkCardProps) {
       <Link href={questionUrl(entry)} prefetch={false} className="block min-h-11 py-2 text-sm leading-relaxed underline underline-offset-4">
         {entry.questionSnippet || ("問" + entry.qNumber)}
       </Link>
+      <WeakMark id={entry.questionId} />
     </div>
   );
 }

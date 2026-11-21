@@ -21,20 +21,25 @@ it.each([
   expect(within(results).getByRole("link", { name: /^ITパスポート/ })).toHaveAttribute("href", href);
 });
 
-it("lists one parent when the parent or a specific region matches", () => {
+it("lists one parent for a broad query and links directly to an identified region", () => {
   const regional = { ...domains[0], featured: [
     { key: "chori-hokkaido", name: "調理師試験（北海道）", href: "/chori-hokkaido", questionCount: 60, periodLabel: "1期分" },
     { key: "chori-gunma", name: "調理師試験（群馬県）", href: "/chori-gunma", questionCount: 60, periodLabel: "1期分" },
+    { key: "chori-ehime", name: "調理師試験（愛媛県）", href: "/chori-ehime", questionCount: 60, periodLabel: "1期分" },
   ] };
   const view = render(<BrowseQualifications domains={[regional]} />);
   const search = screen.getByRole("searchbox");
-  for (const query of ["調理師", "調理師 北海道", "ちょうりし ほっかいどう", "群馬県"]) {
+  for (const [query, href] of [
+    ["調理師", "/qualifications/chori"], ["調理師 北海道", "/chori-hokkaido"],
+    ["ちょうりし ほっかいどう", "/chori-hokkaido"], ["群馬県", "/chori-gunma"],
+    ["愛媛 調理師", "/chori-ehime"],
+  ]) {
     fireEvent.change(search, { target: { value: query } });
     const links = within(screen.getByRole("list", { name: "資格の検索結果" })).getAllByRole("link");
     expect(links).toHaveLength(1);
-    expect(links[0]).toHaveAttribute("href", "/qualifications/chori");
-    expect(links[0]).toHaveTextContent("調理師試験（都道府県別 2）");
+    expect(links[0]).toHaveAttribute("href", href);
   }
+  fireEvent.change(search, { target: { value: "調理師" } });
   view.rerender(<BrowseQualifications domains={[regional]} challengeExamCodes={["chori-hokkaido", "chori-gunma"]} />);
   expect(within(screen.getByRole("list", { name: "資格の検索結果" })).getByRole("link"))
     .toHaveAttribute("href", "/challenge?group=chori");

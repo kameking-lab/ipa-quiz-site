@@ -95,7 +95,7 @@ export const JOURNEY_EXAM_CODES = [
   "zensho-eco-79", "zensho-eco-80", "zensho-eco-81", "zensho-english",
   "zensho-financial-statement-analysis", "zensho-info", "zensho-marketing",
   "chori-center", "chori-gunma", "chori-hokkaido", "chori-kanagawa", "chori-kansai",
-  "chori-nagano", "chori-okinawa", "chori-shizuoka", "chori-tochigi",
+  "chori-nagano", "chori-nara", "chori-okinawa", "chori-shizuoka", "chori-tochigi",
   "dokugeki-kansai", "dokugeki-tokyo", "homusho-senmonshokuin",
   "junkango-b", "junkango-saitama", "kokka-ippan-kou",
   "kyoin-gifu", "kyoin-gunma", "kyoin-hiroshima", "kyoin-kobe", "kyoin-kochi",
@@ -103,4 +103,5 @@ export const JOURNEY_EXAM_CODES = [
   "kyotsu-joho1", "shokuhin-eisei-kanshiin",
   "tohan-chugoku-shikoku", "tohan-hokkaido-tohoku", "tohan-kitakanto-koshinetsu",
   "tohan-kyushu-okinawa", "tohan-tokai-hokuriku",
+  "chori-ehime", "kaijo-hoan-gakko", "keimukan", "kokka-sogo-kyoyo", "zaimu-senmonkan",
 ] as const satisfies readonly ExamCode[];

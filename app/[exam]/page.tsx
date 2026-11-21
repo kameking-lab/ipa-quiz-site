@@ -28,6 +28,7 @@ import {
   groupByYearSeason,
 } from "@/lib/seo/exam-meta";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { P3Mascot } from "@/components/ui/P3Mascot";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import dynamic from "next/dynamic";
@@ -251,17 +252,12 @@ export default async function ExamTopPage({
 
 
   return (
-    <main className="relative flex-1">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-radial-spotlight"
-      />
-
-      <div className="relative mx-auto w-full max-w-3xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
+    <main className="p3-page p3-exam flex-1">
+      <div className="study-column pb-12">
         <JsonLd data={jsonLd} />
       {!isExamEntryCode(code) && code !== "takken" && <TsuginoWelcome href={referralPracticeHref(questions, '/' + exam)} qualification={examLabel(code)} />}
 
-        <nav aria-label="パンくずリスト" className="mb-4 text-xs text-muted-foreground">
+        <nav aria-label="パンくずリスト" className="mb-1 text-xs text-muted-foreground">
           <ol className="flex flex-wrap items-center gap-1.5">
             <li>
               <Link href="/" className="inline-flex min-h-11 min-w-11 items-center py-1.5 hover:text-foreground hover:underline">
@@ -284,15 +280,20 @@ export default async function ExamTopPage({
           </ol>
         </nav>
 
-        <header className="mb-6">
-          <h1 className="text-balance text-2xl font-bold leading-snug tracking-tight text-foreground sm:text-3xl">
-            <span className="inline-block max-w-full">{examLabel(code)}</span>{" "}
-            <span className="inline-block">{isIpaTop(code) ? "過去問・解説" : "過去問"}</span>
-          </h1>
-          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">無料・登録なしで1日{PLAN_OFFER.freeDaily}問</p>
+        <header className="mb-4">
+          <div className="p3-landscape p3-hero p3-exam-hero">
+            <div className="min-w-0 self-center">
+              <h1 className="text-[clamp(1.35rem,5.65vw,1.625rem)] font-bold leading-tight tracking-tight wrap-anywhere sm:text-3xl">
+                <span className="block text-balance">{examLabel(code)}</span>{" "}
+                <span className="block text-xl">{isIpaTop(code) ? "過去問・解説" : "過去問"}</span>
+              </h1>
+              <p className="mt-2 text-sm leading-relaxed">無料・登録なしで1日{PLAN_OFFER.freeDaily}問</p>
+            </div>
+            <P3Mascot exam={code} />
+          </div>
           {isExamEntryCode(code) && <FirstPracticeEntry exam={code} referralHref={referralPracticeHref(questions, "/" + exam)} qualification={examLabel(code)} />}
         {/* Big CTA */}
-        {!FIRST_PRACTICE_EXAMS.some((entry) => entry === code) && <section aria-label="今すぐ解く" className="mt-4">
+        {!FIRST_PRACTICE_EXAMS.some((entry) => entry === code) && <section aria-label="今すぐ解く" className="mt-2">
           {code === "fp2" || code === "fp3" ? (
             <div className="grid gap-3 sm:grid-cols-2">
               <Button asChild variant="gradient" size="lg" className="w-full font-semibold min-h-12 min-w-11 h-auto whitespace-normal py-2.5">
@@ -305,8 +306,8 @@ export default async function ExamTopPage({
               </Button>
             </div>
           ) : code === "kenchiku-setsubishi" ? (
-            <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
-              <h2 className="mb-3 text-sm font-semibold text-foreground">出題する科目を選択</h2>
+            <div className="rounded-xl border border-hairline bg-card p-3">
+              <h2 className="mb-2 text-sm font-semibold text-foreground">出題する科目を選択</h2>
               <div className="grid gap-2 sm:grid-cols-3">
                 {(["am1", "am2", "pm"] as const).map(session => (
                   <Button className="min-h-12 min-w-11 h-auto whitespace-normal py-2.5" key={session} asChild variant="outline" size="lg">

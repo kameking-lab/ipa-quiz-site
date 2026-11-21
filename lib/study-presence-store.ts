@@ -1,27 +1,62 @@
 import "server-only";
 import { createHash } from "node:crypto";
+import { nextJstMidnight } from "@/lib/billing/reset-time";
 import { prisma } from "@/lib/db/prisma";
-import { canonicalPresenceExam, parseStudyPresence, PRESENCE_WINDOW_MS, presenceExamName, type StudyPresenceSnapshot } from "@/lib/study-presence";
+import { EXAM_CODE_ALIASES } from "@/lib/questions/exam-aliases";
+import { canonicalPresenceExam, parseStudyPresence, parseStudyPresenceToday, PRESENCE_WINDOW_MS, type StudyPresenceTodayCount } from "@/lib/study-presence";
 
 const CLEANUP_INTERVAL_MS = 15 * 60_000;
+const DAY_MS = 24 * 60 * 60_000;
+// The daily room combines parallel question pools. Keep legacy five-minute exam IDs intact.
+const dailyExamAliases = new Map<string, string>([...Object.entries(EXAM_CODE_ALIASES), ["sokuryoshiho", "survey-assistant"]]);
 let nextCleanupAt = 0;
-const cutoff = (at: number) => new Date(at - PRESENCE_WINDOW_MS);
 const answerId = (visitorId: string) => `answer:${createHash("sha256").update(visitorId.toLowerCase()).digest("hex")}`;
 
-export async function readStudyPresence(measuredAt: number): Promise<{ snapshot: StudyPresenceSnapshot; expiresAt?: number }> {
-  // The prefix excludes pre-release page-open rows in the same table.
-  const rows = await prisma.$queryRaw<Array<{ exam: string; count: bigint; oldestAnswerAt: Date }>>`
-    SELECT "exam", COUNT(*) AS count, MIN("lastSeenAt") AT TIME ZONE 'UTC' AS "oldestAnswerAt" FROM "StudyPresence"
-    WHERE "lastSeenAt" > (${cutoff(measuredAt)}::timestamptz AT TIME ZONE 'UTC')
-      AND "lastSeenAt" <= (${new Date(measuredAt)}::timestamptz AT TIME ZONE 'UTC')
+export async function readStudyPresence(measuredAt: number) {
+  const midnight = nextJstMidnight(measuredAt).getTime();
+  const todayStart = new Date(midnight - DAY_MS);
+  const activeAfter = new Date(measuredAt - PRESENCE_WINDOW_MS);
+  // Old clients keep the rolling window even in the first five minutes of a new JST day.
+  const rows = await prisma.$queryRaw<Array<{
+    exam: string; active: bigint; today: bigint; activeToday: bigint; oldestAnswerAt: Date | null;
+  }>>`
+    WITH bounds AS (
+      SELECT ${activeAfter}::timestamptz AT TIME ZONE 'UTC' AS active_after,
+        ${todayStart}::timestamptz AT TIME ZONE 'UTC' AS today_start,
+        ${new Date(measuredAt)}::timestamptz AT TIME ZONE 'UTC' AS measured_at
+    )
+    SELECT "exam", COUNT(*) FILTER (WHERE "lastSeenAt" > active_after) AS active,
+      COUNT(*) FILTER (WHERE "lastSeenAt" >= today_start) AS today,
+      COUNT(*) FILTER (WHERE "lastSeenAt" >= today_start AND "lastSeenAt" > active_after) AS "activeToday",
+      (MIN("lastSeenAt") FILTER (WHERE "lastSeenAt" > active_after)) AT TIME ZONE 'UTC' AS "oldestAnswerAt"
+    FROM "StudyPresence" CROSS JOIN bounds
+    WHERE "lastSeenAt" >= LEAST(active_after, today_start) AND "lastSeenAt" <= measured_at
       AND "id" LIKE 'answer:%' AND "exam" IS NOT NULL
     GROUP BY "exam"`;
-  const qualified = rows.filter(row => presenceExamName(row.exam));
-  const exams = qualified.map(row => ({ exam: row.exam, count: Number(row.count) }));
+  const activeByExam = new Map<string, number>();
+  const todayByExam = new Map<string, StudyPresenceTodayCount>();
+  let expiresAt = midnight;
+  for (const row of rows) {
+    const exam = canonicalPresenceExam(row.exam);
+    if (!exam) continue;
+    if (row.oldestAnswerAt) {
+      activeByExam.set(exam, (activeByExam.get(exam) ?? 0) + Number(row.active));
+      expiresAt = Math.min(expiresAt, row.oldestAnswerAt.getTime() + PRESENCE_WINDOW_MS);
+    }
+    if (row.today > 0n) {
+      const dailyExam = dailyExamAliases.get(exam) ?? exam;
+      const previous = todayByExam.get(dailyExam);
+      todayByExam.set(dailyExam, { exam: dailyExam, count: (previous?.count ?? 0) + Number(row.today),
+        activeCount: (previous?.activeCount ?? 0) + Number(row.activeToday) });
+    }
+  }
+  const exams = Array.from(activeByExam, ([exam, count]) => ({ exam, count }));
   const snapshot = parseStudyPresence({ count: exams.reduce((sum, row) => sum + row.count, 0), exams });
-  if (!snapshot) throw new Error("Invalid presence aggregate");
-  const expiresAt = qualified.reduce((earliest, row) => Math.min(earliest, row.oldestAnswerAt.getTime() + PRESENCE_WINDOW_MS), Infinity);
-  return { snapshot, expiresAt };
+  const dailyExams = [...todayByExam.values()];
+  const today = parseStudyPresenceToday({ count: dailyExams.reduce((sum, row) => sum + row.count, 0),
+    activeCount: dailyExams.reduce((sum, row) => sum + row.activeCount, 0), exams: dailyExams });
+  if (!snapshot || !today) throw new Error("Invalid presence aggregate");
+  return { snapshot, today, expiresAt };
 }
 
 export async function recordStudyPresence(visitorId: string, answeredAt: number, exam: string, previousVisitorId?: string): Promise<void> {
@@ -42,7 +77,8 @@ export async function recordStudyPresence(visitorId: string, answeredAt: number,
   if (now >= nextCleanupAt) {
     // Expiry in SELECT is independent of this opportunistic physical cleanup.
     nextCleanupAt = now + CLEANUP_INTERVAL_MS;
-    operations.push(prisma.$executeRaw`DELETE FROM "StudyPresence" WHERE "lastSeenAt" <= (${cutoff(now)}::timestamptz AT TIME ZONE 'UTC')`);
+    const retentionStart = nextJstMidnight(now - 2 * DAY_MS);
+    operations.push(prisma.$executeRaw`DELETE FROM "StudyPresence" WHERE "lastSeenAt" < (${retentionStart}::timestamptz AT TIME ZONE 'UTC')`);
   }
   if (operations.length > 1) await prisma.$transaction(operations);
   else await write;

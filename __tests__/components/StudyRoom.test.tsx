@@ -1,4 +1,4 @@
-import { act, cleanup, fireEvent, render, screen, within } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
 import { afterEach, expect, it, vi } from "vitest";
 import { StudyRoom } from "@/components/home/StudyRoom";
 import { measuredPresence } from "@/lib/study-presence-contract";
@@ -6,16 +6,19 @@ import { measuredPresence } from "@/lib/study-presence-contract";
 const snapshot = (count: number) => measuredPresence({ count, exams: count ? [{ exam: "fe", count }] : [] }, Date.now());
 afterEach(() => { cleanup(); vi.useRealTimers(); vi.unstubAllGlobals(); sessionStorage.clear(); localStorage.clear(); });
 
-it("keeps one decorative resting dog in the small room when zero people are measured or the count is unavailable", () => {
+it("keeps one decorative resting dog when zero people are measured or the count is unavailable", () => {
   const { rerender } = render(<StudyRoom snapshot={snapshot(60)} current suggestions={[]} />);
   const scene = screen.getByTestId("study-room-scene");
-  expect(scene.querySelector('img[src$="/curl-left.png"]')).toBeNull();
+  expect(screen.queryByTestId("study-room-sleeper")).not.toBeInTheDocument();
 
   rerender(<StudyRoom snapshot={snapshot(0)} current suggestions={[]} />);
-  expect(scene).toHaveAttribute("data-stage", "0");
-  expect(screen.getByText("いま勉強中の人はいません")).toBeInTheDocument();
-  expect(screen.getByTestId("study-room-total")).toHaveTextContent("いま0人");
-  expect(scene.querySelectorAll('img[src$="/curl-left.png"][alt=""]')).toHaveLength(1);
+  expect(screen.getByTestId("study-room-total")).toHaveTextContent("いま0人が勉強");
+  expect(screen.queryByText(/一番乗り/)).not.toBeInTheDocument();
+
+  rerender(<StudyRoom snapshot={{ ...snapshot(0), today: { count: 0, activeCount: 0, exams: [] } }} current suggestions={[]} />);
+  expect(screen.getByText("まだ誰もいません。一番乗りしよう")).toBeInTheDocument();
+  expect(screen.queryByTestId("study-room-total")).not.toBeInTheDocument();
+  expect(scene.querySelectorAll('img[src$="/sleep-empty.webp"][alt=""]')).toHaveLength(1);
   expect(screen.queryAllByTestId("study-room-seat")).toHaveLength(0);
 
   rerender(<StudyRoom snapshot={snapshot(0)} suggestions={[]} />);
@@ -24,32 +27,23 @@ it("keeps one decorative resting dog in the small room when zero people are meas
   rerender(<StudyRoom snapshot={null} suggestions={[]} />);
   expect(screen.getByText("勉強中の人数を表示できません")).toBeInTheDocument();
   expect(screen.queryByTestId("study-room-total")).not.toBeInTheDocument();
-  expect(scene.querySelectorAll('img[src$="/curl-left.png"][alt=""]')).toHaveLength(1);
+  expect(scene.querySelectorAll('img[src$="/sleep-empty.webp"][alt=""]')).toHaveLength(1);
 });
 
-it("grows immediately, shrinks only after 60 seconds, and cancels shrinking on growth", () => {
+it("keeps the same room as the learner count changes", () => {
   vi.useFakeTimers();
+  vi.setSystemTime(new Date("2026-11-21T11:00:00+09:00"));
   const { rerender } = render(<StudyRoom snapshot={snapshot(3)} suggestions={[]} />);
   const scene = () => screen.getByTestId("study-room-scene");
-  expect(scene()).toHaveAttribute("data-stage", "0");
+  expect(scene()).toHaveAttribute("data-room", "p1");
   rerender(<StudyRoom snapshot={snapshot(60)} suggestions={[]} />);
-  expect(scene()).toHaveAttribute("data-stage", "4");
-  rerender(<StudyRoom snapshot={snapshot(1)} suggestions={[]} />);
-  act(() => vi.advanceTimersByTime(30_000));
+  expect(scene()).toHaveAttribute("data-room", "p1");
+  expect(screen.getAllByTestId("study-room-seat")).toHaveLength(60);
   rerender(<StudyRoom snapshot={snapshot(2)} suggestions={[]} />);
-  act(() => vi.advanceTimersByTime(29_999));
-  expect(scene()).toHaveAttribute("data-stage", "4");
+  expect(scene()).toHaveAttribute("data-room", "p1");
   expect(screen.getAllByTestId("study-room-seat")).toHaveLength(2);
-  act(() => vi.advanceTimersByTime(1));
-  expect(scene()).toHaveAttribute("data-stage", "0");
-  rerender(<StudyRoom snapshot={snapshot(60)} suggestions={[]} />);
-  rerender(<StudyRoom snapshot={snapshot(1)} suggestions={[]} />);
-  act(() => vi.advanceTimersByTime(30_000));
-  rerender(<StudyRoom snapshot={snapshot(60)} suggestions={[]} />);
-  act(() => vi.advanceTimersByTime(60_000));
-  expect(scene()).toHaveAttribute("data-stage", "4");
   rerender(<StudyRoom snapshot={null} suggestions={[]} />);
-  expect(scene()).toHaveAttribute("data-stage", "0");
+  expect(scene()).toHaveAttribute("data-room", "p1");
   expect(screen.queryAllByTestId("study-room-seat")).toHaveLength(0);
 });
 
@@ -105,40 +99,21 @@ it("opens and closes the selected qualification artwork from the seat itself", (
 });
 
 it("reuses shared pose images, preserves identity poses, and loads only occupied seats", () => {
-  sessionStorage.setItem("study-room-mascot-visit:v1", "0");
   const { container, rerender, unmount } = render(<StudyRoom snapshot={snapshot(120)} suggestions={[]} />);
-  const sources = () => [...container.querySelectorAll<HTMLImageElement>(".study-mascot img")].map(img => img.getAttribute("src"));
+  const sources = () => screen.getAllByTestId("study-room-seat").map(seat => seat.querySelector("img")?.getAttribute("src"));
   const initial = sources();
   expect(new Set(initial).size).toBeLessThanOrEqual(72);
   container.querySelectorAll("img").forEach(img => { expect(img).toHaveAttribute("loading", "lazy"); expect(img).toHaveAttribute("decoding", "async"); });
   rerender(<StudyRoom snapshot={snapshot(120)} suggestions={[]} />);
   expect(sources()).toEqual(initial);
   unmount();
-  const remount = render(<StudyRoom snapshot={snapshot(120)} suggestions={[]} />);
-  expect([...remount.container.querySelectorAll(".study-mascot img")].map(img => img.getAttribute("src"))).toEqual(initial);
+  render(<StudyRoom snapshot={snapshot(120)} suggestions={[]} />);
+  expect(sources()).toEqual(initial);
 });
 
-it("observes each seat so a tall hall does not animate offscreen dogs or hidden documents", () => {
-  const callbacks: Array<{ callback: IntersectionObserverCallback; elements: Element[]; disconnect: () => void }> = [];
-  vi.stubGlobal("IntersectionObserver", class {
-    record: typeof callbacks[number];
-    constructor(callback: IntersectionObserverCallback) { this.record = { callback, elements: [], disconnect: vi.fn() }; callbacks.push(this.record); }
-    observe(element: Element) { this.record.elements.push(element); }
-    disconnect() { this.record.disconnect(); }
-  });
-  const { unmount } = render(<StudyRoom snapshot={snapshot(60)} suggestions={[]} />);
-  const observer = callbacks.at(-1)!;
-  expect(observer.elements).toHaveLength(61);
-  const scene = screen.getByTestId("study-room-scene"), seats = screen.getAllByTestId("study-room-seat");
-  const show = (target: Element, isIntersecting: boolean) => ({ target, isIntersecting }) as IntersectionObserverEntry;
-  act(() => observer.callback([show(scene, true), show(seats[0], true)], {} as IntersectionObserver));
-  expect(seats[0]).toHaveAttribute("data-animate", "true");
-  expect(seats[59]).toHaveAttribute("data-animate", "false");
-  const hidden = vi.spyOn(document, "hidden", "get").mockReturnValue(true);
-  act(() => document.dispatchEvent(new Event("visibilitychange")));
-  expect(seats[0]).toHaveAttribute("data-animate", "false");
-  hidden.mockRestore();
-  act(() => document.dispatchEvent(new Event("visibilitychange")));
-  expect(seats[0]).toHaveAttribute("data-animate", "true");
-  unmount(); expect(observer.disconnect).toHaveBeenCalledOnce();
+it("returns focus to the room when a focused learner leaves", () => {
+  const { rerender } = render(<StudyRoom snapshot={snapshot(3)} suggestions={[]} />);
+  screen.getByRole("button", { name: "3 基本情報技術者のチワワを見る" }).focus();
+  rerender(<StudyRoom snapshot={snapshot(2)} suggestions={[]} />);
+  expect(screen.getByTestId("study-room-scene")).toHaveFocus();
 });

@@ -3,7 +3,7 @@ import { act, fireEvent, render, screen, waitFor, cleanup } from "@testing-libra
 import { afterEach, beforeEach, describe, it, expect, vi } from "vitest";
 vi.mock("@/components/quiz/QuizPlayer", () => ({ QuizPlayer: ({ question, onNext }: { question: { id: string } | null; onNext: () => void }) => <div><p>{question?.id ?? "loading"}</p><button onClick={onNext}>next</button></div> }));
 vi.mock("@/lib/motivation/session", () => ({ startSession: vi.fn() }));
-vi.mock("@/lib/storage/history", () => ({ createHistoryStore: () => ({ getAllEntries: () => [], getWrongIds: () => ["q1"], getStarredIds: () => [], getAnsweredIds: () => [] }) }));
+vi.mock("@/lib/storage/history", () => ({ createHistoryStore: () => ({ getAllEntries: () => [{ id: "q1", at: 1, correct: false }], getWrongIds: () => ["q1"], getStarredIds: () => [], getAnsweredIds: () => [] }) }));
 vi.mock("next/link", () => ({ default: ({ children, ...props }: React.ComponentProps<"a">) => <a {...props}>{children}</a> }));
 import { QuizClient } from "@/app/quiz/QuizClient";
 import { billingConfig, gateReady } from "@/lib/billing/config";

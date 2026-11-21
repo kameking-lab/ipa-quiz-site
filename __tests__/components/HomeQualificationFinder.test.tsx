@@ -6,6 +6,7 @@ import { HomeDirectory } from "@/components/home/landing/HomeDirectory";
 import { getHomeDirectory } from "@/lib/home/home-directory";
 import { groupHomeDirectoryItems } from "@/lib/home/grouped-directory";
 import { upcomingExamPicks } from "@/lib/home/featured-exams";
+import { examLibraryHref } from "@/lib/exam-library-navigation";
 const domains = getHomeDirectory();
 beforeEach(() => { cleanup(); localStorage.clear(); window.history.replaceState(null, "", "/"); });
 describe("qualification discovery", () => {
@@ -51,11 +52,12 @@ describe("qualification discovery", () => {
     fireEvent.change(screen.getByRole("combobox"), { target: { value: "it" } });
     expect(screen.queryByRole("link", { name: /^宅建/ })).not.toBeInTheDocument();
   });
-  it("finds an engineering department in its own field and links to the parent", () => {
+  it("finds an engineering department in its own field and opens the matching section", () => {
     render(<HomeQualificationFinder domains={domains} />);
     fireEvent.change(screen.getByRole("combobox"), { target: { value: "electrical" } });
     fireEvent.change(screen.getByRole("searchbox"), { target: { value: "技術士一次・電気電子" } });
-    expect(screen.getByRole("link", { name: /^技術士第一次試験（科目・部門別 22）/ })).toHaveAttribute("href", "/qualifications/gijutsushi-first");
+    expect(screen.getByRole("link", { name: /^技術士第一次・電気電子/ }))
+      .toHaveAttribute("href", examLibraryHref("pe-first", "技術士第一次・電気電子"));
   });
   it("filters a domain, reports empty searches and resets filters", () => {
     render(<HomeQualificationFinder domains={domains} />);

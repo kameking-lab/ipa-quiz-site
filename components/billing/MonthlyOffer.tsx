@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { PLAN_OFFER } from "@/lib/billing/plan-offer";
 import { planStartHref } from "@/lib/billing/quiz-return";
 import { examDateLabel, nextJstDate } from "@/lib/billing/exam-end";
@@ -10,9 +11,18 @@ export function MonthlyPrice() {
   </p>;
 }
 
+export const monthlyActionClass = "flex min-h-12 w-full items-center justify-center rounded-xl px-4 py-3 text-base font-semibold focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring";
+
+export function DailyLimitActions({ children }: { children: ReactNode }) {
+  return <div className="grid auto-rows-fr gap-2">
+    {children}
+    <Link href="/" className={monthlyActionClass + " bg-card text-foreground shadow-[inset_0_0_0_1px_var(--border)] hover:bg-muted"}>今日はここまで</Link>
+  </div>;
+}
+
 export function MonthlyPlanLink({ returnTo, onClick }: { returnTo: string; onClick?: () => void }) {
   return <a data-monthly-plan href={planStartHref(returnTo)} onClick={onClick} aria-label="月額プランに申し込む" aria-describedby="monthly-price-amount monthly-terms"
-    className="flex min-h-12 w-full items-center justify-center rounded-xl bg-primary px-4 py-3 font-semibold text-primary-foreground hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring">
+    className={monthlyActionClass + " bg-primary text-primary-foreground hover:bg-primary/90"}>
     申し込む
   </a>;
 }

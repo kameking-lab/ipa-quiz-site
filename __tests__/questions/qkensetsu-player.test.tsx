@@ -32,7 +32,7 @@ describe("Building equipment ordinary player", () => {
     render(<QuizPlayer question={question} index={0} total={1} mode="year" onNext={vi.fn()} />);
     fireEvent.keyDown(window, { key: correct ? "2" : "1" });
     expect(createHistoryStore().getAllEntries()).toEqual([expect.objectContaining({ id: question.id, correct })]);
-    expect(getCards().map(c => c.id)).toContain(question.id);
+    expect(getCards()).toEqual([]);
     expect(reward).toHaveBeenCalledWith(expect.objectContaining({ exam: question.exam, questionId: question.id }));
     for (const reason of Object.values(question.choiceExplanations!)) {
       expect(screen.getAllByText(reason, { exact: false }).length).toBeGreaterThan(0);

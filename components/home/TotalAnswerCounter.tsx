@@ -5,9 +5,13 @@ import { useStudyRoomPresence } from "./useStudyRoomPresence";
 
 export interface StudySuggestion { name: string; href: string; exam?: string }
 
-export function TotalAnswerCounter({ suggestions = [], standalone = false }: { suggestions?: readonly StudySuggestion[]; standalone?: boolean }) {
+export function TotalAnswerCounter({ suggestions = [], standalone = false, poseFiles }: {
+  suggestions?: readonly StudySuggestion[];
+  standalone?: boolean;
+  poseFiles?: readonly string[];
+}) {
   const { snapshot, current } = useStudyRoomPresence();
   return <section id="study-room" data-study-presence-viewer aria-label={snapshot === null ? "学習のご案内" : current ? "いまの学習状況" : "前回取得時点の学習状況"} aria-live="off" className="study-room scroll-mt-24">
-    <StudyRoom snapshot={snapshot} suggestions={suggestions} current={current} standalone={standalone} />
+    <StudyRoom snapshot={snapshot} suggestions={suggestions} current={current} standalone={standalone} poseFiles={poseFiles} />
   </section>;
 }

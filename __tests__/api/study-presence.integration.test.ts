@@ -14,7 +14,8 @@ beforeEach(async () => {
 afterEach(() => { vi.useRealTimers(); vi.unstubAllEnvs(); });
 it("runs GET through the real store and preserves a zero snapshot timestamp without any DB write", async () => {
   const first = await (await GET(new Request(url))).json();
-  expect(first).toMatchObject({ status: "measured", count: 0, total: 0, exams: [], windowSeconds: 300 });
+  expect(first).toMatchObject({ status: "measured", count: 0, total: 0, exams: [], windowSeconds: 300,
+    today: { count: 0, activeCount: 0, exams: [] } });
   vi.advanceTimersByTime(45_000);
   expect(await (await GET(new Request(url))).json()).toEqual(first);
   expect(db.$queryRaw).toHaveBeenCalledOnce(); expect(db.$executeRaw).not.toHaveBeenCalled(); expect(db.$transaction).not.toHaveBeenCalled();

@@ -3,6 +3,7 @@ import { resolve } from "node:path";
 import { randomUUID } from "node:crypto";
 import { BLOG_ARTICLE_ALIASES } from "./lib/blog/article-aliases";
 import { EXAM_CODE_ALIASES } from "./lib/questions/exam-aliases";
+import { QUESTION_CORPUS_DIR, STATIC_CORPUS_FILE } from "./lib/questions/corpus-files";
 
 const isDev = process.env.NODE_ENV === "development";
 // Inlined into both the client and the prerendered worker on every build.
@@ -131,6 +132,7 @@ const nextConfig: NextConfig = {
       "**/node_modules/.prisma/client/query_engine_bg.js",
       "**/node_modules/.prisma/client/query_engine-windows.dll.node",
     ],
+    "/api/copilot": [`./${QUESTION_CORPUS_DIR}/${STATIC_CORPUS_FILE}`],
     // The exam-library copilot answers from the official paper only (no RAG), so the
     // copilot search index and local audit logs are not needed and pushed the function
     // past Vercel's 250MB limit (265MB) once the question corpus grew.
@@ -138,12 +140,12 @@ const nextConfig: NextConfig = {
   },
   outputFileTracingIncludes: {
     "/sw.js": ["./lib/pwa/sw.js"],
-    "/*": ["./generated/question-corpus/**/*"],
+    "/*": [`./${QUESTION_CORPUS_DIR}/**/*`],
     "/e-learning/exams": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json", "./data/exam-library/pe-first/*.json"],
     "/api/home/resume": ["./data/exam-library/pe-first/*.json"],
     "/api/study-plan/catalog/*": ["./data/exam-library/papers/*.json", "./data/exam-library/pe-first/*.json", "./data/exam-library/presentation/*.json"],
-    // Prebuilt copilot index, search docs and sharded questions (pnpm copilot:index:write,
-    // run by pnpm build). /api/copilot reads only these in production, not data/questions.
+    // Prebuilt copilot index, search docs and question locations (pnpm copilot:index:write).
+    // Question bodies are shared with the per-exam files from question-corpus.
     "/api/copilot": ["./generated/copilot/**/*"],
     "/api/copilot/exam-library": ["./data/exam-library/pe-first/*.json"],
     "/e-learning/search": ["./data/exam-library/pe-first/*.json"],

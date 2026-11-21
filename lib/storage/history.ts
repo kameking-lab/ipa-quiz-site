@@ -1,5 +1,7 @@
 import { isReferenceOnlyQuestionId } from "@/lib/questions/assessment";
 import type { NativeBGrade } from "@/lib/questions/types";
+import { latestAnswers } from "@/lib/study-plan/pace";
+import { getPaceAttempts } from "@/lib/study-plan/pace-storage";
 import { LS_KEYS } from "./keys";
 
 export interface HistoryEntry {
@@ -65,6 +67,9 @@ export interface HistoryStore {
   importJson(json: string): boolean;
 }
 
+// Switch to false to clear a manual mark on the next recorded correct answer.
+const KEEP_MANUAL_WEAK_MARK_ON_CORRECT: boolean = true;
+
 export function createHistoryStore(): HistoryStore {
   // Public assessment reads are projected; mutations always start from raw data.
   const snapshot = (): HistoryData => {
@@ -84,20 +89,20 @@ export function createHistoryStore(): HistoryStore {
         if (isReferenceOnlyQuestionId(item.id) || excess <= 0) return true;
         excess -= 1; return false;
       });
+      if (!KEEP_MANUAL_WEAK_MARK_ON_CORRECT && entry.correct) {
+        data.starredIds = data.starredIds.filter(id => id !== entry.id);
+      }
       writeRaw(data);
+      if (typeof window !== "undefined") window.dispatchEvent(new Event("study-plan:changed"));
     },
     toggleStar(id) {
       if (isReferenceOnlyQuestionId(id)) return false;
       const data = readRaw();
-      const idx = data.starredIds.indexOf(id);
-      if (idx >= 0) {
-        data.starredIds.splice(idx, 1);
-        writeRaw(data);
-        return false;
-      }
-      data.starredIds.push(id);
+      const starred = !data.starredIds.includes(id);
+      data.starredIds = starred ? [...data.starredIds, id] : data.starredIds.filter(value => value !== id);
       writeRaw(data);
-      return true;
+      if (typeof window !== "undefined") window.dispatchEvent(new Event("study-plan:changed"));
+      return starred;
     },
     isStarred(id) {
       return snapshot().starredIds.includes(id);
@@ -106,9 +111,9 @@ export function createHistoryStore(): HistoryStore {
       return [...new Set(snapshot().entries.map((e) => e.id))];
     },
     getWrongIds() {
-      const byId = new Map<string, boolean>();
-      for (const e of snapshot().entries) byId.set(e.id, e.correct);
-      return [...byId.entries()].filter(([, ok]) => !ok).map(([id]) => id);
+      if (typeof window === "undefined") return [];
+      return [...latestAnswers(getPaceAttempts(snapshot().entries)).values()]
+        .filter(entry => !entry.correct && !isReferenceOnlyQuestionId(entry.id)).map(entry => entry.id);
     },
     getStarredIds() {
       return [...snapshot().starredIds];

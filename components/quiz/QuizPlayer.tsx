@@ -1,4 +1,5 @@
 "use client";
+import { WeakMark } from "@/components/quiz/WeakMark";
 import { isSelfReviewedDescriptiveQuestion } from "@/lib/questions/descriptive";
 import { NativeQuestionGate } from "@/mobile/shared/NativeQuestionGate";
 
@@ -35,7 +36,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Timer } from "lucide-react";
 import { examLabel } from "@/lib/utils";
 import { comboLevel } from "@/lib/motivation/combo";
-import { recordSessionAnswer } from "@/lib/motivation/session";
+import { recordSessionAnswer, sessionScore } from "@/lib/motivation/session";
 import { recordStudyOnDate } from "@/lib/motivation/heatmap";
 import { useQuestionActivity } from "@/lib/study-plan/use-question-activity";
 import { posthogCapture } from "@/lib/posthog";
@@ -70,6 +71,8 @@ interface Props {
   backLabel?: string;
   exam?: string;
   onNext: () => void;
+  onFinish?: () => void;
+  onReviewed?: (id: string, correct: boolean) => void;
   quiet?: boolean;
   managesPracticeGrant?: boolean;
   answerPending?: boolean;
@@ -93,6 +96,8 @@ function ScoredQuizPlayer({
   backLabel = "モード選択に戻る",
   exam = "ap",
   onNext,
+  onFinish,
+  onReviewed,
   quiet = false,
   answerPending = false,
 }: Props) {
@@ -108,7 +113,7 @@ function ScoredQuizPlayer({
   const [revealed, setRevealed] = React.useState(false);
   const questionId = question?.id;
   const [attempt, setAttempt] = React.useState(() => ({ questionId, index }));
-  const finalizedAttempt = React.useRef<typeof attempt | null>(null);
+  const finalizedAttempt = React.useRef<{ attempt: typeof attempt; correct: boolean } | null>(null);
   if (attempt.questionId !== questionId || attempt.index !== index) {
     // Reset before the next question commits, keeping session statistics alive.
     setAttempt({ questionId, index });
@@ -124,7 +129,7 @@ function ScoredQuizPlayer({
   const [completed, setCompleted] = React.useState(false);
   const questionStartRef = React.useRef<HTMLDivElement>(null);
   const answerResultRef = React.useRef<HTMLDivElement>(null);
-  const [stats, setStats] = React.useState({ answered: 0, correct: 0 });
+  const [stats, setStats] = React.useState(() => onFinish ? sessionScore() : { answered: 0, correct: 0 });
   const [showKeyboardHelp, setShowKeyboardHelp] = React.useState(false);
   const [elapsed, setElapsed] = React.useState(0);
   const [combo, setCombo] = React.useState(0);
@@ -191,29 +196,34 @@ function ScoredQuizPlayer({
 
   const goNext = React.useCallback(() => {
     if (answerPending) return;
+    const finalized = finalizedAttempt.current;
+    if (onReviewed && question && finalized?.attempt === attempt) {
+      onReviewed(question.id, finalized.correct);
+    }
     recordExplanation();
     if (index + 1 >= total) {
+      onFinish?.();
       setCompleted(true);
       window.scrollTo?.({ top: 0, behavior: "instant" });
       return;
     }
     onNext();
-  }, [answerPending, index, total, onNext, recordExplanation]);
+  }, [answerPending, attempt, index, total, onNext, onFinish, onReviewed, question, recordExplanation]);
 
   const commitAnswer = React.useCallback(
     (selection: string, correct: boolean, petAnswer: Extract<PetLearningSubmission, { source: "question" }>["answer"], nativeBResult?: NativeBGrade) => {
-      if (!question || answerPending || finalizedAttempt.current === attempt) return;
+      if (!question || answerPending || finalizedAttempt.current?.attempt === attempt) return;
       // Click, shortcut and form events can share the same ungraded render.
-      finalizedAttempt.current = attempt;
+      finalizedAttempt.current = { attempt, correct };
       setRevealed(true);
-      recordActivityAnswer(correct);
+      const now = Date.now();
+      recordActivityAnswer(correct, now);
       posthogCapture("question_answered", {
         questionId: question.id,
         exam: question.exam,
         correct,
       });
       observeJourney({ qualification: question.exam, answer: true });
-      const now = Date.now();
       if (!nativeBResult || nativeBResult.slotResults.every(slot => Boolean(slot.selectedCandidateId))) {
         recordStudyReward({ scope: `quiz:${question.exam}`, questionId: question.id, exam: question.exam, label: examLabel(question.exam) });
       }
@@ -236,7 +246,7 @@ function ScoredQuizPlayer({
         at: now,
       });
       recordStudyOnDate();
-      pet.record(question, petAnswer, correct);
+      pet.answer(question, petAnswer);
       const nextCombo = correct ? combo + 1 : 0;
       const allStats = history.getStats();
       const newlyUnlocked = evaluateAchievementsAfterAnswer(allStats.total, allStats.correct, nextCombo);
@@ -254,7 +264,7 @@ function ScoredQuizPlayer({
   );
 
   const onNativeBAnswer = React.useCallback((selections: NativeBSelections) => {
-    if (!question?.nativeB || question.type !== "native-b" || answerPending || finalizedAttempt.current === attempt) return;
+    if (!question?.nativeB || question.type !== "native-b" || answerPending || finalizedAttempt.current?.attempt === attempt) return;
     const result = gradeNativeB(question.nativeB, selections);
     setNativeBResult(result);
     const selectedSlots = Object.fromEntries(Object.entries(selections).filter((entry): entry is [string, string] => typeof entry[1] === "string"));
@@ -263,7 +273,7 @@ function ScoredQuizPlayer({
 
   const onSelect = React.useCallback(
     (key: ChoiceKey) => {
-      if (!question || answerPending || finalizedAttempt.current === attempt || question.type === "ordering") return;
+      if (!question || answerPending || finalizedAttempt.current?.attempt === attempt || question.type === "ordering") return;
       const required = requiredSelectionCount(question);
       if (question.acceptedAnswerCombinations && !picked.includes(key) && picked.length >= required) return;
       if (required > 1) {
@@ -279,13 +289,13 @@ function ScoredQuizPlayer({
   );
 
   const onNumericAnswer = React.useCallback((value: string) => {
-    if (question?.type !== "numeric" || answerPending || finalizedAttempt.current === attempt) return;
+    if (question?.type !== "numeric" || answerPending || finalizedAttempt.current?.attempt === attempt) return;
     setNumericSelected(value);
     commitAnswer(value, isNumericAnswerCorrect(question, value), { kind: "numeric", value });
   }, [question, answerPending, attempt, commitAnswer]);
 
   const onOrderingAnswer = React.useCallback((value: ChoiceKey[]) => {
-    if (question?.type !== "ordering" || answerPending || finalizedAttempt.current === attempt) return;
+    if (question?.type !== "ordering" || answerPending || finalizedAttempt.current?.attempt === attempt) return;
     setOrderedSelected(value);
     commitAnswer(value.join("→"), isOrderingAnswerCorrect(question, value), { kind: "ordering", selected: [...value] });
   }, [question, answerPending, attempt, commitAnswer]);
@@ -381,6 +391,7 @@ function ScoredQuizPlayer({
     return (
       <QuizCompleteScreen
         stats={stats}
+        showBatchScore={!!onFinish}
         elapsed={elapsed}
         exam={exam}
         mode={mode}
@@ -429,7 +440,7 @@ function ScoredQuizPlayer({
   const selectionLabel = native ? nativeBResult?.slotResults.map((slot) => `${slot.label}: ${slot.selectedCandidateId ?? "未回答"}`).join(" / ") : ordering ? (orderedSelected ? formatOrderingAnswer(question.exam, orderedSelected) : undefined) : numeric ? numericSelected : multiSelect ? (picked.length > 0 ? formatSelection(picked) : undefined) : selected;
 
   return (
-    <div className="flex min-h-[calc(100dvh-3.5rem)] flex-col bg-background">
+    <div className="p3-page p3-quiz flex min-h-[calc(100dvh-3.5rem)] flex-col bg-background" data-revealed={revealed || undefined}>
       <div role="region" aria-label="クイズナビゲーション" className="sticky top-0 z-20 flex flex-col border-b border-border bg-card">
         <div className="flex items-center gap-2 px-3 py-2 sm:py-2.5">
           <Button
@@ -441,7 +452,7 @@ function ScoredQuizPlayer({
           >
             <ArrowLeft aria-hidden="true" className="h-5 w-5" />
           </Button>
-          <div className="text-sm font-medium text-zinc-700 dark:text-zinc-300">モード: {quizModeLabel(mode)}</div>
+          {!onFinish && <div className="text-sm font-medium text-zinc-700 dark:text-zinc-300">モード: {quizModeLabel(mode)}</div>}
           <div className="ml-auto flex items-center gap-2 text-sm font-medium text-zinc-700 sm:gap-3 dark:text-zinc-300">
             {combo >= 2 && <ComboCounter combo={combo} />}
             <span
@@ -477,7 +488,7 @@ function ScoredQuizPlayer({
           aria-valuemin={1}
           aria-valuemax={total}
           aria-valuetext={`${index + 1}問目 / 全${total}問`}
-          className="h-1 bg-muted"
+          className="p3-quiz-progress h-2 bg-muted"
         >
           <div
             className="h-full bg-primary motion-safe:transition-all motion-safe:duration-300"
@@ -486,14 +497,16 @@ function ScoredQuizPlayer({
         </div>
       </div>
 
+      <div className="mx-3 mt-2 sm:mx-6"><WeakMark id={question.id} /></div>
       <div className="flex flex-1">
         <main aria-label="問題と解説"
-          className="min-w-0 w-full flex-1 px-3 pb-12 pt-4 sm:px-6"
+          className="min-w-0 w-full flex-1 px-3 pb-12 pt-3 sm:px-6"
           onTouchStart={onTouchStart}
           onTouchEnd={onTouchEnd}
         >
           <div ref={questionStartRef} tabIndex={-1} className="relative mx-auto max-w-2xl scroll-mt-24 space-y-4 outline-none">
             <QuestionCard
+              illustrated
               question={question}
               progress={{ current: index, total }}
             />
@@ -649,6 +662,7 @@ export function QuizCompleteScreen({
   onBack,
   backLabel = "モード選択に戻る",
   scheduleUrl,
+  showBatchScore = false,
 }: {
   stats: { answered: number; correct: number };
   elapsed: number;
@@ -657,6 +671,7 @@ export function QuizCompleteScreen({
   onBack: () => void;
   backLabel?: string;
   scheduleUrl?: string;
+  showBatchScore?: boolean;
 }) {
   const resultHeadingRef = React.useRef<HTMLHeadingElement>(null);
   React.useEffect(() => { resultHeadingRef.current?.focus({ preventScroll: true }); resultHeadingRef.current?.scrollIntoView?.({ block: "center", behavior: "instant" }); }, []);
@@ -679,10 +694,10 @@ export function QuizCompleteScreen({
       <div className="w-full max-w-md rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-8">
         <div className="mb-6 text-center">
           <ChihuahuaMascot pose="celebrate" size={100} className="mx-auto mb-2" />
-          <h1 ref={resultHeadingRef} tabIndex={-1} className="text-2xl font-bold text-zinc-900 outline-none dark:text-zinc-50">クイズ完了！</h1>
-          <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
+          <h1 ref={resultHeadingRef} tabIndex={-1} className="text-2xl font-bold text-zinc-900 outline-none dark:text-zinc-50">{showBatchScore ? <>{stats.answered}問中{stats.correct}問正解</> : "クイズ完了！"}</h1>
+          {!showBatchScore && <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
             {accuracy >= 80 ? "素晴らしい！" : accuracy >= 60 ? "いい調子です！" : "次は満点を狙おう！"}
-          </p>
+          </p>}
         </div>
 
         <div className="mb-6 grid grid-cols-3 gap-2 text-center sm:gap-3">

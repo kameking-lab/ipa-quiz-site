@@ -19,6 +19,7 @@ import {
 import { parseQuestionYearSeason, questionPagePath } from "@/lib/seo/question-url";
 import { isPlaceholderExplanation, isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { P3Mascot } from "@/components/ui/P3Mascot";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -243,22 +244,13 @@ export default async function ExamYearSeasonPage({
   };
 
   return (
-    <main className="relative flex-1">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-radial-spotlight"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-grid opacity-30 [mask-image:radial-gradient(60%_50%_at_50%_0%,#000_30%,transparent_70%)]"
-      />
-
-      <div className="relative mx-auto w-full max-w-3xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
+    <main className="p3-page p3-year flex-1">
+      <div className="study-column pb-12">
         <JsonLd data={jsonLd} />
 
         <nav
           aria-label="パンくずリスト"
-          className="mb-4 text-xs text-muted-foreground"
+          className="mb-1 text-xs text-muted-foreground"
         >
           <ol className="flex flex-wrap items-center gap-1.5">
             <li>
@@ -282,16 +274,17 @@ export default async function ExamYearSeasonPage({
           </ol>
         </nav>
 
-        <header className="mb-6">
-          <Badge variant="soft" className="mb-3">
-            {histLabel}
-          </Badge>
-          <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            <span className="text-primary">
-              {label}
-            </span>{" "}
-            {histLabel}
-          </h1>
+        <header className="mb-3">
+          <div className="p3-landscape p3-hero p3-year-hero">
+            <div className="min-w-0">
+              <p className="text-sm font-semibold">{histLabel}</p>
+              <h1 className="mt-1 text-2xl font-bold leading-tight tracking-tight wrap-anywhere sm:text-3xl">
+                <span>{label}</span>{" "}<span className="sr-only">{histLabel}</span>
+              </h1>
+              <p className="mt-1 text-sm tabular-nums"><strong className="font-display text-[25px]">{pool.length}</strong> 問</p>
+            </div>
+            <P3Mascot exam={code} className="p3-year-mascot" />
+          </div>
           <p className="mt-3 text-sm text-muted-foreground">
             過去問一覧 — 問題と解説を確認して学習を進められます。
           </p>
@@ -352,13 +345,12 @@ export default async function ExamYearSeasonPage({
             </p>
           )}
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
-            <Badge variant="outline">{pool.length} 問</Badge>
             {[...sessionMap.entries()].map(([session, items]) => <Badge key={session} variant="outline">{practiceSessionLabel(session as typeof pool[number]["session"], code)} {items.length}問</Badge>)}
             {commonOnly && <p className="w-full text-muted-foreground">{examLabel(code)}の学習に使える共通の午前I問題です。この一覧には午前IIの問題は含まれません。</p>}
           </div>
         </header>
 
-        <section aria-label="クイズを始める" className="mb-8">
+        <section aria-label="クイズを始める" className="mb-4">
           <div className="grid gap-2 sm:grid-cols-2">
             {[...sessionMap.entries()].filter(([, items]) => items.some((q) => (q.type === "multiple-choice" || q.type === "numeric"))).map(([session, items]) => (
               <Button key={session} asChild variant="gradient" size="lg" className="w-full min-h-12 min-w-11 h-auto whitespace-normal py-2.5">

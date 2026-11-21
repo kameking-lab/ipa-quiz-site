@@ -75,6 +75,15 @@ describe("buildCitationMetas — 出典リンク (fullSourceUrl) gating", () => 
     return { id: `q:${id}`, kind: "question", title: "問", url: `/x/${id}`, text: "x", meta: {} };
   }
 
+  it("保存版の引用から当時の公式問題を開ける", () => {
+    const sourcePdfUrl = "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/ama-1-hoki.pdf";
+    const sourceArchiveUrl = `https://web.archive.org/web/20220412080155/${sourcePdfUrl}`;
+    const q = { ...getAllQuestions()[0], sourcePdfUrl, sourceArchiveUrl };
+    const [meta] = buildCitationMetas([candidate(questionDoc(q.id), 0)], () => q);
+    expect(meta.fullSourceUrl).toBe(sourceArchiveUrl);
+    expect(meta.question?.archivedSource).toBe(true);
+  });
+
   it("廃止 jitec ホストの sourcePdfUrl を live IPA 索引へ degrade する", () => {
     // CitationCards は fullSourceUrl をそのまま href に出す。NXDOMAIN の
     // www.jitec.ipa.go.jp を生で返すと AI 回答の出典が死リンクになる。

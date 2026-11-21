@@ -11,7 +11,7 @@ const navLink = "inline-flex min-h-11 items-center gap-2 rounded-lg px-3 text-sm
 export function SiteHeader() {
   const pathname = usePathname();
   return (
-    <header className={`sticky top-0 z-40 w-full border-b border-border bg-background/95 ${pathname === "/me" ? "hidden md:block" : ""}`}>
+    <header className={`site-header sticky top-0 z-40 w-full border-b border-border bg-background/95 ${pathname === "/me" ? "hidden md:block" : ""}`}>
       <div className={`mx-auto flex h-14 w-full items-center justify-between gap-2 px-4 sm:px-6 ${pathname === "/" ? "max-w-[640px]" : "max-w-6xl"}`}>
         <Link href="/" prefetch={false} aria-label="過去問AI ホーム" className="inline-flex min-h-11 items-center rounded-lg">
           <SiteLogo />

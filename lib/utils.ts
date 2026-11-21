@@ -9,6 +9,12 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const EXAM_LABELS: Record<string, string> = {
+  "chori-nara": "調理師試験（奈良県）",
+  "kaijo-hoan-gakko": "海上保安学校学生",
+  "keimukan": "刑務官",
+  "kokka-sogo-kyoyo": "国家総合職（教養区分）",
+  "zaimu-senmonkan": "財務専門官",
+  "chori-ehime": "調理師試験（愛媛県）",
   "zenkou-pc": "パソコン利用技術検定",
   eikenp2: "英検準2級",
   "zensho-calc-1": "全商ビジネス計算実務検定 1級",

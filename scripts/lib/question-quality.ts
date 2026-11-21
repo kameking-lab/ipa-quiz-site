@@ -3,6 +3,9 @@ import { realpathSync, statSync } from "node:fs";
 import { extname, isAbsolute, relative, resolve, sep } from "node:path";
 import { CHOICE_KEYS } from "@/lib/questions/answers";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
+import { isOfficialPdfCapture, sourceUrlRule, verifiedArchiveSource, type ArchiveEvidence } from "./question-archive-evidence";
+
+export { sourceUrlRule } from "./question-archive-evidence";
 
 export const QUALITY_REASONS = {
   placeholder: "QA後も原本の転記または表示用画像を確認できていない既存の本文・選択肢。",
@@ -109,17 +112,9 @@ export function hasChoiceImage(q: Question, key: ChoiceKey, imageExists: (url: s
   return Boolean(url && imageExists(url)) || hasQuestionImage(q, imageExists);
 }
 
-export function sourceUrlRule(value: string): "archived-source" | "rolling-source" | undefined {
-  let url: URL;
-  try { url = new URL(value); } catch { return; }
-  const host = url.hostname.toLowerCase().replace(/\.$/, "");
-  if (host === "web.archive.org") return "archived-source";
-  if (/^(?:www\.)?nichimu\.or\.jp$/.test(host) && /^\/(?:vc-files\/kshiken\/pdf|kshiken)\/siken\/\d+\//i.test(url.pathname)) {
-    return "rolling-source";
-  }
-}
-
-export function checkQuestionQuality(q: Question, imageExists: (url: string) => boolean): QualityIssue[] {
+export function checkQuestionQuality(
+  q: Question, imageExists: (url: string) => boolean, archiveEvidence?: ArchiveEvidence,
+): QualityIssue[] {
   const issues: QualityIssue[] = [];
   const add = (rule: QualityIssue["rule"], message: string, evidence: unknown) => issues.push(qualityIssue(rule, q.id, message, evidence));
   const choices = Object.entries(q.choices ?? {}) as [ChoiceKey, string][];
@@ -158,7 +153,23 @@ export function checkQuestionQuality(q: Question, imageExists: (url: string) => 
 
   if (isTemplateOnly(q.explanation)) add("choice-template", "全体の解説が定型句だけです", ["explanation", q.explanation]);
   const sourceRule = sourceUrlRule(q.sourcePdfUrl);
-  if (sourceRule) add(sourceRule, `sourcePdfUrl には試験期を固定できる公式原本が必要です (${q.sourcePdfUrl})`, q.sourcePdfUrl);
+  if (archiveEvidence?.has(q.id) || q.sourceArchiveUrl !== undefined || q.sourceAnswerArchiveUrl !== undefined) {
+    for (const url of q.officialReferenceUrls ?? []) {
+      if (sourceUrlRule(url) === "archived-source" && !isOfficialPdfCapture(url, q.exam)) {
+        add("archived-source", "補助資料の保存版には日時固定の公式PDFが必要です", ["officialReferenceUrls", url]);
+      }
+    }
+    if (!verifiedArchiveSource(q, archiveEvidence)) {
+      add(sourceRule === "rolling-source" ? sourceRule : "archived-source",
+        "公式PDFの日時固定保存版と全問照合済みの正答を出典台帳で確認できません",
+        [q.sourcePdfUrl, q.sourceArchiveUrl, q.sourceAnswerUrl, q.sourceAnswerArchiveUrl, q.answer]);
+    }
+  } else if (sourceRule) {
+    add(sourceRule, `sourcePdfUrl には試験期を固定できる公式原本が必要です (${q.sourcePdfUrl})`, q.sourcePdfUrl);
+  } else if (q.sourceAnswerUrl) {
+    const answerRule = sourceUrlRule(q.sourceAnswerUrl);
+    if (answerRule) add(answerRule, "公式正答の試験期と照合記録を確認できません", ["sourceAnswerUrl", q.sourceAnswerUrl]);
+  }
   return issues;
 }
 

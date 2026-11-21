@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { findQuestionById } from "@/lib/questions/pool-server";
 import type { Question } from "@/lib/questions/types";
-import { isPracticeReadyQuestion } from "@/lib/questions/filter";
+import { isPlanScorableQuestion } from "@/lib/questions/filter";
 import { EXAM_LABELS } from "@/lib/utils";
 
 export const runtime = "nodejs";
@@ -61,10 +61,7 @@ export async function POST(req: Request) {
     if (record && record.nextReviewAt > today) continue;
 
     const q = await findQuestionById(id);
-    if (!q) continue;
-    if ((q.type !== "multiple-choice" && q.type !== "numeric" && q.type !== "ordering" && q.type !== "native-b") || !isPracticeReadyQuestion(q)) continue;
-
-    dueQuestions.push(q);
+    if (q && isPlanScorableQuestion(q)) dueQuestions.push(q);
   }
 
   const permitted=await permittedBatch(req,shuffle(dueQuestions));

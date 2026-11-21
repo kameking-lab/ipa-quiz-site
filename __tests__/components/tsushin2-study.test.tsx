@@ -17,7 +17,7 @@ describe("integrated tsushin2 normal study in isolated jsdom storage",()=>{
     fireEvent.click(screen.getByRole("radio",{name:new RegExp(`^選択肢 ${q.answer}:`)}));
     expect(screen.getByRole("region",{name:"正解の解説"})).toBeTruthy();
     expect(createHistoryStore().getAllEntries()).toEqual([expect.objectContaining({id:q.id,correct:true,selected:q.answer})]);
-    expect(getCards().map(c=>c.id)).toContain(q.id);
+    expect(getCards()).toEqual([]);
     fireEvent.click(screen.getByRole("button",{name:"次の問題へ"}));
     expect(onNext).toHaveBeenCalledOnce();
     view.rerender(<QuizPlayer question={next} index={1} total={65} mode="year" onNext={onNext}/>);

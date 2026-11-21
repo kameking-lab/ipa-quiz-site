@@ -175,21 +175,16 @@ describe("home directory", () => {
     }
   });
 
-  it("renders links for all qualifications and their sections in the shared directory HTML", () => {
+  it("renders standalone qualifications and one link per parent in the shared directory HTML", () => {
     const grouped = groupHomeDirectory(domains);
     const html = renderToStaticMarkup(createElement(QualificationDirectory, { domains: grouped }));
     const doc = new DOMParser().parseFromString(html, "text/html");
     expect(doc.querySelectorAll('details[id^="domain-"]')).toHaveLength(grouped.length);
     expect(doc.querySelectorAll("details[open]")).toHaveLength(0);
-    const links = new Map([...doc.querySelectorAll("a[href]")].map(link => [link.getAttribute("href"), link]));
-    for (const { href } of all) expect(links.has(href), href).toBe(true);
+    const hrefs = [...doc.querySelectorAll("a[href]")].map(link => link.getAttribute("href"));
     for (const { href, children } of grouped.flatMap(domain => [...domain.featured, ...domain.compact])) {
-      if (!children) continue;
-      const parent = doc.querySelectorAll(`a[href="${href}"]`);
-      expect(parent, href).toHaveLength(1);
-      for (const child of children) {
-        expect(links.get(child.href)?.closest("details")?.parentElement, child.href).toBe(parent[0].parentElement);
-      }
+      expect(hrefs.filter(link => link === href), href).toHaveLength(1);
+      for (const child of children ?? []) expect(hrefs.includes(child.href), child.href).toBe(false);
     }
   });
 });
