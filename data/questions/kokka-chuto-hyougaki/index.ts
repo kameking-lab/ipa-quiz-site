@@ -1,0 +1,5 @@
+import { KOKKA_CHUTO_HYOUGAKI_2024_KISO } from "./2024-kiso";
+
+export const KOKKA_CHUTO_HYOUGAKI_QUESTIONS = [
+    ...KOKKA_CHUTO_HYOUGAKI_2024_KISO,
+];

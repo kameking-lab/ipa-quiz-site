@@ -372,6 +372,7 @@ export const EXAM_LABELS: Record<string, string> = {
     "kokka-keikensha": "国家公務員経験者採用",
     "keimukan": "刑務官",
     "kaijo-hoan-daigakko": "海上保安大学校学生",
+    "kokka-chuto-hyougaki": "国家公務員中途採用（就職氷河期世代）",
     "kisho-daigakko": "気象大学校学生",
     "koku-hoan-daigakko": "航空保安大学校学生",
     "kaijo-hoan-gakko": "海上保安学校学生",

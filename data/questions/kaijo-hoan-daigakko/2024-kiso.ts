@@ -244,12 +244,12 @@ export const KAIJO_HOAN_DAIGAKKO_2024_KISO: Question[] = [
     },
     "answer": "エ",
     "officialAnswerNumber": 4,
-    "explanation": "第2の助言は、時間を使う支援はお金を与えるよりも、しばしば受け手にとって価値があり、与える側にも満足感をもたらすと述べている。",
+    "explanation": "第2の助言は、時間を使う支援はお金を与えるよりも、しばしば受け手にとって価値があり、与える側にも満足感をもたらすと述べている。同じ設問が載る中途採用者選考（就職氷河期世代）の2024年度冊子No. 5では正答番号表が3だが、本文に合うのは両大学校の冊子が示す4である。",
     "choiceExplanations": {
       "ア": "ことわざでは昼寝で1時間、釣りで1日の幸福が得られると述べている。",
       "イ": "最初の助言は、理由の数を増やすことではなく、自分が関心を持てる活動を支援することである。",
       "ウ": "助けることがより幸福で健康な生活に役立つ可能性は述べているが、けがの減少や寿命の延びは具体的に述べていない。",
-      "エ": "第2の助言は、時間を使う支援はお金を与えるよりも、しばしば受け手にとって価値があり、与える側にも満足感をもたらすと述べている。",
+      "エ": "第2の助言は、時間を使う支援はお金を与えるよりも、しばしば受け手にとって価値があり、与える側にも満足感をもたらすと述べている。同じ設問が載る中途採用者選考（就職氷河期世代）の2024年度冊子No. 5では正答番号表が3だが、本文に合うのは両大学校の冊子が示す4である。",
       "オ": "心理学者 Adam Grant の助言は、負担が大きくならないよう他人を助けるときにも自分の必要を忘れないことである。"
     },
     "explanationCoverage": "full",
@@ -286,13 +286,13 @@ export const KAIJO_HOAN_DAIGAKKO_2024_KISO: Question[] = [
       "エ": "Kew では、5種のスイレンの種子を交配して、美しい花を咲かせる品種の作出に成功した。",
       "オ": "Victoria 女王が葉の上に乗ったとされるスイレンには、女王の名前が付けられた。"
     },
-    "answer": "イ",
-    "officialAnswerNumber": 2,
-    "explanation": "葉が3 mを超える新種は Victoria boliviana である。Victoria amazonica は比較された既知種の一つである。",
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "本文第3段落の heading into the glasshouse at night because water lily flowers only come out in the dark が、この説明と一致する。同じ設問が載る中途採用者選考（就職氷河期世代）の2024年度冊子No. 6では正答番号表が4だが、本文に合うのは両大学校の冊子が示す3である。",
     "choiceExplanations": {
       "ア": "Magdalena は既知の2種とは異なると考え、ボリビアから届いた種子を使い英国の Kew で同じ条件で育てて比較した。",
       "イ": "葉が3 mを超える新種は Victoria boliviana である。Victoria amazonica は比較された既知種の一つである。",
-      "ウ": "本文第3段落の heading into the glasshouse at night because water lily flowers only come out in the dark が、この説明と一致する。",
+      "ウ": "本文第3段落の heading into the glasshouse at night because water lily flowers only come out in the dark が、この説明と一致する。同じ設問が載る中途採用者選考（就職氷河期世代）の2024年度冊子No. 6では正答番号表が4だが、本文に合うのは両大学校の冊子が示す3である。",
       "エ": "同じ条件で新種と既知の2種を育てて特徴を比較したと述べている。交配で品種を作ったとは述べていない。",
       "オ": "Victoria 女王の名はスイレンの属に付けられた。女王がスイレンの葉に乗ったという記述はない。"
     },
@@ -330,9 +330,9 @@ export const KAIJO_HOAN_DAIGAKKO_2024_KISO: Question[] = [
       "エ": "B",
       "オ": "C"
     },
-    "answer": "ウ",
-    "officialAnswerNumber": 3,
-    "explanation": "A の結論は仮定から出ない。例えば旅行は好きでも映画が好きでない人は、旅行好きという条件から英語が得意になる。",
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "B は一つの条件から導ける二つの結論を連言で結んでいる。C は「釣りが得意でないなら魚が好きでない」という対偶を用いるので、B と C が正しい。",
     "choiceExplanations": {
       "ア": "B は正しいが、A は映画だけが好きな人も英語が得意になるため反例がある。",
       "イ": "B は一つの条件から導ける二つの結論を連言で結んでいる。C は「釣りが得意でないなら魚が好きでない」という対偶を用いるので、B と C が正しい。",

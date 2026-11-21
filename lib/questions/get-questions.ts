@@ -367,6 +367,7 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 "kokka-keikensha": async () => isExamPublished("kokka-keikensha") ? (await import("@/data/questions/kokka-keikensha")).KOKKA_KEIKENSHA_QUESTIONS : [],
 "keimukan": async () => isExamPublished("keimukan") ? (await import("@/data/questions/keimukan")).KEIMUKAN_QUESTIONS : [],
 "kaijo-hoan-daigakko": async () => isExamPublished("kaijo-hoan-daigakko") ? (await import("@/data/questions/kaijo-hoan-daigakko")).KAIJO_HOAN_DAIGAKKO_QUESTIONS : [],
+"kokka-chuto-hyougaki": async () => isExamPublished("kokka-chuto-hyougaki") ? (await import("@/data/questions/kokka-chuto-hyougaki")).KOKKA_CHUTO_HYOUGAKI_QUESTIONS : [],
 "kisho-daigakko": async () => isExamPublished("kisho-daigakko") ? (await import("@/data/questions/kisho-daigakko")).KISHO_DAIGAKKO_QUESTIONS : [],
 "koku-hoan-daigakko": async () => isExamPublished("koku-hoan-daigakko") ? (await import("@/data/questions/koku-hoan-daigakko")).KOKU_HOAN_DAIGAKKO_QUESTIONS : [],
 "kaijo-hoan-gakko": async () => isExamPublished("kaijo-hoan-gakko") ? (await import("@/data/questions/kaijo-hoan-gakko")).KAIJO_HOAN_GAKKO_QUESTIONS : [],
