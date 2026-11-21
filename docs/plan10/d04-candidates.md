@@ -411,3 +411,5 @@
 一般職社会人試験（係員級）の基礎能力・技術・農業土木は、2023年・2025年は一般職高卒者と正答番号表を含む全ページが一致し、2024年は両試験で同じURLを使用している。収録可能な問題は一般職高卒者にまとめた。 [一般職社会人の公式問題一覧](https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_17.html) [一般職高卒者の公式問題一覧](https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_16.html)
 
 皇宮護衛官（大卒程度）の基礎能力は、2024年と2026年は専門職共通冊子を使用し、2025年は同年度の食品衛生監視員の冊子と正答番号表を含む全37ページが一致する。皇宮護衛官（高卒程度）と入国警備官も、2023年は海上保安学校学生の通常の基礎能力と全32ページが一致し、2024年は同じURLを使用している。 [皇宮護衛官（大卒程度）の公式問題一覧](https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_18.html) [同（高卒程度）](https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_25.html) [入国警備官](https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_27.html) [2025年度の専門職共通冊子](https://www.jinji.go.jp/content/000016392.pdf)
+
+2025年度の海上保安大学校学生は、学科試験の数学No. 1～13、英語No. 14～26の全26問を公式正答番号で収録した。数学の立体、得点分布、放物線、三角形と、英語の製造工程・費用の原図表を5点添付した。英語の長文は公開冊子の注記と出典を含めて収録した。 [学科試験の問題と正答](https://www.jinji.go.jp/content/000016368.pdf)
