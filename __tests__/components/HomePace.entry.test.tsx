@@ -5,6 +5,8 @@ import type { HomeDirectoryDomain } from "@/lib/home/home-directory";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { createPacePlan } from "@/lib/study-plan/pace";
 import { listPacePlans, savePacePlan } from "@/lib/study-plan/pace-storage";
+import { createHistoryStore } from "@/lib/storage/history";
+import { PlanCreateSheet } from "@/components/home/pace/PlanCreateSheet";
 
 const router = vi.hoisted(() => ({ replace: vi.fn(), push: vi.fn() }));
 vi.mock("next/navigation", () => ({ useRouter: () => router }));
@@ -28,6 +30,29 @@ beforeEach(() => {
 afterEach(() => { cleanup(); localStorage.clear(); sessionStorage.clear(); vi.unstubAllGlobals(); });
 
 describe("home plan entry", () => {
+  it("refreshes an open preview after grading and at JST midnight without losing the saved appointment", async () => {
+    vi.useFakeTimers({ toFake: ["Date"] });
+    try {
+      vi.setSystemTime(new Date("2026-11-17T23:59:00+09:00"));
+      const questions = Array.from({ length: 6 }, (_, i) => ({ ...catalog[0], id: "ip-" + i }));
+      const editing = { ...plan(), sessionId: "registered-session", registered: true, examDate: "2026-11-20",
+        registration: { label: "受験回", start: null, deadline: null, resultDate: null, sourceUrl: null, estimated: false } };
+      vi.mocked(fetch).mockImplementation(async url => String(url).includes("schedule") ? new Response(null, { status: 503 })
+        : Response.json(String(url).includes("catalog") ? { questions } : { entitled: false }));
+      render(<PlanCreateSheet embedded open editing={editing} initialExam="ip" items={domains[0].featured}
+        onOpenChange={() => {}} onCreated={() => {}} />);
+      expect(await screen.findByText("残り6問 ÷ 勉強日3日")).toBeVisible();
+      act(() => { createHistoryStore().record({ id: questions[0].id, at: Date.now(), correct: true, selected: "ア" }); });
+      expect(screen.getByText("残り5問 ÷ 勉強日3日")).toBeVisible();
+      vi.setSystemTime(new Date("2026-11-18T00:00:00+09:00"));
+      act(() => window.dispatchEvent(new Event("focus")));
+      expect(await screen.findByText("残り5問 ÷ 勉強日2日")).toBeVisible();
+      fireEvent.click(screen.getByRole("radio", { name: "平日だけ" }));
+      fireEvent.click(screen.getByRole("button", { name: "変更を保存" }));
+      expect(listPacePlans()[0]).toMatchObject({ id: editing.id, sessionId: editing.sessionId, registered: true,
+        registration: editing.registration, studyWeekdays: [1, 2, 3, 4, 5] });
+    } finally { vi.useRealTimers(); }
+  });
   it("finds IT Passport by nickname and keeps its existing destination", async () => {
     render(<HomePace domains={domains} planExamKeys={["ip", "fe"]} />);
     const search = await screen.findByRole("searchbox", { name: "資格名・略称で検索" });

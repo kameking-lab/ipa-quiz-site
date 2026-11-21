@@ -18,6 +18,13 @@ function pending<T>() {
   const promise = new Promise<T>((done) => { resolve = done; });
   return { promise, resolve };
 }
+it.each([true, false])("keeps the incorrect grade when devices disagree at the same timestamp (local correct=%s)", async localCorrect => {
+  localStorage.setItem(LS_KEYS.history, JSON.stringify({ entries: [{ ...entry, correct: localCorrect }], starredIds: ["local-star"] }));
+  post.mockResolvedValue(response([{ id: entry.id, at: entry.at, correct: !localCorrect }]));
+  expect((await syncHistory()).state).toBe("ok");
+  expect(data().entries).toMatchObject([{ id: entry.id, correct: false, at: entry.at }]);
+  expect(data().starredIds).toEqual(["local-star"]);
+});
 beforeEach(() => {
   localStorage.clear();
   current = "A";

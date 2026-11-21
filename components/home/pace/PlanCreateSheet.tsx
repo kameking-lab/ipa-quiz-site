@@ -4,7 +4,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sh
 import { Button } from "@/components/ui/button";
 import type { HomeDirectoryItem } from "@/lib/home/home-directory";
 import type { ExamSchedule, ExamScheduleSession } from "@/lib/study-plan/schedule";
-import { calculatePace, createPacePlan, EVERY_DAY, planOldestYear, rangeOptions, type PacePlan } from "@/lib/study-plan/pace";
+import { calculatePace, createPacePlan, dayNumber, EVERY_DAY, planOldestYear, rangeOptions, type PacePlan } from "@/lib/study-plan/pace";
 import { savePacePlan } from "@/lib/study-plan/pace-storage";
 import { paceAttempts } from "@/lib/study-plan/client";
 import { usePlanCatalog } from "@/lib/study-plan/use-plan-catalog";
@@ -39,6 +39,7 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCrea
   const [preset, setPreset] = useState(0);
   const [free, setFree] = useState(false);
   const [attempts, setAttempts] = useState<ReturnType<typeof paceAttempts>>([]);
+  const [today, setToday] = useState(() => japanDate(new Date()));
   const { questions, reload } = usePlanCatalog(open ? exam : "");
   useEffect(() => {
     if (!open) return;
@@ -48,7 +49,6 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCrea
     setWeekdays(days);
     const exact = weekdayPresets.findIndex(p => p.days?.length === days.length && days.every(day => p.days?.includes(day)));
     setPreset(exact < 0 ? 3 : exact);
-    setAttempts(paceAttempts());
     const controller = new AbortController();
     setFree(false);
     void fetch("/api/billing/status", { signal: controller.signal, cache: "no-store" })
@@ -56,6 +56,19 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCrea
       .then(value => { if (!controller.signal.aborted) setFree(value); }).catch(() => {});
     return () => controller.abort();
   }, [open, initialExam, editing]);
+  useEffect(() => {
+    if (!open) return;
+    const clock = () => setToday(japanDate(new Date()));
+    const refresh = () => { clock(); setAttempts(paceAttempts()); };
+    refresh();
+    const events = ["study-plan:changed", "study-activity:synced", "storage", "focus", "pageshow"];
+    for (const event of events) window.addEventListener(event, refresh);
+    const timer = window.setInterval(clock, 60_000);
+    return () => {
+      for (const event of events) window.removeEventListener(event, refresh);
+      window.clearInterval(timer);
+    };
+  }, [open]);
   useEffect(() => {
     if (!open) return;
     setLoading(!!exam); setError(""); setDate(editing?.exam === exam ? editing.examDate ?? "" : ""); setSessions([]); setSessionId(""); setScheduleFailed(false);
@@ -77,23 +90,23 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCrea
   const manual = !session?.examDate || session.scheduleStatus === "ondemand" ||
     session.datePrecision === "month" || !!session.examDateEnd && session.examDateEnd !== session.examDate;
   const examDate = manual ? date : session?.examDate ?? "";
-  const today = japanDate(new Date());
   const options = rangeOptions(questions ?? [], exam);
   const sameExam = editing?.exam === exam;
   const existingYear = sameExam && questions ? planOldestYear(editing, questions) : null;
   const chosenYear = (yearChoice?.exam === exam ? yearChoice.year : undefined) ??
     (sameExam ? existingYear ?? undefined : options.find(option => option.recommended)?.oldestYear);
   const preview = questions?.length && chosenYear !== undefined ? calculatePace(
-    createPacePlan({ id: "preview", exam, examDate: examDate || null, sessionId: null, startDate: today, studyWeekdays: weekdays },
+    createPacePlan({ id: "preview", exam, examDate: dayNumber(examDate) === null ? null : examDate, sessionId: null, startDate: today, studyWeekdays: weekdays },
       questions, new Date().toISOString(), chosenYear), questions, attempts, today) : null;
   const noDays = Boolean(preview?.remaining && examDate && preview.studyDays === 0);
-  const canSave = !loading && !!preview?.total && examDate >= today && weekdays.length > 0 && !noDays;
+  const canSave = !loading && !!preview?.total && dayNumber(examDate) !== null && examDate >= today && weekdays.length > 0 && !noDays;
   function create() {
     if (!canSave || !questions || chosenYear === undefined) return;
     const now = new Date().toISOString();
     const updatedAt = editing && Date.parse(now) <= Date.parse(editing.updatedAt)
       ? new Date(Date.parse(editing.updatedAt) + 1).toISOString() : now;
-    const plan = createPacePlan({ id: editing?.id ?? crypto.randomUUID(), exam, sessionId: session?.id ?? null, examDate,
+    const savedSessionId = session?.id ?? (sameExam && editing.examDate === examDate ? editing.sessionId : null);
+    const plan = createPacePlan({ id: editing?.id ?? crypto.randomUUID(), exam, sessionId: savedSessionId, examDate,
       startDate: editing?.startDate ?? today, studyWeekdays: weekdays }, questions, updatedAt, chosenYear);
     plan.createdAt = editing?.createdAt ?? now;
     if (session) plan.registration = { label: session.label, start: session.applicationStart, deadline: session.applicationDeadline,

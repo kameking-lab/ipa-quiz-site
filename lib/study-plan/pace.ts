@@ -91,9 +91,7 @@ export function latestAnswers(attempts: readonly AnswerAttempt[], before = Date.
   return latest;
 }
 
-export function weakQuestionStatus(id: string, latest: ReadonlyMap<string, AnswerAttempt>, starred: ReadonlySet<string>) {
-  const incorrect = latest.get(id)?.correct === false;
-  const marked = starred.has(id);
+export function weakQuestionStatus(incorrect: boolean, marked: boolean) {
   return { incorrect, marked, weak: incorrect || marked };
 }
 
@@ -102,7 +100,7 @@ export function weakQuestions<T extends PlanQuestion>(catalog: readonly T[], exa
   const latest = latestAnswers(attempts, now);
   const marks = new Set(starred);
   return orderedPlanQuestions(catalog, exam).flatMap(question => {
-    const status = weakQuestionStatus(question.id, latest, marks);
+    const status = weakQuestionStatus(latest.get(question.id)?.correct === false, marks.has(question.id));
     return status.weak ? [{ question, ...status }] : [];
   });
 }

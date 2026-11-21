@@ -1,6 +1,7 @@
 import { isReferenceOnlyQuestionId } from "@/lib/questions/assessment";
 import type { NativeBGrade } from "@/lib/questions/types";
 import { latestAnswers } from "@/lib/study-plan/pace";
+import { getPaceAttempts } from "@/lib/study-plan/pace-storage";
 import { LS_KEYS } from "./keys";
 
 export interface HistoryEntry {
@@ -110,7 +111,8 @@ export function createHistoryStore(): HistoryStore {
       return [...new Set(snapshot().entries.map((e) => e.id))];
     },
     getWrongIds() {
-      return [...latestAnswers(snapshot().entries).values()].filter(entry => !entry.correct).map(entry => entry.id);
+      return [...latestAnswers(getPaceAttempts(snapshot().entries)).values()]
+        .filter(entry => !entry.correct && !isReferenceOnlyQuestionId(entry.id)).map(entry => entry.id);
     },
     getStarredIds() {
       return [...snapshot().starredIds];

@@ -37,6 +37,10 @@ function mergeHistory(snapshot: HistorySnapshot, latest: HistorySnapshot, server
   for (const entry of [...server, ...snapshot.entries, ...latest.entries]) {
     const key = JSON.stringify([entry.id, entry.at]);
     const previous = entries.get(key);
+    if (previous && previous.correct !== entry.correct) {
+      if (!entry.correct) entries.set(key, entry);
+      continue;
+    }
     entries.set(key, {
       ...previous,
       ...entry,
@@ -61,7 +65,9 @@ export async function syncHistoryWithContext(context: SyncContext): Promise<Sync
     if (!entries.every(isEntry)) return { state: "error", message: "invalid_history_response" };
     if (!ownsSyncContext(context)) return { state: "deferred", reason: "account_changed" };
     const latest = readHistory();
-    window.localStorage.setItem(LS_KEYS.history, JSON.stringify(mergeHistory(snapshot, latest, entries)));
+    const merged = mergeHistory(snapshot, latest, entries);
+    window.localStorage.setItem(LS_KEYS.history, JSON.stringify(merged));
+    if (JSON.stringify(merged.entries) !== JSON.stringify(latest.entries)) window.dispatchEvent(new Event("study-activity:synced"));
     return status;
   } catch (error) {
     return { state: "error", message: error instanceof Error ? error.message : "history" };

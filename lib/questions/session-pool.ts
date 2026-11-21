@@ -1,7 +1,6 @@
 import type { QuizMode } from "./types";
 import { createHistoryStore } from "@/lib/storage/history";
-import { paceAttempts } from "@/lib/study-plan/client";
-import { latestAnswers, weakQuestionStatus } from "@/lib/study-plan/pace";
+import { reviewIdFilter } from "./filter";
 import { aggregateByCategory } from "@/lib/learning/analytics";
 const MAX_POOL = 80;
 const WEAKNESS_THRESHOLD = 0.6;
@@ -41,9 +40,7 @@ export function deriveSessionPool(
   if (mode === "review" || mode === "unanswered") {
     const history = createHistoryStore();
     if (mode === "review") {
-      const latest = latestAnswers(paceAttempts());
-      const starred = new Set(wrongOnly ? [] : history.getStarredIds());
-      ids = ids.filter(id => weakQuestionStatus(id, latest, starred).weak);
+      ids = ids.filter(reviewIdFilter(history, wrongOnly));
     } else {
       const answered = new Set(history.getAnsweredIds());
       ids = ids.filter((id) => !answered.has(id));
