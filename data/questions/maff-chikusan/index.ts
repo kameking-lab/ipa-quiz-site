@@ -2,10 +2,12 @@ import { MAFF_CHIKUSAN_2026_SENMON } from "./2026-senmon";
 import { MAFF_CHIKUSAN_2025_SENMON } from "./2025-senmon";
 import { MAFF_CHIKUSAN_2024_SENMON } from "./2024-senmon";
 import { MAFF_CHIKUSAN_2023_SENMON } from "./2023-senmon";
+import { MAFF_CHIKUSAN_2022_SENMON } from "./2022-senmon";
 
 export const MAFF_CHIKUSAN_QUESTIONS = [
     ...MAFF_CHIKUSAN_2026_SENMON,
     ...MAFF_CHIKUSAN_2025_SENMON,
     ...MAFF_CHIKUSAN_2024_SENMON,
     ...MAFF_CHIKUSAN_2023_SENMON,
+    ...MAFF_CHIKUSAN_2022_SENMON,
 ];
