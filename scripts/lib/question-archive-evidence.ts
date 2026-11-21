@@ -90,13 +90,13 @@ function officialPdfUrl(raw: string | undefined, hosts: readonly string[]) {
   return Boolean(url && hosts.includes(url.hostname) && url.pathname.toLowerCase().endsWith(".pdf"));
 }
 
-function matchesCapture(raw: string | undefined, original: string) {
+function captureOriginal(raw: string | undefined): string | undefined {
   const capture = /^https:\/\/web\.archive\.org\/web\/(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})\/(https?:\/\/.+)$/u.exec(raw ?? "");
-  if (!capture || capture[7] !== original || !parseUrl(raw)) return false;
+  if (!capture || !parseUrl(raw)) return;
   const [, year, month, day, hour, minute, second] = capture;
   const iso = `${year}-${month}-${day}T${hour}:${minute}:${second}.000Z`;
   const date = new Date(iso);
-  return Number.isFinite(date.getTime()) && date.toISOString() === iso;
+  return Number.isFinite(date.getTime()) && date.toISOString() === iso ? capture[7] : undefined;
 }
 
 function verifiedDocument(
@@ -104,7 +104,7 @@ function verifiedDocument(
 ) {
   return officialPdfUrl(original, hosts) && doc.originalUrl === withoutFragment(original) &&
     /^[a-f0-9]{64}$/u.test(doc.sha256) && doc.archiveUrl === withoutFragment(archive) &&
-    (archive === undefined || matchesCapture(doc.archiveUrl, doc.originalUrl));
+    (archive === undefined || captureOriginal(doc.archiveUrl) === doc.originalUrl);
 }
 
 export function sourceUrlRule(value: string): "archived-source" | "rolling-source" | undefined {
@@ -115,6 +115,11 @@ export function sourceUrlRule(value: string): "archived-source" | "rolling-sourc
   if (/^(?:www\.)?nichimu\.or\.jp$/.test(host) && /^\/(?:vc-files\/kshiken\/pdf|kshiken)\/siken\/\d+\//i.test(url.pathname)) {
     return "rolling-source";
   }
+}
+
+export function isOfficialPdfCapture(url: string, exam: string): boolean {
+  const hosts = Object.hasOwn(OFFICIAL_ARCHIVE_HOSTS, exam) ? OFFICIAL_ARCHIVE_HOSTS[exam] : [];
+  return officialPdfUrl(captureOriginal(withoutFragment(url)), hosts);
 }
 
 export function verifiedArchiveSource(

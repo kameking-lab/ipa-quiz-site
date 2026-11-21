@@ -132,6 +132,14 @@ describe("公式PDFの保存版", () => {
     expect(check()).toEqual([]);
   });
 
+  it("補助資料は公式ページまたは公式PDFの日時固定保存版を参照できる", () => {
+    const index = "https://www.nichimu.or.jp/index.html";
+    expect(check({ ...archived, officialReferenceUrls: [index, capture(original) + "#page=2"] })).toEqual([]);
+    for (const url of [capture(index), capture(original, "202501"), capture("https://example.org/paper.pdf")]) {
+      expect(check({ ...archived, officialReferenceUrls: [url] })).toEqual(["archived-source"]);
+    }
+  });
+
   it("台帳がない問題・回違い・正答違い・ハッシュ欠損を拒否する", () => {
     expect(check(archived, [])).toEqual(["rolling-source"]);
     expect(check({ ...archived, year: 2024 })).toEqual(["rolling-source"]);

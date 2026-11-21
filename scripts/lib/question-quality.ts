@@ -3,7 +3,7 @@ import { realpathSync, statSync } from "node:fs";
 import { extname, isAbsolute, relative, resolve, sep } from "node:path";
 import { CHOICE_KEYS } from "@/lib/questions/answers";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
-import { sourceUrlRule, verifiedArchiveSource, type ArchiveEvidence } from "./question-archive-evidence";
+import { isOfficialPdfCapture, sourceUrlRule, verifiedArchiveSource, type ArchiveEvidence } from "./question-archive-evidence";
 
 export { sourceUrlRule } from "./question-archive-evidence";
 
@@ -154,6 +154,11 @@ export function checkQuestionQuality(
   if (isTemplateOnly(q.explanation)) add("choice-template", "全体の解説が定型句だけです", ["explanation", q.explanation]);
   const sourceRule = sourceUrlRule(q.sourcePdfUrl);
   if (archiveEvidence?.has(q.id) || q.sourceArchiveUrl !== undefined || q.sourceAnswerArchiveUrl !== undefined) {
+    for (const url of q.officialReferenceUrls ?? []) {
+      if (sourceUrlRule(url) === "archived-source" && !isOfficialPdfCapture(url, q.exam)) {
+        add("archived-source", "補助資料の保存版には日時固定の公式PDFが必要です", ["officialReferenceUrls", url]);
+      }
+    }
     if (!verifiedArchiveSource(q, archiveEvidence)) {
       add(sourceRule === "rolling-source" ? sourceRule : "archived-source",
         "公式PDFの日時固定保存版と全問照合済みの正答を出典台帳で確認できません",
