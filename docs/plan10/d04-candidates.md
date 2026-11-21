@@ -447,3 +447,5 @@
 2025年度の畜産系は専門試験48問を収録し、家畜の遺伝病の原表を添付した。毒性・感染症に関するNo. 41・44は公開問題データから除外した。生乳の処理量と飼料作物の作付面積は、出題が指定する令和5年の統計を確認した。 [専門試験](https://www.maff.go.jp/j/joinus/recruit/2tikusan/attach/pdf/zooexam-23.pdf) [公式正答](https://www.maff.go.jp/j/joinus/recruit/2tikusan/attach/pdf/zooexam-25.pdf) [牛乳乳製品統計](https://www.e-stat.go.jp/stat-search/files?layout=datalist&stat_infid=000040194403) [飼料をめぐる情勢](https://www.maff.go.jp/j/chikusan/sinko/lin/l_siryo/)
 
 2024年度の獣医系は専門試験54問を収録し、ホルモンの作用、畜産の産出額、吸入麻酔薬の原図表3点を添付した。感染症に関するNo. 4・13・14・20・25・34は公開問題データから除外した。 [専門試験](https://www.maff.go.jp/j/joinus/recruit/zyui/attach/pdf/vetexam-25.pdf) [公式正答](https://www.maff.go.jp/j/joinus/recruit/zyui/attach/pdf/vetexam-29.pdf)
+
+2024年度の畜産系は専門試験50問を収録し、都道府県別の牛の飼養頭数、家畜の繁殖、乳の成分規格の原表3点を添付した。No. 7は出題で使われた広義の脳幹の区分、No. 46は射乳と泌乳維持の関係を解説した。 [専門試験](https://www.maff.go.jp/j/joinus/recruit/2tikusan/attach/pdf/zooexam-20.pdf) [公式正答](https://www.maff.go.jp/j/joinus/recruit/2tikusan/attach/pdf/zooexam-21.pdf)
