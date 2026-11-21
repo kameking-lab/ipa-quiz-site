@@ -12,23 +12,23 @@
       "技術士の義務と責務"
     ],
     "difficulty": 3,
-    "question": "Ⅱ－1 技術士の義務と責務",
+    "question": "Ⅱ－1　技術士法第4章が定める義務と責務に照らし、（ア）から（エ）の正誤の組合せを選んでください。",
     "choices": {
-      "ア": "原本の選択肢1",
-      "イ": "原本の選択肢2",
-      "ウ": "原本の選択肢3",
-      "エ": "原本の選択肢4",
-      "オ": "原本の選択肢5"
+      "ア": "① ○・×・○・×",
+      "イ": "② ○・○・×・×",
+      "ウ": "③ ×・○・×・×",
+      "エ": "④ ×・×・○・○",
+      "オ": "⑤ ×・×・○・×"
     },
     "answer": "ウ",
     "officialAnswerNumber": 3,
-    "explanation": "職務上知った秘密の管理と、公衆の安全を重視する責務を区別する。判断に安全上の懸念が残るときは、関係者に伝えて解決を図る。",
+    "explanation": "正しいのは（イ）です。技術士法第45条は、業務上知り得た秘密を正当な理由なく漏らすことを禁じています。第45条の2は公益を害しないよう努める責務を定めています。安全上の懸念があれば、その根拠を関係者に伝え、必要な対応を求めます。",
     "choiceExplanations": {
-      "ア": "ア・ウを正しいとし、イを誤りにしている。",
-      "イ": "アを正しいとしている。",
-      "ウ": "イのみが正しい。独自調査の例外や、危険を見過ごしてよいという扱いはない。",
-      "エ": "ウとエを正しいとしている。",
-      "オ": "公衆の安全より守秘を常に優先するとするウが誤り。"
+      "ア": "（ア）には独自調査なら守秘が不要という例外があり、（ウ）には守秘を一律に優先するという誤りがあります。",
+      "イ": "（イ）の公開に努める姿勢は適切ですが、調査情報にも守秘の対象となるものがあるので（ア）は誤りです。",
+      "ウ": "（イ）だけが適切です。情報隠蔽によって公衆の安全や社会との信頼を損ねないようにします。",
+      "エ": "安全上の懸念を伝える必要があるため（エ）は誤りです。また（ウ）は公益確保の責務を欠いています。",
+      "オ": "（ウ）のように守秘を常に優先する判断は適切ではありません。（イ）も○です。"
     },
     "explanationCoverage": "full",
     "hasImage": true,
@@ -38,14 +38,16 @@
     "imageAltTexts": [
       "令和5年度 技術士第一次試験 適性科目 Ⅱ－1 技術士の義務と責務の問題本文・選択肢（1/1）"
     ],
-    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9917_2.pdf",
-    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf",
-    "sourceAttribution": "出典：日本技術士会 令和5年度 技術士第一次試験 適性科目 Ⅱ－1。公式問題の画像を切り出し、独自解説を追加。",
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9917_2.pdf#page=1",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=2",
+    "sourceAttribution": "出典：日本技術士会「令和5年度 技術士第一次試験 適性科目」Ⅱ－1（問題PDF 1ページ、正答PDF 2ページ）。",
     "sourceExamSession": "令和5年度 技術士第一次試験 適性科目",
     "officialQuestionLabel": "Ⅱ－1",
     "license": "IPEJ-attributed",
     "officialReferenceUrls": [
-      "https://www.engineer.or.jp/c_topics/009/009289.html"
+      "https://www.engineer.or.jp/c_topics/009/009289.html",
+      "https://laws.e-gov.go.jp/law/358AC0000000025/20220617_504AC0000000068",
+      "https://laws.e-gov.go.jp/law/358AC0000000025/20250601_504AC0000000068"
     ]
   },
   {
@@ -61,23 +63,23 @@
       "秘密情報の管理"
     ],
     "difficulty": 3,
-    "question": "Ⅱ－2 秘密情報の管理",
+    "question": "Ⅱ－2　情報漏洩対策として、不適切な取組を選んでください。",
     "choices": {
-      "ア": "原本の選択肢1",
-      "イ": "原本の選択肢2",
-      "ウ": "原本の選択肢3",
-      "エ": "原本の選択肢4",
-      "オ": "原本の選択肢5"
+      "ア": "① 機密区分別のアクセス権設定",
+      "イ": "② 秘密情報を含む媒体への表示",
+      "ウ": "③ 秘密情報を扱う作業はできる限り単独で実施",
+      "エ": "④ 電子情報の印刷・コピー・書き込みを制限",
+      "オ": "⑤ 席や保管棚の配置によって死角を減らす"
     },
     "answer": "ウ",
     "officialAnswerNumber": 3,
-    "explanation": "持ち出しや漏えいを防ぐには、アクセス制御と作業の相互確認を組み合わせる。単独作業を優先すると相互確認が働かない。",
+    "explanation": "秘密情報に触れる人は業務上必要な範囲に絞ります。そのうえで、重要な作業は権限のある担当者による相互確認や記録を取り入れ、誤操作や不正な持ち出しを発見できるようにします。",
     "choiceExplanations": {
-      "ア": "情報へのアクセスを必要な範囲に限定できる。",
-      "イ": "秘密情報と識別できる表示は取扱いの誤りを防ぐ。",
-      "ウ": "単独作業を優先すると第三者の確認が働かない。",
-      "エ": "媒体への書込みやコピーを制御すると持ち出しの経路を絞れる。",
-      "オ": "死角を減らすことで資料への不適切なアクセスに気づきやすくなる。"
+      "ア": "情報の機密性に応じて閲覧・編集できる人を定め、業務上不要なアクセスを減らせます。",
+      "イ": "媒体に機密であることを表示すれば、受け取った人が取扱いルールを確認できます。",
+      "ウ": "一律に単独作業を優先すると誤操作や不正を検知しにくくなるため、作業に応じた監督や相互確認が必要です。",
+      "エ": "コピーや書き込みなどの経路を制限すると、電子情報を別媒体へ持ち出す機会を減らせます。",
+      "オ": "作業や保管場所の死角を減らすと、不審なアクセスや持ち出しに気付きやすくなります。"
     },
     "explanationCoverage": "full",
     "hasImage": true,
@@ -87,12 +89,15 @@
     "imageAltTexts": [
       "令和5年度 技術士第一次試験 適性科目 Ⅱ－2 秘密情報の管理の問題本文・選択肢（1/1）"
     ],
-    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9917_2.pdf",
-    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf",
-    "sourceAttribution": "出典：日本技術士会 令和5年度 技術士第一次試験 適性科目 Ⅱ－2。公式問題の画像を切り出し、独自解説を追加。",
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9917_2.pdf#page=2",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=2",
+    "sourceAttribution": "出典：日本技術士会「令和5年度 技術士第一次試験 適性科目」Ⅱ－2（問題PDF 2ページ、正答PDF 2ページ）。",
     "sourceExamSession": "令和5年度 技術士第一次試験 適性科目",
     "officialQuestionLabel": "Ⅱ－2",
-    "license": "IPEJ-attributed"
+    "license": "IPEJ-attributed",
+    "officialReferenceUrls": [
+      "https://www.meti.go.jp/policy/economy/chizai/chiteki/pdf/handbook/chapter3.pdf"
+    ]
   },
   {
     "id": "gijutsushi1-tekisei-2023-annual-ippan-q3",
@@ -107,23 +112,23 @@
       "公益通報者保護"
     ],
     "difficulty": 3,
-    "question": "Ⅱ－3 公益通報者保護",
+    "question": "Ⅱ－3　設問が前提とする公益通報者保護法について、不適切な記述を選んでください。",
     "choices": {
-      "ア": "原本の選択肢1",
-      "イ": "原本の選択肢2",
-      "ウ": "原本の選択肢3",
-      "エ": "原本の選択肢4",
-      "オ": "原本の選択肢5"
+      "ア": "① 通報対象となる法律は法令で定められている",
+      "イ": "② 公務員は通報主体の適用範囲から除外される",
+      "ウ": "③ 通報を理由とする労働者の解雇は無効で、不利益取扱いも禁止",
+      "エ": "④ 降格や減給などは不利益取扱いに該当",
+      "オ": "⑤ 事業者は公益通報を理由に通報者へ賠償請求できない"
     },
     "answer": "イ",
     "officialAnswerNumber": 2,
-    "explanation": "出題時点の制度では、公務員も原則として公益通報を行える労働者に含まれる。",
+    "explanation": "公務員も公益通報者保護制度の対象です。一般職の公務員に対する免職などは、公務員法制の下で公益通報を理由とする不利益な取扱いとならないように扱います。設問は令和4年施行の改正を前提としており、その後の令和7年改正は令和8年12月1日施行です。",
     "choiceExplanations": {
-      "ア": "対象法令は法と政令で定められる。",
-      "イ": "公務員を一律に適用外とする点が誤り。",
-      "ウ": "労働者が通報したことを理由とする解雇や不利益取扱いは保護の対象になる。",
-      "エ": "賃金や配置などで不利益を与える行為も含まれる。",
-      "オ": "通報による損害を理由にした賠償請求を制限する規定がある。"
+      "ア": "通報対象事実に関係する法律の範囲は、公益通報者保護法の別表や政令で定まります。",
+      "イ": "公務員にも保護の規定があり、国家公務員法や地方公務員法の適用を理由に一律に除外されることはありません。",
+      "ウ": "法第3条は通報を理由とする解雇を無効とし、第5条は降格などの不利益取扱いを禁じます。",
+      "エ": "降格、減給、退職の強要などは、雇用上の地位や待遇を悪化させる扱いです。",
+      "オ": "法第7条により、通報による損害を理由にした事業者から通報者への賠償請求は制限されます。"
     },
     "explanationCoverage": "full",
     "hasImage": true,
@@ -133,14 +138,17 @@
     "imageAltTexts": [
       "令和5年度 技術士第一次試験 適性科目 Ⅱ－3 公益通報者保護の問題本文・選択肢（1/1）"
     ],
-    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9917_2.pdf",
-    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf",
-    "sourceAttribution": "出典：日本技術士会 令和5年度 技術士第一次試験 適性科目 Ⅱ－3。公式問題の画像を切り出し、独自解説を追加。",
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9917_2.pdf#page=3",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=2",
+    "sourceAttribution": "出典：日本技術士会「令和5年度 技術士第一次試験 適性科目」Ⅱ－3（問題PDF 3ページ、正答PDF 2ページ）。",
     "sourceExamSession": "令和5年度 技術士第一次試験 適性科目",
     "officialQuestionLabel": "Ⅱ－3",
     "license": "IPEJ-attributed",
     "officialReferenceUrls": [
-      "https://www.caa.go.jp/policies/policy/consumer_partnerships/whisleblower_protection_system/overview/assets/overview_220705_0001.pdf"
+      "https://www.caa.go.jp/policies/policy/consumer_partnerships/whisleblower_protection_system/overview/assets/overview_220705_0001.pdf",
+      "https://laws.e-gov.go.jp/law/416AC0000000122/20220601_502AC0000000051",
+      "https://laws.e-gov.go.jp/law/416AC0000000122/20261102_508AC0000000062",
+      "https://www.caa.go.jp/policies/policy/consumer_partnerships/whisleblower_protection_system/overview/"
     ]
   },
   {
@@ -156,23 +164,23 @@
       "産業財産権"
     ],
     "difficulty": 3,
-    "question": "Ⅱ－4 産業財産権",
+    "question": "Ⅱ－4　特許権・実用新案権・意匠権・商標権・著作権の順に、産業財産権に含まれるものを○で示した組合せを選んでください。",
     "choices": {
-      "ア": "原本の選択肢1",
-      "イ": "原本の選択肢2",
-      "ウ": "原本の選択肢3",
-      "エ": "原本の選択肢4",
-      "オ": "原本の選択肢5"
+      "ア": "① ○・○・○・○・○",
+      "イ": "② ○・○・○・○・×",
+      "ウ": "③ ○・○・○・×・○",
+      "エ": "④ ○・○・×・○・○",
+      "オ": "⑤ ○・×・○・○・○"
     },
     "answer": "イ",
     "officialAnswerNumber": 2,
-    "explanation": "特許権・実用新案権・意匠権・商標権の四つを産業財産権という。著作権は知的財産権の別の区分に当たる。",
+    "explanation": "産業財産権は特許権、実用新案権、意匠権、商標権の4種類です。著作権も知的財産権の一つですが、文芸やプログラムなどの創作的な表現を保護する別の制度です。",
     "choiceExplanations": {
-      "ア": "著作権まで産業財産権に含めている。",
-      "イ": "特許・実用新案・意匠・商標だけを含める組合せ。",
-      "ウ": "商標権を外し、著作権を含めている。",
-      "エ": "意匠権を外し、著作権を含めている。",
-      "オ": "実用新案権を外し、著作権を含めている。"
+      "ア": "著作権まで産業財産権に含めているため、分類が広すぎます。",
+      "イ": "発明、考案、デザイン、商標に対応する四つを○、著作権を×としており適切です。",
+      "ウ": "商品やサービスの標識を保護する商標権は産業財産権に含まれます。",
+      "エ": "物品等のデザインを保護する意匠権を除外しているため誤りです。",
+      "オ": "物品の形状・構造・組合せについての考案を保護する実用新案権も含まれます。"
     },
     "explanationCoverage": "full",
     "hasImage": true,
@@ -182,9 +190,9 @@
     "imageAltTexts": [
       "令和5年度 技術士第一次試験 適性科目 Ⅱ－4 産業財産権の問題本文・選択肢（1/1）"
     ],
-    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9917_2.pdf",
-    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf",
-    "sourceAttribution": "出典：日本技術士会 令和5年度 技術士第一次試験 適性科目 Ⅱ－4。公式問題の画像を切り出し、独自解説を追加。",
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9917_2.pdf#page=4",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=2",
+    "sourceAttribution": "出典：日本技術士会「令和5年度 技術士第一次試験 適性科目」Ⅱ－4（問題PDF 4ページ、正答PDF 2ページ）。",
     "sourceExamSession": "令和5年度 技術士第一次試験 適性科目",
     "officialQuestionLabel": "Ⅱ－4",
     "license": "IPEJ-attributed",
@@ -205,23 +213,23 @@
       "技術士の資質能力"
     ],
     "difficulty": 3,
-    "question": "Ⅱ－5 技術士の資質能力",
+    "question": "Ⅱ－5　令和5年1月改訂の「技術士に求められる資質能力」で、列挙された八つのキーワードのうち誤っているものの個数を選んでください。",
     "choices": {
-      "ア": "原本の選択肢1",
-      "イ": "原本の選択肢2",
-      "ウ": "原本の選択肢3",
-      "エ": "原本の選択肢4",
-      "オ": "原本の選択肢5"
+      "ア": "① 0個",
+      "イ": "② 1個",
+      "ウ": "③ 2個",
+      "エ": "④ 3個",
+      "オ": "⑤ 4個"
     },
     "answer": "ア",
     "officialAnswerNumber": 1,
-    "explanation": "列挙された八つは、令和5年1月改訂のコンピテンシーのキーワードにすべて含まれる。",
+    "explanation": "専門的学識、問題解決、マネジメント、評価、コミュニケーション、リーダーシップ、技術者倫理、継続研さんの八つはいずれも該当します。改訂版の継続研さんでは、技術や仕事の変化に対応する力の維持と向上が示されています。",
     "choiceExplanations": {
-      "ア": "八つとも該当し、誤りは0個。",
-      "イ": "誤っているキーワードは1個もない。",
-      "ウ": "2個を除く必要はない。",
-      "エ": "どのキーワードも改訂版にある。",
-      "オ": "4個を除くと該当するキーワードまで落ちる。"
+      "ア": "（ア）から（ク）までのすべてが、令和5年1月改訂の項目に該当します。",
+      "イ": "継続研さんを除くと1個になりますが、本問が指定する改訂版には継続研さんもあります。",
+      "ウ": "評価とマネジメントはそれぞれ独立した項目で、どちらも数から除きません。",
+      "エ": "リーダーシップとコミュニケーションは、専門的学識に加えて求められる個別の資質です。",
+      "オ": "技術者倫理や問題解決も正式な項目です。技術知識に直接関係する項目だけに絞りません。"
     },
     "explanationCoverage": "full",
     "hasImage": true,
@@ -231,9 +239,9 @@
     "imageAltTexts": [
       "令和5年度 技術士第一次試験 適性科目 Ⅱ－5 技術士の資質能力の問題本文・選択肢（1/1）"
     ],
-    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9917_2.pdf",
-    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf",
-    "sourceAttribution": "出典：日本技術士会 令和5年度 技術士第一次試験 適性科目 Ⅱ－5。公式問題の画像を切り出し、独自解説を追加。",
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9917_2.pdf#page=5",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=2",
+    "sourceAttribution": "出典：日本技術士会「令和5年度 技術士第一次試験 適性科目」Ⅱ－5（問題PDF 5ページ、正答PDF 2ページ）。",
     "sourceExamSession": "令和5年度 技術士第一次試験 適性科目",
     "officialQuestionLabel": "Ⅱ－5",
     "license": "IPEJ-attributed",
@@ -254,23 +262,23 @@
       "製造物責任法"
     ],
     "difficulty": 3,
-    "question": "Ⅱ－6 製造物責任法",
+    "question": "Ⅱ－6　製造物責任法（PL法）について、（ア）から（オ）の正誤の組合せを選んでください。",
     "choices": {
-      "ア": "原本の選択肢1",
-      "イ": "原本の選択肢2",
-      "ウ": "原本の選択肢3",
-      "エ": "原本の選択肢4",
-      "オ": "原本の選択肢5"
+      "ア": "① ○・×・○・○・×",
+      "イ": "② ○・○・×・×・○",
+      "ウ": "③ ×・○・○・○・×",
+      "エ": "④ ×・×・○・○・×",
+      "オ": "⑤ ×・×・×・×・○"
     },
     "answer": "ウ",
     "officialAnswerNumber": 3,
-    "explanation": "建物に取り付けた製造物が一律に対象外になるわけではない。ソフトウェアを組み込んだ製品は、製品の欠陥として判断する。",
+    "explanation": "（イ）（ウ）（エ）が正しく、（ア）（オ）は誤りです。PL法の製造物は製造または加工された動産です。設置前の流通段階で動産だった製品は設置後の事故でも適用され得ます。国外では、適用される法とその要件を確認します。",
     "choiceExplanations": {
-      "ア": "アを正しいとし、イを誤りとしている。",
-      "イ": "ア・オを正しいとし、ウ・エを誤りとしている。",
-      "ウ": "イ・ウ・エが正しく、ア・オは誤り。",
-      "エ": "対象を一律に除くアの扱いが誤り。",
-      "オ": "海外でも国内法だけで足りるとするオは誤り。"
+      "ア": "据付け後に不動産の一部となったエスカレーターでも、製品として流通した際の欠陥が問題となり得るので（ア）は誤りです。",
+      "イ": "原子力損害には原子力損害賠償法の特則があるため（ウ）は○です。国外でも日本のPL法で足りるとする（オ）は誤りです。",
+      "ウ": "組込みソフトウェアの不具合は製品自体の欠陥となり得ます。原子力損害の特則と通常の修理の扱いを合わせると、この組合せです。",
+      "エ": "ソフトウェア単体は動産に当たりませんが、組込み製品の欠陥を通じて責任が生じ得るので（イ）は○です。",
+      "オ": "通常の修理・整備は、製品の性質を維持・回復する作業であり、基本的に製造・加工を行うものではありません。（エ）は○です。"
     },
     "explanationCoverage": "full",
     "hasImage": true,
@@ -280,14 +288,17 @@
     "imageAltTexts": [
       "令和5年度 技術士第一次試験 適性科目 Ⅱ－6 製造物責任法の問題本文・選択肢（1/1）"
     ],
-    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9917_2.pdf",
-    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf",
-    "sourceAttribution": "出典：日本技術士会 令和5年度 技術士第一次試験 適性科目 Ⅱ－6。公式問題の画像を切り出し、独自解説を追加。",
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9917_2.pdf#page=6",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=2",
+    "sourceAttribution": "出典：日本技術士会「令和5年度 技術士第一次試験 適性科目」Ⅱ－6（問題PDF 6ページ、正答PDF 2ページ）。",
     "sourceExamSession": "令和5年度 技術士第一次試験 適性科目",
     "officialQuestionLabel": "Ⅱ－6",
     "license": "IPEJ-attributed",
     "officialReferenceUrls": [
-      "https://www.caa.go.jp/policies/policy/consumer_safety/other/pl_qa.html"
+      "https://www.caa.go.jp/policies/policy/consumer_safety/other/pl_qa.html",
+      "https://laws.e-gov.go.jp/law/406AC0000000085/20200401_429AC0000000045",
+      "https://laws.e-gov.go.jp/law/336AC0000000147/20220617_504AC0000000068",
+      "https://laws.e-gov.go.jp/law/336AC0000000147/20250601_504AC0000000068"
     ]
   },
   {
@@ -303,23 +314,23 @@
       "科学者の行動規範"
     ],
     "difficulty": 3,
-    "question": "Ⅱ－7 科学者の行動規範",
+    "question": "Ⅱ－7　日本学術会議「科学者の行動規範」に照らし、研究の公正さと社会への科学的助言に関する（ア）から（エ）の正誤を判定してください。",
     "choices": {
-      "ア": "原本の選択肢1",
-      "イ": "原本の選択肢2",
-      "ウ": "原本の選択肢3",
-      "エ": "原本の選択肢4",
-      "オ": "原本の選択肢5"
+      "ア": "① ×・○・○・○",
+      "イ": "② ○・×・○・○",
+      "ウ": "③ ○・○・×・○",
+      "エ": "④ ○・○・○・×",
+      "オ": "⑤ ○・○・○・○"
     },
     "answer": "イ",
     "officialAnswerNumber": 2,
-    "explanation": "政策への助言では科学的根拠と不確実性を明らかにする。見解に相違があれば、統一見解を多数決で作るのでなく相違を説明する。",
+    "explanation": "（イ）のうち、異なる見解を多数決で統一してから助言するという部分が誤りです。助言の際には、分かっていることに加えて、知見の不確実性や研究者間に残る見解の違いも説明します。",
     "choiceExplanations": {
-      "ア": "成果に応じて責任を負うアは正しい。",
-      "イ": "イだけが誤り。ア・ウ・エは、成果への責任や助言のあり方に合う。",
-      "ウ": "不確実性も説明するウは正しい。",
-      "エ": "科学的知見を政策判断の唯一の根拠としないエは正しい。",
-      "オ": "イの多数決による統一の部分が誤り。"
+      "ア": "（ア）のデータの記録・保存と不正防止は、研究結果の検証可能性を保つために求められます。",
+      "イ": "（イ）の多数決による見解の統一が不適切です。（ア）（ウ）（エ）は研究と助言の責任に沿っています。",
+      "ウ": "（ウ）が求める客観的根拠に基づく公正な助言と、不確実性の説明は適切です。",
+      "エ": "（エ）のとおり、政策には科学的知見のほかにも考慮すべき要素があり、科学的助言だけで決定が決まるわけではありません。",
+      "オ": "全てを○とすると、見解の相違を多数決で消すという（イ）の誤りを見落とします。"
     },
     "explanationCoverage": "full",
     "hasImage": true,
@@ -329,14 +340,15 @@
     "imageAltTexts": [
       "令和5年度 技術士第一次試験 適性科目 Ⅱ－7 科学者の行動規範の問題本文・選択肢（1/1）"
     ],
-    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9917_2.pdf",
-    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf",
-    "sourceAttribution": "出典：日本技術士会 令和5年度 技術士第一次試験 適性科目 Ⅱ－7。公式問題の画像を切り出し、独自解説を追加。",
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9917_2.pdf#page=7",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=2",
+    "sourceAttribution": "出典：日本技術士会「令和5年度 技術士第一次試験 適性科目」Ⅱ－7（問題PDF 7ページ、正答PDF 2ページ）。",
     "sourceExamSession": "令和5年度 技術士第一次試験 適性科目",
     "officialQuestionLabel": "Ⅱ－7",
     "license": "IPEJ-attributed",
     "officialReferenceUrls": [
-      "https://www.scj.go.jp/ja/scj/nenji_hyoka/souron2014.pdf"
+      "https://www.scj.go.jp/ja/scj/nenji_hyoka/souron2014.pdf",
+      "https://www.scj.go.jp/ja/info/kohyo/20130125_06_01.html"
     ]
   },
   {
@@ -352,23 +364,23 @@
       "リスクマネジメント"
     ],
     "difficulty": 3,
-    "question": "Ⅱ－8 リスクマネジメント",
+    "question": "Ⅱ－8　JIS Q 31000:2019のリスクマネジメントプロセスを示す図で、ア・イ・ウ・エに入る用語の組合せを選んでください。",
     "choices": {
-      "ア": "原本の選択肢1",
-      "イ": "原本の選択肢2",
-      "ウ": "原本の選択肢3",
-      "エ": "原本の選択肢4",
-      "オ": "原本の選択肢5"
+      "ア": "① 分析・評価・対応・管理",
+      "イ": "② 特定・分析・評価・対応",
+      "ウ": "③ 特定・評価・対応・管理",
+      "エ": "④ 分析・特定・評価・対応",
+      "オ": "⑤ 分析・評価・特定・管理"
     },
     "answer": "イ",
     "officialAnswerNumber": 2,
-    "explanation": "対象となるリスクを特定し、その性質や大きさを分析する。基準と比べて評価した後、対応に進む。",
+    "explanation": "リスクアセスメントは特定、分析、評価の順です。何が起こり得るかを特定し、可能性や影響を分析し、基準と比べて評価します。その結果を基に、アセスメントの外側に位置するリスク対応を選びます。",
     "choiceExplanations": {
-      "ア": "アはリスクの特定から始める。",
-      "イ": "特定、分析、評価、対応の順序が図に対応する。",
-      "ウ": "分析と評価の順が逆。",
-      "エ": "アでリスクを特定する必要がある。",
-      "オ": "エはリスクへの対応であり、管理を入れる組合せは合わない。"
+      "ア": "最初にリスクを特定します。対応はアセスメントの三番目ではなく、図のエに当たります。",
+      "イ": "図のアからウが特定・分析・評価で、エが評価後の対応です。",
+      "ウ": "評価の前に発生可能性や影響などの分析が必要です。イは分析に当たります。",
+      "エ": "何を分析するかをまず特定するので、アとイの順序が逆です。",
+      "オ": "特定は分析・評価に先立ちます。エで扱うのはリスク対応です。"
     },
     "explanationCoverage": "full",
     "hasImage": true,
@@ -378,14 +390,16 @@
     "imageAltTexts": [
       "令和5年度 技術士第一次試験 適性科目 Ⅱ－8 リスクマネジメントの問題本文・選択肢（1/1）"
     ],
-    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9917_2.pdf",
-    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf",
-    "sourceAttribution": "出典：日本技術士会 令和5年度 技術士第一次試験 適性科目 Ⅱ－8。公式問題の画像を切り出し、独自解説を追加。",
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9917_2.pdf#page=8",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=2",
+    "sourceAttribution": "出典：日本技術士会「令和5年度 技術士第一次試験 適性科目」Ⅱ－8（問題PDF 8ページ、正答PDF 2ページ）。",
     "sourceExamSession": "令和5年度 技術士第一次試験 適性科目",
     "officialQuestionLabel": "Ⅱ－8",
     "license": "IPEJ-attributed",
     "officialReferenceUrls": [
-      "https://www.iso.org/standard/31000"
+      "https://www.iso.org/standard/31000",
+      "https://webdesk.jsa.or.jp/books/W11M0090/index/?bunsyo_id=JIS+Q+31000%3A2019",
+      "https://webdesk.jsa.or.jp/pdf/errata/J201906/jis_q_31000_000_000_2019_rec_1_201906_j_ch.pdf"
     ]
   },
   {
@@ -401,23 +415,23 @@
       "事故と再発防止"
     ],
     "difficulty": 3,
-    "question": "Ⅱ－9 事故と再発防止",
+    "question": "Ⅱ－9　五つの事故・事件の経過と原因について、事実と異なる記述を選んでください。",
     "choices": {
-      "ア": "原本の選択肢1",
-      "イ": "原本の選択肢2",
-      "ウ": "原本の選択肢3",
-      "エ": "原本の選択肢4",
-      "オ": "原本の選択肢5"
+      "ア": "① 2000年の低脂肪乳による集団食中毒",
+      "イ": "② 2004年の六本木の回転ドア事故",
+      "ウ": "③ 2005年のJR福知山線の脱線転覆事故",
+      "エ": "④ 2006年の港区のエレベーター事故をケーブル破断・落下とする記述",
+      "オ": "⑤ 2012年の笹子トンネル天井板崩落事故"
     },
     "answer": "エ",
     "officialAnswerNumber": 4,
-    "explanation": "④は都営住宅のエレベーター事故を、ケーブル破断によりかごが落下した事故としている点が異なる。",
+    "explanation": "港区のエレベーター事故では、ブレーキによる保持力を失ったかごが、つり合おもりとの重量差で戸を開けたまま上昇し、利用者が挟まれました。事故調査報告の経過は、ケーブルが破断してかごが落下したという④の記述と異なります。",
     "choiceExplanations": {
-      "ア": "食中毒に対する初動と情報開示を扱う記述。",
-      "イ": "回転ドアでの挟まれ防止を扱う記述。",
-      "ウ": "鉄道での速度超過と安全管理の問題を扱う記述。",
-      "エ": "事故は扉が開いたままかごが上昇して発生した。",
-      "オ": "トンネル天井のアンカーと維持管理を扱う記述。"
+      "ア": "食中毒は停電に伴う温度管理の不備を端緒とし、製品回収や初動対応の遅れによって被害が拡大した事例です。",
+      "イ": "回転ドアへの挟まれ事故では、重量の大きな回転部に対し、検知と停止による安全対策が不十分でした。",
+      "ウ": "脱線は制限速度を大きく上回って曲線に進入した際に発生し、急曲線への速度超過防止策と組織的な安全管理が問われました。",
+      "エ": "事故調査ではかごが戸開状態で上昇しています。ロープ切断による落下という機序は一致しません。",
+      "オ": "笹子トンネルでは天井板を支えるアンカーボルトが抜け落ち、設計・施工や維持管理の課題が指摘されました。"
     },
     "explanationCoverage": "full",
     "hasImage": true,
@@ -427,15 +441,20 @@
     "imageAltTexts": [
       "令和5年度 技術士第一次試験 適性科目 Ⅱ－9 事故と再発防止の問題本文・選択肢（1/1）"
     ],
-    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9917_2.pdf",
-    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf",
-    "sourceAttribution": "出典：日本技術士会 令和5年度 技術士第一次試験 適性科目 Ⅱ－9。公式問題の画像を切り出し、独自解説を追加。",
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9917_2.pdf#page=9",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=2",
+    "sourceAttribution": "出典：日本技術士会「令和5年度 技術士第一次試験 適性科目」Ⅱ－9（問題PDF 9ページ、正答PDF 2ページ）。",
     "sourceExamSession": "令和5年度 技術士第一次試験 適性科目",
     "officialQuestionLabel": "Ⅱ－9",
     "license": "IPEJ-attributed",
     "officialReferenceUrls": [
       "https://www.mlit.go.jp/jutakukentiku/build/elevator_accident.html",
-      "https://www.mlit.go.jp/common/001000050.pdf"
+      "https://www.mlit.go.jp/common/001000050.pdf",
+      "https://www.mhlw.go.jp/shingi/2002/07/s0717-2.html",
+      "https://www.mlit.go.jp/kisha/kisha04/07/070629_2_.html",
+      "https://jtsb.mlit.go.jp/railway/fukuchiyama/RA07-3-1-1.pdf",
+      "https://www.mlit.go.jp/common/000134119.pdf",
+      "https://www.mlit.go.jp/report/press/road01_hh_000363.html"
     ]
   },
   {
@@ -451,23 +470,23 @@
       "事業継続"
     ],
     "difficulty": 3,
-    "question": "Ⅱ－10 事業継続",
+    "question": "Ⅱ－10　内閣府の令和3年4月版事業継続ガイドラインに照らし、BCP・BCMに関する（ア）から（エ）の正誤の組合せを選んでください。",
     "choices": {
-      "ア": "原本の選択肢1",
-      "イ": "原本の選択肢2",
-      "ウ": "原本の選択肢3",
-      "エ": "原本の選択肢4",
-      "オ": "原本の選択肢5"
+      "ア": "① ○・○・○・○",
+      "イ": "② ×・○・○・○",
+      "ウ": "③ ○・×・○・○",
+      "エ": "④ ○・○・×・○",
+      "オ": "⑤ ○・○・○・×"
     },
     "answer": "ウ",
     "officialAnswerNumber": 3,
-    "explanation": "災害時も法令等への対応が必要。経営者が主導して対策を見直し、事業の前提となる地域の復旧にも目を向ける。",
+    "explanation": "誤っているのは（イ）です。危機時にも適用される法令等を確認して守る必要があります。BCPは事業を継続・復旧するための計画で、BCMは経営者が関与しながらその運用と改善を続ける活動です。",
     "choiceExplanations": {
-      "ア": "非常時に法令を守る必要がないとするイが誤り。",
-      "イ": "経営者の主導を求めるアは正しい。",
-      "ウ": "法令を守らなくてよいとするイだけが誤り。",
-      "エ": "ウの定期的な見直しと継続的改善は適切。",
-      "オ": "地域の救援・復旧を考慮するエは適切。"
+      "ア": "被災時なら法令等を守らなくてもよいとする（イ）が誤りです。",
+      "イ": "事業継続を経営課題として位置づけて必要な資源を配分するには、経営者のリーダーシップが必要です。（ア）は○です。",
+      "ウ": "平時と危機時の環境が異なっても法令等の遵守は必要です。経営者の関与、継続改善、地域の復旧支援を述べる三項目は○です。",
+      "エ": "事業内容や内外の環境が変われば計画の前提も変わるため、BCMを見直すとする（ウ）は正しいです。",
+      "オ": "地域のライフラインや取引先の復旧が自社の再開にも関係するため、（エ）の地域協力は適切です。"
     },
     "explanationCoverage": "full",
     "hasImage": true,
@@ -477,14 +496,15 @@
     "imageAltTexts": [
       "令和5年度 技術士第一次試験 適性科目 Ⅱ－10 事業継続の問題本文・選択肢（1/1）"
     ],
-    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9917_2.pdf",
-    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf",
-    "sourceAttribution": "出典：日本技術士会 令和5年度 技術士第一次試験 適性科目 Ⅱ－10。公式問題の画像を切り出し、独自解説を追加。",
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9917_2.pdf#page=10",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=2",
+    "sourceAttribution": "出典：日本技術士会「令和5年度 技術士第一次試験 適性科目」Ⅱ－10（問題PDF 10ページ、正答PDF 2ページ）。",
     "sourceExamSession": "令和5年度 技術士第一次試験 適性科目",
     "officialQuestionLabel": "Ⅱ－10",
     "license": "IPEJ-attributed",
     "officialReferenceUrls": [
-      "https://www.bousai.go.jp/kyoiku/kigyou/pdf/guideline202104.pdf"
+      "https://www.bousai.go.jp/kyoiku/kigyou/pdf/guideline202104.pdf",
+      "https://www.bousai.go.jp/kyoiku/kigyou/index.html"
     ]
   },
   {
@@ -500,23 +520,23 @@
       "エシックス・テスト"
     ],
     "difficulty": 3,
-    "question": "Ⅱ－11 エシックス・テスト",
+    "question": "Ⅱ－11　全員が同じことをした場合、影響を受ける立場、行動を繰り返す人格、行動が報道される場合の順に、対応するエシックス・テストを選んでください。",
     "choices": {
-      "ア": "原本の選択肢1",
-      "イ": "原本の選択肢2",
-      "ウ": "原本の選択肢3",
-      "エ": "原本の選択肢4",
-      "オ": "原本の選択肢5"
+      "ア": "① 普遍化可能性・危害・世評・美徳",
+      "イ": "② 普遍化可能性・可逆性・美徳・世評",
+      "ウ": "③ 普遍化可能性・可逆性・世評・常識",
+      "エ": "④ 常識・普遍化可能性・美徳・世評",
+      "オ": "⑤ 常識・危害・世評・普遍化可能性"
     },
     "answer": "イ",
     "officialAnswerNumber": 2,
-    "explanation": "全員が同じ行為をした場面を考えるのが普遍化可能性、影響を受ける側に立つのが可逆性。自分の習慣は美徳、報道されたときの評価は世評で考える。",
+    "explanation": "誰もが同じ行為をしても成り立つかは普遍化可能性、相手の立場でも同じ決定をするかは可逆性です。繰り返す行為に表れる人格は美徳、報道された場合の評価は世評で考えます。",
     "choiceExplanations": {
-      "ア": "被影響者の立場に立つイは可逆性。",
-      "イ": "アは普遍化可能性、イは可逆性、ウは美徳、エは世評。",
-      "ウ": "ウは自分が繰り返しその行為を選ぶことを問う美徳。",
-      "エ": "全員が行う場合を問うアは普遍化可能性。",
-      "オ": "報道された場合を問うエは世評。"
+      "ア": "相手の立場との入替えは可逆性です。また、報道を想定する最後の空欄は世評です。",
+      "イ": "全員への適用、立場の入替え、行為が表す人格、報道時の評価の順で対応しています。",
+      "ウ": "日常的にその行為を選ぶ人格は美徳で考え、新聞等に載った場合の反応は世評で考えます。",
+      "エ": "全員が同じ行動をした場合は普遍化可能性の検討です。相手の立場から考えるのは可逆性です。",
+      "オ": "危害の有無だけでは立場の入替えを検討したことになりません。報道を想定するのは世評です。"
     },
     "explanationCoverage": "full",
     "hasImage": true,
@@ -526,9 +546,9 @@
     "imageAltTexts": [
       "令和5年度 技術士第一次試験 適性科目 Ⅱ－11 エシックス・テストの問題本文・選択肢（1/1）"
     ],
-    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9917_2.pdf",
-    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf",
-    "sourceAttribution": "出典：日本技術士会 令和5年度 技術士第一次試験 適性科目 Ⅱ－11。公式問題の画像を切り出し、独自解説を追加。",
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9917_2.pdf#page=11",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=2",
+    "sourceAttribution": "出典：日本技術士会「令和5年度 技術士第一次試験 適性科目」Ⅱ－11（問題PDF 11ページ、正答PDF 2ページ）。",
     "sourceExamSession": "令和5年度 技術士第一次試験 適性科目",
     "officialQuestionLabel": "Ⅱ－11",
     "license": "IPEJ-attributed"
@@ -546,23 +566,23 @@
       "安全保障貿易管理"
     ],
     "difficulty": 3,
-    "question": "Ⅱ－12 安全保障貿易管理",
+    "question": "Ⅱ－12　外国為替及び外国貿易法に基づく安全保障貿易管理について、不適切な記述を選んでください。",
     "choices": {
-      "ア": "原本の選択肢1",
-      "イ": "原本の選択肢2",
-      "ウ": "原本の選択肢3",
-      "エ": "原本の選択肢4",
-      "オ": "原本の選択肢5"
+      "ア": "① リストに該当する貨物・技術の輸出や提供には原則として許可が必要",
+      "イ": "② リスト外でも所定の用途等によってキャッチオール規制の対象になる",
+      "ウ": "③ 規制技術には設計・製造・使用に必要な技術データや技術支援がある",
+      "エ": "④ 国内で非居住者に技術提供する場合は該非確認が不要",
+      "オ": "⑤ 海外特許出願に必要な最小限の技術提供には例外がある"
     },
     "answer": "エ",
     "officialAnswerNumber": 4,
-    "explanation": "技術提供を国内で行っても、提供先や技術の内容によって規制対象になり得る。場所だけで確認を省略できない。",
+    "explanation": "許可や該非確認の要否は、提供場所だけでは決まりません。国内で非居住者に技術を提供する際も、外国為替令別表や適用除外を確認します。キャッチオール規制の具体的な適用範囲は試験後にも改正されています。",
     "choiceExplanations": {
-      "ア": "リスト規制は法令に掲げられた貨物・技術が対象。",
-      "イ": "リストに該当しなくても補完的な規制の対象となり得る。",
-      "ウ": "外為令別表と提供する技術の内容を照らし合わせる。",
-      "エ": "国内であることだけを理由に該非の確認を省く点が誤り。",
-      "オ": "外国での特許出願に必要な最小限の提供についての取扱い。"
+      "ア": "品目や技術がリスト規制に該当するときは、対象取引に当たるかと適用除外を確認し、必要な許可を受けます。",
+      "イ": "リスト非該当でも補完的輸出規制が適用される場合があり、仕向地・用途・需要者等を確認します。",
+      "ウ": "図面などの技術データに加え、作業指導のような技術支援も技術提供に該当し得ます。",
+      "エ": "国内であっても非居住者への提供は対象になり得るので、所在地だけで該非判定を省略することはできません。",
+      "オ": "工業所有権の出願等に必要な最小限の技術提供について、貿易外省令第9条第2項第9号に例外があります。"
     },
     "explanationCoverage": "full",
     "hasImage": true,
@@ -572,15 +592,20 @@
     "imageAltTexts": [
       "令和5年度 技術士第一次試験 適性科目 Ⅱ－12 安全保障貿易管理の問題本文・選択肢（1/1）"
     ],
-    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9917_2.pdf",
-    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf",
-    "sourceAttribution": "出典：日本技術士会 令和5年度 技術士第一次試験 適性科目 Ⅱ－12。公式問題の画像を切り出し、独自解説を追加。",
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9917_2.pdf#page=12",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=2",
+    "sourceAttribution": "出典：日本技術士会「令和5年度 技術士第一次試験 適性科目」Ⅱ－12（問題PDF 12ページ、正答PDF 2ページ）。",
     "sourceExamSession": "令和5年度 技術士第一次試験 適性科目",
     "officialQuestionLabel": "Ⅱ－12",
     "license": "IPEJ-attributed",
     "officialReferenceUrls": [
       "https://www.meti.go.jp/policy/anpo/anpo05.html",
-      "https://www.meti.go.jp/policy/anpo/law_document/minashi/meikakukanitsuite.pdf"
+      "https://www.meti.go.jp/policy/anpo/law_document/minashi/meikakukanitsuite.pdf",
+      "https://laws.e-gov.go.jp/law/324AC0000000228/20230601_504AC0000000097",
+      "https://laws.e-gov.go.jp/law/324AC0000000228/20260812_508AC0000000064",
+      "https://laws.e-gov.go.jp/law/410M50000400008/20230601_505M60000400028",
+      "https://laws.e-gov.go.jp/law/410M50000400008/20251115_507M60000400071",
+      "https://www.meti.go.jp/policy/anpo/apply-01/20251009_catchminaoshi/20251009catchall.html"
     ]
   },
   {
@@ -596,23 +621,23 @@
       "インフラ長寿命化"
     ],
     "difficulty": 3,
-    "question": "Ⅱ－13 インフラ長寿命化",
+    "question": "Ⅱ－13　国土交通省の第2次インフラ長寿命化計画の七つの取組について、設問に示された三つ以外の四つに含まれないものを選んでください。",
     "choices": {
-      "ア": "原本の選択肢1",
-      "イ": "原本の選択肢2",
-      "ウ": "原本の選択肢3",
-      "エ": "原本の選択肢4",
-      "オ": "原本の選択肢5"
+      "ア": "① 予算管理",
+      "イ": "② 体制の構築",
+      "ウ": "③ 新技術の開発・導入",
+      "エ": "④ 情報基盤の整備と活用",
+      "オ": "⑤ 技術継承の取組"
     },
     "answer": "オ",
     "officialAnswerNumber": 5,
-    "explanation": "設問が対象とする第二期の行動計画で、技術継承の取組は七つの見出しに独立して掲げられていない。",
+    "explanation": "第2次行動計画は、予算管理、体制の構築、新技術の開発・導入、情報基盤の整備と活用を取組として挙げています。技術継承は維持管理に関係しますが、この計画の七つの見出しには独立項目として含まれません。",
     "choiceExplanations": {
-      "ア": "中長期的な予算管理は対象に含まれる。",
-      "イ": "体制の構築は維持管理を実施するための取組に含まれる。",
-      "ウ": "新技術の開発・導入は対象に含まれる。",
-      "エ": "情報基盤の整備と活用は対象に含まれる。",
-      "オ": "技術継承の取組は独立した見出しにない。"
+      "ア": "予防保全への転換に向けた予算の確保や配分を扱うため、予算管理は取組に含まれます。",
+      "イ": "人員や地域を支援する仕組みを整える体制の構築は、計画の取組です。",
+      "ウ": "点検・診断や補修を効率化する新技術の開発と導入が挙げられています。",
+      "エ": "施設情報や点検結果を蓄積し、維持管理に使う情報基盤の整備と活用が明記されています。",
+      "オ": "技術を引き継ぐこと自体は重要ですが、七つの取組の独立した見出しには挙げられていません。"
     },
     "explanationCoverage": "full",
     "hasImage": true,
@@ -622,14 +647,15 @@
     "imageAltTexts": [
       "令和5年度 技術士第一次試験 適性科目 Ⅱ－13 インフラ長寿命化の問題本文・選択肢（1/1）"
     ],
-    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9917_2.pdf",
-    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf",
-    "sourceAttribution": "出典：日本技術士会 令和5年度 技術士第一次試験 適性科目 Ⅱ－13。公式問題の画像を切り出し、独自解説を追加。",
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9917_2.pdf#page=13",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=2",
+    "sourceAttribution": "出典：日本技術士会「令和5年度 技術士第一次試験 適性科目」Ⅱ－13（問題PDF 13ページ、正答PDF 2ページ）。",
     "sourceExamSession": "令和5年度 技術士第一次試験 適性科目",
     "officialQuestionLabel": "Ⅱ－13",
     "license": "IPEJ-attributed",
     "officialReferenceUrls": [
-      "https://www.mlit.go.jp/gobuild/gobuild_tk2_000008.html"
+      "https://www.mlit.go.jp/gobuild/gobuild_tk2_000008.html",
+      "https://www.mlit.go.jp/sogoseisaku/content/001734383.pdf"
     ]
   },
   {
@@ -645,23 +671,23 @@
       "安全設計とALARP"
     ],
     "difficulty": 3,
-    "question": "Ⅱ－14 安全設計とALARP",
+    "question": "Ⅱ－14　ISO/IEC Guide 51:2014（JIS Z 8051:2015）を前提に、製品安全とリスク低減に関する不適切な記述を選んでください。",
     "choices": {
-      "ア": "原本の選択肢1",
-      "イ": "原本の選択肢2",
-      "ウ": "原本の選択肢3",
-      "エ": "原本の選択肢4",
-      "オ": "原本の選択肢5"
+      "ア": "① 残留リスクの妥当性を確認して文書化する",
+      "イ": "② ALARPでは合理的に実行可能な限りリスクを低減する",
+      "ウ": "③ 当初の事業予算に低減費用が収まらなければリスクを許容できる",
+      "エ": "④ スリーステップメソッドの第1段階は本質的安全設計",
+      "オ": "⑤ 警告は読みやすく消えにくい表示とし、内容を簡潔にする"
     },
     "answer": "ウ",
     "officialAnswerNumber": 3,
-    "explanation": "リスクの追加低減を検討するときは、低減の効果と要する負担を比べる。当初の予算を超えるという理由だけで許容可能とは判断しない。",
+    "explanation": "ALARPでは、追加のリスク低減の便益と、それに要する費用・時間・労力などとの釣合いを見ます。低減の便益に対して負担が著しく不釣合いかどうかが論点で、当初予算を超えるという事情だけではリスクを許容できません。",
     "choiceExplanations": {
-      "ア": "評価と低減を繰り返し、最終的な残留リスクを記録する。",
-      "イ": "ALARPでは合理的に実施できる範囲でリスクを下げる。",
-      "ウ": "予算に収まるかどうかだけを許容の基準にしている点が誤り。",
-      "エ": "まず設計段階で危険源を取り除くかリスクを下げる。",
-      "オ": "残るリスクへの警告は、見やすく理解しやすい形で伝える。"
+      "ア": "リスク評価と低減を繰り返し、最終的に残るリスクが許容可能であるとの判断と根拠を記録します。",
+      "イ": "ALARPは、合理的に実行可能な範囲で残ったリスクをさらに低減するという考え方です。",
+      "ウ": "予算は事業側が設定するもので、超過だけを理由に便益と負担の比較を省略することはできません。",
+      "エ": "設計段階で危険源の除去や低減を図る本質的安全設計が先で、保護方策、使用上の情報と続きます。",
+      "オ": "警告は利用者に残留リスクを伝えるため、対象製品や包装で視認でき、読み取れて理解しやすい必要があります。"
     },
     "explanationCoverage": "full",
     "hasImage": true,
@@ -671,12 +697,17 @@
     "imageAltTexts": [
       "令和5年度 技術士第一次試験 適性科目 Ⅱ－14 安全設計とALARPの問題本文・選択肢（1/1）"
     ],
-    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9917_2.pdf",
-    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf",
-    "sourceAttribution": "出典：日本技術士会 令和5年度 技術士第一次試験 適性科目 Ⅱ－14。公式問題の画像を切り出し、独自解説を追加。",
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9917_2.pdf#page=14",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=2",
+    "sourceAttribution": "出典：日本技術士会「令和5年度 技術士第一次試験 適性科目」Ⅱ－14（問題PDF 14ページ、正答PDF 2ページ）。",
     "sourceExamSession": "令和5年度 技術士第一次試験 適性科目",
     "officialQuestionLabel": "Ⅱ－14",
-    "license": "IPEJ-attributed"
+    "license": "IPEJ-attributed",
+    "officialReferenceUrls": [
+      "https://webdesk.jsa.or.jp/books/W11M0090/?bunsyo_id=JIS+Z+8051%3A2015",
+      "https://www.iso.org/standard/53940.html",
+      "https://www.hse.gov.uk/skin/professional/legal.htm"
+    ]
   },
   {
     "id": "gijutsushi1-tekisei-2023-annual-ippan-q15",
@@ -691,23 +722,23 @@
       "環境基本法の公害の定義"
     ],
     "difficulty": 3,
-    "question": "Ⅱ－15 環境基本法の公害の定義",
+    "question": "Ⅱ－15　環境基本法第2条の典型7公害に挙げられていないものを選んでください。",
     "choices": {
-      "ア": "原本の選択肢1",
-      "イ": "原本の選択肢2",
-      "ウ": "原本の選択肢3",
-      "エ": "原本の選択肢4",
-      "オ": "原本の選択肢5"
+      "ア": "① 騒音",
+      "イ": "② 地盤の沈下",
+      "ウ": "③ 廃棄物投棄",
+      "エ": "④ 悪臭",
+      "オ": "⑤ 振動"
     },
     "answer": "ウ",
     "officialAnswerNumber": 3,
-    "explanation": "環境基本法が公害として列挙する項目には、騒音、地盤の沈下、悪臭、振動が含まれる。廃棄物投棄はこの列挙の項目名ではない。",
+    "explanation": "典型7公害は、大気汚染、水質汚濁、土壌汚染、騒音、振動、地盤沈下、悪臭です。廃棄物投棄が水質汚濁や土壌汚染を引き起こすことはありますが、法の列挙では投棄行為自体が一つの公害類型として挙げられているわけではありません。",
     "choiceExplanations": {
-      "ア": "騒音は対象となる。",
-      "イ": "地盤の沈下は対象となる。",
-      "ウ": "廃棄物投棄は列挙項目ではない。",
-      "エ": "悪臭は対象となる。",
-      "オ": "振動は対象となる。"
+      "ア": "騒音は大気、水質、土壌の汚染とともに、法が挙げる公害の類型です。",
+      "イ": "地盤の沈下も列挙されています。ただし、鉱物の掘採のための土地の掘削によるものは法の定義から除かれます。",
+      "ウ": "廃棄物投棄は行為を表す語です。それによって土壌汚染などが生じても、投棄自体は七類型に含まれません。",
+      "エ": "悪臭も、相当範囲で人の健康や生活環境への被害を生じさせ得る類型として列挙されています。",
+      "オ": "騒音と同様に、振動も法の公害の定義に明記されています。"
     },
     "explanationCoverage": "full",
     "hasImage": true,
@@ -717,14 +748,16 @@
     "imageAltTexts": [
       "令和5年度 技術士第一次試験 適性科目 Ⅱ－15 環境基本法の公害の定義の問題本文・選択肢（1/1）"
     ],
-    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9917_2.pdf",
-    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf",
-    "sourceAttribution": "出典：日本技術士会 令和5年度 技術士第一次試験 適性科目 Ⅱ－15。公式問題の画像を切り出し、独自解説を追加。",
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9917_2.pdf#page=15",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=2",
+    "sourceAttribution": "出典：日本技術士会「令和5年度 技術士第一次試験 適性科目」Ⅱ－15（問題PDF 15ページ、正答PDF 2ページ）。",
     "sourceExamSession": "令和5年度 技術士第一次試験 適性科目",
     "officialQuestionLabel": "Ⅱ－15",
     "license": "IPEJ-attributed",
     "officialReferenceUrls": [
-      "https://laws.e-gov.go.jp/law/405AC0000000091"
+      "https://laws.e-gov.go.jp/law/405AC0000000091",
+      "https://laws.e-gov.go.jp/law/405AC0000000091/20210901_503AC0000000036",
+      "https://laws.e-gov.go.jp/law/405AC0000000091/20261102_508AC0000000062"
     ]
   }
 ]
