@@ -1797,6 +1797,15 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：人事院「刑務官採用試験 基礎能力試験」。解説は過去問AIの独自作成。",
   },
   {
+    slug: "koku-hoan-daigakko", examCode: "koku-hoan-daigakko", shortName: "航空保安大学校学生", fullName: "航空保安大学校学生採用試験",
+    domain: "legal", administrator: "人事院",
+    officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_29.html",
+    officialReuseTermsUrl: "https://www.jinji.go.jp/shinsei/notice.html",
+    status: "live",
+    reuseSummary: "2025年度の学科試験（数学2問・物理13問）を公式正答・全肢解説付きで収録。",
+    attributionTemplate: "出典：人事院「航空保安大学校学生採用試験 学科試験」。解説は過去問AIの独自作成。",
+  },
+  {
     slug: "kaijo-hoan-gakko", examCode: "kaijo-hoan-gakko", shortName: "海上保安学校学生", fullName: "海上保安学校学生採用試験",
     domain: "legal", administrator: "人事院",
     officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_31.html",
