@@ -1,4 +1,6 @@
 "use client";
+import { readSettings } from "@/lib/storage/settings";
+import { WeakMark } from "@/components/quiz/WeakMark";
 import { isSelfReviewedDescriptiveQuestion } from "@/lib/questions/descriptive";
 import { useNativeQuestionGrant, NativeAccessState } from "@/mobile/shared/NativeQuestionGate";
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
@@ -134,7 +136,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
     setNativeBResult(result);
     setRevealed(true);
     setAnswers((previous) => [...previous, { questionId: question.id, selected: selection, correct: result.isCorrect, nativeBResult: result }]);
-    history.record({ id: question.id, selected: selection, correct: result.isCorrect, at: Date.now(), nativeBResult: result });
+    if (readSettings().recordHistory) history.record({ id: question.id, selected: selection, correct: result.isCorrect, at: Date.now(), nativeBResult: result });
     pet.answer(question, { kind: "native-b", selections: Object.fromEntries(Object.entries(selections).filter((pair): pair is [string, string] => typeof pair[1] === "string")) });
     if (result.isCorrect) setCombo((previous) => previous + 1);
     else setCombo(0);
@@ -153,7 +155,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
         ...prev,
         { questionId: question.id, selected: key, correct },
       ]);
-      history.record({ id: question.id, selected: key, correct, at: Date.now() });
+      if (readSettings().recordHistory) history.record({ id: question.id, selected: key, correct, at: Date.now() });
       pet.answer(question, { kind: "multiple-choice", selected: [key] });
       if (correct) {
         setCombo((c) => {
@@ -180,7 +182,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
     const display = formatOrderingAnswer(question.exam, value);
     setRevealed(true);
     setAnswers((previous) => [...previous, { questionId: question.id, selected: display, correct }]);
-    history.record({ id: question.id, selected: value.join("→"), correct, at: Date.now() });
+    if (readSettings().recordHistory) history.record({ id: question.id, selected: value.join("→"), correct, at: Date.now() });
     pet.answer(question, { kind: "ordering", selected: [...value] });
     if (correct) {
       setCombo((previous) => {
@@ -202,7 +204,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
     reportStudyAnswer(question.exam);
     setRevealed(true);
     setAnswers(previous => [...previous, { questionId: question.id, selected: value, correct }]);
-    history.record({ id: question.id, selected: value, correct, at: Date.now() });
+    if (readSettings().recordHistory) history.record({ id: question.id, selected: value, correct, at: Date.now() });
     pet.answer(question, { kind: "numeric", value });
     if (correct) setCombo(previous => previous + 1);
     else setCombo(0);
@@ -340,6 +342,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
           <QuestionFigures question={question} />
         </div>
 
+        <WeakMark id={question.id} />
         <div className="space-y-2">
           {question.type === "native-b" ? <NativeBAnswerInput key={question.id} data={question.nativeB!} displayedImageUrls={question.imageUrls} disabled={revealed} onAnswer={onNativeBAnswer} /> : question.type === "ordering" ? <OrderingAnswerInput key={question.id} question={question} disabled={revealed} onAnswer={onOrderingAnswer} /> : question.type === "numeric" ? <div className="text-foreground"><NumericAnswerInput key={question.id} unit={question.numericAnswer!.unit} specification={question.numericAnswer} disabled={revealed} onAnswer={onNumericAnswer} /></div> : question.choices &&
             getChoiceKeys(question.choices).map((key) => {

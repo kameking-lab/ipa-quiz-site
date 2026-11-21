@@ -52,13 +52,13 @@ export function useQuestionActivity(question: { id: string; exam: string; type: 
     window.addEventListener("keydown", recordExplanation);
     return () => { observer.disconnect(); window.removeEventListener("scroll", recordExplanation, true); window.removeEventListener("keydown", recordExplanation); };
   }, [questionId, revealed, recordExplanation]);
-  const recordAnswer = useCallback((correct: boolean) => {
+  const recordAnswer = useCallback((correct: boolean, at = Date.now()) => {
     const current = session.current;
     if (!question || !current || current.questionId !== question.id || current.answered ||
       !readSettings().recordHistory || isReferenceOnlyQuestionId(question.id)) return;
     current.answered = true;
     current.explanationClock = createActiveClock(() => performance.now(), document.visibilityState === "visible" && document.hasFocus());
-    recordLearningAction({ id: `${current.attemptId}:answer`, questionId: question.id, exam: question.exam, at: Date.now(),
+    recordLearningAction({ id: `${current.attemptId}:answer`, questionId: question.id, exam: question.exam, at,
       kind: "answer", activeMs: current.answerClock.milliseconds(), questionType: question.type, correct });
   }, [question]);
   return { recordAnswer, recordExplanation, endRef };

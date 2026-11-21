@@ -1,6 +1,7 @@
 import type { QuizMode } from "./types";
 import { createHistoryStore } from "@/lib/storage/history";
-import { getDueCards, orderByPriority } from "@/lib/learning/spaced-repetition";
+import { paceAttempts } from "@/lib/study-plan/client";
+import { latestAnswers, weakQuestionStatus } from "@/lib/study-plan/pace";
 import { aggregateByCategory } from "@/lib/learning/analytics";
 const MAX_POOL = 80;
 const WEAKNESS_THRESHOLD = 0.6;
@@ -40,10 +41,9 @@ export function deriveSessionPool(
   if (mode === "review" || mode === "unanswered") {
     const history = createHistoryStore();
     if (mode === "review") {
-      const wrong = new Set(history.getWrongIds());
+      const latest = latestAnswers(paceAttempts());
       const starred = new Set(wrongOnly ? [] : history.getStarredIds());
-      const due = new Set(wrongOnly ? [] : getDueCards().map(card => card.id));
-      ids = ids.filter((id) => wrong.has(id) || starred.has(id) || due.has(id));
+      ids = ids.filter(id => weakQuestionStatus(id, latest, starred).weak);
     } else {
       const answered = new Set(history.getAnsweredIds());
       ids = ids.filter((id) => !answered.has(id));
@@ -59,9 +59,7 @@ export function deriveSessionPool(
     }
     // fallback: no weak categories detected → no filter, use random shuffle
   }
-  if (mode === "review") {
-    ids = orderByPriority(ids);
-  } else if (mode === "random" || mode === "unanswered" || mode === "weakness") {
+  if (mode === "random" || mode === "unanswered" || mode === "weakness") {
     shuffleInPlace(ids);
   }
   // An annual sitting must include every available original in source order.

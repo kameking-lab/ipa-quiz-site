@@ -22,14 +22,13 @@ it("keeps a concrete next-question target after partner without changing growth"
   pet.roomEvents = [];
   expect(JSON.stringify(doc)).toBe(before);
 });
-it("waits for both 24h and the actual SRS due date, then links the exact question", () => {
+it("waits for the existing 24h reward interval, then links the exact question", () => {
   const { doc, pet } = setup(1);
   // Other questions are already done; this candidate is the remaining spaced target.
   for (let i = 1; i < 30; i++) pet.questions.push(petQuestionSchema.parse({ questionId: `later-${i}`, legacy: false, firstRewarded: true, lastRewardedAt: at + 2 * DAY }));
-  const card = { id: "ip-q0", lastReviewedAt: at, dueAt: at + 2 * DAY, ef: 2.5, reps: 1, intervalDays: 2 };
-  const early = petNextAction(pet, doc, at + DAY, [card]);
-  expect(early.label).toContain("11/13 10:00"); expect(early.href).not.toContain("source=search");
-  const due = petNextAction(pet, doc, at + 2 * DAY, [card]);
+  const early = petNextAction(pet, doc, at + DAY - 1000);
+  expect(early.label).toContain("11/12 10:00"); expect(early.href).not.toContain("source=search");
+  const due = petNextAction(pet, doc, at + DAY);
   expect(due.action).toBe("この1問を復習する"); expect(new URL(due.href, "https://example.test").searchParams.get("ids")).toBe("ip-q0");
   expect(petNextAction(pet, doc, at + DAY - 1).action).not.toBe("この1問を復習する");
 });

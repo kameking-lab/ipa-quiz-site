@@ -4,17 +4,26 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sh
 import { Button } from "@/components/ui/button";
 import type { HomeDirectoryItem } from "@/lib/home/home-directory";
 import type { ExamSchedule, ExamScheduleSession } from "@/lib/study-plan/schedule";
-import { createPacePlan } from "@/lib/study-plan/pace";
+import { calculatePace, createPacePlan, EVERY_DAY, planOldestYear, rangeOptions, type PacePlan } from "@/lib/study-plan/pace";
 import { savePacePlan } from "@/lib/study-plan/pace-storage";
-import { loadPlanCatalog } from "@/lib/study-plan/client";
+import { paceAttempts } from "@/lib/study-plan/client";
+import { usePlanCatalog } from "@/lib/study-plan/use-plan-catalog";
+import { PLAN_OFFER } from "@/lib/billing/plan-offer";
 import { japanDate } from "@/lib/home/featured-exams";
 import { QualificationSelect } from "@/components/qualifications/QualificationSelect";
 import styles from "./HomePace.module.css";
 
+export const weekdayLabels = ["日", "月", "火", "水", "木", "金", "土"];
+const weekdayPresets = [
+  { label: "毎日", days: [...EVERY_DAY] },
+  { label: "平日だけ", days: [1, 2, 3, 4, 5] },
+  { label: "週末だけ", days: [0, 6] },
+  { label: "曜日を選ぶ", days: null },
+];
 const fieldClass = "mt-1.5 min-h-11 w-full min-w-0 rounded-lg border border-input bg-card px-3";
 
-export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCreated, embedded = false }: {
-  embedded?: boolean;
+export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCreated, embedded = false, editing }: {
+  embedded?: boolean; editing?: PacePlan;
   open: boolean; onOpenChange: (open: boolean) => void; items: readonly HomeDirectoryItem[];
   initialExam: string; onCreated: (id: string) => void;
 }) {
@@ -23,15 +32,33 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCrea
   const [sessionId, setSessionId] = useState("");
   const [date, setDate] = useState("");
   const [loading, setLoading] = useState(false);
-  const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
   const [scheduleFailed, setScheduleFailed] = useState(false);
-  const [weekday, setWeekday] = useState(30);
-  const [holiday, setHoliday] = useState(60);
-  useEffect(() => { if (open) setExam(initialExam); }, [open, initialExam]);
+  const [yearChoice, setYearChoice] = useState<{ exam: string; year: number }>();
+  const [weekdays, setWeekdays] = useState<number[]>([...EVERY_DAY]);
+  const [preset, setPreset] = useState(0);
+  const [free, setFree] = useState(false);
+  const [attempts, setAttempts] = useState<ReturnType<typeof paceAttempts>>([]);
+  const { questions, reload } = usePlanCatalog(open ? exam : "");
   useEffect(() => {
     if (!open) return;
-    setLoading(!!exam); setError(""); setDate(""); setSessions([]); setSessionId(""); setScheduleFailed(false);
+    setExam(initialExam);
+    setYearChoice(undefined);
+    const days = editing?.studyWeekdays ?? [...EVERY_DAY];
+    setWeekdays(days);
+    const exact = weekdayPresets.findIndex(p => p.days?.length === days.length && days.every(day => p.days?.includes(day)));
+    setPreset(exact < 0 ? 3 : exact);
+    setAttempts(paceAttempts());
+    const controller = new AbortController();
+    setFree(false);
+    void fetch("/api/billing/status", { signal: controller.signal, cache: "no-store" })
+      .then(async response => response.status === 401 || (response.ok && (await response.json()).entitled === false))
+      .then(value => { if (!controller.signal.aborted) setFree(value); }).catch(() => {});
+    return () => controller.abort();
+  }, [open, initialExam, editing]);
+  useEffect(() => {
+    if (!open) return;
+    setLoading(!!exam); setError(""); setDate(editing?.exam === exam ? editing.examDate ?? "" : ""); setSessions([]); setSessionId(""); setScheduleFailed(false);
     if (!exam) return;
     const controller = new AbortController();
     void fetch(`/api/exam-schedule/${encodeURIComponent(exam)}`, { signal: controller.signal })
@@ -40,32 +67,45 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCrea
         const data = await response.json() as ExamSchedule;
         if (controller.signal.aborted) return;
         const future = data.sessions.filter(s => s.scheduleStatus === "ondemand" || !s.examDate || (s.examDateEnd ?? s.examDate) >= japanDate(new Date()));
-        setSessions(future); setSessionId(future[0]?.id ?? "");
+        setSessions(future); setSessionId(editing?.exam === exam ? editing.sessionId ?? "" : future[0]?.id ?? "");
       }).catch(() => { if (!controller.signal.aborted) setScheduleFailed(true); })
       .finally(() => { if (!controller.signal.aborted) setLoading(false); });
     return () => controller.abort();
-  }, [exam, open]);
+  }, [exam, open, editing]);
   const session = sessions.find(s => s.id === sessionId);
   // A window/month is not an individual's appointment. Always ask for the booked day.
   const manual = !session?.examDate || session.scheduleStatus === "ondemand" ||
     session.datePrecision === "month" || !!session.examDateEnd && session.examDateEnd !== session.examDate;
   const examDate = manual ? date : session?.examDate ?? "";
-  async function create() {
-    if (!exam || !examDate || examDate < japanDate(new Date())) return;
-    setSaving(true); setError("");
-    try {
-      const catalog = await loadPlanCatalog(exam);
-      if (!catalog.length) throw new Error("演習できる問題がありません。");
-      const now = new Date();
-      const plan = createPacePlan({ id: crypto.randomUUID(), exam, sessionId: session?.id ?? null, examDate,
-        startDate: japanDate(now) }, catalog, now.toISOString());
-      plan.studyMinutes = { weekday, holiday };
-      if (session) plan.registration = { label: session.label, start: session.applicationStart, deadline: session.applicationDeadline,
-        resultDate: session.resultDate, sourceUrl: session.sourceUrl, estimated: session.applicationEstimated || session.scheduleStatus === "tentative" };
-      if (!savePacePlan(plan)) throw new Error("保存できませんでした。端末の保存設定を確認してください。");
-      onCreated(plan.id); onOpenChange(false);
-    } catch (e) { setError(e instanceof Error ? e.message : "作成できませんでした。"); }
-    finally { setSaving(false); }
+  const today = japanDate(new Date());
+  const options = rangeOptions(questions ?? [], exam);
+  const sameExam = editing?.exam === exam;
+  const existingYear = sameExam && questions ? planOldestYear(editing, questions) : null;
+  const chosenYear = (yearChoice?.exam === exam ? yearChoice.year : undefined) ??
+    (sameExam ? existingYear ?? undefined : options.find(option => option.recommended)?.oldestYear);
+  const preview = questions?.length && chosenYear !== undefined ? calculatePace(
+    createPacePlan({ id: "preview", exam, examDate: examDate || null, sessionId: null, startDate: today, studyWeekdays: weekdays },
+      questions, new Date().toISOString(), chosenYear), questions, attempts, today) : null;
+  const noDays = Boolean(preview?.remaining && examDate && preview.studyDays === 0);
+  const canSave = !loading && !!preview?.total && examDate >= today && weekdays.length > 0 && !noDays;
+  function create() {
+    if (!canSave || !questions || chosenYear === undefined) return;
+    const now = new Date().toISOString();
+    const updatedAt = editing && Date.parse(now) <= Date.parse(editing.updatedAt)
+      ? new Date(Date.parse(editing.updatedAt) + 1).toISOString() : now;
+    const plan = createPacePlan({ id: editing?.id ?? crypto.randomUUID(), exam, sessionId: session?.id ?? null, examDate,
+      startDate: editing?.startDate ?? today, studyWeekdays: weekdays }, questions, updatedAt, chosenYear);
+    plan.createdAt = editing?.createdAt ?? now;
+    if (session) plan.registration = { label: session.label, start: session.applicationStart, deadline: session.applicationDeadline,
+      resultDate: session.resultDate, sourceUrl: session.sourceUrl, estimated: session.applicationEstimated || session.scheduleStatus === "tentative" };
+    if (sameExam && examDate === editing.examDate && plan.sessionId === editing.sessionId) {
+      plan.registration ??= editing.registration;
+      plan.registered = editing.registered;
+      plan.result = editing.result;
+    }
+    if (!savePacePlan(plan)) { setError("保存できませんでした。端末の保存設定を確認してください。"); return; }
+    onCreated(plan.id);
+    onOpenChange(false);
   }
   const fields = (
       <div className="mt-4 space-y-3">
@@ -93,20 +133,55 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCrea
           {scheduleFailed && <p className="text-sm text-muted-foreground">日程を取得できませんでした。受験日を入力してください。</p>}
           {!session && <label className="block text-sm font-medium">受験日<input type="date" min={japanDate(new Date())} value={date} onChange={e => setDate(e.target.value)} className={fieldClass} /></label>}
         </>}
-        <details className="rounded-xl border border-border px-3"><summary className="min-h-11 cursor-pointer py-3 text-sm font-medium">1日の勉強時間</summary><fieldset aria-label="1日の勉強時間" className="grid grid-cols-2 gap-3 pb-3"><label className="text-xs text-muted-foreground">平日（分）<input type="number" min={1} max={1440} value={weekday} onChange={e => setWeekday(Number(e.target.value))} className={`${fieldClass} text-base text-foreground`} /></label><label className="text-xs text-muted-foreground">休日（分）<input type="number" min={1} max={1440} value={holiday} onChange={e => setHoliday(Number(e.target.value))} className={`${fieldClass} text-base text-foreground`} /></label></fieldset></details>
+        <fieldset className="space-y-2">
+          <legend className="mb-1.5 text-sm font-medium">解く範囲</legend>
+          {questions === undefined && <p role="status" className="text-sm text-muted-foreground">問題を確認中…</p>}
+          {questions === null && <p role="alert" className="text-sm">問題を読み込めませんでした <button type="button" className="min-h-11 underline" onClick={reload}>再読み込み</button></p>}
+          {questions?.length === 0 && <p role="status" className="text-sm">計画に使える問題がありません</p>}
+          {existingYear !== null && !options.some(option => option.oldestYear === existingYear) && <label className="flex min-h-11 items-center gap-2 rounded-xl border px-3 text-sm">
+            <input type="radio" name="pace-range" checked={chosenYear === existingYear} onChange={() => setYearChoice({ exam, year: existingYear })} />
+            {existingYear}年度以降（{questions?.filter(q => q.year >= existingYear).length}問）
+          </label>}
+          {options.map(option => <label key={option.oldestYear} className="flex min-h-11 items-center gap-2 rounded-xl border px-3 text-sm has-checked:border-primary has-checked:bg-primary-soft">
+            <input type="radio" name="pace-range" checked={chosenYear === option.oldestYear} onChange={() => setYearChoice({ exam, year: option.oldestYear })} />
+            {option.all ? "全" : "直近"}{option.count}年分（{option.total}問）
+          </label>)}
+        </fieldset>
+        <fieldset>
+          <legend className="mb-2 text-sm font-medium">勉強する日</legend>
+          <div className="grid grid-cols-2 gap-2">
+            {weekdayPresets.map((option, index) => <label key={option.label} className="flex min-h-11 items-center gap-2 rounded-xl border px-3 text-sm has-checked:border-primary has-checked:bg-primary-soft">
+              <input type="radio" name="pace-weekdays" checked={preset === index} onChange={() => { setPreset(index); if (option.days) setWeekdays(option.days); }} />{option.label}
+            </label>)}
+          </div>
+          {preset === 3 && <div className="mt-2 grid grid-cols-7 gap-1">
+            {[1, 2, 3, 4, 5, 6, 0].map(day => <label key={day} className="flex min-h-11 flex-col items-center justify-center rounded-lg border text-sm has-checked:border-primary has-checked:bg-primary-soft">
+              <input type="checkbox" checked={weekdays.includes(day)} onChange={e => setWeekdays(e.target.checked ? [...weekdays, day] : weekdays.filter(value => value !== day))} />
+              {weekdayLabels[day]}
+            </label>)}
+          </div>}
+          <p className="mt-2 text-sm">{preset === 3 && weekdays.length > 0 ? [1, 2, 3, 4, 5, 6, 0].filter(day => weekdays.includes(day)).map(day => weekdayLabels[day]).join("・") + "（週" + weekdays.length + "回）" : "週" + weekdays.length + "回"}</p>
+        </fieldset>
+        <div aria-live="polite" className="text-sm">
+          {preview?.complete ? <p>全{preview.total}問に正解しました</p> : preview?.target != null ? <>
+            <p className="font-bold">1回の目安　{preview.target}問正解</p>
+            <p>残り{preview.remaining}問 ÷ 勉強日{preview.studyDays}日</p>
+            {free && preview.target > PLAN_OFFER.freeDaily && <p>無料で解けるのは1日{PLAN_OFFER.freeDaily}問です。</p>}
+          </> : noDays ? <p>試験前に勉強日がありません</p> : !examDate ? <p>受験日を設定してください</p> : null}
+        </div>
         {error && <p role="alert" className="text-sm text-destructive">{error}</p>}
-        <Button size="xl" className="w-full" disabled={loading || saving || !examDate || examDate < japanDate(new Date()) || !Number.isInteger(weekday) || weekday < 1 || weekday > 1440 || !Number.isInteger(holiday) || holiday < 1 || holiday > 1440} onClick={() => void create()}>{saving ? "作成中…" : "この回で作成"}</Button>
+        <Button size="xl" className="w-full" disabled={!canSave} onClick={create}>{editing ? "変更を保存" : "この計画で始める"}</Button>
         </>}
       </div>
   );
   if (embedded) return <section aria-labelledby="plan-title">
-    <h1 id="plan-title" className="text-xl font-bold">学習計画を作成</h1>
+    <h1 id="plan-title" className="text-xl font-bold">{editing ? "学習計画を変更" : "学習計画を作る"}</h1>
     {fields}
   </section>;
   return <Sheet open={open} onOpenChange={onOpenChange}>
     <SheetContent side="bottom" aria-describedby={undefined} className={`${styles.sheet} mx-auto max-h-[min(90dvh,calc(100dvh-var(--safe-top)-1rem))] max-w-[640px] overflow-y-auto px-[18px] pt-3 pb-[max(1.5rem,var(--safe-bottom))] sm:px-6`}>
       <div aria-hidden="true" className="mx-auto mb-3 h-1 w-11 rounded-full bg-border" />
-      <SheetHeader className="pr-11"><SheetTitle>学習計画を作成</SheetTitle></SheetHeader>
+      <SheetHeader className="pr-11"><SheetTitle>{editing ? "学習計画を変更" : "学習計画を作る"}</SheetTitle></SheetHeader>
       {fields}
     </SheetContent>
   </Sheet>;

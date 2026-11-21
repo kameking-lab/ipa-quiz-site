@@ -127,7 +127,7 @@ describe("one graded answer per question visit", () => {
     savePacePlan(createPacePlan({ id: "answer-once", exam: "ip", sessionId: null, examDate: "2026-11-20", startDate: "2026-11-01" }, [single], "2026-11-01T00:00:00+09:00"));
     const grant = mockPractice(single);
     render(<StrictMode><TodayQuiz planId="answer-once" billingGateEnabled /></StrictMode>);
-    expect(await screen.findByRole("heading", { name: "今日の問題 · 1問" })).toBeInTheDocument();
+    expect(await screen.findByRole("heading", { name: "計画の問題 · 1問" })).toBeInTheDocument();
     const [first, second] = await screen.findAllByRole("radio");
     answerBeforeRender(first, second, "2");
     expectHistory(single, "ア");

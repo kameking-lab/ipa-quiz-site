@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef } from "react";
-import { recordReview } from "@/lib/learning/spaced-repetition";
 import type { Question } from "@/lib/questions/types";
 import type { PetLearningSubmission } from "@/lib/pet/client/learning-submission-contracts";
 import type { PetAttempt, PetOwnerLease, PetV1Context } from "@/lib/pet/v1/runtime";
@@ -62,12 +61,11 @@ export function usePetLearning() {
       document.removeEventListener("visibilitychange", visible);
     };
   }, [readAccount]);
-  const submit = useCallback((input: PetLearningSubmission | null, context: PetV1Context,
-    reviewBefore: PetAttempt["reviewBefore"] = null) => {
+  const submit = useCallback((input: PetLearningSubmission | null, context: PetV1Context) => {
     try {
       const session = state.current;
       if (!session) return;
-      const attempt = { eventId: crypto.randomUUID(), sessionId: session.sessionId, occurredAt: Date.now(), reviewBefore };
+      const attempt = { eventId: crypto.randomUUID(), sessionId: session.sessionId, occurredAt: Date.now(), reviewBefore: null } satisfies PetAttempt;
       // The timeout begins outside the answer's paint and input budget. No JSON
       // parsing, validation, network, storage or model calculation in this call.
       const ready = petSubmissionPaintDelay();
@@ -83,19 +81,12 @@ export function usePetLearning() {
   }, []);
   return useMemo(() => ({
     submit,
-    record(question: Question, answer: Answer, correct: boolean) {
-      let before: PetAttempt["reviewBefore"] = null;
-      recordReview(question.id, correct, undefined, snapshot => { before = snapshot; });
-      submit({ source: "question", questionId: question.id, answer }, { source: "question", question }, before);
-    },
     answer(question: Question, answer: Answer) {
       submit({ source: "question", questionId: question.id, answer }, { source: "question", question });
     },
-    mock(question: SlimMockQuestion, selected: ChoiceKey | undefined, correct: boolean) {
-      let before: PetAttempt["reviewBefore"] = null;
-      recordReview(question.id, correct, undefined, snapshot => { before = snapshot; });
+    mock(question: SlimMockQuestion, selected: ChoiceKey | undefined) {
       if (selected !== undefined) submit({ source: "question", questionId: question.id,
-        answer: { kind: "multiple-choice", selected: [selected] } }, { source: "mock", question }, before);
+        answer: { kind: "multiple-choice", selected: [selected] } }, { source: "mock", question });
     },
     reveal(question: Question) { submit(null, { source: "question", question }); },
   }), [submit]);

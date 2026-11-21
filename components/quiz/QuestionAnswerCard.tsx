@@ -1,4 +1,5 @@
 "use client";
+import { WeakMark } from "@/components/quiz/WeakMark";
 import { NativeQuestionGate } from "@/mobile/shared/NativeQuestionGate";
 
 import { QuestionBody } from "./QuestionBody";
@@ -25,7 +26,6 @@ import { formatNumericAnswer, isNumericAnswerCorrect } from "@/lib/questions/num
 import { useQuizChoiceRoving } from "@/lib/a11y/use-quiz-choice-roving";
 import { createHistoryStore } from "@/lib/storage/history";
 import { writeLastQuestion } from "@/lib/storage/last-question";
-import { recordReview } from "@/lib/learning/spaced-repetition";
 import { recordStudyOnDate } from "@/lib/motivation/heatmap";
 import { readSettings } from "@/lib/storage/settings";
 import { posthogCapture } from "@/lib/posthog";
@@ -136,8 +136,7 @@ function ScoredQuestionAnswerCard({
         }
         writeLastQuestion({ exam, year, season, session, qNumber, part, answeredAt: now });
         recordStudyOnDate();
-        if (question) pet.record(question, petAnswer, correct);
-        else recordReview(questionId, correct);
+        if (question) pet.answer(question, petAnswer);
       } catch {
         /* ignore storage errors */
       }
@@ -228,6 +227,7 @@ function ScoredQuestionAnswerCard({
 
   return (
     <div data-study-presence-exam={exam} data-question-answered={answered || undefined} data-question-revealed={revealed || undefined} className="space-y-3">
+      {(!question || (question.type !== "descriptive" && question.type !== "essay")) && <WeakMark id={questionId} />}
       {question?.acceptedAnswerCombinations && !revealed && (
         <Button className="min-h-12" disabled={picked.length < 1 || picked.length > requiredSelections}
           onClick={() => recordOutcome(formatSelection(picked), isCompleteSelectionCorrect(answerKey, picked, requiredSelections, question.acceptedAnswerCombinations), { kind: "multiple-choice", selected: [...picked] })}>

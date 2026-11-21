@@ -12,7 +12,7 @@ async function fixtures(page: Page, plan?: PacePlan, correct = 0, returning = fa
   await page.route("**/api/exam-schedule/ip", r => r.fulfill({ json: { exam: "ip", source: "tsugino", sessions: [{ id: "cbt", label: "随時受験", scheduleStatus: "ondemand", examDate: null, examDateEnd: null, applicationStart: null, applicationDeadline: null, resultDate: null, sourceUrl: "https://www.ipa.go.jp/shiken/", qualificationId: "ip", verifiedDate: today, examPhaseWindows: [] }] } }));
   await page.route("**/api/home/resume?**", r => r.fulfill({ json: { exam: "ip", name: "ITパスポート", href: "/quiz?mode=year&exam=ip&year=2026&season=spring&session=am", caption: "2026年度 · 問1" } }));
   await page.addInitScript(({ keys, value, count, returning, catalog, recent }) => {
-    localStorage.removeItem(keys.pacePlans); localStorage.removeItem(keys.history); localStorage.removeItem(keys.paceOffer); localStorage.removeItem(keys.lastQuestion);
+    localStorage.removeItem(keys.pacePlans); localStorage.removeItem(keys.history); localStorage.removeItem(keys.lastQuestion);
     if (value) localStorage.setItem(keys.pacePlans, JSON.stringify([value]));
     const entries = catalog.slice(0, count).map(q => ({ id: q.id, selected: "ア", correct: true, at: Date.parse("2026-11-16T12:00:00+09:00") }));
     if (recent) entries.push(...[
@@ -58,25 +58,22 @@ async function screenshot(page: Page, name: string, width: number) {
 for (const width of [390, 1280]) {
   test.describe(`home pace ${width}px`, () => {
     test.use({ viewport: { width, height: 844 } });
-    test("① behind: one CTA and dismissible daily offer", async ({ page }) => {
+    test("① large target: one CTA with no monthly offer", async ({ page }) => {
       await fixtures(page, fixturePlan(), 62); await page.goto("/");
-      await expect(page.getByText("少し遅れ", { exact: true })).toBeVisible();
-      await expect(page.getByRole("link", { name: /今日の問題を解く/ })).toHaveCount(1);
+      await expect(page.getByText("1回の目安　46問正解")).toBeVisible();
+      await expect(page.getByRole("link", { name: /計画の問題を解く/ })).toHaveCount(1);
       await expect(page.getByPlaceholder("ほかの資格をさがす")).toBeVisible();
-      await expect(page.getByRole("img", { name: /^進み具合/ })).toBeVisible();
+      await expect(page.getByRole("img", { name: "正解済み 62 / 200問" })).toBeVisible();
       await expect(page.getByRole("heading", { name: "試験が近い資格" })).toHaveCount(0);
-      await expect(page.getByRole("link", { name: /1日46問必要です/ })).toBeVisible();
-      await layout(page); await screenshot(page, "01-behind", width);
-      await page.getByRole("button", { name: "月額プランの案内を閉じる" }).click();
-      await expect(page.getByRole("link", { name: /1日46問必要です/ })).toHaveCount(0);
-      expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)!).dismissedOn, LS_KEYS.paceOffer)).toBe(today);
+      await expect(page.getByRole("link", { name: /追いつけます/ })).toHaveCount(0);
+      await layout(page); await screenshot(page, "01-planned", width);
       if (width === 390) await expectHomeNavGap(page);
       await page.getByPlaceholder("ほかの資格をさがす").fill("ｆｅ");
       await expect(page.locator("#home-qualification-results").getByRole("link")).toHaveAttribute("href", "/fe");
     });
-    test("② ahead: deadline sheet registers once", async ({ page }) => {
+    test("② deadline sheet registers once", async ({ page }) => {
       await fixtures(page, fixturePlan(), 190); await page.goto("/");
-      await expect(page.getByText("いいペース", { exact: true })).toBeVisible();
+      await expect(page.getByText("1回の目安　4問正解")).toBeVisible();
       await expect(page.getByRole("link", { name: /回数無制限で追いつけます/ })).toHaveCount(0);
       await layout(page); await screenshot(page, "02-ahead", width);
       await page.getByRole("button", { name: /学習計画の詳細.*申込締切/ }).click();
@@ -93,11 +90,10 @@ for (const width of [390, 1280]) {
       await expect(resume).toHaveAttribute("href", /\/quiz\?mode=year&exam=ip/);
       await expect(page.getByText("前回 2026年度 · 問1")).toBeVisible();
       await expect(page.getByText("今日 1問", { exact: true })).toBeVisible();
-      const track = page.getByRole("img", { name: "進み具合0%、試験日未設定" });
-      await expect(track.getByText("試験日？")).toBeVisible();
+      const track = page.getByRole("img", { name: "チワワがスタートで待機中" });
+      await expect(track.getByText("ゴール")).toBeVisible();
       await expect(track.locator("image")).toHaveAttribute("href", "/images/home/pace-run/ip.webp");
-      await expect(page.getByRole("button", { name: "試験日を決める", exact: true })).toBeVisible();
-      await expect(page.getByRole("button", { name: "学習計画を作成", exact: true })).toHaveCount(0);
+      await expect(page.getByRole("button", { name: "学習計画を作る", exact: true })).toBeVisible();
       await expect(page.locator('[data-home-state="returning"]')).toBeVisible();
       const search = page.getByPlaceholder("ほかの資格をさがす");
       await expect(search).toBeVisible();
@@ -117,14 +113,14 @@ for (const width of [390, 1280]) {
     test("④ create: choose day, save, return to pace card", async ({ page }) => {
       await fixtures(page, undefined, 0, true); await page.goto("/");
       await expect(page.getByRole("heading", { name: "最近解いた資格" })).toHaveCount(0);
-      await page.getByRole("button", { name: "試験日を決める", exact: true }).click();
-      await expect(page.getByRole("dialog", { name: "学習計画を作成" })).toBeVisible();
+      await page.getByRole("button", { name: "学習計画を作る", exact: true }).click();
+      await expect(page.getByRole("dialog", { name: "学習計画を作る" })).toBeVisible();
       await page.getByRole("combobox", { name: "受ける資格" }).selectOption("ip");
       await expect(page.getByRole("radio", { name: "随時受験" })).toBeChecked();
       await page.getByLabel("予約した日・受けたい日").fill("2026-12-20");
       await layout(page); await screenshot(page, "04-create", width);
-      await page.getByRole("button", { name: "この回で作成" }).click();
-      await expect(page.getByRole("link", { name: /今日の問題を解く/ })).toBeVisible();
+      await page.getByRole("button", { name: "この計画で始める" }).click();
+      await expect(page.getByRole("link", { name: /計画の問題を解く/ })).toBeVisible();
       expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)!)[0].examDate, LS_KEYS.pacePlans)).toBe("2026-12-20");
     });
     test("⑤ new: search and three picks, three bottom tabs", async ({ page }) => {
@@ -133,8 +129,8 @@ for (const width of [390, 1280]) {
       await expect(page.getByRole("heading", { name: "今日も、ひと問ずつ。" })).toBeVisible();
       await expect(page.getByPlaceholder("受ける資格は？")).toBeVisible();
       await expect(page.locator("#home-qualification-results li")).toHaveCount(3);
-      const create = page.getByRole("button", { name: "試験日を決めると、チワワが走り出す" });
-      await expect(create.locator('svg[aria-label^="進み具合0%"]')).toBeVisible();
+      const create = page.getByRole("button", { name: "学習計画を作る" });
+      await expect(create.locator('svg[aria-label^="チワワがスタートで待機中"]')).toBeVisible();
       await layout(page); await screenshot(page, "05-new", width);
       if (width === 390) {
         await expect(page.getByRole("navigation", { name: "モバイル底タブ" }).getByRole("link")).toHaveCount(3);
@@ -143,13 +139,13 @@ for (const width of [390, 1280]) {
       await page.getByRole("searchbox", { name: "資格名・略称で検索" }).fill("ITパスポート");
       await expect(page.locator("#home-qualification-results li")).toHaveCount(1);
       await create.click();
-      await expect(page.getByRole("dialog", { name: "学習計画を作成" })).toBeVisible();
+      await expect(page.getByRole("dialog", { name: "学習計画を作る" })).toBeVisible();
     });
     test("post-exam: one-tap result and one next qualification", async ({ page }) => {
       await fixtures(page, { ...fixturePlan(), examDate: "2026-11-16" }, 62); await page.goto("/");
       await expect(page.locator('[data-home-state="post-exam"]')).toBeVisible();
       const search = page.getByRole("searchbox");
-      const track = page.getByRole("img", { name: "進み具合31%、試験終了" });
+      const track = page.getByRole("img", { name: "正解済み 62 / 200問" });
       await expect(search).toHaveCount(1);
       await expect(track).toHaveCount(1);
       await expect(track.getByText("今日の目標")).toHaveCount(0);
@@ -164,7 +160,7 @@ for (const width of [390, 1280]) {
       await expect(search).toHaveCount(1);
       await expect(track).toHaveCount(1);
     });
-    test("today uses real questions in review/resume order and survives reload", async ({ page, request }) => {
+    test("plan uses real questions, puts incorrect answers first, and survives reload", async ({ page, request }) => {
       const response = await request.get("/api/study-plan/catalog/ip");
       expect(response.ok()).toBe(true);
       const real = (await response.json()).questions.slice(0, 20) as typeof catalog;
@@ -172,6 +168,15 @@ for (const width of [390, 1280]) {
       const p = createPacePlan({ id: "real-today", exam: "ip", sessionId: null, examDate: "2026-11-20", startDate: "2026-11-01" }, real, "2026-11-17T00:00:00+09:00");
       await page.clock.setFixedTime(new Date(`${today}T12:00:00+09:00`));
       await page.route("**/api/billing/status", r => r.fulfill({ json: { entitled: false } }));
+      await page.route("**/api/study-plan/catalog/ip", route => route.fulfill({ json: { questions: real } }));
+      await page.route("**/api/billing/question", async route => {
+        const { id } = route.request().postDataJSON() as { id: string };
+        const coords = real.find(q => q.id === id)!;
+        const question = { ...coords, type: "multiple-choice", topicTags: [], category: "テクノロジ系", difficulty: 1,
+          question: "確認用の問題", answer: "ア", choices: { ア: "正答", イ: "誤答" }, explanation: "確認用の解説" };
+        await route.fulfill({ json: { question, access: { kind: "pass", remaining: null,
+          freeDaily: 10, resetAt: "2026-11-18T00:00:00+09:00", retryAfter: null } } });
+      });
       await page.addInitScript(({ keys, p, real, due, confirmation }) => {
         localStorage.setItem(keys.pacePlans, JSON.stringify([p]));
         localStorage.setItem(keys.history, JSON.stringify({ entries: [{ id: due.id, correct: false, selected: "ア", at: Date.parse("2026-11-16T12:00:00+09:00") }, { id: confirmation.id, correct: true, selected: "ア", at: Date.parse("2026-11-16T12:00:00+09:00") }], starredIds: [] }));
@@ -181,14 +186,14 @@ for (const width of [390, 1280]) {
       await page.goto("/quiz/today?plan=real-today");
       await expect(page.getByRole("radio").first()).toBeVisible();
       expect(new URL(page.url()).searchParams.get("question")).toBe(due.id);
-      await expect(page.getByRole("heading", { name: "今日の問題 · 7問" })).toBeVisible();
+      await expect(page.getByRole("heading", { name: "計画の問題 · 7問" })).toBeVisible();
       await page.getByRole("radio").first().click();
       await page.reload();
       await expect(page.getByRole("radio").first()).toBeVisible();
       expect(new URL(page.url()).searchParams.get("question")).toBe(due.id);
       await page.getByRole("radio").first().click();
       await page.getByRole("button", { name: "次の問題へ", exact: true }).first().click();
-      await expect.poll(() => new URL(page.url()).searchParams.get("question")).toBe(real[1].id);
+      await expect.poll(() => new URL(page.url()).searchParams.get("question")).toBe(real[0].id);
     });
     test("library today uses the existing paper grant and records the official result", async ({ page }) => {
       const library = [{ id: "lckohyo-TEST-q1", exam: "dai-1-shu-eisei-kanrisha", year: 2026, season: "published", session: "テスト", qNumber: 1,
@@ -211,7 +216,7 @@ for (const width of [390, 1280]) {
       expect(grants).toBeGreaterThan(0);
       expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)!).actions.at(-1).correct, LS_KEYS.learningActivity)).toBe(true);
       await page.getByRole("button", { name: /次の問題|結果を見る/ }).first().click();
-      await expect(page.getByRole("heading", { name: "今日も、おつかれさまでした" })).toBeVisible();
+      await expect(page.getByRole("heading", { name: "1問中1問正解" })).toBeVisible();
     });
   });
 }

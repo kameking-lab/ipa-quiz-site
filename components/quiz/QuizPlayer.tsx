@@ -1,4 +1,5 @@
 "use client";
+import { WeakMark } from "@/components/quiz/WeakMark";
 import { isSelfReviewedDescriptiveQuestion } from "@/lib/questions/descriptive";
 import { NativeQuestionGate } from "@/mobile/shared/NativeQuestionGate";
 
@@ -193,7 +194,8 @@ function ScoredQuizPlayer({
       // Click, shortcut and form events can share the same ungraded render.
       answerFinalized.current = true;
       setRevealed(true);
-      recordActivityAnswer(correct);
+      const now = Date.now();
+      recordActivityAnswer(correct, now);
       requestAnimationFrame(() => {
         answerResultRef.current?.focus({ preventScroll: true });
         answerResultRef.current?.scrollIntoView({ block: "start", behavior: "instant" });
@@ -204,7 +206,6 @@ function ScoredQuizPlayer({
         correct,
       });
       observeJourney({ qualification: question.exam, answer: true });
-      const now = Date.now();
       if (!nativeBResult || nativeBResult.slotResults.every(slot => Boolean(slot.selectedCandidateId))) {
         recordStudyReward({ scope: `quiz:${question.exam}`, questionId: question.id, exam: question.exam, label: examLabel(question.exam) });
       }
@@ -227,7 +228,7 @@ function ScoredQuizPlayer({
         at: now,
       });
       recordStudyOnDate();
-      pet.record(question, petAnswer, correct);
+      pet.answer(question, petAnswer);
       const nextCombo = correct ? combo + 1 : 0;
       const allStats = history.getStats();
       const newlyUnlocked = evaluateAchievementsAfterAnswer(allStats.total, allStats.correct, nextCombo);
@@ -477,6 +478,7 @@ function ScoredQuizPlayer({
         </div>
       </div>
 
+      <div className="mx-3 mt-2 sm:mx-6"><WeakMark id={question.id} /></div>
       <div className="flex flex-1">
         <main aria-label="問題と解説"
           className="min-w-0 w-full flex-1 px-3 pb-12 pt-3 sm:px-6"

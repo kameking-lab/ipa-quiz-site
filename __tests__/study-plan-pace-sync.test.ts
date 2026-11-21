@@ -99,6 +99,21 @@ describe("automatic StudyPlan-only sync", () => {
     savePacePlan(plan); vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response(null, { status })));
     expect(await syncPacePlans()).toBe("retry"); expect(listPacePlans()).toEqual([plan]);
   });
+  it("uploads an offline weekday edit and preserves it through a legacy resync", async () => {
+    const changed = { ...plan, studyWeekdays: [1, 3, 5], updatedAt: "2026-11-18T01:00:00Z" };
+    savePacePlan(changed);
+    vi.stubGlobal("fetch", vi.fn().mockRejectedValueOnce(new Error("offline")));
+    expect(await syncPacePlans()).toBe("retry");
+    expect(listPacePlans()[0]).toEqual(changed);
+    const legacy = { ...plan, examDate: "2026-12-28", updatedAt: "2026-11-19T01:00:00Z" };
+    const fetcher = vi.fn().mockImplementation(async () => Response.json({
+      entries: [{ id: legacy.id, payload: legacy, updatedAt: Date.parse(legacy.updatedAt) }],
+    }));
+    vi.stubGlobal("fetch", fetcher);
+    expect(await syncPacePlans()).toBe("ok");
+    expect(listPacePlans()[0]).toMatchObject({ examDate: legacy.examDate, studyWeekdays: [1, 3, 5] });
+    expect(JSON.parse(fetcher.mock.calls[1][1].body).entries[0].payload.studyWeekdays).toEqual([1, 3, 5]);
+  });
   it("debounces changes and cancels listeners/timers on cleanup", async () => {
     vi.useFakeTimers(); mocks.session.mockResolvedValue(null);
     const stop = startPaceAutoSync();

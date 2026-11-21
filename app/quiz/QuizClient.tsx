@@ -65,6 +65,7 @@ export function QuizClient({
   mockResultId,
   initialQuestionId,
   billingGateEnabled = false,
+  fixedBatch = false,
 }: {
   poolIds: string[];
   mode: QuizMode;
@@ -76,6 +77,7 @@ export function QuizClient({
   mockResultId?: string;
   initialQuestionId?: string;
   billingGateEnabled?: boolean;
+  fixedBatch?: boolean;
 }) {
   const [sessionIds, setSessionIds] = React.useState<string[] | null>(null);
   const [index, setIndex] = React.useState(0);
@@ -152,7 +154,7 @@ export function QuizClient({
       const saved: unknown = JSON.parse(window.sessionStorage.getItem(sessionKey) ?? "null");
       const relatedOrder = window.sessionStorage.getItem(`${sessionKey}:related-order`);
       const available = new Set(poolIds);
-      if (currentId && Array.isArray(saved) && saved.length > 0 && saved.length <= sessionLimit &&
+      if (!fixedBatch && currentId && Array.isArray(saved) && saved.length > 0 && saved.length <= sessionLimit &&
           saved.every((id) => typeof id === "string" && available.has(id)) && new Set(saved).size === saved.length && saved.includes(currentId) &&
           // Ordinary annual sessions retain source order. An explicit related
           // selection may reorder the same complete set, and is marked separately.
@@ -173,7 +175,7 @@ export function QuizClient({
     setLoadError(false);
     cache.current.clear();
     startSession(mode);
-  }, [poolIds, mode, categoryById, wrongOnly, initialQuestionId, mockResultId]);
+  }, [poolIds, mode, categoryById, wrongOnly, initialQuestionId, mockResultId, fixedBatch]);
 
   React.useEffect(() => {
     if (!sessionIds?.length) return;
@@ -233,13 +235,13 @@ export function QuizClient({
     setLoadError(false);
     void loadInto(currentId, true);
     const nextId = sessionIds[index + 1];
-    if (nextId) void loadInto(nextId, false);
+    if (nextId && (!fixedBatch || !nativeClient() && !billingGateEnabled)) void loadInto(nextId, false);
 
     return () => {
       cancelled = true;
       controller.abort();
     };
-  }, [sessionIds, index, mode, retryCount, billingGateEnabled]);
+  }, [sessionIds, index, mode, retryCount, billingGateEnabled, fixedBatch]);
 
   const handleNext = React.useCallback(() => {
     if (navigating.current) return;
