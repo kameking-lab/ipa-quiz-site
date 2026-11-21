@@ -107,6 +107,20 @@ it("groups a browser under its newest qualification, ignores older writes and ro
   expect(transaction).toHaveBeenCalledTimes(2);
 });
 
+it("combines existing answer rows from both routes to a qualification in the daily breakdown", async () => {
+  const exams = ["sokuryoshiho", "survey-assistant", "haikan-plant2", "plant-haikan2"];
+  for (const [index, exam] of exams.entries()) {
+    const at = index % 2 === 0 ? epoch - 600_000 : epoch;
+    await db.query('INSERT INTO "StudyPresence" VALUES ($1, $2, $3)', [`answer:fixture-${index}`, new Date(at), exam]);
+  }
+  expect(await read()).toMatchObject({ count: 2, today: { count: 4, activeCount: 2, exams: [
+    { exam: "plant-haikan2", count: 2, activeCount: 1 },
+    { exam: "survey-assistant", count: 2, activeCount: 1 },
+  ] } });
+  expect(query).toHaveBeenCalledTimes(1);
+  expect(execute).not.toHaveBeenCalled();
+});
+
 it("leaves cleanup off reads and runs it at most once per fifteen minutes of writes", async () => {
   const retentionStart = Date.parse("2026-11-17T15:00:00Z");
   for (const [id, at] of [["old", retentionStart - 1], ["retained", retentionStart]] as const) {

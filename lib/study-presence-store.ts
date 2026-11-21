@@ -2,10 +2,13 @@ import "server-only";
 import { createHash } from "node:crypto";
 import { nextJstMidnight } from "@/lib/billing/reset-time";
 import { prisma } from "@/lib/db/prisma";
+import { EXAM_CODE_ALIASES } from "@/lib/questions/exam-aliases";
 import { canonicalPresenceExam, parseStudyPresence, parseStudyPresenceToday, PRESENCE_WINDOW_MS, type StudyPresenceTodayCount } from "@/lib/study-presence";
 
 const CLEANUP_INTERVAL_MS = 15 * 60_000;
 const DAY_MS = 24 * 60 * 60_000;
+// The daily room combines parallel question pools. Keep legacy five-minute exam IDs intact.
+const dailyExamAliases = new Map<string, string>([...Object.entries(EXAM_CODE_ALIASES), ["sokuryoshiho", "survey-assistant"]]);
 let nextCleanupAt = 0;
 const answerId = (visitorId: string) => `answer:${createHash("sha256").update(visitorId.toLowerCase()).digest("hex")}`;
 
@@ -41,8 +44,9 @@ export async function readStudyPresence(measuredAt: number) {
       expiresAt = Math.min(expiresAt, row.oldestAnswerAt.getTime() + PRESENCE_WINDOW_MS);
     }
     if (row.today > 0n) {
-      const previous = todayByExam.get(exam);
-      todayByExam.set(exam, { exam, count: (previous?.count ?? 0) + Number(row.today),
+      const dailyExam = dailyExamAliases.get(exam) ?? exam;
+      const previous = todayByExam.get(dailyExam);
+      todayByExam.set(dailyExam, { exam: dailyExam, count: (previous?.count ?? 0) + Number(row.today),
         activeCount: (previous?.activeCount ?? 0) + Number(row.activeToday) });
     }
   }

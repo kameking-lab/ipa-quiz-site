@@ -121,7 +121,8 @@ export function presenceSeatMascot(exam: string, index: number, active: boolean)
   if (active) return { src: qualificationStudyArt(exam), state: "study", stateLabel: "勉強中", mirrored };
   const idle = restingPoses[Math.floor(index / 2) % restingPoses.length];
   const resting = idleArt(exam, idle) ?? idleArt(exam, "nap");
-  return resting ? { src: resting, state: "break", stateLabel: "ひと休み", mirrored }
+  // Field idle pictures omit the props in the qualification's own break artwork.
+  return resting && !resting.includes("/field-") ? { src: resting, state: "break", stateLabel: "ひと休み", mirrored }
     : qualificationMascot(exam, { src: SLEEPING_ROOM_MASCOT, state: "break", stateLabel: "ひと休み", mirrored });
 }
 
