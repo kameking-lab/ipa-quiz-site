@@ -14,3 +14,9 @@ it("uses Japanese safety library names and the same hygiene qualification identi
   expect(presenceExamName("dai-1-shu-eisei-kanrisha")).toBe(presenceExamName("eisei1"));
   expect(presenceExamName("rodo-eisei-consultant")).toBe("労働衛生コンサルタント");
 });
+
+it("distinguishes the two pneumatic assembly grades from sequence control", () => {
+  expect(["kuukiatsu-kumitate1", "kuukiatsu-kumitate2", "sequence1"].map(presenceExamName)).toEqual([
+    "空気圧装置組立て技能士 1級", "空気圧装置組立て技能士 2級", "シーケンス制御技能士 1級",
+  ]);
+});
