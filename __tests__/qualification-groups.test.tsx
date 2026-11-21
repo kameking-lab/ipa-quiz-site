@@ -8,6 +8,7 @@ import DailyChallengePage from "@/app/challenge/page";
 import { getPublishedQualificationGroups } from "@/lib/qualifications/published-groups";
 import { qualificationGroupPath } from "@/lib/qualifications/groups";
 import { groupHomeDirectory } from "@/lib/home/grouped-directory";
+import { searchQualifications } from "@/lib/qualifications/search";
 import { getHomeDirectory } from "@/lib/home/home-directory";
 import { renderMainSitemapXml } from "@/lib/seo/sitemap-xml";
 import { SITE_BASE_URL } from "@/lib/seo/config";
@@ -28,6 +29,13 @@ describe("qualification groups", () => {
       const parents = cards.filter(card => card.href === href);
       expect(parents, href).toHaveLength(1);
       expect(parents[0].children?.map(child => child.href).sort()).toEqual(children.map(child => child.item.href).sort());
+      for (const surface of ["home", "browse", "directory"] as const) {
+        expect(searchQualifications(cards, group.name, surface).filter(card => card.href === href)).toHaveLength(1);
+        for (const { item, label } of children) {
+          const result = searchQualifications(cards, group.name + " " + label, surface);
+          expect(result.map(card => card.href), surface + ": " + group.name + " " + label).toContain(item.href);
+        }
+      }
       expect(cards.some(card => children.some(child => card.key === child.item.key))).toBe(false);
     }
     expect(directory.find(domain => domain.id === "construction")?.featured.map(card => card.href)).toContain("/qualifications/gijutsushi-first");

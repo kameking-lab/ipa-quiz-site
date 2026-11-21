@@ -23,6 +23,25 @@ beforeEach(() => {
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
 
 describe("weak list uses the common assessed history", () => {
+  it("lists one parent for regional due questions and requests the selected region", async () => {
+    const regions = ["chori-ehime", "chori-nara"];
+    const questions = regions.map(exam => ({ ...q, id: exam + "-q1", exam }));
+    const fetchDue = vi.fn(async (_url: RequestInfo | URL, init?: RequestInit) => {
+      const { exam } = JSON.parse(String(init?.body));
+      return Response.json({ questions: questions.filter(item => !exam || exam === item.exam), seenCount: 2, nextReviewDate: null });
+    });
+    vi.stubGlobal("fetch", fetchDue);
+    render(<DueReview initialExam="" />);
+    const parent = await screen.findByRole("combobox", { name: "復習する資格" });
+    const group = within(parent).getByRole<HTMLOptionElement>("option", { name: "調理師試験（都道府県別 2）" });
+    expect(within(parent).getAllByRole("option")).toHaveLength(2);
+    fireEvent.change(parent, { target: { value: group.value } });
+    expect(screen.queryByText("復習問題を読み込み中…")).toBeNull();
+    fireEvent.change(screen.getByRole("combobox", { name: "地域" }), { target: { value: regions[1] } });
+    await screen.findByRole("radio", { name: /^選択肢 ア/ });
+    expect(fetchDue).toHaveBeenCalledWith("/api/review/due", expect.objectContaining({ body: expect.stringContaining('"exam":"chori-nara"') }));
+  });
+
   it("keeps the due-review grant path, records on grading, and reschedules only on advance", async () => {
     const history = createHistoryStore();
     history.record(old);

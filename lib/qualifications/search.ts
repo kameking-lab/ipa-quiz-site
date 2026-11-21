@@ -62,7 +62,7 @@ export function searchQualifications<T extends SearchableQualification>(
   const prefixes: T[] = [];
   const parts: T[] = [];
   const exact = new Set<T>();
-  const matchingCandidates = new Map<T, Set<SearchableQualification>>();
+  const matchingCandidates = new Map<T, Map<SearchableQualification, boolean>>();
   const isShortAbbreviation = /^[a-z]{1,2}$/.test(term);
 
   for (const [item, candidate] of items.flatMap(item => [item, ...(item.children ?? [])].map(candidate => [item, candidate] as const))) {
@@ -96,8 +96,8 @@ export function searchQualifications<T extends SearchableQualification>(
     }
     if (matches) {
       matches.push(item);
-      const candidates = matchingCandidates.get(item) ?? new Set();
-      candidates.add(candidate);
+      const candidates = matchingCandidates.get(item) ?? new Map<SearchableQualification, boolean>();
+      candidates.set(candidate, isExact);
       matchingCandidates.set(item, candidates);
     }
   }
@@ -109,8 +109,11 @@ export function searchQualifications<T extends SearchableQualification>(
   // Keep the home preview compact, but show every exact candidate for a shared alias.
   return uniqueMatches.filter((item, index) => surface !== "home" || index < 6 || exact.has(item)).map(item => {
     const candidates = matchingCandidates.get(item);
-    // A query that identifies just one region or section can open its existing route directly.
-    const child = candidates?.size === 1 && !candidates.has(item) ? [...candidates][0] : undefined;
+    if (!candidates || candidates.has(item)) return item;
+    // An exact section name can also be a substring of its sibling (e.g. 教養区分以外).
+    const exactChildren = [...candidates].filter(([, isExact]) => isExact);
+    const child = exactChildren.length === 1 ? exactChildren[0][0]
+      : candidates.size === 1 ? candidates.keys().next().value : undefined;
     return child ? { ...item, ...child, children: undefined } : item;
   });
 }

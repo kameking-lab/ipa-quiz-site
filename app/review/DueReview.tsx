@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { QuizPlayer } from "@/components/quiz/QuizPlayer";
+import { QualificationSelect } from "@/components/qualifications/QualificationSelect";
 import { advanceAppointment, buildReviewRequest, readLegacyAppointments } from "@/lib/learning/review-queue";
 import { startSession } from "@/lib/motivation/session";
 import { quizBackHref } from "@/lib/questions/practice-session";
@@ -43,15 +44,18 @@ export function DueReview({ initialExam, returnTo }: { initialExam: string; retu
     return () => controller.abort();
   }, [exam, knownExam, revision]);
 
-  const backHref = quizBackHref({ exam: exam || "search", returnTo });
+  const backHref = quizBackHref({ exam: exam || "search", returnTo: exam === initialExam ? returnTo : undefined });
+  const options = [...new Set([...choices, ...(knownExam && exam ? [exam] : [])])]
+    .map(key => ({ key, name: examLabel(key) }));
   return <div className="space-y-4">
     <Link className="study-link" href={"/review?" + new URLSearchParams({ mode: "weak", ...(exam && knownExam ? { exam } : {}) })}>苦手リスト</Link>
-    {(choices.length > 1 || !knownExam || exam) && <label className="block">復習する資格
-      <select value={exam} className="ml-2 min-h-11 rounded border px-2" onChange={event => { setQueue(undefined); setExam(event.target.value); }}>
-        <option value="">すべての資格</option>
-        {[...new Set([...choices, ...(exam && knownExam ? [exam] : [])])].map(code => <option key={code} value={code}>{examLabel(code)}</option>)}
-      </select>
-    </label>}
+    {(choices.length > 1 || !knownExam || exam) && <QualificationSelect items={options}
+      value={exam} label="復習する資格" emptyLabel="すべての資格" fieldClass="mt-1 block min-h-11 w-full rounded border px-2"
+      onChange={next => {
+        if (next === exam) return;
+        setQueue(undefined);
+        setExam(next);
+      }} />}
     {!knownExam ? <p role="alert">指定された資格を確認できません。復習する資格を選んでください。</p>
       : queue === undefined ? <p role="status">復習問題を読み込み中…</p>
       : queue === null ? <><p role="alert">復習問題を読み込めませんでした</p><button className="study-link" onClick={() => setRevision(n => n + 1)}>再読み込み</button></>
