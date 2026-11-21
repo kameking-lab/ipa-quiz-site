@@ -4141,9 +4141,12 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
         { session: "gakka-I", urlSlug: "1-kyu", expectedQuestions: 20, label: "1級・筆記（データベース）", categories: ["データベース", "ハードウェア", "ネットワーク", "情報の表現", "情報と社会"] },
         { session: "gakka-II", urlSlug: "2-kyu", expectedQuestions: 18, label: "2級・筆記（表計算）", categories: ["表計算", "ハードウェア", "情報の表現", "基本操作"] },
         { session: "gakka-III", urlSlug: "3-kyu", expectedQuestions: 20, label: "3級・筆記（ワープロ）", categories: ["ワープロ", "基本操作", "日本語入力"] },
+        { session: "pc-practical-1", urlSlug: "1-kyu-jitsugi", expectedQuestions: 5, label: "1級・実技（データベース）", categories: ["データベース"] },
+        { session: "pc-practical-2", urlSlug: "2-kyu-jitsugi", expectedQuestions: 1, label: "2級・実技（表計算）", categories: ["表計算"] },
+        { session: "pc-practical-3", urlSlug: "3-kyu-jitsugi", expectedQuestions: 1, label: "3級・実技（ワープロ）", categories: ["ワープロ"] },
     ],
     seasons: ["first", "second"],
-    yearRange: { start: 2025, end: 2026 },
+    yearRange: { start: 2023, end: 2026 },
 },
   "zenkou-keisan-gijutsu": {
     code: "zenkou-keisan-gijutsu", nameFull: "計算技術検定試験", urlSlug: "zenkou-keisan-gijutsu", level: "basic",
