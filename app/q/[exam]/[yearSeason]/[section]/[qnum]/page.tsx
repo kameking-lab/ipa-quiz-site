@@ -433,7 +433,7 @@ export default async function QuestionPage({
 
       {selfReviewed && (
         <div className="mt-5">
-          <DescriptiveAnswerCard question={q} />
+          <DescriptiveAnswerCard question={q} showExplanation={false} />
         </div>
       )}
 
