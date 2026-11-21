@@ -18,9 +18,20 @@ export function HomeStudyRoom() {
   const room = attendance && measuredRoom(attendance, HOME_ROOM_VISIBLE_LIMIT);
   const seats = room?.seats ?? [];
   const rowCount = seats.length > 20 ? 3 : seats.length > 5 ? 2 : 1;
-  const columns = Math.ceil(seats.length / rowCount);
   const examRows = attendance?.exams ?? [];
-  const otherExams = examRows.length - EXAM_CHIP_LIMIT;
+  const visibleExams = examRows.slice(0, EXAM_CHIP_LIMIT);
+  const otherExams = examRows.length - visibleExams.length;
+  function renderSeats(group: typeof seats) {
+    return <div className={styles.seats} aria-hidden="true">
+      {group.map(seat => {
+        const mascot = presenceSeatMascot(seat.exam, seat.index, seat.active);
+        return <span key={`${seat.exam}:${seat.index}`} className={styles.seat} data-testid="home-study-room-seat" data-exam={seat.exam} data-studying-now={current && seat.active}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={mascot.src} alt="" width={80} height={80} loading="lazy" decoding="async" className={mascot.mirrored ? styles.mirrored : undefined} />
+        </span>;
+      })}
+    </div>;
+  }
 
   return <Link href="/study-room" prefetch={false} data-study-presence-viewer data-testid="home-study-room"
     aria-labelledby="home-study-room-title" className={`${styles.card} study-focus`}>
@@ -35,28 +46,21 @@ export function HomeStudyRoom() {
         : <time dateTime={snapshot.measuredAt} className={styles.timestamp}>{time.format(Date.parse(snapshot.measuredAt))} 時点</time>)}
     </p>}
     <div className={styles.scene} data-testid="home-study-room-scene" data-rows={rowCount}>
-      {seats.length ? <div className={styles.seats} aria-hidden="true">
-        {Array.from({ length: rowCount }, (_, row) => <div key={row} className={styles.row}>
-          {seats.slice(row * columns, (row + 1) * columns).map(seat => {
-            const mascot = presenceSeatMascot(seat.exam, seat.index, seat.active);
-            return <span key={`${seat.exam}:${seat.index}`} className={styles.seat} data-testid="home-study-room-seat" data-exam={seat.exam} data-studying-now={current && seat.active}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={mascot.src} alt="" width={80} height={80} loading="lazy" decoding="async" className={mascot.mirrored ? styles.mirrored : undefined} />
-            </span>;
-          })}
-        </div>)}
-      </div> : <div className={styles.empty}>
+      {visibleExams.length > 0 ? <ul aria-label="自習室の資格" className={styles.groups}>
+        {visibleExams.map(row => <li key={row.exam} className={styles.group}>
+          <p><span>{presenceExamName(row.exam)}</span><strong>{number(row.count)}人</strong></p>
+          {renderSeats(seats.filter(seat => seat.exam === row.exam))}
+        </li>)}
+        {otherExams > 0 && <li className={styles.group}>
+          <p>ほか{number(otherExams)}資格</p>
+          {renderSeats(seats.filter(seat => !visibleExams.some(row => row.exam === seat.exam)))}
+        </li>}
+      </ul> : <div className={styles.empty}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={SLEEPING_ROOM_MASCOT} alt="" width={78} height={78} loading="lazy" decoding="async" data-testid="home-study-room-sleeper" />
         {daily?.count === 0 && current && <p>{EMPTY_STUDY_ROOM_MESSAGE}</p>}
       </div>}
       {room && room.hidden > 0 && <span className={styles.overflow}>＋{number(room.hidden)}人</span>}
     </div>
-    {examRows.length > 0 && <ul aria-label="自習室の資格" className={styles.exams}>
-      {examRows.slice(0, EXAM_CHIP_LIMIT).map(row => <li key={row.exam}>
-        <span>{presenceExamName(row.exam)}</span><strong>{number(row.count)}人</strong>
-      </li>)}
-      {otherExams > 0 && <li>ほか{number(otherExams)}資格</li>}
-    </ul>}
   </Link>;
 }

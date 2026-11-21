@@ -3,9 +3,9 @@
   min-width: 0;
   gap: 7px;
   padding: 10px;
-  border: 1px solid var(--hairline);
+  border: 1px solid color-mix(in srgb, var(--primary) 26%, var(--p3-field));
   border-radius: 16px;
-  background: var(--card);
+  background: var(--p3-field);
   color: var(--foreground);
 }
 
@@ -19,56 +19,53 @@
 .now i { width: 6px; height: 6px; border-radius: 50%; background: #16825f; }
 .timestamp { margin-inline-start: auto; }
 
-.scene {
-  position: relative;
+.scene { min-width: 0; }
+.groups {
   display: grid;
-  min-height: 116px;
-  align-items: end;
-  overflow: hidden;
-  padding: 6px 4px 3px;
-  border-radius: 10px;
-  background: #eacd9f url('/images/home/study-room-white.webp') center 34% / cover;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px;
 }
-
-.seats { display: grid; }
-.row { display: flex; justify-content: center; gap: 1px; }
-.seat { position: relative; flex: 0 1 76px; min-width: 0; aspect-ratio: 1; }
-.scene[data-rows="2"] .seat { flex-basis: 49px; }
-.scene[data-rows="3"] .seat { flex-basis: 34px; }
+.groups:has(> :only-child) { grid-template-columns: minmax(0, 1fr); }
+.group {
+  min-width: 0;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--p3-path) 34%, var(--card));
+  padding: 5px 6px;
+}
+.group:nth-child(even) { background: color-mix(in srgb, var(--p3-sky) 55%, var(--card)); }
+.group p {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2px 4px;
+  overflow-wrap: anywhere;
+  font-size: .75rem;
+  line-height: 1.4;
+}
+.group strong { font-variant-numeric: tabular-nums; }
+.seats { display: flex; flex-wrap: wrap; align-items: end; }
+.seat { position: relative; width: clamp(26px, 7.5vw, 37px); aspect-ratio: 1; }
 .seat img { width: 100%; height: 100%; object-fit: contain; }
 .mirrored { transform: scaleX(-1); }
 .seat[data-studying-now="true"]::after {
   position: absolute;
-  top: 14%;
-  left: 12%;
-  width: 8px;
-  height: 8px;
-  border: 1px solid white;
+  inset: 2px auto auto 2px;
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--card);
   border-radius: 50%;
   background: #16825f;
-  box-shadow: 0 1px 2px #0003;
   content: "";
 }
-
-.empty { display: grid; justify-items: center; padding: 1px 0 4px; }
-.empty p, .overflow { border-radius: 20px; background: var(--card); color: var(--foreground); padding: 2px 8px; font-size: .6875rem; font-weight: 600; }
-.overflow { position: absolute; top: 4px; right: 4px; font-variant-numeric: tabular-nums; }
-.scene:has(.overflow) { padding-top: 20px; }
-
-.exams { display: flex; flex-wrap: wrap; gap: 4px; }
-.exams li {
-  display: inline-flex;
-  min-width: 0;
-  max-width: 100%;
-  align-items: baseline;
-  gap: 4px;
-  border: 1px solid var(--hairline);
-  border-radius: 20px;
-  background: var(--muted);
-  padding: 1px 7px;
-  color: var(--foreground);
-  font-size: .6875rem;
-  line-height: 1.45;
+.empty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--p3-sky) 35%, var(--p3-field));
+  padding: 1px 8px;
 }
-.exams li span { overflow-wrap: anywhere; }
-.exams li strong { flex-shrink: 0; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.empty img { width: 52px; height: 52px; object-fit: contain; }
+.empty p, .overflow { font-size: .75rem; font-weight: 600; }
+.overflow { display: block; text-align: right; padding-top: 4px; font-variant-numeric: tabular-nums; }

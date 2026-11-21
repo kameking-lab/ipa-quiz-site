@@ -1,3 +1,32 @@
+.stack { display: grid; grid-template-columns: minmax(0, 1fr); }
+.hero {
+  margin-inline: -16px;
+  padding: 8px 16px 12px;
+  --p3-sun-size: 42px;
+  overflow: hidden;
+}
+.hero > :not(svg) { position: relative; }
+.first { padding-bottom: 13px; }
+.room, .recent, .upcoming { margin-top: 12px; }
+.rowName {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.rowName::before {
+  width: 7px;
+  height: 7px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--p3-accent);
+  content: "";
+}
+.recent .rowName::before { background: var(--primary); }
+@media (min-width: 640px) {
+  .hero { margin-inline: -24px; padding-inline: 24px; }
+}
+
 .qualification {
   display: flex;
   align-items: center;
