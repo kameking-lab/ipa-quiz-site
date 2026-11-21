@@ -208,46 +208,6 @@ export const RODO_KIJUN_KANTOKUKAN_2025_SPECIAL_B: Question[] = [
     "sourceAttribution": "出典：人事院「2025年度 労働基準監督官採用試験 労働基準監督B 専門試験（多肢選択式）」No. 9。解説は過去問AIの独自作成。"
   },
   {
-    "id": "rodo-kijun-kantokukan-2025-annual-special-b-q16",
-    "exam": "rodo-kijun-kantokukan",
-    "year": 2025,
-    "season": "annual",
-    "session": "special-b",
-    "qNumber": 16,
-    "type": "multiple-choice",
-    "category": "基礎数学",
-    "topicTags": [
-      "二次不等式",
-      "労働基準監督B",
-      "選択問題"
-    ],
-    "difficulty": 3,
-    "question": "xについての二次不等式 x²−2ax＋2a²−2a−3＞0 の解が全ての実数となるような定数aの値の範囲として正しいのはどれか。",
-    "choices": {
-      "ア": "a＜−1、3＜a",
-      "イ": "a＜(1−√7)/2、(1＋√7)/2＜a",
-      "ウ": "−3/4＜a＜2",
-      "エ": "(1−√7)/2＜a＜(1＋√7)/2",
-      "オ": "−1＜a＜3"
-    },
-    "answer": "ア",
-    "officialAnswerNumber": 1,
-    "explanation": "左辺を平方完成すると (x−a)²＋(a＋1)(a−3) となる。すべてのxで正になるのは定数部分が正となる a＜−1 または a＞3 のときである。",
-    "choiceExplanations": {
-      "ア": "左辺を平方完成すると (x−a)²＋(a＋1)(a−3) となる。すべてのxで正になるのは定数部分が正となる a＜−1 または a＞3 のときである。",
-      "イ": "最小値a²−2a−3の零点は−1と3である。選択肢の境界はその二次式の根になっていない。",
-      "ウ": "区間に含まれるa＝0でx＝0を選ぶと、左辺は−3となり不等式を満たさない。",
-      "エ": "この区間にはa＝1が含まれるが、x＝1で左辺が−4になるため条件に反する。",
-      "オ": "−1と3は最小値が0となる境界であり、その間では最小値が負になる。必要なのはその外側の範囲である。"
-    },
-    "explanationCoverage": "full",
-    "hasImage": false,
-    "sourcePdfUrl": "https://www.jinji.go.jp/content/000016388.pdf",
-    "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016388.pdf",
-    "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2025年度 労働基準監督官採用試験 労働基準監督B 専門試験（多肢選択式）」No. 16。解説は過去問AIの独自作成。"
-  },
-  {
     "id": "rodo-kijun-kantokukan-2025-annual-special-b-q21",
     "exam": "rodo-kijun-kantokukan",
     "year": 2025,

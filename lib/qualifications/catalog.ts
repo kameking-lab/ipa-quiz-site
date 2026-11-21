@@ -1901,7 +1901,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_23.html",
     officialReuseTermsUrl: "https://www.jinji.go.jp/shinsei/notice.html",
     status: "live",
-    reuseSummary: "労働基準監督A・Bの専門試験から、2026年度60問、2025年度44問、2024年度45問を、公式正答・全肢解説付きで収録。",
+    reuseSummary: "労働基準監督A・Bの専門試験から、2026年度60問、2025年度43問、2024年度45問を、公式正答・全肢解説付きで収録。",
     attributionTemplate: "出典：人事院「労働基準監督官採用試験 専門試験（多肢選択式）」。解説は過去問AIの独自作成。",
     remainingWork: [],
   },
