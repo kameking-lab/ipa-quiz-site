@@ -4683,7 +4683,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
         ],
     }],
     seasons: ["annual"],
-    yearRange: { start: 2022, end: 2025 },
+    yearRange: { start: 2021, end: 2025 },
 },
   "tohan-tokai-hokuriku": {
     code: "tohan-tokai-hokuriku",
