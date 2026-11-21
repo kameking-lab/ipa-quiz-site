@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { OfflineHome, type OfflineCatalogGroup } from "@/components/offline/OfflineHome";
 import { ALL_QUESTIONS } from "@/data/questions";
-import { questionPagePath } from "@/lib/seo/question-url";
+import { questionNumberSegment, questionPagePath } from "@/lib/seo/question-url";
 import { questionSourceEdition,questionSourceExam } from "@/lib/questions/source-label";
 import { strictContentGateEnabled } from "@/lib/billing/content-policy";
 
@@ -16,15 +16,22 @@ export const metadata: Metadata = {
 // Static so it gets precached by the service worker.
 export const dynamic = "force-static";
 
-// Grouped by exam edition so the shared label is sent once per group (the flat
-// list exceeded Vercel's 20 MB ISR page limit). Entries are [id, href, qNumber].
+// Each group sends its edition label and route prefix once, keeping the
+// catalog within the prerender response budget as the corpus grows.
 function buildOfflineCatalog(): OfflineCatalogGroup[] {
   const groups = new Map<string, OfflineCatalogGroup>();
   for (const q of ALL_QUESTIONS) {
     const label = `${questionSourceExam(q)} ${questionSourceEdition(q)}`;
-    let group = groups.get(label);
-    if (!group) { group = { label, items: [] }; groups.set(label, group); }
-    group.items.push([q.id, questionPagePath(q), String(q.qNumber)]);
+    const href = questionPagePath(q);
+    const hrefPrefix = href.slice(0, href.lastIndexOf("/") + 1);
+    const key = `${hrefPrefix}\0${label}`;
+    let group = groups.get(key);
+    if (!group) {
+      group = { label, hrefPrefix, items: [] };
+      groups.set(key, group);
+    }
+    const suffix = q.part ? questionNumberSegment(q.qNumber, q.part).slice(`q${q.qNumber}`.length) : undefined;
+    group.items.push(suffix ? [q.id, q.qNumber, suffix] : [q.id, q.qNumber]);
   }
   return [...groups.values()];
 }

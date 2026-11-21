@@ -15,8 +15,8 @@ export interface OfflineQuestionLink {
 
 export interface OfflineCatalogGroup {
   label: string;
-  /** [id, href, qNumber] */
-  items: [string, string, string][];
+  hrefPrefix: string;
+  items: [id: string, qNumber: number, suffix?: string][];
 }
 
 export function OfflineHome({catalog=[]}:{catalog?:OfflineCatalogGroup[]}) {
@@ -35,7 +35,9 @@ export function OfflineHome({catalog=[]}:{catalog?:OfflineCatalogGroup[]}) {
     const store = createHistoryStore();
     const byId = new Map<string, OfflineQuestionLink>();
     for (const group of catalog) {
-      for (const [id, href, qNumber] of group.items) byId.set(id, { id, href, label: `${group.label} 問${qNumber}` });
+      for (const [id, qNumber, suffix = ""] of group.items) {
+        byId.set(id, { id, href: `${group.hrefPrefix}q${qNumber}${suffix}`, label: `${group.label} 問${qNumber}` });
+      }
     }
 
     const starredIds = store.getStarredIds();
