@@ -38,7 +38,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 2。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 2。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-keizai-q03",
@@ -77,7 +77,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 3。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 3。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-keizai-q04",
@@ -116,7 +116,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 4。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 4。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-keizai-q05",
@@ -155,7 +155,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 5。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 5。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-keizai-q06",
@@ -194,7 +194,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 6。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 6。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-keizai-q08",
@@ -233,7 +233,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 8。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 8。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-keizai-q09",
@@ -272,7 +272,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 9。解説は過去問AIの独自作成。",
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 9。解説は過去問AIの独自作成。",
     "imageUrls": [
       "/questions/kokka-sogo-dai/2025/senmon-keizai/q009.webp"
     ],
@@ -317,7 +317,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 11。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 11。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-keizai-q12",
@@ -356,7 +356,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 12。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 12。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-keizai-q13",
@@ -395,7 +395,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 13。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 13。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-keizai-q14",
@@ -434,7 +434,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 14。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 14。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-keizai-q15",
@@ -473,7 +473,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 15。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 15。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-keizai-q16",
@@ -512,7 +512,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 16。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 16。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-keizai-q17",
@@ -551,7 +551,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 17。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 17。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-keizai-q21",
@@ -590,7 +590,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 21。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 21。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-keizai-q22",
@@ -629,7 +629,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 22。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 22。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-keizai-q23",
@@ -668,7 +668,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 23。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 23。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-keizai-q24",
@@ -707,7 +707,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 24。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 24。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-keizai-q25",
@@ -746,7 +746,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 25。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 25。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-keizai-q26",
@@ -785,7 +785,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 26。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 26。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-keizai-q27",
@@ -824,7 +824,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 27。解説は過去問AIの独自作成。",
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 27。解説は過去問AIの独自作成。",
     "imageUrls": [
       "/questions/kokka-sogo-dai/2025/senmon-keizai/q027.webp"
     ],
@@ -869,7 +869,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 28。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 28。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-keizai-q29",
@@ -908,7 +908,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 29。解説は過去問AIの独自作成。",
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 29。解説は過去問AIの独自作成。",
     "imageUrls": [
       "/questions/kokka-sogo-dai/2025/senmon-keizai/q029.webp"
     ],
@@ -953,7 +953,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 30。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 30。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-keizai-q31",
@@ -992,7 +992,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 31。解説は過去問AIの独自作成。",
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 31。解説は過去問AIの独自作成。",
     "imageUrls": [
       "/questions/kokka-sogo-dai/2025/senmon-keizai/q031.webp"
     ],
@@ -1037,7 +1037,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 32。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 32。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-keizai-q33",
@@ -1076,7 +1076,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 33。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 33。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-keizai-q34",
@@ -1115,7 +1115,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 34。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 34。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-keizai-q35",
@@ -1154,7 +1154,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 35。解説は過去問AIの独自作成。",
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 35。解説は過去問AIの独自作成。",
     "imageUrls": [
       "/questions/kokka-sogo-dai/2025/senmon-keizai/q035-1.webp",
       "/questions/kokka-sogo-dai/2025/senmon-keizai/q035-2.webp",
@@ -1203,7 +1203,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 36。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 36。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-keizai-q37",
@@ -1242,7 +1242,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 37。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 37。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-keizai-q38",
@@ -1281,7 +1281,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 38。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 38。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-keizai-q39",
@@ -1320,7 +1320,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 39。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 39。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-keizai-q40",
@@ -1359,6 +1359,6 @@ export const KOKKA_SOGO_DAI_2025_SENMON_KEIZAI: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016299.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 40。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 経済区分 専門試験（多肢選択式）」No. 40。解説は過去問AIの独自作成。"
   }
 ];

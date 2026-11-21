@@ -38,7 +38,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 1。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 1。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q02",
@@ -77,7 +77,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 2。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 2。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q03",
@@ -116,7 +116,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 3。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 3。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q04",
@@ -155,7 +155,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 4。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 4。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q05",
@@ -194,7 +194,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 5。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 5。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q06",
@@ -233,7 +233,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 6。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 6。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q07",
@@ -272,7 +272,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 7。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 7。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q08",
@@ -311,7 +311,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 8。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 8。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q09",
@@ -350,7 +350,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 9。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 9。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q10",
@@ -389,7 +389,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 10。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 10。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q11",
@@ -428,7 +428,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 11。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 11。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q12",
@@ -467,7 +467,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 12。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 12。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q13",
@@ -506,7 +506,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 13。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 13。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q14",
@@ -545,7 +545,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 14。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 14。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q15",
@@ -584,7 +584,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 15。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 15。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q16",
@@ -623,7 +623,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 16。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 16。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q17",
@@ -662,7 +662,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 17。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 17。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q18",
@@ -701,7 +701,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 18。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 18。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q19",
@@ -740,7 +740,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 19。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 19。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q20",
@@ -779,7 +779,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 20。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 20。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q21",
@@ -818,7 +818,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 21。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 21。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q22",
@@ -857,7 +857,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 22。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 22。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q23",
@@ -896,7 +896,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 23。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 23。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q24",
@@ -935,7 +935,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 24。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 24。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q25",
@@ -974,7 +974,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 25。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 25。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q26",
@@ -1013,7 +1013,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 26。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 26。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q27",
@@ -1052,7 +1052,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 27。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 27。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q28",
@@ -1091,7 +1091,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 28。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 28。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q29",
@@ -1130,7 +1130,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 29。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 29。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q30",
@@ -1169,7 +1169,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 30。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 30。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q31",
@@ -1208,7 +1208,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 31。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 31。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q32",
@@ -1247,7 +1247,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 32。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 32。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q33",
@@ -1286,7 +1286,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 33。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 33。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q34",
@@ -1325,7 +1325,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 34。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 34。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q35",
@@ -1364,7 +1364,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 35。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 35。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q36",
@@ -1403,7 +1403,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 36。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 36。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q37",
@@ -1442,7 +1442,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 37。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 37。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q38",
@@ -1481,7 +1481,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 38。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 38。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q39",
@@ -1520,7 +1520,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 39。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 39。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q40",
@@ -1559,7 +1559,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 40。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 40。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q41",
@@ -1598,7 +1598,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 41。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 41。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q42",
@@ -1637,7 +1637,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 42。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 42。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q43",
@@ -1676,7 +1676,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 43。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 43。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q44",
@@ -1715,7 +1715,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 44。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 44。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q45",
@@ -1754,7 +1754,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 45。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 45。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q46",
@@ -1793,7 +1793,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 46。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 46。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q47",
@@ -1832,7 +1832,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 47。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 47。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q48",
@@ -1871,7 +1871,7 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 48。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 48。解説は過去問AIの独自作成。"
   },
   {
     "id": "kokka-sogo-dai-2025-annual-senmon-houritsu-q49",
@@ -1910,6 +1910,6 @@ export const KOKKA_SOGO_DAI_2025_SENMON_HOURITSU: Question[] = [
     "sourcePdfUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "sourceAnswerUrl": "https://www.jinji.go.jp/content/000016298.pdf",
     "license": "JINJI-attributed",
-    "sourceAttribution": "出典：人事院「2026年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 49。解説は過去問AIの独自作成。"
+    "sourceAttribution": "出典：人事院「2025年度 国家公務員採用総合職試験（大卒程度試験） 法律区分 専門試験（多肢選択式）」No. 49。解説は過去問AIの独自作成。"
   }
 ];
