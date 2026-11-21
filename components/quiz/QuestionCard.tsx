@@ -16,6 +16,7 @@ export function QuestionCard({
   question: Question;
   progress?: { current: number; total: number };
 }) {
+  const sourceUrl = getSafePdfUrl(question.sourceArchiveUrl ?? question.sourcePdfUrl);
   return (
     <div data-study-presence-exam={question.exam} className="space-y-3">
       <div className="flex flex-wrap items-center gap-2 text-xs">
@@ -56,12 +57,12 @@ export function QuestionCard({
             <span>
               この問題には図表が含まれます。正確な内容は{" "}
               <a
-                href={getSafePdfUrl(question.sourcePdfUrl)}
+                href={sourceUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline hover:text-amber-900 dark:hover:text-amber-100"
               >
-                {ipaSourceLabel(getSafePdfUrl(question.sourcePdfUrl), "question")}
+                {question.sourceArchiveUrl ? "公式PDF（保存版）" : ipaSourceLabel(sourceUrl, "question")}
               </a>
               をご確認ください。
             </span>

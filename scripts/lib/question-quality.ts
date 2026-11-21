@@ -3,6 +3,7 @@ import { realpathSync, statSync } from "node:fs";
 import { extname, isAbsolute, relative, resolve, sep } from "node:path";
 import { CHOICE_KEYS } from "@/lib/questions/answers";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
+import { verifiedArchiveSource, type ArchiveEvidence } from "./question-archive-evidence";
 
 export const QUALITY_REASONS = {
   placeholder: "QA後も原本の転記または表示用画像を確認できていない既存の本文・選択肢。",
@@ -119,7 +120,9 @@ export function sourceUrlRule(value: string): "archived-source" | "rolling-sourc
   }
 }
 
-export function checkQuestionQuality(q: Question, imageExists: (url: string) => boolean): QualityIssue[] {
+export function checkQuestionQuality(
+  q: Question, imageExists: (url: string) => boolean, archiveEvidence?: ArchiveEvidence,
+): QualityIssue[] {
   const issues: QualityIssue[] = [];
   const add = (rule: QualityIssue["rule"], message: string, evidence: unknown) => issues.push(qualityIssue(rule, q.id, message, evidence));
   const choices = Object.entries(q.choices ?? {}) as [ChoiceKey, string][];
@@ -158,7 +161,16 @@ export function checkQuestionQuality(q: Question, imageExists: (url: string) => 
 
   if (isTemplateOnly(q.explanation)) add("choice-template", "全体の解説が定型句だけです", ["explanation", q.explanation]);
   const sourceRule = sourceUrlRule(q.sourcePdfUrl);
-  if (sourceRule) add(sourceRule, `sourcePdfUrl には試験期を固定できる公式原本が必要です (${q.sourcePdfUrl})`, q.sourcePdfUrl);
+  if (archiveEvidence?.has(q.id) || q.sourceArchiveUrl !== undefined || q.sourceAnswerArchiveUrl !== undefined) {
+    const answerRule = q.sourceAnswerUrl ? sourceUrlRule(q.sourceAnswerUrl) : undefined;
+    if (!verifiedArchiveSource(q, archiveEvidence, answerRule)) {
+      add(sourceRule === "rolling-source" ? sourceRule : "archived-source",
+        "公式PDFの日時固定保存版と全問照合済みの正答を出典台帳で確認できません",
+        [q.sourcePdfUrl, q.sourceArchiveUrl, q.sourceAnswerUrl, q.sourceAnswerArchiveUrl, q.answer]);
+    }
+  } else if (sourceRule) {
+    add(sourceRule, `sourcePdfUrl には試験期を固定できる公式原本が必要です (${q.sourcePdfUrl})`, q.sourcePdfUrl);
+  }
   return issues;
 }
 

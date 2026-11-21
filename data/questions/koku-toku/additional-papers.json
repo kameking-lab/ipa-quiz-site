@@ -948,5 +948,3857 @@
     "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和7年10月期 無線工学 問24。解説は過去問AI作成。",
     "license": "NICHIMU-educational-reuse",
     "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "koku-toku-2022-june-houki-q1",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2022,
+    "season": "june",
+    "qNumber": 1,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "無線局の法的な定義"
+    ],
+    "difficulty": 2,
+    "question": "「無線局」の定義として、正しいものはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "無線設備及び無線設備を管理する者の総体をいう。",
+      "イ": "無線設備及び無線設備の操作の監督を行う者の総体をいう。",
+      "ウ": "無線設備及び無線設備の操作を行う者の総体をいう。ただし、受信のみを目的とするものを含まない。",
+      "エ": "無線設備及び無線従事者の総体をいう。ただし、発射する電波が著しく微弱で総務省令で定めるものを含まない。"
+    },
+    "answer": "ウ",
+    "explanation": "無線局とは無線設備及びこれを操作する者の総体である。受信のみを目的とするものは定義から除く。",
+    "choiceExplanations": {
+      "ア": "無線設備を管理する業務全般を指すわけではない。法の定義では設備を操作する者と設備の総体を指す。",
+      "イ": "操作の監督を行う者だけに限定しない。無線設備を実際に操作する者と設備の組合せとして定義している。",
+      "ウ": "無線局とは無線設備及びこれを操作する者の総体である。受信のみを目的とするものは定義から除く。",
+      "エ": "微弱な電波を発射する設備には免許が要らない場合があるが、微弱であることが無線局の定義から外れる条件ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "232e022131fd328d3fcec51ee1766e8075aef6bf643ed7ca466761c6763b1cdb",
+      "answerPdfSha256": "f51387860d7906eafd7da62039e1be261115246bb3d025554b6694bf1aa8c775",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年6月期 法規 問1。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-06-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610191901/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610191824/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-june-houki-q2",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2022,
+    "season": "june",
+    "qNumber": 2,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "航空機の受信設備の設置位置"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、航空機局等の条件について述べたものである。電波法施行規則の規定に照らし、［　］内に入れるべき字句を下の番号から選べ。\n\n航空機局及び航空機地球局（航空機の安全運航又は正常運航に関する通信を行わないものを除く。）の受信設備は、なるべく、航空機の ［　］ によって妨害を受けないような箇所に設置されていなければならない。",
+    "choices": {
+      "ア": "機械的雑音",
+      "イ": "振動",
+      "ウ": "衝撃",
+      "エ": "電気的雑音"
+    },
+    "answer": "エ",
+    "explanation": "受信設備は点火装置などの電気系統が生む雑音によって通信が妨げられないよう、できるだけ影響の少ない位置に設置する。",
+    "choiceExplanations": {
+      "ア": "機械的な音に対する防音より、受信機への電気的な干渉を避ける位置がこの規則に定められている。",
+      "イ": "振動に対する強度は機器の安全に関わるが、この条文の受信設備の位置に関する語句は電気的雑音である。",
+      "ウ": "装置に衝撃が加わらないようにすることとは区別する。この規定が抑えようとするのは航空機が発生する電気的雑音の妨害である。",
+      "エ": "受信設備は点火装置などの電気系統が生む雑音によって通信が妨げられないよう、できるだけ影響の少ない位置に設置する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "232e022131fd328d3fcec51ee1766e8075aef6bf643ed7ca466761c6763b1cdb",
+      "answerPdfSha256": "f51387860d7906eafd7da62039e1be261115246bb3d025554b6694bf1aa8c775",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年6月期 法規 問2。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-06-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610191901/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610191824/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-june-houki-q3",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2022,
+    "season": "june",
+    "qNumber": 3,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "航空特殊無線技士の操作範囲"
+    ],
+    "difficulty": 2,
+    "question": "航空特殊無線技士の資格を有する者が、航空機局（航空運送事業の用に供する航空機のものを除く。）の25,010 kHz以上の周波数の電波を使用する無線電話の国内通信のための通信操作を行うことができるのは、空中線電力何ワット以下のものか。次のうちから選べ。",
+    "choices": {
+      "ア": "5ワット",
+      "イ": "10ワット",
+      "ウ": "50ワット",
+      "エ": "100ワット"
+    },
+    "answer": "ウ",
+    "explanation": "所定の航空機局で25,010 kHz以上の電波による国内の無線電話通信を行う場合、空中線電力の上限は50 Wである。",
+    "choiceExplanations": {
+      "ア": "5 Wはこの設問で示された周波数帯の国内通信の範囲内だが、資格が認める空中線電力の上限ではない。",
+      "イ": "10 Wでも電力条件を満たすが、設問の航空機局における操作範囲はそこまでに限定されていない。",
+      "ウ": "所定の航空機局で25,010 kHz以上の電波による国内の無線電話通信を行う場合、空中線電力の上限は50 Wである。",
+      "エ": "100 Wは航空特殊無線技士に認められるこの操作範囲の上限を超えている。規定される上限は50 Wである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "232e022131fd328d3fcec51ee1766e8075aef6bf643ed7ca466761c6763b1cdb",
+      "answerPdfSha256": "f51387860d7906eafd7da62039e1be261115246bb3d025554b6694bf1aa8c775",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年6月期 法規 問3。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-06-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610191901/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610191824/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-june-houki-q4",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2022,
+    "season": "june",
+    "qNumber": 4,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "違反運用を発見した無線局免許人の義務"
+    ],
+    "difficulty": 2,
+    "question": "無線局の免許人は、電波法に基づく命令の規定に違反して運用した無線局を認めたときは、どうしなければならないか。次のうちから選べ。",
+    "choices": {
+      "ア": "その無線局の免許人にその旨を通知する。",
+      "イ": "その無線局の電波の発射を停止させる。",
+      "ウ": "その無線局の免許人を告発する。",
+      "エ": "総務省令で定める手続により、総務大臣に報告する。"
+    },
+    "answer": "エ",
+    "explanation": "違反して運用された無線局を認めた免許人は、総務省令の手続に従ってその事実を総務大臣に報告する。",
+    "choiceExplanations": {
+      "ア": "相手の免許人への通知にとどめても、電波法で求められる行政機関への報告をしたことにはならない。",
+      "イ": "相手局の発射停止を命ずる職務を無線局免許人に与えた条文ではない。違反事実は所定の手続で報告する。",
+      "ウ": "刑事手続に関する告発を求める条文ではない。違反運用を認めた免許人は総務大臣に報告することが求められる。",
+      "エ": "違反して運用された無線局を認めた免許人は、総務省令の手続に従ってその事実を総務大臣に報告する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "232e022131fd328d3fcec51ee1766e8075aef6bf643ed7ca466761c6763b1cdb",
+      "answerPdfSha256": "f51387860d7906eafd7da62039e1be261115246bb3d025554b6694bf1aa8c775",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年6月期 法規 問4。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-06-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610191901/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610191824/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-june-houki-q5",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2022,
+    "season": "june",
+    "qNumber": 5,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "電波発射の臨時停止"
+    ],
+    "difficulty": 2,
+    "question": "総務大臣が無線局に対して臨時に電波の発射の停止を命ずることができるのはどの場合か。次のうちから選べ。",
+    "choices": {
+      "ア": "無線局の発射する電波の質が総務省令で定めるものに適合していないと認めるとき。",
+      "イ": "無線局が免許状に記載された空中線電力の範囲を超えて運用していると認めるとき。",
+      "ウ": "無線局の発射する電波が他の無線局の通信に混信を与えていると認めるとき。",
+      "エ": "運用の停止を命じた無線局を運用していると認めるとき。"
+    },
+    "answer": "ア",
+    "explanation": "通信の相手方や通信事項を期間付きで制限する処分は、この場合の制限の対象として挙げられていない。",
+    "choiceExplanations": {
+      "ア": "通信の相手方や通信事項を期間付きで制限する処分は、この場合の制限の対象として挙げられていない。",
+      "イ": "この場合に期間を定めて制限できる項目として列挙されるのは周波数または空中線電力であり、電波の型式ではない。",
+      "ウ": "電波法第76条は、期間を定めて無線局の運用を停止し、または周波数や空中線電力を制限できるとする。",
+      "エ": "すでに運用停止命令が出ている局を運用した場合の措置とは区別する。設問の臨時停止は基準に適合しない電波の質についての措置である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "232e022131fd328d3fcec51ee1766e8075aef6bf643ed7ca466761c6763b1cdb",
+      "answerPdfSha256": "f51387860d7906eafd7da62039e1be261115246bb3d025554b6694bf1aa8c775",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年6月期 法規 問5。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-06-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610191901/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610191824/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-june-houki-q6",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2022,
+    "season": "june",
+    "qNumber": 6,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "無線従事者を選任・解任した場合の届出"
+    ],
+    "difficulty": 2,
+    "question": "無線局の免許人は、無線従事者を選任し、又は解任したときは、どうしなければならないか。次のうちから選べ。",
+    "choices": {
+      "ア": "１箇月以内にその旨を総務大臣に報告する。",
+      "イ": "遅滞なく、その旨を総務大臣に届け出る。",
+      "ウ": "速やかに総務大臣の承認を受ける。",
+      "エ": "２週間以内にその旨を総務大臣に届け出る。"
+    },
+    "answer": "イ",
+    "explanation": "無線局の免許人は業務に従事する無線従事者を選任または解任したとき、遅滞なく総務大臣に届け出る。",
+    "choiceExplanations": {
+      "ア": "期限を1か月と定めた報告ではない。選任・解任の事実を遅滞なく届け出る義務である。",
+      "イ": "無線局の免許人は業務に従事する無線従事者を選任または解任したとき、遅滞なく総務大臣に届け出る。",
+      "ウ": "すでに選任・解任したときに必要なのは報告を待って承認を求めることではなく、その旨の届出である。",
+      "エ": "法は2週間の定期を設けていない。手続は選任や解任の後、遅滞なく行う必要がある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "232e022131fd328d3fcec51ee1766e8075aef6bf643ed7ca466761c6763b1cdb",
+      "answerPdfSha256": "f51387860d7906eafd7da62039e1be261115246bb3d025554b6694bf1aa8c775",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年6月期 法規 問6。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-06-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610191901/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610191824/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-june-houki-q7",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2022,
+    "season": "june",
+    "qNumber": 7,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "簡易な識別表示を使える条件"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、呼出符号の使用の特例について述べたものである。無線局運用規則の規定に照らし、［　］ 内に入れるべき字句を下の番号から選べ。\n\n航空局又は航空機局は、連絡設定後であって［　］ のおそれがないときは、当該航空機局の呼出符号又は呼出名称に代えて、総務大臣が別に告示する簡易な識別表示を使用することができる。ただし、航空機局は、航空局から当該識別表示により呼出しを受けた後でなければこれを使用することができない。",
+    "choices": {
+      "ア": "妨害",
+      "イ": "途絶",
+      "ウ": "混同",
+      "エ": "混信"
+    },
+    "answer": "ウ",
+    "explanation": "すでに連絡を設定し、相手を取り違えるおそれがないときは簡易な識別表示を使用できる。",
+    "choiceExplanations": {
+      "ア": "電波による妨害の有無とは別の条件である。ここでは呼出符号などの代わりを使って他の航空機と混同しないことが必要である。",
+      "イ": "通信途絶のおそれを扱う手続ではない。連絡設定後の呼出しに使う簡易な表示を取り違えないことが条件となる。",
+      "ウ": "すでに連絡を設定し、相手を取り違えるおそれがないときは簡易な識別表示を使用できる。",
+      "エ": "混信は電波の重なりによる妨げであり、本問の呼出名称での取り違えを指す「混同」とは別である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "232e022131fd328d3fcec51ee1766e8075aef6bf643ed7ca466761c6763b1cdb",
+      "answerPdfSha256": "f51387860d7906eafd7da62039e1be261115246bb3d025554b6694bf1aa8c775",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年6月期 法規 問7。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-06-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610191901/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610191824/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-june-houki-q8",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2022,
+    "season": "june",
+    "qNumber": 8,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "ノータムに関する通信の優先順位"
+    ],
+    "difficulty": 2,
+    "question": "ノータムに関する通信の優先順位はどのように定められているか。次のうちから選べ。",
+    "choices": {
+      "ア": "緊急の度に応じ、遭難通信に次いでその順位を適宜に選ぶことができる。",
+      "イ": "緊急の度に応じ、緊急通信に次いでその順位を適宜に選ぶことができる。",
+      "ウ": "緊急の度に応じ、無線方向探知に関する通信に次いでその順位を適宜に選ぶことができる。",
+      "エ": "航空機の安全運航に関する通信に次いでその順位を適宜に選ぶことができる。"
+    },
+    "answer": "イ",
+    "explanation": "ノータムの伝達は緊急度に応じ、緊急通信に次いだ範囲で優先順位を適宜選ぶことができる。",
+    "choiceExplanations": {
+      "ア": "遭難通信に直接次ぐなら緊急通信の優先順位を飛ばしてしまう。ノータムの順位は緊急通信に次ぐ。",
+      "イ": "ノータムの伝達は緊急度に応じ、緊急通信に次いだ範囲で優先順位を適宜選ぶことができる。",
+      "ウ": "無線方向探知に関する通信の次を起点とするのではなく、規定は緊急通信に次ぐ範囲で選ぶことを認める。",
+      "エ": "一律に安全運航に関する通信の次に置くとは規定していない。ノータムの緊急度に応じて順位を決める。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "232e022131fd328d3fcec51ee1766e8075aef6bf643ed7ca466761c6763b1cdb",
+      "answerPdfSha256": "f51387860d7906eafd7da62039e1be261115246bb3d025554b6694bf1aa8c775",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年6月期 法規 問8。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-06-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610191901/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610191824/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-june-houki-q9",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2022,
+    "season": "june",
+    "qNumber": 9,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "試験電波を発射している間の確認"
+    ],
+    "difficulty": 2,
+    "question": "無線局が電波を発射して行う無線電話の機器の試験中、しばしば確かめなければならないことはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "他の無線局から停止の要求がないかどうか。",
+      "イ": "「本日は晴天なり」の連続及び自局の呼出符号又は呼出名称の送信が５秒間を超えていないかどうか。",
+      "ウ": "空中線電力が許容値を超えていないかどうか。",
+      "エ": "その電波の周波数の偏差が許容値を超えていないかどうか。"
+    },
+    "answer": "ア",
+    "explanation": "他局の通信に影響する可能性があるので、試験電波を発射している間は他局から停止の要求がないか頻繁に確かめる。",
+    "choiceExplanations": {
+      "ア": "他局の通信に影響する可能性があるので、試験電波を発射している間は他局から停止の要求がないか頻繁に確かめる。",
+      "イ": "試験時の呼出語などの使い方とは別の規定である。この問の試験中の確認事項は他局からの停止要求の有無である。",
+      "ウ": "指定された電力の維持は通常の技術基準であり、無線局運用規則がこの場面で頻繁に確かめるよう求める事項とは異なる。",
+      "エ": "周波数偏差を基準以内に保つことは技術基準である。ここでいう試験中の確認は他局からの停止要求について行う。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "232e022131fd328d3fcec51ee1766e8075aef6bf643ed7ca466761c6763b1cdb",
+      "answerPdfSha256": "f51387860d7906eafd7da62039e1be261115246bb3d025554b6694bf1aa8c775",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年6月期 法規 問9。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-06-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610191901/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610191824/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-june-houki-q10",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2022,
+    "season": "june",
+    "qNumber": 10,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "遭難した航空機に救助の必要がなくなったとき"
+    ],
+    "difficulty": 2,
+    "question": "遭難航空機局（遭難通信を宰領したものを除く。）は、その航空機について救助の必要がなくなったときは、どうしなければならないか。次のうちから選べ。",
+    "choices": {
+      "ア": "その航空機を運行する者にその旨を通知する。",
+      "イ": "遭難通信を宰領した無線局にその旨を通知する。",
+      "ウ": "航空交通管制の機関にその旨を通知する。",
+      "エ": "直ちに責任航空局にその旨を通知する。"
+    },
+    "answer": "イ",
+    "explanation": "自局が遭難通信を宰領しなかった場合は、その通信を宰領した無線局へ救助の必要がなくなった旨を通知する。",
+    "choiceExplanations": {
+      "ア": "航空機の運航者への連絡だけでは、救助活動の通信をまとめる無線局に伝わらない。",
+      "イ": "自局が遭難通信を宰領しなかった場合は、その通信を宰領した無線局へ救助の必要がなくなった旨を通知する。",
+      "ウ": "航空交通管制を行う機関を一律に通知先とするものではない。遭難通信を取りまとめた無線局への通知が必要である。",
+      "エ": "責任航空局がいつも遭難通信を宰領するとは限らない。規則は当該通信を宰領した無線局に通知することを求める。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "232e022131fd328d3fcec51ee1766e8075aef6bf643ed7ca466761c6763b1cdb",
+      "answerPdfSha256": "f51387860d7906eafd7da62039e1be261115246bb3d025554b6694bf1aa8c775",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年6月期 法規 問10。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-06-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610191901/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610191824/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-june-houki-q11",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2022,
+    "season": "june",
+    "qNumber": 11,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "無線通信の原則"
+    ],
+    "difficulty": 2,
+    "question": "一般通信方法における無線通信の原則として無線局運用規則に定める事項に該当しないものはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "必要のない無線通信は、これを行ってはならない。",
+      "イ": "無線通信に使用する用語は、できる限り簡潔でなければならない。",
+      "ウ": "無線通信を行うときは、自局の識別信号を付して、その出所を明らかにしなければならない。",
+      "エ": "無線通信は、長時間継続して行ってはならない。"
+    },
+    "answer": "エ",
+    "explanation": "必要性と簡潔さは原則として定められるが、長時間の通信を一律に禁じるこの文言は規則の当該条文に含まれない。",
+    "choiceExplanations": {
+      "ア": "他局との通信機会が失われないよう、必要のない無線通信を行わないことが規定されている。",
+      "イ": "簡潔な用語で正しく情報を伝えることが原則であり、できる限り簡潔な用語を使う旨が定められている。",
+      "ウ": "送信局が確認できるよう、自局の識別信号を用いて通信の出所を明らかにすることが規定されている。",
+      "エ": "必要性と簡潔さは原則として定められるが、長時間の通信を一律に禁じるこの文言は規則の当該条文に含まれない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "232e022131fd328d3fcec51ee1766e8075aef6bf643ed7ca466761c6763b1cdb",
+      "answerPdfSha256": "f51387860d7906eafd7da62039e1be261115246bb3d025554b6694bf1aa8c775",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年6月期 法規 問11。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-06-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610191901/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610191824/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-june-houki-q12",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2022,
+    "season": "june",
+    "qNumber": 12,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "他局に混信を与えるおそれがあるとき"
+    ],
+    "difficulty": 2,
+    "question": "無線局が相手局を呼び出そうとする場合（遭難通信等を行う場合を除く。）において、他の通信に混信を与えるおそれがあるときは、どうしなければならないか。次のうちから選べ。",
+    "choices": {
+      "ア": "その通信が終了した後に呼出しを行う。",
+      "イ": "５分間以上待って呼出しを行う。",
+      "ウ": "現に通信を行っている他の無線局にその通信の終了時刻を確かめ、終了を待って呼出しを行う。",
+      "エ": "自局の行おうとする通信が長文の内容のものであれば、直ちに呼出しを行う。"
+    },
+    "answer": "ア",
+    "explanation": "他局の通信に混信のおそれがある間は呼出しを控え、その通信が終わってから呼び出す。",
+    "choiceExplanations": {
+      "ア": "他局の通信に混信のおそれがある間は呼出しを控え、その通信が終わってから呼び出す。",
+      "イ": "5分という経過時間だけでは混信がなくなったとはいえない。規則は通信自体の終了を待つことを求める。",
+      "ウ": "ほかの通信の間に割り込んで終了時刻を聞く必要はなく、現に行われている通信が終わるのを待つ。",
+      "エ": "これから送る通信の長さは優先理由にならない。長文でも他局の通信を妨げるおそれがある間は呼び出さない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "232e022131fd328d3fcec51ee1766e8075aef6bf643ed7ca466761c6763b1cdb",
+      "answerPdfSha256": "f51387860d7906eafd7da62039e1be261115246bb3d025554b6694bf1aa8c775",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年6月期 法規 問12。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-06-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610191901/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610191824/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-june-kogaku-q13",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "june",
+    "qNumber": 13,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "電圧一定のときの抵抗の消費電力"
+    ],
+    "difficulty": 2,
+    "question": "図に示す電気回路において、抵抗Rの値の大きさを2倍にすると、この抵抗の消費電力は何倍になるか。幾らか。",
+    "choices": {
+      "ア": "1/2倍",
+      "イ": "1/4倍",
+      "ウ": "2倍",
+      "エ": "4倍"
+    },
+    "answer": "ア",
+    "explanation": "図では抵抗の両端の電圧が一定である。P＝V²/Rより、抵抗が2倍になると消費電力は1/2倍になる。",
+    "choiceExplanations": {
+      "ア": "図では抵抗の両端の電圧が一定である。P＝V²/Rより、抵抗が2倍になると消費電力は1/2倍になる。",
+      "イ": "抵抗の増加で電流は半分になるが、P＝I²Rでは抵抗の項が2倍になる。電流の二乗だけから1/4倍とはいえない。",
+      "ウ": "電流を一定と仮定すればP＝I²Rは2倍になる。図の直流電源は抵抗に印加する電圧を一定にしている。",
+      "エ": "電圧を2倍にした場合なら、抵抗が一定のときP＝V²/Rは4倍になる。設問で2倍にするのは抵抗である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "df803e42ca26c643d142dd4fc69e097ecb69d63e7ebd7f090c0aede23fbb156c",
+      "answerPdfSha256": "9956b644e304c8cbbeeb137f7d89f4767b49aeee5a06c3c8b902e2288662eb6c",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年6月期 無線工学 問13。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/koku-toku/2022-june/q13-official-figure.png"
+    ],
+    "imageAltTexts": [
+      "直流電源と抵抗Rを接続した回路"
+    ],
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610191908/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610191905/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-june-kogaku-q14",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "june",
+    "qNumber": 14,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "半導体の温度による抵抗変化"
+    ],
+    "difficulty": 2,
+    "question": "半導体を用いた電子部品の温度が上昇すると、一般にその部品に起こる変化として、正しいのは次のうちどれか。",
+    "choices": {
+      "ア": "半導体の抵抗が増加し、電流が増加する。",
+      "イ": "半導体の抵抗が増加し、電流が減少する。",
+      "ウ": "半導体の抵抗が減少し、電流が増加する。",
+      "エ": "半導体の抵抗が減少し、電流が減少する。"
+    },
+    "answer": "ウ",
+    "explanation": "温度の上昇でキャリアが増加して抵抗が減少し、同じ電圧の下で電流が増える。",
+    "choiceExplanations": {
+      "ア": "一般に温度が高まると電荷を運ぶキャリアが増加し、電流が増える。抵抗も増加するという説明は合わない。",
+      "イ": "温度が上がると半導体のキャリアが増えて導電しやすくなり、この設問の一般的な扱いでは抵抗が増えるとはいえない。",
+      "ウ": "温度の上昇でキャリアが増加して抵抗が減少し、同じ電圧の下で電流が増える。",
+      "エ": "抵抗が減る点は合っているが、電圧が同じならオームの法則から流れる電流は増加する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "df803e42ca26c643d142dd4fc69e097ecb69d63e7ebd7f090c0aede23fbb156c",
+      "answerPdfSha256": "9956b644e304c8cbbeeb137f7d89f4767b49aeee5a06c3c8b902e2288662eb6c",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年6月期 無線工学 問14。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610191908/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610191905/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-june-kogaku-q15",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "june",
+    "qNumber": 15,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "SHF帯の電波の伝わり方"
+    ],
+    "difficulty": 2,
+    "question": "マイクロ波(SHF)帯の電波の伝搬をVHF 帯やUHF 帯の電波と比べたときの特徴として、正しいのは次のうちどれか。",
+    "choices": {
+      "ア": "地形や建物の影響を受けにくい。",
+      "イ": "電波の直進性が強い。",
+      "ウ": "小さな物体からの反射波は弱い。",
+      "エ": "雨滴による減衰を受けにくい。"
+    },
+    "answer": "イ",
+    "explanation": "SHF帯ではVHFやUHFより波長が短い。障害物の裏に回り込みにくく、見通しの方向への直進性が強くなる。",
+    "choiceExplanations": {
+      "ア": "波長が短いと回折で障害物の後ろに回り込みにくい。建物や地形による遮蔽の影響は小さくならない。",
+      "イ": "SHF帯ではVHFやUHFより波長が短い。障害物の裏に回り込みにくく、見通しの方向への直進性が強くなる。",
+      "ウ": "一般に物体の大きさが波長に対して大きいほど散乱や反射が生じやすい。波長の短いSHF帯は小さな物体も検出しやすい。",
+      "エ": "波長が雨滴の寸法に近づくと雨による散乱や吸収の影響を受けやすい。SHF帯で雨の減衰が小さくなるとはいえない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "df803e42ca26c643d142dd4fc69e097ecb69d63e7ebd7f090c0aede23fbb156c",
+      "answerPdfSha256": "9956b644e304c8cbbeeb137f7d89f4767b49aeee5a06c3c8b902e2288662eb6c",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年6月期 無線工学 問15。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610191908/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610191905/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-june-kogaku-q16",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "june",
+    "qNumber": 16,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "マイクロ波レーダーで用いられる伝搬"
+    ],
+    "difficulty": 2,
+    "question": "レーダーでは、一般にマイクロ波(SHF)帯の電波が利用されるが、通常この電波の伝わり方は、次のうちどれに含められるか。",
+    "choices": {
+      "ア": "地表波",
+      "イ": "大地反射波",
+      "ウ": "直接波",
+      "エ": "電離層波"
+    },
+    "answer": "ウ",
+    "explanation": "高い周波数のレーダーでは電波を見通し方向に向け、送信点と目標を結ぶ経路を通る直接波を主に使用する。",
+    "choiceExplanations": {
+      "ア": "地表波は地表面に沿って進む電波である。SHF帯のレーダーで相手まで送る波は見通しの経路を主に利用する。",
+      "イ": "大地反射波は地面を反射して受信点へ届く波である。レーダーが利用するSHF帯の通常の伝搬形態を問うている。",
+      "ウ": "高い周波数のレーダーでは電波を見通し方向に向け、送信点と目標を結ぶ経路を通る直接波を主に使用する。",
+      "エ": "電離層による反射・屈折は主に比較的低い周波数の長距離通信に用いる。SHF帯レーダーの通常の伝搬ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "df803e42ca26c643d142dd4fc69e097ecb69d63e7ebd7f090c0aede23fbb156c",
+      "answerPdfSha256": "9956b644e304c8cbbeeb137f7d89f4767b49aeee5a06c3c8b902e2288662eb6c",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年6月期 無線工学 問16。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610191908/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610191905/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-june-kogaku-q17",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "june",
+    "qNumber": 17,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "交流電源の整流と平滑"
+    ],
+    "difficulty": 2,
+    "question": "次の記述の［　］内に入れるべき字句の組合せで、正しいのはどれか。\n\n交流電源から直流を得る場合は、変圧器により所要の電圧にした後、［A］を経て［B］でできるだ\n\nけ完全な直流にする。",
+    "choices": {
+      "ア": "平滑回路／変調回路",
+      "イ": "平滑回路／整流回路",
+      "ウ": "変調回路／平滑回路",
+      "エ": "整流回路／平滑回路"
+    },
+    "answer": "エ",
+    "explanation": "変圧器で電圧を調整したら、整流回路で脈流に変える。その後、平滑回路で脈動を減らして直流に近づける。",
+    "choiceExplanations": {
+      "ア": "交流は向きが交互に変わるため、平滑する前に一方向へ変換する必要がある。変調回路はその目的に使わない。",
+      "イ": "整流より先に平滑回路を置く順番は逆である。先に交流を脈流にしてから脈動を取り除く。",
+      "ウ": "平滑回路は後段だが、前段は変調回路ではなく交流を一方向へ変換する整流回路である。",
+      "エ": "変圧器で電圧を調整したら、整流回路で脈流に変える。その後、平滑回路で脈動を減らして直流に近づける。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "df803e42ca26c643d142dd4fc69e097ecb69d63e7ebd7f090c0aede23fbb156c",
+      "answerPdfSha256": "9956b644e304c8cbbeeb137f7d89f4767b49aeee5a06c3c8b902e2288662eb6c",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年6月期 無線工学 問17。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610191908/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610191905/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-june-kogaku-q18",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "june",
+    "qNumber": 18,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "直列蓄電池の電圧と電圧計の接続"
+    ],
+    "difficulty": 2,
+    "question": "次の記述の空欄に入れるべき字句の組合せで、正しいのはどれか。1個2 Vの蓄電池3個を図のように接続したとき、ab間の電圧を測定するには、最大目盛が［A］の直流電圧計の［B］につなぐ。",
+    "choices": {
+      "ア": "10 V／＋端子をa、−端子をb",
+      "イ": "10 V／＋端子をb、−端子をa",
+      "ウ": "5 V／＋端子をa、−端子をb",
+      "エ": "5 V／＋端子をb、−端子をa"
+    },
+    "answer": "ア",
+    "explanation": "3個が同じ向きに直列なのでaはbより6 V高い。6 Vが測れる10 Vレンジで正端子をa、負端子をbにつなぐ。",
+    "choiceExplanations": {
+      "ア": "3個が同じ向きに直列なのでaはbより6 V高い。6 Vが測れる10 Vレンジで正端子をa、負端子をbにつなぐ。",
+      "イ": "10 Vレンジなら6 Vを測れるが、図の電池の正側がaなので、bに正端子を接続するのは逆極性である。",
+      "ウ": "端子の向きは合うが、2 Vを3個直列として得られる6 Vは5 Vレンジの最大値を超える。",
+      "エ": "bを正端子につなぐと逆極性になり、5 Vレンジでは電圧の大きさも測定範囲を超える。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "df803e42ca26c643d142dd4fc69e097ecb69d63e7ebd7f090c0aede23fbb156c",
+      "answerPdfSha256": "9956b644e304c8cbbeeb137f7d89f4767b49aeee5a06c3c8b902e2288662eb6c",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年6月期 無線工学 問18。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/koku-toku/2022-june/q18-official-figure.png"
+    ],
+    "imageAltTexts": [
+      "蓄電池3個を直列に接続した図"
+    ],
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610191908/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610191905/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-june-kogaku-q19",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "june",
+    "qNumber": 19,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "AMとFMの変調対象"
+    ],
+    "difficulty": 2,
+    "question": "次の記述の［　］内に入れるべき字句の組合せで、正しいのはどれか。\n\nAM 変調は、信号波に応じて搬送波の［A］を変化させる。FM 変調は、信号波に応じて搬送波の［B］を変化させる。",
+    "choices": {
+      "ア": "振幅／周波数",
+      "イ": "周波数／振幅",
+      "ウ": "周波数／周波数",
+      "エ": "振幅／振幅"
+    },
+    "answer": "ア",
+    "explanation": "AMでは搬送波の振幅が音声に合わせて変わる。FMでは搬送波の瞬時周波数が信号に応じて変化する。",
+    "choiceExplanations": {
+      "ア": "AMでは搬送波の振幅が音声に合わせて変わる。FMでは搬送波の瞬時周波数が信号に応じて変化する。",
+      "イ": "周波数を変えるのはFM、振幅を変えるのはAMである。選択肢は二つの対応を逆にしている。",
+      "ウ": "FMの周波数という部分は合うが、AMで情報を載せるために変化させるのは振幅である。",
+      "エ": "AMの振幅という部分は合うが、FMでは搬送波の周波数を変化させ、振幅を変えて情報を伝えるわけではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "df803e42ca26c643d142dd4fc69e097ecb69d63e7ebd7f090c0aede23fbb156c",
+      "answerPdfSha256": "9956b644e304c8cbbeeb137f7d89f4767b49aeee5a06c3c8b902e2288662eb6c",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年6月期 無線工学 問19。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610191908/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610191905/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-june-kogaku-q20",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "june",
+    "qNumber": 20,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "機上気象レーダーの操作表示"
+    ],
+    "difficulty": 2,
+    "question": "図に示す機上気象レーダーの調整器パネル面の操作に伴う機能で誤っているのはどれか。",
+    "choices": {
+      "ア": "RANGE：測定距離範囲を切り替えるために用いられ、目的に応じて適切なRANGE が選択される。",
+      "イ": "STBY：準備が完了した状態であり、電波は発射されない。",
+      "ウ": "GAIN：目標物の最適な影像が得られるように送信機の出力を調整する。",
+      "エ": "ANT TILT：レーダーアンテナの垂直方向の角度を調整するために用いられ、上方に10度下方に15度の範囲で任意にセットできる。"
+    },
+    "answer": "ウ",
+    "explanation": "GAINは受信側の利得の調整である。反射の見え方を変えるつまみを送信出力の調整とした部分が誤っている。",
+    "choiceExplanations": {
+      "ア": "RANGEで表示する距離範囲を切り替え、近い気象現象と遠い気象現象を目的に合わせて確認する。",
+      "イ": "STBYは作動の準備ができた状態を示す。この位置では送信を行わない。",
+      "ウ": "GAINは受信側の利得の調整である。反射の見え方を変えるつまみを送信出力の調整とした部分が誤っている。",
+      "エ": "ANT TILTはアンテナの上下の向きを調節する。このパネルでは上10度から下15度の範囲が表示されている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "df803e42ca26c643d142dd4fc69e097ecb69d63e7ebd7f090c0aede23fbb156c",
+      "answerPdfSha256": "9956b644e304c8cbbeeb137f7d89f4767b49aeee5a06c3c8b902e2288662eb6c",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年6月期 無線工学 問20。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/koku-toku/2022-june/q20-official-figure.png"
+    ],
+    "imageAltTexts": [
+      "機上気象レーダーの調整パネル"
+    ],
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610191908/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610191905/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-june-kogaku-q21",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "june",
+    "qNumber": 21,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "SSRのレーダー分類"
+    ],
+    "difficulty": 2,
+    "question": "航空交通管制用として地上に設置されているSSR設備は、次のうち、どれに含まれるか。",
+    "choices": {
+      "ア": "ドプラレーダー",
+      "イ": "CW レーダー",
+      "ウ": "1 次レーダー",
+      "エ": "2 次レーダー"
+    },
+    "answer": "エ",
+    "explanation": "SSRは地上が質問信号を送り、機上トランスポンダが応答信号を送るため、二次レーダーに分類される。",
+    "choiceExplanations": {
+      "ア": "ドプラレーダーは反射波の周波数の変化から速度などを求める。SSRの航空機識別はトランスポンダ応答による。",
+      "イ": "CWは連続波を用いる方式を指す。SSRを一次と二次に分ける根拠は質問と応答を使うことである。",
+      "ウ": "一次レーダーは目標に当たって戻る反射を受信する。SSRは機上装置が生成して返す能動的な応答を用いる。",
+      "エ": "SSRは地上が質問信号を送り、機上トランスポンダが応答信号を送るため、二次レーダーに分類される。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "df803e42ca26c643d142dd4fc69e097ecb69d63e7ebd7f090c0aede23fbb156c",
+      "answerPdfSha256": "9956b644e304c8cbbeeb137f7d89f4767b49aeee5a06c3c8b902e2288662eb6c",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年6月期 無線工学 問21。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610191908/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610191905/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-june-kogaku-q22",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "june",
+    "qNumber": 22,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "ATCトランスポンダのIDENT操作"
+    ],
+    "difficulty": 2,
+    "question": "ATC トランスポンダの操作でアイデント・ボタンを押す目的は、次のうちどれか。",
+    "choices": {
+      "ア": "モードA の信号を受信したが、自動的に応答できないことを管制官に知らせる。",
+      "イ": "モードC の信号を受信したが、自動的に応答できないことを管制官に知らせる。",
+      "ウ": "TEST の切換で、装置の動作の良否が確かめられないことを管制官に知らせる。",
+      "エ": "管制官からの識別のための要請により、SPI(特別位置識別)パルスの送信を行う。"
+    },
+    "answer": "エ",
+    "explanation": "管制官からの求めに応じてIDENTを押すと、特別位置識別信号のSPIが応答に付加され、管制側で機体を識別しやすくなる。",
+    "choiceExplanations": {
+      "ア": "IDENTはモードAへの応答ができないことを通知する機能ではない。個々の航空機の識別を助けるために使用する。",
+      "イ": "モードCの応答は主に気圧高度を含む。IDENTはその応答に失敗したことを知らせる機能ではない。",
+      "ウ": "TESTは装置の動作確認のためであり、IDENTでその試験の成否を管制側に伝えるのではない。",
+      "エ": "管制官からの求めに応じてIDENTを押すと、特別位置識別信号のSPIが応答に付加され、管制側で機体を識別しやすくなる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "df803e42ca26c643d142dd4fc69e097ecb69d63e7ebd7f090c0aede23fbb156c",
+      "answerPdfSha256": "9956b644e304c8cbbeeb137f7d89f4767b49aeee5a06c3c8b902e2288662eb6c",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年6月期 無線工学 問22。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610191908/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610191905/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-june-kogaku-q23",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "june",
+    "qNumber": 23,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線受信機に入る雑音の原因"
+    ],
+    "difficulty": 2,
+    "question": "無線受信機において、通常、受信に障害を与える雑音の原因にならないのは、次のうちどれか。",
+    "choices": {
+      "ア": "給電線のコネクタのゆるみによるアンテナとの接触不良",
+      "イ": "電源用電池の容量低下",
+      "ウ": "発電機のブラシの火花",
+      "エ": "高周波加熱装置"
+    },
+    "answer": "イ",
+    "explanation": "電池容量の低下は使用できる時間を短くするが、それ自体が通常の受信雑音を発生させる原因とはならない。",
+    "choiceExplanations": {
+      "ア": "給電線やコネクタの接触が不安定だと接触状態が変わるたびに電気的な乱れが生じ、受信信号に雑音が加わることがある。",
+      "イ": "電池容量の低下は使用できる時間を短くするが、それ自体が通常の受信雑音を発生させる原因とはならない。",
+      "ウ": "ブラシで電流を断続すると火花を生じて広帯域の電磁雑音を放射し、その成分が受信周波数に入る場合がある。",
+      "エ": "高周波加熱装置の電波や不要成分が漏れると、近くの受信機に入り込んで雑音や妨害の原因になり得る。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "df803e42ca26c643d142dd4fc69e097ecb69d63e7ebd7f090c0aede23fbb156c",
+      "answerPdfSha256": "9956b644e304c8cbbeeb137f7d89f4767b49aeee5a06c3c8b902e2288662eb6c",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年6月期 無線工学 問23。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610191908/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610191905/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-june-kogaku-q24",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "june",
+    "qNumber": 24,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "送受信機の制御器の役割"
+    ],
+    "difficulty": 2,
+    "question": "無線送受信機の制御器（コントロールパネル）は、一般にどのような目的で使用されるか。",
+    "choices": {
+      "ア": "アンテナと給電線のインピーダンス整合を調整する。",
+      "イ": "送受信機を離れたところから操作する。",
+      "ウ": "停電などの際、送受信機へ供給される電力の瞬断をなくす。",
+      "エ": "送受信機から発射されるスプリアスを低下させる。"
+    },
+    "answer": "イ",
+    "explanation": "配置が離れた送受信機でも操作者の手元から周波数や運用状態を選べるように、遠隔の制御器を使用する。",
+    "choiceExplanations": {
+      "ア": "アンテナと給電線の整合は整合器などで調整する。送受信機を遠隔操作する制御器の主な役割ではない。",
+      "イ": "配置が離れた送受信機でも操作者の手元から周波数や運用状態を選べるように、遠隔の制御器を使用する。",
+      "ウ": "給電の瞬断を防ぐのは無停電電源などの電源設備の機能であり、操作用の制御器の機能ではない。",
+      "エ": "スプリアスの低減は送信機の回路構成やフィルターにより行う。制御器は通常の運用操作を行うための装置である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "df803e42ca26c643d142dd4fc69e097ecb69d63e7ebd7f090c0aede23fbb156c",
+      "answerPdfSha256": "9956b644e304c8cbbeeb137f7d89f4767b49aeee5a06c3c8b902e2288662eb6c",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年6月期 無線工学 問24。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610191908/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610191905/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-october-houki-q1",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2022,
+    "season": "october",
+    "qNumber": 1,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "予備免許で指定される事項"
+    ],
+    "difficulty": 2,
+    "question": "無線局の予備免許が与えられるときに総務大臣から指定される事項はどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "空中線電力",
+      "イ": "無線局の種別",
+      "ウ": "免許の有効期間",
+      "エ": "無線設備の設置場所"
+    },
+    "answer": "ア",
+    "explanation": "空中線電力は発射する電波の出力を規制する項目であり、周波数や電波の型式などとともに予備免許で指定される。",
+    "choiceExplanations": {
+      "ア": "空中線電力は発射する電波の出力を規制する項目であり、周波数や電波の型式などとともに予備免許で指定される。",
+      "イ": "無線局の種別は申請の内容を特定する項目である。予備免許で指定する事項としてこの問いが求めるのは空中線電力である。",
+      "ウ": "免許の有効期間は正式な免許に関する事項である。予備免許で指定されるのは工事落成の期限などである。",
+      "エ": "無線設備を設置する場所は申請や審査の前提となる。この問の予備免許で指定する事項の列挙には含まれない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "327a3a0580a824dc7702673b6b3d34e6b42b40a64f7b6006e613fcdfbdd40213",
+      "answerPdfSha256": "f5f13fd3091f7d3c31ed9c8a376571a41bd06283fbb6507b1286ff43090b9499",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年10月期 法規 問1。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-10-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610215556/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610213216/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-october-houki-q2",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2022,
+    "season": "october",
+    "qNumber": 2,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "送信電波の質の技術基準"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、電波の質について述べたものである。電波法の規定に照らし、［　］ 内に入れるべき字句を下の番号から選べ。\n\n送信設備に使用する電波の ［　］ 電波の質は、総務省令で定めるところに適合するものでなければならない。",
+    "choices": {
+      "ア": "周波数の偏差、空中線電力の偏差等",
+      "イ": "高調波の強度、空中線電力の偏差等",
+      "ウ": "周波数の偏差及び幅、高調波の強度等",
+      "エ": "周波数の偏差及び幅、空中線電力の偏差等"
+    },
+    "answer": "ウ",
+    "explanation": "電波法第28条は、周波数の偏差及び幅、高調波の強度等の電波の質を総務省令で定めるところに適合させると定める。",
+    "choiceExplanations": {
+      "ア": "周波数の偏差は含まれるが、法が続けて規定するのは周波数の幅と高調波の強度などである。",
+      "イ": "高調波の強度は列挙にあるが、周波数の偏差と幅も記載されている。空中線電力の偏差を組み合わせるのは誤りである。",
+      "ウ": "電波法第28条は、周波数の偏差及び幅、高調波の強度等の電波の質を総務省令で定めるところに適合させると定める。",
+      "エ": "前半の周波数の偏差及び幅は合うが、条文は空中線電力の偏差でなく高調波の強度等を続ける。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "327a3a0580a824dc7702673b6b3d34e6b42b40a64f7b6006e613fcdfbdd40213",
+      "answerPdfSha256": "f5f13fd3091f7d3c31ed9c8a376571a41bd06283fbb6507b1286ff43090b9499",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年10月期 法規 問2。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-10-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610215556/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610213216/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-october-houki-q3",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2022,
+    "season": "october",
+    "qNumber": 3,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "無線従事者免許証の携帯"
+    ],
+    "difficulty": 2,
+    "question": "無線従事者は、その業務に従事しているときは、免許証をどのようにしていなければならないか。次のうちから選べ。",
+    "choices": {
+      "ア": "無線局に備え付ける。",
+      "イ": "携帯する。",
+      "ウ": "通信室内の見やすい箇所に掲げる。",
+      "エ": "通信室内に保管する。"
+    },
+    "answer": "イ",
+    "explanation": "無線従事者は業務に従事している間、取得した資格と本人を証明する無線従事者免許証を携帯する。",
+    "choiceExplanations": {
+      "ア": "局に免許証を置くだけでは、従事者本人が業務中に携帯していることにならない。",
+      "イ": "無線従事者は業務に従事している間、取得した資格と本人を証明する無線従事者免許証を携帯する。",
+      "ウ": "掲示は携帯とは別である。無線従事者の個人の免許証を通信室に掲げる義務ではない。",
+      "エ": "通信室に保管したままで従事者の身近にない場合もあるため、規則が求める携帯に代えられない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "327a3a0580a824dc7702673b6b3d34e6b42b40a64f7b6006e613fcdfbdd40213",
+      "answerPdfSha256": "f5f13fd3091f7d3c31ed9c8a376571a41bd06283fbb6507b1286ff43090b9499",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年10月期 法規 問3。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-10-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610215556/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610213216/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-october-houki-q4",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2022,
+    "season": "october",
+    "qNumber": 4,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "無線局の臨時検査"
+    ],
+    "difficulty": 2,
+    "question": "無線局の臨時検査（電波法第７３条第５項の検査）が行われることがあるのはどの場合か。次のうちから選べ。",
+    "choices": {
+      "ア": "無線局の再免許の申請をし、総務大臣から免許が与えられたとき。",
+      "イ": "総務大臣から臨時に電波の発射の停止を命じられたとき。",
+      "ウ": "無線設備の変更の工事を行ったとき。",
+      "エ": "無線従事者を選任したとき。"
+    },
+    "answer": "イ",
+    "explanation": "電波の発射を臨時に停止させられた局については、電波の質などを確認するため臨時検査が行われる場合がある。",
+    "choiceExplanations": {
+      "ア": "再免許は免許を更新する手続であり、それを受けたことがここでの臨時検査事由ではない。",
+      "イ": "電波の発射を臨時に停止させられた局については、電波の質などを確認するため臨時検査が行われる場合がある。",
+      "ウ": "変更工事の後に受ける検査手続と電波法第73条第5項の臨時検査は区別する。",
+      "エ": "無線従事者の選任は人員に関する手続であり、それだけで臨時検査の対象になるわけではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "327a3a0580a824dc7702673b6b3d34e6b42b40a64f7b6006e613fcdfbdd40213",
+      "answerPdfSha256": "f5f13fd3091f7d3c31ed9c8a376571a41bd06283fbb6507b1286ff43090b9499",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年10月期 法規 問4。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-10-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610215556/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610213216/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-october-houki-q5",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2022,
+    "season": "october",
+    "qNumber": 5,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "無線従事者への行政処分"
+    ],
+    "difficulty": 2,
+    "question": "無線従事者が電波法又は電波法に基づく命令に違反したときに総務大臣から受けることがある処分はどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "期間を定めて行う無線設備の操作範囲の制限",
+      "イ": "その業務に従事する無線局の運用の停止",
+      "ウ": "６箇月間の業務の従事の停止",
+      "エ": "無線従事者の免許の取消し"
+    },
+    "answer": "エ",
+    "explanation": "電波法第79条により、法令に違反した無線従事者はその従事者免許を取り消されることがある。",
+    "choiceExplanations": {
+      "ア": "操作範囲は資格に付随して定められる。法令違反時の処分として、操作範囲を期間付きで制限する規定ではない。",
+      "イ": "無線局の運用停止は局の免許人側に関する処分である。ここでは無線従事者個人に対する処分を問う。",
+      "ウ": "業務に従事させない期間を定める処分がある場合も、条文が定める限度と異なる6か月とする記述は誤りである。",
+      "エ": "電波法第79条により、法令に違反した無線従事者はその従事者免許を取り消されることがある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "327a3a0580a824dc7702673b6b3d34e6b42b40a64f7b6006e613fcdfbdd40213",
+      "answerPdfSha256": "f5f13fd3091f7d3c31ed9c8a376571a41bd06283fbb6507b1286ff43090b9499",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年10月期 法規 問5。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-10-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610215556/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610213216/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-october-houki-q6",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2022,
+    "season": "october",
+    "qNumber": 6,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "無線従事者を選任・解任した場合の届出"
+    ],
+    "difficulty": 2,
+    "question": "無線局の免許人は、無線従事者を選任し、又は解任したときは、どうしなければならないか。次のうちから選べ。",
+    "choices": {
+      "ア": "速やかに総務大臣の承認を受ける。",
+      "イ": "２週間以内にその旨を総務大臣に届け出る。",
+      "ウ": "遅滞なく、その旨を総務大臣に届け出る。",
+      "エ": "１箇月以内にその旨を総務大臣に報告する。"
+    },
+    "answer": "ウ",
+    "explanation": "無線局の免許人は業務に従事する無線従事者を選任または解任したとき、遅滞なく総務大臣に届け出る。",
+    "choiceExplanations": {
+      "ア": "すでに選任・解任したときに必要なのは報告を待って承認を求めることではなく、その旨の届出である。",
+      "イ": "法は2週間の定期を設けていない。手続は選任や解任の後、遅滞なく行う必要がある。",
+      "ウ": "無線局の免許人は業務に従事する無線従事者を選任または解任したとき、遅滞なく総務大臣に届け出る。",
+      "エ": "期限を1か月と定めた報告ではない。選任・解任の事実を遅滞なく届け出る義務である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "327a3a0580a824dc7702673b6b3d34e6b42b40a64f7b6006e613fcdfbdd40213",
+      "answerPdfSha256": "f5f13fd3091f7d3c31ed9c8a376571a41bd06283fbb6507b1286ff43090b9499",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年10月期 法規 問6。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-10-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610215556/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610213216/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-october-houki-q7",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2022,
+    "season": "october",
+    "qNumber": 7,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "免許状に指定される識別信号"
+    ],
+    "difficulty": 2,
+    "question": "無線局を運用する場合においては、遭難通信を行う場合を除き、識別信号（呼出符号、呼出名称等をいう。）は、どの書類に記載されたところによらなければならないか。次のうちから選べ。",
+    "choices": {
+      "ア": "免許証",
+      "イ": "免許状",
+      "ウ": "無線局事項書の写し",
+      "エ": "無線局の免許の申請書の写し"
+    },
+    "answer": "イ",
+    "explanation": "呼出符号や呼出名称などの識別信号は局の免許状に記載された指定に従う。遭難通信には例外がある。",
+    "choiceExplanations": {
+      "ア": "免許証は従事者の資格を証明する書類である。局の識別信号を使用するときに従う書類ではない。",
+      "イ": "呼出符号や呼出名称などの識別信号は局の免許状に記載された指定に従う。遭難通信には例外がある。",
+      "ウ": "無線局事項書は申請に関する書類であり、局の運用時に識別信号を定める免許状に代わらない。",
+      "エ": "申請書の写しには申請者が希望した事項が含まれ得るが、許可された識別信号は交付された免許状で確認する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "327a3a0580a824dc7702673b6b3d34e6b42b40a64f7b6006e613fcdfbdd40213",
+      "answerPdfSha256": "f5f13fd3091f7d3c31ed9c8a376571a41bd06283fbb6507b1286ff43090b9499",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年10月期 法規 問7。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-10-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610215556/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610213216/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-october-houki-q8",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2022,
+    "season": "october",
+    "qNumber": 8,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "他局の通信と混信するときの呼出し"
+    ],
+    "difficulty": 2,
+    "question": "無線局が相手局を呼び出そうとする場合（遭難通信等を行う場合を除く。）において、他の通信に混信を与えるおそれがあるときは、どうしなければならないか。次のうちから選べ。",
+    "choices": {
+      "ア": "その通信が終了した後に呼出しを行う。",
+      "イ": "現に通信を行っている他の無線局にその通信の終了時刻を確かめ、終了を待って呼出しを行う。",
+      "ウ": "５分間以上待って呼出しを行う。",
+      "エ": "自局の行おうとする通信が長文の内容のものであれば、直ちに呼出しを行う。"
+    },
+    "answer": "ア",
+    "explanation": "他局の通信に混信のおそれがある間は呼出しを控え、その通信が終わってから呼び出す。",
+    "choiceExplanations": {
+      "ア": "他局の通信に混信のおそれがある間は呼出しを控え、その通信が終わってから呼び出す。",
+      "イ": "ほかの通信の間に割り込んで終了時刻を聞く必要はなく、現に行われている通信が終わるのを待つ。",
+      "ウ": "5分という経過時間だけでは混信がなくなったとはいえない。規則は通信自体の終了を待つことを求める。",
+      "エ": "これから送る通信の長さは優先理由にならない。長文でも他局の通信を妨げるおそれがある間は呼び出さない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "327a3a0580a824dc7702673b6b3d34e6b42b40a64f7b6006e613fcdfbdd40213",
+      "answerPdfSha256": "f5f13fd3091f7d3c31ed9c8a376571a41bd06283fbb6507b1286ff43090b9499",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年10月期 法規 問8。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-10-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610215556/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610213216/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-october-houki-q9",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2022,
+    "season": "october",
+    "qNumber": 9,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "呼出局の名称が分からないとき"
+    ],
+    "difficulty": 2,
+    "question": "無線電話通信において、無線局は、自局に対する呼出しを受信した場合に、呼出局の呼出符号又は呼出名称が不確実であるときは、どうしなければならないか。次のうちから選べ。",
+    "choices": {
+      "ア": "応答事項のうち相手局の呼出符号又は呼出名称の代わりに「貴局名は何ですか」を使用して、直ちに応答する。",
+      "イ": "呼出局の呼出符号又は呼出名称が確実に判明するまで応答しない。",
+      "ウ": "応答事項のうち相手局の呼出符号又は呼出名称の代わりに「誰かこちらを呼びましたか」を使用して、直ちに応答する。",
+      "エ": "応答事項のうち相手局の呼出符号又は呼出名称を省略して、直ちに応答する。"
+    },
+    "answer": "ウ",
+    "explanation": "相手局の符号や名称が不確実なら、これに代えて「誰かこちらを呼びましたか」を使い、直ちに応答する。",
+    "choiceExplanations": {
+      "ア": "「貴局名は何ですか」は、この場合の相手局の呼出符号・名称に替えて用いる定型句ではない。",
+      "イ": "呼出しが自局宛てと分かっているときは、判明するまで応答を控えるのではなく規則の定型句を用いる。",
+      "ウ": "相手局の符号や名称が不確実なら、これに代えて「誰かこちらを呼びましたか」を使い、直ちに応答する。",
+      "エ": "単に相手局の呼出符号・名称を省略するのではなく、規則で定める定型句を補って応答する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "327a3a0580a824dc7702673b6b3d34e6b42b40a64f7b6006e613fcdfbdd40213",
+      "answerPdfSha256": "f5f13fd3091f7d3c31ed9c8a376571a41bd06283fbb6507b1286ff43090b9499",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年10月期 法規 問9。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-10-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610215556/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610213216/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-october-houki-q10",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2022,
+    "season": "october",
+    "qNumber": 10,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "航空局が聴守する電波の型式"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、航空局の運用義務時間中の聴守電波について述べたものである。無線局運用規則の規定に照らし、［　］ 内に入れるべき字句を下の番号から選べ。\n\n航空局の聴守電波の型式は、［　］ とし、その周波数は、別に告示する。",
+    "choices": {
+      "ア": "Ｆ３Ｅ",
+      "イ": "Ｒ３Ｅ",
+      "ウ": "Ｈ３Ｅ",
+      "エ": "Ａ３Ｅ又はＪ３Ｅ"
+    },
+    "answer": "エ",
+    "explanation": "航空局の聴守電波の型式はA3EまたはJ3Eである。具体的に聴守する周波数は別の告示で定める。",
+    "choiceExplanations": {
+      "ア": "F3Eは周波数変調を用いる電話の型式である。設問が問う航空局の聴守電波の型式には挙げられていない。",
+      "イ": "R3Eは低減搬送波付き単側波帯の電話の型式だが、この規則の列挙に入らない。",
+      "ウ": "H3Eは全搬送波付き単側波帯の電話の型式である。この聴守について規則が定める型式とは異なる。",
+      "エ": "航空局の聴守電波の型式はA3EまたはJ3Eである。具体的に聴守する周波数は別の告示で定める。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "327a3a0580a824dc7702673b6b3d34e6b42b40a64f7b6006e613fcdfbdd40213",
+      "answerPdfSha256": "f5f13fd3091f7d3c31ed9c8a376571a41bd06283fbb6507b1286ff43090b9499",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年10月期 法規 問10。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-10-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610215556/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610213216/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-october-houki-q11",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2022,
+    "season": "october",
+    "qNumber": 11,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "ノータムに関する通信の優先順位"
+    ],
+    "difficulty": 2,
+    "question": "ノータムに関する通信の優先順位はどのように定められているか。次のうちから選べ。",
+    "choices": {
+      "ア": "緊急の度に応じ、緊急通信に次いでその順位を適宜に選ぶことができる。",
+      "イ": "緊急の度に応じ、遭難通信に次いでその順位を適宜に選ぶことができる。",
+      "ウ": "航空機の安全運航に関する通信に次いでその順位を適宜に選ぶことができる。",
+      "エ": "緊急の度に応じ、無線方向探知に関する通信に次いでその順位を適宜に選ぶことができる。"
+    },
+    "answer": "ア",
+    "explanation": "ノータムの伝達は緊急度に応じ、緊急通信に次いだ範囲で優先順位を適宜選ぶことができる。",
+    "choiceExplanations": {
+      "ア": "ノータムの伝達は緊急度に応じ、緊急通信に次いだ範囲で優先順位を適宜選ぶことができる。",
+      "イ": "遭難通信に直接次ぐなら緊急通信の優先順位を飛ばしてしまう。ノータムの順位は緊急通信に次ぐ。",
+      "ウ": "一律に安全運航に関する通信の次に置くとは規定していない。ノータムの緊急度に応じて順位を決める。",
+      "エ": "無線方向探知に関する通信の次を起点とするのではなく、規定は緊急通信に次ぐ範囲で選ぶことを認める。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "327a3a0580a824dc7702673b6b3d34e6b42b40a64f7b6006e613fcdfbdd40213",
+      "answerPdfSha256": "f5f13fd3091f7d3c31ed9c8a376571a41bd06283fbb6507b1286ff43090b9499",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年10月期 法規 問11。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-10-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610215556/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610213216/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-october-houki-q12",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2022,
+    "season": "october",
+    "qNumber": 12,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "遭難航空機局の使用電波の指示"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、遭難通信の使用電波について述べたものである。無線局運用規則の規定に照らし、［　］ 内に入れるべき字句を下の番号から選べ。\n\n遭難航空機局が遭難通信に使用する電波は、［　］ がある場合にあっては当該電波、その他の場合にあっては航空機局と航空局との間の通信に使用するためにあらかじめ定められている電波とする。",
+    "choices": {
+      "ア": "この目的のために別に告示されている電波",
+      "イ": "責任航空局に保留されている電波",
+      "ウ": "責任航空局又は交通情報航空局から指示されている電波",
+      "エ": "特に総務大臣から指定を受けた電波"
+    },
+    "answer": "ウ",
+    "explanation": "責任航空局または交通情報航空局から指示された電波があればそれを使用する。指示がなければあらかじめ定めた電波を用いる。",
+    "choiceExplanations": {
+      "ア": "別の告示があれば常にそれを用いるという規定ではない。責任航空局などの指示がある場合はその指示を優先する。",
+      "イ": "責任航空局が電波を保留していることだけでは航空機への指示にならない。使用する電波が指示されていることが条件である。",
+      "ウ": "責任航空局または交通情報航空局から指示された電波があればそれを使用する。指示がなければあらかじめ定めた電波を用いる。",
+      "エ": "個々の遭難時に総務大臣の特別な指定を受けることが条件ではない。航空局からの指示または既定の通信電波を用いる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "327a3a0580a824dc7702673b6b3d34e6b42b40a64f7b6006e613fcdfbdd40213",
+      "answerPdfSha256": "f5f13fd3091f7d3c31ed9c8a376571a41bd06283fbb6507b1286ff43090b9499",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年10月期 法規 問12。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2022-10-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610215556/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610213216/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-october-kogaku-q13",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "october",
+    "qNumber": 13,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "交流に対するコイルの働き"
+    ],
+    "difficulty": 2,
+    "question": "直流と交流の電流の説明で、誤っているのはどれか。",
+    "choices": {
+      "ア": "交流は、時間とともに流れる電流の方向が変わる。",
+      "イ": "交流は、コイルのインダクタンスが大きくなるほど流れやすくなる。",
+      "ウ": "直流は、常に流れる電流の方向が変わらない。",
+      "エ": "直流は、コンデンサによって遮断される。"
+    },
+    "answer": "イ",
+    "explanation": "誘導リアクタンスは2πfLである。周波数が一定ならインダクタンスが大きいほど交流は流れにくくなる。",
+    "choiceExplanations": {
+      "ア": "交流は時間とともに電流の向きが反転するため、この説明は交流の性質を正しく表している。",
+      "イ": "誘導リアクタンスは2πfLである。周波数が一定ならインダクタンスが大きいほど交流は流れにくくなる。",
+      "ウ": "直流では電流の向きは変わらない。電流の大きさが変動していても、向きが一定の成分は直流である。",
+      "エ": "コンデンサで電圧が一定になった後は直流電流が流れず、定常直流は遮断される。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "155ae25e089a2df53b8bb03e4c30029053064b172706ec21c6851c6815f6eb83",
+      "answerPdfSha256": "7d840cae044cbb1f240ce67504074297563a10b937fcc89cd13ae97862079fbc",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年10月期 無線工学 問13。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610215238/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610215236/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-october-kogaku-q14",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "october",
+    "qNumber": 14,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "FETの端子名"
+    ],
+    "difficulty": 2,
+    "question": "図に示す電界効果トランジスタ(FET)の図記号において、電極名の組合せとして、正しいのは次のうちどれか。",
+    "choices": {
+      "ア": "ゲート ソース ドレイン",
+      "イ": "ゲート ドレイン ソース",
+      "ウ": "ドレイン ゲート ソース",
+      "エ": "ソース ドレイン ゲート"
+    },
+    "answer": "イ",
+    "explanation": "チャネル横から伸びる①がゲートであり、図の上側の②がドレイン、下側の③がソースである。",
+    "choiceExplanations": {
+      "ア": "絶縁された制御端子①をゲートとする点は合うが、図では②がドレインであり、ソースとの割当てが逆である。",
+      "イ": "チャネル横から伸びる①がゲートであり、図の上側の②がドレイン、下側の③がソースである。",
+      "ウ": "①がチャネルを制御するゲートであり、ドレインではない。ゲートは図でチャネルの横に描かれている。",
+      "エ": "③はソースであり、入力するゲートはチャネルと隔てられた横向きの①である。②だけが正しくても組合せは合わない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "155ae25e089a2df53b8bb03e4c30029053064b172706ec21c6851c6815f6eb83",
+      "answerPdfSha256": "7d840cae044cbb1f240ce67504074297563a10b937fcc89cd13ae97862079fbc",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年10月期 無線工学 問14。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/koku-toku/2022-october/q14-official-figure.png"
+    ],
+    "imageAltTexts": [
+      "電界効果トランジスタの端子を①・②・③で示した図"
+    ],
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610215238/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610215236/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-october-kogaku-q15",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "october",
+    "qNumber": 15,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "水平ダイポールの指向性"
+    ],
+    "difficulty": 2,
+    "question": "図は、水平半波長ダイポールアンテナの水平面内の指向特性を示している。正しいのはどれか。",
+    "choices": {
+      "ア": "図の1",
+      "イ": "図の2",
+      "ウ": "図の3",
+      "エ": "図の4"
+    },
+    "answer": "エ",
+    "explanation": "水平ダイポールは素子方向では放射が弱く、これと直角の両方向で強い。図4がその8字状の指向性を表す。",
+    "choiceExplanations": {
+      "ア": "円形は方位によらず同じ強さを表す。水平ダイポールの水平面では、素子の軸方向と直角方向では放射の強さが異なる。",
+      "イ": "二つのローブが素子に沿った方位に伸びている。水平ダイポールで放射が強いのは素子軸と直角をなす方向である。",
+      "ウ": "孤立した半波長ダイポールの放射パターンは、素子に直角な左右でほぼ対称であり、一方だけ大きなローブにはならない。",
+      "エ": "水平ダイポールは素子方向では放射が弱く、これと直角の両方向で強い。図4がその8字状の指向性を表す。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "155ae25e089a2df53b8bb03e4c30029053064b172706ec21c6851c6815f6eb83",
+      "answerPdfSha256": "7d840cae044cbb1f240ce67504074297563a10b937fcc89cd13ae97862079fbc",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年10月期 無線工学 問15。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/koku-toku/2022-october/q15-official-figure.png"
+    ],
+    "imageAltTexts": [
+      "水平面内のアンテナ指向特性を示した四つの図"
+    ],
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610215238/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610215236/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-october-kogaku-q16",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "october",
+    "qNumber": 16,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "パルス幅と距離分解能"
+    ],
+    "difficulty": 2,
+    "question": "レーダーの距離分解能を良くする方法として、正しいのは次のうちどれか。",
+    "choices": {
+      "ア": "アンテナの水平面内指向性を鋭くする。",
+      "イ": "パルス繰返し周波数を低くする。",
+      "ウ": "パルス幅を狭くする。",
+      "エ": "受信機の感度をよくする。"
+    },
+    "answer": "ウ",
+    "explanation": "パルスを短くすれば、異なる距離から戻る二つの反射が時間的に分離できる。距離分解能は概ねパルス幅に比例する。",
+    "choiceExplanations": {
+      "ア": "水平指向性を狭めると方位の違う目標を分けやすくなる。距離方向の分解能は主として反射パルスの時間幅で決まる。",
+      "イ": "パルスの繰返し間隔を長くしても一つのパルスの時間幅は変わらず、近い距離の二目標の反射の重なりは減らない。",
+      "ウ": "パルスを短くすれば、異なる距離から戻る二つの反射が時間的に分離できる。距離分解能は概ねパルス幅に比例する。",
+      "エ": "感度を高くすることで弱い反射を検出しやすくなるが、同時に戻る近接した反射を分離する効果とは異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "155ae25e089a2df53b8bb03e4c30029053064b172706ec21c6851c6815f6eb83",
+      "answerPdfSha256": "7d840cae044cbb1f240ce67504074297563a10b937fcc89cd13ae97862079fbc",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年10月期 無線工学 問16。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610215238/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610215236/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-october-kogaku-q17",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "october",
+    "qNumber": 17,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "二次電池の容量と接続"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、電池について述べたものである。このうち誤っているものを下の番号から選べ。",
+    "choices": {
+      "ア": "充放電を繰り返して使用できる電池を二次電池という。",
+      "イ": "鉛蓄電池及びリチウムイオン蓄電池は、二次電池である。",
+      "ウ": "電圧が等しく、容量が10〔Ah〕の電池を2 個直列に接続すると、合成容量は20〔Ah〕になる。",
+      "エ": "電圧の異なる電池を並列に接続することは避けなければならない。"
+    },
+    "answer": "ウ",
+    "explanation": "直列にすると電圧が加算されるが、同容量の各電池に同じ電流が流れるため、容量は一つと同じ10 Ahである。",
+    "choiceExplanations": {
+      "ア": "充電して繰り返し使用できる電池が二次電池である。これが一次電池との区別になる。",
+      "イ": "鉛蓄電池もリチウムイオン蓄電池も放電後に充電して再使用でき、二次電池に分類される。",
+      "ウ": "直列にすると電圧が加算されるが、同容量の各電池に同じ電流が流れるため、容量は一つと同じ10 Ahである。",
+      "エ": "電圧の異なる電池を並列につなぐと電池間に電流が流れるおそれがある。この接続は避ける。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "155ae25e089a2df53b8bb03e4c30029053064b172706ec21c6851c6815f6eb83",
+      "answerPdfSha256": "7d840cae044cbb1f240ce67504074297563a10b937fcc89cd13ae97862079fbc",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年10月期 無線工学 問17。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610215238/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610215236/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-october-kogaku-q18",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "october",
+    "qNumber": 18,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "直流電圧計のつなぎ方"
+    ],
+    "difficulty": 2,
+    "question": "抵抗Rの両端の直流電圧を測定するときの電圧計Vのつなぎ方で、正しいのは次のうちどれか。",
+    "choices": {
+      "ア": "図の1",
+      "イ": "図の2",
+      "ウ": "図の3",
+      "エ": "図の4"
+    },
+    "answer": "ア",
+    "explanation": "測りたい抵抗と電圧計を並列にし、高い電位の側に電圧計の正端子をつなぐ。図1はその両方を満たす。",
+    "choiceExplanations": {
+      "ア": "測りたい抵抗と電圧計を並列にし、高い電位の側に電圧計の正端子をつなぐ。図1はその両方を満たす。",
+      "イ": "抵抗と並列にはつながっているが、高電位側が電圧計の負端子になっている。直流電圧計の極性が逆である。",
+      "ウ": "電圧計が抵抗に直列に入る接続であり、抵抗の両端の電位差を測る並列接続になっていない。",
+      "エ": "電圧計が抵抗に直列に入るうえ極性も逆である。抵抗に直接並列に接続して両端の電圧を測る。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "155ae25e089a2df53b8bb03e4c30029053064b172706ec21c6851c6815f6eb83",
+      "answerPdfSha256": "7d840cae044cbb1f240ce67504074297563a10b937fcc89cd13ae97862079fbc",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年10月期 無線工学 問18。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/koku-toku/2022-october/q18-official-figure.png"
+    ],
+    "imageAltTexts": [
+      "直流電圧計と抵抗の接続方法を示した四つの回路"
+    ],
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610215238/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610215236/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-october-kogaku-q19",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "october",
+    "qNumber": 19,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "AM波形から求める変調度"
+    ],
+    "difficulty": 2,
+    "question": "図は、振幅が10〔V〕の搬送波を単一正弦波で振幅変調したときの波形である。変調度は幾らか。",
+    "choices": {
+      "ア": "20.0〔％〕",
+      "イ": "33.3〔％〕",
+      "ウ": "50.0〔％〕",
+      "エ": "66.7〔％〕"
+    },
+    "answer": "ウ",
+    "explanation": "最大振幅15 Vと無変調時の10 Vの差5 Vを、無変調時の10 Vで割る。百分率にすると50.0%になる。",
+    "choiceExplanations": {
+      "ア": "搬送波の振幅10 Vに対して包絡線の振幅の増分は5 Vなので、20%に相当する2 Vより大きい。",
+      "イ": "33.3%は増分5 Vを最大振幅15 Vで割った場合の値である。変調度の分母には無変調時の搬送波振幅を用いる。",
+      "ウ": "最大振幅15 Vと無変調時の10 Vの差5 Vを、無変調時の10 Vで割る。百分率にすると50.0%になる。",
+      "エ": "66.7%は今回の包絡線と搬送波振幅の関係から求まらない。比較するのは増分5 Vと搬送波振幅10 Vである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "155ae25e089a2df53b8bb03e4c30029053064b172706ec21c6851c6815f6eb83",
+      "answerPdfSha256": "7d840cae044cbb1f240ce67504074297563a10b937fcc89cd13ae97862079fbc",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年10月期 無線工学 問19。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/koku-toku/2022-october/q19-official-figure.png"
+    ],
+    "imageAltTexts": [
+      "正弦波で振幅変調した波形"
+    ],
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610215238/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610215236/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-october-kogaku-q20",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "october",
+    "qNumber": 20,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "気象レーダーのアンテナ傾斜角"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、機上気象レーダーのパネル面にある調整器の機能について述べたものである。その機能に適した調整器はどれか。\n\nレーダーアンテナの傾斜角を制御するもので、機軸に対して所定の傾斜角にセットすることができる。",
+    "choices": {
+      "ア": "ANT TILT",
+      "イ": "RANGE",
+      "ウ": "GAIN",
+      "エ": "STAB - OFF"
+    },
+    "answer": "ア",
+    "explanation": "ANT TILTはアンテナビームの上下方向を機体の軸に対して傾けるために用いる。",
+    "choiceExplanations": {
+      "ア": "ANT TILTはアンテナビームの上下方向を機体の軸に対して傾けるために用いる。",
+      "イ": "RANGEは表示する距離範囲の切替えに使い、アンテナの傾斜角の設定には用いない。",
+      "ウ": "GAINは受信信号に対する利得の調整であり、アンテナの向き自体を変えるものではない。",
+      "エ": "STABの選択は姿勢補償の機能を切り替える。所望の傾斜角を手動で設定するのはANT TILTである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "155ae25e089a2df53b8bb03e4c30029053064b172706ec21c6851c6815f6eb83",
+      "answerPdfSha256": "7d840cae044cbb1f240ce67504074297563a10b937fcc89cd13ae97862079fbc",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年10月期 無線工学 問20。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610215238/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610215236/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-october-kogaku-q21",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "october",
+    "qNumber": 21,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "航空監視用SSRの分類"
+    ],
+    "difficulty": 2,
+    "question": "航空交通管制用として地上に設置されているSSR設備は、次のうち、どれに含まれるか。",
+    "choices": {
+      "ア": "2 次レーダー",
+      "イ": "1 次レーダー",
+      "ウ": "CW レーダー",
+      "エ": "ドプラレーダー"
+    },
+    "answer": "ア",
+    "explanation": "SSRは地上が質問信号を送り、機上トランスポンダが応答信号を送るため、二次レーダーに分類される。",
+    "choiceExplanations": {
+      "ア": "SSRは地上が質問信号を送り、機上トランスポンダが応答信号を送るため、二次レーダーに分類される。",
+      "イ": "一次レーダーは目標に当たって戻る反射を受信する。SSRは機上装置が生成して返す能動的な応答を用いる。",
+      "ウ": "CWは連続波を用いる方式を指す。SSRを一次と二次に分ける根拠は質問と応答を使うことである。",
+      "エ": "ドプラレーダーは反射波の周波数の変化から速度などを求める。SSRの航空機識別はトランスポンダ応答による。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "155ae25e089a2df53b8bb03e4c30029053064b172706ec21c6851c6815f6eb83",
+      "answerPdfSha256": "7d840cae044cbb1f240ce67504074297563a10b937fcc89cd13ae97862079fbc",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年10月期 無線工学 問21。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610215238/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610215236/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-october-kogaku-q22",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "october",
+    "qNumber": 22,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "ATCトランスポンダのIDENT操作"
+    ],
+    "difficulty": 2,
+    "question": "ATC トランスポンダの操作でアイデント・ボタンを押す目的は、次のうちどれか。",
+    "choices": {
+      "ア": "モードA の信号を受信したが、自動的に応答できないことを管制官に知らせる。",
+      "イ": "管制官からの識別のための要請により、SPI(特別位置識別)パルスの送信を行う。",
+      "ウ": "TEST の切換で、装置の動作の良否が確かめられないことを管制官に知らせる。",
+      "エ": "モードC の信号を受信したが、自動的に応答できないことを管制官に知らせる。"
+    },
+    "answer": "イ",
+    "explanation": "管制官からの求めに応じてIDENTを押すと、特別位置識別信号のSPIが応答に付加され、管制側で機体を識別しやすくなる。",
+    "choiceExplanations": {
+      "ア": "IDENTはモードAへの応答ができないことを通知する機能ではない。個々の航空機の識別を助けるために使用する。",
+      "イ": "管制官からの求めに応じてIDENTを押すと、特別位置識別信号のSPIが応答に付加され、管制側で機体を識別しやすくなる。",
+      "ウ": "TESTは装置の動作確認のためであり、IDENTでその試験の成否を管制側に伝えるのではない。",
+      "エ": "モードCの応答は主に気圧高度を含む。IDENTはその応答に失敗したことを知らせる機能ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "155ae25e089a2df53b8bb03e4c30029053064b172706ec21c6851c6815f6eb83",
+      "answerPdfSha256": "7d840cae044cbb1f240ce67504074297563a10b937fcc89cd13ae97862079fbc",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年10月期 無線工学 問22。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610215238/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610215236/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-october-kogaku-q23",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "october",
+    "qNumber": 23,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "受信出力を一定に保つ回路"
+    ],
+    "difficulty": 2,
+    "question": "スーパヘテロダイン受信機において、受信電波の強さが変動しても、受信出力をほぼ一定にするために用いる回路は、次のうちどれか。",
+    "choices": {
+      "ア": "AFC 回路",
+      "イ": "IDC 回路",
+      "ウ": "BFO 回路",
+      "エ": "AGC 回路"
+    },
+    "answer": "エ",
+    "explanation": "AGCは自動利得制御で、強い信号には利得を下げ、弱い信号には利得を上げることで受信出力の変動を小さくする。",
+    "choiceExplanations": {
+      "ア": "AFCは自動周波数制御のための回路であり、入力信号強度の変化を受信出力の利得で補償する回路とは異なる。",
+      "イ": "IDCは主に送信側で過変調を抑える回路であり、受信信号の強度に応じて受信機の利得を変えるものではない。",
+      "ウ": "BFOはビート用の信号を発生させる局部発振回路であり、受信出力の強さを一定にする機能は持たない。",
+      "エ": "AGCは自動利得制御で、強い信号には利得を下げ、弱い信号には利得を上げることで受信出力の変動を小さくする。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "155ae25e089a2df53b8bb03e4c30029053064b172706ec21c6851c6815f6eb83",
+      "answerPdfSha256": "7d840cae044cbb1f240ce67504074297563a10b937fcc89cd13ae97862079fbc",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年10月期 無線工学 問23。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610215238/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610215236/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2022-october-kogaku-q24",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "october",
+    "qNumber": 24,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "受信機のスケルチ調整"
+    ],
+    "difficulty": 2,
+    "question": "次の記述の［　］内に入れるべき字句の組合せで、正しいのはどれか。\n\n相手局からの送話が［A］ときに受信機から雑音が出るときは、［B］調整つまみを回して、雑音\n\nが消える限界点付近の位置に調整する。",
+    "choices": {
+      "ア": "有る／音量",
+      "イ": "有る／スケルチ",
+      "ウ": "無い／音量",
+      "エ": "無い／スケルチ"
+    },
+    "answer": "エ",
+    "explanation": "送話がないときの雑音を抑えるには、スケルチを雑音が消える境目付近に設定する。感度を必要以上に下げないためである。",
+    "choiceExplanations": {
+      "ア": "受信中の音量を下げる操作では、必要な音声も小さくなる。設問は相手局の送話がない間の雑音抑制を問う。",
+      "イ": "スケルチを用いる点は合うが、雑音が聞こえる限界点への調整は相手局の送話がない状態で行う。",
+      "ウ": "送話がない状態は正しいが、音量調整では信号なしの場合だけを識別して雑音を抑えることはできない。",
+      "エ": "送話がないときの雑音を抑えるには、スケルチを雑音が消える境目付近に設定する。感度を必要以上に下げないためである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "155ae25e089a2df53b8bb03e4c30029053064b172706ec21c6851c6815f6eb83",
+      "answerPdfSha256": "7d840cae044cbb1f240ce67504074297563a10b937fcc89cd13ae97862079fbc",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和4年10月期 無線工学 問24。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610215238/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610215236/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2023-february-houki-q1",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 1,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "電波法の目的"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、電波法の目的である。［　］ 内に入れるべき字句を下の番号から選べ。\n\nこの法律は、電波の公平かつ ［　］ な利用を確保することによって、公共の福祉を増進することを目的とする。",
+    "choices": {
+      "ア": "積極的",
+      "イ": "能率的",
+      "ウ": "経済的",
+      "エ": "能動的"
+    },
+    "answer": "イ",
+    "explanation": "電波法第1条は「電波の公平かつ能率的な利用」を確保し、公共の福祉を増進することを目的とする。",
+    "choiceExplanations": {
+      "ア": "第1条は利用を積極的に増やすことではなく、公平性と能率性を確保することを定める。",
+      "イ": "電波法第1条は「電波の公平かつ能率的な利用」を確保し、公共の福祉を増進することを目的とする。",
+      "ウ": "経済性だけが条文の判断基準ではない。ここで「公平かつ」に続く語句は「能率的」である。",
+      "エ": "「能動的」は主体的に行動するという意味であり、条文の「能率的な利用」とは異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "7da5e1b30e2bb6c79b72b4e4adc90466ed86cd3fe0a3624c6257448bf3563cf8",
+      "answerPdfSha256": "e97b4e52b9a6f2542ce5a79a1ca2577965e02b465dd37d062d3670306e08a9bb",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 法規 問1。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2023-02-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610211430/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610211424/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2023-february-houki-q2",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 2,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "送信電波の質"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、電波の質について述べたものである。電波法の規定に照らし、［　］ 内に入れるべき字句を下の番号から選べ。\n\n送信設備に使用する電波の ［　］ 電波の質は、総務省令で定めるところに適合するものでなければならない。",
+    "choices": {
+      "ア": "周波数の偏差及び幅、高調波の強度等",
+      "イ": "周波数の偏差、空中線電力の偏差等",
+      "ウ": "周波数の偏差及び幅、空中線電力の偏差等",
+      "エ": "高調波の強度、空中線電力の偏差等"
+    },
+    "answer": "ア",
+    "explanation": "第28条は電波の質として周波数の偏差及び幅、高調波の強度等を挙げ、総務省令による基準への適合を求める。",
+    "choiceExplanations": {
+      "ア": "第28条は電波の質として周波数の偏差及び幅、高調波の強度等を挙げ、総務省令による基準への適合を求める。",
+      "イ": "周波数の偏差は入るが、この列挙に空中線電力の偏差を含めて周波数の幅を省くのは適切でない。",
+      "ウ": "周波数の偏差及び幅は合うが、次に挙げられるのは高調波の強度であり、空中線電力の偏差ではない。",
+      "エ": "高調波の強度だけでなく周波数の偏差及び幅も規定される。空中線電力の偏差を加えた列挙ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "7da5e1b30e2bb6c79b72b4e4adc90466ed86cd3fe0a3624c6257448bf3563cf8",
+      "answerPdfSha256": "e97b4e52b9a6f2542ce5a79a1ca2577965e02b465dd37d062d3670306e08a9bb",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 法規 問2。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2023-02-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610211430/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610211424/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2023-february-houki-q3",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 3,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "無線従事者免許を与えないことができる場合"
+    ],
+    "difficulty": 2,
+    "question": "総務大臣が無線従事者の免許を与えないことができる者はどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "無線従事者の免許を取り消され、取消しの日から２年を経過しない者",
+      "イ": "刑法に規定する罪を犯し罰金以上の刑に処せられ、その執行を終わり、又はその執行を受けることがなくなった日から２年を経過しない者",
+      "ウ": "無線従事者の免許を取り消され、取消しの日から５年を経過しない者",
+      "エ": "日本の国籍を有しない者"
+    },
+    "answer": "ア",
+    "explanation": "電波法第42条では、無線従事者免許の取消しの日から2年を経過しない者は免許を与えないことができる。",
+    "choiceExplanations": {
+      "ア": "電波法第42条では、無線従事者免許の取消しの日から2年を経過しない者は免許を与えないことができる。",
+      "イ": "罰金以上の刑に関する事由は電波法に規定する罪に関するものであり、刑法上の罪というだけでこの規定に該当しない。",
+      "ウ": "免許取消しに関する期間は2年である。取消しから5年を経過しないまでと一律に広げることはできない。",
+      "エ": "国籍はこの条文の免許を与えないことができる事由に入らない。取消しの経歴や法が指定する刑などが対象となる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "7da5e1b30e2bb6c79b72b4e4adc90466ed86cd3fe0a3624c6257448bf3563cf8",
+      "answerPdfSha256": "e97b4e52b9a6f2542ce5a79a1ca2577965e02b465dd37d062d3670306e08a9bb",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 法規 問3。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2023-02-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610211430/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610211424/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2023-february-houki-q4",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 4,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "電波発射の臨時停止"
+    ],
+    "difficulty": 2,
+    "question": "総務大臣が無線局に対して臨時に電波の発射の停止を命ずることができるのはどの場合か。次のうちから選べ。",
+    "choices": {
+      "ア": "無線局が略語を使用して通信を行っていると認めるとき。",
+      "イ": "無線局の発射する電波が他の無線局の通信に混信を与えていると認めるとき。",
+      "ウ": "無線局が免許状に記載された空中線電力の範囲を超えて運用していると認めるとき。",
+      "エ": "無線局の発射する電波の質が総務省令で定めるものに適合していないと認めるとき。"
+    },
+    "answer": "エ",
+    "explanation": "電波が総務省令で定めた質に適合しないと認められる場合、総務大臣は電波の発射を臨時に停止させることができる。",
+    "choiceExplanations": {
+      "ア": "通信で略語を使っていること自体は、第72条が定める電波の質の基準不適合に当たらない。",
+      "イ": "混信に関する規制は別にあるが、この設問の臨時発射停止は電波の質が基準に適合しない場合の措置である。",
+      "ウ": "電力の指定違反には法令違反としての措置があり得るが、第72条の臨時停止が問う条件は電波の質である。",
+      "エ": "電波が総務省令で定めた質に適合しないと認められる場合、総務大臣は電波の発射を臨時に停止させることができる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "7da5e1b30e2bb6c79b72b4e4adc90466ed86cd3fe0a3624c6257448bf3563cf8",
+      "answerPdfSha256": "e97b4e52b9a6f2542ce5a79a1ca2577965e02b465dd37d062d3670306e08a9bb",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 法規 問4。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2023-02-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610211430/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610211424/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2023-february-houki-q5",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 5,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "法令違反をした無線局への処分"
+    ],
+    "difficulty": 2,
+    "question": "無線局の免許人が電波法又は電波法に基づく命令に違反したときに総務大臣が行うことができる処分はどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "送信空中線の撤去の命令",
+      "イ": "期間を定めて行う周波数の制限",
+      "ウ": "期間を定めて行う電波の型式の制限",
+      "エ": "期間を定めて行う通信の相手方又は通信事項の制限"
+    },
+    "answer": "イ",
+    "explanation": "電波法第76条は、期間を定めて無線局の運用を停止し、または周波数や空中線電力を制限できるとする。",
+    "choiceExplanations": {
+      "ア": "免許人が法令に違反した際のこの条項の処分は運用などの制限であり、空中線の撤去は列挙されていない。",
+      "イ": "電波法第76条は、期間を定めて無線局の運用を停止し、または周波数や空中線電力を制限できるとする。",
+      "ウ": "この場合に期間を定めて制限できる項目として列挙されるのは周波数または空中線電力であり、電波の型式ではない。",
+      "エ": "通信の相手方や通信事項を期間付きで制限する処分は、この場合の制限の対象として挙げられていない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "7da5e1b30e2bb6c79b72b4e4adc90466ed86cd3fe0a3624c6257448bf3563cf8",
+      "answerPdfSha256": "e97b4e52b9a6f2542ce5a79a1ca2577965e02b465dd37d062d3670306e08a9bb",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 法規 問5。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2023-02-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610211430/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610211424/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2023-february-houki-q6",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 6,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "免許状に記載した事項を変更したときの手続"
+    ],
+    "difficulty": 2,
+    "question": "無線局の免許人は、免許状に記載した事項に変更を生じたときは、どうしなければならないか。次のうちから選べ。",
+    "choices": {
+      "ア": "遅滞なく、その旨を総務大臣に報告する。",
+      "イ": "総務大臣に再免許を申請する。",
+      "ウ": "免許状を総務大臣に提出し、訂正を受ける。",
+      "エ": "直ちに、その旨を総務大臣に届け出る。"
+    },
+    "answer": "ウ",
+    "explanation": "記載事項に変更を生じたら免許状を総務大臣に提出し、免許状の訂正を受けることが求められる。",
+    "choiceExplanations": {
+      "ア": "単に変更内容を報告するだけでは、交付済みの免許状に記載された事項が訂正されない。",
+      "イ": "再免許は有効期間の満了に伴う手続である。この設問は有効な免許状に記載された事項の変更を問う。",
+      "ウ": "記載事項に変更を生じたら免許状を総務大臣に提出し、免許状の訂正を受けることが求められる。",
+      "エ": "届出だけでは足りない。電波法は、免許状を提出して訂正を受ける手続を定めている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "7da5e1b30e2bb6c79b72b4e4adc90466ed86cd3fe0a3624c6257448bf3563cf8",
+      "answerPdfSha256": "e97b4e52b9a6f2542ce5a79a1ca2577965e02b465dd37d062d3670306e08a9bb",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 法規 問6。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2023-02-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610211430/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610211424/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2023-february-houki-q7",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 7,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "無線設備の試験・調整"
+    ],
+    "difficulty": 2,
+    "question": "無線局が、無線設備の機器の試験又は調整を行うために運用するときに、なるべく使用しなければならないものはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "空中線電力の低下装置",
+      "イ": "高調波除去装置",
+      "ウ": "擬似空中線回路",
+      "エ": "水晶発振回路"
+    },
+    "answer": "ウ",
+    "explanation": "電波法第57条により、機器を試験・調整するときは、放射を避けられる擬似空中線回路をなるべく使用する。",
+    "choiceExplanations": {
+      "ア": "電力を下げるだけでは電波が外部に放射され続ける。法は試験などではなるべく擬似空中線回路を使用するよう求める。",
+      "イ": "高調波除去装置は不要な周波数成分を抑えるが、試験時に電波を放射しないための装置にはならない。",
+      "ウ": "電波法第57条により、機器を試験・調整するときは、放射を避けられる擬似空中線回路をなるべく使用する。",
+      "エ": "水晶発振回路は周波数を安定に生成する部品である。アンテナの代わりに試験信号を受ける回路ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "7da5e1b30e2bb6c79b72b4e4adc90466ed86cd3fe0a3624c6257448bf3563cf8",
+      "answerPdfSha256": "e97b4e52b9a6f2542ce5a79a1ca2577965e02b465dd37d062d3670306e08a9bb",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 法規 問7。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2023-02-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610211430/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610211424/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2023-february-houki-q8",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 8,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "航空移動業務の無線電話の呼出し"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、航空移動業務の無線電話通信における呼出事項を掲げたものである。無線局運用規則の規定に照らし、［　］ 内に入れるべき字句を下の番号から選べ。\n\n① 相手局の呼出符号又は呼出名称 ３回以下② 自局の呼出符号又は呼出名称 ［　］",
+    "choices": {
+      "ア": "２回",
+      "イ": "３回以下",
+      "ウ": "１回",
+      "エ": "２回以下"
+    },
+    "answer": "イ",
+    "explanation": "航空移動業務では相手局と自局の呼出符号または呼出名称を、ともに3回以下で送るのがこの規定の呼出事項である。",
+    "choiceExplanations": {
+      "ア": "2回に固定されていない。規則は自局の呼出符号または呼出名称を繰り返す回数の上限を示している。",
+      "イ": "航空移動業務では相手局と自局の呼出符号または呼出名称を、ともに3回以下で送るのがこの規定の呼出事項である。",
+      "ウ": "1回での呼出しは上限の範囲内だが、規則が自局について一度だけと指定しているわけではない。",
+      "エ": "自局の呼出符号・名称も3回以下まで認められるため、2回以下という上限は規定と一致しない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "7da5e1b30e2bb6c79b72b4e4adc90466ed86cd3fe0a3624c6257448bf3563cf8",
+      "answerPdfSha256": "e97b4e52b9a6f2542ce5a79a1ca2577965e02b465dd37d062d3670306e08a9bb",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 法規 問8。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2023-02-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610211430/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610211424/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2023-february-houki-q9",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 9,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "呼出局の名称が分からないとき"
+    ],
+    "difficulty": 2,
+    "question": "無線電話通信において、無線局は、自局に対する呼出しを受信した場合に、呼出局の呼出符号又は呼出名称が不確実であるときは、どうしなければならないか。次のうちから選べ。",
+    "choices": {
+      "ア": "応答事項のうち相手局の呼出符号又は呼出名称の代わりに「貴局名は何ですか」を使用して、直ちに応答する。",
+      "イ": "呼出局の呼出符号又は呼出名称が確実に判明するまで応答しない。",
+      "ウ": "応答事項のうち相手局の呼出符号又は呼出名称の代わりに「誰かこちらを呼びましたか」を使用して、直ちに応答する。",
+      "エ": "応答事項のうち相手局の呼出符号又は呼出名称を省略して、直ちに応答する。"
+    },
+    "answer": "ウ",
+    "explanation": "相手局の符号や名称が不確実なら、これに代えて「誰かこちらを呼びましたか」を使い、直ちに応答する。",
+    "choiceExplanations": {
+      "ア": "「貴局名は何ですか」は、この場合の相手局の呼出符号・名称に替えて用いる定型句ではない。",
+      "イ": "呼出しが自局宛てと分かっているときは、判明するまで応答を控えるのではなく規則の定型句を用いる。",
+      "ウ": "相手局の符号や名称が不確実なら、これに代えて「誰かこちらを呼びましたか」を使い、直ちに応答する。",
+      "エ": "単に相手局の呼出符号・名称を省略するのではなく、規則で定める定型句を補って応答する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "7da5e1b30e2bb6c79b72b4e4adc90466ed86cd3fe0a3624c6257448bf3563cf8",
+      "answerPdfSha256": "e97b4e52b9a6f2542ce5a79a1ca2577965e02b465dd37d062d3670306e08a9bb",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 法規 問9。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2023-02-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610211430/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610211424/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2023-february-houki-q10",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 10,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "義務航空機局の運用義務時間"
+    ],
+    "difficulty": 2,
+    "question": "義務航空機局の運用義務時間として無線局運用規則に定められているものはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "航空機の出発準備から離陸までの時間中及び着陸準備から着陸までの時間中常時",
+      "イ": "航空機の航行中及び航行の準備中常時",
+      "ウ": "航空機の航行の準備中常時",
+      "エ": "航空機の航行中常時"
+    },
+    "answer": "エ",
+    "explanation": "義務航空機局の運用義務時間は、規則により航空機の航行中常時と定められている。",
+    "choiceExplanations": {
+      "ア": "離陸・着陸の前後だけでは巡航中などの航行時間が入らない。航行中常時という規定と一致しない。",
+      "イ": "航行中の部分は合うが、航行の準備中までを一律に義務時間に含めた点が誤りである。",
+      "ウ": "航空機が航行の準備をしている時間だけを義務とするものではない。問われているのは航行中の時間である。",
+      "エ": "義務航空機局の運用義務時間は、規則により航空機の航行中常時と定められている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "7da5e1b30e2bb6c79b72b4e4adc90466ed86cd3fe0a3624c6257448bf3563cf8",
+      "answerPdfSha256": "e97b4e52b9a6f2542ce5a79a1ca2577965e02b465dd37d062d3670306e08a9bb",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 法規 問10。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2023-02-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610211430/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610211424/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2023-february-houki-q11",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 11,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "航空緊急周波数を使用できる場合"
+    ],
+    "difficulty": 2,
+    "question": "１２１.５ＭＨｚの周波数の電波を使用することができるのはどの場合か。次のうちから選べ。",
+    "choices": {
+      "ア": "１２１.５ＭＨｚ以外の周波数の電波を使用することができない航空機局と航空局との間に通信を行うとき。",
+      "イ": "気象の照会のために航空局と航空機局との間において通信を行うとき。",
+      "ウ": "時刻の照合のために航空機局相互間において通信を行うとき。",
+      "エ": "電波の規正に関する通信を行うとき。"
+    },
+    "answer": "ア",
+    "explanation": "ほかの周波数を使用できない航空機局と航空局との間の通信は、121.5 MHzを使用できる場合に該当する。",
+    "choiceExplanations": {
+      "ア": "ほかの周波数を使用できない航空機局と航空局との間の通信は、121.5 MHzを使用できる場合に該当する。",
+      "イ": "一般の気象照会のために常用する周波数ではない。航空緊急周波数の利用は規則が掲げる場合に限られる。",
+      "ウ": "通常の時刻照合は別の通信周波数で行う。時刻を合わせることだけを理由に121.5 MHzを使うことはできない。",
+      "エ": "一般の電波の規正に関する通信を行うための周波数として121.5 MHzが割り当てられているわけではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "7da5e1b30e2bb6c79b72b4e4adc90466ed86cd3fe0a3624c6257448bf3563cf8",
+      "answerPdfSha256": "e97b4e52b9a6f2542ce5a79a1ca2577965e02b465dd37d062d3670306e08a9bb",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 法規 問11。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2023-02-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610211430/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610211424/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2023-february-houki-q12",
+    "exam": "koku-toku",
+    "session": "houki",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 12,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "法規",
+    "subject": "法規",
+    "topicTags": [
+      "遭難航空機局が使う電波"
+    ],
+    "difficulty": 2,
+    "question": "遭難航空機局が遭難通信に使用する電波に関する次の記述のうち、誤っているものはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "遭難航空機局は、責任航空局から指示されている電波がある場合にあっては、当該電波を使用する。",
+      "イ": "遭難航空機局は、責任航空局から指示されている電波がない場合には、航空機局と航空局との間の通信に使用するためにあらかじめ定められている電波を使用する。",
+      "ウ": "遭難航空機局は、Ｆ３Ｅ電波１５６.８ＭＨｚを使用することができる。",
+      "エ": "遭難航空機局は、遭難通信を開始した後は、いかなる場合であっても、使用している電波を変更してはならない。"
+    },
+    "answer": "エ",
+    "explanation": "遭難通信の途中でも、必要がある場合は指示や通信条件に応じて電波を変更できる。常に変更禁止とするのは誤りである。",
+    "choiceExplanations": {
+      "ア": "責任航空局の指示がある場合、遭難航空機局はその指示の電波で通信する。受信側と使用電波を合わせられる。",
+      "イ": "指示のない場合は、航空機局と航空局との通信に使うためあらかじめ定められた電波が原則となる。",
+      "ウ": "海上移動業務の遭難等にも用いられる156.8 MHzのF3Eは、規定に掲げられた使用可能な電波の一つである。",
+      "エ": "遭難通信の途中でも、必要がある場合は指示や通信条件に応じて電波を変更できる。常に変更禁止とするのは誤りである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "7da5e1b30e2bb6c79b72b4e4adc90466ed86cd3fe0a3624c6257448bf3563cf8",
+      "answerPdfSha256": "e97b4e52b9a6f2542ce5a79a1ca2577965e02b465dd37d062d3670306e08a9bb",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 法規 問12。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "lawReferenceDate": "2023-02-01",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610211430/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610211424/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-hoki-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2023-february-kogaku-q13",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 13,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "直流・交流とコンデンサ"
+    ],
+    "difficulty": 2,
+    "question": "直流と交流の電流の説明で、誤っているのはどれか。",
+    "choices": {
+      "ア": "直流は、常に流れる電流の方向が変わらない。",
+      "イ": "直流は、コンデンサによって遮断される。",
+      "ウ": "交流は、コンデンサの静電容量が大きくなるほど流れにくくなる。",
+      "エ": "交流は、時間とともに流れる電流の方向が変わる。"
+    },
+    "answer": "ウ",
+    "explanation": "容量リアクタンスは1/(2πfC)である。同じ周波数で容量が大きいほどリアクタンスは小さくなり、交流は流れやすくなる。",
+    "choiceExplanations": {
+      "ア": "定常な直流は時間が経過しても向きが反転しない。大きさが変化する脈流でも向きが一定なら直流成分を持つ。",
+      "イ": "電圧が一定になった後はコンデンサを通して直流電流が流れない。充電中には過渡的な電流が流れる。",
+      "ウ": "容量リアクタンスは1/(2πfC)である。同じ周波数で容量が大きいほどリアクタンスは小さくなり、交流は流れやすくなる。",
+      "エ": "交流では周期的に正負が変わる。典型的な正弦波の交流では電流の向きも半周期ごとに反転する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "c11873c39e8facf4f7932a97ba6bf28785b2d9ee092e4bcade12669c771669f4",
+      "answerPdfSha256": "d51a2df418c93bf2706b43db505092dd9c7f54ba2c7ba84d2d9554e76eca07d3",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 無線工学 問13。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610211505/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610211435/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2023-february-kogaku-q14",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 14,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "NPNトランジスタの図記号"
+    ],
+    "difficulty": 2,
+    "question": "図に示すNPN 形トランジスタの図記号において、電極a の名称は、次のうちどれか。",
+    "choices": {
+      "ア": "コレクタ",
+      "イ": "ベース",
+      "ウ": "ドレイン",
+      "エ": "エミッタ"
+    },
+    "answer": "エ",
+    "explanation": "バイポーラトランジスタで矢印が付くのはエミッタである。NPNでは矢印が外向きで、図のaがこれに当たる。",
+    "choiceExplanations": {
+      "ア": "コレクタは通常矢印のない端子に対応する。図のaは外向きの矢印が付いた側である。",
+      "イ": "ベースは二本の斜めの線が接続する中央の線から引き出された端子であり、矢印のあるaとは異なる。",
+      "ウ": "ドレインは電界効果トランジスタの端子名である。このNPNバイポーラトランジスタの端子名ではない。",
+      "エ": "バイポーラトランジスタで矢印が付くのはエミッタである。NPNでは矢印が外向きで、図のaがこれに当たる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "c11873c39e8facf4f7932a97ba6bf28785b2d9ee092e4bcade12669c771669f4",
+      "answerPdfSha256": "d51a2df418c93bf2706b43db505092dd9c7f54ba2c7ba84d2d9554e76eca07d3",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 無線工学 問14。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/koku-toku/2023-february/q14-official-figure.png"
+    ],
+    "imageAltTexts": [
+      "NPN形トランジスタの図記号"
+    ],
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610211505/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610211435/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2023-february-kogaku-q15",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 15,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "航空機の通信用ブレードアンテナ"
+    ],
+    "difficulty": 2,
+    "question": "外観が図に示すような航空機用通信アンテナの名称は、次のうちどれか。",
+    "choices": {
+      "ア": "スリーブアンテナ",
+      "イ": "ブレードアンテナ",
+      "ウ": "スロットアンテナ",
+      "エ": "ブラウンアンテナ"
+    },
+    "answer": "イ",
+    "explanation": "ブレードアンテナは機体外面に取り付ける薄い翼状・板状のアンテナで、図の外観と給電方法に一致する。",
+    "choiceExplanations": {
+      "ア": "スリーブアンテナは一般に導体を筒状に組み合わせる。図のような機体の外面に立つ板状の外観とは異なる。",
+      "イ": "ブレードアンテナは機体外面に取り付ける薄い翼状・板状のアンテナで、図の外観と給電方法に一致する。",
+      "ウ": "スロットアンテナは金属面に設けた細長い開口を利用する。図のように機体から板が立ち上がる形状ではない。",
+      "エ": "ブラウンアンテナは垂直素子と接地側の放射状の導体からなる方式であり、図の板状アンテナではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "c11873c39e8facf4f7932a97ba6bf28785b2d9ee092e4bcade12669c771669f4",
+      "answerPdfSha256": "d51a2df418c93bf2706b43db505092dd9c7f54ba2c7ba84d2d9554e76eca07d3",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 無線工学 問15。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/koku-toku/2023-february/q15-official-figure.png"
+    ],
+    "imageAltTexts": [
+      "機体上に取り付けた航空機用アンテナの外観"
+    ],
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610211505/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610211435/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2023-february-kogaku-q16",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 16,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "パルスレーダーの距離分解能"
+    ],
+    "difficulty": 2,
+    "question": "レーダーの距離分解能を良くする方法として、正しいのは次のうちどれか。",
+    "choices": {
+      "ア": "アンテナの水平面内指向性を鋭くする。",
+      "イ": "パルス繰返し周波数を低くする。",
+      "ウ": "受信機の感度をよくする。",
+      "エ": "パルス幅を狭くする。"
+    },
+    "answer": "エ",
+    "explanation": "パルス幅が短いと隣り合う距離からの反射が時間的に重なりにくい。距離分解能の目安は光速とパルス幅の積の半分である。",
+    "choiceExplanations": {
+      "ア": "アンテナの水平指向性を鋭くすると、同方向に近い別々の方位を区別しやすくなる。距離方向の分解能を決める操作ではない。",
+      "イ": "繰返し周波数を下げると次のパルスまでの時間は長くなるが、反射波の時間幅は狭くならない。",
+      "ウ": "感度を上げると弱い反射を検出しやすくなるが、近接した距離から戻るパルスを時間的に分ける効果とは異なる。",
+      "エ": "パルス幅が短いと隣り合う距離からの反射が時間的に重なりにくい。距離分解能の目安は光速とパルス幅の積の半分である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "c11873c39e8facf4f7932a97ba6bf28785b2d9ee092e4bcade12669c771669f4",
+      "answerPdfSha256": "d51a2df418c93bf2706b43db505092dd9c7f54ba2c7ba84d2d9554e76eca07d3",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 無線工学 問16。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610211505/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610211435/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2023-february-kogaku-q17",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 17,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "二次電池と直並列接続"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、電池について述べたものである。このうち誤っているものを下の番号から選べ。",
+    "choices": {
+      "ア": "鉛蓄電池及びリチウムイオン蓄電池は、二次電池である。",
+      "イ": "電圧の異なる電池を並列に接続することは避けなければならない。",
+      "ウ": "充放電を繰り返して使用できる電池を二次電池という。",
+      "エ": "電圧が等しく、容量が10〔Ah〕の電池を2 個直列に接続すると、合成容量は20〔Ah〕になる。"
+    },
+    "answer": "エ",
+    "explanation": "直列では同じ電流が2個に流れ、合計電圧が2倍になる。つないだ組全体のAh容量は1個分の10 Ahである。",
+    "choiceExplanations": {
+      "ア": "鉛蓄電池とリチウムイオン蓄電池は、いずれも外部から充電して繰り返し利用できる二次電池である。",
+      "イ": "電圧の異なる電池を並列に接続すると電池間に大きな電流が流れ得るため、避ける必要がある。",
+      "ウ": "放電後に充電して繰り返し使えるのが二次電池である。使い切りの一次電池とは充電可能性が異なる。",
+      "エ": "直列では同じ電流が2個に流れ、合計電圧が2倍になる。つないだ組全体のAh容量は1個分の10 Ahである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "c11873c39e8facf4f7932a97ba6bf28785b2d9ee092e4bcade12669c771669f4",
+      "answerPdfSha256": "d51a2df418c93bf2706b43db505092dd9c7f54ba2c7ba84d2d9554e76eca07d3",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 無線工学 問17。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610211505/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610211435/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2023-february-kogaku-q18",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 18,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "直流電流計のつなぎ方"
+    ],
+    "difficulty": 2,
+    "question": "抵抗Rに流れる直流電流を測定するときの電流計Aのつなぎ方で、正しいのは次のうちどれか。",
+    "choices": {
+      "ア": "図の1",
+      "イ": "図の2",
+      "ウ": "図の3",
+      "エ": "図の4"
+    },
+    "answer": "イ",
+    "explanation": "図2は電流計と抵抗が直列であり、電源の正極側から電流計の正端子へ電流が入る。接続方法と極性がともに正しい。",
+    "choiceExplanations": {
+      "ア": "図1は電流計を抵抗と並列にしている。内部抵抗の小さい電流計では分流が大きく、抵抗の電流を正しく測れない。",
+      "イ": "図2は電流計と抵抗が直列であり、電源の正極側から電流計の正端子へ電流が入る。接続方法と極性がともに正しい。",
+      "ウ": "図3は抵抗との並列接続である。さらに電流計の極性も電源の極性に対して逆になっている。",
+      "エ": "図4は電流計を回路に直列にする点は正しいが、電流が負端子から入る向きで、電流計の極性が逆である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      1
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "c11873c39e8facf4f7932a97ba6bf28785b2d9ee092e4bcade12669c771669f4",
+      "answerPdfSha256": "d51a2df418c93bf2706b43db505092dd9c7f54ba2c7ba84d2d9554e76eca07d3",
+      "questionPage": 1
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 無線工学 問18。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/koku-toku/2023-february/q18-official-figure.png"
+    ],
+    "imageAltTexts": [
+      "電流計と抵抗の接続方法を示した四つの回路"
+    ],
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610211505/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610211435/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2023-february-kogaku-q19",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 19,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "DSB送信機の振幅変調"
+    ],
+    "difficulty": 2,
+    "question": "DSB(A3E)送信機では、音声信号によって搬送波をどのように変化させるか。",
+    "choices": {
+      "ア": "搬送波の発射を断続させる。",
+      "イ": "振幅を変化させる。",
+      "ウ": "周波数を変化させる。",
+      "エ": "振幅と周波数をともに変化させる。"
+    },
+    "answer": "イ",
+    "explanation": "A3Eの両側波帯振幅変調では、音声信号の瞬時値に応じて搬送波の振幅を変化させる。",
+    "choiceExplanations": {
+      "ア": "搬送波の発射を音声に合わせて断続する方式ではない。音声波形の変化は連続的な振幅の変化として伝える。",
+      "イ": "A3Eの両側波帯振幅変調では、音声信号の瞬時値に応じて搬送波の振幅を変化させる。",
+      "ウ": "搬送波の周波数を音声に応じて変えるのは周波数変調である。A3Eは振幅変調を用いる。",
+      "エ": "A3Eで情報を載せるために変えるのは振幅である。周波数も同時に変える変調方式ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "c11873c39e8facf4f7932a97ba6bf28785b2d9ee092e4bcade12669c771669f4",
+      "answerPdfSha256": "d51a2df418c93bf2706b43db505092dd9c7f54ba2c7ba84d2d9554e76eca07d3",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 無線工学 問19。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610211505/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610211435/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2023-february-kogaku-q20",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 20,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "機上気象レーダーの調整パネル"
+    ],
+    "difficulty": 2,
+    "question": "図に示す機上気象レーダーの調整器パネル面の操作に伴う機能で誤っているのはどれか。",
+    "choices": {
+      "ア": "STBY：準備が完了した状態であり、電波は発射されている。",
+      "イ": "RANGE：測定距離範囲を切り替えるために用いられ、目的に応じて適切なRANGE が選択される。",
+      "ウ": "ANT TILT：レーダーアンテナの垂直方向の角度を調整するために用いられ、上方に10度下方に15度の範囲で任意にセットできる。",
+      "エ": "GAIN：目標物の最適な影像が得られるように受信機の利得を調整する。"
+    },
+    "answer": "ア",
+    "explanation": "STBYは送信を開始できる準備状態で、この位置で電波を発射するという説明が誤りである。",
+    "choiceExplanations": {
+      "ア": "STBYは送信を開始できる準備状態で、この位置で電波を発射するという説明が誤りである。",
+      "イ": "RANGEで表示する距離範囲を切り替え、近い気象現象と遠い気象現象を目的に合わせて確認する。",
+      "ウ": "ANT TILTはアンテナの上下の向きを調節する。このパネルでは上10度から下15度の範囲が表示されている。",
+      "エ": "GAINは受信機の利得を調整し、反射の表示状態を変える。送信機の出力を変えるための調整ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "c11873c39e8facf4f7932a97ba6bf28785b2d9ee092e4bcade12669c771669f4",
+      "answerPdfSha256": "d51a2df418c93bf2706b43db505092dd9c7f54ba2c7ba84d2d9554e76eca07d3",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 無線工学 問20。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/koku-toku/2023-february/q20-official-figure.png"
+    ],
+    "imageAltTexts": [
+      "機上気象レーダーの調整パネル"
+    ],
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610211505/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610211435/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2023-february-kogaku-q21",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 21,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "SSRモードSの選択質問"
+    ],
+    "difficulty": 2,
+    "question": "次の記述の［　］内に入れるべき字句の組合せで、正しいのはどれか。\n\nSSR モードS システムは、現在使用されているATCRBS と［A］、ICAO の国際標準方式の新しいシス\n\nテムである。この方式は、目的とする航空機にのみ［B］を指\n\n定して質問ができるため、交通量の多い空域でも目的機を見つけやすく、管制側と航空機間とでメッセージやデータ交換ができ、音声の通信量が少なくてすむ等の特徴がある。",
+    "choices": {
+      "ア": "互換性はなく／時間",
+      "イ": "互換性はなく／アドレス",
+      "ウ": "互換性があり／時間",
+      "エ": "互換性があり／アドレス"
+    },
+    "answer": "エ",
+    "explanation": "モードSはATCRBSとの互換性を備え、固有の航空機アドレスを指定することで特定機だけに質問できる。",
+    "choiceExplanations": {
+      "ア": "モードSとATCRBSには互換性がある。選択的な質問に使うのも時間ではなく航空機ごとのアドレスである。",
+      "イ": "機体ごとのアドレスを指定する点は正しいが、ATCRBSと互換性がないとする点が誤りである。",
+      "ウ": "ATCRBSとの互換性を備える点は正しい。個々の機体を選ぶために指定するのは時間ではなくアドレスである。",
+      "エ": "モードSはATCRBSとの互換性を備え、固有の航空機アドレスを指定することで特定機だけに質問できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "c11873c39e8facf4f7932a97ba6bf28785b2d9ee092e4bcade12669c771669f4",
+      "answerPdfSha256": "d51a2df418c93bf2706b43db505092dd9c7f54ba2c7ba84d2d9554e76eca07d3",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 無線工学 問21。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610211505/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610211435/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2023-february-kogaku-q22",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 22,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "モードCの応答情報"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、ATC トランスポンダの動作について述べたものである。［　］内に入れるべき字句の組合せで、正しいのはどれか。\n\nSSR からの［A］の質問信号に対し自動的にB の情報パルスを応答信号として送信するこ\n\nとができる。",
+    "choices": {
+      "ア": "MTI／高度",
+      "イ": "MTI／速度",
+      "ウ": "モードC／高度",
+      "エ": "モードC／速度"
+    },
+    "answer": "ウ",
+    "explanation": "SSRからモードCの質問を受けると、トランスポンダは気圧高度に対応する符号を含む応答を返す。",
+    "choiceExplanations": {
+      "ア": "高度の情報は正しいが、SSRが高度を求める質問の種類はモードCである。MTIは移動目標表示の技術名である。",
+      "イ": "MTIは固定物からの反射を抑えて移動目標を表示するものであり、速度を答えるトランスポンダ質問ではない。",
+      "ウ": "SSRからモードCの質問を受けると、トランスポンダは気圧高度に対応する符号を含む応答を返す。",
+      "エ": "質問モードはモードCで合うが、応答情報は速度ではなく高度に関する符号である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "c11873c39e8facf4f7932a97ba6bf28785b2d9ee092e4bcade12669c771669f4",
+      "answerPdfSha256": "d51a2df418c93bf2706b43db505092dd9c7f54ba2c7ba84d2d9554e76eca07d3",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 無線工学 問22。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610211505/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610211435/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2023-february-kogaku-q23",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 23,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "受信機の感度・忠実度・選択度"
+    ],
+    "difficulty": 2,
+    "question": "受信機の性能についての説明で、誤っているのは次のうちどれか。",
+    "choices": {
+      "ア": "忠実度は、受信する信号が受信機の出力側でどれだけ忠実に再現できるかの能力を表す。",
+      "イ": "感度は、どれだけ強い電波まで受信できるかの能力を表す。",
+      "ウ": "選択度は、多数の異なる周波数の電波の中から混信を受けないで、目的とする電波を選びだすことができるかの能力を表す。",
+      "エ": "安定度は、周波数及び強さが一定の電波を受信したとき、再調整をしないで、どれだけ長時間にわたって、一定の出力が得られるかの能力を表す。"
+    },
+    "answer": "イ",
+    "explanation": "感度は必要な品質で受信できる信号の最小の強さに関係する。どれだけ強い電波を受信できるかではない。",
+    "choiceExplanations": {
+      "ア": "忠実度は受信した音声などを出力側で原信号に近い形で再現できる度合いを表し、記述は正しい。",
+      "イ": "感度は必要な品質で受信できる信号の最小の強さに関係する。どれだけ強い電波を受信できるかではない。",
+      "ウ": "選択度は周波数の異なる信号の中から、目的の信号を通し妨害信号を抑える能力を表す。",
+      "エ": "入力の強さと周波数が一定であれば再調整せず一定の出力を保てる能力を安定度といい、記述は正しい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "c11873c39e8facf4f7932a97ba6bf28785b2d9ee092e4bcade12669c771669f4",
+      "answerPdfSha256": "d51a2df418c93bf2706b43db505092dd9c7f54ba2c7ba84d2d9554e76eca07d3",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 無線工学 問23。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610211505/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610211435/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+  },
+  {
+    "id": "koku-toku-2023-february-kogaku-q24",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2023,
+    "season": "february",
+    "qNumber": 24,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "DSB送信機の構成"
+    ],
+    "difficulty": 2,
+    "question": "図は、DSB(A3E)送信機の構成例を示したものである。［　］内に入れるべき名称の組合せで、正しいのは次のうちどれか。",
+    "choices": {
+      "ア": "変調器／ミクサ",
+      "イ": "変調器／電力増幅器",
+      "ウ": "IDC／ミクサ",
+      "エ": "IDC／電力増幅器"
+    },
+    "answer": "イ",
+    "explanation": "音声と搬送波から振幅変調波を作るAが変調器であり、アンテナに送る電力を高めるBが電力増幅器である。",
+    "choiceExplanations": {
+      "ア": "Aは音声と搬送波を組み合わせる変調器だが、Bは既に変調された信号を出力用に増幅する段である。",
+      "イ": "音声と搬送波から振幅変調波を作るAが変調器であり、アンテナに送る電力を高めるBが電力増幅器である。",
+      "ウ": "IDCは過変調を抑えるための回路であり、搬送波に音声の変化を載せるAの機能ではない。",
+      "エ": "Bは電力増幅器で合っているが、Aは音声と搬送波を使って変調波を作る変調器である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourcePages": [
+      2
+    ],
+    "officialReferenceUrls": [
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+      "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
+    ],
+    "sourceEvidence": {
+      "questionPdfSha256": "c11873c39e8facf4f7932a97ba6bf28785b2d9ee092e4bcade12669c771669f4",
+      "answerPdfSha256": "d51a2df418c93bf2706b43db505092dd9c7f54ba2c7ba84d2d9554e76eca07d3",
+      "questionPage": 2
+    },
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和5年2月期 無線工学 問24。図の切出しと解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-20",
+    "imageUrls": [
+      "/questions/koku-toku/2023-february/q24-official-figure.png"
+    ],
+    "imageAltTexts": [
+      "DSB送信機の構成図"
+    ],
+    "sourceArchiveUrl": "https://web.archive.org/web/20230610211505/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerArchiveUrl": "https://web.archive.org/web/20230610211435/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf"
   }
 ]

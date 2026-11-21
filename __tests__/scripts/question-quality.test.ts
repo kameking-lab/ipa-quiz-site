@@ -3,6 +3,7 @@ import { dirname, join } from "node:path";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import type { Question } from "@/lib/questions/types";
 import { applyQualityExceptions, checkAnswerNotations, checkQuestionQuality, isPlaceholder, publicImageExists } from "../../scripts/lib/question-quality";
+import { indexArchiveEvidence, type ArchivePaperEvidence } from "../../scripts/lib/question-archive-evidence";
 import { checkQuestionSources, questionSourceRegistrations } from "../../scripts/lib/question-quality-sources";
 
 const question: Question = {
@@ -102,6 +103,80 @@ describe("公開問題の品質ゲート", () => {
     expect(applyQualityExceptions([first, changedText, newId, differentRule], {
       placeholder: { reason: "既存の表示を保管する", entries: { [first.id]: [first.fingerprint] } },
     })).toEqual({ failures: [changedText, newId, differentRule], excepted: 1 });
+  });
+});
+
+
+describe("公式PDFの保存版", () => {
+  const original = "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/paper.pdf";
+  const answer = original.replace(".pdf", "-kaito.pdf");
+  const capture = (url: string, time = "20250102030405") => `https://web.archive.org/web/${time}/${url}`;
+  const archived = {
+    ...question, id: "amateur1-2025", exam: "amateur1" as const,
+    sourcePdfUrl: `${original}#page=2`, sourceArchiveUrl: `${capture(original)}#page=2`,
+    sourceAnswerUrl: answer, sourceAnswerArchiveUrl: capture(answer),
+    sourceAttribution: "日本無線協会",
+  };
+  const sha256 = "f".repeat(64);
+  const paper: ArchivePaperEvidence = {
+    exam: "amateur1", year: 2025, season: "spring", session: "am", edition: "2025年春・試験記号X",
+    question: { originalUrl: original, archiveUrl: capture(original), sha256 },
+    answer: { originalUrl: answer, archiveUrl: capture(answer), sha256 },
+    questions: [{ id: archived.id, number: 1, label: "A-1", answer: "ア" }],
+  };
+  const check = (q: Question = archived, papers = [paper]) =>
+    checkQuestionQuality(q, () => false, indexArchiveEvidence(papers)).map(issue => issue.rule);
+
+  it("日時固定の問題・正答と、出典台帳の試験回・問題番号・正答が一致すれば通す", () => {
+    expect(check()).toEqual([]);
+  });
+
+  it("台帳がない問題・回違い・正答違い・ハッシュ欠損を拒否する", () => {
+    expect(check(archived, [])).toEqual(["rolling-source"]);
+    expect(check({ ...archived, year: 2024 })).toEqual(["rolling-source"]);
+    expect(check({ ...archived, answer: "イ" })).toEqual(["rolling-source"]);
+    expect(check({ ...archived, qNumber: 2 })).toEqual(["rolling-source"]);
+    expect(check(archived, [{ ...paper, answer: { ...paper.answer, sha256: "" } }])).toEqual(["rolling-source"]);
+  });
+
+  it.each([
+    ["https://nichimu.or.jp.example.test/paper.pdf", "20250102030405"],
+    ["https://www.nichimu.or.jp@other.example/paper.pdf", "20250102030405"],
+    ["https://www.jafp.or.jp/paper.pdf", "20250102030405"],
+    [original, "20250102"],
+    [original, "20250230030405"],
+    [original, "20250102030405id_"],
+  ])("台帳にも同じ値がある非公式または日時不正の保存版を拒否する (%s %s)", (url, time) => {
+    const q = { ...archived, sourcePdfUrl: url, sourceArchiveUrl: capture(url, time) };
+    const p = { ...paper, question: { originalUrl: url, archiveUrl: capture(url, time), sha256 } };
+    expect(check(q, [p])).toEqual([url === original ? "rolling-source" : "archived-source"]);
+  });
+
+  it("出典台帳の登録済み問題から保存版URLが欠落した場合を拒否する", () => {
+    const url = "https://www.nichimu.or.jp/papers/2025-01.pdf";
+    const q = { ...archived, sourcePdfUrl: url, sourceArchiveUrl: undefined, sourceAnswerArchiveUrl: undefined };
+    expect(check(q, [{ ...paper, question: { originalUrl: url, archiveUrl: capture(url), sha256 } }]))
+      .toEqual(["archived-source"]);
+  });
+
+  it("正答の保存版と元URLが異なる場合や、差し替え式の正答に保存版がない場合を拒否する", () => {
+    const url = capture(original);
+    expect(check({ ...archived, sourceAnswerArchiveUrl: url }, [{ ...paper, answer: { ...paper.answer, archiveUrl: url } }]))
+      .toEqual(["rolling-source"]);
+    expect(check({ ...archived, sourceAnswerArchiveUrl: undefined }, [{ ...paper, answer: { originalUrl: answer, sha256 } }]))
+      .toEqual(["rolling-source"]);
+  });
+
+  it("同じ公式団体の回別固定の現行正答PDFを通す", () => {
+    const url = "https://www.nichimu.or.jp/papers/2025-01-answer.pdf";
+    expect(check({ ...archived, sourceAnswerUrl: url, sourceAnswerArchiveUrl: undefined }, [
+      { ...paper, answer: { originalUrl: url, sha256 } },
+    ])).toEqual([]);
+  });
+
+  it("公式の保存版があっても仮の本文と定型句だけの解説を拒否する", () => {
+    expect(check({ ...archived, question: "原本参照", explanation: "公式正答と照合。" }))
+      .toEqual(["placeholder", "choice-template"]);
   });
 });
 

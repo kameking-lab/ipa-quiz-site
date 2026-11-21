@@ -213,6 +213,10 @@ const CONFIGURED_SESSION_LABEL_EXAMS: readonly ExamCode[] = [
   "kokka-sogo-kyoyo",
   "zaimu-senmonkan",
   "chori-ehime",
+
+  "general1",
+  "general2",
+  "chori-nara",
 ];
 
 

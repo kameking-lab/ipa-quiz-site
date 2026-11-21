@@ -3929,6 +3929,15 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "公式問題・正答と全選択肢の独自解説を収録。法令・制度は出題時点。",
     remainingWork: [],
   },
+
+  {
+    slug: "chori-nara", examCode: "chori-nara", shortName: "調理師試験（奈良県）", fullName: "調理師試験（奈良県）",
+    domain: "personal-services", administrator: "奈良県",
+    officialQuestionsUrl: "https://www.pref.nara.lg.jp/n086/4687.html", officialReuseTermsUrl: "https://www.pref.nara.lg.jp/n086/4687.html",
+    status: "live",
+    reuseSummary: "公式問題・正答と全選択肢の独自解説を収録。法令・制度は出題時点。",
+    remainingWork: [],
+  },
 ] as const;
 
 export function getQualificationByExamCode(exam: ExamCode): QualificationCatalogEntry | undefined {

@@ -68,7 +68,8 @@ export type ExamCode = "eiken2" | "restaurant-2" | "kogai-17" | "dekyo-chief-3" 
   | "keimukan"
   | "kokka-sogo-kyoyo"
   | "zaimu-senmonkan"
-  | "chori-ehime";
+  | "chori-ehime"
+  | "chori-nara";
 
 
 export type IpaExamCode = "ip" | "sg" | "fe" | "ap" | "st" | "sa" | "pm" | "nw" | "db" | "es" | "sc" | "sm" | "au";
@@ -308,7 +309,11 @@ export interface Question {
   audio?: {src: string; url: string; label: string};
   questionAudioUrl?: string;
   sourcePdfUrl: string;
+  /** Fixed capture of the official question PDF. */
+  sourceArchiveUrl?: string;
   sourceAnswerUrl?: string;
+  /** Fixed capture of the official answer PDF when the answer is archived. */
+  sourceAnswerArchiveUrl?: string;
   sourceAnswerKind?: "example" | "intent";
   sourceAttribution?: string;
   officialReferenceUrls?: string[];
