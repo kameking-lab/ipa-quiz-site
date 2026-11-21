@@ -6,6 +6,7 @@ import { hasUnrenderableContent } from "./content-quality";
 import type { Question, QuizFilter } from "./types";
 import { canonicalExamCode } from "./exam-aliases";
 import type { HistoryStore } from "@/lib/storage/history";
+import { weakQuestionStatus } from "@/lib/study-plan/pace";
 import { usesNumberedChoices } from "./display";
 
 
@@ -22,6 +23,20 @@ export function isPlaceholderExplanation(q: Question): boolean {
  */
 export function isPracticeReadyQuestion(q: Question): boolean {
   return !q.officialScoring && q.publicAllowed !== false && !isReferenceOnlyQuestionId(q.id) && !nativeBQuestionIssue(q) && !numericQuestionIssue(q) && !orderingQuestionIssue(q) && !hasUnrenderableContent(q) && !q.needsReview && !isPlaceholderExplanation(q);
+}
+
+export function isPlanScorableQuestion(q: Question): boolean {
+  if (!isPracticeReadyQuestion(q)) return false;
+  if (q.type === "native-b") return !!q.nativeB;
+  if (q.type === "ordering" || q.type === "numeric") return true;
+  return q.type === "multiple-choice" && !!q.choices && Object.keys(q.choices).length > 0 &&
+    (Array.isArray(q.answer) ? q.answer.length > 0 : !!q.answer);
+}
+
+export function reviewIdFilter(history: HistoryStore, wrongOnly = false) {
+  const wrong = new Set(history.getWrongIds());
+  const marked = new Set(wrongOnly ? [] : history.getStarredIds());
+  return (id: string) => weakQuestionStatus(wrong.has(id), marked.has(id)).weak;
 }
 
 export function filterQuestions(
@@ -54,9 +69,8 @@ export function filterQuestions(
     pool = pool.filter((q) => q.isCalculation === true);
   }
   if (filter.mode === "review" && history) {
-    const wrongIds = new Set(history.getWrongIds());
-    const starredIds = new Set(history.getStarredIds());
-    pool = pool.filter((q) => wrongIds.has(q.id) || starredIds.has(q.id));
+    const included = reviewIdFilter(history);
+    pool = pool.filter(q => isPlanScorableQuestion(q) && included(q.id));
   }
   if (filter.mode === "unanswered" && history) {
     const answered = new Set(history.getAnsweredIds());

@@ -35,7 +35,7 @@ export function MonthlyMascot() {
   }, []);
 
   return (
-    <div className="size-24 shrink-0 min-[360px]:size-28 sm:size-32" aria-hidden="true">
+    <div className="p3-billing-mascot w-full self-end" aria-hidden="true">
       {mascot && (
         <Image
           src={`/images/billing/${mascot}-160.webp`}

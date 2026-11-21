@@ -62,6 +62,7 @@ export function searchQualifications<T extends SearchableQualification>(
   const prefixes: T[] = [];
   const parts: T[] = [];
   const exact = new Set<T>();
+  const matchingCandidates = new Map<T, Set<SearchableQualification>>();
   const isShortAbbreviation = /^[a-z]{1,2}$/.test(term);
 
   for (const [item, candidate] of items.flatMap(item => [item, ...(item.children ?? [])].map(candidate => [item, candidate] as const))) {
@@ -80,17 +81,24 @@ export function searchQualifications<T extends SearchableQualification>(
 
     // Keep existing hits in their original order. A short abbreviation such as FP
     // has to match the whole alias to rank above existing substring hits like CFP.
+    let matches: T[] | undefined;
     if ((!isShortAbbreviation || !isExact) && legacyTerm && legacyText(display, surface).includes(legacyTerm)) {
-      legacy.push(item);
+      matches = legacy;
     } else if (exactName) {
-      exactNames.push(item);
+      matches = exactNames;
     } else if (exactAlias) {
-      exactAliases.push(item);
+      matches = exactAliases;
     } else if (term && !isShortAbbreviation) {
       const terms = [name, abbr, entry?.name ?? "", ...(entry?.terms ?? []), ...extraTerms];
-      if (terms.some((value) => value.startsWith(term))) prefixes.push(item);
+      if (terms.some((value) => value.startsWith(term))) matches = prefixes;
       else if (terms.some((value) => value.includes(term)) ||
-        (extraTerms.length > 0 && words.length > 1 && words.every(word => terms.some(value => value.includes(word))))) parts.push(item);
+        (extraTerms.length > 0 && words.length > 1 && words.every(word => terms.some(value => value.includes(word))))) matches = parts;
+    }
+    if (matches) {
+      matches.push(item);
+      const candidates = matchingCandidates.get(item) ?? new Set();
+      candidates.add(candidate);
+      matchingCandidates.set(item, candidates);
     }
   }
 
@@ -98,8 +106,11 @@ export function searchQualifications<T extends SearchableQualification>(
     ? [...exactNames, ...exactAliases, ...legacy]
     : [...legacy, ...exactNames, ...exactAliases, ...prefixes, ...parts];
   const uniqueMatches = [...new Set(matches)];
-  if (surface !== "home") return uniqueMatches;
-
   // Keep the home preview compact, but show every exact candidate for a shared alias.
-  return uniqueMatches.filter((item, index) => index < 6 || exact.has(item));
+  return uniqueMatches.filter((item, index) => surface !== "home" || index < 6 || exact.has(item)).map(item => {
+    const candidates = matchingCandidates.get(item);
+    // A query that identifies just one region or section can open its existing route directly.
+    const child = candidates?.size === 1 && !candidates.has(item) ? [...candidates][0] : undefined;
+    return child ? { ...item, ...child, children: undefined } : item;
+  });
 }

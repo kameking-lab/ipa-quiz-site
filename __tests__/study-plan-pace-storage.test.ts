@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { LS_KEYS } from "@/lib/storage/keys";
-import { createPacePlan, mastery } from "@/lib/study-plan/pace";
+import { createPacePlan, latestAnswers } from "@/lib/study-plan/pace";
 import { dailyLearningPoints } from "@/lib/study-plan/activity";
 import { deletePacePlan, getLearningActions, getPaceAttempts, getPaceSyncEntries, listPacePlans, mergePaceSyncEntries, recordLearningAction, savePacePlan } from "@/lib/study-plan/pace-storage";
 
@@ -17,10 +17,10 @@ describe("guest persistence and JSON StudyPlan sync", () => {
       at: Date.parse("2026-11-17T12:00:00+09:00"), correct: true };
     recordLearningAction({ ...answer, id: "first" });
     recordLearningAction({ ...answer, id: "after-reload", at: answer.at + 60000 });
-    expect(mastery(["ip-q1", "ip-q2"], getPaceAttempts()).percent).toBe(50);
+    expect(latestAnswers(getPaceAttempts(), Infinity).get("ip-q1")?.correct).toBe(true);
     expect(dailyLearningPoints(getLearningActions())[0]).toMatchObject({ minutes: 3, answers: 1 });
     recordLearningAction({ ...answer, id: "failed-confirmation", correct: false, at: answer.at + 120000 });
-    expect(mastery(["ip-q1", "ip-q2"], getPaceAttempts()).percent).toBe(0);
+    expect(latestAnswers(getPaceAttempts(), Infinity).get("ip-q1")?.correct).toBe(false);
     expect(dailyLearningPoints(getLearningActions())[0]).toMatchObject({ minutes: 3, answers: 1 });
     expect(getLearningActions()).toHaveLength(3);
   });
@@ -44,6 +44,18 @@ describe("guest persistence and JSON StudyPlan sync", () => {
       { id: "bad", payload: { ...newer, examDate: "2026-02-30" }, updatedAt: Date.now() },
       { id: "wrong", payload: newer, updatedAt: Date.now() }]);
     expect(listPacePlans()).toEqual([newer]);
+  });
+  it("keeps the chosen weekdays on a later old-device update", () => {
+    const legacy = plan();
+    const raw = JSON.stringify([legacy]);
+    localStorage.setItem(LS_KEYS.pacePlans, raw);
+    expect(listPacePlans()[0].studyWeekdays).toBeUndefined();
+    expect(localStorage.getItem(LS_KEYS.pacePlans)).toBe(raw);
+    expect(savePacePlan({ ...legacy, studyWeekdays: [1, 3, 5] })).toBe(true);
+    for (const invalid of [[], [1, 1], [7], [1.5]]) expect(savePacePlan({ ...legacy, studyWeekdays: invalid })).toBe(false);
+    const updatedAt = "2026-11-18T00:00:00Z";
+    mergePaceSyncEntries([{ id: legacy.id, updatedAt: Date.parse(updatedAt), payload: { ...legacy, updatedAt, examDate: "2026-12-17" } }]);
+    expect(listPacePlans()).toMatchObject([{ id: legacy.id, updatedAt, examDate: "2026-12-17", studyWeekdays: [1, 3, 5] }]);
   });
   it("unions actions from multiple devices with no duplicate minutes", () => {
     const action = { id: "a", questionId: "ap-1", exam: "ap", at: 1794870000000, kind: "answer" as const, activeMs: 5000, correct: true };

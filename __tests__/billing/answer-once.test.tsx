@@ -3,6 +3,8 @@ import { act, cleanup, fireEvent, render, screen, waitFor } from "@testing-libra
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { QuizClient } from "@/app/quiz/QuizClient";
 import { TodayQuiz } from "@/app/quiz/today/TodayQuiz";
+// Transform the real lazy paper module during test discovery, outside DOM interaction timeouts.
+import "@/app/quiz/today/TodayLibrary";
 import { QuestionAnswerCard } from "@/components/quiz/QuestionAnswerCard";
 import { QuestionPracticeGate } from "@/components/quiz/QuestionPracticeGate";
 import { StreamQuizPlayer } from "@/components/quiz/stream/StreamQuizPlayer";
@@ -127,7 +129,7 @@ describe("one graded answer per question visit", () => {
     savePacePlan(createPacePlan({ id: "answer-once", exam: "ip", sessionId: null, examDate: "2026-11-20", startDate: "2026-11-01" }, [single], "2026-11-01T00:00:00+09:00"));
     const grant = mockPractice(single);
     render(<StrictMode><TodayQuiz planId="answer-once" billingGateEnabled /></StrictMode>);
-    expect(await screen.findByRole("heading", { name: "今日の問題 · 1問" })).toBeInTheDocument();
+    expect(await screen.findByRole("heading", { name: "計画の問題 · 1問" })).toBeInTheDocument();
     const [first, second] = await screen.findAllByRole("radio");
     answerBeforeRender(first, second, "2");
     expectHistory(single, "ア");
@@ -145,6 +147,27 @@ describe("one graded answer per question visit", () => {
     expect(grant).not.toHaveBeenCalled();
   });
 
+  it("continues a fixed batch at the first ungraded question and restores its final score", async () => {
+    vi.useFakeTimers({ toFake: ["Date"] });
+    vi.setSystemTime(new Date("2026-11-17T12:00:00+09:00"));
+    const next = { ...single, id: "answer-once-next", qNumber: 2 };
+    const catalog = [single, next];
+    savePacePlan(createPacePlan({ id: "resume", exam: "ip", sessionId: null, examDate: "2026-11-18", startDate: "2026-11-17" }, catalog, new Date().toISOString()));
+    window.history.replaceState({}, "", "/quiz/today?plan=resume");
+    const grants = mockPractice(...catalog);
+    const open = () => render(<TodayQuiz planId="resume" billingGateEnabled />);
+    const first = open();
+    fireEvent.click((await screen.findAllByRole("radio"))[0]);
+    first.unmount();
+    const second = open();
+    fireEvent.click((await screen.findAllByRole("radio"))[1]);
+    second.unmount();
+    open();
+    expect(await screen.findByRole("heading", { name: "2問中1問正解" })).toBeVisible();
+    expect(grants.mock.calls).toEqual([[single.id], [next.id]]);
+    expect(createHistoryStore().getAllEntries().map(entry => entry.id)).toEqual([single.id, next.id]);
+  });
+
   it("saves the first grade, one reward and one paper grant in today's library practice", async () => {
     vi.useFakeTimers({ toFake: ["Date"] });
     vi.setSystemTime(new Date("2026-11-17T12:00:00+09:00"));
@@ -159,7 +182,7 @@ describe("one graded answer per question visit", () => {
     const grant = mockPractice(paperQuestion);
     const reward = vi.spyOn(studyReward, "recordStudyReward");
     render(<StrictMode><TodayQuiz planId="library-once" billingGateEnabled /></StrictMode>);
-    await screen.findByText(paperQuestion.text);
+    await screen.findByText(paperQuestion.text, {}, { timeout: 5000 });
     const [first, second] = screen.getAllByRole("radio");
     answerBeforeRender(first, second, "2");
     expect(first).toBeChecked();

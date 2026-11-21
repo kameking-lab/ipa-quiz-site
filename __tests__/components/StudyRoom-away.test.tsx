@@ -1,35 +1,23 @@
 import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, expect, it, vi } from "vitest";
 import { StudyRoom } from "@/components/home/StudyRoom";
-import { STUDY_ROOM_VISIBLE_LIMIT } from "@/lib/home/study-room";
+import { CAFE_POSE_FILES } from "@/lib/home/study-room-cafe-mascots";
 import { measuredPresence } from "@/lib/study-presence-contract";
 
-vi.mock("@/lib/home/study-room-mascots.generated.json", async importOriginal => ({ default: {
-  ...(await importOriginal<{ default: object }>()).default,
-  away: { exams: { ip: { src: "/away.webp", label: "ボール遊び" } }, fields: {}, examFields: {} }, vacant: "/vacant.webp",
-} }));
-afterEach(() => { cleanup(); sessionStorage.clear(); });
+afterEach(() => { cleanup(); vi.useRealTimers(); });
 
-it.each([1, 5, 12, 24, 48, 120, 130])("seats most of %i learners at desks with tools, counting floor dogs exactly once", count => {
-  sessionStorage.setItem("study-room-mascot-visit:v1", "2");
-  const snapshot = measuredPresence({ count, exams: [{ exam: "ip", count }] }, Date.now());
-  const { container } = render(<StudyRoom snapshot={snapshot} suggestions={[]} />);
-  const visible = Math.min(count, STUDY_ROOM_VISIBLE_LIMIT);
-  expect(container.querySelectorAll(".study-mascot")).toHaveLength(visible);
-  const buttons = [...container.querySelectorAll('[data-mascot-state]')];
-  const floor = buttons.filter(button => button.getAttribute('data-mascot-state') === 'away');
-  const study = buttons.filter(button => button.getAttribute('data-mascot-state') === 'study');
-  expect(study.length / visible).toBeGreaterThanOrEqual(.78);
-  expect(floor.length).toBeLessThanOrEqual(Math.floor(visible * .1));
-  for (const button of buttons) {
-    expect(button.querySelectorAll('.study-mascot')).toHaveLength(1);
-    expect(button.querySelectorAll('[data-furniture-art]')).toHaveLength(1);
-    expect(button.querySelectorAll('img')).toHaveLength(3);
-    expect(button.querySelectorAll('[data-layer="desktop"], [data-layer="forepaws"]')).toHaveLength(0);
-    expect(button.querySelectorAll('[data-layer="furniture-back"], [data-layer="character"], [data-layer="furniture-front"]')).toHaveLength(3);
-    expect(button.querySelector('img')).toHaveAttribute('src', button.getAttribute('data-mascot-state') === 'away' ? '/away.webp' : expect.stringContaining('/study-room-mascots/'));
-  }
-  // Furniture and character reuse the same qualification's matching coordinates.
-  expect(container.querySelectorAll('img[src="/vacant.webp"]')).toHaveLength(0);
-  expect(screen.getByTestId("study-room-scene")).toHaveAttribute("data-art-status", "ready");
+it("draws one pose per learner, keeps active markers and shows two resting dogs playing together", () => {
+  vi.useFakeTimers();
+  vi.setSystemTime(new Date("2026-11-21T12:00:00+09:00"));
+  const snapshot = measuredPresence({ count: 3, exams: [{ exam: "civil1", count: 3 }] }, Date.now(), Infinity,
+    { count: 12, activeCount: 3, exams: [{ exam: "civil1", count: 12, activeCount: 3 }] });
+  render(<StudyRoom snapshot={snapshot} current suggestions={[]} poseFiles={CAFE_POSE_FILES} />);
+  const scene = screen.getByTestId("study-room-scene");
+  const seats = screen.getAllByTestId("study-room-seat");
+  expect(seats).toHaveLength(12);
+  expect(scene.querySelectorAll('[data-studying-now="true"]')).toHaveLength(3);
+  expect(scene.querySelector('[data-pose="bow"] img')).toHaveAttribute("src", expect.stringContaining("civil1-bow-east.webp"));
+  expect(scene.querySelector('[data-pose="paw"] img')).toHaveAttribute("src", expect.stringContaining("civil1-paw-west.webp"));
+  expect(new Set(seats.map(seat => seat.dataset.pose)).size).toBeGreaterThanOrEqual(8);
+  for (const seat of seats) expect(seat.querySelectorAll("img")).toHaveLength(1);
 });

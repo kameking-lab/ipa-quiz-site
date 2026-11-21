@@ -14,7 +14,8 @@ export const QUALIFICATION_GROUPS: readonly QualificationGroup[] = [
     members: {
       "chori-center": "共通問題", "chori-hokkaido": "北海道", "chori-tochigi": "栃木県",
       "chori-gunma": "群馬県", "chori-kanagawa": "神奈川県", "chori-nagano": "長野県",
-      "chori-shizuoka": "静岡県", "chori-kansai": "関西広域連合", "yamaguchi-chori": "山口県", "chori-ehime": "愛媛県",
+      "chori-shizuoka": "静岡県", "chori-kansai": "関西広域連合", "chori-nara": "奈良県",
+      "yamaguchi-chori": "山口県", "chori-ehime": "愛媛県",
       "chori-okinawa": "沖縄県",
     },
   },

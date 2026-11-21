@@ -48,7 +48,13 @@ for (const width of [390, 1280]) test(`records, room and day review at ${width}p
   await page.goto("/me");
   const room = page.getByRole("region", { name: "チワワの部屋" });
   await expect(room).toHaveAttribute("data-pet-stage", "expert");
-  await expect(room.getByLabel("合格証")).toContainText("応用情報");
+  const certificate = room.getByLabel("合格証");
+  const pet = room.getByRole("button", { name: "チワワをなでる" });
+  await expect(certificate).toContainText("応用情報");
+  const awardBox = (await certificate.boundingBox())!;
+  const petBox = (await pet.boundingBox())!;
+  expect(awardBox.y >= petBox.y + petBox.height || awardBox.y + awardBox.height <= petBox.y ||
+    awardBox.x >= petBox.x + petBox.width || awardBox.x + awardBox.width <= petBox.x).toBe(true);
   const stats = page.locator('dl[aria-label="学習の数字"]');
   await expect(stats).toContainText("これまでの問題数30問");
   const calendar = page.getByRole("region", { name: "日別の学習量" });
@@ -56,7 +62,7 @@ for (const width of [390, 1280]) test(`records, room and day review at ${width}p
   await expect(calendar.locator('[aria-current="date"]')).toHaveAttribute("aria-label", `${data.today} 30問`);
   const read = () => page.evaluate(key => localStorage.getItem(key), key);
   const before = await read();
-  await room.getByRole("button", { name: "チワワをなでる" }).click();
+  await pet.click();
   await expect(room.getByRole("status")).toHaveText("なでなで、うれしそう。"); expect(await read()).toBe(before);
   await page.screenshot({ path: `${evidence}/me-${width}.png`, fullPage: true, animations: "disabled" });
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);

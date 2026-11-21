@@ -118,6 +118,15 @@ for (const state of ["authenticated", "loading", "unauthenticated"] as const) {
       const { container } = render(<ExamQuestionPlayer examId="test-paper" examTitle="試験" questions={[]}
         questionIndex={[{ id: "q1", number: 1, choiceCount: 4, answerAuthority: "official", scorable: true }]}
         resolveQuestion={resolveQuestion} pdfUrl="" indexUrl="" />);
+      if (error === "daily_limit") {
+        await screen.findByRole("heading", { name: "今日の無料10問はここまで" });
+        const purchase = screen.getByRole("link", { name: "月額プランに申し込む" });
+        const destination = new URL(purchase.getAttribute("href")!, location.origin);
+        expect(destination.pathname).toBe("/billing/start");
+        expect(destination.searchParams.get("returnTo")).toBe(location.pathname + location.search);
+        expect(container.querySelector('a[href*="/auth/signin"]')).toBeNull();
+        return;
+      }
       await screen.findByRole("alert");
       expect(container.querySelector('a[href*="/auth/signin"]') !== null).toBe(guest);
       if (!guest) expect(container.textContent).not.toContain("ログイン");

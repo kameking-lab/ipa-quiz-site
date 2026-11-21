@@ -45,16 +45,16 @@ it("revokes pending facts when refresh discovers a different owner, without adop
   expect(calls[0][0].ownerScope).toBe("guest"); expect(calls[0][0].isCurrent()).toBe(false);
   expect(calls[1][0].ownerScope).toBe("user:other"); expect(calls[1][0].isCurrent()).toBe(true);
 });
-it("copies the pre-answer snapshot using the existing SRS read", async () => {
+it("uses the learning fact without reading the retired SRS schedule", async () => {
   const hook = renderHook(() => usePetLearning()); await settle();
   const before = { id: q.id, ef: 2.5, reps: 1, intervalDays: 1, lastReviewedAt: 1700000000000, dueAt: 1700086400000 };
   localStorage.setItem(LS_KEYS.spacedRepetition, JSON.stringify({ cards: { [q.id]: before } }));
   const read = vi.spyOn(Storage.prototype, "getItem");
-  hook.result.current.record(q, { kind: "multiple-choice", selected: ["ア"] }, true);
-  expect(read.mock.calls.filter(([key]) => key === LS_KEYS.spacedRepetition)).toHaveLength(1);
+  hook.result.current.answer(q, { kind: "multiple-choice", selected: ["ア"] });
+  expect(read.mock.calls.filter(([key]) => key === LS_KEYS.spacedRepetition)).toHaveLength(0);
   expect(persistBrowserPetAttempt).not.toHaveBeenCalled();
   await act(async () => { await vi.advanceTimersByTimeAsync(1000); }); await settle();
-  expect(vi.mocked(persistBrowserPetAttempt).mock.calls[0][1].reviewBefore).toEqual({ lastReviewedAt: before.lastReviewedAt, dueAt: before.dueAt });
+  expect(vi.mocked(persistBrowserPetAttempt).mock.calls[0][1].reviewBefore).toBeNull();
 });
 it("retains a current session through an unavailable refresh and later same-owner persistence", async () => {
   const enqueue = vi.spyOn(browserPetSubmissions, "enqueue");

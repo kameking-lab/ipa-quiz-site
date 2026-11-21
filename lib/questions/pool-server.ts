@@ -3,7 +3,7 @@ import "server-only";
 import type { ExamCode, Question, QuizFilter } from "./types";
 import { canonicalExamCode } from "./exam-aliases";
 import { getAllQuestionsLazy, getQuestionsForExam } from "@/lib/questions/get-questions";
-import { isPracticeReadyQuestion } from "./filter";
+import { isPlanScorableQuestion, isPracticeReadyQuestion } from "./filter";
 import { selectExplicitPoolIds } from "./explicit-pool";
 
 
@@ -39,7 +39,7 @@ async function loadServerPool(filter: QuizFilter): Promise<Question[]> {
   }
   if (filter.calculationOnly) pool = pool.filter((q) => q.isCalculation === true);
 
-  pool = pool.filter(isPracticeReadyQuestion);
+  pool = pool.filter(filter.mode === "review" ? isPlanScorableQuestion : isPracticeReadyQuestion);
 
   if (filter.inOrder) {
     pool = [...pool].sort((a, b) => a.qNumber - b.qNumber);

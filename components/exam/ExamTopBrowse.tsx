@@ -3,7 +3,7 @@ import type { ExamEntryCode } from "@/lib/seo/exam-entry";
 import type { CategoryItem, YearItem } from "@/components/exam/ExamBrowseTabs";
 import { isMockExamCode } from "@/lib/mock-exam/config";
 
-const linkClass = "flex min-h-14 items-center justify-between gap-3 rounded-xl border border-border bg-card p-3 text-sm hover:border-primary/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
+const linkClass = "flex min-h-14 items-center justify-between gap-3 rounded-xl border border-hairline bg-card px-3 py-2 text-sm hover:border-primary/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
 /** Native links and details: both browse views work before JavaScript loads. */
 export function ExamTopBrowse({ exam, years, categories }: {
@@ -28,7 +28,7 @@ export function ExamTopBrowse({ exam, years, categories }: {
     </li>
   );
   return (
-    <div className="mb-8 space-y-6">
+    <div className="mb-8 space-y-3">
       <section id="years" aria-labelledby="years-heading" className="scroll-mt-20">
         <h2 id="years-heading" className="mb-3 text-base font-bold">年度別の過去問</h2>
         <ul className="grid gap-2 sm:grid-cols-2">{years.slice(0, 4).map(yearLink)}</ul>
@@ -38,13 +38,13 @@ export function ExamTopBrowse({ exam, years, categories }: {
         </details>}
       </section>
       {categories.length > 0 && (
-        <details id="topics" className="scroll-mt-20 rounded-xl border border-border px-3">
+        <details id="topics" className="scroll-mt-20 rounded-xl border border-hairline bg-card px-3">
           <summary className="min-h-11 cursor-pointer py-3 text-sm font-medium">分野別の過去問</summary>
           <ul className="grid gap-2 pb-3 sm:grid-cols-2">{categories.map(categoryLink)}</ul>
         </details>
       )}
       {isMockExamCode(exam) && (
-        <details id="mock" className="scroll-mt-20 rounded-xl border border-border px-3">
+        <details id="mock" className="scroll-mt-20 rounded-xl border border-hairline bg-primary-soft px-3">
           <summary className="min-h-11 cursor-pointer py-3 text-sm font-medium">模試</summary>
           <Link prefetch={false} href={'/mock-exam?exam=' + exam} className="inline-flex min-h-11 items-center underline">
             {exam === "ap" ? "科目A（旧午前）" : "科目A-2（旧午前II）"}の模試で力試し

@@ -3,6 +3,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 import GroupPage, { generateMetadata, generateStaticParams } from "@/app/qualifications/[slug]/page";
 import QualificationsPage from "@/app/qualifications/page";
+import HtmlSitemapPage from "@/app/sitemap/page";
 import DailyChallengePage from "@/app/challenge/page";
 import { getPublishedQualificationGroups } from "@/lib/qualifications/published-groups";
 import { qualificationGroupPath } from "@/lib/qualifications/groups";
@@ -18,8 +19,10 @@ describe("qualification groups", () => {
     const directory = groupHomeDirectory(getHomeDirectory());
     const cards = directory.flatMap(domain => [...domain.featured, ...domain.compact]);
     expect(Object.fromEntries(groups.map(({ group, children }) => [group.slug, children.length]))).toEqual({
-      chori: 11, "gijutsushi-first": 22, tohan: 6, junkango: 3, dokugeki: 3, kyoin: 11, "kokka-sogo": 3,
+      chori: 12, "gijutsushi-first": 22, tohan: 6, junkango: 3, dokugeki: 3, kyoin: 11, "kokka-sogo": 3,
     });
+    expect(groups.find(row => row.group.slug === "chori")?.children.map(child => child.item.href))
+      .toEqual(expect.arrayContaining(["/chori-ehime", "/chori-nara"]));
     for (const { group, children } of groups) {
       const href = qualificationGroupPath(group.slug);
       const parents = cards.filter(card => card.href === href);
@@ -28,6 +31,14 @@ describe("qualification groups", () => {
       expect(cards.some(card => children.some(child => card.key === child.item.key))).toBe(false);
     }
     expect(directory.find(domain => domain.id === "construction")?.featured.map(card => card.href)).toContain("/qualifications/gijutsushi-first");
+  });
+
+  it("links to each parent once in the HTML sitemap", () => {
+    const doc = new DOMParser().parseFromString(renderToStaticMarkup(createElement(HtmlSitemapPage)), "text/html");
+    for (const { group, children } of groups) {
+      expect(doc.querySelectorAll(`a[href="${qualificationGroupPath(group.slug)}"]`)).toHaveLength(1);
+      for (const { item } of children) expect(doc.querySelector(`a[href="${item.href}"]`)).toBeNull();
+    }
   });
 
   it("lists a single parent in the coverage disclosure", () => {

@@ -2,6 +2,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import { P3Mascot } from "@/components/ui/P3Mascot";
 import { StudySearchField } from "@/components/ui/StudySearchField";
 import type { HomeDirectoryDomain } from "@/lib/home/home-directory";
 import { groupHomeDirectory } from "@/lib/home/grouped-directory";
@@ -9,9 +10,10 @@ import { upcomingExamPicks } from "@/lib/home/featured-exams";
 import { searchQualifications } from "@/lib/qualifications/search";
 import { qualificationGroupMember } from "@/lib/qualifications/groups";
 import { QualificationDirectory } from "./QualificationDirectory";
-export function BrowseQualifications({ domains, challengeExamCodes }: {
+export function BrowseQualifications({ domains, challengeExamCodes, illustrated = false }: {
   domains: readonly HomeDirectoryDomain[];
   challengeExamCodes?: readonly string[];
+  illustrated?: boolean;
 }) {
   const [query, setQuery] = useState("");
   const groupedDomains = useMemo(() => groupHomeDirectory(domains), [domains]);
@@ -27,8 +29,19 @@ export function BrowseQualifications({ domains, challengeExamCodes }: {
       : item.href;
   }
   const picks = upcomingExamPicks(domains.flatMap(d => [...d.featured, ...d.compact].map(i => i.key)), [], new Date());
+  const search = <StudySearchField aria-label="資格名・略称で検索" aria-controls="qualification-matches" value={query} onChange={e => setQuery(e.target.value)} placeholder="資格名・略称で検索" />;
+  const directory = <section id="home-directory-title" className="mt-4 scroll-mt-20">
+    <h2 className="mb-2 text-base font-bold">分野から探す</h2>
+    <QualificationDirectory domains={groupedDomains} challengeHref={challengeExamCodes ? qualificationHref : undefined} tiles={illustrated} />
+  </section>;
   return <>
-    <StudySearchField aria-label="資格名・略称で検索" aria-controls="qualification-matches" value={query} onChange={e => setQuery(e.target.value)} placeholder="資格名・略称で検索" />
+    {illustrated ? <div className="p3-search-hero p3-landscape">
+      <div className="p3-search-title">
+        <h1 className="text-[34px] leading-tight font-bold">さがす</h1>
+        <P3Mascot exam="" />
+      </div>
+      {search}
+    </div> : search}
     <div id="qualification-matches">
     {term ? <>
       <p role="status" className={matching.length ? "sr-only" : "py-4 text-sm text-muted-foreground"}>
@@ -43,9 +56,10 @@ export function BrowseQualifications({ domains, challengeExamCodes }: {
         </li>)}
       </ul>}
     </> : <>
-      <section className="mt-6">
+      {illustrated && directory}
+      <section className="mt-4">
         <h2 className="text-base font-bold">試験が近い資格</h2>
-        <ul className="mt-2 divide-y divide-hairline">
+        <ul className={illustrated ? "p3-exam-picks mt-2" : "mt-2 divide-y divide-hairline"}>
           {picks.map(({ key, next }) => {
             const item = items.find(item => item.key === key);
             if (!item) return null;
@@ -61,10 +75,7 @@ export function BrowseQualifications({ domains, challengeExamCodes }: {
           })}
         </ul>
       </section>
-      <section id="home-directory-title" className="mt-6 scroll-mt-20">
-        <h2 className="mb-2 text-base font-bold">分野から探す</h2>
-        <QualificationDirectory domains={groupedDomains} challengeHref={challengeExamCodes ? qualificationHref : undefined} />
-      </section>
+      {!illustrated && directory}
     </>}
     </div>
   </>;

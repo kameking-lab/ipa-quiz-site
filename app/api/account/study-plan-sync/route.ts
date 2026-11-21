@@ -12,6 +12,7 @@ import { NextResponse } from "next/server";
 import { Prisma } from "@prisma/client";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/db/prisma";
+import { preserveStudyWeekdays } from "@/lib/study-plan/pace-compat";
 import type { StudyPlanSyncEntry } from "@/lib/sync/types";
 
 export const runtime = "nodejs";
@@ -50,30 +51,32 @@ export async function POST(req: Request) {
   let merged = 0;
   if (incoming.length > 0) {
     const existing = await prisma.studyPlan.findMany({
-      where: { userId },
-      select: { id: true, updatedAt: true },
+      where: { userId, id: { in: incoming.map(entry => entry.id) } },
+      select: { id: true, updatedAt: true, payload: true },
     });
     const existingMap = new Map(
-      existing.map((r: { id: string; updatedAt: Date }) => [r.id, r.updatedAt.getTime()]),
+      existing.map(row => [row.id, row] as const),
     );
 
     for (const e of incoming) {
-      const prevUpdated = existingMap.get(e.id);
-      if (prevUpdated !== undefined && e.updatedAt <= prevUpdated) continue;
+      const prev = existingMap.get(e.id);
+      if (prev && e.updatedAt <= prev.updatedAt.getTime()) continue;
       const data = {
-        payload: e.payload as Prisma.InputJsonValue,
+        payload: preserveStudyWeekdays(e.payload, prev?.payload) as Prisma.InputJsonValue,
         progress:
           e.progress === undefined || e.progress === null
             ? Prisma.JsonNull
             : (e.progress as Prisma.InputJsonValue),
         updatedAt: new Date(e.updatedAt),
       };
-      if (prevUpdated !== undefined) {
+      if (prev) {
         // Owned by this user (id was in existingMap) → safe to update.
-        await prisma.studyPlan.update({
-          where: { id: e.id },
+        const updated = await prisma.studyPlan.updateMany({
+          where: { id: e.id, userId, updatedAt: prev.updatedAt },
           data: { ...data, version: { increment: 1 } },
         });
+        if (!updated.count) return NextResponse.json({ error: "sync_retry" }, { status: 409 });
+        existingMap.set(e.id, { id: e.id, updatedAt: data.updatedAt, payload: data.payload as Prisma.JsonValue });
         merged += 1;
         continue;
       }
@@ -94,6 +97,7 @@ export async function POST(req: Request) {
           version: 1,
         },
       });
+      existingMap.set(e.id, { id: e.id, updatedAt: data.updatedAt, payload: data.payload as Prisma.JsonValue });
       merged += 1;
     }
   }

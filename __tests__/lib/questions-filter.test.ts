@@ -130,7 +130,7 @@ describe("filterQuestions — フィルタ条件", () => {
   });
 
   it("復習モードは誤答 ∪ スター、履歴なしでは絞り込まない", () => {
-    const all = [q({ id: "a" }), q({ id: "b" }), q({ id: "c" })];
+    const all = ["a", "b", "c"].map(id => q({ id, choices: { ア: "選択肢1", イ: "選択肢2" } }));
     const hist = makeHistory({ wrong: ["a"], starred: ["c"] });
     const out = filterQuestions(all, { mode: "review" }, hist);
     expect(out.map((x) => x.id).sort()).toEqual(["a", "c"]);

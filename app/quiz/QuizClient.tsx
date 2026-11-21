@@ -14,6 +14,7 @@ import { posthogCapture } from "@/lib/posthog";
 import { nativeClient } from "@/mobile/shared/contracts";
 import { jstResetLabel } from "@/lib/billing/reset-time";
 import {shuffleChoices} from "@/lib/questions/filter";
+import { clearBatchQuestion } from "@/lib/study-plan/client";
 import { SignedOutOnly, useAccountStatus } from "@/components/account/AccountNavigation";
 
 const MAX_POOL = 80;
@@ -65,6 +66,7 @@ export function QuizClient({
   mockResultId,
   initialQuestionId,
   billingGateEnabled = false,
+  fixedBatch = false,
 }: {
   poolIds: string[];
   mode: QuizMode;
@@ -76,6 +78,7 @@ export function QuizClient({
   mockResultId?: string;
   initialQuestionId?: string;
   billingGateEnabled?: boolean;
+  fixedBatch?: boolean;
 }) {
   const [sessionIds, setSessionIds] = React.useState<string[] | null>(null);
   const [index, setIndex] = React.useState(0);
@@ -129,7 +132,7 @@ export function QuizClient({
   React.useEffect(() => {
 
     const url = new URL(window.location.href);
-    const signature = JSON.stringify([mode, wrongOnly, poolIds, initialQuestionId, mockResultId]);
+    const signature = JSON.stringify([mode, wrongOnly, poolIds, initialQuestionId, mockResultId, fixedBatch]);
     if (initializedPool.current === signature) return;
     initializedPool.current = signature;
     const currentId = initialQuestionId ?? url.searchParams.get("question");
@@ -140,6 +143,14 @@ export function QuizClient({
       return;
     }
     setInvalidQuestionId(false);
+    if (fixedBatch) {
+      // TodayQuiz has already validated the order and the first ungraded ID for this tab.
+      setSessionIds(poolIds);
+      setIndex(currentId ? poolIds.indexOf(currentId) : 0);
+      setLoadError(false);
+      cache.current.clear();
+      return;
+    }
     url.searchParams.delete("question");
     const sessionKey = `${LS_KEYS.activeQuizPool}${url.pathname}${url.search}`;
     let ids = mockResultId
@@ -178,16 +189,16 @@ export function QuizClient({
     setLoadError(false);
     cache.current.clear();
     startSession(mode);
-  }, [poolIds, mode, categoryById, wrongOnly, initialQuestionId, mockResultId]);
+  }, [poolIds, mode, categoryById, wrongOnly, initialQuestionId, mockResultId, fixedBatch]);
 
   React.useEffect(() => {
-    if (!sessionIds?.length) return;
+    if (fixedBatch || !sessionIds?.length) return;
     const url = new URL(window.location.href);
     url.searchParams.delete("question");
     try {
       window.sessionStorage.setItem(`${LS_KEYS.activeQuizPool}${url.pathname}${url.search}`, JSON.stringify(sessionIds));
     } catch { /* Practice remains usable without session storage. */ }
-  }, [sessionIds]);
+  }, [sessionIds, fixedBatch]);
 
   // Load current + prefetch next whenever index advances.
   React.useEffect(() => {
@@ -237,13 +248,13 @@ export function QuizClient({
     setLoadError(false);
     void loadInto(currentId, true);
     const nextId = sessionIds[index + 1];
-    if (nextId) void loadInto(nextId, false);
+    if (nextId && (!fixedBatch || !nativeClient() && !billingGateEnabled)) void loadInto(nextId, false);
 
     return () => {
       controller.abort();
       activeRequest.current = null;
     };
-  }, [sessionIds, index, mode, retryCount, requiresGrant]);
+  }, [sessionIds, index, mode, retryCount, requiresGrant, billingGateEnabled, fixedBatch]);
 
   const handleNext = React.useCallback(() => {
     if (navigating.current) return;
@@ -325,6 +336,7 @@ export function QuizClient({
       backLabel={backLabel}
       exam={exam}
       onNext={handleNext}
+      onFinish={fixedBatch ? clearBatchQuestion : undefined}
       />
     </div>
   );

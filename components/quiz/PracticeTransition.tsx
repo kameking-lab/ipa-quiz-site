@@ -1,6 +1,8 @@
 "use client";
 
-import { MonthlyConditions, MonthlyPlanLink, MonthlyPrice } from "@/components/billing/MonthlyOffer";
+import Link from "next/link";
+import { monthlyActionClass, MonthlyConditions, MonthlyPlanLink, MonthlyPrice } from "@/components/billing/MonthlyOffer";
+import { P3Mascot } from "@/components/ui/P3Mascot";
 import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
 import { saveQuizReturn } from "@/lib/billing/quiz-return";
 import { PLAN_OFFER } from "@/lib/billing/plan-offer";
@@ -44,13 +46,19 @@ export function PracticeDailyLimit({ resumeHref, freeDaily, onUnlocked }: { rese
     posthogCapture("practice_upgrade_clicked", { source: "daily_limit" });
     try { saveQuizReturn(window.sessionStorage, resumeHref); } catch { /* The link itself carries the return path. */ }
   };
-  return <section aria-labelledby="practice-limit-title" className="mx-auto min-h-[100dvh] w-full max-w-sm space-y-6 px-4 py-8">
-    <h2 id="practice-limit-title" className="text-xl font-bold">今日の無料{free}問はここまで</h2>
-    <div className="space-y-3">
+  return <section aria-labelledby="practice-limit-title" className="p3-page p3-limit study-column space-y-4 pb-8">
+    <div className="p3-landscape p3-hero">
+      <h2 id="practice-limit-title" className="self-center text-xl font-bold">今日の無料{free}問はここまで</h2>
+      <P3Mascot exam="" />
+    </div>
+    <div className="p3-listed space-y-2 px-4 py-3">
       <MonthlyPrice />
       <p>月額プランは演習回数無制限。</p>
     </div>
-    <MonthlyPlanLink returnTo={resumeHref} onClick={start} />
+    <div className="grid gap-2">
+      <MonthlyPlanLink returnTo={resumeHref} onClick={start} />
+      <Link href="/" className={monthlyActionClass + " bg-card text-foreground shadow-[inset_0_0_0_1px_var(--border)] hover:bg-muted"}>今日はここまで</Link>
+    </div>
     <MonthlyConditions keepPracticeOpen />
     <FeedbackUnlock onUnlocked={onUnlocked ?? (() => window.location.reload())} />
   </section>;

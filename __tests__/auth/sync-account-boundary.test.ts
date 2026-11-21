@@ -5,7 +5,7 @@ const mocks = vi.hoisted(() => ({
   history: { findMany: vi.fn(), createMany: vi.fn() },
   bookmarks: { findMany: vi.fn(), upsert: vi.fn() },
   tags: { findMany: vi.fn(), upsert: vi.fn() },
-  plans: { findMany: vi.fn(), findUnique: vi.fn(), create: vi.fn(), update: vi.fn() },
+  plans: { findMany: vi.fn(), findUnique: vi.fn(), create: vi.fn(), updateMany: vi.fn() },
 }));
 vi.mock("@/lib/auth", () => ({ auth: mocks.auth }));
 vi.mock("@/lib/db/prisma", () => ({ prisma: {
@@ -22,6 +22,21 @@ beforeEach(() => {
   for (const model of [mocks.history, mocks.bookmarks, mocks.tags, mocks.plans]) model.findMany.mockResolvedValue([]);
 });
 describe("study plan format compatibility", () => {
+  it.each([1, 0])("preserves weekdays on an old-client write and guards concurrent edits (count=%i)", async count => {
+    const oldClientPayload = { kind: "exam-pace-v1", exam: "ip", examDate: "2026-11-27" };
+    const updatedAt = new Date(2000);
+    mocks.plans.findMany.mockResolvedValueOnce([{ id: "pace", updatedAt, payload: {
+      ...oldClientPayload, examDate: "2026-11-26", studyWeekdays: [1, 3, 5],
+    } }]);
+    mocks.plans.updateMany.mockResolvedValue({ count });
+    const response = await plans(request({ entries: [{ id: "pace", payload: oldClientPayload, updatedAt: 3000 }],
+      expectedUserId: "authenticated-A", includePace: true }));
+    expect(response.status).toBe(count > 0 ? 200 : 409);
+    expect(mocks.plans.updateMany).toHaveBeenCalledWith({
+      where: { id: "pace", userId: "authenticated-A", updatedAt },
+      data: expect.objectContaining({ payload: { ...oldClientPayload, studyWeekdays: [1, 3, 5] } }),
+    });
+  });
   it.each([false, true])("only returns tagged pace/activity rows to a supporting client (%s)", async includePace => {
     const row = { createdAt: new Date(1000), updatedAt: new Date(2000), progress: null };
     mocks.plans.findMany.mockResolvedValue([

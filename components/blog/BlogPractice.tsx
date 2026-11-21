@@ -31,7 +31,7 @@ export function BlogPractice({ question, reason, continueHref, slug, explanation
     const isCorrect = isAcceptedAnswer(question.answer, key);
     if (readSettings().recordHistory) {
       createHistoryStore().record({ id: question.id, selected: key, correct: isCorrect, at: Date.now() });
-      pet.record(question, { kind: "multiple-choice", selected: [key] }, isCorrect);
+      pet.answer(question, { kind: "multiple-choice", selected: [key] });
       writeLastQuestion({ exam: question.exam, year: question.year, season: question.season, session: question.session, qNumber: question.qNumber, part: question.part, answeredAt: Date.now() });
     } else pet.submit({ source: "question", questionId: question.id, answer: { kind: "multiple-choice", selected: [key] } }, { source: "question", question });
     posthogCapture("blog_practice_answered", { slug, questionId: question.id, exam: question.exam, correct: isCorrect });

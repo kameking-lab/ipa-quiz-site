@@ -18,8 +18,10 @@ for(const used of [0,4,10])for(const save of [false,true])it(`restores 11 answer
   else sessionStorage.setItem(`${LS_KEYS.examLibrarySessionPrefix}${paper}`,JSON.stringify({progress}));
   const bodies:string[]=[],today=new Set(Array.from({length:used},(_,i)=>`other-${i}`));
   vi.stubGlobal("fetch",vi.fn(async(url:unknown,init?:RequestInit)=>{
+    const endpoint = String(url);
+    if (endpoint !== "/api/billing/question" && endpoint !== "/api/mobile/paper-results") return new Response(null, { status: 204 });
     const body=JSON.parse(String(init?.body));
-    if(String(url).endsWith("/paper-results"))return Response.json({results:body.answers.map((a:{id:string;choice:number})=>({...a,result:a.choice===2?"correct":"incorrect"}))});
+    if(endpoint === "/api/mobile/paper-results")return Response.json({results:body.answers.map((a:{id:string;choice:number})=>({...a,result:a.choice===2?"correct":"incorrect"}))});
     bodies.push(body.id);
     if(!today.has(body.id)&&today.size>=10)return Response.json({error:"daily_limit"},{status:429});
     today.add(body.id);return Response.json({question:rows.find(q=>q.id===body.id)});
@@ -30,10 +32,10 @@ for(const used of [0,4,10])for(const save of [false,true])it(`restores 11 answer
   expect(within(section).getByText("正解",{selector:"dt"}).nextElementSibling).toHaveTextContent("5問");
   fireEvent.click(screen.getByRole("button",{name:"問11を開く"}));
   if(used===10) {
-    await screen.findByRole("alert");fireEvent.click(screen.getByRole("button",{name:"結果を見る"}));
+    await screen.findByRole("heading",{name:"今日の無料10問はここまで"});fireEvent.click(screen.getByRole("button",{name:"結果を見る"}));
     expect(await screen.findByRole("heading",{name:"結果と見直し"})).toBeVisible();
     fireEvent.click(screen.getByRole("button",{name:"間違えた6問を解き直す"}));
-    await screen.findByRole("alert");fireEvent.click(screen.getByRole("button",{name:"結果を見る"}));
+    await screen.findByRole("heading",{name:"今日の無料10問はここまで"});fireEvent.click(screen.getByRole("button",{name:"結果を見る"}));
     expect(screen.getByText("11／12問")).toBeVisible();
     if(save)expect(Object.values(JSON.parse(localStorage.getItem(examProgressKey(paper))!).answers).filter(a=>(a as {submitted:boolean}).submitted)).toHaveLength(11);
   } else {

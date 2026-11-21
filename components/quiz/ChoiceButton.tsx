@@ -87,7 +87,7 @@ export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function 
       aria-keyshortcuts={!revealed && numberKey !== null ? String(numberKey) : undefined}
       data-state={state}
       className={cn(
-        "group relative flex w-full items-start gap-3 text-left transition-colors touch-manipulation disabled:cursor-default",
+        "p3-choice group relative flex w-full items-start gap-3 text-left transition-colors touch-manipulation disabled:cursor-default",
         paper
           ? "study-focus min-h-[52px] rounded-lg border px-3 py-[11px]"
           : "min-h-[64px] rounded-xl border-2 px-4 py-4 sm:gap-4 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
@@ -108,7 +108,7 @@ export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function 
       <span
         aria-hidden="true"
         className={cn(
-          "flex shrink-0 items-center justify-center rounded-full text-sm font-bold",
+          "p3-choice-number flex shrink-0 items-center justify-center rounded-full text-sm font-bold",
           paper ? "size-7" : "size-8",
           state === "revealed-correct"
             ? paper ? "bg-success-soft-foreground text-success-soft" : "bg-emerald-700 text-white dark:bg-emerald-400 dark:text-emerald-950"

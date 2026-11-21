@@ -27,7 +27,7 @@ function buildOfflineCatalog(): OfflineCatalogGroup[] {
     const key = `${hrefPrefix}\0${label}`;
     let group = groups.get(key);
     if (!group) {
-      group = { label, hrefPrefix, items: [] };
+      group = { exam: q.exam, label, hrefPrefix, items: [] };
       groups.set(key, group);
     }
     const suffix = q.part ? questionNumberSegment(q.qNumber, q.part).slice(`q${q.qNumber}`.length) : undefined;
