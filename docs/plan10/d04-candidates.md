@@ -453,3 +453,5 @@
 2023年度の獣医系は専門試験54問を収録し、家畜の繁殖季節・発情持続時間・産子数の原表を添付した。感染症・毒性に関するNo. 13・16・19・22・24・48は公開問題データから除外した。 [専門試験](https://www.maff.go.jp/j/joinus/recruit/zyui/attach/pdf/vetexam-2.pdf) [公式正答](https://www.maff.go.jp/j/joinus/recruit/zyui/attach/pdf/vetexam-5.pdf)
 
 2023年度の畜産系は専門試験50問を収録し、家畜の飼養形態と排せつ物処理の原表を添付した。飼料自給率の目標は試験が参照する令和2年決定の計画に沿って解説した。 [専門試験](https://www.maff.go.jp/j/joinus/recruit/2tikusan/attach/pdf/zooexam-2.pdf) [公式正答](https://www.maff.go.jp/j/joinus/recruit/2tikusan/attach/pdf/zooexam-4.pdf)
+
+2022年度の獣医系は専門試験53問を収録し、疫学の検査表、食中毒統計、実験動物の分類、畜産の生産費と輸出、豚の品種の原図表6点を添付した。感染症・毒性に関するNo. 14・15・23～25・45・47は公開問題データから除外した。 [専門試験](https://www.maff.go.jp/j/joinus/recruit/zyui/attach/pdf/vetexam-6.pdf) [公式正答](https://www.maff.go.jp/j/joinus/recruit/zyui/attach/pdf/vetexam-9.pdf)
