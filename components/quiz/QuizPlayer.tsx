@@ -485,6 +485,7 @@ function ScoredQuizPlayer({
         >
           <div ref={questionStartRef} tabIndex={-1} className="relative mx-auto max-w-2xl scroll-mt-24 space-y-4 outline-none">
             <QuestionCard
+              illustrated
               question={question}
               progress={{ current: index, total }}
             />

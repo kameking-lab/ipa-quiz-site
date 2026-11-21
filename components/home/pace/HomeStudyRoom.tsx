@@ -17,7 +17,8 @@ export function HomeStudyRoom() {
   const attendance = daily ?? (current ? snapshot : null);
   const room = attendance && measuredRoom(attendance, HOME_ROOM_VISIBLE_LIMIT);
   const seats = room?.seats ?? [];
-  const rowCount = seats.length > 20 ? 3 : seats.length > 5 ? 2 : 1;
+  const crowded = seats.length > 20;
+  const rowCount = crowded ? 3 : seats.length > 5 ? 2 : 1;
   const examRows = attendance?.exams ?? [];
   const visibleExams = examRows.slice(0, EXAM_CHIP_LIMIT);
   const otherExams = examRows.length - visibleExams.length;
@@ -46,14 +47,15 @@ export function HomeStudyRoom() {
         : <time dateTime={snapshot.measuredAt} className={styles.timestamp}>{time.format(Date.parse(snapshot.measuredAt))} 時点</time>)}
     </p>}
     <div className={styles.scene} data-testid="home-study-room-scene" data-rows={rowCount}>
+      {crowded && renderSeats(seats)}
       {visibleExams.length > 0 ? <ul aria-label="自習室の資格" className={styles.groups}>
         {visibleExams.map(row => <li key={row.exam} className={styles.group}>
           <p><span>{presenceExamName(row.exam)}</span><strong>{number(row.count)}人</strong></p>
-          {renderSeats(seats.filter(seat => seat.exam === row.exam))}
+          {!crowded && renderSeats(seats.filter(seat => seat.exam === row.exam))}
         </li>)}
         {otherExams > 0 && <li className={styles.group}>
           <p>ほか{number(otherExams)}資格</p>
-          {renderSeats(seats.filter(seat => !visibleExams.some(row => row.exam === seat.exam)))}
+          {!crowded && renderSeats(seats.filter(seat => !visibleExams.some(row => row.exam === seat.exam)))}
         </li>}
       </ul> : <div className={styles.empty}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
