@@ -11,6 +11,7 @@ import { AMATEUR2_QUESTIONS as am2 } from '@/data/questions/amateur2';
 import { MARITIME_RADAR_QUESTIONS as radar } from '@/data/questions/maritime-radar';
 import { AMATEUR1_QUESTIONS as am } from '@/data/questions/amateur1';
 import { isPracticeReadyQuestion } from '@/lib/questions/filter';
+import { getQuestionsForExam } from '@/lib/questions/get-questions';
 import { questionPagePath } from '@/lib/seo/question-url';
 vi.mock('next/dynamic',()=>({default:()=>()=>null}));
 vi.mock('next/navigation',()=>({useSearchParams:()=>new URLSearchParams(),usePathname:()=>'/quiz/stream',useRouter:()=>({push:vi.fn(),replace:vi.fn()}),notFound:()=>{throw Error('NOT_FOUND');},redirect:()=>{throw Error('REDIRECT');}}));
@@ -20,7 +21,26 @@ const cases=[{exam:'riku-tech2',name:'第二級陸上無線技術士',qs:riku,mo
 describe('new three qualifications actual page consumers',()=>{
  it('keeps all three protected original detail URLs out of static params and fails closed with noindex',async()=>{const holdIds=new Set(['radio21-amateur1-2026-05-kogaku-q19','radio21-riku-tech2-2026-01-kogaku-b-q25','radio21-amateur2-2026-05-kogaku-q17']);const held=[...am,...riku,...am2,...radar].filter(q=>holdIds.has(q.id));expect(held).toHaveLength(3);const paths=new Set((await detailParams()).map(p=>`/q/${p.exam}/${p.yearSeason}/${p.section}/${p.qnum}`));for(const q of held){const url=questionPagePath(q);expect(paths.has(url)).toBe(false);const [,,exam,yearSeason,section,qnum]=url.split('/');const input={params:Promise.resolve({exam:exam!,yearSeason:yearSeason!,section:section!,qnum:qnum!})};await expect(QuestionPage(input)).rejects.toThrow('NOT_FOUND');const meta=await detailMetadata(input);expect(meta.robots).toEqual({index:false,follow:false});}});
  for(const c of cases){
-  for(const [name,page] of [['year',YearPage],['topic',TopicPage],['stream',StreamPage]] as const)it(`${c.exam}: real ${name} headings and selected pools never fall back to AP`,async()=>{for(const session of c.sessions){const element=await page({searchParams:Promise.resolve({exam:c.exam,session})});const html=renderToStaticMarkup(element);const h=html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1]?.replace(/<[^>]*>/g,'');expect(h).toContain(c.name);expect(h).not.toContain('応用情報');expect(html).toContain(`exam=${c.exam}`);if(name==='stream')expect(new Set((pool(element) as typeof am).map(q=>q.id))).toEqual(new Set(c.qs.filter(q=>q.session===session&&isPracticeReadyQuestion(q)).map(q=>q.id)));}});
+  for (const [name, page] of [['year', YearPage], ['topic', TopicPage], ['stream', StreamPage]] as const) {
+   it(`${c.exam}: real ${name} headings and selected pools never fall back to AP`, async () => {
+    const questions = await getQuestionsForExam(c.exam);
+    for (const session of c.sessions) {
+     const element = await page({ searchParams: Promise.resolve({ exam: c.exam, session }) });
+     const html = renderToStaticMarkup(element);
+     const heading = html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1]?.replace(/<[^>]*>/g, '');
+     expect(heading).toContain(c.name);
+     expect(heading).not.toContain('応用情報');
+     expect(html).toContain(`exam=${c.exam}`);
+     if (name === 'stream') {
+      const eligibleIds = new Set(questions.filter(q => q.session === session && isPracticeReadyQuestion(q)).map(q => q.id));
+      const ids = (pool(element) as typeof am).map(q => q.id);
+      expect(ids).toHaveLength(Math.min(60, eligibleIds.size));
+      expect(new Set(ids).size).toBe(ids.length);
+      expect(ids.every(id => eligibleIds.has(id))).toBe(true);
+     }
+    }
+   });
+  }
   it(`${c.exam}: hub, annual papers and metadata retain correct qualification and ready counts`,async()=>{const hub=renderToStaticMarkup(await HubPage({params:Promise.resolve({exam:c.exam})}));expect(hub).toContain(c.name);for(let i=0;i<2;i++){const html=renderToStaticMarkup(await PaperPage({params:Promise.resolve({exam:c.exam,yearSeason:`2026-${c.months[i]}`})}));expect(html).toContain(c.name);expect(html).toContain(String(c.counts[i]));}for(const [mode,fn] of [['year',yearMetadata],['topic',topicMetadata]] as const){const m=await fn({searchParams:Promise.resolve({exam:c.exam})});expect(m.title).toContain(c.name);expect(m.alternates?.canonical).toBe(`/modes/${mode}?exam=${c.exam}`);}});
   it(`${c.exam}: ready question detail renders actual original`,async()=>{const q=c.qs.find(q=>q.nativeB&&isPracticeReadyQuestion(q))??c.qs[0]!;const [,,exam,yearSeason,section,qnum]=questionPagePath(q).split('/');const html=renderToStaticMarkup(await QuestionPage({params:Promise.resolve({exam:exam!,yearSeason:yearSeason!,section:section!,qnum:qnum!})}));expect(html).toContain(c.name);if(q.nativeB)expect((html.match(/<select /g)??[]).length).toBe(5);});
  }
