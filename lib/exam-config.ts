@@ -2012,6 +2012,14 @@ caremanager: {
         { session: "gakka-eigo", urlSlug: "gakka-eigo", expectedQuestions: 13, label: "学科試験（英語）", categories: ["語彙・熟語", "文法", "長文読解", "会話文"] },
     ], seasons: ["annual"], yearRange: { start: 2025, end: 2025 },
 },
+"kisho-daigakko": {
+    code: "kisho-daigakko", nameFull: "気象大学校学生採用試験", urlSlug: "kisho-daigakko", level: "specialist",
+    sessions: [
+        { session: "gakka-sugaku", urlSlug: "gakka-sugaku", expectedQuestions: 13, label: "学科試験（数学）", categories: ["数学"] },
+        { session: "gakka-eigo", urlSlug: "gakka-eigo", expectedQuestions: 13, label: "学科試験（英語）", categories: ["語彙・熟語", "文法", "長文読解", "会話文"] },
+        { session: "gakka-butsuri", urlSlug: "gakka-butsuri", expectedQuestions: 13, label: "学科試験（物理）", categories: ["物理"] },
+    ], seasons: ["annual"], yearRange: { start: 2025, end: 2025 },
+},
 "koku-hoan-daigakko": {
     code: "koku-hoan-daigakko", nameFull: "航空保安大学校学生採用試験", urlSlug: "koku-hoan-daigakko", level: "specialist",
     sessions: [
