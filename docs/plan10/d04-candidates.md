@@ -443,3 +443,5 @@
 2026年度の畜産系は専門試験50問を収録し、飼料作物の作付面積の原表を添付した。家畜改良増殖目標は試験が指定する令和7年版、監視伝染病の国内発生は令和元年から6年の期間に沿って解説した。 [専門試験](https://www.maff.go.jp/j/joinus/recruit/2tikusan/attach/pdf/zooexam-26.pdf) [公式正答](https://www.maff.go.jp/j/joinus/recruit/2tikusan/attach/pdf/zooexam-28.pdf) [家畜改良増殖目標](https://www.maff.go.jp/j/press/chikusan/suisin/250411.html) [監視伝染病の発生状況](https://www.maff.go.jp/j/syouan/douei/kansi_densen/kansi_densen.html)
 
 2025年度の獣医系は専門試験55問を収録し、原図表3点を添付した。感染症・毒性に関するNo. 14・17・22・32・43は公開問題データから除外した。ウイルス科の名称や法令上の区分は出題時点に沿って解説した。 [専門試験](https://www.maff.go.jp/j/joinus/recruit/zyui/attach/pdf/vetexam-30.pdf) [公式正答](https://www.maff.go.jp/j/joinus/recruit/zyui/attach/pdf/vetexam-33.pdf)
+
+2025年度の畜産系は専門試験48問を収録し、家畜の遺伝病の原表を添付した。毒性・感染症に関するNo. 41・44は公開問題データから除外した。生乳の処理量と飼料作物の作付面積は、出題が指定する令和5年の統計を確認した。 [専門試験](https://www.maff.go.jp/j/joinus/recruit/2tikusan/attach/pdf/zooexam-23.pdf) [公式正答](https://www.maff.go.jp/j/joinus/recruit/2tikusan/attach/pdf/zooexam-25.pdf) [牛乳乳製品統計](https://www.e-stat.go.jp/stat-search/files?layout=datalist&stat_infid=000040194403) [飼料をめぐる情勢](https://www.maff.go.jp/j/chikusan/sinko/lin/l_siryo/)

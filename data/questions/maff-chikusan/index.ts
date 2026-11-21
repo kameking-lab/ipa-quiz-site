@@ -1,5 +1,7 @@
 import { MAFF_CHIKUSAN_2026_SENMON } from "./2026-senmon";
+import { MAFF_CHIKUSAN_2025_SENMON } from "./2025-senmon";
 
 export const MAFF_CHIKUSAN_QUESTIONS = [
     ...MAFF_CHIKUSAN_2026_SENMON,
+    ...MAFF_CHIKUSAN_2025_SENMON,
 ];
