@@ -137,6 +137,8 @@ const nextConfig: NextConfig = {
     "/api/copilot/exam-library": ["./generated/copilot/**/*"],
   },
   outputFileTracingIncludes: {
+    "/": ["./public/images/home/study-room-mascots/pose/*.webp"],
+    "/study-room": ["./public/images/home/study-room-mascots/pose/*.webp"],
     "/sw.js": ["./lib/pwa/sw.js"],
     "/*": ["./generated/question-corpus/**/*"],
     "/e-learning/exams": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json", "./data/exam-library/pe-first/*.json"],

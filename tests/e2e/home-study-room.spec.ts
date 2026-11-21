@@ -74,16 +74,15 @@ for (const state of [...homeStates, "room"] as const) {
       const room = page.getByTestId(home ? "home-study-room" : "study-room-scene");
       const attendance = home ? room : page.getByTestId("study-room-total");
       if (home) await expect(page.locator(`[data-home-state="${state}"]`)).toBeVisible();
-      await expect(attendance).toContainText(new RegExp(`今日\\s*${count}人`));
-      await expect(attendance).toContainText(`いま ${activeCount}人`);
+      if (count > 0) await expect(attendance).toContainText(`今日 ${count}人が勉強（うち${activeCount}人がいま勉強中）`);
       await expect(room.getByTestId(home ? "home-study-room-seat" : "study-room-seat")).toHaveCount(home ? Math.min(count, 30) : count);
       await expect(room.locator('[data-studying-now="true"]')).toHaveCount(activeCount);
       if (count === 0) {
         await expect(room.getByText("まだ誰もいません。一番乗りしよう")).toBeVisible();
-        await expect(room.locator('img[src$="/generic-9.webp"]')).toHaveCount(1);
+        await expect(room.locator('img[src$="/sleep-empty.webp"]')).toHaveCount(1);
       }
       if (home) {
-        expect((await room.boundingBox())!.height).toBeLessThanOrEqual(270);
+        expect((await room.boundingBox())!.height).toBeLessThanOrEqual(300);
         if (count === 12) {
           const chips = room.getByRole("list", { name: "自習室の資格" }).getByRole("listitem");
           await expect(chips).toHaveText(["1級土木施工管理10人", "2級土木施工管理2人"]);

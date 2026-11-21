@@ -1,8 +1,12 @@
 /** The free quota always resets at 00:00 in Japan (UTC+9, no DST). */
 const DAY = 86_400_000, JST = 9 * 3_600_000;
+/** Consecutive calendar days in Japan, regardless of the viewer's time zone. */
+export function jstDayNumber(time: number): number {
+  return Math.floor((time + JST) / DAY);
+}
 /** The first 00:00 JST strictly after `time`. */
 export function nextJstMidnight(time: number): Date {
-  return new Date((Math.floor((time + JST) / DAY) + 1) * DAY - JST);
+  return new Date((jstDayNumber(time) + 1) * DAY - JST);
 }
 /**
  * Display label for a reset time, e.g. "10/31 0:00（日本時間）". The server sends

@@ -5,6 +5,7 @@ import { HomeStudyRoom } from "@/components/home/pace/HomeStudyRoom";
 import { planCatalogKeys } from "@/lib/study-plan/catalog-keys";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getHomeDirectory } from "@/lib/home/home-directory";
+import { readCafePoseFiles } from "@/lib/home/study-room-cafe-pose-files";
 import { groupHomeDirectory } from "@/lib/home/grouped-directory";
 import { buildOrgNode, buildWebsiteNode } from "@/lib/seo/structured-data";
 import styles from "./HomePage.module.css";
@@ -25,7 +26,7 @@ export default function HomePage() {
     <main className={`${styles.home} p3-page p3-home study-column flex-1`}>
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [buildWebsiteNode(description), buildOrgNode()] }} />
       <HomePace domains={domains} planExamKeys={planCatalogKeys()}>
-        <HomeStudyRoom />
+        <HomeStudyRoom poseFiles={readCafePoseFiles()} />
       </HomePace>
       <div className={styles.shortcuts}>
         <details id="home-qualification-directory" className={styles.directory}>

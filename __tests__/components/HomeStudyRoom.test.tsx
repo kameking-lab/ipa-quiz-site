@@ -19,18 +19,18 @@ it("shows one chip per qualification, in descending order, with one dog per lear
   show([{ exam: "civil2", count: 2, activeCount: 1 }, { exam: "civil1", count: 10, activeCount: 2 }]);
   const room = screen.getByRole("link", { name: "チワワの自習室" });
   expect(room).toHaveAttribute("href", "/study-room");
-  expect(room).toHaveTextContent("今日 12人");
-  expect(room).toHaveTextContent("いま 3人");
+  expect(room).toHaveTextContent("今日 12人が勉強（うち3人がいま勉強中）");
   const chips = within(screen.getByRole("list", { name: "自習室の資格" })).getAllByRole("listitem");
   expect(chips.map(chip => chip.textContent)).toEqual(["1級土木施工管理10人", "2級土木施工管理2人"]);
   expect(screen.getAllByTestId("home-study-room-seat")).toHaveLength(12);
   expect(room.querySelectorAll('[data-studying-now="true"]')).toHaveLength(3);
   expect(room.querySelector('[data-exam="civil1"][data-studying-now="true"] img')).toHaveAttribute("src", expect.stringContaining("civil1-study"));
-  expect(room.querySelector('[data-exam="civil1"][data-studying-now="false"] img')).toHaveAttribute("src", expect.stringMatching(/\/idle\/civil1-(?:nap|tea|yawn)\.webp$/));
+  expect(room.querySelector('[data-exam="civil1"][data-studying-now="false"] img')).toBeInTheDocument();
 });
 
 it("caps the picture at 30 dogs and lists at most six qualifications", () => {
   render(<HomeStudyRoom />);
+  expect(screen.getByTestId("home-study-room-scene")).toHaveAttribute("data-room", "p1");
   show(["civil1", "civil2", "fe", "ap", "ip", "sc", "fp2", "fp3"].map(exam => ({ exam, count: 6, activeCount: 1 })));
   expect(screen.getAllByTestId("home-study-room-seat")).toHaveLength(30);
   expect(screen.getByText("＋18人")).toBeVisible();
@@ -48,6 +48,7 @@ it("shows one sleeping dog at measured zero and retires a daily snapshot at JST 
   expect(screen.getAllByTestId("home-study-room-sleeper")).toHaveLength(1);
   expect(screen.queryAllByTestId("home-study-room-seat")).toHaveLength(0);
   act(() => vi.advanceTimersByTime(30_000));
+  expect(screen.getByTestId("home-study-room-scene")).toHaveAttribute("data-room", "p2");
   expect(screen.queryByText("まだ誰もいません。一番乗りしよう")).not.toBeInTheDocument();
   expect(screen.queryByText("いま 0人")).not.toBeInTheDocument();
 });

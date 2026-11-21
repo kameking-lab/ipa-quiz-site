@@ -65,6 +65,6 @@ it("labels a retained historical sample with its original timestamp and never cl
   expect(document.querySelector("time")?.getAttribute("datetime")).toBe(snapshot.measuredAt);expect(screen.getByText(/時点/)).toBeInTheDocument();expect(localStorage.getItem(LS_KEYS.history)).toBe("existing-history");
 });
 it("preserves a measured zero but refuses unvalidated error-body counts",()=>{
-  render(<TotalAnswerCounter/>);const snapshot=measuredPresence({count:0,exams:[]},Date.now());emit({mode:"measured",snapshot,previous:null});expect(screen.getByTestId("study-room-total")).toHaveTextContent("0人");
+  render(<TotalAnswerCounter/>);const snapshot=measuredPresence({count:0,exams:[]},Date.now());emit({mode:"measured",snapshot,previous:null});expect(screen.getByText("まだ誰もいません。一番乗りしよう")).toBeVisible();
   emit({mode:"stale",previous:{count:99,exams:[]},snapshot:null});expect(screen.queryByText(/99人/)).not.toBeInTheDocument();expect(document.querySelector("time")).toBeNull();
 });
