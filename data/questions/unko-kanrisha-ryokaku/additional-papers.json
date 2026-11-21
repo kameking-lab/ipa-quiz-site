@@ -2081,7 +2081,7 @@
     "session": "gakka",
     "qNumber": 1,
     "type": "multiple-choice",
-    "question": "一般旅客事業の許可・車庫・約款について、正しい記述をすべて選びなさい。",
+    "question": "一般旅客事業の許可・車庫・約款について、正しい記述を2つ選びなさい。",
     "choices": {
       "ア": "1",
       "イ": "2",
@@ -2124,6 +2124,8 @@
     "officialReferenceUrls": [
       "https://laws.e-gov.go.jp/law/326AC0000000183?occasion_date=20210401",
       "https://laws.e-gov.go.jp/law/326AC0000000183?occasion_date=20261121",
+      "https://laws.e-gov.go.jp/law/326M50000800075?occasion_date=20210401",
+      "https://laws.e-gov.go.jp/law/326M50000800075?occasion_date=20261121",
       "https://laws.e-gov.go.jp/law/331M50000800044?occasion_date=20210401",
       "https://laws.e-gov.go.jp/law/331M50000800044?occasion_date=20261121"
     ]
@@ -2175,6 +2177,8 @@
     "officialReferenceUrls": [
       "https://laws.e-gov.go.jp/law/326AC0000000183?occasion_date=20210401",
       "https://laws.e-gov.go.jp/law/326AC0000000183?occasion_date=20261121",
+      "https://laws.e-gov.go.jp/law/326M50000800075?occasion_date=20210401",
+      "https://laws.e-gov.go.jp/law/326M50000800075?occasion_date=20261121",
       "https://laws.e-gov.go.jp/law/331M50000800044?occasion_date=20210401",
       "https://laws.e-gov.go.jp/law/331M50000800044?occasion_date=20261121"
     ]
@@ -2187,7 +2191,7 @@
     "session": "gakka",
     "qNumber": 3,
     "type": "multiple-choice",
-    "question": "旅客の運行管理者と事業者の業務分担について、正しい記述をすべて選びなさい。",
+    "question": "旅客の運行管理者と事業者の業務分担について、正しい記述を2つ選びなさい。",
     "choices": {
       "ア": "1",
       "イ": "2",
@@ -2254,11 +2258,11 @@
       "イ"
     ],
     "officialAnswerNumber": "1,2",
-    "explanation": "1　出発地が営業所から離れた自社車庫という事情だけでは、対面点呼の例外として電話を使うことはできない。\n2　乗務後は運行状況と酒気帯びの有無を確認し、交替時に次の運転者へ通告した内容も報告させる。\n3　出題時の通達では、営業所開設後の期間や事故・処分の有無に独自の要件があり、提示された3年という条件を含む記述は当てはまらない。\n4　営業所で備える検知器には、必要な要件を満たす携帯型も含められる。設置型に限るという記述が誤り。",
+    "explanation": "1　出発地が営業所から離れた自社車庫という事情だけでは、対面点呼の例外として電話を使うことはできない。\n2　乗務後は運行状況と酒気帯びの有無を確認し、交替時に次の運転者へ通告した内容も報告させる。\n3　開設後3年は要件を満たすが、所定の重大事故や行政処分等がない期間もそれぞれ過去3年間を確認する。1年とした点が違う。\n4　営業所で備える検知器には、必要な要件を満たす携帯型も含められる。設置型に限るという記述が誤り。",
     "choiceExplanations": {
       "ア": "出発地が営業所から離れた自社車庫という事情だけでは、対面点呼の例外として電話を使うことはできない。",
       "イ": "乗務後は運行状況と酒気帯びの有無を確認し、交替時に次の運転者へ通告した内容も報告させる。",
-      "ウ": "出題時の通達では、営業所開設後の期間や事故・処分の有無に独自の要件があり、提示された3年という条件を含む記述は当てはまらない。",
+      "ウ": "開設後3年は要件を満たすが、所定の重大事故や行政処分等がない期間もそれぞれ過去3年間を確認する。1年とした点が違う。",
       "エ": "営業所で備える検知器には、必要な要件を満たす携帯型も含められる。設置型に限るという記述が誤り。"
     },
     "explanationCoverage": "full",
@@ -2286,7 +2290,8 @@
       "https://laws.e-gov.go.jp/law/331M50000800044?occasion_date=20210401",
       "https://laws.e-gov.go.jp/law/331M50000800044?occasion_date=20261121",
       "https://www.mlit.go.jp/common/001229379.pdf",
-      "https://www.mlit.go.jp/jidosha/jidosha_tk2_000082.html"
+      "https://www.mlit.go.jp/jidosha/jidosha_tk2_000082.html",
+      "https://www.mlit.go.jp/jidosha/jidosha_tk2_000051.html"
     ],
     "questionNotice": "IT点呼の方法・実施条件は出題当時の通達に基づきます。"
   },
@@ -2298,7 +2303,7 @@
     "session": "gakka",
     "qNumber": 5,
     "type": "multiple-choice",
-    "question": "運輸支局長等への事故の速報について、速報を要するものをすべて選びなさい。",
+    "question": "運輸支局長等への事故の速報について、速報を要するものを2つ選びなさい。",
     "choices": {
       "ア": "1",
       "イ": "2",
@@ -2594,7 +2599,7 @@
     "session": "gakka",
     "qNumber": 8,
     "type": "multiple-choice",
-    "question": "運転基準図・運行指示書・経路の調査について、正しい記述をすべて選びなさい。",
+    "question": "運転基準図・運行指示書・経路の調査について、正しい記述を2つ選びなさい。",
     "choices": {
       "ア": "1",
       "イ": "2",
@@ -2638,8 +2643,10 @@
       "https://laws.e-gov.go.jp/law/331M50000800044?occasion_date=20210401",
       "https://laws.e-gov.go.jp/law/331M50000800044?occasion_date=20261121",
       "https://www.mlit.go.jp/jidosha/anzen/03safety/construction.html",
-      "https://www.mlit.go.jp/jidosha/anzen/03safety/instruction.html"
-    ]
+      "https://www.mlit.go.jp/jidosha/anzen/03safety/instruction.html",
+      "https://www.mlit.go.jp/report/press/jidosha02_hh_000601.html"
+    ],
+    "questionNotice": "貸切バスの点呼記録や運行指示書などの保存期間は、2024年4月から3年間です。この問題は出題当時の基準で解答します。"
   },
   {
     "id": "unko-kanrisha-ryokaku-2021-cbt-q9",
@@ -2649,7 +2656,7 @@
     "session": "gakka",
     "qNumber": 9,
     "type": "multiple-choice",
-    "question": "一時抹消後の届出・車検証・番号標・所有権について、正しい記述をすべて選びなさい。",
+    "question": "一時抹消後の届出・車検証・番号標・所有権について、正しい記述を2つ選びなさい。",
     "choices": {
       "ア": "1",
       "イ": "2",
@@ -3044,7 +3051,7 @@
     "session": "gakka",
     "qNumber": 14,
     "type": "multiple-choice",
-    "question": "通行許可・はみ出し追越し・歩道・通行帯について、正しい記述をすべて選びなさい。",
+    "question": "通行許可・はみ出し追越し・歩道・通行帯について、正しい記述を2つ選びなさい。",
     "choices": {
       "ア": "1",
       "イ": "2",
@@ -3291,7 +3298,7 @@
     "session": "gakka",
     "qNumber": 16,
     "type": "multiple-choice",
-    "question": "本線進入・最低速度・加速車線・路肩の停車について、正しい記述をすべて選びなさい。",
+    "question": "本線進入・最低速度・加速車線・路肩の停車について、正しい記述を2つ選びなさい。",
     "choices": {
       "ア": "1",
       "イ": "2",
@@ -3399,7 +3406,7 @@
     "session": "gakka",
     "qNumber": 18,
     "type": "multiple-choice",
-    "question": "解雇予告・契約期間・明示条件と退職時の清算について、正しい記述をすべて選びなさい。",
+    "question": "解雇予告・契約期間・明示条件と退職時の清算について、正しい記述を2つ選びなさい。",
     "choices": {
       "ア": "1",
       "イ": "2",
@@ -3701,7 +3708,7 @@
     "session": "gakka",
     "qNumber": 21,
     "type": "multiple-choice",
-    "question": "旧告示の貸切バスの連続運転・拘束・分割休息について、正しい記述をすべて選びなさい。",
+    "question": "旧告示の貸切バスの連続運転・拘束・分割休息について、正しい記述を2つ選びなさい。",
     "choices": {
       "ア": "1",
       "イ": "2",
@@ -3713,9 +3720,9 @@
       "ウ"
     ],
     "officialAnswerNumber": "2,3",
-    "explanation": "1　旧告示で30分の中断を小分けにする場合でも、1回5分では不足し、おおむね連続10分以上の中断が必要になる。\n2　当時の拘束は原則13時間、延長しても最大16時間で、15時間超は週2回以内とされた。\n3　貸切バスの分割休息は、当時の条件下で1回継続4時間以上、合計10時間以上とし、対象回数にも上限があった。\n4　当時の4週平均1週間当たりの運転時間は原則40時間であり、44時間を原則とする記載が誤り。",
+    "explanation": "1　旧告示では、分けて中断する場合も1回連続10分以上かつ合計30分以上とする。1回5分とした点が違う。\n2　当時の拘束は原則13時間、延長しても最大16時間で、15時間超は週2回以内とされた。\n3　貸切バスの分割休息は、当時の条件下で1回継続4時間以上、合計10時間以上とし、対象回数にも上限があった。\n4　当時の4週平均1週間当たりの運転時間は原則40時間であり、44時間を原則とする記載が誤り。",
     "choiceExplanations": {
-      "ア": "旧告示で30分の中断を小分けにする場合でも、1回5分では不足し、おおむね連続10分以上の中断が必要になる。",
+      "ア": "旧告示では、分けて中断する場合も1回連続10分以上かつ合計30分以上とする。1回5分とした点が違う。",
       "イ": "当時の拘束は原則13時間、延長しても最大16時間で、15時間超は週2回以内とされた。",
       "ウ": "貸切バスの分割休息は、当時の条件下で1回継続4時間以上、合計10時間以上とし、対象回数にも上限があった。",
       "エ": "当時の4週平均1週間当たりの運転時間は原則40時間であり、44時間を原則とする記載が誤り。"
@@ -3746,7 +3753,8 @@
       "https://www.mhlw.go.jp/content/10200000/001391371.pdf",
       "https://www.unkan.or.jp/news/information.html?info_no=59",
       "https://www.mlit.go.jp/jidosha/anzen/03safety/instruction.html",
-      "https://www.mlit.go.jp/common/001000380.pdf"
+      "https://www.mlit.go.jp/common/001000380.pdf",
+      "https://www.mhlw.go.jp/content/11601000/000880792.pdf"
     ],
     "questionNotice": "改善基準告示は2024年4月から改正後の基準が適用されています。この問題は出題当時の基準で解答します。"
   },
@@ -3758,7 +3766,7 @@
     "session": "gakka",
     "qNumber": 22,
     "type": "multiple-choice",
-    "question": "バスの運転の中断方法を区間ごとに比較について、基準に適合するものをすべて選びなさい。",
+    "question": "バスの運転の中断方法を区間ごとに比較について、基準に適合するものを2つ選びなさい。",
     "choices": {
       "ア": "1",
       "イ": "2",
@@ -4474,8 +4482,7 @@
       "https://www.unkan.or.jp/news/information.html?info_no=59",
       "https://www.mlit.go.jp/jidosha/anzen/03safety/instruction.html",
       "https://www.mlit.go.jp/common/001000380.pdf"
-    ],
-    "questionNotice": "改善基準告示は2024年4月から改正後の基準が適用されています。この問題は出題当時の基準で解答します。"
+    ]
   },
   {
     "id": "unko-kanrisha-ryokaku-2021-cbt-q29-3",
@@ -4605,7 +4612,7 @@
     "session": "gakka",
     "qNumber": 1,
     "type": "multiple-choice",
-    "question": "乗合・貸切の事業計画変更と休廃止について、正しい記述をすべて選びなさい。",
+    "question": "乗合・貸切の事業計画変更と休廃止について、正しい記述を2つ選びなさい。",
     "choices": {
       "ア": "1",
       "イ": "2",
@@ -4705,7 +4712,8 @@
       "https://laws.e-gov.go.jp/law/326M50000800075?occasion_date=20261121",
       "https://laws.e-gov.go.jp/law/331M50000800044?occasion_date=20210307",
       "https://laws.e-gov.go.jp/law/331M50000800044?occasion_date=20261121"
-    ]
+    ],
+    "questionNotice": "貸切バスの点呼記録や運行指示書などの保存期間は、2024年4月から3年間です。この問題は出題当時の基準で解答します。"
   },
   {
     "id": "unko-kanrisha-ryokaku-2020-round2-q3-1",
@@ -4952,7 +4960,8 @@
       "https://laws.e-gov.go.jp/law/331M50000800044?occasion_date=20210307",
       "https://laws.e-gov.go.jp/law/331M50000800044?occasion_date=20261121",
       "https://www.mlit.go.jp/common/001229379.pdf",
-      "https://www.mlit.go.jp/jidosha/jidosha_tk2_000082.html"
+      "https://www.mlit.go.jp/jidosha/jidosha_tk2_000082.html",
+      "https://www.mlit.go.jp/jidosha/jidosha_tk2_000051.html"
     ],
     "questionNotice": "IT点呼の方法・実施条件は出題当時の通達に基づきます。"
   },
@@ -4964,7 +4973,7 @@
     "session": "gakka",
     "qNumber": 5,
     "type": "multiple-choice",
-    "question": "旅客の事故で速報を要する重傷・転落等について、速報を要するものをすべて選びなさい。",
+    "question": "旅客の事故で速報を要する重傷・転落等について、速報を要するものを2つ選びなさい。",
     "choices": {
       "ア": "1",
       "イ": "2",
@@ -5057,8 +5066,9 @@
     "officialReferenceUrls": [
       "https://laws.e-gov.go.jp/law/331M50000800044?occasion_date=20210307",
       "https://laws.e-gov.go.jp/law/331M50000800044?occasion_date=20261121",
-      "https://www.mlit.go.jp/common/001000380.pdf"
-    ]
+      "https://www.mlit.go.jp/report/press/jidosha02_hh_000601.html"
+    ],
+    "questionNotice": "貸切バスの点呼記録や運行指示書などの保存期間は、2024年4月から3年間です。この問題は出題当時の基準で解答します。"
   },
   {
     "id": "unko-kanrisha-ryokaku-2020-round2-q7",
@@ -5068,7 +5078,7 @@
     "session": "gakka",
     "qNumber": 7,
     "type": "multiple-choice",
-    "question": "旅客運転者の指示書携行・交替・乗客の安全・回送表示について、正しい記述をすべて選びなさい。",
+    "question": "旅客運転者の指示書携行・交替・乗客の安全・回送表示について、正しい記述を2つ選びなさい。",
     "choices": {
       "ア": "1",
       "イ": "2",
@@ -5569,7 +5579,7 @@
     "session": "gakka",
     "qNumber": 14,
     "type": "multiple-choice",
-    "question": "出入口・交差点・踏切付近の駐停車について、正しい記述をすべて選びなさい。",
+    "question": "出入口・交差点・踏切付近の駐停車について、正しい記述を2つ選びなさい。",
     "choices": {
       "ア": "1",
       "イ": "2",
@@ -5903,7 +5913,7 @@
     "session": "gakka",
     "qNumber": 17,
     "type": "multiple-choice",
-    "question": "歩行者の保護・落下物・高速での停止表示について、正しい記述をすべて選びなさい。",
+    "question": "歩行者の保護・落下物・高速での停止表示について、正しい記述を2つ選びなさい。",
     "choices": {
       "ア": "1",
       "イ": "2",
@@ -6256,7 +6266,7 @@
     "session": "gakka",
     "qNumber": 21,
     "type": "multiple-choice",
-    "question": "バスの拘束時間・休息場所・運転中断と分割休息について、正しい記述をすべて選びなさい。",
+    "question": "バスの拘束時間・休息場所・運転中断と分割休息について、正しい記述を2つ選びなさい。",
     "choices": {
       "ア": "1",
       "イ": "2",
@@ -6301,7 +6311,8 @@
       "https://www.mhlw.go.jp/content/10200000/001391371.pdf",
       "https://www.unkan.or.jp/news/information.html?info_no=59",
       "https://www.mlit.go.jp/jidosha/anzen/03safety/instruction.html",
-      "https://www.mlit.go.jp/common/001000380.pdf"
+      "https://www.mlit.go.jp/common/001000380.pdf",
+      "https://www.mhlw.go.jp/content/11601000/000880792.pdf"
     ],
     "questionNotice": "改善基準告示は2024年4月から改正後の基準が適用されています。この問題は出題当時の基準で解答します。"
   },
@@ -6467,7 +6478,8 @@
       "https://laws.e-gov.go.jp/law/331M50000800044?occasion_date=20210307",
       "https://laws.e-gov.go.jp/law/331M50000800044?occasion_date=20261121",
       "https://www.mlit.go.jp/common/001229379.pdf",
-      "https://www.mlit.go.jp/jidosha/jidosha_tk2_000082.html"
+      "https://www.mlit.go.jp/jidosha/jidosha_tk2_000082.html",
+      "https://www.mlit.go.jp/jidosha/jidosha_tk2_000051.html"
     ],
     "questionNotice": "IT点呼の方法・実施条件は出題当時の通達に基づきます。"
   },
@@ -6522,7 +6534,8 @@
     "requiredSelections": 3,
     "officialReferenceUrls": [
       "https://www.mlit.go.jp/jidosha/anzen/03safety/instruction.html",
-      "https://www.mlit.go.jp/jidosha/anzen/03manual/index.html"
+      "https://www.mlit.go.jp/jidosha/anzen/03manual/index.html",
+      "https://www.mlit.go.jp/jidosha/anzen/03analysis/resourse/data/r01-1.pdf#page=92"
     ]
   },
   {
