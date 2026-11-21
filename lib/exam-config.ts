@@ -4148,12 +4148,13 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
   "zenkou-keisan-gijutsu": {
     code: "zenkou-keisan-gijutsu", nameFull: "計算技術検定試験", urlSlug: "zenkou-keisan-gijutsu", level: "basic",
     sessions: [
+    { session: "keisan-1", urlSlug: "keisan-1", expectedQuestions: 13, label: "1級", categories: ["方程式とその応用", "ベクトルと面積・体積", "統計処理"] },
     { session: "keisan-2", urlSlug: "keisan-2", expectedQuestions: 17, label: "2級", categories: ["関数計算", "方程式と不等式", "応用計算"] },
     { session: "keisan-3", urlSlug: "keisan-3", expectedQuestions: 28, label: "3級", categories: ["四則計算", "関数計算", "実務計算"] },
     { session: "keisan-4", urlSlug: "keisan-4", expectedQuestions: 21, label: "4級", categories: ["四則計算", "集計計算", "実務計算"] },
     ],
     seasons: ["early", "late"],
-    yearRange: { start: 2025, end: 2026 },
+    yearRange: { start: 2024, end: 2026 },
   },
   "katei-hifuku": {
     code: "katei-hifuku", nameFull: "家庭科技術検定・被服製作", urlSlug: "katei-hifuku", level: "basic",
