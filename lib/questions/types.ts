@@ -308,7 +308,11 @@ export interface Question {
   audio?: {src: string; url: string; label: string};
   questionAudioUrl?: string;
   sourcePdfUrl: string;
+  /** Fixed capture of the official question PDF. */
+  sourceArchiveUrl?: string;
   sourceAnswerUrl?: string;
+  /** Fixed capture of the official answer PDF when the answer is archived. */
+  sourceAnswerArchiveUrl?: string;
   sourceAnswerKind?: "example" | "intent";
   sourceAttribution?: string;
   officialReferenceUrls?: string[];
