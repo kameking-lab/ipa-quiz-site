@@ -1797,6 +1797,15 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：人事院「刑務官採用試験 基礎能力試験」。解説は過去問AIの独自作成。",
   },
   {
+    slug: "maff-jui", examCode: "maff-jui", shortName: "農林水産省 獣医系技術職", fullName: "農林水産省獣医系技術職員採用試験",
+    domain: "legal", administrator: "農林水産省",
+    officialQuestionsUrl: "https://www.maff.go.jp/j/joinus/recruit/zyui/vetexam.html",
+    officialReuseTermsUrl: "https://www.maff.go.jp/j/use/link.html",
+    status: "live",
+    reuseSummary: "2026年度の専門試験（多肢選択式）59問を公式正答・全肢解説付きで収録。",
+    attributionTemplate: "出典：農林水産省「農林水産省獣医系技術職員採用試験 専門試験（多肢選択式）」。解説は過去問AIの独自作成。",
+  },
+  {
     slug: "kokka-chuto-hyougaki", examCode: "kokka-chuto-hyougaki", shortName: "国家公務員中途採用（就職氷河期世代）", fullName: "国家公務員中途採用者選考（就職氷河期世代）",
     domain: "legal", administrator: "人事院",
     officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_25_00001.html",

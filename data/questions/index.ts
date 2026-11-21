@@ -343,6 +343,7 @@ import { KIKAI_HOZEN_QUESTIONS } from "./kikai-hozen";
 import { KOKKA_KEIKENSHA_QUESTIONS } from "./kokka-keikensha";
 import { KEIMUKAN_QUESTIONS } from "./keimukan";
 import { KAIJO_HOAN_DAIGAKKO_QUESTIONS } from "./kaijo-hoan-daigakko";
+import { MAFF_JUI_QUESTIONS } from "./maff-jui";
 import { KOKKA_CHUTO_HYOUGAKI_QUESTIONS } from "./kokka-chuto-hyougaki";
 import { KISHO_DAIGAKKO_QUESTIONS } from "./kisho-daigakko";
 import { KOKU_HOAN_DAIGAKKO_QUESTIONS } from "./koku-hoan-daigakko";
@@ -730,6 +731,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("kokka-keikensha") ? { "kokka-keikensha": KOKKA_KEIKENSHA_QUESTIONS } : {}),
 ...(isExamPublished("keimukan") ? { "keimukan": KEIMUKAN_QUESTIONS } : {}),
 ...(isExamPublished("kaijo-hoan-daigakko") ? { "kaijo-hoan-daigakko": KAIJO_HOAN_DAIGAKKO_QUESTIONS } : {}),
+...(isExamPublished("maff-jui") ? { "maff-jui": MAFF_JUI_QUESTIONS } : {}),
 ...(isExamPublished("kokka-chuto-hyougaki") ? { "kokka-chuto-hyougaki": KOKKA_CHUTO_HYOUGAKI_QUESTIONS } : {}),
 ...(isExamPublished("kisho-daigakko") ? { "kisho-daigakko": KISHO_DAIGAKKO_QUESTIONS } : {}),
 ...(isExamPublished("koku-hoan-daigakko") ? { "koku-hoan-daigakko": KOKU_HOAN_DAIGAKKO_QUESTIONS } : {}),

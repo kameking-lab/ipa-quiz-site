@@ -2004,6 +2004,12 @@ caremanager: {
         { session: "kiso", urlSlug: "kiso", expectedQuestions: 40, label: "基礎能力試験", categories: ["文章理解", "判断推理", "数的推理", "資料解釈", "自然科学", "人文科学", "国語", "英語", "社会科学", "情報"] },
     ], seasons: ["annual"], yearRange: { start: 2023, end: 2025 },
 },
+"maff-jui": {
+    code: "maff-jui", nameFull: "農林水産省獣医系技術職員採用試験", urlSlug: "maff-jui", level: "specialist",
+    sessions: [
+        { session: "senmon", urlSlug: "senmon", expectedQuestions: 60, label: "専門試験（多肢選択式）", categories: ["獣医病理学", "獣医薬理学", "獣医微生物学", "家畜衛生・感染症", "獣医免疫学", "獣医臨床学", "獣医疫学", "獣医公衆衛生学", "獣医寄生虫学", "獣医繁殖学", "獣医毒性学", "畜産学", "獣医内科学", "獣医外科学"] },
+    ], seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
+},
 "kokka-chuto-hyougaki": {
     code: "kokka-chuto-hyougaki", nameFull: "国家公務員中途採用者選考（就職氷河期世代）", urlSlug: "kokka-chuto-hyougaki", level: "basic",
     sessions: [

@@ -433,3 +433,9 @@
 2023年度の中途採用者選考（就職氷河期世代）は、基礎能力試験のNo. 11・12・14～18・21～26・28・32・38の16問を収録し、原図表3点を添付した。No. 8～10・13・19・20・27・29～31・33～37・39・40の17問は両大学校共通の基礎能力試験に収録済み。No. 1～7は公開冊子で参照する本文が省略されている。2024年度と2023年度の作文試験には公式正答番号表がない。 [2023年度基礎能力の問題と正答](https://www.jinji.go.jp/content/000010459.pdf) [両大学校共通の問題と正答](https://www.jinji.go.jp/content/000010546.pdf) [基礎能力・作文試験の公式一覧](https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_25_00001.html)
 
 海上保安官採用試験の2024年度と2026年度は、専門職と同一の基礎能力試験の冊子を掲載している。2025年度も掲載URLが異なる食品衛生監視員の冊子と全37ページの内容・正答番号を照合し、専門職共通として扱った。公式正答番号表のない課題論文は収録対象外とした。 [海上保安官の公式問題一覧](https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_34.html) [2025年度の海上保安官の基礎能力](https://www.jinji.go.jp/content/000016665.pdf) [2025年度の専門職共通冊子](https://www.jinji.go.jp/content/000016392.pdf)
+
+## 農林水産省の技術職員採用試験
+
+獣医系の基礎能力試験は労働基準監督官、畜産系は一般職（大卒程度）の問題を農林水産省が案内しているため、各試験にまとめた。専門試験の記述式と獣医系の政策課題討議試験には、掲載一覧に公式正答がない。 [獣医系の公式一覧](https://www.maff.go.jp/j/joinus/recruit/zyui/vetexam.html) [畜産系の公式一覧](https://www.maff.go.jp/j/joinus/recruit/2tikusan/zooexam.html)
+
+2026年度の獣医系は専門試験の59問を収録し、原図表4点を添付した。感染症のNo. 13は公開問題データから除外した。No. 24の法令上の分類は出題の正答番号表を採用し、対象動物や別の法律で扱われる場合を解説で補足した。 [専門試験](https://www.maff.go.jp/j/joinus/recruit/zyui/attach/pdf/vetexam-37.pdf) [公式正答](https://www.maff.go.jp/j/joinus/recruit/zyui/attach/pdf/vetexam-36.pdf) [家畜伝染病予防法](https://laws.e-gov.go.jp/law/326AC1000000166)
