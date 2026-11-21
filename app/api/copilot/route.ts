@@ -235,7 +235,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
             thoughtsTokens: usage?.thoughtsTokens,
             totalTokens: usage?.totalTokens,
           });
-          await recordAiCost({
+          const costStatus = await recordAiCost({
             tier: tierForModel(model),
             inputTokens: usage?.promptTokens ?? budget.inputTokens,
             // Stream interruption may hide usageMetadata, including billable
@@ -247,6 +247,9 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
                 : Math.max(maxTokens, (usage?.outputTokens ?? 0) + (usage?.thoughtsTokens ?? 0), estimateTokens(outputChars)),
             label: "copilot",
             reservation,
+          });
+          console.info("[copilot] cost", {
+            questionId: payload.question.id, model, status: costStatus,
           });
         }
       : undefined,
