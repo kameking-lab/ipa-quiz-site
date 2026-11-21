@@ -32,7 +32,8 @@
     "license": "ZENKOU-owner-decision",
     "modelAnswer": "① 127、② 13.6875、③ DC、④ 9.E、⑤ 11 0010、⑥ 1010 0000、⑦ 11 1101、⑧ 10 0111、⑨ BCD、⑩ 5",
     "scoringCriteria": "公式標準解答の各欄と照合する。",
-    "isCalculation": true
+    "isCalculation": true,
+    "officialAnswerExample": true
   },
   {
     "id": "zenkou-joho-2024-early-joho-level2-q02-02",
@@ -66,7 +67,8 @@
     "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問2 問1。",
     "license": "ZENKOU-owner-decision",
     "modelAnswer": "①〜④ 0001\n⑤〜⑧ 0010\n⑨〜⑫ 0100\n⑬〜⑯ 1000",
-    "scoringCriteria": "公式標準解答の各欄と照合する。"
+    "scoringCriteria": "公式標準解答の各欄と照合する。",
+    "officialAnswerExample": true
   },
   {
     "id": "zenkou-joho-2024-early-joho-level2-q02-03",
@@ -81,10 +83,10 @@
       "2級・共通＋BASIC/Cの選択"
     ],
     "difficulty": 2,
-    "question": "図の論理回路の名称を選びなさい。",
+    "question": "二つの入力 X₂、X₁ と四つの出力 Y₃〜Y₀ をもつ、図の論理回路の名称を選びなさい。",
     "answer": "ウ",
     "officialAnswerNumber": "ウ",
-    "explanation": "入力の2ビットを四つの組合せに区別し、該当する出力線だけを1にするため、デコーダ回路に当たる。",
+    "explanation": "入力の2ビットを四つの組合せに区別し、該当する出力線だけを1にするため、デコーダ回路に当たる。 例えば入力が10なら Y₂ だけが1になる。",
     "hasImage": true,
     "imageUrls": [
       "/images/questions/zenkou-joho/72-level2-03-p38.webp"
@@ -155,7 +157,8 @@
     ],
     "answerImageAltTexts": [
       "大問3 問1の公式タイムチャート。"
-    ]
+    ],
+    "officialAnswerExample": true
   },
   {
     "id": "zenkou-joho-2024-early-joho-level2-q03-05",
@@ -173,7 +176,7 @@
     "question": "図のDフリップフロップによる回路の名称を選びなさい。",
     "answer": "ア",
     "officialAnswerNumber": "ア",
-    "explanation": "共通クロックのたびに入力のビット列が一段ずつ後ろに移るため、シフトレジスタである。",
+    "explanation": "共通クロックのたびに入力のビット列が一段ずつ後ろに移るため、シフトレジスタである。 各段は1クロック前の状態を次の段へ渡す。",
     "hasImage": true,
     "imageUrls": [
       "/images/questions/zenkou-joho/72-level2-05-p39.webp"
@@ -238,7 +241,8 @@
     "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問4。",
     "license": "ZENKOU-owner-decision",
     "modelAnswer": "① エ、② カ、③ ア、④ ウ、⑤ オ",
-    "scoringCriteria": "公式標準解答の各欄と照合する。"
+    "scoringCriteria": "公式標準解答の各欄と照合する。",
+    "officialAnswerExample": true
   },
   {
     "id": "zenkou-joho-2024-early-joho-level2-q05-07",
@@ -272,7 +276,8 @@
     "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問5。",
     "license": "ZENKOU-owner-decision",
     "modelAnswer": "① エ、② オ、③ キ、④ カ、⑤ ウ",
-    "scoringCriteria": "公式標準解答の各欄と照合する。"
+    "scoringCriteria": "公式標準解答の各欄と照合する。",
+    "officialAnswerExample": true
   },
   {
     "id": "zenkou-joho-2024-early-joho-level2-q06-08",
@@ -307,7 +312,8 @@
     "license": "ZENKOU-owner-decision",
     "modelAnswer": "① 20、② 7、③ 3",
     "scoringCriteria": "公式標準解答の各欄と照合する。",
-    "isCalculation": true
+    "isCalculation": true,
+    "officialAnswerExample": true
   },
   {
     "id": "zenkou-joho-2024-early-joho-level2-q07-09",
@@ -341,7 +347,8 @@
     "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問7。",
     "license": "ZENKOU-owner-decision",
     "modelAnswer": "① ア、② オ、③ カ",
-    "scoringCriteria": "公式標準解答の各欄と照合する。"
+    "scoringCriteria": "公式標準解答の各欄と照合する。",
+    "officialAnswerExample": true
   },
   {
     "id": "zenkou-joho-2024-early-joho-level2-q08-10",
@@ -375,7 +382,8 @@
     "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問8 JIS Full BASIC。",
     "license": "ZENKOU-owner-decision",
     "modelAnswer": "① D、② C、③ D、④ 終わり、⑤ END",
-    "scoringCriteria": "公式標準解答の各欄と照合する。"
+    "scoringCriteria": "公式標準解答の各欄と照合する。",
+    "officialAnswerExample": true
   },
   {
     "id": "zenkou-joho-2024-early-joho-level2-q09-11",
@@ -409,7 +417,8 @@
     "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問9 JIS Full BASIC。",
     "license": "ZENKOU-owner-decision",
     "modelAnswer": "① =、② 該当なし、③ ELSEIF、④ 1、⑤ 不合格",
-    "scoringCriteria": "公式標準解答の各欄と照合する。"
+    "scoringCriteria": "公式標準解答の各欄と照合する。",
+    "officialAnswerExample": true
   },
   {
     "id": "zenkou-joho-2024-early-joho-level2-q08-12",
@@ -443,7 +452,8 @@
     "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問8 C言語。",
     "license": "ZENKOU-owner-decision",
     "modelAnswer": "① d、② c、③ d、④ 終わり、⑤ return",
-    "scoringCriteria": "公式標準解答の各欄と照合する。"
+    "scoringCriteria": "公式標準解答の各欄と照合する。",
+    "officialAnswerExample": true
   },
   {
     "id": "zenkou-joho-2024-early-joho-level2-q09-13",
@@ -477,6 +487,7 @@
     "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問9 C言語。",
     "license": "ZENKOU-owner-decision",
     "modelAnswer": "① ==、② 該当なし、③ else if、④ 1、⑤ 不合格",
-    "scoringCriteria": "公式標準解答の各欄と照合する。"
+    "scoringCriteria": "公式標準解答の各欄と照合する。",
+    "officialAnswerExample": true
   }
 ]

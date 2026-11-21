@@ -15,7 +15,7 @@
     "question": "補数、チェックディジット、シフト、浮動小数点数に関する(1)〜(5)に答えなさい。",
     "answer": "(1) (0011 1110)₂\n(2) 6\n(3) 1111 1111\n(4) 18倍\n(5) 7F800000",
     "officialAnswerNumber": "(1) (0011 1110)₂\n(2) 6\n(3) 1111 1111\n(4) 18倍\n(5) 7F800000",
-    "explanation": "(1) 1100 0010 を反転して 0011 1101 とし、1を加える。(2) 下位からの重み付き和は4×1＋2×2＋0×3＋2×4＝16。10で割った余りは6。(3) 各ビットを1とXORすると反転する。(4) 左へ4ビット移すと16倍、さらに元の値を2回足す。(5) 指数部8ビットだけを1にし、符号と仮数のビットを0にする。先頭から4ビットずつ区切ると16進のマスクになる。",
+    "explanation": "(1) 1100 0010 を反転して 0011 1101 とし、1を加える。(2) 下位からの重み付き和は4×1＋2×2＋0×3＋2×4＝16。10で割った余りは6。(3) 各ビットを1とXORすると反転する。(4) 左へ4ビット移すと16倍、さらに元の値を2回足す。(5) 指数部8ビットだけを1にし、符号と仮数のビットを0にする。先頭から4ビットずつ区切ると16進のマスクになる。 原本の1985版表記と、試験時に発行済みの2019版のbinary32では、いずれもこのビット配置を用いる。",
     "hasImage": true,
     "imageUrls": [
       "/images/questions/zenkou-joho/72-hardware-01-p21.webp"
@@ -32,7 +32,13 @@
     "license": "ZENKOU-owner-decision",
     "modelAnswer": "(1) (0011 1110)₂\n(2) 6\n(3) 1111 1111\n(4) 18倍\n(5) 7F800000",
     "scoringCriteria": "公式標準解答の各欄と照合する。",
-    "isCalculation": true
+    "isCalculation": true,
+    "officialAnswerExample": true,
+    "officialReferenceUrls": [
+      "https://standards.ieee.org/ieee/754/993/",
+      "https://standards.ieee.org/ieee/754/6210/",
+      "https://dlmf.nist.gov/3.1.F1"
+    ]
   },
   {
     "id": "zenkou-joho-2024-early-joho-hardware-q02-02",
@@ -66,7 +72,8 @@
     "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問2 問1 (1)(2)。",
     "license": "ZENKOU-owner-decision",
     "modelAnswer": "(1) A B C（上から） 000、001、011、111\n(2) ① ア、② エ",
-    "scoringCriteria": "公式標準解答の各欄と照合する。"
+    "scoringCriteria": "公式標準解答の各欄と照合する。",
+    "officialAnswerExample": true
   },
   {
     "id": "zenkou-joho-2024-early-joho-hardware-q02-03",
@@ -155,7 +162,8 @@
     ],
     "answerImageAltTexts": [
       "大問2 問2 (1)の公式タイムチャート。"
-    ]
+    ],
+    "officialAnswerExample": true
   },
   {
     "id": "zenkou-joho-2024-early-joho-hardware-q02-05",
@@ -238,7 +246,8 @@
     "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問3 問1。",
     "license": "ZENKOU-owner-decision",
     "modelAnswer": "① エ、② ス、③ サ、④ シ、⑤ ケ、⑥ セ、⑦ タ、⑧ ソ、⑨ キ、⑩ ク",
-    "scoringCriteria": "公式標準解答の各欄と照合する。"
+    "scoringCriteria": "公式標準解答の各欄と照合する。",
+    "officialAnswerExample": true
   },
   {
     "id": "zenkou-joho-2024-early-joho-hardware-q03-07",
@@ -273,7 +282,8 @@
     "license": "ZENKOU-owner-decision",
     "modelAnswer": "① 99.15%\n② 78.85%",
     "scoringCriteria": "公式標準解答の各欄と照合する。",
-    "isCalculation": true
+    "isCalculation": true,
+    "officialAnswerExample": true
   },
   {
     "id": "zenkou-joho-2024-early-joho-hardware-q04-08",
@@ -307,7 +317,8 @@
     "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問4。",
     "license": "ZENKOU-owner-decision",
     "modelAnswer": "① ハ、② フ、③ ヒ、④ ノ、⑤ ト、⑥ ウ、⑦ ケ、⑧ サ、⑨ サ、⑩ イ",
-    "scoringCriteria": "公式標準解答の各欄と照合する。"
+    "scoringCriteria": "公式標準解答の各欄と照合する。",
+    "officialAnswerExample": true
   },
   {
     "id": "zenkou-joho-2024-early-joho-hardware-q05-09",
@@ -341,6 +352,7 @@
     "sourceAttribution": "公益社団法人全国工業高等学校長協会「第72回情報技術検定試験」大問5。",
     "license": "ZENKOU-owner-decision",
     "modelAnswer": "① ク、② ケ、③ キ、④ ア、⑤ エ、⑥ セ、⑦ シ、⑧ チ、⑨ タ、⑩ カ",
-    "scoringCriteria": "公式標準解答の各欄と照合する。"
+    "scoringCriteria": "公式標準解答の各欄と照合する。",
+    "officialAnswerExample": true
   }
 ]
