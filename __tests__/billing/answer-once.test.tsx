@@ -37,6 +37,9 @@ const access: PracticeAccess = {
   kind: "guest", remaining: 9, freeDaily: 10, resetAt: "2026-11-17T15:00:00.000Z", retryAfter: null,
 };
 
+// Allow the async quiz render to complete on constrained test workers.
+const todayQuizWait = { timeout: 10_000 };
+
 function mockPractice(...questions: { id: string }[]) {
   const grant = vi.fn((id: string) => Response.json({ question: questions.find(q => q.id === id), access }));
   vi.stubGlobal("fetch", vi.fn(async (url: string, options?: RequestInit) => {
@@ -129,8 +132,8 @@ describe("one graded answer per question visit", () => {
     savePacePlan(createPacePlan({ id: "answer-once", exam: "ip", sessionId: null, examDate: "2026-11-20", startDate: "2026-11-01" }, [single], "2026-11-01T00:00:00+09:00"));
     const grant = mockPractice(single);
     render(<StrictMode><TodayQuiz planId="answer-once" billingGateEnabled /></StrictMode>);
-    expect(await screen.findByRole("heading", { name: "計画の問題 · 1問" })).toBeInTheDocument();
-    const [first, second] = await screen.findAllByRole("radio");
+    expect(await screen.findByRole("heading", { name: "計画の問題 · 1問" }, todayQuizWait)).toBeInTheDocument();
+    const [first, second] = await screen.findAllByRole("radio", {}, todayQuizWait);
     answerBeforeRender(first, second, "2");
     expectHistory(single, "ア");
     expect(getLearningActions().map(action => action.questionId)).toEqual([single.id]);
@@ -157,13 +160,13 @@ describe("one graded answer per question visit", () => {
     const grants = mockPractice(...catalog);
     const open = () => render(<TodayQuiz planId="resume" billingGateEnabled />);
     const first = open();
-    fireEvent.click((await screen.findAllByRole("radio"))[0]);
+    fireEvent.click((await screen.findAllByRole("radio", {}, todayQuizWait))[0]);
     first.unmount();
     const second = open();
-    fireEvent.click((await screen.findAllByRole("radio"))[1]);
+    fireEvent.click((await screen.findAllByRole("radio", {}, todayQuizWait))[1]);
     second.unmount();
     open();
-    expect(await screen.findByRole("heading", { name: "2問中1問正解" })).toBeVisible();
+    expect(await screen.findByRole("heading", { name: "2問中1問正解" }, todayQuizWait)).toBeVisible();
     expect(grants.mock.calls).toEqual([[single.id], [next.id]]);
     expect(createHistoryStore().getAllEntries().map(entry => entry.id)).toEqual([single.id, next.id]);
   });
