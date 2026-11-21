@@ -283,7 +283,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       { session: "eju-biology", urlSlug: "eju-biology", expectedQuestions: 17, label: "理科 生物", categories: ["ATPの構造", "細胞小器官", "光合成", "窒素固定", "エキソンとイントロン", "DNAの増幅", "減数分裂と連鎖", "原腸胚の胚葉", "被子植物の配偶子形成", "ヒトの循環", "自律神経系", "うずまき管", "筋収縮", "種子発芽", "生存曲線", "生態系のエネルギー収支", "植物の系統"] },
     ],
     seasons: ["round1", "round2"],
-    yearRange: { start: 2020, end: 2021 },
+    yearRange: { start: 2019, end: 2021 },
   },
   "zensho-english": {
     code: "zensho-english", nameFull: "全商英語検定", urlSlug: "zensho-english", level: "advanced",
