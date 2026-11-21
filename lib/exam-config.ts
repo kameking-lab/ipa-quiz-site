@@ -2009,7 +2009,7 @@ caremanager: {
     sessions: [
         { session: "gakka-butsuri", urlSlug: "gakka-butsuri", expectedQuestions: 13, label: "航空電子科 学科試験（物理）", categories: ["物理"] },
         { session: "gakka-sugaku", urlSlug: "gakka-sugaku", expectedQuestions: 13, label: "学科試験（数学）", categories: ["数学"] },
-    ], seasons: ["annual"], yearRange: { start: 2024, end: 2025 },
+    ], seasons: ["annual"], yearRange: { start: 2023, end: 2025 },
 },
 "kaijo-hoan-gakko": {
     code: "kaijo-hoan-gakko", nameFull: "海上保安学校学生採用試験", urlSlug: "kaijo-hoan-gakko", level: "specialist",

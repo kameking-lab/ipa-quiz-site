@@ -1802,7 +1802,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_29.html",
     officialReuseTermsUrl: "https://www.jinji.go.jp/shinsei/notice.html",
     status: "live",
-    reuseSummary: "2024年度の学科試験（物理3問）と2025年度の学科試験（数学2問・物理13問）を公式正答・全肢解説付きで収録。",
+    reuseSummary: "2023年度5問、2024年度3問、2025年度15問の学科試験（数学・物理）を公式正答・全肢解説付きで収録。",
     attributionTemplate: "出典：人事院「航空保安大学校学生採用試験 学科試験」。解説は過去問AIの独自作成。",
   },
   {
