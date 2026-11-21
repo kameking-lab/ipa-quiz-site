@@ -7,6 +7,9 @@ function documentUrl(url: string): string {
 /** Describe the document's role, without treating an answer key as a textbook. */
 export function questionReferenceLabel(q: Pick<Question, "exam" | "sourcePdfUrl" | "sourceAnswerUrl">, url: string): string {
   const value = documentUrl(url);
+  if (q.exam === "zenkou-pc" && value === "https://zenkoukyo.or.jp/web/content/uploads/47pc_data.zip") {
+    return "1級実技の公式データ（ZIP）";
+  }
   if (value === documentUrl(q.sourcePdfUrl)) {
     return q.sourceAnswerUrl && value === documentUrl(q.sourceAnswerUrl)
       ? "公式問題・正答（同じ資料）" : "公式問題冊子";
