@@ -30,11 +30,11 @@ export function HomeStudyRoom() {
     aria-labelledby="home-study-room-title" data-long-list={longList || undefined} className={`${styles.card} study-focus`}>
     <div className={styles.header}>
       <h2 id="home-study-room-title">チワワの自習室</h2>
-      {attendance && <p className={styles.attendance}>
-        <span>{daily ? "今日 " : "いま "}<strong>{number(attendance.count)}</strong>人</span>
-        {daily && snapshot && (current
-          ? <span className={styles.now}><i aria-hidden="true" />いま {number(daily.activeCount)}人</span>
-          : <time dateTime={snapshot.measuredAt} className={styles.timestamp}>{time.format(Date.parse(snapshot.measuredAt))} 時点</time>)}
+      {attendance && attendance.count > 0 && <p className={styles.attendance}>
+        {daily ? "今日 " : "いま "}<strong>{number(attendance.count)}</strong>人が勉強{!daily && "中"}
+        {daily && current && daily.activeCount > 0 && `（うち${number(daily.activeCount)}人がいま勉強中）`}
+        {daily && !current && snapshot &&
+          <time dateTime={snapshot.measuredAt} className={styles.timestamp}>{time.format(Date.parse(snapshot.measuredAt))} 時点</time>}
       </p>}
       <ChevronRight aria-hidden="true" className={styles.arrow} />
     </div>
@@ -52,7 +52,7 @@ export function HomeStudyRoom() {
       </div> : <div className={styles.empty}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={SLEEPING_ROOM_MASCOT} alt="" width={78} height={78} loading="lazy" decoding="async" data-testid="home-study-room-sleeper" />
-        {daily?.count === 0 && current && <p>{EMPTY_STUDY_ROOM_MESSAGE}</p>}
+        {attendance?.count === 0 && current && <p>{EMPTY_STUDY_ROOM_MESSAGE}</p>}
       </div>}
       {room && room.hidden > 0 && <span className={styles.overflow}>＋{number(room.hidden)}人</span>}
     </div>

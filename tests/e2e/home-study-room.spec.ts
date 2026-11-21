@@ -9,6 +9,7 @@ const catalog = Array.from({ length: 30 }, (_, i) => ({ id: `ip-2026h-am-q${i + 
 const fixtures: StudyPresenceTodayCount[][] = [
   [],
   [{ exam: "ip", count: 2, activeCount: 1 }, { exam: "fe", count: 1, activeCount: 1 }],
+  [{ exam: "ip", count: 5, activeCount: 0 }],
   [{ exam: "civil1", count: 10, activeCount: 2 }, { exam: "civil2", count: 2, activeCount: 1 }],
   ([["civil1", 15, 4], ["civil2", 10, 2], ["ip", 5, 1], ["fp2", 5, 0], ["sc", 4, 0], ["fe", 3, 0], ["ap", 2, 0], ["fp3", 1, 0]] as const)
     .map(([exam, count, activeCount]) => ({ exam, count, activeCount })),
@@ -72,14 +73,23 @@ for (const state of [...homeStates, "room"] as const) {
       const home = state !== "room";
       await page.goto(home ? "/" : "/study-room", { waitUntil: "domcontentloaded" });
       const room = page.getByTestId(home ? "home-study-room" : "study-room-scene");
-      const attendance = home ? room : page.getByTestId("study-room-total");
-      if (home) await expect(page.locator(`[data-home-state="${state}"]`)).toBeVisible();
-      await expect(attendance).toContainText(new RegExp(`今日\\s*${count}人`));
-      await expect(attendance).toContainText(`いま ${activeCount}人`);
+      if (home) {
+        await expect(page.locator(`[data-home-state="${state}"]`)).toBeVisible();
+        if (count > 0) {
+          const summary = `今日 ${count}人が勉強`;
+          const expected = activeCount > 0 ? `${summary}（うち${activeCount}人がいま勉強中）` : summary;
+          await expect(room.locator("p").first()).toHaveText(expected);
+        }
+      } else {
+        const attendance = page.getByTestId("study-room-total");
+        await expect(attendance).toContainText(new RegExp(`今日\\s*${count}人`));
+        await expect(attendance).toContainText(`いま ${activeCount}人`);
+      }
       await expect(room.getByTestId(home ? "home-study-room-seat" : "study-room-seat")).toHaveCount(home ? Math.min(count, 30) : count);
       await expect(room.locator('[data-studying-now="true"]')).toHaveCount(activeCount);
       if (count === 0) {
         await expect(room.getByText("まだ誰もいません。一番乗りしよう")).toBeVisible();
+        if (home) await expect(room).not.toContainText("0人");
         await expect(room.locator('img[src$="/generic-9.webp"]')).toHaveCount(1);
       }
       if (home) {
