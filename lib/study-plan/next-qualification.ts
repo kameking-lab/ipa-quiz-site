@@ -31,7 +31,7 @@ export function tsuginoQualificationHref(qualificationId: string | null, campaig
 
 export function nextDatedSession(sessions: readonly ExamScheduleSession[], today = japanDate(new Date())) {
   return sessions.filter(session => session.scheduleStatus === "official" && !session.unannounced &&
-    session.sourceUrl && session.examDate && (session.examDateEnd ?? session.examDate) >= today)
+    session.sourceUrl && session.examDate && session.examDate >= today)
     .sort((a, b) => a.examDate!.localeCompare(b.examDate!))[0];
 }
 

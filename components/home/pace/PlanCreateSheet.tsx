@@ -80,13 +80,17 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, initia
         if (!response.ok) throw new Error("schedule");
         const data = await response.json() as ExamSchedule;
         if (controller.signal.aborted) return;
-        const future = data.sessions.filter(s => s.scheduleStatus === "ondemand" || !s.examDate || (s.examDateEnd ?? s.examDate) >= japanDate(new Date()))
+        const today = japanDate(new Date());
+        const future = data.sessions.filter(s => s.scheduleStatus === "ondemand" || !s.examDate ||
+          (s.examDateEnd ?? s.examDate) >= today || s.examPhaseWindows?.some(phase => phase.end >= today))
           .sort((a, b) => (a.examDate ?? "9999").localeCompare(b.examDate ?? "9999"));
         setSessions(future);
         const prefilled = exam === initialExam ? initialDate : undefined;
         const matchingSession = exam === initialExam && initialSessionId ? future.find(s => s.id === initialSessionId)
           : prefilled ? future.find(s => s.examDate && s.datePrecision !== "month"
-            && s.examDate <= prefilled && prefilled <= (s.examDateEnd ?? s.examDate)) : future[0];
+            && (s.examPhaseWindows?.length
+              ? s.examPhaseWindows.some(phase => phase.start <= prefilled && prefilled <= phase.end)
+              : s.examDate <= prefilled && prefilled <= (s.examDateEnd ?? s.examDate))) : future[0];
         setSessionId(editing?.exam === exam ? editing.sessionId ?? "" : matchingSession?.id ?? "");
       }).catch(() => { if (!controller.signal.aborted) setScheduleFailed(true); })
       .finally(() => { if (!controller.signal.aborted) setLoading(false); });
@@ -95,7 +99,7 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, initia
   const session = sessions.find(s => s.id === sessionId);
   // A window/month is not an individual's appointment. Always ask for the booked day.
   const manual = !session?.examDate || session.scheduleStatus === "ondemand" ||
-    session.datePrecision === "month" || !!session.examDateEnd && session.examDateEnd !== session.examDate;
+    session.datePrecision === "month" || Boolean(session.examPhaseWindows?.length) || !!session.examDateEnd && session.examDateEnd !== session.examDate;
   const examDate = manual ? date : session?.examDate ?? "";
   const options = rangeOptions(questions ?? [], exam);
   const sameExam = editing?.exam === exam;
@@ -143,7 +147,9 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, initia
               </label>
               {s.id === sessionId && <div className="space-y-2 px-3 pb-3">
                 <dl className="space-y-1 text-xs">
-                  {[["申込開始", s.applicationStart], ["申込締切", s.applicationDeadline], ["試験日", s.examDate], ["合格発表", s.resultDate]].map(([label, value]) => <div key={label} className="flex justify-between gap-3"><dt className="text-muted-foreground">{label}{s.applicationEstimated && label?.startsWith("申込") ? "（予定）" : ""}</dt><dd className="text-right">{value ?? "未発表"}{label === "試験日" && s.examDateEnd && s.examDateEnd !== value ? `〜${s.examDateEnd}` : ""}</dd></div>)}
+                  {[["申込開始", s.applicationStart], ["申込締切", s.applicationDeadline], ...(s.examPhaseWindows?.length ? s.examPhaseWindows.map(phase => [
+                    phase.label, phase.start === phase.end ? phase.start : phase.start + "〜" + phase.end,
+                  ]) : [["試験日", s.examDate]]), ["合格発表", s.resultDate]].map(([label, value]) => <div key={label} className="flex justify-between gap-3"><dt className="text-muted-foreground">{label}{s.applicationEstimated && label?.startsWith("申込") ? "（予定）" : ""}</dt><dd className="text-right">{value ?? "未発表"}{label === "試験日" && s.examDateEnd && s.examDateEnd !== value ? `〜${s.examDateEnd}` : ""}</dd></div>)}
                 </dl>
                 {manual && <label className="block text-sm font-medium">{s.scheduleStatus === "ondemand" ? "予約した日・受けたい日" : "受験日"}<input type="date" min={japanDate(new Date())} value={date} onChange={e => setDate(e.target.value)} className={fieldClass} /></label>}
                 {!manual && <p className="text-sm font-medium">受験日　<time dateTime={examDate}>{examDate}</time>{s.scheduleStatus === "tentative" ? "（予定）" : ""}</p>}

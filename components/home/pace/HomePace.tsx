@@ -146,7 +146,7 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false, children
   function retryPlan(session?: ExamScheduleSession) {
     if (!plan) return;
     const fixedDate = session?.examDate && session.examDate >= today && session.datePrecision !== "month" &&
-      (!session.examDateEnd || session.examDateEnd === session.examDate) ? session.examDate : undefined;
+      !session.examPhaseWindows?.length && (!session.examDateEnd || session.examDateEnd === session.examDate) ? session.examDate : undefined;
     openPrefilled({ exam: plan.exam, examDate: fixedDate, sessionId: session?.id });
   }
   const calendarConfirmation = created && <div className="mt-3 space-y-1 rounded-xl border border-border bg-card p-3">

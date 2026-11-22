@@ -256,7 +256,6 @@ export default async function ExamTopPage({
     <main className="p3-page p3-exam flex-1">
       <div className="study-column pb-12">
         <JsonLd data={jsonLd} />
-      <NextExamSchedule exam={code} />
       {!isExamEntryCode(code) && code !== "takken" && <TsuginoWelcome href={referralPracticeHref(questions, '/' + exam)} qualification={examLabel(code)} />}
 
         <nav aria-label="パンくずリスト" className="mb-1 text-xs text-muted-foreground">
@@ -350,6 +349,7 @@ export default async function ExamTopPage({
             </Button>
           )}
         </section>}
+          <NextExamSchedule exam={code} />
           {isExamEntryCode(code) && <ExamCbtSummary exam={code} />}
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
             <Badge variant="outline">収録 {publishedOriginalCount} 問</Badge>
