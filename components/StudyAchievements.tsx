@@ -10,7 +10,7 @@ import { CARD_LABELS, cardImagePath, cardQualification, cardSharePath, type Stud
 import { countGoalDay, initializeStudyMilestones, reserveStudyCard, shownStreakToday } from "@/lib/sharing/milestone-storage";
 import { achievementKind, completedDailyGoal, qualifiesForReview, rangeProgress } from "@/lib/sharing/milestones";
 import { jstDateString } from "@/lib/streak/core";
-import { readStreak, recordStudyToday } from "@/lib/streak/storage";
+import { readStreak, recordStudyToday, STREAK_100_DAY_EVENT } from "@/lib/streak/storage";
 import { readSettings } from "@/lib/storage/settings";
 import { listPacePlans } from "@/lib/study-plan/pace-storage";
 import { loadPlanCatalog, paceAttempts } from "@/lib/study-plan/client";
@@ -27,7 +27,8 @@ export function useAnswerStudyMoment() {
   const [moment, setMoment] = useState<StudyMoment>();
   const recordMoment = useCallback((exam: string, id: string, correct: boolean, at = Date.now()) => {
     if (!readSettings().recordHistory) { setMoment(undefined); return; }
-    const { state } = recordStudyToday();
+    const { state, reachedMilestone } = recordStudyToday();
+    if (reachedMilestone === 100) window.dispatchEvent(new Event(STREAK_100_DAY_EVENT));
     setMoment(correct ? { exam, id, at, streak: state.currentStreak } : undefined);
   }, []);
   return { moment, recordMoment };
@@ -48,7 +49,7 @@ export function PlanCompletionShare({ answered }: { answered: number }) {
     if (!scope || !answered) return null;
     const answers = readSession()?.answers ?? [];
     const last = answers.at(-1);
-    if (!last?.correct || last.id !== scope.ids.at(-1)) return null;
+    if (!last?.correct || last.id !== scope.ids.at(-1) || !Number.isFinite(last.at)) return null;
     const day = jstDateString(new Date(last.at));
     if (scope.day !== day) return null;
     return {

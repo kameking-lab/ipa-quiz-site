@@ -35,6 +35,15 @@ describe("milestone scheduling", () => {
     expect(rangeProgress(scope, attempts, now + 1, "b")).toEqual({ lap: false, mastered: 1, total: 2 });
   });
 
+  it("waits for the next correct answer if an incorrect answer completes the lap", () => {
+    const scope = ["a", "b"].map(id => ({ id, exam: "fe", year: 2026 }));
+    const completed = [answer("a", true, -1), answer("b", false)];
+    expect(rangeProgress(scope, completed, now, "b").lap).toBe(false);
+    const retry = [...completed, answer("b", true, 1)];
+    expect(rangeProgress(scope, retry, now + 1, "b").lap).toBe(true);
+    expect(rangeProgress(scope, [...retry, answer("a", true, 2)], now + 2, "a").lap).toBe(false);
+  });
+
   it("excludes the first day and counts the third daily goal only after different dates", () => {
     expect(canOfferAchievement(day, day)).toBe(false);
     expect(canOfferAchievement("2026-11-21", day)).toBe(true);
