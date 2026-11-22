@@ -137,6 +137,7 @@ const nextConfig: NextConfig = {
     // copilot search index and local audit logs are not needed and pushed the function
     // past Vercel's 250MB limit (265MB) once the question corpus grew.
     "/api/copilot/exam-library": ["./generated/copilot/**/*"],
+    "/api/og": [`./${QUESTION_CORPUS_DIR}/**/*`],
   },
   outputFileTracingIncludes: {
     "/sw.js": ["./lib/pwa/sw.js"],
@@ -148,6 +149,7 @@ const nextConfig: NextConfig = {
     // Question bodies are shared with the per-exam files from question-corpus.
     "/api/copilot": ["./generated/copilot/**/*"],
     "/api/copilot/exam-library": ["./data/exam-library/pe-first/*.json"],
+    "/api/og": ["./public/fonts/noto-sans-jp-700.woff", "./public/fonts/noto-sans-jp-OFL.txt", "./app/api/og/default.png"],
     "/e-learning/search": ["./data/exam-library/pe-first/*.json"],
     "/e-learning/exams/*": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json", "./data/exam-library/pe-first/*.json"],
     "/api/mobile/catalog": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json"],
