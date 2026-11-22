@@ -74,7 +74,9 @@ describe("search entry metadata", () => {
       const previous = titles.get(title);
       if (previous && previous !== path) collisions.push(previous + " / " + path);
       titles.set(title, path);
-      if (description.length < 80 || description.length > 110 || title.length > 63) outliers.push(path);
+      if (description.length < 80 || description.length > 110 || title.length > 63) {
+        outliers.push(path + " (" + title.length + " title, " + description.length + " description)");
+      }
     }
     expect(collisions).toEqual([]);
     expect(outliers).toEqual([]);

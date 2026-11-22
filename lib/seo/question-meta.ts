@@ -8,6 +8,9 @@ import { practiceCategoryLabel } from "@/lib/questions/practice-session";
 const DESCRIPTION_MAX = 110;
 
 const TITLE_TARGET = 38;
+const TITLE_MAX = 63;
+const TITLE_SEPARATOR = "｜答えと解説｜";
+const MIN_STEM = 7;
 const CTA = "答えと解説を無料で確認できます。";
 
 function searchableStem(q: Question): string {
@@ -42,15 +45,25 @@ export function questionTitle(q: Question): string {
   const exam = questionSourceExam(q);
   const session = sessionLabel(q.session, q.exam);
   const field = q.exam === "energy-kanri" ? q.topicTags.find(tag => tag === "電気分野" || tag === "熱分野")
-    : q.exam === "dekyo-chief-2" ? q.category
+    : q.exam === "dekyo-chief-2" || q.exam.startsWith("dekyo-charge-") ? q.category
     : q.exam === "riku-tech1" && q.topicTags.length > 1 ? truncate(q.topicTags.at(-1)!, 17)
     : q.exam === "tohan" ? (q.season === "kansai" ? "関西" : q.sourcePdfUrl.includes("metro.tokyo.lg.jp") ? "東京" : undefined)
     : undefined;
   const qualifier = q.session === "am1" && exam === "高度試験共通" ? q.exam.toUpperCase() : undefined;
-  const number = "問" + questionNumberLabel(q).replace(/^問/, "");
-  const source = [exam + edition, field, session, qualifier, number].filter(Boolean).join(" ");
-  const stem = truncate(searchableStem(q), Math.max(7, TITLE_TARGET - source.length - 7));
-  return stem + "｜答えと解説｜" + source;
+  const printedNumber = questionNumberLabel(q).replace(/^問/, "");
+  const numberedItem = /第(\d+)問\s*(.*)$/.exec(printedNumber);
+  const number = numberedItem ? "問" + numberedItem[1] + numberedItem[2] : "問" + printedNumber;
+  const maxSource = TITLE_MAX - TITLE_SEPARATOR.length - MIN_STEM;
+  let source = [exam + edition, field, session, qualifier, number].filter(Boolean).join(" ");
+  if (source.length > maxSource) {
+    const examName = truncate(exam, 12);
+    const numberLabel = truncate(number, 16);
+    const paper = [edition, session, qualifier, field].filter(Boolean).join(" ");
+    const paperBudget = maxSource - examName.length - numberLabel.length - 2;
+    source = examName + " " + truncate(paper, paperBudget) + " " + numberLabel;
+  }
+  const stem = truncate(searchableStem(q), Math.max(MIN_STEM, TITLE_TARGET - source.length - TITLE_SEPARATOR.length));
+  return stem + TITLE_SEPARATOR + source;
 }
 
 export function questionSnippet(q: Question): string {
