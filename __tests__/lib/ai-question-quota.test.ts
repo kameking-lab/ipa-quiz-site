@@ -71,9 +71,9 @@ describe("AI daily question quota", () => {
     expect(third.headers["X-AI-Quota-Consumed"]).toBe("pending");
     await settleAiUsage(third, true);
     expect(third.headers["X-RateLimit-Remaining"]).toBe("0");
-    const fourth = await prepareAiUsage(caller.request, "scoring");
+    const fourth = await prepareAiUsage(caller.request, "copilot");
     reserve.mockResolvedValueOnce({ status: "exhausted", remaining: 0, resetAt, lease: undefined });
-    const denied = await consumeAiUsage(fourth, "gemini", ["scoring", "fourth"], questionQuotaStore, now);
+    const denied = await consumeAiUsage(fourth, "gemini", ["copilot", "fourth"], questionQuotaStore, now);
     expect(denied?.status).toBe(429);
     expect(await denied?.json()).toMatchObject({ error: "ai_daily_quota_exhausted", resetAt });
     expect(reserve.mock.calls.map(([window]) => window)).toEqual([day, day]);
@@ -104,10 +104,16 @@ describe("AI daily question quota", () => {
     expect(after.key).not.toBe(before.key);
   });
 
+  it("does not expose a usage status for the retired scoring feature", async () => {
+    const response = await GET(new Request("https://example.test/api/ai/usage?feature=scoring"));
+    expect(response.status).toBe(400);
+    expect(reserve).not.toHaveBeenCalled();
+  });
+
   it("accepts an independently verified App Store member during a Web lookup outage", async () => {
     ownership.web.mockRejectedValue(new Error("web unavailable"));
     ownership.ios.mockResolvedValue({ expiresAt: new Date(Date.now() + 60_000) });
-    for (const feature of ["copilot", "exam-library", "scoring"] as const) {
+    for (const feature of ["copilot", "exam-library", "essay-grade"] as const) {
       expect((await prepareAiUsage(request, feature)).access).toEqual({ kind: "paid", subject: "same-account" });
     }
     expect(reserve).not.toHaveBeenCalled();
@@ -174,23 +180,23 @@ describe("AI daily question quota", () => {
     reserve.mockResolvedValueOnce({ ...result, status: "reserved", lease });
     settle.mockResolvedValueOnce({ ...result, status: "released" });
     const response = await withAiUsageResponse(async track => {
-      const usage = await prepareAiUsage(request, "scoring");
+      const usage = await prepareAiUsage(request, "essay-grade");
       track(usage);
-      await consumeAiUsage(usage, "gemini", ["scoring", "answer"]);
+      await consumeAiUsage(usage, "gemini", ["essay-grade", "answer"]);
       return new Response(null, { status: 503 });
     });
     expect(response.headers.get("X-AI-Quota-Consumed")).toBe("0");
     expect(settle).toHaveBeenCalledExactlyOnceWith(lease, false);
     reserve.mockResolvedValueOnce({ ...result, status: "repeat", lease });
     settle.mockResolvedValueOnce({ ...result, status: "recovered" });
-    const resend = await prepareAiUsage(request, "scoring");
-    expect(await consumeAiUsage(resend, "gemini", ["scoring", "answer"])).toBeNull();
+    const resend = await prepareAiUsage(request, "essay-grade");
+    expect(await consumeAiUsage(resend, "gemini", ["essay-grade", "answer"])).toBeNull();
     await settleAiUsage(resend, true);
     expect(settle).toHaveBeenCalledTimes(2);
     expect(resend.headers["X-AI-Quota-Consumed"]).toBe("0");
     reserve.mockResolvedValueOnce({ ...result, status: "answered", lease: undefined });
-    const again = await prepareAiUsage(request, "scoring");
-    const duplicate = await consumeAiUsage(again, "gemini", ["scoring", "answer"]);
+    const again = await prepareAiUsage(request, "essay-grade");
+    const duplicate = await consumeAiUsage(again, "gemini", ["essay-grade", "answer"]);
     expect(duplicate?.status).toBe(409);
     expect(await duplicate?.json()).toMatchObject({ error: "ai_question_answered" });
   });
@@ -210,21 +216,21 @@ describe("AI daily question quota", () => {
     const now = Date.now();
     const windows = (endpoint: string) => normalUseWindows("same-account", endpoint, aiNormalUsePolicy(), now);
     const global = (endpoint: string) => windows(endpoint).filter(w => w.key.startsWith("rl:global:"));
-    expect(global("scoring")).toEqual(global("copilot"));
+    expect(global("essay-grade")).toEqual(global("copilot"));
     expect(global("copilot").map(w => w.limit)).toEqual([500, 5000]);
-    expect(windows("scoring").filter(w => w.key.startsWith("ai:normal-use:"))).toHaveLength(1);
+    expect(windows("essay-grade").filter(w => w.key.startsWith("ai:normal-use:"))).toHaveLength(1);
   });
 
   it("withholds a graded result if the free reservation cannot be confirmed", async () => {
     const now = Date.now(), resetAt = now + 60_000;
     const lease = { day: { subject: "user:same-account", limit: 3, offset: 540, now },
-      fingerprint: "scoring", owner: "owner", expiresAt: now + 120_000 };
+      fingerprint: "essay-grade", owner: "owner", expiresAt: now + 120_000 };
     reserve.mockResolvedValueOnce({ status: "reserved", remaining: 1, resetAt, lease });
     settle.mockRejectedValueOnce(new Error("lost reply")).mockResolvedValueOnce({ status: "unchanged", remaining: 1, resetAt });
     const result = await withAiUsageResponse(async track => {
-      const context = await prepareAiUsage(request, "scoring");
+      const context = await prepareAiUsage(request, "essay-grade");
       track(context);
-      await consumeAiUsage(context, "gemini", ["scoring", "answer"]);
+      await consumeAiUsage(context, "gemini", ["essay-grade", "answer"]);
       return Response.json({ grade: "completed" });
     });
     expect(result.status).toBe(503);

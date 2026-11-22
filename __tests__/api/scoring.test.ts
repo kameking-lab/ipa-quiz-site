@@ -1,84 +1,31 @@
-import { describe, it, expect, beforeAll, afterEach, vi } from "vitest";
+import { afterEach, expect, it, vi } from "vitest";
 import { POST } from "@/app/api/scoring/route";
 
-const boundary = vi.hoisted(() => ({ provider: vi.fn(), prepare: vi.fn(), consume: vi.fn(), cost: vi.fn(), cap: vi.fn() }));
-vi.mock("@/lib/ai/provider", () => ({ getProvider: boundary.provider, resolveModel: vi.fn(), gradingThinkingBudget: vi.fn() }));
-vi.mock("@/lib/ai/cost-guard", () => ({ recordAiCost: boundary.cost, checkMonthlyCostCap: boundary.cap, estimateTokens: vi.fn() }));
-vi.mock("@/lib/ai/usage-server", () => ({ prepareAiUsage: boundary.prepare, consumeAiUsage: boundary.consume, withAiUsageResponse: (run: (track: () => void) => unknown) => run(() => {}) }));
-afterEach(() => { for (const spy of Object.values(boundary)) expect(spy).not.toHaveBeenCalled(); });
+const calls = vi.hoisted(() => ({
+  getProvider: vi.fn(), resolveModel: vi.fn(), streamChat: vi.fn(), checkMonthlyCostCap: vi.fn(),
+  recordAiCost: vi.fn(), prepareAiUsage: vi.fn(), consumeAiUsage: vi.fn(),
+  checkAiNormalUse: vi.fn(), notifyOpsInBackground: vi.fn(),
+}));
+vi.mock("@/lib/ai/provider", () => ({
+  resolveModel: calls.resolveModel,
+  getProvider: calls.getProvider.mockResolvedValue({ name: "gemini", streamChat: calls.streamChat }),
+}));
+vi.mock("@/lib/ai/cost-guard", () => ({
+  checkMonthlyCostCap: calls.checkMonthlyCostCap, recordAiCost: calls.recordAiCost,
+}));
+vi.mock("@/lib/ai/usage-server", () => ({
+  prepareAiUsage: calls.prepareAiUsage, consumeAiUsage: calls.consumeAiUsage,
+}));
+vi.mock("@/lib/ai/normal-use-server", () => ({ checkAiNormalUse: calls.checkAiNormalUse }));
+vi.mock("@/lib/notify/ops-alert", () => ({ notifyOpsInBackground: calls.notifyOpsInBackground }));
 
-// Ensure mock provider is used (no GEMINI_API_KEY). The mock provider has a
-// dedicated short-circuit in the route that returns deterministic JSON, which
-// makes the happy-path testable without any network calls.
-beforeAll(() => {
-  delete process.env.GEMINI_API_KEY;
-  delete process.env.KV_REST_API_URL;
-  delete process.env.KV_REST_API_TOKEN;
-});
+afterEach(() => vi.unstubAllEnvs());
 
-function makeReq(body: unknown, ip: string): Request {
-  return new Request("http://localhost/api/scoring", {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-      "x-forwarded-for": ip,
-    },
-    body: JSON.stringify(body),
-  });
-}
-
-describe("POST /api/scoring", () => {
-  it("returns 400 for non-JSON body", async () => {
-    const req = new Request("http://localhost/api/scoring", {
-      method: "POST",
-      headers: { "x-forwarded-for": "10.0.0.1" },
-      body: "not-json",
-    });
-    const res = await POST(req);
-    expect(res.status).toBe(400);
-    const json = await res.json();
-    expect(json.error).toBe("invalid_request");
-  });
-
-  it("returns 400 when payload fails Zod validation", async () => {
-    const res = await POST(makeReq({ questionId: "x", answers: [] }, "10.0.0.2"));
-    expect(res.status).toBe(400);
-    expect((await res.json()).error).toBe("invalid_request");
-  });
-
-  it("returns 404 when questionId does not match any afternoon question", async () => {
-    const res = await POST(
-      makeReq(
-        {
-          questionId: "ap-9999h-pm-q99",
-          answers: [{ label: "設問1", text: "テスト解答" }],
-        },
-        "10.0.0.3",
-      ),
-    );
-    expect(res.status).toBe(404);
-    expect((await res.json()).error).toBe("not_found");
-  });
-
-  it.each(["これはサンプル解答です。", "あ".repeat(80), "ab"])("retired original returns 404 without grading or consuming usage: %s", async (text) => {
-    const res = await POST(makeReq({questionId: "ap-2024h-pm-q1", answers: [{label: "設問1", text}]}, `10.0.2.${text.length}`));
-    expect(res.status).toBe(404);
-    const body = await res.json();
-    expect(body.error).toBe("not_found");
-    for (const key of ["totalScore", "subResults", "overallComment"]) expect(body).not.toHaveProperty(key);
-  });
-
-  it("rejects answers array exceeding 20 sub-answers", async () => {
-    const tooMany = Array.from({ length: 25 }, (_, i) => ({
-      label: `設問${i + 1}`,
-      text: "x",
-    }));
-    const res = await POST(
-      makeReq(
-        { questionId: "ap-2024h-pm-q1", answers: tooMany },
-        "10.0.0.5",
-      ),
-    );
-    expect(res.status).toBe(400);
-  });
+it.each(["false", "true"])("returns 410 without model selection, AI, quota, costs or alerts (rollout=%s)", async rollout => {
+  vi.stubEnv("AI_QUOTA_ROLLOUT", rollout);
+  const response = await POST();
+  expect(response.status).toBe(410);
+  expect(await response.json()).toEqual({ error: "scoring_retired" });
+  expect(response.headers.has("X-Provider")).toBe(false);
+  for (const call of Object.values(calls)) expect(call).not.toHaveBeenCalled();
 });

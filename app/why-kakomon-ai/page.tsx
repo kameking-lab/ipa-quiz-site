@@ -13,7 +13,7 @@ import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 const PAGE_PATH = "/why-kakomon-ai";
 const PAGE_TITLE = "過去問AI を選ぶ理由 ── IPA 試験対策サービス比較";
 const PAGE_DESCRIPTION =
-  "IPA 情報処理技術者試験の過去問対策サービスを比較。AI コパイロット・午後 AI 採点・PWA 対応など、過去問AI 独自の差別化機能を、競合の良さも公平に紹介しながら整理します。";
+  "IPA 情報処理技術者試験の過去問対策サービスを比較。AI コパイロット、論述の練習教材、PWA 対応など、サービスごとの学習機能を紹介します。";
 
 const OG_IMAGE_URL = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
   type: "feature",

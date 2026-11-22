@@ -1,6 +1,6 @@
 import { AI_DAILY_RESET_OFFSET_MINUTES, AI_FREE_QUESTIONS_PER_DAY } from "@/lib/constants/ai-quota";
 
-export const AI_FEATURES = ["copilot", "exam-library", "scoring", "essay-grade"] as const;
+export const AI_FEATURES = ["copilot", "exam-library", "essay-grade"] as const;
 export type AiFeature = typeof AI_FEATURES[number];
 export const AI_POLICY_VERSION = "ai-20261122-free3-anon-paid-normal";
 

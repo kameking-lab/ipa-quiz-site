@@ -140,13 +140,6 @@ describe("buildGradingFallbackAlert — 通知だけで次の手が決まる", (
 describe("採点ルートが実際にアラートを配線している", () => {
   const read = (p: string) => readFileSync(join(process.cwd(), p), "utf8");
 
-  it("scoring の mock-fallback 分岐が通知を出す", () => {
-    const src = read("app/api/scoring/route.ts");
-    expect(src).toMatch(/notifyOpsInBackground/);
-    expect(src).toMatch(/scoring:mock-fallback/);
-    expect(src).toMatch(/scoring:truncated/);
-  });
-
   it("essay-grade の mock-fallback 分岐が通知を出す", () => {
     const src = read("lib/essay/legacy-grade.ts");
     expect(src).toMatch(/notifyOpsInBackground/);
@@ -158,7 +151,7 @@ describe("採点ルートが実際にアラートを配線している", () => {
     // 無料枠・IP 制限は正常動作。cost_capped は ¥50,000 到達時に cost-guard が
     // 1 回通知済みで、その後の 503 は帰結にすぎない。どちらもここで鳴らすと
     // 件数が多すぎて、本当に見るべき mock-fallback が埋もれる。
-    for (const path of ["app/api/scoring/route.ts", "lib/essay/legacy-grade.ts"]) {
+    for (const path of ["lib/essay/legacy-grade.ts"]) {
       const src = read(path);
       const alertKeys = [...src.matchAll(/key:\s*usage\?\.truncated\s*\?\s*"([^"]+)"\s*:\s*"([^"]+)"/g)]
         .flatMap((m) => [m[1], m[2]]);

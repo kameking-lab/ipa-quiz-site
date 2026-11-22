@@ -190,7 +190,7 @@ export default async function EssayPm2DetailPage({
       />
 
       <div className="print:hidden mt-8 rounded-2xl border border-violet-200/70 bg-gradient-to-br from-violet-50 via-card to-card p-5 dark:border-violet-900/40 dark:from-violet-950/40">
-        <h2 className="mb-2 text-base font-bold">自分の答案を AI で採点してみる</h2>
+        <h2 className="mb-2 text-base font-bold">別の題材で論述を練習する</h2>
         <p className="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
           別の題材で、設問に合わせた構成を確認できます。
         </p>

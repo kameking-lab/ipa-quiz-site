@@ -1,7 +1,5 @@
 // Provider regression fixture: admission is tested independently in security/normal-use suites.
 vi.mock("@/lib/ai/normal-use-server", () => ({ checkAiNormalUse: async () => ({ ok: true }) }));
-// TEST ONLY corpus injection: retain generic grading/provider/cost contracts, not public availability.
-vi.mock("@/lib/afternoon/load", async () => await import("@/__tests__/fixtures/archived-afternoon-load"));
 import { describe, it, expect, beforeEach, vi } from "vitest";
 
 /**
@@ -77,7 +75,6 @@ vi.mock("@/lib/ai/cost-guard", async () => {
   };
 });
 
-const { POST: scoringPOST } = await import("@/app/api/scoring/route");
 const { POST: essayPOST } = await import("@/lib/essay/legacy-grade");
 
 let ipCounter = 0;
@@ -93,11 +90,6 @@ function req(url: string, body: unknown): Request {
   });
 }
 
-const scoringBody = {
-  questionId: "ap-2024h-pm-q1",
-  answers: [{ label: "設問1", text: "テスト解答です。" }],
-};
-
 const essayText = "あ".repeat(700);
 const essayBody = {
   questionId: "pm-2024a-pm2-q1",
@@ -112,40 +104,6 @@ beforeEach(() => {
   seen.params = [];
   seen.cost = [];
   seen.truncate = false;
-});
-
-describe("/api/scoring — thinking budget と打ち切り開示", () => {
-  it("thinkingBudget と responseMimeType をプロバイダに渡す", async () => {
-    await scoringPOST(req("http://localhost/api/scoring", scoringBody)).then((r) => r.text());
-    expect(seen.params).toHaveLength(1);
-    expect(seen.params[0].thinkingBudget).toBe(0);
-    expect(seen.params[0].responseMimeType).toBe("application/json");
-  });
-
-  it("STOP で完走したら gradingMode は ai になる", async () => {
-    const res = await scoringPOST(req("http://localhost/api/scoring", scoringBody));
-    const json = JSON.parse(await res.text());
-    expect(json.gradingMode).toBe("ai");
-  });
-
-  it("MAX_TOKENS で切れたら「出力上限で途中終了」と開示する", async () => {
-    seen.truncate = true;
-    const res = await scoringPOST(req("http://localhost/api/scoring", scoringBody));
-    const json = JSON.parse(await res.text());
-    expect(json.status).toBe("unavailable");
-    expect(res.status).toBe(503);
-    expect(json.error).toBe("truncated_response");
-    expect(json).not.toHaveProperty("totalScore");
-  });
-
-  it("思考トークンを出力トークンとして計上する", async () => {
-    seen.truncate = true;
-    await scoringPOST(req("http://localhost/api/scoring", scoringBody)).then((r) => r.text());
-    expect(seen.cost).toHaveLength(1);
-    // 400 (本文) + 1091 (思考) — 思考ぶんを落とすと §0 の上限が実費を見失う
-    expect(seen.cost[0].outputTokens).toBe(1491);
-    expect(seen.cost[0].inputTokens).toBe(1975);
-  });
 });
 
 describe("/api/essay-grade — thinking budget と打ち切り開示", () => {
