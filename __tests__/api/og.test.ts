@@ -9,10 +9,14 @@ beforeEach(() => {
   vi.resetModules();
   // The built-in renderer downloads emoji SVGs. Supply an SVG locally in unit
   // tests so the PNG assertion does not depend on that CDN.
-  vi.stubGlobal("fetch", vi.fn(async () => new Response(
-    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" fill="white"/></svg>',
-    { headers: { "Content-Type": "image/svg+xml" } },
-  )));
+  const fetch = globalThis.fetch;
+  vi.stubGlobal("fetch", vi.fn(async (...args: Parameters<typeof fetch>) => {
+    if (!String(args[0]).startsWith("https://cdn.jsdelivr.net/gh/twitter/twemoji@")) return fetch(...args);
+    return new Response(
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" fill="white"/></svg>',
+      { headers: { "Content-Type": "image/svg+xml" } },
+    );
+  }));
 });
 
 afterEach(() => {
