@@ -105,6 +105,15 @@ for (const [name, flags, choice] of [
   });
 }
 
+test("a lap completed with a wrong answer waits for another correct answer", async ({ page }) => {
+  await seed(page, { lap: true });
+  await completed(page, "全員に公開する");
+  await expect(page.getByRole("button", { name: "この結果を共有" })).toHaveCount(0);
+  await page.clock.setFixedTime(new Date(now.getTime() + 1_000));
+  await completed(page);
+  await expect(page.locator('[data-study-achievement="lap"]')).toHaveCount(1);
+});
+
 test("an answered question shares its public path and spoiler-free OGP", async ({ page }) => {
   await page.goto(questionPath);
   await expect(page.getByRole("button", { name: "この問題を共有" })).toHaveCount(0);
