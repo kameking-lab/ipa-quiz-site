@@ -53,7 +53,7 @@ it("paints the qualification's WebP artwork into the achievement PNG", async () 
   const rgb = await sharp(Buffer.from(await response.arrayBuffer())).extract({ left: 950, top: 315, width: 1, height: 1 })
     .removeAlpha().raw().toBuffer();
   expect([...rgb]).toEqual([208, 16, 112]);
-  expect(vi.mocked(readFile).mock.calls[1][0]).toMatch(/ip-study\.webp$/);
+  expect(readFile).toHaveBeenCalledWith(expect.stringMatching(/ip-study\.webp$/));
 });
 
 it.each(["unreadable", "unsupported"] as const)("returns a cacheable default PNG when the font is %s", async (mode) => {
