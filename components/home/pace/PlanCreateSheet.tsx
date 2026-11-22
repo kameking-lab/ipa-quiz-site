@@ -1,6 +1,6 @@
 "use client";
-import { useEffect, useState } from "react";
-import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
+import { useEffect, useState, type ReactNode } from "react";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import type { HomeDirectoryItem } from "@/lib/home/home-directory";
 import type { ExamSchedule, ExamScheduleSession } from "@/lib/study-plan/schedule";
@@ -23,9 +23,9 @@ const weekdayPresets = [
 ];
 const fieldClass = "mt-1.5 min-h-11 w-full min-w-0 rounded-lg border border-input bg-card px-3";
 
-export function PlanCreateSheet({ open, onOpenChange, items, initialExam, initialDate, initialSessionId, onCreated, embedded = false, editing }: {
-  embedded?: boolean; editing?: PacePlan;
-  open: boolean; onOpenChange: (open: boolean) => void; items: readonly HomeDirectoryItem[];
+export function PlanCreateSheet({ open, onOpenChange, items, initialExam, initialDate, initialSessionId, onCreated, embedded = false, editing, trigger }: {
+  embedded?: boolean; editing?: PacePlan; trigger?: ReactNode;
+  open: boolean; onOpenChange: (open: boolean) => void; items: readonly Pick<HomeDirectoryItem, "key" | "name">[];
   initialExam: string; initialDate?: string; initialSessionId?: string; onCreated: (plan: PacePlan) => void;
 }) {
   const [exam, setExam] = useState(initialExam);
@@ -206,6 +206,7 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, initia
     {fields}
   </section>;
   return <Sheet open={open} onOpenChange={onOpenChange}>
+    {trigger && <SheetTrigger asChild>{trigger}</SheetTrigger>}
     <SheetContent side="bottom" aria-describedby={undefined} className={`${styles.sheet} mx-auto max-h-[min(90dvh,calc(100dvh-var(--safe-top)-1rem))] max-w-[640px] overflow-y-auto px-[18px] pt-3 pb-[max(1.5rem,var(--safe-bottom))] sm:px-6`}>
       <div aria-hidden="true" className="mx-auto mb-3 h-1 w-11 rounded-full bg-border" />
       <SheetHeader className="pr-11"><SheetTitle>{editing ? "学習計画を変更" : "学習計画を作る"}</SheetTitle></SheetHeader>

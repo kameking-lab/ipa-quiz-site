@@ -20,7 +20,7 @@ import { qualificationRunArt } from "@/lib/home/study-room";
 import { qualificationIdsForExam } from "@/lib/study-plan/schedule";
 import { searchQualifications } from "@/lib/qualifications/search";
 import { groupQualifications, qualificationDisplayKey, qualificationGroupLabel } from "@/lib/qualifications/groups";
-import { planReferral } from "@/lib/study-plan/next-qualification";
+import { planCreatedHref, planReferral } from "@/lib/study-plan/next-qualification";
 import type { ExamScheduleSession } from "@/lib/study-plan/schedule";
 import { MobileInstallNudge } from "@/components/pwa/MobileInstallNudge";
 import { PlanCalendarButton } from "./PlanCalendarButton";
@@ -166,7 +166,7 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false, children
     <MobileInstallNudge placement="plan-created" />
   </div>;
   if (createOnLoad) return <PlanCreateSheet embedded open items={planItems} initialExam={initialExam}
-    onOpenChange={() => {}} onCreated={saved => router.push("/#plan-created=" + encodeURIComponent(saved.id))} />;
+    onOpenChange={() => {}} onCreated={saved => router.push(planCreatedHref(saved.id))} />;
   const search = <StudySearchField compact={!firstVisit} id="qualification-search" aria-label="資格名・略称で検索" aria-controls={term || firstVisit ? "home-qualification-results" : undefined} disabled={!ready} value={query} onChange={e => setQuery(e.target.value)} placeholder={firstVisit ? "受ける資格は？" : "ほかの資格をさがす"} />;
   return <>
     <Suspense><HomePlanReferral keys={referralKeys} onOpen={openPrefilled} /></Suspense>

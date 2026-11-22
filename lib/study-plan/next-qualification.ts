@@ -35,9 +35,36 @@ export function nextDatedSession(sessions: readonly ExamScheduleSession[], today
     .sort((a, b) => a.examDate!.localeCompare(b.examDate!))[0];
 }
 
-export function planReferral(search: { getAll(key: string): string[] }, keys: readonly string[], today: string) {
-  const [exam, ...extraExams] = search.getAll("plan");
+type ReferralSearch = { getAll(key: string): string[] };
+
+export function examDateFromSearch(search: ReferralSearch, today: string, allowToday = false) {
   const [examDate, ...extraDates] = search.getAll("examDate");
-  return exam && examDate && !extraExams.length && !extraDates.length && keys.includes(exam)
-    && dayNumber(examDate) !== null && examDate >= today ? { exam, examDate } : null;
+  if (!examDate || extraDates.length || dayNumber(examDate) === null) return null;
+  return examDate > today || (allowToday && examDate === today) ? examDate : null;
+}
+
+export function planReferral(search: ReferralSearch, keys: readonly string[], today: string) {
+  const [exam, ...extraExams] = search.getAll("plan");
+  const examDate = examDateFromSearch(search, today, true);
+  return exam && examDate && !extraExams.length && keys.includes(exam) ? { exam, examDate } : null;
+}
+
+export function examTopPlanDate(exam: string, search: ReferralSearch, sessions: readonly ExamScheduleSession[], today: string) {
+  const incomingDate = examDateFromSearch(search, today);
+  const singleDays = sessions.filter(session => session.examDate && session.examDate > today &&
+    (!incomingDate || session.examDate === incomingDate) && session.datePrecision !== "month" &&
+    (!session.examDateEnd || session.examDateEnd === session.examDate) && !session.examPhaseWindows?.length);
+  const session = nextDatedSession(singleDays, today);
+  const examDate = incomingDate ?? session?.examDate;
+  if (!examDate) return null;
+
+  return {
+    examDate,
+    daysUntil: dayNumber(examDate)! - dayNumber(today)!,
+    qualificationId: session?.qualificationId ?? qualificationIdsForExam(exam)[0] ?? null,
+  };
+}
+
+export function planCreatedHref(id: string) {
+  return "/#plan-created=" + encodeURIComponent(id);
 }
