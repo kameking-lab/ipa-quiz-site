@@ -104,6 +104,16 @@ it("keeps the selected exam for weekly review when a native buyer needs to sign 
   expect(JSON.parse(nativePurchase.preferences.get("kakomon:purchase-intent:v1")!)).toMatchObject({ action: "buy", returnTo: target });
 });
 
+it("preserves the AI offer click handler while opening native checkout", async () => {
+  const saveDraft = vi.fn();
+  render(<><NativeTools /><a data-monthly-plan data-keep-click-in-app href="/billing/start?returnTo=%2Fq" onClick={saveDraft}>AI質問を続ける</a></>);
+  await act(async () => {
+    expect(fireEvent.click(screen.getByRole("link", { name: "AI質問を続ける" }))).toBe(false);
+  });
+  expect(saveDraft).toHaveBeenCalledTimes(1);
+  expect(screen.getByRole("heading", { name: "会員・設定" })).toBeVisible();
+});
+
 it("does not scroll when the panel is opened from its own button at the top", async () => {
   render(<NativeTools />);
   await act(async () => {});

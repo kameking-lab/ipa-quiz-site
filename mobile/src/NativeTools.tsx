@@ -199,7 +199,10 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
       if (url.origin === SITE_ORIGIN && ["/billing", "/billing/start"].includes(url.pathname.replace(/\/$/, ""))) {
         if (a.hasAttribute("data-monthly-plan")) sendConversion("plan_clicked");
         setPurchaseReturn(safeQuizReturn(url.searchParams.get("returnTo")));
-        e.preventDefault(); e.stopPropagation(); setOpen(true); setRevealTick(n=>n+1);
+        e.preventDefault();
+        // The AI offer saves its question draft in the React click handler.
+        if (!a.hasAttribute("data-keep-click-in-app")) e.stopPropagation();
+        setOpen(true); setRevealTick(n=>n+1);
       }
       else if (url.origin !== SITE_ORIGIN && url.protocol === "https:") { e.preventDefault(); e.stopPropagation(); void (isQualificationUrl(url.href) ? openQualificationUrl(url.href) : Browser.open({ url: url.href })).catch(()=>setNotice("リンクを開けませんでした。再度お試しください。")); }
     };

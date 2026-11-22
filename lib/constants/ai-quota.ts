@@ -21,7 +21,9 @@ export const POST_FEEDBACK_AI_DAILY_LIMIT = 9999;
 export const FEEDBACK_TOKEN_DAILY_LIMIT = POST_FEEDBACK_AI_DAILY_LIMIT;
 
 /** Copilot questions have no ten-question gate; other AI features retain their quotas. */
-export const AI_QUOTA_COPY = "AI コパイロットは無料で質問できます。連続利用や大量送信には適正利用制限があります。";
+export const AI_FREE_QUESTIONS_PER_DAY = 3;
+export const AI_DAILY_RESET_OFFSET_MINUTES = 9 * 60;
+export const AI_QUOTA_COPY = `AI質問は無料で1日${AI_FREE_QUESTIONS_PER_DAY}回。月額プランは回数制限なし（適正利用の範囲）。`;
 
 /** Short form for tight spots (badges, captions). */
-export const AI_QUOTA_COPY_SHORT = "無料で質問可能（適正利用制限あり）";
+export const AI_QUOTA_COPY_SHORT = `無料で1日${AI_FREE_QUESTIONS_PER_DAY}回`;

@@ -128,39 +128,40 @@ async function boundedJson(response: Response, signal: AbortSignal, deadline: nu
 
 export const sharedUsageStore: UsageStore = {
   async admit(subject, limit, offsetMinutes, now) {
-    let response: Response | undefined;
-    try {
-      if (!Number.isSafeInteger(limit) || limit < 0) throw new Error("invalid usage limit");
-      const { key, resetAt } = usageWindow(subject, now, offsetMinutes);
-      const url = process.env.KV_REST_API_URL?.replace(/\/$/, "");
-      const token = process.env.KV_REST_API_TOKEN;
-      if (!url || !token) throw new Error("usage store unavailable");
-      const signal = AbortSignal.timeout(3000);
-      const deadline = performance.now() + 3000;
-      response = await boundedFetch(url, {
-        method: "POST",
-        headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
-        body: JSON.stringify(["EVAL", ADMIT_AI_USAGE_LUA, 1, key, limit, Math.ceil(resetAt / 1000)]),
-        signal,
-        cache: "no-store",
-      }, signal, deadline);
-      if (!response.ok) throw new Error("usage store unavailable");
-      const body = await boundedJson(response, signal, deadline);
-      if (typeof body !== "object" || body === null || !("result" in body) || "error" in body)
-        throw new Error("invalid usage response");
-      const result = body.result;
-      if (!Array.isArray(result) || result.length !== 2 || (result[0] !== 0 && result[0] !== 1)
-        || !Number.isSafeInteger(result[1]) || result[1] < 0
-        || (result[0] === 1 && (result[1] < 1 || result[1] > limit))
-        || (result[0] === 0 && result[1] < limit)) throw new Error("invalid usage response");
-      checkDeadline(signal, deadline);
-      return { allowed: result[0] === 1, remaining: Math.max(0, limit - result[1]), limit, resetAt };
-      } catch {
-      // No transport detail/credentials and no retry, fallback or refund. A lost
-      // response can follow a committed mutation; this does not roll it back.
-      throw new Error("usage store unavailable");
-    } finally {
-      if (response) cancelBody(response);
-    }
+    if (!Number.isSafeInteger(limit) || limit < 0) throw new Error("invalid usage limit");
+    const { key, resetAt } = usageWindow(subject, now, offsetMinutes);
+    const result = await usageKvCommand(["EVAL", ADMIT_AI_USAGE_LUA, 1, key, limit, Math.ceil(resetAt / 1000)]);
+    if (!Array.isArray(result) || result.length !== 2 || (result[0] !== 0 && result[0] !== 1)
+      || !Number.isSafeInteger(result[1]) || result[1] < 0
+      || (result[0] === 1 && (result[1] < 1 || result[1] > limit))
+      || (result[0] === 0 && result[1] < limit)) throw new Error("invalid usage response");
+    return { allowed: result[0] === 1, remaining: Math.max(0, limit - result[1]), limit, resetAt };
   },
 };
+
+export async function usageKvCommand(command: readonly (string | number)[]): Promise<unknown> {
+  let response: Response | undefined;
+  try {
+    const url = process.env.KV_REST_API_URL?.replace(/\/$/, "");
+    const token = process.env.KV_REST_API_TOKEN;
+    if (!url || !token) throw new Error("usage store unavailable");
+    const signal = AbortSignal.timeout(3000);
+    const deadline = performance.now() + 3000;
+    response = await boundedFetch(url, {
+      method: "POST",
+      headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+      body: JSON.stringify(command), signal, cache: "no-store",
+    }, signal, deadline);
+    if (!response.ok) throw new Error("usage store unavailable");
+    const body = await boundedJson(response, signal, deadline);
+    if (typeof body !== "object" || body === null || !("result" in body) || "error" in body)
+      throw new Error("invalid usage response");
+    checkDeadline(signal, deadline);
+    return body.result;
+  } catch {
+    // A lost response can follow a remote write. Callers own any retry policy.
+    throw new Error("usage store unavailable");
+  } finally {
+    if (response) cancelBody(response);
+  }
+}

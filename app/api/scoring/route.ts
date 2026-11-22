@@ -191,16 +191,16 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     return NextResponse.json({ error: "essay_grading_retired" }, { status: 410 });
   }
 
-  const usage = await prepareAiUsage("scoring");
+  const usage = await prepareAiUsage(req, "scoring");
   track(usage);
   if (usage.response) return usage.response;
   const ip = getClientIp(req);
-  const feedbackToken = readFeedbackTokenInfo(req);
-  const feedbackSubmitted = feedbackToken.valid;
+  const feedbackToken = usage.legacy ? readFeedbackTokenInfo(req) : null;
+  const feedbackSubmitted = feedbackToken?.valid ?? false;
   const rl = usage.legacy ? await checkRateLimit({
     ip,
     feedbackSubmitted,
-    feedbackTokenId: feedbackToken.id,
+    feedbackTokenId: feedbackToken?.id,
   }) : null;
   if (rl && !rl.ok) {
     const message =
@@ -267,7 +267,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
       let buf = "";
       // コールバック代入は TS の到達解析で undefined に狭められるため、箱で受ける。
       const completed: { value?: StreamCompletion } = {};
-      const usageDenial = await consumeAiUsage(usage, provider.name);
+      const usageDenial = await consumeAiUsage(usage, provider.name, ["scoring", question.id, userPrompt]);
       if (usageDenial) {
     if (cap.reservation) await recordAiCost({ ...budget, inputTokens: 0, outputTokens: 0, reservation: cap.reservation });
     return usageDenial;
@@ -287,12 +287,14 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
           // 出力トークンの無駄も減る。
           responseMimeType: "application/json",
           temperature: 0.2,
+          signal: req.signal,
           onComplete: (c) => {
             completed.value = c;
           },
         })) {
           buf += chunk;
         }
+        req.signal.throwIfAborted();
       } catch (err) {
         await captureException(err, {
           route: "/api/scoring",

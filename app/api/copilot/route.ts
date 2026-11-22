@@ -18,7 +18,7 @@ import { createCopilotGeminiProvider } from "@/lib/copilot/gemini-flash38";
 import { checkMonthlyCostCap, recordAiCost, estimateTokens, textBudget } from "@/lib/ai/cost-guard";
 import { tierForModel } from "@/lib/ai/cost-tracker";
 import { COPILOT_MODEL } from "@/lib/copilot/model";
-import { prepareAiUsage, consumeAiUsage, withAiUsageResponse, type AiUsageContext } from "@/lib/ai/usage-server";
+import { prepareAiUsage, consumeAiUsage, settleAiUsage, withAiUsageResponse, type AiUsageContext } from "@/lib/ai/usage-server";
 
 export const runtime = "nodejs";
 
@@ -108,7 +108,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     );
   }
 
-  const usage = await prepareAiUsage("copilot");
+  const usage = await prepareAiUsage(req, "copilot");
   track(usage);
   if (usage.response) return usage.response;
 
@@ -191,7 +191,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     const cap = await checkMonthlyCostCap(provider.name, budget);
     reservation = cap.reservation;
     if (!cap.allowed) {
-    if (!usage.legacy) usage.headers["X-AI-RateLimit-Scope"] = "service-cost";
+      if (!usage.legacy) usage.headers["X-AI-RateLimit-Scope"] = "service-cost";
       return NextResponse.json(
         {
           error: cap.reason ?? "cost_capped",
@@ -206,12 +206,13 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
 
   const isRealProvider = provider.name !== "mock";
 
-  const usageDenial = await consumeAiUsage(usage, provider.name);
+  const usageDenial = await consumeAiUsage(usage, provider.name, ["copilot", question.id, selectedChoice, quickAction, payload.messages]);
   if (usageDenial) {
     if (reservation) await recordAiCost({ ...budget, inputTokens: 0, outputTokens: 0, reservation });
     return usageDenial;
   }
 
+  usage.streaming = true;
   const stream = createCopilotResponseStream({
     provider,
     system,
@@ -225,28 +226,28 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     onComplete: isRealProvider
       ? // await して返す。ストリームは計上完了まで close されない（fire-and-forget
         // だとレスポンス完了で関数が凍結され、KV 書き込みが失われうる）。
-        async (outputChars, usage) => {
+        async (outputChars, completion, answered) => {
           console.info("[copilot] completed", {
             questionId: payload.question.id, model, serverTiming,
-            finishReason: usage?.finishReason,
-            promptTokens: usage?.promptTokens,
-            outputTokens: usage?.outputTokens,
-            thoughtsTokens: usage?.thoughtsTokens,
-            totalTokens: usage?.totalTokens,
+            finishReason: completion?.finishReason,
+            promptTokens: completion?.promptTokens,
+            outputTokens: completion?.outputTokens,
+            thoughtsTokens: completion?.thoughtsTokens,
+            totalTokens: completion?.totalTokens,
           });
-          await recordAiCost({
+          await Promise.all([settleAiUsage(usage, answered === true), recordAiCost({
             tier: tierForModel(model),
-            inputTokens: usage?.promptTokens ?? budget.inputTokens,
+            inputTokens: completion?.promptTokens ?? budget.inputTokens,
             // Stream interruption may hide usageMetadata, including billable
             // thinking tokens. Reserve the whole generation budget in that case.
-            outputTokens: usage?.totalTokens !== undefined && usage.promptTokens !== undefined
-              ? Math.max(0, usage.totalTokens - usage.promptTokens)
-              : usage?.outputTokens !== undefined && usage.thoughtsTokens !== undefined
-                ? usage.outputTokens + usage.thoughtsTokens
-                : Math.max(maxTokens, (usage?.outputTokens ?? 0) + (usage?.thoughtsTokens ?? 0), estimateTokens(outputChars)),
+            outputTokens: completion?.totalTokens !== undefined && completion.promptTokens !== undefined
+              ? Math.max(0, completion.totalTokens - completion.promptTokens)
+              : completion?.outputTokens !== undefined && completion.thoughtsTokens !== undefined
+                ? completion.outputTokens + completion.thoughtsTokens
+                : Math.max(maxTokens, (completion?.outputTokens ?? 0) + (completion?.thoughtsTokens ?? 0), estimateTokens(outputChars)),
             label: "copilot",
             reservation,
-          });
+          })]);
         }
       : undefined,
   });

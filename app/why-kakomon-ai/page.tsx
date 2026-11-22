@@ -1,4 +1,4 @@
-import { AI_ACCESS_DESCRIPTION, AI_ATTEMPT_DESCRIPTION, BROWSER_AUDIO_DESCRIPTION, aiAccessClaimsEnabled } from "@/components/ai/ai-access-copy";
+import { AI_ACCESS_DESCRIPTION, AI_COUNTING_DESCRIPTION, BROWSER_AUDIO_DESCRIPTION, LEGACY_AI_COPY, aiAccessClaimsEnabled } from "@/lib/ai/quota-copy";
 import { MONTHLY_PUBLIC_OFFER } from "@/lib/billing/subscription/public-offer";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -156,12 +156,12 @@ const FAQS = [
 
 export default function WhyKakomonAiPage() {
   const activeAiPolicy = aiAccessClaimsEnabled();
-  const activeAiCopy = (activeAiPolicy ? "無料AIの新規生成にはログインが必要です。" + AI_ACCESS_DESCRIPTION : "AI コパイロットは無料で試用できます。その他のAI機能は各画面の利用条件をご確認ください。AI応答の利用条件は連続演習の月額プランとは別に管理しています。") + " " + BROWSER_AUDIO_DESCRIPTION;
+  const activeAiCopy = (activeAiPolicy ? AI_ACCESS_DESCRIPTION : LEGACY_AI_COPY) + " " + BROWSER_AUDIO_DESCRIPTION;
   const currentOfferCopy = `対象の連続演習の月額プランの案内額は税込${MONTHLY_PUBLIC_OFFER.priceYen.toLocaleString("ja-JP")}円です。販売状況・対象範囲・契約条件は月額プランの案内でご確認ください。`;
   const comparisonRows = COMPARISON_ROWS.map(row => row.label === "料金" ? {...row, kakomonAi: activeAiCopy + " " + currentOfferCopy} : row);
   const faqs = FAQS.map((faq, index) => index === 0
     ? {q: "無料と有料の範囲は？", a: "個別問題・保存済み履歴の閲覧と復習は無料です。" + activeAiCopy + " " + currentOfferCopy}
-    : index === 3 ? {q: "月額プランとAIの利用条件は？", a: currentOfferCopy + " " + activeAiCopy + (activeAiPolicy ? " " + AI_ATTEMPT_DESCRIPTION : "")} : faq);
+    : index === 3 ? {q: "月額プランとAIの利用条件は？", a: currentOfferCopy + " " + activeAiCopy + (activeAiPolicy ? " " + AI_COUNTING_DESCRIPTION : "")} : faq);
   const absUrl = `${SITE_BASE_URL}${PAGE_PATH}`;
 
   const jsonLd = {

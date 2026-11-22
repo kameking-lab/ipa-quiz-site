@@ -25,7 +25,7 @@ export interface CopilotStreamInput {
    * frozen the moment the response completes — anything still in flight at
    * close() is silently dropped.
    */
-  onComplete?: (outputChars: number, usage?: StreamCompletion) => void | Promise<void>;
+  onComplete?: (outputChars: number, usage?: StreamCompletion, answered?: boolean) => void | Promise<void>;
 }
 
 const DEFAULT_TIMEOUT_MS = 35_000;
@@ -69,6 +69,7 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
   return new ReadableStream<Uint8Array>({
     async start(controller) {
       let closed = false;
+      let answered = false;
       const closeStream = () => {
         if (closed) return;
         closed = true;
@@ -93,11 +94,14 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
           responseText += chunk;
           controller.enqueue(encoder.encode(chunk));
         }
+        upstreamAbort.signal.throwIfAborted();
+        if (!responseText.trim()) throw new Error("AI response was empty");
         if (usage?.truncated) {
           controller.enqueue(encoder.encode("\n\n[応答の途中終了] 出力上限に達しました。続きを質問してください。"));
         }
         const usedFooter = hasGrounding ? citationFooterForResponse(citationFooter, responseText) : "";
         controller.enqueue(encoder.encode(usedFooter || CITATION_UNVERIFIED_NOTICE));
+        answered = Boolean(responseText.trim()) && !upstreamAbort.signal.aborted && !usage?.truncated;
       } catch (err) {
         const aborted =
           (err as { name?: string } | null)?.name === "AbortError" ||
@@ -136,7 +140,7 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
         // 必ず close() の **前** に await する。close() 後に投げた非同期処理は、
         // レスポンス完了でサーバレス関数が凍結されるため完了が保証されない。
         try {
-          await onComplete?.(producedChars, usage);
+          await onComplete?.(producedChars, usage, answered);
         } catch {
           // ignore
         }

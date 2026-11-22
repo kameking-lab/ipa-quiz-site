@@ -20,10 +20,12 @@ export function DailyLimitActions({ children }: { children: ReactNode }) {
   </div>;
 }
 
-export function MonthlyPlanLink({ returnTo, onClick }: { returnTo: string; onClick?: () => void }) {
-  return <a data-monthly-plan href={planStartHref(returnTo)} onClick={onClick} aria-label="月額プランに申し込む" aria-describedby="monthly-price-amount monthly-terms"
+export function MonthlyPlanLink({ returnTo, onClick, label, describedBy = "monthly-price-amount monthly-terms", keepClickInApp }: {
+  returnTo: string; onClick?: () => void; label?: string; describedBy?: string; keepClickInApp?: boolean;
+}) {
+  return <a data-monthly-plan data-keep-click-in-app={keepClickInApp ? "" : undefined} href={planStartHref(returnTo)} onClick={onClick} aria-label={label ?? "月額プランに申し込む"} aria-describedby={describedBy}
     className={monthlyActionClass + " bg-primary text-primary-foreground hover:bg-primary/90"}>
-    申し込む
+    {label ?? "申し込む"}
   </a>;
 }
 

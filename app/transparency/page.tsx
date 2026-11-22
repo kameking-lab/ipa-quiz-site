@@ -197,7 +197,7 @@ export default async function TransparencyPage() {
             </li>
             <li>
               <strong>シェア・フィードバックと月額プランで運営を支える。</strong>
-              個別問題・原紙・保存済み履歴の閲覧と復習は無料です。連続演習には1日10問の無料枠と税込980円の月額プランがあります。AI コパイロットは月額対象外で、連続利用や大量送信には適正利用制限があります。
+              個別問題・原紙・保存済み履歴の閲覧と復習は無料です。連続演習には1日10問の無料枠と税込980円の月額プランがあります。{aiAccessClaimsEnabled() ? AI_ACCESS_DESCRIPTION : LEGACY_AI_COPY}
             </li>
             <li>
               <strong>意思決定を公開する。</strong>
@@ -385,3 +385,4 @@ function MetricCard({ label, value, sub }: { label: string; value: string; sub?:
     </Card>
   );
 }
+import { AI_ACCESS_DESCRIPTION, LEGACY_AI_COPY, aiAccessClaimsEnabled } from "@/lib/ai/quota-copy";
