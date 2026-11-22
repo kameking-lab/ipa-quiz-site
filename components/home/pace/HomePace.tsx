@@ -24,6 +24,8 @@ import { groupQualifications, qualificationDisplayKey, qualificationGroupLabel }
 import { planCreatedHref, planReferral } from "@/lib/study-plan/next-qualification";
 import type { ExamScheduleSession } from "@/lib/study-plan/schedule";
 import { MobileInstallNudge } from "@/components/pwa/MobileInstallNudge";
+import { StudyAchievement, type StudyMoment } from "@/components/StudyAchievements";
+import { readStreak } from "@/lib/streak/storage";
 import { nativeClient } from "@/mobile/shared/contracts";
 import { canRemindForPlan } from "@/mobile/shared/study-reminder-plan";
 import { PlanCalendarButton } from "./PlanCalendarButton";
@@ -70,6 +72,7 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false, children
   const [sheet, setSheet] = useState<"create" | "edit" | "switch" | "detail" | null>(null);
   const [prefill, setPrefill] = useState<PlanPrefill>();
   const [created, setCreated] = useState<PacePlan>();
+  const [passMoment, setPassMoment] = useState<{ planId: string; moment: StudyMoment }>();
   useEffect(() => {
     if (["#choose-qualification", "#home-directory-title"].includes(location.hash)) {
       router.replace("/search");
@@ -155,7 +158,12 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false, children
   function updatePlan(patch: Partial<PacePlan>) {
     if (!plan) return;
     if (!savePacePlan({ ...plan, ...patch, updatedAt: new Date().toISOString() })) setError("保存できませんでした。");
-    else { setError(""); setSheet(null); }
+    else {
+      setError(""); setSheet(null);
+      if (patch.result === "passed" && !plan.result) {
+        setPassMoment({ planId: plan.id, moment: { exam: plan.exam, at: Date.now(), passed: true, streak: readStreak().currentStreak } });
+      }
+    }
   }
   const planDomain = domains.find(d => [...d.featured, ...d.compact].some(i => i.key === plan?.exam));
   const previousDomain = previousItem && domains.find(d => d.featured.includes(previousItem) || d.compact.includes(previousItem));
@@ -183,7 +191,7 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false, children
             {plan.examDate && <span className="shrink-0 pt-3 text-[13px] text-muted-foreground tabular-nums"><time dateTime={plan.examDate}>{shortDate(plan.examDate)}</time> 受験</span>}
           </div>
           {plan.registration && <p className="text-[13px] text-muted-foreground">{plan.registration.label}</p>}
-          {created?.id === plan.id && calendarConfirmation}
+          {created?.id === plan.id && passMoment?.planId !== plan.id && calendarConfirmation}
           {postExam && <h1 className="mt-2 text-2xl leading-tight font-bold">試験、おつかれさまでした</h1>}
           {examToday && <h1 className="mt-2 text-xl font-bold">試験は今日です</h1>}
           {pace?.total ? <>
@@ -208,6 +216,7 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false, children
             <><p className="mt-2 text-sm">試験前に勉強日がありません</p><button type="button" onClick={() => setSheet("edit")} className="study-link">勉強する日を変更</button></> : null)}
           {pace?.target != null && <Link className="study-primary mt-2" href={`/quiz/today?plan=${encodeURIComponent(plan.id)}`}>計画の問題を解く <ArrowRight aria-hidden="true" className="size-5 shrink-0" /></Link>}
           {postExam && <>
+            {plan.result === "passed" && passMoment?.planId === plan.id && <StudyAchievement moment={passMoment.moment} />}
             {!plan.result && <div aria-label="結果を記録" role="group" className="mt-2 grid grid-cols-3 gap-2">
               {([["passed", "合格"], ["failed", "不合格"], ["absent", "受けなかった"]] as const).map(([result, label]) => (
                 <Button key={result} variant="outline" className="min-h-12 border-input bg-card px-1" onClick={() => updatePlan({ result })}>{label}</Button>
@@ -223,7 +232,7 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false, children
           <button type="button" onClick={() => setSheet("detail")} className="study-link">
             学習計画の詳細{warning ? '（申込締切 ' + (plan.registration?.deadline ? shortDate(plan.registration.deadline) : '') + '）' : ''}
           </button>
-          {nativeClient() && canRemindForPlan(plan) && <StudyReminderControl key={plan.id} planId={plan.id} />}
+          {nativeClient() && passMoment?.planId !== plan.id && canRemindForPlan(plan) && <StudyReminderControl key={plan.id} planId={plan.id} />}
         </div>
       ) : returning ? <div className={`${styles.hero} p3-landscape`}>
         <p className="text-[13px] text-muted-foreground">おかえりなさい</p>

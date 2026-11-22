@@ -2,6 +2,7 @@ import Capacitor
 import UIKit
 import EventKit
 import EventKitUI
+import StoreKit
 import WebKit
 import os.log
 
@@ -26,6 +27,7 @@ class QualificationBridgeViewController: CAPBridgeViewController {
     override func capacitorDidLoad() {
         bridge?.registerPluginInstance(QualificationBridgePlugin())
         bridge?.registerPluginInstance(TrackingTransparencyPlugin())
+        bridge?.registerPluginInstance(StudyReviewPlugin())
         #if ASC_CAPTURE && DEBUG && targetEnvironment(simulator)
         if ASCCapture.isActive, let webView = webView {
             // Let the existing capture helper decide when to leave the bundled screen.
@@ -54,6 +56,51 @@ class QualificationBridgeViewController: CAPBridgeViewController {
             WKUserScript(source: source, injectionTime: .atDocumentStart, forMainFrameOnly: true))
         // ...and updates the document that is already showing.
         webView.evaluateJavaScript(source, completionHandler: nil)
+    }
+}
+
+@objc(StudyReviewPlugin)
+public class StudyReviewPlugin: CAPPlugin, CAPBridgedPlugin {
+    public let identifier = "StudyReviewPlugin"
+    public let jsName = "StudyReview"
+    public let pluginMethods: [CAPPluginMethod] = [
+        CAPPluginMethod(name: "requestReview", returnType: CAPPluginReturnPromise)
+    ]
+    private let firstUseKey = "study-review.first-use"
+    private let requestedVersionsKey = "study-review.requested-versions"
+
+    public override func load() {
+        let defaults = UserDefaults.standard
+        if defaults.object(forKey: firstUseKey) == nil {
+            defaults.set(Date(), forKey: firstUseKey)
+        }
+    }
+
+    @objc func requestReview(_ call: CAPPluginCall) {
+        DispatchQueue.main.async {
+            let defaults = UserDefaults.standard
+            var calendar = Calendar(identifier: .gregorian)
+            calendar.timeZone = TimeZone(secondsFromGMT: 9 * 3600)!
+            let now = Date()
+            let firstUse = defaults.object(forKey: self.firstUseKey) as? Date ?? now
+            var versions = defaults.stringArray(forKey: self.requestedVersionsKey) ?? []
+            guard let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String,
+                  !version.isEmpty, !versions.contains(version),
+                  calendar.startOfDay(for: firstUse) < calendar.startOfDay(for: now),
+                  let host = self.bridge?.viewController, host.presentedViewController == nil,
+                  let scene = host.viewIfLoaded?.window?.windowScene, scene.activationState == .foregroundActive else {
+                call.resolve(["requested": false])
+                return
+            }
+            versions.append(version)
+            defaults.set(versions, forKey: self.requestedVersionsKey)
+            if #available(iOS 16.0, *) {
+                AppStore.requestReview(in: scene)
+            } else {
+                SKStoreReviewController.requestReview(in: scene)
+            }
+            call.resolve(["requested": true])
+        }
     }
 }
 

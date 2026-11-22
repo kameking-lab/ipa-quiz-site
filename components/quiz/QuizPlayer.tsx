@@ -29,10 +29,12 @@ import { ChoiceButton } from "./ChoiceButton";
 import { AfternoonEssayHint } from "./AfternoonEssayHint";
 import { useQuizChoiceRoving } from "@/lib/a11y/use-quiz-choice-roving";
 import { ExplanationCard } from "./ExplanationCard";
+import { AnswerStudyShare, PlanCompletionShare, useAnswerStudyMoment } from "@/components/StudyAchievements";
+import { questionShareTitle } from "@/lib/sharing/links";
+import { questionPagePath } from "@/lib/seo/question-url";
 import { createHistoryStore } from "@/lib/storage/history";
 import { writeLastQuestion } from "@/lib/storage/last-question";
 
-import { MobileInstallNudge } from "@/components/pwa/MobileInstallNudge";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Timer } from "lucide-react";
 import { examLabel } from "@/lib/utils";
@@ -128,6 +130,7 @@ function ScoredQuizPlayer({
     setRevealed(false);
   }
   const { recordAnswer: recordActivityAnswer, recordExplanation, endRef: explanationEndRef } = useQuestionActivity(question, revealed);
+  const { moment, recordMoment } = useAnswerStudyMoment();
   const [preparedExplanationId, setPreparedExplanationId] = React.useState<string | null>(null);
   const [completed, setCompleted] = React.useState(false);
   const questionStartRef = React.useRef<HTMLDivElement>(null);
@@ -249,6 +252,7 @@ function ScoredQuizPlayer({
         at: now,
       });
       recordStudyOnDate();
+      recordMoment(question.exam, question.id, correct, now);
       pet.answer(question, petAnswer);
       const nextCombo = correct ? combo + 1 : 0;
       const allStats = history.getStats();
@@ -263,7 +267,7 @@ function ScoredQuizPlayer({
         setBurst({ level, nonce: Date.now() });
       }
     },
-    [question, answerPending, attempt, history, combo, pendingAchievement, pet, recordActivityAnswer],
+    [question, answerPending, attempt, history, combo, pendingAchievement, pet, recordActivityAnswer, recordMoment],
   );
 
   const onNativeBAnswer = React.useCallback((selections: NativeBSelections) => {
@@ -579,6 +583,7 @@ function ScoredQuizPlayer({
                   onNext={goNext}
                   nextLabel={index + 1 >= total ? "結果を見る" : "次の問題へ"}
                 />
+                {revealed && <AnswerStudyShare moment={moment} id={question.id} path={questionPagePath(question)} title={questionShareTitle(question.question)} />}
                 <span ref={explanationEndRef} aria-hidden="true" className="block h-px" />
               </div>
             )}
@@ -725,7 +730,7 @@ export function QuizCompleteScreen({
           <ArrowLeft className="h-4 w-4" /> {backLabel}
         </Button>
 
-        {showPlanInstall && stats.answered > 0 && <MobileInstallNudge placement="plan-complete" />}
+        {showPlanInstall && <PlanCompletionShare answered={stats.answered} />}
 
         {scheduleUrl && (
           <details className="mt-5 rounded-xl border border-border px-4 text-sm">

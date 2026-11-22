@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { MobileInstallNudge } from "@/components/pwa/MobileInstallNudge";
+import { PlanCompletionShare } from "@/components/StudyAchievements";
 import { ExamQuestionPlayer } from "@/components/exam-library/exam-question-player";
 import { fetchPracticeQuestion } from "@/lib/billing/guest-client";
 import type { ExamQuestion } from "@/lib/exam-library-model";
@@ -28,7 +28,7 @@ export function TodayLibrary({ questions, exam, backHref, backLabel, showPlanIns
   if (!group) return <section className="p-8 text-center">
     <h2 className="text-xl font-bold">{score.answered}問中{score.correct}問正解</h2>
     <Link className="study-link mt-4" href={backHref}>{backLabel}</Link>
-    {showPlanInstall && score.answered > 0 && <MobileInstallNudge placement="plan-complete" />}
+    {showPlanInstall && <PlanCompletionShare answered={score.answered} />}
   </section>;
   return <LibraryPart key={part} questions={group} exam={exam} initialId={resumeId ?? undefined}
     onComplete={(answered, correct) => {

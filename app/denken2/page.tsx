@@ -4,6 +4,7 @@ import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import { TsuginoWelcome } from "@/components/analytics/TsuginoWelcome";
 import { referralPracticeHref } from "@/lib/questions/referral-practice";
 import type { Metadata } from "next";
+import { withStudyCardMetadata, type ShareSearchParams } from "@/lib/sharing/card-metadata";
 import Link from "next/link";
 import { ArrowRight, BookOpenCheck } from "lucide-react";
 import { SECONDARY_QUESTIONS } from "@/lib/denken2/secondary";
@@ -13,10 +14,14 @@ import type { Session } from "@/lib/questions/types";
 import { NATIVE_QUESTIONS, getNativeEdition, getNativeSubjectQuestions, nativeSubjectPath } from "@/lib/denken2/native";
 
 const searchMetadata = formatExamSearchMetadata("電験二種", NATIVE_QUESTIONS.length + SECONDARY_QUESTIONS.length, [...NATIVE_QUESTIONS, ...SECONDARY_QUESTIONS].map(q => q.year));
-export const metadata: Metadata = withCanonicalSocialMetadata({
+const metadata = withCanonicalSocialMetadata({
   ...searchMetadata,
   alternates: { canonical: "/denken2" },
 });
+
+export async function generateMetadata({ searchParams }: { searchParams?: Promise<ShareSearchParams> }): Promise<Metadata> {
+  return withStudyCardMetadata(metadata, "denken2", await searchParams);
+}
 
 const YEAR = 2026;
 const SEASON = "primary";

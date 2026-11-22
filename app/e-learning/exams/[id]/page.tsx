@@ -22,6 +22,7 @@ import {
 import { listAvailableExamIds, loadExamPaper } from "@/lib/exam-library-papers";
 import { examLibraryHref } from "@/lib/exam-library-navigation";
 import { SITE_BASE_URL as SITE_URL } from "@/lib/seo/config";
+import { libraryQuestionSharePath, questionShareImage, questionShareTitle, shareLink } from "@/lib/sharing/links";
 
 interface ExamPageProps {
   params: Promise<{ id: string }>;
@@ -59,18 +60,29 @@ function examDescription(entry: ExamCatalogEntry, questionCount: number, scoredC
   return `${entry.subject}の公表試験問題（${dateText}）${questionCount}問を1問ずつ解けます。${scoring}`;
 }
 
-export async function generateMetadata({ params }: ExamPageProps): Promise<Metadata> {
-  const { id } = await params;
+export async function generateMetadata({ params, searchParams }: ExamPageProps): Promise<Metadata> {
+  const [{ id }, query] = await Promise.all([params, searchParams]);
   const resolved = resolveExam(id);
   if (!resolved) return {};
   const { entry, questions } = resolved;
   const scoredCount = questions.filter(isScorableQuestion).length;
-  return withCanonicalSocialMetadata({
+  const metadata = withCanonicalSocialMetadata({
     title: `${examTitle(entry)}（${describeExamDate(entry)}）過去問演習`,
     description: examDescription(entry, questions.length, scoredCount),
     alternates: { canonical: examPath(entry.id) },
     robots: { index: true, follow: true },
   });
+  const question = !strictContentGateEnabled() && typeof query?.question === "string"
+    ? questions.find(value => value.id === query.question) : undefined;
+  if (!question) return metadata;
+  const title = questionShareTitle(question.text);
+  const image = questionShareImage(title);
+  return {
+    ...metadata,
+    openGraph: { ...metadata.openGraph, title, url: shareLink(libraryQuestionSharePath(id, question.id), "question"),
+      images: [{ url: image, width: 1200, height: 630, alt: title }] },
+    twitter: { card: "summary_large_image", title, description: metadata.description ?? undefined, images: [image] },
+  };
 }
 
 export default async function ExamPage({ params, searchParams }: ExamPageProps) {

@@ -4,6 +4,7 @@ import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import { TsuginoWelcome } from "@/components/analytics/TsuginoWelcome";
 import { referralPracticeHref } from "@/lib/questions/referral-practice";
 import type { Metadata } from "next";
+import { withStudyCardMetadata, type ShareSearchParams } from "@/lib/sharing/card-metadata";
 import Link from "next/link";
 import { ArrowRight, BookOpenCheck } from "lucide-react";
 import { DENKEN1_PRIMARY_QUESTIONS } from "@/data/questions/denken1";
@@ -12,10 +13,14 @@ import type { Session } from "@/lib/questions/types";
 import { DENKEN1_NATIVE_FIELD_COUNT, DENKEN1_NATIVE_PARTS, DENKEN1_NATIVE_QUESTIONS, denken1NativeSubjectPath } from "@/lib/denken1/native";
 
 const searchMetadata = formatExamSearchMetadata("電験一種", DENKEN1_NATIVE_QUESTIONS.length, DENKEN1_PRIMARY_QUESTIONS.map(q => q.year));
-export const metadata: Metadata = withCanonicalSocialMetadata({
+const metadata = withCanonicalSocialMetadata({
   ...searchMetadata,
   alternates: { canonical: "/denken1" },
 });
+
+export async function generateMetadata({ searchParams }: { searchParams?: Promise<ShareSearchParams> }): Promise<Metadata> {
+  return withStudyCardMetadata(metadata, "denken1", await searchParams);
+}
 
 const SUBJECTS: { session: Session; name: string; original: string; description: string }[] = [
   { session: "riron", name: "理論", original: "A問題 問2・問3", description: "半導体の輸送・発振回路" },

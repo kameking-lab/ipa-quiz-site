@@ -1,6 +1,8 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { ImageResponse } from "next/og";
+import { CARD_LABELS, cardQualification, parseStudyCard } from "@/lib/sharing/card";
+import { qualificationStudyArt } from "@/lib/home/study-room";
 
 export const runtime = "nodejs";
 
@@ -119,8 +121,16 @@ function safeNumber(s: string | null, fallback = 0): number {
 }
 
 export async function GET(request: Request) {
+  const params = new URL(request.url).searchParams;
+  const isStudyCard = params.get("type") === "study-card";
+  const exam = params.get("exam") ?? "";
+  const card = isStudyCard ? parseStudyCard(params) : null;
+  const qualification = isStudyCard ? cardQualification(exam) : null;
+  if (isStudyCard && (!card || !qualification || params.getAll("exam").length !== 1 || params.getAll("type").length !== 1)) {
+    return new Response("Invalid study card", { status: 400 });
+  }
   try {
-    const image = await renderImage(request);
+    const image = card && qualification ? await renderStudyCard(exam, qualification.name, card) : await renderImage(request);
     // ImageResponse streams its render. Read it here so a font or renderer
     // failure can still return the default image before headers are sent.
     return new Response(await image.arrayBuffer(), { headers: image.headers });
@@ -134,6 +144,39 @@ export async function GET(request: Request) {
       },
     });
   }
+}
+
+async function renderStudyCard(exam: string, name: string, card: NonNullable<ReturnType<typeof parseStudyCard>>) {
+  const artPath = qualificationStudyArt(exam);
+  const [font, art] = await Promise.all([
+    loadJapaneseFont(),
+    readFile(join(process.cwd(), "public", artPath)),
+  ]);
+  return new ImageResponse(
+    <div style={{ ...SIZE, display: "flex", alignItems: "center", padding: "56px 68px",
+      fontFamily: "Noto Sans JP", color: "#172f3f", background: "#f8f4e8" }}>
+      <div style={{ display: "flex", flexDirection: "column", width: "720px", gap: "24px" }}>
+        <div style={{ display: "flex", fontSize: "24px", color: "#2a645e" }}>過去問AI</div>
+        <div style={{ display: "flex", fontSize: "38px", lineHeight: 1.23 }}>{name}</div>
+        <div style={{ display: "flex", fontSize: "56px", lineHeight: 1.2 }}>{CARD_LABELS[card.kind]}</div>
+        <div style={{ display: "flex", gap: "16px" }}>
+          {[["正解済み", `${card.mastered.toLocaleString("ja-JP")} / ${card.total.toLocaleString("ja-JP")}問`],
+            ["連続学習", `${card.streak.toLocaleString("ja-JP")}日`]].map(([label, value]) => (
+              <div key={label} style={{ display: "flex", flexDirection: "column", gap: "6px",
+                padding: "14px 22px", borderRadius: "19px", background: "#e3eee7" }}>
+                <div style={{ display: "flex", fontSize: "20px", color: "#2a645e" }}>{label}</div>
+                <div style={{ display: "flex", fontSize: "34px" }}>{value}</div>
+              </div>
+            ))}
+        </div>
+      </div>
+      {/* eslint-disable-next-line @next/next/no-img-element -- ImageResponse renders an embedded asset */}
+      <img alt="" src={`data:image/webp;base64,${art.toString("base64")}`} width="335" height="410"
+        style={{ objectFit: "contain", flexShrink: 0, marginLeft: "12px" }} />
+    </div>,
+    { ...SIZE, fonts: [{ name: "Noto Sans JP", data: font, weight: 700, style: "normal" }],
+      headers: { "Cache-Control": "public, no-transform, max-age=86400, s-maxage=604800" } },
+  );
 }
 
 async function renderImage(request: Request) {
