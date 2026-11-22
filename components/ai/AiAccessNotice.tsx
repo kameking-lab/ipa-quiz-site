@@ -39,7 +39,7 @@ export function useAiQuota(feature: AiFeature, active = true) {
     window.addEventListener("pageshow", update);
     window.addEventListener(CHANNEL, update);
     return () => {
-      generation.current++;
+      generation.current = generation.current + 1;
       window.removeEventListener("focus", update);
       window.removeEventListener("pageshow", update);
       window.removeEventListener(CHANNEL, update);
