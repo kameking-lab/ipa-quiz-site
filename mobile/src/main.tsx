@@ -19,7 +19,7 @@ import { observeLogin } from "./login";
 import { refreshDeviceRights } from "./refresh-rights";
 import { applyDeviceTheme } from "./theme";
 import { homeSceneForHour, installHomeScene } from "@/lib/home/home-scene";
-import { HomeEventArt, HomeEventOrnament, useHomeEvent } from "@/components/home/HomeEventOrnament";
+import { HomeEventArt, useHomeEvent } from "@/components/home/HomeEventArt";
 import { HOME_WEATHER_ENDPOINT } from "@/lib/home/weather";
 import { HomeWeather } from "@/components/home/HomeWeather";
 import { installLocalApi } from "./local-api";
@@ -176,11 +176,10 @@ function App({ offlineFallback = false }: { offlineFallback?: boolean }) {
   }
   return <>{header}{status}<main className="native-main space-y-6" data-mobile-ready={ready}>
     <section className="native-home-hero p3-landscape p3-home-scene">
-      <HomeEventArt event={event} assetBase="." />
       {online && <HomeWeather endpoint={ORIGIN + HOME_WEATHER_ENDPOINT} />}
       <h1 className="text-[1.75rem] font-bold leading-snug tracking-tight">全資格の過去問を、いつでも。</h1>
       <p className="p3-scene-muted mt-2">ログイン不要で1日10問（全資格共通・日本時間0時リセット）。有料会員は回数無制限です。</p>
-      <HomeEventOrnament event={event} assetBase="." />
+      <HomeEventArt event={event} assetBase="." />
     </section>
     <section aria-labelledby="pick-title" className="space-y-3">
       <h2 id="pick-title" className="text-lg font-bold">資格を選んで始める</h2>

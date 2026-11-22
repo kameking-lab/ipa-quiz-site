@@ -2,55 +2,46 @@ import { expect, test } from "@playwright/test";
 
 test.use({ viewport: { width: 390, height: 844 }, timezoneId: "Asia/Tokyo", serviceWorkers: "block" });
 
-test("loads only today's ornament and adds it over the weather without moving the hero", async ({ page }) => {
+test("loads the Halloween scene after window load and keeps the weather on top", async ({ page }) => {
   await page.clock.setFixedTime(new Date("2026-10-31T17:10:00+09:00"));
   await page.addInitScript(() => {
     let loaded = false;
     window.addEventListener("load", () => { loaded = true; });
     const observer = new MutationObserver(() => {
-      if (!document.querySelector("img[data-home-event]")) return;
-      Object.assign(window, { ornamentInsertedAfterLoad: loaded });
+      if (!document.querySelector("[data-home-event-art]")) return;
+      Object.assign(window, { artInsertedAfterLoad: loaded });
       observer.disconnect();
     });
     observer.observe(document, { childList: true, subtree: true });
   });
   await page.route("**/api/home/weather", route => route.fulfill({ json: { weather: "snow" } }));
   await page.route("**/api/auth/session", route => route.fulfill({ json: null }));
-  const images: string[] = [];
-  let releaseImage = () => {};
-  const imageMayLoad = new Promise<void>(resolve => { releaseImage = resolve; });
-  await page.route("**/images/home/events/*.webp", async route => {
-    images.push(new URL(route.request().url()).pathname);
-    await imageMayLoad;
-    await route.continue();
+  const assets: string[] = [];
+  page.on("request", request => {
+    const path = new URL(request.url()).pathname;
+    if (path.startsWith("/images/home/event")) assets.push(path);
   });
 
   await page.goto("/");
   const hero = page.locator(".p3-home-scene");
-  const ornament = hero.locator("img[data-home-event]");
-  const trail = hero.locator(".p3-pace-track");
-  await expect(ornament).toHaveAttribute("data-home-event", "halloween");
-  await expect(ornament).toHaveAttribute("alt", "");
-  await expect(ornament).toHaveAttribute("loading", "lazy");
-  await expect(ornament).toHaveAttribute("fetchpriority", "low");
-  await expect.poll(() => images).toEqual(["/images/home/events/halloween.webp"]);
-  await expect(hero.locator("[data-home-weather]")).toHaveAttribute("data-home-weather", "snow");
+  const art = hero.locator("[data-home-event-art='halloween']");
+  const weather = hero.locator("[data-home-weather]");
+  await expect(art).toHaveAttribute("data-home-event-ready", "true");
+  await expect(art.locator("img")).toHaveAttribute("alt", "");
+  await expect(hero.locator("[data-home-event]")).toHaveCount(0);
+  await expect(weather).toHaveAttribute("data-home-weather", "snow");
+  await expect(art).toHaveCSS("z-index", "-4");
+  await expect(weather).toHaveCSS("z-index", "-2");
   await expect(page.locator("html")).toHaveAttribute("data-home-scene", "evening");
-  await page.evaluate(() => document.fonts.ready.then(() => undefined));
-  const before = await hero.boundingBox();
-  const trailBefore = await trail.boundingBox();
-  releaseImage();
-  await expect.poll(() => ornament.evaluate(image => (image as HTMLImageElement).naturalWidth)).toBe(96);
-  expect(await hero.boundingBox()).toEqual(before);
-  expect(await trail.boundingBox()).toEqual(trailBefore);
+  expect(assets).toEqual(["/images/home/event-scenes/halloween.webp"]);
   expect(await page.evaluate(() =>
-    (window as Window & { ornamentInsertedAfterLoad?: boolean }).ornamentInsertedAfterLoad,
+    (window as Window & { artInsertedAfterLoad?: boolean }).artInsertedAfterLoad,
   )).toBe(true);
 });
 
 for (const { width, file, motion } of [
   { width: 390, file: "christmas.webp", motion: "reduce" },
-  { width: 1280, file: "christmas-wide.webp", motion: "no-preference" },
+  { width: 1280, file: "christmas.webp", motion: "no-preference" },
 ] as const) {
   test(`decodes only the selected event background at ${width}px without shifting content`, async ({ page }) => {
     await page.setViewportSize({ width, height: 844 });
@@ -88,6 +79,8 @@ for (const { width, file, motion } of [
       await expect(art).toHaveCSS("opacity", "1");
       expect(await hero.boundingBox()).toEqual(before);
       expect(await trail.boundingBox()).toEqual(trailBefore);
+      const artBox = (await art.boundingBox())!;
+      expect(trailBefore!.y).toBeGreaterThanOrEqual(artBox.y + artBox.height);
       expect(imageRequests).toEqual([`/images/home/event-scenes/${file}`]);
     } finally {
       releaseImage();
@@ -109,23 +102,20 @@ test("keeps the CSS landscape when event art fails to load", async ({ page }) =>
   await expect(hero.getByRole("heading", { name: "今日も、ひと問ずつ。" })).toBeVisible();
 });
 
-test("switches from an ornament to a background at midnight and clears on ordinary dates", async ({ page }) => {
+test("switches backgrounds at midnight and clears on ordinary dates", async ({ page }) => {
   await page.clock.install({ time: new Date("2026-12-31T23:59:58+09:00") });
   await page.clock.pauseAt(new Date("2026-12-31T23:59:59+09:00"));
   await page.route("**/api/home/weather", route => route.fulfill({ json: { weather: null } }));
   await page.route("**/api/auth/session", route => route.fulfill({ json: null }));
   await page.goto("/");
   await page.clock.runFor(10);
-  const ornament = page.locator(".p3-home-scene [data-home-event]");
-  await expect(ornament).toHaveAttribute("data-home-event", "new-years-eve");
-  await page.clock.runFor(1000);
   const art = page.locator(".p3-home-scene [data-home-event-art]");
-  await expect(ornament).toHaveCount(0);
+  await expect(art).toHaveAttribute("data-home-event-art", "new-years-eve");
+  await page.clock.runFor(1000);
   await expect(art).toHaveAttribute("data-home-event-art", "new-year");
 
   await page.clock.setSystemTime(new Date("2027-01-15T12:00:00+09:00"));
   await page.evaluate(() => window.dispatchEvent(new Event("pageshow")));
-  await expect(ornament).toHaveCount(0);
   await expect(art).toHaveCount(0);
 });
 

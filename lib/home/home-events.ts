@@ -23,7 +23,6 @@ const astronomicalDates: Partial<Record<number, AstronomicalDates>> = {
 };
 
 export const HOME_EVENT_TABLE_LAST_YEAR = Math.max(...Object.keys(astronomicalDates).map(Number));
-export const HOME_EVENT_IMAGE_DIR = "images/home/events";
 
 type Anchor = (year: number) => number | undefined;
 

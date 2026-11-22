@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getHomeEvent, HOME_EVENT_IMAGE_DIR, type HomeEventId } from "@/lib/home/home-events";
+import { getHomeEvent, type HomeEventId } from "@/lib/home/home-events";
 import { HOME_EVENT_ART, HOME_EVENT_ART_DIR } from "@/lib/home/home-event-art";
 
 export function useHomeEvent() {
@@ -45,42 +45,15 @@ export function useHomeEvent() {
 
 type EventProps = { event: HomeEventId | null; assetBase?: string };
 
-export function HomeEventOrnament({ event, assetBase = "" }: EventProps) {
-  if (!event || HOME_EVENT_ART[event]) return null;
-
-  /* The same small WebP is served by the web and bundled in the offline app. */
-  /* eslint-disable @next/next/no-img-element */
-  return <img
-    src={`${assetBase}/${HOME_EVENT_IMAGE_DIR}/${event}.webp`}
-    className="p3-event-ornament"
-    data-home-event={event}
-    width={48}
-    height={48}
-    loading="lazy"
-    fetchPriority="low"
-    decoding="async"
-    alt=""
-    aria-hidden="true"
-  />;
-  /* eslint-enable @next/next/no-img-element */
-}
-
 export function HomeEventArt({ event, assetBase = "" }: EventProps) {
-  if (!event) return null;
-  const art = HOME_EVENT_ART[event];
-  return art ? <EventArtImage key={event} event={event} art={art} assetBase={assetBase} /> : null;
+  return event ? <EventArtImage key={event} event={event} assetBase={assetBase} /> : null;
 }
 
-function EventArtImage({ event, art, assetBase }: {
-  event: HomeEventId;
-  art: { mobile: string; wide?: string };
-  assetBase: string;
-}) {
+function EventArtImage({ event, assetBase }: { event: HomeEventId; assetBase: string }) {
   const [ready, setReady] = useState(false);
-  const base = `${assetBase}/${HOME_EVENT_ART_DIR}`;
   return <picture className="p3-event-art" data-home-event-art={event} data-home-event-ready={ready || undefined}>
-    {art.wide && <source media="(min-width: 640px)" srcSet={`${base}/${art.wide}`} />}
-    <img src={`${base}/${art.mobile}`} alt="" aria-hidden="true" fetchPriority="low" decoding="async"
+    <img src={`${assetBase}/${HOME_EVENT_ART_DIR}/${HOME_EVENT_ART[event]}`} alt="" aria-hidden="true"
+      fetchPriority="low" decoding="async"
       onLoad={event => { void event.currentTarget.decode().then(() => setReady(true), () => {}); }}
       onError={() => setReady(false)} />
   </picture>;
