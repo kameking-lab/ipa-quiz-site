@@ -16,6 +16,14 @@ import { test, expect } from "@playwright/test";
 const singleChoicePath = "/q/ap/2023-spring/am/q1";
 
 test.describe("/q inline answer", () => {
+  test("renders a shared pharmacy case alongside the question in server HTML", async ({ request }) => {
+    const res = await request.get("/q/yakuzaishi/2024-annual/practical/q286");
+    expect(res.status()).toBe(200);
+    const html = await res.text();
+    expect(html).toContain('aria-label="問題文"');
+    expect(html).toContain("問286〜287の共通症例");
+  });
+
   test("server-rendered HTML keeps the choices + honest JSON-LD (SEO/no-JS)", async ({
     request,
   }) => {

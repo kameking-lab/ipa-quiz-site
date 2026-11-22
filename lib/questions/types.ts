@@ -182,10 +182,10 @@ export type ChoiceKey = "ア" | "イ" | "ウ" | "エ" | "オ" | "カ" | "キ" | 
 export type QuestionPart = "a" | "b" | "1" | "2" | "3" | "4" | "5";
 
 
-/** Source material separately retained from the screen transcription. */
+/** Source material separately retained from the screen transcription. A shared passage can stand alone. */
 export interface QuestionOriginalContent {
 
-body: string;
+body?: string;
 
 choices?: Partial<Record<ChoiceKey, string>>;
 
