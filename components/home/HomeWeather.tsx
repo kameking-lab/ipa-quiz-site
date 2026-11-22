@@ -104,6 +104,6 @@ export function HomeWeather({ endpoint = HOME_WEATHER_ENDPOINT }: { endpoint?: s
     <span className="p3-weather-cloud p3-weather-cloud-left" />
     <span className="p3-weather-cloud p3-weather-cloud-middle" />
     <span className="p3-weather-cloud p3-weather-cloud-right" />
-    {weather !== "cloudy" && <span className="p3-weather-fall" />}
+    {weather !== "cloudy" && <span className="p3-weather-fall-mask"><span className="p3-weather-fall" /></span>}
   </span>;
 }
