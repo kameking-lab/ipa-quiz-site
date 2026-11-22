@@ -67,6 +67,7 @@ export function QuizClient({
   initialQuestionId,
   billingGateEnabled = false,
   fixedBatch = false,
+  showPlanInstall = false,
 }: {
   poolIds: string[];
   mode: QuizMode;
@@ -79,6 +80,7 @@ export function QuizClient({
   initialQuestionId?: string;
   billingGateEnabled?: boolean;
   fixedBatch?: boolean;
+  showPlanInstall?: boolean;
 }) {
   const [sessionIds, setSessionIds] = React.useState<string[] | null>(null);
   const [index, setIndex] = React.useState(0);
@@ -337,6 +339,7 @@ export function QuizClient({
       exam={exam}
       onNext={handleNext}
       onFinish={fixedBatch ? clearBatchQuestion : undefined}
+      showPlanInstall={showPlanInstall}
       />
     </div>
   );

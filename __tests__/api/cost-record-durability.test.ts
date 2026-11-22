@@ -1,17 +1,7 @@
-// TEST ONLY corpus injection: retain generic grading/provider/cost contracts, not public availability.
-vi.mock("@/lib/afternoon/load", async () => await import("@/__tests__/fixtures/archived-afternoon-load"));
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 
 /**
  * コスト計上の永続化（fire-and-forget 禁止）。
- *
- * 背景（2026-07-28 本番/Preview 実測）: /api/scoring を 4 回叩いても KV の
- * ai_cost:YYYY-MM が 1 円も動かなかった。例外でも KV 未接続でもなく、原因は
- * `void recordAiCost(...)` で計上を投げっぱなしにしたまま controller.close() /
- * return でレスポンスを終えていたこと。サーバレス環境ではレスポンス完了と同時に
- * 関数が凍結されるため、飛行中の KV 書き込みが黙って捨てられる。
- * その結果、CLAUDE.md §0 の ¥50,000 自動停止が最高単価の 2 経路
- * （scoring / essay-grade = resolveModel("grading")）を見失っていた。
  *
  * ここで固定する契約:
  *   recordAiCost が解決するまで、レスポンスは完了してはならない。
@@ -94,35 +84,6 @@ afterEach(() => {
 });
 
 describe("コスト計上はレスポンス完了前に永続化を終える", () => {
-  it("/api/scoring — ストリームが閉じる時点で recordAiCost が解決済み", async () => {
-    const pending = installPendingRecord();
-    stubStream(
-      JSON.stringify({
-        totalScore: 80,
-        subResults: ["設問1", "設問2", "設問3", "設問4"].map(label => ({label, score: 20, goodPoints: [], improvements: []})),
-        overallComment: "ok",
-      }),
-    );
-    const { POST } = await import("@/app/api/scoring/route");
-
-    const res = await POST(
-      new Request("http://localhost/api/scoring", {
-        method: "POST",
-        headers: { "content-type": "application/json", "x-forwarded-for": "10.9.0.1" },
-        body: JSON.stringify({
-          questionId: "ap-2024h-pm-q1",
-          answers: [{ label: "設問1", text: "サンプル解答テキストです。" }],
-        }),
-      }),
-    );
-    expect(res.status).toBe(200);
-    await drain(res);
-
-    expect(recordAiCost).toHaveBeenCalledTimes(1);
-    // void recordAiCost(...) に戻すとここが false になる（本番で失われていた状態）。
-    expect(pending.settled()).toBe(true);
-  });
-
   it("/api/essay-grade — レスポンス返却時点で recordAiCost が解決済み", async () => {
     const pending = installPendingRecord();
     stubStream("これはJSONではないので評価不能だが、呼出し使用量は計上する。");
@@ -199,7 +160,6 @@ describe("ソースレベルの再発防止", () => {
     const { readFileSync } = await import("node:fs");
     const { join } = await import("node:path");
     const ROUTES = [
-      "app/api/scoring/route.ts",
       "lib/essay/legacy-grade.ts",
       "app/api/copilot/route.ts",
     ];

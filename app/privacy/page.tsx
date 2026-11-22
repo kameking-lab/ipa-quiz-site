@@ -85,7 +85,7 @@ export default function PrivacyPage() {
           <h1 className="text-balance text-2xl font-bold leading-snug tracking-tight text-foreground sm:text-3xl">
             プライバシーポリシー
           </h1>
-          <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年11月21日</p>
+          <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年11月23日</p>
           <p className="mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
             過去問AI（以下「本サービス」）は、ユーザーのプライバシーを尊重し、
             個人情報の適切な取り扱いに努めます。
@@ -123,6 +123,7 @@ export default function PrivacyPage() {
               設定はお使いのブラウザの localStorage にのみ保存され、サーバーには送信されません。
               端末・ブラウザを変更すると履歴は引き継がれません。
             </p>
+            <p>通信元のおおよその地域（都道府県）をホームの天気表示に使い、地域は保存・外部送信しません。</p>
             <p>
               任意でログイン（Google / GitHub / メールリンク）された場合は、認証プロバイダから
               提供されるメールアドレス・表示名・プロフィール画像 URL を当社サーバーに保存します。

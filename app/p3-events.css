@@ -1,0 +1,68 @@
+/* Keep a fixed space alongside the trail, including while art is loading. */
+.p3-event-track {
+  position: relative;
+  min-height: 52px;
+  padding-inline-start: 54px;
+}
+
+.p3-event-ornament {
+  position: absolute;
+  z-index: -1;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.p3-event-track .p3-event-ornament {
+  inset-inline-start: 0;
+  inset-block-end: min(var(--p3-ornament-bottom, 20%), calc(100% - 48px));
+}
+
+.p3-event-track :is([data-home-event="sakura"], [data-home-event="tanabata"], [data-home-event="obon"]) {
+  --p3-ornament-bottom: 40%;
+}
+
+@media (max-width: 374px) {
+  .p3-event-track .p3-scene-tick-label { font-size: 17px; }
+}
+
+.native-home-hero > .p3-event-ornament {
+  inset-inline-end: 16px;
+  inset-block-end: 12px;
+}
+
+@supports (color: color-mix(in srgb, black, white)) {
+  .p3-home-scene:has([data-home-event]) {
+    --p3-event-hill: color-mix(in srgb, var(--p3-hill) 84%, var(--p3-event-tint));
+    --p3-event-hill-far: color-mix(in srgb, var(--p3-hill-far) 88%, var(--p3-event-tint));
+  }
+}
+
+/* Mix against the current hills in every time and theme. The sky is separate. */
+.p3-home-scene:has([data-home-event="new-year"]) { --p3-event-tint: #d7a465; }
+.p3-home-scene:has([data-home-event="coming-of-age"]) { --p3-event-tint: #c9849e; }
+.p3-home-scene:has([data-home-event="winter"]) { --p3-event-tint: #89adc5; }
+.p3-home-scene:has([data-home-event="setsubun"]) { --p3-event-tint: #bf7559; }
+.p3-home-scene:has([data-home-event="valentine"]) { --p3-event-tint: #d48398; }
+.p3-home-scene:has([data-home-event="hinamatsuri"]) { --p3-event-tint: #d998b4; }
+.p3-home-scene:has([data-home-event="spring"]) { --p3-event-tint: #d9bd6d; }
+.p3-home-scene:has([data-home-event="sakura"]) { --p3-event-tint: #eca9bd; }
+.p3-home-scene:has([data-home-event="children"]) { --p3-event-tint: #68a0b3; }
+.p3-home-scene:has([data-home-event="mothers"]) { --p3-event-tint: #d98d82; }
+.p3-home-scene:has([data-home-event="green-tea"]) { --p3-event-tint: #9bbc62; }
+.p3-home-scene:has([data-home-event="hydrangea"]) { --p3-event-tint: #9892c5; }
+.p3-home-scene:has([data-home-event="tanabata"]) { --p3-event-tint: #88bda3; }
+.p3-home-scene:has([data-home-event="marine"]) { --p3-event-tint: #66b1bc; }
+.p3-home-scene:has([data-home-event="sunflower"]) { --p3-event-tint: #e4b44c; }
+.p3-home-scene:has([data-home-event="obon"]) { --p3-event-tint: #ca886d; }
+.p3-home-scene:has([data-home-event="moon-viewing"]) { --p3-event-tint: #c7a66a; }
+.p3-home-scene:has([data-home-event="autumn-equinox"]) { --p3-event-tint: #b79c59; }
+.p3-home-scene:has([data-home-event="sports"]) { --p3-event-tint: #85a9ab; }
+.p3-home-scene:has([data-home-event="autumn-reading"]) { --p3-event-tint: #b58a65; }
+.p3-home-scene:has([data-home-event="halloween"]) { --p3-event-tint: #da8b48; }
+.p3-home-scene:has([data-home-event="culture"]) { --p3-event-tint: #c88458; }
+.p3-home-scene:has([data-home-event="shichi-go-san"]) { --p3-event-tint: #c9868e; }
+.p3-home-scene:has([data-home-event="labor"]) { --p3-event-tint: #be895f; }
+.p3-home-scene:has([data-home-event="christmas"]) { --p3-event-tint: #659578; }
+.p3-home-scene:has([data-home-event="new-years-eve"]) { --p3-event-tint: #c6a477; }

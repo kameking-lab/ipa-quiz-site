@@ -9,7 +9,7 @@ import { createHistoryStore } from "@/lib/storage/history";
 import { PlanCreateSheet } from "@/components/home/pace/PlanCreateSheet";
 
 const router = vi.hoisted(() => ({ replace: vi.fn(), push: vi.fn() }));
-vi.mock("next/navigation", () => ({ useRouter: () => router }));
+vi.mock("next/navigation", () => ({ useRouter: () => router, useSearchParams: () => new URLSearchParams(location.search) }));
 
 const domains: HomeDirectoryDomain[] = [{
   id: "it", title: "IT", lead: "", allHref: "/ipa", allLabel: "すべて", compact: [], totalQuestions: 2, qualificationCount: 2,
@@ -150,9 +150,9 @@ describe("home plan entry", () => {
     expect(screen.getByRole("searchbox")).toBeVisible();
     expect(await screen.findByRole("img", { name: "正解済み 0 / 1問" })).toBeVisible();
     if (result === "passed") {
-      expect(screen.getByRole("link", { name: "次は 基本情報技術者へ" })).toHaveAttribute("href", "/fe");
+      expect(screen.getByRole("link", { name: "過去問AIで解く" })).toHaveAttribute("href", "/fe");
     } else {
-      fireEvent.click(screen.getByRole("button", { name: "学習計画を作る" }));
+      fireEvent.click(screen.getByRole("button", { name: /計画を作り直す/ }));
       expect(await screen.findByLabelText("受験日")).toBeVisible();
     }
   });

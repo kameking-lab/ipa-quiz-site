@@ -121,8 +121,6 @@ export default async function RecommendedBooksExamPage({
   const books = RECOMMENDED_BOOKS[code] ?? [];
   const label = examLabel(code);
   const intro = EXAM_INTROS[code];
-  // 論述区分(ST/SA/PM/SM/AU)は論文事例集の読者＝旗艦「午後AI採点」の対象。
-  // 書籍購入後の自然な次の一歩としてAI論述添削へ導く（参考評価・誇大回避）。
   const isEssayExam = (ESSAY_EXAM_CODES as string[]).includes(code);
   const isDescriptiveAfternoonExam = DESCRIPTIVE_AFTERNOON_EXAMS.includes(code);
   const absUrl = `${SITE_BASE_URL}/recommended-books/${exam}`;
@@ -354,14 +352,14 @@ export default async function RecommendedBooksExamPage({
         </div>
         {isEssayExam && (
           <p className="mt-4 border-t border-sky-200 pt-3 text-sm leading-relaxed text-sky-900 dark:border-sky-900/50 dark:text-sky-100">
-            論文事例集で「書き方の型」を身につけたら、
+            論文事例集で学んだ書き方を、
             <Link
               href="/essay"
               className="mx-1 font-medium underline decoration-sky-400 underline-offset-2 hover:text-sky-700 dark:hover:text-sky-200"
             >
-              AIに午後論文を添削してもらう
+              論述の練習問題
             </Link>
-            と、自分の答案の弱点を具体的に把握できます（AI採点は参考評価です）。
+            で確認できます。
           </p>
         )}
         {code === "fe" && (

@@ -8,7 +8,7 @@ for (const viewport of [{ name: "desktop", width: 1280, height: 900 }, { name: "
       await expect(page.getByRole("link", { name: "今すぐ解く", exact: true })).toHaveAttribute("href", "/quiz?mode=random&exam=denko2");
       await expect(page.getByRole("link", { name: /本番想定 模試/ })).toHaveCount(0);
       await expect(page.getByRole("navigation", { name: "モバイル底タブ" }).getByRole("link", { name: "模試" })).toHaveCount(0);
-      await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", /全1,100問.*2016〜2026年度/);
+      await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", /9年分1,100問.*答えと解説/);
     });
     test("unsupported and unknown query cannot silently start AP, and back/repeat stays denko2", async ({ page }) => {
       await page.goto("/mock-exam?exam=denko2");

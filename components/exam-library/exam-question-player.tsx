@@ -1,4 +1,7 @@
 "use client";
+
+import { AnswerStudyShare, useAnswerStudyMoment } from "@/components/StudyAchievements";
+import { libraryQuestionSharePath, questionShareTitle } from "@/lib/sharing/links";
 import Link from "next/link";
 import { useQuestionActivity } from "@/lib/study-plan/use-question-activity";
 import { createHistoryStore } from "@/lib/storage/history";
@@ -392,15 +395,19 @@ export function ExamQuestionPlayer({
     else goTo(index + 1);
   }, [goTo, index, roundIds.length, showSummary, paceSession, recordPaceExplanation, submitted, summary.correct, summary.incorrect]);
 
+  const { moment, recordMoment } = useAnswerStudyMoment();
   const recordScoredAnswer = useCallback((question: ExamQuestion, choice: number | null, persisted: boolean) => {
     if (!isScorableQuestion(question) || choice === null) return;
     const correct = gradeExamAnswer(question, choice) === "correct";
     const at = Date.now();
     if (paceSession) recordSessionAnswer({ id: question.id, correct, at, category: examTitle });
+    const entry = findExamEntry(examId);
+    const qualification = paceSession?.exam ?? hubSlug ?? (entry ? `${entry.group}-${entry.subject}` : "");
+    if (qualification) recordMoment(qualification, question.id, correct, at);
     if (!persisted || !readSettings().recordHistory) return;
     createHistoryStore().record({ id: question.id, selected: String(choice), correct, at });
     recordPaceAnswer(correct, at);
-  }, [examTitle, paceSession, recordPaceAnswer]);
+  }, [examId, examTitle, hubSlug, paceSession, recordPaceAnswer, recordMoment]);
 
   const selectChoice = useCallback(
     (choice: number) => {
@@ -963,6 +970,8 @@ export function ExamQuestionPlayer({
                   </div>
                 </div>
 
+                {currentAnswer?.submitted && <AnswerStudyShare moment={moment} id={current.id}
+                  path={libraryQuestionSharePath(examId, current.id)} title={questionShareTitle(current.text)} />}
                 {paceSession && <span ref={paceEndRef} aria-hidden="true" />}
                 <ExamLibraryCopilot
                   key={current.id}

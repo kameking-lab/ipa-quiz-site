@@ -33,6 +33,7 @@ import {
   qualificationHubPath,
 } from "@/lib/exam-qualification-hubs";
 import { SITE_BASE_URL as SITE_URL } from "@/lib/seo/config";
+import { withStudyCardMetadata } from "@/lib/sharing/card-metadata";
 
 const TITLE = "公表試験問題 過去問演習｜試験・科目・回を選んで1問ずつ";
 const DESCRIPTION =
@@ -49,12 +50,15 @@ function firstValue(value: string | string[] | undefined): string | undefined {
 export async function generateMetadata({ searchParams }: ExamLibraryPageProps): Promise<Metadata> {
   const params = await searchParams;
   const hasFilter = Boolean(firstValue(params.group) || firstValue(params.subject));
-  return withCanonicalSocialMetadata({
+  const metadata = withCanonicalSocialMetadata({
     title: TITLE,
     description: DESCRIPTION,
     alternates: { canonical: EXAM_LIBRARY_PATH },
     robots: { index: !hasFilter, follow: true },
   });
+  return typeof params.group === "string" && typeof params.subject === "string"
+    ? withStudyCardMetadata(metadata, `${params.group}-${params.subject}`, params)
+    : metadata;
 }
 
 function buildItems(): ExamCatalogItem[] {

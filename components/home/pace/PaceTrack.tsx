@@ -87,8 +87,8 @@ export function PaceTrack({ runArt, mastered, total, stopped = false }: {
       strokeWidth="8" strokeLinecap="round" className="stroke-primary" />
     <FinishFlag lineY={lineY} height={70} />
     <RunningChihuahua key={runArt} src={runArt} percent={percent} lineY={lineY} fillRef={fillRef} stopped={stopped} />
-    <text x={START_X} y="97" fontSize="14" className="fill-muted-foreground">0問</text>
-    <text x={trackX(100)} y="97" textAnchor="end" fontSize="14" className="fill-muted-foreground">{total}問</text>
+    <text x={START_X} y="97" fontSize="14" className="fill-muted-foreground p3-scene-tick-label">0問</text>
+    <text x={trackX(100)} y="97" textAnchor="end" fontSize="14" className="fill-muted-foreground p3-scene-tick-label">{total}問</text>
   </svg>;
 }
 
@@ -117,7 +117,7 @@ export function StartTrack({ runArt }: { runArt: string }) {
       <image href={runArt} width={FRAME_SIZE * 4} height={FRAME_SIZE} />
     </svg>
     <FinishFlag lineY={lineY} />
-    <text x={START_X} y="94" fontSize="14" className="fill-muted-foreground">スタート</text>
-    <text x={finish} y="94" textAnchor="end" fontSize="14" className="fill-muted-foreground">ゴール</text>
+    <text x={START_X} y="94" fontSize="14" className="fill-muted-foreground p3-scene-tick-label">スタート</text>
+    <text x={finish} y="94" textAnchor="end" fontSize="14" className="fill-muted-foreground p3-scene-tick-label">ゴール</text>
   </svg>;
 }

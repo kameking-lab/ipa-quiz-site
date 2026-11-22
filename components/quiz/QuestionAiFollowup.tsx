@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import type { Question } from "@/lib/questions/types";
+import { readAiCheckoutDraft } from "@/lib/ai/access-client";
 
 const CopilotInline = dynamic(
   () => import("@/components/copilot/CopilotPanel").then((module) => module.CopilotInline),
@@ -17,12 +18,15 @@ export function QuestionAiFollowup({ question, selectedChoice, isCorrect, paper 
 }) {
   const [open, setOpen] = useState(false);
   const [opening, setOpening] = useState(0);
+  useEffect(() => {
+    if (readAiCheckoutDraft(`copilot:${question.id}`) !== null) setOpen(true);
+  }, [question.id]);
   const wrongAnswerPrompt = isCorrect === false
     ? "私が選んだ答えがなぜ違うのか、正解との違いをこの問題に沿って説明してください。"
     : undefined;
 
   return (
-    <details className={paper ? "mt-6 rounded-lg border border-hairline bg-card px-4" : "mt-4"} onToggle={(event) => {
+    <details open={open} className={paper ? "mt-6 rounded-lg border border-hairline bg-card px-4" : "mt-4"} onToggle={(event) => {
       setOpen(event.currentTarget.open);
       if (event.currentTarget.open) setOpening((value) => value + 1);
     }}>

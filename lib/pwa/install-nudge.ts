@@ -1,6 +1,6 @@
 import { LS_KEYS } from "@/lib/storage/keys";
 
-export const INSTALL_DISMISS_MS = 30 * 24 * 60 * 60 * 1000;
+export const INSTALL_DISMISS_MS = 7 * 24 * 60 * 60 * 1000;
 export interface InstallNudgeRecord { shownDay?: string; dismissedAt?: number }
 
 /** Match the practice quota's Japan-time day boundary. */

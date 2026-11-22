@@ -1,4 +1,5 @@
-import { AI_ACCESS_DESCRIPTION, AI_ATTEMPT_DESCRIPTION, BROWSER_AUDIO_DESCRIPTION, aiAccessClaimsEnabled } from "@/components/ai/ai-access-copy";
+import { AI_ACCESS_DESCRIPTION, AI_COUNTING_DESCRIPTION, BROWSER_AUDIO_DESCRIPTION, LEGACY_AI_COPY, aiAccessClaimsEnabled } from "@/lib/ai/quota-copy";
+import { AI_QUOTA_COPY } from "@/lib/constants/ai-quota";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { HISTORY_PRIVACY_COPY, AI_RATE_LIMIT_PRIVACY_COPY } from "@/lib/privacy/disclosure";
@@ -40,6 +41,8 @@ export const metadata: Metadata = {
     images: [ABOUT_OG_URL],
   },
 };
+
+export const revalidate = 0;
 
 export default function AboutPage() {
   const jsonLd = {
@@ -124,6 +127,7 @@ export default function AboutPage() {
         <p>
           施工管理技術検定など、掲載条件の確認が必要な資格の問題本文は、確認が完了するまで掲載しません。
         </p>
+        <p>ホームの天気表示は、<a className="underline" href="https://www.jma.go.jp/bosai/forecast/" rel="noreferrer">気象庁ホームページの天気予報</a>を4種類に加工して作成しています。</p>
       </section>
 
       <h2 className="mb-2 text-lg font-semibold">AI コパイロットについて</h2>
@@ -134,9 +138,7 @@ export default function AboutPage() {
           信頼できる書籍で確認してください。
         </p>
         <p>
-          {aiAccessClaimsEnabled() ? <>{AI_ACCESS_DESCRIPTION} {AI_ATTEMPT_DESCRIPTION} {BROWSER_AUDIO_DESCRIPTION}</> : <>          AI コパイロットに初回10回の質問上限はありません。連続利用や大量送信には
-          適正利用制限があります。
-</>}
+          {aiAccessClaimsEnabled() ? <>{AI_ACCESS_DESCRIPTION} {AI_COUNTING_DESCRIPTION}</> : LEGACY_AI_COPY} {BROWSER_AUDIO_DESCRIPTION}
         </p>
       </section>
 
@@ -184,9 +186,8 @@ export default function AboutPage() {
           個別問題・原紙・保存済み履歴の閲覧と復習は無料です。連続演習はログインなしでも1日10問まで無料で、日本時間0時に更新されます。履歴の同期などは無料ログインで利用できます。
         </p>
         <p>
-          {aiAccessClaimsEnabled() ? <>無料AIには1日3回の共通上限があります。有料会員の通常利用には個人の日次上限を設けません。</> : <>AI コパイロットの利用回数には公平利用のための日次上限を設けていますが、</>}
           対象の連続演習を回数制限なく使う月額プランは税込980円で毎月自動更新され、期間末解約を予約できます。
-          {aiAccessClaimsEnabled() ? <>AI応答の利用条件は上記の無料・有料の区分をご確認ください。ブラウザー音声は無料です。</> : <>AI応答や音声の利用権は月額プランに含みません。</>}既存の保存済み履歴を課金のために削除することはありません。
+          {aiAccessClaimsEnabled() && <> {AI_QUOTA_COPY}</>}
         </p>
         <p className="text-xs text-zinc-500 dark:text-zinc-400">
           返金・解約の条件と販売者情報の開示（ご請求があれば遅滞なく開示）は

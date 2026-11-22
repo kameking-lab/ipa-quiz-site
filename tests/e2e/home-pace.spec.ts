@@ -156,7 +156,7 @@ for (const width of [390, 1280]) {
       if (width === 390) await expectHomeNavGap(page);
       await page.getByRole("button", { name: "合格", exact: true }).click();
       await expect(page.getByRole("heading", { name: "合格おめでとう！" })).toBeVisible();
-      await expect(page.locator("main").getByRole("link", { name: /次は/ })).toHaveCount(1);
+      await expect(page.locator("main").getByRole("link", { name: "過去問AIで解く", exact: true })).toHaveCount(1);
       await expect(search).toHaveCount(1);
       await expect(track).toHaveCount(1);
     });

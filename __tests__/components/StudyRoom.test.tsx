@@ -38,7 +38,7 @@ it("keeps the same room as the learner count changes", () => {
   expect(scene()).toHaveAttribute("data-room", "p1");
   rerender(<StudyRoom snapshot={snapshot(60)} suggestions={[]} />);
   expect(scene()).toHaveAttribute("data-room", "p1");
-  expect(screen.getAllByTestId("study-room-seat")).toHaveLength(60);
+  expect(screen.getAllByTestId("study-room-seat")).toHaveLength(12);
   rerender(<StudyRoom snapshot={snapshot(2)} suggestions={[]} />);
   expect(scene()).toHaveAttribute("data-room", "p1");
   expect(screen.getAllByTestId("study-room-seat")).toHaveLength(2);

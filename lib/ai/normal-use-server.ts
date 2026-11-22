@@ -2,7 +2,8 @@ import "server-only";
 import { checkIpRateLimit, IP_LIMITS, COPILOT_MINUTE_LIMIT, COPILOT_GLOBAL_LIMITS, type IpRateLimitResult } from "@/lib/rate-limit";
 import { aiPolicyReady } from "./access-policy";
 import type { AiUsageContext } from "./usage-server";
-import { DRAFT_AI_NORMAL_USE_POLICY, normalUsePolicyReady, type AiNormalUsePolicy } from "./normal-use-policy";
+import { normalUsePolicyReady, type AiNormalUsePolicy } from "./normal-use-policy";
+import { aiNormalUsePolicy } from "./access-config";
 import { normalUseSubjectHash } from "./normal-use-subject";
 import { sharedNormalUseStore, type NormalUseStore, type NormalUseWindow } from "./normal-use-kv";
 
@@ -21,7 +22,7 @@ export function normalUseWindows(subject: string, endpoint: string, policy: AiNo
     window(`ai:normal-use:v1:${hash}:d`, 86_400_000, IP_LIMITS.day, "daily"),
   );
   // Reuse the legacy global keys, independent of policy version or subject.
-  if (endpoint === "copilot") windows.push(
+  windows.push(
     window("rl:global:copilot:h", 3_600_000, COPILOT_GLOBAL_LIMITS.hour, "hour"),
     window("rl:global:copilot:d", 86_400_000, COPILOT_GLOBAL_LIMITS.day, "daily"),
   );
@@ -34,7 +35,7 @@ export function normalUseWindows(subject: string, endpoint: string, policy: AiNo
 
 export async function checkAiNormalUse(
   req: Request, endpoint: string, context: AiUsageContext, options: { requireKv?: boolean } = { requireKv: Boolean(process.env.GEMINI_API_KEY) },
-  policy: AiNormalUsePolicy = DRAFT_AI_NORMAL_USE_POLICY,
+  policy: AiNormalUsePolicy = aiNormalUsePolicy(),
   store: NormalUseStore = sharedNormalUseStore, now = Date.now(),
 ): Promise<AiNormalUseResult> {
   if (context.legacy) return checkIpRateLimit(req, endpoint, options);
@@ -44,6 +45,8 @@ export async function checkAiNormalUse(
   };
   if (!policy.rolloutEnabled || !aiPolicyReady(context.policy, now) || !normalUsePolicyReady(policy, context.policy.version, now)
     || (context.access.kind !== "free" && context.access.kind !== "paid")) return unavailable();
+  // Keep the IP and shared service guards for free users even after cookie rotation.
+  if (context.access.kind === "free") return checkIpRateLimit(req, endpoint, { requireKv: true, sharedAiGlobal: true });
   try {
     const windows = normalUseWindows(context.access.subject, endpoint, policy, now);
     const admission = await store.admit(windows);

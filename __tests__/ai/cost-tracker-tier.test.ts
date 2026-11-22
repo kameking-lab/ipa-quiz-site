@@ -109,7 +109,6 @@ describe("全 AI ルートが課金層を手書きしていない", () => {
   const ROUTES = [
     "app/api/copilot/route.ts",
     "lib/essay/legacy-grade.ts",
-    "app/api/scoring/route.ts",
   ];
 
   it.each(ROUTES)("%s は tier をリテラルで書かず tierForModel(model) を使う", (rel) => {

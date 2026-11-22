@@ -1,6 +1,7 @@
 import type { LLMProvider, StreamCompletion } from "@/lib/ai/provider";
 import { captureException } from "@/lib/monitoring/sentry";
 import { citationFooterForResponse, CITATION_UNVERIFIED_NOTICE } from "./citations";
+import { COPILOT_PARTIAL_ANSWER } from "./response-status";
 
 export interface CopilotStreamInput {
   provider: LLMProvider;
@@ -10,6 +11,9 @@ export interface CopilotStreamInput {
   maxTokens: number;
   temperature?: number;
   clientSignal?: AbortSignal;
+  requireCompleteAnswer?: boolean;
+  /** Free answers are delivered only after the shared slot is confirmed. */
+  confirmBeforeDelivery?: () => Promise<boolean>;
   /** Candidate source-list template; only answer-used references are appended. */
   citationFooter: string;
   hasGrounding: boolean;
@@ -25,7 +29,7 @@ export interface CopilotStreamInput {
    * frozen the moment the response completes — anything still in flight at
    * close() is silently dropped.
    */
-  onComplete?: (outputChars: number, usage?: StreamCompletion) => void | Promise<void>;
+  onComplete?: (outputChars: number, usage?: StreamCompletion, answered?: boolean) => void | Promise<void>;
 }
 
 const DEFAULT_TIMEOUT_MS = 35_000;
@@ -53,10 +57,16 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
 
   const upstreamAbort = new AbortController();
   const timeoutHandle = setTimeout(() => upstreamAbort.abort(), timeoutMs);
+  const settled = Promise.withResolvers<void>();
+  let cancelledByClient = false;
 
-  const onClientAbort = () => upstreamAbort.abort();
+  const onClientAbort = () => {
+    if (upstreamAbort.signal.aborted) return;
+    cancelledByClient = true;
+    upstreamAbort.abort();
+  };
   if (clientSignal) {
-    if (clientSignal.aborted) upstreamAbort.abort();
+    if (clientSignal.aborted) onClientAbort();
     else clientSignal.addEventListener("abort", onClientAbort, { once: true });
   }
 
@@ -68,17 +78,14 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
 
   return new ReadableStream<Uint8Array>({
     async start(controller) {
-      let closed = false;
-      const closeStream = () => {
-        if (closed) return;
-        closed = true;
-        try {
-          controller.close();
-        } catch {
-          // controller may already be closed if the client disconnected mid-flight
-        }
+      let answered = false;
+      let bodyDelivered = false;
+      const deliverBody = (text: string) => {
+        controller.enqueue(encoder.encode(text));
+        bodyDelivered ||= text.trim().length > 0;
       };
       try {
+        upstreamAbort.signal.throwIfAborted();
         for await (const chunk of provider.streamChat({
           system,
           messages: userMessages,
@@ -91,23 +98,36 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
           producedAnyChunk = true;
           producedChars += chunk.length;
           responseText += chunk;
-          controller.enqueue(encoder.encode(chunk));
+          upstreamAbort.signal.throwIfAborted();
+          if (!input.confirmBeforeDelivery) deliverBody(chunk);
         }
-        if (usage?.truncated) {
-          controller.enqueue(encoder.encode("\n\n[応答の途中終了] 出力上限に達しました。続きを質問してください。"));
+        upstreamAbort.signal.throwIfAborted();
+        clearTimeout(timeoutHandle);
+        if (!responseText.trim()) throw new Error("AI response was empty");
+        if (input.requireCompleteAnswer && provider.name === "gemini" && !usage?.truncated && usage?.finishReason !== "STOP") {
+          throw new Error("AI stream ended without a completed answer");
         }
         const usedFooter = hasGrounding ? citationFooterForResponse(citationFooter, responseText) : "";
+        if (input.confirmBeforeDelivery) {
+          if (!await input.confirmBeforeDelivery()) throw new Error("AI quota settlement unavailable");
+          upstreamAbort.signal.throwIfAborted();
+          deliverBody(responseText);
+        }
+        if (usage?.truncated) {
+          controller.enqueue(encoder.encode(`\n\n${COPILOT_PARTIAL_ANSWER} 出力上限に達したため、回答は途中までです。`));
+        }
         controller.enqueue(encoder.encode(usedFooter || CITATION_UNVERIFIED_NOTICE));
+        answered = bodyDelivered;
       } catch (err) {
+        if (cancelledByClient) {
+          // Provider output that was still buffered never reached the response body.
+          answered = bodyDelivered;
+          return;
+        }
         const aborted =
           (err as { name?: string } | null)?.name === "AbortError" ||
           upstreamAbort.signal.aborted;
-        const timedOut = aborted && !clientSignal?.aborted;
-
-        if (aborted && clientSignal?.aborted) {
-          // finally 側で計上してから閉じる（部分出力ぶんの課金は発生している）。
-          return;
-        }
+        const timedOut = aborted;
 
         if (!timedOut) {
           await captureException(err, {
@@ -136,16 +156,22 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
         // 必ず close() の **前** に await する。close() 後に投げた非同期処理は、
         // レスポンス完了でサーバレス関数が凍結されるため完了が保証されない。
         try {
-          await onComplete?.(producedChars, usage);
+          await onComplete?.(producedChars, usage, answered);
         } catch {
           // ignore
         }
-        closeStream();
+        try {
+          controller.close();
+        } catch {
+          // The body may already be closed by its consumer.
+        } finally {
+          settled.resolve();
+        }
       }
     },
     cancel() {
-      upstreamAbort.abort();
-      clearTimeout(timeoutHandle);
+      onClientAbort();
+      return settled.promise;
     },
   });
 }

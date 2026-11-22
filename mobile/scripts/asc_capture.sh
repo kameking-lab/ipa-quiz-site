@@ -2,6 +2,10 @@
 set -Eeuo pipefail
 cd "$(dirname "$0")/.."
 [[ "$(uname -s)" == Darwin ]] || { echo 'Capture requires macOS.' >&2; exit 1; }
+if [[ $# -ne 0 && ( $# -ne 1 || $1 != --smoke ) ]]; then
+  echo 'Usage: asc_capture.sh [--smoke]' >&2
+  exit 2
+fi
 mkdir -p build/asc/diagnostics
 export PYTHONUNBUFFERED=1
 export PYTHONIOENCODING=utf-8
@@ -18,7 +22,7 @@ failure() {
 trap failure ERR
 # Fail before the Debug build when no native-size pair exists.
 # Do not download multi-GB runtimes automatically on the finite CI worker.
-python3 -u scripts/asc_capture.py --check-simulators
+python3 -u scripts/asc_capture.py --check-simulators "$@"
 STAGE=simulator-build
 cmp ios-assets/QualificationBridgeViewController.swift ios/App/App/QualificationBridgeViewController.swift
 BUILD_ARGS=(-workspace ios/App/App.xcworkspace -scheme App -configuration Debug
@@ -31,6 +35,7 @@ xcodebuild "${BUILD_ARGS[@]}" -showBuildSettings -json | python3 scripts/asc_bui
 xcodebuild "${BUILD_ARGS[@]}" build 2>&1 | python3 scripts/asc_diagnostics.py build/asc/simulator-build.log
 # No Appium, XCUITest driver, WebDriverAgent, remote inspector or npm tooling.
 STAGE=capture
-python3 -u scripts/asc_capture.py
+python3 -u scripts/asc_capture.py "$@"
+if [[ ${1:-} == --smoke ]]; then exit 0; fi
 STAGE=validate-screenshots
 python3 scripts/asc_validate.py --screenshots

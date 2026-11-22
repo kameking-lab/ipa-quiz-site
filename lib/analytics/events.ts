@@ -9,9 +9,12 @@
 //
 // すべてのイベントは破壊的に投げない。track() が失敗しても黙殺する。
 
-import { track } from "@vercel/analytics";
+import { inject, track } from "@vercel/analytics";
+import { nativeClient } from "@/mobile/shared/contracts";
 
 export type AnalyticsEvent =
+  | { name: "share"; kind: "card" | "question" }
+  | { name: "review_prompt" }
   | { name: "quiz_start"; exam: string; mode: string }
   | { name: "quiz_answer"; exam: string; correct: boolean }
   | { name: "quiz_complete"; exam: string; total: number; accuracy: number }
@@ -40,11 +43,24 @@ export type AnalyticsEvent =
   | { name: "checkout_canceled"; plan?: "premium" | "team"; source?: string }
   | { name: "billing_portal_opened"; plan: string };
 
+let nativeMilestoneAnalytics = false;
+
 export function trackEvent(event: AnalyticsEvent): void {
   if (typeof window === "undefined") return;
   const { name, ...rest } = event;
   try {
-    track(name, rest as Record<string, string | number | boolean | null>);
+    if (nativeClient()) {
+      if (name !== "share" && name !== "review_prompt") return;
+      if (!nativeMilestoneAnalytics) {
+        inject({
+          disableAutoTrack: true,
+          beforeSend: event => event.type === "event" ? { ...event, url: new URL("/", location.origin).href } : null,
+        });
+        nativeMilestoneAnalytics = true;
+      }
+    }
+    if (name === "review_prompt") track(name);
+    else track(name, rest as Record<string, string | number | boolean | null>);
   } catch {
     // analytics must never throw
   }

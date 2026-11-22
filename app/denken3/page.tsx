@@ -1,7 +1,10 @@
+import { NextExamSchedule } from "@/components/exam/NextExamSchedule";
+import { formatExamSearchMetadata } from "@/lib/seo/exam-search-metadata";
 import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import { TsuginoWelcome } from "@/components/analytics/TsuginoWelcome";
 import { referralPracticeHref } from "@/lib/questions/referral-practice";
 import type { Metadata } from "next";
+import { withStudyCardMetadata, type ShareSearchParams } from "@/lib/sharing/card-metadata";
 import Link from "next/link";
 import { ArrowRight, BookOpenCheck } from "lucide-react";
 import { DENKEN3_QUESTIONS } from "@/data/questions/denken3";
@@ -9,11 +12,15 @@ import { ExamYearArchiveLinks } from "@/components/seo/ExamYearArchiveLinks";
 import type { Session } from "@/lib/questions/types";
 import { DENKEN3_NATIVE_QUESTIONS, DENKEN3_NATIVE_SUBJECTS, DENKEN3_PUBLISHED_ORIGINAL_COUNT, denken3NativeSittingLabel, denken3NativeSubjectPath } from "@/lib/denken3/native";
 
-export const metadata: Metadata = withCanonicalSocialMetadata({
-  title: "電験三種 過去問｜理論・電力・機械・法規",
-  description: `電験三種の${DENKEN3_PUBLISHED_ORIGINAL_COUNT}原問を収録。理論・電力・機械・法規の過去問を、年度と科目から選べます。`,
+const searchMetadata = formatExamSearchMetadata("電験三種", DENKEN3_PUBLISHED_ORIGINAL_COUNT, DENKEN3_QUESTIONS.map(q => q.year));
+const metadata = withCanonicalSocialMetadata({
+  ...searchMetadata,
   alternates: { canonical: "/denken3" },
 });
+
+export async function generateMetadata({ searchParams }: { searchParams?: Promise<ShareSearchParams> }): Promise<Metadata> {
+  return withStudyCardMetadata(metadata, "denken3", await searchParams);
+}
 
 const SUBJECTS: { session: Session; name: string; description: string }[] = [
   { session: "riron", name: "理論", description: "電気・電子の基礎と計測" },
@@ -43,6 +50,7 @@ export default async function Denken3Page({ searchParams }: { searchParams: Prom
 
   return (
     <main className="mx-auto max-w-5xl px-4 pb-20 pt-8 sm:pt-12">
+      <NextExamSchedule exam="denken3" />
       <TsuginoWelcome href={referralPracticeHref(DENKEN3_QUESTIONS.filter(q => q.year === year && q.season === season), "/denken3")} qualification="電験三種" />
       <div className="mb-6">
         <Link href="/qualifications" className="text-sm font-medium text-primary hover:underline">← 資格一覧へ戻る</Link>

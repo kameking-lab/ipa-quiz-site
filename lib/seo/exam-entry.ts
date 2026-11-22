@@ -62,7 +62,7 @@ export function examEntrySummary(exam: ExamEntryCode): string {
 export function examEntryDescription(exam: ExamEntryCode, name: string, count: number): string {
   const entry = EXAM_ENTRIES[exam];
   const status = entry.aiEssay
-    ? "午後I記述のAI採点は未対応。午後IIはオリジナル論述教材でAI添削を利用できます。"
-    : `${entry.afternoon}のAI採点は未対応。午後対策ガイドと公式問題へのリンクを案内します。`;
+    ? "午後Iの記述対策ガイドと午後IIの論述練習問題も確認できます。"
+    : `${entry.afternoon}の対策ガイドと公式問題へのリンクを案内します。`;
   return `${name}の${entry.scope}過去問${count.toLocaleString("ja-JP")}問を年度別・分野別に掲載。正答・学習用解説を確認し、ログイン不要でまず10問。${status}`;
 }

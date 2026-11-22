@@ -3,6 +3,7 @@ import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { App } from "@capacitor/app";
 import { Browser } from "@capacitor/browser";
 import { Share } from "@capacitor/share";
+import { rememberStudyReviewPurchase } from "./study-review";
 import { Capacitor } from "@capacitor/core";
 import { Purchases, type PurchasesPackage } from "@revenuecat/purchases-capacitor";
 import { Preferences } from "@capacitor/preferences";
@@ -137,6 +138,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     const target = confirmedReturn ?? (returning?.owner === result.entitlement.userId ? returning?.target : undefined);
     if (target && !signingOut.current && user.current === result.entitlement.userId
       && result.entitlement.source === "app-store" && result.entitlement.entitled) {
+      rememberStudyReviewPurchase();
       returnOnConfirmation.current = null;
       setPurchaseReturn(null);
       location.replace(target);
@@ -199,7 +201,10 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
       if (url.origin === SITE_ORIGIN && ["/billing", "/billing/start"].includes(url.pathname.replace(/\/$/, ""))) {
         if (a.hasAttribute("data-monthly-plan")) sendConversion("plan_clicked");
         setPurchaseReturn(safeQuizReturn(url.searchParams.get("returnTo")));
-        e.preventDefault(); e.stopPropagation(); setOpen(true); setRevealTick(n=>n+1);
+        e.preventDefault();
+        // The AI offer saves its question draft in the React click handler.
+        if (!a.hasAttribute("data-keep-click-in-app")) e.stopPropagation();
+        setOpen(true); setRevealTick(n=>n+1);
       }
       else if (url.origin !== SITE_ORIGIN && url.protocol === "https:") { e.preventDefault(); e.stopPropagation(); void (isQualificationUrl(url.href) ? openQualificationUrl(url.href) : Browser.open({ url: url.href })).catch(()=>setNotice("リンクを開けませんでした。再度お試しください。")); }
     };
@@ -293,6 +298,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
         if (!await writePending({ ...preparing, reservation: reservation ?? undefined, state: "recheck", expiresAt: fallbackPurchaseExpiry() })) throw stale();
         readyForStoreKit = true;
       });
+      rememberStudyReviewPurchase();
       const savedReturn = pending && await writePending({ ...pending, state: "completed" });
       if (target && !savedReturn) returnOnConfirmation.current = { owner: userId, target };
     } catch (error) {

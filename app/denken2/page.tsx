@@ -1,7 +1,10 @@
+import { NextExamSchedule } from "@/components/exam/NextExamSchedule";
+import { formatExamSearchMetadata } from "@/lib/seo/exam-search-metadata";
 import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import { TsuginoWelcome } from "@/components/analytics/TsuginoWelcome";
 import { referralPracticeHref } from "@/lib/questions/referral-practice";
 import type { Metadata } from "next";
+import { withStudyCardMetadata, type ShareSearchParams } from "@/lib/sharing/card-metadata";
 import Link from "next/link";
 import { ArrowRight, BookOpenCheck } from "lucide-react";
 import { SECONDARY_QUESTIONS } from "@/lib/denken2/secondary";
@@ -10,11 +13,15 @@ import { ExamYearArchiveLinks } from "@/components/seo/ExamYearArchiveLinks";
 import type { Session } from "@/lib/questions/types";
 import { NATIVE_QUESTIONS, getNativeEdition, getNativeSubjectQuestions, nativeSubjectPath } from "@/lib/denken2/native";
 
-export const metadata: Metadata = withCanonicalSocialMetadata({
-  title: "電験二種の過去問｜一次2021〜2026年度、二次2025・2024年度",
-  description: "電験二種の一次試験と二次試験の過去問を収録。公式の図・数式・標準解答、全小問の解説で学べます。",
+const searchMetadata = formatExamSearchMetadata("電験二種", NATIVE_QUESTIONS.length + SECONDARY_QUESTIONS.length, [...NATIVE_QUESTIONS, ...SECONDARY_QUESTIONS].map(q => q.year));
+const metadata = withCanonicalSocialMetadata({
+  ...searchMetadata,
   alternates: { canonical: "/denken2" },
 });
+
+export async function generateMetadata({ searchParams }: { searchParams?: Promise<ShareSearchParams> }): Promise<Metadata> {
+  return withStudyCardMetadata(metadata, "denken2", await searchParams);
+}
 
 const YEAR = 2026;
 const SEASON = "primary";
@@ -40,6 +47,7 @@ export default function Denken2Page() {
   const originalCount2026 = total / 5 + (native2026?.questions.length ?? 0);
   return (
     <main className="mx-auto max-w-5xl px-4 pb-20 pt-8 sm:pt-12">
+      <NextExamSchedule exam="denken2" />
       <TsuginoWelcome href={referralPracticeHref(launchQuestions, "/denken2")} qualification="電験二種" />
       <div className="mb-6">
         <Link href="/qualifications" className="text-sm font-medium text-primary hover:underline">← 資格一覧へ戻る</Link>

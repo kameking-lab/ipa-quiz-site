@@ -1,3 +1,4 @@
+import { NextExamSchedule } from "@/components/exam/NextExamSchedule";
 import { PLAN_OFFER } from "@/lib/billing/plan-offer";
 import { ReferralPracticeLink } from "@/components/analytics/ReferralPracticeLink";
 import { TsuginoWelcome } from "@/components/analytics/TsuginoWelcome";
@@ -40,6 +41,7 @@ import { ExamCbtSummary } from "@/components/exam/ExamCbtGuide";
 import { isExamEntryCode } from "@/lib/seo/exam-entry";
 import { isIpaTop } from "@/lib/seo/ipa-top";
 import { examSearchMetadata } from "@/lib/seo/exam-search-metadata";
+import { withStudyCardMetadata, type ShareSearchParams } from "@/lib/sharing/card-metadata";
 import { KanriCoverageNote } from "@/components/exam/KanriCoverageNote";
 import { Tsushin1CoverageNote } from "@/components/exam/Tsushin1CoverageNote";
 const ExamBrowseTabs = dynamic(
@@ -89,8 +91,10 @@ export async function generateStaticParams(): Promise<RouteParams[]> {
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: {
   params: Promise<RouteParams>;
+  searchParams?: Promise<ShareSearchParams>;
 }): Promise<Metadata> {
   const { exam } = await params;
   if (!getAvailableExams().includes(exam as ExamCode)) {
@@ -110,8 +114,8 @@ export async function generateMetadata({
     count: String(count + (code === "sharoushi" ? PUBLISHED_SENTAKU.length : 0)),
   });
   const ogImageUrl = `${SITE_BASE_URL}/api/og?${ogParams.toString()}`;
-  return {
-    title,
+  return withStudyCardMetadata({
+    title: { absolute: title + "｜" + SITE_NAME },
     description,
     alternates: { canonical: `/${exam}` },
     openGraph: {
@@ -124,7 +128,7 @@ export async function generateMetadata({
       images: [{ url: ogImageUrl, width: 1200, height: 630, alt: title }],
     },
     twitter: { card: "summary_large_image", title, description, images: [ogImageUrl] },
-  };
+  }, exam, await searchParams);
 }
 
 export default async function ExamTopPage({
@@ -348,6 +352,7 @@ export default async function ExamTopPage({
             </Button>
           )}
         </section>}
+          <NextExamSchedule exam={code} />
           {isExamEntryCode(code) && <ExamCbtSummary exam={code} />}
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
             <Badge variant="outline">収録 {publishedOriginalCount} 問</Badge>

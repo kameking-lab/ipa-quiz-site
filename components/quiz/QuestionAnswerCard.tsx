@@ -3,6 +3,9 @@ import { WeakMark } from "@/components/quiz/WeakMark";
 import { NativeQuestionGate } from "@/mobile/shared/NativeQuestionGate";
 
 import { QuestionBody } from "./QuestionBody";
+import { AnswerStudyShare, useAnswerStudyMoment } from "@/components/StudyAchievements";
+import { questionShareTitle } from "@/lib/sharing/links";
+import { questionPagePath } from "@/lib/seo/question-url";
 import { RikuTech2CylinderGuide } from "./RikuTech2CylinderGuide";
 import { isReferenceOnlyQuestionId } from "@/lib/questions/assessment";
 
@@ -112,6 +115,7 @@ function ScoredQuestionAnswerCard({
   const [numericSelected, setNumericSelected] = React.useState<string | undefined>(undefined);
   const [orderedSelected, setOrderedSelected] = React.useState<ChoiceKey[] | undefined>(undefined);
   const [revealed, setRevealed] = React.useState(false);
+  const { moment, recordMoment } = useAnswerStudyMoment();
   const answerFinalized = React.useRef(false);
   const [shortcutsReady, setShortcutsReady] = React.useState(false);
 
@@ -136,6 +140,7 @@ function ScoredQuestionAnswerCard({
         }
         writeLastQuestion({ exam, year, season, session, qNumber, part, answeredAt: now });
         recordStudyOnDate();
+        recordMoment(exam, questionId, correct, now);
         if (question) pet.answer(question, petAnswer);
       } catch {
         /* ignore storage errors */
@@ -145,7 +150,7 @@ function ScoredQuestionAnswerCard({
       posthogCapture("question_answered", { questionId, exam, correct });
       observeJourney({ qualification: exam, answer: true });
     },
-    [questionId, question, exam, year, season, session, qNumber, part, pet],
+    [questionId, question, exam, year, season, session, qNumber, part, pet, recordMoment],
   );
 
   const onNativeBAnswer = React.useCallback((selections: NativeBSelections) => {
@@ -325,6 +330,7 @@ function ScoredQuestionAnswerCard({
       )}
       {revealed && <RikuTech2CylinderGuide questionId={questionId} revealed={revealed} />}
       {explanation}
+      {answered && revealed && question && <AnswerStudyShare moment={moment} id={question.id} path={questionPagePath(question)} title={questionShareTitle(question.question)} />}
       {source}
       {question && !native && (
         <QuestionAiFollowup

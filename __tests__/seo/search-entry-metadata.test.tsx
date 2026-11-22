@@ -6,7 +6,9 @@ import { getAllBlogPosts } from "@/data/blog";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getExamQuestionCount } from "@/lib/constants/exam-question-counts";
 import { examSearchMetadata } from "@/lib/seo/exam-search-metadata";
-import { examMetaDescription, getAvailableExams, getQuestionsByExamStrict } from "@/lib/seo/exam-meta";
+import { getAvailableExams, getQuestionsByExamStrict } from "@/lib/seo/exam-meta";
+import { getSitemapQuestions } from "@/lib/seo/sitemap-pagination";
+import { questionPagePath } from "@/lib/seo/question-url";
 import { questionSnippet, questionTitle } from "@/lib/seo/question-meta";
 
 const entries = ["kankoji2", "nw", "sa", "ap", "kikai-hozen", "kai-toku2", "tsushin2", "sc", "st"] as const;
@@ -14,8 +16,9 @@ const entries = ["kankoji2", "nw", "sa", "ap", "kikai-hozen", "kai-toku2", "tsus
 describe("search entry metadata", () => {
   it("keeps every qualification title distinct, including both pneumatic assembly grades", () => {
     const exams = getAvailableExams();
-    const titles = exams.map(exam => examSearchMetadata(exam, getQuestionsByExamStrict(exam).length).title);
-    expect(new Set(titles).size).toBe(exams.length);
+    const metadata = exams.map(exam => examSearchMetadata(exam, getQuestionsByExamStrict(exam).length));
+    expect(new Set(metadata.map(entry => entry.title)).size).toBe(exams.length);
+    expect(exams.filter((_, i) => metadata[i].description.length < 80 || metadata[i].description.length > 110)).toEqual([]);
     for (const [exam, grade] of [["kuukiatsu-kumitate1", "1級"], ["kuukiatsu-kumitate2", "2級"]] as const) {
       const title = examSearchMetadata(exam, getQuestionsByExamStrict(exam).length).title;
       expect(title).toContain(`空気圧装置組立て技能士 ${grade}`);
@@ -26,13 +29,16 @@ describe("search entry metadata", () => {
   it.each(entries)("%s advertises its usable count, free explanations and year browsing", async exam => {
     const count = getQuestionsByExamStrict(exam).length;
     const metadata = await generateMetadata({ params: Promise.resolve({ exam }) });
-    expect(metadata.title).toContain(`全${count.toLocaleString("ja-JP")}問`);
-    expect(metadata.title).toContain("無料・解説つき");
+    expect(metadata.openGraph?.title).toContain(`${count.toLocaleString("ja-JP")}問`);
+    expect(metadata.openGraph?.title).toContain("解説つき・無料");
+    const years = new Set(getQuestionsByExamStrict(exam).map(q => q.year)).size;
+    expect(metadata.openGraph?.title).toContain(years + "年分");
+    expect(String(metadata.openGraph?.title).length).toBeLessThanOrEqual(43);
     expect(metadata.description).toContain("年度別・分野別");
     expect(metadata.description).toContain("無料");
     expect(metadata.description?.length).toBeGreaterThanOrEqual(80);
     expect(metadata.description?.length).toBeLessThanOrEqual(110);
-    expect(metadata.openGraph?.title).toBe(metadata.title);
+    expect(metadata.title).toEqual({ absolute: metadata.openGraph?.title + "｜過去問AI" });
     expect(metadata.openGraph?.description).toBe(metadata.description);
     expect(metadata.twitter?.description).toBe(metadata.description);
     expect(metadata.alternates?.canonical).toBe(`/${exam}`);
@@ -40,9 +46,9 @@ describe("search entry metadata", () => {
 
   it.each(["shika-ishi", "chosashi", "sharoushi"] as const)("preserves the existing partial coverage detail for %s", exam => {
     const count = getQuestionsByExamStrict(exam).length;
-    const original = examMetaDescription(exam, count);
     const metadata = examSearchMetadata(exam, count);
-    expect(metadata.description).toContain(original);
+    expect(metadata.description).toContain("収録");
+    expect(metadata.description.length).toBeLessThanOrEqual(110);
     expect(metadata.title).not.toContain(`全${count.toLocaleString("ja-JP")}問`);
     expect(metadata.description).toContain("無料");
   });
@@ -50,23 +56,30 @@ describe("search entry metadata", () => {
   it.each([["rinsho-kensagishi", 929], ["shinryo-hoshasengishi", 995]] as const)("describes the expanded public corpus for %s", (exam, count) => {
     const questions = getQuestionsByExamStrict(exam);
     expect(questions).toHaveLength(count);
-    const firstYear = Math.min(...questions.map(question => question.year));
-    const lastYear = Math.max(...questions.map(question => question.year));
+    const yearCount = new Set(questions.map(question => question.year)).size;
     const metadata = examSearchMetadata(exam, count);
-    expect(metadata.title).toContain(`全${count.toLocaleString("ja-JP")}問`);
-    expect(metadata.description).toContain(`${firstYear}〜${lastYear}年度`);
+    expect(metadata.title).toContain(`${count.toLocaleString("ja-JP")}問`);
+    expect(metadata.description).toContain(yearCount + "年分");
     expect(metadata.description).toContain("無料");
   });
 
-  it("preserves a searched medical stem and source identity, with free explanation copy", () => {
-    const q = getQuestionsByExamStrict("kangoshi").find(q => questionTitle(q).startsWith(q.question));
-    expect(q).toBeDefined();
-    expect(questionTitle(q!)).toContain(q!.question);
-    expect(questionTitle(q!)).toContain("無料解説");
-    expect(questionSnippet(q!).startsWith(q!.question)).toBe(true);
-    expect(questionSnippet(q!)).toContain("無料");
-    expect(questionSnippet(q!).length).toBeLessThanOrEqual(110);
-    expect(questionSnippet({ ...q!, question: "長い問題文".repeat(100) }).length).toBeLessThanOrEqual(110);
+  it("keeps distinct indexable question titles and limits description length", () => {
+    const titles = new Map<string, string>();
+    const collisions: string[] = [];
+    const outliers: string[] = [];
+    for (const q of getSitemapQuestions()) {
+      const path = questionPagePath(q);
+      const title = questionTitle(q);
+      const description = questionSnippet(q);
+      const previous = titles.get(title);
+      if (previous && previous !== path) collisions.push(previous + " / " + path);
+      titles.set(title, path);
+      if (description.length < 80 || description.length > 110 || title.length > 63) {
+        outliers.push(path + " (" + title.length + " title, " + description.length + " description)");
+      }
+    }
+    expect(collisions).toEqual([]);
+    expect(outliers).toEqual([]);
   });
 });
 

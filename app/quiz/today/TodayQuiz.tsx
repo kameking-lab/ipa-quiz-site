@@ -9,6 +9,7 @@ import { clearBatchQuestion, loadPlanCatalog, paceAttempts, type CatalogQuestion
 import { calculatePace, weakQuestions } from "@/lib/study-plan/pace";
 import { createHistoryStore } from "@/lib/storage/history";
 import { japanDate } from "@/lib/home/featured-exams";
+import { PlanCompletionShare, PlanStudyContext, type PlanStudyScope } from "@/components/StudyAchievements";
 import { Button } from "@/components/ui/button";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { readSession, sessionScore, startSession } from "@/lib/motivation/session";
@@ -20,12 +21,14 @@ export function TodayQuiz({ planId, weakExam, billingGateEnabled }: { planId: st
   const [error, setError] = useState("");
   const [revision, setRevision] = useState(0);
   const [finished, setFinished] = useState<ReturnType<typeof sessionScore> | null>(null);
+  const [studyScope, setStudyScope] = useState<PlanStudyScope | null>(null);
 
   useEffect(() => {
     const controller = new AbortController();
     setError("");
     setBatch(null);
     setFinished(null);
+    setStudyScope(null);
     void (async () => {
       const plan = weakExam ? undefined : listPacePlans().find(p => p.id === planId);
       const exam = weakExam ?? plan?.exam;
@@ -57,6 +60,7 @@ export function TodayQuiz({ planId, weakExam, billingGateEnabled }: { planId: st
           resumed = true;
           const nextId = ids[session.answers.length];
           if (!nextId) {
+            if (plan) setStudyScope({ plan, catalog, ids, day: today });
             setFinished(sessionScore());
             clearBatchQuestion();
             return;
@@ -70,6 +74,7 @@ export function TodayQuiz({ planId, weakExam, billingGateEnabled }: { planId: st
         startSession(sessionMode);
         if (current) clearBatchQuestion();
       }
+      if (plan) setStudyScope({ plan, catalog, ids, day: today });
       setBatch({ ids, exam, library: catalog[0]?.paperId ? ids.map(id => byId.get(id)!) : undefined });
     })().catch(e => { if (!controller.signal.aborted) setError(e instanceof Error ? e.message : "問題を準備できませんでした。"); });
     return () => controller.abort();
@@ -81,6 +86,9 @@ export function TodayQuiz({ planId, weakExam, billingGateEnabled }: { planId: st
   if (finished) return <main className="mx-auto max-w-[640px] p-8 text-center">
     <h1 className="text-xl font-bold">{finished.answered}問中{finished.correct}問正解</h1>
     <Link className="study-link mt-4" href={backHref}>{backLabel}</Link>
+    {!weakExam && <PlanStudyContext.Provider value={studyScope}>
+      <PlanCompletionShare answered={finished.answered} />
+    </PlanStudyContext.Provider>}
   </main>;
   if (error) return <main className="mx-auto max-w-[640px] space-y-4 p-6">
     <p role="alert">{error}</p>
@@ -92,10 +100,10 @@ export function TodayQuiz({ planId, weakExam, billingGateEnabled }: { planId: st
     <h1 className="text-xl font-bold">{weakExam ? "苦手リストは空です" : "この計画で解く問題はありません"}</h1>
     <Button asChild className="mt-6 min-h-12"><Link href={backHref}>{backLabel}</Link></Button>
   </main>;
-  return <>
+  return <PlanStudyContext.Provider value={studyScope}>
     <h1 className="mx-auto w-full max-w-[640px] px-4 pt-4 text-sm font-semibold">{title} · {batch.ids.length}問</h1>
-    {batch.library ? <TodayLibrary questions={batch.library} exam={batch.exam} backHref={backHref} backLabel={backLabel} />
-      : <QuizClient poolIds={batch.ids} mode="year" fixedBatch backHref={backHref} backLabel={backLabel} exam={batch.exam}
+    {batch.library ? <TodayLibrary questions={batch.library} exam={batch.exam} showPlanInstall={!weakExam} backHref={backHref} backLabel={backLabel} />
+      : <QuizClient poolIds={batch.ids} mode="year" fixedBatch showPlanInstall={!weakExam} backHref={backHref} backLabel={backLabel} exam={batch.exam}
           billingGateEnabled={billingGateEnabled} />}
-  </>;
+  </PlanStudyContext.Provider>;
 }

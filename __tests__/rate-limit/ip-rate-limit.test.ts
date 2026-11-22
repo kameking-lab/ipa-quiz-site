@@ -41,6 +41,37 @@ function disableKv() {
   vi.stubEnv("KV_REST_API_TOKEN", "");
 }
 
+it("applies the same service limit to scoring when the shared AI policy is active", async () => {
+  enableKv();
+  const { checkIpRateLimit, COPILOT_GLOBAL_LIMITS } = await import("@/lib/rate-limit");
+  const transport = vi.fn<typeof fetch>()
+    .mockResolvedValueOnce(kvResponse([[1, 1, 1, 1]]))
+    .mockResolvedValueOnce(kvResponse([[COPILOT_GLOBAL_LIMITS.hour + 1, 700]]));
+  vi.stubGlobal("fetch", transport);
+  expect(await checkIpRateLimit(req(), "scoring", { requireKv: true, sharedAiGlobal: true })).toMatchObject({ ok: false, reason: "hour" });
+  const keys = JSON.parse(String(transport.mock.calls[1][1]?.body))[0].slice(3, 5);
+  expect(keys).toEqual([expect.stringMatching(/^rl:global:copilot:h:/), expect.stringMatching(/^rl:global:copilot:d:/)]);
+});
+
+it("uses the same IP and service buckets when the practice cookie changes between free endpoints", async () => {
+  enableKv();
+  const { checkIpRateLimit } = await import("@/lib/rate-limit");
+  const transport = vi.fn<typeof fetch>()
+    .mockResolvedValueOnce(kvResponse([[1, 1, 1, 1]])).mockResolvedValueOnce(kvResponse([[1, 1]]))
+    .mockResolvedValueOnce(kvResponse([[2, 2, 2, 1]])).mockResolvedValueOnce(kvResponse([[2, 2]]));
+  vi.stubGlobal("fetch", transport);
+  const clock = vi.spyOn(Date, "now").mockReturnValue(Date.UTC(2026, 10, 22));
+  try {
+    for (const endpoint of ["copilot", "scoring"]) {
+      const request = new Request(req(), { headers: { "x-forwarded-for": "192.0.2.1", cookie: "practice_guest=" + endpoint } });
+      expect(await checkIpRateLimit(request, endpoint, { requireKv: true, sharedAiGlobal: true })).toEqual({ ok: true });
+    }
+    const commands = transport.mock.calls.map(([, init]) => JSON.parse(String(init?.body))[0]);
+    expect(commands[0].slice(3, 6)).toEqual(commands[2].slice(3, 6));
+    expect(commands[1].slice(3, 5)).toEqual(commands[3].slice(3, 5));
+  } finally { clock.mockRestore(); }
+});
+
 beforeEach(() => {
   vi.resetModules();
   vi.unstubAllEnvs();

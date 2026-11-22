@@ -1,8 +1,10 @@
 import Link from "next/link";
-import { AI_ACCESS_DESCRIPTION, AI_ATTEMPT_DESCRIPTION, aiAccessClaimsEnabled } from "@/components/ai/ai-access-copy";
+import { AI_ACCESS_DESCRIPTION, AI_COUNTING_DESCRIPTION, aiAccessClaimsEnabled } from "@/lib/ai/quota-copy";
 import { PRICE_PAGE_LINK } from "@/lib/billing/price-page-link";
 import { MONTHLY_PUBLIC_OFFER, monthlySellerDisclosure } from "@/lib/billing/subscription/public-offer";
 import { SellerDisclosureLine } from "@/components/billing/SellerDisclosureLine";
+
+export const revalidate = 0;
 
 export default function BillingTermsPage() {
   const { priceYen: price, freeDaily: free, trialDays } = MONTHLY_PUBLIC_OFFER;
@@ -17,7 +19,7 @@ export default function BillingTermsPage() {
       <div><dt>解約</dt><dd>契約管理から次回更新を停止できます。期間末解約では支払済みの期間末まで利用できます。解約予約の撤回も契約管理で行えます。購入画面から戻るだけでは既存契約は解約されません。</dd></div>
       <div><dt>更新失敗</dt><dd>確認済みの利用期間を超えて利用権は延長されません。支払方法や追加認証は契約管理で確認してください。支払が回復した場合も、新しい30日間を加算するのではなく請求対象期間に戻ります。</dd></div>
       <div><dt>返金・異議申し立て</dt><dd>日割返金はありません。重複請求・誤請求や当社の障害で利用できなかった場合は個別に確認し返金します。法令上の権利は制限しません。 部分返金だけでは利用権や自動更新は変わりません。全額返金が確認された請求分の利用権は終了し、該当請求期間を利用権の対象から除外します。返金は解約ではなく、次回更新を止めるには契約管理で別途解約してください。支払異議の調査中は対象契約の利用と更新を停止し、解決しても自動更新を勝手に再開しません。</dd></div>
-      {aiAccessClaimsEnabled() && <div><dt>AIの回数</dt><dd>{AI_ATTEMPT_DESCRIPTION}</dd></div>}
+      {aiAccessClaimsEnabled() && <div><dt>AIの回数</dt><dd>{AI_COUNTING_DESCRIPTION}</dd></div>}
       <div><dt>販売者・連絡先</dt><dd><SellerDisclosureLine /><p>メール: <a className="underline" href={seller.requestPath}>{seller.email}</a></p></dd></div>
     </dl>
     <p>自分で契約を申し込むまで課金は始まりません。</p>

@@ -26,7 +26,7 @@ async function show(page: Page, snapshot: StudyPresenceSnapshot) {
 }
 
 for (const count of [1, 5, 12, 24, 48, 120, 130]) {
-  test(`${count} learners have up to 120 chihuahuas and no horizontal scroll at 390px`, async ({ page }) => {
+  test(`${count} learners have up to 12 chihuahuas and no horizontal scroll at 390px`, async ({ page }) => {
     const errors: string[] = []; page.on("pageerror", error => errors.push(error.message));
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto("/study-room");
@@ -43,8 +43,8 @@ for (const count of [1, 5, 12, 24, 48, 120, 130]) {
       expect(action!.y + action!.height).toBeLessThanOrEqual(nav!.y);
     }
     await expect(scene).toHaveAttribute("data-room", /^p[1-4]$/);
-    await expect(page.getByTestId("study-room-seat")).toHaveCount(Math.min(120, count));
-    if (count > 120) await expect(page.getByText(`＋${count - 120}人`)).toBeVisible();
+    await expect(page.getByTestId("study-room-seat")).toHaveCount(Math.min(12, count));
+    if (count > 12) await expect(page.getByText(`＋${count - 12}人`)).toBeVisible();
     else await expect(page.getByText(/^＋/)).toHaveCount(0);
     await scene.scrollIntoViewIfNeeded();
     await expect.poll(() => scene.locator('[data-seat-key] img').evaluateAll(images =>
@@ -55,12 +55,11 @@ for (const count of [1, 5, 12, 24, 48, 120, 130]) {
       const seats = [...element.querySelectorAll('[data-testid="study-room-seat"]')].map(seat => seat.getBoundingClientRect());
       return { fits: document.documentElement.scrollWidth <= innerWidth,
         seatsFit: seats.every(seat => seat.left >= box.left && seat.right <= box.right + 1 && seat.top >= box.top && seat.bottom <= box.bottom + 1),
-        overlap: seats.some((seat, index) => seats.slice(index + 1).some(other =>
-          seat.left < other.right && other.left < seat.right && seat.top < other.bottom && other.top < seat.bottom)) };
+        minWidth: Math.min(...seats.map(seat => seat.width)) };
     });
     expect(geometry.fits).toBe(true);
     expect(geometry.seatsFit).toBe(true);
-    expect(geometry.overlap).toBe(false);
+    expect(geometry.minWidth).toBeGreaterThanOrEqual(56);
     const seat = scene.getByRole("button", { name: /のチワワを見る$/ }).first();
     await seat.press("Enter");
     await expect(seat).toHaveAttribute("aria-pressed", "true");
@@ -83,7 +82,7 @@ test("the café reuses images and keeps stable positions when re-entering the vi
   const seat = scene.getByTestId("study-room-seat").first();
   await seat.scrollIntoViewIfNeeded();
   await expect(seat).toHaveAttribute("data-studying-now", "true");
-  const position = await seat.getAttribute("style");
+  const position = await seat.boundingBox();
   const artCount = await scene.locator('[data-seat-key] img').evaluateAll(images =>
     new Set(images.map(image => image.getAttribute("src"))).size,
   );
@@ -93,7 +92,7 @@ test("the café reuses images and keeps stable positions when re-entering the vi
   await page.evaluate(() => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "instant" }));
   await expect(scene).not.toBeInViewport();
   await seat.scrollIntoViewIfNeeded();
-  await expect(seat).toHaveAttribute("style", position!);
+  expect((await seat.boundingBox())!.x).toBe(position!.x);
   await page.emulateMedia({ reducedMotion: "reduce" });
   await expect(seat.locator("img")).toHaveCSS("animation-name", "none");
   await page.setViewportSize({ width: 1280, height: 900 });

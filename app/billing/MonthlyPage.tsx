@@ -10,6 +10,8 @@ import { revenueCatAccess } from "@/mobile/server/revenuecat";
 import { jstDateString } from "@/lib/streak/core";
 import { terminal, type SubscriptionManagement } from "@/lib/billing/subscription/domain";
 import { SubscriptionEnding } from "./SubscriptionEnding";
+import { aiAccessClaimsEnabled } from "@/lib/ai/quota-copy";
+import { AI_QUOTA_COPY } from "@/lib/constants/ai-quota";
 
 /** One button and one line of terms; the full conditions live on /billing/terms. */
 export default async function MonthlyPage({ returnTo }: { returnTo?: string } = {}) {
@@ -60,6 +62,7 @@ export function MonthlyPlanView({ canManage, hasContract, showTrial, management,
         <p className="p3-billing-offer p3-listed text-sm leading-relaxed">
           <span>無料は過去問1日{MONTHLY_PUBLIC_OFFER.freeDaily}問。</span>
           <span>月額なら過去問を回数無制限で解き、全分野の弱点から今週の復習を始められます。</span>
+          {aiAccessClaimsEnabled() && <span>{AI_QUOTA_COPY}</span>}
         </p>
       </div>
       {management ? <SubscriptionEnding key={management.orderId} initial={management} today={today} />

@@ -13,7 +13,7 @@ import { loadExamPaper } from "@/lib/exam-library-papers";
 import { createCopilotGeminiProvider } from "@/lib/copilot/gemini-flash38";
 import { createCopilotResponseStream } from "@/lib/copilot/streaming";
 import { COPILOT_MODEL } from "@/lib/copilot/model";
-import { prepareAiUsage, consumeAiUsage, withAiUsageResponse, type AiUsageContext } from "@/lib/ai/usage-server";
+import { prepareAiUsage, consumeAiUsage, confirmFreeAnswer, settleAiUsage, withAiUsageResponse, type AiUsageContext } from "@/lib/ai/usage-server";
 
 export const runtime = "nodejs";
 
@@ -88,7 +88,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     );
   }
 
-  const usage = await prepareAiUsage("exam-library");
+  const usage = await prepareAiUsage(req, "exam-library");
   track(usage);
   if (usage.response) return usage.response;
 
@@ -117,19 +117,22 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     const cap = await checkMonthlyCostCap(provider.name, budget);
     reservation = cap.reservation;
     if (!cap.allowed) {
-    if (!usage.legacy) usage.headers["X-AI-RateLimit-Scope"] = "service-cost";
+      if (!usage.legacy) usage.headers["X-AI-RateLimit-Scope"] = "service-cost";
       return NextResponse.json({ error: cap.reason ?? "cost_capped", message: cap.reason === "budget_unavailable"
           ? "AI費用の状態を確認できないため、生成を一時停止しています。少し待ってから再試行してください。"
           : "サービス全体の今月のAI費用上限に達したため、生成を停止しています。翌月初に再開します。" }, { status: 503 });
     }
   }
 
-  const usageDenial = await consumeAiUsage(usage, provider.name);
+  const usageDenial = await consumeAiUsage(usage, provider.name, ["exam-library", examId, questionId, selectedChoice, messages]);
   if (usageDenial) {
     if (reservation) await recordAiCost({ ...budget, inputTokens: 0, outputTokens: 0, reservation });
     return usageDenial;
   }
+  usage.streaming = true;
   const stream = createCopilotResponseStream({
+    requireCompleteAnswer: !usage.legacy,
+    confirmBeforeDelivery: confirmFreeAnswer(usage),
     provider,
     system,
     userMessages: messages,
@@ -139,18 +142,18 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     citationFooter: "",
     hasGrounding: false,
     timeoutMs: 35_000,
-    onComplete: provider.name === "mock" ? undefined : async (outputChars, usage) => {
-      await recordAiCost({
+    onComplete: provider.name === "mock" ? undefined : async (outputChars, completion, answered) => {
+      await Promise.all([settleAiUsage(usage, answered === true), recordAiCost({
         tier: tierForModel(COPILOT_MODEL),
-        inputTokens: usage?.promptTokens ?? budget.inputTokens,
-        outputTokens: usage?.totalTokens !== undefined && usage.promptTokens !== undefined
-          ? Math.max(0, usage.totalTokens - usage.promptTokens)
-          : usage?.outputTokens !== undefined && usage.thoughtsTokens !== undefined
-            ? usage.outputTokens + usage.thoughtsTokens
-            : Math.max(maxTokens, (usage?.outputTokens ?? 0) + (usage?.thoughtsTokens ?? 0), estimateTokens(outputChars)),
+        inputTokens: completion?.promptTokens ?? budget.inputTokens,
+        outputTokens: completion?.totalTokens !== undefined && completion.promptTokens !== undefined
+          ? Math.max(0, completion.totalTokens - completion.promptTokens)
+          : completion?.outputTokens !== undefined && completion.thoughtsTokens !== undefined
+            ? completion.outputTokens + completion.thoughtsTokens
+            : Math.max(maxTokens, (completion?.outputTokens ?? 0) + (completion?.thoughtsTokens ?? 0), estimateTokens(outputChars)),
         label: "copilot",
-            reservation,
-      });
+        reservation,
+      })]);
     },
   });
 

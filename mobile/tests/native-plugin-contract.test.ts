@@ -55,7 +55,7 @@ const registrations = files("src").filter(path => /\.tsx?$/.test(path)).flatMap(
 
 it("inventories every custom native plugin and matches both sides of the bridge", () => {
   expect(nativeFiles).toHaveLength(2);
-  expect(plugins.map(plugin => plugin.className).sort()).toEqual(["QualificationBridgePlugin", "TrackingTransparencyPlugin"]);
+  expect(plugins.map(plugin => plugin.className).sort()).toEqual(["QualificationBridgePlugin", "StudyReviewPlugin", "TrackingTransparencyPlugin"]);
   expect(new Set(plugins.map(plugin => plugin.identifier)).size).toBe(plugins.length);
   expect(new Set(plugins.map(plugin => plugin.jsName)).size).toBe(plugins.length);
   expect(registrations.map(registration => registration.name).sort()).toEqual(plugins.map(plugin => plugin.jsName).sort());
@@ -78,6 +78,16 @@ it("inventories every custom native plugin and matches both sides of the bridge"
   for (const file of nativeFiles) expect(read(file)).not.toMatch(/\bCAP_PLUGIN(?:_METHOD|_CONFIG)?\s*\(/);
   console.info("Custom native plugin inventory:", JSON.stringify(plugins.map(({ file, className, identifier, jsName, methods }) =>
     ({ file, className, identifier, jsName, methods })), null, 2));
+});
+
+it("stores the first-use day and reserves the installed marketing version before calling StoreKit", () => {
+  const review = plugins.find(plugin => plugin.jsName === "StudyReview")!.body;
+  expect(review).toMatch(/if defaults\.object\(forKey: firstUseKey\) == nil\s*\{\s*defaults\.set\(Date\(\), forKey: firstUseKey\)/);
+  expect(review).toMatch(/CFBundleShortVersionString/);
+  expect(review).toMatch(/!versions\.contains\(version\)/);
+  expect(review).toMatch(/calendar\.startOfDay\(for: firstUse\) < calendar\.startOfDay\(for: now\)/);
+  expect(review).toMatch(/scene\.activationState == \.foregroundActive/);
+  expect(review.indexOf("defaults.set(versions, forKey: self.requestedVersionsKey)")).toBeLessThan(review.indexOf("AppStore.requestReview(in: scene)"));
 });
 
 for (const plugin of plugins) {

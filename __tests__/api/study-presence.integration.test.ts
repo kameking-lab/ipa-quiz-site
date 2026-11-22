@@ -18,8 +18,13 @@ it("runs GET through the real store and preserves a zero snapshot timestamp with
     today: { count: 0, activeCount: 0, exams: [] } });
   vi.advanceTimersByTime(45_000);
   expect(await (await GET(new Request(url))).json()).toEqual(first);
-  expect(db.$queryRaw).toHaveBeenCalledOnce(); expect(db.$executeRaw).not.toHaveBeenCalled(); expect(db.$transaction).not.toHaveBeenCalled();
+  expect(db.$queryRaw).toHaveBeenCalledTimes(2);
+  expect(db.$executeRaw).not.toHaveBeenCalled();
+  expect(db.$transaction).not.toHaveBeenCalled();
   expect(db.$queryRaw.mock.calls[0][1]).toEqual(new Date("2026-10-23T09:55:00Z"));
+  expect(db.$queryRaw.mock.calls[1].slice(1)).toEqual([
+    new Date("2026-10-21T15:00:00Z"), new Date("2026-10-22T15:00:00Z"), "daily-answer:2026-10-22:%",
+  ]);
 });
 it("suppresses store work across reads and answer writes after a DB failure, then recovers", async () => {
   db.$queryRaw.mockRejectedValueOnce(new Error("database offline"));

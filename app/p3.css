@@ -17,17 +17,6 @@ body:has(.p3-page) {
   --border: #d9d4bc;
   --input: #b7baa4;
   --ring: #2e6b4f;
-  --p3-sky: #bfe3f2;
-  --p3-hill: #8cc79b;
-  --p3-hill-far: #abd3a4;
-  --p3-sun: #ffd388;
-  --p3-sun-halo: #fff5ca80;
-  --p3-cloud: #f7fbef;
-  --p3-path: #f9dda4;
-  --p3-path-border: #fff2cb;
-  --p3-ink: #173f30;
-  --p3-field: #e9efda;
-  --p3-accent: #f28c38;
   --p3-font: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", system-ui, sans-serif;
   --font-display: "Noto Serif JP Display", "Hiragino Mincho ProN", "Noto Serif JP", serif;
   font-family: var(--p3-font);
@@ -51,17 +40,6 @@ body:has(.p3-page) {
   --border: #46584b;
   --input: #63766a;
   --ring: #9bd1ad;
-  --p3-sky: #244756;
-  --p3-hill: #315e4d;
-  --p3-hill-far: #3f6b55;
-  --p3-sun: #f4c979;
-  --p3-sun-halo: #f4c97930;
-  --p3-cloud: #416575;
-  --p3-path: #946d42;
-  --p3-path-border: #c7a36b;
-  --p3-ink: #f3f6ec;
-  --p3-field: #293d30;
-  --p3-accent: #ffb36b;
 }
 
 .p3-page { color: var(--foreground); }
@@ -75,42 +53,25 @@ body:has(.p3-page) .mobile-bottom-nav {
   border-color: var(--hairline);
 }
 
-body:has(.p3-home) .site-header,
 body:has(.p3-search) .site-header {
   background: var(--p3-sky);
   border-color: transparent;
 }
 
+body:has(.p3-home) .site-header {
+  --foreground: var(--p3-ink);
+  --muted: color-mix(in srgb, var(--p3-sky) 84%, var(--p3-ink));
+  background: var(--p3-sky);
+  color: var(--p3-ink);
+  border-color: transparent;
+}
+
+body:has(.p3-home) .site-header a:focus-visible { outline-color: var(--p3-ink); }
+
 body:has(.p3-page) .mobile-bottom-nav a { font-size: .75rem; }
 /* Shared controls and the footer also appear on the illustrated screens. */
 body:has(.p3-page) :is(.text-\[9px\], .text-\[10px\], .text-\[11px\]) { font-size: .75rem; }
 body:has(.p3-page) .mobile-bottom-nav a[aria-current="page"] { background: var(--primary-soft); }
-
-.p3-landscape {
-  position: relative;
-  isolation: isolate;
-  color: var(--p3-ink);
-  background:
-    radial-gradient(ellipse 13px 7px at 73% 43%, var(--p3-cloud) 97%, transparent 100%),
-    radial-gradient(ellipse 23px 4px at 73% 46%, var(--p3-cloud) 97%, transparent 100%),
-    radial-gradient(ellipse 110% 66% at 92% 122%, var(--p3-hill) 99%, transparent 100%),
-    radial-gradient(ellipse 105% 61% at 10% 120%, var(--p3-hill-far) 99%, transparent 100%),
-    var(--p3-sky);
-  border-radius: 0 0 28px 28px;
-}
-
-.p3-landscape::before {
-  position: absolute;
-  z-index: -1;
-  top: var(--p3-sun-top, 18px);
-  right: var(--p3-sun-right, 22px);
-  width: var(--p3-sun-size, 38px);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: var(--p3-sun);
-  box-shadow: 0 0 0 6px var(--p3-sun-halo);
-  content: "";
-}
 
 .p3-hero {
   display: grid;

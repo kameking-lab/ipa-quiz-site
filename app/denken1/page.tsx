@@ -1,7 +1,10 @@
+import { NextExamSchedule } from "@/components/exam/NextExamSchedule";
+import { formatExamSearchMetadata } from "@/lib/seo/exam-search-metadata";
 import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import { TsuginoWelcome } from "@/components/analytics/TsuginoWelcome";
 import { referralPracticeHref } from "@/lib/questions/referral-practice";
 import type { Metadata } from "next";
+import { withStudyCardMetadata, type ShareSearchParams } from "@/lib/sharing/card-metadata";
 import Link from "next/link";
 import { ArrowRight, BookOpenCheck } from "lucide-react";
 import { DENKEN1_PRIMARY_QUESTIONS } from "@/data/questions/denken1";
@@ -9,11 +12,15 @@ import { ExamYearArchiveLinks } from "@/components/seo/ExamYearArchiveLinks";
 import type { Session } from "@/lib/questions/types";
 import { DENKEN1_NATIVE_FIELD_COUNT, DENKEN1_NATIVE_PARTS, DENKEN1_NATIVE_QUESTIONS, denken1NativeSubjectPath } from "@/lib/denken1/native";
 
-export const metadata: Metadata = withCanonicalSocialMetadata({
-  title: "電験一種 一次試験の過去問｜理論・電力・機械・法規",
-  description: `第一種電気主任技術者一次試験の${DENKEN1_NATIVE_QUESTIONS.length}原問を、公式の図・数式と解答欄ごとの解説付きで掲載。`,
+const searchMetadata = formatExamSearchMetadata("電験一種", DENKEN1_NATIVE_QUESTIONS.length, DENKEN1_PRIMARY_QUESTIONS.map(q => q.year));
+const metadata = withCanonicalSocialMetadata({
+  ...searchMetadata,
   alternates: { canonical: "/denken1" },
 });
+
+export async function generateMetadata({ searchParams }: { searchParams?: Promise<ShareSearchParams> }): Promise<Metadata> {
+  return withStudyCardMetadata(metadata, "denken1", await searchParams);
+}
 
 const SUBJECTS: { session: Session; name: string; original: string; description: string }[] = [
   { session: "riron", name: "理論", original: "A問題 問2・問3", description: "半導体の輸送・発振回路" },
@@ -26,6 +33,7 @@ export default function Denken1Page() {
   const total = DENKEN1_PRIMARY_QUESTIONS.length;
   return (
     <main className="mx-auto max-w-5xl px-4 pb-20 pt-8 sm:pt-12">
+      <NextExamSchedule exam="denken1" />
       <TsuginoWelcome href={referralPracticeHref(DENKEN1_PRIMARY_QUESTIONS, "/denken1")} qualification="電験一種" />
       <div className="mb-6"><Link href="/qualifications" className="text-sm font-medium text-primary hover:underline">← 資格一覧へ戻る</Link></div>
       <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">電験一種 一次試験の過去問</h1>

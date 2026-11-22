@@ -2,6 +2,7 @@
 import { act, cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { Preferences } from "@capacitor/preferences";
+import { MonthlyPlanLink } from "@/components/billing/MonthlyOffer";
 import type { AppStorePurchaseHold } from "@/lib/billing/subscription/domain";
 
 const nativePurchase = vi.hoisted(() => ({
@@ -102,6 +103,16 @@ it("keeps the selected exam for weekly review when a native buyer needs to sign 
   fireEvent.click(await screen.findByRole("button", { name: "¥980 / 月で登録" }));
   await waitFor(() => expect(signIn).toHaveBeenCalledWith(`${target}#app-settings`));
   expect(JSON.parse(nativePurchase.preferences.get("kakomon:purchase-intent:v1")!)).toMatchObject({ action: "buy", returnTo: target });
+});
+
+it("preserves the AI offer click handler while opening native checkout", async () => {
+  const saveDraft = vi.fn();
+  render(<><NativeTools /><MonthlyPlanLink returnTo="/q" label="AI質問を続ける" keepClickInApp onClick={saveDraft} /></>);
+  await act(async () => {
+    expect(fireEvent.click(screen.getByRole("link", { name: "AI質問を続ける" }))).toBe(false);
+  });
+  expect(saveDraft).toHaveBeenCalledTimes(1);
+  expect(screen.getByRole("heading", { name: "会員・設定" })).toBeVisible();
 });
 
 it("does not scroll when the panel is opened from its own button at the top", async () => {

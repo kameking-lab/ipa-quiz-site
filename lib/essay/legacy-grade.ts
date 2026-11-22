@@ -9,7 +9,7 @@ import { getProvider, resolveModel, gradingThinkingBudget } from "@/lib/ai/provi
 import type { LLMProvider, StreamCompletion } from "@/lib/ai/provider";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limit/server";
 import { checkAiNormalUse } from "@/lib/ai/normal-use-server";
-import { prepareAiUsage, consumeAiUsage, withAiUsageResponse, type AiUsageContext } from "@/lib/ai/usage-server";
+import { prepareAiUsage, consumeAiUsage, gradingSignal, withAiUsageResponse, type AiUsageContext } from "@/lib/ai/usage-server";
 import { checkMonthlyCostCap, recordAiCost, estimateTokens, textBudget } from "@/lib/ai/cost-guard";
 import { tierForModel } from "@/lib/ai/cost-tracker";
 import { buildGradingFallbackAlert, notifyOpsInBackground } from "@/lib/notify/ops-alert";
@@ -248,7 +248,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     );
   }
 
-  const usage = await prepareAiUsage("essay-grade");
+  const usage = await prepareAiUsage(req, "essay-grade");
   track(usage);
   if (usage.response) return usage.response;
   const ip = getClientIp(req);
@@ -311,12 +311,13 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
   let buf = "";
   // コールバック代入は TS の到達解析で undefined に狭められるため、箱で受ける。
   const completed: { value?: StreamCompletion } = {};
-  const usageDenial = await consumeAiUsage(usage, provider.name);
+  const usageDenial = await consumeAiUsage(usage, provider.name, ["essay-grade", question.id, userPrompt]);
   if (usageDenial) {
     if (cap.reservation) await recordAiCost({ ...budget, inputTokens: 0, outputTokens: 0, reservation: cap.reservation });
     return usageDenial;
   }
   const admissionHeaders = usage.headers;
+  const signal = gradingSignal(usage, req.signal);
   try {
     for await (const chunk of provider.streamChat({
       system: ESSAY_SYSTEM_PROMPT,
@@ -330,12 +331,14 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
       // JSON モード。前置きの散文やコードフェンスが混ざらなくなる。
       responseMimeType: "application/json",
       temperature: 0.2,
+      signal,
       onComplete: (c) => {
         completed.value = c;
       },
     })) {
       buf += chunk;
     }
+    signal.throwIfAborted();
   } catch {
     console.error("[essay-grade] provider request failed");
     return NextResponse.json(gradingUnavailable("provider_error"), {

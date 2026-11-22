@@ -4,10 +4,7 @@ import { join } from "node:path";
 
 import { ESSAY_EXAM_CODES } from "@/lib/essay/load";
 
-// /recommended-books/[exam] の論述区分(ST/SA/PM/SM/AU)ページは論文事例集の読者＝
-// 旗艦「午後AI採点」の対象。書籍購入後の自然な次の一歩として AI論述添削(/essay)へ
-// 導く論述区分ゲート付き CTA を配線した。誇大回避＝論述5区分のみ・「参考評価」明記。
-// server component の条件分岐ゆえ source-read ガードで gate と誇大表現を固定する。
+// 論文事例集を紹介する区分から論述の練習問題へ案内する。
 describe("/recommended-books/[exam] — 論述区分の旗艦 /essay CTA", () => {
   const source = readFileSync(
     join(process.cwd(), "app/recommended-books/[exam]/page.tsx"),
@@ -22,8 +19,9 @@ describe("/recommended-books/[exam] — 論述区分の旗艦 /essay CTA", () =>
     expect(source).toMatch(/isEssayExam[\s\S]*href="\/essay"/);
   });
 
-  it("「参考評価」を明記し誇大回避している", () => {
-    expect(source).toContain("参考評価");
+  it("論述練習を案内し、採点や添削を提供すると表示しない", () => {
+    expect(source).toContain("論述の練習問題");
+    expect(source).not.toMatch(/AI\s*(採点|添削)|AIに.{0,20}添削/);
   });
 
   it("ゲートの単一情報源が論述5区分(ST/SA/PM/SM/AU)である", () => {
