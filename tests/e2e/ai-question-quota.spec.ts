@@ -13,8 +13,15 @@ test.use({ viewport: { width: 390, height: 844 } });
 test("shows the remaining quota, offers equal actions, and restores the draft on return", async ({ page }) => {
   let remaining = limit;
   let paid = false;
+  const resetAt = Date.now() + 60_000;
+  const quotaEvents: string[] = [];
+  await page.route("**/api/activity", route => {
+    const body = route.request().postDataJSON() as { events: { event: string }[] };
+    quotaEvents.push(...body.events.map(item => item.event).filter(event => event.startsWith("ai_quota_")));
+    return route.fulfill({ status: 204 });
+  });
   await page.route("**/api/ai/usage?feature=copilot", route => route.fulfill({
-    json: paid ? { kind: "paid" } : { kind: "free", remaining, resetAt: Date.now() + 60_000 },
+    json: paid ? { kind: "paid" } : { kind: "free", remaining, resetAt },
   }));
   await page.route("**/api/copilot", async route => {
     remaining--;
@@ -59,6 +66,7 @@ test("shows the remaining quota, offers equal actions, and restores the draft on
   await expect(heading).toBeHidden();
   await expect(input).toHaveValue(draft);
   await expect(input).toBeFocused();
+  await expect.poll(() => quotaEvents).toEqual(["ai_quota_viewed", "ai_quota_dismissed"]);
 
   await page.reload();
   await open();
@@ -74,6 +82,7 @@ test("shows the remaining quota, offers equal actions, and restores the draft on
   await expect(input).toHaveValue(draft);
   await expect(panel.getByText("月額会員 · AI質問は回数制限なし")).toBeVisible();
   await expect(heading).toBeHidden();
+  await expect.poll(() => quotaEvents).toEqual(["ai_quota_viewed", "ai_quota_dismissed", "ai_quota_viewed", "ai_quota_plan_clicked"]);
   await shot("03-monthly-member");
 });
 

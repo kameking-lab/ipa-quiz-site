@@ -114,7 +114,7 @@ export function ExamLibraryCopilot({ examId, questionId, selectedChoice }: {
               ))}
             </ol>
           ) : null}
-          <AiAccessNotice quota={quota} feature="exam-library" draft={draft} draftId={draftId}
+          <AiAccessNotice quota={quota} draft={draft} draftId={draftId}
             returnTo={typeof window === "undefined" ? "" : window.location.pathname + window.location.search}
             onDismiss={() => setOpen(false)} />
           <form onSubmit={(event) => { event.preventDefault(); void ask(); }} className="mt-3">

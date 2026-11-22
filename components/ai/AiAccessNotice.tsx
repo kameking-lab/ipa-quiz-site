@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { MonthlyPlanLink, monthlyActionClass } from "@/components/billing/MonthlyOffer";
 import { PLAN_OFFER } from "@/lib/billing/plan-offer";
-import { trackEvent } from "@/lib/analytics/events";
+import { captureActivity, flushActivity } from "@/lib/analytics/activity-client";
 import { AI_FREE_QUESTIONS_PER_DAY } from "@/lib/constants/ai-quota";
 import { AI_POLICY_VERSION, type AiFeature } from "@/lib/ai/access-policy";
 import { fetchWithAiGuestCookie, saveAiCheckoutDraft } from "@/lib/ai/access-client";
@@ -69,9 +69,8 @@ export function refreshAiQuota() {
   window.dispatchEvent(new Event(CHANNEL));
 }
 
-export function AiAccessNotice({ quota, feature, draft, draftId, returnTo, onDismiss }: {
+export function AiAccessNotice({ quota, draft, draftId, returnTo, onDismiss }: {
   quota: Quota | null;
-  feature: AiFeature;
   draft: string;
   draftId: string;
   returnTo: string;
@@ -87,8 +86,8 @@ export function AiAccessNotice({ quota, feature, draft, draftId, returnTo, onDis
   useEffect(() => {
     if (!shown || seen.current === resetAt) return;
     seen.current = resetAt;
-    trackEvent({ name: "ai_quota_viewed", feature });
-  }, [feature, resetAt, shown]);
+    captureActivity("ai_quota_viewed");
+  }, [resetAt, shown]);
   if (quota?.kind === "paid") return <p className="px-3 pb-1 text-xs text-muted-foreground">月額会員 · AI質問は回数制限なし</p>;
   if (!quota || quota.remaining === limit) return null;
   if (!exhausted) return <p role="status" className="px-3 pb-1 text-xs text-muted-foreground">今日の無料AI あと{quota.remaining}回</p>;
@@ -102,10 +101,12 @@ export function AiAccessNotice({ quota, feature, draft, draftId, returnTo, onDis
     <div className="grid auto-rows-fr gap-2">
       <MonthlyPlanLink returnTo={returnTo} label={`${price}で続ける`} describedBy={description} keepClickInApp onClick={() => {
         saveAiCheckoutDraft(draftId, draft);
-        trackEvent({ name: "ai_quota_plan_clicked", feature });
+        captureActivity("ai_quota_plan_clicked");
+        flushActivity();
       }} />
       <button type="button" className={monthlyActionClass + " bg-card text-foreground shadow-[inset_0_0_0_1px_var(--border)] hover:bg-muted"} onClick={() => {
-        trackEvent({ name: "ai_quota_dismissed", feature });
+        captureActivity("ai_quota_dismissed");
+        flushActivity();
         setDismissed(resetAt);
         onDismiss?.();
       }}>今日はここまで</button>

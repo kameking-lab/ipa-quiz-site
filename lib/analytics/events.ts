@@ -17,7 +17,6 @@ export type AnalyticsEvent =
   | { name: "quiz_complete"; exam: string; total: number; accuracy: number }
   | { name: "copilot_send"; exam: string; premium: boolean; actionId?: string }
   | { name: "copilot_limit_reached"; remaining: 0 }
-  | { name: "ai_quota_viewed" | "ai_quota_plan_clicked" | "ai_quota_dismissed"; feature: import("@/lib/ai/access-policy").AiFeature }
   | { name: "pricing_view"; source: "home" | "upsell" | "direct" }
   | { name: "email_signup"; source: "pricing" | "upsell-dialog" | "other"; plan?: string }
   | { name: "streak_milestone"; days: 3 | 7 | 14 | 30 | 100 }

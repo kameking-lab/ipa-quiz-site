@@ -490,7 +490,7 @@ export function CopilotPanel({
           <a href="/contact" target="_blank" rel="noopener noreferrer" className="inline-block min-h-11 py-2 underline">問い合わせ</a>
         </aside>
       )}
-      <AiAccessNotice quota={quota} feature="copilot" draft={input} draftId={draftId}
+      <AiAccessNotice quota={quota} draft={input} draftId={draftId}
         returnTo={typeof window === "undefined" ? "" : window.location.pathname + window.location.search}
         onDismiss={() => inputRef.current?.focus()} />
       <form
