@@ -81,7 +81,7 @@ for (const state of [...homeStates, "room"] as const) {
         await expect(attendance).toContainText(expected);
         if (activeCount === 0) await expect(attendance).not.toContainText("うち");
       }
-      await expect(room.getByTestId(home ? "home-study-room-seat" : "study-room-seat")).toHaveCount(home ? Math.min(count, 30) : count);
+      await expect(room.getByTestId(home ? "home-study-room-seat" : "study-room-seat")).toHaveCount(Math.min(count, 12));
       await expect(room.locator('[data-studying-now="true"]')).toHaveCount(activeCount);
       if (count === 0) {
         await expect(room.getByText("まだ誰もいません。一番乗りしよう")).toBeVisible();
@@ -97,7 +97,7 @@ for (const state of [...homeStates, "room"] as const) {
           await expect(room.locator('[data-exam="civil2"]')).toHaveCount(2);
         }
         if (count === 45) {
-          await expect(room.getByText("＋15人")).toBeVisible();
+          await expect(room.getByText("＋33人")).toBeVisible();
           await expect(room.getByText("ほか2資格")).toBeVisible();
         }
       }
@@ -125,12 +125,12 @@ test("long qualification names still fit the mobile home card", async ({ page })
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
 });
 
-test("the daily room shows 120 of 130 learners, including all three recent answers", async ({ page }) => {
+test("the daily room shows 12 of 130 learners, including all three recent answers", async ({ page }) => {
   await setup(page, "room", [{ exam: "civil1", count: 128, activeCount: 1 }, { exam: "civil2", count: 2, activeCount: 2 }]);
   await page.goto("/study-room", { waitUntil: "domcontentloaded" });
   const scene = page.getByTestId("study-room-scene");
   await expect(page.getByTestId("study-room-total")).toContainText(/今日\s*130人/);
-  await expect(scene.getByTestId("study-room-seat")).toHaveCount(120);
+  await expect(scene.getByTestId("study-room-seat")).toHaveCount(12);
   await expect(scene.locator('[data-studying-now="true"]')).toHaveCount(3);
-  await expect(page.getByText("＋10人", { exact: true })).toBeVisible();
+  await expect(page.getByText("＋118人", { exact: true })).toBeVisible();
 });

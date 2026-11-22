@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
-import { EMPTY_STUDY_ROOM_MESSAGE, HOME_ROOM_VISIBLE_LIMIT } from "@/lib/home/study-room";
+import { EMPTY_STUDY_ROOM_MESSAGE } from "@/lib/home/study-room";
 import { NO_CAFE_POSES } from "@/lib/home/study-room-cafe-mascots";
 import { presenceExamName } from "@/lib/study-presence";
 import { StudyRoomYesterday } from "@/components/home/StudyRoomYesterday";
@@ -23,7 +23,7 @@ export function HomeStudyRoom({ poseFiles = NO_CAFE_POSES }: { poseFiles?: reado
   const daily = snapshot?.today;
   const attendance = daily ?? (current ? snapshot : null);
   const firstToday = current && daily?.count === 0;
-  const { day, room, occupants, hidden } = useStudyRoomCafe(attendance, current, poseFiles, HOME_ROOM_VISIBLE_LIMIT);
+  const { day, room, occupants, hidden } = useStudyRoomCafe(attendance, current, poseFiles);
   const examRows = attendance?.exams ?? [];
   const chips = examRows.slice(0, EXAM_CHIP_LIMIT).map(row => ({ name: presenceExamName(row.exam) ?? row.exam, ...row }));
   const otherExams = examRows.length - chips.length;
