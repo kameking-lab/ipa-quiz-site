@@ -1,0 +1,334 @@
+[
+  {
+    "id": "eju-2019-round1-eju-math-common-q1",
+    "exam": "eju",
+    "year": 2019,
+    "season": "round1",
+    "session": "eju-math-common",
+    "qNumber": 1,
+    "officialQuestionLabel": "Ⅰ",
+    "subject": "数学 コース1・2共通",
+    "category": "二次関数のグラフと平方完成・偏りのあるサイコロと余事象",
+    "topicTags": [
+      "二次関数のグラフと平方完成",
+      "偏りのあるサイコロと余事象"
+    ],
+    "difficulty": 3,
+    "type": "descriptive",
+    "question": "大問Ⅰを読み、記号ごとに解答欄に入る数字または符号を求めましょう。",
+    "answer": "問1　A：9　B：7　C：7　D：8　E：9　F：9　G：7　H：6　I：4　J：0　K：4\n\n問2　L：2　M：1　NO：17　PQRS：2549　TUVW：2449　X：4　Y：1",
+    "modelAnswer": "問1　A：9　B：7　C：7　D：8　E：9　F：9　G：7　H：6　I：4　J：0　K：4\n\n問2　L：2　M：1　NO：17　PQRS：2549　TUVW：2449　X：4　Y：1",
+    "officialAnswerExample": true,
+    "explanation": "問1　放物線は上に凸で、頂点は y 軸より右、y 切片は正なので a＜0、b＞0、c＞0。図より f(1)＝0、f(−1)＜0、f(2)＜0 です。x 軸と異なる2点で交わるので判別式は正です。a＋b＋c＝0 を代入すると a²−8b−8c＝(a＋4)²−16。最小は a＝−4 で、c＝4−b。b と c が正である条件を同時に満たすのは 0＜b＜4 です。\n\n問2　全確率が 5p＋2p＝1 だから、1〜5の各目は 1/7、6は 2/7。2回とも6以外の確率は (5/7)²＝25/49、少なくとも1回6の確率は補集合なので24/49です。差 1/49 は正で 1/36 未満なので選択肢④です。3回なら同様に125/343と218/343で、125＜218＜250を満たすので選択肢①です。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2019-round1-eju-math-common-q01-p04.webp",
+      "/questions/eju/2019-round1-eju-math-common-q01-p06.webp",
+      "/questions/eju/2019-round1-eju-math-common-q01-p07.webp"
+    ],
+    "imageAltTexts": [
+      "数学 コース1・2共通 Ⅰの公式問題（PDF 4ページ）",
+      "数学 コース1・2共通 Ⅰの公式問題（PDF 6ページ）",
+      "数学 コース1・2共通 Ⅰの公式問題（PDF 7ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/01/25/2019_1question_math.pdf#page=4",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2024/04/25/2019_1answer_2.pdf#page=2",
+    "sourcePages": [
+      4,
+      6,
+      7
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 4,
+        "url": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/01/25/2019_1question_math.pdf#page=4"
+      },
+      {
+        "physicalPage": 6,
+        "url": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/01/25/2019_1question_math.pdf#page=6"
+      },
+      {
+        "physicalPage": 7,
+        "url": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/01/25/2019_1question_math.pdf#page=7"
+      }
+    ],
+    "sourceAttribution": "出典：日本学生支援機構「2019年度日本留学試験（第1回）」数学 コース1・2共通 Ⅰ。解説は過去問AI作成。",
+    "license": "JASSO-attributed"
+  },
+  {
+    "id": "eju-2019-round1-eju-math-1-q1",
+    "exam": "eju",
+    "year": 2019,
+    "season": "round1",
+    "session": "eju-math-1",
+    "qNumber": 1,
+    "officialQuestionLabel": "Ⅱ",
+    "subject": "数学 コース1",
+    "category": "根号の有理化と絶対値不等式・放物線の交点と解の配置",
+    "topicTags": [
+      "根号の有理化と絶対値不等式",
+      "放物線の交点と解の配置"
+    ],
+    "difficulty": 3,
+    "type": "descriptive",
+    "question": "大問Ⅱを読み、記号ごとに解答欄に入る数字または符号を求めましょう。",
+    "answer": "問1　ABC：415　D：7　E：7　F：2　G：8　H：5　I：6　J：8\n\n問2　KL：24　MN：22　OP：54　QR：34　ST：44　UV：21",
+    "modelAnswer": "問1　ABC：415　D：7　E：7　F：2　G：8　H：5　I：6　J：8\n\n問2　KL：24　MN：22　OP：54　QR：34　ST：44　UV：21",
+    "officialAnswerExample": true,
+    "explanation": "問1　分母を有理化すると a/b＝(√5＋√3)²/2＝4＋√15 で、7と8の間にあります。整数 x が7以下なら絶対値の中身が負なので左辺は −x＋8＋2√15（②）。8以上なら中身が正で 3x−8−2√15（⑤）です。前者の不等式から x＞2√15−2、後者から x＜(18＋2√15)/3。整数に絞ると6から8です。\n\n問2　差 h(x)＝2x²＋2ax＋a²−a−4 の判別式は −4(a−4)(a＋2) なので、異なる2解を持つのは −2＜a＜4。g(x)＞0 のためには両解が −2 と2の間にあり、h(−2)＞0、h(2)＞0、軸 −a/2 が区間内であることが必要です。h(−2)＝(a−1)(a−4)、h(2)＝(a＋3/2)²＋7/4、軸の条件は −4＜a＜4 です。すべての条件を重ねると −2＜a＜1 になります。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2019-round1-eju-math-1-q01-p08.webp",
+      "/questions/eju/2019-round1-eju-math-1-q01-p10.webp"
+    ],
+    "imageAltTexts": [
+      "数学 コース1 Ⅱの公式問題（PDF 8ページ）",
+      "数学 コース1 Ⅱの公式問題（PDF 10ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/01/25/2019_1question_math.pdf#page=8",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2024/04/25/2019_1answer_2.pdf#page=2",
+    "sourcePages": [
+      8,
+      10
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 8,
+        "url": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/01/25/2019_1question_math.pdf#page=8"
+      },
+      {
+        "physicalPage": 10,
+        "url": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/01/25/2019_1question_math.pdf#page=10"
+      }
+    ],
+    "sourceAttribution": "出典：日本学生支援機構「2019年度日本留学試験（第1回）」数学 コース1 Ⅱ。解説は過去問AI作成。",
+    "license": "JASSO-attributed"
+  },
+  {
+    "id": "eju-2019-round1-eju-math-1-q2",
+    "exam": "eju",
+    "year": 2019,
+    "season": "round1",
+    "session": "eju-math-1",
+    "qNumber": 2,
+    "officialQuestionLabel": "Ⅲ",
+    "subject": "数学 コース1",
+    "category": "有理数の近似と整数方程式",
+    "topicTags": [
+      "有理数の近似と整数方程式"
+    ],
+    "difficulty": 3,
+    "type": "descriptive",
+    "question": "大問Ⅲを読み、記号ごとに解答欄に入る数字または符号を求めましょう。",
+    "answer": "AB：73　CD：21　EFG：882　HIJ：841　KL：29　MNOP：2973　Q：3　R：2　S：5",
+    "modelAnswer": "AB：73　CD：21　EFG：882　HIJ：841　KL：29　MNOP：2973　Q：3　R：2　S：5",
+    "officialAnswerExample": true,
+    "explanation": "21倍すると 7m＋3n＜21√2 となります。両辺の二乗を比べ、882未満の最大の平方数は841＝29²なので、まず 7m＋3n＝29 が可能かを調べます。n＝(29−7m)/3 が正の整数となるには m≡2（mod 3）かつ m≤3 で、m＝2、n＝5。この組が上限29を実現します。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2019-round1-eju-math-1-q02-p12.webp"
+    ],
+    "imageAltTexts": [
+      "数学 コース1 Ⅲの公式問題（PDF 12ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/01/25/2019_1question_math.pdf#page=12",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2024/04/25/2019_1answer_2.pdf#page=2",
+    "sourcePages": [
+      12
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 12,
+        "url": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/01/25/2019_1question_math.pdf#page=12"
+      }
+    ],
+    "sourceAttribution": "出典：日本学生支援機構「2019年度日本留学試験（第1回）」数学 コース1 Ⅲ。解説は過去問AI作成。",
+    "license": "JASSO-attributed"
+  },
+  {
+    "id": "eju-2019-round1-eju-math-1-q3",
+    "exam": "eju",
+    "year": 2019,
+    "season": "round1",
+    "session": "eju-math-1",
+    "qNumber": 3,
+    "officialQuestionLabel": "Ⅳ",
+    "subject": "数学 コース1",
+    "category": "円に内接する四角形の面積",
+    "topicTags": [
+      "円に内接する四角形の面積"
+    ],
+    "difficulty": 3,
+    "type": "descriptive",
+    "question": "大問Ⅳを読み、記号ごとに解答欄に入る数字または符号を求めましょう。",
+    "answer": "A：3　BCD：217　EFGH：3314　IJ：34　KL：32　MNOP：3217　QRST：9314　UVW：637",
+    "modelAnswer": "A：3　BCD：217　EFGH：3314　IJ：34　KL：32　MNOP：3217　QRST：9314　UVW：637",
+    "officialAnswerExample": true,
+    "explanation": "正弦定理で BD＝2sin120°＝√3。AB＝s、AD＝2s とおくと余弦定理より BD²＝7s² なので AB＝√21/7、△ABD＝3√3/14 です。BE：ED＝3：4 から、底辺BD上で面積を分ける △ABC：△ACD も3：4。∠ABC と ∠ADC は補角で正弦が等しく、AB：AD＝1：2 だから BC：CD＝3：2。BC＝3t、CD＝2t とおき、∠BCD＝60° を使うと BD²＝7t²。よって BC＝3√21/7、△BCD＝9√3/14、四角形の面積は6√3/7です。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2019-round1-eju-math-1-q03-p14.webp"
+    ],
+    "imageAltTexts": [
+      "数学 コース1 Ⅳの公式問題（PDF 14ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/01/25/2019_1question_math.pdf#page=14",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2024/04/25/2019_1answer_2.pdf#page=2",
+    "sourcePages": [
+      14
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 14,
+        "url": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/01/25/2019_1question_math.pdf#page=14"
+      }
+    ],
+    "sourceAttribution": "出典：日本学生支援機構「2019年度日本留学試験（第1回）」数学 コース1 Ⅳ。解説は過去問AI作成。",
+    "license": "JASSO-attributed"
+  },
+  {
+    "id": "eju-2019-round1-eju-math-2-q1",
+    "exam": "eju",
+    "year": 2019,
+    "season": "round1",
+    "session": "eju-math-2",
+    "qNumber": 1,
+    "officialQuestionLabel": "Ⅱ",
+    "subject": "数学 コース2",
+    "category": "空間ベクトルと重心・複素数平面と三角形の面積",
+    "topicTags": [
+      "空間ベクトルと重心",
+      "複素数平面と三角形の面積"
+    ],
+    "difficulty": 3,
+    "type": "descriptive",
+    "question": "大問Ⅱを読み、記号ごとに解答欄に入る数字または符号を求めましょう。",
+    "answer": "問1　A：6　BCD：521　EF：84　GH：23　IJ：76　KL：43\n\n問2　MNO：132　P：1　QR：23　STU：132　V：3　WXY：934",
+    "modelAnswer": "問1　A：6　BCD：521　EF：84　GH：23　IJ：76　KL：43\n\n問2　MNO：132　P：1　QR：23　STU：132　V：3　WXY：934",
+    "officialAnswerExample": true,
+    "explanation": "問1　BD は直径なので OD＝−b。中点を位置ベクトルで表すと OM＝(a−b)/2、ON＝(b＋c)/2 となり、DA＝a＋b、MN＝(c−a)/2＋b です。さらに OP＝(a＋c)/4、OG＝c/3。その差 PG＝(c−3a)/12 の長さを求めるとき、|a|＝|c|＝|c−a|＝2 から a·c＝2、よって |PG|＝√7/6 です。AG＝c/3−a＝(4/3)AP なので A、P、G は一直線上にあります。\n\n問2　z＝(γ−α)/(β−α) とおくと、最初の式は z²＋z＋1＝0。解は (−1±√3i)/2、絶対値は1、偏角は±2π/3です。β−2α＋γ＝(β−α)(1＋z) で、1＋z の絶対値も1なので |β−α|＝3。AB、AC ともに長さ3で、その間の角は120°だから、面積は (1/2)×3×3×sin120°＝9√3/4 です。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2019-round1-eju-math-2-q01-p22.webp",
+      "/questions/eju/2019-round1-eju-math-2-q01-p24.webp"
+    ],
+    "imageAltTexts": [
+      "数学 コース2 Ⅱの公式問題（PDF 22ページ）",
+      "数学 コース2 Ⅱの公式問題（PDF 24ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/01/25/2019_1question_math.pdf#page=22",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2024/04/25/2019_1answer_2.pdf#page=2",
+    "sourcePages": [
+      22,
+      24
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 22,
+        "url": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/01/25/2019_1question_math.pdf#page=22"
+      },
+      {
+        "physicalPage": 24,
+        "url": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/01/25/2019_1question_math.pdf#page=24"
+      }
+    ],
+    "sourceAttribution": "出典：日本学生支援機構「2019年度日本留学試験（第1回）」数学 コース2 Ⅱ。解説は過去問AI作成。",
+    "license": "JASSO-attributed"
+  },
+  {
+    "id": "eju-2019-round1-eju-math-2-q2",
+    "exam": "eju",
+    "year": 2019,
+    "season": "round1",
+    "session": "eju-math-2",
+    "qNumber": 2,
+    "officialQuestionLabel": "Ⅲ",
+    "subject": "数学 コース2",
+    "category": "三倍角と最大値",
+    "topicTags": [
+      "三倍角と最大値"
+    ],
+    "difficulty": 3,
+    "type": "descriptive",
+    "question": "大問Ⅲを読み、記号ごとに解答欄に入る数字または符号を求めましょう。",
+    "answer": "AB：32　CDE：434　FGH：432　IJ：33　KLM：839　N：0　OP：56　Q：0　RS：46",
+    "modelAnswer": "AB：32　CDE：434　FGH：432　IJ：33　KLM：839　N：0　OP：56　Q：0　RS：46",
+    "officialAnswerExample": true,
+    "explanation": "射影の x 座標は cosθ と cos3θ。θ＝π/3 では |1/2−(−1)|＝3/2 です。t＝cosθ とすると距離は |4t³−4t|。中身の導関数は 4(3t²−1) で、端点 ±1 と t＝0 では距離が0だから、t＝±√3/3 で最大の 8√3/9 になります。どちらも sinθ＝√6/3。cos3θ＝−5t/3 と sin3θ＝sinθ/3 を使うと、Q の座標は順に (−5√3/9, √6/9)、(5√3/9, √6/9) です。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2019-round1-eju-math-2-q02-p26.webp",
+      "/questions/eju/2019-round1-eju-math-2-q02-p27.webp"
+    ],
+    "imageAltTexts": [
+      "数学 コース2 Ⅲの公式問題（PDF 26ページ）",
+      "数学 コース2 Ⅲの公式問題（PDF 27ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/01/25/2019_1question_math.pdf#page=26",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2024/04/25/2019_1answer_2.pdf#page=2",
+    "sourcePages": [
+      26,
+      27
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 26,
+        "url": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/01/25/2019_1question_math.pdf#page=26"
+      },
+      {
+        "physicalPage": 27,
+        "url": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/01/25/2019_1question_math.pdf#page=27"
+      }
+    ],
+    "sourceAttribution": "出典：日本学生支援機構「2019年度日本留学試験（第1回）」数学 コース2 Ⅲ。解説は過去問AI作成。",
+    "license": "JASSO-attributed"
+  },
+  {
+    "id": "eju-2019-round1-eju-math-2-q3",
+    "exam": "eju",
+    "year": 2019,
+    "season": "round1",
+    "session": "eju-math-2",
+    "qNumber": 3,
+    "officialQuestionLabel": "Ⅳ",
+    "subject": "数学 コース2",
+    "category": "対数不等式と面積の最小値",
+    "topicTags": [
+      "対数不等式と面積の最小値"
+    ],
+    "difficulty": 3,
+    "type": "descriptive",
+    "question": "大問Ⅳを読み、記号ごとに解答欄に入る数字または符号を求めましょう。",
+    "answer": "AB：11　C：1　D：0　EF：22　G：1　HIJK：2211　LMN：222　OP：12　QRSTUV：111222　W：0",
+    "modelAnswer": "AB：11　C：1　D：0　EF：22　G：1　HIJK：2211　LMN：222　OP：12　QRSTUV：111222　W：0",
+    "officialAnswerExample": true,
+    "explanation": "f′(x)＝1−1/x の符号は x＝1 で負から正へ変わるので、最小値は f(1)＝0。x/k−1 が log(x/k) 以上になるため、面積は前者から後者を引いて積分します。log x の原始関数は部分積分で x(log x−1) と分かります。S＝(2n＋1)/(2k)＋log k−(n＋1)log(n＋1)＋n log n。S′＝[2k−(2n＋1)]/(2k²) で、最小は k＝n＋1/2。代入すると aₙ＝1−log[(1＋1/n)ⁿ(2n＋2)/(2n＋1)]。対数の中が e に収束するので極限は0です。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2019-round1-eju-math-2-q03-p28.webp",
+      "/questions/eju/2019-round1-eju-math-2-q03-p29.webp"
+    ],
+    "imageAltTexts": [
+      "数学 コース2 Ⅳの公式問題（PDF 28ページ）",
+      "数学 コース2 Ⅳの公式問題（PDF 29ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/01/25/2019_1question_math.pdf#page=28",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2024/04/25/2019_1answer_2.pdf#page=2",
+    "sourcePages": [
+      28,
+      29
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 28,
+        "url": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/01/25/2019_1question_math.pdf#page=28"
+      },
+      {
+        "physicalPage": 29,
+        "url": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2022/01/25/2019_1question_math.pdf#page=29"
+      }
+    ],
+    "sourceAttribution": "出典：日本学生支援機構「2019年度日本留学試験（第1回）」数学 コース2 Ⅳ。解説は過去問AI作成。",
+    "license": "JASSO-attributed"
+  }
+]
