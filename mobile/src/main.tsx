@@ -18,6 +18,7 @@ import { observeStudyReminderTap, refreshStudyReminders } from "./study-reminder
 import { observeLogin } from "./login";
 import { refreshDeviceRights } from "./refresh-rights";
 import { applyDeviceTheme } from "./theme";
+import { homeSceneForHour, installHomeScene } from "@/lib/home/home-scene";
 import { installLocalApi } from "./local-api";
 import { App as NativeApp } from "@capacitor/app";
 import { Capacitor } from "@capacitor/core";
@@ -170,7 +171,7 @@ function App({ offlineFallback = false }: { offlineFallback?: boolean }) {
     </main></>;
   }
   return <>{header}{status}<main className="native-main space-y-6" data-mobile-ready={ready}>
-    <section className="space-y-2 pt-2"><h1 className="text-[1.75rem] font-bold leading-snug tracking-tight">全資格の過去問を、いつでも。</h1><p className="text-muted-foreground">ログイン不要で1日10問（全資格共通・日本時間0時リセット）。有料会員は回数無制限です。</p></section>
+    <section className="native-home-hero p3-landscape p3-home-scene space-y-2"><h1 className="text-[1.75rem] font-bold leading-snug tracking-tight">全資格の過去問を、いつでも。</h1><p className="p3-scene-muted">ログイン不要で1日10問（全資格共通・日本時間0時リセット）。有料会員は回数無制限です。</p></section>
     <section aria-labelledby="pick-title" className="space-y-3">
       <h2 id="pick-title" className="text-lg font-bold">資格を選んで始める</h2>
       <input type="search" aria-label="資格名で探す" className={field} placeholder="資格名で探す（例：宅建、ITパスポート）" value={query} onChange={e=>setQuery(e.target.value)}/>
@@ -237,6 +238,7 @@ async function openWebHome(destination: () => string) {
 async function start() {
   document.documentElement.classList.add("native-app");
   applyDeviceTheme();
+  installHomeScene(homeSceneForHour);
   // A notification can launch the bundled document before the online UI exists.
   let booting = true;
   let destination = "/";

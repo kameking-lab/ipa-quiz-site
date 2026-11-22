@@ -70,7 +70,7 @@ export function PostExamQualifications({ plan, items, today, onRetry }: {
           const qualificationId = session?.qualificationId ?? qualificationIdsForExam(key)[0];
           return <li key={key} className="py-2">
             <p className="font-medium">{item?.name ?? examLabel(key)}{session?.examDate && <time
-              className="ml-2 text-xs text-muted-foreground"
+              className="ml-2 text-xs p3-scene-muted"
               dateTime={session.datePrecision === "month" ? session.examDate.slice(0, 7) : session.examDate}>
               {session.datePrecision === "month" ? session.examDate.slice(0, 7) : session.examDate}
             </time>}</p>

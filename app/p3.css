@@ -17,6 +17,12 @@ body:has(.p3-page) {
   --border: #d9d4bc;
   --input: #b7baa4;
   --ring: #2e6b4f;
+  --p3-font: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", system-ui, sans-serif;
+  --font-display: "Noto Serif JP Display", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+  font-family: var(--p3-font);
+}
+
+:is(body:has(.p3-page), .p3-home-scene) {
   --p3-sky: #bfe3f2;
   --p3-hill: #8cc79b;
   --p3-hill-far: #abd3a4;
@@ -28,9 +34,6 @@ body:has(.p3-page) {
   --p3-ink: #173f30;
   --p3-field: #e9efda;
   --p3-accent: #f28c38;
-  --p3-font: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", system-ui, sans-serif;
-  --font-display: "Noto Serif JP Display", "Hiragino Mincho ProN", "Noto Serif JP", serif;
-  font-family: var(--p3-font);
 }
 
 .dark body:has(.p3-page) {
@@ -51,6 +54,9 @@ body:has(.p3-page) {
   --border: #46584b;
   --input: #63766a;
   --ring: #9bd1ad;
+}
+
+:where(.dark) :is(body:has(.p3-page), .p3-home-scene) {
   --p3-sky: #244756;
   --p3-hill: #315e4d;
   --p3-hill-far: #3f6b55;
@@ -91,10 +97,12 @@ body:has(.p3-page) .mobile-bottom-nav a[aria-current="page"] { background: var(-
   isolation: isolate;
   color: var(--p3-ink);
   background:
-    radial-gradient(ellipse 13px 7px at 73% 43%, var(--p3-cloud) 97%, transparent 100%),
-    radial-gradient(ellipse 23px 4px at 73% 46%, var(--p3-cloud) 97%, transparent 100%),
+    var(--p3-sky-detail,
+      radial-gradient(ellipse 13px 7px at 73% 43%, var(--p3-cloud) 97%, transparent 100%),
+      radial-gradient(ellipse 23px 4px at 73% 46%, var(--p3-cloud) 97%, transparent 100%)),
     radial-gradient(ellipse 110% 66% at 92% 122%, var(--p3-hill) 99%, transparent 100%),
     radial-gradient(ellipse 105% 61% at 10% 120%, var(--p3-hill-far) 99%, transparent 100%),
+    var(--p3-sky-wash, linear-gradient(transparent, transparent)),
     var(--p3-sky);
   border-radius: 0 0 28px 28px;
 }
@@ -102,15 +110,96 @@ body:has(.p3-page) .mobile-bottom-nav a[aria-current="page"] { background: var(-
 .p3-landscape::before {
   position: absolute;
   z-index: -1;
-  top: var(--p3-sun-top, 18px);
-  right: var(--p3-sun-right, 22px);
+  top: var(--p3-orb-top, var(--p3-sun-top, 18px));
+  right: var(--p3-orb-right, var(--p3-sun-right, 22px));
   width: var(--p3-sun-size, 38px);
   aspect-ratio: 1;
   border-radius: 50%;
-  background: var(--p3-sun);
-  box-shadow: 0 0 0 6px var(--p3-sun-halo);
+  background: var(--p3-orb-fill, var(--p3-sun));
+  box-shadow: var(--p3-orb-shadow, 0 0 0 6px var(--p3-sun-halo));
   content: "";
 }
+
+/* The sky and its orb sit behind the content. Weather and event decorations
+   can be separate absolute layers inside this isolated landscape. */
+.p3-home-scene {
+  --p3-scene-muted: #344739;
+  --p3-scene-link: #204632;
+}
+.dark .p3-home-scene {
+  --p3-scene-muted: #d7e5db;
+  --p3-scene-link: #e4f5e9;
+}
+
+[data-home-scene="morning"] .p3-home-scene {
+  --p3-sky: #d0e5ee;
+  --p3-sky-wash: linear-gradient(180deg, transparent, #ffe3ca 72%);
+  --p3-cloud: #fff5e7;
+  --p3-sun: #ffbe8c;
+  --p3-sun-halo: #fff2caa6;
+  --p3-hill: #9bc6a2;
+  --p3-hill-far: #b6cdb0;
+  --p3-orb-top: clamp(50px, 24%, 82px);
+  --p3-orb-right: 16%;
+}
+.dark[data-home-scene="morning"] .p3-home-scene {
+  --p3-sky: #293e54;
+  --p3-sky-wash: linear-gradient(180deg, transparent, #695052 72%);
+  --p3-cloud: #63596a;
+  --p3-sun: #a8766a;
+  --p3-sun-halo: #f4ba9224;
+  --p3-hill: #395e52;
+  --p3-hill-far: #466655;
+}
+
+[data-home-scene="evening"] .p3-home-scene {
+  --p3-sky: #f3b3ac;
+  --p3-sky-wash: linear-gradient(180deg, transparent, #ffd3a1 76%);
+  --p3-cloud: #ffe1cb;
+  --p3-sun: #f6a963;
+  --p3-sun-halo: #ffe9a68f;
+  --p3-hill: #b6c397;
+  --p3-hill-far: #d0c39c;
+  --p3-orb-top: clamp(59px, 30%, 106px);
+  --p3-orb-right: 10%;
+}
+.dark[data-home-scene="evening"] .p3-home-scene {
+  --p3-sky: #40334e;
+  --p3-sky-wash: linear-gradient(180deg, transparent, #714f51 76%);
+  --p3-cloud: #694e60;
+  --p3-sun: #b37a59;
+  --p3-sun-halo: #eea57528;
+  --p3-hill: #4b5d46;
+  --p3-hill-far: #625d4c;
+}
+
+[data-home-scene="night"] .p3-home-scene {
+  --p3-sky: #202f55;
+  --p3-sky-wash: linear-gradient(180deg, transparent, #384969 78%);
+  --p3-hill: #334e58;
+  --p3-hill-far: #3e5365;
+  --p3-ink: #f4f7f5;
+  --p3-scene-muted: #dce7f2;
+  --p3-scene-link: #e6f3ff;
+  --p3-sky-detail:
+    radial-gradient(circle at 58% 26px, #c4d5ee 1px, transparent 1.8px),
+    radial-gradient(circle at 69% 52px, #a5bddf 1.4px, transparent 2px),
+    radial-gradient(circle at 79% 18px, #c4d5ee 1px, transparent 1.8px),
+    radial-gradient(circle at 94% 72px, #a5bddf 1px, transparent 1.8px),
+    radial-gradient(circle at 88% 108px, #c4d5ee 1px, transparent 1.8px);
+  --p3-orb-fill: radial-gradient(circle at 69% 29%, transparent 47%, #fff0cb 49%);
+  --p3-orb-shadow: none;
+}
+.dark[data-home-scene="night"] .p3-home-scene {
+  --p3-sky: #18233c;
+  --p3-sky-wash: linear-gradient(180deg, transparent, #293851 78%);
+  --p3-hill: #283f45;
+  --p3-hill-far: #344751;
+}
+
+.p3-home-scene .p3-scene-muted { color: var(--p3-scene-muted); }
+.p3-home-scene .p3-scene-tick-label { fill: var(--p3-scene-muted); }
+.p3-home-scene .study-link { color: var(--p3-scene-link); }
 
 .p3-hero {
   display: grid;

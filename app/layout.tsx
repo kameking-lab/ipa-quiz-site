@@ -12,6 +12,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { AccountNavigationProvider } from "@/components/account/AccountNavigation";
 import { SyncSessionObservationProvider } from "@/lib/sync/session-observation";
 import { NativeAppHost } from "@/components/NativeAppHost";
+import { HOME_SCENE_BOOTSTRAP_SCRIPT } from "@/lib/home/home-scene";
 import { NATIVE_APP_BOOTSTRAP_SCRIPT } from "@/lib/native-app-bootstrap";
 import { NativeAdPrivacy } from "@/components/ads/NativeAdPrivacy";
 import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
@@ -131,6 +132,7 @@ export default function RootLayout({
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_BOOTSTRAP_SCRIPT }} />
+        <script dangerouslySetInnerHTML={{ __html: HOME_SCENE_BOOTSTRAP_SCRIPT }} />
         <script dangerouslySetInnerHTML={{ __html: NATIVE_APP_BOOTSTRAP_SCRIPT }} />
         <link rel="dns-prefetch" href="https://us.i.posthog.com" />
         <link rel="preconnect" href="https://us.i.posthog.com" />
