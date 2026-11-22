@@ -7,7 +7,10 @@ import { getHomeDirectory } from "@/lib/home/home-directory";
 
 // Keep both real pages and the published directory. Provide browser routing and
 // billing fixtures for the interactive home without requesting external services.
-vi.mock("next/navigation", () => ({ useRouter: () => ({ replace: vi.fn() }) }));
+vi.mock("next/navigation", () => ({
+  useRouter: () => ({ replace: vi.fn() }),
+  useSearchParams: () => new URLSearchParams(window.location.search),
+}));
 vi.mock("@/components/ChihuahuaMascot", () => ({ ChihuahuaMascot: () => null }));
 vi.mock("@/components/home/landing/HomeQualificationFinder", () => ({ HomeQualificationFinder: () => null }));
 vi.mock("@/components/home/landing/HomeDirectory", () => ({ HomeDirectory: () => null }));

@@ -1,4 +1,5 @@
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
+import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 import type { Question } from "@/lib/questions/types";
 import { sessionLabel } from "@/lib/seo/question-jsonld";
 import { questionNumberLabel } from "@/lib/questions/display";
@@ -23,13 +24,18 @@ function truncate(s: string, n: number): string {
   return s.length > n ? `${s.slice(0, n - 1)}…` : s;
 }
 
+function searchSourceExam(q: Question) {
+  const name = q.exam.startsWith("shobo-setsubishi-") ? getQualificationByExamCode(q.exam)?.shortName : undefined;
+  return name ?? questionSourceExam(q);
+}
+
 /** Source identity for the page heading and search description. */
 export function questionHeading(q: Question): string {
   // The electrical and thermal papers reuse printed question/answer numbers.
   const field = q.exam === "energy-kanri"
     ? q.topicTags.find(tag => tag === "電気分野" || tag === "熱分野")
     : undefined;
-  return [questionSourceEdition(q), questionSourceExam(q), field,
+  return [questionSourceEdition(q), searchSourceExam(q), field,
     sessionLabel(q.session, q.exam), `問${questionNumberLabel(q)}`].filter(Boolean).join(" ");
 }
 
@@ -42,7 +48,7 @@ function supplementaryCategory(q: Question): string {
 /** Lead with the searchable stem and retain the paper identity for repeated stems. */
 export function questionTitle(q: Question): string {
   const edition = questionSourceEdition(q).replace(/（[^）]*）$/, "").replace(/年度/g, "").replaceAll(" ", "");
-  const exam = questionSourceExam(q);
+  const exam = searchSourceExam(q);
   const session = sessionLabel(q.session, q.exam);
   const field = q.exam === "energy-kanri" ? q.topicTags.find(tag => tag === "電気分野" || tag === "熱分野")
     : q.exam === "dekyo-chief-2" || q.exam.startsWith("dekyo-charge-") ? q.category

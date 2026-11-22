@@ -1,13 +1,18 @@
 import type { ExamCode } from "@/lib/questions/types";
 import { examLabel } from "@/lib/utils";
+import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 import { PLAN_OFFER } from "@/lib/billing/plan-offer";
 import { examMetaDescription, getQuestionsByExamStrict } from "@/lib/seo/exam-meta";
 
 export function examSearchMetadata(exam: ExamCode, count: number, coverageDescription = examMetaDescription(exam, count)) {
   const years = getQuestionsByExamStrict(exam).map(q => q.year);
   const facts = exam === "kanri" ? "各年度の法令基準日も確認できます。"
-    : exam === "zoen2" ? "前期・後期の第一次検定を各回40問収録しています。" : coverageDescription;
-  return formatExamSearchMetadata(examLabel(exam), count, years, facts, exam === "kanri" || exam === "zoen2");
+    : exam === "zoen2" ? "前期・後期の第一次検定を各回40問収録しています。"
+    : exam === "denko1" && years.length > 0
+      ? "収録は" + Math.min(...years) + "〜" + Math.max(...years) + "年度で、高圧受電設備の配線図も確認できます。"
+      : null;
+  const name = exam.startsWith("shobo-setsubishi-") ? getQualificationByExamCode(exam)?.shortName : undefined;
+  return formatExamSearchMetadata(name ?? examLabel(exam), count, years, facts ?? coverageDescription, facts !== null);
 }
 
 /** Count distinct years represented in the corpus, including gaps between editions. */
