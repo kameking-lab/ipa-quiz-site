@@ -52,6 +52,19 @@ describe("Public API v1 numeric boundary", () => {
     expect((await (await grade("ウ")).json()).correct).toBe(true);
     expect((await (await grade("イ")).json()).correct).toBe(false);
   });
+  it("問題取得と採点は公式元URLと日時固定の問題・正答を返す", async () => {
+    const sourcePdfUrl = "http://www.pref.kanagawa.jp/documents/5214/r5_1_mondai.pdf";
+    const sourceAnswerUrl = "http://www.pref.kanagawa.jp/documents/5214/r5_1_kaitou.pdf";
+    const source = { sourcePdfUrl, sourceAnswerUrl,
+      sourceArchiveUrl: `https://web.archive.org/web/20250102030405/${sourcePdfUrl}`,
+      sourceAnswerArchiveUrl: `https://web.archive.org/web/20250102030406/${sourceAnswerUrl}` };
+    const archived = { ...question, ...source, type: "multiple-choice", choices: { ア: "1", イ: "2" }, answer: "ア" };
+    getQuestionsForExam.mockResolvedValue([archived]);
+    findQuestionById.mockResolvedValue(archived);
+    const list = await GET(new Request("http://localhost/api/v1/questions?exam=fp2"));
+    expect((await list.json()).questions[0]).toMatchObject(source);
+    expect(await (await grade("ア")).json()).toMatchObject(source);
+  });
   it("continues requiring all specified choices for a multi-selection original", async () => {
     findQuestionById.mockResolvedValue({ ...question, type: "multiple-choice", numericAnswer: undefined, choices: { ア: "A", イ: "B", ウ: "C", エ: "D" }, answer: ["ア", "ウ"], requiredSelections: 2 });
     expect((await (await grade("ウ")).json()).correct).toBe(false);

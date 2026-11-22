@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { HomePace } from "@/components/home/pace/HomePace";
 import { QualificationDirectory } from "@/components/home/pace/QualificationDirectory";
-import { StudyRoomLine } from "@/components/home/pace/StudyRoomLine";
+import { HomeStudyRoom } from "@/components/home/pace/HomeStudyRoom";
 import { planCatalogKeys } from "@/lib/study-plan/catalog-keys";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getHomeDirectory } from "@/lib/home/home-directory";
+import { CAFE_POSE_FILES } from "@/lib/home/study-room-cafe-mascots";
 import { groupHomeDirectory } from "@/lib/home/grouped-directory";
 import { buildOrgNode, buildWebsiteNode } from "@/lib/seo/structured-data";
 import styles from "./HomePage.module.css";
@@ -22,11 +23,12 @@ export default function HomePage() {
   const domains = getHomeDirectory();
 
   return (
-    <main className={`${styles.home} study-column flex-1`}>
+    <main className={`${styles.home} p3-page p3-home study-column flex-1`}>
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [buildWebsiteNode(description), buildOrgNode()] }} />
-      <HomePace domains={domains} planExamKeys={planCatalogKeys()} />
+      <HomePace domains={domains} planExamKeys={planCatalogKeys()}>
+        <HomeStudyRoom poseFiles={CAFE_POSE_FILES} />
+      </HomePace>
       <div className={styles.shortcuts}>
-        <StudyRoomLine />
         <details id="home-qualification-directory" className={styles.directory}>
           <summary className="study-focus min-h-12 cursor-pointer py-3 text-sm underline underline-offset-4 hover:text-primary">資格・区分一覧</summary>
           <div className="mt-2">

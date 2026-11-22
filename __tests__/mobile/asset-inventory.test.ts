@@ -54,7 +54,7 @@ it("covers each non-paper renderer's own image and required-PDF input fields",as
     }
   }
   expect(kinds.size).toBe(12);
-},120000);
+}, 300_000); // The full catalog is loaded from cold imports on shared workers.
 it("includes precisely the seven previously omitted renderer figures in hashed content",async()=>{
   const ids=["lckohyo-LC20260401-2-q2","cskohyo-CS20251905-q4","cskohyo-CS20241911-q4"];
   expect(ids.flatMap(id=>figures[id])).toHaveLength(7);

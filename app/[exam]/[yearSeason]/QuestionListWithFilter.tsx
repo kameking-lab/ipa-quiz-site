@@ -106,12 +106,12 @@ export function QuestionListWithFilter({ groups, exam, showSectionNavigation = f
       {groups.map(({ session, id, items }) => {
         if (items.length === 0) return null;
         return (
-          <section key={session} id={id} aria-label={displayQuestionGroupLabel(session, exam)} className="mb-8 scroll-mt-6">
-            <h2 className="mb-3 flex items-center gap-2 text-sm font-semibold tracking-wider text-muted-foreground">
+          <section key={session} id={id} aria-label={displayQuestionGroupLabel(session, exam)} className="p3-listed mb-4 scroll-mt-16">
+            <h2 className="flex items-center gap-2 border-b border-hairline bg-primary-soft px-3 py-2.5 text-sm font-bold text-primary-soft-foreground">
               <span className="h-1 w-1 rounded-full bg-primary" />
               {displayQuestionGroupLabel(session, exam)}
             </h2>
-            <ul className="space-y-2">
+            <ul className="divide-y divide-hairline">
               {items.map((q) => {
                 const status = solved[q.id];
                 return (
@@ -120,17 +120,17 @@ export function QuestionListWithFilter({ groups, exam, showSectionNavigation = f
                       href={q.href}
                       aria-label={`${q.officialQuestionLabel ?? `問${q.qNumber}`}を解く`}
                       className={cn(
-                        "group flex min-h-16 items-start gap-3 rounded-2xl border p-4 transition-all hover:-translate-y-0.5 hover:shadow-md",
+                        "study-focus group flex min-h-12 items-center gap-2 border-s-2 px-2.5 py-1.5",
                         status
                           ? status.correct
                             ? "border-emerald-300/70 bg-emerald-50/50 hover:border-emerald-400 dark:border-emerald-900/60 dark:bg-emerald-950/20"
                             : "border-rose-300/70 bg-rose-50/50 hover:border-rose-400 dark:border-rose-900/60 dark:bg-rose-950/20"
-                          : "border-border bg-card hover:border-primary/40",
+                          : "border-transparent hover:border-primary hover:bg-primary-soft",
                       )}
                     >
                       <span
                         className={cn(
-                          "flex h-8 w-12 shrink-0 items-center justify-center rounded-lg text-xs font-bold",
+                          "flex min-h-8 w-11 shrink-0 items-center justify-center rounded-lg text-sm font-semibold tabular-nums",
                           status
                             ? status.correct
                               ? "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200"
@@ -140,9 +140,9 @@ export function QuestionListWithFilter({ groups, exam, showSectionNavigation = f
                       >
                         {q.officialQuestionLabel ?? `問${q.qNumber}`}
                       </span>
-                      <span className="flex-1 space-y-1.5 min-w-0">
+                      <span className="flex min-w-0 flex-1 flex-col-reverse gap-0.5">
                         <span className="flex flex-wrap items-center gap-1.5 text-xs">
-                          <Badge variant="default">{practiceCategoryLabel(q.category, exam)}</Badge>
+                          <span className="text-xs font-medium text-primary">{practiceCategoryLabel(q.category, exam)}</span>
                           {q.isCalculation && <Badge variant="warn">計算</Badge>}
                           {q.isPlaceholder && (
                             <Badge variant="warn">解説準備中</Badge>
@@ -165,14 +165,14 @@ export function QuestionListWithFilter({ groups, exam, showSectionNavigation = f
                         </span>
                         <span
                           className={cn(
-                            "line-clamp-2 block text-sm leading-relaxed",
+                            "line-clamp-2 text-[13px] leading-snug",
                             status ? "text-foreground/80" : "text-foreground",
                           )}
                         >
                           {q.questionPreview}
                         </span>
                       </span>
-                      <span className="mt-2 flex shrink-0 items-center gap-1 text-xs font-medium text-primary">解く<ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" /></span>
+                      <span className="flex shrink-0 items-center gap-1 text-xs font-medium text-primary">解く<ChevronRight className="size-4" aria-hidden="true" /></span>
                     </a>
                   </li>
                 );

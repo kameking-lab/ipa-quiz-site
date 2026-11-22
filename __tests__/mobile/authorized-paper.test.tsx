@@ -73,7 +73,7 @@ it("keeps the free eleventh body and key behind the server denial",async()=>{
     await screen.findByText(`許可本文${n}`);
     fireEvent.click(screen.getByRole("button",{name:"スキップして次へ"}));
   }
-  await screen.findByRole("alert");expect(granted.size).toBe(10);
+  await screen.findByRole("heading",{name:"今日の無料10問はここまで"});expect(granted.size).toBe(10);
   expect(screen.queryByText("許可本文11")).not.toBeInTheDocument();expect(screen.queryByRole("radiogroup")).not.toBeInTheDocument();
 });
 it("resumes the requested middle ID without fetching the first question",async()=>{

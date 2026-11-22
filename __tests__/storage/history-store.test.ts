@@ -7,6 +7,7 @@ import {
   type HistoryEntry,
 } from "@/lib/storage/history";
 import { LS_KEYS } from "@/lib/storage/keys";
+import { recordLearningAction } from "@/lib/study-plan/pace-storage";
 
 beforeEach(() => {
   localStorage.clear();
@@ -40,7 +41,7 @@ describe("createHistoryStore — record / 集計", () => {
   it("getWrongIds は同一 ID の最新正誤で誤答のみ返す", () => {
     const store = createHistoryStore();
     store.record(entry("q1", false)); // 最初は誤答
-    store.record(entry("q1", true)); // 後に正答 → 誤答リストから外れる
+    store.record({ ...entry("q1", true), at: entry("q1").at + 1 });
     store.record(entry("q2", false)); // 誤答のまま
     expect(store.getWrongIds()).toEqual(["q2"]);
   });
@@ -62,6 +63,16 @@ describe("createHistoryStore — record / 集計", () => {
     expect(stats.correct).toBe(1);
     expect(stats.accuracy).toBe(0.5);
     expect(stats.uniqueAnswered).toBe(2);
+  });
+
+  it("resolves a local history grade and a synced activity grade with one ordering", () => {
+    const history = createHistoryStore();
+    const first = entry("q1", false);
+    history.record(first);
+    recordLearningAction({ id: "later", kind: "answer", questionId: first.id, exam: "ip", correct: true, at: first.at + 1 });
+    expect(history.getWrongIds()).toEqual([]);
+    history.record({ ...first, at: first.at + 1 });
+    expect(history.getWrongIds()).toEqual(["q1"]);
   });
 
   it("record は 2000 件上限で最古を捨てる（localStorage 無限増殖を防ぐ不変条件）", () => {

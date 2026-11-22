@@ -6,7 +6,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 
 import { findQuestionById } from "@/lib/questions/pool-server";
-import { getSafePdfUrl } from "@/lib/exam-config";
+import { publicQuestionSource } from "@/lib/api/question-source";
 import { buildRateLimitHeaders, checkApiRateLimit } from "@/lib/api/rate-limit";
 
 export const runtime = "nodejs";
@@ -78,7 +78,7 @@ export async function POST(req: Request) {
       correct,
       correctAnswer,
       explanation: q.explanation,
-      sourcePdfUrl: getSafePdfUrl(q.sourcePdfUrl),
+      ...publicQuestionSource(q),
     },
     { headers: {...buildRateLimitHeaders(rl),"Cache-Control":"private, no-store"} },
   );

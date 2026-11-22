@@ -6,6 +6,7 @@ import type { ExamQuestion } from "@/lib/exam-library-model";
 import { examProgressKey } from "@/lib/exam-library-progress";
 import { ExamQuestionPlayer } from "@/components/exam-library/exam-question-player";
 import { getPaceAttempts } from "@/lib/study-plan/pace-storage";
+import { createHistoryStore } from "@/lib/storage/history";
 import { LS_KEYS } from "@/lib/storage/keys";
 
 const EXAM_ID = "lckohyo-TEST01";
@@ -68,7 +69,23 @@ describe("ExamQuestionPlayer", () => {
     answer(3);
     expect(getPaceAttempts().at(-1)).toMatchObject({ id: questions[0].id, correct: true });
     expect(sessionStorage.getItem(LS_KEYS.examLibrarySessionPrefix + EXAM_ID)).toBe(savedTab);
-    next(); expect(completed).toHaveBeenCalledOnce();
+    next(); expect(completed).toHaveBeenCalledExactlyOnceWith(1, 1);
+  });
+
+  it("records annual paper grades only with device saving and answer history enabled", () => {
+    const paper = renderPlayer();
+    const history = createHistoryStore();
+    answer(3);
+    expect(history.getAllEntries()).toEqual([]);
+    fireEvent.click(screen.getByRole("checkbox", { name: "この端末に保存する" }));
+    next();
+    answer(3);
+    expect(history.getAllEntries()).toMatchObject([{ id: questions[1].id, correct: true, selected: "3" }]);
+    localStorage.setItem(LS_KEYS.settings, JSON.stringify({ recordHistory: false }));
+    next();
+    answer(3);
+    expect(history.getAllEntries()).toHaveLength(1);
+    paper.unmount();
   });
 
   it("shows local explanations and official sources without article CTAs after answering", () => {

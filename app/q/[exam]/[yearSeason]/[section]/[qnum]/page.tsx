@@ -46,6 +46,7 @@ import { CurrentLearningLinks } from "@/components/term-relations/CurrentLearnin
 import { QuestionAnswerCard } from "@/components/quiz/QuestionAnswerCard";
 import { DescriptiveAnswerCard } from "@/components/quiz/DescriptiveAnswerCard";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { P3Mascot } from "@/components/ui/P3Mascot";
 import { Badge } from "@/components/ui/badge";
 import { ExplanationLayers } from "@/components/quiz/ExplanationLayers";
 import { QuestionBody, QuestionInlineText } from "@/components/quiz/QuestionBody";
@@ -249,7 +250,7 @@ export default async function QuestionPage({
   });
 
   const explanation = (
-    <section id="explanation" aria-label="解説" className="mt-6 scroll-mt-20 border-t border-hairline pt-4">
+    <section id="explanation" aria-label="解説" className="p3-listed mt-4 scroll-mt-20 p-3.5">
       <h2 className="mb-3 text-xl font-bold">解説</h2>
       {showRealExplanation ? (
         <>
@@ -257,9 +258,9 @@ export default async function QuestionPage({
           {q.choiceExplanations && q.choices && (
             <div className="mt-6">
               <h3 className="mb-2 font-bold text-foreground">各選択肢の解説</h3>
-              <dl className="divide-y divide-hairline border-y border-hairline text-base leading-[1.85]">
+              <dl className="divide-y divide-hairline text-sm leading-[1.75]">
                 {Object.entries(q.choices).map(([key, choice]) => (
-                  <div key={key} className={`grid grid-cols-[28px_minmax(0,1fr)] gap-2 border-l-2 py-3 pl-3 ${answerKeys.includes(key as ChoiceKey) ? "border-l-primary" : "border-l-transparent"}`}>
+                  <div key={key} className={`grid grid-cols-[26px_minmax(0,1fr)] gap-2 rounded-lg py-2.5 px-2 ${answerKeys.includes(key as ChoiceKey) ? "bg-success-soft" : ""}`}>
                     <dt className="font-bold text-primary">{choiceDisplayLabel(q.exam, key as ChoiceKey)}</dt>
                     <dd>
                       <div className="font-medium text-foreground"><QuestionBody text={choice} /></div>
@@ -297,14 +298,14 @@ export default async function QuestionPage({
       {next && (
         <link rel="next" href={`${SITE_BASE_URL}${questionPagePath(next)}`} />
       )}
-    <main data-study-presence-exam={q.exam} className={`${styles.questionPage} mx-auto w-full max-w-[44rem] px-4 pt-3 sm:pt-6`}>
+    <main data-study-presence-exam={q.exam} className={`${styles.questionPage} p3-page p3-question study-column`}>
       <JsonLd data={gateEnabled ? withQuotaPaywall(jsonLd) : jsonLd} />
 
       {/* Breadcrumb — no viewport prefetch: rarely clicked, and each prefetch
           downloads another page's RSC payload on every question view. */}
       <nav
         aria-label="パンくずリスト"
-        className="mb-3 text-[13px] text-muted-foreground"
+        className="mb-1 text-xs text-muted-foreground"
       >
         <ol className="flex flex-wrap items-center gap-1.5">
           <li>
@@ -350,7 +351,8 @@ export default async function QuestionPage({
       </nav>
 
       {/* Header */}
-      <header className="mb-4">
+      <header className="p3-landscape p3-hero p3-question-hero mb-3">
+        <div className="min-w-0 self-center">
         <h1 className="font-semibold leading-tight text-foreground">
           <span className="block text-[13px] text-muted-foreground">{questionContext}</span>{" "}
           <span className="mt-1 block font-display text-[32px] font-semibold tabular-nums">{questionNumber}</span>
@@ -362,6 +364,8 @@ export default async function QuestionPage({
             {q.isCalculation && <Badge variant="warn">計算</Badge>}
           </div>
         )}
+        </div>
+        <P3Mascot exam={q.exam} />
       </header>
 
       {/* Figure-bearing notice — text-only fallback hint */}
@@ -387,7 +391,7 @@ export default async function QuestionPage({
       <QuestionPracticeGate id={q.id} enabled={gateEnabled}>
       <section
         aria-label="問題文"
-        className="selectable-content text-base leading-[1.85] text-foreground"
+        className="p3-listed selectable-content px-3.5 py-3 text-base leading-[1.78] text-foreground"
       >
         {q.lawReferenceDate && (
           <p className="mb-3 text-sm font-medium text-muted-foreground">
@@ -405,7 +409,7 @@ export default async function QuestionPage({
           instead of hopping to /quiz (致命傷⑤). */}
       {hasAnswerCard && (
         <section aria-label={q.type === "native-b" ? "五つの空欄と解答" : q.type === "numeric" ? "数値記入と解答" : "選択肢と解答"} className="mt-4">
-          <h2 className="sr-only">{q.type === "native-b" ? "五つの空欄" : q.type === "numeric" ? "数値記入" : "選択肢"}</h2>
+          <h2 className="mb-1.5 text-sm font-bold">{q.type === "native-b" ? "五つの空欄" : q.type === "numeric" ? "数値記入" : "選択肢"}</h2>
           <QuestionAnswerCard
             key={q.id}
             question={q}

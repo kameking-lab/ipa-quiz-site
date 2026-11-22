@@ -6,17 +6,21 @@ import Link from "next/link";
 import { WifiOff, BookmarkCheck, History } from "lucide-react";
 import { createHistoryStore } from "@/lib/storage/history";
 import { readLastQuestion } from "@/lib/storage/last-question";
+import { groupQualifications, qualificationGroupLabel } from "@/lib/qualifications/groups";
+import { questionPagePath } from "@/lib/seo/question-url";
 
 export interface OfflineQuestionLink {
   id: string;
+  exam: string;
   href: string;
   label: string;
 }
 
 export interface OfflineCatalogGroup {
+  exam: string;
   label: string;
-  /** [id, href, qNumber] */
-  items: [string, string, string][];
+  hrefPrefix: string;
+  items: [id: string, qNumber: number, suffix?: string][];
 }
 
 export function OfflineHome({catalog=[]}:{catalog?:OfflineCatalogGroup[]}) {
@@ -35,7 +39,9 @@ export function OfflineHome({catalog=[]}:{catalog?:OfflineCatalogGroup[]}) {
     const store = createHistoryStore();
     const byId = new Map<string, OfflineQuestionLink>();
     for (const group of catalog) {
-      for (const [id, href, qNumber] of group.items) byId.set(id, { id, href, label: `${group.label} 問${qNumber}` });
+      for (const [id, qNumber, suffix = ""] of group.items) {
+        byId.set(id, { id, exam: group.exam, href: `${group.hrefPrefix}q${qNumber}${suffix}`, label: `${group.label} 問${qNumber}` });
+      }
     }
 
     const starredIds = store.getStarredIds();
@@ -60,9 +66,7 @@ export function OfflineHome({catalog=[]}:{catalog?:OfflineCatalogGroup[]}) {
 
     const last = readLastQuestion();
     if (last) {
-      setLastHref(
-        `/q/${last.exam}/${last.year}-${last.season}/${last.session}/q${last.qNumber}`,
-      );
+      setLastHref(questionPagePath(last));
     }
 
     return () => {
@@ -126,18 +130,7 @@ export function OfflineHome({catalog=[]}:{catalog?:OfflineCatalogGroup[]}) {
             ブックマークした問題はまだありません。オンライン中に各問題の「★」を押すとここに表示されます。
           </p>
         ) : (
-          <ul className="divide-y divide-border rounded-2xl border border-border">
-            {bookmarked.map((item) => (
-              <li key={item.id}>
-                <Link
-                  href={item.href}
-                  className="block px-4 py-3 text-sm hover:bg-muted/50"
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <OfflineQuestionList items={bookmarked} />
         )}
       </section>
 
@@ -154,18 +147,7 @@ export function OfflineHome({catalog=[]}:{catalog?:OfflineCatalogGroup[]}) {
             まだ閲覧履歴がありません。
           </p>
         ) : (
-          <ul className="divide-y divide-border rounded-2xl border border-border">
-            {recent.map((item) => (
-              <li key={item.id}>
-                <Link
-                  href={item.href}
-                  className="block px-4 py-3 text-sm hover:bg-muted/50"
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <OfflineQuestionList items={recent} />
         )}
       </section>
 
@@ -193,4 +175,30 @@ export function OfflineHome({catalog=[]}:{catalog?:OfflineCatalogGroup[]}) {
       </section>
     </div>
   );
+}
+
+function OfflineQuestionList({ items }: { items: OfflineQuestionLink[] }) {
+  return <ul className="divide-y divide-border rounded-2xl border border-border">
+    {groupQualifications(items, item => item.exam).map(row => {
+      if ("item" in row) return <li key={row.item.id}><OfflineQuestion item={row.item} /></li>;
+      const { group, children } = row;
+      const regions = new Map<string, { label: string; questions: OfflineQuestionLink[] }>();
+      for (const { item, label } of children) {
+        const region = regions.get(item.exam) ?? { label, questions: [] };
+        region.questions.push(item);
+        regions.set(item.exam, region);
+      }
+      return <li key={group.slug}><details className="px-4">
+        <summary className="min-h-11 cursor-pointer py-3 text-sm font-semibold">{qualificationGroupLabel(group, regions.size)}</summary>
+        {[...regions].map(([exam, { label, questions }]) => <details key={exam} className="border-t border-border pl-3">
+          <summary className="min-h-11 cursor-pointer py-3 text-sm">{label}（{questions.length}問）</summary>
+          <ul className="divide-y divide-border">{questions.map(item => <li key={item.id}><OfflineQuestion item={item} /></li>)}</ul>
+        </details>)}
+      </details></li>;
+    })}
+  </ul>;
+}
+
+function OfflineQuestion({ item }: { item: OfflineQuestionLink }) {
+  return <Link href={item.href} className="block px-4 py-3 text-sm hover:bg-muted/50">{item.label}</Link>;
 }

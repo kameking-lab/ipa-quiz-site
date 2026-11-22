@@ -4,6 +4,7 @@ import { z } from "zod";
 import { LS_KEYS } from "@/lib/storage/keys";
 import type { StudyPlanSyncEntry } from "@/lib/sync/types";
 import { dayNumber, type PacePlan, type AnswerAttempt } from "./pace";
+import { isStudyWeekdays, preserveStudyWeekdays } from "./pace-compat";
 import { dailyLearningPoints, mergeLearningActions, type LearningAction } from "./activity";
 
 const date = z.string().refine(value => dayNumber(value) !== null);
@@ -15,6 +16,7 @@ export const pacePlanSchema = z.object({
     capturedOn: date, lastExpansionWeek: date, graceUntil: date.nullable() }),
   registration: z.object({ label: z.string(), start: date.nullable(), deadline: date.nullable(), resultDate: date.nullable(), sourceUrl: z.string().url().nullable(), estimated: z.boolean() }).optional(),
   registered: z.boolean().optional(), result: z.enum(["passed", "failed", "absent"]).optional(),
+  studyWeekdays: z.custom<number[]>(isStudyWeekdays).optional(),
   studyMinutes: z.object({ weekday: z.number().int().min(1).max(1440), holiday: z.number().int().min(1).max(1440) }).optional(),
 });
 const actionSchema = z.object({ id: z.string().min(1), questionId: z.string().min(1), exam: z.string().min(1), at: z.number().finite(),
@@ -87,7 +89,8 @@ export function getPaceSyncEntries(): StudyPlanSyncEntry[] {
   return plans;
 }
 export function mergePaceSyncEntries(entries: readonly StudyPlanSyncEntry[]): void {
-  const plans = new Map(listPacePlans().map(p => [p.id, p]));
+  const previousPlans = listPacePlans();
+  const plans = new Map(previousPlans.map(p => [p.id, p]));
   const deleted = readDeleted();
   let activity: ActivityState | null = null;
   for (const entry of entries) {
@@ -95,7 +98,7 @@ export function mergePaceSyncEntries(entries: readonly StudyPlanSyncEntry[]): vo
     if (entry.payload && typeof entry.payload === "object" && "kind" in entry.payload && entry.payload.kind === "deleted-exam-pace-v1") {
       deleted[entry.id] = Math.max(deleted[entry.id] ?? 0, entry.updatedAt); continue;
     }
-    const plan = pacePlanSchema.safeParse(entry.payload);
+    const plan = pacePlanSchema.safeParse(preserveStudyWeekdays(entry.payload, plans.get(entry.id)));
     if (plan.success && plan.data.id === entry.id && !deleted[entry.id]) {
       if (entry.updatedAt > Date.parse(plans.get(entry.id)?.updatedAt ?? "") || !plans.has(entry.id)) plans.set(entry.id, plan.data);
     }
@@ -109,7 +112,10 @@ export function mergePaceSyncEntries(entries: readonly StudyPlanSyncEntry[]): vo
     }
   }
   write(LS_KEYS.pacePlanDeleted, deleted, false);
-  write(LS_KEYS.pacePlans, [...plans.values()].filter(p => !deleted[p.id]).sort((a, b) => b.updatedAt.localeCompare(a.updatedAt)).slice(0, 20), false);
+  const nextPlans = [...plans.values()].filter(p => !deleted[p.id]).sort((a, b) => b.updatedAt.localeCompare(a.updatedAt)).slice(0, 20);
+  if (JSON.stringify(previousPlans) !== JSON.stringify(nextPlans) && write(LS_KEYS.pacePlans, nextPlans, false)) {
+    window.dispatchEvent(new Event("study-plan:synced"));
+  }
   if (activity && JSON.stringify(getLearningActions()) !== JSON.stringify(activity.actions)) {
     write(LS_KEYS.learningActivity, activity, false);
     write(LS_KEYS.learningPoints, dailyLearningPoints(activity.actions), false);

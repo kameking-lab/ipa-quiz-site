@@ -50,6 +50,7 @@ const cases: readonly (readonly [string, ...string[]])[] = [
   ["PT", "rigaku-ryohoshi"],
   ["ほいくし", "hoikushi"],
   ["えいけんじゅんにきゅうぷらす", "eikenp2plus"],
+  ["ちょうりししけんならけん", "chori-nara"],
   ["漢検　準二級", "kanken-j2"],
   ["すうけんじゅういっきゅう", "suken-11"],
   ["JLPT・Ｎ３", "jlpt-n3"],

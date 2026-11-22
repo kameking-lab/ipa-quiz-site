@@ -14,7 +14,7 @@ async function setup(page: Page, plan?: PacePlan, count = 0) {
   await page.route("**/api/billing/status", r => r.fulfill({ json: { entitled: false } }));
   await page.route("**/api/study-plan/catalog/ip", r => r.fulfill({ json: { questions: catalog } }));
   await page.addInitScript(({ keys, plan, catalog, count }) => {
-    localStorage.setItem(keys.onboarded, "1");
+    localStorage.setItem("ipa-quiz:onboarded:v1", "1");
     if (plan) localStorage.setItem(keys.pacePlans, JSON.stringify([plan]));
     localStorage.setItem(keys.history, JSON.stringify({ entries: catalog.slice(0, count).map(q => ({
       id: q.id, correct: true, selected: "ア", at: Date.parse("2026-11-16T12:00:00+09:00"),
@@ -27,9 +27,9 @@ test.use({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true
 test("a saved plan without an appointment shows no invented target or paid nudge", async ({ page }) => {
   await setup(page, { ...makePlan(), examDate: null });
   await page.goto("/");
-  await expect(page.getByRole("img", { name: "進み具合0%、受験日未設定" })).toBeVisible();
+  await expect(page.getByRole("img", { name: "正解済み 0 / 200問" })).toBeVisible();
   await expect(page.getByTestId("pace-target-flag")).toHaveCount(0);
-  await expect(page.getByText("日程未設定", { exact: true })).toBeVisible();
+  await expect(page.getByText("受験日を設定してください", { exact: true })).toBeVisible();
   await expect(page.getByRole("link", { name: /回数無制限で追いつけます/ })).toHaveCount(0);
 });
 
@@ -39,41 +39,43 @@ for (const [result, label] of [["failed", "不合格"], ["absent", "受けなか
     await page.goto("/");
     await page.getByRole("button", { name: label, exact: true }).click();
     expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)!)[0].result, LS_KEYS.pacePlans)).toBe(result);
-    await expect(page.getByRole("link", { name: /今日の問題を解く/ })).toHaveCount(0);
-    await page.getByRole("button", { name: "学習計画を作成", exact: true }).click();
-    await expect(page.getByRole("dialog", { name: "学習計画を作成" })).toBeVisible();
+    await expect(page.getByRole("link", { name: /計画の問題を解く/ })).toHaveCount(0);
+    await page.getByRole("button", { name: "学習計画を作る", exact: true }).click();
+    await expect(page.getByRole("dialog", { name: "学習計画を作る" })).toBeVisible();
   });
 }
 
-for (const [percent, target] of [[0, 0], [50, 50], [100, 100]] as const) {
-  test(`track at ${percent}% keeps the flag and dog visible at coincident positions`, async ({ page }) => {
+for (const percent of [0, 50, 100]) {
+  test(`track at ${percent}% keeps the flag and dog inside the track`, async ({ page }) => {
     const plan = makePlan();
-    if (target === 0) plan.startDate = today;
-    if (target === 100) plan.examDate = today;
     await setup(page, plan, percent * 2);
     await page.emulateMedia({ reducedMotion: "reduce" });
     await page.goto("/");
-    const track = page.getByRole("img", { name: `進み具合${percent}%、今日の目標${target}%` });
+    const track = page.getByRole("img", { name: `正解済み ${percent * 2} / 200問` });
     await expect(track).toBeVisible();
     const geometry = await track.evaluate(el => {
-      const image = el.querySelector("image")!, flag = el.querySelector<SVGPathElement>('[data-testid="pace-target-flag"]')!;
+      const image = el.querySelector("image")!, flag = el.querySelector<SVGPathElement>('path.p3-trail-flag')!;
       const frame = image.closest("svg")!, runner = frame.closest<SVGGElement>("g")!;
       const position = runner.transform.baseVal.getItem(0).matrix;
       const viewport = runner.ownerSVGElement!.viewBox.baseVal;
       const frameLeft = position.e + frame.x.baseVal.value;
-      const frameTop = position.f + frame.y.baseVal.value;
       const flagBox = flag.getBBox();
       return { dogCenter: position.e,
         flagX: Number(flag.getAttribute("d")!.match(/^M([\d.]+)/)![1]),
         inside: frameLeft >= viewport.x && frameLeft + frame.width.baseVal.value <= viewport.x + viewport.width
           && flagBox.x + flagBox.width <= viewport.x + viewport.width,
-        separate: flagBox.y + flagBox.height < frameTop, spriteOffset: image.getAttribute("x") };
+        dogInFront: !!(flag.compareDocumentPosition(runner) & Node.DOCUMENT_POSITION_FOLLOWING),
+        spriteOffset: image.getAttribute("x") };
     });
-    expect(geometry.dogCenter).toBeCloseTo(30 + percent * 2.6);
-    expect(geometry.flagX).toBeCloseTo(30 + target * 2.6);
+    expect(geometry.dogCenter).toBeCloseTo(39 + percent * 2.44);
+    expect(geometry.flagX).toBeCloseTo(294);
     expect(geometry.inside).toBe(true);
-    expect(geometry.separate).toBe(true);
+    expect(geometry.dogInFront).toBe(true);
     expect(geometry.spriteOffset).toBe("0");
+    await page.setViewportSize({ width: 320, height: 844 });
+    const labelSizes = await track.locator("text").evaluateAll(labels => labels.map(label =>
+      parseFloat(getComputedStyle(label).fontSize) * (label as SVGTextElement).getScreenCTM()!.a));
+    expect(Math.min(...labelSizes)).toBeGreaterThanOrEqual(12);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   });
 }
@@ -82,10 +84,10 @@ test("idle refresh does not change mastery or learning points, failed confirmati
   await setup(page, makePlan(), 100);
   await page.clock.install({ time: new Date(`${today}T12:00:00+09:00`) });
   await page.goto("/");
-  await expect(page.getByRole("img", { name: "進み具合50%、今日の目標50%" })).toBeVisible();
+  await expect(page.getByRole("img", { name: "正解済み 100 / 200問" })).toBeVisible();
   const before = await page.evaluate(key => localStorage.getItem(key), LS_KEYS.learningPoints);
   await page.clock.fastForward("01:00:00");
-  await expect(page.getByRole("img", { name: "進み具合50%、今日の目標50%" })).toBeVisible();
+  await expect(page.getByRole("img", { name: "正解済み 100 / 200問" })).toBeVisible();
   expect(await page.evaluate(key => localStorage.getItem(key), LS_KEYS.learningPoints)).toBe(before);
   await page.evaluate(({ key, id }) => {
     const state = JSON.parse(localStorage.getItem(key)!);
@@ -93,8 +95,8 @@ test("idle refresh does not change mastery or learning points, failed confirmati
     localStorage.setItem(key, JSON.stringify(state));
     window.dispatchEvent(new Event("study-plan:changed"));
   }, { key: LS_KEYS.history, id: catalog[0].id });
-  await expect(page.getByRole("img", { name: /進み具合50%/ })).toBeVisible(); // 49.5%, rounded for display
-  await expect.poll(async () => Number(await page.locator('svg line.stroke-primary').getAttribute("x2"))).toBeCloseTo(158.7);
+  await expect(page.getByRole("img", { name: "正解済み 99 / 200問" })).toBeVisible();
+  await expect.poll(async () => Number(await page.locator('svg line.stroke-primary').getAttribute("x2"))).toBeCloseTo(159.78);
 });
 
 for (const source of ["failure", "manual", "fallback", "ondemand", "past-only"] as const) {
@@ -108,8 +110,8 @@ for (const source of ["failure", "manual", "fallback", "ondemand", "past-only"] 
         sourceUrl: "https://www.ipa.go.jp/shiken/", examPhaseWindows: [] }],
     } }));
     await page.goto("/study-plan");
-    const save = page.getByRole("button", { name: "この回で作成" });
-    await expect(page.getByRole("region", { name: "学習計画を作成" })).toBeVisible();
+    const save = page.getByRole("button", { name: "この計画で始める" });
+    await expect(page.getByRole("region", { name: "学習計画を作る" })).toBeVisible();
     await page.getByRole("combobox", { name: "受ける資格" }).selectOption("ip");
     if (source === "failure") await expect(page.getByText(/日程を取得できませんでした/)).toBeVisible();
     if (source !== "fallback") {
@@ -118,7 +120,7 @@ for (const source of ["failure", "manual", "fallback", "ondemand", "past-only"] 
     }
     await expect(save).toBeEnabled();
     await save.click();
-    await expect(page.getByRole("link", { name: /今日の問題を解く/ })).toBeVisible();
+    await expect(page.getByRole("link", { name: /計画の問題を解く/ })).toBeVisible();
     await expect(page.getByRole("button", { name: /申込締切/ })).toHaveCount(0);
     expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)!)[0].examDate, LS_KEYS.pacePlans)).toBe("2026-12-20");
   });
@@ -135,7 +137,7 @@ test("iOS WebView safe areas keep the create sheet and date field usable", async
   });
   await page.route("**/api/exam-schedule/ip", r => r.fulfill({ json: { exam: "ip", source: "manual", sessions: [] } }));
   await page.goto("/");
-  await page.getByRole("button", { name: /^(学習計画を作成|試験日を決める)/ }).first().click();
+  await page.getByRole("button", { name: "学習計画を作る" }).first().click();
   await page.getByRole("combobox", { name: "受ける資格" }).selectOption("ip");
   const input = page.getByLabel("受験日", { exact: true });
   await expect(input).toBeVisible();
@@ -143,13 +145,13 @@ test("iOS WebView safe areas keep the create sheet and date field usable", async
   expect(await input.evaluate(el => Number.parseFloat(getComputedStyle(el).fontSize))).toBeGreaterThanOrEqual(16);
   const dialog = page.getByRole("dialog");
   expect(await dialog.evaluate(el => Number.parseFloat(getComputedStyle(el).paddingBottom))).toBeGreaterThanOrEqual(34);
-  const save = page.getByRole("button", { name: "この回で作成" });
+  const save = page.getByRole("button", { name: "この計画で始める" });
   await save.scrollIntoViewIfNeeded();
   const box = (await save.boundingBox())!;
   expect(box.y + box.height).toBeLessThanOrEqual(844 - 34);
   expect((await dialog.boundingBox())!.y).toBeGreaterThanOrEqual(59);
   await save.click();
-  await expect(page.getByRole("link", { name: /今日の問題を解く/ })).toBeVisible();
+  await expect(page.getByRole("link", { name: /計画の問題を解く/ })).toBeVisible();
 });
 
 for (const native of [false, true]) {
@@ -161,7 +163,7 @@ for (const native of [false, true]) {
       })), starredIds: [] }));
       if (native) document.addEventListener("DOMContentLoaded", () => document.documentElement.classList.add("native-app"));
     }, { historyKey: LS_KEYS.history, native });
-    await page.route("**/quiz/today?**", async route => {
+    if (process.env.MZ3_LOCAL_GATE !== "1") await page.route("**/quiz/today?**", async route => {
       if (route.request().resourceType() !== "document") return route.continue();
       const response = await route.fetch(), html = await response.text();
       const marker = 'billingGateEnabled\\":false';

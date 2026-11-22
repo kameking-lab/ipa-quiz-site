@@ -2,6 +2,7 @@ import { expect, it } from "vitest";
 import { FURNITURE_ART, furnitureRoomMascots } from "@/lib/home/study-room-furniture";
 import { STUDY_ROOM_SCENES, studyRoomScene } from "@/lib/home/study-room-scenes";
 import { assignRoomPoints, ROOM_ART_EXTENT } from "@/lib/home/study-room-scatter";
+import { presenceSeatMascot } from "@/lib/home/study-room";
 
 it("fits every single-dog cutout inside its reservation, with normalized head scale", () => {
   expect(FURNITURE_ART).toHaveLength(72);
@@ -56,6 +57,16 @@ it("keeps shared qualifications' props instead of substituting a field idle pose
   expect(mascots.filter(m => m.state === "study")).toHaveLength(10);
   expect(mascots.filter(m => m.state === "break")).toHaveLength(2);
   for (const mascot of mascots) expect(mascot.src).toMatch(/\/shared-kisho-(study|break)\.webp$/);
+});
+
+it("keeps the qualification's own break outfit on both daily room views", () => {
+  const keys = ["kisho:0", "kisho:1"];
+  const scene = STUDY_ROOM_SCENES[0];
+  const mascots = furnitureRoomMascots(keys, assignRoomPoints(keys, scene.seats.length), scene.seats, new Set([keys[0]]));
+  expect(mascots.get(keys[0])?.src).toBe(presenceSeatMascot("kisho", 0, true).src);
+  const resting = presenceSeatMascot("kisho", 1, false);
+  expect(resting.src).toMatch(/\/shared-kisho-break\.webp$/);
+  expect(mascots.get(keys[1])?.src).toBe(resting.src);
 });
 
 it("keeps the heads separated even where transparent sprite corners share space", () => {

@@ -2,11 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
-import { Award, Heart, Leaf, Settings, Sparkles, Star, Utensils } from "lucide-react";
+import { Award, Heart, Settings, Sparkles, Star, Utensils } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { usePetProfileView } from "@/components/pet/usePetProfileView";
 import type { PetPose } from "@/lib/pet/v1/art";
 import { RoomChihuahua } from "@/components/home/RoomChihuahua";
+import { idleArt } from "@/lib/home/study-room";
 import { RELAXED_ROOM_ART } from "@/lib/home/room-chihuahua-art";
 import { savePetCare } from "@/lib/pet/v1/browser-care";
 import type { PetCareAction } from "@/lib/pet/v1/care";
@@ -23,8 +24,8 @@ const accessories: readonly { id: Accessory; label: string; level: number; paid?
   { id: "star", label: "星のブローチ", level: 0, paid: true },
 ];
 
-export function MePetRoom({ exam, minutes, todayCount, goal, passedExams }: {
-  exam: string; minutes: number; todayCount: number; todayExamCount: number; goal: number; passedExams: string[]; paceBehind?: boolean;
+export function MePetRoom({ exam, minutes, todayCount, goal, passedExams, streak }: {
+  exam: string; minutes: number; todayCount: number; todayExamCount: number; streak?: number; goal: number; passedExams: string[]; paceBehind?: boolean;
 }) {
   const view = usePetProfileView(() => {});
   const [pose, setPose] = useState<PetPose | null>(null), [message, setMessage] = useState("");
@@ -47,7 +48,6 @@ export function MePetRoom({ exam, minutes, todayCount, goal, passedExams }: {
   const meal = mealOwner?.care.meals.find(meal => meal.consumedAt === null);
   const enabled = view.status === "ready" && !busy;
   const petted = pose === "petted";
-  const besideCertificate = petted && passedExams.length > 0;
   useEffect(() => {
     try { setPaused(JSON.parse(localStorage.getItem(LS_KEYS.studyRewardPreferences) ?? "null")?.paused === true); } catch { setPaused(false); }
     return () => { if (timer.current) clearTimeout(timer.current); };
@@ -86,22 +86,23 @@ export function MePetRoom({ exam, minutes, todayCount, goal, passedExams }: {
     finally { setBusy(false); }
   };
   return <section aria-label="チワワの部屋" data-pet-stage={stage} data-pet-mood="relaxed" className="overflow-hidden rounded-2xl border border-border bg-card">
-    <div className="relative isolate h-[250px] overflow-hidden bg-room-wall">
-      <div aria-hidden="true" className="absolute left-6 top-5 grid h-[74px] w-[92px] grid-cols-2 grid-rows-2 gap-1 overflow-hidden rounded-xl border-[5px] border-card bg-card shadow-sm"><span className="rounded-tl-full bg-sky-100 dark:bg-sky-950" /><span className="rounded-tr-full bg-sky-100 dark:bg-sky-950" /><span className="bg-sky-100 dark:bg-sky-950" /><span className="bg-sky-100 dark:bg-sky-950" /></div>
-      {passedExams.length ? <div aria-label="合格証" className="absolute right-5 top-5 max-w-24 rounded-sm border-2 border-amber-700/60 dark:border-amber-500/60 bg-card px-2 py-2 text-center shadow-sm sm:right-7 sm:max-w-32"><Award aria-hidden="true" className="mx-auto mb-1 size-4 text-amber-700 dark:text-amber-400" /><span className="block text-[10px] text-muted-foreground">合格</span><span className="block text-balance text-[11px] font-bold leading-relaxed">{examLabel(passedExams[0])}</span>{passedExams.length > 1 ? <span className="text-[10px] text-muted-foreground">+{passedExams.length - 1}</span> : null}</div> : null}
-      <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-[70px] bg-room-floor" />
-      <div aria-hidden="true" className="absolute bottom-12 left-5"><Leaf className="mx-auto size-10 -rotate-12 fill-activity-3 text-primary" /><span className="mx-auto block h-7 w-7 rounded-b-lg bg-orange-300 dark:bg-orange-900" /></div>
-      <div aria-hidden="true" className="absolute bottom-8 left-1/2 h-11 w-48 -translate-x-1/2 rounded-[50%] bg-foreground/10" />
-      <button type="button" aria-label="チワワをなでる" disabled={!enabled} onClick={() => react("petted", "なでなで、うれしそう。")} className={`absolute bottom-7 left-1/2 size-48 -translate-x-1/2 rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary ${besideCertificate ? "max-sm:origin-bottom max-sm:-ml-7 max-sm:scale-90" : ""} ${pose && !paused ? "motion-safe:animate-pulse" : ""}`}>
-        <RoomChihuahua src={petted ? RELAXED_ROOM_ART.petted : pose === "meal" ? RELAXED_ROOM_ART.play : RELAXED_ROOM_ART.sleep} alt={`${ROOM_STAGE_LABELS[stage]}のチワワ（くつろぎ）`} />
-        {formal ? <svg aria-hidden="true" viewBox="0 0 100 70" width="54" height="38" className="pointer-events-none absolute bottom-[46px] left-[68%] -rotate-12 -translate-x-1/2 drop-shadow-sm"><path d="m22 9 28 10L78 9l17 48-25 7H30L5 57z" fill="#d7a34b" stroke="#a77927" strokeWidth="2" /><path d="m22 9 28 10-12 22-13-15zM78 9 50 19l12 22 13-15z" fill="#fff0c7" /><path d="M50 23v39" stroke="#b38537" strokeWidth="2" /><circle cx="54" cy="44" r="2" fill="#fff5d5" /><circle cx="54" cy="54" r="2" fill="#fff5d5" /></svg> : null}
-        {accessory !== "none" ? <span aria-hidden="true" className={`absolute bottom-[54px] left-[68%] -translate-x-1/2 ${accessory === "star" ? "text-amber-500" : "text-rose-500"}`}><AccessoryArtwork accessory={accessory} /></span> : null}
+    <div className="p3-landscape p3-hero p3-me-hero">
+      <dl className="col-start-1 row-start-1 self-center">
+        <dt className="text-sm font-semibold">連続日数</dt>
+        <dd className="mt-1 font-display text-[39px] leading-none font-bold tabular-nums">{streak ?? "—"}<span className="ml-1 font-sans text-sm">日</span></dd>
+        <dd className="mt-2 text-xs">{examLabel(selectedExam)}</dd>
+      </dl>
+      {passedExams.length ? <div aria-label="合格証" className="col-start-2 row-start-2 w-fit max-w-full justify-self-center rounded-sm border-2 border-amber-700/60 dark:border-amber-500/60 bg-card px-2 py-2 text-center shadow-sm"><Award aria-hidden="true" className="mx-auto mb-1 size-4 text-amber-700 dark:text-amber-400" /><span className="block text-xs text-muted-foreground">合格</span><span className="block text-balance text-xs font-bold leading-relaxed">{examLabel(passedExams[0])}</span>{passedExams.length > 1 ? <span className="text-xs text-muted-foreground">+{passedExams.length - 1}</span> : null}</div> : null}
+      <button type="button" aria-label="チワワをなでる" disabled={!enabled} onClick={() => react("petted", "なでなで、うれしそう。")} className={`relative col-start-2 row-start-1 aspect-square w-full self-end rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary ${pose && !paused ? "motion-safe:animate-pulse" : ""}`}>
+        <RoomChihuahua src={petted ? RELAXED_ROOM_ART.petted : pose === "meal" ? RELAXED_ROOM_ART.play : idleArt(selectedExam, "wave") ?? RELAXED_ROOM_ART.play} alt={`${ROOM_STAGE_LABELS[stage]}のチワワ（くつろぎ）`} />
+        {formal ? <svg aria-hidden="true" viewBox="0 0 100 70" width="54" height="38" className="pointer-events-none absolute bottom-[24%] left-[68%] -rotate-12 -translate-x-1/2 drop-shadow-sm"><path d="m22 9 28 10L78 9l17 48-25 7H30L5 57z" fill="#d7a34b" stroke="#a77927" strokeWidth="2" /><path d="m22 9 28 10-12 22-13-15zM78 9 50 19l12 22 13-15z" fill="#fff0c7" /><path d="M50 23v39" stroke="#b38537" strokeWidth="2" /><circle cx="54" cy="44" r="2" fill="#fff5d5" /><circle cx="54" cy="54" r="2" fill="#fff5d5" /></svg> : null}
+        {accessory !== "none" ? <span aria-hidden="true" className={`absolute bottom-[28%] left-[68%] -translate-x-1/2 ${accessory === "star" ? "text-amber-500" : "text-rose-500"}`}><AccessoryArtwork accessory={accessory} /></span> : null}
         {petted ? <Heart aria-hidden="true" className="absolute right-2 top-3 size-7 fill-rose-300 text-rose-300" /> : null}
         {formal ? <Sparkles aria-hidden="true" className="absolute right-1 top-20 size-5 text-amber-500" /> : null}
       </button>
-      {meal ? <button type="button" disabled={!enabled} aria-label="ごはんをあげる" onClick={() => void care({ type: "feed", rewardId: meal.rewardId }, mealOwner?.qualificationId)} className="absolute bottom-3 left-3 flex min-h-11 items-center gap-1 rounded-full border border-border bg-card px-3 text-xs text-primary hover:bg-muted"><Utensils aria-hidden="true" className="size-4" />{doc?.profiles.reduce((sum, item) => sum + item.care.meals.filter(meal => meal.consumedAt === null).length, 0)}</button> : todayCount >= goal ? <span className="absolute bottom-4 left-4 flex items-center gap-1 text-xs text-primary"><Utensils aria-hidden="true" className="size-4" />今日のごはん ✓</span> : null}
+      {meal ? <button type="button" disabled={!enabled} aria-label="ごはんをあげる" onClick={() => void care({ type: "feed", rewardId: meal.rewardId }, mealOwner?.qualificationId)} className="col-start-1 row-start-2 flex min-h-11 items-center justify-self-start gap-1 rounded-full border border-border bg-card px-3 text-xs text-primary hover:bg-muted"><Utensils aria-hidden="true" className="size-4" />{doc?.profiles.reduce((sum, item) => sum + item.care.meals.filter(meal => meal.consumedAt === null).length, 0)}</button> : todayCount >= goal ? <span className="col-start-1 row-start-2 flex items-center self-center gap-1 text-xs text-primary"><Utensils aria-hidden="true" className="size-4" />今日のごはん ✓</span> : null}
     </div>
-    <div className="px-4 pb-3 text-center"><span className="font-bold">{profile?.name ?? "チワワ"}</span>
+    <div className="px-4 pb-2 text-center"><span className="font-bold">{profile?.name ?? "チワワ"}</span>
       <button type="button" ref={nameButton} aria-label="チワワの設定" disabled={!enabled} onClick={() => setSettingsOwner(owner ?? null)} className="ml-2 inline-grid size-11 place-items-center rounded-lg align-middle hover:bg-muted"><Settings aria-hidden="true" className="size-4" /></button>
       <p role="status" className="min-h-5 text-xs text-muted-foreground">{message || (view.status === "unavailable" ? "育成の保存を確認できませんでした" : !profile ? "" : "くつろいでいる")}</p>
       <ol aria-label="チワワの成長" className="mx-auto mt-2 flex max-w-72 items-center justify-between">{ROOM_STAGES.map((item, index) => <li key={item} aria-current={item === stage ? "step" : undefined} className={`relative flex flex-1 flex-col items-center gap-1 border-t-2 pt-2 text-xs ${index === level ? "after:absolute after:-top-[5px] after:left-1/2 after:size-2 after:-translate-x-1/2 after:rounded-full after:bg-primary after:ring-4 after:ring-card" : ""} ${index <= level ? "border-primary font-semibold text-primary" : "border-border text-muted-foreground"}`}>{ROOM_STAGE_LABELS[item]}</li>)}</ol>

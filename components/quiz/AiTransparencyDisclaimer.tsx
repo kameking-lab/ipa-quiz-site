@@ -4,10 +4,11 @@ import { questionReferenceLabel } from "@/lib/questions/reference-label";
 import type { Question } from "@/lib/questions/types";
 
 export function AiTransparencyDisclaimer({ question }: { question: Question }) {
-  const sourceUrl = getSafePdfUrl(question.sourcePdfUrl);
-  const sourceLabel = isPdfDocumentUrl(sourceUrl) ? "公式問題PDF" : "公式問題の公開ページ";
+  const sourceUrl = getSafePdfUrl(question.sourceArchiveUrl ?? question.sourcePdfUrl);
+  const sourceLabel = question.sourceArchiveUrl ? "公式PDF（保存版）"
+    : isPdfDocumentUrl(sourceUrl) ? "公式問題PDF" : "公式問題の公開ページ";
   const documentLabel = ipaSourceLabel(sourceUrl, "question");
-  const answerUrl = getOfficialAnswerPdfUrl(question.sourcePdfUrl, question.sourceAnswerUrl);
+  const answerUrl = getOfficialAnswerPdfUrl(question.sourcePdfUrl, question.sourceAnswerArchiveUrl ?? question.sourceAnswerUrl);
   const separateAnswer = answerUrl !== sourceUrl;
   const references = [...new Set(question.officialReferenceUrls)].filter(
     (url) => url !== sourceUrl && url !== question.sourcePdfUrl && url !== answerUrl && url !== question.sourceAnswerUrl,
@@ -27,7 +28,8 @@ export function AiTransparencyDisclaimer({ question }: { question: Question }) {
             {separateAnswer && (
               <li>
                 <a href={answerUrl} target="_blank" rel="noopener noreferrer" className="underline">
-                  {isPdfDocumentUrl(answerUrl) ? "公式正答PDF" : "公式正答の公開ページ"}
+                  {question.sourceAnswerArchiveUrl ? "公式正答PDF（保存版）"
+                    : isPdfDocumentUrl(answerUrl) ? "公式正答PDF" : "公式正答の公開ページ"}
                 </a>
               </li>
             )}

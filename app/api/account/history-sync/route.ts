@@ -69,9 +69,12 @@ export async function POST(req: Request) {
       existing.map((r: { questionId: string; answeredAt: Date }) => `${r.questionId}\t${r.answeredAt.getTime()}`),
     );
 
-    const toInsert = incoming
-      .filter((e) => !existingSet.has(`${e.id}\t${e.at}`))
-      .map((e) => ({
+    const newEntries = new Map<string, ClientEntry>();
+    for (const entry of incoming) {
+      const key = `${entry.id}\t${entry.at}`;
+      if (!existingSet.has(key) && (!newEntries.has(key) || !entry.correct)) newEntries.set(key, entry);
+    }
+    const toInsert = [...newEntries.values()].map((e) => ({
         userId,
         questionId: e.id,
         correct: e.correct,
@@ -93,6 +96,19 @@ export async function POST(req: Request) {
     select: { questionId: true, correct: true, answeredAt: true },
   });
 
+  // A duplicate insert can race with another device. Resolve contradictory grades
+  // against the rows that actually won the unique constraint.
+  const misses = new Set(incoming.filter(entry => !entry.correct).map(entry => JSON.stringify([entry.id, entry.at])));
+  const conflicts = all.filter(row => row.correct && misses.has(JSON.stringify([row.questionId, row.answeredAt.getTime()])));
+  for (let offset = 0; offset < conflicts.length; offset += 200) {
+    const batch = conflicts.slice(offset, offset + 200);
+    const result = await prisma.studyRecord.updateMany({
+      where: { userId, correct: true, OR: batch.map(({ questionId, answeredAt }) => ({ questionId, answeredAt })) },
+      data: { correct: false },
+    });
+    merged += result.count;
+    for (const row of batch) row.correct = false;
+  }
   const entries = all.map((r: { questionId: string; correct: boolean; answeredAt: Date }) => ({
     id: r.questionId,
     correct: r.correct,

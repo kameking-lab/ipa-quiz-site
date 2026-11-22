@@ -56,7 +56,7 @@ it("excludes pre-release rows, legacy page-open heartbeats and bot answers witho
   const legacy = await route.POST(json({ visitorId: firstId, exam: "civil1", idleMs: 0 }));
   expect(await legacy.json()).toMatchObject({ count: 0, exams: [] });
   expect((await route.POST(json(answer("tsushin1"), "Mozilla/5.0 HeadlessChrome"))).status).toBe(403);
-  expect(await read()).toMatchObject({ status: "measured", count: 0, exams: [] });
+  expect(await read()).toMatchObject({ status: "measured", count: 0, exams: [], today: { count: 0, activeCount: 0, exams: [] } });
   expect(execute).not.toHaveBeenCalled();
 });
 
@@ -70,7 +70,27 @@ it("counts answers and drops each browser exactly five minutes after its submitt
   vi.setSystemTime(epoch + 300_000);
   expect(await read()).toMatchObject({ count: 1, exams: [{ exam: "tsushin1", count: 1 }] });
   vi.setSystemTime(epoch + 390_000);
-  expect(await read()).toMatchObject({ count: 0, exams: [] });
+  expect(await read()).toMatchObject({ count: 0, exams: [], today: { count: 2, activeCount: 0,
+    exams: [{ exam: "civil1", count: 1, activeCount: 0 }, { exam: "tsushin1", count: 1, activeCount: 0 }] } });
+});
+
+it("starts today's count at JST midnight, while old tabs keep a rolling five-minute window", async () => {
+  const midnight = Date.parse("2026-11-18T15:00:00Z");
+  vi.setSystemTime(midnight - 1);
+  await route.POST(json(answer("civil1")));
+  expect(await read()).toMatchObject({ validUntil: new Date(midnight).toISOString(), today: { count: 1, activeCount: 1 } });
+
+  vi.setSystemTime(midnight);
+  expect(await read()).toMatchObject({ count: 1, total: 1, exams: [{ exam: "civil1", count: 1 }],
+    today: { count: 0, activeCount: 0, exams: [] } });
+  const legacy = await route.POST(json({ visitorId: firstId, idleMs: 0 }));
+  expect(await legacy.json()).toEqual({ count: 1 });
+
+  await route.POST(json(answer("civil2", secondId)));
+  expect(await read()).toMatchObject({ count: 2, today: { count: 1, activeCount: 1,
+    exams: [{ exam: "civil2", count: 1, activeCount: 1 }] } });
+  vi.setSystemTime(midnight + 300_000);
+  expect(await read()).toMatchObject({ count: 0, today: { count: 1, activeCount: 0 } });
 });
 
 it("groups a browser under its newest qualification, ignores older writes and rotates its ID atomically", async () => {
@@ -80,21 +100,43 @@ it("groups a browser under its newest qualification, ignores older writes and ro
   await route.POST(json(answer("civil1", firstId, 30_000)));
   expect(await read()).toMatchObject({ count: 1, exams: [{ exam: "tsushin1", count: 1 }] });
   await route.POST(json(answer("dai-1-shu-eisei-kanrisha", secondId, 0, firstId)));
-  expect(await read()).toMatchObject({ count: 1, exams: [{ exam: "eisei1", count: 1 }] });
+  expect(await read()).toMatchObject({ count: 1, exams: [{ exam: "eisei1", count: 1 }],
+    today: { count: 1, exams: [{ exam: "eisei1", count: 1, activeCount: 1 }] } });
   const stored = await db.query<{id: string}>('SELECT "id" FROM "StudyPresence"');
   expect(stored.rows.map(row => row.id)).toEqual([expect.stringMatching(/^answer:[a-f0-9]{64}$/)]);
   expect(transaction).toHaveBeenCalledTimes(2);
 });
 
+it("combines existing answer rows from both routes to a qualification in the daily breakdown", async () => {
+  const exams = ["sokuryoshiho", "survey-assistant", "haikan-plant2", "plant-haikan2"];
+  for (const [index, exam] of exams.entries()) {
+    const at = index % 2 === 0 ? epoch - 600_000 : epoch;
+    await db.query('INSERT INTO "StudyPresence" VALUES ($1, $2, $3)', [`answer:fixture-${index}`, new Date(at), exam]);
+  }
+  expect(await read()).toMatchObject({ count: 2, today: { count: 4, activeCount: 2, exams: [
+    { exam: "plant-haikan2", count: 2, activeCount: 1 },
+    { exam: "survey-assistant", count: 2, activeCount: 1 },
+  ] } });
+  expect(query).toHaveBeenCalledTimes(1);
+  expect(execute).not.toHaveBeenCalled();
+});
+
 it("leaves cleanup off reads and runs it at most once per fifteen minutes of writes", async () => {
+  const retentionStart = Date.parse("2026-11-17T15:00:00Z");
+  for (const [id, at] of [["old", retentionStart - 1], ["retained", retentionStart]] as const) {
+    await db.query('INSERT INTO "StudyPresence" VALUES ($1, $2, $3)', [`answer:${id}`, new Date(at), "civil1"]);
+  }
   await store.recordStudyPresence(firstId, epoch, "fe");
   await store.recordStudyPresence(secondId, epoch, "ap");
-  const cleanupCount = () => execute.mock.calls.filter(([strings]) => strings.join("").includes('"lastSeenAt" <=')).length;
+  const cleanupCount = () => execute.mock.calls.filter(([strings]) => strings.join("").includes('"lastSeenAt" < (')).length;
   expect(cleanupCount()).toBe(1);
-  expect(await store.readStudyPresence(epoch + 900_000)).toMatchObject({ snapshot: { count: 0 } });
+  expect(await store.readStudyPresence(epoch + 900_000)).toMatchObject({ snapshot: { count: 0 }, today: { count: 2, activeCount: 0 } });
   expect(cleanupCount()).toBe(1);
   vi.setSystemTime(epoch + 900_000);
   await store.recordStudyPresence(secondId, epoch + 900_000, "ap");
   expect(cleanupCount()).toBe(2);
-  expect((await db.query('SELECT "id" FROM "StudyPresence"')).rows).toHaveLength(1);
+  const { rows } = await db.query<{ id: string }>('SELECT "id" FROM "StudyPresence"');
+  expect(rows).toHaveLength(3);
+  expect(rows.map(row => row.id)).toContain("answer:retained");
+  expect(rows.map(row => row.id)).not.toContain("answer:old");
 });

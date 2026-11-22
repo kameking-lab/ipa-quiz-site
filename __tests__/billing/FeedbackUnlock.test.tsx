@@ -21,7 +21,8 @@ it("puts the plan first and the feedback bonus second, accepts multiple choices,
   expect(purchase.classList.contains("bg-primary")).toBe(true);
   expect(screen.getByRole("link", { name: "条件・特商法表示" })).toHaveAttribute("target", "_blank");
   // Offer, disclosure and policies share the original return-to-question flow.
-  expect(screen.getAllByRole("link").map(link => link.textContent)).toEqual(["申し込む", "条件・特商法表示", "利用規約", "プライバシーポリシー"]);
+  expect(screen.getAllByRole("link").map(link => link.textContent)).toEqual(["申し込む", "今日はここまで", "条件・特商法表示", "利用規約", "プライバシーポリシー"]);
+  expect(screen.getByRole("link", { name: "今日はここまで" })).toHaveAttribute("href", "/");
   fireEvent.click(button);
   fireEvent.click(screen.getByLabelText("解説をもっと詳しく"));
   fireEvent.click(screen.getByLabelText("スマホでの使いやすさ"));

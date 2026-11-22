@@ -63,9 +63,14 @@ test.describe("home SERP snippet", () => {
     await expect(home).toBeOK();
     const hrefs = [...(await home.text()).matchAll(/<a\b[^>]*\bhref="([^"]+)"/g)].map(match => match[1]);
     await page.goto("/search");
-    for (const code of ["fp3", "denko2", "denken3", "denken2", "takken", "civil2", "kankoji2", "zoen2", "tsushin2", "kaigo", "civil1", "denko1", "shakai", "seishin", "tohan", "benrishi", "junkango-kansai"]) {
-      expect(hrefs).toContain(`/${code}`);
-      await expect(page.locator(`a[href="/${code}"]`).first()).toBeAttached();
+    const directory = page.locator("#home-directory-title");
+    for (const href of ["/fp3", "/denko2", "/denken3", "/denken2", "/takken", "/civil2", "/kankoji2", "/zoen2", "/tsushin2", "/kaigo", "/civil1", "/denko1", "/shakai", "/seishin", "/benrishi", "/qualifications/tohan", "/qualifications/junkango"]) {
+      expect(hrefs).toContain(href);
+      await expect(directory.locator(`a[href="${href}"]`).first()).toBeAttached();
+    }
+    for (const href of ["/tohan", "/junkango-kansai"]) {
+      expect(hrefs).not.toContain(href);
+      await expect(directory.locator(`a[href="${href}"]`)).toHaveCount(0);
     }
   });
 });

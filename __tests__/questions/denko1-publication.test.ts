@@ -32,7 +32,11 @@ describe("第一種電気工事士 令和8年度上期学科(出題例)", () => 
     expect(FIRST.map((q) => q.qNumber)).toEqual(Array.from({ length: 50 }, (_, index) => index + 1));
     expect(SECOND.map((q) => q.qNumber)).toEqual(Array.from({ length: 50 }, (_, index) => index + 1));
     expect(new Set(DENKO1_QUESTIONS.map((q) => q.id)).size).toBe(700);
-    expect(QUESTIONS_BY_EXAM.denko1).toEqual(DENKO1_QUESTIONS);
+    const released = QUESTIONS_BY_EXAM.denko1 ?? [];
+    expect(released.filter((q) => q.session !== "practical")).toEqual(DENKO1_QUESTIONS);
+    expect(released.filter((q) => q.session === "practical").map((q) => q.qNumber)).toEqual(
+      Array.from({ length: 10 }, (_, index) => index + 1),
+    );
     expect(ALL_QUIZ_EXAM_CODES).toContain("denko1");
     expect(ALL_EXAM_CODES).not.toContain("denko1");
     expect(EXAM_CONFIGS.denko1.sessions[0]?.expectedQuestions).toBe(50);
