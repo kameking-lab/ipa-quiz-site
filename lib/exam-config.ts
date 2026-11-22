@@ -4162,9 +4162,9 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
   "katei-hifuku": {
     code: "katei-hifuku", nameFull: "家庭科技術検定・被服製作", urlSlug: "katei-hifuku", level: "basic",
     sessions: [
-        { session: "gakka", urlSlug: "gakka", expectedQuestions: 19, label: "被服製作技術検定 2級・筆記", categories: ["被服製作技術検定 2級・筆記"] },
+        { session: "gakka", urlSlug: "gakka", expectedQuestions: 19, label: "被服製作技術検定 2級（旧3級）・筆記", categories: ["被服製作技術検定 2級・筆記"] },
     ],
-    seasons: ["annual"], yearRange: { start: 2025, end: 2025 },
+    seasons: ["annual", "first", "second"], yearRange: { start: 2023, end: 2025 },
 },
   "zenkou-joho": {
     code: "zenkou-joho", nameFull: "情報技術検定", urlSlug: "zenkou-joho", level: "basic",

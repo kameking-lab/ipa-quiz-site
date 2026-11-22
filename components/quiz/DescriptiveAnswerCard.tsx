@@ -10,15 +10,17 @@ import { QuestionFigures } from "./QuestionFigures";
 interface Props {
   question: Question;
   defaultOpen?: boolean;
+  showExplanation?: boolean;
   onReveal?: (open: boolean) => void;
   onNext?: () => void;
   nextLabel?: string;
 }
 
-/** 記述・作図を独自解答例と比較する。正答率への自動加算はしない。 */
+/** 記述・作図を解答例と比較する。 */
 export function DescriptiveAnswerCard({
   question,
   defaultOpen = false,
+  showExplanation = true,
   onReveal,
   onNext,
   nextLabel = "次の問題へ",
@@ -53,7 +55,7 @@ export function DescriptiveAnswerCard({
           ? <p className="my-2 whitespace-pre-wrap break-words text-sm leading-relaxed">{modelAnswer}</p>
           : <Markdown>{modelAnswer}</Markdown>}
         <QuestionFigures question={{ ...question, imageUrls: question.answerImageUrls, imageAltTexts: question.answerImageAltTexts }} />
-        {officialExample && (
+        {officialExample && showExplanation && (
           <div className="mt-5 border-t border-border pt-4">
             <h3 className="font-semibold">独自解説</h3>
             <Markdown>{question.explanation}</Markdown>
