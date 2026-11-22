@@ -5,10 +5,10 @@ import { AI_POLICY_VERSION } from "../../lib/ai/access-policy";
 
 const problem = "/q/ap/2024-spring/am/q1";
 const limit = AI_FREE_QUESTIONS_PER_DAY;
-const checkoutLabel = `月額${PLAN_OFFER.priceYen}円（税込）で続ける`;
+const checkoutLabel = `月額${PLAN_OFFER.priceYen.toLocaleString("ja-JP")}円（税込）で続ける`;
 const draft = "この選択肢が違う理由を教えてください";
 
-test.use({ viewport: { width: 390, height: 844 } });
+test.use({ viewport: { width: 390, height: 844 }, serviceWorkers: "block" });
 
 test("shows the remaining quota, offers equal actions, and restores the draft on return", async ({ page }) => {
   let remaining = limit;
@@ -31,8 +31,9 @@ test("shows the remaining quota, offers equal actions, and restores the draft on
   const artifacts = process.env.AI_QUOTA_SCREENSHOT_DIR;
   const shot = async (name: string) => {
     if (!artifacts) return;
-    await input.scrollIntoViewIfNeeded();
-    await page.screenshot({ path: `${artifacts}/${name}.png` });
+    await input.evaluate(element => element.scrollIntoView({ block: "center", behavior: "instant" }));
+    await expect(input).toBeInViewport({ ratio: 1 });
+    await page.screenshot({ path: `${artifacts}/${name}.png`, animations: "disabled" });
   };
   const open = () => page.locator("summary").filter({ hasText: /^AIに質問$/ }).click();
   const panel = page.getByRole("region", { name: "この問題についてAIに質問" });
@@ -72,7 +73,7 @@ test("shows the remaining quota, offers equal actions, and restores the draft on
   await open();
   await input.fill(draft);
   await expect(checkout).toHaveAttribute("href", `/billing/start?returnTo=${encodeURIComponent(problem)}`);
-  await page.route("**/billing/start?returnTo=*", route => {
+  await page.route(url => url.pathname === "/billing/start", route => {
     paid = true;
     const returnTo = new URL(route.request().url()).searchParams.get("returnTo")!;
     return route.fulfill({ status: 302, headers: { location: returnTo }, body: "" });

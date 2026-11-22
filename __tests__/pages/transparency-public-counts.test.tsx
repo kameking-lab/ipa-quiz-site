@@ -4,6 +4,7 @@ import { cleanup, render, within } from "@testing-library/react";
 import HomePage from "@/app/page";
 import TransparencyPage from "@/app/transparency/page";
 import { getHomeDirectory } from "@/lib/home/home-directory";
+import { AI_QUOTA_COPY } from "@/lib/constants/ai-quota";
 
 // Keep both real pages and the published directory. Provide browser routing and
 // billing fixtures for the interactive home without requesting external services.
@@ -24,6 +25,7 @@ describe("transparency published counts", () => {
     // Never request analytics while rendering this server page.
     vi.stubEnv("POSTHOG_API_KEY", "");
     vi.stubEnv("POSTHOG_PROJECT_ID", "");
+    vi.stubEnv("AI_QUOTA_ROLLOUT", "false");
   });
   afterEach(() => {
     cleanup();
@@ -59,6 +61,11 @@ describe("transparency published counts", () => {
     expect(page.container).toHaveTextContent("請求・集計証跡を未確認のため、費用実績は未掲載");
     expect(view.getByText("無料の学習機能と月額プランを提供する。")).toBeInTheDocument();
     expect(view.getByText("無料枠 / 月額980円")).toBeInTheDocument();
-    expect(page.container).toHaveTextContent("個別問題・原紙・保存済み履歴の閲覧と復習は無料です。連続演習には1日10問の無料枠と税込980円の月額プランがあります。AI コパイロットは月額対象外で、連続利用や大量送信には適正利用制限があります。");
+    expect(page.container).toHaveTextContent("個別問題・原紙・保存済み履歴の閲覧と復習は無料です。連続演習には1日10問の無料枠と税込980円の月額プランがあります。");
+    expect(page.container).toHaveTextContent("AIコパイロットは無料で質問できます。");
+    expect(page.container).not.toHaveTextContent(AI_QUOTA_COPY);
+    vi.stubEnv("AI_QUOTA_ROLLOUT", "true");
+    page.rerender(await TransparencyPage());
+    expect(page.container).toHaveTextContent(AI_QUOTA_COPY);
   });
 });
