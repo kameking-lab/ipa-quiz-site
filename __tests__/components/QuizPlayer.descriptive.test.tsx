@@ -5,6 +5,7 @@ import { StreamQuizPlayer } from "@/components/quiz/stream/StreamQuizPlayer";
 import { QuizPlayer } from "@/components/quiz/QuizPlayer";
 import { createHistoryStore } from "@/lib/storage/history";
 import khkData from "@/data/questions/khk-reito-1/latest-two.json";
+import pcData from "@/data/questions/zenkou-pc/2024-first.json";
 import type { Question } from "@/lib/questions/types";
 
 const question: Question = {
@@ -17,6 +18,15 @@ const question: Question = {
 };
 beforeEach(() => { cleanup(); window.localStorage.clear(); createHistoryStore().reset(); });
 afterEach(() => { vi.restoreAllMocks(); vi.unstubAllGlobals(); });
+
+it("パソコン利用技術検定の実技で公式解答の入力形式と独自解説を表示する", () => {
+  const practical = (pcData as Question[]).find(q => q.session === "pc-practical-1" && q.qNumber === 1)!;
+  render(<QuizPlayer question={practical} index={0} total={1} mode="random" onNext={() => {}} />);
+  fireEvent.click(screen.getByText("公式解答と解説を確認する"));
+  expect(screen.getByText(">id, gakuseki")).toBeTruthy();
+  expect(screen.getByRole("heading", { name: "独自解説" })).toBeTruthy();
+  expect(screen.getByText(practical.explanation)).toBeTruthy();
+});
 
 describe.each([question, (khkData as Question[]).find(q => q.type === "descriptive")!])("$exam の記述演習", (question) => {
 describe("記述問題の操作", () => {
