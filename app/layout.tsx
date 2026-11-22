@@ -7,6 +7,7 @@ import { SourceRelationshipFooter } from "@/components/question-provenance/Sourc
 import { HomeFooterNavigation } from "@/components/HomeFooterNavigation";
 import "./globals.css";
 import "./p3-landscape.css";
+import "./p3-weather.css";
 import "./p3.css";
 import { ThemeProvider, THEME_BOOTSTRAP_SCRIPT } from "@/components/theme-provider";
 import { SiteHeader } from "@/components/SiteHeader";

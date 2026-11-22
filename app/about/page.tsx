@@ -127,6 +127,7 @@ export default function AboutPage() {
         <p>
           施工管理技術検定など、掲載条件の確認が必要な資格の問題本文は、確認が完了するまで掲載しません。
         </p>
+        <p>ホームの天気表示は、<a className="underline" href="https://www.jma.go.jp/bosai/forecast/" rel="noreferrer">気象庁ホームページの天気予報</a>を4種類に加工して作成しています。</p>
       </section>
 
       <h2 className="mb-2 text-lg font-semibold">AI コパイロットについて</h2>

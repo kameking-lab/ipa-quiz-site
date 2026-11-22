@@ -25,6 +25,7 @@ import { planCreatedHref, planReferral } from "@/lib/study-plan/next-qualificati
 import type { ExamScheduleSession } from "@/lib/study-plan/schedule";
 import { MobileInstallNudge } from "@/components/pwa/MobileInstallNudge";
 import { StudyAchievement, type StudyMoment } from "@/components/StudyAchievements";
+import { HomeWeather } from "@/components/home/HomeWeather";
 import { readStreak } from "@/lib/streak/storage";
 import { nativeClient } from "@/mobile/shared/contracts";
 import { canRemindForPlan } from "@/mobile/shared/study-reminder-plan";
@@ -186,6 +187,7 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
     <section className={styles.stack} id="today" aria-label="今日の学習" aria-busy={!ready} data-home-state={!ready ? "loading" : postExam ? "post-exam" : plan ? "planned" : returning ? "returning" : "new"}>
       {plan ? (
         <div className={`${styles.hero} p3-landscape p3-home-scene`}>
+          <HomeWeather />
           <div className="flex items-start justify-between gap-2">
             <button className={`${styles.qualification} study-focus`} onClick={() => setSheet("switch")} aria-label="資格を切り替える" aria-describedby="home-qualification" aria-haspopup="dialog" aria-expanded={sheet === "switch"}><span id="home-qualification">{item?.name ?? plan.exam}</span><ChevronDown aria-hidden="true" className="size-4 shrink-0 p3-scene-muted" /></button>
             {plan.examDate && <span className="shrink-0 pt-3 text-[13px] p3-scene-muted tabular-nums"><time dateTime={plan.examDate}>{shortDate(plan.examDate)}</time> 受験</span>}
@@ -235,6 +237,7 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
           {nativeClient() && passMoment?.planId !== plan.id && canRemindForPlan(plan) && <StudyReminderControl key={plan.id} planId={plan.id} />}
         </div>
       ) : returning ? <div className={`${styles.hero} p3-landscape p3-home-scene`}>
+        <HomeWeather />
         <p className="text-[13px] p3-scene-muted">おかえりなさい</p>
         <h1 className="mt-1 text-[26px] leading-tight font-bold wrap-anywhere">{resume?.name ?? previousItem?.name}</h1>
         <div className="mt-2 flex flex-wrap items-baseline gap-x-3 text-[13px] p3-scene-muted tabular-nums">
@@ -246,6 +249,7 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
         <button type="button" className="study-link" aria-haspopup="dialog" onClick={() => setSheet("create")}>学習計画を作る</button>
       </div> : (
         <div className={`${styles.hero} ${styles.first} p3-landscape p3-home-scene`}>
+          <HomeWeather />
           <h1 aria-label="今日も、ひと問ずつ。" className="text-[34px] leading-[1.18] font-bold">今日も、<br />ひと問ずつ。</h1>
           <div className="mt-3">{search}</div>
           <button type="button" disabled={!ready} aria-haspopup="dialog" aria-labelledby="home-start-track-description" className="study-focus mt-2 block w-full rounded-xl px-1" onClick={() => setSheet("create")}>
