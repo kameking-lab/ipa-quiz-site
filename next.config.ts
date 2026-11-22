@@ -140,7 +140,8 @@ const nextConfig: NextConfig = {
   },
   outputFileTracingIncludes: {
     "/sw.js": ["./lib/pwa/sw.js"],
-    "/*": [`./${QUESTION_CORPUS_DIR}/**/*`],
+    // OG images are generated from their own assets and have no question corpus dependency.
+    "!/api/og": [`./${QUESTION_CORPUS_DIR}/**/*`],
     "/e-learning/exams": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json", "./data/exam-library/pe-first/*.json"],
     "/api/home/resume": ["./data/exam-library/pe-first/*.json"],
     "/api/study-plan/catalog/*": ["./data/exam-library/papers/*.json", "./data/exam-library/pe-first/*.json", "./data/exam-library/presentation/*.json"],
@@ -148,6 +149,7 @@ const nextConfig: NextConfig = {
     // Question bodies are shared with the per-exam files from question-corpus.
     "/api/copilot": ["./generated/copilot/**/*"],
     "/api/copilot/exam-library": ["./data/exam-library/pe-first/*.json"],
+    "/api/og": ["./public/fonts/noto-sans-jp-700.woff", "./public/fonts/noto-sans-jp-OFL.txt", "./app/api/og/default.png"],
     "/e-learning/search": ["./data/exam-library/pe-first/*.json"],
     "/e-learning/exams/*": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json", "./data/exam-library/pe-first/*.json"],
     "/api/mobile/catalog": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json"],

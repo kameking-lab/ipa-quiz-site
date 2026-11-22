@@ -10,12 +10,13 @@ import { upcomingExamPicks } from "@/lib/home/featured-exams";
 import { searchQualifications } from "@/lib/qualifications/search";
 import { qualificationGroupMember } from "@/lib/qualifications/groups";
 import { QualificationDirectory } from "./QualificationDirectory";
-export function BrowseQualifications({ domains, challengeExamCodes, illustrated = false }: {
+export function BrowseQualifications({ domains, challengeExamCodes, initialQuery = "", illustrated = false }: {
   domains: readonly HomeDirectoryDomain[];
   challengeExamCodes?: readonly string[];
+  initialQuery?: string;
   illustrated?: boolean;
 }) {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(initialQuery);
   const groupedDomains = useMemo(() => groupHomeDirectory(domains), [domains]);
   const items = groupedDomains.flatMap(d => [...d.featured, ...d.compact]);
   const term = query.normalize("NFKC").trim();

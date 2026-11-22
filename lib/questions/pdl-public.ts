@@ -21,7 +21,7 @@ export function normalizePublicPdlQuestion(raw: unknown): Question {
     || JSON.stringify(receipt.images) !== JSON.stringify(imageUrls)
     || q.hasImage !== (imageUrls.length > 0)
     || (imageUrls.length > 0 && q.imageAltTexts?.length !== imageUrls.length)
-    || !q.originalContent?.body.trim() || !q.question?.trim()
+    || !q.originalContent?.body?.trim() || !q.question?.trim()
     || !q.explanation?.trim() || !q.sourceAttribution?.trim()
     || !source?.documentTitle.trim() || !source.originalAuthor.trim()
     || source.processor !== "過去問AI" || source.processedParts.length < 3

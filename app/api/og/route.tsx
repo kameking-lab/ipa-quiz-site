@@ -1,6 +1,8 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 const SIZE = { width: 1200, height: 630 };
 
@@ -10,47 +12,16 @@ interface TypeStyle {
   subtitle: string;
 }
 
-// Module-level cache for the Noto Sans JP font buffer.
-// Each Vercel Edge worker instance caches across requests within the same isolate.
-let _fontBuffer: ArrayBuffer | null | undefined;
+let japaneseFont: Promise<ArrayBuffer> | undefined;
 
-async function loadJapaneseFont(origin: string): Promise<ArrayBuffer | null> {
-  if (_fontBuffer !== undefined) return _fontBuffer;
-  // Try local copy first (public/fonts/noto-sans-jp-700.woff)
-  try {
-    const res = await fetch(`${origin}/fonts/noto-sans-jp-700.woff`);
-    if (res.ok) {
-      const buf = await res.arrayBuffer();
-      _fontBuffer = buf;
-      return buf;
-    }
-  } catch {
-    // fall through to Google Fonts
-  }
-  // Fallback: fetch from Google Fonts CSS API (woff2)
-  try {
-    const css = await fetch(
-      "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap",
-      {
-        headers: {
-          "User-Agent":
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-        },
-      },
-    ).then((r) => r.text());
-    const urls = [
-      ...css.matchAll(/url\((https:\/\/fonts\.gstatic\.com\/[^)]+\.woff2)\)/g),
-    ].map((m) => m[1]);
-    if (urls.length > 0) {
-      const buf = await fetch(urls[0]).then((r) => r.arrayBuffer());
-      _fontBuffer = buf;
-      return buf;
-    }
-  } catch {
-    // give up
-  }
-  _fontBuffer = null;
-  return null;
+function loadJapaneseFont(): Promise<ArrayBuffer> {
+  japaneseFont ??= readFile(join(process.cwd(), "public/fonts/noto-sans-jp-700.woff"))
+    .then((font) => new Uint8Array(font).buffer)
+    .catch((error: unknown) => {
+      japaneseFont = undefined;
+      throw error;
+    });
+  return japaneseFont;
 }
 
 const TYPE_META: Record<string, TypeStyle> = {
@@ -148,9 +119,27 @@ function safeNumber(s: string | null, fallback = 0): number {
 }
 
 export async function GET(request: Request) {
+  try {
+    const image = await renderImage(request);
+    // ImageResponse streams its render. Read it here so a font or renderer
+    // failure can still return the default image before headers are sent.
+    return new Response(await image.arrayBuffer(), { headers: image.headers });
+  } catch (error) {
+    console.error("[og] image generation failed", error);
+    const fallback = await readFile(join(process.cwd(), "app/api/og/default.png"));
+    return new Response(new Uint8Array(fallback), {
+      headers: {
+        "Content-Type": "image/png",
+        "Cache-Control": "public, no-transform, max-age=300, s-maxage=3600",
+      },
+    });
+  }
+}
+
+async function renderImage(request: Request) {
   const url = new URL(request.url);
   const type = url.searchParams.get("type") ?? "default";
-  const meta = TYPE_META[type] ?? TYPE_META.default;
+  const meta = Object.hasOwn(TYPE_META, type) ? TYPE_META[type] : TYPE_META.default;
 
   const title = safeText(url.searchParams.get("title"), "過去問AI", 80);
   const subtitle = safeText(url.searchParams.get("subtitle"), meta.subtitle, 60);
@@ -188,11 +177,7 @@ export async function GET(request: Request) {
     type === "mock-exam" ||
     type === "essay";
 
-  const origin = new URL(request.url).origin;
-  const fontBuffer = await loadJapaneseFont(origin);
-  const fontOptions = fontBuffer
-    ? [{ name: "Noto Sans JP", data: fontBuffer, weight: 700 as const, style: "normal" as const }]
-    : undefined;
+  const font = await loadJapaneseFont();
 
   return new ImageResponse(
     (
@@ -387,7 +372,7 @@ export async function GET(request: Request) {
     ),
     {
       ...SIZE,
-      ...(fontOptions ? { fonts: fontOptions } : {}),
+      fonts: [{ name: "Noto Sans JP", data: font, weight: 700, style: "normal" }],
       // OG 画像はクエリ文字列で内容が一意に定まる決定的レスポンス（問題数や
       // streak 等の動的値も URL に含まれるため別キャッシュキーになる）。
       // 既定は max-age=0, must-revalidate で毎回フォント取得＋satori 再レンダー

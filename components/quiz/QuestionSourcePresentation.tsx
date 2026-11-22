@@ -21,6 +21,7 @@ export function QuestionSourcePresentation({
   phase: "before" | "after";
 }) {
   const original = question.originalContent;
+  const originalChoices = Object.entries(original?.choices ?? {});
   const source = question.sourcePresentation;
   const notice = question.questionNotice;
   const sections = question.explanationSections ?? [];
@@ -57,20 +58,22 @@ export function QuestionSourcePresentation({
               </table>
             </div>
           ))}
-          <details className="rounded-lg border border-border p-3">
-            <summary className="cursor-pointer font-semibold">原問を見る</summary>
-            <div className="mt-2"><QuestionBody text={original.body} /></div>
-            {original.choices && Object.keys(original.choices).length > 0 && (
-              <dl aria-label="原問の選択肢" className="mt-3 space-y-2">
-                {Object.entries(original.choices).map(([key, value]) => (
-                  <div key={key} className="grid grid-cols-[2rem_1fr] gap-2">
-                    <dt className="font-semibold">{choiceDisplayLabel(question.exam, key as ChoiceKey)}</dt>
-                    <dd><QuestionBody text={value} /></dd>
-                  </div>
-                ))}
-              </dl>
-            )}
-          </details>
+          {(original.body || originalChoices.length > 0) && (
+            <details className="rounded-lg border border-border p-3">
+              <summary className="cursor-pointer font-semibold">原問を見る</summary>
+              {original.body && <div className="mt-2"><QuestionBody text={original.body} /></div>}
+              {originalChoices.length > 0 && (
+                <dl aria-label="原問の選択肢" className="mt-3 space-y-2">
+                  {originalChoices.map(([key, value]) => (
+                    <div key={key} className="grid grid-cols-[2rem_1fr] gap-2">
+                      <dt className="font-semibold">{choiceDisplayLabel(question.exam, key as ChoiceKey)}</dt>
+                      <dd><QuestionBody text={value} /></dd>
+                    </div>
+                  ))}
+                </dl>
+              )}
+            </details>
+          )}
           {original.postOptionNote && (
             <section aria-label="原問の選択肢後の注記" className="rounded-lg border border-border p-3">
               <QuestionBody text={original.postOptionNote} />

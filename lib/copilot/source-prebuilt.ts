@@ -10,18 +10,23 @@
 // 組み立て結果の一致を確かめてから書く。
 
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { readFile } from "node:fs/promises";
 import { join } from "node:path";
-import { gunzipSync, gzipSync } from "node:zlib";
+import { setImmediate as yieldToEventLoop } from "node:timers/promises";
+import { promisify } from "node:util";
+import { gunzip, gunzipSync, gzipSync } from "node:zlib";
 import { openQuestionCorpus } from "@/lib/questions/corpus-files";
 import type { ExamCode, Question } from "@/lib/questions/types";
 import { buildQuestionDoc } from "./corpus-docs";
-import { deserializeIndex, serializeIndex } from "./index-artifact";
+import { deserializeIndexAsync, serializeIndex } from "./index-artifact";
 import type { InvertedIndex } from "./retriever";
 import type { CopilotSource } from "./source";
 import type { CorpusDoc } from "./types";
 
 export const COPILOT_PREBUILT_DIR = "generated/copilot";
 const FORMAT_VERSION = 2;
+const DOC_BATCH = 4096;
+const unzipDocs = promisify(gunzip);
 type QuestionIdsByExam = Partial<Record<ExamCode, string[]>>;
 
 interface Manifest {
@@ -125,26 +130,39 @@ export function openPrebuiltCopilotSource(rootDir: string = process.cwd()): Copi
     return question;
   };
 
-  let index: InvertedIndex | null = null;
-  const loadIndex = (): InvertedIndex => {
-    if (index) return index;
+  const loadIndex = async (): Promise<InvertedIndex> => {
     const started = Date.now();
-    const stored = JSON.parse(gunzipSync(readFileSync(join(dir, "docs.json.gz"))).toString("utf8")) as StoredDoc[];
+    const [docsJson, indexBytes] = await Promise.all([
+      readFile(join(dir, "docs.json.gz")).then(unzipDocs),
+      readFile(join(dir, "index.bin")),
+    ]);
+    const stored = JSON.parse(docsJson.toString("utf8")) as StoredDoc[];
     if (stored.length !== manifest.docCount) throw new Error("copilot prebuilt docs count mismatch");
-    const docs = stored.map((s) => toCorpusDoc(s, getQuestion));
+    const docs: CorpusDoc[] = new Array(stored.length);
+    for (let i = 0; i < stored.length; i++) {
+      docs[i] = toCorpusDoc(stored[i], getQuestion);
+      if (i % DOC_BATCH === DOC_BATCH - 1) await yieldToEventLoop();
+    }
     // 索引と文書は同じビルドで書かれている。指紋は両ファイルの突き合わせに使う
     // （全文から計算し直すと全試験の問題を読むことになるため）。
-    const restored = deserializeIndex(readFileSync(join(dir, "index.bin")), docs, {
+    const restored = await deserializeIndexAsync(indexBytes, docs, {
       fingerprint: manifest.fingerprint,
       verifyTokenization: false,
     });
     if (!restored) throw new Error("copilot prebuilt index does not match its manifest");
-    index = restored;
     console.info("[copilot] prebuilt index loaded", { ms: Date.now() - started, docs: docs.length });
-    return index;
+    return restored;
   };
 
-  return { kind: "prebuilt", getQuestion, index: loadIndex };
+  let index: Promise<InvertedIndex> | undefined;
+  return {
+    kind: "prebuilt",
+    getQuestion,
+    index: () => index ??= loadIndex().catch((error: unknown) => {
+      index = undefined;
+      throw error;
+    }),
+  };
 }
 
 function toCorpusDoc(stored: StoredDoc, getQuestion: (id: string) => Question | undefined): CorpusDoc {

@@ -59,7 +59,9 @@ export function validateKhk2026KouStaging(): string[] {
       check(q.exam === "khk-kagaku" && q.year === 2026 && q.season === "annual" && q.publicAllowed === false, `${id}: invalid scope or publication state`);
       check(q.answer === choices[answerKeys[code][q.qNumber - 1] - 1] && Number(q.officialAnswerNumber) === answerKeys[code][q.qNumber - 1], `${id}: differs from official answer`);
       check(Object.keys(q.choices!).join() === choices.join() && Object.keys(q.choiceExplanations!).join() === choices.join(), `${id}: expected five choices and explanations`);
-      check(JSON.stringify(q.choices) === JSON.stringify(q.originalContent!.choices) && q.question.includes(q.originalContent!.body), `${id}: incomplete original content`);
+      const original = q.originalContent;
+      check(typeof original?.body === "string" && q.question.includes(original.body) &&
+        JSON.stringify(q.choices) === JSON.stringify(original.choices), `${id}: incomplete original content`);
       check(q.explanationCoverage === "full" && Object.values(q.choiceExplanations!).every(x => x!.length >= 30), `${id}: incomplete rationale`);
       check(q.sourcePdfUrl!.endsWith(`/R8${code}.pdf`) && q.sourceAnswerUrl!.endsWith("/R8fy_kaitou.pdf"), `${id}: wrong source`);
       check(sources.sources.some(x => x.url === q.sourcePdfUrl && /^[a-f0-9]{64}$/.test(x.sha256)), `${id}: missing source receipt`);

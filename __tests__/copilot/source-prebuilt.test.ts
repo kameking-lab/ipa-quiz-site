@@ -63,9 +63,11 @@ describe("prebuilt copilot source (generated/copilot)", () => {
     expect(source.getQuestion("no-such-question")).toBeUndefined();
   });
 
-  it("rebuilds the same documents (text lazily from the question) and the same retrieval", () => {
+  it("shares cold restoration and rebuilds the same documents and retrieval", async () => {
     const source = written();
-    const restored = source.index();
+    const restoring = source.index();
+    expect(source.index()).toBe(restoring);
+    const restored = await restoring;
     expect(restored.docs.map((d) => [d.id, d.kind, d.title, d.url, d.meta, d.text]))
       .toEqual(docs.map((d) => [d.id, d.kind, d.title, d.url, d.meta, d.text]));
     expect(restored.docs.every((d, i) => d.textLength === docs[i].text.length)).toBe(true);

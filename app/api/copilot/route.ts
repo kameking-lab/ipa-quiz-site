@@ -10,7 +10,7 @@ import type { Question } from "@/lib/questions/types";
 import { isCompleteSelectionCorrect, requiredSelectionCount } from "@/lib/questions/answers";
 import { ragEnabled } from "@/lib/copilot/rag";
 import { runCopilotRAGPipeline } from "@/lib/copilot/rag-pipeline";
-import { getCopilotSource, warmCopilotIndexSoon, type CopilotSource } from "@/lib/copilot/source";
+import { getCopilotSource, type CopilotSource } from "@/lib/copilot/source";
 import { captureException } from "@/lib/monitoring/sentry";
 import { assembleCopilotPrompt } from "@/lib/copilot/prompt-assembly";
 import { createCopilotResponseStream } from "@/lib/copilot/streaming";
@@ -108,9 +108,6 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     );
   }
 
-  // 冷えたサーバでは索引の読み込みを、下の利用枠・レート制限の確認（KV 往復）と重ねる。
-  if (ragEnabled()) warmCopilotIndexSoon();
-
   const usage = await prepareAiUsage("copilot");
   track(usage);
   if (usage.response) return usage.response;
@@ -133,6 +130,8 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
 
   const quickAction = payload.quickAction as QuickActionId | undefined;
 
+  // Cold RAG loads on demand after admission. It yields while restoring the
+  // search index so concurrent KV requests can finish during the cold load.
   const ragStartedAt = Date.now();
   const rag = await runCopilotRAGPipeline({
     question,

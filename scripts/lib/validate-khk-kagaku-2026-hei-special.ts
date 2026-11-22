@@ -48,8 +48,9 @@ export function validateKhk2026HeiSpecialStaging(): string[] {
       check(q.year === 2026 && q.season === "annual" && q.exam === "khk-kagaku" && q.publicAllowed === false, `${id}: invalid scope or publication state`);
       check(q.answer === choices[answerKeys[code][q.qNumber - 1] - 1] && Number(q.officialAnswerNumber) === answerKeys[code][q.qNumber - 1], `${id}: differs from official answer`);
       check(Object.keys(q.choices!).join() === choices.join() && Object.keys(q.choiceExplanations!).join() === choices.join(), `${id}: missing choices or explanations`);
-      check(JSON.stringify(q.choices) === JSON.stringify(q.originalContent!.choices), `${id}: original choices differ`);
-      check(q.question.includes(q.originalContent!.body), `${id}: original body missing`);
+      const original = q.originalContent;
+      check(JSON.stringify(q.choices) === JSON.stringify(original?.choices), `${id}: original choices differ`);
+      check(typeof original?.body === "string" && q.question.includes(original.body), `${id}: original body missing`);
       check(q.sourcePdfUrl!.endsWith(`/R8${code}.pdf`) && q.sourceAnswerUrl!.endsWith("/R8fy_kaitou.pdf"), `${id}: wrong official source`);
       check(q.explanationCoverage === "full" && Object.values(q.choiceExplanations!).every(x => x!.length >= 30), `${id}: missing rationale`);
       const record = review.questions.find(x => x.id === id);

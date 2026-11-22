@@ -89,18 +89,7 @@ export interface SavedSearch {
   savedAt: number;
 }
 
-const EMPTY_QUERY: ActiveQuery = {
-  q: "",
-  exam: "",
-  year: "",
-  season: "",
-  category: "",
-  difficulty: "",
-  calculationOnly: false,
-  sort: "relevance",
-};
-
-function readFromParams(sp: URLSearchParams): ActiveQuery {
+function readFromParams(sp: Pick<URLSearchParams, "get">): ActiveQuery {
   return {
     q: sp.get("q") ?? "",
     exam: (sp.get("exam") as ExamCode) ?? "",
@@ -172,8 +161,9 @@ export function SearchClient() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const [query, setQuery] = useState<ActiveQuery>(EMPTY_QUERY);
-  const [inputText, setInputText] = useState("");
+  const query = useMemo(() => readFromParams(searchParams), [searchParams]);
+  const [draft, setDraft] = useState({ query, text: query.q });
+  const inputText = draft.query === query ? draft.text : query.q;
   const [result, setResult] = useState<SearchResponse | null>(null);
   const [resultQueryKey, setResultQueryKey] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -187,13 +177,6 @@ export function SearchClient() {
   useEffect(() => {
     if (recentOnly) setRecentlyViewedIds(loadRecentlyViewedIds());
   }, [recentOnly]);
-
-  // Sync query from URL params
-  useEffect(() => {
-    const q = readFromParams(new URLSearchParams(searchParams.toString()));
-    setQuery(q);
-    setInputText(q.q);
-  }, [searchParams]);
 
   // Fetch results
   const fetchResults = useCallback(async (q: ActiveQuery, facetsOnly = false) => {
@@ -252,9 +235,9 @@ export function SearchClient() {
   }, [inputText, query.q, updateQuery]);
 
   const clearAll = useCallback(() => {
-    setInputText("");
+    setDraft({ query, text: "" });
     router.replace("/search", { scroll: false });
-  }, [router]);
+  }, [query, router]);
 
   const tokens = useMemo(
     () => query.q.trim().toLowerCase().split(/\s+/).filter(Boolean),
@@ -275,7 +258,7 @@ export function SearchClient() {
       {/* Search Form (full-width on every viewport) */}
       <SearchForm
         inputText={inputText}
-        onInputChange={setInputText}
+        onInputChange={(text) => setDraft({ query, text })}
         onSubmit={() => { if (inputText !== query.q) updateQuery({ q: inputText }); else if (showResults) void fetchResults(query); }}
         onClear={clearAll}
       />
