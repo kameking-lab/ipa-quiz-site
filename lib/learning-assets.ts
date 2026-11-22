@@ -19,6 +19,8 @@ export function learningAssetUrls(value: unknown): string[] {
     if (typeof v === "string") {
       // Inline image bytes travel with the content JSON and need no HTTP cache.
       if (v.startsWith("data:image/")) return;
+      // Printed Windows drive paths have no web asset to cache.
+      if (/^[a-z]:[\\/¥￥]/i.test(v)) return;
       const candidates = [v, ...Array.from(v.matchAll(/(?:https?:\/\/[^\s"'<>()[\]]+|\/[\w./%-]+)\.(?:png|jpe?g|webp|gif|svg)(?:\?[^\s"'<>()[\]]*)?/gi), m=>m[0])];
       for (const raw of candidates) {
         let u: URL; try { u = new URL(raw, ORIGIN); } catch { continue; }

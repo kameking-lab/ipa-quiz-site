@@ -12,3 +12,11 @@ it("keeps citation images external while caching actual local figures and retain
   expect(content.imageUrls[1]).toBe("data:image/png;base64,c3ludGhldGlj");
   expect(() => learningAssetUrls({ imageUrls: [citation] })).toThrow("外部画像は保存できません");
 });
+
+it("counts the question figure and ignores Windows paths printed in the choices", () => {
+  const content = {
+    choices: { ア: "C:¥Documents¥Photo¥P1013.jpg", イ: "F:/Photo/P1013.jpg" },
+    imageUrls: ["/images/figure.png"],
+  };
+  expect(learningAssetUrls(content)).toEqual(["https://www.kakomon-ai.jp/images/figure.png"]);
+});
