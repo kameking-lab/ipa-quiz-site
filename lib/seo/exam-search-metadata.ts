@@ -18,7 +18,7 @@ export function formatExamSearchMetadata(name: string, count: number, years: rea
   const lead = name + "の過去問を" + size + "収録。答えと解説つきで、1日" + PLAN_OFFER.freeDaily + "問まで無料です。";
   const partial = /(?:部分|一部)収録|原問|公表版/.test(coverage);
   const scope = partial || useCoverage ? coverage.split("。")[0] + "。" : "";
-  const browse = "年度別・分野別に過去問を選び、解いた問題の答えと解説を読みながら復習できます。";
+  const browse = "年度別・分野別の一覧から過去問を選び、間違えた問題や苦手な分野の問題を繰り返し解いて復習できます。";
   const description = lead + scope + browse;
   return { title, description: description.length > 110 ? description.slice(0, 109) + "…" : description };
 }

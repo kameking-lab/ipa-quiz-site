@@ -16,8 +16,9 @@ const entries = ["kankoji2", "nw", "sa", "ap", "kikai-hozen", "kai-toku2", "tsus
 describe("search entry metadata", () => {
   it("keeps every qualification title distinct, including both pneumatic assembly grades", () => {
     const exams = getAvailableExams();
-    const titles = exams.map(exam => examSearchMetadata(exam, getQuestionsByExamStrict(exam).length).title);
-    expect(new Set(titles).size).toBe(exams.length);
+    const metadata = exams.map(exam => examSearchMetadata(exam, getQuestionsByExamStrict(exam).length));
+    expect(new Set(metadata.map(entry => entry.title)).size).toBe(exams.length);
+    expect(exams.filter((_, i) => metadata[i].description.length < 80 || metadata[i].description.length > 110)).toEqual([]);
     for (const [exam, grade] of [["kuukiatsu-kumitate1", "1級"], ["kuukiatsu-kumitate2", "2級"]] as const) {
       const title = examSearchMetadata(exam, getQuestionsByExamStrict(exam).length).title;
       expect(title).toContain(`空気圧装置組立て技能士 ${grade}`);
