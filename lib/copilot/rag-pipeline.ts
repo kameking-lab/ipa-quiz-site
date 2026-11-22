@@ -131,7 +131,7 @@ export async function runCopilotRAGPipeline(
   let relatedHeader = "";
   try {
     const excluded = new Set(ragResult.passages.map((p) => p.doc.id));
-    const related = findRelatedQuestions({
+    const related = await findRelatedQuestions({
       userMessage: lastUserMsg,
       currentQuestionId: question.id,
       currentExam: question.exam,

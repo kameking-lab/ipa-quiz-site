@@ -115,7 +115,7 @@ interface FindRelatedInput {
  * 注: 新規 embedding API は導入せず、既存の BM25 index を再利用する。
  *     CLAUDE.md §10「新規外部 API の導入」は承認必須のため、暫定設計として BM25 ベース。
  */
-export function findRelatedQuestions(input: FindRelatedInput): RelatedQuestion[] {
+export async function findRelatedQuestions(input: FindRelatedInput): Promise<RelatedQuestion[]> {
   const limit = input.limit ?? 4;
   if (!isQueryRetrievable(input.userMessage)) return [];
 
@@ -128,7 +128,7 @@ export function findRelatedQuestions(input: FindRelatedInput): RelatedQuestion[]
     (input.currentQuestionId ? input.source.getQuestion(input.currentQuestionId)?.question : undefined);
   const focusTerms = currentQuestionText ? questionFocusTerms(currentQuestionText) : [];
   const query = buildRetrievalQuery([input.userMessage, ...focusTerms].join(" "), ctx);
-  const index = input.source.index();
+  const index = await input.source.index();
 
   // citation top-N 用より少し広めに取り、フィルタ後に limit へ落とす。
   const candidates = retrieve(index, query, Math.max(limit * 4, 12));

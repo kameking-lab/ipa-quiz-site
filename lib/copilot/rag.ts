@@ -65,7 +65,7 @@ export async function runRAG(input: RAGRunInput): Promise<RAGResult> {
   };
 
   const fullQuery = buildRetrievalQuery(input.userMessage, ctx);
-  const index = (input.source ?? (await getCopilotSource())).index();
+  const index = await (input.source ?? (await getCopilotSource())).index();
 
   // 雑談・モチベ系のチットチャットは「識別力のあるトークン」を持たない傾向がある。
   // 最大 IDF がしきい値（デフォルト 3.0）未満なら早期 return して

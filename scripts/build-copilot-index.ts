@@ -29,7 +29,7 @@ function fmtDur(ms: number): string {
   return `${(ms / 1000).toFixed(2)}s`;
 }
 
-function main(): void {
+async function main(): Promise<void> {
   const write = process.argv.includes("--write");
   resetCorpusCache();
   const t0 = performance.now();
@@ -69,7 +69,7 @@ function main(): void {
   try {
     const source = openPrebuiltCopilotSource(root);
     if (!source) throw new Error("prebuilt manifest unreadable");
-    const restored = source.index();
+    const restored = await source.index();
     if (!sameIndex(index, restored)) throw new Error("index mismatch");
     for (let i = 0; i < docs.length; i++) {
       const a = docs[i];
@@ -101,4 +101,7 @@ function sameIndex(a: ReturnType<typeof buildIndex>, b: ReturnType<typeof buildI
     eq(a.postingTfs, b.postingTfs) && eq(a.docLen, b.docLen);
 }
 
-main();
+void main().catch((error: unknown) => {
+  console.error(error);
+  process.exitCode = 1;
+});
