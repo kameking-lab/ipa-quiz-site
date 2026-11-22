@@ -1,7 +1,7 @@
 "use client";
-import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
+import { Suspense, useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { ArrowRight, ChevronDown, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { StudySearchField } from "@/components/ui/StudySearchField";
@@ -20,12 +20,31 @@ import { qualificationRunArt } from "@/lib/home/study-room";
 import { qualificationIdsForExam } from "@/lib/study-plan/schedule";
 import { searchQualifications } from "@/lib/qualifications/search";
 import { groupQualifications, qualificationDisplayKey, qualificationGroupLabel } from "@/lib/qualifications/groups";
+import { planReferral } from "@/lib/study-plan/next-qualification";
+import type { ExamScheduleSession } from "@/lib/study-plan/schedule";
+import { MobileInstallNudge } from "@/components/pwa/MobileInstallNudge";
+import { PlanCalendarButton } from "./PlanCalendarButton";
+import { PostExamQualifications } from "./PostExamQualifications";
 import { PlanCreateSheet, weekdayLabels } from "./PlanCreateSheet";
 import { PaceTrack, StartTrack } from "./PaceTrack";
 import styles from "./HomePace.module.css";
 
 interface Resume { exam: string; name: string; href: string; caption: string }
-const nextExamKeys: Record<string, string> = { ip: "fe", fe: "ap", fp3: "fp2", fp2: "fp1", denko2: "denko1", denken3: "denken2", denken2: "denken1" };
+type PlanPrefill = { exam: string; examDate?: string; sessionId?: string };
+
+function HomePlanReferral({ keys, onOpen }: { keys: readonly string[]; onOpen(prefill: PlanPrefill): void }) {
+  const search = useSearchParams();
+  useEffect(() => {
+    const prefill = planReferral(search, keys, japanDate(new Date()));
+    if (!prefill) return;
+    onOpen(prefill);
+    const url = new URL(location.href);
+    url.searchParams.delete("plan");
+    url.searchParams.delete("examDate");
+    window.history.replaceState(window.history.state, "", url);
+  }, [search, keys, onOpen]);
+  return null;
+}
 const shortDate = (date: string) => `${Number(date.slice(5, 7))}/${Number(date.slice(8))}`;
 export function HomePace({ domains, planExamKeys, createOnLoad = false, children }: {
   domains: readonly HomeDirectoryDomain[]; planExamKeys: readonly string[]; createOnLoad?: boolean; children?: ReactNode;
@@ -47,6 +66,10 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false, children
   const [study, setStudy] = useState<ReturnType<typeof readHomeStudy> | null>(null);
   const [resolvedResume, setResolvedResume] = useState<{ query: string; entry: Resume } | null>(null);
   const [sheet, setSheet] = useState<"create" | "edit" | "switch" | "detail" | null>(null);
+  const [prefill, setPrefill] = useState<PlanPrefill>();
+  const [created, setCreated] = useState<PacePlan>();
+  const referralKeys = useMemo(() => planItems.map(item => item.key), [planItems]);
+  const openPrefilled = useCallback((value: PlanPrefill) => { setPrefill(value); setSheet("create"); }, []);
   const [query, setQuery] = useState("");
   const [stars, setStars] = useState<string[]>([]);
   const [error, setError] = useState("");
@@ -120,15 +143,25 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false, children
   }
   const planDomain = domains.find(d => [...d.featured, ...d.compact].some(i => i.key === plan?.exam));
   const previousDomain = previousItem && domains.find(d => d.featured.includes(previousItem) || d.compact.includes(previousItem));
-  const nextExam = plan?.result === "passed"
-    ? items.find(i => i.key === nextExamKeys[plan.exam])
-      ?? [...(planDomain?.featured ?? []), ...(planDomain?.compact ?? [])].find(i => i.key !== plan.exam && i.questionCount > 0)
-      ?? items.find(i => i.key !== plan.exam && i.questionCount > 0)
-    : undefined;
-  if (createOnLoad) return <PlanCreateSheet embedded open items={planItems} initialExam={initialExam}
-    onOpenChange={() => {}} onCreated={() => router.push("/")} />;
+  function retryPlan(session?: ExamScheduleSession) {
+    if (!plan) return;
+    const fixedDate = session?.examDate && session.examDate >= today && session.datePrecision !== "month" &&
+      (!session.examDateEnd || session.examDateEnd === session.examDate) ? session.examDate : undefined;
+    openPrefilled({ exam: plan.exam, examDate: fixedDate, sessionId: session?.id });
+  }
+  const calendarConfirmation = created && <div className="mt-3 space-y-1 rounded-xl border border-border bg-card p-3">
+    <p className="text-sm font-semibold" role="status">学習計画を作りました</p>
+    <PlanCalendarButton plan={created} name={items.find(entry => entry.key === created.exam)?.name ?? created.exam} today={today} />
+    <MobileInstallNudge placement="plan-created" />
+  </div>;
+  if (createOnLoad) return created ? <>
+    {calendarConfirmation}
+    <Link className="study-link mt-3" href="/">ホームで計画を見る</Link>
+  </> : <PlanCreateSheet embedded open items={planItems} initialExam={initialExam}
+    onOpenChange={() => {}} onCreated={setCreated} />;
   const search = <StudySearchField compact={!firstVisit} id="qualification-search" aria-label="資格名・略称で検索" aria-controls={term || firstVisit ? "home-qualification-results" : undefined} disabled={!ready} value={query} onChange={e => setQuery(e.target.value)} placeholder={firstVisit ? "受ける資格は？" : "ほかの資格をさがす"} />;
   return <>
+    <Suspense><HomePlanReferral keys={referralKeys} onOpen={openPrefilled} /></Suspense>
     <section className={styles.stack} id="today" aria-label="今日の学習" aria-busy={!ready} data-home-state={!ready ? "loading" : postExam ? "post-exam" : plan ? "planned" : returning ? "returning" : "new"}>
       {plan ? (
         <div className={`${styles.hero} p3-landscape`}>
@@ -137,6 +170,7 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false, children
             {plan.examDate && <span className="shrink-0 pt-3 text-[13px] text-muted-foreground tabular-nums"><time dateTime={plan.examDate}>{shortDate(plan.examDate)}</time> 受験</span>}
           </div>
           {plan.registration && <p className="text-[13px] text-muted-foreground">{plan.registration.label}</p>}
+          {created?.id === plan.id && calendarConfirmation}
           {postExam && <h1 className="mt-2 text-2xl leading-tight font-bold">試験、おつかれさまでした</h1>}
           {examToday && <h1 className="mt-2 text-xl font-bold">試験は今日です</h1>}
           {pace?.total ? <>
@@ -161,16 +195,12 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false, children
             <><p className="mt-2 text-sm">試験前に勉強日がありません</p><button type="button" onClick={() => setSheet("edit")} className="study-link">勉強する日を変更</button></> : null)}
           {pace?.target != null && <Link className="study-primary mt-2" href={`/quiz/today?plan=${encodeURIComponent(plan.id)}`}>計画の問題を解く <ArrowRight aria-hidden="true" className="size-5 shrink-0" /></Link>}
           {postExam && <>
-            {!plan.result ? <div aria-label="結果を記録" role="group" className="mt-2 grid grid-cols-3 gap-2">
+            {!plan.result && <div aria-label="結果を記録" role="group" className="mt-2 grid grid-cols-3 gap-2">
               {([["passed", "合格"], ["failed", "不合格"], ["absent", "受けなかった"]] as const).map(([result, label]) => (
                 <Button key={result} variant="outline" className="min-h-12 border-input bg-card px-1" onClick={() => updatePlan({ result })}>{label}</Button>
               ))}
-            </div> : plan.result === "passed" ? <div className="mt-2 border-t border-hairline pt-2">
-              <h2 className="text-xl font-bold">合格おめでとう！</h2>
-              <Link className="study-link" href={nextExam?.href ?? "/search"}>
-                {nextExam ? `次は ${nextExam.name}へ` : "次の資格を選ぶ"}
-              </Link>
-            </div> : <button type="button" className="study-primary mt-2" aria-haspopup="dialog" onClick={() => setSheet("create")}>学習計画を作る <ArrowRight aria-hidden="true" className="size-5 shrink-0" /></button>}
+            </div>}
+            <PostExamQualifications key={plan.exam} plan={plan} items={items} today={today} onRetry={retryPlan} />
           </>}
           <div className="mt-2 flex flex-wrap gap-x-4">
             <Link className="study-link" href={`/review?mode=weak&exam=${encodeURIComponent(plan.exam)}`}>苦手リスト{weakCount !== null && `（${weakCount}問）`}</Link>
@@ -235,7 +265,9 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false, children
       {children && <div className={styles.room}>{children}</div>}
     </section>
     {error && <p role="alert" className="mt-3 text-sm text-destructive">{error}</p>}
-    <PlanCreateSheet open={sheet === "create" || sheet === "edit"} editing={sheet === "edit" ? plan : undefined} onOpenChange={open => { if (!open) setSheet(null); }} items={planItems} initialExam={initialExam} onCreated={id => { setActive(id); refresh(); }} />
+    <PlanCreateSheet open={sheet === "create" || sheet === "edit"} editing={sheet === "edit" ? plan : undefined} onOpenChange={open => { if (!open) { setSheet(null); setPrefill(undefined); } }} items={planItems}
+      initialExam={prefill?.exam ?? initialExam} initialDate={prefill?.examDate} initialSessionId={prefill?.sessionId}
+      onCreated={saved => { if (sheet !== "edit") setCreated(saved); else setCreated(undefined); setActive(saved.id); refresh(); }} />
     <Sheet open={sheet === "switch"} onOpenChange={open => setSheet(open ? "switch" : null)}><SheetContent side="bottom" aria-describedby={undefined} className={`${styles.sheet} mx-auto max-h-[min(85dvh,calc(100dvh-var(--safe-top)-1rem))] max-w-[640px] overflow-y-auto pb-[max(1.5rem,var(--safe-bottom))]`}><SheetHeader><SheetTitle>受ける資格</SheetTitle></SheetHeader><div className="mt-5 space-y-2">
       {groupQualifications(plans, p => p.exam).map(row => {
         const planButton = (p: PacePlan, label: string) => <button key={p.id} type="button" onClick={() => { setActive(p.id); setSheet(null); }} className="flex min-h-12 w-full items-center justify-between rounded-xl bg-muted px-4 text-left text-sm"><span>{label}<span className="ml-2 text-xs text-muted-foreground">{p.examDate}</span></span>{plan?.id === p.id ? "✓" : ""}</button>;

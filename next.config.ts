@@ -1,3 +1,4 @@
+import { QUALIFICATION_GROUPS, qualificationGroupPath } from "./lib/qualifications/groups";
 import type { NextConfig } from "next";
 import { resolve } from "node:path";
 import { randomUUID } from "node:crypto";
@@ -159,6 +160,9 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      ...QUALIFICATION_GROUPS.filter(group => !Object.hasOwn(group.members, group.slug)).map(group => ({
+        source: "/" + group.slug, destination: qualificationGroupPath(group.slug), permanent: true as const,
+      })),
       ...Object.entries(EXAM_CODE_ALIASES).flatMap(([alias, canonical]) => [
         { source: `/${alias}/:path*`, destination: `/${canonical}/:path*`, permanent: true },
         { source: `/q/${alias}/:path*`, destination: `/q/${canonical}/:path*`, permanent: true },

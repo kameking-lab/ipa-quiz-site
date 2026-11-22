@@ -1,38 +1,10 @@
-import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
-import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-const account = vi.hoisted(() => ({ status: "authenticated" }));
-vi.mock("@/components/account/AccountNavigation", () => ({ useAccountStatus: () => account.status }));
+import { render, screen } from "@testing-library/react";
+import { expect, it } from "vitest";
 import { NotificationSettings } from "@/app/account/notifications/NotificationSettings";
-import { readNotificationPrefs } from "@/lib/storage/notifications";
-beforeEach(() => { cleanup(); localStorage.clear(); account.status = "authenticated"; });
-afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
-describe("通知設定の実際の提供状態", () => {
-  it("定期配信を募集せず、未提供のスイッチ・宛先入力を出さない", () => {
-    render(<NotificationSettings />);
-    expect(screen.getByText("定期メールの登録受付は終了しました。")).toBeInTheDocument();
-    expect(screen.queryByRole("switch")).toBeNull();
-    expect(screen.queryByRole("textbox")).toBeNull();
-    expect(screen.queryByText(/毎日設定時刻|デイリーチャレンジや連続学習を通知/)).toBeNull();
-  });
-  it.each(["authenticated", "unauthenticated", "loading"])("%sでは送信操作を表示しない", status => {
-    account.status = status; render(<NotificationSettings />);
-    expect(screen.queryByRole("button", { name: "テストメールを送信" })).toBeNull();
-  });
-  it("ブラウザ許可の取得だけを完了し、serviceWorker.readyで待ち続けない", async () => {
-    vi.stubGlobal("Notification", { permission: "default", requestPermission: vi.fn().mockResolvedValue("granted") });
-    render(<NotificationSettings />); fireEvent.click(screen.getByRole("button", { name: "通知を許可" }));
-    expect(await screen.findByText("このブラウザで通知を許可しました。")).toBeInTheDocument();
-    expect(readNotificationPrefs().pushEnabled).toBe(true);
-  });
-  it("拒否された通知を許可済みと扱わない", async () => {
-    vi.stubGlobal("Notification", { permission: "default", requestPermission: vi.fn().mockResolvedValue("denied") });
-    render(<NotificationSettings />); fireEvent.click(screen.getByRole("button", { name: "通知を許可" }));
-    expect(await screen.findByText("通知は許可されていません。")).toBeInTheDocument();
-    expect(readNotificationPrefs().pushEnabled).toBe(false);
-  });
-  it("待機中からlive regionを常設して結果の変更を告知する", async () => {
-    render(<NotificationSettings />); await act(async () => {});
-    expect(screen.getByRole("status")).toHaveAttribute("aria-live", "polite");
-    expect(screen.getByRole("status")).toBeEmptyDOMElement();
-  });
+
+it("shows the mail status without requesting browser notification permission", () => {
+  render(<NotificationSettings />);
+  expect(screen.getByText("メール通知")).toBeVisible();
+  expect(screen.queryByText("ブラウザ通知")).not.toBeInTheDocument();
+  expect(screen.queryByRole("button", { name: "通知を許可" })).not.toBeInTheDocument();
 });

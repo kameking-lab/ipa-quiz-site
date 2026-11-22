@@ -71,13 +71,18 @@ async function fetchEventCounts(
   env: PosthogEnv,
   events: string[],
   rangeDays: RangeDays,
+  dayStart?: Date,
 ): Promise<Record<string, number> | null> {
   const eventList = events.map((e) => `'${e}'`).join(", ");
+  const sqlTime = (date: Date) => "toDateTime('" + date.toISOString().slice(0, 19).replace("T", " ") + "', 'UTC')";
+  const period = dayStart
+    ? "timestamp >= " + sqlTime(dayStart) + " AND timestamp < " + sqlTime(new Date(dayStart.getTime() + 86_400_000))
+    : "timestamp >= now() - INTERVAL " + rangeDays + " DAY";
   const q = `
     SELECT event, count() AS cnt
     FROM events
     WHERE event IN (${eventList})
-      AND timestamp >= now() - INTERVAL ${rangeDays} DAY
+      AND ${period}
     GROUP BY event
     ORDER BY cnt DESC
   `;
@@ -140,7 +145,7 @@ const ALL_EVENTS = Array.from(
   ]),
 );
 
-export async function fetchFunnelData(rangeDays: RangeDays): Promise<FunnelResponse> {
+export async function fetchFunnelData(rangeDays: RangeDays, dayStart?: Date): Promise<FunnelResponse> {
   const env = readEnv();
   if (!env) {
     return {
@@ -152,7 +157,7 @@ export async function fetchFunnelData(rangeDays: RangeDays): Promise<FunnelRespo
     };
   }
 
-  const counts = await fetchEventCounts(env, ALL_EVENTS, rangeDays);
+  const counts = await fetchEventCounts(env, ALL_EVENTS, rangeDays, dayStart);
   if (!counts) return { configured: true, queryFailed: true, range_days: rangeDays, funnels: [], event_counts: {}, cachedAt: new Date().toISOString() };
 
   const funnels: FunnelData[] = [

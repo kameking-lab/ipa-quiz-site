@@ -10,6 +10,7 @@ import { paceAttempts } from "@/lib/study-plan/client";
 import { usePlanCatalog } from "@/lib/study-plan/use-plan-catalog";
 import { PLAN_OFFER } from "@/lib/billing/plan-offer";
 import { japanDate } from "@/lib/home/featured-exams";
+import { PlanCalendarButton } from "./PlanCalendarButton";
 import { QualificationSelect } from "@/components/qualifications/QualificationSelect";
 import styles from "./HomePace.module.css";
 
@@ -22,10 +23,10 @@ const weekdayPresets = [
 ];
 const fieldClass = "mt-1.5 min-h-11 w-full min-w-0 rounded-lg border border-input bg-card px-3";
 
-export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCreated, embedded = false, editing }: {
+export function PlanCreateSheet({ open, onOpenChange, items, initialExam, initialDate, initialSessionId, onCreated, embedded = false, editing }: {
   embedded?: boolean; editing?: PacePlan;
   open: boolean; onOpenChange: (open: boolean) => void; items: readonly HomeDirectoryItem[];
-  initialExam: string; onCreated: (id: string) => void;
+  initialExam: string; initialDate?: string; initialSessionId?: string; onCreated: (plan: PacePlan) => void;
 }) {
   const [exam, setExam] = useState(initialExam);
   const [sessions, setSessions] = useState<ExamScheduleSession[]>([]);
@@ -71,7 +72,7 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCrea
   }, [open]);
   useEffect(() => {
     if (!open) return;
-    setLoading(!!exam); setError(""); setDate(editing?.exam === exam ? editing.examDate ?? "" : ""); setSessions([]); setSessionId(""); setScheduleFailed(false);
+    setLoading(!!exam); setError(""); setDate(editing?.exam === exam ? editing.examDate ?? "" : exam === initialExam ? initialDate ?? "" : ""); setSessions([]); setSessionId(""); setScheduleFailed(false);
     if (!exam) return;
     const controller = new AbortController();
     void fetch(`/api/exam-schedule/${encodeURIComponent(exam)}`, { signal: controller.signal })
@@ -79,12 +80,18 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCrea
         if (!response.ok) throw new Error("schedule");
         const data = await response.json() as ExamSchedule;
         if (controller.signal.aborted) return;
-        const future = data.sessions.filter(s => s.scheduleStatus === "ondemand" || !s.examDate || (s.examDateEnd ?? s.examDate) >= japanDate(new Date()));
-        setSessions(future); setSessionId(editing?.exam === exam ? editing.sessionId ?? "" : future[0]?.id ?? "");
+        const future = data.sessions.filter(s => s.scheduleStatus === "ondemand" || !s.examDate || (s.examDateEnd ?? s.examDate) >= japanDate(new Date()))
+          .sort((a, b) => (a.examDate ?? "9999").localeCompare(b.examDate ?? "9999"));
+        setSessions(future);
+        const prefilled = exam === initialExam ? initialDate : undefined;
+        const matchingSession = exam === initialExam && initialSessionId ? future.find(s => s.id === initialSessionId)
+          : prefilled ? future.find(s => s.examDate && s.datePrecision !== "month"
+            && s.examDate <= prefilled && prefilled <= (s.examDateEnd ?? s.examDate)) : future[0];
+        setSessionId(editing?.exam === exam ? editing.sessionId ?? "" : matchingSession?.id ?? "");
       }).catch(() => { if (!controller.signal.aborted) setScheduleFailed(true); })
       .finally(() => { if (!controller.signal.aborted) setLoading(false); });
     return () => controller.abort();
-  }, [exam, open, editing]);
+  }, [exam, open, editing, initialExam, initialDate, initialSessionId]);
   const session = sessions.find(s => s.id === sessionId);
   // A window/month is not an individual's appointment. Always ask for the booked day.
   const manual = !session?.examDate || session.scheduleStatus === "ondemand" ||
@@ -117,11 +124,12 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCrea
       plan.result = editing.result;
     }
     if (!savePacePlan(plan)) { setError("保存できませんでした。端末の保存設定を確認してください。"); return; }
-    onCreated(plan.id);
+    onCreated(plan);
     onOpenChange(false);
   }
   const fields = (
       <div className="mt-4 space-y-3">
+        {editing && <PlanCalendarButton plan={editing} name={items.find(item => item.key === editing.exam)?.name ?? editing.exam} today={today} />}
         <QualificationSelect items={items} value={exam} onChange={setExam} label="受ける資格" emptyLabel="資格を選ぶ" className="text-sm font-medium" fieldClass={fieldClass} />
         {exam && <>
         {loading ? <p role="status" className="text-sm text-muted-foreground">日程を確認中…</p> : <>

@@ -9,6 +9,7 @@ import { clearBatchQuestion, loadPlanCatalog, paceAttempts, type CatalogQuestion
 import { calculatePace, weakQuestions } from "@/lib/study-plan/pace";
 import { createHistoryStore } from "@/lib/storage/history";
 import { japanDate } from "@/lib/home/featured-exams";
+import { MobileInstallNudge } from "@/components/pwa/MobileInstallNudge";
 import { Button } from "@/components/ui/button";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { readSession, sessionScore, startSession } from "@/lib/motivation/session";
@@ -81,6 +82,7 @@ export function TodayQuiz({ planId, weakExam, billingGateEnabled }: { planId: st
   if (finished) return <main className="mx-auto max-w-[640px] p-8 text-center">
     <h1 className="text-xl font-bold">{finished.answered}問中{finished.correct}問正解</h1>
     <Link className="study-link mt-4" href={backHref}>{backLabel}</Link>
+    {!weakExam && finished.answered > 0 && <MobileInstallNudge placement="plan-complete" />}
   </main>;
   if (error) return <main className="mx-auto max-w-[640px] space-y-4 p-6">
     <p role="alert">{error}</p>
@@ -94,8 +96,8 @@ export function TodayQuiz({ planId, weakExam, billingGateEnabled }: { planId: st
   </main>;
   return <>
     <h1 className="mx-auto w-full max-w-[640px] px-4 pt-4 text-sm font-semibold">{title} · {batch.ids.length}問</h1>
-    {batch.library ? <TodayLibrary questions={batch.library} exam={batch.exam} backHref={backHref} backLabel={backLabel} />
-      : <QuizClient poolIds={batch.ids} mode="year" fixedBatch backHref={backHref} backLabel={backLabel} exam={batch.exam}
+    {batch.library ? <TodayLibrary questions={batch.library} exam={batch.exam} showPlanInstall={!weakExam} backHref={backHref} backLabel={backLabel} />
+      : <QuizClient poolIds={batch.ids} mode="year" fixedBatch showPlanInstall={!weakExam} backHref={backHref} backLabel={backLabel} exam={batch.exam}
           billingGateEnabled={billingGateEnabled} />}
   </>;
 }

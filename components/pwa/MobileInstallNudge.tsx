@@ -7,7 +7,7 @@ import { MobileInstallContext } from "./MobileInstallProvider";
 
 /** Optional, in-flow invitation. Never renders a guide, sheet or application dialog. */
 export function MobileInstallNudge({ placement, answered = 0 }: {
-  placement: "answer" | "daily-limit";
+  placement: "answer" | "daily-limit" | "plan-created" | "plan-complete";
   answered?: number;
 }) {
   const context = useContext(MobileInstallContext);
@@ -15,10 +15,13 @@ export function MobileInstallNudge({ placement, answered = 0 }: {
   const root = useRef<HTMLDivElement>(null);
   const shown = useRef(false);
   const [finished, setFinished] = useState(false);
-  const eligible = !!context?.ready && context.os === "android" && !context.native
-    && !context.standalone && context.available && context.phase !== "installed"
+  const [guide, setGuide] = useState(false);
+  const planPlacement = placement === "plan-created" || placement === "plan-complete";
+  const iphone = context?.os === "iphone" && planPlacement;
+  const eligible = !!context?.ready && (iphone || (context.os === "android" && context.available)) && !context.native
+    && !context.standalone && context.phase !== "installed"
     && context.phase !== "accepted" && !finished
-    && (placement === "daily-limit" || answered >= 3);
+    && (placement !== "answer" || answered >= 3);
   const claim = context?.claimNudge;
   const release = context?.releaseNudge;
   const markShown = context?.markNudgeShown;
@@ -33,6 +36,7 @@ export function MobileInstallNudge({ placement, answered = 0 }: {
   useEffect(() => {
     if (!owns || !eligible || !root.current || !markShown) return;
     const node = root.current;
+    if (typeof IntersectionObserver === "undefined") return;
     const observer = new IntersectionObserver((entries) => {
       if (shown.current || document.visibilityState !== "visible"
         || !entries.some((entry) => entry.isIntersecting && entry.intersectionRatio >= 0.5)) return;
@@ -46,17 +50,19 @@ export function MobileInstallNudge({ placement, answered = 0 }: {
   }, [owns, eligible, markShown, id]);
 
   if (!eligible || !owns || !context) return null;
-  return <div ref={root} data-install-nudge={placement} className="flex min-h-11 items-center justify-center gap-1 text-sm text-muted-foreground">
-    <Button type="button" variant="link" className="h-auto min-h-11 min-w-0 whitespace-normal px-2 font-normal text-muted-foreground underline hover:text-foreground"
+  return <div ref={root} data-install-nudge={placement} className="flex min-h-11 flex-wrap items-center justify-center gap-1 text-sm text-muted-foreground">
+    <Button type="button" variant="link" aria-expanded={iphone ? guide : undefined} className="h-auto min-h-11 min-w-0 whitespace-normal px-2 font-normal text-muted-foreground underline hover:text-foreground"
       onClick={async () => {
         // A click is also proof of visibility if it precedes the observer callback.
         if (!shown.current) shown.current = context.markNudgeShown(id);
         if (!shown.current) return;
+        if (iphone) { setGuide(value => !value); return; }
         await context.install();
         setFinished(true);
       }}>ホーム画面に追加</Button>
-    <Button type="button" variant="ghost" size="icon" aria-label="ホーム画面への追加案内を30日間閉じる"
+    <Button type="button" variant="ghost" size="icon" aria-label="ホーム画面への追加案内を7日間閉じる"
       className="min-h-11 min-w-11 shrink-0"
       onClick={() => { context.dismissNudge(); setFinished(true); }}><X className="h-4 w-4" aria-hidden="true" /></Button>
+    {guide && <p className="w-full px-2 text-center">共有メニューで「ホーム画面に追加」を選びます。</p>}
   </div>;
 }

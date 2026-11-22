@@ -96,7 +96,7 @@ export async function generateMetadata({
   const ogImageUrl = `${SITE_BASE_URL}/api/og?${new URLSearchParams({ type: "question", title: title.slice(0, 80) }).toString()}`;
 
   return {
-    title,
+    title: { absolute: title },
     description,
     alternates: { canonical },
     robots: indexable

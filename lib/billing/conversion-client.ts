@@ -1,3 +1,4 @@
+import { trackDailyFunnel } from "@/lib/analytics/daily-funnel-client";
 import { nativeClient, NATIVE_HEADER } from "@/mobile/shared/contracts";
 import { GUEST_ANSWER_HANDLED, type ClientConversion } from "./conversion-contract";
 import { jstDay } from "./domain";
@@ -32,6 +33,8 @@ function sendGuestAnswer(body: string, options: RequestInit, native: boolean): v
 /** Plan events are occurrences. Guest answers wait for one daily confirmation. */
 export function sendConversion(event: ClientConversion): void {
   if (typeof window === "undefined") return;
+  if (event === "guest_answered") void trackDailyFunnel("first_answer");
+  if (event === "offer_viewed") void trackDailyFunnel("monthly_offer_viewed");
   try {
     const body = JSON.stringify({ event });
     const native = nativeClient();

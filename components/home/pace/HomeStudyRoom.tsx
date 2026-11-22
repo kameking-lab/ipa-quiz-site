@@ -5,6 +5,7 @@ import { ChevronRight } from "lucide-react";
 import { EMPTY_STUDY_ROOM_MESSAGE, HOME_ROOM_VISIBLE_LIMIT } from "@/lib/home/study-room";
 import { NO_CAFE_POSES } from "@/lib/home/study-room-cafe-mascots";
 import { presenceExamName } from "@/lib/study-presence";
+import { StudyRoomYesterday } from "@/components/home/StudyRoomYesterday";
 import { StudyRoomAttendance } from "../StudyRoomAttendance";
 import { StudyRoomCafeScene } from "../StudyRoomCafeScene";
 import { useStudyRoomCafe } from "../useStudyRoomCafe";
@@ -40,6 +41,7 @@ export function HomeStudyRoom({ poseFiles = NO_CAFE_POSES }: { poseFiles?: reado
       {daily && !current && <time dateTime={snapshot.measuredAt} className={styles.timestamp}>{time.format(Date.parse(snapshot.measuredAt))} 時点</time>}
       {hidden > 0 && <span className={styles.overflow}>＋{number(hidden)}人</span>}
     </div>}
+    <StudyRoomYesterday snapshot={snapshot} current={current} />
     <StudyRoomCafeScene day={day} occupants={occupants} home
       emptyMessage={firstToday ? EMPTY_STUDY_ROOM_MESSAGE : undefined} />
     {chips.length > 0 && <ul aria-label="自習室の資格" className={styles.groups}>

@@ -1,3 +1,4 @@
+import { NextExamSchedule } from "@/components/exam/NextExamSchedule";
 import { PLAN_OFFER } from "@/lib/billing/plan-offer";
 import { ReferralPracticeLink } from "@/components/analytics/ReferralPracticeLink";
 import { TsuginoWelcome } from "@/components/analytics/TsuginoWelcome";
@@ -111,7 +112,7 @@ export async function generateMetadata({
   });
   const ogImageUrl = `${SITE_BASE_URL}/api/og?${ogParams.toString()}`;
   return {
-    title,
+    title: { absolute: title + "｜" + SITE_NAME },
     description,
     alternates: { canonical: `/${exam}` },
     openGraph: {
@@ -255,6 +256,7 @@ export default async function ExamTopPage({
     <main className="p3-page p3-exam flex-1">
       <div className="study-column pb-12">
         <JsonLd data={jsonLd} />
+      <NextExamSchedule exam={code} />
       {!isExamEntryCode(code) && code !== "takken" && <TsuginoWelcome href={referralPracticeHref(questions, '/' + exam)} qualification={examLabel(code)} />}
 
         <nav aria-label="パンくずリスト" className="mb-1 text-xs text-muted-foreground">

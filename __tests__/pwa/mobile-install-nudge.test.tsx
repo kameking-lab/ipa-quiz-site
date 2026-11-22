@@ -67,7 +67,7 @@ describe("install invitation timing", () => {
     event(); expect(screen.getAllByRole("button", { name: "ホーム画面に追加" })).toHaveLength(1);
   });
   it("closes for thirty days", () => {
-    render(app()); event(); fireEvent.click(screen.getByRole("button", { name: /30日間閉じる/ }));
+    render(app()); event(); fireEvent.click(screen.getByRole("button", { name: /7日間閉じる/ }));
     expect(add()).toBeNull();
     expect(JSON.parse(localStorage.getItem(LS_KEYS.mobileInstallNudge)!)).toMatchObject({ dismissedAt: now });
   });
@@ -137,7 +137,7 @@ describe("install invitation timing", () => {
   });
   it.each([1, 29, 30])("keeps a close across remounts until day 30: day %s", (days) => {
     const view = render(app()); event();
-    fireEvent.click(screen.getByRole("button", { name: /30日間閉じる/ }));
+    fireEvent.click(screen.getByRole("button", { name: /7日間閉じる/ }));
     view.unmount();
     vi.mocked(Date.now).mockReturnValue(now + days * 86400000);
     render(app()); event();

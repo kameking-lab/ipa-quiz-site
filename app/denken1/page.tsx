@@ -1,3 +1,5 @@
+import { NextExamSchedule } from "@/components/exam/NextExamSchedule";
+import { formatExamSearchMetadata } from "@/lib/seo/exam-search-metadata";
 import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import { TsuginoWelcome } from "@/components/analytics/TsuginoWelcome";
 import { referralPracticeHref } from "@/lib/questions/referral-practice";
@@ -9,9 +11,9 @@ import { ExamYearArchiveLinks } from "@/components/seo/ExamYearArchiveLinks";
 import type { Session } from "@/lib/questions/types";
 import { DENKEN1_NATIVE_FIELD_COUNT, DENKEN1_NATIVE_PARTS, DENKEN1_NATIVE_QUESTIONS, denken1NativeSubjectPath } from "@/lib/denken1/native";
 
+const searchMetadata = formatExamSearchMetadata("電験一種", DENKEN1_NATIVE_QUESTIONS.length, DENKEN1_PRIMARY_QUESTIONS.map(q => q.year));
 export const metadata: Metadata = withCanonicalSocialMetadata({
-  title: "電験一種 一次試験の過去問｜理論・電力・機械・法規",
-  description: `第一種電気主任技術者一次試験の${DENKEN1_NATIVE_QUESTIONS.length}原問を、公式の図・数式と解答欄ごとの解説付きで掲載。`,
+  ...searchMetadata,
   alternates: { canonical: "/denken1" },
 });
 
@@ -26,6 +28,7 @@ export default function Denken1Page() {
   const total = DENKEN1_PRIMARY_QUESTIONS.length;
   return (
     <main className="mx-auto max-w-5xl px-4 pb-20 pt-8 sm:pt-12">
+      <NextExamSchedule exam="denken1" />
       <TsuginoWelcome href={referralPracticeHref(DENKEN1_PRIMARY_QUESTIONS, "/denken1")} qualification="電験一種" />
       <div className="mb-6"><Link href="/qualifications" className="text-sm font-medium text-primary hover:underline">← 資格一覧へ戻る</Link></div>
       <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">電験一種 一次試験の過去問</h1>

@@ -2,14 +2,15 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import { MobileInstallNudge } from "@/components/pwa/MobileInstallNudge";
 import { ExamQuestionPlayer } from "@/components/exam-library/exam-question-player";
 import { fetchPracticeQuestion } from "@/lib/billing/guest-client";
 import type { ExamQuestion } from "@/lib/exam-library-model";
 import { clearBatchQuestion, type CatalogQuestion } from "@/lib/study-plan/client";
 import { sessionScore } from "@/lib/motivation/session";
 
-export function TodayLibrary({ questions, exam, backHref, backLabel }: {
-  questions: CatalogQuestion[]; exam: string; backHref: string; backLabel: string;
+export function TodayLibrary({ questions, exam, backHref, backLabel, showPlanInstall }: {
+  questions: CatalogQuestion[]; exam: string; backHref: string; backLabel: string; showPlanInstall: boolean;
 }) {
   const groups = useMemo(() => {
     const result: CatalogQuestion[][] = [];
@@ -27,6 +28,7 @@ export function TodayLibrary({ questions, exam, backHref, backLabel }: {
   if (!group) return <section className="p-8 text-center">
     <h2 className="text-xl font-bold">{score.answered}問中{score.correct}問正解</h2>
     <Link className="study-link mt-4" href={backHref}>{backLabel}</Link>
+    {showPlanInstall && score.answered > 0 && <MobileInstallNudge placement="plan-complete" />}
   </section>;
   return <LibraryPart key={part} questions={group} exam={exam} initialId={resumeId ?? undefined}
     onComplete={(answered, correct) => {

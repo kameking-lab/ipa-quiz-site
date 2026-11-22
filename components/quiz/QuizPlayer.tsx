@@ -32,6 +32,7 @@ import { ExplanationCard } from "./ExplanationCard";
 import { createHistoryStore } from "@/lib/storage/history";
 import { writeLastQuestion } from "@/lib/storage/last-question";
 
+import { MobileInstallNudge } from "@/components/pwa/MobileInstallNudge";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Timer } from "lucide-react";
 import { examLabel } from "@/lib/utils";
@@ -72,6 +73,7 @@ interface Props {
   exam?: string;
   onNext: () => void;
   onFinish?: () => void;
+  showPlanInstall?: boolean;
   onReviewed?: (id: string, correct: boolean) => void;
   quiet?: boolean;
   managesPracticeGrant?: boolean;
@@ -97,6 +99,7 @@ function ScoredQuizPlayer({
   exam = "ap",
   onNext,
   onFinish,
+  showPlanInstall,
   onReviewed,
   quiet = false,
   answerPending = false,
@@ -392,6 +395,7 @@ function ScoredQuizPlayer({
       <QuizCompleteScreen
         stats={stats}
         showBatchScore={!!onFinish}
+        showPlanInstall={showPlanInstall}
         elapsed={elapsed}
         exam={exam}
         mode={mode}
@@ -663,6 +667,7 @@ export function QuizCompleteScreen({
   backLabel = "モード選択に戻る",
   scheduleUrl,
   showBatchScore = false,
+  showPlanInstall = false,
 }: {
   stats: { answered: number; correct: number };
   elapsed: number;
@@ -672,6 +677,7 @@ export function QuizCompleteScreen({
   backLabel?: string;
   scheduleUrl?: string;
   showBatchScore?: boolean;
+  showPlanInstall?: boolean;
 }) {
   const resultHeadingRef = React.useRef<HTMLHeadingElement>(null);
   React.useEffect(() => { resultHeadingRef.current?.focus({ preventScroll: true }); resultHeadingRef.current?.scrollIntoView?.({ block: "center", behavior: "instant" }); }, []);
@@ -718,6 +724,8 @@ export function QuizCompleteScreen({
         <Button variant="primary" onClick={onBack} className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
           <ArrowLeft className="h-4 w-4" /> {backLabel}
         </Button>
+
+        {showPlanInstall && stats.answered > 0 && <MobileInstallNudge placement="plan-complete" />}
 
         {scheduleUrl && (
           <details className="mt-5 rounded-xl border border-border px-4 text-sm">
