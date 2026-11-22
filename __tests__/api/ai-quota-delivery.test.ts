@@ -57,6 +57,18 @@ it("delivers the completed free answer, settles once and records provider usage"
   expect(io.cost).toHaveBeenCalledExactlyOnceWith(expect.objectContaining({ inputTokens: 18, outputTokens: 7 }));
 });
 
+it("delivers and settles a free answer that reached the output limit", async () => {
+  io.generate.mockImplementation(async function* (input) {
+    yield "テストの途中回答";
+    input.onComplete?.({ finishReason: "MAX_TOKENS", truncated: true });
+  });
+  const reply = await send();
+  expect(reply.status).toBe(200);
+  expect(await reply.text()).toMatch(/^テストの途中回答\n\n\[応答の途中終了\]/);
+  expect(io.settle).toHaveBeenCalledExactlyOnceWith(expect.anything(), true);
+  expect(io.cost).toHaveBeenCalledOnce();
+});
+
 it("withholds a free answer if the slot cannot be confirmed, while recording its cost", async () => {
   io.settle.mockRejectedValue(new Error("unavailable"));
   const text = await (await send()).text();

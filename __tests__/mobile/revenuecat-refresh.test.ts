@@ -77,7 +77,7 @@ it("makes a newly approved purchase accessible as soon as its receipt is verifie
   }
 });
 
-it("uses a recent unexpired study entitlement during a temporary outage, within five minutes of verification", async () => {
+it("uses the saved study expiry for 429, 5xx and timeout while keeping purchase verification strict", async () => {
   const pg = new PGlite();
   try {
     await setupAccounts(pg);
@@ -91,20 +91,29 @@ it("uses a recent unexpired study entitlement during a temporary outage, within 
     vi.stubGlobal("fetch", transport);
     await appStorePurchaseStatus("alice", true);
     const setChecked = (age: number) => pg.query('UPDATE "MobileRevenueCatAccount" SET "checkedAt"=$1', [new Date(Date.now() - age)]);
-    await setChecked(90_000);
+    await setChecked(86_400_000);
     await expect(revenueCatAccess("alice", false, true)).resolves.toMatchObject({ expiresAt });
     await expect(revenueCatAccess("alice", true)).rejects.toThrow();
-    await setChecked(301_000);
+    transport.mockResolvedValueOnce(new Response(null, { status: 429 }));
+    await expect(revenueCatAccess("alice", false, true)).resolves.toMatchObject({ expiresAt });
+    transport.mockRejectedValueOnce(new DOMException("test timeout", "TimeoutError"));
+    await expect(revenueCatAccess("alice", false, true)).resolves.toMatchObject({ expiresAt });
+    transport.mockResolvedValueOnce(new Response(null, { status: 401 }));
     await expect(revenueCatAccess("alice", false, true)).rejects.toThrow();
-    await setChecked(90_000);
     transport.mockImplementationOnce(async () => {
       await pg.exec('UPDATE "MobileRevenueCatAccount" SET "expiresAt"=NULL');
       return new Response(null, { status: 503 });
     });
-    await expect(revenueCatAccess("alice", false, true)).rejects.toThrow();
+    await expect(revenueCatAccess("alice", false, true)).resolves.toBeNull();
+    // A first-time free account has no verified snapshot at all.
+    await pg.exec('DELETE FROM "MobileRevenueCatAccount" WHERE "userId"=\'alice\'');
+    transport.mockResolvedValueOnce(new Response(null, { status: 429 }));
+    await expect(revenueCatAccess("alice", false, true)).resolves.toBeNull();
     // The checked snapshot can still be recent when a paid period turns over.
     await pg.query('UPDATE "MobileRevenueCatAccount" SET "expiresAt"=$1, "checkedAt"=$2',
       [new Date(Date.now() - 1_000), new Date()]);
+    transport.mockRejectedValueOnce(new DOMException("test timeout", "TimeoutError"));
+    await expect(revenueCatAccess("alice", false, true)).resolves.toBeNull();
     transport.mockResolvedValueOnce(Response.json(paid));
     await expect(revenueCatAccess("alice", false, true)).resolves.toMatchObject({ expiresAt });
   } finally { await pg.close(); }

@@ -146,24 +146,21 @@ export async function refreshRevenueCat(appUserId: string, { transport = fetch, 
   }
   throw new BillingError("mobile_verification_unavailable", 503);
 }
-export async function revenueCatAccess(userId: string, fresh = false, allowRecentStudyAccess = false) {
+export async function revenueCatAccess(userId: string, fresh = false, allowStoredStudyAccess = false) {
   if (!mobileConfig().enabled) return null;
   const a = await ensureRevenueCatAccount(userId);
   const now = Date.now();
   let row: AccountRow | null = a;
-  const expiredStudyPeriod = allowRecentStudyAccess && a.expiresAt && a.expiresAt.getTime() <= now;
+  const expiredStudyPeriod = allowStoredStudyAccess && a.expiresAt && a.expiresAt.getTime() <= now;
   if (fresh || !a.checkedAt || now - a.checkedAt.getTime() > 60_000 || expiredStudyPeriod) {
     try {
       row = await refreshRevenueCat(a.appUserId);
     } catch (error) {
       const temporary = error instanceof TypeError || (error instanceof Error && error.name === "TimeoutError")
         || (error instanceof BillingError && /^mobile_verification_unavailable_(429|5\d\d)$/.test(error.code));
-      if (fresh || !allowRecentStudyAccess || !temporary || !a.expiresAt) throw error;
+      if (fresh || !allowStoredStudyAccess || !temporary) throw error;
       // A concurrent webhook may already have revoked the old snapshot.
       row = await ensureRevenueCatAccount(userId);
-      const checked = row.checkedAt?.getTime();
-      const at = Date.now();
-      if (!row.expiresAt || row.expiresAt.getTime() <= at || checked === undefined || at - checked > 5 * 60_000) throw error;
     }
   }
   return row && row.expiresAt && row.expiresAt.getTime() > Date.now() ? row : null;

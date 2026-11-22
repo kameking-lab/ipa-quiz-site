@@ -88,21 +88,30 @@ test("shows the remaining quota, offers equal actions, and restores the draft on
 });
 
 test("keeps a question typed just before a server-side daily limit", async ({ page }) => {
+  const resetAt = Date.now() + 60_000;
   await page.route("**/api/ai/usage?feature=copilot", route => route.fulfill({
-    json: { kind: "free", remaining: 1, resetAt: Date.now() + 60_000 },
+    json: { kind: "free", remaining: 1, resetAt },
   }));
   await page.route("**/api/copilot", route => route.fulfill({
     status: 429,
     headers: { "X-AI-Policy-Version": AI_POLICY_VERSION },
-    json: { error: "ai_daily_quota_exhausted", resetAt: Date.now() + 60_000 },
+    json: { error: "ai_daily_quota_exhausted", resetAt },
   }));
   await page.goto(problem);
   await page.locator("summary").filter({ hasText: /^AIに質問$/ }).click();
   const panel = page.getByRole("region", { name: "この問題についてAIに質問" });
   await expect(panel.getByText("今日の無料AI あと1回")).toBeVisible();
   const input = panel.getByRole("textbox");
+  const send = panel.getByRole("button", { name: "送信", exact: true });
+  const checkout = panel.getByRole("link", { name: checkoutLabel });
   await input.fill(draft);
-  await panel.getByRole("button", { name: "送信", exact: true }).click();
-  await expect(panel.getByRole("link", { name: checkoutLabel })).toBeVisible();
+  await send.click();
+  await expect(checkout).toBeVisible();
+  await expect(input).toHaveValue(draft);
+
+  await panel.getByRole("button", { name: "今日はここまで" }).click();
+  await expect(checkout).toBeHidden();
+  await send.click();
+  await expect(checkout).toBeVisible();
   await expect(input).toHaveValue(draft);
 });

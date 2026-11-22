@@ -48,6 +48,7 @@ import {
 } from "@/lib/copilot/header-codec";
 import { CitationCards } from "@/components/copilot/CitationCards";
 import { stripCitationFooter } from "@/lib/copilot/citations";
+import { COPILOT_PARTIAL_ANSWER } from "@/lib/copilot/response-status";
 import { RelatedQuestionsSection } from "@/components/copilot/RelatedQuestions";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { buildLearnerProfileFromHistory } from "@/lib/ai/learner-profile-client";
@@ -383,7 +384,7 @@ export function CopilotPanel({
             type: isTimeout ? "timeout" : "server_error",
             retryFn: () => args && sendRef.current(args.text, args.quickAction),
           });
-        } else if (acc.includes("[応答の途中終了]")) {
+        } else if (acc.includes(COPILOT_PARTIAL_ANSWER)) {
           restoreDraft();
         } else if (acc.trim()) {
           lastSendArgsRef.current = null;

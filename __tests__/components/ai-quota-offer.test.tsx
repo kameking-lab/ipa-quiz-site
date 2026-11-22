@@ -66,3 +66,19 @@ it("keeps the offer dismissed through a refresh and shows it once after a new de
     "ai_quota_viewed", "ai_quota_dismissed", "ai_quota_viewed",
   ]);
 });
+
+it("keeps the library answer and its note when the output limit is reached", async () => {
+  const text = "公式資料では、まず条件を確認します。\n\n[応答の途中終了] 出力上限に達したため、回答は途中までです。";
+  const transport = vi.fn<typeof fetch>(async input => String(input).startsWith("/api/ai/usage")
+    ? Response.json({ kind: "legacy" }) : new Response(text));
+  vi.stubGlobal("fetch", transport);
+  render(<ExamLibraryCopilot examId="sample" questionId="current" selectedChoice={2} />);
+  fireEvent.click(screen.getByRole("button", { name: "この問題をAIに質問" }));
+  const field = screen.getByRole("textbox");
+  fireEvent.change(field, { target: { value: "考え方を教えて" } });
+  fireEvent.click(screen.getByRole("button", { name: "AIに聞く" }));
+  expect(await screen.findByText("公式資料では、まず条件を確認します。")).toBeVisible();
+  expect(await screen.findByText(/回答は途中までです/)).toBeVisible();
+  expect(screen.queryByRole("alert")).toBeNull();
+  expect(field).toHaveValue("");
+});

@@ -84,7 +84,7 @@ export function ExamLibraryCopilot({ examId, questionId, selectedChoice }: {
         setMessages([...history, { role: "assistant", content: answer }]);
       }
       answer += decoder.decode();
-      if (!answer.trim() || /\[(?:エラー|タイムアウト|応答の途中終了)\]/.test(answer)) {
+      if (!answer.trim() || /\[(?:エラー|タイムアウト)\]/.test(answer)) {
         throw new Error("AIの回答を取得できませんでした。時間をおいてお試しください。");
       }
       setMessages([...history, { role: "assistant", content: answer }]);

@@ -53,7 +53,7 @@ export async function prepareAiUsage(
   return context;
 }
 
-/** Reserve before the provider starts. Settle only after a complete answer. */
+/** Reserve before the provider starts. Confirm answers that can be delivered. */
 export async function consumeAiUsage(
   context: AiUsageContext,
   providerName: string,
