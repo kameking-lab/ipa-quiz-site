@@ -30,7 +30,7 @@ export function countGoalDay(today: string): number {
   } catch { return 0; }
 }
 
-export function hasCardToday(today = jstDateString()): boolean {
+export function hasCardToday(today = jstDateString(new Date(Date.now()))): boolean {
   try { return localStorage.getItem(LS_KEYS.achievementCardDay) === today; }
   catch { return false; }
 }

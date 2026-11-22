@@ -119,8 +119,32 @@ test("an answered question shares its public path and spoiler-free OGP", async (
   expect(landing.pathname).toBe(questionPath);
   expect(landing.search).toBe("?utm_source=share&utm_medium=question");
   await expect(page.locator('meta[property="og:title"]')).toHaveAttribute("content", /^.{8,}｜答えと解説$/);
+  const socialImage = new URL((await page.locator('meta[property="og:image"]').getAttribute("content"))!);
+  const image = await page.request.get(socialImage.pathname + socialImage.search);
+  expect(image.headers()["content-type"]).toBe("image/png");
+  if (process.env.GROW22_SCREENSHOTS) await writeFile(join(process.env.GROW22_SCREENSHOTS, "question-ogp.png"), await image.body());
+  await expect(page.getByRole("link", { name: "LINE", exact: true })).toHaveAttribute("href", /social-plugins\.line\.me/);
+  await page.context().grantPermissions(["clipboard-read", "clipboard-write"]);
+  await page.getByRole("button", { name: "リンクをコピー" }).click();
+  await expect(page.getByRole("status").filter({ hasText: "リンクをコピーしました" })).toBeVisible();
+  expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(landing.href);
   expect((await page.goto(landing.pathname + landing.search))?.ok()).toBe(true);
   await expect(page.getByRole("radiogroup")).toBeVisible();
+});
+
+test("uses the Web Share API when available", async ({ page }) => {
+  await page.addInitScript(() => {
+    Object.defineProperty(navigator, "share", { value: async (data: ShareData) => {
+      const previous = JSON.parse(sessionStorage.getItem("shareCalls") ?? "[]");
+      sessionStorage.setItem("shareCalls", JSON.stringify([...previous, data]));
+    } });
+  });
+  await page.goto(questionPath);
+  await page.getByRole("radiogroup").getByRole("radio").first().click();
+  await page.getByRole("button", { name: "この問題を共有" }).click();
+  const calls = await page.evaluate(() => JSON.parse(sessionStorage.getItem("shareCalls") ?? "[]"));
+  expect(calls).toEqual([{ title: expect.stringMatching(/｜答えと解説$/), url: expect.stringContaining(questionPath + "?utm_source=share&utm_medium=question") }]);
+  await expect(page.getByRole("link", { name: "LINE", exact: true })).toHaveCount(0);
 });
 
 test("rejects invalid card fields before rendering an image", async ({ request }) => {

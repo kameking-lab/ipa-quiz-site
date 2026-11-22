@@ -2,6 +2,7 @@
 import { readFileSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
+import sharp from "sharp";
 
 vi.mock("node:fs/promises", { spy: true });
 
@@ -38,6 +39,21 @@ it("renders a 1200×630 PNG with the local Japanese WOFF", async () => {
   expect(png.subarray(0, 8).toString("hex")).toBe("89504e470d0a1a0a");
   expect([png.readUInt32BE(16), png.readUInt32BE(20)]).toEqual([1200, 630]);
   expect(png.equals(readFileSync("app/api/og/default.png"))).toBe(false);
+});
+
+it("paints the qualification's WebP artwork into the achievement PNG", async () => {
+  const art = await sharp({ create: { width: 80, height: 100, channels: 3, background: "#d01070" } })
+    .webp({ lossless: true }).toBuffer();
+  vi.mocked(readFile)
+    .mockResolvedValueOnce(readFileSync("public/fonts/noto-sans-jp-700.woff"))
+    .mockResolvedValueOnce(art);
+  const { GET } = await import("@/app/api/og/route");
+  const response = await GET(new Request("http://localhost/api/og?type=study-card&exam=ip&card=streak&mastered=120&total=233&streak=7"));
+  expect(response.status).toBe(200);
+  const rgb = await sharp(Buffer.from(await response.arrayBuffer())).extract({ left: 950, top: 315, width: 1, height: 1 })
+    .removeAlpha().raw().toBuffer();
+  expect([...rgb]).toEqual([208, 16, 112]);
+  expect(vi.mocked(readFile).mock.calls[1][0]).toMatch(/ip-study\.webp$/);
 });
 
 it.each(["unreadable", "unsupported"] as const)("returns a cacheable default PNG when the font is %s", async (mode) => {

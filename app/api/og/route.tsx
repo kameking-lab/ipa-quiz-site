@@ -1,5 +1,5 @@
 import { readFile } from "node:fs/promises";
-import { join } from "node:path";
+import { basename, join } from "node:path";
 import { ImageResponse } from "next/og";
 import { CARD_LABELS, cardQualification, parseStudyCard } from "@/lib/sharing/card";
 import { qualificationStudyArt } from "@/lib/home/study-room";
@@ -147,11 +147,14 @@ export async function GET(request: Request) {
 }
 
 async function renderStudyCard(exam: string, name: string, card: NonNullable<ReturnType<typeof parseStudyCard>>) {
-  const artPath = qualificationStudyArt(exam);
-  const [font, art] = await Promise.all([
+  const artFile = basename(qualificationStudyArt(exam));
+  const [font, art, { default: sharp }] = await Promise.all([
     loadJapaneseFont(),
-    readFile(join(process.cwd(), "public", artPath)),
+    readFile(join(process.cwd(), "public/images/home/study-room-mascots", artFile)),
+    import("sharp"),
   ]);
+  // The OG renderer recognizes WebP dimensions but does not paint WebP layers into PNG.
+  const png = await sharp(art).resize({ width: 335, height: 410, fit: "inside" }).png().toBuffer();
   return new ImageResponse(
     <div style={{ ...SIZE, display: "flex", alignItems: "center", padding: "56px 68px",
       fontFamily: "Noto Sans JP", color: "#172f3f", background: "#f8f4e8" }}>
@@ -171,7 +174,7 @@ async function renderStudyCard(exam: string, name: string, card: NonNullable<Ret
         </div>
       </div>
       {/* eslint-disable-next-line @next/next/no-img-element -- ImageResponse renders an embedded asset */}
-      <img alt="" src={`data:image/webp;base64,${art.toString("base64")}`} width="335" height="410"
+      <img alt="" src={`data:image/png;base64,${png.toString("base64")}`} width={335} height={410}
         style={{ objectFit: "contain", flexShrink: 0, marginLeft: "12px" }} />
     </div>,
     { ...SIZE, fonts: [{ name: "Noto Sans JP", data: font, weight: 700, style: "normal" }],

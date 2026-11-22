@@ -6,6 +6,7 @@ import { MobileInstallNudge } from "@/components/pwa/MobileInstallNudge";
 import { MobileInstallControl } from "@/components/pwa/MobileInstallControl";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { canShowInstallNudge, INSTALL_DISMISS_MS, installDay } from "@/lib/pwa/install-nudge";
+import { reserveStudyCard } from "@/lib/sharing/milestone-storage";
 
 const android = "Mozilla/5.0 (Linux; Android 15) Chrome/130.0 Mobile Safari/537.36";
 const now = Date.parse("2026-11-17T03:00:00Z");
@@ -56,6 +57,17 @@ describe("install invitation timing", () => {
   it("does not repeat at the limit after an answer invitation was seen", () => {
     const view = render(app()); event(); act(() => visible());
     view.unmount(); render(app(0, "daily-limit")); event();
+    expect(add()).toBeNull();
+  });
+  it("releases an unseen nudge and suppresses later placements after a card", () => {
+    const view = render(app());
+    event();
+    expect(add()).toBeVisible();
+    act(() => { expect(reserveStudyCard(installDay(now), false)).toBe(true); });
+    expect(add()).toBeNull();
+    view.unmount();
+    render(app(0, "daily-limit"));
+    event();
     expect(add()).toBeNull();
   });
   it("offers at the limit when an offscreen answer invitation was never seen", () => {
