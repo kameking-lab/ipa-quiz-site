@@ -32,7 +32,7 @@ describe("search entry metadata", () => {
     expect(metadata.openGraph?.title).toContain("解説つき・無料");
     const years = new Set(getQuestionsByExamStrict(exam).map(q => q.year)).size;
     expect(metadata.openGraph?.title).toContain(years + "年分");
-    expect(metadata.openGraph?.title?.length).toBeLessThanOrEqual(43);
+    expect(String(metadata.openGraph?.title).length).toBeLessThanOrEqual(43);
     expect(metadata.description).toContain("年度別・分野別");
     expect(metadata.description).toContain("無料");
     expect(metadata.description?.length).toBeGreaterThanOrEqual(80);

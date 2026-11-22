@@ -5,7 +5,8 @@ import { qualificationIdsForExam, type ExamScheduleSession } from "./schedule";
 const progression: Record<string, readonly string[]> = {
   ip: ["fe"], fe: ["ap"], ap: ["sc", "nw", "db"], fp3: ["fp2"], fp2: ["fp1"],
   denko2: ["denko1"], denken3: ["denken2"], denken2: ["denken1"], kankoji2: ["kankoji1"],
-  civil2: ["civil1"], zoen2: ["zoen1"], takken: ["kanri", "chintai"],
+  civil2: ["civil1"], zoen2: ["zoen1"], denki2: ["denki1"], tsushin2: ["tsushin1"], kenki2: ["kenki1"],
+  "sekou-kenchiku2": ["sekou-1kenchiku"], takken: ["kanri", "chintai"],
 };
 
 const relatedFields = [

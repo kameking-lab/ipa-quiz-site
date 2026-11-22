@@ -5,9 +5,9 @@ const seasonNames: Record<string, readonly string[]> = {
 };
 const sectionNames: Record<string, readonly string[]> = {
   "午前": ["am"], "午後": ["pm"], "午前1": ["am1"], "午前i": ["am1"], "午前2": ["am2"], "午前ii": ["am2"],
-  "午後1": ["pm1"], "午後2": ["pm2"], "科目a": ["kamoku-a"], "科目b": ["kamoku-b"],
+  "午後1": ["pm1"], "午後i": ["pm1"], "午後2": ["pm2"], "午後ii": ["pm2"], "科目a": ["kamoku-a"], "科目b": ["kamoku-b"],
   a: ["kamoku-a"], b: ["kamoku-b"],
-  "am-i": ["am1"], "am-ii": ["am2"],
+  "am-i": ["am1"], "am-ii": ["am2"], "pm-i": ["pm1"], "pm-ii": ["pm2"],
 };
 export function legacyExamPath(path: string) {
   let parts: string[];
@@ -36,7 +36,8 @@ export function legacyExamPath(path: string) {
     !["fall", "zenki", "kouki"].includes(season ?? "");
   if (parts.length === (questionPath ? 4 : 2) && hasCanonicalEdition &&
       exam === exam.toLowerCase() && (!questionPath || ((section === rest.at(-2) || /^gakka-I{1,3}$|^gakka-IV$/.test(rest.at(-2)!)) && !Object.hasOwn(sectionNames, section!) && qnum === rest.at(-1)))) return null;
-  return { exam: exam.toLowerCase(), year, round: round ? Number(round[1]) : null,
-    seasons: season ? (Object.hasOwn(seasonNames, season) ? seasonNames[season] : [season]) : null,
+  const roundSuffix = season && /^(?:第)?(\d{1,3})回$/.exec(season);
+  return { exam: exam.toLowerCase(), year, round: round ? Number(round[1]) : roundSuffix ? Number(roundSuffix[1]) : null,
+    seasons: season && !roundSuffix ? (Object.hasOwn(seasonNames, season) ? seasonNames[season] : [season]) : null,
     sections: section ? (Object.hasOwn(sectionNames, section) ? sectionNames[section] : [section]) : null, qnum };
 }

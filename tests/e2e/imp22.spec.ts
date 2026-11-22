@@ -26,13 +26,18 @@ test("retired sitemap and legacy qualification URLs have the intended status", a
   expect(parent.status()).toBe(308);
   expect(parent.headers().location).toContain("/qualifications/chori");
   expect((await request.get("/sitemap/essays.xml")).status()).toBe(410);
+  expect((await request.get("/sc/2099/spring")).status()).toBe(410);
+  const question = await request.get("/q/sc/2024/fall/am-i/08", { maxRedirects: 0 });
+  expect(question.status()).toBe(308);
+  expect(question.headers().location).toMatch(/\/q\/sc\/2024-autumn\/am1\/q8$/);
 });
 
 for (const exam of ["sc", "nw", "sa", "st", "kankoji2"]) {
   test("the " + exam + " hub links to a working archive and question", async ({ page }) => {
+    await page.route("**/api/exam-schedule/**", route => route.fulfill({ json: { sessions: [] } }));
     const top = await page.goto("/" + exam);
     expect(top?.ok()).toBe(true);
-    const edition = page.locator('main a[href^="/' + exam + '/"]').filter({ visible: true });
+    const edition = page.locator('main a[href^="/' + exam + '/"]');
     const path = (await edition.evaluateAll(links => links.map(link => link.getAttribute("href"))))
       .find(value => value && /\/\d{4}-[a-z0-9]+$/.test(value));
     expect(path).toBeTruthy();

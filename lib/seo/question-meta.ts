@@ -40,9 +40,15 @@ function supplementaryCategory(q: Question): string {
 export function questionTitle(q: Question): string {
   const edition = questionSourceEdition(q).replace(/（[^）]*）$/, "").replace(/年度/g, "").replaceAll(" ", "");
   const exam = questionSourceExam(q);
-  const field = q.exam === "energy-kanri" ? q.topicTags.find(tag => tag === "電気分野" || tag === "熱分野") ?? "" : "";
   const session = sessionLabel(q.session, q.exam);
-  const source = exam + edition + field + " " + session + " 問" + questionNumberLabel(q);
+  const field = q.exam === "energy-kanri" ? q.topicTags.find(tag => tag === "電気分野" || tag === "熱分野")
+    : q.exam === "dekyo-chief-2" ? q.category
+    : q.exam === "riku-tech1" && q.topicTags.length > 1 ? truncate(q.topicTags.at(-1)!, 17)
+    : q.exam === "tohan" ? (q.season === "kansai" ? "関西" : q.sourcePdfUrl.includes("metro.tokyo.lg.jp") ? "東京" : undefined)
+    : undefined;
+  const qualifier = q.session === "am1" && exam === "高度試験共通" ? q.exam.toUpperCase() : undefined;
+  const number = "問" + questionNumberLabel(q).replace(/^問/, "");
+  const source = [exam + edition, field, session, qualifier, number].filter(Boolean).join(" ");
   const stem = truncate(searchableStem(q), Math.max(7, TITLE_TARGET - source.length - 7));
   return stem + "｜答えと解説｜" + source;
 }
@@ -56,6 +62,6 @@ export function questionSnippet(q: Question): string {
   const source = "【" + truncate(context, 43) + "】";
   const lead = truncate(searchableStem(q), DESCRIPTION_MAX - source.length - cta.length - 1);
   const description = lead + " " + cta + source;
-  const review = "収録された過去問を使って、この問題の考え方を復習できます。";
+  const review = "年度別・分野別の一覧から、同じ資格で収録されているほかの問題を探して、苦手な分野を復習できます。";
   return description.length < 80 ? truncate(description + review, DESCRIPTION_MAX) : description;
 }

@@ -71,7 +71,7 @@ describe("install invitation timing", () => {
     expect(add()).toBeNull();
     expect(JSON.parse(localStorage.getItem(LS_KEYS.mobileInstallNudge)!)).toMatchObject({ dismissedAt: now });
   });
-  it("treats dismissal of the browser confirmation as thirty-day dismissal", async () => {
+  it("treats dismissal of the browser confirmation as seven-day dismissal", async () => {
     render(app()); const prompt = event();
     await act(async () => { fireEvent.click(add()!); });
     expect(prompt.prompt).toHaveBeenCalledTimes(1);
@@ -135,13 +135,13 @@ describe("install invitation timing", () => {
     expect(add()).toBeNull();
     expect(JSON.parse(localStorage.getItem(LS_KEYS.mobileInstallNudge)!)).toMatchObject({ dismissedAt: now });
   });
-  it.each([1, 29, 30])("keeps a close across remounts until day 30: day %s", (days) => {
+  it.each([1, 6, 7])("keeps a close across remounts until day 7: day %s", (days) => {
     const view = render(app()); event();
     fireEvent.click(screen.getByRole("button", { name: /7日間閉じる/ }));
     view.unmount();
     vi.mocked(Date.now).mockReturnValue(now + days * 86400000);
     render(app()); event();
-    if (days < 30) expect(add()).toBeNull();
+    if (days < 7) expect(add()).toBeNull();
     else expect(add()).toBeVisible();
   });
   it("waits for an uninstalled result even if the prompt event arrives first", async () => {
@@ -187,14 +187,14 @@ describe("install invitation timing", () => {
   });
 });
 
-describe("daily and thirty-day boundaries", () => {
+describe("daily and seven-day boundaries", () => {
   it("uses JST midnight, matching the free quota", () => {
     const beforeMidnight = Date.parse("2026-11-17T14:59:59.999Z");
     const record = { shownDay: installDay(beforeMidnight) };
     expect(canShowInstallNudge(record, beforeMidnight)).toBe(false);
     expect(canShowInstallNudge(record, beforeMidnight + 1)).toBe(true);
   });
-  it("suppresses through day 29 and allows exactly thirty elapsed days", () => {
+  it("suppresses through day 6 and allows exactly seven elapsed days", () => {
     expect(canShowInstallNudge({ dismissedAt: now }, now + INSTALL_DISMISS_MS - 1)).toBe(false);
     expect(canShowInstallNudge({ dismissedAt: now }, now + INSTALL_DISMISS_MS)).toBe(true);
   });
@@ -202,7 +202,7 @@ describe("daily and thirty-day boundaries", () => {
 
 // Cross the independent browser, persistence and placement conditions. An
 // eligible placement must never override a suppression condition.
-const histories = ["new", "seen-today", "seen-yesterday", "closed-29-days", "closed-30-days", "corrupt", "read-blocked", "write-blocked"] as const;
+const histories = ["new", "seen-today", "seen-yesterday", "closed-6-days", "closed-7-days", "corrupt", "read-blocked", "write-blocked"] as const;
 const placements = [
   { placement: "answer", answered: 0 },
   { placement: "answer", answered: 2 },
@@ -240,8 +240,8 @@ describe("all invitation condition combinations", () => {
       "new": {},
       "seen-today": { shownDay: installDay(now) },
       "seen-yesterday": { shownDay: installDay(now - 86400000) },
-      "closed-29-days": { dismissedAt: now - 29 * 86400000 },
-      "closed-30-days": { dismissedAt: now - 30 * 86400000 },
+      "closed-6-days": { dismissedAt: now - 6 * 86400000 },
+      "closed-7-days": { dismissedAt: now - 7 * 86400000 },
       "corrupt": { dismissedAt: "yesterday" },
       "read-blocked": {},
       "write-blocked": {},
@@ -252,7 +252,7 @@ describe("all invitation condition combinations", () => {
     render(app(test.answered, test.placement));
     if (test.installable) event();
     const shouldShow = test.os === "android" && !test.native && !test.standalone && !test.installed && test.installable
-      && ["new", "seen-yesterday", "closed-30-days"].includes(test.history)
+      && ["new", "seen-yesterday", "closed-7-days"].includes(test.history)
       && (test.placement === "daily-limit" || test.answered >= 3);
     if (shouldShow) expect(add()).toBeVisible();
     else expect(add()).toBeNull();

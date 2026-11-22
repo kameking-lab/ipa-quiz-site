@@ -93,7 +93,7 @@ async function fetchEventCounts(
     const name = String(row[0] ?? "");
     const cnt = Number(row[1] ?? 0);
     if (!Number.isSafeInteger(cnt) || cnt < 0) return null;
-    if (name) counts[name] = cnt;
+    if (events.includes(name)) counts[name] = cnt;
   }
   return counts;
 }
