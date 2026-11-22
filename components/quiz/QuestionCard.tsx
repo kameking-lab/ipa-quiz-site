@@ -56,6 +56,9 @@ export function QuestionCard({
         )}
         <QuestionSourcePresentation question={question} phase="before" />
         <QuestionBody text={question.question} />
+        {question.questionAudioUrl ? (
+          <audio key={question.id} src={question.questionAudioUrl} controls preload="none" aria-label="聞き取り音声" className="my-3 w-full" />
+        ) : null}
         <QuestionFigures question={question} />
         <details className="mt-2 text-sm text-muted-foreground">
           <summary className="min-h-11 cursor-pointer py-3">表示と読み上げ</summary>

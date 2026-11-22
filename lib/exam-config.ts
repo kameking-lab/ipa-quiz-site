@@ -291,7 +291,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       {"session": "gakka-I", "urlSlug": "gakka-I", "expectedQuestions": 12, "label": "1級 一次試験", "categories": ["発音", "リスニング", "読解", "会話", "語彙・文法"]},
       {"session": "practical", "urlSlug": "practical", "expectedQuestions": 12, "label": "1級", "categories": ["語の強勢", "リスニング・場面に応じた応答", "リスニング・問いへの応答", "リスニング・短い会話", "リスニング・説明文", "リスニング・長い会話", "長文の要約", "会話文の空所補充", "語彙の空所補充", "長文の空所補充", "同意文", "語句整序"]},
       { session: "gakka", urlSlug: "gakka", expectedQuestions: 12, label: "2級", categories: ["発音", "会話での応答", "リスニング：図表", "リスニング：短文", "リスニング：英文の内容", "リスニング：会話", "長文読解", "会話文補充", "語彙", "長文の語句補充", "文法", "語順整序"] },
-      {"session": "gakka-II", "urlSlug": "gakka-II", "expectedQuestions": 12, "label": "第74回 2級 一次", "categories": ["第1音節の強勢", "場面に合う応答", "リスニング・絵や図表", "リスニング・短い英文", "リスニング・内容一致", "リスニング・会話", "母の日に関する読解", "鍵を探す場面の会話", "文脈に合う語彙", "企業の環境活動の読解", "動詞と代名詞の文法", "英文の語順整序"]},
+      {"session": "gakka-II", "urlSlug": "gakka-II", "expectedQuestions": 12, "label": "2級 一次", "categories": ["第1音節の強勢", "場面に合う応答", "リスニング・絵や図表", "リスニング・短い英文", "リスニング・内容一致", "リスニング・会話", "母の日に関する読解", "鍵を探す場面の会話", "文脈に合う語彙", "企業の環境活動の読解", "動詞と代名詞の文法", "英文の語順整序"]},
       { session: "zensho-english-grade-3", urlSlug: "zensho-english-grade-3", expectedQuestions: 12, label: "3級 一次", categories: ["語のアクセント", "意味のまとまり", "対話で強く読む語句", "リスニング：絵", "リスニング：応答", "リスニング：長文", "長文読解", "会話文の補充", "絵と会話の対応", "語彙", "文法", "語順整序"] },
       { session: "gakka-III", urlSlug: "gakka-III", expectedQuestions: 12, label: "3級", categories: ["3級 一次", "会話", "会話・文脈", "会話・発音", "文法", "発音・アクセント", "聞き方", "語彙・表現", "語順", "読解"] },
     ],
