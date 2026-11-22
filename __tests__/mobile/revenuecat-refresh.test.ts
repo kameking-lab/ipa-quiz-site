@@ -102,5 +102,10 @@ it("uses a recent unexpired study entitlement during a temporary outage, within 
       return new Response(null, { status: 503 });
     });
     await expect(revenueCatAccess("alice", false, true)).rejects.toThrow();
+    // The checked snapshot can still be recent when a paid period turns over.
+    await pg.query('UPDATE "MobileRevenueCatAccount" SET "expiresAt"=$1, "checkedAt"=$2',
+      [new Date(Date.now() - 1_000), new Date()]);
+    transport.mockResolvedValueOnce(Response.json(paid));
+    await expect(revenueCatAccess("alice", false, true)).resolves.toMatchObject({ expiresAt });
   } finally { await pg.close(); }
 });
