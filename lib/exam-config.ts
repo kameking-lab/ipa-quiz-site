@@ -582,7 +582,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     ],
     seasons: ["published", "second", "primary"], yearRange: { start: 2020, end: 2023 },
   },
-  "gijutsushi1-kiso": {"code": "gijutsushi1-kiso", "nameFull": "技術士第一次試験・基礎科目", "urlSlug": "gijutsushi1-kiso", "level": "specialist", "sessions": [{"session": "kiso", "urlSlug": "kiso", "expectedQuestions": 30, "label": "基礎科目", "categories": ["設計・計画", "情報・論理", "解析", "材料・化学・バイオ", "環境・エネルギー・技術"]}], "seasons": ["annual"], "yearRange": {"start": 2023, "end": 2025}},
+  "gijutsushi1-kiso": {"code": "gijutsushi1-kiso", "nameFull": "技術士第一次試験・基礎科目", "urlSlug": "gijutsushi1-kiso", "level": "specialist", "sessions": [{"session": "kiso", "urlSlug": "kiso", "expectedQuestions": 30, "label": "基礎科目", "categories": ["設計・計画", "情報・論理", "解析", "材料・化学・バイオ", "環境・エネルギー・技術"]}], "seasons": ["annual"], "yearRange": {"start": 2021, "end": 2025}},
   "jlpt": {
     code: "jlpt", nameFull: "日本語能力試験（JLPT）", urlSlug: "jlpt", level: "basic",
     sessions: [
