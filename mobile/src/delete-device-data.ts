@@ -3,6 +3,7 @@ import { downloads } from "./downloads";
 import { deleteStudy } from "./portable-storage";
 import { Membership } from "./purchases";
 import { setReminder } from "./platform";
+import { clearStudyReminders } from "./study-reminders";
 import { Filesystem,Directory } from "@capacitor/filesystem";
 export async function deleteDeviceData(){
   await downloads.invalidate();
@@ -18,4 +19,5 @@ export async function deleteDeviceData(){
   }
   await new Membership().disconnect();
   await setReminder(null);
+  await clearStudyReminders();
 }

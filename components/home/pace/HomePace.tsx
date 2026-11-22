@@ -1,6 +1,7 @@
 "use client";
 import { Suspense, useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ArrowRight, ChevronDown, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -23,11 +24,15 @@ import { groupQualifications, qualificationDisplayKey, qualificationGroupLabel }
 import { planCreatedHref, planReferral } from "@/lib/study-plan/next-qualification";
 import type { ExamScheduleSession } from "@/lib/study-plan/schedule";
 import { MobileInstallNudge } from "@/components/pwa/MobileInstallNudge";
+import { nativeClient } from "@/mobile/shared/contracts";
+import { canRemindForPlan } from "@/mobile/shared/study-reminder-plan";
 import { PlanCalendarButton } from "./PlanCalendarButton";
 import { PostExamQualifications } from "./PostExamQualifications";
 import { PlanCreateSheet, weekdayLabels } from "./PlanCreateSheet";
 import { PaceTrack, StartTrack } from "./PaceTrack";
 import styles from "./HomePace.module.css";
+
+const StudyReminderControl = dynamic(() => import("@/mobile/src/StudyReminderControl").then(module => module.StudyReminderControl), { ssr: false });
 
 interface Resume { exam: string; name: string; href: string; caption: string }
 type PlanPrefill = { exam: string; examDate?: string; sessionId?: string };
@@ -218,6 +223,7 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false, children
           <button type="button" onClick={() => setSheet("detail")} className="study-link">
             学習計画の詳細{warning ? '（申込締切 ' + (plan.registration?.deadline ? shortDate(plan.registration.deadline) : '') + '）' : ''}
           </button>
+          {nativeClient() && canRemindForPlan(plan) && <StudyReminderControl key={plan.id} planId={plan.id} />}
         </div>
       ) : returning ? <div className={`${styles.hero} p3-landscape`}>
         <p className="text-[13px] text-muted-foreground">おかえりなさい</p>

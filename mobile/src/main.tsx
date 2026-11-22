@@ -14,6 +14,7 @@ import { downloads, type DownloadIndex } from "./downloads";
 import { hydrateImages } from "./images";
 import { persistStudy, restoreStudy, studyOwner } from "./portable-storage";
 import { isOnline, observeConnection, observeReminderTap, setReminder } from "./platform";
+import { observeStudyReminderTap, refreshStudyReminders } from "./study-reminders";
 import { observeLogin } from "./login";
 import { refreshDeviceRights } from "./refresh-rights";
 import { applyDeviceTheme } from "./theme";
@@ -74,6 +75,7 @@ function App({ offlineFallback = false }: { offlineFallback?: boolean }) {
     if(Capacitor.isNativePlatform()) {
       void observeLogin(ORIGIN,e=>setNotice(String(e))).then(keep).catch(log("login listener"));
       void NativeApp.addListener("appStateChange",s=>{
+        if(s.isActive)void refreshStudyReminders().catch(log("study reminders"));
         if(!readyRef.current)return;
         if(!s.isActive)void persistLeaving(ownerRef.current).catch(log("persist study"));
         else void refreshDeviceRights().then(()=>{if(reading.current)return downloads.authorize();}).catch(e=>{setPool([]);setQuestion(null);setLibrary(null);setMaterials([]);setNotice(String(e));});
@@ -219,7 +221,7 @@ async function shouldOpenWebHome(): Promise<boolean> {
   if (!Capacitor.isNativePlatform() || new URLSearchParams(location.search).has("local") || recentHandoffFailed()) return false;
   try { return await isOnline(); } catch { return typeof navigator !== "undefined" && navigator.onLine; }
 }
-async function openWebHome() {
+async function openWebHome(destination: () => string) {
   try { sessionStorage.setItem(HANDOFF_KEY, String(Date.now())); } catch { /* best effort */ }
   // Carry this device's study history to the web origin first, but never wait long.
   const handOff = (async () => {
@@ -229,11 +231,18 @@ async function openWebHome() {
     await persistStudyAfterPets(owner);
   })().catch(log("study hand-off"));
   await Promise.race([handOff, new Promise(resolve => setTimeout(resolve, 3000))]);
-  location.replace(ORIGIN + "/");
+  location.replace(ORIGIN + destination());
 }
 async function start() {
   document.documentElement.classList.add("native-app");
   applyDeviceTheme();
+  // A notification can launch the bundled document before the online UI exists.
+  let booting = true;
+  let destination = "/";
+  void observeStudyReminderTap(path => {
+    if (booting) destination = path;
+    else location.replace(ORIGIN + path);
+  }).catch(log("study reminder tap"));
   // Install native ad-host blocking before any UI/deep-link can leave the shell.
   // Never rejects: on failure ads simply stay disabled.
   await step("privacy preparation",prepareTrackingPrivacy);
@@ -246,7 +255,12 @@ async function start() {
   await step("pet support",installNativePetSupport);
   // index.html's boot splash (Chihuahua on the launch-screen colour) stays up
   // until the web home replaces the page; the offline shell renders over it.
-  if (await shouldOpenWebHome()) { await openWebHome(); return; }
+  if (await shouldOpenWebHome() || destination !== "/") {
+    await openWebHome(() => { booting = false; return destination; });
+    return;
+  }
+  booting = false;
+  void refreshStudyReminders().catch(log("study reminders"));
   const root = createRoot(document.getElementById("root")!);
   root.render(<StartupBoundary><App offlineFallback={recentHandoffFailed()}/></StartupBoundary>);
 }
