@@ -93,7 +93,9 @@ export function validateKhk2026Fill(kind: Kind, corpus?: Question[]): string[] {
       check(q.answer === choiceKeys[answers[n - 1] - 1] && Number(q.officialAnswerNumber) === answers[n - 1], `${id}: official answer differs`);
       check(Object.keys(q.choices!).join() === choiceKeys.join() && Object.keys(q.choiceExplanations!).join() === choiceKeys.join(), `${id}: choices or explanations missing`);
       check(q.explanationCoverage === "full" && !q.needsReview && Object.values(q.choiceExplanations!).every(x => x!.length >= 30), `${id}: incomplete explanation review`);
-      check(JSON.stringify(q.choices) === JSON.stringify(q.originalContent!.choices) && q.question.includes(q.originalContent!.body), `${id}: original differs`);
+      const original = q.originalContent;
+      check(typeof original?.body === "string" && q.question.includes(original.body) &&
+        JSON.stringify(q.choices) === JSON.stringify(original.choices), `${id}: original differs`);
       check(q.sourcePdfUrl!.endsWith(`/R8${code}.pdf`) && q.sourceAnswerUrl!.endsWith("/R8fy_kaitou.pdf"), `${id}: incorrect source URL`);
       check(sources.sources.some(s => s.url === q.sourcePdfUrl && /^[a-f0-9]{64}$/.test(s.sha256)), `${id}: source receipt missing`);
       const record = review.questions.find(r => r.id === id);
