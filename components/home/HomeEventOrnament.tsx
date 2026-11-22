@@ -78,10 +78,9 @@ function EventArtImage({ event, art, assetBase }: {
 }) {
   const [ready, setReady] = useState(false);
   const base = `${assetBase}/${HOME_EVENT_ART_DIR}`;
-  return <picture className="p3-event-art" aria-hidden="true" data-home-event-art={event} data-home-event-ready={ready || undefined}>
+  return <picture className="p3-event-art" data-home-event-art={event} data-home-event-ready={ready || undefined}>
     {art.wide && <source media="(min-width: 640px)" srcSet={`${base}/${art.wide}`} />}
-    {/* eslint-disable-next-line @next/next/no-img-element */}
-    <img src={`${base}/${art.mobile}`} alt="" fetchPriority="low" decoding="async"
+    <img src={`${base}/${art.mobile}`} alt="" aria-hidden="true" fetchPriority="low" decoding="async"
       onLoad={event => { void event.currentTarget.decode().then(() => setReady(true), () => {}); }}
       onError={() => setReady(false)} />
   </picture>;
