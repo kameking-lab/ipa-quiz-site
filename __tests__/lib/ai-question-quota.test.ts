@@ -6,7 +6,7 @@ import { aiAccessPolicy, aiNormalUsePolicy } from "@/lib/ai/access-config";
 import { consumeAiUsage, prepareAiUsage, settleAiUsage, withAiUsageResponse } from "@/lib/ai/usage-server";
 import { questionQuotaStore, recordPaidAiQuestion } from "@/lib/ai/question-quota-kv";
 import { usageWindow } from "@/lib/ai/usage-kv";
-import { checkAiNormalUse } from "@/lib/ai/normal-use-server";
+import { checkAiNormalUse, normalUseWindows } from "@/lib/ai/normal-use-server";
 import { guestRealm, readGuestCookie } from "@/lib/billing/guest-practice";
 import { GET } from "@/app/api/ai/usage/route";
 import { readFileSync } from "node:fs";
@@ -23,7 +23,7 @@ vi.mock("@/lib/billing/subscription/config", () => ({
   monthlyConfig: () => ({ mode: "mock", sourceInstance: "quota" }),
 }));
 vi.mock("@/lib/billing/subscription/runtime", () => ({
-  monthlyRuntime: () => ({ service: { status: ownership.web } }),
+  monthlyRuntime: () => ({ config: { mode: "stripe-test", sourceInstance: "quota" }, service: { status: ownership.web } }),
 }));
 vi.mock("@/mobile/server/revenuecat", () => ({ revenueCatAccess: ownership.ios }));
 vi.mock("@/lib/ai/question-quota-kv", () => ({
@@ -113,12 +113,57 @@ describe("AI daily question quota", () => {
     expect(reserve).not.toHaveBeenCalled();
   });
 
+  it("admits a verified iOS member while Web verification is still pending", async () => {
+    let finish!: (value: { entitled: boolean }) => void;
+    ownership.identity.mockResolvedValue("slow-web-for-ios");
+    ownership.web.mockImplementationOnce(() => new Promise(resolve => { finish = resolve; }));
+    ownership.ios.mockResolvedValue({ expiresAt: new Date(Date.now() + 60_000) });
+    try {
+      expect((await prepareAiUsage(request, "exam-library")).access.kind).toBe("paid");
+    } finally { finish({ entitled: false }); }
+  });
+
   it("keeps an unknown tier out of the free quota and rechecks on the next request", async () => {
     ownership.web.mockRejectedValueOnce(new Error("web unavailable")).mockResolvedValueOnce({ entitled: true });
     expect((await GET(request)).status).toBe(503);
     expect(await (await GET(request)).json()).toEqual({ kind: "paid" });
     expect(ownership.ios).toHaveBeenCalledTimes(1);
     expect(questionQuotaStore.read).not.toHaveBeenCalled();
+  });
+
+  it("bridges a brief Web status outage only for the verified account, through the verified expiry", async () => {
+    const now = Date.now();
+    const clock = vi.spyOn(Date, "now").mockReturnValue(now);
+    try {
+      ownership.identity.mockResolvedValue("recent-web-member");
+      ownership.web.mockResolvedValueOnce({ entitled: true, expiresAt: new Date(now + 20_000).toISOString() })
+        .mockRejectedValue(new Error("web unavailable"));
+      expect(await (await GET(request)).json()).toEqual({ kind: "paid" });
+      expect(await (await GET(request)).json()).toEqual({ kind: "paid" });
+      ownership.identity.mockResolvedValueOnce("different-account");
+      expect((await GET(request)).status).toBe(503);
+      clock.mockReturnValue(now + 20_000);
+      expect((await GET(request)).status).toBe(503);
+    } finally { clock.mockRestore(); }
+  });
+
+  it("discards a prior Web verification on an explicit billing policy conflict", async () => {
+    const { BillingError } = await import("@/lib/billing/domain");
+    ownership.identity.mockResolvedValue("conflicted-web-member");
+    ownership.web.mockResolvedValueOnce({ entitled: true, expiresAt: new Date(Date.now() + 86_400_000).toISOString() })
+      .mockRejectedValueOnce(new BillingError("billing_policy_review_required", 503)).mockRejectedValue(new Error("offline"));
+    expect((await prepareAiUsage(request, "copilot")).access.kind).toBe("paid");
+    expect((await prepareAiUsage(request, "copilot")).response?.status).toBe(503);
+    expect((await prepareAiUsage(request, "copilot")).response?.status).toBe(503);
+  });
+
+  it("discards a prior Web verification immediately after a negative lookup", async () => {
+    ownership.identity.mockResolvedValue("former-web-member");
+    ownership.web.mockResolvedValueOnce({ entitled: true, expiresAt: new Date(Date.now() + 86_400_000).toISOString() })
+      .mockResolvedValueOnce({ entitled: false }).mockRejectedValue(new Error("web unavailable"));
+    expect((await prepareAiUsage(request, "copilot")).access.kind).toBe("paid");
+    expect((await prepareAiUsage(request, "copilot")).access.kind).toBe("free");
+    expect((await prepareAiUsage(request, "copilot")).response?.status).toBe(503);
   });
 
   it("releases failed answers, and retries an already counted reply without reserving an extra slot", async () => {
@@ -136,11 +181,18 @@ describe("AI daily question quota", () => {
     });
     expect(response.headers.get("X-AI-Quota-Consumed")).toBe("0");
     expect(settle).toHaveBeenCalledExactlyOnceWith(lease, false);
-    reserve.mockResolvedValueOnce({ ...result, status: "repeat", lease: undefined });
+    reserve.mockResolvedValueOnce({ ...result, status: "repeat", lease });
+    settle.mockResolvedValueOnce({ ...result, status: "recovered" });
     const resend = await prepareAiUsage(request, "scoring");
     expect(await consumeAiUsage(resend, "gemini", ["scoring", "answer"])).toBeNull();
     await settleAiUsage(resend, true);
-    expect(settle).toHaveBeenCalledTimes(1);
+    expect(settle).toHaveBeenCalledTimes(2);
+    expect(resend.headers["X-AI-Quota-Consumed"]).toBe("0");
+    reserve.mockResolvedValueOnce({ ...result, status: "answered", lease: undefined });
+    const again = await prepareAiUsage(request, "scoring");
+    const duplicate = await consumeAiUsage(again, "gemini", ["scoring", "answer"]);
+    expect(duplicate?.status).toBe(409);
+    expect(await duplicate?.json()).toMatchObject({ error: "ai_question_answered" });
   });
 
   it("blocks free calls on quota KV failure and promptly retries paid normal-use checks on later calls", async () => {
@@ -154,6 +206,32 @@ describe("AI daily question quota", () => {
     expect(await checkAiNormalUse(request, "copilot", paid, {}, aiNormalUsePolicy(), store)).toEqual({ ok: true });
   });
 
+  it("uses one service cap for a member across copilot and grading without adding a personal daily cap", () => {
+    const now = Date.now();
+    const windows = (endpoint: string) => normalUseWindows("same-account", endpoint, aiNormalUsePolicy(), now);
+    const global = (endpoint: string) => windows(endpoint).filter(w => w.key.startsWith("rl:global:"));
+    expect(global("scoring")).toEqual(global("copilot"));
+    expect(global("copilot").map(w => w.limit)).toEqual([500, 5000]);
+    expect(windows("scoring").filter(w => w.key.startsWith("ai:normal-use:"))).toHaveLength(1);
+  });
+
+  it("withholds a graded result if the free reservation cannot be confirmed", async () => {
+    const now = Date.now(), resetAt = now + 60_000;
+    const lease = { day: { subject: "user:same-account", limit: 3, offset: 540, now },
+      fingerprint: "scoring", owner: "owner", expiresAt: now + 120_000 };
+    reserve.mockResolvedValueOnce({ status: "reserved", remaining: 1, resetAt, lease });
+    settle.mockRejectedValueOnce(new Error("lost reply")).mockResolvedValueOnce({ status: "unchanged", remaining: 1, resetAt });
+    const result = await withAiUsageResponse(async track => {
+      const context = await prepareAiUsage(request, "scoring");
+      track(context);
+      await consumeAiUsage(context, "gemini", ["scoring", "answer"]);
+      return Response.json({ grade: "completed" });
+    });
+    expect(result.status).toBe(503);
+    expect(await result.json()).toMatchObject({ error: "ai_usage_unavailable" });
+    expect(settle).toHaveBeenCalledTimes(2);
+  });
+
   it("uses one runtime switch and returns the original legacy response when disabled", async () => {
     vi.stubEnv("AI_QUOTA_ROLLOUT", "false");
     const dependencies = vi.fn();
@@ -165,9 +243,13 @@ describe("AI daily question quota", () => {
     expect(await (await GET(request)).json()).toEqual({ kind: "legacy" });
   });
 
-  it("keeps the App Store review snapshot aligned with the shared copy", () => {
+  it("keeps the App Store listing and review notes aligned with the shared copy", () => {
     const notes = readFileSync("mobile/asc/review-notes.ja.txt", "utf8");
     expect(aiAccessPolicy().dailyNewGenerationLimit).toBe(AI_FREE_QUESTIONS_PER_DAY);
     expect(notes).toContain(AI_QUOTA_COPY);
+    const listing = readFileSync("mobile/fastlane/metadata/ja/description.txt", "utf8");
+    expect(listing).toContain(AI_QUOTA_COPY);
+    expect(listing).toContain("https://www.kakomon-ai.jp/privacy");
+    expect(listing).toContain("https://www.apple.com/legal/internet-services/itunes/dev/stdeula/");
   });
 });

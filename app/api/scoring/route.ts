@@ -11,7 +11,7 @@ import { buildGradingFallbackAlert, notifyOpsInBackground } from "@/lib/notify/o
 import { tierForModel } from "@/lib/ai/cost-tracker";
 import { checkRateLimit, getClientIp, readFeedbackTokenInfo } from "@/lib/rate-limit/server";
 import { checkAiNormalUse } from "@/lib/ai/normal-use-server";
-import { prepareAiUsage, consumeAiUsage, withAiUsageResponse, type AiUsageContext } from "@/lib/ai/usage-server";
+import { prepareAiUsage, consumeAiUsage, gradingSignal, withAiUsageResponse, type AiUsageContext } from "@/lib/ai/usage-server";
 import { findAfternoonQuestion } from "@/lib/afternoon/load";
 import { captureException } from "@/lib/monitoring/sentry";
 import type {
@@ -273,6 +273,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     return usageDenial;
   }
       const admissionHeaders = usage.headers;
+      const signal = gradingSignal(usage, req.signal);
       try {
         for await (const chunk of provider.streamChat({
           system: SCORING_SYSTEM_PROMPT,
@@ -287,14 +288,14 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
           // 出力トークンの無駄も減る。
           responseMimeType: "application/json",
           temperature: 0.2,
-          signal: req.signal,
+          signal,
           onComplete: (c) => {
             completed.value = c;
           },
         })) {
           buf += chunk;
         }
-        req.signal.throwIfAborted();
+        signal.throwIfAborted();
       } catch (err) {
         await captureException(err, {
           route: "/api/scoring",

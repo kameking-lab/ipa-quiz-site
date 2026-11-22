@@ -50,12 +50,13 @@ export async function POST(request: Request) {
             if (readFeedbackBrowser(request)) await feedbackStore().claim(unlockIdentity(request, userId));
           } catch { bonusClaimAvailable = false; /* Existing paid and ordinary free rights stay independent. */ }
         }
-        const membership = userId ? await studyMembership(userId, aiQuotaEnabled()) : null;
+        const quotaEnabled = aiQuotaEnabled();
+        const membership = userId ? await studyMembership(userId, quotaEnabled) : null;
         // Existing paid/grace rights do not depend on anonymous cookie or KV.
-        if (userId && membership?.source === "web") {
+        if (!quotaEnabled && userId && membership?.source === "web") {
           const grant = await membership.service.grant(userId, question.id, [], false, jstDay(new Date(now)));
           access = { ...access, ...grant };
-        } else if (membership?.source === "app-store") {
+        } else if (membership && membership.source !== "free") {
           access = { ...access, kind: "pass", remaining: null };
         } else {
           const realm = guestRealm(config.mode, config.sourceInstance);

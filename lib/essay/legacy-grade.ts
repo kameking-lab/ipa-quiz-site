@@ -9,7 +9,7 @@ import { getProvider, resolveModel, gradingThinkingBudget } from "@/lib/ai/provi
 import type { LLMProvider, StreamCompletion } from "@/lib/ai/provider";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limit/server";
 import { checkAiNormalUse } from "@/lib/ai/normal-use-server";
-import { prepareAiUsage, consumeAiUsage, withAiUsageResponse, type AiUsageContext } from "@/lib/ai/usage-server";
+import { prepareAiUsage, consumeAiUsage, gradingSignal, withAiUsageResponse, type AiUsageContext } from "@/lib/ai/usage-server";
 import { checkMonthlyCostCap, recordAiCost, estimateTokens, textBudget } from "@/lib/ai/cost-guard";
 import { tierForModel } from "@/lib/ai/cost-tracker";
 import { buildGradingFallbackAlert, notifyOpsInBackground } from "@/lib/notify/ops-alert";
@@ -317,6 +317,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     return usageDenial;
   }
   const admissionHeaders = usage.headers;
+  const signal = gradingSignal(usage, req.signal);
   try {
     for await (const chunk of provider.streamChat({
       system: ESSAY_SYSTEM_PROMPT,
@@ -330,14 +331,14 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
       // JSON モード。前置きの散文やコードフェンスが混ざらなくなる。
       responseMimeType: "application/json",
       temperature: 0.2,
-      signal: req.signal,
+      signal,
       onComplete: (c) => {
         completed.value = c;
       },
     })) {
       buf += chunk;
     }
-    req.signal.throwIfAborted();
+    signal.throwIfAborted();
   } catch {
     console.error("[essay-grade] provider request failed");
     return NextResponse.json(gradingUnavailable("provider_error"), {

@@ -12,40 +12,64 @@ const METRIC_TTL_SECONDS = 8 * 86_400;
 export const QUESTION_QUOTA_LUA = `
 local action, limit, now, expiry = ARGV[1], tonumber(ARGV[2]), tonumber(ARGV[3]), ARGV[4]
 local request, owner, lease = ARGV[5], ARGV[6], ARGV[7]
+local function doneValue(v) return v == 'done' or v and string.match(v, '^done:%x+$') end
+local function replayedValue(v) return v and string.match(v, '^replayed:%x+$') end
 local entries, done, pending, own = redis.call('HGETALL', KEYS[1]), 0, 0, nil
 if #entries > 2 * limit then return redis.error_reply('invalid quota hash size') end
 for i = 1, #entries, 2 do
   local id, value = entries[i], entries[i+1]
-  if value == 'done' then
+  if doneValue(value) or replayedValue(value) then
     done = done + 1
     if id == request then own = value end
   else
-    local at = tonumber(string.match(value, '^%x+:(%d+)$'))
+    local recovery = string.sub(value, 1, 6) == 'retry:'
+    local token = recovery and string.sub(value, 7) or value
+    local at = tonumber(string.match(token, '^%x+:(%d+)$'))
     if not at then return redis.error_reply('invalid quota lease') end
+    if recovery then done = done + 1 end
     if at > now then
-      pending = pending + 1
+      if not recovery then pending = pending + 1 end
       if id == request then own = value end
     elseif action == 'reserve' then
-      redis.call('HDEL', KEYS[1], id)
+      if recovery then
+        redis.call('HSET', KEYS[1], id, 'done')
+        if id == request then own = 'done' end
+      else
+        redis.call('HDEL', KEYS[1], id)
+      end
     end
   end
 end
 if action == 'read' then return {'status', done} end
 if action == 'reserve' then
-  if own == 'done' then return {'repeat', done} end
+  if doneValue(own) then
+    redis.call('HSET', KEYS[1], request, 'retry:' .. owner .. ':' .. lease)
+    return {'repeat', done}
+  end
+  if replayedValue(own) then return {'answered', done} end
+  if own then return {'pending', done} end
   if done >= limit then return {'exhausted', done} end
-  if own or done + pending >= limit then return {'pending', done} end
+  if done + pending >= limit then return {'pending', done} end
   redis.call('HSET', KEYS[1], request, owner .. ':' .. lease)
   redis.call('PEXPIREAT', KEYS[1], expiry)
   return {'reserved', done}
 end
-if action == 'complete' and own == 'done' then return {'completed', done} end
+if own == 'retry:' .. owner .. ':' .. lease then
+  if action == 'release' then
+    redis.call('HSET', KEYS[1], request, 'done')
+    return {'released', done}
+  end
+  redis.call('HSET', KEYS[1], request, 'replayed:' .. owner)
+  return {'recovered', done}
+end
+if action == 'complete' and own == 'replayed:' .. owner then return {'recovered', done} end
+if action == 'complete' and own == 'done:' .. owner then return {'completed', done} end
 if not own or own ~= owner .. ':' .. lease then return {'unchanged', done} end
 if action == 'release' then
   redis.call('HDEL', KEYS[1], request)
   return {'released', done}
 end
-redis.call('HSET', KEYS[1], request, 'done')
+redis.call('HSET', KEYS[1], request, 'done:' .. owner)
 done = done + 1
 local function count(field)
   redis.pcall('HINCRBY', KEYS[2], field, 1)
@@ -63,7 +87,7 @@ function metricKey(now: number) {
 
 interface QuotaDay { subject: string; limit: number; offset: number; now: number }
 interface QuotaLease { day: QuotaDay; fingerprint: string; owner: string; expiresAt: number }
-type QuotaResult = "status" | "reserved" | "repeat" | "exhausted" | "pending" | "released" | "completed" | "unchanged";
+type QuotaResult = "status" | "reserved" | "repeat" | "answered" | "exhausted" | "pending" | "released" | "completed" | "recovered" | "unchanged";
 
 async function command(action: string, day: QuotaDay, expected: readonly QuotaResult[], lease?: QuotaLease, now = day.now) {
   const { key, resetAt } = usageWindow(day.subject, day.now, day.offset);
@@ -82,11 +106,11 @@ export const questionQuotaStore = {
   async reserve(day: QuotaDay, request: unknown) {
     const fingerprint = createHash("sha256").update(JSON.stringify(request)).digest("hex");
     const lease = { day, fingerprint, owner: randomUUID().replaceAll("-", ""), expiresAt: day.now + LEASE_MS };
-    const result = await command("reserve", day, ["reserved", "repeat", "exhausted", "pending"], lease);
-    return { ...result, lease: result.status === "reserved" ? lease : undefined };
+    const result = await command("reserve", day, ["reserved", "repeat", "answered", "exhausted", "pending"], lease);
+    return { ...result, lease: result.status === "reserved" || result.status === "repeat" ? lease : undefined };
   },
   async settle(lease: QuotaLease, completed: boolean) {
-    return command(completed ? "complete" : "release", lease.day, ["completed", "released", "unchanged"], lease, Date.now());
+    return command(completed ? "complete" : "release", lease.day, ["completed", "recovered", "released", "unchanged"], lease, Date.now());
   },
 };
 

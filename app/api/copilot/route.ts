@@ -18,7 +18,7 @@ import { createCopilotGeminiProvider } from "@/lib/copilot/gemini-flash38";
 import { checkMonthlyCostCap, recordAiCost, estimateTokens, textBudget } from "@/lib/ai/cost-guard";
 import { tierForModel } from "@/lib/ai/cost-tracker";
 import { COPILOT_MODEL } from "@/lib/copilot/model";
-import { prepareAiUsage, consumeAiUsage, settleAiUsage, withAiUsageResponse, type AiUsageContext } from "@/lib/ai/usage-server";
+import { prepareAiUsage, consumeAiUsage, confirmFreeAnswer, settleAiUsage, withAiUsageResponse, type AiUsageContext } from "@/lib/ai/usage-server";
 
 export const runtime = "nodejs";
 
@@ -206,7 +206,8 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
 
   const isRealProvider = provider.name !== "mock";
 
-  const usageDenial = await consumeAiUsage(usage, provider.name, ["copilot", question.id, selectedChoice, quickAction, payload.messages]);
+  const usageDenial = await consumeAiUsage(usage, provider.name,
+    ["copilot", question.id, selectedChoice, quickAction, payload.messages, payload.responseLength, payload.learnerProfile]);
   if (usageDenial) {
     if (reservation) await recordAiCost({ ...budget, inputTokens: 0, outputTokens: 0, reservation });
     return usageDenial;
@@ -214,6 +215,8 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
 
   usage.streaming = true;
   const stream = createCopilotResponseStream({
+    requireCompleteAnswer: !usage.legacy,
+    confirmBeforeDelivery: confirmFreeAnswer(usage),
     provider,
     system,
     userMessages,

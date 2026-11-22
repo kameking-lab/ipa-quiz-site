@@ -10,6 +10,9 @@ export interface CopilotStreamInput {
   maxTokens: number;
   temperature?: number;
   clientSignal?: AbortSignal;
+  requireCompleteAnswer?: boolean;
+  /** Free answers are delivered only after the shared slot is confirmed. */
+  confirmBeforeDelivery?: () => Promise<boolean>;
   /** Candidate source-list template; only answer-used references are appended. */
   citationFooter: string;
   hasGrounding: boolean;
@@ -92,14 +95,27 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
           producedAnyChunk = true;
           producedChars += chunk.length;
           responseText += chunk;
-          controller.enqueue(encoder.encode(chunk));
+          if (!input.confirmBeforeDelivery) controller.enqueue(encoder.encode(chunk));
         }
         upstreamAbort.signal.throwIfAborted();
+        clearTimeout(timeoutHandle);
         if (!responseText.trim()) throw new Error("AI response was empty");
+        if (input.requireCompleteAnswer && provider.name === "gemini" && !usage?.truncated && usage?.finishReason !== "STOP") {
+          throw new Error("AI stream ended without a completed answer");
+        }
         if (usage?.truncated) {
+          if (input.confirmBeforeDelivery) {
+            controller.enqueue(encoder.encode("[応答の途中終了] 回答が出力上限に達しました。質問を短くしてもう一度お試しください。"));
+            return;
+          }
           controller.enqueue(encoder.encode("\n\n[応答の途中終了] 出力上限に達しました。続きを質問してください。"));
         }
         const usedFooter = hasGrounding ? citationFooterForResponse(citationFooter, responseText) : "";
+        if (input.confirmBeforeDelivery) {
+          if (!await input.confirmBeforeDelivery()) throw new Error("AI quota settlement unavailable");
+          upstreamAbort.signal.throwIfAborted();
+          controller.enqueue(encoder.encode(responseText));
+        }
         controller.enqueue(encoder.encode(usedFooter || CITATION_UNVERIFIED_NOTICE));
         answered = Boolean(responseText.trim()) && !upstreamAbort.signal.aborted && !usage?.truncated;
       } catch (err) {
