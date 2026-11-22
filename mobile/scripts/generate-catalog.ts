@@ -24,7 +24,7 @@ for(const code of catalogCodes()) { const entry=await examCatalog(code); if(entr
 } }
 await mkdir(resolve(root,"mobile/src/generated"),{recursive:true});
 await writeFile(resolve(root,"mobile/src/generated/catalog.json"),JSON.stringify({ schema:2,exams },null,2)+"\n");
-const qualifications = [...new Set(exams.map(entry => entry.qualification))]
+const qualifications = [...new Set(exams.map(entry => entry.qualification ?? entry.code))]
   .filter(code => qualificationTargets(code).length === 0)
   .sort();
 await writeFile(resolve(root, "mobile/shared/qualification-source-gaps.json"), JSON.stringify({
