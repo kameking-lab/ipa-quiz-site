@@ -75,7 +75,8 @@ for (const { width, file, motion } of [
       await expect(art).toHaveAttribute("data-home-event-art", "christmas");
       await expect(art).toHaveCSS("opacity", "0");
       await expect(art.locator("img")).toHaveAttribute("fetchpriority", "low");
-      await expect(art).toHaveCSS("transition-duration", motion === "reduce" ? "0s" : "0.16s");
+      await expect(art).toHaveCSS("transition-property", motion === "reduce" ? "none" : "opacity");
+      if (motion !== "reduce") await expect(art).toHaveCSS("transition-duration", "0.16s");
       await expect.poll(() => imageRequests).toEqual([`/images/home/event-scenes/${file}`]);
       await expect(hero.locator("[data-home-event]")).toHaveCount(0);
       await expect(hero.locator("[data-home-weather]")).toHaveAttribute("data-home-weather", "snow");
