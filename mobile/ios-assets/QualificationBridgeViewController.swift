@@ -28,6 +28,10 @@ class QualificationBridgeViewController: CAPBridgeViewController {
         bridge?.registerPluginInstance(TrackingTransparencyPlugin())
         #if ASC_CAPTURE && DEBUG && targetEnvironment(simulator)
         if ASCCapture.isActive, let webView = webView {
+            // Let the existing capture helper decide when to leave the bundled screen.
+            let source = "if (location.protocol === 'capacitor:' && location.hostname === 'localhost') window.__ascCaptureLocal = true;"
+            webView.configuration.userContentController.addUserScript(
+                WKUserScript(source: source, injectionTime: .atDocumentStart, forMainFrameOnly: true))
             ascCapture = ASCCapture(webView: webView)
         }
         #endif
@@ -174,6 +178,7 @@ const local = route === 'reminder';
 if (location.origin !== (local ? 'capacitor://localhost' : 'https://www.kakomon-ai.jp') ||
     (!local && location.pathname !== route)) return 'waiting for expected URL';
 if (document.readyState !== 'complete') return 'waiting for document';
+if (local && !window.Capacitor?.isPluginAvailable?.('LocalNotifications')) return 'waiting for local notifications bridge';
 const visible = e => !!e && e.getClientRects().length > 0;
 const inViewport = e => { if (!visible(e)) return false; const r = e.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight; };
 const state = window.__ascCapturePage ??= { stable: '', since: Date.now() };

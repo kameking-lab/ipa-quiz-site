@@ -218,7 +218,8 @@ function recentHandoffFailed(): boolean {
   try { return Date.now() - Number(sessionStorage.getItem(HANDOFF_KEY) ?? 0) < 60_000; } catch { return false; }
 }
 async function shouldOpenWebHome(): Promise<boolean> {
-  if (!Capacitor.isNativePlatform() || new URLSearchParams(location.search).has("local") || recentHandoffFailed()) return false;
+  const captureLocal = (window as Window & { __ascCaptureLocal?: boolean }).__ascCaptureLocal === true;
+  if (captureLocal || !Capacitor.isNativePlatform() || new URLSearchParams(location.search).has("local") || recentHandoffFailed()) return false;
   try { return await isOnline(); } catch { return typeof navigator !== "undefined" && navigator.onLine; }
 }
 async function openWebHome(destination: () => string) {

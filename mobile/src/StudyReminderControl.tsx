@@ -30,7 +30,11 @@ export function StudyReminderControl({ planId }: { planId: string }) {
       await changeStudyReminder(planId, time, enabled);
       setSetting(await readStudyReminder(planId));
     } catch (error) {
-      setMessage(error instanceof Error ? error.message : "通知の設定を更新できませんでした。");
+      if (error instanceof Error && error.message === NOTIFICATION_SETTINGS_MESSAGE) {
+        setSetting(current => current && { ...current, blocked: true });
+      } else {
+        setMessage("通知の設定を更新できませんでした。");
+      }
     } finally {
       setBusy(false);
     }
