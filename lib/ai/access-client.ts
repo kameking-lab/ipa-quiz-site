@@ -3,7 +3,7 @@ import { AI_POLICY_VERSION } from "./access-policy";
 const POLICY_DENIAL_STATUS: Record<string, number> = {
   ai_login_required: 401, ai_not_included: 403, ai_not_configured: 503,
   ai_unavailable: 503, ai_usage_unavailable: 503, ai_daily_quota_exhausted: 429,
-  ai_question_pending: 409,
+  ai_question_pending: 409, ai_question_answered: 409,
 };
 
 export function aiPolicyDenialMessage(status: number, body: unknown): string | null {

@@ -23,8 +23,13 @@ export function ExamLibraryCopilot({ examId, questionId, selectedChoice }: {
     return entry ? (qualificationHubForEntry(entry)?.slug ?? null) : null;
   }, [examId]);
   const draftId = `exam-library:${examId}:${questionId}`;
+  const returnUrl = typeof window === "undefined" ? null : new URL(window.location.href);
+  if (returnUrl) {
+    returnUrl.searchParams.set("question", questionId);
+    returnUrl.searchParams.delete("view");
+  }
   const [open, setOpen] = useState(false);
-  const { quota, denied: applyQuotaDenial } = useAiQuota("exam-library", open);
+  const { quota, beginRequest, denials } = useAiQuota("exam-library", open);
   const [draft, setDraft] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [busy, setBusy] = useState(false);
@@ -51,6 +56,7 @@ export function ExamLibraryCopilot({ examId, questionId, selectedChoice }: {
     const controller = new AbortController();
     abortRef.current = controller;
     try {
+      const applyQuotaDenial = beginRequest();
       const response = await fetchWithAiGuestCookie("/api/copilot/exam-library", {
         method: "POST",
         headers: { "Content-Type": "application/json", "X-Kakomon-AI-Consent": "20261103" },
@@ -114,8 +120,8 @@ export function ExamLibraryCopilot({ examId, questionId, selectedChoice }: {
               ))}
             </ol>
           ) : null}
-          <AiAccessNotice quota={quota} draft={draft} draftId={draftId}
-            returnTo={typeof window === "undefined" ? "" : window.location.pathname + window.location.search}
+          <AiAccessNotice quota={quota} denials={denials} draft={draft} draftId={draftId}
+            returnTo={returnUrl ? returnUrl.pathname + returnUrl.search : ""}
             onDismiss={() => setOpen(false)} />
           <form onSubmit={(event) => { event.preventDefault(); void ask(); }} className="mt-3">
             <label htmlFor={`exam-copilot-${questionId}`} className="block text-sm font-semibold">どこが分からないですか？</label>

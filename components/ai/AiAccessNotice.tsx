@@ -13,7 +13,9 @@ const CHANNEL = "kakomon:ai-quota-changed";
 
 export function useAiQuota(feature: AiFeature, active = true) {
   const [quota, setQuota] = useState<Quota | null>(null);
+  const [denials, setDenials] = useState(0);
   const generation = useRef(0);
+  const membershipVersion = useRef(0);
   const refresh = useCallback(async () => {
     if (!active) return;
     const attempt = ++generation.current;
@@ -34,14 +36,18 @@ export function useAiQuota(feature: AiFeature, active = true) {
   useEffect(() => {
     if (!active) return;
     const update = () => { void refresh(); };
+    const membershipChanged = () => { membershipVersion.current += 1; update(); };
     void refresh();
     window.addEventListener("focus", update);
     window.addEventListener("pageshow", update);
+    window.addEventListener("mobile:entitlement-changed", membershipChanged);
     window.addEventListener(CHANNEL, update);
     return () => {
       generation.current = generation.current + 1;
       window.removeEventListener("focus", update);
       window.removeEventListener("pageshow", update);
+      membershipVersion.current += 1;
+      window.removeEventListener("mobile:entitlement-changed", membershipChanged);
       window.removeEventListener(CHANNEL, update);
     };
   }, [active, refresh]);
@@ -54,35 +60,40 @@ export function useAiQuota(feature: AiFeature, active = true) {
     }, Math.max(0, resetAt - Date.now()) + 50);
     return () => clearTimeout(timer);
   }, [active, refresh, resetAt]);
-  const denied = useCallback((response: Response, body: unknown) => {
+  const applyDenial = useCallback((version: number, response: Response, body: unknown) => {
     if (response.status !== 429 || response.headers.get("X-AI-Policy-Version") !== AI_POLICY_VERSION
       || !body || typeof body !== "object" || !("error" in body) || body.error !== "ai_daily_quota_exhausted"
       || !("resetAt" in body) || typeof body.resetAt !== "number" || !Number.isSafeInteger(body.resetAt) || body.resetAt <= Date.now()) return false;
+    // The purchase refresh owns the display when this answer predates the purchase.
+    if (version !== membershipVersion.current) return true;
     generation.current++;
+    setDenials(count => count + 1);
     setQuota({ kind: "free", remaining: 0, resetAt: body.resetAt });
     return true;
   }, []);
-  return { quota: active ? quota : null, denied };
+  const beginRequest = useCallback(() => applyDenial.bind(null, membershipVersion.current), [applyDenial]);
+  return { quota: active ? quota : null, beginRequest, denials };
 }
 
 export function refreshAiQuota() {
   window.dispatchEvent(new Event(CHANNEL));
 }
 
-export function AiAccessNotice({ quota, draft, draftId, returnTo, onDismiss }: {
+export function AiAccessNotice({ quota, draft, draftId, returnTo, denials, onDismiss }: {
   quota: Quota | null;
   draft: string;
   draftId: string;
   returnTo: string;
+  denials: number;
   onDismiss?: () => void;
 }) {
-  const [dismissed, setDismissed] = useState<number | null>(null);
+  const [dismissed, setDismissed] = useState<{ resetAt: number; denials: number } | null>(null);
   const seen = useRef<number | null>(null);
   const description = useId();
   const limit = AI_FREE_QUESTIONS_PER_DAY;
   const exhausted = quota?.kind === "free" && quota.remaining === 0;
   const resetAt = exhausted ? quota.resetAt : null;
-  const shown = resetAt !== null && dismissed !== resetAt;
+  const shown = resetAt !== null && (dismissed?.resetAt !== resetAt || dismissed.denials !== denials);
   useEffect(() => {
     if (!shown || seen.current === resetAt) return;
     seen.current = resetAt;
@@ -107,7 +118,8 @@ export function AiAccessNotice({ quota, draft, draftId, returnTo, onDismiss }: {
       <button type="button" className={monthlyActionClass + " bg-card text-foreground shadow-[inset_0_0_0_1px_var(--border)] hover:bg-muted"} onClick={() => {
         captureActivity("ai_quota_dismissed");
         flushActivity();
-        setDismissed(resetAt);
+        seen.current = null;
+        setDismissed({ resetAt, denials });
         onDismiss?.();
       }}>今日はここまで</button>
     </div>

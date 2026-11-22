@@ -4,6 +4,8 @@ import { PRICE_PAGE_LINK } from "@/lib/billing/price-page-link";
 import { MONTHLY_PUBLIC_OFFER, monthlySellerDisclosure } from "@/lib/billing/subscription/public-offer";
 import { SellerDisclosureLine } from "@/components/billing/SellerDisclosureLine";
 
+export const revalidate = 0;
+
 export default function BillingTermsPage() {
   const { priceYen: price, freeDaily: free, trialDays } = MONTHLY_PUBLIC_OFFER;
   const seller = monthlySellerDisclosure();

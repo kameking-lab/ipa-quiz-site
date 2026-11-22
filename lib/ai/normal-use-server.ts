@@ -22,7 +22,7 @@ export function normalUseWindows(subject: string, endpoint: string, policy: AiNo
     window(`ai:normal-use:v1:${hash}:d`, 86_400_000, IP_LIMITS.day, "daily"),
   );
   // Reuse the legacy global keys, independent of policy version or subject.
-  if (endpoint === "copilot") windows.push(
+  windows.push(
     window("rl:global:copilot:h", 3_600_000, COPILOT_GLOBAL_LIMITS.hour, "hour"),
     window("rl:global:copilot:d", 86_400_000, COPILOT_GLOBAL_LIMITS.day, "daily"),
   );
@@ -46,7 +46,7 @@ export async function checkAiNormalUse(
   if (!policy.rolloutEnabled || !aiPolicyReady(context.policy, now) || !normalUsePolicyReady(policy, context.policy.version, now)
     || (context.access.kind !== "free" && context.access.kind !== "paid")) return unavailable();
   // Keep the IP and shared service guards for free users even after cookie rotation.
-  if (context.access.kind === "free") return checkIpRateLimit(req, endpoint, { requireKv: true });
+  if (context.access.kind === "free") return checkIpRateLimit(req, endpoint, { requireKv: true, sharedAiGlobal: true });
   try {
     const windows = normalUseWindows(context.access.subject, endpoint, policy, now);
     const admission = await store.admit(windows);

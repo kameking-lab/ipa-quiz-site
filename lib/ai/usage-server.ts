@@ -12,6 +12,8 @@ export interface AiUsageContext {
   policy: AiAccessPolicy;
   settle?: (completed: boolean) => Promise<void>;
   streaming?: boolean;
+  leaseExpiresAt?: number;
+  clientSignal?: AbortSignal;
 }
 
 function denied(error: string, status: number, message: string, extra: Record<string, unknown> = {}, headers: Record<string, string> = {}): Response {
@@ -27,7 +29,7 @@ export async function prepareAiUsage(
   resolve: typeof resolveAiAccess = resolveAiAccess,
 ): Promise<AiUsageContext> {
   const access = await resolve(request, feature, policy);
-  const context: AiUsageContext = { legacy: access.kind === "legacy", headers: {}, access, policy };
+  const context: AiUsageContext = { legacy: access.kind === "legacy", headers: {}, access, policy, clientSignal: request.signal };
   if (access.kind === "legacy") return context;
   context.headers = initialAiUsageHeaders(policy);
   if (access.kind === "paid" || access.kind === "free") {
@@ -82,21 +84,39 @@ export async function consumeAiUsage(
       `今日の無料のAI質問（${limit}回）はここまで`, { resetAt: admission.resetAt, scope: "subject-day" }, context.headers);
     if (admission.status === "pending") return denied("ai_question_pending", 409,
       "AIが回答中です。少し待ってからもう一度お試しください。", {}, context.headers);
-    context.headers["X-AI-Attempt"] = "admitted";
+    if (admission.status === "answered") return denied("ai_question_answered", 409,
+      "この質問には本日回答済みです。", {}, context.headers);
     const lease = admission.lease;
-    if (lease) {
-      context.headers["X-AI-Quota-Consumed"] = "pending";
-      context.settle = async completed => {
-        const result = await store.settle(lease, completed).catch(() => store.settle(lease, completed));
-        setQuotaHeaders(context, limit, result);
-        context.headers["X-AI-Quota-Consumed"] = result.status === "completed" ? "1" : "0";
-      };
-    }
+    if (!lease) throw new Error("missing AI quota reservation");
+    context.headers["X-AI-Attempt"] = "admitted";
+    context.leaseExpiresAt = lease.expiresAt;
+    context.headers["X-AI-Quota-Consumed"] = admission.status === "repeat" ? "0" : "pending";
+    context.settle = async completed => {
+      const result = await store.settle(lease, completed).catch(() => store.settle(lease, completed));
+      setQuotaHeaders(context, limit, result);
+      if (completed && result.status !== "completed" && result.status !== "recovered") throw new Error("unconfirmed AI answer");
+      context.headers["X-AI-Quota-Consumed"] = result.status === "completed" && admission.status !== "repeat" ? "1" : "0";
+    };
     return null;
   } catch {
     context.headers["X-AI-Attempt"] = "unknown";
     return denied("ai_usage_unavailable", 503, "AI利用回数を確認できないため、生成を一時停止しています。", {}, context.headers);
   }
+}
+
+/** Leave time to record the cost and settle the free slot before its lease expires. */
+export function gradingSignal(context: AiUsageContext, client: AbortSignal) {
+  if (!context.leaseExpiresAt) return client;
+  const remaining = Math.max(0, context.leaseExpiresAt - Date.now() - 10_000);
+  return AbortSignal.any([client, AbortSignal.timeout(remaining)]);
+}
+
+export function confirmFreeAnswer(context: AiUsageContext) {
+  if (context.access.kind !== "free" || !context.settle) return undefined;
+  return async () => {
+    await settleAiUsage(context, true);
+    return context.headers["X-AI-Quota-Consumed"] !== "unknown";
+  };
 }
 
 function setQuotaHeaders(context: AiUsageContext, limit: number, result: { remaining: number; resetAt: number }) {
@@ -157,7 +177,13 @@ export async function withAiUsageResponse(
     throw error;
   }
   if (!policy.rolloutEnabled || tracked?.legacy) return response;
-  if (tracked && !tracked.streaming) await settleAiUsage(tracked, response.ok);
+  if (tracked && !tracked.streaming) {
+    const disconnected = tracked.clientSignal?.aborted;
+    await settleAiUsage(tracked, response.ok && !disconnected);
+    if (response.ok && tracked.access.kind === "free" && (disconnected || tracked.headers["X-AI-Quota-Consumed"] === "unknown")) {
+      return denied("ai_usage_unavailable", 503, "AI利用回数を確認できません。もう一度お試しください。", {}, tracked.headers);
+    }
+  }
   const headers = new Headers(response.headers);
   for (const [name, value] of Object.entries(tracked?.headers ?? initialAiUsageHeaders(policy))) headers.set(name, value);
   if (headers.get("X-Provider") === "mock" && headers.get("X-AI-Attempt") === "not-started") headers.set("X-AI-Attempt", "mock");

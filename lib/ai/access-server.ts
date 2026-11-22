@@ -16,18 +16,12 @@ export type AiAccessResolution =
   | { kind: "paid"; subject: string };
 
 async function billingDependencies(): Promise<AccessDependencies> {
-  const { optionalBillingIdentity, billingRuntime } = await import("@/lib/billing/runtime");
+  const { optionalBillingIdentity } = await import("@/lib/billing/runtime");
+  const { studyMembership } = await import("@/lib/billing/study-membership");
   const { monthlySelected } = await import("@/lib/billing/subscription/config");
   return {
     identity: optionalBillingIdentity,
-    entitled: async userId => {
-      const service = monthlySelected()
-        ? (await import("@/lib/billing/subscription/runtime")).monthlyRuntime().service
-        : billingRuntime().service;
-      if ((await service.status(userId)).entitled) return true;
-      const { revenueCatAccess } = await import("@/mobile/server/revenuecat");
-      return Boolean(await revenueCatAccess(userId));
-    },
+    entitled: async userId => (await studyMembership(userId, true)).source !== "free",
     guest: async (request, now) => {
       const { billingConfig } = await import("@/lib/billing/config");
       const { monthlyConfig } = await import("@/lib/billing/subscription/config");

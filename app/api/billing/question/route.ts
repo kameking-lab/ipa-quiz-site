@@ -3,12 +3,13 @@ import { findQuestionById } from "@/lib/questions/pool-server";
 import { isPracticeReadyQuestion, shuffleChoices } from "@/lib/questions/filter";
 import { billingConfig, gateReady } from "@/lib/billing/config";
 import { BILLING_SAMPLE_ID } from "@/lib/billing/sample";
-import { billingRuntime, json, optionalBillingIdentity, sameOrigin } from "@/lib/billing/runtime";
+import { json, optionalBillingIdentity, sameOrigin } from "@/lib/billing/runtime";
 import { BillingError, jstDay } from "@/lib/billing/domain";
 import { monthlyConfig, monthlySelected } from "@/lib/billing/subscription/config";
 import { cookieHeader, guestClaim, guestCookie, guestGrant, guestRealm, readGuestCookie, resetAt } from "@/lib/billing/guest-practice";
 import type { PracticeAccess } from "@/lib/billing/practice-contract";
-import { revenueCatAccess } from "@/mobile/server/revenuecat";
+import { studyMembership } from "@/lib/billing/study-membership";
+import { aiQuotaEnabled } from "@/lib/ai/access-config";
 import { loadExamPaper } from "@/lib/exam-library-papers";
 import { createHash } from "node:crypto";
 import { feedbackStore, unlockIdentity, readFeedbackBrowser, feedbackBrowserHeader } from "@/lib/feedback/unlock-runtime";
@@ -49,12 +50,13 @@ export async function POST(request: Request) {
             if (readFeedbackBrowser(request)) await feedbackStore().claim(unlockIdentity(request, userId));
           } catch { bonusClaimAvailable = false; /* Existing paid and ordinary free rights stay independent. */ }
         }
-        const service = userId ? (monthly ? (await import("@/lib/billing/subscription/runtime")).monthlyRuntime().service : billingRuntime().service) : null;
+        const quotaEnabled = aiQuotaEnabled();
+        const membership = userId ? await studyMembership(userId, quotaEnabled) : null;
         // Existing paid/grace rights do not depend on anonymous cookie or KV.
-        if (userId && service && (await service.status(userId)).entitled) {
-          const grant = await service.grant(userId, question.id, [], false, jstDay(new Date(now)));
+        if (!quotaEnabled && userId && membership?.source === "web") {
+          const grant = await membership.service.grant(userId, question.id, [], false, jstDay(new Date(now)));
           access = { ...access, ...grant };
-        } else if (userId && await revenueCatAccess(userId)) {
+        } else if (membership && membership.source !== "free") {
           access = { ...access, kind: "pass", remaining: null };
         } else {
           const realm = guestRealm(config.mode, config.sourceInstance);
@@ -84,7 +86,7 @@ export async function POST(request: Request) {
             }
             if (result.status !== "ok" || result.used === undefined) throw new BillingError("billing_unavailable", 503);
             access.remaining = Math.max(0, config.freeDaily - result.used);
-          } else if (userId && service) {
+          } else if (userId && membership?.source === "free") {
             let snapshots: Awaited<ReturnType<typeof guestClaim>> = [];
             let allowNew = guestVerificationAvailable;
             if (guest) {
@@ -92,7 +94,7 @@ export async function POST(request: Request) {
               catch { allowNew = false; }
             }
             try {
-              const grant = await service.grant(userId, question.id, snapshots, allowNew, jstDay(new Date(now)));
+              const grant = await membership.service.grant(userId, question.id, snapshots, allowNew, jstDay(new Date(now)));
               access = { ...access, ...grant };
             } catch (error) {
               if (strict || !(error instanceof BillingError) || error.code !== "daily_limit" || !allowNew || !bonusClaimAvailable || process.env.FEEDBACK_UNLOCK_ENABLED !== "true") throw error;

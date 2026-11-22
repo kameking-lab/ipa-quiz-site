@@ -71,6 +71,30 @@ beforeEach(() => {
   captureException.mockClear();
 });
 
+it.each([undefined, "SAFETY"])("keeps a partial free answer out of the response when completion is %s", async finishReason => {
+  const provider: LLMProvider = {
+    name: "gemini",
+    async *streamChat(params) {
+      yield "partial";
+      params.onComplete?.({ finishReason, truncated: false });
+    },
+  };
+  const confirmBeforeDelivery = vi.fn(), onComplete = vi.fn();
+  const body = await readAll(createCopilotResponseStream(baseInput({ provider, confirmBeforeDelivery, onComplete, requireCompleteAnswer: true })));
+  expect(body).not.toContain("partial");
+  expect(body).toContain("[エラー]");
+  expect(confirmBeforeDelivery).not.toHaveBeenCalled();
+  expect(onComplete).toHaveBeenCalledExactlyOnceWith(7, { finishReason, truncated: false }, false);
+});
+
+it.each([true, false])("delivers a completed free answer only after its quota is confirmed (%s)", async confirmed => {
+  const confirmBeforeDelivery = vi.fn(async () => confirmed), onComplete = vi.fn();
+  const body = await readAll(createCopilotResponseStream(baseInput({ confirmBeforeDelivery, onComplete })));
+  expect(body.includes("ABC")).toBe(confirmed);
+  expect(confirmBeforeDelivery).toHaveBeenCalledOnce();
+  expect(onComplete).toHaveBeenCalledExactlyOnceWith(3, undefined, confirmed);
+});
+
 describe("createCopilotResponseStream — 正常系", () => {
   it("チャンクをそのまま結合して流す", async () => {
     const out = await readAll(createCopilotResponseStream(baseInput()));
