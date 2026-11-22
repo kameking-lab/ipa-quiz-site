@@ -104,6 +104,23 @@ describe("AI daily question quota", () => {
     expect(after.key).not.toBe(before.key);
   });
 
+  it("accepts an independently verified App Store member during a Web lookup outage", async () => {
+    ownership.web.mockRejectedValue(new Error("web unavailable"));
+    ownership.ios.mockResolvedValue({ expiresAt: new Date(Date.now() + 60_000) });
+    for (const feature of ["copilot", "exam-library", "scoring"] as const) {
+      expect((await prepareAiUsage(request, feature)).access).toEqual({ kind: "paid", subject: "same-account" });
+    }
+    expect(reserve).not.toHaveBeenCalled();
+  });
+
+  it("keeps an unknown tier out of the free quota and rechecks on the next request", async () => {
+    ownership.web.mockRejectedValueOnce(new Error("web unavailable")).mockResolvedValueOnce({ entitled: true });
+    expect((await GET(request)).status).toBe(503);
+    expect(await (await GET(request)).json()).toEqual({ kind: "paid" });
+    expect(ownership.ios).toHaveBeenCalledTimes(1);
+    expect(questionQuotaStore.read).not.toHaveBeenCalled();
+  });
+
   it("releases failed answers, and retries an already counted reply without reserving an extra slot", async () => {
     const now = Date.now();
     const result = { remaining: 1, resetAt: now + 1000 };
