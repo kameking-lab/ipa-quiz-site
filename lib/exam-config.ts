@@ -4146,7 +4146,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
         { session: "pc-practical-3", urlSlug: "3-kyu-jitsugi", expectedQuestions: 1, label: "3級・実技（ワープロ）", categories: ["ワープロ"] },
     ],
     seasons: ["first", "second"],
-    yearRange: { start: 2023, end: 2026 },
+    yearRange: { start: 2022, end: 2026 },
 },
   "zenkou-keisan-gijutsu": {
     code: "zenkou-keisan-gijutsu", nameFull: "計算技術検定試験", urlSlug: "zenkou-keisan-gijutsu", level: "basic",
@@ -4157,7 +4157,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     { session: "keisan-4", urlSlug: "keisan-4", expectedQuestions: 21, label: "4級", categories: ["四則計算", "集計計算", "実務計算"] },
     ],
     seasons: ["early", "late"],
-    yearRange: { start: 2023, end: 2026 },
+    yearRange: { start: 2022, end: 2026 },
   },
   "katei-hifuku": {
     code: "katei-hifuku", nameFull: "家庭科技術検定・被服製作", urlSlug: "katei-hifuku", level: "basic",
@@ -4174,7 +4174,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
         { session: "joho-level2", urlSlug: "joho-level2", expectedQuestions: 26, label: "2級・共通＋BASIC/Cの選択", categories: ["2級・共通＋BASIC/Cの選択"] },
         { session: "joho-level3", urlSlug: "joho-level3", expectedQuestions: 32, label: "3級・共通＋BASIC/Cの選択", categories: ["3級・共通＋BASIC/Cの選択"] },
     ],
-    seasons: ["early", "late"], yearRange: { start: 2023, end: 2026 },
+    seasons: ["early", "late"], yearRange: { start: 2022, end: 2026 },
 },
   "saibansho-ippan-dai": {
     code: "saibansho-ippan-dai", nameFull: "裁判所職員採用一般職（裁判所事務官・大卒程度）", urlSlug: "saibansho-ippan-dai", level: "specialist",

@@ -98,6 +98,7 @@ export const PRACTICE_SESSIONS: readonly Session[] = ["cfp-risk", "reading", "wr
 /** Specialist practice starts with the specialist paper; common AM I is explicit. */
 export function defaultPracticeSession(exam: ExamCode, year?: number): Session {
   if (exam === "literas") return "gakka";
+  if (exam === "zenkou-keisan-gijutsu") return "keisan-2";
   if (exam === "cfp") return "gakka";
   if (exam === "kokka-sogo-dai" || exam === "kokka-ippan-dai" || exam === "kokka-sogo-in") return "kiso";
   if (exam === "toukei1") return "gakka";

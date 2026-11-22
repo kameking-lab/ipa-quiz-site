@@ -1,0 +1,384 @@
+[
+  {
+    "id": "zenkou-joho-2022-early-joho-hardware-q01",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2022,
+    "season": "early",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "1級・ハードウェアの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "4けたの10進数の整数 (A₃A₂A₁A₀)₁₀ から、C＝mod((A₀×1＋A₁×2＋A₂×3＋A₃×4), 10) の演算でチェックディジットCを計算した。4けたの10進数の整数が (2022)₁₀ のとき、チェックディジットCの値はいくらになるか。ここでmod(x, y)はxをyで割った余りとする。",
+    "answer": "4",
+    "explanation": "下位けたから順に重み1、2、3、4を掛ける。2×1＋2×2＋0×3＋2×4＝14を10で割ると余りが4になる。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問1 (1)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第68回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=21",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=57",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 令和4年度前期 第68回情報技術検定試験 1級・ハードウェアの基礎知識 大問1 (1)。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "officialAnswerExample": true,
+    "modelAnswer": "4",
+    "scoringCriteria": "記入した解答を欄ごとに標準解答と照合する。"
+  },
+  {
+    "id": "zenkou-joho-2022-early-joho-hardware-q02",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2022,
+    "season": "early",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "1級・ハードウェアの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "次の式が成立するとき、何進法で計算しているか。\n1323÷3＝221（余り0）",
+    "answer": "4",
+    "explanation": "底をbとして、221に3を掛けた値を左辺と等しく置く。3(2b²＋2b＋1)＝b³＋3b²＋2b＋3より b(b−4)(b＋1)＝0。3を数字として使う底の候補は4以上なので、b＝4。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問1 (2)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第68回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=21",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=57",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 令和4年度前期 第68回情報技術検定試験 1級・ハードウェアの基礎知識 大問1 (2)。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "officialAnswerExample": true,
+    "modelAnswer": "4",
+    "scoringCriteria": "記入した解答を欄ごとに標準解答と照合する。"
+  },
+  {
+    "id": "zenkou-joho-2022-early-joho-hardware-q03",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2022,
+    "season": "early",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "1級・ハードウェアの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "A、Bがそれぞれ (125)₁₆、(5C)₁₆ であるとき、次の計算を行い、4けたの16進数で答えなさい。\n(A×B)×(1.5)₁₀",
+    "answer": "9DF2",
+    "explanation": "A＝293、B＝92と10進数に直すと、293×92×1.5＝40434。40434＝9×4096＋13×256＋15×16＋2なので、16進数の各けたは9、D、F、2。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問1 (3)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第68回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=21",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=57",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 令和4年度前期 第68回情報技術検定試験 1級・ハードウェアの基礎知識 大問1 (3)。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "officialAnswerExample": true,
+    "modelAnswer": "9DF2",
+    "scoringCriteria": "記入した解答を欄ごとに標準解答と照合する。"
+  },
+  {
+    "id": "zenkou-joho-2022-early-joho-hardware-q04",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2022,
+    "season": "early",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "1級・ハードウェアの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "2の補数で負の数を表したとき、正の8ビットの2進数nに対し、−nを求める次の式の空欄に8ビットの2進数を埋めて完成しなさい。ただし、＋は加算、XORはビットごとの排他的論理和を表す。\n(n XOR □)＋0000 0001",
+    "answer": "1111 1111",
+    "explanation": "2の補数は全ビットを反転させて1を足す。XORの相手が1のビットは反転し、0のビットは保持されるため、8か所をすべて1にする。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問1 (4)",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第68回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=21",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=57",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 令和4年度前期 第68回情報技術検定試験 1級・ハードウェアの基礎知識 大問1 (4)。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "officialAnswerExample": true,
+    "modelAnswer": "1111 1111",
+    "scoringCriteria": "記入した解答を欄ごとに標準解答と照合する。"
+  },
+  {
+    "id": "zenkou-joho-2022-early-joho-hardware-q05",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2022,
+    "season": "early",
+    "qNumber": 5,
+    "type": "descriptive",
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "1級・ハードウェアの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "図はフリップフロップ（FF）を組み合わせた回路である。各FFの出力Q₁〜Q₃のタイムチャートを示しなさい。",
+    "answer": "CKの各下降直後（1〜10）\nQ₁：1 0 1 0 1 0 1 0 1 0\nQ₂：0 1 1 0 0 1 1 0 0 1\nQ₃：0 0 0 1 1 1 1 0 0 0",
+    "explanation": "3個のFFは同じCKの立下りで更新される。Q₁は毎回反転し、Q₂は更新前のQ₁が1のとき、Q₃は更新前のQ₁とQ₂が両方1のとき反転する。初期値000から数えると、Q₃Q₂Q₁は001、010、011、100と進み、8回目で000に戻る。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問2 問1",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第68回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=22",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=57",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 令和4年度前期 第68回情報技術検定試験 1級・ハードウェアの基礎知識 大問2 問1。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/68-hardware-q05.webp"
+    ],
+    "imageAltTexts": [
+      "3個のJKフリップフロップの回路と、下降番号1〜10を示した初期状態のタイムチャート"
+    ],
+    "officialAnswerExample": true,
+    "modelAnswer": "CKの各下降直後（1〜10）\nQ₁：1 0 1 0 1 0 1 0 1 0\nQ₂：0 1 1 0 0 1 1 0 0 1\nQ₃：0 0 0 1 1 1 1 0 0 0",
+    "scoringCriteria": "記入した解答を欄ごとに標準解答と照合する。",
+    "answerImageUrls": [
+      "/question-assets/zenkou-joho/68-hardware-q05-answer.webp"
+    ],
+    "answerImageAltTexts": [
+      "公式標準解答 1級・ハードウェアの基礎知識 大問2 問1 のタイムチャート"
+    ]
+  },
+  {
+    "id": "zenkou-joho-2022-early-joho-hardware-q06",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2022,
+    "season": "early",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "1級・ハードウェアの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "図のフリップフロップ回路の名称を解答群から選びなさい。",
+    "answer": "ア",
+    "explanation": "Q₃Q₂Q₁が000から111までを繰り返し、3個のFFが同じクロックで動くので、同期式8進カウンタである。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問2 問2",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第68回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=22",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=57",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 令和4年度前期 第68回情報技術検定試験 1級・ハードウェアの基礎知識 大問2 問2。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/68-hardware-q06.webp"
+    ],
+    "imageAltTexts": [
+      "3個のJKフリップフロップがCKを共有する回路図"
+    ],
+    "choices": {
+      "ア": "同期式8進カウンタ",
+      "イ": "16進カウンタ",
+      "ウ": "シフトレジスタ",
+      "エ": "全加算回路",
+      "オ": "非同期式カウンタ",
+      "カ": "同期式4進カウンタ"
+    },
+    "choiceExplanations": {
+      "ア": "3個のFFの共通クロックで、8通りの状態を順に繰り返す。",
+      "イ": "16通りの異なる状態を表すには4ビットが必要だが、この回路の出力は3ビット。",
+      "ウ": "入力ビットを順送りする回路であり、この結線は下位ビットに基づいて上位ビットを更新する。",
+      "エ": "入力ビット2個と桁上がり入力から和と桁上がりを出す組合せ回路を指す。",
+      "オ": "前段出力を次段のクロックにする構成だが、この図では各FFが同じCKを受ける。",
+      "カ": "4通りで一巡する構成だが、この回路では4回目でQ₃が1になり、さらにカウントが続く。"
+    },
+    "explanationCoverage": "full",
+    "officialAnswerNumber": "ア"
+  },
+  {
+    "id": "zenkou-joho-2022-early-joho-hardware-q07",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2022,
+    "season": "early",
+    "qNumber": 7,
+    "type": "descriptive",
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "1級・ハードウェアの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "Aの稼働率が93%、Bの稼働率が96%のとき、図の①並列、②直列のコンピュータシステム全体の稼働率を、百分率で小数第2位まで求めなさい。",
+    "answer": "① 99.72%　② 89.28%",
+    "explanation": "並列の場合は少なくとも片方が動けばよい。同時停止する確率0.07×0.04＝0.0028を1から引き、99.72%となる。直列は両方が稼働する必要があるため、0.93×0.96＝0.8928で89.28%。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問3 問1",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第68回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=23",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=57",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 令和4年度前期 第68回情報技術検定試験 1級・ハードウェアの基礎知識 大問3 問1。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/68-hardware-q07.webp"
+    ],
+    "imageAltTexts": [
+      "システムA、Bの並列接続①と直列接続②"
+    ],
+    "officialAnswerExample": true,
+    "modelAnswer": "① 99.72%　② 89.28%",
+    "scoringCriteria": "記入した解答を欄ごとに標準解答と照合する。"
+  },
+  {
+    "id": "zenkou-joho-2022-early-joho-hardware-q08",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2022,
+    "season": "early",
+    "qNumber": 8,
+    "type": "descriptive",
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "1級・ハードウェアの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "プロセッサの性能が15MIPSであるコンピュータで、60万個の命令のプログラムを実行した場合の処理時間は何秒か求めなさい。ただし、プロセッサの使用率を80%とし、他の要因で処理時間が遅くなることはないものとする。また、1MIPSは1秒間に100万個の命令を実行できる能力を意味している。",
+    "answer": "0.05 秒",
+    "explanation": "プログラムに使える処理能力は15×0.8＝12MIPS。命令数60万を毎秒1200万で割ると、処理時間は0.05秒となる。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問3 問2",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第68回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=23",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=57",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 令和4年度前期 第68回情報技術検定試験 1級・ハードウェアの基礎知識 大問3 問2。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "officialAnswerExample": true,
+    "modelAnswer": "0.05 秒",
+    "scoringCriteria": "記入した解答を欄ごとに標準解答と照合する。"
+  },
+  {
+    "id": "zenkou-joho-2022-early-joho-hardware-q09",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2022,
+    "season": "early",
+    "qNumber": 9,
+    "type": "descriptive",
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "1級・ハードウェアの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "プレゼンテーションに関する記述の①〜⑦に入るものを、添付の解答群から選びなさい。",
+    "answer": "① ウ、② ク、③ コ、④ カ、⑤ ケ、⑥ ア、⑦ キ",
+    "explanation": "聞き手の①興味や経験を②分析すると、話の③目標を決めやすい。話題と構成が決まったら④時間配分を考え、静止画や動画で情報を⑤視覚化する。手元を映す機器が⑥OHC（書画カメラ）、会場で画面を大きく投影する機器が⑦プロジェクタ。アクセントや敬語は話法に関わる語で、聞き手の調査や投影機器には当たらない。材料は説明を組み立てるために準備する側のもので、④は進行時間の割当てを指す。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問3 問3",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第68回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=23",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=57",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 令和4年度前期 第68回情報技術検定試験 1級・ハードウェアの基礎知識 大問3 問3。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/68-hardware-q09.webp"
+    ],
+    "imageAltTexts": [
+      "公式問題 1級・ハードウェアの基礎知識 大問3 問3 の設問と資料"
+    ],
+    "officialAnswerExample": true,
+    "modelAnswer": "① ウ、② ク、③ コ、④ カ、⑤ ケ、⑥ ア、⑦ キ",
+    "scoringCriteria": "記入した解答を欄ごとに標準解答と照合する。"
+  },
+  {
+    "id": "zenkou-joho-2022-early-joho-hardware-q10",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2022,
+    "season": "early",
+    "qNumber": 10,
+    "type": "descriptive",
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "1級・ハードウェアの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "アセンブリ言語の算術・論理演算と、掲載プログラムの実行について、①〜⑩に入る語句・数値を解答群から選びなさい。",
+    "answer": "① ヨ、② ユ、③ モ、④ ヤ、⑤ マ、⑥ ミ、⑦ キ、⑧ オ、⑨ ア、⑩ ス",
+    "explanation": "①加算・減算は算術演算、②ビットごとのAND・ORは論理演算。結果の状態は③フラグに入り、④符号、⑤零、⑥けたあふれがそれぞれSF、ZF、OFの設定条件となる。最初のADDA後にGR0は0＋6＝⑦6、最初のSUBA後にGR1は5−1＝⑧4。JPLは結果が正の間だけ戻るので、GR1が⑨0になった時点で6を5回足し終え、Cに⑩30を保存する。選択肢のシフトはビットを移動する操作で、ここで示された論理演算の組ではない。プログラムは命令の列、スーパーバイザーコールはOSの処理を呼び出すための命令を指す。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問4",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第68回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=24",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=57",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 令和4年度前期 第68回情報技術検定試験 1級・ハードウェアの基礎知識 大問4。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/68-hardware-q10.webp"
+    ],
+    "imageAltTexts": [
+      "公式問題 1級・ハードウェアの基礎知識 大問4 の設問と資料"
+    ],
+    "officialAnswerExample": true,
+    "modelAnswer": "① ヨ、② ユ、③ モ、④ ヤ、⑤ マ、⑥ ミ、⑦ キ、⑧ オ、⑨ ア、⑩ ス",
+    "scoringCriteria": "記入した解答を欄ごとに標準解答と照合する。"
+  },
+  {
+    "id": "zenkou-joho-2022-early-joho-hardware-q11",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2022,
+    "season": "early",
+    "qNumber": 11,
+    "type": "descriptive",
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "1級・ハードウェアの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "OSI参照モデル、LAN間の接続機器、TCP/IPに関する記述の①〜⑩を、公式解答群から選びなさい。",
+    "answer": "① ケ、② コ、③ キ、④ イ、⑤ ア、⑥ シ、⑦ ス、⑧ チ、⑨ タ、⑩ カ",
+    "explanation": "①開放型システム間相互接続がOSIで、下から②物理、データリンク、ネットワーク、③トランスポート、④セッション、プレゼンテーション、⑤アプリケーションの順になる。⑥ルータはネットワーク層で経路を選び、⑦ゲートウェイは異なるプロトコルの間で変換も行う。TCPは⑧第4層、IPは⑨第3層に対応し、送信する小単位は⑩パケット。リピータは信号を再生し、エンコーダは符号化を行う。ターミナルは端末、インターネットはネットワークまたはTCP/IPの層の呼び名であり、空欄のOSI層名ではない。試験日のTCP仕様はRFC 793。その後のRFC 9293でもTCPのトランスポート層での役割は同じである。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問5",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第68回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=25",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=57",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 令和4年度前期 第68回情報技術検定試験 1級・ハードウェアの基礎知識 大問5。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/68-hardware-q11.webp"
+    ],
+    "imageAltTexts": [
+      "公式問題 1級・ハードウェアの基礎知識 大問5 の設問と資料"
+    ],
+    "officialAnswerExample": true,
+    "modelAnswer": "① ケ、② コ、③ キ、④ イ、⑤ ア、⑥ シ、⑦ ス、⑧ チ、⑨ タ、⑩ カ",
+    "scoringCriteria": "記入した解答を欄ごとに標準解答と照合する。",
+    "officialReferenceUrls": [
+      "https://www.itu.int/rec/T-REC-X.200-199407-I/en",
+      "https://www.rfc-editor.org/info/rfc793/",
+      "https://www.rfc-editor.org/info/rfc9293/",
+      "https://www.rfc-editor.org/info/rfc791/"
+    ]
+  }
+]
