@@ -58,7 +58,11 @@ export function questionTitle(q: Question): string {
   const qualifier = q.session === "am1" && exam === "高度試験共通" ? q.exam.toUpperCase() : undefined;
   const printedNumber = questionNumberLabel(q).replace(/^問/, "");
   const numberedItem = /第(\d+)問\s*(.*)$/.exec(printedNumber);
-  const number = numberedItem ? "問" + numberedItem[1] + numberedItem[2] : "問" + printedNumber;
+  const qualifiedItem = /^(.+?)\s+(大問\d+)$/.exec(printedNumber);
+  // Keep the official number ahead of the language label when a title needs truncation.
+  const number = numberedItem ? "問" + numberedItem[1] + numberedItem[2]
+    : qualifiedItem ? `${qualifiedItem[2]} ${qualifiedItem[1]}`
+    : "問" + printedNumber;
   const maxSource = TITLE_MAX - TITLE_SEPARATOR.length - MIN_STEM;
   let source = [exam + edition, field, session, qualifier, number].filter(Boolean).join(" ");
   if (source.length > maxSource) {
