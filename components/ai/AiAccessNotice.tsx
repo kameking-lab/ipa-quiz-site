@@ -36,7 +36,7 @@ export function useAiQuota(feature: AiFeature, active = true) {
   useEffect(() => {
     if (!active) return;
     const update = () => { void refresh(); };
-    const membershipChanged = () => { membershipVersion.current++; update(); };
+    const membershipChanged = () => { membershipVersion.current += 1; update(); };
     void refresh();
     window.addEventListener("focus", update);
     window.addEventListener("pageshow", update);
@@ -46,7 +46,7 @@ export function useAiQuota(feature: AiFeature, active = true) {
       generation.current = generation.current + 1;
       window.removeEventListener("focus", update);
       window.removeEventListener("pageshow", update);
-      membershipVersion.current++;
+      membershipVersion.current += 1;
       window.removeEventListener("mobile:entitlement-changed", membershipChanged);
       window.removeEventListener(CHANNEL, update);
     };
