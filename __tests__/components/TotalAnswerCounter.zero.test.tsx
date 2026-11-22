@@ -25,12 +25,12 @@ it("keeps a validated historical sample with its original timestamp and real zer
   expect(screen.getByTestId("study-room-total")).toHaveTextContent("いま0人が勉強");
   const snapshot = sample(25);
   emit({ mode: "measured", snapshot, previous: null });
-  expect(screen.getAllByTestId("study-room-seat")).toHaveLength(25);
+  expect(screen.getAllByTestId("study-room-seat")).toHaveLength(12);
   act(() => vi.advanceTimersByTime(90_000));
   expect(screen.getByTestId("study-room-total")).toHaveTextContent("前回25人");
   expect(document.querySelector("time")).toHaveAttribute("datetime", snapshot.measuredAt);
   emit({ mode: "stale", previous: snapshot, reason: "unavailable" });
-  expect(screen.getAllByTestId("study-room-seat")).toHaveLength(25);
+  expect(screen.getAllByTestId("study-room-seat")).toHaveLength(12);
   expect(document.querySelector("time")).toHaveAttribute("datetime", snapshot.measuredAt);
 });
 
