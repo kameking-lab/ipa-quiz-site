@@ -521,7 +521,7 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   "tohan-chugoku-shikoku": async () => (await import("@/data/questions/tohan-chugoku-shikoku/release-papers.json")).default as unknown as Question[],
   "tohan-hokkaido-tohoku": async () => (await import("@/data/questions/tohan-hokkaido-tohoku/release-papers.json")).default as unknown as Question[],
   "tohan-kitakanto-koshinetsu": async () => (await import("@/data/questions/tohan-kitakanto-koshinetsu/release-papers.json")).default as unknown as Question[],
-  "tohan-kyushu-okinawa": async () => (await import("@/data/questions/tohan-kyushu-okinawa/release-papers.json")).default as unknown as Question[],
+  "tohan-kyushu-okinawa": async () => (await import("@/data/questions/tohan-kyushu-okinawa")).TOHAN_KYUSHU_OKINAWA_QUESTIONS,
   "tohan-tokai-hokuriku": async () => (await import("@/data/questions/tohan-tokai-hokuriku/release-papers.json")).default as unknown as Question[],
 };
 

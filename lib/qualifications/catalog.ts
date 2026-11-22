@@ -3286,13 +3286,13 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
 
     domain: "welfare", administrator: "都道府県（全国共通問題）",
 
-    officialQuestionsUrl: "https://www.fukushi.metro.tokyo.lg.jp/kourei/shikaku/r7_seitoukijyun",
+    officialQuestionsUrl: "https://www.fukushi.metro.tokyo.lg.jp/kourei/hoken/kaigo_lib/care/shikenjyouhou",
 
     officialReuseTermsUrl: "https://www.fukushi.metro.tokyo.lg.jp/kourei/shikaku/r7_seitoukijyun",
 
     status: "live",
 
-    reuseSummary: "第27回（令和6年度）・第28回（令和7年度）の各60問と、第26回（令和5年度）の介護支援分野24問、計144問を、公式正答と全選択肢の解説付きで収録。",
+    reuseSummary: "第24回（2021年度）から第28回（2025年度）までの全国共通問題を各60問収録。公式正答と解説を確認しながら演習できます。",
 
     attributionTemplate: "出典：第○回介護支援専門員実務研修受講試験 問題○（○○掲載）",
 
@@ -3861,7 +3861,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     administrator: "福岡県・沖縄県など",
     officialQuestionsUrl: "https://www.pref.fukuoka.lg.jp/contents/kakotorokuhanbaisyasiken.html",
     status: "live",
-    reuseSummary: "令和6・7年度の九州・沖縄共通問題を、公式正答と全選択肢の解説付きで演習できます。",
+    reuseSummary: "2021〜2025年度の試験問題を各120問収録。午前・午後の問題を、公式正答と選択肢ごとの解説付きで演習できます。",
     attributionTemplate: "出典：福岡県 令和○年度登録販売者試験（午前／午後）問○",
     remainingWork: [],
     officialReuseTermsUrl: "https://www.pref.fukuoka.lg.jp/contents/kakotorokuhanbaisyasiken.html",
