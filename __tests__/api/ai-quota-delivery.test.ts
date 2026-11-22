@@ -69,6 +69,38 @@ it("delivers and settles a free answer that reached the output limit", async () 
   expect(io.cost).toHaveBeenCalledOnce();
 });
 
+it("releases the free slot when the response body is cancelled before delivery", async () => {
+  const buffered = Promise.withResolvers<void>();
+  io.generate.mockImplementation(async function* ({ signal }) {
+    yield "未配信の途中回答";
+    const cancellation = new Promise<never>((_, reject) => {
+      signal?.addEventListener("abort", () => reject(signal.reason), { once: true });
+    });
+    buffered.resolve();
+    await cancellation;
+  });
+  io.settle.mockResolvedValue({ status: "released", remaining: 3, resetAt: Date.now() + 60_000 });
+  const reply = await send();
+  await buffered.promise;
+  await reply.body!.cancel();
+  expect(io.settle).toHaveBeenCalledExactlyOnceWith(expect.anything(), false);
+  expect(io.cost).toHaveBeenCalledOnce();
+});
+
+it("keeps the free slot confirmed when the response body is cancelled after delivery", async () => {
+  const finishCost = Promise.withResolvers<void>();
+  io.cost.mockReturnValue(finishCost.promise);
+  const reply = await send();
+  const reader = reply.body!.getReader();
+  const { value } = await reader.read();
+  expect(new TextDecoder().decode(value)).toBe("テストの回答");
+  const cancel = reader.cancel();
+  finishCost.resolve();
+  await cancel;
+  expect(io.settle).toHaveBeenCalledExactlyOnceWith(expect.anything(), true);
+  expect(io.cost).toHaveBeenCalledOnce();
+});
+
 it("withholds a free answer if the slot cannot be confirmed, while recording its cost", async () => {
   io.settle.mockRejectedValue(new Error("unavailable"));
   const text = await (await send()).text();
