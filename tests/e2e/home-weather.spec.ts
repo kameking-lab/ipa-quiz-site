@@ -39,6 +39,9 @@ test("adds weather after loading without moving the hero and reuses it for an ho
 });
 
 test("stops precipitation offscreen and respects reduced motion", async ({ page }) => {
+  // On an 844px-tall screen the short first-visit home can still show the
+  // bottom of the hero at maximum scroll.
+  await page.setViewportSize({ width: 390, height: 520 });
   await page.route("**/api/home/weather", route => route.fulfill({ json: { weather: "snow" } }));
   await page.goto("/");
   const layer = page.locator('[data-home-weather="snow"]');
@@ -46,6 +49,7 @@ test("stops precipitation offscreen and respects reduced motion", async ({ page 
   await expect(layer).toHaveAttribute("data-weather-moving", "");
   await expect.poll(() => fall.evaluate(el => getComputedStyle(el, "::before").animationPlayState)).toBe("running");
   await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+  await expect.poll(() => layer.evaluate(el => el.getBoundingClientRect().bottom)).toBeLessThanOrEqual(0);
   await expect(layer).not.toHaveAttribute("data-weather-moving");
   await expect.poll(() => fall.evaluate(el => getComputedStyle(el, "::before").animationPlayState)).toBe("paused");
   await page.evaluate(() => window.scrollTo(0, 0));
