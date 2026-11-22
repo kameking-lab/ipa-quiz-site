@@ -47,6 +47,8 @@ export const metadata: Metadata = {
   },
 };
 
+export const revalidate = 0;
+
 export default function FaqPage() {
   const faqs = aiAccessClaimsEnabled() ? FAQS.map(faq =>
     faq.question === "AI 解説の利用回数に制限はありますか？"

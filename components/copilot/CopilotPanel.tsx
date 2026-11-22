@@ -118,7 +118,7 @@ export function CopilotPanel({
   paper = false,
   focusRequest,
 }: Props) {
-  const { quota, denied: applyQuotaDenial } = useAiQuota("copilot");
+  const { quota, beginRequest, denials } = useAiQuota("copilot");
   const draftId = `copilot:${question.id}`;
   const [messages, setMessages] = React.useState<Message[]>([]);
   const [input, setInput] = React.useState(initialPrompt ?? "");
@@ -250,6 +250,7 @@ export function CopilotPanel({
           exam: question?.exam,
           quickAction: quickAction ?? null,
         });
+        const applyQuotaDenial = beginRequest();
         const res = await fetchWithAiGuestCookie("/api/copilot", {
           method: "POST",
           headers: { "content-type": "application/json", "X-Kakomon-AI-Consent": "20261103" },
@@ -382,7 +383,9 @@ export function CopilotPanel({
             type: isTimeout ? "timeout" : "server_error",
             retryFn: () => args && sendRef.current(args.text, args.quickAction),
           });
-        } else if (acc.trim() && !acc.includes("[応答の途中終了]")) {
+        } else if (acc.includes("[応答の途中終了]")) {
+          restoreDraft();
+        } else if (acc.trim()) {
           lastSendArgsRef.current = null;
           clearAiCheckoutDraft(draftId);
         }
@@ -459,7 +462,7 @@ export function CopilotPanel({
       isCorrect,
       profile,
       responseLength,
-      applyQuotaDenial, draftId,
+      beginRequest, draftId,
     ],
   );
 
@@ -490,7 +493,7 @@ export function CopilotPanel({
           <a href="/contact" target="_blank" rel="noopener noreferrer" className="inline-block min-h-11 py-2 underline">問い合わせ</a>
         </aside>
       )}
-      <AiAccessNotice quota={quota} draft={input} draftId={draftId}
+      <AiAccessNotice quota={quota} denials={denials} draft={input} draftId={draftId}
         returnTo={typeof window === "undefined" ? "" : window.location.pathname + window.location.search}
         onDismiss={() => inputRef.current?.focus()} />
       <form

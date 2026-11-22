@@ -154,6 +154,8 @@ const FAQS = [
   },
 ];
 
+export const revalidate = 0;
+
 export default function WhyKakomonAiPage() {
   const activeAiPolicy = aiAccessClaimsEnabled();
   const activeAiCopy = (activeAiPolicy ? AI_ACCESS_DESCRIPTION : LEGACY_AI_COPY) + " " + BROWSER_AUDIO_DESCRIPTION;
