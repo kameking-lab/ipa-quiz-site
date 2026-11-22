@@ -28,9 +28,21 @@ test.describe("search page: HTTP & structure", () => {
   });
 
 
-  // SearchClient uses useSearchParams() without Suspense, so state is driven
-  // by URL params via useEffect. Navigate directly to the search URL with a
-  // query param so the filter panel appears once React hydrates + useEffect runs.
+  test("a shared qualification search link fills the fields and shows matches", async ({ page }) => {
+    await suppressWelcomeModal(page);
+    const questionResults = page.waitForResponse(response => {
+      const url = new URL(response.url());
+      return url.pathname === "/api/search/questions" && url.searchParams.get("q") === "調理師";
+    });
+    await page.goto(`/search?${new URLSearchParams({ q: "調理師" })}`);
+    const qualifications = page.getByRole("list", { name: "資格の検索結果" });
+    await expect(page.getByRole("searchbox", { name: "資格名・略称で検索" })).toHaveValue("調理師");
+    await expect(qualifications.getByRole("link", { name: /調理師/ }).first()).toBeVisible();
+    await expect(page.getByRole("searchbox", { name: "キーワード", exact: true })).toHaveValue("調理師");
+    expect((await questionResults).ok()).toBe(true);
+    await expect(page.getByRole("region", { name: "検索結果" })).toBeVisible();
+  });
+
   test("/search filter panel appears after submitting a search term", async ({ page }) => {
     await suppressWelcomeModal(page);
     await page.goto("/search?q=SQL");
