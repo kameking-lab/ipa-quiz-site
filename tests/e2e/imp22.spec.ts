@@ -6,7 +6,7 @@ test("the qualification referral opens a prefilled plan that can be exported", a
   await page.goto("/?plan=fe&examDate=" + examDate + "&utm_source=tsugino");
   const sheet = page.getByRole("dialog", { name: "学習計画を作る" });
   await expect(sheet.getByLabel("受験日", { exact: true })).toHaveValue(examDate);
-  await expect(sheet.getByText("基本情報技術者", { exact: false }).first()).toBeVisible();
+  await expect(sheet.getByRole("combobox", { name: "受ける資格" })).toHaveValue("fe");
   await sheet.getByRole("button", { name: "この計画で始める" }).click();
   await expect(page.getByText("学習計画を作りました")).toBeVisible();
   const [download] = await Promise.all([
@@ -45,5 +45,6 @@ for (const exam of ["sc", "nw", "sa", "st", "kankoji2"]) {
     const question = page.locator('main a[href^="/q/' + exam + '/"]').first();
     const questionPath = await question.getAttribute("href");
     expect((await page.goto(questionPath!))?.ok()).toBe(true);
+    await expect(page).toHaveTitle(/答えと解説/);
   });
 }
