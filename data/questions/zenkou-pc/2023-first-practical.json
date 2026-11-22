@@ -1,0 +1,349 @@
+[
+  {
+    "id": "zenkou-pc-2023-first-pc-practical-1-q1",
+    "exam": "zenkou-pc",
+    "session": "pc-practical-1",
+    "year": 2023,
+    "season": "first",
+    "qNumber": 1,
+    "sourceExamYear": 2023,
+    "sourceExamSession": "第45回 1級・実技",
+    "officialQuestionLabel": "問1",
+    "subject": "データベース",
+    "category": "データベース",
+    "topicTags": [
+      "データベース",
+      "実技"
+    ],
+    "difficulty": 3,
+    "type": "descriptive",
+    "question": "表1「syouhin」と表2「zaiko」を結びつけるキー項目を、それぞれ答える。",
+    "answer": "hinban, id",
+    "officialAnswerNumber": "hinban, id",
+    "modelAnswer": ">hinban, id",
+    "modelAnswerAuthority": "official",
+    "officialAnswerExample": true,
+    "explanation": "商品表の hinban が品番。在庫表では id がその品番と対応する。zaiko と tekisei_zaiko に入るのは数量なので、照合キーにはならない。",
+    "scoringCriteria": "両方正解で10点。",
+    "hasImage": true,
+    "imageUrls": [
+      "/question-assets/zenkou-pc/45-practical-1-schema.webp",
+      "/question-assets/zenkou-pc/45-practical-1-question-1.webp"
+    ],
+    "imageAltTexts": [
+      "販売・在庫管理システムの設例と商品・在庫・売上テーブルの構造。",
+      "1級実技の問1の問題文と答案欄。"
+    ],
+    "answerImageUrls": [],
+    "answerImageAltTexts": [],
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/45pc_kekka.pdf#page=27",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/45pc_kekka.pdf#page=48",
+    "officialReferenceUrls": [
+      "https://zenkoukyo.or.jp/web/content/uploads/45pc_data.zip",
+      "https://zenkoukyo.or.jp/web/content/uploads/45pc_kekka.pdf#page=26",
+      "https://zenkoukyo.or.jp/web/content/uploads/45pc_kekka.pdf#page=49"
+    ],
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第45回パソコン利用技術検定試験」1級実技",
+    "license": "ZENKOUKYO-owner-authorized"
+  },
+  {
+    "id": "zenkou-pc-2023-first-pc-practical-1-q2",
+    "exam": "zenkou-pc",
+    "session": "pc-practical-1",
+    "year": 2023,
+    "season": "first",
+    "qNumber": 2,
+    "sourceExamYear": 2023,
+    "sourceExamSession": "第45回 1級・実技",
+    "officialQuestionLabel": "問2",
+    "subject": "データベース",
+    "category": "データベース",
+    "topicTags": [
+      "データベース",
+      "実技"
+    ],
+    "difficulty": 3,
+    "type": "descriptive",
+    "question": "表1「syouhin」のすべての項目を、genka が高い順に表示するSQL文を作成する。",
+    "answer": "SELECT *\nFROM syouhin\nORDER BY genka DESC;",
+    "officialAnswerNumber": "SELECT *\nFROM syouhin\nORDER BY genka DESC;",
+    "modelAnswer": "```sql\nSELECT *\nFROM syouhin\nORDER BY genka DESC;\n```",
+    "modelAnswerAuthority": "official",
+    "officialAnswerExample": true,
+    "explanation": "SELECT * で商品表の全列を取得し、原価を表す genka の降順に並べる。販売時の単価は tanka にある。",
+    "scoringCriteria": "20点。",
+    "hasImage": true,
+    "imageUrls": [
+      "/question-assets/zenkou-pc/45-practical-1-schema.webp",
+      "/question-assets/zenkou-pc/45-practical-1-question-2.webp"
+    ],
+    "imageAltTexts": [
+      "販売・在庫管理システムの設例と商品・在庫・売上テーブルの構造。",
+      "1級実技の問2の問題文と答案欄。"
+    ],
+    "answerImageUrls": [
+      "/question-assets/zenkou-pc/45-practical-1-result-2.webp"
+    ],
+    "answerImageAltTexts": [
+      "問2の公式実行結果。"
+    ],
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/45pc_kekka.pdf#page=27",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/45pc_kekka.pdf#page=48",
+    "officialReferenceUrls": [
+      "https://zenkoukyo.or.jp/web/content/uploads/45pc_data.zip",
+      "https://zenkoukyo.or.jp/web/content/uploads/45pc_kekka.pdf#page=26",
+      "https://zenkoukyo.or.jp/web/content/uploads/45pc_kekka.pdf#page=49"
+    ],
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第45回パソコン利用技術検定試験」1級実技",
+    "license": "ZENKOUKYO-owner-authorized"
+  },
+  {
+    "id": "zenkou-pc-2023-first-pc-practical-1-q3",
+    "exam": "zenkou-pc",
+    "session": "pc-practical-1",
+    "year": 2023,
+    "season": "first",
+    "qNumber": 3,
+    "sourceExamYear": 2023,
+    "sourceExamSession": "第45回 1級・実技",
+    "officialQuestionLabel": "問3",
+    "subject": "データベース",
+    "category": "データベース",
+    "topicTags": [
+      "データベース",
+      "実技"
+    ],
+    "difficulty": 3,
+    "type": "descriptive",
+    "question": "2023/07/02 の u_id、hinmei、tanka、uriagebi を u_id の昇順で表示するSQL文を作成する。",
+    "answer": "SELECT uriage.u_id, syouhin.hinmei, syouhin.tanka, uriage.uriagebi\nFROM syouhin, uriage\nWHERE syouhin.hinban = uriage.hinban AND uriage.uriagebi = #2023/07/02#\nORDER BY uriage.u_id ASC;",
+    "officialAnswerNumber": "SELECT uriage.u_id, syouhin.hinmei, syouhin.tanka, uriage.uriagebi\nFROM syouhin, uriage\nWHERE syouhin.hinban = uriage.hinban AND uriage.uriagebi = #2023/07/02#\nORDER BY uriage.u_id ASC;",
+    "modelAnswer": "```sql\nSELECT uriage.u_id, syouhin.hinmei, syouhin.tanka, uriage.uriagebi\nFROM syouhin, uriage\nWHERE syouhin.hinban = uriage.hinban AND uriage.uriagebi = #2023/07/02#\nORDER BY uriage.u_id ASC;\n```",
+    "modelAnswerAuthority": "official",
+    "officialAnswerExample": true,
+    "explanation": "売上表には商品名と単価がないので、品番 hinban で商品表を関連づける。売上日に条件を付け、レシート番号 u_id を昇順に並べる。公式解答例は日付を # で囲んでいる。",
+    "scoringCriteria": "20点。公式解答例では ASC を省略可能。",
+    "hasImage": true,
+    "imageUrls": [
+      "/question-assets/zenkou-pc/45-practical-1-schema.webp",
+      "/question-assets/zenkou-pc/45-practical-1-question-3.webp"
+    ],
+    "imageAltTexts": [
+      "販売・在庫管理システムの設例と商品・在庫・売上テーブルの構造。",
+      "1級実技の問3の問題文と答案欄。"
+    ],
+    "answerImageUrls": [
+      "/question-assets/zenkou-pc/45-practical-1-result-3.webp"
+    ],
+    "answerImageAltTexts": [
+      "問3の公式実行結果。"
+    ],
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/45pc_kekka.pdf#page=27",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/45pc_kekka.pdf#page=48",
+    "officialReferenceUrls": [
+      "https://zenkoukyo.or.jp/web/content/uploads/45pc_data.zip",
+      "https://zenkoukyo.or.jp/web/content/uploads/45pc_kekka.pdf#page=26",
+      "https://zenkoukyo.or.jp/web/content/uploads/45pc_kekka.pdf#page=49"
+    ],
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第45回パソコン利用技術検定試験」1級実技",
+    "license": "ZENKOUKYO-owner-authorized"
+  },
+  {
+    "id": "zenkou-pc-2023-first-pc-practical-1-q4",
+    "exam": "zenkou-pc",
+    "session": "pc-practical-1",
+    "year": 2023,
+    "season": "first",
+    "qNumber": 4,
+    "sourceExamYear": 2023,
+    "sourceExamSession": "第45回 1級・実技",
+    "officialQuestionLabel": "問4",
+    "subject": "データベース",
+    "category": "データベース",
+    "topicTags": [
+      "データベース",
+      "実技"
+    ],
+    "difficulty": 3,
+    "type": "descriptive",
+    "question": "zaiko から tekisei_zaiko を引いた値を sabun とし、sabun が0以下の hinmei、tanka、sabun を差の降順で表示するSQL文を作成する。",
+    "answer": "SELECT syouhin.hinmei, syouhin.tanka, zaiko.zaiko - zaiko.tekisei_zaiko AS sabun\nFROM syouhin, zaiko\nWHERE syouhin.hinban = zaiko.id AND zaiko.zaiko - zaiko.tekisei_zaiko <=0\nORDER BY zaiko.zaiko - zaiko.tekisei_zaiko DESC;",
+    "officialAnswerNumber": "SELECT syouhin.hinmei, syouhin.tanka, zaiko.zaiko - zaiko.tekisei_zaiko AS sabun\nFROM syouhin, zaiko\nWHERE syouhin.hinban = zaiko.id AND zaiko.zaiko - zaiko.tekisei_zaiko <=0\nORDER BY zaiko.zaiko - zaiko.tekisei_zaiko DESC;",
+    "modelAnswer": "```sql\nSELECT syouhin.hinmei, syouhin.tanka, zaiko.zaiko - zaiko.tekisei_zaiko AS sabun\nFROM syouhin, zaiko\nWHERE syouhin.hinban = zaiko.id AND zaiko.zaiko - zaiko.tekisei_zaiko <=0\nORDER BY zaiko.zaiko - zaiko.tekisei_zaiko DESC;\n```",
+    "modelAnswerAuthority": "official",
+    "officialAnswerExample": true,
+    "explanation": "在庫表と商品表を id と hinban で結合し、実在庫から適正在庫を引く。0以下の行を降順にすると、適正在庫ちょうどの行が先に、在庫不足の行が後に並ぶ。",
+    "scoringCriteria": "25点。",
+    "hasImage": true,
+    "imageUrls": [
+      "/question-assets/zenkou-pc/45-practical-1-schema.webp",
+      "/question-assets/zenkou-pc/45-practical-1-question-4.webp"
+    ],
+    "imageAltTexts": [
+      "販売・在庫管理システムの設例と商品・在庫・売上テーブルの構造。",
+      "1級実技の問4の問題文と答案欄。"
+    ],
+    "answerImageUrls": [
+      "/question-assets/zenkou-pc/45-practical-1-result-4.webp"
+    ],
+    "answerImageAltTexts": [
+      "問4の公式実行結果。"
+    ],
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/45pc_kekka.pdf#page=27",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/45pc_kekka.pdf#page=48",
+    "officialReferenceUrls": [
+      "https://zenkoukyo.or.jp/web/content/uploads/45pc_data.zip",
+      "https://zenkoukyo.or.jp/web/content/uploads/45pc_kekka.pdf#page=26",
+      "https://zenkoukyo.or.jp/web/content/uploads/45pc_kekka.pdf#page=49"
+    ],
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第45回パソコン利用技術検定試験」1級実技",
+    "license": "ZENKOUKYO-owner-authorized"
+  },
+  {
+    "id": "zenkou-pc-2023-first-pc-practical-1-q5",
+    "exam": "zenkou-pc",
+    "session": "pc-practical-1",
+    "year": 2023,
+    "season": "first",
+    "qNumber": 5,
+    "sourceExamYear": 2023,
+    "sourceExamSession": "第45回 1級・実技",
+    "officialQuestionLabel": "問5",
+    "subject": "データベース",
+    "category": "データベース",
+    "topicTags": [
+      "データベース",
+      "実技"
+    ],
+    "difficulty": 3,
+    "type": "descriptive",
+    "question": "u_id ごとの売上合計を uriage とし、u_id、uriagebi、uriage を売上合計が低い順で表示するSQL文を作成する。",
+    "answer": "SELECT uriage.u_id, uriage.uriagebi, SUM(syouhin.tanka) AS uriage\nFROM syouhin, uriage\nWHERE syouhin.hinban = uriage.hinban\nGROUP BY uriage.u_id, uriage.uriagebi\nORDER BY SUM(syouhin.tanka) ASC;",
+    "officialAnswerNumber": "SELECT uriage.u_id, uriage.uriagebi, SUM(syouhin.tanka) AS uriage\nFROM syouhin, uriage\nWHERE syouhin.hinban = uriage.hinban\nGROUP BY uriage.u_id, uriage.uriagebi\nORDER BY SUM(syouhin.tanka) ASC;",
+    "modelAnswer": "```sql\nSELECT uriage.u_id, uriage.uriagebi, SUM(syouhin.tanka) AS uriage\nFROM syouhin, uriage\nWHERE syouhin.hinban = uriage.hinban\nGROUP BY uriage.u_id, uriage.uriagebi\nORDER BY SUM(syouhin.tanka) ASC;\n```",
+    "modelAnswerAuthority": "official",
+    "officialAnswerExample": true,
+    "explanation": "売上表の1行は商品1個の販売を表す。品番で商品表と結合し、レシート番号・売上日ごとに単価を合計すると売上額になる。集計後は合計値が小さい順に並べる。",
+    "scoringCriteria": "25点。公式解答例では ASC を省略可能。",
+    "hasImage": true,
+    "imageUrls": [
+      "/question-assets/zenkou-pc/45-practical-1-schema.webp",
+      "/question-assets/zenkou-pc/45-practical-1-question-5.webp"
+    ],
+    "imageAltTexts": [
+      "販売・在庫管理システムの設例と商品・在庫・売上テーブルの構造。",
+      "1級実技の問5の問題文と答案欄。"
+    ],
+    "answerImageUrls": [
+      "/question-assets/zenkou-pc/45-practical-1-result-5.webp"
+    ],
+    "answerImageAltTexts": [
+      "問5の公式実行結果。"
+    ],
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/45pc_kekka.pdf#page=27",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/45pc_kekka.pdf#page=48",
+    "officialReferenceUrls": [
+      "https://zenkoukyo.or.jp/web/content/uploads/45pc_data.zip",
+      "https://zenkoukyo.or.jp/web/content/uploads/45pc_kekka.pdf#page=26",
+      "https://zenkoukyo.or.jp/web/content/uploads/45pc_kekka.pdf#page=49"
+    ],
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第45回パソコン利用技術検定試験」1級実技",
+    "license": "ZENKOUKYO-owner-authorized"
+  },
+  {
+    "id": "zenkou-pc-2023-first-pc-practical-2-q1",
+    "exam": "zenkou-pc",
+    "session": "pc-practical-2",
+    "year": 2023,
+    "season": "first",
+    "qNumber": 1,
+    "sourceExamYear": 2023,
+    "sourceExamSession": "第45回 2級・実技",
+    "officialQuestionLabel": "実技問題",
+    "subject": "表計算",
+    "category": "表計算",
+    "topicTags": [
+      "表計算",
+      "実技"
+    ],
+    "difficulty": 2,
+    "type": "descriptive",
+    "question": "原本の表に従って「エネルギー源別最終エネルギー消費」の表とグラフを作成する。H〜K列、12行目、グラフ、A4横1枚の印刷設定を原本の指定に合わせる。",
+    "answer": "H5:K5  1366 / 1118 / 6388 / 10.16%\nH6:K6  6504 / 5712 / 30451 / 46.33%\nH7:K7  62 / 55 / 295 / 0.46%\nH8:K8  1102 / 992 / 5292 / 8.41%\nH9:K9  3473 / 3289 / 16859 / 27.21%\nH10:K10  976 / 858 / 4610 / 7.08%\nH11:K11  42 / 40 / 207 / 0.34%\nC12:G12  13499 / 13233 / 12955 / 12086 / 12329\n2017〜2021年度の7系列を、縦軸0〜7000 × 10¹⁵ Jのマーカー付き折れ線グラフで表示する。",
+    "officialAnswerNumber": "H5:K5  1366 / 1118 / 6388 / 10.16%\nH6:K6  6504 / 5712 / 30451 / 46.33%\nH7:K7  62 / 55 / 295 / 0.46%\nH8:K8  1102 / 992 / 5292 / 8.41%\nH9:K9  3473 / 3289 / 16859 / 27.21%\nH10:K10  976 / 858 / 4610 / 7.08%\nH11:K11  42 / 40 / 207 / 0.34%\nC12:G12  13499 / 13233 / 12955 / 12086 / 12329\n2017〜2021年度の7系列を、縦軸0〜7000 × 10¹⁵ Jのマーカー付き折れ線グラフで表示する。",
+    "modelAnswer": "```text\nH5:K5  1366 / 1118 / 6388 / 10.16%\nH6:K6  6504 / 5712 / 30451 / 46.33%\nH7:K7  62 / 55 / 295 / 0.46%\nH8:K8  1102 / 992 / 5292 / 8.41%\nH9:K9  3473 / 3289 / 16859 / 27.21%\nH10:K10  976 / 858 / 4610 / 7.08%\nH11:K11  42 / 40 / 207 / 0.34%\nC12:G12  13499 / 13233 / 12955 / 12086 / 12329\n```\n\n2017〜2021年度の7系列を、縦軸0〜7000 × 10¹⁵ Jのマーカー付き折れ線グラフで表示する。",
+    "modelAnswerAuthority": "official",
+    "officialAnswerExample": true,
+    "explanation": "H5 は MAX(C5:G5)、I5 は MIN(C5:G5)、J5 は SUM(C5:G5) で求める。K5 は G5/$G$12 とし、分母の番地を固定して下へコピーする。C12 は SUM(C5:C11) としてG列まで横にコピーする。グラフの横軸は年度、縦軸は消費量。年度合計の行を系列に加えない。",
+    "scoringCriteria": "公式配点は表65点、グラフ35点。表は受検番号10点、表題5点、入力データ15点、計算データ25点、罫線10点。グラフは種類15点、表題5点、軸目盛15点。",
+    "hasImage": true,
+    "imageUrls": [
+      "/question-assets/zenkou-pc/45-practical-2-question.webp"
+    ],
+    "imageAltTexts": [
+      "2級実技の作成条件、2017〜2021年度の元データと折れ線グラフ見本。"
+    ],
+    "answerImageUrls": [
+      "/question-assets/zenkou-pc/45-practical-2-answer.webp"
+    ],
+    "answerImageAltTexts": [
+      "公式の表計算完成例。計算済みセルと折れ線グラフ。"
+    ],
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/45pc_kekka.pdf#page=37",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/45pc_kekka.pdf#page=52",
+    "officialReferenceUrls": [
+      "https://zenkoukyo.or.jp/web/content/uploads/45pc_kekka.pdf#page=51",
+      "https://zenkoukyo.or.jp/web/content/uploads/45pc_kekka.pdf#page=53"
+    ],
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第45回パソコン利用技術検定試験」2級実技",
+    "license": "ZENKOUKYO-owner-authorized"
+  },
+  {
+    "id": "zenkou-pc-2023-first-pc-practical-3-q1",
+    "exam": "zenkou-pc",
+    "session": "pc-practical-3",
+    "year": 2023,
+    "season": "first",
+    "qNumber": 1,
+    "sourceExamYear": 2023,
+    "sourceExamSession": "第45回 3級・実技",
+    "officialQuestionLabel": "実技問題",
+    "subject": "ワープロ",
+    "category": "ワープロ",
+    "topicTags": [
+      "ワープロ",
+      "実技"
+    ],
+    "difficulty": 2,
+    "type": "descriptive",
+    "question": "原本の初期設定・書式・配置に従い、ワープロソフトで「三角比の定義」の文書を作る。本文、直角三角形の図、三角比の表をA4縦1枚に収める。",
+    "answer": "三角比の定義\n図1 直角三角形\n表1 三角比の定義\nsin θ = a/c\ncos θ = b/c\ntan θ = a/b",
+    "officialAnswerNumber": "三角比の定義\n図1 直角三角形\n表1 三角比の定義\nsin θ = a/c\ncos θ = b/c\ntan θ = a/b",
+    "modelAnswer": "三角比の定義\n\n- 図1 直角三角形\n- 表1 三角比の定義\n- sin θ = a/c、cos θ = b/c、tan θ = a/b",
+    "modelAnswerAuthority": "official",
+    "officialAnswerExample": true,
+    "explanation": "受検番号と検定年月日を指定行に右寄せし、5行目の表題は28ポイントの太字で中央に置く。図の直角はC、角θはA。斜辺c・高さa・底辺bを対応する辺に示す。図の番号と表題は図の下、表の番号と表題は表の上に置き、表のセル内は縦横とも中央に揃える。",
+    "scoringCriteria": "公式配点は初期設定10点、受検番号・検定年月日10点、表題5点、本文15点、図30点、表30点。",
+    "hasImage": true,
+    "imageUrls": [
+      "/question-assets/zenkou-pc/45-practical-3-question.webp"
+    ],
+    "imageAltTexts": [
+      "3級実技の初期設定、本文、直角三角形、三角比の表、配置見本。"
+    ],
+    "answerImageUrls": [
+      "/question-assets/zenkou-pc/45-practical-3-answer.webp"
+    ],
+    "answerImageAltTexts": [
+      "公式ワープロ解答例。三角形と三角比の表の完成配置。"
+    ],
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/45pc_kekka.pdf#page=46",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/45pc_kekka.pdf#page=56",
+    "officialReferenceUrls": [
+      "https://zenkoukyo.or.jp/web/content/uploads/45pc_kekka.pdf#page=55",
+      "https://zenkoukyo.or.jp/web/content/uploads/45pc_kekka.pdf#page=57"
+    ],
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第45回パソコン利用技術検定試験」3級実技",
+    "license": "ZENKOUKYO-owner-authorized"
+  }
+]

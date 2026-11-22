@@ -1,0 +1,177 @@
+[
+  {
+    "id": "zenkou-joho-2023-early-joho-programming-q01",
+    "exam": "zenkou-joho",
+    "session": "joho-programming",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 1,
+    "category": "1級・プログラミングの基礎知識",
+    "topicTags": [
+      "モンテカルロ法"
+    ],
+    "difficulty": 2,
+    "question": "次の流れ図は，モンテカルロ法により円周率πの近似値を求めて，結果を表示するものである。①～⑤の空欄を埋めて流れ図を完成させなさい。",
+    "explanation": "cは扇形に入った点の個数なので0から始める。単位円上または内側にある条件はx²＋y²≦1で、当たったときだけcを1増やす。正方形に打ったn点のうち当たった割合c/nは四分円の面積π/4に近づくため、4倍するとπを推定できる。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問1",
+    "sourceExamSession": "第70回 1級・プログラミングの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=29",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=59",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・プログラミングの基礎知識 大問1。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-programming-p29-q01.webp"
+    ],
+    "imageAltTexts": [
+      "モンテカルロ法で円周率を近似する原文、四分円と正方形、空欄①～⑤を含む流れ図。"
+    ],
+    "type": "descriptive",
+    "answer": "① 0\n② x² + y² ≤ 1\n③ c + 1\n④ n\n⑤ 4",
+    "modelAnswer": "① 0\n② x² + y² ≤ 1\n③ c + 1\n④ n\n⑤ 4",
+    "scoringCriteria": "標準解答以外でも論理的に正しく、無駄な繰り返しや意味のない代入がなければ正解。",
+    "modelAnswerAuthority": "official",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-programming-q02",
+    "exam": "zenkou-joho",
+    "session": "joho-programming",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 2,
+    "category": "1級・プログラミングの基礎知識",
+    "topicTags": [
+      "ユークリッドの互除法"
+    ],
+    "difficulty": 2,
+    "question": "次の流れ図は，２つの分数 b/a と d/c を入力し，ユークリッドの互除法により，分母の最大公約数GCDを求めて，２つの分数を通分して，結果を表示するものである。①～⑤の空欄を埋めて流れ図を完成させなさい。",
+    "explanation": "分母aとcの積をGCDで割ると最小公倍数LCMになる。b/aの分母をLCMに揃えると分子はb×LCM/a。関数funcは大きい方から小さい方を引いても最大公約数が変わらない性質を使い、pとqが等しくなった時点でその値を返す。PDF p.19の訂正文は①に「f2 ← 2」と記すが、p.30の流れ図にf2はなく、p.59の標準解答「a × c」を掲載している。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問2",
+    "sourceExamSession": "第70回 1級・プログラミングの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=30",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=59",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・プログラミングの基礎知識 大問2。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-programming-p30-q02.webp"
+    ],
+    "imageAltTexts": [
+      "分数を通分する主処理と、引き算を繰り返して最大公約数を求める関数の流れ図。"
+    ],
+    "type": "descriptive",
+    "answer": "① a × c\n② a\n③ ＝\n④ p − q\n⑤ q − p",
+    "modelAnswer": "① a × c\n② a\n③ ＝\n④ p − q\n⑤ q − p",
+    "scoringCriteria": "標準解答以外でも論理的に正しく、無駄な繰り返しや意味のない代入がなければ正解。",
+    "modelAnswerAuthority": "official",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-programming-q03",
+    "exam": "zenkou-joho",
+    "session": "joho-programming",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 3,
+    "category": "1級・プログラミングの基礎知識",
+    "topicTags": [
+      "二分法"
+    ],
+    "difficulty": 2,
+    "question": "次の流れ図は，二分法により1より大きい実数aの立方根を求めるものである。①～⑤の空欄を埋めて流れ図を完成させなさい。",
+    "explanation": "aが1より大きければf(1)=1−aは負でf(a)=a³−aは正となり、区間内に立方根がある。試行を重ねるごとにjを1増やす。公式解答の②〜④はそのまま掲載している。本文どおりに区間を絞ると、yp×yr<0のときは左半分を残すq←r、そうでなければ右半分を残すp←rとなり、図の各分岐に対する③と④の公式解答とは逆になる。停止条件も、区間幅がEPS未満、またはyr=0のどちらかで止まるようにすると本文の説明に合う。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問3",
+    "sourceExamSession": "第70回 1級・プログラミングの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=31",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=59",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・プログラミングの基礎知識 大問3。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-programming-p31-q03.webp"
+    ],
+    "imageAltTexts": [
+      "立方根を挟む区間を二等分する流れ図、曲線 y=x³−a と中点の説明。"
+    ],
+    "type": "descriptive",
+    "answer": "① a ＞ 1\n② yr ＝ 0\n③ q ← r\n④ p ← r\n⑤ j + 1",
+    "modelAnswer": "① a ＞ 1\n② yr ＝ 0\n③ q ← r\n④ p ← r\n⑤ j + 1",
+    "scoringCriteria": "標準解答以外でも論理的に正しく、無駄な繰り返しや意味のない代入がなければ正解。",
+    "modelAnswerAuthority": "official",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-programming-q04",
+    "exam": "zenkou-joho",
+    "session": "joho-programming",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 4,
+    "category": "1級・プログラミングの基礎知識",
+    "topicTags": [
+      "C言語・2進変換"
+    ],
+    "difficulty": 2,
+    "question": "次のプログラムは，自然数（今回は65535以下の正の整数）をキーボードから入力し，２進数に変換し出力するものである。①～⑤の空欄を埋めてプログラムを完成させなさい。",
+    "explanation": "iを1ずつ減らして配列を右から左へ初期化し、添字を5で割った余りが4の位置だけ空白にする。decを2で割った余りが1のとき、その桁を1に書き換える。商を次のdecとし、空白の位置ではもう1回iを減らす。最後はヌル文字までを文字列として出力するのでprintfに渡すのはcode。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問4",
+    "sourceExamSession": "第70回 1級・プログラミングの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=32",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=59",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・プログラミングの基礎知識 大問4。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-programming-p32-q04.webp"
+    ],
+    "imageAltTexts": [
+      "4ビットごとに空白を入れて2進数を表示するCプログラムと、2で割る筆算例。"
+    ],
+    "type": "descriptive",
+    "answer": "① i-- または i = i − 1\n② i%5 == 4\n③ dec\n④ 2\n⑤ code",
+    "modelAnswer": "① i-- または i = i − 1\n② i%5 == 4\n③ dec\n④ 2\n⑤ code",
+    "scoringCriteria": "標準解答以外でも論理的に正しく、無駄な繰り返しや意味のない代入がなければ正解。",
+    "modelAnswerAuthority": "official",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-programming-q05",
+    "exam": "zenkou-joho",
+    "session": "joho-programming",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 5,
+    "category": "1級・プログラミングの基礎知識",
+    "topicTags": [
+      "C言語・台形公式"
+    ],
+    "difficulty": 2,
+    "question": "次のプログラムは，台形近似を利用して定積分 ∫₀¹ 4/(x²+1) dx の近似値を求めるプログラムである。①～⑤の空欄を埋めて，プログラムを完成させなさい。",
+    "explanation": "積分する関数をf(x)として定義する。分割数が負の場合はcontinueで入力へ戻り、0の場合は既存のbreakで終了する。幅1の区間をkubun等分して刻み幅h=1/kubunを作り、左端の高さy0を得た後にxをhだけ進めて右端の高さy1を取る。台形の面積は両端の高さの平均(y0+y1)/2.0に幅hを掛けて求める。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問5",
+    "sourceExamSession": "第70回 1級・プログラミングの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=33",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=59",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・プログラミングの基礎知識 大問5。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-programming-p33-q05.webp"
+    ],
+    "imageAltTexts": [
+      "定積分を台形の面積の合計で近似するCプログラムと、区間を等分したグラフ。"
+    ],
+    "type": "descriptive",
+    "answer": "① f(x)\n② continue\n③ kubun\n④ y1\n⑤ h",
+    "modelAnswer": "① f(x)\n② continue\n③ kubun\n④ y1\n⑤ h",
+    "scoringCriteria": "標準解答以外でも論理的に正しく、無駄な繰り返しや意味のない代入がなければ正解。",
+    "modelAnswerAuthority": "official",
+    "officialAnswerExample": true
+  }
+]

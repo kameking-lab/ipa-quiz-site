@@ -402,6 +402,9 @@ export default async function QuestionPage({
         )}
         <QuestionSourcePresentation question={q} phase="before" />
         <QuestionBody text={q.question} />
+        {q.questionAudioUrl ? (
+          <audio key={q.id} src={q.questionAudioUrl} controls preload="none" aria-label="聞き取り音声" className="my-3 w-full" />
+        ) : null}
         <QuestionFigures question={q} />
       </section>
 
@@ -435,7 +438,7 @@ export default async function QuestionPage({
 
       {selfReviewed && (
         <div className="mt-5">
-          <DescriptiveAnswerCard question={q} />
+          <DescriptiveAnswerCard question={q} showExplanation={false} />
         </div>
       )}
 
