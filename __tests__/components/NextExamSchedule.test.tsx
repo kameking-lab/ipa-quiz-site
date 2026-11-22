@@ -22,6 +22,7 @@ it("shows the announced future phases and deadline from the official source", as
   expect(screen.getByText("科目B")).toBeVisible();
   const dates = [...container.querySelectorAll("time")].map(time => time.dateTime);
   expect(dates).toEqual(["2027-02-20", "2027-03-02", "2027-03-16", "2027-03-28", "2027-02-27"]);
+  expect(screen.queryByRole("button", { name: "この日で学習計画を作る" })).not.toBeInTheDocument();
   expect(screen.getByRole("link", { name: "申込方法は次の資格で確認" })).toHaveAttribute("href",
     "https://tsugino-shikaku.jp/shikaku/sc?utm_source=kakomon&utm_campaign=exam_schedule");
 });

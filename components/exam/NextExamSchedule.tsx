@@ -4,7 +4,8 @@ import { Suspense, useEffect, useState, useSyncExternalStore } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { PlanCreateSheet } from "@/components/home/pace/PlanCreateSheet";
 import { japanDate } from "@/lib/home/featured-exams";
-import { examTopPlanDate, planCreatedHref, tsuginoQualificationHref } from "@/lib/study-plan/next-qualification";
+import { examDateFromSearch, examTopPlanDate, nextDatedSession, planCreatedHref, tsuginoQualificationHref } from "@/lib/study-plan/next-qualification";
+import { dayNumber } from "@/lib/study-plan/pace";
 import { listPacePlans } from "@/lib/study-plan/pace-storage";
 import { qualificationIdsForExam, type ExamSchedule } from "@/lib/study-plan/schedule";
 import { examLabel } from "@/lib/utils";
@@ -18,13 +19,14 @@ function subscribeToPlans(refresh: () => void) {
 }
 
 const serverPlanStatus = () => null;
+const emptySearch = new URLSearchParams();
 
 export function NextExamSchedule({ exam }: { exam: string }) {
   return <Suspense><ExamScheduleRow key={exam} exam={exam} /></Suspense>;
 }
 
 function ExamScheduleRow({ exam }: { exam: string }) {
-  const search = useSearchParams();
+  const search = useSearchParams() ?? emptySearch;
   const hasPlan = useSyncExternalStore(subscribeToPlans,
     () => listPacePlans().some(plan => plan.exam === exam), serverPlanStatus);
   const [schedule, setSchedule] = useState<ExamSchedule>();
@@ -43,7 +45,34 @@ function ExamScheduleRow({ exam }: { exam: string }) {
 
   if (hasPlan !== false) return null;
   const sessions = schedule?.exam === exam && schedule.source === "tsugino" ? schedule.sessions : [];
-  const date = examTopPlanDate(exam, search, sessions, japanDate(new Date()));
+  const today = japanDate(new Date());
+  const date = examTopPlanDate(exam, search, sessions, today);
+  const upcoming = nextDatedSession(sessions, today);
+  const isPeriod = upcoming && (upcoming.datePrecision === "month" || upcoming.examPhaseWindows?.length ||
+    (upcoming.examDateEnd && upcoming.examDateEnd !== upcoming.examDate));
+
+  if (isPeriod && upcoming.examDate && upcoming.qualificationId && !examDateFromSearch(search, today) &&
+      (!date || upcoming.examDate <= date.examDate)) {
+    const start = upcoming.datePrecision === "month" ? upcoming.examDate.slice(0, 7) : upcoming.examDate;
+    const windows = upcoming.examPhaseWindows?.length ? upcoming.examPhaseWindows : [
+      { label: "", start, end: upcoming.examDateEnd === upcoming.examDate ? null : upcoming.examDateEnd },
+    ];
+    const deadline = upcoming.applicationEstimated ? null : upcoming.applicationDeadline;
+    const remaining = deadline ? dayNumber(deadline)! - dayNumber(today)! : null;
+
+    return <section className="my-4 border-t border-border text-muted-foreground" aria-label="試験日程">
+      <p className="text-sm font-medium">次回の試験日</p>
+      {windows.map(window => <p className="mt-1 text-sm tabular-nums" key={window.label + window.start}>
+        {window.label && <span className="mr-1">{window.label}</span>}
+        <time dateTime={window.start}>{window.start}</time>
+        {window.end && window.end !== window.start && <>〜<time dateTime={window.end}>{window.end}</time></>}
+      </p>)}
+      {deadline && remaining !== null && <p className="mt-1 text-sm">申込締切 <time dateTime={deadline}>{deadline}</time>
+        {remaining === 0 ? "（今日まで）" : remaining > 0 ? `（あと${remaining}日）` : "（受付終了）"}</p>}
+      <ScheduleLink qualificationId={upcoming.qualificationId} />
+    </section>;
+  }
+
   if (!date) return null;
   const { examDate, daysUntil, qualificationId } = date;
   const [, month, day] = examDate.split("-").map(Number);
@@ -53,9 +82,13 @@ function ExamScheduleRow({ exam }: { exam: string }) {
       <p className="whitespace-nowrap text-sm tabular-nums">試験日 <time dateTime={examDate}>{month}月{day}日</time>（あと{daysUntil}日）</p>
       <ExamPlanButton exam={exam} examDate={examDate} />
     </div>
-    <a className="study-focus inline-flex min-h-8 items-center rounded text-xs underline underline-offset-4"
-      href={tsuginoQualificationHref(qualificationId, "exam_schedule")}>申込方法は次の資格で確認</a>
+    <ScheduleLink qualificationId={qualificationId} />
   </section>;
+}
+
+function ScheduleLink({ qualificationId }: { qualificationId: string | null }) {
+  return <a className="study-focus inline-flex min-h-8 items-center rounded text-xs underline underline-offset-4"
+    href={tsuginoQualificationHref(qualificationId, "exam_schedule")}>申込方法は次の資格で確認</a>;
 }
 
 function ExamPlanButton({ exam, examDate }: { exam: string; examDate: string }) {
