@@ -137,11 +137,11 @@ const nextConfig: NextConfig = {
     // copilot search index and local audit logs are not needed and pushed the function
     // past Vercel's 250MB limit (265MB) once the question corpus grew.
     "/api/copilot/exam-library": ["./generated/copilot/**/*"],
-    "/api/og": [`./${QUESTION_CORPUS_DIR}/**/*`],
   },
   outputFileTracingIncludes: {
     "/sw.js": ["./lib/pwa/sw.js"],
-    "/*": [`./${QUESTION_CORPUS_DIR}/**/*`],
+    // OG images are generated from their own assets and have no question corpus dependency.
+    "!/api/og": [`./${QUESTION_CORPUS_DIR}/**/*`],
     "/e-learning/exams": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json", "./data/exam-library/pe-first/*.json"],
     "/api/home/resume": ["./data/exam-library/pe-first/*.json"],
     "/api/study-plan/catalog/*": ["./data/exam-library/papers/*.json", "./data/exam-library/pe-first/*.json", "./data/exam-library/presentation/*.json"],
