@@ -3,6 +3,7 @@ import tailwindcss from "@tailwindcss/vite";
 import { fileURLToPath } from "node:url";
 import { readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
+import { HOME_EVENTS, HOME_EVENT_IMAGE_DIR } from "../lib/home/home-events";
 const at=(p:string)=>fileURLToPath(new URL(p,import.meta.url));
 const petAssets={name:"bundled-local-pet-art",generateBundle(this:{emitFile(file:{type:"asset";fileName:string;source:Buffer}):void}) {
   const audit=JSON.parse(readFileSync(at("../lib/pet/v1/art-audit.generated.json"),"utf8")) as {files:{id:string;outputSha256:string}[]};
@@ -14,9 +15,18 @@ const petAssets={name:"bundled-local-pet-art",generateBundle(this:{emitFile(file
   }
   this.emitFile({type:"asset",fileName:"mascot/chihuahua-guide.webp",source:readFileSync(at("../public/mascot/chihuahua-guide.webp"))});
 }};
+const homeEventAssets = {
+  name: "bundled-home-event-art",
+  generateBundle(this: { emitFile(file: { type: "asset"; fileName: string; source: Buffer }): void }) {
+    for (const event of HOME_EVENTS) {
+      const fileName = `${HOME_EVENT_IMAGE_DIR}/${event.id}.webp`;
+      this.emitFile({ type: "asset", fileName, source: readFileSync(at(`../public/${fileName}`)) });
+    }
+  },
+};
 export default defineConfig(({mode})=>({
   base: "./",
-  plugins: [tailwindcss(),petAssets,{name:"no-question-bundles",generateBundle(){const forbidden=[...this.getModuleIds()].map(id=>id.replace(/\\/g,"/")).filter(path=>(path.includes("/data/questions/")&&!path.endsWith("/corrections/official-sources.json"))||path.includes("/data/exam-library/papers/")||path.endsWith("/survey-assistant/grading-index.json")||path.endsWith("/pe-first/information-grading-index.json"));if(forbidden.length)throw new Error("Question sources entered native app bundle:\n"+forbidden.join("\n"));}},...(mode==="e2e"?[{name:"test-only-lease-key",enforce:"pre" as const,resolveId(id:string){if(id.replace(/\\/g,"/").endsWith("/config/public.json"))return "\0mock-lease-key";},load(id:string){if(id==="\0mock-lease-key")return `export default ${JSON.stringify({leasePublicKey:JSON.parse(readFileSync(at("./.cache/e2e-key.json"),"utf8")).publicKey})}`;}}]:[])],
+  plugins: [tailwindcss(),petAssets,homeEventAssets,{name:"no-question-bundles",generateBundle(){const forbidden=[...this.getModuleIds()].map(id=>id.replace(/\\/g,"/")).filter(path=>(path.includes("/data/questions/")&&!path.endsWith("/corrections/official-sources.json"))||path.includes("/data/exam-library/papers/")||path.endsWith("/survey-assistant/grading-index.json")||path.endsWith("/pe-first/information-grading-index.json"));if(forbidden.length)throw new Error("Question sources entered native app bundle:\n"+forbidden.join("\n"));}},...(mode==="e2e"?[{name:"test-only-lease-key",enforce:"pre" as const,resolveId(id:string){if(id.replace(/\\/g,"/").endsWith("/config/public.json"))return "\0mock-lease-key";},load(id:string){if(id==="\0mock-lease-key")return `export default ${JSON.stringify({leasePublicKey:JSON.parse(readFileSync(at("./.cache/e2e-key.json"),"utf8")).publicKey})}`;}}]:[])],
   resolve: { dedupe:["react","react-dom"], alias: {
     "@/lib/kisho-study":at("./shared/gated-kisho-study.ts"),
     "./kisho-study":at("./shared/gated-kisho-study.ts"),

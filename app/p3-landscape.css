@@ -1,4 +1,4 @@
-:is(:where(.p3-web) body:has(.p3-page), .p3-home-scene) {
+:is(:where(.p3-web) body:has(.p3-page), .p3-home-scene, :where(body:has(.p3-home)) .site-header) {
   --p3-sky: #bfe3f2;
   --p3-hill: #8cc79b;
   --p3-hill-far: #abd3a4;
@@ -12,7 +12,7 @@
   --p3-accent: #f28c38;
 }
 
-:where(.dark) :is(:where(.p3-web) body:has(.p3-page), .p3-home-scene) {
+:where(.dark) :is(:where(.p3-web) body:has(.p3-page), .p3-home-scene, :where(body:has(.p3-home)) .site-header) {
   --p3-sky: #244756;
   --p3-hill: #315e4d;
   --p3-hill-far: #3f6b55;
@@ -34,8 +34,8 @@
     var(--p3-sky-detail,
       radial-gradient(ellipse 13px 7px at 73% 43%, var(--p3-cloud) 97%, transparent 100%),
       radial-gradient(ellipse 23px 4px at 73% 46%, var(--p3-cloud) 97%, transparent 100%)),
-    radial-gradient(ellipse 110% 66% at 92% 122%, var(--p3-hill) 99%, transparent 100%),
-    radial-gradient(ellipse 105% 61% at 10% 120%, var(--p3-hill-far) 99%, transparent 100%),
+    radial-gradient(ellipse 110% 66% at 92% 122%, var(--p3-event-hill, var(--p3-hill)) 99%, transparent 100%),
+    radial-gradient(ellipse 105% 61% at 10% 120%, var(--p3-event-hill-far, var(--p3-hill-far)) 99%, transparent 100%),
     var(--p3-sky-wash, linear-gradient(transparent, transparent)),
     var(--p3-sky);
   border-radius: 0 0 28px 28px;
@@ -67,7 +67,7 @@
   --p3-sun-halo: #d6b87e24;
 }
 
-[data-home-scene="morning"] .p3-home-scene {
+[data-home-scene="morning"] :is(.p3-home-scene, :where(body:has(.p3-home)) .site-header) {
   --p3-sky: #d0e5ee;
   --p3-sky-wash: linear-gradient(180deg, transparent, #ffe3ca 72%);
   --p3-cloud: #fff5e7;
@@ -78,7 +78,7 @@
   --p3-orb-top: clamp(50px, 24%, 82px);
   --p3-orb-right: 16%;
 }
-.dark[data-home-scene="morning"] .p3-home-scene {
+.dark[data-home-scene="morning"] :is(.p3-home-scene, :where(body:has(.p3-home)) .site-header) {
   --p3-sky: #293e54;
   --p3-sky-wash: linear-gradient(180deg, transparent, #695052 72%);
   --p3-cloud: #63596a;
@@ -88,7 +88,7 @@
   --p3-hill-far: #466655;
 }
 
-[data-home-scene="evening"] .p3-home-scene {
+[data-home-scene="evening"] :is(.p3-home-scene, :where(body:has(.p3-home)) .site-header) {
   --p3-sky: #f3b3ac;
   --p3-sky-wash: linear-gradient(180deg, transparent, #ffd3a1 76%);
   --p3-cloud: #ffe1cb;
@@ -99,7 +99,7 @@
   --p3-orb-top: clamp(59px, 30%, 106px);
   --p3-orb-right: 10%;
 }
-.dark[data-home-scene="evening"] .p3-home-scene {
+.dark[data-home-scene="evening"] :is(.p3-home-scene, :where(body:has(.p3-home)) .site-header) {
   --p3-sky: #40334e;
   --p3-sky-wash: linear-gradient(180deg, transparent, #714f51 76%);
   --p3-cloud: #694e60;
@@ -109,7 +109,7 @@
   --p3-hill-far: #625d4c;
 }
 
-[data-home-scene="night"] .p3-home-scene {
+[data-home-scene="night"] :is(.p3-home-scene, :where(body:has(.p3-home)) .site-header) {
   --p3-sky: #202f55;
   --p3-sky-wash: linear-gradient(180deg, transparent, #384969 78%);
   --p3-hill: #334e58;
@@ -126,7 +126,7 @@
   --p3-orb-fill: radial-gradient(circle at 69% 29%, transparent 47%, #fff0cb 49%);
   --p3-orb-shadow: none;
 }
-.dark[data-home-scene="night"] .p3-home-scene {
+.dark[data-home-scene="night"] :is(.p3-home-scene, :where(body:has(.p3-home)) .site-header) {
   --p3-sky: #18233c;
   --p3-sky-wash: linear-gradient(180deg, transparent, #293851 78%);
   --p3-hill: #283f45;

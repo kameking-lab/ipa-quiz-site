@@ -1,6 +1,7 @@
 @import "../../app/globals.css";
 @import "../../app/p3-landscape.css";
 @import "../../app/p3-weather.css";
+@import "../../app/p3-events.css";
 @source "../../components";
 @source "../../app/quiz";
 @source "./";
@@ -20,7 +21,7 @@ body { padding-left:var(--safe-left); padding-right:var(--safe-right); overflow-
 .native-list li + li { border-top:1px solid var(--border); }
 .native-exam { display:flex; width:100%; min-height:52px; align-items:center; gap:12px; padding:10px 16px; text-align:left; }
 .native-exam:active, .native-pick:active { background:var(--muted); }
-.native-home-hero { padding: 12px 88px 16px 16px; margin-inline: -16px; }
+.native-home-hero { min-height: 164px; padding: 12px 88px 16px 16px; margin-inline: -16px; }
 /* Keep the bright stars in the open sky beside the bundled home's text. */
 [data-home-scene="night"] .native-home-hero {
   --p3-sky-detail:

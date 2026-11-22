@@ -53,11 +53,20 @@ body:has(.p3-page) .mobile-bottom-nav {
   border-color: var(--hairline);
 }
 
-body:has(.p3-home) .site-header,
 body:has(.p3-search) .site-header {
   background: var(--p3-sky);
   border-color: transparent;
 }
+
+body:has(.p3-home) .site-header {
+  --foreground: var(--p3-ink);
+  --muted: color-mix(in srgb, var(--p3-sky) 84%, var(--p3-ink));
+  background: var(--p3-sky);
+  color: var(--p3-ink);
+  border-color: transparent;
+}
+
+body:has(.p3-home) .site-header a:focus-visible { outline-color: var(--p3-ink); }
 
 body:has(.p3-page) .mobile-bottom-nav a { font-size: .75rem; }
 /* Shared controls and the footer also appear on the illustrated screens. */

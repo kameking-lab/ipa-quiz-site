@@ -33,6 +33,7 @@ import { PlanCalendarButton } from "./PlanCalendarButton";
 import { PostExamQualifications } from "./PostExamQualifications";
 import { PlanCreateSheet, weekdayLabels } from "./PlanCreateSheet";
 import { PaceTrack, StartTrack } from "./PaceTrack";
+import { HomeEventOrnament } from "@/components/home/HomeEventOrnament";
 import styles from "./HomePace.module.css";
 
 const StudyReminderControl = dynamic(() => import("@/mobile/src/StudyReminderControl").then(module => module.StudyReminderControl), { ssr: false });
@@ -199,7 +200,10 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
           {pace?.total ? <>
             <p className="mt-2 text-sm p3-scene-muted">{pace.oldestYear}年度以降</p>
             <p className="mt-1 text-xl font-bold tabular-nums">正解済み {pace.mastered} / {pace.total}問</p>
-            <PaceTrack runArt={qualificationRunArt(plan.exam, planDomain?.id)} mastered={pace.mastered} total={pace.total} stopped={postExam} />
+            <div className="p3-event-track">
+              <HomeEventOrnament />
+              <PaceTrack runArt={qualificationRunArt(plan.exam, planDomain?.id)} mastered={pace.mastered} total={pace.total} stopped={postExam} />
+            </div>
             {!postExam && !examToday && !pace.complete && <>
               <p className="mt-2 text-sm p3-scene-muted">残り{pace.remaining}問{plan.examDate ? "・勉強日あと" + pace.studyDays + "日" : ""}</p>
               {pace.target !== null && <p className="mt-1 font-semibold">1回の目安　{pace.target}問正解</p>}
@@ -244,7 +248,10 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
           {resume?.caption && <p>前回 {resume.caption}</p>}
           <p>今日 {completedToday}問</p>
         </div>
-        <StartTrack runArt={qualificationRunArt(previousExam ?? "", previousDomain?.id)} />
+        <div className="p3-event-track">
+          <HomeEventOrnament />
+          <StartTrack runArt={qualificationRunArt(previousExam ?? "", previousDomain?.id)} />
+        </div>
         <Link className="study-primary mt-2" href={resume?.href ?? previousItem?.href ?? "/search"}>続きを解く <ArrowRight aria-hidden="true" className="size-5 shrink-0" /></Link>
         <button type="button" className="study-link" aria-haspopup="dialog" onClick={() => setSheet("create")}>学習計画を作る</button>
       </div> : (
@@ -252,10 +259,13 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
           <HomeWeather />
           <h1 aria-label="今日も、ひと問ずつ。" className="text-[34px] leading-[1.18] font-bold">今日も、<br />ひと問ずつ。</h1>
           <div className="mt-3">{search}</div>
-          <button type="button" disabled={!ready} aria-haspopup="dialog" aria-labelledby="home-start-track-description" className="study-focus mt-2 block w-full rounded-xl px-1" onClick={() => setSheet("create")}>
-            <StartTrack runArt={qualificationRunArt(initialExam)} />
-            <span id="home-start-track-description" className="block text-[13px] font-semibold underline underline-offset-4">学習計画を作る</span>
-          </button>
+          <div className="p3-event-track mt-2">
+            <HomeEventOrnament />
+            <button type="button" disabled={!ready} aria-haspopup="dialog" aria-labelledby="home-start-track-description" className="study-focus block w-full rounded-xl px-1" onClick={() => setSheet("create")}>
+              <StartTrack runArt={qualificationRunArt(initialExam)} />
+              <span id="home-start-track-description" className="block text-[13px] font-semibold underline underline-offset-4">学習計画を作る</span>
+            </button>
+          </div>
           <p className="mt-2 text-center text-xs leading-relaxed tabular-nums">{domains.reduce((n, d) => n + d.qualificationCount, 0)}資格・{domains.reduce((n, d) => n + d.totalQuestions, 0).toLocaleString("ja-JP")}問・ログインなしで1日10問まで無料</p>
         </div>
       )}
