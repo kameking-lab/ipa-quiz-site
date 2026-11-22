@@ -50,9 +50,6 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false, children
   domains: readonly HomeDirectoryDomain[]; planExamKeys: readonly string[]; createOnLoad?: boolean; children?: ReactNode;
 }) {
   const router = useRouter();
-  useEffect(() => {
-    if (["#choose-qualification", "#home-directory-title"].includes(location.hash)) router.replace("/search");
-  }, [router]);
   const items = useMemo(() => domains.flatMap(d => [...d.featured, ...d.compact]), [domains]);
   const directoryItems = useMemo(() => groupHomeDirectoryItems(items), [items]);
   const planItems = useMemo(() => items.filter(item => planExamKeys.includes(item.key)), [items, planExamKeys]);
@@ -68,6 +65,20 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false, children
   const [sheet, setSheet] = useState<"create" | "edit" | "switch" | "detail" | null>(null);
   const [prefill, setPrefill] = useState<PlanPrefill>();
   const [created, setCreated] = useState<PacePlan>();
+  useEffect(() => {
+    if (["#choose-qualification", "#home-directory-title"].includes(location.hash)) {
+      router.replace("/search");
+      return;
+    }
+    if (createOnLoad) return;
+    const id = new URLSearchParams(location.hash.slice(1)).get("plan-created");
+    if (!id) return;
+    const saved = listPacePlans().find(value => value.id === id);
+    if (saved) { setCreated(saved); setActive(saved.id); }
+    const url = new URL(location.href);
+    url.hash = "";
+    window.history.replaceState(window.history.state, "", url);
+  }, [router, createOnLoad]);
   const referralKeys = useMemo(() => planItems.map(item => item.key), [planItems]);
   const openPrefilled = useCallback((value: PlanPrefill) => { setPrefill(value); setSheet("create"); }, []);
   const [query, setQuery] = useState("");
@@ -154,11 +165,8 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false, children
     <PlanCalendarButton plan={created} name={items.find(entry => entry.key === created.exam)?.name ?? created.exam} today={today} />
     <MobileInstallNudge placement="plan-created" />
   </div>;
-  if (createOnLoad) return created ? <>
-    {calendarConfirmation}
-    <Link className="study-link mt-3" href="/">ホームで計画を見る</Link>
-  </> : <PlanCreateSheet embedded open items={planItems} initialExam={initialExam}
-    onOpenChange={() => {}} onCreated={setCreated} />;
+  if (createOnLoad) return <PlanCreateSheet embedded open items={planItems} initialExam={initialExam}
+    onOpenChange={() => {}} onCreated={saved => router.push("/#plan-created=" + encodeURIComponent(saved.id))} />;
   const search = <StudySearchField compact={!firstVisit} id="qualification-search" aria-label="資格名・略称で検索" aria-controls={term || firstVisit ? "home-qualification-results" : undefined} disabled={!ready} value={query} onChange={e => setQuery(e.target.value)} placeholder={firstVisit ? "受ける資格は？" : "ほかの資格をさがす"} />;
   return <>
     <Suspense><HomePlanReferral keys={referralKeys} onOpen={openPrefilled} /></Suspense>
