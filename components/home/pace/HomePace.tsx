@@ -53,8 +53,8 @@ function HomePlanReferral({ keys, onOpen }: { keys: readonly string[]; onOpen(pr
   return null;
 }
 const shortDate = (date: string) => `${Number(date.slice(5, 7))}/${Number(date.slice(8))}`;
-export function HomePace({ domains, planExamKeys, createOnLoad = false, children }: {
-  domains: readonly HomeDirectoryDomain[]; planExamKeys: readonly string[]; createOnLoad?: boolean; children?: ReactNode;
+export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = false, children }: {
+  domains: readonly HomeDirectoryDomain[]; planExamKeys: readonly string[]; initialDate?: string; createOnLoad?: boolean; children?: ReactNode;
 }) {
   const router = useRouter();
   const items = useMemo(() => domains.flatMap(d => [...d.featured, ...d.compact]), [domains]);
@@ -65,7 +65,7 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false, children
   const [plans, setPlans] = useState<PacePlan[]>([]);
   const [active, setActive] = useState("");
   const [attempts, setAttempts] = useState<AnswerAttempt[]>([]);
-  const [today, setToday] = useState(japanDate(new Date()));
+  const [today, setToday] = useState(() => initialDate ?? japanDate(new Date()));
   const [ready, setReady] = useState(false);
   const [study, setStudy] = useState<ReturnType<typeof readHomeStudy> | null>(null);
   const [resolvedResume, setResolvedResume] = useState<{ query: string; entry: Resume } | null>(null);
@@ -173,7 +173,7 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false, children
       !session.examPhaseWindows?.length && (!session.examDateEnd || session.examDateEnd === session.examDate) ? session.examDate : undefined;
     openPrefilled({ exam: plan.exam, examDate: fixedDate, sessionId: session?.id });
   }
-  const calendarConfirmation = created && <div className="mt-3 space-y-1 rounded-xl border border-border bg-card p-3">
+  const calendarConfirmation = created && <div className="mt-3 space-y-1 rounded-xl border border-border bg-card p-3 text-card-foreground">
     <p className="text-sm font-semibold" role="status">学習計画を作りました</p>
     <PlanCalendarButton plan={created} name={items.find(entry => entry.key === created.exam)?.name ?? created.exam} today={today} />
     <MobileInstallNudge placement="plan-created" />
@@ -219,7 +219,7 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false, children
             {plan.result === "passed" && passMoment?.planId === plan.id && <StudyAchievement moment={passMoment.moment} />}
             {!plan.result && <div aria-label="結果を記録" role="group" className="mt-2 grid grid-cols-3 gap-2">
               {([["passed", "合格"], ["failed", "不合格"], ["absent", "受けなかった"]] as const).map(([result, label]) => (
-                <Button key={result} variant="outline" className="min-h-12 border-input bg-card px-1" onClick={() => updatePlan({ result })}>{label}</Button>
+                <Button key={result} variant="outline" className="min-h-12 border-input bg-card px-1 text-foreground" onClick={() => updatePlan({ result })}>{label}</Button>
               ))}
             </div>}
             <PostExamQualifications key={plan.exam} plan={plan} items={items} today={today} onRetry={retryPlan} />

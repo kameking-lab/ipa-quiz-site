@@ -33,3 +33,13 @@ test("uses the daytime landscape when JavaScript is disabled", async ({ browser,
     await page.close();
   }
 });
+
+test("hydrates the static home on a different calendar day", async ({ page }) => {
+  await page.clock.setFixedTime(new Date("2030-01-01T17:00:00Z"));
+  const errors: string[] = [];
+  page.on("pageerror", error => errors.push(error.message));
+  await page.goto("/");
+  await expect(page.locator('[data-home-state="new"]')).toBeVisible();
+  await expect(page.locator("html")).toHaveAttribute("data-home-scene", "morning");
+  expect(errors).toEqual([]);
+});

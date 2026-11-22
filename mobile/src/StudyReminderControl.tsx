@@ -51,7 +51,7 @@ export function StudyReminderControl({ planId }: { planId: string }) {
       <input type="time" aria-label="通知時刻" className="min-h-11 rounded-lg border border-border bg-background px-2 text-foreground"
         value={setting.time} disabled={busy} required onChange={event => void change(event.currentTarget.value)} />
     </div>
-    {(message || setting.blocked) && <p role="status" className="mt-1 text-muted-foreground">
+    {(message || setting.blocked) && <p role="status" className="mt-1 text-muted-foreground p3-scene-muted">
       {message || NOTIFICATION_SETTINGS_MESSAGE}
     </p>}
   </div>;

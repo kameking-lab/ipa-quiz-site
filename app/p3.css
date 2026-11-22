@@ -129,6 +129,8 @@ body:has(.p3-page) .mobile-bottom-nav a[aria-current="page"] { background: var(-
 .dark .p3-home-scene {
   --p3-scene-muted: #d7e5db;
   --p3-scene-link: #e4f5e9;
+  --p3-sun: #795f35;
+  --p3-sun-halo: #d6b87e24;
 }
 
 [data-home-scene="morning"] .p3-home-scene {
@@ -146,7 +148,7 @@ body:has(.p3-page) .mobile-bottom-nav a[aria-current="page"] { background: var(-
   --p3-sky: #293e54;
   --p3-sky-wash: linear-gradient(180deg, transparent, #695052 72%);
   --p3-cloud: #63596a;
-  --p3-sun: #a8766a;
+  --p3-sun: #805750;
   --p3-sun-halo: #f4ba9224;
   --p3-hill: #395e52;
   --p3-hill-far: #466655;
@@ -167,7 +169,7 @@ body:has(.p3-page) .mobile-bottom-nav a[aria-current="page"] { background: var(-
   --p3-sky: #40334e;
   --p3-sky-wash: linear-gradient(180deg, transparent, #714f51 76%);
   --p3-cloud: #694e60;
-  --p3-sun: #b37a59;
+  --p3-sun: #805940;
   --p3-sun-halo: #eea57528;
   --p3-hill: #4b5d46;
   --p3-hill-far: #625d4c;
