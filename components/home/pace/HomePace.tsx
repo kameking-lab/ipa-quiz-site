@@ -33,7 +33,7 @@ import { PlanCalendarButton } from "./PlanCalendarButton";
 import { PostExamQualifications } from "./PostExamQualifications";
 import { PlanCreateSheet, weekdayLabels } from "./PlanCreateSheet";
 import { PaceTrack, StartTrack } from "./PaceTrack";
-import { HomeEventOrnament } from "@/components/home/HomeEventOrnament";
+import { HomeEventArt, HomeEventOrnament, useHomeEvent } from "@/components/home/HomeEventOrnament";
 import styles from "./HomePace.module.css";
 
 const StudyReminderControl = dynamic(() => import("@/mobile/src/StudyReminderControl").then(module => module.StudyReminderControl), { ssr: false });
@@ -60,6 +60,7 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
 }) {
   const router = useRouter();
   const items = useMemo(() => domains.flatMap(d => [...d.featured, ...d.compact]), [domains]);
+  const event = useHomeEvent();
   const directoryItems = useMemo(() => groupHomeDirectoryItems(items), [items]);
   const planItems = useMemo(() => items.filter(item => planExamKeys.includes(item.key)), [items, planExamKeys]);
   const examFor = useMemo(() => historyExamLookup(items.map(item => item.key),
@@ -188,6 +189,7 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
     <section className={styles.stack} id="today" aria-label="今日の学習" aria-busy={!ready} data-home-state={!ready ? "loading" : postExam ? "post-exam" : plan ? "planned" : returning ? "returning" : "new"}>
       {plan ? (
         <div className={`${styles.hero} p3-landscape p3-home-scene`}>
+          <HomeEventArt event={event} />
           <HomeWeather />
           <div className="flex items-start justify-between gap-2">
             <button className={`${styles.qualification} study-focus`} onClick={() => setSheet("switch")} aria-label="資格を切り替える" aria-describedby="home-qualification" aria-haspopup="dialog" aria-expanded={sheet === "switch"}><span id="home-qualification">{item?.name ?? plan.exam}</span><ChevronDown aria-hidden="true" className="size-4 shrink-0 p3-scene-muted" /></button>
@@ -201,7 +203,7 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
             <p className="mt-2 text-sm p3-scene-muted">{pace.oldestYear}年度以降</p>
             <p className="mt-1 text-xl font-bold tabular-nums">正解済み {pace.mastered} / {pace.total}問</p>
             <div className="p3-event-track">
-              <HomeEventOrnament />
+              <HomeEventOrnament event={event} />
               <PaceTrack runArt={qualificationRunArt(plan.exam, planDomain?.id)} mastered={pace.mastered} total={pace.total} stopped={postExam} />
             </div>
             {!postExam && !examToday && !pace.complete && <>
@@ -241,6 +243,7 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
           {nativeClient() && passMoment?.planId !== plan.id && canRemindForPlan(plan) && <StudyReminderControl key={plan.id} planId={plan.id} />}
         </div>
       ) : returning ? <div className={`${styles.hero} p3-landscape p3-home-scene`}>
+        <HomeEventArt event={event} />
         <HomeWeather />
         <p className="text-[13px] p3-scene-muted">おかえりなさい</p>
         <h1 className="mt-1 text-[26px] leading-tight font-bold wrap-anywhere">{resume?.name ?? previousItem?.name}</h1>
@@ -249,18 +252,19 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
           <p>今日 {completedToday}問</p>
         </div>
         <div className="p3-event-track">
-          <HomeEventOrnament />
+          <HomeEventOrnament event={event} />
           <StartTrack runArt={qualificationRunArt(previousExam ?? "", previousDomain?.id)} />
         </div>
         <Link className="study-primary mt-2" href={resume?.href ?? previousItem?.href ?? "/search"}>続きを解く <ArrowRight aria-hidden="true" className="size-5 shrink-0" /></Link>
         <button type="button" className="study-link" aria-haspopup="dialog" onClick={() => setSheet("create")}>学習計画を作る</button>
       </div> : (
         <div className={`${styles.hero} ${styles.first} p3-landscape p3-home-scene`}>
+          <HomeEventArt event={event} />
           <HomeWeather />
           <h1 aria-label="今日も、ひと問ずつ。" className="text-[34px] leading-[1.18] font-bold">今日も、<br />ひと問ずつ。</h1>
           <div className="mt-3">{search}</div>
           <div className="p3-event-track mt-2">
-            <HomeEventOrnament />
+            <HomeEventOrnament event={event} />
             <button type="button" disabled={!ready} aria-haspopup="dialog" aria-labelledby="home-start-track-description" className="study-focus block w-full rounded-xl px-1" onClick={() => setSheet("create")}>
               <StartTrack runArt={qualificationRunArt(initialExam)} />
               <span id="home-start-track-description" className="block text-[13px] font-semibold underline underline-offset-4">学習計画を作る</span>

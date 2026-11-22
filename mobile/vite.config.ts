@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 import { readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { HOME_EVENTS, HOME_EVENT_IMAGE_DIR } from "../lib/home/home-events";
+import { HOME_EVENT_ART, HOME_EVENT_ART_DIR } from "../lib/home/home-event-art";
 const at=(p:string)=>fileURLToPath(new URL(p,import.meta.url));
 const petAssets={name:"bundled-local-pet-art",generateBundle(this:{emitFile(file:{type:"asset";fileName:string;source:Buffer}):void}) {
   const audit=JSON.parse(readFileSync(at("../lib/pet/v1/art-audit.generated.json"),"utf8")) as {files:{id:string;outputSha256:string}[]};
@@ -18,8 +19,12 @@ const petAssets={name:"bundled-local-pet-art",generateBundle(this:{emitFile(file
 const homeEventAssets = {
   name: "bundled-home-event-art",
   generateBundle(this: { emitFile(file: { type: "asset"; fileName: string; source: Buffer }): void }) {
-    for (const event of HOME_EVENTS) {
-      const fileName = `${HOME_EVENT_IMAGE_DIR}/${event.id}.webp`;
+    const pictures = Object.values(HOME_EVENT_ART).flatMap(({ mobile, wide }) => wide ? [mobile, wide] : [mobile]);
+    const files = [
+      ...HOME_EVENTS.map(event => `${HOME_EVENT_IMAGE_DIR}/${event.id}.webp`),
+      ...pictures.map(picture => `${HOME_EVENT_ART_DIR}/${picture}`),
+    ];
+    for (const fileName of files) {
       this.emitFile({ type: "asset", fileName, source: readFileSync(at(`../public/${fileName}`)) });
     }
   },

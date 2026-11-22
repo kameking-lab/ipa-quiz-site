@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { getHomeEvent, HOME_EVENT_IMAGE_DIR, type HomeEventId } from "@/lib/home/home-events";
+import { HOME_EVENT_ART, HOME_EVENT_ART_DIR } from "@/lib/home/home-event-art";
 
-export function HomeEventOrnament({ assetBase = "" }: { assetBase?: string }) {
+export function useHomeEvent() {
   const [event, setEvent] = useState<HomeEventId | null>(null);
 
   useEffect(() => {
@@ -39,7 +40,13 @@ export function HomeEventOrnament({ assetBase = "" }: { assetBase?: string }) {
     };
   }, []);
 
-  if (!event) return null;
+  return event;
+}
+
+type EventProps = { event: HomeEventId | null; assetBase?: string };
+
+export function HomeEventOrnament({ event, assetBase = "" }: EventProps) {
+  if (!event || HOME_EVENT_ART[event]) return null;
 
   /* The same small WebP is served by the web and bundled in the offline app. */
   /* eslint-disable @next/next/no-img-element */
@@ -56,4 +63,26 @@ export function HomeEventOrnament({ assetBase = "" }: { assetBase?: string }) {
     aria-hidden="true"
   />;
   /* eslint-enable @next/next/no-img-element */
+}
+
+export function HomeEventArt({ event, assetBase = "" }: EventProps) {
+  if (!event) return null;
+  const art = HOME_EVENT_ART[event];
+  return art ? <EventArtImage key={event} event={event} art={art} assetBase={assetBase} /> : null;
+}
+
+function EventArtImage({ event, art, assetBase }: {
+  event: HomeEventId;
+  art: { mobile: string; wide?: string };
+  assetBase: string;
+}) {
+  const [ready, setReady] = useState(false);
+  const base = `${assetBase}/${HOME_EVENT_ART_DIR}`;
+  return <picture className="p3-event-art" aria-hidden="true" data-home-event-art={event} data-home-event-ready={ready || undefined}>
+    {art.wide && <source media="(min-width: 640px)" srcSet={`${base}/${art.wide}`} />}
+    {/* eslint-disable-next-line @next/next/no-img-element */}
+    <img src={`${base}/${art.mobile}`} alt="" fetchPriority="low" decoding="async"
+      onLoad={event => { void event.currentTarget.decode().then(() => setReady(true), () => {}); }}
+      onError={() => setReady(false)} />
+  </picture>;
 }

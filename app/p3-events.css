@@ -1,3 +1,69 @@
+/* Behind the moon (-3) and weather (-2), with the CSS scene visible until decode. */
+.p3-event-art {
+  position: absolute;
+  z-index: -4;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 160ms ease-out;
+  --p3-art-scrim:
+    linear-gradient(115deg, #fff8ebad, #fff8eb30 46%, transparent 78%),
+    linear-gradient(0deg, #fff8eb99, transparent 32%);
+}
+
+.p3-event-art[data-home-event-ready] { opacity: 1; }
+.p3-event-art img { width: 100%; height: 100%; object-fit: cover; object-position: center 92%; }
+
+:root:not(.dark, [data-home-scene="night"]) .p3-home-scene:has(> .p3-event-art[data-home-event-ready]) {
+  --p3-scene-muted: #20372b;
+  --p3-scene-link: #173f30;
+}
+
+.p3-event-art::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    var(--p3-art-stars, linear-gradient(transparent, transparent)),
+    var(--p3-art-dark, linear-gradient(transparent, transparent)),
+    var(--p3-art-wash, linear-gradient(transparent, transparent)),
+    var(--p3-art-scrim);
+}
+
+[data-home-scene="morning"] .p3-event-art {
+  --p3-art-wash: linear-gradient(165deg, #ffe4cb42, #f9a97547);
+}
+[data-home-scene="evening"] .p3-event-art {
+  --p3-art-wash: linear-gradient(165deg, #ffc3b399, #ec8f6d66 72%, #fcb6724d);
+}
+.dark .p3-event-art {
+  --p3-art-dark: linear-gradient(120deg, #152536c9, #17283c85);
+}
+[data-home-scene="night"] .p3-event-art {
+  --p3-art-stars: var(--p3-sky-detail);
+  --p3-art-wash: linear-gradient(135deg, #0e1c3bc9, #1c305993);
+}
+.dark[data-home-scene="night"] .p3-event-art {
+  --p3-art-dark: linear-gradient(#111a351f, #111a3529);
+}
+:is(.dark, [data-home-scene="night"]) .p3-event-art {
+  --p3-art-scrim: linear-gradient(90deg, #101d3961, #101d392e 58%, #101d3910);
+}
+:is(.dark, [data-home-scene="night"]) .p3-event-art img {
+  filter: brightness(.68) saturate(.84);
+}
+
+/* The painting supplies daytime light. Keep the existing moon at night. */
+:root:not([data-home-scene="night"]) .p3-home-scene:has(> .p3-event-art[data-home-event-ready])::before {
+  visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .p3-event-art { transition: none; }
+}
+
 /* Keep a fixed space alongside the trail, including while art is loading. */
 .p3-event-track {
   position: relative;
