@@ -238,8 +238,8 @@ describe("AI daily question quota", () => {
     expect(settle).toHaveBeenCalledTimes(2);
   });
 
-  it("uses one runtime switch and returns the original legacy response when disabled", async () => {
-    vi.stubEnv("AI_QUOTA_ROLLOUT", "false");
+  it.each([undefined, "false"])("returns the original legacy response with rollout set to %s", async rollout => {
+    vi.stubEnv("AI_QUOTA_ROLLOUT", rollout);
     const dependencies = vi.fn();
     expect(await resolveAiAccess(request, "copilot", aiAccessPolicy(), dependencies)).toEqual({ kind: "legacy" });
     expect(dependencies).not.toHaveBeenCalled();
