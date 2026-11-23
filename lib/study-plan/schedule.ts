@@ -71,6 +71,14 @@ function sessionRound(session: ExamScheduleSession): string {
     .filter(Boolean).join("/");
 }
 
+export function isRedundantScheduleEstimate(session: ExamScheduleSession, sessions: readonly ExamScheduleSession[]) {
+  if (!session.id.includes(":estimate-")) return false;
+  const year = sessionYear(session);
+  const round = sessionRound(session);
+  return year !== null && sessions.some(candidate => candidate.qualificationId === session.qualificationId &&
+    !candidate.id.includes(":estimate-") && sessionYear(candidate) === year && sessionRound(candidate) === round);
+}
+
 /** Project dates only when the same qualification and round are identifiable in adjacent years. */
 export function estimateFromPreviousSession(session: ExamScheduleSession, sessions: readonly ExamScheduleSession[]) {
   const year = sessionYear(session);

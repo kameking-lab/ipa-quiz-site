@@ -1,7 +1,7 @@
 import { japanDate } from "@/lib/home/featured-exams";
 import { dateCountdown, registrationTiming, sessionCountdownDates } from "./countdown";
 import { dayNumber } from "./pace";
-import { qualificationIdsForExam, type ExamScheduleSession } from "./schedule";
+import { isRedundantScheduleEstimate, qualificationIdsForExam, type ExamScheduleSession } from "./schedule";
 
 const progression: Record<string, readonly string[]> = {
   ip: ["fe"], fe: ["ap"], ap: ["sc", "nw", "db"], fp3: ["fp2"], fp2: ["fp1"],
@@ -53,7 +53,7 @@ export function planReferral(search: ReferralSearch, keys: readonly string[], to
 export function examTopSchedule(exam: string, search: ReferralSearch, sessions: readonly ExamScheduleSession[], today: string) {
   const incomingDate = examDateFromSearch(search, today);
   const schedules = sessions.flatMap(session => {
-    if (!session.qualificationId || session.scheduleStatus === "ondemand") return [];
+    if (!session.qualificationId || session.scheduleStatus === "ondemand" || isRedundantScheduleEstimate(session, sessions)) return [];
     const dates = sessionCountdownDates(session, sessions);
     const windows = session.scheduleStatus === "official" && !session.unannounced && session.sourceUrl &&
       session.examDate && session.examDate >= today && session.datePrecision !== "unknown" && !dates.examDate

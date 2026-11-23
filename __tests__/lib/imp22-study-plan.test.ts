@@ -109,6 +109,17 @@ describe("exam hub study plan date", () => {
     expect(resolve("", otherSessions.filter(session => session.id === "past"))).toBeNull();
     expect(resolve("examDate=invalid", [])).toBeNull();
   });
+
+  it("uses the actual upcoming round when Tsugino also returns a generated annual estimate", () => {
+    const annual = "2027年度";
+    const input = parseRegistration({ id: "kihon-joho", sessions: [
+      { id: "kihon-joho:estimate-2027", label: "2027年ごろ［目安］", fiscalYear: "2027",
+        scheduleStatus: "tentative", sourceUrl: null },
+      { ...fixed, id: "prior", label: "2026年度", fiscalYear: "2026", examDate: "2026-10-18" },
+      { ...fixed, id: "announced", label: annual, fiscalYear: "2027", examDate: "2027-10-24" },
+    ] }, "kihon-joho");
+    expect(resolve("", input)).toMatchObject({ sessionId: "announced", examCountdown: { date: "2027-10-24" } });
+  });
 });
 
 describe("Tsugino qualification links", () => {

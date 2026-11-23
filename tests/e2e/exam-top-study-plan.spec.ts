@@ -147,5 +147,13 @@ for (const estimated of [false, true]) {
     expect(ics).toContain("BEGIN:VALARM\r\nTRIGGER:-P1D");
     expect(ics).toContain("BEGIN:VALARM\r\nTRIGGER:-P3D");
     expect(ics).toContain("\\nhttps://tsugino-shikaku.jp/shikaku/kihon-joho?utm_source=kakomon&utm_campaign=exam_schedule");
+    if (estimated) {
+      await page.getByRole("button", { name: "計画を変更", exact: true }).click();
+      const edit = page.getByRole("dialog", { name: "学習計画を変更" });
+      const [fromEdit] = await Promise.all([page.waitForEvent("download"),
+        edit.getByRole("button", { name: "カレンダーに追加（.ics）" }).click()]);
+      const editedIcs = (await readFile((await fromEdit.path())!, "utf8")).replaceAll("\r\n ", "");
+      expect(editedIcs).toContain("DTSTART;VALUE=DATE:20261126\r\nSUMMARY:基本情報技術者の申込締切（見込み）");
+    }
   });
 }

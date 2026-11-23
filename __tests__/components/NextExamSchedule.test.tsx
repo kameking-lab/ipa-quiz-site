@@ -1,22 +1,24 @@
 import { render, screen } from "@testing-library/react";
 import { afterEach, expect, it, vi } from "vitest";
 import { NextExamSchedule } from "@/components/exam/NextExamSchedule";
+import { parseRegistration } from "@/lib/study-plan/schedule";
 
 afterEach(() => { vi.useRealTimers(); vi.unstubAllGlobals(); });
 
 it("shows the announced future phases and deadline from the official source", async () => {
   vi.useFakeTimers({ toFake: ["Date"] });
   vi.setSystemTime(new Date("2026-11-22T09:00:00+09:00"));
-  vi.stubGlobal("fetch", vi.fn(async () => Response.json({ exam: "sc", source: "tsugino", sessions: [
-    { scheduleStatus: "official", examDate: "2026-10-17", examDateEnd: "2026-11-23",
+  const sessions = parseRegistration({ id: "sc", sessions: [
+    { id: "previous", label: "前回", scheduleStatus: "official", examDate: "2026-10-17", examDateEnd: "2026-11-23",
       sourceUrl: "https://www.ipa.go.jp/shiken/" },
-    { scheduleStatus: "official", examDate: "2027-02-20", applicationDeadline: "2027-02-27",
-      sourceUrl: "https://www.ipa.go.jp/shiken/", qualificationId: "sc",
+    { id: "next", label: "次回", scheduleStatus: "official", examDate: "2027-02-20", applicationDeadline: "2027-02-27",
+      sourceUrl: "https://www.ipa.go.jp/shiken/",
       examPhaseWindows: [
         { label: "科目A", start: "2027-02-20", end: "2027-03-02" },
         { label: "科目B", start: "2027-03-16", end: "2027-03-28" },
       ] },
-  ] })));
+  ] }, "sc");
+  vi.stubGlobal("fetch", vi.fn(async () => Response.json({ exam: "sc", source: "tsugino", sessions })));
   const { container } = render(<NextExamSchedule exam="sc" />);
   expect(await screen.findByText("科目A")).toBeVisible();
   expect(screen.getByText("科目B")).toBeVisible();
