@@ -18,8 +18,8 @@ const petAssets={name:"bundled-local-pet-art",generateBundle(this:{emitFile(file
 const homeEventAssets = {
   name: "bundled-home-event-art",
   generateBundle(this: { emitFile(file: { type: "asset"; fileName: string; source: Buffer }): void }) {
-    for (const picture of Object.values(HOME_EVENT_ART)) {
-      const fileName = `${HOME_EVENT_ART_DIR}/${picture}`;
+    for (const { file } of Object.values(HOME_EVENT_ART)) {
+      const fileName = `${HOME_EVENT_ART_DIR}/${file}`;
       this.emitFile({ type: "asset", fileName, source: readFileSync(at(`../public/${fileName}`)) });
     }
   },

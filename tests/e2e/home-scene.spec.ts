@@ -9,14 +9,14 @@ test.use({
 
 test("selects the local landscape before hydration and refreshes on return", async ({ page }) => {
   // 05:00 in Honolulu, 15:00 UTC. Block React to exercise the document head.
-  await page.clock.setFixedTime(new Date("2026-11-22T15:00:00Z"));
+  await page.clock.setFixedTime(new Date("2026-11-24T15:00:00Z"));
   await page.route("**/_next/static/**/*.js", route => route.abort());
   await page.goto("/");
   const root = page.locator("html");
   const hero = page.locator(".p3-home-scene");
   await expect(root).toHaveAttribute("data-home-scene", "morning");
   const morning = await hero.evaluate(element => getComputedStyle(element).backgroundImage);
-  await page.clock.setFixedTime(new Date("2026-11-23T05:00:00Z"));
+  await page.clock.setFixedTime(new Date("2026-11-25T05:00:00Z"));
   await expect(root).toHaveAttribute("data-home-scene", "morning");
   await page.evaluate(() => document.dispatchEvent(new Event("visibilitychange")));
   await expect(root).toHaveAttribute("data-home-scene", "night");

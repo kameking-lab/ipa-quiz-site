@@ -1,16 +1,41 @@
-/* The painting occupies its own part of the hero behind the existing sky and
-   weather layers. Keep its space while decoding so the controls stay put. */
-.p3-event-art-slot {
-  position: relative;
-  display: none;
-  z-index: -4;
-  aspect-ratio: 1.8;
-  margin: 8px calc(-1 * var(--p3-hero-gutter, 16px));
-  overflow: hidden;
-  pointer-events: none;
+/* The calendar sets the panels and spacing before paint. The image never
+   participates in layout and can fade in once the selected WebP decodes. */
+[data-home-event-layout] .p3-home-scene {
+  --p3-event-panel: #fffdf5d9;
+  --p3-ink: #17382d;
+  --p3-scene-muted: #35493e;
+  --p3-scene-link: #234b37;
+  background: var(--p3-sky);
 }
 
-[data-home-event-layout] .p3-event-art-slot { display: block; }
+[data-home-event-layout] .p3-home-scene::before { visibility: hidden; }
+
+:is(.dark, [data-home-scene="night"])[data-home-event-layout] .p3-home-scene {
+  --p3-event-panel: #111c33d9;
+  --p3-ink: #f4f7ff;
+  --p3-scene-muted: #e2eaf8;
+  --p3-scene-link: #e6f3ff;
+  --p3-orb-top: clamp(145px, 31%, 180px);
+  --p3-orb-right: 7%;
+  --p3-orb-fill: radial-gradient(circle at 69% 29%, transparent 47%, #fff0cb 49%);
+  --p3-orb-shadow: none;
+  background: #202f46;
+}
+
+:is(.dark, [data-home-scene="night"])[data-home-event-layout] .p3-home-scene:not(
+  :has([data-home-event-art="moon-viewing"], [data-home-event-art="obon"])
+)::before {
+  visibility: visible;
+}
+
+.p3-event-art-slot {
+  position: absolute;
+  z-index: -4;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+}
 
 .p3-event-art {
   position: absolute;
@@ -28,42 +53,52 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
 }
 
 .p3-event-art::after {
   position: absolute;
   inset: 0;
   content: "";
-  background:
-    var(--p3-art-stars, linear-gradient(transparent, transparent)),
-    var(--p3-art-tint, linear-gradient(transparent, transparent));
+  background: var(--p3-art-tint, transparent);
 }
 
-[data-home-scene="morning"] .p3-event-art {
-  --p3-art-tint: linear-gradient(160deg, #ffd2a540, #f3a46a1f);
+[data-home-scene="morning"] .p3-event-art { --p3-art-tint: #ffd2a527; }
+[data-home-scene="evening"] .p3-event-art { --p3-art-tint: linear-gradient(155deg, #a14a6b38, #f39a4e24); }
+
+:is(.dark, [data-home-scene="night"]) .p3-event-art {
+  --p3-art-tint:
+    radial-gradient(circle at 68% 29%, #d7e4f5 1px, transparent 2px),
+    radial-gradient(circle at 86% 34%, #c4d5ee 1px, transparent 2px),
+    radial-gradient(circle at 94% 27%, #c4d5ee 1px, transparent 2px),
+    linear-gradient(150deg, #13295333, #1b39701a);
 }
 
-[data-home-scene="evening"] .p3-event-art {
-  --p3-art-tint: linear-gradient(155deg, #ad56775e, #f39a4e36 68%, #b8584640);
-}
-
-.dark:not([data-home-scene="night"]) .p3-event-art img { filter: brightness(.84); }
-
-[data-home-scene="night"] .p3-event-art {
-  --p3-art-stars: var(--p3-sky-detail);
-  --p3-art-tint: linear-gradient(172deg, #15224b78, #2033554d 48%, #172b532f);
-}
-
-[data-home-scene="night"] .p3-event-art img { filter: brightness(.86) saturate(1.08); }
-
-/* The daytime painting supplies its own light. The moon still sits over the sky at night. */
-:root:not([data-home-scene="night"]) .p3-home-scene:has(> .p3-event-art-slot > .p3-event-art[data-home-event-ready])::before {
-  visibility: hidden;
+:is(.dark, [data-home-scene="night"]) .p3-event-art img {
+  filter: brightness(.48) saturate(.86);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .p3-event-art { transition: none; }
+}
+
+.p3-event-panel { display: contents; }
+
+[data-home-event-layout] .p3-home-scene > .p3-event-panel:not(:empty) {
+  display: flow-root;
+  margin-block: 6px 0;
+  padding: 6px 12px;
+  border-radius: 14px;
+  background: var(--p3-event-panel);
+}
+
+[data-home-event-layout] .p3-home-scene > .p3-event-panel > :first-child { margin-block-start: 0; }
+
+[data-home-event-layout] .p3-home-scene .p3-event-inline-panel {
+  width: fit-content;
+  margin-inline: auto;
+  padding: 4px 12px;
+  border-radius: 10px;
+  background: var(--p3-event-panel);
 }
 
 .p3-event-track {
@@ -72,4 +107,24 @@
   padding-inline-start: 54px;
 }
 
-[data-home-event-layout] .p3-home-scene .p3-event-track { padding-inline-start: 0; }
+.p3-event-track:empty,
+.p3-event-tick-panel { display: none; }
+
+[data-home-event-layout] .p3-home-scene .p3-event-track {
+  display: block;
+  padding: clamp(132px, 39vw, 176px) 0 0;
+}
+
+[data-home-event-layout] .p3-home-scene .p3-event-tick-panel {
+  display: block;
+  fill: var(--p3-event-panel);
+}
+
+:is(.dark, [data-home-scene="night"])[data-home-event-layout] .p3-home-scene .study-primary {
+  background: #9dd8b6;
+  color: #143327;
+}
+
+:is(.dark, [data-home-scene="night"])[data-home-event-layout] .p3-home-scene .study-primary:hover {
+  background: #b8e4c4;
+}
