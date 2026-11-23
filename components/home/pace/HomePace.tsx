@@ -224,7 +224,9 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
             {plan.registration && <p className="text-[13px] p3-scene-muted">{plan.registration.label}</p>}
             {created?.id === plan.id && passMoment?.planId !== plan.id && calendarConfirmation}
             {postExam && <h1 className="mt-2 text-2xl leading-tight font-bold">試験、おつかれさまでした</h1>}
-            {calendar && <ExamCountdownCalendar {...calendar} />}
+            {(scheduleExam || calendar) && <div className={styles.planCalendarSlot}>
+              {calendar && <ExamCountdownCalendar {...calendar} />}
+            </div>}
             <div className={styles.planCount}>
               {pace?.total ? <>
                 <p className="text-sm p3-scene-muted">{pace.oldestYear}年度以降</p>

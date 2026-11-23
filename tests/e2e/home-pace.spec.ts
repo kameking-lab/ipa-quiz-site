@@ -314,7 +314,7 @@ test.describe("home flip calendar", () => {
   test.use({ timezoneId: "Asia/Tokyo" });
 
   const scenes = [
-    { name: "day", date: "2026-11-17", hour: "12", weather: "clear", colorScheme: "light", width: 390 },
+    { name: "day", date: "2026-11-27", hour: "12", weather: "clear", colorScheme: "light", width: 390 },
     { name: "night-christmas", date: "2026-12-25", hour: "21", weather: "snow", colorScheme: "dark", width: 1280, event: "christmas" },
   ] as const;
   const states = [
@@ -343,7 +343,7 @@ test.describe("home flip calendar", () => {
       test(`${state.name} · ${sceneName} · ${colorScheme} · ${width}px`, async ({ page }) => {
         const hour = morning ? "07" : evening ? "17" : scene.hour;
         const weather = morning ? "cloudy" : evening ? "rain" : scene.weather;
-        await page.setViewportSize({ width, height: 844 });
+        await page.setViewportSize({ width, height: mobile ? 1040 : 844 });
         await page.emulateMedia({ reducedMotion: "reduce", colorScheme });
         const dateAt = (offset: number) =>
           new Date(Date.parse(scene.date) + 86_400_000 * offset).toISOString().slice(0, 10);

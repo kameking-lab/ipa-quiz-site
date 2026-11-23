@@ -1,7 +1,7 @@
 .stack {
   --hero-padding: .75rem;
   --hero-gap: .5rem;
-  --plan-intro: 19.5rem;
+  --plan-intro: 19.75rem;
   --plan-progress: 8rem;
   --plan-actions: 7rem;
   --return-intro: 6.75rem;
@@ -69,6 +69,8 @@
   to { transform: translateX(-100%); }
 }
 .planCount { min-block-size: 4rem; margin-block-start: .375rem; }
+/* Keep the solved count in place when the schedule arrives after the catalog. */
+.planCalendarSlot { display: flow-root; min-block-size: 10.375rem; }
 .planActions { display: flex; flex-wrap: wrap; column-gap: .75rem; }
 .planDetails {
   width: 100%;
