@@ -1,12 +1,34 @@
-import { describe, it, expect, beforeAll } from "vitest";
+import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 import { POST } from "@/app/api/copilot/route";
+import type { AiAccessPolicy, AiFeature } from "@/lib/ai/access-policy";
+import { sharedNormalUseStore, type NormalUseStore } from "@/lib/ai/normal-use-kv";
+import { createCopilotGeminiProvider } from "@/lib/copilot/gemini-flash38";
+import { buildIndex } from "@/lib/copilot/retriever";
 import type { Question } from "@/lib/questions/types";
+
+vi.mock("@/lib/copilot/source-runtime", () => ({
+  createRuntimeCopilotSource: () => ({
+    kind: "runtime",
+    getQuestion: (id: string) => id === validQuestion.id ? validQuestion : undefined,
+    index: () => buildIndex([]),
+  }),
+}));
+vi.mock("@/lib/ai/access-server", () => ({
+  resolveAiAccess: async (_request: Request, _feature: AiFeature, policy: AiAccessPolicy) =>
+    policy.rolloutEnabled ? { kind: "paid", subject: "copilot-route-test" } : { kind: "legacy" },
+}));
+vi.mock("@/lib/ai/normal-use-kv", () => ({
+  sharedNormalUseStore: { admit: vi.fn<NormalUseStore["admit"]>().mockResolvedValue({ allowed: true }) },
+}));
+vi.mock("@/lib/copilot/gemini-flash38", () => ({ createCopilotGeminiProvider: vi.fn() }));
 
 beforeAll(() => {
   delete process.env.GEMINI_API_KEY;
   delete process.env.KV_REST_API_URL;
   delete process.env.KV_REST_API_TOKEN;
+  vi.spyOn(Date, "now").mockReturnValue(Date.parse("2026-11-24T12:00:00+09:00"));
 });
+afterAll(() => vi.restoreAllMocks());
 
 const validQuestion: Question = {
   id: "ap-2023h-am-q1",
@@ -119,6 +141,7 @@ describe("POST /api/copilot", () => {
     expect(res.status).toBe(200);
     expect(res.headers.get("Content-Type")).toContain("text/plain");
     expect(res.headers.get("X-Provider")).toBe("mock");
+    expect(res.headers.get("X-AI-Access")).toBe(process.env.AI_QUOTA_ROLLOUT === "true" ? "paid-normal-use" : null);
     expect(res.headers.get("X-RateLimit-Limit")).toBeNull();
     expect(res.headers.get("X-RAG-Enabled")).toMatch(/^[01]$/);
 
@@ -141,6 +164,9 @@ describe("POST /api/copilot", () => {
   });
 
   it("does not call paid Gemini when the shared abuse counter is unavailable", async () => {
+    if (process.env.AI_QUOTA_ROLLOUT === "true") {
+      vi.mocked(sharedNormalUseStore.admit).mockRejectedValueOnce(new Error("shared counter unavailable"));
+    }
     process.env.GEMINI_API_KEY = "test-key";
     try {
       const res = await POST(makeReq({
@@ -149,6 +175,7 @@ describe("POST /api/copilot", () => {
       }, "10.2.0.10"));
       expect(res.status).toBe(503);
       expect((await res.json()).error).toBe("rate_limit_unavailable");
+      expect(createCopilotGeminiProvider).not.toHaveBeenCalled();
     } finally {
       delete process.env.GEMINI_API_KEY;
     }
