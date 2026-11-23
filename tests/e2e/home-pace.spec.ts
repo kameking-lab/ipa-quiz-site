@@ -275,7 +275,7 @@ for (const width of [390, 1280]) {
 
 for (const scenario of [
   { name: "01-confirmed", deadline: "2026-12-27", registration: "申込締切まであと2日" },
-  { name: "02-estimated", deadline: "2026-12-27", estimated: true, registration: "申込締切まであと2日（見込み・2025年度の日程から推定）" },
+  { name: "02-estimated", deadline: "2026-12-27", estimated: true, registration: "申込締切まであと2日（見込み）" },
   { name: "03-before-opening", start: "2026-12-28", deadline: "2026-12-31", registration: "あと3日で申込開始" },
   { name: "04-after-closing", deadline: "2026-12-24" },
   { name: "05-exam-day", deadline: "2026-12-24", examDay: true },

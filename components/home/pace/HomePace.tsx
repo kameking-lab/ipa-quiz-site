@@ -151,6 +151,7 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
   const { exam: examCountdown, registration: registrationCountdown } = plan && !postExam
     ? homeCountdowns(plan, today, schedule?.exam === scheduleExam ? schedule.sessions : undefined)
     : { exam: null, registration: null };
+  const countdownBasisYear = examCountdown?.basisYear ?? registrationCountdown?.basisYear;
   const warning = plan && registrationCountdown?.kind === "deadline" && !registrationCountdown.basisYear &&
     registrationCountdown.date === plan.registration?.deadline ? deadlineWarning(plan, today) : null;
   const item = items.find(i => i.key === plan?.exam);
@@ -223,19 +224,17 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
             {created?.id === plan.id && passMoment?.planId !== plan.id && calendarConfirmation}
             {postExam && <h1 className="mt-2 text-2xl leading-tight font-bold">試験、おつかれさまでした</h1>}
             {(examCountdown || registrationCountdown) && <div className={styles.countdowns} data-home-countdowns>
-              {examCountdown && <div>
-                <h1 className={styles.countdown}>
-                  {examCountdown.days === 0 && !examCountdown.basisYear ? "試験は今日です" : <>
-                    <span>試験まであと</span><strong>{examCountdown.days}</strong><span>日{examCountdown.basisYear && "（見込み）"}</span>
-                  </>}
-                </h1>
-                {examCountdown.basisYear && <p className={styles.countdownBasis}>{examCountdown.basisYear}年度の同じ回をもとに推定</p>}
-              </div>}
+              {examCountdown && <h1 className={styles.countdown}>
+                {examCountdown.days === 0 && !examCountdown.basisYear ? "試験は今日です" : <>
+                  <span>試験まであと</span><strong>{examCountdown.days}</strong><span>日{examCountdown.basisYear && "（見込み）"}</span>
+                </>}
+              </h1>}
               {registrationCountdown && <p className={styles.registrationCountdown}>
                 {registrationCountdown.kind === "start" ? `あと${registrationCountdown.days}日で申込開始` :
                   `申込締切まであと${registrationCountdown.days}日`}
-                {registrationCountdown.basisYear && `（見込み・${registrationCountdown.basisYear}年度の日程から推定）`}
+                {registrationCountdown.basisYear && "（見込み）"}
               </p>}
+              {countdownBasisYear && <p className={styles.countdownBasis}>{countdownBasisYear}年度の同じ回をもとに推定</p>}
             </div>}
             <div className={styles.planCount}>
               {pace?.total ? <>
