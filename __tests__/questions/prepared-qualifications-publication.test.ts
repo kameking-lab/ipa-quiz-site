@@ -23,6 +23,7 @@ import { defaultPracticeSession, practiceSessionLabel } from "@/lib/questions/pr
 import type { ExamCode, Question } from "@/lib/questions/types";
 
 const exams: ExamCode[] = ["unko-kanrisha-ryokaku", "shobo-setsubishi-kou1", "kikenbutsu-kou", "kikenbutsu-hei", "shobo-setsubishi-kou4", "shobo-setsubishi-otsu6", "kikenbutsu-otsu4", "unko-kanrisha-kamotsu"];
+const officialAnswerEvidence = join(process.cwd(), "data/replenishment-ledgers/annual-supplements-20261122");
 
 describe("eight prepared qualifications are published", () => {
   const counts: Record<string, number> = {
@@ -54,13 +55,20 @@ describe("eight prepared qualifications are published", () => {
 
   for (const exam of exams) {
     const dir = join(process.cwd(), "data/questions", exam);
-    const files = readdirSync(dir).filter(name => /^(published-|20\d\d)/.test(name) && name.endsWith(".json"));
+    const isTransport = exam === "unko-kanrisha-ryokaku" || exam === "unko-kanrisha-kamotsu";
+    const files = readdirSync(dir).filter(name =>
+      (/^(published-|20\d\d)/.test(name) && name.endsWith(".json")) ||
+      (isTransport && name === "additional-papers.json"),
+    );
     const isInitialFile = (name: string) => (
-      (!(exam === "unko-kanrisha-ryokaku" || exam === "unko-kanrisha-kamotsu") || name !== "2022.json")
+      (!isTransport || (name !== "2022.json" && name !== "additional-papers.json"))
       && (exam !== "kikenbutsu-otsu4" || name === "published-202606.json")
     );
-    const questions: Question[] = files
-      .flatMap(name => JSON.parse(readFileSync(join(dir, name), "utf8")));
+    const questions = files.flatMap(name => {
+      const rows: Question[] = JSON.parse(readFileSync(join(dir, name), "utf8"));
+      // The additional-papers file also contains the already registered 2022 rows.
+      return name === "additional-papers.json" ? rows.filter(q => q.year < 2022) : rows;
+    });
     const original: Question[] = files.filter(isInitialFile)
       .flatMap(name => JSON.parse(readFileSync(join(dir, name), "utf8")));
     const byId = (items: Question[]) => [...items].sort((a, b) => a.id.localeCompare(b.id));
@@ -69,6 +77,7 @@ describe("eight prepared qualifications are published", () => {
       expect(getQualificationByExamCode(exam)?.status).toBe("live");
       expect(isExamPublished(exam)).toBe(true);
       expect(original).toHaveLength(counts[exam]);
+      if (isTransport) expect(questions).toHaveLength(exam === "unko-kanrisha-ryokaku" ? 228 : 221);
       const current = getQuestionsByExamStrict(exam);
       const originalIds = new Set(original.map(q => q.id));
       expect(byId(current.filter(q => originalIds.has(q.id)))).toEqual(byId(original));
@@ -105,7 +114,11 @@ describe("eight prepared qualifications are published", () => {
         expect(q.exam).toBe(exam);
         expect(q.sourceAnswerUrl).toMatch(/^https:\/\//);
         expect(q.sourcePdfUrl).toMatch(/^https:\/\//);
-        expect(q.sourceAttribution).toContain("独自作成");
+        if (isTransport && q.year <= 2021) {
+          expect(q.sourceAttribution).toBe("出典：公益財団法人運行管理者試験センター。");
+        } else {
+          expect(q.sourceAttribution).toContain("独自作成");
+        }
         if (q.season === "published") expect(questionSourceEdition(q)).toContain("2026年6月公表版");
         expect(EXAM_CONFIGS[q.exam].seasons).toContain(q.season);
         expect(EXAM_CONFIGS[q.exam].sessions.find(s => s.session === q.session)?.categories).toContain(q.category);
@@ -192,7 +205,7 @@ describe("eight prepared qualifications are published", () => {
 
   it("貨物 preserves every answer slot and exact multiple-selection sets in both official tables", () => {
     const dir = join(process.cwd(), "data/questions/unko-kanrisha-kamotsu");
-    const official: Record<string, (number | number[])[]> = JSON.parse(readFileSync(join(dir, "official-answers.json"), "utf8"));
+    const official: Record<string, (number | number[])[]> = JSON.parse(readFileSync(join(officialAnswerEvidence, "unko-kanrisha-kamotsu", "official-answers.json"), "utf8"));
     for (const year of ["2024", "2023"]) {
       if (!existsSync(join(dir, `${year}.json`))) continue;
       const questions: Question[] = JSON.parse(readFileSync(join(dir, `${year}.json`), "utf8"));
@@ -217,7 +230,7 @@ describe("eight prepared qualifications are published", () => {
 
   it("旅客 preserves every answer slot and exact multiple-selection sets in both official tables", () => {
     const dir = join(process.cwd(), "data/questions/unko-kanrisha-ryokaku");
-    const official: Record<string, (number | number[])[]> = JSON.parse(readFileSync(join(dir, "official-answers.json"), "utf8"));
+    const official: Record<string, (number | number[])[]> = JSON.parse(readFileSync(join(officialAnswerEvidence, "unko-kanrisha-ryokaku", "official-answers.json"), "utf8"));
     for (const year of ["2024", "2023"]) {
       if (!existsSync(join(dir, `${year}.json`))) continue;
       const questions: Question[] = JSON.parse(readFileSync(join(dir, `${year}.json`), "utf8"));

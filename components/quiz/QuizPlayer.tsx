@@ -29,6 +29,9 @@ import { ChoiceButton } from "./ChoiceButton";
 import { AfternoonEssayHint } from "./AfternoonEssayHint";
 import { useQuizChoiceRoving } from "@/lib/a11y/use-quiz-choice-roving";
 import { ExplanationCard } from "./ExplanationCard";
+import { AnswerStudyShare, PlanCompletionShare, useAnswerStudyMoment } from "@/components/StudyAchievements";
+import { questionShareTitle } from "@/lib/sharing/links";
+import { questionPagePath } from "@/lib/seo/question-url";
 import { createHistoryStore } from "@/lib/storage/history";
 import { writeLastQuestion } from "@/lib/storage/last-question";
 
@@ -72,6 +75,7 @@ interface Props {
   exam?: string;
   onNext: () => void;
   onFinish?: () => void;
+  showPlanInstall?: boolean;
   onReviewed?: (id: string, correct: boolean) => void;
   quiet?: boolean;
   managesPracticeGrant?: boolean;
@@ -97,6 +101,7 @@ function ScoredQuizPlayer({
   exam = "ap",
   onNext,
   onFinish,
+  showPlanInstall,
   onReviewed,
   quiet = false,
   answerPending = false,
@@ -125,6 +130,7 @@ function ScoredQuizPlayer({
     setRevealed(false);
   }
   const { recordAnswer: recordActivityAnswer, recordExplanation, endRef: explanationEndRef } = useQuestionActivity(question, revealed);
+  const { moment, recordMoment } = useAnswerStudyMoment();
   const [preparedExplanationId, setPreparedExplanationId] = React.useState<string | null>(null);
   const [completed, setCompleted] = React.useState(false);
   const questionStartRef = React.useRef<HTMLDivElement>(null);
@@ -246,6 +252,7 @@ function ScoredQuizPlayer({
         at: now,
       });
       recordStudyOnDate();
+      recordMoment(question.exam, question.id, correct, now);
       pet.answer(question, petAnswer);
       const nextCombo = correct ? combo + 1 : 0;
       const allStats = history.getStats();
@@ -260,7 +267,7 @@ function ScoredQuizPlayer({
         setBurst({ level, nonce: Date.now() });
       }
     },
-    [question, answerPending, attempt, history, combo, pendingAchievement, pet, recordActivityAnswer],
+    [question, answerPending, attempt, history, combo, pendingAchievement, pet, recordActivityAnswer, recordMoment],
   );
 
   const onNativeBAnswer = React.useCallback((selections: NativeBSelections) => {
@@ -392,6 +399,7 @@ function ScoredQuizPlayer({
       <QuizCompleteScreen
         stats={stats}
         showBatchScore={!!onFinish}
+        showPlanInstall={showPlanInstall}
         elapsed={elapsed}
         exam={exam}
         mode={mode}
@@ -575,6 +583,7 @@ function ScoredQuizPlayer({
                   onNext={goNext}
                   nextLabel={index + 1 >= total ? "結果を見る" : "次の問題へ"}
                 />
+                {revealed && <AnswerStudyShare moment={moment} id={question.id} path={questionPagePath(question)} title={questionShareTitle(question.question)} />}
                 <span ref={explanationEndRef} aria-hidden="true" className="block h-px" />
               </div>
             )}
@@ -663,6 +672,7 @@ export function QuizCompleteScreen({
   backLabel = "モード選択に戻る",
   scheduleUrl,
   showBatchScore = false,
+  showPlanInstall = false,
 }: {
   stats: { answered: number; correct: number };
   elapsed: number;
@@ -672,6 +682,7 @@ export function QuizCompleteScreen({
   backLabel?: string;
   scheduleUrl?: string;
   showBatchScore?: boolean;
+  showPlanInstall?: boolean;
 }) {
   const resultHeadingRef = React.useRef<HTMLHeadingElement>(null);
   React.useEffect(() => { resultHeadingRef.current?.focus({ preventScroll: true }); resultHeadingRef.current?.scrollIntoView?.({ block: "center", behavior: "instant" }); }, []);
@@ -718,6 +729,8 @@ export function QuizCompleteScreen({
         <Button variant="primary" onClick={onBack} className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
           <ArrowLeft className="h-4 w-4" /> {backLabel}
         </Button>
+
+        {showPlanInstall && <PlanCompletionShare answered={stats.answered} />}
 
         {scheduleUrl && (
           <details className="mt-5 rounded-xl border border-border px-4 text-sm">

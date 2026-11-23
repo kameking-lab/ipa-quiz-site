@@ -11,6 +11,7 @@ export interface MeasuredPresence extends StudyPresenceSnapshot {
   /** The top-level totals and exams retain the rolling five-minute window. */
   total: number;
   today?: StudyPresenceToday;
+  yesterdayCount?: number;
   measuredAt: string;
   validUntil: string;
   windowSeconds: number;
@@ -36,8 +37,8 @@ export type PresenceViewState =
 // Demo is an explicit UI-only mode. Neither API responses nor failures create it.
 export type PresenceRoomMode = PresenceViewState["mode"] | "demo";
 
-export function measuredPresence(snapshot: StudyPresenceSnapshot, measuredAt: number, expiresAt = Infinity, today?: StudyPresenceToday): MeasuredPresence {
-  return { ...snapshot, ...(today && { today }), status: "measured", total: snapshot.count,
+export function measuredPresence(snapshot: StudyPresenceSnapshot, measuredAt: number, expiresAt = Infinity, today?: StudyPresenceToday, yesterdayCount?: number): MeasuredPresence {
+  return { ...snapshot, ...(today && { today }), ...(yesterdayCount !== undefined && { yesterdayCount }), status: "measured", total: snapshot.count,
     measuredAt: new Date(measuredAt).toISOString(), validUntil: new Date(Math.min(measuredAt + PRESENCE_POLL_MS, expiresAt)).toISOString(),
     windowSeconds: PRESENCE_WINDOW_MS / 1000 };
 }
@@ -54,7 +55,10 @@ export function parseMeasuredPresence(value: unknown, now = Date.now()): Measure
       validUntil <= measuredAt || validUntil - measuredAt > PRESENCE_POLL_MS) return null;
   if (new Date(measuredAt).toISOString() !== data.measuredAt || new Date(validUntil).toISOString() !== data.validUntil) return null;
   const today = parseStudyPresenceToday(data.today);
-  return { ...snapshot, ...(today && { today }), status: "measured", total: snapshot.count, measuredAt: data.measuredAt,
+  const yesterday = data.yesterdayCount;
+  const yesterdayCount = typeof yesterday === "number" && Number.isSafeInteger(yesterday) && yesterday >= 0 ? yesterday : undefined;
+  return { ...snapshot, ...(today && { today }), ...(yesterdayCount !== undefined && { yesterdayCount }),
+    status: "measured", total: snapshot.count, measuredAt: data.measuredAt,
     validUntil: data.validUntil, windowSeconds: PRESENCE_WINDOW_MS / 1000 };
 }
 

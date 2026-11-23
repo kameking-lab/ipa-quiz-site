@@ -115,8 +115,7 @@ test("answer actions keep focus and next question survives reload on a short pho
   const next = new URL(page.url()).searchParams.get("question");
   await expect(page.getByRole("progressbar")).toHaveAttribute("aria-valuenow", "2");
   await expect(page.getByRole("radio").first()).toBeVisible();
-  await page.waitForLoadState("networkidle");
-  await page.reload();
+  await page.reload({ waitUntil: "domcontentloaded" });
   await expect(page.getByRole("radio").first()).toBeVisible({ timeout: 30_000 });
   expect(new URL(page.url()).searchParams.get("question")).toBe(next);
 });

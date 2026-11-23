@@ -48,13 +48,14 @@ import {
 } from "@/lib/copilot/header-codec";
 import { CitationCards } from "@/components/copilot/CitationCards";
 import { stripCitationFooter } from "@/lib/copilot/citations";
+import { COPILOT_PARTIAL_ANSWER } from "@/lib/copilot/response-status";
 import { RelatedQuestionsSection } from "@/components/copilot/RelatedQuestions";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { buildLearnerProfileFromHistory } from "@/lib/ai/learner-profile-client";
 import { useChatSession } from "@/hooks/useChatSession";
 import { posthogCapture } from "@/lib/posthog";
-import { AiAccessNotice, useAiAccessNotice } from "@/components/ai/AiAccessNotice";
-import { aiPolicyDenialMessage } from "@/lib/ai/access-client";
+import { AiAccessNotice, refreshAiQuota, useAiQuota } from "@/components/ai/AiAccessNotice";
+import { aiPolicyDenialMessage, clearAiCheckoutDraft, fetchWithAiGuestCookie, readAiCheckoutDraft } from "@/lib/ai/access-client";
 import { copilotRestriction, type CopilotRestriction } from "./restriction-copy";
 
 interface Message {
@@ -118,7 +119,8 @@ export function CopilotPanel({
   paper = false,
   focusRequest,
 }: Props) {
-  const {message: aiAccessMessage, begin: beginAiAccess, response: captureAiResponse, uncertain: markAiUncertain} = useAiAccessNotice(question.id);
+  const { quota, beginRequest, denials } = useAiQuota("copilot");
+  const draftId = `copilot:${question.id}`;
   const [messages, setMessages] = React.useState<Message[]>([]);
   const [input, setInput] = React.useState(initialPrompt ?? "");
   const [online, setOnline] = React.useState(true);
@@ -139,7 +141,7 @@ export function CopilotPanel({
   // (question-change, unmount). Only user stops should annotate the partial
   // message with a "(停止しました)" marker; system aborts should be silent.
   const userStoppedRef = React.useRef(false);
-  const lastSendArgsRef = React.useRef<{ text: string; quickAction?: QuickActionId } | null>(null);
+  const lastSendArgsRef = React.useRef<{ text: string; quickAction?: QuickActionId; messages: Message[] } | null>(null);
   const sendRef = React.useRef<(text: string, quickAction?: QuickActionId) => void>(() => {});
   useChatSession(question, messages);
 
@@ -164,7 +166,8 @@ export function CopilotPanel({
   React.useEffect(() => {
 
     setMessages([]);
-    setInput(initialPrompt ?? "");
+    setInput(readAiCheckoutDraft(draftId) ?? initialPrompt ?? "");
+    lastSendArgsRef.current = null;
     // Question-change abort is system-driven, not user-driven, so leave the
     // userStoppedRef flag false to avoid annotating the discarded message.
     userStoppedRef.current = false;
@@ -176,7 +179,7 @@ export function CopilotPanel({
     setRestriction(null);
     setStreamStatus("idle");
     setProfile(buildLearnerProfileFromHistory());
-  }, [question.id, initialPrompt]);
+  }, [draftId, initialPrompt]);
 
   const requestSequence = focusRequest?.sequence;
   const requestedPrompt = focusRequest?.prompt;
@@ -217,14 +220,16 @@ export function CopilotPanel({
 
       setErrorState(null);
       setRestriction(null);
-      lastSendArgsRef.current = { text: trimmed, quickAction };
+      const previous = lastSendArgsRef.current;
 
       const userMsg: Message = {
         role: "user",
         content: trimmed || QUICK_ACTIONS[quickAction!].label,
         quickAction,
       };
-      const nextMessages = [...messages, userMsg];
+      const nextMessages = previous && previous.text === trimmed && previous.quickAction === quickAction
+        ? previous.messages : [...messages, userMsg];
+      lastSendArgsRef.current = { text: trimmed, quickAction, messages: nextMessages };
       setMessages(nextMessages);
       // A Retry can send captured text while the editor holds a newer draft.
       if (!quickAction) setInput((draft) => draft.trim() === trimmed ? "" : draft);
@@ -239,18 +244,16 @@ export function CopilotPanel({
         if (!quickAction) setInput((draft) => draft || text);
       };
 
-      beginAiAccess();
-      let responseReceived = false;
+      let quotaDenied = false;
       try {
         posthogCapture("ai_query_sent", {
           questionId: question?.id,
           exam: question?.exam,
           quickAction: quickAction ?? null,
         });
-        const res = await fetch("/api/copilot", {
+        const applyQuotaDenial = beginRequest();
+        const res = await fetchWithAiGuestCookie("/api/copilot", {
           method: "POST",
-          // 無料枠解除はサーバ署名済み Cookie で判定するため、自己申告ヘッダは送らない
-          // （送っても無視される。ヘッダを残すと解除根拠を誤解させる）。
           headers: { "content-type": "application/json", "X-Kakomon-AI-Consent": "20261103" },
           signal: controller.signal,
           body: JSON.stringify({
@@ -266,10 +269,14 @@ export function CopilotPanel({
         });
 
         if (!currentRequest()) return;
-        responseReceived = true;
-        captureAiResponse(res);
         const responseBody = !res.ok ? await res.clone().json().catch(() => null) : null;
         if (!currentRequest()) return;
+        quotaDenied = applyQuotaDenial(res, responseBody);
+        if (quotaDenied) {
+          restoreDraft();
+          setMessages(messages);
+          return;
+        }
         if (!res.ok) {
           setRestriction(copilotRestriction(res, responseBody));
           restoreDraft();
@@ -377,6 +384,11 @@ export function CopilotPanel({
             type: isTimeout ? "timeout" : "server_error",
             retryFn: () => args && sendRef.current(args.text, args.quickAction),
           });
+        } else if (acc.includes(COPILOT_PARTIAL_ANSWER)) {
+          restoreDraft();
+        } else if (acc.trim()) {
+          lastSendArgsRef.current = null;
+          clearAiCheckoutDraft(draftId);
         }
 
         if (acc.trim() && !isTimeout && !isServerError && readSettings().recordHistory) {
@@ -392,7 +404,6 @@ export function CopilotPanel({
         });
       } catch (err) {
         if (!currentRequest()) return;
-        if (!responseReceived) markAiUncertain();
         if ((err as Error).name === "AbortError") {
           // User-initiated stop: keep whatever was already streamed and mark
           // the last assistant message so the UI can render a "(停止しました)"
@@ -440,6 +451,7 @@ export function CopilotPanel({
           setStreaming(false);
           setStreamStatus("idle");
           userStoppedRef.current = false;
+          if (!quotaDenied) refreshAiQuota();
         }
       }
     },
@@ -451,7 +463,7 @@ export function CopilotPanel({
       isCorrect,
       profile,
       responseLength,
-      beginAiAccess, captureAiResponse, markAiUncertain,
+      beginRequest, draftId,
     ],
   );
 
@@ -482,7 +494,9 @@ export function CopilotPanel({
           <a href="/contact" target="_blank" rel="noopener noreferrer" className="inline-block min-h-11 py-2 underline">問い合わせ</a>
         </aside>
       )}
-      <AiAccessNotice message={aiAccessMessage} continuationLinks={false} />
+      <AiAccessNotice quota={quota} denials={denials} draft={input} draftId={draftId}
+        returnTo={typeof window === "undefined" ? "" : window.location.pathname + window.location.search}
+        onDismiss={() => inputRef.current?.focus()} />
       <form
         onSubmit={(e) => {
           e.preventDefault();

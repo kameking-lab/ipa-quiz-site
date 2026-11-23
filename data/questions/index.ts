@@ -27,7 +27,7 @@ import release_shokuhin_eisei_kanshiin from "./shokuhin-eisei-kanshiin/release-p
 import release_tohan_chugoku_shikoku from "./tohan-chugoku-shikoku/release-papers.json";
 import release_tohan_hokkaido_tohoku from "./tohan-hokkaido-tohoku/release-papers.json";
 import release_tohan_kitakanto_koshinetsu from "./tohan-kitakanto-koshinetsu/release-papers.json";
-import release_tohan_kyushu_okinawa from "./tohan-kyushu-okinawa/release-papers.json";
+import { TOHAN_KYUSHU_OKINAWA_QUESTIONS } from "./tohan-kyushu-okinawa";
 import release_tohan_tokai_hokuriku from "./tohan-tokai-hokuriku/release-papers.json";
 import { ZENKOU_KEISAN_GIJUTSU_QUESTIONS } from "./zenkou-keisan-gijutsu";
 import { KATEI_SHOKUMOTSU_QUESTIONS } from "./katei-shokumotsu";
@@ -1376,7 +1376,6 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("kanken-3") ? { "kanken-3": KANKEN_3_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("suken") ? { "suken": SUKEN_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("zensho-calc") ? { "zensho-calc": ZENSHO_CALC_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
-  ...(isExamPublished("zensho-english") ? { "zensho-english": ZENSHO_ENGLISH_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("kounin") ? { "kounin": KOUNIN_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("zensho-bc") ? { "zensho-bc": ZENSHO_BC_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("ishi") ? { ishi: ISHI_QUESTIONS } : {}),
@@ -1792,7 +1791,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("tohan-chugoku-shikoku") ? { "tohan-chugoku-shikoku": release_tohan_chugoku_shikoku as unknown as Question[] } : {}),
   ...(isExamPublished("tohan-hokkaido-tohoku") ? { "tohan-hokkaido-tohoku": release_tohan_hokkaido_tohoku as unknown as Question[] } : {}),
   ...(isExamPublished("tohan-kitakanto-koshinetsu") ? { "tohan-kitakanto-koshinetsu": release_tohan_kitakanto_koshinetsu as unknown as Question[] } : {}),
-  ...(isExamPublished("tohan-kyushu-okinawa") ? { "tohan-kyushu-okinawa": release_tohan_kyushu_okinawa as unknown as Question[] } : {}),
+  ...(isExamPublished("tohan-kyushu-okinawa") ? { "tohan-kyushu-okinawa": TOHAN_KYUSHU_OKINAWA_QUESTIONS } : {}),
   ...(isExamPublished("tohan-tokai-hokuriku") ? { "tohan-tokai-hokuriku": release_tohan_tokai_hokuriku as unknown as Question[] } : {}),
 };
 

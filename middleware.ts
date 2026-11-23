@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { legacyExamPath } from "@/lib/seo/legacy-exam-path";
 import { referralRedirectHref } from "@/lib/analytics/referral-query";
 import { EXAM_CATALOG, EXAM_LIBRARY_PATH } from "@/lib/exam-library-catalog";
 import {
@@ -35,6 +36,8 @@ export const GONE_PATHS: readonly string[] = [
   "/contact/enterprise/thanks",
   "/security", // 旧 B2B セキュリティ(SOC2/SAML) LP
   "/case-studies", // 旧 法人導入事例
+  "/sitemap/essays.xml",
+  "/sitemap/success-stories.xml",
   "/podcast",
   "/launch", // 旧 ローンチ告知
   "/diagnosis", // 旧 試験区分診断（後継なし）
@@ -142,6 +145,14 @@ export function middleware(req: NextRequest) {
   // クライアント側リダイレクトになる。旧絞り込みURLはヘッダー送信前に 308 へ寄せる。
   if (req.nextUrl.pathname === EXAM_LIBRARY_PATH) return examLibraryRedirect(req);
 
+  const path = req.nextUrl.pathname;
+  if (!/^\/(?:api\/)?admin(?:\/|$)/.test(path)) {
+    if (!legacyExamPath(path)) return NextResponse.next();
+    const target = req.nextUrl.clone();
+    target.pathname = "/api/legacy-exam" + path;
+    return NextResponse.rewrite(target);
+  }
+
   const user = process.env.ADMIN_BASIC_USER?.trim();
   const pass = process.env.ADMIN_BASIC_PASS?.trim();
 
@@ -182,6 +193,12 @@ export const config = {
     "/api/admin",
     "/api/admin/:path*",
     "/e-learning/exams",
+    "/:exam/:edition",
+    "/:exam/:year/:season",
+    "/q/:exam/:edition/:section/:question",
+    "/q/:exam/:year/:season/:section/:question",
+    "/sitemap/essays.xml",
+    "/sitemap/success-stories.xml",
     // --- GONE_PATHS（410 Gone・後継なし削除ページ）---
     "/characters/normal.svg",
     "/characters/sweet.svg",

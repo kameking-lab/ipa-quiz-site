@@ -1,0 +1,2520 @@
+[
+  {
+    "id": "zenkou-pc-2024-first-gakka-I-q1",
+    "exam": "zenkou-pc",
+    "session": "gakka-I",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 1,
+    "subject": "データベース",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 1級・筆記",
+    "officialQuestionLabel": "【1】",
+    "category": "データベース",
+    "topicTags": [
+      "データベース"
+    ],
+    "difficulty": 3,
+    "question": "関係データベースの表、レコードの識別、障害時の回復について、解答群から(a)〜(e)を選びなさい。",
+    "answer": "(a) カ、(b) キ、(c) ク、(d) オ、(e) ア",
+    "officialAnswerNumber": "(a) カ、(b) キ、(c) ク、(d) オ、(e) ア",
+    "explanation": "表の単位はテーブル（カ）。行がレコード（イ）、列がフィールド（ウ）、行列の交点はセル（エ）と呼ばれる。設問の空行（キ）は、表計算で空いた行を表の途中に挟むような使い方を指す。主キー（ク）で行を一意に識別する。バックアップにログを反映して先へ進めるのがロールフォワード（オ）、処理前へ戻すのがロールバック（ア）。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=17",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=28",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」1級筆記 【1】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-1-written-01.webp"
+    ],
+    "imageAltTexts": [
+      "1級筆記【1】の公式問題。関係データベースの表、レコードの識別、障害時の回復について、解答群から(a)〜(e)を選びなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(a) カ、(b) キ、(c) ク、(d) オ、(e) ア",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-I-q2",
+    "exam": "zenkou-pc",
+    "session": "gakka-I",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 2,
+    "subject": "データベース",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 1級・筆記",
+    "officialQuestionLabel": "【2】",
+    "category": "データベース",
+    "topicTags": [
+      "データベース"
+    ],
+    "difficulty": 3,
+    "question": "図の二相コミットで資源Bの更新が失敗した。処理終了後の資源A、Bの値を答えなさい。",
+    "answer": "資源A 55\n資源B 100",
+    "officialAnswerNumber": "資源A 55\n資源B 100",
+    "explanation": "確認段階で一方がコミット不可を返すと、調整側は両資源にロールバックを指示する。資源Aの成功した更新も取り消され、資源Bとともに更新前の値へ戻る。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=17",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=28",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」1級筆記 【2】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-1-written-02.webp"
+    ],
+    "imageAltTexts": [
+      "1級筆記【2】の公式問題。図の二相コミットで資源Bの更新が失敗した。処理終了後の資源A、Bの値を答えなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "資源A 55\n資源B 100",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-I-q3",
+    "exam": "zenkou-pc",
+    "session": "gakka-I",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 3,
+    "subject": "データベース",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 1級・筆記",
+    "officialQuestionLabel": "【3】",
+    "category": "データベース",
+    "topicTags": [
+      "データベース"
+    ],
+    "difficulty": 3,
+    "question": "注文に関する三つの表を第三正規形に分ける図の(a)〜(e)のフィールド名を答えなさい。",
+    "answer": "(a) 商品名、(b) 顧客番号、(c) 注文日、(d) 顧客番号、(e) 顧客名",
+    "officialAnswerNumber": "(a) 商品名、(b) 顧客番号、(c) 注文日、(d) 顧客番号、(e) 顧客名",
+    "explanation": "商品番号で商品名と単価が決まる。伝票番号が決める注文日と顧客番号は注文側に置き、顧客番号が決める顧客名だけを顧客表へ移す。伝票番号から顧客番号を経由して顧客名が決まる推移的従属を解消できる。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=17",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=28",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」1級筆記 【3】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-1-written-03.webp"
+    ],
+    "imageAltTexts": [
+      "1級筆記【3】の公式問題。注文に関する三つの表を第三正規形に分ける図の(a)〜(e)のフィールド名を答えなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(a) 商品名、(b) 顧客番号、(c) 注文日、(d) 顧客番号、(e) 顧客名",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-I-q4",
+    "exam": "zenkou-pc",
+    "session": "gakka-I",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 4,
+    "subject": "データベース",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 1級・筆記",
+    "officialQuestionLabel": "【4】",
+    "category": "データベース",
+    "topicTags": [
+      "データベース"
+    ],
+    "difficulty": 3,
+    "question": "三つの表から顧客番号2014014の注文を抽出し、注文日の降順で出すSQLの(a)〜(e)を選びなさい。",
+    "answer": "(a) キ、(b) カ、(c) サ、(d) ク、(e) イ",
+    "officialAnswerNumber": "(a) キ、(b) カ、(c) サ、(d) ク、(e) イ",
+    "explanation": "顧客番号は k_id（キ）、商品を結ぶ s_id（ウ）と伝票を結ぶ d_id（サ）は役割が異なる。結合と顧客番号の条件を AND（カ）で同時に課す。ORDER BY（ク）に DESC（イ）を指定し、ASC（ア）なら昇順になる。BETWEEN（エ）は範囲指定、MAX（オ）・MIN（ケ）・SUM（コ）は集計、GROUP BY（シ）はグループ化である。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=19",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=28",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」1級筆記 【4】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-1-written-04.webp",
+      "/images/questions/zenkou-pc/47-1-sql-reference-tables.webp"
+    ],
+    "imageAltTexts": [
+      "1級筆記【4】の公式問題。三つの表から顧客番号2014014の注文を抽出し、注文日の降順で出すSQLの(a)〜(e)を選びなさい。",
+      "伝票、商品、注文、顧客の4表と列情報。"
+    ],
+    "officialReferenceUrls": [
+      "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=18"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(a) キ、(b) カ、(c) サ、(d) ク、(e) イ",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-I-q5",
+    "exam": "zenkou-pc",
+    "session": "gakka-I",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 5,
+    "subject": "データベース",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 1級・筆記",
+    "officialQuestionLabel": "【5】",
+    "category": "データベース",
+    "topicTags": [
+      "データベース"
+    ],
+    "difficulty": 3,
+    "question": "権限付与、前方一致、更新、税額の算出、日付条件の副問合せに対応するSQLをそれぞれ選びなさい。",
+    "answer": "(1) コ、(2) ウ、(3) ア、(4) オ、(5) キ",
+    "officialAnswerNumber": "(1) コ、(2) ウ、(3) ア、(4) オ、(5) キ",
+    "explanation": "①GRANT（コ）は権限付与で、REVOKE（ケ）は取消し。②ウは LIKE の DVD% で前方一致、エの IN はパターン照合を行わない。③アは UPDATE の後に表、SET の後に更新列を置く。イは表と列の構文が逆。④税額は価格×0.1 のオ、カは×0.9。⑤キは伝票と商品を商品番号で結び、対象日の伝票番号を副問合せで絞る。クは外側のFROMに denpyou を含めていない。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=19",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=28",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」1級筆記 【5】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-1-written-05.webp",
+      "/images/questions/zenkou-pc/47-1-sql-reference-tables.webp"
+    ],
+    "imageAltTexts": [
+      "1級筆記【5】の公式問題。権限付与、前方一致、更新、税額の算出、日付条件の副問合せに対応するSQLをそれぞれ選びなさい。",
+      "伝票、商品、注文、顧客の4表と列情報。"
+    ],
+    "officialReferenceUrls": [
+      "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=18"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) コ、(2) ウ、(3) ア、(4) オ、(5) キ",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-I-q6",
+    "exam": "zenkou-pc",
+    "session": "gakka-I",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 6,
+    "subject": "データベース",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 1級・筆記",
+    "officialQuestionLabel": "【6】",
+    "category": "データベース",
+    "topicTags": [
+      "データベース"
+    ],
+    "difficulty": 3,
+    "question": "公式の4表を使い、五つのSELECT文が返す顧客番号と顧客名の結果表を選びなさい。",
+    "answer": "(1) カ、(2) ウ、(3) オ、(4) イ、(5) ア",
+    "officialAnswerNumber": "(1) カ、(2) ウ、(3) オ、(4) イ、(5) ア",
+    "explanation": "①住所条件で2005006だけ（カ）。②番号条件で2007013だけ（ウ）。③伝票10の顧客は2006002（オ）。④6月9日の注文は2004005と2005009の2行（イ）。⑤数量5の伝票から2007013と2006002（ア）。エの2005009、キの2007007、クの2004005は各1行だけの候補で、指定条件の全行とは一致しない。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=20",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=28",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」1級筆記 【6】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-1-written-06.webp",
+      "/images/questions/zenkou-pc/47-1-sql-reference-tables.webp"
+    ],
+    "imageAltTexts": [
+      "1級筆記【6】の公式問題。公式の4表を使い、五つのSELECT文が返す顧客番号と顧客名の結果表を選びなさい。",
+      "伝票、商品、注文、顧客の4表と列情報。"
+    ],
+    "officialReferenceUrls": [
+      "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=18"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) カ、(2) ウ、(3) オ、(4) イ、(5) ア",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-I-q7",
+    "exam": "zenkou-pc",
+    "session": "gakka-I",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 7,
+    "subject": "データベース",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 1級・筆記",
+    "officialQuestionLabel": "【7】",
+    "category": "ハードウェア",
+    "topicTags": [
+      "ハードウェア"
+    ],
+    "difficulty": 3,
+    "question": "チップセット、ファイルシステム、メモリ、CPUの高速化、HDD接続について(1)〜(5)を○×で判定しなさい。",
+    "answer": "(1) ○、(2) ○、(3) ×、(4) ×、(5) ○",
+    "officialAnswerNumber": "(1) ○、(2) ○、(3) ×、(4) ×、(5) ○",
+    "explanation": "①MCHはメモリ系の制御を担う。②NTFSはWindows NT系のファイルシステム。③DDR3のプリフェッチは8ビットで、4ビットはDDR2。④同じ段で複数命令を並列に発行する説明はスーパースカラ。パイプラインは命令処理の段階を重ねる。⑤同じE-IDE接続の機器を区別するジャンパ設定がある。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=20",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=28",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」1級筆記 【7】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-1-written-07.webp"
+    ],
+    "imageAltTexts": [
+      "1級筆記【7】の公式問題。チップセット、ファイルシステム、メモリ、CPUの高速化、HDD接続について(1)〜(5)を○×で判定しなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) ○、(2) ○、(3) ×、(4) ×、(5) ○",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-I-q8",
+    "exam": "zenkou-pc",
+    "session": "gakka-I",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 8,
+    "subject": "データベース",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 1級・筆記",
+    "officialQuestionLabel": "【8】",
+    "category": "ハードウェア",
+    "topicTags": [
+      "ハードウェア"
+    ],
+    "difficulty": 3,
+    "question": "命令実行、演算器、メモリの遅延に関する五つの説明に対応する記号を選びなさい。",
+    "answer": "(1) ア、(2) カ、(3) ク、(4) イ、(5) ウ",
+    "officialAnswerNumber": "(1) ア、(2) カ、(3) ク、(4) イ、(5) ウ",
+    "explanation": "①依存しない命令を先に実行できるのがアウトオブオーダ（ア）。②浮動小数点はFPU（カ）、③待ち時間はCAS LatencyのCL（ク）、④整数の算術・論理演算はALU（イ）、⑤書き戻しがWrite Back（ウ）。Execute（キ）は命令の実行段階、NFP（エ）は数値演算器を指す文脈で使われる略称で、設問のFPUの正式名称に対応するのはカ。スーパースカラ（オ）は同時に複数命令を発行する方式。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=20",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=28",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」1級筆記 【8】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-1-written-08.webp"
+    ],
+    "imageAltTexts": [
+      "1級筆記【8】の公式問題。命令実行、演算器、メモリの遅延に関する五つの説明に対応する記号を選びなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) ア、(2) カ、(3) ク、(4) イ、(5) ウ",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-I-q9",
+    "exam": "zenkou-pc",
+    "session": "gakka-I",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 9,
+    "subject": "データベース",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 1級・筆記",
+    "officialQuestionLabel": "【9】",
+    "category": "ハードウェア",
+    "topicTags": [
+      "ハードウェア"
+    ],
+    "difficulty": 3,
+    "question": "キャッシュ20 ns、主記憶70 ns、ヒット率90%のとき、CPUの平均アクセス時間を求めなさい。",
+    "answer": "25",
+    "officialAnswerNumber": "25",
+    "explanation": "試験の計算では、ヒット時20 ns、ミス時70 nsの二通りを確率で重み付けする。20×0.9＋70×0.1＝25 ns。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=21",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=28",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」1級筆記 【9】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-1-written-09.webp"
+    ],
+    "imageAltTexts": [
+      "1級筆記【9】の公式問題。キャッシュ20 ns、主記憶70 ns、ヒット率90%のとき、CPUの平均アクセス時間を求めなさい。"
+    ],
+    "type": "numeric",
+    "numericAnswer": {
+      "format": "integer",
+      "unit": "ns"
+    },
+    "isCalculation": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-I-q10",
+    "exam": "zenkou-pc",
+    "session": "gakka-I",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 10,
+    "subject": "データベース",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 1級・筆記",
+    "officialQuestionLabel": "【10】",
+    "category": "ハードウェア",
+    "topicTags": [
+      "ハードウェア"
+    ],
+    "difficulty": 3,
+    "question": "BDの容量、表示装置、RAID、断片化対策、映像音声伝送の五つの説明に対応する語句を選びなさい。",
+    "answer": "(1) ア、(2) イ、(3) ク、(4) カ、(5) キ",
+    "officialAnswerNumber": "(1) ア、(2) イ、(3) ク、(4) カ、(5) キ",
+    "explanation": "①片面1層BDは25 GB（ア）、50 GB（オ）は片面2層。②マトリックス駆動を用いる液晶（イ）を選ぶ。プラズマ（ウ）は放電で発光を作る方式。③複製して耐障害性を上げるRAID-1（ク）に対し、RAID-0（エ）はデータを分散。④断片の再配置がデフラグ（カ）。⑤映像と音声を一本で運ぶHDMI（キ）。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=21",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=28",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」1級筆記 【10】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-1-written-10.webp"
+    ],
+    "imageAltTexts": [
+      "1級筆記【10】の公式問題。BDの容量、表示装置、RAID、断片化対策、映像音声伝送の五つの説明に対応する語句を選びなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) ア、(2) イ、(3) ク、(4) カ、(5) キ",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-I-q11",
+    "exam": "zenkou-pc",
+    "session": "gakka-I",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 11,
+    "subject": "データベース",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 1級・筆記",
+    "officialQuestionLabel": "【11】",
+    "category": "ハードウェア",
+    "topicTags": [
+      "ハードウェア"
+    ],
+    "difficulty": 3,
+    "question": "写真(a)〜(e)に対応する機器または端子を公式の解答群から選びなさい。",
+    "answer": "(a) オ、(b) ア、(c) エ、(d) ウ、(e) イ",
+    "officialAnswerNumber": "(a) オ、(b) ア、(c) エ、(d) ウ、(e) イ",
+    "explanation": "音声入出力端子を備えたカードはサウンドカード（オ）、タグを無線で読むのがRFID（ア）。写真(c)のSSD（エ）は半導体を用い、HDD（ク）は回転ディスクを用いる。(d)はアナログ用の接点を持たないDVI-D（ウ）で、DVI-I（キ）はアナログ信号にも対応する。(e)はDisplayPort（イ）。グラフィクスカード（カ）は画像出力を担う拡張カード。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=21",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=28",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」1級筆記 【11】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-1-written-11.webp"
+    ],
+    "imageAltTexts": [
+      "1級筆記【11】の公式問題。写真(a)〜(e)に対応する機器または端子を公式の解答群から選びなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(a) オ、(b) ア、(c) エ、(d) ウ、(e) イ",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-I-q12",
+    "exam": "zenkou-pc",
+    "session": "gakka-I",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 12,
+    "subject": "データベース",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 1級・筆記",
+    "officialQuestionLabel": "【12】",
+    "category": "ハードウェア",
+    "topicTags": [
+      "ハードウェア"
+    ],
+    "difficulty": 3,
+    "question": "平均シーク25 ms、3000 rpm、1トラック20 000 BのHDDに5000 Bを書くアクセス時間を求めなさい。",
+    "answer": "40",
+    "officialAnswerNumber": "40",
+    "explanation": "3000 rpmは毎秒50回転で、1周20 ms、平均回転待ちは半周の10 ms。データ転送は1周の1/4で5 ms。シーク25 msと合わせる。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=22",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=28",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」1級筆記 【12】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-1-written-12.webp"
+    ],
+    "imageAltTexts": [
+      "1級筆記【12】の公式問題。平均シーク25 ms、3000 rpm、1トラック20 000 BのHDDに5000 Bを書くアクセス時間を求めなさい。"
+    ],
+    "type": "numeric",
+    "numericAnswer": {
+      "format": "integer",
+      "unit": "ms"
+    },
+    "isCalculation": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-I-q13",
+    "exam": "zenkou-pc",
+    "session": "gakka-I",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 13,
+    "subject": "データベース",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 1級・筆記",
+    "officialQuestionLabel": "【13】",
+    "category": "情報の表現",
+    "topicTags": [
+      "情報の表現"
+    ],
+    "difficulty": 3,
+    "question": "動画・音声の圧縮、複合現実、立体表示に関する五つの説明に対応する記号を選びなさい。",
+    "answer": "(1) ケ、(2) ア、(3) コ、(4) キ、(5) ウ",
+    "officialAnswerNumber": "(1) ケ、(2) ア、(3) コ、(4) キ、(5) ウ",
+    "explanation": "①ビデオCDはMPEG-1（ケ）。MPEG-2（エ）はDVD映像などに用いられる。②MP3（ア）はMPEG音声符号化の一方式で、WMV（オ）は動画形式。③MPEG-4（コ）は低いビットレートでの動画配信にも用いる。VOD（カ）は視聴者の要求で配信するサービス。④MR（キ）は仮想物体と現実環境の位置関係や操作を扱う。AR（イ）は現実に情報を重ねる技術の総称、HMD（ク）は頭部装着型の表示機器。⑤ホログラフィ（ウ）は光の波面を再現して立体像を見せる。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=22",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=28",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」1級筆記 【13】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-1-written-13.webp"
+    ],
+    "imageAltTexts": [
+      "1級筆記【13】の公式問題。動画・音声の圧縮、複合現実、立体表示に関する五つの説明に対応する記号を選びなさい。"
+    ],
+    "officialReferenceUrls": [
+      "https://www.mpeg.org/standards/MPEG-1/",
+      "https://www.iso.org/standard/39259.html"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) ケ、(2) ア、(3) コ、(4) キ、(5) ウ",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-I-q14",
+    "exam": "zenkou-pc",
+    "session": "gakka-I",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 14,
+    "subject": "データベース",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 1級・筆記",
+    "officialQuestionLabel": "【14】",
+    "category": "情報の表現",
+    "topicTags": [
+      "情報の表現"
+    ],
+    "difficulty": 3,
+    "question": "3DCGの質感、形状、照明、面・立体表現に対応する用語を選びなさい。",
+    "answer": "(1) イ、(2) オ、(3) カ、(4) ク、(5) コ",
+    "officialAnswerNumber": "(1) イ、(2) オ、(3) カ、(4) ク、(5) コ",
+    "explanation": "テクスチャ（イ）は面に貼る模様、モデリング（オ）は形状の作成、シェーディング（カ）は光に応じた明暗の計算。サーフェス（ク）は表面、ソリッド（コ）は内部まで定義し、ワイヤーフレーム（ウ）は辺で表す。アスペクト（ア）は縦横比のような比、ポイント（エ）は点、属性値（キ）は形状などに付随する値、トレース（ケ）は輪郭をなぞる等の処理である。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=22",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=28",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」1級筆記 【14】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-1-written-14.webp"
+    ],
+    "imageAltTexts": [
+      "1級筆記【14】の公式問題。3DCGの質感、形状、照明、面・立体表現に対応する用語を選びなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) イ、(2) オ、(3) カ、(4) ク、(5) コ",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-I-q15",
+    "exam": "zenkou-pc",
+    "session": "gakka-I",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 15,
+    "subject": "データベース",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 1級・筆記",
+    "officialQuestionLabel": "【15】",
+    "category": "ネットワーク",
+    "topicTags": [
+      "ネットワーク"
+    ],
+    "difficulty": 3,
+    "question": "時刻同期、遠隔操作、電力線通信、伝送誤り、ADSLに関する各記述を○×で判定しなさい。",
+    "answer": "(1) ○、(2) ×、(3) ×、(4) ○、(5) ○",
+    "officialAnswerNumber": "(1) ○、(2) ×、(3) ×、(4) ○、(5) ○",
+    "explanation": "①タイムサーバで時刻をそろえられる。②Telnetは遠隔端末の操作用で、複数アンテナはMIMOなどの技術。③PLCは電力線を通信路にする方式で、遠隔操作のプロトコルの名称ではない。④伝送誤りには検出や訂正が要る。⑤ADSLは電話の音声帯域とは異なる周波数を使う。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=22",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=28",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」1級筆記 【15】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-1-written-15.webp"
+    ],
+    "imageAltTexts": [
+      "1級筆記【15】の公式問題。時刻同期、遠隔操作、電力線通信、伝送誤り、ADSLに関する各記述を○×で判定しなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) ○、(2) ×、(3) ×、(4) ○、(5) ○",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-I-q16",
+    "exam": "zenkou-pc",
+    "session": "gakka-I",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 16,
+    "subject": "データベース",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 1級・筆記",
+    "officialQuestionLabel": "【16】",
+    "category": "ネットワーク",
+    "topicTags": [
+      "ネットワーク"
+    ],
+    "difficulty": 3,
+    "question": "アドレス変換、ネットワーク上の記憶装置、Web通信、仮想専用回線、誤り検出の語句を選びなさい。",
+    "answer": "(1) エ、(2) ウ、(3) カ、(4) キ、(5) ク",
+    "officialAnswerNumber": "(1) エ、(2) ウ、(3) カ、(4) キ、(5) ク",
+    "explanation": "①NAT（エ）がアドレスを変換、②NAS（ウ）がネットワーク越しに記憶領域を提供、③HTTP（カ）がWebの要求・応答を扱う。④VPN（キ）は公衆網上の仮想専用網、⑤CRC（ク）は多項式の余りを用いた誤り検出。ICMP（ア）はIP通信の制御・通知、DMZ（イ）は公開サーバなどを内部網から分ける領域、NTP（オ）は時刻同期のプロトコル。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=23",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=28",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」1級筆記 【16】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-1-written-16.webp"
+    ],
+    "imageAltTexts": [
+      "1級筆記【16】の公式問題。アドレス変換、ネットワーク上の記憶装置、Web通信、仮想専用回線、誤り検出の語句を選びなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) エ、(2) ウ、(3) カ、(4) キ、(5) ク",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-I-q17",
+    "exam": "zenkou-pc",
+    "session": "gakka-I",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 17,
+    "subject": "データベース",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 1級・筆記",
+    "officialQuestionLabel": "【17】",
+    "category": "ネットワーク",
+    "topicTags": [
+      "ネットワーク"
+    ],
+    "difficulty": 3,
+    "question": "100 MBの写真を1 Gbpsの回線で送る。伝送効率0.5、1 G＝1000 Mとすると何秒か。",
+    "answer": "1.6",
+    "officialAnswerNumber": "1.6",
+    "explanation": "バイトをビットに直すと100 MB＝800 Mbit。有効速度は1000×0.5＝500 Mbit/s。有効速度でデータ量を割ると1.6 sになる。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=23",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=28",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」1級筆記 【17】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-1-written-17.webp"
+    ],
+    "imageAltTexts": [
+      "1級筆記【17】の公式問題。100 MBの写真を1 Gbpsの回線で送る。伝送効率0.5、1 G＝1000 Mとすると何秒か。"
+    ],
+    "type": "numeric",
+    "numericAnswer": {
+      "format": "decimal",
+      "unit": "s",
+      "precision": 1
+    },
+    "isCalculation": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-I-q18",
+    "exam": "zenkou-pc",
+    "session": "gakka-I",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 18,
+    "subject": "データベース",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 1級・筆記",
+    "officialQuestionLabel": "【18】",
+    "category": "ネットワーク",
+    "topicTags": [
+      "ネットワーク"
+    ],
+    "difficulty": 3,
+    "question": "稼働率0.8と0.7の機器を並列にし、その組と稼働率0.9の機器を直列にした。全体の稼働率に最も近い値を選びなさい。",
+    "answer": "イ",
+    "officialAnswerNumber": "イ",
+    "explanation": "並列部分は両方が停止する確率を1から引いて0.94。直列の機器も動く必要があるので0.94×0.9＝0.846、最も近いのは0.85。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=23",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=28",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」1級筆記 【18】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-1-written-18.webp"
+    ],
+    "imageAltTexts": [
+      "1級筆記【18】の公式問題。稼働率0.8と0.7の機器を並列にし、その組と稼働率0.9の機器を直列にした。全体の稼働率に最も近い値を選びなさい。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "0.72",
+      "イ": "0.85",
+      "ウ": "0.90",
+      "エ": "0.94",
+      "オ": "0.97"
+    },
+    "choiceExplanations": {
+      "ア": "0.8と0.9だけを掛けた値で、0.7の機器が並列で補う場合を数えていない。",
+      "イ": "並列部分が動く確率0.94に、直列の0.9を掛けた0.846を小数第2位に丸めた値。",
+      "ウ": "直列の機器だけの値であり、その上流にある並列部分が停止する可能性を含めていない。",
+      "エ": "0.8と0.7の並列部分だけの稼働率。全体には直列の0.9の機器も含まれる。",
+      "オ": "全体の稼働率は直列要素の0.9以下なので、それより大きな0.97にはならない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-I-q19",
+    "exam": "zenkou-pc",
+    "session": "gakka-I",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 19,
+    "subject": "データベース",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 1級・筆記",
+    "officialQuestionLabel": "【19】",
+    "category": "情報と社会",
+    "topicTags": [
+      "情報と社会"
+    ],
+    "difficulty": 3,
+    "question": "AI、あいまいさを扱う論理、量子計算、ネット接続機器、多層ネットワークの学習に関する用語を選びなさい。",
+    "answer": "(1) ア、(2) オ、(3) カ、(4) キ、(5) イ",
+    "officialAnswerNumber": "(1) ア、(2) オ、(3) カ、(4) キ、(5) イ",
+    "explanation": "AI（ア）は人の知的活動を計算機で扱う分野。ファジィ論理（オ）は真偽の間の度合いを扱う。量子コンピュータ（カ）は量子状態を用いる。IoT（キ）は機器をネットにつなぎ、深層学習（イ）は多層のニューラルネットワークを訓練する。Windows 10（ウ）はOS、ビッグデータ（エ）は大規模・多様なデータ、リアルタイムOS（ク）は期限を意識して処理を管理し、シンクライアント（ケ）は処理の多くをサーバ側に置く構成。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=24",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=28",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」1級筆記 【19】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-1-written-19.webp"
+    ],
+    "imageAltTexts": [
+      "1級筆記【19】の公式問題。AI、あいまいさを扱う論理、量子計算、ネット接続機器、多層ネットワークの学習に関する用語を選びなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) ア、(2) オ、(3) カ、(4) キ、(5) イ",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-I-q20",
+    "exam": "zenkou-pc",
+    "session": "gakka-I",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 20,
+    "subject": "データベース",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 1級・筆記",
+    "officialQuestionLabel": "【20】",
+    "category": "情報と社会",
+    "topicTags": [
+      "情報と社会"
+    ],
+    "difficulty": 3,
+    "question": "電子署名・証明書、労働者派遣・請負、製造物責任法に関する記述を○×で判定しなさい。",
+    "answer": "(1) ×、(2) ○、(3) ×、(4) ○、(5) ×",
+    "officialAnswerNumber": "(1) ×、(2) ○、(3) ×、(4) ○、(5) ×",
+    "explanation": "①受信者は公開鍵で署名を検証するので、送信者の秘密鍵を確認するものではない。②公式正答は○。電子証明書が示すのは公開鍵と名義人の結び付きで、秘密鍵自体の正当性を受信者が証明書で確認するわけではない。③派遣労働者の作業は派遣先が指揮命令する。④請負では請負事業主が自らの労働者を指揮する。⑤製造物責任法はProduct Liability Act（PL法）で、製品の欠陥による損害に関する法律である。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=24",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=28",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」1級筆記 【20】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-1-written-20.webp"
+    ],
+    "imageAltTexts": [
+      "1級筆記【20】の公式問題。電子署名・証明書、労働者派遣・請負、製造物責任法に関する記述を○×で判定しなさい。"
+    ],
+    "officialReferenceUrls": [
+      "https://www.digital.go.jp/policies/digitalsign_ref",
+      "https://www.mhlw.go.jp/web/t_doc?dataId=75021000&dataType=0&pageNo=1",
+      "https://www.mhlw.go.jp/web/t_doc?dataId=75024000&dataType=0&pageNo=1",
+      "https://www.caa.go.jp/policies/policy/consumer_safety/other/pl_qa.html"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) ×、(2) ○、(3) ×、(4) ○、(5) ×",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-II-q1",
+    "exam": "zenkou-pc",
+    "session": "gakka-II",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 1,
+    "subject": "表計算",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 2級・筆記",
+    "officialQuestionLabel": "【1】",
+    "category": "表計算",
+    "topicTags": [
+      "表計算"
+    ],
+    "difficulty": 2,
+    "question": "セルの名称、セル参照、入力支援、セル結合に関する(1)〜(5)を○×で判定しなさい。",
+    "answer": "(1) ×、(2) ○、(3) ×、(4) ○、(5) ○",
+    "officialAnswerNumber": "(1) ×、(2) ○、(3) ×、(4) ○、(5) ○",
+    "explanation": "①入力対象はアクティブセルで、ポインタは画面上の指示位置。②シートのマス目はセル。③位置を特定するのはセル番地で、絶対参照はコピー時に位置を固定する指定。④連続値の生成はオートフィル、⑤複数セルを一つにまとめる操作はセルの結合。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=33",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=42",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」2級筆記 【1】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-2-written-01.webp"
+    ],
+    "imageAltTexts": [
+      "2級筆記【1】の公式問題。セルの名称、セル参照、入力支援、セル結合に関する(1)〜(5)を○×で判定しなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) ×、(2) ○、(3) ×、(4) ○、(5) ○",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-II-q2",
+    "exam": "zenkou-pc",
+    "session": "gakka-II",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 2,
+    "subject": "表計算",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 2級・筆記",
+    "officialQuestionLabel": "【2】",
+    "category": "表計算",
+    "topicTags": [
+      "表計算"
+    ],
+    "difficulty": 2,
+    "question": "出勤簿を完成させる。就業時間、賃金、平均就業時間、給与、最長就業時間の(a)〜(e)に入る式を答えなさい。",
+    "answer": "(a) =D11-C11、(b) =E11*F11*G11、(c) =AVERAGE(E5:E18)、(d) =SUM(H5:H18)、(e) =MAX(E5:E18)",
+    "officialAnswerNumber": "(a) =D11-C11、(b) =E11*F11*G11、(c) =AVERAGE(E5:E18)、(d) =SUM(H5:H18)、(e) =MAX(E5:E18)",
+    "explanation": "E11は終了時刻D11から開始時刻C11を引く。H11は就業時間E11、係数F11、時給G11の積。5行目から18行目が各日なので、就業時間のE列にAVERAGEとMAX、賃金のH列にSUMを使う。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=33",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=42",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」2級筆記 【2】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-2-written-02.webp"
+    ],
+    "imageAltTexts": [
+      "2級筆記【2】の公式問題。出勤簿を完成させる。就業時間、賃金、平均就業時間、給与、最長就業時間の(a)〜(e)に入る式を答えなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(a) =D11-C11、(b) =E11*F11*G11、(c) =AVERAGE(E5:E18)、(d) =SUM(H5:H18)、(e) =MAX(E5:E18)",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-II-q3",
+    "exam": "zenkou-pc",
+    "session": "gakka-II",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 3,
+    "subject": "表計算",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 2級・筆記",
+    "officialQuestionLabel": "【3】",
+    "category": "基本操作",
+    "topicTags": [
+      "基本操作"
+    ],
+    "difficulty": 2,
+    "question": "周辺機器の接続、ファイル管理、ソフトのセットアップに対応する語句を選びなさい。",
+    "answer": "(1) ウ、(2) カ、(3) ア、(4) イ、(5) ク",
+    "officialAnswerNumber": "(1) ウ、(2) カ、(3) ア、(4) イ、(5) ク",
+    "explanation": "①接続時の自動認識はPlug and Play（ウ）。通電したまま着脱できることはホットプラグ（オ）。②ファイルをまとめる場所はフォルダ（カ）。③末尾で種類を示す拡張子（ア）に対し、ワイルドカード（エ）は検索などで任意文字を表す。④機器制御はドライバ（イ）。⑤導入はインストール（ク）。ホットスタンバイ（キ）は代替機を動作状態で待機させる方式。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=34",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=42",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」2級筆記 【3】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-2-written-03.webp"
+    ],
+    "imageAltTexts": [
+      "2級筆記【3】の公式問題。周辺機器の接続、ファイル管理、ソフトのセットアップに対応する語句を選びなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) ウ、(2) カ、(3) ア、(4) イ、(5) ク",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-II-q4",
+    "exam": "zenkou-pc",
+    "session": "gakka-II",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 4,
+    "subject": "表計算",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 2級・筆記",
+    "officialQuestionLabel": "【4】",
+    "category": "基本操作",
+    "topicTags": [
+      "基本操作"
+    ],
+    "difficulty": 2,
+    "question": "Cドライブのフォルダ構成図から、(a)〜(e)で示されたファイルのパスを選びなさい。",
+    "answer": "(a) エ、(b) ウ、(c) ク、(d) カ、(e) ア",
+    "officialAnswerNumber": "(a) エ、(b) ウ、(c) ク、(d) カ、(e) ア",
+    "explanation": "ドライブ直下から枝をたどる。(a)と(b)はDATA1直下で拡張子がpptx、xlsx（エ、ウ）。イのdocxは別ファイル。(c)はDATA2の下のDATA21（ク）。オはDATA2を飛ばし、キはDATA1の下にDATA2を置いている。(d)はDATA2のDATA22のPDF（カ）。(e)はC直下のMP3（ア）。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=34",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=42",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」2級筆記 【4】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-2-written-04.webp"
+    ],
+    "imageAltTexts": [
+      "2級筆記【4】の公式問題。Cドライブのフォルダ構成図から、(a)〜(e)で示されたファイルのパスを選びなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(a) エ、(b) ウ、(c) ク、(d) カ、(e) ア",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-II-q5",
+    "exam": "zenkou-pc",
+    "session": "gakka-II",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 5,
+    "subject": "表計算",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 2級・筆記",
+    "officialQuestionLabel": "【5】",
+    "category": "基本操作",
+    "topicTags": [
+      "基本操作"
+    ],
+    "difficulty": 2,
+    "question": "ウィンドウ切替、コピー、ウィンドウの画像取得、印刷、取り消しの各ショートカットを選びなさい。",
+    "answer": "(1) ア、(2) カ、(3) エ、(4) キ、(5) ウ",
+    "officialAnswerNumber": "(1) ア、(2) カ、(3) エ、(4) キ、(5) ウ",
+    "explanation": "①アのAlt＋Tabは切替。②カのCtrl＋Cで選択内容をコピー。③エのAlt＋Print Screenはアクティブウィンドウ、クのPrint Screen単独は対象範囲が異なる。④キのCtrl＋Pは印刷、⑤ウのCtrl＋Zは取り消し。イのAlt＋F4は閉じる、オのCtrl＋Sは保存。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=35",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=42",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」2級筆記 【5】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-2-written-05.webp"
+    ],
+    "imageAltTexts": [
+      "2級筆記【5】の公式問題。ウィンドウ切替、コピー、ウィンドウの画像取得、印刷、取り消しの各ショートカットを選びなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) ア、(2) カ、(3) エ、(4) キ、(5) ウ",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-II-q6",
+    "exam": "zenkou-pc",
+    "session": "gakka-II",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 6,
+    "subject": "表計算",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 2級・筆記",
+    "officialQuestionLabel": "【6】",
+    "category": "ハードウェア",
+    "topicTags": [
+      "ハードウェア"
+    ],
+    "difficulty": 2,
+    "question": "マザーボード写真の(a)〜(e)が示すスロット、ソケット、端子を選びなさい。",
+    "answer": "(a) ウ、(b) ク、(c) カ、(d) キ、(e) オ",
+    "officialAnswerNumber": "(a) ウ、(b) ク、(c) カ、(d) キ、(e) オ",
+    "explanation": "(a)は従来のPCI（ウ）、(b)は長いPCI Express×16（ク）。×1（エ）は短い拡張スロットでレーン数が異なる。(c)はCPU用ソケット（カ）、(d)はメモリモジュール用DIMM（キ）、(e)はストレージ用SATA（オ）。HDMI（ア）は映像・音声、RS-232C（イ）は外部機器向けシリアル通信。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=35",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=42",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」2級筆記 【6】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-2-written-06.webp"
+    ],
+    "imageAltTexts": [
+      "2級筆記【6】の公式問題。マザーボード写真の(a)〜(e)が示すスロット、ソケット、端子を選びなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(a) ウ、(b) ク、(c) カ、(d) キ、(e) オ",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-II-q7",
+    "exam": "zenkou-pc",
+    "session": "gakka-II",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 7,
+    "subject": "表計算",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 2級・筆記",
+    "officialQuestionLabel": "【7】",
+    "category": "ハードウェア",
+    "topicTags": [
+      "ハードウェア"
+    ],
+    "difficulty": 2,
+    "question": "CPUとメモリの接続、画像処理、メモリモジュール、書込み・消去方式に関する語句を選びなさい。",
+    "answer": "(1) キ、(2) ク、(3) オ、(4) エ、(5) ウ",
+    "officialAnswerNumber": "(1) キ、(2) ク、(3) オ、(4) エ、(5) ウ",
+    "explanation": "①CPUバス（キ）はCPUとメモリ等をつなぐ信号路。②画像演算はGPU（ク）、VRAM（イ）は画像データを記憶する。③DIMM（オ）は主記憶用モジュール。④マスクROM（エ）は製造時に内容が決まり、⑤EPROM（ウ）は紫外線で消せる形式がある。SATA（ア）はドライブ用接続、キャッシュ（カ）は頻繁に使うデータなどを一時保持する。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=36",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=42",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」2級筆記 【7】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-2-written-07.webp"
+    ],
+    "imageAltTexts": [
+      "2級筆記【7】の公式問題。CPUとメモリの接続、画像処理、メモリモジュール、書込み・消去方式に関する語句を選びなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) キ、(2) ク、(3) オ、(4) エ、(5) ウ",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-II-q8",
+    "exam": "zenkou-pc",
+    "session": "gakka-II",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 8,
+    "subject": "表計算",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 2級・筆記",
+    "officialQuestionLabel": "【8】",
+    "category": "基本操作",
+    "topicTags": [
+      "基本操作"
+    ],
+    "difficulty": 2,
+    "question": "用途に応じたパソコン、データ交換、アドイン、レンタルに関する記述を○×で判定しなさい。",
+    "answer": "(1) ×、(2) ○、(3) ×、(4) ○、(5) ×",
+    "officialAnswerNumber": "(1) ×、(2) ○、(3) ×、(4) ○、(5) ×",
+    "explanation": "①文書や表計算に高性能3Dカードは必須ではない。②変換ソフトや対応形式を備えた統合ソフトでデータを交換しやすくなる。③アドインは機能の追加部品。④設問のレンタルは短期貸出で貸し手が保守する。⑤利用者が保守を負う長期賃貸の説明は設問ではリースを想定している。具体的な保守負担は契約で確認する。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=36",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=42",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」2級筆記 【8】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-2-written-08.webp"
+    ],
+    "imageAltTexts": [
+      "2級筆記【8】の公式問題。用途に応じたパソコン、データ交換、アドイン、レンタルに関する記述を○×で判定しなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) ×、(2) ○、(3) ×、(4) ○、(5) ×",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-II-q9",
+    "exam": "zenkou-pc",
+    "session": "gakka-II",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 9,
+    "subject": "表計算",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 2級・筆記",
+    "officialQuestionLabel": "【9】",
+    "category": "ハードウェア",
+    "topicTags": [
+      "ハードウェア"
+    ],
+    "difficulty": 2,
+    "question": "写真(a)〜(e)のケーブル端子に対応するインタフェースを選びなさい。",
+    "answer": "(a) カ、(b) エ、(c) ク、(d) イ、(e) オ",
+    "officialAnswerNumber": "(a) カ、(b) エ、(c) ク、(d) イ、(e) オ",
+    "explanation": "(a)の平たい映像・音声端子はHDMI（カ）。(b)はアナログ用接点もあるDVI-I（エ）で、DVI-D（ウ）はデジタル専用。(c)はUSB（ク）、(d)は爪付きのLAN（イ）、(e)の丸形端子はMIDI（オ）。Thunderbolt（ア）やIEEE 1394（キ）は別の周辺機器接続規格。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=36",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=42",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」2級筆記 【9】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-2-written-09.webp"
+    ],
+    "imageAltTexts": [
+      "2級筆記【9】の公式問題。写真(a)〜(e)のケーブル端子に対応するインタフェースを選びなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(a) カ、(b) エ、(c) ク、(d) イ、(e) オ",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-II-q10",
+    "exam": "zenkou-pc",
+    "session": "gakka-II",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 10,
+    "subject": "表計算",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 2級・筆記",
+    "officialQuestionLabel": "【10】",
+    "category": "ハードウェア",
+    "topicTags": [
+      "ハードウェア"
+    ],
+    "difficulty": 2,
+    "question": "FireWire、外付けSATA、キーボード・マウス、短距離無線、無線映像の五つの説明に対応する規格を選びなさい。",
+    "answer": "(1) ア、(2) オ、(3) キ、(4) ウ、(5) ク",
+    "officialAnswerNumber": "(1) ア、(2) オ、(3) キ、(4) ウ、(5) ク",
+    "explanation": "FireWire・i.LINKはIEEE 1394（ア）。eSATA（オ）は外付けSATA、PS/2（キ）はキーボード・マウス用、Bluetooth（ウ）は2.4 GHz帯の短距離無線、Miracast（ク）はWi-Fiを使う映像表示規格。MIDI（イ）は楽器制御、GP-IB（エ）は計測機器、Thunderbolt（カ）は映像・データ等を伝送する別の接続規格。Bluetoothには1対1のほか、同報やメッシュに対応する方式もある。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=36",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=42",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」2級筆記 【10】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-2-written-10.webp"
+    ],
+    "imageAltTexts": [
+      "2級筆記【10】の公式問題。FireWire、外付けSATA、キーボード・マウス、短距離無線、無線映像の五つの説明に対応する規格を選びなさい。"
+    ],
+    "officialReferenceUrls": [
+      "https://www.bluetooth.com/bluetooth-le-primer/"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) ア、(2) オ、(3) キ、(4) ウ、(5) ク",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-II-q11",
+    "exam": "zenkou-pc",
+    "session": "gakka-II",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 11,
+    "subject": "表計算",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 2級・筆記",
+    "officialQuestionLabel": "【11】",
+    "category": "ハードウェア",
+    "topicTags": [
+      "ハードウェア"
+    ],
+    "difficulty": 2,
+    "question": "USB、SCSI、SATA、Bluetooth、E-IDEの順に、試験で想定する伝送方式の正しい組合せを選びなさい。",
+    "answer": "エ",
+    "officialAnswerNumber": "エ",
+    "explanation": "USB、SATA、Bluetoothはシリアル。設問のSCSIはパラレルSCSIを指し、E-IDEも複数のデータ線を使うパラレル方式。Serial Attached SCSI（SAS）は別のインタフェースである。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=37",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=42",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」2級筆記 【11】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-2-written-11.webp"
+    ],
+    "imageAltTexts": [
+      "2級筆記【11】の公式問題。USB、SCSI、SATA、Bluetooth、E-IDEの順に、試験で想定する伝送方式の正しい組合せを選びなさい。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "シリアル／パラレル／シリアル／パラレル／パラレル",
+      "イ": "パラレル／パラレル／シリアル／シリアル／シリアル",
+      "ウ": "パラレル／シリアル／パラレル／パラレル／シリアル",
+      "エ": "シリアル／パラレル／シリアル／シリアル／パラレル",
+      "オ": "シリアル／シリアル／パラレル／シリアル／シリアル"
+    },
+    "choiceExplanations": {
+      "ア": "4番目のBluetoothをパラレルとしているが、通信データの並びはシリアルである。",
+      "イ": "1番目のUSBはシリアルで、5番目のE-IDEはパラレルなので、両端が違う。",
+      "ウ": "USB、SATA、Bluetoothはシリアルで、設問のSCSIとE-IDEはパラレルである。",
+      "エ": "USBとSATAのSはSerialを表し、Bluetoothもシリアル。設問のSCSIとE-IDEはパラレル。",
+      "オ": "2番目の従来型SCSIと5番目のE-IDEはパラレルで、SATAはシリアルである。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-II-q12",
+    "exam": "zenkou-pc",
+    "session": "gakka-II",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 12,
+    "subject": "表計算",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 2級・筆記",
+    "officialQuestionLabel": "【12】",
+    "category": "基本操作",
+    "topicTags": [
+      "基本操作"
+    ],
+    "difficulty": 2,
+    "question": "LANの接続形態の名称と、図(a)(b)の形態や接続機器の用語を選びなさい。",
+    "answer": "(1) オ、(2) ウ、(3) ア、(4) カ、(5) キ",
+    "officialAnswerNumber": "(1) オ、(2) ウ、(3) ア、(4) カ、(5) キ",
+    "explanation": "①接続の形をトポロジ（オ）という。(a)はHUB（ウ）を中心とするスター型（カ）。(b)は共通のケーブルにつなぐバス型（キ）で、両端は反射を防ぐターミネータ（ア）。電球（イ）は終端を整合する機器ではなく、コリジョン（エ）は通信の衝突、リング型（ク）は端末を輪状に配置する形態。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=37",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=42",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」2級筆記 【12】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-2-written-12.webp"
+    ],
+    "imageAltTexts": [
+      "2級筆記【12】の公式問題。LANの接続形態の名称と、図(a)(b)の形態や接続機器の用語を選びなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) オ、(2) ウ、(3) ア、(4) カ、(5) キ",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-II-q13",
+    "exam": "zenkou-pc",
+    "session": "gakka-II",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 13,
+    "subject": "表計算",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 2級・筆記",
+    "officialQuestionLabel": "【13】",
+    "category": "基本操作",
+    "topicTags": [
+      "基本操作"
+    ],
+    "difficulty": 2,
+    "question": "光回線、IEEE 802.11n、無線LANの運用モード、IPv6、接続家電に関する用語・数値を選びなさい。",
+    "answer": "(1) イ、(2) エ、(3) オ、(4) ウ、(5) カ",
+    "officialAnswerNumber": "(1) イ、(2) エ、(3) オ、(4) ウ、(5) カ",
+    "explanation": "①家庭まで光ファイバを引くFTTH（イ）。②IEEE 802.11nの物理層の理論最大値は600 Mbps（エ）。6.9 Gbps（ク）は802.11acの条件での値。③親機を使うインフラストラクチャ（オ）に対し、アドホック（ア）は端末同士が直接接続する。④IPv6は128ビット（ウ）で、256（キ）ではない。⑤機器をネットにつなぐのがIoT（カ）。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=37",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=42",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」2級筆記 【13】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-2-written-13.webp"
+    ],
+    "imageAltTexts": [
+      "2級筆記【13】の公式問題。光回線、IEEE 802.11n、無線LANの運用モード、IPv6、接続家電に関する用語・数値を選びなさい。"
+    ],
+    "officialReferenceUrls": [
+      "https://grouper.ieee.org/groups/802/3/bq/public/nov13/larsen_3bq_01_1113.pdf",
+      "https://standards.ieee.org/wp-content/uploads/interactive/web/wi-fi-timeline/index.html",
+      "https://www.rfc-editor.org/info/rfc8200/"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) イ、(2) エ、(3) オ、(4) ウ、(5) カ",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-II-q14",
+    "exam": "zenkou-pc",
+    "session": "gakka-II",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 14,
+    "subject": "表計算",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 2級・筆記",
+    "officialQuestionLabel": "【14】",
+    "category": "情報の表現",
+    "topicTags": [
+      "情報の表現"
+    ],
+    "difficulty": 2,
+    "question": "音声のA/D変換と、JPEG・GIFの色表現や圧縮に関する記述を○×で判定しなさい。",
+    "answer": "(1) ○、(2) ○、(3) ×、(4) ×、(5) ×",
+    "officialAnswerNumber": "(1) ○、(2) ○、(3) ×、(4) ×、(5) ×",
+    "explanation": "①標本化は一定間隔で信号値を取り出す。②量子化は取り出した値を有限の段階に割り当てる。③符号化は数値をビット列に表し、アナログ信号への変換ではない。④一般的なJPEG画像には半透明用のアルファを含まない。⑤GIFのパレットは最大256色で、圧縮自体は可逆。減色と圧縮の可逆性は別である。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=38",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=42",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」2級筆記 【14】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-2-written-14.webp"
+    ],
+    "imageAltTexts": [
+      "2級筆記【14】の公式問題。音声のA/D変換と、JPEG・GIFの色表現や圧縮に関する記述を○×で判定しなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) ○、(2) ○、(3) ×、(4) ×、(5) ×",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-II-q15",
+    "exam": "zenkou-pc",
+    "session": "gakka-II",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 15,
+    "subject": "表計算",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 2級・筆記",
+    "officialQuestionLabel": "【15】",
+    "category": "情報の表現",
+    "topicTags": [
+      "情報の表現"
+    ],
+    "difficulty": 2,
+    "question": "RGBの各成分を2ビットずつで表示すると、何色表現できるか答えなさい。",
+    "answer": "64",
+    "officialAnswerNumber": "64",
+    "explanation": "1成分は2²＝4段階で、赤・緑・青をそれぞれ独立に選べる。三つの段階数を掛け合わせ、4×4×4＝64色。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=38",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=42",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」2級筆記 【15】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-2-written-15.webp"
+    ],
+    "imageAltTexts": [
+      "2級筆記【15】の公式問題。RGBの各成分を2ビットずつで表示すると、何色表現できるか答えなさい。"
+    ],
+    "type": "numeric",
+    "numericAnswer": {
+      "format": "integer",
+      "unit": "色"
+    },
+    "isCalculation": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-II-q16",
+    "exam": "zenkou-pc",
+    "session": "gakka-II",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 16,
+    "subject": "表計算",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 2級・筆記",
+    "officialQuestionLabel": "【16】",
+    "category": "基本操作",
+    "topicTags": [
+      "基本操作"
+    ],
+    "difficulty": 2,
+    "question": "ラジオボタン、コマンドボタン、リストボックス、テキストボックス、使いやすさに関する記述を○×で判定しなさい。",
+    "answer": "(1) ×、(2) ×、(3) ○、(4) ○、(5) ×",
+    "officialAnswerNumber": "(1) ×、(2) ×、(3) ○、(4) ○、(5) ×",
+    "explanation": "①処理を実行するのはコマンドボタンで、ラジオボタンは排他的な選択用。②複数の独立した選択にはチェックボックスなどを使う。③リストボックスは項目一覧から選ぶ。④テキストボックスは文字等の入力用。⑤利用できる人や環境の幅に関わるのはアクセシビリティで、ユーザビリティは利用時の使いやすさに関わる。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=38",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=42",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」2級筆記 【16】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-2-written-16.webp"
+    ],
+    "imageAltTexts": [
+      "2級筆記【16】の公式問題。ラジオボタン、コマンドボタン、リストボックス、テキストボックス、使いやすさに関する記述を○×で判定しなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) ×、(2) ×、(3) ○、(4) ○、(5) ×",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-II-q17",
+    "exam": "zenkou-pc",
+    "session": "gakka-II",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 17,
+    "subject": "表計算",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 2級・筆記",
+    "officialQuestionLabel": "【17】",
+    "category": "基本操作",
+    "topicTags": [
+      "基本操作"
+    ],
+    "difficulty": 2,
+    "question": "共通鍵での復号、職場環境、二つの機器構成に必要な電流容量について、空欄(a)〜(e)を選びなさい。",
+    "answer": "(a) オ、(b) エ、(c) ク、(d) キ、(e) ウ",
+    "officialAnswerNumber": "(a) オ、(b) エ、(c) ク、(d) キ、(e) ウ",
+    "explanation": "(a)は暗号化と同じ共通鍵（オ）。秘密鍵（ア）は公開鍵暗号の対となる鍵の呼称である。(b)は観葉植物（エ）、(c)の吹き出し口は空調機（ク）。コピー機（イ）はどちらの位置条件にも合わない。100 Vとして(d)は1030 W÷100 V＝10.3 Aなので選択肢の15 A（キ）。(e)は2100 W÷100 V＝21 Aで、20 A（カ）では足りず30 A（ウ）を選ぶ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=38",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=42",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」2級筆記 【17】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-2-written-17.webp"
+    ],
+    "imageAltTexts": [
+      "2級筆記【17】の公式問題。共通鍵での復号、職場環境、二つの機器構成に必要な電流容量について、空欄(a)〜(e)を選びなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(a) オ、(b) エ、(c) ク、(d) キ、(e) ウ",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-II-q18",
+    "exam": "zenkou-pc",
+    "session": "gakka-II",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 18,
+    "subject": "表計算",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 2級・筆記",
+    "officialQuestionLabel": "【18】",
+    "category": "基本操作",
+    "topicTags": [
+      "基本操作"
+    ],
+    "difficulty": 2,
+    "question": "架空の会社のシステム運用規程に照らし、五つの行為を○×で判定しなさい。",
+    "answer": "(1) ○、(2) ○、(3) ○、(4) ×、(5) ○",
+    "officialAnswerNumber": "(1) ○、(2) ○、(3) ○、(4) ×、(5) ○",
+    "explanation": "①第6条により登録ユーザーは通販サイトで注文できる。②③第5条は全社員に業務データの閲覧・更新を認める。④サーバ室は第3条の許可制、人事データは第4条の職務上の権限が必要で、信頼や人望では代替できない。⑤第3条は災害の見込みがあるときの臨時バックアップと支社への移送を定める。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=39",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=42",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」2級筆記 【18】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-2-written-18.webp"
+    ],
+    "imageAltTexts": [
+      "2級筆記【18】の公式問題。架空の会社のシステム運用規程に照らし、五つの行為を○×で判定しなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) ○、(2) ○、(3) ○、(4) ×、(5) ○",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-III-q1",
+    "exam": "zenkou-pc",
+    "session": "gakka-III",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 1,
+    "subject": "ワープロ",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 3級・筆記",
+    "officialQuestionLabel": "【1】",
+    "category": "ワープロ",
+    "topicTags": [
+      "ワープロ"
+    ],
+    "difficulty": 1,
+    "question": "ゴルフ教室の案内の(a)〜(e)に使われている文書書式・機能を選びなさい。",
+    "answer": "(a) ケ、(b) カ、(c) エ、(d) ア、(e) キ",
+    "officialAnswerNumber": "(a) ケ、(b) カ、(c) エ、(d) ア、(e) キ",
+    "explanation": "(a)は右端に合わせる右揃え（ケ）、(b)は中央揃え（カ）で、左揃え（ウ）は左端に合わせる。(c)の文字の下はアンダーライン（エ）、(d)の背景模様は網掛け（ア）。取り消し線（イ）は文字の中央を横切り、上付き（オ）・下付き（ク）は基準線から文字を上下にずらす。(e)は図の挿入（キ）。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=47",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=55",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」3級筆記 【1】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-3-written-01.webp"
+    ],
+    "imageAltTexts": [
+      "3級筆記【1】の公式問題。ゴルフ教室の案内の(a)〜(e)に使われている文書書式・機能を選びなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(a) ケ、(b) カ、(c) エ、(d) ア、(e) キ",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-III-q2",
+    "exam": "zenkou-pc",
+    "session": "gakka-III",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 2,
+    "subject": "ワープロ",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 3級・筆記",
+    "officialQuestionLabel": "【2】",
+    "category": "ワープロ",
+    "topicTags": [
+      "ワープロ"
+    ],
+    "difficulty": 1,
+    "question": "文書編集画面のアイコン(a)〜(e)が表す操作を選びなさい。",
+    "answer": "(a) ウ、(b) ア、(c) ク、(d) エ、(e) キ",
+    "officialAnswerNumber": "(a) ウ、(b) ア、(c) ク、(d) エ、(e) キ",
+    "explanation": "戻る矢印は元に戻す（ウ）、重なる用紙はコピー（ア）、ディスク形は上書き保存（ク）、はさみは切り取り（エ）、クリップボードは貼り付け（キ）。印刷（イ）は紙または出力先へ送る。名前を付けて保存（オ）は名前や保存先を指定し、開く（カ）は既存文書、新規作成（ケ）は新しい文書を対象にする。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=47",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=55",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」3級筆記 【2】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-3-written-02.webp"
+    ],
+    "imageAltTexts": [
+      "3級筆記【2】の公式問題。文書編集画面のアイコン(a)〜(e)が表す操作を選びなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(a) ウ、(b) ア、(c) ク、(d) エ、(e) キ",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-III-q3",
+    "exam": "zenkou-pc",
+    "session": "gakka-III",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 3,
+    "subject": "ワープロ",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 3級・筆記",
+    "officialQuestionLabel": "【3】",
+    "category": "日本語入力",
+    "topicTags": [
+      "日本語入力"
+    ],
+    "difficulty": 1,
+    "question": "表に示したカタカナの表示文字とローマ字入力が対応するか、五組を○×で判定しなさい。",
+    "answer": "(1) ○、(2) ×、(3) ×、(4) ×、(5) ○",
+    "officialAnswerNumber": "(1) ○、(2) ×、(3) ×、(4) ×、(5) ○",
+    "explanation": "① FUZISAN はフ・ジ・サ・ン。② TUZUKI のZUはズで、ヅを入れるにはDUを使う。③ TYAはチャで、ヂャにはDYAなどを使う。④ DIESELは長音「ー」を入力せず、音の並びも指定と異なる。⑤ KOUTSUU はコ・ウ・ツ・ウに対応する。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=47",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=55",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」3級筆記 【3】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-3-written-03.webp"
+    ],
+    "imageAltTexts": [
+      "3級筆記【3】の公式問題。表に示したカタカナの表示文字とローマ字入力が対応するか、五組を○×で判定しなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) ○、(2) ×、(3) ×、(4) ×、(5) ○",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-III-q4",
+    "exam": "zenkou-pc",
+    "session": "gakka-III",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 4,
+    "subject": "ワープロ",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 3級・筆記",
+    "officialQuestionLabel": "【4】",
+    "category": "基本操作",
+    "topicTags": [
+      "基本操作"
+    ],
+    "difficulty": 1,
+    "question": "パソコン上のアイコン(a)〜(e)に対応する項目を選びなさい。",
+    "answer": "(a) ア、(b) イ、(c) エ、(d) キ、(e) オ",
+    "officialAnswerNumber": "(a) ア、(b) イ、(c) エ、(d) キ、(e) オ",
+    "explanation": "画面を表す(a)はコンピュータ（ア）、数字キーの(b)は電卓（イ）、フォルダを示す(c)はエクスプローラ（エ）、ディスクを扱う(d)は光学ドライブ（キ）、簡単な文字編集の(e)はメモ帳（オ）。ワープロ（ウ）は書式付き文書用、ゴミ箱（カ）は削除ファイルの一時置き場、ネットワークドライブ（ク）は共有領域への接続。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=48",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=55",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」3級筆記 【4】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-3-written-04.webp"
+    ],
+    "imageAltTexts": [
+      "3級筆記【4】の公式問題。パソコン上のアイコン(a)〜(e)に対応する項目を選びなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(a) ア、(b) イ、(c) エ、(d) キ、(e) オ",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-III-q5",
+    "exam": "zenkou-pc",
+    "session": "gakka-III",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 5,
+    "subject": "ワープロ",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 3級・筆記",
+    "officialQuestionLabel": "【5】",
+    "category": "基本操作",
+    "topicTags": [
+      "基本操作"
+    ],
+    "difficulty": 1,
+    "question": "OSの種類、待機・電源操作、アプリを表示する画面の領域に対応する語句を選びなさい。",
+    "answer": "(1) イ、(2) ア、(3) オ、(4) エ、(5) カ",
+    "officialAnswerNumber": "(1) イ、(2) ア、(3) オ、(4) エ、(5) カ",
+    "explanation": "①Ubuntu（イ）はLinuxディストリビューション、②Android（ア）はGoogleが開発を主導するOS。Windows（ウ）はMicrosoftのOS。③スリープ（オ）は低電力の待機、④シャットダウン（エ）は終了。⑤タスクバー（カ）は実行中のアプリなどを示す。ブラウザ（キ）はWeb閲覧用、プロパティ（ク）は項目の属性や設定。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=48",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=55",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」3級筆記 【5】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-3-written-05.webp"
+    ],
+    "imageAltTexts": [
+      "3級筆記【5】の公式問題。OSの種類、待機・電源操作、アプリを表示する画面の領域に対応する語句を選びなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) イ、(2) ア、(3) オ、(4) エ、(5) カ",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-III-q6",
+    "exam": "zenkou-pc",
+    "session": "gakka-III",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 6,
+    "subject": "ワープロ",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 3級・筆記",
+    "officialQuestionLabel": "【6】",
+    "category": "基本操作",
+    "topicTags": [
+      "基本操作"
+    ],
+    "difficulty": 1,
+    "question": "マウスとタッチ画面を使う五つの操作に対応する語句を選びなさい。",
+    "answer": "(1) キ、(2) ア、(3) イ、(4) エ、(5) カ",
+    "officialAnswerNumber": "(1) キ、(2) ア、(3) イ、(4) エ、(5) カ",
+    "explanation": "ホイール操作（キ）でスクロールする。クリック（ア）は1回押し、ダブルクリック（イ）は素早く2回。タップ（エ）は画面を1回たたき、フリック（カ）は指で払う。ダブルタップ（ウ）は画面を2回たたき、ドラッグ（オ）は押したまま移動、ホールド（ク）は押した状態を保つ。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=48",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=55",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」3級筆記 【6】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-3-written-06.webp"
+    ],
+    "imageAltTexts": [
+      "3級筆記【6】の公式問題。マウスとタッチ画面を使う五つの操作に対応する語句を選びなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) キ、(2) ア、(3) イ、(4) エ、(5) カ",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-III-q7",
+    "exam": "zenkou-pc",
+    "session": "gakka-III",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 7,
+    "subject": "ワープロ",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 3級・筆記",
+    "officialQuestionLabel": "【7】",
+    "category": "基本操作",
+    "topicTags": [
+      "基本操作"
+    ],
+    "difficulty": 1,
+    "question": "コンピュータを構成する五つの機能に対応する装置名を選びなさい。",
+    "answer": "(1) カ、(2) エ、(3) ク、(4) ア、(5) キ",
+    "officialAnswerNumber": "(1) カ、(2) エ、(3) ク、(4) ア、(5) キ",
+    "explanation": "四則・論理を処理する演算装置（カ）、読込み済みデータを保持する主記憶（エ）、操作やデータを受け付ける入力（ク）、結果を表示する出力（ア）、命令を解読し各装置へ指示する制御（キ）。発振装置（イ）は周期信号を発生させ、通信装置（ウ）は他機器と通信し、電源装置（オ）は電力を供給する。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=49",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=55",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」3級筆記 【7】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-3-written-07.webp"
+    ],
+    "imageAltTexts": [
+      "3級筆記【7】の公式問題。コンピュータを構成する五つの機能に対応する装置名を選びなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) カ、(2) エ、(3) ク、(4) ア、(5) キ",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-III-q8",
+    "exam": "zenkou-pc",
+    "session": "gakka-III",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 8,
+    "subject": "ワープロ",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 3級・筆記",
+    "officialQuestionLabel": "【8】",
+    "category": "基本操作",
+    "topicTags": [
+      "基本操作"
+    ],
+    "difficulty": 1,
+    "question": "容量、時間、通信速度について、(1)〜(5)と等しい値を解答群から選びなさい。",
+    "answer": "(1) オ、(2) イ、(3) カ、(4) ウ、(5) エ",
+    "officialAnswerNumber": "(1) オ、(2) イ、(3) カ、(4) ウ、(5) エ",
+    "explanation": "GBのGは10⁹なので64 GBはオ。アは10⁶で64 MB。kiBは2¹⁰（イ）、MiBは2²⁰（カ）バイト。500 μsは0.5×10⁻³秒（ウ）で、キの0.5×10⁻⁶秒は0.5 μs。115 200 bpsは1000で割って115.2 kbps（エ）。クのMbps換算は100万で割る必要がある。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=49",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=55",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」3級筆記 【8】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-3-written-08.webp"
+    ],
+    "imageAltTexts": [
+      "3級筆記【8】の公式問題。容量、時間、通信速度について、(1)〜(5)と等しい値を解答群から選びなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) オ、(2) イ、(3) カ、(4) ウ、(5) エ",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-III-q9",
+    "exam": "zenkou-pc",
+    "session": "gakka-III",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 9,
+    "subject": "ワープロ",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 3級・筆記",
+    "officialQuestionLabel": "【9】",
+    "category": "基本操作",
+    "topicTags": [
+      "基本操作"
+    ],
+    "difficulty": 1,
+    "question": "Webアプリ、クラウド、Webメール、アセンブリ言語に関する各記述を○×で判定しなさい。",
+    "answer": "(1) ○、(2) ×、(3) ○、(4) ○、(5) ×",
+    "officialAnswerNumber": "(1) ○、(2) ×、(3) ○、(4) ○、(5) ×",
+    "explanation": "①ブラウザからWebアプリを利用できる。②サーバ側でデータベースを利用できる。③利用者向けクラウドでは通常アカウントを登録する。④Webメールはブラウザから送受信できる。⑤アセンブリ命令は対象CPUの命令セットに依存し、OSの呼び出しなども環境に依存する。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=49",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=55",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」3級筆記 【9】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-3-written-09.webp"
+    ],
+    "imageAltTexts": [
+      "3級筆記【9】の公式問題。Webアプリ、クラウド、Webメール、アセンブリ言語に関する各記述を○×で判定しなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) ○、(2) ×、(3) ○、(4) ○、(5) ×",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-III-q10",
+    "exam": "zenkou-pc",
+    "session": "gakka-III",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 10,
+    "subject": "ワープロ",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 3級・筆記",
+    "officialQuestionLabel": "【10】",
+    "category": "基本操作",
+    "topicTags": [
+      "基本操作"
+    ],
+    "difficulty": 1,
+    "question": "マウス、タッチパネル、プロジェクタ、3Dプリンタ、バーコードリーダに関する説明を○×で判定しなさい。",
+    "answer": "(1) ×、(2) ○、(3) ○、(4) ○、(5) ×",
+    "officialAnswerNumber": "(1) ×、(2) ○、(3) ○、(4) ○、(5) ×",
+    "explanation": "①キーに印字された字を入力するのはキーボード。②ATMや券売機などのタッチパネルは入力用。③投影して画像を見せるプロジェクタは出力用。④材料をノズルから出して積層する方式の3Dプリンタがある。⑤バーコードリーダは文字の形ではなく符号化された縞などを読む。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=49",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=55",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」3級筆記 【10】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-3-written-10.webp"
+    ],
+    "imageAltTexts": [
+      "3級筆記【10】の公式問題。マウス、タッチパネル、プロジェクタ、3Dプリンタ、バーコードリーダに関する説明を○×で判定しなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) ×、(2) ○、(3) ○、(4) ○、(5) ×",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-III-q11",
+    "exam": "zenkou-pc",
+    "session": "gakka-III",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 11,
+    "subject": "ワープロ",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 3級・筆記",
+    "officialQuestionLabel": "【11】",
+    "category": "基本操作",
+    "topicTags": [
+      "基本操作"
+    ],
+    "difficulty": 1,
+    "question": "写真(a)〜(e)に対応する周辺機器・記憶装置の名前を選びなさい。",
+    "answer": "(a) エ、(b) イ、(c) キ、(d) ウ、(e) オ",
+    "officialAnswerNumber": "(a) エ、(b) イ、(c) キ、(d) ウ、(e) オ",
+    "explanation": "(a)は音を出すスピーカ（エ）、(b)はレンズのあるデジタルカメラ（イ）、(c)はUSBメモリ（キ）、(d)はSSD（ウ）、(e)は原稿を画像化するイメージスキャナ（オ）。プロジェクタ（ア）は投影し、インクジェットプリンタ（カ）は紙へ印刷し、BDドライブ（ク）は光ディスクを読み書きする。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=50",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=55",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」3級筆記 【11】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-3-written-11.webp"
+    ],
+    "imageAltTexts": [
+      "3級筆記【11】の公式問題。写真(a)〜(e)に対応する周辺機器・記憶装置の名前を選びなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(a) エ、(b) イ、(c) キ、(d) ウ、(e) オ",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-III-q12",
+    "exam": "zenkou-pc",
+    "session": "gakka-III",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 12,
+    "subject": "ワープロ",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 3級・筆記",
+    "officialQuestionLabel": "【12】",
+    "category": "基本操作",
+    "topicTags": [
+      "基本操作"
+    ],
+    "difficulty": 1,
+    "question": "光ディスク、半導体や磁気を用いるドライブ、カメラの記録媒体を選びなさい。",
+    "answer": "(1) エ、(2) ア、(3) オ、(4) ウ、(5) イ",
+    "officialAnswerNumber": "(1) エ、(2) ア、(3) オ、(4) ウ、(5) イ",
+    "explanation": "①12 cmの1層4.7 GBはDVD（エ）。BD（ク）はより高密度。②フラッシュメモリのドライブがSSD（ア）、③磁気ディスクのドライブがHDD（オ）。④640〜700 MBの光ディスクはCD（ウ）。⑤カメラに入れる半導体媒体がICメモリカード（イ）。MO（カ）は光磁気ディスク、CRT（キ）はブラウン管表示装置。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=50",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=55",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」3級筆記 【12】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-3-written-12.webp"
+    ],
+    "imageAltTexts": [
+      "3級筆記【12】の公式問題。光ディスク、半導体や磁気を用いるドライブ、カメラの記録媒体を選びなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) エ、(2) ア、(3) オ、(4) ウ、(5) イ",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-III-q13",
+    "exam": "zenkou-pc",
+    "session": "gakka-III",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 13,
+    "subject": "ワープロ",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 3級・筆記",
+    "officialQuestionLabel": "【13】",
+    "category": "基本操作",
+    "topicTags": [
+      "基本操作"
+    ],
+    "difficulty": 1,
+    "question": "ファイル操作、画像の表示・互換性に関する(1)〜(5)の記述を○×で判定しなさい。",
+    "answer": "(1) ○、(2) ×、(3) ○、(4) ○、(5) ×",
+    "officialAnswerNumber": "(1) ○、(2) ×、(3) ○、(4) ○、(5) ×",
+    "explanation": "①エクスプローラーではクイックアクセスを使える。②対応する形式なら他の端末の画像や音声をパソコンで開ける。③縮小した見本はサムネイル。④ラスター画像の画素はピクセル。⑤画像の順次表示はスライドショーで、画面キャプチャは画面の表示を画像として取り込む操作。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=50",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=55",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」3級筆記 【13】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-3-written-13.webp"
+    ],
+    "imageAltTexts": [
+      "3級筆記【13】の公式問題。ファイル操作、画像の表示・互換性に関する(1)〜(5)の記述を○×で判定しなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) ○、(2) ×、(3) ○、(4) ○、(5) ×",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-III-q14",
+    "exam": "zenkou-pc",
+    "session": "gakka-III",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 14,
+    "subject": "ワープロ",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 3級・筆記",
+    "officialQuestionLabel": "【14】",
+    "category": "基本操作",
+    "topicTags": [
+      "基本操作"
+    ],
+    "difficulty": 1,
+    "question": "五つのファイルアイコン(a)〜(e)が示す種類を選びなさい。",
+    "answer": "(a) ウ、(b) ア、(c) オ、(d) イ、(e) カ",
+    "officialAnswerNumber": "(a) ウ、(b) ア、(c) オ、(d) イ、(e) カ",
+    "explanation": "(a)の横線入り用紙はテキスト（ウ）、(b)のファスナーは圧縮フォルダ（ア）、(c)のPDFは電子文書（オ）、(d)の画像プレビューは写真（イ）、(e)のフレームの並びは動画（カ）。音声（エ）は音響データ、HTML（キ）はWeb文書、メール（ク）はメッセージを保存したファイル。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=50",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=55",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」3級筆記 【14】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-3-written-14.webp"
+    ],
+    "imageAltTexts": [
+      "3級筆記【14】の公式問題。五つのファイルアイコン(a)〜(e)が示す種類を選びなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(a) ウ、(b) ア、(c) オ、(d) イ、(e) カ",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-III-q15",
+    "exam": "zenkou-pc",
+    "session": "gakka-III",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 15,
+    "subject": "ワープロ",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 3級・筆記",
+    "officialQuestionLabel": "【15】",
+    "category": "基本操作",
+    "topicTags": [
+      "基本操作"
+    ],
+    "difficulty": 1,
+    "question": "マルチメディアで扱う情報、処理方法、通信の性質、容量に関する空欄(a)〜(e)を選びなさい。",
+    "answer": "(a) ア、(b) ク、(c) ウ、(d) オ、(e) キ",
+    "officialAnswerNumber": "(a) ア、(b) ク、(c) ウ、(d) オ、(e) キ",
+    "explanation": "(a)は音声や文字と並ぶ画像（ア）、(b)はビット列で扱うためディジタル（ク）化。(c)は統合された内容でコンテンツ（ウ）、(d)は双方向のインタラクティブ（オ）、(e)は処理するデータ量が大きい（キ）。シミュレーション（イ）は模擬実験、ツール（エ）は作成等に使う道具、小さい（カ）は処理負荷の大きさを説明しない。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=51",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=55",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」3級筆記 【15】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-3-written-15.webp"
+    ],
+    "imageAltTexts": [
+      "3級筆記【15】の公式問題。マルチメディアで扱う情報、処理方法、通信の性質、容量に関する空欄(a)〜(e)を選びなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(a) ア、(b) ク、(c) ウ、(d) オ、(e) キ",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-III-q16",
+    "exam": "zenkou-pc",
+    "session": "gakka-III",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 16,
+    "subject": "ワープロ",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 3級・筆記",
+    "officialQuestionLabel": "【16】",
+    "category": "基本操作",
+    "topicTags": [
+      "基本操作"
+    ],
+    "difficulty": 1,
+    "question": "ストリーミング、電子決済、消費者間取引、SNS、BCCに関する記述を○×で判定しなさい。",
+    "answer": "(1) ○、(2) ×、(3) ○、(4) ×、(5) ×",
+    "officialAnswerNumber": "(1) ○、(2) ×、(3) ○、(4) ×、(5) ×",
+    "explanation": "①受信しながら再生する方式がストリーミング。②SNSは交流サービスで、電子決済を守る暗号技術の名称ではない。③ネット上のサービスを通じ個人同士で売買するC to Cがある。④ソーシャルディスタンスは人との距離を表す語。⑤BCCは他の宛先に非表示で送る用途で、自分のアドレスは必須ではない。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=51",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=55",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」3級筆記 【16】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-3-written-16.webp"
+    ],
+    "imageAltTexts": [
+      "3級筆記【16】の公式問題。ストリーミング、電子決済、消費者間取引、SNS、BCCに関する記述を○×で判定しなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) ○、(2) ×、(3) ○、(4) ×、(5) ×",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-III-q17",
+    "exam": "zenkou-pc",
+    "session": "gakka-III",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 17,
+    "subject": "ワープロ",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 3級・筆記",
+    "officialQuestionLabel": "【17】",
+    "category": "基本操作",
+    "topicTags": [
+      "基本操作"
+    ],
+    "difficulty": 1,
+    "question": "接続事業者、通信規約、回線方式、暗号化に関する文の(a)〜(e)を選びなさい。",
+    "answer": "(a) オ、(b) ク、(c) キ、(d) エ、(e) イ",
+    "officialAnswerNumber": "(a) オ、(b) ク、(c) キ、(d) エ、(e) イ",
+    "explanation": "(a)はプロバイダ（オ）、(b)はインターネットの通信規約群TCP/IP（ク）。電話回線を用いるのはADSL（キ）、光ファイバを家庭まで引くのはFTTH（エ）。(e)のSSL（イ）は公式の用語。実際の現行HTTPSでは後継のTLSを使う。プライバシー（ア）は個人の私的領域、現金決済（ウ）は支払い方法、SNS（カ）は交流サービスを指す。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=51",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=55",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」3級筆記 【17】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-3-written-17.webp"
+    ],
+    "imageAltTexts": [
+      "3級筆記【17】の公式問題。接続事業者、通信規約、回線方式、暗号化に関する文の(a)〜(e)を選びなさい。"
+    ],
+    "officialReferenceUrls": [
+      "https://www.rfc-editor.org/info/rfc8446/",
+      "https://www.rfc-editor.org/info/rfc9846/"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(a) オ、(b) ク、(c) キ、(d) エ、(e) イ",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-III-q18",
+    "exam": "zenkou-pc",
+    "session": "gakka-III",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 18,
+    "subject": "ワープロ",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 3級・筆記",
+    "officialQuestionLabel": "【18】",
+    "category": "基本操作",
+    "topicTags": [
+      "基本操作"
+    ],
+    "difficulty": 1,
+    "question": "Webとメールの安全対策、暗号化通信、個人情報に関する空欄(a)〜(e)を選びなさい。",
+    "answer": "(a) エ、(b) イ、(c) オ、(d) ウ、(e) カ",
+    "officialAnswerNumber": "(a) エ、(b) イ、(c) オ、(d) ウ、(e) カ",
+    "explanation": "(a)暗号化通信のURLはhttps（エ）。http（ク）にはその指定がない。(b)閲覧先の制御がフィルタリング（イ）、(c)感染防止に用いるのはウイルス対策（オ）で、スパイウェア（ア）は利用情報を収集する有害ソフトの一種。(d)は迷惑メール（ウ）。(e)の公式正答は個人情報保護法（カ）。不正アクセス禁止法（キ）は認証を回避するログイン等を扱う。個人情報保護委員会は、私人による投稿が一律に個人情報保護法違反になるわけではないと説明している。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=51",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=55",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」3級筆記 【18】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-3-written-18.webp"
+    ],
+    "imageAltTexts": [
+      "3級筆記【18】の公式問題。Webとメールの安全対策、暗号化通信、個人情報に関する空欄(a)〜(e)を選びなさい。"
+    ],
+    "officialReferenceUrls": [
+      "https://www.ppc.go.jp/personalinfo/faq/kojin/",
+      "https://laws.e-gov.go.jp/law/411AC0000000128"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(a) エ、(b) イ、(c) オ、(d) ウ、(e) カ",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-III-q19",
+    "exam": "zenkou-pc",
+    "session": "gakka-III",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 19,
+    "subject": "ワープロ",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 3級・筆記",
+    "officialQuestionLabel": "【19】",
+    "category": "基本操作",
+    "topicTags": [
+      "基本操作"
+    ],
+    "difficulty": 1,
+    "question": "パスワード、作業の休止、通信制御、ソフトウェアの保護に関する空欄(a)〜(e)を選びなさい。",
+    "answer": "(a) キ、(b) オ、(c) イ、(d) ク、(e) エ",
+    "officialAnswerNumber": "(a) キ、(b) オ、(c) イ、(d) ク、(e) エ",
+    "explanation": "(a)は大文字・小文字のある英字（キ）で、絵文字（ウ）ではない。(b)は設問の基準で8文字（オ）。IPAは試験当時から、長く複雑にし使い回さないよう案内している。(c)は約1時間（イ）で、3時間（ア）ではない。(d)は通信を許可・遮断するファイアウォール（ク）。(e)は著作権（エ）で、不正コピー（カ）は無断複製を指す。自分で実行するために必要な範囲の複製は著作権法47条の3に規定されている。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=52",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=55",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」3級筆記 【19】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-3-written-19.webp"
+    ],
+    "imageAltTexts": [
+      "3級筆記【19】の公式問題。パスワード、作業の休止、通信制御、ソフトウェアの保護に関する空欄(a)〜(e)を選びなさい。"
+    ],
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/security/10threats/nq6ept000000g23w-att/kihontokyoutsuu_2024.pdf",
+      "https://www.ipa.go.jp/security/10threats/omgdg50000008fi8-att/setsumei_2026_kojin.pdf",
+      "https://www.mhlw.go.jp/web/t_doc?dataId=00tc4418&dataType=1",
+      "https://laws.e-gov.go.jp/law/345AC0000000048"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(a) キ、(b) オ、(c) イ、(d) ク、(e) エ",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-gakka-III-q20",
+    "exam": "zenkou-pc",
+    "session": "gakka-III",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 20,
+    "subject": "ワープロ",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 3級・筆記",
+    "officialQuestionLabel": "【20】",
+    "category": "基本操作",
+    "topicTags": [
+      "基本操作"
+    ],
+    "difficulty": 1,
+    "question": "SNS、ウイルスを知らせる表示、誹謗中傷、写真の公開、ソフトウェアの利用条件に関する行為を○×で判定しなさい。",
+    "answer": "(1) ×、(2) ○、(3) ○、(4) ×、(5) ×",
+    "officialAnswerNumber": "(1) ×、(2) ○、(3) ○、(4) ×、(5) ×",
+    "explanation": "①他人のアカウントに無断で入って本人を装う行為は不適切。②心当たりのない警告のリンクや案内を開かない判断は適切。③保護者に相談し、運営会社へ連絡する。④本人の了解を得ずに写真を公開する行為は不適切。⑤「合計3台まで」に対して6台に入れており、インストールできることと利用許諾は別である。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=52",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=55",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」3級筆記 【20】。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-3-written-20.webp"
+    ],
+    "imageAltTexts": [
+      "3級筆記【20】の公式問題。SNS、ウイルスを知らせる表示、誹謗中傷、写真の公開、ソフトウェアの利用条件に関する行為を○×で判定しなさい。"
+    ],
+    "type": "descriptive",
+    "modelAnswer": "(1) ×、(2) ○、(3) ○、(4) ×、(5) ×",
+    "scoringCriteria": "公式解答の各欄と照合する。",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-pc-2024-first-pc-practical-1-q1",
+    "exam": "zenkou-pc",
+    "session": "pc-practical-1",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 1,
+    "subject": "データベース",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 1級・実技",
+    "officialQuestionLabel": "問1",
+    "category": "データベース",
+    "topicTags": [
+      "データベース"
+    ],
+    "difficulty": 3,
+    "question": "名簿 meibo と記録 kiroku を結び付けるキー項目を、両方の表について答えなさい。",
+    "answer": ">id, gakuseki",
+    "officialAnswerNumber": ">id, gakuseki",
+    "explanation": "meibo.id は名簿側の生徒の識別子。kiroku.gakuseki が同じ値を保持するので、組にする列は id と gakuseki になる。先頭の > は試験のZenSQL用入力形式。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=27",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=29",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」1級実技 問1。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "type": "descriptive",
+    "modelAnswer": ">id, gakuseki",
+    "officialAnswerExample": true,
+    "modelAnswerAuthority": "official",
+    "scoringCriteria": "公式採点は、meibo.id と kiroku.gakuseki の両方が合っていれば10点。",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-1-practical-q1.webp",
+      "/images/questions/zenkou-pc/47-1-practical-schema.webp"
+    ],
+    "imageAltTexts": [
+      "1級実技の公式問題。名簿 meibo と記録 kiroku を結び付けるキー項目を、両方の表について答えなさい。",
+      "マラソン大会の名簿 meibo と記録 kiroku の説明と列定義。"
+    ],
+    "answerImageUrls": [
+      "/images/questions/zenkou-pc/47-1-practical-a1.webp"
+    ],
+    "answerImageAltTexts": [
+      "1級実技の公式解答例。"
+    ],
+    "officialReferenceUrls": [
+      "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=26",
+      "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=30",
+      "https://zenkoukyo.or.jp/web/content/uploads/47pc_data.zip"
+    ]
+  },
+  {
+    "id": "zenkou-pc-2024-first-pc-practical-1-q2",
+    "exam": "zenkou-pc",
+    "session": "pc-practical-1",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 2,
+    "subject": "データベース",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 1級・実技",
+    "officialQuestionLabel": "問2",
+    "category": "データベース",
+    "topicTags": [
+      "データベース"
+    ],
+    "difficulty": 3,
+    "question": "名簿 meibo のすべての列を、id の降順で表示するSQLを書きなさい。",
+    "answer": "SELECT *\nFROM meibo\nORDER BY id DESC;",
+    "officialAnswerNumber": "SELECT *\nFROM meibo\nORDER BY id DESC;",
+    "explanation": "すべての列を SELECT * で指定する。id の大きな行を先にするため、ORDER BY の id に DESC を付ける。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=27",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=29",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」1級実技 問2。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "type": "descriptive",
+    "modelAnswer": "SELECT *\nFROM meibo\nORDER BY id DESC;",
+    "officialAnswerExample": true,
+    "modelAnswerAuthority": "official",
+    "scoringCriteria": "公式採点は20点。meiboの全項目がidの降順で並ぶことを確認する。",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-1-practical-q2.webp",
+      "/images/questions/zenkou-pc/47-1-practical-schema.webp"
+    ],
+    "imageAltTexts": [
+      "1級実技の公式問題。名簿 meibo のすべての列を、id の降順で表示するSQLを書きなさい。",
+      "マラソン大会の名簿 meibo と記録 kiroku の説明と列定義。"
+    ],
+    "answerImageUrls": [
+      "/images/questions/zenkou-pc/47-1-practical-a2.webp"
+    ],
+    "answerImageAltTexts": [
+      "1級実技の公式解答例。"
+    ],
+    "officialReferenceUrls": [
+      "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=26",
+      "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=30",
+      "https://zenkoukyo.or.jp/web/content/uploads/47pc_data.zip"
+    ]
+  },
+  {
+    "id": "zenkou-pc-2024-first-pc-practical-1-q3",
+    "exam": "zenkou-pc",
+    "session": "pc-practical-1",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 3,
+    "subject": "データベース",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 1級・実技",
+    "officialQuestionLabel": "問3",
+    "category": "データベース",
+    "topicTags": [
+      "データベース"
+    ],
+    "difficulty": 3,
+    "question": "名簿 meibo と記録 kiroku から nen、kumi、bangou、seitomei、seibetu、seconds を抽出し、seconds の昇順で表示するSQLを書きなさい。",
+    "answer": "SELECT meibo.nen, meibo.kumi, meibo.bangou, meibo.seitomei, meibo.seibetu, kiroku.seconds\nFROM meibo, kiroku\nWHERE meibo.id = kiroku.gakuseki\nORDER BY kiroku.seconds ASC;",
+    "officialAnswerNumber": "SELECT meibo.nen, meibo.kumi, meibo.bangou, meibo.seitomei, meibo.seibetu, kiroku.seconds\nFROM meibo, kiroku\nWHERE meibo.id = kiroku.gakuseki\nORDER BY kiroku.seconds ASC;",
+    "explanation": "名簿と記録を同じ生徒のIDで結合する。その上で指定の6列を取り出し、記録表の秒数を基準に小さい順で並べる。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=27",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=29",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」1級実技 問3。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "type": "descriptive",
+    "modelAnswer": "SELECT meibo.nen, meibo.kumi, meibo.bangou, meibo.seitomei, meibo.seibetu, kiroku.seconds\nFROM meibo, kiroku\nWHERE meibo.id = kiroku.gakuseki\nORDER BY kiroku.seconds ASC;",
+    "officialAnswerExample": true,
+    "modelAnswerAuthority": "official",
+    "scoringCriteria": "公式採点は20点。実行結果の6列と行の順序を確認する。公式解答ではASCを省略可。",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-1-practical-q3.webp",
+      "/images/questions/zenkou-pc/47-1-practical-schema.webp"
+    ],
+    "imageAltTexts": [
+      "1級実技の公式問題。名簿 meibo と記録 kiroku から nen、kumi、bangou、seitomei、seibetu、seconds を抽出し、seconds の昇順で表示するSQLを書きなさい。",
+      "マラソン大会の名簿 meibo と記録 kiroku の説明と列定義。"
+    ],
+    "answerImageUrls": [
+      "/images/questions/zenkou-pc/47-1-practical-a3.webp"
+    ],
+    "answerImageAltTexts": [
+      "1級実技の公式解答例。"
+    ],
+    "officialReferenceUrls": [
+      "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=26",
+      "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=30",
+      "https://zenkoukyo.or.jp/web/content/uploads/47pc_data.zip"
+    ]
+  },
+  {
+    "id": "zenkou-pc-2024-first-pc-practical-1-q4",
+    "exam": "zenkou-pc",
+    "session": "pc-practical-1",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 4,
+    "subject": "データベース",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 1級・実技",
+    "officialQuestionLabel": "問4",
+    "category": "データベース",
+    "topicTags": [
+      "データベース"
+    ],
+    "difficulty": 3,
+    "question": "学年 nen と性別 seibetu ごとに seconds を平均し、nen_ave_time として小さい順に表示するSQLを書きなさい。",
+    "answer": "SELECT meibo.nen, meibo.seibetu, AVG(kiroku.seconds) AS nen_ave_time\nFROM meibo, kiroku\nWHERE meibo.id = kiroku.gakuseki\nGROUP BY meibo.nen, meibo.seibetu\nORDER BY AVG(kiroku.seconds) ASC;",
+    "officialAnswerNumber": "SELECT meibo.nen, meibo.seibetu, AVG(kiroku.seconds) AS nen_ave_time\nFROM meibo, kiroku\nWHERE meibo.id = kiroku.gakuseki\nGROUP BY meibo.nen, meibo.seibetu\nORDER BY AVG(kiroku.seconds) ASC;",
+    "explanation": "名簿と記録を生徒IDで結び、GROUP BY に学年と性別を指定する。AVG はグループ内で求め、計算値の昇順で並べる。追加解答のSQLも平均だけを表示する別解として示されている。追加解答表の先頭は3313とあるが、本体と元データの2年女子の平均は (3103＋3323)/2＝3213。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=27",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=29",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」1級実技 問4。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "type": "descriptive",
+    "modelAnswer": "SELECT meibo.nen, meibo.seibetu, AVG(kiroku.seconds) AS nen_ave_time\nFROM meibo, kiroku\nWHERE meibo.id = kiroku.gakuseki\nGROUP BY meibo.nen, meibo.seibetu\nORDER BY AVG(kiroku.seconds) ASC;",
+    "officialAnswerExample": true,
+    "modelAnswerAuthority": "official",
+    "scoringCriteria": "公式採点は25点。公式解答および追加解答のSQLを照合する。ASCは省略可。",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-1-practical-q4.webp",
+      "/images/questions/zenkou-pc/47-1-practical-schema.webp"
+    ],
+    "imageAltTexts": [
+      "1級実技の公式問題。学年 nen と性別 seibetu ごとに seconds を平均し、nen_ave_time として小さい順に表示するSQLを書きなさい。",
+      "マラソン大会の名簿 meibo と記録 kiroku の説明と列定義。"
+    ],
+    "answerImageUrls": [
+      "/images/questions/zenkou-pc/47-1-practical-a4.webp",
+      "/images/questions/zenkou-pc/47-1-practical-a4-additional.webp"
+    ],
+    "answerImageAltTexts": [
+      "1級実技の公式解答例。",
+      "問4の公式追加解答。"
+    ],
+    "officialReferenceUrls": [
+      "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=26",
+      "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=30",
+      "https://zenkoukyo.or.jp/web/content/uploads/47pc_data.zip",
+      "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=31"
+    ]
+  },
+  {
+    "id": "zenkou-pc-2024-first-pc-practical-1-q5",
+    "exam": "zenkou-pc",
+    "session": "pc-practical-1",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 5,
+    "subject": "データベース",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 1級・実技",
+    "officialQuestionLabel": "問5",
+    "category": "データベース",
+    "topicTags": [
+      "データベース"
+    ],
+    "difficulty": 3,
+    "question": "1年の女子の平均 seconds を 1nen_jyoshi_ave_time として表示するSQLを書きなさい。",
+    "answer": "SELECT meibo.seibetu, AVG(kiroku.seconds) AS 1nen_jyoshi_ave_time\nFROM meibo, kiroku\nWHERE meibo.id = kiroku.gakuseki\nGROUP BY meibo.nen, meibo.seibetu\nHAVING meibo.nen=1 AND meibo.seibetu = '女';",
+    "officialAnswerNumber": "SELECT meibo.seibetu, AVG(kiroku.seconds) AS 1nen_jyoshi_ave_time\nFROM meibo, kiroku\nWHERE meibo.id = kiroku.gakuseki\nGROUP BY meibo.nen, meibo.seibetu\nHAVING meibo.nen=1 AND meibo.seibetu = '女';",
+    "explanation": "学年と性別でまとめた後、HAVING で1年かつ女子のグループに絞る。3030、3642、3324の平均は3332。追加解答には平均だけを表示する形、学年・性別も表示する形の両方がある。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=27",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=29",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」1級実技 問5。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "type": "descriptive",
+    "modelAnswer": "SELECT meibo.seibetu, AVG(kiroku.seconds) AS 1nen_jyoshi_ave_time\nFROM meibo, kiroku\nWHERE meibo.id = kiroku.gakuseki\nGROUP BY meibo.nen, meibo.seibetu\nHAVING meibo.nen=1 AND meibo.seibetu = '女';",
+    "officialAnswerExample": true,
+    "modelAnswerAuthority": "official",
+    "scoringCriteria": "公式採点は25点。1年女子を対象とした平均と指定の列名を確認し、公式追加解答の別解も照合する。",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-1-practical-q5.webp",
+      "/images/questions/zenkou-pc/47-1-practical-schema.webp"
+    ],
+    "imageAltTexts": [
+      "1級実技の公式問題。1年の女子の平均 seconds を 1nen_jyoshi_ave_time として表示するSQLを書きなさい。",
+      "マラソン大会の名簿 meibo と記録 kiroku の説明と列定義。"
+    ],
+    "answerImageUrls": [
+      "/images/questions/zenkou-pc/47-1-practical-a5.webp",
+      "/images/questions/zenkou-pc/47-1-practical-a5-additional.webp"
+    ],
+    "answerImageAltTexts": [
+      "1級実技の公式解答例。",
+      "問5の公式追加解答2種類と出力例3332。"
+    ],
+    "officialReferenceUrls": [
+      "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=26",
+      "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=30",
+      "https://zenkoukyo.or.jp/web/content/uploads/47pc_data.zip",
+      "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=31"
+    ]
+  },
+  {
+    "id": "zenkou-pc-2024-first-pc-practical-2-q1",
+    "exam": "zenkou-pc",
+    "session": "pc-practical-2",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 1,
+    "subject": "表計算",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 2級・実技",
+    "officialQuestionLabel": "問1",
+    "category": "表計算",
+    "topicTags": [
+      "表計算"
+    ],
+    "difficulty": 2,
+    "question": "指定の入力表から年度別の発受電電力量の合計と構成比を算出し、表と積み上げ棒グラフをA4用紙横向き1枚に作成しなさい。",
+    "answer": "1975年 3,874、1990年 7,372、2005年 9,885、2020年 10,000（億kWh）。構成比の各値とグラフは公式解答例の画像を参照。",
+    "officialAnswerNumber": "1975年 3,874、1990年 7,372、2005年 9,885、2020年 10,000（億kWh）。構成比の各値とグラフは公式解答例の画像を参照。",
+    "explanation": "列の5〜10行を SUM で足して11行目に置く。例えば水力の1975年構成比は C6/C$11 とし、小数第2位までのパーセント表示にする。分母を同じ年度の11行目に固定して下に複写する。グラフは各電源の実数値だけを積み上げ、合計行と構成比列はデータ系列に含めない。軸は年度と億kWhを表し、凡例と表題を付ける。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=41",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=44",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」2級実技 問1。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "type": "descriptive",
+    "modelAnswer": "1975年 3,874、1990年 7,372、2005年 9,885、2020年 10,000（億kWh）。構成比の各値とグラフは公式解答例の画像を参照。",
+    "officialAnswerExample": true,
+    "modelAnswerAuthority": "official",
+    "scoringCriteria": "公式採点は表65点、グラフ35点。受検番号、表題、入力値、計算値、罫線、グラフの種類と凡例、軸目盛を採点基準と照合する。",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-2-practical-q1.webp"
+    ],
+    "imageAltTexts": [
+      "2級実技の公式問題。指定の入力表から年度別の発受電電力量の合計と構成比を算出し、表と積み上げ棒グラフをA4用紙横向き1枚に作成しなさい。"
+    ],
+    "answerImageUrls": [
+      "/images/questions/zenkou-pc/47-2-practical-a1.webp"
+    ],
+    "answerImageAltTexts": [
+      "2級実技の公式解答例。"
+    ],
+    "officialReferenceUrls": [
+      "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=43",
+      "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=45"
+    ]
+  },
+  {
+    "id": "zenkou-pc-2024-first-pc-practical-3-q1",
+    "exam": "zenkou-pc",
+    "session": "pc-practical-3",
+    "year": 2024,
+    "season": "first",
+    "qNumber": 1,
+    "subject": "ワープロ",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第47回 3級・実技",
+    "officialQuestionLabel": "問1",
+    "category": "ワープロ",
+    "topicTags": [
+      "ワープロ"
+    ],
+    "difficulty": 1,
+    "question": "指定の書式と図に従い、「多重分岐」の文書をワープロで作成しなさい。",
+    "answer": "公式解答例にある受検番号・検定年月日欄、28ポイント太字の中央揃えの表題、本文、条件①②と処理①〜③の図を配置する。",
+    "officialAnswerNumber": "公式解答例にある受検番号・検定年月日欄、28ポイント太字の中央揃えの表題、本文、条件①②と処理①〜③の図を配置する。",
+    "explanation": "作成前に用紙をA4縦、余白を上・下30 mm、左25 mm、右20 mmに設定する。本文は明朝体10.5ポイントで、段落の先頭を全角1字空ける。条件①のYesは処理①、Noは条件②へ進み、条件②のYesは処理②、Noは処理③へ進むように図形を結ぶ。原本と解答例の本文(2)は「処理②を満たす場合」と表記されているが、図の判定は条件②である。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=54",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=57",
+    "sourceAttribution": "公益社団法人全国工業高等学校長協会「第47回パソコン利用技術検定試験」3級実技 問1。",
+    "license": "ZENKOUKYO-owner-authorized",
+    "type": "descriptive",
+    "modelAnswer": "公式解答例にある受検番号・検定年月日欄、28ポイント太字の中央揃えの表題、本文、条件①②と処理①〜③の図を配置する。",
+    "officialAnswerExample": true,
+    "modelAnswerAuthority": "official",
+    "scoringCriteria": "公式採点は、初期設定10点、受検番号と日付10点、表題10点、本文①15点、図40点、本文②15点。解答例で配置、採点ポイントで個々の指定を照合する。",
+    "imageUrls": [
+      "/images/questions/zenkou-pc/47-3-practical-q1.webp"
+    ],
+    "imageAltTexts": [
+      "3級実技の公式問題。指定の書式と図に従い、「多重分岐」の文書をワープロで作成しなさい。"
+    ],
+    "answerImageUrls": [
+      "/images/questions/zenkou-pc/47-3-practical-a1.webp"
+    ],
+    "answerImageAltTexts": [
+      "3級実技の公式解答例。"
+    ],
+    "officialReferenceUrls": [
+      "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=56",
+      "https://zenkoukyo.or.jp/web/content/uploads/47pc_kekka.pdf#page=58"
+    ]
+  }
+]

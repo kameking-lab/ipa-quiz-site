@@ -27,7 +27,7 @@ import { SITE_BASE_URL } from "@/lib/seo/config";
 
 interface QualificationHubPageProps {
   params: Promise<{ slug: string }>;
-  searchParams?: Promise<{ subject?: string | string[]; year?: string | string[] }>;
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
 }
 
 interface HubPaper {

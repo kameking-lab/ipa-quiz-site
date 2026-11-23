@@ -33,8 +33,8 @@ describe("medical question and quiz display names", () => {
   ] as const)("shows the current %s count and confirmed recent coverage", async (exam, label) => {
     const count = getQuestionsByExamStrict(exam).length;
     const metadata = await generateMetadata({ params: Promise.resolve({ exam }) });
-    expect(metadata.title).toContain(label);
-    expect(metadata.description).toContain(`${count.toLocaleString("ja-JP")}問収録`);
+    expect(metadata.openGraph?.title).toContain(label);
+    expect(metadata.description).toContain(`${count.toLocaleString("ja-JP")}問`);
     expect(getQualificationByExamCode(exam)?.reuseSummary).toContain("第112・111回の午前・午後を各110問、計220問収録");
   });
 

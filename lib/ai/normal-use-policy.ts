@@ -1,4 +1,5 @@
-/** Approved normal-use mode; runtime activation remains independently gated. */
+import { AI_ACCESS_POLICY, AI_POLICY_VERSION } from "./access-policy";
+
 export interface AiNormalUsePolicy {
   rolloutEnabled: boolean;
   version: string | null;
@@ -9,8 +10,8 @@ export interface AiNormalUsePolicy {
 }
 
 export const DRAFT_AI_NORMAL_USE_POLICY: Readonly<AiNormalUsePolicy> = {
-  rolloutEnabled: false, version: "ai-normal-20261031-burst",
-  aiPolicyVersion: "ai-20261031-free3-paid-normal", effectiveAt: Date.parse("2026-10-31T23:22:02Z"),
+  rolloutEnabled: false, version: "ai-normal-20261122-burst",
+  aiPolicyVersion: AI_POLICY_VERSION, effectiveAt: AI_ACCESS_POLICY.effectiveAt,
   subjectWindowMode: "burst-only",
 };
 

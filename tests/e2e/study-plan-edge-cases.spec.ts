@@ -36,12 +36,19 @@ test("a saved plan without an appointment shows no invented target or paid nudge
 for (const [result, label] of [["failed", "不合格"], ["absent", "受けなかった"]] as const) {
   test(`a past exam records ${result} and offers the next plan`, async ({ page }) => {
     await setup(page, { ...makePlan(), examDate: "2026-11-16" });
+    await page.route("**/api/exam-schedule/ip", route => route.fulfill({ json: { exam: "ip", source: "tsugino", sessions: [{
+      id: "retry-fixture", label: "次回の日程", qualificationId: "itpassport", scheduleStatus: "official",
+      examDate: "2026-12-20", examDateEnd: null, examPhaseWindows: [], datePrecision: "date",
+      applicationStart: null, applicationDeadline: null, resultDate: null, sourceUrl: "https://www.ipa.go.jp/shiken/",
+    }] } }));
     await page.goto("/");
     await page.getByRole("button", { name: label, exact: true }).click();
     expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)!)[0].result, LS_KEYS.pacePlans)).toBe(result);
     await expect(page.getByRole("link", { name: /計画の問題を解く/ })).toHaveCount(0);
-    await page.getByRole("button", { name: "学習計画を作る", exact: true }).click();
-    await expect(page.getByRole("dialog", { name: "学習計画を作る" })).toBeVisible();
+    await page.getByRole("button", { name: "次回日程で計画を作り直す", exact: true }).click();
+    const sheet = page.getByRole("dialog", { name: "学習計画を作る" });
+    await expect(sheet.getByRole("combobox", { name: "受ける資格" })).toHaveValue("ip");
+    await expect(sheet.locator("time")).toHaveText("2026-12-20");
   });
 }
 
@@ -121,6 +128,7 @@ for (const source of ["failure", "manual", "fallback", "ondemand", "past-only"] 
     await expect(save).toBeEnabled();
     await save.click();
     await expect(page.getByRole("link", { name: /計画の問題を解く/ })).toBeVisible();
+    await expect(page.getByRole("button", { name: "カレンダーに追加（.ics）" })).toBeVisible();
     await expect(page.getByRole("button", { name: /申込締切/ })).toHaveCount(0);
     expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)!)[0].examDate, LS_KEYS.pacePlans)).toBe("2026-12-20");
   });

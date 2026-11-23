@@ -2,6 +2,7 @@
   position: relative;
   isolation: isolate;
   width: 100%;
+  aspect-ratio: 352 / 195;
   overflow: hidden;
   border: 1px solid var(--border);
   border-radius: 14px;
@@ -19,15 +20,53 @@
   object-fit: fill;
 }
 
+:global([data-home-scene="night"]) .home > .background {
+  filter: brightness(.68) saturate(.85);
+}
+
 .slot {
   position: absolute;
+  left: calc(var(--x) * 100% / 352);
+  top: calc(var(--floor) * 100% / 195);
+  width: min(calc(var(--width, 70) * 100% / 352), 108px);
+  z-index: var(--floor);
   aspect-ratio: 1;
   transform: translate(-50%, -100%);
   /* Existing seats must adopt the new layout in the same frame as arriving seats. */
   transition-property: none;
 }
 
+/* Coordinates are floor contacts in the 352 ? 195 room illustrations.
+   The front row may cover feet behind it while leaving faces clear. */
+.slot[data-slot="1"] { --x: 133; --floor: 136; }
+.slot[data-slot="2"] { --x: 223; --floor: 88; --width: 66; }
+.slot[data-slot="3"] { --x: 42; --floor: 181; --width: 72; }
+.slot[data-slot="4"] { --x: 125; --floor: 184; --width: 72; }
+.slot[data-slot="5"] { --x: 207; --floor: 184; --width: 72; }
+.slot[data-slot="6"] { --x: 306; --floor: 139; }
+.slot[data-slot="7"] { --x: 44; --floor: 94; --width: 66; }
+.slot[data-slot="8"] { --x: 131; --floor: 88; --width: 66; }
+.slot[data-slot="9"] { --x: 305; --floor: 100; --width: 66; }
+.slot[data-slot="10"] { --x: 50; --floor: 137; }
+.slot[data-slot="11"] { --x: 220; --floor: 137; }
+.slot[data-slot="12"] { --x: 297; --floor: 180; --width: 72; }
+.slot[data-slot="sleeper"] { --x: 165; --floor: 131; --width: 72; }
+
+.scene[data-room="p1"] .slot[data-slot="10"] { --x: 73; --floor: 133; }
+.scene[data-room="p1"] .slot[data-slot="11"] { --x: 248; --floor: 143; }
+.scene[data-room="p2"] .slot[data-slot="1"] { --x: 158; --floor: 132; }
+.scene[data-room="p2"] .slot[data-slot="6"] { --x: 311; --floor: 146; }
+.scene[data-room="p2"] .slot[data-slot="9"] { --x: 287; --floor: 96; }
+.scene[data-room="p2"] .slot[data-slot="sleeper"] { --x: 206; --floor: 127; }
+.scene[data-room="p3"] .slot[data-slot="7"] { --x: 50; --floor: 90; }
+.scene[data-room="p3"] .slot[data-slot="sleeper"] { --x: 121; --floor: 122; }
+.scene[data-room="p4"] .slot[data-slot="7"] { --x: 63; --floor: 84; }
+.scene[data-room="p4"] .slot[data-slot="9"] { --x: 302; --floor: 91; }
+.scene[data-room="p4"] .slot[data-slot="12"] { --x: 282; }
+.scene[data-room="p4"] .slot[data-slot="sleeper"] { --x: 184; --floor: 125; }
+
 .slot img {
+  position: relative;
   display: block;
   width: 100%;
   height: 100%;
@@ -35,6 +74,13 @@
   object-position: center bottom;
   pointer-events: none;
 }
+
+/* Offset the transparent padding inside the existing square sprites. */
+.slot[data-pose] img { top: 2.5%; }
+.slot img[src$="-bow.webp"] { top: 10%; }
+.slot img:is([src$="-paw.webp"], [src$="-rear.webp"]) { top: 5.5%; }
+.slot img[src$="-sleep.webp"] { top: 25%; }
+.slot img:is([src$="-rear-angle.webp"], [src$="-sleep-belly.webp"]) { top: 0; }
 
 .slot[data-studying-now="true"]::after {
   position: absolute;

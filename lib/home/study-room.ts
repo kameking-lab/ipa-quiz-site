@@ -5,7 +5,6 @@ import type { HomeDomainId } from "./home-directory";
 
 /** Maximum illustrations, not a room capacity. */
 export const STUDY_ROOM_VISIBLE_LIMIT = 120;
-export const HOME_ROOM_VISIBLE_LIMIT = 30;
 export const SLEEPING_ROOM_MASCOT = "/images/home/study-room-mascots/generic-9.webp";
 export const EMPTY_STUDY_ROOM_MESSAGE = "まだ誰もいません。一番乗りしよう";
 export function roomStage(count: number) {

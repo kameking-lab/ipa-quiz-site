@@ -6,7 +6,7 @@ function anchorHrefs(html: string): string[] {
   return Array.from(html.matchAll(/<a\b[^>]*\bhref="([^"]*)"/g), match => match[1]!);
 }
 
-test("retired afternoon supply is empty over HTTP and its scoring target returns 404", async ({ request, baseURL }) => {
+test("retired afternoon supply is empty over HTTP and its scoring endpoint returns 410", async ({ request, baseURL }) => {
   expect(process.env.E2E_BASE_URL, "Use the candidate-built CI webServer, never a remote/old deployment").toBeUndefined();
   expect(baseURL).toBe("http://127.0.0.1:3000");
 
@@ -43,20 +43,18 @@ test("retired afternoon supply is empty over HTTP and its scoring target returns
   for (const row of counts.byExam) expect(row.afternoon).toBe(0);
   expect(counts.total).toBe(counts.morning + counts.essay);
 
-  // All GET preconditions must pass before this non-personal POST. The fixed
-  // handler resolves the missing target before admission/provider/cost calls.
-  // HTTP checks the real status/body; unit spies separately prove non-consumption.
+  // The route is retired regardless of whether the request refers to an old question.
   const scoring = await request.post("/api/scoring", {
     data: {
       questionId: "ap-2024h-pm-q1",
       answers: [{ label: "設問1", text: "境界検収専用の固定入力" }],
     },
   });
-  expect(scoring.status()).toBe(404);
-  const body = await scoring.json();
-  expect(body.error).toBe("not_found");
-  for (const key of ["totalScore", "subResults", "overallComment", "gradedAt"]) {
-    expect(body).not.toHaveProperty(key);
-  }
+  expect(scoring.status()).toBe(410);
+  expect(await scoring.json()).toEqual({ error: "scoring_retired" });
   expect(scoring.headers()["x-provider"]).toBeUndefined();
+
+  const malformed = await request.post("/api/scoring", { data: "not json" });
+  expect(malformed.status()).toBe(410);
+  expect(await malformed.json()).toEqual({ error: "scoring_retired" });
 });

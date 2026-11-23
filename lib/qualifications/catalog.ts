@@ -236,7 +236,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     slug: "zensho-bc", examCode: "zensho-bc", shortName: "全商ビジネスコミュニケーション検定", fullName: "全商ビジネスコミュニケーション検定",
     domain: "personal-services", administrator: "全国商業高等学校協会",
     officialQuestionsUrl: "https://zensho.or.jp/examination/pastexams/bc/", officialReuseTermsUrl: "https://zensho.or.jp/examination/pastexams/bc/", status: "live",
-    reuseSummary: "第14回の公式問題と模範解答50問を収録。",
+    reuseSummary: "第8〜14回の筆記問題を、公式の模範解答とともに収録。",
     remainingWork: [],
   },
   {"slug": "kanken-4", "examCode": "kanken-4", "shortName": "漢検4級", "fullName": "日本漢字能力検定4級", "domain": "welfare", "administrator": "公益財団法人日本漢字能力検定協会", "officialQuestionsUrl": "https://www.kanken.or.jp/kanken/grades/sample/", "officialReuseTermsUrl": "https://www.kanken.or.jp/kanken/grades/sample/", "status": "live", "reuseSummary": "2026年度第1回4級（A）を全120問収録。", "remainingWork": []},
@@ -250,13 +250,13 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     fullName: "日本留学試験",
     domain: "personal-services",
     administrator: "日本学生支援機構",
-    officialQuestionsUrl: "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/pastpaper_2021_1.html",
+    officialQuestionsUrl: "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/index.html",
     officialReuseTermsUrl: "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/pastpaper_2021_1.html",
     status: "live",
-    reuseSummary: "2021年度第1回の数学と理科を収録。数学はコース1・2、理科は物理・化学・生物を科目別に演習できます。",
+    reuseSummary: "2017・2018・2020年度の第2回と2019・2021年度の第1回を収録。数学のコース1・2と、理科の物理・化学・生物を演習できます。",
     remainingWork: [],
   },
-  {"slug": "zensho-english", "examCode": "zensho-english", "shortName": "全商英語検定", "fullName": "全商英語検定", "domain": "personal-services", "administrator": "全国商業高等学校協会", "officialQuestionsUrl": "https://zensho.or.jp/examination/pastexams/english/", "officialReuseTermsUrl": "https://zensho.or.jp/examination/pastexams/english/", "status": "live", "reuseSummary": "第75回の1級一次試験12大問を収録。", "remainingWork": []},
+  {"slug": "zensho-english", "examCode": "zensho-english", "shortName": "全商英語検定", "fullName": "全商英語検定", "domain": "personal-services", "administrator": "全国商業高等学校協会", "officialQuestionsUrl": "https://zensho.or.jp/examination/pastexams/english/", "officialReuseTermsUrl": "https://zensho.or.jp/examination/pastexams/english/", "status": "live", "reuseSummary": "1〜3級の筆記問題を収録。", "remainingWork": []},
   {"slug": "kanken-j2", "examCode": "kanken-j2", "shortName": "日本漢字能力検定 準2級", "fullName": "日本漢字能力検定 準2級", "domain": "personal-services", "administrator": "日本漢字能力検定協会", "officialQuestionsUrl": "https://www.kanken.or.jp/kanken/grades/sample/", "officialReuseTermsUrl": "https://www.kanken.or.jp/kanken/grades/sample/", "status": "live", "reuseSummary": "2026年度第1回の準2級120問を収録。", "remainingWork": []},
   {"slug": "zensho-bido", "examCode": "zensho-bido", "shortName": "全商ビジネス文書実務検定", "fullName": "全商ビジネス文書実務検定", "domain": "accounting", "administrator": "公益財団法人全国商業高等学校協会", "officialQuestionsUrl": "https://zensho.or.jp/examination/pastexams/bido/", "officialReuseTermsUrl": "https://zensho.or.jp/examination/pastexams/bido/", "status": "live", "reuseSummary": "第76回1級と第74回3級の筆記問題を収録。", "remainingWork": []},
   {"slug": "kanken-6", "examCode": "kanken-6", "shortName": "日本漢字能力検定6級", "fullName": "日本漢字能力検定6級", "domain": "personal-services", "administrator": "日本漢字能力検定協会", "officialQuestionsUrl": "https://www.kanken.or.jp/kanken/grades/sample/", "officialReuseTermsUrl": "https://www.kanken.or.jp/kanken/grades/sample/", "status": "live", "reuseSummary": "公式問題・正答と学習用の解説を収録。", "remainingWork": []},
@@ -306,7 +306,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   },
   {"slug": "zensho-calc", "examCode": "zensho-calc", "shortName": "全商ビジネス計算実務検定", "fullName": "全商ビジネス計算実務検定", "domain": "accounting", "administrator": "全国商業高等学校協会", "officialQuestionsUrl": "https://zensho.or.jp/examination/pastexams/calculating/", "officialReuseTermsUrl": "https://zensho.or.jp/examination/pastexams/calculating/", "status": "live", "reuseSummary": "第151回の3級普通計算を収録。", attributionTemplate: "出典：全国商業高等学校協会。", "remainingWork": []},
   {"slug": "suken", "examCode": "suken", "shortName": "実用数学技能検定", "fullName": "実用数学技能検定", "domain": "welfare", "administrator": "日本数学検定協会", "officialQuestionsUrl": "https://www.su-gaku.net/suken/support/past_questions/", "officialReuseTermsUrl": "https://www.su-gaku.net/suken/support/past_questions/", "status": "live", "reuseSummary": "公式公表問題を収録。", attributionTemplate: "出典：日本数学検定協会。", "remainingWork": []},
-  {"slug": "gijutsushi1-kiso", "examCode": "gijutsushi1-kiso", "shortName": "技術士第一次・基礎科目", "fullName": "技術士第一次試験・基礎科目", "domain": "construction", "administrator": "公益社団法人日本技術士会", "officialQuestionsUrl": "https://www.engineer.or.jp/c_categories/index02021.html", "officialReuseTermsUrl": "https://www.engineer.or.jp/c_categories/index02021.html", "status": "live", "reuseSummary": "令和5年度の基礎科目を全5群30問収録。", "remainingWork": []},
+  {"slug": "gijutsushi1-kiso", "examCode": "gijutsushi1-kiso", "shortName": "技術士第一次・基礎科目", "fullName": "技術士第一次試験・基礎科目", "domain": "construction", "administrator": "公益社団法人日本技術士会", "officialQuestionsUrl": "https://www.engineer.or.jp/c_categories/index02021.html", "officialReuseTermsUrl": "https://www.engineer.or.jp/c_categories/index02021.html", "status": "live", "reuseSummary": "令和4年度・令和5年度の基礎科目を各5群30問収録。", "remainingWork": []},
   {"slug": "jlpt", "examCode": "jlpt", "shortName": "日本語能力試験（JLPT）", "fullName": "日本語能力試験（JLPT）", "domain": "welfare", "administrator": "国際交流基金・日本国際教育支援協会", "officialQuestionsUrl": "https://www.jlpt.jp/e/samples/sampleindex.html", "officialReuseTermsUrl": "https://www.jlpt.jp/e/samples/sampleindex.html", "status": "live", "reuseSummary": "2018年発行の公式問題集から言語知識・読解を収録。", attributionTemplate: "出典：国際交流基金・日本国際教育支援協会。", "remainingWork": []},
   {
     slug: "career-gino-2", examCode: "career-gino-2", shortName: "キャリアコンサルティング技能検定2級", fullName: "キャリアコンサルティング技能検定2級",
@@ -318,7 +318,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   },
   {"slug": "gijutsushi1-kensetsu", "examCode": "gijutsushi1-kensetsu", "shortName": "技術士第一次試験（建設部門）", "fullName": "技術士第一次試験（建設部門）", "domain": "construction", "administrator": "日本技術士会", "officialQuestionsUrl": "https://www.engineer.or.jp/c_categories/index02021.html", "officialReuseTermsUrl": "https://www.engineer.or.jp/c_categories/index02021.html", "status": "live", "reuseSummary": "2023年度の建設部門・専門科目を収録。", "remainingWork": []},
   {"slug": "building-cleaning-1", "examCode": "building-cleaning-1", "shortName": "ビルクリーニング技能検定1級", "fullName": "ビルクリーニング技能検定1級", "domain": "personal-services", "administrator": "全国ビルメンテナンス協会", "officialQuestionsUrl": "https://www.j-bma.or.jp/qualification-training/building-cleaning", "officialReuseTermsUrl": "https://www.j-bma.or.jp/qualification-training/building-cleaning", "status": "live", "reuseSummary": "2024・2025年度の学科試験を計100問収録。", "remainingWork": []},
-  {"slug": "gijutsushi1-tekisei", "examCode": "gijutsushi1-tekisei", "shortName": "技術士第一次試験（適性科目）", "fullName": "技術士第一次試験（適性科目）", "domain": "construction", "administrator": "日本技術士会", "officialQuestionsUrl": "https://www.engineer.or.jp/c_categories/index02021.html", "officialReuseTermsUrl": "https://www.engineer.or.jp/c_categories/index02021.html", "status": "live", "reuseSummary": "2021年度の適性科目を収録。", "remainingWork": []},
+  {"slug": "gijutsushi1-tekisei", "examCode": "gijutsushi1-tekisei", "shortName": "技術士第一次試験（適性科目）", "fullName": "技術士第一次試験（適性科目）", "domain": "construction", "administrator": "日本技術士会", "officialQuestionsUrl": "https://www.engineer.or.jp/c_categories/index02021.html", "officialReuseTermsUrl": "https://www.engineer.or.jp/c_categories/index02021.html", "status": "live", "reuseSummary": "令和5年度の適性科目15問を肢別解説付きで収録。", "remainingWork": []},
   {"slug": "juishi", "examCode": "juishi", "shortName": "獣医師国家試験", "fullName": "獣医師国家試験", "domain": "welfare", "administrator": "農林水産省", "officialQuestionsUrl": "https://www.maff.go.jp/j/syouan/tikusui/zyui/shiken/shiken.html", "officialReuseTermsUrl": "https://www.maff.go.jp/j/use/", "status": "live", "reuseSummary": "第77回の必須問題と学説試験 問題A・Bを収録。", "remainingWork": []},
   {
     slug: "dekyo-charge-3",
@@ -2540,7 +2540,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.katei-ed.or.jp/past.html",
     officialReuseTermsUrl: "https://www.katei-ed.or.jp/past.html",
     status: "live",
-    reuseSummary: "2025年度 第62回の2級筆記を全12大問・19演習単位で収録。公式正答と原本図表、選択肢ごとの独自解説を確認できます。",
+    reuseSummary: "現2級と、改定前の3級の筆記問題を収録。公式正答と原本図表、選択肢ごとの独自解説を確認できます。",
     remainingWork: [],
   },
   {
@@ -3286,13 +3286,13 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
 
     domain: "welfare", administrator: "都道府県（全国共通問題）",
 
-    officialQuestionsUrl: "https://www.fukushi.metro.tokyo.lg.jp/kourei/shikaku/r7_seitoukijyun",
+    officialQuestionsUrl: "https://www.fukushi.metro.tokyo.lg.jp/kourei/hoken/kaigo_lib/care/shikenjyouhou",
 
     officialReuseTermsUrl: "https://www.fukushi.metro.tokyo.lg.jp/kourei/shikaku/r7_seitoukijyun",
 
     status: "live",
 
-    reuseSummary: "第27回（令和6年度）・第28回（令和7年度）の各60問と、第26回（令和5年度）の介護支援分野24問、計144問を、公式正答と全選択肢の解説付きで収録。",
+    reuseSummary: "第24回（2021年度）から第28回（2025年度）までの全国共通問題を各60問収録。公式正答と解説を確認しながら演習できます。",
 
     attributionTemplate: "出典：第○回介護支援専門員実務研修受講試験 問題○（○○掲載）",
 
@@ -3315,13 +3315,13 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {"slug":"kikenbutsu-otsu2","examCode":"kikenbutsu-otsu2","shortName":"危険物取扱者 乙種第2類","fullName":"危険物取扱者 乙種第2類","domain":"safety","administrator":"消防試験研究センター","officialQuestionsUrl":"https://www.shoubo-shiken.or.jp/","officialReuseTermsUrl":"https://www.shoubo-shiken.or.jp/","status":"live","reuseSummary":"公式公開の抜粋10問のみ。特定回の全問や2回分の全問を収録したものではありません。","remainingWork":[]},
   {"slug":"kikenbutsu-otsu6","examCode":"kikenbutsu-otsu6","shortName":"危険物取扱者 乙種第6類","fullName":"危険物取扱者 乙種第6類","domain":"safety","administrator":"消防試験研究センター","officialQuestionsUrl":"https://www.shoubo-shiken.or.jp/","officialReuseTermsUrl":"https://www.shoubo-shiken.or.jp/","status":"live","reuseSummary":"公式公開の抜粋10問のみ。特定回の全問や2回分の全問を収録したものではありません。","remainingWork":[]},
   {"slug": "kikenbutsu-otsu4", "examCode": "kikenbutsu-otsu4", "shortName": "危険物取扱者 乙種第4類", "fullName": "危険物取扱者 乙種第4類", "domain": "safety", "administrator": "一般財団法人消防試験研究センター", "officialQuestionsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html", "officialReuseTermsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html", "status": "live", "stagingDataPath": "data/questions/kikenbutsu-otsu4", "reuseSummary": "2026年6月公表版の抜粋35問。公式問題画像・正答と全肢解説を収録。", "remainingWork": []},
-  {"slug": "unko-kanrisha-kamotsu", "examCode": "unko-kanrisha-kamotsu", "shortName": "運行管理者（貨物）", "fullName": "運行管理者（貨物）", "domain": "safety", "administrator": "公益財団法人運行管理者試験センター", "officialQuestionsUrl": "https://www.unkan.or.jp/past.html", "officialReuseTermsUrl": "https://www.unkan.or.jp/past.html", "status": "live", "stagingDataPath": "data/questions/unko-kanrisha-kamotsu", "reuseSummary": "2023・2024年度CBT出題例60原問・86解答単位。公式問題画像・正答と全肢解説を収録。", "remainingWork": []},
+  {"slug": "unko-kanrisha-kamotsu", "examCode": "unko-kanrisha-kamotsu", "shortName": "運行管理者（貨物）", "fullName": "運行管理者（貨物）", "domain": "safety", "administrator": "公益財団法人運行管理者試験センター", "officialQuestionsUrl": "https://www.unkan.or.jp/past.html", "officialReuseTermsUrl": "https://www.unkan.or.jp/past.html", "status": "live", "stagingDataPath": "data/questions/unko-kanrisha-kamotsu", "reuseSummary": "2021〜2024年度のCBT出題例と2020年度第2回の筆記試験。公式問題画像・正答と全肢解説を収録。", "remainingWork": []},
   {"slug": "shobo-setsubishi-otsu6", "examCode": "shobo-setsubishi-otsu6", "shortName": "消防設備士 乙種第6類", "fullName": "消防設備士 乙種第6類", "domain": "safety", "administrator": "一般財団法人消防試験研究センター", "officialQuestionsUrl": "https://www.shoubo-shiken.or.jp/shoubou/exercise.html", "officialReuseTermsUrl": "https://www.shoubo-shiken.or.jp/shoubou/exercise.html", "status": "live", "stagingDataPath": "data/questions/shobo-setsubishi-otsu6", "reuseSummary": "2026年6月公表版の筆記14問・実技1大問（計16解答単位）。公式問題画像・正答と独自解説を収録。記述は解答例で自己確認できます。", "remainingWork": []},
   {"slug": "shobo-setsubishi-kou4", "examCode": "shobo-setsubishi-kou4", "shortName": "消防設備士 甲種第4類", "fullName": "消防設備士 甲種第4類", "domain": "safety", "administrator": "一般財団法人消防試験研究センター", "officialQuestionsUrl": "https://www.shoubo-shiken.or.jp/shoubou/exercise.html", "officialReuseTermsUrl": "https://www.shoubo-shiken.or.jp/shoubou/exercise.html", "status": "live", "stagingDataPath": "data/questions/shobo-setsubishi-kou4", "reuseSummary": "2026年6月公表版の筆記13問・実技2問。公式問題画像・正答と独自解説を収録。記述は解答例で自己確認できます。", "remainingWork": []},
   {"slug": "kikenbutsu-hei", "examCode": "kikenbutsu-hei", "shortName": "危険物取扱者 丙種", "fullName": "危険物取扱者 丙種", "domain": "safety", "administrator": "一般財団法人消防試験研究センター", "officialQuestionsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html", "officialReuseTermsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html", "status": "live", "stagingDataPath": "data/questions/kikenbutsu-hei", "reuseSummary": "2026年6月公表版の抜粋25問。公式問題画像・正答と全肢解説を収録。", "remainingWork": []},
   {"slug": "kikenbutsu-kou", "examCode": "kikenbutsu-kou", "shortName": "危険物取扱者 甲種", "fullName": "危険物取扱者 甲種", "domain": "safety", "administrator": "一般財団法人消防試験研究センター", "officialQuestionsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html", "officialReuseTermsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html", "status": "live", "stagingDataPath": "data/questions/kikenbutsu-kou", "reuseSummary": "2026年6月公表版の抜粋45問。公式問題画像・正答と全肢解説を収録。", "remainingWork": []},
   {"slug": "shobo-setsubishi-kou1", "examCode": "shobo-setsubishi-kou1", "shortName": "消防設備士 甲種第1類", "fullName": "消防設備士 甲種第1類", "domain": "safety", "administrator": "一般財団法人消防試験研究センター", "officialQuestionsUrl": "https://www.shoubo-shiken.or.jp/shoubou/exercise.html", "officialReuseTermsUrl": "https://www.shoubo-shiken.or.jp/shoubou/exercise.html", "status": "live", "stagingDataPath": "data/questions/shobo-setsubishi-kou1", "reuseSummary": "2026年6月公表版の筆記19問・実技2大問（計26解答単位）。公式問題画像・正答と独自解説を収録。記述は解答例で自己確認できます。", "remainingWork": []},
-  {"slug": "unko-kanrisha-ryokaku", "examCode": "unko-kanrisha-ryokaku", "shortName": "運行管理者（旅客）", "fullName": "運行管理者（旅客）", "domain": "safety", "administrator": "公益財団法人運行管理者試験センター", "officialQuestionsUrl": "https://www.unkan.or.jp/past.html", "officialReuseTermsUrl": "https://www.unkan.or.jp/past.html", "status": "live", "stagingDataPath": "data/questions/unko-kanrisha-ryokaku", "reuseSummary": "2023・2024年度CBT出題例60原問・92解答単位。公式問題画像・正答と全肢解説を収録。", "remainingWork": []},
+  {"slug": "unko-kanrisha-ryokaku", "examCode": "unko-kanrisha-ryokaku", "shortName": "運行管理者（旅客）", "fullName": "運行管理者（旅客）", "domain": "safety", "administrator": "公益財団法人運行管理者試験センター", "officialQuestionsUrl": "https://www.unkan.or.jp/past.html", "officialReuseTermsUrl": "https://www.unkan.or.jp/past.html", "status": "live", "stagingDataPath": "data/questions/unko-kanrisha-ryokaku", "reuseSummary": "2021〜2024年度のCBT出題例と2020年度第2回の筆記試験。公式問題画像・正答と全肢解説を収録。", "remainingWork": []},
   {"slug": "diecast2", "examCode": "diecast2", "shortName": "ダイカスト技能士 2級", "fullName": "技能検定 2級ダイカスト（ホットチャンバダイカスト作業）学科試験", "domain": "safety", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/list02.html?v1=%E4%BB%A4%E5%92%8C7%E5%B9%B4%E5%BA%A6&v2=%E5%89%8D%E6%9C%9F&v3=B34&v4=%E3%83%80%E3%82%A4%E3%82%AB%E3%82%B9%E3%83%88%EF%BC%88%E3%83%9B%E3%83%83%E3%83%88%E3%83%81%E3%83%A3%E3%83%B3%E3%83%90%E3%83%80%E3%82%A4%E3%82%AB%E3%82%B9%E3%83%88%E4%BD%9C%E6%A5%AD%EF%BC%89", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "2025年度の学科50問を収録。公式問題・正答と全肢の独自解説で学べます。", "attributionTemplate": "出典：中央職業能力開発協会 令和7年度前期 2級ダイカスト（ホットチャンバダイカスト作業）学科試験。解説は過去問AIの独自作成。", "remainingWork": []},
   {"slug": "tetsudo-sharyo2", "examCode": "tetsudo-sharyo2", "shortName": "鉄道車両製造・整備技能士 2級", "fullName": "技能検定 2級鉄道車両製造・整備（機器ぎ装作業）学科試験", "domain": "safety", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/list02.html?v1=%E4%BB%A4%E5%92%8C7%E5%B9%B4%E5%BA%A6&v2=%E5%89%8D%E6%9C%9F&v3=B43&v4=%E9%89%84%E9%81%93%E8%BB%8A%E4%B8%A1%E8%A3%BD%E9%80%A0%E3%83%BB%E6%95%B4%E5%82%99%EF%BC%88%E6%A9%9F%E5%99%A8%E3%81%8E%E8%A3%85%E4%BD%9C%E6%A5%AD%EF%BC%89", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "2025年度の学科50問を収録。公式問題・正答と全肢の独自解説で学べます。", "attributionTemplate": "出典：中央職業能力開発協会 令和7年度前期 2級鉄道車両製造・整備（機器ぎ装作業）学科試験。解説は過去問AIの独自作成。", "remainingWork": []},
   {
@@ -3861,7 +3861,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     administrator: "福岡県・沖縄県など",
     officialQuestionsUrl: "https://www.pref.fukuoka.lg.jp/contents/kakotorokuhanbaisyasiken.html",
     status: "live",
-    reuseSummary: "令和6・7年度の九州・沖縄共通問題を、公式正答と全選択肢の解説付きで演習できます。",
+    reuseSummary: "2021〜2025年度の午前・午後、計597問を演習できます。公式正答と選択肢ごとの解説を確認できます。",
     attributionTemplate: "出典：福岡県 令和○年度登録販売者試験（午前／午後）問○",
     remainingWork: [],
     officialReuseTermsUrl: "https://www.pref.fukuoka.lg.jp/contents/kakotorokuhanbaisyasiken.html",

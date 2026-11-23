@@ -1,10 +1,14 @@
 "use client";
+
+import { AnswerStudyShare, useAnswerStudyMoment } from "@/components/StudyAchievements";
+import { libraryQuestionSharePath, questionShareTitle } from "@/lib/sharing/links";
 import Link from "next/link";
 import { useQuestionActivity } from "@/lib/study-plan/use-question-activity";
 import { createHistoryStore } from "@/lib/storage/history";
 import { WeakMark } from "@/components/quiz/WeakMark";
 import { PracticeDailyLimit } from "@/components/quiz/PracticeTransition";
 import { PracticeRequestError } from "@/lib/billing/guest-client";
+import { MEMBERSHIP_CHECK_PENDING, MEMBERSHIP_CHECK_PENDING_MESSAGE } from "@/lib/billing/domain";
 import { readSettings } from "@/lib/storage/settings";
 import { recordSessionAnswer } from "@/lib/motivation/session";
 import { SignedOutOnly, useAccountStatus } from "@/components/account/AccountNavigation";
@@ -392,15 +396,19 @@ export function ExamQuestionPlayer({
     else goTo(index + 1);
   }, [goTo, index, roundIds.length, showSummary, paceSession, recordPaceExplanation, submitted, summary.correct, summary.incorrect]);
 
+  const { moment, recordMoment } = useAnswerStudyMoment();
   const recordScoredAnswer = useCallback((question: ExamQuestion, choice: number | null, persisted: boolean) => {
     if (!isScorableQuestion(question) || choice === null) return;
     const correct = gradeExamAnswer(question, choice) === "correct";
     const at = Date.now();
     if (paceSession) recordSessionAnswer({ id: question.id, correct, at, category: examTitle });
+    const entry = findExamEntry(examId);
+    const qualification = paceSession?.exam ?? hubSlug ?? (entry ? `${entry.group}-${entry.subject}` : "");
+    if (qualification) recordMoment(qualification, question.id, correct, at);
     if (!persisted || !readSettings().recordHistory) return;
     createHistoryStore().record({ id: question.id, selected: String(choice), correct, at });
     recordPaceAnswer(correct, at);
-  }, [examTitle, paceSession, recordPaceAnswer]);
+  }, [examId, examTitle, hubSlug, paceSession, recordPaceAnswer, recordMoment]);
 
   const selectChoice = useCallback(
     (choice: number) => {
@@ -607,6 +615,11 @@ export function ExamQuestionPlayer({
       onUnlocked={() => setContentAttempt(n => n + 1)} />
     {!paceSession && <div className="study-column pb-6">{blockedNavigation}</div>}
   </>;
+  if (contentPending && contentError === MEMBERSHIP_CHECK_PENDING) return <section className="space-y-4" aria-live="polite">
+    <p role="status">{MEMBERSHIP_CHECK_PENDING_MESSAGE}</p>
+    <button type="button" onClick={() => setContentAttempt(n => n + 1)}>再確認</button>
+    {blockedNavigation}
+  </section>;
   if (contentPending) return <section className="space-y-4" aria-live="polite">
     {contentError ? <p role="alert">{contentError === "sign_in_required" ? accountStatus === "unauthenticated" ? "無料枠を端末間で共有するためログインが必要です。" : "利用状態を確認できません。もう一度お試しください。" : contentError}</p> : <p role="status">利用枠と回答済みの問題を確認しています…</p>}
     {contentError && <><button type="button" onClick={()=>setContentAttempt(n=>n+1)}>再確認</button><p><SignedOutOnly><a href={`/auth/signin?callbackUrl=${encodeURIComponent(`/e-learning/exams/${examId}?question=${currentId ?? ""}`)}`}>ログイン・本人確認</a> · </SignedOutOnly><Link href="/billing">有料会員・購入復元</Link></p></>}
@@ -963,6 +976,8 @@ export function ExamQuestionPlayer({
                   </div>
                 </div>
 
+                {currentAnswer?.submitted && <AnswerStudyShare moment={moment} id={current.id}
+                  path={libraryQuestionSharePath(examId, current.id)} title={questionShareTitle(current.text)} />}
                 {paceSession && <span ref={paceEndRef} aria-hidden="true" />}
                 <ExamLibraryCopilot
                   key={current.id}

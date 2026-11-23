@@ -103,7 +103,10 @@ it("groups a browser under its newest qualification, ignores older writes and ro
   expect(await read()).toMatchObject({ count: 1, exams: [{ exam: "eisei1", count: 1 }],
     today: { count: 1, exams: [{ exam: "eisei1", count: 1, activeCount: 1 }] } });
   const stored = await db.query<{id: string}>('SELECT "id" FROM "StudyPresence"');
-  expect(stored.rows.map(row => row.id)).toEqual([expect.stringMatching(/^answer:[a-f0-9]{64}$/)]);
+  expect(stored.rows.map(row => row.id).sort()).toEqual([
+    expect.stringMatching(/^answer:[a-f0-9]{64}$/),
+    expect.stringMatching(/^daily-answer:2026-11-19:answer:[a-f0-9]{64}$/),
+  ]);
   expect(transaction).toHaveBeenCalledTimes(2);
 });
 
@@ -117,7 +120,7 @@ it("combines existing answer rows from both routes to a qualification in the dai
     { exam: "plant-haikan2", count: 2, activeCount: 1 },
     { exam: "survey-assistant", count: 2, activeCount: 1 },
   ] } });
-  expect(query).toHaveBeenCalledTimes(1);
+  expect(query).toHaveBeenCalledTimes(2);
   expect(execute).not.toHaveBeenCalled();
 });
 
@@ -136,7 +139,17 @@ it("leaves cleanup off reads and runs it at most once per fifteen minutes of wri
   await store.recordStudyPresence(secondId, epoch + 900_000, "ap");
   expect(cleanupCount()).toBe(2);
   const { rows } = await db.query<{ id: string }>('SELECT "id" FROM "StudyPresence"');
-  expect(rows).toHaveLength(3);
+  expect(rows).toHaveLength(5);
   expect(rows.map(row => row.id)).toContain("answer:retained");
   expect(rows.map(row => row.id)).not.toContain("answer:old");
+});
+
+it("keeps yesterday's distinct learners after they answer again today", async () => {
+  const midnight = Date.parse("2026-11-19T15:00:00Z");
+  vi.setSystemTime(midnight - 60_000);
+  await route.POST(json(answer("fe")));
+  await route.POST(json(answer("ap", secondId)));
+  vi.setSystemTime(midnight);
+  await route.POST(json(answer("fe")));
+  expect(await read()).toMatchObject({ today: { count: 1 }, yesterdayCount: 2 });
 });

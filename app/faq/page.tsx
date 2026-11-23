@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { FAQS, FAQ_CATEGORY_LABELS, type FaqItem } from "@/data/faq";
 import { FaqItem as FaqItemComponent } from "@/components/faq/FaqItem";
+import { AI_ACCESS_DESCRIPTION, AI_COUNTING_DESCRIPTION, aiAccessClaimsEnabled } from "@/lib/ai/quota-copy";
 
 // Derive the advertised count from the registry so it never drifts stale
 // (it was hardcoded "79問" while FAQS already held 80 items).
@@ -46,14 +47,20 @@ export const metadata: Metadata = {
   },
 };
 
+export const revalidate = 0;
+
 export default function FaqPage() {
+  const faqs = aiAccessClaimsEnabled() ? FAQS.map(faq =>
+    faq.question === "AI 解説の利用回数に制限はありますか？"
+      ? { ...faq, answer: `${AI_ACCESS_DESCRIPTION} ${AI_COUNTING_DESCRIPTION}` }
+      : faq) : FAQS;
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "FAQPage",
         "@id": `${SITE_BASE_URL}/faq#faqpage`,
-        mainEntity: FAQS.map((f) => ({
+        mainEntity: faqs.map((f) => ({
           "@type": "Question",
           name: f.question,
           acceptedAnswer: {
@@ -125,7 +132,7 @@ export default function FaqPage() {
 
         {(() => {
           const grouped = new Map<FaqItem["category"], FaqItem[]>();
-          for (const f of FAQS) {
+          for (const f of faqs) {
             const arr = grouped.get(f.category) ?? [];
             arr.push(f);
             grouped.set(f.category, arr);

@@ -28,13 +28,16 @@ for (const { path, selector } of surfaces) {
     const surface = page.locator(selector).last();
     await expect(nav).toBeVisible();
     await expect(surface).toBeVisible();
-    await surface.scrollIntoViewIfNeeded();
+    // Being inside the viewport can still leave the target behind the fixed nav.
+    await surface.evaluate(element => element.scrollIntoView({ block: "center", behavior: "instant" }));
+    await expect(surface).toBeInViewport({ ratio: 1 });
 
     const navBox = await nav.boundingBox();
     const surfaceBox = await surface.boundingBox();
     expect(navBox).not.toBeNull();
     expect(surfaceBox).not.toBeNull();
     expect(navBox!.y - (surfaceBox!.y + surfaceBox!.height)).toBeGreaterThanOrEqual(8);
+    await surface.click({ trial: true });
   });
 }
 

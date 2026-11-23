@@ -27,7 +27,15 @@ async function fixtures(page: Page, plan?: PacePlan, correct = 0, returning = fa
 }
 async function layout(page: Page) {
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-  expect(await page.locator("main").first().evaluate(el => el.getBoundingClientRect().width)).toBeLessThanOrEqual(640);
+  const width = page.viewportSize()!.width;
+  const hero = page.locator(".p3-home-scene");
+  const [main, header, intro, track] = await Promise.all([
+    page.locator("main").first().boundingBox(), page.locator(".site-header > div").boundingBox(),
+    hero.locator('[data-event-panel="intro"]').boundingBox(), hero.locator(".p3-event-track").boundingBox(),
+  ]);
+  expect(main!.width).toBe(width === 1280 ? 1024 : width);
+  expect(header!.width).toBe(main!.width);
+  if (width === 1280) expect(track!.x).toBeGreaterThanOrEqual(intro!.x + intro!.width);
 }
 async function expectHomeNavGap(page: Page) {
   const directory = page.locator("#home-qualification-directory > summary");
@@ -39,6 +47,46 @@ async function expectHomeNavGap(page: Page) {
   const directoryBox = (await directory.boundingBox())!;
   expect(navBox.y - (directoryBox.y + directoryBox.height)).toBeGreaterThanOrEqual(8);
 }
+
+test("reserves the saved plan before hydration and before the catalog arrives", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await fixtures(page, fixturePlan(), 62);
+  let releaseScripts!: () => void;
+  const scripts = new Promise<void>(resolve => { releaseScripts = resolve; });
+  let releaseCatalog!: () => void;
+  const questions = new Promise<void>(resolve => { releaseCatalog = resolve; });
+  await page.route("**/_next/static/**/*.js", async route => {
+    await scripts;
+    await route.continue();
+  });
+  await page.route("**/api/study-plan/catalog/ip", async route => {
+    await questions;
+    await route.fulfill({ json: { questions: catalog } });
+  });
+  const roomY = async () => (await page.getByTestId("home-study-room").boundingBox())!.y;
+  try {
+    await page.goto("/", { waitUntil: "commit" });
+    await expect(page.locator("#today")).toHaveAttribute("data-home-state", "loading");
+    await expect(page.locator("html")).toHaveAttribute("data-home-study-layout", "planned");
+    await expect(page.getByText("学習計画を読み込み中…")).toBeVisible();
+    await expect(page.getByRole("link", { name: "計画の問題を解く" })).toHaveCount(0);
+    await expect(page.getByPlaceholder("ほかの資格をさがす")).toBeVisible();
+    const first = await roomY();
+    releaseScripts();
+    await expect(page.getByText("問題を読み込み中…")).toBeVisible();
+    await expect(page.getByText("学習計画を読み込み中…")).toHaveCount(0);
+    const pending = await roomY();
+    releaseCatalog();
+    await expect(page.getByRole("link", { name: "計画の問題を解く" })).toBeVisible();
+    const loaded = await roomY();
+    expect(Math.abs(first - loaded)).toBeLessThan(4);
+    expect(Math.abs(pending - loaded)).toBeLessThan(4);
+  } finally {
+    releaseScripts();
+    releaseCatalog();
+  }
+});
+
 async function screenshot(page: Page, name: string, width: number) {
   const dir = process.env.KP2_SCREENSHOTS;
   if (!dir) return;
@@ -156,7 +204,7 @@ for (const width of [390, 1280]) {
       if (width === 390) await expectHomeNavGap(page);
       await page.getByRole("button", { name: "合格", exact: true }).click();
       await expect(page.getByRole("heading", { name: "合格おめでとう！" })).toBeVisible();
-      await expect(page.locator("main").getByRole("link", { name: /次は/ })).toHaveCount(1);
+      await expect(page.locator("main").getByRole("link", { name: "過去問AIで解く", exact: true })).toHaveCount(1);
       await expect(search).toHaveCount(1);
       await expect(track).toHaveCount(1);
     });

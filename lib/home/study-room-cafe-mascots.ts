@@ -1,6 +1,6 @@
 import { canonicalPresenceExam } from "@/lib/study-presence";
 import { IDLE_LABELS, idleArt, qualificationStudyArt, roomCharacter, type IdleVariant } from "./study-room";
-import { CAFE_ART_PATH, MIN_PLAY_GROUP, type CafePoint } from "./study-room-cafe-layout";
+import { CAFE_ART_PATH, MIN_PLAY_GROUP, type CafeSeat } from "./study-room-cafe-layout";
 
 export const CAFE_POSE_PATH = "/images/home/study-room-mascots/pose";
 export const NO_CAFE_POSES: readonly string[] = [];
@@ -82,15 +82,15 @@ interface Learner { exam: string; index: number; active: boolean }
 export interface CafeOccupant extends Learner {
   key: string;
   mascot: CafeMascot;
-  point: CafePoint;
+  seat: CafeSeat;
 }
 
-export function cafeOccupants(seats: readonly Learner[], points: readonly CafePoint[], day: number, files: ReadonlySet<string>, current: boolean): CafeOccupant[] {
+export function cafeOccupants(seats: readonly Learner[], positions: readonly CafeSeat[], day: number, files: ReadonlySet<string>, current: boolean): CafeOccupant[] {
   const resting = seats.flatMap((seat, index) => current && seat.active ? [] : [index]);
   const pair = seats.length >= MIN_PLAY_GROUP ? resting.slice(0, 2) : [];
   const hasPair = pair.length === 2;
   const restOffset = (day % restingPoses.length + restingPoses.length) % restingPoses.length;
-  let nextPoint = hasPair ? 2 : 0;
+  let nextPosition = hasPair ? 2 : 0;
   let restIndex = 0;
   return seats.map((seat, index) => {
     const active = current && seat.active;
@@ -104,8 +104,8 @@ export function cafeOccupants(seats: readonly Learner[], points: readonly CafePo
       if (turn % 2 === 1 && pose === "rear") pose = "rear-angle";
       if (turn % 2 === 1 && pose === "sleep") pose = "sleep-belly";
     }
-    const point = points[pairIndex < 0 ? nextPoint++ : pairIndex];
+    const position = positions[pairIndex < 0 ? nextPosition++ : pairIndex];
     const direction = pairIndex === 1 || (pairIndex < 0 && (day + index) % 2 === 1) ? "west" : "east";
-    return { ...seat, active, key: `${seat.exam}:${seat.index}`, mascot: cafeMascot(seat.exam, pose, files, direction), point };
+    return { ...seat, active, key: `${seat.exam}:${seat.index}`, mascot: cafeMascot(seat.exam, pose, files, direction), seat: position };
   });
 }

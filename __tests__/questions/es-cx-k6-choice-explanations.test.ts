@@ -1,9 +1,11 @@
 import { describe, expect, it } from "vitest";
+import { ALL_QUESTIONS } from "@/data/questions";
 import { ES_QUESTIONS } from "@/data/questions/es";
 import { BY_YEAR_QUESTIONS } from "@/data/questions/es/by-year";
 import { applyIpaCorrections } from "@/data/questions/corrections";
 import overlay from "@/data/questions/es/choice-explanations-cx-k6.json";
 import { applyChoiceExplanationOverlay } from "@/lib/questions/apply-choice-explanations";
+import { getQuestionsForExam } from "@/lib/questions/get-questions";
 
 describe("ES cx-k6 choice explanations", () => {
   it("keeps the corrected questions and official answers intact", () => {
@@ -70,9 +72,6 @@ describe("ES cx-k6 choice explanations", () => {
   });
 
   it("exposes the overlay in both eager and lazy exam loaders", async () => {
-    const [{ ALL_QUESTIONS }, { getQuestionsForExam }] = await Promise.all([
-      import("@/data/questions"), import("@/lib/questions/get-questions"),
-    ]);
     const lazy = await getQuestionsForExam("es");
     for (const questions of [ALL_QUESTIONS, lazy]) {
       const reasons = Object.fromEntries(questions.filter(q => Object.hasOwn(overlay, q.id))

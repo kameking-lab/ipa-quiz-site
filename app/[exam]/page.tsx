@@ -1,3 +1,4 @@
+import { NextExamSchedule } from "@/components/exam/NextExamSchedule";
 import { PLAN_OFFER } from "@/lib/billing/plan-offer";
 import { ReferralPracticeLink } from "@/components/analytics/ReferralPracticeLink";
 import { TsuginoWelcome } from "@/components/analytics/TsuginoWelcome";
@@ -111,7 +112,7 @@ export async function generateMetadata({
   });
   const ogImageUrl = `${SITE_BASE_URL}/api/og?${ogParams.toString()}`;
   return {
-    title,
+    title: { absolute: title + "｜" + SITE_NAME },
     description,
     alternates: { canonical: `/${exam}` },
     openGraph: {
@@ -348,6 +349,7 @@ export default async function ExamTopPage({
             </Button>
           )}
         </section>}
+          <NextExamSchedule exam={code} />
           {isExamEntryCode(code) && <ExamCbtSummary exam={code} />}
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
             <Badge variant="outline">収録 {publishedOriginalCount} 問</Badge>

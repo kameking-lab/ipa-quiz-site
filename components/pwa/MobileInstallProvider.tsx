@@ -1,5 +1,7 @@
 "use client";
 
+import { hasCardToday, initializeStudyMilestones } from "@/lib/sharing/milestone-storage";
+
 import {
   createContext, useCallback, useEffect, useMemo, useRef, useState,
   type ReactNode,
@@ -66,6 +68,7 @@ export function MobileInstallProvider({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
+    initializeStudyMilestones();
     mounted.current = true;
     let cancelled = false;
     const detectedOs = mobileOs();
@@ -126,8 +129,15 @@ export function MobileInstallProvider({ children }: { children: ReactNode }) {
           setNudgeOwner(null);
         }
       }
+      if (event.key === LS_KEYS.achievementCardDay || event.key === null) clearForCard();
+    };
+    const clearForCard = () => {
+      if (!hasCardToday()) return;
+      owner.current = null;
+      setNudgeOwner(null);
     };
     window.addEventListener("storage", onStorage);
+    window.addEventListener("study-card:shown", clearForCard);
     const relatedNavigator = navigator as Navigator & { getInstalledRelatedApps?: () => Promise<{ platform: string; url?: string }[]> };
     if (detectedOs === "android" && !isNative && relatedNavigator.getInstalledRelatedApps) {
       // Do not flash the invitation while installation detection is pending.
@@ -147,6 +157,7 @@ export function MobileInstallProvider({ children }: { children: ReactNode }) {
       window.removeEventListener("appinstalled", onInstalled);
       displayMode.removeEventListener("change", onDisplayMode);
       window.removeEventListener("storage", onStorage);
+      window.removeEventListener("study-card:shown", clearForCard);
     };
   }, []);
 
@@ -156,6 +167,7 @@ export function MobileInstallProvider({ children }: { children: ReactNode }) {
     setNudgeOwner(null);
   }, []);
   const claimNudge = useCallback((id: string) => {
+    if (hasCardToday()) return false;
     if (owner.current && owner.current !== id) return false;
     const record = readInstallNudge();
     if (!record || !canShowInstallNudge(record, Date.now()) || !writeInstallNudge(record)) return false;
@@ -166,7 +178,7 @@ export function MobileInstallProvider({ children }: { children: ReactNode }) {
   const markNudgeShown = useCallback((id: string) => {
     if (owner.current !== id) return false;
     const record = readInstallNudge();
-    if (!record || !canShowInstallNudge(record, Date.now())
+    if (hasCardToday() || !record || !canShowInstallNudge(record, Date.now())
       || !writeInstallNudge({ ...record, shownDay: installDay(Date.now()) })) {
       releaseNudge(id);
       return false;

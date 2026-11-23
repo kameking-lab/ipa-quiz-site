@@ -71,6 +71,11 @@ workflows:
           npm run ios:prepare
           npm run ios:test
           plutil -lint ios/App/App/Info.plist ios/App/App/PrivacyInfo.xcprivacy
+      - name: Verify simulator launch and capture the bundled reminder screen
+        script: |
+          set -euo pipefail
+          cd "$CM_BUILD_DIR/mobile"
+          bash scripts/asc_capture.sh --smoke
       - name: Apply App Store provisioning profiles
         script: |
           set -euo pipefail
@@ -92,6 +97,9 @@ workflows:
             --ipa-directory build/ios/ipa
     artifacts:
       - mobile/build/ios/ipa/*.ipa
+      - mobile/build/asc/smoke/*.jpg
+      - mobile/build/asc/simulator-build.log
+      - mobile/build/asc/diagnostics/**/*
       - /tmp/xcodebuild_logs/*.log
       - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
     publishing:

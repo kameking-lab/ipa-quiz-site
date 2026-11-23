@@ -1,4 +1,5 @@
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
+import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 import type { Question } from "@/lib/questions/types";
 import { sessionLabel } from "@/lib/seo/question-jsonld";
 import { questionNumberLabel } from "@/lib/questions/display";
@@ -7,35 +8,14 @@ import { practiceCategoryLabel } from "@/lib/questions/practice-session";
 
 const DESCRIPTION_MAX = 110;
 
-/**
- * Soft ceiling for a source-first <title> (before layout appends
- * " | 過去問AI"). Only supplementary categories can be dropped. The source
- * edition, exam, paper field, session and printed question number are required
- * identifiers and survive even when the core exceeds this budget.
- * Short medical stem titles have a separate total limit in medicalStemTitle.
- */
-const TITLE_MAX = 40;
-
-/** Call-to-action tail shared by every /q/* description. */
-const CTA = "正答と解説を無料で確認。疑問はAIに質問できます。";
-
-// These short medical stems are also searched verbatim. Keep their wording
-// intact, with the source paper and question number following it.
-const STEM_TITLE_EXAMS = new Set(["rigaku-ryohoshi", "sagyo-ryohoshi", "kangoshi"]);
+const TITLE_TARGET = 38;
+const TITLE_MAX = 63;
+const TITLE_SEPARATOR = "｜答えと解説｜";
+const MIN_STEM = 7;
+const CTA = "答えと解説を無料で確認できます。";
 
 function searchableStem(q: Question): string {
   return q.question.replace(/\s+/g, " ").trim();
-}
-
-function medicalStemTitle(q: Question): string | null {
-  const stem = searchableStem(q);
-  if (!STEM_TITLE_EXAMS.has(q.exam) || q.type !== "multiple-choice" || q.hasImage
-    || stem.length > 48 || !/どれか[。？?]?(?: ?[2２] ?つ選べ[。？?]?)?$/.test(stem)
-    || /[<>\[\]{}$|]|https?:|[図表次下]の|次に|以下|別冊/.test(stem)) return null;
-  const edition = questionSourceEdition(q).replace(/^(第\d+回)（[^）]+）$/, "$1");
-  const title = `${stem}｜${edition} ${questionSourceExam(q)} ${sessionLabel(q.session, q.exam)} 問${questionNumberLabel(q)} 無料解説`;
-  // Keep every previously eligible stem title when adding the two-character 無料.
-  return title.length <= 72 ? title : null;
 }
 
 function truncate(s: string, n: number): string {
@@ -44,13 +24,18 @@ function truncate(s: string, n: number): string {
   return s.length > n ? `${s.slice(0, n - 1)}…` : s;
 }
 
-/** Source identity shared by the page heading and source-first title. */
+function searchSourceExam(q: Question) {
+  const name = q.exam.startsWith("shobo-setsubishi-") ? getQualificationByExamCode(q.exam)?.shortName : undefined;
+  return name ?? questionSourceExam(q);
+}
+
+/** Source identity for the page heading and search description. */
 export function questionHeading(q: Question): string {
   // The electrical and thermal papers reuse printed question/answer numbers.
   const field = q.exam === "energy-kanri"
     ? q.topicTags.find(tag => tag === "電気分野" || tag === "熱分野")
     : undefined;
-  return [questionSourceEdition(q), questionSourceExam(q), field,
+  return [questionSourceEdition(q), searchSourceExam(q), field,
     sessionLabel(q.session, q.exam), `問${questionNumberLabel(q)}`].filter(Boolean).join(" ");
 }
 
@@ -60,37 +45,46 @@ function supplementaryCategory(q: Question): string {
   return canRepeatSession && category === sessionLabel(q.session, q.exam) ? "" : category;
 }
 
-/** Page <title> for a single question. */
+/** Lead with the searchable stem and retain the paper identity for repeated stems. */
 export function questionTitle(q: Question): string {
-  const stemTitle = medicalStemTitle(q);
-  if (stemTitle) return stemTitle;
-  const core = questionHeading(q);
-  const withCategory = [core, supplementaryCategory(q), "無料解説"].filter(Boolean).join(" ");
-  // Keep the category only while the whole title stays within budget; once it
-  // would push the title past TITLE_MAX, drop it and fall back to the core.
-  return withCategory.length <= TITLE_MAX ? withCategory : `${core} 無料解説`;
+  const edition = questionSourceEdition(q).replace(/（[^）]*）$/, "").replace(/年度/g, "").replaceAll(" ", "");
+  const exam = searchSourceExam(q);
+  const session = sessionLabel(q.session, q.exam);
+  const field = q.exam === "energy-kanri" ? q.topicTags.find(tag => tag === "電気分野" || tag === "熱分野")
+    : q.exam === "dekyo-chief-2" || q.exam.startsWith("dekyo-charge-") ? q.category
+    : q.exam === "riku-tech1" && q.topicTags.length > 1 ? truncate(q.topicTags.at(-1)!, 17)
+    : q.exam === "tohan" ? (q.season === "kansai" ? "関西" : q.sourcePdfUrl.includes("metro.tokyo.lg.jp") ? "東京" : undefined)
+    : undefined;
+  const qualifier = q.session === "am1" && exam === "高度試験共通" ? q.exam.toUpperCase() : undefined;
+  const printedNumber = questionNumberLabel(q).replace(/^問/, "");
+  const numberedItem = /第(\d+)問\s*(.*)$/.exec(printedNumber);
+  const qualifiedItem = /^(.+?)\s+(大問\d+)$/.exec(printedNumber);
+  // Keep the official number ahead of the language label when a title needs truncation.
+  const number = numberedItem ? "問" + numberedItem[1] + numberedItem[2]
+    : qualifiedItem ? `${qualifiedItem[2]} ${qualifiedItem[1]}`
+    : "問" + printedNumber;
+  const maxSource = TITLE_MAX - TITLE_SEPARATOR.length - MIN_STEM;
+  let source = [exam + edition, field, session, qualifier, number].filter(Boolean).join(" ");
+  if (source.length > maxSource) {
+    const examName = truncate(exam, 12);
+    const numberLabel = truncate(number, 16);
+    const paper = [edition, session, qualifier, field].filter(Boolean).join(" ");
+    const paperBudget = maxSource - examName.length - numberLabel.length - 2;
+    source = examName + " " + truncate(paper, paperBudget) + " " + numberLabel;
+  }
+  const stem = truncate(searchableStem(q), Math.max(MIN_STEM, TITLE_TARGET - source.length - TITLE_SEPARATOR.length));
+  return stem + TITLE_SEPARATOR + source;
 }
 
-/**
- * meta description for a single question page.
- *
- * Phase 10 (review C-5): we no longer front-load "正解は{X}". Surfacing the
- * answer in the SERP snippet spoils the click. Lead with the searched stem,
- * then identify its source paper and the available explanation. The answer is
- * intentionally absent. Reserve the context and CTA within the description cap.
- */
 export function questionSnippet(q: Question): string {
-  const examStr = questionSourceExam(q);
-  const ys = questionSourceEdition(q);
-  const ss = sessionLabel(q.session, q.exam);
   const category = supplementaryCategory(q);
-  const context = `${examStr} ${ys} ${ss} 問${questionNumberLabel(q)}${category ? `・${category}` : ""}`;
+  const context = questionHeading(q) + (category ? "・" + category : "");
   const cta = q.exam === "khk-reito-1" && isSelfReviewedDescriptiveQuestion(q)
     ? "公式解答例と独自解説で、記述・作図を無料で自己確認できます。"
     : q.explanationCoverage === "official-summary" ? "公式正答と一般解説を確認し、無料で演習できます。" : CTA;
-  // Very long source labels still leave room for the searched wording and CTA.
-  const source = `【${truncate(context, DESCRIPTION_MAX - cta.length - 24)}】`;
-  const budget = DESCRIPTION_MAX - source.length - cta.length - 2;
-  const qPreview = truncate(searchableStem(q), budget);
-  return `${qPreview} ${source}${cta}`;
+  const source = "【" + truncate(context, 43) + "】";
+  const lead = truncate(searchableStem(q), DESCRIPTION_MAX - source.length - cta.length - 1);
+  const description = lead + " " + cta + source;
+  const review = "年度別・分野別の一覧から、同じ資格で収録されているほかの問題を探して、苦手な分野を復習できます。";
+  return description.length < 80 ? truncate(description + review, DESCRIPTION_MAX) : description;
 }

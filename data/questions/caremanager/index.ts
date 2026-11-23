@@ -7,6 +7,8 @@ import y2025 from "@/data/qualification-staging/caremanager/2025.json";
 
 import y2023 from "./2023-annual.json";
 
+import y2021 from "./2021.json";
+
 import remainder2023 from "./2023-annual-remainder.json";
 
 
@@ -70,11 +72,12 @@ function toQuestion(item: Item): Question {
 const fullPapers = [...(y2025 as unknown as Item[]), ...(y2024 as unknown as Item[])].map(toQuestion);
 
 
-/** 第28・27回各60問に、第26回の介護支援分野24問を補充。 */
+/** 全国共通の介護支援専門員実務研修受講試験。 */
 export const CAREMANAGER_QUESTIONS: Question[] = appendReplenishedQuestions([
   ...(y2025 as unknown as Item[]),
   ...(y2024 as unknown as Item[]),
   ...(y2023 as unknown as Item[]),
 ].map(toQuestion), [
   remainder2023,
+  y2021,
 ]);

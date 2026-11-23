@@ -13,6 +13,17 @@ const post=(id="q-practice",cookie="")=>POST(new Request("http://localhost:3338/
 beforeEach(()=>{wiring.user="alice";for(const [k,v] of Object.entries({AUTH_SECRET:"test-only-secret",BILLING_PRODUCT:"subscription",BILLING_MODE:"stripe-test",BILLING_WEBHOOK_MODE:"stripe-test",BILLING_SUBSCRIPTION_ENABLED:"true",BILLING_SOURCE_INSTANCE:"monthly-fixture",BILLING_STRIPE_TEST_PRICE_ID:"price_monthly",BILLING_SUBSCRIPTION_PORTAL_CONFIGURATION_ID:"bpc_fixture",BILLING_ORIGIN:"http://localhost:3338",BILLING_STARTS_AT:"2026-01-02T00:00:00Z",BILLING_NOTICE_AT:"2026-01-01T00:00:00Z",BILLING_LEGAL_REVIEWED:"true",BILLING_SELLER_NAME:"Fixture",BILLING_SELLER_ADDRESS:"Fixture",BILLING_SELLER_PHONE:"000",BILLING_SUPPORT_EMAIL:"fake@example.invalid",BILLING_REFUND_TERMS:"Fixture only"}))vi.stubEnv(k,v);});
 afterEach(()=>vi.unstubAllEnvs());
 describe("practice gate -> normal Auth identity -> real monthly service (offline memory)",()=>{
+ it("admits a verified Web member without a second grant transaction under rollout", async () => {
+   vi.stubEnv("AI_QUOTA_ROLLOUT", "true");
+   const fixture = await monthlyFixture();
+   wiring.runtime = fixture;
+   await fixture.send();
+   const grant = vi.spyOn(fixture.service, "grant").mockRejectedValue(new Error("unavailable"));
+   const result = await post();
+   expect(result.status).toBe(200);
+   expect((await result.json()).access).toMatchObject({ kind: "pass", remaining: null });
+   expect(grant).not.toHaveBeenCalled();
+ });
  it("preserves paid access past the exhausted free daily allowance", async () => {
    const f = await monthlyFixture();
    wiring.runtime = f;

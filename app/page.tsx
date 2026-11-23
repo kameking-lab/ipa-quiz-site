@@ -4,6 +4,7 @@ import { QualificationDirectory } from "@/components/home/pace/QualificationDire
 import { HomeStudyRoom } from "@/components/home/pace/HomeStudyRoom";
 import { planCatalogKeys } from "@/lib/study-plan/catalog-keys";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { japanDate } from "@/lib/home/featured-exams";
 import { getHomeDirectory } from "@/lib/home/home-directory";
 import { CAFE_POSE_FILES } from "@/lib/home/study-room-cafe-mascots";
 import { groupHomeDirectory } from "@/lib/home/grouped-directory";
@@ -25,17 +26,16 @@ export default function HomePage() {
   return (
     <main className={`${styles.home} p3-page p3-home study-column flex-1`}>
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [buildWebsiteNode(description), buildOrgNode()] }} />
-      <HomePace domains={domains} planExamKeys={planCatalogKeys()}>
-        <HomeStudyRoom poseFiles={CAFE_POSE_FILES} />
-      </HomePace>
-      <div className={styles.shortcuts}>
-        <details id="home-qualification-directory" className={styles.directory}>
+      <HomePace domains={domains} planExamKeys={planCatalogKeys()} initialDate={japanDate(new Date())} directory={
+        <details id="home-qualification-directory">
           <summary className="study-focus min-h-12 cursor-pointer py-3 text-sm underline underline-offset-4 hover:text-primary">資格・区分一覧</summary>
           <div className="mt-2">
             <QualificationDirectory domains={groupHomeDirectory(domains)} />
           </div>
         </details>
-      </div>
+      }>
+        <HomeStudyRoom poseFiles={CAFE_POSE_FILES} />
+      </HomePace>
     </main>
   );
 }

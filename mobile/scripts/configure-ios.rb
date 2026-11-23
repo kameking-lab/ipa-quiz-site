@@ -8,9 +8,10 @@ target = project.targets.find { |item| item.name == 'App' }
 raise 'App target missing' unless target
 build_number = ENV.fetch('BUILD_NUMBER', '1')
 raise 'Invalid build number' unless build_number.match?(/\A[1-9]\d*\z/)
+version = JSON.parse(File.read(File.expand_path('../package.json', __dir__))).fetch('version')
 target.build_configurations.each do |configuration|
   configuration.build_settings['PRODUCT_BUNDLE_IDENTIFIER'] = bundle_id
-  configuration.build_settings['MARKETING_VERSION'] = '1.0.0'
+  configuration.build_settings['MARKETING_VERSION'] = version
   configuration.build_settings['CURRENT_PROJECT_VERSION'] = build_number
   configuration.build_settings['TARGETED_DEVICE_FAMILY'] = '1'
   configuration.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
@@ -55,6 +56,7 @@ project.save
 plist_path = 'ios/App/App/Info.plist'
 plist = Xcodeproj::Plist.read_from_path(plist_path)
 plist['CFBundleIdentifier'] = '$(PRODUCT_BUNDLE_IDENTIFIER)'
+plist['CFBundleShortVersionString'] = '$(MARKETING_VERSION)'
 plist['CFBundleDevelopmentRegion'] = 'ja'
 plist['CFBundleLocalizations'] = ['ja']
 plist['CFBundleDisplayName'] = '過去問AI'

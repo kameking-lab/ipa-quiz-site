@@ -1,0 +1,2831 @@
+[
+  {
+    "id": "eju-2017-round2-eju-physics-q1",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-physics",
+    "qNumber": 1,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "I 問1",
+    "subject": "理科 物理",
+    "category": "三つの糸の張力",
+    "topicTags": [
+      "三つの糸の張力"
+    ],
+    "difficulty": 3,
+    "question": "鉛直との角が60°と30°の糸に支えられた小球について、60°の糸の張力を求める。 公式問題を読み、該当する番号を選んでください。",
+    "explanation": "結び目の水平成分がつり合うため Tᵦ＝√3 Tₐ。鉛直成分の和は Tₐ/2＋(√3/2)Tᵦ＝2Tₐ。これがmgなので Tₐ＝mg/2。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p04.webp"
+    ],
+    "imageAltTexts": [
+      "理科 物理 I 問1の公式問題・参照資料（問題PDF 4ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=4",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 物理 I 問1。問題PDF p.4、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "choiceExplanations": {
+      "ア": "水平方向のつり合いからTᵦ＝√3 Tₐ。上向き成分の和が2Tₐとなり、重力mgと等しくなる。",
+      "イ": "Tₐを√3 mg/3とすると、水平成分をつり合わせた後の鉛直成分は2√3 mg/3。重力mgより大きい。",
+      "ウ": "√3 mg/2は30°の糸bの張力。60°の糸aは、同じ水平成分をより小さい張力で作る。",
+      "エ": "Tₐ＝mgで水平成分をつり合わせると、2本の上向き成分の和が2mgになってしまう。",
+      "オ": "√3 mgを糸aの張力にすると、糸bは3mg。上向き成分の合計2√3 mgでは静止できない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-physics-q2",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-physics",
+    "qNumber": 2,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "I 問2",
+    "subject": "理科 物理",
+    "category": "粗い斜面と最大静止摩擦力",
+    "topicTags": [
+      "粗い斜面と最大静止摩擦力"
+    ],
+    "difficulty": 3,
+    "question": "粗い斜面で物体を上向きに引く力を弱めたとき、滑り出す直前の力 F₀ を求める。 公式問題を読み、該当する番号を選んでください。",
+    "explanation": "引く力を減らすと斜面下向きに滑り出す。直前の静止摩擦力は上向きで μmg cosθ。斜面方向で F₀＋μmg cosθ＝mg sinθ となる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p05.webp",
+      "/questions/eju/2017-round2-science-p04.webp"
+    ],
+    "imageAltTexts": [
+      "理科 物理 I 問2の公式問題・参照資料（問題PDF 5ページ）",
+      "理科 物理 I 問2の公式問題・参照資料（問題PDF 4ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=5",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 物理 I 問2。問題PDF p.5、p.4、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "choiceExplanations": {
+      "ア": "mg cosθは面に垂直な成分。斜面に沿って物体を下へ動かそうとする成分はmg sinθである。",
+      "イ": "最大静止摩擦力 μmg cosθ は斜面上向き。重力の下向き成分mg sinθから引くと、必要な引く力が求まる。",
+      "ウ": "重力の垂直成分と斜面方向成分の使い分けが逆。静止摩擦力は垂直抗力をμで割らず、μを掛けて求める。",
+      "エ": "斜面方向の重力成分mg sinθは含まれるが、これをμで割る必要はない。摩擦力の上限はμmg cosθ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-physics-q3",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-physics",
+    "qNumber": 3,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "I 問3",
+    "subject": "理科 物理",
+    "category": "滑車でつないだ物体のエネルギー",
+    "topicTags": [
+      "滑車でつないだ物体のエネルギー"
+    ],
+    "difficulty": 3,
+    "question": "軽い糸でつないだ質量 m と 2m の物体について、速さ v から重い物体の落下距離 h を求める。 公式問題を読み、該当する番号を選んでください。",
+    "explanation": "重いBが h 下がり、軽いAが h 上がるので、重力による位置エネルギーは mgh 減る。2物体の共通の速さがvなら運動エネルギーは3mv²/2。したがって h＝3v²/(2g)。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p06.webp",
+      "/questions/eju/2017-round2-science-p04.webp"
+    ],
+    "imageAltTexts": [
+      "理科 物理 I 問3の公式問題・参照資料（問題PDF 6ページ）",
+      "理科 物理 I 問3の公式問題・参照資料（問題PDF 4ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=6",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 物理 I 問3。問題PDF p.6、p.4、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6",
+      "キ": "選択肢7"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "choiceExplanations": {
+      "ア": "h＝v²/(3g)では、系の位置エネルギーはmv²/3しか減らず、2物体の運動エネルギー3mv²/2に足りない。",
+      "イ": "v²/(2g)は自由落下の式から得られる高さ。糸を通じてAも動くので、Bの加速度はgではない。",
+      "ウ": "2v²/(3g)では位置エネルギーの純減少が2mv²/3。AとBはどちらも速さvなので3mv²/2が必要。",
+      "エ": "v²/gを使うと位置エネルギーの純減少はmv²。これはBの運動エネルギーのみで、Aの運動エネルギーを含まない。",
+      "オ": "Bの位置エネルギーは2mgh減り、Aの位置エネルギーはmgh増える。差mghを両物体の運動エネルギー3mv²/2に等しくする。",
+      "カ": "2v²/gでは減る位置エネルギーが2mv²となり、両物体の運動エネルギーより大きい。",
+      "キ": "3v²/gを選ぶとmgh＝3mv²で、実際に増加する運動エネルギーの2倍になる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-physics-q4",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-physics",
+    "qNumber": 4,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "I 問4",
+    "subject": "理科 物理",
+    "category": "分裂前後の運動量保存",
+    "topicTags": [
+      "分裂前後の運動量保存"
+    ],
+    "difficulty": 3,
+    "question": "静止した物体が反対方向に分裂したとき、質量比で速さの比と運動エネルギーの比を表す。 公式問題を読み、該当する番号を選んでください。",
+    "explanation": "分裂前の運動量は0なので、分裂後も mₐvₐ＝mᵦvᵦ。速さは質量に反比例する。両者の運動量の大きさpが同じなら K＝p²/(2m) なので、運動エネルギーも質量に反比例する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p07.webp",
+      "/questions/eju/2017-round2-science-p04.webp"
+    ],
+    "imageAltTexts": [
+      "理科 物理 I 問4の公式問題・参照資料（問題PDF 7ページ）",
+      "理科 物理 I 問4の公式問題・参照資料（問題PDF 4ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=7",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 物理 I 問4。問題PDF p.7、p.4、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "choiceExplanations": {
+      "ア": "両方をmₐ/mᵦとしているが、質量が大きい側ほど、同じ運動量の大きさを得る速さとエネルギーは小さい。",
+      "イ": "エネルギー比は正しい。速さの比は運動量が等しい式を変形し、mᵦ/mₐ とする。",
+      "ウ": "速さの比は正しい。エネルギーは質量だけで決まらず、速さの比の二乗も掛けるので mᵦ/mₐ になる。",
+      "エ": "速さの比は運動量保存からmᵦ/mₐ。エネルギー比にこの速さの比の二乗と質量比を掛けてもmᵦ/mₐ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-physics-q5",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-physics",
+    "qNumber": 5,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "I 問5",
+    "subject": "理科 物理",
+    "category": "ばね振り子のエネルギー",
+    "topicTags": [
+      "ばね振り子のエネルギー"
+    ],
+    "difficulty": 3,
+    "question": "ばねによる単振動で、小球の速さが最大値の半分となる位置を振幅 d で表す。 公式問題を読み、該当する番号を選んでください。",
+    "explanation": "自然長を通ると全エネルギーが運動エネルギー。速さが半分なら運動エネルギーは全体の1/4。残り3/4がばねの位置エネルギーとなるから、x²/d²＝3/4。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p08.webp",
+      "/questions/eju/2017-round2-science-p04.webp"
+    ],
+    "imageAltTexts": [
+      "理科 物理 I 問5の公式問題・参照資料（問題PDF 8ページ）",
+      "理科 物理 I 問5の公式問題・参照資料（問題PDF 4ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=8",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 物理 I 問5。問題PDF p.8、p.4、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6"
+    },
+    "answer": "カ",
+    "officialAnswerNumber": "6",
+    "choiceExplanations": {
+      "ア": "x＝d/4ではばねの位置エネルギーが全体の1/16。速さが半分のとき必要な3/4より小さい。",
+      "イ": "x＝d/2だとばねのエネルギーは1/4。1/4になるのは運動エネルギーのほうである。",
+      "ウ": "x＝√6 d/4ではばねのエネルギーが3/8。求める位置でのばねのエネルギー3/4の半分しかない。",
+      "エ": "x＝√2 d/2の位置では運動エネルギーとばねのエネルギーが半分ずつになる。速さはv₀/√2になる。",
+      "オ": "x＝3d/4はエネルギーの比3/4をそのまま位置に当てはめている。位置の比の二乗を3/4にする必要がある。",
+      "カ": "速さv₀/2では運動エネルギーが1/4、ばねのエネルギーが3/4。変位の比はその平方根なので、x＝√3 d/2。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-physics-q6",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-physics",
+    "qNumber": 6,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "I 問6",
+    "subject": "理科 物理",
+    "category": "人工衛星の角運動量保存",
+    "topicTags": [
+      "人工衛星の角運動量保存"
+    ],
+    "difficulty": 3,
+    "question": "楕円軌道の最近点と短軸上を通るときの人工衛星の速さの比を求める。 公式問題を読み、該当する番号を選んでください。",
+    "explanation": "地球中心を基準とした角運動量が保存される。速度方向の直線と地球中心との垂直距離は最近点でr、短軸上の点で3r。rv₀＝3rv₁なので v₁/v₀＝1/3。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p09.webp",
+      "/questions/eju/2017-round2-science-p04.webp"
+    ],
+    "imageAltTexts": [
+      "理科 物理 I 問6の公式問題・参照資料（問題PDF 9ページ）",
+      "理科 物理 I 問6の公式問題・参照資料（問題PDF 4ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=9",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 物理 I 問6。問題PDF p.9、p.4、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "choiceExplanations": {
+      "ア": "速さが同じなら、短軸上では速度方向の直線と地球中心との垂直距離が3倍のため角運動量も3倍になる。",
+      "イ": "v₁/v₀＝1/2だと短軸上の角運動量は最近点の3/2倍。中心力しか働かない運動とは合わない。",
+      "ウ": "最近点でのモーメントの腕はr。短軸上では速度が水平で、地球中心から速度の直線までの高さが3rとなる。",
+      "エ": "4rは地球中心と楕円の中心との横の距離。短軸上で速度に垂直な距離は、短軸の半分の3rである。",
+      "オ": "短軸上で人工衛星と地球中心の間の距離は5rだが、角運動量に使うのは速度に垂直な成分の3r。",
+      "カ": "6rは短軸全体の長さ。軌道上端から地球中心と同じ高さまでの距離はその半分。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-physics-q7",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-physics",
+    "qNumber": 7,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "II 問1",
+    "subject": "理科 物理",
+    "category": "氷の融解熱と熱収支",
+    "topicTags": [
+      "氷の融解熱と熱収支"
+    ],
+    "difficulty": 3,
+    "question": "断熱容器内で30 ℃の水と0 ℃の氷を混ぜ、融解後の最終温度を求める。 公式問題を読み、該当する番号を選んでください。",
+    "explanation": "水が0 ℃まで冷えると126000 Jを放出し、氷200 gを融かすには66000 J必要。余った60000 Jが水1200 gの温度を上げ、60000/(1200×4.2)≒11.9 ℃となる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p10.webp"
+    ],
+    "imageAltTexts": [
+      "理科 物理 II 問1の公式問題・参照資料（問題PDF 10ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=10",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 物理 II 問1。問題PDF p.10、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "choiceExplanations": {
+      "ア": "水1200 gを10 ℃上げる熱は50400 Jで、融解後に残った60000 Jを使い切らない。",
+      "イ": "氷の融解に66000 Jを使っても60000 Jが残る。水になった氷も含めて1200 gなので、約11.9 ℃になる。",
+      "ウ": "14 ℃に上げるには融解後に70560 J必要だが、残るのは60000 J。",
+      "エ": "16 ℃に上げるには80640 Jが必要になる。氷を全部融かした後に使える熱を超えている。",
+      "オ": "18 ℃なら融けた水を含む全体だけで90720 J必要となる。先に66000 Jの融解熱を引く必要がある。",
+      "カ": "20 ℃は融解後の水1200 gに100800 Jを与えた場合。最初の水が0 ℃まで冷えて得る熱から、融解分を引くと60000 Jしか残らない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-physics-q8",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-physics",
+    "qNumber": 8,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "II 問2",
+    "subject": "理科 物理",
+    "category": "連結ピストンと理想気体",
+    "topicTags": [
+      "連結ピストンと理想気体"
+    ],
+    "difficulty": 3,
+    "question": "共通軸でつないだ同面積のピストンに挟まれた物質量の異なる気体について、加熱後の温度比を求める。 公式問題を読み、該当する番号を選んでください。",
+    "explanation": "等温・等圧だった初めの体積比は物質量の比1：3。AがVから1.5VになるとBは3Vから2.5Vになる。最終圧力は両側で等しいので Tₐ/Tᵦ＝(1.5V/0.20)/(2.5V/0.60)＝1.8。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p11.webp"
+    ],
+    "imageAltTexts": [
+      "理科 物理 II 問2の公式問題・参照資料（問題PDF 11ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=11",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 物理 II 問2。問題PDF p.11、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "choiceExplanations": {
+      "ア": "0.50はAの加熱後の体積をBの初期体積で割った値。温度は最終体積を各物質量で割って比べる。",
+      "イ": "Aの体積は1.5V、Bは2.5Vで、体積だけを比べても0.60。温度の比にはさらに物質量の逆比3を掛ける。",
+      "ウ": "圧力が等しくても、1 molあたりの体積が異なれば温度は等しくない。最終体積の比は物質量の比とは違う。",
+      "エ": "初めのBは3Vで、Aが0.5V増えた分だけ2.5Vに減る。最終体積比0.60と物質量の逆比3から温度比は1.3にならない。",
+      "オ": "最終圧力は等しく、温度はV/nに比例する。AのV/nをBの値で割ると (1.5/2.5)×(0.60/0.20)＝1.8。",
+      "カ": "2.0になるには最終体積比が2/3必要。共通軸で動くピストンの実際の最終体積比は1.5/2.5。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-physics-q9",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-physics",
+    "qNumber": 9,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "II 問3",
+    "subject": "理科 物理",
+    "category": "状態変化と二つの気体グラフ",
+    "topicTags": [
+      "状態変化と二つの気体グラフ"
+    ],
+    "difficulty": 3,
+    "question": "理想気体の体積–温度図に示された状態変化を、圧力–体積図上の経路に対応させる。 公式問題を読み、該当する番号を選んでください。",
+    "explanation": "体積–温度図では、原点を通る直線上の変化は定圧で、傾きV/Tが小さいほど高圧。A→Bは高圧で膨張、B→Cは等温膨張、C→Dは低圧で圧縮、D→Aは等温圧縮。p–V図では d→c→b→a→d となる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p12.webp"
+    ],
+    "imageAltTexts": [
+      "理科 物理 II 問3の公式問題・参照資料（問題PDF 12ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=12",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 物理 II 問3。問題PDF p.12、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6",
+      "キ": "選択肢7",
+      "ク": "選択肢8"
+    },
+    "answer": "ク",
+    "officialAnswerNumber": "8",
+    "choiceExplanations": {
+      "ア": "a→bは低い圧力を保つ膨張。A→Bはもう一方の変化C→DよりV/Tが小さいため、高圧での膨張に当たる。",
+      "イ": "a→dは体積が減り圧力が上がる等温側の変化。A→Bでは体積が増え、圧力は一定。",
+      "ウ": "b→cは体積が減って圧力が上がる曲線上の変化。A→Bに必要なのは高圧側の水平な右向き区間。",
+      "エ": "b→aは低圧での圧縮。A→Bは温度上昇とともに体積が増加する。",
+      "オ": "c→dは高圧での変化だが、圧縮の向き。A→Bに対応するにはdからcへ進む必要がある。",
+      "カ": "c→bはB→Cに対応する等温膨張。最初のA→Bは、高圧のまま温度も体積も増える変化。",
+      "キ": "d→aは曲線上の等温膨張。出発点は合うが、A→Bでは温度が増え、圧力が一定の横線を進む。",
+      "ク": "高圧の定圧膨張d→c、等温膨張c→b、低圧の定圧圧縮b→a、等温圧縮a→dの順になる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-physics-q10",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-physics",
+    "qNumber": 10,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "III 問1",
+    "subject": "理科 物理",
+    "category": "横波での媒質の速度",
+    "topicTags": [
+      "横波での媒質の速度"
+    ],
+    "difficulty": 3,
+    "question": "正の x 方向に進む横波の変位図で、媒質が y の負方向へ最も速く動く点を選ぶ。 公式問題を読み、該当する番号を選んでください。",
+    "explanation": "右へ進む波では y＝f(x−vt) と表せ、媒質の速度はグラフの傾きに−vを掛けたもの。最も急な正の傾きとなるゼロ交点Bで、媒質は負へ最も速く動く。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p13.webp"
+    ],
+    "imageAltTexts": [
+      "理科 物理 III 問1の公式問題・参照資料（問題PDF 13ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=13",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 物理 III 問1。問題PDF p.13、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "choiceExplanations": {
+      "ア": "Aは変位の最小点。空間方向の傾きが0で、媒質の速度も0になる。",
+      "イ": "Bではグラフがゼロ変位を最も急な上り傾きで横切る。右へ進む波ではその場所の媒質の速度は負で、絶対値が最大。",
+      "ウ": "Cは波の頂点で、変位は最大だが媒質の速度は0。",
+      "エ": "AとCはいずれも変位の極値。速度を判断するには変位そのものではなく傾きを見る。",
+      "オ": "OとDではゼロ変位で速さは大きいが、傾きが負なので媒質はyの正方向へ動く。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-physics-q11",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-physics",
+    "qNumber": 11,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "III 問2",
+    "subject": "理科 物理",
+    "category": "反射音のドップラー効果",
+    "topicTags": [
+      "反射音のドップラー効果"
+    ],
+    "difficulty": 3,
+    "question": "装置に近づく物体が返した超音波の振動数から、物体の速さを求める。 公式問題を読み、該当する番号を選んでください。",
+    "explanation": "物体が動く観測者として受ける振動数は f₀(V＋v)/V。それを動く音源として返すので、装置では f/f₀＝(V＋v)/(V−v)。この式をvについて解く。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p14.webp"
+    ],
+    "imageAltTexts": [
+      "理科 物理 III 問2の公式問題・参照資料（問題PDF 14ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=14",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 物理 III 問2。問題PDF p.14、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "choiceExplanations": {
+      "ア": "(f−f₀)V/fは、動く音源としてのドップラー効果だけを考えた場合の式。物体が最初に動く観測者として波を受ける効果も必要。",
+      "イ": "近づく物体ではf＞f₀なので分子f₀−fは負。求める速さは正で、行きと戻り両方の周波数変化を使う。",
+      "ウ": "(f−f₀)V/f₀は最初に物体が動く観測者として受ける効果だけで得られる。反射波を出す物体の運動も考える。",
+      "エ": "周波数が高くなる条件で負の値となる。正しい式の分母はf₀だけでなく、周波数の和f＋f₀。",
+      "オ": "往路では動く観測者、復路では動く音源の効果があり、f(V−v)＝f₀(V＋v)。整理するとv＝(f−f₀)V/(f＋f₀)。",
+      "カ": "分母f＋f₀は正しいが分子の順が逆。近づく物体からの反射波では f−f₀ が正になる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-physics-q12",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-physics",
+    "qNumber": 12,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "III 問3",
+    "subject": "理科 物理",
+    "category": "空気のくさびによる光の干渉",
+    "topicTags": [
+      "空気のくさびによる光の干渉"
+    ],
+    "difficulty": 3,
+    "question": "片側に一定のすきまを作った2枚のガラスの間で、反射干渉による暗線の間隔を求める。 公式問題を読み、該当する番号を選んでください。",
+    "explanation": "隣り合う暗線の間で反射光の光路差が1波長変わる。空気層は往復するので、厚さの差は300 nm。すきまの傾き0.030/300を用いると暗線間隔は3.0 mm。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p15.webp"
+    ],
+    "imageAltTexts": [
+      "理科 物理 III 問3の公式問題・参照資料（問題PDF 15ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=15",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 物理 III 問3。問題PDF p.15、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "choiceExplanations": {
+      "ア": "1.0 mm進むと空気層の厚さが100 nm増し、往復の光路差は200 nmしか変わらない。",
+      "イ": "2.0 mm間隔での光路差の変化は400 nm。暗線が次に現れるには600 nm必要。",
+      "ウ": "3.0 mm離れると厚さが300 nm違い、往復分の光路差が1波長の600 nm違う。",
+      "エ": "4.0 mmでは光路差の変化は800 nm。隣り合う暗線に対応する1波長より大きい。",
+      "オ": "5.0 mmの間に空気層の厚さが500 nm変わるので、光路差は1000 nm変化する。600 nmの条件を満たさない。",
+      "カ": "6.0 mm離れると光路差は1200 nm変わり、暗線二間隔に相当する。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-physics-q13",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-physics",
+    "qNumber": 13,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "IV 問1",
+    "subject": "理科 物理",
+    "category": "クーロン力と糸の傾き",
+    "topicTags": [
+      "クーロン力と糸の傾き"
+    ],
+    "difficulty": 3,
+    "question": "荷電した小球の引力と斥力が同じ糸の傾きを生じるとき、電荷の大きさの比 Q/q を求める。 公式問題を読み、該当する番号を選んでください。",
+    "explanation": "各球の水平変位の絶対値は両図でa。糸の長さと重さも同じなので、水平方向のクーロン力の大きさは等しい。kq²/a²＝kQ²/(5a)² より Q/q＝5。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p16.webp"
+    ],
+    "imageAltTexts": [
+      "理科 物理 IV 問1の公式問題・参照資料（問題PDF 16ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=16",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 物理 IV 問1。問題PDF p.16、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "choiceExplanations": {
+      "ア": "Q/q＝√3だと図2の力は図1の3/25。左右の糸の傾きの大きさが同じであることに合わない。",
+      "イ": "間隔の比5だけを電荷の積の比にすると、図2の力は図1の1/5。クーロン力は距離の二乗に反比例する。",
+      "ウ": "Q/q＝3では図2の電荷の積が9倍だが、分母は距離の二乗で25倍。力は等しくならない。",
+      "エ": "両図で水平変位の大きさが同じなので、引力と斥力の大きさは等しい。電荷の二乗と距離の二乗をそろえるとQ＝5q。",
+      "オ": "Q/q＝9だと電荷の積が81倍で、25倍の距離の二乗では補いきれない。",
+      "カ": "距離の二乗の比25は電荷の積Q²/q²に等しい。電荷そのものの比には平方根を取る。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-physics-q14",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-physics",
+    "qNumber": 14,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "IV 問2",
+    "subject": "理科 物理",
+    "category": "電位差と静電気力の仕事",
+    "topicTags": [
+      "電位差と静電気力の仕事"
+    ],
+    "difficulty": 3,
+    "question": "対称な位置に同じ点電荷があるとき、静電気力が仕事をしない経路をすべて選ぶ。 公式問題を読み、該当する番号を選んでください。",
+    "explanation": "静電気力の仕事は始点と終点の電位差で決まる。(b)の端点はy軸に関して対称で、2つの電荷までの距離を入れ替えても電位が等しい。(c)はx軸に関して対称で距離がそれぞれ等しい。(a)は右の電荷までの距離が異なる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p17.webp"
+    ],
+    "imageAltTexts": [
+      "理科 物理 IV 問2の公式問題・参照資料（問題PDF 17ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=17",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 物理 IV 問2。問題PDF p.17、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6",
+      "キ": "選択肢7"
+    },
+    "answer": "カ",
+    "officialAnswerNumber": "6",
+    "choiceExplanations": {
+      "ア": "(a)は左の電荷からは同じ距離だが、右の電荷までの距離が始点と終点で異なり、電位差が残る。",
+      "イ": "(b)は電位差が0だが、(c)の端点もx軸に関して対称で電位差が0になる。",
+      "ウ": "(c)は正しい例だが、(b)でも2つの等しい電荷までの距離を入れ替えただけで電位の和は等しい。",
+      "エ": "(b)は正しいが、(a)の端点は右側の電荷からの距離が異なる。また、(c)が抜けている。",
+      "オ": "(c)の両端の電位は同じ。一方(a)は右電荷による電位の差があり、仕事は0にならない。",
+      "カ": "(b)の端点はy軸対称で、2電荷までの距離を交換する。(c)の端点はx軸対称で、各電荷までの距離が変わらない。",
+      "キ": "(b)と(c)は仕事が0。(a)では片方の電荷までの距離が変わり、電位差が生じる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-physics-q15",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-physics",
+    "qNumber": 15,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "IV 問3",
+    "subject": "理科 物理",
+    "category": "平行板コンデンサーの静電エネルギー",
+    "topicTags": [
+      "平行板コンデンサーの静電エネルギー"
+    ],
+    "difficulty": 3,
+    "question": "極板間隔を2倍にした充電済みコンデンサーを再接続する前後で、静電エネルギーの比を求める。 公式問題を読み、該当する番号を選んでください。",
+    "explanation": "最初の容量をC、電池の電圧をEとする。開放中は電荷CEが保存され、容量はC/2。再接続すると電荷はCE/2になる。同じ容量でエネルギーは電荷の二乗に比例するので U₂/U₁＝1/4。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p18.webp"
+    ],
+    "imageAltTexts": [
+      "理科 物理 IV 問3の公式問題・参照資料（問題PDF 18ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=18",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 物理 IV 問3。問題PDF p.18、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "choiceExplanations": {
+      "ア": "極板間隔は同じまま再接続するので、比較する容量はどちらもC/2。電荷がCEからCE/2になるため、エネルギーは1/4。",
+      "イ": "電荷の比は1/2だが、容量が同じなら静電エネルギーは Q²/(2C')。電荷の比の二乗が必要。",
+      "ウ": "切断中は電荷が保存されるが、再接続すると電圧が電池の電圧まで下がり、電荷も減る。",
+      "エ": "間隔を2倍にして電荷を保つと、元の状態に対してエネルギーは2倍になる。設問はその後の再接続をまたいだ比較。",
+      "オ": "4は再接続後の電荷の小さい状態を分母にした場合のエネルギー比。設問のU₂は電荷が半分になった後の状態。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-physics-q16",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-physics",
+    "qNumber": 16,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "IV 問4",
+    "subject": "理科 物理",
+    "category": "抵抗による分圧",
+    "topicTags": [
+      "抵抗による分圧"
+    ],
+    "difficulty": 3,
+    "question": "ひし形につないだ4抵抗と電池の回路で、端子Bを基準とする端子Aの電位を求める。 公式問題を読み、該当する番号を選んでください。",
+    "explanation": "電池の負極側の接点を0 Vとすると、Aは R₃/(R₁＋R₃)·E、Bは R₄/(R₂＋R₄)·E。差を取って通分すると、分子は R₂R₃−R₁R₄ となる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p19.webp"
+    ],
+    "imageAltTexts": [
+      "理科 物理 IV 問4の公式問題・参照資料（問題PDF 19ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=19",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 物理 IV 問4。問題PDF p.19、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "choiceExplanations": {
+      "ア": "分母の組が電流の分岐と異なる。上の枝はR₁＋R₃、下の枝はR₂＋R₄である。",
+      "イ": "R₁＋R₂とR₃＋R₄は左側・右側の抵抗をまとめており、AとBで分圧する直列の組を表さない。",
+      "ウ": "分母の枝の組は合うが、分子の符号が逆。この式はBをAに対して測った電位に対応する。",
+      "エ": "上側の分圧 R₃/(R₁＋R₃) と下側の分圧 R₄/(R₂＋R₄) の順に差を取った式である。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-physics-q17",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-physics",
+    "qNumber": 17,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "IV 問5",
+    "subject": "理科 物理",
+    "category": "長い直線電流が作る磁場",
+    "topicTags": [
+      "長い直線電流が作る磁場"
+    ],
+    "difficulty": 3,
+    "question": "異なる位置の3導線に同じ向きの電流が流れるとき、原点の磁場の大きさを求める。 公式問題を読み、該当する番号を選んでください。",
+    "explanation": "右ねじの法則から、Aは−y向きにH₀、Bは＋x向きにH₀、Cは＋y向きにH₀/2。合成するとx方向H₀、y方向−H₀/2なので大きさは√5 H₀/2。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p20.webp"
+    ],
+    "imageAltTexts": [
+      "理科 物理 IV 問5の公式問題・参照資料（問題PDF 20ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=20",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 物理 IV 問5。問題PDF p.20、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "choiceExplanations": {
+      "ア": "1/2はAとCを足したy方向成分の大きさだけ。Bによるx方向H₀も加える必要がある。",
+      "イ": "x方向とy方向は直交するので、大きさの二乗を足す。1−1/4に当たる値ではなく1＋1/4になる。",
+      "ウ": "Bが作るx方向の磁場だけならH₀。AとCの磁場は距離が異なって大きさが等しくないので完全には相殺しない。",
+      "エ": "成分は＋x方向H₀と−y方向H₀/2。二乗和の平方根を取ると比は√(1＋1/4)＝√5/2。",
+      "オ": "√6/2なら成分の二乗和がH₀²の1.5倍になる。実際はx成分の1とy成分の1/4を加えた1.25倍。",
+      "カ": "AとBは大きさが同じでも互いに直交する。さらにCがAのy方向成分を弱めるため、単純に2倍にはならない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-physics-q18",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-physics",
+    "qNumber": 18,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "IV 問6",
+    "subject": "理科 物理",
+    "category": "平行導線の力と作用・反作用",
+    "topicTags": [
+      "平行導線の力と作用・反作用"
+    ],
+    "difficulty": 3,
+    "question": "2本の導線が受ける合力から、3本目の電流の向きと単位長さあたりの合力を求める。 公式問題を読み、該当する番号を選んでください。",
+    "explanation": "L₁とL₂は互いに引き合う。L₃も上向きならL₁への右向きの引力が増え、L₂への左向きの合力は小さくなり、条件に反する。よってL₃の電流は下向き。3本の合力の和は0なので、L₃は右向きに2F−F＝Fを受ける。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p21.webp"
+    ],
+    "imageAltTexts": [
+      "理科 物理 IV 問6の公式問題・参照資料（問題PDF 21ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=21",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 物理 IV 問6。問題PDF p.21、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6",
+      "キ": "選択肢7",
+      "ク": "選択肢8"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "choiceExplanations": {
+      "ア": "L₃に作用する力の右向き・大きさFは合う。L₃が上向きだと、L₂への右向きの引力が加わって左向きの合力2Fを説明できない。",
+      "イ": "L₃が上向きだとL₂の左向きの力がL₁の右向きより大きい条件を満たせない。加えてL₁とL₂の力は逆向きなので大きさを足して3Fにしない。",
+      "ウ": "L₃が上向きならL₂を右へ引くが、実際にはL₂の左向きの力が増えている。L₁とL₂の合計が左向きFなのでL₃自身の力は右向き。",
+      "エ": "上向き電流ではL₃が左の2導線を引き、L₂の左向き合力が条件と合わない。L₃の合力は左向き3Fにもならない。",
+      "オ": "L₃はL₂を左へ押すから電流は下向き。作用・反作用で3本の力を合計すると0になり、L₃は右向きのFを受ける。",
+      "カ": "電流と力の向きは合う。L₁の右向きFとL₂の左向き2Fを符号つきで足すと−Fなので、L₃の力は＋F。",
+      "キ": "下向き電流は正しい。左側の上向き電流2本から斥力を受けるため、L₃への力は右向き。",
+      "ク": "L₃が下向きなら左側の導線から遠ざかる右向きの力を受ける。大きさは2FとFの差である。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-physics-q19",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-physics",
+    "qNumber": 19,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "V 問1",
+    "subject": "理科 物理",
+    "category": "アルファ崩壊とベータ崩壊",
+    "topicTags": [
+      "アルファ崩壊とベータ崩壊"
+    ],
+    "difficulty": 3,
+    "question": "トリウム230が鉛206に変わるまでの α 崩壊と β 崩壊の回数を求める。 公式問題を読み、該当する番号を選んでください。",
+    "explanation": "質量数を230から206へ減らすには、1回で4減るα崩壊が6回必要。原子番号は90から78に減るので、82まで1ずつ増やすβ⁻崩壊が4回必要。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p22.webp"
+    ],
+    "imageAltTexts": [
+      "理科 物理 V 問1の公式問題・参照資料（問題PDF 22ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=22",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 物理 V 問1。問題PDF p.22、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "choiceExplanations": {
+      "ア": "α崩壊5回では質量数は210。β崩壊で質量数は変わらず、206にならない。",
+      "イ": "β崩壊4回という回数だけでは足りない。α崩壊が5回だと質量数は210のまま。",
+      "ウ": "α崩壊5回で質量数は210。さらにβ⁻崩壊5回だと原子番号は90−10＋5＝85となる。",
+      "エ": "α崩壊6回で質量数は206になるが、β⁻崩壊3回では原子番号が90−12＋3＝81となる。",
+      "オ": "α崩壊6回で質量数は206、原子番号は78。β⁻崩壊を4回経ると原子番号は82となる。",
+      "カ": "α崩壊の回数は合う。β⁻崩壊5回では原子番号が83になり、鉛の82を超える。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-chemistry-q1",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-chemistry",
+    "qNumber": 1,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問1",
+    "subject": "理科 化学",
+    "category": "電子配置とイオン結晶",
+    "topicTags": [
+      "電子配置とイオン結晶"
+    ],
+    "difficulty": 3,
+    "question": "二つの原子の電子配置からイオンの電荷と化合物の組成式を求めます。公式問題の図版を読み、該当する選択肢を選びましょう。",
+    "explanation": "Xの電子配置は2、8、2なので、最外殻電子を2個失ってX²⁺になります。Yは2、8、7なのでY⁻となり、電荷がつり合う組成式はXY₂です。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p26.webp",
+      "/questions/eju/2017-round2-science-p25.webp"
+    ],
+    "imageAltTexts": [
+      "理科 化学 問1の公式問題・参照資料（問題PDF 26ページ）",
+      "理科 化学 問1の公式問題・参照資料（問題PDF 25ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=26",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 化学 問1。問題PDF p.26、p.25、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "choiceExplanations": {
+      "ア": "Xのイオン式は合っていますが、X²⁺1個とY⁻1個では正電荷が一つ残ります。",
+      "イ": "Xの電子配置は2、8、2なので、最外殻電子を2個失ってX²⁺になります。Yは2、8、7なのでY⁻となり、電荷がつり合う組成式はXY₂です。",
+      "ウ": "X²⁺の電荷を打ち消すにはY⁻が2個必要です。X₂Yの比では負電荷が足りません。",
+      "エ": "Xは電子を取り込んでX²⁻になるより、最外殻電子2個を失うことで閉殻になります。",
+      "オ": "Yは最外殻に7個の電子を持ち、1個受け取って陰イオンになります。陽イオンを先に書く組成式はXY₂です。",
+      "カ": "XとYの電荷を取り違えています。X²⁺とY⁻を組み合わせると、YはXの2倍必要です。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-chemistry-q2",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-chemistry",
+    "qNumber": 2,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問2",
+    "subject": "理科 化学",
+    "category": "化学結合と分子間力",
+    "topicTags": [
+      "化学結合と分子間力"
+    ],
+    "difficulty": 3,
+    "question": "物質を構成する粒子の間にはたらく結合と、分子内の結合を区別します。公式問題の図版を読み、該当する選択肢を選びましょう。",
+    "explanation": "CとOの共有結合は一つのCO₂分子の内部にあります。ドライアイス中でCO₂分子同士をまとめるのは分子間力です。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p27.webp",
+      "/questions/eju/2017-round2-science-p25.webp"
+    ],
+    "imageAltTexts": [
+      "理科 化学 問2の公式問題・参照資料（問題PDF 27ページ）",
+      "理科 化学 問2の公式問題・参照資料（問題PDF 25ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=27",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 化学 問2。問題PDF p.27、p.25、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "choiceExplanations": {
+      "ア": "金属のFeでは、動きやすい価電子が原子間に共有される金属結合がはたらきます。",
+      "イ": "水分子のHと別の水分子のOの間に、水素結合ができます。",
+      "ウ": "CとOの共有結合は一つのCO₂分子の内部にあります。ドライアイス中でCO₂分子同士をまとめるのは分子間力です。",
+      "エ": "窒素の非共有電子対をNH₃側から供与してH⁺に結び付けるので、NH₄⁺の形成は配位結合で説明できます。",
+      "オ": "Na⁺とCl⁻は電荷が反対なので、結晶中で静電引力によるイオン結合をつくります。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-chemistry-q3",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-chemistry",
+    "qNumber": 3,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問3",
+    "subject": "理科 化学",
+    "category": "分子の形と極性",
+    "topicTags": [
+      "分子の形と極性"
+    ],
+    "difficulty": 3,
+    "question": "分子を構成する原子の種類と配置から、両方が極性をもつ組合せを選びます。公式問題の図版を読み、該当する選択肢を選びましょう。",
+    "explanation": "HClは異なる原子からなる極性分子です。CH₃Clは四面体の周囲の原子が同一でなく、結合の極性が打ち消されません。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p27.webp",
+      "/questions/eju/2017-round2-science-p25.webp"
+    ],
+    "imageAltTexts": [
+      "理科 化学 問3の公式問題・参照資料（問題PDF 27ページ）",
+      "理科 化学 問3の公式問題・参照資料（問題PDF 25ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=27",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 化学 問3。問題PDF p.27、p.25、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "choiceExplanations": {
+      "ア": "CH₄とCCl₄はいずれも正四面体形で、同じ種類の結合が対称に並ぶため無極性です。",
+      "イ": "H₂Oは折れ線形で極性がありますが、CO₂は直線形で両側のC＝O結合の極性が打ち消し合います。",
+      "ウ": "NH₃は三角すい形で極性があります。N₂は同じN原子からなる二原子分子で無極性です。",
+      "エ": "HClは異なる原子からなる極性分子です。CH₃Clは四面体の周囲の原子が同一でなく、結合の極性が打ち消されません。",
+      "オ": "F₂もCl₂も同じ元素の原子2個が結合した分子で、分子の両端の電気陰性度は同じです。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-chemistry-q4",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-chemistry",
+    "qNumber": 4,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問4",
+    "subject": "理科 化学",
+    "category": "混合気体の平均分子量",
+    "topicTags": [
+      "混合気体の平均分子量"
+    ],
+    "difficulty": 3,
+    "question": "窒素と水素の平均分子量をモル分率による加重平均として計算します。公式問題の図版を読み、該当する選択肢を選びましょう。",
+    "explanation": "N₂:H₂を1:3とすると(28＋3×2)÷4＝8.5です。N₂のモル分率をxとして28x＋2(1－x)＝8.5を解いてもx＝1/4になります。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p28.webp",
+      "/questions/eju/2017-round2-science-p25.webp"
+    ],
+    "imageAltTexts": [
+      "理科 化学 問4の公式問題・参照資料（問題PDF 28ページ）",
+      "理科 化学 問4の公式問題・参照資料（問題PDF 25ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=28",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 化学 問4。問題PDF p.28、p.25、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "choiceExplanations": {
+      "ア": "N₂とH₂が同量なら平均は(28＋2)÷2＝15になり、8.5より大きくなります。",
+      "イ": "1:2なら(28＋2×2)÷3＝約10.7です。軽いH₂の割合がさらに必要です。",
+      "ウ": "N₂:H₂を1:3とすると(28＋3×2)÷4＝8.5です。N₂のモル分率をxとして28x＋2(1－x)＝8.5を解いてもx＝1/4になります。",
+      "エ": "1:4なら(28＋4×2)÷5＝7.2です。N₂を少なく見積もりすぎています。",
+      "オ": "1:5だと(28＋5×2)÷6＝約6.3となり、設問の8.5より小さくなります。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-chemistry-q5",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-chemistry",
+    "qNumber": 5,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問5",
+    "subject": "理科 化学",
+    "category": "プロパンの完全燃焼",
+    "topicTags": [
+      "プロパンの完全燃焼"
+    ],
+    "difficulty": 3,
+    "question": "反応式の係数を同温・同圧の気体の体積比に読み替え、残る気体の体積を求めます。公式問題の図版を読み、該当する選択肢を選びましょう。",
+    "explanation": "C₃H₈＋5O₂→3CO₂＋4H₂Oです。プロパン1.0 LでO₂を5.0 L使い、CO₂を3.0 L生じます。水を除いた後には5.0＋3.0＝8.0 L残ります。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p28.webp",
+      "/questions/eju/2017-round2-science-p25.webp"
+    ],
+    "imageAltTexts": [
+      "理科 化学 問5の公式問題・参照資料（問題PDF 28ページ）",
+      "理科 化学 問5の公式問題・参照資料（問題PDF 25ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=28",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 化学 問5。問題PDF p.28、p.25、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6"
+    },
+    "answer": "カ",
+    "officialAnswerNumber": "6",
+    "choiceExplanations": {
+      "ア": "3.0 Lは生成するCO₂だけの体積です。使われずに残ったO₂も最終体積に含めます。",
+      "イ": "プロパン1.0 LはO₂を5.0 Lしか消費しません。この時点でO₂だけでも5.0 L残るので、合計は4.0 Lを超えます。",
+      "ウ": "5.0 Lは残ったO₂の体積です。燃焼で生成したCO₂が3.0 Lあります。",
+      "エ": "反応後に残るO₂が5.0 Lで、燃料の炭素数に対応してCO₂が3.0 Lできるため、合計6.0 Lにはなりません。",
+      "オ": "水は除きますが、CO₂は3.0 Lすべて数えます。酸素の残量5.0 Lを合わせると7.0 Lより大きくなります。",
+      "カ": "C₃H₈＋5O₂→3CO₂＋4H₂Oです。プロパン1.0 LでO₂を5.0 L使い、CO₂を3.0 L生じます。水を除いた後には5.0＋3.0＝8.0 L残ります。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-chemistry-q6",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-chemistry",
+    "qNumber": 6,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問6",
+    "subject": "理科 化学",
+    "category": "面心立方格子",
+    "topicTags": [
+      "面心立方格子"
+    ],
+    "difficulty": 3,
+    "question": "銅の単位格子の配置から、原子の数と原子同士が接する方向を判断します。公式問題の図版を読み、該当する選択肢を選びましょう。",
+    "explanation": "面心立方格子は最密充填構造です。面の対角線上で原子が接して対角線は4rになるため、一辺は4r÷√2＝2√2rです。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p29.webp",
+      "/questions/eju/2017-round2-science-p25.webp"
+    ],
+    "imageAltTexts": [
+      "理科 化学 問6の公式問題・参照資料（問題PDF 29ページ）",
+      "理科 化学 問6の公式問題・参照資料（問題PDF 25ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=29",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 化学 問6。問題PDF p.29、p.25、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "choiceExplanations": {
+      "ア": "(a)は正しいです。(b)は図に見える頂点と面の原子をそのまま数えており、単位格子で分け合う原子を考慮していません。",
+      "イ": "面心立方格子は最密充填構造です。面の対角線上で原子が接して対角線は4rになるため、一辺は4r÷√2＝2√2rです。",
+      "ウ": "(a)は正しいですが、面心立方格子である原子の最近接原子は12個なので(d)は誤りです。",
+      "エ": "(c)は正しいです。原子の個数は8頂点×1/8＋6面×1/2＝4個で、(b)の14個にはなりません。",
+      "オ": "格子に属する原子は4個で、最近接原子は同じ層に6個、上下の層に各3個の計12個です。",
+      "カ": "面の対角線から(c)は成り立ちますが、(d)は最近接原子を8個としており、面心立方格子の12個と異なります。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-chemistry-q7",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-chemistry",
+    "qNumber": 7,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問7",
+    "subject": "理科 化学",
+    "category": "酸の電離とpH",
+    "topicTags": [
+      "酸の電離とpH"
+    ],
+    "difficulty": 3,
+    "question": "同じモル濃度の水溶液を比較し、水素イオン濃度が最大になる酸を選びます。公式問題の図版を読み、該当する選択肢を選びましょう。",
+    "explanation": "硫酸は一段目でほぼ完全に電離し、できたHSO₄⁻も一部がさらに電離します。この中でH⁺の濃度が最も高く、pHが最小です。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p29.webp",
+      "/questions/eju/2017-round2-science-p25.webp"
+    ],
+    "imageAltTexts": [
+      "理科 化学 問7の公式問題・参照資料（問題PDF 29ページ）",
+      "理科 化学 問7の公式問題・参照資料（問題PDF 25ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=29",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 化学 問7。問題PDF p.29、p.25、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6"
+    },
+    "answer": "カ",
+    "officialAnswerNumber": "6",
+    "choiceExplanations": {
+      "ア": "H₂Sは弱酸で電離が小さく、同じ濃度の強酸よりもH⁺の濃度が低くなります。",
+      "イ": "HNO₃は強酸ですが、一分子から生じるH⁺は一つです。硫酸には二段目の電離があります。",
+      "ウ": "シュウ酸は二価の酸ですが完全には電離しません。酸の価数だけでH⁺の濃度を決められません。",
+      "エ": "酢酸は弱酸で、0.01 mol/L水溶液でも分子の多くは電離していません。",
+      "オ": "リン酸には放出できるH⁺が三つありますが、電離は段階的で、同じ濃度の硫酸よりH⁺は少なくなります。",
+      "カ": "硫酸は一段目でほぼ完全に電離し、できたHSO₄⁻も一部がさらに電離します。この中でH⁺の濃度が最も高く、pHが最小です。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-chemistry-q8",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-chemistry",
+    "qNumber": 8,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問8",
+    "subject": "理科 化学",
+    "category": "鉛蓄電池の正極の質量変化",
+    "topicTags": [
+      "鉛蓄電池の正極の質量変化"
+    ],
+    "difficulty": 3,
+    "question": "放電時の正極の半反応式から、固体の質量がどれだけ変化するかを求めます。公式問題の図版を読み、該当する選択肢を選びましょう。",
+    "explanation": "正極ではPbO₂が電子2 mol当たり1 molの割合でPbSO₄に変わります。0.4 molの電子では0.2 mol変化し、1 mol当たり96－32＝64 g重くなるので、12.8 g増加します。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p30.webp",
+      "/questions/eju/2017-round2-science-p25.webp"
+    ],
+    "imageAltTexts": [
+      "理科 化学 問8の公式問題・参照資料（問題PDF 30ページ）",
+      "理科 化学 問8の公式問題・参照資料（問題PDF 25ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=30",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 化学 問8。問題PDF p.30、p.25、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "choiceExplanations": {
+      "ア": "正極ではPbO₂が電子2 mol当たり1 molの割合でPbSO₄に変わります。0.4 molの電子では0.2 mol変化し、1 mol当たり96－32＝64 g重くなるので、12.8 g増加します。",
+      "イ": "19.2 gは取り込む硫酸イオンの分だけを0.2×96で計算した値です。正極固体から減るO原子2個分も引きます。",
+      "ウ": "1 molの変化で64 g増えますが、PbO₂が反応するのは電子の0.4 mol全部ではなく0.2 molです。",
+      "エ": "12.8 gという変化量は合っています。PbSO₄は反応前のPbO₂より重いため、質量は増加します。",
+      "オ": "SO₄²⁻由来の質量が正極の固体に加わります。酸素2個分の減少より大きく、19.2 g減少にはなりません。",
+      "カ": "電子2 mol当たりPbO₂は1 molしか反応しません。またPbSO₄のほうが重いため、質量変化は減少ではありません。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-chemistry-q9",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-chemistry",
+    "qNumber": 9,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問9",
+    "subject": "理科 化学",
+    "category": "ヘスの法則",
+    "topicTags": [
+      "ヘスの法則"
+    ],
+    "difficulty": 3,
+    "question": "四酸化二窒素と二酸化窒素の生成熱を組み合わせて分解熱を求めます。公式問題の図版を読み、該当する選択肢を選びましょう。",
+    "explanation": "発熱量を右辺に書く設問の記法では、N₂O₄を元素に戻す段階が－Q₁、元素から2 molのNO₂をつくる段階が2Q₂です。合計は－Q₁＋2Q₂です。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p30.webp",
+      "/questions/eju/2017-round2-science-p25.webp"
+    ],
+    "imageAltTexts": [
+      "理科 化学 問9の公式問題・参照資料（問題PDF 30ページ）",
+      "理科 化学 問9の公式問題・参照資料（問題PDF 25ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=30",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 化学 問9。問題PDF p.30、p.25、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6"
+    },
+    "answer": "カ",
+    "officialAnswerNumber": "6",
+    "choiceExplanations": {
+      "ア": "N₂O₄の生成を逆向きにするのでQ₁の符号を反転し、NO₂が2 mol生じるのでQ₂を2倍します。",
+      "イ": "この式はN₂O₄の生成熱を足しており、分解方向の符号と合いません。NO₂の量も2 molです。",
+      "ウ": "N₂O₄の熱を－Q₁とするのは合っています。右辺にはNO₂が2 molあるので、その生成熱は2Q₂です。",
+      "エ": "NO₂を2 mol生成する項は合っていますが、反応物N₂O₄は生成の逆向きにたどるので－Q₁とします。",
+      "オ": "Q₁－2Q₂はNO₂からN₂O₄へ進む方向の熱に対応します。問われているのはその逆です。",
+      "カ": "発熱量を右辺に書く設問の記法では、N₂O₄を元素に戻す段階が－Q₁、元素から2 molのNO₂をつくる段階が2Q₂です。合計は－Q₁＋2Q₂です。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-chemistry-q10",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-chemistry",
+    "qNumber": 10,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問10",
+    "subject": "理科 化学",
+    "category": "気体の圧力と濃度平衡定数",
+    "topicTags": [
+      "気体の圧力と濃度平衡定数"
+    ],
+    "difficulty": 3,
+    "question": "全圧の変化から平衡時の各気体の濃度を求め、平衡定数を計算します。公式問題の図版を読み、該当する選択肢を選びましょう。",
+    "explanation": "定温・定容なので全圧が1.1倍なら全物質量は1.10 molです。0.10 molのN₂O₄が分解し、平衡時の濃度はN₂O₄が0.090、NO₂が0.020 mol/Lです。K＝0.020²÷0.090＝約0.0044 mol/Lです。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p31.webp",
+      "/questions/eju/2017-round2-science-p25.webp"
+    ],
+    "imageAltTexts": [
+      "理科 化学 問10の公式問題・参照資料（問題PDF 31ページ）",
+      "理科 化学 問10の公式問題・参照資料（問題PDF 25ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=31",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 化学 問10。問題PDF p.31、p.25、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "choiceExplanations": {
+      "ア": "0.0011 mol/Lは、NO₂の物質量を0.10 molとした計算に近い値です。N₂O₄の減少1 mol当たりNO₂が2 mol生じます。",
+      "イ": "濃度平衡定数にはNO₂の濃度0.020 mol/Lを二乗した値を使います。NO₂を生成する係数2と、濃度を二乗することを区別します。",
+      "ウ": "定温・定容なので全圧が1.1倍なら全物質量は1.10 molです。0.10 molのN₂O₄が分解し、平衡時の濃度はN₂O₄が0.090、NO₂が0.020 mol/Lです。K＝0.020²÷0.090＝約0.0044 mol/Lです。",
+      "エ": "0.011 mol/Lは求める平衡定数より大きい値です。全圧から求めた総物質量と、NO₂濃度の二乗をN₂O₄濃度で割る操作を区別します。",
+      "オ": "0.022 mol/LはNO₂の平衡濃度に近い値です。設問では濃度そのものではなく、化学反応式に対応する比を求めます。",
+      "カ": "0.044は、濃度に直す前の物質量で比を計算した値です。体積10 Lを用いて各濃度に直すと0.0044 mol/Lになります。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-chemistry-q11",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-chemistry",
+    "qNumber": 11,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問11",
+    "subject": "理科 化学",
+    "category": "両性金属と不動態",
+    "topicTags": [
+      "両性金属と不動態"
+    ],
+    "difficulty": 3,
+    "question": "強塩基への溶解と濃硝酸中での不動態化の両方を満たす金属を選びます。公式問題の図版を読み、該当する選択肢を選びましょう。",
+    "explanation": "アルミニウムは強塩基に溶けてアルミン酸イオンをつくります。濃硝酸中では表面が不動態になり、溶解が進みにくくなります。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p31.webp",
+      "/questions/eju/2017-round2-science-p25.webp"
+    ],
+    "imageAltTexts": [
+      "理科 化学 問11の公式問題・参照資料（問題PDF 31ページ）",
+      "理科 化学 問11の公式問題・参照資料（問題PDF 25ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=31",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 化学 問11。問題PDF p.31、p.25、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "choiceExplanations": {
+      "ア": "銀は水酸化ナトリウム水溶液には溶けず、濃硝酸では酸化されて硝酸銀になります。",
+      "イ": "アルミニウムは強塩基に溶けてアルミン酸イオンをつくります。濃硝酸中では表面が不動態になり、溶解が進みにくくなります。",
+      "ウ": "鉄は濃硝酸で不動態になりますが、設問の水酸化ナトリウム水溶液にも溶ける金属という条件を満たしません。",
+      "エ": "亜鉛は両性金属なので強塩基には溶けます。濃硝酸に溶けないという条件には当てはまりません。",
+      "オ": "鉛は強塩基に溶ける両性金属ですが、この条件の濃硝酸に対して不動態をつくるアルミニウムとは区別します。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-chemistry-q12",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-chemistry",
+    "qNumber": 12,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問12",
+    "subject": "理科 化学",
+    "category": "酸性酸化物の水との反応",
+    "topicTags": [
+      "酸性酸化物の水との反応"
+    ],
+    "difficulty": 3,
+    "question": "各酸化物が水と反応したときに対応する酸を見分けます。公式問題の図版を読み、該当する選択肢を選びましょう。",
+    "explanation": "NO₂を水と反応させると窒素の酸化数が変化してHNO₃が生じます。P₄O₁₀＋6H₂O→4H₃PO₄なので、aとbが当てはまります。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p32.webp",
+      "/questions/eju/2017-round2-science-p25.webp"
+    ],
+    "imageAltTexts": [
+      "理科 化学 問12の公式問題・参照資料（問題PDF 32ページ）",
+      "理科 化学 問12の公式問題・参照資料（問題PDF 25ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=32",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 化学 問12。問題PDF p.32、p.25、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "choiceExplanations": {
+      "ア": "NO₂を水と反応させると窒素の酸化数が変化してHNO₃が生じます。P₄O₁₀＋6H₂O→4H₃PO₄なので、aとbが当てはまります。",
+      "イ": "aの硝酸は得られます。cのSO₂ではSが＋4のままなので、水との反応でSが＋6の硫酸にはなりません。",
+      "ウ": "aは適切です。dのCl₂O₇はHClO₄に対応し、酸素を含まないHClにはなりません。",
+      "エ": "bのリン酸は得られます。cのSO₂は水に溶けて亜硫酸に相当する溶液になり、硫酸を得るには酸化が必要です。",
+      "オ": "bは適切です。dではCl₂O₇中のClの酸化数は＋7で、水と反応して生じるのは過塩素酸です。",
+      "カ": "cは硫酸ではなく亜硫酸に、dは塩酸ではなく過塩素酸に対応します。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-chemistry-q13",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-chemistry",
+    "qNumber": 13,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問13",
+    "subject": "理科 化学",
+    "category": "酸化数で判定する酸化反応",
+    "topicTags": [
+      "酸化数で判定する酸化反応"
+    ],
+    "difficulty": 3,
+    "question": "下線部の元素の酸化数を反応前後で比較し、酸化される組合せを選びます。公式問題の図版を読み、該当する選択肢を選びましょう。",
+    "explanation": "(a)のCuはCuOになると0から＋2に、(d)のAlはAlCl₃になると0から＋3になります。下線部の酸化数が上昇する二つです。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p33.webp",
+      "/questions/eju/2017-round2-science-p25.webp"
+    ],
+    "imageAltTexts": [
+      "理科 化学 問13の公式問題・参照資料（問題PDF 33ページ）",
+      "理科 化学 問13の公式問題・参照資料（問題PDF 25ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=33",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 化学 問13。問題PDF p.33、p.25、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6",
+      "キ": "選択肢7"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "choiceExplanations": {
+      "ア": "(a)のCuは0から＋2へ上昇しますが、(b)のCuO中のCuは＋2から0に下がり、還元されます。",
+      "イ": "(a)のCuはCuOになると0から＋2に、(d)のAlはAlCl₃になると0から＋3になります。下線部の酸化数が上昇する二つです。",
+      "ウ": "(a)は酸化です。(e)ではHNO₃中のNの一部がNOへ変わり、＋5から＋2へ下がります。",
+      "エ": "(d)のAlは酸化されますが、(b)のCuO中のCuは電子を受け取って金属Cuに戻ります。",
+      "オ": "(b)のCuと(e)のNOへ変わるNは、どちらも反応後に酸化数が低くなります。",
+      "カ": "(c)のO₂にあるOはH₂Oになると0から－2に下がります。(d)のAlは0から＋3に上がります。",
+      "キ": "(d)は酸化ですが、(e)の下線はCuではなくHNO₃です。そのNの一部はNOになって還元されます。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-chemistry-q14",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-chemistry",
+    "qNumber": 14,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問14",
+    "subject": "理科 化学",
+    "category": "水素の発生量と金属の純度",
+    "topicTags": [
+      "水素の発生量と金属の純度"
+    ],
+    "difficulty": 3,
+    "question": "発生した水素量と反応の係数から、試料中のマグネシウムの質量割合を求めます。公式問題の図版を読み、該当する選択肢を選びましょう。",
+    "explanation": "Mg＋2HCl→MgCl₂＋H₂なので、Mgは水素と同じ0.10 molです。その質量は約2.4 gで、2.4÷3.0×100＝80％です。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p34.webp",
+      "/questions/eju/2017-round2-science-p25.webp"
+    ],
+    "imageAltTexts": [
+      "理科 化学 問14の公式問題・参照資料（問題PDF 34ページ）",
+      "理科 化学 問14の公式問題・参照資料（問題PDF 25ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=34",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 化学 問14。問題PDF p.34、p.25、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "choiceExplanations": {
+      "ア": "20％は不純物の割合に当たります。水素を発生させたMgの質量は3.0 g中の2.4 gです。",
+      "イ": "水素分子がHを2個含んでも、反応式ではMgとH₂が1:1です。Mgの物質量を半分にしません。",
+      "ウ": "純度50％ならMgは1.5 gで、水素は約0.063 molしか発生しません。",
+      "エ": "Mg＋2HCl→MgCl₂＋H₂なので、Mgは水素と同じ0.10 molです。その質量は約2.4 gで、2.4÷3.0×100＝80％です。",
+      "オ": "純度96％ならMgが2.88 gになり、水素の生成量は約0.12 molとなります。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-chemistry-q15",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-chemistry",
+    "qNumber": 15,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問15",
+    "subject": "理科 化学",
+    "category": "陰イオンの沈殿反応",
+    "topicTags": [
+      "陰イオンの沈殿反応"
+    ],
+    "difficulty": 3,
+    "question": "組み合わせた試薬の陽イオンが難溶性の塩をつくるかを判定します。公式問題の図版を読み、該当する選択肢を選びましょう。",
+    "explanation": "Mg²⁺とSO₄²⁻からできる硫酸マグネシウムは水に溶けます。硫酸イオンの検出にはBa²⁺によるBaSO₄の沈殿が使えます。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p34.webp",
+      "/questions/eju/2017-round2-science-p25.webp"
+    ],
+    "imageAltTexts": [
+      "理科 化学 問15の公式問題・参照資料（問題PDF 34ページ）",
+      "理科 化学 問15の公式問題・参照資料（問題PDF 25ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=34",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 化学 問15。問題PDF p.34、p.25、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "choiceExplanations": {
+      "ア": "Ag⁺とCl⁻が反応すると難溶性のAgClが生じるので、硝酸銀溶液で塩化物イオンを検出できます。",
+      "イ": "Mg²⁺とSO₄²⁻からできる硫酸マグネシウムは水に溶けます。硫酸イオンの検出にはBa²⁺によるBaSO₄の沈殿が使えます。",
+      "ウ": "Ba²⁺とCO₃²⁻から難溶性のBaCO₃が生じるため、この試薬で検出できます。",
+      "エ": "Pb²⁺とCrO₄²⁻は難溶性のPbCrO₄をつくります。硝酸鉛(II)からPb²⁺を供給できます。",
+      "オ": "Fe³⁺とフェロシアン化物イオンは、濃青色の難溶性化合物をつくります。塩化鉄(III)溶液で検出できます。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-chemistry-q16",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-chemistry",
+    "qNumber": 16,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問16",
+    "subject": "理科 化学",
+    "category": "炭化水素の元素分析",
+    "topicTags": [
+      "炭化水素の元素分析"
+    ],
+    "difficulty": 3,
+    "question": "完全燃焼で生じた二酸化炭素の量と試料の質量から、炭素と水素の原子数比を求めます。公式問題の図版を読み、該当する選択肢を選びましょう。",
+    "explanation": "CO₂は88÷44＝2.0 mmolで、Cの質量は24 mgです。残り5 mgのHは5.0 mmolなので原子数比は2:5です。候補ではその比を満たす安定な炭化水素の分子式はC₄H₁₀です。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p35.webp",
+      "/questions/eju/2017-round2-science-p25.webp"
+    ],
+    "imageAltTexts": [
+      "理科 化学 問16の公式問題・参照資料（問題PDF 35ページ）",
+      "理科 化学 問16の公式問題・参照資料（問題PDF 25ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=35",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 化学 問16。問題PDF p.35、p.25、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "choiceExplanations": {
+      "ア": "C₂H₅の2:5は測定と合う原子数比ですが、通常の中性で安定な炭化水素分子の式ではなく、この比の最簡式です。",
+      "イ": "C₂H₆ではC:H＝1:3です。試料のCは2.0 mmol、Hは5.0 mmolなので、比は2:5です。",
+      "ウ": "C₃H₆ではC:H＝1:2です。燃焼の測定から得られる水素は炭素の2.5倍です。",
+      "エ": "C₃H₇のC:H＝3:7は、二酸化炭素88 mg由来のCと残り5.0 mgのHから求める比と一致しません。",
+      "オ": "CO₂は88÷44＝2.0 mmolで、Cの質量は24 mgです。残り5 mgのHは5.0 mmolなので原子数比は2:5です。候補ではその比を満たす安定な炭化水素の分子式はC₄H₁₀です。",
+      "カ": "C₄H₁₂ではC:H＝1:3となり、測定の2:5と一致しません。また炭素4個の通常の炭化水素に付けられる水素の最大数は10です。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-chemistry-q17",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-chemistry",
+    "qNumber": 17,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問17",
+    "subject": "理科 化学",
+    "category": "アルコールの構造異性体と鏡像異性体",
+    "topicTags": [
+      "アルコールの構造異性体と鏡像異性体"
+    ],
+    "difficulty": 3,
+    "question": "金属ナトリウムに反応する官能基を特定し、立体異性体も別々に数えます。公式問題の図版を読み、該当する選択肢を選びましょう。",
+    "explanation": "1-ブタノール、2-ブタノール、2-メチルプロパン-1-オール、2-メチルプロパン-2-オールが該当します。2-ブタノールには二つの鏡像異性体があるので、合計5種類です。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p35.webp",
+      "/questions/eju/2017-round2-science-p25.webp"
+    ],
+    "imageAltTexts": [
+      "理科 化学 問17の公式問題・参照資料（問題PDF 35ページ）",
+      "理科 化学 問17の公式問題・参照資料（問題PDF 25ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=35",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 化学 問17。問題PDF p.35、p.25、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6",
+      "キ": "選択肢7"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "choiceExplanations": {
+      "ア": "OHをもつアルコールには直鎖型に加えて枝分かれした炭素骨格もあります。1種類だけにはなりません。",
+      "イ": "直鎖型だけでも1-ブタノールと2-ブタノールがあり、さらに分岐型のアルコールもあります。",
+      "ウ": "分岐した2-メチルプロパンの骨格では、末端と中央のいずれにもOHを付けられます。直鎖型も加えると構造だけで4種類です。",
+      "エ": "4種類はアルコールの構造異性体だけを数えた値です。2-ブタノールの二つの鏡像異性体を別々に数えます。",
+      "オ": "1-ブタノール、2-ブタノール、2-メチルプロパン-1-オール、2-メチルプロパン-2-オールが該当します。2-ブタノールには二つの鏡像異性体があるので、合計5種類です。",
+      "カ": "追加で数える鏡像異性体があるのは2-ブタノールだけです。他の三つには四つの異なる基がついた炭素がありません。",
+      "キ": "C₄H₁₀Oの異性体にはエーテルもありますが、OHをもたず、この条件で金属Naと水素を発生する対象から外れます。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-chemistry-q18",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-chemistry",
+    "qNumber": 18,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問18",
+    "subject": "理科 化学",
+    "category": "芳香族化合物の識別",
+    "topicTags": [
+      "芳香族化合物の識別"
+    ],
+    "difficulty": 3,
+    "question": "異なる官能基に固有の反応を利用して、二つの芳香族化合物を区別します。公式問題の図版を読み、該当する選択肢を選びましょう。",
+    "explanation": "サリチル酸とアセチルサリチル酸の両方にカルボキシ基があります。どちらも炭酸水素ナトリウムとの反応でCO₂を出すので区別できません。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p36.webp",
+      "/questions/eju/2017-round2-science-p25.webp"
+    ],
+    "imageAltTexts": [
+      "理科 化学 問18の公式問題・参照資料（問題PDF 36ページ）",
+      "理科 化学 問18の公式問題・参照資料（問題PDF 25ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=36",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 化学 問18。問題PDF p.36、p.25、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "choiceExplanations": {
+      "ア": "アニリンはさらし粉水溶液で呈色します。ニトロベンゼンにはこのアミノ基の反応が出ません。",
+      "イ": "フェノールは水酸化ナトリウム水溶液と反応してフェノキシド塩になります。トルエンには酸性のOHがなく、同じ反応をしません。",
+      "ウ": "サリチル酸とアセチルサリチル酸の両方にカルボキシ基があります。どちらも炭酸水素ナトリウムとの反応でCO₂を出すので区別できません。",
+      "エ": "サリチル酸メチルにはフェノール性のOHが残り、FeCl₃で呈色します。安息香酸にはフェノール性のOHがありません。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-chemistry-q19",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-chemistry",
+    "qNumber": 19,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問19",
+    "subject": "理科 化学",
+    "category": "縮合重合と付加重合",
+    "topicTags": [
+      "縮合重合と付加重合"
+    ],
+    "difficulty": 3,
+    "question": "高分子をつくる反応で小分子が脱離するか、単量体の二重結合が開くかを分類します。公式問題の図版を読み、該当する選択肢を選びましょう。",
+    "explanation": "(a)はジカルボン酸とジオールからエステル結合をつくります。(d)はジカルボン酸とジアミンからアミド結合をつくります。両方とも縮合重合です。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p36.webp",
+      "/questions/eju/2017-round2-science-p25.webp"
+    ],
+    "imageAltTexts": [
+      "理科 化学 問19の公式問題・参照資料（問題PDF 36ページ）",
+      "理科 化学 問19の公式問題・参照資料（問題PDF 25ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=36",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 化学 問19。問題PDF p.36、p.25、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "choiceExplanations": {
+      "ア": "(a)のPETはエステル結合をつくる縮合重合で得られます。(b)のポリ酢酸ビニルは単量体の二重結合が開く付加重合です。",
+      "イ": "(a)は縮合重合ですが、(c)のポリメタクリル酸メチルはメタクリル酸メチルの二重結合を使う付加重合で得られます。",
+      "ウ": "(a)はジカルボン酸とジオールからエステル結合をつくります。(d)はジカルボン酸とジアミンからアミド結合をつくります。両方とも縮合重合です。",
+      "エ": "(b)と(c)は、どちらも単量体の二重結合が開いて炭素鎖をつくる付加重合です。",
+      "オ": "(d)のナイロン66は縮合重合ですが、(b)のポリ酢酸ビニルは酢酸ビニルの付加重合で得られます。",
+      "カ": "(d)はアミド結合をつくる縮合重合です。(c)はメタクリル酸メチルの付加重合です。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-chemistry-q20",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-chemistry",
+    "qNumber": 20,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問20",
+    "subject": "理科 化学",
+    "category": "卵白のタンパク質の性質",
+    "topicTags": [
+      "卵白のタンパク質の性質"
+    ],
+    "difficulty": 3,
+    "question": "卵白に含まれるタンパク質の溶解性、変性、呈色反応を判定します。公式問題の図版を読み、該当する選択肢を選びましょう。",
+    "explanation": "ニンヒドリンは遊離アミノ基などと反応し、卵白タンパク質の確認では青紫系の呈色が典型です。タンパク質が黄色になる反応として区別するのはキサントプロテイン反応です。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p37.webp",
+      "/questions/eju/2017-round2-science-p25.webp"
+    ],
+    "imageAltTexts": [
+      "理科 化学 問20の公式問題・参照資料（問題PDF 37ページ）",
+      "理科 化学 問20の公式問題・参照資料（問題PDF 25ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=37",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 化学 問20。問題PDF p.37、p.25、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "choiceExplanations": {
+      "ア": "卵白の主成分であるアルブミンなどは水やうすい食塩水に溶けます。高濃度の塩を加えたときの塩析とは区別します。",
+      "イ": "加熱により立体構造が崩れ、複数のタンパク質が集まって凝固します。",
+      "ウ": "塩酸でpHが大きく下がるとタンパク質の立体構造を支える相互作用が変わり、変性が起こります。",
+      "エ": "アルカリ性でCu²⁺が複数のペプチド結合と錯体をつくり、赤紫色を示します。これはビウレット反応です。",
+      "オ": "ニンヒドリンは遊離アミノ基などと反応し、卵白タンパク質の確認では青紫系の呈色が典型です。タンパク質が黄色になる反応として区別するのはキサントプロテイン反応です。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-biology-q1",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-biology",
+    "qNumber": 1,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問1",
+    "subject": "理科 生物",
+    "category": "DNAとRNAの構成・役割",
+    "topicTags": [
+      "DNAとRNAの構成・役割"
+    ],
+    "difficulty": 3,
+    "question": "DNAとRNAの塩基や糖、タンパク質合成に関わるRNAを区別する問題です。 公式問題画像を読んで答えてください。",
+    "explanation": "tRNAはアミノ酸を結合してリボソームへ運ぶ。アンチコドンでmRNA上のコドンを読み取り、対応するアミノ酸を供給する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p39.webp"
+    ],
+    "imageAltTexts": [
+      "理科 生物 問1の公式問題・参照資料（問題PDF 39ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=39",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 生物 問1。問題PDF p.39、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "choiceExplanations": {
+      "ア": "RNAに通常使われる塩基はA、G、C、Uであり、DNAのチミンに対応するものはウラシルである。",
+      "イ": "DNAの四種類の塩基はA、G、C、Tである。ウラシルは通常RNAで使われる。",
+      "ウ": "RNAの糖はリボース、DNAの糖はデオキシリボースである。",
+      "エ": "転写産物は鋳型鎖と相補的になる。対応する塩基を並べるので、鋳型鎖と同じ配列にはならない。",
+      "オ": "tRNAはアミノ酸を結合してリボソームへ運ぶ。アンチコドンでmRNA上のコドンを読み取り、対応するアミノ酸を供給する。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-biology-q2",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-biology",
+    "qNumber": 2,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問2",
+    "subject": "理科 生物",
+    "category": "カタラーゼと無機触媒",
+    "topicTags": [
+      "カタラーゼと無機触媒"
+    ],
+    "difficulty": 3,
+    "question": "試験管の組合せから過酸化水素が分解される条件と、発生する気体を選ぶ問題です。 公式問題画像を読んで答えてください。",
+    "explanation": "Aの生肝臓にはカタラーゼがあり、EとGの酸化マンガンも触媒として働く。過酸化水素が水と酸素に分解されるため、三つの試験管で酸素の気泡が出る。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p40.webp"
+    ],
+    "imageAltTexts": [
+      "理科 生物 問2の公式問題・参照資料（問題PDF 40ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=40",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 生物 問2。問題PDF p.40、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6",
+      "キ": "選択肢7",
+      "ク": "選択肢8"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "choiceExplanations": {
+      "ア": "酸素は合うが、BとFには過酸化水素がなく、加熱した酸化マンガンが入るGを見落としている。",
+      "イ": "BとFには基質の過酸化水素がない。気泡の成分も水素ではなく酸素である。",
+      "ウ": "B、D、F、Hに入っている液体は蒸留水で、触媒によって分解される過酸化水素がない。",
+      "エ": "選んだ試験管には過酸化水素がない。その分解で発生する気体も水素ではない。",
+      "オ": "Aの生肝臓にはカタラーゼがあり、EとGの酸化マンガンも触媒として働く。過酸化水素が水と酸素に分解されるため、三つの試験管で酸素の気泡が出る。",
+      "カ": "気泡が見られる試験管は合う。過酸化水素が分解して出るのは酸素であり、水素ではない。",
+      "キ": "Cの肝臓を煮沸するとカタラーゼが失活する。生の肝臓を用いたAなら酵素が働く。",
+      "ク": "Cは煮沸した肝臓なので除く。A、E、Gで発生する気体は酸素である。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-biology-q3",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-biology",
+    "qNumber": 3,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問3",
+    "subject": "理科 生物",
+    "category": "体細胞分裂の顕微鏡観察",
+    "topicTags": [
+      "体細胞分裂の顕微鏡観察"
+    ],
+    "difficulty": 3,
+    "question": "タマネギの根端の写真から、分裂前期・中期・後期の細胞を見分ける問題です。 公式問題画像を読んで答えてください。",
+    "explanation": "Cでは染色体が凝縮中で、Dではそれが中央に並ぶ。Aでは染色体が両極へ移動しており、順に前期、中期、後期となる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p41.webp"
+    ],
+    "imageAltTexts": [
+      "理科 生物 問3の公式問題・参照資料（問題PDF 41ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=41",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 生物 問3。問題PDF p.41、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6",
+      "キ": "選択肢7",
+      "ク": "選択肢8"
+    },
+    "answer": "カ",
+    "officialAnswerNumber": "6",
+    "choiceExplanations": {
+      "ア": "Aでは染色体の集団が両側へ離れ始めている。Cでは赤道面にそろわず凝縮しており、Dでは中央に整列している。",
+      "イ": "中期のDは合う。Aは染色体が分かれる後期で、Bは二つの核ができつつある終期に当たる。",
+      "ウ": "Bは既に両側で新しい核が形成されつつある。Aは中期を過ぎ、Cは染色体がまだ凝縮している前期である。",
+      "エ": "Dは中期で合う。前期は新しい核ができるBではなくC、後期は凝縮直後のCではなくAである。",
+      "オ": "Cを前期とするのは合うが、Aでは染色体が離れ、Dでは中央に並ぶ。中期と後期が逆である。",
+      "カ": "Cでは染色体が凝縮中で、Dではそれが中央に並ぶ。Aでは染色体が両極へ移動しており、順に前期、中期、後期となる。",
+      "キ": "Dは赤道面に並ぶ中期、Aは染色体が分かれる後期である。Bでは二つの核ができる終期が進んでいる。",
+      "ク": "後期のAは合う。Dは凝縮だけの段階ではなく、中期で染色体が中央に並んでいる。Cは前期である。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-biology-q4",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-biology",
+    "qNumber": 4,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問4",
+    "subject": "理科 生物",
+    "category": "DNAの半保存的複製",
+    "topicTags": [
+      "DNAの半保存的複製"
+    ],
+    "difficulty": 3,
+    "question": "窒素同位体によるDNAの密度の違いから、分裂後に現れる二本鎖の種類を判定する問題です。 公式問題画像を読んで答えてください。",
+    "explanation": "一回目は重い旧鎖と軽い新生鎖からなるzだけができる。二回目は重い旧鎖を受け継ぐzと、軽い鎖だけをもつxができる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p42.webp",
+      "/questions/eju/2017-round2-science-p43.webp"
+    ],
+    "imageAltTexts": [
+      "理科 生物 問4の公式問題・参照資料（問題PDF 42ページ）",
+      "理科 生物 問4の公式問題・参照資料（問題PDF 43ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=42",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 生物 問4。問題PDF p.42、p.43、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "choiceExplanations": {
+      "ア": "一回目の帯は軽いDNAのxの位置ではなく、中間である。二回目にも重い鎖だけのyは残らない。",
+      "イ": "一回目から両鎖が軽いxにはならない。二回目には重い鎖二本をもつyではなく、両鎖が軽いxが現れる。",
+      "ウ": "移した後に新しくできる鎖は軽い。一回目から重いyだけになることはなく、重い鎖がある分子は中間密度のzになる。",
+      "エ": "二回目のxとzは合う。ただし一回目でつくられる各二本鎖には軽い新生鎖が入るので、yではなくzである。",
+      "オ": "一回目は重い旧鎖と軽い新生鎖からなるzだけができる。二回目は重い旧鎖を受け継ぐzと、軽い鎖だけをもつxができる。",
+      "カ": "一回目にzが生じることは合う。二回目の新生鎖にも軽い窒素が入るため、重い鎖が二本そろったyは生じない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-biology-q5",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-biology",
+    "qNumber": 5,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問5",
+    "subject": "理科 生物",
+    "category": "mRNAのスプライシング",
+    "topicTags": [
+      "mRNAのスプライシング"
+    ],
+    "difficulty": 3,
+    "question": "スプライシングが起こる場所と、前駆体から取り除かれる部分を選ぶ問題です。 公式問題画像を読んで答えてください。",
+    "explanation": "核内でmRNA前駆体からイントロンが除かれ、残ったエキソンが連結されて成熟mRNAとなる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p43.webp"
+    ],
+    "imageAltTexts": [
+      "理科 生物 問5の公式問題・参照資料（問題PDF 43ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=43",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 生物 問5。問題PDF p.43、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "choiceExplanations": {
+      "ア": "aの核という場所は合う。切り取られるのは残る側のエキソンではなく、イントロンである。",
+      "イ": "核内でmRNA前駆体からイントロンが除かれ、残ったエキソンが連結されて成熟mRNAとなる。",
+      "ウ": "前駆体の処理は通常核内で行われ、残すエキソンをこの処理で切り取るという説明も誤っている。",
+      "エ": "dは合う。通常の真核細胞のmRNA前駆体のスプライシングは、細胞質へ出る前の核内で行われる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-biology-q6",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-biology",
+    "qNumber": 6,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問6",
+    "subject": "理科 生物",
+    "category": "ラクトース利用遺伝子の発現調節",
+    "topicTags": [
+      "ラクトース利用遺伝子の発現調節"
+    ],
+    "difficulty": 3,
+    "question": "大腸菌のラクトース利用に関する図から、調節タンパク質・結合領域・転写酵素を選ぶ問題です。 公式問題画像を読んで答えてください。",
+    "explanation": "ラクトースの代謝産物がリプレッサーに結合すると、リプレッサーはオペレーターに結合しにくくなり、RNAポリメラーゼによる転写が可能になる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p44.webp"
+    ],
+    "imageAltTexts": [
+      "理科 生物 問6の公式問題・参照資料（問題PDF 44ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=44",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 生物 問6。問題PDF p.44、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6",
+      "キ": "選択肢7",
+      "ク": "選択肢8"
+    },
+    "answer": "カ",
+    "officialAnswerNumber": "6",
+    "choiceExplanations": {
+      "ア": "オペレーターは合うが、そこに結合して転写を抑えるのはリプレッサーである。DNAポリメラーゼはDNAの複製を担う。",
+      "イ": "オペレーターとRNAポリメラーゼは合う。代謝産物が結合して調節するタンパク質はヒストンではなくリプレッサーである。",
+      "ウ": "リプレッサーが結合するのはオペレーターで、転写に使う酵素はRNAポリメラーゼである。",
+      "エ": "RNAポリメラーゼがプロモーターに結合する。空欄bは調節タンパク質の結合先なので、オペレーターになる。",
+      "オ": "リプレッサーとオペレーターは合う。DNAポリメラーゼはDNAを合成する酵素で、RNAを転写する酵素ではない。",
+      "カ": "ラクトースの代謝産物がリプレッサーに結合すると、リプレッサーはオペレーターに結合しにくくなり、RNAポリメラーゼによる転写が可能になる。",
+      "キ": "調節タンパク質は合うが、その結合先はオペレーターであり、阻害が解除されるのはRNAポリメラーゼによる転写である。",
+      "ク": "リプレッサーとRNAポリメラーゼは合う。bは前者の結合先を聞いており、後者が結合するプロモーターとは異なる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-biology-q7",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-biology",
+    "qNumber": 7,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問7",
+    "subject": "理科 生物",
+    "category": "減数分裂の核相",
+    "topicTags": [
+      "減数分裂の核相"
+    ],
+    "difficulty": 3,
+    "question": "相同染色体と姉妹染色分体の分離を区別し、各時期の核相を決める問題です。 公式問題画像を読んで答えてください。",
+    "explanation": "母細胞と第一分裂前期は2nである。第一分裂で相同染色体を分けるとnになり、第二分裂後も娘細胞の核相はnのままである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p45.webp"
+    ],
+    "imageAltTexts": [
+      "理科 生物 問7の公式問題・参照資料（問題PDF 45ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=45",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 生物 問7。問題PDF p.45、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "choiceExplanations": {
+      "ア": "相同染色体は第一分裂ですでに別の細胞へ分かれるので、第二分裂前期はnである。",
+      "イ": "母細胞と第一分裂前期は2nである。第一分裂で相同染色体を分けるとnになり、第二分裂後も娘細胞の核相はnのままである。",
+      "ウ": "第一分裂前期では相同染色体が対合するが、まだ同じ細胞に両方あるため核相は2nである。",
+      "エ": "設問の母細胞は各相同染色体を一対ずつもつ2nである。第一分裂後に核相は2nからnへ下がる。",
+      "オ": "第一分裂後に相同染色体を別々に分けるので、第二分裂前期にnから2nへ増えることはない。",
+      "カ": "娘細胞はnである。また、相同染色体がそろう分裂前の母細胞は2nである。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-biology-q8",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-biology",
+    "qNumber": 8,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問8",
+    "subject": "理科 生物",
+    "category": "連鎖と染色体の乗換え",
+    "topicTags": [
+      "連鎖と染色体の乗換え"
+    ],
+    "difficulty": 3,
+    "question": "配偶子形成で遺伝子の組合せが変わるしくみについて、誤った説明を選ぶ問題です。 公式問題画像を読んで答えてください。",
+    "explanation": "乗換えは相同染色体が対合する第一分裂前期に、非姉妹染色分体の間で起こる。第二分裂中期ではない。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p45.webp"
+    ],
+    "imageAltTexts": [
+      "理科 生物 問8の公式問題・参照資料（問題PDF 45ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=45",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 生物 問8。問題PDF p.45、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "choiceExplanations": {
+      "ア": "同じ染色体上の遺伝子は一緒に伝わりやすく、連鎖していると表現する。",
+      "イ": "連鎖しない遺伝子の対立遺伝子は、ある遺伝子の分配が別の遺伝子の分配を決めない。",
+      "ウ": "乗換えは相同染色体が対合する第一分裂前期に、非姉妹染色分体の間で起こる。第二分裂中期ではない。",
+      "エ": "乗換えによって同じ染色体上に新しい対立遺伝子の組合せができ、その組合せを持つ配偶子が生じる。",
+      "オ": "相同染色体の各対が独立に分かれることなどにより、親由来の染色体が異なる組合せで配偶子に入る。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-biology-q9",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-biology",
+    "qNumber": 9,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問9",
+    "subject": "理科 生物",
+    "category": "被子植物の配偶子形成",
+    "topicTags": [
+      "被子植物の配偶子形成"
+    ],
+    "difficulty": 3,
+    "question": "花粉と胚のうができる過程を区別し、誤った記述を選ぶ問題です。 公式問題画像を読んで答えてください。",
+    "explanation": "減数分裂で残る一つは機能する胚のう細胞であり、それ自体が卵細胞ではない。その後の核分裂と分化によって卵細胞が形成される。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p46.webp"
+    ],
+    "imageAltTexts": [
+      "理科 生物 問9の公式問題・参照資料（問題PDF 46ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=46",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 生物 問9。問題PDF p.46、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "choiceExplanations": {
+      "ア": "花粉母細胞が減数分裂すると、四つの半数体の細胞からなる花粉四分子が生じる。",
+      "イ": "減数分裂で残る一つは機能する胚のう細胞であり、それ自体が卵細胞ではない。その後の核分裂と分化によって卵細胞が形成される。",
+      "ウ": "花粉管細胞と雄原細胞の核は、一つの小胞子の核が体細胞分裂して生じるので、基本的に等しいゲノムをもつ。",
+      "エ": "同じ胚のうの各核と極核は、残った一つの半数体核から体細胞分裂で生じるため、各核のゲノムは等しい。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-biology-q10",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-biology",
+    "qNumber": 10,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問10",
+    "subject": "理科 生物",
+    "category": "血液凝固と血清",
+    "topicTags": [
+      "血液凝固と血清"
+    ],
+    "difficulty": 3,
+    "question": "血液が凝固した後にできる固まり、繊維状の成分、上澄みの正しい組合せを選ぶ問題です。 公式問題画像を読んで答えてください。",
+    "explanation": "フィブリンの網が血球などを捕らえると血ぺいができる。凝固に使われる成分が除かれた上澄みが血清である。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p46.webp"
+    ],
+    "imageAltTexts": [
+      "理科 生物 問10の公式問題・参照資料（問題PDF 46ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=46",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 生物 問10。問題PDF p.46、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6",
+      "キ": "選択肢7",
+      "ク": "選択肢8"
+    },
+    "answer": "ク",
+    "officialAnswerNumber": "8",
+    "choiceExplanations": {
+      "ア": "固まり全体は血小板ではなく血ぺいである。繊維はフィブリンで、凝固後の上澄みは血清である。",
+      "イ": "cは合う。血小板は凝固に関与する成分であり、フィブリンと血球からなる固まり全体は血ぺいとなる。",
+      "ウ": "繊維をフィブリンとする点は合う。固まりは血ぺい、凝固した後に残る上澄みは血清である。",
+      "エ": "フィブリンと血清は合う。凝固でできる固まり全体の名称は血小板ではなく血ぺいである。",
+      "オ": "血ぺいは合うが、血球を捕らえる繊維はグロブリンではなくフィブリンであり、上澄みは血清である。",
+      "カ": "aとcは合う。フィブリノーゲンから生じて網をつくる繊維状タンパク質はフィブリンである。",
+      "キ": "血ぺいとフィブリンは合う。凝固後に残る上澄みは血しょうではなく血清である。",
+      "ク": "フィブリンの網が血球などを捕らえると血ぺいができる。凝固に使われる成分が除かれた上澄みが血清である。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-biology-q11",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-biology",
+    "qNumber": 11,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問11",
+    "subject": "理科 生物",
+    "category": "副腎の皮質・髄質と血糖量",
+    "topicTags": [
+      "副腎の皮質・髄質と血糖量"
+    ],
+    "difficulty": 3,
+    "question": "副腎の二つの部位が血糖量を上げるしくみと、そのホルモンを選ぶ問題です。 公式問題画像を読んで答えてください。",
+    "explanation": "副腎皮質の糖質コルチコイドはアミノ酸などを材料とする糖新生を促す。副腎髄質のアドレナリンはグリコーゲンの分解を促す。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p47.webp"
+    ],
+    "imageAltTexts": [
+      "理科 生物 問11の公式問題・参照資料（問題PDF 47ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=47",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 生物 問11。問題PDF p.47、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "choiceExplanations": {
+      "ア": "Bのアドレナリンは合う。グルカゴンはすい島から分泌されるので、副腎皮質のAには当たらない。",
+      "イ": "Aのグルカゴンはすい臓のホルモンである。Bの副腎髄質から分泌されるのは糖質コルチコイドではない。",
+      "ウ": "アドレナリンの分泌部位はAの皮質ではなくBの髄質で、グルカゴンはすい島から出る。",
+      "エ": "副腎皮質のAから糖質コルチコイド、副腎髄質のBからアドレナリンが分泌されるので、この肢は逆である。",
+      "オ": "副腎皮質の糖質コルチコイドはアミノ酸などを材料とする糖新生を促す。副腎髄質のアドレナリンはグリコーゲンの分解を促す。",
+      "カ": "Aは合う。グルカゴンも血糖を上げるが、すい島から分泌されるため副腎髄質のBとは異なる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-biology-q12",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-biology",
+    "qNumber": 12,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問12",
+    "subject": "理科 生物",
+    "category": "B細胞とT細胞の免疫記憶",
+    "topicTags": [
+      "B細胞とT細胞の免疫記憶"
+    ],
+    "difficulty": 3,
+    "question": "B細胞とT細胞の両方に当てはまる性質を選ぶ問題です。 公式問題画像を読んで答えてください。",
+    "explanation": "活性化したB細胞とT細胞では、どちらも一部が記憶細胞として残る。再び同じ抗原に出会うと速やかな免疫応答につながる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p47.webp"
+    ],
+    "imageAltTexts": [
+      "理科 生物 問12の公式問題・参照資料（問題PDF 47ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=47",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 生物 問12。問題PDF p.47、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "choiceExplanations": {
+      "ア": "活性化したB細胞とT細胞では、どちらも一部が記憶細胞として残る。再び同じ抗原に出会うと速やかな免疫応答につながる。",
+      "イ": "形質細胞に分化して抗体をつくるのはB細胞であり、T細胞は抗体を産生しない。",
+      "ウ": "胸腺で成熟するのはT細胞である。B細胞は骨髄で成熟する。",
+      "エ": "樹状細胞の抗原提示で活性化される代表例はT細胞である。B細胞は自らの受容体で抗原を認識するため、両者共通の説明ではない。",
+      "オ": "HIVの主な標的にはCD4陽性のヘルパーT細胞が含まれる。この性質はB細胞とT細胞の両方に共通しない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-biology-q13",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-biology",
+    "qNumber": 13,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問13",
+    "subject": "理科 生物",
+    "category": "暗順応の二段階",
+    "topicTags": [
+      "暗順応の二段階"
+    ],
+    "difficulty": 3,
+    "question": "暗順応の曲線から、時間帯ごとに主に働く視細胞を判定する問題です。 公式問題画像を読んで答えてください。",
+    "explanation": "初めに錐体が速く順応し、その後は桿体がより弱い光を感知する。最小限の光の強さがさらに下がる後半Bに桿体が対応する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p48.webp"
+    ],
+    "imageAltTexts": [
+      "理科 生物 問13の公式問題・参照資料（問題PDF 48ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=48",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 生物 問13。問題PDF p.48、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "choiceExplanations": {
+      "ア": "暗所に入ってすぐ適応するAは錐体である。時間がたってから弱い光をとらえるBが桿体である。",
+      "イ": "Aには速く順応する錐体が対応する。グリア細胞は支えとなる細胞で、視細胞としてBの光を受け取らない。",
+      "ウ": "初めに錐体が速く順応し、その後は桿体がより弱い光を感知する。最小限の光の強さがさらに下がる後半Bに桿体が対応する。",
+      "エ": "Aの錐体は合うが、Bで弱い光を受け取れるのはグリア細胞ではなく桿体である。",
+      "オ": "Bの桿体は合うものの、暗所に入った直後に光を受け取るAはグリア細胞ではなく錐体である。",
+      "カ": "グリア細胞は光を受容する視細胞ではない。Bで働くのは、錐体より暗い光を感知できる桿体である。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-biology-q14",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-biology",
+    "qNumber": 14,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問14",
+    "subject": "理科 生物",
+    "category": "オオムギの発芽と養分利用",
+    "topicTags": [
+      "オオムギの発芽と養分利用"
+    ],
+    "difficulty": 3,
+    "question": "種子の断面図から、胚・糊粉層・胚乳の間を移動する物質を選ぶ問題です。 公式問題画像を読んで答えてください。",
+    "explanation": "吸水後、胚から糊粉層へジベレリンが移る。糊粉層のアミラーゼが胚乳のデンプンを分解し、できた糖が胚へ送られる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p49.webp"
+    ],
+    "imageAltTexts": [
+      "理科 生物 問14の公式問題・参照資料（問題PDF 49ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=49",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 生物 問14。問題PDF p.49、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "choiceExplanations": {
+      "ア": "吸水後、胚から糊粉層へジベレリンが移る。糊粉層のアミラーゼが胚乳のデンプンを分解し、できた糖が胚へ送られる。",
+      "イ": "Aは合う。デンプンを分解するBはアミラーゼで、分解後に胚へ移るCが糖である。",
+      "ウ": "Aは糊粉層に働きかけるジベレリンである。糖はデンプン分解後に得られ、先に働くBは酵素となる。",
+      "エ": "Cの糖は合う。胚からのAがジベレリンで、デンプンの分解に働くBがアミラーゼである。",
+      "オ": "Bは合うが、Aは糊粉層に作用するジベレリンであり、分解産物として胚へ行くCが糖である。",
+      "カ": "A、B、Cの位置が異なる。Aのジベレリンを合図にBのアミラーゼが働き、その作用でCの糖が得られる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-biology-q15",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-biology",
+    "qNumber": 15,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問15",
+    "subject": "理科 生物",
+    "category": "青色光と気孔の開口",
+    "topicTags": [
+      "青色光と気孔の開口"
+    ],
+    "difficulty": 3,
+    "question": "孔辺細胞の受光・吸水・変形の順序から、気孔が開く条件を選ぶ問題です。 公式問題画像を読んで答えてください。",
+    "explanation": "青色光を受けると、孔辺細胞にイオンなどが蓄積して浸透圧が上がる。水が流入して膨圧も上がり、細胞が湾曲して気孔が開く。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p50.webp"
+    ],
+    "imageAltTexts": [
+      "理科 生物 問15の公式問題・参照資料（問題PDF 50ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=50",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 生物 問15。問題PDF p.50、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6",
+      "キ": "選択肢7",
+      "ク": "選択肢8"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "choiceExplanations": {
+      "ア": "青色光を受けると、孔辺細胞にイオンなどが蓄積して浸透圧が上がる。水が流入して膨圧も上がり、細胞が湾曲して気孔が開く。",
+      "イ": "青色光と浸透圧の上昇は合う。水が入れば細胞内部からの圧力、すなわち膨圧は高くなる。",
+      "ウ": "膨圧の上昇は合う。吸水に先立って孔辺細胞内の溶質濃度が上がるので、浸透圧は低下しない。",
+      "エ": "浸透圧が上がることが吸水を促し、吸水した結果として膨圧が上がる。両方とも低下ではない。",
+      "オ": "吸水前後の圧力変化は合う。この設問で光受容体が直接受け取る光は赤色光ではなく青色光である。",
+      "カ": "設問の光受容体は青色光に応答する。さらに、吸水した孔辺細胞の膨圧は低下ではなく上昇する。",
+      "キ": "青色光による開口を尋ねている。吸水を引き起こすため、孔辺細胞内の浸透圧は低下せず上昇する。",
+      "ク": "光は青色であり、溶質が蓄積して浸透圧が上がり、水が入って膨圧も上がる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-biology-q16",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-biology",
+    "qNumber": 16,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問16",
+    "subject": "理科 生物",
+    "category": "栄養段階ごとの有機物収支",
+    "topicTags": [
+      "栄養段階ごとの有機物収支"
+    ],
+    "difficulty": 3,
+    "question": "生産者と消費者の収支を比べ、図の有機物の行き先を特定する問題です。 公式問題画像を読んで答えてください。",
+    "explanation": "生産者の純生産量の外側がBなので、Bが呼吸量である。Cは消費者だけにあり不消化排出量、Aは生産者・消費者に共通する枯死量・死亡量である。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p51.webp"
+    ],
+    "imageAltTexts": [
+      "理科 生物 問16の公式問題・参照資料（問題PDF 51ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=51",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 生物 問16。問題PDF p.51、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "choiceExplanations": {
+      "ア": "Cは消費者だけの不消化排出量で合うが、純生産量の外側にあるのはBなので、呼吸量はAではなくBである。",
+      "イ": "生産者の棒にもBがある。自ら作った有機物の収支に、摂食による不消化排出量を入れることはできない。",
+      "ウ": "生産者の純生産量の外側がBなので、Bが呼吸量である。Cは消費者だけにあり不消化排出量、Aは生産者・消費者に共通する枯死量・死亡量である。",
+      "エ": "Aは合うが、Bは生産者にもある呼吸量であり、Cは消費者に特有の不消化排出量である。",
+      "オ": "Bは合う。生産者にもあるAは不消化排出量ではなく枯死量・死亡量に当たる。",
+      "カ": "消費者だけにあるCが不消化排出量なので、呼吸量をCに置くと生産者の呼吸を説明できない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-biology-q17",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-biology",
+    "qNumber": 17,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問17",
+    "subject": "理科 生物",
+    "category": "細胞内共生の根拠",
+    "topicTags": [
+      "細胞内共生の根拠"
+    ],
+    "difficulty": 3,
+    "question": "ミトコンドリアと葉緑体の由来を考える根拠となる特徴を選ぶ問題です。 公式問題画像を読んで答えてください。",
+    "explanation": "葉緑体の二重膜は取り込みを経た由来と整合し、ミトコンドリアが核とは異なる独自のDNAをもつことは、元が別の生物だったことを支持する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p52.webp"
+    ],
+    "imageAltTexts": [
+      "理科 生物 問17の公式問題・参照資料（問題PDF 52ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=52",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 生物 問17。問題PDF p.52、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5",
+      "カ": "選択肢6"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "choiceExplanations": {
+      "ア": "aの二重膜は共生由来を考える根拠になるが、bの小胞体とリボソームの関係はその根拠にならない。",
+      "イ": "葉緑体の二重膜は取り込みを経た由来と整合し、ミトコンドリアが核とは異なる独自のDNAをもつことは、元が別の生物だったことを支持する。",
+      "ウ": "小胞体のリボソームの有無とゴルジ体の構造は、細胞内共生による由来を示す特徴ではない。",
+      "エ": "eの独自のDNAは根拠に当たる。bの小胞体の説明から独立した生物に由来したとは判断できない。",
+      "オ": "ゴルジ体の膜構造や液胞の色素はそれぞれの働きに関係するが、取り込まれた生物に由来する証拠にはならない。",
+      "カ": "eは共生を支持するが、液胞が色素を含むdは独自の遺伝情報や共生由来を示さない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "eju-2017-round2-eju-biology-q18",
+    "exam": "eju",
+    "year": 2017,
+    "season": "round2",
+    "session": "eju-biology",
+    "qNumber": 18,
+    "examDate": "2017-11-12",
+    "officialQuestionLabel": "問18",
+    "subject": "理科 生物",
+    "category": "地質時代と生物の進化",
+    "topicTags": [
+      "地質時代と生物の進化"
+    ],
+    "difficulty": 3,
+    "question": "主要な生物群の出現や繁栄と地質時代を照合し、誤った組合せを選ぶ問題です。 公式問題画像を読んで答えてください。",
+    "explanation": "鳥類は新生代より前の中生代にすでに出現していた。ジュラ紀の始祖鳥がその例である。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/eju/2017-round2-science-p52.webp"
+    ],
+    "imageAltTexts": [
+      "理科 生物 問18の公式問題・参照資料（問題PDF 52ページ）"
+    ],
+    "sourcePdfUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2021/04/19/2017_2question_science.pdf#page=52",
+    "sourceAnswerUrl": "https://www.jasso.go.jp/ryugaku/eju/examinee/pastpaper_sample/__icsFiles/afieldfile/2025/04/24/2017_2answer.pdf#page=2",
+    "sourceAttribution": "出典：日本学生支援機構「2017年度日本留学試験（第2回）」理科 生物 問18。問題PDF p.52、正答PDF p.2。",
+    "license": "JASSO-attributed",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "選択肢1",
+      "イ": "選択肢2",
+      "ウ": "選択肢3",
+      "エ": "選択肢4",
+      "オ": "選択肢5"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "choiceExplanations": {
+      "ア": "酸素を発生する光合成を行うシアノバクテリアは、古生代より前の先カンブリア時代に現れた。",
+      "イ": "中生代には恐竜などのは虫類が広く繁栄した。",
+      "ウ": "陸上植物の化石記録は古生代にさかのぼる。",
+      "エ": "中生代にはソテツ類や針葉樹などの裸子植物が繁栄した。",
+      "オ": "鳥類は新生代より前の中生代にすでに出現していた。ジュラ紀の始祖鳥がその例である。"
+    },
+    "explanationCoverage": "full"
+  }
+]

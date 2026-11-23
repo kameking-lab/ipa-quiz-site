@@ -1,4 +1,8 @@
 "use client";
+
+import { AnswerStudyShare, useAnswerStudyMoment } from "@/components/StudyAchievements";
+import { questionShareTitle } from "@/lib/sharing/links";
+import { questionPagePath } from "@/lib/seo/question-url";
 import { readSettings } from "@/lib/storage/settings";
 import { WeakMark } from "@/components/quiz/WeakMark";
 import { isSelfReviewedDescriptiveQuestion } from "@/lib/questions/descriptive";
@@ -79,6 +83,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
     answerFinalized.current = false;
   }, [index, questionId]);
   const { recordAnswer, recordExplanation, endRef } = useQuestionActivity(question, revealed);
+  const { moment, recordMoment } = useAnswerStudyMoment();
   const nativePermission = useNativeQuestionGrant(question?.id);
   React.useEffect(() => {
     if (!nativePermission.allowed || showSummary || prevReviewingRef.current) return;
@@ -130,24 +135,28 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
     if (!question?.nativeB || question.type !== "native-b" || answerFinalized.current) return;
     answerFinalized.current = true;
     const result = gradeNativeB(question.nativeB, selections);
-    recordAnswer(result.isCorrect);
+    const at = Date.now();
+    recordAnswer(result.isCorrect, at);
+    recordMoment(question.exam, question.id, result.isCorrect, at);
     reportStudyAnswer(question.exam);
     const selection = serializeNativeBSelections(question.nativeB, selections);
     setNativeBResult(result);
     setRevealed(true);
     setAnswers((previous) => [...previous, { questionId: question.id, selected: selection, correct: result.isCorrect, nativeBResult: result }]);
-    if (readSettings().recordHistory) history.record({ id: question.id, selected: selection, correct: result.isCorrect, at: Date.now(), nativeBResult: result });
+    if (readSettings().recordHistory) history.record({ id: question.id, selected: selection, correct: result.isCorrect, at, nativeBResult: result });
     pet.answer(question, { kind: "native-b", selections: Object.fromEntries(Object.entries(selections).filter((pair): pair is [string, string] => typeof pair[1] === "string")) });
     if (result.isCorrect) setCombo((previous) => previous + 1);
     else setCombo(0);
-  }, [question, history, pet, recordAnswer]);
+  }, [question, history, pet, recordAnswer, recordMoment]);
 
   const onSelect = React.useCallback(
     (key: ChoiceKey) => {
       if (!question || answerFinalized.current || question.type === "ordering" || question.type === "numeric") return;
       answerFinalized.current = true;
       const correct = isAcceptedAnswer(question.answer, key);
-      recordAnswer(correct);
+      const at = Date.now();
+      recordAnswer(correct, at);
+      recordMoment(question.exam, question.id, correct, at);
       reportStudyAnswer(question.exam);
       setSelected(key);
       setRevealed(true);
@@ -155,7 +164,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
         ...prev,
         { questionId: question.id, selected: key, correct },
       ]);
-      if (readSettings().recordHistory) history.record({ id: question.id, selected: key, correct, at: Date.now() });
+      if (readSettings().recordHistory) history.record({ id: question.id, selected: key, correct, at });
       pet.answer(question, { kind: "multiple-choice", selected: [key] });
       if (correct) {
         setCombo((c) => {
@@ -170,19 +179,21 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
         setCombo(0);
       }
     },
-    [question, history, pet, recordAnswer],
+    [question, history, pet, recordAnswer, recordMoment],
   );
 
   const onOrderingAnswer = React.useCallback((value: ChoiceKey[]) => {
     if (!question || question.type !== "ordering" || answerFinalized.current) return;
     answerFinalized.current = true;
     const correct = isOrderingAnswerCorrect(question, value);
-    recordAnswer(correct);
+    const at = Date.now();
+    recordAnswer(correct, at);
+    recordMoment(question.exam, question.id, correct, at);
     reportStudyAnswer(question.exam);
     const display = formatOrderingAnswer(question.exam, value);
     setRevealed(true);
     setAnswers((previous) => [...previous, { questionId: question.id, selected: display, correct }]);
-    if (readSettings().recordHistory) history.record({ id: question.id, selected: value.join("→"), correct, at: Date.now() });
+    if (readSettings().recordHistory) history.record({ id: question.id, selected: value.join("→"), correct, at });
     pet.answer(question, { kind: "ordering", selected: [...value] });
     if (correct) {
       setCombo((previous) => {
@@ -194,21 +205,23 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
         return next;
       });
     } else setCombo(0);
-  }, [question, history, pet, recordAnswer]);
+  }, [question, history, pet, recordAnswer, recordMoment]);
 
   const onNumericAnswer = React.useCallback((value: string) => {
     if (!question || question.type !== "numeric" || answerFinalized.current) return;
     answerFinalized.current = true;
     const correct = isNumericAnswerCorrect(question, value);
-    recordAnswer(correct);
+    const at = Date.now();
+    recordAnswer(correct, at);
+    recordMoment(question.exam, question.id, correct, at);
     reportStudyAnswer(question.exam);
     setRevealed(true);
     setAnswers(previous => [...previous, { questionId: question.id, selected: value, correct }]);
-    if (readSettings().recordHistory) history.record({ id: question.id, selected: value, correct, at: Date.now() });
+    if (readSettings().recordHistory) history.record({ id: question.id, selected: value, correct, at });
     pet.answer(question, { kind: "numeric", value });
     if (correct) setCombo(previous => previous + 1);
     else setCombo(0);
-  }, [question, history, pet, recordAnswer]);
+  }, [question, history, pet, recordAnswer, recordMoment]);
 
   React.useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -399,6 +412,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
               <span className="text-muted-foreground">読んだら次の問題へ</span>
             </div>
             <div className="mt-2 text-foreground/85"><QuestionBody text={question.explanation || "解説は準備中です。"} /></div>
+            <AnswerStudyShare moment={moment} id={question.id} path={questionPagePath(question)} title={questionShareTitle(question.question)} />
             <span ref={endRef} aria-hidden="true" className="block h-px" />
           </div>
         )}

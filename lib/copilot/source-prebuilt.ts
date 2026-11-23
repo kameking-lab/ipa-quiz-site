@@ -18,7 +18,7 @@ import { gunzip, gunzipSync, gzipSync } from "node:zlib";
 import { openQuestionCorpus } from "@/lib/questions/corpus-files";
 import type { ExamCode, Question } from "@/lib/questions/types";
 import { buildQuestionDoc } from "./corpus-docs";
-import { deserializeIndexAsync, serializeIndex } from "./index-artifact";
+import { decodeIndexAsync, serializeIndex } from "./index-artifact";
 import type { InvertedIndex } from "./retriever";
 import type { CopilotSource } from "./source";
 import type { CorpusDoc } from "./types";
@@ -26,7 +26,7 @@ import type { CorpusDoc } from "./types";
 export const COPILOT_PREBUILT_DIR = "generated/copilot";
 const FORMAT_VERSION = 2;
 const DOC_BATCH = 4096;
-const unzipDocs = promisify(gunzip);
+const unzip = promisify(gunzip);
 type QuestionIdsByExam = Partial<Record<ExamCode, string[]>>;
 
 interface Manifest {
@@ -130,27 +130,48 @@ export function openPrebuiltCopilotSource(rootDir: string = process.cwd()): Copi
     return question;
   };
 
-  const loadIndex = async (): Promise<InvertedIndex> => {
-    const started = Date.now();
-    const [docsJson, indexBytes] = await Promise.all([
-      readFile(join(dir, "docs.json.gz")).then(unzipDocs),
-      readFile(join(dir, "index.bin")),
-    ]);
-    const stored = JSON.parse(docsJson.toString("utf8")) as StoredDoc[];
+  const loadDocs = async () => {
+    const file = await readCompressedFile(join(dir, "docs.json.gz"));
+    const started = performance.now();
+    const stored = JSON.parse(file.data.toString("utf8")) as StoredDoc[];
     if (stored.length !== manifest.docCount) throw new Error("copilot prebuilt docs count mismatch");
-    const docs: CorpusDoc[] = new Array(stored.length);
+    // Reuse the parsed metadata and share one lazy text getter across the corpus.
+    const text = lazyTextDescriptor(getQuestion);
     for (let i = 0; i < stored.length; i++) {
-      docs[i] = toCorpusDoc(stored[i], getQuestion);
+      const doc = stored[i];
+      if (doc.text === undefined) Object.defineProperty(doc, "text", text);
       if (i % DOC_BATCH === DOC_BATCH - 1) await yieldToEventLoop();
     }
+    return {
+      docs: stored as CorpusDoc[],
+      readMs: file.readMs,
+      inflateMs: file.inflateMs,
+      materializeMs: performance.now() - started,
+    };
+  };
+
+  const loadIndex = async (): Promise<InvertedIndex> => {
+    const started = performance.now();
+    // Restore document metadata while the independent index file reads and inflates.
+    const [metadata, indexFile] = await Promise.all([
+      loadDocs(),
+      readCompressedFile(join(dir, "index.bin")),
+    ]);
+    const { docs } = metadata;
     // 索引と文書は同じビルドで書かれている。指紋は両ファイルの突き合わせに使う
     // （全文から計算し直すと全試験の問題を読むことになるため）。
-    const restored = await deserializeIndexAsync(indexBytes, docs, {
+    const decodeStarted = performance.now();
+    const restored = await decodeIndexAsync(indexFile.data, docs, {
       fingerprint: manifest.fingerprint,
       verifyTokenization: false,
     });
     if (!restored) throw new Error("copilot prebuilt index does not match its manifest");
-    console.info("[copilot] prebuilt index loaded", { ms: Date.now() - started, docs: docs.length });
+    const done = performance.now();
+    console.info("[copilot] prebuilt index loaded", {
+      ms: done - started, docs: docs.length,
+      docsReadMs: metadata.readMs, docsInflateMs: metadata.inflateMs, docsMaterializeMs: metadata.materializeMs,
+      indexReadMs: indexFile.readMs, indexInflateMs: indexFile.inflateMs, indexDecodeMs: done - decodeStarted,
+    });
     return restored;
   };
 
@@ -165,27 +186,23 @@ export function openPrebuiltCopilotSource(rootDir: string = process.cwd()): Copi
   };
 }
 
-function toCorpusDoc(stored: StoredDoc, getQuestion: (id: string) => Question | undefined): CorpusDoc {
-  const base = {
-    id: stored.id,
-    kind: stored.kind,
-    title: stored.title,
-    url: stored.url,
-    meta: stored.meta,
-    textLength: stored.textLength,
-  };
-  if (stored.text !== undefined) return { ...base, text: stored.text };
-  // 問題文書の本文は、使われたときに問題から組み立てる（getCorpus と同じ buildQuestionDoc）。
-  const doc = base as CorpusDoc;
-  Object.defineProperty(doc, "text", {
+async function readCompressedFile(path: string) {
+  const started = performance.now();
+  const bytes = await readFile(path);
+  const readAt = performance.now();
+  const data = await unzip(bytes, { chunkSize: 256 * 1024 });
+  return { data, readMs: readAt - started, inflateMs: performance.now() - readAt };
+}
+
+function lazyTextDescriptor(getQuestion: (id: string) => Question | undefined): PropertyDescriptor {
+  return {
     enumerable: true,
     configurable: true,
-    get(): string {
-      const question = getQuestion(stored.id.replace(/^q:/, ""));
+    get(this: CorpusDoc): string {
+      const question = getQuestion(this.id.replace(/^q:/, ""));
       const text = question ? buildQuestionDoc(question).text : "";
-      Object.defineProperty(doc, "text", { value: text, enumerable: true, writable: true, configurable: true });
+      Object.defineProperty(this, "text", { value: text, enumerable: true, writable: true, configurable: true });
       return text;
     },
-  });
-  return doc;
+  };
 }

@@ -2,7 +2,7 @@ import "server-only";
 import { createHmac, timingSafeEqual } from "node:crypto";
 import { z } from "zod";
 import { prisma } from "@/lib/db/prisma";
-import { BillingError } from "@/lib/billing/domain";
+import { BillingError, MEMBERSHIP_CHECK_PENDING } from "@/lib/billing/domain";
 import type { AppStorePurchaseState, Realm } from "@/lib/billing/subscription/domain";
 import { requireMobileReady, mobileConfig } from "./config";
 import { auditDuplicatePurchases } from "@/lib/billing/duplicate-purchase-runtime";
@@ -146,9 +146,25 @@ export async function refreshRevenueCat(appUserId: string, { transport = fetch, 
   }
   throw new BillingError("mobile_verification_unavailable", 503);
 }
-export async function revenueCatAccess(userId: string, fresh = false) {
+export async function revenueCatAccess(userId: string, fresh = false, allowStoredStudyAccess = false) {
   if (!mobileConfig().enabled) return null;
   const a = await ensureRevenueCatAccount(userId);
-  const row = fresh || !a.checkedAt || Date.now() - a.checkedAt.getTime() > 60000 ? await refreshRevenueCat(a.appUserId) : a;
+  const now = Date.now();
+  let row: AccountRow | null = a;
+  const expiredStudyPeriod = allowStoredStudyAccess && a.expiresAt && a.expiresAt.getTime() <= now;
+  if (fresh || !a.checkedAt || now - a.checkedAt.getTime() > 60_000 || expiredStudyPeriod) {
+    try {
+      row = await refreshRevenueCat(a.appUserId);
+    } catch (error) {
+      const temporary = error instanceof TypeError || (error instanceof Error && error.name === "TimeoutError")
+        || (error instanceof BillingError && /^mobile_verification_unavailable_(429|5\d\d)$/.test(error.code));
+      if (fresh || !allowStoredStudyAccess || !temporary) throw error;
+      // A concurrent webhook may already have revoked the old snapshot.
+      row = await ensureRevenueCatAccount(userId);
+      if (row.expiresAt && row.expiresAt.getTime() <= Date.now()) {
+        throw new BillingError(MEMBERSHIP_CHECK_PENDING, 503);
+      }
+    }
+  }
   return row && row.expiresAt && row.expiresAt.getTime() > Date.now() ? row : null;
 }

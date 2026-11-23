@@ -71,6 +71,30 @@ beforeEach(() => {
   captureException.mockClear();
 });
 
+it.each([undefined, "SAFETY"])("keeps a partial free answer out of the response when completion is %s", async finishReason => {
+  const provider: LLMProvider = {
+    name: "gemini",
+    async *streamChat(params) {
+      yield "partial";
+      params.onComplete?.({ finishReason, truncated: false });
+    },
+  };
+  const confirmBeforeDelivery = vi.fn(), onComplete = vi.fn();
+  const body = await readAll(createCopilotResponseStream(baseInput({ provider, confirmBeforeDelivery, onComplete, requireCompleteAnswer: true })));
+  expect(body).not.toContain("partial");
+  expect(body).toContain("[エラー]");
+  expect(confirmBeforeDelivery).not.toHaveBeenCalled();
+  expect(onComplete).toHaveBeenCalledExactlyOnceWith(7, { finishReason, truncated: false }, false);
+});
+
+it.each([true, false])("delivers a completed free answer only after its quota is confirmed (%s)", async confirmed => {
+  const confirmBeforeDelivery = vi.fn(async () => confirmed), onComplete = vi.fn();
+  const body = await readAll(createCopilotResponseStream(baseInput({ confirmBeforeDelivery, onComplete })));
+  expect(body.includes("ABC")).toBe(confirmed);
+  expect(confirmBeforeDelivery).toHaveBeenCalledOnce();
+  expect(onComplete).toHaveBeenCalledExactlyOnceWith(3, undefined, confirmed);
+});
+
 describe("createCopilotResponseStream — 正常系", () => {
   it("チャンクをそのまま結合して流す", async () => {
     const out = await readAll(createCopilotResponseStream(baseInput()));
@@ -116,7 +140,7 @@ describe("createCopilotResponseStream — 正常系", () => {
       ),
     );
     expect(onComplete).toHaveBeenCalledTimes(1);
-    expect(onComplete).toHaveBeenCalledWith(3, undefined); // "ABC" のみ（フッター除外）
+    expect(onComplete).toHaveBeenCalledWith(3, undefined, true); // "ABC" のみ（フッター除外）
   });
 });
 
@@ -142,11 +166,11 @@ describe("createCopilotResponseStream — エラー系", () => {
       ),
     );
     expect(onComplete).toHaveBeenCalledTimes(1);
-    expect(onComplete).toHaveBeenCalledWith(0, undefined); // throw 前に何も出ていない
+    expect(onComplete).toHaveBeenCalledWith(0, undefined, false); // throw 前に何も出ていない
   });
 });
 
-it("出力上限による切断を表示し、実測使用量を計上側に引き渡す", async () => {
+it.each([false, true])("出力上限までの本文を表示して計上する（無料枠の事前確定: %s）", async free => {
   const usage = { finishReason: "MAX_TOKENS", truncated: true, promptTokens: 120, outputTokens: 4, thoughtsTokens: 8 };
   const provider: LLMProvider = {
     name: "gemini",
@@ -156,7 +180,58 @@ it("出力上限による切断を表示し、実測使用量を計上側に引�
     },
   };
   const onComplete = vi.fn();
-  const out = await readAll(createCopilotResponseStream(baseInput({ provider, onComplete })));
-  expect(out).toContain("[応答の途中終了]");
-  expect(onComplete).toHaveBeenCalledExactlyOnceWith(2, usage);
+  const confirm = vi.fn(async () => true);
+  const out = await readAll(createCopilotResponseStream(baseInput({
+    provider, onComplete, confirmBeforeDelivery: free ? confirm : undefined, requireCompleteAnswer: true,
+  })));
+  expect(out).toMatch(/^途中\n\n\[応答の途中終了\].*回答は途中まで/);
+  expect(confirm).toHaveBeenCalledTimes(free ? 1 : 0);
+  expect(onComplete).toHaveBeenCalledExactlyOnceWith(2, usage, true);
+});
+
+it.each([
+  { chunk: "答", buffered: false, answered: true },
+  { chunk: "", buffered: false, answered: false },
+  { chunk: "答", buffered: true, answered: false },
+])("中断前に配信した本文で利用を確定する %o", async ({ chunk, buffered, answered }) => {
+  const waitingForAbort = Promise.withResolvers<void>();
+  const provider: LLMProvider = {
+    name: "gemini",
+    async *streamChat({ signal }) {
+      if (chunk) yield chunk;
+      const abort = new Promise<never>((_, reject) => {
+        signal?.addEventListener("abort", () => reject(signal.reason), { once: true });
+      });
+      waitingForAbort.resolve();
+      await abort;
+    },
+  };
+  const client = new AbortController();
+  const onComplete = vi.fn();
+  const confirm = vi.fn(async () => true);
+  const reader = createCopilotResponseStream(baseInput({
+    provider, clientSignal: client.signal, onComplete, confirmBeforeDelivery: buffered ? confirm : undefined,
+  })).getReader();
+  await waitingForAbort.promise;
+  if (answered) expect(new TextDecoder().decode((await reader.read()).value)).toBe(chunk);
+  client.abort();
+  expect(await reader.read()).toMatchObject({ done: true });
+  expect(confirm).not.toHaveBeenCalled();
+  expect(onComplete).toHaveBeenCalledExactlyOnceWith(chunk.length, undefined, answered);
+});
+
+it("本文の配信後もタイムアウトした回は確定しない", async () => {
+  const provider: LLMProvider = {
+    name: "gemini",
+    async *streamChat({ signal }) {
+      yield "答";
+      await new Promise<never>((_, reject) => {
+        signal?.addEventListener("abort", () => reject(signal.reason), { once: true });
+      });
+    },
+  };
+  const onComplete = vi.fn();
+  const out = await readAll(createCopilotResponseStream(baseInput({ provider, onComplete, timeoutMs: 10 })));
+  expect(out).toMatch(/^答\n\n\[タイムアウト\]/);
+  expect(onComplete).toHaveBeenCalledExactlyOnceWith(1, undefined, false);
 });

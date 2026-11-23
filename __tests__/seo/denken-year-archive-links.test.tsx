@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
 import Denken3Page from "@/app/denken3/page";
 import Denken2Page from "@/app/denken2/page";
@@ -6,13 +6,24 @@ import Denken1Page from "@/app/denken1/page";
 import YearPage, { generateStaticParams, generateMetadata } from "@/app/[exam]/[yearSeason]/page";
 import { getQuestionsByExamStrict, groupByYearSeason } from "@/lib/seo/exam-meta";
 
+const search = vi.hoisted(() => ({ value: new URLSearchParams() }));
+vi.mock("next/navigation", async importOriginal => ({
+  ...await importOriginal<typeof import("next/navigation")>(),
+  useSearchParams: () => search.value,
+}));
+afterEach(() => { search.value = new URLSearchParams(); });
+
 function documentFor(html: string) {
   return new DOMParser().parseFromString(html, "text/html");
 }
 
 describe("dedicated electrical-exam hubs link to existing year archives", () => {
+  it("renders the third-class landing with no request parameters", () => {
+    expect(renderToStaticMarkup(Denken3Page())).toContain("2025年度 下期の科目を選ぶ");
+  });
+
   it.each(["denken3", "denken2", "denken1"] as const)("%s links exactly its practice-ready years, with a return link", async (exam) => {
-    const page = exam === "denken3" ? await Denken3Page({ searchParams: Promise.resolve({}) }) : exam === "denken2" ? Denken2Page() : Denken1Page();
+    const page = exam === "denken3" ? Denken3Page() : exam === "denken2" ? Denken2Page() : Denken1Page();
     const doc = documentFor(renderToStaticMarkup(page));
     const years = groupByYearSeason(getQuestionsByExamStrict(exam));
     const links = [...doc.querySelectorAll(`[aria-labelledby="${exam}-year-archives"] a`)]
@@ -32,8 +43,9 @@ describe("dedicated electrical-exam hubs link to existing year archives", () => 
 
   it.each([
     ["2025", "first"], ["2025", "second"], ["2024", "first"], ["2024", "second"],
-  ] as const)("keeps the selected third-class %s/%s subject quizzes and filter return target", async (year, season) => {
-    const doc = documentFor(renderToStaticMarkup(await Denken3Page({ searchParams: Promise.resolve({ year, season }) })));
+  ] as const)("keeps the selected third-class %s/%s subject quizzes and filter return target", (year, season) => {
+    search.value = new URLSearchParams({ year, season });
+    const doc = documentFor(renderToStaticMarkup(Denken3Page()));
     const quizzes = [...doc.querySelectorAll('a[href^="/quiz?"]')];
     expect(quizzes).toHaveLength(4);
     expect(doc.querySelector(`a[href="/denken3?year=${year}&season=${season}"][aria-current="page"]`)).not.toBeNull();

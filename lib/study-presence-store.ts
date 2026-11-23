@@ -10,6 +10,7 @@ const DAY_MS = 24 * 60 * 60_000;
 // The daily room combines parallel question pools. Keep legacy five-minute exam IDs intact.
 const dailyExamAliases = new Map<string, string>([...Object.entries(EXAM_CODE_ALIASES), ["sokuryoshiho", "survey-assistant"]]);
 let nextCleanupAt = 0;
+const dailyPrefix = (dayStart: number) => "daily-answer:" + new Date(dayStart + 9 * 60 * 60_000).toISOString().slice(0, 10) + ":";
 const answerId = (visitorId: string) => `answer:${createHash("sha256").update(visitorId.toLowerCase()).digest("hex")}`;
 
 export async function readStudyPresence(measuredAt: number) {
@@ -56,7 +57,13 @@ export async function readStudyPresence(measuredAt: number) {
   const today = parseStudyPresenceToday({ count: dailyExams.reduce((sum, row) => sum + row.count, 0),
     activeCount: dailyExams.reduce((sum, row) => sum + row.activeCount, 0), exams: dailyExams });
   if (!snapshot || !today) throw new Error("Invalid presence aggregate");
-  return { snapshot, today, expiresAt };
+  const yesterday = today.count < 5 ? (await prisma.$queryRaw<{ count: bigint }[]>`
+    SELECT COUNT(*) AS count FROM "StudyPresence"
+    WHERE "lastSeenAt" >= (${new Date(midnight - 2 * DAY_MS)}::timestamptz AT TIME ZONE 'UTC')
+      AND "lastSeenAt" < (${todayStart}::timestamptz AT TIME ZONE 'UTC')
+      AND "id" LIKE ${dailyPrefix(midnight - 2 * DAY_MS) + "%"}
+  `)[0] : undefined;
+  return { snapshot, today, expiresAt, yesterdayCount: yesterday ? Number(yesterday.count) : undefined };
 }
 
 export async function recordStudyPresence(visitorId: string, answeredAt: number, exam: string, previousVisitorId?: string): Promise<void> {
@@ -64,14 +71,17 @@ export async function recordStudyPresence(visitorId: string, answeredAt: number,
   if (!canonical) throw new Error("Unknown study qualification");
   const id = answerId(visitorId);
   const previousId = previousVisitorId ? answerId(previousVisitorId) : null;
+  const prefix = dailyPrefix(nextJstMidnight(answeredAt).getTime() - DAY_MS);
   const write = prisma.$executeRaw`INSERT INTO "StudyPresence" ("id", "lastSeenAt", "exam")
-    VALUES (${id}, ${new Date(answeredAt)}::timestamptz AT TIME ZONE 'UTC', ${canonical})
+    VALUES
+      (${id}, ${new Date(answeredAt)}::timestamptz AT TIME ZONE 'UTC', ${canonical}),
+      (${prefix + id}, ${new Date(answeredAt)}::timestamptz AT TIME ZONE 'UTC', ${canonical})
     ON CONFLICT ("id") DO UPDATE
     SET "lastSeenAt" = EXCLUDED."lastSeenAt", "exam" = EXCLUDED."exam"
     WHERE "StudyPresence"."lastSeenAt" < EXCLUDED."lastSeenAt"`;
   const operations = [write];
   if (previousId && previousId !== id) {
-    operations.unshift(prisma.$executeRaw`DELETE FROM "StudyPresence" WHERE "id" = ${previousId}`);
+    operations.unshift(prisma.$executeRaw`DELETE FROM "StudyPresence" WHERE "id" IN (${previousId}, ${prefix + previousId})`);
   }
   const now = Date.now();
   if (now >= nextCleanupAt) {

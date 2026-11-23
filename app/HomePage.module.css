@@ -1,8 +1,5 @@
 .home { padding-top: 0; }
-:global(#main-content):has(.home) { padding-bottom: 0; }
-.shortcuts {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 8px;
-  margin-block: 12px 8px;
+@media (min-width: 960px) {
+  .home:global(.study-column) { max-width: var(--p3-home-width); }
 }
+:global(#main-content):has(.home) { padding-bottom: 0; }

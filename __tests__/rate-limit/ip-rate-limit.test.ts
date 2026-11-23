@@ -41,6 +41,58 @@ function disableKv() {
   vi.stubEnv("KV_REST_API_TOKEN", "");
 }
 
+it("applies the same service limit to scoring when the shared AI policy is active", async () => {
+  enableKv();
+  const { checkIpRateLimit, COPILOT_GLOBAL_LIMITS } = await import("@/lib/rate-limit");
+  const transport = vi.fn<typeof fetch>()
+    .mockResolvedValueOnce(kvResponse([[1, 1, 1, 1]]))
+    .mockResolvedValueOnce(kvResponse([[COPILOT_GLOBAL_LIMITS.hour + 1, 700]]));
+  vi.stubGlobal("fetch", transport);
+  expect(await checkIpRateLimit(req(), "scoring", { requireKv: true, sharedAiGlobal: true })).toMatchObject({ ok: false, reason: "hour" });
+  const keys = JSON.parse(String(transport.mock.calls[1][1]?.body))[0].slice(3, 5);
+  expect(keys).toEqual([expect.stringMatching(/^rl:global:copilot:h:/), expect.stringMatching(/^rl:global:copilot:d:/)]);
+});
+
+it("keeps Copilot free sends in the IP counters until generation is admitted", async () => {
+  enableKv();
+  const { checkAiNormalUse, checkFreeAiServiceUse, normalUseWindows } = await import("@/lib/ai/normal-use-server");
+  const { aiAccessPolicy, aiNormalUsePolicy } = await import("@/lib/ai/access-config");
+  vi.stubEnv("AI_QUOTA_ROLLOUT", "true");
+  const now = Date.now(), policy = aiNormalUsePolicy();
+  const context = { legacy: false, headers: {}, access: { kind: "free", subject: "guest:fixture" } as const, policy: aiAccessPolicy() };
+  const admit = vi.fn().mockResolvedValue({ allowed: true });
+  const transport = vi.fn<typeof fetch>().mockResolvedValueOnce(kvResponse([[1, 1, 1, 1]]));
+  vi.stubGlobal("fetch", transport);
+  expect(await checkAiNormalUse(req(), "copilot", context, {}, policy, { admit }, now)).toEqual({ ok: true });
+  expect(transport).toHaveBeenCalledTimes(1);
+  expect(admit).not.toHaveBeenCalled();
+  const [, init] = transport.mock.calls[0];
+  expect(String(init?.body)).not.toContain("rl:global:copilot:");
+  expect(await checkFreeAiServiceUse(context, { admit }, now)).toEqual({ ok: true });
+  expect(admit).toHaveBeenCalledExactlyOnceWith(
+    normalUseWindows("paid-member", "copilot", policy, now).filter(window => window.key.startsWith("rl:global:")),
+  );
+});
+
+it("uses the same IP and service buckets when the practice cookie changes between free endpoints", async () => {
+  enableKv();
+  const { checkIpRateLimit } = await import("@/lib/rate-limit");
+  const transport = vi.fn<typeof fetch>()
+    .mockResolvedValueOnce(kvResponse([[1, 1, 1, 1]])).mockResolvedValueOnce(kvResponse([[1, 1]]))
+    .mockResolvedValueOnce(kvResponse([[2, 2, 2, 1]])).mockResolvedValueOnce(kvResponse([[2, 2]]));
+  vi.stubGlobal("fetch", transport);
+  const clock = vi.spyOn(Date, "now").mockReturnValue(Date.UTC(2026, 10, 22));
+  try {
+    for (const endpoint of ["copilot", "scoring"]) {
+      const request = new Request(req(), { headers: { "x-forwarded-for": "192.0.2.1", cookie: "practice_guest=" + endpoint } });
+      expect(await checkIpRateLimit(request, endpoint, { requireKv: true, sharedAiGlobal: true })).toEqual({ ok: true });
+    }
+    const commands = transport.mock.calls.map(([, init]) => JSON.parse(String(init?.body))[0]);
+    expect(commands[0].slice(3, 6)).toEqual(commands[2].slice(3, 6));
+    expect(commands[1].slice(3, 5)).toEqual(commands[3].slice(3, 5));
+  } finally { clock.mockRestore(); }
+});
+
 beforeEach(() => {
   vi.resetModules();
   vi.unstubAllEnvs();

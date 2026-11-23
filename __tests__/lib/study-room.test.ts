@@ -5,7 +5,8 @@ vi.mock("@/lib/home/study-room-mascots.generated.json", async importOriginal => 
     exams: Object.fromEntries(Object.keys(original.exams).map(exam => [exam, { src: `/away-${exam}.webp`, label: "ボール遊び" }])), fields: {}, examFields: {},
   }, vacant: "/vacant.webp" } };
 });
-import { HOME_ROOM_VISIBLE_LIMIT, measuredRoom, qualificationMascot, roomMascots, roomStage } from "@/lib/home/study-room";
+import { CAFE_SEAT_LIMIT } from "@/lib/home/study-room-cafe-layout";
+import { measuredRoom, qualificationMascot, roomMascots, roomStage } from "@/lib/home/study-room";
 
 describe("measured study room", () => {
   it("keeps zero and accurately reports illustrations omitted from large aggregates", () => {
@@ -21,7 +22,7 @@ describe("measured study room", () => {
     const today = { count: 145, activeCount: 3, exams: [
       { exam: "civil1", count: 140, activeCount: 1 }, { exam: "civil2", count: 5, activeCount: 2 },
     ] };
-    for (const [room, limit] of [[measuredRoom(today, HOME_ROOM_VISIBLE_LIMIT), 30], [measuredRoom(today), 120]] as const) {
+    for (const [room, limit] of [[measuredRoom(today, CAFE_SEAT_LIMIT), 12], [measuredRoom(today), 120]] as const) {
       expect(room.seats).toHaveLength(limit);
       expect(room.hidden).toBe(145 - limit);
       expect(room.seats.filter(seat => seat.active).map(seat => seat.exam)).toEqual(["civil1", "civil2", "civil2"]);

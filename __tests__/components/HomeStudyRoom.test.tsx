@@ -28,11 +28,11 @@ it("shows one chip per qualification, in descending order, with one dog per lear
   expect(room.querySelector('[data-exam="civil1"][data-studying-now="false"] img')).toBeInTheDocument();
 });
 
-it("caps the picture at 30 dogs and lists at most six qualifications", () => {
+it("caps the picture at 12 dogs and lists at most six qualifications", () => {
   render(<HomeStudyRoom />);
   show(["civil1", "civil2", "fe", "ap", "ip", "sc", "fp2", "fp3"].map(exam => ({ exam, count: 6, activeCount: 1 })));
-  expect(screen.getAllByTestId("home-study-room-seat")).toHaveLength(30);
-  expect(screen.getByText("＋18人")).toBeVisible();
+  expect(screen.getAllByTestId("home-study-room-seat")).toHaveLength(12);
+  expect(screen.getByText("＋36人")).toBeVisible();
   expect(screen.getByText("ほか2資格")).toBeVisible();
   expect(screen.getAllByRole("listitem")).toHaveLength(7);
 });

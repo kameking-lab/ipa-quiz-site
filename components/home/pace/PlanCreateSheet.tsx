@@ -1,6 +1,6 @@
 "use client";
-import { useEffect, useState } from "react";
-import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
+import { useEffect, useState, type ReactNode } from "react";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import type { HomeDirectoryItem } from "@/lib/home/home-directory";
 import type { ExamSchedule, ExamScheduleSession } from "@/lib/study-plan/schedule";
@@ -10,6 +10,7 @@ import { paceAttempts } from "@/lib/study-plan/client";
 import { usePlanCatalog } from "@/lib/study-plan/use-plan-catalog";
 import { PLAN_OFFER } from "@/lib/billing/plan-offer";
 import { japanDate } from "@/lib/home/featured-exams";
+import { PlanCalendarButton } from "./PlanCalendarButton";
 import { QualificationSelect } from "@/components/qualifications/QualificationSelect";
 import styles from "./HomePace.module.css";
 
@@ -22,10 +23,10 @@ const weekdayPresets = [
 ];
 const fieldClass = "mt-1.5 min-h-11 w-full min-w-0 rounded-lg border border-input bg-card px-3";
 
-export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCreated, embedded = false, editing }: {
-  embedded?: boolean; editing?: PacePlan;
-  open: boolean; onOpenChange: (open: boolean) => void; items: readonly HomeDirectoryItem[];
-  initialExam: string; onCreated: (id: string) => void;
+export function PlanCreateSheet({ open, onOpenChange, items, initialExam, initialDate, initialSessionId, onCreated, embedded = false, editing, trigger }: {
+  embedded?: boolean; editing?: PacePlan; trigger?: ReactNode;
+  open: boolean; onOpenChange: (open: boolean) => void; items: readonly Pick<HomeDirectoryItem, "key" | "name">[];
+  initialExam: string; initialDate?: string; initialSessionId?: string; onCreated: (plan: PacePlan) => void;
 }) {
   const [exam, setExam] = useState(initialExam);
   const [sessions, setSessions] = useState<ExamScheduleSession[]>([]);
@@ -71,7 +72,7 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCrea
   }, [open]);
   useEffect(() => {
     if (!open) return;
-    setLoading(!!exam); setError(""); setDate(editing?.exam === exam ? editing.examDate ?? "" : ""); setSessions([]); setSessionId(""); setScheduleFailed(false);
+    setLoading(!!exam); setError(""); setDate(editing?.exam === exam ? editing.examDate ?? "" : exam === initialExam ? initialDate ?? "" : ""); setSessions([]); setSessionId(""); setScheduleFailed(false);
     if (!exam) return;
     const controller = new AbortController();
     void fetch(`/api/exam-schedule/${encodeURIComponent(exam)}`, { signal: controller.signal })
@@ -79,16 +80,26 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCrea
         if (!response.ok) throw new Error("schedule");
         const data = await response.json() as ExamSchedule;
         if (controller.signal.aborted) return;
-        const future = data.sessions.filter(s => s.scheduleStatus === "ondemand" || !s.examDate || (s.examDateEnd ?? s.examDate) >= japanDate(new Date()));
-        setSessions(future); setSessionId(editing?.exam === exam ? editing.sessionId ?? "" : future[0]?.id ?? "");
+        const today = japanDate(new Date());
+        const future = data.sessions.filter(s => s.scheduleStatus === "ondemand" || !s.examDate ||
+          (s.examDateEnd ?? s.examDate) >= today || s.examPhaseWindows?.some(phase => phase.end >= today))
+          .sort((a, b) => (a.examDate ?? "9999").localeCompare(b.examDate ?? "9999"));
+        setSessions(future);
+        const prefilled = exam === initialExam ? initialDate : undefined;
+        const matchingSession = exam === initialExam && initialSessionId ? future.find(s => s.id === initialSessionId)
+          : prefilled ? future.find(s => s.examDate && s.datePrecision !== "month"
+            && (s.examPhaseWindows?.length
+              ? s.examPhaseWindows.some(phase => phase.start <= prefilled && prefilled <= phase.end)
+              : s.examDate <= prefilled && prefilled <= (s.examDateEnd ?? s.examDate))) : future[0];
+        setSessionId(editing?.exam === exam ? editing.sessionId ?? "" : matchingSession?.id ?? "");
       }).catch(() => { if (!controller.signal.aborted) setScheduleFailed(true); })
       .finally(() => { if (!controller.signal.aborted) setLoading(false); });
     return () => controller.abort();
-  }, [exam, open, editing]);
+  }, [exam, open, editing, initialExam, initialDate, initialSessionId]);
   const session = sessions.find(s => s.id === sessionId);
   // A window/month is not an individual's appointment. Always ask for the booked day.
   const manual = !session?.examDate || session.scheduleStatus === "ondemand" ||
-    session.datePrecision === "month" || !!session.examDateEnd && session.examDateEnd !== session.examDate;
+    session.datePrecision === "month" || Boolean(session.examPhaseWindows?.length) || !!session.examDateEnd && session.examDateEnd !== session.examDate;
   const examDate = manual ? date : session?.examDate ?? "";
   const options = rangeOptions(questions ?? [], exam);
   const sameExam = editing?.exam === exam;
@@ -117,11 +128,12 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCrea
       plan.result = editing.result;
     }
     if (!savePacePlan(plan)) { setError("保存できませんでした。端末の保存設定を確認してください。"); return; }
-    onCreated(plan.id);
+    onCreated(plan);
     onOpenChange(false);
   }
   const fields = (
       <div className="mt-4 space-y-3">
+        {editing && <PlanCalendarButton plan={editing} name={items.find(item => item.key === editing.exam)?.name ?? editing.exam} today={today} />}
         <QualificationSelect items={items} value={exam} onChange={setExam} label="受ける資格" emptyLabel="資格を選ぶ" className="text-sm font-medium" fieldClass={fieldClass} />
         {exam && <>
         {loading ? <p role="status" className="text-sm text-muted-foreground">日程を確認中…</p> : <>
@@ -135,7 +147,9 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCrea
               </label>
               {s.id === sessionId && <div className="space-y-2 px-3 pb-3">
                 <dl className="space-y-1 text-xs">
-                  {[["申込開始", s.applicationStart], ["申込締切", s.applicationDeadline], ["試験日", s.examDate], ["合格発表", s.resultDate]].map(([label, value]) => <div key={label} className="flex justify-between gap-3"><dt className="text-muted-foreground">{label}{s.applicationEstimated && label?.startsWith("申込") ? "（予定）" : ""}</dt><dd className="text-right">{value ?? "未発表"}{label === "試験日" && s.examDateEnd && s.examDateEnd !== value ? `〜${s.examDateEnd}` : ""}</dd></div>)}
+                  {[["申込開始", s.applicationStart], ["申込締切", s.applicationDeadline], ...(s.examPhaseWindows?.length ? s.examPhaseWindows.map(phase => [
+                    phase.label, phase.start === phase.end ? phase.start : phase.start + "〜" + phase.end,
+                  ]) : [["試験日", s.examDate]]), ["合格発表", s.resultDate]].map(([label, value]) => <div key={label} className="flex justify-between gap-3"><dt className="text-muted-foreground">{label}{s.applicationEstimated && label?.startsWith("申込") ? "（予定）" : ""}</dt><dd className="text-right">{value ?? "未発表"}{label === "試験日" && s.examDateEnd && s.examDateEnd !== value ? `〜${s.examDateEnd}` : ""}</dd></div>)}
                 </dl>
                 {manual && <label className="block text-sm font-medium">{s.scheduleStatus === "ondemand" ? "予約した日・受けたい日" : "受験日"}<input type="date" min={japanDate(new Date())} value={date} onChange={e => setDate(e.target.value)} className={fieldClass} /></label>}
                 {!manual && <p className="text-sm font-medium">受験日　<time dateTime={examDate}>{examDate}</time>{s.scheduleStatus === "tentative" ? "（予定）" : ""}</p>}
@@ -192,6 +206,7 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCrea
     {fields}
   </section>;
   return <Sheet open={open} onOpenChange={onOpenChange}>
+    {trigger && <SheetTrigger asChild>{trigger}</SheetTrigger>}
     <SheetContent side="bottom" aria-describedby={undefined} className={`${styles.sheet} mx-auto max-h-[min(90dvh,calc(100dvh-var(--safe-top)-1rem))] max-w-[640px] overflow-y-auto px-[18px] pt-3 pb-[max(1.5rem,var(--safe-bottom))] sm:px-6`}>
       <div aria-hidden="true" className="mx-auto mb-3 h-1 w-11 rounded-full bg-border" />
       <SheetHeader className="pr-11"><SheetTitle>{editing ? "学習計画を変更" : "学習計画を作る"}</SheetTitle></SheetHeader>

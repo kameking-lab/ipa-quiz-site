@@ -1,7 +1,12 @@
 import { JOURNEY_EXAM_CODES } from "@/lib/billing/journey-exam-codes";
 import { journeyPage, journeyQualification } from "@/lib/billing/journey-contract";
 
-export const ACTIVITY_EVENTS = ["page_view", "quiz_started", "question_answered", "quiz_completed", "exam_library_answered", "exam_library_ai_query", "ai_query_sent", "practice_limit_viewed", "practice_free_limit_reached", "practice_upgrade_clicked", "essay_viewed", "blog_viewed", "blog_article_scrolled", "feedback_submitted", "contact_form_submitted", "book_click"] as const;
+export const ACTIVITY_EVENTS = [
+  "page_view", "quiz_started", "question_answered", "quiz_completed", "exam_library_answered", "exam_library_ai_query",
+  "ai_query_sent", "ai_quota_viewed", "ai_quota_plan_clicked", "ai_quota_dismissed",
+  "practice_limit_viewed", "practice_free_limit_reached", "practice_upgrade_clicked", "essay_viewed",
+  "blog_viewed", "blog_article_scrolled", "feedback_submitted", "contact_form_submitted", "book_click",
+] as const;
 export type ActivityEventName = typeof ACTIVITY_EVENTS[number];
 export const ACTIVITY_PAGES = ["home", "quiz", "question", "exam_library", "qualification", "pricing", "signin", "billing", "billing_success", "billing_cancel", "blog", "essay", "other"] as const;
 export type ActivityPage = typeof ACTIVITY_PAGES[number];

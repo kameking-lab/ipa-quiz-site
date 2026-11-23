@@ -10,6 +10,7 @@ import { readLastQuestion } from "@/lib/storage/last-question";
 import { listExamLearningSummaries } from "@/lib/exam-library-session";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
 import { QualificationSelect } from "@/components/qualifications/QualificationSelect";
+import { StudyRoomYesterday } from "@/components/home/StudyRoomYesterday";
 import { StudyRoomAttendance } from "./StudyRoomAttendance";
 import { CafeMascotImage, StudyRoomCafeScene } from "./StudyRoomCafeScene";
 import { StudyRoomSeat, type StudyRoomSeatDetail } from "./StudyRoomSeat";
@@ -79,6 +80,7 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
       <StudyRoomAttendance attendance={attendance} current={current} className="[&>strong]:text-foreground" />
       {hidden > 0 && <span className="ml-auto font-semibold text-foreground">＋{hidden.toLocaleString("ja-JP")}人</span>}
     </div>}
+    <StudyRoomYesterday snapshot={snapshot} current={current} />
     <StudyRoomCafeScene day={day} occupants={occupants} sceneRef={sceneRef} renderSeat={renderSeat}
       emptyMessage={count === 0 ? emptyMessage : undefined} />
     <div aria-live="polite" className="empty:sr-only">

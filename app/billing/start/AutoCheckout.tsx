@@ -2,6 +2,7 @@
 import { useRef, useState, type FormEvent } from "react";
 import Link from "next/link";
 import { planStartHref, saveQuizReturn, studyCheckoutHeading } from "@/lib/billing/quiz-return";
+import { trackDailyFunnel } from "@/lib/analytics/daily-funnel-client";
 import { posthogCapture } from "@/lib/posthog";
 import { flushJourney, observeJourney } from "@/lib/billing/journey-client";
 import { PURCHASE_MESSAGES, purchaseNeedsSignIn } from "@/lib/billing/purchase-messages";
@@ -65,6 +66,7 @@ export function AutoCheckout({ terms, returnTo, fallback, today, firstExamDate =
         navigating = true;
         return;
       }
+      if (!testMode) await trackDailyFunnel("checkout_started");
       posthogCapture("checkout_started", { plan: "monthly", test_mode: testMode, source: "plan_button" });
       observeJourney({ stage: "checkout" });
       flushJourney();
