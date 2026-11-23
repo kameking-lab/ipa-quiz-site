@@ -33,8 +33,8 @@
 
 .p3-weather[data-home-weather="rain"] {
   --weather-wash: #6d80963a;
-  --weather-cloud-light: #929ba7ed;
-  --weather-cloud-base: #727d8add;
+  --weather-cloud-light: #a2aab4ed;
+  --weather-cloud-base: #8a95a3dd;
 }
 
 :is(.dark, [data-home-scene="night"]) .p3-weather[data-home-weather="rain"] {
@@ -57,6 +57,10 @@
 .p3-weather-cloud-left { top: 22%; left: 3%; transform: scale(.85); opacity: .68; }
 .p3-weather-cloud-middle { top: 12%; right: 33%; transform: scale(.72); opacity: .75; }
 .p3-weather-cloud-right { top: calc(var(--p3-orb-top, var(--p3-sun-top, 18px)) + var(--weather-orb-offset)); right: 3%; }
+
+:where(html:not([data-home-event-layout])) .p3-weather[data-home-weather="rain"] .p3-weather-cloud-left {
+  opacity: .35;
+}
 
 .p3-weather[data-home-weather="cloudy"] .p3-weather-cloud {
   height: 34px;
@@ -86,7 +90,7 @@
 
 .p3-weather-fall {
   /* Keep the strongest precipitation in the open sky beside the hero text. */
-  --weather-mask: linear-gradient(90deg, #0008, #0004 9%, #0004 52%, #000b 86%);
+  --weather-mask: linear-gradient(90deg, #0002 58%, #000b 90%);
   -webkit-mask-image: var(--weather-mask);
   mask-image: var(--weather-mask);
 }
@@ -96,10 +100,29 @@
   --weather-mask: linear-gradient(90deg, #000a, #0007 30%, #000a 82%);
 }
 
-/* Protect both ends of the progress track when precipitation crosses them. */
+/* Shield the introductory text and track labels on days without event panels. */
+:where(html:not([data-home-event-layout])) .p3-home-scene:has(> .p3-weather:is([data-home-weather="rain"], [data-home-weather="snow"])) {
+  --weather-text-ground: color-mix(in srgb, var(--p3-sky) 84%, transparent);
+}
+
+:where(html:not([data-home-event-layout])) .p3-home-scene:has(> .p3-weather:is([data-home-weather="rain"], [data-home-weather="snow"])) > [data-event-panel="intro"] {
+  position: relative;
+  display: flow-root;
+  isolation: isolate;
+}
+
+:where(html:not([data-home-event-layout])) .p3-home-scene:has(> .p3-weather:is([data-home-weather="rain"], [data-home-weather="snow"])) > [data-event-panel="intro"]::before {
+  position: absolute;
+  z-index: -1;
+  inset: -4px -6px;
+  border-radius: 10px;
+  background: var(--weather-text-ground);
+  content: "";
+}
+
 :where(html:not([data-home-event-layout])) .p3-home-scene:has(> .p3-weather:is([data-home-weather="rain"], [data-home-weather="snow"])) .p3-event-tick-panel {
   display: block;
-  fill: color-mix(in srgb, var(--p3-sky) 84%, transparent);
+  fill: var(--weather-text-ground);
 }
 
 .p3-weather-fall::before {
