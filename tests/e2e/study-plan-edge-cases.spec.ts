@@ -113,6 +113,8 @@ for (const suspension of ["hidden", "offscreen"] as const) {
             Object.defineProperty(document, "hidden", { value: true, configurable: true });
             document.dispatchEvent(new Event("visibilitychange"));
           } else {
+            // Keep the scroll target below the whole track even on a short home page.
+            document.body.style.paddingBottom = "100vh";
             window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "instant" });
           }
         }
