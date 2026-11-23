@@ -2,7 +2,7 @@ import "server-only";
 import { type AiAccessPolicy, type AiFeature } from "./access-policy";
 import { aiAccessPolicy } from "./access-config";
 import { resolveAiAccess, type AiAccessResolution } from "./access-server";
-import { questionQuotaStore, recordPaidAiQuestion, type QuotaSettlement } from "./question-quota-kv";
+import { questionQuotaStore, recordPaidAiQuestion } from "./question-quota-kv";
 import { MEMBERSHIP_CHECK_PENDING_MESSAGE } from "@/lib/billing/domain";
 
 export interface AiUsageContext {
@@ -11,7 +11,7 @@ export interface AiUsageContext {
   headers: Record<string, string>;
   access: AiAccessResolution;
   policy: AiAccessPolicy;
-  settle?: (settlement: QuotaSettlement) => Promise<void>;
+  settle?: (completed: boolean) => Promise<void>;
   streaming?: boolean;
   leaseExpiresAt?: number;
   clientSignal?: AbortSignal;
@@ -55,7 +55,7 @@ export async function prepareAiUsage(
   return context;
 }
 
-/** Reserve before the provider starts. Confirm answers that can be delivered. */
+/** Reserve before the provider starts. Settle after an answer is produced. */
 export async function consumeAiUsage(
   context: AiUsageContext,
   providerName: string,
@@ -97,16 +97,32 @@ export async function consumeAiUsage(
     context.leaseExpiresAt = lease.expiresAt;
     context.headers["X-AI-Quota-Consumed"] = admission.status === "repeat" ? "0" : "pending";
     context.settle = async settlement => {
-      const result = await store.settle(lease, settlement).catch(() => store.settle(lease, settlement));
-      setQuotaHeaders(context, limit, result);
-      if (settlement && result.status !== "completed" && result.status !== "recovered") throw new Error("unconfirmed AI answer");
-      context.headers["X-AI-Quota-Consumed"] = result.status === "completed" && admission.status !== "repeat" ? "1" : "0";
+      try {
+        const result = await store.settle(lease, settlement).catch(() => store.settle(lease, settlement));
+        if (settlement && result.status !== "completed" && result.status !== "recovered") throw new Error("unconfirmed AI answer");
+        setQuotaHeaders(context, limit, result);
+        context.headers["X-AI-Quota-Consumed"] = result.status === "completed" && admission.status !== "repeat" ? "1" : "0";
+      } catch (error) {
+        // Release only this owner's pending slot. A commit whose reply was lost is already final.
+        const released = settlement ? await store.settle(lease, false).catch(() => undefined) : undefined;
+        if (released?.status === "released") {
+          setQuotaHeaders(context, limit, released);
+          context.headers["X-AI-Quota-Consumed"] = "0";
+          return;
+        }
+        throw error;
+      }
     };
     return null;
   } catch {
     context.headers["X-AI-Attempt"] = "unknown";
-    return denied("ai_usage_unavailable", 503, "AI利用回数を確認できないため、生成を一時停止しています。", {}, context.headers);
+    return quotaUnavailable(context);
   }
+}
+
+function quotaUnavailable(context: AiUsageContext) {
+  return denied("ai_usage_unavailable", 503, "AI利用回数を確認できません。少し待ってからもう一度お試しください。", {},
+    { ...context.headers, "Retry-After": "3" });
 }
 
 function pendingQuestion(context: AiUsageContext) {
@@ -124,20 +140,6 @@ export function gradingSignal(context: AiUsageContext, client: AbortSignal) {
   return AbortSignal.any([client, AbortSignal.timeout(remaining)]);
 }
 
-export function confirmFreeAnswer(context: AiUsageContext) {
-  const settle = context.settle;
-  if (context.access.kind !== "free" || !settle) return undefined;
-  return async () => {
-    // Retain the same owner until the stream reports whether it enqueued the body.
-    try {
-      await settle("confirm");
-      return true;
-    } catch {
-      return false;
-    }
-  };
-}
-
 function setQuotaHeaders(context: AiUsageContext, limit: number, result: { remaining: number; resetAt: number }) {
   Object.assign(context.headers, {
     "X-RateLimit-Limit": String(limit),
@@ -150,10 +152,10 @@ export async function settleAiUsage(context: AiUsageContext, completed: boolean)
   const settle = context.settle;
   context.settle = undefined;
   try {
-    const settlement = completed && context.streaming && context.access.kind === "free" ? "delivered" : completed;
-    await settle?.(settlement);
+    await settle?.(completed);
   } catch {
     context.headers["X-AI-Quota-Consumed"] = "unknown";
+    delete context.headers["X-RateLimit-Remaining"];
     console.warn("[ai-question-quota] settlement unavailable", { tier: context.access.kind, completed });
   }
 }
@@ -175,7 +177,7 @@ export async function readAiUsageStatus(request: Request, feature: AiFeature) {
       if (status === "claimed") return claimedGuest(context);
       return reply({ kind: "free", remaining, resetAt });
     } catch {
-      return denied("ai_usage_unavailable", 503, "AI利用回数を確認できません。", {}, context.headers);
+      return quotaUnavailable(context);
     }
   }
   return denied("ai_not_configured", 503, "AIの提供設定を確認できません。", {}, context.headers);
@@ -187,7 +189,7 @@ function initialAiUsageHeaders(policy: AiAccessPolicy): Record<string, string> {
     "X-AI-Attempt": "not-started", "X-AI-Quota-Consumed": "0" };
 }
 
-/** JSON answers settle here. The streaming handlers settle before closing their body. */
+/** JSON answers keep their original body even when settlement fails. */
 export async function withAiUsageResponse(
   handle: (track: (context: AiUsageContext) => void) => Promise<Response>,
   policy: AiAccessPolicy = aiAccessPolicy(),
@@ -204,12 +206,10 @@ export async function withAiUsageResponse(
   if (tracked && !tracked.streaming) {
     const disconnected = tracked.clientSignal?.aborted;
     await settleAiUsage(tracked, response.ok && !disconnected);
-    if (response.ok && tracked.access.kind === "free" && (disconnected || tracked.headers["X-AI-Quota-Consumed"] === "unknown")) {
-      return denied("ai_usage_unavailable", 503, "AI利用回数を確認できません。もう一度お試しください。", {}, tracked.headers);
-    }
   }
   const headers = new Headers(response.headers);
   for (const [name, value] of Object.entries(tracked?.headers ?? initialAiUsageHeaders(policy))) headers.set(name, value);
+  if (tracked?.headers["X-AI-Quota-Consumed"] === "unknown") headers.delete("X-RateLimit-Remaining");
   if (headers.get("X-Provider") === "mock" && headers.get("X-AI-Attempt") === "not-started") headers.set("X-AI-Attempt", "mock");
   return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
 }
