@@ -184,7 +184,7 @@ describe("a saved plan without an exam date", () => {
 describe("a saved plan with a provisional exam date", () => {
   const [session] = parse({ ...prior, id: plan.sessionId, examDate: "2026-12-05" });
 
-  it.each(["tentative", "estimated"] as const)("uses the official day after the saved %s date has passed", source => {
+  it.each(["tentative", "estimated", "official"] as const)("uses the official day after the saved %s date has passed", source => {
     const saved = { ...plan, examDate: "2026-11-28", examDateSource: source };
     expect(withConfirmedExamDay(saved, "2026-11-29", session)).toMatchObject({ examDate: "2026-12-05", examDateSource: "official" });
     expect(withConfirmedExamDay(saved, "2026-12-06", session)).toMatchObject({ examDate: "2026-12-05", examDateSource: "official" });
@@ -193,10 +193,15 @@ describe("a saved plan with a provisional exam date", () => {
 
   it("keeps saved dates with protected sources and plans with recorded results", () => {
     const saved = { ...plan, examDate: "2026-11-28" };
-    for (const candidate of [saved, { ...saved, examDateSource: "official" as const }, { ...saved, examDateSource: undefined },
+    for (const candidate of [saved, { ...saved, examDateSource: undefined },
       { ...saved, examDateSource: "tentative" as const, result: "passed" as const }]) {
       expect(withConfirmedExamDay(candidate, "2026-11-29", session)).toBe(candidate);
     }
+  });
+
+  it("returns the saved plan unchanged when its confirmed day already matches", () => {
+    const saved = { ...plan, examDate: session.examDate, examDateSource: "official" as const };
+    expect(withConfirmedExamDay(saved, today, session)).toBe(saved);
   });
 
   it("requires the same round and a single sourced official day", () => {

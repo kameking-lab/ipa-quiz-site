@@ -2,7 +2,8 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { createPacePlan, latestAnswers } from "@/lib/study-plan/pace";
 import { dailyLearningPoints } from "@/lib/study-plan/activity";
-import { deletePacePlan, getLearningActions, getPaceAttempts, getPaceSyncEntries, listPacePlans, mergePaceSyncEntries, recordLearningAction, savePacePlan } from "@/lib/study-plan/pace-storage";
+import { deletePacePlan, getLearningActions, getPaceAttempts, getPaceSyncEntries, listPacePlans, mergePaceSyncEntries, recordLearningAction, retainConfirmedExamDays, savePacePlan } from "@/lib/study-plan/pace-storage";
+import { parseRegistration, type ExamSchedule } from "@/lib/study-plan/schedule";
 
 const plan = () => createPacePlan({ id: "p", exam: "new-exam", sessionId: null, startDate: "2026-11-17", examDate: null }, [], "2026-11-17T12:00:00+09:00");
 beforeEach(() => { localStorage.clear(); vi.restoreAllMocks(); });
@@ -41,6 +42,37 @@ describe("guest persistence and JSON StudyPlan sync", () => {
     localStorage.clear();
     mergePaceSyncEntries(entries);
     expect(listPacePlans()).toEqual([tentative]);
+  });
+  it("keeps the last confirmed day through fallback and concurrent older responses", () => {
+    const saved = { ...plan(), exam: "ip", sessionId: "round", examDate: "2026-11-28", examDateSource: "tentative" as const };
+    savePacePlan(saved);
+    const other = { ...plan(), id: "other" };
+    savePacePlan(other);
+    savePacePlan({ ...saved, registered: true });
+    savePacePlan(other);
+    const today = "2026-11-29";
+    const schedule: ExamSchedule = { exam: "ip", qualificationIds: ["itpassport"], source: "tsugino", unavailableQualificationIds: [],
+      sessions: parseRegistration({ id: "itpassport", sessions: [{ id: saved.sessionId, label: "第1回", examDate: "2026-12-05",
+        scheduleStatus: "official", sourceUrl: "https://www.ipa.go.jp/shiken/" }] }, "itpassport") };
+    retainConfirmedExamDays([saved], schedule, today);
+    const [first, confirmed] = listPacePlans();
+    expect(first).toEqual(other);
+    expect(confirmed).toMatchObject({ examDate: "2026-12-05", examDateSource: "official", registered: true });
+
+    const oldSession = { ...schedule.sessions[0], examDate: saved.examDate };
+    retainConfirmedExamDays([saved], { ...schedule, sessions: [oldSession] }, today);
+    retainConfirmedExamDays([confirmed], { ...schedule, source: "fallback", sessions: [oldSession] }, today);
+    retainConfirmedExamDays([confirmed], { ...schedule, sessions: [] }, today);
+    retainConfirmedExamDays([confirmed], { ...schedule, sessions: [oldSession, ...schedule.sessions] }, today);
+    expect(listPacePlans()).toEqual([other, confirmed]);
+
+    const manual = { ...confirmed, examDate: "2026-12-06", examDateSource: "manual" as const };
+    savePacePlan(manual);
+    retainConfirmedExamDays([confirmed], { ...schedule, sessions: [oldSession] }, today);
+    expect(listPacePlans()[0]).toEqual(manual);
+    deletePacePlan(manual.id);
+    retainConfirmedExamDays([manual], schedule, today);
+    expect(listPacePlans()).toEqual([other]);
   });
   it("retains tombstones and does not resurrect a deleted cloud plan", () => {
     savePacePlan(plan()); deletePacePlan("p");

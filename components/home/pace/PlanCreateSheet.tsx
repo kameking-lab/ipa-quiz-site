@@ -6,7 +6,7 @@ import type { HomeDirectoryItem } from "@/lib/home/home-directory";
 import type { ExamSchedule, ExamScheduleSession } from "@/lib/study-plan/schedule";
 import { calculatePace, createPacePlan, dayNumber, EVERY_DAY, planOldestYear, rangeOptions, type ExamDateSource, type PacePlan } from "@/lib/study-plan/pace";
 import { hasSingleExamDay, isOfficialSession } from "@/lib/study-plan/countdown";
-import { savePacePlan } from "@/lib/study-plan/pace-storage";
+import { retainConfirmedExamDays, savePacePlan } from "@/lib/study-plan/pace-storage";
 import { paceAttempts } from "@/lib/study-plan/client";
 import { usePlanCatalog } from "@/lib/study-plan/use-plan-catalog";
 import { PLAN_OFFER } from "@/lib/billing/plan-offer";
@@ -91,6 +91,7 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, initia
         if (controller.signal.aborted) return;
         if (data.exam !== exam) throw new Error("schedule");
         const today = japanDate(new Date());
+        if (editing?.exam === exam) retainConfirmedExamDays([editing], data, today);
         const future = selectableSessions(data.sessions, today);
         setSchedule(data);
         const prefilled = exam === initialExam ? initialDate : undefined;

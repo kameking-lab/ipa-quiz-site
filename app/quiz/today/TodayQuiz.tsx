@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { QuizClient } from "../QuizClient";
-import { listPacePlans } from "@/lib/study-plan/pace-storage";
+import { listPacePlans, retainConfirmedExamDays } from "@/lib/study-plan/pace-storage";
 import { clearBatchQuestion, loadPlanCatalog, loadPlanSchedule, paceAttempts, type CatalogQuestion } from "@/lib/study-plan/client";
-import { isProvisionalExamDate, withConfirmedExamDay } from "@/lib/study-plan/countdown";
+import { followsExamSchedule } from "@/lib/study-plan/countdown";
 import { qualificationIdsForExam } from "@/lib/study-plan/schedule";
 import { calculatePace, weakQuestions } from "@/lib/study-plan/pace";
 import { createHistoryStore } from "@/lib/storage/history";
@@ -37,13 +37,14 @@ export function TodayQuiz({ planId, weakExam, billingGateEnabled }: { planId: st
       if (!exam) throw new Error("学習計画が見つかりませんでした。");
       const [catalog, schedule] = await Promise.all([
         loadPlanCatalog(exam, controller.signal),
-        savedPlan?.sessionId && !savedPlan.result && (!savedPlan.examDate || isProvisionalExamDate(savedPlan.examDateSource)) && qualificationIdsForExam(exam).length
+        followsExamSchedule(savedPlan) && qualificationIdsForExam(exam).length
           ? loadPlanSchedule(exam, controller.signal) : null,
       ]);
       if (controller.signal.aborted) return;
       const now = new Date();
       const today = japanDate(now);
-      const plan = savedPlan && withConfirmedExamDay(savedPlan, today, schedule?.sessions.find(session => session.id === savedPlan.sessionId));
+      const plan = savedPlan && retainConfirmedExamDays([savedPlan], schedule, today).find(p => p.id === savedPlan.id);
+      if (!weakExam && (!plan || plan.exam !== exam)) throw new Error("学習計画が見つかりませんでした。");
       const attempts = paceAttempts();
       const pace = plan ? calculatePace(plan, catalog, attempts, today, now.getTime()) : null;
       let ids = plan

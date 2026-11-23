@@ -10,10 +10,10 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sh
 import type { HomeDirectoryDomain } from "@/lib/home/home-directory";
 import { groupHomeDirectoryItems } from "@/lib/home/grouped-directory";
 import { calculatePace, weakQuestions, type AnswerAttempt, type PacePlan } from "@/lib/study-plan/pace";
-import { listPacePlans, savePacePlan, deletePacePlan } from "@/lib/study-plan/pace-storage";
+import { listPacePlans, savePacePlan, deletePacePlan, retainConfirmedExamDays } from "@/lib/study-plan/pace-storage";
 import { answersToday, homeCalendar } from "@/lib/study-plan/home";
 import { loadPlanSchedule, paceAttempts } from "@/lib/study-plan/client";
-import { isProvisionalExamDate, planCountdownDates, withConfirmedExamDay } from "@/lib/study-plan/countdown";
+import { followsExamSchedule, planCountdownDates } from "@/lib/study-plan/countdown";
 import { historyExamLookup, japanDate, upcomingExamPicks } from "@/lib/home/featured-exams";
 import { readHomeStudy, relativeStudyDate } from "@/lib/home/recent-study";
 import { createHistoryStore } from "@/lib/storage/history";
@@ -133,31 +133,33 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
       });
     return () => controller.abort();
   }, [resumeQuery]);
-  const savedPlan = plans.find(p => p.id === active) ?? plans[0];
-  const { questions: catalog, reload } = usePlanCatalog(savedPlan?.exam ?? "");
-  const provisional = isProvisionalExamDate(savedPlan?.examDateSource);
-  const scheduleExam = !createOnLoad && !savedPlan?.result && savedPlan?.sessionId &&
-    (!savedPlan.examDate || provisional || savedPlan.examDate >= today) && qualificationIdsForExam(savedPlan.exam).length ? savedPlan.exam : null;
+  const plan = plans.find(p => p.id === active) ?? plans[0];
+  const { questions: catalog, reload } = usePlanCatalog(plan?.exam ?? "");
+  const followsSchedule = followsExamSchedule(plan);
+  const scheduleExam = !createOnLoad && plan?.sessionId && !plan.result &&
+    (followsSchedule || (plan.examDate && plan.examDate >= today)) && qualificationIdsForExam(plan.exam).length ? plan.exam : null;
   const [schedule, setSchedule] = useState<{ exam: string; data: ExamSchedule | null }>();
   useEffect(() => {
     if (!scheduleExam) return;
     const controller = new AbortController();
+    const requestedPlans = listPacePlans();
     void loadPlanSchedule(scheduleExam, controller.signal).then(data => {
-      if (!controller.signal.aborted) setSchedule({ exam: scheduleExam, data });
+      if (controller.signal.aborted) return;
+      const updatedPlans = retainConfirmedExamDays(requestedPlans, data, japanDate(new Date()));
+      setPlans(current => JSON.stringify(current) === JSON.stringify(updatedPlans) ? current : updatedPlans);
+      setSchedule({ exam: scheduleExam, data });
     });
     return () => controller.abort();
   }, [scheduleExam]);
   const scheduleSessions = schedule?.exam === scheduleExam ? schedule?.data?.sessions : undefined;
-  const selectedSession = scheduleSessions?.find(session => session.id === savedPlan?.sessionId);
-  const plan = useMemo(() => savedPlan && withConfirmedExamDay(savedPlan, today, selectedSession), [savedPlan, today, selectedSession]);
+  const selectedSession = scheduleSessions?.find(session => session.id === plan?.sessionId);
   const pace = plan && catalog ? calculatePace(plan, catalog, attempts, today) : null;
   const weakCount = plan && catalog ? weakQuestions(catalog, plan.exam, attempts, stars).length : null;
   const scheduleLoading = !!scheduleExam && schedule?.exam !== scheduleExam;
-  const checkingExamDay = scheduleLoading && provisional;
+  const checkingExamDay = scheduleLoading && followsSchedule && !!plan?.examDate;
   const postExam = !checkingExamDay && !!plan?.examDate && plan.examDate < today;
   const examToday = !checkingExamDay && plan?.examDate === today;
-  // A date restored after first paint keeps the same rows on the day of the exam.
-  const examDayLayout = examToday && savedPlan?.examDate !== null;
+  const examDayLayout = examToday;
   // Wait for the registration dates before choosing the first visible countdown.
   const calendar = plan && !checkingExamDay && !(scheduleLoading && plan.registration?.estimated)
     ? homeCalendar(plan, today, scheduleSessions)
@@ -193,13 +195,12 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
   const matched = term ? searchQualifications(directoryItems, query, "home")
     : picks.map(pick => directoryItems.find(i => i.key === pick.key)!).filter(Boolean);
   function updatePlan(patch: Partial<PacePlan>) {
-    if (!savedPlan) return;
-    const base = patch.result ? plan ?? savedPlan : savedPlan;
-    if (!savePacePlan({ ...base, ...patch, updatedAt: new Date().toISOString() })) setError("保存できませんでした。");
+    if (!plan) return;
+    if (!savePacePlan({ ...plan, ...patch, updatedAt: new Date(Math.max(Date.now(), Date.parse(plan.updatedAt) + 1)).toISOString() })) setError("保存できませんでした。");
     else {
       setError(""); setSheet(null);
-      if (patch.result === "passed" && !savedPlan.result) {
-        setPassMoment({ planId: savedPlan.id, moment: { exam: savedPlan.exam, at: Date.now(), passed: true, streak: readStreak().currentStreak } });
+      if (patch.result === "passed" && !plan.result) {
+        setPassMoment({ planId: plan.id, moment: { exam: plan.exam, at: Date.now(), passed: true, streak: readStreak().currentStreak } });
       }
     }
   }
@@ -213,7 +214,7 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
   }
   const calendarConfirmation = created && <div className="mt-3 space-y-1 rounded-xl border border-border bg-card p-3 text-card-foreground">
     <p className="text-sm font-semibold" role="status">学習計画を作りました</p>
-    <PlanCalendarButton plan={created} name={items.find(entry => entry.key === created.exam)?.name ?? created.exam} today={today}
+    <PlanCalendarButton plan={plan?.id === created.id ? plan : created} name={items.find(entry => entry.key === created.exam)?.name ?? created.exam} today={today}
       sessions={created.exam === scheduleExam ? scheduleSessions : undefined}
       loading={created.exam === scheduleExam && scheduleLoading} />
     <MobileInstallNudge placement="plan-created" />
@@ -292,7 +293,7 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
             <button type="button" onClick={() => setSheet("detail")} className={`${styles.planDetails} study-link`}>
               学習計画の詳細
             </button>
-            {savedPlan && nativeClient() && passMoment?.planId !== plan.id && canRemindForPlan(savedPlan) && <StudyReminderControl key={plan.id} planId={plan.id} />}
+            {nativeClient() && passMoment?.planId !== plan.id && canRemindForPlan(plan) && <StudyReminderControl key={plan.id} planId={plan.id} />}
           </div>
         </> : returning ? <>
         <div className="p3-event-panel" data-event-panel="intro">
@@ -382,8 +383,9 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
             {[
               { label: "申込開始", date: detailDates.applicationStart, basisYear: detailDates.applicationBasisYear },
               { label: "申込締切", date: detailDates.applicationDeadline, basisYear: detailDates.applicationBasisYear },
-              { label: plan.examDate && !plan.examDateSource ? "計画の受験日" : "試験日", date: plan.examDate,
-                qualifier: plan.examDateSource === "tentative" ? "（予定）" : plan.examDateSource === "estimated" ? "（見込み）" : "" },
+              { label: plan.examDate && !plan.examDateSource ? "計画の受験日" : "試験日", date: detailDates.examDate,
+                basisYear: detailDates.examBasisYear,
+                qualifier: detailDates.examDateSource === "tentative" ? "（予定）" : detailDates.examDateSource === "estimated" ? "（見込み）" : "" },
               { label: "合格発表", date: registration?.resultDate ?? selectedSession?.resultDate },
             ].map(({ label, date, basisYear, qualifier }) => <div key={label} className="flex justify-between gap-3">
               <dt className="text-muted-foreground">{label}</dt>
