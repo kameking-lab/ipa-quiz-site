@@ -48,3 +48,11 @@ for (const exam of ["sc", "nw", "sa", "st", "kankoji2"]) {
     await expect(page).toHaveTitle(/答えと解説/);
   });
 }
+for (const path of [
+  ...[2023, 2024, 2025].flatMap(year => [1, 2, 3, 4].map(caseNo => `/chusho-secondary/${year}/case${caseNo}`)),
+  "/denken1/2025-primary/theory", "/denken2/2025-primary/kikai", "/denken3/2021-annual/theory",
+]) {
+  test(`serves the dedicated page ${path}`, async ({ request }) => {
+    expect((await request.get(path, { maxRedirects: 0 })).status()).toBe(200);
+  });
+}

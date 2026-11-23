@@ -219,3 +219,25 @@ describe("safety qualification legacy redirects", () => {
     expect(config.matcher).toContain("/e-learning/exams");
   });
 });
+describe("question archive legacy redirects", () => {
+  const archiveReq = (path: string) => new NextRequest("https://www.kakomon-ai.jp" + path);
+  it.each([2023, 2024, 2025].flatMap(year => [1, 2, 3, 4].map(caseNo => `/chusho-secondary/${year}/case${caseNo}`)))(
+    "passes the existing case page %s through", path => {
+      expect(middleware(archiveReq(path)).headers.get("x-middleware-next")).toBe("1");
+    },
+  );
+
+  it.each([
+    "/denken1/2025-primary/theory", "/denken2/2025-primary/kikai",
+    "/denken3/2021-annual/theory", "/thinking/2025/spring", "/sc/2025/case1",
+  ])("does not rewrite %s", path => {
+    expect(middleware(archiveReq(path)).headers.get("x-middleware-rewrite")).toBeNull();
+  });
+
+  it.each(["/sc/2024/fall", "/q/sc/2024/fall/am-i/08", "/kaigo/第37回"])(
+    "still rewrites %s", path => {
+      expect(new URL(middleware(archiveReq(path)).headers.get("x-middleware-rewrite")!).pathname)
+        .toBe("/api/legacy-exam" + new URL(path, "https://www.kakomon-ai.jp").pathname);
+    },
+  );
+});

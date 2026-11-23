@@ -1,3 +1,7 @@
+import { QUESTION_SEASONS } from "@/lib/questions/types";
+import { EXAM_LABELS } from "@/lib/utils";
+
+const canonicalSeasons = new Set<string>(QUESTION_SEASONS);
 const seasonNames: Record<string, readonly string[]> = {
   spring: ["spring"], autumn: ["autumn"], fall: ["autumn"], "春": ["spring"], "春期": ["spring"],
   "秋": ["autumn"], "秋期": ["autumn"], "前期": ["early", "first"], zenki: ["early", "first"],
@@ -16,8 +20,9 @@ export function legacyExamPath(path: string) {
   if (questionPath) parts.shift();
   if (parts.length < (questionPath ? 4 : 2) || parts.length > (questionPath ? 5 : 3)) return null;
   const [exam, ...rest] = parts;
-  if (!/^[a-z0-9-]+$/i.test(exam)) return null;
-  const editionRaw = rest.slice(0, questionPath ? -2 : undefined).join("-");
+  if (!Object.hasOwn(EXAM_LABELS, exam.toLowerCase())) return null;
+  const editionParts = rest.slice(0, questionPath ? -2 : undefined);
+  const editionRaw = editionParts.join("-");
   const edition = editionRaw.normalize("NFKC").toLowerCase();
   const section = questionPath ? rest.at(-2)!.normalize("NFKC").toLowerCase() : undefined;
   const question = questionPath ? rest.at(-1)!.normalize("NFKC").toLowerCase() : undefined;
@@ -32,11 +37,13 @@ export function legacyExamPath(path: string) {
   const year = dated?.[1] ? Number(dated[1]) : dated
     ? (/^(r|令和)$/.test(dated[2]) ? 2018 : 1988) + (dated[3] === "元" ? 1 : Number(dated[3])) : null;
   const season = dated?.[4];
+  const roundSuffix = season && /^(?:第)?(\d{1,3})回$/.exec(season);
+  if (editionParts.length === 2 && !season) return null;
+  if (season && !roundSuffix && !canonicalSeasons.has(season) && !Object.hasOwn(seasonNames, season)) return null;
   const hasCanonicalEdition = /^\d{4}-[a-z0-9]+$/.test(editionRaw) &&
     !["fall", "zenki", "kouki"].includes(season ?? "");
   if (parts.length === (questionPath ? 4 : 2) && hasCanonicalEdition &&
       exam === exam.toLowerCase() && (!questionPath || ((section === rest.at(-2) || /^gakka-I{1,3}$|^gakka-IV$/.test(rest.at(-2)!)) && !Object.hasOwn(sectionNames, section!) && qnum === rest.at(-1)))) return null;
-  const roundSuffix = season && /^(?:第)?(\d{1,3})回$/.exec(season);
   return { exam: exam.toLowerCase(), year, round: round ? Number(round[1]) : roundSuffix ? Number(roundSuffix[1]) : null,
     seasons: season && !roundSuffix ? (Object.hasOwn(seasonNames, season) ? seasonNames[season] : [season]) : null,
     sections: section ? (Object.hasOwn(sectionNames, section) ? sectionNames[section] : [section]) : null, qnum };

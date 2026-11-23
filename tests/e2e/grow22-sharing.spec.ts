@@ -85,13 +85,25 @@ for (const [name, kind, flags] of [
     await card.getByRole("button", { name: "この結果を共有" }).click();
     const intent = new URL((await card.getByRole("link", { name: "X", exact: true }).getAttribute("href"))!);
     const landing = new URL(intent.searchParams.get("url")!);
-    expect(landing.pathname).toBe("/ip");
+    expect(landing.pathname).toBe("/share/study/ip");
     expect(landing.searchParams.get("utm_source")).toBe("share");
     expect(landing.searchParams.get("utm_medium")).toBe("card");
     expect((await page.goto(landing.pathname + landing.search))?.status()).toBe(200);
     await expect(page.locator('meta[property="og:image"]')).toHaveAttribute("content", new RegExp(`card=${kind}&`));
+    const qualification = page.locator('main a[href="/ip"]');
+    await qualification.click();
+    await expect(page).toHaveURL(/\/ip$/);
+    await expect(page.locator('meta[property="og:image"]')).not.toHaveAttribute("content", /type=study-card/);
   });
 }
+
+test("keeps ordinary exam OGP independent of card query parameters", async ({ request }) => {
+  for (const exam of ["ip", "denken1", "denken2", "denken3"]) {
+    const response = await request.get(`/${exam}?card=goal&mastered=1&total=3&streak=0&utm_source=share&utm_medium=card`);
+    expect(response.status()).toBe(200);
+    expect(await response.text()).not.toMatch(/<meta property="og:image"[^>]+type=study-card/);
+  }
+});
 
 for (const [name, flags, choice] of [
   ["after an install prompt that day", { installedToday: true }, undefined],
