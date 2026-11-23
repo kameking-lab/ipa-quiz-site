@@ -96,7 +96,7 @@ for (const { width, file, motion } of [
       expect(await intro.boundingBox()).toEqual(introBefore);
       expect(await art.boundingBox()).toEqual(before);
       await expect(art.locator("img")).toHaveCSS("object-fit", "cover");
-      await expect(art.locator("img")).toHaveCSS("object-position", width === 390 ? "78% 43%" : "98% 43%");
+      await expect(art.locator("img")).toHaveCSS("object-position", width === 390 ? "78% 43%" : "98% 16%");
       await expect(art.locator("img")).toHaveCSS("filter", "brightness(0.48) saturate(0.86)");
       expect(imageRequests).toEqual([`/images/home/event-scenes/${file}`]);
     } finally {

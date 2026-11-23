@@ -141,11 +141,23 @@
 }
 
 @media (max-width: 639px) {
+  [data-home-event-layout="obon"] [data-pace-view="new"] > [data-event-panel="intro"] {
+    max-inline-size: min(100%, 16rem);
+  }
+  [data-pace-view="new"] [data-home-event-art="obon"] img {
+    object-position: 80% 38%;
+  }
   [data-home-event-layout="christmas"] [data-pace-view="new"] > [data-event-panel="intro"] {
     max-inline-size: min(100%, 17rem);
   }
   [data-pace-view="new"] [data-home-event-art="christmas"] img {
     object-position: 78% 43%;
+  }
+}
+
+@media (min-width: 960px) {
+  [data-pace-view="new"] [data-home-event-art="christmas"] img {
+    object-position: 98% 16%;
   }
 }
 

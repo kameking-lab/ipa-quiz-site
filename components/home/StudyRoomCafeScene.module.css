@@ -20,6 +20,10 @@
   object-fit: fill;
 }
 
+:global([data-home-scene="night"]) .home > .background {
+  filter: brightness(.68) saturate(.85);
+}
+
 .slot {
   position: absolute;
   left: calc(var(--x) * 100% / 352);

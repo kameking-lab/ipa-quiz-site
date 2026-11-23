@@ -66,12 +66,40 @@
 .secondarySearch { margin-top: 12px; }
 .stack[data-home-state="loading"] .secondarySearch { display: none; }
 
+.planLoading { display: none; }
+.hero > .planLoading {
+  position: absolute;
+  inset: var(--hero-padding) var(--p3-hero-gutter);
+}
+.planLoading > p {
+  justify-self: start;
+  align-self: start;
+  border-radius: 14px;
+  padding: 12px;
+  background: var(--p3-event-panel, var(--p3-sky));
+  font-size: .875rem;
+  font-weight: 600;
+}
+.loadingRail {
+  justify-self: center;
+  align-self: end;
+  width: 80%;
+  height: .5rem;
+  margin-block-end: 1.5rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--p3-ink) 38%, var(--p3-sky));
+}
+
 /* Use the same row sizes for the HTML shell and the restored study view. */
 :global([data-home-study-layout]) .stack[data-home-state="loading"] {
   .hero > [data-event-panel],
   .hero > :global(.p3-event-track),
   .upcoming { display: none; }
   .secondarySearch { display: block; }
+}
+
+:global([data-home-study-layout="returning"]) .stack[data-home-state="loading"] {
+  .room, .directory { visibility: hidden; }
   .hero::after {
     width: min(55%, 16rem);
     height: 1.5rem;
@@ -82,12 +110,9 @@
   }
 }
 
-:global([data-home-study-layout="returning"]) .stack[data-home-state="loading"] .room {
-  visibility: hidden;
-}
-
-:global(:is([data-home-study-layout="planned"], [data-home-study-layout="exam-day"], [data-home-study-layout="post-exam"])) .stack[data-home-state="loading"] .hero {
-  min-block-size: calc(2 * var(--hero-padding) + 3 * var(--hero-gap) + var(--plan-intro) + var(--plan-progress) + var(--plan-actions) + var(--track-space) + var(--progress-track));
+:global(:is([data-home-study-layout="planned"], [data-home-study-layout="exam-day"], [data-home-study-layout="post-exam"])) .stack[data-home-state="loading"] {
+  .hero { min-block-size: calc(2 * var(--hero-padding) + 3 * var(--hero-gap) + var(--plan-intro) + var(--plan-progress) + var(--plan-actions) + var(--track-space) + var(--progress-track)); }
+  .planLoading { display: grid; }
 }
 .hero[data-pace-view="post-exam"],
 :global([data-home-study-layout="post-exam"]) .stack[data-home-state="loading"] .hero { min-block-size: var(--post-exam-floor); }
@@ -96,6 +121,7 @@
 }
 
 .room, .recent, .upcoming { margin-top: 12px; }
+.directory { margin-block: 12px 8px; }
 .rowName {
   display: flex;
   align-items: center;
@@ -117,13 +143,28 @@
 }
 
 @media (min-width: 960px) {
-  .stack { --track-width: 26rem; --post-exam-floor: 35rem; }
+  .stack {
+    --track-width: 26rem;
+    --post-exam-floor: 35rem;
+    --hero-columns: minmax(0, 25rem) minmax(0, 1fr);
+    --hero-column-gap: clamp(1rem, 4vw, 3rem);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    /* Keep the rows above the directory at their natural height when the room is taller. */
+    grid-template-rows: auto repeat(3, max-content) 1fr;
+    column-gap: 24px;
+    align-items: start;
+  }
   :global([data-home-event-layout]) .stack { --track-space: 0px; }
 
   .hero {
-    grid-template-columns: minmax(0, 25rem) minmax(0, 1fr);
-    column-gap: clamp(1rem, 4vw, 3rem);
+    grid-column: 1 / -1;
+    grid-template-columns: var(--hero-columns);
+    column-gap: var(--hero-column-gap);
     border-radius: 0 0 28px 28px;
+  }
+  .planLoading {
+    grid-template-columns: var(--hero-columns);
+    column-gap: var(--hero-column-gap);
   }
   .hero > :global(.p3-event-panel) { grid-column: 1; }
   .hero > :global(.p3-event-track) {
@@ -145,7 +186,15 @@
   :global(:is([data-home-study-layout="planned"], [data-home-study-layout="exam-day"])) .stack[data-home-state="loading"] .hero {
     min-block-size: calc(2 * var(--hero-padding) + 2 * var(--hero-gap) + var(--plan-intro) + var(--plan-progress) + var(--plan-actions));
   }
-  .secondarySearch, .recent, .upcoming { max-width: 40rem; }
+  .secondarySearch, .recent, .upcoming, .directory { grid-column: 1; }
+  .secondarySearch { grid-row: 2; }
+  .recent { grid-row: 3; }
+  .upcoming { grid-row: 4; }
+  .directory { grid-row: 5; }
+  .room {
+    grid-column: 2;
+    grid-row: 2 / 6;
+  }
 }
 
 .qualification {

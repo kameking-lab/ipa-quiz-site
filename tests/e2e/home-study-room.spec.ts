@@ -65,6 +65,22 @@ async function capture(page: Page, card: Locator, name: string) {
   }
 }
 
+test("keeps the desktop study room beside search and the qualification directory", async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await setup(page, "post-exam", []);
+  await page.goto("/");
+  await expect(page.locator("#today")).toHaveAttribute("data-home-state", "post-exam");
+  const search = page.getByRole("searchbox", { name: "資格名・略称で検索" }).locator("..");
+  const directory = page.locator("#home-qualification-directory");
+  const room = page.getByTestId("home-study-room");
+  await expect(room.getByTestId("home-study-room-sleeper")).toBeInViewport({ ratio: 0.5 });
+  const [searchBox, directoryBox, roomBox] = await Promise.all([
+    search.boundingBox(), directory.boundingBox(), room.boundingBox(),
+  ]);
+  expect(roomBox!.y).toBeCloseTo(searchBox!.y, 0);
+  expect(directoryBox!.x + directoryBox!.width).toBeLessThan(roomBox!.x);
+});
+
 for (const state of [...homeStates, "room"] as const) {
   for (const exams of fixtures) {
     const total = exams.reduce((n, row) => n + row.count, 0);
