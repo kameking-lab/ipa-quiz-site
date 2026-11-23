@@ -4,7 +4,8 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { Button } from "@/components/ui/button";
 import type { HomeDirectoryItem } from "@/lib/home/home-directory";
 import type { ExamSchedule, ExamScheduleSession } from "@/lib/study-plan/schedule";
-import { calculatePace, createPacePlan, dayNumber, EVERY_DAY, planOldestYear, rangeOptions, type PacePlan } from "@/lib/study-plan/pace";
+import { calculatePace, createPacePlan, dayNumber, EVERY_DAY, planOldestYear, rangeOptions, type ExamDateSource, type PacePlan } from "@/lib/study-plan/pace";
+import { hasSingleExamDay, isOfficialSession } from "@/lib/study-plan/countdown";
 import { savePacePlan } from "@/lib/study-plan/pace-storage";
 import { paceAttempts } from "@/lib/study-plan/client";
 import { usePlanCatalog } from "@/lib/study-plan/use-plan-catalog";
@@ -29,15 +30,16 @@ function selectableSessions(sessions: readonly ExamScheduleSession[], today: str
     .sort((a, b) => (a.examDate ?? "9999").localeCompare(b.examDate ?? "9999"));
 }
 
-export function PlanCreateSheet({ open, onOpenChange, items, initialExam, initialDate, initialSessionId, onCreated, embedded = false, editing, trigger }: {
+export function PlanCreateSheet({ open, onOpenChange, items, initialExam, initialDate, initialDateSource, initialSessionId, onCreated, embedded = false, editing, trigger }: {
   embedded?: boolean; editing?: PacePlan; trigger?: ReactNode;
   open: boolean; onOpenChange: (open: boolean) => void; items: readonly Pick<HomeDirectoryItem, "key" | "name">[];
-  initialExam: string; initialDate?: string; initialSessionId?: string; onCreated: (plan: PacePlan) => void;
+  initialExam: string; initialDate?: string; initialDateSource?: ExamDateSource; initialSessionId?: string; onCreated: (plan: PacePlan) => void;
 }) {
   const [exam, setExam] = useState(initialExam);
   const [schedule, setSchedule] = useState<ExamSchedule>();
   const [sessionId, setSessionId] = useState("");
   const [date, setDate] = useState("");
+  const [dateEdited, setDateEdited] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [scheduleFailed, setScheduleFailed] = useState(false);
@@ -79,6 +81,7 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, initia
   useEffect(() => {
     if (!open) return;
     setLoading(!!exam); setError(""); setDate(editing?.exam === exam ? editing.examDate ?? "" : exam === initialExam ? initialDate ?? "" : ""); setSchedule(undefined); setSessionId(""); setScheduleFailed(false);
+    setDateEdited(false);
     if (!exam) return;
     const controller = new AbortController();
     void fetch(`/api/exam-schedule/${encodeURIComponent(exam)}`, { signal: controller.signal })
@@ -104,14 +107,14 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, initia
   const scheduleSessions = schedule?.exam === exam ? schedule.sessions : [];
   const sessions = selectableSessions(scheduleSessions, today);
   const session = sessions.find(s => s.id === sessionId);
+  const sameExam = editing?.exam === exam;
+  const sameRound = sameExam && editing.sessionId === (sessionId || null);
   // A window/month is not an individual's appointment. Always ask for the booked day.
-  const manual = !session?.examDate || session.scheduleStatus === "ondemand" ||
-    session.datePrecision === "month" || session.datePrecision === "unknown" ||
+  const manual = !session || !hasSingleExamDay(session) || session.scheduleStatus === "ondemand" ||
     (session.scheduleStatus === "tentative" && !!initialDate && session.id === initialSessionId) ||
-    Boolean(session.examPhaseWindows?.length) || !!session.examDateEnd && session.examDateEnd !== session.examDate;
+    (sameRound && !!editing.examDate && editing.examDate !== session.examDate);
   const examDate = manual ? date : session?.examDate ?? "";
   const options = rangeOptions(questions ?? [], exam);
-  const sameExam = editing?.exam === exam;
   const existingYear = sameExam && questions ? planOldestYear(editing, questions) : null;
   const chosenYear = (yearChoice?.exam === exam ? yearChoice.year : undefined) ??
     (sameExam ? existingYear ?? undefined : options.find(option => option.recommended)?.oldestYear);
@@ -120,18 +123,31 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, initia
       questions, new Date().toISOString(), chosenYear), questions, attempts, today) : null;
   const noDays = Boolean(preview?.remaining && examDate && preview.studyDays === 0);
   const canSave = !loading && !!preview?.total && dayNumber(examDate) !== null && examDate >= today && weekdays.length > 0 && !noDays;
+  function changeDate(value: string) {
+    setDate(value);
+    setDateEdited(true);
+  }
   function create() {
     if (!canSave || !questions || chosenYear === undefined) return;
     const now = new Date().toISOString();
     const updatedAt = editing && Date.parse(now) <= Date.parse(editing.updatedAt)
       ? new Date(Date.parse(editing.updatedAt) + 1).toISOString() : now;
     const savedSessionId = session?.id ?? (sameExam && editing.examDate === examDate ? editing.sessionId : null);
+    const unchangedDate = sameExam && examDate === editing.examDate && savedSessionId === editing.sessionId;
+    let examDateSource: ExamDateSource | undefined;
+    if (unchangedDate && !dateEdited) examDateSource = editing.examDateSource;
+    else if (!manual && session) examDateSource = isOfficialSession(session) ? "official" : "tentative";
+    else if (dateEdited) examDateSource = "manual";
+    else if (exam === initialExam && date === initialDate) {
+      examDateSource = initialDateSource;
+      if (!examDateSource && session?.scheduleStatus === "tentative" && session.examDate === date) examDateSource = "tentative";
+    }
     const plan = createPacePlan({ id: editing?.id ?? crypto.randomUUID(), exam, sessionId: savedSessionId, examDate,
-      startDate: editing?.startDate ?? today, studyWeekdays: weekdays }, questions, updatedAt, chosenYear);
+      examDateSource, startDate: editing?.startDate ?? today, studyWeekdays: weekdays }, questions, updatedAt, chosenYear);
     plan.createdAt = editing?.createdAt ?? now;
     if (session) plan.registration = { label: session.label, start: session.applicationStart, deadline: session.applicationDeadline,
       resultDate: session.resultDate, sourceUrl: session.sourceUrl, estimated: session.applicationEstimated || session.scheduleStatus === "tentative" };
-    if (sameExam && examDate === editing.examDate && plan.sessionId === editing.sessionId) {
+    if (unchangedDate) {
       plan.registration ??= editing.registration;
       plan.registered = editing.registered;
       plan.result = editing.result;
@@ -152,7 +168,11 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, initia
             <legend className="mb-1.5 text-sm font-medium">受ける回</legend>
             {sessions.map(s => <div key={s.id} className="rounded-xl border border-border has-checked:border-primary has-checked:bg-primary-soft">
               <label className="flex min-h-11 cursor-pointer items-center gap-2.5 rounded-xl px-3 py-2 text-sm font-bold">
-                <input type="radio" name="pace-plan-session" checked={s.id === sessionId} onChange={() => { setSessionId(s.id); setDate(""); }} className="size-4 shrink-0 accent-primary" />
+                <input type="radio" name="pace-plan-session" checked={s.id === sessionId} onChange={() => {
+                  setSessionId(s.id);
+                  setDate(sameExam && s.id === editing.sessionId ? editing.examDate ?? "" : "");
+                  setDateEdited(false);
+                }} className="size-4 shrink-0 accent-primary" />
                 <span>{s.label}</span>
                 {s.scheduleStatus === "tentative" && <span className="rounded-full border border-border px-2 py-0.5 text-xs font-normal text-muted-foreground">予定</span>}
               </label>
@@ -162,14 +182,14 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, initia
                     phase.label, phase.start === phase.end ? phase.start : phase.start + "〜" + phase.end,
                   ]) : [["試験日", s.examDate]]), ["合格発表", s.resultDate]].map(([label, value]) => <div key={label} className="flex justify-between gap-3"><dt className="text-muted-foreground">{label}{s.applicationEstimated && label?.startsWith("申込") ? "（予定）" : ""}</dt><dd className="text-right">{value ?? "未発表"}{label === "試験日" && s.examDateEnd && s.examDateEnd !== value ? `〜${s.examDateEnd}` : ""}</dd></div>)}
                 </dl>
-                {manual && <label className="block text-sm font-medium">{s.scheduleStatus === "ondemand" ? "予約した日・受けたい日" : "受験日"}<input type="date" min={japanDate(new Date())} value={date} onChange={e => setDate(e.target.value)} className={fieldClass} /></label>}
+                {manual && <label className="block text-sm font-medium">{s.scheduleStatus === "ondemand" ? "予約した日・受けたい日" : "受験日"}<input type="date" min={japanDate(new Date())} value={date} onChange={e => changeDate(e.target.value)} className={fieldClass} /></label>}
                 {!manual && <p className="text-sm font-medium">受験日　<time dateTime={examDate}>{examDate}</time>{s.scheduleStatus === "tentative" ? "（予定）" : ""}</p>}
                 {s.sourceUrl && <div className="flex justify-end"><a href={s.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-8 items-center text-xs text-primary underline underline-offset-4">公式日程</a></div>}
               </div>}
             </div>)}
           </fieldset>}
           {scheduleFailed && <p className="text-sm text-muted-foreground">日程を取得できませんでした。受験日を入力してください。</p>}
-          {!session && <label className="block text-sm font-medium">受験日<input type="date" min={japanDate(new Date())} value={date} onChange={e => setDate(e.target.value)} className={fieldClass} /></label>}
+          {!session && <label className="block text-sm font-medium">受験日<input type="date" min={japanDate(new Date())} value={date} onChange={e => changeDate(e.target.value)} className={fieldClass} /></label>}
         </>}
         <fieldset className="space-y-2">
           <legend className="mb-1.5 text-sm font-medium">解く範囲</legend>

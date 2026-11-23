@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { homeCalendar } from "@/lib/study-plan/home";
-import { registrationTiming, withConfirmedExamDay } from "@/lib/study-plan/countdown";
+import { planCountdownDates, registrationTiming, withConfirmedExamDay } from "@/lib/study-plan/countdown";
 import { createPacePlan, type PacePlan } from "@/lib/study-plan/pace";
 import { parseRegistration } from "@/lib/study-plan/schedule";
 
@@ -8,7 +8,7 @@ const today = "2026-11-17";
 const sourceUrl = "https://www.ipa.go.jp/shiken/";
 const plan: PacePlan = {
   ...createPacePlan({ id: "countdown", exam: "ap", sessionId: "next", examDate: "2026-12-17",
-    startDate: today }, [], "2026-11-17T00:00:00+09:00"),
+    examDateSource: "manual", startDate: today }, [], "2026-11-17T00:00:00+09:00"),
   registration: { label: "受験回", start: "2026-11-20", deadline: "2026-12-10",
     resultDate: null, sourceUrl, estimated: false },
 };
@@ -106,10 +106,10 @@ describe("home study plan calendar", () => {
     const examDate = "2027-01-15";
     expect(homeCalendar({ ...plan, examDate }, "2027-01-14", sessions)).toEqual({
       primary: { kind: "deadline", date: examDate, days: 1, basisYear: 2025 },
-      secondary: { kind: "exam", date: examDate, days: 1, basisYear: undefined },
+      secondary: { kind: "exam", date: examDate, days: 1, basisYear: undefined, examDateSource: "manual" },
     });
     expect(homeCalendar({ ...plan, examDate }, examDate, sessions)).toEqual({
-      primary: { kind: "exam", date: examDate, days: 0, basisYear: undefined },
+      primary: { kind: "exam", date: examDate, days: 0, basisYear: undefined, examDateSource: "manual" },
       secondary: { kind: "deadline", date: examDate, basisYear: 2025 },
     });
   });
@@ -123,12 +123,37 @@ describe("home study plan calendar", () => {
     const examEve = "2026-12-16";
     for (const sessions of [[], parse(next)]) {
       expect(homeCalendar(saved, examEve, sessions)).toEqual({
-        primary: { kind: "exam", date: saved.examDate, days: 1, basisYear: undefined }, secondary: null,
+        primary: { kind: "exam", date: saved.examDate, days: 1, basisYear: undefined, examDateSource: "manual" }, secondary: null,
       });
       expect(homeCalendar(saved, saved.examDate!, sessions)).toEqual({
-        primary: { kind: "exam", date: saved.examDate, days: 0, basisYear: undefined }, secondary: null,
+        primary: { kind: "exam", date: saved.examDate, days: 0, basisYear: undefined, examDateSource: "manual" }, secondary: null,
       });
     }
+  });
+  it("keeps a copied tentative date distinct from both an application estimate and a legacy date", () => {
+    const sessions = parse({ ...next, scheduleStatus: "tentative", datePrecision: "date", examDate: plan.examDate, sourceUrl }, prior);
+    const tentative = { ...plan, examDateSource: "tentative" as const };
+    expect(homeCalendar(tentative, "2026-12-17", sessions)).toMatchObject({
+      primary: { kind: "exam", date: "2026-12-17", days: 0, examDateSource: "tentative", basisYear: undefined },
+      secondary: { kind: "deadline", date: "2027-01-15", basisYear: 2025 },
+    });
+    expect(homeCalendar({ ...tentative, examDateSource: undefined }, "2026-12-17", sessions)?.primary)
+      .toMatchObject({ kind: "exam", date: "2026-12-17", days: 0, examDateSource: undefined });
+  });
+});
+
+describe("dates shared by the home and plan details", () => {
+  it("estimates an application date independently of a confirmed exam and leaves the missing field blank", () => {
+    const sessions = parse({ ...next, scheduleStatus: "official", datePrecision: "date", examDate: plan.examDate,
+      applicationEstimated: true, sourceUrl }, { ...prior, applicationStart: null });
+    const saved = { ...plan, examDateSource: "official" as const };
+    expect(planCountdownDates(saved, sessions[0], sessions)).toMatchObject({
+      examDate: plan.examDate, examDateSource: "official", examBasisYear: undefined,
+      applicationStart: null, applicationDeadline: "2027-01-15", applicationBasisYear: 2025,
+    });
+    expect(planCountdownDates(saved, sessions[0], sessions.slice(0, 1))).toMatchObject({
+      applicationStart: undefined, applicationDeadline: undefined, applicationBasisYear: undefined,
+    });
   });
 });
 
@@ -138,7 +163,7 @@ describe("a saved plan without an exam date", () => {
 
   it("uses a sourced single official exam day for the selected round", () => {
     const [session] = parse(fixed);
-    expect(withConfirmedExamDay(saved, today, session).examDate).toBe(fixed.examDate);
+    expect(withConfirmedExamDay(saved, today, session)).toMatchObject({ examDate: fixed.examDate, examDateSource: "official" });
     expect(withConfirmedExamDay(plan, today, { ...session, examDate: "2026-12-18" })).toBe(plan);
   });
 

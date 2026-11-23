@@ -31,6 +31,17 @@ describe("guest persistence and JSON StudyPlan sync", () => {
     expect(getPaceSyncEntries()).toHaveLength(1);
     expect(getPaceSyncEntries()[0].updatedAt).toBe(Date.parse(edited.updatedAt));
   });
+  it("round-trips exam date provenance and accepts plans saved before it was recorded", () => {
+    const legacy = { ...plan(), examDate: "2026-12-17" };
+    expect(savePacePlan(legacy)).toBe(true);
+    expect(listPacePlans()[0]).toEqual(legacy);
+    const tentative = { ...legacy, examDateSource: "tentative" as const, updatedAt: "2026-11-18T00:00:00Z" };
+    expect(savePacePlan(tentative)).toBe(true);
+    const entries = getPaceSyncEntries();
+    localStorage.clear();
+    mergePaceSyncEntries(entries);
+    expect(listPacePlans()).toEqual([tentative]);
+  });
   it("retains tombstones and does not resurrect a deleted cloud plan", () => {
     savePacePlan(plan()); deletePacePlan("p");
     mergePaceSyncEntries([{ id: "p", payload: plan(), updatedAt: Date.now() + 1000 }]);

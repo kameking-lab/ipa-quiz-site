@@ -13,7 +13,7 @@ import { calculatePace, weakQuestions, type AnswerAttempt, type PacePlan } from 
 import { listPacePlans, savePacePlan, deletePacePlan } from "@/lib/study-plan/pace-storage";
 import { answersToday, homeCalendar } from "@/lib/study-plan/home";
 import { loadPlanSchedule, paceAttempts } from "@/lib/study-plan/client";
-import { withConfirmedExamDay } from "@/lib/study-plan/countdown";
+import { planCountdownDates, withConfirmedExamDay } from "@/lib/study-plan/countdown";
 import { historyExamLookup, japanDate, upcomingExamPicks } from "@/lib/home/featured-exams";
 import { readHomeStudy, relativeStudyDate } from "@/lib/home/recent-study";
 import { createHistoryStore } from "@/lib/storage/history";
@@ -30,7 +30,7 @@ import { HomeWeather } from "@/components/home/HomeWeather";
 import { readStreak } from "@/lib/streak/storage";
 import { nativeClient } from "@/mobile/shared/contracts";
 import { canRemindForPlan } from "@/mobile/shared/study-reminder-plan";
-import { ExamCountdownCalendar } from "./ExamCountdownCalendar";
+import { CountdownDate, ExamCountdownCalendar } from "./ExamCountdownCalendar";
 import { PlanCalendarButton } from "./PlanCalendarButton";
 import { PostExamQualifications } from "./PostExamQualifications";
 import { PlanCreateSheet, weekdayLabels } from "./PlanCreateSheet";
@@ -165,6 +165,7 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
   const setExamDate = plan && !plan.examDate && !!pace?.total && !pace.complete && !calendarPending
     ? <button type="button" onClick={() => setSheet("edit")} className="study-link">自分の受験日を設定</button> : null;
   const registration = plan?.registration;
+  const detailDates = plan && planCountdownDates(plan, selectedSession, scheduleSessions);
   const item = items.find(i => i.key === plan?.exam);
   const currentResume = resolvedResume?.query === resumeQuery ? resolvedResume : null;
   const resume = currentResume?.entry;
@@ -372,17 +373,19 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
     <Sheet open={sheet === "detail"} onOpenChange={open => { if (!open) setSheet(null); }}>
       <SheetContent side="bottom" aria-describedby={undefined} className={`${styles.sheet} mx-auto max-h-[min(85dvh,calc(100dvh-var(--safe-top)-1rem))] max-w-[640px] overflow-y-auto pb-[max(1.5rem,var(--safe-bottom))]`}>
         <SheetHeader><SheetTitle>学習計画</SheetTitle></SheetHeader>
-        {plan && <div className="mt-5 space-y-4 text-sm">
+        {plan && detailDates && <div className="mt-5 space-y-4 text-sm">
           <p className="font-semibold">{item?.name ?? plan.exam}　{registration?.label ?? selectedSession?.label}</p>
           <dl className="space-y-3">
             {[
-              ["申込開始", registration?.start ?? selectedSession?.applicationStart],
-              ["申込締切", registration?.deadline ?? selectedSession?.applicationDeadline],
-              ["試験日", plan.examDate],
-              ["合格発表", registration?.resultDate ?? selectedSession?.resultDate],
-            ].map(([label, value]) => <div key={label} className="flex justify-between gap-3">
+              { label: "申込開始", date: detailDates.applicationStart, basisYear: detailDates.applicationBasisYear },
+              { label: "申込締切", date: detailDates.applicationDeadline, basisYear: detailDates.applicationBasisYear },
+              { label: plan.examDate && !plan.examDateSource ? "計画の受験日" : "試験日", date: plan.examDate,
+                qualifier: plan.examDateSource === "tentative" ? "（予定）" : plan.examDateSource === "estimated" ? "（見込み）" : "" },
+              { label: "合格発表", date: registration?.resultDate ?? selectedSession?.resultDate },
+            ].map(({ label, date, basisYear, qualifier }) => <div key={label} className="flex justify-between gap-3">
               <dt className="text-muted-foreground">{label}</dt>
-              <dd>{value ?? "未発表"}{(registration?.estimated || selectedSession?.applicationEstimated || selectedSession?.scheduleStatus === "tentative") && label?.startsWith("申込") ? "（予定）" : ""}</dd>
+              <dd>{date ? basisYear === undefined ? <><time dateTime={date}>{date}</time>{qualifier}</>
+                : <CountdownDate date={date} qualifier="（見込み）" /> : "未発表"}</dd>
             </div>)}
           </dl>
           {plan.registration?.sourceUrl && <a href={plan.registration.sourceUrl} target="_blank" rel="noopener noreferrer" className="block min-h-11 py-3 underline">申込ページを開く（公式） ↗</a>}

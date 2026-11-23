@@ -6,6 +6,7 @@ import { PlanCreateSheet } from "@/components/home/pace/PlanCreateSheet";
 import { japanDate } from "@/lib/home/featured-exams";
 import { examTopSchedule, planCreatedHref, tsuginoQualificationHref } from "@/lib/study-plan/next-qualification";
 import { listPacePlans } from "@/lib/study-plan/pace-storage";
+import type { ExamDateSource } from "@/lib/study-plan/pace";
 import { qualificationIdsForExam, type ExamSchedule } from "@/lib/study-plan/schedule";
 import { examLabel } from "@/lib/utils";
 
@@ -93,18 +94,19 @@ function ExamScheduleRow({ exam }: { exam: string }) {
     </div>}
     {[...basisYears].map(year => <p key={year} className="text-xs">{year}年度の同じ回をもとに推定</p>)}
     <div className="flex flex-wrap items-center gap-x-3">
-      {examCountdown && <ExamPlanButton exam={exam} examDate={examCountdown.date} sessionId={scheduled?.sessionId} />}
+      {examCountdown && <ExamPlanButton exam={exam} examDate={examCountdown.date} sessionId={scheduled?.sessionId}
+        dateSource={scheduled ? examCountdown.basisYear === undefined ? "official" : "estimated" : undefined} />}
       <a className="study-focus inline-flex min-h-8 items-center rounded text-xs underline underline-offset-4"
         href={tsuginoQualificationHref(qualificationId, "exam_schedule")}>申込方法は次の資格で確認</a>
     </div>
   </section>;
 }
 
-function ExamPlanButton({ exam, examDate, sessionId }: { exam: string; examDate: string; sessionId?: string }) {
+function ExamPlanButton({ exam, examDate, sessionId, dateSource }: { exam: string; examDate: string; sessionId?: string; dateSource?: ExamDateSource }) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   return <PlanCreateSheet open={open} onOpenChange={setOpen} items={[{ key: exam, name: examLabel(exam) }]}
-    initialExam={exam} initialDate={examDate} initialSessionId={sessionId} onCreated={plan => router.push(planCreatedHref(plan.id))}
+    initialExam={exam} initialDate={examDate} initialDateSource={dateSource} initialSessionId={sessionId} onCreated={plan => router.push(planCreatedHref(plan.id))}
     trigger={<button type="button" className="study-focus min-h-11 rounded px-1 text-xs font-medium text-primary underline underline-offset-4">
       この日で学習計画を作る
     </button>} />;

@@ -27,18 +27,18 @@ export function hasSingleExamDay(session: ExamScheduleSession) {
     !session.examPhaseWindows?.length && (!session.examDateEnd || session.examDateEnd === session.examDate);
 }
 
-function isOfficial(session: ExamScheduleSession) {
+export function isOfficialSession(session: ExamScheduleSession) {
   return session.scheduleStatus === "official" && !session.unannounced && !!session.sourceUrl;
 }
 
 export function withConfirmedExamDay(plan: PacePlan, today: string, session?: ExamScheduleSession): PacePlan {
-  if (plan.examDate || plan.result || !session || session.id !== plan.sessionId || !isOfficial(session) || !hasSingleExamDay(session)) return plan;
+  if (plan.examDate || plan.result || !session || session.id !== plan.sessionId || !isOfficialSession(session) || !hasSingleExamDay(session)) return plan;
   const exam = dateCountdown(session.examDate, today);
-  return exam ? { ...plan, examDate: exam.date } : plan;
+  return exam ? { ...plan, examDate: exam.date, examDateSource: "official" } : plan;
 }
 
 export function sessionCountdownDates(session: ExamScheduleSession, sessions: readonly ExamScheduleSession[]) {
-  const official = isOfficial(session);
+  const official = isOfficialSession(session);
   const uncertainExam = session.scheduleStatus !== "ondemand" && (!official || !session.examDate ||
     session.datePrecision === "month" || session.datePrecision === "unknown");
   const uncertainApplication = !official || session.applicationEstimated;
@@ -49,5 +49,23 @@ export function sessionCountdownDates(session: ExamScheduleSession, sessions: re
     applicationStart: uncertainApplication ? estimate?.applicationStart : session.applicationStart,
     applicationDeadline: uncertainApplication ? estimate?.applicationDeadline : session.applicationDeadline,
     applicationBasisYear: uncertainApplication && (estimate?.applicationStart || estimate?.applicationDeadline) ? estimate.basisYear : undefined,
+  };
+}
+
+export function planCountdownDates(plan: PacePlan, session?: ExamScheduleSession, sessions: readonly ExamScheduleSession[] = []) {
+  const dates = session && sessionCountdownDates(session, sessions);
+  const registration = plan.registration?.estimated ? undefined : plan.registration;
+  const application = session?.scheduleStatus === "ondemand" ? undefined : dates ?? {
+    applicationStart: registration?.start, applicationDeadline: registration?.deadline, applicationBasisYear: undefined,
+  };
+  let examDateSource = plan.examDateSource;
+  if (!plan.examDate && dates?.examDate) examDateSource = dates.examBasisYear === undefined ? "official" : "estimated";
+  return {
+    examDate: plan.examDate ?? dates?.examDate,
+    examBasisYear: plan.examDate ? undefined : dates?.examBasisYear,
+    examDateSource,
+    applicationStart: application?.applicationStart,
+    applicationDeadline: application?.applicationDeadline,
+    applicationBasisYear: application?.applicationBasisYear,
   };
 }

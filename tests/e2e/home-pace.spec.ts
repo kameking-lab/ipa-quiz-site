@@ -4,7 +4,7 @@ import { LS_KEYS } from "../../lib/storage/keys";
 
 const today = "2026-11-17";
 const catalog = Array.from({ length: 200 }, (_, i) => ({ id: `ip-2026h-am-q${i + 1}`, exam: "ip", year: 2026, season: "spring", session: "am", qNumber: i + 1 }));
-const fixturePlan = () => ({ ...createPacePlan({ id: "e2e-pace", exam: "ip", sessionId: "test-session", examDate: "2026-11-20", startDate: "2026-11-01" }, catalog, "2026-11-01T00:00:00+09:00"), registration: { label: "テスト日程", start: "2026-11-01", deadline: "2026-11-18", resultDate: "2026-12-01", sourceUrl: "https://www.ipa.go.jp/shiken/", estimated: false } });
+const fixturePlan = () => ({ ...createPacePlan({ id: "e2e-pace", exam: "ip", sessionId: "test-session", examDate: "2026-11-20", examDateSource: "official", startDate: "2026-11-01" }, catalog, "2026-11-01T00:00:00+09:00"), registration: { label: "テスト日程", start: "2026-11-01", deadline: "2026-11-18", resultDate: "2026-12-01", sourceUrl: "https://www.ipa.go.jp/shiken/", estimated: false } });
 async function fixtures(page: Page, plan?: PacePlan, correct = 0, returning = false, recent = false) {
   await page.clock.setFixedTime(new Date(`${today}T12:00:00+09:00`));
   await page.route("**/api/billing/status", r => r.fulfill({ json: { entitled: false } }));
@@ -527,19 +527,31 @@ test.describe("home flip calendar", () => {
     }
   }
 
-  for (const history of ["with-history", "no-history"]) {
-    test(`uses the saved appointment on the eve and exam day (${history})`, async ({ page }) => {
+  const savedDateCases = [
+    { source: "manual", history: "with-history", eve: "試験まで あと 1 日", today: "今日が受験日", image: "personal" },
+    { source: "manual", history: "no-history", eve: "試験まで あと 1 日", today: "今日が受験日", image: "personal" },
+    { source: "tentative", history: "with-history", eve: "試験まで（予定） あと 1 日", today: "今日が試験予定日", image: "tentative" },
+    { source: "tentative", history: "no-history", eve: "試験まで（予定） あと 1 日", today: "今日が試験予定日", image: "tentative" },
+    { source: "official", history: "with-history", eve: "試験まで あと 1 日", today: "今日が受験日", image: "official" },
+    { source: undefined, history: "no-history", eve: "計画の受験日まで あと 1 日", today: "計画の受験日", image: "legacy" },
+  ] as const;
+  for (const { source, history, eve: eveHeading, today: todayHeading, image } of savedDateCases) {
+    test(`uses the saved ${image} exam date on the eve and exam day (${history})`, async ({ page }) => {
       const eve = "2026-11-27";
       const appointment = "2026-11-28";
       const base = fixturePlan();
       const plan = {
-        ...base, id: "r1-plan", examDate: null, startDate: "2026-10-30",
+        ...base, id: "r1-plan", examDate: source ? null : appointment, examDateSource: undefined, startDate: "2026-10-30",
         registration: { ...base.registration, label: "受験回", resultDate: null, estimated: true },
       };
-      const current = { id: plan.sessionId, qualificationId: "itpassport", label: "2026年度第1回", fiscalYear: "2026",
+      const undated = { id: plan.sessionId, qualificationId: "itpassport", label: "2026年度第1回", fiscalYear: "2026",
         scheduleStatus: "tentative", unannounced: true, examDate: null, datePrecision: "unknown", resultDate: null,
         applicationStart: null, applicationDeadline: null, sourceUrl: null };
-      const previous = { ...current, id: "previous", label: "2025年度第1回", fiscalYear: "2025",
+      const current = source === "manual" ? undated : {
+        ...undated, scheduleStatus: source === "tentative" ? "tentative" : "official", unannounced: false,
+        datePrecision: "date", examDate: appointment, sourceUrl: base.registration.sourceUrl, applicationEstimated: true,
+      };
+      const previous = { ...undated, id: "previous", label: "2025年度第1回", fiscalYear: "2025",
         scheduleStatus: "official", unannounced: false, examDate: "2025-12-08", datePrecision: "date",
         applicationStart: "2025-11-19", applicationDeadline: "2025-11-25", sourceUrl: base.registration.sourceUrl };
       await page.setViewportSize({ width: 390, height: 844 });
@@ -562,20 +574,26 @@ test.describe("home flip calendar", () => {
       const calendar = hero.locator("[data-home-calendar]");
       const solved = hero.getByText("正解済み 0 / 200問", { exact: true });
       await expect(solved).toBeVisible();
-      if (history === "with-history") {
+      if (source === "manual" && history === "with-history") {
         await expect(calendar.getByRole("heading", { name: "試験まで（見込み） あと 11 日" })).toBeVisible();
       }
       await hero.getByRole("button", { name: "計画を変更", exact: true }).click();
       const dialog = page.getByRole("dialog");
-      await dialog.locator('input[type="date"]').fill(appointment);
+      if (source === "manual") await dialog.locator('input[type="date"]').fill(appointment);
+      else {
+        await expect(dialog.locator('input[type="date"]')).toHaveCount(0);
+        await expect(dialog.locator(`time[datetime="${appointment}"]`)).toBeVisible();
+      }
       await dialog.getByRole("button", { name: "変更を保存" }).click();
       await expect(dialog).toHaveCount(0);
-      expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)!)[0].examDate, LS_KEYS.pacePlans))
-        .toBe(appointment);
+      expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)!)[0], LS_KEYS.pacePlans))
+        .toMatchObject({ examDate: appointment, ...(source ? { examDateSource: source } : {}) });
+      if (!source) expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)!)[0], LS_KEYS.pacePlans))
+        .not.toHaveProperty("examDateSource");
 
       for (const [state, date, heading] of [
-        ["eve", eve, "試験まで あと 1 日"],
-        ["today", appointment, "今日が受験日"],
+        ["eve", eve, eveHeading],
+        ["today", appointment, todayHeading],
       ]) {
         await page.clock.setFixedTime(new Date(`${date}T12:10:00+09:00`));
         const gate = Promise.withResolvers<void>();
@@ -613,9 +631,14 @@ test.describe("home flip calendar", () => {
         await expect(calendar.getByText("（見込み）", { exact: true }))
           .toHaveCount(history === "with-history" ? 1 : 0);
         if (state === "eve") await expect(hero.getByText("勉強日あと1日", { exact: false })).toBeVisible();
-        if (screenshotDir) await screenshotHero(hero, `${screenshotDir}/personal-${state}-${history}-390.png`);
+        if (screenshotDir) await screenshotHero(hero, `${screenshotDir}/${image}-${state}-${history}-390.png`);
         await hero.getByRole("button", { name: "学習計画の詳細" }).click();
-        await expect(dialog.getByText(appointment, { exact: true })).toBeVisible();
+        const details = (label: string) => dialog.locator("dl > div").filter({ has: page.getByText(label, { exact: true }) }).locator("dd");
+        const examLabel = source ? "試験日" : "計画の受験日";
+        await expect(details(examLabel)).toHaveText(appointment + (source === "tentative" ? "（予定）" : ""));
+        await expect(details("申込開始")).toHaveText(history === "with-history" ? "11/19（木）（見込み）" : "未発表");
+        await expect(details("申込締切")).toHaveText(history === "with-history" ? "11/25（水）（見込み）" : "未発表");
+        if (screenshotDir) await page.screenshot({ path: `${screenshotDir}/${image}-${state}-${history}-detail-390.png`, animations: "disabled" });
       }
     });
   }

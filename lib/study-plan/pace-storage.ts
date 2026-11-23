@@ -11,7 +11,8 @@ const date = z.string().refine(value => dayNumber(value) !== null);
 const timestamp = z.string().refine(value => Number.isFinite(Date.parse(value)));
 export const pacePlanSchema = z.object({
   kind: z.literal("exam-pace-v1"), id: z.string().min(1), exam: z.string().min(1), sessionId: z.string().nullable(),
-  examDate: date.nullable(), startDate: date, createdAt: timestamp, updatedAt: timestamp,
+  examDate: date.nullable(), examDateSource: z.enum(["manual", "official", "tentative", "estimated"]).optional(),
+  startDate: date, createdAt: timestamp, updatedAt: timestamp,
   range: z.object({ questionIds: z.array(z.string()), years: z.array(z.number().int()), initialCount: z.number().int().nonnegative(),
     capturedOn: date, lastExpansionWeek: date, graceUntil: date.nullable() }),
   registration: z.object({ label: z.string(), start: date.nullable(), deadline: date.nullable(), resultDate: date.nullable(), sourceUrl: z.string().url().nullable(), estimated: z.boolean() }).optional(),

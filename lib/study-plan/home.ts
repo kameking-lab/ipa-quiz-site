@@ -1,8 +1,10 @@
-import { dateCountdown, registrationTiming, sessionCountdownDates } from "./countdown";
-import { dayNumber, type AnswerAttempt, type PacePlan } from "./pace";
+import { dateCountdown, planCountdownDates, registrationTiming } from "./countdown";
+import { dayNumber, type AnswerAttempt, type ExamDateSource, type PacePlan } from "./pace";
 import type { ExamScheduleSession } from "./schedule";
 
-type CalendarDate = { kind: "start" | "deadline" | "exam"; date: string; basisYear?: number };
+type CalendarDate =
+  | { kind: "start" | "deadline"; date: string; basisYear?: number }
+  | { kind: "exam"; date: string; basisYear?: number; examDateSource?: ExamDateSource };
 
 export type HomeCalendar = {
   primary: CalendarDate & { days: number };
@@ -12,21 +14,16 @@ export type HomeCalendar = {
 export function homeCalendar(plan: PacePlan, today: string, sessions: readonly ExamScheduleSession[] = []): HomeCalendar | null {
   if (plan.result || (plan.examDate && plan.examDate < today)) return null;
   const session = sessions.find(item => item.id === plan.sessionId);
-  const dates = session && sessionCountdownDates(session, sessions);
-  const examDate = plan.examDate ?? dates?.examDate;
+  const { examDate, examBasisYear, examDateSource,
+    applicationStart: start, applicationDeadline: deadline, applicationBasisYear: basisYear } = planCountdownDates(plan, session, sessions);
   if (examDate && dayNumber(examDate) !== null && examDate < today) return null;
-  const exam = dateCountdown(examDate, today, plan.examDate ? undefined : dates?.examBasisYear);
-  const examTarget = exam && { ...exam, kind: "exam" as const };
+  const exam = dateCountdown(examDate, today, examBasisYear);
+  const examTarget = exam && { ...exam, kind: "exam" as const, examDateSource };
 
-  const savedRegistration = plan.registration?.estimated ? null : plan.registration;
-  const start = dates ? dates.applicationStart : savedRegistration?.start;
-  const deadline = dates ? dates.applicationDeadline : savedRegistration?.deadline;
-  const basisYear = dates?.applicationBasisYear;
-  const hasRegistration = session?.scheduleStatus !== "ondemand";
-  const deadlineDate: CalendarDate | null = hasRegistration && deadline && dayNumber(deadline) !== null
+  const deadlineDate: CalendarDate | null = deadline && dayNumber(deadline) !== null
     ? { kind: "deadline", date: deadline, basisYear }
     : null;
-  const registration = hasRegistration && !plan.registered
+  const registration = !plan.registered
     ? registrationTiming(start, deadline, today, basisYear).countdown
     : null;
 
