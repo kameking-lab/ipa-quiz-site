@@ -28,8 +28,9 @@ test("a saved plan without an appointment shows no invented target or paid nudge
   await setup(page, { ...makePlan(), examDate: null });
   await page.goto("/");
   await expect(page.getByRole("img", { name: "正解済み 0 / 200問" })).toBeVisible();
-  await expect(page.getByTestId("pace-target-flag")).toHaveCount(0);
-  await expect(page.getByText("受験日を設定してください", { exact: true })).toBeVisible();
+  await expect(page.getByText(/^1回の目安/)).toHaveCount(0);
+  await expect(page.getByRole("link", { name: "計画の問題を解く" })).toHaveCount(0);
+  await expect(page.getByRole("button", { name: "自分の受験日を設定" })).toBeVisible();
   await expect(page.getByRole("link", { name: /回数無制限で追いつけます/ })).toHaveCount(0);
 });
 
