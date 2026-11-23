@@ -428,7 +428,16 @@ test.describe("home flip calendar", () => {
           if ("exam" in state) await expect(hero.getByRole("heading", { name: "試験、おつかれさまでした" })).toBeVisible();
         }
         if (screenshotDir) {
-          await page.evaluate(() => document.fonts.ready.then(() => undefined));
+          await hero.locator("svg image").evaluateAll(async sprites => {
+            await Promise.all(sprites.map(sprite => {
+              const image = new Image();
+              image.src = (sprite as SVGImageElement).href.baseVal;
+              return image.decode();
+            }));
+            await document.fonts.ready;
+            await new Promise(requestAnimationFrame);
+            await new Promise(requestAnimationFrame);
+          });
           await hero.screenshot({ path: `${screenshotDir}/${state.name}-${sceneName}-${colorScheme}-${width}.png`, animations: "disabled" });
         }
       });
