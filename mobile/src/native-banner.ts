@@ -54,15 +54,18 @@ export function useNativeBanner(access: MobileEntitlement | null, productId: str
       if (document.hidden) hideNativeBanner();
       setForeground(value => value + 1);
     };
+    const restorePage = (event: PageTransitionEvent) => { if (event.persisted) refreshVisibility(); };
     document.addEventListener("visibilitychange", refreshVisibility);
     window.addEventListener("offline", hideNativeBanner);
     window.addEventListener("online", refreshVisibility);
     window.addEventListener("pagehide", hideNativeBanner);
+    window.addEventListener("pageshow", restorePage);
     return () => {
       document.removeEventListener("visibilitychange", refreshVisibility);
       window.removeEventListener("offline", hideNativeBanner);
       window.removeEventListener("online", refreshVisibility);
       window.removeEventListener("pagehide", hideNativeBanner);
+      window.removeEventListener("pageshow", restorePage);
     };
   }, []);
   useEffect(() => {

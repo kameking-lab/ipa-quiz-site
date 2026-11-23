@@ -20,7 +20,7 @@ public final class NativeBannerAds: CAPPlugin, CAPBridgedPlugin, BannerViewDeleg
     ]
 
     private static let browseRoots: Set<String> = ["/", "/ip", "/fe", "/sg", "/ap", "/sc", "/pm", "/db", "/es", "/au", "/nw", "/st", "/sa", "/sm"]
-    private static var sdkStart: Task<Void, Never>?
+    private static var sdkStart: Task<Bool, Never>?
     private var generation = 0
     private var readyGeneration: Int?
     private var preparing = false
@@ -172,10 +172,19 @@ public final class NativeBannerAds: CAPPlugin, CAPBridgedPlugin, BannerViewDeleg
             sdk.requestConfiguration.publisherPrivacyPersonalizationState = personalized ? .default : .disabled
             if Self.sdkStart == nil {
                 sdk.disableMediationInitialization()
-                Self.sdkStart = Task { _ = await sdk.start() }
+                Self.sdkStart = Task { @MainActor [weak self] in
+                    guard let self = self, attempt == self.generation, self.placementAllowed,
+                          ATTrackingManager.trackingAuthorizationStatus == initialTracking,
+                          ConsentInformation.shared.canRequestAds else {
+                        Self.sdkStart = nil
+                        return false
+                    }
+                    _ = await sdk.start()
+                    return true
+                }
             }
-            await Self.sdkStart?.value
-            guard attempt == generation, placementAllowed, ConsentInformation.shared.canRequestAds,
+            guard let sdkStart = Self.sdkStart, await sdkStart.value,
+                  attempt == generation, placementAllowed, ConsentInformation.shared.canRequestAds,
                   ATTrackingManager.trackingAuthorizationStatus == initialTracking, let host = host,
                   host.view.bounds.width >= 320 else { return }
             let view = BannerView(adSize: AdSizeBanner)
