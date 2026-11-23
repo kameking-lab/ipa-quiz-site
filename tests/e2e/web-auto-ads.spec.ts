@@ -12,6 +12,8 @@ test.beforeEach(async ({ context }) => {
     body: `const ad = document.createElement("div");
       ad.className = "google-auto-placed";
       ad.dataset.testAutoAd = "";
+      const hero = document.querySelector("[data-home-event-art]");
+      if (hero) ad.dataset.heroOpacity = getComputedStyle(hero).opacity;
       ad.textContent = "Test Auto Ad";
       document.body.appendChild(ad);`,
   }));
@@ -73,6 +75,7 @@ test("allows the seasonal home hero to paint before ads", async ({ page }) => {
   }
   await expect(page.locator('[data-home-event-art="halloween"]')).toHaveAttribute("data-home-event-ready", "true");
   await expect(fakeAd(page)).toBeVisible();
+  await expect(fakeAd(page)).toHaveAttribute("data-hero-opacity", "1");
 });
 
 test("keeps the script out of the app WebView", async ({ page }) => {

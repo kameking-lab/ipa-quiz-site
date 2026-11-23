@@ -13,13 +13,14 @@ import {
 function afterHomeEventArt(load: () => void): () => void {
   const slot = document.querySelector(".p3-event-art-slot");
   const paintedArt = "[data-home-event-ready]";
-  if (!slot || !document.documentElement.dataset.homeEventLayout || slot.querySelector(paintedArt)) {
+  if (!slot || !document.documentElement.dataset.homeEventLayout) {
     return onBrowserIdle(load);
   }
 
   // The seasonal hero image is requested after window.load and revealed
   // after decode. Give that first paint priority over an ad request.
   let cancelIdle: (() => void) | undefined;
+  let fadeTimer: number | undefined;
   function stopWaiting() {
     window.clearTimeout(deadline);
     observer.disconnect();
@@ -27,7 +28,8 @@ function afterHomeEventArt(load: () => void): () => void {
   }
   function ready() {
     stopWaiting();
-    cancelIdle = onBrowserIdle(load);
+    // The ready flag starts the hero's 160 ms opacity transition.
+    fadeTimer = window.setTimeout(() => { cancelIdle = onBrowserIdle(load); }, 250);
   }
 
   const observer = new MutationObserver(() => {
@@ -36,7 +38,8 @@ function afterHomeEventArt(load: () => void): () => void {
   observer.observe(slot, { childList: true, subtree: true, attributes: true, attributeFilter: ["data-home-event-ready"] });
   const deadline = window.setTimeout(ready, 4000);
   slot.addEventListener("error", ready, true);
-  return () => { stopWaiting(); cancelIdle?.(); };
+  if (slot.querySelector(paintedArt)) ready();
+  return () => { stopWaiting(); window.clearTimeout(fadeTimer); cancelIdle?.(); };
 }
 
 export function WebAutoAds() {
