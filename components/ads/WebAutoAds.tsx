@@ -10,6 +10,35 @@ import {
   WEB_ADS_MEMBERSHIP_CHANNEL, WEB_ADS_RELOADING, WEB_ADS_SCRIPT_ID, WEB_ADS_SCRIPT_URL,
 } from "@/lib/ads/web-ads";
 
+function afterHomeEventArt(load: () => void): () => void {
+  const slot = document.querySelector(".p3-event-art-slot");
+  const paintedArt = "[data-home-event-ready]";
+  if (!slot || !document.documentElement.dataset.homeEventLayout || slot.querySelector(paintedArt)) {
+    return onBrowserIdle(load);
+  }
+
+  // The seasonal hero image is requested after window.load and revealed
+  // after decode. Give that first paint priority over an ad request.
+  let cancelIdle: (() => void) | undefined;
+  function stopWaiting() {
+    window.clearTimeout(deadline);
+    observer.disconnect();
+    slot?.removeEventListener("error", ready, true);
+  }
+  function ready() {
+    stopWaiting();
+    cancelIdle = onBrowserIdle(load);
+  }
+
+  const observer = new MutationObserver(() => {
+    if (slot.querySelector(paintedArt)) ready();
+  });
+  observer.observe(slot, { childList: true, subtree: true, attributes: true, attributeFilter: ["data-home-event-ready"] });
+  const deadline = window.setTimeout(ready, 4000);
+  slot.addEventListener("error", ready, true);
+  return () => { stopWaiting(); cancelIdle?.(); };
+}
+
 export function WebAutoAds() {
   const pathname = usePathname();
   const excluded = !pathname || !isWebAdPath(pathname);
@@ -44,13 +73,14 @@ export function WebAutoAds() {
         }
         root.removeAttribute("data-web-ads-paused");
         if (document.getElementById(WEB_ADS_SCRIPT_ID)) return;
-        cancelLoad = onBrowserIdle(() => {
+        cancelLoad = afterHomeEventArt(() => {
           if (!eligible() || document.getElementById(WEB_ADS_SCRIPT_ID)) return;
           const script = document.createElement("script");
           script.id = WEB_ADS_SCRIPT_ID;
           script.src = WEB_ADS_SCRIPT_URL;
           script.async = true;
           script.crossOrigin = "anonymous";
+          script.setAttribute("fetchpriority", "low");
           document.head.appendChild(script);
         });
       });

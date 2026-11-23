@@ -50,6 +50,31 @@ test("keeps the script out of a paid member's first page", async ({ page }) => {
   await expect(tag(page)).toHaveCount(0);
 });
 
+test("allows the seasonal home hero to paint before ads", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.clock.setFixedTime(new Date("2026-10-31T12:00:00Z"));
+  let releaseImage!: () => void;
+  const pendingImage = new Promise<void>(resolve => { releaseImage = resolve; });
+  const background = "**/images/home/event-scenes/halloween.webp";
+  await page.route(background, async route => {
+    await pendingImage;
+    await route.fulfill({ contentType: "image/gif", body: Buffer.from("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7", "base64") });
+  });
+  await page.route("**/api/billing/status", route => route.fulfill({ json: { entitled: false } }));
+  const imageRequested = page.waitForRequest(background);
+  const membershipChecked = page.waitForResponse("**/api/billing/status");
+  await page.goto("/", { waitUntil: "domcontentloaded" });
+  try {
+    await Promise.all([imageRequested, membershipChecked]);
+    await page.evaluate(() => new Promise<void>(resolve => requestIdleCallback(() => resolve())));
+    await expect(tag(page)).toHaveCount(0);
+  } finally {
+    releaseImage();
+  }
+  await expect(page.locator('[data-home-event-art="halloween"]')).toHaveAttribute("data-home-event-ready", "true");
+  await expect(fakeAd(page)).toBeVisible();
+});
+
 test("keeps the script out of the app WebView", async ({ page }) => {
   await page.addInitScript(() => { Object.assign(window, { Capacitor: { isNativePlatform: () => true } }); });
   await page.route("**/api/billing/status", route => route.fulfill({ json: { entitled: false } }));

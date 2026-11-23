@@ -36,6 +36,7 @@ describe("WebAutoAds", () => {
     script()?.remove();
     document.documentElement.removeAttribute("data-web-ads-paused");
     document.documentElement.removeAttribute("data-web-ads-reloading");
+    delete document.documentElement.dataset.homeEventLayout;
     vi.restoreAllMocks();
     vi.unstubAllGlobals();
   });
@@ -82,6 +83,25 @@ describe("WebAutoAds", () => {
     render(<WebAutoAds />);
     expect(request).not.toHaveBeenCalled();
     expect(script()).toBeNull();
+  });
+
+  it("waits for the seasonal home hero even when hydration inserts it after window load", async () => {
+    request.mockResolvedValue(Response.json({ entitled: false }));
+    document.documentElement.dataset.homeEventLayout = "labor";
+    const slot = document.createElement("div");
+    slot.className = "p3-event-art-slot";
+    const { container } = render(<WebAutoAds />);
+    container.appendChild(slot);
+    await act(async () => {});
+    flushIdle();
+    expect(script()).toBeNull();
+
+    const picture = document.createElement("picture");
+    slot.appendChild(picture);
+    picture.setAttribute("data-home-event-ready", "true");
+    await waitFor(() => expect(idle.size).toBe(1));
+    flushIdle();
+    expect(script()).toHaveAttribute("src", WEB_ADS_SCRIPT_URL);
   });
 
   it("does not check membership or load ads in the native app", () => {
