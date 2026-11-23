@@ -7,8 +7,9 @@ import { captureActivity, flushActivity } from "@/lib/analytics/activity-client"
 import { AI_FREE_QUESTIONS_PER_DAY } from "@/lib/constants/ai-quota";
 import { AI_POLICY_VERSION, type AiFeature } from "@/lib/ai/access-policy";
 import { fetchWithAiGuestCookie, saveAiCheckoutDraft } from "@/lib/ai/access-client";
+import { MEMBERSHIP_CHECK_PENDING_MESSAGE } from "@/lib/billing/domain";
 
-type Quota = { kind: "free"; remaining: number; resetAt: number } | { kind: "paid" };
+type Quota = { kind: "free"; remaining: number; resetAt: number } | { kind: "paid" | "membership_check_pending" };
 const CHANNEL = "kakomon:ai-quota-changed";
 
 export function useAiQuota(feature: AiFeature, active = true) {
@@ -22,7 +23,9 @@ export function useAiQuota(feature: AiFeature, active = true) {
     let value: Quota | null = null;
     try {
       const response = await fetchWithAiGuestCookie(`/api/ai/usage?feature=${feature}`, { cache: "no-store" });
-      if (response.ok) {
+      if (response.status === 503 && response.headers.get("X-Error-Type") === "ai_membership_check_pending") {
+        value = { kind: "membership_check_pending" };
+      } else if (response.ok) {
         const data = await response.json();
         if (data.kind === "paid") value = { kind: "paid" };
         if (data.kind === "free" && Number.isInteger(data.remaining) && data.remaining >= 0
@@ -61,6 +64,13 @@ export function useAiQuota(feature: AiFeature, active = true) {
     return () => clearTimeout(timer);
   }, [active, refresh, resetAt]);
   const applyDenial = useCallback((version: number, response: Response, body: unknown) => {
+    if (response.status === 503 && response.headers.get("X-Error-Type") === "ai_membership_check_pending") {
+      if (version === membershipVersion.current) {
+        generation.current++;
+        setQuota({ kind: "membership_check_pending" });
+      }
+      return true;
+    }
     if (response.status !== 429 || response.headers.get("X-AI-Policy-Version") !== AI_POLICY_VERSION
       || !body || typeof body !== "object" || !("error" in body) || body.error !== "ai_daily_quota_exhausted"
       || !("resetAt" in body) || typeof body.resetAt !== "number" || !Number.isSafeInteger(body.resetAt) || body.resetAt <= Date.now()) return false;
@@ -100,7 +110,8 @@ export function AiAccessNotice({ quota, draft, draftId, returnTo, denials, onDis
     captureActivity("ai_quota_viewed");
   }, [resetAt, shown]);
   if (quota?.kind === "paid") return <p className="px-3 pb-1 text-xs text-muted-foreground">月額会員 · AI質問は回数制限なし</p>;
-  if (!quota || quota.remaining === limit) return null;
+  if (quota?.kind === "membership_check_pending") return <p role="status" className="px-3 pb-1 text-xs text-muted-foreground">{MEMBERSHIP_CHECK_PENDING_MESSAGE}</p>;
+  if (quota?.kind !== "free" || quota.remaining === limit) return null;
   if (!exhausted) return <p role="status" className="px-3 pb-1 text-xs text-muted-foreground">今日の無料AI あと{quota.remaining}回</p>;
   if (!shown) return null;
   const price = `月額${PLAN_OFFER.priceYen.toLocaleString("ja-JP")}円（税込）`;

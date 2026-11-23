@@ -10,6 +10,7 @@ import { PracticeDailyLimit, PracticeLoading } from "@/components/quiz/PracticeT
 import Link from "next/link";
 import { fetchPracticeQuestion, PracticeRequestError } from "@/lib/billing/guest-client";
 import type { PracticeAccess } from "@/lib/billing/practice-contract";
+import { MEMBERSHIP_CHECK_PENDING, MEMBERSHIP_CHECK_PENDING_MESSAGE } from "@/lib/billing/domain";
 import { posthogCapture } from "@/lib/posthog";
 import { nativeClient } from "@/mobile/shared/contracts";
 import { jstResetLabel } from "@/lib/billing/reset-time";
@@ -297,8 +298,9 @@ export function QuizClient({
         <PracticeDailyLimit reset={reset} resumeHref={window.location.pathname + window.location.search} backHref={backHref} freeDaily={access?.freeDaily} onUnlocked={retryQuestion} />
       </div>;
     }
-    const message = accessError === "daily_limit"
-      ? `本日の無料連続演習枠を使い切りました。${reset ? `${reset}に再開できます。` : "次の無料枠更新後に再開できます。"}`
+    const checkingMembership = accessError === MEMBERSHIP_CHECK_PENDING;
+    const message = checkingMembership
+      ? MEMBERSHIP_CHECK_PENDING_MESSAGE
       : accessError === "sign_in_required"
         ? accountStatus === "unauthenticated"
           ? "この端末の本日の演習枠はアカウントへの引継ぎが開始されています。続きは同じアカウントでログインして再試行してください。"
@@ -314,7 +316,7 @@ export function QuizClient({
       <nav aria-label="無料で続ける・保存と利用条件" className="flex flex-wrap justify-center gap-3">
         <Link href="/review" className="underline">保存済みの履歴・無料復習</Link>
         <SignedOutOnly><Link className="underline" href={loginHref}>この問題から再開するためにログイン</Link></SignedOutOnly>
-        <Link href="/billing" className="underline">無料試用・料金と利用条件</Link>
+        {!checkingMembership && <Link href="/billing" className="underline">無料試用・料金と利用条件</Link>}
       </nav>
       <div className="flex flex-wrap justify-center gap-3">
         {accessError !== "daily_limit" ? <button type="button" onClick={retryQuestion} className="min-h-11 rounded-xl bg-primary px-5 py-2 font-semibold text-primary-foreground">再読み込み</button> : null}

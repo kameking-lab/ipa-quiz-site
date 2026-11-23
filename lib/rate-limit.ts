@@ -104,7 +104,7 @@ async function kvPipeline(commands: unknown[][]): Promise<unknown[]> {
 export async function checkIpRateLimit(
   req: Request,
   endpoint: string,
-  options: { requireKv?: boolean; sharedAiGlobal?: boolean } = {},
+  options: { requireKv?: boolean; sharedAiGlobal?: boolean; ipOnly?: boolean } = {},
 ): Promise<IpRateLimitResult> {
   // Paid copilot calls must not fail open when the shared counter is unavailable.
   if (!KV_ENABLED) return options.requireKv
@@ -149,7 +149,7 @@ export async function checkIpRateLimit(
 
   // Atomic shared admission counters prevent a distributed client from
   // bypassing the per-IP limits and exhausting the monthly Gemini budget.
-  if (endpoint === "copilot" || options.sharedAiGlobal) {
+  if (!options.ipOnly && (endpoint === "copilot" || options.sharedAiGlobal)) {
     const globalHourKey = `rl:global:copilot:h:${hrBucket}`;
     const globalDayKey = `rl:global:copilot:d:${dayBucket}`;
     const [globalResult] = await kvPipeline([

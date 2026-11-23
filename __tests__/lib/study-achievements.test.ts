@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from "vitest";
 import { parseStudyCard, cardImagePath, cardQualification } from "@/lib/sharing/card";
-import { withStudyCardMetadata } from "@/lib/sharing/card-metadata";
+import { studyCardDetails, studyCardMetadata } from "@/lib/sharing/card-metadata";
 import { questionShareTitle, shareLink } from "@/lib/sharing/links";
 import { achievementKind, canOfferAchievement, completedDailyGoal, qualifiesForReview, rangeProgress } from "@/lib/sharing/milestones";
 import { countGoalDay, hasCardToday, reserveStudyCard } from "@/lib/sharing/milestone-storage";
@@ -74,10 +74,9 @@ describe("shared card validation and links", () => {
     const card = parseStudyCard(new URLSearchParams(counts));
     expect(card).toEqual({ kind: "streak", mastered: 120, total: 233, streak: 7 });
     expect(cardImagePath("fe", card!)).toBe("/api/og?card=streak&mastered=120&total=233&streak=7&type=study-card&exam=fe");
-    const ordinary = { title: "試験トップ", alternates: { canonical: "/fe" } };
-    const metadata = withStudyCardMetadata(ordinary, "fe", { ...counts, utm_source: "share", utm_medium: "card" });
+    const metadata = studyCardMetadata("fe", studyCardDetails("fe", counts)!);
     expect(metadata.alternates?.canonical).toBe("/fe");
-    expect(metadata.openGraph?.url?.toString()).toMatch(/\/fe\?card=streak&mastered=120&total=233&streak=7&utm_source=share&utm_medium=card$/);
+    expect(metadata.openGraph?.url?.toString()).toMatch(/\/share\/study\/fe\?card=streak&mastered=120&total=233&streak=7&utm_source=share&utm_medium=card$/);
     expect(cardQualification("survey-assistant")?.path).toBe("/e-learning/exams/qualifications/survey-assistant");
     expect(cardQualification("../fe")).toBeNull();
     expect(cardQualification("constructor")).toBeNull();

@@ -145,6 +145,8 @@ export async function findRelatedQuestions(input: FindRelatedInput): Promise<Rel
   const scored: { item: RelatedQuestion; onTopic: boolean }[] = [];
   for (const c of candidates) {
     if (c.doc.kind !== "question") continue;
+    // The index already carries the exam; skip loading question files for other exams.
+    if (input.currentExam && c.doc.meta.exam && c.doc.meta.exam !== input.currentExam) continue;
     if (input.excludeDocIds.has(c.doc.id)) continue;
     const qid = c.doc.id.replace(/^q:/, "");
     if (input.currentQuestionId && qid === input.currentQuestionId) continue;

@@ -2,7 +2,7 @@ import "server-only";
 import { createHmac, timingSafeEqual } from "node:crypto";
 import { z } from "zod";
 import { prisma } from "@/lib/db/prisma";
-import { BillingError } from "@/lib/billing/domain";
+import { BillingError, MEMBERSHIP_CHECK_PENDING } from "@/lib/billing/domain";
 import type { AppStorePurchaseState, Realm } from "@/lib/billing/subscription/domain";
 import { requireMobileReady, mobileConfig } from "./config";
 import { auditDuplicatePurchases } from "@/lib/billing/duplicate-purchase-runtime";
@@ -161,6 +161,9 @@ export async function revenueCatAccess(userId: string, fresh = false, allowStore
       if (fresh || !allowStoredStudyAccess || !temporary) throw error;
       // A concurrent webhook may already have revoked the old snapshot.
       row = await ensureRevenueCatAccount(userId);
+      if (row.expiresAt && row.expiresAt.getTime() <= Date.now()) {
+        throw new BillingError(MEMBERSHIP_CHECK_PENDING, 503);
+      }
     }
   }
   return row && row.expiresAt && row.expiresAt.getTime() > Date.now() ? row : null;

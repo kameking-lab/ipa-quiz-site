@@ -1,7 +1,7 @@
 import "server-only";
 import { billingRuntime } from "./runtime";
 import { monthlySelected } from "./subscription/config";
-import { BillingError } from "./domain";
+import { BillingError, MEMBERSHIP_CHECK_PENDING } from "./domain";
 
 type StudyService = ReturnType<typeof billingRuntime>["service"]
   | ReturnType<typeof import("./subscription/runtime").monthlyRuntime>["service"];
@@ -71,6 +71,8 @@ export async function studyMembership(userId: string, independentStores: boolean
   const [webFinal, iosFinal] = await Promise.all([webResult, iosResult]);
   if ("source" in webFinal && webFinal.source !== "free") return webFinal;
   if (iosFinal && "source" in iosFinal) return iosFinal;
+  if (iosFinal && "error" in iosFinal && iosFinal.error instanceof BillingError
+    && iosFinal.error.code === MEMBERSHIP_CHECK_PENDING) throw iosFinal.error;
   if ("error" in webFinal) throw webFinal.error;
   if (iosFinal && "error" in iosFinal) throw iosFinal.error;
   return webFinal;

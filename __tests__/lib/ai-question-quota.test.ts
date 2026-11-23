@@ -27,7 +27,7 @@ vi.mock("@/lib/billing/subscription/runtime", () => ({
 }));
 vi.mock("@/mobile/server/revenuecat", () => ({ revenueCatAccess: ownership.ios }));
 vi.mock("@/lib/ai/question-quota-kv", () => ({
-  questionQuotaStore: { read: vi.fn(), reserve: vi.fn(), settle: vi.fn() },
+  questionQuotaStore: { read: vi.fn(), reserve: vi.fn(), settle: vi.fn(), claimGuest: vi.fn() },
   recordPaidAiQuestion: vi.fn(),
 }));
 
@@ -42,6 +42,7 @@ beforeEach(() => {
   ownership.identity.mockResolvedValue("same-account");
   ownership.web.mockResolvedValue({ entitled: false });
   ownership.ios.mockResolvedValue(null);
+  vi.mocked(questionQuotaStore.claimGuest).mockResolvedValue({ status: "claimed", remaining: 1, resetAt: Date.now() + 60_000 });
 });
 afterEach(() => vi.unstubAllEnvs());
 
@@ -258,4 +259,45 @@ describe("AI daily question quota", () => {
     expect(listing).toContain("https://www.kakomon-ai.jp/privacy");
     expect(listing).toContain("https://www.apple.com/legal/internet-services/itunes/dev/stdeula/");
   });
+});
+it("imports the signed-in browser quota before reporting status, and ignores tampered cookies", async () => {
+  const guest = await guestRequest();
+  ownership.identity.mockResolvedValue("same-account");
+  const resetAt = Date.now() + 60_000;
+  vi.mocked(questionQuotaStore.read).mockResolvedValueOnce({ status: "status", remaining: 1, resetAt });
+  expect(await (await GET(guest.request)).json()).toEqual({ kind: "free", remaining: 1, resetAt });
+  expect(questionQuotaStore.claimGuest).toHaveBeenCalledExactlyOnceWith(
+    expect.objectContaining({ subject: "user:same-account", limit: 3, offset: 540 }), guest.subject,
+  );
+  vi.mocked(questionQuotaStore.read).mockResolvedValueOnce({ status: "status", remaining: 3, resetAt });
+  const tampered = new Request(request, { headers: { cookie: guest.request.headers.get("cookie")! + "bad" } });
+  expect((await GET(tampered)).status).toBe(200);
+  expect(questionQuotaStore.claimGuest).toHaveBeenCalledTimes(1);
+});
+
+it("waits for an in-flight guest answer before admitting a signed-in free generation", async () => {
+  const guest = await guestRequest();
+  const resetAt = Date.now() + 60_000;
+  ownership.identity.mockResolvedValue("same-account");
+  vi.mocked(questionQuotaStore.claimGuest).mockResolvedValueOnce({ status: "pending", remaining: 3, resetAt });
+  const waiting = await prepareAiUsage(guest.request, "copilot");
+  expect((await consumeAiUsage(waiting, "gemini", ["concurrent"]))?.status).toBe(409);
+  expect(reserve).not.toHaveBeenCalled();
+  reserve.mockResolvedValueOnce({ status: "exhausted", remaining: 0, resetAt, lease: undefined });
+  expect((await consumeAiUsage(waiting, "gemini", ["concurrent"]))?.status).toBe(429);
+});
+
+it("reports a pending App Store renewal without either reading or reserving a free slot", async () => {
+  const { BillingError } = await import("@/lib/billing/domain");
+  ownership.ios.mockRejectedValueOnce(new BillingError("membership_check_pending", 503))
+    .mockRejectedValueOnce(new BillingError("membership_check_pending", 503))
+    .mockResolvedValue({ expiresAt: new Date(Date.now() + 60_000) });
+  const status = await GET(request);
+  expect(status.status).toBe(503);
+  expect(await status.json()).toMatchObject({ error: "ai_membership_check_pending" });
+  const usage = await prepareAiUsage(request, "copilot");
+  expect((await consumeAiUsage(usage, "gemini", ["renewal"]))?.status).toBe(503);
+  expect(questionQuotaStore.read).not.toHaveBeenCalled();
+  expect(reserve).not.toHaveBeenCalled();
+  expect(await (await GET(request)).json()).toEqual({ kind: "paid" });
 });

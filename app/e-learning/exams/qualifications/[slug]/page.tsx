@@ -24,11 +24,10 @@ import {
 } from "@/lib/exam-library-model";
 import { getExamPaperStats } from "@/lib/exam-library-papers";
 import { SITE_BASE_URL } from "@/lib/seo/config";
-import { withStudyCardMetadata, type ShareSearchParams } from "@/lib/sharing/card-metadata";
 
 interface QualificationHubPageProps {
   params: Promise<{ slug: string }>;
-  searchParams?: Promise<ShareSearchParams>;
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
 }
 
 interface HubPaper {
@@ -58,17 +57,17 @@ function hubDescription(hub: QualificationHub, papers: readonly HubPaper[]): str
   return `${hub.description} 現在、${subjectCount}科目・${papers.length}回・${questionCount.toLocaleString("ja-JP")}問を掲載しています。`;
 }
 
-export async function generateMetadata({ params, searchParams }: QualificationHubPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: QualificationHubPageProps): Promise<Metadata> {
   const { slug } = await params;
   const hub = findQualificationHub(slug);
   if (!hub) return {};
   const papers = getHubPapers(hub);
-  return withStudyCardMetadata(withCanonicalSocialMetadata({
+  return withCanonicalSocialMetadata({
     title: `${hub.name}の過去問｜公表問題を無料で演習`,
     description: hubDescription(hub, papers),
     alternates: { canonical: qualificationHubPath(hub.slug) },
     robots: { index: true, follow: true },
-  }), slug, await searchParams);
+  });
 }
 
 export default async function QualificationHubPage({ params, searchParams }: QualificationHubPageProps) {

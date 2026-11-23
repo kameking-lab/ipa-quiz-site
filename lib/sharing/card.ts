@@ -54,6 +54,6 @@ export function cardImagePath(exam: string, card: StudyCard): string {
   return `/api/og?${query}`;
 }
 
-export function cardSharePath(path: string, card: StudyCard): string {
-  return `${path}${path.includes("?") ? "&" : "?"}${cardQuery(card)}`;
+export function cardSharePath(exam: string, card: StudyCard): string {
+  return `/share/study/${encodeURIComponent(exam)}?${cardQuery(card)}`;
 }

@@ -53,6 +53,27 @@ it("applies the same service limit to scoring when the shared AI policy is activ
   expect(keys).toEqual([expect.stringMatching(/^rl:global:copilot:h:/), expect.stringMatching(/^rl:global:copilot:d:/)]);
 });
 
+it("keeps Copilot free sends in the IP counters until generation is admitted", async () => {
+  enableKv();
+  const { checkAiNormalUse, checkFreeAiServiceUse, normalUseWindows } = await import("@/lib/ai/normal-use-server");
+  const { aiAccessPolicy, aiNormalUsePolicy } = await import("@/lib/ai/access-config");
+  vi.stubEnv("AI_QUOTA_ROLLOUT", "true");
+  const now = Date.now(), policy = aiNormalUsePolicy();
+  const context = { legacy: false, headers: {}, access: { kind: "free", subject: "guest:fixture" } as const, policy: aiAccessPolicy() };
+  const admit = vi.fn().mockResolvedValue({ allowed: true });
+  const transport = vi.fn<typeof fetch>().mockResolvedValueOnce(kvResponse([[1, 1, 1, 1]]));
+  vi.stubGlobal("fetch", transport);
+  expect(await checkAiNormalUse(req(), "copilot", context, {}, policy, { admit }, now)).toEqual({ ok: true });
+  expect(transport).toHaveBeenCalledTimes(1);
+  expect(admit).not.toHaveBeenCalled();
+  const [, init] = transport.mock.calls[0];
+  expect(String(init?.body)).not.toContain("rl:global:copilot:");
+  expect(await checkFreeAiServiceUse(context, { admit }, now)).toEqual({ ok: true });
+  expect(admit).toHaveBeenCalledExactlyOnceWith(
+    normalUseWindows("paid-member", "copilot", policy, now).filter(window => window.key.startsWith("rl:global:")),
+  );
+});
+
 it("uses the same IP and service buckets when the practice cookie changes between free endpoints", async () => {
   enableKv();
   const { checkIpRateLimit } = await import("@/lib/rate-limit");

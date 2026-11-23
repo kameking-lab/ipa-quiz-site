@@ -121,6 +121,6 @@ export function StudyAchievement({ moment, scope, goal = false, fallback = null,
   return <section data-study-achievement={result.kind} aria-label={CARD_LABELS[result.kind]} className="my-3 mx-auto max-w-sm text-center">
     <Image unoptimized width={1200} height={630} src={imagePath} className="h-auto w-full rounded-xl border border-border"
       alt={`${title}。正解済み ${result.mastered}/${result.total}問、連続学習 ${result.streak}日`} />
-    <StudyShareButton kind="card" path={cardSharePath(qualification.path, result)} title={title} imagePath={imagePath} />
+    <StudyShareButton kind="card" path={cardSharePath(exam, result)} title={title} imagePath={imagePath} />
   </section>;
 }

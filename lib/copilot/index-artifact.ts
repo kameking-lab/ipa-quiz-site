@@ -15,15 +15,13 @@ import { createHash } from "node:crypto";
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { setImmediate as yieldToEventLoop } from "node:timers/promises";
-import { promisify } from "node:util";
-import { gunzip, gunzipSync, gzipSync } from "node:zlib";
+import { gunzipSync, gzipSync } from "node:zlib";
 import { tokenize } from "./tokenize";
 import type { InvertedIndex } from "./retriever";
 import type { CorpusDoc } from "./types";
 
 const MAGIC = "CPIX";
 const FORMAT_VERSION = 1;
-const unzipIndex = promisify(gunzip);
 const TERM_BATCH = 16_384;
 const POSTING_BATCH = 65_536;
 
@@ -173,13 +171,13 @@ export function deserializeIndex(
   return step.value;
 }
 
-/** Read the same artifact on the server without blocking pending I/O for the whole decode. */
-export async function deserializeIndexAsync(
-  gz: Uint8Array,
+/** Restore an inflated artifact without blocking pending I/O for the whole decode. */
+export async function decodeIndexAsync(
+  raw: Uint8Array,
   docs: CorpusDoc[],
   options: DeserializeOptions,
 ): Promise<InvertedIndex | null> {
-  const decoder = decodeIndex(await unzipIndex(gz), docs, options);
+  const decoder = decodeIndex(raw, docs, options);
   let step = decoder.next();
   while (!step.done) {
     await yieldToEventLoop();
@@ -218,15 +216,19 @@ function* decodeIndex(
 
   let cursor = pos;
   const readVarint = (): number => {
-    let result = 0;
-    let shift = 0;
-    for (;;) {
-      if (cursor >= raw.length || shift > 28) throw new Error("corrupt copilot index varint");
-      const byte = raw[cursor++];
-      result += (byte & 0x7f) * 2 ** shift;
-      if (byte < 0x80) return result;
-      shift += 7;
+    // Most posting frequencies and document deltas fit in one byte.
+    if (cursor < raw.length) {
+      const first = raw[cursor++];
+      if (first < 0x80) return first;
+      let result = first & 0x7f;
+      for (let shift = 7; cursor < raw.length && shift <= 28; shift += 7) {
+        const byte = raw[cursor++];
+        if (shift === 28 && byte > 0x0f) break;
+        result |= (byte & 0x7f) << shift;
+        if (byte < 0x80) return result >>> 0;
+      }
     }
+    throw new Error("corrupt copilot index varint");
   };
 
   const docLen = new Uint32Array(header.docCount);
