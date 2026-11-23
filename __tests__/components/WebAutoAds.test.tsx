@@ -86,22 +86,32 @@ describe("WebAutoAds", () => {
   });
 
   it("waits for the seasonal home hero even when hydration inserts it after window load", async () => {
-    request.mockResolvedValue(Response.json({ entitled: false }));
-    document.documentElement.dataset.homeEventLayout = "labor";
-    const slot = document.createElement("div");
-    slot.className = "p3-event-art-slot";
-    const { container } = render(<WebAutoAds />);
-    container.appendChild(slot);
-    await act(async () => {});
-    flushIdle();
-    expect(script()).toBeNull();
+    vi.useFakeTimers({ toFake: ["setTimeout", "clearTimeout"] });
+    try {
+      request.mockResolvedValue(Response.json({ entitled: false }));
+      document.documentElement.dataset.homeEventLayout = "labor";
+      const slot = document.createElement("div");
+      slot.className = "p3-event-art-slot";
+      const { container } = render(<WebAutoAds />);
+      container.appendChild(slot);
+      await act(async () => {});
+      flushIdle();
+      expect(script()).toBeNull();
 
-    const picture = document.createElement("picture");
-    slot.appendChild(picture);
-    picture.setAttribute("data-home-event-ready", "true");
-    await waitFor(() => expect(idle.size).toBe(1));
-    flushIdle();
-    expect(script()).toHaveAttribute("src", WEB_ADS_SCRIPT_URL);
+      const picture = document.createElement("picture");
+      const image = document.createElement("img");
+      vi.spyOn(image, "complete", "get").mockReturnValue(false);
+      picture.appendChild(image);
+      slot.appendChild(picture);
+      act(() => vi.advanceTimersByTime(5000));
+      flushIdle();
+      expect(script()).toBeNull();
+
+      await act(async () => { picture.setAttribute("data-home-event-ready", "true"); });
+      act(() => vi.advanceTimersByTime(250));
+      flushIdle();
+      expect(script()).toHaveAttribute("src", WEB_ADS_SCRIPT_URL);
+    } finally { vi.useRealTimers(); }
   });
 
   it("does not check membership or load ads in the native app", () => {

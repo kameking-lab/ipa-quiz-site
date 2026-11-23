@@ -36,7 +36,12 @@ function afterHomeEventArt(load: () => void): () => void {
     if (slot.querySelector(paintedArt)) ready();
   });
   observer.observe(slot, { childList: true, subtree: true, attributes: true, attributeFilter: ["data-home-event-ready"] });
-  const deadline = window.setTimeout(ready, 4000);
+  const deadline = window.setTimeout(() => {
+    // A slow image can still become LCP. Only stop waiting when there is
+    // no image to paint or the image could not be loaded.
+    const image = slot.querySelector("img");
+    if (!image || (image.complete && image.naturalWidth === 0)) ready();
+  }, 4000);
   slot.addEventListener("error", ready, true);
   if (slot.querySelector(paintedArt)) ready();
   return () => { stopWaiting(); window.clearTimeout(fadeTimer); cancelIdle?.(); };
