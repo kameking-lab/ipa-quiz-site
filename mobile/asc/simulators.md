@@ -43,8 +43,9 @@ device typeの `minRuntimeVersion` / `maxRuntimeVersion`（数値またはString
 6.5インチ枠はASC1で追加扱いのため、自動で撮影セットを増やしていない。
 必要時に `capture.json` にそのサイズの端末枠を追加すれば選択可能。
 未知の端末や別寸法への自動フォールバックはしない。新機種はApple仕様で寸法と表示種別を
-確認してから `asc_simulators.py` の対応表へ追加する。画像のリサイズは行わず、
-既存の `asc_validate.py --screenshots` が実ファイルの寸法・RGB・枚数・SHA-256を検証する。
+確認してから `asc_simulators.py` の対応表へ追加する。シミュレーター撮影では
+原寸と画素統計を確認し、画像と SHA-256 を `build/asc/capture/` に保存する。
+`asc_validate.py --screenshots` は [掲載画像](repository-screenshots.md) を検証する。
 
 寸法の一次資料:
 [iPhone 16 Pro / Pro Max](https://support.apple.com/en-us/121031)、

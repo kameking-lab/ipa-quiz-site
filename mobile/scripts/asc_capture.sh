@@ -36,6 +36,3 @@ xcodebuild "${BUILD_ARGS[@]}" build 2>&1 | python3 scripts/asc_diagnostics.py bu
 # No Appium, XCUITest driver, WebDriverAgent, remote inspector or npm tooling.
 STAGE=capture
 python3 -u scripts/asc_capture.py "$@"
-if [[ ${1:-} == --smoke ]]; then exit 0; fi
-STAGE=validate-screenshots
-python3 scripts/asc_validate.py --screenshots

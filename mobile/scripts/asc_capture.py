@@ -321,16 +321,15 @@ def main():
         capture_device(devices[0], app, output, routes)
         log("Verified simulator startup and captured the bundled reminder screen.")
         return
-    output = ROOT / "fastlane/screenshots/ja"
+    output = ROOT / "build/asc/capture/ja"
     output.mkdir(parents=True, exist_ok=True)
     if list(output.glob("*.jpg")) or list(output.glob("*.png")):
         raise RuntimeError("Screenshot destination must be empty; archive/remove previous captures explicitly")
-    (ROOT / "build/asc").mkdir(parents=True, exist_ok=True)
     manifest = {"git_commit": run("git", "rev-parse", "HEAD"), "authentication": "anonymous", "capture_engine": "simctl + gated native readiness", "capture_plan": "quota-free alternative: qualification, review and actual empty dashboard; no quiz/explanation frames", "quota_grants": 0, "fifth_screen": "ASC1 approved reminder alternative", "images": []}
     for device in devices:
         manifest["images"].extend(capture_device(device, app, output))
     (output.parent / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
-    log("Captured 10 actual simulator screenshots (quota-free alternative).")
+    log(f"Captured {len(manifest['images'])} simulator screenshots in {output}.")
 
 
 if __name__ == "__main__":

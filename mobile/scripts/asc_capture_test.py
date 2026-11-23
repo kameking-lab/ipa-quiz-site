@@ -83,6 +83,19 @@ class CaptureDiagnosticsTest(unittest.TestCase):
         device.assert_called_once_with(capture.CONFIG["devices"][0], app, self.directory / "build/asc/smoke", {"05-reminder": "reminder"})
         self.assertFalse((self.directory / "fastlane").exists())
 
+    def test_diagnostic_capture_keeps_listing_assets_out_of_the_output_path(self):
+        app = self.directory / "build/asc-simulator/Build/Products/Debug-iphonesimulator/App.app"
+        app.mkdir(parents=True)
+        with patch.object(capture, "ROOT", self.directory), patch.object(capture.platform, "system", return_value="Darwin"), \
+                patch.object(capture.sys, "argv", ["asc_capture.py"]), patch.object(capture, "run", return_value="revision"), \
+                patch.object(capture, "capture_device", return_value=[{"file": "diagnostic.jpg"}]) as device:
+            capture.main()
+        output = self.directory / "build/asc/capture/ja"
+        self.assertEqual([call.args for call in device.call_args_list],
+                         [(spec, app, output) for spec in capture.CONFIG["devices"]])
+        self.assertTrue((output.parent / "manifest.json").is_file())
+        self.assertFalse((self.directory / "fastlane").exists())
+
 
     def test_redaction_covers_environment_auth_urls_and_source_values(self):
         with patch.dict(os.environ, {"ASC_REVIEW_CODE": "review-fixture-secret", "APP_STORE_CONNECT_PRIVATE_KEY": "private-fixture-secret"}):
