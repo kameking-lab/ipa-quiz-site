@@ -79,7 +79,7 @@ describe("home study plan calendar", () => {
     next, { ...next, scheduleStatus: "tentative", datePrecision: "month", examDate: "2027-02-01", sourceUrl },
   ])("estimates $datePrecision from the same round in the preceding fiscal year", current => {
     const sessions = parse(current, { ...prior, id: "wrong-round", label: "2025年度前期", examDate: "2025-10-20" }, prior);
-    expect(homeCalendar(plan, today, sessions)).toMatchObject({
+    expect(homeCalendar({ ...plan, examDate: null }, today, sessions)).toMatchObject({
       primary: { kind: "start", days: 30, basisYear: 2025 },
       secondary: { kind: "exam", date: "2027-02-16", basisYear: 2025 },
     });
@@ -90,7 +90,7 @@ describe("home study plan calendar", () => {
       parse(next, { ...prior, label: "前期" }),
       parse(next, prior, { ...prior, id: "ambiguous" }),
       parse(next, { ...prior, fiscalYear: "2024" }),
-    ]) expect(homeCalendar(plan, today, sessions)).toBeNull();
+    ]) expect(homeCalendar({ ...plan, examDate: null }, today, sessions)).toBeNull();
   });
   it("can use a single annual round with an annual summary in the current year", () => {
     const sessions = parse(
@@ -98,14 +98,37 @@ describe("home study plan calendar", () => {
       { ...next, id: "ap:estimate-2026", label: "2026年ごろ［目安］", scheduleStatus: "tentative" },
       { ...prior, label: "2025年度 宅建" },
     );
-    expect(homeCalendar(plan, today, sessions)?.secondary).toMatchObject({ date: "2027-02-16", basisYear: 2025 });
+    expect(homeCalendar({ ...plan, examDate: null }, today, sessions)?.secondary)
+      .toMatchObject({ date: "2027-02-16", basisYear: 2025 });
   });
-  it("uses the saved appointment for on-demand exams and skips an estimate when scheduling data is absent", () => {
+  it("marks only the registration date as estimated when an exam date is saved", () => {
+    const sessions = parse(next, prior);
+    const examDate = "2027-01-15";
+    expect(homeCalendar({ ...plan, examDate }, "2027-01-14", sessions)).toEqual({
+      primary: { kind: "deadline", date: examDate, days: 1, basisYear: 2025 },
+      secondary: { kind: "exam", date: examDate, days: 1, basisYear: undefined },
+    });
+    expect(homeCalendar({ ...plan, examDate }, examDate, sessions)).toEqual({
+      primary: { kind: "exam", date: examDate, days: 0, basisYear: undefined },
+      secondary: { kind: "deadline", date: examDate, basisYear: 2025 },
+    });
+  });
+  it("uses the saved appointment for on-demand exams", () => {
     expect(homeCalendar(plan, today, parse({ ...next, scheduleStatus: "ondemand" }))).toMatchObject({
       primary: { kind: "exam", days: 30 }, secondary: null,
     });
-    const estimated = { ...plan, registration: { ...plan.registration!, estimated: true } };
-    expect(homeCalendar(estimated, today)).toBeNull();
+  });
+  it("uses the saved exam even when it cannot estimate the registration dates", () => {
+    const saved = { ...plan, registration: { ...plan.registration!, estimated: true } };
+    const examEve = "2026-12-16";
+    for (const sessions of [[], parse(next)]) {
+      expect(homeCalendar(saved, examEve, sessions)).toEqual({
+        primary: { kind: "exam", date: saved.examDate, days: 1, basisYear: undefined }, secondary: null,
+      });
+      expect(homeCalendar(saved, saved.examDate!, sessions)).toEqual({
+        primary: { kind: "exam", date: saved.examDate, days: 0, basisYear: undefined }, secondary: null,
+      });
+    }
   });
 });
 

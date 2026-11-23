@@ -13,10 +13,9 @@ export function homeCalendar(plan: PacePlan, today: string, sessions: readonly E
   if (plan.result || (plan.examDate && plan.examDate < today)) return null;
   const session = sessions.find(item => item.id === plan.sessionId);
   const dates = session && sessionCountdownDates(session, sessions);
-  const plannedDate = !session && plan.registration?.estimated ? null : plan.examDate;
-  const examDate = dates?.uncertainExam ? dates.examDate : plannedDate ?? dates?.examDate;
+  const examDate = plan.examDate ?? dates?.examDate;
   if (examDate && dayNumber(examDate) !== null && examDate < today) return null;
-  const exam = dateCountdown(examDate, today, dates?.examBasisYear);
+  const exam = dateCountdown(examDate, today, plan.examDate ? undefined : dates?.examBasisYear);
   const examTarget = exam && { ...exam, kind: "exam" as const };
 
   const savedRegistration = plan.registration?.estimated ? null : plan.registration;

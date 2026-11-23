@@ -155,8 +155,11 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
   const examToday = plan?.examDate === today;
   // A date restored after first paint keeps the same rows on the day of the exam.
   const examDayLayout = examToday && savedPlan?.examDate !== null;
-  const calendar = plan ? homeCalendar(plan, today, scheduleSessions) : null;
   const scheduleLoading = !!scheduleExam && schedule?.exam !== scheduleExam;
+  // Wait for the registration dates before choosing the first visible countdown.
+  const calendar = plan && !(scheduleLoading && plan.registration?.estimated)
+    ? homeCalendar(plan, today, scheduleSessions)
+    : null;
   const calendarPending = scheduleLoading && !calendar;
   const calendarEmpty = !!plan && !postExam && !calendar && !scheduleLoading;
   const setExamDate = plan && !plan.examDate && !!pace?.total && !pace.complete && !calendarPending

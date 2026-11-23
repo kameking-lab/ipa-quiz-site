@@ -44,7 +44,6 @@ export function sessionCountdownDates(session: ExamScheduleSession, sessions: re
   const uncertainApplication = !official || session.applicationEstimated;
   const estimate = uncertainExam || uncertainApplication ? estimateFromPreviousSession(session, sessions) : null;
   return {
-    uncertainExam,
     examDate: uncertainExam ? estimate?.examDate : official && hasSingleExamDay(session) ? session.examDate : null,
     examBasisYear: uncertainExam && estimate?.examDate ? estimate.basisYear : undefined,
     applicationStart: uncertainApplication ? estimate?.applicationStart : session.applicationStart,
