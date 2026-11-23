@@ -1,5 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
-import { WEB_ADS_SCRIPT_ID, WEB_ADS_SCRIPT_URL } from "../../lib/ads/web-ads";
+import { WEB_ADS_SCRIPT_FAILED, WEB_ADS_SCRIPT_ID, WEB_ADS_SCRIPT_URL } from "../../lib/ads/web-ads";
 
 test.use({ serviceWorkers: "block" });
 
@@ -106,6 +106,17 @@ test("clears a running script on a client-side transition to billing", async ({ 
   await documentRequest;
   await page.waitForLoadState("load");
   await expect(tag(page)).toHaveCount(0);
+  await expect(fakeAd(page)).toHaveCount(0);
+});
+
+test("keeps client navigation after a blocked script", async ({ page }) => {
+  await page.route(WEB_ADS_SCRIPT_URL, route => route.abort());
+  await page.route("**/api/billing/status", route => route.fulfill({ json: { entitled: false } }));
+  await page.goto("/about");
+  await expect(tag(page)).toHaveAttribute(WEB_ADS_SCRIPT_FAILED, "");
+  await page.getByRole("link", { name: "月額プランの条件" }).click();
+  await expect(page).toHaveURL(/\/billing\/terms$/);
+  await expect(tag(page)).toHaveAttribute(WEB_ADS_SCRIPT_FAILED, "");
   await expect(fakeAd(page)).toHaveCount(0);
 });
 

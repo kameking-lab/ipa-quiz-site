@@ -1,4 +1,4 @@
-import { act, cleanup, render, waitFor } from "@testing-library/react";
+import { act, cleanup, fireEvent, render, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { ContentEndAd } from "@/components/ads/ContentEndAd";
 import { WebAutoAds } from "@/components/ads/WebAutoAds";
@@ -137,6 +137,19 @@ describe("WebAutoAds", () => {
     rerender(<WebAutoAds />);
     flushIdle();
     expect(script()).toBeNull();
+  });
+
+  it("leaves navigation alone after the tag fails to load", async () => {
+    const reload = vi.spyOn(webAdsNavigation, "reload").mockImplementation(() => {});
+    request.mockResolvedValueOnce(Response.json({ entitled: false }));
+    const { rerender } = render(<WebAutoAds />);
+    await waitFor(() => expect(idle.size).toBe(1));
+    flushIdle();
+    fireEvent.error(script()!);
+    hooks.pathname = "/settings";
+    history.pushState(null, "", hooks.pathname);
+    rerender(<WebAutoAds />);
+    expect(reload).not.toHaveBeenCalled();
   });
 
   it.each(["paid", "excluded", "error"])("reloads an ad-bearing document when it becomes %s", async reason => {

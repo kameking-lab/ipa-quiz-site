@@ -1,5 +1,6 @@
 export const WEB_ADSENSE_CLIENT = "ca-pub-8751260838396451";
 export const WEB_ADS_SCRIPT_ID = "web-adsense";
+export const WEB_ADS_SCRIPT_FAILED = "data-web-ads-failed";
 export const WEB_ADS_SCRIPT_URL = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${WEB_ADSENSE_CLIENT}`;
 export const WEB_ADS_ERROR_PAGE_ID = "web-ads-excluded-page";
 export const WEB_ADS_MEMBERSHIP_CHANNEL = "kakomon:ads-membership-changed";
@@ -32,9 +33,14 @@ export async function hasFreeWebAccess(signal: AbortSignal): Promise<boolean> {
 
 export const webAdsNavigation = { reload: () => window.location.reload() };
 
+export function mayHaveWebAds(): boolean {
+  const script = document.getElementById(WEB_ADS_SCRIPT_ID);
+  return !!script && !script.hasAttribute(WEB_ADS_SCRIPT_FAILED);
+}
+
 export function discardWebAds() {
   const root = document.documentElement;
-  if (root.hasAttribute(WEB_ADS_RELOADING) || !document.getElementById(WEB_ADS_SCRIPT_ID)) return;
+  if (root.hasAttribute(WEB_ADS_RELOADING) || !mayHaveWebAds()) return;
   // A running third-party script survives an App Router transition or removal
   // of its <script> tag. A fresh document also clears ads it inserted itself.
   root.setAttribute(WEB_ADS_RELOADING, "");

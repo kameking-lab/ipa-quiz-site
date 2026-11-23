@@ -6,8 +6,8 @@ import { nativeClient } from "@/mobile/shared/contracts";
 import { onBrowserIdle } from "@/lib/performance/browser-idle";
 import { SYNC_SESSION_CHANGED } from "@/lib/sync/session-observation";
 import {
-  discardWebAds, hasFreeWebAccess, isWebAdPath, WEB_ADS_ERROR_PAGE_ID,
-  WEB_ADS_MEMBERSHIP_CHANNEL, WEB_ADS_RELOADING, WEB_ADS_SCRIPT_ID, WEB_ADS_SCRIPT_URL,
+  discardWebAds, hasFreeWebAccess, isWebAdPath, mayHaveWebAds, WEB_ADS_ERROR_PAGE_ID,
+  WEB_ADS_MEMBERSHIP_CHANNEL, WEB_ADS_RELOADING, WEB_ADS_SCRIPT_FAILED, WEB_ADS_SCRIPT_ID, WEB_ADS_SCRIPT_URL,
 } from "@/lib/ads/web-ads";
 
 function afterHomeEventArt(load: () => void): () => void {
@@ -65,7 +65,7 @@ export function WebAutoAds() {
       request?.abort();
       const controller = new AbortController();
       request = controller;
-      if (document.getElementById(WEB_ADS_SCRIPT_ID)) root.setAttribute("data-web-ads-paused", "");
+      if (mayHaveWebAds()) root.setAttribute("data-web-ads-paused", "");
 
       void hasFreeWebAccess(controller.signal).catch(() => false).then(free => {
         if (controller.signal.aborted) return;
@@ -84,6 +84,7 @@ export function WebAutoAds() {
           script.async = true;
           script.crossOrigin = "anonymous";
           script.setAttribute("fetchpriority", "low");
+          script.addEventListener("error", () => script.setAttribute(WEB_ADS_SCRIPT_FAILED, ""), { once: true });
           document.head.appendChild(script);
         });
       });
