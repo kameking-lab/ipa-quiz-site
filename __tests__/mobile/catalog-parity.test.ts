@@ -8,6 +8,18 @@ import {materialGroups} from "@/mobile/shared/material-source";
 import {DENKO2_SKILL_PROBLEMS} from "@/lib/denko2/skills";
 import {getAnnotatedNotes} from "@/lib/st-annotated-notes/catalog";
 import {isExamPublished} from "@/lib/qualifications/catalog";
+it.each([
+  ["unko-kanrisha-kamotsu","運行管理者（貨物）"],
+  ["unko-kanrisha-ryokaku","運行管理者（旅客）"],
+  ["kikenbutsu-otsu4","危険物取扱者 乙種第4類"],
+  ["kikenbutsu-kou","危険物取扱者 甲種"],
+  ["kikenbutsu-hei","危険物取扱者 丙種"],
+  ["shobo-setsubishi-kou1","消防設備士 甲種第1類"],
+  ["shobo-setsubishi-kou4","消防設備士 甲種第4類"],
+  ["shobo-setsubishi-otsu6","消防設備士 乙種第6類"],
+])("%s is searchable by its Japanese qualification name in the saved catalog",(code,name)=>{
+  expect(generated.exams.find(entry=>entry.code===code)?.name).toBe(name);
+});
 it("independently includes every released skill and inseparable annotated note",async()=>{
   const skills=await examContent("material.denko2-skill");
   expect(skills?.map(q=>q.id)??[]).toEqual(isExamPublished("denko2")?DENKO2_SKILL_PROBLEMS.map(q=>q.id):[]);
