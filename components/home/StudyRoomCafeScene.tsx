@@ -1,7 +1,11 @@
-import type { ReactNode, Ref } from "react";
-import { CAFE_ART_PATH, dailyCafeRoom } from "@/lib/home/study-room-cafe-layout";
+import type { CSSProperties, ReactNode, Ref } from "react";
+import { CAFE_ART_PATH, cafeSleeper, dailyCafeRoom, type CafeSeat } from "@/lib/home/study-room-cafe-layout";
 import type { CafeMascot, CafeOccupant } from "@/lib/home/study-room-cafe-mascots";
 import styles from "./StudyRoomCafeScene.module.css";
+
+function positionStyle({ x, floor, size }: Pick<CafeSeat, "x" | "floor" | "size">) {
+  return { "--x": x, "--floor": floor, "--size": size } as CSSProperties;
+}
 
 export function CafeMascotImage({ mascot, alt = "" }: { mascot: Pick<CafeMascot, "src" | "mirrored">; alt?: string }) {
   return <>
@@ -26,13 +30,13 @@ export function StudyRoomCafeScene({ day, occupants, emptyMessage, home = false,
     {room && <>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img className={styles.background} src={`${CAFE_ART_PATH}/${room.id}-room.webp`} alt="" width={766} height={424} loading="lazy" decoding="async" />
-      {occupants.map(occupant => <div key={occupant.key} className={styles.slot}
+      {occupants.map(occupant => <div key={occupant.key} className={styles.slot} style={positionStyle(occupant.seat)}
         data-testid={home ? "home-study-room-seat" : "study-room-seat"}
         data-seat-key={occupant.key} data-exam={occupant.exam} data-pose={occupant.mascot.pose}
-        data-studying-now={occupant.active} aria-hidden={home || undefined} data-slot={occupant.seat}>
+        data-studying-now={occupant.active} aria-hidden={home || undefined} data-slot={occupant.seat.id}>
         {renderSeat ? renderSeat(occupant) : <CafeMascotImage mascot={occupant.mascot} />}
       </div>)}
-      {occupants.length === 0 && <div className={styles.slot} data-slot="sleeper"
+      {occupants.length === 0 && <div className={styles.slot} data-slot="sleeper" style={positionStyle(cafeSleeper[room.id])}
         data-testid={home ? "home-study-room-sleeper" : "study-room-sleeper"}>
         <CafeMascotImage mascot={{ src: `${CAFE_ART_PATH}/sleep-empty.webp`, mirrored: false }} />
       </div>}
