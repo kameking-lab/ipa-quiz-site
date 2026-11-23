@@ -16,8 +16,7 @@ class QualificationBridgeViewController: CAPBridgeViewController {
     private var adPanelHeight: NSLayoutConstraint?
     private var adPanelReserved = false
 
-    override func loadView() {
-        super.loadView()
+    private func installAdPanel() {
         guard NativeBannerAds.configured, let webView = webView else { return }
         let container = UIView()
         view = container
@@ -99,6 +98,9 @@ class QualificationBridgeViewController: CAPBridgeViewController {
     // LaunchScreen -> bundled splash -> web home never flashes white/black.
     override func viewDidLoad() {
         super.viewDidLoad()
+        #if canImport(GoogleMobileAds) && canImport(UserMessagingPlatform)
+        installAdPanel()
+        #endif
         let background = UIColor(named: "LaunchBackground")
             ?? UIColor(red: 0.969, green: 0.953, blue: 0.914, alpha: 1)
         view.backgroundColor = background

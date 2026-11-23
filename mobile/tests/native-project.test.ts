@@ -41,7 +41,8 @@ it("the custom bridge controller keeps Capacitor's automatic plugin registration
   // Keep packageClassList plugins (RevenueCat, Preferences, Browser…) and
   // install the ad container only after Capacitor has built the bridge.
   expect(controller).not.toMatch(/autoRegisterPlugins|instanceDescriptor\(\)/);
-  expect(controller).toMatch(/override func loadView\(\)\s*\{\s*super\.loadView\(\)/);
+  expect(controller).not.toMatch(/override func loadView\(/);
+  expect(controller).toMatch(/super\.viewDidLoad\(\)\s*#if [^\n]+\s+installAdPanel\(\)/);
   expect(controller).toMatch(/override func capacitorDidLoad\(\)/);
   const configure = readFileSync(join(mobile, "scripts/configure-ios.rb"), "utf8");
   // configure-ios.rb rewrites capacitor.config.json; it must keep packageClassList.

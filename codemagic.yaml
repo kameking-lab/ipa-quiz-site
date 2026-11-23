@@ -69,6 +69,9 @@ workflows:
           set -euo pipefail
           cd "$CM_BUILD_DIR/mobile"
           npm run ios:prepare
+          if [[ "${CM_BRANCH:-}" == "feat/ios-app-v1-20261124" ]]; then
+            test "$(plutil -extract KakomonAdsEnabled raw ios/App/App/Info.plist)" = true
+          fi
           npm run ios:test
           plutil -lint ios/App/App/Info.plist ios/App/App/PrivacyInfo.xcprivacy
       - name: Verify simulator launch and capture the bundled reminder screen
