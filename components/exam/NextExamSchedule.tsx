@@ -63,13 +63,14 @@ function ExamScheduleRow({ exam }: { exam: string }) {
   const dates = scheduled?.dates;
   const registration = scheduled?.registration;
   const countdown = registration?.countdown;
+  const registrationStatus = registration?.state === "open" ? "受付中" : registration?.state === "closed" ? "受付終了" : null;
+  const applicationEstimate = dates?.applicationBasisYear ? "（見込み）" : "";
   const basisYears = new Set([examCountdown?.basisYear, dates?.applicationBasisYear].filter(Boolean));
 
   return <section className="my-4 space-y-1 border-t border-border pt-3 text-sm text-muted-foreground" aria-label="試験日程">
     <h2 className="font-semibold text-foreground">次の試験</h2>
     {examCountdown && <div className="flex flex-wrap gap-x-3 tabular-nums">
-      <p>{scheduled ? "試験日" : "受験予定日"} <time dateTime={examCountdown.date}>{examCountdown.date}</time>
-        {examCountdown.basisYear && "（見込み）"}</p>
+      <p>{scheduled ? "試験日" : "受験予定日"} <time dateTime={examCountdown.date}>{examCountdown.date}</time></p>
       <p className="font-medium text-foreground">{examCountdown.days === 0 && !examCountdown.basisYear
         ? "試験は今日です" : `試験まであと${examCountdown.days}日${examCountdown.basisYear ? "（見込み）" : ""}`}</p>
     </div>}
@@ -83,11 +84,12 @@ function ExamScheduleRow({ exam }: { exam: string }) {
         {" "}{dates.applicationStart && <time dateTime={dates.applicationStart}>{dates.applicationStart}</time>}
         {dates.applicationStart && dates.applicationDeadline && "〜"}
         {dates.applicationDeadline && <time dateTime={dates.applicationDeadline}>{dates.applicationDeadline}</time>}
-        {dates.applicationBasisYear && "（見込み）"}</p>
-      {registration?.state === "open" && <p className="font-medium text-foreground">受付中{dates.applicationBasisYear && "（見込み）"}</p>}
-      {registration?.state === "closed" && <p>受付終了{dates.applicationBasisYear && "（見込み）"}</p>}
+        {!registrationStatus && !countdown && applicationEstimate}</p>
+      {registrationStatus && <p className={registration?.state === "open" ? "font-medium text-foreground" : undefined}>
+        {registrationStatus}{applicationEstimate}
+      </p>}
       {countdown && <p className="font-medium text-foreground">{countdown.kind === "start" ? `あと${countdown.days}日で申込開始`
-        : `申込締切まであと${countdown.days}日`}{countdown.basisYear && "（見込み）"}</p>}
+        : `申込締切まであと${countdown.days}日`}{!registrationStatus && applicationEstimate}</p>}
     </div>}
     {[...basisYears].map(year => <p key={year} className="text-xs">{year}年度の同じ回をもとに推定</p>)}
     <div className="flex flex-wrap items-center gap-x-3">

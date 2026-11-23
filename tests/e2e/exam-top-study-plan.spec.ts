@@ -109,6 +109,7 @@ for (const scenario of [
     if ("estimated" in scenario) {
       await expect(row.getByText("試験まであと98日（見込み）", { exact: true })).toBeVisible();
       await expect(row.getByText("2025年度の同じ回をもとに推定", { exact: true })).toHaveCount(1);
+      expect((await row.innerText()).match(/（見込み）/g)).toHaveLength(2);
     }
     if (scenario.name === "04-open") {
       await expect(row).toContainText("申込期間 2026-11-18〜2026-11-26");
