@@ -1376,7 +1376,6 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("kanken-3") ? { "kanken-3": KANKEN_3_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("suken") ? { "suken": SUKEN_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("zensho-calc") ? { "zensho-calc": ZENSHO_CALC_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
-  ...(isExamPublished("zensho-english") ? { "zensho-english": ZENSHO_ENGLISH_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("kounin") ? { "kounin": KOUNIN_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("zensho-bc") ? { "zensho-bc": ZENSHO_BC_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("ishi") ? { ishi: ISHI_QUESTIONS } : {}),
