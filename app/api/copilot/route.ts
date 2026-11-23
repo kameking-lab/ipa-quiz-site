@@ -56,7 +56,7 @@ export async function POST(req: Request) {
 }
 
 async function handlePost(req: Request, track: (context: AiUsageContext) => void) {
-  const startedAt = Date.now();
+  const startedAt = performance.now();
   let payload: z.infer<typeof BodySchema>;
   try {
     payload = BodySchema.parse(await req.json());
@@ -69,6 +69,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
 
   // 問題文・選択肢・正答・標準解説はクライアント入力を信頼しない。
   // 本番はビルド時に書き出した問題ファイルから引く（全問題データを読み込まない）。
+  const sourceStartedAt = performance.now();
   let source: CopilotSource;
   let question: Question | undefined;
   try {
@@ -81,6 +82,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
       { status: 503, headers: { "X-Error-Type": "server_error" } },
     );
   }
+  const sourceMs = performance.now() - sourceStartedAt;
   if (!question) {
     return NextResponse.json(
       { error: "unknown_question", message: "問題が見つかりません。ページを更新してください。" },
@@ -132,7 +134,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
 
   // Cold RAG loads on demand after admission. It yields while restoring the
   // search index so concurrent KV requests can finish during the cold load.
-  const ragStartedAt = Date.now();
+  const ragStartedAt = performance.now();
   const rag = await runCopilotRAGPipeline({
     question,
     messages: payload.messages,
@@ -141,8 +143,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     questionContextIncluded: true,
     source,
   });
-  // 最初の文字までの内訳（利用枠・レート制限の確認 / 検索）。秒単位の遅れを切り分けるため。
-  const serverTiming = `pre;dur=${ragStartedAt - startedAt}, rag;dur=${Date.now() - ragStartedAt}`;
+  const promptStartedAt = performance.now();
 
   const { system, userMessages } = assembleCopilotPrompt({
     question,
@@ -156,6 +157,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     ragContextBlock: rag.ragContextBlock,
   });
 
+  const promptMs = performance.now() - promptStartedAt;
   let provider: LLMProvider;
   try {
     provider = process.env.GEMINI_API_KEY
@@ -213,6 +215,14 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     return usageDenial;
   }
 
+  // app includes all handler work before provider streaming, including pre, rag and prompt.
+  const serverTiming = [
+    ["pre", ragStartedAt - startedAt],
+    ["source", sourceMs],
+    ["rag", promptStartedAt - ragStartedAt],
+    ["prompt", promptMs],
+    ["app", performance.now() - startedAt],
+  ].map(([name, duration]) => `${name};dur=${Number(duration).toFixed(1)}`).join(", ");
   usage.streaming = true;
   const stream = createCopilotResponseStream({
     requireCompleteAnswer: !usage.legacy,
