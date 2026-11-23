@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { getHomeEvent, type HomeEventId } from "@/lib/home/home-events";
 import { HOME_EVENT_ART, HOME_EVENT_ART_DIR } from "@/lib/home/home-event-art";
+import { setHomeEventLayout } from "@/lib/home/home-event-layout";
 
 export function useHomeEvent() {
   const [event, setEvent] = useState<HomeEventId | null>(null);
@@ -13,7 +14,9 @@ export function useHomeEvent() {
     function update() {
       window.clearTimeout(timer);
       const now = new Date();
-      setEvent(getHomeEvent(now));
+      const current = getHomeEvent(now);
+      setHomeEventLayout(current !== null);
+      setEvent(current);
       const nextDay = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
       timer = window.setTimeout(update, nextDay.getTime() - now.getTime());
     }
@@ -46,7 +49,9 @@ export function useHomeEvent() {
 type EventProps = { event: HomeEventId | null; assetBase?: string };
 
 export function HomeEventArt({ event, assetBase = "" }: EventProps) {
-  return event ? <EventArtImage key={event} event={event} assetBase={assetBase} /> : null;
+  return <div className="p3-event-art-slot" aria-hidden="true">
+    {event && <EventArtImage key={event} event={event} assetBase={assetBase} />}
+  </div>;
 }
 
 function EventArtImage({ event, assetBase }: { event: HomeEventId; assetBase: string }) {

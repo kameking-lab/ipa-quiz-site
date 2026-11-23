@@ -22,7 +22,7 @@ body { padding-left:var(--safe-left); padding-right:var(--safe-right); overflow-
 .native-exam { display:flex; width:100%; min-height:52px; align-items:center; gap:12px; padding:10px 16px; text-align:left; }
 .native-exam:active, .native-pick:active { background:var(--muted); }
 .native-home-hero { min-height: 164px; padding: 12px 88px 16px 16px; margin-inline: -16px; }
-.native-home-hero:has(> .p3-event-art) { padding-inline-end: 16px; }
+[data-home-event-layout] .native-home-hero { padding-inline-end: 16px; }
 /* Keep the bright stars in the open sky beside the bundled home's text. */
 [data-home-scene="night"] .native-home-hero {
   --p3-sky-detail:

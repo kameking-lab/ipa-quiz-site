@@ -1,13 +1,21 @@
 /* The painting occupies its own part of the hero behind the existing sky and
    weather layers. Keep its space while decoding so the controls stay put. */
-.p3-event-art {
+.p3-event-art-slot {
   position: relative;
-  display: block;
+  display: none;
   z-index: -4;
   aspect-ratio: 1.8;
   margin: 8px calc(-1 * var(--p3-hero-gutter, 16px));
   overflow: hidden;
   pointer-events: none;
+}
+
+[data-home-event-layout] .p3-event-art-slot { display: block; }
+
+.p3-event-art {
+  position: absolute;
+  display: block;
+  inset: 0;
   opacity: 0;
   transition: opacity 160ms ease-out;
 }
@@ -44,13 +52,13 @@
 
 [data-home-scene="night"] .p3-event-art {
   --p3-art-stars: var(--p3-sky-detail);
-  --p3-art-tint: linear-gradient(172deg, #15224b85, #20335555 48%, #172b5338);
+  --p3-art-tint: linear-gradient(172deg, #15224b78, #2033554d 48%, #172b532f);
 }
 
-[data-home-scene="night"] .p3-event-art img { filter: brightness(.78) saturate(1.08); }
+[data-home-scene="night"] .p3-event-art img { filter: brightness(.86) saturate(1.08); }
 
 /* The daytime painting supplies its own light. The moon still sits over the sky at night. */
-:root:not([data-home-scene="night"]) .p3-home-scene:has(> .p3-event-art[data-home-event-ready])::before {
+:root:not([data-home-scene="night"]) .p3-home-scene:has(> .p3-event-art-slot > .p3-event-art[data-home-event-ready])::before {
   visibility: hidden;
 }
 
@@ -64,4 +72,4 @@
   padding-inline-start: 54px;
 }
 
-.p3-home-scene:has(> .p3-event-art) .p3-event-track { padding-inline-start: 0; }
+[data-home-event-layout] .p3-home-scene .p3-event-track { padding-inline-start: 0; }

@@ -19,6 +19,7 @@ import { observeLogin } from "./login";
 import { refreshDeviceRights } from "./refresh-rights";
 import { applyDeviceTheme } from "./theme";
 import { homeSceneForHour, installHomeScene } from "@/lib/home/home-scene";
+import { initHomeEventLayout } from "@/lib/home/home-event-layout";
 import { HomeEventArt, useHomeEvent } from "@/components/home/HomeEventArt";
 import { HOME_WEATHER_ENDPOINT } from "@/lib/home/weather";
 import { HomeWeather } from "@/components/home/HomeWeather";
@@ -248,6 +249,7 @@ async function start() {
   document.documentElement.classList.add("native-app");
   applyDeviceTheme();
   installHomeScene(homeSceneForHour);
+  initHomeEventLayout();
   // A notification can launch the bundled document before the online UI exists.
   let booting = true;
   let destination = "/";

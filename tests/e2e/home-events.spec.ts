@@ -2,6 +2,15 @@ import { expect, test } from "@playwright/test";
 
 test.use({ viewport: { width: 390, height: 844 }, timezoneId: "Asia/Tokyo", serviceWorkers: "block" });
 
+test("reserves space for the event painting from the local calendar before hydration", async ({ page }) => {
+  await page.clock.setFixedTime(new Date("2026-12-25T09:00:00+09:00"));
+  await page.route("**/_next/static/**/*.js", route => route.abort());
+  await page.goto("/");
+  const hero = page.locator(".p3-home-scene");
+  await expect(hero.locator(".p3-event-art-slot")).toBeVisible();
+  await expect(hero.locator("[data-home-event-art]")).toHaveCount(0);
+});
+
 test("loads the Halloween scene after window load and keeps the weather on top", async ({ page }) => {
   await page.clock.setFixedTime(new Date("2026-10-31T17:10:00+09:00"));
   await page.addInitScript(() => {
@@ -30,7 +39,7 @@ test("loads the Halloween scene after window load and keeps the weather on top",
   await expect(art.locator("img")).toHaveAttribute("alt", "");
   await expect(hero.locator("[data-home-event]")).toHaveCount(0);
   await expect(weather).toHaveAttribute("data-home-weather", "snow");
-  await expect(art).toHaveCSS("z-index", "-4");
+  await expect(hero.locator(".p3-event-art-slot")).toHaveCSS("z-index", "-4");
   await expect(weather).toHaveCSS("z-index", "-2");
   await expect(page.locator("html")).toHaveAttribute("data-home-scene", "evening");
   expect(assets).toEqual(["/images/home/event-scenes/halloween.webp"]);
@@ -117,6 +126,7 @@ test("switches backgrounds at midnight and clears on ordinary dates", async ({ p
   await page.clock.setSystemTime(new Date("2027-01-15T12:00:00+09:00"));
   await page.evaluate(() => window.dispatchEvent(new Event("pageshow")));
   await expect(art).toHaveCount(0);
+  await expect(page.locator("html")).not.toHaveAttribute("data-home-event-layout", "");
 });
 
 for (const colorScheme of ["light", "dark"] as const) {
