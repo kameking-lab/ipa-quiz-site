@@ -1,6 +1,7 @@
 # Run after generation and again after use-profiles; this script never mutates.
 require 'xcodeproj'
 require 'json'
+require_relative 'ios-ads-config'
 
 bundle_id = 'jp.kakomon-ai.app'
 project = Xcodeproj::Project.open('ios/App/App.xcodeproj')
@@ -22,16 +23,17 @@ raise 'Info.plist marketing version must use Xcode setting' unless plist['CFBund
 raise 'Info.plist build number must use Xcode setting' unless plist['CFBundleVersion'] == '$(CURRENT_PROJECT_VERSION)'
 privacy = Xcodeproj::Plist.read_from_path('ios/App/App/PrivacyInfo.xcprivacy')
 if plist['KakomonAdsEnabled'] == true
-  raise 'WebView-only Ads SDK exemption missing' unless plist['GADIntegrationManager'] == 'webview'
+  raise 'WebView-only Ads SDK exemption present' if plist.key?('GADIntegrationManager')
   raise 'ATT usage description missing' if plist['NSUserTrackingUsageDescription'].to_s.empty?
-  client = plist['KakomonAdsenseClient'].to_s
-  raise 'Invalid AdSense client' unless client.match?(/\Aca-pub-\d{16}\z/)
-  raise 'Invalid AdSense slot' unless plist['KakomonAdsenseSlot'].to_s.match?(/\A\d{10}\z/)
-  expected = "https://fundingchoicesmessages.google.com/i/#{client.sub(/\Aca-/, '')}?ers=1"
-  raise 'Invalid publisher CMP URL' unless plist['KakomonAdsCMPScriptURL'] == expected
+  raise 'Invalid AdMob IDs' unless IosAdsConfig.valid_ids?(plist['GADApplicationIdentifier'].to_s, plist['KakomonAdMobBannerID'].to_s)
+  raise 'Ad measurement must wait for initialization' unless plist['GADDelayAppMeasurementInit'] == true
+  networks = plist.fetch('SKAdNetworkItems', []).map { |entry| entry['SKAdNetworkIdentifier'] }
+  raise 'Invalid SKAdNetwork list' unless networks.include?('cstr6suwn9.skadnetwork') && networks.uniq == networks &&
+    networks.all? { |id| id.to_s.match?(/\A[a-z0-9]{10}\.skadnetwork\z/) }
 else
   raise 'ATT usage description present with ads disabled' if plist.key?('NSUserTrackingUsageDescription')
   raise 'GAD settings present with ads disabled' if plist.keys.any? { |key| key.start_with?('GAD') }
+  raise 'AdMob settings present with ads disabled' if plist.key?('KakomonAdMobBannerID') || plist.key?('SKAdNetworkItems')
   raise 'Privacy tracking enabled with ads disabled' unless privacy['NSPrivacyTracking'] == false
   raise 'Privacy tracking domains present with ads disabled' unless privacy.fetch('NSPrivacyTrackingDomains', []).empty?
   raise 'Collected data tracking enabled with ads disabled' if privacy.fetch('NSPrivacyCollectedDataTypes', []).any? { |data| data['NSPrivacyCollectedDataTypeTracking'] == true }

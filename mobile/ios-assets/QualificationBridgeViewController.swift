@@ -11,6 +11,88 @@ class QualificationBridgeViewController: CAPBridgeViewController {
     #if ASC_CAPTURE && DEBUG && targetEnvironment(simulator)
     private var ascCapture: ASCCapture?
     #endif
+    #if canImport(GoogleMobileAds) && canImport(UserMessagingPlatform)
+    private let adPanel = UIView()
+    private var adPanelHeight: NSLayoutConstraint?
+    private var adPanelReserved = false
+
+    override func loadView() {
+        super.loadView()
+        guard NativeBannerAds.configured, let webView = webView else { return }
+        let container = UIView()
+        view = container
+        adPanel.backgroundColor = .secondarySystemBackground
+        adPanel.isHidden = true
+        for child in [webView as UIView, adPanel] {
+            child.translatesAutoresizingMaskIntoConstraints = false
+            container.addSubview(child)
+        }
+        let height = adPanel.heightAnchor.constraint(equalToConstant: 0)
+        adPanelHeight = height
+        NSLayoutConstraint.activate([
+            webView.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+            webView.trailingAnchor.constraint(equalTo: container.trailingAnchor),
+            webView.topAnchor.constraint(equalTo: container.topAnchor),
+            webView.bottomAnchor.constraint(equalTo: adPanel.topAnchor),
+            adPanel.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+            adPanel.trailingAnchor.constraint(equalTo: container.trailingAnchor),
+            adPanel.bottomAnchor.constraint(equalTo: container.bottomAnchor),
+            height
+        ])
+    }
+
+    private func sizeAdPanel() {
+        adPanelHeight?.constant = adPanelReserved ? 110 + view.safeAreaInsets.bottom : 0
+    }
+
+    func reserveAdPanel() {
+        adPanelReserved = true
+        sizeAdPanel()
+    }
+
+    func showAdPanel(_ banner: UIView) {
+        // The ad has its own native area, with a non-interactive gap from the
+        // WebView's bottom navigation. It cannot cover the WebView.
+        adPanel.subviews.forEach { $0.removeFromSuperview() }
+        let report = UIButton(type: .system)
+        report.setTitle("広告を報告", for: .normal)
+        report.titleLabel?.font = .preferredFont(forTextStyle: .caption1)
+        report.addTarget(self, action: #selector(reportAd), for: .touchUpInside)
+        for child in [banner, report] {
+            child.translatesAutoresizingMaskIntoConstraints = false
+            adPanel.addSubview(child)
+        }
+        NSLayoutConstraint.activate([
+            banner.topAnchor.constraint(equalTo: adPanel.topAnchor, constant: 16),
+            banner.centerXAnchor.constraint(equalTo: adPanel.centerXAnchor),
+            banner.widthAnchor.constraint(equalToConstant: 320),
+            banner.heightAnchor.constraint(equalToConstant: 50),
+            report.topAnchor.constraint(equalTo: banner.bottomAnchor),
+            report.heightAnchor.constraint(equalToConstant: 44),
+            report.widthAnchor.constraint(greaterThanOrEqualToConstant: 88),
+            report.centerXAnchor.constraint(equalTo: adPanel.centerXAnchor)
+        ])
+        adPanel.isHidden = false
+    }
+
+    func removeAdPanel() {
+        adPanelReserved = false
+        sizeAdPanel()
+        adPanel.isHidden = true
+        adPanel.subviews.forEach { $0.removeFromSuperview() }
+    }
+
+    @objc private func reportAd() {
+        let alert = UIAlertController(title: "広告を報告",
+            message: "お問い合わせフォームに広告名と報告理由を記入してください。", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel))
+        alert.addAction(UIAlertAction(title: "お問い合わせを開く", style: .default) { [weak self] _ in
+            guard let url = URL(string: "https://www.kakomon-ai.jp/contact") else { return }
+            self?.webView?.load(URLRequest(url: url))
+        })
+        present(alert, animated: true)
+    }
+    #endif
 
     // Capacitor paints the WebView systemBackground (white, or black in dark
     // mode) until index.html draws. Use the launch screen's colour instead so
@@ -27,6 +109,9 @@ class QualificationBridgeViewController: CAPBridgeViewController {
     override func capacitorDidLoad() {
         bridge?.registerPluginInstance(QualificationBridgePlugin())
         bridge?.registerPluginInstance(TrackingTransparencyPlugin())
+        #if canImport(GoogleMobileAds) && canImport(UserMessagingPlatform)
+        if NativeBannerAds.configured { bridge?.registerPluginInstance(NativeBannerAds()) }
+        #endif
         bridge?.registerPluginInstance(StudyReviewPlugin())
         #if ASC_CAPTURE && DEBUG && targetEnvironment(simulator)
         if ASCCapture.isActive, let webView = webView {
@@ -45,6 +130,9 @@ class QualificationBridgeViewController: CAPBridgeViewController {
     // (app/globals.css takes the larger of the two).
     override func viewSafeAreaInsetsDidChange() {
         super.viewSafeAreaInsetsDidChange()
+        #if canImport(GoogleMobileAds) && canImport(UserMessagingPlatform)
+        sizeAdPanel()
+        #endif
         guard let webView = webView else { return }
         let insets = view.safeAreaInsets
         let source = "(function(){function f(){var r=document.documentElement;if(!r){return false;}"

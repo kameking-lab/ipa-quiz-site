@@ -1,10 +1,10 @@
 # IOS2 App Store Connect「App のプライバシー」入力案
 
-2026-11-04のコードに基づく案。実機・本番設定の確認前の申告案であり、ASCへの入力は行っていない。ios1sub/02-app-privacy.mdのTracking未確定部分を本書で具体化する。
+iOS 1.0.3の広告有効ビルドに基づく入力案。実機・本番設定の確認前の申告案であり、ASCへの入力は行っていない。ios1sub/02-app-privacy.mdのTracking未確定部分を本書で具体化する。
 
-## ADS1 広告あり・トラッキングあり版の回答案
+## 広告あり・トラッキングあり版の回答案
 
-ADS1（2026-11-04 14:30 承認）で Google Mobile Ads SDK / WebView API と Web CMP の同意ゲートを実装した。広告有効版の回答は「データを収集する」＝はい、「トラッキングに使用するデータ」＝あり。署名実機の通信と privacy report による提出前照合は残る。ATT許可済みの利用者にだけトラッキングする場合も、アプリ全体の広告データについてTracking Yesが必要。
+無料利用者向けに Google AdMob のネイティブバナーを1枠表示する。Google UMP で地域ごとの同意を確認し、ATT 拒否時はIDFAを使わない非パーソナライズ配信をリクエストする。広告有効版の回答は「データを収集する」＝はい、「トラッキングに使用するデータ」＝あり。署名実機の通信と privacy report による提出前照合は残る。ATT許可済みの利用者にだけトラッキングする場合も、アプリ全体の広告データについてTracking Yesが必要。
 
 | データ種類 | 目的 | ユーザーに関連付け | トラッキング | コード・確認根拠 |
 |---|---|---|---|---|
@@ -18,18 +18,18 @@ ADS1（2026-11-04 14:30 承認）で Google Mobile Ads SDK / WebView API と Web
 | 診断：クラッシュデータ | App Functionality、Analytics、Third-Party Advertising | はい（保守的） | はい（広告用途を保守的に申告） | Sentry有効時とGoogle SDKの広告・測定用途を保守的に含む。部分PII除去だけでは非関連を保証できない |
 | 診断：パフォーマンスデータ | App Functionality、Analytics、Third-Party Advertising | はい（保守的） | はい（広告用途を保守的に申告） | Sentry tracesとGoogle SDKの広告・測定用途を保守的に含む。nativeではVercel Speed Insights停止 |
 | 診断：その他の診断データ | App Functionality、Analytics、Third-Party Advertising | はい（保守的） | はい（広告用途を保守的に申告） | Sentry文脈とGoogle SDKの広告・測定用途を保守的に含む。実際のDSNと通信を確認 |
-| **識別子：デバイスID（ADS1 広告有効版）** | **Third-Party Advertising、Analytics（測定）** | **はい（保守的）** | **はい** | ATT authorized と Web 同意が揃った場合だけ Google SDK/タグが広告識別子を利用可能。アプリ自身のIDFA取得とRevenueCatのcollectDeviceIdentifiersは呼ばない |
-| **使用状況：広告データ（ADS1 広告有効版）** | **Third-Party Advertising、Analytics（測定）** | **はい（保守的）** | **はい** | 同意後のAdSense表示/クリック/広告イベント。承認・配信状況により空配信もある |
-| **使用状況：製品の操作（広告共有する範囲）** | **Third-Party Advertising、Analytics** | **はい（保守的）** | **はい** | Googleへ共有するページ/操作イベントを実通信で特定して追加。学習履歴・会員ID・メール・購入情報を広告SDKへ明示送信しない |
-| **位置情報：おおよその位置（ADS1 広告有効版）** | **Third-Party Advertising、Analytics** | **はい（保守的）** | **はい（保守的）** | GoogleのIP由来位置。位置権限は要求しない |
+| **識別子：デバイスID（広告有効版）** | **Third-Party Advertising、Analytics（測定）** | **はい（保守的）** | **はい** | ATTと地域別の同意が揃った場合にGoogle SDKがIDFAを利用可能。ATT拒否時はIDFAなしでリクエストし、Publisher first-party IDは全利用者で無効。アプリ自身のIDFA取得とRevenueCatのcollectDeviceIdentifiersは呼ばない |
+| **使用状況：広告データ（広告有効版）** | **Third-Party Advertising、Analytics（測定）** | **はい（保守的）** | **はい** | 配信後のAdMobバナー表示・クリック・広告イベント。承認・配信状況により空配信もある |
+| **使用状況：製品の操作（広告共有する範囲）** | **Third-Party Advertising、Analytics** | **はい（保守的）** | **はい** | Google SDKが収集する製品操作の範囲を実通信で確認。広告リクエストに学習履歴・ページURL・会員ID・メール・購入情報は渡さない |
+| **位置情報：おおよその位置（広告有効版）** | **Third-Party Advertising、Analytics** | **はい（保守的）** | **はい（保守的）** | GoogleのIP由来位置。位置権限は要求しない |
 
 Google SDK 13.11.0 の付属 manifest と公式開示を照合した。広告・分析に使う診断3種類にも Third-Party Advertising を追加し、アプリ側では Tracking Yes を保守的に申告する。SDK付属manifestの各既定値とアプリ全体の申告は分けて判断する。公式の[Google Mobile Ads SDK data disclosure](https://developers.google.com/admob/ios/privacy/data-disclosure)とXcode privacy report・通信証跡で、IP由来のCoarse Location、Device ID、Product Interaction、Advertising Data、診断を確認し追加する。広告網へ会員メールや購入履歴を渡す実装は今回行っていないので、それらへ一律Tracking Yesを付けない。
 
-## ADS1 の配布設定と提出前確認
+## 配布設定と提出前確認
 
 広告有効版は **収集：はい、Tracking：はい**。アプリ manifest も Tracking true と広告ドメイン、上表の広告用途を記載する。オーナーの必須設定が無いビルドは広告を無効にして正常起動する。この無効版を配布する場合は、そのビルドの通信と申告を合わせ、広告有効版の回答を機械的に確定しない。
 
-SDKはCocoaPodsでGoogle-Mobile-Ads-SDK 13.11.0 / GoogleUserMessagingPlatform 3.1.0を固定。WebView専用は GADIntegrationManager=webview で App ID 不要。ネイティブUMPの同意はWebタグへ自動伝達されないため、Web内のGoogle認定CMPを使う。設定手順と実機確認は [ADS1広告運用](./ads1-advertising.md)。
+SDKはCocoaPodsでGoogle-Mobile-Ads-SDK 13.11.0 / GoogleUserMessagingPlatform 3.1.0を固定。ASCの年齢レーティング質問では広告ありを回答し、実機で広告内の配信情報と「広告を報告」を確認する。広告クリエイティブの上限は一般向け（G）。設定手順と実機確認は [iOS広告運用](./ads1-advertising.md)。
 
 ## 設定・通信を確認して追加判定する項目
 

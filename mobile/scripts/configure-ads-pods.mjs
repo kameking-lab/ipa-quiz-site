@@ -8,11 +8,12 @@ export function configureAdsPods(input, enabled = false) {
   if (!enabled) {
     // Remove stale direct dependencies before cap sync runs pod install. This
     // also removes the SDK's startup App ID check and tracking manifests.
-    podfile = podfile.replace(/^[ \t]*# ADS1: WebView API for Ads\r?\n/gm, "")
+    podfile = podfile.replace(/^[ \t]*# (?:ADS1: WebView API for Ads|AdMob iOS ads)\r?\n/gm, "")
       .replace(/^[ \t]*pod ['"](?:Google-Mobile-Ads-SDK|GoogleUserMessagingPlatform)['"][^\r\n]*(?:\r?\n|$)/gm, "");
-  } else if (!podfile.includes("# ADS1: WebView API for Ads")) {
+  } else if (!podfile.includes("# AdMob iOS ads")) {
+    podfile = configureAdsPods(podfile, false);
     if (!podfile.includes("  # Add your Pods here")) throw new Error("Unsupported Capacitor Podfile");
-    podfile = podfile.replace("  # Add your Pods here", "  # Add your Pods here\n  # ADS1: WebView API for Ads\n  pod 'Google-Mobile-Ads-SDK', '13.11.0'\n  pod 'GoogleUserMessagingPlatform', '3.1.0'");
+    podfile = podfile.replace("  # Add your Pods here", "  # Add your Pods here\n  # AdMob iOS ads\n  pod 'Google-Mobile-Ads-SDK', '13.11.0'\n  pod 'GoogleUserMessagingPlatform', '3.1.0'");
   }
   if (enabled && !podfile.includes("pod 'GoogleUserMessagingPlatform', '3.1.0'")) {
     podfile = podfile.replace("pod 'Google-Mobile-Ads-SDK', '13.11.0'", "pod 'Google-Mobile-Ads-SDK', '13.11.0'\n  pod 'GoogleUserMessagingPlatform', '3.1.0'");

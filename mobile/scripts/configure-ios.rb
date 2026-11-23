@@ -25,6 +25,8 @@ native_source = group.files.find { |file| file.path == 'QualificationBridgeViewC
 target.source_build_phase.add_file_reference(native_source, true)
 tracking_source = group.files.find { |file| file.path == 'TrackingTransparencyPlugin.swift' } || group.new_file('TrackingTransparencyPlugin.swift')
 target.source_build_phase.add_file_reference(tracking_source, true)
+banner_source = group.files.find { |file| file.path == 'NativeBannerAds.swift' } || group.new_file('NativeBannerAds.swift')
+target.source_build_phase.add_file_reference(banner_source, true)
 storyboard_path = 'ios/App/App/Base.lproj/Main.storyboard'
 storyboard = File.read(storyboard_path)
 unless storyboard.include?('customClass="QualificationBridgeViewController"')
@@ -61,22 +63,22 @@ plist['CFBundleDevelopmentRegion'] = 'ja'
 plist['CFBundleLocalizations'] = ['ja']
 plist['CFBundleDisplayName'] = '過去問AI'
 plist['ITSAppUsesNonExemptEncryption'] = false
-ads = IosAdsConfig.read
-enabled, app_id, client, slot, cmp_url = ads.values_at(:enabled, :app_id, :client, :slot, :cmp_url)
+enabled, app_id, banner_id = IosAdsConfig.read.values_at(:enabled, :app_id, :banner_id)
+plist.delete_if { |key, _| key.start_with?('GAD', 'KakomonAdsense') || key == 'KakomonAdsCMPScriptURL' }
 plist['KakomonAdsEnabled'] = enabled
-plist['KakomonAdsenseClient'] = enabled ? client : ''
-plist['KakomonAdsenseSlot'] = enabled ? slot : ''
-plist['KakomonAdsCMPScriptURL'] = enabled ? cmp_url : ''
-puts "ADS1: WebView ads #{enabled ? 'configured' : 'disabled (optional settings absent or invalid)'}"
+puts "iOS banner ads #{enabled ? 'configured' : 'disabled (optional settings absent or invalid)'}"
 if enabled
-  # WebView-only integration: exemption from the native-ad App ID check.
-  # Do not call MobileAds.start or ship Google's sample App ID as a fallback.
-  plist['GADIntegrationManager'] = 'webview'
-  app_id.empty? ? plist.delete('GADApplicationIdentifier') : plist['GADApplicationIdentifier'] = app_id
+  plist['GADApplicationIdentifier'] = app_id
+  plist['GADDelayAppMeasurementInit'] = true
+  plist['KakomonAdMobBannerID'] = banner_id
+  # Google demand and participating buyers from the Google iOS quick-start.
+  networks = File.readlines(File.expand_path('../ios-assets/admob-skadnetwork.txt', __dir__), chomp: true)
+  plist['SKAdNetworkItems'] = networks.map { |id| { 'SKAdNetworkIdentifier' => id } }
   plist['NSUserTrackingUsageDescription'] = '他社のアプリやウェブサイトでの利用情報と、このアプリの利用情報を組み合わせて、興味に合った広告の表示と広告の効果測定に利用します。許可しなくても学習機能を利用できます。'
 else
   plist.delete('NSUserTrackingUsageDescription')
-  plist.delete_if { |key, _| key.start_with?('GAD') }
+  plist.delete('KakomonAdMobBannerID')
+  plist.delete('SKAdNetworkItems')
 end
 plist['CFBundleURLTypes'] = [{ 'CFBundleURLName' => "#{bundle_id}.auth", 'CFBundleURLSchemes' => ['kakomonai'] }]
 Xcodeproj::Plist.write_to_path(plist, plist_path)

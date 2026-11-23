@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export default function NotFound() {
   return (
-    <main className="relative flex flex-1 items-center justify-center px-4 py-12">
+    <main data-native-banner-exclude className="relative flex flex-1 items-center justify-center px-4 py-12">
 
       <div className="relative w-full max-w-lg">
         <div className="overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">

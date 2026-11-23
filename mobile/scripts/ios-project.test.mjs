@@ -15,7 +15,7 @@ const require = createRequire(import.meta.url);
 const { checkAppId } = require("../node_modules/@capacitor/cli/dist/common.js");
 const { loadConfig } = require("../node_modules/@capacitor/cli/dist/config.js");
 const runWithEnvironment = (cwd, script, environment, ...args) => {
-  const options = { cwd, encoding: "utf8", env: { ...process.env, BUILD_NUMBER: "37", MOBILE_ADS_ENABLED: "", MOBILE_ADS_WEB_CONSENT_READY: "", MOBILE_ADSENSE_CLIENT: "", MOBILE_ADSENSE_SLOT: "", MOBILE_ADS_CMP_SCRIPT_URL: "", MOBILE_GAD_APPLICATION_ID: "", ...environment } };
+  const options = { cwd, encoding: "utf8", env: { ...process.env, BUILD_NUMBER: "37", MOBILE_ADS_ENABLED: "", MOBILE_ADS_NATIVE_CONSENT_READY: "", MOBILE_ADMOB_BANNER_ID: "", MOBILE_GAD_APPLICATION_ID: "", ...environment } };
   if (script === "configure-ios.rb") {
     const pods = spawnSync(process.execPath, [join(mobile, "scripts/configure-ads-pods.mjs")], options);
     if (pods.status !== 0) return pods;
@@ -58,7 +58,7 @@ const rejects = (cwd, message, ...args) => {
 };
 
 test("generated native sources match the checked plugin contracts and are compiled by App", () => {
-  const sources = ["QualificationBridgeViewController.swift", "TrackingTransparencyPlugin.swift"];
+  const sources = ["QualificationBridgeViewController.swift", "TrackingTransparencyPlugin.swift", "NativeBannerAds.swift"];
   for (const source of sources) {
     assert.equal(readFileSync(join(mobile, "ios/App/App", source), "utf8"),
       readFileSync(join(mobile, "ios-assets", source), "utf8"), `${source}: rerun ios:prepare`);
@@ -137,24 +137,21 @@ test("native pre-consent rules block ad traffic while keeping learning and CMP r
   }
 });
 
-test("privacy preparation never rejects, so the app always starts with ads off", () => {
+test("the native WebView never registers AdSense or releases the ad-host block", () => {
   const source = readFileSync(join(mobile, "ios-assets/TrackingTransparencyPlugin.swift"), "utf8");
-  const prepare = source.slice(source.indexOf("@objc func prepare"), source.indexOf("private func statusName"));
-  assert.doesNotMatch(prepare, /call\.reject/);
-  assert.match(prepare, /call\.resolve\(\["enabled": false/);
-  // Without the compiled block list, ATT and ad enabling stay unavailable.
-  assert.match(source, /private var configured: Bool \{ blockList != nil && /);
+  assert.match(source, /call\.resolve\(\["enabled": false/);
+  assert.doesNotMatch(source, /call\.reject|MobileAds|userContentController\.remove/);
 });
 
-test("the only native ATT request is guarded by the bundled ads setting", () => {
-  const source = readFileSync(join(mobile, "ios-assets/TrackingTransparencyPlugin.swift"), "utf8");
-  assert.match(source, /private var configured: Bool \{[^\n]*"KakomonAdsEnabled"\) as\? Bool == true \}/);
-  assert.equal(source.match(/ATTrackingManager\.requestTrackingAuthorization/g)?.length, 1);
-  const request = source.slice(source.indexOf("@objc func requestPermission"), source.indexOf("@objc func enableAds"));
-  assert.match(request, /guard self\.configured, self\.trustedPage else \{\s*call\.resolve\(\["status": "restricted"\]\); return\s*\}/);
-  assert.ok(request.indexOf("guard self.configured") < request.indexOf("ATTrackingManager.requestTrackingAuthorization"));
-  assert.match(source, /#if canImport\(GoogleMobileAds\)\s*import GoogleMobileAds\s*#endif/);
-  assert.match(source, /#if canImport\(GoogleMobileAds\)[\s\S]*MobileAds\.shared\.register\(webView\)[\s\S]*#else\s*self\.blockAds\(\)\s*call\.resolve\(\["enabled": false\]\)\s*#endif/);
+test("native banner requests enforce consent, local StoreKit rights and ATT again", () => {
+  const source = readFileSync(join(mobile, "ios-assets/NativeBannerAds.swift"), "utf8");
+  const prepare = source.slice(source.indexOf("@objc func prepareBanner"), source.indexOf("@objc func showBanner"));
+  assert.match(prepare, /deviceHasAccess[\s\S]*requestConsentInfoUpdate[\s\S]*canRequestAds[\s\S]*requestTrackingAuthorization/);
+  const show = source.slice(source.indexOf("@objc func showBanner"), source.indexOf("@objc func hideBanner"));
+  assert.match(show, /readyGeneration == attempt[\s\S]*deviceHasAccess[\s\S]*MobileAds\.shared[\s\S]*sdk\.start/);
+  assert.match(show, /setPublisherFirstPartyIDEnabled\(false\)/);
+  assert.match(show, /publisherPrivacyPersonalizationState = personalized \? \.default : \.disabled/);
+  assert.match(show, /if !personalized \{[\s\S]*\["npa": "1"\]/);
 });
 
 test("optional ads configuration enables only complete publisher settings and clears stale values", t => {
@@ -176,11 +173,14 @@ test("optional ads configuration enables only complete publisher settings and cl
     success(run(cwd, "verify-ios.rb"));
   };
   disabled();
-  const settings = { MOBILE_ADS_ENABLED: "true", MOBILE_ADS_WEB_CONSENT_READY: "true", MOBILE_ADSENSE_CLIENT: "ca-pub-1234567890123456", MOBILE_ADSENSE_SLOT: "1234567890", MOBILE_ADS_CMP_SCRIPT_URL: "https://fundingchoicesmessages.google.com/i/pub-1234567890123456?ers=1" };
+  const settings = { MOBILE_ADS_ENABLED: "true", MOBILE_ADS_NATIVE_CONSENT_READY: "true", MOBILE_ADMOB_BANNER_ID: "ca-app-pub-1234567890123456/1234567890", MOBILE_GAD_APPLICATION_ID: "ca-app-pub-1234567890123456~1234567890" };
   success(runWithEnvironment(cwd, "configure-ios.rb", settings));
   success(run(cwd, "verify-ios.rb"));
   assert.equal(read().KakomonAdsEnabled, true);
-  assert.equal(read().GADIntegrationManager, "webview");
+  assert.equal(read().GADIntegrationManager, undefined);
+  assert.equal(read().GADDelayAppMeasurementInit, true);
+  assert.equal(read().KakomonAdMobBannerID, settings.MOBILE_ADMOB_BANNER_ID);
+  assert.ok(read().SKAdNetworkItems.some(entry => entry.SKAdNetworkIdentifier === "cstr6suwn9.skadnetwork"));
   assert.ok(read().NSUserTrackingUsageDescription.length > 0);
   const template = JSON.parse(ruby(cwd, `puts JSON.generate(Xcodeproj::Plist.read_from_path(${JSON.stringify(join(mobile, "ios-assets/PrivacyInfo.xcprivacy").replaceAll("\\", "/"))}))`));
   assert.deepEqual(privacy(), template, "ads-enabled disclosures must be unchanged");
@@ -194,8 +194,17 @@ test("optional ads configuration enables only complete publisher settings and cl
   assert.equal(read().GADApplicationIdentifier, "ca-app-pub-1234567890123456~1234567890");
   success(run(cwd, "configure-ios.rb"));
   disabled();
-  assert.equal(read().KakomonAdsenseClient, "");
-  // A leftover optional App ID or additional GAD key cannot opt in to ads.
+  assert.equal(read().KakomonAdMobBannerID, undefined);
+  assert.equal(read().SKAdNetworkItems, undefined);
+  for (const ids of [
+    { MOBILE_ADMOB_BANNER_ID: "ca-app-pub-9999999999999999/1234567890" },
+    { MOBILE_GAD_APPLICATION_ID: "ca-app-pub-3940256099942544~1458002511", MOBILE_ADMOB_BANNER_ID: "ca-app-pub-3940256099942544/2934735716" },
+    { MOBILE_GAD_APPLICATION_ID: "invalid" },
+  ]) {
+    success(runWithEnvironment(cwd, "configure-ios.rb", { ...settings, ...ids }));
+    disabled();
+  }
+  // A leftover App ID or additional GAD key cannot opt in to ads.
   ruby(cwd, "path = 'ios/App/App/Info.plist'; p = Xcodeproj::Plist.read_from_path(path); p['GADIsAdManagerApp'] = true; Xcodeproj::Plist.write_to_path(p, path)");
   success(runWithEnvironment(cwd, "configure-ios.rb", { MOBILE_GAD_APPLICATION_ID: "ca-app-pub-1234567890123456~1234567890" }));
   disabled();
