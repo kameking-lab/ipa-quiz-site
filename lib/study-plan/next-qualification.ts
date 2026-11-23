@@ -1,6 +1,7 @@
 import { japanDate } from "@/lib/home/featured-exams";
+import { dateCountdown, registrationTiming, sessionCountdownDates } from "./countdown";
 import { dayNumber } from "./pace";
-import { qualificationIdsForExam, type ExamScheduleSession } from "./schedule";
+import { isRedundantScheduleEstimate, qualificationIdsForExam, type ExamScheduleSession } from "./schedule";
 
 const progression: Record<string, readonly string[]> = {
   ip: ["fe"], fe: ["ap"], ap: ["sc", "nw", "db"], fp3: ["fp2"], fp2: ["fp1"],
@@ -49,19 +50,32 @@ export function planReferral(search: ReferralSearch, keys: readonly string[], to
   return exam && examDate && !extraExams.length && keys.includes(exam) ? { exam, examDate } : null;
 }
 
-export function examTopPlanDate(exam: string, search: ReferralSearch, sessions: readonly ExamScheduleSession[], today: string) {
+export function examTopSchedule(exam: string, search: ReferralSearch, sessions: readonly ExamScheduleSession[], today: string) {
   const incomingDate = examDateFromSearch(search, today);
-  const singleDays = sessions.filter(session => session.examDate && session.examDate > today &&
-    (!incomingDate || session.examDate === incomingDate) && session.datePrecision !== "month" &&
-    (!session.examDateEnd || session.examDateEnd === session.examDate) && !session.examPhaseWindows?.length);
-  const session = nextDatedSession(singleDays, today);
-  const examDate = incomingDate ?? session?.examDate;
-  if (!examDate) return null;
+  const schedules = sessions.flatMap(session => {
+    if (!session.qualificationId || session.scheduleStatus === "ondemand" || isRedundantScheduleEstimate(session, sessions)) return [];
+    const dates = sessionCountdownDates(session, sessions);
+    const windows = session.scheduleStatus === "official" && !session.unannounced && session.sourceUrl &&
+      session.examDate && session.examDate >= today && session.datePrecision !== "unknown" && !dates.examDate
+      ? session.examPhaseWindows?.length ? session.examPhaseWindows : [{
+        label: "", start: session.datePrecision === "month" ? session.examDate.slice(0, 7) : session.examDate,
+        end: session.examDateEnd === session.examDate ? null : session.examDateEnd,
+      }]
+      : [];
+    const examCountdown = dateCountdown(dates.examDate, today, dates.examBasisYear);
+    const registration = registrationTiming(dates.applicationStart, dates.applicationDeadline, today, dates.applicationBasisYear);
+    const orderDate = dates.examDate ?? windows[0]?.start ?? dates.applicationDeadline ?? dates.applicationStart;
+    if (!orderDate || (!examCountdown && !windows.length &&
+      (orderDate < today || registration.state === "closed"))) return [];
+    return [{ orderDate, examCountdown, windows, registration, dates,
+      qualificationId: session.qualificationId, sessionId: session.id }];
+  }).sort((a, b) => a.orderDate.localeCompare(b.orderDate) ||
+    Number(!!a.examCountdown?.basisYear) - Number(!!b.examCountdown?.basisYear));
 
-  return {
-    examDate,
-    daysUntil: dayNumber(examDate)! - dayNumber(today)!,
-    qualificationId: session?.qualificationId ?? qualificationIdsForExam(exam)[0] ?? null,
+  if (!incomingDate) return schedules[0] ?? null;
+  return schedules.find(schedule => schedule.examCountdown?.date === incomingDate) ?? {
+    examCountdown: dateCountdown(incomingDate, today),
+    qualificationId: qualificationIdsForExam(exam)[0] ?? null,
   };
 }
 

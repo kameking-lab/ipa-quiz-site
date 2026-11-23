@@ -28,8 +28,9 @@ test("a saved plan without an appointment shows no invented target or paid nudge
   await setup(page, { ...makePlan(), examDate: null });
   await page.goto("/");
   await expect(page.getByRole("img", { name: "正解済み 0 / 200問" })).toBeVisible();
-  await expect(page.getByTestId("pace-target-flag")).toHaveCount(0);
-  await expect(page.getByText("受験日を設定してください", { exact: true })).toBeVisible();
+  await expect(page.getByText(/^1回の目安/)).toHaveCount(0);
+  await expect(page.getByRole("link", { name: "計画の問題を解く" })).toHaveCount(0);
+  await expect(page.getByRole("button", { name: "自分の受験日を設定" })).toBeVisible();
   await expect(page.getByRole("link", { name: /回数無制限で追いつけます/ })).toHaveCount(0);
 });
 
@@ -60,30 +61,75 @@ for (const percent of [0, 50, 100]) {
     await page.goto("/");
     const track = page.getByRole("img", { name: `正解済み ${percent * 2} / 200問` });
     await expect(track).toBeVisible();
-    const geometry = await track.evaluate(el => {
-      const image = el.querySelector("image")!, flag = el.querySelector<SVGPathElement>('path.p3-trail-flag')!;
-      const frame = image.closest("svg")!, runner = frame.closest<SVGGElement>("g")!;
-      const position = runner.transform.baseVal.getItem(0).matrix;
-      const viewport = runner.ownerSVGElement!.viewBox.baseVal;
-      const frameLeft = position.e + frame.x.baseVal.value;
-      const flagBox = flag.getBBox();
-      return { dogCenter: position.e,
-        flagX: Number(flag.getAttribute("d")!.match(/^M([\d.]+)/)![1]),
-        inside: frameLeft >= viewport.x && frameLeft + frame.width.baseVal.value <= viewport.x + viewport.width
-          && flagBox.x + flagBox.width <= viewport.x + viewport.width,
-        dogInFront: !!(flag.compareDocumentPosition(runner) & Node.DOCUMENT_POSITION_FOLLOWING),
-        spriteOffset: image.getAttribute("x") };
-    });
-    expect(geometry.dogCenter).toBeCloseTo(39 + percent * 2.44);
-    expect(geometry.flagX).toBeCloseTo(294);
-    expect(geometry.inside).toBe(true);
-    expect(geometry.dogInFront).toBe(true);
-    expect(geometry.spriteOffset).toBe("0");
+    for (const width of [320, 390, 1280]) {
+      await page.setViewportSize({ width, height: 844 });
+      const geometry = await track.evaluate(el => {
+        const image = el.querySelector("image")!, flag = el.querySelector<SVGPathElement>('path.p3-trail-flag')!;
+        const frame = image.closest("svg")!, runner = frame.closest<SVGGElement>("g")!;
+        const position = runner.transform.baseVal.getItem(0).matrix;
+        const viewport = runner.ownerSVGElement!.viewBox.baseVal;
+        const frameLeft = position.e + frame.x.baseVal.value;
+        const flagBox = flag.getBBox();
+        return { dogCenter: position.e,
+          flagX: Number(flag.getAttribute("d")!.match(/^M([\d.]+)/)![1]),
+          inside: frameLeft >= viewport.x && frameLeft + frame.width.baseVal.value <= viewport.x + viewport.width
+            && flagBox.x + flagBox.width <= viewport.x + viewport.width,
+          dogInFront: !!(flag.compareDocumentPosition(runner) & Node.DOCUMENT_POSITION_FOLLOWING),
+          spriteOffset: image.getAttribute("x") };
+      });
+      expect(geometry.dogCenter).toBeCloseTo(39 + percent * 2.44);
+      expect(geometry.flagX).toBeCloseTo(294);
+      expect(geometry.inside).toBe(true);
+      expect(geometry.dogInFront).toBe(true);
+      expect(geometry.spriteOffset).toBe("0");
+    }
     await page.setViewportSize({ width: 320, height: 844 });
     const labelSizes = await track.locator("text").evaluateAll(labels => labels.map(label =>
       parseFloat(getComputedStyle(label).fontSize) * (label as SVGTextElement).getScreenCTM()!.a));
     expect(Math.min(...labelSizes)).toBeGreaterThanOrEqual(12);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  });
+}
+
+for (const suspension of ["hidden", "offscreen"] as const) {
+  test(`the new runner cycles through poses and settles when ${suspension}`, async ({ page }) => {
+    await setup(page, makePlan(), 100);
+    await page.emulateMedia({ reducedMotion: "no-preference" });
+    await page.addInitScript(mode => {
+      const poses = new Set<number>();
+      const observer = new MutationObserver(() => {
+        const image = document.querySelector('[data-pace-sprite="v2"][data-pace-running] image');
+        if (!image) return;
+        observer.disconnect();
+        function observePose() {
+          if (!image?.closest("[data-pace-running]")) return;
+          const transform = getComputedStyle(image).transform;
+          if (transform !== "none") poses.add(new DOMMatrixReadOnly(transform).m41);
+          if (poses.size < 3) {
+            requestAnimationFrame(observePose);
+            return;
+          }
+          document.documentElement.dataset.runnerAnimated = String([...poses].every(x => x % 72 === 0));
+          if (mode === "hidden") {
+            Object.defineProperty(document, "hidden", { value: true, configurable: true });
+            document.dispatchEvent(new Event("visibilitychange"));
+          } else {
+            // Keep the scroll target below the whole track even on a short home page.
+            document.body.style.paddingBottom = "100vh";
+            window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "instant" });
+          }
+        }
+        requestAnimationFrame(observePose);
+      });
+      observer.observe(document, { attributes: true, subtree: true, attributeFilter: ["data-pace-running"] });
+    }, suspension);
+    await page.goto("/");
+    const track = page.getByRole("img", { name: "正解済み 100 / 200問" });
+    await expect(track.locator("image")).toHaveAttribute("href", "/images/home/pace-run/v2/ip.webp");
+    await expect(page.locator("html")).toHaveAttribute("data-runner-animated", "true");
+    if (suspension === "offscreen") await expect(track).not.toBeInViewport();
+    await expect(track.locator("image")).toHaveCSS("transform", "none");
+    await expect(track.locator("line.p3-trail-progress")).toHaveAttribute("x2", "161");
   });
 }
 

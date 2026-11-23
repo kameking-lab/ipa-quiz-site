@@ -109,7 +109,7 @@ test("long qualification and no appointment fit at 320px without an invented dat
   await expect(page.getByRole("button", { name: "資格を切り替える" })).toContainText("1級電気通信工事施工管理");
   await expect(page.getByRole("img", { name: "正解済み 0 / 200問" })).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(320);
-  await expect(page.getByRole("button", { name: "受験日を設定" })).toBeVisible();
+  await expect(page.getByRole("button", { name: "自分の受験日を設定" })).toBeVisible();
 });
 
 for (const state of ["member", "paid"] as const) {

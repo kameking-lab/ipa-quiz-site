@@ -8,12 +8,15 @@ export interface RangeSnapshot {
   lastExpansionWeek: string;
   graceUntil: string | null;
 }
+export type ExamDateSource = "manual" | "official" | "tentative" | "estimated";
+
 export interface PacePlan {
   kind: "exam-pace-v1";
   id: string;
   exam: string;
   sessionId: string | null;
   examDate: string | null;
+  examDateSource?: ExamDateSource;
   startDate: string;
   createdAt: string;
   updatedAt: string;
@@ -64,7 +67,7 @@ export function planOldestYear(plan: PacePlan, catalog: readonly PlanQuestion[])
 }
 
 export function createPacePlan(
-  input: Pick<PacePlan, "id" | "exam" | "examDate" | "sessionId" | "startDate" | "studyWeekdays">,
+  input: Pick<PacePlan, "id" | "exam" | "examDate" | "examDateSource" | "sessionId" | "startDate" | "studyWeekdays">,
   catalog: readonly PlanQuestion[], now: string, oldestYear = rangeOptions(catalog, input.exam).find(option => option.recommended)?.oldestYear,
 ): PacePlan {
   if (!input.id || !input.exam || dayNumber(input.startDate) === null ||

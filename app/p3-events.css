@@ -131,7 +131,7 @@
 
 [data-home-event-layout] [data-pace-track="progress"] .p3-trail-road { stroke: var(--p3-progress-road); }
 [data-home-event-layout] [data-pace-track="progress"] .p3-trail-progress { stroke: var(--p3-progress-filled); }
-[data-home-event-layout] [data-pace-track="progress"] .p3-track-runner {
+[data-home-event-layout] [data-pace-track="progress"] .p3-track-runner:not([data-pace-sprite="v2"]) {
   filter: drop-shadow(0 0 1px #493527) drop-shadow(0 1px 1px #fff4c5);
 }
 

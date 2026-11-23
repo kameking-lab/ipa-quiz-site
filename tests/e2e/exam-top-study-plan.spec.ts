@@ -1,4 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
+import { readFile } from "node:fs/promises";
 import { createPacePlan } from "../../lib/study-plan/pace";
 import { LS_KEYS } from "../../lib/storage/keys";
 
@@ -26,10 +27,11 @@ test("an official date opens the shared sheet on the exam hub", async ({ page })
   await mockSchedule(page, [officialSession]);
   await page.goto("/fe");
   const row = page.getByRole("region", { name: "試験日程" });
-  await expect(row).toContainText("試験日 2月28日（あと98日）");
+  await expect(row).toContainText("試験日 2027-02-28");
+  await expect(row).toContainText("試験まであと98日");
   await expect(row.getByRole("link", { name: "申込方法は次の資格で確認" }))
     .toHaveAttribute("href", /tsugino-shikaku\.jp\/shikaku\/kihon-joho\?/);
-  await expect(row).not.toContainText("申込締切");
+  await expect(row).toContainText("申込締切まであと61日");
   const trigger = row.getByRole("button", { name: planButton });
   await trigger.click();
   await expect(page).toHaveURL(/\/fe$/);
@@ -51,7 +53,8 @@ test("the incoming date takes priority and the saved plan hides the row on retur
   const url = "/fe?examDate=" + linkedDate + "&utm_source=tsugino";
   await page.goto(url);
   const row = page.getByRole("region", { name: "試験日程" });
-  await expect(row).toContainText("試験日 3月12日（あと110日）");
+  await expect(row).toContainText("受験予定日 2027-03-12");
+  await expect(row).toContainText("試験まであと110日");
   await row.getByRole("button", { name: planButton }).click();
   const sheet = page.getByRole("dialog", { name: "学習計画を作る" });
   await expect(sheet.getByRole("combobox", { name: "受ける資格" })).toHaveValue("fe");
@@ -77,3 +80,81 @@ test("a missing date leaves the exam hub without a schedule row", async ({ page 
   await expect(page.getByRole("button", { name: planButton })).toBeHidden();
   await expect(page.getByRole("link", { name: "申込方法は次の資格で確認" })).toBeHidden();
 });
+
+const current = { ...officialSession, fiscalYear: "2026", label: "2026年度第1回",
+  applicationStart: "2026-11-18", applicationDeadline: "2026-11-26" };
+const projected = [
+  { ...current, scheduleStatus: "tentative", unannounced: true, datePrecision: "unknown",
+    examDate: null, applicationStart: null, applicationDeadline: null, sourceUrl: null },
+  { ...current, id: "prior", label: "2025年度第1回", fiscalYear: "2025",
+    examDate: "2026-02-28", applicationStart: "2025-11-18", applicationDeadline: "2025-11-26" },
+];
+
+for (const scenario of [
+  { name: "01-confirmed", sessions: [officialSession], status: "申込締切まであと61日" },
+  { name: "02-estimated", sessions: projected, status: "受付中（見込み）", estimated: true },
+  { name: "03-before-opening", sessions: [{ ...current, applicationStart: "2026-11-24" }], status: "あと2日で申込開始" },
+  { name: "04-open", sessions: [current], status: "受付中" },
+  { name: "05-closed", sessions: [{ ...current, applicationDeadline: "2026-11-21" }], status: "受付終了" },
+] as const) {
+  test(`qualification schedule at 390px: ${scenario.name}`, async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await mockSchedule(page, [...scenario.sessions]);
+    await page.goto("/fe");
+    const row = page.getByRole("region", { name: "試験日程" });
+    await expect(row.getByRole("heading", { name: "次の試験" })).toBeVisible();
+    await expect(row.getByText(scenario.status, { exact: true })).toBeVisible();
+    await expect(row.getByRole("link")).toHaveCount(1);
+    await expect(row.getByRole("button")).toHaveCount(1);
+    if ("estimated" in scenario) {
+      await expect(row.getByText("試験まであと98日（見込み）", { exact: true })).toBeVisible();
+      await expect(row.getByText("2025年度の同じ回をもとに推定", { exact: true })).toHaveCount(1);
+      expect((await row.innerText()).match(/（見込み）/g)).toHaveLength(2);
+    }
+    if (scenario.name === "04-open") {
+      await expect(row).toContainText("申込期間 2026-11-18〜2026-11-26");
+      await expect(row.getByText("申込締切まであと4日", { exact: true })).toBeVisible();
+    }
+    if (scenario.name === "05-closed") await expect(row.getByText(/申込締切まであと/)).toHaveCount(0);
+    const screenshots = process.env.EXAM_SCHEDULE_SCREENSHOTS;
+    if (screenshots) {
+      await row.scrollIntoViewIfNeeded();
+      await page.evaluate(() => document.fonts.ready.then(() => undefined));
+      await page.screenshot({ path: `${screenshots}/${scenario.name}.png`, animations: "disabled" });
+    }
+  });
+}
+
+for (const estimated of [false, true]) {
+  test(`downloads the study calendar with ${estimated ? "estimated" : "confirmed"} registration events`, async ({ page }) => {
+    await mockSchedule(page, estimated ? projected : [current]);
+    await page.route("**/api/study-plan/catalog/fe", route => route.fulfill({
+      json: { questions: [{ id: "fixture-question", exam: "fe", year: 2026 }] },
+    }));
+    await page.goto("/fe");
+    await page.getByRole("button", { name: planButton }).click();
+    const sheet = page.getByRole("dialog", { name: "学習計画を作る" });
+    if (estimated) await expect(sheet.getByLabel("受験日", { exact: true })).toHaveValue(publishedDate);
+    await sheet.getByRole("button", { name: "この計画で始める" }).click();
+    const calendar = page.getByRole("button", { name: "カレンダーに追加（.ics）" });
+    const [download] = await Promise.all([page.waitForEvent("download"), calendar.click()]);
+    expect(download.suggestedFilename()).toBe("kakomon-study-plan.ics");
+    const ics = (await readFile((await download.path())!, "utf8")).replaceAll("\r\n ", "");
+    expect(ics.match(/BEGIN:VEVENT/g)).toHaveLength(4);
+    const suffix = estimated ? "（見込み）" : "";
+    expect(ics).toContain("DTSTART;VALUE=DATE:20270228\r\nSUMMARY:基本情報技術者の試験" + suffix);
+    expect(ics).toContain("DTSTART;VALUE=DATE:20261118\r\nSUMMARY:基本情報技術者の申込開始" + suffix);
+    expect(ics).toContain("DTSTART;VALUE=DATE:20261126\r\nSUMMARY:基本情報技術者の申込締切" + suffix);
+    expect(ics).toContain("BEGIN:VALARM\r\nTRIGGER:-P1D");
+    expect(ics).toContain("BEGIN:VALARM\r\nTRIGGER:-P3D");
+    expect(ics).toContain("\\nhttps://tsugino-shikaku.jp/shikaku/kihon-joho?utm_source=kakomon&utm_campaign=exam_schedule");
+    if (estimated) {
+      await page.getByRole("button", { name: "計画を変更", exact: true }).click();
+      const edit = page.getByRole("dialog", { name: "学習計画を変更" });
+      const [fromEdit] = await Promise.all([page.waitForEvent("download"),
+        edit.getByRole("button", { name: "カレンダーに追加（.ics）" }).click()]);
+      const editedIcs = (await readFile((await fromEdit.path())!, "utf8")).replaceAll("\r\n ", "");
+      expect(editedIcs).toContain("DTSTART;VALUE=DATE:20261126\r\nSUMMARY:基本情報技術者の申込締切（見込み）");
+    }
+  });
+}
