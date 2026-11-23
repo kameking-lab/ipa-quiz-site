@@ -14,7 +14,7 @@ import { loadExamPaper } from "@/lib/exam-library-papers";
 import { createCopilotGeminiProvider } from "@/lib/copilot/gemini-flash38";
 import { createCopilotResponseStream } from "@/lib/copilot/streaming";
 import { COPILOT_MODEL } from "@/lib/copilot/model";
-import { prepareAiUsage, consumeAiUsage, confirmFreeAnswer, settleAiUsage, withAiUsageResponse, type AiUsageContext } from "@/lib/ai/usage-server";
+import { prepareAiUsage, consumeAiUsage, settleAiUsage, withAiUsageResponse, type AiUsageContext } from "@/lib/ai/usage-server";
 
 export const runtime = "nodejs";
 
@@ -133,7 +133,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
   usage.streaming = true;
   const stream = createCopilotResponseStream({
     requireCompleteAnswer: !usage.legacy,
-    confirmBeforeDelivery: confirmFreeAnswer(usage),
+    bufferAnswer: usage.access.kind === "free" && !!usage.settle,
     provider,
     system,
     userMessages: messages,

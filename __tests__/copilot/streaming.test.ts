@@ -79,20 +79,22 @@ it.each([undefined, "SAFETY"])("keeps a partial free answer out of the response 
       params.onComplete?.({ finishReason, truncated: false });
     },
   };
-  const confirmBeforeDelivery = vi.fn(), onComplete = vi.fn();
-  const body = await readAll(createCopilotResponseStream(baseInput({ provider, confirmBeforeDelivery, onComplete, requireCompleteAnswer: true })));
+  const onComplete = vi.fn();
+  const body = await readAll(createCopilotResponseStream(baseInput({ provider, bufferAnswer: true, onComplete, requireCompleteAnswer: true })));
   expect(body).not.toContain("partial");
   expect(body).toContain("[エラー]");
-  expect(confirmBeforeDelivery).not.toHaveBeenCalled();
   expect(onComplete).toHaveBeenCalledExactlyOnceWith(7, { finishReason, truncated: false }, false);
 });
 
-it.each([true, false])("delivers a completed free answer only after its quota is confirmed (%s)", async confirmed => {
-  const confirmBeforeDelivery = vi.fn(async () => confirmed), onComplete = vi.fn();
-  const body = await readAll(createCopilotResponseStream(baseInput({ confirmBeforeDelivery, onComplete })));
-  expect(body.includes("ABC")).toBe(confirmed);
-  expect(confirmBeforeDelivery).toHaveBeenCalledOnce();
-  expect(onComplete).toHaveBeenCalledExactlyOnceWith(3, undefined, confirmed);
+it("delivers the completed free answer before quota settlement finishes", async () => {
+  const settlement = Promise.withResolvers<void>();
+  const onComplete = vi.fn(() => settlement.promise);
+  const reader = createCopilotResponseStream(baseInput({ bufferAnswer: true, onComplete })).getReader();
+  expect(new TextDecoder().decode((await reader.read()).value)).toBe("ABC");
+  settlement.reject(new Error("KV unavailable"));
+  expect(new TextDecoder().decode((await reader.read()).value)).toBe(CITATION_UNVERIFIED_NOTICE);
+  expect(await reader.read()).toMatchObject({ done: true });
+  expect(onComplete).toHaveBeenCalledExactlyOnceWith(3, undefined, true);
 });
 
 describe("createCopilotResponseStream — 正常系", () => {
@@ -170,7 +172,7 @@ describe("createCopilotResponseStream — エラー系", () => {
   });
 });
 
-it.each([false, true])("出力上限までの本文を表示して計上する（無料枠の事前確定: %s）", async free => {
+it.each([false, true])("出力上限までの本文を表示して計上する（本文のバッファリング: %s）", async bufferAnswer => {
   const usage = { finishReason: "MAX_TOKENS", truncated: true, promptTokens: 120, outputTokens: 4, thoughtsTokens: 8 };
   const provider: LLMProvider = {
     name: "gemini",
@@ -180,12 +182,10 @@ it.each([false, true])("出力上限までの本文を表示して計上する�
     },
   };
   const onComplete = vi.fn();
-  const confirm = vi.fn(async () => true);
   const out = await readAll(createCopilotResponseStream(baseInput({
-    provider, onComplete, confirmBeforeDelivery: free ? confirm : undefined, requireCompleteAnswer: true,
+    provider, onComplete, bufferAnswer, requireCompleteAnswer: true,
   })));
   expect(out).toMatch(/^途中\n\n\[応答の途中終了\].*回答は途中まで/);
-  expect(confirm).toHaveBeenCalledTimes(free ? 1 : 0);
   expect(onComplete).toHaveBeenCalledExactlyOnceWith(2, usage, true);
 });
 
@@ -208,15 +208,13 @@ it.each([
   };
   const client = new AbortController();
   const onComplete = vi.fn();
-  const confirm = vi.fn(async () => true);
   const reader = createCopilotResponseStream(baseInput({
-    provider, clientSignal: client.signal, onComplete, confirmBeforeDelivery: buffered ? confirm : undefined,
+    provider, clientSignal: client.signal, onComplete, bufferAnswer: buffered,
   })).getReader();
   await waitingForAbort.promise;
   if (answered) expect(new TextDecoder().decode((await reader.read()).value)).toBe(chunk);
   client.abort();
   expect(await reader.read()).toMatchObject({ done: true });
-  expect(confirm).not.toHaveBeenCalled();
   expect(onComplete).toHaveBeenCalledExactlyOnceWith(chunk.length, undefined, answered);
 });
 

@@ -222,21 +222,24 @@ describe("AI daily question quota", () => {
     expect(windows("essay-grade").filter(w => w.key.startsWith("ai:normal-use:"))).toHaveLength(1);
   });
 
-  it("withholds a graded result if the free reservation cannot be confirmed", async () => {
+  it.each(["released", "unchanged"] as const)("preserves a graded result when free settlement fails and the lease is %s", async status => {
     const now = Date.now(), resetAt = now + 60_000;
     const lease = { day: { subject: "user:same-account", limit: 3, offset: 540, now },
       fingerprint: "essay-grade", owner: "owner", expiresAt: now + 120_000 };
     reserve.mockResolvedValueOnce({ status: "reserved", remaining: 1, resetAt, lease });
-    settle.mockRejectedValueOnce(new Error("lost reply")).mockResolvedValueOnce({ status: "unchanged", remaining: 1, resetAt });
+    settle.mockRejectedValueOnce(new Error("lost reply")).mockResolvedValueOnce({ status: "unchanged", remaining: 1, resetAt })
+      .mockResolvedValueOnce({ status, remaining: 1, resetAt });
     const result = await withAiUsageResponse(async track => {
       const context = await prepareAiUsage(request, "essay-grade");
       track(context);
       await consumeAiUsage(context, "gemini", ["essay-grade", "answer"]);
-      return Response.json({ grade: "completed" });
+      return Response.json({ grade: "completed" }, { headers: context.headers });
     });
-    expect(result.status).toBe(503);
-    expect(await result.json()).toMatchObject({ error: "ai_usage_unavailable" });
-    expect(settle).toHaveBeenCalledTimes(2);
+    expect(result.status).toBe(200);
+    expect(await result.json()).toMatchObject({ grade: "completed" });
+    expect(result.headers.get("X-AI-Quota-Consumed")).toBe(status === "released" ? "0" : "unknown");
+    expect(result.headers.get("X-RateLimit-Remaining")).toBe(status === "released" ? "1" : null);
+    expect(settle.mock.calls).toEqual([[lease, true], [lease, true], [lease, false]]);
   });
 
   it.each([undefined, "false"])("returns the original legacy response with rollout set to %s", async rollout => {

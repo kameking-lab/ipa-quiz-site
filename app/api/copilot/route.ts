@@ -19,7 +19,7 @@ import { createCopilotGeminiProvider } from "@/lib/copilot/gemini-flash38";
 import { checkMonthlyCostCap, recordAiCost, estimateTokens, textBudget } from "@/lib/ai/cost-guard";
 import { tierForModel } from "@/lib/ai/cost-tracker";
 import { COPILOT_MODEL } from "@/lib/copilot/model";
-import { prepareAiUsage, consumeAiUsage, confirmFreeAnswer, settleAiUsage, withAiUsageResponse, type AiUsageContext } from "@/lib/ai/usage-server";
+import { prepareAiUsage, consumeAiUsage, settleAiUsage, withAiUsageResponse, type AiUsageContext } from "@/lib/ai/usage-server";
 
 export const runtime = "nodejs";
 
@@ -220,7 +220,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
   usage.streaming = true;
   const stream = createCopilotResponseStream({
     requireCompleteAnswer: !usage.legacy,
-    confirmBeforeDelivery: confirmFreeAnswer(usage),
+    bufferAnswer: usage.access.kind === "free" && !!usage.settle,
     provider,
     system,
     userMessages,
