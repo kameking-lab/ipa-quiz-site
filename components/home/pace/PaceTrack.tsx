@@ -3,6 +3,7 @@ import { useLayoutEffect, useRef, useState, type RefObject } from "react";
 const START_X = 39;
 const TRACK_LENGTH = 244;
 const FRAME_SIZE = 72;
+const RUNNER_SIZE = 84;
 const BOUNCE_HEIGHT = 1.25;
 const STRIDE_MS = 320;
 
@@ -68,8 +69,9 @@ function RunningChihuahua({ src, percent, lineY, fillRef, stopped }: {
     };
   }, [fillRef, imageReady, percent, stopped]);
 
-  return <g ref={runner} transform={`translate(${trackX(startPercent)} 0)`} aria-hidden="true">
-    <svg x={-FRAME_SIZE / 2} y={lineY - FRAME_SIZE + 1} width={FRAME_SIZE} height={FRAME_SIZE} className="overflow-hidden">
+  return <g ref={runner} transform={`translate(${trackX(startPercent)} 0)`} aria-hidden="true" className="p3-track-runner">
+    <svg x={-RUNNER_SIZE / 2} y={lineY - RUNNER_SIZE + 1} width={RUNNER_SIZE} height={RUNNER_SIZE}
+      viewBox={`0 0 ${FRAME_SIZE} ${FRAME_SIZE}`} className="overflow-hidden">
       <image ref={strip} href={src} width={FRAME_SIZE * 4} height={FRAME_SIZE} x="0" onLoad={() => setImageReady(true)} onError={() => setImageReady(true)} />
     </svg>
   </g>;
@@ -81,10 +83,10 @@ export function PaceTrack({ runArt, mastered, total, stopped = false }: {
   const fillRef = useRef<SVGLineElement>(null);
   const percent = total ? 100 * mastered / total : 0;
   const lineY = 75;
-  return <svg viewBox="0 0 320 101" className="p3-pace-track block w-full" role="img" aria-label={`正解済み ${mastered} / ${total}問`}>
+  return <svg viewBox="0 -10 320 111" className="p3-pace-track block w-full" role="img" aria-label={`正解済み ${mastered} / ${total}問`}>
     <Trail lineY={lineY} />
     <line ref={fillRef} x1={START_X} y1={lineY} x2={trackX(percent)} y2={lineY}
-      strokeWidth="8" strokeLinecap="round" className="stroke-primary" />
+      strokeWidth="8" strokeLinecap="round" className="p3-trail-progress stroke-primary" />
     <FinishFlag lineY={lineY} height={70} />
     <RunningChihuahua key={runArt} src={runArt} percent={percent} lineY={lineY} fillRef={fillRef} stopped={stopped} />
     <TrackLabel x={START_X} y={97}>0問</TrackLabel>

@@ -58,12 +58,22 @@ body:has(.p3-search) .site-header {
   border-color: transparent;
 }
 
+body:has(.p3-home) { --p3-home-width: 64rem; }
+
 body:has(.p3-home) .site-header {
   --foreground: var(--p3-ink);
   --muted: color-mix(in srgb, var(--p3-sky) 84%, var(--p3-ink));
   background: var(--p3-sky);
   color: var(--p3-ink);
   border-color: transparent;
+}
+
+html:not(.native-app) body:has(.p3-home) .site-header {
+  padding-block-start: env(safe-area-inset-top, 0px);
+}
+
+@media (min-width: 960px) {
+  body:has(.p3-home) .site-header > div { max-width: var(--p3-home-width); }
 }
 
 body:has(.p3-home) .site-header a:focus-visible { outline-color: var(--p3-ink); }
