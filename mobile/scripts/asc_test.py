@@ -6,12 +6,14 @@ import struct
 import tempfile
 import unittest
 
-from asc_validate import ROOT, jpeg_size, validate
+from asc_validate import ROOT, png_size, validate
 
 
-def jpeg(width, height):
-    # Minimal JPEG header fixture for the header parser; never an upload artifact.
-    return b'\xff\xd8\xff\xc0' + struct.pack('>HBHHB', 17, 8, height, width, 3) + b'\x01\x11\x00\x02\x11\x00\x03\x11\x00\xff\xd9'
+def png_header_fixture(width, height, color_type=2):
+    return (
+        b'\x89PNG\r\n\x1a\n\x00\x00\x00\x0dIHDR' + struct.pack('>IIBBBBB', width, height, 8, color_type, 0, 0, 0)
+        + b'\x00\x00\x00\x00\x00\x00\x00\x00IEND\xaeB\x60\x82'
+    )
 
 
 class AscValidationTest(unittest.TestCase):
@@ -22,12 +24,12 @@ class AscValidationTest(unittest.TestCase):
             shutil.copytree(ROOT / directory, self.root / directory)
         self.directory = self.root / 'fastlane/screenshots/ja'
         self.directory.mkdir(parents=True)
-        config = json.loads((self.root / 'asc/capture.json').read_text())
+        config = json.loads((self.root / 'asc/listing-screenshots.json').read_text())
         entries = []
-        for device in config['devices']:
-            for screen in config['screens']:
-                path = self.directory / f"{screen}-{device['slug']}.jpg"
-                path.write_bytes(jpeg(device['width'], device['height']))
+        for size in config['sets']:
+            for file in size['files']:
+                path = self.directory / file
+                path.write_bytes(png_header_fixture(size['width'], size['height']))
                 entries.append({'file': path.name, 'sha256': hashlib.sha256(path.read_bytes()).hexdigest()})
         (self.directory.parent / 'manifest.json').write_text(json.dumps({'images': entries}))
 
@@ -39,18 +41,19 @@ class AscValidationTest(unittest.TestCase):
 
     def test_missing_frame_rejected(self):
         next(self.directory.iterdir()).unlink()
-        with self.assertRaisesRegex(ValueError, 'exactly 5'):
+        with self.assertRaisesRegex(ValueError, 'Unexpected screenshot set'):
             validate(True, self.root)
 
     def test_changed_image_rejected(self):
         path = next(self.directory.iterdir())
         # A valid dimension header must not permit changed bytes after capture.
-        path.write_bytes(path.read_bytes()[:-2] + b'altered\xff\xd9')
+        original = path.read_bytes()
+        path.write_bytes(original[:-12] + b'altered' + original[-12:])
         with self.assertRaisesRegex(ValueError, 'Changed image'):
             validate(True, self.root)
 
     def test_wrong_dimensions_rejected(self):
-        next(self.directory.iterdir()).write_bytes(jpeg(1242, 2208))
+        next(self.directory.iterdir()).write_bytes(png_header_fixture(1242, 2208))
         with self.assertRaisesRegex(ValueError, 'Wrong screenshot size'):
             validate(True, self.root)
 
@@ -66,11 +69,13 @@ class AscValidationTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, '100 UTF-8 bytes'):
             validate(root=self.root)
 
-    def test_truncated_jpeg_rejected(self):
-        p = next(self.directory.iterdir())
-        p.write_bytes(p.read_bytes()[:-2])
+    def test_truncated_png_rejected(self):
         with self.assertRaises(ValueError):
-            jpeg_size(p)
+            png_size(png_header_fixture(1320, 2868)[:-2])
+
+    def test_alpha_png_rejected(self):
+        with self.assertRaisesRegex(ValueError, 'RGB PNG'):
+            png_size(png_header_fixture(1320, 2868, color_type=6))
 
 
 if __name__ == '__main__':

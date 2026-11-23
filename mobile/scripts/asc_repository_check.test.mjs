@@ -12,15 +12,17 @@ async function fixture(fn) {
   try {
     await mkdir(path.join(root, 'asc'));
     await mkdir(path.join(root, 'fastlane/screenshots/ja'), { recursive: true });
-    const image = path.join(root, 'fastlane/screenshots/ja/01-home-test.jpg');
+    const image = path.join(root, 'fastlane/screenshots/ja/01-home-test.png');
     const manifestPath = path.join(root, 'fastlane/screenshots/manifest.json');
     const raw = Buffer.alloc(120 * 260 * 3);
     for (let y = 0; y < 260; y++) for (let x = 0; x < 120; x++) {
       const offset = (y * 120 + x) * 3;
       raw.fill((y % 30 < 8 && x % 30 < 20) ? 40 : 240, offset, offset + 3);
     }
-    await sharp(raw, { raw: { width: 120, height: 260, channels: 3 } }).jpeg().toFile(image);
-    await writeFile(path.join(root, 'asc/capture.json'), JSON.stringify({ devices: [{ slug: 'test', width: 120, height: 260 }], screens: ['01-home'] }));
+    await sharp(raw, { raw: { width: 120, height: 260, channels: 3 } }).png().toFile(image);
+    await writeFile(path.join(root, 'asc/listing-screenshots.json'), JSON.stringify({
+      sets: [{ files: [path.basename(image)], width: 120, height: 260 }],
+    }));
     const manifest = { authentication: 'anonymous', quota_grants: 0, images: [{ file: path.basename(image),
       sha256: createHash('sha256').update(await readFile(image)).digest('hex'),
       visual_review: { status: 'approved', reviewed_at: '2026-11-05T00:00:00Z', readable_japanese: true,
@@ -39,13 +41,14 @@ test('rejects pending manual review', () => fixture(async ({ root, manifest, sav
   manifest.images[0].visual_review.status = 'pending'; await save();
   await assert.rejects(checkRepository(root), /Manual visual review/);
 }));
-test('rejects corrupted JPEG even when its hash is updated', () => fixture(async ({ root, image, manifest, save }) => {
-  const bytes = (await readFile(image)).subarray(0, 350);
+test('rejects truncated PNG even when its hash is updated', () => fixture(async ({ root, image, manifest, save }) => {
+  const original = await readFile(image);
+  const bytes = original.subarray(0, original.length - 30);
   await writeFile(image, bytes); manifest.images[0].sha256 = createHash('sha256').update(bytes).digest('hex'); await save();
   await assert.rejects(checkRepository(root));
 }));
-test('rejects a blank JPEG even when reviewed and correctly hashed', () => fixture(async ({ root, image, manifest, save }) => {
-  const bytes = await sharp({ create: { width: 120, height: 260, channels: 3, background: '#fff' } }).jpeg().toBuffer();
+test('rejects a blank PNG even when reviewed and correctly hashed', () => fixture(async ({ root, image, manifest, save }) => {
+  const bytes = await sharp({ create: { width: 120, height: 260, channels: 3, background: '#fff' } }).png().toBuffer();
   await writeFile(image, bytes); manifest.images[0].sha256 = createHash('sha256').update(bytes).digest('hex'); await save();
   await assert.rejects(checkRepository(root), /Blank image/);
 }));

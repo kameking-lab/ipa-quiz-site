@@ -8,37 +8,22 @@ import struct
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def jpeg_size(path):
-    data = path.read_bytes()
-    if data[:2] != b"\xff\xd8" or data[-2:] != b"\xff\xd9":
-        raise ValueError("Not a complete JPEG: " + path.name)
-    offset = 2
-    while offset < len(data):
-        if data[offset] != 255:
-            raise ValueError("Invalid JPEG marker")
-        while data[offset] == 255:
-            offset += 1
-        marker = data[offset]
-        offset += 1
-        if marker in (0xD8, 0xD9):
-            continue
-        size = struct.unpack(">H", data[offset:offset + 2])[0]
-        if size < 2:
-            raise ValueError("Invalid JPEG segment")
-        if marker in (0xC0, 0xC1, 0xC2):
-            height, width = struct.unpack(">HH", data[offset + 3:offset + 7])
-            if data[offset + 7] != 3:
-                raise ValueError("Screenshots must be RGB JPEG (no alpha)")
-            return width, height
-        if marker == 0xDA:
-            break
-        offset += size
-    raise ValueError("JPEG dimensions missing")
+def png_size(data):
+    signature_and_header = b"\x89PNG\r\n\x1a\n\x00\x00\x00\x0dIHDR"
+    end = b"\x00\x00\x00\x00IEND\xaeB\x60\x82"
+    if len(data) < 45 or not data.startswith(signature_and_header) or not data.endswith(end):
+        raise ValueError("Not a complete PNG")
+    width, height, bit_depth, color_type = struct.unpack(">IIBB", data[16:26])
+    if (bit_depth, color_type) != (8, 2):
+        raise ValueError("Screenshots must be 8-bit RGB PNG (no alpha)")
+    return width, height
 
 
 def validate(screenshots=False, root=ROOT):
     metadata = root / "fastlane/metadata/ja"
-    limits = {"name": 30, "subtitle": 30, "description": 4000, "promotional_text": 170}
+    limits = {
+        "name": 30, "subtitle": 30, "description": 4000, "promotional_text": 170, "release_notes": 4000,
+    }
     for field, limit in limits.items():
         value = (metadata / (field + ".txt")).read_text(encoding="utf-8").rstrip("\n")
         if not value or len(value) > limit:
@@ -60,22 +45,22 @@ def validate(screenshots=False, root=ROOT):
         raise ValueError("Unexpected or missing metadata files: " + str(files.symmetric_difference(allowed)))
     if not screenshots:
         return
-    config = json.loads((root / "asc/capture.json").read_text(encoding="utf-8"))
+    config = json.loads((root / "asc/listing-screenshots.json").read_text(encoding="utf-8"))
     directory = root / "fastlane/screenshots/ja"
     manifest = json.loads((directory.parent / "manifest.json").read_text(encoding="utf-8"))
-    expected = {f"{screen}-{device['slug']}.jpg": (device["width"], device["height"])
-                for screen in config["screens"] for device in config["devices"]}
+    expected = {file: (size["width"], size["height"]) for size in config["sets"] for file in size["files"]}
     actual = {p.name for p in directory.iterdir() if p.is_file()}
     if actual != set(expected):
-        raise ValueError("Require exactly 5 screenshots in each of the two required sizes")
+        raise ValueError("Unexpected screenshot set")
     entries = manifest["images"]
     if len(entries) != len(expected) or {e["file"] for e in entries} != set(expected):
         raise ValueError("Capture manifest doesn't match images")
     for entry in entries:
         path = directory / entry["file"]
-        if jpeg_size(path) != expected[path.name]:
+        data = path.read_bytes()
+        if png_size(data) != expected[path.name]:
             raise ValueError("Wrong screenshot size: " + path.name)
-        if hashlib.sha256(path.read_bytes()).hexdigest() != entry["sha256"]:
+        if hashlib.sha256(data).hexdigest() != entry["sha256"]:
             raise ValueError("Changed image after capture: " + path.name)
 
 
@@ -84,4 +69,4 @@ if __name__ == "__main__":
     parser.add_argument("--screenshots", action="store_true")
     args = parser.parse_args()
     validate(args.screenshots)
-    print("ASC metadata" + (" and 10 screenshots" if args.screenshots else "") + " validation PASS")
+    print("ASC metadata" + (" and screenshots" if args.screenshots else "") + " validation PASS")
