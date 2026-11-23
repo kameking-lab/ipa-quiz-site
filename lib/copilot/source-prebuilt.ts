@@ -95,7 +95,9 @@ function isManifest(value: unknown): value is Manifest {
  * 索引・文書は index() の初回に、問題は該当する試験を初めて引いたときに読む。
  */
 export function openPrebuiltCopilotSource(rootDir: string = process.cwd()): CopilotSource | null {
-  const dir = join(rootDir, COPILOT_PREBUILT_DIR);
+  // next.config.ts explicitly traces generated/copilot for this route. rootDir
+  // is also supplied by the build verifier and tests.
+  const dir = join(/*turbopackIgnore: true*/ rootDir, COPILOT_PREBUILT_DIR);
   let manifest: Manifest;
   try {
     const manifestFile = join(dir, "manifest.json");
@@ -127,7 +129,7 @@ export function openPrebuiltCopilotSource(rootDir: string = process.cwd()): Copi
   const loadIndex = async (): Promise<SearchIndex> => {
     const started = performance.now();
     const read = async (file: string) => {
-      const data = await readFile(join(dir, file));
+      const data = await readFile(/*turbopackIgnore: true*/ join(dir, file));
       return { data, ms: performance.now() - started };
     };
     const [docs, directory, postings] = await Promise.all([
