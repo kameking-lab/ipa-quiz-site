@@ -40,8 +40,8 @@ describe("shared monthly budget admission", () => {
     const result = await checkMonthlyCostCap("gemini", budget);
     expect(result).toHaveProperty("reservation");
     const cost = { ...budget, outputTokens: 1000, reservation: result.reservation };
-    await recordAiCost(cost); const once = total;
-    await recordAiCost(cost);
+    expect(await recordAiCost(cost)).toBe("recorded"); const once = total;
+    expect(await recordAiCost(cost)).toBe("recorded");
     expect(total).toBe(once);
     expect(total).toBeCloseTo(49990.06);
   });

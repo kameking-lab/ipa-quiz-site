@@ -8,6 +8,20 @@ import { maskPII, totalHits } from "@/lib/feedback/pii-masker";
 
 const MASK = "[削除済み]";
 
+describe("maskPII — explicit names and identifiers", () => {
+  it("masks labelled names even without honorifics", () => {
+    for (const text of ["氏名: 山田 太郎", "名前：山田太郎", "name=Jane Doe"]) {
+      expect(maskPII(`${text}。解説希望`).masked).toBe(`${MASK}。解説希望`);
+    }
+  });
+
+  it("masks labelled account IDs, UUIDs and Slack user references", () => {
+    for (const text of ["ID: private-user-42", "ユーザーID：abc123", "user_id=abc123", "会員番号: abc123", "学籍番号: 12345", "0d64b8e8-d170-4d6a-97bd-aa14a51e8365", "<@U123456>", "<@U123456|山田太郎>"]) {
+      expect(maskPII(`${text}。解説希望`).masked).toBe(`${MASK}。解説希望`);
+    }
+  });
+});
+
 describe("maskPII — email", () => {
   it("masks a single address embedded in Japanese text", () => {
     const r = maskPII("返信は yamada.taro@example.co.jp までお願いします。");

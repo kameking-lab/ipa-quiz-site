@@ -144,7 +144,15 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     hasGrounding: false,
     timeoutMs: 35_000,
     onComplete: provider.name === "mock" ? undefined : async (outputChars, completion, answered) => {
-      await Promise.all([settleAiUsage(usage, answered === true), recordAiCost({
+      console.info("[copilot/exam-library] completed", {
+        questionId, model: COPILOT_MODEL,
+        finishReason: completion?.finishReason,
+        promptTokens: completion?.promptTokens,
+        outputTokens: completion?.outputTokens,
+        thoughtsTokens: completion?.thoughtsTokens,
+        totalTokens: completion?.totalTokens,
+      });
+      const [, costStatus] = await Promise.all([settleAiUsage(usage, answered === true), recordAiCost({
         tier: tierForModel(COPILOT_MODEL),
         inputTokens: completion?.promptTokens ?? budget.inputTokens,
         outputTokens: completion?.totalTokens !== undefined && completion.promptTokens !== undefined
@@ -155,6 +163,9 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
         label: "copilot",
         reservation,
       })]);
+      console.info("[copilot/exam-library] cost", {
+        questionId, model: COPILOT_MODEL, status: costStatus,
+      });
     },
   });
 

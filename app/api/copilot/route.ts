@@ -242,7 +242,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
             thoughtsTokens: completion?.thoughtsTokens,
             totalTokens: completion?.totalTokens,
           });
-          await Promise.all([settleAiUsage(usage, answered === true), recordAiCost({
+          const [, costStatus] = await Promise.all([settleAiUsage(usage, answered === true), recordAiCost({
             tier: tierForModel(model),
             inputTokens: completion?.promptTokens ?? budget.inputTokens,
             // Stream interruption may hide usageMetadata, including billable
@@ -255,6 +255,9 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
             label: "copilot",
             reservation,
           })]);
+          console.info("[copilot] cost", {
+            questionId: payload.question.id, model, status: costStatus,
+          });
         }
       : undefined,
   });
