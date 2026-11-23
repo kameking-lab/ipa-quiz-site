@@ -20,7 +20,7 @@ export function StudyRoomCafeScene({ day, occupants, emptyMessage, home = false,
   renderSeat?: (occupant: CafeOccupant) => ReactNode;
 }) {
   const room = day === null ? null : dailyCafeRoom(day);
-  return <div ref={sceneRef} className={styles.scene} role={home ? undefined : "group"}
+  return <div ref={sceneRef} className={home ? `${styles.scene} ${styles.home}` : styles.scene} role={home ? undefined : "group"}
     tabIndex={home ? undefined : -1} aria-label={home ? undefined : room?.name ?? "チワワの自習室"}
     data-testid={home ? "home-study-room-scene" : "study-room-scene"} data-room={room?.id}>
     {room && <>

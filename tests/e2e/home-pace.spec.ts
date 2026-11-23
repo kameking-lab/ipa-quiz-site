@@ -68,10 +68,13 @@ test("reserves the saved plan before hydration and before the catalog arrives", 
     await page.goto("/", { waitUntil: "commit" });
     await expect(page.locator("#today")).toHaveAttribute("data-home-state", "loading");
     await expect(page.locator("html")).toHaveAttribute("data-home-study-layout", "planned");
+    await expect(page.getByText("学習計画を読み込み中…")).toBeVisible();
+    await expect(page.getByRole("link", { name: "計画の問題を解く" })).toHaveCount(0);
     await expect(page.getByPlaceholder("ほかの資格をさがす")).toBeVisible();
     const first = await roomY();
     releaseScripts();
     await expect(page.getByText("問題を読み込み中…")).toBeVisible();
+    await expect(page.getByText("学習計画を読み込み中…")).toHaveCount(0);
     const pending = await roomY();
     releaseCatalog();
     await expect(page.getByRole("link", { name: "計画の問題を解く" })).toBeVisible();

@@ -55,8 +55,9 @@ function HomePlanReferral({ keys, onOpen }: { keys: readonly string[]; onOpen(pr
   return null;
 }
 const shortDate = (date: string) => `${Number(date.slice(5, 7))}/${Number(date.slice(8))}`;
-export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = false, children }: {
-  domains: readonly HomeDirectoryDomain[]; planExamKeys: readonly string[]; initialDate?: string; createOnLoad?: boolean; children?: ReactNode;
+export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = false, directory, children }: {
+  domains: readonly HomeDirectoryDomain[]; planExamKeys: readonly string[]; initialDate?: string; createOnLoad?: boolean;
+  directory?: ReactNode; children?: ReactNode;
 }) {
   const router = useRouter();
   const items = useMemo(() => domains.flatMap(d => [...d.featured, ...d.compact]), [domains]);
@@ -193,6 +194,10 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
       <div className={`${styles.hero} p3-landscape p3-home-scene`} data-pace-view={postExam ? "post-exam" : examToday ? "exam-day" : plan ? "planned" : returning ? "returning" : "new"}>
         <HomeWeather />
         <HomeEventArt event={event} />
+        {restoring && <div className={styles.planLoading}>
+          <p role="status">学習計画を読み込み中…</p>
+          <div className={styles.loadingRail} aria-hidden="true" />
+        </div>}
         {plan ? <>
           <div className="p3-event-panel" data-event-panel="intro">
             <div className="flex items-start justify-between gap-2">
@@ -314,6 +319,7 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
         {term && !matched.length && <p role="status" className="py-4 text-sm text-muted-foreground">該当する資格が見つかりませんでした。</p>}
       </section>}
       {children && <div className={styles.room}>{children}</div>}
+      {directory && <div className={styles.directory}>{directory}</div>}
     </section>
     {error && <p role="alert" className="mt-3 text-sm text-destructive">{error}</p>}
     <PlanCreateSheet open={sheet === "create" || sheet === "edit"} editing={sheet === "edit" ? plan : undefined} onOpenChange={open => { if (!open) { setSheet(null); setPrefill(undefined); } }} items={planItems}
