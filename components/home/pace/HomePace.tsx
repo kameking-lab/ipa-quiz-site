@@ -12,7 +12,8 @@ import { groupHomeDirectoryItems } from "@/lib/home/grouped-directory";
 import { calculatePace, weakQuestions, type AnswerAttempt, type PacePlan } from "@/lib/study-plan/pace";
 import { listPacePlans, savePacePlan, deletePacePlan } from "@/lib/study-plan/pace-storage";
 import { answersToday, homeCalendar } from "@/lib/study-plan/home";
-import { paceAttempts } from "@/lib/study-plan/client";
+import { loadPlanSchedule, paceAttempts } from "@/lib/study-plan/client";
+import { withConfirmedExamDay } from "@/lib/study-plan/countdown";
 import { historyExamLookup, japanDate, upcomingExamPicks } from "@/lib/home/featured-exams";
 import { readHomeStudy, relativeStudyDate } from "@/lib/home/recent-study";
 import { createHistoryStore } from "@/lib/storage/history";
@@ -132,27 +133,35 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
       });
     return () => controller.abort();
   }, [resumeQuery]);
-  const plan = plans.find(p => p.id === active) ?? plans[0];
-  const { questions: catalog, reload } = usePlanCatalog(plan?.exam ?? "");
-  const pace = plan && catalog ? calculatePace(plan, catalog, attempts, today) : null;
-  const weakCount = plan && catalog ? weakQuestions(catalog, plan.exam, attempts, stars).length : null;
-  const postExam = !!plan?.examDate && plan.examDate < today;
-  const examToday = plan?.examDate === today;
-  const scheduleExam = !createOnLoad && !postExam && !plan?.result && plan?.sessionId && qualificationIdsForExam(plan.exam).length ? plan.exam : null;
+  const savedPlan = plans.find(p => p.id === active) ?? plans[0];
+  const { questions: catalog, reload } = usePlanCatalog(savedPlan?.exam ?? "");
+  const scheduleExam = !createOnLoad && !savedPlan?.result && savedPlan?.sessionId &&
+    (!savedPlan.examDate || savedPlan.examDate >= today) && qualificationIdsForExam(savedPlan.exam).length ? savedPlan.exam : null;
   const [schedule, setSchedule] = useState<{ exam: string; data: ExamSchedule | null }>();
   useEffect(() => {
     if (!scheduleExam) return;
     const controller = new AbortController();
-    void fetch(`/api/exam-schedule/${encodeURIComponent(scheduleExam)}`, { signal: controller.signal })
-      .then(async response => response.ok ? await response.json() as ExamSchedule : null)
-      .catch(() => null)
-      .then(data => {
-        if (!controller.signal.aborted) setSchedule({ exam: scheduleExam, data: data?.exam === scheduleExam ? data : null });
-      });
+    void loadPlanSchedule(scheduleExam, controller.signal).then(data => {
+      if (!controller.signal.aborted) setSchedule({ exam: scheduleExam, data });
+    });
     return () => controller.abort();
   }, [scheduleExam]);
   const scheduleSessions = schedule?.exam === scheduleExam ? schedule?.data?.sessions : undefined;
+  const selectedSession = scheduleSessions?.find(session => session.id === savedPlan?.sessionId);
+  const plan = savedPlan && withConfirmedExamDay(savedPlan, today, selectedSession);
+  const pace = plan && catalog ? calculatePace(plan, catalog, attempts, today) : null;
+  const weakCount = plan && catalog ? weakQuestions(catalog, plan.exam, attempts, stars).length : null;
+  const postExam = !!plan?.examDate && plan.examDate < today;
+  const examToday = plan?.examDate === today;
+  // A date restored after first paint keeps the same rows on the day of the exam.
+  const examDayLayout = examToday && savedPlan?.examDate !== null;
   const calendar = plan ? homeCalendar(plan, today, scheduleSessions) : null;
+  const scheduleLoading = !!scheduleExam && schedule?.exam !== scheduleExam;
+  const calendarPending = scheduleLoading && !calendar;
+  const calendarEmpty = !!plan && !postExam && !calendar && !scheduleLoading;
+  const setExamDate = plan && !plan.examDate && !!pace?.total && !pace.complete && !calendarPending
+    ? <button type="button" onClick={() => setSheet("edit")} className="study-link">自分の受験日を設定</button> : null;
+  const registration = plan?.registration;
   const item = items.find(i => i.key === plan?.exam);
   const currentResume = resolvedResume?.query === resumeQuery ? resolvedResume : null;
   const resume = currentResume?.entry;
@@ -178,12 +187,12 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
   const matched = term ? searchQualifications(directoryItems, query, "home")
     : picks.map(pick => directoryItems.find(i => i.key === pick.key)!).filter(Boolean);
   function updatePlan(patch: Partial<PacePlan>) {
-    if (!plan) return;
-    if (!savePacePlan({ ...plan, ...patch, updatedAt: new Date().toISOString() })) setError("保存できませんでした。");
+    if (!savedPlan) return;
+    if (!savePacePlan({ ...savedPlan, ...patch, updatedAt: new Date().toISOString() })) setError("保存できませんでした。");
     else {
       setError(""); setSheet(null);
-      if (patch.result === "passed" && !plan.result) {
-        setPassMoment({ planId: plan.id, moment: { exam: plan.exam, at: Date.now(), passed: true, streak: readStreak().currentStreak } });
+      if (patch.result === "passed" && !savedPlan.result) {
+        setPassMoment({ planId: savedPlan.id, moment: { exam: savedPlan.exam, at: Date.now(), passed: true, streak: readStreak().currentStreak } });
       }
     }
   }
@@ -199,7 +208,7 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
     <p className="text-sm font-semibold" role="status">学習計画を作りました</p>
     <PlanCalendarButton plan={created} name={items.find(entry => entry.key === created.exam)?.name ?? created.exam} today={today}
       sessions={created.exam === scheduleExam ? scheduleSessions : undefined}
-      loading={created.exam === scheduleExam && schedule?.exam !== scheduleExam} />
+      loading={created.exam === scheduleExam && scheduleLoading} />
     <MobileInstallNudge placement="plan-created" />
   </div>;
   if (createOnLoad) return <PlanCreateSheet embedded open items={planItems} initialExam={initialExam}
@@ -207,8 +216,9 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
   const search = (compact: boolean) => <StudySearchField compact={compact} id={restoring && compact ? undefined : "qualification-search"} aria-label="資格名・略称で検索" aria-controls={term || !compact ? "home-qualification-results" : undefined} disabled={restoring} value={query} onChange={e => setQuery(e.target.value)} placeholder={compact ? "ほかの資格をさがす" : "受ける資格は？"} />;
   return <>
     <Suspense><HomePlanReferral keys={referralKeys} onOpen={openPrefilled} /></Suspense>
-    <section className={styles.stack} id="today" aria-label="今日の学習" aria-busy={restoring} data-home-state={restoring ? "loading" : postExam ? "post-exam" : plan ? "planned" : returning ? "returning" : "new"}>
-      <div className={`${styles.hero} p3-landscape p3-home-scene`} data-pace-view={postExam ? "post-exam" : examToday ? "exam-day" : plan ? "planned" : returning ? "returning" : "new"}>
+    <section className={styles.stack} id="today" aria-label="今日の学習" aria-busy={restoring} data-home-state={restoring ? "loading" : postExam ? "post-exam" : plan ? "planned" : returning ? "returning" : "new"}
+      data-home-calendar-layout={calendarPending ? "pending" : calendarEmpty ? "empty" : undefined}>
+      <div className={`${styles.hero} p3-landscape p3-home-scene`} data-pace-view={postExam ? "post-exam" : examDayLayout ? "exam-day" : plan ? "planned" : returning ? "returning" : "new"}>
         <HomeWeather />
         <HomeEventArt event={event} />
         {restoring && <div className={styles.planLoading}>
@@ -224,8 +234,9 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
             {plan.registration && <p className="text-[13px] p3-scene-muted">{plan.registration.label}</p>}
             {created?.id === plan.id && passMoment?.planId !== plan.id && calendarConfirmation}
             {postExam && <h1 className="mt-2 text-2xl leading-tight font-bold">試験、おつかれさまでした</h1>}
-            {(scheduleExam || calendar) && <div className={styles.planCalendarSlot}>
-              {calendar && <ExamCountdownCalendar {...calendar} />}
+            {(scheduleLoading || calendar) && <div className={styles.planCalendarSlot}>
+              {calendar ? <ExamCountdownCalendar {...calendar} /> : calendarPending &&
+                <p role="status" className="mt-2 text-sm p3-scene-muted">日程を読み込み中…</p>}
             </div>}
             <div className={styles.planCount}>
               {pace?.total ? <>
@@ -240,19 +251,20 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
                 {catalog.length === 0 && <Link href="/search" className="study-link">資格を選ぶ</Link>}
               </>}
             </div>
+            {calendarEmpty && setExamDate}
           </div>
           <div className="p3-event-track" data-pace-track="progress">
             {!!pace?.total && <PaceTrack runArt={qualificationRunArt(plan.exam, planDomain?.id)} mastered={pace.mastered} total={pace.total} stopped={postExam} />}
           </div>
-          {!postExam && !examToday && <div className="p3-event-panel" data-event-panel="progress">
-            {pace?.total ? pace.complete ? <p className="font-semibold">全{pace.total}問に正解しました</p> : <>
+          {!postExam && !examDayLayout && <div className="p3-event-panel" data-event-panel="progress">
+            {!examToday && (pace?.total ? pace.complete ? <p className="font-semibold">全{pace.total}問に正解しました</p> : <>
               <p className="text-sm p3-scene-muted">残り{pace.remaining}問{plan.examDate ? "・勉強日あと" + pace.studyDays + "日" : ""}</p>
               {pace.target !== null && <p className="mt-1 font-semibold">1回の目安　{pace.target}問正解</p>}
               {pace.nextWeekday !== null && !pace.scheduledToday && <p className="mt-1 text-sm">次の勉強日は{weekdayLabels[pace.nextWeekday]}曜日です</p>}
-            </> : null}
-            {!postExam && !examToday && pace && !pace.complete && pace.total > 0 && (plan.examDate === null ?
-              <><p className="mt-2 text-sm">受験日を設定してください</p><button type="button" onClick={() => setSheet("edit")} className="study-link">受験日を設定</button></> : pace.studyDays === 0 ?
-              <><p className="mt-2 text-sm">試験前に勉強日がありません</p><button type="button" onClick={() => setSheet("edit")} className="study-link">勉強する日を変更</button></> : null)}
+            </> : null)}
+            {!calendarEmpty && setExamDate}
+            {!examToday && plan.examDate && !!pace?.total && !pace.complete && pace.studyDays === 0 &&
+              <><p className="mt-2 text-sm">試験前に勉強日がありません</p><button type="button" onClick={() => setSheet("edit")} className="study-link">勉強する日を変更</button></>}
             {pace?.target != null && <Link className="study-primary mt-2" href={`/quiz/today?plan=${encodeURIComponent(plan.id)}`}>計画の問題を解く <ArrowRight aria-hidden="true" className="size-5 shrink-0" /></Link>}
           </div>}
           {postExam && <div className="p3-event-panel" data-event-panel="results">
@@ -273,7 +285,7 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
             <button type="button" onClick={() => setSheet("detail")} className={`${styles.planDetails} study-link`}>
               学習計画の詳細
             </button>
-            {nativeClient() && passMoment?.planId !== plan.id && canRemindForPlan(plan) && <StudyReminderControl key={plan.id} planId={plan.id} />}
+            {savedPlan && nativeClient() && passMoment?.planId !== plan.id && canRemindForPlan(savedPlan) && <StudyReminderControl key={plan.id} planId={plan.id} />}
           </div>
         </> : returning ? <>
         <div className="p3-event-panel" data-event-panel="intro">
@@ -354,6 +366,33 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
         </details>;
       })}
       <Button variant="outline" asChild className="min-h-12 w-full"><Link href="/me#study-progress">学習計画</Link></Button></div></SheetContent></Sheet>
-    <Sheet open={sheet === "detail"} onOpenChange={open => { if (!open) setSheet(null); }}><SheetContent side="bottom" aria-describedby={undefined} className={`${styles.sheet} mx-auto max-h-[min(85dvh,calc(100dvh-var(--safe-top)-1rem))] max-w-[640px] overflow-y-auto pb-[max(1.5rem,var(--safe-bottom))]`}><SheetHeader><SheetTitle>学習計画</SheetTitle></SheetHeader>{plan && <div className="mt-5 space-y-4 text-sm"><p className="font-semibold">{item?.name ?? plan.exam}　{plan.registration?.label}</p><dl className="space-y-3">{[["申込開始", plan.registration?.start], ["申込締切", plan.registration?.deadline], ["試験日", plan.examDate], ["合格発表", plan.registration?.resultDate]].map(([label, value]) => <div key={label} className="flex justify-between gap-3"><dt className="text-muted-foreground">{label}</dt><dd>{value ?? "未発表"}{plan.registration?.estimated && label?.startsWith("申込") ? "（予定）" : ""}</dd></div>)}</dl>{plan.registration?.sourceUrl && <a href={plan.registration.sourceUrl} target="_blank" rel="noopener noreferrer" className="block min-h-11 py-3 underline">申込ページを開く（公式） ↗</a>}<details><summary className="min-h-11 cursor-pointer py-3 font-medium">申し込み・計画の変更</summary>{!plan.registered && <Button className="min-h-12 w-full" onClick={() => updatePlan({ registered: true })}>申込済みにする</Button>}<a href={`https://tsugino-shikaku.jp/${qualificationIdsForExam(plan.exam)[0] ? `shikaku/${qualificationIdsForExam(plan.exam)[0]}` : "calendar"}`} target="_blank" rel="noopener noreferrer" className="block py-3 underline">日程を次の資格で見る ↗</a><Link className="block py-3 underline" href="/me">学習の記録</Link><Button variant="outline" className="min-h-12 w-full" onClick={() => setSheet("edit")}>受ける回を変更</Button><button className="min-h-11 w-full text-destructive" onClick={() => { if (deletePacePlan(plan.id)) { setActive(""); setSheet(null); refresh(); } else setError("削除できませんでした。"); }}>計画を削除</button></details></div>}</SheetContent></Sheet>
+    <Sheet open={sheet === "detail"} onOpenChange={open => { if (!open) setSheet(null); }}>
+      <SheetContent side="bottom" aria-describedby={undefined} className={`${styles.sheet} mx-auto max-h-[min(85dvh,calc(100dvh-var(--safe-top)-1rem))] max-w-[640px] overflow-y-auto pb-[max(1.5rem,var(--safe-bottom))]`}>
+        <SheetHeader><SheetTitle>学習計画</SheetTitle></SheetHeader>
+        {plan && <div className="mt-5 space-y-4 text-sm">
+          <p className="font-semibold">{item?.name ?? plan.exam}　{registration?.label ?? selectedSession?.label}</p>
+          <dl className="space-y-3">
+            {[
+              ["申込開始", registration?.start ?? selectedSession?.applicationStart],
+              ["申込締切", registration?.deadline ?? selectedSession?.applicationDeadline],
+              ["試験日", plan.examDate],
+              ["合格発表", registration?.resultDate ?? selectedSession?.resultDate],
+            ].map(([label, value]) => <div key={label} className="flex justify-between gap-3">
+              <dt className="text-muted-foreground">{label}</dt>
+              <dd>{value ?? "未発表"}{(registration?.estimated || selectedSession?.applicationEstimated || selectedSession?.scheduleStatus === "tentative") && label?.startsWith("申込") ? "（予定）" : ""}</dd>
+            </div>)}
+          </dl>
+          {plan.registration?.sourceUrl && <a href={plan.registration.sourceUrl} target="_blank" rel="noopener noreferrer" className="block min-h-11 py-3 underline">申込ページを開く（公式） ↗</a>}
+          <details>
+            <summary className="min-h-11 cursor-pointer py-3 font-medium">申し込み・計画の変更</summary>
+            {!plan.registered && <Button className="min-h-12 w-full" onClick={() => updatePlan({ registered: true })}>申込済みにする</Button>}
+            <a href={`https://tsugino-shikaku.jp/${qualificationIdsForExam(plan.exam)[0] ? `shikaku/${qualificationIdsForExam(plan.exam)[0]}` : "calendar"}`} target="_blank" rel="noopener noreferrer" className="block py-3 underline">日程を次の資格で見る ↗</a>
+            <Link className="block py-3 underline" href="/me">学習の記録</Link>
+            <Button variant="outline" className="min-h-12 w-full" onClick={() => setSheet("edit")}>受ける回を変更</Button>
+            <button className="min-h-11 w-full text-destructive" onClick={() => { if (deletePacePlan(plan.id)) { setActive(""); setSheet(null); refresh(); } else setError("削除できませんでした。"); }}>計画を削除</button>
+          </details>
+        </div>}
+      </SheetContent>
+    </Sheet>
   </>;
 }

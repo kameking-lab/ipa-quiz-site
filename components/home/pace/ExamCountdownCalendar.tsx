@@ -26,16 +26,18 @@ export function ExamCountdownCalendar({ primary, secondary }: HomeCalendar) {
       <span className={styles.calendarBinding} aria-hidden="true" />
       <h1 className={styles.calendarHeading}>
         {examToday ? <span className={styles.calendarToday}>今日が試験日</span> : <>
-          <span className={styles.calendarLabel}>{label.until}</span>
+          <span className={styles.calendarLabel}>{label.until}{primary.basisYear !== undefined && "（見込み）"}</span>
           <span className={styles.calendarCount}>あと <strong>{primary.days}</strong> 日</span>
         </>}
       </h1>
       <p className={styles.calendarPrimaryDate}>
-        <CalendarDate {...primary} suffix={label.event} />
+        <CalendarDate date={primary.date} suffix={label.event} />
       </p>
     </div>
     {secondary && <p className={styles.calendarSecondaryDate}>
-      <span>{labels[secondary.kind].secondary}</span> <CalendarDate {...secondary} />
+      {secondary.kind === "registered" ? "申込済み" : <>
+        <span>{labels[secondary.kind].secondary}</span> <CalendarDate {...secondary} />
+      </>}
     </p>}
   </div>;
 }

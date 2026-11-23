@@ -1,4 +1,4 @@
-import { dayNumber } from "./pace";
+import { dayNumber, type PacePlan } from "./pace";
 import { estimateFromPreviousSession, type ExamScheduleSession } from "./schedule";
 
 type Countdown = { date: string; days: number; basisYear?: number };
@@ -27,8 +27,18 @@ export function hasSingleExamDay(session: ExamScheduleSession) {
     !session.examPhaseWindows?.length && (!session.examDateEnd || session.examDateEnd === session.examDate);
 }
 
+function isOfficial(session: ExamScheduleSession) {
+  return session.scheduleStatus === "official" && !session.unannounced && !!session.sourceUrl;
+}
+
+export function withConfirmedExamDay(plan: PacePlan, today: string, session?: ExamScheduleSession): PacePlan {
+  if (plan.examDate || plan.result || !session || session.id !== plan.sessionId || !isOfficial(session) || !hasSingleExamDay(session)) return plan;
+  const exam = dateCountdown(session.examDate, today);
+  return exam ? { ...plan, examDate: exam.date } : plan;
+}
+
 export function sessionCountdownDates(session: ExamScheduleSession, sessions: readonly ExamScheduleSession[]) {
-  const official = session.scheduleStatus === "official" && !session.unannounced && !!session.sourceUrl;
+  const official = isOfficial(session);
   const uncertainExam = session.scheduleStatus !== "ondemand" && (!official || !session.examDate ||
     session.datePrecision === "month" || session.datePrecision === "unknown");
   const uncertainApplication = !official || session.applicationEstimated;

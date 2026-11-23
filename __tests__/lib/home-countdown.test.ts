@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { homeCalendar } from "@/lib/study-plan/home";
-import { registrationTiming } from "@/lib/study-plan/countdown";
+import { registrationTiming, withConfirmedExamDay } from "@/lib/study-plan/countdown";
 import { createPacePlan, type PacePlan } from "@/lib/study-plan/pace";
 import { parseRegistration } from "@/lib/study-plan/schedule";
 
@@ -50,9 +50,9 @@ describe("home study plan calendar", () => {
       primary: { kind, date: primaryDate, days }, secondary: { kind: otherKind, date: otherDate },
     });
   });
-  it("switches to the exam when registered and keeps the deadline as a reference", () => {
+  it("switches to the exam and marks registration complete", () => {
     expect(homeCalendar({ ...plan, registered: true }, today)).toMatchObject({
-      primary: { kind: "exam", days: 30 }, secondary: { kind: "deadline", date: "2026-12-10" },
+      primary: { kind: "exam", days: 30 }, secondary: { kind: "registered" },
     });
   });
   it("prioritizes a confirmed exam on its day even if registration closes that day", () => {
@@ -106,5 +106,29 @@ describe("home study plan calendar", () => {
     });
     const estimated = { ...plan, registration: { ...plan.registration!, estimated: true } };
     expect(homeCalendar(estimated, today)).toBeNull();
+  });
+});
+
+describe("a saved plan without an exam date", () => {
+  const saved = { ...plan, examDate: null };
+  const fixed = { ...prior, id: plan.sessionId, examDate: "2026-12-17" };
+
+  it("uses a sourced single official exam day for the selected round", () => {
+    const [session] = parse(fixed);
+    expect(withConfirmedExamDay(saved, today, session).examDate).toBe(fixed.examDate);
+    expect(withConfirmedExamDay(plan, today, { ...session, examDate: "2026-12-18" })).toBe(plan);
+  });
+
+  it.each([
+    { id: "another-round" },
+    { datePrecision: "month" },
+    { examDateEnd: "2026-12-18" },
+    { examPhaseWindows: [{ label: "試験", start: "2026-12-17", end: "2026-12-17" }] },
+    { scheduleStatus: "ondemand" },
+    { scheduleStatus: "tentative" },
+    { examDate: "2026-11-16" },
+  ])("leaves the date unset for %j", patch => {
+    const [session] = parse({ ...fixed, ...patch });
+    expect(withConfirmedExamDay(saved, today, session)).toBe(saved);
   });
 });

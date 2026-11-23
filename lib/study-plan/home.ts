@@ -6,7 +6,7 @@ type CalendarDate = { kind: "start" | "deadline" | "exam"; date: string; basisYe
 
 export type HomeCalendar = {
   primary: CalendarDate & { days: number };
-  secondary: CalendarDate | null;
+  secondary: CalendarDate | { kind: "registered" } | null;
 };
 
 export function homeCalendar(plan: PacePlan, today: string, sessions: readonly ExamScheduleSession[] = []): HomeCalendar | null {
@@ -32,7 +32,7 @@ export function homeCalendar(plan: PacePlan, today: string, sessions: readonly E
     : null;
 
   if (examTarget?.days === 0 || !registration) {
-    return examTarget ? { primary: examTarget, secondary: deadlineDate } : null;
+    return examTarget ? { primary: examTarget, secondary: plan.registered ? { kind: "registered" } : deadlineDate } : null;
   }
   return { primary: registration, secondary: examTarget ?? (registration.kind === "start" ? deadlineDate : null) };
 }

@@ -5,7 +5,9 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { QuizClient } from "../QuizClient";
 import { listPacePlans } from "@/lib/study-plan/pace-storage";
-import { clearBatchQuestion, loadPlanCatalog, paceAttempts, type CatalogQuestion } from "@/lib/study-plan/client";
+import { clearBatchQuestion, loadPlanCatalog, loadPlanSchedule, paceAttempts, type CatalogQuestion } from "@/lib/study-plan/client";
+import { withConfirmedExamDay } from "@/lib/study-plan/countdown";
+import { qualificationIdsForExam } from "@/lib/study-plan/schedule";
 import { calculatePace, weakQuestions } from "@/lib/study-plan/pace";
 import { createHistoryStore } from "@/lib/storage/history";
 import { japanDate } from "@/lib/home/featured-exams";
@@ -30,13 +32,18 @@ export function TodayQuiz({ planId, weakExam, billingGateEnabled }: { planId: st
     setFinished(null);
     setStudyScope(null);
     void (async () => {
-      const plan = weakExam ? undefined : listPacePlans().find(p => p.id === planId);
-      const exam = weakExam ?? plan?.exam;
+      const savedPlan = weakExam ? undefined : listPacePlans().find(p => p.id === planId);
+      const exam = weakExam ?? savedPlan?.exam;
       if (!exam) throw new Error("学習計画が見つかりませんでした。");
-      const catalog = await loadPlanCatalog(exam, controller.signal);
+      const [catalog, schedule] = await Promise.all([
+        loadPlanCatalog(exam, controller.signal),
+        savedPlan?.sessionId && !savedPlan.examDate && !savedPlan.result && qualificationIdsForExam(exam).length
+          ? loadPlanSchedule(exam, controller.signal) : null,
+      ]);
       if (controller.signal.aborted) return;
       const now = new Date();
       const today = japanDate(now);
+      const plan = savedPlan && withConfirmedExamDay(savedPlan, today, schedule?.sessions.find(session => session.id === savedPlan.sessionId));
       const attempts = paceAttempts();
       const pace = plan ? calculatePace(plan, catalog, attempts, today, now.getTime()) : null;
       let ids = plan

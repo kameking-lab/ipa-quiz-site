@@ -25,6 +25,12 @@ function reserveHomeStudyLayout(pacePlans: string, lastQuestion: string, history
   if (plan?.kind === "exam-pace-v1" && typeof plan.exam === "string" && typeof plan.id === "string") {
     const today = new Intl.DateTimeFormat("sv-SE", { timeZone: "Asia/Tokyo", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
     root.dataset.homeStudyLayout = plan.examDate < today ? "post-exam" : plan.examDate === today ? "exam-day" : "planned";
+    const registration = plan.registration;
+    const savedCountdown = !plan.registered && registration && !registration.estimated &&
+      (registration.deadline >= today || (registration.start > today && !registration.deadline));
+    if ((!plan.examDate || registration?.estimated) && !plan.result && !savedCountdown) {
+      root.dataset.homeStudyCalendar = plan.sessionId ? "pending" : "empty";
+    }
     return;
   }
   try {

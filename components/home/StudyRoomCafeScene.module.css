@@ -65,6 +65,11 @@
 .scene[data-room="p4"] .slot[data-slot="12"] { --x: 282; }
 .scene[data-room="p4"] .slot[data-slot="sleeper"] { --x: 184; --floor: 125; }
 
+.home[data-room="p1"] .slot[data-slot="2"] { --x: 233; --floor: 106; }
+.home[data-room="p2"] .slot[data-slot="7"] { --x: 59; --floor: 108; }
+.home[data-room="p3"] .slot[data-slot="7"] { --x: 65; --floor: 108; }
+.home[data-room="p4"] .slot[data-slot="2"] { --x: 239; --floor: 109; }
+
 .slot img {
   position: relative;
   display: block;
