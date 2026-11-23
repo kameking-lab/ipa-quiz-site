@@ -92,7 +92,7 @@ describe("WebAutoAds", () => {
   });
 
   it.each(["/quiz", "/quiz/today", "/auth/signin", "/account/dashboard", "/me", "/settings/api-keys",
-    "/billing/success", "/checkout/result", "/admin", "/api/questions", "/api-docs", "/offline", "/%71uiz/today"])(
+    "/billing/success", "/checkout/result", "/admin", "/api/questions", "/api-docs", "/offline", "/search", "/modes/topic", "/%71uiz/today"])(
     "does not check membership or load ads on %s", pathname => {
       hooks.pathname = pathname;
       history.replaceState(null, "", pathname);

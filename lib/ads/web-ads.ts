@@ -8,7 +8,7 @@ export const WEB_ADS_RELOADING = "data-web-ads-reloading";
 const excludedSegments = new Set([
   "quiz", "account", "auth", "login", "logout", "signin", "signout", "signup",
   "me", "settings", "billing", "checkout", "admin", "api", "api-docs",
-  "error", "404", "500", "_not-found", "offline",
+  "error", "404", "500", "_not-found", "offline", "search", "modes",
 ]);
 
 export function isWebAdPath(pathname: string): boolean {
