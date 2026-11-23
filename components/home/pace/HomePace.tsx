@@ -11,7 +11,7 @@ import type { HomeDirectoryDomain } from "@/lib/home/home-directory";
 import { groupHomeDirectoryItems } from "@/lib/home/grouped-directory";
 import { calculatePace, weakQuestions, type AnswerAttempt, type PacePlan } from "@/lib/study-plan/pace";
 import { listPacePlans, savePacePlan, deletePacePlan } from "@/lib/study-plan/pace-storage";
-import { answersToday, deadlineWarning, homeCountdowns } from "@/lib/study-plan/home";
+import { answersToday, homeCalendar } from "@/lib/study-plan/home";
 import { paceAttempts } from "@/lib/study-plan/client";
 import { historyExamLookup, japanDate, upcomingExamPicks } from "@/lib/home/featured-exams";
 import { readHomeStudy, relativeStudyDate } from "@/lib/home/recent-study";
@@ -29,6 +29,7 @@ import { HomeWeather } from "@/components/home/HomeWeather";
 import { readStreak } from "@/lib/streak/storage";
 import { nativeClient } from "@/mobile/shared/contracts";
 import { canRemindForPlan } from "@/mobile/shared/study-reminder-plan";
+import { ExamCountdownCalendar } from "./ExamCountdownCalendar";
 import { PlanCalendarButton } from "./PlanCalendarButton";
 import { PostExamQualifications } from "./PostExamQualifications";
 import { PlanCreateSheet, weekdayLabels } from "./PlanCreateSheet";
@@ -151,12 +152,7 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
     return () => controller.abort();
   }, [scheduleExam]);
   const scheduleSessions = schedule?.exam === scheduleExam ? schedule?.data?.sessions : undefined;
-  const { exam: examCountdown, registration: registrationCountdown } = plan && !postExam
-    ? homeCountdowns(plan, today, scheduleSessions)
-    : { exam: null, registration: null };
-  const countdownBasisYear = examCountdown?.basisYear ?? registrationCountdown?.basisYear;
-  const warning = plan && registrationCountdown?.kind === "deadline" && !registrationCountdown.basisYear &&
-    registrationCountdown.date === plan.registration?.deadline ? deadlineWarning(plan, today) : null;
+  const calendar = plan ? homeCalendar(plan, today, scheduleSessions) : null;
   const item = items.find(i => i.key === plan?.exam);
   const currentResume = resolvedResume?.query === resumeQuery ? resolvedResume : null;
   const resume = currentResume?.entry;
@@ -223,24 +219,12 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
           <div className="p3-event-panel" data-event-panel="intro">
             <div className="flex items-start justify-between gap-2">
               <button className={`${styles.qualification} study-focus`} onClick={() => setSheet("switch")} aria-label="資格を切り替える" aria-describedby="home-qualification" aria-haspopup="dialog" aria-expanded={sheet === "switch"}><span id="home-qualification">{item?.name ?? plan.exam}</span><ChevronDown aria-hidden="true" className="size-4 shrink-0 p3-scene-muted" /></button>
-              {plan.examDate && (postExam || (examCountdown && !examCountdown.basisYear)) && <span className="shrink-0 pt-3 text-[13px] p3-scene-muted tabular-nums"><time dateTime={plan.examDate}>{shortDate(plan.examDate)}</time> 受験</span>}
+              {postExam && plan.examDate && <span className="shrink-0 pt-3 text-[13px] p3-scene-muted tabular-nums"><time dateTime={plan.examDate}>{shortDate(plan.examDate)}</time> 受験</span>}
             </div>
             {plan.registration && <p className="text-[13px] p3-scene-muted">{plan.registration.label}</p>}
             {created?.id === plan.id && passMoment?.planId !== plan.id && calendarConfirmation}
             {postExam && <h1 className="mt-2 text-2xl leading-tight font-bold">試験、おつかれさまでした</h1>}
-            {(examCountdown || registrationCountdown) && <div className={styles.countdowns} data-home-countdowns>
-              {examCountdown && <h1 className={styles.countdown}>
-                {examCountdown.days === 0 && !examCountdown.basisYear ? "試験は今日です" : <>
-                  <span>試験まであと</span><strong>{examCountdown.days}</strong><span>日{examCountdown.basisYear && "（見込み）"}</span>
-                </>}
-              </h1>}
-              {registrationCountdown && <p className={styles.registrationCountdown}>
-                {registrationCountdown.kind === "start" ? `あと${registrationCountdown.days}日で申込開始` :
-                  `申込締切まであと${registrationCountdown.days}日`}
-                {registrationCountdown.basisYear && "（見込み）"}
-              </p>}
-              {countdownBasisYear && <p className={styles.countdownBasis}>{countdownBasisYear}年度の同じ回をもとに推定</p>}
-            </div>}
+            {calendar && <ExamCountdownCalendar {...calendar} />}
             <div className={styles.planCount}>
               {pace?.total ? <>
                 <p className="text-sm p3-scene-muted">{pace.oldestYear}年度以降</p>
@@ -285,7 +269,7 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
               <button type="button" className="study-link" onClick={() => setSheet("edit")}>計画を変更</button>
             </div>
             <button type="button" onClick={() => setSheet("detail")} className={`${styles.planDetails} study-link`}>
-              学習計画の詳細{warning ? '（申込締切 ' + (plan.registration?.deadline ? shortDate(plan.registration.deadline) : '') + '）' : ''}
+              学習計画の詳細
             </button>
             {nativeClient() && passMoment?.planId !== plan.id && canRemindForPlan(plan) && <StudyReminderControl key={plan.id} planId={plan.id} />}
           </div>

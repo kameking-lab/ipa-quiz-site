@@ -50,11 +50,15 @@ async function expectHomeNavGap(page: Page) {
 
 test("reserves the saved plan before hydration and before the catalog arrives", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
-  await fixtures(page, fixturePlan(), 62);
+  const plan = fixturePlan();
+  plan.registration.estimated = true;
+  await fixtures(page, plan, 62);
   let releaseScripts!: () => void;
   const scripts = new Promise<void>(resolve => { releaseScripts = resolve; });
   let releaseCatalog!: () => void;
   const questions = new Promise<void>(resolve => { releaseCatalog = resolve; });
+  let releaseSchedule!: () => void;
+  const schedule = new Promise<void>(resolve => { releaseSchedule = resolve; });
   await page.route("**/_next/static/**/*.js", async route => {
     await scripts;
     await route.continue();
@@ -62,6 +66,13 @@ test("reserves the saved plan before hydration and before the catalog arrives", 
   await page.route("**/api/study-plan/catalog/ip", async route => {
     await questions;
     await route.fulfill({ json: { questions: catalog } });
+  });
+  await page.route("**/api/exam-schedule/ip", async route => {
+    await schedule;
+    await route.fulfill({ json: { exam: "ip", sessions: [{ id: plan.sessionId,
+      scheduleStatus: "official", datePrecision: "date", examDate: plan.examDate,
+      applicationStart: plan.registration.start, applicationDeadline: plan.registration.deadline,
+      sourceUrl: plan.registration.sourceUrl }] } });
   });
   const roomY = async () => (await page.getByTestId("home-study-room").boundingBox())!.y;
   try {
@@ -79,11 +90,34 @@ test("reserves the saved plan before hydration and before the catalog arrives", 
     releaseCatalog();
     await expect(page.getByRole("link", { name: "計画の問題を解く" })).toBeVisible();
     const loaded = await roomY();
+    await expect(page.locator("[data-home-calendar]")).toHaveCount(0);
+    const track = page.locator("[data-pace-track=progress]");
+    const trackBefore = await track.boundingBox();
+    const shiftObserver = await page.evaluateHandle(() => {
+      const entries: PerformanceEntry[] = [];
+      const observer = new PerformanceObserver(list => entries.push(...list.getEntries()));
+      observer.observe({ type: "layout-shift" });
+      return { entries, observer };
+    });
+    releaseSchedule();
+    await expect(page.locator("[data-home-calendar]")).toBeVisible();
+    expect(await track.boundingBox()).toEqual(trackBefore);
+    expect(await roomY()).toBe(loaded);
+    const cls = await shiftObserver.evaluate(async ({ entries, observer }) => {
+      await new Promise(requestAnimationFrame);
+      await new Promise(requestAnimationFrame);
+      const shifts = [...entries, ...observer.takeRecords()] as Array<PerformanceEntry & { value: number; hadRecentInput: boolean }>;
+      observer.disconnect();
+      return shifts.reduce((sum, shift) => sum + (shift.hadRecentInput ? 0 : shift.value), 0);
+    });
+    await shiftObserver.dispose();
+    expect(cls).toBe(0);
     expect(Math.abs(first - loaded)).toBeLessThan(4);
     expect(Math.abs(pending - loaded)).toBeLessThan(4);
   } finally {
     releaseScripts();
     releaseCatalog();
+    releaseSchedule();
   }
 });
 
@@ -124,11 +158,14 @@ for (const width of [390, 1280]) {
       await expect(page.getByText("1回の目安　4問正解")).toBeVisible();
       await expect(page.getByRole("link", { name: /回数無制限で追いつけます/ })).toHaveCount(0);
       await layout(page); await screenshot(page, "02-ahead", width);
-      await page.getByRole("button", { name: /学習計画の詳細.*申込締切/ }).click();
+      const calendar = page.locator("[data-home-calendar]");
+      await expect(calendar.getByRole("heading")).toHaveText(/申込締切まで\s*あと\s*1\s*日/);
+      await page.getByRole("button", { name: "学習計画の詳細" }).click();
       const details = page.getByRole("dialog", { name: "学習計画", exact: true });
       await expect(details.getByRole("link", { name: /申込ページを開く/ })).toHaveAttribute("href", "https://www.ipa.go.jp/shiken/");
       await details.getByText("申し込み・計画の変更", { exact: true }).click();
       await details.getByRole("button", { name: "申込済みにする" }).click();
+      await expect(calendar.getByRole("heading")).toHaveText(/試験まで\s*あと\s*3\s*日/);
       await expect(page.getByRole("button", { name: "学習計画の詳細", exact: true })).toBeVisible();
     });
     test("③ returning: one resume action, start track, search, and up to three recent qualifications", async ({ page }) => {
@@ -273,51 +310,128 @@ for (const width of [390, 1280]) {
   });
 }
 
-for (const scenario of [
-  { name: "01-confirmed", deadline: "2026-12-27", registration: "申込締切まであと2日" },
-  { name: "02-estimated", deadline: "2026-12-27", estimated: true, registration: "申込締切まであと2日（見込み）" },
-  { name: "03-before-opening", start: "2026-12-28", deadline: "2026-12-31", registration: "あと3日で申込開始" },
-  { name: "04-after-closing", deadline: "2026-12-24" },
-  { name: "05-exam-day", deadline: "2026-12-24", examDay: true },
-] as const) {
-  test(`home countdown ${scenario.name} on an illustrated night hero`, async ({ page }) => {
-    await page.setViewportSize({ width: 390, height: 844 });
-    await page.emulateMedia({ reducedMotion: "reduce" });
-    const estimated = "estimated" in scenario;
-    const examDay = "examDay" in scenario;
-    const plan = fixturePlan();
-    plan.examDate = examDay ? "2026-12-25" : estimated ? "2027-01-06" : "2027-01-05";
-    plan.registration = { ...plan.registration, label: "受験回", estimated,
-      start: "start" in scenario ? scenario.start : "2026-12-01", deadline: scenario.deadline };
-    await fixtures(page, plan, 100);
-    await page.clock.setFixedTime(new Date("2026-12-25T21:10:00+09:00"));
-    await page.route("**/api/home/weather", route => route.fulfill({ json: { weather: "snow" } }));
-    await page.route("**/api/exam-schedule/ip", route => route.fulfill({ json: { exam: "ip", source: "tsugino",
-      sessions: estimated ? [
-        { id: plan.sessionId, qualificationId: "itpassport", label: "2026年度第1回", fiscalYear: "2026",
-          scheduleStatus: "tentative", unannounced: true, examDate: null, datePrecision: "unknown" },
-        { id: "previous", qualificationId: "itpassport", label: "2025年度第1回", fiscalYear: "2025",
-          scheduleStatus: "official", examDate: "2026-01-05", datePrecision: "date",
-          applicationStart: "2025-12-01", applicationDeadline: "2025-12-27", sourceUrl: plan.registration.sourceUrl },
-      ] : [],
-    } }));
-    await page.goto("/");
-    const hero = page.locator(".p3-home-scene");
-    const countdown = hero.locator("[data-home-countdowns]");
-    const title = examDay ? /試験は今日です/ : estimated ? /試験まであと\s*11\s*日（見込み）/ : /試験まであと\s*11\s*日$/;
-    await expect(countdown.getByRole("heading", { name: title })).toBeVisible();
-    if (estimated) await expect(countdown.getByText("2025年度の同じ回をもとに推定", { exact: true })).toBeVisible();
-    if ("registration" in scenario) await expect(countdown.getByText(scenario.registration, { exact: true })).toBeVisible();
-    else await expect(countdown.getByText(/申込締切まで|申込開始/)).toHaveCount(0);
-    await expect(countdown).toHaveCSS("background-color", "rgb(255, 251, 243)");
-    await expect(countdown).toHaveCSS("color", "rgb(51, 36, 24)");
-    await expect(hero.locator("[data-home-event-art='christmas']")).toHaveAttribute("data-home-event-ready", "true");
-    await expect(hero.locator("[data-home-weather]")).toHaveAttribute("data-home-weather", "snow");
-    await expect(hero.getByRole("img", { name: "正解済み 100 / 200問" })).toBeVisible();
-    const dir = process.env.HOME_COUNTDOWN_SCREENSHOTS;
-    if (dir) {
-      await page.evaluate(() => document.fonts.ready.then(() => undefined));
-      await hero.screenshot({ path: `${dir}/countdown-${scenario.name}.png`, animations: "disabled" });
+test.describe("home flip calendar", () => {
+  test.use({ timezoneId: "Asia/Tokyo" });
+
+  const scenes = [
+    { name: "day", date: "2026-11-17", hour: "12", weather: "clear", colorScheme: "light", width: 390 },
+    { name: "night-christmas", date: "2026-12-25", hour: "21", weather: "snow", colorScheme: "dark", width: 1280, event: "christmas" },
+  ] as const;
+  const states = [
+    { name: "before-opening", starts: 3, closes: 6, primary: "申込開始まで", days: 3, secondary: "試験" },
+    { name: "open", closes: 2, primary: "申込締切まで", days: 2, secondary: "試験" },
+    { name: "deadline-day", closes: 0, primary: "申込締切まで", days: 0, secondary: "試験" },
+    { name: "closed", closes: -1, primary: "試験まで", days: 11, secondary: "申込締切" },
+    { name: "registered", closes: 2, registered: true, primary: "試験まで", days: 11, secondary: "申込締切" },
+    { name: "exam-day", closes: -1, exam: 0, primary: "今日が試験日", secondary: "申込締切" },
+    { name: "after-exam", closes: -2, exam: -1 },
+    { name: "estimated", closes: 2, estimated: true, primary: "申込締切まで", days: 2, secondary: "試験" },
+    { name: "no-dates", noDates: true },
+  ] as const;
+  const screenshotDir = process.env.HOME_COUNTDOWN_SCREENSHOTS;
+
+  for (const state of states) {
+    for (const scene of scenes) {
+      const alternateWidth = ["before-opening", "closed", "registered", "estimated"].includes(state.name);
+      const mobile = (scene.width === 390) !== alternateWidth;
+      const width = mobile ? 390 : 1280;
+      const morning = state.name === "before-opening" && scene.name === "day";
+      const evening = state.name === "closed" && scene.name === "day";
+      const sceneName = morning ? "morning" : evening ? "evening" : scene.name;
+      const colorScheme = scene.name === "day" && state.name === "registered" ? "dark"
+        : state.name === "exam-day" ? "light" : scene.colorScheme;
+      test(`${state.name} · ${sceneName} · ${colorScheme} · ${width}px`, async ({ page }) => {
+        const hour = morning ? "07" : evening ? "17" : scene.hour;
+        const weather = morning ? "cloudy" : evening ? "rain" : scene.weather;
+        await page.setViewportSize({ width, height: 844 });
+        await page.emulateMedia({ reducedMotion: "reduce", colorScheme });
+        const dateAt = (offset: number) =>
+          new Date(Date.parse(scene.date) + 86_400_000 * offset).toISOString().slice(0, 10);
+        const estimated = "estimated" in state;
+        const basePlan = fixturePlan();
+        const plan: PacePlan = {
+          ...basePlan,
+          examDate: "noDates" in state ? null : dateAt("exam" in state ? state.exam : 11),
+          registered: "registered" in state,
+          registration: "noDates" in state ? undefined : { ...basePlan.registration, label: "受験回", estimated,
+            start: dateAt("starts" in state ? state.starts : -8), deadline: dateAt(state.closes) },
+        };
+        await fixtures(page, plan, 100);
+        await page.clock.setFixedTime(new Date(`${scene.date}T${hour}:10:00+09:00`));
+        await page.route("**/api/home/weather", route => route.fulfill({ json: { weather } }));
+        const previousYear = (date: string | null | undefined) => date && `${Number(date.slice(0, 4)) - 1}${date.slice(4)}`;
+        await page.route("**/api/exam-schedule/ip", route => route.fulfill({ json: { exam: "ip", source: "tsugino",
+          sessions: estimated ? [
+            { id: plan.sessionId, qualificationId: "itpassport", label: "2026年度第1回", fiscalYear: "2026",
+              scheduleStatus: "tentative", unannounced: true, examDate: null, datePrecision: "unknown" },
+            { id: "previous", qualificationId: "itpassport", label: "2025年度第1回", fiscalYear: "2025",
+              scheduleStatus: "official", examDate: previousYear(plan.examDate), datePrecision: "date",
+              applicationStart: previousYear(plan.registration?.start), applicationDeadline: previousYear(plan.registration?.deadline),
+              sourceUrl: plan.registration?.sourceUrl },
+          ] : [],
+        } }));
+        await page.goto("/");
+        const hero = page.locator(".p3-home-scene");
+        const calendar = hero.locator("[data-home-calendar]");
+        await expect(hero.getByRole("img", { name: "正解済み 100 / 200問" })).toBeVisible();
+        await expect(page.locator("html")).toHaveAttribute("data-home-scene", sceneName.split("-")[0]);
+        if ("event" in scene) {
+          await expect(hero.locator(`[data-home-event-art="${scene.event}"]`)).toHaveAttribute("data-home-event-ready", "true");
+        } else {
+          await expect(page.locator("html")).not.toHaveAttribute("data-home-event-layout");
+        }
+        if (weather !== "clear") await expect(hero.locator("[data-home-weather]")).toHaveAttribute("data-home-weather", weather);
+
+        if ("primary" in state) {
+          await expect(calendar).toHaveCount(1);
+          const heading = calendar.getByRole("heading");
+          await expect(heading).toHaveAccessibleName("days" in state ? `${state.primary} あと ${state.days} 日` : state.primary);
+          const primaryDate = state.primary === "申込開始まで" ? plan.registration?.start
+            : state.primary === "申込締切まで" ? plan.registration?.deadline : plan.examDate;
+          const secondaryDate = state.secondary === "試験" ? plan.examDate : plan.registration?.deadline;
+          await expect(calendar.locator("time").first()).toHaveAttribute("datetime", primaryDate!);
+          await expect(calendar.locator(":scope > p")).toContainText(state.secondary);
+          await expect(calendar.locator("time").last()).toHaveAttribute("datetime", secondaryDate!);
+          await expect(calendar.getByText("（見込み）", { exact: true })).toHaveCount(estimated ? 2 : 0);
+          const ratios = await calendar.locator("h1 span, strong, p").evaluateAll(elements => {
+            function luminance(rgb: string) {
+              const channels = rgb.match(/\d+(?:\.\d+)?/g)!.slice(0, 3).map(channel => {
+                const value = Number(channel) / 255;
+                return value <= .04045 ? value / 12.92 : ((value + .055) / 1.055) ** 2.4;
+              });
+              return channels[0] * .2126 + channels[1] * .7152 + channels[2] * .0722;
+            }
+            return elements.map(element => {
+              let background = getComputedStyle(element).backgroundColor;
+              let ancestor = element.parentElement;
+              while (background === "rgba(0, 0, 0, 0)" && ancestor) {
+                background = getComputedStyle(ancestor).backgroundColor;
+                ancestor = ancestor.parentElement;
+              }
+              const colors = [luminance(background), luminance(getComputedStyle(element).color)];
+              return (Math.max(...colors) + .05) / (Math.min(...colors) + .05);
+            });
+          });
+          expect(Math.min(...ratios)).toBeGreaterThanOrEqual(4.5);
+          const calendarBox = (await calendar.boundingBox())!;
+          const trackBox = (await hero.locator("[data-pace-track=progress]").boundingBox())!;
+          expect(width === 390 ? calendarBox.y + calendarBox.height <= trackBox.y
+            : calendarBox.x + calendarBox.width <= trackBox.x).toBe(true);
+          const cta = hero.getByRole("link", { name: "計画の問題を解く" });
+          if (await cta.count()) {
+            expect(calendarBox.y + calendarBox.height).toBeLessThanOrEqual((await cta.boundingBox())!.y);
+          }
+          await expect(calendar.getByRole("button")).toHaveCount(0);
+          await expect(calendar.getByRole("link")).toHaveCount(0);
+        } else {
+          await expect(calendar).toHaveCount(0);
+          if ("exam" in state) await expect(hero.getByRole("heading", { name: "試験、おつかれさまでした" })).toBeVisible();
+        }
+        if (screenshotDir) {
+          await page.evaluate(() => document.fonts.ready.then(() => undefined));
+          await hero.screenshot({ path: `${screenshotDir}/${state.name}-${sceneName}-${colorScheme}-${width}.png`, animations: "disabled" });
+        }
+      });
     }
-  });
-}
+  }
+});

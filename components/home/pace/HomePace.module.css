@@ -1,7 +1,7 @@
 .stack {
   --hero-padding: .75rem;
   --hero-gap: .5rem;
-  --plan-intro: 14.5rem;
+  --plan-intro: 19.5rem;
   --plan-progress: 8rem;
   --plan-actions: 7rem;
   --return-intro: 6.75rem;
@@ -19,8 +19,11 @@
 
 .stack:has([data-pace-view="exam-day"], [data-pace-view="post-exam"]),
 :global(:is([data-home-study-layout="exam-day"], [data-home-study-layout="post-exam"])) .stack[data-home-state="loading"] {
-  --plan-intro: 11.5rem;
   --plan-progress: 0px;
+}
+.stack:has([data-pace-view="post-exam"]),
+:global([data-home-study-layout="post-exam"]) .stack[data-home-state="loading"] {
+  --plan-intro: 11.5rem;
 }
 
 .hero {
@@ -123,6 +126,9 @@
   .hero { min-block-size: calc(2 * var(--hero-padding) + 3 * var(--hero-gap) + var(--plan-intro) + var(--plan-progress) + var(--plan-actions) + var(--track-space) + var(--progress-track)); }
   .planLoading { display: grid; }
 }
+:global([data-home-study-layout="exam-day"]) .stack[data-home-state="loading"] .hero {
+  min-block-size: calc(2 * var(--hero-padding) + 2 * var(--hero-gap) + var(--plan-intro) + var(--plan-actions) + var(--track-space) + var(--progress-track));
+}
 .hero[data-pace-view="post-exam"],
 :global([data-home-study-layout="post-exam"]) .stack[data-home-state="loading"] .hero { min-block-size: var(--post-exam-floor); }
 :global([data-home-study-layout="returning"]) .stack[data-home-state="loading"] .hero {
@@ -195,6 +201,9 @@
   :global(:is([data-home-study-layout="planned"], [data-home-study-layout="exam-day"])) .stack[data-home-state="loading"] .hero {
     min-block-size: calc(2 * var(--hero-padding) + 2 * var(--hero-gap) + var(--plan-intro) + var(--plan-progress) + var(--plan-actions));
   }
+  :global([data-home-study-layout="exam-day"]) .stack[data-home-state="loading"] .hero {
+    min-block-size: calc(2 * var(--hero-padding) + var(--hero-gap) + var(--plan-intro) + var(--plan-actions));
+  }
   .secondarySearch, .recent, .upcoming, .directory { grid-column: 1; }
   .secondarySearch { grid-row: 2; }
   .recent { grid-row: 3; }
@@ -220,33 +229,132 @@
   overflow-wrap: anywhere;
 }
 .qualification > span { min-width: 0; text-wrap: pretty; }
-.countdowns {
-  width: fit-content;
-  max-width: 100%;
-  margin-block-start: .375rem;
-  padding: .375rem .75rem;
-  border-radius: 12px;
-  background: #fffbf3;
-  color: #332418;
+.calendar {
+  --paper: #fff9ed;
+  --paper-ink: #3c2920;
+  --paper-muted: #664939;
+  --paper-edge: #a57658;
+  --binding: #87573d;
+  --tab: #f4d2ab;
+  --fold: #ead1b1;
+  --sheets: #e6bc91;
+  width: min(100%, 14rem);
+  margin-block-start: .75rem;
   font-variant-numeric: tabular-nums;
+  color: var(--paper-ink);
 }
-.countdown {
-  font-size: 1.125rem;
+:global(:is(.dark, [data-home-scene="night"])) .calendar {
+  --paper: #3f3029;
+  --paper-ink: #fff2e0;
+  --paper-muted: #f3cdae;
+  --paper-edge: #ba9275;
+  --binding: #eecca6;
+  --tab: #5f4234;
+  --fold: #765540;
+  --sheets: #936449;
+}
+.calendarPaper {
+  position: relative;
+  display: grid;
+  justify-items: stretch;
+  border: 1px solid var(--paper-edge);
+  border-radius: 14px 14px 6px 12px;
+  background: var(--paper);
+  box-shadow: 0 3px 0 -1px var(--sheets), 0 4px 0 -1px var(--paper-edge), 0 6px 9px #21170e2b;
+  text-align: center;
+}
+.calendarPaper::after {
+  position: absolute;
+  inset: auto -1px -1px auto;
+  inline-size: 14px;
+  block-size: 14px;
+  border-radius: 2px 0 6px 0;
+  background: linear-gradient(135deg, var(--fold) 46%, var(--paper-edge) 49% 53%, var(--sheets) 56%);
+  content: "";
+  pointer-events: none;
+}
+.calendarBinding {
+  position: absolute;
+  inset: -.4rem 22% auto;
+  display: flex;
+  justify-content: space-between;
+}
+.calendarBinding::before,
+.calendarBinding::after {
+  inline-size: 5px;
+  block-size: 13px;
+  border: 1px solid var(--paper-edge);
+  border-radius: 5px;
+  background: var(--binding);
+  box-shadow: 0 1px 2px #21170e50;
+  content: "";
+}
+.calendarHeading {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  margin: 0;
+  min-block-size: 5.5rem;
+}
+.calendarLabel {
+  padding: .45rem .5rem .2rem;
+  border-block-end: 1px solid var(--paper-edge);
+  border-radius: 13px 13px 0 0;
+  background: var(--tab);
+  font-size: .875rem;
   font-weight: 700;
   line-height: 1.25;
 }
-.countdown > strong {
-  margin-inline: .125em;
-  font-size: 1.875rem;
+.calendarCount {
+  align-self: center;
+  padding-block: .25rem;
+  font-size: .9375rem;
+  font-weight: 700;
   line-height: 1;
 }
-.registrationCountdown {
+.calendarCount > strong {
+  margin-inline: .1em;
+  font-size: clamp(2.25rem, 10vw, 2.875rem);
+  font-weight: 800;
+  letter-spacing: -.035em;
+}
+.calendarToday {
+  grid-row: 1 / -1;
+  align-content: center;
+  padding: .75rem .5rem .25rem;
+  border-block-start: 12px solid var(--tab);
+  border-radius: 13px 13px 0 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+.calendarPrimaryDate,
+.calendarSecondaryDate {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  column-gap: .25rem;
+  margin: 0;
+  color: var(--paper-muted);
   font-size: .875rem;
   font-weight: 600;
+  line-height: 1.4;
 }
-.countdownBasis {
+.calendarPrimaryDate {
+  margin-inline: .75rem;
+  padding: .25rem 0 .4rem;
+  border-block-start: 1px solid color-mix(in srgb, var(--paper-edge) 45%, var(--paper));
+}
+.calendarSecondaryDate {
+  width: fit-content;
+  max-width: 100%;
+  margin: .5rem auto 0;
+  padding: .125rem .5rem;
+  border-radius: 6px;
+  background: var(--paper);
+}
+.calendarEstimate {
   font-size: .75rem;
-  color: #5a4031;
 }
 .sheet > button:last-child {
   display: flex;

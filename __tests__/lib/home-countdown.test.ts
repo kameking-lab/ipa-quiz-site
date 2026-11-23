@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { deadlineWarning, homeCountdowns } from "@/lib/study-plan/home";
+import { homeCalendar } from "@/lib/study-plan/home";
 import { registrationTiming } from "@/lib/study-plan/countdown";
 import { createPacePlan, type PacePlan } from "@/lib/study-plan/pace";
 import { parseRegistration } from "@/lib/study-plan/schedule";
@@ -38,29 +38,50 @@ describe("registration status", () => {
   });
 });
 
-describe("home study plan countdowns", () => {
-  it("counts calendar days and shows opening before the registration deadline", () => {
-    expect(homeCountdowns(plan, today)).toMatchObject({
-      exam: { days: 30 }, registration: { kind: "start", days: 3 },
+describe("home study plan calendar", () => {
+  it.each([
+    [today, "start", "2026-11-20", 3, "exam", "2026-12-17"],
+    ["2026-11-20", "deadline", "2026-12-10", 20, "exam", "2026-12-17"],
+    ["2026-12-10", "deadline", "2026-12-10", 0, "exam", "2026-12-17"],
+    ["2026-12-11", "exam", "2026-12-17", 6, "deadline", "2026-12-10"],
+    ["2026-12-17", "exam", "2026-12-17", 0, "deadline", "2026-12-10"],
+  ])("prioritizes the relevant date on %s and labels the other date separately", (date, kind, primaryDate, days, otherKind, otherDate) => {
+    expect(homeCalendar(plan, date)).toMatchObject({
+      primary: { kind, date: primaryDate, days }, secondary: { kind: otherKind, date: otherDate },
     });
-    expect(homeCountdowns(plan, "2026-11-20").registration).toMatchObject({ kind: "deadline", days: 20 });
-    expect(deadlineWarning(plan, "2026-11-20")).toBeNull();
-    expect(deadlineWarning(plan, "2026-12-09")).toEqual({ remaining: 1, urgency: "urgent" });
   });
-  it("keeps the deadline through that day and hides it after closing or after registration", () => {
-    expect(homeCountdowns(plan, "2026-12-10").registration).toMatchObject({ days: 0 });
-    expect(homeCountdowns(plan, "2026-12-11").registration).toBeNull();
-    expect(homeCountdowns({ ...plan, registered: true }, today).registration).toBeNull();
-    expect(homeCountdowns(plan, "2026-12-17").exam).toMatchObject({ days: 0 });
-    expect(homeCountdowns(plan, "2026-12-18").exam).toBeNull();
+  it("switches to the exam when registered and keeps the deadline as a reference", () => {
+    expect(homeCalendar({ ...plan, registered: true }, today)).toMatchObject({
+      primary: { kind: "exam", days: 30 }, secondary: { kind: "deadline", date: "2026-12-10" },
+    });
+  });
+  it("prioritizes a confirmed exam on its day even if registration closes that day", () => {
+    expect(homeCalendar({ ...plan, examDate: "2026-12-10" }, "2026-12-10")?.primary)
+      .toMatchObject({ kind: "exam", days: 0 });
+  });
+  it("omits the calendar after the exam or when a result is recorded", () => {
+    expect(homeCalendar(plan, "2026-12-18")).toBeNull();
+    expect(homeCalendar({ ...plan, result: "passed" }, today)).toBeNull();
+  });
+  it("uses only known dates when a date is missing", () => {
+    expect(homeCalendar({ ...plan, examDate: null, registration: undefined }, today)).toBeNull();
+    expect(homeCalendar({ ...plan, registration: undefined }, today)).toMatchObject({
+      primary: { kind: "exam", days: 30 }, secondary: null,
+    });
+    expect(homeCalendar({ ...plan, examDate: null }, today)).toMatchObject({
+      primary: { kind: "start", days: 3 }, secondary: { kind: "deadline", date: "2026-12-10" },
+    });
+    expect(homeCalendar({ ...plan, examDate: null }, "2026-11-20")).toMatchObject({
+      primary: { kind: "deadline", days: 20 }, secondary: null,
+    });
   });
   it.each([
     next, { ...next, scheduleStatus: "tentative", datePrecision: "month", examDate: "2027-02-01", sourceUrl },
   ])("estimates $datePrecision from the same round in the preceding fiscal year", current => {
     const sessions = parse(current, { ...prior, id: "wrong-round", label: "2025年度前期", examDate: "2025-10-20" }, prior);
-    expect(homeCountdowns(plan, today, sessions)).toMatchObject({
-      exam: { date: "2027-02-16", days: 91, basisYear: 2025 },
-      registration: { kind: "start", days: 30, basisYear: 2025 },
+    expect(homeCalendar(plan, today, sessions)).toMatchObject({
+      primary: { kind: "start", days: 30, basisYear: 2025 },
+      secondary: { kind: "exam", date: "2027-02-16", basisYear: 2025 },
     });
   });
   it("requires a unique, sourced prior round and omits an unavailable estimate", () => {
@@ -69,7 +90,7 @@ describe("home study plan countdowns", () => {
       parse(next, { ...prior, label: "前期" }),
       parse(next, prior, { ...prior, id: "ambiguous" }),
       parse(next, { ...prior, fiscalYear: "2024" }),
-    ]) expect(homeCountdowns(plan, today, sessions)).toEqual({ exam: null, registration: null });
+    ]) expect(homeCalendar(plan, today, sessions)).toBeNull();
   });
   it("can use a single annual round with an annual summary in the current year", () => {
     const sessions = parse(
@@ -77,13 +98,13 @@ describe("home study plan countdowns", () => {
       { ...next, id: "ap:estimate-2026", label: "2026年ごろ［目安］", scheduleStatus: "tentative" },
       { ...prior, label: "2025年度 宅建" },
     );
-    expect(homeCountdowns(plan, today, sessions).exam).toMatchObject({ date: "2027-02-16", basisYear: 2025 });
+    expect(homeCalendar(plan, today, sessions)?.secondary).toMatchObject({ date: "2027-02-16", basisYear: 2025 });
   });
   it("uses the saved appointment for on-demand exams and skips an estimate when scheduling data is absent", () => {
-    expect(homeCountdowns(plan, today, parse({ ...next, scheduleStatus: "ondemand" }))).toMatchObject({
-      exam: { days: 30 }, registration: null,
+    expect(homeCalendar(plan, today, parse({ ...next, scheduleStatus: "ondemand" }))).toMatchObject({
+      primary: { kind: "exam", days: 30 }, secondary: null,
     });
     const estimated = { ...plan, registration: { ...plan.registration!, estimated: true } };
-    expect(homeCountdowns(estimated, today)).toEqual({ exam: null, registration: null });
+    expect(homeCalendar(estimated, today)).toBeNull();
   });
 });

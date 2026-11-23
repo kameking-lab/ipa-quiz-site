@@ -1,29 +1,40 @@
 import { dateCountdown, registrationTiming, sessionCountdownDates } from "./countdown";
-import type { AnswerAttempt, PacePlan } from "./pace";
+import { dayNumber, type AnswerAttempt, type PacePlan } from "./pace";
 import type { ExamScheduleSession } from "./schedule";
 
-export function deadlineWarning(plan: PacePlan, today: string) {
-  if (plan.registered) return null;
-  const application = registrationTiming(plan.registration?.start, plan.registration?.deadline, today).countdown;
-  if (application?.kind !== "deadline" || application.days > 14) return null;
-  const remaining = application.days;
-  return { remaining, urgency: remaining <= 1 ? "urgent" : remaining <= 7 ? "soon" : "notice" };
-}
+type CalendarDate = { kind: "start" | "deadline" | "exam"; date: string; basisYear?: number };
 
-export function homeCountdowns(plan: PacePlan, today: string, sessions: readonly ExamScheduleSession[] = []) {
-  const none = { exam: null, registration: null };
-  if (plan.result) return none;
+export type HomeCalendar = {
+  primary: CalendarDate & { days: number };
+  secondary: CalendarDate | null;
+};
+
+export function homeCalendar(plan: PacePlan, today: string, sessions: readonly ExamScheduleSession[] = []): HomeCalendar | null {
+  if (plan.result || (plan.examDate && plan.examDate < today)) return null;
   const session = sessions.find(item => item.id === plan.sessionId);
   const dates = session && sessionCountdownDates(session, sessions);
   const plannedDate = !session && plan.registration?.estimated ? null : plan.examDate;
-  const exam = dateCountdown(dates?.uncertainExam ? dates.examDate : plannedDate ?? dates?.examDate,
-    today, dates?.examBasisYear);
-  if (plan.registered || session?.scheduleStatus === "ondemand") return { exam, registration: null };
-  const registration = dates || !plan.registration?.estimated
-    ? registrationTiming(dates ? dates.applicationStart : plan.registration?.start,
-      dates ? dates.applicationDeadline : plan.registration?.deadline, today, dates?.applicationBasisYear).countdown
+  const examDate = dates?.uncertainExam ? dates.examDate : plannedDate ?? dates?.examDate;
+  if (examDate && dayNumber(examDate) !== null && examDate < today) return null;
+  const exam = dateCountdown(examDate, today, dates?.examBasisYear);
+  const examTarget = exam && { ...exam, kind: "exam" as const };
+
+  const savedRegistration = plan.registration?.estimated ? null : plan.registration;
+  const start = dates ? dates.applicationStart : savedRegistration?.start;
+  const deadline = dates ? dates.applicationDeadline : savedRegistration?.deadline;
+  const basisYear = dates?.applicationBasisYear;
+  const hasRegistration = session?.scheduleStatus !== "ondemand";
+  const deadlineDate: CalendarDate | null = hasRegistration && deadline && dayNumber(deadline) !== null
+    ? { kind: "deadline", date: deadline, basisYear }
     : null;
-  return { exam, registration };
+  const registration = hasRegistration && !plan.registered
+    ? registrationTiming(start, deadline, today, basisYear).countdown
+    : null;
+
+  if (examTarget?.days === 0 || !registration) {
+    return examTarget ? { primary: examTarget, secondary: deadlineDate } : null;
+  }
+  return { primary: registration, secondary: examTarget ?? (registration.kind === "start" ? deadlineDate : null) };
 }
 
 /** Counts answers, not passive page time. Mirrored legacy/action attempts count once. */
